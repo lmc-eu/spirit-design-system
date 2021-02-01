@@ -1,0 +1,115 @@
+//
+// Typography
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+//@font-face {
+//  // See https://web.dev/variable-fonts/
+//  font-family: 'Inter var';
+//  src: url('../fonts/Inter.var.woff2') format('woff2 supports variations'),
+//      url('../fonts/Inter.var.woff2') format('woff2-variations'); // Fallback; soon to be deprecated
+//  font-weight: 100 900;
+//  font-display: swap;
+//}
+
+body {
+  font-family: $font-family-default;
+  font-size: $font-size-base;
+  line-height: $line-height-default;
+  color: $text-primary;
+}
+
+a {
+  color: $link-color-default;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+}
+
+.link {
+  &-primary {
+    color: $link-color-primary;
+  }
+  &-secondary {
+    color: $link-color-secondary;
+  }
+}
+
+i, em {
+  font-variation-settings: 'slnt' -10;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+
+  a {
+    color: $link-color-heading;
+  }
+}
+
+h1, .h1 {
+  font-size: $heading-xlarge;
+}
+h2, .h2 {
+  font-size: $heading-large;
+}
+h3, .h3 {
+  font-size: $heading-medium;
+}
+h4, .h4 {
+  font-size: $heading-small;
+}
+h5, .h5 {
+  font-size: $heading-xsmall;
+}
+h6, .h6 {
+  font-size: $heading-xxsmall;
+}
+
+.display {
+  &-large {
+    font-size: $display-large;
+  }
+  &-medium {
+    font-size: $display-medium;
+  }
+  &-small {
+    font-size: $display-small;
+  }
+  &-xsmall {
+    font-size: $display-xsmall;
+  }
+}
+
+.body-text {
+  &-large {
+    font-size: $body-text-large;
+  }
+  &-medium {
+    font-size: $body-text-medium;
+  }
+  &-small {
+    font-size: $body-text-small;
+  }
+}
+
+.caption {
+  &-large {
+    font-size: $caption-large;
+  }
+  &-medium {
+    font-size: $caption-medium;
+  }
+  &-small {
+    font-size: $caption-small;
+  }
+}

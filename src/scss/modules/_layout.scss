@@ -1,0 +1,27 @@
+// Layout
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: $container-medium-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  &--small {
+    max-width: $container-small-max-width;
+  }
+
+  &--large {
+    max-width: $container-large-max-width;
+  }
+
+  &--full {
+    max-width: $container-full-max-width;
+  }
+}

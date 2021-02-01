@@ -1,0 +1,108 @@
+// Variables: Colors
+
+$white: #ffffff !default;
+$gray-100: #f8f7f7 !default;
+$gray-200: #ebeaea !default;
+$gray-300: #dbdbdb !default;
+$gray-400: #c4c4c4 !default;
+$gray-500: #90a2a7 !default;
+$gray-600: #5a6a6e !default;
+$gray-700: #404b4e !default;
+$gray-800: #343a40 !default;
+$gray-900: #091417 !default;
+$black: #000000 !default;
+
+$info-200: #ebf3f8 !default;
+$info-400: #90cff1 !default;
+$info-600: #85c1e1 !default;
+$info-800: #78a9c5 !default;
+
+$success-200: #f2f5e7 !default;
+$success-400: #b7d16d !default;
+$success-600: #9ebf40 !default;
+$success-800: #8fad3a !default;
+
+$warning-200: #f8f2e4 !default;
+$warning-400: #f1d07c !default;
+$warning-600: #dfbb5f !default;
+$warning-800: #c29132 !default;
+
+$danger-200: #fcf1f4 !default;
+$danger-400: #db5f7b !default;
+$danger-600: #c95771 !default;
+$danger-800: #af4c62 !default;
+
+// Brand
+$brand-primary: #132930 !default;
+$brand-secondary: #77a6c0 !default;
+
+// Background
+$bg-basic: $white !default;
+$bg-cover: #f0f4f5 !default;
+
+// Text
+$text-primary: $brand-primary !default;
+$text-primary-inverted: $white !default;
+$text-secondary: $gray-500 !default;
+$text-secondary-inverted: $gray-200 !default;
+
+// Link
+$link-color-default: currentColor !default;
+$link-color-primary: $brand-secondary !default;
+$link-color-secondary: $gray-400 !default;
+$link-color-heading: currentColor !default;
+
+// Action
+$action-primary-default: $brand-secondary !default;
+$action-primary-hover: #678fa6 !default;
+$action-primary-active: #57798c !default;
+$action-primary-disabled: $gray-200 !default;
+$action-secondary-default: $brand-primary !default;
+$action-secondary-hover: $gray-900 !default;
+$action-secondary-active: $black !default;
+$action-secondary-disabled: $gray-200 !default;
+
+// Emotion
+$emotion-info-default: $info-400 !default;
+$emotion-info-hover: $info-600 !default;
+$emotion-info-active: $info-800 !default;
+$emotion-info-disabled: $gray-200 !default;
+$emotion-info-bg: $info-200 !default;
+$emotion-success-default: $success-400 !default;
+$emotion-success-hover: $success-600 !default;
+$emotion-success-active: $success-800 !default;
+$emotion-success-disabled: $gray-200 !default;
+$emotion-success-bg: $success-200 !default;
+$emotion-warning-default: $warning-400 !default;
+$emotion-warning-hover: $warning-600 !default;
+$emotion-warning-active: $warning-800 !default;
+$emotion-warning-disabled: $gray-200 !default;
+$emotion-warning-bg: $warning-200 !default;
+$emotion-danger-default: $danger-400 !default;
+$emotion-danger-hover: $danger-600 !default;
+$emotion-danger-active: $danger-800 !default;
+$emotion-danger-disabled: $gray-200 !default;
+$emotion-danger-bg: $danger-200 !default;
+
+// Component
+$component-main-default: $gray-600 !default;
+$component-main-hover: #4e5b5f !default;
+$component-main-active: $gray-700 !default;
+$component-main-selected: $brand-secondary !default;
+$component-main-disabled: $gray-100 !default;
+$component-main-border-default: $gray-200 !default;
+$component-main-border-hover: $gray-300 !default;
+$component-main-border-active: #d4d4d4 !default;
+$component-main-border-selected: $brand-secondary !default;
+$component-main-border-disabled: #f8f7f7 !default;
+
+// Icon
+$icon-primary-default: $gray-400 !default;
+$icon-primary-info: $brand-secondary !default;
+$icon-primary-success: $success-400 !default;
+$icon-primary-warning: $warning-400 !default;
+$icon-primary-danger: $danger-400 !default;
+$icon-secondary-default: $brand-secondary !default;
+$icon-secondary-hover: #678fa6 !default;
+$icon-secondary-active: #57798c !default;
+$icon-inverted: $white !default;

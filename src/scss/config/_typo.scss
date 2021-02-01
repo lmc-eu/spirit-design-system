@@ -1,0 +1,50 @@
+// Variables: Typography
+
+$font-family-default: 'Inter' !default;
+$line-height-default: 1.5 !default;
+$line-height-heading: 1.2 !default;
+
+// Size
+$font-size-1: .625rem !default;
+$font-size-2: .75rem !default;
+$font-size-3: .875rem !default;
+$font-size-4: 1rem !default;
+$font-size-5: 1.125rem !default;
+$font-size-6: 1.25rem !default;
+$font-size-7: 1.5rem !default;
+$font-size-8: 2rem !default;
+$font-size-9: 2.5rem !default;
+$font-size-10: 3rem !default;
+$font-size-11: 3.5rem !default;
+$font-size-12: 4rem !default;
+$font-size-13: 5rem !default;
+
+$font-size-root: null !default;
+$font-size-base: $font-size-4 !default;
+
+$display-large: $font-size-13 !default;
+$display-medium: $font-size-12 !default;
+$display-small: $font-size-11 !default;
+$display-xsmall: $font-size-9 !default;
+
+$heading-xlarge: $font-size-10 !default;
+$heading-large: $font-size-9 !default;
+$heading-medium: $font-size-8 !default;
+$heading-small: $font-size-7 !default;
+$heading-xsmall: $font-size-6 !default;
+$heading-xxsmall: $font-size-5 !default;
+
+$body-text-large: $font-size-5 !default;
+$body-text-medium: $font-size-4 !default;
+$body-text-small: $font-size-3 !default;
+
+$caption-large: $font-size-3 !default;
+$caption-medium: $font-size-2 !default;
+$caption-small: $font-size-1 !default;
+
+// Weight
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;

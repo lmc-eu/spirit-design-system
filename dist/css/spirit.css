@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap");
+body {
+  font-family: "Inter";
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #132930; }
+
+a {
+  color: currentColor; }
+  a:hover, a:focus {
+    text-decoration: none; }
+
+.link-primary {
+  color: #77a6c0; }
+
+.link-secondary {
+  color: #c4c4c4; }
+
+i, em {
+  font-variation-settings: 'slnt' -10; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 700;
+  line-height: 1.2; }
+  h1 a, .h1 a,
+  h2 a, .h2 a,
+  h3 a, .h3 a,
+  h4 a, .h4 a,
+  h5 a, .h5 a,
+  h6 a, .h6 a {
+    color: currentColor; }
+
+h1, .h1 {
+  font-size: 3rem; }
+
+h2, .h2 {
+  font-size: 2.5rem; }
+
+h3, .h3 {
+  font-size: 2rem; }
+
+h4, .h4 {
+  font-size: 1.5rem; }
+
+h5, .h5 {
+  font-size: 1.25rem; }
+
+h6, .h6 {
+  font-size: 1.125rem; }
+
+.display-large {
+  font-size: 5rem; }
+
+.display-medium {
+  font-size: 4rem; }
+
+.display-small {
+  font-size: 3.5rem; }
+
+.display-xsmall {
+  font-size: 2.5rem; }
+
+.body-text-large {
+  font-size: 1.125rem; }
+
+.body-text-medium {
+  font-size: 1rem; }
+
+.body-text-small {
+  font-size: 0.875rem; }
+
+.caption-large {
+  font-size: 0.875rem; }
+
+.caption-medium {
+  font-size: 0.75rem; }
+
+.caption-small {
+  font-size: 0.625rem; }
+
+*,
+::before,
+::after {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
+  .container--small {
+    max-width: 37.5rem; }
+  .container--large {
+    max-width: 75rem; }
+  .container--full {
+    max-width: 100%; }
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+.btn {
+  display: inline-block;
+  padding: .75em 1.5em;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #5a6a6e;
+  border: 1px solid #ebeaea;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  transition-property: color, background-color, border; }
+  .btn:hover, .btn:focus {
+    background-color: #4e5b5f;
+    border-color: #dbdbdb; }
+  .btn:active {
+    background-color: #404b4e;
+    border-color: #d4d4d4; }
