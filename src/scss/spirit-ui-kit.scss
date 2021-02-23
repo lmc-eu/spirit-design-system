@@ -589,6 +589,17 @@ body {
 
 }
 
+// Spacing
+.space {
+  background-color: $bg-cover;
+}
+
+@each $key, $value in $spaces {
+  .space-#{$key} {
+    height: $value;
+  }
+}
+
 // Utils
 .columns {
   display: flex;

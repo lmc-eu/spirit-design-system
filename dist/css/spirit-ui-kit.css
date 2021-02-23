@@ -456,6 +456,51 @@ body {
     .color-sample--icon-inverted::before {
       content: "#ffffff"; }
 
+.space {
+  background-color: #f0f4f5; }
+
+.space-0 {
+  height: 0; }
+
+.space-1 {
+  height: 1px; }
+
+.space-2 {
+  height: 2px; }
+
+.space-3 {
+  height: 4px; }
+
+.space-4 {
+  height: 8px; }
+
+.space-5 {
+  height: 12px; }
+
+.space-6 {
+  height: 16px; }
+
+.space-7 {
+  height: 24px; }
+
+.space-8 {
+  height: 32px; }
+
+.space-9 {
+  height: 40px; }
+
+.space-10 {
+  height: 48px; }
+
+.space-11 {
+  height: 56px; }
+
+.space-12 {
+  height: 64px; }
+
+.space-13 {
+  height: 80px; }
+
 .columns {
   display: flex;
   flex-wrap: wrap; }
