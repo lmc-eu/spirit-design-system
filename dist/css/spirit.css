@@ -6,7 +6,7 @@ body {
   color: #132930; }
 
 a {
-  color: currentColor; }
+  color: #77a6c0; }
   a:hover, a:focus {
     text-decoration: none; }
 
@@ -14,7 +14,7 @@ a {
   color: #77a6c0; }
 
 .link-secondary {
-  color: #c4c4c4; }
+  color: #90a2a7; }
 
 i, em {
   font-variation-settings: 'slnt' -10; }
@@ -27,13 +27,6 @@ h5, .h5,
 h6, .h6 {
   font-weight: 700;
   line-height: 1.2; }
-  h1 a, .h1 a,
-  h2 a, .h2 a,
-  h3 a, .h3 a,
-  h4 a, .h4 a,
-  h5 a, .h5 a,
-  h6 a, .h6 a {
-    color: currentColor; }
 
 h1, .h1 {
   font-size: 3rem; }
@@ -108,20 +101,3 @@ button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
-
-.btn {
-  display: inline-block;
-  padding: .75em 1.5em;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #5a6a6e;
-  border: 1px solid #ebeaea;
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-  transition-property: color, background-color, border; }
-  .btn:hover, .btn:focus {
-    background-color: #4e5b5f;
-    border-color: #dbdbdb; }
-  .btn:active {
-    background-color: #404b4e;
-    border-color: #d4d4d4; }

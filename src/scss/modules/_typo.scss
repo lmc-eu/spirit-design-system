@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: $link-color-default;
+  color: $action-link-primary-default;
 
   &:hover,
   &:focus {
@@ -31,10 +31,10 @@ a {
 
 .link {
   &-primary {
-    color: $link-color-primary;
+    color: $action-link-primary-default;
   }
   &-secondary {
-    color: $link-color-secondary;
+    color: $action-link-secondary-default;
   }
 }
 
@@ -50,10 +50,6 @@ h5, .h5,
 h6, .h6 {
   font-weight: $font-weight-bold;
   line-height: $line-height-heading;
-
-  a {
-    color: $link-color-heading;
-  }
 }
 
 h1, .h1 {

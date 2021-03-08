@@ -1,24 +1,24 @@
 // Buttons
 
 .btn {
-  display: inline-block;
-  padding: .75em 1.5em;
-  text-decoration: none;
-  color: $text-primary-inverted;
-  background-color: $component-main-default;
-  border: 1px solid $component-main-border-default;
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-  transition-property: color, background-color, border;
-
-  &:hover,
-  &:focus {
-    background-color: $component-main-hover;
-    border-color: $component-main-border-hover;
-  }
-
-  &:active {
-    background-color: $component-main-active;
-    border-color: $component-main-border-active;
-  }
+  //display: inline-block;
+  //padding: .75em 1.5em;
+  //text-decoration: none;
+  //color: $text-primary-inverted;
+  //background-color: $component-main-default;
+  //border: 1px solid $component-main-border-default;
+  //cursor: pointer;
+  //transition: all .3s ease-in-out;
+  //transition-property: color, background-color, border;
+  //
+  //&:hover,
+  //&:focus {
+  //  background-color: $component-main-hover;
+  //  border-color: $component-main-border-hover;
+  //}
+  //
+  //&:active {
+  //  background-color: $component-main-active;
+  //  border-color: $component-main-border-active;
+  //}
 }

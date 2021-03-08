@@ -28,7 +28,10 @@ gulp.task('clean:dist', function () {
 });
 
 gulp.task('build:styles', function () {
-    return gulp.src(paths.src.scss + '*.scss')
+    return gulp.src([
+        paths.src.scss + 'spirit.scss',
+        paths.src.scss + 'docs/spirit-docs.scss'
+    ])
         .pipe(plumber())
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(paths.dist.css))
