@@ -443,22 +443,22 @@ body {
   .color-sample--border-main-disabled::before {
     content: "#f4f4f4"; }
 
-.color-sample--icon-main-default {
+.color-sample--icon-primary-default {
   background-color: #77a6c0;
   color: #fff; }
-  .color-sample--icon-main-default::before {
+  .color-sample--icon-primary-default::before {
     content: "#77a6c0"; }
 
-.color-sample--icon-main-hover {
+.color-sample--icon-primary-hover {
   background-color: #678fa6;
   color: #fff; }
-  .color-sample--icon-main-hover::before {
+  .color-sample--icon-primary-hover::before {
     content: "#678fa6"; }
 
-.color-sample--icon-main-active {
+.color-sample--icon-primary-active {
   background-color: #57798c;
   color: #fff; }
-  .color-sample--icon-main-active::before {
+  .color-sample--icon-primary-active::before {
     content: "#57798c"; }
 
 .color-sample--icon-info-default {

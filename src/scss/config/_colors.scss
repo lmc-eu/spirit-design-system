@@ -161,9 +161,9 @@ $border-colors: (
 );
 
 // Icon
-$icon-main-default: $action-primary-default !default;
-$icon-main-hover: $action-primary-hover !default;
-$icon-main-active: $action-primary-active !default;
+$icon-primary-default: $action-primary-default !default;
+$icon-primary-hover: $action-primary-hover !default;
+$icon-primary-active: $action-primary-active !default;
 $icon-info-default: $emotion-info-default !default;
 $icon-info-hover: $emotion-info-hover !default;
 $icon-info-active: $emotion-info-active !default;
@@ -178,9 +178,9 @@ $icon-danger-hover: $emotion-danger-hover !default;
 $icon-danger-active: $emotion-danger-active !default;
 
 $icon-colors: (
-  icon-main-default: ($icon-main-default, #fff),
-  icon-main-hover: ($icon-main-hover, #fff),
-  icon-main-active: ($icon-main-active, #fff),
+  icon-primary-default: ($icon-primary-default, #fff),
+  icon-primary-hover: ($icon-primary-hover, #fff),
+  icon-primary-active: ($icon-primary-active, #fff),
   icon-info-default: ($icon-info-default, #fff),
   icon-info-hover: ($icon-info-hover, #fff),
   icon-info-active: ($icon-info-active, #fff),
