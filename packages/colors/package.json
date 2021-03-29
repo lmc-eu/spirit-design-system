@@ -1,0 +1,12 @@
+{
+  "name": "@spirit/colors",
+  "version": "1.0.0",
+  "description": "Colors for digital and software products using the Spirit Design System",
+  "private": true,
+  "files": [
+    "scss"
+  ],
+  "scripts": {
+    "build": "node ./tasks/build.js"
+  }
+}

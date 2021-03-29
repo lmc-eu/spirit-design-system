@@ -1,0 +1,12 @@
+@use '@spirit/colors/src/scss' as *;
+
+body {
+  background: $gray-200;
+}
+
+.card {
+  background: $white;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 8px;
+}
