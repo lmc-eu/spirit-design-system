@@ -2,10 +2,13 @@
   "name": "spirit",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "commit:lint:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
+    "prepare": "husky install"
+  },
   "dependencies": {
     "del": "^6.0.0",
     "gulp-plumber": "^1.2.1",
@@ -13,6 +16,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "@commitlint/cli": "^12.0.1",
+    "@lmc-eu/commitlint-config": "^1.0.0",
+    "gulp": "^4.0.2",
+    "husky": "^6.0.0"
   }
 }
