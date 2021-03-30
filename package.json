@@ -7,6 +7,9 @@
   "license": "ISC",
   "scripts": {
     "commit:lint:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
+    "format": "yarn format:check",
+    "format:check": "prettier --list-different 'packages/**/*.{js,jsx,ts,tsx}'",
+    "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -18,7 +21,9 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@lmc-eu/commitlint-config": "^1.0.0",
+    "@lmc-eu/prettier-config": "^1.0.1",
     "gulp": "^4.0.2",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "prettier": "^2.2.1"
   }
 }
