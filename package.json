@@ -10,7 +10,9 @@
     "format": "yarn format:check",
     "format:check": "prettier --list-different 'packages/**/*.{js,jsx,ts,tsx}'",
     "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "del": "^6.0.0",
@@ -19,9 +21,15 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.16",
     "@commitlint/cli": "^12.0.1",
     "@lmc-eu/commitlint-config": "^1.0.0",
     "@lmc-eu/prettier-config": "^1.0.1",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/html": "^6.2.9",
+    "babel-loader": "^8.2.2",
     "gulp": "^4.0.2",
     "husky": "^6.0.0",
     "prettier": "^2.2.1"
