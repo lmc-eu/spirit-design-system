@@ -1,18 +1,34 @@
 {
   "name": "spirit",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Spirit Design System",
+  "keywords": [
+    "spirit",
+    "design",
+    "system"
+  ],
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig": {
+    "registry": "https://nexus3-2.sandbox.cdev/repository/npm-test1/"
+  },
   "scripts": {
+    "build": "lerna run build",
+    "diff": "lerna diff",
+    "changed": "lerna changed",
+    "list": "lerna ls",
     "commit:lint:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
     "format": "yarn format:check",
     "format:check": "prettier --list-different 'packages/**/*.{js,jsx,ts,tsx,scss}'",
     "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx,scss}'",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
-    "storybook:build": "build-storybook -o ./.storybook/build"
+    "storybook:build": "build-storybook -o ./.storybook/build",
+    "test": "lerna run test",
+    "release": "yarn build && lerna publish"
   },
   "dependencies": {
     "del": "^6.0.0",
@@ -34,6 +50,7 @@
     "babel-loader": "^8.2.2",
     "gulp": "^4.0.2",
     "husky": "^6.0.0",
+    "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   }
 }
