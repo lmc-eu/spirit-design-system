@@ -12,7 +12,7 @@
     "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx}'",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook -o ./.storybook/build"
   },
   "dependencies": {
     "del": "^6.0.0",
