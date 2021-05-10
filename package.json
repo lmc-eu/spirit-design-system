@@ -8,8 +8,8 @@
   "scripts": {
     "commit:lint:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
     "format": "yarn format:check",
-    "format:check": "prettier --list-different 'packages/**/*.{js,jsx,ts,tsx}'",
-    "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --list-different 'packages/**/*.{js,jsx,ts,tsx,scss}'",
+    "format:fix": "prettier --write 'packages/**/*.{js,jsx,ts,tsx,scss}'",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "storybook:build": "build-storybook -o ./.storybook/build"

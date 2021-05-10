@@ -37,8 +37,14 @@ $brand-primary: #132930 !default;
 $brand-secondary: #77a6c0 !default;
 
 $brand-colors: (
-  brand-primary: ($brand-primary, #fff),
-  brand-secondary: ($brand-secondary, #fff),
+  brand-primary: (
+    $brand-primary,
+    #fff,
+  ),
+  brand-secondary: (
+    $brand-secondary,
+    #fff,
+  ),
 );
 
 // Text
@@ -48,10 +54,20 @@ $text-secondary: $gray-500 !default;
 $text-secondary-inverted: #e9e9e9 !default;
 
 $text-colors: (
-  text-primary: ($text-primary, #fff),
-  text-secondary: ($text-secondary, #fff),
-  text-primary-inverted: ($text-primary-inverted, $text-primary, $gray-200),
-  text-secondary-inverted: $text-secondary-inverted
+  text-primary: (
+    $text-primary,
+    #fff,
+  ),
+  text-secondary: (
+    $text-secondary,
+    #fff,
+  ),
+  text-primary-inverted: (
+    $text-primary-inverted,
+    $text-primary,
+    $gray-200,
+  ),
+  text-secondary-inverted: $text-secondary-inverted,
 );
 
 // Background
@@ -59,7 +75,11 @@ $background-basic: $white !default;
 $background-cover: #f0f4f5 !default;
 
 $background-colors: (
-  background-basic: ($background-basic, $text-primary, $gray-200),
+  background-basic: (
+    $background-basic,
+    $text-primary,
+    $gray-200,
+  ),
   background-cover: $background-cover,
 );
 
@@ -82,22 +102,58 @@ $action-link-secondary-active: #6e7b80 !default;
 $action-link-secondary-disabled: #e2e2e2 !default;
 
 $action-colors: (
-  action-primary-default: ($action-primary-default, #fff),
-  action-primary-hover: ($action-primary-hover, #fff),
-  action-primary-active: ($action-primary-active, #fff),
+  action-primary-default: (
+    $action-primary-default,
+    #fff,
+  ),
+  action-primary-hover: (
+    $action-primary-hover,
+    #fff,
+  ),
+  action-primary-active: (
+    $action-primary-active,
+    #fff,
+  ),
   action-primary-disabled: $action-primary-disabled,
-  action-secondary-default: ($action-secondary-default, #fff),
-  action-secondary-hover: ($action-secondary-hover, #fff),
-  action-secondary-active: ($action-secondary-active, #fff),
+  action-secondary-default: (
+    $action-secondary-default,
+    #fff,
+  ),
+  action-secondary-hover: (
+    $action-secondary-hover,
+    #fff,
+  ),
+  action-secondary-active: (
+    $action-secondary-active,
+    #fff,
+  ),
   action-secondary-disabled: $action-secondary-disabled,
-  action-link-primary-default: ($action-link-primary-default, #fff),
-  action-link-primary-hover: ($action-link-primary-hover, #fff),
-  action-link-primary-active: ($action-link-primary-active, #fff),
+  action-link-primary-default: (
+    $action-link-primary-default,
+    #fff,
+  ),
+  action-link-primary-hover: (
+    $action-link-primary-hover,
+    #fff,
+  ),
+  action-link-primary-active: (
+    $action-link-primary-active,
+    #fff,
+  ),
   action-link-primary-disabled: $action-link-primary-disabled,
-  action-link-secondary-default: ($action-link-secondary-default, #fff),
-  action-link-secondary-hover: ($action-link-secondary-hover, #fff),
-  action-link-secondary-active: ($action-link-secondary-active, #fff),
-  action-link-secondary-disabled: $action-link-secondary-disabled
+  action-link-secondary-default: (
+    $action-link-secondary-default,
+    #fff,
+  ),
+  action-link-secondary-hover: (
+    $action-link-secondary-hover,
+    #fff,
+  ),
+  action-link-secondary-active: (
+    $action-link-secondary-active,
+    #fff,
+  ),
+  action-link-secondary-disabled: $action-link-secondary-disabled,
 );
 
 // Emotion
@@ -123,26 +179,62 @@ $emotion-danger-disabled: $gray-200 !default;
 $emotion-danger-background: $danger-200 !default;
 
 $emotion-colors: (
-  emotion-info-default: ($emotion-info-default, #fff),
-  emotion-info-hover: ($emotion-info-hover, #fff),
-  emotion-info-active: ($emotion-info-active, #fff),
+  emotion-info-default: (
+    $emotion-info-default,
+    #fff,
+  ),
+  emotion-info-hover: (
+    $emotion-info-hover,
+    #fff,
+  ),
+  emotion-info-active: (
+    $emotion-info-active,
+    #fff,
+  ),
   emotion-info-disabled: $emotion-info-disabled,
   emotion-info-background: $emotion-info-background,
-  emotion-success-default: ($emotion-success-default, #fff),
-  emotion-success-hover: ($emotion-success-hover, #fff),
-  emotion-success-active: ($emotion-success-active, #fff),
+  emotion-success-default: (
+    $emotion-success-default,
+    #fff,
+  ),
+  emotion-success-hover: (
+    $emotion-success-hover,
+    #fff,
+  ),
+  emotion-success-active: (
+    $emotion-success-active,
+    #fff,
+  ),
   emotion-success-disabled: $emotion-success-disabled,
   emotion-success-background: $emotion-success-background,
-  emotion-warning-default: ($emotion-warning-default, #fff),
-  emotion-warning-hover: ($emotion-warning-hover, #fff),
-  emotion-warning-active: ($emotion-warning-active, #fff),
+  emotion-warning-default: (
+    $emotion-warning-default,
+    #fff,
+  ),
+  emotion-warning-hover: (
+    $emotion-warning-hover,
+    #fff,
+  ),
+  emotion-warning-active: (
+    $emotion-warning-active,
+    #fff,
+  ),
   emotion-warning-disabled: $emotion-warning-disabled,
   emotion-warning-background: $emotion-warning-background,
-  emotion-danger-default: ($emotion-danger-default, #fff),
-  emotion-danger-hover: ($emotion-danger-hover, #fff),
-  emotion-danger-active: ($emotion-danger-active, #fff),
+  emotion-danger-default: (
+    $emotion-danger-default,
+    #fff,
+  ),
+  emotion-danger-hover: (
+    $emotion-danger-hover,
+    #fff,
+  ),
+  emotion-danger-active: (
+    $emotion-danger-active,
+    #fff,
+  ),
   emotion-danger-disabled: $emotion-danger-disabled,
-  emotion-danger-background: $emotion-danger-background
+  emotion-danger-background: $emotion-danger-background,
 );
 
 // Border
@@ -156,8 +248,11 @@ $border-colors: (
   border-main-default: $border-main-default,
   border-main-hover: $border-main-hover,
   border-main-active: $border-main-active,
-  border-main-selected: ($border-main-selected, #fff),
-  border-main-disabled: $border-main-disabled
+  border-main-selected: (
+    $border-main-selected,
+    #fff,
+  ),
+  border-main-disabled: $border-main-disabled,
 );
 
 // Icon
@@ -178,19 +273,64 @@ $icon-danger-hover: $emotion-danger-hover !default;
 $icon-danger-active: $emotion-danger-active !default;
 
 $icon-colors: (
-  icon-primary-default: ($icon-primary-default, #fff),
-  icon-primary-hover: ($icon-primary-hover, #fff),
-  icon-primary-active: ($icon-primary-active, #fff),
-  icon-info-default: ($icon-info-default, #fff),
-  icon-info-hover: ($icon-info-hover, #fff),
-  icon-info-active: ($icon-info-active, #fff),
-  icon-success-default: ($icon-success-default, #fff),
-  icon-success-hover: ($icon-success-hover, #fff),
-  icon-success-active: ($icon-success-active, #fff),
-  icon-warning-default: ($icon-warning-default, #fff),
-  icon-warning-hover: ($icon-warning-hover, #fff),
-  icon-warning-active: ($icon-warning-active, #fff),
-  icon-danger-default: ($icon-danger-default, #fff),
-  icon-danger-hover: ($icon-danger-hover, #fff),
-  icon-danger-active: ($icon-danger-active, #fff)
+  icon-primary-default: (
+    $icon-primary-default,
+    #fff,
+  ),
+  icon-primary-hover: (
+    $icon-primary-hover,
+    #fff,
+  ),
+  icon-primary-active: (
+    $icon-primary-active,
+    #fff,
+  ),
+  icon-info-default: (
+    $icon-info-default,
+    #fff,
+  ),
+  icon-info-hover: (
+    $icon-info-hover,
+    #fff,
+  ),
+  icon-info-active: (
+    $icon-info-active,
+    #fff,
+  ),
+  icon-success-default: (
+    $icon-success-default,
+    #fff,
+  ),
+  icon-success-hover: (
+    $icon-success-hover,
+    #fff,
+  ),
+  icon-success-active: (
+    $icon-success-active,
+    #fff,
+  ),
+  icon-warning-default: (
+    $icon-warning-default,
+    #fff,
+  ),
+  icon-warning-hover: (
+    $icon-warning-hover,
+    #fff,
+  ),
+  icon-warning-active: (
+    $icon-warning-active,
+    #fff,
+  ),
+  icon-danger-default: (
+    $icon-danger-default,
+    #fff,
+  ),
+  icon-danger-hover: (
+    $icon-danger-hover,
+    #fff,
+  ),
+  icon-danger-active: (
+    $icon-danger-active,
+    #fff,
+  ),
 );
