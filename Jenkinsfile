@@ -330,7 +330,7 @@ pipeline {
               packageMetaList[NARWHAL_ARTIFACT] = new NarwhalPackage(
                 configStoreUrl,
                 NarwhalPackage.convertMetadataToJson([
-                  'app_version': latestTag,
+                  'app_version': latestTag - "@",
                   'build_version': buildVersion,
                   'build_type': appEnv,
                   'image': IMAGE_NAME,
