@@ -1,16 +1,16 @@
 'use strict';
 
-const fs = require("fs-extra");
+const fs = require('fs-extra');
 
-const source = 'src/scss'
-const destination = 'scss'
+const source = 'src/scss';
+const destination = 'scss';
 
 fs.copy(source, destination, (err) => {
-    if (err){
-        console.log('An error occured while copying the folder.');
+  if (err) {
+    console.log('An error occured while copying the folder.');
 
-        return console.error(err);
-    }
+    return console.error(err);
+  }
 
-    console.log('Copy completed!');
+  console.log('Copy completed!');
 });
