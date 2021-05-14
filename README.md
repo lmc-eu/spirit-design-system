@@ -74,9 +74,9 @@ In the project directory, you can run:
 
 ## Releases
 
-Automagic using Jenkins.
+Automagic using [Jenkins](https://jenkins-compres-build.prod.internal.lmc/job/spirit-design-system/).
 
-For seamless integration you can use `./bin/integrate.sh` script, eg.: it merges your actual branch into actual integration branch.
+For seamless integration you can use [`./bin/integrate.sh`](./bin/integrate.sh) script, eg.: it merges your actual branch into actual integration branch.
 
 - Integration branch: <http://spirit-design-system.dev.internal.lmc/>
 - Main branch: <http://spirit-design-system.prod.internal.lmc/>
