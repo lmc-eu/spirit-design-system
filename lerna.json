@@ -1,0 +1,12 @@
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "Chore(release): Publish",
+      "registry": "http://nexus3-2.sandbox.cdev:8888/repository/npm-test1"
+    }
+  }
+}

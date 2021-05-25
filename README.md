@@ -1,5 +1,11 @@
 # SPIRIT
 
+> Spirit is an open-source design system built by LMC. With the LMC Design
+
+<a href="https://lerna.js.org/">
+    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with Lerna" />
+</a>
+
 - [Getting started](#usage)
 - [Prerequisites](#prerequisites)
 - [Development](#development)
@@ -12,6 +18,10 @@
 ```javascript
 npm install @spirit/<package-name>
 ```
+
+If you're just getting started, check out
+[`@spirit/components`](./packages/components). If you're looking for React
+components, take a look at [`@spirit/react`](./packages/react).
 
 If you're trying to find something specific, here's a full list of packages that
 we support!
