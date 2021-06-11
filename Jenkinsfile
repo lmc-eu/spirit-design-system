@@ -1,5 +1,5 @@
 #!groovy
-@Library('lmc-jenkins2-shared-library@master')
+@Library('lmc-jenkins2-shared-library@feat/npm-command')
 @Library('compres-jenkins2-shared-libraries@2.2.2') _
 
 import eu.lmc.compres.Helper
@@ -8,6 +8,7 @@ import eu.lmc.compres.NarwhalPackage
 import eu.lmc.compres.Release
 import eu.lmc.pipeline.DockerRegistry
 import groovy.json.JsonOutput
+import eu.lmc.pipeline.NpmRegistry
 
 Map envListToInstall = [
   dev: ["dev-internal"],
@@ -189,7 +190,7 @@ pipeline {
             }
           }
         }
-        stage('Build package') {
+        stage('Publish package') {
           when {
             beforeAgent true
             branch 'main'
@@ -200,7 +201,8 @@ pipeline {
               if ( "${skipBuild}" == "" ) {
                 sh "git config push.default simple"
 
-                // sh "yarn version --`$WORKSPACE/bin/conventional-semver.sh`"
+                sh "yarn lerna version `$WORKSPACE/bin/conventional-semver.sh`"
+                new NpmRegistry(this, 'yarn lerna publish from-package --yes --registry %s', false).publishParallel()
               }
             }
           }

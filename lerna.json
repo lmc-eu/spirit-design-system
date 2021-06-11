@@ -2,11 +2,19 @@
   "packages": ["packages/*"],
   "version": "independent",
   "npmClient": "yarn",
+  "npmClientArgs": ["--frozen-lockfile"],
   "useWorkspaces": true,
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/docs/**",
+    "**/e2e/**",
+    "**/examples/**",
+    "**/*.md"
+  ],
   "command": {
     "publish": {
-      "message": "Chore(release): Publish",
-      "registry": "http://nexus3-2.sandbox.cdev:8888/repository/npm-test1"
+      "message": "Chore(release): Publish"
     }
   }
 }
