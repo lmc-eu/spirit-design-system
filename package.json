@@ -12,9 +12,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "publishConfig": {
-    "registry": "https://nexus3-2.sandbox.cdev/repository/npm-test1/"
-  },
   "scripts": {
     "build": "lerna run build",
     "diff": "lerna diff",
@@ -28,7 +25,7 @@
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "storybook:build": "build-storybook -o ./.storybook/build",
     "test": "lerna run test",
-    "release": "yarn build && lerna publish"
+    "version": "yarn build"
   },
   "dependencies": {
     "del": "^6.0.0",

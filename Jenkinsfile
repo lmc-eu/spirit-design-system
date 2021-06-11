@@ -193,7 +193,7 @@ pipeline {
         stage('Publish package') {
           when {
             beforeAgent true
-            branch 'main'
+            branch 'feature/DS-9-balicek-colors'
           }
           steps {
             script {
@@ -201,7 +201,7 @@ pipeline {
               if ( "${skipBuild}" == "" ) {
                 sh "git config push.default simple"
 
-                sh "yarn lerna version `$WORKSPACE/bin/conventional-semver.sh`"
+                sh "yarn lerna version `$WORKSPACE/bin/conventional-semver.sh` --yes"
                 new NpmRegistry(this, 'yarn lerna publish from-package --yes --registry %s', false).publishParallel()
               }
             }
