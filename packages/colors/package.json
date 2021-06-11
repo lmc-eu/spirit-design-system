@@ -1,6 +1,6 @@
 {
   "name": "@spirit/colors",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Colors for digital and software products using the Spirit Design System",
   "license": "MIT",
   "publishConfig": {
@@ -11,5 +11,6 @@
   ],
   "scripts": {
     "build": "node ./tasks/build.js"
-  }
+  },
+  "gitHead": "8a6eea19c350f0e3ddd1b42332fd4ca2c01485bd"
 }
