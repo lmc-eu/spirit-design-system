@@ -12,9 +12,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "publishConfig": {
-    "registry": "https://nexus3-2.sandbox.cdev/repository/npm-test1/"
-  },
   "scripts": {
     "build": "lerna run build",
     "diff": "lerna diff",
