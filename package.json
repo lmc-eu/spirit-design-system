@@ -9,6 +9,10 @@
   ],
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=14",
+    "yarn": "~1.22.10"
+  },
   "workspaces": [
     "packages/*"
   ],
