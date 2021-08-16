@@ -1,0 +1,32 @@
+{
+  "name": "@lmc-eu/spirit-example-web-react",
+  "version": "0.1.0",
+  "description": "Example project with Spirit React components",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "precopy": "mkdirp ./built",
+    "copy": "npm run copy:css",
+    "copy:css": "cp ../../node_modules/@lmc-eu/spirit-web/dist/default/css/components.min.css built/components.min.css",
+    "prebuild": "npm run copy",
+    "build": "webpack --config ./webpack.config.js --mode development"
+  },
+  "dependencies": {
+    "@lmc-eu/spirit-web": "~0.1.0",
+    "@lmc-eu/spirit-web-react": "~0.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "mkdirp": "^1.0.4",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
