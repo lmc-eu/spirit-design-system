@@ -1,0 +1,20 @@
+{
+  "name": "@lmc-eu/spirit-design-tokens",
+  "version": "0.1.0",
+  "description": "Design tokens for Spirit Design System",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/scss/index.scss"
+  ],
+  "scripts": {
+    "test": "stylelint --config ../../.stylelintrc ./src/**/*.scss"
+  },
+  "devDependencies": {
+    "@lmc-eu/stylelint-config": "^1.0.3",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0"
+  }
+}
