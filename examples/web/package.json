@@ -1,0 +1,20 @@
+{
+  "name": "@lmc-eu/spirit-example-web",
+  "version": "0.1.0",
+  "description": "Example project with Spirit Web framework",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "prebuild": "mkdirp ./built",
+    "build": "cp ../../node_modules/@lmc-eu/spirit-web/dist/default/css/components.min.css built/components.min.css"
+  },
+  "dependencies": {
+    "@lmc-eu/spirit-web": "~0.1.0"
+  },
+  "devDependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}
