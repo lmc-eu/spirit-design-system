@@ -1,0 +1,22 @@
+{
+  "name": "@lmc-eu/spirit-web-react",
+  "version": "0.1.0",
+  "description": "React components for web apps built with Spirit Design System",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@lmc-eu/browserslist-config": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@lmc-eu/spirit-web": "~0.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
