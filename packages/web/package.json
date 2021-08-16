@@ -1,0 +1,34 @@
+{
+  "name": "@lmc-eu/spirit-web",
+  "version": "0.1.0",
+  "description": "CSS and JS for web apps built with Spirit Design System",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm run css",
+    "precss": "npm run css:lint",
+    "css": "npm run css:default",
+    "css:lint": "stylelint --config ../../.stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css:default": "npm run css:default:compile && npm run css:default:prefix && npm run css:default:minify",
+    "css:default:compile": "sass \"src/components/index.scss\" dist/default/css/components.css",
+    "css:default:prefix": "postcss --config postcss.config.js --replace \"dist/*/css/*.css\" \"!dist/*/css/*.min.css\"",
+    "css:default:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --output \"dist/default/css/components.min.css\" \"dist/default/css/components.css\"",
+    "test": "npm run css:lint"
+  },
+  "devDependencies": {
+    "@lmc-eu/browserslist-config": "^1.0.0",
+    "@lmc-eu/stylelint-config": "^1.0.3",
+    "autoprefixer": "^10.3.1",
+    "clean-css-cli": "^5.3.3",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.37.5",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0"
+  },
+  "dependencies": {
+    "@lmc-eu/spirit-design-tokens": "~0.1.0"
+  }
+}
