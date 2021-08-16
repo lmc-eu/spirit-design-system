@@ -1,0 +1,47 @@
+@use 'theme';
+@use 'tools';
+
+.lmc-Button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(#{theme.$padding-y} - #{theme.$border-width}) calc(#{theme.$padding-x} - #{theme.$border-width});
+    font-family: theme.$font-family;
+    text-align: center;
+    text-decoration: theme.$text-decoration;
+    line-height: theme.$line-height;
+    vertical-align: middle;
+    background-color: transparent;
+    border-width: theme.$border-width;
+    border-style: theme.$border-style;
+    border-color: theme.$border-color;
+    border-radius: theme.$border-radius;
+    transition-property: theme.$transition-property;
+    transition-duration: theme.$transition-duration;
+    transition-timing-function: theme.$transition-timing-function;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: theme.$hover-text-decoration;
+    }
+
+    &:disabled {
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.lmc-Button__icon {
+    font-size: 1.5em;
+}
+
+.lmc-Button--square {
+    width: calc((1em * #{theme.$line-height}) + (#{theme.$padding-y} * 2));
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@each $variant, $variables in theme.$variants {
+    @include tools.variant($variant, $variables);
+}

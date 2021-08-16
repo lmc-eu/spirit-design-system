@@ -1,0 +1,229 @@
+@use '../../../node_modules/@lmc-eu/spirit-design-tokens/src/default/scss' as tokens;
+
+$padding-x: 1.5rem !default;
+$padding-y: 0.5rem !default;
+$font-family: null !default;
+$font-size: tokens.$font-size-base !default;
+$line-height: tokens.$line-height-default !default;
+$text-decoration: none !default;
+$hover-text-decoration: none !default;
+$border-width: 1px !default;
+$border-style: solid !default;
+$border-color: transparent !default;
+$border-radius: tokens.$radius-1 !default;
+$transition-duration: null !default;
+$transition-property: null !default;
+$transition-timing-function: null !default;
+
+// Primary button
+$primary-default-color: tokens.$text-primary-inverted-default !default;
+$primary-default-background: tokens.$action-primary-default !default;
+$primary-default-border-color: $primary-default-background !default;
+$primary-hover-color: $primary-default-color !default;
+$primary-hover-background: tokens.$action-primary-hover !default;
+$primary-hover-border-color: $primary-hover-background !default;
+$primary-active-color: $primary-default-color !default;
+$primary-active-background: tokens.$action-primary-hover !default;
+$primary-active-border-color: $primary-active-background !default;
+$primary-disabled-color: $primary-default-color !default;
+$primary-disabled-background: tokens.$action-primary-disabled !default;
+$primary-disabled-border-color: $primary-disabled-background !default;
+
+$primary: (
+    default-color: $primary-default-color,
+    default-background: $primary-default-background,
+    default-border-color: $primary-default-border-color,
+    hover-color: $primary-hover-color,
+    hover-background: $primary-hover-background,
+    hover-border-color: $primary-hover-border-color,
+    active-color: $primary-active-color,
+    active-background: $primary-active-background,
+    active-border-color: $primary-active-border-color,
+    disabled-color: $primary-disabled-color,
+    disabled-background: $primary-disabled-background,
+    disabled-border-color: $primary-disabled-border-color,
+);
+
+// Secondary button
+$secondary-default-color: tokens.$action-primary-default !default;
+$secondary-default-background: #fff !default;
+$secondary-default-border-color: $secondary-default-color !default;
+$secondary-hover-color: tokens.$action-primary-hover !default;
+$secondary-hover-background: $secondary-default-background !default;
+$secondary-hover-border-color: $secondary-hover-color !default;
+$secondary-active-color: tokens.$action-primary-active !default;
+$secondary-active-background: $secondary-default-background !default;
+$secondary-active-border-color: $secondary-active-color !default;
+$secondary-disabled-color: tokens.$action-primary-disabled !default;
+$secondary-disabled-background: $secondary-default-background !default;
+$secondary-disabled-border-color: $secondary-disabled-color !default;
+
+$secondary: (
+    default-color: $secondary-default-color,
+    default-background: $secondary-default-background,
+    default-border-color: $secondary-default-border-color,
+    hover-color: $secondary-hover-color,
+    hover-background: $secondary-hover-background,
+    hover-border-color: $secondary-hover-border-color,
+    active-color: $secondary-active-color,
+    active-background: $secondary-active-background,
+    active-border-color: $secondary-active-border-color,
+    disabled-color: $secondary-disabled-color,
+    disabled-background: $secondary-disabled-background,
+    disabled-border-color: $secondary-disabled-border-color,
+);
+
+// Tertiary button
+$tertiary-default-color: tokens.$text-primary-inverted-default !default;
+$tertiary-default-background: tokens.$action-secondary-default !default;
+$tertiary-default-border-color: $tertiary-default-background !default;
+$tertiary-hover-color: $tertiary-default-color !default;
+$tertiary-hover-background: tokens.$action-secondary-hover !default;
+$tertiary-hover-border-color: $tertiary-hover-background !default;
+$tertiary-active-color: $tertiary-default-color !default;
+$tertiary-active-background: tokens.$action-secondary-active !default;
+$tertiary-active-border-color: $tertiary-active-background !default;
+$tertiary-disabled-color: $tertiary-default-color !default;
+$tertiary-disabled-background: tokens.$action-primary-disabled !default;
+$tertiary-disabled-border-color: $tertiary-disabled-background !default;
+
+$tertiary: (
+    default-color: $tertiary-default-color,
+    default-background: $tertiary-default-background,
+    default-border-color: $tertiary-default-border-color,
+    hover-color: $tertiary-hover-color,
+    hover-background: $tertiary-hover-background,
+    hover-border-color: $tertiary-hover-border-color,
+    active-color: $tertiary-active-color,
+    active-background: $tertiary-active-background,
+    active-border-color: $tertiary-active-border-color,
+    disabled-color: $tertiary-disabled-color,
+    disabled-background: $tertiary-disabled-background,
+    disabled-border-color: $tertiary-disabled-border-color,
+);
+
+// Info button
+$info-default-color: tokens.$text-primary-inverted-default !default;
+$info-default-background: tokens.$emotion-info-default !default;
+$info-default-border-color: $info-default-background !default;
+$info-hover-color: $info-default-color !default;
+$info-hover-background: tokens.$emotion-info-hover !default;
+$info-hover-border-color: $info-hover-background !default;
+$info-active-color: $info-default-color !default;
+$info-active-background: tokens.$emotion-info-active !default;
+$info-active-border-color: $info-active-background !default;
+$info-disabled-color: $info-default-color !default;
+$info-disabled-background: tokens.$emotion-info-disabled !default;
+$info-disabled-border-color: $info-disabled-background !default;
+
+$info: (
+    default-color: $info-default-color,
+    default-background: $info-default-background,
+    default-border-color: $info-default-border-color,
+    hover-color: $info-hover-color,
+    hover-background: $info-hover-background,
+    hover-border-color: $info-hover-border-color,
+    active-color: $info-active-color,
+    active-background: $info-active-background,
+    active-border-color: $info-active-border-color,
+    disabled-color: $info-disabled-color,
+    disabled-background: $info-disabled-background,
+    disabled-border-color: $info-disabled-border-color,
+);
+
+// Success button
+$success-default-color: tokens.$text-primary-inverted-default !default;
+$success-default-background: tokens.$emotion-success-default !default;
+$success-default-border-color: $success-default-background !default;
+$success-hover-color: $success-default-color !default;
+$success-hover-background: tokens.$emotion-success-hover !default;
+$success-hover-border-color: $success-hover-background !default;
+$success-active-color: $success-default-color !default;
+$success-active-background: tokens.$emotion-success-active !default;
+$success-active-border-color: $success-active-background !default;
+$success-disabled-color: $success-default-color !default;
+$success-disabled-background: tokens.$emotion-success-disabled !default;
+$success-disabled-border-color: $success-disabled-background !default;
+
+$success: (
+    default-color: $success-default-color,
+    default-background: $success-default-background,
+    default-border-color: $success-default-border-color,
+    hover-color: $success-hover-color,
+    hover-background: $success-hover-background,
+    hover-border-color: $success-hover-border-color,
+    active-color: $success-active-color,
+    active-background: $success-active-background,
+    active-border-color: $success-active-border-color,
+    disabled-color: $success-disabled-color,
+    disabled-background: $success-disabled-background,
+    disabled-border-color: $success-disabled-border-color,
+);
+
+// Warning button
+$warning-default-color: tokens.$text-primary-inverted-default !default;
+$warning-default-background: tokens.$emotion-warning-default !default;
+$warning-default-border-color: $warning-default-background !default;
+$warning-hover-color: $warning-default-color !default;
+$warning-hover-background: tokens.$emotion-warning-hover !default;
+$warning-hover-border-color: $warning-hover-background !default;
+$warning-active-color: $warning-default-color !default;
+$warning-active-background: tokens.$emotion-warning-active !default;
+$warning-active-border-color: $warning-active-background !default;
+$warning-disabled-color: $warning-default-color !default;
+$warning-disabled-background: tokens.$emotion-warning-disabled !default;
+$warning-disabled-border-color: $warning-disabled-background !default;
+
+$warning: (
+    default-color: $warning-default-color,
+    default-background: $warning-default-background,
+    default-border-color: $warning-default-border-color,
+    hover-color: $warning-hover-color,
+    hover-background: $warning-hover-background,
+    hover-border-color: $warning-hover-border-color,
+    active-color: $warning-active-color,
+    active-background: $warning-active-background,
+    active-border-color: $warning-active-border-color,
+    disabled-color: $warning-disabled-color,
+    disabled-background: $warning-disabled-background,
+    disabled-border-color: $warning-disabled-border-color,
+);
+
+// Danger button
+$danger-default-color: tokens.$text-primary-inverted-default !default;
+$danger-default-background: tokens.$emotion-danger-default !default;
+$danger-default-border-color: $danger-default-background !default;
+$danger-hover-color: $danger-default-color !default;
+$danger-hover-background: tokens.$emotion-danger-hover !default;
+$danger-hover-border-color: $danger-hover-background !default;
+$danger-active-color: $danger-default-color !default;
+$danger-active-background: tokens.$emotion-danger-active !default;
+$danger-active-border-color: $danger-active-background !default;
+$danger-disabled-color: $danger-default-color !default;
+$danger-disabled-background: tokens.$emotion-danger-disabled !default;
+$danger-disabled-border-color: $danger-disabled-background !default;
+
+$danger: (
+    default-color: $danger-default-color,
+    default-background: $danger-default-background,
+    default-border-color: $danger-default-border-color,
+    hover-color: $danger-hover-color,
+    hover-background: $danger-hover-background,
+    hover-border-color: $danger-hover-border-color,
+    active-color: $danger-active-color,
+    active-background: $danger-active-background,
+    active-border-color: $danger-active-border-color,
+    disabled-color: $danger-disabled-color,
+    disabled-background: $danger-disabled-background,
+    disabled-border-color: $danger-disabled-border-color,
+);
+
+$variants: (
+    primary: $primary,
+    secondary: $secondary,
+    tertiary: $tertiary,
+    info: $info,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
+);
