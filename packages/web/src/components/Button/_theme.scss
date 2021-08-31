@@ -1,8 +1,8 @@
-@use '../../../node_modules/@lmc-eu/spirit-design-tokens/src/default/scss' as tokens;
+@use 'tokens';
 
 $padding-x: 1.5rem !default;
 $padding-y: 0.5rem !default;
-$font-family: null !default;
+$font-family: tokens.$font-family-default !default;
 $font-size: tokens.$font-size-base !default;
 $line-height: tokens.$line-height-default !default;
 $text-decoration: none !default;
