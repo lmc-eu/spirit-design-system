@@ -1,0 +1,12 @@
+@forward '../../../default/scss/colors' with (
+    $brand-primary: #f90,
+    $brand-secondary: #19325a,
+    $action-primary-default: #f90,
+    $action-primary-hover: #eb8c00,
+);
+@forward '../../../default/scss/radii';
+@forward '../../../default/scss/shadows';
+@forward '../../../default/scss/spacing';
+@forward '../../../default/scss/typography' with (
+    $font-family-default: #{'Open Sans', helvetica, roboto, arial, sans-serif},
+);
