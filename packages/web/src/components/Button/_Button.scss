@@ -1,11 +1,11 @@
-@use 'theme';
+@use 'Button.theme' as theme;
 @use 'tools';
 
 .lmc-Button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: calc(#{theme.$padding-y} - #{theme.$border-width}) calc(#{theme.$padding-x} - #{theme.$border-width});
+    padding: theme.$padding-y theme.$padding-x;
     font-family: theme.$font-family;
     text-align: center;
     text-decoration: theme.$text-decoration;
