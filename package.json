@@ -54,6 +54,8 @@
     "gulp": "^4.0.2",
     "husky": "^7.0.2",
     "lerna": "^4.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.7.2"
   }
 }
