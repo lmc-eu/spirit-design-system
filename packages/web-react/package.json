@@ -6,8 +6,17 @@
   "publishConfig": {
     "access": "public"
   },
+  "module": "_esNext/index.js",
+  "types": "_esNext/index.d.ts",
   "devDependencies": {
-    "@lmc-eu/browserslist-config": "^1.0.0"
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.2",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-merge": "^5.8.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.7.2"
   },
   "peerDependencies": {
     "@lmc-eu/spirit-web": "*",
@@ -15,8 +24,22 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "classnames": "^2.3.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "prebuild": "rm -rf dist && mkdir -p dist && cp package.json README.md dist/ ",
+    "build": "yarn build:umd && yarn build:es2015 && yarn build:esNext",
+    "build:umd": "yarn webpack:dev && yarn webpack:prod && yarn webpack:browser",
+    "build:es2015": "tsc --module es2015 --outDir dist/_es2015 --project ./config/tsconfig.prod.json",
+    "build:esNext": "tsc --module esNext --outDir dist/_esNext --project ./config/tsconfig.prod.json",
+    "types": "tsc -p ./config/tsconfig.json",
+    "webpack:dev": "webpack --mode development --config ./config/webpack.js --progress",
+    "webpack:prod": "webpack --mode production --config ./config/webpack.js --progress",
+    "webpack:browser": "webpack --mode production --config ./config/webpack.browser.js --progress"
   }
 }
