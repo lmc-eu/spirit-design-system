@@ -30,6 +30,7 @@
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "storybook:build": "build-storybook -o ./.storybook/build",
     "test": "lerna run test",
+    "types": "lerna run types",
     "release": "yarn build && lerna publish"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-name: Format Check
+name: Lint
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check-format:
+  lint:
     runs-on: ubuntu-20.04
     timeout-minutes: 5
     steps:
@@ -26,3 +26,6 @@ jobs:
 
       - name: Check format
         run: yarn format:check
+
+      - name: Check Types
+        run: yarn types
