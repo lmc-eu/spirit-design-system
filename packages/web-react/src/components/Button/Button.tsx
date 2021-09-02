@@ -3,7 +3,8 @@ import classNames from 'classnames';
 
 type Color = 'primary' | 'secondary' | 'tertiary';
 
-const getButtonColorClassname = (color: Color): string => `lmc-Button--${color}`;
+const getButtonColorClassname = (color: Color): string =>
+  `lmc-Button--${color}`;
 
 interface ButtonsProps {
   /**
