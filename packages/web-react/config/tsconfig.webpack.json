@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.prod.json",
   "compilerOptions": {
-    "declarationDir": "./dist/_bundles"
+    "declarationDir": "../dist/_bundles"
   }
 }
