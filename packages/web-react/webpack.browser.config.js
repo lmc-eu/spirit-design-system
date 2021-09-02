@@ -13,7 +13,7 @@ module.exports = (env, argv) => ({
   resolve: { extensions: ['.ts', '.js', '.tsx'] },
   output: {
     // Puts the output at the root of the dist folder
-    path: path.join(__dirname, '_bundles'),
+    path: path.join(__dirname, 'dist/_bundles'),
     filename:
       libName + (argv.mode === 'production' ? '.umd.min.js' : '.umd.js'),
     libraryTarget: 'umd',
