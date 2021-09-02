@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "../dist",
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
@@ -34,10 +34,10 @@
     ],
   },
   "include": [
-    "src/**/*",
+    "../src/**/*",
   ],
   "exclude": [
-    "node_modules",
-    "src/**/__tests__/**/*",
+    "../node_modules",
+    "../src/**/__tests__/**/*",
   ]
 }
