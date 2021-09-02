@@ -1,0 +1,10 @@
+# Code owners for spirit-design-system
+# https://help.github.com/en/articles/about-code-owners
+
+* @lmc-eu/frontend-developers
+
+# Packages' owners
+
+/packages/design-tokens           @adamkudrna @crishpeen @lmc-eu/frontend-developers
+/packages/web                     @adamkudrna @crishpeen @lmc-eu/frontend-developers
+/packages/web-react               @literat @adamkudrna @crishpeen @lmc-eu/frontend-developers
