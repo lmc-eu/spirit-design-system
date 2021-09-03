@@ -9,9 +9,9 @@
   },
   "scripts": {
     "precopy": "mkdirp ./built",
-    "copy": "npm run copy:css",
+    "copy": "yarn copy:css",
     "copy:css": "cp ../../node_modules/@lmc-eu/spirit-web/dist/default/css/components.min.css built/components.min.css",
-    "prebuild": "npm run copy",
+    "prebuild": "yarn copy",
     "build": "webpack --config ./webpack.config.js --mode development"
   },
   "dependencies": {
