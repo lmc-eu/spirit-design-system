@@ -9,8 +9,8 @@
   },
   "scripts": {
     "prebuild": "mkdirp ./built",
-    "build": "npm run copy",
-    "copy": "npm run copy:default && npm run copy:jobs",
+    "build": "yarn copy",
+    "copy": "yarn copy:default && yarn copy:jobs",
     "copy:default": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/default/components.min.css built/components.min.css",
     "copy:jobs": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/jobs/components.min.css built/components-jobs.min.css"
   },
