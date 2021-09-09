@@ -2002,9 +2002,9 @@
     q "^1.5.1"
 
 "@lmc-eu/prettier-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.0.1.tgz#42f4c4c4d61352de320a60c1d5fd925b6a01b62e"
-  integrity sha512-/WzltpXUaWVKz/qPwvzUh1WYmvV197OUqbprsxlkFrr54cE/Cw9oXQGfbXf49OlXTy1keSFxaPxvMMdj30kkDA==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.0.3.tgz#e38ca0aa59fab1b6a5c1e347362764a9583018c6"
+  integrity sha512-CoXws/7EQjg78X+0TUCpubaUlK76mzae52fsgsRhPtgf0KLCTvIKUzNnPDa+SzlAMG7c+yNi2YFbflgKeQso4A==
 
 "@mdx-js/loader@^1.6.22":
   version "1.6.22"
