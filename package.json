@@ -50,7 +50,7 @@
     "@storybook/theming": "^6.2.9",
     "babel-loader": "^8.2.2",
     "gulp": "^4.0.2",
-    "husky": "^6.0.0",
+    "husky": "^7.0.2",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1"
   }
