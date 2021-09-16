@@ -1,0 +1,110 @@
+@use 'tokens';
+
+$padding-x: tokens.$space-4 !default;
+$padding-y: 0.46875rem !default;
+$font-size: tokens.$font-size-3 !default;
+$line-height: tokens.$line-height-small !default;
+$border-radius: tokens.$radius-1 !default;
+
+// Default light tag
+$default-light-color: tokens.$text-primary-default !default;
+$default-light-background: tokens.$background-cover !default;
+
+$default-light: (
+    default-color: $default-light-color,
+    default-background: $default-light-background,
+);
+
+// Default dark tag
+$default-dark-color: tokens.$text-primary-inverted-default !default;
+$default-dark-background: tokens.$background-inverted !default;
+
+$default-dark: (
+    default-color: $default-dark-color,
+    default-background: $default-dark-background,
+);
+
+// Info light tag
+$info-light-color: tokens.$emotion-info-default !default;
+$info-light-background: tokens.$emotion-info-background !default;
+
+$info-light: (
+    default-color: $info-light-color,
+    default-background: $info-light-background,
+);
+
+// Info dark tag
+$info-dark-color: tokens.$text-primary-inverted-default !default;
+$info-dark-background: tokens.$emotion-info-default !default;
+
+$info-dark: (
+    default-color: $info-dark-color,
+    default-background: $info-dark-background,
+);
+
+// Success light tag
+$success-light-color: tokens.$emotion-success-default !default;
+$success-light-background: tokens.$emotion-success-background !default;
+
+$success-light: (
+    default-color: $success-light-color,
+    default-background: $success-light-background,
+);
+
+// Success dark tag
+$success-dark-color: tokens.$text-primary-inverted-default !default;
+$success-dark-background: tokens.$emotion-success-default !default;
+
+$success-dark: (
+    default-color: $success-dark-color,
+    default-background: $success-dark-background,
+);
+
+// Warning light tag
+$warning-light-color: tokens.$emotion-warning-default !default;
+$warning-light-background: tokens.$emotion-warning-background !default;
+
+$warning-light: (
+    default-color: $warning-light-color,
+    default-background: $warning-light-background,
+);
+
+// Warning dark tag
+$warning-dark-color: tokens.$text-primary-inverted-default !default;
+$warning-dark-background: tokens.$emotion-warning-default !default;
+
+$warning-dark: (
+    default-color: $warning-dark-color,
+    default-background: $warning-dark-background,
+);
+
+// Danger light tag
+$danger-light-color: tokens.$emotion-danger-default !default;
+$danger-light-background: tokens.$emotion-danger-background !default;
+
+$danger-light: (
+    default-color: $danger-light-color,
+    default-background: $danger-light-background,
+);
+
+// Danger dark tag
+$danger-dark-color: tokens.$text-primary-inverted-default !default;
+$danger-dark-background: tokens.$emotion-danger-default !default;
+
+$danger-dark: (
+    default-color: $danger-dark-color,
+    default-background: $danger-dark-background,
+);
+
+$variants: (
+    default-light: $default-light,
+    default-dark: $default-dark,
+    info-light: $info-light,
+    info-dark: $info-dark,
+    success-light: $success-light,
+    success-dark: $success-dark,
+    warning-light: $warning-light,
+    warning-dark: $warning-dark,
+    danger-light: $danger-light,
+    danger-dark: $danger-dark,
+);

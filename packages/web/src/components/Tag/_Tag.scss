@@ -1,0 +1,15 @@
+@use 'Tag.theme' as theme;
+@use 'tools';
+
+.lmc-Tag {
+    display: inline-block;
+    padding: theme.$padding-y theme.$padding-x;
+    font-size: theme.$font-size;
+    text-align: center;
+    line-height: theme.$line-height;
+    border-radius: theme.$border-radius;
+}
+
+@each $variant, $variables in theme.$variants {
+    @include tools.variant($variant, $variables);
+}
