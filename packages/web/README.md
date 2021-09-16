@@ -21,7 +21,7 @@ npm install --save @lmc-eu/spirit-web
 Link the full Spirit CSS with default branding in your HTML template:
 
 ```html
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/dist/default/css/components.min.css" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/default/components.min.css" />
 ```
 
 ### Sass
@@ -29,11 +29,15 @@ Link the full Spirit CSS with default branding in your HTML template:
 Import just the components you need in your Sass stylesheet:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-web/src/components/Button';
+@use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
 ```
+
+Make sure you have added Sass load paths for `tokens` and `*.theme` Sass
+modules so they are resolved correctly. See [theming] to learn how it works.
 
 ## Examples
 
 See [examples] for a live demo.
 
+[theming]: https://github.com/lmc-eu/spirit-design-system/blob/main/src/web/THEMING.md
 [examples]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web
