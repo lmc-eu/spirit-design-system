@@ -38,8 +38,8 @@ npm install --save @lmc-eu/spirit-design-tokens
 In Sass, import individual files by token categories:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-design-tokens/src/default/scss/colors';
-@use 'node_modules/@lmc-eu/spirit-design-tokens/src/default/scss/typography';
+@use 'node_modules/@lmc-eu/spirit-design-tokens/default/scss/colors';
+@use 'node_modules/@lmc-eu/spirit-design-tokens/default/scss/typography';
 
 .MyComponent {
     font-family: typography.$font-family-default;
@@ -50,7 +50,7 @@ In Sass, import individual files by token categories:
 Or import all tokens at once:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-design-tokens/src/default/scss' as tokens;
+@use 'node_modules/@lmc-eu/spirit-design-tokens/default/scss/tokens';
 
 .MyComponent {
     font-family: tokens.$font-family-default;
