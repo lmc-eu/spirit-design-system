@@ -1,7 +1,7 @@
 {
   "name": "@lmc-eu/spirit-web-react",
   "version": "0.1.0",
-  "description": "React components for web apps built with Spirit Design System",
+  "description": "React implementation of Spirit Design System components",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
