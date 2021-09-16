@@ -1,0 +1,7 @@
+@use 'tokens';
+
+@forward '../../../components/Tag/theme' with (
+    $padding-y: 0,
+    $line-height: 2,
+    $border-radius: 0,
+);
