@@ -1,75 +1,34 @@
 # SPIRIT
 
-> Spirit is an open-source design system built by LMC. With the LMC Design
+> Spirit is an open-source design system developed by LMC.
 
-<a href="https://lerna.js.org/">
-    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with Lerna" />
-</a>
+[![Maintained with Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 
-- [Getting started](#usage)
-- [Prerequisites](#prerequisites)
-- [Development](#development)
-- [Releases](#releases)
+## Getting Started
 
-<a name="usage"></a>
+See individual [packages](#packages) to learn how to get started.
 
-## Getting started
+## Packages
 
-```javascript
-npm install @spirit/<package-name>
-```
-
-If you're just getting started, check out
-[`@spirit/components`](./packages/components). If you're looking for React
-components, take a look at [`@spirit/react`](./packages/react).
-
-If you're trying to find something specific, here's a full list of packages that
-we support!
-
-| Package name                                  | Description                                                                                                                                                                                                                                   |
-| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@spirit/colors`](./packages/colors)  | Work with LMC Design Language colors                                                                                                                                                                                                       |
-
-<a name="prerequisites"></a>
-
-## Prerequisites
-
-- [node.js](https://nodejs.org/en/) Node Stable
-- [yarn](https://yarnpkg.com/lang/en/)
-
-### Dependencies
-
-<a name="development"></a>
+| Package name                                                 | Description                                                     |
+| ------------------------------------------------------------ | --------------------------------------------------------------- |
+| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)   | Design tokens for Spirit Design System                          |
+| [`@lmc-eu/spirit-web`](./packages/web)                       | CSS and vanilla JS implementation of Spirit Design System       |
+| [`@lmc-eu/spirit-web-react`](./packages/web-react)           | React implementation of Spirit Design System components         |
 
 ## Development
 
-### Start development
+### Prerequisites
 
-- `git clone ssh://git@bitbucket.lmc.cz:7999/ds/spirit.git`
-- `cd spirit`
-- `yarn <script>`
+- [Node >= 14](https://nodejs.org)
+- [Yarn 1.22](https://yarnpkg.com)
+- [Lerna 4.x](https://lerna.js.org)
 
-### Scripts
+### Start Development
 
-In the project directory, you can run:
+- `git clone ssh://git@github.com:lmc-eu/spirit-design-system.git`
+- `cd spirit-design-system`
+- `yarn install`
+- `yarn build`
 
-- `build` - Compiles source code to library in `dist/` directory.
-- `format` - Alias form `format:check`.
-- `format:check` - Runs check of code format (done via `prettier`).
-- `format:fix` - Fixes code format (done via `prettier`).
-- `test` - Run in non-interactive mode.
-- `test:watch` - Run tests in interactive mode.
-- `test:coverage` - Run tests with code coverage check.
-- `types` - Checks types.
-- `lint` - Code lint with code formatting check.
-- `lint:fix` - Code linter and fixer with code formatting rules applied.
-- `ci` - Runs Continuous Integration cascade (`lint`, `types`, `test`, `format`).
-- `changelog` - Generates changelog.
-- `changelog:origin` - Generates changelog for entire history.
-- `commit:lint:test` - Test last commit message with commit linter against conventional changelog rules.
-- `version` - Releases new version.
-- `vuln` - Run audit for security vulnerabilities.
-
-<a name="releases"></a>
-
-## Releases
+See [`package.json`](./package.json) for all available tasks.
