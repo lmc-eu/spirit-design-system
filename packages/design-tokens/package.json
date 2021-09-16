@@ -4,12 +4,11 @@
   "description": "Design tokens for Spirit Design System",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
-  "files": [
-    "src/scss"
-  ],
   "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r package.json README.md src/* dist/ ",
     "test": "stylelint --config ../../.stylelintrc ./src/**/*.scss"
   },
   "devDependencies": {
