@@ -8,16 +8,14 @@
     "access": "restricted"
   },
   "scripts": {
-    "prebuild": "mkdirp ./built",
+    "prebuild": "mkdir -p ./built",
     "build": "yarn copy",
     "copy": "yarn copy:default && yarn copy:jobs",
     "copy:default": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/default/components.min.css built/components.min.css",
     "copy:jobs": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/jobs/components.min.css built/components-jobs.min.css"
   },
   "dependencies": {
+    "@lmc-eu/spirit-design-tokens": "~0.1.0",
     "@lmc-eu/spirit-web": "~0.1.0"
-  },
-  "devDependencies": {
-    "mkdirp": "^1.0.4"
   }
 }
