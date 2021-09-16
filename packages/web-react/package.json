@@ -10,7 +10,7 @@
     "@lmc-eu/browserslist-config": "^1.0.0"
   },
   "peerDependencies": {
-    "@lmc-eu/spirit-web": "~0.1.0",
+    "@lmc-eu/spirit-web": "*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
