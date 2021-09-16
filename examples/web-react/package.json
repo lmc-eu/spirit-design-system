@@ -8,7 +8,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "precopy": "mkdirp ./built",
+    "precopy": "mkdir -p ./built",
     "copy": "yarn copy:css",
     "copy:css": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/default/components.min.css built/components.min.css",
     "prebuild": "yarn copy",
@@ -25,7 +25,6 @@
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
-    "mkdirp": "^1.0.4",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.7.2"
   }
