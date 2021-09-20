@@ -8,4 +8,4 @@ updates:
     open-pull-requests-limit: 3
     versioning-strategy: increase-if-necessary
     commit-message:
-      prefix: deps
+      prefix: Deps
