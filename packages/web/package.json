@@ -21,7 +21,7 @@
     "test": "yarn css:lint"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "*"
+    "@lmc-eu/spirit-design-tokens": "^0.1.0"
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "^1.0.0",
