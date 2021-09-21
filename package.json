@@ -33,12 +33,6 @@
     "types": "lerna run types",
     "release": "yarn build && lerna publish"
   },
-  "dependencies": {
-    "del": "^6.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.1.0",
-    "normalize.css": "^8.0.1"
-  },
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@commitlint/cli": "^13.1.0",
@@ -51,7 +45,6 @@
     "@storybook/html": "^6.2.9",
     "@storybook/theming": "^6.2.9",
     "babel-loader": "^8.2.2",
-    "gulp": "^4.0.2",
     "husky": "^7.0.2",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1",
