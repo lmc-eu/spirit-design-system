@@ -28,6 +28,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release
-        run: npx lerna publish from-git --yes
+        run: npx lerna publish from-git --yes --no-verify-access
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
