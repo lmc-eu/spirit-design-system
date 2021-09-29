@@ -1,4 +1,4 @@
-@use 'tokens';
+@use '@tokens' as tokens;
 
 @forward '../../../components/Button/theme' with (
     $padding-x: 24px,
