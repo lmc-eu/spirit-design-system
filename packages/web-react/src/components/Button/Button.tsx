@@ -3,8 +3,7 @@ import classNames from 'classnames';
 
 type Color = 'primary' | 'secondary' | 'tertiary';
 
-const getButtonColorClassname = (color: Color): string =>
-  `lmc-Button--${color}`;
+const getButtonColorClassname = (color: Color): string => `Button--${color}`;
 
 export interface ButtonProps {
   /**
@@ -32,7 +31,7 @@ export const Button = ({
   type,
 }: ButtonProps): JSX.Element => (
   <button
-    className={classNames('lmc-Button', getButtonColorClassname(color))}
+    className={classNames('Button', getButtonColorClassname(color))}
     onClick={onClick}
     type={type}
   >

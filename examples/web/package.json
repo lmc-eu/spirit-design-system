@@ -12,11 +12,18 @@
     "build": "yarn copy && yarn css",
     "copy": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/components.min.css built/components.min.css",
     "css": "yarn css:jobs",
-    "css:jobs": "sass --load-path=../../node_modules --load-path=src/jobs src/jobs/jobs.scss built/jobs.css"
+    "css:jobs": "yarn css:jobs:compile && yarn css:jobs:prefix",
+    "css:jobs:compile": "sass --load-path=../../node_modules --load-path=src/jobs src/jobs/jobs.scss built/jobs.css",
+    "css:jobs:prefix": "postcss --config postcss.config.js --replace \"built/jobs.css\""
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.4.4",
-    "@lmc-eu/spirit-web": "^0.4.4",
+    "@lmc-eu/spirit-design-tokens": "^0.4.5",
+    "@lmc-eu/spirit-web": "^0.4.5"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
+    "postcss-prefixer": "^2.1.3",
     "sass": "^1.37.5"
   }
 }

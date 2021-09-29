@@ -1,7 +1,8 @@
 @use 'sass:map';
+@use '@tokens' as tokens;
 
 @mixin variant($variant, $variables) {
-    .lmc-Button--#{$variant} {
+    .Button--#{$variant} {
         color: map.get($variables, default-color);
         background-color: map.get($variables, default-background);
         border-color: map.get($variables, default-border-color);
