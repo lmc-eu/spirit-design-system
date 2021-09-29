@@ -32,13 +32,13 @@ declared on build time.
   - themes
     - default
       - …
-      - _Button.theme.scss — just includes component's _theme.scss
+      - @Button.theme.scss — just includes component's _theme.scss
       - …
     - products – directory with product specific themes
       - …
       - jobs
         - …
-        - _Button.theme.scss – includes and configures component's _theme.scss
+        - @Button.theme.scss – includes and configures component's _theme.scss
         - …
       - …
 ```
@@ -69,12 +69,12 @@ $font-family: 'Open Sans', sans-serif !default;
 ```
 
 To make theming possible, `_theme.scss` needs to be loaded through an
-intermediate step: the `_Button.theme.scss` file:
+intermediate step: the `@Button.theme.scss` file:
 
 ```scss
 // src/components/Button/_Button.scss
 
-@use 'Button.theme' as theme;
+@use '@Button.theme' as theme;
 
 .lmc-Button {
     font-family: theme.$font-family;
@@ -86,14 +86,31 @@ depending on the brand. Default Spirit theme only includes the `_theme.scss`
 file, applying component's default styling:
 
 ```scss
-// src/themes/default/_Button.theme.scss
+// src/themes/default/@Button.theme.scss
 
 @forward '../../components/Button/theme';
 ```
+### Why `@tokens`?
 
-### Why `Button.theme`?
+By prefixing a Sass file name with `@`, we communicate that such file is loaded
+in a special way.
 
-Component themes are named as `_<ComponentName>.theme.scss` for several reasons:
+1. Design tokens are replaceable Sass modules. In order for a Sass module to be
+   replaceable, it **must not exist within the path it's called in.** The lookup
+   path is provided to Sass compiler on build time, so it knows where to look
+   for files that seem to be missing.
+
+2. In order for developers to know the file behaves differently than usual Sass
+   partials, a `@` prefix is added to mark this behavior both in filesystem and
+   inside Sass files. However, **it's only a naming convention,** there is no
+   special tooling or configuration for Sass partials starting with `@`.
+
+3. Imported module **needs to be renamed to be compatible with SCSS** syntax
+   when it's used later on. That's why `@use '@tokens' as tokens`.
+
+### Why `@Button.theme`?
+
+Component themes are named as `@<ComponentName>.theme.scss` for several reasons:
 
 1. Theme filename must not exist within the component's directory, otherwise it
    would take precedence in loading and actual themes would never be picked up.
@@ -113,7 +130,7 @@ Product specific theming configures the `_theme.scss` file with product specific
 options:
 
 ```scss
-// src/themes/products/jobs/_Button.theme.scss
+// src/themes/products/jobs/@Button.theme.scss
 
 @forward '../../../components/Button/theme' with (
     $padding-x: 24px,
@@ -130,15 +147,15 @@ Both default and product specific theme can reuse design tokens:
 ```scss
 // src/components/Button/_theme.scss
 
-@use 'tokens';
+@use '@tokens' as tokens;
 
 $font-family: tokens.$font-family-default !default;
 ```
 
 ```scss
-// src/themes/products/jobs/_Button.theme.scss
+// src/themes/products/jobs/@Button.theme.scss
 
-@use 'tokens';
+@use '@tokens' as tokens;
 
 @forward '../../../components/Button/theme' with (
     $primary-default-background: tokens.$action-primary-default,
