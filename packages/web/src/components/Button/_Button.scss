@@ -1,7 +1,7 @@
 @use 'theme';
 @use 'tools';
 
-.lmc-Button {
+.Button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -30,11 +30,11 @@
     }
 }
 
-.lmc-Button__icon {
+.Button__icon {
     font-size: 1.5em;
 }
 
-.lmc-Button--square {
+.Button--square {
     width: calc((1em * #{theme.$line-height}) + (#{theme.$padding-y} * 2));
     padding-left: 0;
     padding-right: 0;
