@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import Logo from '../src/stories/assets/spirit-logo-inverse.svg';
+import Logo from '../.storybook/assets/spirit-logo-inverse.svg';
 
 export default create({
   base: 'light',
