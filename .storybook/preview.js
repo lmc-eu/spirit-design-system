@@ -1,5 +1,5 @@
 import SpiritTheme from './spirit.theme';
-import './index.scss';
+import '../.storybook/assets/stylesheets/index.scss';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
