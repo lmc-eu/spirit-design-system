@@ -175,3 +175,36 @@ being set on build time. This is defined in `package.json` with the
   }
 }
 ```
+
+### With Webpack
+
+Use `includePaths` options for `sass-loader` to define from where to load tokens:
+
+```javascript
+// ...
+module: {
+  rules: [
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sassOptions: {
+              includePaths: [
+                path.resolve(
+                  __dirname,
+                  'node_modules/@lmc-eu/spirit-web/themes/default',
+                ),
+              ],
+            },
+          },
+        },
+      ],
+    },
+  ];
+}
+// ...
+```
