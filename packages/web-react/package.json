@@ -7,7 +7,8 @@
     "access": "public",
     "directory": "dist"
   },
-  "module": "_esNext/index.js",
+  "module": "_es2015/index.js",
+  "esnext": "_esNext/index.js",
   "types": "_esNext/index.d.ts",
   "dependencies": {
     "classnames": "^2.3.1",
