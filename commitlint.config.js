@@ -10,6 +10,6 @@ module.exports = {
      * @see https://github.com/dependabot/dependabot-core/issues/1666
      * @see https://github.com/dependabot/dependabot-core/issues/406
      */
-    (commit) => commit.includes('Deps: bump'),
+    (commit) => commit.includes('Deps: Bump'),
   ],
 };
