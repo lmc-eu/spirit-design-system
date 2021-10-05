@@ -28,18 +28,9 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Version
-        # @see https://github.com/lerna/lerna/tree/main/commands/version#readme
-        # Bump version of packages changed since the last release
-        ## `./bin/ci/semver.sh` - determines semantic versioning keyword, e.g.: major, minor, patch
-        ## --yes` - skip all confirmation prompts
-        run: npx lerna version ${./bin/ci/semver.sh} --yes
+        run: make version
 
       - name: Release
-        # @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
-        # Publish packages updated since the last release
-        ## `from-package` - list of packages to publish is determined by inspecting each `package.json`
-        ## `--yes` - skip all confirmation prompts
-        ## `--no-verify-access` - disable verification of the logged-in npm user's access to the packages about to be published
-        run: npx lerna publish from-package --yes --no-verify-access
+        run: make release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

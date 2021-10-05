@@ -10,6 +10,10 @@ YARN_I := $(if $(CI), install --frozen-lockfile, install)
 # Modify these variables in local.mk to add flags to the commands, ie.
 # YARN_FLAGS += --prefer-offline
 YARN_FLAGS :=
+LERNA_FLAGS :=
+
+# Use `make target DEBUG=true` for enabling debug mode
+LERNA_NO_PUSH := $(if $(DEBUG), --no-push --no-git-tag-version)
 
 # Git hooks to be installed into the project workspace
 # GITFILES := $(patsubst bin/githooks/%, .git/hooks/%, $(wildcard bin/githooks/*))
@@ -35,6 +39,21 @@ clean:
 
 pristine: clean
 	rm -rf node_modules packages/*/node_modules
+
+version:
+# @see https://github.com/lerna/lerna/tree/main/commands/version#readme
+# Bump version of packages changed since the last release
+## `./bin/ci/semver.sh` - determines semantic versioning keyword, e.g.: major, minor, patch
+## --yes` - skip all confirmation prompts
+	yarn lerna version ${./bin/ci/semver.sh} --yes $(LERNA_FLAGS) $(LERNA_NO_PUSH)
+
+release:
+# @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
+# Publish packages updated since the last release
+## `from-package` - list of packages to publish is determined by inspecting each `package.json`
+## `--yes` - skip all confirmation prompts
+## `--no-verify-access` - disable verification of the logged-in npm user's access to the packages about to be published
+	yarn lerna publish from-package --yes --no-verify-access $(LERNA_FLAGS)
 
 # GENERIC TARGETS
 
