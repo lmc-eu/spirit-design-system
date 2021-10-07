@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-example-web",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Example project with Spirit Web framework",
   "license": "MIT",
   "private": true,
@@ -15,7 +15,7 @@
     "copy:jobs": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/jobs/components.min.css built/components-jobs.min.css"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.3.0",
-    "@lmc-eu/spirit-web": "^0.3.0"
+    "@lmc-eu/spirit-design-tokens": "^0.4.0",
+    "@lmc-eu/spirit-web": "^0.4.0"
   }
 }
