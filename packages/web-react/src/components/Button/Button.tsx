@@ -6,7 +6,7 @@ type Color = 'primary' | 'secondary' | 'tertiary';
 const getButtonColorClassname = (color: Color): string =>
   `lmc-Button--${color}`;
 
-interface ButtonsProps {
+export interface ButtonProps {
   /**
    * Emotion color variant.
    */
@@ -30,7 +30,7 @@ export const Button = ({
   label,
   onClick,
   type,
-}: ButtonsProps): JSX.Element => (
+}: ButtonProps): JSX.Element => (
   <button
     className={classNames('lmc-Button', getButtonColorClassname(color))}
     onClick={onClick}
