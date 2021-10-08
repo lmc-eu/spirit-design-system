@@ -45,7 +45,7 @@ version:
 # Bump version of packages changed since the last release
 ## `./bin/ci/semver.sh` - determines semantic versioning keyword, e.g.: major, minor, patch
 ## --yes` - skip all confirmation prompts
-	yarn lerna version ${./bin/ci/semver.sh} --yes $(LERNA_FLAGS) $(LERNA_NO_PUSH)
+	yarn lerna version $(shell ./bin/ci/semver.sh) --yes $(LERNA_FLAGS) $(LERNA_NO_PUSH)
 
 release:
 # @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
