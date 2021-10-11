@@ -17,6 +17,11 @@ jobs:
         with:
           node-version: 14
 
+      - name: Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
       - name: Fetch tags
         run: git fetch --tags origin main
 
