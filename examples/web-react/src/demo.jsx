@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Button } from '@lmc-eu/spirit-web-react/dist/_esNext/components/Button';
+import { Button } from '@lmc-eu/spirit-web-react/components/Button';
 
 const Demo = () => (
   <>
