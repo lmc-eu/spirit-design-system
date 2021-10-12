@@ -27,5 +27,8 @@ module.exports = () => ({
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: ['src', 'node_modules'],
+    alias: {
+      '@lmc-eu/spirit-web-react': Path.resolve(__dirname, '../../packages/web-react/dist/_esNext'),
+    }
   },
 });
