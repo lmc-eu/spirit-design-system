@@ -30,6 +30,7 @@ export const Button = ({
   onClick,
   type,
 }: ButtonProps): JSX.Element => (
+  /* eslint-disable react/button-has-type */
   <button
     className={classNames('Button', getButtonColorClassname(color))}
     onClick={onClick}
