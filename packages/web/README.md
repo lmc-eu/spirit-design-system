@@ -18,10 +18,11 @@ npm install --save @lmc-eu/spirit-web
 
 ### CSS
 
-Link the full Spirit CSS with default branding in your HTML template:
+Link the full, prefixed and minimised CSS with default Spirit branding in your
+HTML template:
 
 ```html
-<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/default/components.min.css" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
 ```
 
 ### Sass
