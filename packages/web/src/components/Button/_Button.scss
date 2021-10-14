@@ -1,4 +1,4 @@
-@use '@Button.theme' as theme;
+@use 'theme';
 @use 'tools';
 
 .lmc-Button {
@@ -8,22 +8,20 @@
     padding: theme.$padding-y theme.$padding-x;
     font-family: theme.$font-family;
     text-align: center;
-    text-decoration: theme.$text-decoration;
+    text-decoration: none;
     line-height: theme.$line-height;
     vertical-align: middle;
     background-color: transparent;
     border-width: theme.$border-width;
-    border-style: theme.$border-style;
-    border-color: theme.$border-color;
+    border-style: solid;
+    border-color: transparent;
     border-radius: theme.$border-radius;
-    transition-property: theme.$transition-property;
-    transition-duration: theme.$transition-duration;
-    transition-timing-function: theme.$transition-timing-function;
     cursor: pointer;
+    user-select: none;
 
     &:hover,
     &:focus {
-        text-decoration: theme.$hover-text-decoration;
+        text-decoration: none;
     }
 
     &:disabled {
