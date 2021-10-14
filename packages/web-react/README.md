@@ -23,7 +23,7 @@ Link Spirit CSS (see [`spirit-react-web` docs][web-docs] for more options):
 ```html
 <link
   rel="stylesheet"
-  href="node_modules/@lmc-eu/spirit-web/css/default/components.min.css"
+  href="node_modules/@lmc-eu/spirit-web/css/components.min.css"
 />
 ```
 
@@ -37,5 +37,5 @@ import { Button } from '@lmc-eu/spirit-web-react/src/components/Button';
 
 See [examples] for a live demo.
 
-[web-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/src/web/README.md
+[web-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [examples]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web-react
