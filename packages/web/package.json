@@ -14,8 +14,8 @@
     "css": "yarn css:compile && yarn css:prefix && yarn css:minify",
     "css:lint": "stylelint --config ../../.stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css:compile": "yarn css:compile:default && yarn css:compile:jobs",
-    "css:compile:default": "sass --load-path=../design-tokens/dist/default/scss --load-path=src/themes/default src/components/index.scss dist/css/default/components.css",
-    "css:compile:jobs": "sass --load-path=../design-tokens/dist/products/jobs/scss --load-path=src/themes/products/jobs src/components/index.scss dist/css/jobs/components.css",
+    "css:compile:default": "sass --load-path=../design-tokens/dist/default/scss src/components/index.scss dist/css/default/components.css",
+    "css:compile:jobs": "sass --load-path=../design-tokens/dist/products/jobs/scss src/components/index.scss dist/css/jobs/components.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/css/*/*.css\" \"!dist/css/*/*.min.css\"",
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/css/*/*.css\" \"!dist/css/*/*.min.css\"",
     "test": "yarn css:lint"
