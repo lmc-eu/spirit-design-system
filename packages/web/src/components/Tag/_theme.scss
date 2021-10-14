@@ -1,14 +1,14 @@
 @use '@tokens' as tokens;
 
-$padding-x: tokens.$space-4 !default;
-$padding-y: 0.46875rem !default;
-$font-size: tokens.$font-size-3 !default;
-$line-height: tokens.$line-height-small !default;
-$border-radius: tokens.$radius-1 !default;
+$padding-x: tokens.$space-4;
+$padding-y: tokens.$space-4;
+$font-size: tokens.$font-size-3;
+$line-height: tokens.$line-height-small;
+$border-radius: tokens.$radius-1;
 
 // Default light tag
-$default-light-color: tokens.$text-primary-default !default;
-$default-light-background: tokens.$background-cover !default;
+$default-light-color: tokens.$text-primary-default;
+$default-light-background: tokens.$background-cover;
 
 $default-light: (
     default-color: $default-light-color,
@@ -16,8 +16,8 @@ $default-light: (
 );
 
 // Default dark tag
-$default-dark-color: tokens.$text-primary-inverted-default !default;
-$default-dark-background: tokens.$background-inverted !default;
+$default-dark-color: tokens.$text-primary-inverted-default;
+$default-dark-background: tokens.$background-inverted;
 
 $default-dark: (
     default-color: $default-dark-color,
@@ -25,8 +25,8 @@ $default-dark: (
 );
 
 // Info light tag
-$info-light-color: tokens.$emotion-info-default !default;
-$info-light-background: tokens.$emotion-info-background !default;
+$info-light-color: tokens.$emotion-info-default;
+$info-light-background: tokens.$emotion-info-background;
 
 $info-light: (
     default-color: $info-light-color,
@@ -34,8 +34,8 @@ $info-light: (
 );
 
 // Info dark tag
-$info-dark-color: tokens.$text-primary-inverted-default !default;
-$info-dark-background: tokens.$emotion-info-default !default;
+$info-dark-color: tokens.$text-primary-inverted-default;
+$info-dark-background: tokens.$emotion-info-default;
 
 $info-dark: (
     default-color: $info-dark-color,
@@ -43,8 +43,8 @@ $info-dark: (
 );
 
 // Success light tag
-$success-light-color: tokens.$emotion-success-default !default;
-$success-light-background: tokens.$emotion-success-background !default;
+$success-light-color: tokens.$emotion-success-default;
+$success-light-background: tokens.$emotion-success-background;
 
 $success-light: (
     default-color: $success-light-color,
@@ -52,8 +52,8 @@ $success-light: (
 );
 
 // Success dark tag
-$success-dark-color: tokens.$text-primary-inverted-default !default;
-$success-dark-background: tokens.$emotion-success-default !default;
+$success-dark-color: tokens.$text-primary-inverted-default;
+$success-dark-background: tokens.$emotion-success-default;
 
 $success-dark: (
     default-color: $success-dark-color,
@@ -61,8 +61,8 @@ $success-dark: (
 );
 
 // Warning light tag
-$warning-light-color: tokens.$emotion-warning-default !default;
-$warning-light-background: tokens.$emotion-warning-background !default;
+$warning-light-color: tokens.$emotion-warning-default;
+$warning-light-background: tokens.$emotion-warning-background;
 
 $warning-light: (
     default-color: $warning-light-color,
@@ -70,8 +70,8 @@ $warning-light: (
 );
 
 // Warning dark tag
-$warning-dark-color: tokens.$text-primary-inverted-default !default;
-$warning-dark-background: tokens.$emotion-warning-default !default;
+$warning-dark-color: tokens.$text-primary-inverted-default;
+$warning-dark-background: tokens.$emotion-warning-default;
 
 $warning-dark: (
     default-color: $warning-dark-color,
@@ -79,8 +79,8 @@ $warning-dark: (
 );
 
 // Danger light tag
-$danger-light-color: tokens.$emotion-danger-default !default;
-$danger-light-background: tokens.$emotion-danger-background !default;
+$danger-light-color: tokens.$emotion-danger-default;
+$danger-light-background: tokens.$emotion-danger-background;
 
 $danger-light: (
     default-color: $danger-light-color,
@@ -88,8 +88,8 @@ $danger-light: (
 );
 
 // Danger dark tag
-$danger-dark-color: tokens.$text-primary-inverted-default !default;
-$danger-dark-background: tokens.$emotion-danger-default !default;
+$danger-dark-color: tokens.$text-primary-inverted-default;
+$danger-dark-background: tokens.$emotion-danger-default;
 
 $danger-dark: (
     default-color: $danger-dark-color,
