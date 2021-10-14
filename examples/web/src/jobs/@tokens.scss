@@ -1,4 +1,5 @@
-@forward '../../../default/scss/colors' with (
+// ⚠️ Remove the `dist/` part from paths below when copy-and-pasting the code to your project.
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/colors' with (
     $brand-primary: #f90,
     $brand-secondary: #19325a,
     $background-basic: #fff,
@@ -6,8 +7,8 @@
     $background-inverted: #19325a,
     $text-primary-default: #000,
     $text-primary-inverted-default: #fff,
-    $action-primary-default: #f90,
-    $action-primary-hover: #eb8c00,
+    $action-primary-default: #1b6494,
+    $action-primary-hover: #1b6494,
     $emotion-info-default: #0049ac,
     $emotion-info-background: #e6edf7,
     $emotion-success-default: #00a527,
@@ -17,10 +18,10 @@
     $emotion-danger-default: #d40014,
     $emotion-danger-background: #fbe6e8,
 );
-@forward '../../../default/scss/radii';
-@forward '../../../default/scss/shadows';
-@forward '../../../default/scss/spacing';
-@forward '../../../default/scss/typography' with (
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii';
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/shadows';
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/spacing';
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/typography' with (
     $font-family-default: #{'Open Sans', helvetica, roboto, arial, sans-serif},
     $font-size-3: 13px,
     $font-size-4: 15px,
