@@ -21,16 +21,29 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@lmc-eu/eslint-config-base": "^1.0.0-rc1",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@types/react": "^17.0.19",
+    "@types/react": "^17.0.29",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
     "recast": "^0.20.5",
     "rollup": "^2.60.0",
     "rollup-plugin-terser": "^7.0.2",
-    "ts-loader": "^9.2.5",
+    "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.2",
-    "webpack-bundle-analyzer": "^4.4.2",
+    "typescript": "^4.4.4",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-merge": "^5.8.0"
   },
   "peerDependencies": {
@@ -52,6 +65,8 @@
     "webpack:prod": "webpack --mode production --config ./config/webpack.js --progress",
     "webpack:browser": "webpack --mode production --config ./config/webpack.browser.js --progress",
     "rollup": "rollup -c ./config/rollup.config.js",
-    "resolve": "ts-node-script ./scripts/resolveModuleIds.ts"
+    "resolve": "ts-node-script ./scripts/resolveModuleIds.ts",
+    "lint": "eslint ./",
+    "lint:fix": "yarn lint --fix"
   }
 }

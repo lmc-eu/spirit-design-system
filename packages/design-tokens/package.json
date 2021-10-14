@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && mkdir -p dist && cp -r package.json README.md src/* dist/ ",
-    "test": "stylelint --config ../../.stylelintrc ./src/**/*.scss"
+    "lint": "stylelint --config ../../.stylelintrc ./src/**/*.scss"
   },
   "devDependencies": {
     "@lmc-eu/stylelint-config": "^1.0.3",
