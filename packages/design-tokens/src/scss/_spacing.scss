@@ -1,17 +1,17 @@
-$space-0: 0;
-$space-1: 0.0625rem;
-$space-2: 0.125rem;
-$space-3: 0.25rem;
-$space-4: 0.5rem;
-$space-5: 0.75rem;
-$space-6: 1rem;
-$space-7: 1.5rem;
-$space-8: 2rem;
-$space-9: 2.5rem;
-$space-10: 3rem;
-$space-11: 3.5rem;
-$space-12: 4rem;
-$space-13: 5rem;
+$space-0: 0 !default;
+$space-1: 0.0625rem !default;
+$space-2: 0.125rem !default;
+$space-3: 0.25rem !default;
+$space-4: 0.5rem !default;
+$space-5: 0.75rem !default;
+$space-6: 1rem !default;
+$space-7: 1.5rem !default;
+$space-8: 2rem !default;
+$space-9: 2.5rem !default;
+$space-10: 3rem !default;
+$space-11: 3.5rem !default;
+$space-12: 4rem !default;
+$space-13: 5rem !default;
 
 $spaces: (
     0: $space-0,
@@ -28,4 +28,4 @@ $spaces: (
     11: $space-11,
     12: $space-12,
     13: $space-13,
-);
+) !default;
