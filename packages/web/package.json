@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
   "publishConfig": {
@@ -19,7 +19,7 @@
     "test": "yarn css:lint"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.4.0"
+    "@lmc-eu/spirit-design-tokens": "^0.4.1"
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "^1.0.0",
