@@ -18,7 +18,11 @@
     $emotion-danger-default: #d40014,
     $emotion-danger-background: #fbe6e8,
 );
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii';
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii' with (
+    $radius-1: 0,
+    $radius-2: 0,
+    $radius-3: 0,
+);
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/shadows';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/spacing';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/typography' with (
