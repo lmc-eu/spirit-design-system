@@ -1,0 +1,9 @@
+$border-1: 0 !default;
+$border-2: 1px solid !default;
+$border-3: 1px dashed !default;
+
+$borders: (
+    1: $border-1,
+    2: $border-2,
+    3: $border-3,
+) !default;
