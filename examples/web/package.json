@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-example-web",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Example project with Spirit Web framework",
   "license": "MIT",
   "private": true,
@@ -15,8 +15,8 @@
     "css:jobs": "sass --load-path=../../node_modules --load-path=src/jobs src/jobs/jobs.scss built/jobs.css"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "^0.4.1",
-    "@lmc-eu/spirit-web": "^0.4.1",
+    "@lmc-eu/spirit-design-tokens": "^0.4.2",
+    "@lmc-eu/spirit-web": "^0.4.2",
     "sass": "^1.37.5"
   }
 }
