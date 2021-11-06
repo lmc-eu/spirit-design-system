@@ -7,6 +7,11 @@
     "access": "public",
     "directory": "dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "packages/web"
+  },
   "scripts": {
     "prebuild": "rm -rf dist && mkdir -p dist/scss && cp package.json README.md dist/ && cp -r src/* dist/scss/",
     "build": "yarn css",
