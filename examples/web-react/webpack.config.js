@@ -11,7 +11,6 @@ module.exports = () => ({
       {
         exclude: /node_modules/,
         include: [
-          Path.join(__dirname, '../../packages/'),
           Path.join(__dirname, 'src'),
         ],
         test: /\.(js|jsx)$/,
@@ -27,8 +26,5 @@ module.exports = () => ({
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: ['src', 'node_modules'],
-    alias: {
-      '@lmc-eu/spirit-web-react': Path.resolve(__dirname, '../../packages/web-react/dist/_esNext'),
-    }
   },
 });
