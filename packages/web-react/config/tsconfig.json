@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "es2015",
     "target": "es5",
     "noEmit": true,
     "strictNullChecks": true,
@@ -24,6 +24,7 @@
     "noUnusedLocals": true,
     "strictFunctionTypes": true,
     "noImplicitAny": true,
+    "esModuleInterop": true,
     "typeRoots": [
       "./node_modules/@types"
     ],
