@@ -1,0 +1,16 @@
+{[ let extension = asset.format /]}
+
+{* Generate name as [originalName][-numberOfDuplicates][extension] *}
+{[ let duplicateExtension = (asset.previouslyDuplicatedNames > 0 ? ("-" + asset.previouslyDuplicatedNames) : "") /]}
+{[ let name = (asset.originalName.lowercased().replacing(" ", "-") + duplicateExtension +  "." + asset.format) /]}
+
+{* Generate path from segments *}
+{[ let path = (asset.group.path.append(asset.group.name).join("/").replacing(" ", "-").lowercased()) /]}
+{[ log path /]}
+
+{* Retrieve asset path *}
+{[ if (path.count() > 0) ]}
+    {{ path + "/" }}{{ name }}
+{[ else ]}
+    {{ name }}
+{[/]}
