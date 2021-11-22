@@ -17,8 +17,7 @@ module.exports = {
         options: {
           sassOptions: {
             includePaths: [
-              path.resolve(__dirname, '../packages/design-tokens/src/default/scss'),
-              path.resolve(__dirname, '../packages/web/src/themes/default'),
+              path.resolve(__dirname, '../packages/design-tokens/src/scss'),
             ]
           }
         }
