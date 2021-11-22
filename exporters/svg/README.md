@@ -57,6 +57,9 @@ If you have an idea for improving this exporter package or want a specific issue
 
 There are multiple ways you can contribute, so we have written a [contribution guide](https://developers.supernova.io/building-exporters/contribution-and-requests) that will walk your through the process. Any pull requests to this repository are very welcome.
 
+Would love to help us build more but maybe need a little bit of support? [Join our community](https://community.supernova.io) and drop us a message, we will support any of your wild ideas!
+
+
 ## License
 
 This exporter is distributed under the [MIT license](./LICENSE.md). [We absolutely encourage you](https://developers.supernova.io/building-exporters/cloning-exporters) to clone it and modify it for your purposes, so it fits the requirements of your stack. If you see that you have created something amazing in the process that others would benefit from, we strongly recommend you consider [publishing it back to the community](https://developers.supernova.io/building-exporters/sharing-exporters-with-others) as well.
@@ -68,25 +71,31 @@ This exporter is distributed under the [MIT license](./LICENSE.md). [We absolute
 - To understand everything you can do with Supernova and how much time and resources it can save you, go read our [product documentation](https://learn.supernova.io/)
 - Finally, to learn everything about what exporters are and how you can integrate with your codebase, go read our [developer documentation](https://developers.supernova.io/)
 
-## Other Supernova Exporters
+## Supernova Maintained Exporters
 
 We are developing and maintaining exporters for many major technologies. Here are all the official exporters maintained by Supernova:
 
-- [iOS Exporter](https://github.com/Supernova-Studio/exporter-ios)
+- [iOS Token & Style Exporter](https://github.com/Supernova-Studio/exporter-ios)
 - [iOS Localization Exporter](https://github.com/Supernova-Studio/exporter-ios-localization)
-- [Android Exporter](https://github.com/Supernova-Studio/exporter-android)
-- [React Exporter](https://github.com/Supernova-Studio/exporter-react)
-- [Flutter Exporter](https://github.com/Supernova-Studio/exporter-flutter)
-- [Angular Exporter](https://github.com/Supernova-Studio/exporter-angular)
-- [Typescript Exporter](https://github.com/Supernova-Studio/exporter-typescript)
-- [CSS Exporter](https://github.com/Supernova-Studio/exporter-css)
-- [LESS Exporter](https://github.com/Supernova-Studio/exporter-less)
-- [SCSS Exporter](https://github.com/Supernova-Studio/exporter-scss)
-
-
-Additionally, we are also developing and maintaining exporters for specific use cases:
-
+- [Android Token & Style Exporter](https://github.com/Supernova-Studio/exporter-android)
+- [React Token & Style Exporter](https://github.com/Supernova-Studio/exporter-react)
+- [Flutter Token & Style Exporter](https://github.com/Supernova-Studio/exporter-flutter)
+- [Angular Token & Style Exporter](https://github.com/Supernova-Studio/exporter-angular)
+- [Typescript Token & Style Exporter](https://github.com/Supernova-Studio/exporter-typescript)
+- [CSS Token & Style Exporter](https://github.com/Supernova-Studio/exporter-css)
+- [LESS Token & Style Exporter](https://github.com/Supernova-Studio/exporter-less)
+- [SCSS Token & Style Exporter](https://github.com/Supernova-Studio/exporter-scss)
 - [Style Dictionary Exporter](https://github.com/Supernova-Studio/exporter-style-dictionary)
-- [HTML Preview Exporter](https://github.com/Supernova-Studio/exporter-html-preview)
+
+Additionally, you can also use asset exporters for all major targets, enjoy!:
+
+- [SVG Asset Exporter](https://github.com/Supernova-Studio/exporter-svg-assets)
+- [PDF Asset Exporter](https://github.com/Supernova-Studio/exporter-pdf-assets)
+- [PNG Asset Exporter](https://github.com/Supernova-Studio/exporter-png-assets)
+- [iOS Asset Catalogue Exporter](https://github.com/Supernova-Studio/exporter-ios-asset-catalogue)
+- [React Native Asset Exporter](https://github.com/Supernova-Studio/exporter-react-native-assets)
+- [Android Asset Exporter](https://github.com/Supernova-Studio/exporter-android-assets)
+- [Flutter PNG Asset Exporter](https://github.com/Supernova-Studio/exporter-flutter-png-assets)
+- [Flutter SVG Asset Exporter](https://github.com/Supernova-Studio/exporter-flutter-svg-assets)
 
 To browse all exporters created by our amazing community, please visit the [Supernova](https://supernova.io) Exporter Store.
