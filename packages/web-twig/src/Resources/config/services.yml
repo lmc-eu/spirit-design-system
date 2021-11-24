@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Lmc\TwigComponentsBundle\Factory\TwigFactory:
+    arguments:
+      - '@twig'
+
+  Twig\Environment:
+    factory: ['@Lmc\TwigComponentsBundle\Factory\TwigFactory', 'create']
