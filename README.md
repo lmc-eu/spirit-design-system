@@ -1,4 +1,4 @@
-Twig components Bundle
+Twig components bundle
 =================
 
 this bundle extends the twig implementation with an JSX syntax-like approach from React
@@ -42,7 +42,6 @@ Configure parameters for this bundle.
 
 **config.yml**
 ```yaml
-    # Aerospike
     twig_components:
         path: "%kernel.project_dir%/templates/components"
         path_alias: 'ui-components'
