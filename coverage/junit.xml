@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="20" assertions="65" errors="1" warnings="0" failures="0" skipped="0" time="0.255386">
+    <testsuite name="unit" tests="20" assertions="65" errors="1" warnings="0" failures="0" skipped="0" time="0.255386">
+      <testsuite name="Lmc\TwigComponentsBundle\Cache\AerospikeCacheTest" file="/Users/janicekt/git/aerospike-bundle/tests/Cache/AerospikeCacheTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.034313">
+        <testcase name="testHitMissesStatsAreProvided" class="Lmc\TwigComponentsBundle\Cache\AerospikeCacheTest" classname="Lmc.AerospikeBundle.Cache.AerospikeCacheTest" file="/Users/janicekt/git/aerospike-bundle/tests/Cache/AerospikeCacheTest.php" line="24" assertions="2" time="0.034313"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\DataCollector\CacheDataCollectorTest" file="/Users/janicekt/git/aerospike-bundle/tests/DataCollector/CacheDataCollectorTest.php" tests="1" assertions="12" errors="0" warnings="0" failures="0" skipped="0" time="0.025008">
+        <testcase name="testShouldCollect" class="Lmc\TwigComponentsBundle\DataCollector\CacheDataCollectorTest" classname="Lmc.AerospikeBundle.DataCollector.CacheDataCollectorTest" file="/Users/janicekt/git/aerospike-bundle/tests/DataCollector/CacheDataCollectorTest.php" line="29" assertions="12" time="0.025008"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\DependencyInjection\AerospikeExtensionTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/AerospikeExtensionTest.php" tests="4" assertions="30" errors="0" warnings="0" failures="0" skipped="0" time="0.060824">
+        <testcase name="testShouldRegisterParameters" class="Lmc\TwigComponentsBundle\DependencyInjection\AerospikeExtensionTest" classname="Lmc.AerospikeBundle.DependencyInjection.AerospikeExtensionTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/AerospikeExtensionTest.php" line="50" assertions="6" time="0.043571"/>
+        <testcase name="testShouldRegisterAliases" class="Lmc\TwigComponentsBundle\DependencyInjection\AerospikeExtensionTest" classname="Lmc.AerospikeBundle.DependencyInjection.AerospikeExtensionTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/AerospikeExtensionTest.php" line="64" assertions="2" time="0.004226"/>
+        <testcase name="testShouldRegisterOnlySessions" class="Lmc\TwigComponentsBundle\DependencyInjection\AerospikeExtensionTest" classname="Lmc.AerospikeBundle.DependencyInjection.AerospikeExtensionTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/AerospikeExtensionTest.php" line="70" assertions="11" time="0.005819"/>
+        <testcase name="testShouldRegisterOnlyCache" class="Lmc\TwigComponentsBundle\DependencyInjection\AerospikeExtensionTest" classname="Lmc.AerospikeBundle.DependencyInjection.AerospikeExtensionTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/AerospikeExtensionTest.php" line="91" assertions="11" time="0.007209"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\DependencyInjection\CompilerPass\LoggerValidationPassTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/CompilerPass/LoggerValidationPassTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.003015">
+        <testcase name="testShouldPassCompiler" class="Lmc\TwigComponentsBundle\DependencyInjection\CompilerPass\LoggerValidationPassTest" classname="Lmc.AerospikeBundle.DependencyInjection.CompilerPass.LoggerValidationPassTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/CompilerPass/LoggerValidationPassTest.php" line="31" assertions="1" time="0.001985"/>
+        <testcase name="testShouldNotPassCompiler" class="Lmc\TwigComponentsBundle\DependencyInjection\CompilerPass\LoggerValidationPassTest" classname="Lmc.AerospikeBundle.DependencyInjection.CompilerPass.LoggerValidationPassTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/CompilerPass/LoggerValidationPassTest.php" line="36" assertions="1" time="0.000895"/>
+        <testcase name="testShouldSkipPassCompiler" class="Lmc\TwigComponentsBundle\DependencyInjection\CompilerPass\LoggerValidationPassTest" classname="Lmc.AerospikeBundle.DependencyInjection.CompilerPass.LoggerValidationPassTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/CompilerPass/LoggerValidationPassTest.php" line="45" assertions="1" time="0.000136"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\DependencyInjection\ConfigurationTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/ConfigurationTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.002640">
+        <testcase name="testConfigurationDefinition" class="Lmc\TwigComponentsBundle\DependencyInjection\ConfigurationTest" classname="Lmc.AerospikeBundle.DependencyInjection.ConfigurationTest" file="/Users/janicekt/git/aerospike-bundle/tests/DependencyInjection/ConfigurationTest.php" line="10" assertions="1" time="0.002640"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\Facade\DebugFacadeTest" file="/Users/janicekt/git/aerospike-bundle/tests/Facade/DebugFacadeTest.php" tests="3" assertions="11" errors="0" warnings="0" failures="0" skipped="0" time="0.103440">
+        <testcase name="testShouldDebug" class="Lmc\TwigComponentsBundle\Facade\DebugFacadeTest" classname="Lmc.AerospikeBundle.Facade.DebugFacadeTest" file="/Users/janicekt/git/aerospike-bundle/tests/Facade/DebugFacadeTest.php" line="9" assertions="5" time="0.000169"/>
+        <testcase name="testShouldNotDebug" class="Lmc\TwigComponentsBundle\Facade\DebugFacadeTest" classname="Lmc.AerospikeBundle.Facade.DebugFacadeTest" file="/Users/janicekt/git/aerospike-bundle/tests/Facade/DebugFacadeTest.php" line="28" assertions="3" time="0.000116"/>
+        <testcase name="testShouldExecuteTime" class="Lmc\TwigComponentsBundle\Facade\DebugFacadeTest" classname="Lmc.AerospikeBundle.Facade.DebugFacadeTest" file="/Users/janicekt/git/aerospike-bundle/tests/Facade/DebugFacadeTest.php" line="45" assertions="3" time="0.103154"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\Facade\AerospikeCacheFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeCacheFactoryTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.021124">
+        <testcase name="testShouldCreateInstance" class="Lmc\TwigComponentsBundle\Facade\AerospikeCacheFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeCacheFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeCacheFactoryTest.php" line="14" assertions="1" time="0.019705"/>
+        <testcase name="testShouldNotCreateWithoutClient" class="Lmc\TwigComponentsBundle\Facade\AerospikeCacheFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeCacheFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeCacheFactoryTest.php" line="24" assertions="1" time="0.001420"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\Facade\AerospikeDoctrineProviderFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeDoctrineProviderFactoryTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001862">
+        <testcase name="testShouldCreateInstance" class="Lmc\TwigComponentsBundle\Facade\AerospikeDoctrineProviderFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeDoctrineProviderFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeDoctrineProviderFactoryTest.php" line="14" assertions="1" time="0.000670"/>
+        <testcase name="testShouldNotCreateWithoutClient" class="Lmc\TwigComponentsBundle\Facade\AerospikeDoctrineProviderFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeDoctrineProviderFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeDoctrineProviderFactoryTest.php" line="24" assertions="1" time="0.001192"/>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\Facade\AerospikeFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeFactoryTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000692">
+        <testsuite name="Lmc\TwigComponentsBundle\Facade\AerospikeFactoryTest::testShouldNotCreateWithEmptyHosts" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000692">
+          <testcase name="testShouldNotCreateWithEmptyHosts with data set &quot;null hosts&quot;" class="Lmc\TwigComponentsBundle\Facade\AerospikeFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeFactoryTest.php" line="15" assertions="1" time="0.000451"/>
+          <testcase name="testShouldNotCreateWithEmptyHosts with data set &quot;empty array hosts&quot;" class="Lmc\TwigComponentsBundle\Facade\AerospikeFactoryTest" classname="Lmc.AerospikeBundle.Facade.AerospikeFactoryTest" file="/Users/janicekt/git/aerospike-bundle/tests/Factory/AerospikeFactoryTest.php" line="15" assertions="1" time="0.000241"/>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Lmc\TwigComponentsBundle\Storage\AerospikeSessionHandlerTest" file="/Users/janicekt/git/aerospike-bundle/tests/Storage/AerospikeSessionHandlerTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="0.002467">
+        <testcase name="testShouldNotCreateInstanceWithoutAerospike" class="Lmc\TwigComponentsBundle\Storage\AerospikeSessionHandlerTest" classname="Lmc.AerospikeBundle.Storage.AerospikeSessionHandlerTest" file="/Users/janicekt/git/aerospike-bundle/tests/Storage/AerospikeSessionHandlerTest.php" line="26" assertions="0" time="0.002467">
+          <error type="Error">Lmc\TwigComponentsBundle\Storage\AerospikeSessionHandlerTest::testShouldNotCreateInstanceWithoutAerospike
+Error: Undefined class constant 'Aerospike::OPT_POLICY_EXISTS'
+
+/Users/janicekt/git/aerospike-bundle/tests/Storage/AerospikeSessionHandlerTest.php:23</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
