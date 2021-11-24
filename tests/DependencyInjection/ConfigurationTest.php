@@ -11,20 +11,9 @@ class ConfigurationTest extends TestCase
     {
         $dumper = new YamlReferenceDumper();
         $reference = <<<CONFIG
-aerospike:
-    logger:               aerospike.default.logger
-    sessions:
-        hosts:                []
-        namespace:            ~
-        set:                  ~
-        lifetime:             ~
-        bigBlockThreshold:    null
-    cache:
-        hosts:                []
-        namespace:            ~
-        set:                  ~
-        bigBlockThreshold:    null
-
+twig_components:
+    path:                 '%kernel.project_dir%/templates/components'
+    path_alias:           ui-components\n
 CONFIG;
 
         $this->assertEquals($reference, $dumper->dump(new Configuration()));
