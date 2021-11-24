@@ -46,3 +46,22 @@ Configure parameters for this bundle.
         path: "%kernel.project_dir%/templates/components"
         path_alias: 'ui-components'
 ```
+
+## Usage
+after this configuration it will be possible to use components in your symfony project syntax-like Html/JSX
+
+```html
+<ComponentName attr="value">Some other content</ComponentName>
+```
+
+or pure original implementation
+
+```twig
+{% embed "@ui-components/component-name.twig" with { props: {
+    attr: 'value'
+}} %}
+    {% block content %}
+        Some other content
+    {% endblock %}
+{% endembed %}
+```
