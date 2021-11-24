@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 0.0.2 - 2021-11-24
 - Add syntax example into README
 - Fix connect yaml configuration into Twig
 
