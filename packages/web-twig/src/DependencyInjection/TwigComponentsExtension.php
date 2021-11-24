@@ -14,6 +14,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class TwigComponentsExtension extends Extension
 {
+    public const PARAMETER_PATH = 'twig_components.path';
+    public const PARAMETER_PATH_ALIAS = 'twig_components.path_alias';
+
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
@@ -22,7 +25,7 @@ class TwigComponentsExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('twig_components.path', $config['path']);
-        $container->setParameter('twig_components.path_alias', $config['path_alias']);
+        $container->setParameter(self::PARAMETER_PATH, $config['path']);
+        $container->setParameter(self::PARAMETER_PATH_ALIAS, $config['path_alias']);
     }
 }

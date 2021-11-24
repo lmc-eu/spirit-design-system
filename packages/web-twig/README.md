@@ -47,17 +47,21 @@ Configure parameters for this bundle.
         path_alias: 'ui-components'
 ```
 
-### Step 4
-Need to change the implementation of render component in controllers in symfony by Trait
+## Usage
+after this configuration it will be possible to use components in your symfony project syntax-like Html/JSX
 
-```php
-<?php
+```html
+<ComponentName attr="value">Some other content</ComponentName>
+```
 
-...
-use Lmc\TwigComponentsBundle\Traits\RenderTrait;
+or pure original implementation
 
-class DefaultController extends AbstractController
-{
-    use RenderTrait;
-...
+```twig
+{% embed "@ui-components/component-name.twig" with { props: {
+    attr: 'value'
+}} %}
+    {% block content %}
+        Some other content
+    {% endblock %}
+{% endembed %}
 ```
