@@ -10,11 +10,20 @@ namespace Lmc\TwigComponentsBundle\Compiler;
  */
 class ComponentTagCompiler
 {
+    /**
+     * @var string
+     */
     protected $source;
 
-    public function __construct(string $source)
+    /**
+     * @var string
+     */
+    private $twigPathAlias;
+
+    public function __construct(string $source, string $twigPathAlias)
     {
         $this->source = $source;
+        $this->twigPathAlias = $twigPathAlias;
     }
 
     public function compile(): string
@@ -73,7 +82,7 @@ class ComponentTagCompiler
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
                 $name = $matches[1];
 
-                return '{% embed "@seduo-genome/twig/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% block content %}";
+                return '{% embed "@' . $this->twigPathAlias . '/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% block content %}";
             },
             $value
         );
@@ -132,7 +141,7 @@ class ComponentTagCompiler
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
                 $name = $matches[1];
 
-                return '{% embed "@seduo-genome/twig/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% endembed %}";
+                return '{% embed "@' . $this->twigPathAlias . '/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% endembed %}";
             },
             $value
         );
