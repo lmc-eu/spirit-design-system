@@ -6,6 +6,9 @@ services:
   Lmc\TwigComponentsBundle\Factory\TwigFactory:
     arguments:
       - '@twig'
+      - '@twig.loader'
+      - '%twig_components.path%'
+      - '%twig_components.path_alias%'
 
   Twig\Environment:
     factory: ['@Lmc\TwigComponentsBundle\Factory\TwigFactory', 'create']
