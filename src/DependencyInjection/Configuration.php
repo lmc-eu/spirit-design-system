@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Lmc\TwigComponentsBundle\DependencyInjection;
 
@@ -14,12 +16,12 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('path')
-                    ->defaultValue('%kernel.project_dir%/templates/components')
-                ->end()
-                ->scalarNode('path_alias')
-                    ->defaultValue('ui-components')
-                ->end()
+            ->scalarNode('path')
+            ->defaultValue('%kernel.project_dir%/templates/components')
+            ->end()
+            ->scalarNode('path_alias')
+            ->defaultValue('ui-components')
+            ->end()
             ->end();
 
         return $treeBuilder;

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Lmc\TwigComponentsBundle\DependencyInjection;
 
@@ -7,32 +9,25 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class TwigComponentsExtensionTest extends TestCase
 {
-    /** @var ContainerBuilder */
-    private $containerBuilder;
-
-    /** @var TwigComponentsExtension */
-    private $extension;
-
-    /** @var array */
-    private $config;
+    private ContainerBuilder $containerBuilder;
 
     protected function setUp(): void
     {
-        $this->config = [
+        $config = [
             'path' => 'templates/',
             'path_alias' => 'ui-components',
         ];
 
-        $this->loadExtension([$this->config]);
+        $this->loadExtension([$config]);
     }
 
     private function loadExtension(array $configs): void
     {
-        $this->extension = new TwigComponentsExtension();
+        $extension = new TwigComponentsExtension();
         $this->containerBuilder = new ContainerBuilder();
-        $this->containerBuilder->registerExtension($this->extension);
+        $this->containerBuilder->registerExtension($extension);
 
-        $this->extension->load($configs, $this->containerBuilder);
+        $extension->load($configs, $this->containerBuilder);
     }
 
     public function testShouldRegisterParameters(): void
