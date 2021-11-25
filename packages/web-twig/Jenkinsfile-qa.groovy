@@ -21,36 +21,56 @@ pipeline {
   agent any
 
   stages {
-    stage('Prepare') {
-      steps {
-        step([$class: 'StashNotifier', prependParentProjectKey: true])
-        sh "composer install"
-        sh "mkdir -p coverage"
-      }
-    }
+    stage('Normal deps checks') {
+      stages {
+        stage('Prepare') {
+          steps {
+            step([$class: 'StashNotifier', prependParentProjectKey: true])
+            sh "composer install"
+            sh "mkdir -p coverage"
+          }
+        }
 
-    stage('UT') {
-      steps {
-        sh "composer run tests:coverage";
-      }
+        stage('UT') {
+          steps {
+            sh "composer run tests";
+          }
+        }
 
-      post {
-        success {
-          step([
-            $class: "CloverPublisher",
-            cloverReportDir: "coverage",
-            cloverReportFileName: "clover.xml",
-            healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
-            unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
-            failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
-        ])
+        stage('Coding style') {
+          steps {
+            sh "composer run ecs"
+          }
         }
       }
     }
 
-    stage('Coding style') {
-      steps {
-        sh "composer run ecs"
+    stage('lowest deps checks') {
+      stages {
+        stage('Prepare') {
+            steps {
+                sh "composer --prefer-lowest --prefer-stable update"
+            }
+        }
+
+        stage('UT') {
+          steps {
+            sh "composer run tests:coverage";
+          }
+
+          post {
+            success {
+              step([
+                $class: "CloverPublisher",
+                cloverReportDir: "coverage",
+                cloverReportFileName: "clover.xml",
+                healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
+                unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
+                failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
+            ])
+            }
+          }
+        }
       }
     }
 
@@ -63,7 +83,6 @@ pipeline {
         }
       }
     }
-
   }
 
   post {

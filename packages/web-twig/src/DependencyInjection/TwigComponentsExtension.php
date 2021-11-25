@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Lmc\TwigComponentsBundle\DependencyInjection;
 
@@ -15,6 +17,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class TwigComponentsExtension extends Extension
 {
     public const PARAMETER_PATH = 'twig_components.path';
+
     public const PARAMETER_PATH_ALIAS = 'twig_components.path_alias';
 
     public function load(array $configs, ContainerBuilder $container): void
