@@ -1,11 +1,11 @@
 Twig components bundle
 =================
 
-this bundle extends the twig implementation with an JSX syntax-like approach from React
+this bundle extends the twig implementation of embed with an HTML syntax-like. The only rule compared to html is that tags start in capital letters.
 
 
 ## Changelog
-See CHANGELOG.md.
+See [CHANGELOG](./CHANGELOG.md)
 
 ## How to install
 
@@ -48,20 +48,24 @@ Configure parameters for this bundle.
 ```
 
 ## Usage
-after this configuration it will be possible to use components in your symfony project syntax-like Html/JSX
+after this configuration it will be possible to use components in your symfony project syntax-like Html
 
 ```html
 <ComponentName attr="value">Some other content</ComponentName>
+  ...
+<ComponentName attr="value" />
 ```
 
-or pure original implementation
+You can pass attributes like this:
 
-```twig
-{% embed "@ui-components/component-name.twig" with { props: {
-    attr: 'value'
-}} %}
-    {% block content %}
-        Some other content
-    {% endblock %}
-{% endembed %}
+```html
+<ComponentName
+:any="'any' ~ 'prop'" // this return as "any" prop with value "anyprop"
+other="{{'this' ~ 'works' ~ 'too'}}"
+anotherProp="or this still work"
+not-this="{{'this' ~ 'does'}}{{ 'not work' }}" // this returns syntax as plain text but prop with dash work
+isOpen  // if no value is defined, it is set to true
+>
+    Submit
+</ComponentName>
 ```
