@@ -65,7 +65,7 @@ Use the reference from the theme in component styles:
 @use 'theme';
 
 .lmc-Button {
-    font-family: theme.$font-family;
+  font-family: theme.$font-family;
 }
 ```
 
@@ -103,7 +103,7 @@ adjusting the common parts of visual design.
 
 ### 👉 What are Sass modules?
 
-Sass modules are a [new way of organizing Sass source][Sass modules]. Aside
+Sass modules are a [new way of organizing Sass source][sass modules]. Aside
 from new methods of structuring and loading Sass files, Sass modules offer a
 great portion of encapsulation, traceability, and more.
 
@@ -150,5 +150,5 @@ With `@` prefix:
 // prefix suggests a special behavior. Maybe I'll learn more in the docs?
 ```
 
-[Sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
-[ES modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
+[es modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules

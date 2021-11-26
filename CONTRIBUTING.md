@@ -30,7 +30,6 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 1. Run manually `git push && git push --tags` to push the changes to remote
 1. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
 
-
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 
 [conventional-commits]: https://www.conventionalcommits.org

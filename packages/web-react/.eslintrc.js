@@ -39,10 +39,7 @@ module.exports = {
 
   plugins: ['prettier', 'promise', 'react', '@typescript-eslint'],
   rules: {
-    'react/jsx-filename-extension': [
-      'error',
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.
     'react/react-in-jsx-scope': 'off',
     'react/prefer-stateless-function': 'off', // PureComponents ftw.

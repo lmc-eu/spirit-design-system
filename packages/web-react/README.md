@@ -21,10 +21,7 @@ npm install --save @lmc-eu/spirit-web @lmc-eu/spirit-web-react
 Link Spirit CSS (see [`spirit-react-web` docs][web-docs] for more options):
 
 ```html
-<link
-  rel="stylesheet"
-  href="node_modules/@lmc-eu/spirit-web/css/components.min.css"
-/>
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
 ```
 
 Import React components in your app:

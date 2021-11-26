@@ -25,8 +25,8 @@ In Sass, import individual files by token categories:
 @use 'node_modules/@lmc-eu/spirit-design-tokens/scss/typography';
 
 .MyComponent {
-    font-family: typography.$font-family-default;
-    color: colors.$text-primary-default;
+  font-family: typography.$font-family-default;
+  color: colors.$text-primary-default;
 }
 ```
 
@@ -36,7 +36,7 @@ Or import all tokens at once:
 @use 'node_modules/@lmc-eu/spirit-design-tokens/scss' as tokens;
 
 .MyComponent {
-    font-family: tokens.$font-family-default;
-    color: tokens.$text-primary-default;
+  font-family: tokens.$font-family-default;
+  color: tokens.$text-primary-default;
 }
 ```

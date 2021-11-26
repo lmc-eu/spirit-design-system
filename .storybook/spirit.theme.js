@@ -34,5 +34,5 @@ export default create({
 
   brandTitle: 'Spirit Design System',
   brandUrl: 'https://spirit.lmc.eu',
-  brandImage: Logo
+  brandImage: Logo,
 });

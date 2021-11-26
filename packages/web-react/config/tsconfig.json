@@ -25,21 +25,9 @@
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "lib": [
-      "es2015",
-      "dom",
-      "dom.iterable"
-    ],
+    "typeRoots": ["./node_modules/@types"],
+    "lib": ["es2015", "dom", "dom.iterable"]
   },
-  "include": [
-    "../src/**/*",
-  ],
-  "exclude": [
-    "../node_modules",
-    "../src/**/__tests__/**/*",
-    "../dist/**/*",
-  ]
+  "include": ["../src/**/*"],
+  "exclude": ["../node_modules", "../src/**/__tests__/**/*", "../dist/**/*"]
 }

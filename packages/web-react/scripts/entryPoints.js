@@ -1,8 +1,4 @@
-const entryPoints = [
-  { dirs: [], bundleName: 'main' },
-  { dirs: ['components'] },
-  { dirs: ['components', 'Button'] },
-];
+const entryPoints = [{ dirs: [], bundleName: 'main' }, { dirs: ['components'] }, { dirs: ['components', 'Button'] }];
 
 const lookupTrie = Object.create(null);
 entryPoints.forEach((info) => {
@@ -70,8 +66,7 @@ exports.check = function check(id, parentId) {
       const parentParts = partsAfterDist(parentId);
       const parentEntryPointIndex = lengthOfLongestEntryPoint(parentParts);
       const sameEntryPoint =
-        entryPointIndex === parentEntryPointIndex &&
-        arraysEqualUpTo(importedParts, parentParts, entryPointIndex);
+        entryPointIndex === parentEntryPointIndex && arraysEqualUpTo(importedParts, parentParts, entryPointIndex);
 
       // If the imported ID and the parent ID have the same longest entry
       // point prefix, then this import is safely confined within that
@@ -83,11 +78,7 @@ exports.check = function check(id, parentId) {
       }
 
       // eslint-disable-next-line no-console
-      console.warn(
-        `Risky cross-entry-point nested import of ${id} in ${partsAfterDist(
-          parentId,
-        ).join('/')}`,
-      );
+      console.warn(`Risky cross-entry-point nested import of ${id} in ${partsAfterDist(parentId).join('/')}`);
     }
   }
 

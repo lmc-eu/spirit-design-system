@@ -15,11 +15,11 @@ See individual [packages](#packages) to learn how to get started.
 
 ## Packages
 
-| Package name                                                 | Description                                                     |
-| ------------------------------------------------------------ | --------------------------------------------------------------- |
-| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)   | Design tokens for Spirit Design System                          |
-| [`@lmc-eu/spirit-web`](./packages/web)                       | CSS and vanilla JS implementation of Spirit Design System       |
-| [`@lmc-eu/spirit-web-react`](./packages/web-react)           | React implementation of Spirit Design System components         |
+| Package name                                               | Description                                               |
+| ---------------------------------------------------------- | --------------------------------------------------------- |
+| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens) | Design tokens for Spirit Design System                    |
+| [`@lmc-eu/spirit-web`](./packages/web)                     | CSS and vanilla JS implementation of Spirit Design System |
+| [`@lmc-eu/spirit-web-react`](./packages/web-react)         | React implementation of Spirit Design System components   |
 
 ## Development
 
@@ -38,4 +38,4 @@ See individual [packages](#packages) to learn how to get started.
 
 See [`package.json`](./package.json) for all available tasks.
 
-[LMC]: https://github.com/lmc-eu
+[lmc]: https://github.com/lmc-eu

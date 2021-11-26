@@ -5,10 +5,7 @@ import glob = require('glob');
 
 export const distDir = path.resolve(__dirname, '..', 'dist');
 
-export function eachFile(
-  dir: string,
-  callback: (absPath: string, relPath: string) => any,
-) {
+export function eachFile(dir: string, callback: (absPath: string, relPath: string) => any) {
   const promises: Promise<any>[] = [];
 
   return new Promise<void>((resolve, reject) => {
