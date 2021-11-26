@@ -10,9 +10,7 @@ module.exports = (env, argv) =>
     output: {
       // Puts the output at the root of the dist folder
       path: path.join(__dirname, '../dist/_bundles'),
-      filename: `${libName}${
-        argv.mode === 'production' ? '.umd.min.js' : '.umd.js'
-      }`,
+      filename: `${libName}${argv.mode === 'production' ? '.umd.min.js' : '.umd.js'}`,
       libraryTarget: 'umd',
       umdNamedDefine: true,
       library: 'webReact',

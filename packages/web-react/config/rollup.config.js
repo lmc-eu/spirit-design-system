@@ -31,17 +31,13 @@ function isExternal(id, parentId, entryPointsAreExternal = true) {
   if (path.isAbsolute(id)) {
     const posixId = toPosixPath(id);
     const posixParentId = toPosixPath(parentId);
-    absoluteId = path.posix.relative(
-      path.posix.dirname(posixParentId),
-      posixId,
-    );
+    absoluteId = path.posix.relative(path.posix.dirname(posixParentId), posixId);
     if (!absoluteId.startsWith('.')) {
       absoluteId = `./${absoluteId}`;
     }
   }
 
-  const isRelative =
-    absoluteId.startsWith('./') || absoluteId.startsWith('../');
+  const isRelative = absoluteId.startsWith('./') || absoluteId.startsWith('../');
 
   if (!isRelative) {
     return true;

@@ -88,9 +88,7 @@ class Transformer {
         try {
           source.value = this.normalizeId(source.value, file);
         } catch (error) {
-          console.error(
-            `Failed to resolve ${source.value} in ${file} with error ${error}`,
-          );
+          console.error(`Failed to resolve ${source.value} in ${file} with error ${error}`);
           process.exit(1);
         }
       }

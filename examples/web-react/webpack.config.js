@@ -2,17 +2,13 @@ const Path = require('path');
 
 module.exports = () => ({
   entry: {
-    demo: [
-      Path.join(__dirname, 'src/demo.jsx'),
-    ],
+    demo: [Path.join(__dirname, 'src/demo.jsx')],
   },
   module: {
     rules: [
       {
         exclude: /node_modules/,
-        include: [
-          Path.join(__dirname, 'src'),
-        ],
+        include: [Path.join(__dirname, 'src')],
         test: /\.(js|jsx)$/,
         use: [{ loader: 'babel-loader' }],
       },

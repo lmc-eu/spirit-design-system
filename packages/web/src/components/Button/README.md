@@ -1,9 +1,10 @@
 # Button
 
 Available variants are:
-* primary
-* secondary
-* tertiary
+
+- primary
+- secondary
+- tertiary
 
 ```html
 <button class="Button Button--primary">Primary Button</button>
@@ -12,4 +13,3 @@ Available variants are:
 ```
 
 Create block level buttons—those that span the full width of a parent—by adding `.Button--block`.
-
