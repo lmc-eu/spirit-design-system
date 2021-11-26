@@ -1,20 +1,20 @@
 const entryPoints = [
-  { dirs: [], bundleName: "main" },
+  { dirs: [], bundleName: 'main' },
   { dirs: ['components'] },
   { dirs: ['components', 'Button'] },
 ];
 
 const lookupTrie = Object.create(null);
-entryPoints.forEach(info => {
+entryPoints.forEach((info) => {
   let node = lookupTrie;
-  info.dirs.forEach(dir => {
+  info.dirs.forEach((dir) => {
     const dirs = node.dirs || (node.dirs = Object.create(null));
     node = dirs[dir] || (dirs[dir] = { isEntry: false });
   });
   node.isEntry = true;
 });
 
-exports.forEach = function(callback, context) {
+exports.forEach = function (callback, context) {
   entryPoints.forEach(callback, context);
 };
 
@@ -22,7 +22,7 @@ exports.map = function map(callback, context) {
   return entryPoints.map(callback, context);
 };
 
-const pathPosix = require("path").posix;
+const pathPosix = require('path').posix;
 
 exports.check = function (id, parentId) {
   const resolved = pathPosix.resolve(pathPosix.dirname(parentId), id);
@@ -50,9 +50,11 @@ exports.check = function (id, parentId) {
         return false;
       }
 
-      console.warn(`Risky cross-entry-point nested import of ${id} in ${
-        partsAfterDist(parentId).join("/")
-      }`);
+      console.warn(
+        `Risky cross-entry-point nested import of ${id} in ${partsAfterDist(
+          parentId,
+        ).join('/')}`,
+      );
     }
   }
 
@@ -61,7 +63,7 @@ exports.check = function (id, parentId) {
 
 function partsAfterDist(id) {
   const parts = id.split(pathPosix.sep);
-  const distIndex = parts.lastIndexOf("dist");
+  const distIndex = parts.lastIndexOf('dist');
   if (distIndex >= 0) {
     return parts.slice(distIndex + 1);
   }
