@@ -32,7 +32,7 @@
     "autoprefixer": "^10.3.1",
     "clean-css-cli": "^5.3.3",
     "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
+    "postcss-cli": "^9.0.2",
     "sass": "^1.37.5",
     "stylelint": "^13.13.1",
     "stylelint-order": "^4.1.0"
