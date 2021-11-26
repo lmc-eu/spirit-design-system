@@ -5,7 +5,7 @@
 
 [![Maintained with Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 
-Spirit is an open-source design system developed by [LMC].
+Spirit is an open-source design system developed by [LMC][lmc].
 
 </div>
 
