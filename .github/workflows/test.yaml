@@ -1,0 +1,35 @@
+name: Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Fetch Git history
+        run: git fetch --no-tags --depth=50 origin main
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Test
+        run: yarn test
+
+      - name: Test Build
+        run: yarn build
+
+      - name: Test Storybook Build
+        run: yarn storybook:build
