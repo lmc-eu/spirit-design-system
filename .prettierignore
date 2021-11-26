@@ -1,2 +1,3 @@
-// Next.JS build files
-.next
+# Build files
+**/dist
+**/build

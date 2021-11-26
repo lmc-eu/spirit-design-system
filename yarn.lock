@@ -2236,10 +2236,10 @@
     eslint-config-airbnb-base "^14.2.1"
     eslint-plugin-import "^2.25.2"
 
-"@lmc-eu/prettier-config@^1.0.1":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.0.3.tgz#e38ca0aa59fab1b6a5c1e347362764a9583018c6"
-  integrity sha512-CoXws/7EQjg78X+0TUCpubaUlK76mzae52fsgsRhPtgf0KLCTvIKUzNnPDa+SzlAMG7c+yNi2YFbflgKeQso4A==
+"@lmc-eu/prettier-config@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.1.tgz#b9564e9b9851263f0e2f5ef7ba6c26c834c91c68"
+  integrity sha512-cqqHB31pHHdkFi1GeGJrQvwp0r3alvqxZvfJmj28gwgc+ZNpqpKIo8B149TIovn6fHL/0WU+0eITmwTyuNGDmA==
 
 "@lmc-eu/stylelint-config@^1.0.3":
   version "1.0.3"
