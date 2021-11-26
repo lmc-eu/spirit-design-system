@@ -12,25 +12,19 @@ function isExternal(id, parentId, entryPointsAreExternal = true) {
   if (path.isAbsolute(id)) {
     const posixId = toPosixPath(id);
     const posixParentId = toPosixPath(parentId);
-    id = path.posix.relative(
-      path.posix.dirname(posixParentId),
-      posixId,
-    );
-    if (!id.startsWith(".")) {
-      id = "./" + id;
+    id = path.posix.relative(path.posix.dirname(posixParentId), posixId);
+    if (!id.startsWith('.')) {
+      id = './' + id;
     }
   }
 
-  const isRelative =
-    id.startsWith("./") ||
-    id.startsWith("../");
+  const isRelative = id.startsWith('./') || id.startsWith('../');
 
   if (!isRelative) {
     return true;
   }
 
-  if (entryPointsAreExternal &&
-      entryPoints.check(id, parentId)) {
+  if (entryPointsAreExternal && entryPoints.check(id, parentId)) {
     return true;
   }
 
@@ -124,11 +118,6 @@ function prepareBundle({
 export default [
   ...entryPoints.map(prepareBundle),
   // Convert the ESM entry point to a single CJS bundle.
-  prepareCJS(
-    './dist/index.js',
-    './dist/spirit-web-react.cjs',
-  ),
-  prepareCJSMinified(
-    './dist/spirit-web-react.cjs',
-  ),
+  prepareCJS('./dist/index.js', './dist/spirit-web-react.cjs'),
+  prepareCJSMinified('./dist/spirit-web-react.cjs'),
 ];
