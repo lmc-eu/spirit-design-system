@@ -10,15 +10,9 @@ namespace Lmc\TwigComponentsBundle\Compiler;
  */
 class ComponentTagCompiler
 {
-    /**
-     * @var string
-     */
-    protected $source;
+    protected string $source;
 
-    /**
-     * @var string
-     */
-    private $twigPathAlias;
+    private string $twigPathAlias;
 
     public function __construct(string $source, string $twigPathAlias)
     {
@@ -31,15 +25,12 @@ class ComponentTagCompiler
         $value = $this->source;
         $value = $this->compileSelfClosingTags($value);
         $value = $this->compileOpeningTags($value);
-        $value = $this->compileClosingTags($value);
 
-        return $value;
+        return $this->compileClosingTags($value);
     }
 
     /**
      * Compile the opening tags within the given string.
-     *
-     * @throws \InvalidArgumentException
      */
     protected function compileOpeningTags(string $value): string
     {
@@ -82,10 +73,15 @@ class ComponentTagCompiler
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
                 $name = $matches[1];
 
-                return '{% embed "@' . $this->twigPathAlias . '/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% block content %}";
+                return $this->componentStartString($name, $attributes) . '{% block content %}';
             },
             $value
         );
+    }
+
+    protected function componentStartString(string $component, string $attributes): string
+    {
+        return "{% embed \"@" . $this->twigPathAlias . "/" . mb_strtolower($component) . ".twig\" with { props: $attributes } %}";
     }
 
     /**
@@ -98,8 +94,6 @@ class ComponentTagCompiler
 
     /**
      * Compile the self-closing tags within the given string.
-     *
-     * @throws \InvalidArgumentException
      */
     protected function compileSelfClosingTags(string $value): string
     {
@@ -141,7 +135,7 @@ class ComponentTagCompiler
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
                 $name = $matches[1];
 
-                return '{% embed "@' . $this->twigPathAlias . '/' . mb_strtolower($name) . ".twig\" with { props: $attributes } %}{% endembed %}";
+                return $this->componentStartString($name, $attributes) . '{% endembed %}';
             },
             $value
         );
@@ -167,7 +161,7 @@ class ComponentTagCompiler
             )?
         /x';
 
-        if (!preg_match_all($pattern, $attributeString, $matches, PREG_SET_ORDER)) {
+        if (! preg_match_all($pattern, $attributeString, $matches, PREG_SET_ORDER)) {
             return '{}';
         }
 
@@ -181,14 +175,15 @@ class ComponentTagCompiler
                 $value = 'true';
             }
 
-            if (mb_strpos($attribute, ':') === 0) {
+            // enable an argument that begins with a colon
+            if (\str_starts_with($attribute, ':')) {
                 $attribute = str_replace(':', '', $attribute);
                 $value = $this->stripQuotes($value);
             }
 
             $valueWithoutQuotes = $this->stripQuotes($value);
 
-            if ((mb_strpos($valueWithoutQuotes, '{{') === 0) && (mb_strpos($valueWithoutQuotes, '}}') === mb_strlen($valueWithoutQuotes) - 2)) {
+            if (\str_starts_with($valueWithoutQuotes, '{{') && (mb_strpos($valueWithoutQuotes, '}}') === mb_strlen($valueWithoutQuotes) - 2)) {
                 $value = mb_substr($valueWithoutQuotes, 2, -2);
             }
 
@@ -209,7 +204,7 @@ class ComponentTagCompiler
      */
     public function stripQuotes(string $value): string
     {
-        return mb_strpos($value, '"') === 0 || mb_strpos($value, '\'') === 0
+        return \str_starts_with($value, '"') || \str_starts_with($value, '\'')
             ? mb_substr($value, 1, -1)
             : $value;
     }

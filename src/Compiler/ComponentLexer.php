@@ -11,10 +11,7 @@ use Twig\TokenStream;
 
 class ComponentLexer extends Lexer
 {
-    /**
-     * @var string
-     */
-    private $twigPathAlias;
+    private string $twigPathAlias;
 
     public function __construct(Environment $env, array $options, string $twigPathAlias)
     {

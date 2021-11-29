@@ -10,25 +10,13 @@ use Twig\Loader\FilesystemLoader;
 
 class TwigFactory
 {
-    /**
-     * @var Environment
-     */
-    private $twig;
+    private Environment $twig;
 
-    /**
-     * @var FilesystemLoader
-     */
-    private $loader;
+    private FilesystemLoader $loader;
 
-    /**
-     * @var string
-     */
-    private $path;
+    private string $path;
 
-    /**
-     * @var string
-     */
-    private $alias;
+    private string $alias;
 
     public function __construct(Environment $twig, FilesystemLoader $loader, string $path, string $alias)
     {
