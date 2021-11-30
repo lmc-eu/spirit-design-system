@@ -67,6 +67,7 @@
     "rollup": "rollup -c ./config/rollup.config.js",
     "resolve": "ts-node-script ./scripts/resolveModuleIds.ts",
     "lint": "eslint ./",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "test": "npm-run-all --serial lint types"
   }
 }
