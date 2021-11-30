@@ -29,6 +29,7 @@ module.exports = {
 
   extends: [
     '@lmc-eu/eslint-config-base',
+    '@lmc-eu/eslint-config-base/optional',
     'prettier',
     'plugin:react/recommended', // eslint react rules (github.com/yannickcr/eslint-plugin-react)
     'plugin:jsx-a11y/recommended', // accessibility plugin
@@ -56,42 +57,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off', // Used inside HOC, that is fine.
     '@typescript-eslint/no-use-before-define': 'warn',
     'import/extensions': 'off',
-    'no-use-before-define': ['error', 'nofunc'],
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          // @TODO: should we list all `*.config.js` files here?
-          // or all files in `config/**` directory?
-          'config/**',
-          'test/**', // tape, common npm pattern
-          'tests/**', // also common npm pattern
-          'spec/**', // mocha, rspec-like pattern
-          'scripts/*', // custom npm scripts
-          '**/__tests__/**', // jest pattern
-          '**/__mocks__/**', // jest pattern
-          'test.{js,jsx}', // repos with a single test file
-          'test-*.{js,jsx}', // repos with multiple top-level test files
-          '**/*{.,_}{test,spec}.{js,jsx}', // tests where the extension or filename suffix denotes that it is a test
-          '**/jest.config.js', // jest config
-          '**/jest.setup.js', // jest setup
-          '**/vue.config.js', // vue-cli config
-          '**/webpack.config.js', // webpack config
-          '**/webpack.config.*.js', // webpack config
-          '**/rollup.config.js', // rollup config
-          '**/rollup.config.*.js', // rollup config
-          '**/gulpfile.js', // gulp config
-          '**/gulpfile.*.js', // gulp config
-          '**/Gruntfile{,.js}', // grunt config
-          '**/protractor.conf.js', // protractor config
-          '**/protractor.conf.*.js', // protractor config
-          '**/karma.conf.js', // karma config
-          '**/.eslintrc.js', // eslint config
-          '**/postcss.config.js', // postcss config
-        ],
-        optionalDependencies: false,
-      },
-    ],
   },
 };

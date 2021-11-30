@@ -2228,10 +2228,10 @@
     compare-func "^2.0.0"
     q "^1.5.1"
 
-"@lmc-eu/eslint-config-base@^1.0.0-rc1":
-  version "1.0.0-rc1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-base/-/eslint-config-base-1.0.0-rc1.tgz#21a6eb1d6c23de73ca3bf9a49988e5eb2e2803c6"
-  integrity sha512-f1pnfuQ/3JiIdY5l2CO10WStNckqA4ZGoGBpx40+7rAf67SUHYaZ95uwYPX5CjaAZ9JslUbwq2K7uQ3rQ9/QVw==
+"@lmc-eu/eslint-config-base@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-base/-/eslint-config-base-1.0.0.tgz#43500ce8e394ff065c8f939071a981c077da53b9"
+  integrity sha512-ySxSAXxxuA6tYwnBIc5YUq9Xud7ezJMPAtcoeZTRNOzTTCck+YVAZr5sCyszxNVQX4jCrYPLHDrWhvwdwnZMDA==
   dependencies:
     eslint-config-airbnb-base "^14.2.1"
     eslint-plugin-import "^2.25.2"
