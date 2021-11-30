@@ -21,7 +21,7 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@lmc-eu/eslint-config-base": "^1.0.0-rc1",
+    "@lmc-eu/eslint-config-base": "^1.0.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@types/react": "^17.0.29",
     "@types/react-dom": "^17.0.9",

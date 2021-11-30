@@ -31,6 +31,7 @@ export const Button = ({
   type,
 }: ButtonProps): JSX.Element => (
   /* eslint-disable react/button-has-type */
+  // Because of dynamic assigment in react @see https://github.com/yannickcr/eslint-plugin-react/issues/1555
   <button
     className={classNames('Button', getButtonColorClassname(color))}
     onClick={onClick}

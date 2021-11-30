@@ -13,7 +13,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const recast = require('recast');
 
 const distRoot = `${__dirname}/../dist`;
 
@@ -33,32 +32,10 @@ delete packageJson.scripts;
 delete packageJson.bundlesize;
 delete packageJson.engines;
 
-// The root package.json points to the CJS/ESM source in "dist", to support
-// on-going package development (e.g. running tests, supporting npm link, etc.).
-// When publishing from "dist" however, we need to update the package.json
-// to point to the files within the same directory.
-const distPackageJson =
-  JSON.stringify(
-    packageJson,
-    (_key, value) => {
-      if (typeof value === 'string' && value.startsWith('./dist/')) {
-        const parts = value.split('/');
-        parts.splice(1, 1); // remove dist
-        return parts.join('/');
-      }
-      return value;
-    },
-    2,
-  ) + '\n';
-
-// Save the modified package.json to "dist"
-// fs.writeFileSync(`${distRoot}/package.json`, distPackageJson);
-
 // Copy supporting files into "dist"
 const srcDir = `${__dirname}/..`;
 const destDir = `${srcDir}/dist`;
 fs.copyFileSync(`${srcDir}/README.md`, `${destDir}/README.md`);
-// fs.copyFileSync(`${srcDir}/LICENSE`,  `${destDir}/LICENSE`);
 
 // Create individual bundle package.json files, storing them in their
 // associated dist directory. This helps provide a way for the Spirit Web React
@@ -73,7 +50,7 @@ packageEntryPoints.forEach(function buildPackageJson({
   if (!dirs.length) return;
   fs.writeFileSync(
     path.join(distRoot, ...dirs, 'package.json'),
-    JSON.stringify(
+    `${JSON.stringify(
       {
         name: path.posix.join('@lmc-eu', 'spirit-web-react', ...dirs),
         type: 'module',
@@ -84,6 +61,6 @@ packageEntryPoints.forEach(function buildPackageJson({
       },
       null,
       2,
-    ) + '\n',
+    )}\n`,
   );
 });

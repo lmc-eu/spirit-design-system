@@ -14,7 +14,7 @@ entryPoints.forEach((info) => {
   node.isEntry = true;
 });
 
-exports.forEach = function (callback, context) {
+exports.forEach = function forEach(callback, context) {
   entryPoints.forEach(callback, context);
 };
 
@@ -24,7 +24,39 @@ exports.map = function map(callback, context) {
 
 const pathPosix = require('path').posix;
 
-exports.check = function (id, parentId) {
+function lengthOfLongestEntryPoint(parts) {
+  let node = lookupTrie;
+  let longest = -1;
+  for (let i = 0; node && i < parts.length; ++i) {
+    if (node.isEntry) longest = i;
+    node = node.dirs && node.dirs[parts[i]];
+  }
+  if (node && node.isEntry) {
+    return parts.length;
+  }
+
+  return longest;
+}
+
+function partsAfterDist(id) {
+  const parts = id.split(pathPosix.sep);
+  const distIndex = parts.lastIndexOf('dist');
+  if (distIndex >= 0) {
+    return parts.slice(distIndex + 1);
+  }
+
+  return null;
+}
+
+function arraysEqualUpTo(a, b, end) {
+  for (let i = 0; i < end; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+
+  return true;
+}
+
+exports.check = function check(id, parentId) {
   const resolved = pathPosix.resolve(pathPosix.dirname(parentId), id);
   const importedParts = partsAfterDist(resolved);
 
@@ -50,6 +82,7 @@ exports.check = function (id, parentId) {
         return false;
       }
 
+      // eslint-disable-next-line no-console
       console.warn(
         `Risky cross-entry-point nested import of ${id} in ${partsAfterDist(
           parentId,
@@ -61,36 +94,10 @@ exports.check = function (id, parentId) {
   return false;
 };
 
-function partsAfterDist(id) {
-  const parts = id.split(pathPosix.sep);
-  const distIndex = parts.lastIndexOf('dist');
-  if (distIndex >= 0) {
-    return parts.slice(distIndex + 1);
-  }
-}
-
-exports.getEntryPointDirectory = function (file) {
+exports.getEntryPointDirectory = function getEntryPointDirectory(file) {
   const parts = partsAfterDist(file) || file.split(pathPosix.sep);
   const len = lengthOfLongestEntryPoint(parts);
   if (len >= 0) return parts.slice(0, len).join(pathPosix.sep);
+
+  return null;
 };
-
-function lengthOfLongestEntryPoint(parts) {
-  let node = lookupTrie;
-  let longest = -1;
-  for (let i = 0; node && i < parts.length; ++i) {
-    if (node.isEntry) longest = i;
-    node = node.dirs && node.dirs[parts[i]];
-  }
-  if (node && node.isEntry) {
-    return parts.length;
-  }
-  return longest;
-}
-
-function arraysEqualUpTo(a, b, end) {
-  for (let i = 0; i < end; ++i) {
-    if (a[i] !== b[i]) return false;
-  }
-  return true;
-}
