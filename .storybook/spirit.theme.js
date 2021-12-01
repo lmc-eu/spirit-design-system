@@ -4,8 +4,8 @@ import Logo from '../.storybook/assets/images/spirit-logo-inverse.svg';
 export default create({
   base: 'light',
 
-  colorPrimary: '#77a6c0',
-  colorSecondary: '#132930',
+  colorPrimary: '#0b1c21',
+  colorSecondary: '#77a6c0',
 
   // UI
   // appBg: '#132930',
