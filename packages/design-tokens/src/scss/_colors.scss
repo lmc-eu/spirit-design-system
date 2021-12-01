@@ -9,8 +9,6 @@ $gray-800: #737373 !default;
 $black: #000 !default;
 
 $glacier-300: #77a6c0 !default;
-$glacier-400: #678fa6 !default;
-$glacier-500: #57798c !default;
 
 $porcelain-50: #f0f4f5 !default;
 
@@ -19,8 +17,13 @@ $tower-gray-300: #90a2a7 !default;
 $tower-gray-400: #849499 !default;
 $tower-gray-500: #6e7b80 !default;
 
-$gable-green-800: #132930 !default;
+$gable-green-700: #132930 !default;
+$gable-green-800: #0b1c21 !default;
 $gable-green-900: #091417 !default;
+
+$casal-600: #29616f;
+$casal-700: #1b5260;
+$casal-800: #0b3a46;
 
 $malibu-300: #61b3ff !default;
 
@@ -65,7 +68,7 @@ $background-colors: (
 ) !default;
 
 // Text
-$text-primary-default: $brand-primary !default;
+$text-primary-default: $gable-green-700 !default;
 $text-primary-disabled: $gray-600 !default;
 $text-secondary-default: $tower-gray-300 !default;
 $text-secondary-disabled: $gray-600 !default;
@@ -86,14 +89,22 @@ $text-colors: (
 ) !default;
 
 // Action
-$action-primary-default: $brand-secondary !default;
-$action-primary-hover: $glacier-400 !default;
-$action-primary-active: $glacier-500 !default;
+$action-primary-default: $casal-600 !default;
+$action-primary-hover: $casal-700 !default;
+$action-primary-active: $casal-800 !default;
 $action-primary-disabled: $gray-200 !default;
-$action-secondary-default: $brand-primary !default;
-$action-secondary-hover: $gable-green-900 !default;
-$action-secondary-active: $black !default;
+$action-secondary-default: $casal-600 !default;
+$action-secondary-hover: $casal-700 !default;
+$action-secondary-active: $casal-800 !default;
 $action-secondary-disabled: $gray-200 !default;
+$action-selected-default: $casal-600 !default;
+$action-selected-hover: $casal-700 !default;
+$action-selected-active: $casal-800 !default;
+$action-selected-disabled: $gray-200 !default;
+$action-unselected-default: $gable-green-700 !default;
+$action-unselected-hover: $gable-green-900 !default;
+$action-unselected-active: $black !default;
+$action-unselected-disabled: $gray-200 !default;
 $action-link-primary-default: $action-primary-default !default;
 $action-link-primary-hover: $action-primary-hover !default;
 $action-link-primary-active: $action-primary-active !default;
@@ -114,6 +125,14 @@ $action-colors: (
     secondary-hover: $action-secondary-hover,
     secondary-active: $action-secondary-active,
     secondary-disabled: $action-secondary-disabled,
+    selected-default: $action-selected-default,
+    selected-hover: $action-selected-hover,
+    selected-active: $action-selected-active,
+    selected-disabled: $action-selected-disabled,
+    unselected-default: $action-unselected-default,
+    unselected-hover: $action-unselected-hover,
+    unselected-active: $action-unselected-active,
+    unselected-disabled: $action-unselected-disabled,
     link-primary-default: $action-link-primary-default,
     link-primary-hover: $action-link-primary-hover,
     link-primary-active: $action-link-primary-active,
@@ -127,11 +146,11 @@ $action-colors: (
 ) !default;
 
 // Emotion
-$emotion-info-default: $jordy-blue-200 !default;
-$emotion-info-hover: $jordy-blue-300 !default;
-$emotion-info-active: $jordy-blue-400 !default;
-$emotion-info-disabled: $gray-200 !default;
-$emotion-info-background: $jordy-blue-50 !default;
+$emotion-informative-default: $jordy-blue-200 !default;
+$emotion-informative-hover: $jordy-blue-300 !default;
+$emotion-informative-active: $jordy-blue-400 !default;
+$emotion-informative-disabled: $gray-200 !default;
+$emotion-informative-background: $jordy-blue-50 !default;
 $emotion-success-default: $wild-willow-300 !default;
 $emotion-success-hover: $wild-willow-400 !default;
 $emotion-success-active: $wild-willow-500 !default;
@@ -149,11 +168,11 @@ $emotion-danger-disabled: $gray-200 !default;
 $emotion-danger-background: $cranberry-50 !default;
 
 $emotion-colors: (
-    info-default: $emotion-info-default,
-    info-hover: $emotion-info-hover,
-    info-active: $emotion-info-active,
-    info-disabled: $emotion-info-disabled,
-    info-background: $emotion-info-background,
+    informative-default: $emotion-informative-default,
+    informative-hover: $emotion-informative-hover,
+    informative-active: $emotion-informative-active,
+    informative-disabled: $emotion-informative-disabled,
+    informative-background: $emotion-informative-background,
     success-default: $emotion-success-default,
     success-hover: $emotion-success-hover,
     success-active: $emotion-success-active,

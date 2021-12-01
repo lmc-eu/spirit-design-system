@@ -24,22 +24,22 @@ $default-dark: (
     default-background: $default-dark-background,
 );
 
-// Info light tag
-$info-light-color: tokens.$emotion-info-default;
-$info-light-background: tokens.$emotion-info-background;
+// Informative light tag
+$informative-light-color: tokens.$emotion-informative-default;
+$informative-light-background: tokens.$emotion-informative-background;
 
-$info-light: (
-    default-color: $info-light-color,
-    default-background: $info-light-background,
+$informative-light: (
+    default-color: $informative-light-color,
+    default-background: $informative-light-background,
 );
 
-// Info dark tag
-$info-dark-color: tokens.$text-primary-inverted-default;
-$info-dark-background: tokens.$emotion-info-default;
+// Informative dark tag
+$informative-dark-color: tokens.$text-primary-inverted-default;
+$informative-dark-background: tokens.$emotion-informative-default;
 
-$info-dark: (
-    default-color: $info-dark-color,
-    default-background: $info-dark-background,
+$informative-dark: (
+    default-color: $informative-dark-color,
+    default-background: $informative-dark-background,
 );
 
 // Success light tag
@@ -99,8 +99,8 @@ $danger-dark: (
 $variants: (
     default-light: $default-light,
     default-dark: $default-dark,
-    info-light: $info-light,
-    info-dark: $info-dark,
+    informative-light: $informative-light,
+    informative-dark: $informative-dark,
     success-light: $success-light,
     success-dark: $success-dark,
     warning-light: $warning-light,
