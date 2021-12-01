@@ -7,14 +7,14 @@
     align-items: center;
     padding: theme.$padding-y theme.$padding-x;
     font-family: theme.$font-family;
+    font-weight: theme.$font-weight;
+    font-size: theme.$font-size;
     text-align: center;
     text-decoration: none;
     line-height: theme.$line-height;
     vertical-align: middle;
     background-color: transparent;
-    border-width: theme.$border-width;
-    border-style: solid;
-    border-color: transparent;
+    border: theme.$border transparent;
     border-radius: theme.$border-radius;
     cursor: pointer;
     user-select: none;
