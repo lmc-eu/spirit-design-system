@@ -1,4 +1,5 @@
 // ⚠️ Remove the `dist/` part from paths below when copy-and-pasting the code to your project.
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/borders';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/colors' with (
     $brand-primary: #f90,
     $brand-secondary: #19325a,
@@ -9,8 +10,8 @@
     $text-primary-inverted-default: #fff,
     $action-primary-default: #1b6494,
     $action-primary-hover: #1b6494,
-    $emotion-info-default: #0049ac,
-    $emotion-info-background: #e6edf7,
+    $emotion-informative-default: #0049ac,
+    $emotion-informative-background: #e6edf7,
     $emotion-success-default: #00a527,
     $emotion-success-background: #e7f6f1,
     $emotion-warning-default: #ff9900,

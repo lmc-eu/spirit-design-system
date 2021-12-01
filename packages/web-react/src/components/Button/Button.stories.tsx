@@ -4,28 +4,20 @@ import Button, { ButtonProps } from './Button';
 export default {
   title: 'Components/Button',
   argTypes: {
-    type: 'primary',
+    color: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: { type: 'select' },
+    },
     label: { control: 'text' },
     onClick: { action: 'onClick' },
+    type: 'button',
   },
 };
 
 const Template = (args: ButtonProps) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  type: 'primary',
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  type: 'secondary',
-  label: 'Button',
-};
-
-export const Tertiary = Template.bind({});
-Tertiary.args = {
-  type: 'tertiary',
+export const ExampleButton = Template.bind({});
+ExampleButton.args = {
+  color: 'primary',
   label: 'Button',
 };

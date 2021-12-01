@@ -5,18 +5,22 @@ import { Button } from '@lmc-eu/spirit-web-react/components/Button';
 const Demo = () => (
   <>
     <Button
+      color="primary"
       label="Primary button"
       onClick={() => console.log('Primary button clicked!')}
+      type="button"
     />
     <Button
       color="secondary"
       label="Secondary button"
       onClick={() => console.log('Secondary button clicked!')}
+      type="button"
     />
     <Button
       color="tertiary"
       label="Tertiary button"
       onClick={() => console.log('Tertiary button clicked!')}
+      type="button"
     />
   </>
 );
