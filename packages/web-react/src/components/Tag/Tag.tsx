@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { WithChildren } from '../../types/main';
 
-type Color = 'default' | 'information' | 'success' | 'warning' | 'danger';
+type Color = 'default' | 'informative' | 'success' | 'warning' | 'danger';
 
 type Theme = 'light' | 'dark';
 
