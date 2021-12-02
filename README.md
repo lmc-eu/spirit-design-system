@@ -1,8 +1,13 @@
-# SPIRIT
+<div align="center">
+<img src="https://github.com/lmc-eu/spirit-design-system/blob/main/static/spirit.svg?raw=true" width="422" height="300" alt="Spirit Design System" />
 
-> Spirit is an open-source design system developed by LMC.
+### Spirit Design System
 
 [![Maintained with Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
+
+Spirit is an open-source design system developed by [LMC].
+
+</div>
 
 ## Getting Started
 
@@ -32,3 +37,5 @@ See individual [packages](#packages) to learn how to get started.
 - `yarn build`
 
 See [`package.json`](./package.json) for all available tasks.
+
+[LMC]: https://github.com/lmc-eu
