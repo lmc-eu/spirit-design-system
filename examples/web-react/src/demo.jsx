@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 import { Button } from '@lmc-eu/spirit-web-react/components/Button';
 
 const Demo = () => (
-  <>
+  <section>
+    <h2>Button</h2>
     <Button
       color="primary"
       label="Primary button"
@@ -22,7 +23,7 @@ const Demo = () => (
       onClick={() => console.log('Tertiary button clicked!')}
       type="button"
     />
-  </>
+  </section>
 );
 
 render(
