@@ -12,7 +12,6 @@ module.exports = {
   parserOptions: {
     project: './config/tsconfig.eslint.json',
     ecmaFeatures: { jsx: true }, // Allows for the parsing of JSX
-    ecmaVersion: 'latest',
     sourceType: 'module',
   },
 
@@ -28,16 +27,13 @@ module.exports = {
   },
 
   extends: [
-    '@lmc-eu/eslint-config-base',
-    '@lmc-eu/eslint-config-base/optional',
-    'prettier',
+    '../../.eslintrc.js',
     'plugin:react/recommended', // eslint react rules (github.com/yannickcr/eslint-plugin-react)
     'plugin:jsx-a11y/recommended', // accessibility plugin
-    // Prettier plugin and recommended rules
-    'plugin:prettier/recommended',
+    'plugin:prettier/recommended', // prettier plugin and recommended rules
   ],
 
-  plugins: ['prettier', 'promise', 'react', '@typescript-eslint'],
+  plugins: ['promise', 'react', '@typescript-eslint'],
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/prop-types': 'off', // We turn off prop-types rule, as we will use TypeScript's types instead.

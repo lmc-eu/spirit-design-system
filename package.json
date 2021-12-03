@@ -17,6 +17,8 @@
     "packages/*"
   ],
   "scripts": {
+    "es:lint": "eslint ./",
+    "es:lint:fix": "yarn es:lint --fix",
     "build": "yarn packages:build",
     "examples": "yarn examples:build",
     "examples:install": "cd examples/web && yarn install && cd ../web-react && yarn install",
@@ -30,7 +32,7 @@
     "storybook:build": "build-storybook -o ./.storybook/build",
     "test": "yarn packages:test",
     "types": "yarn packages:types",
-    "lint": "yarn packages:lint",
+    "lint": "npm-run-all es:lint packages:lint",
     "packages:lint": "lerna run lint",
     "packages:test": "lerna run test",
     "packages:types": "lerna run types",
