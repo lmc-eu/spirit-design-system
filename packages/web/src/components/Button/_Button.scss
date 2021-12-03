@@ -40,6 +40,11 @@
     padding-right: 0;
 }
 
+.Button--block {
+    display: block;
+    width: 100%;
+}
+
 @each $variant, $variables in theme.$variants {
     @include tools.variant($variant, $variables);
 }
