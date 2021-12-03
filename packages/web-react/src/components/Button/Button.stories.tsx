@@ -8,9 +8,14 @@ export default {
       options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'select' },
     },
-    label: { control: 'text' },
     onClick: { action: 'onClick' },
     type: 'button',
+    disabled: { control: 'boolean' },
+    block: { control: 'boolean' },
+    ariaLabel: { control: 'text' },
+    children: {
+      control: 'text',
+    },
   },
 };
 
@@ -19,5 +24,7 @@ const Template = (args: ButtonProps) => <Button {...args} />;
 export const ExampleButton = Template.bind({});
 ExampleButton.args = {
   color: 'primary',
-  label: 'Button',
+  children: 'Button',
+  disabled: false,
+  block: false,
 };
