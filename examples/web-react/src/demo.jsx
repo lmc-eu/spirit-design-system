@@ -7,22 +7,19 @@ const Demo = () => (
     <h2>Button</h2>
     <Button
       color="primary"
-      label="Primary button"
-      onClick={() => console.log('Primary button clicked!')}
-      type="button"
-    />
+      onClick={() => console.log('Primary button clicked!')}>
+      Primary button
+    </Button>
     <Button
       color="secondary"
-      label="Secondary button"
-      onClick={() => console.log('Secondary button clicked!')}
-      type="button"
-    />
+      onClick={() => console.log('Secondary button clicked!')}>
+      Secondary Button
+    </Button>
     <Button
       color="tertiary"
-      label="Tertiary button"
-      onClick={() => console.log('Tertiary button clicked!')}
-      type="button"
-    />
+      onClick={() => console.log('Tertiary button clicked!')}>
+      Tertiary button
+    </Button>
   </section>
 );
 

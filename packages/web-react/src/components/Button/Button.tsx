@@ -49,7 +49,7 @@ export const Button = ({
       return;
     }
 
-    if (typeof onClick === 'function') {
+    if (onClick) {
       onClick(event);
     }
   };
