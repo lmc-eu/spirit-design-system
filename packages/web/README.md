@@ -38,7 +38,7 @@ modules so they are resolved correctly. See [theming] to learn how it works.
 
 ## Examples
 
-See [examples] for a live demo.
+👀 See [example] for a live demo.
 
 [theming]: https://github.com/lmc-eu/spirit-design-system/blob/main/src/web/THEMING.md
-[examples]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web
+[examples]: https://lmc-eu.github.io/spirit-design-system/web/

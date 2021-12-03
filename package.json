@@ -18,7 +18,9 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "examples": "cd examples/web && yarn build && cd ../web-react && yarn build",
+    "examples": "yarn examples:build",
+    "examples:install": "cd examples/web && yarn install && cd ../web-react && yarn install",
+    "examples:build": "cd examples/web && yarn build && cd ../web-react && yarn build",
     "diff": "lerna diff",
     "changed": "lerna changed",
     "list": "lerna ls",

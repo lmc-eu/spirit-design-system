@@ -1,11 +1,11 @@
-name: Deploy
+name: Release
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  release:
     runs-on: ubuntu-20.04
     timeout-minutes: 10
 
