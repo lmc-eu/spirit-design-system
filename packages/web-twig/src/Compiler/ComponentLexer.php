@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\Compiler;
+namespace Lmc\SpiritWebTwigBundle\Compiler;
 
 use Twig\Environment;
 use Twig\Lexer;
