@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class TwigComponentsExtension extends Extension
+class SpiritWebTwigExtension extends Extension
 {
     public const PARAMETER_PATH = 'spirit_web_twig.path';
 

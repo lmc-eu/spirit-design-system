@@ -7,7 +7,7 @@ namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class TwigComponentsExtensionTest extends TestCase
+class SpiritWebTwigExtensionTest extends TestCase
 {
     private ContainerBuilder $containerBuilder;
 
@@ -23,7 +23,7 @@ class TwigComponentsExtensionTest extends TestCase
 
     private function loadExtension(array $configs): void
     {
-        $extension = new TwigComponentsExtension();
+        $extension = new SpiritWebTwigExtension();
         $this->containerBuilder = new ContainerBuilder();
         $this->containerBuilder->registerExtension($extension);
 
