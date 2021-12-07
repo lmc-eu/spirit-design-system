@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle;
+namespace Lmc\SpiritWebTwigBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class TwigComponentsBundle extends Bundle
+class SpiritWebTwigBundle extends Bundle
 {
 }

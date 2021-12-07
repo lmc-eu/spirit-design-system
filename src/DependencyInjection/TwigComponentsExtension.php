@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\DependencyInjection;
+namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -16,9 +16,9 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class TwigComponentsExtension extends Extension
 {
-    public const PARAMETER_PATH = 'twig_components.path';
+    public const PARAMETER_PATH = 'spirit_web_twig.path';
 
-    public const PARAMETER_PATH_ALIAS = 'twig_components.path_alias';
+    public const PARAMETER_PATH_ALIAS = 'spirit_web_twig.path_alias';
 
     public function load(array $configs, ContainerBuilder $container): void
     {

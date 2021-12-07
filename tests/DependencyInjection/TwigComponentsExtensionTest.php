@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\DependencyInjection;
+namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -32,7 +32,7 @@ class TwigComponentsExtensionTest extends TestCase
 
     public function testShouldRegisterParameters(): void
     {
-        $this->assertTrue($this->containerBuilder->hasParameter('twig_components.path'));
-        $this->assertTrue($this->containerBuilder->hasParameter('twig_components.path_alias'));
+        $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.path'));
+        $this->assertTrue($this->containerBuilder->hasParameter('spirit_web_twig.path_alias'));
     }
 }

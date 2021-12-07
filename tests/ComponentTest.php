@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle;
+namespace Lmc\SpiritWebTwigBundle;
 
-use Lmc\TwigComponentsBundle\Compiler\ComponentLexer;
-use Lmc\TwigComponentsBundle\Factory\TwigFactory;
+use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
+use Lmc\SpiritWebTwigBundle\Factory\TwigFactory;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
