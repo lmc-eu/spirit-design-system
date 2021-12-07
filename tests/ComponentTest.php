@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle;
 
-use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
 use Lmc\SpiritWebTwigBundle\Factory\TwigFactory;
-use Mockery;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
