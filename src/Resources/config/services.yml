@@ -3,12 +3,12 @@ services:
     autowire: true
     autoconfigure: true
 
-  Lmc\TwigComponentsBundle\Factory\TwigFactory:
+  Lmc\SpiritWebTwigBundle\Factory\TwigFactory:
     arguments:
       - '@twig'
       - '@twig.loader'
-      - '%twig_components.path%'
-      - '%twig_components.path_alias%'
+      - '%spirit_web_twig.path%'
+      - '%spirit_web_twig.path_alias%'
 
   Twig\Environment:
-    factory: ['@Lmc\TwigComponentsBundle\Factory\TwigFactory', 'create']
+    factory: ['@Lmc\SpiritWebTwigBundle\Factory\TwigFactory', 'create']

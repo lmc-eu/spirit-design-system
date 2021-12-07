@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\DependencyInjection;
+namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Dumper\YamlReferenceDumper;
@@ -13,7 +13,7 @@ class ConfigurationTest extends TestCase
     {
         $dumper = new YamlReferenceDumper();
         $reference = <<<CONFIG
-twig_components:
+spirit_web_twig:
     path:                 '%kernel.project_dir%/templates/components'
     path_alias:           ui-components\n
 CONFIG;

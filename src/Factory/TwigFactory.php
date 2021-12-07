@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\Factory;
+namespace Lmc\SpiritWebTwigBundle\Factory;
 
-use Lmc\TwigComponentsBundle\Compiler\ComponentLexer;
+use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

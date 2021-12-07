@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\TwigComponentsBundle\DependencyInjection;
+namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -11,7 +11,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('twig_components');
+        $treeBuilder = new TreeBuilder('spirit_web_twig');
         $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
