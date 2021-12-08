@@ -190,7 +190,6 @@ $emotion-colors: (
 $border-main-default: $gray-200 !default;
 $border-main-hover: $gray-300 !default;
 $border-main-active: $gray-400 !default;
-$border-main-selected: $brand-secondary !default;
 $border-main-disabled: $gray-100 !default;
 $border-focus-default: $malibu-300 !default;
 
@@ -198,7 +197,6 @@ $border-colors: (
     main-default: $border-main-default,
     main-hover: $border-main-hover,
     main-active: $border-main-active,
-    main-selected: $border-main-selected,
     main-disabled: $border-main-disabled,
     focus-default: $border-focus-default,
 ) !default;
