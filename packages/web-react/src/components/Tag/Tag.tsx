@@ -29,7 +29,7 @@ export const Tag = ({ color, theme, children }: TagProps): JSX.Element => (
 );
 
 Tag.defaultProps = {
-  color: 'primary',
+  color: 'default',
   theme: 'dark',
 };
 
