@@ -1,0 +1,6 @@
+BC: ['bc/*', 'break/*']
+feature: ['feature/*', 'feat/*']
+bug: ['fix/*', 'bugfix/*']
+refactoring: ['refactor/*', 'refactoring/*']
+documentation: ['docs/*', 'documentation/*']
+maintenance: ['maintenance/*', 'chore/*']
