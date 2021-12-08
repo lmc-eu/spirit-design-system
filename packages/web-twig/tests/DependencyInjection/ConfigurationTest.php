@@ -14,8 +14,10 @@ class ConfigurationTest extends TestCase
         $dumper = new YamlReferenceDumper();
         $reference = <<<CONFIG
 spirit_web_twig:
-    path:                 '%kernel.project_dir%/templates/components'
-    path_alias:           ui-components\n
+    paths:                []
+    paths_alias:          spirit
+    spirit_css_class_prefix: null
+    html_syntax_lexer:    true\n
 CONFIG;
 
         $this->assertEquals($reference, $dumper->dump(new Configuration()));

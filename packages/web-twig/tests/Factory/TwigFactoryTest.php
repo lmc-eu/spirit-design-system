@@ -14,18 +14,67 @@ final class TwigFactoryTest extends TestCase
 {
     public function testShouldCreate(): void
     {
-        $path = 'templates/';
+        $defaultPaths = ['templates/'];
+        $classPrefix = null;
         $pathAlias = 'ui-components';
+        $isEnableLexer = true;
 
         $twigFilesystemLoaderMock = Mockery::mock(FilesystemLoader::class);
         $twigFilesystemLoaderMock->shouldReceive('addPath')
             ->once()
-            ->with($path, $pathAlias);
+            ->with('templates/', $pathAlias);
 
         $twigEnvironmentMock = Mockery::mock(Environment::class);
         $twigEnvironmentMock->shouldReceive('setLexer')
             ->once()
             ->withArgs([ComponentLexer::class]);
+
+        $twigEnvironmentMock->shouldReceive('setLoader')
+            ->once()
+            ->with($twigFilesystemLoaderMock);
+
+        $twigEnvironmentMock->shouldReceive('addGlobal')
+            ->once()
+            ->with('_spiritClassPrefix', $classPrefix);
+
+        $twigEnvironmentMock->shouldReceive('getUnaryOperators')
+            ->once()
+            ->withNoArgs()
+            ->andReturn([]);
+
+        $twigEnvironmentMock->shouldReceive('getBinaryOperators')
+            ->once()
+            ->withNoArgs()
+            ->andReturn([]);
+
+        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $defaultPaths, $pathAlias, $classPrefix, $isEnableLexer);
+        $twigEnvironmentInstance = $twigFactory->create();
+
+        $this->assertInstanceOf(Environment::class, $twigEnvironmentInstance);
+    }
+
+    public function testShouldCallWithCustomConfiguration(): void
+    {
+        $expectedPaths = ['templates/', 'test/'];
+        $pathAlias = 'ui-components';
+        $classPrefix = 'jobs';
+        $isEnableLexer = false;
+
+        $twigFilesystemLoaderMock = Mockery::mock(FilesystemLoader::class);
+
+        foreach ($expectedPaths as $expectedPath) {
+            $twigFilesystemLoaderMock->shouldReceive('addPath')
+                ->once()
+                ->with($expectedPath, $pathAlias);
+        }
+
+        $twigEnvironmentMock = Mockery::mock(Environment::class);
+
+        $twigEnvironmentMock->shouldNotReceive('setLexer');
+
+        $twigEnvironmentMock->shouldReceive('addGlobal')
+            ->once()
+            ->with('_spiritClassPrefix', $classPrefix);
 
         $twigEnvironmentMock->shouldReceive('setLoader')
             ->once()
@@ -41,7 +90,7 @@ final class TwigFactoryTest extends TestCase
             ->withNoArgs()
             ->andReturn([]);
 
-        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $path, $pathAlias);
+        $twigFactory = new TwigFactory($twigEnvironmentMock, $twigFilesystemLoaderMock, $expectedPaths, $pathAlias, $classPrefix, $isEnableLexer);
         $twigEnvironmentInstance = $twigFactory->create();
 
         $this->assertInstanceOf(Environment::class, $twigEnvironmentInstance);

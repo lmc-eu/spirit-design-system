@@ -2,6 +2,14 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- [BC] Add possible link multiple components path into same alias in configuration
+- [BC] Rename config param `path` into `paths`
+- [BC] Rename config param `path_alias` into `paths_alias`
+- [BC] Add configuration param `spirit_css_class_prefix` to define prefixes in class components
+- Add Twig implementation of spirit component [Button](https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button) and [Tag](https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Tag)
+- configuration enabling html like-syntax into twig with config param `html_syntax_lexer`
+- Add PHPStan into QA and refactoring
+- Add `square` and `onClick` properties into Button component
 
 ## 0.1.0 - 2021-11-29
 - Drop support php 7.3

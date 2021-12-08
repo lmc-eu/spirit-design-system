@@ -16,11 +16,17 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('path')
-            ->defaultValue('%kernel.project_dir%/templates/components')
+            ->arrayNode('paths')
+            ->scalarPrototype()->end()
             ->end()
-            ->scalarNode('path_alias')
-            ->defaultValue('ui-components')
+            ->scalarNode('paths_alias')
+            ->defaultValue('spirit')
+            ->end()
+            ->scalarNode('spirit_css_class_prefix')
+            ->defaultNull()
+            ->end()
+            ->scalarNode('html_syntax_lexer')
+            ->defaultTrue()
             ->end()
             ->end();
 
