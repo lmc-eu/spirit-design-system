@@ -67,7 +67,7 @@ class ComponentTagCompiler
             >
         /x";
 
-        return preg_replace_callback(
+        return (string) preg_replace_callback(
             $pattern,
             function (array $matches) {
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
@@ -89,7 +89,7 @@ class ComponentTagCompiler
      */
     protected function compileClosingTags(string $value): string
     {
-        return preg_replace("/<\/\s*([[A-Z]\w+]*)\s*>/", '{% endblock %}{% endembed %}', $value);
+        return (string) preg_replace("/<\/\s*([[A-Z]\w+]*)\s*>/", '{% endblock %}{% endembed %}', $value);
     }
 
     /**
@@ -129,7 +129,7 @@ class ComponentTagCompiler
             \/>
         /x";
 
-        return preg_replace_callback(
+        return (string) preg_replace_callback(
             $pattern,
             function (array $matches) {
                 $attributes = $this->getAttributesFromAttributeString($matches['attributes']);
@@ -141,7 +141,7 @@ class ComponentTagCompiler
         );
     }
 
-    protected function getAttributesFromAttributeString(string $attributeString)
+    protected function getAttributesFromAttributeString(string $attributeString): string
     {
         $attributeString = $this->parseAttributeBag($attributeString);
 
@@ -219,6 +219,6 @@ class ComponentTagCompiler
             \{\{\s*(\\\$attributes(?:[^}]+?(?<!\s))?)\s*\}\} # exact match of attributes variable being echoed
         /x";
 
-        return preg_replace($pattern, ' :attributes="$1"', $attributeString);
+        return (string) preg_replace($pattern, ' :attributes="$1"', $attributeString);
     }
 }

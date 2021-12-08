@@ -13,6 +13,9 @@ class ComponentLexer extends Lexer
 {
     private string $twigPathAlias;
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Environment $env, array $options, string $twigPathAlias)
     {
         parent::__construct($env, $options);
