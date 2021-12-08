@@ -1,29 +1,25 @@
 $white: #fff !default;
 $gray-100: #f4f4f4 !default;
-$gray-200: #ebeaea !default;
-$gray-300: #e9e9e9 !default;
-$gray-400: #dbdbdb !default;
-$gray-500: #d4d4d4 !default;
-$gray-600: #c4c4c4 !default;
-$gray-800: #737373 !default;
+$gray-200: #e9e9e9 !default;
+$gray-300: #dbdbdb !default;
+$gray-400: #d4d4d4 !default;
+$gray-500: #c4c4c4 !default;
+$gray-700: #737373 !default;
 $black: #000 !default;
 
-$glacier-300: #77a6c0 !default;
-
-$porcelain-50: #f0f4f5 !default;
-
+$tower-gray-50: #f0f4f5 !default;
 $tower-gray-200: #a7bcc2 !default;
 $tower-gray-300: #90a2a7 !default;
 $tower-gray-400: #849499 !default;
 $tower-gray-500: #6e7b80 !default;
 
+$casal-600: #29616f !default;
+$casal-700: #1b5260 !default;
+$casal-800: #0b3a46 !default;
+
 $gable-green-700: #132930 !default;
 $gable-green-800: #0b1c21 !default;
 $gable-green-900: #091417 !default;
-
-$casal-600: #29616f;
-$casal-700: #1b5260;
-$casal-800: #0b3a46;
 
 $malibu-300: #61b3ff !default;
 
@@ -33,23 +29,23 @@ $jordy-blue-300: #85c1e1 !default;
 $jordy-blue-400: #78a9c5 !default;
 
 $wild-willow-50: #f2f5e7 !default;
-$wild-willow-300: #b7d16d !default;
-$wild-willow-400: #9ebf40 !default;
-$wild-willow-500: #8fad3a !default;
+$wild-willow-200: #b7d16d !default;
+$wild-willow-300: #9ebf40 !default;
+$wild-willow-400: #8fad3a !default;
 
 $golden-sand-50: #f8f2e4 !default;
 $golden-sand-200: #f1d07c !default;
 $golden-sand-300: #dfbb5f !default;
-$golden-sand-500: #c29132 !default;
+$golden-sand-400: #c29132 !default;
 
 $cranberry-50: #fcf1f4 !default;
-$cranberry-300: #db5f7b !default;
-$cranberry-400: #c95771 !default;
-$cranberry-500: #af4c62 !default;
+$cranberry-200: #db5f7b !default;
+$cranberry-300: #c95771 !default;
+$cranberry-400: #af4c62 !default;
 
 // Brand
 $brand-primary: $gable-green-800 !default;
-$brand-secondary: $glacier-300 !default;
+$brand-secondary: $jordy-blue-400 !default;
 
 $brand-colors: (
     primary: $brand-primary,
@@ -58,8 +54,8 @@ $brand-colors: (
 
 // Background
 $background-basic: $white !default;
-$background-cover: $porcelain-50 !default;
-$background-inverted: $brand-primary !default;
+$background-cover: $tower-gray-50 !default;
+$background-inverted: $gable-green-800 !default;
 
 $background-colors: (
     basic: $background-basic,
@@ -69,13 +65,13 @@ $background-colors: (
 
 // Text
 $text-primary-default: $gable-green-700 !default;
-$text-primary-disabled: $gray-600 !default;
+$text-primary-disabled: $gray-500 !default;
 $text-secondary-default: $tower-gray-300 !default;
-$text-secondary-disabled: $gray-600 !default;
+$text-secondary-disabled: $gray-500 !default;
 $text-primary-inverted-default: $white !default;
-$text-primary-inverted-disabled: $gray-800 !default;
-$text-secondary-inverted-default: $gray-300 !default;
-$text-secondary-inverted-disabled: $gray-800 !default;
+$text-primary-inverted-disabled: $gray-700 !default;
+$text-secondary-inverted-default: $gray-200 !default;
+$text-secondary-inverted-disabled: $gray-700 !default;
 
 $text-colors: (
     primary-default: $text-primary-default,
@@ -102,18 +98,18 @@ $action-selected-hover: $casal-700 !default;
 $action-selected-active: $casal-800 !default;
 $action-selected-disabled: $gray-200 !default;
 $action-unselected-default: $gable-green-700 !default;
-$action-unselected-hover: $gable-green-900 !default;
-$action-unselected-active: $black !default;
+$action-unselected-hover: $gable-green-800 !default;
+$action-unselected-active: $gable-green-900 !default;
 $action-unselected-disabled: $gray-200 !default;
 $action-link-primary-default: $action-primary-default !default;
 $action-link-primary-hover: $action-primary-hover !default;
 $action-link-primary-active: $action-primary-active !default;
-$action-link-primary-disabled: $gray-600 !default;
+$action-link-primary-disabled: $gray-500 !default;
 $action-link-primary-visited: $tower-gray-200 !default;
 $action-link-secondary-default: $tower-gray-300 !default;
 $action-link-secondary-hover: $tower-gray-400 !default;
 $action-link-secondary-active: $tower-gray-500 !default;
-$action-link-secondary-disabled: $gray-600 !default;
+$action-link-secondary-disabled: $gray-500 !default;
 $action-link-secondary-visited: $tower-gray-200 !default;
 
 $action-colors: (
@@ -151,19 +147,19 @@ $emotion-informative-hover: $jordy-blue-300 !default;
 $emotion-informative-active: $jordy-blue-400 !default;
 $emotion-informative-disabled: $gray-200 !default;
 $emotion-informative-background: $jordy-blue-50 !default;
-$emotion-success-default: $wild-willow-300 !default;
-$emotion-success-hover: $wild-willow-400 !default;
-$emotion-success-active: $wild-willow-500 !default;
+$emotion-success-default: $wild-willow-200 !default;
+$emotion-success-hover: $wild-willow-300 !default;
+$emotion-success-active: $wild-willow-400 !default;
 $emotion-success-disabled: $gray-200 !default;
 $emotion-success-background: $wild-willow-50 !default;
 $emotion-warning-default: $golden-sand-200 !default;
 $emotion-warning-hover: $golden-sand-300 !default;
-$emotion-warning-active: $golden-sand-500 !default;
+$emotion-warning-active: $golden-sand-400 !default;
 $emotion-warning-disabled: $gray-200 !default;
 $emotion-warning-background: $golden-sand-50 !default;
-$emotion-danger-default: $cranberry-300 !default;
-$emotion-danger-hover: $cranberry-400 !default;
-$emotion-danger-active: $cranberry-500 !default;
+$emotion-danger-default: $cranberry-200 !default;
+$emotion-danger-hover: $cranberry-300 !default;
+$emotion-danger-active: $cranberry-400 !default;
 $emotion-danger-disabled: $gray-200 !default;
 $emotion-danger-background: $cranberry-50 !default;
 
@@ -192,8 +188,8 @@ $emotion-colors: (
 
 // Border
 $border-main-default: $gray-200 !default;
-$border-main-hover: $gray-400 !default;
-$border-main-active: $gray-500 !default;
+$border-main-hover: $gray-300 !default;
+$border-main-active: $gray-400 !default;
 $border-main-selected: $brand-secondary !default;
 $border-main-disabled: $gray-100 !default;
 $border-focus-default: $malibu-300 !default;
