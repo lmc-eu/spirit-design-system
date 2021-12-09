@@ -47,7 +47,7 @@ version:
 ## --yes` - skip all confirmation prompts
 	yarn lerna version $(shell ./bin/ci/semver.sh) --yes --no-push $(LERNA_FLAGS) $(LERNA_NO_PUSH)
 
-release:
+publish:
 # @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
 # Publish packages updated since the last release
 ## `from-package` - list of packages to publish is determined by inspecting each `package.json`
