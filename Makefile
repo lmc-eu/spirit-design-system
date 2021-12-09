@@ -13,7 +13,7 @@ YARN_FLAGS :=
 LERNA_FLAGS :=
 
 # Use `make target DEBUG=true` for enabling debug mode
-LERNA_NO_PUSH := $(if $(DEBUG), --no-push --no-git-tag-version)
+LERNA_NO_PUSH := $(if $(DEBUG), --no-git-tag-version)
 
 # Git hooks to be installed into the project workspace
 # GITFILES := $(patsubst bin/githooks/%, .git/hooks/%, $(wildcard bin/githooks/*))
@@ -45,7 +45,7 @@ version:
 # Bump version of packages changed since the last release
 ## `./bin/ci/semver.sh` - determines semantic versioning keyword, e.g.: major, minor, patch
 ## --yes` - skip all confirmation prompts
-	yarn lerna version $(shell ./bin/ci/semver.sh) --yes $(LERNA_FLAGS) $(LERNA_NO_PUSH)
+	yarn lerna version $(shell ./bin/ci/semver.sh) --yes --no-push $(LERNA_FLAGS) $(LERNA_NO_PUSH)
 
 release:
 # @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
