@@ -1,3 +1,7 @@
 # Build files
 **/dist
 **/build
+
+# Ignoring html files because Prettier prefers closing slash on the end of the tag
+# @See: https://github.com/lmc-eu/spirit-design-system/pull/77/files#r764183332
+**/*.html
