@@ -7,8 +7,10 @@ services:
     arguments:
       - '@twig'
       - '@twig.loader'
-      - '%spirit_web_twig.path%'
-      - '%spirit_web_twig.path_alias%'
+      - '%spirit_web_twig.paths%'
+      - '%spirit_web_twig.paths_alias%'
+      - '%spirit_web_twig.spirit_css_class_prefix%'
+      - '%spirit_web_twig.html_syntax_lexer%'
 
   Twig\Environment:
     factory: ['@Lmc\SpiritWebTwigBundle\Factory\TwigFactory', 'create']

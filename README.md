@@ -1,7 +1,9 @@
 Spirit Web Twig Bundle
 =================
+![QA](https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/badge/icon?subject=QA&link=https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/)
+![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 
-This is Symfony bundle with twig implementation [Spirit Design System](https://github.com/lmc-eu/spirit-design-system) components and extends the twig implementation with an HTML syntax-like.
+This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with HTML-like syntax.
 
 ## Requirements
 - PHP 7.4
@@ -18,7 +20,7 @@ See [CHANGELOG](./CHANGELOG.md)
 Download using *composer*
 
     "require": {
-        "lmc/lmc/spirit-web-twig-bundle" : "~1.0.0"
+        "lmc/lmc/spirit-web-twig-bundle" : "~0.1.0"
     },
     "repositories": [
         {
@@ -40,19 +42,24 @@ Add `SpiritWebTwigBundle` into bundles (under `all` bundles). If you use Symfony
     ];
 ```
 
-### Step 3
+### Step 3 (optional)
 
-Configure parameters for this bundle.
+If you want to change the default settings, create a config
 
-**config.yml**
+**config/packages/spirit_web_twig.yml**
 ```yaml
+    # all parameters are optional
     spirit_web_twig:
-        path: "%kernel.project_dir%/templates/components"
-        path_alias: 'ui-components'
+        # define one or more paths to expand or overload components
+        paths: 
+            - "%kernel.project_dir%/templates/components"
+        paths_alias: 'jobs-ui' # default is 'spirit'
+        html_syntax_lexer: false # default is true
+        spirit_css_class_prefix: 'jobs' # default is null
 ```
 
 ## Usage
-After this configuration it will be possible to use components in your symfony project syntax-like Html. The only rule compared to html is that tags start in capital letters.
+Now you can use Twig components with HTML-like syntax in your Symfony project. You only need to remember that, unlike in HTML, component tags must always start with a capital letter:
 
 ```html
 <ComponentName attr="value">Some other content</ComponentName>
@@ -77,7 +84,7 @@ isOpen  // if no value is defined, it is set to true
 or pure original implementation
 
 ```twig
-{% embed "@ui-components/component-name.twig" with { props: {
+{% embed "@spirit/componentName.twig" with { props: {
     attr: 'value'
 }} %}
     {% block content %}
@@ -85,3 +92,10 @@ or pure original implementation
     {% endblock %}
 {% endembed %}
 ```
+
+# Spirit Components
+
+- [Button](./docs/Button.md)
+- [Tag](./docs/Tag.md)
+
+[Spirit Design System]: https://github.com/lmc-eu/spirit-design-system

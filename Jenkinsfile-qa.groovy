@@ -31,9 +31,28 @@ pipeline {
           }
         }
 
+        stage('PHPStan') {
+          steps {
+            sh "composer run phpstan"
+          }
+        }
+
         stage('UT') {
           steps {
-            sh "composer run tests";
+            sh "composer run phpunit:coverage";
+          }
+
+          post {
+            success {
+              step([
+                $class: "CloverPublisher",
+                cloverReportDir: "coverage",
+                cloverReportFileName: "clover.xml",
+                healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
+                unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
+                failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
+            ])
+            }
           }
         }
 
@@ -55,20 +74,7 @@ pipeline {
 
         stage('UT') {
           steps {
-            sh "composer run tests:coverage";
-          }
-
-          post {
-            success {
-              step([
-                $class: "CloverPublisher",
-                cloverReportDir: "coverage",
-                cloverReportFileName: "clover.xml",
-                healthyTarget: [methodCoverage: 70, conditionalCoverage: 80, statementCoverage: 80],
-                unhealthyTarget: [methodCoverage: 50, conditionalCoverage: 50, statementCoverage: 50],
-                failingTarget: [methodCoverage: 0, conditionalCoverage: 0, statementCoverage: 0]
-            ])
-            }
+            sh "composer run phpunit";
           }
         }
       }

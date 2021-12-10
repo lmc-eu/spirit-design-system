@@ -1,0 +1,7 @@
+{% set _className = _spiritClassPrefix ~ 'Tag' %}
+{% set _color = (props.color is defined) ? props.color : 'default' %}
+{% set _theme = (props.theme is defined) ? '-' ~ props.theme : '-dark' -%}
+
+<span class="{{ _className }} {{ _className }}--{{ _color }}{{ _theme }}">
+{%- block content %}{% endblock %}
+</span>

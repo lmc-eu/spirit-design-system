@@ -14,23 +14,48 @@ class TwigFactory
 
     private FilesystemLoader $loader;
 
-    private string $path;
+    /**
+     * @var array <number, string>
+     */
+    private array $paths;
 
     private string $alias;
 
-    public function __construct(Environment $twig, FilesystemLoader $loader, string $path, string $alias)
-    {
+    private ?string $classPrefix;
+
+    private bool $isEnabledLexer;
+
+    /**
+     * @param array<number, string> $paths
+     */
+    public function __construct(
+        Environment $twig,
+        FilesystemLoader $loader,
+        array $paths,
+        string $alias,
+        ?string $classPrefix,
+        bool $isEnabledLexer
+    ) {
         $this->twig = $twig;
         $this->loader = $loader;
-        $this->path = $path;
+        $this->paths = $paths;
         $this->alias = $alias;
+        $this->classPrefix = $classPrefix;
+        $this->isEnabledLexer = $isEnabledLexer;
     }
 
     public function create(): Environment
     {
-        $this->loader->addPath($this->path, $this->alias);
+        foreach ($this->paths as $path) {
+            $this->loader->addPath($path, $this->alias);
+        }
         $this->twig->setLoader($this->loader);
-        $this->twig->setLexer(new ComponentLexer($this->twig, [], $this->alias));
+
+        $this->twig->addGlobal('_spiritClassPrefix', $this->classPrefix);
+
+        if ($this->isEnabledLexer) {
+            $this->twig->setLexer(new ComponentLexer($this->twig, [], $this->alias));
+        }
 
         return $this->twig;
     }
