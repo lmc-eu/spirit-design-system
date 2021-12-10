@@ -20,12 +20,12 @@ See [CHANGELOG](./CHANGELOG.md)
 Download using *composer*
 
     "require": {
-        "lmc/lmc/spirit-web-twig-bundle" : "~1.0.0"
+        "lmc/spirit-web-twig-bundle" : "~1.0.0"
     },
     "repositories": [
         {
             "type": "composer",
-            "url": "http://jenkins-php.lmc/job/satis/ws/out/"
+            "url": "https://jenkins-php.prod.internal.lmc/job/satis/ws/out/"
         }
     ]
 
