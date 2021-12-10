@@ -1,7 +1,7 @@
 Spirit Web Twig Bundle
 =================
 ![QA](https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/badge/icon?subject=QA&link=https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/)
-![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with HTML-like syntax.
 
@@ -20,7 +20,7 @@ See [CHANGELOG](./CHANGELOG.md)
 Download using *composer*
 
     "require": {
-        "lmc/lmc/spirit-web-twig-bundle" : "~0.1.0"
+        "lmc/lmc/spirit-web-twig-bundle" : "~1.0.0"
     },
     "repositories": [
         {
