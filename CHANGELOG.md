@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.0.0 - 2021-12-10
 - [BC] Add possible link multiple components path into same alias in configuration
 - [BC] Rename config param `path` into `paths`
 - [BC] Rename config param `path_alias` into `paths_alias`
