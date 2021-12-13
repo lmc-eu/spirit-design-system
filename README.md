@@ -7,7 +7,7 @@ This is a Symfony bundle with Twig implementation of [Spirit Design System] comp
 
 ## Requirements
 - PHP 7.4
-- Symfony 4.2+ or Symfony 5.0+
+- Symfony 3.4+ || 4.2+ || 5.0+
 - Twig 2+
 
 ## Changelog
