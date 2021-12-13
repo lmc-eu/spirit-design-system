@@ -22,10 +22,10 @@
   },
   "require": {
     "php": "^7.4",
-    "symfony/config": "^4.2 || ^5.0",
-    "symfony/dependency-injection": "^4.2 || ^5.0",
-    "symfony/http-foundation": "^4.2 || ^5.0",
-    "symfony/http-kernel": "^4.2 || ^5.0",
+    "symfony/config": "^3.4 ||^4.2 || ^5.0",
+    "symfony/dependency-injection": "^3.4 || ^4.2 || ^5.0",
+    "symfony/http-foundation": "^3.4 || ^4.2 || ^5.0",
+    "symfony/http-kernel": "^3.4 || ^4.2 || ^5.0",
     "symfony/polyfill-php80": "^1.23",
     "twig/twig": "^2.12.5 || ^3.0.0"
   },
@@ -34,7 +34,7 @@
     "mockery/mockery": "^1.4",
     "doctrine/cache": "^1.10",
     "lmc/coding-standard": "^3.2",
-    "symfony/yaml": "^4.2 || ^5.0",
+    "symfony/yaml": "^3.4 || ^4.2 || ^5.0",
     "phpstan/phpstan": "^1.2",
     "phpstan/phpstan-mockery": "^1.0",
     "phpstan/extension-installer": "^1.1",
