@@ -11,8 +11,14 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('spirit_web_twig');
-        $rootNode = $treeBuilder->getRootNode();
+        if (\method_exists(TreeBuilder::class, 'getRootNode')) {
+            $treeBuilder = new TreeBuilder('spirit_web_twig');
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            // Symfony 3
+            $treeBuilder = new TreeBuilder();
+            $rootNode = $treeBuilder->root('spirit_web_twig');
+        }
 
         $rootNode
             ->children()

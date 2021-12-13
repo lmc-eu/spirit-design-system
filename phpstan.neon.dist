@@ -3,3 +3,5 @@ parameters:
 	paths:
 		- src
 		- tests
+	excludePaths:
+		- src/DependencyInjection/Configuration.php # because symfony 3 (delete when drop support)

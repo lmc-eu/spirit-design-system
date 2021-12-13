@@ -2,6 +2,7 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- Add Symfony 3 support for Jobs
 
 ## 1.0.0 - 2021-12-10
 - [BC] Add possible link multiple components path into same alias in configuration
