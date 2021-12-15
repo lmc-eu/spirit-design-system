@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.2.0 - 2021-12-15
 - Add prop `class` into components for customization
 - Add base spirit component alias `spirit` 
 - Add tests extendable components cases
