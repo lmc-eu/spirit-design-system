@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle;
 
+use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
+use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
+use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Factory\TwigFactory;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
@@ -13,15 +16,33 @@ final class ComponentTest extends TestCase
 {
     protected Environment $twig;
 
-    protected function setupTwig(?string $prefix = null): Environment
+    /**
+     * @param array<string> $extendedComponentsPath
+     */
+    protected function setupTwig(?string $prefix = null, array $extendedComponentsPath = []): Environment
     {
+        $alias = 'ui-component';
         $loader = new FilesystemLoader(__DIR__ . '/test-templates');
+        $paths = array_merge($extendedComponentsPath, [SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH]);
+
+        foreach ($paths as $path) {
+            $loader->addPath($path, $alias);
+        }
+
+        $loader->addPath(SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS);
 
         $twig = new Environment($loader, [
             'cache' => false,
         ]);
 
-        return (new TwigFactory($twig, $loader, [__DIR__ . '/../src/Resources/components'], 'ui-component', $prefix, true))->create();
+        if ($prefix) {
+            $twig->addGlobal(OverrideServiceCompilerPass::GLOBAL_PREFIX_TWIG_VARIABLE, $prefix);
+        }
+
+        $twig->setLoader($loader);
+        $twig->setLexer(new ComponentLexer($twig, [], $alias));
+
+        return $twig;
     }
 
     public function setUp(): void
@@ -70,15 +91,32 @@ final class ComponentTest extends TestCase
         HTML, $html);
     }
 
-    public function testShouldRenderComponentWithPrefix(): void
+    /**
+     * @dataProvider renderExtendsComponentsDataProvider
+     */
+    public function testShouldRenderExtendsComponents(string $prefix, string $testTemplate): void
     {
-        $this->twig = $this->setupTwig('jobs-');
-        $html = $this->twig->render('test_component_with_html_tags.twig');
+        $this->twig = $this->setupTwig($prefix, [__DIR__ . '/test-extends-components']);
+        $html = $this->twig->render(sprintf('%s.twig', $testTemplate));
 
         $this->assertEquals(<<<HTML
-        <form>
-        <button class="jobs-Button jobs-Button--primary" type="submit">Submit</button>
-        </form>
+        <button class="jobs-Button jobs-Button--primary jobs-Button--small" type="button">Primary buttom</button>
+
         HTML, $html);
+    }
+
+    /**
+     * @return array<string, array<string>>
+     */
+    public function renderExtendsComponentsDataProvider(): array
+    {
+        return [
+            'test extend component button with prefix in pure imp' => [
+                'jobs-', 'test_extends_component_pure',
+            ],
+            'test extend component button with prefix in html imp' => [
+                'jobs-', 'test_extends_component_html',
+            ],
+        ];
     }
 }

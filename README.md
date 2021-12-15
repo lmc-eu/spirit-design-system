@@ -98,4 +98,6 @@ or pure original implementation
 - [Button](./docs/Button.md)
 - [Tag](./docs/Tag.md)
 
+if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
+
 [Spirit Design System]: https://github.com/lmc-eu/spirit-design-system
