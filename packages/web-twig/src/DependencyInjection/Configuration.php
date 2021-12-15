@@ -26,7 +26,7 @@ class Configuration implements ConfigurationInterface
             ->scalarPrototype()->end()
             ->end()
             ->scalarNode('paths_alias')
-            ->defaultValue('spirit')
+            ->defaultValue(SpiritWebTwigExtension::DEFAULT_PATH_ALIAS)
             ->end()
             ->scalarNode('spirit_css_class_prefix')
             ->defaultNull()
