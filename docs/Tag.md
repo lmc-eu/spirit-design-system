@@ -26,5 +26,6 @@ With Html syntax lexer (enabled by default):
 |------------|-----------|---------------|
 | color      | `string`  | default       |
 | theme      | `string`  | dark          |
+| class      | `string`  | undefined     |
 
 [Tag]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Tag

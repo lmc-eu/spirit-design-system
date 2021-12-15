@@ -26,9 +26,10 @@ With Html syntax lexer (enabled by default):
 | color      | `string`  | primary       | its possible to use all theme colors            |
 | block      | `boolean` | false         | span the full width of a parent                 |
 | square     | `boolean` | false         | if the button only has an icon                  |
-| disabled   | `boolean` | false         | it specifies that the button should be disabled.|                                              |
+| disabled   | `boolean` | false         | it specifies that the button should be disabled |                                              |
 | type       | `string`  | button        | type of button (submit or button)               |
-| ariaLabel  | `string`  | undefined     | Accessible Rich Internet Applications label     |
-| onClick    | `string`  | undefined     | Execute a JavaScript when a button is clicked   |
+| ariaLabel  | `string`  | undefined     | accessible Rich Internet Applications label     |
+| onClick    | `string`  | undefined     | execute a JavaScript when a button is clicked   |
+| class      | `string`  | undefined     | adds additional classes                         |
 
 [Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button
