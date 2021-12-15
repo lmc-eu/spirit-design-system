@@ -2,6 +2,10 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- Add prop `class` into components for customization
+- Add base spirit component alias `spirit` 
+- Add tests extendable components cases
+- Bugfix load bundle in project with multiple twig extension
 
 ## 1.1.0 - 2021-12-13
 - Add Symfony 3 support for Jobs
