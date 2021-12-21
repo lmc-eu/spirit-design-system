@@ -56,8 +56,8 @@
 }
 .jobs-Button--primary:disabled {
   color: #fff;
-  background-color: #ebeaea;
-  border-color: #ebeaea;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
@@ -80,7 +80,7 @@
 .jobs-Button--secondary:disabled {
   color: #c4c4c4;
   background-color: transparent;
-  border-color: #ebeaea;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
@@ -88,7 +88,7 @@
 .jobs-Button--tertiary {
   color: #90a2a7;
   background-color: transparent;
-  border-color: #ebeaea;
+  border-color: #e9e9e9;
 }
 .jobs-Button--tertiary:hover, .jobs-Button--tertiary:focus {
   color: #849499;
@@ -125,8 +125,8 @@
 }
 .jobs-Button--informative:disabled {
   color: #fff;
-  background-color: #ebeaea;
-  border-color: #ebeaea;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
@@ -148,8 +148,8 @@
 }
 .jobs-Button--success:disabled {
   color: #fff;
-  background-color: #ebeaea;
-  border-color: #ebeaea;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
@@ -171,8 +171,8 @@
 }
 .jobs-Button--warning:disabled {
   color: #fff;
-  background-color: #ebeaea;
-  border-color: #ebeaea;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
@@ -194,8 +194,8 @@
 }
 .jobs-Button--danger:disabled {
   color: #fff;
-  background-color: #ebeaea;
-  border-color: #ebeaea;
+  background-color: #e9e9e9;
+  border-color: #e9e9e9;
   cursor: default;
   pointer-events: none;
 }
