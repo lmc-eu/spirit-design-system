@@ -15,11 +15,11 @@ See individual [packages](#packages) to learn how to get started.
 
 ## Packages
 
-| Package name                                               | Description                                               |
-| ---------------------------------------------------------- | --------------------------------------------------------- |
-| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens) | Design tokens for Spirit Design System                    |
-| [`@lmc-eu/spirit-web`](./packages/web)                     | CSS and vanilla JS implementation of Spirit Design System |
-| [`@lmc-eu/spirit-web-react`](./packages/web-react)         | React implementation of Spirit Design System components   |
+| Package name                                               | Description                                               | Version                                               |
+| ---------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------- |
+| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens) | Design tokens for Spirit Design System                    | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm] |
+| [`@lmc-eu/spirit-web`](./packages/web)                     | CSS and vanilla JS implementation of Spirit Design System | [![@lmc-eu/spirit-web][sw-badge]][sw-npm]             |
+| [`@lmc-eu/spirit-web-react`](./packages/web-react)         | React implementation of Spirit Design System components   | [![@lmc-eu/spirit-web-react][swr-badge]][swr-npm]     |
 
 ## Development
 
@@ -39,3 +39,9 @@ See individual [packages](#packages) to learn how to get started.
 See [`package.json`](./package.json) for all available tasks.
 
 [lmc]: https://github.com/lmc-eu
+[sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
+[sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
+[sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
+[sw-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web.svg?style=flat-square
+[swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
+[swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
