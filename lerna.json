@@ -4,6 +4,13 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "command": {
+    "version": {
+      "conventionalCommits": true,
+      "changelogPreset": "@lmc-eu/conventional-changelog-lmc-github",
+      "push": false,
+      "message": "Chore(release): Publish [ci-skip]",
+      "ignoreChanges": ["yarn.lock"]
+    },
     "publish": {
       "message": "Chore(release): Publish [ci-skip]"
     }
