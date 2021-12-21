@@ -4,6 +4,7 @@
 ### Spirit Design System
 
 [![Maintained with Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
+[![Code Quality Checks](https://github.com/lmc-eu/spirit-design-system/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/lmc-eu/spirit-design-system/actions)
 
 Spirit is an open-source design system developed by [LMC][lmc].
 
