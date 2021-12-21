@@ -34,5 +34,9 @@ import { Button } from '@lmc-eu/spirit-web-react/src/components/Button';
 
 👀 See [example] for a live demo.
 
+## License
+
+See the [LICENSE](LICENSE.md) file for information.
+
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [examples]: https://lmc-eu.github.io/spirit-design-system/web-react/

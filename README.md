@@ -38,4 +38,8 @@ See individual [packages](#packages) to learn how to get started.
 
 See [`package.json`](./package.json) for all available tasks.
 
+## License
+
+See the [LICENSE](LICENSE.md) file for information.
+
 [lmc]: https://github.com/lmc-eu
