@@ -1,0 +1,29 @@
+{
+  "extends": ["@lmc-eu", "@lmc-eu:scheduleWeeklyBusinessHours", "group:allNonMajor", ":pinOnlyDevDependencies"],
+  "ignorePresets": [":ignoreModulesAndTests"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/__fixtures__/**"
+  ],
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "groupName": "all example dependencies",
+      "groupSlug": "all-examples",
+      "matchPaths": ["examples/**/package.json"],
+      "matchPackagePatterns": ["*"],
+      "separateMajorMinor": false,
+      "rangeStrategy": "pin"
+    },
+    {
+      "groupName": "monorepo:storybook",
+      "groupSlug": "monorepo-storybook",
+      "matchSourceUrlPrefixes": ["https://github.com/storybookjs/storybook"]
+    }
+  ]
+}
