@@ -40,5 +40,9 @@ modules so they are resolved correctly. See [theming] to learn how it works.
 
 👀 See [example] for a live demo.
 
+## License
+
+See the [LICENSE](LICENSE.md) file for information.
+
 [theming]: https://github.com/lmc-eu/spirit-design-system/blob/main/src/web/THEMING.md
 [examples]: https://lmc-eu.github.io/spirit-design-system/web/

@@ -40,3 +40,7 @@ Or import all tokens at once:
   color: tokens.$text-primary-default;
 }
 ```
+
+## License
+
+See the [LICENSE](LICENSE.md) file for information.
