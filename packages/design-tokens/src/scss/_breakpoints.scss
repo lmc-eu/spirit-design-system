@@ -1,0 +1,7 @@
+$breakpoint-tablet: 48em !default; // 768px
+$breakpoint-desktop: 80em !default; // 1280px
+
+$breakpoints: (
+    tablet: $breakpoint-tablet,
+    desktop: $breakpoint-desktop,
+) !default;
