@@ -29,5 +29,5 @@
     "lib": ["es2015", "dom", "dom.iterable"]
   },
   "include": ["../src/**/*"],
-  "exclude": ["../node_modules", "../src/**/__tests__/**/*", "../dist/**/*"]
+  "exclude": ["../node_modules", "../dist/**/*"]
 }

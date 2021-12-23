@@ -1,6 +1,6 @@
 import React from 'react';
 import { SpiritButtonProps } from '../../types';
-import ButtonLink from '../Button/ButtonLink';
+import ButtonLink from './ButtonLink';
 
 export default {
   title: 'Components/ButtonLink',

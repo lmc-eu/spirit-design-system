@@ -8,7 +8,8 @@ describe('Container', () => {
   it('should have default classname', () => {
     const dom = render(<Container />);
 
-    expect(dom.container.querySelector('div')).toHaveClass('Container');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element).toHaveClass('Container');
   });
 
   it('should have classname with lmc prefix', () => {
@@ -18,12 +19,14 @@ describe('Container', () => {
       </ClassNamePrefixProvider>,
     );
 
-    expect(dom.container.querySelector('div')).toHaveClass('lmc-Container');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element).toHaveClass('lmc-Container');
   });
 
   it('should render text children', () => {
     const dom = render(<Container>Hello World</Container>);
 
-    expect(dom.container.querySelector('div').textContent).toBe('Hello World');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element.textContent).toBe('Hello World');
   });
 });

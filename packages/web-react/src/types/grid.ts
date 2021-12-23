@@ -7,9 +7,10 @@ export type GridLayouts = 'narrow';
 export interface GridElementTypeProps<T extends ElementType = 'div'> {
   /**
    * The HTML element or React element used to render the Grid, e.g. 'div'.
+   *
    * @default 'div'
    */
-  elementType?: T | JSXElementConstructor<any>;
+  elementType?: T | JSXElementConstructor<unknown>;
 }
 
 export interface GridCustomLayoutProps {

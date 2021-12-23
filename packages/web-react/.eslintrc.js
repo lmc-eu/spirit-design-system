@@ -24,15 +24,32 @@ module.exports = {
 
   plugins: ['promise', 'react', '@typescript-eslint', 'prettier'],
   rules: {
-    'no-use-before-define': 'off',
+    // @TODO: add to typescript config
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    // we like to use props spreading for additional props in this case
     'react/jsx-props-no-spreading': 'off', // Used inside HOC, that is fine.
-    'react/function-component-definition': 'off',
+    // prefer arrow function over function expression
+    'react/function-component-definition': [
+      'warn',
+      { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
+    ],
+    // problem of export default {} in stories
     'react/display-name': 'off',
-    'react/button-has-type': 'off',
-    '@typescript-eslint/no-use-before-define': 'warn',
+    // disable for `scripts` and `config`
     '@typescript-eslint/no-var-requires': 'off',
-    'import/extensions': 'off',
+    // allow ++ in for loops
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+    // disabled due to typescript
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error', { allow: ['resolve', 'reject', 'done', 'next', 'error'] }],
+    // disabled due to typescript
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': 'warn',
+    // We are using typescript, disable jsdoc rules
+    'jsdoc/require-jsdoc': 'off',
+    'jsdoc/require-returns': 'off',
+    'jsdoc/require-param-type': 'off',
+    // allow reassign in properties
+    'no-param-reassign': ['warn', { props: false }],
   },
 };

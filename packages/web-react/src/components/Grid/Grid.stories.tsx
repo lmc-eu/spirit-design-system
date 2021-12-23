@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from './Grid';
 import { SpiritGridProps } from '../../types';
 
-const ExampleBox = () => <div className="example-box"></div>;
+const ExampleBox = () => <div className="example-box" />;
 
 export default {
   title: 'Components/Grid',
@@ -111,10 +111,6 @@ ResponsiveColumns.args = {
 
 export const NarrowColumnLayout = Template.bind({});
 NarrowColumnLayout.args = {
-  children: (
-    <>
-      <ExampleBox />
-    </>
-  ),
+  children: <ExampleBox />,
   layout: 'narrow',
 };

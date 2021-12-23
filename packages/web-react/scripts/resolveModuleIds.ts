@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies, no-shadow, no-console */
 import * as fs from 'fs';
 import * as path from 'path';
-import resolve from 'resolve';
+import requireResolve from 'resolve';
+import * as recast from 'recast';
 import { distDir, eachFile, reparse, reprint } from './helpers';
 
 // The primary goal of the 'npm run resolve' script is to make ECMAScript
@@ -11,28 +13,6 @@ import { distDir, eachFile, reparse, reprint } from './helpers';
 // of this limited goal, this script only touches ESM modules that have .js file
 // extensions, not .cjs CommonJS bundles.
 
-eachFile(
-  distDir,
-  (file, relPath) =>
-    new Promise((resolve, reject) => {
-      fs.readFile(file, 'utf8', (error, source) => {
-        if (error) return reject(error);
-
-        const tr = new Transformer();
-        const output = tr.transform(source, file);
-
-        if (source === output) {
-          resolve(file);
-        } else {
-          fs.writeFile(file, output, 'utf8', (error) => {
-            error ? reject(error) : resolve(file);
-          });
-        }
-      });
-    }),
-);
-
-import * as recast from 'recast';
 const n = recast.types.namedTypes;
 type Node = recast.types.namedTypes.Node;
 
@@ -41,33 +21,35 @@ class Transformer {
 
   transform(code: string, file: string) {
     const ast = reparse(code);
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     const transformer = this;
 
     recast.visit(ast, {
-      visitImportDeclaration(path) {
-        this.traverse(path);
-        transformer.normalizeSourceString(file, path.node.source);
+      visitImportDeclaration(importDeclarationPath) {
+        this.traverse(importDeclarationPath);
+        transformer.normalizeSourceString(file, importDeclarationPath.node.source);
       },
 
-      visitImportExpression(path) {
-        this.traverse(path);
-        transformer.normalizeSourceString(file, path.node.source);
+      visitImportExpression(importDeclarationPath) {
+        this.traverse(importDeclarationPath);
+        transformer.normalizeSourceString(file, importDeclarationPath.node.source);
       },
 
-      visitExportAllDeclaration(path) {
-        this.traverse(path);
-        transformer.normalizeSourceString(file, path.node.source);
+      visitExportAllDeclaration(importDeclarationPath) {
+        this.traverse(importDeclarationPath);
+        transformer.normalizeSourceString(file, importDeclarationPath.node.source);
       },
 
-      visitExportNamedDeclaration(path) {
-        this.traverse(path);
-        transformer.normalizeSourceString(file, path.node.source);
+      visitExportNamedDeclaration(importDeclarationPath) {
+        this.traverse(importDeclarationPath);
+        transformer.normalizeSourceString(file, importDeclarationPath.node.source);
       },
     });
 
     return reprint(ast);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   isRelative(id: string) {
     return id.startsWith('./') || id.startsWith('../');
   }
@@ -97,7 +79,7 @@ class Transformer {
 
   normalizeId(id: string, file: string) {
     const basedir = path.dirname(file);
-    const absPath = resolve.sync(id, {
+    const absPath = requireResolve.sync(id, {
       basedir,
       extensions: ['.mjs', '.js'],
       packageFilter(pkg) {
@@ -112,6 +94,28 @@ class Transformer {
     this.absolutePaths.add(absPath);
     const relPath = path.relative(basedir, absPath);
     const relId = relPath.split(path.sep).join('/');
-    return this.isRelative(relId) ? relId : './' + relId;
+
+    return this.isRelative(relId) ? relId : `./${relId}`;
   }
 }
+
+eachFile(
+  distDir,
+  (file /* , relPath */) =>
+    new Promise((resolve, reject) => {
+      fs.readFile(file, 'utf8', (readError, source) => {
+        if (readError) return reject(readError);
+
+        const tr = new Transformer();
+        const output = tr.transform(source, file);
+
+        if (source === output) {
+          resolve(file);
+        } else {
+          fs.writeFile(file, output, 'utf8', (writeError) => {
+            writeError ? reject(writeError) : resolve(file);
+          });
+        }
+      });
+    }),
+);
