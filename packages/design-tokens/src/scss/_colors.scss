@@ -21,6 +21,8 @@ $gable-green-700: #132930 !default;
 $gable-green-800: #0b1c21 !default;
 $gable-green-900: #091417 !default;
 
+$sonic-silver-100: #0b1c2160 !default;
+
 $malibu-300: #61b3ff !default;
 
 $jordy-blue-50: #ebf3f8 !default;
@@ -56,11 +58,13 @@ $brand-colors: (
 $background-basic: $white !default;
 $background-cover: $tower-gray-50 !default;
 $background-inverted: $gable-green-800 !default;
+$background-backdrop: $sonic-silver-100 !default;
 
 $background-colors: (
     basic: $background-basic,
     cover: $background-cover,
     inverted: $background-inverted,
+    backdrop: $background-backdrop,
 ) !default;
 
 // Text
