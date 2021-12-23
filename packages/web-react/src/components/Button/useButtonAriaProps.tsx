@@ -12,8 +12,8 @@ export function useButtonAriaProps(
 ): ButtonAria<ButtonHTMLAttributes<HTMLButtonElement>>;
 export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<HTMLElement>>;
 
-export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<any>> {
-  let { elementType = 'button', disabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
+export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<unknown>> {
+  const { elementType = 'button', disabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
 
   let additionalProps;
   if (elementType === 'button') {

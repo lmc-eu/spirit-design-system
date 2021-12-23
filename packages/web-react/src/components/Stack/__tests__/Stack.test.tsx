@@ -8,7 +8,8 @@ describe('Stack', () => {
   it('should have default classname', () => {
     const dom = render(<Stack />);
 
-    expect(dom.container.querySelector('div')).toHaveClass('Stack');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element).toHaveClass('Stack');
   });
 
   it('should have classname with lmc prefix', () => {
@@ -18,12 +19,14 @@ describe('Stack', () => {
       </ClassNamePrefixProvider>,
     );
 
-    expect(dom.container.querySelector('div')).toHaveClass('lmc-Stack');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element).toHaveClass('lmc-Stack');
   });
 
   it('should render text children', () => {
     const dom = render(<Stack>Hello World</Stack>);
 
-    expect(dom.container.querySelector('div').textContent).toBe('Hello World');
+    const element = dom.container.querySelector('div') as HTMLElement;
+    expect(element.textContent).toBe('Hello World');
   });
 });

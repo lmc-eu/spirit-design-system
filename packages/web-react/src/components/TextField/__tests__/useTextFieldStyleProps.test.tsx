@@ -1,11 +1,11 @@
-import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 import { useTextFieldStyleProps } from '../useTextFieldStyleProps';
+import { SpiritTextFieldProps } from '../../../types';
 
-describe('useTextFieldStyleProps', function () {
-  it('should return defaults', function () {
-    let props = {};
-    let { result } = renderHook(() => useTextFieldStyleProps(props));
+describe('useTextFieldStyleProps', () => {
+  it('should return defaults', () => {
+    const props = {};
+    const { result } = renderHook(() => useTextFieldStyleProps(props));
 
     expect(result.current.classProps).toEqual({
       root: 'TextField',
@@ -15,22 +15,22 @@ describe('useTextFieldStyleProps', function () {
     });
   });
 
-  it('should return required input', function () {
-    let props = { required: true };
-    let { result } = renderHook(() => useTextFieldStyleProps(props));
+  it('should return required input', () => {
+    const props: SpiritTextFieldProps = { required: true };
+    const { result } = renderHook(() => useTextFieldStyleProps(props));
 
     expect(result.current.classProps.label).toBe('TextField__label TextField__label--required');
   });
-  it('should return hidden label', function () {
-    let props = { isLabelHidden: true };
-    let { result } = renderHook(() => useTextFieldStyleProps(props));
+  it('should return hidden label', () => {
+    const props: SpiritTextFieldProps = { isLabelHidden: true };
+    const { result } = renderHook(() => useTextFieldStyleProps(props));
 
     expect(result.current.classProps.label).toBe('TextField__label TextField__label--hidden');
   });
 
-  it('should return field with error', function () {
-    let props = { validationState: 'error' };
-    let { result } = renderHook(() => useTextFieldStyleProps(props));
+  it('should return field with error', () => {
+    const props: SpiritTextFieldProps = { validationState: 'error' };
+    const { result } = renderHook(() => useTextFieldStyleProps(props));
 
     expect(result.current.classProps.root).toBe('TextField TextField--error');
   });

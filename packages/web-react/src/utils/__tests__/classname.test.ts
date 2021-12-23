@@ -23,10 +23,13 @@ describe('classname', () => {
       ['', 'classname'],
       [undefined, 'classname'],
       [null, 'classname'],
-    ])('should apply prefix %s on given class name with result: %s', (value: string, expected: string) => {
-      const appliedClassNamePrefix = applyClassNamePrefix(value);
+    ])(
+      'should apply prefix %s on given class name with result: %s',
+      (value: string | null | undefined, expected: string) => {
+        const appliedClassNamePrefix = applyClassNamePrefix(value);
 
-      expect(appliedClassNamePrefix('classname')).toBe(expected);
-    });
+        expect(appliedClassNamePrefix('classname')).toBe(expected);
+      },
+    );
   });
 });

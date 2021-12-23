@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["warn"] }] */
 import { ElementType, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { SpiritBreakpoints, SpiritGridProps } from '../../types';
@@ -10,8 +11,9 @@ export interface GridStyles<T> {
   props: T;
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'typeof SpiritBreakpoints'.
-const gridBreakpoints = Object.keys(SpiritBreakpoints).map((breakpoint) => SpiritBreakpoints[breakpoint as any]);
+const gridBreakpoints = Object.keys(SpiritBreakpoints).map((breakpoint) => SpiritBreakpoints[breakpoint as unknown]);
 
 const getGridClasses = (
   className: string,
@@ -21,9 +23,11 @@ const getGridClasses = (
   const gridClasses: string[] = [];
 
   breakpoints.forEach((breakpoint) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Partial<GridProps>'.
     const variant = props[breakpoint];
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Partial<GridProps>'.
     delete props[breakpoint];
 
@@ -40,8 +44,8 @@ const getGridClasses = (
   };
 };
 
-export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<HTMLAttributes<any>> {
-  let { layout, cols, ...restProps } = props;
+export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<HTMLAttributes<unknown>> {
+  const { layout, cols, ...restProps } = props;
 
   if (layout && (cols || restProps.tablet || restProps.desktop)) {
     console.warn('Grid layout and custom layout (cols, tablet, desktop) cannot be used together.');

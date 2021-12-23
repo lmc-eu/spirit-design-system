@@ -17,7 +17,7 @@ const path = require('path');
 const distRoot = `${__dirname}/../dist`;
 
 const packageJson = require('../package.json');
-const packageEntryPoints = require('./entryPoints.js');
+const packageEntryPoints = require('./entryPoints');
 
 // Enable default interpretation of .js files as ECMAScript modules.
 packageJson.type = 'module';
@@ -42,11 +42,7 @@ fs.copyFileSync(`${srcDir}/README.md`, `${destDir}/README.md`);
 // components, HOC, and various links to be used by themselves, via CommonJS
 // entry point files that only include the exports needed for each bundle.
 
-packageEntryPoints.forEach(function buildPackageJson({
-  dirs,
-  bundleName = dirs[dirs.length - 1],
-  sideEffects = false,
-}) {
+packageEntryPoints.forEach(({ dirs, bundleName = dirs[dirs.length - 1], sideEffects = false }) => {
   if (!dirs.length) return;
   fs.writeFileSync(
     path.join(distRoot, ...dirs, 'package.json'),

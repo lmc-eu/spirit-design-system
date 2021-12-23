@@ -4,7 +4,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const libName = 'web-react';
 
-const commonConfig = require('./webpack.common.js');
+const commonConfig = require('./webpack.common');
 
 module.exports = (env, argv) =>
   merge(commonConfig, {

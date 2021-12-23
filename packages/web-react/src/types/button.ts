@@ -13,9 +13,10 @@ interface ButtonProps extends ChildrenProps, ClickEvents {
 export interface AriaButtonElementTypeProps<T extends ElementType = 'button'> {
   /**
    * The HTML element or React element used to render the button, e.g. 'div', 'a', or `RouterLink`.
+   *
    * @default 'button'
    */
-  elementType?: T | JSXElementConstructor<any>;
+  elementType?: T | JSXElementConstructor<unknown>;
 }
 
 export interface LinkButtonProps<T extends ElementType = 'a'> extends AriaButtonElementTypeProps<T> {
@@ -30,6 +31,7 @@ export interface LinkButtonProps<T extends ElementType = 'a'> extends AriaButton
 interface AriaBaseButtonProps extends AriaLabelingProps {
   /**
    * The behavior of the button when used in an HTML form.
+   *
    * @default 'button'
    */
   type?: ButtonType;
