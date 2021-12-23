@@ -1,6 +1,8 @@
 const { prettierConfig } = require('./.prettierrc');
 
 module.exports = {
+  root: true,
+
   parserOptions: {
     ecmaVersion: 'latest',
   },
@@ -8,9 +10,10 @@ module.exports = {
   ignorePatterns: ['node_modules', '!.*.js', 'packages/web-react'],
 
   extends: [
-    '@lmc-eu/eslint-config-base',
-    '@lmc-eu/eslint-config-base/optional',
+    '@lmc-eu/eslint-config-react/base',
+    '@lmc-eu/eslint-config-react/optional',
     'prettier',
+    'plugin:prettier/recommended',
   ],
 
   plugins: ['prettier'],
