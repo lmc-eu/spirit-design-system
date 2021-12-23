@@ -1,7 +1,8 @@
 @use '@tokens' as tokens;
 
-$padding-x: tokens.$space-7;
-$padding-y: tokens.$space-4;
+// We subtract the border width to achieve the same dimensions as other form elements
+$padding-x: calc(#{tokens.$space-7} - #{tokens.$border-width-1});
+$padding-y: calc(#{tokens.$space-4} - #{tokens.$border-width-1});
 $font-family: tokens.$font-family-default;
 $font-weight: tokens.$font-weight-semibold;
 $font-size: tokens.$font-size-base;
