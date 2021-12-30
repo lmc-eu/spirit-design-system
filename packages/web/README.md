@@ -1,6 +1,6 @@
 # @lmc-eu/spirit-web
 
-> CSS and vanilla JS implementation of Spirit Design System.
+> CSS implementation of Spirit Design System.
 
 ## Install
 
@@ -16,16 +16,19 @@ npm install --save @lmc-eu/spirit-web
 
 ## Usage
 
-### CSS
+### Quick Start with CSS
 
-Link the full, prefixed and minimised CSS with default Spirit branding in your
-HTML template:
+The pre-built Spirit CSS is a great choice for small one-off projects,
+prototypes and documentations.
+
+Link the full, vendor-prefixed and minimised CSS with default Spirit branding
+in your HTML template:
 
 ```html
 <link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
 ```
 
-### Sass
+### Advanced Implementation in Product with Sass
 
 Import just the components you need in your Sass stylesheet:
 
@@ -33,16 +36,28 @@ Import just the components you need in your Sass stylesheet:
 @use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
 ```
 
-Make sure you have added Sass load paths for `tokens` and `*.theme` Sass
-modules so they are resolved correctly. See [theming] to learn how it works.
+Make sure you have [configured Sass load path][configuring-load-path] for your
+`@tokens` so it's resolved correctly by Sass.
+
+## Rebranding
+
+Design tokens and their [`@tokens` API][tokens-api] enable quick and easy
+rebranding of Spirit Sass components and styles. Once you have created your own
+design tokens, just provide them to your Sass compiler and you are ready to go!
+Learn more in the [`spirit-design-tokens` docs][rebranding].
+
+👀 Head to the [rebranding example] to see how it works.
 
 ## Examples
 
-👀 See [example] for a live demo.
+👀 See [examples] for a live demo.
 
 ## License
 
 See the [LICENSE](LICENSE.md) file for information.
 
-[theming]: https://github.com/lmc-eu/spirit-design-system/blob/main/src/web/THEMING.md
+[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
+[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
+[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
+[rebranding example]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web/src/jobs
 [examples]: https://lmc-eu.github.io/spirit-design-system/web/
