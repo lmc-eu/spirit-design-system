@@ -2,7 +2,33 @@
 
 > Design tokens for Spirit Design System.
 
+## Table of Contents
+
+1. [Available Design Tokens](#available-design-tokens)
+2. [Install](#install)
+3. [Basic Usage](#basic-usage)
+4. [`@tokens` API](#tokens-api)
+5. [FAQ](#faq)
+
+## Available Design Tokens
+
+| Category      | Figma | Sass                  |
+| ------------- | ----- | --------------------- |
+| 🖼 Borders     | ✅    | [`_borders.sass`]     |
+| 🖥 Breakpoints | ✅    | [`_breakpoints.sass`] |
+| 🎨 Colors     | ✅    | [`_colors.sass`]      |
+| 🎱 Radii      | ✅    | [`_radii.sass`]       |
+| ⛱ Shadows     | ✅    | [`_shadows.sass`]     |
+| 📏 Spacing    | ✅    | [`_spacing.sass`]     |
+| 🔠 Typography | ✅    | [`_typography.sass`]  |
+
 ## Install
+
+🙋🏻‍♂️ **Hold on! Do you already use [`spirit-web`]?** Then you don't need to
+install this package because `spirit-design-tokens` is installed automatically
+as a dependency of [`spirit-web`].
+
+If you want to use just `spirit-design-tokens` alone in your project, run:
 
 ```shell
 yarn add @lmc-eu/spirit-design-tokens
@@ -14,11 +40,27 @@ or
 npm install --save @lmc-eu/spirit-design-tokens
 ```
 
-## Usage
+## Basic Usage
 
-### Sass
+The recommended approach in Sass is to import all Spirit design tokens at once
+via the [`@tokens` API](#tokens-api):
 
-In Sass, import individual files by token categories:
+```scss
+@use 'node_modules/@lmc-eu/spirit-design-tokens/scss/@tokens' as tokens;
+
+.MyComponentThatMightGoToSpiritInFuture {
+  font-family: tokens.$font-family-default;
+  color: tokens.$text-primary-default;
+}
+```
+
+This makes it easier to [migrate your code to Spirit][migrate-to-spirit] in the
+future.
+
+<details>
+<summary>Optional: import by categories</summary>
+
+You can also import individual design token files by categories, e.g.:
 
 ```scss
 @use 'node_modules/@lmc-eu/spirit-design-tokens/scss/colors';
@@ -30,17 +72,195 @@ In Sass, import individual files by token categories:
 }
 ```
 
-Or import all tokens at once:
+This approach is a bit more descriptive and thus provides slightly better
+developer experience. You may find it more convenient in situations you
+**don't** suppose your code will make its way to Spirit as this approach is
+incompatible with `@tokens` API that makes rebranding possible.
+
+</details>
+
+## `@tokens` API
+
+`@tokens` API enables quick and easy rebranding of Spirit Sass styles by
+[replacing the path](#b-via-load-path) to design tokens. You need to be familiar
+with it if you are building your custom design system based on Spirit or you are
+going to contribute to Spirit.
+
+### Accessing `@tokens`
+
+#### a) via full path
+
+Access Spirit design tokens via the `@tokens` API without having to configure
+load path, just like shown in the [basic example](#basic-usage). This is a good
+choice for starting off quickly. However, it **doesn't enable rebranding**.
+
+#### b) via load path
+
+To get ready for rebranding, access Spirit design tokens via the `@tokens` API
+while keeping them open to be replaced by another set of design tokens:
 
 ```scss
-@use 'node_modules/@lmc-eu/spirit-design-tokens/scss' as tokens;
+@use '@tokens' as tokens;
 
-.MyComponent {
+.MyComponentThatIsReadyForSpirit {
   font-family: tokens.$font-family-default;
   color: tokens.$text-primary-default;
 }
 ```
 
+##### Configuring Load Path
+
+Because the `@tokens` file doesn't exist locally, tell Sass where it should
+look for unreachable files. This is also a required step if you are importing
+Spirit components from their Sass source.
+
+```shell
+sass --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss my-styles.scss
+```
+
+<details>
+<summary>Or with Webpack and <code>sass-loader</code>:</summary>
+
+```javascript
+// webpack.config.js
+
+// …
+module: {
+  rules: [
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sassOptions: {
+              includePaths: [path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens/scss')],
+            },
+          },
+        },
+      ],
+    },
+  ];
+}
+// …
+```
+
+</details>
+
+### Exposing Your Custom Design Tokens
+
+In Spirit, the [`@tokens.scss`] file simply @forwards all design tokens exposed
+by [`index.scss`] which in turn @forwards all design token categories. To make
+your design tokens compatible with Spirit, just create a `@tokens.scss` file and
+@forward all your design tokens through it, e.g.:
+
+```scss
+// @tokens.scss
+
+@forward 'borders';
+@forward 'breakpoints';
+@forward 'colors';
+@forward 'radii';
+@forward 'shadows';
+@forward 'spacing';
+@forward 'typography';
+```
+
+## FAQ
+
+<details>
+<summary>
+Why do I need to rename <code>@tokens</code> to <code>tokens</code> when @using?
+</summary>
+
+Because @using the `@tokens` module without renaming would produce an error:
+
+```log
+Error: Invalid Sass identifier "@tokens"
+  ╷
+1 │ @use '@tokens';
+  │ ^^^^^^^^^^^^^^
+```
+
+</details>
+
+<details>
+<summary>Why is there the <code>@</code> prefix?</summary>
+
+We prefix the `@tokens.scss` file with `@` to differentiate it from other Sass
+files in the directory.
+
+In order for developers to know the file behaves differently than usual Sass
+partials, a `@` prefix is added to mark this behavior both in filesystem and
+inside Sass files. As a result, it's clear why e.g. `@use 'tools'` refers to
+a local file and `@use '@tokens'` does not. However, **it's only a naming
+convention,** there is no special tooling or configuration for Sass partials
+starting with `@`.
+
+Imported module **needs to be renamed to be compatible with SCSS** syntax
+when it's used later on. That's why `@use '@tokens' as tokens`.
+
+Look at the following snippets and compare which one offers better
+comprehensibility.
+
+Without `@` prefix:
+
+```scss
+// _Button.scss
+
+@use 'tools'; // Calls './_tools.scss'. You don't have to explain this to me.
+@use 'tokens'; // Wait, this file doesn't exist… What's going on here? Is it
+// an error?
+```
+
+With `@` prefix:
+
+```scss
+// _Button.scss
+
+@use 'tools'; // Calls './_tools.scss'.
+@use '@tokens' as tokens; // OK, './_@tokens.scss' is not here, but the at-sign
+// prefix suggests a special behavior. Maybe I'll learn more in the docs?
+```
+
+</details>
+
+<details>
+<summary>How do I derive design tokens for my own design system?</summary>
+
+**Creating a custom design system derived from Spirit? Great to hear that! 🎉**
+
+While it's perfectly OK to develop custom components that may not find their way
+back to Spirit, your design tokens need to **include all Spirit design tokens**
+anyway, so all Spirit components you are going to reuse work correctly with your
+brand.
+
+Simply put, if you are going to build a design system based on Spirit:
+
+1. copy and paste all design tokens from here,
+2. alter their values to fit your needs,
+3. feel free to add anything necessary on top of that,
+4. use your design tokens in your code (and compile Spirit with them).
+
+To make your Sass design tokens compatible with Spirit, don't forget to expose
+them via your custom [`@tokens` API](#tokens-api).
+
+</details>
+
 ## License
 
 See the [LICENSE](LICENSE.md) file for information.
+
+[`@tokens.scss`]: src/scss/@tokens.scss
+[`index.scss`]: src/scss/index.scss
+[`_borders.sass`]: src/scss/_borders.scss
+[`_breakpoints.sass`]: src/scss/_breakpoints.scss
+[`_colors.sass`]: src/scss/_colors.scss
+[`_radii.sass`]: src/scss/_radii.scss
+[`_shadows.sass`]: src/scss/_shadows.scss
+[`_spacing.sass`]: src/scss/_spacing.scss
+[`_typography.sass`]: src/scss/_typography.scss
+[`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
+[migrate-to-spirit]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/CONTRIBUTING.md#migrating-your-components-to-spirit

@@ -1,6 +1,14 @@
 # Contributing
 
-> A guide for Spirit contributors.
+> Guide for Spirit contributors.
+
+## Table of Contents
+
+1. [File Structure](#file-structure)
+2. [Structuring Styles](#structuring-styles)
+3. [Linking Design Tokens](#linking-design-tokens)
+4. [Migrating Your Components to Spirit](#migrating-your-components-to-spirit)
+5. [FAQ](#faq)
 
 ## File Structure
 
@@ -17,9 +25,33 @@ This is an example of a typical file structure of a component:
             └── README.md — documentation of the component
 ```
 
-## Linking Components to Design Tokens
+## Structuring Styles
 
-Components can (and should!) reuse Spirit design tokens.
+To keep actual stylesheet of the component as clean as possible, definitions of
+Sass variables, functions and mixins related to the component always have their
+place in standalone Sass partials, namely `_theme.scss` (theme) and
+`_tools.scss` (tools).
+
+### `_theme.scss`
+
+Component's theme serves as:
+
+1. a centralized storage of component's references to **design tokens** (see
+   further),
+2. a place where **component's visual variants** are defined as Sass maps, so we
+   can iterate over them later on,
+3. a source of definition of other Sass variables of the component.
+
+### `_tools.scss`
+
+Similarly, component's tools serve as a storage of component-scoped:
+
+1. Sass **mixins,** mostly to generate visual variants from theme,
+2. Sass **functions.**
+
+## Linking Design Tokens
+
+Components can (and should!) reuse Spirit [design tokens].
 
 Component's theme properties can be linked to design tokens. This way, the
 appearance of individual components is always unified and coherent: **anytime
@@ -30,18 +62,23 @@ discussion between Spirit developers and designers. Linking component
 properties to design tokens needs to be done carefully **in order for the design
 to work as a system.**
 
-Default Spirit design tokens live in the `spirit-design-tokens` package.
+Default Spirit design tokens live in the [`spirit-design-tokens`] package.
 Products may define their own design tokens as long as they preserve the same
 structure and naming.
 
 ### Sass Implementation
 
+When contributing to Spirit Sass styles, always link Spirit design tokens via
+the [`@tokens` API][tokens-api] with
+[configured load path][configuring-load-path]. This is crucial for the
+[rebranding][rebranding] functionality of Spirit.
+
 From the implementation point of view, design tokens are Sass variables
 organized in Sass modules. Within component styles, Sass modules with design
 tokens are referred to just by filename. However, because the modules do not
-exist in the place they are called in (the `spirit-design-tokens` is stored in
-`node_modules`), the correct include path for the desired set of design tokens
-must be provided on build time (head to `README` to see how). This is the only
+exist in the place they are called in (the [`spirit-design-tokens`] package is
+stored in `node_modules`), the correct load path for the desired set of design
+tokens must be [provided on build time][configuring-load-path]. This is the only
 way how Sass modules can be affected from outside, without giving in their
 advantages.
 
@@ -57,98 +94,85 @@ At first, let's define a reference to design tokens in component's theme:
 $font-family: tokens.$font-family-default;
 ```
 
-Use the reference from the theme in component styles:
+Now use the reference from the theme in component styles:
 
 ```scss
 // src/components/Button/_Button.scss
 
 @use 'theme';
 
-.lmc-Button {
+.Button {
   font-family: theme.$font-family;
 }
 ```
 
-## The Purpose of `_theme.scss` and `_tools.scss`
+## Migrating Your Components to Spirit
 
-To keep actual stylesheet of the component as clean as possible, definitions of
-Sass variables, functions and mixins related to the component always have their
-place in standalone Sass partials, namely `_theme.scss` (theme) and
-`_tools.scss` (tools).
+### Code Conventions
 
-### Theme
+Before pushing your components to Spirit, make sure it meets code conventions
+specified in this document.
 
-Component's theme serves as:
+### Rebranding Readiness
 
-1. a centralized storage of component's references to **design tokens** (see
-   further),
-2. a place where **component's visual variants** are defined as Sass maps, so we
-   can iterate over them later on,
-3. a source of definition of other Sass variables of the component.
+To make your code ready for rebranding before moving to Spirit:
 
-### Tools
+1. Remove full path to your `@tokens` whenever it's @used:
 
-Similarly, component's tools serve as a storage of component-scoped:
+   ```diff
+   - @use '../path/to/my/design/@tokens' as tokens;
+   + @use '@tokens' as tokens;
+   ```
 
-1. Sass **mixins,** mostly to generate visual variants from theme,
-2. Sass **functions.**
+2. Add the previously removed path to load paths of your Sass compiler.
+   See the [`spirit-design-tokens` docs][configuring-load-path] to learn how to
+   do that.
+
+3. Try using another `@tokens` file with a different brand and see how your
+   code reacts on the change.
 
 ## FAQ
 
-### 👉 What are design tokens?
+<details>
+<summary>What are design tokens?</summary>
 
 Design tokens are special variables that define the smallest pieces of a design
 language, especially colors, typography, or spacing. Design tokens enable
 adjusting the common parts of visual design.
 
-### 👉 What are Sass modules?
+</details>
 
-Sass modules are a [new way of organizing Sass source][sass modules]. Aside
+<details>
+<summary>What are Sass modules?</summary>
+
+Sass modules are a [new way of organizing Sass source][sass-modules]. Aside
 from new methods of structuring and loading Sass files, Sass modules offer a
 great portion of encapsulation, traceability, and more.
 
-### 👉 Does `@use` behave the same way as `@import`?
+</details>
+
+<details>
+<summary>Does <code>@use</code> behave the same way as <code>@import</code>?</summary>
 
 In most situations, no. Most importantly, while `@import` loads everything into
 global context, `@use` is scoped and works more like `import` in [ES modules].
 
-### 👉 Why are `@tokens` prefixed with `@`?
+</details>
+
+<details>
+<summary>Why are <code>@tokens</code> prefixed with <code>@</code>?</summary>
 
 By prefixing a Sass file name with `@`, we communicate that such file is loaded
-in a special way.
+in a special way. Read more about it in
+[`spirit-design-tokens` docs][design-tokens-faq].
 
-In order for developers to know the file behaves differently than usual Sass
-partials, a `@` prefix is added to mark this behavior both in filesystem and
-inside Sass files. As a result, it's clear why e.g. `@use 'tools'` refers to
-a local file and `@use '@tokens'` does not. However, **it's only a naming
-convention,** there is no special tooling or configuration for Sass partials
-starting with `@`.
+</details>
 
-Imported module **needs to be renamed to be compatible with SCSS** syntax
-when it's used later on. That's why `@use '@tokens' as tokens`.
-
-Look at the following snippets and compare which one offers better
-comprehensibility.
-
-Without `@` prefix:
-
-```scss
-// _Button.scss
-
-@use 'tools'; // Calls './_tools.scss'. You don't have to explain this to me.
-@use 'tokens'; // Wait, this file doesn't exist… What's going on here? Is it
-// an error?
-```
-
-With `@` prefix:
-
-```scss
-// _Button.scss
-
-@use 'tools'; // Calls './_tools.scss'.
-@use '@tokens' as tokens; // OK, './_@tokens.scss' is not here, but the at-sign
-// prefix suggests a special behavior. Maybe I'll learn more in the docs?
-```
-
-[sass modules]: https://sass-lang.com/blog/the-module-system-is-launched
+[design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
+[`spirit-design-tokens`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
+[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
+[configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
+[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
+[design-tokens-faq]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#faq
+[sass-modules]: https://sass-lang.com/blog/the-module-system-is-launched
 [es modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
