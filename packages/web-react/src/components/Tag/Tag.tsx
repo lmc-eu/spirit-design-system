@@ -18,15 +18,23 @@ export interface TagProps extends WithChildren {
   className?: string;
 }
 
-const getTagColorAndThemeClassname = (color: Color, theme: Theme): string => `Tag--${color}-${theme}`;
+const getTagColorAndThemeClassname = (componentClassName: string, color: Color, theme: Theme): string =>
+  `${componentClassName}--${color}-${theme}`;
 
-export const Tag = ({ color, theme, children, className }: TagProps): JSX.Element => (
-  <span className={classNames('Tag', getTagColorAndThemeClassname(color, theme), className)}>{children}</span>
-);
+export const Tag = ({ color, theme, componentClassName, classNames, children }: TagProps): JSX.Element => {
+  const classNamePrefix = useClassNamePrefix();
+
+  return (
+    <span className={classNames(componentClassName, getTagColorAndThemeClassname(componentClassName, color, theme), className)}>
+      {children}
+    </span>
+  );
+};
 
 Tag.defaultProps = {
   color: 'default',
   theme: 'dark',
+  componentClassName = 'Tag',
 };
 
 export default Tag;
