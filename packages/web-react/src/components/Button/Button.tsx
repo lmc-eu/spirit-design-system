@@ -4,7 +4,7 @@ import { WithChildren } from '../../types/main';
 
 type Color = 'primary' | 'secondary' | 'tertiary';
 
-const getButtonColorClassname = (color: Color): string => `Button--${color}`;
+const getButtonColorClassname = (componentClassName: string, color: Color): string => `${componentClassName}--${color}`;
 
 export interface ButtonProps extends WithChildren {
   /**
@@ -32,6 +32,10 @@ export interface ButtonProps extends WithChildren {
    */
   ariaLabel?: string;
   className?: string;
+  /**
+   * Component CSS class
+   */
+  componentClassName?: string;
 }
 
 export const Button = ({
@@ -42,6 +46,7 @@ export const Button = ({
   ariaLabel,
   disabled,
   className,
+  componentClassName,
   ...restProps
 }: ButtonProps): JSX.Element => {
   const handleClick = (event: MouseEvent) => {
@@ -59,14 +64,9 @@ export const Button = ({
   return (
     <button
       {...restProps}
-      className={classNames(
-        'Button',
-        getButtonColorClassname(color),
-        {
-          'Button--block': block,
-        },
-        className,
-      )}
+      className={classNames(componentClassName, getButtonColorClassname(componentClassName, color), {
+        'Button--block': block,
+      }, className,)}
       onClick={handleClick}
       type={type}
       disabled={disabled}
@@ -80,6 +80,7 @@ Button.defaultProps = {
   type: 'button',
   block: false,
   disabled: false,
+  componentClassName = 'Button',
 };
 
 export default Button;
