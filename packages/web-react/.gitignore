@@ -2,3 +2,8 @@
 /_esNext
 /_es2015
 /_bundles
+
+# code coverage
+/_coverage
+/.coverage
+/coverage
