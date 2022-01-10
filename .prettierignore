@@ -8,3 +8,9 @@
 
 # Ignoring js files because they are already formatted by ESLint (which is using Prettier plugin)
 **/*.js
+
+# Code coverage
+**/coverage
+**/coverage/**
+**/.coverage
+**/.coverage/**
