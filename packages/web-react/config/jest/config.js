@@ -2,6 +2,7 @@ const config = {
   rootDir: '../../',
   automock: false,
   setupFiles: ['<rootDir>/config/jest/setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTestingLibrary.js'],
   testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
   coverageDirectory: './.coverage',
   reporters: [

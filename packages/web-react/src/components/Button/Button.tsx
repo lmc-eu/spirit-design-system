@@ -7,43 +7,20 @@ import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 
 type Color = 'primary' | 'secondary' | 'tertiary';
 
-const getButtonColorClassname = (componentClassName: string, color: Color): string =>
-  compose(
-    applyColor<Color>(color),
-  )(componentClassName);
-  // `${componentClassName}--${color}`;
-
 export interface ButtonProps extends WithChildren {
-  /**
-   * Emotion color variant.
-   */
   color: Color;
-  /**
-   * Function to be called on button click.
-   */
   onClick?: (event: MouseEvent) => void;
-  /**
-   * HTML `type` attribute.
-   */
   type: 'button' | 'submit';
-  /**
-   * Block alignment modification
-   */
   block: boolean;
-  /**
-   * Disabling button
-   */
   disabled: boolean;
-  /**
-   * Aria label
-   */
   ariaLabel?: string;
   className?: string;
-  /**
-   * Component CSS class
-   */
   componentClassName: string;
 }
+
+// `${componentClassName}--${color}`;
+const getButtonColorClassname = (componentClassName: string, color: Color): string =>
+  compose(applyColor<Color>(color))(componentClassName);
 
 export const Button = ({
   color,
@@ -57,7 +34,7 @@ export const Button = ({
   ...restProps
 }: ButtonProps): JSX.Element => {
   const classNamePrefix = useClassNamePrefix();
-  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName)
+  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName);
 
   const handleClick = (event: MouseEvent) => {
     if (disabled) {
@@ -73,10 +50,15 @@ export const Button = ({
 
   return (
     <button
-      {...restAttributes}
-      className={classNames(mainClassName, getButtonColorClassname(mainClassName, color), {
-        'Button--block': block,
-      }, className,)}
+      {...restProps}
+      className={classNames(
+        mainClassName,
+        getButtonColorClassname(mainClassName, color),
+        {
+          'Button--block': block,
+        },
+        className,
+      )}
       onClick={handleClick}
       type={type}
       disabled={disabled}

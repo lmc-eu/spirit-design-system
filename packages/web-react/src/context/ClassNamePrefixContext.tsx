@@ -1,13 +1,13 @@
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 
 type ClassNamePrefixContextType = string | null | undefined;
 
 const defaultContext: ClassNamePrefixContextType = undefined;
 
 const ClassNamePrefixContext = createContext<ClassNamePrefixContextType>(defaultContext);
-const ClassNamePrefixContextProvider = ClassNamePrefixContext.Provider;
-const ClassNamePrefixContextConsumer = ClassNamePrefixContext.Consumer;
+const ClassNamePrefixProvider = ClassNamePrefixContext.Provider;
+const ClassNamePrefixConsumer = ClassNamePrefixContext.Consumer;
 
-export default ClassNamePrefixContextContext;
-export { ClassNamePrefixContextConsumer, ClassNamePrefixContextProvider };
-export type { ClassNamePrefixContextContextType };
+export default ClassNamePrefixContext;
+export { ClassNamePrefixConsumer, ClassNamePrefixProvider };
+export type { ClassNamePrefixContextType };

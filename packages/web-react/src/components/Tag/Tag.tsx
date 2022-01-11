@@ -10,31 +10,19 @@ type Color = 'default' | 'informative' | 'success' | 'warning' | 'danger';
 type Theme = 'light' | 'dark';
 
 export interface TagProps extends WithChildren {
-  /**
-   * Emotion color variant.
-   */
   color: Color;
-  /**
-   * Theme
-   */
   theme: Theme;
   className?: string;
-  /**
-   * Component CSS class
-   */
   componentClassName: string;
 }
 
+// `${componentClassName}--${color}-${theme}`;
 const getTagColorAndThemeClassname = (componentClassName: string, color: Color, theme: Theme): string =>
-  compose(
-    applyTheme<Theme>(theme),
-    applyColor<Color>(color),
-  )(componentClassName);
-  // `${componentClassName}--${color}-${theme}`;
+  compose(applyTheme<Theme>(theme), applyColor<Color>(color))(componentClassName);
 
-export const Tag = ({ color, theme, componentClassName, classNames, children }: TagProps): JSX.Element => {
+export const Tag = ({ color, theme, componentClassName, className, children }: TagProps): JSX.Element => {
   const classNamePrefix = useClassNamePrefix();
-  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName)
+  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName);
 
   return (
     <span className={classNames(mainClassName, getTagColorAndThemeClassname(mainClassName, color, theme), className)}>
