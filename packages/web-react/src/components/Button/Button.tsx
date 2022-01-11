@@ -31,6 +31,7 @@ export interface ButtonProps extends WithChildren {
    * Aria label
    */
   ariaLabel?: string;
+  className?: string;
 }
 
 export const Button = ({
@@ -40,7 +41,8 @@ export const Button = ({
   block,
   ariaLabel,
   disabled,
-  ...restAttributes
+  className,
+  ...restProps
 }: ButtonProps): JSX.Element => {
   const handleClick = (event: MouseEvent) => {
     if (disabled) {
@@ -56,10 +58,15 @@ export const Button = ({
 
   return (
     <button
-      {...restAttributes}
-      className={classNames('Button', getButtonColorClassname(color), {
-        'Button--block': block,
-      })}
+      {...restProps}
+      className={classNames(
+        'Button',
+        getButtonColorClassname(color),
+        {
+          'Button--block': block,
+        },
+        className,
+      )}
       onClick={handleClick}
       type={type}
       disabled={disabled}
