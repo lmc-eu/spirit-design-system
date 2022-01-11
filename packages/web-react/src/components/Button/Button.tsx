@@ -1,10 +1,17 @@
 import React, { MouseEvent } from 'react';
 import classNames from 'classnames';
 import { WithChildren } from '../../types/main';
+import { compose } from '../../utils/compose';
+import { applyColor, applyClassNamePrefix } from '../../utils/classname';
+import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 
 type Color = 'primary' | 'secondary' | 'tertiary';
 
-const getButtonColorClassname = (componentClassName: string, color: Color): string => `${componentClassName}--${color}`;
+const getButtonColorClassname = (componentClassName: string, color: Color): string =>
+  compose(
+    applyColor<Color>(color),
+  )(componentClassName);
+  // `${componentClassName}--${color}`;
 
 export interface ButtonProps extends WithChildren {
   /**
@@ -35,7 +42,7 @@ export interface ButtonProps extends WithChildren {
   /**
    * Component CSS class
    */
-  componentClassName?: string;
+  componentClassName: string;
 }
 
 export const Button = ({
@@ -49,6 +56,9 @@ export const Button = ({
   componentClassName,
   ...restProps
 }: ButtonProps): JSX.Element => {
+  const classNamePrefix = useClassNamePrefix();
+  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName)
+
   const handleClick = (event: MouseEvent) => {
     if (disabled) {
       event.preventDefault();
@@ -63,8 +73,8 @@ export const Button = ({
 
   return (
     <button
-      {...restProps}
-      className={classNames(componentClassName, getButtonColorClassname(componentClassName, color), {
+      {...restAttributes}
+      className={classNames(mainClassName, getButtonColorClassname(mainClassName, color), {
         'Button--block': block,
       }, className,)}
       onClick={handleClick}
@@ -80,7 +90,7 @@ Button.defaultProps = {
   type: 'button',
   block: false,
   disabled: false,
-  componentClassName = 'Button',
+  componentClassName: 'Button',
 };
 
 export default Button;
