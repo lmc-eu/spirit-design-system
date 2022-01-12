@@ -1,7 +1,31 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines and [LMC GitHub preset](https://github.com/lmc-eu/code-quality-tools/tree/main/packages/conventional-changelog-lmc-github) for the list of supported change types.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="0.5.0"></a>
+## [0.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.4.0...@lmc-eu/spirit-web-react@0.5.0) (2022-01-12)
+
+### Bug Fixes
+
+* **web-react:** Rename main types to be exported during build ([0893fcb](https://github.com/lmc-eu/spirit-design-system/commit/0893fcb))
+
+### Chores
+
+* Introduce global ESLint config ([17bda77](https://github.com/lmc-eu/spirit-design-system/commit/17bda77))
+
+### Documentation
+
+* **license:** Include license file ([8f0af0a](https://github.com/lmc-eu/spirit-design-system/commit/8f0af0a))
+* **web-react:** Include changelog ([2742756](https://github.com/lmc-eu/spirit-design-system/commit/2742756))
+
+### Features
+
+* **web-react:** Enable class name extension via className prop ([d30a53f](https://github.com/lmc-eu/spirit-design-system/commit/d30a53f))
+
+### Styles
+
+* Reformat codebase using code formatter ([a2abf71](https://github.com/lmc-eu/spirit-design-system/commit/a2abf71))
 
 <a name="0.4.0"></a>
 

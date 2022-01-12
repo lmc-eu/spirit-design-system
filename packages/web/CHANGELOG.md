@@ -1,7 +1,23 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines and [LMC GitHub preset](https://github.com/lmc-eu/code-quality-tools/tree/main/packages/conventional-changelog-lmc-github) for the list of supported change types.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="0.7.0"></a>
+## [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.6.0...@lmc-eu/spirit-web@0.7.0) (2022-01-12)
+
+### Documentation
+
+* **license:** Include license file ([8f0af0a](https://github.com/lmc-eu/spirit-design-system/commit/8f0af0a))
+* **web:** Include changelog ([4c54b86](https://github.com/lmc-eu/spirit-design-system/commit/4c54b86))
+
+### Features
+
+* Split border tokens and subtract border width value from button paddings ([dfbf6ac](https://github.com/lmc-eu/spirit-design-system/commit/dfbf6ac))
+
+### Styles
+
+* Reformat codebase using code formatter ([a2abf71](https://github.com/lmc-eu/spirit-design-system/commit/a2abf71))
 
 <a name="0.6.0"></a>
 
