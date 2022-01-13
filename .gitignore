@@ -18,3 +18,6 @@ local.mk
 
 # Distribution files
 packages/*/dist
+
+# NPM rc file created by CI
+.npmrc
