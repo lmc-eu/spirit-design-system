@@ -2,7 +2,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: calc(0.5rem - 1px) calc(1.5rem - 1px);
   font-family: Open Sans, helvetica, roboto, arial, sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -29,7 +29,7 @@
 }
 
 .jobs-Button--square {
-  width: calc((1em * 1.5) + (0.5rem * 2));
+  width: calc((1em * 1.5) + (calc(0.5rem - 1px) * 2));
   padding-left: 0;
   padding-right: 0;
 }
