@@ -8,6 +8,7 @@ $gray-700: #737373 !default;
 $black: #000 !default;
 
 $tower-gray-50: #f0f4f5 !default;
+$tower-gray-100: #d2dcdf !default;
 $tower-gray-200: #a7bcc2 !default;
 $tower-gray-300: #90a2a7 !default;
 $tower-gray-400: #849499 !default;
@@ -58,12 +59,18 @@ $brand-colors: (
 $background-basic: $white !default;
 $background-cover: $tower-gray-50 !default;
 $background-inverted: $gable-green-800 !default;
+$background-interactive-default: $white !default;
+$background-interactive-hover: $tower-gray-100 !default;
+$background-interactive-active: $tower-gray-200 !default;
 $background-backdrop: $sonic-silver-100 !default;
 
 $background-colors: (
     basic: $background-basic,
     cover: $background-cover,
     inverted: $background-inverted,
+    interactive-default: $background-interactive-default,
+    interactive-hover: $background-interactive-hover,
+    interactive-active: $background-interactive-active,
     backdrop: $background-backdrop,
 ) !default;
 
@@ -92,19 +99,19 @@ $text-colors: (
 $action-primary-default: $casal-600 !default;
 $action-primary-hover: $casal-700 !default;
 $action-primary-active: $casal-800 !default;
-$action-primary-disabled: $gray-200 !default;
+$action-primary-disabled: $gray-500 !default;
 $action-secondary-default: $casal-600 !default;
 $action-secondary-hover: $casal-700 !default;
 $action-secondary-active: $casal-800 !default;
-$action-secondary-disabled: $gray-200 !default;
+$action-secondary-disabled: $gray-500 !default;
 $action-selected-default: $casal-600 !default;
 $action-selected-hover: $casal-700 !default;
 $action-selected-active: $casal-800 !default;
-$action-selected-disabled: $gray-200 !default;
+$action-selected-disabled: $gray-500 !default;
 $action-unselected-default: $gable-green-700 !default;
 $action-unselected-hover: $gable-green-800 !default;
 $action-unselected-active: $gable-green-900 !default;
-$action-unselected-disabled: $gray-200 !default;
+$action-unselected-disabled: $gray-500 !default;
 $action-link-primary-default: $action-primary-default !default;
 $action-link-primary-hover: $action-primary-hover !default;
 $action-link-primary-active: $action-primary-active !default;
@@ -149,22 +156,22 @@ $action-colors: (
 $emotion-informative-default: $jordy-blue-200 !default;
 $emotion-informative-hover: $jordy-blue-300 !default;
 $emotion-informative-active: $jordy-blue-400 !default;
-$emotion-informative-disabled: $gray-200 !default;
+$emotion-informative-disabled: $gray-500 !default;
 $emotion-informative-background: $jordy-blue-50 !default;
 $emotion-success-default: $wild-willow-200 !default;
 $emotion-success-hover: $wild-willow-300 !default;
 $emotion-success-active: $wild-willow-400 !default;
-$emotion-success-disabled: $gray-200 !default;
+$emotion-success-disabled: $gray-500 !default;
 $emotion-success-background: $wild-willow-50 !default;
 $emotion-warning-default: $golden-sand-200 !default;
 $emotion-warning-hover: $golden-sand-300 !default;
 $emotion-warning-active: $golden-sand-400 !default;
-$emotion-warning-disabled: $gray-200 !default;
+$emotion-warning-disabled: $gray-500 !default;
 $emotion-warning-background: $golden-sand-50 !default;
 $emotion-danger-default: $cranberry-200 !default;
 $emotion-danger-hover: $cranberry-300 !default;
 $emotion-danger-active: $cranberry-400 !default;
-$emotion-danger-disabled: $gray-200 !default;
+$emotion-danger-disabled: $gray-500 !default;
 $emotion-danger-background: $cranberry-50 !default;
 
 $emotion-colors: (
