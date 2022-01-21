@@ -27,14 +27,14 @@
     "@lmc-eu/spirit-design-tokens": "^0.6.0"
   },
   "devDependencies": {
-    "@lmc-eu/browserslist-config": "^1.0.0",
-    "@lmc-eu/stylelint-config": "^1.0.3",
-    "autoprefixer": "^10.3.1",
-    "clean-css-cli": "^5.3.3",
-    "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
-    "sass": "^1.37.5",
-    "stylelint": "^13.13.1",
-    "stylelint-order": "^4.1.0"
+    "@lmc-eu/browserslist-config": "1.0.0",
+    "@lmc-eu/stylelint-config": "1.0.3",
+    "autoprefixer": "10.3.7",
+    "clean-css-cli": "5.4.1",
+    "postcss": "8.3.8",
+    "postcss-cli": "8.3.1",
+    "sass": "1.42.1",
+    "stylelint": "13.13.1",
+    "stylelint-order": "4.1.0"
   }
 }
