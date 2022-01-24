@@ -20,7 +20,8 @@
             border-color: map.get($variables, active-border-color);
         }
 
-        &:disabled {
+        &:disabled,
+        &.Button--disabled {
             color: map.get($variables, disabled-color);
             background-color: map.get($variables, disabled-background);
             border-color: map.get($variables, disabled-border-color);
