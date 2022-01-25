@@ -2,6 +2,7 @@
 $font-family: #{'Open Sans', helvetica, roboto, arial, sans-serif};
 
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/borders';
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/breakpoints';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/colors' with (
     $brand-primary: #f90,
     $brand-secondary: #19325a,
@@ -21,6 +22,7 @@ $font-family: #{'Open Sans', helvetica, roboto, arial, sans-serif};
     $emotion-danger-default: #d40014,
     $emotion-danger-background: #fbe6e8
 );
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/layout';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/radii' with (
     $radius-1: 0,
     $radius-2: 0,

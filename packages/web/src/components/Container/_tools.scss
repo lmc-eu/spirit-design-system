@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../tools/breakpoint';
+
+@mixin paddings($paddings, $breakpoints) {
+    @each $name, $breakpoint in $breakpoints {
+        @include breakpoint.up($breakpoint) {
+            padding-inline: map.get($paddings, $name);
+        }
+    }
+}

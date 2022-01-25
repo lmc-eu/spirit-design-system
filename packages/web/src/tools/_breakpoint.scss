@@ -1,0 +1,9 @@
+@mixin up($breakpointValue) {
+    @if $breakpointValue > 0 {
+        @media (min-width: $breakpointValue) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

@@ -19,16 +19,16 @@ Available variants are:
 - danger-dark
 
 ```html
-<span class="lmc-Tag lmc-Tag--default-light">Discount</span>
-<span class="lmc-Tag lmc-Tag--default-dark">Discount</span>
-<span class="lmc-Tag lmc-Tag--info-light">Discount</span>
-<span class="lmc-Tag lmc-Tag--info-dark">Discount</span>
-<span class="lmc-Tag lmc-Tag--success-light">Discount</span>
-<span class="lmc-Tag lmc-Tag--success-dark">Discount</span>
-<span class="lmc-Tag lmc-Tag--warning-light">Discount</span>
-<span class="lmc-Tag lmc-Tag--warning-dark">Discount</span>
-<span class="lmc-Tag lmc-Tag--danger-light">Discount</span>
-<span class="lmc-Tag lmc-Tag--danger-dark">Discount</span>
+<span class="Tag Tag--default-light">Discount</span>
+<span class="Tag Tag--default-dark">Discount</span>
+<span class="Tag Tag--info-light">Discount</span>
+<span class="Tag Tag--info-dark">Discount</span>
+<span class="Tag Tag--success-light">Discount</span>
+<span class="Tag Tag--success-dark">Discount</span>
+<span class="Tag Tag--warning-light">Discount</span>
+<span class="Tag Tag--warning-dark">Discount</span>
+<span class="Tag Tag--danger-light">Discount</span>
+<span class="Tag Tag--danger-dark">Discount</span>
 ```
 
 ## Theming
