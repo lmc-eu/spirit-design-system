@@ -11,3 +11,13 @@ $container-paddings: (
 ) !default;
 
 $container-max-width: 80rem !default;
+
+$grid-gutter-mobile: spacing.$space-6 !default;
+$grid-gutter-tablet: spacing.$space-8 !default;
+$grid-gutter-desktop: spacing.$space-8 !default;
+
+$grid-gutters: (
+    mobile: $grid-gutter-mobile,
+    tablet: $grid-gutter-tablet,
+    desktop: $grid-gutter-desktop,
+) !default;
