@@ -17,6 +17,7 @@
 | 🖼 Borders     | ✅    | [`_borders.sass`]     |
 | 🖥 Breakpoints | ✅    | [`_breakpoints.sass`] |
 | 🎨 Colors     | ✅    | [`_colors.sass`]      |
+| 🧱 Layout     | ✅    | [`_layout.sass`]      |
 | 🎱 Radii      | ✅    | [`_radii.sass`]       |
 | ⛱ Shadows     | ✅    | [`_shadows.sass`]     |
 | 📏 Spacing    | ✅    | [`_spacing.sass`]     |
@@ -162,6 +163,7 @@ your design tokens compatible with Spirit, just create a `@tokens.scss` file and
 @forward 'borders';
 @forward 'breakpoints';
 @forward 'colors';
+@forward 'layout';
 @forward 'radii';
 @forward 'shadows';
 @forward 'spacing';
@@ -258,6 +260,7 @@ See the [LICENSE](LICENSE.md) file for information.
 [`_borders.sass`]: src/scss/_borders.scss
 [`_breakpoints.sass`]: src/scss/_breakpoints.scss
 [`_colors.sass`]: src/scss/_colors.scss
+[`_layout.sass`]: src/scss/_layout.scss
 [`_radii.sass`]: src/scss/_radii.scss
 [`_shadows.sass`]: src/scss/_shadows.scss
 [`_spacing.sass`]: src/scss/_spacing.scss
