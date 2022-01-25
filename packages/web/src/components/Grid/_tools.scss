@@ -1,0 +1,34 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../../tools/breakpoint';
+
+@function breakpoint-class($name, $value) {
+    @if ($value > 0) {
+        @return unquote($name + '--');
+    }
+
+    @return '';
+}
+
+@mixin gutters($gutters, $breakpoints) {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @if not map.has-key($gutters, $breakpoint-name) {
+            @error 'Invalid breakpoint specified! #{$breakpoint-name} doesn\'t exist. Use one of #{map.keys($breakpoints)}';
+        }
+        @include breakpoint.up($breakpoint-value) {
+            gap: map.get($gutters, $breakpoint-name);
+        }
+    }
+}
+
+@mixin equal-columns($grid-equal-columns, $breakpoints) {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @include breakpoint.up($breakpoint-value) {
+            @each $option in $grid-equal-columns {
+                .Grid--#{breakpoint-class($breakpoint-name, $breakpoint-value)}cols-#{$option} {
+                    grid-template-columns: repeat(#{$option}, 1fr);
+                }
+            }
+        }
+    }
+}

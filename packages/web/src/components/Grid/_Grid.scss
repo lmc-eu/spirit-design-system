@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+@use 'tools';
+
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(theme.$grid-columns, 1fr);
+    width: 100%;
+
+    @include tools.gutters(theme.$grid-gutters, theme.$breakpoints);
+}
+
+@include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
+
+.Grid--narrow > * {
+    grid-column: span 12;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        grid-column: 3 / span 8;
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        grid-column: 4 / span 6;
+    }
+}
