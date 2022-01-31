@@ -1,6 +1,3 @@
 {
-  "extends": [
-    "@lmc-eu/stylelint-config",
-    "@lmc-eu/stylelint-config/optional"
-  ]
+  "extends": ["@lmc-eu/stylelint-config", "@lmc-eu/stylelint-config/optional"]
 }
