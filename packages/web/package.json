@@ -17,7 +17,7 @@
     "build": "yarn css",
     "precss": "yarn css:lint",
     "css": "yarn css:compile && yarn css:prefix && yarn css:minify",
-    "css:lint": "stylelint --config ../../.stylelintrc \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css:lint": "stylelint --config ../../.stylelintrc.js \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css:compile": "sass --load-path=../design-tokens/dist/scss src/components/index.scss dist/css/components.css",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
     "css:minify": "cleancss --format breaksWith=lf --source-map-inline-sources --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\"",

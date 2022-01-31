@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && mkdir -p dist && cp -r package.json README.md src/* dist/ ",
-    "lint": "stylelint --config ../../.stylelintrc ./src/**/*.scss",
+    "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
     "test": "yarn lint"
   },
   "devDependencies": {
