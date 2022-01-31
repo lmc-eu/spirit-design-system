@@ -57,7 +57,7 @@
     "@storybook/html": "6.4.17",
     "@storybook/react": "6.4.17",
     "@storybook/theming": "6.4.17",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "css-loader": "5.2.7",
     "husky": "7.0.2",
     "lerna": "4.0.0",
