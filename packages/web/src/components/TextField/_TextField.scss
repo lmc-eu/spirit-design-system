@@ -1,0 +1,100 @@
+@use 'theme';
+
+.TextField {
+    max-width: 100%;
+}
+
+.TextField__label {
+    display: block;
+    margin-bottom: theme.$spacing;
+    font-size: theme.$label-font-size;
+    font-weight: theme.$label-font-weight;
+    line-height: theme.$label-line-height;
+    color: theme.$label-color-default;
+}
+
+.TextField__label--hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.TextField__label--required::after {
+    content: '*';
+    color: theme.$label-required-color;
+}
+
+.TextField__input {
+    display: block;
+    max-width: 100%;
+    padding: theme.$input-padding-y theme.$input-padding-x;
+    font-family: theme.$input-font-family;
+    font-size: theme.$input-font-size;
+    font-weight: theme.$input-font-weight;
+    line-height: theme.$input-line-height;
+    color: theme.$input-color-default;
+    background: theme.$input-background;
+    border: theme.$input-border theme.$input-border-color-default;
+    border-radius: theme.$input-border-radius;
+    box-sizing: border-box;
+
+    &::placeholder {
+        color: theme.$input-placeholder-color-default;
+        opacity: 1;
+    }
+}
+
+.TextField:hover > .TextField__input,
+.TextField__input:hover {
+    border-color: theme.$input-border-color-hover;
+}
+
+.TextField:focus-within,
+.TextField:focus-within:hover,
+.TextField > .TextField__input:focus {
+    border-color: theme.$input-border-color-focus;
+    outline: 0;
+}
+
+.TextField__message {
+    margin-top: theme.$spacing;
+    font-size: theme.$message-font-size;
+    font-weight: theme.$message-font-weight;
+    line-height: theme.$message-line-height;
+    color: theme.$message-color-default;
+}
+
+.TextField--error > .TextField__input,
+.TextField--error:hover > .TextField__input,
+.TextField--error > .TextField__input:focus {
+    border-color: theme.$input-border-color-error;
+}
+
+.TextField--error > .TextField__message {
+    color: theme.$message-color-error;
+}
+
+.TextField--disabled > .TextField__label {
+    color: theme.$label-color-disabled;
+}
+
+.TextField > .TextField__input:disabled,
+.TextField:hover > .TextField__input:disabled,
+.TextField--disabled > .TextField__input {
+    color: theme.$input-color-disabled;
+    border-color: theme.$input-border-color-disabled;
+
+    &::placeholder {
+        color: theme.$input-placeholder-color-disabled;
+    }
+}
+
+.TextField--disabled > .TextField__message {
+    color: theme.$message-color-disabled;
+}

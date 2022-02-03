@@ -1,37 +1,36 @@
 // ⚠️ Remove the `dist/` part from paths below when copy-and-pasting the code to your project.
-$font-family: #{'Open Sans', helvetica, roboto, arial, sans-serif};
-
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/borders';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/breakpoints';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/colors' with (
-    $brand-primary: #f90,
-    $brand-secondary: #19325a,
-    $background-basic: #fff,
-    $background-cover: #f4f4f4,
-    $background-inverted: #19325a,
-    $text-primary-default: #000,
-    $text-primary-inverted-default: #fff,
-    $action-primary-default: #1b6494,
-    $action-primary-hover: #1b6494,
-    $emotion-informative-default: #0049ac,
-    $emotion-informative-background: #e6edf7,
-    $emotion-success-default: #00a527,
-    $emotion-success-background: #e7f6f1,
+    $brand-primary: #19325a,
+    $brand-secondary: #ff9900,
+    $background-cover: #f7f7f7,
+    $background-inverted: #171717,
+    $text-primary-default: #171717,
+    $text-primary-disabled: #d6d6d6,
+    $text-secondary-default: #8d9c9f,
+    $text-secondary-disabled: #d6d6d6,
+    $action-primary-default: #f48225,
+    $action-primary-hover: #ed720c,
+    $emotion-informative-default: #379bf6,
+    $emotion-informative-background: #ebf5ff,
+    $emotion-success-default: #2faa7e,
+    $emotion-success-background: #e8f8f2,
     $emotion-warning-default: #ff9900,
-    $emotion-warning-background: #fff5e6,
-    $emotion-danger-default: #d40014,
-    $emotion-danger-background: #fbe6e8
+    $emotion-warning-background: #fff6ea,
+    $emotion-danger-default: #db0000,
+    $emotion-danger-background: #fff2f2,
+    $border-main-default: #dcdada,
+    $border-main-hover: #d1d1d1,
+    $border-main-disabled: #f4f4f4
 );
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/layout';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii' with (
-    $radius-1: 0,
-    $radius-2: 0,
-    $radius-3: 0
-);
+@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/shadows';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/spacing';
 @forward '@lmc-eu/spirit-design-tokens/dist/scss/typography' with (
-    $font-family-default: $font-family,
-    $font-size-3: 13px,
-    $font-size-4: 15px
+    $line-height-small: 1.4,
+    $font-size-3: 0.875rem,
+    $font-size-4: 0.9375rem,
+    $font-size-base: 1rem
 );

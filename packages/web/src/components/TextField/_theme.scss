@@ -1,0 +1,36 @@
+@use '@tokens' as tokens;
+
+$spacing: tokens.$space-3;
+
+$label-font-size: tokens.$font-size-3;
+$label-font-weight: tokens.$font-weight-regular;
+$label-line-height: tokens.$line-height-small;
+$label-color-default: tokens.$text-secondary-default;
+$label-color-disabled: tokens.$text-secondary-disabled;
+$label-required-color: tokens.$emotion-danger-default;
+
+$input-padding-x: tokens.$space-4;
+$input-padding-y: tokens.$space-4;
+$input-font-family: tokens.$font-family-default;
+$input-font-size: tokens.$font-size-4;
+$input-font-weight: tokens.$font-weight-regular;
+$input-line-height: tokens.$line-height-default;
+$input-color-default: tokens.$text-primary-default;
+$input-color-disabled: tokens.$text-primary-disabled;
+$input-border: tokens.$border-2;
+$input-border-color-default: tokens.$border-main-default;
+$input-border-color-hover: tokens.$border-main-hover;
+$input-border-color-focus: tokens.$border-focus-default;
+$input-border-color-disabled: tokens.$border-main-disabled;
+$input-border-color-error: tokens.$emotion-danger-default;
+$input-border-radius: tokens.$radius-1;
+$input-background: tokens.$white;
+$input-placeholder-color-default: tokens.$text-secondary-default;
+$input-placeholder-color-disabled: tokens.$text-secondary-disabled;
+
+$message-font-size: tokens.$font-size-4;
+$message-font-weight: tokens.$font-weight-regular;
+$message-line-height: tokens.$line-height-small;
+$message-color-default: tokens.$text-secondary-default;
+$message-color-disabled: tokens.$text-secondary-disabled;
+$message-color-error: tokens.$emotion-danger-default;
