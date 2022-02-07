@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import ClassNamePrefixContextContext from '../context/ClassnamePrefixContext';
+import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
 
 export const useClassNamePrefix = () => {
-  const classNamePrefixContext = useContext(ClassNamePrefixContextContext);
+  const classNamePrefixContext = useContext(ClassNamePrefixContext);
 
   return classNamePrefixContext || null;
 };
