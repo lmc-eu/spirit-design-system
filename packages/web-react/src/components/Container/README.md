@@ -2,7 +2,7 @@
 
 Container centers your content horizontally and sets its max-width with horizontal paddings.
 
-```ts
+```jsx
 <Container>Content</Container>
 ```
 
