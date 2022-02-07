@@ -1,4 +1,11 @@
-const entryPoints = [{ dirs: [], bundleName: 'main' }, { dirs: ['components'] }, { dirs: ['components', 'Button'] }];
+const entryPoints = [
+  { dirs: [], bundleName: 'main' },
+  { dirs: ['context'] },
+  { dirs: ['hooks'] },
+  { dirs: ['components'] },
+  { dirs: ['components', 'Button'] },
+  { dirs: ['components', 'Tag'] },
+];
 
 const lookupTrie = Object.create(null);
 entryPoints.forEach((info) => {
