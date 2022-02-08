@@ -1,4 +1,4 @@
-import React, { MouseEvent, ElementType } from 'react';
+import React, { MouseEvent, ElementType, Ref } from 'react';
 import classNames from 'classnames';
 import { WithChildren } from '../../types/main';
 import { compose } from '../../utils/compose';
@@ -16,6 +16,7 @@ export interface ButtonProps extends WithChildren {
   ariaLabel?: string;
   className?: string;
   tag: ElementType;
+  innerRef?: Ref<HTMLButtonElement>;
 }
 
 const defaultProps = {
@@ -39,6 +40,7 @@ export const Button = ({
   disabled,
   className,
   tag: Tag,
+  innerRef,
   ...restProps
 }: ButtonProps): JSX.Element => {
   const buttonClass = 'Button';
@@ -75,6 +77,7 @@ export const Button = ({
       type={type}
       disabled={disabled}
       aria-label={ariaLabel || undefined}
+      ref={innerRef}
     />
   );
 };
