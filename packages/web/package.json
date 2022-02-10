@@ -31,9 +31,9 @@
     "@lmc-eu/stylelint-config": "1.0.4",
     "autoprefixer": "10.4.2",
     "clean-css-cli": "5.5.2",
-    "postcss": "8.4.5",
+    "postcss": "8.4.6",
     "postcss-cli": "8.3.1",
-    "sass": "1.49.0",
+    "sass": "1.49.7",
     "stylelint": "13.13.1",
     "stylelint-order": "4.1.0"
   }
