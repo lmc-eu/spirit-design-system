@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, ElementType } from 'react';
 import classNames from 'classnames';
 import { WithChildren } from '../../types/main';
 import { compose } from '../../utils/compose';
@@ -15,12 +15,20 @@ export interface ButtonProps extends WithChildren {
   disabled: boolean;
   ariaLabel?: string;
   className?: string;
-  componentClassName: string;
+  tag: ElementType;
 }
 
+const defaultProps = {
+  color: 'primary',
+  type: 'button',
+  block: false,
+  disabled: false,
+  tag: 'button',
+};
+
 // `${componentClassName}--${color}`;
-const getButtonColorClassname = (componentClassName: string, color: Color): string =>
-  compose(applyColor<Color>(color))(componentClassName);
+const getButtonColorClassname = (className: string, color: Color): string =>
+  compose(applyColor<Color>(color))(className);
 
 export const Button = ({
   color,
@@ -30,11 +38,22 @@ export const Button = ({
   ariaLabel,
   disabled,
   className,
-  componentClassName,
+  tag: Tag,
   ...restProps
 }: ButtonProps): JSX.Element => {
+  const buttonClass = 'Button';
   const classNamePrefix = useClassNamePrefix();
-  const mainClassName = applyClassNamePrefix(classNamePrefix)(componentClassName);
+  const mainClassName = applyClassNamePrefix(classNamePrefix)(buttonClass);
+  const buttonBlockClass = `${mainClassName}--block`;
+
+  const classes = classNames(
+    mainClassName,
+    getButtonColorClassname(mainClassName, color),
+    {
+      [buttonBlockClass]: block,
+    },
+    className,
+  );
 
   const handleClick = (event: MouseEvent) => {
     if (disabled) {
@@ -49,16 +68,9 @@ export const Button = ({
   };
 
   return (
-    <button
+    <Tag
       {...restProps}
-      className={classNames(
-        mainClassName,
-        getButtonColorClassname(mainClassName, color),
-        {
-          'Button--block': block,
-        },
-        className,
-      )}
+      className={classes}
       onClick={handleClick}
       type={type}
       disabled={disabled}
@@ -67,12 +79,6 @@ export const Button = ({
   );
 };
 
-Button.defaultProps = {
-  color: 'primary',
-  type: 'button',
-  block: false,
-  disabled: false,
-  componentClassName: 'Button',
-};
+Button.defaultProps = defaultProps;
 
 export default Button;
