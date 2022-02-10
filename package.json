@@ -44,7 +44,7 @@
     "release": "npm-run-all --serial packages:build && packages:publish"
   },
   "devDependencies": {
-    "@babel/core": "7.16.12",
+    "@babel/core": "7.17.2",
     "@babel/preset-react": "7.16.7",
     "@commitlint/cli": "13.2.1",
     "@lmc-eu/commitlint-config": "1.0.10",
