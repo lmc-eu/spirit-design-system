@@ -6,20 +6,19 @@ import { useButtonStyleProps } from './useButtonStyleProps';
 
 const defaultProps = {
   color: 'primary',
-  type: 'button',
+  href: '#',
   block: false,
   disabled: false,
-  elementType: 'button',
 };
 
-export const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>): JSX.Element => {
-  const { elementType: ElementType = 'button', className, ...restProps } = props;
+export const ButtonLink = <T extends ElementType = 'a'>(props: SpiritButtonProps<T>): JSX.Element => {
+  const { className, ...restProps } = props;
   const { buttonProps } = useButtonAriaProps(props);
   const { classProps } = useButtonStyleProps(restProps);
 
-  return <ElementType {...buttonProps} className={classNames(className, classProps)} />;
+  return <a {...buttonProps} className={classNames(className, classProps)} />;
 };
 
-Button.defaultProps = defaultProps;
+ButtonLink.defaultProps = defaultProps;
 
-export default Button;
+export default ButtonLink;

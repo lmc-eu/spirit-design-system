@@ -1,5 +1,6 @@
 import React from 'react';
-import ButtonLink, { ButtonLinkProps } from './ButtonLink';
+import { SpiritButtonProps } from '../../types';
+import ButtonLink from '../Button/ButtonLink';
 
 export default {
   title: 'Components/ButtonLink',
@@ -22,7 +23,7 @@ export default {
   },
 };
 
-const Template = (args: ButtonLinkProps) => <ButtonLink {...args} />;
+const Template = (args: SpiritButtonProps<'a'>) => <ButtonLink {...args} />;
 
 export const ExampleButton = Template.bind({});
 ExampleButton.args = {

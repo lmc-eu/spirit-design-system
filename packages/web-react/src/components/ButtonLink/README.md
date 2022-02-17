@@ -1,3 +1,0 @@
-# ButtonLink
-
-ButtonLink docs.
