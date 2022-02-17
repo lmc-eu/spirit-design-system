@@ -1,15 +1,15 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { WithChildren } from '../../types/main';
 import { compose } from '../../utils/compose';
 import { applyColor, applyTheme, applyClassNamePrefix } from '../../utils/classname';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { ChildrenProps } from '../../types';
 
 type Color = 'default' | 'informative' | 'success' | 'warning' | 'danger';
 
 type Theme = 'light' | 'dark';
 
-export interface TagProps extends WithChildren {
+export interface TagProps extends ChildrenProps {
   tag: ElementType;
   color: Color;
   theme: Theme;

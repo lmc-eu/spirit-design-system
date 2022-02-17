@@ -1,5 +1,6 @@
 import React from 'react';
-import Button, { ButtonProps } from './Button';
+import { SpiritButtonProps } from '../../types';
+import Button from './Button';
 
 export default {
   title: 'Components/Button',
@@ -19,7 +20,7 @@ export default {
   },
 };
 
-const Template = (args: ButtonProps) => <Button {...args} />;
+const Template = (args: SpiritButtonProps<'button'>) => <Button {...args} />;
 
 export const ExampleButton = Template.bind({});
 ExampleButton.args = {
