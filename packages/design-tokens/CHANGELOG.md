@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.6.0...@lmc-eu/spirit-design-tokens@0.7.0) (2022-02-18)
+
+### Chores
+
+- Prefer javascript for configuration if possible ([328d6f1](https://github.com/lmc-eu/spirit-design-system/commit/328d6f1))
+
+### Dependencies
+
+- Bump @lmc-eu/stylelint-config from 1.0.4 to 2.0.2 ([5989cd1](https://github.com/lmc-eu/spirit-design-system/commit/5989cd1))
+- Pin dependencies ([dc33b40](https://github.com/lmc-eu/spirit-design-system/commit/dc33b40))
+- Update all non-major dependencies ([a2289eb](https://github.com/lmc-eu/spirit-design-system/commit/a2289eb))
+
+### Documentation
+
+- Improve docs for both users and contributors ([2c37796](https://github.com/lmc-eu/spirit-design-system/commit/2c37796))
+
+### Features
+
+- Add background interactive color tokens and update disabled color ([15da8e2](https://github.com/lmc-eu/spirit-design-system/commit/15da8e2))
+- Implement Container component to spirit-web and showcase it in demo ([e05b367](https://github.com/lmc-eu/spirit-design-system/commit/e05b367))
+
+### Styles
+
+- Reformat changelogs using Prettier ([2491f02](https://github.com/lmc-eu/spirit-design-system/commit/2491f02))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
+
+
+
+
 <a name="0.6.0"></a>
 
 ## [0.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.5.0...@lmc-eu/spirit-design-tokens@0.6.0) (2022-01-12)

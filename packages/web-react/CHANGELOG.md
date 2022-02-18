@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.5.0...@lmc-eu/spirit-web-react@0.6.0) (2022-02-18)
+
+### Chores
+
+- **web-react:** Fill new entrypoints for package build ([f3dd04f](https://github.com/lmc-eu/spirit-design-system/commit/f3dd04f))
+
+### Code Refactoring
+
+- Define component class name on one place only ([38bb7ee](https://github.com/lmc-eu/spirit-design-system/commit/38bb7ee))
+- **web-react:** Generate class names using utility functions [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104) ([936add3](https://github.com/lmc-eu/spirit-design-system/commit/936add3))
+- **web-react:** Use hooks to setup button and button link [#DS-132](https://github.com/lmc-eu/spirit-design-system/issues/DS-132) ([b3c06b7](https://github.com/lmc-eu/spirit-design-system/commit/b3c06b7))
+- **web-react:** Use tag for element definition and constant for component class (refs [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104)) ([6d2c03b](https://github.com/lmc-eu/spirit-design-system/commit/6d2c03b))
+
+### Dependencies
+
+- Pin dependencies ([1b35871](https://github.com/lmc-eu/spirit-design-system/commit/1b35871))
+- Pin dependencies ([dc33b40](https://github.com/lmc-eu/spirit-design-system/commit/dc33b40))
+- Update all non-major dependencies ([a48da0b](https://github.com/lmc-eu/spirit-design-system/commit/a48da0b))
+- Update all non-major dependencies ([7203ccb](https://github.com/lmc-eu/spirit-design-system/commit/7203ccb))
+- Update all non-major dependencies ([a2289eb](https://github.com/lmc-eu/spirit-design-system/commit/a2289eb))
+
+### Documentation
+
+- **web-react:** How to provide prefix to classes using context (refs [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104)) ([7c4d0b5](https://github.com/lmc-eu/spirit-design-system/commit/7c4d0b5))
+
+### Features
+
+- **web-react:** DS-132 Add React implementation ButtonLink component ([81ec22e](https://github.com/lmc-eu/spirit-design-system/commit/81ec22e))
+- **web-react:** Introduce context and hook for setting classname prefix ([9aab6ff](https://github.com/lmc-eu/spirit-design-system/commit/9aab6ff))
+- **web-react:** Pass down an access to button dom via ref prop ([9e41fa1](https://github.com/lmc-eu/spirit-design-system/commit/9e41fa1))
+
+### Styles
+
+- Reformat changelogs using Prettier ([2491f02](https://github.com/lmc-eu/spirit-design-system/commit/2491f02))
+
+### Tests
+
+- **web-react:** Introduce component testing with testing library [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104) ([61de0c2](https://github.com/lmc-eu/spirit-design-system/commit/61de0c2))
+- **web-react:** Introduce test setup for react components [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104) ([2fc017f](https://github.com/lmc-eu/spirit-design-system/commit/2fc017f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
+
+
+
+
 <a name="0.5.0"></a>
 
 ## [0.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.4.0...@lmc-eu/spirit-web-react@0.5.0) (2022-01-12)

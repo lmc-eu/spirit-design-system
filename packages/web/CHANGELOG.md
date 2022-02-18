@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.7.0...@lmc-eu/spirit-web@0.8.0) (2022-02-18)
+
+### Chores
+
+- Add missing Stylelint Prettier Config ([81ee920](https://github.com/lmc-eu/spirit-design-system/commit/81ee920))
+- Prefer javascript for configuration if possible ([328d6f1](https://github.com/lmc-eu/spirit-design-system/commit/328d6f1))
+
+### Dependencies
+
+- Bump @lmc-eu/stylelint-config from 1.0.4 to 2.0.2 ([5989cd1](https://github.com/lmc-eu/spirit-design-system/commit/5989cd1))
+- Bump postcss-cli from 8.3.1 to 9.1.0 ([0b06bce](https://github.com/lmc-eu/spirit-design-system/commit/0b06bce))
+- Pin dependencies ([1b35871](https://github.com/lmc-eu/spirit-design-system/commit/1b35871))
+- Pin dependencies ([dc33b40](https://github.com/lmc-eu/spirit-design-system/commit/dc33b40))
+- Update all non-major dependencies ([7203ccb](https://github.com/lmc-eu/spirit-design-system/commit/7203ccb))
+- Update all non-major dependencies ([a2289eb](https://github.com/lmc-eu/spirit-design-system/commit/a2289eb))
+
+### Documentation
+
+- Improve docs for both users and contributors ([2c37796](https://github.com/lmc-eu/spirit-design-system/commit/2c37796))
+
+### Features
+
+- Implement Container component to spirit-web and showcase it in demo ([e05b367](https://github.com/lmc-eu/spirit-design-system/commit/e05b367))
+- **web:** DS-132 Add disabled class for ButtonLink component ([ce3e8dd](https://github.com/lmc-eu/spirit-design-system/commit/ce3e8dd))
+
+### Styles
+
+- Reformat changelogs using Prettier ([2491f02](https://github.com/lmc-eu/spirit-design-system/commit/2491f02))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
+
+
+
+
 <a name="0.7.0"></a>
 
 ## [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.6.0...@lmc-eu/spirit-web@0.7.0) (2022-01-12)
