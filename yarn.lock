@@ -3449,10 +3449,10 @@
     compare-func "^2.0.0"
     q "^1.5.1"
 
-"@lmc-eu/conventional-changelog-lmc-github@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-github/-/conventional-changelog-lmc-github-1.0.1.tgz#df96a23b66e05d27474fed77af5f13c7c1d42bdc"
-  integrity sha512-Oi+QIbbjODSOfTJ9jEyL865cFIeF1tnxV+F8nmFhNwmHpu7LXMiYgZ1CDSC7SI0eE/Oe1KtKSI5cT6drxKT8Cg==
+"@lmc-eu/conventional-changelog-lmc-github@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-github/-/conventional-changelog-lmc-github-2.0.0.tgz#509da0f74ca88cd58a98b22cf0c178d5926c7076"
+  integrity sha512-j5yH7rvSdE4lbM3kceCmlGCtgQJNfDvJ4nd4n9q/4LnLI6WjTOjNIkN5l0ug6BYooUDp5dYfHf+Na5R0c+dmDA==
   dependencies:
     compare-func "^2.0.0"
     q "^1.5.1"
