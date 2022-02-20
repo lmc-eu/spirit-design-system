@@ -22,4 +22,10 @@ describe('Button', () => {
     expect(dom.container.querySelector('button')).toHaveClass('lmc-Button');
     expect(dom.container.querySelector('button')).toHaveClass('lmc-Button--primary');
   });
+
+  it('should render text children', () => {
+    const dom = render(<Button>Hello World</Button>);
+
+    expect(dom.container.querySelector('button').textContent).toBe('Hello World');
+  });
 });

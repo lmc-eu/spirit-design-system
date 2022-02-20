@@ -31,4 +31,10 @@ describe('ButtonLink', () => {
     expect(container.querySelector('a')).toHaveClass('lmc-Button--block');
     expect(container.querySelector('a')).toHaveClass('lmc-Button--disabled');
   });
+
+  it('should render text children', () => {
+    const dom = render(<ButtonLink>Hello World</ButtonLink>);
+
+    expect(dom.container.querySelector('a').textContent).toBe('Hello World');
+  });
 });

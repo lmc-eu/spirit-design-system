@@ -12,11 +12,15 @@ const defaultProps = {
 };
 
 export const ButtonLink = <T extends ElementType = 'a'>(props: SpiritButtonProps<T>): JSX.Element => {
-  const { className, ...restProps } = props;
+  const { className, children, ...restProps } = props;
   const { buttonProps } = useButtonAriaProps(props);
   const { classProps } = useButtonStyleProps(restProps);
 
-  return <a {...buttonProps} className={classNames(className, classProps)} />;
+  return (
+    <a {...buttonProps} className={classNames(className, classProps)}>
+      {children}
+    </a>
+  );
 };
 
 ButtonLink.defaultProps = defaultProps;
