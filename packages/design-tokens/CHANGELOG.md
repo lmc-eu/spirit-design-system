@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 <a name="0.7.0"></a>
+
 # [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.6.0...@lmc-eu/spirit-design-tokens@0.7.0) (2022-02-18)
 
 ### Chores
@@ -30,10 +31,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - Reformat changelogs using Prettier ([2491f02](https://github.com/lmc-eu/spirit-design-system/commit/2491f02))
 
 **Note:** Version bump only for package @lmc-eu/spirit-design-tokens
-
-
-
-
 
 <a name="0.6.0"></a>
 

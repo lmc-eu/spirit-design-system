@@ -3,7 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.1"></a>
+
+## [0.6.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.6.0...@lmc-eu/spirit-web-react@0.6.1) (2022-02-20)
+
+### Bug Fixes
+
+- **web-react:** Add missing children prop in buttons ([375506d](https://github.com/lmc-eu/spirit-design-system/commit/375506d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.6.0"></a>
+
 # [0.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.5.0...@lmc-eu/spirit-web-react@0.6.0) (2022-02-18)
 
 ### Chores
@@ -45,10 +56,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - **web-react:** Introduce test setup for react components [#DS-104](https://github.com/lmc-eu/spirit-design-system/issues/DS-104) ([2fc017f](https://github.com/lmc-eu/spirit-design-system/commit/2fc017f))
 
 **Note:** Version bump only for package @lmc-eu/spirit-web-react
-
-
-
-
 
 <a name="0.5.0"></a>
 
