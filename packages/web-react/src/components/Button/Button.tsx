@@ -13,11 +13,15 @@ const defaultProps = {
 };
 
 export const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>): JSX.Element => {
-  const { elementType: ElementType = 'button', className, ...restProps } = props;
+  const { elementType: ElementType = 'button', className, children, ...restProps } = props;
   const { buttonProps } = useButtonAriaProps(props);
   const { classProps } = useButtonStyleProps(restProps);
 
-  return <ElementType {...buttonProps} className={classNames(className, classProps)} />;
+  return (
+    <ElementType {...buttonProps} className={classNames(className, classProps)}>
+      {children}
+    </ElementType>
+  );
 };
 
 Button.defaultProps = defaultProps;
