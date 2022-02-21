@@ -1,7 +1,7 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
 import { compose } from '../../utils/compose';
-import { applyColor, applyTheme, applyClassNamePrefix } from '../../utils/classname';
+import { applyColor, applyTheme } from '../../utils/classname';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ChildrenProps } from '../../types';
 
@@ -27,11 +27,9 @@ const getTagColorAndThemeClassname = (className: string, color: Color, theme: Th
   compose(applyTheme<Theme>(theme), applyColor<Color>(color))(className);
 
 export const Tag = ({ tag: Tag, color, theme, className, children, ...restProps }: TagProps): JSX.Element => {
-  const tagClass = 'Tag';
-  const classNamePrefix = useClassNamePrefix();
-  const mainClassName = applyClassNamePrefix(classNamePrefix)(tagClass);
+  const tagClass = useClassNamePrefix('Tag');
 
-  const classes = classNames(mainClassName, getTagColorAndThemeClassname(mainClassName, color, theme), className);
+  const classes = classNames(tagClass, getTagColorAndThemeClassname(tagClass, color, theme), className);
 
   return (
     <Tag {...restProps} className={classes}>
