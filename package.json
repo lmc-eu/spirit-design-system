@@ -46,7 +46,7 @@
   "devDependencies": {
     "@babel/core": "7.17.5",
     "@babel/preset-react": "7.16.7",
-    "@commitlint/cli": "13.2.1",
+    "@commitlint/cli": "16.2.1",
     "@lmc-eu/commitlint-config": "1.0.10",
     "@lmc-eu/conventional-changelog-lmc-github": "2.0.0",
     "@lmc-eu/prettier-config": "1.2.2",
