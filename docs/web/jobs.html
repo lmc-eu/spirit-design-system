@@ -39,6 +39,12 @@
         font-size: 25px;
       }
 
+      h3 {
+        margin-block: 1.5rem;
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+
       header,
       main {
         padding-block: 1.5rem;
@@ -47,6 +53,24 @@
       header {
         color: #fff;
         background-color: #19325a;
+      }
+
+      .example-grid {
+        margin-bottom: 3rem;
+      }
+
+      .example-grid-item {
+        height: 2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #19325a;
+      }
+
+      .example-grid-item:not(:empty) {
+        padding: 0.25rem;
       }
     </style>
   </head>
@@ -80,6 +104,66 @@
           <span class="jobs-Tag jobs-Tag--warning-dark">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="jobs-Tag jobs-Tag--danger-light">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="jobs-Tag jobs-Tag--danger-dark">I'm tag. I feel like filling marketing pages :-)</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="jobs-Container">
+          <h2>Grid</h2>
+          <h3>Equal Columns</h3>
+          <div class="jobs-Grid jobs-Grid--cols-12 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <div class="jobs-Grid jobs-Grid--cols-6 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <div class="jobs-Grid jobs-Grid--cols-4 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <div class="jobs-Grid jobs-Grid--cols-3 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <div class="jobs-Grid jobs-Grid--cols-2 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <div class="jobs-Grid jobs-Grid--cols-1 example-grid">
+            <div class="example-grid-item"></div>
+          </div>
+          <h3>Responsive Columns</h3>
+          <div class="jobs-Grid jobs-Grid--cols-2 jobs-Grid--tablet--cols-3 jobs-Grid--desktop--cols-4 example-grid">
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+            <div class="example-grid-item"></div>
+          </div>
+          <h3>Narrow Column Layout</h3>
+          <div class="jobs-Grid jobs-Grid--narrow example-grid">
+            <div class="example-grid-item">
+              Full on mobile, 8 cols on tablet and 6 cols on desktop. Centered.
+            </div>
+          </div>
         </div>
       </section>
     </main>

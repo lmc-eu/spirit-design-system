@@ -218,6 +218,111 @@
   }
 }
 
+.jobs-Grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  gap: 1rem;
+}
+@media (min-width: 48em) {
+  .jobs-Grid {
+    gap: 2rem;
+  }
+}
+@media (min-width: 80em) {
+  .jobs-Grid {
+    gap: 2rem;
+  }
+}
+
+.jobs-Grid--cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.jobs-Grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.jobs-Grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.jobs-Grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.jobs-Grid--cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.jobs-Grid--cols-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media (min-width: 48em) {
+  .jobs-Grid--tablet--cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .jobs-Grid--tablet--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jobs-Grid--tablet--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .jobs-Grid--tablet--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .jobs-Grid--tablet--cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .jobs-Grid--tablet--cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 80em) {
+  .jobs-Grid--desktop--cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .jobs-Grid--desktop--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jobs-Grid--desktop--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .jobs-Grid--desktop--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .jobs-Grid--desktop--cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .jobs-Grid--desktop--cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+.jobs-Grid--narrow > * {
+  grid-column: span 12;
+}
+@media (min-width: 48em) {
+  .jobs-Grid--narrow > * {
+    grid-column: 3/span 8;
+  }
+}
+@media (min-width: 80em) {
+  .jobs-Grid--narrow > * {
+    grid-column: 4/span 6;
+  }
+}
+
 .jobs-Tag {
   display: inline-block;
   padding: 0.5rem 0.5rem;
