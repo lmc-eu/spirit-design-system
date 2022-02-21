@@ -3471,12 +3471,12 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.2.tgz#9daaba842c2e6a257b2680f95173398f15774181"
   integrity sha512-okkRELPEkndQw7wwVeJhLHPaU5L7eJ8yI+KAOtEccKREQ3nmTvVHov5NYQkzvAod7RplOL/iA/dvnt6K1BICkQ==
 
-"@lmc-eu/stylelint-config@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-2.0.2.tgz#d68cf3e46f54dfa368d5827eb0f347a08805f50b"
-  integrity sha512-v8vIq4s1BwGr0PFVu9sxdmSdJ/c1gvAkIxAUWn0/eF1KorodlfE+bHj5eQ9VrGA3gVakUZiMWgM2glENLX1QBQ==
+"@lmc-eu/stylelint-config@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-3.0.0.tgz#362e6a155e0b99133ff1511a96cd6907bbb43c0f"
+  integrity sha512-/gzgKllmSTepmY3ZYwtApauB9ryr2QEfItFgvZVboYor3F32lcSAjB9du9EvFwWsk2RJcDwMKNBTfiUl2BhOeA==
   dependencies:
-    stylelint-config-standard "^20.0.0"
+    postcss-scss "^4.0.3"
     stylelint-order "^4.1.0"
 
 "@mdx-js/loader@^1.6.22":
@@ -13611,6 +13611,11 @@ postcss-scss@^2.1.1:
   dependencies:
     postcss "^7.0.6"
 
+postcss-scss@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-4.0.3.tgz#36c23c19a804274e722e83a54d20b838ab4767ac"
+  integrity sha512-j4KxzWovfdHsyxwl1BxkUal/O4uirvHgdzMKS1aWJBAV0qh2qj5qAZqpeBfVUYGWv+4iK9Az7SPyZ4fyNju1uA==
+
 postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector-parser@^6.0.5:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.6.tgz#2c5bba8174ac2f6981ab631a42ab0ee54af332ea"
@@ -15613,18 +15618,6 @@ stylelint-config-prettier@9.0.3:
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/stylelint-config-prettier/-/stylelint-config-prettier-9.0.3.tgz#0dccebeff359dcc393c9229184408b08964d561c"
   integrity sha512-5n9gUDp/n5tTMCq1GLqSpA30w2sqWITSSEiAWQlpxkKGAUbjcemQ0nbkRvRUa0B1LgD3+hCvdL7B1eTxy1QHJg==
-
-stylelint-config-recommended@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-3.0.0.tgz#e0e547434016c5539fe2650afd58049a2fd1d657"
-  integrity sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
-
-stylelint-config-standard@^20.0.0:
-  version "20.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-20.0.0.tgz#06135090c9e064befee3d594289f50e295b5e20d"
-  integrity sha512-IB2iFdzOTA/zS4jSVav6z+wGtin08qfj+YyExHB3LF9lnouQht//YyB0KZq9gGz5HNPkddHOzcY8HsUey6ZUlA==
-  dependencies:
-    stylelint-config-recommended "^3.0.0"
 
 stylelint-order@4.1.0, stylelint-order@^4.1.0:
   version "4.1.0"
