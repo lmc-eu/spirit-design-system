@@ -6,6 +6,12 @@ const entryPoints = require('../scripts/entryPoints');
 const distDir = './dist';
 
 // Adapted from https://github.com/meteor/meteor/blob/devel/tools/static-assets/server/mini-files.ts
+/**
+ * Convert a path to POSIX format.
+ *
+ * @param {string} p
+ * @returns {string}
+ */
 function toPosixPath(p) {
   // Sometimes, you can have a path like \Users\IEUser on windows, and this
   // actually means you want C:\Users\IEUser
@@ -23,6 +29,14 @@ function toPosixPath(p) {
   return posixPath;
 }
 
+/**
+ * Check if a module is external.
+ *
+ * @param {string} id
+ * @param {string} parentId
+ * @param {boolean} [entryPointsAreExternal=true]
+ * @returns {boolean}
+ */
 function isExternal(id, parentId, entryPointsAreExternal = true) {
   // Rollup v2.26.8 started passing absolute id strings to this function, thanks
   // apparently to https://github.com/rollup/rollup/pull/3753, so we relativize
@@ -50,6 +64,13 @@ function isExternal(id, parentId, entryPointsAreExternal = true) {
   return false;
 }
 
+/**
+ * Prepare rollup config for a common js package.
+ *
+ * @param {string} input
+ * @param {string} output
+ * @returns {void}
+ */
 function prepareCJS(input, output) {
   return {
     input,
@@ -66,6 +87,12 @@ function prepareCJS(input, output) {
   };
 }
 
+/**
+ * Prepare rollup config for a minified common js package.
+ *
+ * @param {Object} input
+ * @returns {Object}
+ */
 function prepareCJSMinified(input) {
   return {
     input,
@@ -89,6 +116,14 @@ function prepareCJSMinified(input) {
   };
 }
 
+/**
+ * Prepare rollup config for a umd package.
+ *
+ * @param {Object} options
+ * @param {Array} options.dirs
+ * @param {string} options.bundleName
+ * @returns {Object}
+ */
 function prepareBundle({ dirs, bundleName = dirs[dirs.length - 1] }) {
   const dir = path.join(distDir, ...dirs);
 
