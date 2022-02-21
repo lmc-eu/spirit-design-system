@@ -1,7 +1,7 @@
 import { ElementType } from 'react';
 import classNames from 'classnames';
 import { compose } from '../../utils/compose';
-import { applyColor, applyClassNamePrefix } from '../../utils/classname';
+import { applyColor } from '../../utils/classname';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ButtonColor, SpiritButtonProps } from '../../types';
 
@@ -17,13 +17,11 @@ export interface ButtonStyles {
 export function useButtonStyleProps<T extends ElementType = 'button'>(props: SpiritButtonProps<T>): ButtonStyles {
   const { color, block, disabled } = props;
 
-  const buttonClass = 'Button';
-  const classNamePrefix = useClassNamePrefix();
-  const prefixedButtonClass = applyClassNamePrefix(classNamePrefix)(buttonClass);
-  const buttonBlockClass = `${prefixedButtonClass}--block`;
-  const buttonDisabledClass = `${prefixedButtonClass}--disabled`;
+  const buttonClass = useClassNamePrefix('Button');
+  const buttonBlockClass = `${buttonClass}--block`;
+  const buttonDisabledClass = `${buttonClass}--disabled`;
 
-  const classProps = classNames(prefixedButtonClass, getButtonColorClassname(prefixedButtonClass, color), {
+  const classProps = classNames(buttonClass, getButtonColorClassname(buttonClass, color), {
     [buttonBlockClass]: block,
     [buttonDisabledClass]: disabled,
   });

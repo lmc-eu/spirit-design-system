@@ -1,8 +1,16 @@
 import { useContext } from 'react';
 import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
+import { applyClassNamePrefix } from '../utils/classname';
 
-export const useClassNamePrefix = () => {
-  const classNamePrefixContext = useContext(ClassNamePrefixContext);
+export const useClassNamePrefix = (className: string): string => {
+  const classNamePrefix = useContext(ClassNamePrefixContext);
+  let prefixedClassName = className;
 
-  return classNamePrefixContext || null;
+  if (className && classNamePrefix) {
+    prefixedClassName = applyClassNamePrefix(classNamePrefix)(className);
+  } else if (classNamePrefix) {
+    prefixedClassName = classNamePrefix;
+  }
+
+  return prefixedClassName;
 };
