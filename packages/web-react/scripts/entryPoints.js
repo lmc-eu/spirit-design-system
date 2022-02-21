@@ -27,6 +27,12 @@ exports.map = function map(callback, context) {
 
 const pathPosix = require('path').posix;
 
+/**
+ * Get the length of the longest entry point.
+ *
+ * @param {Array} parts
+ * @returns {number}
+ */
 function lengthOfLongestEntryPoint(parts) {
   let node = lookupTrie;
   let longest = -1;
@@ -41,6 +47,12 @@ function lengthOfLongestEntryPoint(parts) {
   return longest;
 }
 
+/**
+ * Get array of parts of a path after the dist directory.
+ *
+ * @param {string} id
+ * @returns {Array<string>|null}
+ */
 function partsAfterDist(id) {
   const parts = id.split(pathPosix.sep);
   const distIndex = parts.lastIndexOf('dist');
@@ -51,6 +63,14 @@ function partsAfterDist(id) {
   return null;
 }
 
+/**
+ * Check array equality up to a certain length.
+ *
+ * @param {Array} a
+ * @param {Array} b
+ * @param {number} end
+ * @returns {boolean}
+ */
 function arraysEqualUpTo(a, b, end) {
   for (let i = 0; i < end; ++i) {
     if (a[i] !== b[i]) return false;
