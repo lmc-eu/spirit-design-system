@@ -8,3 +8,8 @@ export interface ChildrenProps {
   /** The content to display in the button. */
   children?: ReactNode | string;
 }
+
+export enum SpiritBreakpoints {
+  TABLET = 'tablet',
+  DESKTOP = 'desktop',
+}

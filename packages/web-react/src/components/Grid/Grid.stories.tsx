@@ -1,10 +1,10 @@
-import React from 'react';
-import Grid, { GridProps } from './Grid';
-
-const gridVariants = [1, 2, 3, 4, 6, 12];
+import React, { CSSProperties } from 'react';
+import Grid from './Grid';
+import { SpiritGridProps } from '../../types';
 
 export default {
   title: 'Components/Grid',
+  component: Grid,
   argTypes: {
     children: {
       control: 'text',
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const exampleGridStyle = {
+const exampleGridStyle: CSSProperties = {
   height: '2rem',
   boxSizing: 'border-box',
   overflow: 'hidden',
@@ -63,7 +63,7 @@ SixColumns.args = {
       <div style={exampleGridStyle}></div>
     </>
   ),
-  desktop: 6,
+  cols: 6,
 };
 
 export const FourColumns = Template.bind({});
@@ -76,7 +76,7 @@ FourColumns.args = {
       <div style={exampleGridStyle}></div>
     </>
   ),
-  desktop: 4,
+  cols: 4,
 };
 
 export const ThreeColumns = Template.bind({});
@@ -88,7 +88,7 @@ ThreeColumns.args = {
       <div style={exampleGridStyle}></div>
     </>
   ),
-  desktop: 3,
+  cols: 3,
 };
 
 export const TwoColumns = Template.bind({});
@@ -99,7 +99,7 @@ TwoColumns.args = {
       <div style={exampleGridStyle}></div>
     </>
   ),
-  desktop: 2,
+  cols: 2,
 };
 
 export const ResponsiveColumns = Template.bind({});

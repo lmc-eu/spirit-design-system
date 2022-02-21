@@ -39,15 +39,23 @@ describe('Grid', () => {
     expect(dom.container.querySelector('div')).toHaveClass('Grid--tablet--cols-3');
   });
 
-  it('should have mobile cols classname', () => {
-    const dom = render(<Grid mobile={3} />);
+  it('should have all cols classnames', () => {
+    const dom = render(<Grid cols={2} tablet={3} desktop={4} />);
 
-    expect(dom.container.querySelector('div')).toHaveClass('Grid--mobile--cols-3');
+    expect(dom.container.querySelector('div')).toHaveClass('Grid--cols-2');
+    expect(dom.container.querySelector('div')).toHaveClass('Grid--tablet--cols-3');
+    expect(dom.container.querySelector('div')).toHaveClass('Grid--desktop--cols-4');
   });
 
   it('should have narrow classname', () => {
-    const dom = render(<Grid narrow />);
+    const dom = render(<Grid layout="narrow" />);
 
     expect(dom.container.querySelector('div')).toHaveClass('Grid--narrow');
+  });
+
+  it('should have cols classname', () => {
+    const dom = render(<Grid cols={2} />);
+
+    expect(dom.container.querySelector('div')).toHaveClass('Grid--cols-2');
   });
 });
