@@ -3,16 +3,16 @@
   justify-content: center;
   align-items: center;
   padding: calc(0.5rem - 1px) calc(1.5rem - 1px);
-  font-family: Open Sans, helvetica, roboto, arial, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 1rem;
   text-align: center;
   text-decoration: none;
   line-height: 1.5;
   vertical-align: middle;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 0.25rem;
   cursor: pointer;
   user-select: none;
 }
@@ -41,13 +41,13 @@
 
 .jobs-Button--primary {
   color: #fff;
-  background-color: #1b6494;
-  border-color: #1b6494;
+  background-color: #f48225;
+  border-color: #f48225;
 }
 .jobs-Button--primary:hover, .jobs-Button--primary:focus {
   color: #fff;
-  background-color: #1b6494;
-  border-color: #1b6494;
+  background-color: #ed720c;
+  border-color: #ed720c;
 }
 .jobs-Button--primary:active {
   color: #fff;
@@ -63,12 +63,12 @@
 }
 
 .jobs-Button--secondary {
-  color: #1b6494;
+  color: #f48225;
   background-color: transparent;
   border-color: #29616f;
 }
 .jobs-Button--secondary:hover, .jobs-Button--secondary:focus {
-  color: #1b6494;
+  color: #ed720c;
   background-color: transparent;
   border-color: #1b5260;
 }
@@ -88,12 +88,12 @@
 .jobs-Button--tertiary {
   color: #90a2a7;
   background-color: transparent;
-  border-color: #e9e9e9;
+  border-color: #dcdada;
 }
 .jobs-Button--tertiary:hover, .jobs-Button--tertiary:focus {
   color: #849499;
   background-color: transparent;
-  border-color: #dbdbdb;
+  border-color: #d1d1d1;
 }
 .jobs-Button--tertiary:active {
   color: #6e7b80;
@@ -110,8 +110,8 @@
 
 .jobs-Button--informative {
   color: #fff;
-  background-color: #0049ac;
-  border-color: #0049ac;
+  background-color: #379bf6;
+  border-color: #379bf6;
 }
 .jobs-Button--informative:hover, .jobs-Button--informative:focus {
   color: #fff;
@@ -133,8 +133,8 @@
 
 .jobs-Button--success {
   color: #fff;
-  background-color: #00a527;
-  border-color: #00a527;
+  background-color: #2faa7e;
+  border-color: #2faa7e;
 }
 .jobs-Button--success:hover, .jobs-Button--success:focus {
   color: #fff;
@@ -179,8 +179,8 @@
 
 .jobs-Button--danger {
   color: #fff;
-  background-color: #d40014;
-  border-color: #d40014;
+  background-color: #db0000;
+  border-color: #db0000;
 }
 .jobs-Button--danger:hover, .jobs-Button--danger:focus {
   color: #fff;
@@ -326,47 +326,47 @@
 .jobs-Tag {
   display: inline-block;
   padding: 0.5rem 0.5rem;
-  font-family: Open Sans, helvetica, roboto, arial, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 0.875rem;
   text-align: center;
-  line-height: 1.2;
-  border-radius: 0;
+  line-height: 1.4;
+  border-radius: 0.25rem;
 }
 
 .jobs-Tag--default-light {
-  color: #000;
-  background-color: #f4f4f4;
+  color: #171717;
+  background-color: #f7f7f7;
 }
 
 .jobs-Tag--default-dark {
   color: #fff;
-  background-color: #19325a;
+  background-color: #171717;
 }
 
 .jobs-Tag--informative-light {
-  color: #0049ac;
-  background-color: #e6edf7;
+  color: #379bf6;
+  background-color: #ebf5ff;
 }
 
 .jobs-Tag--informative-dark {
   color: #fff;
-  background-color: #0049ac;
+  background-color: #379bf6;
 }
 
 .jobs-Tag--success-light {
-  color: #00a527;
-  background-color: #e7f6f1;
+  color: #2faa7e;
+  background-color: #e8f8f2;
 }
 
 .jobs-Tag--success-dark {
   color: #fff;
-  background-color: #00a527;
+  background-color: #2faa7e;
 }
 
 .jobs-Tag--warning-light {
   color: #ff9900;
-  background-color: #fff5e6;
+  background-color: #fff6ea;
 }
 
 .jobs-Tag--warning-dark {
@@ -375,13 +375,112 @@
 }
 
 .jobs-Tag--danger-light {
-  color: #d40014;
-  background-color: #fbe6e8;
+  color: #db0000;
+  background-color: #fff2f2;
 }
 
 .jobs-Tag--danger-dark {
   color: #fff;
-  background-color: #d40014;
+  background-color: #db0000;
+}
+
+.jobs-TextField {
+  max-width: 100%;
+}
+
+.jobs-TextField__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #8d9c9f;
+}
+
+.jobs-TextField__label--hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.jobs-TextField__label--required::after {
+  content: "*";
+  color: #db0000;
+}
+
+.jobs-TextField__input {
+  display: block;
+  max-width: 100%;
+  padding: 0.5rem 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #171717;
+  background: #fff;
+  border: 1px solid #dcdada;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+.jobs-TextField__input::placeholder {
+  color: #8d9c9f;
+  opacity: 1;
+}
+
+.jobs-TextField:hover > .jobs-TextField__input,
+.jobs-TextField__input:hover {
+  border-color: #d1d1d1;
+}
+
+.jobs-TextField:focus-within,
+.jobs-TextField:focus-within:hover,
+.jobs-TextField > .jobs-TextField__input:focus {
+  border-color: #61b3ff;
+  outline: 0;
+}
+
+.jobs-TextField__message {
+  margin-top: 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #8d9c9f;
+}
+
+.jobs-TextField--error > .jobs-TextField__input,
+.jobs-TextField--error:hover > .jobs-TextField__input,
+.jobs-TextField--error > .jobs-TextField__input:focus {
+  border-color: #db0000;
+}
+
+.jobs-TextField--error > .jobs-TextField__message {
+  color: #db0000;
+}
+
+.jobs-TextField--disabled > .jobs-TextField__label {
+  color: #d6d6d6;
+}
+
+.jobs-TextField > .jobs-TextField__input:disabled,
+.jobs-TextField:hover > .jobs-TextField__input:disabled,
+.jobs-TextField--disabled > .jobs-TextField__input {
+  color: #d6d6d6;
+  border-color: #f4f4f4;
+}
+.jobs-TextField > .jobs-TextField__input:disabled::placeholder,
+.jobs-TextField:hover > .jobs-TextField__input:disabled::placeholder,
+.jobs-TextField--disabled > .jobs-TextField__input::placeholder {
+  color: #d6d6d6;
+}
+
+.jobs-TextField--disabled > .jobs-TextField__message {
+  color: #d6d6d6;
 }
 
 /*# sourceMappingURL=jobs.css.map */
