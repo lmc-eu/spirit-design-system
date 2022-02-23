@@ -9,6 +9,9 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials'
   ],
+  core: {
+    builder: 'webpack5',
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
@@ -24,6 +27,13 @@ module.exports = {
           },
         },
       ],
+    });
+
+    config.module.rules.push({
+      test: /\.m?js/,
+      resolve: {
+        fullySpecified: false,
+      },
     });
 
     return config;
