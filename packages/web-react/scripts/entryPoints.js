@@ -7,6 +7,7 @@ const entryPoints = [
   { dirs: ['components', 'Container'] },
   { dirs: ['components', 'Grid'] },
   { dirs: ['components', 'Tag'] },
+  { dirs: ['components', 'TextField'] },
 ];
 
 const lookupTrie = Object.create(null);
