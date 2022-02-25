@@ -1,0 +1,45 @@
+{
+    "id": "crishpeen.exporter-spirit-scss",
+    "name": "Spirit SCSS Exporter",
+    "description": "Spirit SCSS Exporter",
+    "author": "Jan Kryspin",
+    "organization": "crishpeen",
+    "source_dir": "src",
+    "version": "1.1.2",
+    "usesBrands": true,
+    "config": {
+        "sources": "sources.json",
+        "output": "output.json",
+        "js": "src/js/functions.js"
+    },
+    "engines": {
+        "pulsar": "1.0.0",
+        "supernova": "1.0.0"
+    },
+    "tags": [
+        "SCSS",
+        "Tokens",
+        "Styles",
+        "Spirit"
+    ],
+    "contributes": {
+        "configuration": [
+            {
+                "key": "defaultFontSize",
+                "default": 16,
+                "type": "number",
+                "label": "Default project font-size in px",
+                "description": "Used for calculation to rem",
+                "category": "Advanced"
+            },
+            {
+                "key": "fontFamilyFallback",
+                "default": ", sans-serif",
+                "type": "string",
+                "label": "Font Family fallback",
+                "description": "Font Family fallback",
+                "category": "Advanced"
+            }
+        ]
+    }
+}

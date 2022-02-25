@@ -1,0 +1,4 @@
+// Generated Radii from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Radius", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple(ds.tokensByType("Radius", ds.currentBrand().id), ds.tokenGroupsOfType("Radius", ds.currentBrand().id)) }}
+{[/]}
