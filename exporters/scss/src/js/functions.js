@@ -206,17 +206,21 @@ Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontS
     }
     const lineHeight = Math.round((token.value.lineHeight.measure / 100) * 1000) / 1000;
     const letterSpacing = printUnit(token.value.letterSpacing.measure, token.value.letterSpacing.unit);
+    const textDecoration = token.value.textDecoration.toLowerCase();
     const paragraphIndent = printUnit(token.value.paragraphIndent.measure, token.value.paragraphIndent.unit);
+    const textTransform = token.value.textCase === 'Original' ? 'none' : token.value.textCase.toLowerCase()
+
+    const printLetterSpacing = letterSpacing !== 0 ? `\n    letter-spacing: ${letterSpacing},` : '';
+    const printTextDecoration = textDecoration !== 'none' ? `\n    text-decoration: ${textDecoration},` : '';
+    const printParagraphIndent = paragraphIndent !== 0 ? `\n    text-indent: ${paragraphIndent},` : '';
+    const printTextTransform = textTransform !== 'none' ? `\n    text-transform: ${textTransform},` : '';
+
     vars.push(`$${name}: (
     font-family: "'${token.value.font.family}'${fontFamilyFallback}",
     font-size: ${fontSize},
     font-style: ${fontStyle},
     font-weight: ${getWeight(fontWeight)},
-    line-height: ${lineHeight},
-    letter-spacing: ${letterSpacing},
-    text-decoration: ${token.value.textDecoration.toLowerCase()},
-    text-indent: ${paragraphIndent},
-    text-transform: ${token.value.textCase === 'Original' ? 'none' : token.value.textCase.toLowerCase()},
+    line-height: ${lineHeight},${printLetterSpacing}${printTextDecoration}${printParagraphIndent}${printTextTransform}
 ) !default;\n`);
   });
   
