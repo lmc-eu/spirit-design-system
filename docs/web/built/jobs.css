@@ -1,18 +1,18 @@
 .jobs-Button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: calc(0.5rem - 1px) calc(1.5rem - 1px);
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: calc(8px - 1px) calc(24px - 1px);
   text-align: center;
-  text-decoration: none;
-  line-height: 1.5;
   vertical-align: middle;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   cursor: pointer;
   user-select: none;
 }
@@ -29,7 +29,7 @@
 }
 
 .jobs-Button--square {
-  width: calc((1em * 1.5) + (calc(0.5rem - 1px) * 2));
+  width: calc((1em * 1.5) + (calc(8px - 1px) * 2));
   padding-left: 0;
   padding-right: 0;
 }
@@ -63,12 +63,12 @@
 }
 
 .jobs-Button--secondary {
-  color: #f48225;
+  color: #29616f;
   background-color: transparent;
   border-color: #29616f;
 }
 .jobs-Button--secondary:hover, .jobs-Button--secondary:focus {
-  color: #ed720c;
+  color: #1b5260;
   background-color: transparent;
   border-color: #1b5260;
 }
@@ -202,19 +202,19 @@
 
 .jobs-Container {
   width: 100%;
-  max-width: 80rem;
+  max-width: 1280px;
   margin-inline: auto;
   box-sizing: border-box;
-  padding-inline: 1rem;
+  padding-inline: 16px;
 }
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .jobs-Container {
-    padding-inline: 2rem;
+    padding-inline: 32px;
   }
 }
-@media (min-width: 80em) {
+@media (min-width: 1280px) {
   .jobs-Container {
-    padding-inline: 2rem;
+    padding-inline: 32px;
   }
 }
 
@@ -222,16 +222,16 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   width: 100%;
-  gap: 1rem;
+  gap: 16px;
 }
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .jobs-Grid {
-    gap: 2rem;
+    gap: 32px;
   }
 }
-@media (min-width: 80em) {
+@media (min-width: 1280px) {
   .jobs-Grid {
-    gap: 2rem;
+    gap: 32px;
   }
 }
 
@@ -259,7 +259,7 @@
   grid-template-columns: repeat(12, 1fr);
 }
 
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .jobs-Grid--tablet--cols-1 {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -284,7 +284,7 @@
     grid-template-columns: repeat(12, 1fr);
   }
 }
-@media (min-width: 80em) {
+@media (min-width: 1280px) {
   .jobs-Grid--desktop--cols-1 {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -309,29 +309,34 @@
     grid-template-columns: repeat(12, 1fr);
   }
 }
+.jobs-Grid--narrow {
+  grid-template-columns: repeat(12, 1fr);
+}
+
 .jobs-Grid--narrow > * {
   grid-column: span 12;
 }
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .jobs-Grid--narrow > * {
     grid-column: 3/span 8;
   }
 }
-@media (min-width: 80em) {
+@media (min-width: 1280px) {
   .jobs-Grid--narrow > * {
     grid-column: 4/span 6;
   }
 }
 
 .jobs-Tag {
-  display: inline-block;
-  padding: 0.5rem 0.5rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  display: inline-block;
+  padding: 8px 8px;
   text-align: center;
-  line-height: 1.4;
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 
 .jobs-Tag--default-light {
@@ -389,11 +394,13 @@
 }
 
 .jobs-TextField__label {
-  display: block;
-  margin-bottom: 0.25rem;
+  font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 4px;
   color: #8d9c9f;
 }
 
@@ -415,17 +422,18 @@
 }
 
 .jobs-TextField__input {
-  display: block;
-  max-width: 100%;
-  padding: 0.5rem 0.5rem;
-  font-family: "Inter", sans-serif;
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
   font-weight: 400;
   line-height: 1.5;
+  display: block;
+  max-width: 100%;
+  padding: 8px 8px;
   color: #171717;
   background: #fff;
   border: 1px solid #dcdada;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   box-sizing: border-box;
 }
 .jobs-TextField__input::placeholder {
@@ -446,10 +454,12 @@
 }
 
 .jobs-TextField__message {
-  margin-top: 0.25rem;
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-top: 4px;
   color: #8d9c9f;
 }
 
