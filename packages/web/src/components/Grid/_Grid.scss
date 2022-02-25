@@ -13,6 +13,10 @@
 
 @include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
 
+.Grid--narrow {
+    grid-template-columns: repeat(theme.$grid-columns, 1fr);
+}
+
 .Grid--narrow > * {
     grid-column: span 12;
 
