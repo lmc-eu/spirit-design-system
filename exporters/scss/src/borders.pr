@@ -1,0 +1,4 @@
+// Generated Borders from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Border", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple(ds.tokensByType("Border", ds.currentBrand().id), ds.tokenGroupsOfType("Border", ds.currentBrand().id)) }}
+{[/]}
