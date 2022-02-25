@@ -5,6 +5,13 @@ const config = {
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTestingLibrary.js'],
   testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
   coverageDirectory: './.coverage',
+  // An array of glob patterns indicating a set of files for which coverage information should be collected.
+  // https://jestjs.io/docs/configuration#collectcoveragefrom-array
+  collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx}', '!<rootDir>/src/**/*.d.ts'],
+
+  // An array of regexp pattern strings that are matched against all file paths before executing the test.
+  // https://jestjs.io/docs/configuration#coveragepathignorepatterns-arraystring
+  coveragePathIgnorePatterns: ['__fixtures__', '.*.stories.*'],
   reporters: [
     'default',
     [
