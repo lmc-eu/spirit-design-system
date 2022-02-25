@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+@mixin generate($token) {
+    @if map.has-key($token, font-family) {
+        font-family: unquote(map.get($token, font-family));
+    }
+
+    @if map.has-key($token, font-size) {
+        font-size: map.get($token, font-size);
+    }
+
+    @if map.has-key($token, font-style) {
+        font-style: map.get($token, font-style);
+    }
+
+    @if map.has-key($token, font-weight) {
+        // stylelint-disable-next-line font-weight-notation
+        font-weight: map.get($token, font-weight);
+    }
+
+    @if map.has-key($token, text-transform) {
+        text-transform: map.get($token, text-transform);
+    }
+
+    @if map.has-key($token, text-decoration) {
+        text-decoration: map.get($token, text-decoration);
+    }
+
+    @if map.has-key($token, text-indent) {
+        text-indent: map.get($token, text-indent);
+    }
+
+    @if map.has-key($token, line-height) {
+        line-height: map.get($token, line-height);
+    }
+
+    @if map.has-key($token, letter-spacing) {
+        letter-spacing: map.get($token, letter-spacing);
+    }
+}
