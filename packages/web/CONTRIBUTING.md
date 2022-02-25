@@ -91,7 +91,7 @@ At first, let's define a reference to design tokens in component's theme:
 
 @use '@tokens' as tokens;
 
-$font-family: tokens.$font-family-default;
+$border-radius: tokens.$radius-100;
 ```
 
 Now use the reference from the theme in component styles:
@@ -102,7 +102,7 @@ Now use the reference from the theme in component styles:
 @use 'theme';
 
 .Button {
-  font-family: theme.$font-family;
+  border-radius: theme.$border-radius;
 }
 ```
 

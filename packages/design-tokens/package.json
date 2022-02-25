@@ -13,7 +13,7 @@
     "directory": "packages/design-tokens"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -r package.json README.md src/* dist/ ",
+    "build": "rm -rf dist && mkdir -p dist/scss && cp -r package.json README.md dist/ && cp -r src/scss/generated/* src/scss/@tokens.scss dist/scss/",
     "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
     "test": "yarn lint"
   },

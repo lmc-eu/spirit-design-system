@@ -1,14 +1,12 @@
 @use '@tokens' as tokens;
 
 // We subtract the border width to achieve the same dimensions as other form elements
-$padding-x: calc(#{tokens.$space-7} - #{tokens.$border-width-1});
-$padding-y: calc(#{tokens.$space-4} - #{tokens.$border-width-1});
-$font-family: tokens.$font-family-default;
-$font-weight: tokens.$font-weight-semibold;
-$font-size: tokens.$font-size-base;
-$line-height: tokens.$line-height-default;
-$border: tokens.$border-2;
-$border-radius: tokens.$radius-1;
+$padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100});
+$padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
+$typography: tokens.$body-medium-text-bold;
+$border-width: tokens.$border-width-100;
+$border-style: tokens.$border-style-100;
+$border-radius: tokens.$radius-100;
 
 // Primary button
 $primary-default-color: tokens.$text-primary-inverted-default;

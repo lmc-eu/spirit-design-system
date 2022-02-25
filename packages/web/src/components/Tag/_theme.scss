@@ -1,12 +1,9 @@
 @use '@tokens' as tokens;
 
-$padding-x: tokens.$space-4;
-$padding-y: tokens.$space-4;
-$font-family: tokens.$font-family-default;
-$font-weight: tokens.$font-weight-regular;
-$font-size: tokens.$font-size-3;
-$line-height: tokens.$line-height-small;
-$border-radius: tokens.$radius-1;
+$padding-x: tokens.$space-400;
+$padding-y: tokens.$space-400;
+$typography: tokens.$body-small-text-regular;
+$border-radius: tokens.$radius-100;
 
 // Default light tag
 $default-light-color: tokens.$text-primary-default;

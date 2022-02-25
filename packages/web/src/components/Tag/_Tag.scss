@@ -1,14 +1,13 @@
 @use 'theme';
 @use 'tools';
+@use '../../tools/typography';
 
 .Tag {
+    @include typography.generate(theme.$typography);
+
     display: inline-block;
     padding: theme.$padding-y theme.$padding-x;
-    font-family: theme.$font-family;
-    font-weight: theme.$font-weight;
-    font-size: theme.$font-size;
     text-align: center;
-    line-height: theme.$line-height;
     border-radius: theme.$border-radius;
 }
 

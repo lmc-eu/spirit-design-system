@@ -1,15 +1,15 @@
 @use 'theme';
+@use '../../tools/typography';
 
 .TextField {
     max-width: 100%;
 }
 
 .TextField__label {
+    @include typography.generate(theme.$label-typography);
+
     display: block;
     margin-bottom: theme.$spacing;
-    font-size: theme.$label-font-size;
-    font-weight: theme.$label-font-weight;
-    line-height: theme.$label-line-height;
     color: theme.$label-color-default;
 }
 
@@ -31,16 +31,14 @@
 }
 
 .TextField__input {
+    @include typography.generate(theme.$input-typography);
+
     display: block;
     max-width: 100%;
     padding: theme.$input-padding-y theme.$input-padding-x;
-    font-family: theme.$input-font-family;
-    font-size: theme.$input-font-size;
-    font-weight: theme.$input-font-weight;
-    line-height: theme.$input-line-height;
     color: theme.$input-color-default;
     background: theme.$input-background;
-    border: theme.$input-border theme.$input-border-color-default;
+    border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
     border-radius: theme.$input-border-radius;
     box-sizing: border-box;
 
@@ -63,10 +61,9 @@
 }
 
 .TextField__message {
+    @include typography.generate(theme.$message-typography);
+
     margin-top: theme.$spacing;
-    font-size: theme.$message-font-size;
-    font-weight: theme.$message-font-weight;
-    line-height: theme.$message-line-height;
     color: theme.$message-color-default;
 }
 

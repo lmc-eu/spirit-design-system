@@ -1,7 +1,5 @@
 // ⚠️ Remove the `dist/` part from paths below when copy-and-pasting the code to your project.
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/borders';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/breakpoints';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/colors' with (
+@forward '@lmc-eu/spirit-design-tokens/dist/scss' with (
     $brand-primary: #19325a,
     $brand-secondary: #ff9900,
     $background-cover: #f7f7f7,
@@ -23,14 +21,4 @@
     $border-main-default: #dcdada,
     $border-main-hover: #d1d1d1,
     $border-main-disabled: #f4f4f4
-);
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/layout';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/radii';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/shadows';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/spacing';
-@forward '@lmc-eu/spirit-design-tokens/dist/scss/typography' with (
-    $line-height-small: 1.4,
-    $font-size-3: 0.875rem,
-    $font-size-4: 0.9375rem,
-    $font-size-base: 1rem
 );
