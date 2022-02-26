@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.8.0"></a>
+
+# [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.7.0...@lmc-eu/spirit-design-tokens@0.8.0) (2022-02-26)
+
+### Chores
+
+- **release:** Publish [ci-skip] ([a11c055](https://github.com/lmc-eu/spirit-design-system/commit/a11c055))
+
+### Dependencies
+
+- Update dependency @lmc-eu/stylelint-config to v3 ([18cfc75](https://github.com/lmc-eu/spirit-design-system/commit/18cfc75))
+
+### Features
+
+- Implement Grid component to spirit-web and showcase it in demo ([329b28b](https://github.com/lmc-eu/spirit-design-system/commit/329b28b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="0.7.0"></a>
 
 # [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.6.0...@lmc-eu/spirit-design-tokens@0.7.0) (2022-02-18)

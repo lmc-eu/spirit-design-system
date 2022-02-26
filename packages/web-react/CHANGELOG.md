@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.7.0"></a>
+
+# [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.6.1...@lmc-eu/spirit-web-react@0.7.0) (2022-02-26)
+
+### Code Refactoring
+
+- **web-react:** Hook `useClassNamePrefix` now accept argument className ([30a80af](https://github.com/lmc-eu/spirit-design-system/commit/30a80af))
+- **web-react:** Move Grid class building logic to react hook ([8cdcf81](https://github.com/lmc-eu/spirit-design-system/commit/8cdcf81))
+
+### Dependencies
+
+- Update all non-major dependencies ([cd7de25](https://github.com/lmc-eu/spirit-design-system/commit/cd7de25))
+- Update dependency eslint-config-airbnb to v19 ([50846c9](https://github.com/lmc-eu/spirit-design-system/commit/50846c9))
+- Update dependency eslint-plugin-promise to v6 ([360a014](https://github.com/lmc-eu/spirit-design-system/commit/360a014))
+- Update dependency jest-junit to v13 ([64e6207](https://github.com/lmc-eu/spirit-design-system/commit/64e6207))
+
+### Documentation
+
+- **web-react:** Add missing jsdoc blocks in build scripts ([e6623cc](https://github.com/lmc-eu/spirit-design-system/commit/e6623cc))
+
+### Features
+
+- **web-react:** Introduce Container component ([7dd9fe0](https://github.com/lmc-eu/spirit-design-system/commit/7dd9fe0))
+- **web-react:** Introduce Grid component ([35396f7](https://github.com/lmc-eu/spirit-design-system/commit/35396f7))
+- **web-react:** Introduce TextField component (refs [#DS-120](https://github.com/lmc-eu/spirit-design-system/issues/DS-120)) ([8dc3c3d](https://github.com/lmc-eu/spirit-design-system/commit/8dc3c3d))
+
+### Tests
+
+- **web-react:** Collect coverage from all files for report ([d0ca12e](https://github.com/lmc-eu/spirit-design-system/commit/d0ca12e))
+- **web-react:** Set absolute path for lcov reporter ([8c84ea7](https://github.com/lmc-eu/spirit-design-system/commit/8c84ea7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.6.1"></a>
 
 ## [0.6.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.6.0...@lmc-eu/spirit-web-react@0.6.1) (2022-02-20)

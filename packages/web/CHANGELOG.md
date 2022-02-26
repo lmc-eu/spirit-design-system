@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.9.0"></a>
+
+# [0.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.8.0...@lmc-eu/spirit-web@0.9.0) (2022-02-26)
+
+### Bug Fixes
+
+- Set default template columns to grid narrow variant [#DS-156](https://github.com/lmc-eu/spirit-design-system/issues/DS-156) ([bd10f93](https://github.com/lmc-eu/spirit-design-system/commit/bd10f93))
+
+### Chores
+
+- **release:** Publish [ci-skip] ([a11c055](https://github.com/lmc-eu/spirit-design-system/commit/a11c055))
+
+### Dependencies
+
+- Update all non-major dependencies ([cd7de25](https://github.com/lmc-eu/spirit-design-system/commit/cd7de25))
+- Update dependency @lmc-eu/stylelint-config to v3 ([18cfc75](https://github.com/lmc-eu/spirit-design-system/commit/18cfc75))
+
+### Features
+
+- Implement Grid component to spirit-web and showcase it in demo ([329b28b](https://github.com/lmc-eu/spirit-design-system/commit/329b28b))
+- Implement TextField component ([455930a](https://github.com/lmc-eu/spirit-design-system/commit/455930a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.8.0"></a>
 
 # [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.7.0...@lmc-eu/spirit-web@0.8.0) (2022-02-18)
