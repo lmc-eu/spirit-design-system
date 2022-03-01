@@ -1,0 +1,22 @@
+@use '@tokens' as tokens;
+
+$spacing: tokens.$space-400;
+
+$text-offset: tokens.$space-400;
+
+$label-typography: tokens.$body-medium-text-regular;
+$label-color-default: tokens.$text-primary-default;
+$label-color-disabled: tokens.$text-primary-disabled;
+$label-required-color: tokens.$emotion-danger-default;
+
+$input-width: 18px;
+$input-unselected-color: tokens.$action-unselected-default;
+$input-selected-color: tokens.$action-selected-default;
+$input-disabled-color: tokens.$text-primary-disabled;
+$input-checked-mark: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48cGF0aCBkPSJNNy43MSAxMy4yOWEuOTk2Ljk5NiAwIDAgMS0xLjQxIDBMMi43MSA5LjdhLjk5Ni45OTYgMCAxIDEgMS40MS0xLjQxTDcgMTEuMTdsNi44OC02Ljg4YS45OTYuOTk2IDAgMSAxIDEuNDEgMS40MWwtNy41OCA3LjU5WiIgc3R5bGU9ImZpbGw6I2ZmZiIvPjwvc3ZnPg==');
+$input-indeterminate-mark: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48cGF0aCBzdHlsZT0iZmlsbDojZmZmIiBkPSJNNCA4aDEwdjJINHoiLz48L3N2Zz4=');
+
+$message-typography: tokens.$body-medium-text-regular;
+$message-color-default: tokens.$text-primary-default;
+$message-color-disabled: tokens.$text-primary-disabled;
+$message-color-error: tokens.$emotion-danger-default;

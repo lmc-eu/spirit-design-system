@@ -1,7 +1,7 @@
 # TextField
 
-TextField enables the user to type in text information. It has input, label,
-and optional message. It could be disabled or have an error state. The label could be hidden
+TextField enables the user to type in text information. It has input, a label,
+and an optional message. It could be disabled or have an error state. The label could be hidden
 and show if the input is required.
 
 ```html

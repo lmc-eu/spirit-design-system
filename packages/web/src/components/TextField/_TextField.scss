@@ -1,4 +1,5 @@
 @use 'theme';
+@use '../../tools/accessibility';
 @use '../../tools/typography';
 
 .TextField {
@@ -14,15 +15,7 @@
 }
 
 .TextField__label--hidden {
-    position: absolute;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    @include accessibility.hide-text();
 }
 
 .TextField__label--required::after {
