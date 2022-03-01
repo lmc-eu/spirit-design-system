@@ -1,0 +1,81 @@
+@use 'theme';
+@use '../../tools/accessibility';
+@use '../../tools/typography';
+
+.CheckboxField {
+    display: inline-flex;
+    margin-block: theme.$spacing;
+}
+
+.CheckboxField__text {
+    margin-left: theme.$text-offset;
+}
+
+.CheckboxField__label {
+    @include typography.generate(theme.$label-typography);
+
+    color: theme.$label-color-default;
+}
+
+.CheckboxField__label--hidden {
+    @include accessibility.hide-text();
+}
+
+.CheckboxField__label--required::after {
+    content: '*';
+    color: theme.$label-required-color;
+}
+
+.CheckboxField__input {
+    appearance: none;
+    width: theme.$input-width;
+    height: theme.$input-width;
+    margin: 3px;
+    color: theme.$input-unselected-color;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    &:checked {
+        color: theme.$input-selected-color;
+        background-image: theme.$input-checked-mark;
+        background-color: theme.$input-selected-color;
+    }
+
+    &:indeterminate {
+        color: theme.$input-selected-color;
+        background-image: theme.$input-indeterminate-mark;
+        background-color: theme.$input-selected-color;
+    }
+}
+
+.CheckboxField__message {
+    @include typography.generate(theme.$message-typography);
+
+    display: block;
+    margin-top: theme.$spacing;
+    color: theme.$message-color-default;
+}
+
+.CheckboxField--error > .CheckboxField__text > .CheckboxField__message {
+    color: theme.$message-color-error;
+}
+
+.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__label,
+.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__message {
+    color: theme.$label-color-disabled;
+}
+
+.CheckboxField > .CheckboxField__input:disabled,
+.CheckboxField:hover > .CheckboxField__input:disabled,
+.CheckboxField--disabled > .CheckboxField__input {
+    color: theme.$input-disabled-color;
+
+    &:checked,
+    &:indeterminate {
+        background-color: theme.$input-disabled-color;
+    }
+}
