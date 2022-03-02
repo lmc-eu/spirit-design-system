@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export * from './dom';
 export * from './events';
+export * from './inputs';
 export * from './style';
 
 export interface ChildrenProps {

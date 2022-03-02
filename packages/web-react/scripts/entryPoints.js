@@ -4,6 +4,7 @@ const entryPoints = [
   { dirs: ['hooks'] },
   { dirs: ['components'] },
   { dirs: ['components', 'Button'] },
+  { dirs: ['components', 'CheckboxField'] },
   { dirs: ['components', 'Container'] },
   { dirs: ['components', 'Grid'] },
   { dirs: ['components', 'Stack'] },
