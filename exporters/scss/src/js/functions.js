@@ -245,10 +245,10 @@ Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontS
     breakpoints.map((breakpoint) => {
       const breakpointVal = styleBreakpoints[breakpoint];
       if(breakpointVal !== undefined) {
-        const printLetterSpacing = breakpointVal.letterSpacing !== 0 ? `\n    letter-spacing: ${breakpointVal.letterSpacing},` : '';
-        const printTextDecoration = breakpointVal.textDecoration !== 'none' ? `\n    text-decoration: ${breakpointVal.textDecoration},` : '';
-        const printParagraphIndent = breakpointVal.paragraphIndent !== 0 ? `\n    text-indent: ${breakpointVal.paragraphIndent},` : '';
-        const printTextTransform = breakpointVal.textTransform !== 'none' ? `\n    text-transform: ${breakpointVal.textTransform},` : '';
+        const printLetterSpacing = breakpointVal.letterSpacing !== 0 ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
+        const printTextDecoration = breakpointVal.textDecoration !== 'none' ? `\n        text-decoration: ${breakpointVal.textDecoration},` : '';
+        const printParagraphIndent = breakpointVal.paragraphIndent !== 0 ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
+        const printTextTransform = breakpointVal.textTransform !== 'none' ? `\n        text-transform: ${breakpointVal.textTransform},` : '';
         breakpointValues.push(`${breakpoint}: (
         font-family: "${breakpointVal.fontFamily}",
         font-size: ${breakpointVal.fontSize},
