@@ -10,7 +10,9 @@
   "scripts": {
     "prebuild": "rm -rf built && mkdir -p built",
     "build": "yarn copy && yarn css",
-    "copy": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/components.min.css built/components.min.css",
+    "copy:components": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/components.min.css built/components.min.css",
+    "copy:helpers": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/helpers.min.css built/helpers.min.css",
+    "copy": "yarn copy:components && yarn copy:helpers",
     "css": "yarn css:jobs",
     "css:jobs": "yarn css:jobs:compile && yarn css:jobs:prefix",
     "css:jobs:compile": "sass --load-path=../../node_modules --load-path=src/jobs src/jobs/jobs.scss built/jobs.css",
