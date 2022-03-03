@@ -6,7 +6,7 @@ export default {
   title: 'Components/ButtonLink',
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'inverted', 'danger'],
       control: { type: 'select' },
     },
     href: { control: 'text' },

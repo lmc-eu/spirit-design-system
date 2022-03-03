@@ -2,7 +2,7 @@ import { ElementType, JSXElementConstructor, Ref } from 'react';
 import { AriaLabelingProps } from './shared/dom';
 import { ChildrenProps, ClickEvents, StyleProps } from './shared';
 
-export type ButtonColor = 'primary' | 'secondary' | 'tertiary';
+export type ButtonColor = 'primary' | 'secondary' | 'tertiary' | 'inverted' | 'danger';
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps extends ChildrenProps, ClickEvents {

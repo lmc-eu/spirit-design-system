@@ -14,6 +14,12 @@ const Demo = () => (
     <Button color="tertiary" onClick={() => console.log('Tertiary button clicked!')}>
       Tertiary button
     </Button>
+    <Button color="inverted" onClick={() => console.log('Inverted button clicked!')}>
+      Inverted button
+    </Button>
+    <Button color="danger" onClick={() => console.log('Danger button clicked!')}>
+      Danger button
+    </Button>
   </section>
 );
 

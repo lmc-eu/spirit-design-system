@@ -6,7 +6,7 @@ export default {
   title: 'Components/Button',
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'tertiary', 'inverted', 'danger'],
       control: { type: 'select' },
     },
     onClick: { action: 'onClick' },
