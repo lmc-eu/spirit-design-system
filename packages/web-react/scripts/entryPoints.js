@@ -6,6 +6,7 @@ const entryPoints = [
   { dirs: ['components', 'Button'] },
   { dirs: ['components', 'Container'] },
   { dirs: ['components', 'Grid'] },
+  { dirs: ['components', 'Stack'] },
   { dirs: ['components', 'Tag'] },
   { dirs: ['components', 'TextField'] },
 ];

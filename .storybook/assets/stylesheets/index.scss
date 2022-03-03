@@ -3,5 +3,16 @@
 @use '../../../packages/web/src/components/Button';
 @use '../../../packages/web/src/components/Container';
 @use '../../../packages/web/src/components/Grid';
+@use '../../../packages/web/src/components/Stack';
 @use '../../../packages/web/src/components/Tag';
 @use '../../../packages/web/src/components/TextField';
+
+.example-box {
+    min-height: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    background: #0b1c21;
+}
