@@ -5,7 +5,7 @@
     "author": "Jan Kryšpín <jan.kryspin@lmc.eu>",
     "organization": "LMC s.r.o.",
     "source_dir": "src",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "usesBrands": true,
     "config": {
         "sources": "sources.json",
@@ -38,6 +38,14 @@
                 "type": "string",
                 "label": "Font Family fallback",
                 "description": "Font Family fallback",
+                "category": "Advanced"
+            },
+            {
+                "key": "breakpoints",
+                "default": "mobile,tablet,desktop",
+                "type": "string",
+                "label": "Breakpoints",
+                "description": "List available breakpoints. Separate them with comma. Example and default value: 'mobile,tablet,desktop'.",
                 "category": "Advanced"
             }
         ]
