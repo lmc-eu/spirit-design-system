@@ -250,7 +250,7 @@ Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontS
         const printParagraphIndent = breakpointVal.paragraphIndent !== 0 ? `\n    text-indent: ${breakpointVal.paragraphIndent},` : '';
         const printTextTransform = breakpointVal.textTransform !== 'none' ? `\n    text-transform: ${breakpointVal.textTransform},` : '';
         breakpointValues.push(`${breakpoint}: (
-        font-family: ${breakpointVal.fontFamily},
+        font-family: "${breakpointVal.fontFamily}",
         font-size: ${breakpointVal.fontSize},
         font-style: ${breakpointVal.fontStyle},
         font-weight: ${breakpointVal.fontWeight},
