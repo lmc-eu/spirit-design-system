@@ -5,7 +5,7 @@
     "author": "Jan Kryšpín <jan.kryspin@lmc.eu>",
     "organization": "LMC s.r.o.",
     "source_dir": "src",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "usesBrands": true,
     "config": {
         "sources": "sources.json",

@@ -240,7 +240,7 @@ Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontS
   const vars = [];
   const list = [];
   Object.entries(styles).forEach(([styleName, styleBreakpoints]) => {
-    list.push(`${styleName}: $${styleName}`)
+    list.push(`${styleName}: $${styleName},`)
     const breakpointValues = [];
     breakpoints.map((breakpoint) => {
       const breakpointVal = styleBreakpoints[breakpoint];
@@ -263,7 +263,7 @@ Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontS
 ) !default;\n`);
   });
   const listPrint = `$styles: (
-    ${list.join(',\n    ')}
+    ${list.join('\n    ')}
 ) !default;`
-  return `${vars.join('\n')}\n${listPrint}`;
+  return `${vars.join('\n')}\n${listPrint}\n`;
 });
