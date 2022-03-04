@@ -1,5 +1,7 @@
 @forward '../../../packages/design-tokens/src/scss';
 
+@use '../../../packages/web/src/foundation';
+
 @use '../../../packages/web/src/components/Button';
 @use '../../../packages/web/src/components/Container';
 @use '../../../packages/web/src/components/Grid';

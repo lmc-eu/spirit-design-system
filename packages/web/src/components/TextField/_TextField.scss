@@ -40,7 +40,6 @@
     background: theme.$input-background;
     border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
     border-radius: theme.$input-border-radius;
-    box-sizing: border-box;
 
     &::placeholder {
         color: theme.$input-placeholder-color-default;
