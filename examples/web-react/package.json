@@ -10,7 +10,7 @@
   "scripts": {
     "precopy": "mkdir -p ./built",
     "copy": "yarn copy:css",
-    "copy:css": "cp ../../node_modules/@lmc-eu/spirit-web/dist/css/components.min.css built/components.min.css",
+    "copy:css": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/css/. built",
     "prebuild": "yarn copy",
     "build": "webpack --config ./webpack.config.js --mode development"
   },

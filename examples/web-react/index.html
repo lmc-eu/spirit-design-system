@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Load Spirit CSS. -->
+    <link rel="stylesheet" href="built/foundation.min.css">
     <link rel="stylesheet" href="built/components.min.css">
+    <link rel="stylesheet" href="built/helpers.min.css">
 
     <!-- Load demo app. -->
     <script src="built/demo.js" defer></script>
@@ -22,35 +24,29 @@
 
       h1 {
         margin-block: 3rem;
-        font-size: 4rem;
       }
 
-      h2 {
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-      }
-
-      header,
-      main {
-        padding: 1.5rem 8vw;
-      }
-
-      @media (min-width: 960px) {
-        header,
-        main {
-          padding-inline: 16vw;
-        }
+      h2,
+      h3,
+      h4 {
+        margin-block: 2em 1em;
       }
 
       header {
+        padding-block: 1.5rem;
         background-color: #f0f4f5;
+      }
+
+      main {
+        padding-bottom: 3rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Spirit Web React Demo</h1>
+      <div class="Container">
+        <h1 class="typography-heading-xlarge-text">Spirit Web React Demo</h1>
+      </div>
     </header>
 
     <main id="demo_container"></main>
