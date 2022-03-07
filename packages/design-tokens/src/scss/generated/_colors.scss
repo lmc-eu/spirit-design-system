@@ -1,4 +1,17 @@
 // Generated Colors from Supernova. Do not edit manually.
+$border-main-default: #e9e9e9 !default;
+$action-link-secondary-hover: #849499 !default;
+$action-link-secondary-disabled: #c4c4c4 !default;
+$action-tertiary-default: #e9e9e9 !default;
+$action-tertiary-hover: #dbdbdb !default;
+$action-tertiary-active: #d4d4d4 !default;
+$action-tertiary-disabled: #c4c4c4 !default;
+$action-inverted-default: #e9e9e9 !default;
+$action-inverted-hover: #dbdbdb !default;
+$action-inverted-active: #d4d4d4 !default;
+$action-inverted-disabled: #c4c4c4 !default;
+$text-secondary-inverted-default: #e9e9e9 !default;
+$action-unselected-default: #132930 !default;
 $text-primary-default: #132930 !default;
 $text-secondary-default: #90a2a7 !default;
 $emotion-informative-default: #90cff1 !default;
@@ -27,10 +40,7 @@ $action-link-primary-active: #0b3a46 !default;
 $action-link-primary-disabled: #c4c4c4 !default;
 $action-link-primary-visited: #a7bcc2 !default;
 $action-link-secondary-default: #90a2a7 !default;
-$action-link-secondary-hover: #849499 !default;
 $action-link-secondary-active: #6e7b80 !default;
-$action-link-secondary-disabled: #c4c4c4 !default;
-$border-main-default: #e9e9e9 !default;
 $border-main-hover: #dbdbdb !default;
 $border-main-active: #d4d4d4 !default;
 $border-main-disabled: #f4f4f4 !default;
@@ -38,9 +48,6 @@ $action-primary-default: #29616f !default;
 $action-primary-hover: #1b5260 !default;
 $action-primary-active: #0b3a46 !default;
 $action-primary-disabled: #c4c4c4 !default;
-$action-secondary-default: #a0a0a0 !default;
-$action-secondary-hover: #737373 !default;
-$action-secondary-active: #c4c4c4 !default;
 $action-secondary-disabled: #c4c4c4 !default;
 $text-primary-disabled: #c4c4c4 !default;
 $text-secondary-disabled: #c4c4c4 !default;
@@ -53,9 +60,7 @@ $brand-secondary: #78a9c5 !default;
 $brand-primary: #0b1c21 !default;
 $text-primary-inverted-default: #fff !default;
 $text-primary-inverted-disabled: #737373 !default;
-$text-secondary-inverted-default: #e9e9e9 !default;
 $text-secondary-inverted-disabled: #737373 !default;
-$action-unselected-default: #132930 !default;
 $action-unselected-hover: #0b1c21 !default;
 $action-unselected-active: #091417 !default;
 $action-unselected-disabled: #c4c4c4 !default;
@@ -67,23 +72,63 @@ $background-backdrop: #0b1c2199 !default;
 $background-interactive-default: #fff !default;
 $background-interactive-hover: #d2dcdf !default;
 $background-interactive-active: #a7bcc2 !default;
-$action-tertiary-default: #e9e9e9 !default;
-$action-tertiary-hover: #dbdbdb !default;
-$action-tertiary-active: #d4d4d4 !default;
-$action-tertiary-disabled: #c4c4c4 !default;
-$action-inverted-default: #e9e9e9 !default;
-$action-inverted-hover: #dbdbdb !default;
-$action-inverted-active: #d4d4d4 !default;
-$action-inverted-disabled: #c4c4c4 !default;
+$action-secondary-default: #a0a0a0 !default;
+$action-secondary-hover: #737373 !default;
+$action-secondary-active: #c4c4c4 !default;
+
+$border-colors: (
+    main-default: $border-main-default,
+    main-hover: $border-main-hover,
+    main-active: $border-main-active,
+    main-disabled: $border-main-disabled,
+    focus-default: $border-focus-default,
+) !default;
+
+$action-colors: (
+    link-secondary-hover: $action-link-secondary-hover,
+    link-secondary-disabled: $action-link-secondary-disabled,
+    tertiary-default: $action-tertiary-default,
+    tertiary-hover: $action-tertiary-hover,
+    tertiary-active: $action-tertiary-active,
+    tertiary-disabled: $action-tertiary-disabled,
+    inverted-default: $action-inverted-default,
+    inverted-hover: $action-inverted-hover,
+    inverted-active: $action-inverted-active,
+    inverted-disabled: $action-inverted-disabled,
+    unselected-default: $action-unselected-default,
+    link-primary-default: $action-link-primary-default,
+    link-primary-hover: $action-link-primary-hover,
+    link-primary-active: $action-link-primary-active,
+    link-primary-disabled: $action-link-primary-disabled,
+    link-primary-visited: $action-link-primary-visited,
+    link-secondary-default: $action-link-secondary-default,
+    link-secondary-active: $action-link-secondary-active,
+    primary-default: $action-primary-default,
+    primary-hover: $action-primary-hover,
+    primary-active: $action-primary-active,
+    primary-disabled: $action-primary-disabled,
+    secondary-disabled: $action-secondary-disabled,
+    link-secondary-visited: $action-link-secondary-visited,
+    unselected-hover: $action-unselected-hover,
+    unselected-active: $action-unselected-active,
+    unselected-disabled: $action-unselected-disabled,
+    selected-default: $action-selected-default,
+    selected-hover: $action-selected-hover,
+    selected-active: $action-selected-active,
+    selected-disabled: $action-selected-disabled,
+    secondary-default: $action-secondary-default,
+    secondary-hover: $action-secondary-hover,
+    secondary-active: $action-secondary-active,
+) !default;
 
 $text-colors: (
+    secondary-inverted-default: $text-secondary-inverted-default,
     primary-default: $text-primary-default,
     secondary-default: $text-secondary-default,
     primary-disabled: $text-primary-disabled,
     secondary-disabled: $text-secondary-disabled,
     primary-inverted-default: $text-primary-inverted-default,
     primary-inverted-disabled: $text-primary-inverted-disabled,
-    secondary-inverted-default: $text-secondary-inverted-default,
     secondary-inverted-disabled: $text-secondary-inverted-disabled,
 ) !default;
 
@@ -108,51 +153,6 @@ $emotion-colors: (
     danger-active: $emotion-danger-active,
     danger-disabled: $emotion-danger-disabled,
     danger-background: $emotion-danger-background,
-) !default;
-
-$action-colors: (
-    link-primary-default: $action-link-primary-default,
-    link-primary-hover: $action-link-primary-hover,
-    link-primary-active: $action-link-primary-active,
-    link-primary-disabled: $action-link-primary-disabled,
-    link-primary-visited: $action-link-primary-visited,
-    link-secondary-default: $action-link-secondary-default,
-    link-secondary-hover: $action-link-secondary-hover,
-    link-secondary-active: $action-link-secondary-active,
-    link-secondary-disabled: $action-link-secondary-disabled,
-    primary-default: $action-primary-default,
-    primary-hover: $action-primary-hover,
-    primary-active: $action-primary-active,
-    primary-disabled: $action-primary-disabled,
-    secondary-default: $action-secondary-default,
-    secondary-hover: $action-secondary-hover,
-    secondary-active: $action-secondary-active,
-    secondary-disabled: $action-secondary-disabled,
-    link-secondary-visited: $action-link-secondary-visited,
-    unselected-default: $action-unselected-default,
-    unselected-hover: $action-unselected-hover,
-    unselected-active: $action-unselected-active,
-    unselected-disabled: $action-unselected-disabled,
-    selected-default: $action-selected-default,
-    selected-hover: $action-selected-hover,
-    selected-active: $action-selected-active,
-    selected-disabled: $action-selected-disabled,
-    tertiary-default: $action-tertiary-default,
-    tertiary-hover: $action-tertiary-hover,
-    tertiary-active: $action-tertiary-active,
-    tertiary-disabled: $action-tertiary-disabled,
-    inverted-default: $action-inverted-default,
-    inverted-hover: $action-inverted-hover,
-    inverted-active: $action-inverted-active,
-    inverted-disabled: $action-inverted-disabled,
-) !default;
-
-$border-colors: (
-    main-default: $border-main-default,
-    main-hover: $border-main-hover,
-    main-active: $border-main-active,
-    main-disabled: $border-main-disabled,
-    focus-default: $border-focus-default,
 ) !default;
 
 $background-colors: (

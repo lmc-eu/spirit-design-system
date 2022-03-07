@@ -1,5 +1,35 @@
 // Generated Typography from Supernova. Do not edit manually.
-$heading-xlarge-text: (
+$body-large-text-bold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-text-bold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-text-bold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.875rem,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$heading-xlarge-link: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 3rem,
@@ -23,150 +53,7 @@ $heading-xlarge-text: (
     ),
 ) !default;
 
-$body-medium-text-regular: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-text-regular: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-text-bold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-text-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: italic,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-text-link: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
-$body-large-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-text-bold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-text-italic: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: italic,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-text-link: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
-$body-medium-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-text-regular: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-text-bold: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: italic,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-text-link: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
-$body-small-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
-    ),
-) !default;
-
-$heading-xlarge-link: (
+$heading-xlarge-text: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 3rem,
@@ -382,23 +269,125 @@ $heading-xsmall-link: (
     ),
 ) !default;
 
+$body-medium-text-regular: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-text-regular: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-text-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-large-text-link: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+        text-decoration: underline,
+    ),
+) !default;
+
+$body-large-button: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-text-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-text-link: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+        text-decoration: underline,
+    ),
+) !default;
+
+$body-medium-button: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-text-regular: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.875rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-small-text-link: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.875rem,
+        font-style: normal,
+        font-weight: 400,
+        line-height: 1.5,
+        text-decoration: underline,
+    ),
+) !default;
+
+$body-small-button: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.875rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
 $styles: (
-    heading-xlarge-text: $heading-xlarge-text,
-    body-medium-text-regular: $body-medium-text-regular,
-    body-large-text-regular: $body-large-text-regular,
     body-large-text-bold: $body-large-text-bold,
-    body-large-text-italic: $body-large-text-italic,
-    body-large-text-link: $body-large-text-link,
-    body-large-button: $body-large-button,
     body-medium-text-bold: $body-medium-text-bold,
-    body-medium-text-italic: $body-medium-text-italic,
-    body-medium-text-link: $body-medium-text-link,
-    body-medium-button: $body-medium-button,
-    body-small-text-regular: $body-small-text-regular,
     body-small-text-bold: $body-small-text-bold,
-    body-small-text-link: $body-small-text-link,
-    body-small-button: $body-small-button,
     heading-xlarge-link: $heading-xlarge-link,
+    heading-xlarge-text: $heading-xlarge-text,
     heading-large-text: $heading-large-text,
     heading-large-link: $heading-large-link,
     heading-medium-text: $heading-medium-text,
@@ -407,4 +396,15 @@ $styles: (
     heading-small-link: $heading-small-link,
     heading-xsmall-text: $heading-xsmall-text,
     heading-xsmall-link: $heading-xsmall-link,
+    body-medium-text-regular: $body-medium-text-regular,
+    body-large-text-regular: $body-large-text-regular,
+    body-large-text-italic: $body-large-text-italic,
+    body-large-text-link: $body-large-text-link,
+    body-large-button: $body-large-button,
+    body-medium-text-italic: $body-medium-text-italic,
+    body-medium-text-link: $body-medium-text-link,
+    body-medium-button: $body-medium-button,
+    body-small-text-regular: $body-small-text-regular,
+    body-small-text-link: $body-small-text-link,
+    body-small-button: $body-small-button,
 ) !default;

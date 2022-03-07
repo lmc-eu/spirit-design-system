@@ -2,8 +2,8 @@
 $breakpoint-mobile: 0 !default;
 $container-padding-mobile: 16px !default;
 $grid-gutter-mobile: 16px !default;
-$container-padding-tablet: 32px !default;
 $container-padding-desktop: 32px !default;
+$container-padding-tablet: 32px !default;
 $grid-gutter-tablet: 32px !default;
 $grid-gutter-desktop: 32px !default;
 $breakpoint-tablet: 768px !default;
@@ -18,8 +18,8 @@ $breakpoints: (
 
 $container-paddings: (
     mobile: $container-padding-mobile,
-    tablet: $container-padding-tablet,
     desktop: $container-padding-desktop,
+    tablet: $container-padding-tablet,
 ) !default;
 
 $grid-gutters: (
