@@ -7,9 +7,11 @@ This exported does several operations with tokens:
 - The first step is sorting. Measures are sorted by number in the token name, Generic Tokens (Other) by value, and the rest by its name.
 - Next, each token is grouped and its value is prepared to print. Grouping is made using actual groups in Supernova and if these are not present, a common name prefix is used. Separate token values are printed as separate SCSS variables.
 - Groups are used for printing SCSS maps with references to separate tokens and pluralized names. Borders groups are skipped and colors have their group name suffixed. These maps are printed into SCSS.
+- Shadows are grouped if same name.
+- Gradients names are not used from Figma, but from Supernova.
 
 ### Typography
-As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova.
+As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova. They are grouped by breakpoints.
 
 ## Outputs:
 - _borders.scss

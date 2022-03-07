@@ -7,6 +7,9 @@ function plural(name) {
   if (name === 'radius') {
     return 'radii';
   }
+  if (name.slice(-1) === 's') {
+    return name;
+  }
   return `${name}s`;
 }
 
@@ -126,16 +129,25 @@ Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNu
 
   const vars = [];
   let types = {};
+  const names = [];
   tokens.map((token) => {
     // Get correct name of token
     let name = cleanName(token.name)
-    if (token.origin) {
+    if (token.origin && token.tokenType !== 'Gradient') {
       name = cleanName(token.origin.name)
+    }
+
+    let groupToken = false;
+
+    if (names.indexOf(name) > -1) {
+      groupToken = true;
+    } else {
+      names.push(name);
     }
 
     // Set token types
     let groupName = '';
-    if (groups.length > 0) {
+    if (!groupToken && groups.length > 0) {
       groups.map((group) => {
         if (Object.values(group.tokenIds).indexOf(token.id) > -1 && group.isRoot == false) {
           groupName = singular(cleanName(group.name));
@@ -145,10 +157,12 @@ Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNu
     const split = name.split('-');
     const typeName = groupName === '' ? split[0] : groupName;
     const tokenNameWithoutType = groupName === '' ? name.replace(`${split[0]}-`,'') : name.replace(`${groupName}-`,'');
-    if (types[typeName] && types[typeName].length > 0) {
-      types[typeName].push(tokenNameWithoutType);
-    } else {
-      types[typeName] = [tokenNameWithoutType];
+    if (!groupToken) {
+      if (types[typeName] && types[typeName].length > 0) {
+        types[typeName].push(tokenNameWithoutType);
+      } else {
+        types[typeName] = [tokenNameWithoutType];
+      }
     }
 
     // Set value
@@ -180,7 +194,15 @@ Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNu
     } else {
       value = printUnit(token.value.measure, token.value.unit);
     }
-    vars.push(`$${name}: ${value} !default;`);
+    if (groupToken) {
+      const groupOriginal = vars.filter((item) => item.startsWith(`$${name}: `))[0];
+      const index = vars.indexOf(groupOriginal);
+      if (index > -1) {
+        vars[index] = vars[index].replace(/: (.*) !default;/g, `: ${value}, $1 !default;`);
+      }
+    } else {
+      vars.push(`$${name}: ${value} !default;`);
+    }
   });
 
   const typesPrint = tokens.length === 0 || tokens[0].tokenType === 'Border' ? '' : printTypes(types, tokens[0].tokenType === 'Color');
