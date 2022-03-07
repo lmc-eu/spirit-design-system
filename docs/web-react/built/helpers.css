@@ -1,0 +1,362 @@
+.typography-heading-xlarge-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-xlarge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-xlarge-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-body-medium-text-regular {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-large-text-regular {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-large-text-bold {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-large-text-italic {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-large-text-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+.typography-body-large-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-medium-text-bold {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-medium-text-italic {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-medium-text-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+.typography-body-medium-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-small-text-regular {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-small-text-bold {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.typography-body-small-text-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+.typography-body-small-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-heading-xlarge-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-xlarge-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-xlarge-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-large-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-large-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-large-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-large-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-large-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-large-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-medium-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-medium-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-medium-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-medium-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-medium-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-medium-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-small-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-small-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-small-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-small-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-small-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-small-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-xsmall-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-xsmall-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-xsmall-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+.typography-heading-xsmall-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .typography-heading-xsmall-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1280px) {
+  .typography-heading-xsmall-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+
+/*# sourceMappingURL=helpers.css.map */
