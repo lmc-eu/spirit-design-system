@@ -2,7 +2,6 @@ function cleanName(name) {
   return name.replace(/\s/g, '-').replace(/\//g, '-').replace(/\d+-/g, '').replace(/--+/g, '-').toLowerCase();
 }
 
-
 function plural(name) {
   if (name === 'radius') {
     return 'radii';
@@ -105,8 +104,8 @@ ${value.map((val) => `    ${val}: $${key}-${val},`).join('\n')}
   return result;
 }
 
-Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNum = false, sortByValue = false) {
-  tokens.sort((a, b) => {
+Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortByNum = false, sortByValue = false) {
+  const tokens = allTokens.sort((a, b) => {
     if (sortByNum) {
       const aNumMatch = a.name.match(/\d+$/);
       const bNumMatch = b.name.match(/\d+$/);
@@ -118,12 +117,8 @@ Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNu
     if (sortByValue) {
       return +a.value.text - +b.value.text;
     }
-    let aCompare = a.name.toLowerCase();
-    let bCompare = b.name.toLowerCase();
-    if (a.origin && b.origin) {
-      aCompare = a.origin.name.toLowerCase();
-      bCompare = a.origin.name.toLowerCase();
-    }
+    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
+    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
     return aCompare.localeCompare(bCompare);
   });
 
@@ -210,7 +205,13 @@ Pulsar.registerFunction("generateSimple", function(tokens, groups = {}, sortByNu
   return `${vars.join('\n')}\n${typesPrint}`;
 });
 
-Pulsar.registerFunction("generateTypography", function(tokens = [], defaultFontSize, fontFamilyFallback, breakpointsString = '') {
+Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFontSize, fontFamilyFallback, breakpointsString = '') {
+  const tokens = allTokens.sort((a, b) => {
+    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
+    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
+    return aCompare.localeCompare(bCompare);
+  });
+
   const breakpoints = breakpointsString.trim().split(',');
   const styles = {};
   tokens.map((token) => {
