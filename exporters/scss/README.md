@@ -13,6 +13,9 @@ This exported does several operations with tokens:
 ### Typography
 As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova. They are grouped by breakpoints.
 
+### Sorting
+Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). Except Measures - sorted by name number and Other - sorted by value.
+
 ## Outputs:
 - _borders.scss
 - _colors.scss
