@@ -37,4 +37,10 @@ describe('ButtonLink', () => {
 
     expect(dom.container.querySelector('a').textContent).toBe('Hello World');
   });
+
+  it('should not have default type attribute', () => {
+    const { container } = render(<ButtonLink />);
+
+    expect(container.querySelector('a')).not.toHaveAttribute('type');
+  });
 });

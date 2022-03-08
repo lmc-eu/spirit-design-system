@@ -9,6 +9,7 @@ const defaultProps = {
   href: '#',
   block: false,
   disabled: false,
+  elementType: 'a',
 };
 
 export const ButtonLink = <T extends ElementType = 'a'>(props: SpiritButtonProps<T>): JSX.Element => {
