@@ -26,7 +26,7 @@ export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonA
       role: 'button',
       href: elementType === 'a' && disabled ? undefined : href,
       target: elementType === 'a' ? target : undefined,
-      type,
+      type: elementType === 'a' && type === 'button' ? undefined : type,
       disabled,
       rel: elementType === 'a' ? rel : undefined,
     };
