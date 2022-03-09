@@ -1,0 +1,94 @@
+@use 'sass:map';
+@use 'accessibility';
+@use 'typography';
+
+@mixin field($type, $variants, $theme) {
+    .#{$type} {
+        max-width: 100%;
+    }
+
+    .#{$type}__label {
+        @include typography.generate(map.get($theme, label-typography));
+
+        display: block;
+        margin-bottom: map.get($theme, spacing);
+        color: map.get($theme, label-color-default);
+    }
+
+    .#{$type}__label--hidden {
+        @include accessibility.hide-text();
+    }
+
+    .#{$type}__label--required::after {
+        content: '*';
+        color: map.get($theme, label-required-color);
+    }
+
+    .#{$type}__input {
+        @include typography.generate(map.get($theme, input-typography));
+
+        display: block;
+        max-width: 100%;
+        padding: map.get($theme, input-padding-y) map.get($theme, input-padding-x);
+        color: map.get($theme, input-color-default);
+        background: map.get($theme, input-background);
+        border: map.get($theme, input-border-width) map.get($theme, input-border-style)
+            map.get($theme, input-border-color-default);
+        border-radius: map.get($theme, input-border-radius);
+
+        &::placeholder {
+            color: map.get($theme, input-placeholder-color-default);
+            opacity: 1;
+        }
+    }
+
+    .#{$type}:hover > .#{$type}__input,
+    .#{$type}__input:hover {
+        border-color: map.get($theme, input-border-color-hover);
+    }
+
+    .#{$type}:focus-within,
+    .#{$type}:focus-within:hover,
+    .#{$type} > .#{$type}__input:focus {
+        border-color: map.get($theme, input-border-color-focus);
+        outline: 0;
+    }
+
+    .#{$type}__message {
+        @include typography.generate(map.get($theme, message-typography));
+
+        margin-top: map.get($theme, spacing);
+        color: map.get($theme, message-color-default);
+    }
+
+    @each $variant in $variants {
+        .#{$type}--#{$variant} > .#{$type}__input,
+        .#{$type}--#{$variant}:hover > .#{$type}__input,
+        .#{$type}--#{$variant} > .#{$type}__input:focus {
+            border-color: map.get($theme, input-border-color-#{$variant});
+        }
+
+        .#{$type}--#{$variant} > .#{$type}__message {
+            color: map.get($theme, message-color-#{$variant});
+        }
+    }
+
+    .#{$type}--disabled > .#{$type}__label {
+        color: map.get($theme, label-color-disabled);
+    }
+
+    .#{$type} > .#{$type}__input:disabled,
+    .#{$type}:hover > .#{$type}__input:disabled,
+    .#{$type}--disabled > .#{$type}__input {
+        color: map.get($theme, input-color-disabled);
+        border-color: map.get($theme, input-border-color-disabled);
+
+        &::placeholder {
+            color: map.get($theme, input-placeholder-color-disabled);
+        }
+    }
+
+    .#{$type}--disabled > .#{$type}__message {
+        color: map.get($theme, message-color-disabled);
+    }
+}
