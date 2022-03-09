@@ -18,6 +18,8 @@ $input-border-color-default: tokens.$border-main-default;
 $input-border-color-hover: tokens.$border-main-hover;
 $input-border-color-focus: tokens.$border-focus-default;
 $input-border-color-disabled: tokens.$border-main-disabled;
+$input-border-color-success: tokens.$emotion-success-default;
+$input-border-color-warning: tokens.$emotion-warning-default;
 $input-border-color-error: tokens.$emotion-danger-default;
 $input-border-radius: tokens.$radius-100;
 $input-background: tokens.$background-basic;
@@ -27,6 +29,8 @@ $input-placeholder-color-disabled: tokens.$text-secondary-disabled;
 $message-typography: tokens.$body-medium-text-regular;
 $message-color-default: tokens.$text-secondary-default;
 $message-color-disabled: tokens.$text-secondary-disabled;
+$message-color-success: tokens.$emotion-success-default;
+$message-color-warning: tokens.$emotion-warning-default;
 $message-color-error: tokens.$emotion-danger-default;
 
 $theme: (
@@ -46,6 +50,8 @@ $theme: (
     input-border-color-hover: $input-border-color-hover,
     input-border-color-focus: $input-border-color-focus,
     input-border-color-disabled: $input-border-color-disabled,
+    input-border-color-success: $input-border-color-success,
+    input-border-color-warning: $input-border-color-warning,
     input-border-color-error: $input-border-color-error,
     input-border-radius: $input-border-radius,
     input-background: $input-background,
@@ -54,7 +60,9 @@ $theme: (
     message-typography: $message-typography,
     message-color-default: $message-color-default,
     message-color-disabled: $message-color-disabled,
+    message-color-success: $message-color-success,
+    message-color-warning: $message-color-warning,
     message-color-error: $message-color-error,
 );
 
-$variants: (error);
+$variants: (success, warning, error);
