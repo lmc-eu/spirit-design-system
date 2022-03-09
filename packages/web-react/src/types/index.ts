@@ -7,4 +7,5 @@ export * from './heading';
 export * from './label';
 export * from './link';
 export * from './message';
+export * from './text';
 export * from './textField';
