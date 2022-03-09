@@ -10,6 +10,7 @@ const entryPoints = [
   { dirs: ['components', 'Grid'] },
   { dirs: ['components', 'Stack'] },
   { dirs: ['components', 'Tag'] },
+  { dirs: ['components', 'Text'] },
   { dirs: ['components', 'TextField'] },
 ];
 

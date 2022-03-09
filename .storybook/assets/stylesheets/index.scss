@@ -1,6 +1,7 @@
 @forward '../../../packages/design-tokens/src/scss';
 
 @use '../../../packages/web/src/foundation';
+@use '../../../packages/web/src/helpers';
 
 @use '../../../packages/web/src/components/Alert';
 @use '../../../packages/web/src/components/Button';
