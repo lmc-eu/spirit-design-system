@@ -36,7 +36,8 @@
 }
 
 .Button--square {
-    width: calc((1em * #{map.get(theme.$typography, line-height)}) + (#{theme.$padding-y} * 2));
+    @include tools.square(theme.$breakpoints, theme.$typography, theme.$padding-y, theme.$border-width);
+
     padding-left: 0;
     padding-right: 0;
 }
