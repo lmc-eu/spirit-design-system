@@ -13,6 +13,7 @@ export default {
     type: 'button',
     disabled: { control: 'boolean' },
     block: { control: 'boolean' },
+    isSquare: { control: 'boolean' },
     ariaLabel: { control: 'text' },
     children: {
       control: 'text',

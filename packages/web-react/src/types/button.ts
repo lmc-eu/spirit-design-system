@@ -50,7 +50,9 @@ export interface SpiritButtonProps<T extends ElementType = 'button'>
   /** The color of the button. */
   color: ButtonColor;
   /** Whether the button should be displayed with a block style. */
-  block: boolean;
+  block?: boolean;
+  /** Whether the button should be displayed as a square. */
+  isSquare?: boolean;
   // tag?: ElementType;
   innerRef?: Ref<HTMLButtonElement>;
 }

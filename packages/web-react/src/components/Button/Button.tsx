@@ -9,6 +9,7 @@ const defaultProps = {
   type: 'button',
   block: false,
   disabled: false,
+  isSquare: false,
   elementType: 'button',
 };
 
