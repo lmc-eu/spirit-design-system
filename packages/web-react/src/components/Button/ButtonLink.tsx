@@ -9,6 +9,7 @@ const defaultProps = {
   href: '#',
   block: false,
   disabled: false,
+  isSquare: false,
   elementType: 'a',
 };
 
