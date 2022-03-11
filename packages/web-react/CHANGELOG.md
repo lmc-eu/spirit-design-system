@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.8.0"></a>
+
+# [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.7.0...@lmc-eu/spirit-web-react@0.8.0) (2022-03-11)
+
+### Bug Fixes
+
+- **web-react:** Fix ButtonLink props ([24adcfc](https://github.com/lmc-eu/spirit-design-system/commit/24adcfc))
+
+### Dependencies
+
+- Update all non-major dependencies ([2e73df7](https://github.com/lmc-eu/spirit-design-system/commit/2e73df7))
+- Update all non-major dependencies ([1e0fa1e](https://github.com/lmc-eu/spirit-design-system/commit/1e0fa1e))
+
+### Documentation
+
+- **web-react:** Refactor Grid component story using class name ([2a430fa](https://github.com/lmc-eu/spirit-design-system/commit/2a430fa))
+
+### Features
+
+- Update Button variant colors and add new inverted variant [#DS-148](https://github.com/lmc-eu/spirit-design-system/issues/DS-148) ([d66afb0](https://github.com/lmc-eu/spirit-design-system/commit/d66afb0))
+- **web-react:** Introduce Stack component (refs [#DS-165](https://github.com/lmc-eu/spirit-design-system/issues/DS-165)) ([79e717b](https://github.com/lmc-eu/spirit-design-system/commit/79e717b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.7.0"></a>
 
 # [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.6.1...@lmc-eu/spirit-web-react@0.7.0) (2022-02-26)
