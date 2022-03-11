@@ -27,6 +27,7 @@
     "format": "yarn format:check",
     "format:check": "prettier --check ./",
     "format:fix": "prettier --write ./",
+    "format:fix:changelog": "prettier --write ./packages/**/CHANGELOG.md",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "storybook:build": "build-storybook -o ./.storybook/build",
@@ -41,7 +42,8 @@
     "packages:diff": "lerna diff",
     "packages:changed": "lerna changed",
     "packages:list": "lerna ls",
-    "release": "npm-run-all --serial packages:build && packages:publish"
+    "release": "npm-run-all --serial packages:build && packages:publish",
+    "version": "yarn format:fix:changelog"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
