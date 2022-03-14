@@ -21,6 +21,7 @@ describe('useTextFieldStyleProps', () => {
 
     expect(result.current.classProps.label).toBe('TextField__label TextField__label--required');
   });
+
   it('should return hidden label', () => {
     const props: SpiritTextFieldProps = { isLabelHidden: true };
     const { result } = renderHook(() => useTextFieldStyleProps(props));
