@@ -46,13 +46,13 @@
     "version": "yarn format:fix:changelog"
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.7",
     "@babel/preset-react": "7.16.7",
     "@commitlint/cli": "16.2.1",
-    "@lmc-eu/commitlint-config": "1.0.10",
-    "@lmc-eu/conventional-changelog-lmc-github": "2.0.0",
-    "@lmc-eu/eslint-config-react": "^1.0.0-alpha.2",
-    "@lmc-eu/prettier-config": "1.2.2",
+    "@lmc-eu/commitlint-config": "1.0.11",
+    "@lmc-eu/conventional-changelog-lmc-github": "2.0.1",
+    "@lmc-eu/eslint-config-react": "1.0.0",
+    "@lmc-eu/prettier-config": "1.2.3",
     "@storybook/addon-actions": "6.4.19",
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-links": "6.4.19",
@@ -65,7 +65,7 @@
     "babel-loader": "8.2.3",
     "css-loader": "6.7.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "7.0.4",
     "lerna": "4.0.0",
@@ -78,6 +78,6 @@
     "webpack-cli": "4.9.2"
   },
   "resolutions": {
-    "@types/react": "17.0.39"
+    "@types/react": "17.0.40"
   }
 }

@@ -31,7 +31,7 @@
     "@lmc-eu/spirit-design-tokens": "^0.9.0"
   },
   "devDependencies": {
-    "@lmc-eu/browserslist-config": "1.0.2",
+    "@lmc-eu/browserslist-config": "1.0.3",
     "@lmc-eu/stylelint-config": "3.0.1",
     "autoprefixer": "10.4.2",
     "clean-css-cli": "5.5.2",
