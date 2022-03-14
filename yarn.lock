@@ -2678,10 +2678,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.2.tgz#9daaba842c2e6a257b2680f95173398f15774181"
   integrity sha512-okkRELPEkndQw7wwVeJhLHPaU5L7eJ8yI+KAOtEccKREQ3nmTvVHov5NYQkzvAod7RplOL/iA/dvnt6K1BICkQ==
 
-"@lmc-eu/stylelint-config@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-3.0.0.tgz#362e6a155e0b99133ff1511a96cd6907bbb43c0f"
-  integrity sha512-/gzgKllmSTepmY3ZYwtApauB9ryr2QEfItFgvZVboYor3F32lcSAjB9du9EvFwWsk2RJcDwMKNBTfiUl2BhOeA==
+"@lmc-eu/stylelint-config@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-3.0.1.tgz#e68338aad950eb8c2f8eb09a5a672b0505c72344"
+  integrity sha512-l/f8/8g52IKj/hPCeA73DQVPEV7M4lZTVHzYsDi8ft9V+JR5PP2DDWo/w6fafML8QqPc9hcRLKOueb955OCFaA==
   dependencies:
     postcss-scss "^4.0.3"
     stylelint-order "^4.1.0"
