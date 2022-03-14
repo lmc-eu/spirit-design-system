@@ -2664,7 +2664,7 @@
     compare-func "^2.0.0"
     q "^1.5.1"
 
-"@lmc-eu/eslint-config-base@1.1.3":
+"@lmc-eu/eslint-config-base@1.1.3", "@lmc-eu/eslint-config-base@^1.1.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-base/-/eslint-config-base-1.1.3.tgz#3d1f91457327571284f77cac82540902087ac111"
   integrity sha512-1UQDJRpm8+AlwsTuzI0Or7zmVHLL+WgcI41FU++YqLIFUklS5QzjjPqOQxqaiMLRk7LC5h7JqDOLZlyYUXZG/g==
@@ -2681,6 +2681,15 @@
     eslint-config-airbnb-base "^14.2.1"
     eslint-plugin-import "^2.25.2"
     eslint-plugin-jsdoc "^37.1.0"
+
+"@lmc-eu/eslint-config-jest@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-jest/-/eslint-config-jest-1.0.0.tgz#30c3b128ffbf5b02ec88af31fc0dcad255ab4cea"
+  integrity sha512-r2voWK0oOEeJM3H4eehCCfog0qz+sFxTtOZQtiS2Qw51Ma5y8n6Hp+0IwcIyrxfmF+ER/Mox3P1TuhqJIzhQEQ==
+  dependencies:
+    "@lmc-eu/eslint-config-base" "^1.1.1"
+    eslint-plugin-jest "^25.3.0"
+    eslint-plugin-jest-formatting "^3.1.0"
 
 "@lmc-eu/eslint-config-react@1.0.0":
   version "1.0.0"
@@ -4437,6 +4446,13 @@
     regexpp "^3.2.0"
     semver "^7.3.5"
     tsutils "^3.21.0"
+
+"@typescript-eslint/experimental-utils@^5.0.0":
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-5.15.0.tgz#407bbbdf1d11d24de81cfdf556b3a9f4252ba4ae"
+  integrity sha512-AJOOaBrVqKYWaYDBtgMi9XVDB3YHXlffto/3A4VQ39VVaNqosSOp/nW09G4N/ej8WlzHQB2jTnSfP5wWsXSQJA==
+  dependencies:
+    "@typescript-eslint/utils" "5.15.0"
 
 "@typescript-eslint/parser@5.15.0":
   version "5.15.0"
@@ -7582,6 +7598,18 @@ eslint-plugin-import@2.25.4, eslint-plugin-import@^2.25.2:
     object.values "^1.1.5"
     resolve "^1.20.0"
     tsconfig-paths "^3.12.0"
+
+eslint-plugin-jest-formatting@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-formatting/-/eslint-plugin-jest-formatting-3.1.0.tgz#b26dd5a40f432b642dcc880021a771bb1c93dcd2"
+  integrity sha512-XyysraZ1JSgGbLSDxjj5HzKKh0glgWf+7CkqxbTqb7zEhW7X2WHo5SBQ8cGhnszKN+2Lj3/oevBlHNbHezoc/A==
+
+eslint-plugin-jest@^25.3.0:
+  version "25.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-25.7.0.tgz#ff4ac97520b53a96187bad9c9814e7d00de09a6a"
+  integrity sha512-PWLUEXeeF7C9QGKqvdSbzLOiLTx+bno7/HC9eefePfEb257QFHg7ye3dh80AZVkaa/RQsBB1Q/ORQvg2X7F0NQ==
+  dependencies:
+    "@typescript-eslint/experimental-utils" "^5.0.0"
 
 eslint-plugin-jsdoc@^37.1.0:
   version "37.6.3"

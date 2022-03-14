@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'plugin:prettier/recommended',
+    '@lmc-eu/eslint-config-jest',
   ],
 
   parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
