@@ -4,11 +4,23 @@ import { MessageProps } from './message';
 
 interface InputProps extends InputBase, Validation, ValueBase<string | number>, TextInputBase {}
 
+export type TextFieldType = 'text' | 'password';
+
 export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps {
   /** Text of control label */
   label?: string;
   /** Identificator of input */
   id?: string;
+  /** The type of text field */
+  type: TextFieldType;
+  /** The placeholder for input. */
+  placeholder?: string;
+  /** Whether the input is disabled. */
+  disabled?: boolean;
+  /** Whether the input is required. */
+  required?: boolean;
+  /** Value of the input. */
+  value?: string | number;
 }
 
 export interface SpiritTextFieldProps extends TextFieldProps {

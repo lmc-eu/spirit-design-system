@@ -1,4 +1,4 @@
-export type ValidationState = 'error';
+export type ValidationState = 'success' | 'warning' | 'error';
 
 export interface Validation {
   /** Whether the input should display its "valid" or "invalid" visual styling. */

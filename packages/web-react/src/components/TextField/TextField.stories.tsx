@@ -7,6 +7,12 @@ export default {
   argTypes: {
     id: 'default',
     placeholder: 'Placeholder',
+    type: {
+      control: {
+        type: 'select',
+        options: ['text', 'password'],
+      },
+    },
     disabled: {
       control: 'boolean',
     },
@@ -19,7 +25,7 @@ export default {
     validationState: {
       control: {
         type: 'select',
-        options: ['error'],
+        options: ['success', 'warning', 'error'],
       },
     },
     label: 'Label',
@@ -27,43 +33,36 @@ export default {
   },
 };
 
-const Template = (args: SpiritTextFieldProps) => <TextField {...args} />;
+export const Template = (args: SpiritTextFieldProps) => <TextField {...args} />;
 
-export const DefaultTextField = Template.bind({});
-DefaultTextField.args = {
+export const Default = Template.bind({});
+Default.args = {
+  type: 'text',
   placeholder: 'Placeholder',
   label: 'Label',
   message: 'Message',
 };
 
-export const RequiredTextField = Template.bind({});
-RequiredTextField.args = {
-  placeholder: 'Placeholder',
-  label: 'Label',
-  message: 'Message',
+export const Required = Template.bind({});
+Required.args = {
+  ...Default.args,
   required: true,
 };
 
-export const DisabledTextField = Template.bind({});
-DisabledTextField.args = {
-  placeholder: 'Placeholder',
-  label: 'Label',
-  message: 'Message',
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Default.args,
   disabled: true,
 };
 
-export const ErroredTextField = Template.bind({});
-ErroredTextField.args = {
-  placeholder: 'Placeholder',
-  label: 'Label',
-  message: 'Message',
+export const WithError = Template.bind({});
+WithError.args = {
+  ...Default.args,
   validationState: 'error',
 };
 
-export const HiddenLabelTextField = Template.bind({});
-HiddenLabelTextField.args = {
-  placeholder: 'Placeholder',
-  label: 'Label',
-  message: 'Message',
+export const HiddenLabel = Template.bind({});
+HiddenLabel.args = {
+  ...Default.args,
   isLabelHidden: true,
 };
