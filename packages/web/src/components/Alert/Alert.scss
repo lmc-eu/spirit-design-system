@@ -1,0 +1,31 @@
+@use 'theme';
+@use '../../tools/svg';
+@use '../../tools/typography';
+
+.Alert {
+    @include typography.generate(theme.$typography);
+
+    width: 100%;
+    padding: theme.$space-inner;
+    padding-left: theme.$space-inner + theme.$icon-width + theme.$space-icon;
+    margin-right: theme.$space-icon;
+    background-position: theme.$space-inner center;
+    background-repeat: no-repeat;
+    border-radius: theme.$border-radius;
+}
+
+.Alert strong {
+    font-weight: theme.$emphasis-font-weight;
+}
+
+.Alert--success {
+    color: theme.$success-color;
+    background-image: svg.escape(theme.$icon-success);
+    background-color: theme.$success-background-color;
+}
+
+.Alert--danger {
+    color: theme.$danger-color;
+    background-image: svg.escape(theme.$icon-danger);
+    background-color: theme.$danger-background-color;
+}
