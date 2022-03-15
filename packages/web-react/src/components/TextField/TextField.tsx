@@ -2,9 +2,13 @@ import React from 'react';
 import { SpiritTextFieldProps } from '../../types';
 import { useTextFieldStyleProps } from './useTextFieldStyleProps';
 
+const defaultProps = {
+  type: 'text',
+};
+
 export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useTextFieldStyleProps(props);
-  const { id, placeholder, disabled, required, label, message, value, ...restProps } = modifiedProps;
+  const { id, type, placeholder, disabled, required, label, message, value, ...restProps } = modifiedProps;
 
   return (
     <div className={classProps.root}>
@@ -13,7 +17,7 @@ export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
       </label>
       <input
         {...restProps}
-        type="text"
+        type={type}
         id={id}
         className={classProps.input}
         placeholder={placeholder}
@@ -25,5 +29,7 @@ export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
     </div>
   );
 };
+
+TextField.defaultProps = defaultProps;
 
 export default TextField;
