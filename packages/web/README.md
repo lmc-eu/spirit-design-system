@@ -37,7 +37,8 @@ Import just the components you need in your Sass stylesheet:
 ```
 
 Make sure you have [configured Sass load path][configuring-load-path] for your
-`@tokens` so it's resolved correctly by Sass.
+`@tokens` so it's resolved correctly by Sass. You also need to specify load path
+for `node_modules`.
 
 ## Rebranding
 
