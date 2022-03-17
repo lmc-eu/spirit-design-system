@@ -1,5 +1,6 @@
 @use 'theme';
 @use '../../tools/accessibility';
+@use '../../tools/svg';
 @use '../../tools/typography';
 
 .CheckboxField {
@@ -41,13 +42,13 @@
 
     &:checked {
         color: theme.$input-selected-color;
-        background-image: theme.$input-checked-mark;
+        background-image: svg.escape(theme.$input-checked-mark);
         background-color: theme.$input-selected-color;
     }
 
     &:indeterminate {
         color: theme.$input-selected-color;
-        background-image: theme.$input-indeterminate-mark;
+        background-image: svg.escape(theme.$input-indeterminate-mark);
         background-color: theme.$input-selected-color;
     }
 }
