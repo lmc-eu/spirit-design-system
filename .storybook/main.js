@@ -22,7 +22,10 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sassOptions: {
-              includePaths: [path.resolve(__dirname, '../packages/design-tokens/src/scss')],
+              includePaths: [
+                path.resolve(__dirname, '../node_modules'),
+                path.resolve(__dirname, '../packages/design-tokens/src/scss'),
+              ],
             },
           },
         },

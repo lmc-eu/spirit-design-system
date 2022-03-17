@@ -19,7 +19,7 @@
     "css": "yarn css:compile && yarn css:prefix && yarn css:minify",
     "css:lint": "stylelint --config ../../.stylelintrc.js \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
     "css:compile:components": "sass --load-path=../design-tokens/dist/scss src/components/index.scss dist/css/components.css",
-    "css:compile:foundation": "sass --load-path=../design-tokens/dist/scss src/foundation/index.scss dist/css/foundation.css",
+    "css:compile:foundation": "sass --load-path=../design-tokens/dist/scss --load-path=../../node_modules src/foundation/index.scss dist/css/foundation.css",
     "css:compile:helpers": "sass --load-path=../design-tokens/dist/scss src/helpers/index.scss dist/css/helpers.css",
     "css:compile": "yarn css:compile:components && yarn css:compile:foundation && yarn css:compile:helpers",
     "css:prefix": "postcss --config postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
