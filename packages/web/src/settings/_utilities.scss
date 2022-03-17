@@ -1,0 +1,120 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+
+$utilities: (
+    'display': (
+        responsive: true,
+        property: display,
+        class: d,
+        values: (
+            block,
+            flex,
+            inline,
+            inline-block,
+            inline-flex,
+            none,
+        ),
+    ),
+    'margin-top': (
+        responsive: true,
+        property: margin-top,
+        class: mt,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    'margin-right': (
+        responsive: true,
+        property: margin-right,
+        class: mr,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    'margin-bottom': (
+        responsive: true,
+        property: margin-bottom,
+        class: mb,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    'margin-left': (
+        responsive: true,
+        property: margin-left,
+        class: ml,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
+    ),
+    'margin-x': (
+        responsive: true,
+        property: margin-inline,
+        class: mx,
+        values: tokens.$spaces,
+    ),
+    'margin-y': (
+        responsive: true,
+        property: margin-block,
+        class: my,
+        values: tokens.$spaces,
+    ),
+    'padding-top': (
+        responsive: true,
+        property: padding-top,
+        class: pt,
+        values: tokens.$spaces,
+    ),
+    'padding-right': (
+        responsive: true,
+        property: padding-right,
+        class: pr,
+        values: tokens.$spaces,
+    ),
+    'padding-bottom': (
+        responsive: true,
+        property: padding-bottom,
+        class: pb,
+        values: tokens.$spaces,
+    ),
+    'padding-left': (
+        responsive: true,
+        property: padding-left,
+        class: pl,
+        values: tokens.$spaces,
+    ),
+    'padding-x': (
+        responsive: true,
+        property: padding-inline,
+        class: px,
+        values: tokens.$spaces,
+    ),
+    'padding-y': (
+        responsive: true,
+        property: padding-block,
+        class: py,
+        values: tokens.$spaces,
+    ),
+    'text-align': (
+        responsive: true,
+        property: text-align,
+        class: text,
+        values: left right center,
+    ),
+);

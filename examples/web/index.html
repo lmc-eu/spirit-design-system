@@ -11,40 +11,15 @@
     <link rel="stylesheet" href="built/foundation.min.css">
     <link rel="stylesheet" href="built/components.min.css">
     <link rel="stylesheet" href="built/helpers.min.css">
+    <link rel="stylesheet" href="built/utilities.min.css">
 
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Inter, sans-serif;
-      }
-
-      h1 {
-        margin-block: 3rem;
-      }
-
-      h2,
-      h3,
-      h4 {
-        margin-block: 2em 1em;
-      }
-
       header {
-        padding-block: 1.5rem;
         background-color: #f0f4f5;
-      }
-
-      main {
-        padding-bottom: 3rem;
-      }
-
-      .example-grid {
-        margin-bottom: 3rem;
       }
 
       .example-box {
         min-height: 2rem;
-        box-sizing: border-box;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -67,17 +42,17 @@
       }
     </style>
   </head>
-  <body>
-    <header>
+  <body class="typography-body-medium-text-regular">
+    <header class="py-700">
       <div class="Container">
-        <h1 class="typography-heading-xlarge-text">Spirit Web Demo</h1>
+        <h1 class="typography-heading-xlarge-text my-1000">Spirit Web Demo</h1>
       </div>
     </header>
 
-    <main>
+    <main class="pb-1000">
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">Button</h2>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Button</h2>
           <button type="button" class="Button Button--primary">Primary button</button>
           <button type="button" class="Button Button--secondary">Secondary button</button>
           <button type="button" class="Button Button--tertiary">Tertiary button</button>
@@ -85,7 +60,7 @@
           <div class="example-box">
             <button type="button" class="Button Button--inverted">Inverted button</button>
           </div>
-          <h2 class="typography-heading-small-text">Square Button</h2>
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Square Button</h3>
           <button type="button" class="Button Button--primary Button--square">🚀</button>
           <button type="button" class="Button Button--secondary Button--square">🚀</button>
           <button type="button" class="Button Button--tertiary Button--square">🚀</button>
@@ -98,7 +73,7 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">Tag</h2>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Tag</h2>
           <span class="Tag Tag--default-light">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="Tag Tag--default-dark">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="Tag Tag--info-light">I'm tag. I feel like filling marketing pages :-)</span>
@@ -114,9 +89,9 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">Grid</h2>
-          <h3 class="typography-heading-small-text">Equal Columns</h3>
-          <div class="Grid Grid--cols-12 example-grid">
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Grid</h2>
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Equal Columns</h3>
+          <div class="Grid Grid--cols-12 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
@@ -130,7 +105,7 @@
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="Grid Grid--cols-6 example-grid">
+          <div class="Grid Grid--cols-6 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
@@ -138,34 +113,34 @@
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="Grid Grid--cols-4 example-grid">
+          <div class="Grid Grid--cols-4 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="Grid Grid--cols-3 example-grid">
+          <div class="Grid Grid--cols-3 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="Grid Grid--cols-2 example-grid">
+          <div class="Grid Grid--cols-2 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="Grid Grid--cols-1 example-grid">
+          <div class="Grid Grid--cols-1 mb-1000">
             <div class="example-box"></div>
           </div>
-          <h3 class="typography-heading-small-text">Responsive Columns</h3>
-          <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4 example-grid">
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Responsive Columns</h3>
+          <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4 mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <h3 class="typography-heading-small-text">Narrow Column Layout</h3>
-          <div class="Grid Grid--narrow example-grid">
-            <div class="example-box">
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Narrow Column Layout</h3>
+          <div class="Grid Grid--narrow mb-1000">
+            <div class="example-box text-center">
               Full on mobile, 8 cols on tablet and 6 cols on desktop. Centered.
             </div>
           </div>
@@ -174,7 +149,7 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">TextField</h2>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">TextField</h2>
           <div class="example-TextField-grid">
             <div class="TextField">
               <label for="textfield1" class="TextField__label TextField__label--required">Label</label>
@@ -226,7 +201,7 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">PasswordField</h2>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">PasswordField</h2>
           <div class="example-TextField-grid">
             <div class="PasswordField">
               <label for="PasswordField1" class="PasswordField__label">Label</label>
@@ -271,8 +246,8 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">Stack</h2>
-          <h3 class="typography-heading-small-text">Stacked form fields</h3>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Stack</h2>
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked form fields</h3>
           <div class="Stack">
             <div class="TextField">
               <label for="textfieldStack1" class="TextField__label TextField__label--required">Label</label>
@@ -283,7 +258,7 @@
               <input type="text" id="textfieldStack2" class="TextField__input" placeholder="Placeholder" />
             </div>
           </div>
-          <h3 class="typography-heading-small-text">Stacked blocks</h3>
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked blocks</h3>
           <ul class="Stack">
             <li>
               <div class="example-box">
@@ -306,8 +281,8 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">Helpers</h2>
-          <h3 class="typography-heading-small-text">Typography</h3>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Helpers</h2>
+          <h3 class="typography-heading-small-text mt-1100 mb-800">Typography</h3>
           <p><a href="#" class="typography-heading-xlarge-link-no-underline">Heading XLarge Link No Underline</a></p>
           <p><a href="#" class="typography-heading-xlarge-link-underline">Heading XLarge Link Underline</a></p>
           <p class="typography-heading-xlarge-text">Heading XLarge Text</p>
@@ -349,7 +324,7 @@
 
       <section>
         <div class="Container">
-          <h2 class="typography-heading-medium-text">CheckboxField</h2>
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">CheckboxField</h2>
           <div class="example-CheckboxField-grid">
             <label for="checkboxfield1" class="CheckboxField">
               <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" />
