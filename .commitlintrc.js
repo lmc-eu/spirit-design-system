@@ -3,7 +3,7 @@ module.exports = {
   ignores: [
     (commit) => commit.includes('[ci-skip]'),
     (commit) => commit.includes('Pull request'),
-    (commit) => commit === 'Updated styles and tokens',
+    (commit) => commit.includes('Updated styles and tokens'),
   ],
   rules: {
     'scope-enum': [
