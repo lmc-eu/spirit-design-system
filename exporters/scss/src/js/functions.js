@@ -104,7 +104,7 @@ ${value.map((val) => `    ${val}: $${key}-${val},`).join('\n')}
   return result;
 }
 
-Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortByNum = false, sortByValue = false) {
+Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortByNum = false, sortByValue = false, breakpointsString = '') {
   const tokens = allTokens.sort((a, b) => {
     if (sortByNum) {
       const aNumMatch = a.name.match(/\d+$/);
@@ -113,6 +113,21 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
       if (aNumMatch && bNumMatch) {
         return aNumMatch[0] - bNumMatch[0];
       }
+    }
+    if (breakpointsString.length > 0) {
+      const breakpoints = breakpointsString.trim().split(',');
+      let aBreakpoint = '';
+      let bBreakpoint = '';
+      breakpoints.some((substring)=> {
+        if ((a.origin ? a.origin.name : a.name).includes(substring)) {
+          aBreakpoint = substring;
+        }
+        if ((b.origin ? b.origin.name : b.name).includes(substring)) {
+          bBreakpoint = substring;
+        }
+        return false;
+      });
+      return breakpoints.indexOf(aBreakpoint) - breakpoints.indexOf(bBreakpoint);
     }
     if (sortByValue) {
       return +a.value.text - +b.value.text;
@@ -152,7 +167,7 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
     const split = name.split('-');
     const typeName = groupName === '' ? split[0] : groupName;
     const tokenNameWithoutType = groupName === '' ? name.replace(`${split[0]}-`,'') : name.replace(`${groupName}-`,'');
-    if (!groupToken) {
+    if (!groupToken && split[0] !== name) {
       if (types[typeName] && types[typeName].length > 0) {
         types[typeName].push(tokenNameWithoutType);
       } else {
