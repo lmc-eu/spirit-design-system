@@ -1,4 +1,5 @@
 // Generated Generic Tokens (Other) from Supernova. Do not edit manually.
 {[ if (ds.tokensByType("GenericToken", ds.currentBrand().id)).count() > 0 ]}
-{{ generateSimple(ds.tokensByType("GenericToken", ds.currentBrand().id), ds.tokenGroupsOfType("GenericToken", ds.currentBrand().id), false, true) }}
+{[ let breakpoints = exportConfiguration().breakpoints /]}
+{{ generateSimple(ds.tokensByType("GenericToken", ds.currentBrand().id), ds.tokenGroupsOfType("GenericToken", ds.currentBrand().id), false, true, breakpoints) }}
 {[/]}
