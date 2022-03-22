@@ -1,7 +1,7 @@
-{% set _type = (props.type is defined) ? props.type : 'text' %}
-{% set _componentClassName = _type == 'text' ? 'TextField' : 'PasswordField' %}
-{% set _className = _spiritClassPrefix ~ _componentClassName %}
+{% set _className = _spiritClassPrefix ~ 'CheckboxField' %}
 {% set _id = (props.id is defined) ? props.id : '' %}
+
+{% set _textClass = _className ~ '__text' %}
 
 {% set _label = (props.label is defined) ? props.label : '' %}
 {% set _labelClass = _className ~ '__label' %}
@@ -13,24 +13,29 @@
 {% set _InputClass = _className ~ '__input' %}
 
 {% set _disabled = (props.disabled is defined) ? ' disabled="true"' : '' %}
+{% set _checked = (props.checked is defined) ? ' checked="checked"' : '' %}
 {% set _required = (props.required is defined) ? ' required="true"' : '' %}
 {% set _disabledClass = (props.disabled is defined) ? ' ' ~ _className ~ '--disabled' : '' %}
 {% set _validationStateClass = (props.validationState is defined) ? ' ' ~ _className ~ '--' ~ props.validationState : '' %}
-{% set _placeholder = (props.placeholder is defined) ? ' placeholder="' ~ props.placeholder ~ '"' : '' %}
 {% set _value = (props.value is defined) ? props.value : '' %}
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 
 <div class="{{ _className }}{{ _disabledClass }}{{ _validationStateClass }}{{ _class }}">
-    <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label }}</label>
-    <input
-        type="{{ _type }}"
-        id="{{ _id }}"
-        name="{{ _inputName }}"
-        class="{{ _InputClass }}"
-        {{ _disabled|raw }}
-        {{ _placeholder|raw }}
-        {{ _required|raw }}
-        value="{{ _value }}"
-    />
+    <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">
+        <input
+            type="checkbox"
+            id="{{ _id }}"
+            name="{{ _inputName }}"
+            class="{{ _InputClass }}"
+            {{ _checked|raw }}
+            {{ _disabled|raw }}
+            {{ _required|raw }}
+            value="{{ _value }}"
+        />
+        <span class="{{ _textClass }}">
+            <span class="{{ _labelClass }}">{{ _label }}</span>
+            {% if props.message is defined %}<span class="{{ _className }}__message">{{ props.message }}</span>{% endif %}
+        </span>
+    </label>
     {% if props.message is defined %}<div class="{{ _className }}__message">{{ props.message }}</div>{% endif %}
 </div>

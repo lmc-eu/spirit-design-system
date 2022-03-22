@@ -2,7 +2,7 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
-- Add `ButtonLink`, `Container`, `Grid`, `Stack` and `TextField` component
+- Add `ButtonLink`, `Container`, `Grid`, `Stack`, `TextField` and `CheckboxField` component
 - Add Snapshot tests
 - Update documentation
 - Bugfix camelCase filename in compiler
