@@ -119,4 +119,13 @@ final class ComponentTest extends TestCase
             ],
         ];
     }
+
+    public function testShouldRenderComponentWithCamelCaseName(): void
+    {
+        $html = $this->twig->render('test_component_camel_case_name.twig');
+
+        $this->assertEquals(<<<HTML
+        <a href="#" class="Button Button--primary">Link Button</a>
+        HTML, $html);
+    }
 }
