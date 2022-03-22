@@ -1,0 +1,17 @@
+@use '@tokens' as tokens;
+
+:any-link {
+    text-decoration: none;
+}
+
+a {
+    color: tokens.$action-link-primary-default;
+
+    &:hover {
+        color: tokens.$action-link-primary-hover;
+    }
+
+    &:active {
+        color: tokens.$action-link-primary-active;
+    }
+}
