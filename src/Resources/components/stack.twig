@@ -1,0 +1,7 @@
+{% set _className = _spiritClassPrefix ~ 'Stack' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{% set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
+
+<{{ _elementType }} class="{{ _className }}{{ _class }}">
+{%- block content %}{% endblock %}
+</{{ _elementType }}>
