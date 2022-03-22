@@ -431,7 +431,7 @@
 .PasswordField:focus-within,
 .PasswordField:focus-within:hover,
 .PasswordField > .PasswordField__input:focus {
-  border-color: #61b3ff;
+  border-color: #4666ae;
   outline: 0;
 }
 
@@ -621,7 +621,7 @@
 .TextField:focus-within,
 .TextField:focus-within:hover,
 .TextField > .TextField__input:focus {
-  border-color: #61b3ff;
+  border-color: #4666ae;
   outline: 0;
 }
 

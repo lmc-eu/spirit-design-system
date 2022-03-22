@@ -296,6 +296,10 @@ table {
   border-spacing: 0;
 }
 
+:any-link {
+  text-decoration: none;
+}
+
 address,
 blockquote,
 h1,
