@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '../settings/links' as links-settings;
+@use '../tools/links';
+
+@include links.variants('.link', links-settings.$variants, (default, hover, active, disabled));
+
+// All disabled links have default cursor
+.link-disabled {
+    cursor: default;
+}
+
+// Allows link underline everywhere, except for headings
+.link-underlined {
+    text-decoration: underline;
+}
+
+// All links in headings behave the same, underlined only in hover and active states
+[class*='typography-heading'] a {
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+// Only links in headings have visited state
+[class*='typography-heading'] :visited {
+    color: map.get(links-settings.$variants, primary, visited);
+}
+
+@include links.variants('[class*="typography-heading"] .link', links-settings.$variants, visited);
