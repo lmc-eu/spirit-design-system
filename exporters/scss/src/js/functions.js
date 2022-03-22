@@ -278,6 +278,9 @@ Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFo
   const vars = [];
   const list = [];
   Object.entries(styles).forEach(([styleName, styleBreakpoints]) => {
+    if (styleName.includes('-link-')) {
+      return;
+    }
     list.push(`${styleName}: $${styleName},`)
     const breakpointValues = [];
     breakpoints.map((breakpoint) => {
