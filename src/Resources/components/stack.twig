@@ -3,5 +3,5 @@
 {% set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
 
 <{{ _elementType }} class="{{ _className }}{{ _class }}">
-{%- block content %}{% endblock %}
+{% block content %}{% endblock %}
 </{{ _elementType }}>

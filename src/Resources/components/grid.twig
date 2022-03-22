@@ -1,15 +1,15 @@
 {% set _className = _spiritClassPrefix ~ 'Grid' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
-{% set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
-{% set _layoutClass = (props.layout is defined) ? ' Grid--' ~  props.layout : '' -%}
-{% set _colsClass = (props.cols is defined) ? ' Grid--cols-' ~  props.cols : '' -%}
-{% set _tabletClass = (props.tablet is defined) ? ' Grid--table--cols-' ~  props.tablet : '' -%}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _elementType = (props.elementType is defined) ? props.elementType : 'div' %}
+{% set _layoutClass = (props.layout is defined) ? ' Grid--' ~  props.layout : '' %}
+{% set _colsClass = (props.cols is defined) ? ' Grid--cols-' ~  props.cols : '' %}
+{% set _tabletClass = (props.tablet is defined) ? ' Grid--table--cols-' ~  props.tablet : '' %}
 {% set _desktopClass = (props.desktop is defined) ? ' Grid--desktop--cols-' ~  props.desktop : '' -%}
 
 {% if props.cols is defined and props.tablet is defined  and props.desktop %}
-    {% set _layoutClass = '' -%}
+    {% set _layoutClass = '' %}
 {% endif %}
 
 <{{ _elementType }} class="{{ _className }}{{ _layoutClass }}{{ _colsClass }}{{ _class }}">
-{%- block content %}{% endblock %}
+{% block content %}{% endblock %}
 </{{ _elementType }}>
