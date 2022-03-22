@@ -81,7 +81,7 @@ class ComponentTagCompiler
 
     protected function componentStartString(string $component, string $attributes): string
     {
-        return "{% embed \"@" . $this->twigPathAlias . "/" . mb_strtolower($component) . ".twig\" with { props: $attributes } %}";
+        return "{% embed \"@" . $this->twigPathAlias . "/" . lcfirst($component) . ".twig\" with { props: $attributes } %}";
     }
 
     /**

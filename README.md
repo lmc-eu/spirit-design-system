@@ -96,8 +96,15 @@ or pure original implementation
 # Spirit Components
 
 - [Button](./docs/Button.md)
+- [ButtonLink](./docs/ButtonLink.md)
+- [Container](./docs/Container.md)
+- [Grid](./docs/Grid.md)
+- [Stack](./docs/Stack.md)
 - [Tag](./docs/Tag.md)
+- [TextField](./docs/TextField.md)
+- [CheckboxField](./docs/CheckboxField.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
+if you want to contribute, read guide [here](./docs/contribution.md).
 
 [Spirit Design System]: https://github.com/lmc-eu/spirit-design-system
