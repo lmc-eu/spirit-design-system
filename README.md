@@ -101,6 +101,7 @@ or pure original implementation
 - [Grid](./docs/Grid.md)
 - [Stack](./docs/Stack.md)
 - [Tag](./docs/Tag.md)
+- [TextField](./docs/TextField.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
