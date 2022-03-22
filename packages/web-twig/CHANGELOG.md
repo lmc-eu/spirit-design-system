@@ -2,7 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
-- Add ButtonLink component
+- Add `ButtonLink`, `Container` and `Grid` component
+- Update documentation
 - Bugfix camelCase filename in compiler
 
 ## 1.2.0 - 2021-12-15
