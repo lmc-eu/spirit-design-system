@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.9.0"></a>
+
+# [0.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.8.0...@lmc-eu/spirit-web-react@0.9.0) (2022-03-22)
+
+### Dependencies
+
+- Update all non-major dependencies ([3fd178b](https://github.com/lmc-eu/spirit-design-system/commit/3fd178b))
+- Update all non-major dependencies ([f464e89](https://github.com/lmc-eu/spirit-design-system/commit/f464e89))
+
+### Documentation
+
+- **web-react:** Fix typo in TextField doc ([eb328a3](https://github.com/lmc-eu/spirit-design-system/commit/eb328a3))
+- **web-react:** Introduce missing button variants in storybook ([d4ba453](https://github.com/lmc-eu/spirit-design-system/commit/d4ba453))
+
+### Features
+
+- **web-react:** Introduce CheckboxField component (refs [#DS-136](https://github.com/lmc-eu/spirit-design-system/issues/DS-136)) ([89514c8](https://github.com/lmc-eu/spirit-design-system/commit/89514c8))
+- **web-react:** Introduce isSquare prop on Button component ([f0ead80](https://github.com/lmc-eu/spirit-design-system/commit/f0ead80))
+- **web-react:** Introduce PasswordField component (refs [#DS-149](https://github.com/lmc-eu/spirit-design-system/issues/DS-149)) ([5f7a31e](https://github.com/lmc-eu/spirit-design-system/commit/5f7a31e))
+
+### Styles
+
+- **ci:** Introduce ES Lint ruleset for Jest tests ([63e462d](https://github.com/lmc-eu/spirit-design-system/commit/63e462d))
+- **web-react:** Reformat codebase using new eslint rules ([c2e3f5d](https://github.com/lmc-eu/spirit-design-system/commit/c2e3f5d))
+- **web-react:** Use of @lmc-eu/eslint-config-react ([683e13f](https://github.com/lmc-eu/spirit-design-system/commit/683e13f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.8.0"></a>
 
 # [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.7.0...@lmc-eu/spirit-web-react@0.8.0) (2022-03-11)

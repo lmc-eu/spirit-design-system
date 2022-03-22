@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.11.0"></a>
+
+# [0.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.10.0...@lmc-eu/spirit-web@0.11.0) (2022-03-22)
+
+### Bug Fixes
+
+- **web:** Fix foundation normalize path ([4ac9042](https://github.com/lmc-eu/spirit-design-system/commit/4ac9042))
+- **web:** Fix Square Button width and show it in examples, fixes [#193](https://github.com/lmc-eu/spirit-design-system/issues/193) ([b6dc9ac](https://github.com/lmc-eu/spirit-design-system/commit/b6dc9ac))
+
+### Dependencies
+
+- Update all non-major dependencies ([3fd178b](https://github.com/lmc-eu/spirit-design-system/commit/3fd178b))
+- Update all non-major dependencies ([f464e89](https://github.com/lmc-eu/spirit-design-system/commit/f464e89))
+- Update dependency @lmc-eu/stylelint-config to v3.0.1 ([f43d4f6](https://github.com/lmc-eu/spirit-design-system/commit/f43d4f6))
+- Update dependency stylelint to v14 ([cf14c4b](https://github.com/lmc-eu/spirit-design-system/commit/cf14c4b))
+- Update dependency stylelint-order to v5 ([97664aa](https://github.com/lmc-eu/spirit-design-system/commit/97664aa))
+
+### Features
+
+- **web:** Add svg escape tool and use non base64 encoded svg in Checkboxfield [#DS-177](https://github.com/lmc-eu/spirit-design-system/issues/DS-177) ([9a46cca](https://github.com/lmc-eu/spirit-design-system/commit/9a46cca))
+- **web:** Add Utilities classes for display, margins, paddings and text align [#DS-166](https://github.com/lmc-eu/spirit-design-system/issues/DS-166) ([ebfe8be](https://github.com/lmc-eu/spirit-design-system/commit/ebfe8be))
+- **web:** Introduce Alert component (refs [#DS-164](https://github.com/lmc-eu/spirit-design-system/issues/DS-164)) ([0665fca](https://github.com/lmc-eu/spirit-design-system/commit/0665fca))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.10.0"></a>
 
 # [0.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.9.0...@lmc-eu/spirit-web@0.10.0) (2022-03-11)
