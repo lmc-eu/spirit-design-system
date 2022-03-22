@@ -1,4 +1,6 @@
-{% set _className = _spiritClassPrefix ~ 'TextField' %}
+{% set _type = (props.type is defined) ? props.type : 'text' %}
+{% set _componentClassName = _type == 'text' ? 'TextField' : 'PasswordField' %}
+{% set _className = _spiritClassPrefix ~ _componentClassName %}
 {% set _id = (props.id is defined) ? props.id : '' %}
 
 {% set _label = (props.label is defined) ? props.label : '' %}
@@ -7,7 +9,7 @@
 {% set _labelClassHidden = (props.isLabelHidden is defined) ? ' ' ~ _labelClass ~ '--hidden' : '' %}
 
 {% set _inputName = (props.name is defined) ? props.name : '' %}
-{% set _InputType = (props.type is defined) ? props.type : 'text' %}
+{% set _type = (props.type is defined) ? props.type : 'text' %}
 {% set _InputClass = _className ~ '__input' %}
 
 {% set _disabled = (props.disabled is defined) ? ' disabled="true"' : '' %}
@@ -21,7 +23,7 @@
 <div class="{{ _className }}{{ _disabledClass }}{{ _validationStateClass }}{{ _class }}">
     <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label }}</label>
     <input
-        type="{{ _InputType }}"
+        type="{{ _type }}"
         id="{{ _id }}"
         name="{{ _inputName }}"
         class={{ _InputClass }}

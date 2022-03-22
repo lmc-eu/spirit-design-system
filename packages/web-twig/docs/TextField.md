@@ -1,6 +1,6 @@
 # TextField
 
-This is Twig implementation of the [TextField] component.
+This is Twig implementation of the [TextField] and [PasswordField] component.
 
 ## Examples
 pure implementation:
@@ -39,3 +39,4 @@ With Html syntax lexer (enabled by default):
 | `class`           | string                        | Additional class name          |
 
 [TextField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/TextField
+[PasswordField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/PasswordField
