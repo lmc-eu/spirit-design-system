@@ -9,27 +9,6 @@ $body-large-button: (
     ),
 ) !default;
 
-$body-large-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-large-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
 $body-large-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -67,27 +46,6 @@ $body-medium-button: (
         font-style: normal,
         font-weight: 600,
         line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-medium-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
     ),
 ) !default;
 
@@ -131,27 +89,6 @@ $body-small-button: (
     ),
 ) !default;
 
-$body-small-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-small-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
 $body-small-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -182,27 +119,6 @@ $body-small-text-regular: (
     ),
 ) !default;
 
-$body-xsmall-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.75rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-    ),
-) !default;
-
-$body-xsmall-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.75rem,
-        font-style: normal,
-        font-weight: 400,
-        line-height: 1.5,
-        text-decoration: underline,
-    ),
-) !default;
-
 $body-xsmall-text-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -210,57 +126,6 @@ $body-xsmall-text-regular: (
         font-style: normal,
         font-weight: 400,
         line-height: 1.5,
-    ),
-) !default;
-
-$heading-large-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-) !default;
-
-$heading-large-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
     ),
 ) !default;
 
@@ -288,57 +153,6 @@ $heading-large-text: (
     ),
 ) !default;
 
-$heading-medium-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-) !default;
-
-$heading-medium-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 2rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-) !default;
-
 $heading-medium-text: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -360,57 +174,6 @@ $heading-medium-text: (
         font-style: normal,
         font-weight: 700,
         line-height: 1.2,
-    ),
-) !default;
-
-$heading-small-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.5rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.5rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-) !default;
-
-$heading-small-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.5rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.5rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
     ),
 ) !default;
 
@@ -438,57 +201,6 @@ $heading-small-text: (
     ),
 ) !default;
 
-$heading-xlarge-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 4rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 4rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-) !default;
-
-$heading-xlarge-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 3rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 4rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 4rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-) !default;
-
 $heading-xlarge-text: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -510,57 +222,6 @@ $heading-xlarge-text: (
         font-style: normal,
         font-weight: 700,
         line-height: 1.2,
-    ),
-) !default;
-
-$heading-xsmall-link-no-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-    ),
-) !default;
-
-$heading-xsmall-link-underline: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    tablet: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
-    ),
-    desktop: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.25rem,
-        font-style: normal,
-        font-weight: 700,
-        line-height: 1.2,
-        text-decoration: underline,
     ),
 ) !default;
 
@@ -590,39 +251,21 @@ $heading-xsmall-text: (
 
 $styles: (
     body-large-button: $body-large-button,
-    body-large-link-no-underline: $body-large-link-no-underline,
-    body-large-link-underline: $body-large-link-underline,
     body-large-text-bold: $body-large-text-bold,
     body-large-text-italic: $body-large-text-italic,
     body-large-text-regular: $body-large-text-regular,
     body-medium-button: $body-medium-button,
-    body-medium-link-no-underline: $body-medium-link-no-underline,
-    body-medium-link-underline: $body-medium-link-underline,
     body-medium-text-bold: $body-medium-text-bold,
     body-medium-text-italic: $body-medium-text-italic,
     body-medium-text-regular: $body-medium-text-regular,
     body-small-button: $body-small-button,
-    body-small-link-no-underline: $body-small-link-no-underline,
-    body-small-link-underline: $body-small-link-underline,
     body-small-text-bold: $body-small-text-bold,
     body-small-text-italic: $body-small-text-italic,
     body-small-text-regular: $body-small-text-regular,
-    body-xsmall-link-no-underline: $body-xsmall-link-no-underline,
-    body-xsmall-link-underline: $body-xsmall-link-underline,
     body-xsmall-text-regular: $body-xsmall-text-regular,
-    heading-large-link-no-underline: $heading-large-link-no-underline,
-    heading-large-link-underline: $heading-large-link-underline,
     heading-large-text: $heading-large-text,
-    heading-medium-link-no-underline: $heading-medium-link-no-underline,
-    heading-medium-link-underline: $heading-medium-link-underline,
     heading-medium-text: $heading-medium-text,
-    heading-small-link-no-underline: $heading-small-link-no-underline,
-    heading-small-link-underline: $heading-small-link-underline,
     heading-small-text: $heading-small-text,
-    heading-xlarge-link-no-underline: $heading-xlarge-link-no-underline,
-    heading-xlarge-link-underline: $heading-xlarge-link-underline,
     heading-xlarge-text: $heading-xlarge-text,
-    heading-xsmall-link-no-underline: $heading-xsmall-link-no-underline,
-    heading-xsmall-link-underline: $heading-xsmall-link-underline,
     heading-xsmall-text: $heading-xsmall-text,
 ) !default;
