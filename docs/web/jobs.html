@@ -11,17 +11,6 @@
     <link rel="stylesheet" href="built/jobs.css">
 
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
-      }
-
-      h1 {
-        margin-block: 3rem;
-      }
-
       h1 span {
         color: rgba(255, 255, 255, 0.66);
       }
@@ -31,29 +20,13 @@
         color: #f90;
       }
 
-      h2,
-      h3,
-      h4 {
-        margin-block: 2em 1em;
-      }
-
       header {
-        padding-block: 1.5rem;
         color: #fff;
         background-color: #19325a;
       }
 
-      main {
-        padding-bottom: 3rem;
-      }
-
-      .example-grid {
-        margin-bottom: 3rem;
-      }
-
       .example-box {
         min-height: 2rem;
-        box-sizing: border-box;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -76,17 +49,17 @@
       }
     </style>
   </head>
-  <body>
-    <header>
+  <body class="jobs-typography-body-medium-text-regular">
+    <header class="jobs-py-700">
       <div class="jobs-Container">
-        <h1 class="jobs-typography-heading-xlarge-text">Spirit Web Demo <span>—</span> <em>Jobs</em></h1>
+        <h1 class="jobs-typography-heading-xlarge-text jobs-my-1000">Spirit Web Demo <span>—</span> <em>Jobs</em></h1>
       </div>
     </header>
 
-    <main>
+    <main class="jobs-pb-1000">
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">Button</h2>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">Button</h2>
           <button type="button" class="jobs-Button jobs-Button--primary">Primary button</button>
           <button type="button" class="jobs-Button jobs-Button--secondary">Secondary button</button>
           <button type="button" class="jobs-Button jobs-Button--tertiary">Tertiary button</button>
@@ -94,7 +67,7 @@
           <div class="example-box">
             <button type="button" class="jobs-Button jobs-Button--inverted">Inverted button</button>
           </div>
-          <h2 class="jobs-typography-heading-small-text">Square Button</h2>
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Square Button</h3>
           <button type="button" class="jobs-Button jobs-Button--primary jobs-Button--square">🚀</button>
           <button type="button" class="jobs-Button jobs-Button--secondary jobs-Button--square">🚀</button>
           <button type="button" class="jobs-Button jobs-Button--tertiary jobs-Button--square">🚀</button>
@@ -107,7 +80,7 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">Tag</h2>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">Tag</h2>
           <span class="jobs-Tag jobs-Tag--default-light">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="jobs-Tag jobs-Tag--default-dark">I'm tag. I feel like filling marketing pages :-)</span>
           <span class="jobs-Tag jobs-Tag--info-light">I'm tag. I feel like filling marketing pages :-)</span>
@@ -123,9 +96,9 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">Grid</h2>
-          <h3 class="jobs-typography-heading-small-text">Equal Columns</h3>
-          <div class="jobs-Grid jobs-Grid--cols-12 example-grid">
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">Grid</h2>
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Equal Columns</h3>
+          <div class="jobs-Grid jobs-Grid--cols-12 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
@@ -139,7 +112,7 @@
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="jobs-Grid jobs-Grid--cols-6 example-grid">
+          <div class="jobs-Grid jobs-Grid--cols-6 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
@@ -147,33 +120,33 @@
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="jobs-Grid jobs-Grid--cols-4 example-grid">
+          <div class="jobs-Grid jobs-Grid--cols-4 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="jobs-Grid jobs-Grid--cols-3 example-grid">
+          <div class="jobs-Grid jobs-Grid--cols-3 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="jobs-Grid jobs-Grid--cols-2 example-grid">
+          <div class="jobs-Grid jobs-Grid--cols-2 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <div class="jobs-Grid jobs-Grid--cols-1 example-grid">
+          <div class="jobs-Grid jobs-Grid--cols-1 jobs-mb-1000">
             <div class="example-box"></div>
           </div>
-          <h3 class="jobs-typography-heading-small-text">Responsive Columns</h3>
-          <div class="jobs-Grid jobs-Grid--cols-2 jobs-Grid--tablet--cols-3 jobs-Grid--desktop--cols-4 example-grid">
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Responsive Columns</h3>
+          <div class="jobs-Grid jobs-Grid--cols-2 jobs-Grid--tablet--cols-3 jobs-Grid--desktop--cols-4 jobs-mb-1000">
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
             <div class="example-box"></div>
           </div>
-          <h3 class="jobs-typography-heading-small-text">Narrow Column Layout</h3>
-          <div class="jobs-Grid jobs-Grid--narrow example-grid">
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Narrow Column Layout</h3>
+          <div class="jobs-Grid jobs-Grid--narrow jobs-mb-1000">
             <div class="example-box">
               Full on mobile, 8 cols on tablet and 6 cols on desktop. Centered.
             </div>
@@ -183,7 +156,7 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">TextField</h2>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">TextField</h2>
           <div class="example-TextField-grid">
             <div class="jobs-TextField">
               <label for="textfield1" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
@@ -235,7 +208,7 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">PasswordField</h2>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">PasswordField</h2>
           <div class="example-TextField-grid">
             <div class="jobs-PasswordField">
               <label for="PasswordField1" class="jobs-PasswordField__label">Label</label>
@@ -280,8 +253,8 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">Stack</h2>
-          <h3 class="jobs-typography-heading-small-text">Stacked form fields</h3>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">Stack</h2>
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Stacked form fields</h3>
           <div class="jobs-Stack">
             <div class="jobs-TextField">
               <label for="textfieldStack1" class="Tjobs-extField__label jobs-TextField__label--required">Label</label>
@@ -292,7 +265,7 @@
               <input type="text" id="textfieldStack2" class="jobs-TextField__input" placeholder="Placeholder" />
             </div>
           </div>
-          <h3 class="jobs-typography-heading-small-text">Stacked blocks</h3>
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Stacked blocks</h3>
           <ul class="jobs-Stack">
             <li>
               <div class="example-box">
@@ -315,8 +288,8 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">Helpers</h2>
-          <h3 class="jobs-typography-heading-small-text">Typography</h3>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">Helpers</h2>
+          <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Typography</h3>
           <p><a href="#" class="jobs-typography-heading-xlarge-link-no-underline">Heading XLarge Link No Underline</a></p>
           <p><a href="#" class="jobs-typography-heading-xlarge-link-underline">Heading XLarge Link Underline</a></p>
           <p class="jobs-typography-heading-xlarge-text">Heading XLarge Text</p>
@@ -358,7 +331,7 @@
 
       <section>
         <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text">CheckboxField</h2>
+          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">CheckboxField</h2>
           <div class="example-CheckboxField-grid">
             <label for="checkboxfield1" class="jobs-CheckboxField">
               <input type="checkbox" id="checkboxfield1" class="jobs-CheckboxField__input" />

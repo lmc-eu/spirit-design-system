@@ -1569,4 +1569,2035 @@ fieldset {
   }
 }
 
+.jobs-d-block {
+  display: block !important;
+}
+
+.jobs-d-flex {
+  display: flex !important;
+}
+
+.jobs-d-inline {
+  display: inline !important;
+}
+
+.jobs-d-inline-block {
+  display: inline-block !important;
+}
+
+.jobs-d-inline-flex {
+  display: inline-flex !important;
+}
+
+.jobs-d-none {
+  display: none !important;
+}
+
+.jobs-mt-0 {
+  margin-top: 0 !important;
+}
+
+.jobs-mt-100 {
+  margin-top: 1px !important;
+}
+
+.jobs-mt-200 {
+  margin-top: 2px !important;
+}
+
+.jobs-mt-300 {
+  margin-top: 4px !important;
+}
+
+.jobs-mt-400 {
+  margin-top: 8px !important;
+}
+
+.jobs-mt-500 {
+  margin-top: 12px !important;
+}
+
+.jobs-mt-600 {
+  margin-top: 16px !important;
+}
+
+.jobs-mt-700 {
+  margin-top: 24px !important;
+}
+
+.jobs-mt-800 {
+  margin-top: 32px !important;
+}
+
+.jobs-mt-900 {
+  margin-top: 40px !important;
+}
+
+.jobs-mt-1000 {
+  margin-top: 48px !important;
+}
+
+.jobs-mt-1100 {
+  margin-top: 64px !important;
+}
+
+.jobs-mt-1200 {
+  margin-top: 80px !important;
+}
+
+.jobs-mt-auto {
+  margin-top: auto !important;
+}
+
+.jobs-mr-0 {
+  margin-right: 0 !important;
+}
+
+.jobs-mr-100 {
+  margin-right: 1px !important;
+}
+
+.jobs-mr-200 {
+  margin-right: 2px !important;
+}
+
+.jobs-mr-300 {
+  margin-right: 4px !important;
+}
+
+.jobs-mr-400 {
+  margin-right: 8px !important;
+}
+
+.jobs-mr-500 {
+  margin-right: 12px !important;
+}
+
+.jobs-mr-600 {
+  margin-right: 16px !important;
+}
+
+.jobs-mr-700 {
+  margin-right: 24px !important;
+}
+
+.jobs-mr-800 {
+  margin-right: 32px !important;
+}
+
+.jobs-mr-900 {
+  margin-right: 40px !important;
+}
+
+.jobs-mr-1000 {
+  margin-right: 48px !important;
+}
+
+.jobs-mr-1100 {
+  margin-right: 64px !important;
+}
+
+.jobs-mr-1200 {
+  margin-right: 80px !important;
+}
+
+.jobs-mr-auto {
+  margin-right: auto !important;
+}
+
+.jobs-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.jobs-mb-100 {
+  margin-bottom: 1px !important;
+}
+
+.jobs-mb-200 {
+  margin-bottom: 2px !important;
+}
+
+.jobs-mb-300 {
+  margin-bottom: 4px !important;
+}
+
+.jobs-mb-400 {
+  margin-bottom: 8px !important;
+}
+
+.jobs-mb-500 {
+  margin-bottom: 12px !important;
+}
+
+.jobs-mb-600 {
+  margin-bottom: 16px !important;
+}
+
+.jobs-mb-700 {
+  margin-bottom: 24px !important;
+}
+
+.jobs-mb-800 {
+  margin-bottom: 32px !important;
+}
+
+.jobs-mb-900 {
+  margin-bottom: 40px !important;
+}
+
+.jobs-mb-1000 {
+  margin-bottom: 48px !important;
+}
+
+.jobs-mb-1100 {
+  margin-bottom: 64px !important;
+}
+
+.jobs-mb-1200 {
+  margin-bottom: 80px !important;
+}
+
+.jobs-mb-auto {
+  margin-bottom: auto !important;
+}
+
+.jobs-ml-0 {
+  margin-left: 0 !important;
+}
+
+.jobs-ml-100 {
+  margin-left: 1px !important;
+}
+
+.jobs-ml-200 {
+  margin-left: 2px !important;
+}
+
+.jobs-ml-300 {
+  margin-left: 4px !important;
+}
+
+.jobs-ml-400 {
+  margin-left: 8px !important;
+}
+
+.jobs-ml-500 {
+  margin-left: 12px !important;
+}
+
+.jobs-ml-600 {
+  margin-left: 16px !important;
+}
+
+.jobs-ml-700 {
+  margin-left: 24px !important;
+}
+
+.jobs-ml-800 {
+  margin-left: 32px !important;
+}
+
+.jobs-ml-900 {
+  margin-left: 40px !important;
+}
+
+.jobs-ml-1000 {
+  margin-left: 48px !important;
+}
+
+.jobs-ml-1100 {
+  margin-left: 64px !important;
+}
+
+.jobs-ml-1200 {
+  margin-left: 80px !important;
+}
+
+.jobs-ml-auto {
+  margin-left: auto !important;
+}
+
+.jobs-mx-0 {
+  margin-inline: 0 !important;
+}
+
+.jobs-mx-100 {
+  margin-inline: 1px !important;
+}
+
+.jobs-mx-200 {
+  margin-inline: 2px !important;
+}
+
+.jobs-mx-300 {
+  margin-inline: 4px !important;
+}
+
+.jobs-mx-400 {
+  margin-inline: 8px !important;
+}
+
+.jobs-mx-500 {
+  margin-inline: 12px !important;
+}
+
+.jobs-mx-600 {
+  margin-inline: 16px !important;
+}
+
+.jobs-mx-700 {
+  margin-inline: 24px !important;
+}
+
+.jobs-mx-800 {
+  margin-inline: 32px !important;
+}
+
+.jobs-mx-900 {
+  margin-inline: 40px !important;
+}
+
+.jobs-mx-1000 {
+  margin-inline: 48px !important;
+}
+
+.jobs-mx-1100 {
+  margin-inline: 64px !important;
+}
+
+.jobs-mx-1200 {
+  margin-inline: 80px !important;
+}
+
+.jobs-my-0 {
+  margin-block: 0 !important;
+}
+
+.jobs-my-100 {
+  margin-block: 1px !important;
+}
+
+.jobs-my-200 {
+  margin-block: 2px !important;
+}
+
+.jobs-my-300 {
+  margin-block: 4px !important;
+}
+
+.jobs-my-400 {
+  margin-block: 8px !important;
+}
+
+.jobs-my-500 {
+  margin-block: 12px !important;
+}
+
+.jobs-my-600 {
+  margin-block: 16px !important;
+}
+
+.jobs-my-700 {
+  margin-block: 24px !important;
+}
+
+.jobs-my-800 {
+  margin-block: 32px !important;
+}
+
+.jobs-my-900 {
+  margin-block: 40px !important;
+}
+
+.jobs-my-1000 {
+  margin-block: 48px !important;
+}
+
+.jobs-my-1100 {
+  margin-block: 64px !important;
+}
+
+.jobs-my-1200 {
+  margin-block: 80px !important;
+}
+
+.jobs-pt-0 {
+  padding-top: 0 !important;
+}
+
+.jobs-pt-100 {
+  padding-top: 1px !important;
+}
+
+.jobs-pt-200 {
+  padding-top: 2px !important;
+}
+
+.jobs-pt-300 {
+  padding-top: 4px !important;
+}
+
+.jobs-pt-400 {
+  padding-top: 8px !important;
+}
+
+.jobs-pt-500 {
+  padding-top: 12px !important;
+}
+
+.jobs-pt-600 {
+  padding-top: 16px !important;
+}
+
+.jobs-pt-700 {
+  padding-top: 24px !important;
+}
+
+.jobs-pt-800 {
+  padding-top: 32px !important;
+}
+
+.jobs-pt-900 {
+  padding-top: 40px !important;
+}
+
+.jobs-pt-1000 {
+  padding-top: 48px !important;
+}
+
+.jobs-pt-1100 {
+  padding-top: 64px !important;
+}
+
+.jobs-pt-1200 {
+  padding-top: 80px !important;
+}
+
+.jobs-pr-0 {
+  padding-right: 0 !important;
+}
+
+.jobs-pr-100 {
+  padding-right: 1px !important;
+}
+
+.jobs-pr-200 {
+  padding-right: 2px !important;
+}
+
+.jobs-pr-300 {
+  padding-right: 4px !important;
+}
+
+.jobs-pr-400 {
+  padding-right: 8px !important;
+}
+
+.jobs-pr-500 {
+  padding-right: 12px !important;
+}
+
+.jobs-pr-600 {
+  padding-right: 16px !important;
+}
+
+.jobs-pr-700 {
+  padding-right: 24px !important;
+}
+
+.jobs-pr-800 {
+  padding-right: 32px !important;
+}
+
+.jobs-pr-900 {
+  padding-right: 40px !important;
+}
+
+.jobs-pr-1000 {
+  padding-right: 48px !important;
+}
+
+.jobs-pr-1100 {
+  padding-right: 64px !important;
+}
+
+.jobs-pr-1200 {
+  padding-right: 80px !important;
+}
+
+.jobs-pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.jobs-pb-100 {
+  padding-bottom: 1px !important;
+}
+
+.jobs-pb-200 {
+  padding-bottom: 2px !important;
+}
+
+.jobs-pb-300 {
+  padding-bottom: 4px !important;
+}
+
+.jobs-pb-400 {
+  padding-bottom: 8px !important;
+}
+
+.jobs-pb-500 {
+  padding-bottom: 12px !important;
+}
+
+.jobs-pb-600 {
+  padding-bottom: 16px !important;
+}
+
+.jobs-pb-700 {
+  padding-bottom: 24px !important;
+}
+
+.jobs-pb-800 {
+  padding-bottom: 32px !important;
+}
+
+.jobs-pb-900 {
+  padding-bottom: 40px !important;
+}
+
+.jobs-pb-1000 {
+  padding-bottom: 48px !important;
+}
+
+.jobs-pb-1100 {
+  padding-bottom: 64px !important;
+}
+
+.jobs-pb-1200 {
+  padding-bottom: 80px !important;
+}
+
+.jobs-pl-0 {
+  padding-left: 0 !important;
+}
+
+.jobs-pl-100 {
+  padding-left: 1px !important;
+}
+
+.jobs-pl-200 {
+  padding-left: 2px !important;
+}
+
+.jobs-pl-300 {
+  padding-left: 4px !important;
+}
+
+.jobs-pl-400 {
+  padding-left: 8px !important;
+}
+
+.jobs-pl-500 {
+  padding-left: 12px !important;
+}
+
+.jobs-pl-600 {
+  padding-left: 16px !important;
+}
+
+.jobs-pl-700 {
+  padding-left: 24px !important;
+}
+
+.jobs-pl-800 {
+  padding-left: 32px !important;
+}
+
+.jobs-pl-900 {
+  padding-left: 40px !important;
+}
+
+.jobs-pl-1000 {
+  padding-left: 48px !important;
+}
+
+.jobs-pl-1100 {
+  padding-left: 64px !important;
+}
+
+.jobs-pl-1200 {
+  padding-left: 80px !important;
+}
+
+.jobs-px-0 {
+  padding-inline: 0 !important;
+}
+
+.jobs-px-100 {
+  padding-inline: 1px !important;
+}
+
+.jobs-px-200 {
+  padding-inline: 2px !important;
+}
+
+.jobs-px-300 {
+  padding-inline: 4px !important;
+}
+
+.jobs-px-400 {
+  padding-inline: 8px !important;
+}
+
+.jobs-px-500 {
+  padding-inline: 12px !important;
+}
+
+.jobs-px-600 {
+  padding-inline: 16px !important;
+}
+
+.jobs-px-700 {
+  padding-inline: 24px !important;
+}
+
+.jobs-px-800 {
+  padding-inline: 32px !important;
+}
+
+.jobs-px-900 {
+  padding-inline: 40px !important;
+}
+
+.jobs-px-1000 {
+  padding-inline: 48px !important;
+}
+
+.jobs-px-1100 {
+  padding-inline: 64px !important;
+}
+
+.jobs-px-1200 {
+  padding-inline: 80px !important;
+}
+
+.jobs-py-0 {
+  padding-block: 0 !important;
+}
+
+.jobs-py-100 {
+  padding-block: 1px !important;
+}
+
+.jobs-py-200 {
+  padding-block: 2px !important;
+}
+
+.jobs-py-300 {
+  padding-block: 4px !important;
+}
+
+.jobs-py-400 {
+  padding-block: 8px !important;
+}
+
+.jobs-py-500 {
+  padding-block: 12px !important;
+}
+
+.jobs-py-600 {
+  padding-block: 16px !important;
+}
+
+.jobs-py-700 {
+  padding-block: 24px !important;
+}
+
+.jobs-py-800 {
+  padding-block: 32px !important;
+}
+
+.jobs-py-900 {
+  padding-block: 40px !important;
+}
+
+.jobs-py-1000 {
+  padding-block: 48px !important;
+}
+
+.jobs-py-1100 {
+  padding-block: 64px !important;
+}
+
+.jobs-py-1200 {
+  padding-block: 80px !important;
+}
+
+.jobs-text-left {
+  text-align: left !important;
+}
+
+.jobs-text-right {
+  text-align: right !important;
+}
+
+.jobs-text-center {
+  text-align: center !important;
+}
+
+@media (min-width: 768px) {
+  .jobs-d-tablet-block {
+    display: block !important;
+  }
+
+  .jobs-d-tablet-flex {
+    display: flex !important;
+  }
+
+  .jobs-d-tablet-inline {
+    display: inline !important;
+  }
+
+  .jobs-d-tablet-inline-block {
+    display: inline-block !important;
+  }
+
+  .jobs-d-tablet-inline-flex {
+    display: inline-flex !important;
+  }
+
+  .jobs-d-tablet-none {
+    display: none !important;
+  }
+
+  .jobs-mt-tablet-0 {
+    margin-top: 0 !important;
+  }
+
+  .jobs-mt-tablet-100 {
+    margin-top: 1px !important;
+  }
+
+  .jobs-mt-tablet-200 {
+    margin-top: 2px !important;
+  }
+
+  .jobs-mt-tablet-300 {
+    margin-top: 4px !important;
+  }
+
+  .jobs-mt-tablet-400 {
+    margin-top: 8px !important;
+  }
+
+  .jobs-mt-tablet-500 {
+    margin-top: 12px !important;
+  }
+
+  .jobs-mt-tablet-600 {
+    margin-top: 16px !important;
+  }
+
+  .jobs-mt-tablet-700 {
+    margin-top: 24px !important;
+  }
+
+  .jobs-mt-tablet-800 {
+    margin-top: 32px !important;
+  }
+
+  .jobs-mt-tablet-900 {
+    margin-top: 40px !important;
+  }
+
+  .jobs-mt-tablet-1000 {
+    margin-top: 48px !important;
+  }
+
+  .jobs-mt-tablet-1100 {
+    margin-top: 64px !important;
+  }
+
+  .jobs-mt-tablet-1200 {
+    margin-top: 80px !important;
+  }
+
+  .jobs-mt-tablet-auto {
+    margin-top: auto !important;
+  }
+
+  .jobs-mr-tablet-0 {
+    margin-right: 0 !important;
+  }
+
+  .jobs-mr-tablet-100 {
+    margin-right: 1px !important;
+  }
+
+  .jobs-mr-tablet-200 {
+    margin-right: 2px !important;
+  }
+
+  .jobs-mr-tablet-300 {
+    margin-right: 4px !important;
+  }
+
+  .jobs-mr-tablet-400 {
+    margin-right: 8px !important;
+  }
+
+  .jobs-mr-tablet-500 {
+    margin-right: 12px !important;
+  }
+
+  .jobs-mr-tablet-600 {
+    margin-right: 16px !important;
+  }
+
+  .jobs-mr-tablet-700 {
+    margin-right: 24px !important;
+  }
+
+  .jobs-mr-tablet-800 {
+    margin-right: 32px !important;
+  }
+
+  .jobs-mr-tablet-900 {
+    margin-right: 40px !important;
+  }
+
+  .jobs-mr-tablet-1000 {
+    margin-right: 48px !important;
+  }
+
+  .jobs-mr-tablet-1100 {
+    margin-right: 64px !important;
+  }
+
+  .jobs-mr-tablet-1200 {
+    margin-right: 80px !important;
+  }
+
+  .jobs-mr-tablet-auto {
+    margin-right: auto !important;
+  }
+
+  .jobs-mb-tablet-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .jobs-mb-tablet-100 {
+    margin-bottom: 1px !important;
+  }
+
+  .jobs-mb-tablet-200 {
+    margin-bottom: 2px !important;
+  }
+
+  .jobs-mb-tablet-300 {
+    margin-bottom: 4px !important;
+  }
+
+  .jobs-mb-tablet-400 {
+    margin-bottom: 8px !important;
+  }
+
+  .jobs-mb-tablet-500 {
+    margin-bottom: 12px !important;
+  }
+
+  .jobs-mb-tablet-600 {
+    margin-bottom: 16px !important;
+  }
+
+  .jobs-mb-tablet-700 {
+    margin-bottom: 24px !important;
+  }
+
+  .jobs-mb-tablet-800 {
+    margin-bottom: 32px !important;
+  }
+
+  .jobs-mb-tablet-900 {
+    margin-bottom: 40px !important;
+  }
+
+  .jobs-mb-tablet-1000 {
+    margin-bottom: 48px !important;
+  }
+
+  .jobs-mb-tablet-1100 {
+    margin-bottom: 64px !important;
+  }
+
+  .jobs-mb-tablet-1200 {
+    margin-bottom: 80px !important;
+  }
+
+  .jobs-mb-tablet-auto {
+    margin-bottom: auto !important;
+  }
+
+  .jobs-ml-tablet-0 {
+    margin-left: 0 !important;
+  }
+
+  .jobs-ml-tablet-100 {
+    margin-left: 1px !important;
+  }
+
+  .jobs-ml-tablet-200 {
+    margin-left: 2px !important;
+  }
+
+  .jobs-ml-tablet-300 {
+    margin-left: 4px !important;
+  }
+
+  .jobs-ml-tablet-400 {
+    margin-left: 8px !important;
+  }
+
+  .jobs-ml-tablet-500 {
+    margin-left: 12px !important;
+  }
+
+  .jobs-ml-tablet-600 {
+    margin-left: 16px !important;
+  }
+
+  .jobs-ml-tablet-700 {
+    margin-left: 24px !important;
+  }
+
+  .jobs-ml-tablet-800 {
+    margin-left: 32px !important;
+  }
+
+  .jobs-ml-tablet-900 {
+    margin-left: 40px !important;
+  }
+
+  .jobs-ml-tablet-1000 {
+    margin-left: 48px !important;
+  }
+
+  .jobs-ml-tablet-1100 {
+    margin-left: 64px !important;
+  }
+
+  .jobs-ml-tablet-1200 {
+    margin-left: 80px !important;
+  }
+
+  .jobs-ml-tablet-auto {
+    margin-left: auto !important;
+  }
+
+  .jobs-mx-tablet-0 {
+    margin-inline: 0 !important;
+  }
+
+  .jobs-mx-tablet-100 {
+    margin-inline: 1px !important;
+  }
+
+  .jobs-mx-tablet-200 {
+    margin-inline: 2px !important;
+  }
+
+  .jobs-mx-tablet-300 {
+    margin-inline: 4px !important;
+  }
+
+  .jobs-mx-tablet-400 {
+    margin-inline: 8px !important;
+  }
+
+  .jobs-mx-tablet-500 {
+    margin-inline: 12px !important;
+  }
+
+  .jobs-mx-tablet-600 {
+    margin-inline: 16px !important;
+  }
+
+  .jobs-mx-tablet-700 {
+    margin-inline: 24px !important;
+  }
+
+  .jobs-mx-tablet-800 {
+    margin-inline: 32px !important;
+  }
+
+  .jobs-mx-tablet-900 {
+    margin-inline: 40px !important;
+  }
+
+  .jobs-mx-tablet-1000 {
+    margin-inline: 48px !important;
+  }
+
+  .jobs-mx-tablet-1100 {
+    margin-inline: 64px !important;
+  }
+
+  .jobs-mx-tablet-1200 {
+    margin-inline: 80px !important;
+  }
+
+  .jobs-my-tablet-0 {
+    margin-block: 0 !important;
+  }
+
+  .jobs-my-tablet-100 {
+    margin-block: 1px !important;
+  }
+
+  .jobs-my-tablet-200 {
+    margin-block: 2px !important;
+  }
+
+  .jobs-my-tablet-300 {
+    margin-block: 4px !important;
+  }
+
+  .jobs-my-tablet-400 {
+    margin-block: 8px !important;
+  }
+
+  .jobs-my-tablet-500 {
+    margin-block: 12px !important;
+  }
+
+  .jobs-my-tablet-600 {
+    margin-block: 16px !important;
+  }
+
+  .jobs-my-tablet-700 {
+    margin-block: 24px !important;
+  }
+
+  .jobs-my-tablet-800 {
+    margin-block: 32px !important;
+  }
+
+  .jobs-my-tablet-900 {
+    margin-block: 40px !important;
+  }
+
+  .jobs-my-tablet-1000 {
+    margin-block: 48px !important;
+  }
+
+  .jobs-my-tablet-1100 {
+    margin-block: 64px !important;
+  }
+
+  .jobs-my-tablet-1200 {
+    margin-block: 80px !important;
+  }
+
+  .jobs-pt-tablet-0 {
+    padding-top: 0 !important;
+  }
+
+  .jobs-pt-tablet-100 {
+    padding-top: 1px !important;
+  }
+
+  .jobs-pt-tablet-200 {
+    padding-top: 2px !important;
+  }
+
+  .jobs-pt-tablet-300 {
+    padding-top: 4px !important;
+  }
+
+  .jobs-pt-tablet-400 {
+    padding-top: 8px !important;
+  }
+
+  .jobs-pt-tablet-500 {
+    padding-top: 12px !important;
+  }
+
+  .jobs-pt-tablet-600 {
+    padding-top: 16px !important;
+  }
+
+  .jobs-pt-tablet-700 {
+    padding-top: 24px !important;
+  }
+
+  .jobs-pt-tablet-800 {
+    padding-top: 32px !important;
+  }
+
+  .jobs-pt-tablet-900 {
+    padding-top: 40px !important;
+  }
+
+  .jobs-pt-tablet-1000 {
+    padding-top: 48px !important;
+  }
+
+  .jobs-pt-tablet-1100 {
+    padding-top: 64px !important;
+  }
+
+  .jobs-pt-tablet-1200 {
+    padding-top: 80px !important;
+  }
+
+  .jobs-pr-tablet-0 {
+    padding-right: 0 !important;
+  }
+
+  .jobs-pr-tablet-100 {
+    padding-right: 1px !important;
+  }
+
+  .jobs-pr-tablet-200 {
+    padding-right: 2px !important;
+  }
+
+  .jobs-pr-tablet-300 {
+    padding-right: 4px !important;
+  }
+
+  .jobs-pr-tablet-400 {
+    padding-right: 8px !important;
+  }
+
+  .jobs-pr-tablet-500 {
+    padding-right: 12px !important;
+  }
+
+  .jobs-pr-tablet-600 {
+    padding-right: 16px !important;
+  }
+
+  .jobs-pr-tablet-700 {
+    padding-right: 24px !important;
+  }
+
+  .jobs-pr-tablet-800 {
+    padding-right: 32px !important;
+  }
+
+  .jobs-pr-tablet-900 {
+    padding-right: 40px !important;
+  }
+
+  .jobs-pr-tablet-1000 {
+    padding-right: 48px !important;
+  }
+
+  .jobs-pr-tablet-1100 {
+    padding-right: 64px !important;
+  }
+
+  .jobs-pr-tablet-1200 {
+    padding-right: 80px !important;
+  }
+
+  .jobs-pb-tablet-0 {
+    padding-bottom: 0 !important;
+  }
+
+  .jobs-pb-tablet-100 {
+    padding-bottom: 1px !important;
+  }
+
+  .jobs-pb-tablet-200 {
+    padding-bottom: 2px !important;
+  }
+
+  .jobs-pb-tablet-300 {
+    padding-bottom: 4px !important;
+  }
+
+  .jobs-pb-tablet-400 {
+    padding-bottom: 8px !important;
+  }
+
+  .jobs-pb-tablet-500 {
+    padding-bottom: 12px !important;
+  }
+
+  .jobs-pb-tablet-600 {
+    padding-bottom: 16px !important;
+  }
+
+  .jobs-pb-tablet-700 {
+    padding-bottom: 24px !important;
+  }
+
+  .jobs-pb-tablet-800 {
+    padding-bottom: 32px !important;
+  }
+
+  .jobs-pb-tablet-900 {
+    padding-bottom: 40px !important;
+  }
+
+  .jobs-pb-tablet-1000 {
+    padding-bottom: 48px !important;
+  }
+
+  .jobs-pb-tablet-1100 {
+    padding-bottom: 64px !important;
+  }
+
+  .jobs-pb-tablet-1200 {
+    padding-bottom: 80px !important;
+  }
+
+  .jobs-pl-tablet-0 {
+    padding-left: 0 !important;
+  }
+
+  .jobs-pl-tablet-100 {
+    padding-left: 1px !important;
+  }
+
+  .jobs-pl-tablet-200 {
+    padding-left: 2px !important;
+  }
+
+  .jobs-pl-tablet-300 {
+    padding-left: 4px !important;
+  }
+
+  .jobs-pl-tablet-400 {
+    padding-left: 8px !important;
+  }
+
+  .jobs-pl-tablet-500 {
+    padding-left: 12px !important;
+  }
+
+  .jobs-pl-tablet-600 {
+    padding-left: 16px !important;
+  }
+
+  .jobs-pl-tablet-700 {
+    padding-left: 24px !important;
+  }
+
+  .jobs-pl-tablet-800 {
+    padding-left: 32px !important;
+  }
+
+  .jobs-pl-tablet-900 {
+    padding-left: 40px !important;
+  }
+
+  .jobs-pl-tablet-1000 {
+    padding-left: 48px !important;
+  }
+
+  .jobs-pl-tablet-1100 {
+    padding-left: 64px !important;
+  }
+
+  .jobs-pl-tablet-1200 {
+    padding-left: 80px !important;
+  }
+
+  .jobs-px-tablet-0 {
+    padding-inline: 0 !important;
+  }
+
+  .jobs-px-tablet-100 {
+    padding-inline: 1px !important;
+  }
+
+  .jobs-px-tablet-200 {
+    padding-inline: 2px !important;
+  }
+
+  .jobs-px-tablet-300 {
+    padding-inline: 4px !important;
+  }
+
+  .jobs-px-tablet-400 {
+    padding-inline: 8px !important;
+  }
+
+  .jobs-px-tablet-500 {
+    padding-inline: 12px !important;
+  }
+
+  .jobs-px-tablet-600 {
+    padding-inline: 16px !important;
+  }
+
+  .jobs-px-tablet-700 {
+    padding-inline: 24px !important;
+  }
+
+  .jobs-px-tablet-800 {
+    padding-inline: 32px !important;
+  }
+
+  .jobs-px-tablet-900 {
+    padding-inline: 40px !important;
+  }
+
+  .jobs-px-tablet-1000 {
+    padding-inline: 48px !important;
+  }
+
+  .jobs-px-tablet-1100 {
+    padding-inline: 64px !important;
+  }
+
+  .jobs-px-tablet-1200 {
+    padding-inline: 80px !important;
+  }
+
+  .jobs-py-tablet-0 {
+    padding-block: 0 !important;
+  }
+
+  .jobs-py-tablet-100 {
+    padding-block: 1px !important;
+  }
+
+  .jobs-py-tablet-200 {
+    padding-block: 2px !important;
+  }
+
+  .jobs-py-tablet-300 {
+    padding-block: 4px !important;
+  }
+
+  .jobs-py-tablet-400 {
+    padding-block: 8px !important;
+  }
+
+  .jobs-py-tablet-500 {
+    padding-block: 12px !important;
+  }
+
+  .jobs-py-tablet-600 {
+    padding-block: 16px !important;
+  }
+
+  .jobs-py-tablet-700 {
+    padding-block: 24px !important;
+  }
+
+  .jobs-py-tablet-800 {
+    padding-block: 32px !important;
+  }
+
+  .jobs-py-tablet-900 {
+    padding-block: 40px !important;
+  }
+
+  .jobs-py-tablet-1000 {
+    padding-block: 48px !important;
+  }
+
+  .jobs-py-tablet-1100 {
+    padding-block: 64px !important;
+  }
+
+  .jobs-py-tablet-1200 {
+    padding-block: 80px !important;
+  }
+
+  .jobs-text-tablet-left {
+    text-align: left !important;
+  }
+
+  .jobs-text-tablet-right {
+    text-align: right !important;
+  }
+
+  .jobs-text-tablet-center {
+    text-align: center !important;
+  }
+}
+@media (min-width: 1280px) {
+  .jobs-d-desktop-block {
+    display: block !important;
+  }
+
+  .jobs-d-desktop-flex {
+    display: flex !important;
+  }
+
+  .jobs-d-desktop-inline {
+    display: inline !important;
+  }
+
+  .jobs-d-desktop-inline-block {
+    display: inline-block !important;
+  }
+
+  .jobs-d-desktop-inline-flex {
+    display: inline-flex !important;
+  }
+
+  .jobs-d-desktop-none {
+    display: none !important;
+  }
+
+  .jobs-mt-desktop-0 {
+    margin-top: 0 !important;
+  }
+
+  .jobs-mt-desktop-100 {
+    margin-top: 1px !important;
+  }
+
+  .jobs-mt-desktop-200 {
+    margin-top: 2px !important;
+  }
+
+  .jobs-mt-desktop-300 {
+    margin-top: 4px !important;
+  }
+
+  .jobs-mt-desktop-400 {
+    margin-top: 8px !important;
+  }
+
+  .jobs-mt-desktop-500 {
+    margin-top: 12px !important;
+  }
+
+  .jobs-mt-desktop-600 {
+    margin-top: 16px !important;
+  }
+
+  .jobs-mt-desktop-700 {
+    margin-top: 24px !important;
+  }
+
+  .jobs-mt-desktop-800 {
+    margin-top: 32px !important;
+  }
+
+  .jobs-mt-desktop-900 {
+    margin-top: 40px !important;
+  }
+
+  .jobs-mt-desktop-1000 {
+    margin-top: 48px !important;
+  }
+
+  .jobs-mt-desktop-1100 {
+    margin-top: 64px !important;
+  }
+
+  .jobs-mt-desktop-1200 {
+    margin-top: 80px !important;
+  }
+
+  .jobs-mt-desktop-auto {
+    margin-top: auto !important;
+  }
+
+  .jobs-mr-desktop-0 {
+    margin-right: 0 !important;
+  }
+
+  .jobs-mr-desktop-100 {
+    margin-right: 1px !important;
+  }
+
+  .jobs-mr-desktop-200 {
+    margin-right: 2px !important;
+  }
+
+  .jobs-mr-desktop-300 {
+    margin-right: 4px !important;
+  }
+
+  .jobs-mr-desktop-400 {
+    margin-right: 8px !important;
+  }
+
+  .jobs-mr-desktop-500 {
+    margin-right: 12px !important;
+  }
+
+  .jobs-mr-desktop-600 {
+    margin-right: 16px !important;
+  }
+
+  .jobs-mr-desktop-700 {
+    margin-right: 24px !important;
+  }
+
+  .jobs-mr-desktop-800 {
+    margin-right: 32px !important;
+  }
+
+  .jobs-mr-desktop-900 {
+    margin-right: 40px !important;
+  }
+
+  .jobs-mr-desktop-1000 {
+    margin-right: 48px !important;
+  }
+
+  .jobs-mr-desktop-1100 {
+    margin-right: 64px !important;
+  }
+
+  .jobs-mr-desktop-1200 {
+    margin-right: 80px !important;
+  }
+
+  .jobs-mr-desktop-auto {
+    margin-right: auto !important;
+  }
+
+  .jobs-mb-desktop-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .jobs-mb-desktop-100 {
+    margin-bottom: 1px !important;
+  }
+
+  .jobs-mb-desktop-200 {
+    margin-bottom: 2px !important;
+  }
+
+  .jobs-mb-desktop-300 {
+    margin-bottom: 4px !important;
+  }
+
+  .jobs-mb-desktop-400 {
+    margin-bottom: 8px !important;
+  }
+
+  .jobs-mb-desktop-500 {
+    margin-bottom: 12px !important;
+  }
+
+  .jobs-mb-desktop-600 {
+    margin-bottom: 16px !important;
+  }
+
+  .jobs-mb-desktop-700 {
+    margin-bottom: 24px !important;
+  }
+
+  .jobs-mb-desktop-800 {
+    margin-bottom: 32px !important;
+  }
+
+  .jobs-mb-desktop-900 {
+    margin-bottom: 40px !important;
+  }
+
+  .jobs-mb-desktop-1000 {
+    margin-bottom: 48px !important;
+  }
+
+  .jobs-mb-desktop-1100 {
+    margin-bottom: 64px !important;
+  }
+
+  .jobs-mb-desktop-1200 {
+    margin-bottom: 80px !important;
+  }
+
+  .jobs-mb-desktop-auto {
+    margin-bottom: auto !important;
+  }
+
+  .jobs-ml-desktop-0 {
+    margin-left: 0 !important;
+  }
+
+  .jobs-ml-desktop-100 {
+    margin-left: 1px !important;
+  }
+
+  .jobs-ml-desktop-200 {
+    margin-left: 2px !important;
+  }
+
+  .jobs-ml-desktop-300 {
+    margin-left: 4px !important;
+  }
+
+  .jobs-ml-desktop-400 {
+    margin-left: 8px !important;
+  }
+
+  .jobs-ml-desktop-500 {
+    margin-left: 12px !important;
+  }
+
+  .jobs-ml-desktop-600 {
+    margin-left: 16px !important;
+  }
+
+  .jobs-ml-desktop-700 {
+    margin-left: 24px !important;
+  }
+
+  .jobs-ml-desktop-800 {
+    margin-left: 32px !important;
+  }
+
+  .jobs-ml-desktop-900 {
+    margin-left: 40px !important;
+  }
+
+  .jobs-ml-desktop-1000 {
+    margin-left: 48px !important;
+  }
+
+  .jobs-ml-desktop-1100 {
+    margin-left: 64px !important;
+  }
+
+  .jobs-ml-desktop-1200 {
+    margin-left: 80px !important;
+  }
+
+  .jobs-ml-desktop-auto {
+    margin-left: auto !important;
+  }
+
+  .jobs-mx-desktop-0 {
+    margin-inline: 0 !important;
+  }
+
+  .jobs-mx-desktop-100 {
+    margin-inline: 1px !important;
+  }
+
+  .jobs-mx-desktop-200 {
+    margin-inline: 2px !important;
+  }
+
+  .jobs-mx-desktop-300 {
+    margin-inline: 4px !important;
+  }
+
+  .jobs-mx-desktop-400 {
+    margin-inline: 8px !important;
+  }
+
+  .jobs-mx-desktop-500 {
+    margin-inline: 12px !important;
+  }
+
+  .jobs-mx-desktop-600 {
+    margin-inline: 16px !important;
+  }
+
+  .jobs-mx-desktop-700 {
+    margin-inline: 24px !important;
+  }
+
+  .jobs-mx-desktop-800 {
+    margin-inline: 32px !important;
+  }
+
+  .jobs-mx-desktop-900 {
+    margin-inline: 40px !important;
+  }
+
+  .jobs-mx-desktop-1000 {
+    margin-inline: 48px !important;
+  }
+
+  .jobs-mx-desktop-1100 {
+    margin-inline: 64px !important;
+  }
+
+  .jobs-mx-desktop-1200 {
+    margin-inline: 80px !important;
+  }
+
+  .jobs-my-desktop-0 {
+    margin-block: 0 !important;
+  }
+
+  .jobs-my-desktop-100 {
+    margin-block: 1px !important;
+  }
+
+  .jobs-my-desktop-200 {
+    margin-block: 2px !important;
+  }
+
+  .jobs-my-desktop-300 {
+    margin-block: 4px !important;
+  }
+
+  .jobs-my-desktop-400 {
+    margin-block: 8px !important;
+  }
+
+  .jobs-my-desktop-500 {
+    margin-block: 12px !important;
+  }
+
+  .jobs-my-desktop-600 {
+    margin-block: 16px !important;
+  }
+
+  .jobs-my-desktop-700 {
+    margin-block: 24px !important;
+  }
+
+  .jobs-my-desktop-800 {
+    margin-block: 32px !important;
+  }
+
+  .jobs-my-desktop-900 {
+    margin-block: 40px !important;
+  }
+
+  .jobs-my-desktop-1000 {
+    margin-block: 48px !important;
+  }
+
+  .jobs-my-desktop-1100 {
+    margin-block: 64px !important;
+  }
+
+  .jobs-my-desktop-1200 {
+    margin-block: 80px !important;
+  }
+
+  .jobs-pt-desktop-0 {
+    padding-top: 0 !important;
+  }
+
+  .jobs-pt-desktop-100 {
+    padding-top: 1px !important;
+  }
+
+  .jobs-pt-desktop-200 {
+    padding-top: 2px !important;
+  }
+
+  .jobs-pt-desktop-300 {
+    padding-top: 4px !important;
+  }
+
+  .jobs-pt-desktop-400 {
+    padding-top: 8px !important;
+  }
+
+  .jobs-pt-desktop-500 {
+    padding-top: 12px !important;
+  }
+
+  .jobs-pt-desktop-600 {
+    padding-top: 16px !important;
+  }
+
+  .jobs-pt-desktop-700 {
+    padding-top: 24px !important;
+  }
+
+  .jobs-pt-desktop-800 {
+    padding-top: 32px !important;
+  }
+
+  .jobs-pt-desktop-900 {
+    padding-top: 40px !important;
+  }
+
+  .jobs-pt-desktop-1000 {
+    padding-top: 48px !important;
+  }
+
+  .jobs-pt-desktop-1100 {
+    padding-top: 64px !important;
+  }
+
+  .jobs-pt-desktop-1200 {
+    padding-top: 80px !important;
+  }
+
+  .jobs-pr-desktop-0 {
+    padding-right: 0 !important;
+  }
+
+  .jobs-pr-desktop-100 {
+    padding-right: 1px !important;
+  }
+
+  .jobs-pr-desktop-200 {
+    padding-right: 2px !important;
+  }
+
+  .jobs-pr-desktop-300 {
+    padding-right: 4px !important;
+  }
+
+  .jobs-pr-desktop-400 {
+    padding-right: 8px !important;
+  }
+
+  .jobs-pr-desktop-500 {
+    padding-right: 12px !important;
+  }
+
+  .jobs-pr-desktop-600 {
+    padding-right: 16px !important;
+  }
+
+  .jobs-pr-desktop-700 {
+    padding-right: 24px !important;
+  }
+
+  .jobs-pr-desktop-800 {
+    padding-right: 32px !important;
+  }
+
+  .jobs-pr-desktop-900 {
+    padding-right: 40px !important;
+  }
+
+  .jobs-pr-desktop-1000 {
+    padding-right: 48px !important;
+  }
+
+  .jobs-pr-desktop-1100 {
+    padding-right: 64px !important;
+  }
+
+  .jobs-pr-desktop-1200 {
+    padding-right: 80px !important;
+  }
+
+  .jobs-pb-desktop-0 {
+    padding-bottom: 0 !important;
+  }
+
+  .jobs-pb-desktop-100 {
+    padding-bottom: 1px !important;
+  }
+
+  .jobs-pb-desktop-200 {
+    padding-bottom: 2px !important;
+  }
+
+  .jobs-pb-desktop-300 {
+    padding-bottom: 4px !important;
+  }
+
+  .jobs-pb-desktop-400 {
+    padding-bottom: 8px !important;
+  }
+
+  .jobs-pb-desktop-500 {
+    padding-bottom: 12px !important;
+  }
+
+  .jobs-pb-desktop-600 {
+    padding-bottom: 16px !important;
+  }
+
+  .jobs-pb-desktop-700 {
+    padding-bottom: 24px !important;
+  }
+
+  .jobs-pb-desktop-800 {
+    padding-bottom: 32px !important;
+  }
+
+  .jobs-pb-desktop-900 {
+    padding-bottom: 40px !important;
+  }
+
+  .jobs-pb-desktop-1000 {
+    padding-bottom: 48px !important;
+  }
+
+  .jobs-pb-desktop-1100 {
+    padding-bottom: 64px !important;
+  }
+
+  .jobs-pb-desktop-1200 {
+    padding-bottom: 80px !important;
+  }
+
+  .jobs-pl-desktop-0 {
+    padding-left: 0 !important;
+  }
+
+  .jobs-pl-desktop-100 {
+    padding-left: 1px !important;
+  }
+
+  .jobs-pl-desktop-200 {
+    padding-left: 2px !important;
+  }
+
+  .jobs-pl-desktop-300 {
+    padding-left: 4px !important;
+  }
+
+  .jobs-pl-desktop-400 {
+    padding-left: 8px !important;
+  }
+
+  .jobs-pl-desktop-500 {
+    padding-left: 12px !important;
+  }
+
+  .jobs-pl-desktop-600 {
+    padding-left: 16px !important;
+  }
+
+  .jobs-pl-desktop-700 {
+    padding-left: 24px !important;
+  }
+
+  .jobs-pl-desktop-800 {
+    padding-left: 32px !important;
+  }
+
+  .jobs-pl-desktop-900 {
+    padding-left: 40px !important;
+  }
+
+  .jobs-pl-desktop-1000 {
+    padding-left: 48px !important;
+  }
+
+  .jobs-pl-desktop-1100 {
+    padding-left: 64px !important;
+  }
+
+  .jobs-pl-desktop-1200 {
+    padding-left: 80px !important;
+  }
+
+  .jobs-px-desktop-0 {
+    padding-inline: 0 !important;
+  }
+
+  .jobs-px-desktop-100 {
+    padding-inline: 1px !important;
+  }
+
+  .jobs-px-desktop-200 {
+    padding-inline: 2px !important;
+  }
+
+  .jobs-px-desktop-300 {
+    padding-inline: 4px !important;
+  }
+
+  .jobs-px-desktop-400 {
+    padding-inline: 8px !important;
+  }
+
+  .jobs-px-desktop-500 {
+    padding-inline: 12px !important;
+  }
+
+  .jobs-px-desktop-600 {
+    padding-inline: 16px !important;
+  }
+
+  .jobs-px-desktop-700 {
+    padding-inline: 24px !important;
+  }
+
+  .jobs-px-desktop-800 {
+    padding-inline: 32px !important;
+  }
+
+  .jobs-px-desktop-900 {
+    padding-inline: 40px !important;
+  }
+
+  .jobs-px-desktop-1000 {
+    padding-inline: 48px !important;
+  }
+
+  .jobs-px-desktop-1100 {
+    padding-inline: 64px !important;
+  }
+
+  .jobs-px-desktop-1200 {
+    padding-inline: 80px !important;
+  }
+
+  .jobs-py-desktop-0 {
+    padding-block: 0 !important;
+  }
+
+  .jobs-py-desktop-100 {
+    padding-block: 1px !important;
+  }
+
+  .jobs-py-desktop-200 {
+    padding-block: 2px !important;
+  }
+
+  .jobs-py-desktop-300 {
+    padding-block: 4px !important;
+  }
+
+  .jobs-py-desktop-400 {
+    padding-block: 8px !important;
+  }
+
+  .jobs-py-desktop-500 {
+    padding-block: 12px !important;
+  }
+
+  .jobs-py-desktop-600 {
+    padding-block: 16px !important;
+  }
+
+  .jobs-py-desktop-700 {
+    padding-block: 24px !important;
+  }
+
+  .jobs-py-desktop-800 {
+    padding-block: 32px !important;
+  }
+
+  .jobs-py-desktop-900 {
+    padding-block: 40px !important;
+  }
+
+  .jobs-py-desktop-1000 {
+    padding-block: 48px !important;
+  }
+
+  .jobs-py-desktop-1100 {
+    padding-block: 64px !important;
+  }
+
+  .jobs-py-desktop-1200 {
+    padding-block: 80px !important;
+  }
+
+  .jobs-text-desktop-left {
+    text-align: left !important;
+  }
+
+  .jobs-text-desktop-right {
+    text-align: right !important;
+  }
+
+  .jobs-text-desktop-center {
+    text-align: center !important;
+  }
+}
+
 /*# sourceMappingURL=jobs.css.map */
