@@ -5,8 +5,8 @@ and an optional message. It can be of type `text` or `password`. It could be dis
 and show if the input is required.
 
 ```jsx
-<TextField id="example" type="text" name="example" required validationState="error" messsage="validation failed" />
-<TextField id="example" type="password" name="example" required validationState="error" messsage="validation failed" />
+<TextField id="example" type="text" name="example" required validationState="error" message="validation failed" />
+<TextField id="example" type="password" name="example" required validationState="error" message="validation failed" />
 ```
 
 ## Available props
