@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+@mixin variants($variants) {
+    @each $variantName, $variantValues in $variants {
+        .link-#{$variantName} {
+            @each $variantValueName, $variantValue in $variantValues {
+                @if ($variantValueName == 'default') {
+                    color: $variantValue;
+                } @else {
+                    &:#{$variantValueName} {
+                        color: $variantValue;
+                    }
+                }
+            }
+        }
+    }
+}

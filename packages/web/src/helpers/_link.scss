@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../settings/link' as link-settings;
+@use '../tools/link';
+
+@include link.variants(link-settings.$variants);
+
+.link-underline:any-link {
+    text-decoration: underline;
+}
+
+// We force no underline if typography says so
+[class*='typography'][class*='link-no-underline'] .link-underline:any-link,
+[class*='typography'][class*='link-no-underline'].link-underline:any-link {
+    text-decoration: none;
+}
