@@ -14,7 +14,7 @@ pure implementation:
 {% endembed %}
 
 {% embed "@spirit/stack.twig" with { props: {
-    elementTyle: 'ul'
+    elementType: 'ul'
 }} %}
     {% block content %}
           <li>

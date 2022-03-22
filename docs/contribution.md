@@ -5,13 +5,13 @@ In order to maintain the uniformity of writing and functioning of components in 
 ## Rules in components
 
 1. Name of components must be camelCase with first letter small.
-2. new components must contain a property class so that they can be extended according to the [instructions](./extendComponents.md)
+2. New components must contain a property class so that they can be extended according to the [instructions](./extendComponents.md)
 ```twig
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 ```
 
-2. components must contain block content. This block is in HTML-like syntax used to define children.
-3. components must contain attribute props. This is so that it resembles the React components as much as possible.
+2. Components must have block content when is not self-closing. This block is in HTML-like syntax used to define children.
+3. Components must contain attribute props. This is so that it resembles the React components as much as possible.
 4. All internal twig variables should start by underscore (this represents private variables).
 
 ```twig
