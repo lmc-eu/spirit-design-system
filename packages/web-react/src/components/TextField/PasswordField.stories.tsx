@@ -14,13 +14,13 @@ Default.args = {
 export const Required = Template.bind({});
 Required.args = {
   ...Default.args,
-  required: true,
+  isRequired: true,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Default.args,
-  disabled: true,
+  isDisabled: true,
 };
 
 export const HiddenLabel = Template.bind({});

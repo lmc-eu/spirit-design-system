@@ -24,7 +24,7 @@ describe('useTextFieldStyleProps', () => {
     ['password', 'Password'],
   ])('input type %s', (type, expectedClassPrefix) => {
     it('should return required input', () => {
-      const props = { required: true, type } as SpiritTextFieldProps;
+      const props = { isRequired: true, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
 
       expect(result.current.classProps.label).toBe(

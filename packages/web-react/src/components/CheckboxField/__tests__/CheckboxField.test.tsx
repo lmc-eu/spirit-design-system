@@ -45,7 +45,7 @@ describe('CheckboxField', () => {
   });
 
   it('should have required classname', () => {
-    const dom = render(<CheckboxField required />);
+    const dom = render(<CheckboxField isRequired />);
 
     const element = dom.container.querySelector('label > span > span') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label--required');

@@ -6,7 +6,7 @@ export interface Validation {
   /**
    * Whether user input is required on the input before form submission.
    */
-  required?: boolean;
+  isRequired?: boolean;
 }
 
 export interface InputBase {
@@ -15,7 +15,7 @@ export interface InputBase {
    */
   name?: string;
   /** Whether the input is disabled. */
-  disabled?: boolean;
+  isDisabled?: boolean;
 }
 
 export interface ValueBase<T> {

@@ -35,8 +35,8 @@ export const StackedFormFields = Template.bind({});
 StackedFormFields.args = {
   children: (
     <>
-      <TextField id="textfieldStack1" label="Label" required />
-      <TextField id="textfieldStack2" label="Label" required />
+      <TextField id="textfieldStack1" label="Label" isRequired />
+      <TextField id="textfieldStack2" label="Label" isRequired />
     </>
   ),
 };

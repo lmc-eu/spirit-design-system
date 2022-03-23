@@ -17,7 +17,7 @@ describe('useCheckboxFieldStyleProps', () => {
   });
 
   it('should return required input', () => {
-    const props = { required: true } as SpiritCheckboxFieldProps;
+    const props = { isRequired: true } as SpiritCheckboxFieldProps;
     const { result } = renderHook(() => useCheckboxFieldStyleProps(props));
 
     expect(result.current.classProps.label).toBe('CheckboxField__label CheckboxField__label--required');

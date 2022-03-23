@@ -16,9 +16,9 @@ export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, I
   /** The placeholder for input. */
   placeholder?: string;
   /** Whether the input is disabled. */
-  disabled?: boolean;
+  isDisabled?: boolean;
   /** Whether the input is required. */
-  required?: boolean;
+  isRequired?: boolean;
   /** Value of the input. */
   value?: string | number;
 }

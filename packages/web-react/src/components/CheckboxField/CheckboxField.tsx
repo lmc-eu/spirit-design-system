@@ -5,7 +5,7 @@ import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 
 export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
-  const { id, disabled, required, label, message, value, checked, ...restProps } = modifiedProps;
+  const { id, label, message, value, isDisabled, isRequired, isChecked, ...restProps } = modifiedProps;
 
   return (
     <label htmlFor={id} className={classProps.root}>
@@ -14,9 +14,9 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
         type="checkbox"
         id={id}
         className={classProps.input}
-        disabled={disabled}
-        required={required}
-        checked={checked}
+        disabled={isDisabled}
+        required={isRequired}
+        checked={isChecked}
         value={value}
       />
       <span className={classProps.text}>

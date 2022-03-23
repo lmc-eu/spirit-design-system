@@ -7,7 +7,7 @@ type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps extends ChildrenProps, ClickEvents {
   /** Whether the button is disabled. */
-  disabled?: boolean;
+  isDisabled?: boolean;
 }
 
 export interface AriaButtonElementTypeProps<T extends ElementType = 'button'> {
@@ -50,7 +50,7 @@ export interface SpiritButtonProps<T extends ElementType = 'button'>
   /** The color of the button. */
   color: ButtonColor;
   /** Whether the button should be displayed with a block style. */
-  block?: boolean;
+  isBlock?: boolean;
   /** Whether the button should be displayed as a square. */
   isSquare?: boolean;
   // tag?: ElementType;
