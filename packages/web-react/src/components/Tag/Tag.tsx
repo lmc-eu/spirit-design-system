@@ -10,18 +10,15 @@ type Color = 'default' | 'informative' | 'success' | 'warning' | 'danger';
 type Theme = 'light' | 'dark';
 
 export interface TagProps<T extends ElementType = 'span'> extends ChildrenProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  tag?: T | JSXElementConstructor<any>;
+  tag?: T | JSXElementConstructor<unknown>;
   color?: Color;
   theme?: Theme;
-  className?: string;
 }
 
 const defaultProps = {
   color: 'default',
   theme: 'dark',
   tag: 'span',
-  className: null,
 };
 
 // `${componentClassName}--${color}-${theme}`;
@@ -29,14 +26,10 @@ const getTagColorAndThemeClassname = (className: string, color: Color, theme: Th
   compose(applyTheme<Theme>(theme), applyColor<Color>(color))(className);
 
 export const Tag = <T extends ElementType = 'span'>(props: TagProps<T>): JSX.Element => {
-  const { tag: ElementTag = 'span', color, theme, className, children, ...restProps } = props;
+  const { tag: ElementTag = 'span', color, theme, children, ...restProps } = props;
   const tagClass = useClassNamePrefix('Tag');
 
-  const classes = classNames(
-    tagClass,
-    getTagColorAndThemeClassname(tagClass, color as Color, theme as Theme),
-    className,
-  );
+  const classes = classNames(tagClass, getTagColorAndThemeClassname(tagClass, color as Color, theme as Theme));
 
   return (
     <ElementTag {...restProps} className={classes}>
