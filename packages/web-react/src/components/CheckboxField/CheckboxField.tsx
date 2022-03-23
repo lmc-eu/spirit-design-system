@@ -1,5 +1,6 @@
 import React from 'react';
 import { SpiritCheckboxFieldProps } from '../../types';
+import { filterProps } from '../../utils/filterProps';
 import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 
 export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
@@ -9,7 +10,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   return (
     <label htmlFor={id} className={classProps.root}>
       <input
-        {...restProps}
+        {...filterProps(restProps)}
         type="checkbox"
         id={id}
         className={classProps.input}

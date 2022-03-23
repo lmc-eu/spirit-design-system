@@ -1,4 +1,5 @@
 import React, { ElementType, JSXElementConstructor } from 'react';
+import { filterProps } from '../../utils/filterProps';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ChildrenProps, StyleProps } from '../../types';
 
@@ -21,7 +22,7 @@ export const Stack = <T extends ElementType = 'div'>(props: StackProps<T>): JSX.
   const stackClass = useClassNamePrefix('Stack');
 
   return (
-    <ElementTag {...restProps} className={stackClass}>
+    <ElementTag {...filterProps(restProps)} className={stackClass}>
       {children}
     </ElementTag>
   );

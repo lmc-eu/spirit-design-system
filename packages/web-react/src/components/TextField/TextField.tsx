@@ -1,4 +1,5 @@
 import React from 'react';
+import { filterProps } from '../../utils/filterProps';
 import { SpiritTextFieldProps } from '../../types';
 import { useTextFieldStyleProps } from './useTextFieldStyleProps';
 
@@ -16,7 +17,7 @@ export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
         {label}
       </label>
       <input
-        {...restProps}
+        {...filterProps(restProps)}
         type={type}
         id={id}
         className={classProps.input}

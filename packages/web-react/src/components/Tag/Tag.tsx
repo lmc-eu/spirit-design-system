@@ -1,5 +1,6 @@
 import React, { ElementType, JSXElementConstructor } from 'react';
 import classNames from 'classnames';
+import { filterProps } from '../../utils/filterProps';
 import { compose } from '../../utils/compose';
 import { applyColor, applyTheme } from '../../utils/classname';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
@@ -32,7 +33,7 @@ export const Tag = <T extends ElementType = 'span'>(props: TagProps<T>): JSX.Ele
   const classes = classNames(tagClass, getTagColorAndThemeClassname(tagClass, color as Color, theme as Theme));
 
   return (
-    <ElementTag {...restProps} className={classes}>
+    <ElementTag {...filterProps(restProps)} className={classes}>
       {children}
     </ElementTag>
   );

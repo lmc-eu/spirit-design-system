@@ -1,4 +1,5 @@
 import React from 'react';
+import { filterProps } from '../../utils/filterProps';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ChildrenProps, StyleProps } from '../../types';
 
@@ -8,7 +9,7 @@ export const Container = ({ children, ...restProps }: ContainerProps): JSX.Eleme
   const containerClass = useClassNamePrefix('Container');
 
   return (
-    <div {...restProps} className={containerClass}>
+    <div {...filterProps(restProps)} className={containerClass}>
       {children}
     </div>
   );
