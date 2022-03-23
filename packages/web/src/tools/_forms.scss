@@ -28,7 +28,7 @@
         @include typography.generate(map.get($theme, input-typography));
 
         display: block;
-        max-width: 100%;
+        width: 100%;
         padding: map.get($theme, input-padding-y) map.get($theme, input-padding-x);
         color: map.get($theme, input-color-default);
         background: map.get($theme, input-background);
