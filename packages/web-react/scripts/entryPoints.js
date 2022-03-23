@@ -3,6 +3,7 @@ const entryPoints = [
   { dirs: ['context'] },
   { dirs: ['hooks'] },
   { dirs: ['components'] },
+  { dirs: ['components', 'Alert'] },
   { dirs: ['components', 'Button'] },
   { dirs: ['components', 'CheckboxField'] },
   { dirs: ['components', 'Container'] },
