@@ -1,5 +1,5 @@
 import React, { ElementType } from 'react';
-import classNames from 'classnames';
+import { filterProps } from '../../utils/filterProps';
 import { SpiritButtonProps } from '../../types';
 import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
@@ -19,7 +19,7 @@ export const Button = <T extends ElementType = 'button'>(props: SpiritButtonProp
   const { classProps } = useButtonStyleProps(restProps);
 
   return (
-    <ElementTag {...buttonProps} className={classNames(className, classProps)}>
+    <ElementTag {...filterProps(buttonProps)} className={classProps}>
       {children}
     </ElementTag>
   );

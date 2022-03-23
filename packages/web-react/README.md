@@ -44,6 +44,15 @@ import { ClassNamePrefixProvider } from '@lmc-eu/spirit-web-react/context/ClassN
 </ClassNamePrefixProvider>;
 ```
 
+## Component API and Disallowed props
+
+For consistency in design we are filtering some props from the components. Please consult additional styling with [web package documentation][web-pkg-rebrand].
+
+List of disallowed props:
+
+- `className`
+- `style`
+
 ## Examples
 
 👀 See [example] for a live demo.
@@ -54,3 +63,4 @@ See the [LICENSE](LICENSE.md) file for information.
 
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [examples]: https://lmc-eu.github.io/spirit-design-system/web-react/
+[web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
