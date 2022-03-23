@@ -14,7 +14,7 @@ describe('ButtonLink', () => {
   });
 
   it('should have disabled classname', () => {
-    const { container } = render(<ButtonLink disabled />);
+    const { container } = render(<ButtonLink isDisabled />);
 
     const element = container.querySelector('a') as HTMLElement;
     expect(element).toHaveClass('Button');
@@ -24,7 +24,7 @@ describe('ButtonLink', () => {
   it('should have classname with lmc prefix', () => {
     const { container } = render(
       <ClassNamePrefixProvider value="lmc">
-        <ButtonLink disabled block />
+        <ButtonLink isDisabled isBlock />
       </ClassNamePrefixProvider>,
     );
 

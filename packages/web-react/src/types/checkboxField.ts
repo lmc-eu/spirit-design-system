@@ -12,7 +12,7 @@ export interface CheckboxFieldProps extends ChildrenProps, StyleProps, LabelProp
   /** Identificator of input */
   id?: string;
   /** Whether the checkbox is checked */
-  checked?: boolean;
+  isChecked?: boolean;
 }
 
 export interface SpiritCheckboxFieldProps extends CheckboxFieldProps {

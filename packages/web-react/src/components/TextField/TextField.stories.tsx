@@ -13,10 +13,10 @@ export default {
         options: ['text', 'password'],
       },
     },
-    disabled: {
+    isDisabled: {
       control: 'boolean',
     },
-    required: {
+    isRequired: {
       control: 'boolean',
     },
     isLabelHidden: {
@@ -46,13 +46,13 @@ Default.args = {
 export const Required = Template.bind({});
 Required.args = {
   ...Default.args,
-  required: true,
+  isRequired: true,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Default.args,
-  disabled: true,
+  isDisabled: true,
 };
 
 export const WithError = Template.bind({});

@@ -17,7 +17,7 @@ export interface CheckboxFieldStyles {
 
 export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): CheckboxFieldStyles {
   const { validationState, isLabelHidden, ...restProps } = props;
-  const { disabled, required } = restProps;
+  const { isDisabled, isRequired } = restProps;
 
   const checkboxFieldClass = useClassNamePrefix('CheckboxField');
   const checkboxFieldDisabledClass = `${checkboxFieldClass}--disabled`;
@@ -30,11 +30,11 @@ export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): Che
   const checkboxFieldMessageClass = `${checkboxFieldClass}__message`;
 
   const rootStyles = classNames(checkboxFieldClass, {
-    [checkboxFieldDisabledClass]: disabled,
+    [checkboxFieldDisabledClass]: isDisabled,
     [checkboxFieldErrorClass]: validationState === 'error',
   });
   const labelStyles = classNames(checkboxFieldLabelClass, {
-    [checkboxFieldLabelRequiredClass]: required,
+    [checkboxFieldLabelRequiredClass]: isRequired,
     [checkboxFieldLabelHiddenClass]: isLabelHidden,
   });
 

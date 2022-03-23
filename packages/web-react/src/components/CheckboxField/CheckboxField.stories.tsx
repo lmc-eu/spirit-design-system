@@ -6,10 +6,13 @@ export default {
   title: 'Components/CheckboxField',
   argTypes: {
     id: 'default',
-    disabled: {
+    isDisabled: {
       control: 'boolean',
     },
-    required: {
+    isRequired: {
+      control: 'boolean',
+    },
+    isChecked: {
       control: 'boolean',
     },
     validationState: {
@@ -35,21 +38,21 @@ export const CheckedCheckboxField = Template.bind({});
 DefaultCheckboxField.args = {
   label: 'Label',
   message: 'Message',
-  checked: true,
+  isChecked: true,
 };
 
 export const RequiredCheckboxField = Template.bind({});
 RequiredCheckboxField.args = {
   label: 'Label',
   message: 'Message',
-  required: true,
+  isRequired: true,
 };
 
 export const DisabledCheckboxField = Template.bind({});
 DisabledCheckboxField.args = {
   label: 'Label',
   message: 'Message',
-  disabled: true,
+  isDisabled: true,
 };
 
 export const ErroredCheckboxField = Template.bind({});

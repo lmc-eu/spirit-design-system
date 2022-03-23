@@ -13,27 +13,27 @@ export function useButtonAriaProps(
 export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<HTMLElement>>;
 
 export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<unknown>> {
-  const { elementType = 'button', disabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
+  const { elementType = 'button', isDisabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
 
   let additionalProps;
   if (elementType === 'button') {
     additionalProps = {
       type,
-      disabled,
+      disabled: isDisabled,
     };
   } else {
     additionalProps = {
       role: 'button',
-      href: elementType === 'a' && disabled ? undefined : href,
+      href: elementType === 'a' && isDisabled ? undefined : href,
       target: elementType === 'a' ? target : undefined,
       type: elementType === 'a' && type === 'button' ? undefined : type,
-      disabled,
+      disabled: isDisabled,
       rel: elementType === 'a' ? rel : undefined,
     };
   }
 
   const handleClick = (event: ClickEvent) => {
-    if (disabled) {
+    if (isDisabled) {
       event.preventDefault();
 
       return;

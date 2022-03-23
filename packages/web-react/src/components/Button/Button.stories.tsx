@@ -11,8 +11,8 @@ export default {
     },
     onClick: { action: 'onClick' },
     type: 'button',
-    disabled: { control: 'boolean' },
-    block: { control: 'boolean' },
+    isDisabled: { control: 'boolean' },
+    isBlock: { control: 'boolean' },
     isSquare: { control: 'boolean' },
     ariaLabel: { control: 'text' },
     children: {
@@ -57,14 +57,14 @@ export const DisabledButton = Template.bind({});
 DisabledButton.args = {
   color: 'primary',
   children: 'Button',
-  disabled: true,
+  isDisabled: true,
 };
 
 export const BlockButton = Template.bind({});
 BlockButton.args = {
   color: 'primary',
   children: 'Button',
-  block: true,
+  isBlock: true,
 };
 
 export const SquareButton = Template.bind({});

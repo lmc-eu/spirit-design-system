@@ -43,7 +43,7 @@ describe('TextField', () => {
     });
 
     it('should have required classname', () => {
-      const dom = render(<TextField type={type as TextFieldType} required />);
+      const dom = render(<TextField type={type as TextFieldType} isRequired />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
       expect(element).toHaveClass(`${expectedClassPrefix}Field__label--required`);

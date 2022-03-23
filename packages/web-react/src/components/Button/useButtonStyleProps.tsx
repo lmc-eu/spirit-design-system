@@ -15,22 +15,22 @@ export interface ButtonStyles {
 }
 
 export function useButtonStyleProps<T extends ElementType = 'button'>(props: SpiritButtonProps<T>): ButtonStyles {
-  const { color, block, disabled, isSquare } = props;
+  const { color, isBlock, isDisabled, isSquare } = props;
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;
   const buttonDisabledClass = `${buttonClass}--disabled`;
   const buttonSquareClass = `${buttonClass}--square`;
 
-  if (block && isSquare) {
+  if (isBlock && isSquare) {
     // eslint-disable-next-line no-console
     console.warn('isBlock and isSquare props are mutually exclusive');
   }
 
   const classProps = classNames(buttonClass, getButtonColorClassname(buttonClass, color), {
-    [buttonBlockClass]: block && !isSquare,
-    [buttonDisabledClass]: disabled,
-    [buttonSquareClass]: isSquare && !block,
+    [buttonBlockClass]: isBlock && !isSquare,
+    [buttonDisabledClass]: isDisabled,
+    [buttonSquareClass]: isSquare && !isBlock,
   });
 
   return {

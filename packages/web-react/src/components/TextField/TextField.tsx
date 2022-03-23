@@ -9,7 +9,7 @@ const defaultProps = {
 
 export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useTextFieldStyleProps(props);
-  const { id, type, placeholder, disabled, required, label, message, value, ...restProps } = modifiedProps;
+  const { id, type, placeholder, isDisabled, isRequired, label, message, value, ...restProps } = modifiedProps;
 
   return (
     <div className={classProps.root}>
@@ -22,8 +22,8 @@ export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
         id={id}
         className={classProps.input}
         placeholder={placeholder}
-        disabled={disabled}
-        required={required}
+        disabled={isDisabled}
+        required={isRequired}
         value={value}
       />
       {message && <div className={classProps.message}>{message}</div>}

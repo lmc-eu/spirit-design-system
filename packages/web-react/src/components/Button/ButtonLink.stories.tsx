@@ -14,8 +14,8 @@ export default {
       options: ['_blank', '_self', '_parent', '_top'],
       control: { type: 'select' },
     },
-    disabled: { control: 'boolean' },
-    block: { control: 'boolean' },
+    isDisabled: { control: 'boolean' },
+    isBlock: { control: 'boolean' },
     ariaLabel: { control: 'text' },
     children: {
       control: 'text',
@@ -30,6 +30,6 @@ ExampleButton.args = {
   color: 'primary',
   href: '#',
   children: 'Button',
-  disabled: false,
-  block: false,
+  isDisabled: false,
+  isBlock: false,
 };

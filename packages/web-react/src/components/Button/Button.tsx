@@ -7,8 +7,8 @@ import { useButtonStyleProps } from './useButtonStyleProps';
 const defaultProps = {
   color: 'primary',
   type: 'button',
-  block: false,
-  disabled: false,
+  isBlock: false,
+  isDisabled: false,
   isSquare: false,
   elementType: 'button',
 };
