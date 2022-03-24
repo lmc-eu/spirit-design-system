@@ -22,8 +22,13 @@ class ComponentLexer extends Lexer
         $this->twigPathAlias = $twigPathAlias;
     }
 
-    public function tokenize(Source $source): TokenStream
+    /**
+     * @param Source $source
+     * @param string|null $name
+     */
+    public function tokenize($source, $name = null): TokenStream
     {
+        assert($source instanceof Source);
         $preparsed = $this->preparse($source->getCode());
 
         return parent::tokenize(
