@@ -4,7 +4,8 @@
 
 @mixin field($type, $variants, $theme) {
     .#{$type} {
-        max-width: 100%;
+        display: inline-block;
+        width: map.get($theme, width-default);
     }
 
     .#{$type}__label {
@@ -40,6 +41,10 @@
             color: map.get($theme, input-placeholder-color-default);
             opacity: 1;
         }
+    }
+
+    .#{$type}--fluid {
+        width: 100%;
     }
 
     .#{$type}:hover > .#{$type}__input,

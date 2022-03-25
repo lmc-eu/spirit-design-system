@@ -32,4 +32,9 @@ and show if the input is required.
   <input type="text" id="textfield6" class="TextField__input" placeholder="Placeholder" disabled />
   <div class="TextField__message">Message</div>
 </div>
+<div class="TextField TextField--fluid">
+  <label for="textfield7" class="TextField__label TextField__label--required">Label of disabled input</label>
+  <input type="text" id="textfield7" class="TextField__input" placeholder="Placeholder" />
+  <div class="TextField__message">Message</div>
+</div>
 ```
