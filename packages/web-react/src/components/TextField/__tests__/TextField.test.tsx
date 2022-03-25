@@ -63,6 +63,13 @@ describe('TextField', () => {
       expect(element.textContent).toBe('text');
     });
 
+    it('should have fluid classname', () => {
+      const dom = render(<TextField type={type as TextFieldType} isFluid />);
+
+      const element = dom.container.querySelector('div') as HTMLElement;
+      expect(element).toHaveClass(`${expectedClassPrefix}Field--fluid`);
+    });
+
     it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
       const dom = render(
         <TextField type={type as TextFieldType} validationState={validationState as ValidationState} />,

@@ -41,6 +41,13 @@ describe('useTextFieldStyleProps', () => {
       );
     });
 
+    it('should return fluid class', () => {
+      const props = { isFluid: true, type } as SpiritTextFieldProps;
+      const { result } = renderHook(() => useTextFieldStyleProps(props));
+
+      expect(result.current.classProps.root).toBe(`${expectedClassPrefix}Field ${expectedClassPrefix}Field--fluid`);
+    });
+
     it.each([['success'], ['warning'], ['error']])('should return field with %s', (validationState) => {
       const props = { validationState, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
