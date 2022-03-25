@@ -22,6 +22,9 @@ export default {
     isLabelHidden: {
       control: 'boolean',
     },
+    isFluid: {
+      control: 'boolean',
+    },
     validationState: {
       control: {
         type: 'select',
@@ -65,4 +68,10 @@ export const HiddenLabel = Template.bind({});
 HiddenLabel.args = {
   ...Default.args,
   isLabelHidden: true,
+};
+
+export const Fluid = Template.bind({});
+Disabled.args = {
+  ...Default.args,
+  isFluid: true,
 };

@@ -29,6 +29,12 @@ HiddenLabel.args = {
   isLabelHidden: true,
 };
 
+export const Fluid = Template.bind({});
+Fluid.args = {
+  ...Default.args,
+  isFluid: true,
+};
+
 export const WithSuccessState = Template.bind({});
 WithSuccessState.args = {
   ...Default.args,

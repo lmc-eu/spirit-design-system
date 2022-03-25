@@ -26,4 +26,6 @@ export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, I
 export interface SpiritTextFieldProps extends TextFieldProps {
   /** Whether the label should be displayed */
   isLabelHidden?: boolean;
+  /** Whether the width should be controlled by container */
+  isFluid?: boolean;
 }

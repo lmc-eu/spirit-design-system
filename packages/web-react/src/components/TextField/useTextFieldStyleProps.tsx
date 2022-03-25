@@ -16,12 +16,13 @@ export interface TextFieldStyles {
 }
 
 export function useTextFieldStyleProps(props: SpiritTextFieldProps): TextFieldStyles {
-  const { validationState, isLabelHidden, ...restProps } = props;
+  const { validationState, isLabelHidden, isFluid, ...restProps } = props;
   const { isDisabled, isRequired, type } = restProps;
 
   const mainClass = `${capitalize(type)}Field`;
   const textFieldClass = useClassNamePrefix(mainClass);
   const textFieldDisabledClass = `${textFieldClass}--disabled`;
+  const textFieldFluidClass = `${textFieldClass}--fluid`;
   const textFieldValidationClass = `${textFieldClass}--${validationState}`;
   const textFieldInputClass = `${textFieldClass}__input`;
   const textFieldLabelClass = `${textFieldClass}__label`;
@@ -31,6 +32,7 @@ export function useTextFieldStyleProps(props: SpiritTextFieldProps): TextFieldSt
 
   const rootStyles = classNames(textFieldClass, {
     [textFieldDisabledClass]: isDisabled,
+    [textFieldFluidClass]: isFluid,
     [textFieldValidationClass]: validationState,
   });
   const labelStyles = classNames(textFieldLabelClass, {
