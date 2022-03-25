@@ -255,6 +255,20 @@ html {
   box-sizing: inherit;
 }
 
+:any-link {
+  text-decoration: none;
+}
+
+a {
+  color: #29616f;
+}
+a:hover {
+  color: #1b5260;
+}
+a:active {
+  color: #0b3a46;
+}
+
 body,
 h1,
 h2,
@@ -294,10 +308,6 @@ li > ul {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-:any-link {
-  text-decoration: none;
 }
 
 address,

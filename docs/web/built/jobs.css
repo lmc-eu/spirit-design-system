@@ -254,6 +254,20 @@ html {
   box-sizing: inherit;
 }
 
+:any-link {
+  text-decoration: none;
+}
+
+a {
+  color: #29616f;
+}
+a:hover {
+  color: #1b5260;
+}
+a:active {
+  color: #0b3a46;
+}
+
 body,
 h1,
 h2,
@@ -293,10 +307,6 @@ li > ul {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-:any-link {
-  text-decoration: none;
 }
 
 address,
@@ -1013,26 +1023,90 @@ fieldset {
   color: #d6d6d6;
 }
 
+.jobs-link-primary {
+  color: #29616f;
+}
+
+.jobs-link-primary:hover {
+  color: #1b5260;
+}
+
+.jobs-link-primary:active {
+  color: #0b3a46;
+}
+
+.jobs-link-primary.jobs-link-disabled:any-link {
+  color: #c4c4c4;
+}
+
+.jobs-link-secondary {
+  color: #90a2a7;
+}
+
+.jobs-link-secondary:hover {
+  color: #849499;
+}
+
+.jobs-link-secondary:active {
+  color: #6e7b80;
+}
+
+.jobs-link-secondary.jobs-link-disabled:any-link {
+  color: #c4c4c4;
+}
+
+.jobs-link-inverted {
+  color: #e9e9e9;
+}
+
+.jobs-link-inverted:hover {
+  color: #dbdbdb;
+}
+
+.jobs-link-inverted:active {
+  color: #d4d4d4;
+}
+
+.jobs-link-inverted.jobs-link-disabled:any-link {
+  color: #c4c4c4;
+}
+
+.jobs-link-disabled {
+  cursor: default;
+}
+
+.jobs-link-underlined {
+  text-decoration: underline;
+}
+
+[class*=typography-heading] a {
+  text-decoration: none;
+}
+[class*=typography-heading] a:hover, [class*=typography-heading] a:active {
+  text-decoration: underline;
+}
+
+[class*=typography-heading] :visited {
+  color: #a7bcc2;
+}
+
+[class*=typography-heading] .jobs-link-primary:visited {
+  color: #a7bcc2;
+}
+
+[class*=typography-heading] .jobs-link-secondary:visited {
+  color: #a7bcc2;
+}
+
+[class*=typography-heading] .jobs-link-inverted:visited {
+  color: #a7bcc2;
+}
+
 .jobs-typography-body-large-button {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
-}
-.jobs-typography-body-large-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.jobs-typography-body-large-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: underline;
   line-height: 1.5;
 }
 .jobs-typography-body-large-text-bold {
@@ -1063,21 +1137,6 @@ fieldset {
   font-weight: 600;
   line-height: 1.5;
 }
-.jobs-typography-body-medium-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.jobs-typography-body-medium-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: underline;
-  line-height: 1.5;
-}
 .jobs-typography-body-medium-text-bold {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
@@ -1106,21 +1165,6 @@ fieldset {
   font-weight: 600;
   line-height: 1.5;
 }
-.jobs-typography-body-small-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.jobs-typography-body-small-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: underline;
-  line-height: 1.5;
-}
 .jobs-typography-body-small-text-bold {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
@@ -1142,21 +1186,6 @@ fieldset {
   font-weight: 400;
   line-height: 1.5;
 }
-.jobs-typography-body-xsmall-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.jobs-typography-body-xsmall-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: underline;
-  line-height: 1.5;
-}
 .jobs-typography-body-xsmall-text-regular {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
@@ -1164,61 +1193,6 @@ fieldset {
   font-weight: 400;
   line-height: 1.5;
 }
-.jobs-typography-heading-large-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-large-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-large-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-large-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-large-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-large-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-
 .jobs-typography-heading-large-text {
   font-family: 'Inter', sans-serif;
   font-size: 2rem;
@@ -1241,61 +1215,6 @@ fieldset {
     font-size: 3rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-medium-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-medium-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-medium-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-medium-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-medium-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-medium-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
     line-height: 1.2;
   }
 }
@@ -1326,61 +1245,6 @@ fieldset {
   }
 }
 
-.jobs-typography-heading-small-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-small-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-small-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-small-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-small-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-small-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-
 .jobs-typography-heading-small-text {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
@@ -1407,61 +1271,6 @@ fieldset {
   }
 }
 
-.jobs-typography-heading-xlarge-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-xlarge-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-xlarge-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-xlarge-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-xlarge-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-xlarge-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 4rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-
 .jobs-typography-heading-xlarge-text {
   font-family: 'Inter', sans-serif;
   font-size: 3rem;
@@ -1484,61 +1293,6 @@ fieldset {
     font-size: 4rem;
     font-style: normal;
     font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-xsmall-link-no-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-xsmall-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-xsmall-link-no-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-}
-
-.jobs-typography-heading-xsmall-link-underline {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .jobs-typography-heading-xsmall-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 1280px) {
-  .jobs-typography-heading-xsmall-link-underline {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    text-decoration: underline;
     line-height: 1.2;
   }
 }
