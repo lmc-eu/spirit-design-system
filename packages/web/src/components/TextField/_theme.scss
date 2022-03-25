@@ -1,6 +1,7 @@
 @use '@tokens' as tokens;
 
 $spacing: tokens.$space-300;
+$width-default: 18rem;
 
 $label-typography: tokens.$body-small-text-regular;
 $label-color-default: tokens.$text-secondary-default;
@@ -31,6 +32,7 @@ $message-color-error: tokens.$emotion-danger-default;
 
 $theme: (
     spacing: $spacing,
+    width-default: $width-default,
     label-typography: $label-typography,
     label-color-default: $label-color-default,
     label-color-disabled: $label-color-disabled,
