@@ -1,0 +1,19 @@
+@mixin create-cover($position: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    opacity: 0;
+    visibility: hidden;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: opacity, visibility;
+        transition-duration: 0.25s;
+    }
+}
+
+@mixin show-cover() {
+    opacity: 1;
+    visibility: visible;
+}

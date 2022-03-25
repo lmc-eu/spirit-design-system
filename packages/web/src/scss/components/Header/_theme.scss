@@ -1,0 +1,46 @@
+@use '@tokens' as tokens;
+
+$typography: tokens.$body-medium-text-regular;
+$breakpoint: tokens.$breakpoint-desktop;
+
+$header-padding-x: tokens.$space-800;
+$header-gap: tokens.$space-1000;
+
+$header-inverted-color: tokens.$text-primary-inverted-default;
+$header-inverted-background-color: tokens.$background-inverted;
+
+$mobile-only-actions-gap: tokens.$space-600;
+
+$pane-padding: tokens.$space-700;
+$pane-color: tokens.$text-primary-inverted-default;
+$pane-background-color: tokens.$background-inverted;
+$pane-shadow: tokens.$shadow-400;
+
+$actions-padding-x: $pane-padding;
+$actions-padding-y: tokens.$space-900;
+$actions-row-gap: tokens.$space-700;
+$actions-column-gap: tokens.$space-700;
+
+$nav-item-padding-x: $actions-padding-x;
+$nav-item-padding-y: tokens.$space-500;
+$nav-item-padding-x-desktop: tokens.$space-600;
+$nav-item-padding-y-desktop: tokens.$space-0;
+
+$nav-link-color: tokens.$text-primary-inverted-default;
+$nav-link-background-color: tokens.$background-interactive-inverted-default;
+$nav-link-color-hover: tokens.$text-primary-inverted-default;
+$nav-link-background-color-hover: tokens.$background-interactive-inverted-hover;
+$nav-link-color-active: tokens.$text-primary-inverted-default;
+$nav-link-background-color-active: tokens.$background-interactive-inverted-active;
+$nav-link-color-current: tokens.$text-primary-inverted-default;
+$nav-link-background-color-current: tokens.$background-interactive-inverted-active;
+$nav-link-current-border-width: 3px;
+$nav-link-current-border-color: tokens.$action-selected-default;
+
+$close-button-size: tokens.$space-1000;
+
+$backdrop-background-color: tokens.$background-backdrop;
+
+$icon-size: tokens.$space-700;
+$icon-menu: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z" fill="#{tokens.$text-primary-inverted-default}"/></svg>');
+$icon-close: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.3007 5.70997C17.9107 5.31997 17.2807 5.31997 16.8907 5.70997L12.0007 10.59L7.1107 5.69997C6.7207 5.30997 6.0907 5.30997 5.7007 5.69997C5.3107 6.08997 5.3107 6.71997 5.7007 7.10997L10.5907 12L5.7007 16.89C5.3107 17.28 5.3107 17.91 5.7007 18.3C6.0907 18.69 6.7207 18.69 7.1107 18.3L12.0007 13.41L16.8907 18.3C17.2807 18.69 17.9107 18.69 18.3007 18.3C18.6907 17.91 18.6907 17.28 18.3007 16.89L13.4107 12L18.3007 7.10997C18.6807 6.72997 18.6807 6.08997 18.3007 5.70997Z" fill="#{tokens.$action-inverted-default}"/></svg>');
