@@ -39,6 +39,7 @@
 .Button--square {
     @include tools.square(theme.$breakpoints, theme.$typography, theme.$padding-y, theme.$border-width);
 
+    flex: none;
     padding-left: 0;
     padding-right: 0;
 }
