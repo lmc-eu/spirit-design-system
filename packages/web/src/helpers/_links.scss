@@ -1,12 +1,12 @@
 @use 'sass:map';
+@use '../settings/cursors';
 @use '../settings/links' as links-settings;
 @use '../tools/links';
 
 @include links.variants('.link', links-settings.$variants, (default, hover, active, disabled));
 
-// All disabled links have default cursor
 .link-disabled {
-    cursor: default;
+    cursor: cursors.$disabled;
 }
 
 // Allows link underline everywhere, except for headings

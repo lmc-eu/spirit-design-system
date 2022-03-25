@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use 'theme';
 @use 'tools';
+@use '../../settings/cursors';
 @use '../../tools/typography';
 
 .Button {
@@ -26,7 +27,7 @@
 
     &:disabled,
     &.Button--disabled {
-        cursor: default;
+        cursor: cursors.$disabled;
         pointer-events: none;
     }
 }
