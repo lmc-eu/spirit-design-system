@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.4.0 - 2022-03-28
 - Add support Twig 1.44.6 for Jobs
 
 ## 1.3.0 - 2022-03-22
