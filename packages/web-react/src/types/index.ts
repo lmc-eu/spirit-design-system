@@ -3,6 +3,7 @@ export * from './alert';
 export * from './button';
 export * from './checkboxField';
 export * from './grid';
+export * from './heading';
 export * from './label';
 export * from './link';
 export * from './message';

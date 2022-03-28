@@ -8,6 +8,7 @@ const entryPoints = [
   { dirs: ['components', 'CheckboxField'] },
   { dirs: ['components', 'Container'] },
   { dirs: ['components', 'Grid'] },
+  { dirs: ['components', 'Heading'] },
   { dirs: ['components', 'Link'] },
   { dirs: ['components', 'Stack'] },
   { dirs: ['components', 'Tag'] },
