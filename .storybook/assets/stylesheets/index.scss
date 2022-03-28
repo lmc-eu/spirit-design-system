@@ -15,11 +15,11 @@
 @use '../../../packages/web/src/components/TextField';
 
 .example-box {
-    min-height: 2rem;
     box-sizing: border-box;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     color: #fff;
     background: #0b1c21;
+    padding: 0.25rem;
 }
