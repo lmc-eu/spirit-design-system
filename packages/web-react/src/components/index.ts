@@ -3,6 +3,7 @@ export * from './Button';
 export * from './CheckboxField';
 export * from './Container';
 export * from './Grid';
+export * from './Heading';
 export * from './Stack';
 export * from './Tag';
 export * from './Text';
