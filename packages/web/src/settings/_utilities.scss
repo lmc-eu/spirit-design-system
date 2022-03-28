@@ -117,4 +117,20 @@ $utilities: (
         class: text,
         values: left right center,
     ),
+    'text-color': (
+        responsive: false,
+        property: color,
+        class: text,
+        values: tokens.$text-colors,
+    ),
+    'background-color': (
+        responsive: false,
+        property: background-color,
+        class: bg,
+        values: (
+            basic: tokens.$background-basic,
+            cover: tokens.$background-cover,
+            inverted: tokens.$background-inverted,
+        ),
+    ),
 );
