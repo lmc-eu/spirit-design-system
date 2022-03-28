@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.12.0"></a>
+
+# [0.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.11.0...@lmc-eu/spirit-web@0.12.0) (2022-03-28)
+
+### Features
+
+- **web:** Add Cursor settings with disabled state and use it in links and Button ([4340e16](https://github.com/lmc-eu/spirit-design-system/commit/4340e16))
+- **web:** Add Link helpers [#DS-137](https://github.com/lmc-eu/spirit-design-system/issues/DS-137) ([5b634b8](https://github.com/lmc-eu/spirit-design-system/commit/5b634b8))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.11.0"></a>
 
 # [0.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.10.0...@lmc-eu/spirit-web@0.11.0) (2022-03-22)

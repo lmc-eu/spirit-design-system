@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.10.0"></a>
+
+# [0.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.9.0...@lmc-eu/spirit-web-react@0.10.0) (2022-03-28)
+
+## BREAKING CHANGES
+
+- **web-react:** Remove `className` from all components refs [#DS-158](https://github.com/lmc-eu/spirit-design-system/issues/DS-158) ([788aaf5](https://github.com/lmc-eu/spirit-design-system/commit/788aaf5))
+  - we want to be more defensive in styling the components
+  - please use existing classes or see the docs for web package
+  - @see: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
+- **web-react:** Filter out unwanted props on components (refs [#DS-160](https://github.com/lmc-eu/spirit-design-system/issues/DS-160)) ([09ef597](https://github.com/lmc-eu/spirit-design-system/commit/09ef597))
+  - we want to be more defensive in styling the components
+  - please use existing classes or see the docs for web package
+  - @see: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
+- **web-react:** Use `is` prefix for boolean props (refs [#DS-160](https://github.com/lmc-eu/spirit-design-system/issues/DS-160)) ([849a88a](https://github.com/lmc-eu/spirit-design-system/commit/849a88a))
+  - we want to use `is` and `has` prefix for boolean props to improve readibility
+  - also most of the components are not just HTML tag wrappers so it is
+    needed to distinguish components API from HTML attributes
+
+### Features
+
+- **web-react:** Introduce Alert component (refs [#DS-164](https://github.com/lmc-eu/spirit-design-system/issues/DS-164)) ([6681999](https://github.com/lmc-eu/spirit-design-system/commit/6681999))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.9.0"></a>
 
 # [0.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.8.0...@lmc-eu/spirit-web-react@0.9.0) (2022-03-22)
