@@ -31,7 +31,7 @@ const config = {
 
   // An array of regexp pattern strings that are matched against all test paths before executing the test
   // https://jestjs.io/docs/configuration#testpathignorepatterns-arraystring
-  testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
+  testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/', '.*__tests__/.*DataProvider.ts'],
 
   // The directory where Jest should output its coverage files.
   // https://jestjs.io/docs/configuration#coveragedirectory-string
