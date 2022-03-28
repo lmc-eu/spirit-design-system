@@ -4,5 +4,6 @@ export * from './button';
 export * from './checkboxField';
 export * from './grid';
 export * from './label';
+export * from './link';
 export * from './message';
 export * from './textField';
