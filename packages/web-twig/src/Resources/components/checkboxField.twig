@@ -12,10 +12,10 @@
 {% set _type = (props.type is defined) ? props.type : 'text' %}
 {% set _InputClass = _className ~ '__input' %}
 
-{% set _disabled = (props.disabled is defined) ? ' disabled="true"' : '' %}
-{% set _checked = (props.checked is defined) ? ' checked="checked"' : '' %}
-{% set _required = (props.required is defined) ? ' required="true"' : '' %}
-{% set _disabledClass = (props.disabled is defined) ? ' ' ~ _className ~ '--disabled' : '' %}
+{% set _disabled = (props.isDisabled is defined) ? ' disabled="true"' : '' %}
+{% set _checked = (props.isChecked is defined) ? ' checked="checked"' : '' %}
+{% set _required = (props.isRequired is defined) ? ' required="true"' : '' %}
+{% set _disabledClass = (props.isDisabled is defined) ? ' ' ~ _className ~ '--disabled' : '' %}
 {% set _validationStateClass = (props.validationState is defined) ? ' ' ~ _className ~ '--' ~ props.validationState : '' %}
 {% set _value = (props.value is defined) ? props.value : '' %}
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
