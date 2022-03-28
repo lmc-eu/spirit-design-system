@@ -9,7 +9,7 @@ pure implementation:
     id: "example",
     label: "some label",
     name: "example",
-    required: "true",
+    isRequired: "true",
     validationState: "error",
     message: "validation failed",
 }} %}
@@ -17,7 +17,7 @@ pure implementation:
 
 With Html syntax lexer (enabled by default):
 ```twig
-<CheckboxField id="example" name="example" required checked validationState="error" messsage="validation failed" />
+<CheckboxField id="example" name="example" isRequired isChecked validationState="error" messsage="validation failed" />
 ```
 
 ## Available props
@@ -29,9 +29,9 @@ With Html syntax lexer (enabled by default):
 | `label`           | string    | Label text                     |
 | `value`           | string    | Input value                    |
 | `message`         | string    | Validation or help message     |
-| `disabled`        | boolean   | Whether is field disabled      |
-| `required`        | boolean   | Whether is field required      |
-| `checked`         | boolean   | Whether is field checked       |
+| `isDisabled`      | boolean   | Whether is field disabled      |
+| `isRequired`      | boolean   | Whether is field required      |
+| `isChecked`       | boolean   | Whether is field checked       |
 | `validationState` | `error`   | Type of validation state       |
 | `isLabelHidden`   | boolean   | Whether is label hidden        |
 | `class`           | string    | Additional class name          |
