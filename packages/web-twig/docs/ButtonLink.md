@@ -22,15 +22,15 @@ With Html syntax lexer (enabled by default):
 
 ## Available props
 
-| name      | type      | default value | description                                 |
-|-----------|-----------|---------------|---------------------------------------------|
-| color     | `string`  | primary       | its possible to use all theme colors        |
-| href      | `string`  | #             | anchor href link                            |
-| target    | `string`  | __self        | anchor target                               |
-| block     | `boolean` | false         | span the full width of a parent             |
-| square    | `boolean` | false         | if the button only has an icon              |
-| disabled  | `boolean` | false         |                                             |
-| ariaLabel | `string`  | undefined     | Accessible Rich Internet Applications label |
-| class     | `string`  | undefined     | property to extend with custom classes      |
+| name       | type      | default value | description                                 |
+|------------|-----------|---------------|---------------------------------------------|
+| color      | `string`  | primary       | its possible to use all theme colors        |
+| href       | `string`  | #             | anchor href link                            |
+| target     | `string`  | __self        | anchor target                               |
+| isBlock    | `boolean` | false         | span the full width of a parent             |
+| isSquare   | `boolean` | false         | if the button only has an icon              |
+| isDisabled | `boolean` | false         |                                             |
+| ariaLabel  | `string`  | undefined     | Accessible Rich Internet Applications label |
+| class      | `string`  | undefined     | property to extend with custom classes      |
 
 [Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/ButtonLink

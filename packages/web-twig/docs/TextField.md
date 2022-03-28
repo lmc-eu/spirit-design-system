@@ -17,8 +17,8 @@ pure implementation:
 
 With Html syntax lexer (enabled by default):
 ```twig
-<TextField id="example" type="text" name="example" required validationState="error" messsage="validation failed" />
-<TextField id="example2" type="password" name="example2" required validationState="error" messsage="validation failed" />
+<TextField id="example" type="text" name="example" isRequired validationState="error" messsage="validation failed" />
+<TextField id="example2" type="password" name="example2" isRequired validationState="error" messsage="validation failed" />
 ```
 
 ## Available props
@@ -32,8 +32,8 @@ With Html syntax lexer (enabled by default):
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
 | `message`         | string                        | Validation or help message     |
-| `disabled`        | boolean                       | Whether is field disabled      |
-| `required`        | boolean                       | Whether is field required      |
+| `isDisabled`      | boolean                       | Whether is field disabled      |
+| `isRequired`      | boolean                       | Whether is field required      |
 | `validationState` | `success`, `warning`, `error` | Type of validation state       |
 | `isLabelHidden`   | boolean                       | Whether is label hidden        |
 | `class`           | string                        | Additional class name          |
