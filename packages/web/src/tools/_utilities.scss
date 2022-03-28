@@ -2,6 +2,7 @@
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
+@use 'string';
 
 @mixin generate($utility, $infix) {
     $values: map.get($utility, values);
@@ -17,6 +18,9 @@
 
         // Don't prefix if value key is null (e.g. with shadow class)
         $property-class-modifier: if($key, '-' + $key, '');
+
+        // Remove default postfix from class name
+        $property-class-modifier: string.replace($property-class-modifier, '-default', '');
 
         .#{$property-class + $infix + $property-class-modifier} {
             @each $property in $properties {
