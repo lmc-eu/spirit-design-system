@@ -1,7 +1,6 @@
 @use '@tokens' as tokens;
 
 $spacing: tokens.$space-300;
-$width-default: 18rem;
 
 $label-typography: tokens.$body-small-text-regular;
 $label-color-default: tokens.$text-secondary-default;
@@ -19,6 +18,8 @@ $input-border-color-default: tokens.$border-primary-default;
 $input-border-color-hover: tokens.$border-primary-hover;
 $input-border-color-focus: tokens.$focus-default;
 $input-border-color-disabled: tokens.$border-primary-disabled;
+$input-border-color-success: tokens.$emotion-success-default;
+$input-border-color-warning: tokens.$emotion-warning-default;
 $input-border-color-error: tokens.$emotion-danger-default;
 $input-border-radius: tokens.$radius-100;
 $input-background: tokens.$background-basic;
@@ -28,35 +29,21 @@ $input-placeholder-color-disabled: tokens.$text-secondary-disabled;
 $message-typography: tokens.$body-medium-text-regular;
 $message-color-default: tokens.$text-secondary-default;
 $message-color-disabled: tokens.$text-secondary-disabled;
+$message-color-success: tokens.$emotion-success-default;
+$message-color-warning: tokens.$emotion-warning-default;
 $message-color-error: tokens.$emotion-danger-default;
 
-$theme: (
-    spacing: $spacing,
-    width-default: $width-default,
-    label-typography: $label-typography,
-    label-color-default: $label-color-default,
-    label-color-disabled: $label-color-disabled,
-    label-required-color: $label-required-color,
-    input-padding-x: $input-padding-x,
-    input-padding-y: $input-padding-y,
-    input-typography: $input-typography,
-    input-color-default: $input-color-default,
-    input-color-disabled: $input-color-disabled,
-    input-border-width: $input-border-width,
-    input-border-style: $input-border-style,
-    input-border-color-default: $input-border-color-default,
-    input-border-color-hover: $input-border-color-hover,
-    input-border-color-focus: $input-border-color-focus,
-    input-border-color-disabled: $input-border-color-disabled,
-    input-border-color-error: $input-border-color-error,
-    input-border-radius: $input-border-radius,
-    input-background: $input-background,
-    input-placeholder-color-default: $input-placeholder-color-default,
-    input-placeholder-color-disabled: $input-placeholder-color-disabled,
-    message-typography: $message-typography,
-    message-color-default: $message-color-default,
-    message-color-disabled: $message-color-disabled,
-    message-color-error: $message-color-error,
+$variants: (
+    success: (
+        input-border-color: $input-border-color-success,
+        message-color: $input-border-color-success,
+    ),
+    warning: (
+        input-border-color: $input-border-color-warning,
+        message-color: $input-border-color-warning,
+    ),
+    error: (
+        input-border-color: $input-border-color-error,
+        message-color: $input-border-color-error,
+    ),
 );
-
-$variants: (error);

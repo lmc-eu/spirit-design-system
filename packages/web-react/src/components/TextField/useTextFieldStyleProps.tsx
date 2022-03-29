@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { SpiritTextFieldProps, TextFieldProps } from '../../types';
-import { capitalize } from '../../utils/capitalize';
 
 export interface TextFieldStyles {
   /** className props */
@@ -17,10 +16,9 @@ export interface TextFieldStyles {
 
 export function useTextFieldStyleProps(props: SpiritTextFieldProps): TextFieldStyles {
   const { validationState, isLabelHidden, isFluid, ...restProps } = props;
-  const { isDisabled, isRequired, type } = restProps;
+  const { isDisabled, isRequired } = restProps;
 
-  const mainClass = `${capitalize(type)}Field`;
-  const textFieldClass = useClassNamePrefix(mainClass);
+  const textFieldClass = useClassNamePrefix('TextField');
   const textFieldDisabledClass = `${textFieldClass}--disabled`;
   const textFieldFluidClass = `${textFieldClass}--fluid`;
   const textFieldValidationClass = `${textFieldClass}--${validationState}`;

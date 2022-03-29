@@ -6,15 +6,12 @@ import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext
 import { TextFieldType, ValidationState } from '../../../types';
 
 describe('TextField', () => {
-  describe.each([
-    ['text', 'Text'],
-    ['password', 'Password'],
-  ])('input type %s', (type, expectedClassPrefix) => {
+  describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     it('should have default classname', () => {
       const dom = render(<TextField type={type as TextFieldType} />);
 
       const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field`);
+      expect(element).toHaveClass(`TextField`);
     });
 
     it('should have classname with lmc prefix', () => {
@@ -25,41 +22,41 @@ describe('TextField', () => {
       );
 
       const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`lmc-${expectedClassPrefix}Field`);
+      expect(element).toHaveClass(`lmc-TextField`);
     });
 
     it('should have label classname', () => {
       const dom = render(<TextField type={type as TextFieldType} />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field__label`);
+      expect(element).toHaveClass(`TextField__label`);
     });
 
     it('should have hidden classname', () => {
       const dom = render(<TextField type={type as TextFieldType} isLabelHidden />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field__label--hidden`);
+      expect(element).toHaveClass(`TextField__label--hidden`);
     });
 
     it('should have required classname', () => {
       const dom = render(<TextField type={type as TextFieldType} isRequired />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field__label--required`);
+      expect(element).toHaveClass(`TextField__label--required`);
     });
 
     it('should have input classname', () => {
       const dom = render(<TextField type={type as TextFieldType} />);
 
       const element = dom.container.querySelector('input') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field__input`);
+      expect(element).toHaveClass(`TextField__input`);
     });
 
     it('should have message', () => {
       const dom = render(<TextField type={type as TextFieldType} message="text" />);
 
-      const element = dom.container.querySelector(`.${expectedClassPrefix}Field__message`) as HTMLElement;
+      const element = dom.container.querySelector(`.TextField__message`) as HTMLElement;
       expect(element.textContent).toBe('text');
     });
 
@@ -67,7 +64,7 @@ describe('TextField', () => {
       const dom = render(<TextField type={type as TextFieldType} isFluid />);
 
       const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field--fluid`);
+      expect(element).toHaveClass('TextField--fluid');
     });
 
     it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
@@ -76,7 +73,7 @@ describe('TextField', () => {
       );
 
       const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`${expectedClassPrefix}Field--${validationState}`);
+      expect(element).toHaveClass(`TextField--${validationState}`);
     });
   });
 });
