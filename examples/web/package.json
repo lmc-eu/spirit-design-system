@@ -17,8 +17,8 @@
     "css:jobs:prefix": "postcss --config postcss.config.js --replace \"built/jobs.css\""
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "0.9.0",
-    "@lmc-eu/spirit-web": "0.10.0"
+    "@lmc-eu/spirit-design-tokens": "0.11.0",
+    "@lmc-eu/spirit-web": "0.12.0"
   },
   "devDependencies": {
     "postcss": "8.4.12",
