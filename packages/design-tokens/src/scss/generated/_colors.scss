@@ -44,7 +44,10 @@ $background-cover: #f0f4f5 !default;
 $background-interactive-active: #a7bcc2 !default;
 $background-interactive-default: #fff !default;
 $background-interactive-hover: #d2dcdf !default;
-$background-inverted: #0b1c21 !default;
+$background-interactive-inverted-active: #0f3d42cc !default;
+$background-interactive-inverted-default: #ffffff00 !default;
+$background-interactive-inverted-hover: #0f343c66 !default;
+$background-inverted: #132930 !default;
 $border-primary-active: #d4d4d4 !default;
 $border-primary-default: #e9e9e9 !default;
 $border-primary-disabled: #f4f4f4 !default;
@@ -130,6 +133,9 @@ $background-colors: (
     interactive-active: $background-interactive-active,
     interactive-default: $background-interactive-default,
     interactive-hover: $background-interactive-hover,
+    interactive-inverted-active: $background-interactive-inverted-active,
+    interactive-inverted-default: $background-interactive-inverted-default,
+    interactive-inverted-hover: $background-interactive-inverted-hover,
     inverted: $background-inverted,
 ) !default;
 
