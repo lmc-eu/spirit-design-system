@@ -1,31 +1,18 @@
-import React from 'react';
+import { ComponentMeta } from '@storybook/react';
 import Alert from './Alert';
-import { SpiritAlertProps } from '../../types';
 
 export default {
   title: 'Components/Alert',
-  argTypes: {
-    children: {
-      control: 'text',
-    },
-    color: {
-      control: {
-        type: 'select',
-        options: ['success', 'danger'],
+  component: Alert,
+  parameters: {
+    docs: {
+      description: {
+        component: `Provide contextual feedback messages for typical user actions.`,
       },
     },
   },
-};
+} as ComponentMeta<typeof Alert>;
 
-const Template = (args: SpiritAlertProps) => <Alert {...args} />;
-
-export const Success = Template.bind({});
-Success.args = {
-  children: 'Alert',
-};
-
-export const Danger = Template.bind({});
-Danger.args = {
-  ...Success.args,
-  color: 'danger',
-};
+export { default as Alert } from './stories/Alert';
+export { default as AlertColors } from './stories/AlertColors';
+export { default as Props } from './stories/AlertProps';

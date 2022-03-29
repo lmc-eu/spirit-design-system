@@ -52,5 +52,7 @@ module.exports = {
     'jsdoc/require-param-type': 'off',
     // allow reassign in properties
     'no-param-reassign': ['warn', { props: false }],
+    // support monorepos
+    'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
   },
 };
