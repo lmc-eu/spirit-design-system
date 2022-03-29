@@ -19,10 +19,10 @@ interface PropsProps {
   components?: ComponentType<any>[];
 }
 
-const Props = ({ component, components }: PropsProps) => (
+const Props = ({ component, components = [] }: PropsProps) => (
   <div>
     {component ? <Info component={component} /> : undefined}
-    {components.map((componentItem, index) => (
+    {components.map((componentItem) => (
       <Info key={nanoid()} component={componentItem} />
     ))}
   </div>
