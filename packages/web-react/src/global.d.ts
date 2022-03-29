@@ -1,3 +1,3 @@
-declare const global: {
+interface Window {
   console: Console;
-};
+}
