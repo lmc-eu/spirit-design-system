@@ -6,7 +6,7 @@
 {% set _tabletClass = (props.tablet is defined) ? ' Grid--table--cols-' ~  props.tablet : '' %}
 {% set _desktopClass = (props.desktop is defined) ? ' Grid--desktop--cols-' ~  props.desktop : '' -%}
 
-{% if props.cols is defined and props.tablet is defined  and props.desktop %}
+{% if props.cols is defined and props.tablet is defined and props.desktop is defined %}
     {% set _layoutClass = '' %}
 {% endif %}
 
