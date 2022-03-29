@@ -90,8 +90,8 @@ function prepareCJS(input, output) {
 /**
  * Prepare rollup config for a minified common js package.
  *
- * @param {Object} input
- * @returns {Object}
+ * @param {object} input
+ * @returns {object}
  */
 function prepareCJSMinified(input) {
   return {
@@ -119,10 +119,10 @@ function prepareCJSMinified(input) {
 /**
  * Prepare rollup config for a umd package.
  *
- * @param {Object} options
+ * @param {object} options
  * @param {Array} options.dirs
  * @param {string} options.bundleName
- * @returns {Object}
+ * @returns {object}
  */
 function prepareBundle({ dirs, bundleName = dirs[dirs.length - 1] }) {
   const dir = path.join(distDir, ...dirs);
