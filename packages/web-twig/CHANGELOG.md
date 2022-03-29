@@ -3,7 +3,8 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
 - [BC] Use is prefix for boolean props
-- Bugfix `Grid` component prop desktop
+- Bugfix `Grid` component props
+- Bugfix `Grid` component reset layout class if cols, tablet or desktop props defined
 - Add onClick prop into `ButtonLink` component
 
 ## 1.4.0 - 2022-03-28
