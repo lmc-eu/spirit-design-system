@@ -2,8 +2,6 @@ import { renderHook } from '@testing-library/react-hooks';
 import { SpiritButtonProps } from '../../../types';
 import { useButtonStyleProps } from '../useButtonStyleProps';
 
-declare const global: any;
-
 describe('useButtonStyleProps', () => {
   it.each([
     // color, isBlock, isDisabled, isSquare, expectedClasses
