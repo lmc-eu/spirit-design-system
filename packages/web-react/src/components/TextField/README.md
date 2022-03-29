@@ -15,7 +15,7 @@ and show if the input is required.
 | ----------------- | ----------------------------- | ------------------------------ |
 | `id`              | string                        | Input and label identification |
 | `name`            | string                        | Input name                     |
-| `type`            | `text`, `password`            | Input type                     |
+| `type`            | `text`, `password`  | Input type                     |
 | `label`           | string                        | Label text                     |
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
@@ -42,4 +42,4 @@ const CustomTextField = (props: SpiritTextFieldProps): JSX.Element => {
 };
 ```
 
-For detailed information see [TextField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/TextField/README.md) component and [PasswordField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/PasswordField/README.md) component.
+For detailed information see [TextField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/TextField/README.md) component.

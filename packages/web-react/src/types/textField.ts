@@ -4,7 +4,7 @@ import { MessageProps } from './message';
 
 interface InputProps extends InputBase, Validation, ValueBase<string | number>, TextInputBase {}
 
-export type TextFieldType = 'text' | 'password';
+export type TextFieldType = 'text' | 'password' | 'email';
 
 export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps {
   /** Text of control label */

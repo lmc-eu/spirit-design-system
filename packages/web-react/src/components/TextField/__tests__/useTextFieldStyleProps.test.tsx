@@ -3,58 +3,33 @@ import { useTextFieldStyleProps } from '../useTextFieldStyleProps';
 import { SpiritTextFieldProps } from '../../../types';
 
 describe('useTextFieldStyleProps', () => {
-  it.each([
-    // type, expectedClassPrefix
-    ['text', 'Text'],
-    ['password', 'Password'],
-  ])('should return defaults for %s type', (type, expectedClassPrefix) => {
-    const props = { type } as SpiritTextFieldProps;
-    const { result } = renderHook(() => useTextFieldStyleProps(props));
-
-    expect(result.current.classProps).toEqual({
-      root: `${expectedClassPrefix}Field`,
-      input: `${expectedClassPrefix}Field__input`,
-      label: `${expectedClassPrefix}Field__label`,
-      message: `${expectedClassPrefix}Field__message`,
-    });
-  });
-
-  describe.each([
-    ['text', 'Text'],
-    ['password', 'Password'],
-  ])('input type %s', (type, expectedClassPrefix) => {
+  describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     it('should return required input', () => {
       const props = { isRequired: true, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
 
-      expect(result.current.classProps.label).toBe(
-        `${expectedClassPrefix}Field__label ${expectedClassPrefix}Field__label--required`,
-      );
+      expect(result.current.classProps.label).toBe('TextField__label TextField__label--required');
     });
 
     it('should return hidden label', () => {
       const props = { isLabelHidden: true, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
 
-      expect(result.current.classProps.label).toBe(
-        `${expectedClassPrefix}Field__label ${expectedClassPrefix}Field__label--hidden`,
-      );
+      expect(result.current.classProps.label).toBe('TextField__label TextField__label--hidden');
     });
 
     it('should return fluid class', () => {
       const props = { isFluid: true, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
 
-      expect(result.current.classProps.root).toBe(`${expectedClassPrefix}Field ${expectedClassPrefix}Field--fluid`);
+      expect(result.current.classProps.root).toBe('TextField TextField--fluid');
     });
 
     it.each([['success'], ['warning'], ['error']])('should return field with %s', (validationState) => {
       const props = { validationState, type } as SpiritTextFieldProps;
       const { result } = renderHook(() => useTextFieldStyleProps(props));
 
-      expect(result.current.classProps.root).toBe(
-        `${expectedClassPrefix}Field ${expectedClassPrefix}Field--${validationState}`,
-      );
+      expect(result.current.classProps.root).toBe(`TextField TextField--${validationState}`);
     });
   });
 });

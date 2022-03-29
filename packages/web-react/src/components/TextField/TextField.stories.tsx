@@ -10,7 +10,7 @@ export default {
     type: {
       control: {
         type: 'select',
-        options: ['text', 'password'],
+        options: ['text', 'password', 'email'],
       },
     },
     isDisabled: {
