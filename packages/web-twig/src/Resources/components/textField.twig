@@ -6,15 +6,15 @@
 {% set _label = (props.label is defined) ? props.label : '' %}
 {% set _labelClass = _className ~ '__label' %}
 {% set _labelClassRequired = (props.label is defined) ? ' ' ~ _labelClass ~ '--required' : '' %}
-{% set _labelClassHidden = (props.isLabelHidden is defined) ? ' ' ~ _labelClass ~ '--hidden' : '' %}
+{% set _labelClassHidden = (props.isLabelHidden == 'true') ? ' ' ~ _labelClass ~ '--hidden' : '' %}
 
 {% set _inputName = (props.name is defined) ? props.name : '' %}
 {% set _type = (props.type is defined) ? props.type : 'text' %}
 {% set _InputClass = _className ~ '__input' %}
 
-{% set _disabled = (props.isDisabled is defined) ? ' disabled="true"' : '' %}
-{% set _required = (props.isRequired is defined) ? ' required="true"' : '' %}
-{% set _disabledClass = (props.isDisabled is defined) ? ' ' ~ _className ~ '--disabled' : '' %}
+{% set _disabled = (props.isDisabled == 'true') ? ' disabled="true"' : '' %}
+{% set _required = (props.isRequired == 'true') ? ' required="true"' : '' %}
+{% set _disabledClass = (props.isDisabled == 'true') ? ' ' ~ _className ~ '--disabled' : '' %}
 {% set _validationStateClass = (props.validationState is defined) ? ' ' ~ _className ~ '--' ~ props.validationState : '' %}
 {% set _placeholder = (props.placeholder is defined) ? ' placeholder="' ~ props.placeholder ~ '"' : '' %}
 {% set _value = (props.value is defined) ? props.value : '' %}
