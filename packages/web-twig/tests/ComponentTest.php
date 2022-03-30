@@ -126,6 +126,7 @@ final class ComponentTest extends TestCase
 
         $this->assertEquals(<<<HTML
         <a href="#" class="Button Button--primary">Link Button</a>
+
         HTML, $html);
     }
 }
