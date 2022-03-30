@@ -4,6 +4,7 @@
 ## Unreleased
 - [BC] Use is prefix for boolean props
 - Bugfix `Grid` component prop desktop
+- Add onClick prop into `ButtonLink` component
 
 ## 1.4.0 - 2022-03-28
 - Add support Twig 1.44.6 for Jobs

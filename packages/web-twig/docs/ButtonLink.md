@@ -31,6 +31,7 @@ With Html syntax lexer (enabled by default):
 | isSquare   | `boolean` | false         | if the button only has an icon              |
 | isDisabled | `boolean` | false         |                                             |
 | ariaLabel  | `string`  | undefined     | Accessible Rich Internet Applications label |
+| onClick    | `string`  | undefined     | execute a JavaScript when a link is clicked |
 | class      | `string`  | undefined     | property to extend with custom classes      |
 
 [Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/ButtonLink
