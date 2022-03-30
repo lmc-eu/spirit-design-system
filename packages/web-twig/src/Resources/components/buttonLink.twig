@@ -6,8 +6,9 @@
 {% set _target = (props.target is defined) ? ' target="' ~ props.target ~ '"' : '' %}
 {% set _disabledClass = (props.isDisabled is defined) ? ' ' ~ _className ~ '--disabled' : '' %}
 {% set _ariaLabel = (props.ariaLabel is defined) ? ' aria-label="' ~ props.ariaLabel ~ '"' : '' %}
+{% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 
-<a href="{{ _href }}" class="{{ _className }}{{ _color }}{{ _block }}{{ _square }}{{ _class }}{{ _disabledClass }}"{{ _ariaLabel|raw }}{{ _target|raw }}>
+<a href="{{ _href }}" class="{{ _className }}{{ _color }}{{ _block }}{{ _square }}{{ _class }}{{ _disabledClass }}"{{ _ariaLabel|raw }}{{ _target|raw }}{{ _onClick|raw }}>
     {%- block content %}{% endblock %}
 </a>
