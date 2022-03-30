@@ -2,28 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import TextField from '../TextField';
-import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext';
+import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { TextFieldType, ValidationState } from '../../../types';
 
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
-    it('should have default classname', () => {
-      const dom = render(<TextField type={type as TextFieldType} />);
-
-      const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`TextField`);
-    });
-
-    it('should have classname with lmc prefix', () => {
-      const dom = render(
-        <ClassNamePrefixProvider value="lmc">
-          <TextField type={type as TextFieldType} />
-        </ClassNamePrefixProvider>,
-      );
-
-      const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`lmc-TextField`);
-    });
+    classNamePrefixProviderTest(TextField, 'TextField');
 
     it('should have label classname', () => {
       const dom = render(<TextField type={type as TextFieldType} />);

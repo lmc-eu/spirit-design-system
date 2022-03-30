@@ -1,15 +1,16 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
+import React from 'react';
+import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import ButtonLink from '../ButtonLink';
-import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext';
 
 describe('ButtonLink', () => {
+  classNamePrefixProviderTest(ButtonLink, 'Button');
+
   it('should have default classname', () => {
     const { container } = render(<ButtonLink />);
 
     const element = container.querySelector('a') as HTMLElement;
-    expect(element).toHaveClass('Button');
     expect(element).toHaveClass('Button--primary');
   });
 
@@ -21,18 +22,12 @@ describe('ButtonLink', () => {
     expect(element).toHaveClass('Button--disabled');
   });
 
-  it('should have classname with lmc prefix', () => {
-    const { container } = render(
-      <ClassNamePrefixProvider value="lmc">
-        <ButtonLink isDisabled isBlock />
-      </ClassNamePrefixProvider>,
-    );
+  it('should have block classname', () => {
+    const { container } = render(<ButtonLink isBlock />);
 
     const element = container.querySelector('a') as HTMLElement;
-    expect(element).toHaveClass('lmc-Button');
-    expect(element).toHaveClass('lmc-Button--primary');
-    expect(element).toHaveClass('lmc-Button--block');
-    expect(element).toHaveClass('lmc-Button--disabled');
+    expect(element).toHaveClass('Button');
+    expect(element).toHaveClass('Button--block');
   });
 
   it('should render text children', () => {

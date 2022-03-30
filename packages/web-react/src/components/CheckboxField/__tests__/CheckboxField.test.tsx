@@ -2,26 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CheckboxField from '../CheckboxField';
-import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext';
+import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 
 describe('CheckboxField', () => {
-  it('should have default classname', () => {
-    const dom = render(<CheckboxField />);
-
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('CheckboxField');
-  });
-
-  it('should have classname with lmc prefix', () => {
-    const dom = render(
-      <ClassNamePrefixProvider value="lmc">
-        <CheckboxField />
-      </ClassNamePrefixProvider>,
-    );
-
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('lmc-CheckboxField');
-  });
+  classNamePrefixProviderTest(CheckboxField, 'CheckboxField');
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField />);
