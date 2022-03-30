@@ -1,27 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
+import React from 'react';
+import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import Grid from '../Grid';
-import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext';
 
 describe('Grid', () => {
-  it('should have default classname', () => {
-    const dom = render(<Grid />);
-
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass('Grid');
-  });
-
-  it('should have classname with lmc prefix', () => {
-    const dom = render(
-      <ClassNamePrefixProvider value="lmc">
-        <Grid />
-      </ClassNamePrefixProvider>,
-    );
-
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass('lmc-Grid');
-  });
+  classNamePrefixProviderTest(Grid, 'Grid');
 
   it('should render text children', () => {
     const dom = render(<Grid>Hello World</Grid>);

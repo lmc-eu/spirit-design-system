@@ -1,10 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Link from '../Link';
-import { ClassNamePrefixProvider } from '../../../context/ClassNamePrefixContext';
-import linkPropsDataProvider from './linkPropsDataProvider';
+import { render } from '@testing-library/react';
+import React from 'react';
+import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { LinkColor } from '../../../types';
+import Link from '../Link';
+import linkPropsDataProvider from './linkPropsDataProvider';
 
 describe('Link', () => {
   it.each(linkPropsDataProvider)('should have class', (color, isUnderlined, isDisabled, expectedClassName) => {
@@ -20,13 +20,5 @@ describe('Link', () => {
     expect(dom.container.querySelector('a')).toHaveClass(expectedClassName as string);
   });
 
-  it('should have classname with lmc prefix', () => {
-    const dom = render(
-      <ClassNamePrefixProvider value="lmc">
-        <Link href="/" color="primary" />
-      </ClassNamePrefixProvider>,
-    );
-
-    expect(dom.container.querySelector('a')).toHaveClass('lmc-link-primary');
-  });
+  classNamePrefixProviderTest(Link, 'link-primary');
 });
