@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "es2015",
-    "target": "es5",
+    "target": "es2015",
     "noEmit": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
