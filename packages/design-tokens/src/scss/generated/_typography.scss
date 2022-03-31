@@ -119,6 +119,36 @@ $body-small-text-regular: (
     ),
 ) !default;
 
+$body-xsmall-button: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.75rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-text-bold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.75rem,
+        font-style: normal,
+        font-weight: 600,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-xsmall-text-italic: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.75rem,
+        font-style: italic,
+        font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
 $body-xsmall-text-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -262,6 +292,9 @@ $styles: (
     body-small-text-bold: $body-small-text-bold,
     body-small-text-italic: $body-small-text-italic,
     body-small-text-regular: $body-small-text-regular,
+    body-xsmall-button: $body-xsmall-button,
+    body-xsmall-text-bold: $body-xsmall-text-bold,
+    body-xsmall-text-italic: $body-xsmall-text-italic,
     body-xsmall-text-regular: $body-xsmall-text-regular,
     heading-large-text: $heading-large-text,
     heading-medium-text: $heading-medium-text,
