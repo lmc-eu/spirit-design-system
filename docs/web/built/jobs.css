@@ -559,7 +559,7 @@ fieldset {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  border: 2px solid currentColor;
+  border: 2px solid currentcolor;
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -733,7 +733,8 @@ fieldset {
 }
 
 .jobs-PasswordField {
-  max-width: 100%;
+  display: inline-block;
+  width: 18rem;
 }
 
 .jobs-PasswordField__label {
@@ -770,7 +771,7 @@ fieldset {
   font-weight: 400;
   line-height: 1.5;
   display: block;
-  max-width: 100%;
+  width: 100%;
   padding: 8px 8px;
   color: #171717;
   background: #fff;
@@ -780,6 +781,10 @@ fieldset {
 .jobs-PasswordField__input::placeholder {
   color: #8d9c9f;
   opacity: 1;
+}
+
+.jobs-PasswordField--fluid {
+  width: 100%;
 }
 
 .jobs-PasswordField:hover > .jobs-PasswordField__input,
@@ -923,7 +928,8 @@ fieldset {
 }
 
 .jobs-TextField {
-  max-width: 100%;
+  display: inline-block;
+  width: 18rem;
 }
 
 .jobs-TextField__label {
@@ -960,7 +966,7 @@ fieldset {
   font-weight: 400;
   line-height: 1.5;
   display: block;
-  max-width: 100%;
+  width: 100%;
   padding: 8px 8px;
   color: #171717;
   background: #fff;
@@ -970,6 +976,10 @@ fieldset {
 .jobs-TextField__input::placeholder {
   color: #8d9c9f;
   opacity: 1;
+}
+
+.jobs-TextField--fluid {
+  width: 100%;
 }
 
 .jobs-TextField:hover > .jobs-TextField__input,

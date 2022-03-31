@@ -230,7 +230,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  border: 2px solid currentColor;
+  border: 2px solid currentcolor;
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -404,7 +404,8 @@
 }
 
 .PasswordField {
-  max-width: 100%;
+  display: inline-block;
+  width: 18rem;
 }
 
 .PasswordField__label {
@@ -441,7 +442,7 @@
   font-weight: 400;
   line-height: 1.5;
   display: block;
-  max-width: 100%;
+  width: 100%;
   padding: 8px 8px;
   color: #132930;
   background: #fff;
@@ -451,6 +452,10 @@
 .PasswordField__input::placeholder {
   color: #90a2a7;
   opacity: 1;
+}
+
+.PasswordField--fluid {
+  width: 100%;
 }
 
 .PasswordField:hover > .PasswordField__input,
@@ -550,7 +555,7 @@
 
 .Tag--default-dark {
   color: #fff;
-  background-color: #0b1c21;
+  background-color: #132930;
 }
 
 .Tag--informative-light {
@@ -594,7 +599,8 @@
 }
 
 .TextField {
-  max-width: 100%;
+  display: inline-block;
+  width: 18rem;
 }
 
 .TextField__label {
@@ -631,7 +637,7 @@
   font-weight: 400;
   line-height: 1.5;
   display: block;
-  max-width: 100%;
+  width: 100%;
   padding: 8px 8px;
   color: #132930;
   background: #fff;
@@ -641,6 +647,10 @@
 .TextField__input::placeholder {
   color: #90a2a7;
   opacity: 1;
+}
+
+.TextField--fluid {
+  width: 100%;
 }
 
 .TextField:hover > .TextField__input,
