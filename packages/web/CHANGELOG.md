@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.13.0"></a>
+
+# [0.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.12.0...@lmc-eu/spirit-web@0.13.0) (2022-03-31)
+
+### Bug Fixes
+
+- **web:** Stretch input to entire container ([717343d](https://github.com/lmc-eu/spirit-design-system/commit/717343d))
+
+### Dependencies
+
+- Update all non-major dependencies ([211daef](https://github.com/lmc-eu/spirit-design-system/commit/211daef))
+- Update dependency @lmc-eu/stylelint-config to v4 ([53c825b](https://github.com/lmc-eu/spirit-design-system/commit/53c825b))
+
+### Features
+
+- **web:** Introduce fluid modificator for text field component ([2bf4832](https://github.com/lmc-eu/spirit-design-system/commit/2bf4832))
+
+### Styles
+
+- **web:** Respect community `value-keyword-case` for currentcolor ([1d86c6c](https://github.com/lmc-eu/spirit-design-system/commit/1d86c6c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.12.0"></a>
 
 # [0.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.11.0...@lmc-eu/spirit-web@0.12.0) (2022-03-28)

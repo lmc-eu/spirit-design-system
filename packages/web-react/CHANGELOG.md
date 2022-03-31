@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.11.0"></a>
+
+# [0.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.10.0...@lmc-eu/spirit-web-react@0.11.0) (2022-03-31)
+
+### BREAKING CHANGES
+
+- **web-react:** Build library for ES6 ([9b03978](https://github.com/lmc-eu/spirit-design-system/commit/9b03978))
+
+### Dependencies
+
+- Update all non-major dependencies ([211daef](https://github.com/lmc-eu/spirit-design-system/commit/211daef))
+
+### Documentation
+
+- **web-react:** Add Introduction stories ([4f614d1](https://github.com/lmc-eu/spirit-design-system/commit/4f614d1))
+- **web-react:** Introduce Login Form example in storybook ([4c114ba](https://github.com/lmc-eu/spirit-design-system/commit/4c114ba))
+- **web-react:** Introduce more detailed Alert documentation ([02f961d](https://github.com/lmc-eu/spirit-design-system/commit/02f961d))
+
+### Features
+
+- **web-react:** Introduce `isFluid` prop for TextField component ([cd2b922](https://github.com/lmc-eu/spirit-design-system/commit/cd2b922))
+
+### Styles
+
+- **web-react:** Fix jsdoc typo ([9007ba7](https://github.com/lmc-eu/spirit-design-system/commit/9007ba7))
+- **web-react:** Introduce global declaration file for types ([bb0592d](https://github.com/lmc-eu/spirit-design-system/commit/bb0592d))
+- **web-react:** Remove unused prop ([53c1d9f](https://github.com/lmc-eu/spirit-design-system/commit/53c1d9f))
+- **web-react:** Remove useless index and declare better global Window ([c38dc76](https://github.com/lmc-eu/spirit-design-system/commit/c38dc76))
+
+### Tests
+
+- **web-react:** Ignore data providers in test directory ([0f693af](https://github.com/lmc-eu/spirit-design-system/commit/0f693af))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.10.0"></a>
 
 # [0.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.9.0...@lmc-eu/spirit-web-react@0.10.0) (2022-03-28)
