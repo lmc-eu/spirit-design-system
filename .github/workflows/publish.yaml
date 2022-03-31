@@ -1,7 +1,11 @@
 name: Publish
 
 on:
-  create:
+  push:
+    branches:
+      - main
+    tags:
+      - '**'
 
 jobs:
   publish:
