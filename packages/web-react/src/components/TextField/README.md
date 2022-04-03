@@ -1,12 +1,13 @@
 # TextField
 
 TextField enables the user to type in text information. It has input, label,
-and an optional message. It can be of type `text` or `password`. It could be disabled or have an error state. The label could be hidden
+and an optional message. It can be of type `text`, `password` or `email`. It could be disabled or have an error state. The label could be hidden
 and show if the input is required.
 
 ```jsx
 <TextField id="example" type="text" name="example" isRequired validationState="error" message="validation failed" />
 <TextField id="example" type="password" name="example" isRequired validationState="error" message="validation failed" />
+<TextField id="example" type="email" name="example" isRequired validationState="error" message="validation failed" />
 ```
 
 ## Available props
@@ -15,7 +16,7 @@ and show if the input is required.
 | ----------------- | ----------------------------- | ------------------------------ |
 | `id`              | string                        | Input and label identification |
 | `name`            | string                        | Input name                     |
-| `type`            | `text`, `password`  | Input type                     |
+| `type`            | `text`, `password`, `email`   | Input type                     |
 | `label`           | string                        | Label text                     |
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
