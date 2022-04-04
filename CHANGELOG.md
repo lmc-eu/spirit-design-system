@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.5.0 - 2022-04-04
 - [BC] Use is prefix for boolean props
 - Bugfix `Grid` component props
 - Bugfix `Grid` component reset layout class if cols, tablet or desktop props defined
