@@ -6,6 +6,7 @@
 - Bugfix `Grid` component props
 - Bugfix `Grid` component reset layout class if cols, tablet or desktop props defined
 - Add onClick prop into `ButtonLink` component
+- Add `title` prop into `ButtonLink`
 
 ## 1.4.0 - 2022-03-28
 - Add support Twig 1.44.6 for Jobs
