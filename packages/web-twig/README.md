@@ -19,16 +19,22 @@ See [CHANGELOG](./CHANGELOG.md)
 
 Download using *composer*
 
-    "require": {
-        "lmc/spirit-web-twig-bundle" : "~1.4.0"
-    },
+1. Add satis repository into composer.json
+
+```json
+    ...
     "repositories": [
         {
             "type": "composer",
             "url": "https://jenkins-php.prod.internal.lmc/job/satis/ws/out/"
         }
     ]
+```
+2. Install package
 
+```bash
+composer require lmc/spirit-web-twig-bundle:~1.4.0
+```
 ### Step 2
 
 Add `SpiritWebTwigBundle` into bundles (under `all` bundles). If you use Symfony flex, it will be configured automatically.
