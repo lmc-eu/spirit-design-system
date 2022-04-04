@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+export * from './colors';
 export * from './dom';
 export * from './events';
 export * from './inputs';
