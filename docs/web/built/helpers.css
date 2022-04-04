@@ -161,6 +161,27 @@
   font-weight: 400;
   line-height: 1.5;
 }
+.typography-body-xsmall-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-xsmall-text-bold {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.typography-body-xsmall-text-italic {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
 .typography-body-xsmall-text-regular {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
