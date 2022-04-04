@@ -2,6 +2,7 @@ import React from 'react';
 import { useHeaderStyleProps } from './useHeaderStylesProps';
 import { filterProps } from '../../utils/filterProps';
 import { SpiritHeaderProps } from '../../types';
+import { HeaderProvider } from './HeaderContext';
 
 const defaultProps = {
   isInverted: false,
@@ -10,12 +11,14 @@ const defaultProps = {
 
 const Header = (props: SpiritHeaderProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useHeaderStyleProps(props);
-  const { children, ...restProps } = modifiedProps;
+  const { children, id, ...restProps } = modifiedProps;
 
   return (
-    <header {...filterProps(restProps)} className={classProps}>
-      {children}
-    </header>
+    <HeaderProvider value={{ headerClass: classProps.root, id }}>
+      <header {...filterProps(restProps)} className={classProps.header}>
+        {children}
+      </header>
+    </HeaderProvider>
   );
 };
 

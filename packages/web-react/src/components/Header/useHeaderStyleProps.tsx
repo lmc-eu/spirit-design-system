@@ -4,7 +4,10 @@ import { HeaderProps, SpiritHeaderProps } from '../../types';
 
 export interface HeaderStyles {
   /** className props */
-  classProps: string;
+  classProps: {
+    root: string;
+    header: string;
+  };
   /** props to be passed to the header element */
   props: HeaderProps;
 }
@@ -17,10 +20,13 @@ export function useHeaderStyleProps(props: SpiritHeaderProps): HeaderStyles {
   const headerSimpleClass = `${headerClass}--simple`;
 
   return {
-    classProps: classNames(headerClass, {
-      [headerInvertedClass]: isInverted,
-      [headerSimpleClass]: isSimple,
-    }),
+    classProps: {
+      root: headerClass,
+      header: classNames(headerClass, {
+        [headerInvertedClass]: isInverted,
+        [headerSimpleClass]: isSimple,
+      }),
+    },
     props: restProps,
   };
 }

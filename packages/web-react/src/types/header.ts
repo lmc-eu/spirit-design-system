@@ -1,6 +1,9 @@
 import { ChildrenProps } from './shared';
 
-export type HeaderProps = ChildrenProps;
+export interface HeaderProps extends ChildrenProps {
+  /* Identification of the header component */
+  id: string;
+}
 
 export interface SpiritHeaderProps extends HeaderProps {
   /* Whether is Header inverted */
