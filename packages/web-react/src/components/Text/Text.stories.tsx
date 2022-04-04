@@ -17,4 +17,5 @@ export { default as Text } from './stories/Text';
 export { default as TextSizes } from './stories/TextSizes';
 export { default as TextEmphasis } from './stories/TextEmphasis';
 export { default as BodyTypography } from './stories/TextAllCombinations';
+export { default as HTML } from './stories/TextHtml';
 export { default as Props } from './stories/TextProps';
