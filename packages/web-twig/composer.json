@@ -3,8 +3,7 @@
   "type": "symfony-bundle",
   "description": "This is Symfony bundle with twig implementation Spirit Design System components and extends the twig implementation with an HTML syntax-like.",
   "license": "proprietary",
-  "repositories": [
-  ],
+  "repositories": [],
   "authors": [
     {
       "name": "LMC, s.r.o."
@@ -47,11 +46,12 @@
     "phpunit": "vendor/bin/phpunit",
     "phpunit:coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit",
     "phpunit:update": "vendor/bin/phpunit -d --update-snapshots",
-    "phpstan" : "vendor/bin/phpstan analyze",
+    "phpstan": "vendor/bin/phpstan analyze",
     "tests": [
       "@ecs",
       "@phpunit",
       "@phpstan"
     ]
-  }
+  },
+  "version": "1.5.0"
 }
