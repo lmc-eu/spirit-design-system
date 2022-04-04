@@ -26,6 +26,7 @@ With Html syntax lexer (enabled by default):
 |------------|-----------|---------------|---------------------------------------------|
 | color      | `string`  | primary       | its possible to use all theme colors        |
 | href       | `string`  | #             | anchor href link                            |
+| title      | `string`  | undefined     | anchor link title                           |
 | target     | `string`  | __self        | anchor target                               |
 | isBlock    | `boolean` | false         | span the full width of a parent             |
 | isSquare   | `boolean` | false         | if the button only has an icon              |
