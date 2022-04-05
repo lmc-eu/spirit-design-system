@@ -2030,6 +2030,50 @@ fieldset {
   text-align: center !important;
 }
 
+.jobs-text-primary {
+  color: #171717 !important;
+}
+
+.jobs-text-primary-disabled {
+  color: #d6d6d6 !important;
+}
+
+.jobs-text-primary-inverted {
+  color: #fff !important;
+}
+
+.jobs-text-primary-inverted-disabled {
+  color: #737373 !important;
+}
+
+.jobs-text-secondary {
+  color: #8d9c9f !important;
+}
+
+.jobs-text-secondary-disabled {
+  color: #d6d6d6 !important;
+}
+
+.jobs-text-secondary-inverted {
+  color: #e9e9e9 !important;
+}
+
+.jobs-text-secondary-inverted-disabled {
+  color: #737373 !important;
+}
+
+.jobs-bg-basic {
+  background-color: #fff !important;
+}
+
+.jobs-bg-cover {
+  background-color: #f7f7f7 !important;
+}
+
+.jobs-bg-inverted {
+  background-color: #171717 !important;
+}
+
 @media (min-width: 768px) {
   .jobs-d-tablet-block {
     display: block !important;

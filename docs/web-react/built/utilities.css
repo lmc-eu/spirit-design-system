@@ -674,6 +674,50 @@
   text-align: center !important;
 }
 
+.text-primary {
+  color: #132930 !important;
+}
+
+.text-primary-disabled {
+  color: #c4c4c4 !important;
+}
+
+.text-primary-inverted {
+  color: #fff !important;
+}
+
+.text-primary-inverted-disabled {
+  color: #737373 !important;
+}
+
+.text-secondary {
+  color: #90a2a7 !important;
+}
+
+.text-secondary-disabled {
+  color: #c4c4c4 !important;
+}
+
+.text-secondary-inverted {
+  color: #e9e9e9 !important;
+}
+
+.text-secondary-inverted-disabled {
+  color: #737373 !important;
+}
+
+.bg-basic {
+  background-color: #fff !important;
+}
+
+.bg-cover {
+  background-color: #f0f4f5 !important;
+}
+
+.bg-inverted {
+  background-color: #132930 !important;
+}
+
 @media (min-width: 768px) {
   .d-tablet-block {
     display: block !important;
