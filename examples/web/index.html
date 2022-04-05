@@ -156,6 +156,43 @@
               <input type="password" id="textfieldPassword" class="TextField__input" placeholder="Password must be at least 6 characters long" />
             </div>
             <div class="TextField">
+              <label for="textfieldPasswordToggle" class="TextField__label TextField__label--required">Password Toggle</label>
+              <div class="TextField__passwordToggle">
+                <input type="password" id="textfieldPasswordToggle" class="TextField__input" placeholder="Password must be at least 6 characters long" />
+                <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                  <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="TextField TextField--disabled">
+              <label for="textfieldPasswordToggleDisabled" class="TextField__label">Password Toggle</label>
+              <div class="TextField__passwordToggle">
+                <input type="password" id="textfieldPasswordToggleDisabled" class="TextField__input" value="Disabled" disabled />
+                <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password" disabled>
+                  <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="TextField TextField--fluid">
+              <label for="textfieldPasswordToggleFluid" class="TextField__label TextField__label--required">Password Toggle</label>
+              <div class="TextField__passwordToggle">
+                <input type="password" id="textfieldPasswordToggleFluid" class="TextField__input" value="Fluid" />
+                <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                  <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="TextField TextField--error">
+              <label for="textfieldPasswordErrorMessage" class="TextField__label TextField__label--required">Password Toggle</label>
+              <div class="TextField__passwordToggle">
+                <input type="password" id="textfieldPasswordErrorMessage" class="TextField__input" value="Error" />
+                <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                  <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="TextField__message">Message</div>
+            </div>
+            <div class="TextField">
               <label for="textfieldEmail" class="TextField__label TextField__label--required">E-mail</label>
               <input type="email" id="textfieldEmail" class="TextField__input" />
             </div>
@@ -220,11 +257,31 @@
                 <input type="text" id="textfieldInlineFirst" class="TextField__input" placeholder="Placeholder" value="Filled" />
               </div>
               <div class="TextField">
-                <label for="textfieldInlineSecond" class="TextField__label TextField__label--hidden">Hidden Label</label>
-                <input type="text" id="textfieldInlineSecond" class="TextField__input" placeholder="Placeholder" value="Filled" />
+                <label for="textfieldInlinePassword" class="TextField__label TextField__label--hidden">Hidden Label</label>
+                <div class="TextField__passwordToggle">
+                  <input type="password" id="textfieldInlinePassword" class="TextField__input" value="Password" />
+                  <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                    <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                  </button>
+                </div>
               </div>
               <button type="button" class="Button Button--primary">Button</button>
             </div>
+            <script>
+              const handlePasswordToggleClick = (event) => {
+                const { target } = event;
+                const passwordState = target.getAttribute('aria-pressed');
+                target.setAttribute('aria-pressed', passwordState === 'true' ? 'false' : 'true');
+                target.setAttribute('aria-label', passwordState === 'true' ? 'Show password' : 'Hide password');
+                target.parentElement.querySelector('input').setAttribute('type', passwordState === 'true' ? 'password' : 'text');
+              };
+
+              window.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('[data-toggle="password"]').forEach((togglePasswordEl) => {
+                  togglePasswordEl.addEventListener('click', handlePasswordToggleClick);
+                });
+              });
+            </script>
           </div>
         </div>
       </section>
@@ -456,7 +513,7 @@
                 <span class="CheckboxField__message">Message</span>
               </span>
             </label>
-            <script type="text/javascript">
+            <script>
               const inputs = [
                 'checkboxfield14',
                 'checkboxfield15',

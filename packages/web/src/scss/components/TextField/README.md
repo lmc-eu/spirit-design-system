@@ -38,3 +38,32 @@ and show if the input is required.
   <div class="TextField__message">Message</div>
 </div>
 ```
+
+## TextField password toggle
+
+TextField with `type="password"` can have a toggle button. When toggling don't forget to change
+not only the input type but also `aria-pressed` and `aria-label`.
+
+```html
+<div class="TextField">
+  <label for="textfieldPasswordToggle" class="TextField__label TextField__label--required">Password Toggle</label>
+  <div class="TextField__passwordToggle">
+    <button
+      type="button"
+      class="TextField__passwordToggle__button"
+      role="switch"
+      aria-pressed="false"
+      aria-label="Show password"
+      data-toggle="password"
+    >
+      <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+    </button>
+    <input
+      type="password"
+      id="textfieldPasswordToggle"
+      class="TextField__input"
+      placeholder="Password must be at least 6 characters long"
+    />
+  </div>
+</div>
+```
