@@ -7,6 +7,11 @@ module.exports = {
     ecmaVersion: 'latest',
   },
 
+  env: {
+    browser: true,
+    node: true
+  },
+
   ignorePatterns: ['node_modules', '!.*.js', 'packages/web-react'],
 
   extends: [
