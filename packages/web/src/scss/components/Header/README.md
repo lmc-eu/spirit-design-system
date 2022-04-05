@@ -6,11 +6,17 @@ The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
 your specific design goals.
 
-## No JavaScript Provided!
+## JavaScript Plugin
 
-⚠️ No JavaScript is currently bundled with the Header component, you need to
-write the controlling scripts yourself. However, feel free to inspire by our
-[demo in Spirit examples][examples].
+For full functionality you need to provide JavaScript which will handle toggling of the Header component.
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult [main package README][web-readme] for how to include JavaScript plugins.
+
+Or feel free to write controlling scripts yourself.
 
 ## Accessibility Guidelines
 
@@ -301,3 +307,4 @@ demo.
 important capabilities. Thank you! 🙏
 
 [examples]: https://lmc-eu.github.io/spirit-design-system/web/
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

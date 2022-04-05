@@ -63,6 +63,32 @@ module.exports = {
 };
 ```
 
+### JavaScript
+
+Some components require JavaScript plugins for their full functionality. You can use individual modules or compiled bundle.
+
+#### Individual or compiled
+
+Plugins can be included individually (using `js/*.js`), or all at once using `js/cjs/spirit-web.js` or the minified `js/cjs/spirit-web.min.js` (do not include both).
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+If you use a bundler (Webpack, Rollup…), you can use `/js/*.js` files which are UMD ready.
+
+#### Using Spirit Web as a module
+
+We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web.esm.min.js`) which allows you to use Spirit Web as a module in your browser.
+
+```html
+<script type="module">
+  import { Header } from 'spirit-web.esm.min.js';
+
+  Array.from(document.querySelectorAll('.header')).forEach((headerNode) => new Header(headerNode));
+</script>
+```
+
 ## Rebranding
 
 Design tokens and their [`@tokens` API][tokens-api] enable quick and easy

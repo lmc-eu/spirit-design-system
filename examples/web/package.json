@@ -9,10 +9,12 @@
   },
   "scripts": {
     "prebuild": "rm -rf built && mkdir -p built",
-    "build": "yarn copy && yarn css",
-    "copy": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/css/. built",
+    "build": "npm-run-all copy css",
+    "copy": "npm-run-all --parallel copy:css copy:js",
+    "copy:css": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/css/. built",
+    "copy:js": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/js/cjs/. built",
     "css": "yarn css:jobs",
-    "css:jobs": "yarn css:jobs:compile && yarn css:jobs:prefix",
+    "css:jobs": "npm-run-all css:jobs:compile css:jobs:prefix",
     "css:jobs:compile": "sass --load-path=../../node_modules --load-path=src/jobs src/jobs/jobs.scss built/jobs.css",
     "css:jobs:prefix": "postcss --config postcss.config.js --replace \"built/jobs.css\""
   },
@@ -21,6 +23,7 @@
     "@lmc-eu/spirit-web": "0.14.0"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "postcss": "8.4.12",
     "postcss-cli": "9.1.0",
     "postcss-prefixer": "2.1.3",
