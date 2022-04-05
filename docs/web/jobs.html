@@ -158,109 +158,82 @@
           <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">TextField</h2>
           <div class="example-TextField-grid">
             <div class="jobs-TextField">
-              <label for="textfield1" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield1" class="jobs-TextField__input" placeholder="Placeholder" />
+              <label for="textfieldSimple" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldSimple" class="jobs-TextField__input" placeholder="Placeholder" />
             </div>
             <div class="jobs-TextField">
-              <label for="textfield2" class="jobs-TextField__label">Label</label>
-              <input type="text" id="textfield2" class="jobs-TextField__input" placeholder="Placeholder" />
+              <label for="textfieldPassword" class="jobs-TextField__label jobs-TextField__label--required">Password</label>
+              <input type="password" id="textfieldPassword" class="jobs-TextField__input" placeholder="Password must be at least 6 characters long" />
+            </div>
+            <div class="jobs-TextField">
+              <label for="textfieldEmail" class="jobs-TextField__label jobs-TextField__label--required">E-mail</label>
+              <input type="email" id="textfieldEmail" class="jobs-TextField__input" />
+            </div>
+            <div class="jobs-TextField">
+              <label for="textfieldMessage" class="jobs-TextField__label">Label</label>
+              <input type="text" id="textfieldMessage" class="jobs-TextField__input" placeholder="Placeholder" />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div class="jobs-TextField">
-              <label for="textfield3" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield3" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <label for="textfieldFilled" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldFilled" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
             </div>
             <div class="jobs-TextField">
-              <label for="textfield4" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield4" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <label for="textfieldFilledMessage" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldFilledMessage" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div class="jobs-TextField jobs-TextField--error">
-              <label for="textfield5" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield5" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <label for="textfieldError" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldError" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
             </div>
             <div class="jobs-TextField jobs-TextField--error">
-              <label for="textfield6" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield6" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <label for="textfieldErrorMessage" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldErrorMessage" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <div class="jobs-TextField__message">Message</div>
+            </div>
+            <div class="jobs-TextField jobs-TextField--success">
+              <label for="textfieldSuccess" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldSuccess" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <div class="jobs-TextField__message">Message</div>
+            </div>
+            <div class="jobs-TextField jobs-TextField--warning">
+              <label for="textfieldWarning" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldWarning" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div class="jobs-TextField jobs-TextField--disabled">
-              <label for="textfield7" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield7" class="jobs-TextField__input" placeholder="Placeholder" disabled />
+              <label for="textfielDisabled" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfielDisabled" class="jobs-TextField__input" placeholder="Placeholder" disabled />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div class="jobs-TextField jobs-TextField--disabled">
-              <label for="textfield8" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield8" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" disabled />
+              <label for="textfielDisabledFilled" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfielDisabledFilled" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" disabled />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div class="jobs-TextField jobs-TextField--fluid">
-              <label for="textfield9" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
-              <input type="text" id="textfield9" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+              <label for="textfieldFluid" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
+              <input type="text" id="textfieldFluid" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               <div class="jobs-TextField__message">Message</div>
             </div>
             <div style="display: flex; gap: 1rem">
               <div class="jobs-TextField">
-                <label for="textfield10" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
-                <input type="text" id="textfield10" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+                <label for="textfieldInlineHiddenLabel" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
+                <input type="text" id="textfieldInlineHiddenLabel" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               </div>
               <button type="button" class="jobs-Button jobs-Button--primary">Button</button>
             </div>
             <div style="display: flex; gap: 1rem">
               <div class="jobs-TextField">
-                <label for="textfield11" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
-                <input type="text" id="textfield11" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+                <label for="textfieldInlineFirst" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
+                <input type="text" id="textfieldInlineFirst" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               </div>
               <div class="jobs-TextField">
-                <label for="textfield12" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
-                <input type="text" id="textfield12" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
+                <label for="textfieldInlineSecond" class="jobs-TextField__label jobs-TextField__label--hidden">Hidden Label</label>
+                <input type="text" id="textfieldInlineSecond" class="jobs-TextField__input" placeholder="Placeholder" value="Filled" />
               </div>
               <button type="button" class="jobs-Button jobs-Button--primary">Button</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="jobs-Container">
-          <h2 class="jobs-typography-heading-medium-text jobs-mt-1100 jobs-mb-800">PasswordField</h2>
-          <div class="example-TextField-grid">
-            <div class="jobs-PasswordField">
-              <label for="PasswordField1" class="jobs-PasswordField__label">Label</label>
-              <input type="password" id="PasswordField1" class="jobs-PasswordField__input" placeholder="Placeholder" />
-            </div>
-            <div class="jobs-PasswordField">
-              <label for="PasswordField2" class="jobs-PasswordField__label jobs-PasswordField__label--required">Label of required input</label>
-              <input type="password" id="PasswordField2" class="jobs-PasswordField__input" placeholder="Placeholder" required />
-            </div>
-            <div class="jobs-PasswordField">
-              <label for="PasswordField3" class="jobs-PasswordField__label">Label of input with message</label>
-              <input type="password" id="PasswordField3" class="jobs-PasswordField__input" placeholder="Placeholder" />
-              <div class="jobs-PasswordField__message">Message</div>
-            </div>
-            <div class="jobs-PasswordField">
-              <label for="PasswordField4" class="jobs-PasswordField__label jobs-PasswordField__label--hidden">Label Hidden</label>
-              <input type="password" id="PasswordField4" class="jobs-PasswordField__input" placeholder="Placeholder" value="Filled" />
-            </div>
-            <div class="jobs-PasswordField jobs-PasswordField--success">
-              <label for="PasswordField5" class="jobs-PasswordField__label jobs-PasswordField__label--required">Label of input in success state</label>
-              <input type="password" id="PasswordField5" class="jobs-PasswordField__input" placeholder="Placeholder" value="Filled" />
-              <div class="jobs-PasswordField__message">Success message</div>
-            </div>
-            <div class="jobs-PasswordField jobs-PasswordField--warning">
-              <label for="PasswordField6" class="jobs-PasswordField__label jobs-PasswordField__label--required">Label of input with warning</label>
-              <input type="password" id="PasswordField6" class="jobs-PasswordField__input" placeholder="Placeholder" value="Filled" />
-              <div class="jobs-PasswordField__message">Warning message</div>
-            </div>
-            <div class="jobs-PasswordField jobs-PasswordField--error">
-              <label for="PasswordField7" class="jobs-PasswordField__label jobs-PasswordField__label--required">Label of input with error</label>
-              <input type="password" id="PasswordField7" class="jobs-PasswordField__input" placeholder="Placeholder" value="Filled" />
-              <div class="jobs-PasswordField__message">Error message</div>
-            </div>
-            <div class="jobs-PasswordField jobs-PasswordField--disabled">
-              <label for="PasswordField8" class="jobs-PasswordField__label jobs-PasswordField__label--required">Label of disabled input</label>
-              <input type="password" id="PasswordField8" class="jobs-PasswordField__input" placeholder="Placeholder" disabled />
-              <div class="jobs-PasswordField__message">Message</div>
             </div>
           </div>
         </div>
@@ -272,7 +245,7 @@
           <h3 class="jobs-typography-heading-small-text jobs-mt-1100 jobs-mb-800">Stacked form fields</h3>
           <div class="jobs-Stack">
             <div class="jobs-TextField">
-              <label for="textfieldStack1" class="Tjobs-extField__label jobs-TextField__label--required">Label</label>
+              <label for="textfieldStack1" class="jobs-TextField__label jobs-TextField__label--required">Label</label>
               <input type="text" id="textfieldStack1" class="jobs-TextField__input" placeholder="Placeholder" />
             </div>
             <div class="jobs-TextField">

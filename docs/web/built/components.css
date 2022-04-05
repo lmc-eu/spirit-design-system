@@ -403,132 +403,6 @@
   }
 }
 
-.PasswordField {
-  display: inline-block;
-  width: 18rem;
-}
-
-.PasswordField__label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  display: block;
-  margin-bottom: 4px;
-  color: #90a2a7;
-}
-.PasswordField__label--hidden {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.PasswordField__label--required::after {
-  content: "*";
-  color: #db5f7b;
-}
-
-.PasswordField__input {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  display: block;
-  width: 100%;
-  padding: 8px 8px;
-  color: #132930;
-  background: #fff;
-  border: 1px solid #e9e9e9;
-  border-radius: 4px;
-}
-.PasswordField__input::placeholder {
-  color: #90a2a7;
-  opacity: 1;
-}
-
-.PasswordField--fluid {
-  width: 100%;
-}
-
-.PasswordField:hover > .PasswordField__input,
-.PasswordField__input:hover {
-  border-color: #dbdbdb;
-}
-
-.PasswordField:focus-within,
-.PasswordField:focus-within:hover,
-.PasswordField > .PasswordField__input:focus {
-  border-color: #4666ae;
-  outline: 0;
-}
-
-.PasswordField__message {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 4px;
-  color: #90a2a7;
-}
-.PasswordField--success > .PasswordField__input,
-.PasswordField--success:hover > .PasswordField__input,
-.PasswordField--success > .PasswordField__input:focus {
-  border-color: #b7d16d;
-}
-
-.PasswordField--success > .PasswordField__message {
-  color: #b7d16d;
-}
-
-.PasswordField--warning > .PasswordField__input,
-.PasswordField--warning:hover > .PasswordField__input,
-.PasswordField--warning > .PasswordField__input:focus {
-  border-color: #f1d07c;
-}
-
-.PasswordField--warning > .PasswordField__message {
-  color: #f1d07c;
-}
-
-.PasswordField--error > .PasswordField__input,
-.PasswordField--error:hover > .PasswordField__input,
-.PasswordField--error > .PasswordField__input:focus {
-  border-color: #db5f7b;
-}
-
-.PasswordField--error > .PasswordField__message {
-  color: #db5f7b;
-}
-
-.PasswordField--disabled > .PasswordField__label {
-  color: #c4c4c4;
-}
-
-.PasswordField > .PasswordField__input:disabled,
-.PasswordField:hover > .PasswordField__input:disabled,
-.PasswordField--disabled > .PasswordField__input {
-  color: #c4c4c4;
-  border-color: #f4f4f4;
-}
-.PasswordField > .PasswordField__input:disabled::placeholder,
-.PasswordField:hover > .PasswordField__input:disabled::placeholder,
-.PasswordField--disabled > .PasswordField__input::placeholder {
-  color: #c4c4c4;
-}
-
-.PasswordField--disabled > .PasswordField__message {
-  color: #c4c4c4;
-}
-
 .Stack {
   display: grid;
   gap: 16px;
@@ -599,8 +473,7 @@
 }
 
 .TextField {
-  display: inline-block;
-  width: 18rem;
+  max-width: 100%;
 }
 
 .TextField__label {
@@ -637,7 +510,7 @@
   font-weight: 400;
   line-height: 1.5;
   display: block;
-  width: 100%;
+  max-width: 100%;
   padding: 8px 8px;
   color: #132930;
   background: #fff;
@@ -647,10 +520,6 @@
 .TextField__input::placeholder {
   color: #90a2a7;
   opacity: 1;
-}
-
-.TextField--fluid {
-  width: 100%;
 }
 
 .TextField:hover > .TextField__input,
@@ -674,6 +543,26 @@
   margin-top: 4px;
   color: #90a2a7;
 }
+.TextField--success > .TextField__input,
+.TextField--success:hover > .TextField__input,
+.TextField--success > .TextField__input:focus {
+  border-color: #b7d16d;
+}
+
+.TextField--success > .TextField__message {
+  color: #b7d16d;
+}
+
+.TextField--warning > .TextField__input,
+.TextField--warning:hover > .TextField__input,
+.TextField--warning > .TextField__input:focus {
+  border-color: #f1d07c;
+}
+
+.TextField--warning > .TextField__message {
+  color: #f1d07c;
+}
+
 .TextField--error > .TextField__input,
 .TextField--error:hover > .TextField__input,
 .TextField--error > .TextField__input:focus {
