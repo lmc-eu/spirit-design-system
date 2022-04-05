@@ -1,6 +1,9 @@
 @use 'sass:map';
 @use 'theme';
+@use '../../settings/cursors';
 @use '../../tools/accessibility';
+@use '../../tools/reset';
+@use '../../tools/svg';
 @use '../../tools/typography';
 
 .TextField {
@@ -46,10 +49,77 @@
     width: 100%;
 }
 
-.TextField .TextField__input:focus-visible {
+.TextField__passwordToggle {
+    position: relative;
+    display: flex;
+}
+
+.TextField__passwordToggle > .TextField__input {
+    flex-grow: 1;
+    padding-right: 0;
+    border-color: transparent;
+}
+
+// We position the button next to the input and use pseudo-element for border styling.
+// We do this because password managers place their icon buttons inside the password input.
+.TextField__passwordToggle__button {
+    @include reset.button();
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: theme.$input-password-toggle-padding;
+    border-radius: theme.$input-border-radius;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
+        border-radius: theme.$input-border-radius;
+        pointer-events: none;
+    }
+}
+
+.TextField__passwordToggle__icon {
+    width: theme.$input-password-toggle-icon-size;
+    height: theme.$input-password-toggle-icon-size;
+    background-image: svg.escape(theme.$input-password-toggle-icon-hidden-default);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: theme.$input-border-radius;
+    pointer-events: none;
+}
+
+.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon {
+    background-image: svg.escape(theme.$input-password-toggle-icon-shown-default);
+}
+
+.TextField > .TextField__input:focus-visible,
+.TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
     border-color: theme.$input-border-color-focus;
     outline: 0;
     box-shadow: theme.$input-focus-shadow;
+}
+
+.TextField > .TextField__passwordToggle > .TextField__input:focus-visible,
+.TextField__passwordToggle__button:focus-visible {
+    outline: 0;
+}
+
+.TextField__passwordToggle__button:focus-visible::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: (2 * theme.$input-password-toggle-padding) + theme.$input-password-toggle-icon-size;
+    height: 100%;
+    border-radius: theme.$input-border-radius;
+    box-shadow: theme.$input-focus-shadow;
+    z-index: 1;
 }
 
 .TextField__message {
@@ -60,7 +130,11 @@
 }
 
 @each $variant-name, $variant-value in theme.$variants {
-    .TextField--#{$variant-name} > .TextField__input {
+    .TextField--#{$variant-name} > .TextField__input,
+    .TextField--#{$variant-name}
+        .TextField__passwordToggle
+        > .TextField__input
+        ~ .TextField__passwordToggle__button::before {
         border-color: map.get($variant-value, input-border-color);
     }
 
@@ -73,14 +147,39 @@
     color: theme.$label-color-disabled;
 }
 
-.TextField > .TextField__input:disabled,
-.TextField--disabled > .TextField__input {
+.TextField .TextField__input:disabled,
+.TextField--disabled .TextField__input {
     color: theme.$input-color-disabled;
-    border-color: theme.$input-border-color-disabled;
 
     &::placeholder {
         color: theme.$input-placeholder-color-disabled;
     }
+}
+
+.TextField > .TextField__input:disabled,
+.TextField--disabled > .TextField__input,
+.TextField .TextField__passwordToggle .TextField__input:disabled ~ .TextField__passwordToggle__button::before,
+.TextField--disabled .TextField__passwordToggle .TextField__passwordToggle__button::before {
+    border-color: theme.$input-border-color-disabled;
+}
+
+.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
+.TextField--disabled .TextField__passwordToggle__button {
+    cursor: cursors.$disabled;
+    pointer-events: none;
+}
+
+.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button .TextField__passwordToggle__icon,
+.TextField--disabled .TextField__passwordToggle__icon {
+    background-image: svg.escape(theme.$input-password-toggle-icon-hidden-disabled);
+}
+
+.TextField
+    .TextField__input:disabled
+    ~ .TextField__passwordToggle__button[aria-pressed='true']
+    > .TextField__passwordToggle__icon,
+.TextField--disabled .TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon {
+    background-image: svg.escape(theme.$input-password-toggle-icon-shown-disabled);
 }
 
 .TextField--disabled > .TextField__message {
