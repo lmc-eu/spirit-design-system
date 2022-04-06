@@ -51,6 +51,11 @@
         background-image: svg.escape(theme.$input-indeterminate-mark);
         background-color: theme.$input-selected-color;
     }
+
+    &:focus-visible {
+        outline: 0;
+        box-shadow: theme.$input-focus-shadow;
+    }
 }
 
 .CheckboxField__message {
