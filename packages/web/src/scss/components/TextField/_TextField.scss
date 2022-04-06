@@ -46,16 +46,10 @@
     width: 100%;
 }
 
-.TextField:hover > .TextField__input,
-.TextField__input:hover {
-    border-color: theme.$input-border-color-hover;
-}
-
-.TextField:focus-within,
-.TextField:focus-within:hover,
-.TextField > .TextField__input:focus {
+.TextField .TextField__input:focus-visible {
     border-color: theme.$input-border-color-focus;
     outline: 0;
+    box-shadow: theme.$input-focus-shadow;
 }
 
 .TextField__message {
@@ -66,9 +60,7 @@
 }
 
 @each $variant-name, $variant-value in theme.$variants {
-    .TextField--#{$variant-name} > .TextField__input,
-    .TextField--#{$variant-name}:hover > .TextField__input,
-    .TextField--#{$variant-name} > .TextField__input:focus {
+    .TextField--#{$variant-name} > .TextField__input {
         border-color: map.get($variant-value, input-border-color);
     }
 
@@ -82,7 +74,6 @@
 }
 
 .TextField > .TextField__input:disabled,
-.TextField:hover > .TextField__input:disabled,
 .TextField--disabled > .TextField__input {
     color: theme.$input-color-disabled;
     border-color: theme.$input-border-color-disabled;
