@@ -6,6 +6,7 @@ namespace Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass;
 
 use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
+use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -25,6 +26,8 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         $pathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_PATH_ALIAS);
         $isLexer = $container->getParameter(SpiritWebTwigExtension::PARAMETER_HTML_SYNTAX_LEXER);
         $classPrefix = $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX);
+
+        $twigLoaderDefinition->addMethodCall('addPath', [SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS]);
 
         foreach ($paths as $path) {
             $twigLoaderDefinition->addMethodCall('addPath', [$path, $pathAlias]);
