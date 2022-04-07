@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass;
 
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
+use Lmc\SpiritWebTwigBundle\Helper\DefinitionHelper;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Definition\Dumper\YamlReferenceDumper;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -44,7 +45,13 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
         $this->overrideService->process($this->builder);
 
-        $this->assertCount($expectedCalls, $this->loader->getMethodCalls());
+        $filteredAddPathCalls = DefinitionHelper::getMethodCalls(
+            $this->loader,
+            'addPath',
+            [SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS]
+        );
+
+        $this->assertCount($expectedCalls, $filteredAddPathCalls);
     }
 
     /**
@@ -78,7 +85,17 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
         $this->overrideService->process($this->builder);
 
-        $this->assertCount($expectedCalls, $this->twig->getMethodCalls());
+        $filteredAddGlobal = DefinitionHelper::getMethodCalls(
+            $this->twig,
+            'addGlobal',
+        );
+
+        $filteredAddLexer = DefinitionHelper::getMethodCalls(
+            $this->twig,
+            'setLexer',
+        );
+
+        $this->assertSame($expectedCalls, count($filteredAddGlobal) + count($filteredAddLexer));
     }
 
     /**
