@@ -28,6 +28,10 @@ class SpiritWebTwigExtension extends Extension
 
     public const DEFAULT_PATH_ALIAS = 'spirit';
 
+    public const DEFAULT_PARTIALS_PATH = __DIR__ . '/../Resources/partials';
+
+    public const DEFAULT_PARTIALS_ALIAS = 'partials';
+
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();

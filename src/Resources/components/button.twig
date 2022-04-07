@@ -8,6 +8,6 @@
 {% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 
-<button class="{{ _className }}{{ _color }}{{ _block }}{{ _square }}{{ _class }}" type="{{ _type }}"{{ _disabled|raw }}{{ _ariaLabel|raw }}{{ _onClick|raw }}>
+<button{{ mainProps(props)|raw }} class="{{ _className }}{{ _color }}{{ _block }}{{ _square }}{{ _class }}" type="{{ _type }}"{{ _disabled|raw }}{{ _ariaLabel|raw }}{{ _onClick|raw }}>
   {%- block content %}{% endblock %}
 </button>
