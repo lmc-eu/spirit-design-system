@@ -1,6 +1,6 @@
 # TextField
 
-This is Twig implementation of the [TextField] and [PasswordField] component.
+This is Twig implementation of the [TextField] component.
 
 ## Examples
 pure implementation:
@@ -27,16 +27,16 @@ With Html syntax lexer (enabled by default):
 |-------------------|-------------------------------|--------------------------------|
 | `id`              | string                        | Input and label identification |
 | `name`            | string                        | Input name                     |
-| `type`            | `text`, `password`            | Input type                     |
+| `type`            | `text`, `password`, `email`   | Input type                     |
 | `label`           | string                        | Label text                     |
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
 | `message`         | string                        | Validation or help message     |
 | `isDisabled`      | boolean                       | Whether is field disabled      |
+| `isFluid`         | boolean                       | Whether is fluid               |
 | `isRequired`      | boolean                       | Whether is field required      |
 | `validationState` | `success`, `warning`, `error` | Type of validation state       |
 | `isLabelHidden`   | boolean                       | Whether is label hidden        |
 | `class`           | string                        | Additional class name          |
 
 [TextField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/TextField
-[PasswordField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/PasswordField
