@@ -4,50 +4,20 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle;
 
-use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
-use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
-use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Factory\TwigFactory;
+use Lmc\SpiritWebTwigBundle\Helper\TwigHelper;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
 
 final class ComponentTest extends TestCase
 {
+    private const FIXTURES_SOURCES = __DIR__ . '/test-templates';
+
     protected Environment $twig;
-
-    /**
-     * @param array<string> $extendedComponentsPath
-     */
-    protected function setupTwig(?string $prefix = null, array $extendedComponentsPath = []): Environment
-    {
-        $alias = 'ui-component';
-        $loader = new FilesystemLoader(__DIR__ . '/test-templates');
-        $paths = array_merge($extendedComponentsPath, [SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH]);
-
-        foreach ($paths as $path) {
-            $loader->addPath($path, $alias);
-        }
-
-        $loader->addPath(SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS);
-
-        $twig = new Environment($loader, [
-            'cache' => false,
-        ]);
-
-        if ($prefix) {
-            $twig->addGlobal(OverrideServiceCompilerPass::GLOBAL_PREFIX_TWIG_VARIABLE, $prefix);
-        }
-
-        $twig->setLoader($loader);
-        $twig->setLexer(new ComponentLexer($twig, [], $alias));
-
-        return $twig;
-    }
 
     public function setUp(): void
     {
-        $this->twig = $this->setupTwig();
+        $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component');
     }
 
     public function testShouldRenderSimpleComponent(): void
@@ -96,7 +66,7 @@ final class ComponentTest extends TestCase
      */
     public function testShouldRenderExtendsComponents(string $prefix, string $testTemplate): void
     {
-        $this->twig = $this->setupTwig($prefix, [__DIR__ . '/test-extends-components']);
+        $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
         $html = $this->twig->render(sprintf('%s.twig', $testTemplate));
 
         $this->assertEquals(<<<HTML
