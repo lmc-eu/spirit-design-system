@@ -37,9 +37,6 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
             }
         }
 
-        $propsExtension = new PropsExtension();
-        $twigLoaderDefinition->addMethodCall('addExtension', [$propsExtension]);
-
         $twigDefinition->addMethodCall('addGlobal', [self::GLOBAL_PREFIX_TWIG_VARIABLE, $classPrefix]);
 
         if ($isLexer) {

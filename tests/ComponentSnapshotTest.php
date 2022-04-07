@@ -25,7 +25,7 @@ final class ComponentsSnapshotTest extends TestCase
     /**
      * @dataProvider snapshotComponentsDataProvider
      */
-    public function testShouldSnapshotComponents(string $template): void
+    public function test(string $template): void
     {
         $html = $this->twig->render($template);
 

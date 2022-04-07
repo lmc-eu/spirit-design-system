@@ -11,11 +11,13 @@ use Twig\Environment;
 
 final class ComponentTest extends TestCase
 {
+    private const FIXTURES_SOURCES = __DIR__ . '/test-templates';
+
     protected Environment $twig;
 
     public function setUp(): void
     {
-        $this->twig = TwigHelper::setup(__DIR__ . '/test-templates', 'ui-component');
+        $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component');
     }
 
     public function testShouldRenderSimpleComponent(): void
@@ -64,7 +66,7 @@ final class ComponentTest extends TestCase
      */
     public function testShouldRenderExtendsComponents(string $prefix, string $testTemplate): void
     {
-        $this->twig = TwigHelper::setup(__DIR__ . '/test-templates', 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
+        $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
         $html = $this->twig->render(sprintf('%s.twig', $testTemplate));
 
         $this->assertEquals(<<<HTML

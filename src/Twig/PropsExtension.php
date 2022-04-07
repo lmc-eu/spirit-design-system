@@ -31,7 +31,7 @@ class PropsExtension extends AbstractExtension
                 $dataProps[$propName] = $propValue;
             }
         }
-        return $environment->render('@partials/props.twig', [
+        return $environment->render('@partials/mainProps.twig', [
             'dataAttributes' => $dataProps,
             'id' => $props['id'] ?? null,
         ]);
