@@ -1,0 +1,9 @@
+{% set _className = _spiritClassPrefix ~ 'Header' %}
+{% set _variant = (props.variant is defined) ? ' ' ~ _className ~ '__' ~ props.variant : ' ' ~  _className ~ '__bar' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+
+<nav class="{{ _className }}{{ _class }}">
+  <div class="{{ _className }}__content">
+  {% block content %}{% endblock %}
+  </div>
+</nav>
