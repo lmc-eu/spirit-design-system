@@ -1,0 +1,8 @@
+{% set _className = _spiritClassPrefix ~ 'typography-heading' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{% set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
+{% set _size = (props.size is defined) ? props.size : 'medium' -%}
+
+<{{ _elementType }} class="{{ _className }}-{{ _size }}-text{{ _class }}">
+{% block content %}{% endblock %}
+</{{ _elementType }}>
