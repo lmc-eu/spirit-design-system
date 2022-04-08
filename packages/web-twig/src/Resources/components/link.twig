@@ -1,0 +1,13 @@
+{% set _className = _spiritClassPrefix ~ 'link' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{% set _color = (props.color is defined) ? _className ~ '--' ~ props.color : _className ~ '--primary' %}
+{% set _disabled = props.isDisabled is defined and props.isDisabled == 'true'  ? ' ' ~  _className ~ '--disabled' : '' %}
+{% set _underlined = props.isUnderlined is defined and props.isUnderlined == 'true'  ? ' ' ~  _className ~ '--underlined' : '' %}
+{% set _href = (props.href is defined) ? props.href : '#' %}
+{% set _title = (props.title is defined) ? ' title="' ~ props.ariaLabel ~ '"' : '' %}
+{% set _target = (props.target is defined) ? ' target="' ~ props.target ~ '"' : '' %}
+{% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
+
+<a{{ mainProps(props) }} href="{{ _href }}"{{ _title|raw }} class="{{ _color }}{{ _disabled }}{{ _underlined }}{{ _class }}"{{ _target|raw }}{{ _onClick|raw }}>
+{% block content %}{% endblock %}
+</a>

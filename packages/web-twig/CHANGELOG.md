@@ -8,6 +8,7 @@
 - Ignore empty string in `mainProps` twig function
 - Introduce `Text` component as typography helper
 - Introduce `Heading` component as typography helper
+- Introduce `Link` component as typography helper
 
 ## 1.5.0 - 2022-04-04
 - [BC] Use is prefix for boolean props
