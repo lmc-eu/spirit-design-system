@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Disable husky commit hooks
-        run: npm set-script prepare ""
-
       - name: Build
         run: yarn build
 
