@@ -6,6 +6,7 @@
 - Introduce `Header`, `Navbar`, `NavbarActions`, `NavbarClose`, `NavbarToggle`, `Nav `, `NavItem`, `NavLink `components
 - Allow `aria-*` as main props in `Button` and `ButtonLink` components
 - Ignore empty string in `mainProps` twig function
+- Introduce `Text` component as typography helper
 
 ## 1.5.0 - 2022-04-04
 - [BC] Use is prefix for boolean props
