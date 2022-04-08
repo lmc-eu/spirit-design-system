@@ -1,0 +1,11 @@
+{% set _className = _spiritClassPrefix ~ 'Header__toggle' %}
+{% set _iconClassName = _spiritClassPrefix ~ 'Header__icon' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _label = (props.label is defined) ? props.label : 'Menu' %}
+
+<div className="{{ _className }}">
+    <Button color="{{ props.color is defined ? props.color : 'inverted' }}" isSquare type="button" aria-expanded="false" aria-controls="{{ props.ariaControls is defined ? props.ariaControls : '' }}">
+        <span className="{{ _iconClassName }} {{ _iconClassName }}--menu" aria-hidden="true"></span>
+        <span className="accessibility-hidden">{{ _label }}</span>
+    </Button>
+</div>
