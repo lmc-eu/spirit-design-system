@@ -1,17 +1,17 @@
 @forward '../../../packages/design-tokens/src/scss';
 
-@use '../../../packages/web/src/foundation';
-@use '../../../packages/web/src/helpers';
-@use '../../../packages/web/src/utilities';
+@use '../../../packages/web/src/scss/foundation';
+@use '../../../packages/web/src/scss/helpers';
+@use '../../../packages/web/src/scss/utilities';
 
-@use '../../../packages/web/src/components/Alert';
-@use '../../../packages/web/src/components/Button';
-@use '../../../packages/web/src/components/CheckboxField';
-@use '../../../packages/web/src/components/Container';
-@use '../../../packages/web/src/components/Grid';
-@use '../../../packages/web/src/components/Stack';
-@use '../../../packages/web/src/components/Tag';
-@use '../../../packages/web/src/components/TextField';
+@use '../../../packages/web/src/scss/components/Alert';
+@use '../../../packages/web/src/scss/components/Button';
+@use '../../../packages/web/src/scss/components/CheckboxField';
+@use '../../../packages/web/src/scss/components/Container';
+@use '../../../packages/web/src/scss/components/Grid';
+@use '../../../packages/web/src/scss/components/Stack';
+@use '../../../packages/web/src/scss/components/Tag';
+@use '../../../packages/web/src/scss/components/TextField';
 
 .example-box {
     box-sizing: border-box;
