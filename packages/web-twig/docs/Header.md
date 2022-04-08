@@ -1,4 +1,4 @@
-# Stack
+# Header
 
 This is Twig implementation of the [Header] component.
 
