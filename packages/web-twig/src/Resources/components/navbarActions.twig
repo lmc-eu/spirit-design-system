@@ -1,0 +1,7 @@
+{% set _className = _spiritClassPrefix ~ 'Header__actions' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _color = (props.color is defined) ? ' ' ~ _className ~ '--' ~ props.color : ' ' ~  _className ~ '--primary' %}
+
+<div class="{{ _className }}{{ _color }}{{ _class }}">
+{% block content %}{% endblock %}
+</div>
