@@ -3,7 +3,7 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
 - Add main props `data-*` and `id` into `Button` and `ButtonLink` components
-
+- Introduce `Header`, `Navbar`, `NavbarActions`, `NavbarClose`, `NavbarToggle`, `Nav `, `NavItem`, `NavLink `components
 ## 1.5.0 - 2022-04-04
 - [BC] Use is prefix for boolean props
 - Bugfix `Grid` component props
