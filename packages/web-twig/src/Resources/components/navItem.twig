@@ -1,0 +1,6 @@
+{% set _className = _spiritClassPrefix ~ 'Header__navItem' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+
+<li class="{{ _className }}{{ _class }}">
+{% block content %}{% endblock %}
+</li>
