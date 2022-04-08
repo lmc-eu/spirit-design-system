@@ -32,4 +32,6 @@ With Html syntax lexer (enabled by default):
 | onClick    | `string`  | undefined     | execute a JavaScript when a button is clicked   |
 | class      | `string`  | undefined     | adds additional classes                         |
 
+On this component it's possible to insert property `id` and `data-*` properties.
+
 [Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button

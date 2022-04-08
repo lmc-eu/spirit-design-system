@@ -5,28 +5,29 @@
          colors="true"
          bootstrap="vendor/autoload.php"
 >
-  <coverage includeUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">src</directory>
-    </include>
-    <exclude>
-      <file>src/Logger/Logger.php</file>
-    </exclude>
-    <report>
-      <clover outputFile="coverage/clover.xml"/>
-      <html outputDirectory="coverage" lowUpperBound="35" highLowerBound="90"/>
-    </report>
-  </coverage>
-  <php>
-    <!-- E_ALL = 30719 -->
-    <ini name="error_reporting" value="30719"/>
-  </php>
-  <testsuites>
-    <testsuite name="unit">
-      <directory>tests/</directory>
-    </testsuite>
-  </testsuites>
-  <logging>
-    <junit outputFile="coverage/junit.xml"/>
-  </logging>
+    <coverage includeUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <file>src/Logger/Logger.php</file>
+            <file>src/SpiritWebTwigBundle.php</file>
+        </exclude>
+        <report>
+            <clover outputFile="coverage/clover.xml"/>
+            <html outputDirectory="coverage" lowUpperBound="35" highLowerBound="90"/>
+        </report>
+    </coverage>
+    <php>
+        <!-- E_ALL = 30719 -->
+        <ini name="error_reporting" value="30719"/>
+    </php>
+    <testsuites>
+        <testsuite name="Bundle Test Suite">
+            <directory suffix="Test.php">tests/</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <junit outputFile="coverage/junit.xml"/>
+    </logging>
 </phpunit>
