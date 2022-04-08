@@ -1,0 +1,8 @@
+{% set _className = _spiritClassPrefix ~ 'Header' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _simple = (props.isSimple is defined and props.isSimple == 'true' ) ? ' ' ~ _className ~ '--simple' : '' %}
+{% set _inverted = (props.isInverted is defined and props.isInverted == 'true' ) ? ' ' ~ _className ~ '--inverted' : '' %}
+
+<header class="{{ _className }}{{ _simple }}{{ _inverted }}{{ _class }}">
+{% block content %}{% endblock %}
+</header>
