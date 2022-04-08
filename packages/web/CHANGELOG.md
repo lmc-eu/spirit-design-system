@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.14.0"></a>
+
+# [0.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.13.0...@lmc-eu/spirit-web@0.14.0) (2022-04-08)
+
+### BREAKING CHANGES
+
+- Remove PasswordField in favor of TextField, add email type to TextField [#DS-182](https://github.com/lmc-eu/spirit-design-system/issues/DS-182) ([4ff5966](https://github.com/lmc-eu/spirit-design-system/commit/4ff5966))
+
+### Bug Fixes
+
+- **web:** Make the TextField fluid again ([d89f16b](https://github.com/lmc-eu/spirit-design-system/commit/d89f16b))
+
+### Dependencies
+
+- Update all non-major dependencies ([127f300](https://github.com/lmc-eu/spirit-design-system/commit/127f300))
+
+### Features
+
+- **web:** Add text and background color utilities [#DS-189](https://github.com/lmc-eu/spirit-design-system/issues/DS-189) ([5d04f2b](https://github.com/lmc-eu/spirit-design-system/commit/5d04f2b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.13.0"></a>
 
 # [0.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.12.0...@lmc-eu/spirit-web@0.13.0) (2022-03-31)

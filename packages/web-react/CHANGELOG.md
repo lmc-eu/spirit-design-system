@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.12.0"></a>
+
+# [0.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.11.0...@lmc-eu/spirit-web-react@0.12.0) (2022-04-08)
+
+### BREAKING CHANGES
+
+- Remove PasswordField in favor of TextField, add email type to TextField [#DS-182](https://github.com/lmc-eu/spirit-design-system/issues/DS-182) ([4ff5966](https://github.com/lmc-eu/spirit-design-system/commit/4ff5966))
+
+### Dependencies
+
+- Update all non-major dependencies ([127f300](https://github.com/lmc-eu/spirit-design-system/commit/127f300))
+
+### Features
+
+- **web-react:** Add email type to TextField [#DS-182](https://github.com/lmc-eu/spirit-design-system/issues/DS-182) ([f6b4623](https://github.com/lmc-eu/spirit-design-system/commit/f6b4623))
+- **web-react:** Introduce Heading component (refs [#DS-167](https://github.com/lmc-eu/spirit-design-system/issues/DS-167)) ([fc3e770](https://github.com/lmc-eu/spirit-design-system/commit/fc3e770))
+- **web-react:** Introduce Link component (refs [#DS-167](https://github.com/lmc-eu/spirit-design-system/issues/DS-167)) ([2e4ea94](https://github.com/lmc-eu/spirit-design-system/commit/2e4ea94))
+- **web-react:** Introduce Text component (refs [#DS-167](https://github.com/lmc-eu/spirit-design-system/issues/DS-167)) ([c509571](https://github.com/lmc-eu/spirit-design-system/commit/c509571))
+
+### Tests
+
+- **web-react:** Refactor prefix testing into more general provider test ([70720cb](https://github.com/lmc-eu/spirit-design-system/commit/70720cb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.11.0"></a>
 
 # [0.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.10.0...@lmc-eu/spirit-web-react@0.11.0) (2022-03-31)
