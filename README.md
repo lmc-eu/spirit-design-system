@@ -111,6 +111,7 @@ or pure original implementation
 - [Tag](./docs/Tag.md)
 - [TextField](./docs/TextField.md)
 - [CheckboxField](./docs/CheckboxField.md)
+- [Header](./docs/Header.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
