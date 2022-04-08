@@ -25,14 +25,16 @@ class PropsExtension extends AbstractExtension
      */
     public function renderMainProps(Environment $environment, array $props): string
     {
-        $dataProps = [];
+        $allowedAttributes = [];
         foreach ($props as $propName => $propValue) {
-            if (preg_match('/data-*/', $propName) > 0) {
-                $dataProps[$propName] = $propValue;
+            if (preg_match('/^(data|aria)-*/', $propName) > 0) {
+                if ($propValue !== '') {
+                    $allowedAttributes[$propName] = $propValue;
+                }
             }
         }
         return $environment->render('@partials/mainProps.twig', [
-            'dataAttributes' => $dataProps,
+            'allowedAttributes' => $allowedAttributes,
             'id' => $props['id'] ?? null,
         ]);
     }

@@ -44,19 +44,19 @@ class PropsExtensionTest extends TestCase
     {
         return [
             'empty props' => [[], [
-                'dataAttributes' => [],
+                'allowedAttributes' => [],
                 'id' => null,
             ]],
             'id property' => [[
                 'id' => 1,
             ], [
-                'dataAttributes' => [],
+                'allowedAttributes' => [],
                 'id' => 1,
             ]],
             'data properties' => [[
                 'data-id' => 'testDataId',
             ], [
-                'dataAttributes' => [
+                'allowedAttributes' => [
                     'data-id' => 'testDataId',
                 ],
                 'id' => null,
@@ -65,16 +65,32 @@ class PropsExtensionTest extends TestCase
                 'data-id' => 'testDataId',
                 'id' => 'testId',
             ], [
-                'dataAttributes' => [
+                'allowedAttributes' => [
                     'data-id' => 'testDataId',
                 ],
                 'id' => 'testId',
             ]],
-            'filter only whitelist attributes' => [[
+            'filter only allowed attributes' => [[
                 'test-id' => 'testDataId',
+                'aria-label' => 'testAria',
+                'data-label' => 'testData',
                 'id' => 'testId',
             ], [
-                'dataAttributes' => [],
+                'allowedAttributes' => [
+                    'aria-label' => 'testAria',
+                    'data-label' => 'testData',
+                ],
+                'id' => 'testId',
+            ]],
+            'skip empty allowed attributes' => [[
+                'test-id' => 'testDataId',
+                'aria-label' => '',
+                'data-label' => 'testData',
+                'id' => 'testId',
+            ], [
+                'allowedAttributes' => [
+                    'data-label' => 'testData',
+                ],
                 'id' => 'testId',
             ]],
         ];
