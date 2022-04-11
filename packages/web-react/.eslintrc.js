@@ -10,6 +10,10 @@ module.exports = {
 
   parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
 
+  env: {
+    jest: true,
+  },
+
   parserOptions: {
     ecmaVersion: 'latest',
     project: './config/tsconfig.eslint.json',
