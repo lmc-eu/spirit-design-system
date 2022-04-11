@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spirit Web Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../index.scss" />
+    <script src="../../../js/index.esm.ts" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      .example-box {
+        min-height: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #0b1c21;
+      }
+
+      .example-box:not(:empty) {
+        padding: 0.25rem;
+      }
+
+      .example-TextField-grid {
+          display: grid;
+          grid-template-columns: 25rem;
+          gap: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="Container">
+        <h2 class="typography-heading-medium-text mt-1100 mb-800">TextField</h2>
+        <div class="example-TextField-grid">
+          <div class="TextField">
+            <label for="textfieldSimple" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldSimple" class="TextField__input" placeholder="Placeholder" />
+          </div>
+          <div class="TextField">
+            <label for="textfieldPassword" class="TextField__label TextField__label--required">Password</label>
+            <input type="password" id="textfieldPassword" class="TextField__input" placeholder="Password must be at least 6 characters long" />
+          </div>
+          <div class="TextField">
+            <label for="textfieldPasswordToggle" class="TextField__label TextField__label--required">Password Toggle</label>
+            <div class="TextField__passwordToggle">
+              <input type="password" id="textfieldPasswordToggle" class="TextField__input" placeholder="Password must be at least 6 characters long" />
+              <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="TextField TextField--disabled">
+            <label for="textfieldPasswordToggleDisabled" class="TextField__label">Password Toggle</label>
+            <div class="TextField__passwordToggle">
+              <input type="password" id="textfieldPasswordToggleDisabled" class="TextField__input" value="Disabled" disabled />
+              <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password" disabled>
+                <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="TextField TextField--fluid">
+            <label for="textfieldPasswordToggleFluid" class="TextField__label TextField__label--required">Password Toggle</label>
+            <div class="TextField__passwordToggle">
+              <input type="password" id="textfieldPasswordToggleFluid" class="TextField__input" value="Fluid" />
+              <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <div class="TextField TextField--error">
+            <label for="textfieldPasswordErrorMessage" class="TextField__label TextField__label--required">Password Toggle</label>
+            <div class="TextField__passwordToggle">
+              <input type="password" id="textfieldPasswordErrorMessage" class="TextField__input" value="Error" />
+              <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField">
+            <label for="textfieldEmail" class="TextField__label TextField__label--required">E-mail</label>
+            <input type="email" id="textfieldEmail" class="TextField__input" />
+          </div>
+          <div class="TextField">
+            <label for="textfieldNumber" class="TextField__label">Number (2 digits)</label>
+            <input type="number" size="2" id="textfieldNumber" class="TextField__input" />
+          </div>
+          <div class="TextField">
+            <label for="textfieldMessage" class="TextField__label">Label</label>
+            <input type="text" id="textfieldMessage" class="TextField__input" placeholder="Placeholder" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField">
+            <label for="textfieldFilled" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldFilled" class="TextField__input" placeholder="Placeholder" value="Filled" />
+          </div>
+          <div class="TextField">
+            <label for="textfieldFilledMessage" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldFilledMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--error">
+            <label for="textfieldError" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldError" class="TextField__input" placeholder="Placeholder" value="Filled" />
+          </div>
+          <div class="TextField TextField--error">
+            <label for="textfieldErrorMessage" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldErrorMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--success">
+            <label for="textfieldSuccess" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldSuccess" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--warning">
+            <label for="textfieldWarning" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldWarning" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--disabled">
+            <label for="textfielDisabled" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfielDisabled" class="TextField__input" placeholder="Placeholder" disabled />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--disabled">
+            <label for="textfielDisabledFilled" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfielDisabledFilled" class="TextField__input" placeholder="Placeholder" value="Filled" disabled />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div class="TextField TextField--fluid">
+            <label for="textfieldFluid" class="TextField__label TextField__label--required">Label</label>
+            <input type="text" id="textfieldFluid" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            <div class="TextField__message">Message</div>
+          </div>
+          <div style="display: flex; gap: 1rem">
+            <div class="TextField">
+              <label for="textfieldInlineHiddenLabel" class="TextField__label TextField__label--hidden">Hidden Label</label>
+              <input type="text" id="textfieldInlineHiddenLabel" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            </div>
+            <button type="button" class="Button Button--primary">Button</button>
+          </div>
+          <div style="display: flex; gap: 1rem">
+            <div class="TextField">
+              <label for="textfieldInlineFirst" class="TextField__label TextField__label--hidden">Hidden Label</label>
+              <input type="text" id="textfieldInlineFirst" class="TextField__input" placeholder="Placeholder" value="Filled" />
+            </div>
+            <div class="TextField">
+              <label for="textfieldInlinePassword" class="TextField__label TextField__label--hidden">Hidden Label</label>
+              <div class="TextField__passwordToggle">
+                <input type="password" id="textfieldInlinePassword" class="TextField__input" value="Password" />
+                <button type="button" class="TextField__passwordToggle__button" role="switch" aria-pressed="false" aria-label="Show password" data-toggle="password">
+                  <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="Button Button--primary">Button</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

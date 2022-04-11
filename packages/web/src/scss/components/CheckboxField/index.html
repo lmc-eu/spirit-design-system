@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spirit Web Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../index.scss" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      .example-CheckboxField-grid {
+          display: grid;
+          grid-template-columns: 25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="Container">
+        <h2 class="typography-heading-medium-text mt-1100 mb-800">CheckboxField</h2>
+        <div class="example-CheckboxField-grid">
+          <label for="checkboxfield1" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox unselected</span>
+            </span>
+          </label>
+          <label for="checkboxfield2" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield2" class="CheckboxField__input" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox unselected</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield3" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield3" class="CheckboxField__input" disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox unselected</span>
+            </span>
+          </label>
+          <label for="checkboxfield4" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield4" class="CheckboxField__input" disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox unselected</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield5" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield5" class="CheckboxField__input" checked />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox selected</span>
+            </span>
+          </label>
+          <label for="checkboxfield6" class="CheckboxField CheckboxField--error">
+            <input type="checkbox" id="checkboxfield6" class="CheckboxField__input" checked />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox selected</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield7" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield7" class="CheckboxField__input" checked disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox selected</span>
+            </span>
+          </label>
+          <label for="checkboxfield8" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield8" class="CheckboxField__input" checked disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Checkbox selected</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield9" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield9" class="CheckboxField__input" required />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">Label of required input</span>
+            </span>
+          </label>
+          <label for="checkboxfield10" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield10" class="CheckboxField__input" value="Filled" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--hidden">Label Hidden</span>
+            </span>
+          </label>
+          <label for="checkboxfield11" class="CheckboxField CheckboxField--error">
+            <input type="checkbox" id="checkboxfield11" class="CheckboxField__input" value="Filled" checked />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">Label of input with error</span>
+              <span class="CheckboxField__message">Error message</span>
+            </span>
+          </label>
+          <label for="checkboxfield12" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield12" class="CheckboxField__input" disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">Label of disabled input</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield13" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield13" class="CheckboxField__input" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">
+                Souhlasím, aby mi provozovatel jobs.cz (LMC s.r.o.) pomáhal k nalezení lepší práce a osobnímu rozvoji
+              </span>
+              <span class="CheckboxField__message"><a href="#">Zobrazit více</a></span>
+            </span>
+          </label>
+          <label for="checkboxfield14" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield14" class="CheckboxField__input" value="Filled" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Label of input with indeterminate</span>
+            </span>
+          </label>
+          <label for="checkboxfield15" class="CheckboxField CheckboxField--error">
+            <input type="checkbox" id="checkboxfield15" class="CheckboxField__input" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <label for="checkboxfield16" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield16" class="CheckboxField__input" value="Filled" disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label">Label of input with indeterminate</span>
+            </span>
+          </label>
+          <label for="checkboxfield17" class="CheckboxField CheckboxField--disabled">
+            <input type="checkbox" id="checkboxfield17" class="CheckboxField__input" disabled />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
+              <span class="CheckboxField__message">Message</span>
+            </span>
+          </label>
+          <script type="text/javascript">
+            const inputs = [
+              'checkboxfield14',
+              'checkboxfield15',
+              'checkboxfield16',
+              'checkboxfield17',
+            ];
+
+            window.addEventListener('DOMContentLoaded', function () {
+              inputs.forEach(function (input) {
+                const checkbox = document.getElementById(input);
+                checkbox.indeterminate = true;
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
