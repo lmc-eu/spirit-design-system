@@ -8,7 +8,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   const { id, label, message, value, isDisabled, isRequired, isChecked, ...restProps } = modifiedProps;
 
   return (
-    <label htmlFor={id} className={classProps.root}>
+    <div className={classProps.root}>
       <input
         {...filterProps(restProps)}
         type="checkbox"
@@ -20,10 +20,12 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
         value={value}
       />
       <span className={classProps.text}>
-        <span className={classProps.label}>{label}</span>
+        <label htmlFor={id} className={classProps.label}>
+          {label}
+        </label>
         {message && <span className={classProps.message}>{message}</span>}
       </span>
-    </label>
+    </div>
   );
 };
 
