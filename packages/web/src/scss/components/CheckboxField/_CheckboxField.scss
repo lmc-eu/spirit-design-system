@@ -15,6 +15,7 @@
 .CheckboxField__label {
     @include typography.generate(theme.$label-typography);
 
+    display: inline-block;
     color: theme.$label-color-default;
 }
 

@@ -10,28 +10,28 @@ describe('CheckboxField', () => {
   it('should have text classname', () => {
     const dom = render(<CheckboxField />);
 
-    const element = dom.container.querySelector('label > span') as HTMLElement;
+    const element = dom.container.querySelector('div > span') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__text');
   });
 
   it('should have label classname', () => {
     const dom = render(<CheckboxField isLabelHidden />);
 
-    const element = dom.container.querySelector('label > span > span') as HTMLElement;
+    const element = dom.container.querySelector('div > span > label') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label');
   });
 
   it('should have hidden classname', () => {
     const dom = render(<CheckboxField isLabelHidden />);
 
-    const element = dom.container.querySelector('label > span > span') as HTMLElement;
+    const element = dom.container.querySelector('div > span > label') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label--hidden');
   });
 
   it('should have required classname', () => {
     const dom = render(<CheckboxField isRequired />);
 
-    const element = dom.container.querySelector('label > span > span') as HTMLElement;
+    const element = dom.container.querySelector('div > span > label') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label--required');
   });
 
@@ -52,7 +52,7 @@ describe('CheckboxField', () => {
   it('should have error classname', () => {
     const dom = render(<CheckboxField validationState="error" />);
 
-    const element = dom.container.querySelector('label') as HTMLElement;
+    const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('CheckboxField--error');
   });
 });
