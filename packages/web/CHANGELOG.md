@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.15.0"></a>
+
+# [0.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.14.0...@lmc-eu/spirit-web@0.15.0) (2022-04-13)
+
+### BREAKING CHANGES
+
+- **web:** Remove bottom margin from last-child elements ([582545f](https://github.com/lmc-eu/spirit-design-system/commit/582545f))
+
+### Code Refactoring
+
+- **web:** Move SASS styles into `scss` directory (refs [#255](https://github.com/lmc-eu/spirit-design-system/issues/255)) ([b6532eb](https://github.com/lmc-eu/spirit-design-system/commit/b6532eb))
+
+### Dependencies
+
+- Update all non-major dependencies ([9f7e5df](https://github.com/lmc-eu/spirit-design-system/commit/9f7e5df))
+
+### Documentation
+
+- **design-tokens:** Add missing node_modules in sass loader configuration ([ddb40e7](https://github.com/lmc-eu/spirit-design-system/commit/ddb40e7))
+
+### Features
+
+- **web:** Add helper for hiding text visually ([1f11fc6](https://github.com/lmc-eu/spirit-design-system/commit/1f11fc6))
+- **web:** Introduce `Header` component [#DS-163](https://github.com/lmc-eu/spirit-design-system/issues/DS-163) ([96d22e4](https://github.com/lmc-eu/spirit-design-system/commit/96d22e4))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.14.0"></a>
 
 # [0.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.13.0...@lmc-eu/spirit-web@0.14.0) (2022-04-08)

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.13.0"></a>
+
+# [0.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.12.0...@lmc-eu/spirit-web-react@0.13.0) (2022-04-13)
+
+### Bug Fixes
+
+- **web-react:** Export Link component from library ([5ee3322](https://github.com/lmc-eu/spirit-design-system/commit/5ee3322))
+
+### Dependencies
+
+- **repo:** Add missing peer dependencies required by packages ([e9283c2](https://github.com/lmc-eu/spirit-design-system/commit/e9283c2))
+- Update all non-major dependencies ([9f7e5df](https://github.com/lmc-eu/spirit-design-system/commit/9f7e5df))
+- Update dependency @testing-library/react-hooks to v8 ([69bf7f8](https://github.com/lmc-eu/spirit-design-system/commit/69bf7f8))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.12.0"></a>
 
 # [0.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.11.0...@lmc-eu/spirit-web-react@0.12.0) (2022-04-08)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.13.0"></a>
+
+# [0.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.12.0...@lmc-eu/spirit-design-tokens@0.13.0) (2022-04-13)
+
+### Documentation
+
+- **design-tokens:** Add missing node_modules in sass loader configuration ([ddb40e7](https://github.com/lmc-eu/spirit-design-system/commit/ddb40e7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="0.12.0"></a>
 
 # [0.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.11.0...@lmc-eu/spirit-design-tokens@0.12.0) (2022-03-31)
