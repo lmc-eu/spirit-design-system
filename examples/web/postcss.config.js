@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     postcssPrefixer({
       prefix: 'jobs-',
+      ignore: [/^.is-/, /^.has-/],
     }),
   ],
 };

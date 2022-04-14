@@ -30,15 +30,38 @@ in your HTML template:
 
 ### Advanced Implementation in Product with Sass
 
-Import just the components you need in your Sass stylesheet:
+❗ **Important:** Make sure you have
+[configured Sass load path][configuring-load-path] for `@tokens` and
+`node_modules` so all dependencies are resolved correctly by Sass.
+
+Having the Sass load path configured, import just the components you need in
+your Sass stylesheet:
 
 ```scss
 @use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
 ```
 
-❗ Make sure you have [configured Sass load path][configuring-load-path] for your
-`@tokens` so it's resolved correctly by Sass. You also need to specify load path
-for `node_modules`.
+### Prefixing CSS Class Names
+
+You can add prefixes to CSS class names to better separate Spirit from other CSS
+in your project. The recommended way is using PostCSS with the
+[`postcss-prefixer`][postcss-prefixer] plugin:
+
+```js
+// postcss.config.js
+
+const postcssPrefixer = require('postcss-prefixer');
+
+module.exports = {
+  plugins: [
+    postcssPrefixer({
+      prefix: 'spirit-',
+      // Ignore interaction state classes controlled by JS:
+      ignore: [/^.is-/, /^.has-/],
+    }),
+  ],
+};
+```
 
 ## Rebranding
 
@@ -62,3 +85,4 @@ See the [LICENSE](LICENSE.md) file for information.
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
 [rebranding example]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web/src/jobs
 [examples]: https://lmc-eu.github.io/spirit-design-system/web/
+[postcss-prefixer]: https://www.npmjs.com/package/postcss-prefixer
