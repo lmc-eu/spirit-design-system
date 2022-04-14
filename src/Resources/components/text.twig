@@ -1,0 +1,9 @@
+{% set _className = _spiritClassPrefix ~ 'typography-body' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{% set _elementType = (props.elementType is defined) ? props.elementType : 'p' -%}
+{% set _size = (props.size is defined) ? props.size : 'medium' -%}
+{% set _emphasis = (props.emphasis is defined) ? props.emphasis : 'regular' -%}
+
+<{{ _elementType }} class="{{ _className }}-{{ _size }}-text-{{ _emphasis }}{{ _class }}">
+{% block content %}{% endblock %}
+</{{ _elementType }}>
