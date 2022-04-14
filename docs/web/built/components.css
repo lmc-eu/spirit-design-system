@@ -245,6 +245,10 @@
   background-image: url('data:image/svg+xml,%3csvg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"%3e%3cpath style="fill:%23fff" d="M4 8h10v2H4z"/%3e%3c/svg%3e');
   background-color: #29616f;
 }
+.CheckboxField__input:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(70, 102, 174, 0.6);
+}
 
 .CheckboxField__message {
   font-family: 'Inter', sans-serif;
@@ -844,16 +848,85 @@ button.Header__link--current:active {
   width: 100%;
 }
 
-.TextField:hover > .TextField__input,
-.TextField__input:hover {
-  border-color: #dbdbdb;
+.TextField__passwordToggle {
+  position: relative;
+  display: flex;
 }
 
-.TextField:focus-within,
-.TextField:focus-within:hover,
-.TextField > .TextField__input:focus {
+.TextField__passwordToggle > .TextField__input {
+  flex-grow: 1;
+  padding-right: 0;
+  border-color: transparent;
+}
+
+.TextField__passwordToggle__button {
+  -webkit-appearance: none;
+          appearance: none;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font: inherit;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+}
+.TextField__passwordToggle__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 1px solid #e9e9e9;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.TextField__passwordToggle__icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('data:image/svg+xml,%3csvg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5ZM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="%23132930"/%3e%3c/svg%3e');
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.TextField__passwordToggle__button[aria-pressed=true] > .TextField__passwordToggle__icon {
+  background-image: url('data:image/svg+xml,%3csvg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7ZM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27ZM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2Zm4.31-.78 3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01Z" fill="%23132930"/%3e%3c/svg%3e');
+}
+
+.TextField > .TextField__input:focus-visible,
+.TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
   border-color: #4666ae;
   outline: 0;
+  box-shadow: 0 0 0 2px rgba(70, 102, 174, 0.6);
+}
+
+.TextField > .TextField__passwordToggle > .TextField__input:focus-visible,
+.TextField__passwordToggle__button:focus-visible {
+  outline: 0;
+}
+
+.TextField__passwordToggle__button:focus-visible::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(70, 102, 174, 0.6);
+  z-index: 1;
 }
 
 .TextField__message {
@@ -866,8 +939,7 @@ button.Header__link--current:active {
   color: #90a2a7;
 }
 .TextField--success > .TextField__input,
-.TextField--success:hover > .TextField__input,
-.TextField--success > .TextField__input:focus {
+.TextField--success .TextField__passwordToggle > .TextField__input ~ .TextField__passwordToggle__button::before {
   border-color: #b7d16d;
 }
 
@@ -876,8 +948,7 @@ button.Header__link--current:active {
 }
 
 .TextField--warning > .TextField__input,
-.TextField--warning:hover > .TextField__input,
-.TextField--warning > .TextField__input:focus {
+.TextField--warning .TextField__passwordToggle > .TextField__input ~ .TextField__passwordToggle__button::before {
   border-color: #f1d07c;
 }
 
@@ -886,8 +957,7 @@ button.Header__link--current:active {
 }
 
 .TextField--error > .TextField__input,
-.TextField--error:hover > .TextField__input,
-.TextField--error > .TextField__input:focus {
+.TextField--error .TextField__passwordToggle > .TextField__input ~ .TextField__passwordToggle__button::before {
   border-color: #db5f7b;
 }
 
@@ -899,16 +969,36 @@ button.Header__link--current:active {
   color: #c4c4c4;
 }
 
-.TextField > .TextField__input:disabled,
-.TextField:hover > .TextField__input:disabled,
-.TextField--disabled > .TextField__input {
+.TextField .TextField__input:disabled,
+.TextField--disabled .TextField__input {
   color: #c4c4c4;
+}
+.TextField .TextField__input:disabled::placeholder,
+.TextField--disabled .TextField__input::placeholder {
+  color: #c4c4c4;
+}
+
+.TextField > .TextField__input:disabled,
+.TextField--disabled > .TextField__input,
+.TextField .TextField__passwordToggle .TextField__input:disabled ~ .TextField__passwordToggle__button::before,
+.TextField--disabled .TextField__passwordToggle .TextField__passwordToggle__button::before {
   border-color: #f4f4f4;
 }
-.TextField > .TextField__input:disabled::placeholder,
-.TextField:hover > .TextField__input:disabled::placeholder,
-.TextField--disabled > .TextField__input::placeholder {
-  color: #c4c4c4;
+
+.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
+.TextField--disabled .TextField__passwordToggle__button {
+  cursor: default;
+  pointer-events: none;
+}
+
+.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button .TextField__passwordToggle__icon,
+.TextField--disabled .TextField__passwordToggle__icon {
+  background-image: url('data:image/svg+xml,%3csvg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5ZM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5Zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3Z" fill="%23c4c4c4"/%3e%3c/svg%3e');
+}
+
+.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button[aria-pressed=true] > .TextField__passwordToggle__icon,
+.TextField--disabled .TextField__passwordToggle__button[aria-pressed=true] > .TextField__passwordToggle__icon {
+  background-image: url('data:image/svg+xml,%3csvg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cpath d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7ZM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27ZM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2Zm4.31-.78 3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01Z" fill="%23c4c4c4"/%3e%3c/svg%3e');
 }
 
 .TextField--disabled > .TextField__message {
