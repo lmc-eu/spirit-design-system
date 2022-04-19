@@ -12,7 +12,7 @@ module.exports = {
     node: true
   },
 
-  ignorePatterns: ['node_modules', '!.*.js', 'packages/web-react'],
+  ignorePatterns: ['node_modules', '!.*.js', 'packages/web-react', 'packages/web'],
 
   extends: [
     '@lmc-eu/eslint-config-react/base',

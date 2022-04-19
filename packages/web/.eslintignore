@@ -1,0 +1,17 @@
+# .eslintignore
+
+node_modules
+
+# NOTE:
+# The following directives are only relevant when linting the whole
+# project directory, ie. running `eslint .` ⚠️
+
+# If you compile JavaScript into some output folder, exclude it here
+dist
+
+# Highly recommended to re-include JavaScript dotfiles to lint them
+# (This will cause .eslintrc.js to be linted by ESLint 🤘)
+!.*.js
+
+# Some tools use this pattern for their configuration files. Lint them!
+!*.config.js
