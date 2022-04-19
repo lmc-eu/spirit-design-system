@@ -34,7 +34,10 @@
     "js:compile:bundle": "rollup --environment BUNDLE:true --config config/rollup.config.js",
     "js:lint": "eslint ./",
     "js:lint:fix": "yarn js:lint --fix",
-    "test": "npm-run-all css:lint js:lint types",
+    "test": "npm-run-all css:lint js:lint test:unit:coverage types",
+    "test:unit": "jest --config ./config/jest.config.js",
+    "test:unit:watch": "yarn test:unit --watchAll",
+    "test:unit:coverage": "yarn test:unit --coverage",
     "types": "tsc -p ./config/tsconfig.json"
   },
   "dependencies": {
@@ -45,7 +48,9 @@
     "@lmc-eu/browserslist-config": "1.0.3",
     "@lmc-eu/stylelint-config": "4.0.0",
     "@rollup/plugin-typescript": "^8.3.2",
+    "@types/jest": "^27.4.1",
     "autoprefixer": "10.4.4",
+    "babel-jest": "^27.5.1",
     "clean-css-cli": "5.6.0",
     "postcss": "8.4.12",
     "postcss-cli": "9.1.0",

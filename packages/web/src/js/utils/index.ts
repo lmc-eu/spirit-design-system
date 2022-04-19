@@ -7,7 +7,7 @@ const isElement = (object: any) => {
   return typeof object.nodeType !== 'undefined';
 };
 
-const getElement = (object: any) => {
+const getElement = (object?: any) => {
   // it's a node element
   if (isElement(object)) {
     return object;
