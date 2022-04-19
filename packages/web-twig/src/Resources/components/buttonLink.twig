@@ -3,7 +3,7 @@
 {% set _block = (props.isBlock is defined and props.isBlock == 'true' ) ? ' ' ~ _className ~ '--block' : '' %}
 {% set _square = (props.isSquare is defined and props.isSquare == 'true' ) ? ' ' ~ _className ~ '--square' : '' %}
 {% set _href = (props.href is defined) ? props.href : '#' %}
-{% set _title = (props.title is defined) ? ' title="' ~ props.ariaLabel ~ '"' : '' %}
+{% set _title = (props.title is defined) ? ' title="' ~ props.title ~ '"' : '' %}
 {% set _target = (props.target is defined) ? ' target="' ~ props.target ~ '"' : '' %}
 {% set _disabledClass = (props.isDisabled is defined and props.isDisabled == 'true') ? ' ' ~ _className ~ '--disabled' : '' %}
 {% set _ariaLabel = (props.ariaLabel is defined) ? ' aria-label="' ~ props.ariaLabel ~ '"' : '' %}
