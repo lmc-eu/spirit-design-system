@@ -27,6 +27,8 @@ $input-background: tokens.$background-basic;
 $input-focus-shadow: tokens.$focus;
 $input-placeholder-color-default: tokens.$text-secondary-default;
 $input-placeholder-color-disabled: tokens.$text-secondary-disabled;
+$input-size-characters: (2, 3, 4);
+$input-number-arrows-width: 1.25rem;
 
 $input-password-toggle-padding: tokens.$space-400;
 $input-password-toggle-icon-size: tokens.$space-700;

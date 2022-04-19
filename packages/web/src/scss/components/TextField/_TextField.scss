@@ -53,6 +53,22 @@
     &[type='url'] {
         appearance: none;
     }
+
+    &[type='number'] {
+        --arrows-width: #{theme.$input-number-arrows-width};
+    }
+
+    &[size] {
+        width: calc(
+            var(--width) + 2 * #{theme.$input-padding-x} + 2 * #{theme.$input-border-width} + var(--arrows-width, 0px)
+        );
+    }
+
+    @each $size in theme.$input-size-characters {
+        &[size='#{$size}'] {
+            --width: #{$size}ch;
+        }
+    }
 }
 
 .TextField--fluid {

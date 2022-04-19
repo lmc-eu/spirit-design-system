@@ -53,6 +53,27 @@ TextField supports the following input types:
 
 Other meaningful values (e.g. `date`, `file`) will work but design of the input field is not consistent across platforms/browsers.
 
+## Input width
+
+There are several ways to adjust the input width:
+
+### `size` attribute
+
+The `size` attribute is supported on inputs of the following types: `email`, `password`, `tel`, `text`, `url`.
+
+This option is generally recommended for inputs with a limited value length (e.g. numeric representation of day, month, year). Supported values are `2`, `3` and `4` (characters). If you need any other value or prefer using `em` unit instead of default `ch`, define a `--width` CSS custom property on the `<input>` element:
+
+```html
+<div class="TextField">
+  <label for="textfield-size" class="TextField__label">4000 (in Roman numerals)</label>
+  <input type="text" size="4" id="textfield-size" class="TextField__input" style="--width: 4em;" />
+</div>
+```
+
+### Grid
+
+For other use cases (wider input or input with unknown value length), we recommend placing them inside the Grid component and using `TextField--fluid` modifier to fill the available space.
+
 ## TextField password toggle
 
 TextField with `type="password"` can have a toggle button. When toggling don't forget to change
