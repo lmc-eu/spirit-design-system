@@ -521,6 +521,7 @@ table {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
+  display: inline-block;
   color: #171717;
 }
 .jobs-CheckboxField__label--hidden {
