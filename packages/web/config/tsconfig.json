@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "../dist",
+    "outDir": "../dist/js",
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
@@ -18,15 +18,15 @@
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "jsx": "react",
     "forceConsistentCasingInFileNames": true,
     "noUnusedParameters": false,
     "noUnusedLocals": true,
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["es2015", "dom", "dom.iterable"]
+    "typeRoots": ["../../../node_modules/@types"],
+    "lib": ["es2015", "dom", "dom.iterable"],
+    "types": ["node", "jest"]
   },
   "include": ["../src/**/*"],
   "exclude": ["../node_modules", "../dist/**/*"]
