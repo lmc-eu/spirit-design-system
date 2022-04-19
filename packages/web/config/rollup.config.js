@@ -1,14 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require('path')
-const { babel } = require('@rollup/plugin-babel')
-const { nodeResolve } = require('@rollup/plugin-node-resolve')
-const replace = require('@rollup/plugin-replace')
+const path = require('path');
+const { babel } = require('@rollup/plugin-babel');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const replace = require('@rollup/plugin-replace');
 const { terser } = require('rollup-plugin-terser');
+const typescript = require('@rollup/plugin-typescript');
 
-const BUNDLE = process.env.BUNDLE === 'true'
-const ESM = process.env.ESM === 'true'
+const BUNDLE = process.env.BUNDLE === 'true';
+const ESM = process.env.ESM === 'true';
 
-let fileDestination = `spirit-web${ESM ? '.esm' : ''}`
+let fileDestination = `spirit-web${ESM ? '.esm' : ''}`;
 let fileDirectory = ESM ? 'esm' : 'cjs';
 
 const plugins = [
@@ -16,9 +17,10 @@ const plugins = [
     // Only transpile our source code
     exclude: 'node_modules/**',
     // Include the helpers in the bundle, at most one copy of each
-    babelHelpers: 'bundled'
-  })
-]
+    babelHelpers: 'bundled',
+  }),
+  typescript({ target: 'es6' }),
+];
 
 if (BUNDLE) {
   fileDestination += '.bundle';
@@ -27,10 +29,10 @@ if (BUNDLE) {
   plugins.push(
     replace({
       'process.env.NODE_ENV': '"production"',
-      preventAssignment: true
+      preventAssignment: true,
     }),
-    nodeResolve()
-  )
+    nodeResolve(),
+  );
 }
 
 const filePath = `../dist/js/${fileDirectory}/${fileDestination}`;
@@ -44,22 +46,24 @@ const outputConfig = {
 };
 
 if (!ESM) {
-  outputConfig.name = 'spirit-web'
+  outputConfig.name = 'spirit-web';
 }
 
 const rollupConfig = {
-  input: path.resolve(__dirname, `../src/js/index.${format}.js`),
-  output: [{
-    file: path.resolve(__dirname, `${filePath}.js`),
-    ...outputConfig,
-  },
-  {
-    file: path.resolve(__dirname, `${filePath}.min.js`),
-    plugins: [terser()],
-    ...outputConfig
-  }],
+  input: path.resolve(__dirname, `../src/js/index.${format}.ts`),
+  output: [
+    {
+      file: path.resolve(__dirname, `${filePath}.js`),
+      ...outputConfig,
+    },
+    {
+      file: path.resolve(__dirname, `${filePath}.min.js`),
+      plugins: [terser()],
+      ...outputConfig,
+    },
+  ],
   external: {},
-  plugins
-}
+  plugins,
+};
 
-module.exports = rollupConfig
+module.exports = rollupConfig;
