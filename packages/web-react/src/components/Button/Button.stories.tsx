@@ -1,75 +1,22 @@
-import React from 'react';
-import { SpiritButtonProps } from '../../types';
+import { ComponentMeta } from '@storybook/react';
 import Button from './Button';
 
 export default {
   title: 'Components/Button',
-  argTypes: {
-    color: {
-      options: ['primary', 'secondary', 'tertiary', 'inverted', 'danger'],
-      control: { type: 'select' },
-    },
-    onClick: { action: 'onClick' },
-    type: 'button',
-    isDisabled: { control: 'boolean' },
-    isBlock: { control: 'boolean' },
-    isSquare: { control: 'boolean' },
-    ariaLabel: { control: 'text' },
-    children: {
-      control: 'text',
+  component: Button,
+  parameters: {
+    docs: {
+      description: {
+        component: `Buttons allow users to take actions.`,
+      },
     },
   },
-};
+} as ComponentMeta<typeof Button>;
 
-const Template = (args: SpiritButtonProps<'button'>) => <Button {...args} />;
-
-export const PrimaryButton = Template.bind({});
-PrimaryButton.args = {
-  color: 'primary',
-  children: 'Button',
-};
-
-export const SecondaryButton = Template.bind({});
-SecondaryButton.args = {
-  color: 'secondary',
-  children: 'Button',
-};
-
-export const TertiaryButton = Template.bind({});
-TertiaryButton.args = {
-  color: 'tertiary',
-  children: 'Button',
-};
-
-export const DangerButton = Template.bind({});
-DangerButton.args = {
-  color: 'danger',
-  children: 'Button',
-};
-
-export const InvertedButton = Template.bind({});
-InvertedButton.args = {
-  color: 'inverted',
-  children: 'Button',
-};
-
-export const DisabledButton = Template.bind({});
-DisabledButton.args = {
-  color: 'primary',
-  children: 'Button',
-  isDisabled: true,
-};
-
-export const BlockButton = Template.bind({});
-BlockButton.args = {
-  color: 'primary',
-  children: 'Button',
-  isBlock: true,
-};
-
-export const SquareButton = Template.bind({});
-SquareButton.args = {
-  color: 'primary',
-  children: '🚀',
-  isSquare: true,
-};
+export { default as Button } from './stories/Button';
+export { default as ButtonColors } from './stories/ButtonColors';
+export { default as ButtonDisabled } from './stories/ButtonDisabled';
+export { default as ButtonSquare } from './stories/ButtonSquare';
+export { default as ButtonBlock } from './stories/ButtonBlock';
+export { default as HTML } from './stories/ButtonHtml';
+export { default as Props } from './stories/ButtonProps';
