@@ -54,9 +54,11 @@
     "clean-css-cli": "5.6.0",
     "postcss": "8.4.12",
     "postcss-cli": "9.1.0",
+    "rollup": "^2.70.2",
     "sass": "1.50.1",
     "stylelint": "14.7.1",
     "stylelint-config-prettier": "9.0.3",
-    "stylelint-order": "5.0.0"
+    "stylelint-order": "5.0.0",
+    "tslib": "^2.3.1"
   }
 }
