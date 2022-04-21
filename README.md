@@ -102,6 +102,7 @@ or pure original implementation
 
 # Spirit Components
 
+- [Alert](./docs/Alert.md)
 - [Button](./docs/Button.md)
 - [ButtonLink](./docs/ButtonLink.md)
 - [Container](./docs/Container.md)
