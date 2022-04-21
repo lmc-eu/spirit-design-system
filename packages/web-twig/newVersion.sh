@@ -19,6 +19,7 @@ fi
 
 git reset --hard
 git checkout master
+git pull
 
 export VERSION=$1
 DIR=$PWD
