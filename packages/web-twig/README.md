@@ -106,11 +106,14 @@ or pure original implementation
 - [ButtonLink](./docs/ButtonLink.md)
 - [Container](./docs/Container.md)
 - [Grid](./docs/Grid.md)
+- [Header](./docs/Header.md)
+- [Heading](./docs/Heading.md)
+- [CheckboxField](./docs/CheckboxField.md)
+- [Link](./docs/Link.md)
 - [Stack](./docs/Stack.md)
 - [Tag](./docs/Tag.md)
+- [Text](./docs/Text.md)
 - [TextField](./docs/TextField.md)
-- [CheckboxField](./docs/CheckboxField.md)
-- [Header](./docs/Header.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
