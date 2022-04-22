@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="built/helpers.min.css">
     <link rel="stylesheet" href="built/utilities.min.css">
 
+    <!-- Load Spirit JS. -->
+    <script src="built/spirit-web.js" async></script>
+
     <style>
       .example-box {
         min-height: 2rem;
@@ -588,7 +591,7 @@
                 <button
                   type="button"
                   class="Header__close"
-                  data-toggle="header"
+                  data-dismiss="header"
                   data-target="#header-example-1__bar"
                   aria-controls="header-example-1__bar"
                   aria-expanded="false"
@@ -651,7 +654,7 @@
                 <button
                   type="button"
                   class="Header__close"
-                  data-toggle="header"
+                  data-dismiss="header"
                   data-target="#header-example-2__bar"
                   aria-controls="header-example-2__bar"
                   aria-expanded="false"
@@ -719,7 +722,7 @@
                 <button
                   type="button"
                   class="Header__close"
-                  data-toggle="header"
+                  data-dismiss="header"
                   data-target="#header-example-2__dialog"
                   aria-controls="header-example-2__dialog"
                   aria-expanded="false"
@@ -749,129 +752,6 @@
               </div>
             </nav>
           </header>
-
-          <script>
-            const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
-            const HEADER_BREAKPOINT = 1280;
-            const OPEN_CLASSNAME = 'is-open';
-            const BACKDROP_TAG_NAME = 'div';
-            const BACKDROP_CLASSNAME = 'Header__backdrop';
-
-            const initBackdrop = () => {
-              const backdropEl = document.createElement(BACKDROP_TAG_NAME);
-              backdropEl.classList.add(BACKDROP_CLASSNAME);
-              return backdropEl;
-            }
-
-            const getHeaderPaneSelectorsByToggles = () => {
-              const headerPaneSelectors = [];
-
-              document.querySelectorAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-                const target = toggleEl.dataset.target;
-
-                if (!headerPaneSelectors.includes(target)) {
-                  headerPaneSelectors.push(target);
-                }
-              });
-
-              return headerPaneSelectors;
-            };
-
-            const getOpenHeaderPanes = () => {
-              const headerPaneSelectors = getHeaderPaneSelectorsByToggles();
-
-              if (headerPaneSelectors.length) {
-                return document.querySelectorAll(
-                  headerPaneSelectors.map((selector) => `${selector}.${OPEN_CLASSNAME}`).join(', ')
-                );
-              }
-
-              return null;
-            };
-
-            const closeOpenHeaderPanes = () => {
-              getOpenHeaderPanes().forEach((headerPaneEl) => toggleHeaderPane(headerPaneEl));
-            };
-
-            const toggleHeaderPane = (targetEl) => {
-              if (!targetEl) {
-                console.warn('👻 Boo…! Target header pane does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ');
-                return;
-              }
-
-              const headerEl = targetEl.parentElement;
-              const backdropEl = initBackdrop();
-              const allHeaderToggleEls = headerEl.querySelectorAll(HEADER_TOGGLE_SELECTOR);
-              const openHeaderPaneEls = getOpenHeaderPanes();
-
-              if (!targetEl.querySelectorAll(`.${BACKDROP_CLASSNAME}`).length) {
-                targetEl.appendChild(backdropEl);
-              }
-
-              if (targetEl.classList.contains(OPEN_CLASSNAME)) {
-                targetEl.classList.remove(OPEN_CLASSNAME);
-
-                allHeaderToggleEls.forEach((toggleEl) => {
-                  if (headerEl.querySelector(toggleEl.dataset.target) === targetEl) {
-                    toggleEl.setAttribute('aria-expanded', 'false');
-                  }
-                });
-
-                if (openHeaderPaneEls.length === 1) {
-                  document.removeEventListener('keydown', handleKeyPress);
-                  window.removeEventListener('resize', handleWindowResize);
-                  backdropEl.removeEventListener('click', closeOpenHeaderPanes);
-                }
-              } else {
-                backdropEl.offsetHeight; // Force transition trigger.
-                targetEl.classList.add(OPEN_CLASSNAME);
-
-                allHeaderToggleEls.forEach((toggleEl) => {
-                  if (headerEl.querySelector(toggleEl.dataset.target) === targetEl) {
-                    toggleEl.setAttribute('aria-expanded', 'true');
-                  }
-                });
-
-                if (!openHeaderPaneEls.length) {
-                  document.addEventListener('keydown', handleKeyPress);
-                  window.addEventListener('resize', handleWindowResize);
-                  backdropEl.addEventListener('click', closeOpenHeaderPanes);
-                }
-              }
-            };
-
-            const handleHeaderToggleClick = (event) => {
-              toggleHeaderPane(document.querySelector(event.currentTarget.dataset.target));
-            };
-
-            const handleKeyPress = (event) => {
-              // Do nothing if the event was already processed.
-              if (event.defaultPrevented) {
-                return;
-              }
-
-              if (event.key === 'Escape') {
-                closeOpenHeaderPanes();
-
-                // Cancel the default action to avoid it being handled twice.
-                event.preventDefault();
-              }
-            };
-
-            const handleWindowResize = (event) => {
-              if (event.target.innerWidth >= HEADER_BREAKPOINT) {
-                closeOpenHeaderPanes();
-              }
-            };
-
-            const initHeader = () => {
-              document.querySelectorAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-                toggleEl.addEventListener('click', handleHeaderToggleClick);
-              });
-            };
-
-            window.addEventListener('DOMContentLoaded', initHeader);
-          </script>
 
           <h3 class="typography-heading-small-text mt-1100 mb-800">Simple Inverted Header</h3>
           <header class="Header Header--inverted Header--simple">
