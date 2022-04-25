@@ -14,7 +14,12 @@
     };
 
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    const addHandler = (element, eventType, handler) => element.addEventListener(eventType, handler);
+    const addHandler = (element, eventType, handler) => {
+        if (!element) {
+            return;
+        }
+        element.addEventListener(eventType, handler);
+    };
     const removeHandler = (element, eventType, handler) => element.removeEventListener(eventType, handler);
     const EventHandler = {
         on(element, event, handler) {
@@ -69,12 +74,70 @@
         return selector ? document.querySelector(selector) : null;
     };
 
+    const elementMap = new Map();
+    const InstanceMap = {
+        set(element, key, instance) {
+            if (!elementMap.has(element)) {
+                elementMap.set(element, new Map());
+            }
+            const instanceMap = elementMap.get(element);
+            // make it clear we only want one instance per element
+            // can be removed later when multiple key/instances are fine to be used
+            if (!instanceMap.has(key) && instanceMap.size !== 0) {
+                // eslint-disable-next-line no-console
+                console.error(`Spirit do not allow more than one instance per element. Bound instance: ${Array.from(instanceMap.keys())[0]}.`);
+                return;
+            }
+            instanceMap.set(key, instance);
+        },
+        get(element, key) {
+            if (elementMap.has(element)) {
+                return elementMap.get(element).get(key) || null;
+            }
+            return null;
+        },
+        remove(element, key) {
+            if (!elementMap.has(element)) {
+                return;
+            }
+            const instanceMap = elementMap.get(element);
+            instanceMap.delete(key);
+            // free up element references if there are no instances left for an element
+            if (instanceMap.size === 0) {
+                elementMap.delete(element);
+            }
+        },
+    };
+
     class BaseComponent {
         constructor(element) {
             this.element = getElement(element);
+            this.NAME = '';
+            InstanceMap.set(this.element, this.constructor.INSTANCE_KEY, this);
+        }
+        dispose() {
+            InstanceMap.remove(this.element, this.constructor.INSTANCE_KEY);
+            for (const propertyName of Object.getOwnPropertyNames(this)) {
+                // To type index signature is already hard
+                // @see: https://bobbyhadz.com/blog/typescript-element-implicitly-has-any-type-expression
+                // @ts-expect-error TS2322: Type 'null' is not assignable to type 'Element & (string | null) & (() => void)'
+                this[propertyName] = null;
+            }
+        }
+        static get NAME() {
+            return '';
+        }
+        static getInstance(element) {
+            return InstanceMap.get(getElement(element), this.INSTANCE_KEY);
+        }
+        static getOrCreateInstance(element) {
+            return this.getInstance(element) || this.createInstance(element);
         }
         static createInstance(element) {
             return new this(element);
+        }
+        static get INSTANCE_KEY() {
+            return `spirit.${this.NAME}`;
         }
     }
 
@@ -183,22 +246,60 @@
     }
     function handleHeaderClick(event) {
         const target = getElementFromSelector(this);
-        // with Header instance
         if (target) {
             const header = new Header(target);
             header.toggle(target, event);
         }
     }
-    // When document content is loaded
     EventHandler.on(window, 'DOMContentLoaded', () => {
-        // Find all toggle elements and for each toggle
         SelectorEngine.findAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-            // add click handler
             EventHandler.on(toggleEl, 'click', handleHeaderClick);
         });
     });
 
-    const index_umd = { Header };
+    const NAME = 'password';
+    const PASSWORD_TOGGLE_SELECTOR = '[data-toggle="password"]';
+    const PASSWORD_ARIA_PRESSED = 'aria-pressed';
+    const PASSWORD_ARIA_LABEL = 'aria-label';
+    const PASSWORD_FIELD_ELEMENT = 'input';
+    class Password extends BaseComponent {
+        constructor(element) {
+            super(element);
+            this.isShown = false;
+        }
+        static get NAME() {
+            return NAME;
+        }
+        show(target) {
+            target.setAttribute(PASSWORD_ARIA_PRESSED, 'true');
+            target.setAttribute(PASSWORD_ARIA_LABEL, 'Hide password');
+            SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement).setAttribute('type', 'text');
+            this.isShown = true;
+        }
+        hide(target) {
+            target.setAttribute(PASSWORD_ARIA_PRESSED, 'false');
+            target.setAttribute(PASSWORD_ARIA_LABEL, 'Show password');
+            SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement).setAttribute('type', 'password');
+            this.isShown = false;
+        }
+        toggle(relatedTarget) {
+            this.isShown ? this.hide(relatedTarget) : this.show(relatedTarget);
+        }
+    }
+    function handlePasswordClick() {
+        const target = getElement(this);
+        if (target) {
+            const password = Password.getOrCreateInstance(target);
+            password.toggle(target);
+        }
+    }
+    EventHandler.on(window, 'DOMContentLoaded', () => {
+        SelectorEngine.findAll(PASSWORD_TOGGLE_SELECTOR).forEach((toggleEl) => {
+            EventHandler.on(toggleEl, 'click', handlePasswordClick);
+        });
+    });
+
+    const index_umd = { Header, Password };
 
     return index_umd;
 

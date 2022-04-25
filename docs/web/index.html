@@ -270,21 +270,6 @@
               </div>
               <button type="button" class="Button Button--primary">Button</button>
             </div>
-            <script>
-              const handlePasswordToggleClick = (event) => {
-                const { target } = event;
-                const passwordState = target.getAttribute('aria-pressed');
-                target.setAttribute('aria-pressed', passwordState === 'true' ? 'false' : 'true');
-                target.setAttribute('aria-label', passwordState === 'true' ? 'Show password' : 'Hide password');
-                target.parentElement.querySelector('input').setAttribute('type', passwordState === 'true' ? 'password' : 'text');
-              };
-
-              window.addEventListener('DOMContentLoaded', function () {
-                document.querySelectorAll('[data-toggle="password"]').forEach((togglePasswordEl) => {
-                  togglePasswordEl.addEventListener('click', handlePasswordToggleClick);
-                });
-              });
-            </script>
           </div>
         </div>
       </section>

@@ -10,6 +10,12 @@
   border: 0;
 }
 
+.image-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .link-primary {
   color: #29616f;
 }
