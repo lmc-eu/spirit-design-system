@@ -1,8 +1,9 @@
 import SelectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import BaseComponent from './BaseComponent';
-import { getElementFromSelector } from './utils/index';
+import { enableToggleTrigger } from './utils/ComponentFunctions';
 
+const NAME = 'header';
 const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
 const HEADER_DISMISS_ATTRIBUTE = 'data-dismiss';
 const HEADER_BREAKPOINT = 1280;
@@ -13,6 +14,10 @@ const BACKDROP_CLASSNAME = 'Header__backdrop';
 class Header extends BaseComponent {
   isShown: boolean;
   backdrop: HTMLElement;
+
+  static get NAME() {
+    return NAME;
+  }
 
   constructor(element: HTMLElement) {
     super(element);
@@ -26,10 +31,16 @@ class Header extends BaseComponent {
     backdropEl.classList.add(BACKDROP_CLASSNAME);
 
     if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
-      target.appendChild(backdropEl);
+      Header.findRelatedNavElement(target).appendChild(backdropEl);
     }
 
     return backdropEl;
+  }
+
+  static findRelatedNavElement(target: HTMLElement) {
+    const headerEl = (target.parentElement as HTMLElement).parentElement;
+
+    return SelectorEngine.findOne('nav', headerEl as HTMLElement);
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -78,16 +89,13 @@ class Header extends BaseComponent {
     EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
   }
 
-  show(event: Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement }) {
+  show(relatedTarget: HTMLElement) {
     if (this.isShown) {
       return;
     }
 
-    const target = SelectorEngine.findOne(event.currentTarget.dataset.target as string);
-    const headerEl = target.parentElement;
-    const toggleEl = SelectorEngine.findOne(HEADER_TOGGLE_SELECTOR, headerEl);
-    target.classList.add(OPEN_CLASSNAME);
-    toggleEl.setAttribute('aria-expanded', 'true');
+    Header.findRelatedNavElement(relatedTarget).classList.add(OPEN_CLASSNAME);
+    relatedTarget.setAttribute('aria-expanded', 'true');
 
     this.addEventListeners();
     this.isShown = true;
@@ -118,11 +126,8 @@ class Header extends BaseComponent {
     this.isShown = false;
   }
 
-  toggle(
-    relatedTarget: HTMLElement | null,
-    event: Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement },
-  ) {
-    if (!relatedTarget) {
+  toggle(targetElement: HTMLElement | null, event: Event & { target: HTMLElement }) {
+    if (!targetElement) {
       // eslint-disable-next-line no-console
       console.warn(
         '👻 Boo…! Target header pane does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ',
@@ -131,22 +136,10 @@ class Header extends BaseComponent {
       return;
     }
 
-    this.isShown ? this.hide(event) : this.show(event);
+    this.isShown ? this.hide(event) : this.show(targetElement);
   }
 }
 
-function handleHeaderClick(event: Event) {
-  const target = getElementFromSelector(this);
-  if (target) {
-    const header = new Header(target);
-    header.toggle(target, event as Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement });
-  }
-}
-
-EventHandler.on(window, 'DOMContentLoaded', () => {
-  SelectorEngine.findAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-    EventHandler.on(toggleEl, 'click', handleHeaderClick);
-  });
-});
+enableToggleTrigger(Header);
 
 export default Header;
