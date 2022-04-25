@@ -27,16 +27,16 @@
     "@lmc-eu/eslint-config-react": "1.0.1",
     "@rollup/plugin-node-resolve": "13.2.1",
     "@testing-library/jest-dom": "5.16.4",
-    "@testing-library/react": "13.0.0",
+    "@testing-library/react": "13.1.1",
     "@testing-library/react-hooks": "8.0.0",
     "@types/jest": "27.4.1",
     "@types/node": "^17.0.23",
-    "@types/react": "18.0.0",
-    "@types/react-dom": "18.0.0",
+    "@types/react": "18.0.6",
+    "@types/react-dom": "18.0.2",
     "@typescript-eslint/eslint-plugin": "5.20.0",
     "@typescript-eslint/parser": "5.20.0",
     "babel-jest": "27.5.1",
-    "eslint": "8.13.0",
+    "eslint": "8.14.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
@@ -88,6 +88,6 @@
     "test:unit:coverage": "yarn test:unit --coverage"
   },
   "resolutions": {
-    "@types/react-dom": ">=18.0.0"
+    "@types/react-dom": "18.0.2"
   }
 }
