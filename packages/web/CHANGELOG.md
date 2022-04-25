@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.16.0"></a>
+
+# [0.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.15.0...@lmc-eu/spirit-web@0.16.0) (2022-04-25)
+
+### Bug Fixes
+
+- CheckboxField label interaction [#DS-179](https://github.com/lmc-eu/spirit-design-system/issues/DS-179) ([9240a52](https://github.com/lmc-eu/spirit-design-system/commit/9240a52))
+
+### Chores
+
+- **web:** Add missing peer dependencies ([5a11424](https://github.com/lmc-eu/spirit-design-system/commit/5a11424))
+
+### Code Refactoring
+
+- **web:** Use typescript for javascript handlers ([fb84cd3](https://github.com/lmc-eu/spirit-design-system/commit/fb84cd3))
+
+### Dependencies
+
+- Update all non-major dependencies ([db90539](https://github.com/lmc-eu/spirit-design-system/commit/db90539))
+
+### Documentation
+
+- **web:** Document prefixing of CSS class names [#DS-143](https://github.com/lmc-eu/spirit-design-system/issues/DS-143) ([18d8be8](https://github.com/lmc-eu/spirit-design-system/commit/18d8be8))
+
+### Features
+
+- **web:** Add focus shadow to CheckboxField and TextField ([4a57c8e](https://github.com/lmc-eu/spirit-design-system/commit/4a57c8e))
+- **web:** Introduce javascript handlers for web components ([611e520](https://github.com/lmc-eu/spirit-design-system/commit/611e520))
+- **web:** Style password toggle [#DS-192](https://github.com/lmc-eu/spirit-design-system/issues/DS-192) ([9867f32](https://github.com/lmc-eu/spirit-design-system/commit/9867f32))
+
+### Styles
+
+- **web:** Introduce ESlint for javascript handlers ([77bbcaf](https://github.com/lmc-eu/spirit-design-system/commit/77bbcaf))
+
+### Tests
+
+- **web:** Ignore code coverage reports ([0a95775](https://github.com/lmc-eu/spirit-design-system/commit/0a95775))
+- **web:** Introduce tests for javascript handlers ([dbbc762](https://github.com/lmc-eu/spirit-design-system/commit/dbbc762))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.15.0"></a>
 
 # [0.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.14.0...@lmc-eu/spirit-web@0.15.0) (2022-04-13)

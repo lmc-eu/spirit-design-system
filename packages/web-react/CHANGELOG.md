@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.14.0"></a>
+
+# [0.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.13.0...@lmc-eu/spirit-web-react@0.14.0) (2022-04-25)
+
+### Bug Fixes
+
+- CheckboxField label interaction [#DS-179](https://github.com/lmc-eu/spirit-design-system/issues/DS-179) ([9240a52](https://github.com/lmc-eu/spirit-design-system/commit/9240a52))
+
+### Dependencies
+
+- Resolve @types/react-dom to 18.0.0 and above (refs [#258](https://github.com/lmc-eu/spirit-design-system/issues/258)) ([e7a5924](https://github.com/lmc-eu/spirit-design-system/commit/e7a5924))
+- Update all non-major dependencies ([db90539](https://github.com/lmc-eu/spirit-design-system/commit/db90539))
+- Update dependency @testing-library/react to v13 ([8b18e27](https://github.com/lmc-eu/spirit-design-system/commit/8b18e27))
+- Update dependency react to v18 (refs [#258](https://github.com/lmc-eu/spirit-design-system/issues/258)) ([71c1aa9](https://github.com/lmc-eu/spirit-design-system/commit/71c1aa9))
+- Update dependency react-dom to v18 ([370b903](https://github.com/lmc-eu/spirit-design-system/commit/370b903))
+
+### Documentation
+
+- **web:** Document prefixing of CSS class names [#DS-143](https://github.com/lmc-eu/spirit-design-system/issues/DS-143) ([18d8be8](https://github.com/lmc-eu/spirit-design-system/commit/18d8be8))
+
+### Styles
+
+- **web-react:** Setup jest env for ESlint ([5fe8cbb](https://github.com/lmc-eu/spirit-design-system/commit/5fe8cbb))
+
+### Tests
+
+- **web-react:** Suppress annoying warning about new React render API ([7a71afb](https://github.com/lmc-eu/spirit-design-system/commit/7a71afb)), closes [#258](https://github.com/lmc-eu/spirit-design-system/issues/258)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.13.0"></a>
 
 # [0.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.12.0...@lmc-eu/spirit-web-react@0.13.0) (2022-04-13)
