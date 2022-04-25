@@ -3,6 +3,7 @@ import EventHandler from './dom/EventHandler';
 import BaseComponent from './BaseComponent';
 import { getElement } from './utils/index';
 
+const NAME = 'password';
 const PASSWORD_TOGGLE_SELECTOR = '[data-toggle="password"]';
 const PASSWORD_ARIA_PRESSED = 'aria-pressed';
 const PASSWORD_ARIA_LABEL = 'aria-label';
@@ -10,6 +11,10 @@ const PASSWORD_FIELD_ELEMENT = 'input';
 
 class Password extends BaseComponent {
   isShown: boolean;
+
+  static get NAME() {
+    return NAME;
+  }
 
   constructor(element: HTMLElement) {
     super(element);
@@ -45,7 +50,7 @@ function handlePasswordClick() {
   const target = getElement(this);
 
   if (target) {
-    const password = new Password(target);
+    const password = Password.getOrCreateInstance(target) as Password;
     password.toggle(target);
   }
 }

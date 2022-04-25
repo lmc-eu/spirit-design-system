@@ -2,8 +2,13 @@
 
 type EventHandlerElement = HTMLElement | Window | Document;
 
-const addHandler = (element: EventHandlerElement, eventType: string, handler: any): void =>
+const addHandler = (element: EventHandlerElement, eventType: string, handler: any): void => {
+  if (!element) {
+    return;
+  }
+
   element.addEventListener(eventType, handler);
+};
 
 const removeHandler = (element: EventHandlerElement, eventType: string, handler: any): void =>
   element.removeEventListener(eventType, handler);
