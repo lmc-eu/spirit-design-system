@@ -137,18 +137,14 @@ class Header extends BaseComponent {
 
 function handleHeaderClick(event: Event) {
   const target = getElementFromSelector(this);
-  // with Header instance
   if (target) {
     const header = new Header(target);
     header.toggle(target, event as Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement });
   }
 }
 
-// When document content is loaded
 EventHandler.on(window, 'DOMContentLoaded', () => {
-  // Find all toggle elements and for each toggle
   SelectorEngine.findAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-    // add click handler
     EventHandler.on(toggleEl, 'click', handleHeaderClick);
   });
 });

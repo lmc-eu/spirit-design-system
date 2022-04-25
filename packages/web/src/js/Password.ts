@@ -50,11 +50,8 @@ function handlePasswordClick() {
   }
 }
 
-// When document content is loaded
 EventHandler.on(window, 'DOMContentLoaded', () => {
-  // Find all toggle elements and for each toggle
   SelectorEngine.findAll(PASSWORD_TOGGLE_SELECTOR).forEach((toggleEl) => {
-    // add click handler
     EventHandler.on(toggleEl, 'click', handlePasswordClick);
   });
 });
