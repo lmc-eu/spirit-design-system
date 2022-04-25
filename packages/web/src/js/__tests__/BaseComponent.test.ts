@@ -10,10 +10,22 @@ class DummyClass extends BaseComponent {
 
     EventHandler.on(this.element, 'click');
   }
+
+  static get NAME() {
+    return 'dummy';
+  }
 }
 
 describe('Base Component', () => {
   let fixtureEl: Element;
+  const name = 'dummy';
+  let element: Element;
+  let instance: unknown;
+  const createInstance = () => {
+    fixtureEl.innerHTML = '<div id="foo"></div>';
+    element = fixtureEl.querySelector('#foo') as HTMLElement;
+    instance = new DummyClass(element);
+  };
 
   beforeAll(() => {
     fixtureEl = getFixture();
@@ -21,6 +33,20 @@ describe('Base Component', () => {
 
   afterEach(() => {
     clearFixture();
+  });
+
+  describe('Static Methods', () => {
+    describe('INSTANCE_KEY', () => {
+      it('should return plugin data key', () => {
+        expect(DummyClass.INSTANCE_KEY).toBe(`spirit.${name}`);
+      });
+    });
+
+    describe('NAME', () => {
+      it('should return plugin NAME', () => {
+        expect(DummyClass.NAME).toEqual(name);
+      });
+    });
   });
 
   describe('Public Methods', () => {
@@ -35,6 +61,71 @@ describe('Base Component', () => {
         expect(elInstance.element).toEqual(el);
         expect(selectorInstance.element).toEqual(fixtureEl.querySelector('#bar'));
       });
+
+      it('should not initialize and add element record to InstanceMap (caching), if argument `element` is not an HTML element', () => {
+        fixtureEl.innerHTML = '';
+
+        const el = fixtureEl.querySelector('#foo');
+        const elInstance = new DummyClass(el);
+        const selectorInstance = new DummyClass('#bar');
+
+        expect(elInstance.element).toBeNull();
+        expect(selectorInstance.element).toBeNull();
+      });
+    });
+
+    describe('dispose', () => {
+      it('should dispose an component', () => {
+        createInstance();
+        expect(DummyClass.getInstance(element)).not.toBeNull();
+
+        instance.dispose();
+
+        expect(DummyClass.getInstance(element)).toBeNull();
+        expect(instance.element).toBeNull();
+      });
+    });
+  });
+
+  describe('getInstance', () => {
+    it('should return an instance', () => {
+      createInstance();
+
+      expect(DummyClass.getInstance(element)).toEqual(instance);
+      expect(DummyClass.getInstance(element)).toBeInstanceOf(DummyClass);
+    });
+
+    it('should accept element, either passed as a CSS selector, jQuery element, or DOM element', () => {
+      createInstance();
+
+      expect(DummyClass.getInstance('#foo')).toEqual(instance);
+      expect(DummyClass.getInstance(element)).toEqual(instance);
+    });
+
+    it('should return null when there is no instance', () => {
+      fixtureEl.innerHTML = '<div></div>';
+
+      const div = fixtureEl.querySelector('div');
+
+      expect(DummyClass.getInstance(div)).toBeNull();
+    });
+  });
+
+  describe('getOrCreateInstance', () => {
+    it('should return an instance', () => {
+      createInstance();
+
+      expect(DummyClass.getOrCreateInstance(element)).toEqual(instance);
+      expect(DummyClass.getInstance(element)).toEqual(DummyClass.getOrCreateInstance(element, {}));
+      expect(DummyClass.getOrCreateInstance(element)).toBeInstanceOf(DummyClass);
+    });
+
+    it('should return new instance when there is no alert instance', () => {
+      fixtureEl.innerHTML = '<div id="foo"></div>';
+      element = fixtureEl.querySelector('#foo');
+
+      expect(DummyClass.getInstance(element)).toBeNull();
+      expect(DummyClass.getOrCreateInstance(element)).toBeInstanceOf(DummyClass);
     });
   });
 });
