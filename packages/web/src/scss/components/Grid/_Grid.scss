@@ -21,7 +21,7 @@
     grid-column: span 12;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        grid-column: 3 / span 8;
+        grid-column: 2 / span 10;
     }
 
     @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
