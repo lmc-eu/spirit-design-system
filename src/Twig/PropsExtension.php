@@ -10,10 +10,18 @@ use Twig\TwigFunction;
 
 class PropsExtension extends AbstractExtension
 {
+    public const VALIDATION_ATTRIBUTES = [
+        'min', 'max', 'minlength', 'maxlength', 'pattern',
+    ];
+
     public function getFunctions(): array
     {
         return [
             new TwigFunction('mainProps', [$this, 'renderMainProps'], [
+                'needs_environment' => true,
+                'is_safe' => ['html'],
+            ]),
+            new TwigFunction('inputProps', [$this, 'renderInputProps'], [
                 'needs_environment' => true,
                 'is_safe' => ['html'],
             ]),
@@ -33,9 +41,27 @@ class PropsExtension extends AbstractExtension
                 }
             }
         }
+
         return $environment->render('@partials/mainProps.twig', [
             'allowedAttributes' => $allowedAttributes,
             'id' => $props['id'] ?? null,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $props
+     */
+    public function renderInputProps(Environment $environment, array $props): string
+    {
+        $allowedAttributes = [];
+        foreach ($props as $propName => $propValue) {
+            if (in_array($propName, self::VALIDATION_ATTRIBUTES, true)) {
+                $allowedAttributes[$propName] = $propValue;
+            }
+        }
+
+        return $environment->render('@partials/inputProps.twig', [
+            'allowedAttributes' => $allowedAttributes,
         ]);
     }
 }
