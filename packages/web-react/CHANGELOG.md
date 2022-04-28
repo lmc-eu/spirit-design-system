@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.15.0"></a>
+
+# [0.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.14.0...@lmc-eu/spirit-web-react@0.15.0) (2022-04-28)
+
+### Dependencies
+
+- **repo:** Install `jest-environment-jsdom` which is required by jest@28 ([ebae8d1](https://github.com/lmc-eu/spirit-design-system/commit/ebae8d1))
+- Update all non-major dependencies ([c0817e6](https://github.com/lmc-eu/spirit-design-system/commit/c0817e6))
+- Update dependency babel-jest to v28 ([cd71a29](https://github.com/lmc-eu/spirit-design-system/commit/cd71a29))
+- Update dependency jest to v28 ([646396b](https://github.com/lmc-eu/spirit-design-system/commit/646396b))
+- Update dependency jest-cli to v28 ([15b87d0](https://github.com/lmc-eu/spirit-design-system/commit/15b87d0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.14.0"></a>
 
 # [0.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.13.0...@lmc-eu/spirit-web-react@0.14.0) (2022-04-25)

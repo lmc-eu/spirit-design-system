@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.17.0"></a>
+
+# [0.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.16.0...@lmc-eu/spirit-web@0.17.0) (2022-04-28)
+
+### BREAKING CHANGES
+
+- Set correct grid narrow span on tablet, should spread 10 columns instead of 8 ([2c4bcba](https://github.com/lmc-eu/spirit-design-system/commit/2c4bcba))
+
+### Code Refactoring
+
+- **web:** Remove unnecessary comments in Password and Header ([584d277](https://github.com/lmc-eu/spirit-design-system/commit/584d277))
+
+### Dependencies
+
+- **repo:** Install `jest-environment-jsdom` which is required by jest@28 ([ebae8d1](https://github.com/lmc-eu/spirit-design-system/commit/ebae8d1))
+- Update all non-major dependencies ([c0817e6](https://github.com/lmc-eu/spirit-design-system/commit/c0817e6))
+- Update dependency babel-jest to v28 ([cd71a29](https://github.com/lmc-eu/spirit-design-system/commit/cd71a29))
+
+### Features
+
+- **web:** Add Image css helpers ([93a6002](https://github.com/lmc-eu/spirit-design-system/commit/93a6002))
+- **web:** Introduce JavaScript handler for Password toggle (refs [#DS-171](https://github.com/lmc-eu/spirit-design-system/issues/DS-171)) ([223c4f7](https://github.com/lmc-eu/spirit-design-system/commit/223c4f7))
+- **web:** Store component handler instances in a map (refs [#DS-171](https://github.com/lmc-eu/spirit-design-system/issues/DS-171)) ([13adbb5](https://github.com/lmc-eu/spirit-design-system/commit/13adbb5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.16.0"></a>
 
 # [0.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.15.0...@lmc-eu/spirit-web@0.16.0) (2022-04-25)
