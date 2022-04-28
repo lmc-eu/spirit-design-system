@@ -148,7 +148,8 @@
     z-index: 1;
 }
 
-.TextField__message {
+.TextField__message,
+.TextField > [data-element='validator_message'] {
     @include typography.generate(theme.$message-typography);
 
     margin-top: theme.$spacing;
@@ -164,7 +165,8 @@
         border-color: map.get($variant-value, input-border-color);
     }
 
-    :is(.TextField--#{$variant-name}, .TextField.has-#{$variant-name}) > .TextField__message {
+    :is(.TextField--#{$variant-name}, .TextField.has-#{$variant-name})
+        > :is(.TextField__message, [data-element='validator_message']) {
         color: map.get($variant-value, message-color);
     }
 }
@@ -212,6 +214,6 @@
     background-image: svg.escape(theme.$input-password-toggle-icon-shown-disabled);
 }
 
-:is(.TextField--disabled, .TextField.is-disabled) > .TextField__message {
+:is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
     color: theme.$message-color-disabled;
 }

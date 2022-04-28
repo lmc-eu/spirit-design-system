@@ -39,7 +39,7 @@ state. The label can be hidden and show if the input is required.
 </div>
 ```
 
-## Supported `type` values
+## Supported `type` Values
 
 TextField supports the following input types:
 
@@ -53,11 +53,11 @@ TextField supports the following input types:
 
 Other meaningful values (e.g. `date`, `file`) will work but design of the input field is not consistent across platforms/browsers.
 
-## Input width
+## Input Width
 
 There are several ways to adjust the input width:
 
-### `size` attribute
+### `size` Attribute
 
 The `size` attribute is supported on inputs of the following types: `email`, `password`, `tel`, `text`, `url`.
 
@@ -127,10 +127,31 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 ```
 
+### JavaScript-Controlled Validation Message
+
+When implementing client-side form validation, use JS interaction state classes
+(`has-success`, `has-warning`, `has-error`) on the wrapping `<div>` element and
+render validation messages in a `<div>` with `data-element="validator_message"`
+attribute. This way your JS remains disconnected from CSS that may or may not be
+[prefixed].
+
+**Remember this approach is only valid for vanilla JS implementation. React
+components mix CSS with JS by design and handle prefixes their own way.**
+
+```html
+<div class="TextField has-error">
+  <label for="textfieldJSValidation1" class="TextField__label TextField__label--required">
+    Label of input with error
+  </label>
+  <input type="text" id="textfieldJSValidation1" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div data-element="validator_message">Error message inserted by JS</div>
+</div>
+```
+
 ## Disabled TextField
 
-On top of adding the `disabled` attribut to the input, disabled TextField can be
-marked by adding `TextField--disabled` modifier class, or with `is-disabled`
+On top of adding the `disabled` attribute to the input, disabled TextField can
+be marked by adding `TextField--disabled` modifier class, or with `is-disabled`
 JS interaction class when controlled by JavaScript:
 
 ```html
@@ -145,3 +166,5 @@ JS interaction class when controlled by JavaScript:
   <div class="TextField__message">Message</div>
 </div>
 ```
+
+[prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
