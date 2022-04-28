@@ -40,7 +40,9 @@ and show if the input is required.
 ```
 
 ## Supported `type` values
+
 TextField supports the following input types:
+
 - `email`
 - `number`
 - `password`
@@ -50,7 +52,6 @@ TextField supports the following input types:
 - `url`
 
 Other meaningful values (e.g. `date`, `file`) will work but design of the input field is not consistent across platforms/browsers.
-
 
 ## TextField password toggle
 
