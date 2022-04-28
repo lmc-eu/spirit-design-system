@@ -26,6 +26,7 @@
     }
 
     &:disabled,
+    &.is-disabled,
     &.Button--disabled {
         cursor: cursors.$disabled;
         pointer-events: none;

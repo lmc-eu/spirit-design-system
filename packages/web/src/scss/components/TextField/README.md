@@ -1,8 +1,8 @@
 # TextField
 
 TextField enables the user to type in text information. It has input, a label,
-and an optional message. It could be disabled or have an error state. The label could be hidden
-and show if the input is required.
+and an optional message. It can be disabled or have success, warning, or error
+state. The label can be hidden and show if the input is required.
 
 ```html
 <div class="TextField">
@@ -74,7 +74,7 @@ This option is generally recommended for inputs with a limited value length (e.g
 
 For other use cases (wider input or input with unknown value length), we recommend placing them inside the Grid component and using `TextField--fluid` modifier to fill the available space.
 
-## TextField password toggle
+## TextField Password Toggle
 
 TextField with `type="password"` can have a toggle button. When toggling don't forget to change
 not only the input type but also `aria-pressed` and `aria-label`.
@@ -100,5 +100,48 @@ not only the input type but also `aria-pressed` and `aria-label`.
       placeholder="Password must be at least 6 characters long"
     />
   </div>
+</div>
+```
+
+## Validation States
+
+Validation states can be presented either by adding a CSS modifier class
+(`TextField--success`, `TextField--warning`, `TextField--error`), or by adding
+a JS interaction class when controlled by JavaScript (`has-success`,
+`has-warning`, `has-error`).
+
+```html
+<div class="TextField TextField--error">
+  <label for="textfieldValidation1" class="TextField__label TextField__label--required">
+    Label of input with error
+  </label>
+  <input type="text" id="textfieldValidation1" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div class="TextField__message">Error message</div>
+</div>
+<div class="TextField has-error">
+  <label for="textfieldValidation2" class="TextField__label TextField__label--required">
+    Label of input with error
+  </label>
+  <input type="text" id="textfieldValidation2" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div class="TextField__message">Error message</div>
+</div>
+```
+
+## Disabled TextField
+
+On top of adding the `disabled` attribut to the input, disabled TextField can be
+marked by adding `TextField--disabled` modifier class, or with `is-disabled`
+JS interaction class when controlled by JavaScript:
+
+```html
+<div class="TextField TextField--disabled">
+  <label for="textfieldDisabled1" class="TextField__label TextField__label--required">Label of disabled input</label>
+  <input type="text" id="textfieldDisabled1" class="TextField__input" placeholder="Placeholder" disabled />
+  <div class="TextField__message">Message</div>
+</div>
+<div class="TextField is-disabled">
+  <label for="textfieldDisabled2" class="TextField__label TextField__label--required">Label of disabled input</label>
+  <input type="text" id="textfieldDisabled2" class="TextField__input" placeholder="Placeholder" disabled />
+  <div class="TextField__message">Message</div>
 </div>
 ```
