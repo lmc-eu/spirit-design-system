@@ -22,6 +22,7 @@
 <div class="{{ _className }}{{ _disabledClass }}{{ _fluidClass }}{{ _validationStateClass }}{{ _class }}">
     <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label }}</label>
     <input
+        {{ inputProps(props) }}
         type="{{ _type }}"
         id="{{ _id }}"
         name="{{ _inputName }}"

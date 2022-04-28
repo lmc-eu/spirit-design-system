@@ -95,4 +95,46 @@ class PropsExtensionTest extends TestCase
             ]],
         ];
     }
+
+    /**
+     * @dataProvider renderInputPropsDataProvider
+     * @param array<string, mixed> $props
+     * @param array<string, mixed> $expectedRenderProps
+     */
+    public function testShouldRenderInputProps(array $props, array $expectedRenderProps): void
+    {
+        $expectedResponse = '';
+        $environment = m::mock(Environment::class);
+
+        $environment->shouldReceive('render')
+            ->once()
+            ->with('@partials/inputProps.twig', $expectedRenderProps)
+            ->andReturn($expectedResponse);
+
+        $renderResponse = $this->propsExtension->renderInputProps($environment, $props);
+
+        $this->assertSame($expectedResponse, $renderResponse);
+    }
+
+    /**
+     * @return array<string, array<int, array<string, array<string, string>|int|string|null>>>
+     */
+    public function renderInputPropsDataProvider(): array
+    {
+        return [
+            'empty props' => [[], [
+                'allowedAttributes' => [],
+            ]],
+            'filter only allowed attributes' => [[
+                'test-id' => 'testDataId',
+                'min' => '1',
+                'max' => '6',
+            ], [
+                'allowedAttributes' => [
+                    'min' => '1',
+                    'max' => '6',
+                ],
+            ]],
+        ];
+    }
 }

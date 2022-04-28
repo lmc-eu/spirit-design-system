@@ -22,6 +22,7 @@
 
 <label for={{ _id }} class="{{ _className }}{{ _disabledClass }}{{ _validationStateClass }}{{ _class }}">
     <input
+        {{ inputProps(props) }}
         type="checkbox"
         id="{{ _id }}"
         name="{{ _inputName }}"
