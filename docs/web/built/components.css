@@ -400,7 +400,7 @@
 }
 @media (min-width: 768px) {
   .Grid--narrow > * {
-    grid-column: 3/span 8;
+    grid-column: 2/span 10;
   }
 }
 @media (min-width: 1280px) {
