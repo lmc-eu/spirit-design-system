@@ -43,6 +43,16 @@
         color: theme.$input-placeholder-color-default;
         opacity: 1;
     }
+
+    &[type="email"],
+    &[type="number"],
+    &[type="password"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="text"],
+    &[type="url"] {
+        appearance: none;
+    }
 }
 
 .TextField--fluid {
