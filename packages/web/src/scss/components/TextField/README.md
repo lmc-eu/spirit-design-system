@@ -39,6 +39,19 @@ and show if the input is required.
 </div>
 ```
 
+## Supported `type` values
+TextField supports the following input types:
+- `email`
+- `number`
+- `password`
+- `search`
+- `tel`
+- `text`
+- `url`
+
+Other meaningful values (e.g. `date`, `file`) will work but design of the input field is not consistent across platforms/browsers.
+
+
 ## TextField password toggle
 
 TextField with `type="password"` can have a toggle button. When toggling don't forget to change
