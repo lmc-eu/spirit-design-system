@@ -127,6 +127,7 @@ button.Header__link {
 .Header__text {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
     padding: theme.$nav-item-padding-y theme.$nav-item-padding-x;
 }
