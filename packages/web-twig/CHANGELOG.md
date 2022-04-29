@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.6.0 - 2022-04-29
 - Add main props `data-*` and `id` into `Button` and `ButtonLink` components
 - Introduce `Header`, `Navbar`, `NavbarActions`, `NavbarClose`, `NavbarToggle`, `Nav `, `NavItem`, `NavLink `components
 - Allow `aria-*` as main props in `Button` and `ButtonLink` components
