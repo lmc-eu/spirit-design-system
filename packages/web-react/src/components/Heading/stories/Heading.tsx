@@ -9,7 +9,6 @@ const Story: ComponentStory<typeof Heading> = <T extends ElementType = 'div'>(ar
 
 Story.args = {
   children: 'Heading Text',
-  size: 'medium',
 };
 
 export default Story;
