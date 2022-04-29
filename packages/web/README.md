@@ -69,13 +69,13 @@ Some components require JavaScript plugins for their full functionality. You can
 
 #### Individual or compiled
 
-Plugins can be included individually (using `js/*.js`), or all at once using `js/cjs/spirit-web.js` or the minified `js/cjs/spirit-web.min.js` (do not include both).
+Plugins can be included individually (using `import { <plugin> }` from `js/esm/*.esm.js`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/cjs/spirit-web.js` or the minified `js/cjs/spirit-web.min.js` (do not include both).
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-If you use a bundler (Webpack, Rollup…), you can use `/js/*.js` files which are UMD ready.
+If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are UMD ready.
 
 #### Using Spirit Web as a module
 
