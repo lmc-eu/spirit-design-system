@@ -33,7 +33,7 @@
         value="{{ _value }}"
     />
     <span class="{{ _textClass }}">
-        <span class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label }}</span>
-        {% if props.message is defined and props.message is not empty %}<span class="{{ _className }}__message">{{ props.message }}</span>{% endif %}
+        <span class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label | raw }}</span>
+        {% if props.message is defined and props.message is not empty %}<span class="{{ _className }}__message">{{ props.message | raw }}</span>{% endif %}
     </span>
 </label>

@@ -10,6 +10,7 @@
 - Introduce `Heading` component as typography helper
 - Introduce `Link` component as typography helper
 - Add `Alert` component
+- Print raw `label` and `message` props in `TextField` and `CheckboxField` components
 
 ## 1.5.0 - 2022-04-04
 - [BC] Use is prefix for boolean props
