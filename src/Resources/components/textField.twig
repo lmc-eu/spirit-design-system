@@ -20,7 +20,7 @@
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 
 <div class="{{ _className }}{{ _disabledClass }}{{ _fluidClass }}{{ _validationStateClass }}{{ _class }}">
-    <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label }}</label>
+    <label for={{ _id }} class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label | raw }}</label>
     <input
         {{ inputProps(props) }}
         type="{{ _type }}"
@@ -32,5 +32,5 @@
         {{ _required|raw }}
         value="{{ _value }}"
     />
-    {% if props.message is defined and props.message is not empty %}<div class="{{ _className }}__message">{{ props.message }}</div>{% endif %}
+    {% if props.message is defined and props.message is not empty %}<div class="{{ _className }}__message">{{ props.message | raw }}</div>{% endif %}
 </div>
