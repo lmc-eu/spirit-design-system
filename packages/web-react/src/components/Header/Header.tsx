@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHeaderStyleProps } from './useHeaderStylesProps';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { filterProps } from '../../utils/filterProps';
 import { SpiritHeaderProps } from '../../types';
 import { HeaderProvider } from './HeaderContext';
