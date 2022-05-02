@@ -844,6 +844,27 @@ button.Header__link--current:active {
   color: #90a2a7;
   opacity: 1;
 }
+.TextField__input[type=email], .TextField__input[type=number], .TextField__input[type=password], .TextField__input[type=search], .TextField__input[type=tel], .TextField__input[type=text], .TextField__input[type=url] {
+  -webkit-appearance: none;
+          appearance: none;
+}
+.TextField__input[type=number] {
+  --arrows-width: 1.25rem;
+}
+.TextField__input[size] {
+  width: calc(
+            var(--width) + 2 * 8px + 2 * 1px + var(--arrows-width, 0px)
+        );
+}
+.TextField__input[size="2"] {
+  --width: 2ch;
+}
+.TextField__input[size="3"] {
+  --width: 3ch;
+}
+.TextField__input[size="4"] {
+  --width: 4ch;
+}
 
 .TextField--fluid {
   width: 100%;

@@ -95,6 +95,21 @@
   color: #a7bcc2;
 }
 
+.text-truncate {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-truncate-multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lines, 3);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .typography-body-large-button {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
