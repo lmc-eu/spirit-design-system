@@ -3,7 +3,6 @@ import { ButtonLink } from '../../Button';
 import { Link } from '../../Link';
 import Header from '../Header';
 import NavbarActions from '../HeaderActions';
-import HeaderBackdrop from '../HeaderBackdrop';
 import Nav from '../Nav';
 import Navbar from '../Navbar';
 import NavbarClose from '../NavbarClose';
@@ -51,7 +50,6 @@ const Story = (props: unknown) => (
           Login For Employers
         </ButtonLink>
       </NavbarActions>
-      <HeaderBackdrop />
     </Navbar>
   </Header>
 );
