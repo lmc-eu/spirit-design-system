@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.18.0"></a>
+
+# [0.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.17.0...@lmc-eu/spirit-web@0.18.0) (2022-05-02)
+
+### Bug Fixes
+
+- **web:** Vertically align content of text elements in `Header` to center ([11a8077](https://github.com/lmc-eu/spirit-design-system/commit/11a8077))
+
+### Dependencies
+
+- Update all non-major dependencies ([d6efb47](https://github.com/lmc-eu/spirit-design-system/commit/d6efb47))
+
+### Documentation
+
+- **web:** Better way to describe how to use JS plugins individually ([663be5f](https://github.com/lmc-eu/spirit-design-system/commit/663be5f))
+
+### Features
+
+- **web:** Add support for TextField's size attribute [#DS-154](https://github.com/lmc-eu/spirit-design-system/issues/DS-154) ([c5e55b8](https://github.com/lmc-eu/spirit-design-system/commit/c5e55b8))
+- **web:** Allow styling of `TextField` validation messages via data attribute selector ([6c9c124](https://github.com/lmc-eu/spirit-design-system/commit/6c9c124))
+- **web:** Fix formatting [#DS-155](https://github.com/lmc-eu/spirit-design-system/issues/DS-155) ([b94863b](https://github.com/lmc-eu/spirit-design-system/commit/b94863b))
+- **web:** Introduce text helper for truncating single- and multiline texts [#DS-209](https://github.com/lmc-eu/spirit-design-system/issues/DS-209) ([9d0cac7](https://github.com/lmc-eu/spirit-design-system/commit/9d0cac7))
+- **web:** Support JS interaction classes for `Button` and `TextField` components ([9c99031](https://github.com/lmc-eu/spirit-design-system/commit/9c99031))
+- **web:** Supported TextField's type attribute values [#DS-155](https://github.com/lmc-eu/spirit-design-system/issues/DS-155) ([4fc52a9](https://github.com/lmc-eu/spirit-design-system/commit/4fc52a9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.17.0"></a>
 
 # [0.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.16.0...@lmc-eu/spirit-web@0.17.0) (2022-04-28)

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.16.0"></a>
+
+# [0.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.15.0...@lmc-eu/spirit-web-react@0.16.0) (2022-05-02)
+
+### Bug Fixes
+
+- **web-react:** Add missing default prop size for Heading (refs [#277](https://github.com/lmc-eu/spirit-design-system/issues/277)) ([c75d75c](https://github.com/lmc-eu/spirit-design-system/commit/c75d75c))
+
+### Dependencies
+
+- Update all non-major dependencies ([d6efb47](https://github.com/lmc-eu/spirit-design-system/commit/d6efb47))
+
+### Documentation
+
+- **web-react:** Refactor Button stories to be more maintainable ([14a38f4](https://github.com/lmc-eu/spirit-design-system/commit/14a38f4))
+- **web-react:** Showcase the HTML for the rendered component ([758dc0f](https://github.com/lmc-eu/spirit-design-system/commit/758dc0f))
+
+### Tests
+
+- **web-react:** Refactor Heading component test to use test provider ([d910c2b](https://github.com/lmc-eu/spirit-design-system/commit/d910c2b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.15.0"></a>
 
 # [0.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.14.0...@lmc-eu/spirit-web-react@0.15.0) (2022-04-28)
