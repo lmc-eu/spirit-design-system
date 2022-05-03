@@ -12,3 +12,7 @@ services:
   Lmc\SpiritWebTwigBundle\Twig\PropsExtension:
     tags:
       - { name: twig.extension }
+
+  Lmc\SpiritWebTwigBundle\Twig\SvgExtension:
+    tags:
+      - { name: twig.extension }

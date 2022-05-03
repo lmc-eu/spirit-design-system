@@ -24,6 +24,10 @@ class SpiritWebTwigExtension extends Extension
 
     public const PARAMETER_HTML_SYNTAX_LEXER = 'spirit_web_twig.html_syntax_lexer';
 
+    public const PARAMETER_ICONS_PATHS = 'spirit_web_twig.icons.paths';
+
+    public const PARAMETER_ICONS_PATH_ALIAS = 'spirit_web_twig.icons.alias';
+
     public const DEFAULT_COMPONENTS_PATH = __DIR__ . '/../Resources/components';
 
     public const DEFAULT_PATH_ALIAS = 'spirit';
@@ -31,6 +35,8 @@ class SpiritWebTwigExtension extends Extension
     public const DEFAULT_PARTIALS_PATH = __DIR__ . '/../Resources/partials';
 
     public const DEFAULT_PARTIALS_ALIAS = 'partials';
+
+    public const DEFAULT_ICONS_ALIAS = 'icons-assets';
 
     public function load(array $configs, ContainerBuilder $container): void
     {
@@ -44,5 +50,8 @@ class SpiritWebTwigExtension extends Extension
         $container->setParameter(self::PARAMETER_SPIRIT_CSS_CLASS_PREFIX, isset($config['spirit_css_class_prefix']) ? $config['spirit_css_class_prefix'] . '-' : null);
         $container->setParameter(self::PARAMETER_PATH_ALIAS, $config['paths_alias']);
         $container->setParameter(self::PARAMETER_HTML_SYNTAX_LEXER, (bool) $config['html_syntax_lexer']);
+
+        $container->setParameter(self::PARAMETER_ICONS_PATHS, isset($config['icons']) && isset($config['icons']['paths']) ? $config['icons']['paths'] : []);
+        $container->setParameter(self::PARAMETER_ICONS_PATH_ALIAS, isset($config['icons']) && isset($config['icons']['alias']) ? $config['icons']['alias'] : self::DEFAULT_ICONS_ALIAS);
     }
 }

@@ -63,6 +63,10 @@ If you want to change the default settings, create a config
         paths_alias: 'jobs-ui' # default is 'spirit'
         html_syntax_lexer: false # default is true
         spirit_css_class_prefix: 'jobs' # default is null
+        icons: # optional settings for svg assets
+          paths:
+            - "%kernel.project_dir%/assets/icons" # define paths for svg icons set
+          alias: 'jobs-icons' # default is 'icons-assets'
 ```
 
 ## Usage
