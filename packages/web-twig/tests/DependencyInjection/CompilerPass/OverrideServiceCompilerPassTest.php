@@ -43,6 +43,8 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.paths_alias', 'test');
         $this->builder->setParameter('spirit_web_twig.html_syntax_lexer', false);
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
+        $this->builder->setParameter('spirit_web_twig.icons.paths', []);
+        $this->builder->setParameter('spirit_web_twig.icons.alias', 'test-icons');
         $this->overrideService->process($this->builder);
 
         $filteredAddPathCalls = DefinitionHelper::getMethodCalls(
@@ -83,6 +85,8 @@ class OverrideServiceCompilerPassTest extends TestCase
         $this->builder->setParameter('spirit_web_twig.paths_alias', 'test');
         $this->builder->setParameter('spirit_web_twig.html_syntax_lexer', $isLexer);
         $this->builder->setParameter('spirit_web_twig.spirit_css_class_prefix', null);
+        $this->builder->setParameter('spirit_web_twig.icons.paths', []);
+        $this->builder->setParameter('spirit_web_twig.icons.alias', 'test-icons');
         $this->overrideService->process($this->builder);
 
         $filteredAddGlobal = DefinitionHelper::getMethodCalls(

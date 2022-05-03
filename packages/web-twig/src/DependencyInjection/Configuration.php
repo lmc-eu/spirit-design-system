@@ -34,6 +34,16 @@ class Configuration implements ConfigurationInterface
             ->scalarNode('html_syntax_lexer')
             ->defaultTrue()
             ->end()
+            ->arrayNode('icons')
+            ->children()
+            ->arrayNode('paths')
+            ->scalarPrototype()->end()
+            ->end()
+            ->scalarNode('alias')
+            ->defaultValue(SpiritWebTwigExtension::DEFAULT_ICONS_ALIAS)
+            ->end()
+            ->end()
+            ->end()
             ->end();
 
         return $treeBuilder;

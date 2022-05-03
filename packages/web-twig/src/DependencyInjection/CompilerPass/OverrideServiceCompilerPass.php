@@ -26,6 +26,9 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         $pathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_PATH_ALIAS);
         $isLexer = $container->getParameter(SpiritWebTwigExtension::PARAMETER_HTML_SYNTAX_LEXER);
         $classPrefix = $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX);
+        /** @var array<string> $iconsPaths */
+        $iconsPaths = $container->getParameter(SpiritWebTwigExtension::PARAMETER_ICONS_PATHS);
+        $iconsPathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_ICONS_PATH_ALIAS);
 
         $twigLoaderDefinition->addMethodCall('addPath', [SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS]);
 
@@ -35,6 +38,10 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
             if ($path === SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH) {
                 $twigLoaderDefinition->addMethodCall('addPath', [$path, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS]);
             }
+        }
+
+        foreach ($iconsPaths as $iconPath) {
+            $twigLoaderDefinition->addMethodCall('addPath', [$iconPath, $iconsPathAlias]);
         }
 
         $twigDefinition->addMethodCall('addGlobal', [self::GLOBAL_PREFIX_TWIG_VARIABLE, $classPrefix]);
