@@ -105,8 +105,8 @@ ${value.map((val) => `    ${val}: $${key}-${val},`).join('\n')}
 }
 
 Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortByNum = false, sortByValue = false, breakpointsString = '') {
-  const tokens = allTokens.sort((a, b) => {
-    if (sortByNum) {
+  let tokens = allTokens.sort((a, b) => {
+    if (!!sortByNum) {
       const aNumMatch = a.name.match(/\d+$/);
       const bNumMatch = b.name.match(/\d+$/);
 
@@ -114,7 +114,17 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
         return aNumMatch[0] - bNumMatch[0];
       }
     }
-    if (breakpointsString.length > 0) {
+  
+    if (!!sortByValue) {
+      return +a.value.text - +b.value.text;
+    }
+    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
+    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
+    return aCompare.localeCompare(bCompare);
+  });
+
+  if (breakpointsString.length > 0) {
+    tokens = allTokens.sort((a, b) => {
       const breakpoints = breakpointsString.trim().split(',');
       let aBreakpoint = '';
       let bBreakpoint = '';
@@ -127,15 +137,12 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
         }
         return false;
       });
+      if (!!sortByValue && !aBreakpoint) {
+        return -1;
+      }
       return breakpoints.indexOf(aBreakpoint) - breakpoints.indexOf(bBreakpoint);
-    }
-    if (sortByValue) {
-      return +a.value.text - +b.value.text;
-    }
-    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
-    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
-    return aCompare.localeCompare(bCompare);
-  });
+    });
+  }
 
   const vars = [];
   let types = {};
