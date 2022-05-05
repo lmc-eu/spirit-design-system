@@ -41,9 +41,9 @@ $action-unselected-hover: #0b1c21 !default;
 $background-backdrop: #0b1c2199 !default;
 $background-basic: #fff !default;
 $background-cover: #f0f4f5 !default;
-$background-interactive-active: #a7bcc2 !default;
-$background-interactive-default: #fff !default;
-$background-interactive-hover: #d2dcdf !default;
+$background-interactive-active: #0f343c4d !default;
+$background-interactive-default: #ffffff00 !default;
+$background-interactive-hover: #0f383e33 !default;
 $background-interactive-inverted-active: #0f3d42cc !default;
 $background-interactive-inverted-default: #ffffff00 !default;
 $background-interactive-inverted-hover: #0f343c66 !default;
@@ -52,6 +52,8 @@ $border-primary-active: #d4d4d4 !default;
 $border-primary-default: #e9e9e9 !default;
 $border-primary-disabled: #f4f4f4 !default;
 $border-primary-hover: #dbdbdb !default;
+$border-primary-selected: #29616f !default;
+$border-secondary-default: #e9e9e9 !default;
 $brand-primary: #0b1c21 !default;
 $brand-secondary: #78a9c5 !default;
 $emotion-danger-active: #af4c62 !default;
@@ -144,6 +146,8 @@ $border-colors: (
     primary-default: $border-primary-default,
     primary-disabled: $border-primary-disabled,
     primary-hover: $border-primary-hover,
+    primary-selected: $border-primary-selected,
+    secondary-default: $border-secondary-default,
 ) !default;
 
 $brand-colors: (
