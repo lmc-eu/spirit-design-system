@@ -3,6 +3,8 @@
 Use Stack to vertically space content. It works with lists or any other HTML elements.
 It can be used to separate form fields, for example.
 
+👉 Vertical margin of items inside Stack is reset to zero.
+
 ```html
 <div class="Stack">
   <div class="TextField">
