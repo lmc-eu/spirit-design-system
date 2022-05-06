@@ -98,6 +98,12 @@ Learn more in the [`spirit-design-tokens` docs][rebranding].
 
 👀 Head to the [rebranding example] to see how it works.
 
+## Development
+
+Start local development server with `yarn start` to get started. You will get the live preview of all components and plugins in your browser. Just get dirty and change something and you will see the changes live.
+
+The dev-stack is based on [vite](https://vitejs.dev/).
+
 ## Examples
 
 👀 See [examples] for a live demo.
