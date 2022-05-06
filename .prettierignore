@@ -14,3 +14,6 @@
 **/coverage/**
 **/.coverage
 **/.coverage/**
+
+# Handlebars partials are not supported by Prettier
+packages/web/partials/layout.hbs

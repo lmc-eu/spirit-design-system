@@ -1,0 +1,42 @@
+{{! prettier-ignore }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spirit Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/src/scss/index.scss" />
+    <script src="/src/js/index.esm.ts" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      .example-box {
+        min-height: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #0b1c21;
+      }
+
+      .example-box:not(:empty) {
+        padding: 0.25rem;
+      }
+
+      .example-CheckboxField-grid, .example-TextField-grid {
+          display: grid;
+          grid-template-columns: 25rem;
+      }
+
+      .example-TextField-grid {
+          gap: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="Container">
+        {{> @partial-block }}
+      </div>
+    </section>
+  </body>
+</html>
