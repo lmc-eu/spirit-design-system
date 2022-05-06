@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Spirit Web Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../index.scss" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      .example-box {
-        min-height: 2rem;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #fff;
-        background: #0b1c21;
-      }
-
-      .example-box:not(:empty) {
-        padding: 0.25rem;
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      <div class="Container">
-        <h2 class="typography-heading-medium-text mt-1100 mb-800">Button</h2>
-        <button type="button" class="Button Button--primary">Primary button</button>
-        <button type="button" class="Button Button--secondary">Secondary button</button>
-        <button type="button" class="Button Button--tertiary">Tertiary button</button>
-        <button type="button" class="Button Button--danger">Danger button</button>
-        <div class="example-box">
-          <button type="button" class="Button Button--inverted">Inverted button</button>
-        </div>
-        <h3 class="typography-heading-small-text mt-1100 mb-800">Square Button</h3>
-        <button type="button" class="Button Button--primary Button--square">🚀</button>
-        <button type="button" class="Button Button--secondary Button--square">🚀</button>
-        <button type="button" class="Button Button--tertiary Button--square">🚀</button>
-        <button type="button" class="Button Button--danger Button--square">🚀</button>
-        <div class="example-box">
-          <button type="button" class="Button Button--inverted Button--square">🚀</button>
-        </div>
-      </div>
-    </section>
-  </body>
-</html>
+{{#> layout }}
+  <h2 class="typography-heading-medium-text mt-1100 mb-800">Button</h2>
+  <button type="button" class="Button Button--primary">Primary button</button>
+  <button type="button" class="Button Button--secondary">Secondary button</button>
+  <button type="button" class="Button Button--tertiary">Tertiary button</button>
+  <button type="button" class="Button Button--danger">Danger button</button>
+  <div class="example-box">
+    <button type="button" class="Button Button--inverted">Inverted button</button>
+  </div>
+  <h3 class="typography-heading-small-text mt-1100 mb-800">Square Button</h3>
+  <button type="button" class="Button Button--primary Button--square">🚀</button>
+  <button type="button" class="Button Button--secondary Button--square">🚀</button>
+  <button type="button" class="Button Button--tertiary Button--square">🚀</button>
+  <button type="button" class="Button Button--danger Button--square">🚀</button>
+  <div class="example-box">
+    <button type="button" class="Button Button--inverted Button--square">🚀</button>
+  </div>
+{{/layout }}

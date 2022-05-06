@@ -1,60 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Spirit Web Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../index.scss" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      .example-box {
-        min-height: 2rem;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #fff;
-        background: #0b1c21;
-      }
-
-      .example-box:not(:empty) {
-        padding: 0.25rem;
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      <div class="Container">
-        <h2 class="typography-heading-medium-text mt-1100 mb-800">Stack</h2>
-        <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked form fields</h3>
-        <div class="Stack">
-          <div class="TextField">
-            <label for="textfieldStack1" class="TextField__label TextField__label--required">Label</label>
-            <input type="text" id="textfieldStack1" class="TextField__input" placeholder="Placeholder" />
-          </div>
-          <div class="TextField">
-            <label for="textfieldStack2" class="TextField__label TextField__label--required">Label</label>
-            <input type="text" id="textfieldStack2" class="TextField__input" placeholder="Placeholder" />
-          </div>
-        </div>
-        <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked blocks</h3>
-        <ul class="Stack">
-          <li>
-            <div class="example-box">
-              Block 1
-            </div>
-          </li>
-          <li>
-            <div class="example-box">
-              Block 2
-            </div>
-          </li>
-          <li>
-            <div class="example-box">
-              Block 3
-            </div>
-          </li>
-        </ul>
+{{#> layout }}
+  <h2 class="typography-heading-medium-text mt-1100 mb-800">Stack</h2>
+  <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked form fields</h3>
+  <div class="Stack">
+    <div class="TextField">
+      <label for="textfieldStack1" class="TextField__label TextField__label--required">Label</label>
+      <input type="text" id="textfieldStack1" class="TextField__input" placeholder="Placeholder" />
+    </div>
+    <div class="TextField">
+      <label for="textfieldStack2" class="TextField__label TextField__label--required">Label</label>
+      <input type="text" id="textfieldStack2" class="TextField__input" placeholder="Placeholder" />
+    </div>
+  </div>
+  <h3 class="typography-heading-small-text mt-1100 mb-800">Stacked blocks</h3>
+  <ul class="Stack">
+    <li>
+      <div class="example-box">
+        Block 1
       </div>
-    </section>
-  </body>
-</html>
+    </li>
+    <li>
+      <div class="example-box">
+        Block 2
+      </div>
+    </li>
+    <li>
+      <div class="example-box">
+        Block 3
+      </div>
+    </li>
+  </ul>
+{{/layout }}
