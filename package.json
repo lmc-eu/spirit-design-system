@@ -17,9 +17,10 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "yarn packages:start",
+    "build": "yarn packages:build",
     "es:lint": "eslint ./",
     "es:lint:fix": "yarn es:lint --fix",
-    "build": "yarn packages:build",
     "examples": "yarn examples:build",
     "examples:install": "cd examples/web && yarn install && cd ../web-react && yarn install",
     "examples:build": "cd examples/web && yarn build && cd ../web-react && yarn build",
@@ -35,6 +36,7 @@
     "types": "yarn packages:types",
     "lint": "npm-run-all --parallel es:lint packages:lint",
     "packages:lint": "lerna run lint --parallel",
+    "packages:start": "lerna run start --parallel",
     "packages:test": "lerna run test",
     "packages:types": "lerna run types",
     "packages:build": "lerna run build",
