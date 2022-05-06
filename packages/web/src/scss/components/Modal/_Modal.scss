@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use '../../tools/accessibility';
+@use '../../tools/breakpoint';
+@use '../../tools/svg';
+@use 'theme';
+
+.Modal {
+    position: fixed;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    z-index: 1;
+}
+
+.Modal__backdrop {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    background-color: theme.$backdrop-background-color;
+    z-index: -1;
+    visibility: hidden;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: opacity, visibility;
+        transition-duration: 0.25s;
+    }
+}
+
+.Modal__content {
+    display: flex;
+    align-items: center;
+    width: auto;
+    max-width: 100%;
+    min-height: calc(100% - #{theme.$modal-padding * 2});
+    margin: theme.$modal-padding;
+    pointer-events: none;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        max-width: theme.$dialog-max-width-tablet;
+        min-height: calc(100% - #{theme.$modal-padding-tablet * 2});
+        margin: theme.$modal-padding-tablet auto;
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        max-width: theme.$dialog-max-width-desktop;
+    }
+}
+
+.Modal__dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: theme.$content-padding;
+    pointer-events: auto;
+    background-color: theme.$content-background-color;
+    border-radius: theme.$content-border-radius;
+    box-shadow: theme.$content-shadow;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding: theme.$content-padding-tablet;
+    }
+}
+
+.Modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: theme.$header-spacing;
+}
+
+.Modal__close {
+    width: theme.$icon-size;
+    height: theme.$icon-size;
+    background-image: svg.escape(theme.$icon-close);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.Modal[open] > .Modal__backdrop {
+    opacity: 1;
+    visibility: visible;
+}
