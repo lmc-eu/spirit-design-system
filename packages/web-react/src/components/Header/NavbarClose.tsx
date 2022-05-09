@@ -1,8 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useHeader } from './useHeader';
+import { filterProps } from '../../utils/filterProps';
 
-const NavbarClose = (): JSX.Element => {
+const NavbarClose = (props: unknown): JSX.Element => {
   const { id, headerClass, isExpanded, handleToggle } = useHeader();
   const navbarCloseClass = `${headerClass}__close`;
   const headerIconClass = `${headerClass}__icon`;
@@ -10,6 +11,7 @@ const NavbarClose = (): JSX.Element => {
 
   return (
     <button
+      {...filterProps(props)}
       type="button"
       className={navbarCloseClass}
       aria-controls={id}
