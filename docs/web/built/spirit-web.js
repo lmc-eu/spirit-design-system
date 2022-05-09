@@ -68,11 +68,6 @@
         }
         return null;
     };
-    const getSelector = (element) => element.getAttribute('data-target');
-    const getElementFromSelector = (element) => {
-        const selector = getSelector(element);
-        return selector ? document.querySelector(selector) : null;
-    };
 
     const elementMap = new Map();
     const InstanceMap = {
@@ -141,6 +136,23 @@
         }
     }
 
+    const enableToggleTrigger = (component, method = 'toggle') => {
+        const name = component.NAME;
+        EventHandler.on(window, 'DOMContentLoaded', (event) => {
+            SelectorEngine.findAll(`[data-toggle="${name}"]`).forEach((toggleEl) => {
+                EventHandler.on(toggleEl, 'click', function handleClick() {
+                    const target = getElement(this);
+                    const instance = component.getOrCreateInstance(target);
+                    // No index signature with a parameter of type 'string' was found on type 'Document | HTMLElement | Window | BaseComponent'
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    instance[method](target, event);
+                });
+            });
+        });
+    };
+
+    const NAME$1 = 'header';
     const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
     const HEADER_DISMISS_ATTRIBUTE = 'data-dismiss';
     const HEADER_BREAKPOINT = 1280;
@@ -153,13 +165,20 @@
             this.isShown = false;
             this.backdrop = Header.initBackdrop(element);
         }
+        static get NAME() {
+            return NAME$1;
+        }
         static initBackdrop(target) {
             const backdropEl = document.createElement(BACKDROP_TAG_NAME);
             backdropEl.classList.add(BACKDROP_CLASSNAME);
             if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
-                target.appendChild(backdropEl);
+                Header.findRelatedNavElement(target).appendChild(backdropEl);
             }
             return backdropEl;
+        }
+        static findRelatedNavElement(target) {
+            const headerEl = target.parentElement.parentElement;
+            return SelectorEngine.findOne('nav', headerEl);
         }
         // Using `unknown` - Object is possibly 'null'.
         // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
@@ -199,15 +218,12 @@
             EventHandler.off(window, 'resize', (event) => this.onWindowResize(event));
             EventHandler.off(window, 'click', (event) => this.onClick(event));
         }
-        show(event) {
+        show(relatedTarget) {
             if (this.isShown) {
                 return;
             }
-            const target = SelectorEngine.findOne(event.currentTarget.dataset.target);
-            const headerEl = target.parentElement;
-            const toggleEl = SelectorEngine.findOne(HEADER_TOGGLE_SELECTOR, headerEl);
-            target.classList.add(OPEN_CLASSNAME);
-            toggleEl.setAttribute('aria-expanded', 'true');
+            Header.findRelatedNavElement(relatedTarget).classList.add(OPEN_CLASSNAME);
+            relatedTarget.setAttribute('aria-expanded', 'true');
             this.addEventListeners();
             this.isShown = true;
         }
@@ -235,30 +251,18 @@
             this.removeEventListeners();
             this.isShown = false;
         }
-        toggle(relatedTarget, event) {
-            if (!relatedTarget) {
+        toggle(targetElement, event) {
+            if (!targetElement) {
                 // eslint-disable-next-line no-console
                 console.warn('👻 Boo…! Target header pane does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ');
                 return;
             }
-            this.isShown ? this.hide(event) : this.show(event);
+            this.isShown ? this.hide(event) : this.show(targetElement);
         }
     }
-    function handleHeaderClick(event) {
-        const target = getElementFromSelector(this);
-        if (target) {
-            const header = new Header(target);
-            header.toggle(target, event);
-        }
-    }
-    EventHandler.on(window, 'DOMContentLoaded', () => {
-        SelectorEngine.findAll(HEADER_TOGGLE_SELECTOR).forEach((toggleEl) => {
-            EventHandler.on(toggleEl, 'click', handleHeaderClick);
-        });
-    });
+    enableToggleTrigger(Header);
 
     const NAME = 'password';
-    const PASSWORD_TOGGLE_SELECTOR = '[data-toggle="password"]';
     const PASSWORD_ARIA_PRESSED = 'aria-pressed';
     const PASSWORD_ARIA_LABEL = 'aria-label';
     const PASSWORD_FIELD_ELEMENT = 'input';
@@ -286,18 +290,7 @@
             this.isShown ? this.hide(relatedTarget) : this.show(relatedTarget);
         }
     }
-    function handlePasswordClick() {
-        const target = getElement(this);
-        if (target) {
-            const password = Password.getOrCreateInstance(target);
-            password.toggle(target);
-        }
-    }
-    EventHandler.on(window, 'DOMContentLoaded', () => {
-        SelectorEngine.findAll(PASSWORD_TOGGLE_SELECTOR).forEach((toggleEl) => {
-            EventHandler.on(toggleEl, 'click', handlePasswordClick);
-        });
-    });
+    enableToggleTrigger(Password);
 
     const index_umd = { Header, Password };
 
