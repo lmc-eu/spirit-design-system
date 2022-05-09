@@ -18,8 +18,8 @@
     "test": "yarn lint"
   },
   "devDependencies": {
-    "@lmc-eu/stylelint-config": "4.0.0",
-    "stylelint": "14.8.1",
+    "@lmc-eu/stylelint-config": "4.0.1",
+    "stylelint": "14.8.2",
     "stylelint-order": "5.0.0"
   }
 }
