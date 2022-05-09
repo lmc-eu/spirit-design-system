@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.7.0 - 2022-05-09
 - Add Svg twig extension for optimal loading of svg files as inline
 - Add configuration param `icons` to define icon set path and alias
 
