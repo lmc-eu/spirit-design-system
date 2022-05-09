@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- Add Svg twig extension for optimal loading of svg files as inline
+- Add configuration param `icons` to define icon set path and alias
 
 ## 1.6.0 - 2022-04-29
 - Add main props `data-*` and `id` into `Button` and `ButtonLink` components
