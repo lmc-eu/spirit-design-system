@@ -1,5 +1,6 @@
 import React from 'react';
-import { filterProps } from '../../utils/filterProps';
+import classNames from 'classnames';
+import { useStyleProps } from '../../hooks/styleProps';
 import { SpiritTextFieldProps } from '../../types';
 import { useTextFieldStyleProps } from './useTextFieldStyleProps';
 
@@ -10,14 +11,14 @@ const defaultProps = {
 export const TextField = (props: SpiritTextFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useTextFieldStyleProps(props);
   const { id, type, placeholder, isDisabled, isRequired, label, message, value, ...restProps } = modifiedProps;
+  const { styleProps } = useStyleProps(restProps);
 
   return (
-    <div className={classProps.root}>
+    <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
       <input
-        {...filterProps(restProps)}
         type={type}
         id={id}
         className={classProps.input}

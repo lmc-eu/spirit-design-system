@@ -2,10 +2,13 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import Grid from '../Grid';
 
 describe('Grid', () => {
   classNamePrefixProviderTest(Grid, 'Grid');
+
+  stylePropsTest(Grid);
 
   it('should render text children', () => {
     const dom = render(<Grid>Hello World</Grid>);

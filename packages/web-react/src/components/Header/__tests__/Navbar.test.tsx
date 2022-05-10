@@ -4,11 +4,17 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import { HeaderContextType } from '../HeaderContext';
 import Navbar, { NavbarVariant } from '../Navbar';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('Navbar', () => {
   classNamePrefixProviderTest(
     withHeader(() => <Navbar data-testid="navbar-test" />),
     'Header__bar',
+    'navbar-test',
+  );
+
+  stylePropsTest(
+    withHeader((props) => <Navbar {...props} data-testid="navbar-test" />),
     'navbar-test',
   );
 

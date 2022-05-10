@@ -1,7 +1,8 @@
 import React, { ElementType } from 'react';
+import classNames from 'classnames';
 import { useHeadingStyleProps } from './useHeadingStyleProps';
 import { SpiritHeadingProps } from '../../types';
-import { filterProps } from '../../utils/filterProps';
+import { useStyleProps } from '../../hooks/styleProps';
 
 const defaultProps = {
   size: 'medium',
@@ -10,9 +11,10 @@ const defaultProps = {
 export const Heading = <T extends ElementType = 'div'>(props: SpiritHeadingProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useHeadingStyleProps(restProps);
+  const { styleProps } = useStyleProps(modifiedProps);
 
   return (
-    <ElementTag {...filterProps(modifiedProps)} className={classProps}>
+    <ElementTag {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );

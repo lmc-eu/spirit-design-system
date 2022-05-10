@@ -3,11 +3,17 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import NavLink from '../NavLink';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('NavLink', () => {
   classNamePrefixProviderTest(
     withHeader(() => <NavLink href="/" data-testid="navlink-test" />),
     'Header__link',
+    'navlink-test',
+  );
+
+  stylePropsTest(
+    withHeader((props) => <NavLink href="/" {...props} data-testid="navlink-test" />),
     'navlink-test',
   );
 

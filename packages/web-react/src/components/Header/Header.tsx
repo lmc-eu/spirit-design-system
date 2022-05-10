@@ -1,9 +1,10 @@
+import classNames from 'classnames';
 import React from 'react';
-import { useHeaderStyleProps } from './useHeaderStyleProps';
-import { filterProps } from '../../utils/filterProps';
+import { useToggle } from '../../hooks';
 import { SpiritHeaderProps } from '../../types';
 import { HeaderProvider } from './HeaderContext';
-import { useToggle } from '../../hooks';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
+import { useStyleProps } from '../../hooks/styleProps';
 
 const defaultProps = {
   isInverted: false,
@@ -14,6 +15,7 @@ const Header = (props: SpiritHeaderProps): JSX.Element => {
   const [isExpanded, handleToggle] = useToggle(false);
   const { classProps, props: modifiedProps } = useHeaderStyleProps(props);
   const { children, id, ...restProps } = modifiedProps;
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const handleEscape = (event: React.KeyboardEvent<HTMLElement>): void => {
     if (isExpanded && (event.key === 'Esc' || event.key === 'Escape')) {
@@ -27,7 +29,12 @@ const Header = (props: SpiritHeaderProps): JSX.Element => {
   return (
     <HeaderProvider value={{ headerClass: classProps.root, id, isExpanded, handleToggle }}>
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-      <header {...filterProps(restProps)} className={classProps.header} onKeyUp={handleEscape}>
+      <header
+        {...otherProps}
+        {...styleProps}
+        className={classNames(classProps.header, styleProps.className)}
+        onKeyUp={handleEscape}
+      >
         {children}
       </header>
     </HeaderProvider>

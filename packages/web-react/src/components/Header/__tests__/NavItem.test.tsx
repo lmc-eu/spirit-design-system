@@ -3,11 +3,21 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import NavItem from '../NavItem';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('NavItem', () => {
   classNamePrefixProviderTest(
     withHeader(() => <NavItem data-testid="navitem-test">Hello World</NavItem>),
     'Header__navItem',
+    'navitem-test',
+  );
+
+  stylePropsTest(
+    withHeader((props) => (
+      <NavItem {...props} data-testid="navitem-test">
+        Hello World
+      </NavItem>
+    )),
     'navitem-test',
   );
 
