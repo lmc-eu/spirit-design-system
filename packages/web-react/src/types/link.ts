@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps } from './shared';
+import { ChildrenProps, StyleProps } from './shared';
 
 export type LinkColor = 'primary' | 'secondary' | 'inverted';
 
@@ -12,7 +12,7 @@ export interface LinkElementTypeProps<T extends ElementType = 'a'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface LinkProps<T extends ElementType = 'a'> extends LinkElementTypeProps<T>, ChildrenProps {
+export interface LinkProps<T extends ElementType = 'a'> extends LinkElementTypeProps<T>, ChildrenProps, StyleProps {
   /** Link's href attribute */
   href: string;
 }

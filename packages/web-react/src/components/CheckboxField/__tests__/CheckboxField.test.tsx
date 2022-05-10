@@ -3,9 +3,12 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CheckboxField from '../CheckboxField';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('CheckboxField', () => {
   classNamePrefixProviderTest(CheckboxField, 'CheckboxField');
+
+  stylePropsTest(CheckboxField);
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField />);

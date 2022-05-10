@@ -1,5 +1,5 @@
 /* eslint no-console: ["error", { allow: ["warn"] }] */
-import { ElementType, HTMLAttributes } from 'react';
+import { ElementType } from 'react';
 import classNames from 'classnames';
 import { SpiritBreakpoints, SpiritGridProps } from '../../types';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
@@ -44,7 +44,7 @@ const getGridClasses = (
   };
 };
 
-export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<HTMLAttributes<unknown>> {
+export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<SpiritGridProps<ElementType>> {
   const { layout, cols, ...restProps } = props;
 
   if (layout && (cols || restProps.tablet || restProps.desktop)) {

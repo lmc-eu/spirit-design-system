@@ -1,5 +1,6 @@
 import React, { ElementType, JSXElementConstructor } from 'react';
-import { filterProps } from '../../utils/filterProps';
+import classNames from 'classnames';
+import { useStyleProps } from '../../hooks/styleProps';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ChildrenProps, StyleProps } from '../../types';
 
@@ -20,9 +21,10 @@ const defaultProps = {
 export const Stack = <T extends ElementType = 'div'>(props: StackProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;
   const stackClass = useClassNamePrefix('Stack');
+  const { styleProps } = useStyleProps(restProps);
 
   return (
-    <ElementTag {...filterProps(restProps)} className={stackClass}>
+    <ElementTag {...styleProps} className={classNames(stackClass, styleProps.className)}>
       {children}
     </ElementTag>
   );
