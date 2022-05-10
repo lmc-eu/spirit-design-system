@@ -1,16 +1,18 @@
+import classNames from 'classnames';
 import React from 'react';
 import { ChildrenProps } from '../../types';
-import { filterProps } from '../../utils/filterProps';
 import { useHeader } from './useHeader';
+import { useStyleProps } from '../../hooks/styleProps';
 
 export type NavProps = ChildrenProps;
 
 const Nav = ({ children, ...restProps }: NavProps): JSX.Element => {
   const { headerClass } = useHeader();
   const navClass = `${headerClass}__nav`;
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <ul {...filterProps(restProps)} className={navClass}>
+    <ul {...otherProps} {...styleProps} className={classNames(navClass, styleProps.className)}>
       {children}
     </ul>
   );

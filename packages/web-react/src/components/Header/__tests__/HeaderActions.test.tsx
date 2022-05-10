@@ -3,11 +3,21 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import HeaderActions from '../HeaderActions';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('HeaderActions', () => {
   classNamePrefixProviderTest(
     withHeader(() => <HeaderActions data-testid="header-actions-test">Hello World</HeaderActions>),
     'Header__actions',
+    'header-actions-test',
+  );
+
+  stylePropsTest(
+    withHeader((props) => (
+      <HeaderActions {...props} data-testid="header-actions-test">
+        Hello World
+      </HeaderActions>
+    )),
     'header-actions-test',
   );
 

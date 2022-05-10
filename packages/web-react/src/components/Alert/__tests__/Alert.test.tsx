@@ -2,11 +2,14 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { AlertColor } from '../../../types';
 import Alert from '../Alert';
 
 describe('Alert', () => {
   classNamePrefixProviderTest(Alert, 'Alert');
+
+  stylePropsTest(Alert);
 
   it('should have default classname', () => {
     const dom = render(<Alert />);

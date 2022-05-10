@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { useHeader } from './useHeader';
 import { ChildrenProps } from '../../types';
-import { filterProps } from '../../utils/filterProps';
+import { useStyleProps } from '../../hooks/styleProps';
 
 export interface NavLinkProps extends ChildrenProps {
   href: string;
@@ -17,11 +17,12 @@ const NavLink = ({ href, isCurrent, children, ...restProps }: NavLinkProps): JSX
   const { headerClass } = useHeader();
   const navLinkClass = `${headerClass}__link`;
   const navLinkCurrentClass = `${headerClass}__link--current`;
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  const classProps = classNames(navLinkClass, { [navLinkCurrentClass]: isCurrent });
+  const classProps = classNames(navLinkClass, { [navLinkCurrentClass]: isCurrent }, styleProps.className);
 
   return (
-    <a href={href} {...filterProps(restProps)} className={classProps}>
+    <a href={href} {...otherProps} {...styleProps} className={classProps}>
       {children}
     </a>
   );

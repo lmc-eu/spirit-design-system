@@ -58,5 +58,8 @@ module.exports = {
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
+    // allow UNSAFE React props
+    // @TODO: remove after https://github.com/lmc-eu/code-quality-tools/issues/88
+    camelcase: ['error', { properties: 'never', ignoreDestructuring: false, allow: ['^UNSAFE_'] }],
   },
 };

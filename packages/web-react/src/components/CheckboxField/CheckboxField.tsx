@@ -1,16 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 import { SpiritCheckboxFieldProps } from '../../types';
-import { filterProps } from '../../utils/filterProps';
+import { useStyleProps } from '../../hooks/styleProps';
 import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 
 export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
   const { id, label, message, value, isDisabled, isRequired, isChecked, ...restProps } = modifiedProps;
+  const { styleProps } = useStyleProps(restProps);
 
   return (
-    <div className={classProps.root}>
+    <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
       <input
-        {...filterProps(restProps)}
         type="checkbox"
         id={id}
         className={classProps.input}

@@ -1,9 +1,7 @@
-import { render, RenderResult } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import React, { ComponentType } from 'react';
 import { ClassNamePrefixProvider } from '../../src/context/ClassNamePrefixContext';
-
-const getElement = (dom: RenderResult, testId: string | undefined) =>
-  testId ? (dom.getByTestId(testId) as HTMLElement) : (dom.container.firstChild as HTMLElement);
+import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const classNamePrefixProviderTest = (Component: ComponentType<any>, className: string, testId?: string) => {

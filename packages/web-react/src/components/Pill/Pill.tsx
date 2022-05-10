@@ -1,7 +1,8 @@
 import React, { ElementType } from 'react';
+import classNames from 'classnames';
 import { usePillStyleProps } from './usePillStyleProps';
-import { SpiritPillProps } from '../../types';
-import { filterProps } from '../../utils/filterProps';
+import { SpiritPillProps, StyleProps } from '../../types';
+import { useStyleProps } from '../../hooks/styleProps';
 
 const defaultProps = {
   color: 'selected',
@@ -10,9 +11,10 @@ const defaultProps = {
 export const Pill = <T extends ElementType = 'span'>(props: SpiritPillProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'span', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = usePillStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
 
   return (
-    <ElementTag {...filterProps(modifiedProps)} className={classProps}>
+    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );

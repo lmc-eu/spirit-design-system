@@ -3,9 +3,12 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import Header from '../Header';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 
 describe('Header', () => {
   classNamePrefixProviderTest(Header, 'Header');
+
+  stylePropsTest((props) => <Header {...props} data-testid="header-test" />, 'header-test');
 
   it('should render text children', () => {
     const dom = render(<Header id="test">Hello World</Header>);
