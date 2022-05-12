@@ -1,9 +1,20 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../tools/typography';
 
-@mixin variant($variant, $variables) {
-    .Tag--#{$variant} {
-        color: map.get($variables, default-color);
-        background-color: map.get($variables, default-background);
+@mixin variant($variant, $themes) {
+    @each $name, $theme in $themes {
+        .Tag--#{$variant}.Tag--#{$name} {
+            color: map.get($themes, $name, default-color);
+            background-color: map.get($themes, $name, default-background);
+        }
+    }
+}
+
+@mixin size($size, $variables) {
+    .Tag--#{$size} {
+        @include typography.generate(map.get($variables, typography));
+
+        padding: map.get($variables, padding-y) map.get($variables, padding-x);
     }
 }

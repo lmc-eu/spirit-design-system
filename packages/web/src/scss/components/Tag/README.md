@@ -3,50 +3,32 @@
 Displays an inline element as a tag. Tags can be used to highlight or add emotion
 to information. The base tag component styles the text, adds padding, corners and
 background. Tags come in a variety of colors that can be set using modifier classes.
-All colors have light and dark variants.
+All colors have light and dark themes. Tags have three sizes: xsmall, small and medium.
 
-Available variants are:
+Available colors are:
 
-- default-light
-- default-dark
-- informative-light
-- informative-dark
-- success-light
-- success-dark
-- warning-light
-- warning-dark
-- danger-light
-- danger-dark
+- default
+- informative
+- success
+- warning
+- danger
 
 ```html
-<span class="Tag Tag--default-light">Discount</span>
-<span class="Tag Tag--default-dark">Discount</span>
-<span class="Tag Tag--info-light">Discount</span>
-<span class="Tag Tag--info-dark">Discount</span>
-<span class="Tag Tag--success-light">Discount</span>
-<span class="Tag Tag--success-dark">Discount</span>
-<span class="Tag Tag--warning-light">Discount</span>
-<span class="Tag Tag--warning-dark">Discount</span>
-<span class="Tag Tag--danger-light">Discount</span>
-<span class="Tag Tag--danger-dark">Discount</span>
-```
+<span class="Tag Tag--default Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--default Tag--dark Tag--small">Discount</span>
+<span class="Tag Tag--info Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--info Tag--dark Tag--small">Discount</span>
+<span class="Tag Tag--success Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--success Tag--dark Tag--small">Discount</span>
+<span class="Tag Tag--warning Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--warning Tag--dark Tag--small">Discount</span>
+<span class="Tag Tag--danger Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--danger Tag--dark Tag--small">Discount</span>
 
-## Theming
-
-Most Tag variables are mapped to design tokens.
-
-These style options are themeable:
-
-- `$padding-x` - horizontal paddings
-- `$padding-y` - vertical paddings
-- `$font-size` - text font size
-- `$line-height` - text line height
-- `$border-radius` - border radius of the component
-
-If you need to change colors and override values set based on design tokens,
-use this pattern for each color variant you need to change:
-
-```sass
-$default-light-color: #000;
-$default-light-background: #f0f0f0;
+<span class="Tag Tag--default Tag--light Tag--xsmall">Discount</span>
+<span class="Tag Tag--default Tag--dark Tag--xsmall">Discount</span>
+<span class="Tag Tag--default Tag--light Tag--small">Discount</span>
+<span class="Tag Tag--default Tag--dark Tag--small">Discount</span>
+<span class="Tag Tag--default Tag--light Tag--medium">Discount</span>
+<span class="Tag Tag--default Tag--dark Tag--medium">Discount</span>
 ```

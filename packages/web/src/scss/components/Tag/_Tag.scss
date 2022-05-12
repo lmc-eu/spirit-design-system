@@ -1,16 +1,25 @@
+@use 'sass:map';
 @use 'theme';
 @use 'tools';
 @use '../../tools/typography';
 
 .Tag {
-    @include typography.generate(theme.$typography);
+    @include typography.generate(map.get(theme.$sizes, medium, typography));
 
     display: inline-block;
-    padding: theme.$padding-y theme.$padding-x;
+    padding: map.get(theme.$sizes, medium, padding-y) map.get(theme.$sizes, medium, padding-x);
     text-align: center;
     border-radius: theme.$border-radius;
 }
 
-@each $variant, $variables in theme.$variants {
-    @include tools.variant($variant, $variables);
+@each $size, $variables in theme.$sizes {
+    @include tools.size($size, $variables);
+}
+
+@each $variant, $themes in theme.$variants {
+    @include tools.variant($variant, $themes);
+}
+
+.Tag--light.Tag--xsmall {
+    background-color: transparent;
 }
