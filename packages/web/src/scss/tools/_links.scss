@@ -19,3 +19,13 @@
         }
     }
 }
+
+@mixin stretch($pseudo-element: before) {
+    &::#{$pseudo-element} {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+        z-index: 0;
+    }
+}
