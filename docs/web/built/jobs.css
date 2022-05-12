@@ -735,6 +735,10 @@ table {
   list-style: none;
 }
 
+.jobs-Stack > * {
+  margin-block: 0;
+}
+
 .jobs-Tag {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;

@@ -734,6 +734,10 @@ button.Header__link--current:active {
   list-style: none;
 }
 
+.Stack > * {
+  margin-block: 0;
+}
+
 .Tag {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
