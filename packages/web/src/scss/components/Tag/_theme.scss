@@ -1,10 +1,5 @@
 @use '@tokens' as tokens;
 
-$padding-x: tokens.$space-400;
-$padding-y: tokens.$space-400;
-$typography: tokens.$body-small-text-regular;
-$border-radius: tokens.$radius-100;
-
 // Default light tag
 $default-light-color: tokens.$text-primary-default;
 $default-light-background: tokens.$background-cover;
@@ -96,14 +91,38 @@ $danger-dark: (
 );
 
 $variants: (
-    default-light: $default-light,
-    default-dark: $default-dark,
-    informative-light: $informative-light,
-    informative-dark: $informative-dark,
-    success-light: $success-light,
-    success-dark: $success-dark,
-    warning-light: $warning-light,
-    warning-dark: $warning-dark,
-    danger-light: $danger-light,
-    danger-dark: $danger-dark,
+    light: (
+        default: $default-light,
+        informative: $informative-light,
+        success: $success-light,
+        warning: $warning-light,
+        danger: $danger-light,
+    ),
+    dark: (
+        default: $default-dark,
+        informative: $informative-dark,
+        success: $success-dark,
+        warning: $warning-dark,
+        danger: $danger-dark,
+    ),
+);
+
+$border-radius: tokens.$radius-100;
+
+$sizes: (
+    xsmall: (
+        padding-x: tokens.$space-300,
+        padding-y: tokens.$space-0,
+        typography: tokens.$body-xsmall-text-bold,
+    ),
+    small: (
+        padding-x: tokens.$space-400,
+        padding-y: tokens.$space-200,
+        typography: tokens.$body-small-text-regular,
+    ),
+    medium: (
+        padding-x: tokens.$space-400,
+        padding-y: tokens.$space-300,
+        typography: tokens.$body-medium-text-regular,
+    ),
 );
