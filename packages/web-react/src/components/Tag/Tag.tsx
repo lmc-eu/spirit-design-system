@@ -2,35 +2,51 @@ import React, { ElementType, JSXElementConstructor } from 'react';
 import classNames from 'classnames';
 import { filterProps } from '../../utils/filterProps';
 import { compose } from '../../utils/compose';
-import { applyColor, applyTheme } from '../../utils/classname';
+import { applyColor, applySize, applyTheme } from '../../utils/classname';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ChildrenProps } from '../../types';
 
-type Color = 'default' | 'informative' | 'success' | 'warning' | 'danger';
+type TagColor = 'default' | 'informative' | 'success' | 'warning' | 'danger';
 
-type Theme = 'light' | 'dark';
+type TagSize = 'xsmall' | 'small' | 'medium';
+
+type TagTheme = 'light' | 'dark';
 
 export interface TagProps<T extends ElementType = 'span'> extends ChildrenProps {
+  color?: TagColor;
+  size?: TagSize;
   tag?: T | JSXElementConstructor<unknown>;
-  color?: Color;
-  theme?: Theme;
+  theme?: TagTheme;
 }
 
 const defaultProps = {
   color: 'default',
-  theme: 'dark',
+  size: 'medium',
   tag: 'span',
+  theme: 'dark',
 };
 
-// `${componentClassName}--${color}-${theme}`;
-const getTagColorAndThemeClassname = (className: string, color: Color, theme: Theme): string =>
-  compose(applyTheme<Theme>(theme), applyColor<Color>(color))(className);
+// `${componentClassName}--${color}`;
+const getTagColorClassname = (className: string, color: TagColor): string =>
+  compose(applyColor<TagColor>(color))(className);
+
+// `${componentClassName}--${size}`;
+const getTagSizeClassname = (className: string, size: TagSize): string => compose(applySize<TagSize>(size))(className);
+
+// `${componentClassName}--${theme}`;
+const getTagThemeClassname = (className: string, theme: TagTheme): string =>
+  compose(applyTheme<TagTheme>(theme))(className);
 
 export const Tag = <T extends ElementType = 'span'>(props: TagProps<T>): JSX.Element => {
-  const { tag: ElementTag = 'span', color, theme, children, ...restProps } = props;
+  const { tag: ElementTag = 'span', color, size, theme, children, ...restProps } = props;
   const tagClass = useClassNamePrefix('Tag');
 
-  const classes = classNames(tagClass, getTagColorAndThemeClassname(tagClass, color as Color, theme as Theme));
+  const classes = classNames(
+    tagClass,
+    getTagColorClassname(tagClass, color as TagColor),
+    getTagSizeClassname(tagClass, size as TagSize),
+    getTagThemeClassname(tagClass, theme as TagTheme),
+  );
 
   return (
     <ElementTag {...filterProps(restProps)} className={classes}>
