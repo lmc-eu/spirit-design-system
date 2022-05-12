@@ -1,4 +1,4 @@
-import { applyClassNamePrefix, applyColor, applyTheme } from '../classname';
+import { applyClassNamePrefix, applyColor, applySize, applyTheme } from '../classname';
 
 describe('classname', () => {
   describe('#applyColor', () => {
@@ -9,11 +9,19 @@ describe('classname', () => {
     });
   });
 
+  describe('#applySize', () => {
+    it('should apply size on given class name', () => {
+      const appliedSize = applySize('small');
+
+      expect(appliedSize('classname')).toBe('classname--small');
+    });
+  });
+
   describe('#applyTheme', () => {
     it('should apply theme on given class name', () => {
       const appliedTheme = applyTheme('dark');
 
-      expect(appliedTheme('classname')).toBe('classname-dark');
+      expect(appliedTheme('classname')).toBe('classname--dark');
     });
   });
 

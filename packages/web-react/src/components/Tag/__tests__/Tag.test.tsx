@@ -10,6 +10,6 @@ describe('Tag', () => {
   it('should have default classname', () => {
     const dom = render(<Tag />);
 
-    expect(dom.container.firstChild).toHaveClass('Tag--default-dark');
+    expect(dom.container.firstChild).toHaveClass('Tag--default');
   });
 });
