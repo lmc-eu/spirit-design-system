@@ -14,7 +14,7 @@ const config = {
   // A map from regular expressions to paths to transformers
   // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
   transform: {
-    '^.+\\.(js|ts)$': '<rootDir>/../../node_modules/babel-jest',
+    '^.+\\.(t|j)s?$': ['<rootDir>/../../node_modules/@swc/jest'],
   },
 
   // The test environment that will be used for testing.
