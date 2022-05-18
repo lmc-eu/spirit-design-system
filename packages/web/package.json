@@ -16,6 +16,8 @@
   "module": "js/esm/spirit-web.js",
   "scripts": {
     "start": "vite",
+    "examples:build": "vite build",
+    "examples:preview": "vite preview",
     "prebuild": "rm -rf dist && mkdir -p dist/scss && cp package.json README.md dist/ && cp -r src/scss dist/",
     "build": "npm-run-all --serial css js",
     "precss": "yarn css:lint",
