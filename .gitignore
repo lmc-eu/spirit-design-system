@@ -21,3 +21,6 @@ packages/*/dist
 
 # NPM rc file created by CI
 .npmrc
+
+# Local Netlify folder
+.netlify
