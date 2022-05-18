@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
+import { getNestedDirs } from './scripts/prepareDist';
 
 export default defineConfig({
   plugins: [
@@ -15,6 +16,14 @@ export default defineConfig({
           resolve(__dirname, '../../node_modules'),
           resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/dist/scss'),
         ],
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        ...getNestedDirs('src/scss/components', 'index.html'),
       },
     },
   },
