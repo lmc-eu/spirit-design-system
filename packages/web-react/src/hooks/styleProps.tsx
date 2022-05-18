@@ -6,6 +6,48 @@ export type StylePropsResult = {
   props: HTMLAttributes<HTMLElement>;
 };
 
+const sizes = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200];
+
+const breakpoints = ['tablet', 'desktop'];
+
+export const styleProps = {
+  displayBlock,
+  displayFlex,
+  displayInline,
+  displayInlineBlock,
+  displayInlineFlex, // -> display, displayValue
+  displayNone, // -> isHidden
+  textRight,
+  textLeft,
+  textCenter,
+  textPrimary,
+  textPrimaryDisabled,
+  textPrimaryInverted,
+  textPrimaryInvertedDisabled,
+  textSecondary,
+  textSecondaryDisabled,
+  textSecondaryInverted,
+  textSecondaryInvertedDisabled, // -> textValue
+  backgroundBasic,
+  backgroundCover,
+  backgroundInverted,
+  marginTop,
+  marginRight,
+  marginLeft,
+  marginBottom,
+  marginInline,
+  marginBlock,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  paddingInline,
+  paddingBlock, // -> dimensionValue
+};
+
+// create utility class names from style props
+export function convertStylePropsToUtilities() {}
+
 export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult {
   const { UNSAFE_className, UNSAFE_style, ...otherProps } = props;
 
