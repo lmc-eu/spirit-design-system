@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - examples/**
+      - packages/web/**
 
 jobs:
   build-and-deploy:
@@ -19,27 +19,13 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Build packages
-        run: yarn build
-
       - name: Build examples
         run: |
-          yarn examples:install
-          yarn examples:build
-
-      - name: Delete files not needed for production
-        run: |
-          rm -rf ./examples/*/node_modules
-          rm -rf ./examples/*/src
-          rm ./examples/*/.browserslistrc
-          rm ./examples/*/.gitignore
-          rm ./examples/*/*.js
-          rm ./examples/*/*.json
-          rm ./examples/*/*.lock
+          cd packages/web && yarn examples:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          folder: examples
+          folder: packages/web/dist
           branch: gh-pages
           target-folder: docs
