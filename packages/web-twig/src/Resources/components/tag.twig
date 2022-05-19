@@ -1,8 +1,16 @@
-{% set _className = _spiritClassPrefix ~ 'Tag' %}
-{% set _color = (props.color is defined) ? props.color : 'default' %}
-{% set _theme = (props.theme is defined) ? '-' ~ props.theme : '-dark' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('default') -%}
+{%- set _size = props.size | default('medium') -%}
+{%- set _theme = props.theme | default('dark') -%}
+{%- set _elementType = props.elementType | default('span') -%}
 
-<span class="{{ _className }} {{ _className }}--{{ _color }}{{ _theme }}{{ _class }}">
+{# Class names #}
+{%- set _rootclassName = _spiritClassPrefix ~ 'Tag' -%}
+{%- set _colorClassName = _spiritClassPrefix ~ 'Tag--' ~ _color -%}
+{%- set _sizeClassName = _spiritClassPrefix ~ 'Tag--' ~ _size -%}
+{%- set _themeClassName = _spiritClassPrefix ~ 'Tag--' ~ _theme -%}
+
+<{{ _elementType }} class="{{ _rootclassName }} {{ _colorClassName }} {{ _sizeClassName }} {{ _themeClassName }} {{ _class }}">
 {%- block content %}{% endblock %}
-</span>
+</{{ _elementType }}>

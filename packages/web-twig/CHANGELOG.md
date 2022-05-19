@@ -2,6 +2,7 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- Update `Tag` - add sizes, split theme and color classes, allow elementType change
 
 ## 1.7.0 - 2022-05-09
 - Add Svg twig extension for optimal loading of svg files as inline
