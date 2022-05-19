@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.17.0"></a>
+
+# [0.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.16.0...@lmc-eu/spirit-web-react@0.17.0) (2022-05-19)
+
+### BREAKING CHANGES
+
+- **web-react:** Add Tag sizes to react package [#DS-245](https://github.com/lmc-eu/spirit-design-system/issues/DS-245) ([2f826b8](https://github.com/lmc-eu/spirit-design-system/commit/2f826b8))
+
+### Dependencies
+
+- Update all non-major dependencies ([02f8247](https://github.com/lmc-eu/spirit-design-system/commit/02f8247))
+- Update all non-major dependencies ([1cefb14](https://github.com/lmc-eu/spirit-design-system/commit/1cefb14))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.16.0"></a>
 
 # [0.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.15.0...@lmc-eu/spirit-web-react@0.16.0) (2022-05-02)

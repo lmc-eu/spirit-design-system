@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.19.0"></a>
+
+# [0.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.18.0...@lmc-eu/spirit-web@0.19.0) (2022-05-19)
+
+### BREAKING CHANGES
+
+- **web:** Add Tag sizes and change Tag API [#DS-245](https://github.com/lmc-eu/spirit-design-system/issues/DS-245) ([e351ba5](https://github.com/lmc-eu/spirit-design-system/commit/e351ba5))
+
+### Bug Fixes
+
+- **web:** Reset vertical margin of `Stack` children ([fd32094](https://github.com/lmc-eu/spirit-design-system/commit/fd32094))
+- **web:** Update `TextField` label color according to design changes ([593ba7e](https://github.com/lmc-eu/spirit-design-system/commit/593ba7e))
+
+### Chores
+
+- **web:** Create and extend layout template in component examples ([d4feb8b](https://github.com/lmc-eu/spirit-design-system/commit/d4feb8b))
+- **web:** Setup the dev server for local development ([d9e4232](https://github.com/lmc-eu/spirit-design-system/commit/d9e4232))
+
+### Code Refactoring
+
+- **web:** Move JS handler initialization into separate function ([4841599](https://github.com/lmc-eu/spirit-design-system/commit/4841599))
+- **web:** Reduce specificity of shared bottom margin to make overrides easier ([3e459e3](https://github.com/lmc-eu/spirit-design-system/commit/3e459e3))
+
+### Dependencies
+
+- Update all non-major dependencies ([02f8247](https://github.com/lmc-eu/spirit-design-system/commit/02f8247))
+- Update all non-major dependencies ([1cefb14](https://github.com/lmc-eu/spirit-design-system/commit/1cefb14))
+
+### Documentation
+
+- **web:** Introduce start scripts and document them ([3d44cd0](https://github.com/lmc-eu/spirit-design-system/commit/3d44cd0))
+
+### Features
+
+- **web:** Add `.link-stretched` helper class and mixin ([4fc9792](https://github.com/lmc-eu/spirit-design-system/commit/4fc9792))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.18.0"></a>
 
 # [0.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.17.0...@lmc-eu/spirit-web@0.18.0) (2022-05-02)
