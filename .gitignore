@@ -19,6 +19,9 @@ local.mk
 # Distribution files
 packages/*/dist
 
+# Internal builds
+packages/*/build
+
 # NPM rc file created by CI
 .npmrc
 
