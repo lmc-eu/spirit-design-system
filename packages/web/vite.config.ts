@@ -14,7 +14,7 @@ export default defineConfig({
       scss: {
         includePaths: [
           resolve(__dirname, '../../node_modules'),
-          resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/dist/scss'),
+          resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
         ],
       },
     },
