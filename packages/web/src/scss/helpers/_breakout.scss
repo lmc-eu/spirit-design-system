@@ -1,0 +1,5 @@
+@use '../tools/breakout';
+
+.breakout-container {
+    @include breakout.container();
+}
