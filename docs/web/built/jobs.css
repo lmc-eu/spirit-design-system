@@ -314,7 +314,7 @@ table {
   border-spacing: 0;
 }
 
-:is(address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol, ul, figure, hr, table, fieldset):not(:last-child) {
+:where(address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol, ul, figure, hr, table, fieldset):not(:last-child) {
   margin-bottom: 16px;
 }
 
@@ -741,63 +741,91 @@ table {
 
 .jobs-Tag {
   font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   display: inline-block;
-  padding: 8px 8px;
+  padding: 4px 8px;
   text-align: center;
   border-radius: 4px;
 }
-.jobs-Tag--default-light {
+.jobs-Tag--xsmall {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.32;
+  padding: 0 4px;
+}
+.jobs-Tag--small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42;
+  padding: 2px 8px;
+}
+.jobs-Tag--medium {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+.jobs-Tag--light.jobs-Tag--default {
   color: #171717;
   background-color: #f7f7f7;
 }
 
-.jobs-Tag--default-dark {
-  color: #fff;
-  background-color: #171717;
-}
-
-.jobs-Tag--informative-light {
+.jobs-Tag--light.jobs-Tag--informative {
   color: #379bf6;
   background-color: #ebf5ff;
 }
 
-.jobs-Tag--informative-dark {
-  color: #fff;
-  background-color: #379bf6;
-}
-
-.jobs-Tag--success-light {
+.jobs-Tag--light.jobs-Tag--success {
   color: #2faa7e;
   background-color: #e8f8f2;
 }
 
-.jobs-Tag--success-dark {
-  color: #fff;
-  background-color: #2faa7e;
-}
-
-.jobs-Tag--warning-light {
+.jobs-Tag--light.jobs-Tag--warning {
   color: #ff9900;
   background-color: #fff6ea;
 }
 
-.jobs-Tag--warning-dark {
-  color: #fff;
-  background-color: #ff9900;
-}
-
-.jobs-Tag--danger-light {
+.jobs-Tag--light.jobs-Tag--danger {
   color: #db0000;
   background-color: #fff2f2;
 }
 
-.jobs-Tag--danger-dark {
+.jobs-Tag--dark.jobs-Tag--default {
+  color: #fff;
+  background-color: #171717;
+}
+
+.jobs-Tag--dark.jobs-Tag--informative {
+  color: #fff;
+  background-color: #379bf6;
+}
+
+.jobs-Tag--dark.jobs-Tag--success {
+  color: #fff;
+  background-color: #2faa7e;
+}
+
+.jobs-Tag--dark.jobs-Tag--warning {
+  color: #fff;
+  background-color: #ff9900;
+}
+
+.jobs-Tag--dark.jobs-Tag--danger {
   color: #fff;
   background-color: #db0000;
+}
+
+.jobs-Tag--light.jobs-Tag--xsmall {
+  background-color: transparent;
 }
 
 .jobs-TextField {
@@ -810,7 +838,7 @@ table {
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
   display: block;
   margin-bottom: 4px;
   color: #171717;
@@ -1106,6 +1134,14 @@ table {
   text-decoration: underline;
 }
 
+.jobs-link-stretched::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
+}
+
 [class*=typography-heading] a {
   text-decoration: none;
 }
@@ -1149,28 +1185,28 @@ table {
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .jobs-typography-body-large-text-bold {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .jobs-typography-body-large-text-italic {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-style: italic;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .jobs-typography-body-large-text-regular {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .jobs-typography-body-medium-button {
   font-family: 'Inter', sans-serif;
@@ -1205,56 +1241,56 @@ table {
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.42;
 }
 .jobs-typography-body-small-text-bold {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.42;
 }
 .jobs-typography-body-small-text-italic {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-style: italic;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
 }
 .jobs-typography-body-small-text-regular {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
 }
 .jobs-typography-body-xsmall-button {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.32;
 }
 .jobs-typography-body-xsmall-text-bold {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.32;
 }
 .jobs-typography-body-xsmall-text-italic {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-style: italic;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.32;
 }
 .jobs-typography-body-xsmall-text-regular {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.32;
 }
 .jobs-typography-heading-large-text {
   font-family: 'Inter', sans-serif;

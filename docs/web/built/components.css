@@ -740,63 +740,91 @@ button.Header__link--current:active {
 
 .Tag {
   font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   display: inline-block;
-  padding: 8px 8px;
+  padding: 4px 8px;
   text-align: center;
   border-radius: 4px;
 }
-.Tag--default-light {
+.Tag--xsmall {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.32;
+  padding: 0 4px;
+}
+.Tag--small {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.42;
+  padding: 2px 8px;
+}
+.Tag--medium {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 8px;
+}
+.Tag--light.Tag--default {
   color: #132930;
   background-color: #f0f4f5;
 }
 
-.Tag--default-dark {
-  color: #fff;
-  background-color: #132930;
-}
-
-.Tag--informative-light {
+.Tag--light.Tag--informative {
   color: #90cff1;
   background-color: #ebf3f8;
 }
 
-.Tag--informative-dark {
-  color: #fff;
-  background-color: #90cff1;
-}
-
-.Tag--success-light {
+.Tag--light.Tag--success {
   color: #b7d16d;
   background-color: #f2f5e7;
 }
 
-.Tag--success-dark {
-  color: #fff;
-  background-color: #b7d16d;
-}
-
-.Tag--warning-light {
+.Tag--light.Tag--warning {
   color: #f1d07c;
   background-color: #f8f2e4;
 }
 
-.Tag--warning-dark {
-  color: #fff;
-  background-color: #f1d07c;
-}
-
-.Tag--danger-light {
+.Tag--light.Tag--danger {
   color: #db5f7b;
   background-color: #fcf1f4;
 }
 
-.Tag--danger-dark {
+.Tag--dark.Tag--default {
+  color: #fff;
+  background-color: #132930;
+}
+
+.Tag--dark.Tag--informative {
+  color: #fff;
+  background-color: #90cff1;
+}
+
+.Tag--dark.Tag--success {
+  color: #fff;
+  background-color: #b7d16d;
+}
+
+.Tag--dark.Tag--warning {
+  color: #fff;
+  background-color: #f1d07c;
+}
+
+.Tag--dark.Tag--danger {
   color: #fff;
   background-color: #db5f7b;
+}
+
+.Tag--light.Tag--xsmall {
+  background-color: transparent;
 }
 
 .TextField {
@@ -809,7 +837,7 @@ button.Header__link--current:active {
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.42;
   display: block;
   margin-bottom: 4px;
   color: #132930;

@@ -315,7 +315,7 @@ table {
   border-spacing: 0;
 }
 
-:is(address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol, ul, figure, hr, table, fieldset):not(:last-child) {
+:where(address, blockquote, h1, h2, h3, h4, h5, h6, p, pre, dl, ol, ul, figure, hr, table, fieldset):not(:last-child) {
   margin-bottom: 16px;
 }
 
