@@ -15,7 +15,7 @@
   "main": "js/cjs/spirit-web.js",
   "module": "js/esm/spirit-web.js",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "examples:build": "vite build",
     "examples:preview": "vite preview",
     "prebuild": "rm -rf dist && mkdir -p dist/scss && cp package.json README.md dist/ && cp -r src/scss dist/",
