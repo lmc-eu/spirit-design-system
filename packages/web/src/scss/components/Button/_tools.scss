@@ -35,6 +35,7 @@
         }
 
         &:disabled,
+        &.is-disabled,
         &.Button--disabled {
             color: map.get($variables, disabled-color);
             background-color: map.get($variables, disabled-background);
