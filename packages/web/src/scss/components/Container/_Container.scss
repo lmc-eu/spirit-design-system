@@ -5,6 +5,7 @@
     width: 100%;
     max-width: theme.$container-max-width;
     margin-inline: auto;
+    padding-inline: var(--container-padding-inline);
 
     @include tools.paddings(theme.$container-paddings, theme.$container-breakpoints);
 }

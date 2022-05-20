@@ -1,5 +1,3 @@
-@use '../tools/breakout';
-
 .breakout-container {
-    @include breakout.container();
+    margin-inline: calc(-1 * var(--container-padding-inline));
 }
