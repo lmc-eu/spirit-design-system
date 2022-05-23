@@ -9,7 +9,7 @@ pure implementation:
     id: "example",
     type: "text",
     name: "example",
-    required: "true",
+    isRequired: true,
     validationState: "error",
     message: "validation failed",
 }} %}
