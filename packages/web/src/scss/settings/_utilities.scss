@@ -67,13 +67,25 @@ $utilities: (
         responsive: true,
         property: margin-inline,
         class: mx,
-        values: tokens.$spaces,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
     ),
     'margin-y': (
         responsive: true,
         property: margin-block,
         class: my,
-        values: tokens.$spaces,
+        values:
+            map.merge(
+                tokens.$spaces,
+                (
+                    auto: auto,
+                )
+            ),
     ),
     'padding-top': (
         responsive: true,
