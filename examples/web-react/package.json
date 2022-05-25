@@ -15,15 +15,15 @@
     "build": "webpack --config ./webpack.config.js --mode development"
   },
   "dependencies": {
-    "@lmc-eu/spirit-web": "0.18.0",
-    "@lmc-eu/spirit-web-react": "0.16.0",
+    "@lmc-eu/spirit-web": "0.19.0",
+    "@lmc-eu/spirit-web-react": "0.17.0",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.17.10",
-    "@babel/preset-env": "7.17.10",
-    "@babel/preset-react": "7.16.7",
+    "@babel/core": "7.18.2",
+    "@babel/preset-env": "7.18.2",
+    "@babel/preset-react": "7.17.12",
     "babel-loader": "8.2.5",
     "webpack": "5.72.1",
     "webpack-cli": "4.9.2"
