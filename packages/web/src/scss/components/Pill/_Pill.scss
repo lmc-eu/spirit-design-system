@@ -1,0 +1,18 @@
+@use 'theme';
+@use 'tools';
+@use '../../tools/typography';
+
+.Pill {
+    @include typography.generate(theme.$typography);
+
+    display: inline-block;
+    min-width: 1rem;
+    height: 1rem;
+    padding: theme.$padding-y theme.$padding-x;
+    text-align: center;
+    border-radius: theme.$border-radius;
+}
+
+@each $variant, $themes in theme.$variants {
+    @include tools.variant($variant, $themes);
+}

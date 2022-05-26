@@ -1,0 +1,29 @@
+@use '@tokens' as tokens;
+
+$typography: tokens.$body-xsmall-text-bold;
+$padding-x: tokens.$space-300;
+$padding-y: tokens.$space-0;
+$border-radius: tokens.$radius-300;
+
+// Secondary pill
+$secondary-color: tokens.$text-primary-inverted-default;
+$secondary-background: tokens.$brand-secondary;
+
+$secondary: (
+    default-color: $secondary-color,
+    default-background: $secondary-background,
+);
+
+// Selected pill
+$selected-color: tokens.$text-primary-inverted-default;
+$selected-background: tokens.$action-selected-default;
+
+$selected: (
+    default-color: $selected-color,
+    default-background: $selected-background,
+);
+
+$variants: (
+    secondary: $secondary,
+    selected: $selected,
+);
