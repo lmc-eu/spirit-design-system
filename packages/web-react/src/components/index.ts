@@ -6,6 +6,7 @@ export * from './Grid';
 export * from './Header';
 export * from './Heading';
 export * from './Link';
+export * from './Pill';
 export * from './Stack';
 export * from './Tag';
 export * from './Text';
