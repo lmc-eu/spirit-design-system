@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@lmc-eu/stylelint-config": "4.0.1",
-    "stylelint": "14.8.2",
+    "stylelint": "14.8.5",
     "stylelint-order": "5.0.0"
   }
 }
