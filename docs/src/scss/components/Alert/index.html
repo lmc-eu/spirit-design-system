@@ -7,9 +7,30 @@
     
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <style>
+      .example-box {
+        min-height: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #0b1c21;
+      }
+
+      .example-box:not(:empty) {
+        padding: 0.25rem;
+      }
+
+      .example-CheckboxField-grid, .example-TextField-grid {
+          display: grid;
+          grid-template-columns: 25rem;
+      }
+
+      .example-TextField-grid {
+          gap: 1.5rem;
+      }
+    </style>
     <script type="module" crossorigin src="/assets/Password.d80e1eda.js"></script>
-    <link rel="stylesheet" href="/assets/Alert.05713433.css">
     <link rel="stylesheet" href="/assets/index.533a9485.css">
   </head>
   <body class="typography-body-medium-text-regular text-primary">
