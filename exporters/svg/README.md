@@ -1,4 +1,4 @@
-<img src="./readme-icon.png" alt="Supernova Logo" style="max-width:100%;">
+<img src="https://github.com/Supernova-Studio/exporter-svg-assets/blob/main/readme-icon.png?raw=true" alt="Supernova Logo" style="max-width:100%;">
 
 
 [Supernova](https://supernova.io) is a design system platform that manages your assets, tokens, components and allows you to write spectacular documentations for your entire teams. And because you found your way here, you are probably interested in its most advanced functionality - automatic hand-off of design and development assets, tokens and data in general. To learn everything Supernova, please check out our [developer documentation](https://developers.supernova.io/).
