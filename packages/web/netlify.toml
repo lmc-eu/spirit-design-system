@@ -17,3 +17,10 @@
 
   # Default build command.
   command = "yarn examples:build"
+
+  # Ignore builds on Netlify
+  ignore = "node ../../scripts/ignoreNetlifyBuilds.js"
+
+[context.deploy-preview]
+  # Deploy preview only if there are changes in some directories
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ./src/"
