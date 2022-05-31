@@ -1,0 +1,53 @@
+@use '../../tools/reset';
+@use '../../tools/typography';
+@use 'theme';
+
+.Tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    gap: theme.$tab-gap;
+    list-style: none;
+}
+
+.Tabs__item {
+    padding-inline: theme.$item-padding-x;
+}
+
+.Tabs__link {
+    @include reset.button();
+    @include typography.generate(theme.$item-typography);
+
+    padding-block: theme.$link-padding-y;
+    color: theme.$link-color;
+
+    &:hover,
+    &:active {
+        color: theme.$link-color;
+    }
+}
+
+.Tabs__link.is-selected {
+    @include typography.generate(theme.$item-selected-typography);
+
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: 2px;
+        background: theme.$item-selected-underline-background;
+        border-radius: theme.$item-selected-underline-border-radius;
+    }
+}
+
+.Tabs-pane {
+    display: none;
+}
+
+.Tabs-pane.is-selected {
+    display: block;
+}
