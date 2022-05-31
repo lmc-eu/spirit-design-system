@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Fetch Git history
         run: git fetch --no-tags --depth=50 origin main
