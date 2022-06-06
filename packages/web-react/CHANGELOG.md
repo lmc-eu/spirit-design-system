@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.18.0"></a>
+
+# [0.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.17.0...@lmc-eu/spirit-web-react@0.18.0) (2022-06-06)
+
+### Chores
+
+- **ci:** Use @swc to speed up Jest tests ([93e1614](https://github.com/lmc-eu/spirit-design-system/commit/93e1614))
+
+### Dependencies
+
+- Update all non-major dependencies ([a7990c7](https://github.com/lmc-eu/spirit-design-system/commit/a7990c7))
+- Update all non-major dependencies ([2de1f66](https://github.com/lmc-eu/spirit-design-system/commit/2de1f66))
+
+### Documentation
+
+- **web-react:** Introduce Header component documentation (refs [#256](https://github.com/lmc-eu/spirit-design-system/issues/256)) ([b4042e5](https://github.com/lmc-eu/spirit-design-system/commit/b4042e5))
+
+### Features
+
+- **web-react:** Introduce Header component (refs [#DS-161](https://github.com/lmc-eu/spirit-design-system/issues/DS-161)) ([a28383b](https://github.com/lmc-eu/spirit-design-system/commit/a28383b))
+- **web-react:** Introduce header's navigation bar components (refs [#DS-161](https://github.com/lmc-eu/spirit-design-system/issues/DS-161)) ([50f6b51](https://github.com/lmc-eu/spirit-design-system/commit/50f6b51))
+- **web-react:** Introduce Pill component to React [#DS-243](https://github.com/lmc-eu/spirit-design-system/issues/DS-243) ([f6fa674](https://github.com/lmc-eu/spirit-design-system/commit/f6fa674))
+- **web-react:** Introduce toggle functionality to Header (refs [#DS-161](https://github.com/lmc-eu/spirit-design-system/issues/DS-161)) ([6486622](https://github.com/lmc-eu/spirit-design-system/commit/6486622))
+- **web-react:** Make Header components accessible from package ([#DS-161](https://github.com/lmc-eu/spirit-design-system/issues/DS-161)) ([2dd005f](https://github.com/lmc-eu/spirit-design-system/commit/2dd005f))
+
+### Tests
+
+- **web-react:** Introduce Header component tests (refs [#256](https://github.com/lmc-eu/spirit-design-system/issues/256)) ([90056f3](https://github.com/lmc-eu/spirit-design-system/commit/90056f3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.17.0"></a>
 
 # [0.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.16.0...@lmc-eu/spirit-web-react@0.17.0) (2022-05-19)

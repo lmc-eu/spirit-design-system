@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.20.0"></a>
+
+# [0.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.19.0...@lmc-eu/spirit-web@0.20.0) (2022-06-06)
+
+### Bug Fixes
+
+- **web:** Add missing interaction state class to `Button` variants ([6d75335](https://github.com/lmc-eu/spirit-design-system/commit/6d75335))
+- **web:** Ignore `build` directory when using ESLint ([7089029](https://github.com/lmc-eu/spirit-design-system/commit/7089029))
+
+### Chores
+
+- **ci:** Do not run Netlify deploy when upgrading dependencies ([70ab5cb](https://github.com/lmc-eu/spirit-design-system/commit/70ab5cb))
+- **ci:** Use @swc to speed up Jest tests ([93e1614](https://github.com/lmc-eu/spirit-design-system/commit/93e1614))
+- **web:** Build examples out of development files ([1213451](https://github.com/lmc-eu/spirit-design-system/commit/1213451))
+- **web:** Change build includePaths to source code ([ff6a901](https://github.com/lmc-eu/spirit-design-system/commit/ff6a901))
+- **web:** Change examples output build directory to `build` ([4cc9260](https://github.com/lmc-eu/spirit-design-system/commit/4cc9260))
+- **web:** Deploy configuration file for Netlify builds ([1ad1ac4](https://github.com/lmc-eu/spirit-design-system/commit/1ad1ac4))
+- **web:** Make demo accessible in local network during development ([4d968b9](https://github.com/lmc-eu/spirit-design-system/commit/4d968b9))
+
+### Code Refactoring
+
+- **web:** Leverage custom properties for `Container` padding to make it easily accessible ([c4370dd](https://github.com/lmc-eu/spirit-design-system/commit/c4370dd))
+
+### Dependencies
+
+- Update all non-major dependencies ([a7990c7](https://github.com/lmc-eu/spirit-design-system/commit/a7990c7))
+- Update all non-major dependencies ([2de1f66](https://github.com/lmc-eu/spirit-design-system/commit/2de1f66))
+
+### Features
+
+- **web:** Add auto option to mx and my utilities ([a83e1a4](https://github.com/lmc-eu/spirit-design-system/commit/a83e1a4))
+- **web:** Add simple Modal component [#DS-211](https://github.com/lmc-eu/spirit-design-system/issues/DS-211) ([05547e9](https://github.com/lmc-eu/spirit-design-system/commit/05547e9))
+- **web:** Introduce breakout helper and mixin to expand content out of `Container` ([a011b80](https://github.com/lmc-eu/spirit-design-system/commit/a011b80))
+- **web:** Introduce Pill component [#DS-243](https://github.com/lmc-eu/spirit-design-system/issues/DS-243) ([1323802](https://github.com/lmc-eu/spirit-design-system/commit/1323802))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.19.0"></a>
 
 # [0.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.18.0...@lmc-eu/spirit-web@0.19.0) (2022-05-19)

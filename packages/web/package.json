@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
   "publishConfig": {
@@ -45,15 +45,15 @@
   },
   "dependencies": {
     "@csstools/normalize.css": "^12.0.0",
-    "@lmc-eu/spirit-design-tokens": "^0.16.0"
+    "@lmc-eu/spirit-design-tokens": "^0.17.0"
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "1.0.3",
     "@lmc-eu/stylelint-config": "4.0.1",
     "@rollup/plugin-typescript": "^8.3.2",
-    "@types/jest": "27.5.1",
     "@swc/core": "1.2.196",
     "@swc/jest": "0.2.21",
+    "@types/jest": "27.5.1",
     "autoprefixer": "10.4.7",
     "clean-css-cli": "5.6.0",
     "jest-environment-jsdom": "28.1.0",
