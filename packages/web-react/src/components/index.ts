@@ -8,6 +8,7 @@ export * from './Heading';
 export * from './Link';
 export * from './Pill';
 export * from './Stack';
+export * from './Tabs';
 export * from './Tag';
 export * from './Text';
 export * from './TextField';
