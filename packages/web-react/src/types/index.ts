@@ -1,4 +1,3 @@
-export * from './shared';
 export * from './alert';
 export * from './button';
 export * from './checkboxField';
@@ -9,5 +8,7 @@ export * from './label';
 export * from './link';
 export * from './message';
 export * from './pill';
+export * from './shared';
+export * from './tabs';
 export * from './text';
 export * from './textField';
