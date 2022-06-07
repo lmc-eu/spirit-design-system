@@ -40,6 +40,10 @@ const config = {
   // A list of reporter names that Jest uses when writing coverage reports. Any istanbul reporter can be used.
   // https://jestjs.io/docs/configuration#coveragereporters-arraystring--string-options
   coverageReporters: ['text', 'text-summary', ['lcov', { projectRoot: '../../' }]],
+
+  // A list of paths to modules that run some code to configure or set up the testing framework before each test.
+  // https://jestjs.io/docs/configuration#setupfilesafterenv-array
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 };
 
 module.exports = config;

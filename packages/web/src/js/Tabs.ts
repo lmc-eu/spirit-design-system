@@ -67,10 +67,6 @@ class Tabs extends BaseComponent {
     element.classList.add(CLASS_NAME_ACTIVE);
     this.activate(getElementFromSelector(element));
 
-    if (element.getAttribute('role') !== 'tab') {
-      return;
-    }
-
     element.focus();
     element.removeAttribute('tabindex');
     element.setAttribute('aria-selected', 'true');
@@ -87,10 +83,6 @@ class Tabs extends BaseComponent {
     element.classList.remove(CLASS_NAME_ACTIVE);
 
     this.deactivate(getElementFromSelector(element));
-
-    if (element.getAttribute('role') !== 'tab') {
-      return;
-    }
 
     element.setAttribute('aria-selected', 'false');
     element.setAttribute('tabindex', '-1');
@@ -123,7 +115,7 @@ class Tabs extends BaseComponent {
       Tabs.setAttributeIfNotExists(outerElem, 'role', 'presentation');
     }
 
-    if (!isActive) {
+    if (innerChild && !isActive) {
       innerChild.setAttribute('tabindex', '-1');
     }
 
@@ -132,7 +124,7 @@ class Tabs extends BaseComponent {
     Tabs.setInitialAttributesOnTargetPanel(innerChild);
   }
 
-  static setInitialAttributesOnTargetPanel(child: HTMLElement) {
+  static setInitialAttributesOnTargetPanel(child: HTMLElement | null) {
     const target = getElementFromSelector(child);
 
     if (!target) {
@@ -146,22 +138,22 @@ class Tabs extends BaseComponent {
     }
   }
 
-  static setAttributeIfNotExists(element: Element, attribute: string, value: string) {
-    if (!element.hasAttribute(attribute)) {
+  static setAttributeIfNotExists(element: HTMLElement | null, attribute: string, value: string) {
+    if (element && !element.hasAttribute(attribute)) {
       element.setAttribute(attribute, value);
     }
   }
 
-  static isElementActive(element: HTMLElement) {
-    return element.classList.contains(CLASS_NAME_ACTIVE);
+  static isElementActive(element: HTMLElement | null): boolean {
+    return element !== null && element.classList.contains(CLASS_NAME_ACTIVE);
   }
 
-  static getInnerElement(elem: HTMLElement) {
-    return elem.matches(SELECTOR_INNER_ELEM) ? elem : SelectorEngine.findOne(SELECTOR_INNER_ELEM, elem);
+  static getInnerElement(element: HTMLElement | null) {
+    return element?.matches(SELECTOR_INNER_ELEM) ? element : SelectorEngine.findOne(SELECTOR_INNER_ELEM, element);
   }
 
-  static getOuterElement(element: Element) {
-    return element.closest(SELECTOR_OUTER) || element;
+  static getOuterElement(element: HTMLElement | null): HTMLElement | null {
+    return element?.closest(SELECTOR_OUTER) || element;
   }
 }
 
