@@ -6,8 +6,7 @@ groups of information in tabbable regions.
 ```html
 <ul class="Tabs" role="tablist">
   <li class="Tabs__item">
-    <a
-      href="#pane1"
+    <button
       class="Tabs__link is-selected"
       role="tab"
       aria-selected="true"
@@ -17,11 +16,10 @@ groups of information in tabbable regions.
       aria-controls="pane1"
     >
       Item Selected
-    </a>
+    </button>
   </li>
   <li class="Tabs__item">
-    <a
-      href="#pane2"
+    <button
       class="Tabs__link"
       role="tab"
       aria-selected="false"
@@ -31,7 +29,7 @@ groups of information in tabbable regions.
       aria-controls="pane2"
     >
       Item
-    </a>
+    </button>
   </li>
   <li class="Tabs__item">
     <a href="https://www.example.com" class="Tabs__link">Item Link</a>
@@ -40,10 +38,8 @@ groups of information in tabbable regions.
     <a href="https://www.example.com" class="Tabs__link">Item Link Only Desktop</a>
   </li>
 </ul>
-<div id="pane1" class="Tabs-pane is-selected" role="tabpanel" aria-hidden="false" aria-labelledby="pane1-tab">
-  Pane 1
-</div>
-<div id="pane2" class="Tabs-pane" role="tabpanel" aria-hidden="true" aria-labelledby="pane2-tab">Pane 2</div>
+<div id="pane1" class="Tabs-pane is-selected" role="tabpanel" aria-labelledby="pane1-tab">Pane 1</div>
+<div id="pane2" class="Tabs-pane" role="tabpanel" aria-labelledby="pane2-tab">Pane 2</div>
 ```
 
 Tabs items are buttons or external links. They can take on properties that ensure their
