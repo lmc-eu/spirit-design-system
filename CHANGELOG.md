@@ -4,6 +4,7 @@
 ## Unreleased
 - Update `Tag` - add sizes, split theme and color classes, allow elementType change
 - Bugfix `isRequired` functionality in `TextField` component
+- Introduce `Pill` component
 
 
 ## 1.7.0 - 2022-05-09
