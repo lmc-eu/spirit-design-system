@@ -116,9 +116,10 @@ class Header extends BaseComponent {
       target = event.target.parentNode;
     }
 
-    const headerEl = target.parentElement;
+    const navEl = Header.findRelatedNavElement(target) || target;
+    const headerEl = navEl.parentElement;
     const toggleEl = SelectorEngine.findOne(HEADER_TOGGLE_SELECTOR, headerEl);
-    target.classList.remove(OPEN_CLASSNAME);
+    navEl.classList.remove(OPEN_CLASSNAME);
     toggleEl.setAttribute('aria-expanded', 'false');
 
     this.removeEventListeners();
