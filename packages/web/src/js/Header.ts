@@ -6,6 +6,7 @@ import { enableToggleTrigger } from './utils/ComponentFunctions';
 const NAME = 'header';
 const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
 const HEADER_DISMISS_ATTRIBUTE = 'data-dismiss';
+const HEADER_TARGET_ATTRIBUTE = 'data-target';
 const HEADER_BREAKPOINT = 1280;
 const OPEN_CLASSNAME = 'is-open';
 const BACKDROP_TAG_NAME = 'div';
@@ -38,9 +39,7 @@ class Header extends BaseComponent {
   }
 
   static findRelatedNavElement(target: HTMLElement) {
-    const headerEl = (target.parentElement as HTMLElement).parentElement;
-
-    return SelectorEngine.findOne('nav', headerEl as HTMLElement);
+    return SelectorEngine.findOne(target.getAttribute(HEADER_TARGET_ATTRIBUTE));
   }
 
   // Using `unknown` - Object is possibly 'null'.
