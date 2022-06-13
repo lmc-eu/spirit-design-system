@@ -2,6 +2,7 @@ import SelectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import BaseComponent from './BaseComponent';
 import { enableToggleTrigger } from './utils/ComponentFunctions';
+import { reflow } from './utils';
 
 const NAME = 'header';
 const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
@@ -33,6 +34,7 @@ class Header extends BaseComponent {
 
     if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
       Header.findRelatedNavElement(target).appendChild(backdropEl);
+      reflow(backdropEl);
     }
 
     return backdropEl;

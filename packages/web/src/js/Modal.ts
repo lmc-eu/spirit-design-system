@@ -1,7 +1,7 @@
-import SelectorEngine from './dom/SelectorEngine';
-import EventHandler from './dom/EventHandler';
 import BaseComponent from './BaseComponent';
-import { getElementFromSelector } from './utils/index';
+import EventHandler from './dom/EventHandler';
+import SelectorEngine from './dom/SelectorEngine';
+import { getElementFromSelector, reflow } from './utils';
 
 const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
 const MODAL_DISMISS_ATTRIBUTE = 'data-dismiss';
@@ -25,6 +25,7 @@ class Modal extends BaseComponent {
 
     if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
       target.appendChild(backdropEl);
+      reflow(backdropEl);
     }
 
     return backdropEl;

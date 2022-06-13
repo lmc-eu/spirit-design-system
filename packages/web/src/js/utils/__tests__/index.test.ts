@@ -1,5 +1,5 @@
-import * as Util from '../index';
 import { clearFixture, getFixture } from '../../../../tests/helpers/fixture';
+import * as Util from '../index';
 
 describe('Util', () => {
   let fixtureEl: Element;
@@ -64,6 +64,17 @@ describe('Util', () => {
       expect(Util.getElement()).toBeNull();
       expect(Util.getElement(null)).toBeNull();
       expect(Util.getElement(fixtureEl.querySelectorAll('.test'))).toBeNull();
+    });
+  });
+
+  describe('reflow', () => {
+    it('should return element offset height to force the reflow', () => {
+      fixtureEl.innerHTML = '<div></div>';
+
+      const div = fixtureEl.querySelector('div') as HTMLElement;
+      const spy = jest.spyOn(div, 'offsetHeight', 'get').mockReturnValue(0);
+      Util.reflow(div);
+      expect(spy).toHaveBeenCalled();
     });
   });
 });
