@@ -91,5 +91,14 @@
   },
   "resolutions": {
     "@types/react-dom": "18.0.5"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "./dist"
+        ]
+      }
+    }
   }
 }

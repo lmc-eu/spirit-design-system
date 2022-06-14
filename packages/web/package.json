@@ -68,5 +68,14 @@
     "tslib": "2.4.0",
     "vite": "2.9.12",
     "vite-plugin-handlebars": "^1.6.0"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "./dist"
+        ]
+      }
+    }
   }
 }
