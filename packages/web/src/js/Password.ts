@@ -23,7 +23,7 @@ class Password extends BaseComponent {
   show(target: HTMLElement) {
     target.setAttribute(PASSWORD_ARIA_PRESSED, 'true');
     target.setAttribute(PASSWORD_ARIA_LABEL, 'Hide password');
-    SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement as HTMLElement).setAttribute('type', 'text');
+    SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement)?.setAttribute('type', 'text');
 
     this.isShown = true;
   }
@@ -31,10 +31,7 @@ class Password extends BaseComponent {
   hide(target: HTMLElement) {
     target.setAttribute(PASSWORD_ARIA_PRESSED, 'false');
     target.setAttribute(PASSWORD_ARIA_LABEL, 'Show password');
-    SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement as HTMLElement).setAttribute(
-      'type',
-      'password',
-    );
+    SelectorEngine.findOne(PASSWORD_FIELD_ELEMENT, target.parentElement)?.setAttribute('type', 'password');
 
     this.isShown = false;
   }

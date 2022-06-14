@@ -81,7 +81,6 @@ class Tabs extends BaseComponent {
     }
 
     element.classList.remove(CLASS_NAME_ACTIVE);
-
     this.deactivate(getElementFromSelector(element));
 
     element.setAttribute('aria-selected', 'false');
@@ -120,7 +119,6 @@ class Tabs extends BaseComponent {
     }
 
     Tabs.setAttributeIfNotExists(innerChild, 'role', 'tab');
-
     Tabs.setInitialAttributesOnTargetPanel(innerChild);
   }
 

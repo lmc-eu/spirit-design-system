@@ -1,17 +1,15 @@
 import { getElement } from './utils/index';
 import InstanceMap from './dom/InstanceMap';
 
-type Element = HTMLElement | Window | Document | null;
-
 interface IBaseComponent extends Function {
   INSTANCE_KEY: string;
 }
 
 class BaseComponent {
-  element: Element | null;
+  element: SpiritElement;
   NAME: string | null;
 
-  constructor(element: Element) {
+  constructor(element: SpiritElement) {
     this.element = getElement(element);
     this.NAME = '';
 
@@ -33,15 +31,15 @@ class BaseComponent {
     return '';
   }
 
-  static getInstance(element: Element) {
+  static getInstance(element: SpiritElement) {
     return InstanceMap.get(getElement(element), this.INSTANCE_KEY);
   }
 
-  static getOrCreateInstance(element: Element) {
+  static getOrCreateInstance(element: SpiritElement) {
     return this.getInstance(element) || this.createInstance(element);
   }
 
-  static createInstance(element: Element) {
+  static createInstance(element: SpiritElement) {
     return new this(element);
   }
 

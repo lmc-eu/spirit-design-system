@@ -74,11 +74,11 @@ class Modal extends BaseComponent {
       return;
     }
 
-    const target = SelectorEngine.findOne(event.currentTarget.dataset.target as string);
-    const modalEl = target.parentElement.parentElement;
+    const target = SelectorEngine.findOne(event.currentTarget.dataset.target as string) as HTMLDialogElement | null;
+    const modalEl = target?.parentElement?.parentElement;
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, modalEl);
-    target.showModal();
-    toggleEl.setAttribute('aria-expanded', 'true');
+    toggleEl?.setAttribute('aria-expanded', 'true');
+    target?.showModal();
 
     this.addEventListeners();
     this.isShown = true;
@@ -103,7 +103,7 @@ class Modal extends BaseComponent {
     const modalEl = target.parentElement.parentElement;
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, modalEl);
     target.close();
-    toggleEl.setAttribute('aria-expanded', 'false');
+    toggleEl?.setAttribute('aria-expanded', 'false');
 
     this.removeEventListeners();
     this.isShown = false;

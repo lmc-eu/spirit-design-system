@@ -1,9 +1,7 @@
-type Element = HTMLElement | Window | Document | null;
-
 const elementMap = new Map();
 
 export default {
-  set(element: Element, key: string, instance: unknown): void {
+  set(element: SpiritElement, key: string, instance: unknown): void {
     if (!elementMap.has(element)) {
       elementMap.set(element, new Map());
     }
@@ -24,7 +22,7 @@ export default {
     instanceMap.set(key, instance);
   },
 
-  get(element?: Element, key?: string | null): Element {
+  get(element?: SpiritElement, key?: string | null): SpiritElement {
     if (elementMap.has(element)) {
       return elementMap.get(element).get(key) || null;
     }
@@ -32,7 +30,7 @@ export default {
     return null;
   },
 
-  remove(element: Element, key?: string | undefined): void {
+  remove(element: SpiritElement, key?: string | undefined): void {
     if (!elementMap.has(element)) {
       return;
     }

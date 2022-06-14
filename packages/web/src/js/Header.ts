@@ -1,8 +1,8 @@
-import SelectorEngine from './dom/SelectorEngine';
-import EventHandler from './dom/EventHandler';
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import EventHandler from './dom/EventHandler';
+import SelectorEngine from './dom/SelectorEngine';
 import { reflow } from './utils';
+import { enableToggleTrigger } from './utils/ComponentFunctions';
 
 const NAME = 'header';
 const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
@@ -33,7 +33,7 @@ class Header extends BaseComponent {
     backdropEl.classList.add(BACKDROP_CLASSNAME);
 
     if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
-      Header.findRelatedNavElement(target).appendChild(backdropEl);
+      Header.findRelatedNavElement(target)?.appendChild(backdropEl);
       reflow(backdropEl);
     }
 
@@ -95,7 +95,7 @@ class Header extends BaseComponent {
       return;
     }
 
-    Header.findRelatedNavElement(relatedTarget).classList.add(OPEN_CLASSNAME);
+    Header.findRelatedNavElement(relatedTarget)?.classList.add(OPEN_CLASSNAME);
     relatedTarget.setAttribute('aria-expanded', 'true');
 
     this.addEventListeners();
@@ -121,8 +121,8 @@ class Header extends BaseComponent {
     const navEl = Header.findRelatedNavElement(target) || target;
     const headerEl = navEl.parentElement;
     const toggleEl = SelectorEngine.findOne(HEADER_TOGGLE_SELECTOR, headerEl);
-    navEl.classList.remove(OPEN_CLASSNAME);
-    toggleEl.setAttribute('aria-expanded', 'false');
+    target.classList.remove(OPEN_CLASSNAME);
+    toggleEl?.setAttribute('aria-expanded', 'false');
 
     this.removeEventListeners();
     this.isShown = false;
