@@ -64,8 +64,8 @@
   },
   "peerDependencies": {
     "@lmc-eu/spirit-web": "*",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0"
   },
   "scripts": {
     "prebuild": "rm -rf dist && mkdir -p dist && cp package.json README.md dist/ ",
