@@ -21,7 +21,7 @@ jobs:
 
       - name: Build examples
         run: |
-          cd packages/web && yarn examples:build
+          cd packages/web && yarn examples:build:gh
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
