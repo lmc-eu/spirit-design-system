@@ -17,6 +17,7 @@
   "scripts": {
     "start": "vite --host",
     "examples:build": "vite build",
+    "examples:build:gh": "yarn examples:build --base=/spirit-design-system/",
     "examples:preview": "vite preview",
     "prebuild": "rm -rf dist && mkdir -p dist/scss && cp package.json README.md dist/ && cp -r src/scss dist/",
     "build": "npm-run-all --serial css js",
