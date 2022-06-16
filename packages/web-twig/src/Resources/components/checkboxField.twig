@@ -1,39 +1,52 @@
-{% set _className = _spiritClassPrefix ~ 'CheckboxField' %}
-{% set _id = (props.id is defined) ? props.id : '' %}
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isChecked = props.isChecked | default(false) -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
+{%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _message = props.message | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _value = props.value | default(null) -%}
 
-{% set _textClass = _className ~ '__text' %}
+{# Class names #}
+{%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'CheckboxField__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden == 'true' ? _spiritClassPrefix ~ 'CheckboxField__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired == 'true' ? _spiritClassPrefix ~ 'CheckboxField__label--required' : null -%}
+{%- set _messageClassName = _spiritClassPrefix ~ 'CheckboxField__message' -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'CheckboxField' -%}
+{%- set _rootDisabledClassName = _isDisabled == 'true' ? _spiritClassPrefix ~ 'CheckboxField--disabled' : null -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'CheckboxField--' ~ _validationState : null -%}
+{%- set _textClassName = _spiritClassPrefix ~ 'CheckboxField__text' -%}
 
-{% set _label = (props.label is defined) ? props.label : '' %}
-{% set _labelClass = _className ~ '__label' %}
-{% set _labelClassRequired = (props.label is defined and props.isRequired is defined and props.isRequired == 'true') ? ' ' ~ _labelClass ~ '--required' : '' %}
-{% set _labelClassHidden = (props.isLabelHidden is defined and props.isLabelHidden == 'true') ? ' ' ~ _labelClass ~ '--hidden' : '' %}
+{# Attributes #}
+{%- set _checkedAttr = _isChecked == 'true' ? 'checked' : null -%}
+{%- set _disabledAttr = _isDisabled == 'true' ? 'disabled' : null -%}
+{%- set _requiredAttr = _isRequired == 'true' ? 'required' : null -%}
+{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
 
-{% set _inputName = (props.name is defined) ? props.name : '' %}
-{% set _type = (props.type is defined) ? props.type : 'text' %}
-{% set _InputClass = _className ~ '__input' %}
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _class ] -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
-{% set _disabled = (props.isDisabled is defined and props.isDisabled == 'true') ? ' disabled="true"' : '' %}
-{% set _checked = (props.isChecked is defined and props.isChecked == 'true') ? ' checked="checked"' : '' %}
-{% set _required = (props.isRequired is defined and props.isRequired == 'true') ? ' required="true"' : '' %}
-{% set _disabledClass = (props.isDisabled is defined and props.isDisabled == 'true') ? ' ' ~ _className ~ '--disabled' : '' %}
-{% set _validationStateClass = (props.validationState is defined and props.validationState is not empty) ? ' ' ~ _className ~ '--' ~ props.validationState : '' %}
-{% set _value = (props.value is defined) ? props.value : '' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
-
-<label for={{ _id }} class="{{ _className }}{{ _disabledClass }}{{ _validationStateClass }}{{ _class }}">
+<label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props) }}
         type="checkbox"
         id="{{ _id }}"
-        name="{{ _inputName }}"
-        class="{{ _InputClass }}"
-        {{ _checked|raw }}
-        {{ _disabled|raw }}
-        {{ _required|raw }}
-        value="{{ _value }}"
+        name="{{ _name }}"
+        class="{{ _inputClassName }}"
+        {{ _checkedAttr | raw }}
+        {{ _disabledAttr | raw }}
+        {{ _requiredAttr | raw }}
+        {{ _valueAttr | raw }}
     />
-    <span class="{{ _textClass }}">
-        <span class="{{ _labelClass }}{{ _labelClassHidden }}{{ _labelClassRequired }}">{{ _label | raw }}</span>
-        {% if props.message is defined and props.message is not empty %}<span class="{{ _className }}__message">{{ props.message | raw }}</span>{% endif %}
+    <span class="{{ _textClassName }}">
+        <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+        {% if _message %}<span class="{{ _messageClassName }}">{{ _message | raw }}</span>{% endif %}
     </span>
 </label>

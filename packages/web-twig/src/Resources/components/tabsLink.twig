@@ -6,18 +6,18 @@
 {%- set _isSelected = props.isSelected | default(false) -%}
 
 {# Class names #}
-{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : '' -%}
+{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs__link' -%}
 
 {# Attributes #}
 {%- set _ariaSelectedAttr = _isSelected ? 'true' : 'false' -%}
-{%- set _ariaControlsAttr = _ariaTarget ? 'aria-controls=' ~ _ariaTarget : '' -%}
-{%- set _dataTargetAttr = _ariaTarget ? 'data-target=#' ~ _ariaTarget : '' -%}
-{%- set _dataToggleAttr = _href ? '' : 'data-toggle=tabs' -%}
-{%- set _hrefAttr = _href ? 'href=' ~ _href : '' -%}
-{%- set _idAttr = _id ? ' id=' ~ _id : '' -%}
-{%- set _roleAttr = _href ? 'role=tab' : '' -%}
-{%- set _typeAttr = _href ? '' : 'type=button' -%}
+{%- set _ariaControlsAttr = _ariaTarget ? 'aria-controls=' ~ _ariaTarget : null -%}
+{%- set _dataTargetAttr = _ariaTarget ? 'data-target=#' ~ _ariaTarget : null -%}
+{%- set _dataToggleAttr = _href ? null : 'data-toggle=tabs' -%}
+{%- set _hrefAttr = _href ? 'href=' ~ _href : null -%}
+{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
+{%- set _roleAttr = _href ? 'role=tab' : null -%}
+{%- set _typeAttr = _href ? null : 'type=button' -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}

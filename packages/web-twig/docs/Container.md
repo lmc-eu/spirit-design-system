@@ -2,8 +2,16 @@
 
 This is Twig implementation of the [Container] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<Container>
+    Content
+</Container>
+```
+
+Without lexer:
+
 ```twig
 {% embed "@spirit/container.twig" %}
     {% block content %}
@@ -12,9 +20,13 @@ pure implementation:
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<Container>Content</Container>
-```
+## API
 
-[Container]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Container
+| Prop name     | Type           | Default   | Required | Description         |
+|---------------|----------------|-----------|----------|---------------------|
+| `class`       | `string`       | `null`    | no       | Custom CSS class    |
+
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
+
+[Container]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Container

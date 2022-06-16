@@ -1,10 +1,13 @@
-{% set _className = _spiritClassPrefix ~ 'Header__link' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _rootClassName = _spiritClassPrefix ~ 'Header__link' %}
+{% set _class = (props.class is defined) ? props.class : '' %}
 {% set _href = (props.href is defined) ? props.href : '#' %}
 {% set _target = (props.target is defined) ? ' target="' ~ props.target ~ '"' : '' %}
 {% set _ariaLabel = (props.ariaLabel is defined) ? ' aria-label="' ~ props.ariaLabel ~ '"' : '' %}
 {% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
 
-<a href="{{ _href }}" class="{{ _className }}{{ _class }}"{{ _ariaLabel|raw }}{{ _target|raw }}{{ _onClick|raw }}>
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<a href="{{ _href }}" {{ classProp(_classNames) }} {{ _ariaLabel | raw }}{{ _target | raw }}{{ _onClick | raw }}>
 {% block content %}{% endblock %}
 </a>

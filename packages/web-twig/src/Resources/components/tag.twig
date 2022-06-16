@@ -6,11 +6,14 @@
 {%- set _elementType = props.elementType | default('span') -%}
 
 {# Class names #}
-{%- set _rootclassName = _spiritClassPrefix ~ 'Tag' -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Tag' -%}
 {%- set _colorClassName = _spiritClassPrefix ~ 'Tag--' ~ _color -%}
 {%- set _sizeClassName = _spiritClassPrefix ~ 'Tag--' ~ _size -%}
 {%- set _themeClassName = _spiritClassPrefix ~ 'Tag--' ~ _theme -%}
 
-<{{ _elementType }} class="{{ _rootclassName }} {{ _colorClassName }} {{ _sizeClassName }} {{ _themeClassName }} {{ _class }}">
-{%- block content %}{% endblock %}
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _sizeClassName, _themeClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+{%- block content %}{% endblock -%}
 </{{ _elementType }}>

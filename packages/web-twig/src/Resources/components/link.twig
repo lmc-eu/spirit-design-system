@@ -1,13 +1,35 @@
-{% set _className = _spiritClassPrefix ~ 'link' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
-{% set _color = (props.color is defined) ? _className ~ '-' ~ props.color : _className ~ '-primary' %}
-{% set _disabled = props.isDisabled is defined and props.isDisabled == 'true'  ? ' ' ~  _className ~ '-disabled' : '' %}
-{% set _underlined = props.isUnderlined is defined and props.isUnderlined == 'true'  ? ' ' ~  _className ~ '-underlined' : '' %}
-{% set _href = (props.href is defined) ? props.href : '#' %}
-{% set _title = (props.title is defined) ? ' title="' ~ props.title ~ '"' : '' %}
-{% set _target = (props.target is defined) ? ' target="' ~ props.target ~ '"' : '' %}
-{% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('primary') -%}
+{%- set _href = props.href -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isUnderlined = props.isUnderlined | default(false) -%}
+{%- set _onClick = props.onClick | default(null) -%}
+{%- set _target = props.target | default(null) -%}
+{%- set _title = props.title | default(null) -%}
 
-<a{{ mainProps(props) }} href="{{ _href }}"{{ _title|raw }} class="{{ _color }}{{ _disabled }}{{ _underlined }}{{ _class }}"{{ _target|raw }}{{ _onClick|raw }}>
-{% block content %}{% endblock %}
+{# Class names #}
+{%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'link' -%}
+{%- set _rootDisabledClassName = _isDisabled == 'true' ? _spiritClassPrefix ~ 'link-disabled' : null -%}
+{%- set _rootUnderlinedClassName = _isUnderlined == 'true' ? _spiritClassPrefix ~ 'link-underlined' : null -%}
+
+{# Attributes #}
+{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
+{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
+{%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _class ] -%}
+
+<a
+    {{ mainProps(props) }}
+    href="{{ _href }}"
+    {{ classProp(_classNames) }}
+    {{ _onClickAttr | raw }}
+    {{ _targetAttr | raw }}
+    {{ _titleAttr | raw }}
+>
+    {%- block content %}{% endblock %}
 </a>
+

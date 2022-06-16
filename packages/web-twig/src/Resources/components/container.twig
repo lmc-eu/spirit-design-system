@@ -1,6 +1,12 @@
-{% set _className = _spiritClassPrefix ~ 'Container' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{# API #}
+{%- set _class = props.class | default(null) -%}
 
-<div class="{{ _className }}{{ _class }}">
-{%- block content %}{% endblock %}
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Container' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<div {{ mainProps(props) }} {{ classProp(_classNames) }}>
+    {%- block content %}{% endblock -%}
 </div>
