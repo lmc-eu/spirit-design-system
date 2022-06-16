@@ -1,6 +1,9 @@
-{% set _className = _spiritClassPrefix ~ 'Header__nav' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _rootClassName = _spiritClassPrefix ~ 'Header__nav' %}
+{% set _class = (props.class is defined) ? props.class : '' %}
 
-<ul class="{{ _className }}{{ _class }}">
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<ul {{ classProp(_classNames) }}>
 {% block content %}{% endblock %}
 </ul>
