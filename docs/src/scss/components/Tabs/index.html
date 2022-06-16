@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Spirit Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      .example-box {
+        min-height: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #0b1c21;
+      }
+
+      .example-box:not(:empty) {
+        padding: 0.25rem;
+      }
+
+      .example-CheckboxField-grid, .example-TextField-grid {
+          display: grid;
+          grid-template-columns: 25rem;
+      }
+
+      .example-TextField-grid {
+          gap: 1.5rem;
+      }
+    </style>
+    <script type="module" crossorigin src="/spirit-design-system/assets/Password.838d9d7c.js"></script>
+    <link rel="stylesheet" href="/spirit-design-system/assets/index.20810fdb.css">
+  </head>
+  <body class="typography-body-medium-text-regular text-primary">
+    <section>
+      <div class="Container">
+          <h2 class="typography-heading-medium-text mt-1100 mb-800">Tabs</h2>
+          <ul class="Tabs" role="tablist">
+            <li class="Tabs__item">
+              <a
+                href="#pane1"
+                class="Tabs__link is-selected"
+                role="tab"
+                aria-selected="true"
+                id="pane1-tab"
+                data-toggle="tab"
+                data-target="#pane1"
+                aria-controls="pane1"
+              >
+                Item Selected
+              </a>
+            </li>
+            <li class="Tabs__item">
+              <a
+                href="#pane2"
+                class="Tabs__link"
+                role="tab"
+                aria-selected="false"
+                id="pane2-tab"
+                data-toggle="tab"
+                data-target="#pane2"
+                aria-controls="pane2"
+              >
+                Item
+              </a>
+            </li>
+            <li class="Tabs__item">
+              <a href="https://www.example.com" class="Tabs__link">Item Link</a>
+            </li>
+            <li class="Tabs__item d-none d-desktop-block">
+              <a href="https://www.example.com" class="Tabs__link">Item Link Only Desktop</a>
+            </li>
+          </ul>
+          <div id="pane1" class="Tabs-pane is-selected" role="tabpanel" aria-hidden="false" aria-labelledby="pane1-tab">
+            Pane 1
+          </div>
+          <div id="pane2" class="Tabs-pane" role="tabpanel" aria-hidden="true" aria-labelledby="pane2-tab">Pane 2</div>
+      </div>
+    </section>
+  </body>
+</html>
