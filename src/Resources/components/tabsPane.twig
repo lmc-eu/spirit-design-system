@@ -5,12 +5,12 @@
 {%- set _label = props.label | default(null) -%}
 
 {# Class names #}
-{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : '' -%}
+{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs-pane' -%}
 
 {# Attributes #}
-{%- set _ariaLabelAttr = _label ? ' aria-labelledby=' ~  _label : '' -%}
-{%- set _idAttr = _id ? ' id=' ~ _id : '' -%}
+{%- set _ariaLabelAttr = _label ? ' aria-labelledby=' ~  _label : null -%}
+{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}

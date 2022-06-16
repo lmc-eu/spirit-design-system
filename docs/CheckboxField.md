@@ -2,8 +2,33 @@
 
 This is Twig implementation of the [CheckboxField] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<CheckboxField 
+    id="example"
+    label="Label"
+    name="example"
+/>
+
+```
+
+Advanced example usage:
+
+```html
+<CheckboxField
+    id="example2"
+    isChecked
+    isRequired
+    messsage="validation failed"
+    name="example2"
+    validationState="error"
+/>
+
+```
+
+Without lexer:
+
 ```twig
 {% include "@spirit/checkboxField.twig" with { props: {
     id: "example",
@@ -15,25 +40,24 @@ pure implementation:
 }} %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<CheckboxField id="example" name="example" isRequired isChecked validationState="error" messsage="validation failed" />
-```
+## API
 
-## Available props
+| Prop name         | Type                          | Default   | Required | Description                    |
+|-------------------|-------------------------------|-----------|----------|--------------------------------|
+| `class`           | `string`                      | `null`    | no       | Custom CSS class               |
+| `id`              | `string`                      | `null`    | no       | Input and label identification |
+| `isChecked`       | `bool`                        | `false`   | no       | If true, input is checked      |
+| `isDisabled`      | `bool`                        | `false`   | no       | If true, input is disabled     |
+| `isLabelHidden`   | `bool`                        | `false`   | no       | If true, label is hidden       |
+| `isRequired`      | `bool`                        | `false`   | no       | If true, input is required     |
+| `label`           | `string`                      | —         | yes      | Label text                     |
+| `message`         | `string`                      | `null`    | no       | Validation or help message     |
+| `name`            | `string`                      | `null`    | no       | Input name                     |
+| `validationState` | `success`, `warning`, `error` | `null`    | no       | Type of validation state       |
+| `value`           | `string`                      | `null`    | no       | Input value                    |
 
-| Name              | Type      | Description                    |
-|-------------------|-----------|--------------------------------|
-| `id`              | string    | Input and label identification |
-| `name`            | string    | Input name                     |
-| `label`           | string    | Label text                     |
-| `value`           | string    | Input value                    |
-| `message`         | string    | Validation or help message     |
-| `isDisabled`      | boolean   | Whether is field disabled      |
-| `isRequired`      | boolean   | Whether is field required      |
-| `isChecked`       | boolean   | Whether is field checked       |
-| `validationState` | `error`   | Type of validation state       |
-| `isLabelHidden`   | boolean   | Whether is label hidden        |
-| `class`           | string    | Additional class name          |
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
 
-[CheckboxField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/CheckboxField
+[CheckboxField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/CheckboxField

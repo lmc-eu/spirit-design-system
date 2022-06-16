@@ -1,13 +1,31 @@
-{% set _className = _spiritClassPrefix ~ 'Button' %}
-{% set _color = (props.color is defined) ? ' ' ~ _className ~ '--' ~ props.color : ' ' ~  _className ~ '--primary' %}
-{% set _block = props.isBlock is defined and props.isBlock == 'true'  ? ' ' ~ _className ~ '--block' : '' %}
-{% set _square = props.isSquare is defined and props.isSquare == 'true' ? ' ' ~ _className ~ '--square' : '' %}
-{% set _type = (props.type is defined) ? props.type : 'button' %}
-{% set _disabled = props.isDisabled is defined and props.isDisabled == 'true'  ? ' disabled="true"' : '' %}
-{% set _ariaLabel = (props.ariaLabel is defined) ? ' aria-label="' ~ props.ariaLabel ~ '"' : '' %}
-{% set _onClick = (props.onClick is defined) ? ' onclick="' ~ props.onClick ~'"' : '' %}
-{% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('primary') -%}
+{%- set _isBlock = props.isBlock | default(false) -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isSquare = props.isSquare | default(false) -%}
+{%- set _onClick = props.onClick | default(null) -%}
+{%- set _type = props.type | default('button') -%}
 
-<button{{ mainProps(props) }} class="{{ _className }}{{ _color }}{{ _block }}{{ _square }}{{ _class }}" type="{{ _type }}"{{ _disabled|raw }}{{ _ariaLabel|raw }}{{ _onClick|raw }}>
-  {%- block content %}{% endblock %}
+{# Class names #}
+{%- set _colorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
+{%- set _rootBlockClassName = _isBlock == 'true' ? _spiritClassPrefix ~ 'Button--block' : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
+{%- set _rootSquareClassName = _isSquare == 'true' ? _spiritClassPrefix ~ 'Button--square' : null -%}
+
+{# Attributes #}
+{%- set _disabledAttr = _isDisabled == 'true' ? 'disabled' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
+
+<button
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    type="{{ _type }}"
+    {{ _disabledAttr | raw }}
+    {{ _onClickAttr | raw }}
+>
+    {%- block content %}{% endblock %}
 </button>
