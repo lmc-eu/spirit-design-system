@@ -2,8 +2,22 @@
 
 This is Twig implementation of the [Heading] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<Heading>
+    Heading
+</Heading>
+```
+
+Advanced example usage:
+
+```html
+<Heading size="large" elementType="h2">Text content</Heading>
+```
+
+Without lexer:
+
 ```twig
 {% embed "@spirit/heading.twig" with { props: {
     size: 'medium'
@@ -14,16 +28,15 @@ pure implementation:
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<Heading size="large">Text content</Heading>
-```
+## API
 
-## Available props
+| Prop name     | Type                                          | Default  | Required | Description        |
+|---------------|-----------------------------------------------|----------|----------|--------------------|
+| `class`       | `string`                                      | `null`   | no       | Custom CSS class   |
+| `size`        | `xlarge`, `large`, `medium`, `small`, `xmall` | `medium` | no       | Size of the text   |
+| `elementType` | `string`                                      | `div`    | no       | HTML tag to render |
 
-| Name          | Type                                          | Default  | Description      |
-| ------------- | --------------------------------------------- | -------- | ---------------- |
-| `elementType` | `React.Element`                               | `div`    | HTML tag,        |
-| `size`        | `xlarge`, `large`, `medium`, `small`, `xmall` | `medium` | Size of the text |
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
 
-[Tag]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
+[Heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading

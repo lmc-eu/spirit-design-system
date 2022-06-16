@@ -7,6 +7,9 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Pill' -%}
 {%- set _colorClassName = _spiritClassPrefix ~ 'Pill--' ~ _color -%}
 
-<{{ _elementType }} class="{{ _rootClassName }} {{ _colorClassName }} {{ _class }}">
-{%- block content %}{% endblock %}
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+{%- block content %}{% endblock -%}
 </{{ _elementType }}>

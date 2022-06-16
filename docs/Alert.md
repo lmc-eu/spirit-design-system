@@ -2,15 +2,25 @@
 
 This is Twig implementation of the [Alert] component.
 
-## Examples
-pure implementation:
-```twig
-{% embed "@spirit/alert.twig" %}
-    {% block content %}
-        Alert
-    {% endblock %}
-{% endembed %}
+Basic example usage:
 
+```html
+<Alert>
+    Alert
+</Alert>
+```
+
+Advanced example usage:
+
+```html
+<Alert color="danger" elementType="span">
+    Danger Alert
+</Alert>
+```
+
+Without lexer:
+
+```twig
 {% embed "@spirit/alert.twig" with { props: {
     color: 'danger'
     elementType: 'span'
@@ -21,21 +31,15 @@ pure implementation:
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<Alert>
-    Alert
-</Alert>
-<Alert color="danger" elementType="span">
-  Danger Alert
-</Alert>
-```
+## API
 
-## Available props
+| Prop name     | Type                | Default   | Required | Description        |
+|---------------|---------------------|-----------|----------|--------------------|
+| `class`       | `string`            | `null`    | no       | Custom CSS class   |
+| `color`       | `success`, `danger` | `success` | no       | Color variant      |
+| `elementType` | `string`            | `div`     | no       | HTML tag to render |
 
-| Name          | Type                | Description                       |
-|---------------|---------------------|-----------------------------------|
-| `color`       | `success`, `danger` | Color variant of the Alert        |
-| `elementType` | HTML element        | Element type to use for the Alert |
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
 
-[Alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Alert
+[Alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert
