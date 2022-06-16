@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from './scripts/prepareDist';
 
@@ -25,6 +25,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         ...getNestedDirs('src/scss/components', 'index.html'),
+        helpers: resolve(__dirname, 'src/scss/helpers/index.html'),
       },
     },
   },
