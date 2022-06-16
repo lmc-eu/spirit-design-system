@@ -2,30 +2,42 @@
 
 This is Twig implementation of the [Pill] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<Pill>3</Pill>
+```
+
+Advanced example usage:
+
+```html
+<Pill color="secondary" elementType="div">
+    333
+</Pill>
+```
+
+Without lexer:
+
 ```twig
-{% embed "@spirit/Pill.twig" with { props: {
-    color: 'secondary',
+{% embed "@spirit/pill.twig" with { props: {
+    color: 'secondary'
     elementType: 'div'
 }} %}
     {% block content %}
-        3
+          333
     {% endblock %}
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<Pill color="secondary" elementType="div">333</Pill>
-```
+## API
 
-## Available props
+| Prop name     | Type                    | Default    | Required | Description        |
+|---------------|-------------------------|------------|----------|--------------------|
+| `class`       | `string`                | `null`     | no       | Custom CSS class   |
+| `color`       | `selected`, `secondary` | `selected` | no       | Color variant      |
+| `elementType` | `string`                | `span`     | no       | HTML tag to render |
 
-| name        | type            | default value |
-|-------------|-----------------|---------------|
-| color       | `string`        | selected      |
-| elementType | `HTML element ` | span          |
-| class       | `string`        | undefined     |
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
 
-[Pill]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Pill
+[Pill]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pill

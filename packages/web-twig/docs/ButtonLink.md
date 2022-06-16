@@ -2,8 +2,26 @@
 
 This is Twig implementation of the [ButtonLink] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<ButtonLink href="#">Primary ButtonLink</ButtonLink>
+```
+
+Advanced example usage:
+
+```html
+<ButtonLink
+    color="primary"
+    href="#"
+    isBlock
+>
+    Primary block ButtonLink
+</ButtonLink>
+```
+
+Without lexer:
+
 ```twig
 {% embed "@spirit/buttonLink.twig" with { props: {
     color: 'primary',
@@ -15,26 +33,21 @@ pure implementation:
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<ButtonLink href="#" color="primary">Primary ButtonLink</ButtonLink>
-```
+## API
 
-## Available props
+| Prop name    | Type                                                     | Default   | Required | Description                                              |
+|--------------|----------------------------------------------------------|-----------|----------|----------------------------------------------------------|
+| `class`      | `string`                                                 | `null`    | no       | Custom CSS class                                         |
+| `color`      | `primary`, `secondary`, `tertiary`, `inverted`, `danger` | `primary` | no       | Color variant                                            |
+| `href`       | `string`                                                 | —         | yes      | Link URL                                                 |
+| `isBlock`    | `bool`                                                   | `false`   | no       | Span the element to the full width of its parent         |
+| `isDisabled` | `bool`                                                   | `false`   | no       | If true, ButtonLink is disabled                          |
+| `isSquare`   | `bool`                                                   | `false`   | no       | If true, ButtonLink is square, usually only with an icon |
+| `onClick`    | `string`                                                 | `null`    | no       | JS function to call on click                             |
+| `target`     | `string`                                                 | `null`    | no       | Link target                                              |
+| `title`      | `string`                                                 | `null`    | no       | Optional title to display on hover                       |
 
-| name       | type      | default value | description                                 |
-|------------|-----------|---------------|---------------------------------------------|
-| color      | `string`  | primary       | its possible to use all theme colors        |
-| href       | `string`  | #             | anchor href link                            |
-| title      | `string`  | undefined     | anchor link title                           |
-| target     | `string`  | __self        | anchor target                               |
-| isBlock    | `boolean` | false         | span the full width of a parent             |
-| isSquare   | `boolean` | false         | if the button only has an icon              |
-| isDisabled | `boolean` | false         |                                             |
-| ariaLabel  | `string`  | undefined     | Accessible Rich Internet Applications label |
-| onClick    | `string`  | undefined     | execute a JavaScript when a link is clicked |
-| class      | `string`  | undefined     | property to extend with custom classes      |
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
 
-On this component it's possible to insert property `id`, `data-*` and `aria-*` properties.
-
-[Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/ButtonLink
+[Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
