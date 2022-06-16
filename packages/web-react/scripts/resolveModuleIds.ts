@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies, no-shadow, no-console */
 import * as fs from 'fs';
 import * as path from 'path';
-import requireResolve from 'resolve';
 import * as recast from 'recast';
+import requireResolve from 'resolve';
 import { distDir, eachFile, reparse, reprint } from './helpers';
 
 // The primary goal of the 'npm run resolve' script is to make ECMAScript

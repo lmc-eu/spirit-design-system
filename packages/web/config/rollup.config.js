@@ -19,7 +19,11 @@ const plugins = [
     // Include the helpers in the bundle, at most one copy of each
     babelHelpers: 'bundled',
   }),
-  typescript({ target: 'es6' }),
+  typescript({
+    target: 'es6',
+    compilerOptions: { rootDir: './src' },
+    exclude: ['**/__tests__', '**/*.test.ts'],
+  }),
 ];
 
 if (BUNDLE) {

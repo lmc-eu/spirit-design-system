@@ -2,7 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "../dist/js",
+    "outDir": "./dist/js",
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
@@ -24,10 +24,10 @@
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "typeRoots": ["../../../node_modules/@types"],
+    "typeRoots": ["../../node_modules/@types"],
     "lib": ["es2015", "dom", "dom.iterable"],
     "types": ["node", "jest"]
   },
-  "include": ["../src/**/*"],
-  "exclude": ["../node_modules", "../dist/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules", "./dist/**/*"]
 }
