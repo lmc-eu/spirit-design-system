@@ -42,7 +42,7 @@
     "test:unit": "jest --config ./config/jest.config.js",
     "test:unit:watch": "yarn test:unit --watchAll",
     "test:unit:coverage": "yarn test:unit --coverage",
-    "types": "tsc -p ./config/tsconfig.json"
+    "types": "tsc"
   },
   "dependencies": {
     "@csstools/normalize.css": "^12.0.0",

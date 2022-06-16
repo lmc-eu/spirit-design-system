@@ -76,7 +76,7 @@
     "build:esNext": "echo tsc --module esNext --outDir dist/_esNext --project ./config/tsconfig.prod.json",
     "postbuild": "yarn prepdist && yarn resolve && yarn build:cjs",
     "prepdist": "node ./scripts/prepareDist.js",
-    "types": "tsc -p ./config/tsconfig.json",
+    "types": "tsc",
     "webpack:dev": "webpack --mode development --config ./config/webpack.js --progress",
     "webpack:prod": "webpack --mode production --config ./config/webpack.js --progress",
     "webpack:browser": "webpack --mode production --config ./config/webpack.browser.js --progress",

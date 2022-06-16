@@ -2,14 +2,12 @@
   "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "../dist",
+    "outDir": "./dist",
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "es2015",
-    "target": "es2015",
     "noEmit": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -28,6 +26,6 @@
     "typeRoots": ["./node_modules/@types"],
     "lib": ["es2015", "dom", "dom.iterable"]
   },
-  "include": ["../src/**/*"],
-  "exclude": ["../node_modules", "../dist/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules", "./dist/**/*"]
 }
