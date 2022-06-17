@@ -1,0 +1,25 @@
+<html><body>
+<ul class="Tabs" role="tablist">
+      <li class="Tabs__item">
+        <button id="pane1-tab" class="Tabs__link is-selected" type="button" data-toggle="tabs" aria-selected="true">
+          Item selected
+    </button>
+  </li>
+  <li class="Tabs__item">
+        <button id="pane2-tab" class="Tabs__link" type="button" data-toggle="tabs" aria-selected="false">
+          Item
+    </button>
+  </li>
+  <li class="Tabs__item">
+        <a class="Tabs__link" href="https://www.example.com" role="tab" aria-selected="false">
+          Item link
+    </a>
+  </li>
+</ul>
+<div id="pane1" class="Tabs-pane is-selected" role="tabpanel" aria-labelledby="pane1-tab">
+      Pane 1
+</div>
+<div id="pane2" class="Tabs-pane" role="tabpanel" aria-labelledby="pane2-tab">
+      Pane 2
+</div>
+</body></html>
