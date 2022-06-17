@@ -137,4 +137,52 @@ class PropsExtensionTest extends TestCase
             ]],
         ];
     }
+
+    /**
+     * @dataProvider renderClassNamesDataProvider
+     * @param array<string> $classNames
+     * @param array<string, mixed> $expectedRenderClass
+     */
+    public function testShouldRenderclassProp(array $classNames, array $expectedRenderClass): void
+    {
+        $expectedResponse = '';
+        $environment = m::mock(Environment::class);
+
+        $environment->shouldReceive('render')
+            ->once()
+            ->with('@partials/classProp.twig', $expectedRenderClass)
+            ->andReturn($expectedResponse);
+
+        $renderResponse = $this->propsExtension->renderClassProp($environment, $classNames);
+
+        $this->assertSame($expectedResponse, $renderResponse);
+    }
+
+    /**
+     * @return array<string, array<int, array<int|string, array<int, string>|string>>>
+     */
+    public function renderClassNamesDataProvider(): array
+    {
+        return [
+            'empty props' => [[], [
+                'classNames' => [],
+            ]],
+            'one class' => [[
+                'test-class',
+            ], [
+                'classNames' => [
+                    'test-class',
+                ],
+            ]],
+            'multiple class names' => [[
+                'test-class',
+                'another-test-class',
+            ], [
+                'classNames' => [
+                    'test-class',
+                    'another-test-class',
+                ],
+            ]],
+        ];
+    }
 }

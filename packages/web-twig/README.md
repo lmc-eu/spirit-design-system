@@ -116,6 +116,7 @@ or pure original implementation
 - [CheckboxField](./docs/CheckboxField.md)
 - [Link](./docs/Link.md)
 - [Stack](./docs/Stack.md)
+- [Tabs](./docs/Tabs.md)
 - [Tag](./docs/Tag.md)
 - [Text](./docs/Text.md)
 - [TextField](./docs/TextField.md)

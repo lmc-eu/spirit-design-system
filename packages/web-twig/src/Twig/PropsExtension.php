@@ -25,6 +25,10 @@ class PropsExtension extends AbstractExtension
                 'needs_environment' => true,
                 'is_safe' => ['html'],
             ]),
+            new TwigFunction('classProp', [$this, 'renderClassProp'], [
+                'needs_environment' => true,
+                'is_safe' => ['html'],
+            ]),
         ];
     }
 
@@ -62,6 +66,16 @@ class PropsExtension extends AbstractExtension
 
         return $environment->render('@partials/inputProps.twig', [
             'allowedAttributes' => $allowedAttributes,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $classNames
+     */
+    public function renderClassProp(Environment $environment, array $classNames): string
+    {
+        return $environment->render('@partials/classProp.twig', [
+            'classNames' => $classNames,
         ]);
     }
 }
