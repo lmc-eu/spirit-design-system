@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.19.0"></a>
+
+# [0.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.18.0...@lmc-eu/spirit-web-react@0.19.0) (2022-06-23)
+
+### Chores
+
+- Move tsconfigs to package root ([ed4b357](https://github.com/lmc-eu/spirit-design-system/commit/ed4b357))
+- **repo:** Speed up monorepo scripts using Nx (refs [#265](https://github.com/lmc-eu/spirit-design-system/issues/265)) ([6c9e828](https://github.com/lmc-eu/spirit-design-system/commit/6c9e828))
+
+### Dependencies
+
+- Update all non-major dependencies ([493b4d7](https://github.com/lmc-eu/spirit-design-system/commit/493b4d7))
+- Update dependency @types/jest to v28 ([d98405d](https://github.com/lmc-eu/spirit-design-system/commit/d98405d))
+- Update dependency nanoid to v4 ([3446223](https://github.com/lmc-eu/spirit-design-system/commit/3446223))
+- **web-react:** Add React 18 into peer dependencies (refs [#333](https://github.com/lmc-eu/spirit-design-system/issues/333)) ([9b52174](https://github.com/lmc-eu/spirit-design-system/commit/9b52174))
+
+### Features
+
+- **web-react:** Support custom classes and styles via UNSAFE\_ props ([fff2c35](https://github.com/lmc-eu/spirit-design-system/commit/fff2c35))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.18.0"></a>
 
 # [0.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.17.0...@lmc-eu/spirit-web-react@0.18.0) (2022-06-06)

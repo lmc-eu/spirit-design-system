@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.21.0"></a>
+
+# [0.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.20.0...@lmc-eu/spirit-web@0.21.0) (2022-06-23)
+
+### Bug Fixes
+
+- **web:** Find related header nav element base on data target attribute ([7a9cf1e](https://github.com/lmc-eu/spirit-design-system/commit/7a9cf1e))
+- **web:** Force animation when injecting backdrop (refs [#DS-218](https://github.com/lmc-eu/spirit-design-system/issues/DS-218)) ([33842a2](https://github.com/lmc-eu/spirit-design-system/commit/33842a2))
+- **web:** Remove `is-open` class correctly from nav element ([8d93eff](https://github.com/lmc-eu/spirit-design-system/commit/8d93eff))
+
+### Chores
+
+- Move tsconfigs to package root ([ed4b357](https://github.com/lmc-eu/spirit-design-system/commit/ed4b357))
+- **repo:** Speed up monorepo scripts using Nx (refs [#265](https://github.com/lmc-eu/spirit-design-system/issues/265)) ([6c9e828](https://github.com/lmc-eu/spirit-design-system/commit/6c9e828))
+- **web:** Fix deploy to GH pages by making links relative to root ([cc00881](https://github.com/lmc-eu/spirit-design-system/commit/cc00881))
+- **web:** Fix missing helpers example on github pages ([be30348](https://github.com/lmc-eu/spirit-design-system/commit/be30348))
+
+### Code Refactoring
+
+- **web:** Introduce global types for html elements ([42c1209](https://github.com/lmc-eu/spirit-design-system/commit/42c1209))
+
+### Dependencies
+
+- Update all non-major dependencies ([493b4d7](https://github.com/lmc-eu/spirit-design-system/commit/493b4d7))
+- Update dependency @types/jest to v28 ([d98405d](https://github.com/lmc-eu/spirit-design-system/commit/d98405d))
+
+### Features
+
+- **web:** Add `list-unstyled` helper class for unstyled lists ([47c97c7](https://github.com/lmc-eu/spirit-design-system/commit/47c97c7))
+- **web:** Introduce Javascript plugin for Tabs component (refs [#DS-231](https://github.com/lmc-eu/spirit-design-system/issues/DS-231)) ([51a962c](https://github.com/lmc-eu/spirit-design-system/commit/51a962c))
+- **web:** Introduce support class name for active Tab (refs [#DS-231](https://github.com/lmc-eu/spirit-design-system/issues/DS-231)) ([943a690](https://github.com/lmc-eu/spirit-design-system/commit/943a690))
+- **web:** Introduce Tab component [#DS-230](https://github.com/lmc-eu/spirit-design-system/issues/DS-230) ([a72fa80](https://github.com/lmc-eu/spirit-design-system/commit/a72fa80))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.20.0"></a>
 
 # [0.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.19.0...@lmc-eu/spirit-web@0.20.0) (2022-06-06)
