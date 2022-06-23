@@ -6,6 +6,7 @@
 - Bugfix `isRequired` functionality in `TextField` component
 - Introduce `Pill` component
 - Introduce `Tabs` component
+- Refactor components and update their readme
 
 
 ## 1.7.0 - 2022-05-09

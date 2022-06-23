@@ -2,8 +2,26 @@
 
 This is Twig implementation of the [Link] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<Link href="#">Link<Link>
+```
+
+Advanced example usage:
+
+```html
+<Link 
+    href="#" 
+    color="primary" 
+    isUnderlined
+>
+    Primary Underlined Link
+</Link>
+```
+
+Without lexer:
+
 ```twig
 {% embed "@spirit/link.twig" with { props: {
     color: 'primary',
@@ -15,24 +33,20 @@ pure implementation:
 {% endembed %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<Link href="#" color="primary">Primary Link</Link>
-```
+## API
 
-## Available props
+| Prop name      | Type                               | Default   | Required | Description                        |
+|----------------|------------------------------------|-----------|----------|------------------------------------|
+| `class`        | `string`                           | `null`    | no       | Custom CSS class                   |
+| `color`        | `primary`, `secondary`, `inverted` | `primary` | no       | Color variant                      |
+| `href`         | `string`                           | —         | yes      | Link URL                           |
+| `isDisabled`   | `bool`                             | `false`   | no       | If true, Link is disabled          |
+| `isUnderlined` | `bool`                             | `false`   | no       | If true, Link is underlined        |
+| `onClick`      | `string`                           | `null`    | no       | JS function to call on click       |
+| `target`       | `string`                           | `null`    | no       | Link target                        |
+| `title`        | `string`                           | `null`    | no       | Optional title to display on hover |
 
-| name         | type      | default value | description                                 |
-|--------------|-----------|---------------|---------------------------------------------|
-| color        | `string`  | primary       | its possible to use all theme colors        |
-| href         | `string`  | #             | anchor href link                            |
-| title        | `string`  | undefined     | anchor link title                           |
-| target       | `string`  | __self        | anchor target                               |
-| isUnderlined | `boolean` | false         | if the link is underlined                   |
-| isDisabled   | `boolean` | false         |                                             |
-| onClick      | `string`  | undefined     | execute a JavaScript when a link is clicked |
-| class        | `string`  | undefined     | property to extend with custom classes      |
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility.
 
-On this component it's possible to insert property `id`, `data-*` and `aria-*` properties.
-
-[Tag]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link
+[Link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link

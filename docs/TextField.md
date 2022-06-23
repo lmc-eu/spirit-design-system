@@ -2,8 +2,34 @@
 
 This is Twig implementation of the [TextField] component.
 
-## Examples
-pure implementation:
+Basic example usage:
+
+```html
+<TextField 
+    id="example"
+    label="Label"
+    name="example"
+/>
+
+```
+
+Advanced example usage:
+
+```html
+<TextField 
+    id="example2"
+    isRequired
+    messsage="validation failed"
+    name="example2"
+    placeholder="Placeholder"
+    type="password"
+    validationState="error" 
+/>
+
+```
+
+Without lexer:
+
 ```twig
 {% include "@spirit/textField.twig" with { props: {
     id: "example",
@@ -15,28 +41,26 @@ pure implementation:
 }} %}
 ```
 
-With Html syntax lexer (enabled by default):
-```twig
-<TextField id="example" type="text" name="example" isRequired validationState="error" messsage="validation failed" />
-<TextField id="example2" type="password" name="example2" isRequired validationState="error" messsage="validation failed" />
-```
+## API
 
-## Available props
+| Prop name         | Type                          | Default   | Required | Description                                                |
+|-------------------|-------------------------------|-----------|----------|------------------------------------------------------------|
+| `class`           | `string`                      | `null`    | no       | Custom CSS class                                           |
+| `id`              | `string`                      | `null`    | no       | Input and label identification                             |
+| `isDisabled`      | `bool`                        | `false`   | no       | If true, input is disabled                                 |
+| `isFluid`         | `bool`                        | `false`   | no       | If true, the element spans to the full width of its parent |
+| `isLabelHidden`   | `bool`                        | `false`   | no       | If true, label is hidden                                   |
+| `isRequired`      | `bool`                        | `false`   | no       | If true, input is required                                 |
+| `label`           | `string`                      | —         | yes      | Label text                                                 |
+| `message`         | `string`                      | `null`    | no       | Validation or help message                                 |
+| `name`            | `string`                      | `null`    | no       | Input name                                                 |
+| `placeholder`     | `string`                      | `null`    | no       | Input placeholder                                          |
+| `type`            | `text`, `password`, `email`   | `success` | no       | Input type                                                 |
+| `validationState` | `success`, `warning`, `error` | `null`    | no       | Type of validation state                                   |
+| `value`           | `string`                      | `null`    | no       | Input value                                                |
 
-| Name              | Type                          | Description                    |
-|-------------------|-------------------------------|--------------------------------|
-| `id`              | string                        | Input and label identification |
-| `name`            | string                        | Input name                     |
-| `type`            | `text`, `password`, `email`   | Input type                     |
-| `label`           | string                        | Label text                     |
-| `placeholder`     | string                        | Input placeholder              |
-| `value`           | string                        | Input value                    |
-| `message`         | string                        | Validation or help message     |
-| `isDisabled`      | boolean                       | Whether is field disabled      |
-| `isFluid`         | boolean                       | Whether is fluid               |
-| `isRequired`      | boolean                       | Whether is field required      |
-| `validationState` | `success`, `warning`, `error` | Type of validation state       |
-| `isLabelHidden`   | boolean                       | Whether is label hidden        |
-| `class`           | string                        | Additional class name          |
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
 
-[TextField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/TextField
+[TextField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField
