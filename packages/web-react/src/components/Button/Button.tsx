@@ -1,5 +1,5 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
 import { SpiritButtonProps } from '../../types';
 import { useButtonAriaProps } from './useButtonAriaProps';
@@ -17,11 +17,16 @@ const defaultProps = {
 export const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'button', children, ...restProps } = props;
   const { buttonProps } = useButtonAriaProps(props);
-  const { classProps } = useButtonStyleProps(restProps);
-  const { styleProps } = useStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
-    <ElementTag {...styleProps} {...buttonProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag
+      {...otherProps}
+      {...styleProps}
+      {...buttonProps}
+      className={classNames(classProps, styleProps.className)}
+    >
       {children}
     </ElementTag>
   );

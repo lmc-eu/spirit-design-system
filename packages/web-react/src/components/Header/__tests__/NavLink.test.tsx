@@ -4,6 +4,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import NavLink from '../NavLink';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('NavLink', () => {
   classNamePrefixProviderTest(
@@ -15,6 +16,11 @@ describe('NavLink', () => {
   stylePropsTest(
     withHeader((props) => <NavLink href="/" {...props} data-testid="navlink-test" />),
     'navlink-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <NavLink href="/" {...props} />),
+    'a',
   );
 
   it('should render text children', () => {

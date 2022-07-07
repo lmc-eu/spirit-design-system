@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { PillColor } from '../../../types';
 import Pill from '../Pill';
 
@@ -10,6 +11,8 @@ describe('Pill', () => {
   classNamePrefixProviderTest(Pill, 'Pill');
 
   stylePropsTest(Pill);
+
+  restPropsTest(Pill, 'span');
 
   it('should have default classname', () => {
     const dom = render(<Pill />);

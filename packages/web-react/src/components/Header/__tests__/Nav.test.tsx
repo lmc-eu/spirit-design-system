@@ -4,6 +4,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import Nav from '../Nav';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('Nav', () => {
   classNamePrefixProviderTest(
@@ -19,6 +20,11 @@ describe('Nav', () => {
       </Nav>
     )),
     'nav-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <Nav {...props}>Hello World</Nav>),
+    'ul',
   );
 
   it('should render text children', () => {

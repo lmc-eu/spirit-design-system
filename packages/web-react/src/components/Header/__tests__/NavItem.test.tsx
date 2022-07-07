@@ -4,6 +4,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import NavItem from '../NavItem';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('NavItem', () => {
   classNamePrefixProviderTest(
@@ -19,6 +20,11 @@ describe('NavItem', () => {
       </NavItem>
     )),
     'navitem-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <NavItem {...props}>Hello World</NavItem>),
+    'li',
   );
 
   it('should render text children', () => {

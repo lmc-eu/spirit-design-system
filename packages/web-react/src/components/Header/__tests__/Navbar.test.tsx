@@ -5,6 +5,7 @@ import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils
 import { HeaderContextType } from '../HeaderContext';
 import Navbar, { NavbarVariant } from '../Navbar';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('Navbar', () => {
   classNamePrefixProviderTest(
@@ -16,6 +17,11 @@ describe('Navbar', () => {
   stylePropsTest(
     withHeader((props) => <Navbar {...props} data-testid="navbar-test" />),
     'navbar-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <Navbar {...props} />),
+    'nav',
   );
 
   it('should render text children', () => {

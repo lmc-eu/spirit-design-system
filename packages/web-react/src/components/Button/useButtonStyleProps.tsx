@@ -35,5 +35,6 @@ export function useButtonStyleProps<T extends ElementType = 'button'>(props: Spi
 
   return {
     classProps,
+    props: restProps,
   };
 }

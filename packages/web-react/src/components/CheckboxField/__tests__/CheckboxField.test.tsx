@@ -1,14 +1,17 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import CheckboxField from '../CheckboxField';
+import { render } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import CheckboxField from '../CheckboxField';
 
 describe('CheckboxField', () => {
   classNamePrefixProviderTest(CheckboxField, 'CheckboxField');
 
   stylePropsTest(CheckboxField);
+
+  restPropsTest(CheckboxField, 'input');
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField />);
