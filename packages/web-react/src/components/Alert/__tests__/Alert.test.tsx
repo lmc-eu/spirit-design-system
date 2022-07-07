@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { AlertColor } from '../../../types';
 import Alert from '../Alert';
 
@@ -10,6 +11,8 @@ describe('Alert', () => {
   classNamePrefixProviderTest(Alert, 'Alert');
 
   stylePropsTest(Alert);
+
+  restPropsTest(Alert, 'div');
 
   it('should have default classname', () => {
     const dom = render(<Alert />);

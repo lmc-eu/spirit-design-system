@@ -21,10 +21,10 @@ const defaultProps = {
 export const Stack = <T extends ElementType = 'div'>(props: StackProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;
   const stackClass = useClassNamePrefix('Stack');
-  const { styleProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <ElementTag {...styleProps} className={classNames(stackClass, styleProps.className)}>
+    <ElementTag {...otherProps} {...styleProps} className={classNames(stackClass, styleProps.className)}>
       {children}
     </ElementTag>
   );

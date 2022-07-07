@@ -1,29 +1,34 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { SpiritButtonProps } from '../../types';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
+import { SpiritButtonProps } from '../../types';
 import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
 
 const defaultProps = {
   color: 'primary',
   href: '#',
-  block: false,
-  disabled: false,
+  isBlock: false,
+  isDisabled: false,
   isSquare: false,
   elementType: 'a',
 };
 
 export const ButtonLink = <T extends ElementType = 'a'>(props: SpiritButtonProps<T>): JSX.Element => {
-  const { children, ...restProps } = props;
+  const { elementType: ElementTag = 'a', children, ...restProps } = props;
   const { buttonProps } = useButtonAriaProps(props);
-  const { classProps } = useButtonStyleProps(restProps);
-  const { styleProps } = useStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
-    <a {...styleProps} {...buttonProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag
+      {...otherProps}
+      {...styleProps}
+      {...buttonProps}
+      className={classNames(classProps, styleProps.className)}
+    >
       {children}
-    </a>
+    </ElementTag>
   );
 };
 

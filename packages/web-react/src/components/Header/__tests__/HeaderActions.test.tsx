@@ -4,6 +4,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { renderWithHeaderContext, withHeader } from '../../../../tests/testUtils';
 import HeaderActions from '../HeaderActions';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('HeaderActions', () => {
   classNamePrefixProviderTest(
@@ -19,6 +20,11 @@ describe('HeaderActions', () => {
       </HeaderActions>
     )),
     'header-actions-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <HeaderActions {...props}>Hello World</HeaderActions>),
+    'div',
   );
 
   it('should render text children', () => {

@@ -1,16 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TextField from '../TextField';
+import { render } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { TextFieldType, ValidationState } from '../../../types';
+import TextField from '../TextField';
 
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
     classNamePrefixProviderTest(TextField, 'TextField');
 
     stylePropsTest(TextField);
+
+    restPropsTest(TextField, 'input');
 
     it('should have label classname', () => {
       const dom = render(<TextField type={type as TextFieldType} />);

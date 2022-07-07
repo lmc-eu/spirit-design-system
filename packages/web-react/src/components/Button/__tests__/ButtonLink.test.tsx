@@ -3,12 +3,15 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import ButtonLink from '../ButtonLink';
 
 describe('ButtonLink', () => {
   classNamePrefixProviderTest(ButtonLink, 'Button');
 
   stylePropsTest(ButtonLink);
+
+  restPropsTest(ButtonLink, 'a');
 
   it('should have default classname', () => {
     const { container } = render(<ButtonLink />);

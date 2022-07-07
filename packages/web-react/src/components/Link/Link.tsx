@@ -1,8 +1,8 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useLinkStyleProps } from './useLinkStyleProps';
-import { SpiritLinkProps } from '../../types';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
+import { SpiritLinkProps } from '../../types';
+import { useLinkStyleProps } from './useLinkStyleProps';
 
 const defaultProps = {
   color: 'primary',
@@ -11,10 +11,15 @@ const defaultProps = {
 export const Link = <T extends ElementType = 'a'>(props: SpiritLinkProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'a', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
-  const { styleProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
-    <ElementTag {...styleProps} href={restProps.href} className={classNames(classProps, styleProps.className)}>
+    <ElementTag
+      {...otherProps}
+      {...styleProps}
+      href={restProps.href}
+      className={classNames(classProps, styleProps.className)}
+    >
       {children}
     </ElementTag>
   );

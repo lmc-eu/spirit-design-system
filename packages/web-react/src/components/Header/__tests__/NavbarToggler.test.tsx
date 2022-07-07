@@ -3,6 +3,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { withHeader } from '../../../../tests/testUtils';
 import NavbarToggler from '../NavbarToggler';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
 describe('NavbarToggler', () => {
   classNamePrefixProviderTest(
@@ -14,5 +15,10 @@ describe('NavbarToggler', () => {
   stylePropsTest(
     withHeader((props) => <NavbarToggler {...props} data-testid="navbar-toggler-test" />),
     'navbar-toggler-test',
+  );
+
+  restPropsTest(
+    withHeader((props) => <NavbarToggler {...props} />),
+    'div',
   );
 });

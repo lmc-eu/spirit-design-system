@@ -1,8 +1,8 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useTextStyleProps } from './useTextStyleProps';
-import { SpiritTextProps } from '../../types';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
+import { SpiritTextProps } from '../../types';
+import { useTextStyleProps } from './useTextStyleProps';
 
 const defaultProps = {
   size: 'medium',
@@ -11,10 +11,10 @@ const defaultProps = {
 export const Text = <T extends ElementType = 'p'>(props: SpiritTextProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'p', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
-  const { styleProps } = useStyleProps(modifiedProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
-    <ElementTag {...styleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );
