@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.20.0"></a>
+
+# [0.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.19.0...@lmc-eu/spirit-web-react@0.20.0) (2022-07-07)
+
+### Dependencies
+
+- Pin dependencies ([8ba1b24](https://github.com/lmc-eu/spirit-design-system/commit/8ba1b24))
+- Update all non-major dependencies ([4429cf1](https://github.com/lmc-eu/spirit-design-system/commit/4429cf1))
+- Update all non-major dependencies ([8b2c9a9](https://github.com/lmc-eu/spirit-design-system/commit/8b2c9a9))
+
+### Features
+
+- **web-react:** Introduce Tabs components (refs [#DS-232](https://github.com/lmc-eu/spirit-design-system/issues/DS-232)) ([b88c91b](https://github.com/lmc-eu/spirit-design-system/commit/b88c91b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.19.0"></a>
 
 # [0.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.18.0...@lmc-eu/spirit-web-react@0.19.0) (2022-06-23)

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.22.0"></a>
+
+# [0.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.21.0...@lmc-eu/spirit-web@0.22.0) (2022-07-07)
+
+### Dependencies
+
+- Pin dependencies ([8ba1b24](https://github.com/lmc-eu/spirit-design-system/commit/8ba1b24))
+- Update all non-major dependencies ([4429cf1](https://github.com/lmc-eu/spirit-design-system/commit/4429cf1))
+- Update all non-major dependencies ([8b2c9a9](https://github.com/lmc-eu/spirit-design-system/commit/8b2c9a9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.21.0"></a>
 
 # [0.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.20.0...@lmc-eu/spirit-web@0.21.0) (2022-06-23)
