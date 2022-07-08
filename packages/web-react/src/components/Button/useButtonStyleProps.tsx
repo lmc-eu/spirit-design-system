@@ -9,13 +9,17 @@ import { ButtonColor, SpiritButtonProps } from '../../types';
 const getButtonColorClassname = (className: string, color: ButtonColor): string =>
   compose(applyColor<ButtonColor>(color))(className);
 
-export interface ButtonStyles {
+export interface ButtonStyles<T> {
   /** className props */
   classProps: string;
+  /** Props for the button element */
+  props: T;
 }
 
-export function useButtonStyleProps<T extends ElementType = 'button'>(props: SpiritButtonProps<T>): ButtonStyles {
-  const { color, isBlock, isDisabled, isSquare } = props;
+export function useButtonStyleProps<T extends ElementType = 'button'>(
+  props: SpiritButtonProps<T>,
+): ButtonStyles<Omit<SpiritButtonProps<T>, 'color'>> {
+  const { color, isBlock, isDisabled, isSquare, ...restProps } = props;
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;
