@@ -2,6 +2,7 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+- Require compiler as separate dependency
 
 ## 1.8.0 - 2022-07-18
 - Update `Tag` - add sizes, split theme and color classes, allow elementType change

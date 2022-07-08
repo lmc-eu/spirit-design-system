@@ -7,7 +7,6 @@ namespace Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Helper\DefinitionHelper;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Config\Definition\Dumper\YamlReferenceDumper;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Twig\Environment;
