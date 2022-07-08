@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Helper;
 
-use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
+use Lmc\TwigXBundle\Compiler\ComponentLexer;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
