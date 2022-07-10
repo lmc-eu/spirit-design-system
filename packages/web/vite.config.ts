@@ -27,6 +27,7 @@ export default defineConfig({
         ...getNestedDirs('src/scss/components', 'index.html'),
         helpers: resolve(__dirname, 'src/scss/helpers/index.html'),
       },
+      external: ['floating-ui-example.js'],
     },
   },
 });

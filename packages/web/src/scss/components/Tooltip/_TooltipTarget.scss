@@ -1,0 +1,10 @@
+@use 'tools';
+
+.TooltipTarget + .Tooltip {
+    @extend %hidden;
+}
+
+.TooltipTarget:hover + .Tooltip,
+.TooltipTarget:focus + .Tooltip {
+    @extend %visible;
+}

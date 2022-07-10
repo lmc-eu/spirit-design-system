@@ -1,0 +1,154 @@
+// 1. Although it seems pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
+//    precisely positioned in sticky tooltips, e.g. with Floating UI:
+//    https://floating-ui.com
+// 2. Reset positioning for controlled variant.
+// 3. Shift Tooltip so there is space for the arrow between Tooltip and reference element.
+
+@use 'sass:math';
+@use '../../tools/reset';
+@use '../../tools/svg';
+@use '../../tools/typography';
+@use 'theme';
+@use 'tools';
+
+.Tooltip {
+    @include typography.generate(theme.$typography);
+
+    position: absolute;
+    width: max-content;
+    max-width: theme.$max-width;
+    padding: theme.$padding;
+    text-align: left;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    color: theme.$color;
+    background-color: theme.$background-color;
+    border-radius: theme.$border-radius;
+    box-shadow: theme.$box-shadow;
+    z-index: 1;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: opacity, visibility, transform;
+        transition-duration: 0.25s;
+    }
+}
+
+// 1.
+.Tooltip__arrow {
+    position: absolute;
+    width: theme.$arrow-width;
+    height: theme.$arrow-height;
+    transform-origin: center bottom;
+    background-image: svg.escape(theme.$arrow-shape);
+}
+
+.Tooltip__close {
+    @include reset.button();
+
+    width: theme.$close-button-size;
+    height: theme.$close-button-size;
+    background-image: svg.escape(theme.$close-icon);
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.Tooltip--dismissible {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: theme.$gap;
+    align-items: center;
+    max-width: calc(#{theme.$max-width} + #{theme.$gap} + #{theme.$close-button-size});
+}
+
+// Sides
+.Tooltip--top {
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, #{-1 * theme.$arrow-height}) scale(var(--scale, 1));
+    transform-origin: bottom center;
+}
+
+.Tooltip--bottom {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, #{theme.$arrow-height}) scale(var(--scale, 1));
+    transform-origin: top center;
+}
+
+.Tooltip--left {
+    right: 100%;
+    top: 50%;
+    transform: translate(#{-1 * theme.$arrow-height}, -50%) scale(var(--scale, 1));
+    transform-origin: right center;
+}
+
+.Tooltip--right {
+    left: 100%;
+    top: 50%;
+    transform: translate(#{theme.$arrow-height}, -50%) scale(var(--scale, 1));
+    transform-origin: left center;
+}
+
+// Arrows
+.Tooltip--top > .Tooltip__arrow {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%) rotateZ(180deg);
+}
+
+.Tooltip--bottom > .Tooltip__arrow {
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0) rotateZ(0);
+}
+
+.Tooltip--left > .Tooltip__arrow {
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -100%) rotateZ(90deg);
+}
+
+.Tooltip--right > .Tooltip__arrow {
+    right: 100%;
+    top: 50%;
+    transform: translate(50%, -100%) rotateZ(-90deg);
+}
+
+// Controlled visibility
+.Tooltip.is-hidden {
+    @extend %hidden;
+}
+
+.Tooltip.is-visible {
+    @extend %visible;
+}
+
+// Controlled placement
+.Tooltip[data-placement] {
+    inset: unset; // 2.
+}
+
+.Tooltip[data-placement='top'] {
+    @extend .Tooltip--top;
+
+    transform: translate(0, #{-1 * theme.$arrow-height}); // 3.
+}
+
+.Tooltip[data-placement='bottom'] {
+    @extend .Tooltip--bottom;
+
+    transform: translate(0, #{theme.$arrow-height}); // 3.
+}
+
+.Tooltip[data-placement='left'] {
+    @extend .Tooltip--left;
+
+    transform: translate(#{-1 * theme.$arrow-height}, 0); // 3.
+}
+
+.Tooltip[data-placement='right'] {
+    @extend .Tooltip--right;
+
+    transform: translate(#{theme.$arrow-height}, 0); // 3.
+}
