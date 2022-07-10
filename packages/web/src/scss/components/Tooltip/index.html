@@ -1,0 +1,174 @@
+{{#> layout }}
+<h2 class="typography-heading-medium-text mt-1100 mb-800">Tooltip</h2>
+
+<h3 class="typography-heading-small-text mt-1100 mb-800">Static Tooltip (No Interaction)</h3>
+
+<div class="TooltipWrapper" style="max-width: 15rem; margin: 6rem auto;">
+  <div class="example-box px-600 py-500">
+    Tooltips<br />
+    all day long…
+  </div>
+  <div class="Tooltip Tooltip--top">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+  <div class="Tooltip Tooltip--right">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+  <div class="Tooltip Tooltip--bottom">
+    Hello there! There is slightly more text in this tooltip.
+    <span class="Tooltip__arrow"></span>
+  </div>
+  <div class="Tooltip Tooltip--left">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+
+<h3 class="typography-heading-small-text mt-1100 mb-800">Tooltip on Hover (Pure CSS)</h3>
+
+<div class="TooltipWrapper d-inline-block">
+  <button type="button" class="Button Button--primary TooltipTarget" aria-describedby="my-tooltip-hover-top">
+    Tooltip on top
+  </button>
+  <div id="my-tooltip-hover-top" class="Tooltip Tooltip--top">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+<div class="TooltipWrapper d-inline-block">
+  <button type="button" class="Button Button--primary TooltipTarget" aria-describedby="my-tooltip-hover-right">
+    Tooltip on right
+  </button>
+  <div id="my-tooltip-hover-right" class="Tooltip Tooltip--right">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+<div class="TooltipWrapper d-inline-block">
+  <button type="button" class="Button Button--primary TooltipTarget" aria-describedby="my-tooltip-hover-bottom">
+    Tooltip on bottom
+  </button>
+  <div id="my-tooltip-hover-bottom" class="Tooltip Tooltip--bottom">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+<div class="TooltipWrapper d-inline-block">
+  <button type="button" class="Button Button--primary TooltipTarget" aria-describedby="my-tooltip-hover-left">
+    Tooltip on left
+  </button>
+  <div id="my-tooltip-hover-left" class="Tooltip Tooltip--left">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+
+<h3 class="typography-heading-small-text mt-1100 mb-800">Tooltip on Click (JavaScript)</h3>
+
+<div class="mb-800">
+  <button
+    type="button"
+    id="tooltip-trigger"
+    class="Button Button--primary mb-800"
+    data-target="#my-js-controlled-tooltip"
+  >
+    Toggle tooltip
+  </button>
+</div>
+<div class="TooltipWrapper d-inline-block">
+  <div class="example-box px-600 py-500" aria-describedby="my-js-controlled-tooltip">
+    I have an externally-triggered tooltip
+  </div>
+  <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--top is-hidden">
+    Hello there!
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+
+<script>
+  const toggleTooltip = (event) => {
+    const tooltipElement = document.querySelector(event.currentTarget.dataset.target);
+    tooltipElement.classList.toggle('is-hidden');
+    tooltipElement.classList.toggle('is-visible');
+  };
+
+  document.querySelector('#tooltip-trigger').addEventListener('click', toggleTooltip);
+</script>
+
+<h3 class="typography-heading-small-text mt-1100 mb-800">Dismissible Tooltip [TODO JS plugin]</h3>
+<div class="TooltipWrapper d-inline-block">
+  <button class="Button Button--primary" aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</button>
+  <div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
+    Close me
+    <button
+      type="button"
+      class="Tooltip__close"
+      data-dismiss="tooltip"
+      data-target="#my-dismissible-tooltip"
+      aria-controls="my-dismissible-tooltip"
+      aria-expanded="true"
+    >
+      <span class="accessibility-hidden">Close</span>
+    </button>
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+
+<script>
+  // TODO: Replace with Spirit dismiss plugin once ready.
+  const dismissTooltip = (event) => {
+    const tooltipElement = document.querySelector(event.currentTarget.dataset.target);
+    tooltipElement.classList.add('is-hidden');
+  };
+
+  document.querySelector('[data-dismiss="tooltip"]').addEventListener('click', dismissTooltip);
+</script>
+
+<h3 id="advanced-positioning" class="typography-heading-small-text mt-1100 mb-800">Advanced Positioning</h3>
+
+<p>
+  The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
+</p>
+
+<p>
+  🖱 Try scrolling the example to see how Tooltip placement is updated.
+</p>
+
+<script type="module" src="floating-ui-example.mjs"></script>
+<style>
+  .example-viewport {
+    width: 40rem;
+    max-width: 100%;
+    height: 10rem;
+    overflow: auto;
+  }
+
+  .example-content {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    padding-block: 7rem;
+    text-align: center;
+  }
+</style>
+
+<div class="example-viewport bg-cover mb-1200">
+  <div class="example-content">
+    <button
+      type="button"
+      id="my-button"
+      class="Button Button--primary"
+      aria-describedby="my-advanced-tooltip"
+    >
+      I have a flipping tooltip!
+    </button>
+    <div id="my-advanced-tooltip" class="Tooltip" data-placement="top">
+      Hello there!
+      <span class="Tooltip__arrow"></span>
+    </div>
+  </div>
+</div>
+
+{{/ layout }}

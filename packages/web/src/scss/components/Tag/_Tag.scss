@@ -1,7 +1,7 @@
 @use 'sass:map';
+@use '../../tools/typography';
 @use 'theme';
 @use 'tools';
-@use '../../tools/typography';
 
 .Tag {
     @include typography.generate(map.get(theme.$sizes, medium, typography));
