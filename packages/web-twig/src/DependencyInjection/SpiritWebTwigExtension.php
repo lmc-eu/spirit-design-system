@@ -28,6 +28,8 @@ class SpiritWebTwigExtension extends Extension
 
     public const PARAMETER_ICONS_PATH_ALIAS = 'spirit_web_twig.icons.alias';
 
+    public const DEFAULT_TWIG_COMPONENTS_PATH = __DIR__ . '/../Resources/twig-components';
+
     public const DEFAULT_COMPONENTS_PATH = __DIR__ . '/../Resources/components';
 
     public const DEFAULT_PATH_ALIAS = 'spirit';
@@ -46,7 +48,7 @@ class SpiritWebTwigExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter(self::PARAMETER_PATHS, array_merge($config['paths'], [self::DEFAULT_COMPONENTS_PATH]));
+        $container->setParameter(self::PARAMETER_PATHS, array_merge($config['paths'], [self::DEFAULT_TWIG_COMPONENTS_PATH, self::DEFAULT_COMPONENTS_PATH]));
         $container->setParameter(self::PARAMETER_SPIRIT_CSS_CLASS_PREFIX, isset($config['spirit_css_class_prefix']) ? $config['spirit_css_class_prefix'] . '-' : null);
         $container->setParameter(self::PARAMETER_PATH_ALIAS, $config['paths_alias']);
         $container->setParameter(self::PARAMETER_HTML_SYNTAX_LEXER, (bool) $config['html_syntax_lexer']);
