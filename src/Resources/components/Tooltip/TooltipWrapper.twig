@@ -1,0 +1,9 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'TooltipWrapper' -%}
+
+<div {{ mainProps(props) }} class="{{ _rootClassName }}">
+    {% block content %}{% endblock %}
+</div>
