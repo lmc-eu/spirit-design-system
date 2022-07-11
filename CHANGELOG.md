@@ -10,6 +10,7 @@
 - Introduce `Pill` component
 - Introduce `Tabs` component
 - Refactor components and update their readme
+- Refactor components directory tree
 
 
 ## 1.7.0 - 2022-05-09
