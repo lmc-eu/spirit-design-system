@@ -120,6 +120,7 @@ or pure original implementation
 - [Tag](./docs/Tag.md)
 - [Text](./docs/Text.md)
 - [TextField](./docs/TextField.md)
+- [Tooltip](./docs/Tooltip.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
