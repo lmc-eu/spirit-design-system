@@ -23,13 +23,14 @@ class TwigHelper
         array $extendedComponentsPath = []
     ): Environment {
         $loader = new FilesystemLoader($defaultTemplatePath);
-        $paths = array_merge($extendedComponentsPath, [SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH]);
+        $paths = array_merge($extendedComponentsPath, [SpiritWebTwigExtension::DEFAULT_TWIG_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH]);
 
         foreach ($paths as $path) {
             $loader->addPath($path, $defaultAlias);
         }
 
         $loader->addPath(SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS);
+        $loader->addPath(SpiritWebTwigExtension::DEFAULT_TWIG_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS);
         $loader->addPath(SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS);
 
         $twig = new Environment($loader, [

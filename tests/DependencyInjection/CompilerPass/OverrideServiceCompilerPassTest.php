@@ -60,7 +60,7 @@ class OverrideServiceCompilerPassTest extends TestCase
      */
     public function registerTwigPathsDataProvider(): array
     {
-        $defaultPath = realpath(__DIR__ . '/../../../src/DependencyInjection') . '/../Resources/components';
+        $defaultPath = realpath(__DIR__ . '/../../../src/DependencyInjection') . '/../Resources/twig-components';
 
         return [
             'test should register random one path' => [
@@ -70,7 +70,7 @@ class OverrideServiceCompilerPassTest extends TestCase
                 ['dir1/', 'dir2'], 2,
             ],
             'test should register paths with default' => [
-                ['dir1/', 'dir2', $defaultPath], 4,
+                ['dir1/', 'dir2', $defaultPath], 3,
             ],
         ];
     }
