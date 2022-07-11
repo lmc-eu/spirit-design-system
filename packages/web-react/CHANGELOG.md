@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.20.1"></a>
+
+## [0.20.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.20.0...@lmc-eu/spirit-web-react@0.20.1) (2022-07-11)
+
+### Bug Fixes
+
+- **web-react:** Pass rest props to main element of the component ([717c4a9](https://github.com/lmc-eu/spirit-design-system/commit/717c4a9))
+- **web-react:** Substract props in type removed by button style hook ([0417518](https://github.com/lmc-eu/spirit-design-system/commit/0417518))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.20.0"></a>
 
 # [0.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.19.0...@lmc-eu/spirit-web-react@0.20.0) (2022-07-07)
