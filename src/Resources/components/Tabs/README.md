@@ -5,38 +5,38 @@ This is Twig implementation of the [Tabs] component.
 Basic example usage:
 
 ```html
-<Tabs>
-  <TabsItem>
-    <TabsLink isSelected id="pane1-tab" ariaTarget="pane1">
+<TabList>
+  <TabItem>
+    <TabLink isSelected id="pane1-tab" ariaTarget="pane1">
       Item selected
-    </TabsLink>
-  </TabsItem>
-  <TabsItem>
+    </TabLink>
+  </TabItem>
+  <TabItem>
     <TabsLink id="pane2-tab" ariaTarget="pane2">
       Item
     </TabsLink>
-  </TabsItem>
-  <TabsItem>
-    <TabsLink href="https://www.example.com">
+  </TabItem>
+  <TabItem>
+    <TabLink href="https://www.example.com">
       Item link
-    </TabsLink>
-  </TabsItem>
-</Tabs>
-<TabsPane id="pane1" isSelected label="pane1-tab">
+    </TabLink>
+  </TabItem>
+</TabList>
+<TabPane id="pane1" isSelected label="pane1-tab">
   Pane 1
-</TabsPane>
-<TabsPane id="pane2" label="pane2-tab">
+</TabPane>
+<TabPane id="pane2" label="pane2-tab">
   Pane 2
-</TabsPane>
+</TabPane>
 ```
 
 Without lexer:
 ```twig
-{% embed "@spirit/tabs.twig" %}
+{% embed "@spirit/tabList.twig" %}
     {% block content %}
-        {% embed "@spirit/tabsItem.twig" %}
+        {% embed "@spirit/tabItem.twig" %}
             {% block content %}
-                {% embed "@spirit/tabsLink.twig" with { props: {
+                {% embed "@spirit/tabLink.twig" with { props: {
                   isSelected: true,
                   id: 'panel1-tab',
                   target: 'panel1',
@@ -55,19 +55,19 @@ Without lexer:
 
 The Tabs itself consists of many components which cannot be used independently.
 
-### Tabs
+### TabList
 
 | Prop name | Type     | Default | Required | Description           |
 |-----------|----------|---------|----------|-----------------------|
 | `class`   | `string` | `null`  | no       | Additional class name |
 
-### TabsItem
+### TabItem
 
 | Prop name | Type     | Default | Required | Description           |
 |-----------|----------|---------|----------|-----------------------|
 | `class`   | `string` | `null`  | no       | Additional class name |
 
-### TabsLink
+### TabLink
 
 | Prop name    | Type      | Default | Required | Description                  |
 |--------------|-----------|---------|----------|------------------------------|
@@ -77,7 +77,7 @@ The Tabs itself consists of many components which cannot be used independently.
 | `isSelected` | `boolean` | `false` | no       | Whether is tab item selected |
 | `ariaTarget` | `string`  | `null`  | no       | Target pane of the tab item  |
 
-### TabsPane
+### TabPane
 
 | Prop name    | Type      | Default | Required | Description                    |
 |--------------|-----------|---------|----------|--------------------------------|
