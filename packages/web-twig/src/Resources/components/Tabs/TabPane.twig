@@ -1,0 +1,26 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isSelected = props.isSelected | default(false) -%}
+{%- set _label = props.label | default(null) -%}
+
+{# Class names #}
+{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Tabs-pane' -%}
+
+{# Attributes #}
+{%- set _ariaLabelAttr = _label ? ' aria-labelledby=' ~  _label : null -%}
+{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}
+
+<div
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ _idAttr }}
+    role="tabpanel"
+    {{ _ariaLabelAttr }}
+>
+    {% block content %}{% endblock %}
+</div>
