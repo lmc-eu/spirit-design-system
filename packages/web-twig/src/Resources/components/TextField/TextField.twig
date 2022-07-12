@@ -1,10 +1,10 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _isDisabled = props.isDisabled | default(false) -%}
-{%- set _isFluid = props.isFluid | default(false) -%}
-{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
-{%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
+{%- set _isFluid = props.isFluid | boolprop | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | boolprop | default(false) -%}
+{%- set _isRequired = props.isRequired | boolprop | default(false) -%}
 {%- set _label = props.label -%}
 {%- set _message = props.message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
@@ -16,18 +16,18 @@
 {# Class names #}
 {%- set _inputClassName = _spiritClassPrefix ~ 'TextField__input' -%}
 {%- set _labelClassName = _spiritClassPrefix ~ 'TextField__label' -%}
-{%- set _labelHiddenClassName = _isLabelHidden == 'true' ? _spiritClassPrefix ~ 'TextField__label--hidden' : null -%}
-{%- set _labelRequiredClassName = _isRequired == 'true' ? _spiritClassPrefix ~ 'TextField__label--required' : null -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'TextField__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'TextField__label--required' : null -%}
 {%- set _messageClassName = _spiritClassPrefix ~ 'TextField__message' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'TextField' -%}
-{%- set _rootDisabledClassName = _isDisabled == 'true' ? _spiritClassPrefix ~ 'TextField--disabled' : null -%}
-{%- set _rootFluidClassName = _isFluid == 'true' ? _spiritClassPrefix ~ 'TextField--fluid' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'TextField--disabled' : null -%}
+{%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'TextField--fluid' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'TextField--' ~ _validationState : null -%}
 
 {# Attributes #}
-{%- set _disabledAttr = _isDisabled == 'true' ? 'disabled' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _placeholderAttr = _placeholder ? 'placeholder="' ~ _placeholder ~'"' : null -%}
-{%- set _requiredAttr = _isRequired == 'true' ? 'required' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
 
 {# Miscellaneous #}

@@ -10,3 +10,7 @@ services:
   Lmc\SpiritWebTwigBundle\Twig\SvgExtension:
     tags:
       - { name: twig.extension }
+
+  Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension:
+    tags:
+      - { name: twig.extension }

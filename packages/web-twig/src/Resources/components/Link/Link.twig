@@ -2,8 +2,8 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
-{%- set _isDisabled = props.isDisabled | default(false) -%}
-{%- set _isUnderlined = props.isUnderlined | default(false) -%}
+{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
+{%- set _isUnderlined = props.isUnderlined | boolprop | default(false) -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
 {%- set _title = props.title | default(null) -%}
@@ -11,8 +11,8 @@
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'link' -%}
-{%- set _rootDisabledClassName = _isDisabled == 'true' ? _spiritClassPrefix ~ 'link-disabled' : null -%}
-{%- set _rootUnderlinedClassName = _isUnderlined == 'true' ? _spiritClassPrefix ~ 'link-underlined' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'link-disabled' : null -%}
+{%- set _rootUnderlinedClassName = _isUnderlined ? _spiritClassPrefix ~ 'link-underlined' : null -%}
 
 {# Attributes #}
 {%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}

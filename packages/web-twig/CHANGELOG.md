@@ -11,6 +11,7 @@
 - Introduce `Pill` component
 - Introduce `Tabs` component
 - Refactor components directory tree
+- Introduce filter for conversion of stringified boolean props
 
 ## 1.7.0 - 2022-05-09
 - Add Svg twig extension for optimal loading of svg files as inline

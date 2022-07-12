@@ -1,11 +1,11 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _isSelected = props.isSelected | default(false) -%}
+{%- set _isSelected = props.isSelected | boolprop | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 
 {# Class names #}
-{%- set _isSelectedClassName = _isSelected == 'true' ? 'is-selected' : null -%}
+{%- set _isSelectedClassName = _isSelected ? 'is-selected' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs-pane' -%}
 
 {# Attributes #}

@@ -1,10 +1,10 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _isChecked = props.isChecked | default(false) -%}
-{%- set _isDisabled = props.isDisabled | default(false) -%}
-{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
-{%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _isChecked = props.isChecked | boolprop | default(false) -%}
+{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | boolprop | default(false) -%}
+{%- set _isRequired = props.isRequired | boolprop | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _message = props.message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
@@ -14,18 +14,18 @@
 {# Class names #}
 {%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
 {%- set _labelClassName = _spiritClassPrefix ~ 'CheckboxField__label' -%}
-{%- set _labelHiddenClassName = _isLabelHidden == 'true' ? _spiritClassPrefix ~ 'CheckboxField__label--hidden' : null -%}
-{%- set _labelRequiredClassName = _isRequired == 'true' ? _spiritClassPrefix ~ 'CheckboxField__label--required' : null -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'CheckboxField__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'CheckboxField__label--required' : null -%}
 {%- set _messageClassName = _spiritClassPrefix ~ 'CheckboxField__message' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'CheckboxField' -%}
-{%- set _rootDisabledClassName = _isDisabled == 'true' ? _spiritClassPrefix ~ 'CheckboxField--disabled' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'CheckboxField--disabled' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'CheckboxField--' ~ _validationState : null -%}
 {%- set _textClassName = _spiritClassPrefix ~ 'CheckboxField__text' -%}
 
 {# Attributes #}
-{%- set _checkedAttr = _isChecked == 'true' ? 'checked' : null -%}
-{%- set _disabledAttr = _isDisabled == 'true' ? 'disabled' : null -%}
-{%- set _requiredAttr = _isRequired == 'true' ? 'required' : null -%}
+{%- set _checkedAttr = _isChecked ? 'checked' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
 
 {# Miscellaneous #}
