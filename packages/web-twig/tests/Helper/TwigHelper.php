@@ -6,6 +6,7 @@ namespace Lmc\SpiritWebTwigBundle\Helper;
 
 use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
+use Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension;
 use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
 use Lmc\TwigXBundle\Compiler\ComponentLexer;
 use Twig\Environment;
@@ -39,6 +40,9 @@ class TwigHelper
 
         $propsExtension = new PropsExtension();
         $twig->addExtension($propsExtension);
+
+        $boolpropExtension = new BoolpropExtension();
+        $twig->addExtension($boolpropExtension);
 
         if ($prefix) {
             $twig->addGlobal(OverrideServiceCompilerPass::GLOBAL_PREFIX_TWIG_VARIABLE, $prefix);
