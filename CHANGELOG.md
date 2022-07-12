@@ -3,13 +3,13 @@
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
 - Require compiler as separate dependency
+- Refactor components and update their readme
 
 ## 1.8.0 - 2022-07-18
 - Update `Tag` - add sizes, split theme and color classes, allow elementType change
 - Bugfix `isRequired` functionality in `TextField` component
 - Introduce `Pill` component
 - Introduce `Tabs` component
-- Refactor components and update their readme
 - Refactor components directory tree
 
 ## 1.7.0 - 2022-05-09
