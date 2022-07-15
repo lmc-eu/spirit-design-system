@@ -131,13 +131,13 @@ const toggleTooltip = (event) => {
 document.querySelector('#tooltip-trigger').addEventListener('click', toggleTooltip);
 ```
 
-## Dismissible Tooltip [TODO JS plugin]
+## Dismissible Tooltip
 
 Tooltip can be made dismissible by following these steps:
 
 1. Add `Tooltip--dismissible` modifier class on Tooltip.
 2. Add closing button with `Tooltip__close` class.
-3. Bind JS plugin [TODO] using `data-dismiss="tooltip"` and `data-target`
+3. Bind JS plugin using `data-dismiss="tooltip"` and `data-target`
    attributes on the closing button.
 
 ```html
@@ -162,7 +162,7 @@ Tooltip can be made dismissible by following these steps:
 While the basic setup can be sufficient in some scenarios, dropping a Tooltip
 usually won't be so easy. To handle all tricky situations and edge cases
 automatically, including smart position updates to ensure Tooltip visibility,
-we recommend to involve an external library designed specifically for this
+we recommend involving an external library designed specifically for this
 purpose.
 
 ### Placement
@@ -185,6 +185,44 @@ placement. Supported values are `top`, `bottom`, `left`, and `right`.
 
 👉 Please consult [Floating UI][floating-ui] documentation to understand how it
 works and to get an idea of all possible cases you may need to cover.
+
+## JavaScript API
+
+### Methods
+
+| Method                | Description                                                                                                                                                                                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the tooltip instance associated with a DOM. element                                                                                                                                                                       |
+| `getOrCreateInstance` | _Static_ method which allows you to get the tooltip instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                                    |
+| `hide`                | Hides an element’s tooltip. Returns to the caller before the tooltip has actually been hidden (i.e. before the `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                                                           |
+| `show`                | Reveals an element’s tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.tooltip` event occurs). This is considered a “manual” triggering of the tooltip. Tooltips with zero-length titles are never displayed. |
+| `toggle`              | Toggles an element’s tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.tooltip` or `hidden.tooltip` event occurs). This is considered a “manual” triggering of the tooltip.                         |
+
+```js
+const tooltip = Tooltip.getInstance('#example'); // Returns a tooltip instance
+
+tooltip.show();
+```
+
+### Events
+
+| Method           | Description                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| `hide.tooltip`   | This event is fired immediately when the `hide` instance method has been called.      |
+| `hidden.tooltip` | This event is fired when the `hide` instance has finished being hidden from the user. |
+| `show.tooltip`   | This event fires immediately when the `show` instance method is called.               |
+| `shown.tooltip`  | This event is fired when the `show` instance has finished being shown to the user.    |
+
+```js
+const myTooltipEl = document.getElementById('myTooltip');
+const tooltip = Tooltip.getOrCreateInstance(myTooltipEl);
+
+myTooltipEl.addEventListener('hidden.tooltip', () => {
+  // do something...
+});
+
+tooltip.hide();
+```
 
 [example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
 [floating-ui]: https://floating-ui.com

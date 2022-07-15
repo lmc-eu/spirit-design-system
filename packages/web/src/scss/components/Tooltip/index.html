@@ -73,6 +73,7 @@
     id="tooltip-trigger"
     class="Button Button--primary mb-800"
     data-target="#my-js-controlled-tooltip"
+    data-toggle="tooltip"
   >
     Toggle tooltip
   </button>
@@ -87,17 +88,7 @@
   </div>
 </div>
 
-<script>
-  const toggleTooltip = (event) => {
-    const tooltipElement = document.querySelector(event.currentTarget.dataset.target);
-    tooltipElement.classList.toggle('is-hidden');
-    tooltipElement.classList.toggle('is-visible');
-  };
-
-  document.querySelector('#tooltip-trigger').addEventListener('click', toggleTooltip);
-</script>
-
-<h3 class="typography-heading-small-text mt-1100 mb-800">Dismissible Tooltip [TODO JS plugin]</h3>
+<h3 class="typography-heading-small-text mt-1100 mb-800">Dismissible Tooltip</h3>
 <div class="TooltipWrapper d-inline-block">
   <button class="Button Button--primary" aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</button>
   <div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
@@ -116,14 +107,37 @@
   </div>
 </div>
 
-<script>
-  // TODO: Replace with Spirit dismiss plugin once ready.
-  const dismissTooltip = (event) => {
-    const tooltipElement = document.querySelector(event.currentTarget.dataset.target);
-    tooltipElement.classList.add('is-hidden');
-  };
+<h3 class="typography-heading-small-text mt-1100 mb-800">Dismissible Tooltip via Tooltip API (saves data to local storage)</h3>
+<div class="TooltipWrapper d-inline-block">
+  <button class="Button Button--primary" aria-describedby="my-dismissible-tooltip2">I have a tooltip 😎</button>
+  <div id="my-dismissible-tooltip2" class="Tooltip Tooltip--right Tooltip--dismissible is-hidden">
+    Close me
+    <button
+      id="my-dismissible-tooltip2-button"
+      type="button"
+      class="Tooltip__close"
+      data-target="#my-dismissible-tooltip2"
+      aria-controls="my-dismissible-tooltip2"
+      aria-expanded="true"
+    >
+      <span class="accessibility-hidden">Close</span>
+    </button>
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+<script type="module">
+  import Tooltip from '../../../js/Tooltip.ts';
+  const myTooltipEl = document.getElementById('my-dismissible-tooltip2');
+  const myTooltip = new Tooltip(myTooltipEl);
 
-  document.querySelector('[data-dismiss="tooltip"]').addEventListener('click', dismissTooltip);
+  if(!window.localStorage.getItem('my-tooltip')) {
+    myTooltip.show();
+  }
+
+  document.getElementById('my-dismissible-tooltip2-button').addEventListener('click', () => {
+    myTooltip.hide();
+    window.localStorage.setItem('my-tooltip', true);
+  });
 </script>
 
 <h3 id="advanced-positioning" class="typography-heading-small-text mt-1100 mb-800">Advanced Positioning</h3>

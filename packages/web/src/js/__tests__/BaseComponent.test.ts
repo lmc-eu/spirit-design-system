@@ -47,6 +47,18 @@ describe('Base Component', () => {
         expect(DummyClass.NAME).toEqual(name);
       });
     });
+
+    describe('DATA_KEY', () => {
+      it('should return plugin data key', () => {
+        expect(DummyClass.DATA_KEY).toBe(name);
+      });
+    });
+
+    describe('EVENT_KEY', () => {
+      it('should return plugin event key', () => {
+        expect(DummyClass.EVENT_KEY).toBe(`.${name}`);
+      });
+    });
   });
 
   describe('Public Methods', () => {

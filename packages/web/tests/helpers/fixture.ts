@@ -26,3 +26,6 @@ export const clearFixture = () => {
 export const createEvent = (eventName: string, parameters = {}) => {
   return new Event(eventName, parameters);
 };
+
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const noop = () => {};
