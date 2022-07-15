@@ -3,11 +3,20 @@ import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
 import { getElement } from './index';
 
-const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle') => {
+type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
+
+const ATTRIBUTE_DATA_TOGGLE = `data-toggle`;
+const ATTRIBUTE_DATA_DISMISS = `data-dismiss`;
+
+const enableDataTrigger = (
+  dataTriggerAttribute: DataTriggerAttribute,
+  component: typeof BaseComponent,
+  method = 'toggle',
+) => {
   const name = component.NAME;
 
   EventHandler.on(window, 'DOMContentLoaded', (event: Event) => {
-    SelectorEngine.findAll(`[data-toggle="${name}"]`).forEach((toggleEl) => {
+    SelectorEngine.findAll(`[${dataTriggerAttribute}="${name}"]`).forEach((toggleEl) => {
       EventHandler.on(toggleEl, 'click', function handleClick() {
         const target = getElement(this);
         const instance = component.getOrCreateInstance(target);
@@ -21,4 +30,12 @@ const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle')
   });
 };
 
-export { enableToggleTrigger };
+const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle') => {
+  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, method);
+};
+
+const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss') => {
+  enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, method);
+};
+
+export { enableToggleTrigger, enableDismissTrigger };

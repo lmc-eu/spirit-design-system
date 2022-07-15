@@ -22,7 +22,7 @@ class BaseComponent {
     for (const propertyName of Object.getOwnPropertyNames(this)) {
       // To type index signature is already hard
       // @see: https://bobbyhadz.com/blog/typescript-element-implicitly-has-any-type-expression
-      // @ts-expect-error TS2322: Type 'null' is not assignable to type 'Element & (string | null) & (() => void)'
+      // TS2322: Type 'null' is not assignable to type 'Element & (string | null) & (() => void)'
       this[propertyName as keyof BaseComponent] = null;
     }
   }
@@ -45,6 +45,18 @@ class BaseComponent {
 
   static get INSTANCE_KEY() {
     return `spirit.${this.NAME}`;
+  }
+
+  static get DATA_KEY() {
+    return `${this.NAME}`;
+  }
+
+  static get EVENT_KEY() {
+    return `.${this.DATA_KEY}`;
+  }
+
+  static eventName(name: string) {
+    return `${name}${this.EVENT_KEY}`;
   }
 }
 
