@@ -2,6 +2,8 @@
 
 <!-- There should always be "Unreleased" section at the beginning. -->
 ## Unreleased
+
+## 1.8.0 - 2022-07-18
 - Update `Tag` - add sizes, split theme and color classes, allow elementType change
 - Bugfix `isRequired` functionality in `TextField` component
 - Introduce `Pill` component
