@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.22.1"></a>
+
+## [0.22.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.22.0...@lmc-eu/spirit-web@0.22.1) (2022-07-19)
+
+### Dependencies
+
+- Update all non-major dependencies ([2dd4292](https://github.com/lmc-eu/spirit-design-system/commit/2dd4292))
+- Update all non-major dependencies ([c3efcf9](https://github.com/lmc-eu/spirit-design-system/commit/c3efcf9))
+- Update dependency postcss-cli to v10 ([169cedd](https://github.com/lmc-eu/spirit-design-system/commit/169cedd))
+- Update dependency vite to v3 ([533dca5](https://github.com/lmc-eu/spirit-design-system/commit/533dca5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.22.0"></a>
 
 # [0.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.21.0...@lmc-eu/spirit-web@0.22.0) (2022-07-07)

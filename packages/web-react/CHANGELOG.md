@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.20.2"></a>
+
+## [0.20.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.20.1...@lmc-eu/spirit-web-react@0.20.2) (2022-07-19)
+
+### Bug Fixes
+
+- **web-react:** Add missing default exports of components ([a875fee](https://github.com/lmc-eu/spirit-design-system/commit/a875fee))
+
+### Dependencies
+
+- Update all non-major dependencies ([2dd4292](https://github.com/lmc-eu/spirit-design-system/commit/2dd4292))
+- Update all non-major dependencies ([c3efcf9](https://github.com/lmc-eu/spirit-design-system/commit/c3efcf9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.20.1"></a>
 
 ## [0.20.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.20.0...@lmc-eu/spirit-web-react@0.20.1) (2022-07-11)
