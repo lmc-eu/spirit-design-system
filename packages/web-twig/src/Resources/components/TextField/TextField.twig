@@ -1,6 +1,6 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
-{%- set _id = props.id | default(null) -%}
+{%- set _id = props.id -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isFluid = props.isFluid | default(false) | boolprop -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
@@ -36,7 +36,9 @@
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
-    <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>{{ _label | raw }}</label>
+    <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
+        {{ _label | raw }}
+    </label>
     <input
         {{ inputProps(props) }}
         type="{{ _type }}"
@@ -48,5 +50,9 @@
         {{ _requiredAttr | raw }}
         {{ _valueAttr | raw }}
     />
-    {% if _message %}<div class="{{ _messageClassName }}">{{ _message | raw }}</div>{% endif %}
+    {% if _message %}
+        <div class="{{ _messageClassName }}">
+            {{ _message | raw }}
+        </div>
+    {% endif %}
 </div>
