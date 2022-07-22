@@ -4,6 +4,8 @@
 ## Unreleased
 - Require compiler as separate dependency
 - Refactor components and update their readme
+- Chore: Require v2 of twigx-bundle and remove minimum stability flag
+- Fix: Add missing service registration for ComponentLexer
 
 ## 1.8.0 - 2022-07-18
 - Update `Tag` - add sizes, split theme and color classes, allow elementType change
