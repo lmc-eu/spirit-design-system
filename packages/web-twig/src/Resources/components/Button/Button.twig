@@ -8,9 +8,9 @@
 {%- set _type = props.type | default('button') -%}
 
 {# Class names #}
-{%- set _colorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
-{%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
+{%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
+{%- set _rootColorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
 
 {# Attributes #}
@@ -18,7 +18,7 @@
 {%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
 
 <button
     {{ mainProps(props) }}

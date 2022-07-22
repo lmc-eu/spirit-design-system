@@ -46,7 +46,7 @@ Without lexer:
 | Prop name         | Type                          | Default   | Required | Description                                                |
 |-------------------|-------------------------------|-----------|----------|------------------------------------------------------------|
 | `class`           | `string`                      | `null`    | no       | Custom CSS class                                           |
-| `id`              | `string`                      | `null`    | no       | Input and label identification                             |
+| `id`              | `string`                      | —         | yes      | Input and label identification                             |
 | `isDisabled`      | `bool`                        | `false`   | no       | If true, input is disabled                                 |
 | `isFluid`         | `bool`                        | `false`   | no       | If true, the element spans to the full width of its parent |
 | `isLabelHidden`   | `bool`                        | `false`   | no       | If true, label is hidden                                   |
