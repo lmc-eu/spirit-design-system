@@ -2,8 +2,8 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
-{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
-{%- set _isUnderlined = props.isUnderlined | boolprop | default(false) -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isUnderlined = props.isUnderlined | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
 {%- set _title = props.title | default(null) -%}
@@ -32,4 +32,3 @@
 >
     {%- block content %}{% endblock %}
 </a>
-
