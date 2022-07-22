@@ -1,10 +1,10 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _isChecked = props.isChecked | boolprop | default(false) -%}
-{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
-{%- set _isLabelHidden = props.isLabelHidden | boolprop | default(false) -%}
-{%- set _isRequired = props.isRequired | boolprop | default(false) -%}
+{%- set _isChecked = props.isChecked | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
+{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _message = props.message | default(null) -%}
 {%- set _name = props.name | default(null) -%}

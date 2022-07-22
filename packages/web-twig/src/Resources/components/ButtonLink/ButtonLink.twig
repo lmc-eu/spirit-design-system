@@ -2,9 +2,9 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
-{%- set _isBlock = props.isBlock | boolprop | default(false) -%}
-{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
-{%- set _isSquare = props.isSquare | boolprop | default(false) -%}
+{%- set _isBlock = props.isBlock | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isSquare = props.isSquare | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
 {%- set _title = props.title | default(null) -%}
