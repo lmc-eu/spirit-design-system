@@ -3,7 +3,6 @@
   "type": "symfony-bundle",
   "description": "This is Symfony bundle with twig implementation Spirit Design System components and extends the twig implementation with an HTML syntax-like.",
   "license": "proprietary",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "LMC, s.r.o."
@@ -21,7 +20,7 @@
   },
   "require": {
     "php": "^7.4",
-    "lmc/twigx-bundle": "dev-main",
+    "lmc/twigx-bundle": "^2.0",
     "symfony/config": "^3.4 ||^4.2 || ^5.0",
     "symfony/dependency-injection": "^3.4 || ^4.2 || ^5.0",
     "symfony/http-foundation": "^3.4 || ^4.2 || ^5.0",
