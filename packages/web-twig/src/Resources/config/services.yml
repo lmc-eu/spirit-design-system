@@ -14,3 +14,9 @@ services:
   Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension:
     tags:
       - { name: twig.extension }
+
+  Lmc\TwigXBundle\Compiler\ComponentLexer:
+    arguments:
+      - '@twig'
+      - []
+      - '%spirit_web_twig.paths_alias%'
