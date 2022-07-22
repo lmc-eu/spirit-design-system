@@ -1,9 +1,9 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
-{%- set _isBlock = props.isBlock | boolprop | default(false) -%}
-{%- set _isDisabled = props.isDisabled | boolprop | default(false) -%}
-{%- set _isSquare = props.isSquare | boolprop | default(false) -%}
+{%- set _isBlock = props.isBlock | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isSquare = props.isSquare | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _type = props.type | default('button') -%}
 
