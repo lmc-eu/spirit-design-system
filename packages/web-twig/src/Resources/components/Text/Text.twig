@@ -1,0 +1,15 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _emphasis = props.emphasis | default('regular') -%}
+{%- set _size = props.size | default('medium') -%}
+{%- set _elementType = props.elementType | default('p') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'typography-body-' ~ _size ~ '-text-' ~ _emphasis -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+{%- block content %}{% endblock -%}
+</{{ _elementType }}>

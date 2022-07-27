@@ -1,0 +1,14 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _size = props.size | default('medium') -%}
+{%- set _elementType = props.elementType | default('div') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'typography-heading-' ~ _size ~ '-text' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+{%- block content %}{% endblock -%}
+</{{ _elementType }}>

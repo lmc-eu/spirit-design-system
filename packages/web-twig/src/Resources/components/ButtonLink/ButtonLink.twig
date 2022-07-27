@@ -1,0 +1,37 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('primary') -%}
+{%- set _href = props.href -%}
+{%- set _isBlock = props.isBlock | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isSquare = props.isSquare | default(false) | boolprop -%}
+{%- set _onClick = props.onClick | default(null) -%}
+{%- set _target = props.target | default(null) -%}
+{%- set _title = props.title | default(null) -%}
+
+{# Class names #}
+{%- set _colorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
+{%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
+{%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
+
+{# Attributes #}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
+{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
+{%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
+
+<a
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    href="{{ _href }}"
+    {{ _disabledAttr | raw }}
+    {{ _onClickAttr | raw }}
+    {{ _targetAttr | raw }}
+    {{ _titleAttr | raw }}
+>
+    {%- block content %}{% endblock %}
+</a>

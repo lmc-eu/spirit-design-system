@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Lmc\SpiritWebTwigBundle\Twig\PropsExtension:
+    tags:
+      - { name: twig.extension }
+
+  Lmc\SpiritWebTwigBundle\Twig\SvgExtension:
+    tags:
+      - { name: twig.extension }
+
+  Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension:
+    tags:
+      - { name: twig.extension }
+
+  Lmc\TwigXBundle\Compiler\ComponentLexer:
+    arguments:
+      - '@twig'
+      - []
+      - '%spirit_web_twig.paths_alias%'

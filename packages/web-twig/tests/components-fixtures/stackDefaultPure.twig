@@ -1,0 +1,23 @@
+{% embed "@spirit/stack.twig" %}
+    {% block content %}
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+    {% endblock %}
+{% endembed %}
+
+{% embed "@spirit/stack.twig" with { props: {
+    elementType: 'ul'
+}} %}
+    {% block content %}
+        <li>
+            <div>List item 1</div>
+        </li>
+        <li>
+            <div>List item 1</div>
+        </li>
+        <li>
+            <div>List item 1</div>
+        </li>
+    {% endblock %}
+{% endembed %}

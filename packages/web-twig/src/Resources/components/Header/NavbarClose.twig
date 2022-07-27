@@ -1,0 +1,20 @@
+{% set _rootClassName = _spiritClassPrefix ~ 'Header' %}
+{% set _closeClassName = _rootClassName ~ '__close' %}
+{% set _class = (props.class is defined) ? ' ' ~  props.class : '' %}
+{% set _label = (props.label is defined) ? props.label : 'Close' %}
+{% set _ariaControls = (props.ariaControls is defined) ? ' aria-controls="' ~ props.ariaControls ~ '"' : '' %}
+
+{% set _iconClassName = _spiritClassPrefix ~ 'Header__icon' %}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _closeClassName, _class ] -%}
+
+<button
+    type="button"
+    {{ classProp(_classNames) }}
+    {{ _ariaControls }}
+    aria-expanded="false"
+  >
+    <span class="{{ _iconClassName }} {{ _iconClassName }}--close" aria-hidden="true"></span>
+    <span class="accessibility-hidden">{{ _label }}</span>
+</button>

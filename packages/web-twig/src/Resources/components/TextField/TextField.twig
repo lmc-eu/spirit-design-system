@@ -1,0 +1,58 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isFluid = props.isFluid | default(false) | boolprop -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
+{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
+{%- set _label = props.label -%}
+{%- set _message = props.message | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _placeholder = props.placeholder | default(null) -%}
+{%- set _type = props.type | default('text') -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _value = props.value | default(null) -%}
+
+{# Class names #}
+{%- set _inputClassName = _spiritClassPrefix ~ 'TextField__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'TextField__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'TextField__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'TextField__label--required' : null -%}
+{%- set _messageClassName = _spiritClassPrefix ~ 'TextField__message' -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'TextField' -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'TextField--disabled' : null -%}
+{%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'TextField--fluid' : null -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'TextField--' ~ _validationState : null -%}
+
+{# Attributes #}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _placeholderAttr = _placeholder ? 'placeholder="' ~ _placeholder ~'"' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
+{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+
+{# Miscellaneous #}
+{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _class ] -%}
+{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+<div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
+    <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
+        {{ _label | raw }}
+    </label>
+    <input
+        {{ inputProps(props) }}
+        type="{{ _type }}"
+        id="{{ _id }}"
+        name="{{ _name }}"
+        class="{{ _inputClassName }}"
+        {{ _disabledAttr | raw }}
+        {{ _placeholderAttr | raw }}
+        {{ _requiredAttr | raw }}
+        {{ _valueAttr | raw }}
+    />
+    {% if _message %}
+        <div class="{{ _messageClassName }}">
+            {{ _message | raw }}
+        </div>
+    {% endif %}
+</div>

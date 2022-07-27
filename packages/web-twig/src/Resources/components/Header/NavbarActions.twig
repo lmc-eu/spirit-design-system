@@ -1,0 +1,10 @@
+{% set _rootClassName = _spiritClassPrefix ~ 'Header__actions' %}
+{% set _class = (props.class is defined) ? props.class : '' %}
+{% set _colorClassName = (props.color is defined) ? _rootClassName ~ '--' ~ props.color : ' ' ~  _rootClassName ~ '--primary' %}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _class ] -%}
+
+<div {{ classProp(_classNames) }}>
+{% block content %}{% endblock %}
+</div>

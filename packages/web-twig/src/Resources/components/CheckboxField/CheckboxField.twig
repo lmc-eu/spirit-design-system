@@ -1,0 +1,52 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isChecked = props.isChecked | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
+{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _message = props.message | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _value = props.value | default(null) -%}
+
+{# Class names #}
+{%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'CheckboxField__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'CheckboxField__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'CheckboxField__label--required' : null -%}
+{%- set _messageClassName = _spiritClassPrefix ~ 'CheckboxField__message' -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'CheckboxField' -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'CheckboxField--disabled' : null -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'CheckboxField--' ~ _validationState : null -%}
+{%- set _textClassName = _spiritClassPrefix ~ 'CheckboxField__text' -%}
+
+{# Attributes #}
+{%- set _checkedAttr = _isChecked ? 'checked' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
+{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _class ] -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+<label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
+    <input
+        {{ inputProps(props) }}
+        type="checkbox"
+        id="{{ _id }}"
+        name="{{ _name }}"
+        class="{{ _inputClassName }}"
+        {{ _checkedAttr | raw }}
+        {{ _disabledAttr | raw }}
+        {{ _requiredAttr | raw }}
+        {{ _valueAttr | raw }}
+    />
+    <span class="{{ _textClassName }}">
+        <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+        {% if _message %}<span class="{{ _messageClassName }}">{{ _message | raw }}</span>{% endif %}
+    </span>
+</label>

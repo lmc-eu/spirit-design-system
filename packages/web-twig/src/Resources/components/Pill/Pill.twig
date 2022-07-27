@@ -1,0 +1,15 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('selected') -%}
+{%- set _elementType = props.elementType | default('span') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Pill' -%}
+{%- set _colorClassName = _spiritClassPrefix ~ 'Pill--' ~ _color -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _colorClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+{%- block content %}{% endblock -%}
+</{{ _elementType }}>
