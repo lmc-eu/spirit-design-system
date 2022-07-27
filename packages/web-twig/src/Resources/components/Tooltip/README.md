@@ -11,17 +11,13 @@ Basic usage:
 Custom placement:
 
 ```html
-<Tooltip placement="right">
-    Hello there!
-</Tooltip>
+<Tooltip placement="right">Hello there!</Tooltip>
 ```
 
 Dismissible tooltip (requires `id` to be defined):
 
 ```html
-<Tooltip id="my-tooltip" isDismissible>
-    Hello there!
-</Tooltip>
+<Tooltip id="my-tooltip" isDismissible>Hello there!</Tooltip>
 ```
 
 Without lexer:
@@ -55,20 +51,20 @@ yourself or you can use the prepared TooltipWrapper component:
 </TooltipWrapper>
 ```
 
-Please consult the [CSS implementation of Tooltip][Tooltip] to help you pick the
+Please consult the [CSS implementation of Tooltip][tooltip] to help you pick the
 best positioning approach for your use case.
 
 ## API
 
 ### Tooltip
 
-| Prop name         | Type                               | Default   | Required | Description              |
-|-------------------|------------------------------------|-----------|----------|--------------------------|
-| `class`           | `string`                           | `null`    | no       | Custom CSS class         |
-| `closeLabel`      | `string`                           | `Close`   | no       | Close label              |
-| `id`              | `string`                           | `null`    | no       | Optional tooltip ID      |
-| `isDismissible`   | `bool`                             | `false`   | no       | Make tooltip dismissible |
-| `placement`       | [`top`, `bottom`, `left`, `right`] | `bottom`  | no       | Tooltip placement        |
+| Prop name       | Type                               | Default  | Required | Description              |
+| --------------- | ---------------------------------- | -------- | -------- | ------------------------ |
+| `class`         | `string`                           | `null`   | no       | Custom CSS class         |
+| `closeLabel`    | `string`                           | `Close`  | no       | Close label              |
+| `id`            | `string`                           | `null`   | no       | Optional tooltip ID      |
+| `isDismissible` | `bool`                             | `false`  | no       | Make tooltip dismissible |
+| `placement`     | [`top`, `bottom`, `left`, `right`] | `bottom` | no       | Tooltip placement        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
@@ -76,8 +72,8 @@ will be passed to the topmost HTML element of the component.
 
 ### TooltipWrapper
 
-| Prop name         | Type                             | Default  | Required | Description              |
-|-------------------|----------------------------------|----------|----------|--------------------------|
-| `class`           | `string`                         | `null`   | no       | Custom CSS class         |
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
 
-[Tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
+[tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
