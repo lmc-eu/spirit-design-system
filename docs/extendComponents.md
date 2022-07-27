@@ -3,11 +3,12 @@
 In some cases, you might want to extend the components with visual functionality. It is Possible.
 Each component has a customizable property `class`.
 
-
 ## Example
+
 For example, if we want to extend the [Button] component with size, we can do it in the project as follows:
 
-*button.twig*
+**button.twig**
+
 ```twig
 {% set _sizeClass = props.size is defined ? _spiritClassPrefix ~ 'Button--' ~ props.size %}
 {% set props = props|merge({ 'class': _sizeClass }) %}
@@ -33,4 +34,4 @@ After the previous change, we can now call the Button component with additional 
 <Button color="primary" size="small">Primary buttom</Button>
 ```
 
-[Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button
+[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button
