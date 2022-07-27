@@ -5,27 +5,21 @@ This is Twig implementation of the [TextField] component.
 Basic example usage:
 
 ```html
-<TextField 
-    id="example"
-    label="Label"
-    name="example"
-/>
-
+<TextField id="example" label="Label" name="example" />
 ```
 
 Advanced example usage:
 
 ```html
-<TextField 
-    id="example2"
-    isRequired
-    messsage="validation failed"
-    name="example2"
-    placeholder="Placeholder"
-    type="password"
-    validationState="error" 
+<TextField
+  id="example2"
+  isRequired
+  messsage="validation failed"
+  name="example2"
+  placeholder="Placeholder"
+  type="password"
+  validationState="error"
 />
-
 ```
 
 Without lexer:
@@ -44,7 +38,7 @@ Without lexer:
 ## API
 
 | Prop name         | Type                          | Default   | Required | Description                                                |
-|-------------------|-------------------------------|-----------|----------|------------------------------------------------------------|
+| ----------------- | ----------------------------- | --------- | -------- | ---------------------------------------------------------- |
 | `class`           | `string`                      | `null`    | no       | Custom CSS class                                           |
 | `id`              | `string`                      | —         | yes      | Input and label identification                             |
 | `isDisabled`      | `bool`                        | `false`   | no       | If true, input is disabled                                 |
@@ -63,4 +57,4 @@ On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
 will be passed to the topmost HTML element of the component.
 
-[TextField]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField
+[textfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField

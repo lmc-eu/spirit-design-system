@@ -4,16 +4,16 @@ This is Twig implementation of the [Link] component.
 
 Basic example usage:
 
-```html
-<Link href="#">Link<Link>
+```twig
+<Link href="#" />Link<Link />
 ```
 
 Advanced example usage:
 
 ```html
-<Link 
-    href="#" 
-    color="primary" 
+<Link
+    href="#"
+    color="primary"
     isUnderlined
 >
     Primary Underlined Link
@@ -36,7 +36,7 @@ Without lexer:
 ## API
 
 | Prop name      | Type                               | Default   | Required | Description                        |
-|----------------|------------------------------------|-----------|----------|------------------------------------|
+| -------------- | ---------------------------------- | --------- | -------- | ---------------------------------- |
 | `class`        | `string`                           | `null`    | no       | Custom CSS class                   |
 | `color`        | `primary`, `secondary`, `inverted` | `primary` | no       | Color variant                      |
 | `href`         | `string`                           | —         | yes      | Link URL                           |
@@ -49,4 +49,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link
+[link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link

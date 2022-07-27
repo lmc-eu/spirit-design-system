@@ -3,7 +3,9 @@
 This is Twig implementation of the [Header] component.
 
 ## Examples
+
 pure implementation:
+
 ```twig
 {% embed "@spirit/header.twig" %}
     {% block content %}
@@ -20,6 +22,7 @@ pure implementation:
 ```
 
 With Html syntax lexer (enabled by default):
+
 ```twig
 <Header>
     <a href="/">
@@ -93,45 +96,45 @@ The Header itself consists of many components which cannot be used independently
 
 #### Available props
 
-| Name          | Type                          | Description                          |
-|---------------|-------------------------------|--------------------------------------|
-| `isSimple`    | boolean                       | Whether it is without components     |
-| `isInverted`  | boolean                       | Whether it has inverted colors       |
-| `class`       | string                        | Additional class name                |
+| Name         | Type    | Description                      |
+| ------------ | ------- | -------------------------------- |
+| `isSimple`   | boolean | Whether it is without components |
+| `isInverted` | boolean | Whether it has inverted colors   |
+| `class`      | string  | Additional class name            |
 
 ### Navbar
 
 #### Available props
 
-| Name          | Type                          | Description                          |
-|---------------|-------------------------------|--------------------------------------|
-| `class`       | string                        | Additional class name                |
+| Name    | Type   | Description           |
+| ------- | ------ | --------------------- |
+| `class` | string | Additional class name |
 
 ### NavbarActions
 
 #### Available props
 
-| Name          | Type                               | Description                          |
-|---------------|------------------------------------|--------------------------------------|
-| `color`       | `primary`, `secondary`, `inverted` | Colors                               |
-| `class`       | string                             | Additional class name                |
+| Name    | Type                               | Description           |
+| ------- | ---------------------------------- | --------------------- |
+| `color` | `primary`, `secondary`, `inverted` | Colors                |
+| `class` | string                             | Additional class name |
 
 ### NavbarClose
 
 #### Available props
 
-| Name           | Type                          | Description                                |
-|----------------|-------------------------------|--------------------------------------------|
-| `label`        | string                        | Label of the close button                  |
-| `ariaControls` | string                        | Target element which is controled by close |
-| `class`        | string                        | Additional class name                      |
+| Name           | Type   | Description                                |
+| -------------- | ------ | ------------------------------------------ |
+| `label`        | string | Label of the close button                  |
+| `ariaControls` | string | Target element which is controled by close |
+| `class`        | string | Additional class name                      |
 
 ### NavbarToggle
 
 #### Available props
 
 | Name           | Type                               | Description                                |
-|----------------|------------------------------------|--------------------------------------------|
+| -------------- | ---------------------------------- | ------------------------------------------ |
 | `label`        | string                             | Label of the toggle button                 |
 | `ariaControls` | string                             | Target element which is controled by close |
 | `color`        | `primary`, `secondary`, `inverted` | Colors                                     |
@@ -141,28 +144,28 @@ The Header itself consists of many components which cannot be used independently
 
 #### Available props
 
-| Name          | Type                          | Description                          |
-|---------------|-------------------------------|--------------------------------------|
-| `class`       | string                        | Additional class name                |
+| Name    | Type   | Description           |
+| ------- | ------ | --------------------- |
+| `class` | string | Additional class name |
 
 ### NavItem
 
 #### Available props
 
-| Name          | Type                          | Description                          |
-|---------------|-------------------------------|--------------------------------------|
-| `class`       | string                        | Additional class name                |
+| Name    | Type   | Description           |
+| ------- | ------ | --------------------- |
+| `class` | string | Additional class name |
 
 ### NavItem
 
 #### Available props
 
-| Name          | Type                      | Description                                 |
-|---------------|---------------------------|---------------------------------------------|
-| href          | `string`  | #             | anchor href link                            |
-| target        | `string`  | __self        | anchor target                               |
-| ariaLabel     | `string`  | undefined     | Accessible Rich Internet Applications label |
-| onClick       | `string`  | undefined     | execute a JavaScript when a link is clicked |
-| `class`       | string                    | Additional class name                       |
+| Name      | Type     | Default               | Description                                 |
+| --------- | -------- | --------------------- | ------------------------------------------- |
+| href      | `string` | #                     | anchor href link                            |
+| target    | `string` | \_\_self              | anchor target                               |
+| ariaLabel | `string` | undefined             | Accessible Rich Internet Applications label |
+| onClick   | `string` | undefined             | execute a JavaScript when a link is clicked |
+| `class`   | string   | Additional class name |
 
-[Header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Header
+[header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Header

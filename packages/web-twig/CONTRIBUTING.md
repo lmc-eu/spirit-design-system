@@ -3,12 +3,14 @@
 > Guide for contributors.
 
 ## Components definition
+
 In order to maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
 
 ## Rules in components
 
 1. Name of components must be camelCase with first letter small.
 2. New components must contain a property class so that they can be extended according to the [instructions](./docs/extendComponents.md)
+
 ```twig
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
 ```
@@ -50,4 +52,5 @@ In order to maintain the uniformity of writing and functioning of components in 
 ```
 
 ## Release new version
-* run script `. ./newVersion.sh <version>`
+
+- run script `. ./newVersion.sh <version>`

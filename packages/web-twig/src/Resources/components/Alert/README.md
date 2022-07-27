@@ -5,17 +5,13 @@ This is Twig implementation of the [Alert] component.
 Basic example usage:
 
 ```html
-<Alert>
-    Alert
-</Alert>
+<Alert>Alert</Alert>
 ```
 
 Advanced example usage:
 
 ```html
-<Alert color="danger" elementType="span">
-    Danger Alert
-</Alert>
+<Alert color="danger" elementType="span">Danger Alert</Alert>
 ```
 
 Without lexer:
@@ -34,7 +30,7 @@ Without lexer:
 ## API
 
 | Prop name     | Type                | Default   | Required | Description        |
-|---------------|---------------------|-----------|----------|--------------------|
+| ------------- | ------------------- | --------- | -------- | ------------------ |
 | `class`       | `string`            | `null`    | no       | Custom CSS class   |
 | `color`       | `success`, `danger` | `success` | no       | Color variant      |
 | `elementType` | `string`            | `div`     | no       | HTML tag to render |
@@ -42,4 +38,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert
+[alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert

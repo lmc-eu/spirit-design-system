@@ -11,13 +11,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<ButtonLink
-    color="primary"
-    href="#"
-    isBlock
->
-    Primary block ButtonLink
-</ButtonLink>
+<ButtonLink color="primary" href="#" isBlock>Primary block ButtonLink</ButtonLink>
 ```
 
 Without lexer:
@@ -36,7 +30,7 @@ Without lexer:
 ## API
 
 | Prop name    | Type                                                     | Default   | Required | Description                                              |
-|--------------|----------------------------------------------------------|-----------|----------|----------------------------------------------------------|
+| ------------ | -------------------------------------------------------- | --------- | -------- | -------------------------------------------------------- |
 | `class`      | `string`                                                 | `null`    | no       | Custom CSS class                                         |
 | `color`      | `primary`, `secondary`, `tertiary`, `inverted`, `danger` | `primary` | no       | Color variant                                            |
 | `href`       | `string`                                                 | —         | yes      | Link URL                                                 |
@@ -50,4 +44,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
+[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button

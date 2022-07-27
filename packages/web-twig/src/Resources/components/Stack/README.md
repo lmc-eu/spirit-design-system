@@ -6,9 +6,9 @@ Basic example usage:
 
 ```html
 <Stack>
-    <div>Block 1</div>
-    <div>Block 2</div>
-    <div>Block 3</div>
+  <div>Block 1</div>
+  <div>Block 2</div>
+  <div>Block 3</div>
 </Stack>
 ```
 
@@ -16,15 +16,15 @@ Advanced example usage:
 
 ```html
 <Stack elementType="ul">
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
-    <li>
-        <div>List item 1</div>
-    </li>
+  <li>
+    <div>List item 1</div>
+  </li>
+  <li>
+    <div>List item 1</div>
+  </li>
+  <li>
+    <div>List item 1</div>
+  </li>
 </Stack>
 ```
 
@@ -51,11 +51,11 @@ Without lexer:
 ## API
 
 | Prop name     | Type     | Default | Required | Description        |
-|---------------|----------|---------|----------|--------------------|
+| ------------- | -------- | ------- | -------- | ------------------ |
 | `class`       | `string` | `null`  | no       | Custom CSS class   |
 | `elementType` | `string` | `div`   | no       | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Stack]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Stack
+[stack]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Stack

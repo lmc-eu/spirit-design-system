@@ -11,9 +11,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Pill color="secondary" elementType="div">
-    333
-</Pill>
+<Pill color="secondary" elementType="div">333</Pill>
 ```
 
 Without lexer:
@@ -32,7 +30,7 @@ Without lexer:
 ## API
 
 | Prop name     | Type                    | Default    | Required | Description        |
-|---------------|-------------------------|------------|----------|--------------------|
+| ------------- | ----------------------- | ---------- | -------- | ------------------ |
 | `class`       | `string`                | `null`     | no       | Custom CSS class   |
 | `color`       | `selected`, `secondary` | `selected` | no       | Color variant      |
 | `elementType` | `string`                | `span`     | no       | HTML tag to render |
@@ -40,4 +38,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Pill]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pill
+[pill]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pill

@@ -4,19 +4,19 @@ This is Twig implementation of the [Button] component.
 
 Basic example usage:
 
-```html
+```twig
 <Button>Primary button</Button>
 ```
 
 Advanced example usage:
 
-```html
-<Button 
-    color="primary"
-    isBlock
-    type="submit"
+```twig
+<Button
+  color="primary"
+  isBlock
+  type="submit"
 >
-    Primary block submit button
+  Primary block submit button
 </Button>
 ```
 
@@ -35,7 +35,7 @@ Without lexer:
 ## API
 
 | Prop name    | Type                                                     | Default   | Required | Description                                          |
-|--------------|----------------------------------------------------------|-----------|----------|------------------------------------------------------|
+| ------------ | -------------------------------------------------------- | --------- | -------- | ---------------------------------------------------- |
 | `class`      | `string`                                                 | `null`    | no       | Custom CSS class                                     |
 | `color`      | `primary`, `secondary`, `tertiary`, `inverted`, `danger` | `primary` | no       | Color variant                                        |
 | `isBlock`    | `bool`                                                   | `false`   | no       | Span the element to the full width of its parent     |
@@ -47,4 +47,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
+[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
