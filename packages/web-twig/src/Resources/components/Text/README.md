@@ -30,7 +30,7 @@ Without lexer:
 ## API
 
 | Prop name     | Type                                | Default   | Required | Description          |
-|---------------|-------------------------------------|-----------|----------|----------------------|
+| ------------- | ----------------------------------- | --------- | -------- | -------------------- |
 | `class`       | `string`                            | `null`    | no       | Custom CSS class     |
 | `elementType` | `string`                            | `p`       | no       | HTML tag to render   |
 | `emphasis`    | `regular`, `bold`, `italic`         | `regular` | no       | Emphasis of the text |
@@ -39,4 +39,4 @@ Without lexer:
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
-[Text]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Text
+[text]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Text
