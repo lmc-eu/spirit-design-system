@@ -108,6 +108,7 @@ or pure original implementation
 - [Heading](./src/Resources/components/Heading/README.md)
 - [CheckboxField](./src/Resources/components/CheckboxField/README.md)
 - [Link](./src/Resources/components/Link/README.md)
+- [Modal](./src/Resources/components/Modal/README.md)
 - [Stack](./src/Resources/components/Stack/README.md)
 - [Tabs](./src/Resources/components/Tabs/README.md)
 - [Tag](./src/Resources/components/Tag/README.md)
