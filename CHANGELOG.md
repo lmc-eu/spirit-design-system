@@ -11,6 +11,7 @@
 - Fix: Add missing service registration for ComponentLexer
 - Fix: Set right order of filters
 - Fix: Make `TextField` `id` mandatory as it is required for linking the label to the input
+- Feat: Enable glob function patterns in a paths
 
 ## 1.8.0 - 2022-07-18
 
