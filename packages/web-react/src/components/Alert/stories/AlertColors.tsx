@@ -8,6 +8,8 @@ const Story = (props: unknown) => (
     <Alert color="success">This is a success alert — check it out!</Alert>
     <div className="mb-500" />
     <Alert color="danger">This is a danger alert — check it out!</Alert>
+    <div className="mb-500" />
+    <Alert color="informative">This is an informative alert — check it out!</Alert>
   </>
 );
 
