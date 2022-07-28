@@ -48,7 +48,7 @@ If you want to change the default settings, create a config
 ```yaml
 # all parameters are optional
 spirit_web_twig:
-  # define one or more paths to expand or overload components
+  # define one or more paths to expand or overload components (uses glob patterns)
   paths:
     - '%kernel.project_dir%/templates/components'
   paths_alias: 'jobs-ui' # default is 'spirit'
