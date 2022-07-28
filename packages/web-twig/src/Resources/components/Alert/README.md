@@ -29,11 +29,11 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                | Default   | Required | Description        |
-| ------------- | ------------------- | --------- | -------- | ------------------ |
-| `class`       | `string`            | `null`    | no       | Custom CSS class   |
-| `color`       | `success`, `danger` | `success` | no       | Color variant      |
-| `elementType` | `string`            | `div`     | no       | HTML tag to render |
+| Prop name     | Type                               | Default   | Required | Description        |
+| ------------- | ---------------------------------- | --------- | -------- | ------------------ |
+| `class`       | `string`                           | `null`    | no       | Custom CSS class   |
+| `color`       | `success`, `danger`, `informative` | `success` | no       | Color variant      |
+| `elementType` | `string`                           | `div`     | no       | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
