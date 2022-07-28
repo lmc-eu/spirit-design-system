@@ -20,6 +20,7 @@ See individual [packages](#packages) to learn how to get started.
 | Package name                                               | Description                                               | Version                                                |
 | ---------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------ |
 | [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens) | Design tokens for Spirit Design System                    | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm]  |
+| [`@lmc-eu/spirit-icons`](./packages/icons)                 | Icons for Spirit Design System                            | [![@lmc-eu/spirit-icons][si-badge]][si-npm]            |
 | [`@lmc-eu/spirit-web`](./packages/web)                     | CSS and vanilla JS implementation of Spirit Design System | [![@lmc-eu/spirit-web][sw-badge]][sw-npm]              |
 | [`@lmc-eu/spirit-web-react`](./packages/web-react)         | React implementation of Spirit Design System components   | [![@lmc-eu/spirit-web-react][swr-badge]][swr-npm]      |
 | [`@lmc-eu/spirit-web-twig`](./packages/web-twig)           | Twig implementation of Spirit Design System components    | [![@lmc-eu/spirit-web-twig][swt-badge]][swt-packagist] |
@@ -48,6 +49,8 @@ See the [LICENSE](LICENSE.md) file for information.
 [lmc]: https://github.com/lmc-eu
 [sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
 [sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
+[si-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-icons
+[si-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-icons.svg?style=flat-square
 [sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
 [sw-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web.svg?style=flat-square
 [swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
