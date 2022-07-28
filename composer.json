@@ -20,7 +20,7 @@
   },
   "require": {
     "php": "^7.4",
-    "lmc/twigx-bundle": "^2.0",
+    "lmc/twigx-bundle": "^2.1",
     "symfony/config": "^3.4 ||^4.2 || ^5.0",
     "symfony/dependency-injection": "^3.4 || ^4.2 || ^5.0",
     "symfony/http-foundation": "^3.4 || ^4.2 || ^5.0",
