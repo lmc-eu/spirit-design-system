@@ -5,7 +5,7 @@ and an optional message. It could be disabled or have an error state. The label 
 and show if the input is required.
 
 ```jsx
-<CheckboxField id="example" name="example" isRequired isChecked validationState="error" messsage="validation failed" />
+<CheckboxField id="example" name="example" isRequired isChecked validationState="error" message="validation failed" />
 ```
 
 ## Available props
