@@ -35,7 +35,7 @@ describe('Alert', () => {
     expect(element).toBeInTheDocument();
   });
 
-  it.each([['success'], ['danger']])('should render color %s', (color) => {
+  it.each([['success'], ['danger'], ['informative']])('should render color %s', (color) => {
     const dom = render(<Alert color={color as AlertColor}>Hello World</Alert>);
 
     const element = dom.container.querySelector('div') as HTMLElement;

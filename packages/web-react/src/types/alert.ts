@@ -1,7 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import { ChildrenProps, StyleProps } from './shared';
 
-export type AlertColor = 'success' | 'danger';
+export type AlertColor = 'success' | 'danger' | 'informative';
 
 export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
   /**
