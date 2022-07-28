@@ -3,17 +3,30 @@
 
 $typography: tokens.$body-medium-text-regular;
 
-$success-color: tokens.$emotion-success-default;
-$success-background-color: tokens.$emotion-success-background;
-$danger-color: tokens.$emotion-danger-default;
-$danger-background-color: tokens.$emotion-danger-background;
-
 $border-radius: tokens.$radius-200;
-$space-inner: tokens.$space-700;
+$space-inner: tokens.$space-600;
 $space-icon: tokens.$space-600;
 $icon-width: tokens.$space-700;
 
 $emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
 
-$icon-success: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#{$success-color}" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" /></svg>');
-$icon-danger: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#{$danger-color}" d="M2.72943 21.0001H21.2594C22.0294 21.0001 22.5094 20.1701 22.1294 19.5001L12.8594 3.50006C12.4694 2.83006 11.5094 2.83006 11.1294 3.50006L1.85943 19.5001C1.47943 20.1701 1.95943 21.0001 2.72943 21.0001ZM12.9994 18.0001H10.9994V16.0001H12.9994V18.0001ZM11.9994 14.0001C11.4494 14.0001 10.9994 13.5501 10.9994 13.0001V11.0001C10.9994 10.4501 11.4494 10.0001 11.9994 10.0001C12.5494 10.0001 12.9994 10.4501 12.9994 11.0001V13.0001C12.9994 13.5501 12.5494 14.0001 11.9994 14.0001Z" /></svg>');
+$variants: (
+    success: (
+        color: tokens.$emotion-success-default,
+        background-color: tokens.$emotion-success-background,
+        icon:
+            url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#{tokens.$emotion-success-default}" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" /></svg>'),
+    ),
+    danger: (
+        color: tokens.$emotion-danger-default,
+        background-color: tokens.$emotion-danger-background,
+        icon:
+            url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#{tokens.$emotion-danger-default}" d="M2.72943 21.0001H21.2594C22.0294 21.0001 22.5094 20.1701 22.1294 19.5001L12.8594 3.50006C12.4694 2.83006 11.5094 2.83006 11.1294 3.50006L1.85943 19.5001C1.47943 20.1701 1.95943 21.0001 2.72943 21.0001ZM12.9994 18.0001H10.9994V16.0001H12.9994V18.0001ZM11.9994 14.0001C11.4494 14.0001 10.9994 13.5501 10.9994 13.0001V11.0001C10.9994 10.4501 11.4494 10.0001 11.9994 10.0001C12.5494 10.0001 12.9994 10.4501 12.9994 11.0001V13.0001C12.9994 13.5501 12.5494 14.0001 11.9994 14.0001Z" /></svg>'),
+    ),
+    informative: (
+        color: tokens.$emotion-informative-default,
+        background-color: tokens.$emotion-informative-background,
+        icon:
+            url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#{tokens.$emotion-informative-default}" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" /></svg>'),
+    ),
+);
