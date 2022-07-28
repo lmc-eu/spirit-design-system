@@ -99,21 +99,21 @@ or pure original implementation
 
 # Spirit Components
 
-- [Alert](./docs/Alert.md)
-- [Button](./docs/Button.md)
-- [ButtonLink](./docs/ButtonLink.md)
-- [Container](./docs/Container.md)
-- [Grid](./docs/Grid.md)
-- [Header](./docs/Header.md)
-- [Heading](./docs/Heading.md)
-- [CheckboxField](./docs/CheckboxField.md)
-- [Link](./docs/Link.md)
-- [Stack](./docs/Stack.md)
-- [Tabs](./docs/Tabs.md)
-- [Tag](./docs/Tag.md)
-- [Text](./docs/Text.md)
-- [TextField](./docs/TextField.md)
-- [Tooltip](./docs/Tooltip.md)
+- [Alert](./src/Resources/components/Alert/README.md)
+- [Button](./src/Resources/components/Button/README.md)
+- [ButtonLink](./src/Resources/components/ButtonLink/README.md)
+- [Container](./src/Resources/components/Container/README.md)
+- [Grid](./src/Resources/components/Grid/README.md)
+- [Header](./src/Resources/components/Header/README.md)
+- [Heading](./src/Resources/components/Heading/README.md)
+- [CheckboxField](./src/Resources/components/CheckboxField/README.md)
+- [Link](./src/Resources/components/Link/README.md)
+- [Stack](./src/Resources/components/Stack/README.md)
+- [Tabs](./src/Resources/components/Tabs/README.md)
+- [Tag](./src/Resources/components/Tag/README.md)
+- [Text](./src/Resources/components/Text/README.md)
+- [TextField](./src/Resources/components/TextField/README.md)
+- [Tooltip](./src/Resources/components/Tooltip/README.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
