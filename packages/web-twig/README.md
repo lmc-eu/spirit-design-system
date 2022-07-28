@@ -1,6 +1,5 @@
 # Spirit Web Twig Bundle
 
-![QA](https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/badge/icon?subject=QA&link=https://jenkins-seduo-ci.prod.internal.lmc/job/Spirit-web-twig-bundle-qa/)
 ![Version](https://img.shields.io/badge/version-1.8.0-blue.svg)
 
 This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with HTML-like syntax.
