@@ -1,0 +1,9 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    # To keep the image up and running
+    command: tail -F anything
+    volumes:
+      - ./../:/srv/www/spirit-web-twig-bundle/:delegated

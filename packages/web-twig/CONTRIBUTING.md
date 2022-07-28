@@ -2,6 +2,12 @@
 
 > Guide for contributors.
 
+## PHP support using Docker
+
+PHP language is required to develop this package. In order to support other frontend developers which do not have installed PHP locally, there is a Docker image available to develop this package.
+
+Please consult [`Makefile`](./Makefile) for available commands and options to setup and run this project.
+
 ## Components definition
 
 In order to maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
@@ -50,6 +56,12 @@ In order to maintain the uniformity of writing and functioning of components in 
     {% endblock %}
 {% endembed %}
 ```
+
+## Components tests
+
+Components testing is done by snapshots tests. It is required to create snapshot test for each component. Please create a new component fixture file in `tests/components-fixtures/` folder and name it according to the component name.
+
+Run `composer phpunit:update` or `make phpunit-update` to create or update snapshots from fixtures.
 
 ## Release new version
 
