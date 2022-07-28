@@ -20,19 +20,7 @@ See [CHANGELOG](./CHANGELOG.md)
 
 Download using **composer**
 
-1. Add satis repository into composer.json
-
-```json
-    ...
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://jenkins-php.prod.internal.lmc/job/satis/ws/out/"
-        }
-    ]
-```
-
-2. Install package
+Install package
 
 ```bash
 composer require lmc/spirit-web-twig-bundle:~1.8.0
