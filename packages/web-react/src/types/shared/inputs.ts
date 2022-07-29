@@ -1,3 +1,5 @@
+import type { ChangeEventHandler } from 'react';
+
 export type ValidationState = 'success' | 'warning' | 'error';
 
 export interface Validation {
@@ -16,6 +18,8 @@ export interface InputBase {
   name?: string;
   /** Whether the input is disabled. */
   isDisabled?: boolean;
+  /** Handle action when the input is change. */
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 export interface ValueBase<T> {
