@@ -1,0 +1,42 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isChecked = props.isChecked | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
+{%- set _label = props.label -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _value = props.value | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'RadioField' -%}
+{%- set _inputClassName = _spiritClassPrefix ~ 'RadioField__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'RadioField__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'RadioField__label--hidden' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'RadioField--disabled' : null -%}
+
+{# Attributes #}
+{%- set _checkedAttr = _isChecked ? 'checked' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id ~'"' : null -%}
+{%- set _labelForAttr = _id ? 'for="' ~ _id ~'"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _class ] -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
+    <input
+        {{ inputProps(props) }}
+        type="radio"
+        name="{{ _name }}"
+        class="{{ _inputClassName }}"
+        {{ _idAttr | raw }}
+        {{ _checkedAttr | raw }}
+        {{ _disabledAttr | raw }}
+        {{ _valueAttr | raw }}
+    />
+  <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+</label>
