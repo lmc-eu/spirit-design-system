@@ -1,12 +1,12 @@
 {
     "id": "io.supernova.svg-asset-exporter",
-    "name": "SVG Assets",
+    "name": "SVG Assets Flat",
     "description": "SVG Asset Exporter",
-    "author": "Jiri Trecak",
+    "author": "Jiri Trecak & Jan Kryspin",
     "organization": "Supernova",
     "homepage": "https://supernova.io",
     "source_dir": "src",
-    "version": "1.1",
+    "version": "2.1",
     "usesBrands": true,
     "config": {
         "sources": "sources.json",
