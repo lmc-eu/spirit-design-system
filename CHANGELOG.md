@@ -15,6 +15,7 @@
 - Feat: Add new `Alert` variant - `informative`
 - Feat: Introduce `Modal` component
 - Feat: Introduce `Icon` component and allow icons testing
+- Feat: Introduce `RadioField` component
 
 ## 1.8.0 - 2022-07-18
 
