@@ -20,6 +20,7 @@ export default defineConfig({
             'Icon',
             'Modal',
             'Pill',
+            'RadioField',
             'Stack',
             'Tabs',
             'Tag',

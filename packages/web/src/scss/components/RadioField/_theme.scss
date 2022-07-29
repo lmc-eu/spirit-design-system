@@ -1,0 +1,22 @@
+@use '@tokens' as tokens;
+
+$spacing: tokens.$space-400;
+
+$input-border-radius: 50%;
+$input-outline-width: 2px;
+$input-width: 20px;
+$input-inner-dot-width: 10px;
+$input-inner-dot-width: 10px;
+$input-margin: 3px;
+$input-color-unchecked: tokens.$text-primary-default;
+$input-color-checked: tokens.$action-primary-default;
+$input-color-disabled: tokens.$text-primary-disabled;
+$input-box-shadow-before: inset tokens.$space-600 tokens.$space-600 $input-color-checked;
+$input-box-shadow-disabled: inset tokens.$space-600 tokens.$space-600 $input-color-disabled;
+$input-transition: 0.12s transform ease-in-out;
+$input-focus-shadow: tokens.$focus;
+
+$label-typography: tokens.$body-medium-text-regular;
+$label-color-disabled: tokens.$text-primary-disabled;
+$label-color-default: tokens.$text-primary-default;
+$label-margin: tokens.$space-400;
