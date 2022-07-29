@@ -65,4 +65,24 @@ Run `composer phpunit:update` or `make phpunit-update` to create or update snaps
 
 ## Release new version
 
-- run script `. ./newVersion.sh <version>`
+TODO: [Automate release process](https://github.com/lmc-eu/spirit-design-system/issues/393).
+
+As we are now using only `dev-main` version of this package, until we have stable release process, we are not able to release new version with release script and tag it.
+
+⚠️ **DO NOT RUN** the script `./newVersion.sh <version>`!
+
+### Monorepo and Packagist.org
+
+Packagist requires a single repository for a single package to be present to publish the package. In order to publish this package we are using READ-ONLY repository https://github.com/lmc-eu/spirit-web-twig-bundle where we are publishing the subtree of this monorepo.
+
+### Updating READ-ONLY repository
+
+Please use these commands to update the READ-ONLY repository.
+
+Add remote repository only once:
+
+- `git remote add web-twig-readonly git@github.com:lmc-eu/spirit-web-twig-bundle.git`
+
+Force push current changes to remote using subtree:
+
+- `` git push web-twig-readonly `git subtree split --prefix packages/web-twig main`:main --force ``
