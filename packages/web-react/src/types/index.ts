@@ -7,6 +7,7 @@ export * from './heading';
 export * from './label';
 export * from './link';
 export * from './message';
+export * from './radioField';
 export * from './pill';
 export * from './shared';
 export * from './tabs';
