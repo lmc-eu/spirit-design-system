@@ -56,4 +56,4 @@ See the [LICENSE](LICENSE.md) file for information.
 [swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
 [swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
 [swt-packagist]: https://packagist.org/packages/lmc/spirit-web-twig-bundle
-[swt-badge]: https://img.shields.io/packagist/php-v/lmc/spirit-web-twig-bundle.svg?style=flat-square
+[swt-badge]: https://img.shields.io/packagist/v/lmc/spirit-web-twig-bundle.svg?style=flat-square
