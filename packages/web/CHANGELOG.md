@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.23.0"></a>
+
+# [0.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.22.1...@lmc-eu/spirit-web@0.23.0) (2022-07-30)
+
+### Dependencies
+
+- Update all non-major dependencies ([8e53fff](https://github.com/lmc-eu/spirit-design-system/commit/8e53fff))
+
+### Documentation
+
+- **web:** Add favicon to web demo ([cfb9842](https://github.com/lmc-eu/spirit-design-system/commit/cfb9842))
+
+### Features
+
+- **web:** Introduce `Tooltip` component ([352fe7e](https://github.com/lmc-eu/spirit-design-system/commit/352fe7e))
+- **web:** Introduce Tooltip component JS plugin ([ec26ff2](https://github.com/lmc-eu/spirit-design-system/commit/ec26ff2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.22.1"></a>
 
 ## [0.22.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.22.0...@lmc-eu/spirit-web@0.22.1) (2022-07-19)
