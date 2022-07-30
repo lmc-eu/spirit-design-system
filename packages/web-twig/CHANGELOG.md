@@ -12,6 +12,7 @@
 - Fix: Set right order of filters
 - Fix: Make `TextField` `id` mandatory as it is required for linking the label to the input
 - Feat: Enable glob function patterns in a paths
+- Feat: Add new `Alert` variant - `informative`
 
 ## 1.8.0 - 2022-07-18
 
