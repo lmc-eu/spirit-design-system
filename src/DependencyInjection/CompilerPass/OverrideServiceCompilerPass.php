@@ -35,7 +35,7 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
         foreach ($paths as $path) {
             $this->addGlobPath($twigLoaderDefinition, $path, $pathAlias);
 
-            if ($path === SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH) {
+            if ($path === SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH || $path === SpiritWebTwigExtension::DEFAULT_TWIG_COMPONENTS_PATH) {
                 $this->addGlobPath($twigLoaderDefinition, $path, SpiritWebTwigExtension::DEFAULT_PATH_ALIAS);
             }
         }
