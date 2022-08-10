@@ -11,5 +11,8 @@
     "type": "git",
     "url": "https://github.com/lmc-eu/spirit-design-system.git",
     "directory": "packages/icons"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist/svg && cp -r package.json README.md dist/ && node ./scripts/build.js"
   }
 }
