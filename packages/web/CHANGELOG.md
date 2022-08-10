@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.24.0"></a>
+
+# [0.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.23.0...@lmc-eu/spirit-web@0.24.0) (2022-08-10)
+
+### Dependencies
+
+- Update all non-major dependencies to v7.18.10 ([b4306fb](https://github.com/lmc-eu/spirit-design-system/commit/b4306fb))
+
+### Features
+
+- **web:** Introduce `informative` variant to `Alert` [#DS-274](https://github.com/lmc-eu/spirit-design-system/issues/DS-274) ([1115756](https://github.com/lmc-eu/spirit-design-system/commit/1115756))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.23.0"></a>
 
 # [0.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.22.1...@lmc-eu/spirit-web@0.23.0) (2022-07-30)
