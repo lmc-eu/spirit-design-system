@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Factory;
 
-use Lmc\SpiritWebTwigBundle\Compiler\ComponentLexer;
+use Lmc\TwigXBundle\Compiler\ComponentLexer;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
