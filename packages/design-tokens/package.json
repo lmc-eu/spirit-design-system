@@ -13,12 +13,13 @@
     "directory": "packages/design-tokens"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist/scss && cp -r package.json README.md dist/ && cp -r src/scss/generated/* src/scss/@tokens.scss dist/scss/",
+    "build": "shx rm -rf dist && shx mkdir -p dist/scss && shx cp -r package.json README.md dist/ && shx cp -r src/scss/generated/* src/scss/@tokens.scss dist/scss/",
     "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
     "test": "yarn lint"
   },
   "devDependencies": {
     "@lmc-eu/stylelint-config": "4.0.1",
+    "shx": "0.3.4",
     "stylelint": "14.9.1",
     "stylelint-order": "5.0.0"
   }
