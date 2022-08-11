@@ -15,7 +15,10 @@
   "main": "js/cjs/spirit-web.js",
   "module": "js/esm/spirit-web.js",
   "scripts": {
+    "icons:build": "shx mkdir -p public/icons && cd ../icons && yarn build && shx cp -r dist/. ../web/public/icons",
+    "prestart": "yarn icons:build",
     "start": "vite --host",
+    "preexamples:build": "yarn icons:build",
     "examples:build": "vite build",
     "examples:build:gh": "yarn examples:build --base=/spirit-design-system/",
     "examples:preview": "vite preview",
@@ -46,7 +49,8 @@
   },
   "dependencies": {
     "@csstools/normalize.css": "^12.0.0",
-    "@lmc-eu/spirit-design-tokens": "^0.19.0"
+    "@lmc-eu/spirit-design-tokens": "^0.19.0",
+    "@lmc-eu/spirit-icons": "^0.2.0"
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "1.0.3",
