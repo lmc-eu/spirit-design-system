@@ -13,6 +13,9 @@
     "directory": "packages/icons"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist/svg && cp -r package.json README.md dist/ && node ./scripts/build.js"
+    "build": "shx rm -rf dist && shx mkdir -p dist/svg && shx cp -r package.json README.md dist/ && node ./scripts/build.js"
+  },
+  "devDependencies": {
+    "shx": "0.3.4"
   }
 }
