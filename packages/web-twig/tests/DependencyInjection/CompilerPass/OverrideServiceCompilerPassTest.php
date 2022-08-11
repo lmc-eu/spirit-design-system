@@ -60,17 +60,21 @@ class OverrideServiceCompilerPassTest extends TestCase
      */
     public function registerTwigPathsDataProvider(): array
     {
+        $realPath = realpath(__DIR__ . '/../../../src/DependencyInjection') . '/../Resources/components';
         $defaultPath = realpath(__DIR__ . '/../../../src/DependencyInjection') . '/../Resources/twig-components';
 
         return [
+            'test should register default partials path which is filtered out' => [
+                [], 0,
+            ],
             'test should register random one path' => [
-                ['dir1/'], 1,
+                [$realPath . '/Alert/'], 1,
             ],
             'test should register random multiple paths' => [
-                ['dir1/', 'dir2'], 2,
+                [$realPath . '/Alert/', $realPath . '/Button/'], 2,
             ],
             'test should register paths with default' => [
-                ['dir1/', 'dir2', $defaultPath], 3,
+                [$realPath . '/Alert/', $realPath . '/Button/', $defaultPath], 4,
             ],
         ];
     }
