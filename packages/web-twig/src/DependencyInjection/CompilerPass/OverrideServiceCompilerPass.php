@@ -23,11 +23,13 @@ class OverrideServiceCompilerPass implements CompilerPassInterface
 
         /** @var array<string> $paths */
         $paths = $container->getParameter(SpiritWebTwigExtension::PARAMETER_PATHS);
+        /** @var string $pathAlias */
         $pathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_PATH_ALIAS);
         $isLexer = $container->getParameter(SpiritWebTwigExtension::PARAMETER_HTML_SYNTAX_LEXER);
         $classPrefix = $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX);
         /** @var array<string> $iconsPaths */
         $iconsPaths = $container->getParameter(SpiritWebTwigExtension::PARAMETER_ICONS_PATHS);
+        /** @var string $iconsPathAlias */
         $iconsPathAlias = $container->getParameter(SpiritWebTwigExtension::PARAMETER_ICONS_PATH_ALIAS);
 
         $this->addGlobPath($twigLoaderDefinition, SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS);
