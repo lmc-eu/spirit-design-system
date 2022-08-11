@@ -1,0 +1,44 @@
+{{#> layout/plain }}
+
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Design only</h2>
+
+    <div class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 text-center my-1000">
+
+      {{#each @iconsDesign as |icon|}}
+
+        <div class="mb-600">
+          <svg class="Icon" width="24" height="24">
+            <use xlink:href="/icons/svg/sprite.svg#{{icon}}"/>
+          </svg>
+
+          <h3 class="mt-500">{{icon}}</h3>
+        </div>
+
+      {{/each}}
+
+    </div>
+  </section>
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Design & Code</h2>
+
+    <div class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 text-center my-1000">
+
+      {{#each @iconsCode as |icon|}}
+
+      <div class="mb-600">
+        <svg class="Icon" width="24" height="24">
+          <use xlink:href="/icons/svg/sprite.svg#{{icon}}"/>
+        </svg>
+
+        <h3 class="mt-500">{{icon}}</h3>
+      </div>
+
+      {{/each}}
+
+    </div>
+  </section>
+
+{{/layout/plain }}
