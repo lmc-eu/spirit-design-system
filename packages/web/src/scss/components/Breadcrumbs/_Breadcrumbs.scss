@@ -1,0 +1,78 @@
+@use 'sass:map';
+@use 'theme';
+@use '../../tools/breakpoint';
+@use '../../tools/svg';
+@use '../../tools/typography';
+
+.Breadcrumbs {
+    @include typography.generate(theme.$typography);
+
+    width: 100%;
+}
+
+.Breadcrumbs > ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: theme.$gap-mobile-up;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        gap: theme.$gap-tablet-up;
+    }
+}
+
+.Breadcrumbs > ol > li {
+    display: flex;
+    align-items: center;
+    gap: theme.$gap-mobile-up;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        gap: theme.$gap-tablet-up;
+    }
+
+    &::before {
+        content: '';
+        display: inline-block;
+        flex-shrink: 0;
+        width: theme.$icon-size;
+        height: theme.$icon-size;
+        background: svg.escape(theme.$icon-chevron-left) no-repeat;
+
+        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+            background: svg.escape(theme.$icon-chevron-right) no-repeat;
+        }
+    }
+
+    &:nth-of-type(2)::before {
+        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+            content: none;
+        }
+    }
+}
+
+.Breadcrumbs > ol > li > a {
+    text-decoration: underline;
+    color: theme.$link-color-default;
+
+    &:active {
+        color: theme.$link-color-active;
+    }
+
+    &:focus,
+    &:hover {
+        color: theme.$link-color-hover;
+    }
+}
+
+.Breadcrumbs > ol > li > a[aria-current='page'] {
+    text-decoration: none;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        color: theme.$current-link-color;
+    }
+}
