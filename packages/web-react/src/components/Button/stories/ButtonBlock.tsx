@@ -21,7 +21,7 @@ const Story = (props: unknown) => (
       Click me
     </Button>
     <div className="mb-500" />
-    <div className="example-box">
+    <div className="docs-Box">
       <Button color="inverted" isBlock>
         Click me
       </Button>

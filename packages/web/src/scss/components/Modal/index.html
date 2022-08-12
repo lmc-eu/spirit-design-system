@@ -1,5 +1,5 @@
-{{#> layout }}
-  <h2 class="typography-heading-medium-text mt-1100 mb-800">Modal</h2>
+{{#> layout/plain }}
+
   <button
     type="button"
     class="Button Button--primary"
@@ -8,8 +8,9 @@
     aria-controls="modal-example-1"
     aria-expanded="false"
   >
-    Open Modal Example 1
+    Open Modal
   </button>
+
   <button
     type="button"
     class="Button Button--primary"
@@ -18,8 +19,9 @@
     aria-controls="modal-example-2"
     aria-expanded="false"
   >
-    Open Modal Example 2
+    Open Modal with Long Content
   </button>
+
   <dialog id="modal-example-1" class="Modal">
     <div class="Modal__content">
       <div class="Modal__dialog">
@@ -46,6 +48,7 @@
       </div>
     </div>
   </dialog>
+
   <dialog id="modal-example-2" class="Modal">
     <div class="Modal__content">
       <div class="Modal__dialog">
@@ -107,4 +110,5 @@
       </div>
     </div>
   </dialog>
-{{/layout }}
+
+{{/layout/plain }}

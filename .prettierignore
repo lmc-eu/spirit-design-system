@@ -16,7 +16,7 @@
 **/.coverage/**
 
 # Handlebars partials are not supported by Prettier
-packages/web/partials/layout.hbs
+packages/web/partials/**/*.hbs
 
 # PHP vendor files
 **/vendor
