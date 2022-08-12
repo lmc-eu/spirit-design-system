@@ -15,7 +15,7 @@ const Story = (props: unknown) => (
         Secondary Link
       </Link>
     </p>
-    <p className="example-box">
+    <p className="docs-Box">
       <Link href="/" color="inverted">
         Inverted Link
       </Link>

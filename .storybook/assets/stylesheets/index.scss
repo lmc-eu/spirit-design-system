@@ -1,27 +1,28 @@
 @forward '../../../packages/design-tokens/src/scss';
 
-@use '../../../packages/web/src/scss/foundation';
-@use '../../../packages/web/src/scss/helpers';
-@use '../../../packages/web/src/scss/utilities';
+@forward '../../../packages/web/src/scss/foundation';
+@forward '../../../packages/web/src/scss/helpers';
 
-@use '../../../packages/web/src/scss/components/Alert';
-@use '../../../packages/web/src/scss/components/Button';
-@use '../../../packages/web/src/scss/components/CheckboxField';
-@use '../../../packages/web/src/scss/components/Container';
-@use '../../../packages/web/src/scss/components/Grid';
-@use '../../../packages/web/src/scss/components/Header';
-@use '../../../packages/web/src/scss/components/Pill';
-@use '../../../packages/web/src/scss/components/Stack';
-@use '../../../packages/web/src/scss/components/Tabs';
-@use '../../../packages/web/src/scss/components/Tag';
-@use '../../../packages/web/src/scss/components/TextField';
+@forward '../../../packages/web/src/scss/components/Alert';
+@forward '../../../packages/web/src/scss/components/Button';
+@forward '../../../packages/web/src/scss/components/CheckboxField';
+@forward '../../../packages/web/src/scss/components/Container';
+@forward '../../../packages/web/src/scss/components/Grid';
+@forward '../../../packages/web/src/scss/components/Header';
+@forward '../../../packages/web/src/scss/components/Pill';
+@forward '../../../packages/web/src/scss/components/Stack';
+@forward '../../../packages/web/src/scss/components/Tabs';
+@forward '../../../packages/web/src/scss/components/Tag';
+@forward '../../../packages/web/src/scss/components/TextField';
 
-.example-box {
-    box-sizing: border-box;
+@forward '../../../packages/web/src/scss/utilities';
+
+.docs-Box {
     overflow: hidden;
+    min-height: 2rem;
+    padding: 1rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     color: #fff;
     background: #0b1c21;
-    padding: 0.25rem;
 }

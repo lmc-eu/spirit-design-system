@@ -19,13 +19,13 @@ StackedBlocks.args = {
   children: (
     <>
       <li>
-        <div className="example-box">Block 1</div>
+        <div className="docs-Box">Block 1</div>
       </li>
       <li>
-        <div className="example-box">Block 2</div>
+        <div className="docs-Box">Block 2</div>
       </li>
       <li>
-        <div className="example-box">Block 3</div>
+        <div className="docs-Box">Block 3</div>
       </li>
     </>
   ),

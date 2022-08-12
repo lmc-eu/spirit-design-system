@@ -1,5 +1,5 @@
-{{#> layout }}
-  <h2 class="typography-heading-medium-text mt-1100 mb-800">Tabs</h2>
+{{#> layout/plain }}
+
   <ul class="Tabs" role="tablist">
     <li class="Tabs__item">
       <button
@@ -36,8 +36,13 @@
       <a href="https://www.example.com" class="Tabs__link">Item Link, Desktop Only</a>
     </li>
   </ul>
+
   <div id="pane1" class="Tabs-pane is-selected" role="tabpanel" aria-labelledby="pane1-tab">
-    Pane 1
+    Pane 1 content
   </div>
-  <div id="pane2" class="Tabs-pane" role="tabpanel" aria-labelledby="pane2-tab">Pane 2</div>
-{{/layout }}
+
+  <div id="pane2" class="Tabs-pane" role="tabpanel" aria-labelledby="pane2-tab">
+    Pane 2 content
+  </div>
+
+{{/layout/plain }}

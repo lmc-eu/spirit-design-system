@@ -21,7 +21,7 @@ const Story = (props: unknown) => (
       Click me
     </Button>
     <span className="mr-500" />
-    <div className="example-box">
+    <div className="docs-Box">
       <Button color="inverted" isDisabled>
         Click me
       </Button>

@@ -1,6 +1,7 @@
-{{#> layout }}
-  <h2 class="typography-heading-medium-text mt-1100 mb-800">CheckboxField</h2>
-  <div class="example-CheckboxField-grid">
+{{#> layout/plain }}
+
+  <div class="docs-FormFieldGrid">
+
     <label for="checkboxfield1" class="CheckboxField">
       <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" />
       <span class="CheckboxField__text">
@@ -114,19 +115,23 @@
         <span class="CheckboxField__message">Message</span>
       </span>
     </label>
-    <script type="text/javascript">
-      const inputs = [
-        'checkboxfield14',
-        'checkboxfield15',
-        'checkboxfield16',
-        'checkboxfield17',
-      ];
-      window.addEventListener('DOMContentLoaded', function () {
-        inputs.forEach(function (input) {
-          const checkbox = document.getElementById(input);
-          checkbox.indeterminate = true;
-        });
-      });
-    </script>
+
   </div>
-{{/layout }}
+
+  <script>
+    const inputs = [
+      'checkboxfield14',
+      'checkboxfield15',
+      'checkboxfield16',
+      'checkboxfield17',
+    ];
+
+    window.addEventListener('DOMContentLoaded', function () {
+      inputs.forEach(function (input) {
+        const checkbox = document.getElementById(input);
+        checkbox.indeterminate = true;
+      });
+    });
+  </script>
+
+{{/layout/plain }}

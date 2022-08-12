@@ -1,6 +1,7 @@
-{{#> layout }}
-  <h2 class="typography-heading-medium-text mt-1100 mb-800">TextField</h2>
-  <div class="example-TextField-grid">
+{{#> layout/plain }}
+
+  <div class="docs-FormFieldGrid">
+
     <div class="TextField">
       <label for="textfieldSimple" class="TextField__label TextField__label--required">Label</label>
       <input type="text" id="textfieldSimple" class="TextField__input" placeholder="Placeholder" />
@@ -102,6 +103,7 @@
       <input type="text" id="textfieldFluid" class="TextField__input" placeholder="Placeholder" value="Filled" />
       <div class="TextField__message">Message</div>
     </div>
+
     <div style="display: flex; gap: 1rem">
       <div class="TextField">
         <label for="textfieldInlineHiddenLabel" class="TextField__label TextField__label--hidden">Hidden Label</label>
@@ -109,6 +111,7 @@
       </div>
       <button type="button" class="Button Button--primary">Button</button>
     </div>
+
     <div style="display: flex; gap: 1rem">
       <div class="TextField">
         <label for="textfieldInlineFirst" class="TextField__label TextField__label--hidden">Hidden Label</label>
@@ -125,5 +128,7 @@
       </div>
       <button type="button" class="Button Button--primary">Button</button>
     </div>
+
   </div>
-{{/layout }}
+
+{{/layout/plain }}

@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from './Grid';
 import { SpiritGridProps } from '../../types';
 
-const ExampleBox = () => <div className="example-box" />;
+const ExampleBox = () => <div className="docs-Box" />;
 
 export default {
   title: 'Components/Grid',

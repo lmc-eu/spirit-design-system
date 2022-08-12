@@ -13,7 +13,7 @@ const Story = (props: unknown) => (
     <span className="mr-500" />
     <Button color="danger">Click me</Button>
     <span className="mr-500 mb-500" />
-    <div className="example-box">
+    <div className="docs-Box">
       <Button color="inverted">Click me</Button>
     </div>
   </>

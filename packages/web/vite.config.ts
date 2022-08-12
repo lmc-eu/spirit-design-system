@@ -7,6 +7,26 @@ export default defineConfig({
   plugins: [
     handlebars({
       partialDirectory: resolve(__dirname, 'partials'),
+      runtimeOptions: {
+        data: {
+          components: [
+            'Alert',
+            'Breadcrumbs',
+            'Button',
+            'CheckboxField',
+            'Container',
+            'Grid',
+            'Header',
+            'Modal',
+            'Pill',
+            'Stack',
+            'Tabs',
+            'Tag',
+            'TextField',
+            'Tooltip',
+          ],
+        },
+      },
     }),
   ],
   css: {

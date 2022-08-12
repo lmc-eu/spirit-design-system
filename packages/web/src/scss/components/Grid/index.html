@@ -1,57 +1,73 @@
-{{#> layout }}
-  <h2 class="typography-heading-medium-text mt-1100 mb-800">Grid</h2>
-  <h3 class="typography-heading-small-text mt-1100 mb-800">Equal Columns</h3>
-  <div class="Grid Grid--cols-12 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <div class="Grid Grid--cols-6 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <div class="Grid Grid--cols-4 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <div class="Grid Grid--cols-3 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <div class="Grid Grid--cols-2 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <div class="Grid Grid--cols-1 mb-1000">
-    <div class="example-box"></div>
-  </div>
-  <h3 class="typography-heading-small-text mt-1100 mb-800">Responsive Columns</h3>
-  <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4 mb-1000">
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-    <div class="example-box"></div>
-  </div>
-  <h3 class="typography-heading-small-text mt-1100 mb-800">Narrow Column Layout</h3>
-  <div class="Grid Grid--narrow mb-1000">
-    <div class="example-box text-center">
-      Full on mobile, 10 cols on tablet and 6 cols on desktop. Centered.
+{{#> layout/plain }}
+
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Equal Columns</h2>
+
+    <div class="Grid Grid--cols-12 mb-1000">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
     </div>
-  </div>
-{{/layout }}
+    <div class="Grid Grid--cols-6 mb-1000">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+    </div>
+    <div class="Grid Grid--cols-4 mb-1000">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+    </div>
+    <div class="Grid Grid--cols-3 mb-1000">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+    </div>
+    <div class="Grid Grid--cols-2 mb-1000">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+    </div>
+    <div class="Grid Grid--cols-1">
+      <div class="docs-Box"></div>
+    </div>
+
+  </section>
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Responsive Columns</h2>
+
+    <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4">
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+      <div class="docs-Box"></div>
+    </div>
+
+  </section>
+  <section class="docs-Section">
+
+    <h3 class="docs-Heading">Narrow Column Layout</h3>
+
+    <div class="Grid Grid--narrow">
+      <div class="docs-Box text-center">
+        Full on mobile, 10 cols on tablet and 6 cols on desktop. Centered.
+      </div>
+    </div>
+
+  </section>
+
+{{/layout/plain }}
