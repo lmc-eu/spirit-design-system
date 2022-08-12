@@ -1,6 +1,6 @@
 # Container
 
-Container centers your content horizontally and sets its max-width with horizontal paddings.
+Basic usage:
 
 ```html
 <div class="Container">Content</div>
