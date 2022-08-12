@@ -1,6 +1,6 @@
 # Modal
 
-Modal acts as dialog for any content.
+Example usage:
 
 ```html
 <button
@@ -11,8 +11,9 @@ Modal acts as dialog for any content.
   aria-controls="modal-example-1"
   aria-expanded="false"
 >
-  Open Modal Example 1
+  Open Modal
 </button>
+
 <dialog id="modal-example-1" class="Modal">
   <div class="Modal__content">
     <div class="Modal__dialog">

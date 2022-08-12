@@ -1,6 +1,6 @@
 # Alert
 
-Alert presents feedback or important information to users.
+Variants:
 
 ```html
 <div class="Alert Alert--success" role="alert">Message</div>

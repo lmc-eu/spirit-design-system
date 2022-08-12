@@ -1,9 +1,6 @@
 # Stack
 
-Use Stack to vertically space content. It works with lists or any other HTML elements.
-It can be used to separate form fields, for example.
-
-👉 Vertical margin of items inside Stack is reset to zero.
+Usage with form fields:
 
 ```html
 <div class="Stack">
@@ -16,6 +13,11 @@ It can be used to separate form fields, for example.
     <input type="text" id="textfieldStack2" class="TextField__input" placeholder="Placeholder" />
   </div>
 </div>
+```
+
+Usage with a list:
+
+```html
 <ul class="Stack">
   <li>
     <div>Block 1</div>
@@ -28,3 +30,5 @@ It can be used to separate form fields, for example.
   </li>
 </ul>
 ```
+
+👉 Vertical margin of items inside Stack is reset to zero.

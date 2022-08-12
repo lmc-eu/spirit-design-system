@@ -1,39 +1,47 @@
 # TextField
 
-TextField enables the user to type in text information. It has input, a label,
-and an optional message. It can be disabled or have success, warning, or error
-state. The label can be hidden and show if the input is required.
+Basic usage:
 
 ```html
 <div class="TextField">
   <label for="textfield1" class="TextField__label">Label</label>
   <input type="text" id="textfield1" class="TextField__input" placeholder="Placeholder" />
 </div>
+```
+
+Required input:
+
+```html
 <div class="TextField">
   <label for="textfield2" class="TextField__label TextField__label--required">Label of required input</label>
   <input type="text" id="textfield2" class="TextField__input" placeholder="Placeholder" required />
 </div>
+```
+
+Additional message:
+
+```html
 <div class="TextField">
   <label for="textfield3" class="TextField__label">Label of input with message</label>
   <input type="text" id="textfield3" class="TextField__input" placeholder="Placeholder" />
   <div class="TextField__message">Message</div>
 </div>
+```
+
+Hidden label:
+
+```html
 <div class="TextField">
   <label for="textfield4" class="TextField__label TextField__label--hidden">Label Hidden</label>
   <input type="text" id="textfield4" class="TextField__input" placeholder="Placeholder" value="Filled" />
 </div>
-<div class="TextField TextField--error">
-  <label for="textfield5" class="TextField__label TextField__label--required">Label of input with error</label>
-  <input type="text" id="textfield5" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  <div class="TextField__message">Error message</div>
-</div>
-<div class="TextField TextField--disabled">
-  <label for="textfield6" class="TextField__label TextField__label--required">Label of disabled input</label>
-  <input type="text" id="textfield6" class="TextField__input" placeholder="Placeholder" disabled />
-  <div class="TextField__message">Message</div>
-</div>
+```
+
+Fluid width:
+
+```html
 <div class="TextField TextField--fluid">
-  <label for="textfield7" class="TextField__label TextField__label--required">Label of disabled input</label>
+  <label for="textfield7" class="TextField__label">Label of a fluid input</label>
   <input type="text" id="textfield7" class="TextField__input" placeholder="Placeholder" />
   <div class="TextField__message">Message</div>
 </div>
@@ -51,7 +59,8 @@ TextField supports the following input types:
 - `text`
 - `url`
 
-Other meaningful values (e.g. `date`, `file`) will work but design of the input field is not consistent across platforms/browsers.
+Other meaningful values (e.g. `date`, `file`) will work but the design of the
+input field will not be consistent across platforms/browsers.
 
 ## Input Width
 
@@ -59,9 +68,14 @@ There are several ways to adjust the input width:
 
 ### `size` Attribute
 
-The `size` attribute is supported on inputs of the following types: `email`, `password`, `tel`, `text`, `url`.
+The `size` attribute is supported on inputs of the following types: `email`,
+`password`, `tel`, `text`, `url`.
 
-This option is generally recommended for inputs with a limited value length (e.g. numeric representation of day, month, year). Supported values are `2`, `3` and `4` (characters). If you need any other value or prefer using `em` unit instead of default `ch`, define a `--width` CSS custom property on the `<input>` element:
+This option is generally recommended for inputs with a limited value length
+(e.g. numeric representation of day, month, year). Supported values are `2`, `3`
+and `4` (characters). If you need any other value or prefer using `em` unit
+instead of default `ch`, define a `--width` CSS custom property on the `<input>`
+element:
 
 ```html
 <div class="TextField">
@@ -72,12 +86,15 @@ This option is generally recommended for inputs with a limited value length (e.g
 
 ### Grid
 
-For other use cases (wider input or input with unknown value length), we recommend placing them inside the Grid component and using `TextField--fluid` modifier to fill the available space.
+For other use cases (wider input or input with unknown value length), we
+recommend placing them inside the Grid component and using `TextField--fluid`
+modifier to fill the available space.
 
-## TextField Password Toggle
+## Password Toggle
 
-TextField with `type="password"` can have a toggle button. When toggling don't forget to change
-not only the input type but also `aria-pressed` and `aria-label`.
+TextField with `type="password"` can have a toggle button. When toggling don't
+forget to change not only the input type but also `aria-pressed` and
+`aria-label`.
 
 ```html
 <div class="TextField">
@@ -148,7 +165,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
 </div>
 ```
 
-## Disabled TextField
+## Disabled State
 
 On top of adding the `disabled` attribute to the input, disabled TextField can
 be marked by adding `TextField--disabled` modifier class, or with `is-disabled`

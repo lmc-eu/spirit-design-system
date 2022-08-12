@@ -1,12 +1,6 @@
 # Button
 
-Available variants are:
-
-- primary
-- secondary
-- tertiary
-- inverted
-- danger
+Variants:
 
 ```html
 <button type="button" class="Button Button--primary">Primary Button</button>
@@ -16,13 +10,13 @@ Available variants are:
 <button type="button" class="Button Button--danger">Danger button</button>
 ```
 
-## Block-level Button
+Block-level Button:
 
-Create block level buttons—those that span the full width of a parent—by adding `.Button--block`.
+```html
+<button type="button" class="Button Button--primary Button--block">Primary block-level Button</button>
+```
 
-## Disabled Button
-
-Button can be rendered as disabled by one of the following approaches:
+Disabling a Button:
 
 ```html
 <button type="button" class="Button Button--primary" disabled>Disabled Button</button>
