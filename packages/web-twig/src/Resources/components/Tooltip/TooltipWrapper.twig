@@ -4,6 +4,8 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'TooltipWrapper' -%}
 
-<div {{ mainProps(props) }} class="{{ _rootClassName }}">
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<div {{ mainProps(props) }} {{ classProp(_classNames) }}>>
     {% block content %}{% endblock %}
 </div>
