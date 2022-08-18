@@ -14,6 +14,7 @@
 - Feat: Enable glob function patterns in a paths
 - Feat: Add new `Alert` variant - `informative`
 - Feat: Introduce `Modal` component
+- Feat: Introduce `Icon` component and allow icons testing
 
 ## 1.8.0 - 2022-07-18
 
