@@ -1,0 +1,12 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _name = props.name -%}
+{%- set _title = props.title | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Icon' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+{{ inlineSvg('@icons-assets/' ~ _name[:1]|upper ~ _name[1:] ~ '.svg', { class: _classNames|join(' '), title: _title }) }}
