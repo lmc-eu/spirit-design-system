@@ -42,6 +42,8 @@ module.exports = {
     'react/display-name': 'off',
     // disable for `scripts` and `config`
     '@typescript-eslint/no-var-requires': 'off',
+    // interface which extends some other interface is not considered as meaningful interface
+    '@typescript-eslint/no-empty-interface': 'off',
     // allow ++ in for loops
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     // disabled due to typescript

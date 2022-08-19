@@ -1,4 +1,5 @@
 export * from './alert';
+export * from './breadcrumbs';
 export * from './button';
 export * from './checkboxField';
 export * from './grid';
