@@ -1,0 +1,37 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _elementType = props.elementType | default('nav') -%}
+{%- set _goBackTitle = props.goBackTitle | default('') -%}
+{%- set _items = props.items | default([]) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Breadcrumbs' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }} aria-label="Breadcrumb">
+{% apply spaceless %}
+    {%- if _items|length > 0 -%}
+        <ol>
+            {% for item in _items %}
+                {% if loop.index is same as(_items|length - 1) and _goBackTitle != '' %}
+                    <li class="d-tablet-none">
+                        <a href="{{ item.url }}">{{ _goBackTitle }}</a>
+                    </li>
+                {% endif %}
+                <li class="d-none d-tablet-flex">
+                    <a
+                        href="{{ item.url }}"
+                        {% if loop.last %}
+                            aria-current="page"
+                        {% endif %}
+                    >{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    {%- else -%}
+        {%- block content -%}{%- endblock -%}
+    {%- endif -%}
+{% endapply %}
+</{{ _elementType }}>

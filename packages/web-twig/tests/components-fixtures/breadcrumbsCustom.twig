@@ -1,0 +1,40 @@
+{% set customItems = [
+    {
+        title: 'Root',
+        url: '#rootUrl',
+    },
+    {
+        title: 'Category',
+        url: '#categoryUrl',
+    },
+    {
+        title: 'Subcategory',
+        url: '#subcategoryUrl',
+    },
+    {
+        title: 'Current page',
+        url: '#currentUrl',
+    },
+] %}
+
+<Breadcrumbs>
+    {% apply spaceless %}
+        <ol>
+            {% for item in customItems %}
+                {% if loop.index is same as(customItems|length - 1) %}
+                    <li class="d-tablet-none">
+                        <a href="{{ item.url }}">Go back</a>
+                    </li>
+                {% endif %}
+                <li class="d-none d-tablet-flex">
+                    <a
+                        href="{{ item.url }}"
+                        {%- if loop.last -%}
+                            aria-current="page"
+                        {%- endif -%}
+                    >{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endapply %}
+</Breadcrumbs>

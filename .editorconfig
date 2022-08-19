@@ -17,3 +17,6 @@ indent_size = 4
 
 [packages/web-twig/*.yaml]
 indent_size = 4
+
+[packages/web-twig/**/*.twig]
+indent_size = 4
