@@ -22,7 +22,7 @@
 <div
     {{ mainProps(_mainPropsWithoutId) }}
     {{ classProp(_classNames) }}
-    {{ _idAttr }}
+    {{ _idAttr | raw }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible == 'true' %}
