@@ -28,6 +28,7 @@ export default defineConfig({
           ],
           iconsCode: [
             'add',
+            'check-plain',
             'chevron-down',
             'chevron-left',
             'chevron-right',
@@ -48,7 +49,6 @@ export default defineConfig({
           iconsDesign: [
             'check-checked',
             'check-indeterminate',
-            'check-plain',
             'check-unchecked',
             'radio-checked',
             'radio-unchecked',
