@@ -92,34 +92,26 @@
         <div class="Container">
     
           
-            <section class="docs-Section">
+            <div class="docs-FormFieldGrid">
           
-              <h2 class="docs-Heading">Variants</h2>
+              <label for="radiofield1" class="RadioField">
+                <input type="radio" id="radiofield1" name="example" class="RadioField__input" />
+                <span class="RadioField__label">Radio unselected</span>
+              </label>
+              <label for="radiofield2" class="RadioField RadioField--disabled">
+                <input type="radio" id="radiofield2" name="example" class="RadioField__input" disabled />
+                <span class="RadioField__label">Radio unselected</span>
+              </label>
+              <label for="radiofield3" class="RadioField">
+                <input type="radio" id="radiofield3" name="example" class="RadioField__input" checked />
+                <span class="RadioField__label">Radio selected</span>
+              </label>
+              <label for="radiofield4" class="RadioField RadioField--disabled">
+                <input type="radio" id="radiofield4" name="example2" class="RadioField__input" checked disabled />
+                <span class="RadioField__label">Radio selected</span>
+              </label>
           
-              <button type="button" class="Button Button--primary">Primary button</button>
-              <button type="button" class="Button Button--secondary">Secondary button</button>
-              <button type="button" class="Button Button--tertiary">Tertiary button</button>
-              <button type="button" class="Button Button--danger">Danger button</button>
-          
-              <div class="docs-Box my-600">
-                <button type="button" class="Button Button--inverted">Inverted button</button>
-              </div>
-          
-            </section>
-            <section class="docs-Section">
-          
-              <h2 class="docs-Heading">Square Button</h2>
-          
-              <button type="button" class="Button Button--primary Button--square">🚀</button>
-              <button type="button" class="Button Button--secondary Button--square">🚀</button>
-              <button type="button" class="Button Button--tertiary Button--square">🚀</button>
-              <button type="button" class="Button Button--danger Button--square">🚀</button>
-          
-              <div class="docs-Box my-600">
-                <button type="button" class="Button Button--inverted Button--square">🚀</button>
-              </div>
-          
-            </section>
+            </div>
           
     
         </div>
