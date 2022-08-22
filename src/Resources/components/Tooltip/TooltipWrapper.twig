@@ -6,6 +6,6 @@
 
 {%- set _classNames = [ _rootClassName, _class ] -%}
 
-<div {{ mainProps(props) }} {{ classProp(_classNames) }}>>
+<div {{ mainProps(props) }} {{ classProp(_classNames) }}>
     {% block content %}{% endblock %}
 </div>
