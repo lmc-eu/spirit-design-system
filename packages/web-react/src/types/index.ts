@@ -5,6 +5,7 @@ export * from './checkboxField';
 export * from './grid';
 export * from './header';
 export * from './heading';
+export * from './icon';
 export * from './label';
 export * from './link';
 export * from './message';
