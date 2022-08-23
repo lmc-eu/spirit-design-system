@@ -1,5 +1,5 @@
 {
-  "extends": ["@lmc-eu", "@lmc-eu:scheduleWeeklyBusinessHours", "group:allNonMajor", ":pinOnlyDevDependencies"],
+  "extends": ["@lmc-eu", "group:allNonMajor", ":pinOnlyDevDependencies"],
   "ignorePresets": [":ignoreModulesAndTests"],
   "ignorePaths": [
     "**/node_modules/**",
@@ -10,6 +10,7 @@
     "**/tests/**",
     "**/__fixtures__/**"
   ],
+  "schedule": ["after 9am and before 5pm on the 2nd and 4th day instance on Monday"],
   "prConcurrentLimit": 3,
   "packageRules": [
     {
