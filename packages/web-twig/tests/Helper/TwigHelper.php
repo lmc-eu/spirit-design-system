@@ -49,7 +49,7 @@ class TwigHelper
         $boolpropExtension = new BoolpropExtension();
         $twig->addExtension($boolpropExtension);
 
-        $svgExtension = new SvgExtension(new Logger);
+        $svgExtension = new SvgExtension(new Logger());
         $twig->addExtension($svgExtension);
 
         if ($prefix) {
