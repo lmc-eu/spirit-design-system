@@ -5,17 +5,22 @@
 .Alert {
     @include typography.generate(theme.$typography);
 
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: theme.$gap;
+    justify-content: flex-start;
     width: 100%;
-    padding: theme.$space-inner theme.$space-inner theme.$space-inner
-        (theme.$space-inner + theme.$icon-width + theme.$space-icon);
-    margin-right: theme.$space-icon;
-    background-position: theme.$space-inner theme.$space-inner;
-    background-repeat: no-repeat;
+    padding: theme.$padding;
     border-radius: theme.$border-radius;
 }
 
 .Alert strong {
     font-weight: theme.$emphasis-font-weight;
+}
+
+.Alert--center {
+    grid-template-columns: auto fit-content(#{theme.$content-max-width});
+    justify-content: center;
 }
 
 @each $variant, $variables in theme.$variants {
