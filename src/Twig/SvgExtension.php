@@ -20,6 +20,8 @@ class SvgExtension extends AbstractExtension
 
     private const ATTR_CLASS = 'class';
 
+    private const ATTR_SIZE = 'size';
+
     private const ATTR_TITLE = 'title';
 
     private const ATTR_ID = 'id';
@@ -130,6 +132,7 @@ class SvgExtension extends AbstractExtension
         $svgString = $source->getCode();
 
         $hasClasses = array_key_exists(self::ATTR_CLASS, $params);
+        $hasSize = array_key_exists(self::ATTR_SIZE, $params);
         $hasTitle = array_key_exists(self::ATTR_TITLE, $params);
         $hasAttributes = array_key_exists(self::ATTR, $params);
 
@@ -142,6 +145,11 @@ class SvgExtension extends AbstractExtension
 
             if ($hasClasses && is_string($params[self::ATTR_CLASS])) {
                 $this->replaceAttribute($svg, self::ATTR_CLASS, $params[self::ATTR_CLASS]);
+            }
+
+            if ($hasSize && is_string($params[self::ATTR_SIZE]) && trim($params[self::ATTR_SIZE]) !== '') {
+                $this->replaceAttribute($svg, 'width', $params[self::ATTR_SIZE]);
+                $this->replaceAttribute($svg, 'height', $params[self::ATTR_SIZE]);
             }
 
             if ($hasTitle && is_string($params[self::ATTR_TITLE]) && trim($params[self::ATTR_TITLE]) !== '') {
