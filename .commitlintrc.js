@@ -18,6 +18,7 @@ module.exports = {
         'web-twig',
         // Use when committing changes/additions/removals to exact exporter
         'exporter-scss',
+        'exporter-svg',
         // Use when affecting CI process
         'ci',
         // Use for anything that does not directly affect packages, ie. updating repo-wide
