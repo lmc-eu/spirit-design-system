@@ -150,6 +150,10 @@ class SvgExtensionTest extends TestCase
                 'test.svg', 'test_with_title.svg', [
                     'title' => 'test',
                 ], ],
+            'load with size' => [
+                'test.svg', 'test_with_size.svg', [
+                    'size' => '32',
+                ], ],
         ];
     }
 }

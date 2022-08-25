@@ -14,7 +14,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Icon name="warning" title="This is warning!" />
+<Icon name="warning" title="This is warning!" size="32" />
 ```
 
 Without lexer:
@@ -31,6 +31,7 @@ Without lexer:
 | --------- | -------- | ------- | -------- | ---------------------------------- |
 | `class`   | `string` | `null`  | no       | Custom CSS class                   |
 | `name`    | `string` | —       | yes      | Name of the icon                   |
+| `size`    | `number` | `24`    | no       | Size of the icon                   |
 | `title`   | `string` | `null`  | no       | Optional title to display on hover |
 
 Get list of `name` options in the [Icon package] or your source of icons.
