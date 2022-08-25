@@ -11,7 +11,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Alert color="danger" elementType="span">Danger Alert</Alert>
+<Alert color="danger" elementType="span" iconName="close" isCentered>Danger Alert</Alert>
 ```
 
 Without lexer:
@@ -29,11 +29,13 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                               | Default   | Required | Description        |
-| ------------- | ---------------------------------- | --------- | -------- | ------------------ |
-| `class`       | `string`                           | `null`    | no       | Custom CSS class   |
-| `color`       | `success`, `danger`, `informative` | `success` | no       | Color variant      |
-| `elementType` | `string`                           | `div`     | no       | HTML tag to render |
+| Prop name     | Type                               | Default   | Required | Description                |
+| ------------- | ---------------------------------- | --------- | -------- | -------------------------- |
+| `class`       | `string`                           | `null`    | no       | Custom CSS class           |
+| `color`       | `success`, `danger`, `informative` | `success` | no       | Color variant              |
+| `elementType` | `string`                           | `div`     | no       | HTML tag to render         |
+| `iconName`    | `string`                           | `null`    | no       | Icon used in Alert         |
+| `isCentered`  | `bool`                             | `false`   | no       | If true, Alert is centered |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
