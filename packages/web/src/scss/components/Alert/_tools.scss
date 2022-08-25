@@ -4,7 +4,6 @@
 @mixin variant($variant, $variables) {
     .Alert--#{$variant} {
         color: map.get($variables, color);
-        background-image: svg.escape(map.get($variables, icon));
         background-color: map.get($variables, background-color);
     }
 }
