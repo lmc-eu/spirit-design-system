@@ -1,7 +1,16 @@
+/**
+ *
+ * @param {string} name
+ * @returns {string}
+ */
 function cleanName(name) {
   return name.replace(/\s/g, '-').replace(/\//g, '-').replace(/\d+-/g, '').replace(/--+/g, '-').toLowerCase();
 }
 
+/**
+ * @param {string} name
+ * @returns {string}
+ */
 function plural(name) {
   if (name === 'radius') {
     return 'radii';
@@ -9,20 +18,30 @@ function plural(name) {
   if (name.slice(-1) === 's') {
     return name;
   }
+
   return `${name}s`;
 }
 
+/**
+ * @param {string} name
+ * @returns {string}
+ */
 function singular(name) {
   if (name.slice(-1) === 's') {
     return name.replace(/.$/, '');
   }
+
   return name;
 }
 
+/**
+ * @param {string} color
+ * @returns {string}
+ */
 function formatColor(color) {
   const colorParts = color.match(/.{1,2}/g);
   let shortHex = true;
-  colorParts.map((part) => {
+  colorParts.forEach((part) => {
     if (shortHex) {
       shortHex = /^(.)\1+$/.test(part);
     }
@@ -35,23 +54,38 @@ function formatColor(color) {
   return color;
 }
 
+/**
+ * @param {object} color
+ * @returns {string}
+ */
 function getColor(color) {
   if (color.a < 255) {
     return `#${color.hex}`;
-  } else {
-    return `#${formatColor(color.hex.substring(0, 6))}`;
   }
+
+  return `#${formatColor(color.hex.substring(0, 6))}`;
 }
 
+/**
+ *
+ * @param {object} from
+ * @param {object} to
+ * @returns {number}
+ */
 function getGradientAngle(from, to) {
-  var deltaY = (to.y - from.y);
-  var deltaX = (to.x - from.x);
-  var radians = Math.atan2(deltaY, deltaX); 
-  var result = radians * 180 / Math.PI; 
-  result = result + 90; 
+  const deltaY = (to.y - from.y);
+  const deltaX = (to.x - from.x);
+  const radians = Math.atan2(deltaY, deltaX);
+  let result = radians * 180 / Math.PI;
+  result += 90;
+
   return  ((result < 0) ? (360 + result) : result) % 360;
 }
 
+/**
+ * @param {string} name
+ * @returns {number|string}
+ */
 function getWeight(name) {
   switch (name.toLowerCase().replace(/\W/g, '')) {
     case 'thin':
@@ -81,32 +115,54 @@ function getWeight(name) {
   }
 }
 
+/**
+ * @param {number} value
+ * @param {string} unit
+ * @returns {string}
+ */
 function printUnit(value, unit) {
   let result = value;
   if (value > 0) {
     if (unit === 'Pixels') {
-      result = result + 'px';
+      result += 'px';
     }
     if (unit === 'rem') {
-      result = result + 'rem';
+      result += 'rem';
     }
   }
-  return result;
+
+
+return result;
 }
 
+/**
+ * @param {object} types
+ * @param {string} colors
+ * @returns {string}
+ */
 function printTypes(types, colors) {
   let result = '';
   Object.entries(types).forEach(([key, value]) => {
     result = `${result}\n$${colors ? `${key}-colors` : plural(key)}: (
 ${value.map((val) => `    ${val}: $${key}-${val},`).join('\n')}
-) !default;\n`; 
+) !default;\n`;
   });
-  return result;
+
+
+return result;
 }
 
-Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortByNum = false, sortByValue = false, breakpointsString = '') {
+/**
+ * @param {Array} allTokens
+ * @param {object} groups
+ * @param {boolean} sortByNum
+ * @param {boolean} sortByValue
+ * @param {string} breakpointsString
+ * @returns {string}
+ */
+function generateSimple(allTokens, groups = {}, sortByNum = false, sortByValue = false, breakpointsString = '') {
   let tokens = allTokens.sort((a, b) => {
-    if (!!sortByNum) {
+    if (sortByNum) {
       const aNumMatch = a.name.match(/\d+$/);
       const bNumMatch = b.name.match(/\d+$/);
 
@@ -114,12 +170,13 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
         return aNumMatch[0] - bNumMatch[0];
       }
     }
-  
-    if (!!sortByValue) {
+
+    if (sortByValue) {
       return +a.value.text - +b.value.text;
     }
     const aCompare = cleanName(a.origin ? a.origin.name : a.name);
     const bCompare = cleanName(b.origin ? b.origin.name : b.name);
+
     return aCompare.localeCompare(bCompare);
   });
 
@@ -135,19 +192,22 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
         if ((b.origin ? b.origin.name : b.name).includes(substring)) {
           bBreakpoint = substring;
         }
+
         return false;
       });
       if (!!sortByValue && !aBreakpoint) {
         return -1;
       }
+
+
       return breakpoints.indexOf(aBreakpoint) - breakpoints.indexOf(bBreakpoint);
     });
   }
 
   const vars = [];
-  let types = {};
+  const types = {};
   const names = [];
-  tokens.map((token) => {
+  tokens.forEach((token) => {
     // Get correct name of token
     let name = cleanName(token.name)
     if (token.origin && token.tokenType !== 'Gradient') {
@@ -165,8 +225,8 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
     // Set token types
     let groupName = '';
     if (!groupToken && groups.length > 0) {
-      groups.map((group) => {
-        if (Object.values(group.tokenIds).indexOf(token.id) > -1 && group.isRoot == false) {
+      groups.forEach((group) => {
+        if (Object.values(group.tokenIds).indexOf(token.id) > -1 && group.isRoot === false) {
           groupName = singular(cleanName(group.name));
         }
       });
@@ -201,7 +261,7 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
       }
       value = `${gradientType}(${gradientDirection}, ${token.value.stops.map((stop) => `${getColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`).join(', ')})`;
     } else if (token.tokenType === 'Border') {
-      token.properties.map((prop) => {
+      token.properties.forEach((prop) => {
         if (prop.codeName === 'style' && prop.value.length > 0) {
           value = prop.value;
         } else {
@@ -225,25 +285,34 @@ Pulsar.registerFunction("generateSimple", function(allTokens, groups = {}, sortB
   const typesPrint = tokens.length === 0 || tokens[0].tokenType === 'Border' ? '' : printTypes(types, tokens[0].tokenType === 'Color');
 
   return `${vars.join('\n')}\n${typesPrint}`;
-});
+}
 
-Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFontSize, fontFamilyFallback, breakpointsString = '') {
+/**
+ * @param {Array} allTokens
+ * @param {string} defaultFontSize
+ * @param {string} fontFamilyFallback
+ * @param {string} breakpointsString
+ * @returns {string}
+ */
+// eslint-disable-next-line default-param-last
+function generateTypography(allTokens = [], defaultFontSize, fontFamilyFallback, breakpointsString = '') {
   const tokens = allTokens.sort((a, b) => {
     const aCompare = cleanName(a.origin ? a.origin.name : a.name);
     const bCompare = cleanName(b.origin ? b.origin.name : b.name);
+
     return aCompare.localeCompare(bCompare);
   });
 
   const breakpoints = breakpointsString.trim().split(',');
   const styles = {};
-  tokens.map((token) => {
+  tokens.forEach((token) => {
     let name = cleanName(token.name);
     if (token.origin) {
       name = cleanName(token.origin.name);
     }
     let nameWithoutBreakpoint = name;
     let breakpoint = breakpoints[0];
-    breakpoints.map((bp) => {
+    breakpoints.forEach((bp) => {
       if (nameWithoutBreakpoint.includes(bp)) {
         breakpoint = bp;
         nameWithoutBreakpoint = nameWithoutBreakpoint.replace(`-${bp}`, '');
@@ -274,7 +343,7 @@ Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFo
       paragraphIndent,
       textTransform,
     };
-    if (styles[nameWithoutBreakpoint] !== undefined) {
+    if (typeof styles[nameWithoutBreakpoint] !== 'undefined') {
       styles[nameWithoutBreakpoint][breakpoint] = tokenVals;
     } else {
       styles[nameWithoutBreakpoint] = {
@@ -290,9 +359,9 @@ Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFo
     }
     list.push(`${styleName}: $${styleName},`)
     const breakpointValues = [];
-    breakpoints.map((breakpoint) => {
+    breakpoints.forEach((breakpoint) => {
       const breakpointVal = styleBreakpoints[breakpoint];
-      if(breakpointVal !== undefined) {
+      if(typeof breakpointVal !== 'undefined') {
         const printLetterSpacing = breakpointVal.letterSpacing !== 0 ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
         const printTextDecoration = breakpointVal.textDecoration !== 'none' ? `\n        text-decoration: ${breakpointVal.textDecoration},` : '';
         const printParagraphIndent = breakpointVal.paragraphIndent !== 0 ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
@@ -313,5 +382,14 @@ Pulsar.registerFunction("generateTypography", function(allTokens = [], defaultFo
   const listPrint = `$styles: (
     ${list.join('\n    ')}
 ) !default;`
+
+
   return `${vars.join('\n')}\n${listPrint}\n`;
-});
+}
+
+// Pulsar is global-scope object of Supernova, accesible only inside the platform
+// @see: https://developers.supernova.io/building-exporters/creating-new-exporter/using-javascript
+// eslint-disable-next-line no-undef
+Pulsar.registerFunction("generateSimple", generateSimple);
+// eslint-disable-next-line no-undef
+Pulsar.registerFunction("generateTypography", generateTypography);
