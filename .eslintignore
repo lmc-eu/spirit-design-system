@@ -16,3 +16,6 @@ dist
 
 # Some tools use this pattern for their configuration files. Lint them!
 !*.config.js
+
+# Ignore vendor directory in `packages/web-twig`
+vendor
