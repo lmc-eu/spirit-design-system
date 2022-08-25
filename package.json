@@ -14,7 +14,8 @@
     "yarn": "~1.22.10"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "exporters/*"
   ],
   "scripts": {
     "start": "yarn packages:start",
