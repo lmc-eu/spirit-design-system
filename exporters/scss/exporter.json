@@ -1,53 +1,48 @@
 {
-    "id": "eu.lmc.exporter-spirit-scss",
-    "name": "Spirit SCSS Exporter",
-    "description": "Spirit SCSS Exporter",
-    "author": "Jan Kryšpín <jan.kryspin@lmc.eu>",
-    "organization": "LMC s.r.o.",
-    "source_dir": "src",
-    "version": "2.1.0",
-    "usesBrands": true,
-    "config": {
-        "sources": "sources.json",
-        "output": "output.json",
-        "js": "src/js/functions.js"
-    },
-    "engines": {
-        "pulsar": "1.0.0",
-        "supernova": "1.0.0"
-    },
-    "tags": [
-        "SCSS",
-        "Tokens",
-        "Styles",
-        "Spirit"
-    ],
-    "contributes": {
-        "configuration": [
-            {
-                "key": "defaultFontSize",
-                "default": 16,
-                "type": "number",
-                "label": "Default project font-size in px",
-                "description": "Used for calculation to rem",
-                "category": "Advanced"
-            },
-            {
-                "key": "fontFamilyFallback",
-                "default": ", sans-serif",
-                "type": "string",
-                "label": "Font Family fallback",
-                "description": "Font Family fallback",
-                "category": "Advanced"
-            },
-            {
-                "key": "breakpoints",
-                "default": "mobile,tablet,desktop",
-                "type": "string",
-                "label": "Breakpoints",
-                "description": "List available breakpoints. Separate them with comma. Example and default value: 'mobile,tablet,desktop'.",
-                "category": "Advanced"
-            }
-        ]
-    }
+  "id": "eu.lmc.exporter-spirit-scss",
+  "name": "Spirit SCSS Exporter",
+  "description": "Spirit SCSS Exporter",
+  "author": "Jan Kryšpín <jan.kryspin@lmc.eu>",
+  "organization": "LMC s.r.o.",
+  "source_dir": "src",
+  "version": "2.1.0",
+  "usesBrands": true,
+  "config": {
+    "sources": "sources.json",
+    "output": "output.json",
+    "js": "src/js/functions.js"
+  },
+  "engines": {
+    "pulsar": "1.0.0",
+    "supernova": "1.0.0"
+  },
+  "tags": ["SCSS", "Tokens", "Styles", "Spirit"],
+  "contributes": {
+    "configuration": [
+      {
+        "key": "defaultFontSize",
+        "default": 16,
+        "type": "number",
+        "label": "Default project font-size in px",
+        "description": "Used for calculation to rem",
+        "category": "Advanced"
+      },
+      {
+        "key": "fontFamilyFallback",
+        "default": ", sans-serif",
+        "type": "string",
+        "label": "Font Family fallback",
+        "description": "Font Family fallback",
+        "category": "Advanced"
+      },
+      {
+        "key": "breakpoints",
+        "default": "mobile,tablet,desktop",
+        "type": "string",
+        "label": "Breakpoints",
+        "description": "List available breakpoints. Separate them with comma. Example and default value: 'mobile,tablet,desktop'.",
+        "category": "Advanced"
+      }
+    ]
+  }
 }
