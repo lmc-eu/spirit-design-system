@@ -1,24 +1,19 @@
 {
-    "id": "io.supernova.svg-asset-exporter",
-    "name": "SVG Assets Flat",
-    "description": "SVG Asset Exporter",
-    "author": "Jiri Trecak & Jan Kryspin",
-    "organization": "Supernova",
-    "homepage": "https://supernova.io",
-    "source_dir": "src",
-    "version": "2.1",
-    "usesBrands": true,
-    "config": {
-        "sources": "sources.json",
-        "output": "output.json",
-        "js": "src/js/helpers.js"
-    },
-    "engines": {
-        "pulsar": "1.0.0",
-        "supernova": "1.0.0"
-    },
-    "tags": [
-        "Assets",
-        "SVG"
-    ]
+  "id": "eu.lmc.exporter-spirit-svg",
+  "name": "Spirit SVG Exporter",
+  "description": "Spirit SVG Exporter",
+  "author": "Jan Kryšpín <jan.kryspin@lmc.eu>",
+  "organization": "LMC s.r.o.",
+  "source_dir": "src",
+  "version": "2.1",
+  "usesBrands": true,
+  "config": {
+    "sources": "sources.json",
+    "output": "output.json"
+  },
+  "engines": {
+    "pulsar": "1.0.0",
+    "supernova": "1.0.0"
+  },
+  "tags": ["SVG", "Assets", "Spirit"]
 }
