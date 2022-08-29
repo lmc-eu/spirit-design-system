@@ -42,19 +42,19 @@ Example of custom usage:
 ```html
 <Breadcrumbs>
   <li class="d-none d-tablet-flex">
-    <a href="#rootUrl">Root</a>
+    <Link href="#rootUrl" color="primary" isUnderlined>Root</Link>
   </li>
   <li class="d-none d-tablet-flex">
-    <a href="#categoryUrl">Category</a>
+    <Link href="#categoryUrl" color="primary" isUnderlined>Category</Link>
   </li>
   <li class="d-tablet-none">
-    <a href="#subcategoryUrl">Custom go back link</a>
+    <Link href="#subcategoryUrl" color="primary" isUnderlined>Custom go back link</Link>
   </li>
   <li class="d-none d-tablet-flex">
-    <a href="#subcategoryUrl">Subcategory</a>
+    <Link href="#subcategoryUrl" color="primary" isUnderlined>Subcategory</Link>
   </li>
   <li class="d-none d-tablet-flex">
-    <a href="#currentUrl" aria-current="page">Current page</a>
+    <Link href="#currentUrl" color="secondary" aria-current="page">Current page</Link>
   </li>
 </Breadcrumbs>
 ```
@@ -68,19 +68,19 @@ Without lexer:
 }} %}
     {% block content %}
       <li class="d-none d-tablet-flex">
-        <a href="#rootUrl">Root</a>
+        <Link href="#rootUrl" color="primary" isUnderlined>Root</Link>
       </li>
       <li class="d-none d-tablet-flex">
-        <a href="#categoryUrl">Category</a>
+        <Link href="#categoryUrl" color="primary" isUnderlined>Category</Link>
       </li>
       <li class="d-tablet-none">
-        <a href="#subcategoryUrl">Custom go back link</a>
+        <Link href="#subcategoryUrl" color="primary" isUnderlined>Custom go back link</Link>
       </li>
       <li class="d-none d-tablet-flex">
-        <a href="#subcategoryUrl">Subcategory</a>
+        <Link href="#subcategoryUrl" color="primary" isUnderlined>Subcategory</Link>
       </li>
       <li class="d-none d-tablet-flex">
-        <a href="#currentUrl" aria-current="page">Current page</a>
+        <Link href="#currentUrl" color="secondary" aria-current="page">Current page</Link>
       </li>
     {% endblock %}
 {% endembed %}
