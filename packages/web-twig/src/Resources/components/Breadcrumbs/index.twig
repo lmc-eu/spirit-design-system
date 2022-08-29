@@ -17,16 +17,16 @@
             {% for item in _items %}
                 {% if loop.index is same as(_items|length - 1) and _goBackTitle != '' %}
                     <li class="d-tablet-none">
-                        <a href="{{ item.url }}">{{ _goBackTitle }}</a>
+                        <Link href="{{ item.url }}" color="primary" isUnderlined>{{ _goBackTitle }}</Link>
                     </li>
                 {% endif %}
                 <li class="d-none d-tablet-flex">
-                    <a
+                    <Link
                         href="{{ item.url }}"
-                        {% if loop.last %}
-                            aria-current="page"
-                        {% endif %}
-                    >{{ item.title }}</a>
+                        color="{{ loop.last ? 'secondary' : 'primary' }}"
+                        isUnderlined="{{ loop.last != true }}"
+                        aria-current="{{ loop.last ? 'page' : 'false' }}"
+                    >{{ item.title }}</Link>
                 </li>
             {% endfor %}
         </ol>

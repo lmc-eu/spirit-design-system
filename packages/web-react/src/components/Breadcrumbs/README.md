@@ -43,7 +43,9 @@ Use custom content for ordered list as component's children instead of passing b
 <Breadcrumbs>
   {items.map((item) => (
     <li key={`BreadcrumbsItem_${item.title}`}>
-      <a href={item.url}>{item.title}</a>
+      <Link color="primary" isUnderlined>
+        {item.title}
+      </Link>
     </li>
   ))}
 </Breadcrumbs>
