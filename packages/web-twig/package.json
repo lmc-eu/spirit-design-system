@@ -1,0 +1,21 @@
+{
+  "name": "@lmc-eu/spirit-web-twig",
+  "version": "1.8.0",
+  "description": "Twig implementation of Spirit Design System components",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "packages/web-twig"
+  },
+  "scripts": {
+    "start": "make start",
+    "stop": "make down",
+    "test:unit": "make phpstan",
+    "test:unit:update": "make phpstan-update",
+    "test:unit:coverage": "make phpstan-coverage",
+    "lint:fix": "make ecs-fix",
+    "version": "sh ./bin/version.sh $npm_package_version"
+  }
+}
