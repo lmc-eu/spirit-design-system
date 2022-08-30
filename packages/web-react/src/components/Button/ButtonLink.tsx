@@ -12,6 +12,7 @@ const defaultProps = {
   isDisabled: false,
   isSquare: false,
   elementType: 'a',
+  size: 'medium',
 };
 
 export const ButtonLink = <T extends ElementType = 'a'>(props: SpiritButtonProps<T>): JSX.Element => {

@@ -20,6 +20,10 @@ export default {
     children: {
       control: 'text',
     },
+    size: {
+      options: ['medium', 'large'],
+      control: { type: 'select' },
+    },
   },
 };
 
@@ -32,4 +36,5 @@ ExampleButton.args = {
   children: 'Button',
   isDisabled: false,
   isBlock: false,
+  size: 'medium',
 };

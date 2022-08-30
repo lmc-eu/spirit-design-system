@@ -3,6 +3,7 @@ import { AriaLabelingProps } from './shared/dom';
 import { ChildrenProps, ClickEvents, StyleProps } from './shared';
 
 export type ButtonColor = 'primary' | 'secondary' | 'tertiary' | 'inverted' | 'danger';
+export type ButtonSize = 'medium' | 'large';
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps extends ChildrenProps, ClickEvents {
@@ -14,6 +15,8 @@ interface ButtonProps extends ChildrenProps, ClickEvents {
   isBlock?: boolean;
   /** Whether the button should be displayed as a square. */
   isSquare?: boolean;
+  /** The size of the button. */
+  size?: ButtonSize;
 }
 
 export interface AriaButtonElementTypeProps<T extends ElementType = 'button'> {

@@ -18,5 +18,6 @@ export { default as ButtonColors } from './stories/ButtonColors';
 export { default as ButtonDisabled } from './stories/ButtonDisabled';
 export { default as ButtonSquare } from './stories/ButtonSquare';
 export { default as ButtonBlock } from './stories/ButtonBlock';
+export { default as ButtonSize } from './stories/ButtonSize';
 export { default as HTML } from './stories/ButtonHtml';
 export { default as Props } from './stories/ButtonProps';
