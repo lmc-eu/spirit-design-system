@@ -18,7 +18,7 @@ const prepareSvgForReactComponent = (srcDir, distDir) => {
     if (svgs.length > 0) {
       svgs.forEach((svg) => {
         const svgPath = path.join(srcDir, svg);
-        const svgDistPath = path.join(distDir, `${toPascalCase(svg)}.svg`);
+        const svgDistPath = path.join(distDir, `${toPascalCase(svg)}Icon.svg`);
 
         fs.copyFile(svgPath, svgDistPath, () => {});
       });
