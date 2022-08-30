@@ -16,16 +16,19 @@
     "prepare:react": "node ./scripts/prepareSvgReact.js",
     "build:svg": "node ./scripts/buildSvg.js",
     "build:clean": "shx rm -rf dist",
-    "build:prepare": "shx mkdir -p dist/svg dist/react dist/.tmp-svg && shx cp -r package.json README.md dist/",
+    "build:prepare": "shx mkdir -p dist/svg dist/react dist/.tmp-svg",
+    "build:copy": "shx cp -r package.json README.md dist/",
     "build:react": "svg2react-icon --typescript --no-sub-dir ./dist/.tmp-svg ./dist/react",
     "build:react:clean": "shx rm -rf dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg",
+    "build:const": "node ./scripts/buildConstants.js",
     "prebuild": "npm-run-all build:clean build:prepare",
-    "build": "npm-run-all build:svg prepare:react build:react",
-    "postbuild": "yarn build:react:clean"
+    "build": "npm-run-all build:svg prepare:react build:react build:const",
+    "postbuild": "npm-run-all build:react:clean build:copy"
   },
   "devDependencies": {
+    "jsdom": "^20.0.0",
+    "npm-run-all": "4.1.5",
     "shx": "0.3.4",
-    "svg2react-icon": "^3.1.178",
-    "npm-run-all": "4.1.5"
+    "svg2react-icon": "^3.1.178"
   }
 }
