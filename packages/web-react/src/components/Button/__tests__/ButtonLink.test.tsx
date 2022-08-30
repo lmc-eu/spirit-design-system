@@ -36,6 +36,14 @@ describe('ButtonLink', () => {
     expect(element).toHaveClass('Button--block');
   });
 
+  it('should have size classname', () => {
+    const { container } = render(<ButtonLink size="medium" />);
+
+    const element = container.querySelector('a') as HTMLElement;
+    expect(element).toHaveClass('Button');
+    expect(element).toHaveClass('Button--medium');
+  });
+
   it('should render text children', () => {
     const dom = render(<ButtonLink>Hello World</ButtonLink>);
 

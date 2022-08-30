@@ -12,6 +12,7 @@ const defaultProps = {
   isDisabled: false,
   isSquare: false,
   elementType: 'button',
+  size: 'medium',
 };
 
 export const Button = <T extends ElementType = 'button'>(props: SpiritButtonProps<T>): JSX.Element => {

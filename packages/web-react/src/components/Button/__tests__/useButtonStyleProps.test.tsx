@@ -4,17 +4,17 @@ import { useButtonStyleProps } from '../useButtonStyleProps';
 
 describe('useButtonStyleProps', () => {
   it.each([
-    // color, isBlock, isDisabled, isSquare, expectedClasses
-    ['primary', false, false, false, 'Button Button--primary'],
-    ['secondary', false, false, false, 'Button Button--secondary'],
-    ['tertiary', false, false, false, 'Button Button--tertiary'],
-    ['danger', false, false, false, 'Button Button--danger'],
-    ['inverted', false, false, false, 'Button Button--inverted'],
-    ['primary', true, false, false, 'Button Button--primary Button--block'],
-    ['primary', false, true, false, 'Button Button--primary Button--disabled'],
-    ['primary', false, false, true, 'Button Button--primary Button--square'],
-  ])('should return classes', (color, isBlock, isDisabled, isSquare, expectedClasses) => {
-    const props = { color, isBlock, isDisabled, isSquare } as SpiritButtonProps;
+    // color, size, isBlock, isDisabled, isSquare, expectedClasses
+    ['primary', 'medium', false, false, false, 'Button Button--primary Button--medium'],
+    ['secondary', 'medium', false, false, false, 'Button Button--secondary Button--medium'],
+    ['tertiary', 'medium', false, false, false, 'Button Button--tertiary Button--medium'],
+    ['danger', 'medium', false, false, false, 'Button Button--danger Button--medium'],
+    ['inverted', 'medium', false, false, false, 'Button Button--inverted Button--medium'],
+    ['primary', 'medium', true, false, false, 'Button Button--primary Button--medium Button--block'],
+    ['primary', 'medium', false, true, false, 'Button Button--primary Button--medium Button--disabled'],
+    ['primary', 'medium', false, false, true, 'Button Button--primary Button--medium Button--square'],
+  ])('should return classes', (color, size, isBlock, isDisabled, isSquare, expectedClasses) => {
+    const props = { color, size, isBlock, isDisabled, isSquare } as SpiritButtonProps;
     const { result } = renderHook(() => useButtonStyleProps(props));
 
     expect(result.current.classProps).toBe(expectedClasses);
@@ -23,7 +23,7 @@ describe('useButtonStyleProps', () => {
   it('should warn when using unsupported sizes on body', () => {
     const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
 
-    const props = { color: 'primary', isBlock: true, isSquare: true } as SpiritButtonProps;
+    const props = { color: 'primary', size: 'medium', isBlock: true, isSquare: true } as SpiritButtonProps;
     renderHook(() => useButtonStyleProps(props));
 
     expect(consoleWarnMock).toHaveBeenCalledWith('isBlock and isSquare props are mutually exclusive');
