@@ -10,7 +10,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: theme.$padding-y theme.$padding-x;
+    padding: map.get(theme.$sizes, medium, padding-y) map.get(theme.$sizes, medium, padding-x);
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -38,7 +38,12 @@
 }
 
 .Button--square {
-    @include tools.square(theme.$breakpoints, theme.$typography, theme.$padding-y, theme.$border-width);
+    @include tools.square(
+        theme.$breakpoints,
+        theme.$typography,
+        map.get(theme.$sizes, medium, padding-y),
+        theme.$border-width
+    );
 
     flex: none;
     padding-left: 0;
@@ -48,6 +53,10 @@
 .Button--block {
     display: block;
     width: 100%;
+}
+
+@each $size, $variables in theme.$sizes {
+    @include tools.size($size, $variables);
 }
 
 @each $variant, $variables in theme.$variants {

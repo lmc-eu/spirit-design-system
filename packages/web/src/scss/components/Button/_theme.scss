@@ -1,8 +1,6 @@
 @use '@tokens' as tokens;
 
 // We subtract the border width to achieve the same dimensions as other form elements
-$padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100});
-$padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
 $typography: tokens.$body-medium-text-bold;
 $border-width: tokens.$border-width-100;
 $border-style: tokens.$border-style-100;
@@ -160,4 +158,15 @@ $variants: (
     tertiary: $tertiary,
     inverted: $inverted,
     danger: $danger,
+);
+
+$sizes: (
+    medium: (
+        padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100}),
+    ),
+    large: (
+        padding-x: calc(#{tokens.$space-800} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100}),
+    ),
 );

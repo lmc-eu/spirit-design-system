@@ -45,3 +45,9 @@
         }
     }
 }
+
+@mixin size($size, $variables) {
+    .Button--#{$size} {
+        padding: map.get($variables, padding-y) map.get($variables, padding-x);
+    }
+}
