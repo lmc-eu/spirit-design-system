@@ -23,3 +23,12 @@ Disabling a Button:
 <button type="button" class="Button Button--primary is-disabled">Disabled Button</button>
 <button type="button" class="Button Button--primary Button--disabled">Disabled Button</button>
 ```
+
+Sizes:
+
+```html
+<button type="button" class="Button Button--primary Button--medium">Medium Button</button>
+<button type="button" class="Button Button--inverted Button--medium">Medium Inverted Button</button>
+<button type="button" class="Button Button--primary Button--large">Large Button</button>
+<button type="button" class="Button Button--inverted Button--large">Large Inverted Button</button>
+```
