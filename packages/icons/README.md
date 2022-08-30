@@ -28,7 +28,7 @@ You can use SVG files directly from `@lmc-eu/spirit-icons/svg` directory by impo
 
 ### React
 
-You can import SVG files directly from `@lmc-eu/spirit-icons/svg` directory in React components using library like [React SVGR](https://react-svgr.com/).
+You can import SVG files directly from `@lmc-eu/spirit-icons/svg` directory in React components using a library like [React SVGR](https://react-svgr.com/).
 
 Example configuration for Webpack:
 
@@ -48,12 +48,33 @@ import Warning from '@lmc-eu/spirit-icons/svg/warning.svg';
 
 Or you can import React components directly from `@lmc-eu/spirit-icons/react`.
 
-⚠️ Beware of naming, as all React component does, they are named using **PascalCase**.
+⚠️ Beware of naming, as all React component does, they are named using **PascalCase** and `Icon` suffix.
 
 ```jsx
-import Warning from '@lmc-eu/spirit-icons/react/Warning';
+import { WarningIcon } from '@lmc-eu/spirit-icons/react';
+// or
+import WarningIcon from '@lmc-eu/spirit-icons/react/WarningIcon';
 
-<Warning />;
+<WarningIcon />;
+```
+
+### Icons paths
+
+Alternatively you can use an `icons` object which consists of an icon name and SVG content. Thus you can fabricate your icon yourself.
+
+```jsx
+import icons from '@lmc-eu/spirit-icons/icons';
+
+export const Icon = ({ name, , size }) => {
+  return (
+    <svg
+      fill="currentColor"
+      width={size}
+      height={size}
+      dangerouslySetInnerHTML={{ __html: icons[name] }}
+    />
+  );
+};
 ```
 
 [`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
