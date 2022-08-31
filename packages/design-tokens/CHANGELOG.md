@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.20.0"></a>
+
+# [0.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.19.0...@lmc-eu/spirit-design-tokens@0.20.0) (2022-08-31)
+
+### Dependencies
+
+- Update all non-major dependencies ([28d33a2](https://github.com/lmc-eu/spirit-design-system/commit/28d33a2))
+
+### Features
+
+- Add shx package to cross-platform commands ([9c358ef](https://github.com/lmc-eu/spirit-design-system/commit/9c358ef))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="0.19.0"></a>
 
 # [0.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.18.0...@lmc-eu/spirit-design-tokens@0.19.0) (2022-07-30)

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+
+# [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.2.0...@lmc-eu/spirit-icons@0.3.0) (2022-08-31)
+
+### Documentation
+
+- **icons:** Usage of generated icons (refs [#DS-287](https://github.com/lmc-eu/spirit-design-system/issues/DS-287)) ([e142960](https://github.com/lmc-eu/spirit-design-system/commit/e142960))
+
+### Features
+
+- Add shx package to cross-platform commands ([9c358ef](https://github.com/lmc-eu/spirit-design-system/commit/9c358ef))
+- **icons:** Add `Icon` suffix to React icons ([05f593f](https://github.com/lmc-eu/spirit-design-system/commit/05f593f))
+- **icons:** Generate Icons as a React Component in Typescript ([95526de](https://github.com/lmc-eu/spirit-design-system/commit/95526de))
+- **icons:** Generate icons path selection (refs [#DS-287](https://github.com/lmc-eu/spirit-design-system/issues/DS-287)) ([a19f61c](https://github.com/lmc-eu/spirit-design-system/commit/a19f61c))
+- **web:** Introduce Icon component [#DS-286](https://github.com/lmc-eu/spirit-design-system/issues/DS-286) ([a74088d](https://github.com/lmc-eu/spirit-design-system/commit/a74088d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.1.0...@lmc-eu/spirit-icons@0.2.0) (2022-08-10)

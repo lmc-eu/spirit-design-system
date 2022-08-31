@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.25.0"></a>
+
+# [0.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.24.0...@lmc-eu/spirit-web@0.25.0) (2022-08-31)
+
+### Bug Fixes
+
+- **web:** Move `check-plain` icon to Code Icons from Design section [#DS-286](https://github.com/lmc-eu/spirit-design-system/issues/DS-286) ([c0dec39](https://github.com/lmc-eu/spirit-design-system/commit/c0dec39))
+
+### Dependencies
+
+- Update all non-major dependencies ([28d33a2](https://github.com/lmc-eu/spirit-design-system/commit/28d33a2))
+
+### Documentation
+
+- **web:** Improve previews for both development and Supernova context ([653b618](https://github.com/lmc-eu/spirit-design-system/commit/653b618))
+- **web:** Improve READMEs to better work in Supernova context ([0b9046e](https://github.com/lmc-eu/spirit-design-system/commit/0b9046e))
+
+### Features
+
+- Add shx package to cross-platform commands ([9c358ef](https://github.com/lmc-eu/spirit-design-system/commit/9c358ef))
+- **web:** Introduce `Breadcrumbs` component (refs [#DS-302](https://github.com/lmc-eu/spirit-design-system/issues/DS-302)) ([b02a140](https://github.com/lmc-eu/spirit-design-system/commit/b02a140))
+- **web:** Introduce Icon component [#DS-286](https://github.com/lmc-eu/spirit-design-system/issues/DS-286) ([a74088d](https://github.com/lmc-eu/spirit-design-system/commit/a74088d))
+- **web:** Introduce RadioField component ([a574dbd](https://github.com/lmc-eu/spirit-design-system/commit/a574dbd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.24.0"></a>
 
 # [0.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.23.0...@lmc-eu/spirit-web@0.24.0) (2022-08-10)

@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web-react",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "React implementation of Spirit Design System components",
   "license": "MIT",
   "publishConfig": {
@@ -64,8 +64,8 @@
     "webpack-merge": "5.8.0"
   },
   "peerDependencies": {
-    "@lmc-eu/spirit-web": "*",
     "@lmc-eu/spirit-icons": "*",
+    "@lmc-eu/spirit-web": "*",
     "react": "^17.0.2 || ^18.0.0",
     "react-dom": "^17.0.2 || ^18.0.0"
   },

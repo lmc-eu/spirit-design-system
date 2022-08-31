@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.23.0"></a>
+
+# [0.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.22.0...@lmc-eu/spirit-web-react@0.23.0) (2022-08-31)
+
+### Dependencies
+
+- Update all non-major dependencies ([28d33a2](https://github.com/lmc-eu/spirit-design-system/commit/28d33a2))
+
+### Documentation
+
+- **web:** Improve previews for both development and Supernova context ([653b618](https://github.com/lmc-eu/spirit-design-system/commit/653b618))
+
+### Features
+
+- Add shx package to cross-platform commands ([9c358ef](https://github.com/lmc-eu/spirit-design-system/commit/9c358ef))
+- **web-react:** Introduce `Breadcrumbs` component (refs [#DS-302](https://github.com/lmc-eu/spirit-design-system/issues/DS-302)) ([c6110bc](https://github.com/lmc-eu/spirit-design-system/commit/c6110bc))
+- **web-react:** Introduce Icon component [#DS-287](https://github.com/lmc-eu/spirit-design-system/issues/DS-287) ([a710f52](https://github.com/lmc-eu/spirit-design-system/commit/a710f52))
+- **web-react:** Introduce RadioField component ([7007e3a](https://github.com/lmc-eu/spirit-design-system/commit/7007e3a))
+
+### Tests
+
+- **web-react:** Allow prop tests to render async components ([b8ad8a3](https://github.com/lmc-eu/spirit-design-system/commit/b8ad8a3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.22.0"></a>
 
 # [0.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.21.0...@lmc-eu/spirit-web-react@0.22.0) (2022-08-10)
