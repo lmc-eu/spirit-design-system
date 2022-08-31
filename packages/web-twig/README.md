@@ -1,7 +1,5 @@
 # Spirit Web Twig Bundle
 
-![Version](https://img.shields.io/badge/version-1.8.0-blue.svg)
-
 This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with HTML-like syntax.
 
 ## Requirements
@@ -23,7 +21,7 @@ Download using **composer**
 Install package
 
 ```bash
-composer require lmc/spirit-web-twig-bundle:~1.8.0
+composer require lmc/spirit-web-twig-bundle
 ```
 
 ### Step 2
