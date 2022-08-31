@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.0"></a>
+
+# [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.8.0...@lmc-eu/spirit-web-twig@1.9.0) (2022-08-31)
+
+### Bug Fixes
+
+- **web-twig:** Add missing service registration for ComponentLexer ([5f94b44](https://github.com/lmc-eu/spirit-design-system/commit/5f94b44))
+- **web-twig:** Default components path in spirit for extending components ([f6a137e](https://github.com/lmc-eu/spirit-design-system/commit/f6a137e))
+- **web-twig:** Make `TextField` `id` mandatory as it is required for linking the label to the input ([d57b9ad](https://github.com/lmc-eu/spirit-design-system/commit/d57b9ad))
+- **web-twig:** Remove classes used in TwigX Bundle ([635c73e](https://github.com/lmc-eu/spirit-design-system/commit/635c73e))
+- **web-twig:** Set right order of filters ([6d7cde2](https://github.com/lmc-eu/spirit-design-system/commit/6d7cde2))
+- **web-twig:** Tooltip raw id attribute ([8b47290](https://github.com/lmc-eu/spirit-design-system/commit/8b47290))
+- **web-twig:** TooltipWrapper does not use additional classes ([8136de2](https://github.com/lmc-eu/spirit-design-system/commit/8136de2))
+- **web-twig:** TooltipWrapper double closure of the component ([bdf6936](https://github.com/lmc-eu/spirit-design-system/commit/bdf6936))
+- **web-twig:** Use ComponentLexer from TwigXBundle package ([a65866c](https://github.com/lmc-eu/spirit-design-system/commit/a65866c))
+
+### Chores
+
+- **web-twig:** Add package into lerna managed workspace (refs [#393](https://github.com/lmc-eu/spirit-design-system/issues/393)) ([1912563](https://github.com/lmc-eu/spirit-design-system/commit/1912563))
+- **web-twig:** Introduce docker support for seamless development ([45dc8d2](https://github.com/lmc-eu/spirit-design-system/commit/45dc8d2))
+- **web-twig:** Parse future version and update composer.json with it ([a8b3a4d](https://github.com/lmc-eu/spirit-design-system/commit/a8b3a4d)), closes [#393](https://github.com/lmc-eu/spirit-design-system/issues/393)
+- **web-twig:** Remove ignored cache and coverage files ([ecc110b](https://github.com/lmc-eu/spirit-design-system/commit/ecc110b))
+- **web-twig:** Remove Jenkins pipeline ([57ad0a9](https://github.com/lmc-eu/spirit-design-system/commit/57ad0a9))
+- **web-twig:** Require v2 of twigx-bundle and remove minimum stability flag ([006e3c5](https://github.com/lmc-eu/spirit-design-system/commit/006e3c5))
+
+### Code Refactoring
+
+- **web-twig:** Move content to `packages/web-twig` ([23a9915](https://github.com/lmc-eu/spirit-design-system/commit/23a9915))
+- **web-twig:** Refactor directory structure of components ([dfb68d1](https://github.com/lmc-eu/spirit-design-system/commit/dfb68d1))
+- **web-twig:** Rename Tabs components to same names as we have in react package ([e352145](https://github.com/lmc-eu/spirit-design-system/commit/e352145))
+- **web-twig:** Require compiler as separate dependency (refs [#DS-277](https://github.com/lmc-eu/spirit-design-system/issues/DS-277)) ([20cb419](https://github.com/lmc-eu/spirit-design-system/commit/20cb419))
+
+### Dependencies
+
+- **web-twig:** Remove unused dependency `doctrine/cache` ([acd28f8](https://github.com/lmc-eu/spirit-design-system/commit/acd28f8))
+- **web-twig:** Update `twigx-bundle` to 2.1.0 ([9ac8aec](https://github.com/lmc-eu/spirit-design-system/commit/9ac8aec))
+
+### Documentation
+
+- **web-twig:** How to publish changes to package readonly repository ([455a328](https://github.com/lmc-eu/spirit-design-system/commit/455a328))
+- **web-twig:** Regenerate changelog based on commit history (refs [#393](https://github.com/lmc-eu/spirit-design-system/issues/393)) ([a1c02b4](https://github.com/lmc-eu/spirit-design-system/commit/a1c02b4))
+- **web-twig:** Remove step of adding internal repository to composer ([15e2154](https://github.com/lmc-eu/spirit-design-system/commit/15e2154))
+- **web-twig:** Update links to every component readme file ([028558e](https://github.com/lmc-eu/spirit-design-system/commit/028558e))
+
+### Features
+
+- **web-twig:** Add size prop to Icon component [#DS-288](https://github.com/lmc-eu/spirit-design-system/issues/DS-288) ([37a6674](https://github.com/lmc-eu/spirit-design-system/commit/37a6674))
+- **web-twig:** Change license from proprietary to MIT ([9b65fd7](https://github.com/lmc-eu/spirit-design-system/commit/9b65fd7))
+- **web-twig:** Enable glob function pattersn in a paths ([d154204](https://github.com/lmc-eu/spirit-design-system/commit/d154204))
+- **web-twig:** Introduce `Breadcrumbs` component (refs [#DS-302](https://github.com/lmc-eu/spirit-design-system/issues/DS-302)) ([0cb08ad](https://github.com/lmc-eu/spirit-design-system/commit/0cb08ad))
+- **web-twig:** Introduce `informative` variant to `Alert` [#DS-274](https://github.com/lmc-eu/spirit-design-system/issues/DS-274) ([210a013](https://github.com/lmc-eu/spirit-design-system/commit/210a013))
+- **web-twig:** Introduce `Tooltip` component (refs [#DS-252](https://github.com/lmc-eu/spirit-design-system/issues/DS-252)) ([cbba01b](https://github.com/lmc-eu/spirit-design-system/commit/cbba01b))
+- **web-twig:** Introduce filter for Boolean props ([47d3872](https://github.com/lmc-eu/spirit-design-system/commit/47d3872))
+- **web-twig:** Introduce Icon component [#DS-288](https://github.com/lmc-eu/spirit-design-system/issues/DS-288) ([69074f3](https://github.com/lmc-eu/spirit-design-system/commit/69074f3))
+- **web-twig:** Introduce Modal component ([43f73ee](https://github.com/lmc-eu/spirit-design-system/commit/43f73ee))
+- **web-twig:** Introduce RadioField component ([e47f30b](https://github.com/lmc-eu/spirit-design-system/commit/e47f30b))
+
+### Styles
+
+- **web-twig:** Cast type of variable used in foreach loop ([434affb](https://github.com/lmc-eu/spirit-design-system/commit/434affb))
+- **web-twig:** Reformat documentation by the style rule ([c69f920](https://github.com/lmc-eu/spirit-design-system/commit/c69f920))
+
+### Tests
+
+- **web-twig:** Add missing brackets in new instance of Logger ([f35c2e7](https://github.com/lmc-eu/spirit-design-system/commit/f35c2e7))
+- **web-twig:** Update snapshots after removing dependency ([53bc60c](https://github.com/lmc-eu/spirit-design-system/commit/53bc60c))
+- **web-twig:** Use real paths in data provider for Compiler Pass ([2c81c5a](https://github.com/lmc-eu/spirit-design-system/commit/2c81c5a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.8.0"></a>
 
 # [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.7.0...@lmc-eu/spirit-web-twig@1.8.0) (2022-08-29)
