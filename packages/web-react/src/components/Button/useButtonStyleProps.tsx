@@ -36,7 +36,7 @@ export function useButtonStyleProps<T extends ElementType = 'button'>(
 
   const classProps = classNames(
     buttonClass,
-    getButtonColorClassname(buttonClass, color),
+    getButtonColorClassname(buttonClass, color as ButtonColor),
     getButtonSizeClassname(buttonClass, size as ButtonSize),
     {
       [buttonBlockClass]: isBlock && !isSquare,
