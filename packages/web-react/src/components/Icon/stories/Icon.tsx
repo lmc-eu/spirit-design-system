@@ -1,4 +1,4 @@
-// Because of there is no `dist` directory during the CI run
+// Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import { ComponentStory } from '@storybook/react';

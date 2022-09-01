@@ -35,6 +35,13 @@ describe('Alert', () => {
     expect(element).toBeInTheDocument();
   });
 
+  it('should have icon', () => {
+    const dom = render(<Alert>Hello World</Alert>);
+
+    const element = dom.container.querySelector('svg') as SVGSVGElement;
+    expect(element).toBeInTheDocument();
+  });
+
   it.each([['success'], ['danger'], ['informative']])('should render color %s', (color) => {
     const dom = render(<Alert color={color as AlertColor}>Hello World</Alert>);
 
