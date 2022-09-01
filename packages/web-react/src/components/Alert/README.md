@@ -10,13 +10,17 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 <Alert color="success">Hey! Pay attention!</Alert>
 <Alert color="danger">Hey! Pay attention!</Alert>
 <Alert color="informative">Hey! Pay attention!</Alert>
+<Alert color="informative" iconName="warning">Hey! Pay attention!</Alert>
+<Alert color="informative" isCentered>Hey! Pay attention!</Alert>
 ```
 
 ## Available props
 
-| Name       | Type                               | Description                               |
-| ---------- | ---------------------------------- | ----------------------------------------- |
-| `children` | `any`                              | Content of the Alert                      |
-| `color`    | `success`, `danger`, `informative` | Color of the component, default `success` |
+| Name         | Type                               | Description                               |
+| ------------ | ---------------------------------- | ----------------------------------------- |
+| `children`   | `any`                              | Content of the Alert                      |
+| `color`      | `success`, `danger`, `informative` | Color of the component, default `success` |
+| `iconName`   | `string`                           | Icon used in Alert                        |
+| `isCentered` | `boolean`                          | If true, Alert is centered                |
 
 For detailed information see [Alert](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Alert/README.md) component

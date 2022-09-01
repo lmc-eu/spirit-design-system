@@ -17,4 +17,8 @@ export interface AlertProps extends ChildrenProps, StyleProps {}
 export interface SpiritAlertProps<T extends ElementType = 'div'> extends AriaAlertElementTypeProps<T>, AlertProps {
   /** The color of the alert. */
   color?: AlertColor;
+  /** Icon used in Alert. */
+  iconName?: string;
+  /** Whether the alert should be centered. */
+  isCentered?: boolean;
 }

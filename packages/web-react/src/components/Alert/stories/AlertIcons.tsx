@@ -11,11 +11,17 @@ import Alert from '../Alert';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <IconsProvider value={icons}>
-    <Alert color="success">This is a success alert — check it out!</Alert>
+    <Alert color="success" iconName="profile">
+      This is a success alert — check it out!
+    </Alert>
     <div className="mb-500" />
-    <Alert color="danger">This is a danger alert — check it out!</Alert>
+    <Alert color="danger" iconName="close">
+      This is a danger alert — check it out!
+    </Alert>
     <div className="mb-500" />
-    <Alert color="informative">This is an informative alert — check it out!</Alert>
+    <Alert color="informative" iconName="warning">
+      This is an informative alert — check it out!
+    </Alert>
   </IconsProvider>
 );
 

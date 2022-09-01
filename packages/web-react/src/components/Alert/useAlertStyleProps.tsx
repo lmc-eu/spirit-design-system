@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritAlertProps, AlertProps } from '../../types';
 
 export interface AlertStyles {
@@ -11,11 +11,15 @@ export interface AlertStyles {
 }
 
 export function useAlertStyleProps<T extends ElementType = 'div'>(props: SpiritAlertProps<T>): AlertStyles {
-  const { color, ...modifiedProps } = props;
+  const { color, isCentered, ...modifiedProps } = props;
 
   const alertClass = useClassNamePrefix('Alert');
   const alertColorClass = `${alertClass}--${color}`;
-  const classProps = classNames(alertClass, { [alertColorClass]: color });
+  const alertCenteredClass = `${alertClass}--center`;
+  const classProps = classNames(alertClass, {
+    [alertColorClass]: color,
+    [alertCenteredClass]: isCentered,
+  });
 
   return {
     classProps,

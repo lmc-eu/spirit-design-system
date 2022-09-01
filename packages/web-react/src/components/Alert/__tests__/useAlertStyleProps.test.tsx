@@ -16,4 +16,11 @@ describe('useAlertStyleProps', () => {
 
     expect(result.current.classProps).toBe(`Alert Alert--${color}`);
   });
+
+  it('should return centered', () => {
+    const props = { isCentered: true } as SpiritAlertProps;
+    const { result } = renderHook(() => useAlertStyleProps(props));
+
+    expect(result.current.classProps).toBe(`Alert Alert--center`);
+  });
 });
