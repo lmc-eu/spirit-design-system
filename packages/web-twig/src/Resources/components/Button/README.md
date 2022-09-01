@@ -38,6 +38,7 @@ Without lexer:
 | ------------ | -------------------------------------------------------- | --------- | -------- | ---------------------------------------------------- |
 | `class`      | `string`                                                 | `null`    | no       | Custom CSS class                                     |
 | `color`      | `primary`, `secondary`, `tertiary`, `inverted`, `danger` | `primary` | no       | Color variant                                        |
+| `size`       | `medium`, `large`                                        | `medium`  | no       | Size variant                                         |
 | `isBlock`    | `bool`                                                   | `false`   | no       | Span the element to the full width of its parent     |
 | `isDisabled` | `bool`                                                   | `false`   | no       | If true, Button is disabled                          |
 | `isSquare`   | `bool`                                                   | `false`   | no       | If true, Button is square, usually only with an icon |

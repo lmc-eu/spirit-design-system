@@ -1,6 +1,7 @@
 {# API #}
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
+{%- set _size = props.size | default('medium') -%}
 {%- set _href = props.href -%}
 {%- set _isBlock = props.isBlock | default(false) | boolprop -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
@@ -10,9 +11,10 @@
 {%- set _title = props.title | default(null) -%}
 
 {# Class names #}
-{%- set _colorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
-{%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
+{%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
+{%- set _rootColorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
+{%- set _rootSizeClassName = _spiritClassPrefix ~ 'Button--' ~ _size -%}
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
 
 {# Attributes #}
@@ -22,7 +24,7 @@
 {%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
 
 <a
     {{ mainProps(props) }}

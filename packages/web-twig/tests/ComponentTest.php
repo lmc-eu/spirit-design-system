@@ -28,7 +28,7 @@ final class ComponentTest extends TestCase
         $this->assertEquals(
             <<<HTML
 <button
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     type="button"
 >Demo button</button>
 HTML,
@@ -43,7 +43,7 @@ HTML,
 
         $this->assertEquals(<<<HTML
 <button
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     type="button"
 ><span>Demo button</span></button>
 HTML, $html);
@@ -57,7 +57,7 @@ HTML, $html);
         $this->assertEquals(
             <<<HTML
 <button
-    class="Button Button--secondary Button--block"
+    class="Button Button--secondary Button--medium Button--block"
     type="button"
 >Demo button without argument value</button>
 HTML,
@@ -74,7 +74,7 @@ HTML,
             <<<HTML
 <form>
 <button
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     type="submit"
 >Submit</button>
 </form>
@@ -95,7 +95,7 @@ HTML,
         $this->assertEquals(
             <<<HTML
 <button
-    class="jobs-Button jobs-Button--primary   jobs-Button--small"
+    class="jobs-Button jobs-Button--primary jobs-Button--small"
     type="button"
 >Primary buttom</button>
 HTML,
@@ -126,7 +126,7 @@ HTML,
         $this->assertEquals(
             <<<HTML
 <a
-    class="Button Button--primary"
+    class="Button Button--primary  Button--medium"
     href="#"
 >Link Button</a>
 HTML,
