@@ -10,7 +10,7 @@ interface ButtonProps extends ChildrenProps, ClickEvents {
   /** Whether the button is disabled. */
   isDisabled?: boolean;
   /** The color of the button. */
-  color: ButtonColor;
+  color?: ButtonColor;
   /** Whether the button should be displayed with a block style. */
   isBlock?: boolean;
   /** Whether the button should be displayed as a square. */
