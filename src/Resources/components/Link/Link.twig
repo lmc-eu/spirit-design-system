@@ -10,7 +10,6 @@
 
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
-{%- set _rootClassName = _spiritClassPrefix ~ 'link' -%}
 {%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'link-disabled' : null -%}
 {%- set _rootUnderlinedClassName = _isUnderlined ? _spiritClassPrefix ~ 'link-underlined' : null -%}
 
@@ -20,7 +19,7 @@
 {%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _class ] -%}
+{%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _class ] -%}
 
 <a
     {{ mainProps(props) }}
