@@ -10,7 +10,7 @@
   "config": {
     "sources": "sources.json",
     "output": "output.json",
-    "js": "src/js/functions.js"
+    "js": "generated/functions.js"
   },
   "engines": {
     "pulsar": "1.0.0",
