@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/js/index.js'),
+      entry: resolve(__dirname, 'src/js/index.ts'),
       name: 'Functions',
       fileName: 'functions',
       formats: ['cjs'],

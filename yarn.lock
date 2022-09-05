@@ -6480,7 +6480,7 @@
   resolved "https://registry.yarnpkg.com/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.247.tgz#2e727458dac96c2f67ab58723ba6305c84c79e34"
   integrity sha512-b4SPP6nrkeUJgnjfoo32lH+Nm4mM08Q1NHX6iwaEpzTXL1KW3eWzBHevr/RKAd4E6dJhpctRmU+2ENCGoR6o6w==
 
-"@swc/core@1.2.247":
+"@swc/core@1.2.247", "@swc/core@^1.2.247":
   version "1.2.247"
   resolved "https://registry.yarnpkg.com/@swc/core/-/core-1.2.247.tgz#2117f533f8a14be2198567a927f498757f8515e7"
   integrity sha512-EDgTvmo20BzIzKtwcmGiDszomlLR72Zk/Bz2YAH4GXN+h4wwbSpZbDIiJss1C6Q+HsBmDjwboVdfrGG+TSyUpg==
@@ -6499,7 +6499,7 @@
     "@swc/core-win32-ia32-msvc" "1.2.247"
     "@swc/core-win32-x64-msvc" "1.2.247"
 
-"@swc/jest@0.2.22":
+"@swc/jest@0.2.22", "@swc/jest@^0.2.22":
   version "0.2.22"
   resolved "https://registry.yarnpkg.com/@swc/jest/-/jest-0.2.22.tgz#70d02ac648c21a442016d7a0aa485577335a4c9a"
   integrity sha512-PIUIk9IdB1oAVfF9zNIfYoMBoEhahrrSvyryFANas7swC1cF0L5HR0f9X4qfet46oyCHCBtNcSpN0XJEOFIKlw==
@@ -23162,7 +23162,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.7.4, typescript@4.8.2, "typescript@^3 || ^4", typescript@^4.5.4, typescript@^4.5.5, typescript@^4.6.4:
+typescript@4.7.4, typescript@4.8.2, "typescript@^3 || ^4", typescript@^4.5.4, typescript@^4.5.5, typescript@^4.6.4, typescript@^4.8.2:
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
