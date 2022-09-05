@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateTypography should generate simple output 1`] = `
+"$basepink-10: (
+    : (
+        font-family: "'undefined'undefined",
+        font-size: NaN,
+        font-style: normal,
+        font-weight: test,
+        line-height: 0.1,
+        letter-spacing: 10,
+        text-indent: 10,
+    ),
+) !default;
+
+$basepink-20: (
+    : (
+        font-family: "'undefined'undefined",
+        font-size: NaN,
+        font-style: normal,
+        font-weight: test,
+        line-height: 0.1,
+        letter-spacing: 10,
+        text-indent: 10,
+    ),
+) !default;
+
+$styles: (
+    basepink-10: $basepink-10,
+    basepink-20: $basepink-20,
+) !default;
+"
+`;

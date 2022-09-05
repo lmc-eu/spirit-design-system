@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateSimple should generate simple output 1`] = `
+"$base-pink-10: #fef0f5 !default;
+$base-pink-20: #fdd5e4 !default;
+
+$base-colors: (
+    pink-10: $base-pink-10,
+    pink-20: $base-pink-20,
+) !default;
+"
+`;
