@@ -5,9 +5,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "test": "test:unit:coverage",
+    "test:unit": "jest",
+    "test:unit:watch": "yarn test:unit --watchAll",
+    "test:unit:coverage": "yarn test:unit --coverage"
   },
   "devDependencies": {
+    "jest": "^29.0.2",
     "vite": "^3.1.0"
   }
 }
