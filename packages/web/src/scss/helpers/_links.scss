@@ -9,23 +9,22 @@
     cursor: cursors.$disabled;
 }
 
-// Allows link underline everywhere, except for headings
-.link-underlined {
+// Allows link underline everywhere, except for headings default state
+.link-underlined,
+[class*='typography-heading'] a:hover,
+[class*='typography-heading'] a:focus {
     text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.1875em;
 }
 
 .link-stretched {
     @include links.stretch();
 }
 
-// All links in headings behave the same, underlined only in hover and active states
+// All links in headings behave the same
 [class*='typography-heading'] a {
     text-decoration: none;
-
-    &:hover,
-    &:active {
-        text-decoration: underline;
-    }
 }
 
 // Only links in headings have visited state
