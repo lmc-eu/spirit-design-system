@@ -78,15 +78,6 @@
     margin-bottom: theme.$header-spacing;
 }
 
-.Modal__close {
-    width: theme.$icon-size;
-    height: theme.$icon-size;
-    background-image: svg.escape(theme.$icon-close);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    pointer-events: none;
-}
-
 .Modal[open] > .Modal__backdrop {
     opacity: 1;
     visibility: visible;
