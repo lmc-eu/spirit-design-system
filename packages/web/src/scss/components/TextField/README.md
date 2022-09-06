@@ -108,7 +108,16 @@ forget to change not only the input type but also `aria-pressed` and
       aria-label="Show password"
       data-toggle="password"
     >
-      <span class="TextField__passwordToggle__icon" aria-hidden="true"></span>
+      <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
+        <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
+        </svg>
+      </span>
+      <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
+        <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
+        </svg>
+      </span>
     </button>
     <input
       type="password"
