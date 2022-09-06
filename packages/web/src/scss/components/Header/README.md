@@ -112,7 +112,9 @@ It makes use of an inverted Button by default.
   aria-controls="my-header-actions"
   aria-expanded="false"
 >
-  <span class="Header__icon Header__icon--menu" aria-hidden="true"></span>
+  <svg class="Icon" width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
   <span class="accessibility-hidden">Menu</span>
 </button>
 ```
@@ -140,7 +142,9 @@ inside Header.
       aria-controls="my-header-actions"
       aria-expanded="false"
     >
-      <span class="Header__icon Header__icon--close" aria-hidden="true"></span>
+      <svg class="Icon" width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#close" />
+      </svg>
       <span class="accessibility-hidden">Close</span>
     </button>
     <div class="Header__actions Header__actions--primary">
@@ -242,7 +246,9 @@ This is how all supported building blocks build up the complete Header:
       aria-controls="my-header-actions"
       aria-expanded="false"
     >
-      <span class="Header__icon Header__icon--menu" aria-hidden="true"></span>
+      <svg class="Icon" width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+      </svg>
       <span class="accessibility-hidden">Menu</span>
     </button>
   </div>
@@ -256,7 +262,9 @@ This is how all supported building blocks build up the complete Header:
         aria-controls="my-header-actions"
         aria-expanded="false"
       >
-        <span class="Header__icon Header__icon--close" aria-hidden="true"></span>
+        <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#close" />
+        </svg>
         <span class="accessibility-hidden">Close</span>
       </button>
       <div class="Header__actions Header__actions--primary">

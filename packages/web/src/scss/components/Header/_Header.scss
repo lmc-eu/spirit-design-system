@@ -25,21 +25,6 @@
     margin-left: auto;
 }
 
-.Header__icon {
-    width: theme.$icon-size;
-    height: theme.$icon-size;
-    background-color: transparent;
-    background-repeat: no-repeat;
-}
-
-.Header__icon--close {
-    background-image: svg.escape(theme.$icon-close);
-}
-
-.Header__icon--menu {
-    background-image: svg.escape(theme.$icon-menu);
-}
-
 .Header__bar,
 .Header__dialog {
     $_shadow-offset: -2rem;
@@ -122,6 +107,7 @@ button.Header__link {
     flex: none;
     margin-top: theme.$pane-padding;
     margin-right: theme.$pane-padding;
+    color: theme.$close-button-color;
 }
 
 .Header__text {
