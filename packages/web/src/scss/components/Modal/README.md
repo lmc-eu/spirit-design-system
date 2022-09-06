@@ -26,7 +26,9 @@ Example usage:
           aria-controls="modal-example-1"
           aria-expanded="false"
         >
-          <span class="Modal__close" aria-hidden="true"></span>
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
           <span class="accessibility-hidden">Close</span>
         </button>
       </div>
