@@ -17,10 +17,12 @@
             {% for item in _items %}
                 {% if loop.index is same as(_items|length - 1) and _goBackTitle != '' %}
                     <li class="d-tablet-none">
+                        <Icon name="chevron-left" />
                         <Link href="{{ item.url }}" color="primary" isUnderlined>{{ _goBackTitle }}</Link>
                     </li>
                 {% endif %}
                 <li class="d-none d-tablet-flex">
+                    <Icon name="chevron-right" />
                     <Link
                         href="{{ item.url }}"
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
