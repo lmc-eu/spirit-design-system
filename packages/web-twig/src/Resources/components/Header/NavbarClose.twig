@@ -4,8 +4,6 @@
 {% set _label = (props.label is defined) ? props.label : 'Close' %}
 {% set _ariaControls = (props.ariaControls is defined) ? ' aria-controls="' ~ props.ariaControls ~ '"' : '' %}
 
-{% set _iconClassName = _spiritClassPrefix ~ 'Header__icon' %}
-
 {# Miscellaneous #}
 {%- set _classNames = [ _closeClassName, _class ] -%}
 
@@ -15,6 +13,6 @@
     {{ _ariaControls }}
     aria-expanded="false"
   >
-    <span class="{{ _iconClassName }} {{ _iconClassName }}--close" aria-hidden="true"></span>
+    <Icon name="close" />
     <span class="accessibility-hidden">{{ _label }}</span>
 </button>
