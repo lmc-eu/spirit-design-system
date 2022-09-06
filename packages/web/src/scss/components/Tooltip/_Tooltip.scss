@@ -48,9 +48,7 @@
 
     width: theme.$close-button-size;
     height: theme.$close-button-size;
-    background-image: svg.escape(theme.$close-icon);
-    background-color: transparent;
-    background-repeat: no-repeat;
+    color: theme.$color;
 }
 
 .Tooltip--dismissible {
