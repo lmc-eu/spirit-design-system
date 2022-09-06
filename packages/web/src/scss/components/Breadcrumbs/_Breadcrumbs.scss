@@ -8,6 +8,7 @@
     @include typography.generate(theme.$typography);
 
     width: 100%;
+    color: theme.$color;
 }
 
 .Breadcrumbs > ol {
@@ -30,24 +31,5 @@
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
         gap: theme.$gap-tablet-up;
-    }
-
-    &::before {
-        content: '';
-        display: inline-block;
-        flex-shrink: 0;
-        width: theme.$icon-size;
-        height: theme.$icon-size;
-        background: svg.escape(theme.$icon-chevron-left) no-repeat;
-
-        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-            background: svg.escape(theme.$icon-chevron-right) no-repeat;
-        }
-    }
-
-    &:first-of-type::before {
-        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-            content: none;
-        }
     }
 }
