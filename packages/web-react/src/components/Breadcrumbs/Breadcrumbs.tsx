@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 import { SpiritBreadcrumbsProps } from '../../types';
 import { useStyleProps } from '../../hooks/styleProps';
+import { Icon } from '../Icon';
 import { Link } from '../Link';
 
 const defaultProps = {
@@ -32,12 +33,14 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
             <React.Fragment key={`BreadcrumbsItem_${item.title}`}>
               {index === items.length - 2 && goBackTitle && (
                 <li className="d-tablet-none">
+                  <Icon name="chevron-left" />
                   <Link href={item.url} color="primary" isUnderlined>
                     {goBackTitle}
                   </Link>
                 </li>
               )}
               <li className="d-none d-tablet-flex">
+                <Icon name="chevron-right" />
                 <Link
                   href={item.url}
                   color={isLast(index, items?.length) ? 'secondary' : 'primary'}
