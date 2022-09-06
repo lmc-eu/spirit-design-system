@@ -5,7 +5,6 @@
 
 {# Class names #}
 {%- set _bodyClassName = _spiritClassPrefix ~ 'Modal__body' -%}
-{%- set _closeClassName = _spiritClassPrefix ~ 'Modal__close' -%}
 {%- set _contentClassName = _spiritClassPrefix ~ 'Modal__content' -%}
 {%- set _dialogClassName = _spiritClassPrefix ~ 'Modal__dialog' -%}
 {%- set _headerClassName = _spiritClassPrefix ~ 'Modal__header' -%}
@@ -35,7 +34,7 @@
           data-target="{{ '#' ~ _id }}"
           isSquare
         >
-          <span class="{{ _closeClassName }}" aria-hidden="true"></span>
+          <Icon name="close" aria-hidden="true" />
           <span class="accessibility-hidden">{{ _closeLabel }}</span>
         </Button>
       </div>
