@@ -95,6 +95,7 @@
     justify-content: center;
     align-items: center;
     padding: theme.$input-password-toggle-padding;
+    color: theme.$input-color-default;
     border-radius: theme.$input-border-radius;
 
     &::before {
@@ -111,17 +112,17 @@
 }
 
 .TextField__passwordToggle__icon {
-    width: theme.$input-password-toggle-icon-size;
-    height: theme.$input-password-toggle-icon-size;
-    background-image: svg.escape(theme.$input-password-toggle-icon-hidden-default);
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: theme.$input-border-radius;
     pointer-events: none;
 }
 
-.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon {
-    background-image: svg.escape(theme.$input-password-toggle-icon-shown-default);
+.TextField__passwordToggle__icon--hidden,
+.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--shown {
+    display: block;
+}
+
+.TextField__passwordToggle__icon--shown,
+.TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--hidden {
+    display: none;
 }
 
 .TextField > .TextField__input:focus-visible,
@@ -195,23 +196,9 @@
 
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
+    color: theme.$input-color-disabled;
     cursor: cursors.$disabled;
     pointer-events: none;
-}
-
-.TextField .TextField__input:disabled ~ .TextField__passwordToggle__button .TextField__passwordToggle__icon,
-:is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__icon {
-    background-image: svg.escape(theme.$input-password-toggle-icon-hidden-disabled);
-}
-
-.TextField
-    .TextField__input:disabled
-    ~ .TextField__passwordToggle__button[aria-pressed='true']
-    > .TextField__passwordToggle__icon,
-:is(.TextField--disabled, .TextField.is-disabled)
-    .TextField__passwordToggle__button[aria-pressed='true']
-    > .TextField__passwordToggle__icon {
-    background-image: svg.escape(theme.$input-password-toggle-icon-shown-disabled);
 }
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
