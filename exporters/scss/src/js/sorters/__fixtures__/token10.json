@@ -1,0 +1,14 @@
+{
+  "id": "test",
+  "name": "breakpoint-desktop",
+  "description": "test",
+  "tokenType": "test",
+  "origin": {
+    "source": "test",
+    "id": "test",
+    "name": "breakpoint-desktop"
+  },
+  "value": {
+    "text": 10
+  }
+}

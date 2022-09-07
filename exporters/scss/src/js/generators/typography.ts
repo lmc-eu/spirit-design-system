@@ -1,22 +1,17 @@
 import { cleanName } from '../normalizers/names';
 import { printUnit } from '../printers/unit';
 import { normalizeWeight } from '../normalizers/weight';
+import { localeSort } from '../sorters/localeSort';
+import { Token } from '..';
 
-/**
- * @param {Array} allTokens
- * @param {string} defaultFontSize
- * @param {string} fontFamilyFallback
- * @param {string} breakpointsString
- * @returns {string}
- */
-// eslint-disable-next-line default-param-last
-export function generateTypography(allTokens = [], defaultFontSize, fontFamilyFallback, breakpointsString = '') {
-  const tokens = allTokens.sort((a, b) => {
-    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
-    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
-
-    return aCompare.localeCompare(bCompare);
-  });
+export function generateTypography(
+  // eslint-disable-next-line default-param-last
+  allTokens: Array<Token> = [],
+  defaultFontSize: string,
+  fontFamilyFallback: string,
+  breakpointsString = '',
+) {
+  const tokens = allTokens.sort(localeSort);
 
   const breakpoints = breakpointsString.trim().split(',');
   const styles = {};

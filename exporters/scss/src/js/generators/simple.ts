@@ -4,56 +4,38 @@ import { printTypes } from '../printers/types';
 import { printUnit } from '../printers/unit';
 import { formatColor } from '../formatters/color';
 import { normalizeGradientAngle } from '../normalizers/gradients';
+import { localeSort } from '../sorters/localeSort';
+import { valueSort } from '../sorters/valueSort';
+import { breakpointSort } from '../sorters/breakpointSort';
+import { Token } from '..';
 
-/**
- * @param {Array} allTokens
- * @param {object} groups
- * @param {boolean} sortByNum
- * @param {boolean} sortByValue
- * @param {string} breakpointsString
- * @returns {string}
- */
-export function generateSimple(allTokens, groups = {}, sortByNum = false, sortByValue = false, breakpointsString = '') {
+export function generateSimple(
+  allTokens: Array<Token>,
+  groups = {},
+  sortByNum = false,
+  sortByValue = false,
+  breakpointsString = '',
+): string {
   let tokens = allTokens.sort((a, b) => {
     if (sortByNum) {
       const aNumMatch = a.name.match(/\d+$/);
       const bNumMatch = b.name.match(/\d+$/);
 
       if (aNumMatch && bNumMatch) {
-        return aNumMatch[0] - bNumMatch[0];
+        return parseInt(aNumMatch[0], 10) - parseInt(bNumMatch[0], 10);
       }
     }
 
     if (sortByValue) {
-      return +a.value.text - +b.value.text;
+      return valueSort(a, b);
     }
-    const aCompare = cleanName(a.origin ? a.origin.name : a.name);
-    const bCompare = cleanName(b.origin ? b.origin.name : b.name);
 
-    return aCompare.localeCompare(bCompare);
+    return localeSort(a, b);
   });
 
   if (breakpointsString.length > 0) {
     tokens = allTokens.sort((a, b) => {
-      const breakpoints = breakpointsString.trim().split(',');
-      let aBreakpoint = '';
-      let bBreakpoint = '';
-      breakpoints.some((substring) => {
-        if ((a.origin ? a.origin.name : a.name).includes(substring)) {
-          aBreakpoint = substring;
-        }
-        if ((b.origin ? b.origin.name : b.name).includes(substring)) {
-          bBreakpoint = substring;
-        }
-
-        return false;
-      });
-
-      if (!!sortByValue && !aBreakpoint) {
-        return -1;
-      }
-
-      return breakpoints.indexOf(aBreakpoint) - breakpoints.indexOf(bBreakpoint);
+      return breakpointSort(a, b, breakpointsString, sortByValue);
     });
   }
 
