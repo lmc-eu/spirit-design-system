@@ -6,7 +6,9 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "test": "test:unit:coverage",
+    "lint": "eslint ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "npm-run-all lint test:unit:coverage types",
     "test:unit": "jest",
     "test:unit:watch": "yarn test:unit --watchAll",
     "test:unit:coverage": "yarn test:unit --coverage",

@@ -1,4 +1,4 @@
-import { normalizeWeight } from "../weight";
+import { normalizeWeight } from '../weight';
 
 describe('normalizeWeight', () => {
   it.each([
@@ -16,5 +16,5 @@ describe('normalizeWeight', () => {
     ['extrablack', 950],
   ])('should normalize weight', (weight, expected) => {
     expect(normalizeWeight(weight)).toBe(expected);
-  })
+  });
 });

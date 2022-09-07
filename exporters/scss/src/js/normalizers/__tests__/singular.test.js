@@ -1,4 +1,4 @@
-import { singular } from "../singular";
+import { singular } from '../singular';
 
 describe('singular', () => {
   it.each([
@@ -6,5 +6,5 @@ describe('singular', () => {
     ['colors', 'color'],
   ])('should singularize name', (name, expected) => {
     expect(singular(name)).toBe(expected);
-  })
+  });
 });

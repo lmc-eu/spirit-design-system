@@ -1,6 +1,6 @@
-import { cleanName } from "../normalizers/names";
-import { printUnit } from "../printers/unit";
-import { normalizeWeight } from "../normalizers/weight";
+import { cleanName } from '../normalizers/names';
+import { printUnit } from '../printers/unit';
+import { normalizeWeight } from '../normalizers/weight';
 
 /**
  * @param {Array} allTokens
@@ -80,10 +80,14 @@ export function generateTypography(allTokens = [], defaultFontSize, fontFamilyFa
     breakpoints.forEach((breakpoint) => {
       const breakpointVal = styleBreakpoints[breakpoint];
       if (typeof breakpointVal !== 'undefined') {
-        const printLetterSpacing = breakpointVal.letterSpacing !== 0 ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
-        const printTextDecoration = breakpointVal.textDecoration !== 'none' ? `\n        text-decoration: ${breakpointVal.textDecoration},` : '';
-        const printParagraphIndent = breakpointVal.paragraphIndent !== 0 ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
-        const printTextTransform = breakpointVal.textTransform !== 'none' ? `\n        text-transform: ${breakpointVal.textTransform},` : '';
+        const printLetterSpacing =
+          breakpointVal.letterSpacing !== 0 ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
+        const printTextDecoration =
+          breakpointVal.textDecoration !== 'none' ? `\n        text-decoration: ${breakpointVal.textDecoration},` : '';
+        const printParagraphIndent =
+          breakpointVal.paragraphIndent !== 0 ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
+        const printTextTransform =
+          breakpointVal.textTransform !== 'none' ? `\n        text-transform: ${breakpointVal.textTransform},` : '';
         breakpointValues.push(`${breakpoint}: (
         font-family: "${breakpointVal.fontFamily}",
         font-size: ${breakpointVal.fontSize},
