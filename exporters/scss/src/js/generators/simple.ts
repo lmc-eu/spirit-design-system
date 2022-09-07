@@ -1,3 +1,7 @@
+// Do not want to deal with exact shape of Token
+// @TODO: https://github.com/lmc-eu/spirit-design-system/issues/470
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { cleanName } from '../normalizers/names';
 import { singular } from '../normalizers/singular';
 import { printTypes } from '../printers/types';
@@ -11,7 +15,7 @@ import { Token } from '..';
 
 export function generateSimple(
   allTokens: Array<Token>,
-  groups = {},
+  groups = [],
   sortByNum = false,
   sortByValue = false,
   breakpointsString = '',
@@ -39,9 +43,9 @@ export function generateSimple(
     });
   }
 
-  const vars = [];
+  const vars: string[] = [];
   const types = {};
-  const names = [];
+  const names: string[] = [];
   tokens.forEach((token) => {
     // Get correct name of token
     let name = cleanName(token.name);
@@ -61,7 +65,7 @@ export function generateSimple(
     // Set token types
     let groupName = '';
     if (!groupToken && groups.length > 0) {
-      groups.forEach((group) => {
+      groups.forEach((group: Token) => {
         if (Object.values(group.tokenIds).indexOf(token.id) > -1 && group.isRoot === false) {
           groupName = singular(cleanName(group.name));
         }

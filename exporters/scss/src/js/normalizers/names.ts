@@ -1,7 +1,3 @@
-/**
- * @param {string} name
- * @returns {string}
- */
-export function cleanName(name) {
+export function cleanName(name: string): string {
   return name.replace(/\s/g, '-').replace(/\//g, '-').replace(/\d+-/g, '').replace(/--+/g, '-').toLowerCase();
 }

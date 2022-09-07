@@ -1,8 +1,4 @@
-/**
- * @param {string} name
- * @returns {string}
- */
-export function singular(name) {
+export function singular(name: string): string {
   if (name.slice(-1) === 's') {
     return name.replace(/.$/, '');
   }

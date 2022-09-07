@@ -1,10 +1,9 @@
-/**
- *
- * @param {object} from
- * @param {object} to
- * @returns {number}
- */
-export function normalizeGradientAngle(from, to) {
+type AngleShape = {
+  x: number;
+  y: number;
+};
+
+export function normalizeGradientAngle(from: AngleShape, to: AngleShape): number {
   const deltaY = to.y - from.y;
   const deltaX = to.x - from.x;
   const radians = Math.atan2(deltaY, deltaX);
