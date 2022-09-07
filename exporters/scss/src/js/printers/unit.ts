@@ -1,10 +1,5 @@
-/**
- * @param {number} value
- * @param {string} unit
- * @returns {string}
- */
-export function printUnit(value, unit) {
-  let result = value;
+export function printUnit(value: number, unit: string): string {
+  let result = value.toString();
   if (value > 0) {
     if (unit === 'Pixels') {
       result += 'px';

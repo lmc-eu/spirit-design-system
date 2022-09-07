@@ -3,8 +3,8 @@
 exports[`generateTypography should generate simple output 1`] = `
 "$basepink-10: (
     : (
-        font-family: "'undefined'undefined",
-        font-size: NaN,
+        font-family: "'undefined'Arial",
+        font-size: 1rem,
         font-style: normal,
         font-weight: test,
         line-height: 0.1,
@@ -15,8 +15,8 @@ exports[`generateTypography should generate simple output 1`] = `
 
 $basepink-20: (
     : (
-        font-family: "'undefined'undefined",
-        font-size: NaN,
+        font-family: "'undefined'Arial",
+        font-size: 1rem,
         font-style: normal,
         font-weight: test,
         line-height: 0.1,

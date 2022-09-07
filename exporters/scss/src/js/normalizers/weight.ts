@@ -1,8 +1,4 @@
-/**
- * @param {string} name
- * @returns {number|string}
- */
-export function normalizeWeight(name) {
+export function normalizeWeight(name: string): number | string {
   switch (name.toLowerCase().replace(/\W/g, '')) {
     case 'thin':
       return 100;

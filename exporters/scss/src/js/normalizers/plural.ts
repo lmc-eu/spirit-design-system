@@ -1,8 +1,4 @@
-/**
- * @param {string} name
- * @returns {string}
- */
-export function plural(name) {
+export function plural(name: string): string {
   if (name === 'radius') {
     return 'radii';
   }

@@ -1,3 +1,7 @@
+// Do not want to deal with exact shape of Token
+// @TODO: https://github.com/lmc-eu/spirit-design-system/issues/470
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { cleanName } from '../normalizers/names';
 import { printUnit } from '../printers/unit';
 import { normalizeWeight } from '../normalizers/weight';
@@ -5,8 +9,7 @@ import { localeSort } from '../sorters/localeSort';
 import { Token } from '..';
 
 export function generateTypography(
-  // eslint-disable-next-line default-param-last
-  allTokens: Array<Token> = [],
+  allTokens: Array<Token>,
   defaultFontSize: string,
   fontFamilyFallback: string,
   breakpointsString = '',

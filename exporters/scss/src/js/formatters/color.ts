@@ -1,10 +1,11 @@
 import { normalizeColor } from '../normalizers/color';
 
-/**
- * @param {object} color
- * @returns {string}
- */
-export function formatColor(color) {
+type ColorShape = {
+  a: number;
+  hex: string;
+};
+
+export function formatColor(color: ColorShape): string {
   if (color.a < 255) {
     return `#${color.hex}`;
   }
