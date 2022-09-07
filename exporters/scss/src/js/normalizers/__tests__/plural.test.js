@@ -1,4 +1,4 @@
-import { plural } from "../plural";
+import { plural } from '../plural';
 
 describe('plural', () => {
   it.each([
@@ -6,5 +6,5 @@ describe('plural', () => {
     ['color', 'colors'],
   ])('should pluralize name', (name, expected) => {
     expect(plural(name)).toBe(expected);
-  })
+  });
 });

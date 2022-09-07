@@ -1,4 +1,4 @@
-import { cleanName } from "../names";
+import { cleanName } from '../names';
 
 describe('cleanName', () => {
   it.each([
@@ -7,5 +7,5 @@ describe('cleanName', () => {
     ['test--test', 'test-test'],
   ])('should clean name', (name, expected) => {
     expect(cleanName(name)).toBe(expected);
-  })
+  });
 });

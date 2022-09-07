@@ -1,10 +1,8 @@
-import { generateTypography } from "../typography";
+import { generateTypography } from '../typography';
 import typographyTokens from '../__fixtures__/typographyTokens.json';
 
 describe('generateTypography', () => {
-  it.each([
-    [typographyTokens],
-  ])('should generate simple output', (allTokens) => {
+  it.each([[typographyTokens]])('should generate simple output', (allTokens) => {
     expect(generateTypography(allTokens)).toMatchSnapshot();
-  })
+  });
 });

@@ -1,4 +1,4 @@
-import { printUnit } from "../unit";
+import { printUnit } from '../unit';
 
 describe('printUnit', () => {
   it.each([
@@ -7,5 +7,5 @@ describe('printUnit', () => {
     [123, 'rem', '123rem'],
   ])('should print unit', (value, unit, expected) => {
     expect(printUnit(value, unit)).toBe(expected);
-  })
+  });
 });

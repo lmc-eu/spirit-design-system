@@ -1,9 +1,9 @@
-import { cleanName } from "../normalizers/names";
+import { cleanName } from '../normalizers/names';
 import { singular } from '../normalizers/singular';
-import { printTypes } from "../printers/types";
-import { printUnit } from "../printers/unit";
-import { formatColor } from "../formatters/color";
-import { normalizeGradientAngle } from "../normalizers/gradients";
+import { printTypes } from '../printers/types';
+import { printUnit } from '../printers/unit';
+import { formatColor } from '../formatters/color';
+import { normalizeGradientAngle } from '../normalizers/gradients';
 
 /**
  * @param {Array} allTokens
@@ -88,7 +88,8 @@ export function generateSimple(allTokens, groups = {}, sortByNum = false, sortBy
 
     const split = name.split('-');
     const typeName = groupName === '' ? split[0] : groupName;
-    const tokenNameWithoutType = groupName === '' ? name.replace(`${split[0]}-`,'') : name.replace(`${groupName}-`,'');
+    const tokenNameWithoutType =
+      groupName === '' ? name.replace(`${split[0]}-`, '') : name.replace(`${groupName}-`, '');
     if (!groupToken && split[0] !== name) {
       if (types[typeName] && types[typeName].length > 0) {
         types[typeName].push(tokenNameWithoutType);
@@ -106,7 +107,13 @@ export function generateSimple(allTokens, groups = {}, sortByNum = false, sortBy
     } else if (token.tokenType === 'GenericToken') {
       value = printUnit(token.value.text, 'Pixels');
     } else if (token.tokenType === 'Shadow') {
-      value = `${printUnit(token.value.x.measure, token.value.x.unit)} ${printUnit(token.value.y.measure, token.value.y.unit)} ${printUnit(token.value.radius.measure, token.value.radius.unit)} ${printUnit(token.value.spread.measure, token.value.spread.unit)} ${formatColor(token.value.color)}`;
+      value = `${printUnit(token.value.x.measure, token.value.x.unit)} ${printUnit(
+        token.value.y.measure,
+        token.value.y.unit,
+      )} ${printUnit(token.value.radius.measure, token.value.radius.unit)} ${printUnit(
+        token.value.spread.measure,
+        token.value.spread.unit,
+      )} ${formatColor(token.value.color)}`;
     } else if (token.tokenType === 'Gradient') {
       let gradientType = 'linear-gradient';
       let gradientDirection = `${Math.round(normalizeGradientAngle(token.value.from, token.value.to) * 100) / 100}deg`;
@@ -114,7 +121,9 @@ export function generateSimple(allTokens, groups = {}, sortByNum = false, sortBy
         gradientType = 'radial-gradient';
         gradientDirection = 'circle at center';
       }
-      value = `${gradientType}(${gradientDirection}, ${token.value.stops.map((stop) => `${formatColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`).join(', ')})`;
+      value = `${gradientType}(${gradientDirection}, ${token.value.stops
+        .map((stop) => `${formatColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`)
+        .join(', ')})`;
     } else if (token.tokenType === 'Border') {
       token.properties.forEach((prop) => {
         if (prop.codeName === 'style' && prop.value.length > 0) {
@@ -138,7 +147,8 @@ export function generateSimple(allTokens, groups = {}, sortByNum = false, sortBy
     }
   });
 
-  const typesPrint = tokens.length === 0 || tokens[0].tokenType === 'Border' ? '' : printTypes(types, tokens[0].tokenType === 'Color');
+  const typesPrint =
+    tokens.length === 0 || tokens[0].tokenType === 'Border' ? '' : printTypes(types, tokens[0].tokenType === 'Color');
 
   return `${vars.join('\n')}\n${typesPrint}`;
 }
