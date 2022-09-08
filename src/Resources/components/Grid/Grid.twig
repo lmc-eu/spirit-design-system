@@ -4,18 +4,16 @@
 {%- set _cols = props.cols | default(null) -%}
 {%- set _desktop = props.desktop | default(null) -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _layout = props.layout | default(null) -%}
 {%- set _tablet = props.tablet | default(null) -%}
 
 {# Class names #}
 {%- set _colsClassName = _cols ? _spiritClassPrefix ~ 'Grid--cols-' ~ _cols : null -%}
 {%- set _desktopClassName = _desktop ? _spiritClassPrefix ~ 'Grid--desktop--cols-' ~ _desktop : null -%}
-{%- set _layoutClassName = _cols or _tablet or _desktop ? null : _spiritClassPrefix ~ 'Grid--' ~ _layout -%}
 {%- set _tabletClassName = _tablet ? _spiritClassPrefix ~ 'Grid--tablet--cols-' ~ _tablet : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Grid' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _layoutClassName, _colsClassName, _tabletClassName, _desktopClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _colsClassName, _tabletClassName, _desktopClassName, _class ] -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
