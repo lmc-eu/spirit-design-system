@@ -43,13 +43,6 @@ describe('Grid', () => {
     expect(element).toHaveClass('Grid--desktop--cols-4');
   });
 
-  it('should have narrow classname', () => {
-    const dom = render(<Grid layout="narrow" />);
-
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass('Grid--narrow');
-  });
-
   it('should have cols classname', () => {
     const dom = render(<Grid cols={2} />);
 

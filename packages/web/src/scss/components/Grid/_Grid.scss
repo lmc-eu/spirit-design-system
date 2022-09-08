@@ -12,19 +12,3 @@
 }
 
 @include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
-
-.Grid--narrow {
-    grid-template-columns: repeat(theme.$grid-columns, 1fr);
-}
-
-.Grid--narrow > * {
-    grid-column: span 12;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        grid-column: 2 / span 10;
-    }
-
-    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-        grid-column: 4 / span 6;
-    }
-}

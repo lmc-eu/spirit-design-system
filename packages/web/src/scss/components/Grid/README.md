@@ -53,11 +53,3 @@ Responsive columns:
   <span>col 6</span>
 </div>
 ```
-
-Responsive narrow layout variant:
-
-```html
-<div class="Grid Grid--narrow">
-  <span>Narrow col</span>
-</div>
-```

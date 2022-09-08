@@ -14,7 +14,6 @@ export default {
     cols: 12,
     tablet: 12,
     desktop: 12,
-    layout: 'narrow',
   },
 };
 
@@ -121,10 +120,4 @@ ResponsiveColumns.args = {
   desktop: 4,
   tablet: 3,
   cols: 2,
-};
-
-export const NarrowColumnLayout = Template.bind({});
-NarrowColumnLayout.args = {
-  children: <ExampleBox />,
-  layout: 'narrow',
 };

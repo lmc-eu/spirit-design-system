@@ -56,24 +56,22 @@ So instead of:
 ```html
 <!-- HTML -->
 <div class="Container">
-  <div class="Grid Grid--narrow">
-    <div class="Stack">
-      <div class="TextField TextField--fluid">
-        <label for="name" class="TextField__label">Name</label>
-        <input type="text" id="name" class="TextField__input" value="" />
-      </div>
-      <div class="PasswordField PasswordField--fluid">
-        <label for="password" class="PasswordField__label">Password</label>
-        <input type="password" id="password" class="PasswordField__input" value="" />
-      </div>
-      <label class="CheckboxField"
-        ><input type="checkbox" class="CheckboxField__input" value="" />
-        <span class="CheckboxField__text">
-          <span class="CheckboxField__label">Stay Logged In</span>
-        </span>
-      </label>
-      <button type="button" class="Button Button--primary Button--medium Button--block">Login</button>
+  <div class="Stack">
+    <div class="TextField TextField--fluid">
+      <label for="name" class="TextField__label">Name</label>
+      <input type="text" id="name" class="TextField__input" value="" />
     </div>
+    <div class="PasswordField PasswordField--fluid">
+      <label for="password" class="PasswordField__label">Password</label>
+      <input type="password" id="password" class="PasswordField__input" value="" />
+    </div>
+    <label class="CheckboxField"
+      ><input type="checkbox" class="CheckboxField__input" value="" />
+      <span class="CheckboxField__text">
+        <span class="CheckboxField__label">Stay Logged In</span>
+      </span>
+    </label>
+    <button type="button" class="Button Button--primary Button--medium Button--block">Login</button>
   </div>
 </div>
 ```
@@ -82,17 +80,15 @@ You can use:
 
 ```jsx
 // React
-import { Container, Grid, Stack, TextField, CheckboxField, Button } from '@lmc-eu/spirit-web-react';
+import { Container, Stack, TextField, CheckboxField, Button } from '@lmc-eu/spirit-web-react';
 ...
 <Container>
-  <Grid layout="narrow">
-    <Stack>
-      <TextField type="text" id="name" label="Name" isFluid />
-      <TextField type="password" id="password" label="Password" isFluid />
-      <CheckboxField label="Stay Logged In" />
-      <Button isBlock>Login</Button>
-    </Stack>
-  </Grid>
+  <Stack>
+    <TextField type="text" id="name" label="Name" isFluid />
+    <TextField type="password" id="password" label="Password" isFluid />
+    <CheckboxField label="Stay Logged In" />
+    <Button isBlock>Login</Button>
+  </Stack>
 </Container>
 
 ```
