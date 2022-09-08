@@ -10,13 +10,6 @@ describe('useGridStyleProps', () => {
     expect(result.current.classProps).toBe('Grid');
   });
 
-  it('should return narrow class', () => {
-    const props: SpiritGridProps = { layout: 'narrow' };
-    const { result } = renderHook(() => useGridStyleProps(props));
-
-    expect(result.current.classProps).toBe('Grid Grid--narrow');
-  });
-
   it('should return responsive variants', () => {
     const props: SpiritGridProps = { cols: 2, tablet: 4, desktop: 12 };
     const { result } = renderHook(() => useGridStyleProps(props));

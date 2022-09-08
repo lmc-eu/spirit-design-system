@@ -45,17 +45,12 @@ const getGridClasses = (
 };
 
 export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<SpiritGridProps<ElementType>> {
-  const { layout, cols, ...restProps } = props;
-
-  if (layout && (cols || restProps.tablet || restProps.desktop)) {
-    console.warn('Grid layout and custom layout (cols, tablet, desktop) cannot be used together.');
-  }
+  const { cols, ...restProps } = props;
 
   const gridClass = useClassNamePrefix('Grid');
-  const gridLayoutClass = `${gridClass}--${layout}`;
   const gridColsClass = `${gridClass}--cols-${cols}`;
   const { props: modifiedProps, gridClasses } = getGridClasses(gridClass, restProps);
-  const classes = classNames(gridClass, { [gridColsClass]: cols }, gridClasses, { [gridLayoutClass]: layout });
+  const classes = classNames(gridClass, { [gridColsClass]: cols }, gridClasses);
 
   return {
     classProps: classes,
