@@ -1,6 +1,6 @@
 @use '@tokens' as tokens;
 
 $grid-columns: 12;
-$grid-equal-columns: 1, 2, 3, 4, 6, 12;
+$grid-equal-columns: 1, 2, 3, 4, 5, 6, 12;
 $grid-gutters: tokens.$grid-gutters;
 $breakpoints: tokens.$breakpoints;

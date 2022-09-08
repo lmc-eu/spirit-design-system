@@ -27,6 +27,10 @@ Multiple columns on all breakpoints:
   <span>col 1</span>
   …
 </div>
+<div class="Grid Grid--cols-5">
+  <span>col 1</span>
+  …
+</div>
 <div class="Grid Grid--cols-6">
   <span>col 1</span>
   …
