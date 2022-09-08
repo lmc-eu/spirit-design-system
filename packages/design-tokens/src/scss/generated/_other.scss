@@ -1,5 +1,6 @@
 // Generated Generic Tokens (Other) from Supernova. Do not edit manually.
 $container-max-width: 1280px !default;
+$grid-columns: 12px !default;
 $breakpoint-mobile: 0 !default;
 $container-padding-mobile: 16px !default;
 $grid-gutter-mobile: 16px !default;
@@ -12,6 +13,10 @@ $breakpoint-desktop: 1280px !default;
 
 $containers: (
     max-width: $container-max-width,
+) !default;
+
+$grid-columns: (
+    grid-columns: $grid-column-grid-columns,
 ) !default;
 
 $breakpoints: (
