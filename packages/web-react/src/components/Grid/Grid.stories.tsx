@@ -58,6 +58,20 @@ SixColumns.args = {
   cols: 6,
 };
 
+export const FiveColumns = Template.bind({});
+FiveColumns.args = {
+  children: (
+    <>
+      <ExampleBox />
+      <ExampleBox />
+      <ExampleBox />
+      <ExampleBox />
+      <ExampleBox />
+    </>
+  ),
+  cols: 5,
+};
+
 export const FourColumns = Template.bind({});
 FourColumns.args = {
   children: (

@@ -1,7 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import { ChildrenProps, StyleProps } from './shared';
 
-export type GridColumns = 1 | 2 | 3 | 4 | 6 | 12;
+export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
 export type GridLayouts = 'narrow';
 
 export interface GridElementTypeProps<T extends ElementType = 'div'> {
