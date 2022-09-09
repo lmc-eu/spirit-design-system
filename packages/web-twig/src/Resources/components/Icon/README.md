@@ -5,6 +5,17 @@ This is Twig implementation of the [Icon] component.
 Icon component uses inlineSVG extension, so don't forget to add icons path in the configuration
 as seen in [inlineSVG docs].
 
+## ⚠️ Setting up
+
+In your `config.yml` of your Symfony application add path to `twig` property. The Icon component internally use `@icons-assests` namespace, so you must define path for this namespace.
+
+```yml
+twig:
+  '%kernel.project_dir%/node_modules/@lmc-eu/spirit-icons/svg': icons-assets
+```
+
+## Usage
+
 Basic example usage:
 
 ```html
