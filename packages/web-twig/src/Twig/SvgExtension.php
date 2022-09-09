@@ -156,13 +156,13 @@ class SvgExtension extends AbstractExtension
             }
 
             if ($hasMainProps && is_array($params[self::ATTR_MAIN_PROPS])) {
-              foreach ($params[self::ATTR_MAIN_PROPS] as $propName => $propValue) {
-                if (preg_match('/^(data|aria)-*/', $propName) > 0) {
-                  if (trim($propValue) !== '') {
-                    $this->replaceAttribute($svg, $propName, $propValue);
-                  }
+                foreach ($params[self::ATTR_MAIN_PROPS] as $propName => $propValue) {
+                    if (preg_match('/^(data|aria)-*/', $propName) > 0) {
+                        if (trim($propValue) !== '') {
+                            $this->replaceAttribute($svg, $propName, $propValue);
+                        }
+                    }
                 }
-              }
             }
 
             if ($hasTitle && is_string($params[self::ATTR_TITLE]) && trim($params[self::ATTR_TITLE]) !== '') {
