@@ -70,7 +70,7 @@ export function generateTypography(
   const vars = [];
   const list = [];
   Object.entries(styles).forEach(([styleName, styleBreakpoints]) => {
-    if (styleName.includes('-link-')) {
+    if (styleName.includes('-link')) {
       return;
     }
     list.push(`${styleName}: $${styleName},`);
@@ -79,11 +79,11 @@ export function generateTypography(
       const breakpointVal = styleBreakpoints[breakpoint];
       if (typeof breakpointVal !== 'undefined') {
         const printLetterSpacing =
-          breakpointVal.letterSpacing !== 0 ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
+          breakpointVal.letterSpacing !== '0' ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
         const printTextDecoration =
           breakpointVal.textDecoration !== 'none' ? `\n        text-decoration: ${breakpointVal.textDecoration},` : '';
         const printParagraphIndent =
-          breakpointVal.paragraphIndent !== 0 ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
+          breakpointVal.paragraphIndent !== '0' ? `\n        text-indent: ${breakpointVal.paragraphIndent},` : '';
         const printTextTransform =
           breakpointVal.textTransform !== 'none' ? `\n        text-transform: ${breakpointVal.textTransform},` : '';
         breakpointValues.push(`${breakpoint}: (
