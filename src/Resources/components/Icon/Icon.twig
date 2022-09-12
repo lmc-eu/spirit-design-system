@@ -10,4 +10,4 @@
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
 
-{{ inlineSvg('@icons-assets/' ~ _name[:1]|upper ~ _name[1:] ~ '.svg', { class: _classNames|join(' '), size: _size, title: _title, mainProps: props }) }}
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _classNames|join(' '), size: _size, title: _title, mainProps: props }) }}
