@@ -5,8 +5,8 @@ import RadioField from '../RadioField';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
-    <RadioField label="Radio disabled" name="example" isDisabled />
-    <RadioField label="Radio disabled checked" name="example" isDisabled isChecked />
+    <RadioField id="radiofield" label="Radio disabled" name="example" isDisabled />
+    <RadioField id="radiofield" label="Radio disabled checked" name="example" isDisabled isChecked />
   </>
 );
 

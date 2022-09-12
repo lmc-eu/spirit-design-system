@@ -13,6 +13,6 @@ export * from './pill';
 export * from './radioField';
 export * from './shared';
 export * from './tabs';
+export * from './tag';
 export * from './text';
 export * from './textField';
-export * from './tag';

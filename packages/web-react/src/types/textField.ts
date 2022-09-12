@@ -7,20 +7,8 @@ interface InputProps extends InputBase, Validation, ValueBase<string | number>, 
 export type TextFieldType = 'text' | 'password' | 'email';
 
 export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps, TransferProps {
-  /** Text of control label */
-  label?: string;
-  /** Identificator of input */
-  id?: string;
   /** The type of text field */
   type?: TextFieldType;
-  /** The placeholder for input. */
-  placeholder?: string;
-  /** Whether the input is disabled. */
-  isDisabled?: boolean;
-  /** Whether the input is required. */
-  isRequired?: boolean;
-  /** Value of the input. */
-  value?: string | number;
 }
 
 export interface SpiritTextFieldProps extends TextFieldProps {
