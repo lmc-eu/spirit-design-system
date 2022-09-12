@@ -30,7 +30,7 @@ Without lexer:
 | Prop name | Type     | Default | Required | Description                        |
 | --------- | -------- | ------- | -------- | ---------------------------------- |
 | `class`   | `string` | `null`  | no       | Custom CSS class                   |
-| `name`    | `string` | —       | yes      | Name of the icon                   |
+| `name`    | `string` | —       | yes      | Name of the icon, case sensitive   |
 | `size`    | `number` | `24`    | no       | Size of the icon                   |
 | `title`   | `string` | `null`  | no       | Optional title to display on hover |
 
