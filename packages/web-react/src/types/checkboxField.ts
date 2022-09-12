@@ -13,10 +13,6 @@ export interface CheckboxFieldProps
     TransferProps {
   /** Whether the checkbox is indeterminate */
   indeterminate?: boolean;
-  /** Text of control label */
-  label?: string;
-  /** Identificator of input */
-  id?: string;
   /** Whether the checkbox is checked */
   isChecked?: boolean;
 }

@@ -4,7 +4,7 @@ import { useRadioFieldStyleProps } from '../useRadioFieldStyleProps';
 
 describe('useRadioFieldStyleProps', () => {
   it('should return defaults', () => {
-    const props = { label: 'text' };
+    const props = { id: 'radiofield', label: 'text' };
     const { result } = renderHook(() => useRadioFieldStyleProps(props));
 
     expect(result.current.classProps).toEqual({
@@ -15,14 +15,14 @@ describe('useRadioFieldStyleProps', () => {
   });
 
   it('should return hidden label', () => {
-    const props = { label: 'text', isLabelHidden: true } as SpiritRadioFieldProps;
+    const props = { id: 'radiofield', label: 'text', isLabelHidden: true } as SpiritRadioFieldProps;
     const { result } = renderHook(() => useRadioFieldStyleProps(props));
 
     expect(result.current.classProps.label).toBe('RadioField__label RadioField__label--hidden');
   });
 
   it('should return disabled', () => {
-    const props = { label: 'text', isDisabled: true } as SpiritRadioFieldProps;
+    const props = { id: 'radiofield', label: 'text', isDisabled: true } as SpiritRadioFieldProps;
     const { result } = renderHook(() => useRadioFieldStyleProps(props));
 
     expect(result.current.classProps.root).toBe('RadioField RadioField--disabled');

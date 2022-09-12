@@ -4,7 +4,7 @@ import { useCheckboxFieldStyleProps } from '../useCheckboxFieldStyleProps';
 
 describe('useCheckboxFieldStyleProps', () => {
   it('should return defaults', () => {
-    const props = {};
+    const props = { id: 'checkbox', label: 'Label' };
     const { result } = renderHook(() => useCheckboxFieldStyleProps(props));
 
     expect(result.current.classProps).toEqual({

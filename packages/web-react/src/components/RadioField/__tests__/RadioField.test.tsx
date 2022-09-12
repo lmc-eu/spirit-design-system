@@ -14,21 +14,21 @@ describe('RadioField', () => {
   restPropsTest(RadioField, 'input');
 
   it('should have label classname', () => {
-    const dom = render(<RadioField label="label" />);
+    const dom = render(<RadioField id="radiofield" label="label" />);
 
     const element = dom.container.querySelector('label > span') as HTMLElement;
     expect(element).toHaveClass('RadioField__label');
   });
 
   it('should have hidden classname', () => {
-    const dom = render(<RadioField isLabelHidden label="hidden label" />);
+    const dom = render(<RadioField id="radiofield" label="hidden label" isLabelHidden />);
 
     const element = dom.container.querySelector('label > span') as HTMLElement;
     expect(element).toHaveClass('RadioField__label--hidden');
   });
 
   it('should have input classname', () => {
-    const dom = render(<RadioField label="label" />);
+    const dom = render(<RadioField id="radiofield" label="label" />);
 
     const element = dom.container.querySelector('input') as HTMLElement;
     expect(element).toHaveClass('RadioField__input');
