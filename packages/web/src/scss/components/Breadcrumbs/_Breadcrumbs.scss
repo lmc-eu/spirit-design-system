@@ -11,25 +11,23 @@
     color: theme.$color;
 }
 
-.Breadcrumbs > ol {
+.Breadcrumbs > ol,
+.Breadcrumbs > ol > li {
     display: flex;
-    flex-wrap: wrap;
     gap: theme.$gap-mobile-up;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
         gap: theme.$gap-tablet-up;
     }
 }
 
-.Breadcrumbs > ol > li {
-    display: flex;
-    align-items: center;
-    gap: theme.$gap-mobile-up;
+.Breadcrumbs > ol {
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        gap: theme.$gap-tablet-up;
-    }
+.Breadcrumbs > ol > li {
+    align-items: center;
 }

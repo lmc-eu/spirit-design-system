@@ -7,7 +7,6 @@
     @include typography.generate(map.get(theme.$sizes, medium, typography));
 
     display: inline-block;
-    padding: map.get(theme.$sizes, medium, padding-y) map.get(theme.$sizes, medium, padding-x);
     text-align: center;
     border-radius: theme.$border-radius;
 }
