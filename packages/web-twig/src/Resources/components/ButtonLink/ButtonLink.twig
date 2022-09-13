@@ -19,7 +19,6 @@
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
 
 {# Attributes #}
-{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
 {%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
 {%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
@@ -31,7 +30,6 @@
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
-    {{ _disabledAttr | raw }}
     {{ _onClickAttr | raw }}
     {{ _targetAttr | raw }}
     {{ _titleAttr | raw }}
