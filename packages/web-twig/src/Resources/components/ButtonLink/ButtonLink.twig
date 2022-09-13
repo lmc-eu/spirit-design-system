@@ -13,6 +13,7 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
 {%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Button--disabled' : null -%}
 {%- set _rootColorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
 {%- set _rootSizeClassName = _spiritClassPrefix ~ 'Button--' ~ _size -%}
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
@@ -24,7 +25,7 @@
 {%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
 
 <a
     {{ mainProps(props) }}
