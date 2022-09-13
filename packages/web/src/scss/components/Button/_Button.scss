@@ -33,10 +33,6 @@
     }
 }
 
-.Button__icon {
-    font-size: 1.5em;
-}
-
 .Button--square {
     @include tools.square(
         theme.$breakpoints,
