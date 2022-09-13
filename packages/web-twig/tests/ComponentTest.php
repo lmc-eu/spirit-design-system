@@ -126,7 +126,7 @@ HTML,
         $this->assertEquals(
             <<<HTML
 <a
-    class="Button Button--primary  Button--medium"
+    class="Button Button--primary Button--medium"
     href="#"
 >Link Button</a>
 HTML,

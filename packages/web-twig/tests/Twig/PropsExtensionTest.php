@@ -143,7 +143,7 @@ class PropsExtensionTest extends TestCase
      * @param array<string> $classNames
      * @param array<string, mixed> $expectedRenderClass
      */
-    public function testShouldRenderclassProp(array $classNames, array $expectedRenderClass): void
+    public function testShouldRenderClassProp(array $classNames, array $expectedRenderClass): void
     {
         $expectedResponse = '';
         $environment = m::mock(Environment::class);
@@ -182,6 +182,17 @@ class PropsExtensionTest extends TestCase
                     'test-class',
                     'another-test-class',
                 ],
+            ]],
+            'multiple class names without empty values ' => [[
+              'test-class',
+              null,
+              'another-test-class',
+              null,
+            ], [
+              'classNames' => [
+                'test-class',
+                'another-test-class',
+              ],
             ]],
         ];
     }
