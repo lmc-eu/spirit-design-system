@@ -15,3 +15,4 @@ export * from './shared';
 export * from './tabs';
 export * from './text';
 export * from './textField';
+export * from './tag';

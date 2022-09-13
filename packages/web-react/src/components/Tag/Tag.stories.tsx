@@ -1,5 +1,6 @@
+import { ComponentMeta } from '@storybook/react';
 import React from 'react';
-import Tag, { TagProps } from './Tag';
+import Tag from './Tag';
 
 export default {
   title: 'Components/Tag',
@@ -20,9 +21,9 @@ export default {
       control: 'text',
     },
   },
-};
+} as ComponentMeta<typeof Tag>;
 
-const Template = (args: TagProps) => <Tag {...args} />;
+const Template = (args: typeof Tag) => <Tag {...args} />;
 
 export const ExampleTag = Template.bind({});
 ExampleTag.args = {
@@ -30,4 +31,6 @@ ExampleTag.args = {
   size: 'medium',
   theme: 'dark',
   children: 'Tag example',
+  UNSAFE_style: { opacity: 1 },
+  UNSAFE_className: 'my-unsupported-class',
 };
