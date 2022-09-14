@@ -4,10 +4,4 @@
 {%- set _size = props.size | default('24') -%}
 {%- set _title = props.title | default(null) -%}
 
-{# Class names #}
-{%- set _rootClassName = _spiritClassPrefix ~ 'Icon' -%}
-
-{# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
-
-{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _classNames|join(' '), size: _size, title: _title, mainProps: props }) }}
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _class, size: _size, title: _title, mainProps: props }) }}
