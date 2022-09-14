@@ -31,6 +31,4 @@ ExampleTag.args = {
   size: 'medium',
   theme: 'dark',
   children: 'Tag example',
-  UNSAFE_style: { opacity: 1 },
-  UNSAFE_className: 'my-unsupported-class',
 };
