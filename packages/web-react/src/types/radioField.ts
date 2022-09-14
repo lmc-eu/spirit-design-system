@@ -1,9 +1,9 @@
-import { ChildrenProps, StyleProps, Validation, InputBase, ValueBase } from './shared';
+import { ChildrenProps, StyleProps, Validation, InputBase, ValueBase, RestProps } from './shared';
 import { LabelProps } from './label';
 
 interface InputProps extends InputBase, Validation, ValueBase<string | number> {}
 
-export interface RadioFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps {
+export interface RadioFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, RestProps {
   /** Text of control label */
   label: string;
   /** Identificator of input */

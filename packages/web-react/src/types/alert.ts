@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps } from './shared';
+import { ChildrenProps, StyleProps, RestProps } from './shared';
 
 export type AlertColor = 'success' | 'danger' | 'informative';
 
@@ -12,7 +12,7 @@ export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface AlertProps extends ChildrenProps, StyleProps {}
+export interface AlertProps extends ChildrenProps, StyleProps, RestProps {}
 
 export interface SpiritAlertProps<T extends ElementType = 'div'> extends AriaAlertElementTypeProps<T>, AlertProps {
   /** The color of the alert. */

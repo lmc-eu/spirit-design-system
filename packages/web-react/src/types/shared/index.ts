@@ -6,6 +6,7 @@ export * from './events';
 export * from './inputs';
 export * from './style';
 export * from './typography';
+export * from './rest';
 
 export interface ChildrenProps {
   /** The content to display in the button. */
