@@ -91,7 +91,12 @@ export function generateSimple(
     } else if (token.tokenType === 'Radius') {
       value = printUnit(token.value.radius.measure, token.value.radius.unit);
     } else if (token.tokenType === 'GenericToken') {
-      value = printUnit(token.value.text, 'Pixels');
+      const unitLessProp = token.properties.find((prop) => prop.codeName === 'unitless');
+      if (unitLessProp && !!unitLessProp.value) {
+        value = token.value.text;
+      } else {
+        value = printUnit(token.value.text, 'Pixels');
+      }
     } else if (token.tokenType === 'Shadow') {
       value = `${printUnit(token.value.x.measure, token.value.x.unit)} ${printUnit(
         token.value.y.measure,
@@ -111,13 +116,12 @@ export function generateSimple(
         .map((stop) => `${formatColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`)
         .join(', ')})`;
     } else if (token.tokenType === 'Border') {
-      token.properties.forEach((prop) => {
-        if (prop.codeName === 'style' && prop.value.length > 0) {
-          value = prop.value;
-        } else {
-          value = printUnit(token.value.width.measure, token.value.width.unit);
-        }
-      });
+      const styleProp = token.properties.find((prop) => prop.codeName === 'style');
+      if (styleProp && styleProp.value.length > 0) {
+        value = styleProp.value;
+      } else {
+        value = printUnit(token.value.width.measure, token.value.width.unit);
+      }
     } else {
       value = printUnit(token.value.measure, token.value.unit);
     }
