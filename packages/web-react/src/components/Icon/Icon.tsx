@@ -1,7 +1,6 @@
-import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
-import { useClassNamePrefix, useIcon } from '../../hooks';
+import { useIcon } from '../../hooks';
 import { IconProps } from '../../types';
 
 const defaultProps = {
@@ -9,7 +8,6 @@ const defaultProps = {
 };
 
 export const Icon = ({ name, title, size, ...restProps }: IconProps): JSX.Element => {
-  const iconClass = useClassNamePrefix('Icon');
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -29,7 +27,7 @@ export const Icon = ({ name, title, size, ...restProps }: IconProps): JSX.Elemen
       dangerouslySetInnerHTML={{ __html: icon }}
       {...otherProps}
       {...styleProps}
-      className={classNames(iconClass, styleProps.className)}
+      className={styleProps.className}
     />
   );
 };
