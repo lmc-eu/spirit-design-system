@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps, TextInputBase, InputBase, Validation, ValueBase } from './shared';
+import { ChildrenProps, StyleProps, TextInputBase, InputBase, Validation, ValueBase, RestProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
@@ -6,13 +6,13 @@ interface InputProps extends InputBase, Validation, ValueBase<string | number>, 
 
 export type TextFieldType = 'text' | 'password' | 'email';
 
-export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps {
+export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps, RestProps {
   /** Text of control label */
   label?: string;
   /** Identificator of input */
   id?: string;
   /** The type of text field */
-  type: TextFieldType;
+  type?: TextFieldType;
   /** The placeholder for input. */
   placeholder?: string;
   /** Whether the input is disabled. */

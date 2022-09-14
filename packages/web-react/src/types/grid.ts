@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps } from './shared';
+import { ChildrenProps, StyleProps, RestProps } from './shared';
 
 export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
 export type GridLayouts = 'narrow';
@@ -28,4 +28,8 @@ export interface GridProps<T extends ElementType = 'div'>
     GridCustomLayoutProps,
     GridLayoutProps {}
 
-export interface SpiritGridProps<T extends ElementType = 'div'> extends GridProps<T>, ChildrenProps, StyleProps {}
+export interface SpiritGridProps<T extends ElementType = 'div'>
+  extends GridProps<T>,
+    ChildrenProps,
+    StyleProps,
+    RestProps {}

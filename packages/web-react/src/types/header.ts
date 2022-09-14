@@ -1,6 +1,6 @@
-import { ChildrenProps } from './shared';
+import { ChildrenProps, RestProps } from './shared';
 
-export interface HeaderProps extends ChildrenProps {
+export interface HeaderProps extends ChildrenProps, RestProps {
   /* Identification of the header component */
   id: string;
 }

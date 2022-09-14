@@ -1,6 +1,6 @@
 import { ElementType, JSXElementConstructor, Ref } from 'react';
 import { AriaLabelingProps } from './shared/dom';
-import { ChildrenProps, ClickEvents, StyleProps } from './shared';
+import { ChildrenProps, ClickEvents, StyleProps, RestProps } from './shared';
 
 export type ButtonColor = 'primary' | 'secondary' | 'tertiary' | 'inverted' | 'danger';
 export type ButtonSize = 'medium' | 'large';
@@ -55,7 +55,8 @@ export interface SpiritButtonProps<T extends ElementType = 'button'>
   extends AriaBaseButtonProps,
     ButtonProps,
     LinkButtonProps<T>,
-    StyleProps {
+    StyleProps,
+    RestProps {
   // tag?: ElementType;
   innerRef?: Ref<HTMLButtonElement>;
 }

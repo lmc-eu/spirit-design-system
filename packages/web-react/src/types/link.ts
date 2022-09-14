@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps } from './shared';
+import { ChildrenProps, StyleProps, RestProps } from './shared';
 
 export type LinkColor = 'primary' | 'secondary' | 'inverted';
 
@@ -12,14 +12,18 @@ export interface LinkElementTypeProps<T extends ElementType = 'a'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface LinkProps<T extends ElementType = 'a'> extends LinkElementTypeProps<T>, ChildrenProps, StyleProps {
+export interface LinkProps<T extends ElementType = 'a'>
+  extends LinkElementTypeProps<T>,
+    ChildrenProps,
+    StyleProps,
+    RestProps {
   /** Link's href attribute */
   href: string;
 }
 
 export interface SpiritLinkProps<T extends ElementType = 'a'> extends LinkProps<T> {
   /** Color of the Link */
-  color: LinkColor;
+  color?: LinkColor;
   /** Whether is the Link underlined */
   isUnderlined?: boolean;
   /** Whether is the Link disabled */

@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps } from './shared';
+import { ChildrenProps, RestProps } from './shared';
 
 export type PillColor = 'secondary' | 'selected';
 
@@ -12,7 +12,10 @@ export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface SpiritPillProps<T extends ElementType = 'span'> extends AriaPillElementTypeProps<T>, ChildrenProps {
+export interface SpiritPillProps<T extends ElementType = 'span'>
+  extends AriaPillElementTypeProps<T>,
+    ChildrenProps,
+    RestProps {
   /** The color of the pill. */
   color?: PillColor;
 }

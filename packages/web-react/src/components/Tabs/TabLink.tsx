@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChildrenProps } from '../../types';
+import { ChildrenProps, RestProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-interface TabLinkProps extends ChildrenProps {
+interface TabLinkProps extends ChildrenProps, RestProps {
   href: string;
 }
 
