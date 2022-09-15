@@ -1,4 +1,4 @@
-import type { ChangeEventHandler } from 'react';
+import type { ChangeEventHandler, KeyboardEventHandler } from 'react';
 
 export type ValidationState = 'success' | 'warning' | 'error';
 
@@ -20,6 +20,8 @@ export interface InputBase {
   isDisabled?: boolean;
   /** Handle action when the input is change. */
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  /** Handle action when key is pressed. */
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
 }
 
 export interface ValueBase<T> {
