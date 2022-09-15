@@ -7,10 +7,10 @@ Basic example usage:
 ```html
 <TabList>
   <TabItem>
-    <TabLink isSelected id="pane1-tab" ariaTarget="pane1">Item selected</TabLink>
+    <TabLink isSelected id="pane1-tab" target="pane1">Item selected</TabLink>
   </TabItem>
   <TabItem>
-    <TabsLink id="pane2-tab" ariaTarget="pane2">Item</TabsLink>
+    <TabLink id="pane2-tab" target="pane2">Item</TabLink>
   </TabItem>
   <TabItem>
     <TabLink href="https://www.example.com">Item link</TabLink>
@@ -28,9 +28,9 @@ Without lexer:
         {% embed "@spirit/tabItem.twig" %}
             {% block content %}
                 {% embed "@spirit/tabLink.twig" with { props: {
+                  id: 'pane1-tab',
                   isSelected: true,
-                  id: 'panel1-tab',
-                  target: 'panel1',
+                  target: 'pane1',
                 } } %}
                     {% block content %}
                         Item selected
@@ -66,7 +66,7 @@ The Tabs itself consists of many components which cannot be used independently.
 | `href`       | `string`  | `null`  | no       | URL target of a link         |
 | `id`         | `string ` | `null`  | no       | Tab item identification      |
 | `isSelected` | `boolean` | `false` | no       | Whether is tab item selected |
-| `ariaTarget` | `string`  | `null`  | no       | Target pane of the tab item  |
+| `target`     | `string`  | `null`  | no       | Target tab pane ID           |
 
 ### TabPane
 
