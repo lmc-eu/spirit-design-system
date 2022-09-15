@@ -4,10 +4,11 @@ import { useIcon } from '../../hooks';
 import { IconProps } from '../../types';
 
 const defaultProps = {
+  ariaHidden: true,
   size: 24,
 };
 
-export const Icon = ({ name, title, size, ...restProps }: IconProps): JSX.Element => {
+export const Icon = ({ name, title, size, ariaHidden, ...restProps }: IconProps): JSX.Element => {
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -25,6 +26,7 @@ export const Icon = ({ name, title, size, ...restProps }: IconProps): JSX.Elemen
       height={size}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: icon }}
+      aria-hidden={ariaHidden}
       {...otherProps}
       {...styleProps}
       className={styleProps.className}
