@@ -5,36 +5,37 @@
 {%- set _href = props.href | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isSelected = props.isSelected | default(false) | boolprop -%}
+{%- set _target = props.target | default(null) -%}
 
 {# Class names #}
 {%- set _isSelectedClassName = _isSelected ? 'is-selected' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs__link' -%}
 
 {# Attributes #}
-{%- set _ariaSelectedAttr = _isSelected ? 'true' : 'false' -%}
-{%- set _ariaControlsAttr = _ariaTarget ? 'aria-controls=' ~ _ariaTarget : null -%}
-{%- set _dataTargetAttr = _ariaTarget ? 'data-target=#' ~ _ariaTarget : null -%}
-{%- set _dataToggleAttr = _href ? null : 'data-toggle=tabs' -%}
-{%- set _hrefAttr = _href ? 'href=' ~ _href : null -%}
-{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
-{%- set _roleAttr = _href ? 'role=tab' : null -%}
-{%- set _typeAttr = _href ? null : 'type=button' -%}
+{%- set _ariaControlsAttr = _target ? 'aria-controls="' ~ _target ~ '"' : null -%}
+{%- set _dataTargetAttr = _target ? 'data-target="#' ~ _target ~ '"' : null -%}
+{%- set _dataToggleAttr = _href ? null : 'data-toggle="tabs"' -%}
+{%- set _hrefAttr = _href ? 'href="' ~ _href ~ '"' : null -%}
+{%- set _idAttr = _id ? ' id="' ~ _id ~ '"' : null -%}
+{%- set _roleAttr = _href ? 'role="tab"' : null -%}
+{%- set _typeAttr = _href ? null : 'type="button"' -%}
 
 {# Miscellaneous #}
+{%- set _ariaSelected = _isSelected ? 'true' : 'false' -%}
 {%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}
 {%- set _elementType = _href ? 'a' : 'button' -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
-    {{ _hrefAttr | raw }}
-    {{ _idAttr }}
-    {{ _roleAttr }}
-    {{ _typeAttr }}
-    {{ _dataToggleAttr | raw }}
-    aria-selected="{{ _ariaSelectedAttr }}"
+    aria-selected="{{ _ariaSelected }}"
+    {{ _ariaControlsAttr | raw }}
     {{ _dataTargetAttr | raw }}
-    {{ _ariaControlsAttr }}
+    {{ _dataToggleAttr | raw }}
+    {{ _hrefAttr | raw }}
+    {{ _idAttr | raw }}
+    {{ _roleAttr | raw }}
+    {{ _typeAttr | raw }}
 >
     {% block content %}{% endblock %}
 </{{ _elementType }}>
