@@ -12,7 +12,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Icon name="warning" title="This is warning!" size="32" />
+<Icon name="warning" title="This is warning!" size="32" ariaHidden="false" />
 ```
 
 Without lexer:
@@ -25,12 +25,13 @@ Without lexer:
 
 ## API
 
-| Prop name | Type     | Default | Required | Description                        |
-| --------- | -------- | ------- | -------- | ---------------------------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class                   |
-| `name`    | `string` | —       | yes      | Name of the icon, case sensitive   |
-| `size`    | `number` | `24`    | no       | Size of the icon                   |
-| `title`   | `string` | `null`  | no       | Optional title to display on hover |
+| Prop name    | Type     | Default | Required | Description                           |
+| ------------ | -------- | ------- | -------- | ------------------------------------- |
+| `ariaHidden` | `bool`   | `true`  | no       | If true, icon is hidden from a11y API |
+| `class`      | `string` | `null`  | no       | Custom CSS class                      |
+| `name`       | `string` | —       | yes      | Name of the icon, case sensitive      |
+| `size`       | `number` | `24`    | no       | Size of the icon                      |
+| `title`      | `string` | `null`  | no       | Optional title to display on hover    |
 
 Get the list of `name` options in the [Icon package] or your source of icons.
 
