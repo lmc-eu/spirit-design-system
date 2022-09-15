@@ -7,4 +7,6 @@ export interface IconProps extends StyleProps, ChildrenProps, React.SVGAttribute
   size?: number;
   /** Title of the icon */
   title?: string;
+  /** Aria hidden */
+  ariaHidden?: boolean;
 }
