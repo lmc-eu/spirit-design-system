@@ -1,0 +1,16 @@
+$_spin-duration: 1s;
+$_spin-easing: linear;
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animation-spin-clockwise {
+    animation: spin $_spin-duration $_spin-easing infinite;
+}
