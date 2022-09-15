@@ -1,6 +1,6 @@
-import { ChildrenProps, StyleProps, RestProps } from './shared';
+import { ChildrenProps, StyleProps, TransferProps } from './shared';
 
-export interface IconProps extends StyleProps, ChildrenProps, React.SVGAttributes<SVGElement>, RestProps {
+export interface IconProps extends StyleProps, ChildrenProps, React.SVGAttributes<SVGElement>, TransferProps {
   /** Name of the icon */
   name: string;
   /** Size of the icon */

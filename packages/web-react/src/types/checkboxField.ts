@@ -1,10 +1,16 @@
-import { ChildrenProps, StyleProps, Validation, InputBase, ValueBase, RestProps } from './shared';
+import { ChildrenProps, StyleProps, Validation, InputBase, ValueBase, TransferProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
 interface InputProps extends InputBase, Validation, ValueBase<string | number> {}
 
-export interface CheckboxFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps, RestProps {
+export interface CheckboxFieldProps
+  extends ChildrenProps,
+    StyleProps,
+    LabelProps,
+    InputProps,
+    MessageProps,
+    TransferProps {
   /** Whether the checkbox is indeterminate */
   indeterminate?: boolean;
   /** Text of control label */

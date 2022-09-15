@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TextSize, RestProps } from './shared';
+import { ChildrenProps, StyleProps, TextSize, TransferProps } from './shared';
 
 export type TextEmphasis = 'bold' | 'italic';
 
@@ -16,7 +16,7 @@ export interface TextProps<T extends ElementType = 'p'>
   extends TextElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
-    RestProps {}
+    TransferProps {}
 
 export interface SpiritTextProps<T extends ElementType = 'p'> extends TextProps<T> {
   /** Size of the text */

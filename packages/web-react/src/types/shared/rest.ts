@@ -1,5 +1,5 @@
-type restValueType = unknown;
+type TransferPropsValue = unknown;
 
-export interface RestProps {
-  [k: string]: restValueType;
+export interface TransferProps {
+  [key: string]: TransferPropsValue;
 }
