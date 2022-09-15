@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { ChildrenProps, StyleProps, RestProps } from '../../types';
+import { ChildrenProps, StyleProps, TransferProps } from '../../types';
 
-export interface ContainerProps extends ChildrenProps, StyleProps, RestProps {}
+export interface ContainerProps extends ChildrenProps, StyleProps, TransferProps {}
 
 export const Container = ({ children, ...restProps }: ContainerProps): JSX.Element => {
   const containerClass = useClassNamePrefix('Container');

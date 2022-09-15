@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TextSize, RestProps } from './shared';
+import { ChildrenProps, StyleProps, TextSize, TransferProps } from './shared';
 
 export type HeadingSize = TextSize | 'xlarge';
 
@@ -16,7 +16,7 @@ export interface HeadingProps<T extends ElementType = 'div'>
   extends HeadingElementTypeProps<T>,
     ChildrenProps,
     StyleProps,
-    RestProps {}
+    TransferProps {}
 
 export interface SpiritHeadingProps<T extends ElementType = 'div'> extends HeadingProps<T> {
   /** Size of the text */

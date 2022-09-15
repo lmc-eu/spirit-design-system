@@ -1,9 +1,9 @@
 import React from 'react';
-import { ChildrenProps, TabId, RestProps } from '../../types';
+import { ChildrenProps, TabId, TransferProps } from '../../types';
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-interface TabItemProps extends ChildrenProps, RestProps {
+interface TabItemProps extends ChildrenProps, TransferProps {
   forTab: TabId;
 }
 

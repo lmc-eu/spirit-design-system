@@ -1,8 +1,8 @@
 import React from 'react';
-import { ChildrenProps, RestProps } from '../../types';
+import { ChildrenProps, TransferProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-type TabContentProps = ChildrenProps & RestProps;
+type TabContentProps = ChildrenProps & TransferProps;
 
 const TabContent = ({ children }: TabContentProps): JSX.Element => {
   const { classProps } = useTabsStyleProps();

@@ -2,9 +2,9 @@ import React, { ElementType, JSXElementConstructor } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks/styleProps';
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { ChildrenProps, StyleProps, RestProps } from '../../types';
+import { ChildrenProps, StyleProps, TransferProps } from '../../types';
 
-export interface StackProps<T extends ElementType = 'div'> extends ChildrenProps, StyleProps, RestProps {
+export interface StackProps<T extends ElementType = 'div'> extends ChildrenProps, StyleProps, TransferProps {
   /**
    * The HTML element or React element used to render the Stack, e.g. 'div', 'ul', or something else.
    *

@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, RestProps } from './shared';
+import { ChildrenProps, StyleProps, TransferProps } from './shared';
 
 export type BreadcrumbsItem = {
   title: string;
@@ -15,7 +15,7 @@ export interface AriaBreadcrumbsElementTypeProps<T extends ElementType = 'nav'> 
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface BreadcrumbsProps extends StyleProps, RestProps {}
+export interface BreadcrumbsProps extends StyleProps, TransferProps {}
 
 export interface SpiritBreadcrumbsProps<T extends ElementType = 'nav'>
   extends AriaBreadcrumbsElementTypeProps<T>,

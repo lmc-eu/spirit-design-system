@@ -1,9 +1,9 @@
 import React from 'react';
-import { ChildrenProps, TabId, RestProps } from '../../types';
+import { ChildrenProps, TabId, TransferProps } from '../../types';
 import { TabsProvider } from './TabContext';
 import { useTab } from './useTabs';
 
-interface TabsProps extends ChildrenProps, RestProps {
+interface TabsProps extends ChildrenProps, TransferProps {
   defaultSelectedTab: TabId;
 }
 
