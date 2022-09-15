@@ -1,7 +1,13 @@
 {# API #}
+{%- set _ariaHidden = props.ariaHidden | default(true) | boolprop -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _name = props.name -%}
 {%- set _size = props.size | default('24') -%}
 {%- set _title = props.title | default(null) -%}
 
-{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _class, size: _size, title: _title, mainProps: props }) }}
+{# Miscellaneous #}
+{%- set _mainProps = props | filter((value, prop) => prop != 'ariaHidden') | merge({
+    'aria-hidden': _ariaHidden ? 'true' : 'false',
+}) -%}
+
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _class, size: _size, title: _title, mainProps: _mainProps }) }}
