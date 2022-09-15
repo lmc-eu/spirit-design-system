@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.0"></a>
+
+# [1.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.9.0...@lmc-eu/spirit-web-twig@1.10.0) (2022-09-15)
+
+### Bug Fixes
+
+- ECS lint error in SvgExtension.php ([ba0f769](https://github.com/lmc-eu/spirit-design-system/commit/ba0f769))
+- Update snapshot tests ([6dc61dc](https://github.com/lmc-eu/spirit-design-system/commit/6dc61dc))
+- **web-twig:** Blank spaces in class props ([2e6f047](https://github.com/lmc-eu/spirit-design-system/commit/2e6f047))
+- **web-twig:** ButtonLink disabled state not working without disabled class ([ef7de03](https://github.com/lmc-eu/spirit-design-system/commit/ef7de03))
+- **web-twig:** ButtonLink remove disabled attribute ([480dce3](https://github.com/lmc-eu/spirit-design-system/commit/480dce3))
+- **web-twig:** Remove Icon name first letter upper-casing ([801381f](https://github.com/lmc-eu/spirit-design-system/commit/801381f))
+- **web-twig:** Set correct order of filters in TabPane ([d8f4e95](https://github.com/lmc-eu/spirit-design-system/commit/d8f4e95))
+- **web-twig:** Unifying Link implementation ([28fe216](https://github.com/lmc-eu/spirit-design-system/commit/28fe216))
+
+### Features
+
+- **web-twig:** Add aria-hidden to Icon component ([6519ed8](https://github.com/lmc-eu/spirit-design-system/commit/6519ed8))
+- **web-twig:** Add five columns option to Grid ([709dd30](https://github.com/lmc-eu/spirit-design-system/commit/709dd30))
+- **web-twig:** Add property size to the Button [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([5ce2821](https://github.com/lmc-eu/spirit-design-system/commit/5ce2821))
+- **web-twig:** Allow mainProps in Icon component ([1cf080b](https://github.com/lmc-eu/spirit-design-system/commit/1cf080b))
+- **web-twig:** Remove Icon class from the Icon component ([3987190](https://github.com/lmc-eu/spirit-design-system/commit/3987190))
+- **web-twig:** Use Icon in Alert and add centered variant [#DS-304](https://github.com/lmc-eu/spirit-design-system/issues/DS-304) ([5cf933f](https://github.com/lmc-eu/spirit-design-system/commit/5cf933f))
+- **web-twig:** Use Icon in Breadcrumbs [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([71e9032](https://github.com/lmc-eu/spirit-design-system/commit/71e9032))
+- **web-twig:** Use Icon in Header [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([0172867](https://github.com/lmc-eu/spirit-design-system/commit/0172867))
+- **web-twig:** Use Icon in Modal [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([c8cb2cf](https://github.com/lmc-eu/spirit-design-system/commit/c8cb2cf))
+- **web-twig:** Use Icon in Tooltip [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([41b8501](https://github.com/lmc-eu/spirit-design-system/commit/41b8501))
+- **web:** Update Breadcrumbs' last item's theme color (refs [#DS-313](https://github.com/lmc-eu/spirit-design-system/issues/DS-313)) ([7f53b42](https://github.com/lmc-eu/spirit-design-system/commit/7f53b42))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.9.0"></a>
 
 # [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.8.0...@lmc-eu/spirit-web-twig@1.9.0) (2022-08-31)
