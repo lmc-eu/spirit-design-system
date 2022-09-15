@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.26.0"></a>
+
+# [0.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.25.0...@lmc-eu/spirit-web@0.26.0) (2022-09-15)
+
+### BREAKING CHANGES
+
+- **web:** Remove `Button__icon` class as we don't use it and don't need it ([7816699](https://github.com/lmc-eu/spirit-design-system/commit/7816699))
+- **web:** Remove Icon component as we don't need any styles added to the SVG ([3b5fd99](https://github.com/lmc-eu/spirit-design-system/commit/3b5fd99))
+
+### Bug Fixes
+
+- **web:** Fix `RadioField` state in forced-colors mode ([78dee50](https://github.com/lmc-eu/spirit-design-system/commit/78dee50))
+
+### Dependencies
+
+- Update all non-major dependencies ([264c250](https://github.com/lmc-eu/spirit-design-system/commit/264c250))
+
+### Features
+
+- **web:** Add basic spin animation helper ([e6dfed1](https://github.com/lmc-eu/spirit-design-system/commit/e6dfed1))
+- **web:** Add five columns option to Grid ([7d41817](https://github.com/lmc-eu/spirit-design-system/commit/7d41817))
+- **web:** Add interactions foundation with button svg pointer reset ([d94b3d5](https://github.com/lmc-eu/spirit-design-system/commit/d94b3d5))
+- **web:** Add property size to the Button [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([71804fa](https://github.com/lmc-eu/spirit-design-system/commit/71804fa))
+- **web:** Update Breadcrumbs' last item's theme color (refs [#DS-313](https://github.com/lmc-eu/spirit-design-system/issues/DS-313)) ([7f53b42](https://github.com/lmc-eu/spirit-design-system/commit/7f53b42))
+- **web:** Use Icon in Alert and add centered variant [#DS-304](https://github.com/lmc-eu/spirit-design-system/issues/DS-304) ([3e4afd7](https://github.com/lmc-eu/spirit-design-system/commit/3e4afd7))
+- **web:** Use Icon in Breadcrumbs [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([2be2b92](https://github.com/lmc-eu/spirit-design-system/commit/2be2b92))
+- **web:** Use Icon in Button [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([70479de](https://github.com/lmc-eu/spirit-design-system/commit/70479de))
+- **web:** Use Icon in Header [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([c1814ed](https://github.com/lmc-eu/spirit-design-system/commit/c1814ed))
+- **web:** Use Icon in Modal [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([2ba6478](https://github.com/lmc-eu/spirit-design-system/commit/2ba6478))
+- **web:** Use Icon in TextField [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([6b7e4d1](https://github.com/lmc-eu/spirit-design-system/commit/6b7e4d1))
+- **web:** Use Icon in Tooltip [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([89460a3](https://github.com/lmc-eu/spirit-design-system/commit/89460a3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.25.0"></a>
 
 # [0.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.24.0...@lmc-eu/spirit-web@0.25.0) (2022-08-31)

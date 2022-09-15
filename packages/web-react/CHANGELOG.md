@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.24.0"></a>
+
+# [0.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.23.0...@lmc-eu/spirit-web-react@0.24.0) (2022-09-15)
+
+### Bug Fixes
+
+- **web-react:** Added StyleProps to Tag component [#DS-325](https://github.com/lmc-eu/spirit-design-system/issues/DS-325) ([54599b7](https://github.com/lmc-eu/spirit-design-system/commit/54599b7))
+- **web-react:** Create RestProps and added to all RC [#DS-332](https://github.com/lmc-eu/spirit-design-system/issues/DS-332) ([cb4a1bd](https://github.com/lmc-eu/spirit-design-system/commit/cb4a1bd))
+- **web-react:** Remove unnecessary props from Storybook [#DS-325](https://github.com/lmc-eu/spirit-design-system/issues/DS-325) ([c507819](https://github.com/lmc-eu/spirit-design-system/commit/c507819))
+- **web-react:** Update type property [#DS-332](https://github.com/lmc-eu/spirit-design-system/issues/DS-332) ([716d0f7](https://github.com/lmc-eu/spirit-design-system/commit/716d0f7))
+
+### Dependencies
+
+- Update all non-major dependencies ([264c250](https://github.com/lmc-eu/spirit-design-system/commit/264c250))
+
+### Features
+
+- **web-react:** Add aria-hidden to Icon component ([e43a474](https://github.com/lmc-eu/spirit-design-system/commit/e43a474))
+- **web-react:** Add five columns option to Grid ([cafcc5b](https://github.com/lmc-eu/spirit-design-system/commit/cafcc5b))
+- **web-react:** Add property size to the Button [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([05a93a9](https://github.com/lmc-eu/spirit-design-system/commit/05a93a9))
+- **web-react:** Added missing props definition to Link and Input ([ebacb66](https://github.com/lmc-eu/spirit-design-system/commit/ebacb66))
+- **web-react:** Remove Icon class from the Icon component and remove storybook link to Icon styles ([489784a](https://github.com/lmc-eu/spirit-design-system/commit/489784a))
+- **web-react:** Set property color as optional to the Button [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([a79c477](https://github.com/lmc-eu/spirit-design-system/commit/a79c477))
+- **web-react:** Use Icon in Alert and add centered variant [#DS-304](https://github.com/lmc-eu/spirit-design-system/issues/DS-304) ([09e263e](https://github.com/lmc-eu/spirit-design-system/commit/09e263e))
+- **web-react:** Use Icon in Breadcrumbs [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([1b57b76](https://github.com/lmc-eu/spirit-design-system/commit/1b57b76))
+- **web-react:** Use Icon in Button [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([45c2240](https://github.com/lmc-eu/spirit-design-system/commit/45c2240))
+- **web-react:** Use Icon in Header [#DS-305](https://github.com/lmc-eu/spirit-design-system/issues/DS-305) ([612d5ba](https://github.com/lmc-eu/spirit-design-system/commit/612d5ba))
+- **web:** Update Breadcrumbs' last item's theme color (refs [#DS-313](https://github.com/lmc-eu/spirit-design-system/issues/DS-313)) ([7f53b42](https://github.com/lmc-eu/spirit-design-system/commit/7f53b42))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.23.0"></a>
 
 # [0.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.22.0...@lmc-eu/spirit-web-react@0.23.0) (2022-08-31)
