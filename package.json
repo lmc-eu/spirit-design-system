@@ -29,7 +29,7 @@
     "format": "yarn format:check",
     "format:check": "prettier --check ./",
     "format:fix": "prettier --write ./",
-    "format:fix:changelog": "prettier --write ./packages/**/CHANGELOG.md",
+    "format:fix:changelog": "prettier --write ./**/CHANGELOG.md",
     "prepare": "is-ci || husky install",
     "storybook": "start-storybook -p 6006 --no-manager-cache",
     "storybook:build": "build-storybook -o ./.storybook/build",
