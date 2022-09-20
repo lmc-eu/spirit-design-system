@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+
+$item-gap: tokens.$space-300;
+$item-min-width: 2em;
+$item-height: 2.5em;
+$item-padding-inline: tokens.$space-400;
+$item-emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
+$item-radius: tokens.$radius-100;
+
+$item-default-color: tokens.$text-secondary-default;
+$item-default-background: tokens.$background-interactive-default;
+
+$item-active-color: tokens.$text-secondary-default;
+$item-active-background: tokens.$background-interactive-active;
+
+$item-hover-color: tokens.$text-secondary-default;
+$item-hover-background: tokens.$background-interactive-hover;
+
+$item-selected-color: tokens.$text-primary-inverted-default;
+$item-selected-background: tokens.$action-selected-default;
