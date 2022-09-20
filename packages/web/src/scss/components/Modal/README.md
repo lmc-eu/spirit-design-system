@@ -5,7 +5,7 @@ Example usage:
 ```html
 <button
   type="button"
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-toggle="modal"
   data-target="#modal-example-1"
   aria-controls="modal-example-1"
@@ -20,7 +20,7 @@ Example usage:
       <div class="Modal__header">
         <button
           type="button"
-          class="Button Button--tertiary Button--square"
+          class="Button Button--tertiary Button--medium Button--square"
           data-dismiss="modal"
           data-target="#modal-example-1"
           aria-controls="modal-example-1"

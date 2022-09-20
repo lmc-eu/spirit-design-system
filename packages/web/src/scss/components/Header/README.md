@@ -106,7 +106,7 @@ It makes use of an inverted Button by default.
 ```html
 <button
   type="button"
-  class="Button Button--inverted"
+  class="Button Button--inverted Button--medium"
   data-toggle="header"
   data-target="#my-header-actions"
   aria-controls="my-header-actions"
@@ -240,7 +240,7 @@ This is how all supported building blocks build up the complete Header:
   <div class="Header__mobileOnlyActions">
     <button
       type="button"
-      class="Button Button--inverted"
+      class="Button Button--inverted Button--medium"
       data-toggle="header"
       data-target="#my-header-actions"
       aria-controls="my-header-actions"
@@ -287,8 +287,8 @@ This is how all supported building blocks build up the complete Header:
         </ul>
       </div>
       <div class="Header__actions Header__actions--secondary">
-        <a href="#" class="Button Button--primary">Sign in</a>
-        <a href="#" class="Button Button--inverted">Enterprise</a>
+        <a href="#" class="Button Button--primary Button--medium">Sign in</a>
+        <a href="#" class="Button Button--inverted Button--medium">Enterprise</a>
       </div>
     </div>
   </nav>
