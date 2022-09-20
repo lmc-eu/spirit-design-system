@@ -1,0 +1,47 @@
+@use 'theme';
+@use '../../settings/cursors';
+
+.Pagination {
+    display: flex;
+    gap: theme.$item-gap;
+    list-style-type: none;
+}
+
+.Pagination__item {
+    display: flex;
+}
+
+.Pagination__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: theme.$item-min-width;
+    height: theme.$item-height;
+    padding-inline: theme.$item-padding-inline;
+    font-weight: theme.$item-emphasis-font-weight;
+    color: theme.$item-default-color;
+    background-color: theme.$item-default-background;
+    border-radius: theme.$item-radius;
+
+    &:active {
+        color: theme.$item-active-color;
+        background-color: theme.$item-active-background;
+    }
+
+    &:focus,
+    &:hover {
+        color: theme.$item-hover-color;
+        background-color: theme.$item-hover-background;
+    }
+}
+
+.Pagination__link--current {
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+        color: theme.$item-selected-color;
+        background-color: theme.$item-selected-background;
+        cursor: cursors.$disabled;
+    }
+}
