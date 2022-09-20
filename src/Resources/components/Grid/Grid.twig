@@ -1,4 +1,5 @@
 {# API #}
+{%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _cols = props.cols | default(null) -%}
 {%- set _desktop = props.desktop | default(null) -%}
