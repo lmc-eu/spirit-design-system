@@ -10,12 +10,11 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: map.get(theme.$sizes, medium, padding-y) map.get(theme.$sizes, medium, padding-x);
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-    background-color: transparent;
-    border: theme.$border-width theme.$border-style transparent;
+    border-width: theme.$border-width;
+    border-style: theme.$border-style;
     border-radius: theme.$border-radius;
     cursor: pointer;
     user-select: none;
@@ -33,6 +32,19 @@
     }
 }
 
+@each $size, $variables in theme.$sizes {
+    @include tools.size($size, $variables);
+}
+
+@each $variant, $variables in theme.$variants {
+    @include tools.variant($variant, $variables);
+}
+
+.Button--block {
+    display: block;
+    width: 100%;
+}
+
 .Button--square {
     @include tools.square(
         theme.$breakpoints,
@@ -42,19 +54,5 @@
     );
 
     flex: none;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.Button--block {
-    display: block;
-    width: 100%;
-}
-
-@each $size, $variables in theme.$sizes {
-    @include tools.size($size, $variables);
-}
-
-@each $variant, $variables in theme.$variants {
-    @include tools.variant($variant, $variables);
+    padding-inline: 0;
 }
