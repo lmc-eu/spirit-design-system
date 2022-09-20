@@ -76,7 +76,7 @@ class PropsExtension extends AbstractExtension
      */
     public function renderClassProp(Environment $environment, array $classNames): string
     {
-        $filteredClassNames = array_values(array_filter($classNames , fn($value) => !is_null($value) && $value !== ''));
+        $filteredClassNames = array_values(array_filter($classNames, fn ($value) => ! is_null($value) && $value !== ''));
 
         return $environment->render('@partials/classProp.twig', [
             'classNames' => $filteredClassNames,

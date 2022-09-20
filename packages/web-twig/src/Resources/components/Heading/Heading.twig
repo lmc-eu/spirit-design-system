@@ -1,4 +1,5 @@
 {# API #}
+{%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _elementType = props.elementType | default('div') -%}

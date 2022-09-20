@@ -159,7 +159,7 @@ class PropsExtensionTest extends TestCase
     }
 
     /**
-     * @return array<string, array<int, array<int|string, array<int, string>|string>>>
+     * @return array<string, array<int, array<int|string, array<int, string>|string|null>>>
      */
     public function renderClassNamesDataProvider(): array
     {
@@ -184,15 +184,15 @@ class PropsExtensionTest extends TestCase
                 ],
             ]],
             'multiple class names without empty values ' => [[
-              'test-class',
-              null,
-              'another-test-class',
-              null,
-            ], [
-              'classNames' => [
                 'test-class',
+                null,
                 'another-test-class',
-              ],
+                null,
+            ], [
+                'classNames' => [
+                    'test-class',
+                    'another-test-class',
+                ],
             ]],
         ];
     }

@@ -1,4 +1,5 @@
 {# API #}
+{%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
