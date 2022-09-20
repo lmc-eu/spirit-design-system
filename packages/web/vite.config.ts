@@ -1,3 +1,4 @@
+import { readdirSync } from 'fs';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
@@ -9,43 +10,14 @@ export default defineConfig({
       partialDirectory: resolve(__dirname, 'partials'),
       runtimeOptions: {
         data: {
+          // Get the list of components directories and pass their names to the data
           components: [
-            'Alert',
-            'Breadcrumbs',
-            'Button',
-            'CheckboxField',
-            'Container',
-            'Grid',
-            'Header',
-            'Modal',
-            'Pill',
-            'RadioField',
-            'Stack',
-            'Tabs',
-            'Tag',
-            'TextField',
-            'Tooltip',
+            ...readdirSync('src/scss/components', { withFileTypes: true })
+              .filter((item) => item.isDirectory())
+              .map((item) => item.name),
           ],
-          icons: [
-            'add',
-            'check-plain',
-            'chevron-down',
-            'chevron-left',
-            'chevron-right',
-            'chevron-up',
-            'close',
-            'hamburger',
-            'help',
-            'info',
-            'link',
-            'more',
-            'profile',
-            'reload',
-            'search',
-            'visibility-off',
-            'visibility-on',
-            'warning',
-          ],
+          // Get the list of icons files from the icons package and pass their names to the data without their extensions
+          icons: [...readdirSync('../icons/src/svg', { withFileTypes: true }).map((item) => item.name.slice(0, -4))],
         },
       },
     }),

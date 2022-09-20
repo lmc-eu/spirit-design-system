@@ -23,7 +23,6 @@ This is an example of a typical file structure of a component:
             ├── _tools.scss — Sass functions and mixins, mostly to generate variants
             ├── index.scss — component's Sass entry point
             └── README.md — documentation of the component
-├── vite.config.ts - registers the component for developer preview
 ```
 
 ## Structuring Styles
