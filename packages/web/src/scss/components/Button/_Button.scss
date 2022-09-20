@@ -56,3 +56,12 @@
     flex: none;
     padding-inline: 0;
 }
+
+.Button--square.Button--large {
+    @include tools.square(
+        theme.$breakpoints,
+        theme.$typography,
+        map.get(theme.$sizes, large, padding-y),
+        theme.$border-width
+    );
+}
