@@ -14,6 +14,7 @@ export default defineConfig({
             'Breadcrumbs',
             'Button',
             'CheckboxField',
+            'Collapse',
             'Container',
             'Grid',
             'Header',

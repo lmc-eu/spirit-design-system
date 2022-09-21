@@ -30,6 +30,15 @@ const enableDataTrigger = (
   });
 };
 
+const instanceAutoloader = (dataAttributeKey: string, component: typeof BaseComponent) => {
+  const name = component.NAME;
+  EventHandler.on(window, 'DOMContentLoaded', () => {
+    SelectorEngine.findAll(`[data-${dataAttributeKey}="${name}"]`).forEach((element) => {
+      component.getOrCreateInstance(element);
+    });
+  });
+};
+
 const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle') => {
   enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, method);
 };
@@ -38,4 +47,4 @@ const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss
   enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, method);
 };
 
-export { enableToggleTrigger, enableDismissTrigger };
+export { enableToggleTrigger, enableDismissTrigger, instanceAutoloader };
