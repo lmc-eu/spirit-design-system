@@ -48,6 +48,7 @@
 
       .docs-Box {
         min-height: 2rem;
+        padding: 1rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -55,8 +56,10 @@
         background: #0b1c21;
       }
 
-      .docs-Box:not(:empty) {
-        padding: 1rem;
+      .docs-Box--small {
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: normal;
       }
 
       .docs-FormFieldGrid {
@@ -76,6 +79,16 @@
 
         .docs-Heading {
           font-size: 1.5rem;
+        }
+
+        .docs-Box--small {
+          font-size: 0.875rem;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .docs-Box--small {
+          font-size: 1rem;
         }
       }
     </style>

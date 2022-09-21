@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 @use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
@@ -27,6 +28,20 @@
             @each $option in $grid-equal-columns {
                 .Grid--#{breakpoint-class($breakpoint-name, $breakpoint-value)}cols-#{$option} {
                     grid-template-columns: repeat(#{$option}, 1fr);
+                }
+            }
+        }
+    }
+}
+
+@mixin span-variants($grid-columns, $grid-span-variants, $breakpoints) {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @include breakpoint.up($breakpoint-value) {
+            @each $option in $grid-span-variants {
+                .Grid__span--#{breakpoint-class($breakpoint-name, $breakpoint-value)}over-#{$option} {
+                    $start: 1 + math.div(($grid-columns - $option), 2);
+
+                    grid-column: $start / span $option;
                 }
             }
         }
