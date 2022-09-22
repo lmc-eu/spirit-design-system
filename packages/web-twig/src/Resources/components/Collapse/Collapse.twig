@@ -1,0 +1,26 @@
+{# API #}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _breakpoint = props.breakpoint -%}
+{%- set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Collapse' -%}
+{%- set _contentClassName = _spiritClassPrefix ~ 'Collapse__content' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
+{%- set _breakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint ~ '' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }}
+    {{ _idAttr }}
+    {{ _breakpointAttr }}
+    {{ classProp(_classNames) }}
+>
+    <{{ _elementAttr }} class="{{ _contentClassName }}">
+        {%- block content %}{% endblock %}
+    </{{ _elementAttr }}>
+</{{ _elementType }}>
