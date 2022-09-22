@@ -1,4 +1,4 @@
-import React, { FC, createElement, useRef, useMemo } from 'react';
+import React, { FC, MutableRefObject, createElement, useRef, useMemo } from 'react';
 import { useCollapsible } from '../../hooks';
 import { CollapseProps } from '../../types';
 
@@ -9,7 +9,7 @@ const Collapse: FC<CollapseProps> = (props) => {
   const CLASSNAME_WRAPPER = 'Collapse';
   const CLASSNAME_CONTENT = 'Collapse__content';
 
-  const contentReference = useRef(null);
+  const contentReference: MutableRefObject<HTMLButtonElement | undefined> = useRef();
   const { renderProps, triggered, updatedWrapperProps, updatedContentProps } = useCollapsible({
     contentReference,
     contentProps,
@@ -20,10 +20,10 @@ const Collapse: FC<CollapseProps> = (props) => {
   });
 
   const trigger = useMemo(() => {
-    let show = !(hideOnCollapse && triggered);
+    const show = !(hideOnCollapse && triggered);
     if (renderTrigger && show) return renderTrigger(renderProps);
 
-    return <></>;
+    return null;
   }, [renderTrigger, renderProps, hideOnCollapse, triggered]);
 
   const content = createElement(contentProps?.elementType || DEFAULT_ELEMENT_TYPE, updatedContentProps, children);

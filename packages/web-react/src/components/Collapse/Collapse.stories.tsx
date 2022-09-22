@@ -93,10 +93,8 @@ Responsive.args = {
 export const HideOnClose = WrappredTemplate.bind({});
 HideOnClose.args = {
   id: 'DemoCollapseHideOnClose',
-  renderTrigger: ({ collapsed, trigger: { onClick } }: CollapseRenderProps) => (
-    <a href="#" onClick={onClick}>
-      Trigger ({collapsed ? 'open' : 'closed'})
-    </a>
+  renderTrigger: ({ collapsed, trigger }: CollapseRenderProps) => (
+    <Button {...trigger}>Trigger ({collapsed ? 'open' : 'closed'})</Button>
   ),
   children: (
     <>

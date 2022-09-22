@@ -31,24 +31,22 @@ export const useCollapsible = (props: useCollapsibleProperties) => {
 
   const isResponsive = () => {
     const w = window.innerWidth;
+    const mobile = w >= BREAKPOINT_MOBILE && responsive === 'mobile';
+    const tablet = w >= BREAKPOINT_TABLET && responsive === 'tablet';
+    const desktop = w >= BREAKPOINT_DESKTOP && responsive === 'desktop';
+
     return {
-      mobile: w >= BREAKPOINT_MOBILE && responsive === 'mobile',
-      tablet: w >= BREAKPOINT_TABLET && responsive === 'tablet',
-      desktop: w >= BREAKPOINT_DESKTOP && responsive === 'desktop',
+      mobile,
+      tablet,
+      desktop,
+      anyOf: mobile || tablet || desktop,
     };
   };
 
   const adjustHeight = () => {
     if (responsive) {
-      const isResp = isResponsive();
-      if (isResp.mobile) {
-        setHeight(contentReference?.current?.clientHeight);
-        setCollapsed(true);
-      } else if (isResp.tablet) {
-        setHeight(contentReference?.current?.clientHeight);
-        setCollapsed(true);
-      } else if (isResp.desktop) {
-        setHeight(contentReference?.current?.clientHeight);
+      if (isResponsive().anyOf) {
+        setHeight(contentReference?.current?.clientHeight as number);
         setCollapsed(true);
       } else {
         setHeight(0);
@@ -63,11 +61,11 @@ export const useCollapsible = (props: useCollapsibleProperties) => {
 
   const clickHandler = (e: ClickEvent) => {
     e.preventDefault();
-    const collapsed = !isCollapsed;
-    const contentHeight = contentReference.current.clientHeight;
-    setCollapsed(collapsed);
+    const newState = !isCollapsed;
+    const contentHeight = contentReference?.current?.clientHeight as number;
+    setCollapsed(newState);
     setTriggered(true);
-    if (collapsed) {
+    if (newState) {
       setHeight(contentHeight);
     } else {
       setHeight(0);
@@ -89,12 +87,10 @@ export const useCollapsible = (props: useCollapsibleProperties) => {
 
   const updatedWrapperProps = {
     id: INSTANCE_ID,
-    style: Object.assign(
-      {
-        height: hideOnCollapse && triggered ? 'initial' : height,
-      },
-      UNSAFE_style,
-    ),
+    style: {
+      height: hideOnCollapse && triggered ? 'initial' : height,
+      ...UNSAFE_style,
+    },
     className: [wrapperClassName, collapsed ? CLASSNAME_COLLAPSED : '', UNSAFE_className].join(' '),
   };
 
@@ -107,13 +103,14 @@ export const useCollapsible = (props: useCollapsibleProperties) => {
   useEffect(() => {
     adjustHeight();
     window.addEventListener('resize', resizeHandler);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
     height,
     triggered,
     responsive,
-    contentReference,
     contentProps,
     updatedWrapperProps,
     updatedContentProps,
@@ -122,6 +119,7 @@ export const useCollapsible = (props: useCollapsibleProperties) => {
     wrapperClassName,
     contentClassName,
     hideOnCollapse,
+    contentReference,
     id: INSTANCE_ID,
     collapsed: isCollapsed,
     renderProps: updatedRenderProps,

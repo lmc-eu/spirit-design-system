@@ -1,8 +1,8 @@
-import { CSSProperties, RefObject } from 'react';
+import { CSSProperties, MutableRefObject } from 'react';
 import { CollapseProps, CollapseRenderProps } from './collapse';
 
 export interface useCollapsibleProperties extends CollapseProps {
-  contentReference: RefObject<any>;
+  contentReference: MutableRefObject<HTMLButtonElement | undefined>;
   wrapperClassName: string;
   contentClassName: string;
 }
