@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.1.0...@lmc-eu/spirit-exporters-scss@1.2.0) (2022-09-22)
+
+### Features
+
+- **exporter-scss:** Implement Unit less property and fix style property ([862788a](https://github.com/lmc-eu/spirit-design-system/commit/862788a))
+
+### Styles
+
+- **repo:** Reformat all changelogs using Prettier ([a2850cd](https://github.com/lmc-eu/spirit-design-system/commit/a2850cd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.1.0"></a>
 
 # 1.1.0 (2022-09-15)

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.27.0"></a>
+
+# [0.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.26.0...@lmc-eu/spirit-web@0.27.0) (2022-09-22)
+
+### BREAKING CHANGES
+
+- **web:** Button must have set a size variant [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([4ef5e85](https://github.com/lmc-eu/spirit-design-system/commit/4ef5e85))
+
+### Bug Fixes
+
+- **web:** Add styles for large square Button [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([db30e09](https://github.com/lmc-eu/spirit-design-system/commit/db30e09))
+
+### Code Refactoring
+
+- **web:** Remove duplicated styles ([04e2cad](https://github.com/lmc-eu/spirit-design-system/commit/04e2cad))
+
+### Features
+
+- **web:** Set vite components and icons using directories and files in repository ([f3df9df](https://github.com/lmc-eu/spirit-design-system/commit/f3df9df))
+- **web:** Use new grid-columns token ([54390b5](https://github.com/lmc-eu/spirit-design-system/commit/54390b5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.26.0"></a>
 
 # [0.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.25.0...@lmc-eu/spirit-web@0.26.0) (2022-09-15)

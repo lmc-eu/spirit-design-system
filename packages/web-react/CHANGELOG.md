@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.25.0"></a>
+
+# [0.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.24.0...@lmc-eu/spirit-web-react@0.25.0) (2022-09-22)
+
+### BREAKING CHANGES
+
+- **web:** Button must have set a size variant [#DS-318](https://github.com/lmc-eu/spirit-design-system/issues/DS-318) ([4ef5e85](https://github.com/lmc-eu/spirit-design-system/commit/4ef5e85))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.24.0"></a>
 
 # [0.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.23.0...@lmc-eu/spirit-web-react@0.24.0) (2022-09-15)
