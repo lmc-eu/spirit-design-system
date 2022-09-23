@@ -50,15 +50,20 @@
 | `contentProps.elementType`      | `'div','article','section','main','header','footer','span'` | -          | no       | Content element type                   |
 | `contentProps.UNSAFE_className` | `string`                                                    | -          | no       | Content custom classname               |
 | `contentProps.UNSAFE_style`     | `CSSProperties`                                             | -          | no       | Content custom style                   |
+| `breakpoints`                   | `Object`                                                    | -          | no       | Breakpoint widths                      |
+| `breakpoints.mobile`            | `number`                                                    | `0`        | no       | Mobile min-width                       |
+| `breakpoints.tablet`            | `number`                                                    | `768`      | no       | Tablet min-width                       |
+| `breakpoints.desktop`           | `number`                                                    | `1280`     | no       | Desktop min-width                      |
 
 ## CollapseRenderProps
 
-| Prop name                  | Type      | Description                   |
-| -------------------------- | --------- | ----------------------------- |
-| `collapsed`                | `boolean` | When collapse is collapsed    |
-| `triggerHidden`            | `boolean` | When trigger should be hidden |
-| `trigger`                  | `Object`  | Trigger properties            |
-| `trigger.onClick`          | `string`  | Trigger onClick event         |
-| `trigger.className`        | `string`  | Trigger state classname       |
-| `trigger['aria-expanded']` | `string`  | Trigger aria expanded         |
-| `trigger['aria-controls']` | `string`  | Trigger aria controls         |
+| Prop name                  | Type      | Description                    |
+| -------------------------- | --------- | ------------------------------ |
+| `collapsed`                | `boolean` | When collapse is collapsed     |
+| `triggerHidden`            | `boolean` | When trigger should be hidden  |
+| `trigger`                  | `Object`  | Trigger properties             |
+| `trigger.onClick`          | `string`  | Trigger onClick event          |
+| `trigger.className`        | `string`  | Trigger state classname        |
+| `trigger.UNSAFE_className` | `string`  | Trigger state UNSAFE classname |
+| `trigger['aria-expanded']` | `string`  | Trigger aria expanded          |
+| `trigger['aria-controls']` | `string`  | Trigger aria controls          |

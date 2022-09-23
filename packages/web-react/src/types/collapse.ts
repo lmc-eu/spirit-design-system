@@ -5,9 +5,16 @@ export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'head
 
 export type CollapseResponsiveType = 'mobile' | 'tablet' | 'desktop';
 
+export type CollapseBreakpointsType = {
+  mobile?: number;
+  tablet?: number;
+  desktop?: number;
+};
+
 export type CollapseTriggerProps = {
-  onClick: (e: ClickEvent) => void;
+  onClick: (event: ClickEvent) => void;
   className: string;
+  UNSAFE_className: string;
   'aria-expanded': string | boolean | undefined;
   'aria-controls': string;
 };
@@ -30,4 +37,5 @@ export interface CollapseProps extends ChildrenProps, StyleProps {
   contentProps?: CollapseContentProps;
   responsive?: CollapseResponsiveType;
   hideOnCollapse?: boolean;
+  breakpoints?: CollapseBreakpointsType;
 }

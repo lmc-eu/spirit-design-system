@@ -1,34 +1,67 @@
-import React, { FC, MutableRefObject, createElement, useRef, useMemo } from 'react';
-import { useCollapsible } from '../../hooks';
+import React, { useMemo, createElement, useRef } from 'react';
 import { CollapseProps } from '../../types';
+import { useCollapse } from './useCollapse';
+import { useCollapseStyle } from './useCollapseStyle';
 
-const Collapse: FC<CollapseProps> = (props) => {
-  const { children, renderTrigger, elementType, contentProps, hideOnCollapse, ...rest } = props;
-
-  const DEFAULT_ELEMENT_TYPE = 'div';
-  const CLASSNAME_WRAPPER = 'Collapse';
-  const CLASSNAME_CONTENT = 'Collapse__content';
-
-  const contentReference: MutableRefObject<HTMLButtonElement | undefined> = useRef();
-  const { renderProps, triggered, updatedWrapperProps, updatedContentProps } = useCollapsible({
-    contentReference,
+const Collapse = (props: CollapseProps) => {
+  const {
+    id,
+    children,
+    collapsed,
+    responsive,
+    elementType,
     contentProps,
+    renderTrigger,
     hideOnCollapse,
-    wrapperClassName: CLASSNAME_WRAPPER,
-    contentClassName: CLASSNAME_CONTENT,
-    ...rest,
+    UNSAFE_className,
+    UNSAFE_style,
+    breakpoints,
+  } = props;
+
+  const contentElementRef = useRef();
+
+  const { toggleHandler, isTriggerHidden, isCollapsed, isTriggered } = useCollapse({
+    responsive,
+    collapsed,
+    breakpoints,
   });
 
+  const {
+    triggerProps: updateTriggerProps,
+    wrapperProps: updatedWrapperProps,
+    contentProps: updatedContentProps,
+  } = useCollapseStyle({
+    id,
+    responsive,
+    contentProps,
+    onToggle: toggleHandler,
+    collapsed: isCollapsed,
+    contentRef: contentElementRef,
+    wrapperClassName: UNSAFE_className,
+    wrapperStyle: UNSAFE_style,
+  });
+
+  const content = createElement(contentProps?.elementType || 'div', updatedContentProps, children);
+
   const trigger = useMemo(() => {
-    const show = !(hideOnCollapse && triggered);
-    if (renderTrigger && show) return renderTrigger(renderProps);
+    const show = !(hideOnCollapse && isTriggered);
+    if (renderTrigger && show)
+      return renderTrigger({
+        collapsed: isCollapsed,
+        trigger: updateTriggerProps,
+        triggerHidden: isTriggerHidden,
+      });
 
     return null;
-  }, [renderTrigger, renderProps, hideOnCollapse, triggered]);
+  }, [renderTrigger, updateTriggerProps, hideOnCollapse, isTriggered, isCollapsed, isTriggerHidden]);
 
-  const content = createElement(contentProps?.elementType || DEFAULT_ELEMENT_TYPE, updatedContentProps, children);
+  const wrapper = useMemo(() => {
+    if (hideOnCollapse) {
+      return isCollapsed && children;
+    }
 
-  const wrapper = createElement(elementType || DEFAULT_ELEMENT_TYPE, updatedWrapperProps, content);
+    return createElement(elementType || 'div', updatedWrapperProps, content);
+  }, [isCollapsed, content, children, elementType, hideOnCollapse, updatedWrapperProps]);
 
   return (
     <>
