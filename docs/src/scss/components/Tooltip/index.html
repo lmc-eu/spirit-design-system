@@ -48,6 +48,7 @@
 
       .docs-Box {
         min-height: 2rem;
+        padding: 1rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -55,8 +56,10 @@
         background: #0b1c21;
       }
 
-      .docs-Box:not(:empty) {
-        padding: 1rem;
+      .docs-Box--small {
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: normal;
       }
 
       .docs-FormFieldGrid {
@@ -77,6 +80,16 @@
         .docs-Heading {
           font-size: 1.5rem;
         }
+
+        .docs-Box--small {
+          font-size: 0.875rem;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .docs-Box--small {
+          font-size: 1rem;
+        }
       }
     </style>
 
@@ -84,7 +97,7 @@
 
     <script type="module" crossorigin src="/spirit-design-system/assets/Tooltip.a5364525.js"></script>
     <link rel="modulepreload" crossorigin href="/spirit-design-system/assets/Tooltip.3743e2eb.js">
-    <link rel="stylesheet" href="/spirit-design-system/assets/Tooltip.62ccc3f9.css">
+    <link rel="stylesheet" href="/spirit-design-system/assets/Tooltip.81b50313.css">
   </head>
   <body class="typography-body-medium-text-regular text-primary">
 
