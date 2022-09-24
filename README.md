@@ -1,11 +1,11 @@
 # Spirit Web Twig Bundle
 
-This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with HTML-like syntax.
+This is a Symfony bundle with Twig implementation of [Spirit Design System] components, extended with JSX-like syntax.
 
 ## Requirements
 
 - PHP 7.4
-- Symfony 3.4+ || 4.2+ || 5.0+
+- Symfony 4.4+ || 5.4+
 - Twig >=1.44.6 || >=2.12.5 || 3+
 
 ## Changelog
@@ -60,7 +60,7 @@ spirit_web_twig:
 
 ## Usage
 
-Now you can use Twig components with HTML-like syntax in your Symfony project. You only need to remember that, unlike in HTML, component tags must always start with a capital letter:
+Now you can use Twig components with JSX-like syntax in your Symfony project. You only need to remember that, unlike in HTML, component tags must always start with a capital letter:
 
 ```html
 <ComponentName attr="value">Some other content</ComponentName>
@@ -72,14 +72,17 @@ You can pass attributes like this:
 
 ```html
 <ComponentName
-:any="'any' ~ 'prop'" // this return as "any" prop with value "anyprop"
-other="{{'this' ~ 'works' ~ 'too'}}"
-anotherProp="or this still work"
-not-this="{{'this' ~ 'does'}}{{ 'not work' }}" // this returns syntax as plain text but prop with dash work
-ifCondition="{{ variable == 'success' ? 'true' : 'false' }}"  // condition can only be written via the ternary operator
-isOpen  // if no value is defined, it is set to true
+  :any="'any' ~ 'prop'" // this return as "any" prop with value "anyprop"
+  other="{{'this' ~ 'works' ~ 'too'}}"
+  anotherProp="or this still work"
+  not-this="{{'this' ~ 'does'}}{{ 'not work' }}" // this returns syntax as plain text but prop with dash work
+  ifCondition="{{ variable == 'success' ? 'true' : 'false' }}"  // condition can only be written via the ternary operator
+  jsXCondition={ variable == 'success' ? 'true' : 'false' }  // condition can only be written via the ternary operator
+  numberValue={11}  // if value is number 11
+  isOpen  // if value is not defined, it is set to true
+  isBoolean={false}  // if value is false
 >
-    Submit
+Submit
 </ComponentName>
 ```
 
