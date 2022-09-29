@@ -15,16 +15,11 @@ const Collapse = (props: CollapseProps) => {
     hideOnCollapse,
     UNSAFE_className,
     UNSAFE_style,
-    breakpoints,
   } = props;
 
   const contentElementRef = useRef();
 
-  const { toggleHandler, isTriggerHidden, isCollapsed, isTriggered } = useCollapse({
-    responsive,
-    collapsed,
-    breakpoints,
-  });
+  const { toggleHandler, isCollapsed, isTriggered } = useCollapse({ collapsed });
 
   const {
     triggerProps: updateTriggerProps,
@@ -49,11 +44,10 @@ const Collapse = (props: CollapseProps) => {
       return renderTrigger({
         collapsed: isCollapsed,
         trigger: updateTriggerProps,
-        triggerHidden: isTriggerHidden,
       });
 
     return null;
-  }, [renderTrigger, updateTriggerProps, hideOnCollapse, isTriggered, isCollapsed, isTriggerHidden]);
+  }, [renderTrigger, updateTriggerProps, hideOnCollapse, isTriggered, isCollapsed]);
 
   const wrapper = useMemo(() => {
     if (hideOnCollapse) {

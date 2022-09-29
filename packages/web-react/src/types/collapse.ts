@@ -22,7 +22,6 @@ export type CollapseTriggerProps = {
 export type CollapseRenderProps = {
   collapsed: boolean;
   trigger: CollapseTriggerProps;
-  triggerHidden: boolean;
 };
 
 export interface CollapseContentProps extends StyleProps {

@@ -30,10 +30,10 @@ export const useCollapseStyle = (props: useCollapseStyleProps) => {
 
   const NAME_ARIA_EXPANDED = 'aria-expanded';
   const NAME_ARIA_CONTROLS = 'aria-controls';
+  const NAME_DATA_BREAKPOINT = 'data-breakpoint';
 
   const wrapperClass = useClassNamePrefix('Collapse');
   const contentClass = useClassNamePrefix('Collapse__content');
-  const responsiveClass = responsive ? `is-responsive-${responsive}` : '';
   const collapsedClass = collapsed ? 'is-collapsed' : '';
   const expandedClass = collapsed ? 'is-expanded' : '';
 
@@ -60,11 +60,12 @@ export const useCollapseStyle = (props: useCollapseStyleProps) => {
     },
     wrapperProps: {
       id,
-      className: classNames(wrapperClass, responsiveClass, expandedClass, wrapperClassName),
+      className: classNames(wrapperClass, expandedClass, wrapperClassName),
       style: {
         height: collapsed ? height : 0,
         ...wrapperStyle,
       },
+      [NAME_DATA_BREAKPOINT]: responsive,
     },
     contentProps: {
       className: classNames(contentClass, contentProps?.UNSAFE_className),

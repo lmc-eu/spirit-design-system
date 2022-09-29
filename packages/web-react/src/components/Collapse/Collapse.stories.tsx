@@ -61,9 +61,9 @@ Default.args = {
 export const Responsive = Template.bind({});
 Responsive.args = {
   id: 'DemoCollapseResponsive',
-  renderTrigger: ({ collapsed, trigger, triggerHidden }: CollapseRenderProps) => (
-    <Button {...trigger}>
-      Trigger ({collapsed ? 'open' : 'closed'}) {triggerHidden && '... should be hidden'}
+  renderTrigger: ({ collapsed, trigger: { UNSAFE_className, ...rest } }: CollapseRenderProps) => (
+    <Button UNSAFE_className={[UNSAFE_className, 'd-tablet-none'].join(' ')} {...rest}>
+      Trigger ({collapsed ? 'open' : 'closed'})
     </Button>
   ),
   children: (

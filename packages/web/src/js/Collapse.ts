@@ -9,10 +9,6 @@ const NAME_ARIA_CONTROLS = 'aria-controls';
 const NAME_DATA_TARGET = 'data-target';
 const CLASSNAME_EXPANDED = 'is-expanded';
 const CLASSNAME_COLLAPSED = 'is-collapsed';
-const CLASSNAME_HIDDEN = 'is-hidden';
-const BREAKPOINT_MOBILE = 0;
-const BREAKPOINT_TABLET = 768;
-const BREAKPOINT_DESKTOP = 1280;
 
 enum breakpointKeys {
   default = 'default',
@@ -63,24 +59,10 @@ class Collapse extends BaseComponent {
     return NAME;
   }
 
-  isResponsive() {
-    const w = this.state.width;
-    const mobile = w >= BREAKPOINT_MOBILE && this.meta.breakpoint === breakpointKeys.mobile;
-    const tablet = w >= BREAKPOINT_TABLET && this.meta.breakpoint === breakpointKeys.tablet;
-    const desktop = w >= BREAKPOINT_DESKTOP && this.meta.breakpoint === breakpointKeys.desktop;
-
-    return {
-      mobile,
-      tablet,
-      desktop,
-      anyOf: mobile || tablet || desktop,
-    };
-  }
-
   onResize() {
     this.state.width = window.innerWidth;
-    this.adjustTriggerElementHandler();
-    this.adjustCollapsibleElementHandler();
+    this.updateTriggerElementHandler();
+    this.updateCollapsibleElementHandler();
   }
 
   appendNodeToParentHandler() {
@@ -103,39 +85,12 @@ class Collapse extends BaseComponent {
     }
   }
 
-  adjustTriggerElementHandler() {
-    if (this.meta.breakpoint !== breakpointKeys.default) {
-      if (this.isResponsive().anyOf) {
-        this.updateTriggerElementHandler(true);
-      } else {
-        this.updateTriggerElementHandler(false);
-      }
-    } else {
-      this.updateTriggerElementHandler();
-    }
-  }
-
-  adjustCollapsibleElementHandler() {
-    if (this.meta.breakpoint !== breakpointKeys.default) {
-      if (this.isResponsive().anyOf) {
-        this.updateCollapsibleElementHandler(true);
-      } else {
-        this.updateCollapsibleElementHandler(false);
-      }
-    } else {
-      this.updateCollapsibleElementHandler();
-    }
-  }
-
   updateTriggerElementHandler(collapsed: boolean = this.state.collapsed) {
     const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     const updateElement = (element: Element | HTMLElement) => {
       element.setAttribute(NAME_ARIA_CONTROLS, this.meta.id);
       element.setAttribute(NAME_ARIA_EXPANDED, String(collapsed));
       element.classList.toggle(CLASSNAME_EXPANDED, collapsed);
-      if (this.meta.breakpoint !== breakpointKeys.default) {
-        element.classList.toggle(CLASSNAME_HIDDEN, collapsed && this.isResponsive()[this.meta.breakpoint]);
-      }
       if (this.meta.hideOnCollapse && collapsed) {
         element.remove();
         this.appendNodeToParentHandler();
@@ -201,8 +156,8 @@ class Collapse extends BaseComponent {
   }
 
   onInit() {
-    this.adjustTriggerElementHandler();
-    this.adjustCollapsibleElementHandler();
+    this.updateTriggerElementHandler();
+    this.updateCollapsibleElementHandler();
     this.initEvents();
   }
 }

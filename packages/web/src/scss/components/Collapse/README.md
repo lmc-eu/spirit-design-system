@@ -31,6 +31,7 @@ Responsive usage for tablet
 
 ```html
 ...
+<button ... class="d-tablet-none">trigger</button>
 <div id="CollapseExample" class="Collapse" data-breakpoint="tablet">
   <div class="Collapse__content">...</div>
 </div>
@@ -63,16 +64,6 @@ There can be several triggers, the same rules apply to each.
 ## State classes
 
 The component provides auto toggle classes, like `.is-expanded` and `.is-collapsed` when triggered or initiated
-
-## Utility class
-
-Also is necessary to have a defined class `.is-hidden` for full responsive experience. When `data-breakpoint` is set component also triggers this class for trigger element.
-
-```css
-.my-collapse-trigger.is-hidden {
-  display: none;
-}
-```
 
 ## JavaScript Plugin
 

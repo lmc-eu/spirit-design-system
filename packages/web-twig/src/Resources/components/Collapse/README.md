@@ -33,6 +33,7 @@ Responsive usage for tablet
 
 ```html
 ...
+<button ... class="d-tablet-none">trigger</button>
 <div id="CollapseExample" class="Collapse" data-breakpoint="tablet">
   <div class="Collapse__content">...</div>
 </div>

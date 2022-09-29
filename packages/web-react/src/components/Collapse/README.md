@@ -13,7 +13,15 @@
 ### Responsive
 
 ```javascript
-<Collapse id="CollapseExample" renderToggle={({ trigger }) => <button {...trigger}>...</button>} responsive="tablet">
+<Collapse
+  id="CollapseExample"
+  renderToggle={({ trigger }) => (
+    <button className="d-tablet-none" {...trigger}>
+      ...
+    </button>
+  )}
+  responsive="tablet"
+>
   ...children...
 </Collapse>
 ```
@@ -60,7 +68,6 @@
 | Prop name                  | Type      | Description                    |
 | -------------------------- | --------- | ------------------------------ |
 | `collapsed`                | `boolean` | When collapse is collapsed     |
-| `triggerHidden`            | `boolean` | When trigger should be hidden  |
 | `trigger`                  | `Object`  | Trigger properties             |
 | `trigger.onClick`          | `string`  | Trigger onClick event          |
 | `trigger.className`        | `string`  | Trigger state classname        |
