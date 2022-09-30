@@ -21,7 +21,7 @@ export const Icon = ({ name, title, size, ariaHidden, ...restProps }: IconProps)
     // @ts-ignore: Incompatible HTMLElement and SVGSVGElement
     <svg
       viewBox={`0 0 ${size} ${size}`}
-      fill="currentColor"
+      fill="none"
       width={size}
       height={size}
       // eslint-disable-next-line react/no-danger
