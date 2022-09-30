@@ -16,6 +16,6 @@
     "test:unit:update": "make phpstan-update",
     "test:unit:coverage": "make phpstan-coverage",
     "lint:fix": "make ecs-fix",
-    "version": "sh ./bin/version.sh $npm_package_version"
+    "version": "sh ./bin/version.sh $npm_package_version && git add --all"
   }
 }
