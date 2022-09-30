@@ -28,6 +28,8 @@ class SvgExtension extends AbstractExtension
 
     private const ATTR_ID = 'id';
 
+    private const ATTR_VIEWBOX = 'viewBox';
+
     /**
      * @var array<string,SimpleXMLElement|false>
      */
@@ -195,11 +197,11 @@ class SvgExtension extends AbstractExtension
 
         if ($attributes !== null && $reuseSvg instanceof SimpleXMLElement) {
             foreach ($attributes as $key => $value) {
-                if ($key !== self::ATTR_ID) {
-                    $reuseSvg->addAttribute((string) $key, (string) $value);
-                } else {
-                    $reuseSvg->addChild('use')->addAttribute('href', '#' . $iconId);
-                }
+              if ($key === self::ATTR_ID) {
+                $reuseSvg->addChild('use')->addAttribute('href', '#' . $iconId);
+              } elseif ($key !== self::ATTR_VIEWBOX) {
+                $reuseSvg->addAttribute((string) $key, (string) $value);
+              }
             }
         }
 
