@@ -1,13 +1,13 @@
 %hidden {
     --scale: 0.95;
 
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
 }
 
 %visible {
     --scale: 1;
 
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }

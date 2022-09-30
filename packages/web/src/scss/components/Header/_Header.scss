@@ -10,9 +10,9 @@
     @include typography.generate(theme.$typography);
 
     display: flex;
-    align-items: center;
     flex: none;
     gap: theme.$header-gap;
+    align-items: center;
     height: 68px;
     padding-inline: theme.$header-padding-x;
     background-color: transparent;
@@ -20,48 +20,48 @@
 
 .Header__mobileOnlyActions {
     display: flex;
-    align-items: center;
     gap: theme.$mobile-only-actions-gap;
+    align-items: center;
     margin-left: auto;
 }
 
 .Header__bar,
 .Header__dialog {
-    $_shadow-offset: -2rem;
+    $shadow-offset: -2rem;
 
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 1;
     display: grid;
     width: 280px;
     color: theme.$pane-color;
     background-color: theme.$pane-background-color;
     visibility: hidden;
-    z-index: 1;
     transform: translateX(100%);
 
     &::after {
-        @include tools.create-cover($top: $_shadow-offset, $bottom: $_shadow-offset);
+        @include tools.create-cover($top: $shadow-offset, $bottom: $shadow-offset);
 
         content: '';
-        box-shadow: theme.$pane-shadow;
         z-index: -1;
+        box-shadow: theme.$pane-shadow;
     }
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, transform;
-        transition-timing-function: ease-in-out;
         transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
     }
 }
 
 .Header__backdrop {
     @include tools.create-cover($position: fixed, $right: 100%, $left: auto);
 
+    z-index: -2;
     width: 100vw;
     background-color: theme.$backdrop-background-color;
-    z-index: -2;
 }
 
 .Header__content {
@@ -95,6 +95,7 @@
     display: flex;
 }
 
+// stylelint-disable selector-no-qualifying-type
 .Header__close,
 button.Header__link {
     @include reset.button();
@@ -103,8 +104,8 @@ button.Header__link {
 .Header__close {
     @include accessibility.min-tap-target(theme.$close-button-size);
 
-    align-self: flex-end;
     flex: none;
+    align-self: flex-end;
     margin-top: theme.$pane-padding;
     margin-right: theme.$pane-padding;
     color: theme.$close-button-color;
@@ -112,8 +113,8 @@ button.Header__link {
 
 .Header__text {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
     padding: theme.$nav-item-padding-y theme.$nav-item-padding-x;
 }
@@ -182,8 +183,8 @@ button.Header__link--current {
         position: static;
         display: flex;
         flex: 1;
-        align-self: stretch;
         gap: theme.$header-gap;
+        align-self: stretch;
         width: auto;
         background: transparent;
         visibility: visible;
@@ -209,8 +210,8 @@ button.Header__link--current {
 
     .Header__bar .Header__actions {
         flex-direction: row;
-        align-items: center;
         gap: theme.$actions-column-gap;
+        align-items: center;
         padding: 0;
     }
 
@@ -244,8 +245,8 @@ button.Header__link--current {
 }
 
 .Header--simple {
-    height: 60px;
     justify-content: center;
+    height: 60px;
 }
 
 .Header--inverted {
@@ -259,6 +260,7 @@ button.Header__link--current {
     transform: translateX(0);
 }
 
+// stylelint-disable selector-max-class
 .Header__bar.is-open::after,
 .Header__bar.is-open > .Header__backdrop,
 .Header__dialog.is-open::after,

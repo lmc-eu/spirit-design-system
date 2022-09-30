@@ -27,6 +27,7 @@
     "precss": "yarn css:lint",
     "css": "yarn css:compile && yarn css:prefix && yarn css:minify",
     "css:lint": "stylelint --config ../../.stylelintrc.js \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css:lint:fix": "stylelint --config ../../.stylelintrc.js \"src/**/*.scss\" --fix",
     "css:compile:components": "sass --load-path=../design-tokens/dist/scss src/scss/components/index.scss dist/css/components.css",
     "css:compile:foundation": "sass --load-path=../design-tokens/dist/scss --load-path=../../node_modules src/scss/foundation/index.scss dist/css/foundation.css",
     "css:compile:helpers": "sass --load-path=../design-tokens/dist/scss src/scss/helpers/index.scss dist/css/helpers.css",
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "1.0.3",
-    "@lmc-eu/stylelint-config": "4.0.1",
+    "@lmc-eu/stylelint-config": "^5.0.0-alpha.0",
     "@rollup/plugin-typescript": "8.4.0",
     "@swc/core": "1.2.247",
     "@swc/jest": "0.2.22",

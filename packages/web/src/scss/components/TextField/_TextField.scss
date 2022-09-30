@@ -35,9 +35,9 @@
     width: 100%;
     padding: theme.$input-padding-y theme.$input-padding-x;
     color: theme.$input-color-default;
-    background: theme.$input-background;
     border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
     border-radius: theme.$input-border-radius;
+    background: theme.$input-background;
 
     &::placeholder {
         color: theme.$input-placeholder-color-default;
@@ -92,8 +92,8 @@
     @include reset.button();
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: theme.$input-password-toggle-padding;
     color: theme.$input-color-default;
     border-radius: theme.$input-border-radius;
@@ -120,6 +120,7 @@
     display: block;
 }
 
+// stylelint-disable selector-max-class, no-descending-specificity, selector-max-compound-selectors, selector-max-specificity
 .TextField__passwordToggle__icon--shown,
 .TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--hidden {
     display: none;
@@ -142,11 +143,11 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
     width: (2 * theme.$input-password-toggle-padding) + theme.$input-password-toggle-icon-size;
     height: 100%;
     border-radius: theme.$input-border-radius;
     box-shadow: theme.$input-focus-shadow;
-    z-index: 1;
 }
 
 .TextField__message,
@@ -197,8 +198,8 @@
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
     color: theme.$input-color-disabled;
-    cursor: cursors.$disabled;
     pointer-events: none;
+    cursor: cursors.$disabled;
 }
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {

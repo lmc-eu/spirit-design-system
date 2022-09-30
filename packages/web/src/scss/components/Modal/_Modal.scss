@@ -7,27 +7,27 @@
 .Modal {
     position: fixed;
     top: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
+    z-index: 1;
     width: 100%;
     max-width: none;
     height: 100%;
     max-height: none;
     padding: 0;
     margin: 0;
-    background: transparent;
+    overflow-x: hidden;
+    overflow-y: auto;
     border: 0;
-    z-index: 1;
+    background: transparent;
+    overscroll-behavior-y: contain;
 }
 
 .Modal__backdrop {
     position: fixed;
-    inset: 0;
-    opacity: 0;
-    background-color: theme.$backdrop-background-color;
     z-index: -1;
+    background-color: theme.$backdrop-background-color;
     visibility: hidden;
+    opacity: 0;
+    inset: 0;
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: opacity, visibility;
@@ -61,10 +61,10 @@
     flex-direction: column;
     width: 100%;
     padding: theme.$content-padding;
-    pointer-events: auto;
-    background-color: theme.$content-background-color;
     border-radius: theme.$content-border-radius;
+    background-color: theme.$content-background-color;
     box-shadow: theme.$content-shadow;
+    pointer-events: auto;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
         padding: theme.$content-padding-tablet;
@@ -79,6 +79,6 @@
 }
 
 .Modal[open] > .Modal__backdrop {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }

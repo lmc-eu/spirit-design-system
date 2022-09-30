@@ -18,30 +18,30 @@
 @mixin variant($variant, $variables) {
     .Button--#{$variant} {
         color: map.get($variables, default-color);
-        background-color: map.get($variables, default-background);
         border-color: map.get($variables, default-border-color);
+        background-color: map.get($variables, default-background);
 
         &:hover,
         &:focus {
             color: map.get($variables, hover-color);
-            background-color: map.get($variables, hover-background);
             border-color: map.get($variables, hover-border-color);
+            background-color: map.get($variables, hover-background);
         }
 
         &:active {
             color: map.get($variables, active-color);
-            background-color: map.get($variables, active-background);
             border-color: map.get($variables, active-border-color);
+            background-color: map.get($variables, active-background);
         }
 
         &:disabled,
         &.is-disabled,
         &.Button--disabled {
             color: map.get($variables, disabled-color);
-            background-color: map.get($variables, disabled-background);
             border-color: map.get($variables, disabled-border-color);
-            cursor: default;
+            background-color: map.get($variables, disabled-background);
             pointer-events: none;
+            cursor: default;
         }
     }
 }

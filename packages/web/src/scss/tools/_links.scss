@@ -3,17 +3,17 @@
 @use 'sass:meta';
 
 @mixin variants($selector, $variants, $printValues: (default, hover, active, disabled, visited)) {
-    @each $variantName, $variantValues in $variants {
-        @each $variantValueName, $variantValue in $variantValues {
-            @if (list.index($printValues, $variantValueName)) {
-                $variantClass: '#{$variantName}';
-                @if ($variantValueName == 'disabled') {
-                    $variantClass: '#{$variantName}.link-#{$variantValueName}:any-link';
-                } @else if ($variantValueName != 'default') {
-                    $variantClass: '#{$variantName}:#{$variantValueName}';
+    @each $variant-name, $variant-values in $variants {
+        @each $variant-value-name, $variant-value in $variant-values {
+            @if list.index($printValues, $variant-value-name) {
+                $variant-class: '#{$variant-name}';
+                @if $variant-value-name == 'disabled' {
+                    $variant-class: '#{$variant-name}.link-#{$variant-value-name}:any-link';
+                } @else if $variant-value-name != 'default' {
+                    $variant-class: '#{$variant-name}:#{$variant-value-name}';
                 }
-                #{$selector}-#{unquote($variantClass)} {
-                    color: $variantValue;
+                #{$selector}-#{unquote($variant-class)} {
+                    color: $variant-value;
                 }
             }
         }
@@ -24,8 +24,8 @@
     &::#{$pseudo-element} {
         content: '';
         position: absolute;
-        inset: 0;
-        display: block;
         z-index: 0;
+        display: block;
+        inset: 0;
     }
 }

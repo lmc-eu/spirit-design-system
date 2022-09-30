@@ -1,11 +1,12 @@
 .text-truncate {
     display: block;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .text-truncate-multiline {
+    // stylelint-disable-next-line value-no-vendor-prefix
     display: -webkit-box;
     -webkit-line-clamp: var(--lines, 3);
     -webkit-box-orient: vertical;

@@ -1,5 +1,5 @@
-$_spin-duration: 1s;
-$_spin-easing: linear;
+$spin-duration: 1s;
+$spin-easing: linear;
 
 @keyframes spin {
     0% {
@@ -12,5 +12,5 @@ $_spin-easing: linear;
 }
 
 .animation-spin-clockwise {
-    animation: spin $_spin-duration $_spin-easing infinite;
+    animation: spin $spin-duration $spin-easing infinite;
 }

@@ -15,18 +15,18 @@
     @include typography.generate(theme.$typography);
 
     position: absolute;
+    z-index: 1;
     width: max-content;
     max-width: theme.$max-width;
     padding: theme.$padding;
     text-align: left;
     white-space: normal;
     word-break: normal;
-    word-wrap: break-word;
     color: theme.$color;
-    background-color: theme.$background-color;
     border-radius: theme.$border-radius;
+    background-color: theme.$background-color;
     box-shadow: theme.$box-shadow;
-    z-index: 1;
+    word-wrap: break-word;
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: opacity, visibility, transform;
@@ -39,8 +39,8 @@
     position: absolute;
     width: theme.$arrow-width;
     height: theme.$arrow-height;
-    transform-origin: center bottom;
     background-image: svg.escape(theme.$arrow-shape);
+    transform-origin: center bottom;
 }
 
 .Tooltip__close {
@@ -75,15 +75,15 @@
 }
 
 .Tooltip--left {
-    right: 100%;
     top: 50%;
+    right: 100%;
     transform: translate(#{-1 * theme.$arrow-height}, -50%) scale(var(--scale, 1));
     transform-origin: right center;
 }
 
 .Tooltip--right {
-    left: 100%;
     top: 50%;
+    left: 100%;
     transform: translate(#{theme.$arrow-height}, -50%) scale(var(--scale, 1));
     transform-origin: left center;
 }
@@ -102,14 +102,14 @@
 }
 
 .Tooltip--left > .Tooltip__arrow {
-    left: 100%;
     top: 50%;
+    left: 100%;
     transform: translate(-50%, -100%) rotateZ(90deg);
 }
 
 .Tooltip--right > .Tooltip__arrow {
-    right: 100%;
     top: 50%;
+    right: 100%;
     transform: translate(50%, -100%) rotateZ(-90deg);
 }
 
@@ -127,6 +127,8 @@
     inset: unset; // 2.
 }
 
+// stylelint-disable scss/at-extend-no-missing-placeholder
+// TODO: Refactor extends
 .Tooltip[data-placement='top'] {
     @extend .Tooltip--top;
 

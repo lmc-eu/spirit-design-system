@@ -30,16 +30,16 @@
 
 .CheckboxField__input {
     appearance: none;
+    flex-shrink: 0;
     width: theme.$input-width;
     height: theme.$input-width;
     margin: 3px;
     color: theme.$input-unselected-color;
+    border: 2px solid currentcolor;
+    border-radius: 2px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    border: 2px solid currentcolor;
-    border-radius: 2px;
-    flex-shrink: 0;
 
     &:checked {
         color: theme.$input-selected-color;
@@ -67,6 +67,7 @@
     color: theme.$message-color-default;
 }
 
+// stylelint-disable selector-max-class
 .CheckboxField--error > .CheckboxField__text > .CheckboxField__message {
     color: theme.$message-color-error;
 }
@@ -76,6 +77,7 @@
     color: theme.$label-color-disabled;
 }
 
+// stylelint-disable no-descending-specificity, selector-max-specificity
 .CheckboxField > .CheckboxField__input:disabled,
 .CheckboxField:hover > .CheckboxField__input:disabled,
 .CheckboxField--disabled > .CheckboxField__input {

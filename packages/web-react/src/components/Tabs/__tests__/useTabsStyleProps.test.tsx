@@ -10,14 +10,14 @@ describe('useTabsStyleProps', () => {
     expect(result.current.classProps.content).toBe('Tabs-content');
     expect(result.current.classProps.item).toBe('Tabs__item');
     expect(result.current.classProps.link).toBe('Tabs__link');
-    expect(result.current.classProps.pane).toBe('Tabs-pane');
+    expect(result.current.classProps.pane).toBe('TabsPane');
   });
 
   it('should return selected pane', () => {
     const props = { selectedTabId: 'test', tabId: 'test' };
     const { result } = renderHook(() => useTabsStyleProps(props));
 
-    expect(result.current.classProps.pane).toBe('Tabs-pane is-selected');
+    expect(result.current.classProps.pane).toBe('TabsPane is-selected');
   });
 
   it('should return selected link', () => {
