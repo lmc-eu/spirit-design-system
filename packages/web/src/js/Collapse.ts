@@ -1,5 +1,5 @@
 import BaseComponent from './BaseComponent';
-import { instanceAutoloader } from './utils/ComponentFunctions';
+import { enableToggleAutoloader } from './utils/ComponentFunctions';
 import selectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 
@@ -162,6 +162,6 @@ class Collapse extends BaseComponent {
   }
 }
 
-instanceAutoloader('toggle', Collapse);
+enableToggleAutoloader(Collapse);
 
 export default Collapse;
