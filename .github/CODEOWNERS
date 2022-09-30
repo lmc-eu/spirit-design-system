@@ -1,12 +1,12 @@
 # Code owners for spirit-design-system
 # https://help.github.com/en/articles/about-code-owners
 
-* @literat @tomassychra @lmc-eu/frontend-developers
+* @lmc-eu/spirit-design-system
 
 # Packages' owners
 
-/packages/design-tokens           @adamkudrna @crishpeen @lmc-eu/frontend-developers
-/packages/icons                   @adamkudrna @crishpeen @lmc-eu/frontend-developers
-/packages/web                     @adamkudrna @crishpeen @tomassychra @lmc-eu/frontend-developers
-/packages/web-react               @literat @tomassychra @lmc-eu/frontend-developers
-/packages/web-twig                @literat @tomassychra @janicekt @lmc-eu/frontend-developers
+/packages/design-tokens           @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
+/packages/icons                   @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
+/packages/web                     @literat @adamkudrna @crishpeen @tomassychra @lmc-eu/spirit-design-system
+/packages/web-react               @literat @tomassychra @lmc-eu/spirit-design-system
+/packages/web-twig                @literat @adamkudrna @crishpeen @tomassychra @lmc-eu/spirit-design-system
