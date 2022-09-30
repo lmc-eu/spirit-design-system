@@ -74,8 +74,8 @@ describe('Tabs', () => {
             <li class="Tabs__item" role="presentation"><button type="button" data-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
-            <div class="Tabs-pane is-selected" id="home" role="tabpanel"></div>
-            <div class="Tabs-pane" id="profile" role="tabpanel"></div>
+            <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
+            <div class="TabsPane" id="profile" role="tabpanel"></div>
           </div>
         `;
 
@@ -99,8 +99,8 @@ describe('Tabs', () => {
             <li class="Tabs__item" role="presentation"><button type="button" id="triggerProfile" data-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
-            <div class="Tabs-pane is-selected" id="home" role="tabpanel"></div>
-            <div class="Tabs-pane" id="profile" role="tabpanel"></div>
+            <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
+            <div class="TabsPane" id="profile" role="tabpanel"></div>
           </div>
         `;
 
@@ -205,9 +205,9 @@ describe('Tabs', () => {
             </li>
           </ul>
           <div class="Tabs-content">
-            <div role="tabpanel" class="Tabs-pane is-selected" id="profile">test 1</div>
-            <div role="tabpanel" class="Tabs-pane" id="buzz">test 2</div>
-            <div role="tabpanel" class="Tabs-pane" id="references">test 3</div>
+            <div role="tabpanel" class="TabsPane is-selected" id="profile">test 1</div>
+            <div role="tabpanel" class="TabsPane" id="buzz">test 2</div>
+            <div role="tabpanel" class="TabsPane" id="references">test 3</div>
           </div>
         `;
 
@@ -353,8 +353,8 @@ describe('Tabs', () => {
             </li>
           </ul>
           <div class="Tabs-content">
-            <div class="Tabs-pane is-selected" id="home" role="tabpanel"></div>
-            <div class="Tabs-pane" id="profile" role="tabpanel"></div>
+            <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
+            <div class="TabsPane" id="profile" role="tabpanel"></div>
           </div>
         `;
 
@@ -382,12 +382,12 @@ describe('Tabs', () => {
                 <button type="button" id="tabNested2" data-target="#nested-tab2" class="Tabs__link" data-toggle="tabs" role="tab" aria-controls="x-profile">Nested Tabs2</button>
               </nav>
               <div class="Tabs-content">
-                <div class="Tabs-pane is-selected" id="nested-tab1" role="tabpanel">Nested Tabs1 Content</div>
-                <div class="Tabs-pane" id="nested-tab2" role="tabpanel">Nested Tabs2 Content</div>
+                <div class="TabsPane is-selected" id="nested-tab1" role="tabpanel">Nested Tabs1 Content</div>
+                <div class="TabsPane" id="nested-tab2" role="tabpanel">Nested Tabs2 Content</div>
               </div>
             </div>
-            <div class="Tabs-pane is-selected" id="x-tab2" role="tabpanel">Tabs2 Content</div>
-            <div class="Tabs-pane" id="x-tab3" role="tabpanel">Tabs3 Content</div>
+            <div class="TabsPane is-selected" id="x-tab2" role="tabpanel">Tabs2 Content</div>
+            <div class="TabsPane" id="x-tab3" role="tabpanel">Tabs3 Content</div>
           </div>
         `;
 
@@ -433,8 +433,8 @@ describe('Tabs', () => {
             <li class="Tabs__item" role="presentation"><button type="button" data-target="#profile" class="Tabs__link" disabled role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
-            <div class="Tabs-pane is-selected" id="home" role="tabpanel"></div>
-            <div class="Tabs-pane" id="profile" role="tabpanel"></div>
+            <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
+            <div class="TabsPane" id="profile" role="tabpanel"></div>
           </div>
         `;
 
@@ -456,8 +456,8 @@ describe('Tabs', () => {
             <li class="Tabs__item" role="presentation"><a href="#profile" class="Tabs__link disabled" role="tab">Profile</a></li>
           </ul>
           <div class="Tabs-content">
-            <div class="Tabs-pane is-selected" id="home" role="tabpanel"></div>
-            <div class="Tabs-pane" id="profile" role="tabpanel"></div>
+            <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
+            <div class="TabsPane" id="profile" role="tabpanel"></div>
           </div>
         `;
 

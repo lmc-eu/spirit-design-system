@@ -4,10 +4,10 @@
 
 .Tabs {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex: none;
     gap: theme.$tab-gap;
+    align-items: center;
+    justify-content: center;
     list-style: none;
 }
 
@@ -36,18 +36,10 @@
     &::after {
         content: '';
         position: absolute;
-        inset-inline: 0;
         bottom: 0;
         height: 2px;
-        background: theme.$item-selected-underline-background;
         border-radius: theme.$item-selected-underline-border-radius;
+        background: theme.$item-selected-underline-background;
+        inset-inline: 0;
     }
-}
-
-.Tabs-pane {
-    display: none;
-}
-
-.Tabs-pane.is-selected {
-    display: block;
 }

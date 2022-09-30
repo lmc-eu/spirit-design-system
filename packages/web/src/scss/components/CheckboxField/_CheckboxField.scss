@@ -30,16 +30,16 @@
 
 .CheckboxField__input {
     appearance: none;
+    flex-shrink: 0;
     width: theme.$input-width;
     height: theme.$input-width;
     margin: 3px;
     color: theme.$input-unselected-color;
+    border: 2px solid currentcolor;
+    border-radius: 2px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    border: 2px solid currentcolor;
-    border-radius: 2px;
-    flex-shrink: 0;
 
     &:checked {
         color: theme.$input-selected-color;
@@ -67,22 +67,23 @@
     color: theme.$message-color-default;
 }
 
-.CheckboxField--error > .CheckboxField__text > .CheckboxField__message {
+.CheckboxField--error .CheckboxField__message {
     color: theme.$message-color-error;
 }
 
-.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__label,
-.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__message {
+.CheckboxField--disabled .CheckboxField__label,
+.CheckboxField--disabled .CheckboxField__message {
     color: theme.$label-color-disabled;
 }
 
-.CheckboxField > .CheckboxField__input:disabled,
-.CheckboxField:hover > .CheckboxField__input:disabled,
-.CheckboxField--disabled > .CheckboxField__input {
+.CheckboxField--disabled > .CheckboxField__input,
+.CheckboxField > .CheckboxField__input:disabled {
     color: theme.$input-disabled-color;
+}
 
-    &:checked,
-    &:indeterminate {
-        background-color: theme.$input-disabled-color;
-    }
+.CheckboxField--disabled > .CheckboxField__input:checked,
+.CheckboxField--disabled > .CheckboxField__input:indeterminate,
+.CheckboxField > .CheckboxField__input:disabled:checked,
+.CheckboxField > .CheckboxField__input:disabled:indeterminate {
+    background-color: theme.$input-disabled-color;
 }

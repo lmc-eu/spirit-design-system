@@ -9,6 +9,11 @@
     cursor: cursors.$disabled;
 }
 
+// All links in headings behave the same
+[class*='typography-heading'] a {
+    text-decoration: none;
+}
+
 // Allows link underline everywhere, except for headings default state
 .link-underlined,
 [class*='typography-heading'] a:hover,
@@ -20,11 +25,6 @@
 
 .link-stretched {
     @include links.stretch();
-}
-
-// All links in headings behave the same
-[class*='typography-heading'] a {
-    text-decoration: none;
 }
 
 // Only links in headings have visited state
