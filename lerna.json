@@ -10,11 +10,11 @@
       "conventionalCommits": true,
       "changelogPreset": "@lmc-eu/conventional-changelog-lmc-github",
       "push": false,
-      "message": "Chore(release): Publish [ci-skip]",
+      "message": "Chore(release): Publish",
       "ignoreChanges": ["yarn.lock"]
     },
     "publish": {
-      "message": "Chore(release): Publish [ci-skip]"
+      "message": "Chore(release): Publish"
     }
   }
 }
