@@ -35,9 +35,9 @@
     width: 100%;
     padding: theme.$input-padding-y theme.$input-padding-x;
     color: theme.$input-color-default;
-    background: theme.$input-background;
     border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
     border-radius: theme.$input-border-radius;
+    background: theme.$input-background;
 
     &::placeholder {
         color: theme.$input-placeholder-color-default;
@@ -92,8 +92,8 @@
     @include reset.button();
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: theme.$input-password-toggle-padding;
     color: theme.$input-color-default;
     border-radius: theme.$input-border-radius;
@@ -120,19 +120,22 @@
     display: block;
 }
 
+// stylelint-disable-next-line no-descending-specificity -- In this case ↕️, the code is more readable this way.
 .TextField__passwordToggle__icon--shown,
 .TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--hidden {
     display: none;
 }
 
+// stylelint-disable selector-max-specificity, selector-max-class, selector-max-compound-selectors -- We need high-specificity selectors here.
 .TextField > .TextField__input:focus-visible,
 .TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
     border-color: theme.$input-border-color-focus;
     outline: 0;
     box-shadow: theme.$input-focus-shadow;
 }
+// stylelint-enable selector-max-specificity, selector-max-class, selector-max-compound-selectors
 
-.TextField > .TextField__passwordToggle > .TextField__input:focus-visible,
+.TextField__passwordToggle > .TextField__input:focus-visible,
 .TextField__passwordToggle__button:focus-visible {
     outline: 0;
 }
@@ -142,11 +145,11 @@
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
     width: (2 * theme.$input-password-toggle-padding) + theme.$input-password-toggle-icon-size;
     height: 100%;
     border-radius: theme.$input-border-radius;
     box-shadow: theme.$input-focus-shadow;
-    z-index: 1;
 }
 
 .TextField__message,
@@ -185,6 +188,12 @@
     }
 }
 
+// stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors
+// -- The code is more comprehensible when styling elements in this order:
+//      1. input (with a pseudo-element),
+//      2. password toggle button,
+//      3. message.
+//    Also, high-specificity selectors are necessary to achieve the desired result.
 .TextField > .TextField__input:disabled,
 :is(.TextField--disabled, .TextField.is-disabled) > .TextField__input,
 .TextField .TextField__passwordToggle .TextField__input:disabled ~ .TextField__passwordToggle__button::before,
@@ -197,8 +206,8 @@
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
     color: theme.$input-color-disabled;
-    cursor: cursors.$disabled;
     pointer-events: none;
+    cursor: cursors.$disabled;
 }
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {

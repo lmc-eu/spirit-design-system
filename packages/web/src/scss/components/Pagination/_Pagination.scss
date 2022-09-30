@@ -20,8 +20,8 @@
     padding-inline: theme.$item-padding-inline;
     font-weight: theme.$item-emphasis-font-weight;
     color: theme.$item-default-color;
-    background-color: theme.$item-default-background;
     border-radius: theme.$item-radius;
+    background-color: theme.$item-default-background;
 
     &:active {
         color: theme.$item-active-color;
@@ -35,13 +35,11 @@
     }
 }
 
-.Pagination__link--current {
-    &,
-    &:active,
-    &:focus,
-    &:hover {
-        color: theme.$item-selected-color;
-        background-color: theme.$item-selected-background;
-        cursor: cursors.$disabled;
-    }
+.Pagination__link--current,
+.Pagination__link--current:active,
+.Pagination__link--current:focus,
+.Pagination__link--current:hover {
+    color: theme.$item-selected-color;
+    background-color: theme.$item-selected-background;
+    cursor: cursors.$disabled;
 }

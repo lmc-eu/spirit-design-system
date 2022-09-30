@@ -8,16 +8,16 @@
     @include typography.generate(theme.$typography);
 
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
     border-width: theme.$border-width;
     border-style: theme.$border-style;
     border-radius: theme.$border-radius;
-    cursor: pointer;
     user-select: none;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -27,8 +27,8 @@
     &:disabled,
     &.is-disabled,
     &.Button--disabled {
-        cursor: cursors.$disabled;
         pointer-events: none;
+        cursor: cursors.$disabled;
     }
 }
 

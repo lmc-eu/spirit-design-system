@@ -14,16 +14,16 @@
 }
 
 .RadioField__input {
+    appearance: none;
     display: grid;
     width: theme.$input-width;
     height: theme.$input-width;
     margin: theme.$input-margin;
     font: inherit;
     color: theme.$input-color-unchecked;
-    background-color: transparent;
     border: theme.$input-outline-width solid theme.$input-color-unchecked;
     border-radius: theme.$input-border-radius;
-    appearance: none;
+    background-color: transparent;
     transform: translateY(-0.075em);
     place-content: center;
 
@@ -40,11 +40,11 @@
         content: '';
         width: theme.$input-inner-dot-width;
         height: theme.$input-inner-dot-width;
-        background-color: canvastext; // 2.
         border-radius: theme.$input-border-radius;
+        background-color: canvastext; // 2.
+        box-shadow: theme.$input-box-shadow-before; // 1.
         transform: scale(0);
         transition: theme.$input-transition;
-        box-shadow: theme.$input-box-shadow-before; // 1.
     }
 
     &:checked::before {
@@ -57,26 +57,26 @@
     margin-left: theme.$label-margin;
     color: theme.$label-color-default;
     @include typography.generate(theme.$label-typography);
+}
 
-    &--hidden {
-        @include accessibility.hide-text();
-    }
+.RadioField__label--hidden {
+    @include accessibility.hide-text();
 }
 
 .RadioField--disabled > .RadioField__label {
     color: theme.$label-color-disabled;
 }
 
-.RadioField > .RadioField__input:disabled,
-.RadioField:hover > .RadioField__input:disabled,
-.RadioField--disabled > .RadioField__input {
+.RadioField--disabled > .RadioField__input,
+.RadioField > .RadioField__input:disabled {
     border-color: theme.$input-color-disabled;
-
-    &::before {
-        box-shadow: theme.$input-box-shadow-disabled; // 1.
-    }
 
     &:checked {
         border-color: theme.$input-color-disabled;
     }
+}
+
+.RadioField--disabled > .RadioField__input::before,
+.RadioField > .RadioField__input:disabled::before {
+    box-shadow: theme.$input-box-shadow-disabled; // 1.
 }

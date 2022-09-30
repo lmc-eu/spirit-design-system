@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:string';
 @use 'breakpoint';
 @use '@tokens' as tokens;
 
@@ -6,7 +7,7 @@
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         @include breakpoint.up($breakpoint-value) {
             @if map.has-key($token, $breakpoint-name, font-family) {
-                font-family: unquote(map.get($token, $breakpoint-name, font-family));
+                font-family: string.unquote(map.get($token, $breakpoint-name, font-family));
             }
 
             @if map.has-key($token, $breakpoint-name, font-size) {

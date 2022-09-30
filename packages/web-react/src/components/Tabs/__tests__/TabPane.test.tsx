@@ -9,7 +9,7 @@ import TabPane from '../TabPane';
 describe('TabPane', () => {
   classNamePrefixProviderTest(
     withTabsContext((props) => <TabPane {...props} tabId="test" />, { selectedTabId: 'test' } as TabsContextType),
-    'Tabs-pane',
+    'TabsPane',
   );
 
   it('should not render tab pane if tab is not selected', () => {
