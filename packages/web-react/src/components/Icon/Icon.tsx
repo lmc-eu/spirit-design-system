@@ -20,7 +20,7 @@ export const Icon = ({ name, title, size, ariaHidden, ...restProps }: IconProps)
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: Incompatible HTMLElement and SVGSVGElement
     <svg
-      viewBox={`0 0 ${size} ${size}`}
+      viewBox="0 0 24 24"
       fill="none"
       width={size}
       height={size}
