@@ -9,6 +9,7 @@ export * from './icon';
 export * from './label';
 export * from './link';
 export * from './message';
+export * from './modal';
 export * from './pill';
 export * from './radioField';
 export * from './shared';

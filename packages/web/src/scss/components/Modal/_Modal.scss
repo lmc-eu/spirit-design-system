@@ -78,6 +78,20 @@
     margin-bottom: theme.$header-spacing;
 }
 
+.Modal__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: theme.$footer-spacing;
+    gap: theme.$gap-spacing;
+}
+
+.Modal__close {
+    position: absolute;
+    top: calc(#{theme.$content-padding} / 2);
+    right: calc(#{theme.$content-padding} / 2);
+}
+
 .Modal[open] > .Modal__backdrop {
     opacity: 1;
     visibility: visible;
