@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.26.0"></a>
+
+# [0.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.25.0...@lmc-eu/spirit-web-react@0.26.0) (2022-10-03)
+
+### BREAKING CHANGES
+
+- Remove `narrow` preset of `Grid` in favour of product-specific layouts ([64f5588](https://github.com/lmc-eu/spirit-design-system/commit/64f5588))
+
+### Features
+
+- **web-react:** Add abstract component TextFieldBase [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([002a00f](https://github.com/lmc-eu/spirit-design-system/commit/002a00f))
+- **web-react:** Unify props of the form components ([169b84e](https://github.com/lmc-eu/spirit-design-system/commit/169b84e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.25.0"></a>
 
 # [0.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.24.0...@lmc-eu/spirit-web-react@0.25.0) (2022-09-22)

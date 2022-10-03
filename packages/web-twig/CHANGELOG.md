@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.0"></a>
+
+# [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.11.0...@lmc-eu/spirit-web-twig@1.12.0) (2022-10-03)
+
+### BREAKING CHANGES
+
+- Remove `narrow` preset of `Grid` in favour of product-specific layouts ([64f5588](https://github.com/lmc-eu/spirit-design-system/commit/64f5588))
+- **web-twig:** Delete duplicate `Tabs` sub-components ([46c430d](https://github.com/lmc-eu/spirit-design-system/commit/46c430d))
+- **web-twig:** Drop support Symfony 3.4 and not LTS versions 4.x and 5.x ([286644c](https://github.com/lmc-eu/spirit-design-system/commit/286644c))
+- **web-twig:** Fix `TabLink` API ([488800b](https://github.com/lmc-eu/spirit-design-system/commit/488800b))
+
+### Chores
+
+- **web-twig:** Add changes done by version script to VCS ([7d62978](https://github.com/lmc-eu/spirit-design-system/commit/7d62978))
+
+### Features
+
+- **web-twig:** Add abstract component TextFieldBase [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([1a27cfc](https://github.com/lmc-eu/spirit-design-system/commit/1a27cfc))
+- **web-twig:** Introduce support Symfony 6.1 and PHP 8.1 ([676ce5e](https://github.com/lmc-eu/spirit-design-system/commit/676ce5e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.11.0"></a>
 
 # [1.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.10.0...@lmc-eu/spirit-web-twig@1.11.0) (2022-09-22)

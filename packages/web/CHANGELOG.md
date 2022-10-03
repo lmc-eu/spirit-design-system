@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.28.0"></a>
+
+# [0.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.27.0...@lmc-eu/spirit-web@0.28.0) (2022-10-03)
+
+### BREAKING CHANGES
+
+- Remove `narrow` preset of `Grid` in favour of product-specific layouts ([64f5588](https://github.com/lmc-eu/spirit-design-system/commit/64f5588))
+
+### Bug Fixes
+
+- **web:** Fix underlined Link ([abe7e55](https://github.com/lmc-eu/spirit-design-system/commit/abe7e55))
+
+### Features
+
+- **web:** Introduce `Pagination` component (refs [#DS-314](https://github.com/lmc-eu/spirit-design-system/issues/DS-314)) ([e3b707d](https://github.com/lmc-eu/spirit-design-system/commit/e3b707d))
+- **web:** Introduce Grid Span to enable responsively centered content over multiple `Grid` columns ([e1f7584](https://github.com/lmc-eu/spirit-design-system/commit/e1f7584))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.27.0"></a>
 
 # [0.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.26.0...@lmc-eu/spirit-web@0.27.0) (2022-09-22)
