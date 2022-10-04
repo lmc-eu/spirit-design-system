@@ -52,7 +52,6 @@
     }
 }
 
-// stylelint-disable no-descending-specificity, selector-max-specificity
 .RadioField__label {
     display: inline-block;
     margin-left: theme.$label-margin;
@@ -68,16 +67,16 @@
     color: theme.$label-color-disabled;
 }
 
-.RadioField > .RadioField__input:disabled,
-.RadioField:hover > .RadioField__input:disabled,
-.RadioField--disabled > .RadioField__input {
+.RadioField--disabled > .RadioField__input,
+.RadioField > .RadioField__input:disabled {
     border-color: theme.$input-color-disabled;
-
-    &::before {
-        box-shadow: theme.$input-box-shadow-disabled; // 1.
-    }
 
     &:checked {
         border-color: theme.$input-color-disabled;
     }
+}
+
+.RadioField--disabled > .RadioField__input::before,
+.RadioField > .RadioField__input:disabled::before {
+    box-shadow: theme.$input-box-shadow-disabled; // 1.
 }

@@ -95,7 +95,7 @@
     display: flex;
 }
 
-// stylelint-disable selector-no-qualifying-type
+// stylelint-disable selector-no-qualifying-type -- Style links with the semantics of a button.
 .Header__close,
 button.Header__link {
     @include reset.button();
@@ -243,6 +243,7 @@ button.Header__link--current {
         transform: scaleY(1);
     }
 }
+// stylelint-enable selector-no-qualifying-type
 
 .Header--simple {
     justify-content: center;
@@ -260,7 +261,7 @@ button.Header__link--current {
     transform: translateX(0);
 }
 
-// stylelint-disable selector-max-class
+// stylelint-disable selector-max-class -- Allow targeting interaction classes.
 .Header__bar.is-open::after,
 .Header__bar.is-open > .Header__backdrop,
 .Header__dialog.is-open::after,

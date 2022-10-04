@@ -120,20 +120,22 @@
     display: block;
 }
 
-// stylelint-disable selector-max-class, no-descending-specificity, selector-max-compound-selectors, selector-max-specificity
+// stylelint-disable-next-line no-descending-specificity -- In this case ↕️, the code is more readable this way.
 .TextField__passwordToggle__icon--shown,
 .TextField__passwordToggle__button[aria-pressed='true'] > .TextField__passwordToggle__icon--hidden {
     display: none;
 }
 
+// stylelint-disable selector-max-specificity, selector-max-class, selector-max-compound-selectors -- We need high-specificity selectors here.
 .TextField > .TextField__input:focus-visible,
 .TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
     border-color: theme.$input-border-color-focus;
     outline: 0;
     box-shadow: theme.$input-focus-shadow;
 }
+// stylelint-enable selector-max-specificity, selector-max-class, selector-max-compound-selectors
 
-.TextField > .TextField__passwordToggle > .TextField__input:focus-visible,
+.TextField__passwordToggle > .TextField__input:focus-visible,
 .TextField__passwordToggle__button:focus-visible {
     outline: 0;
 }
@@ -186,6 +188,12 @@
     }
 }
 
+// stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors
+// -- The code is more comprehensible when styling elements in this order:
+//      1. input (with a pseudo-element),
+//      2. password toggle button,
+//      3. message.
+//    Also, high-specificity selectors are necessary to achieve the desired result.
 .TextField > .TextField__input:disabled,
 :is(.TextField--disabled, .TextField.is-disabled) > .TextField__input,
 .TextField .TextField__passwordToggle .TextField__input:disabled ~ .TextField__passwordToggle__button::before,

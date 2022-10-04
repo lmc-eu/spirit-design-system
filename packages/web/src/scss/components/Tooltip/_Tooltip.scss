@@ -127,8 +127,7 @@
     inset: unset; // 2.
 }
 
-// stylelint-disable scss/at-extend-no-missing-placeholder
-// TODO: Refactor extends
+// stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
 .Tooltip[data-placement='top'] {
     @extend .Tooltip--top;
 

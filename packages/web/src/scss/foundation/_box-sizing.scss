@@ -5,7 +5,7 @@ html {
     box-sizing: border-box;
 }
 
-// stylelint-disable selector-max-universal
+// stylelint-disable selector-max-universal -- Purposely target all element types.
 *,
 *::before,
 *::after {

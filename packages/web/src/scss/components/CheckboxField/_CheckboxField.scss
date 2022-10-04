@@ -67,24 +67,23 @@
     color: theme.$message-color-default;
 }
 
-// stylelint-disable selector-max-class
-.CheckboxField--error > .CheckboxField__text > .CheckboxField__message {
+.CheckboxField--error .CheckboxField__message {
     color: theme.$message-color-error;
 }
 
-.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__label,
-.CheckboxField--disabled > .CheckboxField__text > .CheckboxField__message {
+.CheckboxField--disabled .CheckboxField__label,
+.CheckboxField--disabled .CheckboxField__message {
     color: theme.$label-color-disabled;
 }
 
-// stylelint-disable no-descending-specificity, selector-max-specificity
-.CheckboxField > .CheckboxField__input:disabled,
-.CheckboxField:hover > .CheckboxField__input:disabled,
-.CheckboxField--disabled > .CheckboxField__input {
+.CheckboxField--disabled > .CheckboxField__input,
+.CheckboxField > .CheckboxField__input:disabled {
     color: theme.$input-disabled-color;
+}
 
-    &:checked,
-    &:indeterminate {
-        background-color: theme.$input-disabled-color;
-    }
+.CheckboxField--disabled > .CheckboxField__input:checked,
+.CheckboxField--disabled > .CheckboxField__input:indeterminate,
+.CheckboxField > .CheckboxField__input:disabled:checked,
+.CheckboxField > .CheckboxField__input:disabled:indeterminate {
+    background-color: theme.$input-disabled-color;
 }
