@@ -1,0 +1,6 @@
+@use '@tokens' as tokens;
+
+$padding: tokens.$space-600;
+$border-radius: tokens.$radius-200;
+$background: tokens.$background-basic;
+$shadow: tokens.$shadow-100;

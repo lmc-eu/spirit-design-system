@@ -1,0 +1,14 @@
+@use 'theme' as theme;
+
+.Dropdown {
+    display: none;
+    width: max-content;
+    padding: theme.$padding;
+    border-radius: theme.$border-radius;
+    background-color: theme.$background;
+    box-shadow: theme.$shadow;
+}
+
+.Dropdown.is-open {
+    display: block;
+}
