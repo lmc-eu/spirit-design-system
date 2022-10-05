@@ -7,7 +7,7 @@ const isElement = (object: any): boolean => {
   return typeof object.nodeType !== 'undefined';
 };
 
-const getElement = (object?: any): Node | Element | HTMLElement | null => {
+const getElement = (object?: any): SpiritElement => {
   // it's a node element
   if (isElement(object)) {
     return object;
@@ -18,6 +18,16 @@ const getElement = (object?: any): Node | Element | HTMLElement | null => {
   }
 
   return null;
+};
+
+const getTargetOrElement = (element?: SpiritElement): SpiritElement => {
+  let target;
+
+  if (element?.dataset?.target) {
+    target = getElement(element.dataset.target);
+  }
+
+  return target || element;
 };
 
 const getSelector = (element: HTMLElement | null) => element?.getAttribute('data-target');
@@ -39,4 +49,4 @@ const reflow = (element: HTMLElement): void => {
   element.offsetHeight;
 };
 
-export { isElement, getElement, getSelector, getElementFromSelector, reflow };
+export { isElement, getElement, getSelector, getElementFromSelector, getTargetOrElement, reflow };
