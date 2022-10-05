@@ -2,15 +2,15 @@ import React from 'react';
 import { ComponentMeta } from '@storybook/react';
 import Collapse from './Collapse';
 import { Button } from '../Button';
-import { CollapseRenderProps, CollapseProps } from '../../types';
+import { SpiritCollapseProps, CollapseRenderProps } from '../../types';
 
 export default {
   title: 'Components/Collapse',
   argTypes: {},
 } as ComponentMeta<typeof Collapse>;
 
-const Template = (args: CollapseProps) => <Collapse {...args} />;
-const WrappredTemplate = (args: CollapseProps) => (
+const Template = (args: SpiritCollapseProps) => <Collapse {...args} />;
+const WrappredTemplate = (args: SpiritCollapseProps) => (
   <div>
     Condimentum odio, pulvinar et sollicitudin accumsan ac hendrerit vestibulum commodo, molestie laoreet dui sit amet.
     Molestie consectetur, sed ac felis scelerisque lectus accumsan purus id dolor sed vitae, praesent aliquam dolor quis
@@ -61,8 +61,8 @@ Default.args = {
 export const Responsive = Template.bind({});
 Responsive.args = {
   id: 'DemoCollapseResponsive',
-  renderTrigger: ({ collapsed, trigger: { UNSAFE_className, ...rest } }: CollapseRenderProps) => (
-    <Button UNSAFE_className={[UNSAFE_className, 'd-tablet-none'].join(' ')} {...rest}>
+  renderTrigger: ({ collapsed, trigger: { className, ...rest } }: CollapseRenderProps) => (
+    <Button UNSAFE_className={[className, 'd-tablet-none'].join(' ')} {...rest}>
       Trigger ({collapsed ? 'open' : 'closed'})
     </Button>
   ),
@@ -87,7 +87,7 @@ Responsive.args = {
       </p>
     </>
   ),
-  responsive: 'tablet',
+  collapsibleToBreakpoint: 'tablet',
 };
 
 export const HideOnClose = WrappredTemplate.bind({});
@@ -108,8 +108,4 @@ HideOnClose.args = {
     </>
   ),
   hideOnCollapse: true,
-  elementType: 'span',
-  contentProps: {
-    elementType: 'span',
-  },
 };

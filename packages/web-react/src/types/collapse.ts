@@ -3,18 +3,11 @@ import { ChildrenProps, ClickEvent, StyleProps } from './shared';
 
 export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer' | 'span';
 
-export type CollapseResponsiveType = 'mobile' | 'tablet' | 'desktop';
-
-export type CollapseBreakpointsType = {
-  mobile?: number;
-  tablet?: number;
-  desktop?: number;
-};
+export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop';
 
 export type CollapseTriggerProps = {
   onClick: (event: ClickEvent) => void;
-  className: string;
-  UNSAFE_className: string;
+  className?: string | undefined;
   'aria-expanded': string | boolean | undefined;
   'aria-controls': string;
 };
@@ -24,17 +17,12 @@ export type CollapseRenderProps = {
   trigger: CollapseTriggerProps;
 };
 
-export interface CollapseContentProps extends StyleProps {
-  elementType?: CollapseElementType;
-}
-
-export interface CollapseProps extends ChildrenProps, StyleProps {
+export interface SpiritCollapseProps extends ChildrenProps, StyleProps {
   id?: string;
-  collapsed?: boolean;
+  isCollapsed?: boolean;
+  hideOnCollapse?: boolean;
+  collapsibleToBreakpoint?: CollapseResponsiveType;
   renderTrigger?: (render: CollapseRenderProps) => ReactNode;
   elementType?: CollapseElementType;
-  contentProps?: CollapseContentProps;
-  responsive?: CollapseResponsiveType;
-  hideOnCollapse?: boolean;
-  breakpoints?: CollapseBreakpointsType;
+  contentElementType?: CollapseElementType;
 }

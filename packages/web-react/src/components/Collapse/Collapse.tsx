@@ -1,66 +1,85 @@
-import React, { useMemo, createElement, useRef } from 'react';
-import { CollapseProps } from '../../types';
+import React, { createElement } from 'react';
+import { SpiritCollapseProps } from '../../types';
+import { useStyleProps } from '../../hooks/styleProps';
 import { useCollapse } from './useCollapse';
-import { useCollapseStyle } from './useCollapseStyle';
+import { useCollapseStyleProps } from './useCollapseStyleProps';
+import { useCollapseAriaProps } from './useCollapseAriaProps';
 
-const Collapse = (props: CollapseProps) => {
+const Collapse = (props: SpiritCollapseProps) => {
   const {
-    id,
+    id = Math.random().toString(36).slice(2, 7),
+    elementType = 'div',
+    contentElementType = 'div',
+    collapsibleToBreakpoint = undefined,
     children,
-    collapsed,
-    responsive,
-    elementType,
-    contentProps,
-    renderTrigger,
+    isCollapsed,
     hideOnCollapse,
-    UNSAFE_className,
-    UNSAFE_style,
+    renderTrigger,
+    ...rest
   } = props;
 
-  const contentElementRef = useRef();
-
-  const { toggleHandler, isCollapsed, isTriggered } = useCollapse({ collapsed });
-
-  const {
-    triggerProps: updateTriggerProps,
-    wrapperProps: updatedWrapperProps,
-    contentProps: updatedContentProps,
-  } = useCollapseStyle({
+  const { collapsed, toggleHandler } = useCollapse({
+    isCollapsed,
+  });
+  const { wrapperClassName, contentClassName, triggerClassName } = useCollapseStyleProps({
+    isCollapsed: collapsed,
+  });
+  const { wrapperProps, contentProps, triggerProps } = useCollapseAriaProps({
     id,
-    responsive,
-    contentProps,
-    onToggle: toggleHandler,
-    collapsed: isCollapsed,
-    contentRef: contentElementRef,
-    wrapperClassName: UNSAFE_className,
-    wrapperStyle: UNSAFE_style,
+    collapsibleToBreakpoint,
+    toggleHandler,
+    isCollapsed: collapsed,
   });
 
-  const content = createElement(contentProps?.elementType || 'div', updatedContentProps, children);
+  const { styleProps: wrapperStyleProps, props: wrapperOtherProps } = useStyleProps({ ...rest });
+  const { styleProps: triggerStyleProps } = useStyleProps({
+    UNSAFE_className: triggerClassName,
+  });
 
-  const trigger = useMemo(() => {
-    const show = !(hideOnCollapse && isTriggered);
+  const content = createElement(
+    contentElementType,
+    {
+      className: contentClassName,
+      ...contentProps,
+    },
+    children,
+  );
+
+  const triggerRenderHandler = () => {
+    const show = hideOnCollapse ? !(hideOnCollapse && collapsed) : true;
     if (renderTrigger && show)
       return renderTrigger({
-        collapsed: isCollapsed,
-        trigger: updateTriggerProps,
+        collapsed,
+        trigger: {
+          ...triggerStyleProps,
+          ...triggerProps,
+        },
       });
 
     return null;
-  }, [renderTrigger, updateTriggerProps, hideOnCollapse, isTriggered, isCollapsed]);
+  };
 
-  const wrapper = useMemo(() => {
-    if (hideOnCollapse) {
-      return isCollapsed && children;
+  const wrapperRenderHandler = () => {
+    if (hideOnCollapse && collapsed) {
+      return children;
     }
 
-    return createElement(elementType || 'div', updatedWrapperProps, content);
-  }, [isCollapsed, content, children, elementType, hideOnCollapse, updatedWrapperProps]);
+    return createElement(
+      elementType || 'div',
+      {
+        ...wrapperOtherProps,
+        ...wrapperStyleProps,
+        ...wrapperProps,
+        className: wrapperClassName,
+      },
+      content,
+    );
+  };
 
   return (
     <>
-      {trigger}
-      {wrapper}
+      {triggerRenderHandler()}
+      {wrapperRenderHandler()}
     </>
   );
 };

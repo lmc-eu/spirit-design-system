@@ -1,20 +1,17 @@
 import { useState } from 'react';
-import { ClickEvent } from '../../types';
+import { ClickEvent, SpiritCollapseProps } from '../../types';
 
-export interface useCollapseProps {
-  collapsed?: boolean;
+export interface CollapseReturn {
+  /** collapse handler */
+  toggleHandler: (event: ClickEvent) => void;
+  /** collapsed state */
+  collapsed: boolean;
 }
 
-export const useCollapse = (props: useCollapseProps) => {
-  const { collapsed } = props;
+export const useCollapse = ({ isCollapsed }: SpiritCollapseProps): CollapseReturn => {
+  const [collapsed, setCollapsed] = useState<boolean>(!!isCollapsed);
 
-  const [isCollapsed, setCollapsed] = useState<boolean>(!!collapsed);
-  const [isTriggered, setTriggered] = useState(false);
-
-  const collapseHandler = () => {
-    setCollapsed(!isCollapsed);
-    if (!isTriggered) setTriggered(true);
-  };
+  const collapseHandler = () => setCollapsed(!collapsed);
 
   const toggleHandler = (event: ClickEvent) => {
     event.preventDefault();
@@ -23,7 +20,6 @@ export const useCollapse = (props: useCollapseProps) => {
 
   return {
     toggleHandler,
-    isCollapsed,
-    isTriggered,
+    collapsed,
   };
 };
