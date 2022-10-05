@@ -1,7 +1,7 @@
 import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
-import { getElement } from './index';
+import { getElement, getTargetOrElement } from './index';
 
 type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
 
@@ -18,7 +18,7 @@ const enableDataTrigger = (
   EventHandler.on(window, 'DOMContentLoaded', (event: Event) => {
     SelectorEngine.findAll(`[${dataTriggerAttribute}="${name}"]`).forEach((toggleEl) => {
       EventHandler.on(toggleEl, 'click', function handleClick() {
-        const target = getElement(this);
+        const target = getTargetOrElement(getElement(this));
         const instance = component.getOrCreateInstance(target);
 
         // No index signature with a parameter of type 'string' was found on type 'Document | HTMLElement | Window | BaseComponent'
