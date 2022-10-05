@@ -67,6 +67,23 @@ describe('Util', () => {
     });
   });
 
+  describe('getTriggerOrTarget', () => {
+    it('should try to parse element base on data-target', () => {
+      fixtureEl.innerHTML = [
+        '<div id="foo" class="test" data-target="#bar"></div>',
+        '<div id="bar" class="test"></div>',
+      ].join('');
+
+      const el = fixtureEl.querySelector('#foo');
+      const targetEl = fixtureEl.querySelector('#bar');
+
+      expect(Util.getTriggerOrTarget(el)).toEqual(targetEl);
+      expect(Util.getTriggerOrTarget('#foo', 'trigger')).toBe('#foo');
+      expect(Util.getTriggerOrTarget('#bar')).toBeNull();
+      expect(Util.getTriggerOrTarget(null)).toBeNull();
+    });
+  });
+
   describe('reflow', () => {
     it('should return element offset height to force the reflow', () => {
       fixtureEl.innerHTML = '<div></div>';
