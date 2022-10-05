@@ -7,7 +7,7 @@ const isElement = (object: any): boolean => {
   return typeof object.nodeType !== 'undefined';
 };
 
-const getElement = (object?: any): Node | Element | HTMLElement | null => {
+const getElement = (object?: any): SpiritElement => {
   // it's a node element
   if (isElement(object)) {
     return object;
@@ -20,6 +20,15 @@ const getElement = (object?: any): Node | Element | HTMLElement | null => {
   return null;
 };
 
+type Aim = 'trigger' | 'target';
+
+const getTriggerOrTarget = (element?: SpiritElement, aim: Aim = 'target'): SpiritElement => {
+  const trigger = element;
+  const target = trigger?.dataset?.target ? getElement(element.dataset.target) : null;
+
+  return aim === 'target' ? target : trigger;
+};
+
 const getSelector = (element: HTMLElement | null) => element?.getAttribute('data-target');
 
 const getElementFromSelector = (element: HTMLElement | null): HTMLElement | null => {
@@ -28,4 +37,5 @@ const getElementFromSelector = (element: HTMLElement | null): HTMLElement | null
   return selector ? document.querySelector(selector) : null;
 };
 
-export { isElement, getElement, getElementFromSelector, getSelector };
+export { isElement, getElement, getElementFromSelector, getSelector, getTriggerOrTarget };
+export type { Aim };

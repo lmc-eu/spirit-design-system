@@ -1,7 +1,7 @@
 import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
-import { getElement } from './Elements';
+import { getElement, getTriggerOrTarget } from './Elements';
 
 type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
 
@@ -10,7 +10,7 @@ const ATTRIBUTE_DATA_DISMISS = `data-dismiss`;
 
 const onClickHandler = (element: HTMLElement, component: typeof BaseComponent, method: string, event: Event) => {
   EventHandler.on(element, 'click', function handleClick() {
-    const target = getElement(this);
+    const target = getTriggerOrTarget(getElement(this));
     const instance = component.getOrCreateInstance(target);
 
     // No index signature with a parameter of type 'string' was found on type 'Document | HTMLElement | Window | BaseComponent'
