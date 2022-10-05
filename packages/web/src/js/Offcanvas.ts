@@ -1,14 +1,20 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
-import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import { enableToggleTrigger, enableDismissTrigger } from './utils/ComponentFunctions';
 
-const NAME = 'header';
-const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
+const NAME = 'offcanvas';
+const DATA_KEY = 'offcanvas';
+const EVENT_KEY = `.${DATA_KEY}`;
+
+const EVENT_SHOW = `show${EVENT_KEY}`;
+const EVENT_SHOWN = `shown${EVENT_KEY}`;
+const EVENT_HIDE = `hide${EVENT_KEY}`;
+const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
+
 const HEADER_BREAKPOINT = 1280;
 const OPEN_CLASSNAME = 'is-open';
 
-class Header extends BaseComponent {
+class Offcanvas extends BaseComponent {
   isShown: boolean;
 
   static get NAME() {
@@ -16,7 +22,8 @@ class Header extends BaseComponent {
   }
 
   constructor(element: HTMLElement) {
-    super(element);
+    const target = element;
+    super(target);
 
     this.isShown = false;
   }
@@ -28,13 +35,13 @@ class Header extends BaseComponent {
     if (event.target === this.element || event.target.dataset.dismiss) {
       event.preventDefault();
       event.stopPropagation();
-      this.hide(event);
+      this.hide();
     }
   }
 
   onWindowResize(event: Event & { target: Window }) {
     if (event.target.innerWidth >= HEADER_BREAKPOINT) {
-      this.hide(event);
+      this.hide();
     }
   }
 
@@ -44,7 +51,7 @@ class Header extends BaseComponent {
       return;
     }
 
-    this.hide(event);
+    this.hide();
 
     // Cancel the default action to avoid it being handled twice.
     event.preventDefault();
@@ -67,42 +74,43 @@ class Header extends BaseComponent {
       return;
     }
 
+    const showEvent = EventHandler.trigger(this.element, EVENT_SHOW, { relatedTarget });
+
+    if (showEvent?.defaultPrevented) {
+      return;
+    }
+
     this.element.classList.add(OPEN_CLASSNAME);
     this.element.showModal();
     relatedTarget.setAttribute('aria-expanded', 'true');
+    this.element.setAttribute('aria-modal', 'true');
+    this.element.setAttribute('role', 'dialog');
 
     this.addEventListeners();
     this.isShown = true;
+
+    EventHandler.trigger(this.element, EVENT_SHOWN, { relatedTarget });
   }
 
-  // Using `unknown` - Object is possibly 'null'.
-  // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  hide(event: Event & { target: any }) {
-    let target;
-    // hiding by resizing
-    if (Object.keys(event.target.dataset).length === 0) {
-      target = this.element;
-      // hiding by clicking
-    } else if (event.target.dataset.target) {
-      target = SelectorEngine.findOne(event.target.dataset.target);
-      // hiding by dialog close
-    } else {
-      target = this.element;
+  hide() {
+    const hideEvent = EventHandler.trigger(this.element, EVENT_HIDE);
+
+    if (hideEvent?.defaultPrevented) {
+      return;
     }
 
-    const navEl = this.element || target;
-    const headerEl = navEl.parentElement;
-    const toggleEl = SelectorEngine.findOne(HEADER_TOGGLE_SELECTOR, headerEl);
-    target.classList.remove(OPEN_CLASSNAME);
-    target.close();
-    toggleEl?.setAttribute('aria-expanded', 'false');
+    this.element.classList.remove(OPEN_CLASSNAME);
+    this.element.close();
+    this.element.removeAttribute('aria-modal');
+    this.element.removeAttribute('role');
 
     this.removeEventListeners();
     this.isShown = false;
+
+    EventHandler.trigger(this.element, EVENT_HIDDEN);
   }
 
-  toggle(targetElement: HTMLElement | null, event: Event & { target: HTMLElement }) {
+  toggle(targetElement: HTMLElement | null) {
     if (!targetElement) {
       // eslint-disable-next-line no-console
       console.warn(
@@ -112,10 +120,11 @@ class Header extends BaseComponent {
       return;
     }
 
-    this.isShown ? this.hide(event) : this.show(targetElement);
+    this.isShown ? this.hide() : this.show(targetElement);
   }
 }
 
-enableToggleTrigger(Header);
+enableToggleTrigger(Offcanvas);
+enableDismissTrigger(Offcanvas, 'hide');
 
-export default Header;
+export default Offcanvas;
