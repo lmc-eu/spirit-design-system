@@ -67,6 +67,22 @@ describe('Util', () => {
     });
   });
 
+  describe('getTargetElement', () => {
+    it('should try to parse element base on data-target', () => {
+      fixtureEl.innerHTML = [
+        '<div id="foo" class="test" data-target="#bar"></div>',
+        '<div id="bar" class="test"></div>',
+      ].join('');
+
+      const el = fixtureEl.querySelector('#foo');
+      const targetEl = fixtureEl.querySelector('#bar');
+
+      expect(Util.getTargetOrElement(el)).toEqual(targetEl);
+      expect(Util.getTargetOrElement('#foo')).toBe('#foo');
+      expect(Util.getTargetOrElement(null)).toBeNull();
+    });
+  });
+
   describe('reflow', () => {
     it('should return element offset height to force the reflow', () => {
       fixtureEl.innerHTML = '<div></div>';

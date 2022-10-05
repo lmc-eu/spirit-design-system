@@ -43,7 +43,7 @@ describe('Plugin functions', () => {
 
       const getOrCreateInstanceSpy = jest.spyOn(DummyClass2, 'getOrCreateInstance');
       const testMethodSpy = jest.spyOn(DummyClass2.prototype, 'testMethod');
-      const componentWrapper = fixtureEl.querySelector('[data-target="#foo"]');
+      const componentWrapper = fixtureEl.querySelector('#foo');
       const btnToggle = fixtureEl.querySelector('[data-toggle="test"]') as HTMLElement;
       const event = createEvent('click');
 
