@@ -1,16 +1,15 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { getElementFromSelector, reflow } from './utils';
+import Backdrop from './utils/Backdrop';
+import { getElementFromSelector } from './utils';
 
 const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
 const MODAL_DISMISS_ATTRIBUTE = 'data-dismiss';
-const BACKDROP_TAG_NAME = 'div';
-const BACKDROP_CLASSNAME = 'Modal__backdrop';
 
 class Modal extends BaseComponent {
   isShown: boolean;
-  backdrop: HTMLElement;
+  backdrop: SpiritElement;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -20,22 +19,18 @@ class Modal extends BaseComponent {
   }
 
   static initBackdrop(target: HTMLElement) {
-    const backdropEl = document.createElement(BACKDROP_TAG_NAME);
-    backdropEl.classList.add(BACKDROP_CLASSNAME);
+    const backdropSelector = target.dataset.backdrop;
+    const backdropElement = SelectorEngine.findOne(backdropSelector);
+    const backdrop = new Backdrop(backdropElement);
 
-    if (!SelectorEngine.findAll(`[class*="${BACKDROP_CLASSNAME}"]`, target).length) {
-      target.appendChild(backdropEl);
-      reflow(backdropEl);
-    }
-
-    return backdropEl;
+    return backdrop;
   }
 
   // Using `unknown` - Object is possibly 'null'.
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
-    if (event.target.hasAttribute(MODAL_DISMISS_ATTRIBUTE) || event.target.classList.contains(BACKDROP_CLASSNAME)) {
+    if (event.target.hasAttribute(MODAL_DISMISS_ATTRIBUTE) || event.target === this.backdrop.element) {
       event.preventDefault();
       event.stopPropagation();
       this.hide(event);
@@ -80,6 +75,7 @@ class Modal extends BaseComponent {
 
     this.addEventListeners();
     this.isShown = true;
+    this.backdrop.show();
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -104,6 +100,7 @@ class Modal extends BaseComponent {
 
     this.removeEventListeners();
     this.isShown = false;
+    this.backdrop.hide();
   }
 
   toggle(

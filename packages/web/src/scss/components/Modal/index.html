@@ -22,7 +22,7 @@
     Open Modal with Long Content
   </button>
 
-  <dialog id="modal-example-1" class="Modal">
+  <dialog id="modal-example-1" data-backdrop="#modal-example-1-backdrop" class="Modal">
     <div class="Modal__content">
       <div class="Modal__dialog">
         <div class="Modal__header">
@@ -50,8 +50,9 @@
       </div>
     </div>
   </dialog>
+  <div class="Backdrop" id="modal-example-1-backdrop"></div>
 
-  <dialog id="modal-example-2" class="Modal">
+  <dialog id="modal-example-2" class="Modal" data-backdrop="#modal-example-2-backdrop">
     <div class="Modal__content">
       <div class="Modal__dialog">
         <div class="Modal__header">
@@ -113,6 +114,7 @@
         </div>
       </div>
     </div>
+    <div class="Backdrop" id="modal-example-2-backdrop"></div>
   </dialog>
 
 {{/layout/plain }}
