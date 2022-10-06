@@ -21,18 +21,10 @@
     overscroll-behavior-y: contain;
 }
 
-.Modal__backdrop {
-    position: fixed;
-    z-index: -1;
+.Modal::backdrop {
     background-color: theme.$backdrop-background-color;
-    visibility: hidden;
-    opacity: 0;
-    inset: 0;
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: opacity, visibility;
-        transition-duration: 0.25s;
-    }
+    visibility: visible;
+    opacity: 1;
 }
 
 .Modal__content {
@@ -76,9 +68,4 @@
     align-items: center;
     justify-content: flex-end;
     margin-bottom: theme.$header-spacing;
-}
-
-.Modal[open] > .Modal__backdrop {
-    visibility: visible;
-    opacity: 1;
 }
