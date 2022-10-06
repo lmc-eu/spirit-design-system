@@ -83,7 +83,6 @@ class Modal extends BaseComponent {
     }
 
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
-
     if (typeof target.close === 'function') {
       target.close();
     }
