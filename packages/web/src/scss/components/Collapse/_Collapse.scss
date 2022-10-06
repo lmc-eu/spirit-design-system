@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.Collapse {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
+    // &.is-collapsed{}
+
+    &[data-breakpoint='mobile'] {
+        @include breakpoint.up(map.get(theme.$breakpoints, mobile)) {
+            height: auto !important;
+        }
+    }
+
+    &[data-breakpoint='tablet'] {
+        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+            height: auto !important;
+        }
+    }
+
+    &[data-breakpoint='desktop'] {
+        @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+            height: auto !important;
+        }
+    }
+}
+
+// .Collapse__content {}
