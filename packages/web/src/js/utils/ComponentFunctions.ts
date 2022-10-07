@@ -1,7 +1,7 @@
 import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
-import { getElement, getTargetOrElement } from './index';
+import { getElement, getTriggerOrTarget, Aim } from './index';
 
 type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
 
@@ -12,13 +12,14 @@ const enableDataTrigger = (
   dataTriggerAttribute: DataTriggerAttribute,
   component: typeof BaseComponent,
   method = 'toggle',
+  aim: Aim = 'target',
 ) => {
   const name = component.NAME;
 
   EventHandler.on(window, 'DOMContentLoaded', (event: Event) => {
     SelectorEngine.findAll(`[${dataTriggerAttribute}="${name}"]`).forEach((toggleEl) => {
       EventHandler.on(toggleEl, 'click', function handleClick() {
-        const target = getTargetOrElement(getElement(this));
+        const target = getTriggerOrTarget(getElement(this), aim);
         const instance = component.getOrCreateInstance(target);
 
         // No index signature with a parameter of type 'string' was found on type 'Document | HTMLElement | Window | BaseComponent'
@@ -30,12 +31,12 @@ const enableDataTrigger = (
   });
 };
 
-const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle') => {
-  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, method);
+const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle', aim: Aim = 'target') => {
+  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, method, aim);
 };
 
-const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss') => {
-  enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, method);
+const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss', aim: Aim = 'target') => {
+  enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, method, aim);
 };
 
 export { enableToggleTrigger, enableDismissTrigger };
