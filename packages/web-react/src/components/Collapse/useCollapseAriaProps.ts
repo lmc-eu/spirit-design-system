@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState, Ref, CSSProperties, MutableRefObject } from 'react';
+import { useRef, Ref, CSSProperties, MutableRefObject } from 'react';
 import { ClickEvent, CollapseResponsiveType, SpiritCollapseProps } from '../../types';
+import { useResizeHeight } from './useResizeHeight';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';
@@ -33,8 +34,8 @@ export interface CollapseAriaPropsReturn {
 export const useCollapseAriaProps = (props: CollapseAriaPropsProps): CollapseAriaPropsReturn => {
   const { id, isCollapsed, collapsibleToBreakpoint, toggleHandler } = props;
 
-  const [height, setHeight] = useState<string | number>('0px');
   const contentElementRef: MutableRefObject<HTMLElement | null | undefined> = useRef();
+  const { height } = useResizeHeight({ contentRef: contentElementRef });
 
   const wrapperProps = {
     style: {
@@ -50,18 +51,6 @@ export const useCollapseAriaProps = (props: CollapseAriaPropsProps): CollapseAri
     [NAME_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,
   };
-
-  const adjustHeight = () => {
-    const currentHeight = contentElementRef?.current?.clientHeight || contentElementRef?.current?.offsetHeight;
-    setHeight(`${currentHeight}px`);
-  };
-
-  useEffect(() => {
-    adjustHeight();
-    window.addEventListener('resize', adjustHeight);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return {
     wrapperProps,
