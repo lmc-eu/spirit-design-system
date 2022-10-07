@@ -1,5 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useSpiritModalProps, useSpiritModalReturn, ClickEvent } from '../../types';
+import { ClickEvent, SpiritModalProps } from '../../types';
+
+export interface useSpiritModalProps extends Pick<SpiritModalProps, 'isOpen' | 'onClose' | 'closeOnEscape'> {}
+export interface useSpiritModalReturn {
+  isOpen: boolean;
+  onClose: (event: ClickEvent | KeyboardEvent) => void;
+}
 
 export const useModal = (props: useSpiritModalProps) => {
   const { isOpen, onClose, closeOnEscape, ...rest } = props;
@@ -16,7 +22,7 @@ export const useModal = (props: useSpiritModalProps) => {
 
   const userKeypressHandler = useCallback(
     (event: KeyboardEvent) => {
-      if (event.keyCode === 27) closeHandler(event);
+      if (event.keyCode === 27 || event.key === 'Escape') closeHandler(event);
     },
     [closeHandler],
   );

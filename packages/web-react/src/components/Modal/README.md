@@ -12,15 +12,15 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 </Modal>
 ```
 
-## SpiritModalProps
+## Modal
+
+**Available props**
 
 | Name               | Type                                           | Default   | Description                         |
 | ------------------ | ---------------------------------------------- | --------- | ----------------------------------- |
 | `isOpen`           | `boolean`                                      | `false`   | Open state                          |
 | `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -         | When dialog is closed               |
-| `contentProps`     | `SpiritModalContentProps`                      | -         | Content component props             |
 | `backdropProps`    | `SpiritModalBackdropProps`                     | -         | Backdrop component props            |
-| `dialogProps`      | `SpiritModalDialogProps`                       | -         | Dialog component props              |
 | `closeButtonProps` | `SpiritModalCloseButtonProps`                  | -         | Close button props                  |
 | `closeOnBackdrop`  | `boolean`                                      | `true`    | When click on backdrop closes modal |
 | `closeOnEscape`    | `boolean`                                      | `true`    | When escape press closes modal      |
@@ -30,7 +30,9 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 | `UNSAFE_className` | `string`                                       | -         | Classname                           |
 | `UNSAFE_style`     | `CSSProperties`                                | -         | CSS Properties                      |
 
-## SpiritModalHeaderProps
+## Modal Header
+
+**Available props**
 
 | Name               | Type            | Default | Description    |
 | ------------------ | --------------- | ------- | -------------- |
@@ -38,7 +40,9 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 | `UNSAFE_className` | `string`        | -       | Classname      |
 | `UNSAFE_style`     | `CSSProperties` | -       | CSS Properties |
 
-## SpiritModalBodyProps
+## Modal Body
+
+**Available props**
 
 | Name               | Type            | Default | Description    |
 | ------------------ | --------------- | ------- | -------------- |
@@ -46,7 +50,9 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 | `UNSAFE_className` | `string`        | -       | Classname      |
 | `UNSAFE_style`     | `CSSProperties` | -       | CSS Properties |
 
-## SpiritModalFooterProps
+## Modal Footer
+
+**Available props**
 
 | Name               | Type            | Default | Description    |
 | ------------------ | --------------- | ------- | -------------- |

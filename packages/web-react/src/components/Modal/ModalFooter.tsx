@@ -1,14 +1,16 @@
 import { FC, createElement } from 'react';
+import classNames from 'classnames';
 import { SpiritModalFooterProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useStyleProps } from '../../hooks/styleProps';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalFooter: FC<SpiritModalFooterProps> = (props) => {
-  const { children, UNSAFE_style, UNSAFE_className } = props;
-
-  const modalFooterClass = useClassNamePrefix('Modal__footer');
+const ModalFooter: FC<SpiritModalFooterProps> = ({ children, ...rest }) => {
+  const { modalFooterClassName } = useModalStyleProps();
+  const { styleProps, props: otherProps } = useStyleProps({ ...rest });
   const headerProps = {
-    className: [modalFooterClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    ...styleProps,
+    ...otherProps,
+    className: classNames(modalFooterClassName, styleProps.className),
   };
 
   return createElement('div', headerProps, children);

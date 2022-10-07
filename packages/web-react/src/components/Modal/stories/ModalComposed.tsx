@@ -1,5 +1,11 @@
+// Because there is no `dist` directory during the CI run
+/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React, { useState } from 'react';
 import { ComponentStory } from '@storybook/react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No declaration file
+import icons from '@lmc-eu/spirit-icons/dist/icons';
+import { IconsProvider } from '../../../context';
 import Modal from '../Modal';
 import ModalHeader from '../ModalHeader';
 import ModalBody from '../ModalBody';
@@ -11,7 +17,7 @@ const Story: ComponentStory<typeof Modal> = () => {
   const [longTextOpen, setLongTextOpen] = useState(false);
 
   return (
-    <>
+    <IconsProvider value={icons}>
       <Button onClick={() => setDefaultOpen(true)}>Open Modal</Button>
       <Button onClick={() => setLongTextOpen(true)}>Open Modal with long content</Button>
       <Modal id="DemoModalComposed" isOpen={defaultOpen} onClose={() => setDefaultOpen(false)}>
@@ -100,7 +106,7 @@ const Story: ComponentStory<typeof Modal> = () => {
           </Button>
         </ModalFooter>
       </Modal>
-    </>
+    </IconsProvider>
   );
 };
 

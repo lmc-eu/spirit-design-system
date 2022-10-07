@@ -1,14 +1,16 @@
 import { FC, createElement } from 'react';
+import classNames from 'classnames';
 import { SpiritModalBodyProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useStyleProps } from '../../hooks/styleProps';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalBody: FC<SpiritModalBodyProps> = (props) => {
-  const { children, UNSAFE_style, UNSAFE_className } = props;
-
-  const modalBodyClass = useClassNamePrefix('Modal__body');
+const ModalBody: FC<SpiritModalBodyProps> = ({ children, ...rest }) => {
+  const { modalBodyClassName } = useModalStyleProps();
+  const { styleProps, props: otherProps } = useStyleProps({ ...rest });
   const bodyProps = {
-    className: [modalBodyClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    ...styleProps,
+    ...otherProps,
+    className: classNames(modalBodyClassName, styleProps.className),
   };
 
   return createElement('div', bodyProps, children);

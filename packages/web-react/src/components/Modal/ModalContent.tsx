@@ -1,14 +1,13 @@
 import { createElement } from 'react';
 import { SpiritModalContentProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useModalStyleProps } from './useModalStyleProps';
 
 const ModalContent = (props: SpiritModalContentProps) => {
-  const { children, UNSAFE_style, UNSAFE_className } = props;
+  const { children } = props;
 
-  const modalContentClass = useClassNamePrefix('Modal__content');
+  const { modalContentClassName } = useModalStyleProps();
   const contentProps = {
-    className: [modalContentClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    className: modalContentClassName,
   };
 
   return createElement('div', contentProps, children);

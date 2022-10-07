@@ -1,9 +1,19 @@
+// Because there is no `dist` directory during the CI run
+/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import { ComponentStory } from '@storybook/react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No declaration file
+import icons from '@lmc-eu/spirit-icons/dist/icons';
+import { IconsProvider } from '../../../context';
 import { SpiritModalProps } from '../../../types';
 import Modal from '../Modal';
 
-const Story: ComponentStory<typeof Modal> = (args: SpiritModalProps) => <Modal {...args} />;
+const Story: ComponentStory<typeof Modal> = (args: SpiritModalProps) => (
+  <IconsProvider value={icons}>
+    <Modal {...args} />
+  </IconsProvider>
+);
 
 Story.args = {
   id: 'DemoModal',

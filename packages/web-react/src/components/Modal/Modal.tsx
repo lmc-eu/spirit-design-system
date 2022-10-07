@@ -1,12 +1,14 @@
 import React, { createElement } from 'react';
 import { createPortal } from 'react-dom';
+import classNames from 'classnames';
 import { SpiritModalProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useStyleProps } from '../../hooks/styleProps';
 import ModalBackdrop from './ModalBackdrop';
 import ModalContent from './ModalContent';
 import ModalDialog from './ModalDialog';
 import ModalCloseButton from './ModalCloseButton';
 import { useModal } from './useModal';
+import { useModalStyleProps } from './useModalStyleProps';
 
 const Modal = (props: SpiritModalProps) => {
   const {
@@ -14,9 +16,7 @@ const Modal = (props: SpiritModalProps) => {
     children,
     closeOnBackdrop = true,
     closeOnEscape = true,
-    contentProps,
     backdropProps,
-    dialogProps,
     closeButtonProps,
     parentSelector = '#root',
     showBodyClose = true,
@@ -25,22 +25,25 @@ const Modal = (props: SpiritModalProps) => {
     ...rest
   } = props;
 
-  const { isOpen, onClose } = useModal({ closeOnEscape, ...rest });
-
-  const modalClass = useClassNamePrefix('Modal');
   const parentNode = document.querySelector(parentSelector) as Element;
+  const { isOpen, onClose } = useModal({ closeOnEscape, ...rest });
+  const { modalClassName } = useModalStyleProps();
+  const { styleProps, props: otherProps } = useStyleProps({ UNSAFE_style, UNSAFE_className });
   const modalProps = {
     id,
+    ...styleProps,
+    ...otherProps,
     open: isOpen,
-    className: [modalClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    className: classNames(modalClassName, styleProps.className),
+    ...rest,
   };
+
   const modal = createElement(
     'dialog',
     modalProps,
     <>
-      <ModalContent {...contentProps}>
-        <ModalDialog {...dialogProps}>
+      <ModalContent>
+        <ModalDialog>
           {showBodyClose && <ModalCloseButton onClick={onClose} {...closeButtonProps} />}
           {children}
         </ModalDialog>

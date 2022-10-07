@@ -1,15 +1,12 @@
 import { createElement } from 'react';
 import { SpiritModalBackdropProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalBackdrop = (props: SpiritModalBackdropProps) => {
-  const { onClick, closeOnBackdrop, UNSAFE_style, UNSAFE_className } = props;
-
-  const modalBackdropClass = useClassNamePrefix('Modal__backdrop');
+const ModalBackdrop = ({ onClick, closeOnBackdrop }: SpiritModalBackdropProps) => {
+  const { modalBackdropClassName } = useModalStyleProps();
   const backdropProps = {
     onClick: closeOnBackdrop ? onClick : null,
-    className: [modalBackdropClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    className: modalBackdropClassName,
   };
 
   return createElement('div', backdropProps);

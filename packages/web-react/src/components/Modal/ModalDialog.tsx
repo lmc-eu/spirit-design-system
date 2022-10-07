@@ -1,14 +1,11 @@
 import { createElement } from 'react';
 import { SpiritModalDialogProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalDialog = (props: SpiritModalDialogProps) => {
-  const { children, UNSAFE_style, UNSAFE_className } = props;
-
-  const modalDialogClass = useClassNamePrefix('Modal__dialog');
+const ModalDialog = ({ children }: SpiritModalDialogProps) => {
+  const { modalDialogClassName } = useModalStyleProps();
   const dialogProps = {
-    className: [modalDialogClass, UNSAFE_className].join(' '),
-    style: UNSAFE_style,
+    className: modalDialogClassName,
   };
 
   return createElement('div', dialogProps, children);

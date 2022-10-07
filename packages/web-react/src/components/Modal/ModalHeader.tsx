@@ -1,16 +1,18 @@
 import { FC, createElement } from 'react';
+import classNames from 'classnames';
 import { SpiritModalHeaderProps } from '../../types';
-import { useClassNamePrefix } from '../../hooks';
+import { useStyleProps } from '../../hooks/styleProps';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalHeader: FC<SpiritModalHeaderProps> = (props) => {
-  const { children, UNSAFE_style, UNSAFE_className } = props;
-
-  const modalHeaderClass = useClassNamePrefix('Modal__header');
+const ModalHeader: FC<SpiritModalHeaderProps> = ({ children, ...rest }) => {
+  const { modalHeaderClassName } = useModalStyleProps();
+  const { styleProps, props: otherProps } = useStyleProps({ ...rest });
   const headerProps = {
-    className: [modalHeaderClass, UNSAFE_className].join(' '),
+    ...otherProps,
+    className: classNames(modalHeaderClassName, styleProps.className),
     style: {
       justifyContent: 'space-between', // TODO: TO BE FIXED IN CSS?
-      ...UNSAFE_style,
+      ...styleProps.style,
     },
   };
 
