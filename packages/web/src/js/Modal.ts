@@ -69,16 +69,14 @@ class Modal extends BaseComponent {
     EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
   }
 
-  show(event: Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement }) {
+  show() {
     if (this.isShown) {
       return;
     }
 
-    const target = SelectorEngine.findOne(event.currentTarget.dataset.target as string) as HTMLDialogElement | null;
-    const modalEl = target?.parentElement?.parentElement;
-    const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, modalEl);
+    const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
     toggleEl?.setAttribute('aria-expanded', 'true');
-    target?.showModal();
+    this.element?.showModal();
 
     this.addEventListeners();
     this.isShown = true;
@@ -100,8 +98,7 @@ class Modal extends BaseComponent {
       target = event.target.parentNode;
     }
 
-    const modalEl = target.parentElement.parentElement;
-    const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, modalEl);
+    const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
     target.close();
     toggleEl?.setAttribute('aria-expanded', 'false');
 
@@ -122,7 +119,7 @@ class Modal extends BaseComponent {
       return;
     }
 
-    this.isShown ? this.hide(event) : this.show(event);
+    this.isShown ? this.hide(event) : this.show();
   }
 }
 
