@@ -1,16 +1,22 @@
 import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
-import { getElement, getTargetOrElement } from './index';
+import { getElement, getTriggerOrTarget, Aim } from './index';
 
 type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
 
 const ATTRIBUTE_DATA_TOGGLE = `data-toggle`;
 const ATTRIBUTE_DATA_DISMISS = `data-dismiss`;
 
-const onClickHandler = (element: HTMLElement, component: typeof BaseComponent, method: string, event: Event) => {
+const onClickHandler = (
+  element: HTMLElement,
+  component: typeof BaseComponent,
+  method: string,
+  event: Event,
+  aim: Aim = 'target',
+) => {
   EventHandler.on(element, 'click', function handleClick() {
-    const target = getTargetOrElement(getElement(this));
+    const target = getTriggerOrTarget(getElement(this), aim);
     const instance = component.getOrCreateInstance(target);
 
     // No index signature with a parameter of type 'string' was found on type 'Document | HTMLElement | Window | BaseComponent'
@@ -27,24 +33,25 @@ const onLoadHandler = (element: HTMLElement, component: typeof BaseComponent) =>
 const enableDataTrigger = (
   dataTriggerAttribute: DataTriggerAttribute,
   component: typeof BaseComponent,
-  eventHandler: (element: HTMLElement, component: typeof BaseComponent, method: string, event: Event) => void,
+  eventHandler: (element: HTMLElement, component: typeof BaseComponent, method: string, event: Event, aim: Aim) => void,
   method = 'toggle',
+  aim: Aim = 'target',
 ) => {
   const name = component.NAME;
 
   EventHandler.on(window, 'DOMContentLoaded', (event: Event) => {
     SelectorEngine.findAll(`[${dataTriggerAttribute}="${name}"]`).forEach((toggleEl) => {
-      eventHandler(toggleEl, component, method, event);
+      eventHandler(toggleEl, component, method, event, aim);
     });
   });
 };
 
-const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle') => {
-  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onClickHandler, method);
+const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle', aim: Aim = 'target') => {
+  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onClickHandler, method, aim);
 };
 
-const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss') => {
-  enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, onClickHandler, method);
+const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss', aim: Aim = 'target') => {
+  enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, onClickHandler, method, aim);
 };
 
 const enableToggleAutoloader = (component: typeof BaseComponent, method = 'toggle') => {

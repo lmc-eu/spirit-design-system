@@ -22,14 +22,13 @@ const getElement = (object?: any): SpiritElement => {
   return null;
 };
 
-const getTargetOrElement = (element?: SpiritElement): SpiritElement => {
-  let target;
+type Aim = 'trigger' | 'target';
 
-  if (element?.dataset?.target) {
-    target = getElement(element.dataset.target);
-  }
+const getTriggerOrTarget = (element?: SpiritElement, aim: Aim = 'target'): SpiritElement => {
+  const trigger = element;
+  const target = trigger?.dataset?.target ? getElement(element.dataset.target) : null;
 
-  return target || element;
+  return aim === 'target' ? target : trigger;
 };
 
 const getSelector = (element: HTMLElement | null) => element?.getAttribute('data-target');
@@ -115,6 +114,7 @@ export {
   getElementFromSelector,
   reflow,
   executeAfterTransition,
-  getTargetOrElement,
+  getTriggerOrTarget,
 };
 export * from './ComponentFunctions';
+export type { Aim };
