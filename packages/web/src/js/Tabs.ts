@@ -155,6 +155,6 @@ class Tabs extends BaseComponent {
   }
 }
 
-enableToggleTrigger(Tabs, 'show');
+enableToggleTrigger(Tabs, 'show', 'trigger');
 
 export default Tabs;

@@ -67,7 +67,7 @@ describe('Util', () => {
     });
   });
 
-  describe('getTargetElement', () => {
+  describe('getTriggerOrTarget', () => {
     it('should try to parse element base on data-target', () => {
       fixtureEl.innerHTML = [
         '<div id="foo" class="test" data-target="#bar"></div>',
@@ -77,9 +77,10 @@ describe('Util', () => {
       const el = fixtureEl.querySelector('#foo');
       const targetEl = fixtureEl.querySelector('#bar');
 
-      expect(Util.getTargetOrElement(el)).toEqual(targetEl);
-      expect(Util.getTargetOrElement('#foo')).toBe('#foo');
-      expect(Util.getTargetOrElement(null)).toBeNull();
+      expect(Util.getTriggerOrTarget(el)).toEqual(targetEl);
+      expect(Util.getTriggerOrTarget('#foo', 'trigger')).toBe('#foo');
+      expect(Util.getTriggerOrTarget('#bar')).toBeNull();
+      expect(Util.getTriggerOrTarget(null)).toBeNull();
     });
   });
 
