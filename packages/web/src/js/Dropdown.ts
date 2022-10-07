@@ -130,6 +130,6 @@ class Dropdown extends BaseComponent {
   }
 }
 
-enableToggleTrigger(Dropdown);
+enableToggleTrigger(Dropdown, 'toggle', 'trigger');
 
 export default Dropdown;
