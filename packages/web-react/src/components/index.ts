@@ -9,6 +9,7 @@ export * from './Header';
 export * from './Heading';
 export * from './Icon';
 export * from './Link';
+export * from './Modal';
 export * from './Pill';
 export * from './Stack';
 export * from './Tabs';
