@@ -5,7 +5,6 @@ import Backdrop from './utils/Backdrop';
 import { getElementFromSelector } from './utils';
 
 const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
-const MODAL_DISMISS_ATTRIBUTE = 'data-dismiss';
 
 class Modal extends BaseComponent {
   isShown: boolean;
@@ -19,7 +18,7 @@ class Modal extends BaseComponent {
   }
 
   static initBackdrop(target: HTMLElement) {
-    const backdropSelector = target.dataset.backdrop;
+    const backdropSelector = target.dataset.backdrop || null;
     const backdropElement = SelectorEngine.findOne(backdropSelector);
     const backdrop = new Backdrop(backdropElement);
 
@@ -30,7 +29,7 @@ class Modal extends BaseComponent {
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
-    if (event.target.hasAttribute(MODAL_DISMISS_ATTRIBUTE) || event.target === this.backdrop.element) {
+    if (event.target === this.element || event.target.dataset.dismiss) {
       event.preventDefault();
       event.stopPropagation();
       this.hide(event);
@@ -91,7 +90,7 @@ class Modal extends BaseComponent {
       target = SelectorEngine.findOne(event.target.dataset.target);
       // hiding by keyboard
     } else {
-      target = event.target.parentNode;
+      target = event.target;
     }
 
     const toggleEl = SelectorEngine.findOne(MODAL_TOGGLE_SELECTOR, this.element);
