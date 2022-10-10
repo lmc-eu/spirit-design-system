@@ -4,9 +4,9 @@
 .Backdrop {
     @include tools.create-cover($position: fixed, $right: 100%, $left: auto);
 
+    z-index: -2;
     width: 100vw;
     background-color: theme.$backdrop-background-color;
-    z-index: -2;
 }
 
 .Backdrop.is-open {
