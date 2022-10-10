@@ -1,7 +1,10 @@
 import { ChildrenProps, StyleProps, ClickEvent, ClickEvents } from './shared';
 import { SpiritButtonProps } from './button';
 
-export interface SpiritModalProps extends ChildrenProps, StyleProps, Partial<Omit<HTMLDialogElement, 'children'>> {
+export interface SpiritModalProps
+  extends ChildrenProps,
+    StyleProps,
+    Partial<Omit<HTMLDialogElement, 'children' | 'style' | 'className'>> {
   id: string;
   isOpen?: boolean;
   onClose?: (event: ClickEvent | KeyboardEvent) => void;
@@ -9,7 +12,7 @@ export interface SpiritModalProps extends ChildrenProps, StyleProps, Partial<Omi
   closeButtonProps?: SpiritModalCloseButtonProps;
   closeOnBackdrop?: boolean;
   closeOnEscape?: boolean;
-  parentSelector?: string;
+  parentId?: string;
   showBodyClose?: boolean;
 }
 
