@@ -41,7 +41,7 @@ export function generateTypography(
     } else {
       fontWeight = subfamily;
     }
-    const lineHeight = Math.round((token.value.lineHeight.measure / 100) * 1000) / 1000;
+    const lineHeight = token.value.lineHeight && Math.round((token.value.lineHeight.measure / 100) * 1000) / 1000;
     const letterSpacing = printUnit(token.value.letterSpacing.measure, token.value.letterSpacing.unit);
     const textDecoration = token.value.textDecoration.toLowerCase();
     const paragraphIndent = printUnit(token.value.paragraphIndent.measure, token.value.paragraphIndent.unit);
@@ -78,6 +78,7 @@ export function generateTypography(
     breakpoints.forEach((breakpoint) => {
       const breakpointVal = styleBreakpoints[breakpoint];
       if (typeof breakpointVal !== 'undefined') {
+        const printLineHeight = breakpointVal.lineHeight ? `\n        line-height: ${breakpointVal.lineHeight},` : '';
         const printLetterSpacing =
           breakpointVal.letterSpacing !== '0' ? `\n        letter-spacing: ${breakpointVal.letterSpacing},` : '';
         const printTextDecoration =
@@ -90,8 +91,7 @@ export function generateTypography(
         font-family: "${breakpointVal.fontFamily}",
         font-size: ${breakpointVal.fontSize},
         font-style: ${breakpointVal.fontStyle},
-        font-weight: ${breakpointVal.fontWeight},
-        line-height: ${breakpointVal.lineHeight},${printLetterSpacing}${printTextDecoration}${printParagraphIndent}${printTextTransform}
+        font-weight: ${breakpointVal.fontWeight},${printLineHeight}${printLetterSpacing}${printTextDecoration}${printParagraphIndent}${printTextTransform}
     ),`);
       }
     });
