@@ -16,7 +16,7 @@ This exported does several operations with tokens:
 ### Typography
 
 As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova. They are grouped by breakpoints.
-⚠️ We do not generate link typography tokens.
+⚠️ We do not generate `link` typography tokens (styles that include `-link` in their name).
 
 ### Sorting
 
