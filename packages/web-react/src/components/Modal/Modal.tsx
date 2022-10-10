@@ -18,7 +18,7 @@ const Modal = (props: SpiritModalProps) => {
     closeOnEscape = true,
     backdropProps,
     closeButtonProps,
-    parentSelector = '#root',
+    parentId = 'modal-root',
     showBodyClose = true,
     UNSAFE_style,
     UNSAFE_className,
@@ -26,7 +26,16 @@ const Modal = (props: SpiritModalProps) => {
     ...rest
   } = props;
 
-  const parentNode = document.querySelector(parentSelector) as Element;
+  let parentNode;
+  const root = document.querySelector('#modal-root');
+  if (!root) {
+    parentNode = document.createElement('div');
+    parentNode.setAttribute('id', parentId);
+    document.body.appendChild(parentNode);
+  } else {
+    parentNode = root;
+  }
+
   const { isOpen, onClose } = useModal({ closeOnEscape, isOpen: open, ...rest });
   const { modalClassName } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps({ UNSAFE_style, UNSAFE_className });
