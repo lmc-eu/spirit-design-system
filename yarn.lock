@@ -4194,7 +4194,7 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.3.tgz#1d3cc3f06da55992bd04a492b22ff913684b9a67"
   integrity sha512-XOBMJeFpJyy9siRtyEzGS2U37B2Sikr6xUJ9d4JYFH7IOESs9/awIdcPrEqj8x5KnUrWeei8EyAnj3yKH/k68w==
 
-"@lmc-eu/stylelint-config@^5.0.0":
+"@lmc-eu/stylelint-config@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-5.0.0.tgz#d000641f4a5758be7e6616bda45278588994bfa9"
   integrity sha512-/LilsYQTmUiM83AAb1RruVKiBL3zcrhJma5C5gKtH1MJVU7xOAa4hIZI2OizRiieZvt+JM5UQhbJv1zmOebaAw==
