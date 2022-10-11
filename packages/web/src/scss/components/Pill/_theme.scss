@@ -5,25 +5,35 @@ $padding-x: tokens.$space-300;
 $padding-y: tokens.$space-0;
 $border-radius: tokens.$radius-300;
 
-// Secondary pill
-$secondary-color: tokens.$text-primary-inverted-default;
-$secondary-background: tokens.$brand-secondary;
-
-$secondary: (
-    default-color: $secondary-color,
-    default-background: $secondary-background,
+$selected: (
+    default-color: tokens.$text-primary-inverted-default,
+    default-background: tokens.$action-selected-default,
 );
 
-// Selected pill
-$selected-color: tokens.$text-primary-inverted-default;
-$selected-background: tokens.$action-selected-default;
+$danger: (
+    default-color: tokens.$text-primary-inverted-default,
+    default-background: tokens.$emotion-danger-default,
+);
 
-$selected: (
-    default-color: $selected-color,
-    default-background: $selected-background,
+$informative: (
+    default-color: tokens.$text-primary-inverted-default,
+    default-background: tokens.$emotion-informative-default,
+);
+
+$success: (
+    default-color: tokens.$text-primary-inverted-default,
+    default-background: tokens.$emotion-success-default,
+);
+
+$warning: (
+    default-color: tokens.$text-primary-inverted-default,
+    default-background: tokens.$emotion-warning-default,
 );
 
 $variants: (
-    secondary: $secondary,
     selected: $selected,
+    danger: $danger,
+    informative: $informative,
+    success: $success,
+    warning: $warning,
 );
