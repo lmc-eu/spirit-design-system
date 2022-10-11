@@ -1,56 +1,7 @@
 @use '@tokens' as tokens;
 
-$spacing: tokens.$space-300;
-$width-default: 18rem;
-
-$label-typography: tokens.$body-small-text-regular;
-$label-color-default: tokens.$text-primary-default;
-$label-color-disabled: tokens.$text-secondary-disabled;
-$label-required-color: tokens.$emotion-danger-default;
-
-$input-padding-x: tokens.$space-400;
-$input-padding-y: tokens.$space-400;
-$input-typography: tokens.$body-medium-text-regular;
-$input-color-default: tokens.$text-primary-default;
-$input-color-disabled: tokens.$text-primary-disabled;
-$input-border-width: tokens.$border-width-100;
-$input-border-style: tokens.$border-style-100;
-$input-border-color-default: tokens.$border-primary-default;
-$input-border-color-hover: tokens.$border-primary-hover;
-$input-border-color-focus: tokens.$focus-default;
 $input-border-color-disabled: tokens.$border-primary-disabled;
-$input-border-color-success: tokens.$emotion-success-default;
-$input-border-color-warning: tokens.$emotion-warning-default;
-$input-border-color-error: tokens.$emotion-danger-default;
-$input-border-radius: tokens.$radius-100;
-$input-background: tokens.$background-basic;
-$input-focus-shadow: tokens.$focus;
-$input-placeholder-color-default: tokens.$text-secondary-default;
-$input-placeholder-color-disabled: tokens.$text-secondary-disabled;
-$input-size-characters: (2, 3, 4);
 $input-number-arrows-width: 1.25rem;
-
 $input-password-toggle-padding: tokens.$space-400;
 $input-password-toggle-icon-size: tokens.$space-700;
-
-$message-typography: tokens.$body-medium-text-regular;
-$message-color-default: tokens.$text-secondary-default;
-$message-color-disabled: tokens.$text-secondary-disabled;
-$message-color-success: tokens.$emotion-success-default;
-$message-color-warning: tokens.$emotion-warning-default;
-$message-color-error: tokens.$emotion-danger-default;
-
-$variants: (
-    success: (
-        input-border-color: $input-border-color-success,
-        message-color: $input-border-color-success,
-    ),
-    warning: (
-        input-border-color: $input-border-color-warning,
-        message-color: $input-border-color-warning,
-    ),
-    error: (
-        input-border-color: $input-border-color-error,
-        message-color: $input-border-color-error,
-    ),
-);
+$input-size-characters: (2, 3, 4);

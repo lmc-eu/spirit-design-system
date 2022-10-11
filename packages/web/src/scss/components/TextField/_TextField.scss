@@ -1,48 +1,29 @@
-@use 'sass:map';
-@use 'theme';
 @use '../../settings/cursors';
-@use '../../tools/accessibility';
+@use '../../theme/form-fields' as form-fields-theme;
+@use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/reset';
-@use '../../tools/svg';
-@use '../../tools/typography';
+@use 'theme';
+
+$_field-name: 'TextField';
 
 .TextField {
-    display: inline-block;
-    width: theme.$width-default;
+    @include form-fields-tools.box-field-root();
 }
 
 .TextField__label {
-    @include typography.generate(theme.$label-typography);
-
-    display: block;
-    margin-bottom: theme.$spacing;
-    color: theme.$label-color-default;
+    @include form-fields-tools.box-field-label();
 }
 
 .TextField__label--hidden {
-    @include accessibility.hide-text();
+    @include form-fields-tools.label-hidden();
 }
 
 .TextField__label--required::after {
-    content: '*';
-    color: theme.$label-required-color;
+    @include form-fields-tools.label-required();
 }
 
 .TextField__input {
-    @include typography.generate(theme.$input-typography);
-
-    display: block;
-    width: 100%;
-    padding: theme.$input-padding-y theme.$input-padding-x;
-    color: theme.$input-color-default;
-    border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
-    border-radius: theme.$input-border-radius;
-    background: theme.$input-background;
-
-    &::placeholder {
-        color: theme.$input-placeholder-color-default;
-        opacity: 1;
-    }
+    @include form-fields-tools.box-field-input();
 
     &[type='email'],
     &[type='number'],
@@ -60,7 +41,8 @@
 
     &[size] {
         width: calc(
-            var(--width) + 2 * #{theme.$input-padding-x} + 2 * #{theme.$input-border-width} + var(--arrows-width, 0px)
+            var(--width) + 2 * #{form-fields-theme.$box-field-input-padding-x} + 2 * #{form-fields-theme.$box-field-input-border-width} +
+                var(--arrows-width, 0px)
         );
     }
 
@@ -72,7 +54,7 @@
 }
 
 .TextField--fluid {
-    width: 100%;
+    @include form-fields-tools.box-field-fluid();
 }
 
 .TextField__passwordToggle {
@@ -95,8 +77,8 @@
     align-items: center;
     justify-content: center;
     padding: theme.$input-password-toggle-padding;
-    color: theme.$input-color-default;
-    border-radius: theme.$input-border-radius;
+    color: form-fields-theme.$box-field-input-color-default;
+    border-radius: form-fields-theme.$box-field-input-border-radius;
 
     &::before {
         content: '';
@@ -105,8 +87,9 @@
         right: 0;
         bottom: 0;
         left: 0;
-        border: theme.$input-border-width theme.$input-border-style theme.$input-border-color-default;
-        border-radius: theme.$input-border-radius;
+        border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
+            form-fields-theme.$box-field-input-border-color-default;
+        border-radius: form-fields-theme.$box-field-input-border-radius;
         pointer-events: none;
     }
 }
@@ -129,9 +112,7 @@
 // stylelint-disable selector-max-specificity, selector-max-class, selector-max-compound-selectors -- We need high-specificity selectors here.
 .TextField > .TextField__input:focus-visible,
 .TextField > .TextField__passwordToggle > .TextField__input:focus-visible ~ .TextField__passwordToggle__button::before {
-    border-color: theme.$input-border-color-focus;
-    outline: 0;
-    box-shadow: theme.$input-focus-shadow;
+    @include form-fields-tools.box-field-focus-visible();
 }
 // stylelint-enable selector-max-specificity, selector-max-class, selector-max-compound-selectors
 
@@ -148,44 +129,24 @@
     z-index: 1;
     width: (2 * theme.$input-password-toggle-padding) + theme.$input-password-toggle-icon-size;
     height: 100%;
-    border-radius: theme.$input-border-radius;
-    box-shadow: theme.$input-focus-shadow;
+    border-radius: form-fields-theme.$box-field-input-border-radius;
+    box-shadow: form-fields-theme.$input-focus-shadow;
 }
 
 .TextField__message,
 .TextField > [data-element='validator_message'] {
-    @include typography.generate(theme.$message-typography);
-
-    margin-top: theme.$spacing;
-    color: theme.$message-color-default;
+    @include form-fields-tools.message();
 }
 
-@each $variant-name, $variant-value in theme.$variants {
-    :is(.TextField--#{$variant-name}, .TextField.has-#{$variant-name}) > .TextField__input,
-    :is(.TextField--#{$variant-name}, .TextField.has-#{$variant-name})
-        .TextField__passwordToggle
-        > .TextField__input
-        ~ .TextField__passwordToggle__button::before {
-        border-color: map.get($variant-value, input-border-color);
-    }
-
-    :is(.TextField--#{$variant-name}, .TextField.has-#{$variant-name})
-        > :is(.TextField__message, [data-element='validator_message']) {
-        color: map.get($variant-value, message-color);
-    }
-}
+@include form-fields-tools.box-field-variants($_field-name);
 
 .TextField--disabled > .TextField__label {
-    color: theme.$label-color-disabled;
+    @include form-fields-tools.label-disabled();
 }
 
 .TextField .TextField__input:disabled,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__input {
-    color: theme.$input-color-disabled;
-
-    &::placeholder {
-        color: theme.$input-placeholder-color-disabled;
-    }
+    @include form-fields-tools.box-field-disabled-input();
 }
 
 // stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors
@@ -205,11 +166,12 @@
 
 .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
 :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
-    color: theme.$input-color-disabled;
+    @include form-fields-tools.input-disabled();
+
     pointer-events: none;
     cursor: cursors.$disabled;
 }
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
-    color: theme.$message-color-disabled;
+    @include form-fields-tools.message-disabled();
 }

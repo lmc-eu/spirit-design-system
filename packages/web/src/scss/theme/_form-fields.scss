@@ -1,0 +1,57 @@
+@use '@tokens' as tokens;
+
+// Common for all form components
+$spacing: tokens.$space-400;
+$input-typography: tokens.$body-medium-text-regular;
+$input-color-disabled: tokens.$text-primary-disabled;
+$input-focus-shadow: tokens.$focus;
+$label-color-default: tokens.$text-primary-default;
+$label-color-disabled: tokens.$text-primary-disabled;
+$label-required-color: tokens.$emotion-danger-default;
+$message-typography: tokens.$body-medium-text-regular;
+$message-margin-top: tokens.$space-300;
+$message-color-default: tokens.$text-secondary-default;
+$message-color-disabled: tokens.$text-secondary-disabled;
+$message-color-error: tokens.$emotion-danger-default;
+
+// Inline field form components – CheckboxField, RadioField, etc.
+$inline-field-input-color-unchecked: tokens.$action-unselected-default;
+$inline-field-input-color-checked: tokens.$action-selected-default;
+$inline-field-input-margin: 3px;
+$inline-field-input-outline-width: tokens.$border-width-200;
+
+// Box field form components – TextField, TextArea, etc.
+$box-field-input-color-default: tokens.$text-primary-default;
+$box-field-input-border-width: tokens.$border-width-100;
+$box-field-input-border-style: tokens.$border-style-100;
+$box-field-input-border-color-default: tokens.$border-primary-default;
+$box-field-input-border-color-focus: tokens.$focus-default;
+$box-field-input-border-color-success: tokens.$emotion-success-default;
+$box-field-input-border-color-warning: tokens.$emotion-warning-default;
+$box-field-input-border-color-error: tokens.$emotion-danger-default;
+$box-field-input-border-radius: tokens.$radius-100;
+$box-field-input-background: tokens.$background-basic;
+$box-field-input-placeholder-color-default: tokens.$text-secondary-default;
+$box-field-input-placeholder-color-disabled: tokens.$text-secondary-disabled;
+$box-field-input-padding-x: tokens.$space-400;
+$box-field-input-padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
+$box-field-input-width: 18rem;
+$box-field-label-typography: tokens.$body-small-text-regular;
+$box-field-label-margin-bottom: tokens.$space-300;
+$box-field-message-color-success: tokens.$emotion-success-default;
+$box-field-message-color-warning: tokens.$emotion-warning-default;
+
+$box-field-variants: (
+    success: (
+        input-border-color: $box-field-input-border-color-success,
+        message-color: $box-field-message-color-success,
+    ),
+    warning: (
+        input-border-color: $box-field-input-border-color-warning,
+        message-color: $box-field-message-color-warning,
+    ),
+    error: (
+        input-border-color: $box-field-input-border-color-error,
+        message-color: $message-color-error,
+    ),
+);
