@@ -1,0 +1,128 @@
+@use 'sass:map';
+@use '../theme/form-fields' as form-fields-theme;
+@use 'accessibility';
+@use 'typography';
+
+@mixin label-disabled() {
+    color: form-fields-theme.$label-color-disabled;
+}
+
+@mixin label-hidden() {
+    @include accessibility.hide-text();
+}
+
+@mixin label-required() {
+    content: '*';
+    color: form-fields-theme.$label-required-color;
+}
+
+@mixin input-disabled() {
+    color: form-fields-theme.$input-color-disabled;
+}
+
+@mixin message() {
+    @include typography.generate(form-fields-theme.$message-typography);
+
+    display: block;
+    margin-top: form-fields-theme.$message-margin-top;
+    color: form-fields-theme.$message-color-default;
+}
+
+@mixin message-disabled() {
+    color: form-fields-theme.$message-color-disabled;
+}
+
+@mixin inline-field-root() {
+    display: inline-flex;
+    margin-block: form-fields-theme.$spacing;
+}
+
+@mixin box-field-root() {
+    display: inline-block;
+    width: form-fields-theme.$box-field-input-width;
+}
+
+@mixin inline-field-label() {
+    @include typography.generate(form-fields-theme.$input-typography);
+
+    display: inline-block;
+    color: form-fields-theme.$label-color-default;
+}
+
+@mixin box-field-label() {
+    @include typography.generate(form-fields-theme.$box-field-label-typography);
+
+    display: block;
+    margin-bottom: form-fields-theme.$box-field-label-margin-bottom;
+    color: form-fields-theme.$label-color-default;
+}
+
+@mixin inline-field-input() {
+    appearance: none;
+    margin: form-fields-theme.$inline-field-input-margin;
+    color: form-fields-theme.$inline-field-input-color-unchecked;
+    border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
+
+    &:focus-visible {
+        outline: 0;
+        box-shadow: form-fields-theme.$input-focus-shadow;
+    }
+}
+
+@mixin box-field-input() {
+    @include typography.generate(form-fields-theme.$input-typography);
+
+    display: block;
+    width: 100%;
+    padding: form-fields-theme.$box-field-input-padding-y form-fields-theme.$box-field-input-padding-x;
+    color: form-fields-theme.$box-field-input-color-default;
+    border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
+        form-fields-theme.$box-field-input-border-color-default;
+    border-radius: form-fields-theme.$box-field-input-border-radius;
+    background: form-fields-theme.$box-field-input-background;
+
+    &::placeholder {
+        color: form-fields-theme.$box-field-input-placeholder-color-default;
+        opacity: 1;
+    }
+}
+
+@mixin box-field-variants($field-name) {
+    @each $variant-name, $variant-value in form-fields-theme.$box-field-variants {
+        :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name}) > .#{$field-name}__input {
+            border-color: map.get($variant-value, input-border-color);
+        }
+
+        @if $field-name == 'TextField' {
+            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
+                .#{$field-name}__passwordToggle
+                > .#{$field-name}__input
+                ~ .#{$field-name}__passwordToggle__button::before {
+                border-color: map.get($variant-value, input-border-color);
+            }
+        }
+
+        :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
+            > :is(.#{$field-name}__message, [data-element='validator_message']) {
+            color: map.get($variant-value, message-color);
+        }
+    }
+}
+
+@mixin box-field-fluid() {
+    width: 100%;
+}
+
+@mixin box-field-focus-visible() {
+    border-color: form-fields-theme.$box-field-input-border-color-focus;
+    outline: 0;
+    box-shadow: form-fields-theme.$input-focus-shadow;
+}
+
+@mixin box-field-disabled-input() {
+    @include input-disabled();
+
+    &::placeholder {
+        color: form-fields-theme.$box-field-input-placeholder-color-disabled;
+    }
+}

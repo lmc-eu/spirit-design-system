@@ -4,42 +4,34 @@
 //
 // See: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
+@use '../../theme/form-fields' as form-fields-theme;
+@use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
-@use '../../tools/accessibility';
-@use '../../tools/typography';
 
 .RadioField {
-    display: inline-flex;
-    margin-block: theme.$spacing;
+    @include form-fields-tools.inline-field-root();
 }
 
 .RadioField__input {
-    appearance: none;
+    @include form-fields-tools.inline-field-input();
+
     display: grid;
-    width: theme.$input-width;
-    height: theme.$input-width;
-    margin: theme.$input-margin;
+    width: theme.$input-size;
+    height: theme.$input-size;
     font: inherit;
-    color: theme.$input-color-unchecked;
-    border: theme.$input-outline-width solid theme.$input-color-unchecked;
     border-radius: theme.$input-border-radius;
     background-color: transparent;
     transform: translateY(-0.075em);
     place-content: center;
 
     &:checked {
-        border-color: theme.$input-color-checked;
-    }
-
-    &:focus-visible {
-        outline: 0;
-        box-shadow: theme.$input-focus-shadow;
+        border-color: form-fields-theme.$inline-field-input-color-checked;
     }
 
     &::before {
         content: '';
-        width: theme.$input-inner-dot-width;
-        height: theme.$input-inner-dot-width;
+        width: theme.$input-inner-dot-size;
+        height: theme.$input-inner-dot-size;
         border-radius: theme.$input-border-radius;
         background-color: canvastext; // 2.
         box-shadow: theme.$input-box-shadow-before; // 1.
@@ -53,26 +45,25 @@
 }
 
 .RadioField__label {
-    display: inline-block;
-    margin-left: theme.$label-margin;
-    color: theme.$label-color-default;
-    @include typography.generate(theme.$label-typography);
+    @include form-fields-tools.inline-field-label();
+
+    margin-left: form-fields-theme.$spacing;
 }
 
 .RadioField__label--hidden {
-    @include accessibility.hide-text();
+    @include form-fields-tools.label-hidden();
 }
 
 .RadioField--disabled > .RadioField__label {
-    color: theme.$label-color-disabled;
+    @include form-fields-tools.label-disabled();
 }
 
 .RadioField--disabled > .RadioField__input,
 .RadioField > .RadioField__input:disabled {
-    border-color: theme.$input-color-disabled;
+    border-color: form-fields-theme.$input-color-disabled;
 
     &:checked {
-        border-color: theme.$input-color-disabled;
+        border-color: form-fields-theme.$input-color-disabled;
     }
 }
 
