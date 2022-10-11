@@ -40,4 +40,6 @@ const Story: ComponentStory<typeof Modal> = () => {
   );
 };
 
+Story.args = {};
+
 export default Story;
