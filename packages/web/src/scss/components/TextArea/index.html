@@ -1,0 +1,75 @@
+{{#> layout/plain }}
+
+<div class="docs-FormFieldGrid">
+  <div class="TextArea">
+    <label for="textareaSimple" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaSimple" class="TextArea__input" placeholder="Placeholder"></textarea>
+  </div>
+  <div class="TextArea">
+    <label for="textareaMessage" class="TextArea__label">Label</label>
+    <textarea id="textareaMessage" class="TextArea__input" placeholder="Placeholder"></textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea">
+    <label for="textareaFilled" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaFilled" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+  </div>
+  <div class="TextArea">
+    <label for="textareaFilledMessage" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaFilledMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--error">
+    <label for="textareaError" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaError" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+  </div>
+  <div class="TextArea TextArea--error">
+    <label for="textareaErrorMessage" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaErrorMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--success">
+    <label for="textareaSuccess" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaSuccess" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--warning">
+    <label for="textareaWarning" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaWarning" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--disabled">
+    <label for="textareaDisabled" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaDisabled" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--disabled">
+    <label for="textareaDisabledFilled" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea
+      id="textareaDisabledFilled"
+      class="TextArea__input"
+      placeholder="Placeholder"
+      disabled
+   >Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+  <div class="TextArea TextArea--fluid">
+    <label for="textareaFluid" class="TextArea__label TextArea__label--required">Label</label>
+    <textarea id="textareaFluid" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <div class="TextArea__message">Message</div>
+  </div>
+
+  <div style="display: flex; gap: 1rem; align-items: flex-end;">
+    <div class="TextArea">
+      <label for="textareaInlineHiddenLabel" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
+      <textarea
+        id="textareaInlineHiddenLabel"
+        class="TextArea__input"
+        placeholder="Placeholder"
+     >Filled</textarea>
+    </div>
+    <button type="button" class="Button Button--primary Button--medium">Button</button>
+  </div>
+</div>
+
+{{/layout/plain }}
