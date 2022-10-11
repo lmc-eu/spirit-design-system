@@ -28,7 +28,7 @@ describe('Pill', () => {
     expect(element.textContent).toBe('3');
   });
 
-  it.each([['secondary'], ['selected']])('should render color %s', (color) => {
+  it.each([['selected'], ['danger'], ['informative'], ['success'], ['warning']])('should render color %s', (color) => {
     const dom = render(<Pill color={color as PillColor}>333</Pill>);
 
     const element = dom.container.querySelector('span') as HTMLElement;

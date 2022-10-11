@@ -1,7 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
 import { ChildrenProps, TransferProps } from './shared';
 
-export type PillColor = 'secondary' | 'selected';
+export type PillColor = 'selected' | 'danger' | 'informative' | 'success' | 'warning';
 
 export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   /**
