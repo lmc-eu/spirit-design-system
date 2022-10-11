@@ -10,10 +10,13 @@ describe('usePillStyleProps', () => {
     expect(result.current.classProps).toBe('Pill');
   });
 
-  it.each([['secondary'], ['selected']])('should return color class %s', (color) => {
-    const props = { color } as SpiritPillProps;
-    const { result } = renderHook(() => usePillStyleProps(props));
+  it.each([['selected'], ['danger'], ['informative'], ['success'], ['warning']])(
+    'should return color class %s',
+    (color) => {
+      const props = { color } as SpiritPillProps;
+      const { result } = renderHook(() => usePillStyleProps(props));
 
-    expect(result.current.classProps).toBe(`Pill Pill--${color}`);
-  });
+      expect(result.current.classProps).toBe(`Pill Pill--${color}`);
+    },
+  );
 });

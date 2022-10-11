@@ -5,9 +5,26 @@ import Pill from '../Pill';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
-    <Pill color="secondary">3</Pill>
-    <div className="mb-500" />
-    <Pill color="selected">333</Pill>
+    <div className="mb-500">
+      <Pill color="selected">3</Pill>
+      <Pill color="selected">333</Pill>
+    </div>
+    <div className="mb-500">
+      <Pill color="danger">3</Pill>
+      <Pill color="danger">333</Pill>
+    </div>
+    <div className="mb-500">
+      <Pill color="informative">3</Pill>
+      <Pill color="informative">333</Pill>
+    </div>
+    <div className="mb-500">
+      <Pill color="success">3</Pill>
+      <Pill color="success">333</Pill>
+    </div>
+    <div>
+      <Pill color="warning">3</Pill>
+      <Pill color="warning">333</Pill>
+    </div>
   </>
 );
 
