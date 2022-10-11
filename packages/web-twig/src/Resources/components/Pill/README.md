@@ -11,14 +11,14 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Pill color="secondary" elementType="div">333</Pill>
+<Pill color="warning" elementType="div">333</Pill>
 ```
 
 Without lexer:
 
 ```twig
 {% embed "@spirit/pill.twig" with { props: {
-    color: 'secondary'
+    color: 'selected'
     elementType: 'div'
 }} %}
     {% block content %}
@@ -29,11 +29,11 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                    | Default    | Required | Description        |
-| ------------- | ----------------------- | ---------- | -------- | ------------------ |
-| `class`       | `string`                | `null`     | no       | Custom CSS class   |
-| `color`       | `selected`, `secondary` | `selected` | no       | Color variant      |
-| `elementType` | `string`                | `span`     | no       | HTML tag to render |
+| Prop name     | Type                                                      | Default    | Required | Description        |
+| ------------- | --------------------------------------------------------- | ---------- | -------- | ------------------ |
+| `class`       | `string`                                                  | `null`     | no       | Custom CSS class   |
+| `color`       | `selected`, `danger`, `informative`, `success`, `warning` | `selected` | no       | Color variant      |
+| `elementType` | `string`                                                  | `span`     | no       | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
