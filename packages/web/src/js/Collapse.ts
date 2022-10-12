@@ -2,31 +2,32 @@ import BaseComponent from './BaseComponent';
 import { enableToggleAutoloader } from './utils/ComponentFunctions';
 import selectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
+import { BreakpointKeys } from './enums';
+import { BreakpointType } from './types';
+import {
+  NAME_ARIA_EXPANDED,
+  NAME_ARIA_CONTROLS,
+  NAME_DATA_TARGET,
+  CLASSNAME_EXPANDED,
+  CLASSNAME_COLLAPSED,
+} from './constants';
 
 const NAME = 'collapse';
-const NAME_ARIA_EXPANDED = 'aria-expanded';
-const NAME_ARIA_CONTROLS = 'aria-controls';
-const NAME_DATA_TARGET = 'data-target';
-const CLASSNAME_EXPANDED = 'is-expanded';
-const CLASSNAME_COLLAPSED = 'is-collapsed';
-
-enum breakpointKeys {
-  default = 'default',
-  mobile = 'mobile',
-  tablet = 'tablet',
-  desktop = 'desktop',
-}
-type breakpointType = keyof typeof breakpointKeys;
+const DATA_KEY = 'collapse';
+const EVENT_KEY = `.${DATA_KEY}`;
+const EVENT_HIDE = `hide${EVENT_KEY}`;
+const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
+const EVENT_SHOW = `show${EVENT_KEY}`;
+const EVENT_SHOWN = `shown${EVENT_KEY}`;
 
 interface CollapseMeta {
   id: string | 'unknown';
   hideOnCollapse: boolean;
-  breakpoint: breakpointType;
+  breakpoint: BreakpointType;
 }
 interface CollapseState {
   collapsed: boolean;
   width: number;
-  triggered: boolean;
 }
 
 class Collapse extends BaseComponent {
@@ -42,21 +43,24 @@ class Collapse extends BaseComponent {
     this.meta = {
       id: this.element.dataset.target,
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
-      breakpoint: (this.target?.dataset?.breakpoint as breakpointType) || breakpointKeys.default,
+      breakpoint: (this.target?.dataset?.breakpoint as BreakpointType) || BreakpointKeys.default,
     };
     this.state = {
       collapsed: !!(
         this.element.getAttribute(NAME_ARIA_EXPANDED) || this.element.classList.contains(CLASSNAME_EXPANDED)
       ),
       width: window.innerWidth,
-      triggered: false,
     };
 
-    this.onInit();
+    this.init();
   }
 
   static get NAME() {
     return NAME;
+  }
+
+  static get DATA_KEY() {
+    return `${this.NAME}`;
   }
 
   onResize() {
@@ -82,6 +86,7 @@ class Collapse extends BaseComponent {
       const content = this.target.children[0];
       const bounds = content.getBoundingClientRect();
       this.target.style.height = collapsed ? `${bounds.height}px` : '0';
+      if (this.target) EventHandler.trigger(this.target, collapsed ? EVENT_SHOWN : EVENT_HIDDEN);
     }
   }
 
@@ -112,31 +117,34 @@ class Collapse extends BaseComponent {
     }
   }
 
-  setShow() {
+  show() {
+    EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
     this.updateTriggerElementHandler(true);
     this.updateCollapsibleElementHandler(true);
+    EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN);
   }
 
-  setHide() {
+  hide() {
+    EventHandler.trigger(this.target as HTMLElement, EVENT_HIDE);
     this.updateTriggerElementHandler(false);
     this.updateCollapsibleElementHandler(false);
+    EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN);
   }
 
-  onToggle() {
+  toggle() {
     if (this.state.collapsed) {
-      this.setHide();
+      this.hide();
     } else {
-      this.setShow();
+      this.show();
     }
-    this.state.triggered = true;
   }
 
   initEvents() {
     const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     if (triggers.length === 1) {
-      EventHandler.on(this.element, 'click', () => this.onToggle());
+      EventHandler.on(this.element, 'click', () => this.toggle());
     } else {
-      triggers.forEach((trigger) => EventHandler.on(trigger as HTMLElement, 'click', () => this.onToggle()));
+      triggers.forEach((trigger) => EventHandler.on(trigger as HTMLElement, 'click', () => this.toggle()));
     }
     EventHandler.on(window, 'resize', () => this.onResize());
   }
@@ -144,9 +152,9 @@ class Collapse extends BaseComponent {
   destroyEvents() {
     const triggers = selectorEngine.findAll(`[data-target="${this.meta.id}"]`);
     if (triggers.length === 1) {
-      EventHandler.off(this.element, 'click', () => this.onToggle());
+      EventHandler.off(this.element, 'click', () => this.toggle());
     } else {
-      triggers.forEach((trigger) => EventHandler.off(trigger as HTMLElement, 'click', () => this.onToggle()));
+      triggers.forEach((trigger) => EventHandler.off(trigger as HTMLElement, 'click', () => this.toggle()));
     }
     EventHandler.off(window, 'resize', () => this.onResize());
   }
@@ -155,7 +163,7 @@ class Collapse extends BaseComponent {
     this.destroyEvents();
   }
 
-  onInit() {
+  init() {
     this.updateTriggerElementHandler();
     this.updateCollapsibleElementHandler();
     this.initEvents();
