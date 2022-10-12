@@ -17,3 +17,5 @@ export enum SpiritBreakpoints {
   TABLET = 'tablet',
   DESKTOP = 'desktop',
 }
+
+export type Booleanish = boolean | 'true' | 'false';
