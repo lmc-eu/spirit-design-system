@@ -1,4 +1,5 @@
 import React, { createElement } from 'react';
+import classNames from 'classnames';
 import { SpiritCollapseProps } from '../../types';
 import { useStyleProps } from '../../hooks/styleProps';
 import { useCollapse } from './useCollapse';
@@ -39,8 +40,8 @@ const Collapse = (props: SpiritCollapseProps) => {
   const content = createElement(
     contentElementType,
     {
-      className: contentClassName,
       ...contentProps,
+      className: contentClassName,
     },
     children,
   );
@@ -70,7 +71,11 @@ const Collapse = (props: SpiritCollapseProps) => {
         ...wrapperOtherProps,
         ...wrapperStyleProps,
         ...wrapperProps,
-        className: wrapperClassName,
+        className: classNames(wrapperClassName, wrapperStyleProps.className),
+        style: {
+          ...wrapperProps.style,
+          ...wrapperStyleProps.style,
+        },
       },
       content,
     );

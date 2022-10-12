@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ChildrenProps, ClickEvent, StyleProps } from './shared';
+import { ChildrenProps, ClickEvent, StyleProps, Booleanish } from './shared';
 
 export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer' | 'span';
 
@@ -8,7 +8,7 @@ export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop'
 export type CollapseTriggerProps = {
   onClick: (event: ClickEvent) => void;
   className?: string | undefined;
-  'aria-expanded': string | boolean | undefined;
+  'aria-expanded': Booleanish | undefined;
   'aria-controls': string;
 };
 

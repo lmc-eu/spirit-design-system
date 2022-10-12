@@ -1,5 +1,5 @@
 import { useRef, Ref, CSSProperties, MutableRefObject } from 'react';
-import { ClickEvent, CollapseResponsiveType, SpiritCollapseProps } from '../../types';
+import { ClickEvent, CollapseResponsiveType, SpiritCollapseProps, Booleanish } from '../../types';
 import { useResizeHeight } from './useResizeHeight';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
@@ -25,7 +25,7 @@ export interface CollapseAriaPropsReturn {
   };
   /** trigger returned props */
   triggerProps: {
-    [NAME_ARIA_EXPANDED]: string;
+    [NAME_ARIA_EXPANDED]: Booleanish;
     [NAME_ARIA_CONTROLS]: string;
     onClick: (event: ClickEvent) => void;
   };
@@ -47,7 +47,7 @@ export const useCollapseAriaProps = (props: CollapseAriaPropsProps): CollapseAri
     ref: contentElementRef,
   };
   const triggerProps = {
-    [NAME_ARIA_EXPANDED]: String(isCollapsed),
+    [NAME_ARIA_EXPANDED]: String(isCollapsed) as Booleanish,
     [NAME_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,
   };
