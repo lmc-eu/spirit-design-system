@@ -1,53 +1,58 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, RefObject } from 'react';
 import { ClickEvent, SpiritModalProps } from '../../types';
 
-export interface useSpiritModalProps extends Pick<SpiritModalProps, 'isOpen' | 'onClose' | 'closeOnEscape'> {}
+export interface useSpiritModalProps
+  extends Pick<SpiritModalProps, 'isOpen' | 'onClose' | 'closeOnEscape' | 'closeOnBackdrop'> {
+  dialogReference: RefObject<HTMLDialogElement>;
+}
 export interface useSpiritModalReturn {
   isOpen: boolean;
   onClose: (event: ClickEvent | KeyboardEvent) => void;
+  clickHandler: (event: ClickEvent) => void;
 }
 
 export const useModal = (props: useSpiritModalProps) => {
-  const { isOpen, onClose, closeOnEscape, ...rest } = props;
+  const { isOpen, onClose, dialogReference, closeOnBackdrop, ...rest } = props;
 
   const [modalOpen, setModalOpen] = useState(isOpen);
 
-  const closeHandler = useCallback(
+  const openHandler = () => {
+    setModalOpen(true);
+    dialogReference?.current?.showModal && dialogReference?.current?.showModal();
+  };
+  const closeHandler = () => {
+    setModalOpen(false);
+    dialogReference?.current?.close && dialogReference?.current?.close();
+  };
+
+  const closeCallback = useCallback(
     (event: ClickEvent | KeyboardEvent) => {
-      setModalOpen(false);
+      closeHandler();
       if (onClose) onClose(event);
     },
-    [onClose],
+    [onClose, dialogReference],
   );
 
-  const userKeypressHandler = useCallback(
-    (event: KeyboardEvent) => {
-      if (event.keyCode === 27 || event.key === 'Escape') closeHandler(event);
+  const clickHandler = useCallback(
+    (event: ClickEvent) => {
+      const tagName = (event?.target as HTMLElement)?.tagName.toLowerCase();
+      if (closeOnBackdrop && tagName === 'dialog') closeCallback(event);
     },
-    [closeHandler],
+    [closeOnBackdrop],
   );
 
   useEffect(() => {
-    if (modalOpen && closeOnEscape) {
-      window.addEventListener('keydown', userKeypressHandler);
+    if (isOpen) {
+      openHandler();
     } else {
-      window.removeEventListener('keydown', userKeypressHandler);
+      closeHandler();
     }
-
-    return () => {
-      window.removeEventListener('keydown', userKeypressHandler);
-    };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [modalOpen, closeOnEscape]);
-
-  useEffect(() => {
-    setModalOpen(Boolean(isOpen));
   }, [isOpen]);
 
   return {
     isOpen: modalOpen,
-    onClose: closeHandler,
+    onClose: closeCallback,
+    clickHandler,
     ...rest,
   } as useSpiritModalReturn;
 };
