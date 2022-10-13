@@ -9,8 +9,8 @@ const NAME_DATA_BREAKPOINT = 'data-breakpoint';
 export interface CollapseAriaPropsProps {
   id: string;
   isCollapsed: boolean;
-  collapsibleToBreakpoint: CollapseResponsiveType;
-  toggleHandler: (event: ClickEvent) => void;
+  collapsibleToBreakpoint?: CollapseResponsiveType;
+  toggleHandler?: (event: ClickEvent) => void;
 }
 
 export interface CollapseAriaPropsReturn {
@@ -49,7 +49,7 @@ export const useCollapseAriaProps = (props: CollapseAriaPropsProps): CollapseAri
   const triggerProps = {
     [NAME_ARIA_EXPANDED]: String(isCollapsed) as Booleanish,
     [NAME_ARIA_CONTROLS]: String(id),
-    onClick: toggleHandler,
+    onClick: toggleHandler as (event: ClickEvent) => void,
   };
 
   return {

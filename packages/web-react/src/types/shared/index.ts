@@ -18,4 +18,8 @@ export enum SpiritBreakpoints {
   DESKTOP = 'desktop',
 }
 
+/**
+ * This is actual type for all aria-* props which have value 'true' or 'false' is called Booleanish.
+ * Unfortunately it is not exported, and you must create it manually.
+ */
 export type Booleanish = boolean | 'true' | 'false';
