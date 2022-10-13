@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps, ClickEvent, ClickEvents } from './shared';
+import { ChildrenProps, StyleProps, ClickEvent } from './shared';
 import { SpiritButtonProps } from './button';
 
 export interface SpiritModalProps
@@ -8,24 +8,21 @@ export interface SpiritModalProps
   id: string;
   isOpen?: boolean;
   onClose?: (event: ClickEvent | KeyboardEvent) => void;
-  backdropProps?: SpiritModalBackdropProps;
   closeButtonProps?: SpiritModalCloseButtonProps;
   closeOnBackdrop?: boolean;
-  closeOnEscape?: boolean;
+  closeOnEscape?: boolean; // Will be handled soon
   parentId?: string;
   showBodyClose?: boolean;
 }
 
-export interface SpiritModalHeaderProps extends Pick<SpiritModalProps, 'children'>, StyleProps {}
+export interface SpiritModalHeaderProps extends Pick<SpiritModalProps, 'children'> {}
 
 export interface SpiritModalContentProps extends Pick<SpiritModalProps, 'children'> {}
 
-export interface SpiritModalBackdropProps extends Pick<SpiritModalProps, 'isOpen' | 'closeOnBackdrop'>, ClickEvents {}
-
 export interface SpiritModalDialogProps extends Pick<SpiritModalProps, 'children'> {}
 
-export interface SpiritModalBodyProps extends Pick<SpiritModalProps, 'children'>, StyleProps {}
+export interface SpiritModalBodyProps extends Pick<SpiritModalProps, 'children'> {}
 
-export interface SpiritModalFooterProps extends Pick<SpiritModalProps, 'children'>, StyleProps {}
+export interface SpiritModalFooterProps extends Pick<SpiritModalProps, 'children'> {}
 
 export interface SpiritModalCloseButtonProps extends SpiritButtonProps {}
