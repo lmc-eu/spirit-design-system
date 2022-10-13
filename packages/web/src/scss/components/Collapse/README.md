@@ -67,7 +67,7 @@ The component provides auto toggle classes, like `.is-expanded` and `.is-collaps
 
 ## JavaScript Plugin
 
-For full functionality you need to provide JavaScript which will handle toggling of the Collapse component.
+For full functionality, you need to provide JavaScript which will handle toggling of the Collapse component.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
