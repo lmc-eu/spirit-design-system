@@ -72,10 +72,10 @@
 
 .Modal__footer {
     display: flex;
+    gap: theme.$footer-gap;
     align-items: center;
     justify-content: flex-end;
     margin-top: theme.$footer-spacing;
-    gap: theme.$gap-spacing;
 }
 
 .Modal__close {
