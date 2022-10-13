@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.13.0"></a>
+
+# [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.12.0...@lmc-eu/spirit-web-twig@1.13.0) (2022-10-13)
+
+### BREAKING CHANGES
+
+- **web-twig:** Update Pill variants - remove secondary and add emotion colors [#DS-408](https://github.com/lmc-eu/spirit-design-system/issues/DS-408) ([124ec27](https://github.com/lmc-eu/spirit-design-system/commit/124ec27))
+
+### Bug Fixes
+
+- **web-twig:** Omit viewBox in reused SVGs to avoid scaling bug [#JALL-7](https://github.com/lmc-eu/spirit-design-system/issues/JALL-7) ([de46450](https://github.com/lmc-eu/spirit-design-system/commit/de46450))
+
+### Styles
+
+- **web:** Upgrade stylelint config and fix errors [#DS-322](https://github.com/lmc-eu/spirit-design-system/issues/DS-322) ([4df87da](https://github.com/lmc-eu/spirit-design-system/commit/4df87da))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.12.0"></a>
 
 # [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.11.0...@lmc-eu/spirit-web-twig@1.12.0) (2022-10-03)
