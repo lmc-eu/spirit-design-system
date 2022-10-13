@@ -50,11 +50,11 @@
 
 ## CollapseRenderProps
 
-| Prop name                  | Type      | Description                |
-| -------------------------- | --------- | -------------------------- |
-| `collapsed`                | `boolean` | When collapse is collapsed |
-| `trigger`                  | `Object`  | Trigger properties         |
-| `trigger.onClick`          | `string`  | Trigger onClick event      |
-| `trigger.className`        | `string`  | Trigger state classname    |
-| `trigger['aria-expanded']` | `string`  | Trigger aria expanded      |
-| `trigger['aria-controls']` | `string`  | Trigger aria controls      |
+| Prop name                  | Type         | Description                |
+| -------------------------- | ------------ | -------------------------- |
+| `collapsed`                | `boolean`    | When collapse is collapsed |
+| `trigger`                  | `Object`     | Trigger properties         |
+| `trigger.onClick`          | `string`     | Trigger onClick event      |
+| `trigger.className`        | `string`     | Trigger state classname    |
+| `trigger['aria-expanded']` | `Booleanish` | Trigger aria expanded      |
+| `trigger['aria-controls']` | `string`     | Trigger aria controls      |

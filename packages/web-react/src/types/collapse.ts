@@ -8,7 +8,7 @@ export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop'
 export type CollapseTriggerProps = {
   onClick: (event: ClickEvent) => void;
   className?: string | undefined;
-  'aria-expanded': Booleanish | undefined;
+  'aria-expanded': Booleanish;
   'aria-controls': string;
 };
 
