@@ -6,27 +6,15 @@
     position: relative;
     overflow: hidden;
     height: 0;
-    transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transition-property: height;
+    transition-timing-function: theme.$collapse-transition-timing;
+    transition-duration: theme.$collapse-transition-duration;
 
-    // &.is-collapsed{}
-
-    &[data-breakpoint='mobile'] {
-        @include breakpoint.up(map.get(theme.$breakpoints, mobile)) {
-            height: auto !important;
-        }
-    }
-
-    &[data-breakpoint='tablet'] {
-        @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-            height: auto !important;
-        }
-    }
-
-    &[data-breakpoint='desktop'] {
-        @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-            height: auto !important;
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        &[data-breakpoint='#{$breakpoint-name}'] {
+            @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
+                height: auto !important;
+            }
         }
     }
 }
-
-// .Collapse__content {}

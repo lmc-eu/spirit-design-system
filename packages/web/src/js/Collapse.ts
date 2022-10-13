@@ -2,8 +2,6 @@ import BaseComponent from './BaseComponent';
 import { enableToggleAutoloader } from './utils/ComponentFunctions';
 import selectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
-import { BreakpointKeys } from './enums';
-import { BreakpointType } from './types';
 import {
   NAME_ARIA_EXPANDED,
   NAME_ARIA_CONTROLS,
@@ -23,7 +21,6 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 interface CollapseMeta {
   id: string | 'unknown';
   hideOnCollapse: boolean;
-  breakpoint: BreakpointType;
 }
 interface CollapseState {
   collapsed: boolean;
@@ -43,7 +40,6 @@ class Collapse extends BaseComponent {
     this.meta = {
       id: this.element.dataset.target,
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
-      breakpoint: (this.target?.dataset?.breakpoint as BreakpointType) || BreakpointKeys.default,
     };
     this.state = {
       collapsed: !!(
