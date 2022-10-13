@@ -20,7 +20,6 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 | ------------------ | ---------------------------------------------- | -------------- | ----------------------------------- |
 | `isOpen`           | `boolean`                                      | `false`        | Open state                          |
 | `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -              | When dialog is closed               |
-| `backdropProps`    | `SpiritModalBackdropProps`                     | -              | Backdrop component props            |
 | `closeButtonProps` | `SpiritModalCloseButtonProps`                  | -              | Close button props                  |
 | `closeOnBackdrop`  | `boolean`                                      | `true`         | When click on backdrop closes modal |
 | `closeOnEscape`    | `boolean`                                      | `true`         | When escape press closes modal      |
@@ -34,28 +33,22 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-r
 
 **Available props**
 
-| Name               | Type            | Default | Description    |
-| ------------------ | --------------- | ------- | -------------- |
-| `children`         | `ReactNode`     | -       | Children node  |
-| `UNSAFE_className` | `string`        | -       | Classname      |
-| `UNSAFE_style`     | `CSSProperties` | -       | CSS Properties |
+| Name       | Type        | Default | Description   |
+| ---------- | ----------- | ------- | ------------- |
+| `children` | `ReactNode` | -       | Children node |
 
 ## Modal Body
 
 **Available props**
 
-| Name               | Type            | Default | Description    |
-| ------------------ | --------------- | ------- | -------------- |
-| `children`         | `ReactNode`     | -       | Children node  |
-| `UNSAFE_className` | `string`        | -       | Classname      |
-| `UNSAFE_style`     | `CSSProperties` | -       | CSS Properties |
+| Name       | Type        | Default | Description   |
+| ---------- | ----------- | ------- | ------------- |
+| `children` | `ReactNode` | -       | Children node |
 
 ## Modal Footer
 
 **Available props**
 
-| Name               | Type            | Default | Description    |
-| ------------------ | --------------- | ------- | -------------- |
-| `children`         | `ReactNode`     | -       | Children node  |
-| `UNSAFE_className` | `string`        | -       | Classname      |
-| `UNSAFE_style`     | `CSSProperties` | -       | CSS Properties |
+| Name       | Type        | Default | Description   |
+| ---------- | ----------- | ------- | ------------- |
+| `children` | `ReactNode` | -       | Children node |

@@ -82,9 +82,10 @@ describe('Modal', () => {
 
   it('should close on click', () => {
     const handleClose = jest.fn();
-    const { getByText } = render(<Modal id="TestDemoModal" onClose={handleClose} />);
+    const { baseElement } = render(<Modal id="TestDemoModal" onClose={handleClose} isOpen />);
+    const trigger = baseElement.querySelector('button');
 
-    fireEvent.click(getByText(/close/i));
+    fireEvent.click(trigger as HTMLElement);
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 });
