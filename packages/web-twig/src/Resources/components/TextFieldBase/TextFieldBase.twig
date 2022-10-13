@@ -15,6 +15,9 @@
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
 
+{# Extended API for TextArea #}
+{%- set _rows = props.rows | default(null) -%}
+
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ _isMultiline ? 'TextArea' : 'TextField' -%}
 {%- set _inputClassName = _rootClassName ~ '__input' -%}
@@ -32,6 +35,9 @@
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
 
+{# Extended Attributes for TextArea #}
+{%- set _rowsAttr = _rows ? 'rows="' ~ _rows ~ '"' : null -%}
+
 {# Miscellaneous #}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _class ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
@@ -47,9 +53,10 @@
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"
-            {{ _disabledAttr | raw }}
+            {{ _rowsAttr | raw }}
             {{ _placeholderAttr | raw }}
-            {{ _requiredAttr | raw }}
+            {{ _disabledAttr | raw }}
+            {{ _requiredAttr }}
         >
             {{ _valueAttr | raw }}
         </textarea>
