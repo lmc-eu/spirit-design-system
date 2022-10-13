@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.29.0"></a>
+
+# [0.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.28.0...@lmc-eu/spirit-web@0.29.0) (2022-10-13)
+
+### BREAKING CHANGES
+
+- **web:** Update Pill variants - remove secondary and add emotion colors [#DS-408](https://github.com/lmc-eu/spirit-design-system/issues/DS-408) ([8f9ef2e](https://github.com/lmc-eu/spirit-design-system/commit/8f9ef2e))
+
+### Dependencies
+
+- Pin dependency @lmc-eu/stylelint-config to 5.0.0 ([674a405](https://github.com/lmc-eu/spirit-design-system/commit/674a405))
+
+### Features
+
+- **web:** Introduce `Dropdown` component (refs [#DS-326](https://github.com/lmc-eu/spirit-design-system/issues/DS-326)) ([8b323fc](https://github.com/lmc-eu/spirit-design-system/commit/8b323fc))
+
+### Styles
+
+- **web:** Upgrade stylelint config and fix errors [#DS-322](https://github.com/lmc-eu/spirit-design-system/issues/DS-322) ([4df87da](https://github.com/lmc-eu/spirit-design-system/commit/4df87da))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.28.0"></a>
 
 # [0.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.27.0...@lmc-eu/spirit-web@0.28.0) (2022-10-03)

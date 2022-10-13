@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.27.0"></a>
+
+# [0.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.26.0...@lmc-eu/spirit-web-react@0.27.0) (2022-10-13)
+
+### BREAKING CHANGES
+
+- **web-react:** Do not provide non-existing CSS class `Tabs-content` in `Tabs` hook ([eb0ad9a](https://github.com/lmc-eu/spirit-design-system/commit/eb0ad9a))
+- **web-react:** Set default fill to none in Icon [#DS-397](https://github.com/lmc-eu/spirit-design-system/issues/DS-397) ([8708f4d](https://github.com/lmc-eu/spirit-design-system/commit/8708f4d))
+- **web-react:** Set Icon viewBox to fixed values to allow scaling ([c54b854](https://github.com/lmc-eu/spirit-design-system/commit/c54b854))
+- **web-react:** Update Pill variants - remove secondary and add emotion colors [#DS-408](https://github.com/lmc-eu/spirit-design-system/issues/DS-408) ([850083c](https://github.com/lmc-eu/spirit-design-system/commit/850083c))
+
+### Styles
+
+- **web:** Upgrade stylelint config and fix errors [#DS-322](https://github.com/lmc-eu/spirit-design-system/issues/DS-322) ([4df87da](https://github.com/lmc-eu/spirit-design-system/commit/4df87da))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.26.0"></a>
 
 # [0.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.25.0...@lmc-eu/spirit-web-react@0.26.0) (2022-10-03)

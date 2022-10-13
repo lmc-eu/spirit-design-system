@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.2.0...@lmc-eu/spirit-exporters-scss@1.3.0) (2022-10-13)
+
+### Bug Fixes
+
+- **exporter-scss:** Fix generator when no line-height set and fix token properties API [#DS-407](https://github.com/lmc-eu/spirit-design-system/issues/DS-407) ([5768d40](https://github.com/lmc-eu/spirit-design-system/commit/5768d40))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.1.0...@lmc-eu/spirit-exporters-scss@1.2.0) (2022-09-22)
