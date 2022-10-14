@@ -73,6 +73,44 @@ For full functionality, you need to provide JavaScript which will handle togglin
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
+## JavaScript API
+
+### Methods
+
+| Method                | Description                                                                                                                                                                                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the collapse instance associated with a DOM. element                                                                                                                                                             |
+| `getOrCreateInstance` | _Static_ method which allows you to get the collapse instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                          |
+| `hide`                | Hides collapse. Returns to the caller before the collapse has actually been hidden (i.e. before the `hidden.collapse` event occurs). This is considered a “manual” triggering of the collapse.                                                           |
+| `show`                | Reveals collapse. **Returns to the caller before the collapse has actually been shown** (i.e. before the `shown.collapse` event occurs). This is considered a “manual” triggering of the collapse. Tooltips with zero-length titles are never displayed. |
+| `toggle`              | Toggles collapse. **Returns to the caller before the collapse has actually been shown or hidden** (i.e. before the `shown.collapse` or `hidden.collapse` event occurs). This is considered a “manual” triggering of the collapse.                        |
+
+```js
+const collapse = Collapse.getInstance('#example'); // Returns a collapse instance
+
+collapse.show();
+```
+
+### Events
+
+| Method            | Description                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| `hide.collapse`   | This event is fired immediately when the `hide` instance method has been called.      |
+| `hidden.collapse` | This event is fired when the `hide` instance has finished being hidden from the user. |
+| `show.collapse`   | This event fires immediately when the `show` instance method is called.               |
+| `shown.collapse`  | This event is fired when the `show` instance has finished being shown to the user.    |
+
+```js
+const myCollapseEl = document.getElementById('myCollapse');
+const collapse = Collapse.getOrCreateInstance(myCollapseEl);
+
+myCollapseEl.addEventListener('hidden.collapse', () => {
+  // do something...
+});
+
+collapse.hide();
+```
+
 Please consult [main package README][web-readme] for how to include JavaScript plugins.
 
 Or feel free to write controlling scripts yourself.
