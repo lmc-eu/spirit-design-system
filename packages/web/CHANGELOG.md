@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.30.0"></a>
+
+# [0.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.29.0...@lmc-eu/spirit-web@0.30.0) (2022-10-14)
+
+### Features
+
+- **web:** Add display grid utility classes (refs [#FP-2166](https://github.com/lmc-eu/spirit-design-system/issues/FP-2166)) ([adce1ad](https://github.com/lmc-eu/spirit-design-system/commit/adce1ad))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.29.0"></a>
 
 # [0.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.28.0...@lmc-eu/spirit-web@0.29.0) (2022-10-13)
