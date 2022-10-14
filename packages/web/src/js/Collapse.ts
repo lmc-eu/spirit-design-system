@@ -3,8 +3,8 @@ import { enableToggleAutoloader } from './utils/ComponentFunctions';
 import selectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import {
-  NAME_ARIA_EXPANDED,
-  NAME_ARIA_CONTROLS,
+  ARIA_EXPANDED_ATTRIBUTE,
+  ARIA_CONTROLS_ATTRIBUTE,
   NAME_DATA_TARGET,
   CLASSNAME_EXPANDED,
   CLASSNAME_COLLAPSED,
@@ -43,7 +43,7 @@ class Collapse extends BaseComponent {
     };
     this.state = {
       collapsed: !!(
-        this.element.getAttribute(NAME_ARIA_EXPANDED) || this.element.classList.contains(CLASSNAME_EXPANDED)
+        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) || this.element.classList.contains(CLASSNAME_EXPANDED)
       ),
       width: window.innerWidth,
     };
@@ -89,8 +89,8 @@ class Collapse extends BaseComponent {
   updateTriggerElementHandler(collapsed: boolean = this.state.collapsed) {
     const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     const updateElement = (element: Element | HTMLElement) => {
-      element.setAttribute(NAME_ARIA_CONTROLS, this.meta.id);
-      element.setAttribute(NAME_ARIA_EXPANDED, String(collapsed));
+      element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.meta.id);
+      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(collapsed));
       element.classList.toggle(CLASSNAME_EXPANDED, collapsed);
       if (this.meta.hideOnCollapse && collapsed) {
         element.remove();
