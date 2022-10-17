@@ -11,10 +11,10 @@ export interface useSpiritModalReturn {
   clickHandler: (event: ClickEvent) => void;
 }
 
-export const useModal = (props: useSpiritModalProps) => {
-  const { isOpen, onClose, dialogReference, closeOnBackdrop, ...rest } = props;
+export const useModal = (props: useSpiritModalProps): useSpiritModalReturn => {
+  const { isOpen = false, onClose, dialogReference, closeOnBackdrop, ...rest } = props;
 
-  const [modalOpen, setModalOpen] = useState(isOpen);
+  const [modalOpen, setModalOpen] = useState<boolean>(isOpen);
 
   const openHandler = () => {
     setModalOpen(true);
@@ -54,5 +54,5 @@ export const useModal = (props: useSpiritModalProps) => {
     onClose: closeCallback,
     clickHandler,
     ...rest,
-  } as useSpiritModalReturn;
+  };
 };
