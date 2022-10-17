@@ -7,6 +7,9 @@
     border-radius: theme.$border-radius;
     background-color: theme.$background;
     box-shadow: theme.$shadow;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .Dropdown.is-open {
