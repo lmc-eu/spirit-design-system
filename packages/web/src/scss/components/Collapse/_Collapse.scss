@@ -4,16 +4,18 @@
 
 .Collapse {
     position: relative;
-    overflow: hidden;
     height: 0;
+    overflow: hidden;
     transition-property: height;
-    transition-timing-function: theme.$collapse-transition-timing;
     transition-duration: theme.$collapse-transition-duration;
+    transition-timing-function: theme.$collapse-transition-timing;
 
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         &[data-breakpoint='#{$breakpoint-name}'] {
             @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
+                /* stylelint-disable declaration-no-important */
                 height: auto !important;
+                /* stylelint-enable declaration-no-important */
             }
         }
     }
