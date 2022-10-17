@@ -15,14 +15,14 @@ export interface SpiritModalProps
   showBodyClose?: boolean;
 }
 
-export interface SpiritModalHeaderProps extends Pick<SpiritModalProps, 'children'> {}
+export interface SpiritModalHeaderProps extends ChildrenProps {}
 
-export interface SpiritModalContentProps extends Pick<SpiritModalProps, 'children'> {}
+export interface SpiritModalContentProps extends ChildrenProps {}
 
-export interface SpiritModalDialogProps extends Pick<SpiritModalProps, 'children'> {}
+export interface SpiritModalDialogProps extends ChildrenProps {}
 
-export interface SpiritModalBodyProps extends Pick<SpiritModalProps, 'children'> {}
+export interface SpiritModalBodyProps extends ChildrenProps {}
 
-export interface SpiritModalFooterProps extends Pick<SpiritModalProps, 'children'> {}
+export interface SpiritModalFooterProps extends ChildrenProps {}
 
 export interface SpiritModalCloseButtonProps extends SpiritButtonProps {}
