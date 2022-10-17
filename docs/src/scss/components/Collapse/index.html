@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Spirit Web — Development Preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="any"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMTBDMCA0LjQ3NzE1IDQuNDc3MTUgMCAxMCAwSDcwQzc1LjUyMjkgMCA4MCA0LjQ3NzE1IDgwIDEwVjcwQzgwIDc1LjUyMjkgNzUuNTIyOSA4MCA3MCA4MEgxMEM0LjQ3NzE1IDgwIDAgNzUuNTIyOSAwIDcwVjEwWiIgZmlsbD0iIzBCMUMyMSIvPgo8cGF0aCBkPSJNNDEuMjg4NCA0MS43MTU5TDMyIDI1Ljk4OThDMzIuMjkyMSAyNC40NjUzIDMyLjgxNzEgMjMuMDc0NCAzMy41Nzc0IDIxLjgxOTZMMzMuNTc4NiAyMS44MTc3TDMzLjU3OTggMjEuODE1OEMzNC44NTk5IDE5Ljc3NjMgMzYuNjQ3IDE4LjE3MjcgMzguOTMzMiAxNy4wMDUzQzQxLjIyMDIgMTUuNzk1MSA0My44NTIxIDE1LjEyOTEgNDYuODIyIDE1LjAwMDNMNDYuODI4NCAxNUg0Ni44MzQ4QzUwLjY5MzEgMTUgNTMuODM4MSAxNS40NDY5IDU2LjI1NjQgMTYuMzU0NUM1OC42ODk3IDE3LjI1MTYgNjAuODY2NCAxOC4zMjEgNjIuNzg0OCAxOS41NjQxTDYzIDE5LjcwMzVMNTkuMTkxNiAyNy4yNTk1TDU4LjkyNTIgMjcuMTE2MUM1Ny4xMjc2IDI2LjE0ODMgNTUuMjg3OSAyNS4zNDkyIDUzLjQwNiAyNC43MTg1TDUzLjQwNDEgMjQuNzE3OUM1MS41NzM5IDI0LjA5MDMgNDkuODU5NCAyMy43Nzk2IDQ4LjI1ODUgMjMuNzc5NkM0Ni4yNjY0IDIzLjc3OTYgNDQuNzM2NSAyNC4xNzU5IDQzLjYzNzYgMjQuOTM2MUM0Mi41NjMgMjUuNjc5NiA0Mi4wMTQxIDI2Ljc5MzMgNDIuMDE0MSAyOC4zMjc5QzQyLjAxNDEgMjkuMzQ2MiA0Mi40MDg3IDMwLjI3MjUgNDMuMjIzMSAzMS4xMTUyQzQ0LjEwMjcgMzEuOTM3NiA0NS4yMTgzIDMyLjY4MzggNDYuNTc1MyAzMy4zNTFDNDcuOTkgMzQuMDI1MiA0OS40NDc2IDM0LjYzNjMgNTAuOTQ4NCAzNS4xODQzQzUyLjM0MDcgMzUuNjk3NiA1My43MTE1IDM2LjMxNzcgNTUuMDU5MSAzNy4wNDM5QzU2LjQ2NDMgMzcuNzM1MyA1Ny43MTcyIDM4LjYyMTMgNTguODE2MyAzOS43MDE0QzU5LjkyNzMgNDAuNzUwNSA2MC44MTA2IDQyLjA3ODQgNjEuNDcwMyA0My42Nzc3QzYyLjEzNjIgNDUuMjQ5MyA2Mi40NjI5IDQ3LjE3NjMgNjIuNDYyOSA0OS40NDg1QzYyLjQ2MjkgNTEuODc1OCA2MS44MjI4IDU0LjEzMjQgNjAuNTQ0MyA1Ni4yMTI4QzU5LjI2MjcgNTguMjk4MiA1Ny4zODc3IDU5Ljk4NTkgNTQuOTMyIDYxLjI3OTNMNTQuOTI4NCA2MS4yODEyQzU0LjQwMDcgNjEuNTQ5OCA1My41Nzg1IDYxLjc4OTQgNTMgNjJMNDguNSA1NEM0OS41MjcxIDUzLjY3MDEgNTAuMzcyOSA1My4xMDk2IDUxLjAyMzMgNTIuNDMyNkw1MS4wMjYxIDUyLjQyOTZMNTEuMDI5MSA1Mi40MjY3QzUxLjczNzcgNTEuNzMgNTIuMTA4NSA1MC43NTAzIDUyLjEwODUgNDkuNDQ4NUM1Mi4xMDg1IDQ4LjU4NzEgNTEuODExOSA0Ny44MDI4IDUxLjIwNTQgNDcuMDg3M0w1MS4yMDIyIDQ3LjA4MzZMNTEuMTk5MiA0Ny4wNzk4QzUwLjYyMjYgNDYuMzUwOSA0OS44MTE1IDQ1LjY3MzEgNDguNzU1NiA0NS4wNTAyTDQ4Ljc1MzMgNDUuMDQ4OUw0OC43NTExIDQ1LjA0NzVDNDcuNzMzMyA0NC40MjIyIDQ2LjYwNzUgNDMuODc4OSA0NS4zNzI1IDQzLjQxODRDNDQuMDQ1OCA0Mi45MTk3IDQyLjY4MzkgNDIuMzUyIDQxLjI4ODQgNDEuNzE1OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNS40NTU3IDEzLjQ0OTZMNTcuMzU3NSA2OC43MDUxTDU1LjYyNTQgNjkuNzA1MUwyMy43MjM2IDE0LjQ0OTZMMjUuNDU1NyAxMy40NDk2WiIgZmlsbD0iIzc3QTZDMCIvPgo8cGF0aCBkPSJNMjggNDJIMjJWNDlIMTVWNTVIMjJWNjJIMjhWNTVIMzVWNDlIMjhWNDJaIiBmaWxsPSIjNzdBNkMwIi8+CjxwYXRoIGQ9Ik0xMCAxSDcwVi0xSDEwVjFaTTc5IDEwVjcwSDgxVjEwSDc5Wk03MCA3OUgxMFY4MUg3MFY3OVpNMSA3MFYxMEgtMVY3MEgxWk0xMCA3OUM1LjAyOTQ0IDc5IDEgNzQuOTcwNiAxIDcwSC0xQy0xIDc2LjA3NTEgMy45MjQ4NyA4MSAxMCA4MVY3OVpNNzkgNzBDNzkgNzQuOTcwNiA3NC45NzA2IDc5IDcwIDc5VjgxQzc2LjA3NTEgODEgODEgNzYuMDc1MSA4MSA3MEg3OVpNNzAgMUM3NC45NzA2IDEgNzkgNS4wMjk0NCA3OSAxMEg4MUM4MSAzLjkyNDg3IDc2LjA3NTEgLTEgNzAgLTFWMVpNMTAgLTFDMy45MjQ4NyAtMSAtMSAzLjkyNDg3IC0xIDEwSDFDMSA1LjAyOTQ0IDUuMDI5NDQgMSAxMCAxVi0xWiIgZmlsbD0iIzc3QTZDMCIvPgo8L3N2Zz4K"
+    >
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    
+
+    <style>
+      .docs-TileLink {
+        display: block;
+        padding: 1rem;
+        border: 2px solid #e9e9e9;
+        border-radius: 8px;
+        font-size: 1.125rem; /* Based on the `body-large-text-regular` style. */
+        font-weight: 600;
+        line-height: 1.55;
+      }
+
+      .docs-TileLink:hover,
+      .docs-TileLink:focus {
+        border-color: #dbdbdb;
+      }
+
+      .docs-TileLink:active {
+        border-color: #d4d4d4;
+      }
+
+      .docs-Section:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+
+      .docs-Heading {
+        margin-bottom: 1.5rem;
+        font-size: 1.125rem; /* Based on the `heading-small-text` style. */
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .docs-Box {
+        min-height: 2rem;
+        padding: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #fff;
+        background: #0b1c21;
+      }
+
+      .docs-Box--small {
+        font-size: 0.75rem;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .docs-FormFieldGrid {
+        display: grid;
+        grid-template-columns: 25rem;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .docs-TileLink {
+          padding: 1.5rem;
+        }
+
+        .docs-Section:not(:last-child) {
+          margin-bottom: 4rem;
+        }
+
+        .docs-Heading {
+          font-size: 1.5rem;
+        }
+
+        .docs-Box--small {
+          font-size: 0.875rem;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .docs-Box--small {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    
+
+    <script type="module" crossorigin src="/spirit-design-system/assets/Tooltip.a9c7cc9f.js"></script>
+    <link rel="stylesheet" href="/spirit-design-system/assets/Tooltip.b0dc7293.css">
+  </head>
+  <body class="typography-body-medium-text-regular text-primary">
+
+    
+      <main class="py-800">
+        <div class="Container">
+    
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Default with button</h2>
+          
+            <!--
+              Default Collapse
+            -->
+            <button
+              type="button"
+              role="button"
+              data-toggle="collapse"
+              data-target="CollapseExample0"
+              class="Button Button--primary Button--medium"
+            >
+              Collapse trigger
+            </button>
+            <div
+              id="CollapseExample0"
+              class="Collapse"
+            >
+              <div class="Collapse__content">
+                Aliquam varius, consequat posuere a lacinia mauris eu tellus condimentum ut id ante, accumsan vehicula nulla neque. Mauris mi orci, in donec nullam odio leo sapien et vehicula nunc a
+                lacinia, fermentum arcu ullamcorper posuere. Mauris euismod, ac nec ante fermentum praesent nisi commodo neque placerat, vivamus dui et tempus pulvinar suspendisse. Porttitor eget,
+                sollicitudin hendrerit bibendum nulla aliquam sit amet leo vitae, eget consectetur diam a vestibulum. Adipiscing lorem ipsum, arcu condimentum posuere semper morbi condimentum dui,
+                bibendum nunc aenean facilisis. Phasellus euismod, donec sem odio ligula praesent finibus nibh convallis, tristique aliquam sed id tortor sem lobortis.
+              </div>
+            </div>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Collapsed on init with aria or class</h2>
+          
+            <!--
+              Collapse with auto open by aria
+            -->
+            <div class="mb-400">
+              <button
+                type="button"
+                role="button"
+                data-toggle="collapse"
+                data-target="CollapseExampleI"
+                aria-expanded="true"
+                class="Button Button--primary Button--medium"
+              >
+                Collapse trigger
+              </button>
+              <div
+                id="CollapseExampleI"
+                class="Collapse"
+              >
+                <div class="Collapse__content">
+                  Cras dictum ante, mollis ollicitudin proin bibendum nec commodo consequat fusce ante, consequat venenatis suscipit odio morbi. Dolor sit amet porta, placerat tristique sit amet
+                  ligula nisl risus et vehicula, suscipit accumsan nunc curabitur. Et neque, augue ut nulla a sed porta scelerisque proin, elit sapien lacinia felis. Lorem nulla, iaculis ornare in
+                  donec ac nibh libero nisl ornare, elementum luctus sem aliquam consequat. Elit et iaculis, enim in quam neque facilisis cursus integer hendrerit, non nulla vulputate condimentum
+                  auctor. Turpis varius, scelerisque maximus iaculis efficitur bibendum et nisi sapien, ut nunc ut enim et sem lobortis at sem.
+                </div>
+              </div>
+            </div>
+          
+            <br />
+          
+            <!--
+              Collapse with auto open by class
+            -->
+            <div class="mb-400">
+              <button
+                type="button"
+                role="button"
+                data-toggle="collapse"
+                data-target="CollapseExampleII"
+                class="Button Button--primary Button--medium is-expanded"
+              >
+                Collapse trigger
+              </button>
+              <div
+                id="CollapseExampleII"
+                class="Collapse"
+              >
+                <div class="Collapse__content">
+                  Nibh maximus sed ac, lorem ipsum dolor sit amet congue leo vitae condimentum molestie eget urna, magna at lectus quis purus. Euismod purus, egestas vestibulum in nisi et iaculis mauris
+                  ullamcorper egestas, bibendum molestie auctor consectetur. Nisl vel purus a lacinia, sem lobortis consequat convallis felis scelerisque dui vel dolor suspendisse fermentum, vulputate
+                  suspendisse consequat lacinia. Potenti et, quis orci fusce donec placerat phasellus proin quis odio, tempus a felis molestie et nisi. Nulla donec, neque quis neque augue porta urna
+                  lorem, donec erat id duis id at sem. Libero sed congue,  fringilla consequat vestibulum finibus quis vitae at nullam, donec felis rhoncus non.
+                </div>
+              </div>
+            </div>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Mobile</h2>
+          
+            <!--
+              Collapse with mobile breakpoint
+            -->
+            <div class="mb-400">
+              <a
+                role="button"
+                href="javascript:void(0)"
+                data-toggle="collapse"
+                data-target="CollapseExample1"
+                class="Button Button--secondary Button--medium d-mobile-none"
+              >
+                Collapse trigger
+              </a>
+              <div
+                id="CollapseExample1"
+                class="Collapse"
+                data-breakpoint="mobile"
+              >
+                <div class="Collapse__content">
+                  Sagittis varius, ullamcorper donec nulla a suscipit semper libero sed varius, purus urna sed vitae aliquam. Volutpat et nisi, dui vel quis elit nulla suscipit fermentum sed, bibendum
+                  porttitor lorem nisl vel purus. Augue ut hendrerit, finibus quis et eget porta proin porttitor vivamus, cursus mauris efficitur sagittis. Scelerisque nisi commodo, rhoncus donec
+                  adipiscing ultrices elit curabitur turpis, sollicitudin at sem ultricies potenti. Maximus consequat, consequat neque auctor nullam pulvinar donec scelerisque, neque et nisl nulla
+                  felis. Odio leo imperdiet, vivamus nisi commodo pharetra libero vitae luctus ligula sed porttitor, nullam nam vitae libero.
+                </div>
+              </div>
+            </div>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Tablet</h2>
+          
+            <!--
+              Collapse with tablet breakpoint
+            -->
+            <div class="mb-400">
+              <a
+                role="button"
+                href="javascript:void(0)"
+                data-toggle="collapse"
+                data-target="CollapseExample2"
+                class="Button Button--secondary Button--medium d-tablet-none"
+              >
+                Collapse trigger
+              </a>
+              <div
+                id="CollapseExample2"
+                class="Collapse"
+                data-breakpoint="tablet"
+              >
+                <div class="Collapse__content">
+                  Turpis cursus, urna vehicula sed porttitor nulla non mauris sapien congue, urna dui augue facilisis. Nunc elit, ipsum porttitor curabitur sapien nulla finibus quis pulvinar, commodo
+                  convallis lorem fringilla nec. Quam libero, vitae massa ornare eget vestibulum et iaculis quisque sapien, turpis maximus maximus vivamus. Nibh maximus molestie, donec rhoncus erat
+                  sed ac molestie donec sollicitudin sed id tortor, consequat venenatis fringilla augue. Urna imperdiet, dui vel risus posuere interdum duis id posuere purus, vel arcu dui erat id.
+                  Sed vitae potenti, ultricies pretium accumsan ligula lorem fringilla non nulla vel mi orci, sed id tortor lorem ipsum dolor sit amet dui et vehicula.
+                </div>
+              </div>
+            </div>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Desktop</h2>
+          
+            <!--
+              Collapse with desktop breakpoint
+            -->
+            <div class="mb-400">
+              <a
+                role="button"
+                href="javascript:void(0)"
+                data-toggle="collapse"
+                data-target="CollapseExample3"
+                class="Button Button--secondary Button--medium d-desktop-none"
+              >
+                Collapse trigger
+              </a>
+              <div
+                id="CollapseExample3"
+                class="Collapse"
+                data-breakpoint="desktop"
+              >
+                <div class="Collapse__content">
+                  Elementum luctus ultrices, ultrices quam metus a lorem sollicitudin lorem fringilla curabitur felis a, sed urna consectetur maximus. Imperdiet donec, elit condimentum dolor ut accumsan
+                  congue nulla ut id ante vel arcu, lorem fringilla interdum pulvinar nullam. Curabitur interdum, semper donec dui et tempus fusce vitae ornare risus lorem, varius tristique sem odio elit.
+                  Felis a ut venenatis, aliquam semper sapien consequat elementum vivamus tortor, cursus donec volutpat vitae massa. Sapien nam, dolor ut quam venenatis interdum molestie augue dui, lorem
+                  sodales facilisis semper. Consectetur vivamus, commodo nulla accumsan  fringilla mauris sagittis ipsum, neque dolor quis ligula nunc.
+                </div>
+              </div>
+            </div>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Collapse with hide trigger when expanded </h2>
+          
+            <!--
+              Collapse more
+            -->
+            <p>
+              Quis orci molestie, condimentum metus a lorem lorem fringilla sem lobortis libero rhoncus nullam, purus sapien aenean sed id tortor. Molestie quam, lectus quis ac nec
+              suspendisse consectetur finibus a accumsan, bibendum dolor sit amet congue rhoncus erat. Semper turpis, varius iaculis venenatis ut congue sollicitudin nulla,
+              convallis nibh maximus erat id aliquam. Nec interdum, auctor elit vitae pulvinar fusce gravida curabitur odio leo, nunc a mauris auctor. Vel integer, placerat pulvinar
+              nisi nunc donec felis erat quis, phasellus ac nec phasellus ac nibh. Scelerisque  fringilla, viverra nisl vel purus sed porttitor porttitor et iaculis commodo, vehicula urna purus ultrices.
+              <a
+                role="button"
+                href="javascript:void(0)"
+                data-toggle="collapse"
+                data-target="CollapseExampleIII"
+                data-more
+              >
+                ...more
+              </a>
+              <div
+                id="CollapseExampleIII"
+                class="Collapse"
+              >
+                <div class="Collapse__content">
+                  Commodo metus a lorem, a aliquet vestibulum rutrum pharetra sapien sed, ullamcorper quis odio dolor ut aliquam. Rutrum suspendisse, fermentum tellus metus a lorem
+                  cursus volutpat proin bibendum, sed diam a duis id dui et tempus. Ligula non, sapien augue libero eget aliquam semper varius, posuere urna leo vitae ullamcorper.
+                  Venenatis posuere, sapien rhoncus dolor quis semper porttitor et vestibulum, odio leo ac nibh molestie placerat. Tellus suspendisse, dui lectus tellus quis eget
+                  sollicitudin dolor sit amet, dui ac nibh nulla mauris. Feugiat sollicitudin, integer bibendum at sem sapien non nullam sed id tortor, suscipit fusce gravida nec eget.
+                </div>
+              </div>
+            </p>
+          
+          </section>
+          
+          <section class="docs-Section">
+          
+            <h2 class="docs-Heading">Multiple triggers</h2>
+          
+            <!--
+              Default Collapse
+            -->
+            <button
+              type="button"
+              role="button"
+              data-toggle="collapse"
+              data-target="CollapseExampleIV"
+              class="Button Button--primary Button--medium"
+            >
+              Collapse trigger
+            </button>
+            <div
+              id="CollapseExampleIV"
+              class="Collapse"
+            >
+              <div class="Collapse__content">
+                Aliquam varius, consequat posuere a lacinia mauris eu tellus condimentum ut id ante, accumsan vehicula nulla neque. Mauris mi orci, in donec nullam odio leo sapien et vehicula nunc a
+                lacinia, fermentum arcu ullamcorper posuere. Mauris euismod, ac nec ante fermentum praesent nisi commodo neque placerat, vivamus dui et tempus pulvinar suspendisse. Porttitor eget,
+                sollicitudin hendrerit bibendum nulla aliquam sit amet leo vitae, eget consectetur diam a vestibulum. Adipiscing lorem ipsum, arcu condimentum posuere semper morbi condimentum dui,
+                bibendum nunc aenean facilisis. Phasellus euismod, donec sem odio ligula praesent finibus nibh convallis, tristique aliquam sed id tortor sem lobortis.
+              </div>
+            </div>
+            <button
+              type="button"
+              role="button"
+              data-toggle="collapse"
+              data-target="CollapseExampleIV"
+              class="Button Button--secondary Button--medium"
+            >
+              Secondary Collapse trigger
+            </button>
+            <a
+              href="#"
+              role="button"
+              data-toggle="collapse"
+              data-target="CollapseExampleIV"
+              class="Button Button--tertiary Button--medium"
+            >
+              Tertiary Collapse trigger
+            </a>
+          
+          </section>
+          
+    
+        </div>
+      </main>
+    
+
+  </body>
+</html>
