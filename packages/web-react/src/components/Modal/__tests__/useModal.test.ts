@@ -6,10 +6,10 @@ describe('useModal', () => {
     const props = { isOpen: true } as useSpiritModalProps;
     const { result } = renderHook(() => useModal(props));
 
-    expect(result.current.isOpen).toBe(true);
+    expect(result.current.isOpen).toBeTruthy();
 
     result.current.isOpen = false;
 
-    expect(result.current.isOpen).toBe(false);
+    expect(result.current.isOpen).toBeFalsy();
   });
 });
