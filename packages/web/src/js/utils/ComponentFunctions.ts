@@ -51,4 +51,6 @@ const enableToggleAutoloader = (component: typeof BaseComponent, method = 'toggl
   enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onLoadHandler, method);
 };
 
-export { enableToggleTrigger, enableDismissTrigger, enableToggleAutoloader };
+const clickOutsideElement = (target: Element, event: Event) => !event.composedPath().includes(target);
+
+export { enableToggleTrigger, enableDismissTrigger, enableToggleAutoloader, clickOutsideElement };

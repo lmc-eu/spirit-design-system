@@ -1,14 +1,51 @@
+@use 'sass:map';
+@use '../../tools/breakpoint';
 @use 'theme' as theme;
 
 .Dropdown {
+    position: absolute;
+    z-index: 1;
     display: none;
     width: max-content;
+    max-width: 100%;
     padding: theme.$padding;
     border-radius: theme.$border-radius;
     background-color: theme.$background;
     box-shadow: theme.$shadow;
+
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        &[data-breakpoint='#{$breakpoint-name}'] {
+            @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
+                /* stylelint-disable-next-line declaration-no-important -- overriding js */
+                width: max-content !important;
+            }
+        }
+    }
+}
+
+.Dropdown[data-breakpoint],
+.Dropdown--fullWidth {
+    width: 100%;
 }
 
 .Dropdown.is-open {
     display: block;
+}
+
+.Dropdown--top {
+    bottom: 100%;
+    margin-bottom: theme.$offset;
+}
+
+.Dropdown--right {
+    right: 0;
+}
+
+.Dropdown--bottom {
+    top: 100%;
+    margin-top: theme.$offset;
+}
+
+.Dropdown--left {
+    left: 0;
 }
