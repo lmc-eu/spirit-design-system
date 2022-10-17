@@ -1,5 +1,7 @@
 @use '@tokens' as tokens;
 
+$breakpoints: tokens.$breakpoints;
+$offset: tokens.$space-400;
 $padding: tokens.$space-600;
 $border-radius: tokens.$radius-200;
 $background: tokens.$background-basic;
