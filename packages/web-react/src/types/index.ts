@@ -17,5 +17,6 @@ export * from './shared';
 export * from './tabs';
 export * from './tag';
 export * from './text';
+export * from './textArea';
 export * from './textField';
 export * from './textFieldBase';
