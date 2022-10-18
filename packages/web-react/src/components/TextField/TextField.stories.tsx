@@ -13,6 +13,12 @@ export default {
         options: ['text', 'password', 'email'],
       },
     },
+    size: {
+      control: {
+        type: 'select',
+        options: ['2', '3', '4'],
+      },
+    },
     isDisabled: {
       control: 'boolean',
     },
