@@ -11,7 +11,7 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 
-const HEADER_BREAKPOINT = 1280;
+const OFFCANVAS_BREAKPOINT = 1280;
 const OPEN_CLASSNAME = 'is-open';
 
 class Offcanvas extends BaseComponent {
@@ -40,7 +40,7 @@ class Offcanvas extends BaseComponent {
   }
 
   onWindowResize(event: Event & { target: Window }) {
-    if (event.target.innerWidth >= HEADER_BREAKPOINT) {
+    if (event.target.innerWidth >= OFFCANVAS_BREAKPOINT) {
       this.hide();
     }
   }
@@ -93,6 +93,10 @@ class Offcanvas extends BaseComponent {
   }
 
   hide() {
+    if (!this.isShown) {
+      return;
+    }
+
     const hideEvent = EventHandler.trigger(this.element, EVENT_HIDE);
 
     if (hideEvent?.defaultPrevented) {
@@ -114,7 +118,7 @@ class Offcanvas extends BaseComponent {
     if (!targetElement) {
       // eslint-disable-next-line no-console
       console.warn(
-        '👻 Boo…! Target header pane does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ',
+        '👻 Boo…! Target dialog does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ',
       );
 
       return;
