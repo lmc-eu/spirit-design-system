@@ -1,15 +1,15 @@
 @use 'theme' as theme;
 
 .Dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: none;
     width: max-content;
     padding: theme.$padding;
     border-radius: theme.$border-radius;
     background-color: theme.$background;
     box-shadow: theme.$shadow;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .Dropdown.is-open {

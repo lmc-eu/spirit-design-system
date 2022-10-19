@@ -42,56 +42,55 @@
 ```
 
 ## Placement
+
 Default placement of dropdown content is set as `bottom-start`, but you can set it to different position such as `top-start`, `top-end`, `right-start`, `right-end`, `bottom-end`, `left-start` or `left-end`.
 
-
 ## JavaScript
+
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a .dropdown class.
 
 | Attribute        | Default        | Required | Description                                          |
-|------------------|----------------|----------|------------------------------------------------------|
+| ---------------- | -------------- | -------- | ---------------------------------------------------- |
 | `data-target`    | ''             | true     | Target menu element ID                               |
 | `data-reference` | `toggle`       | -        | Reference selector, it could be 'toggle' or 'parent' |
 | `data-placement` | `bottom-start` | -        | Placement of content                                 |
 | `data-offset`    | `0`            | -        | Offset of dropdown content                           |
 | `data-padding`   | `0`            | -        | Padding of offset content                            |
 
-
 ## JavaScript API
 
 ### Methods
 
 | Method                | Description                                                                                                                                                                                                                                           |
-| --------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `getInstance`         | _Static_ method which allows you to get the dropdown instance associated with a DOM. element                                                                                                                                                          |
 | `getOrCreateInstance` | _Static_ method which allows you to get the dropdown instance associated with a DOM element, or create a new one in case it wasn’t initialized.                                                                                                       |
 | `hide`                | Hides an element’s dropdown. Returns to the caller before the dropdown has actually been hidden (i.e. before the `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                           |
 | `show`                | Reveals an element’s dropdown. **Returns to the caller before the dropdown has actually been shown** (i.e. before the `shown.dropdown` event occurs). This is considered a “manual” triggering of the dropdown.                                       |
 | `toggle`              | Toggles an element’s todropdownoltip. **Returns to the caller before the dropdown has actually been shown or hidden** (i.e. before the `shown.dropdown` or `hidden.dropdown` event occurs). This is considered a “manual” triggering of the dropdown. |
 
-
 ```js
-const dropdown = Dropdown.getInstance('#example', { ...options }); // Returns a tooltip instance
+const dropdown = Dropdown.getInstance('#example'); // Returns a dropdown instance
 
-tooltip.show();
+dropdown.show();
 ```
 
 ### Events
 
 | Method           | Description                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------- |
-| `hide.tooltip`   | This event is fired immediately when the `hide` instance method has been called.      |
-| `hidden.tooltip` | This event is fired when the `hide` instance has finished being hidden from the user. |
-| `show.tooltip`   | This event fires immediately when the `show` instance method is called.               |
-| `shown.tooltip`  | This event is fired when the `show` instance has finished being shown to the user.    |
+|------------------| ------------------------------------------------------------------------------------- |
+| `hide.dropdown`  | This event is fired immediately when the `hide` instance method has been called.      |
+| `hidden.dropdown` | This event is fired when the `hide` instance has finished being hidden from the user. |
+| `show.dropdown`   | This event fires immediately when the `show` instance method is called.               |
+| `shown.dropdown`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
 ```js
-const myTooltipEl = document.getElementById('myTooltip');
-const tooltip = Tooltip.getOrCreateInstance(myTooltipEl);
+const myDropdownEl = document.getElementById('myDropdown');
+const dropdown = Dropdown.getOrCreateInstance(myDropdownEl);
 
-myTooltipEl.addEventListener('hidden.tooltip', () => {
+myDropdownEl.addEventListener('hidden.dropdown', () => {
   // do something...
 });
 
-tooltip.hide();
+dropdown.hide();
 ```
