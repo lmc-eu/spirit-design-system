@@ -49,13 +49,13 @@ Default placement of dropdown content is set as `bottom-start`, but you can set 
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a .dropdown class.
 
-| Attribute        | Default        | Required | Description                                          |
-| ---------------- | -------------- | -------- | ---------------------------------------------------- |
-| `data-target`    | ''             | true     | Target menu element ID                               |
-| `data-reference` | `toggle`       | -        | Reference selector, it could be 'toggle' or 'parent' |
-| `data-placement` | `bottom-start` | -        | Placement of content                                 |
-| `data-offset`    | `0`            | -        | Offset of dropdown content                           |
-| `data-padding`   | `0`            | -        | Padding of offset content                            |
+| Attribute        | Default        | Required | Description                                                               |
+| ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
+| `data-target`    | ''             | true     | Target menu element ID                                                    |
+| `data-reference` | `toggle`       | -        | Reference selector, it could be 'toggle', 'parent' or Element ID selector |
+| `data-placement` | `bottom-start` | -        | Placement of content                                                      |
+| `data-offset`    | `0`            | -        | Offset of dropdown content                                                |
+| `data-padding`   | `0`            | -        | Padding of offset content                                                 |
 
 ## JavaScript API
 
@@ -77,9 +77,9 @@ dropdown.show();
 
 ### Events
 
-| Method           | Description                                                                           |
-|------------------| ------------------------------------------------------------------------------------- |
-| `hide.dropdown`  | This event is fired immediately when the `hide` instance method has been called.      |
+| Method            | Description                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| `hide.dropdown`   | This event is fired immediately when the `hide` instance method has been called.      |
 | `hidden.dropdown` | This event is fired when the `hide` instance has finished being hidden from the user. |
 | `show.dropdown`   | This event fires immediately when the `show` instance method is called.               |
 | `shown.dropdown`  | This event is fired when the `show` instance has finished being shown to the user.    |

@@ -46,7 +46,7 @@ const config = {
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
 
   // Setup test configuration file
-  setupFiles: ['./setupTests.ts'],
+  setupFiles: ['./tests/setupTests.ts'],
 };
 
 module.exports = config;

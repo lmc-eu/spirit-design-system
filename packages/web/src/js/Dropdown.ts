@@ -1,6 +1,6 @@
 import { computePosition, flip, shift, offset, autoUpdate } from '@floating-ui/dom';
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import { enableToggleTrigger, clickOutsideElement } from './utils/ComponentFunctions';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 
@@ -46,19 +46,17 @@ const CLASSNAME_DROPDOWN = 'dropdown';
 export const CLASSNAME_EXPANDED = 'is-expanded';
 export const CLASSNAME_OPEN = 'is-open';
 
-const clickOutsideElement = (target: Element, event: Event) => !event.composedPath().includes(target);
-
 class Dropdown extends BaseComponent {
   target: HTMLElement | null | undefined;
-  anchor: HTMLElement | null | undefined;
+  reference: HTMLElement | null | undefined;
   state: DropdownStateProps;
   options: DropdownOptionsProps;
   autoUpdateOptions: autoUpdateOptionsType;
 
   constructor(element: SpiritElement) {
     super(element);
-    this.target = this.findTargetElement();
-    this.anchor = this.findAnchorElement();
+    this.target = SelectorEngine.findOne(`#${this.element.dataset.target}`);
+    this.reference = this.findReferenceElement();
     this.state = {
       open: false,
     };
@@ -87,6 +85,7 @@ class Dropdown extends BaseComponent {
     const optionsOffset = dataset?.offset;
     const optionsPadding = dataset?.padding;
     const optionsAutoClose = dataset?.autoclose;
+
     if (optionsPlacement) options.placement = optionsPlacement;
     if (optionsOffset) options.offset = Number(optionsOffset);
     if (optionsPadding) options.padding = Number(optionsPadding);
@@ -95,28 +94,23 @@ class Dropdown extends BaseComponent {
     return options;
   }
 
-  findAnchorElement() {
+  findReferenceElement() {
     let anchor = this.element;
     const { reference } = this.element.dataset;
-    if (
-      reference &&
-      reference === 'parent' &&
-      this.element.parentElement &&
-      this.element.parentElement.classList.contains(CLASSNAME_DROPDOWN)
-    ) {
-      anchor = this.element.parentElement;
+
+    if (reference) {
+      if (
+        reference === 'parent' &&
+        this.element.parentElement &&
+        this.element.parentElement.classList.contains(CLASSNAME_DROPDOWN)
+      ) {
+        anchor = this.element.parentElement;
+      } else if (reference.match(/(#)/g)) {
+        anchor = SelectorEngine.findOne(reference);
+      }
     }
 
     return anchor;
-  }
-
-  findTargetElement() {
-    let target = null;
-    if (this.element.dataset.target) {
-      target = SelectorEngine.findOne(`#${this.element.dataset.target}`);
-    }
-
-    return target;
   }
 
   updateTriggerElement(open: boolean = this.state.open) {
@@ -129,7 +123,7 @@ class Dropdown extends BaseComponent {
     this.target?.classList.toggle(CLASSNAME_OPEN, open);
   }
 
-  alignTargetElement() {
+  async alignTargetElement() {
     const options = this.getOptions();
     const { placement } = options;
     const middleware = [
@@ -139,54 +133,57 @@ class Dropdown extends BaseComponent {
         padding: options.padding,
       }),
     ];
-    if (this.anchor && this.target) {
-      computePosition(this.anchor, this.target, { placement, middleware }).then(({ x, y }) => {
+
+    if (this.reference && this.target) {
+      const assignPosition = (x: number, y: number) =>
         this.target &&
-          Object.assign(this.target.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-          });
-      });
+        Object.assign(this.target.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
+      const positions = computePosition(this.reference, this.target, { placement, middleware });
+      await positions.then(({ x, y }) => assignPosition(x, y));
     }
   }
 
   cleanUp() {
-    if (this.anchor && this.target) {
-      autoUpdate(this.anchor, this.target, this.alignTargetElement.bind(this), this.autoUpdateOptions);
+    if (this.reference && this.target) {
+      autoUpdate(this.reference, this.target, this.alignTargetElement.bind(this), this.autoUpdateOptions);
     }
   }
 
   createAutoCloseEvent() {
     const closeHandler = (event: Event) => {
-      const shouldClose = clickOutsideElement(this.target as HTMLElement, event);
+      const shouldClose = this.target && clickOutsideElement(this.target, event);
+
       if (event.target && shouldClose) {
         this.hide();
         document.removeEventListener('click', closeHandler);
-        // EventHandler.on(document, 'click', closeHandler); // Not working as expected, why?
       }
     };
     document.addEventListener('click', closeHandler);
-    // EventHandler.off(document, 'click', closeHandler); // Not working as expected, why?
   }
 
   show() {
     this.state.open = true;
-    EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
+    this.target && EventHandler.trigger(this.target, EVENT_SHOW);
     this.updateTriggerElement();
     this.updateTargetElement();
     this.cleanUp();
     setTimeout(() => {
-      EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN);
+      this.target && EventHandler.trigger(this.target, EVENT_SHOWN);
       this.getOptions().autoClose && this.createAutoCloseEvent();
     }, 0);
   }
 
   hide() {
     this.state.open = false;
-    EventHandler.trigger(this.target as HTMLElement, EVENT_HIDE);
+    this.target && EventHandler.trigger(this.target, EVENT_HIDE);
     this.updateTriggerElement();
     this.updateTargetElement();
-    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN), 0);
+    setTimeout(() => {
+      this.target && EventHandler.trigger(this.target, EVENT_HIDDEN);
+    }, 0);
   }
 
   toggle() {
