@@ -134,7 +134,14 @@ $utilities: (
         responsive: false,
         property: color,
         class: text,
-        values: tokens.$text-colors,
+        values:
+            map.merge(
+                tokens.$text-colors,
+                (
+                    brand-primary: tokens.$brand-primary,
+                    brand-secondary: tokens.$brand-secondary,
+                )
+            ),
     ),
     'background-color': (
         responsive: false,
@@ -142,6 +149,8 @@ $utilities: (
         class: bg,
         values: (
             basic: tokens.$background-basic,
+            brand-primary: tokens.$brand-primary,
+            brand-secondary: tokens.$brand-secondary,
             cover: tokens.$background-cover,
             inverted: tokens.$background-inverted,
         ),
