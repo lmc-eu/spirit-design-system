@@ -56,7 +56,7 @@
     "@lmc-eu/conventional-changelog-lmc-github": "2.0.5",
     "@lmc-eu/eslint-config-react": "1.0.2",
     "@lmc-eu/prettier-config": "1.2.3",
-    "@rollup/plugin-babel": "5.3.1",
+    "@rollup/plugin-babel": "6.0.2",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-replace": "4.0.0",
     "@storybook/addon-actions": "6.5.12",
