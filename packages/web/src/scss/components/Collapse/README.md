@@ -55,9 +55,9 @@ Hide button when collapse
 
 ## Wrapper attributes
 
-| Prop name         | Type                   | Default | Required | Description           |
-| ----------------- | ---------------------- | ------- | -------- | --------------------- |
-| `data-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint feature \* |
+| Prop name         | Type                   | Default | Required | Description                                                      |
+| ----------------- | ---------------------- | ------- | -------- | ---------------------------------------------------------------- |
+| `data-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint on which the collapsed content is forced to reveal \* |
 
 There can be several triggers, the same rules apply to each.
 
