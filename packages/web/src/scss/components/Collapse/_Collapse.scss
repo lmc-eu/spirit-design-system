@@ -11,11 +11,14 @@
     transition-timing-function: theme.$collapse-transition-timing;
 
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
-        &[data-breakpoint='#{$breakpoint-name}'] {
-            @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
-                /* stylelint-disable declaration-no-important */
-                height: auto !important;
-                /* stylelint-enable declaration-no-important */
+        @if $breakpoint-value > 0 {
+            &[data-breakpoint='#{$breakpoint-name}'] {
+                @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
+                    /* This Important rule is important here because it overrides inline styles applied by JavaScript */
+                    /* stylelint-disable declaration-no-important */
+                    height: auto !important;
+                    /* stylelint-enable declaration-no-important */
+                }
             }
         }
     }
