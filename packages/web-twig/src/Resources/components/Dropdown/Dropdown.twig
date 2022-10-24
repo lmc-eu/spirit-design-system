@@ -1,0 +1,35 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _breakpoint = props.breakpoint -%}
+{%- set _elementType = props.elementType | default('div') -%}
+{%- set _isFullWidth = props.isFullWidth | default(false) | boolprop -%}
+{%- set _placement = props.placement | default('bottom-left') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Dropdown' -%}
+{%- set _fullWidthClassName = _isFullWidth ? _spiritClassPrefix ~ 'Dropdown--fullWidth' : null -%}
+{%- set _topClassName = _spiritClassPrefix ~ 'Dropdown--top' -%}
+{%- set _bottomClassName = _spiritClassPrefix ~ 'Dropdown--bottom' -%}
+{%- set _rightClassName = _spiritClassPrefix ~ 'Dropdown--right' -%}
+{%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
+
+{# Attributes #}
+{%- set _breakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint ~ '' : null -%}
+
+{# Miscellaneous #}
+{%- set _placementClassNames = {
+    'bottom-left': [ _bottomClassName, _leftClassName ],
+    'bottom-right': [ _bottomClassName, _rightClassName ],
+    'top-left': [ _topClassName, _leftClassName ],
+    'top-right': [ _topClassName, _rightClassName ]
+} -%}
+{%- set _classNames = [ _rootClassName, _fullWidthClassName, _class ] | merge(_placementClassNames[_placement]) -%}
+
+<{{ _elementType }}
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ _breakpointAttr }}
+>
+    {%- block content %}{% endblock -%}
+</{{ _elementType }}>
