@@ -24,6 +24,7 @@ interface DropdownOptionsProps {
   offset: number;
   padding: number;
   autoClose: boolean;
+  autoWidth: boolean;
 }
 
 type autoUpdateOptionsType = {
@@ -65,6 +66,10 @@ class Dropdown extends BaseComponent {
       offset: 0,
       padding: 0,
       autoClose: true,
+      autoWidth:
+        this.element.dataset.autowidth ||
+        this.element.dataset.autowidth === '' ||
+        this.element.dataset.autowidth === 'true',
     };
     this.autoUpdateOptions = {
       ancestorScroll: true,
@@ -121,6 +126,8 @@ class Dropdown extends BaseComponent {
 
   updateTargetElement(open: boolean = this.state.open) {
     this.target?.classList.toggle(CLASSNAME_OPEN, open);
+    if (this.options.autoWidth && this.target)
+      Object.assign(this.target.style, { width: `${this.element.offsetWidth}px` });
   }
 
   async alignTargetElement() {
@@ -135,12 +142,13 @@ class Dropdown extends BaseComponent {
     ];
 
     if (this.reference && this.target) {
-      const assignPosition = (x: number, y: number) =>
+      const assignPosition = (x: number, y: number) => {
         this.target &&
-        Object.assign(this.target.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        });
+          Object.assign(this.target.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+          });
+      };
       const positions = computePosition(this.reference, this.target, { placement, middleware });
       await positions.then(({ x, y }) => assignPosition(x, y));
     }

@@ -52,10 +52,11 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 | Attribute        | Default        | Required | Description                                                               |
 | ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
 | `data-target`    | ''             | true     | Target menu element ID                                                    |
-| `data-reference` | `toggle`       | -        | Reference selector, it could be 'toggle', 'parent' or Element ID selector |
-| `data-placement` | `bottom-start` | -        | Placement of content                                                      |
-| `data-offset`    | `0`            | -        | Offset of dropdown content                                                |
-| `data-padding`   | `0`            | -        | Padding of offset content                                                 |
+| `data-reference` | `toggle`       |          | Reference selector, it could be 'toggle', 'parent' or Element ID selector |
+| `data-placement` | `bottom-start` |          | Placement of content                                                      |
+| `data-offset`    | `0`            |          | Offset of dropdown content                                                |
+| `data-padding`   | `0`            |          | Padding of offset content                                                 |
+| `data-autowidth` | ''             |          | Expandable content have same with as toggle                               |
 
 ## JavaScript API
 
