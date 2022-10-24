@@ -55,11 +55,13 @@ Hide button when collapse
 
 ## Wrapper attributes
 
-| Prop name         | Type                          | Default | Required | Description        |
-| ----------------- | ----------------------------- | ------- | -------- | ------------------ |
-| `data-breakpoint` | `'mobile','tablet','desktop'` | -       | no       | Breakpoint feature |
+| Prop name         | Type                   | Default | Required | Description           |
+| ----------------- | ---------------------- | ------- | -------- | --------------------- |
+| `data-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint feature \* |
 
 There can be several triggers, the same rules apply to each.
+
+(\*) The mobile breakpoint rule doesn't exist because it doesn't make sense given the implementation because it always stays hidden.
 
 ## State classes
 
