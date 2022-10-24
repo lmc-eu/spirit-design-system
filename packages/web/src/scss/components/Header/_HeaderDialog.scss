@@ -1,0 +1,222 @@
+// 1. Use a `::before` pseudo-element instead of `::backdrop` to make fading possible.
+// 2. HeaderDialog experimentally supports RTL.
+// 3. Use an `::after` pseudo-element to create a box shadow that is not rounded in corners.
+// 4. While other elements get spacing inside action slots, the nav needs to take up the whole width of the pane.
+// 5. Use an `::after` pseudo-element to create a decorative border.
+
+@use '../../tools/accessibility';
+@use '../../tools/reset';
+@use '../../tools/typography';
+@use 'theme';
+
+.HeaderDialog {
+    @include typography.generate(theme.$dialog-typography);
+
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    border: none;
+    background-color: transparent;
+    visibility: hidden;
+    transform: translateX(#{theme.$dialog-width});
+
+    // 1.
+    &::backdrop {
+        background-color: transparent;
+    }
+
+    // 1.
+    &::before {
+        content: '';
+        position: fixed;
+        inset-block: 0;
+        inset-inline-start: auto;
+        inset-inline-end: theme.$dialog-width;
+        z-index: -2;
+        width: 100vw;
+        background-color: theme.$dialog-backdrop-background-color;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: visibility, transform;
+        transition-duration: theme.$dialog-transition-duration;
+        transition-timing-function: ease-in-out;
+
+        // 1.
+        &::before {
+            transition-property: visibility, opacity;
+            transition-duration: inherit;
+            transition-timing-function: inherit;
+        }
+    }
+}
+
+// 2.
+.HeaderDialog:dir(rtl) {
+    transform: translateX(#{-1 * theme.$dialog-width});
+}
+
+.HeaderDialog__panel {
+    $_shadow-offset: -2rem;
+
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
+    display: grid;
+    width: theme.$dialog-width;
+    height: 100%;
+    color: theme.$dialog-color;
+    background-color: theme.$dialog-background-color;
+
+    // 3.
+    &::after {
+        content: '';
+        position: absolute;
+        top: $_shadow-offset;
+        right: 0;
+        bottom: $_shadow-offset;
+        left: 0;
+        z-index: -1;
+        box-shadow: theme.$dialog-shadow;
+        visibility: hidden;
+        opacity: 0;
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition-property: visibility, opacity;
+            transition-duration: theme.$dialog-transition-duration;
+        }
+    }
+}
+
+.HeaderDialog__content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.HeaderDialog__close {
+    @include reset.button();
+    @include accessibility.min-tap-target(theme.$dialog-close-button-size);
+
+    flex: none;
+    align-self: flex-end;
+    margin-inline-end: theme.$dialog-padding;
+    margin-block-start: theme.$dialog-padding;
+    color: theme.$dialog-close-button-color;
+}
+
+.HeaderDialog__actions {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$dialog-actions-gap;
+    padding: theme.$dialog-actions-padding-y theme.$dialog-actions-padding-x;
+}
+
+.HeaderDialog__actions--primary {
+    flex: none;
+}
+
+.HeaderDialog__actions--secondary {
+    flex: 1;
+}
+
+.HeaderDialog__nav {
+    margin-inline: -1 * theme.$dialog-actions-padding-x; // 4.
+    list-style: none;
+}
+
+.HeaderDialog__navItem {
+    display: flex;
+}
+
+// stylelint-disable-next-line selector-no-qualifying-type -- Safely reset links with the semantics of a button.
+:where(button.HeaderDialog__link) {
+    @include reset.button();
+}
+
+.HeaderDialog__text,
+.HeaderDialog__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: theme.$dialog-nav-item-padding-y theme.$dialog-nav-item-padding-x;
+}
+
+.HeaderDialog__link {
+    position: relative;
+    color: theme.$dialog-nav-link-color;
+    background-color: theme.$dialog-nav-link-background-color;
+    transition-property: color, background-color;
+    transition-duration: theme.$dialog-nav-link-transition-duration;
+
+    // 5.
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: theme.$dialog-nav-link-current-border-thickness;
+        background-color: theme.$dialog-nav-link-current-border-color;
+        transform: scaleX(0);
+        transform-origin: right center;
+    }
+
+    &:hover {
+        color: theme.$dialog-nav-link-color-hover;
+        background-color: theme.$dialog-nav-link-background-color-hover;
+    }
+
+    &:active {
+        color: theme.$dialog-nav-link-color-active;
+        background-color: theme.$dialog-nav-link-background-color-active;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        // 5.
+        &::after {
+            transition: transform ease-out theme.$dialog-nav-link-transition-duration;
+        }
+    }
+}
+
+.HeaderDialog__link--current {
+    color: theme.$dialog-nav-link-color-current;
+    background-color: theme.$dialog-nav-link-background-color-current;
+
+    // 5.
+    &::after {
+        transform: scaleX(1);
+    }
+
+    &:hover,
+    &:active {
+        color: theme.$dialog-nav-link-color-current;
+        background-color: theme.$dialog-nav-link-background-color-current;
+    }
+}
+
+.HeaderDialog[open] {
+    visibility: visible;
+    transform: translateX(0);
+}
+
+// 1., 3.
+.HeaderDialog[open]::before,
+.HeaderDialog[open] > .HeaderDialog__panel::after {
+    visibility: visible;
+    opacity: 1;
+}
