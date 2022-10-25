@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.14.0"></a>
+
+# [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.13.0...@lmc-eu/spirit-web-twig@1.14.0) (2022-10-25)
+
+### Bug Fixes
+
+- **web-twig:** Revert reuse icon viewBox, but set it to correct values [#DS-429](https://github.com/lmc-eu/spirit-design-system/issues/DS-429) ([f0cbb78](https://github.com/lmc-eu/spirit-design-system/commit/f0cbb78))
+
+### Features
+
+- **web-twig:** Collapse twig implementation [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([172c161](https://github.com/lmc-eu/spirit-design-system/commit/172c161))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.13.0"></a>
 
 # [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.12.0...@lmc-eu/spirit-web-twig@1.13.0) (2022-10-13)

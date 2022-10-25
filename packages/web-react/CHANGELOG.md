@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.28.0"></a>
+
+# [0.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.27.0...@lmc-eu/spirit-web-react@0.28.0) (2022-10-25)
+
+### Code Refactoring
+
+- **web-react:** Extended hooks [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([4181504](https://github.com/lmc-eu/spirit-design-system/commit/4181504))
+
+### Features
+
+- **web-react:** Collapse react implementation [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([f450b93](https://github.com/lmc-eu/spirit-design-system/commit/f450b93))
+- **web-react:** Updated types and tests [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([d52ca1a](https://github.com/lmc-eu/spirit-design-system/commit/d52ca1a))
+- **web-react:** Updates by comments [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([c59eb64](https://github.com/lmc-eu/spirit-design-system/commit/c59eb64))
+- **web-react:** Updates by comments and tests [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([a9cf824](https://github.com/lmc-eu/spirit-design-system/commit/a9cf824))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.27.0"></a>
 
 # [0.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.26.0...@lmc-eu/spirit-web-react@0.27.0) (2022-10-13)

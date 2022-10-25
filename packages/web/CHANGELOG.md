@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.31.0"></a>
+
+# [0.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.30.0...@lmc-eu/spirit-web@0.31.0) (2022-10-25)
+
+### Bug Fixes
+
+- **web:** Collapse example and breakpoint updates [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([8ad0b2b](https://github.com/lmc-eu/spirit-design-system/commit/8ad0b2b))
+- **web:** Collapse example utility class [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([b8bf7c4](https://github.com/lmc-eu/spirit-design-system/commit/b8bf7c4))
+- **web:** Collapse minor updates [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([565c032](https://github.com/lmc-eu/spirit-design-system/commit/565c032))
+- **web:** Collapse style linter fix [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([78bd715](https://github.com/lmc-eu/spirit-design-system/commit/78bd715))
+
+### Features
+
+- **web:** Add brand colors to text and background utilities ([95b676f](https://github.com/lmc-eu/spirit-design-system/commit/95b676f))
+- **web:** Collapse web implementation [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([2362be7](https://github.com/lmc-eu/spirit-design-system/commit/2362be7))
+- **web:** Implementation updates and tests [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([3b09991](https://github.com/lmc-eu/spirit-design-system/commit/3b09991))
+- **web:** Updates and fixes from comments [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([4e15ede](https://github.com/lmc-eu/spirit-design-system/commit/4e15ede))
+- **web:** Updates by comments [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([f4b9b01](https://github.com/lmc-eu/spirit-design-system/commit/f4b9b01))
+- **web:** Updates, Fixes, API [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([7ae0399](https://github.com/lmc-eu/spirit-design-system/commit/7ae0399))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.30.0"></a>
 
 # [0.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.29.0...@lmc-eu/spirit-web@0.30.0) (2022-10-14)
