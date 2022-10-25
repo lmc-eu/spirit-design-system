@@ -28,7 +28,11 @@ class SvgExtension extends AbstractExtension
 
     private const ATTR_ID = 'id';
 
+    private const ATTR_HEIGHT = 'height';
+
     private const ATTR_VIEWBOX = 'viewBox';
+
+    private const ATTR_WIDTH = 'width';
 
     /**
      * @var array<string,SimpleXMLElement|false>
@@ -197,11 +201,35 @@ class SvgExtension extends AbstractExtension
 
         if ($attributes !== null && $reuseSvg instanceof SimpleXMLElement) {
             foreach ($attributes as $key => $value) {
-              if ($key === self::ATTR_ID) {
-                $reuseSvg->addChild('use')->addAttribute('href', '#' . $iconId);
-              } elseif ($key !== self::ATTR_VIEWBOX) {
-                $reuseSvg->addAttribute((string) $key, (string) $value);
-              }
+                if ($key === self::ATTR_ID) {
+                    $reuseAttributes = $reuseSvg->attributes();
+                    $viewBoxAttributeName = self::ATTR_VIEWBOX;
+                    $heightAttributeName = self::ATTR_HEIGHT;
+                    $widthAttributeName = self::ATTR_WIDTH;
+                    $regularWidth = isset($regularSvg->attributes()->$widthAttributeName) ? (string) $regularSvg->attributes()->$widthAttributeName : null;
+                    $regularHeight = isset($regularSvg->attributes()->$heightAttributeName) ? (string) $regularSvg->attributes()->$heightAttributeName : null;
+                    $viewBoxAttributeValue = isset($regularSvg->attributes()->$viewBoxAttributeName) ? (string) $regularSvg->attributes()->$viewBoxAttributeName : null;
+
+                    if ($regularWidth && $regularHeight) {
+                        $viewBoxAttributeValue = sprintf(
+                            '0 0 %s %s',
+                            preg_replace('/[^0-9]/', '', $regularWidth),
+                            preg_replace('/[^0-9]/', '', $regularHeight)
+                        );
+                    }
+
+                    if ($viewBoxAttributeValue) {
+                        if (isset($reuseAttributes->$viewBoxAttributeName)) {
+                            $reuseAttributes->$viewBoxAttributeName = $viewBoxAttributeValue;
+                        } else {
+                            $reuseSvg->addAttribute($viewBoxAttributeName, $viewBoxAttributeValue);
+                        }
+                    }
+
+                    $reuseSvg->addChild('use')->addAttribute('href', '#' . $iconId);
+                } elseif ($key !== self::ATTR_VIEWBOX) {
+                    $reuseSvg->addAttribute((string) $key, (string) $value);
+                }
             }
         }
 
