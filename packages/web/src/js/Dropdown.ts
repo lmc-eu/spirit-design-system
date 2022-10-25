@@ -161,17 +161,13 @@ class Dropdown extends BaseComponent {
     }
   }
 
-  createAutoCloseEvent() {
-    const closeHandler = (event: Event) => {
-      const shouldClose = this.target && clickOutsideElement(this.target, event);
+  autoCloseHandler = (event: Event) => {
+    const shouldClose = this.target && clickOutsideElement(this.target, event);
 
-      if (event.target && shouldClose) {
-        this.hide();
-        EventHandler.off(document, 'click', closeHandler);
-      }
-    };
-    EventHandler.on(document, 'click', closeHandler);
-  }
+    if (event.target && shouldClose) {
+      this.hide();
+    }
+  };
 
   show() {
     this.state.open = true;
@@ -181,7 +177,9 @@ class Dropdown extends BaseComponent {
     this.cleanUp();
     setTimeout(() => {
       this.target && EventHandler.trigger(this.target, EVENT_SHOWN);
-      this.getOptions().autoClose && this.createAutoCloseEvent.bind(this).call();
+      if (this.getOptions().autoClose) {
+        EventHandler.on(document, 'click', this.autoCloseHandler);
+      }
     }, 0);
   }
 
@@ -190,6 +188,7 @@ class Dropdown extends BaseComponent {
     this.target && EventHandler.trigger(this.target, EVENT_HIDE);
     this.updateTriggerElement();
     this.updateTargetElement();
+    EventHandler.off(document, 'click', this.autoCloseHandler);
     setTimeout(() => {
       this.target && EventHandler.trigger(this.target, EVENT_HIDDEN);
     }, 0);
