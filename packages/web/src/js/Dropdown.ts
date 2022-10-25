@@ -130,6 +130,14 @@ class Dropdown extends BaseComponent {
       Object.assign(this.target.style, { width: `${this.element.offsetWidth}px` });
   }
 
+  assignTargetPosition(x: number, y: number) {
+    this.target &&
+      Object.assign(this.target.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      });
+  }
+
   async alignTargetElement() {
     const options = this.getOptions();
     const { placement } = options;
@@ -142,15 +150,8 @@ class Dropdown extends BaseComponent {
     ];
 
     if (this.reference && this.target) {
-      const assignPosition = (x: number, y: number) => {
-        this.target &&
-          Object.assign(this.target.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-          });
-      };
-      const positions = computePosition(this.reference, this.target, { placement, middleware });
-      await positions.then(({ x, y }) => assignPosition(x, y));
+      const { x, y } = await computePosition(this.reference, this.target, { placement, middleware });
+      this.assignTargetPosition(x, y);
     }
   }
 
@@ -166,10 +167,10 @@ class Dropdown extends BaseComponent {
 
       if (event.target && shouldClose) {
         this.hide();
-        document.removeEventListener('click', closeHandler);
+        EventHandler.off(document, 'click', closeHandler);
       }
     };
-    document.addEventListener('click', closeHandler);
+    EventHandler.on(document, 'click', closeHandler);
   }
 
   show() {
@@ -180,7 +181,7 @@ class Dropdown extends BaseComponent {
     this.cleanUp();
     setTimeout(() => {
       this.target && EventHandler.trigger(this.target, EVENT_SHOWN);
-      this.getOptions().autoClose && this.createAutoCloseEvent();
+      this.getOptions().autoClose && this.createAutoCloseEvent.bind(this).call();
     }, 0);
   }
 
