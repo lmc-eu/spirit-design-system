@@ -17,7 +17,7 @@ $primary-hover-border-color: $primary-hover-background;
 $primary-active-color: $primary-default-color;
 $primary-active-background: tokens.$action-primary-active;
 $primary-active-border-color: $primary-active-background;
-$primary-disabled-color: $primary-default-color;
+$primary-disabled-color: tokens.$text-primary-inverted-disabled;
 $primary-disabled-background: tokens.$action-primary-disabled;
 $primary-disabled-border-color: $primary-disabled-background;
 
@@ -38,13 +38,13 @@ $primary: (
 
 // Secondary button
 $secondary-default-color: tokens.$text-primary-default;
-$secondary-default-background: transparent;
+$secondary-default-background: tokens.$background-interactive-default;
 $secondary-default-border-color: tokens.$action-secondary-default;
 $secondary-hover-color: $secondary-default-color;
-$secondary-hover-background: $secondary-default-background;
+$secondary-hover-background: tokens.$background-interactive-hover;
 $secondary-hover-border-color: tokens.$action-secondary-hover;
 $secondary-active-color: $secondary-default-color;
-$secondary-active-background: $secondary-default-background;
+$secondary-active-background: tokens.$background-interactive-active;
 $secondary-active-border-color: tokens.$action-secondary-active;
 $secondary-disabled-color: tokens.$text-primary-disabled;
 $secondary-disabled-background: $secondary-default-background;
@@ -75,7 +75,7 @@ $tertiary-hover-border-color: $tertiary-hover-background;
 $tertiary-active-color: $tertiary-default-color;
 $tertiary-active-background: tokens.$action-tertiary-active;
 $tertiary-active-border-color: $tertiary-active-background;
-$tertiary-disabled-color: tokens.$text-primary-inverted-default;
+$tertiary-disabled-color: tokens.$text-primary-inverted-disabled;
 $tertiary-disabled-background: tokens.$action-tertiary-disabled;
 $tertiary-disabled-border-color: $tertiary-disabled-background;
 
@@ -133,7 +133,7 @@ $danger-hover-border-color: $danger-hover-background;
 $danger-active-color: $danger-default-color;
 $danger-active-background: tokens.$emotion-danger-active;
 $danger-active-border-color: $danger-active-background;
-$danger-disabled-color: $danger-default-color;
+$danger-disabled-color: tokens.$text-primary-inverted-disabled;
 $danger-disabled-background: tokens.$emotion-danger-disabled;
 $danger-disabled-border-color: $danger-disabled-background;
 
