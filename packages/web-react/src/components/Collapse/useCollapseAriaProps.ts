@@ -2,9 +2,9 @@ import { useRef, Ref, CSSProperties, MutableRefObject } from 'react';
 import { ClickEvent, CollapseResponsiveType, SpiritCollapseProps, Booleanish } from '../../types';
 import { useResizeHeight } from './useResizeHeight';
 
-const NAME_ARIA_EXPANDED = 'aria-expanded';
-const NAME_ARIA_CONTROLS = 'aria-controls';
-const NAME_DATA_BREAKPOINT = 'data-breakpoint';
+const ATTRIBUTE_ARIA_EXPANDED = 'aria-expanded';
+const ATTRIBUTE_ARIA_CONTROLS = 'aria-controls';
+const ATTRIBUTE_DATA_BREAKPOINT = 'data-breakpoint';
 
 export interface CollapseAriaPropsProps {
   id: string;
@@ -17,7 +17,7 @@ export interface CollapseAriaPropsReturn {
   /** wrapper returned props */
   wrapperProps: {
     style: CSSProperties;
-    [NAME_DATA_BREAKPOINT]: SpiritCollapseProps['collapsibleToBreakpoint'];
+    [ATTRIBUTE_DATA_BREAKPOINT]: SpiritCollapseProps['collapsibleToBreakpoint'];
   };
   /** content returned props */
   contentProps: {
@@ -25,8 +25,8 @@ export interface CollapseAriaPropsReturn {
   };
   /** trigger returned props */
   triggerProps: {
-    [NAME_ARIA_EXPANDED]: Booleanish;
-    [NAME_ARIA_CONTROLS]: string;
+    [ATTRIBUTE_ARIA_EXPANDED]: Booleanish;
+    [ATTRIBUTE_ARIA_CONTROLS]: string;
     onClick: (event: ClickEvent) => void;
   };
 }
@@ -41,14 +41,14 @@ export const useCollapseAriaProps = (props: CollapseAriaPropsProps): CollapseAri
     style: {
       height: isCollapsed ? height : 0,
     },
-    [NAME_DATA_BREAKPOINT]: collapsibleToBreakpoint,
+    [ATTRIBUTE_DATA_BREAKPOINT]: collapsibleToBreakpoint,
   };
   const contentProps = {
     ref: contentElementRef,
   };
   const triggerProps = {
-    [NAME_ARIA_EXPANDED]: isCollapsed,
-    [NAME_ARIA_CONTROLS]: String(id),
+    [ATTRIBUTE_ARIA_EXPANDED]: isCollapsed,
+    [ATTRIBUTE_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,
   };
 
