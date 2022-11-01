@@ -25,14 +25,14 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Check code-style format
+        run: yarn format:check
+
       - name: Lint
         run: yarn lint
 
       - name: Test
         run: yarn test
-
-      - name: Check code-style format
-        run: yarn format:check
 
       - name: Check Types
         run: yarn types
