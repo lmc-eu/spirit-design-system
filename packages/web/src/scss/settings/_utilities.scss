@@ -155,4 +155,10 @@ $utilities: (
             inverted: tokens.$background-inverted,
         ),
     ),
+    'border-radius': (
+        responsive: false,
+        property: border-radius,
+        class: rounded,
+        values: tokens.$radii,
+    ),
 );
