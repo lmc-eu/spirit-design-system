@@ -11,6 +11,33 @@ import { Text } from '../../Text';
 import Dropdown from '../Dropdown';
 import { SpiritDropdownProps, DropdownRenderProps } from '../../../types';
 
+export const dropdownTrigger = ({ isOpen, trigger: { className, ...restOf } }: DropdownRenderProps) => (
+  <button type="button" className={['Button Button--primary Button--medium', className].join(' ')} {...restOf}>
+    Trigger ({isOpen ? 'open' : 'closed'})
+  </button>
+);
+
+export const dropdownContent = (
+  <>
+    <a href="#info" className="d-flex mb-400">
+      <Icon name="info" />
+      <Text UNSAFE_className="ml-300">Information</Text>
+    </a>
+    <a href="#link" className="d-flex mb-400">
+      <Icon name="link" />
+      <Text UNSAFE_className="ml-300">More links</Text>
+    </a>
+    <a href="#profile" className="d-flex mb-400">
+      <Icon name="profile" />
+      <Text UNSAFE_className="ml-300">Profile</Text>
+    </a>
+    <a href="#help" className="d-flex">
+      <Icon name="help" />
+      <Text UNSAFE_className="ml-300">Help</Text>
+    </a>
+  </>
+);
+
 const Story: ComponentStory<typeof Dropdown> = (args: SpiritDropdownProps) => (
   <IconsProvider value={icons}>
     <Dropdown {...args} />
@@ -19,31 +46,8 @@ const Story: ComponentStory<typeof Dropdown> = (args: SpiritDropdownProps) => (
 
 Story.args = {
   id: 'DemoDropdown',
-  renderTrigger: ({ isOpen, trigger: { className, ...restOf } }: DropdownRenderProps) => (
-    <button type="button" className={['Button Button--primary Button--medium', className].join(' ')} {...restOf}>
-      Trigger ({isOpen ? 'open' : 'closed'})
-    </button>
-  ),
-  children: (
-    <>
-      <a href="#info" className="d-flex mb-400">
-        <Icon name="info" />
-        <Text UNSAFE_className="ml-300">Information</Text>
-      </a>
-      <a href="#link" className="d-flex mb-400">
-        <Icon name="link" />
-        <Text UNSAFE_className="ml-300">More links</Text>
-      </a>
-      <a href="#profile" className="d-flex mb-400">
-        <Icon name="profile" />
-        <Text UNSAFE_className="ml-300">Profile</Text>
-      </a>
-      <a href="#help" className="d-flex">
-        <Icon name="help" />
-        <Text UNSAFE_className="ml-300">Help</Text>
-      </a>
-    </>
-  ),
+  renderTrigger: dropdownTrigger,
+  children: dropdownContent,
 };
 
 export default Story;

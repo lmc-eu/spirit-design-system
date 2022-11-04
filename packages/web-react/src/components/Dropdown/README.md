@@ -1,5 +1,7 @@
 # Dropdown
 
+This is the React implementation of the [Dropdown] component.
+
 ## Usage
 
 ```jsx
@@ -14,13 +16,15 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 ## Props
 
-| Prop name          | Type                                         | Default    | Required | Description                                |
-| ------------------ | -------------------------------------------- | ---------- | -------- | ------------------------------------------ |
-| `id`               | `string`                                     | `<random>` | no       | Component id                               |
-| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode` | -          | no       | Properties for trigger render              |
-| `disableAutoClose` | `boolean`                                    | -          | no       | Disable close on click outside of Dropdown |
-| `UNSAFE_className` | `string`                                     | -          | no       | Wrapper custom classname                   |
-| `UNSAFE_style`     | `CSSProperties`                              | -          | no       | Wrapper custom style                       |
+| Prop name          | Type                                         | Default       | Required | Description                                  |
+| ------------------ | -------------------------------------------- | ------------- | -------- | -------------------------------------------- |
+| `id`               | `string`                                     | `<random>`    | no       | Component id                                 |
+| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode` | -             | no       | Properties for trigger render                |
+| `disableAutoClose` | `boolean`                                    | -             | no       | Disable close on click outside of Dropdown   |
+| `isFullWidth`      | `boolean`                                    | `false`       | no       | Whether is component displayed in full width |
+| `placement`        | [`DropdownPlacement`][dropdownplacement]     | `bottom-left` | no       | Alignment of the component                   |
+| `UNSAFE_className` | `string`                                     | -             | no       | Wrapper custom classname                     |
+| `UNSAFE_style`     | `CSSProperties`                              | -             | no       | Wrapper custom style                         |
 
 ## DropdownRenderProps
 
@@ -33,3 +37,6 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `trigger['aria-expanded']` | `Booleanish`                                       | Trigger aria expanded   |
 | `trigger['aria-controls']` | `string`                                           | Trigger aria controls   |
 | `trigger.ref`              | `LegacyRef<HTMLButtonElement & HTMLAnchorElement>` | Trigger reference       |
+
+[dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
+[dropdownplacement]: ../../types/dropdown.ts
