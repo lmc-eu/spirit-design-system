@@ -13,8 +13,8 @@ export interface UseDropdownAriaPropsProps {
 }
 
 export interface UseDropdownAriaPropsReturn {
-  /** trigger returned props */
-  wrapperProps: {
+  /** content returned props */
+  contentProps: {
     id: string;
   };
   /** trigger returned props */
@@ -34,10 +34,10 @@ export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropd
     [NAME_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,
   };
-  const wrapperProps = { id };
+  const contentProps = { id };
 
   return {
-    wrapperProps,
+    contentProps,
     triggerProps,
   };
 };

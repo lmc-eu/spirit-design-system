@@ -7,11 +7,14 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import Dropdown from '../Dropdown';
 
 describe('Dropdown', () => {
-  classNamePrefixProviderTest(Dropdown, 'Dropdown');
+  classNamePrefixProviderTest(Dropdown, 'DropdownWrapper');
 
-  stylePropsTest(Dropdown);
+  stylePropsTest(
+    (props: Record<string, unknown>) => <Dropdown {...props} data-testid="test-dropdown" />,
+    'test-dropdown',
+  );
 
-  restPropsTest(Dropdown, 'div');
+  restPropsTest(Dropdown, '.Dropdown');
 
   it('should render text children', () => {
     const dom = render(
@@ -25,7 +28,7 @@ describe('Dropdown', () => {
         Hello World
       </Dropdown>,
     );
-    const element = dom.container.querySelector('div') as HTMLElement;
+    const element = dom.container.querySelector('.Dropdown') as HTMLElement;
 
     expect(element.textContent).toBe('Hello World');
   });
@@ -42,7 +45,7 @@ describe('Dropdown', () => {
         Hello World
       </Dropdown>,
     );
-    const element = dom.container.querySelector('div') as HTMLElement;
+    const element = dom.container.querySelector('.Dropdown') as HTMLElement;
     const trigger = dom.container.querySelector('button') as HTMLElement;
 
     fireEvent.click(trigger);
