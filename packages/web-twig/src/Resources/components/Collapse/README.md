@@ -4,45 +4,40 @@ This is Twig implementation of the [Collapse] component.
 
 Basic example usage:
 
-```html
-<button type="button" role="button" data-toggle="collapse" data-target="CollapseExample">trigger</button>
-<div id="CollapseExample" class="Collapse">
-  <div class="Collapse__content">content</div>
-</div>
+```twig
+<Button data-toggle="collapse" data-target="CollapseExample">Collapse trigger</Button>
+<Collapse id="CollapseExample">Collapse content</Collapse>
 ```
 
 Usage with link:
 
-```html
-<a role="button" href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample"> trigger </a> ...
+```twig
+<ButtonLink href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample">Collapse trigger</ButtonLink> {# … #}
 ```
 
 Open on load example (by aria-expanded):
 
-```html
-<button ... aria-expanded="true">trigger</button> ...
+```twig
+<Button {# … #} aria-expanded="true">Collapse trigger</Button> {# … #}
 ```
 
 Open on load example (by class):
 
-```html
-<button ... class="is-expanded">trigger</button> ...
+```twig
+<Button {# … #} class="is-expanded">Collapse trigger</Button> {# … #}
 ```
 
 Responsive usage for tablet
 
-```html
-...
-<button ... class="d-tablet-none">trigger</button>
-<div id="CollapseExample" class="Collapse" data-breakpoint="tablet">
-  <div class="Collapse__content">...</div>
-</div>
+```twig
+<Button {# … #} class="d-tablet-none">Collapse trigger</Button>
+<Collapse breakpoint="tablet">Collapse content</Collapse>
 ```
 
 Hide button when collapse
 
-```html
-<button ... data-more>trigger</button> ...
+```twig
+<Button {# … #} data-more>Collapse trigger</Button> {# … #}
 ```
 
 Without lexer:
