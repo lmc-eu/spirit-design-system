@@ -10,6 +10,9 @@ module.exports = {
 
   parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
 
+  // because of ./config/jest/setupTestingLibrary.js
+  // 6:1  error  'beforeAll' is not defined  no-undef
+  // 15:1  error  'afterAll' is not defined   no-undef
   env: {
     jest: true,
   },
@@ -60,8 +63,5 @@ module.exports = {
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
-    // allow UNSAFE React props
-    // @TODO: remove after https://github.com/lmc-eu/code-quality-tools/issues/88
-    camelcase: ['error', { properties: 'never', ignoreDestructuring: false, allow: ['^UNSAFE_'] }],
   },
 };
