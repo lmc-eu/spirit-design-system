@@ -24,6 +24,13 @@
       "groupName": "monorepo:storybook",
       "groupSlug": "monorepo-storybook",
       "matchSourceUrlPrefixes": ["https://github.com/storybookjs/storybook"]
+    },
+    {
+      "groupName": "fixed typescript v4.7.4 in root",
+      "groupSlug": "fixed-typescript-in-root",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "4.7.4",
+      "matchPaths": ["+(package.json)"]
     }
   ]
 }
