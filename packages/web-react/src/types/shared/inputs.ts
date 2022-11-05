@@ -20,6 +20,8 @@ export interface InputBase {
    * The name of the input element, used when submitting an HTML form. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
    */
   name?: string;
+  /** Whether the label should be displayed */
+  isLabelHidden?: boolean;
   /** Whether the input is disabled. */
   isDisabled?: boolean;
   /** Handle action when the input is change. */
@@ -39,3 +41,7 @@ export interface TextInputBase {
   /** Temporary text that occupies the text input when it is empty. */
   placeholder?: string;
 }
+
+export interface InputProps extends InputBase, Validation, ValueBase<string | number> {}
+
+export interface TextInputProps extends InputProps, TextInputBase {}
