@@ -16,7 +16,7 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps): JSX.Element => {
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
-      <ElementType {...otherProps} className={classProps.input} disabled={isDisabled} required={isRequired} />
+      <ElementType {...otherProps} id={id} className={classProps.input} disabled={isDisabled} required={isRequired} />
       {message && <div className={classProps.message}>{message}</div>}
     </div>
   );
