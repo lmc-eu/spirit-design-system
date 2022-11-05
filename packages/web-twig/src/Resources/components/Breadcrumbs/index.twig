@@ -23,7 +23,9 @@
                     </li>
                 {% endif %}
                 <li class="d-none d-tablet-flex">
-                    <Icon name="chevron-right" />
+                    {% if loop.index0 != 0 %}
+                        <Icon name="chevron-right" />
+                    {% endif %}
                     <Link
                         href="{{ item.url }}"
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
