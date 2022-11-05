@@ -27,7 +27,7 @@ const CustomRadioField = (props: SpiritRadioFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useRadioFieldStyleProps(props);
 
   return (
-    <label className={classProps.root}>
+    <label htmlFor={props.id} className={classProps.root}>
       <input {...modifiedProps} className={classProps.input} />
       <span className={styleProps.label}>{props.label}</span>
     </label>

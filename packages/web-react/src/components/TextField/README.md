@@ -5,9 +5,9 @@ and an optional message. It can be of type `text`, `password` or `email`. It cou
 and show if the input is required.
 
 ```jsx
-<TextField id="example" type="text" name="example" isRequired validationState="error" message="validation failed" />
-<TextField id="example" type="password" name="example" isRequired validationState="error" message="validation failed" />
-<TextField id="example" type="email" name="example" isRequired validationState="error" message="validation failed" />
+<TextField id="example-text" type="text" name="example" validationState="error" message="validation failed" isRequired />
+<TextField id="example-password" type="password" name="example" validationState="error" message="validation failed" isRequired />
+<TextField id="example-email" type="email" name="example" validationState="error" message="validation failed" isRequired />
 ```
 
 ## Available props
@@ -21,6 +21,7 @@ and show if the input is required.
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
 | `message`         | string                        | Validation or help message     |
+| `size`            | number                        | Input width                    |
 | `validationState` | `success`, `warning`, `error` | Type of validation state       |
 | `isDisabled`      | boolean                       | Whether is field disabled      |
 | `isRequired`      | boolean                       | Whether is field required      |
@@ -37,7 +38,9 @@ const CustomTextField = (props: SpiritTextFieldProps): JSX.Element => {
   return (
     <div className={classProps.root}>
       <input {...modifiedProps} className={classProps.input} />
-      <label className={styleProps.label}>{props.label}</label>
+      <label htmlFor={props.id} className={styleProps.label}>
+        {props.label}
+      </label>
     </div>
   );
 };
