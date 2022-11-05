@@ -34,7 +34,9 @@ const CustomCheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   return (
     <div className={classProps.root}>
       <input {...modifiedProps} className={classProps.input} />
-      <label className={styleProps.label}>{props.label}</label>
+      <label htmlFor={props.id} className={styleProps.label}>
+        {props.label}
+      </label>
     </div>
   );
 };
