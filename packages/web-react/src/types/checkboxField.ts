@@ -1,8 +1,6 @@
-import { ChildrenProps, StyleProps, Validation, InputBase, ValueBase, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, InputProps, TransferProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
-
-interface InputProps extends InputBase, Validation, ValueBase<string | number> {}
 
 export interface CheckboxFieldProps
   extends ChildrenProps,
@@ -17,7 +15,4 @@ export interface CheckboxFieldProps
   isChecked?: boolean;
 }
 
-export interface SpiritCheckboxFieldProps extends CheckboxFieldProps {
-  /** Whether the label should be displayed */
-  isLabelHidden?: boolean;
-}
+export interface SpiritCheckboxFieldProps extends CheckboxFieldProps {}

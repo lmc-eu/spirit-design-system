@@ -1,19 +1,20 @@
-import { ChildrenProps, StyleProps, TextInputBase, InputBase, Validation, ValueBase, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
-interface InputProps extends InputBase, Validation, ValueBase<string | number>, TextInputBase {}
-
 export type TextFieldType = 'text' | 'password' | 'email';
 
-export interface TextFieldProps extends ChildrenProps, StyleProps, LabelProps, InputProps, MessageProps, TransferProps {
+export interface TextFieldProps
+  extends ChildrenProps,
+    StyleProps,
+    LabelProps,
+    MessageProps,
+    TextInputProps,
+    TransferProps {
   /** The type of text field */
   type?: TextFieldType;
+  /** The input width */
+  size?: number;
 }
 
-export interface SpiritTextFieldProps extends TextFieldProps {
-  /** Whether the label should be displayed */
-  isLabelHidden?: boolean;
-  /** Whether the width should be controlled by container */
-  isFluid?: boolean;
-}
+export interface SpiritTextFieldProps extends TextFieldProps {}
