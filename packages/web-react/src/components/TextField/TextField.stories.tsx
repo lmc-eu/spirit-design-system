@@ -1,83 +1,24 @@
-import React from 'react';
+import { ComponentMeta } from '@storybook/react';
 import TextField from './TextField';
-import { SpiritTextFieldProps } from '../../types';
 
 export default {
   title: 'Components/TextField',
-  argTypes: {
-    id: 'default',
-    placeholder: 'Placeholder',
-    type: {
-      control: {
-        type: 'select',
-        options: ['text', 'password', 'email'],
+  component: TextField,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Enables the user to type in text information.',
       },
     },
-    size: {
-      control: {
-        type: 'select',
-        options: ['2', '3', '4'],
-      },
-    },
-    isDisabled: {
-      control: 'boolean',
-    },
-    isRequired: {
-      control: 'boolean',
-    },
-    isLabelHidden: {
-      control: 'boolean',
-    },
-    isFluid: {
-      control: 'boolean',
-    },
-    validationState: {
-      control: {
-        type: 'select',
-        options: ['success', 'warning', 'error'],
-      },
-    },
-    label: 'Label',
-    message: 'Message',
   },
-};
+} as ComponentMeta<typeof TextField>;
 
-export const Template = (args: SpiritTextFieldProps) => <TextField {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  type: 'text',
-  placeholder: 'Placeholder',
-  label: 'Label',
-  message: 'Message',
-};
-
-export const Required = Template.bind({});
-Required.args = {
-  ...Default.args,
-  isRequired: true,
-};
-
-export const Disabled = Template.bind({});
-Disabled.args = {
-  ...Default.args,
-  isDisabled: true,
-};
-
-export const WithError = Template.bind({});
-WithError.args = {
-  ...Default.args,
-  validationState: 'error',
-};
-
-export const HiddenLabel = Template.bind({});
-HiddenLabel.args = {
-  ...Default.args,
-  isLabelHidden: true,
-};
-
-export const Fluid = Template.bind({});
-Disabled.args = {
-  ...Default.args,
-  isFluid: true,
-};
+export { default as TextField } from './stories/TextField';
+export { default as TextFieldDisabled } from './stories/TextFieldDisabled';
+export { default as TextFieldFluid } from './stories/TextFieldFluid';
+export { default as TextFieldInputWidth } from './stories/TextFieldInputWidth';
+export { default as TextFieldLabelHidden } from './stories/TextFieldLabelHidden';
+export { default as TextFieldLabelRequired } from './stories/TextFieldRequired';
+export { default as TextFieldType } from './stories/TextFieldType';
+export { default as TextFieldValidationState } from './stories/TextFieldValidationState';
+export { default as HTML } from './stories/TextFieldHtml';
