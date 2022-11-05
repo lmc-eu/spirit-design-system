@@ -20,7 +20,7 @@ interface HtmlProps {
 const Html = ({ storyId, groupId }: HtmlProps) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [componentSource, setComponentSource] = useState('');
-  const elementId = `story--${groupId}-${storyId}--${storyId}`;
+  const elementId = `story--${groupId}-${storyId.replace(/-/g, '')}--${storyId}`;
 
   useEffect(() => {
     setInterval(() => {
