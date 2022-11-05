@@ -40,7 +40,7 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
                 </li>
               )}
               <li className="d-none d-tablet-flex">
-                <Icon name="chevron-right" />
+                {index !== 0 && <Icon name="chevron-right" />}
                 <Link
                   href={item.url}
                   color={isLast(index, items?.length) ? 'secondary' : 'primary'}
