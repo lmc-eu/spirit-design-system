@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.29.0"></a>
+
+# [0.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.28.0...@lmc-eu/spirit-web-react@0.29.0) (2022-11-07)
+
+### Chores
+
+- **web-react:** Removed `camelcase` rule from ESlint config ([1e9eb6e](https://github.com/lmc-eu/spirit-design-system/commit/1e9eb6e))
+
+### Dependencies
+
+- Update all non-major dependencies ([48cac89](https://github.com/lmc-eu/spirit-design-system/commit/48cac89))
+
+### Features
+
+- **web-react:** Introduction React Dropdown [#DS-394](https://github.com/lmc-eu/spirit-design-system/issues/DS-394) ([6e4cc9a](https://github.com/lmc-eu/spirit-design-system/commit/6e4cc9a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.28.0"></a>
 
 # [0.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.27.0...@lmc-eu/spirit-web-react@0.28.0) (2022-10-25)

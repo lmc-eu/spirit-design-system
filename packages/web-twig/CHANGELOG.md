@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.15.0"></a>
+
+# [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.14.0...@lmc-eu/spirit-web-twig@1.15.0) (2022-11-07)
+
+### Chores
+
+- **web-twig:** Introduce `.gitattributes` to lower download size ([bc9675b](https://github.com/lmc-eu/spirit-design-system/commit/bc9675b))
+
+### Documentation
+
+- **web-twig:** Documenting Collapse examples in twig syntax ([4e2b17a](https://github.com/lmc-eu/spirit-design-system/commit/4e2b17a))
+
+### Features
+
+- **web-twig:** Introduce Dropdown component (refs [#DS-395](https://github.com/lmc-eu/spirit-design-system/issues/DS-395)) ([79e7993](https://github.com/lmc-eu/spirit-design-system/commit/79e7993))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.14.0"></a>
 
 # [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.13.0...@lmc-eu/spirit-web-twig@1.14.0) (2022-10-25)

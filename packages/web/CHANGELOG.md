@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.32.0"></a>
+
+# [0.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.31.0...@lmc-eu/spirit-web@0.32.0) (2022-11-07)
+
+### Dependencies
+
+- Update all non-major dependencies ([48cac89](https://github.com/lmc-eu/spirit-design-system/commit/48cac89))
+
+### Features
+
+- **web:** Add utility classes for border radius using radii tokens [#JALL-53](https://github.com/lmc-eu/spirit-design-system/issues/JALL-53) ([b362c31](https://github.com/lmc-eu/spirit-design-system/commit/b362c31))
+- **web:** Implementation of Dropdown component [#DS-393](https://github.com/lmc-eu/spirit-design-system/issues/DS-393) ([61c244d](https://github.com/lmc-eu/spirit-design-system/commit/61c244d))
+- **web:** Update Button colors - disabled text and background colors, extend examples [#DS-418](https://github.com/lmc-eu/spirit-design-system/issues/DS-418) ([7ae8495](https://github.com/lmc-eu/spirit-design-system/commit/7ae8495))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.31.0"></a>
 
 # [0.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.30.0...@lmc-eu/spirit-web@0.31.0) (2022-10-25)
