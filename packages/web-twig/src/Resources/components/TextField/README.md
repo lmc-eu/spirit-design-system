@@ -49,7 +49,7 @@ Without lexer:
 | `message`         | `string`                      | `null`    | no       | Validation or help message                                 |
 | `name`            | `string`                      | `null`    | no       | Input name                                                 |
 | `placeholder`     | `string`                      | `null`    | no       | Input placeholder                                          |
-| `size`            | `number`                      | `null`    | no       | Input width                                                |
+| `inputWidth`      | `number`                      | `null`    | no       | Input width                                                |
 | `type`            | `text`, `password`, `email`   | `success` | no       | Input type                                                 |
 | `validationState` | `success`, `warning`, `error` | `null`    | no       | Type of validation state                                   |
 | `value`           | `string`                      | `null`    | no       | Input value                                                |

@@ -18,6 +18,9 @@
 {# Extended API for TextArea #}
 {%- set _rows = props.rows | default(null) -%}
 
+{# Extended API for TextField #}
+{%- set _inputWidth = props.inputWidth | default(null) -%}
+
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ _isMultiline ? 'TextArea' : 'TextField' -%}
 {%- set _inputClassName = _rootClassName ~ '__input' -%}
@@ -37,6 +40,9 @@
 
 {# Extended Attributes for TextArea #}
 {%- set _rowsAttr = _rows ? 'rows="' ~ _rows ~ '"' : null -%}
+
+{# Extended Attributes for TextField #}
+{%- set _inputWidthAttr = _inputWidth ? 'size="' ~ _inputWidth ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _class ] -%}
@@ -68,6 +74,7 @@
             name="{{ _name }}"
             class="{{ _inputClassName }}"
             {{ _disabledAttr | raw }}
+            {{ _inputWidthAttr | raw }}
             {{ _placeholderAttr | raw }}
             {{ _requiredAttr | raw }}
             {{ _valueAttr | raw }}
