@@ -41,6 +41,11 @@ export default defineConfig({
         helpers: resolve(__dirname, 'src/scss/helpers/index.html'),
         icons: resolve(__dirname, 'src/icons/index.html'),
       },
+      output: {
+        entryFileNames: `assets/spirit-web-entry.[hash].js`,
+        chunkFileNames: `assets/spirit-web-chunk.[hash].js`,
+        assetFileNames: `assets/spirit-web-asset.[hash].[ext]`,
+      },
       external: ['floating-ui-example.js'],
     },
   },
