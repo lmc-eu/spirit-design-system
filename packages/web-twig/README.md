@@ -98,23 +98,35 @@ or pure original implementation
 {% endembed %}
 ```
 
+## Testing
+
+- `% cd <your-local-path>/spirit-design-system/packages/web-twig`
+- `% yarn test:unit` for unit tests
+
 # Spirit Components
 
 - [Alert](./src/Resources/components/Alert/README.md)
+- [Breadcrumbs](./src/Resources/components/Breadcrumbs/README.md)
 - [Button](./src/Resources/components/Button/README.md)
 - [ButtonLink](./src/Resources/components/ButtonLink/README.md)
+- [CheckboxField](./src/Resources/components/CheckboxField/README.md)
+- [Collapse](./src/Resources/components/Collapse/README.md)
 - [Container](./src/Resources/components/Container/README.md)
+- [Dropdown](./src/Resources/components/Dropdown/README.md)
 - [Grid](./src/Resources/components/Grid/README.md)
 - [Header](./src/Resources/components/Header/README.md)
 - [Heading](./src/Resources/components/Heading/README.md)
-- [CheckboxField](./src/Resources/components/CheckboxField/README.md)
+- [Icon](./src/Resources/components/Icon/README.md)
 - [Link](./src/Resources/components/Link/README.md)
 - [Modal](./src/Resources/components/Modal/README.md)
+- [Pill](./src/Resources/components/Pill/README.md)
+- [RadioField](./src/Resources/components/RadioField/README.md)
 - [Stack](./src/Resources/components/Stack/README.md)
 - [Tabs](./src/Resources/components/Tabs/README.md)
 - [Tag](./src/Resources/components/Tag/README.md)
 - [Text](./src/Resources/components/Text/README.md)
 - [TextField](./src/Resources/components/TextField/README.md)
+- [TextFieldBase](./src/Resources/components/TextFieldBase/README.md)
 - [Tooltip](./src/Resources/components/Tooltip/README.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).

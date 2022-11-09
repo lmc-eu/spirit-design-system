@@ -69,6 +69,16 @@ are doing so at your own risk.
 
 Please consult additional styling with [web package documentation][web-pkg-rebrand].
 
+## Development
+
+- `% yarn storybook` starts development server with Storybook
+
+## Testing
+
+- `% cd <your-local-path>/spirit-design-system/packages/web-react`
+- `% yarn test` for test package (lint, format, unit testing, types)
+- `% yarn test:unit` for unit tests
+
 ## Examples
 
 👀 See [example] for a live demo.
