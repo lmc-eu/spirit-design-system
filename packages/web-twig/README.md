@@ -101,15 +101,20 @@ or pure original implementation
 # Spirit Components
 
 - [Alert](./src/Resources/components/Alert/README.md)
+- [Breadcrumbs](./src/Resources/components/Breadcrumbs/README.md)
 - [Button](./src/Resources/components/Button/README.md)
 - [ButtonLink](./src/Resources/components/ButtonLink/README.md)
+- [Collapse](./src/Resources/components/Collapse/README.md)
 - [Container](./src/Resources/components/Container/README.md)
+- [Dropdown](./src/Resources/components/Dropdown/README.md)
 - [Grid](./src/Resources/components/Grid/README.md)
 - [Header](./src/Resources/components/Header/README.md)
 - [Heading](./src/Resources/components/Heading/README.md)
 - [CheckboxField](./src/Resources/components/CheckboxField/README.md)
 - [Link](./src/Resources/components/Link/README.md)
 - [Modal](./src/Resources/components/Modal/README.md)
+- [Pill](./src/Resources/components/Pill/README.md)
+- [RadioField](./src/Resources/components/RadioField/README.md)
 - [Stack](./src/Resources/components/Stack/README.md)
 - [Tabs](./src/Resources/components/Tabs/README.md)
 - [Tag](./src/Resources/components/Tag/README.md)
@@ -119,5 +124,9 @@ or pure original implementation
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read guide [here](./docs/contribution.md).
+
+## Development
+
+...
 
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system

@@ -14,6 +14,15 @@ This project is a monorepo managed by [Lerna][lerna-home]. This means that each 
 
 All commits you make should adhere to our commit guidelines. We use [conventional commits][conventional-commits] strategy with slight modification of our own - [@lmc-eu/commitlint-config][commitlint-config]. This is later used during release phase to determine how to bump the packages' version numbers based on commit history. 🚀
 
+Message of commit must contain specific phrases, like `<type>(<package>): <commit-message> #<issue-id>` eg.`Feat(web-react): React Modal implementation #DS-331`
+
+### Run before commit:
+
+1. Prettier `% yarn format:fix`
+2. Types `% yarn types`
+3. Lint `% yarn lint`
+4. Test in each package
+
 ## Code style
 
 This project uses Prettier for code formatting. You can run `make format` to format all your code before you submit your code for review.
@@ -25,10 +34,49 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 ### Steps to create a new package version
 
 1. Merge all appropriate PRs you want to publish into main branch
-1. Run the `make version` command to bump the version number in packages (new version number is determined automatically based on commit history)
-1. Check that the version number is correct and everything looks good
-1. Run manually `git push && git push --tags` to push the changes to remote
-1. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
+2. Run the `make version` command to bump the version number in packages (new version number is determined automatically based on commit history)
+3. Check that the version number is correct and everything looks good
+4. Run manually `git push && git push --tags` to push the changes to remote
+5. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
+
+### Steps for package development
+
+#### Web
+
+1. Component root
+
+   - Scripts
+     - main `packages/web/src/js/<component_name>.ts`
+     - constants `packages/web/src/js/constants.ts`
+   - Styles
+     - main `packages/web/src/scss/components/<component_name>/_<component_name>.scss`
+     - preview `packages/web/src/scss/components/<component_name>/index.html`
+
+2. Documentation `packages/web/src/scss/components/<component_name>/README.md`
+3. Tests `packages/web/src/js/__tests__/<component_name>.test.ts`
+
+#### React
+
+1. Component root
+
+   - structure `packages/web-react/src/components/<component_name>/*`
+   - types `packages/web-react/src/types/<component_name>.ts`
+   - hooks
+     - Styles `packages/web-react/src/components/<component_name>/use<component_name>StyleProps.ts`
+     - Other hooks are optional, depends on use case
+
+2. Documentation `packages/web-react/src/components/<component_name>/README.md`
+3. Tests `packages/web-react/src/components/<component_name>/__tests__/<component_name>.test.tsx`
+4. Import `packages/web-react/src/components/index.ts`
+5. Entry point `packages/web-react/scripts/entryPoints.js`
+6. Storybook `packages/web-react/src/components/<component_name>/<component_name>.stories.tsx`
+
+#### Twig
+
+1. Wrapper for twig component
+2. Component properties
+3. Documentation
+4. Imports
 
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 

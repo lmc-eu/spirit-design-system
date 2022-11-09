@@ -104,6 +104,16 @@ Start local development server with `yarn start` to get started. You will get th
 
 The dev-stack is based on [vite](https://vitejs.dev/).
 
+### Building preview example
+
+- `% cd <your-local-path>/spirit-design-system/packages/web`
+- `% yarn examples:build`
+
+## Testing
+
+- `% cd <your-local-path>/spirit-design-system/packages/web`
+- `% yarn test` or `% yarn test:unit`
+
 ## Examples
 
 👀 See [examples] for a live demo.
