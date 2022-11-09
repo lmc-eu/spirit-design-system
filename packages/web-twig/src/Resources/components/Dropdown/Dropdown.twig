@@ -1,7 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
-{%- set _breakpoint = props.breakpoint -%}
+{%- set _breakpoint = props.breakpoint | default(null)  -%}
 {%- set _elementType = props.elementType | default('div') -%}
 {%- set _isFullWidth = props.isFullWidth | default(false) | boolprop -%}
 {%- set _placement = props.placement | default('bottom-left') -%}
