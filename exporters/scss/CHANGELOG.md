@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.4.0...@lmc-eu/spirit-exporters-scss@1.5.0) (2022-11-09)
+
+### Features
+
+- **exporter-scss:** Sort radii tokens by number in name ([ac391db](https://github.com/lmc-eu/spirit-design-system/commit/ac391db))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.4.0"></a>
 
 # [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.3.0...@lmc-eu/spirit-exporters-scss@1.4.0) (2022-11-07)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.0"></a>
+
+# [1.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.15.0...@lmc-eu/spirit-web-twig@1.16.0) (2022-11-09)
+
+### Bug Fixes
+
+- **web-twig:** Add missing default value for optional breakpoint prop ([f56d4e4](https://github.com/lmc-eu/spirit-design-system/commit/f56d4e4))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.15.0"></a>
 
 # [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.14.0...@lmc-eu/spirit-web-twig@1.15.0) (2022-11-07)
