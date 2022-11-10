@@ -1,4 +1,7 @@
-@forward 'components';
+// ⚠️ Order matters!
+// Layers are ordered by specificity, from the most generic rules to components to high-specificity overrides.
+
 @forward 'foundation';
+@forward 'components';
 @forward 'helpers';
 @forward 'utilities';
