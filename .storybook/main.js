@@ -11,8 +11,17 @@ module.exports = {
     '@storybook/addon-essentials',
     '@whitespace/storybook-addon-html',
   ],
+  features: {
+    storyStoreV7: true,
+  },
   core: {
-    builder: 'webpack5',
+    builder: {
+      name: 'webpack5',
+      options: {
+        lazyCompilation: true,
+        fsCache: true,
+      }
+    },
   },
   webpackFinal: async (config) => {
     config.module.rules.push({
