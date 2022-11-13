@@ -6,7 +6,13 @@ groups of information in tabbable regions.
 ## Tab
 
 ```jsx
-<Tabs defaultSelectedTab={1}>
+const [selectedTabId, setState] = useState(1);
+
+const selectTab = useCallback((tabId) => {
+  setState(tabId);
+}, []);
+
+<Tabs selectedTab={selectedTabId} toggle={selectTab}>
   <TabList>
     <TabItem forTab={1}>Item Selected</TabItem>
     <TabItem forTab={2}>Item</TabItem>
@@ -15,13 +21,19 @@ groups of information in tabbable regions.
     <TabPane tabId={1}>Pane 1</TabPane>
     <TabPane tabId={2}>Pane 2</TabPane>
   </TabContent>
-</Tabs>
+</Tabs>;
 ```
 
 ## Tab with Links
 
 ```jsx
-<Tabs defaultSelectedTab={1}>
+const [selectedTabId, setState] = useState(1);
+
+const selectTab = useCallback((tabId) => {
+  setState(tabId);
+}, []);
+
+<Tabs selectedTab={selectedTabId} toggle={selectTab}>
   <TabList>
     <TabItem forTab={1}>Item Selected</TabItem>
     <TabItem forTab={2}>Item</TabItem>
@@ -32,10 +44,35 @@ groups of information in tabbable regions.
     <TabPane tabId={1}>Pane 1</TabPane>
     <TabPane tabId={2}>Pane 2</TabPane>
   </TabContent>
-</Tabs>
+</Tabs>;
+```
+
+## Uncontrolled Tabs
+
+```jsx
+<UncontrolledTabs defaultSelectedTab={1}>
+  <TabList>
+    <TabItem forTab={1}>Item Selected</TabItem>
+    <TabItem forTab={2}>Item</TabItem>
+  </TabList>
+  <TabContent>
+    <TabPane tabId={1}>Pane 1</TabPane>
+    <TabPane tabId={2}>Pane 2</TabPane>
+  </TabContent>
+</UncontrolledTabs>
 ```
 
 ### Tabs
+
+**Available props**
+
+| Name          | Type               | Description                                  |
+| ------------- | ------------------ | -------------------------------------------- |
+| `selectedTab` | `string`, `number` | Identification of the selected tab           |
+| `toogle`      | `Function`         | Toggle function which accept tab ID as input |
+| `children`    | `any`              | Child component                              |
+
+### UncontrolledTabs
 
 **Available props**
 

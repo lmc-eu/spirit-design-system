@@ -1,9 +1,11 @@
 import { createContext, useContext } from 'react';
 import { TabId } from '../../types';
 
+type TabsToggler = (tabId: TabId) => void;
+
 type TabsContextType = {
   selectedTabId: TabId;
-  selectTab: (tabId: TabId) => void;
+  selectTab: TabsToggler;
 };
 
 const defaultContext: TabsContextType = {
@@ -19,4 +21,4 @@ const useTabContext = (): TabsContextType => useContext(TabsContext);
 
 export default TabsContext;
 export { TabsConsumer, TabsProvider, useTabContext };
-export type { TabsContextType };
+export type { TabsContextType, TabsToggler };
