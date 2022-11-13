@@ -1,6 +1,6 @@
 import React from 'react';
 import Props from '../../../../docs/stories/Props';
-import Tabs from '../Tabs';
+import Tabs from '../UncontrolledTabs';
 
 const Story = () => <Props component={Tabs} />;
 

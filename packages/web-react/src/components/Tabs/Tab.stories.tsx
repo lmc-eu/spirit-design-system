@@ -16,6 +16,7 @@ export default {
 
 export { default as Tabs } from './stories/Tabs';
 export { default as TabLinks } from './stories/TabLinks';
+export { default as UncontrolledTabs } from './stories/UncontrolledTabs';
 export { default as HTML } from './stories/TabHtml';
 export { default as TabsProps } from './stories/TabsProps';
 export { default as TabListProps } from './stories/TabListProps';
