@@ -69,6 +69,20 @@ are doing so at your own risk.
 
 Please consult additional styling with [web package documentation][web-pkg-rebrand].
 
+## Controlled vs Uncontrolled components
+
+- A [Controlled Component](https://reactjs.org/docs/forms.html#controlled-components) is one that takes its current value through props and notifies changes through callbacks like onChange.
+  A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component.
+  You could also call this a "dumb component".
+
+- An [Uncontrolled Component](https://reactjs.org/docs/uncontrolled-components.html) is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it.
+  This is a bit more like traditional HTML.
+
+All components are by default provided as _controlled_ components so you must provide your own controlling or toggle functionality to make them work as you want.
+
+For a better developer experience there is also an _uncontrolled_ variant of the component provided.
+You can use the `Uncontrolled` variant for faster development.
+
 ## Examples
 
 👀 See [example] for a live demo.
