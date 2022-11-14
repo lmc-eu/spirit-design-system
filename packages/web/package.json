@@ -56,7 +56,7 @@
   "devDependencies": {
     "@lmc-eu/browserslist-config": "1.0.3",
     "@lmc-eu/stylelint-config": "5.0.0",
-    "@rollup/plugin-typescript": "8.5.0",
+    "@rollup/plugin-typescript": "9.0.2",
     "@swc/core": "1.3.14",
     "@swc/jest": "0.2.23",
     "@types/jest": "28.1.8",
