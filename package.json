@@ -57,7 +57,7 @@
     "@lmc-eu/eslint-config-react": "1.1.0",
     "@lmc-eu/prettier-config": "1.2.3",
     "@rollup/plugin-babel": "6.0.2",
-    "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "4.0.0",
     "@storybook/addon-actions": "6.5.13",
     "@storybook/addon-docs": "6.5.13",
