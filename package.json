@@ -71,7 +71,7 @@
     "@storybook/theming": "6.5.13",
     "@svgr/webpack": "6.5.1",
     "@whitespace/storybook-addon-html": "5.0.0",
-    "babel-loader": "8.3.0",
+    "babel-loader": "9.1.0",
     "css-loader": "6.7.1",
     "eslint": "8.26.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
