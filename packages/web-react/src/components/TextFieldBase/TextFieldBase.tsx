@@ -6,7 +6,7 @@ import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 
 export const TextFieldBase = (props: SpiritTextFieldBaseProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
-  const { id, isDisabled, isMultiline, isRequired, label, message, ...restProps } = modifiedProps;
+  const { id, isDisabled, isMultiline, isRequired, label, inputWidth, message, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const ElementType: React.ElementType = isMultiline ? 'textarea' : 'input';
@@ -16,7 +16,14 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps): JSX.Element => {
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
-      <ElementType {...otherProps} id={id} className={classProps.input} disabled={isDisabled} required={isRequired} />
+      <ElementType
+        {...otherProps}
+        id={id}
+        className={classProps.input}
+        size={inputWidth}
+        disabled={isDisabled}
+        required={isRequired}
+      />
       {message && <div className={classProps.message}>{message}</div>}
     </div>
   );
