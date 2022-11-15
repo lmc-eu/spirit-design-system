@@ -1,16 +1,8 @@
-import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shared';
-import { LabelProps } from './label';
-import { MessageProps } from './message';
+import { ChildrenProps } from './shared';
+import { TextAreaProps } from './textArea';
+import { TextFieldProps } from './textField';
 
-export interface TextFieldBaseProps
-  extends ChildrenProps,
-    StyleProps,
-    LabelProps,
-    TextInputProps,
-    MessageProps,
-    TransferProps {
-  /** Whether the width should be controlled by container */
-  isFluid?: boolean;
+export interface TextFieldBaseProps extends ChildrenProps, TextFieldProps, TextAreaProps {
   /** Whether the input is TextArea. */
   isMultiline?: boolean;
 }

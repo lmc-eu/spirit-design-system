@@ -14,7 +14,7 @@ export interface TextFieldProps
   /** The type of text field */
   type?: TextFieldType;
   /** The input width */
-  size?: number;
+  inputWidth?: number;
 }
 
 export interface SpiritTextFieldProps extends TextFieldProps {}

@@ -21,7 +21,7 @@ and show if the input is required.
 | `placeholder`     | string                        | Input placeholder              |
 | `value`           | string                        | Input value                    |
 | `message`         | string                        | Validation or help message     |
-| `size`            | number                        | Input width                    |
+| `inputWidth`      | number                        | Input width                    |
 | `validationState` | `success`, `warning`, `error` | Type of validation state       |
 | `isDisabled`      | boolean                       | Whether is field disabled      |
 | `isRequired`      | boolean                       | Whether is field required      |

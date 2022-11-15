@@ -44,4 +44,7 @@ export interface TextInputBase {
 
 export interface InputProps extends InputBase, Validation, ValueBase<string | number> {}
 
-export interface TextInputProps extends InputProps, TextInputBase {}
+export interface TextInputProps extends InputProps, TextInputBase {
+  /** Whether the width should be controlled by container */
+  isFluid?: boolean;
+}
