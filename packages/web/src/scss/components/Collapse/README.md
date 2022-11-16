@@ -65,7 +65,7 @@ There can be several triggers, the same rules apply to each.
 
 ## State classes
 
-The component provides auto toggle classes, like `.is-expanded` and `.is-collapsed` when triggered or initiated
+The component provides auto toggle classes, like `.is-expanded` and `.is-open` when triggered or initiated
 
 ## JavaScript Plugin
 
