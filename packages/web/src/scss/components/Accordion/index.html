@@ -1,0 +1,197 @@
+{{#> layout/plain }}
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Default accordion</h2>
+
+  <div class="mb-400">
+
+    <section
+      id="accordionExample"
+      class="Accordion"
+      data-toggle="accordion"
+    >
+
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample_article_0"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample_article_0_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample_article_0_collapse"
+            aria-controls="accordionExample_article_0_collapse"
+          >
+            <!-- toggle -->
+            Accordion header #0
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSlot">
+            <!-- slot -->
+            <a href="#">Link</a>
+            <span class="Pill Pill--selected">3</span>
+            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+            </svg>
+            <!-- // slot -->
+          </span>
+        </h3>
+        <div
+          id="accordionExample_article_0_collapse"
+          class="Accordion__itemCollapse"
+          data-parent="accordionExample"
+          aria-labelledby="accordionExample_article_0_header"
+        >
+          <div
+            class="Accordion__itemContent Collapse__content"
+          >
+            <!-- content -->
+            Accordion content #0
+            <!-- // content -->
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample_article_1"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample_article_1_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle is-expanded"
+            data-toggle="collapse"
+            data-target="accordionExample_article_1_collapse"
+            aria-expanded="true"
+            aria-controls="accordionExample_article_1_collapse"
+          >
+            <!-- toggle -->
+            Accordion header #1 (open)
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSlot">
+            <!-- slot -->
+            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+            </svg>
+            <!-- // slot -->
+          </span>
+        </h3>
+        <div
+          id="accordionExample_article_1_collapse"
+          class="Accordion__itemCollapse is-collapsed"
+          data-parent="accordionExample"
+          aria-labelledby="accordionExample_article_1_header"
+        >
+          <div
+            class="Accordion__itemContent Collapse__content"
+          >
+            <!-- content -->
+            Accordion content #1
+            <!-- // content -->
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample_article_2"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample_article_2_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample_article_2_collapse"
+            aria-controls="accordionExample_article_2_collapse"
+          >
+            <!-- toggle -->
+            Accordion header #2 with longer title and without slot
+            <!-- // toggle -->
+          </button>
+        </h3>
+        <div
+          id="accordionExample_article_2_collapse"
+          class="Accordion__itemCollapse"
+          data-parent="accordionExample"
+          aria-labelledby="accordionExample_article_2_header"
+        >
+          <div
+            class="Accordion__itemContent Collapse__content"
+          >
+            <!-- content -->
+            Accordion content #2
+            <!-- // content -->
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample_article_3"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample_article_3_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample_article_3_collapse"
+            aria-controls="accordionExample_article_3_collapse"
+          >
+            <!-- toggle -->
+            Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus.
+            Libero sed non nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur,
+            tellus pulvinar libero tempus
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSlot">
+            <!-- slot -->
+            <span class="Pill Pill--selected">3</span>
+            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+            </svg>
+            <!-- // slot -->
+          </span>
+        </h3>
+        <div
+          id="accordionExample_article_3_collapse"
+          class="Accordion__itemCollapse"
+          data-parent="accordionExample"
+          aria-labelledby="accordionExample_article_3_header"
+        >
+          <div
+            class="Accordion__itemContent Collapse__content"
+          >
+            <!-- content -->
+            Accordion content #3
+            <!-- // content -->
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+
+    </section>
+
+  </div>
+
+</section>
+
+{{/layout/plain }}

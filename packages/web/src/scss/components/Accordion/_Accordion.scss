@@ -1,0 +1,97 @@
+@use 'sass:map';
+@use 'theme';
+@use '../Collapse';
+
+// .Accordion {}
+
+.Accordion__item + .Accordion__item {
+    margin-top: theme.$accordion-spacer;
+}
+
+.Accordion__itemHeader {
+    position: relative;
+    display: flex;
+    gap: theme.$accordion-spacer;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: calc(#{theme.$accordion-spacer} * 2) theme.$accordion-spacer;
+    margin-bottom: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: theme.$accordion-spacer;
+        display: block;
+        width: calc(100% - (#{theme.$accordion-spacer} * 2));
+        height: 0;
+        border-bottom: 1px solid theme.$accordion-item-hover-color;
+    }
+
+    &:hover {
+        &::before {
+            border-bottom-color: transparent;
+        }
+    }
+}
+
+.Accordion__itemToggle {
+    display: inline-flex;
+    font-size: theme.$accordion-header-font-size;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:first-of-type::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        display: block;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: theme.$accordion-border-radius;
+    }
+
+    &[aria-expanded='true'] {
+        font-weight: 700;
+    }
+
+    // stylelint-disable selector-max-class -- Because of nested element, why this is problem anyway?
+    &[aria-expanded='true'] + .Accordion__itemSlot .Accordion__itemIcon {
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        &:first-of-type::before {
+            background-color: theme.$accordion-item-hover-color;
+        }
+    }
+
+    &:active {
+        &:first-of-type::before {
+            background-color: theme.$accordion-item-active-color;
+        }
+    }
+
+    // &:focus {}
+}
+
+.Accordion__itemSlot {
+    display: flex;
+    gap: theme.$accordion-spacer;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+}
+
+// stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
+.Accordion__itemCollapse {
+    @extend .Collapse;
+}
+
+// .Accordion__itemContent {}

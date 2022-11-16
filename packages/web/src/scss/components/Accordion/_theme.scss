@@ -1,0 +1,8 @@
+@use '@tokens' as tokens;
+
+$accordion-spacer: tokens.$space-500;
+$accordion-item-hover-color: tokens.$background-interactive-hover;
+$accordion-item-active-color: tokens.$background-interactive-active;
+$accordion-header-font-size: tokens.$space-600;
+$accordion-border-radius: tokens.$radius-100;
+$accordion-divider-color: tokens.$border-primary-default;
