@@ -7,7 +7,7 @@ import {
   ARIA_CONTROLS_ATTRIBUTE,
   NAME_DATA_TARGET,
   CLASSNAME_EXPANDED,
-  CLASSNAME_COLLAPSED,
+  CLASSNAME_OPEN,
 } from './constants';
 
 const NAME = 'collapse';
@@ -27,6 +27,10 @@ interface CollapseState {
   width: number;
 }
 
+const elementHasAriaExpanded = (node: HTMLElement) => {
+  return node.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) && node.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true';
+};
+
 class Collapse extends BaseComponent {
   target: HTMLElement | null | undefined;
   parent: HTMLElement | null | undefined;
@@ -42,9 +46,7 @@ class Collapse extends BaseComponent {
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
     };
     this.state = {
-      collapsed: !!(
-        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) || this.element.classList.contains(CLASSNAME_EXPANDED)
-      ),
+      collapsed: !!(elementHasAriaExpanded(this.element) || this.element.classList.contains(CLASSNAME_EXPANDED)),
       width: window.innerWidth,
     };
 
@@ -108,7 +110,7 @@ class Collapse extends BaseComponent {
 
   updateCollapsibleElementHandler(collapsed: boolean = this.state.collapsed) {
     if (this.target) {
-      this.target.classList.toggle(CLASSNAME_COLLAPSED, collapsed);
+      this.target.classList.toggle(CLASSNAME_OPEN, collapsed);
       this.adjustCollapsibleElementHeightHandler(collapsed);
     }
   }

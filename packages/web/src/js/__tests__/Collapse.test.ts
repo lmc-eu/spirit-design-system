@@ -1,6 +1,6 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import Collapse from '../Collapse';
-import { CLASSNAME_EXPANDED, CLASSNAME_COLLAPSED } from '../constants';
+import { CLASSNAME_EXPANDED, CLASSNAME_OPEN } from '../constants';
 
 describe('Collapse', () => {
   let fixtureEl: Element;
@@ -75,7 +75,7 @@ describe('Collapse', () => {
 
       expect(element.getAttribute('aria-expanded')).toBe('true');
       expect(element).toHaveClass(CLASSNAME_EXPANDED);
-      expect(target).toHaveClass(CLASSNAME_COLLAPSED);
+      expect(target).toHaveClass(CLASSNAME_OPEN);
     });
   });
 
