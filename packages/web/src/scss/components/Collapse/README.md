@@ -21,12 +21,6 @@ Open on load example (by aria-expanded):
 <button ... aria-expanded="true">trigger</button> ...
 ```
 
-Open on load example (by class):
-
-```html
-<button ... class="is-expanded">trigger</button> ...
-```
-
 Responsive usage for tablet
 
 ```html
@@ -50,6 +44,7 @@ Hide button when collapse
 | `data-toggle`   | `string`  | `collapse` | yes      | Iterable selector                   |
 | `data-target`   | `string`  | -          | yes      | Target selector                     |
 | `data-more`     | `boolean` | -          | no       | For hide on collapse as more button |
+| `data-timing`   | `number`  | 250        | no       | Transition timing (ms)              |
 | `aria-expanded` | `string`  | -          | no       | Aria expanded state (auto)          |
 | `aria-controls` | `string`  | -          | no       | Aria controls state (auto)          |
 
@@ -65,7 +60,12 @@ There can be several triggers, the same rules apply to each.
 
 ## State classes
 
-The component provides auto toggle classes, like `.is-expanded` and `.is-open` when triggered or initiated
+The component provides auto toggle class, like `.is-open` when triggered or initiated and also `aria-expanded` attribute.
+
+Classname `.is-transition` is used for transitions, when collapsing or expanding. So `.Collapse.is-transition` for **opening**
+and `.Collapse.is-open.is-transition` for **closing** state. The time for which the class is displayed is based on the
+animation and the same value is set for both CSS and JS. If the duration of the animation will change, it is necessary
+to adjust this value as well by adding the `data-timing` attribute.
 
 ## JavaScript Plugin
 

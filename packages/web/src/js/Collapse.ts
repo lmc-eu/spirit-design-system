@@ -1,13 +1,13 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleAutoloader } from './utils/ComponentFunctions';
+import { enableToggleAutoloader, debounce } from './utils/ComponentFunctions';
 import selectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import {
   ARIA_EXPANDED_ATTRIBUTE,
   ARIA_CONTROLS_ATTRIBUTE,
   NAME_DATA_TARGET,
-  CLASSNAME_EXPANDED,
   CLASSNAME_OPEN,
+  CLASSNAME_TRANSITION,
 } from './constants';
 
 const NAME = 'collapse';
@@ -18,18 +18,21 @@ const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
 
+const TRANSITION_TIMING = 250;
+const DEBOUNCE_TIMER = 225;
+
 interface CollapseMeta {
   id: string | 'unknown';
   hideOnCollapse: boolean;
 }
 interface CollapseState {
-  collapsed: boolean;
+  open: boolean;
   width: number;
+  timing: number;
 }
 
-const elementHasAriaExpanded = (node: HTMLElement) => {
-  return node.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) && node.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true';
-};
+const elementHasAriaExpanded = (node: HTMLElement) =>
+  node.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) && node.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true';
 
 class Collapse extends BaseComponent {
   target: HTMLElement | null | undefined;
@@ -46,8 +49,9 @@ class Collapse extends BaseComponent {
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
     };
     this.state = {
-      collapsed: !!(elementHasAriaExpanded(this.element) || this.element.classList.contains(CLASSNAME_EXPANDED)),
+      open: elementHasAriaExpanded(this.element),
       width: window.innerWidth,
+      timing: this.element?.dataset.timing || TRANSITION_TIMING,
     };
 
     this.init();
@@ -68,7 +72,7 @@ class Collapse extends BaseComponent {
   }
 
   appendNodeToParentHandler() {
-    if (this.state.collapsed) {
+    if (this.state.open) {
       const contentEl = this.target?.children[0];
       const innerHtml = contentEl ? contentEl?.innerHTML : this.target?.innerHTML;
       const originalHtml = this.parent?.innerHTML;
@@ -79,28 +83,27 @@ class Collapse extends BaseComponent {
     }
   }
 
-  adjustCollapsibleElementHeightHandler(collapsed: boolean = this.state.collapsed) {
+  adjustCollapsibleElementHeightHandler(open: boolean = this.state.open) {
     if (this.target) {
       const content = this.target.children[0];
       const bounds = content.getBoundingClientRect();
-      this.target.style.height = collapsed ? `${bounds.height}px` : '0';
-      if (this.target) EventHandler.trigger(this.target, collapsed ? EVENT_SHOWN : EVENT_HIDDEN);
+      this.target.style.height = open ? `${bounds.height}px` : '0';
+      if (this.target) EventHandler.trigger(this.target, open ? EVENT_SHOWN : EVENT_HIDDEN);
     }
   }
 
-  updateTriggerElementHandler(collapsed: boolean = this.state.collapsed) {
+  updateTriggerElementHandler(open: boolean = this.state.open) {
     const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     const updateElement = (element: Element | HTMLElement) => {
       element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.meta.id);
-      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(collapsed));
-      element.classList.toggle(CLASSNAME_EXPANDED, collapsed);
-      if (this.meta.hideOnCollapse && collapsed) {
+      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(open));
+      if (this.meta.hideOnCollapse && open) {
         element.remove();
         this.appendNodeToParentHandler();
         this.onDestroy();
       }
     };
-    this.state.collapsed = collapsed;
+    this.state.open = open;
     if (triggers.length === 1) {
       updateElement(this.element);
     } else {
@@ -108,9 +111,13 @@ class Collapse extends BaseComponent {
     }
   }
 
-  updateCollapsibleElementHandler(collapsed: boolean = this.state.collapsed) {
+  updateCollapsibleElementHandler(collapsed: boolean = this.state.open) {
     if (this.target) {
-      this.target.classList.toggle(CLASSNAME_OPEN, collapsed);
+      this.target?.classList.add(CLASSNAME_TRANSITION);
+      setTimeout(() => {
+        this.target?.classList.remove(CLASSNAME_TRANSITION);
+        this.target?.classList.toggle(CLASSNAME_OPEN, collapsed);
+      }, this.state.timing);
       this.adjustCollapsibleElementHeightHandler(collapsed);
     }
   }
@@ -119,18 +126,18 @@ class Collapse extends BaseComponent {
     EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
     this.updateTriggerElementHandler(true);
     this.updateCollapsibleElementHandler(true);
-    EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN);
+    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN), 0);
   }
 
   hide() {
     EventHandler.trigger(this.target as HTMLElement, EVENT_HIDE);
     this.updateTriggerElementHandler(false);
     this.updateCollapsibleElementHandler(false);
-    EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN);
+    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN), 0);
   }
 
   toggle() {
-    if (this.state.collapsed) {
+    if (this.state.open) {
       this.hide();
     } else {
       this.show();
@@ -144,7 +151,7 @@ class Collapse extends BaseComponent {
     } else {
       triggers.forEach((trigger) => EventHandler.on(trigger as HTMLElement, 'click', () => this.toggle()));
     }
-    EventHandler.on(window, 'resize', () => this.onResize());
+    EventHandler.on(window, 'resize', () => debounce(this.onResize, DEBOUNCE_TIMER));
   }
 
   destroyEvents() {
