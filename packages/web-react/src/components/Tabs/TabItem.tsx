@@ -7,13 +7,14 @@ interface TabItemProps extends ChildrenProps, TransferProps {
   forTab: TabId;
 }
 
-const TabItem = ({ children, forTab }: TabItemProps): JSX.Element => {
+const TabItem = ({ children, forTab, ...restProps }: TabItemProps): JSX.Element => {
   const { selectTab, selectedTabId } = useTabContext();
   const { classProps } = useTabsStyleProps({ forTab, selectedTabId });
 
   return (
     <li className={classProps.item}>
       <button
+        {...restProps}
         type="button"
         className={classProps.link}
         role="tab"
