@@ -6,10 +6,10 @@ groups of information in tabbable regions.
 ## Tab
 
 ```jsx
-const [selectedTabId, setState] = useState(1);
+const [selectedTabId, setSelectedTab] = useState(1);
 
 const selectTab = useCallback((tabId) => {
-  setState(tabId);
+  setSelectedTab(tabId);
 }, []);
 
 <Tabs selectedTab={selectedTabId} toggle={selectTab}>
@@ -27,10 +27,10 @@ const selectTab = useCallback((tabId) => {
 ## Tab with Links
 
 ```jsx
-const [selectedTabId, setState] = useState(1);
+const [selectedTabId, setSelectedTab] = useState(1);
 
 const selectTab = useCallback((tabId) => {
-  setState(tabId);
+  setSelectedTab(tabId);
 }, []);
 
 <Tabs selectedTab={selectedTabId} toggle={selectTab}>
