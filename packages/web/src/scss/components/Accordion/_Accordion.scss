@@ -1,45 +1,38 @@
 @use 'sass:map';
 @use 'theme';
-@use '../Collapse';
-
-// .Accordion {}
-
-.Accordion__item + .Accordion__item {
-    margin-top: theme.$accordion-spacer;
-}
+@use '../../tools/typography';
 
 .Accordion__itemHeader {
     position: relative;
     display: flex;
-    gap: theme.$accordion-spacer;
+    gap: theme.$accordion-header-gap;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
     height: auto;
-    padding: calc(#{theme.$accordion-spacer} * 2) theme.$accordion-spacer;
+    padding: theme.$accordion-header-padding-y theme.$accordion-header-padding-x;
     margin-bottom: 0;
 
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: theme.$accordion-spacer;
+        left: theme.$accordion-header-padding-y;
         display: block;
-        width: calc(100% - (#{theme.$accordion-spacer} * 2));
+        width: calc(100% - (#{theme.$accordion-header-padding-y} * 2));
         height: 0;
-        border-bottom: 1px solid theme.$accordion-item-hover-color;
+        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-item-color-hover;
     }
 
-    &:hover {
-        &::before {
-            border-bottom-color: transparent;
-        }
+    &:hover::before {
+        border-bottom-color: transparent;
     }
 }
 
 .Accordion__itemToggle {
+    @include typography.generate(theme.$accordion-header-typography);
+
     display: inline-flex;
-    font-size: theme.$accordion-header-font-size;
     text-align: left;
     border: none;
     background: none;
@@ -57,7 +50,7 @@
     }
 
     &[aria-expanded='true'] {
-        font-weight: 700;
+        @include typography.generate(theme.$accordion-header-typography-active);
     }
 
     // stylelint-disable selector-max-class -- Because of nested element, why this is problem anyway?
@@ -65,33 +58,32 @@
         transform: rotate(180deg);
     }
 
-    &:hover {
-        &:first-of-type::before {
-            background-color: theme.$accordion-item-hover-color;
-        }
+    &:hover:first-of-type::before {
+        background-color: theme.$accordion-item-color-hover;
     }
 
-    &:active {
-        &:first-of-type::before {
-            background-color: theme.$accordion-item-active-color;
-        }
+    &:active:first-of-type::before {
+        background-color: theme.$accordion-item-color-active;
     }
-
-    // &:focus {}
 }
 
 .Accordion__itemSlot {
     display: flex;
-    gap: theme.$accordion-spacer;
+    gap: theme.$accordion-header-gap;
     align-items: center;
     justify-content: space-between;
     width: auto;
     height: auto;
 }
 
-// stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
-.Accordion__itemCollapse {
-    @extend .Collapse;
+.Accordion__itemSlot a,
+.Accordion__itemSlot button {
+    position: relative;
 }
 
-// .Accordion__itemContent {}
+.Accordion__item .Collapse__content::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: theme.$accordion-content-bottom-offset;
+}

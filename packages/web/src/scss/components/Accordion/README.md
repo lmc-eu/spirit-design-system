@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion is a different wrapper for multiple **Collapse** items, and can only open one item.
+Accordion is a wrapper for multiple **Collapse** blocks and allows you to have one or more items open.
 
 ## Usage
 
@@ -19,7 +19,7 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
         toggle
         <span class="Accordion__itemToggleSlot">
           <span class="Pill Pill--selected">3</span>
-          <svg class="Icon Accordion__itemToggleIcon" width="24" height="24">
+          <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
           </svg>
         </span>
@@ -27,11 +27,11 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
     </h3>
     <div
       id="accordionExample_article_0_collapse"
-      class="Accordion__itemCollapse"
+      class="Collapse"
       data-parent="accordionExample"
       aria-labelledby="accordionExample_article_0_header"
     >
-      <div class="Accordion__itemContent Collapse__content">content</div>
+      <div class="Collapse__content">content</div>
     </div>
   </article>
   ...
@@ -40,7 +40,7 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
 
 ## Attributes
 
-Most of the attributes are inherited from **Collapse** component, see documentation [here](../Collapse/README.md).
+Attributes are inherited from [**Collapse** component](../Collapse/README.md).
 
 ## JavaScript Plugin
 

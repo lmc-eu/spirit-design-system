@@ -12,7 +12,7 @@
     transition-timing-function: theme.$collapse-transition-timing;
 
     &.is-open,
-    &.is-transition {
+    &.is-transitioning {
         visibility: visible;
     }
 

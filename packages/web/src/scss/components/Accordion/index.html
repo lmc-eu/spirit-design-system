@@ -2,12 +2,11 @@
 
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Default accordion</h2>
+  <h2 class="docs-Heading">Default accordion (Always open)</h2>
 
   <div class="mb-400">
 
     <section
-      id="accordionExample"
       class="Accordion"
       data-toggle="accordion"
     >
@@ -26,7 +25,6 @@
             class="Accordion__itemToggle"
             data-toggle="collapse"
             data-target="accordionExample_article_0_collapse"
-            aria-controls="accordionExample_article_0_collapse"
           >
             <!-- toggle -->
             Accordion header #0
@@ -36,7 +34,7 @@
             <!-- slot -->
             <a href="#">Link</a>
             <span class="Pill Pill--selected">3</span>
-            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
             </svg>
             <!-- // slot -->
@@ -44,12 +42,11 @@
         </h3>
         <div
           id="accordionExample_article_0_collapse"
-          class="Accordion__itemCollapse"
-          data-parent="accordionExample"
+          class="Collapse"
           aria-labelledby="accordionExample_article_0_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             <!-- content -->
             Accordion content #0
@@ -69,11 +66,10 @@
         >
           <button
             type="button"
-            class="Accordion__itemToggle is-expanded"
+            class="Accordion__itemToggle"
             data-toggle="collapse"
             data-target="accordionExample_article_1_collapse"
             aria-expanded="true"
-            aria-controls="accordionExample_article_1_collapse"
           >
             <!-- toggle -->
             Accordion header #1 (open)
@@ -81,7 +77,7 @@
           </button>
           <span class="Accordion__itemSlot">
             <!-- slot -->
-            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
             </svg>
             <!-- // slot -->
@@ -89,12 +85,11 @@
         </h3>
         <div
           id="accordionExample_article_1_collapse"
-          class="Accordion__itemCollapse is-collapsed"
-          data-parent="accordionExample"
+          class="Collapse is-open"
           aria-labelledby="accordionExample_article_1_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             <!-- content -->
             Accordion content #1
@@ -117,7 +112,6 @@
             class="Accordion__itemToggle"
             data-toggle="collapse"
             data-target="accordionExample_article_2_collapse"
-            aria-controls="accordionExample_article_2_collapse"
           >
             <!-- toggle -->
             Accordion header #2 with longer title and without slot
@@ -126,12 +120,11 @@
         </h3>
         <div
           id="accordionExample_article_2_collapse"
-          class="Accordion__itemCollapse"
-          data-parent="accordionExample"
+          class="Collapse"
           aria-labelledby="accordionExample_article_2_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             <!-- content -->
             Accordion content #2
@@ -154,7 +147,6 @@
             class="Accordion__itemToggle"
             data-toggle="collapse"
             data-target="accordionExample_article_3_collapse"
-            aria-controls="accordionExample_article_3_collapse"
           >
             <!-- toggle -->
             Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus.
@@ -165,7 +157,7 @@
           <span class="Accordion__itemSlot">
             <!-- slot -->
             <span class="Pill Pill--selected">3</span>
-            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
             </svg>
             <!-- // slot -->
@@ -173,12 +165,11 @@
         </h3>
         <div
           id="accordionExample_article_3_collapse"
-          class="Accordion__itemCollapse"
-          data-parent="accordionExample"
+          class="Collapse"
           aria-labelledby="accordionExample_article_3_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             <!-- content -->
             Accordion content #3
