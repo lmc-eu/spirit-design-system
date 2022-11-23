@@ -44,7 +44,6 @@ Hide button when collapse
 | `data-toggle`   | `string`  | `collapse` | yes      | Iterable selector                   |
 | `data-target`   | `string`  | -          | yes      | Target selector                     |
 | `data-more`     | `boolean` | -          | no       | For hide on collapse as more button |
-| `data-timing`   | `number`  | 250        | no       | Transition timing (ms)              |
 | `aria-expanded` | `string`  | -          | no       | Aria expanded state (auto)          |
 | `aria-controls` | `string`  | -          | no       | Aria controls state (auto)          |
 
