@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion is wrapper for multiple **Collapse** items, and can only open one item.
+Accordion is a different wrapper for multiple **Collapse** items, and can only open one item.
 
 ## Usage
 
@@ -22,10 +22,10 @@ Accordion is wrapper for multiple **Collapse** items, and can only open one item
     </h3>
     <div
       id="accordionExample_article_0_collapse"
-      class="Collapse"
+      class="Accordion__itemCollapse"
       aria-labelledby="accordionExample_article_0_header"
     >
-      <div class="Collapse__content">content</div>
+      <div class="Accordion__itemContent Collapse__content">content</div>
     </div>
   </article>
   ...
@@ -50,11 +50,11 @@ Accordion is wrapper for multiple **Collapse** items, and can only open one item
     </h3>
     <div
       id="accordionExample_article_0_collapse"
-      class="Collapse"
+      class="Accordion__itemCollapse"
       aria-labelledby="accordionExample_article_0_header"
       data-parent="accordionExample"
     >
-      <div class="Collapse__content">content</div>
+      <div class="Accordion__itemContent Collapse__content">content</div>
     </div>
   </article>
   ...
@@ -83,10 +83,10 @@ Accordion is wrapper for multiple **Collapse** items, and can only open one item
     </h3>
     <div
       id="accordionExample_article_0_collapse"
-      class="Collapse"
+      class="Accordion__itemCollapse"
       aria-labelledby="accordionExample_article_0_header"
     >
-      <div class="Collapse__content">content</div>
+      <div class="Accordion__itemContent Collapse__content">content</div>
     </div>
   </article>
   ...

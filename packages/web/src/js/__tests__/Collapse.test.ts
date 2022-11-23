@@ -1,4 +1,5 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import { triggerEvent } from '../../../tests/helpers/event';
 import Collapse from '../Collapse';
 import { CLASSNAME_OPEN, CLASSNAME_TRANSITION } from '../constants';
 
@@ -76,9 +77,7 @@ describe('Collapse', () => {
       expect(element.getAttribute('aria-expanded')).toBe('true');
       expect(target).toHaveClass(CLASSNAME_TRANSITION);
 
-      // Wait until transition ends
-      // eslint-disable-next-line no-promise-executor-return
-      await new Promise((event) => setTimeout(event, 250));
+      triggerEvent(target, 'transitionend');
       expect(target).toHaveClass(CLASSNAME_OPEN);
     });
   });

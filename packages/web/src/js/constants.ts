@@ -5,4 +5,4 @@ export const NAME_DATA_TARGET = 'data-target';
 
 export const CLASSNAME_EXPANDED = 'is-expanded';
 export const CLASSNAME_OPEN = 'is-open';
-export const CLASSNAME_TRANSITION = 'is-transition';
+export const CLASSNAME_TRANSITION = 'is-transitioning';

@@ -18,7 +18,6 @@ const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
 
-const TRANSITION_TIMING = 250;
 const DEBOUNCE_TIMER = 225;
 
 interface CollapseMeta {
@@ -28,11 +27,7 @@ interface CollapseMeta {
 interface CollapseState {
   open: boolean;
   width: number;
-  timing: number;
 }
-
-const elementHasAriaExpanded = (node: HTMLElement) =>
-  node.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) && node.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true';
 
 class Collapse extends BaseComponent {
   target: HTMLElement | null | undefined;
@@ -49,9 +44,10 @@ class Collapse extends BaseComponent {
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
     };
     this.state = {
-      open: elementHasAriaExpanded(this.element),
+      open:
+        this.element.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) &&
+        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true',
       width: window.innerWidth,
-      timing: this.element?.dataset.timing || TRANSITION_TIMING,
     };
 
     this.init();
@@ -114,10 +110,10 @@ class Collapse extends BaseComponent {
   updateCollapsibleElementHandler(collapsed: boolean = this.state.open) {
     if (this.target) {
       this.target?.classList.add(CLASSNAME_TRANSITION);
-      setTimeout(() => {
+      EventHandler.on(this.target, 'transitionend', () => {
         this.target?.classList.remove(CLASSNAME_TRANSITION);
         this.target?.classList.toggle(CLASSNAME_OPEN, collapsed);
-      }, this.state.timing);
+      });
       this.adjustCollapsibleElementHeightHandler(collapsed);
     }
   }
