@@ -12,6 +12,19 @@ Please consult [`Makefile`](./Makefile) for available commands and options to se
 
 In order to maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
 
+## File Structure
+
+This is an example of a typical file structure of a component:
+
+```
+├── src
+    └── Resources
+        └── components
+            └── <ComponentName>
+                ├── <ComponentName>.twig — Twig component
+                └── README.md — documentation of the component
+```
+
 ## Rules in components
 
 1. Name of components must be camelCase with first letter small.
@@ -62,6 +75,11 @@ In order to maintain the uniformity of writing and functioning of components in 
 Components testing is done by snapshots tests. It is required to create snapshot test for each component. Please create a new component fixture file in `tests/components-fixtures/` folder and name it according to the component name.
 
 Run `composer phpunit:update` or `make phpunit-update` to create or update snapshots from fixtures.
+
+### Testing
+
+- `% cd <your-local-path>/spirit-design-system/packages/web-twig`
+- `% yarn test:unit` for unit tests
 
 ## Release new version
 
