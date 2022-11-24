@@ -12,6 +12,11 @@
     height: auto;
     padding: theme.$accordion-header-padding-y theme.$accordion-header-padding-x;
     margin-bottom: 0;
+    border-radius: theme.$accordion-border-radius;
+
+    &:hover {
+        background-color: theme.$accordion-item-color-hover;
+    }
 
     &::before {
         content: '';
@@ -56,10 +61,6 @@
     // stylelint-disable selector-max-class -- Because of nested element, why this is problem anyway?
     &[aria-expanded='true'] + .Accordion__itemSlot .Accordion__itemIcon {
         transform: rotate(180deg);
-    }
-
-    &:hover:first-of-type::before {
-        background-color: theme.$accordion-item-color-hover;
     }
 
     &:active:first-of-type::before {
