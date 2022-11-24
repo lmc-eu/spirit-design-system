@@ -1,6 +1,5 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import { triggerEvent } from '../../../tests/helpers/event';
-import Accordion from '../Accordion';
 import Collapse from '../Collapse';
 import { CLASSNAME_OPEN, CLASSNAME_TRANSITION } from '../constants';
 
@@ -32,19 +31,19 @@ describe('Accordion', () => {
           <span class="Accordion__itemSlot">
             <a href="#">Link</a>
             <span class="Pill Pill--selected">3</span>
-            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
             </svg>
           </span>
         </h3>
         <div
           id="accordionExample1_article_0_collapse"
-          class="Accordion__itemCollapse"
+          class="Collapse"
           data-parent="accordionExample1"
           aria-labelledby="accordionExample1_article_0_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             Accordion content #0
           </div>
@@ -68,19 +67,19 @@ describe('Accordion', () => {
             Accordion header #1 (open)
           </button>
           <span class="Accordion__itemSlot">
-            <svg class="Icon Accordion__itemIcon" width="24" height="24">
+            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
             </svg>
           </span>
         </h3>
         <div
           id="accordionExample1_article_1_collapse"
-          class="Accordion__itemCollapse is-open"
+          class="Collapse is-open"
           data-parent="accordionExample1"
           aria-labelledby="accordionExample1_article_1_header"
         >
           <div
-            class="Accordion__itemContent Collapse__content"
+            class="Collapse__content"
           >
             Accordion content #1
           </div>
@@ -95,17 +94,6 @@ describe('Accordion', () => {
 
   afterEach(() => {
     clearFixture();
-  });
-
-  describe('constructor', () => {
-    it('should take care of element passed as a CSS selector', () => {
-      fixtureEl.innerHTML = testHTMLElement;
-
-      const element = fixtureEl.querySelector('[data-toggle="accordion"]') as HTMLElement;
-      const elementBySelector = new Accordion(element);
-
-      expect(elementBySelector.element).toEqual(element);
-    });
   });
 
   describe('toggle', () => {
@@ -158,7 +146,7 @@ describe('Accordion', () => {
       expect(target).toHaveClass(CLASSNAME_TRANSITION);
 
       triggerEvent(target, 'transitionend');
-      expect(target).toHaveClass('Accordion__itemCollapse');
+      expect(target).toHaveClass('Collapse');
     });
   });
 });

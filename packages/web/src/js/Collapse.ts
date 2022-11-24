@@ -61,6 +61,22 @@ class Collapse extends BaseComponent {
     return `${this.NAME}`;
   }
 
+  siblingsHandler(trigger: HTMLElement) {
+    if (this.target?.dataset.parent) {
+      const parentElement = selectorEngine.findOne(`#${this.target?.dataset.parent}`);
+      const children = parentElement?.children;
+
+      if (!children) return;
+
+      for (const item of children) {
+        const itemTrigger = item.querySelector(`[data-toggle="${NAME}"]`) as HTMLElement;
+        const instance = Collapse.getInstance(itemTrigger);
+
+        if (itemTrigger !== trigger) instance?.hide();
+      }
+    }
+  }
+
   onResize() {
     this.state.width = window.innerWidth;
     this.updateTriggerElementHandler();
@@ -119,6 +135,7 @@ class Collapse extends BaseComponent {
   }
 
   show() {
+    this.siblingsHandler(this.element);
     EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
     this.updateTriggerElementHandler(true);
     this.updateCollapsibleElementHandler(true);

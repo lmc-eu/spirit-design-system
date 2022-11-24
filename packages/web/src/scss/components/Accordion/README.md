@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion is a different wrapper for multiple **Collapse** items, and can only open one item.
+Accordion is a wrapper for multiple **Collapse** items, and can be open one or more at time.
 
 ## Usage
 
@@ -20,12 +20,8 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
       </button>
       <span class="Accordion__itemSlot"> slot </span>
     </h3>
-    <div
-      id="accordionExample_article_0_collapse"
-      class="Accordion__itemCollapse"
-      aria-labelledby="accordionExample_article_0_header"
-    >
-      <div class="Accordion__itemContent Collapse__content">content</div>
+    <div id="accordionExample_article_0_collapse" class="Collapse" aria-labelledby="accordionExample_article_0_header">
+      <div class="Collapse__content">content</div>
     </div>
   </article>
   ...
@@ -50,11 +46,11 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
     </h3>
     <div
       id="accordionExample_article_0_collapse"
-      class="Accordion__itemCollapse"
+      class="Collapse"
       aria-labelledby="accordionExample_article_0_header"
       data-parent="accordionExample"
     >
-      <div class="Accordion__itemContent Collapse__content">content</div>
+      <div class="Collapse__content">content</div>
     </div>
   </article>
   ...
@@ -76,17 +72,15 @@ Accordion is a different wrapper for multiple **Collapse** items, and can only o
         toggle
       </button>
       <span class="Accordion__itemSlot">
-        <svg class="Icon Accordion__itemIcon" width="24" height="24">
-          <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-        </svg>
+        <span class="Accordion__itemIcon">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+          </svg>
+        </span>
       </span>
     </h3>
-    <div
-      id="accordionExample_article_0_collapse"
-      class="Accordion__itemCollapse"
-      aria-labelledby="accordionExample_article_0_header"
-    >
-      <div class="Accordion__itemContent Collapse__content">content</div>
+    <div id="accordionExample_article_0_collapse" class="Collapse" aria-labelledby="accordionExample_article_0_header">
+      <div class="Collapse__content">content</div>
     </div>
   </article>
   ...
