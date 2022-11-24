@@ -16,13 +16,22 @@ This is an example of a typical file structure of a component:
 
 ```
 ├── src
-    ├── components
-        ├── <ComponentName>
-            ├── _<ComponentName>.scss — component's styling
-            ├── _theme.scss — contains references to design tokens and variant maps
-            ├── _tools.scss — Sass functions and mixins, mostly to generate variants
-            ├── index.scss — component's Sass entry point
-            └── README.md — documentation of the component
+    ├── scss
+    │   └── components
+    │       └── <ComponentName>
+    │           ├── _<ComponentName>.scss — component's styling
+    │           ├── _theme.scss — contains references to design tokens and variant maps
+    │           ├── _tools.scss — Sass functions and mixins, mostly to generate variants
+    │           ├── index.scss — component's Sass entry point
+    │           ├── index.html — component's preview page
+    │           └── README.md — documentation of the component
+    └── js
+        ├── <ComponentName>.ts — component's scripts
+        ├── constants.ts — common constants
+        ├── __tests__/<ComponentName>.test.ts — component's test
+        ├── index.esm.ts — component's ESM entry point
+        └── index.umd.ts — component's UMD entry point
+
 ```
 
 ## Structuring Styles
@@ -105,6 +114,17 @@ Now use the reference from the theme in component styles:
   border-radius: theme.$border-radius;
 }
 ```
+
+## Building preview example
+
+- `% cd <your-local-path>/spirit-design-system/packages/web`
+- `% yarn examples:build`
+
+## Testing
+
+- `% cd <your-local-path>/spirit-design-system/packages/web`
+- `% yarn test` for test package (lint, format, unit testing, types)
+- `% yarn test:unit` for unit tests
 
 ## Migrating Your Components to Spirit
 

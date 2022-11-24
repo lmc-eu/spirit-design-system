@@ -98,11 +98,6 @@ or pure original implementation
 {% endembed %}
 ```
 
-## Testing
-
-- `% cd <your-local-path>/spirit-design-system/packages/web-twig`
-- `% yarn test:unit` for unit tests
-
 # Spirit Components
 
 - [Alert](./src/Resources/components/Alert/README.md)
