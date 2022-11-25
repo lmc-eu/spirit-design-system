@@ -1,13 +1,13 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleAutoloader } from './utils/ComponentFunctions';
-import selectorEngine from './dom/SelectorEngine';
+import { enableToggleAutoloader, debounce } from './utils/ComponentFunctions';
+import SelectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import {
   ARIA_EXPANDED_ATTRIBUTE,
   ARIA_CONTROLS_ATTRIBUTE,
   NAME_DATA_TARGET,
-  CLASSNAME_EXPANDED,
-  CLASSNAME_COLLAPSED,
+  CLASSNAME_OPEN,
+  CLASSNAME_TRANSITION,
 } from './constants';
 
 const NAME = 'collapse';
@@ -18,12 +18,15 @@ const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
 
+const DEBOUNCE_TIMER = 225;
+
 interface CollapseMeta {
   id: string | 'unknown';
   hideOnCollapse: boolean;
+  parent: string | undefined;
 }
 interface CollapseState {
-  collapsed: boolean;
+  open: boolean;
   width: number;
 }
 
@@ -35,16 +38,17 @@ class Collapse extends BaseComponent {
 
   constructor(element: HTMLElement) {
     super(element);
-    this.target = this.element.dataset.target ? selectorEngine.findOne(`#${this.element.dataset.target}`) : null;
+    this.target = this.element.dataset.target ? SelectorEngine.findOne(`#${this.element.dataset.target}`) : null;
     this.parent = this.element && this.element.parentElement;
     this.meta = {
       id: this.element.dataset.target,
       hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
+      parent: this.target?.dataset.parent,
     };
     this.state = {
-      collapsed: !!(
-        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) || this.element.classList.contains(CLASSNAME_EXPANDED)
-      ),
+      open:
+        this.element.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) &&
+        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true',
       width: window.innerWidth,
     };
 
@@ -59,6 +63,26 @@ class Collapse extends BaseComponent {
     return `${this.NAME}`;
   }
 
+  siblingsControlHandler(trigger: HTMLElement) {
+    if (this.meta.parent) {
+      const parentElement = SelectorEngine.findOne(this.meta.parent);
+      const children = parentElement?.children;
+
+      if (!children) {
+        return;
+      }
+
+      for (const item of children) {
+        const itemTrigger = SelectorEngine.findOne(`[data-toggle="${NAME}"]`, item);
+        const instance = Collapse.getInstance(itemTrigger);
+
+        if (instance?.state?.open && itemTrigger !== trigger) {
+          instance?.hide();
+        }
+      }
+    }
+  }
+
   onResize() {
     this.state.width = window.innerWidth;
     this.updateTriggerElementHandler();
@@ -66,7 +90,7 @@ class Collapse extends BaseComponent {
   }
 
   appendNodeToParentHandler() {
-    if (this.state.collapsed) {
+    if (this.state.open) {
       const contentEl = this.target?.children[0];
       const innerHtml = contentEl ? contentEl?.innerHTML : this.target?.innerHTML;
       const originalHtml = this.parent?.innerHTML;
@@ -77,28 +101,29 @@ class Collapse extends BaseComponent {
     }
   }
 
-  adjustCollapsibleElementHeightHandler(collapsed: boolean = this.state.collapsed) {
+  adjustCollapsibleElementHeightHandler(open: boolean = this.state.open) {
     if (this.target) {
       const content = this.target.children[0];
       const bounds = content.getBoundingClientRect();
-      this.target.style.height = collapsed ? `${bounds.height}px` : '0';
-      if (this.target) EventHandler.trigger(this.target, collapsed ? EVENT_SHOWN : EVENT_HIDDEN);
+      this.target.style.height = open ? `${bounds.height}px` : '0';
+      if (this.target) {
+        EventHandler.trigger(this.target, open ? EVENT_SHOWN : EVENT_HIDDEN);
+      }
     }
   }
 
-  updateTriggerElementHandler(collapsed: boolean = this.state.collapsed) {
-    const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
+  updateTriggerElementHandler(open: boolean = this.state.open) {
+    const triggers = SelectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     const updateElement = (element: Element | HTMLElement) => {
       element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.meta.id);
-      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(collapsed));
-      element.classList.toggle(CLASSNAME_EXPANDED, collapsed);
-      if (this.meta.hideOnCollapse && collapsed) {
+      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(open));
+      if (this.meta.hideOnCollapse && open) {
         element.remove();
         this.appendNodeToParentHandler();
         this.onDestroy();
       }
     };
-    this.state.collapsed = collapsed;
+    this.state.open = open;
     if (triggers.length === 1) {
       updateElement(this.element);
     } else {
@@ -106,29 +131,34 @@ class Collapse extends BaseComponent {
     }
   }
 
-  updateCollapsibleElementHandler(collapsed: boolean = this.state.collapsed) {
+  updateCollapsibleElementHandler(collapsed: boolean = this.state.open) {
     if (this.target) {
-      this.target.classList.toggle(CLASSNAME_COLLAPSED, collapsed);
+      this.target?.classList.add(CLASSNAME_TRANSITION);
+      EventHandler.on(this.target, 'transitionend', () => {
+        this.target?.classList.remove(CLASSNAME_TRANSITION);
+        this.target?.classList.toggle(CLASSNAME_OPEN, collapsed);
+      });
       this.adjustCollapsibleElementHeightHandler(collapsed);
     }
   }
 
   show() {
+    this.siblingsControlHandler(this.element);
     EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
     this.updateTriggerElementHandler(true);
     this.updateCollapsibleElementHandler(true);
-    EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN);
+    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN), 0);
   }
 
   hide() {
     EventHandler.trigger(this.target as HTMLElement, EVENT_HIDE);
     this.updateTriggerElementHandler(false);
     this.updateCollapsibleElementHandler(false);
-    EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN);
+    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN), 0);
   }
 
   toggle() {
-    if (this.state.collapsed) {
+    if (this.state.open) {
       this.hide();
     } else {
       this.show();
@@ -136,17 +166,17 @@ class Collapse extends BaseComponent {
   }
 
   initEvents() {
-    const triggers = selectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
+    const triggers = SelectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
     if (triggers.length === 1) {
       EventHandler.on(this.element, 'click', () => this.toggle());
     } else {
       triggers.forEach((trigger) => EventHandler.on(trigger as HTMLElement, 'click', () => this.toggle()));
     }
-    EventHandler.on(window, 'resize', () => this.onResize());
+    EventHandler.on(window, 'resize', () => debounce(this.onResize, DEBOUNCE_TIMER));
   }
 
   destroyEvents() {
-    const triggers = selectorEngine.findAll(`[data-target="${this.meta.id}"]`);
+    const triggers = SelectorEngine.findAll(`[data-target="${this.meta.id}"]`);
     if (triggers.length === 1) {
       EventHandler.off(this.element, 'click', () => this.toggle());
     } else {
