@@ -23,6 +23,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `disableAutoClose` | `boolean`                                    | -             | no       | Disable close on click outside of Dropdown   |
 | `isFullWidth`      | `boolean`                                    | `false`       | no       | Whether is component displayed in full width |
 | `placement`        | [`DropdownPlacement`][dropdownplacement]     | `bottom-left` | no       | Alignment of the component                   |
+| `breakpoint`       | [`DropdownBreakpoint`][dropdownbreakpoint]   | -             | no       | Breakpoint to switch from the full-width to the auto-width mode                   |
 | `UNSAFE_className` | `string`                                     | -             | no       | Wrapper custom classname                     |
 | `UNSAFE_style`     | `CSSProperties`                              | -             | no       | Wrapper custom style                         |
 

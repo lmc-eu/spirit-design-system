@@ -13,14 +13,21 @@ const defaultProps = {
 };
 
 const Dropdown = (props: SpiritDropdownProps) => {
-  const { id = Math.random().toString(36).slice(2, 7), children, renderTrigger, disableAutoClose, ...rest } = props;
+  const {
+    id = Math.random().toString(36).slice(2, 7),
+    children,
+    renderTrigger,
+    enableAutoClose,
+    breakpoint,
+    ...rest
+  } = props;
 
   const dropdownRef = useRef();
   const triggerRef = useRef();
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, disableAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler });
+  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint });
 
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({

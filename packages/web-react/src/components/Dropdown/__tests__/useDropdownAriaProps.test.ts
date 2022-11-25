@@ -4,6 +4,7 @@ import { useDropdownAriaProps } from '../useDropdownAriaProps';
 describe('useDropdownAriaProps', () => {
   it('should return defaults', () => {
     const props = {
+      breakpoint: undefined,
       id: 'test-dropdown-id',
       isOpen: true,
       toggleHandler: () => null,

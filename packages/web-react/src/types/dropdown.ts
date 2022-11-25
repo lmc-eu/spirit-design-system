@@ -8,8 +8,17 @@ export const DropdownPlacements = {
   TOP_RIGHT: 'top-right',
 } as const;
 
+export const DropdownBreakpoints = {
+  MOBILE: 'mobile',
+  TABLET: 'tablet',
+  DESKTOP: 'desktop',
+} as const;
+
 export type DropdownPlacementKeys = keyof typeof DropdownPlacements;
 export type DropdownPlacement = typeof DropdownPlacements[DropdownPlacementKeys];
+
+export type DropdownBreakpointKeys = keyof typeof DropdownBreakpoints;
+export type DropdownBreakpoint = typeof DropdownBreakpoints[DropdownBreakpointKeys];
 
 export type DropdownTriggerProps = {
   onClick: (event: ClickEvent) => void;
@@ -33,4 +42,5 @@ export interface SpiritDropdownProps extends DropdownProps {
   disableAutoClose?: boolean;
   isFullWidth: boolean;
   placement: DropdownPlacement;
+  breakpoint?: DropdownBreakpoint;
 }
