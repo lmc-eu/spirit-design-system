@@ -7,8 +7,8 @@ export interface UseDropdownProps {
   dropdownRef: MutableRefObject<HTMLElement | undefined>;
   /** trigger element reference */
   triggerRef: MutableRefObject<HTMLElement | undefined>;
-  /** disabled click outside event */
-  disableAutoClose?: boolean;
+  /** enabled click outside event */
+  enableAutoClose?: boolean;
 }
 
 export interface UseDropdownReturn {
@@ -18,11 +18,7 @@ export interface UseDropdownReturn {
   isOpen: boolean;
 }
 
-export const useDropdown = ({
-  dropdownRef,
-  triggerRef,
-  disableAutoClose = false,
-}: UseDropdownProps): UseDropdownReturn => {
+export const useDropdown = ({ dropdownRef, triggerRef, enableAutoClose }: UseDropdownProps): UseDropdownReturn => {
   const [open, setOpen] = useState<boolean>(false);
 
   const collapseHandler = () => setOpen(!open);
@@ -33,7 +29,9 @@ export const useDropdown = ({
   };
 
   const closeHandler = (event: Event) => {
-    if (disableAutoClose) return;
+    if (!enableAutoClose) {
+      return;
+    }
 
     if (!triggerRef?.current?.contains(event?.target as Node)) {
       setOpen(false);

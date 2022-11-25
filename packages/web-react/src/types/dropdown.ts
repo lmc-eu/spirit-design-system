@@ -39,7 +39,7 @@ export interface DropdownProps extends ChildrenProps, StyleProps {
 }
 
 export interface SpiritDropdownProps extends DropdownProps {
-  disableAutoClose?: boolean;
+  enableAutoClose?: boolean;
   isFullWidth: boolean;
   placement: DropdownPlacement;
   breakpoint?: DropdownBreakpoint;
