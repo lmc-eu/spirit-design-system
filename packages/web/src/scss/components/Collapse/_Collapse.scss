@@ -6,9 +6,19 @@
     position: relative;
     height: 0;
     overflow: hidden;
+    visibility: hidden;
     transition-property: height;
     transition-duration: theme.$collapse-transition-duration;
     transition-timing-function: theme.$collapse-transition-timing;
+
+    &.is-open,
+    &.is-transitioning {
+        visibility: visible;
+    }
+
+    &.is-open:not(.is-transitioning) {
+        overflow: visible;
+    }
 
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         @if $breakpoint-value > 0 {
@@ -17,6 +27,7 @@
                     /* stylelint-disable declaration-no-important -- This Important rule is important here because it overrides inline styles applied by JavaScript */
                     height: auto !important;
                     /* stylelint-enable declaration-no-important */
+                    visibility: visible;
                 }
             }
         }

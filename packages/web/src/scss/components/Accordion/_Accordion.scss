@@ -1,0 +1,98 @@
+@use 'sass:map';
+@use 'theme';
+@use '../../tools/typography';
+@use '../../tools/reset';
+
+.Accordion__itemHeader {
+    position: relative;
+    display: flex;
+    gap: theme.$accordion-header-gap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: theme.$accordion-header-padding-y theme.$accordion-header-padding-x;
+    margin-bottom: 0;
+    border-radius: theme.$accordion-border-radius;
+    background-color: theme.$accordion-item-background-color-default;
+
+    &:hover {
+        background-color: theme.$accordion-item-background-color-hover;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: theme.$accordion-header-padding-x;
+        left: theme.$accordion-header-padding-x;
+        display: block;
+        height: 0;
+        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
+    }
+
+    &:hover::before {
+        border-bottom-color: transparent;
+    }
+}
+
+.Accordion__itemToggle {
+    @include reset.button();
+    @include typography.generate(theme.$accordion-header-typography);
+
+    flex: initial;
+    text-align: left;
+
+    &:first-of-type::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        display: block;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: theme.$accordion-border-radius;
+    }
+
+    &[aria-expanded='true'] {
+        @include typography.generate(theme.$accordion-header-typography-active);
+    }
+
+    // stylelint-disable selector-max-class -- We have to control the state of the Icon
+    &[aria-expanded='true'] + .Accordion__itemSide .Accordion__itemIcon {
+        transform: rotate(180deg);
+    }
+    // stylelint-enable
+
+    &:active:first-of-type::before {
+        background-color: theme.$accordion-item-background-color-active;
+    }
+}
+
+.Accordion__itemSide,
+.Accordion__itemSlot {
+    display: flex;
+    gap: theme.$accordion-header-gap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Accordion__itemSlot a,
+.Accordion__itemSlot button {
+    position: relative;
+}
+
+.Accordion__content {
+    position: relative;
+    padding-bottom: theme.$accordion-content-bottom-offset;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: theme.$accordion-header-padding-x;
+        left: theme.$accordion-header-padding-x;
+        display: block;
+        height: 1px;
+        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
+    }
+}

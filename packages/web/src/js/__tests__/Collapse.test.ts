@@ -1,6 +1,7 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import EventHandler from '../dom/EventHandler';
 import Collapse from '../Collapse';
-import { CLASSNAME_EXPANDED, CLASSNAME_COLLAPSED } from '../constants';
+import { CLASSNAME_OPEN, CLASSNAME_TRANSITION } from '../constants';
 
 describe('Collapse', () => {
   let fixtureEl: Element;
@@ -74,8 +75,10 @@ describe('Collapse', () => {
       await collapse.show();
 
       expect(element.getAttribute('aria-expanded')).toBe('true');
-      expect(element).toHaveClass(CLASSNAME_EXPANDED);
-      expect(target).toHaveClass(CLASSNAME_COLLAPSED);
+      expect(target).toHaveClass(CLASSNAME_TRANSITION);
+
+      EventHandler.trigger(target, 'transitionend');
+      expect(target).toHaveClass(CLASSNAME_OPEN);
     });
   });
 
@@ -96,6 +99,114 @@ describe('Collapse', () => {
       await collapse.hide();
 
       expect(element.getAttribute('aria-expanded')).toBe('false');
+    });
+  });
+
+  describe('accordion', () => {
+    it('should toggle a collapse with parent', async () => {
+      fixtureEl.innerHTML = `
+        <section
+          id="accordionExample1"
+          class="Accordion"
+          data-toggle="accordion"
+        >
+          <article
+            id="accordionExample1_article_0"
+            class="Accordion__item"
+          >
+            <h3
+              id="accordionExample1_article_0_header"
+              class="Accordion__itemHeader"
+            >
+              <button
+                type="button"
+                class="Accordion__itemToggle"
+                data-toggle="collapse"
+                data-target="accordionExample1_article_0_collapse"
+              >
+                header
+              </button>
+              <span class="Accordion__itemSide">
+                <span class="Accordion__itemSlot">
+                  slot
+                </span>
+                <span class="Accordion__itemIcon">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+                  </svg>
+                </span>
+              </span>
+            </h3>
+            <div
+              id="accordionExample1_article_0_collapse"
+              class="Collapse"
+              data-parent="#accordionExample1"
+              aria-labelledby="accordionExample1_article_0_header"
+            >
+              <div class="Collapse__content">
+                <div class="Accordion__content">content</div>
+              </div>
+            </div>
+          </article>
+          <article
+            id="accordionExample1_article_1"
+            class="Accordion__item"
+          >
+            <h3
+              id="accordionExample1_article_1_header"
+              class="Accordion__itemHeader"
+            >
+              <button
+                type="button"
+                class="Accordion__itemToggle"
+                data-toggle="collapse"
+                data-target="accordionExample1_article_1_collapse"
+                aria-expanded="true"
+              >
+                header
+              </button>
+              <span class="Accordion__itemSide">
+                <span class="Accordion__itemSlot">
+                  slot
+                </span>
+                <span class="Accordion__itemIcon">
+                  <svg width="24" height="24" aria-hidden="true">
+                    <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+                  </svg>
+                </span>
+              </span>
+            </h3>
+            <div
+              id="accordionExample1_article_1_collapse"
+              class="Collapse is-open"
+              data-parent="#accordionExample1"
+              aria-labelledby="accordionExample1_article_1_header"
+            >
+              <div class="Collapse__content">
+                <div class="Accordion__content">content</div>
+              </div>
+            </div>
+          </article>
+        </section>
+      `;
+
+      const element0 = fixtureEl.querySelector('[data-target="accordionExample1_article_0_collapse"]') as HTMLElement;
+      const target0 = fixtureEl.querySelector('#accordionExample1_article_0_collapse') as HTMLElement;
+      const target1 = fixtureEl.querySelector('#accordionExample1_article_1_collapse') as HTMLElement;
+      const collapse0 = new Collapse(element0);
+
+      expect(target0).toHaveClass('Collapse');
+      expect(target1).toHaveClass(CLASSNAME_OPEN);
+
+      await collapse0.show();
+
+      expect(target0).toHaveClass(CLASSNAME_TRANSITION);
+
+      EventHandler.trigger(target0, 'transitionend');
+      EventHandler.trigger(target1, 'transitionend');
+
+      expect(target0).toHaveClass(CLASSNAME_OPEN);
+      expect(target1).toHaveClass('Collapse');
     });
   });
 });
