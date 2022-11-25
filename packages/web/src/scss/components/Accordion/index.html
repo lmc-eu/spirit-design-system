@@ -30,14 +30,18 @@
             Accordion header #0
             <!-- // toggle -->
           </button>
-          <span class="Accordion__itemSlot">
-            <!-- slot -->
-            <a href="#">Link</a>
-            <span class="Pill Pill--selected">3</span>
-            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-            </svg>
-            <!-- // slot -->
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <a href="#">Link</a>
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
           </span>
         </h3>
         <div
@@ -48,9 +52,13 @@
           <div
             class="Collapse__content"
           >
-            <!-- content -->
-            Accordion content #0
-            <!-- // content -->
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #0
+              <!-- // content -->
+            </div>
           </div>
         </div>
       </article>
@@ -75,12 +83,17 @@
             Accordion header #1 (open)
             <!-- // toggle -->
           </button>
-          <span class="Accordion__itemSlot">
-            <!-- slot -->
-            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-            </svg>
-            <!-- // slot -->
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
           </span>
         </h3>
         <div
@@ -91,9 +104,13 @@
           <div
             class="Collapse__content"
           >
-            <!-- content -->
-            Accordion content #1
-            <!-- // content -->
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #1
+              <!-- // content -->
+            </div>
           </div>
         </div>
       </article>
@@ -117,6 +134,13 @@
             Accordion header #2 with longer title and without slot
             <!-- // toggle -->
           </button>
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
+          </span>
         </h3>
         <div
           id="accordionExample_article_2_collapse"
@@ -126,9 +150,13 @@
           <div
             class="Collapse__content"
           >
-            <!-- content -->
-            Accordion content #2
-            <!-- // content -->
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #2
+              <!-- // content -->
+            </div>
           </div>
         </div>
       </article>
@@ -154,13 +182,17 @@
             tellus pulvinar libero tempus
             <!-- // toggle -->
           </button>
-          <span class="Accordion__itemSlot">
-            <!-- slot -->
-            <span class="Pill Pill--selected">3</span>
-            <svg class="Accordion__itemIcon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-            </svg>
-            <!-- // slot -->
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
           </span>
         </h3>
         <div
@@ -171,9 +203,239 @@
           <div
             class="Collapse__content"
           >
-            <!-- content -->
-            Accordion content #3
-            <!-- // content -->
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #3
+              <!-- // content -->
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+
+    </section>
+
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Accordion with one item opened</h2>
+
+  <div class="mb-400">
+
+    <section
+      id="accordionExample1"
+      class="Accordion"
+      data-toggle="accordion"
+    >
+
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample1_article_0"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample1_article_0_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample1_article_0_collapse"
+          >
+            <!-- toggle -->
+            Accordion header #0
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <a href="#">Link</a>
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
+          </span>
+        </h3>
+        <div
+          id="accordionExample1_article_0_collapse"
+          class="Collapse"
+          data-parent="accordionExample1"
+          aria-labelledby="accordionExample1_article_0_header"
+        >
+          <div
+            class="Collapse__content"
+          >
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #0
+              <!-- // content -->
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample1_article_1"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample1_article_1_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample1_article_1_collapse"
+            aria-expanded="true"
+          >
+            <!-- toggle -->
+            Accordion header #1 (open)
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
+          </span>
+        </h3>
+        <div
+          id="accordionExample1_article_1_collapse"
+          class="Collapse is-open"
+          data-parent="accordionExample1"
+          aria-labelledby="accordionExample1_article_1_header"
+        >
+          <div
+            class="Collapse__content"
+          >
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #1
+              <!-- // content -->
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample1_article_2"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample1_article_2_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample1_article_2_collapse"
+          >
+            <!-- toggle -->
+            Accordion header #2 with longer title and without slot
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
+          </span>
+        </h3>
+        <div
+          id="accordionExample1_article_2_collapse"
+          class="Collapse"
+          data-parent="accordionExample1"
+          aria-labelledby="accordionExample1_article_2_header"
+        >
+          <div
+            class="Collapse__content"
+          >
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #2
+              <!-- // content -->
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- // Accordion Item -->
+      <!-- Accordion Item -->
+      <article
+        id="accordionExample1_article_3"
+        class="Accordion__item"
+      >
+        <h3
+          id="accordionExample1_article_3_header"
+          class="Accordion__itemHeader"
+        >
+          <button
+            type="button"
+            class="Accordion__itemToggle"
+            data-toggle="collapse"
+            data-target="accordionExample1_article_3_collapse"
+          >
+            <!-- toggle -->
+            Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus.
+            Libero sed non nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur,
+            tellus pulvinar libero tempus
+            <!-- // toggle -->
+          </button>
+          <span class="Accordion__itemSide">
+            <span class="Accordion__itemSlot">
+              <!-- slot -->
+              <span class="Pill Pill--selected">3</span>
+              <!-- // slot -->
+            </span>
+            <span class="Accordion__itemIcon">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+              </svg>
+            </span>
+          </span>
+        </h3>
+        <div
+          id="accordionExample1_article_3_collapse"
+          class="Collapse"
+          data-parent="accordionExample1"
+          aria-labelledby="accordionExample1_article_3_header"
+        >
+          <div
+            class="Collapse__content"
+          >
+            <div
+              class="Accordion__content"
+            >
+              <!-- content -->
+              Accordion content #3
+              <!-- // content -->
+            </div>
           </div>
         </div>
       </article>

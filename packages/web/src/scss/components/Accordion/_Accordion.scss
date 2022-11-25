@@ -1,6 +1,11 @@
 @use 'sass:map';
 @use 'theme';
 @use '../../tools/typography';
+@use '../../tools/reset';
+
+.Accordion__item + .Accordion__item {
+    margin-top: -1px;
+}
 
 .Accordion__itemHeader {
     position: relative;
@@ -9,24 +14,25 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    height: auto;
     padding: theme.$accordion-header-padding-y theme.$accordion-header-padding-x;
     margin-bottom: 0;
     border-radius: theme.$accordion-border-radius;
+    background-color: theme.$accordion-item-background-color-default;
 
     &:hover {
-        background-color: theme.$accordion-item-color-hover;
+        background-color: theme.$accordion-item-background-color-hover;
     }
 
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        left: theme.$accordion-header-padding-y;
+        left: theme.$accordion-header-padding-x;
         display: block;
-        width: calc(100% - (#{theme.$accordion-header-padding-y} * 2));
+        width: calc(100% - (#{theme.$accordion-header-padding-x} * 2));
         height: 0;
-        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-item-color-hover;
+        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style
+            theme.$accordion-item-background-color-hover;
     }
 
     &:hover::before {
@@ -35,13 +41,11 @@
 }
 
 .Accordion__itemToggle {
+    @include reset.button();
     @include typography.generate(theme.$accordion-header-typography);
 
-    display: inline-flex;
     text-align: left;
-    border: none;
-    background: none;
-    cursor: pointer;
+    flex: initial;
 
     &:first-of-type::before {
         content: '';
@@ -58,23 +62,23 @@
         @include typography.generate(theme.$accordion-header-typography-active);
     }
 
-    // stylelint-disable selector-max-class -- Because of nested element, why this is problem anyway?
-    &[aria-expanded='true'] + .Accordion__itemSlot .Accordion__itemIcon {
+    // stylelint-disable selector-max-class -- We have to control the state of the Icon
+    &[aria-expanded='true'] + .Accordion__itemSide .Accordion__itemIcon {
         transform: rotate(180deg);
     }
+    // stylelint-enable
 
     &:active:first-of-type::before {
-        background-color: theme.$accordion-item-color-active;
+        background-color: theme.$accordion-item-background-color-active;
     }
 }
 
+.Accordion__itemSide,
 .Accordion__itemSlot {
     display: flex;
     gap: theme.$accordion-header-gap;
     align-items: center;
     justify-content: space-between;
-    width: auto;
-    height: auto;
 }
 
 .Accordion__itemSlot a,
@@ -82,9 +86,19 @@
     position: relative;
 }
 
-.Accordion__item .Collapse__content::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: theme.$accordion-content-bottom-offset;
+.Accordion__content {
+    position: relative;
+    margin-bottom: theme.$accordion-content-bottom-offset;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: theme.$accordion-header-padding-x;
+        display: block;
+        width: calc(100% - (#{theme.$accordion-header-padding-x} * 2));
+        height: 0;
+        border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style
+            theme.$accordion-item-background-color-hover;
+    }
 }
