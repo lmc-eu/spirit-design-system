@@ -72,7 +72,7 @@
   "scripts": {
     "prebuild": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ ",
     "build": "yarn build:umd && yarn build:es2015 && yarn build:esNext",
-    "build:cjs": "yarn rollup",
+    "build:cjs": "yarn rollup --bundleConfigAsCjs",
     "build:umd": "yarn webpack:dev && yarn webpack:prod && yarn webpack:browser",
     "build:es2015": "tsc --module es2015 --outDir dist --project ./config/tsconfig.prod.json",
     "build:esNext": "echo tsc --module esNext --outDir dist/_esNext --project ./config/tsconfig.prod.json",
