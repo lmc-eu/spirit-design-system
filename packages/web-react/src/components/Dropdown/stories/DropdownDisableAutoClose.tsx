@@ -12,7 +12,7 @@ import { SpiritDropdownProps } from '../../../types';
 
 const Story: ComponentStory<typeof Dropdown> = (args: SpiritDropdownProps) => (
   <IconsProvider value={icons}>
-    <Dropdown {...args} disableAutoClose renderTrigger={dropdownTrigger}>
+    <Dropdown {...args} enableAutoClose={false} renderTrigger={dropdownTrigger}>
       {dropdownContent}
     </Dropdown>
   </IconsProvider>

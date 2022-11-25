@@ -10,6 +10,7 @@ import { useDropdownAriaProps } from './useDropdownAriaProps';
 const defaultProps = {
   isFullWidth: false,
   placement: DropdownPlacements.BOTTOM_LEFT,
+  enableAutoClose: true,
 };
 
 const Dropdown = (props: SpiritDropdownProps) => {
@@ -25,7 +26,7 @@ const Dropdown = (props: SpiritDropdownProps) => {
   const dropdownRef = useRef();
   const triggerRef = useRef();
 
-  const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, disableAutoClose });
+  const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
   const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint });
 
