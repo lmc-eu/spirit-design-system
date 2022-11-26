@@ -4,26 +4,27 @@ import { render, fireEvent } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import Collapse from '../Collapse';
+import UncontrolledCollapse from '../UncontrolledCollapse';
 
-describe('Collapse', () => {
-  classNamePrefixProviderTest(Collapse, 'Collapse');
+describe('UncontrolledCollapse', () => {
+  classNamePrefixProviderTest(UncontrolledCollapse, 'Collapse');
 
-  stylePropsTest(Collapse);
+  stylePropsTest(UncontrolledCollapse);
 
-  restPropsTest(Collapse, 'div');
+  restPropsTest(UncontrolledCollapse, 'div');
 
   it('should render text children', () => {
     const dom = render(
-      <Collapse
-        renderTrigger={({ trigger }) => (
-          <button type="button" {...trigger}>
+      <UncontrolledCollapse
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        renderTrigger={({ collapsed, ...rest }) => (
+          <button type="button" {...rest}>
             trigger
           </button>
         )}
       >
         Hello World
-      </Collapse>,
+      </UncontrolledCollapse>,
     );
     const element = dom.container.querySelector('div') as HTMLElement;
 
@@ -32,15 +33,16 @@ describe('Collapse', () => {
 
   it('should toggle a collapse', () => {
     const dom = render(
-      <Collapse
-        renderTrigger={({ trigger }) => (
-          <button type="button" {...trigger}>
+      <UncontrolledCollapse
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        renderTrigger={({ collapsed, ...rest }) => (
+          <button type="button" {...rest}>
             trigger
           </button>
         )}
       >
         Hello World
-      </Collapse>,
+      </UncontrolledCollapse>,
     );
     const element = dom.container.querySelector('div') as HTMLElement;
     const trigger = dom.container.querySelector('button') as HTMLElement;

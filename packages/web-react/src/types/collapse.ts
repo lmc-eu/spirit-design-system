@@ -1,28 +1,29 @@
 import { ReactNode } from 'react';
 import { ChildrenProps, ClickEvent, StyleProps, Booleanish } from './shared';
 
-export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer' | 'span';
+export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer';
 
 export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop';
 
-export type CollapseTriggerProps = {
+export type CollapseRenderProps = {
+  className: string;
+  collapsed: boolean;
   onClick: (event: ClickEvent) => void;
-  className?: string | undefined;
   'aria-expanded': Booleanish;
   'aria-controls': string;
 };
 
-export type CollapseRenderProps = {
-  collapsed: boolean;
-  trigger: CollapseTriggerProps;
-};
-
-export interface SpiritCollapseProps extends ChildrenProps, StyleProps {
+export interface CollapseProps extends ChildrenProps, StyleProps {
   id?: string;
-  isCollapsed?: boolean;
-  hideOnCollapse?: boolean;
+}
+
+export interface SpiritCollapseProps extends CollapseProps {
   collapsibleToBreakpoint?: CollapseResponsiveType;
-  renderTrigger?: (render: CollapseRenderProps) => ReactNode;
   elementType?: CollapseElementType;
-  contentElementType?: CollapseElementType;
+  isOpen: boolean;
+}
+
+export interface SpiritUncontrolledCollapseProps extends SpiritCollapseProps {
+  hideOnCollapse?: boolean;
+  renderTrigger?: (render: CollapseRenderProps) => ReactNode;
 }

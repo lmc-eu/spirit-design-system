@@ -1,19 +1,10 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 
-export interface ResizeHeightProps {
-  contentRef: MutableRefObject<HTMLElement | null | undefined>;
-}
-export interface ResizeHeightReturn {
-  height: string;
-}
-
-export const useResizeHeight = (props: ResizeHeightProps): ResizeHeightReturn => {
-  const { contentRef } = props;
-
+export const useResizeHeight = (ref: MutableRefObject<HTMLElement | null | undefined>): string => {
   const [height, setHeight] = useState<string>('0px');
 
   const adjustHeight = () => {
-    const currentHeight = contentRef?.current?.clientHeight || contentRef?.current?.offsetHeight;
+    const currentHeight = ref?.current?.clientHeight || ref?.current?.offsetHeight;
     setHeight(`${currentHeight}px`);
   };
 
@@ -24,7 +15,5 @@ export const useResizeHeight = (props: ResizeHeightProps): ResizeHeightReturn =>
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return {
-    height,
-  };
+  return height;
 };

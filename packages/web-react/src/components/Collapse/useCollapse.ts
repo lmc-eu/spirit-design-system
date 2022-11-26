@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ClickEvent, SpiritCollapseProps } from '../../types';
+import { ClickEvent } from '../../types';
 
 export interface CollapseReturn {
   /** collapse handler */
@@ -8,7 +8,7 @@ export interface CollapseReturn {
   collapsed: boolean;
 }
 
-export const useCollapse = ({ isCollapsed }: SpiritCollapseProps): CollapseReturn => {
+export const useCollapse = (isCollapsed: boolean): CollapseReturn => {
   const [collapsed, setCollapsed] = useState<boolean>(!!isCollapsed);
 
   const collapseHandler = () => setCollapsed(!collapsed);
