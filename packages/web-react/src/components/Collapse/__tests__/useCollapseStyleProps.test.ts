@@ -2,12 +2,14 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useCollapseStyleProps } from '../useCollapseStyleProps';
 
 describe('useCollapseStyleProps', () => {
-  it('should return defaults', () => {
-    const props = { isCollapsed: true };
-    const { result } = renderHook(() => useCollapseStyleProps(props));
+  it.each([
+    [true, 'Collapse is-collapsed', 'is-expanded'],
+    [false, 'Collapse', ''],
+  ])('should return defaults', (isCollapsed, rootClass, triggerClass) => {
+    const { result } = renderHook(() => useCollapseStyleProps(isCollapsed));
 
-    expect(result.current.wrapperClassName).toBe('Collapse is-collapsed');
-    expect(result.current.contentClassName).toBe('Collapse__content');
-    expect(result.current.triggerClassName).toBe('is-expanded');
+    expect(result.current.classProps.root).toBe(rootClass);
+    expect(result.current.classProps.content).toBe('Collapse__content');
+    expect(result.current.classProps.trigger).toBe(triggerClass);
   });
 });

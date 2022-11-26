@@ -8,10 +8,9 @@ describe('useResizeHeight', () => {
       current: {
         offsetHeight: 500,
       },
-    };
-    const props = { contentRef: ref as MutableRefObject<HTMLElement | null | undefined> };
-    const { result } = renderHook(() => useResizeHeight(props));
+    } as MutableRefObject<HTMLElement | null | undefined>;
+    const { result } = renderHook(() => useResizeHeight(ref));
 
-    expect(result.current.height).toBe('500px');
+    expect(result.current).toBe('500px');
   });
 });

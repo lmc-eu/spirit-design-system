@@ -1,28 +1,27 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritCollapseProps } from '../../types';
 
-export interface CollapseStylePropsReturn {
+export interface CollapseStyles {
   /** className props */
-  wrapperClassName: string;
-  /** className props */
-  contentClassName: string;
-  /** className props */
-  triggerClassName: string;
+  classProps: {
+    root: string;
+    content: string;
+    trigger: string;
+  };
 }
 
-export const useCollapseStyleProps = ({ isCollapsed }: SpiritCollapseProps): CollapseStylePropsReturn => {
-  const wrapperClass = useClassNamePrefix('Collapse');
-  const contentClass = useClassNamePrefix('Collapse__content');
+export const useCollapseStyleProps = (isCollapsed: boolean): CollapseStyles => {
+  const collapseClass = useClassNamePrefix('Collapse');
+  const collapseContentClass = `${collapseClass}__content`;
   const collapsedClass = isCollapsed ? 'is-collapsed' : '';
   const expandedClass = isCollapsed ? 'is-expanded' : '';
-  const wrapperClassName = classNames(wrapperClass, collapsedClass);
-  const contentClassName = classNames(contentClass);
-  const triggerClassName = classNames(expandedClass);
+  const rootClass = classNames(collapseClass, collapsedClass);
 
   return {
-    wrapperClassName,
-    contentClassName,
-    triggerClassName,
+    classProps: {
+      root: rootClass,
+      content: collapseContentClass,
+      trigger: expandedClass,
+    },
   };
 };
