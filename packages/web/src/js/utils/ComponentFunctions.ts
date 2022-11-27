@@ -53,14 +53,4 @@ const enableToggleAutoloader = (component: typeof BaseComponent, method = 'toggl
 
 const clickOutsideElement = (target: Element, event: Event) => !event.composedPath().includes(target);
 
-const debounce = (func: () => void, time: number) => {
-  const t: number = time || 100;
-  let timer: TimerHandler | number;
-
-  return (event: Event) => {
-    if (timer) clearTimeout(timer as unknown as ReturnType<typeof setTimeout>);
-    timer = setTimeout(func, t, event);
-  };
-};
-
-export { debounce, enableToggleTrigger, enableDismissTrigger, enableToggleAutoloader, clickOutsideElement };
+export { enableToggleTrigger, enableDismissTrigger, enableToggleAutoloader, clickOutsideElement };

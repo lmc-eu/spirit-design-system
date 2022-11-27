@@ -1,5 +1,6 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleAutoloader, debounce } from './utils/ComponentFunctions';
+import { enableToggleAutoloader } from './utils/ComponentFunctions';
+import { executeAfterTransition } from './utils';
 import SelectorEngine from './dom/SelectorEngine';
 import EventHandler from './dom/EventHandler';
 import {
@@ -17,8 +18,6 @@ const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
-
-const DEBOUNCE_TIMER = 225;
 
 interface CollapseMeta {
   id: string | 'unknown';
@@ -83,13 +82,7 @@ class Collapse extends BaseComponent {
     }
   }
 
-  onResize() {
-    this.state.width = window.innerWidth;
-    this.updateTriggerElementHandler();
-    this.updateCollapsibleElementHandler();
-  }
-
-  appendNodeToParentHandler() {
+  async appendNodeToParentHandler() {
     if (this.state.open) {
       const contentEl = this.target?.children[0];
       const innerHtml = contentEl ? contentEl?.innerHTML : this.target?.innerHTML;
@@ -97,18 +90,23 @@ class Collapse extends BaseComponent {
       if (this.parent) {
         this.parent.innerHTML = `${originalHtml}${innerHtml}`;
       }
-      setTimeout(() => this.target?.remove(), 100);
+
+      await this.target?.remove();
+    }
+  }
+
+  adjustCollapsibleChildrenHeightHandler(zeroHeight?: boolean) {
+    if (this.target) {
+      const content = this.target.children[0];
+      const bounds = content.getBoundingClientRect();
+      this.target.style.height = `${zeroHeight ? '0' : bounds.height}px`;
     }
   }
 
   adjustCollapsibleElementHeightHandler(open: boolean = this.state.open) {
+    this.adjustCollapsibleChildrenHeightHandler(!open);
     if (this.target) {
-      const content = this.target.children[0];
-      const bounds = content.getBoundingClientRect();
-      this.target.style.height = open ? `${bounds.height}px` : '0';
-      if (this.target) {
-        EventHandler.trigger(this.target, open ? EVENT_SHOWN : EVENT_HIDDEN);
-      }
+      EventHandler.trigger(this.target, open ? EVENT_SHOWN : EVENT_HIDDEN);
     }
   }
 
@@ -127,34 +125,44 @@ class Collapse extends BaseComponent {
     if (triggers.length === 1) {
       updateElement(this.element);
     } else {
-      triggers.forEach((trigger) => updateElement(trigger));
+      triggers.map((trigger) => updateElement(trigger));
     }
   }
 
-  updateCollapsibleElementHandler(collapsed: boolean = this.state.open) {
+  updateCollapsibleElementHandler(open: boolean = this.state.open) {
     if (this.target) {
+      if (!open) {
+        this.adjustCollapsibleChildrenHeightHandler();
+      }
+      this.adjustCollapsibleElementHeightHandler(open);
       this.target?.classList.add(CLASSNAME_TRANSITION);
-      EventHandler.on(this.target, 'transitionend', () => {
+      executeAfterTransition(this.target, () => {
         this.target?.classList.remove(CLASSNAME_TRANSITION);
-        this.target?.classList.toggle(CLASSNAME_OPEN, collapsed);
+        this.target?.classList.toggle(CLASSNAME_OPEN, open);
+        if (open) {
+          this.target?.setAttribute('style', 'height: 100%');
+        } else {
+          this.target?.style.removeProperty('height');
+        }
       });
-      this.adjustCollapsibleElementHeightHandler(collapsed);
     }
   }
 
-  show() {
+  async show() {
     this.siblingsControlHandler(this.element);
     EventHandler.trigger(this.target as HTMLElement, EVENT_SHOW);
     this.updateTriggerElementHandler(true);
     this.updateCollapsibleElementHandler(true);
-    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN), 0);
+
+    await EventHandler.trigger(this.target as HTMLElement, EVENT_SHOWN);
   }
 
-  hide() {
+  async hide() {
     EventHandler.trigger(this.target as HTMLElement, EVENT_HIDE);
     this.updateTriggerElementHandler(false);
     this.updateCollapsibleElementHandler(false);
-    setTimeout(() => EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN), 0);
+
+    await EventHandler.trigger(this.target as HTMLElement, EVENT_HIDDEN);
   }
 
   toggle() {
@@ -172,7 +180,6 @@ class Collapse extends BaseComponent {
     } else {
       triggers.forEach((trigger) => EventHandler.on(trigger as HTMLElement, 'click', () => this.toggle()));
     }
-    EventHandler.on(window, 'resize', () => debounce(this.onResize, DEBOUNCE_TIMER));
   }
 
   destroyEvents() {
@@ -182,7 +189,6 @@ class Collapse extends BaseComponent {
     } else {
       triggers.forEach((trigger) => EventHandler.off(trigger as HTMLElement, 'click', () => this.toggle()));
     }
-    EventHandler.off(window, 'resize', () => this.onResize());
   }
 
   onDestroy() {

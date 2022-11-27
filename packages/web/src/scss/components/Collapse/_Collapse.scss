@@ -7,13 +7,16 @@
     height: 0;
     overflow: hidden;
     visibility: hidden;
-    transition-property: height;
-    transition-duration: theme.$collapse-transition-duration;
-    transition-timing-function: theme.$collapse-transition-timing;
 
     &.is-open,
     &.is-transitioning {
         visibility: visible;
+    }
+
+    &.is-transitioning {
+        transition-property: height;
+        transition-duration: theme.$collapse-transition-duration;
+        transition-timing-function: theme.$collapse-transition-timing;
     }
 
     &.is-open:not(.is-transitioning) {
