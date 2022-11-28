@@ -1,3 +1,5 @@
+import EventHandler from '../dom/EventHandler';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const isElement = (object: any): boolean => {
   if (!object || typeof object !== 'object') {
@@ -29,7 +31,7 @@ const getElementFromSelector = (element: HTMLElement | null): HTMLElement | null
 };
 
 const triggerTransitionEnd = (element: HTMLElement) => {
-  element.dispatchEvent(new Event('transitionend'));
+  EventHandler.trigger(element, 'transitionend');
 };
 
 const getTransitionDurationFromElement = (element: HTMLElement) => {

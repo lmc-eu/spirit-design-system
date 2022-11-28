@@ -1,6 +1,6 @@
 # Accordion
 
-Accordion is a wrapper for multiple **Collapse** items, and can be open one or more at time.
+Accordion is a wrapper for multiple [**Collapse**][collapse] items, and can be open one or more at time.
 
 ## Usage
 
@@ -33,11 +33,13 @@ Accordion is a wrapper for multiple **Collapse** items, and can be open one or m
       </div>
     </div>
   </article>
-  ...
+  …
 </section>
 ```
 
-### Open only one at time
+### Open only one at a time
+
+Link individual **Collapse items** to their **Accordion parent** via `data-parent` attribute to allow just a single item being open at a time.
 
 ```html
 <section id="accordionExample" class="Accordion" data-toggle="accordion">
@@ -71,16 +73,16 @@ Accordion is a wrapper for multiple **Collapse** items, and can be open one or m
       </div>
     </div>
   </article>
-  ...
+  …
 </section>
 ```
 
 ## Attributes
 
-Attributes are inherited from [**Collapse** component][collapse].
+Attributes are inherited from the [**Collapse** component][collapse].
 
 ## JavaScript Plugin
 
-The accordion uses [collapse][collapse] internally to make it collapsible.
+Under the hood, the Accordion makes use of the [Collapse][collapse] JavaScript plugin for the collapsing functionality.
 
 [collapse]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Collapse/README.md
