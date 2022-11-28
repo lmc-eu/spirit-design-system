@@ -25,8 +25,6 @@
         top: 0;
         right: theme.$accordion-header-padding-x;
         left: theme.$accordion-header-padding-x;
-        display: block;
-        height: 0;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
 
@@ -46,10 +44,7 @@
         content: '';
         position: absolute;
         z-index: 0;
-        display: block;
         inset: 0;
-        width: 100%;
-        height: 100%;
         border-radius: theme.$accordion-border-radius;
     }
 
@@ -57,11 +52,10 @@
         @include typography.generate(theme.$accordion-header-typography-active);
     }
 
-    // stylelint-disable selector-max-class -- We have to control the state of the Icon
+    // stylelint-disable-next-line selector-max-class -- We have to control the state of the Icon
     &[aria-expanded='true'] + .Accordion__itemSide .Accordion__itemIcon {
         transform: rotate(180deg);
     }
-    // stylelint-enable
 
     &:active:first-of-type::before {
         background-color: theme.$accordion-item-background-color-active;
@@ -76,8 +70,7 @@
     justify-content: space-between;
 }
 
-.Accordion__itemSlot a,
-.Accordion__itemSlot button {
+.Accordion__itemSlot :is(a, button) {
     position: relative;
 }
 
@@ -91,8 +84,6 @@
         top: 100%;
         right: theme.$accordion-header-padding-x;
         left: theme.$accordion-header-padding-x;
-        display: block;
-        height: 1px;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
 }
