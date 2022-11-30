@@ -7,7 +7,7 @@ import { useCollapseAriaProps } from './useCollapseAriaProps';
 import { useResizeHeight } from './useResizeHeight';
 
 const defaultProps = {
-  isCollapsed: false,
+  isOpen: false,
   collapsibleToBreakpoint: undefined,
 };
 
@@ -17,12 +17,12 @@ const Collapse = (props: SpiritCollapseProps) => {
   const collapseElementRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const collapseHeight = useResizeHeight(collapseElementRef);
 
-  const { classProps } = useCollapseStyleProps(restProps.isCollapsed);
+  const { classProps } = useCollapseStyleProps(restProps.isOpen);
   const { ariaProps, props: otherProps } = useCollapseAriaProps(restProps);
   const { styleProps, props: transferProps } = useStyleProps(otherProps);
   const collapseStyleProps = {
     className: styleProps.className,
-    ...{ style: { height: restProps.isCollapsed ? collapseHeight : 0, ...styleProps.style } },
+    ...{ style: { height: restProps.isOpen ? collapseHeight : 0, ...styleProps.style } },
   };
 
   return (

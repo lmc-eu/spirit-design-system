@@ -16,8 +16,9 @@ describe('UncontrolledCollapse', () => {
   it('should render text children', () => {
     const dom = render(
       <UncontrolledCollapse
+        // Normally we want to display state change, not in this test, prop is passed anyway
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        renderTrigger={({ collapsed, ...rest }) => (
+        renderTrigger={({ isOpen, ...rest }) => (
           <button type="button" {...rest}>
             trigger
           </button>
@@ -34,8 +35,9 @@ describe('UncontrolledCollapse', () => {
   it('should toggle a collapse', () => {
     const dom = render(
       <UncontrolledCollapse
+        // Normally we want to display state change, not in this test, prop is passed anyway
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        renderTrigger={({ collapsed, ...rest }) => (
+        renderTrigger={({ isOpen, ...rest }) => (
           <button type="button" {...rest}>
             trigger
           </button>
@@ -49,8 +51,7 @@ describe('UncontrolledCollapse', () => {
 
     fireEvent.click(trigger);
 
-    expect(element).toHaveClass('is-collapsed');
-    expect(trigger).toHaveClass('is-expanded');
+    expect(element).toHaveClass('is-open');
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
 
     fireEvent.click(trigger);

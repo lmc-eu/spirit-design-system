@@ -7,7 +7,7 @@ describe('useCollapseAriaProps', () => {
     const props = {
       collapsibleToBreakpoint: undefined,
       id: 'test-collapse-id',
-      isCollapsed: true,
+      isOpen: true,
     };
     const { result } = renderHook(() => useCollapseAriaProps(props));
 
@@ -23,7 +23,7 @@ describe('useCollapseAriaProps', () => {
     const props = {
       collapsibleToBreakpoint: 'mobile',
       id: 'test-collapse-id',
-      isCollapsed: false,
+      isOpen: false,
     } as SpiritCollapseProps;
     const { result } = renderHook(() => useCollapseAriaProps(props));
 

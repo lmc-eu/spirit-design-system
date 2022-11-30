@@ -20,7 +20,7 @@ export interface CollapseAria {
 }
 
 export const useCollapseAriaProps = (props: SpiritCollapseProps): CollapseAria => {
-  const { isCollapsed, collapsibleToBreakpoint, ...modifiedProps } = props;
+  const { isOpen, collapsibleToBreakpoint, ...modifiedProps } = props;
 
   return {
     ariaProps: {
@@ -28,7 +28,7 @@ export const useCollapseAriaProps = (props: SpiritCollapseProps): CollapseAria =
         [ATTRIBUTE_DATA_BREAKPOINT]: collapsibleToBreakpoint,
       },
       trigger: {
-        [ATTRIBUTE_ARIA_EXPANDED]: isCollapsed,
+        [ATTRIBUTE_ARIA_EXPANDED]: isOpen,
         [ATTRIBUTE_ARIA_CONTROLS]: String(modifiedProps.id),
       },
     },

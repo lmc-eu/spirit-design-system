@@ -7,13 +7,13 @@ import { useCollapse } from '../useCollapse';
 import { content, CollapseTrigger } from './Collapse';
 
 const Story: ComponentStory<typeof Collapse> = () => {
-  const { collapsed, toggleHandler } = useCollapse(false);
+  const { isOpen, toggleHandler } = useCollapse(false);
 
   return (
     <div>
       {content}
-      <CollapseTrigger collapsed={collapsed} onClick={toggleHandler} UNSAFE_className="d-tablet-none" />
-      <Collapse isCollapsed={collapsed} collapsibleToBreakpoint="tablet">
+      <CollapseTrigger isOpen={isOpen} onClick={toggleHandler} UNSAFE_className="d-tablet-none" />
+      <Collapse isOpen={isOpen} collapsibleToBreakpoint="tablet">
         {content}
       </Collapse>
     </div>

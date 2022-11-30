@@ -28,18 +28,18 @@ export const content = (
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const CollapseTrigger = ({ collapsed, ...rest }: any) => {
-  return <Button {...rest}>Collapse Trigger ({collapsed ? 'Open' : 'Closed'})</Button>;
+export const CollapseTrigger = ({ isOpen, ...rest }: any) => {
+  return <Button {...rest}>Collapse Trigger ({isOpen ? 'Open' : 'Closed'})</Button>;
 };
 
 const Story: ComponentStory<typeof Collapse> = () => {
-  const { collapsed, toggleHandler } = useCollapse(false);
+  const { isOpen, toggleHandler } = useCollapse(false);
 
   return (
     <div>
       {content}
-      <CollapseTrigger collapsed={collapsed} onClick={toggleHandler} />
-      <Collapse isCollapsed={collapsed}>{content}</Collapse>
+      <CollapseTrigger isOpen={isOpen} onClick={toggleHandler} />
+      <Collapse isOpen={isOpen}>{content}</Collapse>
     </div>
   );
 };
