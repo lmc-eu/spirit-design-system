@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.17.0"></a>
+
+# [1.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.16.0...@lmc-eu/spirit-web-twig@1.17.0) (2022-11-30)
+
+### BREAKING CHANGES
+
+- **web-twig:** Rename TextField `size` attribute to `inputWidth` ([c0fc803](https://github.com/lmc-eu/spirit-design-system/commit/c0fc803))
+
+### Bug Fixes
+
+- **web-twig:** Do not render icon before the first breadcrumb item [#JALL-32](https://github.com/lmc-eu/spirit-design-system/issues/JALL-32) ([b08fd49](https://github.com/lmc-eu/spirit-design-system/commit/b08fd49))
+- **web-twig:** Fix rendering of the value attribute in TextArea [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([152603c](https://github.com/lmc-eu/spirit-design-system/commit/152603c))
+
+### Documentation
+
+- **web-twig:** Add size property to TextField ([73f6506](https://github.com/lmc-eu/spirit-design-system/commit/73f6506))
+
+### Features
+
+- **web-twig:** Introduce TextArea component [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([6692806](https://github.com/lmc-eu/spirit-design-system/commit/6692806))
+
+### Styles
+
+- **web-twig:** Add space before variable initialization ([c048f43](https://github.com/lmc-eu/spirit-design-system/commit/c048f43))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.16.0"></a>
 
 # [1.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.15.0...@lmc-eu/spirit-web-twig@1.16.0) (2022-11-09)

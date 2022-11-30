@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.33.0"></a>
+
+# [0.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.32.0...@lmc-eu/spirit-web@0.33.0) (2022-11-30)
+
+### Bug Fixes
+
+- **web:** Incorrect naming and sorting of assets in preview [#DS-421](https://github.com/lmc-eu/spirit-design-system/issues/DS-421) ([3d91997](https://github.com/lmc-eu/spirit-design-system/commit/3d91997))
+- **web:** Order top-level CSS layers by selector specificity ([db63fb1](https://github.com/lmc-eu/spirit-design-system/commit/db63fb1))
+
+### Dependencies
+
+- Pin dependencies ([d5c1a51](https://github.com/lmc-eu/spirit-design-system/commit/d5c1a51))
+- Update dependency @rollup/plugin-typescript to v9 ([1fe2089](https://github.com/lmc-eu/spirit-design-system/commit/1fe2089))
+- Update dependency jest to v29 ([d7e3dc9](https://github.com/lmc-eu/spirit-design-system/commit/d7e3dc9))
+- Update dependency jest-environment-jsdom to v29 ([f7342b1](https://github.com/lmc-eu/spirit-design-system/commit/f7342b1))
+- Update dependency rollup to v3 ([5da2bd2](https://github.com/lmc-eu/spirit-design-system/commit/5da2bd2))
+
+### Features
+
+- **web:** Introduce TextArea component [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([8e14ddd](https://github.com/lmc-eu/spirit-design-system/commit/8e14ddd))
+- **web:** Unify styles for form field components ([b7aa908](https://github.com/lmc-eu/spirit-design-system/commit/b7aa908))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.32.0"></a>
 
 # [0.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.31.0...@lmc-eu/spirit-web@0.32.0) (2022-11-07)

@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.30.0"></a>
+
+# [0.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.29.0...@lmc-eu/spirit-web-react@0.30.0) (2022-11-30)
+
+### BREAKING CHANGES
+
+- **web-react:** Change autoclose prop in Dropdown ([cdd09fb](https://github.com/lmc-eu/spirit-design-system/commit/cdd09fb))
+- **web-react:** Rename TextField size attribute to inputWidth ([73df013](https://github.com/lmc-eu/spirit-design-system/commit/73df013))
+
+### Bug Fixes
+
+- **web-react:** Add missing id attribute to text form components [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([7cf93e2](https://github.com/lmc-eu/spirit-design-system/commit/7cf93e2))
+- **web-react:** Add missing props and classes for Dropdown component ([b69f41a](https://github.com/lmc-eu/spirit-design-system/commit/b69f41a))
+- **web-react:** Do not render icon before the first breadcrumb item [#JALL-32](https://github.com/lmc-eu/spirit-design-system/issues/JALL-32) ([f4c6901](https://github.com/lmc-eu/spirit-design-system/commit/f4c6901))
+- **web-react:** Fix HTML rendering of the Storybook components with compound name ([a3dcb40](https://github.com/lmc-eu/spirit-design-system/commit/a3dcb40))
+
+### Chores
+
+- **web-react:** Bundle rollup config as CommonJS ([8942c3e](https://github.com/lmc-eu/spirit-design-system/commit/8942c3e))
+
+### Dependencies
+
+- Update dependency @lmc-eu/eslint-config-jest to v2 ([c6d1b83](https://github.com/lmc-eu/spirit-design-system/commit/c6d1b83))
+- Update dependency @rollup/plugin-node-resolve to v15 ([5c8dc9b](https://github.com/lmc-eu/spirit-design-system/commit/5c8dc9b))
+- Update dependency jest to v29 ([d7e3dc9](https://github.com/lmc-eu/spirit-design-system/commit/d7e3dc9))
+- Update dependency jest-cli to v29 ([7e0cc75](https://github.com/lmc-eu/spirit-design-system/commit/7e0cc75))
+- Update dependency jest-environment-jsdom to v29 ([f7342b1](https://github.com/lmc-eu/spirit-design-system/commit/f7342b1))
+- Update dependency rollup to v3 ([5da2bd2](https://github.com/lmc-eu/spirit-design-system/commit/5da2bd2))
+
+### Documentation
+
+- **web-react:** Add missing htmlFor attribute in the component documentation ([3d2fca5](https://github.com/lmc-eu/spirit-design-system/commit/3d2fca5))
+- **web-react:** Reorganize and amend TextField stories ([4b6859c](https://github.com/lmc-eu/spirit-design-system/commit/4b6859c))
+
+### Features
+
+- **web-react:** Add missing `breakpoint` prop to Dropdown component ([d0e5ff6](https://github.com/lmc-eu/spirit-design-system/commit/d0e5ff6))
+- **web-react:** Clean and unify form components props ([8aa13d5](https://github.com/lmc-eu/spirit-design-system/commit/8aa13d5))
+- **web-react:** Introduce TextArea component [#DS-319](https://github.com/lmc-eu/spirit-design-system/issues/DS-319) ([7e6e680](https://github.com/lmc-eu/spirit-design-system/commit/7e6e680))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.29.0"></a>
 
 # [0.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.28.0...@lmc-eu/spirit-web-react@0.29.0) (2022-11-07)
