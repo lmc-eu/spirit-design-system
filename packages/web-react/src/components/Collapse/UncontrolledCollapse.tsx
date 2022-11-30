@@ -3,28 +3,25 @@ import Collapse from './Collapse';
 import { SpiritUncontrolledCollapseProps } from '../../types';
 import { useCollapse } from './useCollapse';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
-import { useCollapseStyleProps } from './useCollapseStyleProps';
 
 const defaultProps = {
   id: Math.random().toString(36).slice(2, 7),
-  isCollapsed: false,
+  isOpen: false,
 };
 
 const UncontrolledCollapse = (props: SpiritUncontrolledCollapseProps) => {
   const { children, hideOnCollapse, renderTrigger, ...restProps } = props;
-  const { collapsed, toggleHandler } = useCollapse(restProps.isCollapsed);
-  const { classProps } = useCollapseStyleProps(collapsed);
-  const { ariaProps } = useCollapseAriaProps({ ...restProps, isCollapsed: collapsed });
+  const { isOpen, toggleHandler } = useCollapse(restProps.isOpen);
+  const { ariaProps } = useCollapseAriaProps({ ...restProps, isOpen });
 
   const triggerRenderHandler = () => {
-    const showTrigger = hideOnCollapse ? !(hideOnCollapse && collapsed) : true;
+    const showTrigger = hideOnCollapse ? !(hideOnCollapse && isOpen) : true;
 
     return renderTrigger && showTrigger
       ? renderTrigger({
-          collapsed,
+          isOpen,
           onClick: toggleHandler,
           ...ariaProps.trigger,
-          className: classProps.trigger,
         })
       : null;
   };
@@ -32,10 +29,10 @@ const UncontrolledCollapse = (props: SpiritUncontrolledCollapseProps) => {
   return (
     <>
       {triggerRenderHandler()}
-      {hideOnCollapse && collapsed ? (
+      {hideOnCollapse && isOpen ? (
         children
       ) : (
-        <Collapse {...restProps} isCollapsed={collapsed}>
+        <Collapse {...restProps} isOpen={isOpen}>
           {children}
         </Collapse>
       )}

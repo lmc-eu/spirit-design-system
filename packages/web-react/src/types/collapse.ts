@@ -6,8 +6,7 @@ export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'head
 export type CollapseResponsiveType = undefined | 'mobile' | 'tablet' | 'desktop';
 
 export type CollapseRenderProps = {
-  className: string;
-  collapsed: boolean;
+  isOpen: boolean;
   onClick: (event: ClickEvent) => void;
   'aria-expanded': Booleanish;
   'aria-controls': string;

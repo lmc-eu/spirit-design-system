@@ -2,16 +2,16 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { useCollapse } from '../useCollapse';
 
 describe('useCollapse', () => {
-  it.each([[true], [false]])('should return defaults', (isCollapsed) => {
-    const { result } = renderHook(() => useCollapse(isCollapsed));
+  it.each([[true], [false]])('should return defaults', (isOpen) => {
+    const { result } = renderHook(() => useCollapse(isOpen));
 
-    expect(result.current.collapsed).toBe(isCollapsed);
+    expect(result.current.isOpen).toBe(isOpen);
     expect(typeof result.current.toggleHandler).toBe('function');
   });
 
   it('should toggle state', () => {
-    const isCollapsed = true;
-    const { result } = renderHook(() => useCollapse(isCollapsed));
+    const isOpen = true;
+    const { result } = renderHook(() => useCollapse(isOpen));
     const { toggleHandler } = result.current;
 
     act(() => {
@@ -21,8 +21,6 @@ describe('useCollapse', () => {
       toggleHandler(new Event('click'));
     });
 
-    const { collapsed } = result.current;
-
-    expect(collapsed).toBe(!isCollapsed);
+    expect(result.current.isOpen).toBe(!isOpen);
   });
 });

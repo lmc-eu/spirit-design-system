@@ -2,24 +2,25 @@ import { useState } from 'react';
 import { ClickEvent } from '../../types';
 
 export interface CollapseReturn {
-  /** collapse handler */
+  /** collapse event handler */
   toggleHandler: (event: ClickEvent) => void;
+  /** collapse toggle */
+  toggle: (isOpen: boolean) => void;
   /** collapsed state */
-  collapsed: boolean;
+  isOpen: boolean;
 }
 
-export const useCollapse = (isCollapsed: boolean): CollapseReturn => {
-  const [collapsed, setCollapsed] = useState<boolean>(!!isCollapsed);
-
-  const collapseHandler = () => setCollapsed(!collapsed);
+export const useCollapse = (defaultOpenState: boolean): CollapseReturn => {
+  const [isOpen, toggle] = useState<boolean>(defaultOpenState);
 
   const toggleHandler = (event: ClickEvent) => {
     event.preventDefault();
-    collapseHandler();
+    toggle(!isOpen);
   };
 
   return {
     toggleHandler,
-    collapsed,
+    toggle,
+    isOpen,
   };
 };
