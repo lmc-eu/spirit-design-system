@@ -21,12 +21,6 @@ Open on load example (by aria-expanded):
 <Button {# … #} aria-expanded="true">Collapse trigger</Button> {# … #}
 ```
 
-Open on load example (by class):
-
-```twig
-<Button {# … #} class="is-expanded">Collapse trigger</Button> {# … #}
-```
-
 Responsive usage for tablet
 
 ```twig
@@ -59,12 +53,15 @@ attributes to register trigger events.
 
 ## API
 
-| Prop name     | Type     | Default | Required | Description                              |
-| ------------- | -------- | ------- | -------- | ---------------------------------------- |
-| `id`          | `string` | -       | yes      | Collapse ID                              |
-| `breakpoint`  | `string` | -       | no       | Breakpoint level [mobile,tablet,desktop] |
-| `class`       | `string` | `null`  | no       | Custom CSS class                         |
-| `elementType` | `string` | `'div'` | no       | Custom element type                      |
+| Prop name     | Type     | Default | Required | Description                                                            |
+| ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
+| `id`          | `string` | -       | yes      | Collapse ID                                                            |
+| `breakpoint`  | `string` | -       | no       | Breakpoint level [mobile,tablet,desktop]                               |
+| `parent`      | `string` | -       | no       | A parent element selector that ensures that only one item is opened \* |
+| `class`       | `string` | `null`  | no       | Custom CSS class                                                       |
+| `elementType` | `string` | `'div'` | no       | Custom element type                                                    |
+
+(\*) Attribute for Accordion implementation
 
 ## Trigger attributes
 
