@@ -21,12 +21,6 @@ Open on load example (by aria-expanded):
 <button ... aria-expanded="true">trigger</button> ...
 ```
 
-Open on load example (by class):
-
-```html
-<button ... class="is-expanded">trigger</button> ...
-```
-
 Responsive usage for tablet
 
 ```html
@@ -68,7 +62,9 @@ There can be several triggers, the same rules apply to each.
 
 ## State classes
 
-The component provides auto toggle classes, like `.is-expanded` and `.is-collapsed` when triggered or initiated
+The component provides auto toggle attributes and classes, like `.is-open` when triggered or initiated.
+It also provides `.is-transitioning` class switching during animation. This means that `.Collapse.is-transitioning` during
+opening and `.Collapse.is-open.is-transitioning` during closing.
 
 ## JavaScript Plugin
 

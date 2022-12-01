@@ -3,6 +3,7 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _breakpoint = props.breakpoint -%}
+{%- set _parent = props.parent -%}
 {%- set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
 
 {# Class names #}
@@ -12,6 +13,7 @@
 {# Attributes #}
 {%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
 {%- set _breakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint ~ '' : null -%}
+{%- set _parentAttr = _parent ? 'data-parent=' ~ _parent ~ '' : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
@@ -19,9 +21,10 @@
 <{{ _elementType }}
     {{ _idAttr }}
     {{ _breakpointAttr }}
+    {{ _parentAttr }}
     {{ classProp(_classNames) }}
 >
-    <{{ _elementAttr }} class="{{ _contentClassName }}">
+    <div class="{{ _contentClassName }}">
         {%- block content %}{% endblock %}
-    </{{ _elementAttr }}>
+    </div>
 </{{ _elementType }}>
