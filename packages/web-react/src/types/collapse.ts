@@ -12,15 +12,20 @@ export type CollapseRenderProps = {
   'aria-controls': string;
 };
 
-export interface CollapseProps extends ChildrenProps, StyleProps {
+export interface BaseCollapseProps extends ChildrenProps, StyleProps {
   id?: string;
 }
 
-export interface SpiritCollapseProps extends CollapseProps {
+export interface CollapseProps extends BaseCollapseProps {
   collapsibleToBreakpoint?: CollapseResponsiveType;
   elementType?: CollapseElementType;
   isOpen: boolean;
 }
+export interface TransitionCollapseProps {
+  transitionDuration?: number;
+}
+
+export interface SpiritCollapseProps extends CollapseProps, TransitionCollapseProps {}
 
 export interface SpiritUncontrolledCollapseProps extends SpiritCollapseProps {
   hideOnCollapse?: boolean;

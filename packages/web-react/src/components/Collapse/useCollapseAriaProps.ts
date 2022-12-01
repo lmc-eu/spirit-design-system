@@ -1,4 +1,4 @@
-import { SpiritCollapseProps, CollapseProps, Booleanish } from '../../types';
+import { CollapseProps, BaseCollapseProps, Booleanish } from '../../types';
 
 const ATTRIBUTE_ARIA_EXPANDED = 'aria-expanded';
 const ATTRIBUTE_ARIA_CONTROLS = 'aria-controls';
@@ -8,7 +8,7 @@ export interface CollapseAria {
   ariaProps: {
     /** wrapper returned props */
     root: {
-      [ATTRIBUTE_DATA_BREAKPOINT]: SpiritCollapseProps['collapsibleToBreakpoint'];
+      [ATTRIBUTE_DATA_BREAKPOINT]: CollapseProps['collapsibleToBreakpoint'];
     };
     /** trigger returned props */
     trigger: {
@@ -16,10 +16,10 @@ export interface CollapseAria {
       [ATTRIBUTE_ARIA_CONTROLS]: string;
     };
   };
-  props: CollapseProps;
+  props: BaseCollapseProps;
 }
 
-export const useCollapseAriaProps = (props: SpiritCollapseProps): CollapseAria => {
+export const useCollapseAriaProps = (props: CollapseProps): CollapseAria => {
   const { isOpen, collapsibleToBreakpoint, ...modifiedProps } = props;
 
   return {
