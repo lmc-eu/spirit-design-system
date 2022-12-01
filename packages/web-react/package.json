@@ -16,7 +16,8 @@
   "module": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@babel/preset-env": "7.19.4",
@@ -35,6 +36,7 @@
     "@types/node": "17.0.23",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
+    "@types/react-transition-group": "^4.4.5",
     "@typescript-eslint/eslint-plugin": "5.42.0",
     "@typescript-eslint/parser": "5.42.0",
     "eslint": "8.26.0",
