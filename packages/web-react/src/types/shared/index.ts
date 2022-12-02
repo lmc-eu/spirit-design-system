@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ElementType, JSXElementConstructor } from 'react';
 
 export * from './colors';
 export * from './dom';
@@ -11,6 +11,15 @@ export * from './rest';
 export interface ChildrenProps {
   /** The content to display in the button. */
   children?: ReactNode | string;
+}
+
+export interface ElementTypeProps<T extends ElementType = 'div'> {
+  /**
+   * The HTML element or React element used to render the component.
+   *
+   * @default 'div'
+   */
+  elementType?: T | JSXElementConstructor<unknown>;
 }
 
 export enum SpiritBreakpoints {
