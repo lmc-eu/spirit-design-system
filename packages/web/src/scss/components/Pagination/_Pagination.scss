@@ -2,7 +2,7 @@
 @use '../../settings/cursors';
 
 .Pagination {
-    display: flex;
+    display: inline-flex;
     gap: theme.$item-gap;
     list-style-type: none;
 }
