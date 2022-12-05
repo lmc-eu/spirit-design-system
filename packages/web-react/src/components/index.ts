@@ -5,6 +5,7 @@ export * from './Button';
 export * from './CheckboxField';
 export * from './Collapse';
 export * from './Container';
+export * from './Dialog';
 export * from './Dropdown';
 export * from './Grid';
 export * from './Header';
