@@ -22,6 +22,8 @@ export const useCancelEvent = (ref: MutableRefObject<HTMLElement | null>, callba
         node.removeEventListener(EVENT_CANCEL, handleCancel);
       };
     }
+
+    return () => undefined;
   }, [ref, handleCancel]);
 
   return handleCancel;

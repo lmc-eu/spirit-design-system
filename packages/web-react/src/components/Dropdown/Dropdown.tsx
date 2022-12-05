@@ -24,7 +24,7 @@ const Dropdown = (props: SpiritDropdownProps) => {
     ...rest
   } = props;
 
-  const dropdownRef = useRef();
+  const dropdownRef = useRef(null);
   const triggerRef = useRef();
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
