@@ -1,11 +1,13 @@
 import { ReactNode, ElementType, JSXElementConstructor } from 'react';
 
 export * from './colors';
+export * from './dialogs';
 export * from './dom';
 export * from './events';
 export * from './inputs';
 export * from './style';
 export * from './typography';
+export * from './refs';
 export * from './rest';
 
 export interface ChildrenProps {
