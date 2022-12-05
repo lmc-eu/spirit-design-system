@@ -1,25 +1,23 @@
-import { useEffect, MutableRefObject } from 'react';
+import { useEffect, useCallback, MutableRefObject } from 'react';
 
 export interface UseClickOutsideProps {
-  ref: MutableRefObject<HTMLElement | undefined>;
+  ref: MutableRefObject<HTMLElement | null>;
   callback?: (event: Event) => void;
 }
 
 export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void => {
-  const clickHandler = (event: Event) => {
-    if (!ref?.current?.contains(event?.target as Node) && callback) {
-      callback(event);
-    }
-  };
+  const clickHandler = useCallback(
+    (event: Event) => {
+      if (ref.current && !ref.current.contains(event?.target as Node) && callback) {
+        callback(event);
+      }
+    },
+    [ref, callback],
+  );
 
   useEffect(() => {
-    document.addEventListener('click', clickHandler);
+    document.addEventListener('click', clickHandler, true);
 
-    return () => document.removeEventListener('click', clickHandler);
-    /**
-     * This condition is here because I need a useEffect trigger for the entire scope and on
-     * the contrary I don't need to add the clickHandler dependency because it is a function, and it will not change.
-     */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return () => document.removeEventListener('click', clickHandler, true);
+  }, [clickHandler]);
 };
