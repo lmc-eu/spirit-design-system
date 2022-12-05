@@ -17,9 +17,9 @@ export interface UseDropdownStylePropsReturn {
 }
 
 export const useDropdownStyleProps = (
-  props: UseDropdownStyleProps = { isOpen: false, isFullWidth: false, placement: DropdownPlacements.BOTTOM_LEFT },
+  props: UseDropdownStyleProps = { isOpen: false, isFullWidth: false },
 ): UseDropdownStylePropsReturn => {
-  const { isOpen, isFullWidth, placement, ...modifiedProps } = props;
+  const { isOpen, isFullWidth, placement = DropdownPlacements.BOTTOM_LEFT, ...modifiedProps } = props;
   const dropdownClass = useClassNamePrefix('Dropdown');
   const dropdownWrapperClass = `${dropdownClass}Wrapper`;
   const dropdownFullWidthClass = `${dropdownClass}--fullWidth`;
