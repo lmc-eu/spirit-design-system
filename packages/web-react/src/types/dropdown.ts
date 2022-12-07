@@ -43,4 +43,5 @@ export interface SpiritDropdownProps extends DropdownProps {
   isFullWidth?: boolean;
   placement?: DropdownPlacement;
   breakpoint?: DropdownBreakpoint;
+  onAutoClose?: (event: Event) => void;
 }

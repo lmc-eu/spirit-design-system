@@ -9,6 +9,8 @@ export interface UseDropdownProps {
   triggerRef: MutableRefObject<HTMLElement | undefined>;
   /** enabled click outside event */
   enableAutoClose?: boolean;
+  /** on close callback */
+  onAutoClose?: (event: Event) => void;
 }
 
 export interface UseDropdownReturn {
@@ -18,7 +20,12 @@ export interface UseDropdownReturn {
   isOpen: boolean;
 }
 
-export const useDropdown = ({ dropdownRef, triggerRef, enableAutoClose }: UseDropdownProps): UseDropdownReturn => {
+export const useDropdown = ({
+  dropdownRef,
+  triggerRef,
+  enableAutoClose,
+  onAutoClose,
+}: UseDropdownProps): UseDropdownReturn => {
   const [open, setOpen] = useState<boolean>(false);
 
   const collapseHandler = () => setOpen(!open);
@@ -34,6 +41,10 @@ export const useDropdown = ({ dropdownRef, triggerRef, enableAutoClose }: UseDro
     }
 
     if (!triggerRef?.current?.contains(event?.target as Node)) {
+      if (onAutoClose) {
+        onAutoClose(event);
+      }
+
       setOpen(false);
     }
   };
