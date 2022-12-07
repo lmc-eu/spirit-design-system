@@ -1,5 +1,6 @@
 import SpiritTheme from './spirit.theme';
 import '../.storybook/assets/stylesheets/index.scss';
+import { IconGlobalDecorator } from './decorators/IconGlobalDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -19,3 +20,7 @@ export const parameters = {
   },
   viewMode: 'docs',
 };
+
+export const decorators = [
+  IconGlobalDecorator,
+];
