@@ -1,3 +1,4 @@
+export * from './accordion';
 export * from './alert';
 export * from './breadcrumbs';
 export * from './button';
