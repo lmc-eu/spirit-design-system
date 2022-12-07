@@ -20,13 +20,14 @@ const Dropdown = (props: SpiritDropdownProps) => {
     renderTrigger,
     enableAutoClose,
     breakpoint,
+    onAutoClose,
     ...rest
   } = props;
 
   const dropdownRef = useRef();
   const triggerRef = useRef();
 
-  const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose });
+  const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
   const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint });
 

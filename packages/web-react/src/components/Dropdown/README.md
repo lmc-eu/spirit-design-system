@@ -21,6 +21,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `id`               | `string`                                     | `<random>`    | no       | Component id                                                    |
 | `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode` | -             | no       | Properties for trigger render                                   |
 | `enableAutoClose`  | `boolean`                                    | `true`        | no       | Enables close on click outside of Dropdown                      |
+| `onAutoClose` .    | `(event: Event) => void`                     |               | no       | Callback on close on click outside of Dropdown                  |
 | `isFullWidth`      | `boolean`                                    | `false`       | no       | Whether is component displayed in full width                    |
 | `placement`        | [`DropdownPlacement`][dropdownplacement]     | `bottom-left` | no       | Alignment of the component                                      |
 | `breakpoint`       | [`DropdownBreakpoint`][dropdownbreakpoint]   | -             | no       | Breakpoint to switch from the full-width to the auto-width mode |
