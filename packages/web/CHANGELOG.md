@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.34.0"></a>
+
+# [0.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.33.0...@lmc-eu/spirit-web@0.34.0) (2022-12-08)
+
+### Bug Fixes
+
+- **web:** Collapse implementation fixes ([d3c8093](https://github.com/lmc-eu/spirit-design-system/commit/d3c8093))
+- **web:** Modification of the Collapse component toggling behavior, Collapse example ([c53f776](https://github.com/lmc-eu/spirit-design-system/commit/c53f776))
+
+### Features
+
+- **web-twig:** Collapse Twig properties update, tests, documentation ([3bdf57d](https://github.com/lmc-eu/spirit-design-system/commit/3bdf57d))
+- **web:** Introduction of Accordion CSS+JS ([d3a10d3](https://github.com/lmc-eu/spirit-design-system/commit/d3a10d3))
+- **web:** Make `Pagination` component inline to enable horizontal alignment [#JALL-37](https://github.com/lmc-eu/spirit-design-system/issues/JALL-37) ([aa5949f](https://github.com/lmc-eu/spirit-design-system/commit/aa5949f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.33.0"></a>
 
 # [0.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.32.0...@lmc-eu/spirit-web@0.33.0) (2022-11-30)

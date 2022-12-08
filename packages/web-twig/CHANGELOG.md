@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.18.0"></a>
+
+# [1.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.17.0...@lmc-eu/spirit-web-twig@1.18.0) (2022-12-08)
+
+### Features
+
+- **web-twig:** Collapse Twig properties update, tests, documentation ([3bdf57d](https://github.com/lmc-eu/spirit-design-system/commit/3bdf57d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.17.0"></a>
 
 # [1.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.16.0...@lmc-eu/spirit-web-twig@1.17.0) (2022-11-30)

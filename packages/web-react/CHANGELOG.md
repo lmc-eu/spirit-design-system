@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.31.0"></a>
+
+# [0.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.30.0...@lmc-eu/spirit-web-react@0.31.0) (2022-12-08)
+
+### BREAKING CHANGES
+
+- **web-react:** Rename Collapse `isCollapsed` prop to `isOpen` ([30ee874](https://github.com/lmc-eu/spirit-design-system/commit/30ee874)), closes [#DS-460](https://github.com/lmc-eu/spirit-design-system/issues/DS-460)
+
+### Bug Fixes
+
+- **web-react:** Dropdown props are not required anymore ([052c72b](https://github.com/lmc-eu/spirit-design-system/commit/052c72b))
+
+### Features
+
+- **web-react:** Introduce transitioning for Collapse component ([818ca30](https://github.com/lmc-eu/spirit-design-system/commit/818ca30))
+- **web-react:** Introduce UncontrolledCollapse component ([cee6e05](https://github.com/lmc-eu/spirit-design-system/commit/cee6e05))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.30.0"></a>
 
 # [0.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.29.0...@lmc-eu/spirit-web-react@0.30.0) (2022-11-30)
