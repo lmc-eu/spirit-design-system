@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { MutableRefObject, useRef } from 'react';
-import Transition, { TransitionStatus, ENTERED, ENTERING, EXITED, EXITING } from 'react-transition-group/Transition';
+import { Transition, TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks/styleProps';
 import { SpiritCollapseProps } from '../../types';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
@@ -10,10 +10,10 @@ import { useResizeHeight } from './useResizeHeight';
 const TRANSITION_DURATION = 250;
 
 const transitioningStyles = {
-  [ENTERING]: 'is-transitioning',
-  [ENTERED]: '',
-  [EXITING]: 'is-transitioning',
-  [EXITED]: '',
+  entering: 'is-transitioning',
+  entered: '',
+  exiting: 'is-transitioning',
+  exited: '',
 };
 
 const defaultProps = {
