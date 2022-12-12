@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.32.0"></a>
+
+# [0.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.31.0...@lmc-eu/spirit-web-react@0.32.0) (2022-12-12)
+
+### Bug Fixes
+
+- **web-react:** Module `Transition` was not found while using Collapse ([b50b2d1](https://github.com/lmc-eu/spirit-design-system/commit/b50b2d1))
+
+### Code Refactoring
+
+- **web-react:** Do not call outside click handler on ever call ([1823714](https://github.com/lmc-eu/spirit-design-system/commit/1823714))
+- **web-react:** Remove IconsProvider while IconsDecorator is ([dcb0a56](https://github.com/lmc-eu/spirit-design-system/commit/dcb0a56))
+
+### Features
+
+- **web-react:** Introduce Dialog component ([86ea63c](https://github.com/lmc-eu/spirit-design-system/commit/86ea63c))
+- **web-react:** Introduce Modal component ([bc8c969](https://github.com/lmc-eu/spirit-design-system/commit/bc8c969))
+- **web-react:** Introduce on auto close callback prop for Dropdown ([387f9db](https://github.com/lmc-eu/spirit-design-system/commit/387f9db))
+- **web-react:** Introduce React Accordion component [#DS-447](https://github.com/lmc-eu/spirit-design-system/issues/DS-447) ([d8b5245](https://github.com/lmc-eu/spirit-design-system/commit/d8b5245))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.31.0"></a>
 
 # [0.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.30.0...@lmc-eu/spirit-web-react@0.31.0) (2022-12-08)
