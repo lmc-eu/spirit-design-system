@@ -2,14 +2,10 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import { ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
 import { Button } from '../../Button';
 import Modal from '../Modal';
 import ModalBody from '../ModalBody';
 import ModalHeader from '../ModalHeader';
-import { IconsProvider } from '../../../context';
 import { Icon } from '../../Icon';
 
 const Story: ComponentStory<typeof Modal> = () => {
@@ -22,7 +18,7 @@ const Story: ComponentStory<typeof Modal> = () => {
   };
 
   return (
-    <IconsProvider value={icons}>
+    <>
       <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
@@ -40,7 +36,7 @@ const Story: ComponentStory<typeof Modal> = () => {
           </p>
         </ModalBody>
       </Modal>
-    </IconsProvider>
+    </>
   );
 };
 
