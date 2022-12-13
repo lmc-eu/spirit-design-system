@@ -15,5 +15,6 @@ export default {
 
 export { default as RadioField } from './stories/RadioField';
 export { default as RadioFieldDisabled } from './stories/RadioFieldDisabled';
+export { default as RadioFieldItem } from './stories/RadioFieldItem';
 export { default as RadioFieldList } from './stories/RadioFieldList';
 export { default as Props } from './stories/RadioFieldProps';

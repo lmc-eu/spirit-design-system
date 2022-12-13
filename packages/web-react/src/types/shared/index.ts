@@ -5,6 +5,7 @@ export * from './dialogs';
 export * from './dom';
 export * from './events';
 export * from './inputs';
+export * from './item';
 export * from './style';
 export * from './typography';
 export * from './refs';

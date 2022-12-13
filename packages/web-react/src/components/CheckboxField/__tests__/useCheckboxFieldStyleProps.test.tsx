@@ -36,4 +36,11 @@ describe('useCheckboxFieldStyleProps', () => {
 
     expect(result.current.classProps.root).toBe('CheckboxField CheckboxField--error');
   });
+
+  it('should return field as an Item', () => {
+    const props = { isItem: true } as SpiritCheckboxFieldProps;
+    const { result } = renderHook(() => useCheckboxFieldStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('CheckboxField CheckboxField--item');
+  });
 });

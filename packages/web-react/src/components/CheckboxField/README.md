@@ -19,6 +19,7 @@ and show if the input is required.
 | `message`         | string  | Validation or help message     |
 | `validationState` | `error` | Type of validation state       |
 | `isDisabled`      | boolean | Whether is field disabled      |
+| `isItem`          | boolean | To render in [Item][item] mode |
 | `isRequired`      | boolean | Whether is field required      |
 | `isChecked`       | boolean | Whether is field checked       |
 | `isLabelHidden`   | boolean | Whether is label hidden        |
@@ -43,3 +44,5 @@ const CustomCheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
 ```
 
 For detailed information see [CheckboxField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/CheckboxField/README.md) component
+
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md

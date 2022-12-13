@@ -14,17 +14,19 @@ export interface RadioFieldStyles {
 }
 
 export function useRadioFieldStyleProps(props: SpiritRadioFieldProps): RadioFieldStyles {
-  const { isLabelHidden, ...restProps } = props;
+  const { isItem, isLabelHidden, ...restProps } = props;
   const { isDisabled } = restProps;
 
   const radioFieldClass = useClassNamePrefix('RadioField');
   const radioFieldDisabledClass = `${radioFieldClass}--disabled`;
+  const radioFieldItemClass = `${radioFieldClass}--item`;
   const radioFieldInputClass = `${radioFieldClass}__input`;
   const radioFieldLabelClass = `${radioFieldClass}__label`;
   const radioFieldLabelHiddenClass = `${radioFieldClass}__label--hidden`;
 
   const rootStyles = classNames(radioFieldClass, {
     [radioFieldDisabledClass]: isDisabled,
+    [radioFieldItemClass]: isItem,
   });
   const labelStyles = classNames(radioFieldLabelClass, {
     [radioFieldLabelHiddenClass]: isLabelHidden,

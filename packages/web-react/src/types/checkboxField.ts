@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps, InputProps, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, InputProps, ItemProps, TransferProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
@@ -7,6 +7,7 @@ export interface CheckboxFieldProps
     StyleProps,
     LabelProps,
     InputProps,
+    ItemProps,
     MessageProps,
     TransferProps {
   /** Whether the checkbox is indeterminate */
