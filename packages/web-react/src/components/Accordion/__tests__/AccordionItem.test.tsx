@@ -29,8 +29,9 @@ describe('AccordionItem', () => {
   });
 
   it('accordion item should be opened', () => {
+    const toggle = (id: string) => null;
     const dom = render(
-      <Accordion open={['AccordionItemExample1']}>
+      <Accordion open={['AccordionItemExample1']} toggle={toggle}>
         <AccordionItem id="AccordionItemExample1">
           <AccordionHeader>header</AccordionHeader>
           <AccordionContent>content</AccordionContent>

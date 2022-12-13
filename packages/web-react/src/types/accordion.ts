@@ -1,36 +1,36 @@
-import React from 'react';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
-
-export type AccordionElementType = 'section' | 'article' | 'div';
+import { ReactNode, ElementType } from 'react';
+import { ChildrenProps, StyleProps, TransferProps, ElementTypeProps } from './shared';
 
 export type AccordionOpenStateType = string | string[] | undefined;
 
-export interface AccordionContextProps {
+export interface AccordionHandlingProps {
   open: AccordionOpenStateType;
-  toggle?: (id: string) => void;
+  toggle: (id: string) => void;
 }
 
 export interface AccordionItemContextProps {
-  id: string | undefined;
-}
-
-export interface AccordionProps
-  extends ChildrenProps,
-    StyleProps,
-    TransferProps,
-    Pick<AccordionContextProps, 'toggle'> {
-  elementType?: AccordionElementType;
-  id?: string;
-  open?: AccordionOpenStateType;
-}
-
-export interface AccordionItemProps extends ChildrenProps, StyleProps, TransferProps {
   id: string;
-  elementType?: AccordionElementType;
 }
 
-export interface AccordionHeaderProps extends ChildrenProps, StyleProps, TransferProps {
-  slot?: React.ReactNode;
+export interface BaseAccordionProps extends ChildrenProps, StyleProps, TransferProps {}
+
+export interface AccordionProps<T extends ElementType = 'section'>
+  extends BaseAccordionProps,
+    AccordionHandlingProps,
+    ElementTypeProps<T> {}
+
+export interface AccordionHeaderProps<T extends ElementType = 'h3'> extends BaseAccordionProps, ElementTypeProps<T> {
+  slot?: ReactNode;
 }
 
-export interface AccordionContentProps extends ChildrenProps, StyleProps, TransferProps {}
+export interface AccordionItemProps<T extends ElementType = 'article'>
+  extends BaseAccordionProps,
+    AccordionItemContextProps,
+    ElementTypeProps<T> {}
+
+export interface AccordionContentProps extends BaseAccordionProps {}
+
+export interface UncontrolledAccordionProps extends BaseAccordionProps {
+  defaultOpen?: AccordionOpenStateType;
+  stayOpen?: boolean;
+}

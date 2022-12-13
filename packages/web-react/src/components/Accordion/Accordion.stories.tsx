@@ -17,4 +17,9 @@ export default {
 } as ComponentMeta<typeof Accordion>;
 
 export { default as Accordion } from './stories/Accordion';
+export { default as AccordionHtml } from './stories/AccordionHtml';
+export { default as AccordionProps } from './stories/AccordionProps';
 export { default as AccordionStayOpen } from './stories/AccordionStayOpen';
+export { default as AccordionUncontrolled } from './stories/AccordionUncontrolled';
+export { default as AccordionUncontrolledProps } from './stories/AccordionUncontrolledProps';
+export { default as AccordionUncontrolledStayOpen } from './stories/AccordionUncontrolledStayOpen';

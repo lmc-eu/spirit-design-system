@@ -2,14 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import { Icon } from '../Icon';
 import { AccordionHeaderProps } from '../../types';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 import { useAccordionContext } from './AccordionContext';
 import { useAccordionItemContext } from './AccordionItemContext';
 import { useAccordionAriaProps } from './useAccordionAriaProps';
 import { useOpenItem } from './useOpenItem';
 
-const AccordionHeader: React.FC<AccordionHeaderProps> = ({ children, slot, ...restProps }) => {
+const AccordionHeader = ({ children, slot, ...restProps }: AccordionHeaderProps) => {
   const { classProps } = useAccordionStyleProps();
   const { toggle } = useAccordionContext();
   const { id } = useAccordionItemContext();

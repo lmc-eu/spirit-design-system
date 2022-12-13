@@ -9,15 +9,21 @@ import Accordion from '../Accordion';
 describe('Accordion', () => {
   classNamePrefixProviderTest(Accordion, 'Accordion');
 
-  stylePropsTest(
-    (props: Record<string, unknown>) => <Accordion {...props} id="AccordionExample" data-testid="test-accordion" />,
-    'test-accordion',
-  );
+  stylePropsTest((props: Record<string, unknown>) => {
+    const toggle = (id: string) => null;
+
+    return <Accordion open={[]} toggle={toggle} {...props} id="AccordionExample" data-testid="test-accordion" />;
+  }, 'test-accordion');
 
   restPropsTest(Accordion, '.Accordion');
 
   it('should render text children', () => {
-    const dom = render(<Accordion>Hello World</Accordion>);
+    const toggle = (id: string) => null;
+    const dom = render(
+      <Accordion open={[]} toggle={toggle}>
+        Hello World
+      </Accordion>,
+    );
     const element = dom.container.querySelector('.Accordion') as HTMLElement;
 
     expect(element.textContent).toBe('Hello World');
