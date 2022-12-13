@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import { AccordionItemProps } from '../../types';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 import { AccordionItemProvider } from './AccordionItemContext';
 
-const AccordionItem: React.FC<AccordionItemProps> = (props) => {
+const AccordionItem = (props: AccordionItemProps) => {
   const { children, elementType: ElementTag = 'article', id, ...restProps } = props;
 
   const { classProps } = useAccordionStyleProps();

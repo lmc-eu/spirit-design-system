@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 import { AccordionItemContextProps } from '../../types';
 
 const defaultContext: AccordionItemContextProps = {
-  id: undefined,
+  id: '',
 };
 
 const AccordionItemContext = createContext(defaultContext);

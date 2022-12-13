@@ -10,17 +10,7 @@ import AccordionContent from '../AccordionContent';
 import toggleValueByType from './toggleValueByType';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
-
-export const content = (
-  <p>
-    Condimentum odio, pulvinar et sollicitudin accumsan ac hendrerit vestibulum commodo, molestie laoreet dui sit amet.
-    Molestie consectetur, sed ac felis scelerisque lectus accumsan purus id dolor sed vitae, praesent aliquam dolor quis
-    ornare. Nulla sit amet, rhoncus at quis odio et iaculis lacinia suscipit vivamus sodales, nunc id condimentum felis.
-    Consectetur nec commodo, praesent et elit magna purus molestie cursus molestie, libero ut venenatis erat id et nisi.
-    Quam posuere, aliquam quam leo vitae tellus semper eget nunc, ultricies adipiscing sit amet accumsan. Lorem rutrum,
-    porttitor ante mauris suspendisse ultricies consequat purus, congue a commodo magna et.
-  </p>
-);
+import { content } from './Accordion';
 
 const Story: ComponentStory<typeof Accordion> = () => {
   const [openState, setOpenState] = React.useState<AccordionOpenStateType>(['AccordionItemExample1']);
@@ -35,25 +25,25 @@ const Story: ComponentStory<typeof Accordion> = () => {
         <AccordionHeader
           slot={
             <>
-              <Link href="#">Link</Link>
+              <Link href="/">Link</Link>
               <Pill>3</Pill>
             </>
           }
         >
-          Accordion header #0
+          Accordion Header #0
         </AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample1">
-        <AccordionHeader slot={<Pill>3</Pill>}>Accordion header #1 (open)</AccordionHeader>
+        <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #1</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample2">
-        <AccordionHeader>Accordion header #2</AccordionHeader>
+        <AccordionHeader>Accordion Header #2</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample3">
-        <AccordionHeader slot={<Pill>3</Pill>}>Accordion header #3</AccordionHeader>
+        <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #3</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
     </Accordion>

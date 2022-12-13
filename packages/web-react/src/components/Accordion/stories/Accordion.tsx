@@ -43,25 +43,25 @@ const Story: ComponentStory<typeof Accordion> = () => {
         <AccordionHeader
           slot={
             <>
-              <Link href="#">Link</Link>
+              <Link href="/">Link</Link>
               <Pill>3</Pill>
             </>
           }
         >
-          Accordion header #0
+          Accordion Header #0
         </AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample1">
-        <AccordionHeader slot={<Pill>3</Pill>}>Accordion header #1 (open)</AccordionHeader>
+        <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #1</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample2">
-        <AccordionHeader>Accordion header #2</AccordionHeader>
+        <AccordionHeader>Accordion Header #2</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample3">
-        <AccordionHeader slot={<Pill>3</Pill>}>Accordion header #3</AccordionHeader>
+        <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #3</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
     </Accordion>

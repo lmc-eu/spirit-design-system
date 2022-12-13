@@ -2,7 +2,7 @@
 
 ## Usage
 
-### Default (Always open)
+### Default (Stay open)
 
 ```javascript
 import React, { useState } from 'react';
@@ -38,20 +38,20 @@ const toggle = (id) => {
 ```javascript
 <Accordion open={openState} toggle={toggle}>
   <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader>Accordion header #0</AccordionHeader>
-    <AccordionContent>{content}</AccordionContent>
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader>Accordion header #1 (open)</AccordionHeader>
-    <AccordionContent>{content}</AccordionContent>
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample2">
-    <AccordionHeader>Accordion header #2</AccordionHeader>
-    <AccordionContent>{content}</AccordionContent>
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample3">
-    <AccordionHeader>Accordion header #3</AccordionHeader>
-    <AccordionContent>{content}</AccordionContent>
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
   ...
 </Accordion>
@@ -69,19 +69,101 @@ const [openState, setOpenState] = useState<AccordionOpenStateType>(['AccordionIt
 const [openState, setOpenState] = useState<AccordionOpenStateType>('');
 ```
 
+### Uncontrolled Accordion (Stay open)
+
+```javascript
+import {
+  UncontrolledAccordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionContent,
+  AccordionOpenStateType,
+} from '@lmc-eu/spirit-web-react/components';
+```
+
+```javascript
+<UncontrolledAccordion stayOpen>
+  <AccordionItem id="AccordionItemExample0">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+  <AccordionItem id="AccordionItemExample1">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+</UncontrolledAccordion>
+```
+
+### Uncontrolled Accordion with default open value (Stay open)
+
+```javascript
+<UncontrolledAccordion defaultOpen={['AccordionItemExample1']} stayOpen>
+  <AccordionItem id="AccordionItemExample0">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+  <AccordionItem id="AccordionItemExample1">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+</UncontrolledAccordion>
+```
+
+### Uncontrolled Accordion with open only one at a time
+
+```javascript
+<UncontrolledAccordion>
+  <AccordionItem id="AccordionItemExample0">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+  <AccordionItem id="AccordionItemExample1">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+</UncontrolledAccordion>
+```
+
+### Uncontrolled Accordion with open only one at a time and default open value
+
+```javascript
+<UncontrolledAccordion defaultOpen="AccordionItemExample1">
+  <AccordionItem id="AccordionItemExample0">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+  <AccordionItem id="AccordionItemExample1">
+    <AccordionHeader>Accordion Header</AccordionHeader>
+    <AccordionContent>Accordion Content</AccordionContent>
+  </AccordionItem>
+</UncontrolledAccordion>
+```
+
 ## Accordion Props
 
 | Prop name          | Type                          | Default     | Required | Description                                      |
 | ------------------ | ----------------------------- | ----------- | -------- | ------------------------------------------------ |
-| `id`               | `string`                      | -           | no       | Accordion id                                     |
-| `children`         | `ReactNode`                   | -           | yes      | Accordion children node                          |
+| `children`         | `ReactNode`                   | -           | yes      | Accordion children's nodes                       |
 | `elementType`      | `'section', 'article', 'div'` | `'section'` | no       | Type of element used as wrapper                  |
-| `open`             | `string, string[]`            | `[]`        | no       | Open state \*                                    |
+| `open`             | `string, string[]`            | -           | no       | Open item or list of open items \*               |
 | `toggle`           | `(id: string) => void`        | -           | no       | A generic handler for a single **AccordionItem** |
 | `UNSAFE_className` | `string`                      | -           | no       | Wrapper custom class name                        |
 | `UNSAFE_style`     | `CSSProperties`               | -           | no       | Wrapper custom style                             |
 
 (\*) Depending on the type of default value, what is set as the default will affect whether one or more will be open at the same time.
+
+## Uncontrolled Accordion Props
+
+| Prop name          | Type                          | Default     | Required | Description                                    |
+| ------------------ | ----------------------------- | ----------- | -------- | ---------------------------------------------- |
+| `children`         | `ReactNode`                   | -           | yes      | Accordion children's nodes                     |
+| `elementType`      | `'section', 'article', 'div'` | `'section'` | no       | Type of element used as wrapper                |
+| `defaultOpen`      | `string, string[]`            | -           | no       | Default open item(s) \*                        |
+| `stayOpen`         | `boolean`                     | -           | no       | Item stay open when another one is also opened |
+| `UNSAFE_className` | `string`                      | -           | no       | Wrapper custom class name                      |
+| `UNSAFE_style`     | `CSSProperties`               | -           | no       | Wrapper custom style                           |
+
+(\*) If this attribute is an array, then the `stayOpen` parameter should also be set.
 
 ## AccordionItem Props
 
