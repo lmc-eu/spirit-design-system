@@ -42,6 +42,7 @@ Without lexer:
 | `id`              | `string`                      | `null`  | no       | Input and label identification |
 | `isChecked`       | `bool`                        | `false` | no       | If true, input is checked      |
 | `isDisabled`      | `bool`                        | `false` | no       | If true, input is disabled     |
+| `isItem`          | `bool`                        | `false` | no       | To render in [Item][item] mode |
 | `isLabelHidden`   | `bool`                        | `false` | no       | If true, label is hidden       |
 | `isRequired`      | `bool`                        | `false` | no       | If true, input is required     |
 | `label`           | `string`                      | —       | yes      | Label text                     |
@@ -55,3 +56,4 @@ further extend component's descriptiveness and accessibility. These attributes
 will be passed to the topmost HTML element of the component.
 
 [checkboxfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/CheckboxField
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
