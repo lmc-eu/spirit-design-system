@@ -74,3 +74,25 @@
 .CheckboxField > .CheckboxField__input:disabled:indeterminate {
     background-color: form-fields-theme.$input-color-disabled;
 }
+
+.CheckboxField--item {
+    @include form-fields-tools.item();
+}
+
+.CheckboxField--item.CheckboxField--disabled {
+    @include form-fields-tools.item-disabled();
+}
+
+// stylelint-disable-next-line selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
+.CheckboxField--item .CheckboxField__input:checked ~ .CheckboxField__text > .CheckboxField__label {
+    @include form-fields-tools.item-label-checked();
+}
+
+.CheckboxField--item .CheckboxField__message {
+    @include form-fields-tools.item-message();
+}
+
+.CheckboxField--item:hover .CheckboxField__message,
+.CheckboxField--item:active .CheckboxField__message {
+    color: inherit;
+}

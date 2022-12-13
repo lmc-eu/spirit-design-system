@@ -55,3 +55,12 @@ $box-field-variants: (
         message-color: $message-color-error,
     ),
 );
+
+// Item variant
+$item-spacing: tokens.$space-400;
+$item-border-radius: tokens.$radius-100;
+$item-background-color-default: tokens.$background-interactive-default;
+$item-background-color-hover: tokens.$background-interactive-hover;
+$item-background-color-active: tokens.$background-interactive-active;
+$item-label-checked-typography: tokens.$body-medium-text-bold;
+$item-message-typography: tokens.$body-small-text-regular;

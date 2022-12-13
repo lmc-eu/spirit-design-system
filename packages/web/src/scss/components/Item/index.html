@@ -1,0 +1,32 @@
+{{#> layout/plain }}
+
+<div class="docs-FormFieldGrid">
+  <h2 class="docs-Heading">CheckboxField Item</h2>
+
+  <label for="checkboxfieldItem" class="CheckboxField CheckboxField--item">
+    <input type="checkbox" id="checkboxfieldItem" class="CheckboxField__input" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label">Checkbox Item</span>
+    </span>
+  </label>
+
+  <h2 class="docs-Heading">RadioField Item</h2>
+
+  <label for="radiofieldItem" class="RadioField RadioField--item">
+    <input type="radio" id="radiofieldItem" name="example3" class="RadioField__input" />
+    <span class="RadioField__label">Radio Item</span>
+  </label>
+</div>
+
+<script>
+  const inputs = ['checkboxfield14', 'checkboxfield15', 'checkboxfield16', 'checkboxfield17'];
+
+  window.addEventListener('DOMContentLoaded', function () {
+    inputs.forEach(function (input) {
+      const checkbox = document.getElementById(input);
+      checkbox.indeterminate = true;
+    });
+  });
+</script>
+
+{{/layout/plain }}

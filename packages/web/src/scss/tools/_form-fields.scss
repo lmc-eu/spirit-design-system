@@ -126,3 +126,29 @@
         color: form-fields-theme.$box-field-input-placeholder-color-disabled;
     }
 }
+
+@mixin item() {
+    padding: form-fields-theme.$item-spacing;
+    border-radius: form-fields-theme.$item-border-radius;
+    background-color: form-fields-theme.$item-background-color-default;
+
+    &:hover {
+        background-color: form-fields-theme.$item-background-color-hover;
+    }
+
+    &:active {
+        background-color: form-fields-theme.$item-background-color-active;
+    }
+}
+
+@mixin item-disabled() {
+    background-color: form-fields-theme.$item-background-color-default;
+}
+
+@mixin item-message() {
+    @include typography.generate(form-fields-theme.$item-message-typography);
+}
+
+@mixin item-label-checked() {
+    @include typography.generate(form-fields-theme.$item-label-checked-typography);
+}

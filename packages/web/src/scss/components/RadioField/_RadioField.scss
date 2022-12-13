@@ -71,3 +71,16 @@
 .RadioField > .RadioField__input:disabled::before {
     box-shadow: theme.$input-box-shadow-disabled; // 1.
 }
+
+.RadioField--item {
+    @include form-fields-tools.item();
+}
+
+.RadioField--item.RadioField--disabled {
+    @include form-fields-tools.item-disabled();
+}
+
+// stylelint-disable-next-line selector-max-class -- We need to override the default styles for the label in Item.
+.RadioField--item .RadioField__input:checked ~ .RadioField__label {
+    @include form-fields-tools.item-label-checked();
+}
