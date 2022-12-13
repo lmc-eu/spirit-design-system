@@ -30,3 +30,12 @@ Disabled state:
   <span class="RadioField__label">Selected disabled label</span>
 </label>
 ```
+
+As an Item:
+
+```html
+<label for="radiofield5" class="RadioField RadioField--item">
+  <input type="radio" id="radiofield5" name="example" class="RadioField__input" checked />
+  <span class="RadioField__label">Item</span>
+</label>
+```
