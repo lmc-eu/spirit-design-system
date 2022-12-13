@@ -1,63 +1,19 @@
-import React from 'react';
+import { ComponentMeta } from '@storybook/react';
 import CheckboxField from './CheckboxField';
-import { SpiritCheckboxFieldProps } from '../../types';
 
 export default {
   title: 'Components/CheckboxField',
-  argTypes: {
-    id: 'default',
-    isDisabled: {
-      control: 'boolean',
-    },
-    isRequired: {
-      control: 'boolean',
-    },
-    isChecked: {
-      control: 'boolean',
-    },
-    validationState: {
-      control: {
-        type: 'select',
-        options: ['error'],
+  component: CheckboxField,
+  parameters: {
+    docs: {
+      description: {
+        component: `Use CheckboxField when you have a group of choices and any selection from the group is allowed.`,
       },
     },
-    label: 'Label',
-    message: 'Message',
   },
-};
+} as ComponentMeta<typeof CheckboxField>;
 
-const Template = (args: SpiritCheckboxFieldProps) => <CheckboxField {...args} />;
-
-export const DefaultCheckboxField = Template.bind({});
-DefaultCheckboxField.args = {
-  label: 'Label',
-  message: 'Message',
-};
-
-export const CheckedCheckboxField = Template.bind({});
-DefaultCheckboxField.args = {
-  label: 'Label',
-  message: 'Message',
-  isChecked: true,
-};
-
-export const RequiredCheckboxField = Template.bind({});
-RequiredCheckboxField.args = {
-  label: 'Label',
-  message: 'Message',
-  isRequired: true,
-};
-
-export const DisabledCheckboxField = Template.bind({});
-DisabledCheckboxField.args = {
-  label: 'Label',
-  message: 'Message',
-  isDisabled: true,
-};
-
-export const ErroredCheckboxField = Template.bind({});
-ErroredCheckboxField.args = {
-  label: 'Label',
-  message: 'Message',
-  validationState: 'error',
-};
+export { default as CheckboxField } from './stories/CheckboxField';
+export { default as CheckboxFieldError } from './stories/CheckboxFieldError';
+export { default as CheckboxFieldItem } from './stories/CheckboxFieldItem';
+export { default as Props } from './stories/CheckboxFieldProps';

@@ -16,6 +16,7 @@ Use RadioField when you have a group of mutually exclusive choices and only one 
 | `value`         | string  | Input value                    |
 | `isDisabled`    | boolean | Whether is field disabled      |
 | `isChecked`     | boolean | Whether is field checked       |
+| `isItem`        | boolean | To render in [Item][item] mode |
 | `isLabelHidden` | boolean | Whether is label hidden        |
 
 ## Custom component
@@ -36,3 +37,5 @@ const CustomRadioField = (props: SpiritRadioFieldProps): JSX.Element => {
 ```
 
 For detailed information see [RadioField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/RadioField/README.md) component
+
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md

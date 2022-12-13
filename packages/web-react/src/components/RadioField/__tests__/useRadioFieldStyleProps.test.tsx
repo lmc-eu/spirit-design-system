@@ -27,4 +27,11 @@ describe('useRadioFieldStyleProps', () => {
 
     expect(result.current.classProps.root).toBe('RadioField RadioField--disabled');
   });
+
+  it('should return field as an Item', () => {
+    const props = { id: 'radiofield', label: 'text', isItem: true } as SpiritRadioFieldProps;
+    const { result } = renderHook(() => useRadioFieldStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('RadioField RadioField--item');
+  });
 });
