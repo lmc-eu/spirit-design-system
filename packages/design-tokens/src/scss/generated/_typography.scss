@@ -1,14 +1,4 @@
 // Generated Typography from Supernova. Do not edit manually.
-$body-large-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1.125rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.55,
-    ),
-) !default;
-
 $body-large-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -36,16 +26,6 @@ $body-large-text-regular: (
         font-style: normal,
         font-weight: 400,
         line-height: 1.55,
-    ),
-) !default;
-
-$body-medium-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 1rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.5,
     ),
 ) !default;
 
@@ -79,16 +59,6 @@ $body-medium-text-regular: (
     ),
 ) !default;
 
-$body-small-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.875rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.42,
-    ),
-) !default;
-
 $body-small-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -116,16 +86,6 @@ $body-small-text-regular: (
         font-style: normal,
         font-weight: 400,
         line-height: 1.42,
-    ),
-) !default;
-
-$body-xsmall-button: (
-    mobile: (
-        font-family: "'Inter', sans-serif",
-        font-size: 0.75rem,
-        font-style: normal,
-        font-weight: 600,
-        line-height: 1.32,
     ),
 ) !default;
 
@@ -280,19 +240,15 @@ $heading-xsmall-text: (
 ) !default;
 
 $styles: (
-    body-large-button: $body-large-button,
     body-large-text-bold: $body-large-text-bold,
     body-large-text-italic: $body-large-text-italic,
     body-large-text-regular: $body-large-text-regular,
-    body-medium-button: $body-medium-button,
     body-medium-text-bold: $body-medium-text-bold,
     body-medium-text-italic: $body-medium-text-italic,
     body-medium-text-regular: $body-medium-text-regular,
-    body-small-button: $body-small-button,
     body-small-text-bold: $body-small-text-bold,
     body-small-text-italic: $body-small-text-italic,
     body-small-text-regular: $body-small-text-regular,
-    body-xsmall-button: $body-xsmall-button,
     body-xsmall-text-bold: $body-xsmall-text-bold,
     body-xsmall-text-italic: $body-xsmall-text-italic,
     body-xsmall-text-regular: $body-xsmall-text-regular,
