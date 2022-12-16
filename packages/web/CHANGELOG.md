@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.35.0"></a>
+
+# [0.35.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.34.0...@lmc-eu/spirit-web@0.35.0) (2022-12-16)
+
+### Bug Fixes
+
+- **web:** Fix RadioField input to more comply with the design ([9afa036](https://github.com/lmc-eu/spirit-design-system/commit/9afa036))
+
+### Documentation
+
+- **contributing:** Addition to readme and contribution files ([692d7df](https://github.com/lmc-eu/spirit-design-system/commit/692d7df))
+- **contributing:** Updating readme and contribution files ([6f7dc73](https://github.com/lmc-eu/spirit-design-system/commit/6f7dc73))
+
+### Features
+
+- **web:** Add Item variant to RadioField and CheckboxField [#DS-364](https://github.com/lmc-eu/spirit-design-system/issues/DS-364) ([5043c07](https://github.com/lmc-eu/spirit-design-system/commit/5043c07))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.34.0"></a>
 
 # [0.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.33.0...@lmc-eu/spirit-web@0.34.0) (2022-12-08)

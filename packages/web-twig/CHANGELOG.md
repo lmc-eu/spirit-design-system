@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.19.0"></a>
+
+# [1.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.18.0...@lmc-eu/spirit-web-twig@1.19.0) (2022-12-16)
+
+### Documentation
+
+- **contributing:** Addition to readme and contribution files ([692d7df](https://github.com/lmc-eu/spirit-design-system/commit/692d7df))
+- **contributing:** Updating readme and contribution files ([6f7dc73](https://github.com/lmc-eu/spirit-design-system/commit/6f7dc73))
+
+### Features
+
+- **web-twig:** Add Item variant to RadioField and CheckboxField [#DS-364](https://github.com/lmc-eu/spirit-design-system/issues/DS-364) ([fdbf4ba](https://github.com/lmc-eu/spirit-design-system/commit/fdbf4ba))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.18.0"></a>
 
 # [1.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.17.0...@lmc-eu/spirit-web-twig@1.18.0) (2022-12-08)

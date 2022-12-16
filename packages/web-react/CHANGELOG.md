@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.33.0"></a>
+
+# [0.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.32.0...@lmc-eu/spirit-web-react@0.33.0) (2022-12-16)
+
+### BREAKING CHANGES
+
+- **web-react:** Introduce uncontrolled Tabs component ([2b5b550](https://github.com/lmc-eu/spirit-design-system/commit/2b5b550))
+
+### Dependencies
+
+- Pin dependency @types/react-transition-group to 4.4.5 ([327ee68](https://github.com/lmc-eu/spirit-design-system/commit/327ee68))
+
+### Documentation
+
+- **contributing:** Addition to readme and contribution files ([692d7df](https://github.com/lmc-eu/spirit-design-system/commit/692d7df))
+- **contributing:** Updating readme and contribution files ([6f7dc73](https://github.com/lmc-eu/spirit-design-system/commit/6f7dc73))
+- **web-react:** Introducing the concept of controlled and uncontrolled ([a3599e1](https://github.com/lmc-eu/spirit-design-system/commit/a3599e1))
+
+### Features
+
+- **web-react:** Add Item variant to RadioField and CheckboxField and improve its stories [#DS-364](https://github.com/lmc-eu/spirit-design-system/issues/DS-364) ([4564bf2](https://github.com/lmc-eu/spirit-design-system/commit/4564bf2))
+- **web-react:** Allow `TabItem` and `TabPane` to use transfer props ([1cc8e95](https://github.com/lmc-eu/spirit-design-system/commit/1cc8e95))
+- **web-react:** Introduce Uncontrolled Accordion [#DS-459](https://github.com/lmc-eu/spirit-design-system/issues/DS-459) ([4011425](https://github.com/lmc-eu/spirit-design-system/commit/4011425))
+
+### Tests
+
+- **web-react:** Introduce UncontrolledTabs component test ([ad47ecf](https://github.com/lmc-eu/spirit-design-system/commit/ad47ecf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.32.0"></a>
 
 # [0.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.31.0...@lmc-eu/spirit-web-react@0.32.0) (2022-12-12)
