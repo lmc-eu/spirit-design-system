@@ -59,7 +59,6 @@
 
 @mixin inline-field-input() {
     appearance: none;
-    margin: form-fields-theme.$inline-field-input-margin;
     color: form-fields-theme.$inline-field-input-color-unchecked;
     border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
 

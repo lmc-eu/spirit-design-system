@@ -18,10 +18,10 @@
     display: grid;
     width: theme.$input-size;
     height: theme.$input-size;
+    margin: theme.$input-margin;
     font: inherit;
     border-radius: theme.$input-border-radius;
     background-color: transparent;
-    transform: translateY(-0.075em);
     place-content: center;
 
     &:checked {
