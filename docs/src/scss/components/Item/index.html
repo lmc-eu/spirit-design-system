@@ -28,69 +28,34 @@
         <div class="Container">
     
           
-            <div class="Alert Alert--success mb-600" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#info" />
-              </svg>
-              <div>
-                We sent you an activation link to email <strong>spirit@lmc.eu</strong>.
-              </div>
-            </div>
+          <div class="docs-FormFieldGrid">
+            <h2 class="docs-Heading">CheckboxField Item</h2>
           
-            <div class="Alert Alert--danger mb-600" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#warning" />
-              </svg>
-              <div>
-                Data update failed due to missing internet connection
-              </div>
-            </div>
+            <label for="checkboxfieldItem" class="CheckboxField CheckboxField--item">
+              <input type="checkbox" id="checkboxfieldItem" class="CheckboxField__input" />
+              <span class="CheckboxField__text">
+                <span class="CheckboxField__label">Checkbox Item</span>
+              </span>
+            </label>
           
-            <div class="Alert Alert--informative mb-600" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#info" />
-              </svg>
-              <div>
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-              </div>
-            </div>
+            <h2 class="docs-Heading">RadioField Item</h2>
           
-            <div class="Alert Alert--success Alert--center mb-600" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#info" />
-              </svg>
-              <div>
-                We sent you an activation link to email <strong>spirit@lmc.eu</strong>.
-              </div>
-            </div>
+            <label for="radiofieldItem" class="RadioField RadioField--item">
+              <input type="radio" id="radiofieldItem" name="example3" class="RadioField__input" />
+              <span class="RadioField__label">Radio Item</span>
+            </label>
+          </div>
           
-            <div class="Alert Alert--danger Alert--center mb-600" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#warning" />
-              </svg>
-              <div>
-                Data update failed due to missing internet connection
-              </div>
-            </div>
+          <script>
+            const inputs = ['checkboxfield14', 'checkboxfield15', 'checkboxfield16', 'checkboxfield17'];
           
-            <div class="Alert Alert--informative Alert--center" role="alert">
-              <svg class="Icon" width="24" height="24">
-                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#info" />
-              </svg>
-              <div>
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-                Data update failed due to missing internet connection
-              </div>
-            </div>
+            window.addEventListener('DOMContentLoaded', function () {
+              inputs.forEach(function (input) {
+                const checkbox = document.getElementById(input);
+                checkbox.indeterminate = true;
+              });
+            });
+          </script>
           
     
         </div>
