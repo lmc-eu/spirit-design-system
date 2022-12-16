@@ -15,10 +15,6 @@
     border-radius: theme.$accordion-border-radius;
     background-color: theme.$accordion-item-background-color-default;
 
-    &:hover {
-        background-color: theme.$accordion-item-background-color-hover;
-    }
-
     &::before {
         content: '';
         position: absolute;
@@ -28,8 +24,14 @@
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
 
-    &:hover::before {
-        border-bottom-color: transparent;
+    @media (hover: hover) {
+        &:hover {
+            background-color: theme.$accordion-item-background-color-hover;
+        }
+
+        &:hover::before {
+            border-bottom-color: transparent;
+        }
     }
 }
 
@@ -39,6 +41,8 @@
 
     flex: initial;
     text-align: left;
+    color: theme.$accordion-header-typography-color;
+    -webkit-tap-highlight-color: transparent;
 
     &:first-of-type::before {
         content: '';
@@ -86,4 +90,9 @@
         left: theme.$accordion-header-padding-x;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
+}
+
+// stylelint-disable-next-line selector-max-class, selector-max-specificity -- We want to hide the border above the header of the adjacent item
+.Accordion__item:not(:last-child) .is-open .Accordion__content::after {
+    border-bottom-color: transparent;
 }
