@@ -128,6 +128,7 @@
 
 @mixin item() {
     padding: form-fields-theme.$item-spacing;
+    margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;
     background-color: form-fields-theme.$item-background-color-default;
 
