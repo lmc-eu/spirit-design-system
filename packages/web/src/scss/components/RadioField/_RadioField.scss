@@ -54,6 +54,10 @@
     @include form-fields-tools.label-hidden();
 }
 
+.RadioField--disabled {
+    @include form-fields-tools.inline-field-root-disabled();
+}
+
 .RadioField--disabled > .RadioField__label {
     @include form-fields-tools.label-disabled();
 }
