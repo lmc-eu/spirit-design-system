@@ -56,6 +56,10 @@
     color: form-fields-theme.$message-color-error;
 }
 
+.CheckboxField--disabled {
+    @include form-fields-tools.inline-field-root-disabled();
+}
+
 .CheckboxField--disabled .CheckboxField__label {
     @include form-fields-tools.label-disabled();
 }

@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use '../settings/cursors';
 @use '../theme/form-fields' as form-fields-theme;
 @use 'accessibility';
 @use 'typography';
@@ -18,6 +19,7 @@
 
 @mixin input-disabled() {
     color: form-fields-theme.$input-color-disabled;
+    cursor: cursors.$disabled;
 }
 
 @mixin message() {
@@ -35,6 +37,11 @@
 @mixin inline-field-root() {
     display: inline-flex;
     margin-block: form-fields-theme.$spacing;
+    cursor: pointer;
+}
+
+@mixin inline-field-root-disabled() {
+    cursor: cursors.$disabled;
 }
 
 @mixin box-field-root() {
@@ -61,6 +68,7 @@
     appearance: none;
     color: form-fields-theme.$inline-field-input-color-unchecked;
     border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
+    cursor: pointer;
 
     &:focus-visible {
         outline: 0;
