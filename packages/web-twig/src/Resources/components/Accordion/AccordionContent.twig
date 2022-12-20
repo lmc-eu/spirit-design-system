@@ -1,0 +1,35 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _labelId = props.labelId -%}
+{%- set _parent = props.parent | default(null) -%}
+{%- set _isOpen = props.isOpen | default(false) | boolprop -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Collapse' -%}
+{%- set _collapseClassName = _spiritClassPrefix ~ 'Collapse__content' -%}
+{%- set _accordionClassName = _spiritClassPrefix ~ 'Accordion__content' -%}
+{%- set _isOpenClassName = _isOpen ? 'is-open' : null -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
+{%- set _labelIdAttr = _labelId ? 'aria-labelledby="' ~ _labelId ~ '"' : null -%}
+{%- set _parentAttr = _parent ? 'data-parent="' ~ _parent ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _collapseClassNames = [ _rootClassName, _isOpenClassName ] -%}
+{%- set _contentClassNames = [ _accordionClassName, _class ] -%}
+
+<div
+    {{ _idAttr }}
+    {{ classProp(_collapseClassNames) }}
+    {{ _labelIdAttr }}
+    {{ _parentAttr }}
+>
+    <div class="{{ _collapseClassName }}">
+        <div {{ classProp(_contentClassNames) }}>
+            {%- block content %}{% endblock %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<Accordion id="AccordionExample">
+    <AccordionItem id="AccordionItemExample0">
+        <AccordionHeader
+            id="AccordionItemExample0Header"
+            for="#AccordionItemExample0Content"
+            slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
+        >
+            Accordion Header
+        </AccordionHeader>
+        <AccordionContent id="AccordionItemExample0Content" labelId="AccordionItemExample0Header" parent="AccordionExample">
+            Accordion Content
+        </AccordionContent>
+    </AccordionItem>
+    <AccordionItem id="AccordionItemExample1">
+        <AccordionHeader
+            id="AccordionItemExample1Header"
+            for="AccordionItemExample1Content"
+            slot="<Pill color='selected'>3</Pill>"
+            isOpen
+        >
+            Accordion Header
+        </AccordionHeader>
+        <AccordionContent
+            id="AccordionItemExample1Content"
+            labelId="AccordionItemExample1Header"
+            parent="AccordionExample"
+            isOpen
+        >
+            Accordion Content
+        </AccordionContent>
+    </AccordionItem>
+</Accordion>
