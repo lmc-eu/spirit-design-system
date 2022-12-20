@@ -23,11 +23,9 @@
 
 // Allows link underline everywhere, except for headings default state
 .link-underlined,
-[class*='typography-heading'] a:hover,
-[class*='typography-heading'] a:focus {
+[class*='typography-heading'] a:active,
+[class*='typography-heading'] a:hover {
     text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-offset: 0.1875em;
 }
 
 .link-stretched {
