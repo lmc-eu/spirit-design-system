@@ -29,11 +29,13 @@
     }
 
     &:hover {
+        text-decoration: none;
         color: theme.$header-link-color-hover;
         background-color: theme.$header-link-background-color-hover;
     }
 
     &:active {
+        text-decoration: none;
         color: theme.$header-link-color-active;
         background-color: theme.$header-link-background-color-active;
     }

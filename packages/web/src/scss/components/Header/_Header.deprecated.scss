@@ -145,11 +145,13 @@ button.Header__link {
     }
 
     &:hover {
+        text-decoration: none;
         color: theme.$nav-link-color-hover;
         background-color: theme.$nav-link-background-color-hover;
     }
 
     &:active {
+        text-decoration: none;
         color: theme.$nav-link-color-active;
         background-color: theme.$nav-link-background-color-active;
     }

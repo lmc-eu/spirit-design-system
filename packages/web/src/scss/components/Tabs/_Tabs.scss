@@ -24,6 +24,7 @@
 
     &:hover,
     &:active {
+        text-decoration: none;
         color: theme.$link-color;
     }
 }
