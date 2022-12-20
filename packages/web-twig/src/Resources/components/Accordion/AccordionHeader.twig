@@ -1,0 +1,48 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _for = props.for -%}
+{%- set _elementType = (props.elementType is defined) ? props.elementType : 'h3' -%}
+{%- set _isOpen = props.isOpen | default(false) | boolprop -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Accordion__itemHeader' -%}
+{%- set _toggleClassName = _spiritClassPrefix ~ 'Accordion__itemToggle' -%}
+{%- set _sideClassName = _spiritClassPrefix ~ 'Accordion__itemSide' -%}
+{%- set _slotClassName = _spiritClassPrefix ~ 'Accordion__itemSlot' -%}
+{%- set _iconClassName = _spiritClassPrefix ~ 'Accordion__itemIcon' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
+{%- set _targetAttr = _for ? 'data-target=' ~ _for ~ '' : null -%}
+
+{# Miscellaneous #}
+{%- set _ariaExpanded = _isOpen ? 'true' : 'false' -%}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }}
+    {{ _idAttr }}
+    {{ classProp(_classNames) }}
+>
+    <button
+        type="button"
+        class="{{ _toggleClassName }}"
+        data-toggle="collapse"
+        {{ _targetAttr }}
+        aria-expanded="{{ _ariaExpanded }}"
+        aria-controls="{{ _for }}"
+    >
+        {%- block content %}{% endblock %}
+    </button>
+    <span class="{{ _sideClassName }}">
+        {% if slot is defined %}
+            <span class="{{ _slotClassName }}">
+                {%- block slot %}{% endblock %}
+            </span>
+        {% endif %}
+        <span class="{{ _iconClassName }}">
+            <Icon name="chevron-down" aria-hidden="true" />
+        </span>
+    </span>
+</{{ _elementType }}>

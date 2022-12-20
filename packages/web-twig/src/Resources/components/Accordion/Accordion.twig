@@ -1,0 +1,22 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _elementType = props.elementType | default('section') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Accordion' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType }}
+    {{ _idAttr }}
+    {{ classProp(_classNames) }}
+    data-toggle="accordion"
+>
+    {%- block content %}{% endblock -%}
+</{{ _elementType }}>
