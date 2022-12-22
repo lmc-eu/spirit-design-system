@@ -3,3 +3,13 @@
 .accessibility-hidden {
     @include accessibility.hide-text();
 }
+
+[aria-expanded='true'] .accessibility-open,
+[aria-expanded='false'] .accessibility-closed {
+    display: initial;
+}
+
+[aria-expanded='false'] .accessibility-open,
+[aria-expanded='true'] .accessibility-closed {
+    display: none;
+}
