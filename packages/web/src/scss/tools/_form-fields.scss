@@ -37,7 +37,7 @@
 @mixin inline-field-root() {
     display: inline-flex;
     margin-block: form-fields-theme.$spacing;
-    cursor: pointer;
+    cursor: cursors.$form-fields;
 }
 
 @mixin inline-field-root-disabled() {
@@ -68,7 +68,7 @@
     appearance: none;
     color: form-fields-theme.$inline-field-input-color-unchecked;
     border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
-    cursor: pointer;
+    cursor: cursors.$form-fields;
 
     &:focus-visible {
         outline: 0;
