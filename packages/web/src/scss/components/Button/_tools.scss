@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/cursors';
 @use '../../tools/breakpoint';
 
 @mixin square($breakpoints, $typography, $padding-y, $border-width) {
@@ -41,7 +42,7 @@
             border-color: map.get($variables, disabled-border-color);
             background-color: map.get($variables, disabled-background);
             pointer-events: none;
-            cursor: default;
+            cursor: cursors.$disabled;
         }
     }
 }
