@@ -23,6 +23,11 @@
         overflow: visible;
     }
 
+    /* When it should be as a hidden inline element */
+    &:is(span) {
+        display: none;
+    }
+
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         @if $breakpoint-value > 0 {
             &[data-breakpoint='#{$breakpoint-name}'] {
