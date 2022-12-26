@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.34.0"></a>
+
+# [0.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.33.0...@lmc-eu/spirit-web-react@0.34.0) (2022-12-26)
+
+### Bug Fixes
+
+- **web-react:** Fix export of the ButtonLink component [#DS-519](https://github.com/lmc-eu/spirit-design-system/issues/DS-519) ([792ef83](https://github.com/lmc-eu/spirit-design-system/commit/792ef83))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.33.0"></a>
 
 # [0.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.32.0...@lmc-eu/spirit-web-react@0.33.0) (2022-12-16)

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.36.0"></a>
+
+# [0.36.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.35.0...@lmc-eu/spirit-web@0.36.0) (2022-12-26)
+
+### Bug Fixes
+
+- **web:** Fix Accordion styles [DS-494, DS-499, DS-500] ([e3779c6](https://github.com/lmc-eu/spirit-design-system/commit/e3779c6))
+- **web:** Prevent from dropdown content overflow outside its container ([3501c91](https://github.com/lmc-eu/spirit-design-system/commit/3501c91))
+- **web:** Remove block margin from form field of type Item ([f7b9327](https://github.com/lmc-eu/spirit-design-system/commit/f7b9327))
+
+### Features
+
+- **web:** Set all cursors in global cursors settings ([d141a9e](https://github.com/lmc-eu/spirit-design-system/commit/d141a9e))
+- **web:** Set RadioField and CheckboxField cursors to pointer, except in disabled state ([b48a63e](https://github.com/lmc-eu/spirit-design-system/commit/b48a63e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.35.0"></a>
 
 # [0.35.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.34.0...@lmc-eu/spirit-web@0.35.0) (2022-12-16)
