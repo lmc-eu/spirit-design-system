@@ -2,7 +2,7 @@ import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shar
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
-export type TextFieldType = 'text' | 'password' | 'email';
+export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
 export interface TextFieldProps
   extends ChildrenProps,
