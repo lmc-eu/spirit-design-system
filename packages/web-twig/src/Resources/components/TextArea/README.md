@@ -13,6 +13,7 @@ Advanced example usage:
 ```twig
 <TextArea
   id="example2"
+  label="Label"
   messsage="validation failed"
   name="example2"
   placeholder="Placeholder"
@@ -30,6 +31,7 @@ Without lexer:
 ```twig
 {% include "@spirit/textArea.twig" with { props: {
     id: "example",
+    label: "Label",
     name: "example",
     isRequired: true,
     validationState: "error",
