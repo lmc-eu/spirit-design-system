@@ -10,7 +10,7 @@ import RadioField from '../RadioField';
 describe('RadioField', () => {
   classNamePrefixProviderTest(RadioField, 'RadioField');
 
-  itemPropsTest(RadioField, 'label');
+  itemPropsTest(RadioField);
 
   stylePropsTest(RadioField);
 

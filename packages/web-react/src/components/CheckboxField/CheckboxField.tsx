@@ -10,7 +10,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
+    <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
         type="checkbox"
@@ -22,12 +22,10 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
         value={value}
       />
       <span className={classProps.text}>
-        <label htmlFor={id} className={classProps.label}>
-          {label}
-        </label>
+        <span className={classProps.label}>{label}</span>
         {message && <span className={classProps.message}>{message}</span>}
       </span>
-    </div>
+    </label>
   );
 };
 

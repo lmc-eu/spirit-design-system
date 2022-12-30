@@ -10,7 +10,7 @@ import CheckboxField from '../CheckboxField';
 describe('CheckboxField', () => {
   classNamePrefixProviderTest(CheckboxField, 'CheckboxField');
 
-  itemPropsTest(CheckboxField, 'div');
+  itemPropsTest(CheckboxField);
 
   stylePropsTest(CheckboxField);
 
@@ -19,28 +19,28 @@ describe('CheckboxField', () => {
   it('should have text classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" />);
 
-    const element = dom.container.querySelector('div > span') as HTMLElement;
+    const element = dom.container.querySelector('label > span') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__text');
   });
 
   it('should have label classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" isLabelHidden />);
 
-    const element = dom.container.querySelector('div > span > label') as HTMLElement;
+    const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label');
   });
 
   it('should have hidden classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" isLabelHidden />);
 
-    const element = dom.container.querySelector('div > span > label') as HTMLElement;
+    const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label--hidden');
   });
 
   it('should have required classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" isRequired />);
 
-    const element = dom.container.querySelector('div > span > label') as HTMLElement;
+    const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
     expect(element).toHaveClass('CheckboxField__label--required');
   });
 
@@ -61,7 +61,7 @@ describe('CheckboxField', () => {
   it('should have error classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" validationState="error" />);
 
-    const element = dom.container.querySelector('div') as HTMLElement;
+    const element = dom.container.querySelector('label') as HTMLElement;
     expect(element).toHaveClass('CheckboxField--error');
   });
 });
