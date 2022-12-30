@@ -140,12 +140,14 @@
     border-radius: form-fields-theme.$item-border-radius;
     background-color: form-fields-theme.$item-background-color-default;
 
-    &:hover {
-        background-color: form-fields-theme.$item-background-color-hover;
-    }
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$item-background-color-hover;
+        }
 
-    &:active {
-        background-color: form-fields-theme.$item-background-color-active;
+        &:active {
+            background-color: form-fields-theme.$item-background-color-active;
+        }
     }
 }
 
