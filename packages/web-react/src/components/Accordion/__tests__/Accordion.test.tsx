@@ -10,7 +10,7 @@ describe('Accordion', () => {
   classNamePrefixProviderTest(Accordion, 'Accordion');
 
   stylePropsTest((props: Record<string, unknown>) => {
-    const toggle = (id: string) => null;
+    const toggle = () => null;
 
     return <Accordion open={[]} toggle={toggle} {...props} id="AccordionExample" data-testid="test-accordion" />;
   }, 'test-accordion');
@@ -18,7 +18,7 @@ describe('Accordion', () => {
   restPropsTest(Accordion, '.Accordion');
 
   it('should render text children', () => {
-    const toggle = (id: string) => null;
+    const toggle = () => null;
     const dom = render(
       <Accordion open={[]} toggle={toggle}>
         Hello World
