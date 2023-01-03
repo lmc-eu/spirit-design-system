@@ -56,8 +56,8 @@ attributes to register trigger events.
 | Prop name     | Type     | Default | Required | Description                                                            |
 | ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
 | `id`          | `string` | -       | yes      | Collapse ID                                                            |
-| `breakpoint`  | `string` | -       | no       | Breakpoint level [mobile,tablet,desktop]                               |
-| `parent`      | `string` | -       | no       | A parent element selector that ensures that only one item is opened \* |
+| `breakpoint`  | `string` | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
+| `parent`      | `string` | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
 | `class`       | `string` | `null`  | no       | Custom CSS class                                                       |
 | `elementType` | `string` | `'div'` | no       | Custom element type                                                    |
 
