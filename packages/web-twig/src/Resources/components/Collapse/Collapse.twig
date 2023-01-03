@@ -2,8 +2,8 @@
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
-{%- set _breakpoint = props.breakpoint -%}
-{%- set _parent = props.parent -%}
+{%- set _breakpoint = props.breakpoint | default(null) -%}
+{%- set _parent = props.parent | default(null) -%}
 {%- set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
 
 {# Class names #}
