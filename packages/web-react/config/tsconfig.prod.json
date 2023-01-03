@@ -5,5 +5,5 @@
     "target": "es2015",
     "noEmit": false
   },
-  "exclude": ["../docs/**/*", "../src/**/__tests__/**/*", "../src/**/*.stories.tsx", "../src/**/stories/**/*"]
+  "exclude": ["../docs/**/*", "../src/**/__tests__/**/*", "../src/**/*.stories.*", "../src/**/stories/**/*"]
 }
