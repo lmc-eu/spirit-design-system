@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Use CheckboxField when you have a group of choices and any selection from the group is allowed.`,
+        component: 'Use CheckboxField when you have a group of choices and any selection from the group is allowed.',
       },
     },
   },

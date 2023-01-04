@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Icon`,
+        component: 'Icon',
       },
     },
   },

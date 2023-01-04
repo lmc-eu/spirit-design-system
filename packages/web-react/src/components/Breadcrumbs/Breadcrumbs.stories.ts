@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Breadcrumbs present a trail to each previous page in relation to website's structure.`,
+        component: "Breadcrumbs present a trail to each previous page in relation to website's structure.",
       },
     },
   },

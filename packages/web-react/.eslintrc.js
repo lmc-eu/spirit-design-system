@@ -63,5 +63,7 @@ module.exports = {
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
+    // disable double quotes
+    quotes: ['warn', 'single'],
   },
 };

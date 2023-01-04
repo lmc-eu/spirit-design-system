@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Provide sizes for headings.`,
+        component: 'Provide sizes for headings.',
       },
     },
   },

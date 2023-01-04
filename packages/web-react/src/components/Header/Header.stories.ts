@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Provide page header.`,
+        component: 'Provide page header.',
       },
     },
   },

@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Provide typograhy variants for body text.`,
+        component: 'Provide typograhy variants for body text.',
       },
     },
   },
