@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Provide navigable target.`,
+        component: 'Provide navigable target.',
       },
     },
   },

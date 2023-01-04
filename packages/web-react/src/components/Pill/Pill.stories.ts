@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Can be used to show count or label.`,
+        component: 'Can be used to show count or label.',
       },
     },
   },

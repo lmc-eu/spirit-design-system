@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Provide contextual feedback messages for typical user actions.`,
+        component: 'Provide contextual feedback messages for typical user actions.',
       },
     },
   },

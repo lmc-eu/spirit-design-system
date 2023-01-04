@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Buttons allow users to take actions.`,
+        component: 'Buttons allow users to take actions.',
       },
     },
   },

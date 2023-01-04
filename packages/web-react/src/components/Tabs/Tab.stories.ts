@@ -7,8 +7,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `The Tab component is used to organize related content. User can navigate between
-        groups of information in tabbable regions.`,
+        component:
+          'The Tab component is used to organize related content. User can navigate between\ngroups of information in tabbable regions.',
       },
     },
   },

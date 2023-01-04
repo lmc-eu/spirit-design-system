@@ -18,34 +18,34 @@ describe('TextArea', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);
 
     const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass(`TextArea__label`);
+    expect(element).toHaveClass('TextArea__label');
   });
 
   it('should have hidden classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" isLabelHidden />);
 
     const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass(`TextArea__label--hidden`);
+    expect(element).toHaveClass('TextArea__label--hidden');
   });
 
   it('should have required classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" isRequired />);
 
     const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass(`TextArea__label--required`);
+    expect(element).toHaveClass('TextArea__label--required');
   });
 
   it('should have input classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);
 
     const element = dom.container.querySelector('textarea') as HTMLElement;
-    expect(element).toHaveClass(`TextArea__input`);
+    expect(element).toHaveClass('TextArea__input');
   });
 
   it('should have message', () => {
     const dom = render(<TextArea id="textarea" label="Label" message="text" />);
 
-    const element = dom.container.querySelector(`.TextArea__message`) as HTMLElement;
+    const element = dom.container.querySelector('.TextArea__message') as HTMLElement;
     expect(element.textContent).toBe('text');
   });
 

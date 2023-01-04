@@ -7,7 +7,8 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed.`,
+        component:
+          'Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed.',
       },
     },
   },

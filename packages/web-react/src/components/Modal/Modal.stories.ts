@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Add dialogs to your site for lightboxes, user notifications, or completely custom content.`,
+        component: 'Add dialogs to your site for lightboxes, user notifications, or completely custom content.',
       },
     },
   },

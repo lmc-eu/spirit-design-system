@@ -19,34 +19,34 @@ describe('TextField', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`TextField__label`);
+      expect(element).toHaveClass('TextField__label');
     });
 
     it('should have hidden classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} isLabelHidden />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`TextField__label--hidden`);
+      expect(element).toHaveClass('TextField__label--hidden');
     });
 
     it('should have required classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} isRequired />);
 
       const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass(`TextField__label--required`);
+      expect(element).toHaveClass('TextField__label--required');
     });
 
     it('should have input classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
 
       const element = dom.container.querySelector('input') as HTMLElement;
-      expect(element).toHaveClass(`TextField__input`);
+      expect(element).toHaveClass('TextField__input');
     });
 
     it('should have message', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} message="text" />);
 
-      const element = dom.container.querySelector(`.TextField__message`) as HTMLElement;
+      const element = dom.container.querySelector('.TextField__message') as HTMLElement;
       expect(element.textContent).toBe('text');
     });
 

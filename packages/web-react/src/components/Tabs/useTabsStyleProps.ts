@@ -21,7 +21,7 @@ export function useTabsStyleProps(props: SpiritTabsProps = { selectedTabId: '', 
   const tabsItemClass = `${tabsClass}__item`;
   const tabsLinkClass = `${tabsClass}__link`;
   const tabsPaneClass = `${tabsClass}Pane`;
-  const tabsSelectedClass = `is-selected`;
+  const tabsSelectedClass = 'is-selected';
 
   return {
     classProps: {
