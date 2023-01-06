@@ -6,13 +6,8 @@
 
 ```javascript
 import React, { useState } from 'react';
-import {
-  Accordion,
-  AccordionItem,
-  AccordionHeader,
-  AccordionContent,
-  AccordionOpenStateType,
-} from '@lmc-eu/spirit-web-react/components';
+import { Accordion, AccordionItem, AccordionHeader, AccordionContent } from '@lmc-eu/spirit-web-react/components';
+import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 ```
 
 ```
@@ -22,12 +17,12 @@ const [openState, setOpenState] = useState<AccordionOpenStateType>(undefined);
 ```javascript
 const toggle = (id) => {
   if (Array.isArray(openState)) {
-    if (open.includes(id)) {
-      setOpenState(open.filter((accordionId) => accordionId !== id));
+    if (openState.includes(id)) {
+      setOpenState(openState.filter((accordionId) => accordionId !== id));
     } else {
-      setOpenState([...open, id]);
+      setOpenState([...openState, id]);
     }
-  } else if (open === id) {
+  } else if (openState === id) {
     setOpenState(undefined);
   } else {
     setOpenState(id);
@@ -77,8 +72,8 @@ import {
   AccordionItem,
   AccordionHeader,
   AccordionContent,
-  AccordionOpenStateType,
 } from '@lmc-eu/spirit-web-react/components';
+import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 ```
 
 ```javascript
