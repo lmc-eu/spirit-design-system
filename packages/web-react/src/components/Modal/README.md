@@ -1,7 +1,7 @@
 # Modal
 
 ```jsx
-import { Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-react/components';
+import { Button, Icon, Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-react/components';
 ```
 
 ```jsx
