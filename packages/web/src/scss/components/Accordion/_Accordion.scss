@@ -35,6 +35,10 @@
     }
 }
 
+.Accordion__itemIcon {
+    pointer-events: none;
+}
+
 .Accordion__itemToggle {
     @include reset.button();
     @include typography.generate(theme.$accordion-header-typography);
