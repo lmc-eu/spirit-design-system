@@ -12,7 +12,7 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
@@ -21,7 +21,7 @@
 <dialog
   {{ mainProps(_mainPropsWithoutId) }}
   {{ classProp(_classNames) }}
-  {{ _idAttr }}
+  {{ _idAttr | raw }}
   data-component="modal"
 >
   <div class="{{ _contentClassName }}">
