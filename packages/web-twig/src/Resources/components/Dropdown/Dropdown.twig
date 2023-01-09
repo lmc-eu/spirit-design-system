@@ -15,7 +15,7 @@
 {%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
 
 {# Attributes #}
-{%- set _breakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint ~ '' : null -%}
+{%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint="' ~ _breakpoint ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _placementClassNames = {
@@ -29,7 +29,7 @@
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
-    {{ _breakpointAttr }}
+    {{ _dataBreakpointAttr | raw }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>

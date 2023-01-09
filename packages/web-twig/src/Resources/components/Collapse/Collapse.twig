@@ -11,17 +11,17 @@
 {%- set _contentClassName = _spiritClassPrefix ~ 'Collapse__content' -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id=' ~ _id ~ '' : null -%}
-{%- set _breakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint ~ '' : null -%}
-{%- set _parentAttr = _parent ? 'data-parent=' ~ _parent ~ '' : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
+{%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint="' ~ _breakpoint ~ '"' : null -%}
+{%- set _dataParentAttr = _parent ? 'data-parent="' ~ _parent ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
 
 <{{ _elementType }}
-    {{ _idAttr }}
-    {{ _breakpointAttr }}
-    {{ _parentAttr }}
+    {{ _idAttr | raw }}
+    {{ _dataBreakpointAttr | raw }}
+    {{ _dataParentAttr | raw }}
     {{ classProp(_classNames) }}
 >
     <{{ _elementType }} class="{{ _contentClassName }}">
