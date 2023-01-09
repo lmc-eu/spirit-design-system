@@ -1,0 +1,8 @@
+@use '@tokens' as tokens;
+@use '../tools/typography';
+
+:where(body) {
+    @include typography.generate(tokens.$body-medium-text-regular);
+
+    color: tokens.$text-primary-default;
+}
