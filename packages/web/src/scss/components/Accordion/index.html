@@ -2,41 +2,27 @@
 
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Default accordion (Always open)</h2>
+  <h2 class="docs-Heading">Basic usage</h2>
 
   <div class="mb-400">
 
-    <section
-      class="Accordion"
-      data-toggle="accordion"
-    >
+    <!-- Accordion: start -->
+    <section class="Accordion" data-toggle="accordion">
 
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample_article_0"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample_article_0_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: start -->
+      <article id="example_1_item_1" class="Accordion__item">
+
+        <h3 id="example_1_item_1_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample_article_0_collapse"
+            data-target="example_1_item_1_collapse"
+            aria-expanded="true"
           >
-            <!-- toggle -->
-            Accordion Header
-            <!-- // toggle -->
+            Accordion Item no. 1
           </button>
           <span class="Accordion__itemSide">
-            <span class="Accordion__itemSlot">
-              <!-- slot -->
-              <a href="#">Link</a>
-              <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
-            </span>
             <span class="Accordion__itemIcon">
               <svg width="24" height="24" aria-hidden="true">
                 <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
@@ -44,18 +30,16 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample_article_0_collapse"
-          class="Collapse"
-          aria-labelledby="accordionExample_article_0_header"
+          id="example_1_item_1_collapse"
+          class="Collapse is-open"
+          aria-labelledby="example_1_item_1_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae curabitur odio
               leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at sem, mauris aenean
               aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus ultricies sollicitudin
@@ -63,37 +47,36 @@
               posuere, mi orci et nisi et iaculis lorem fringilla sed mauris auctor, lorem tempus a pulvinar felis scelerisque.
               Suscipit vivamus, elit vel arcu lorem fringilla finibus quis sit amet ligula convallis, consectetur potenti aenean
               efficitur.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample_article_1"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample_article_1_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: end -->
+
+      <!-- Accordion item: start -->
+      <article id="example_1_item_2" class="Accordion__item">
+
+        <h3 id="example_1_item_2_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample_article_1_collapse"
-            aria-expanded="true"
+            data-target="example_1_item_2_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
-            Accordion Header
-            <!-- // toggle -->
+            Accordion Item no. 2
           </button>
           <span class="Accordion__itemSide">
             <span class="Accordion__itemSlot">
-              <!-- slot -->
+
+              <!-- Slot content: start -->
+              <a href="https://spirit.design">Link</a>
               <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
+              <!-- Slot content: end -->
+
             </span>
             <span class="Accordion__itemIcon">
               <svg width="24" height="24" aria-hidden="true">
@@ -102,48 +85,43 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample_article_1_collapse"
-          class="Collapse is-open"
-          aria-labelledby="accordionExample_article_1_header"
+          id="example_1_item_2_collapse"
+          class="Collapse"
+          aria-labelledby="example_1_item_2_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque non
               nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum consectetur
               porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare fermentum et
               vehicula. Consequat bibendum, dui fusce gravida iaculis urna integer vitae id, ante purus nullam et nisl. Accumsan
               arcu, nunc nulla faucibus purus vivamus facilisis augue, volutpat convallis eget suscipit. Tellus nunc ut enim et,
               urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample_article_2"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample_article_2_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: end -->
+
+      <!-- Accordion item: start -->
+      <article id="example_1_item_3" class="Accordion__item">
+
+        <h3 id="example_1_item_3_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample_article_2_collapse"
+            data-target="example_1_item_3_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
-            Accordion header #2 with longer title and without slot
-            <!-- // toggle -->
+            Accordion Item no. 3
           </button>
           <span class="Accordion__itemSide">
             <span class="Accordion__itemIcon">
@@ -153,18 +131,16 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample_article_2_collapse"
+          id="example_1_item_3_collapse"
           class="Collapse"
-          aria-labelledby="accordionExample_article_2_header"
+          aria-labelledby="example_1_item_3_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae curabitur odio
               leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at sem, mauris aenean
               aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus ultricies sollicitudin
@@ -172,38 +148,37 @@
               posuere, mi orci et nisi et iaculis lorem fringilla sed mauris auctor, lorem tempus a pulvinar felis scelerisque.
               Suscipit vivamus, elit vel arcu lorem fringilla finibus quis sit amet ligula convallis, consectetur potenti aenean
               efficitur.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample_article_3"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample_article_3_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: end -->
+
+      <!-- Accordion item: start -->
+      <article id="example_1_item_4" class="Accordion__item">
+
+        <h3 id="example_1_item_4_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample_article_3_collapse"
+            data-target="example_1_item_4_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
             Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus.
             Libero sed non nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur,
             tellus pulvinar libero tempus
-            <!-- // toggle -->
           </button>
           <span class="Accordion__itemSide">
             <span class="Accordion__itemSlot">
-              <!-- slot -->
+
+              <!-- Slot content: start -->
               <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
+              <!-- Slot content: end -->
+
             </span>
             <span class="Accordion__itemIcon">
               <svg width="24" height="24" aria-hidden="true">
@@ -212,75 +187,64 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample_article_3_collapse"
+          id="example_1_item_4_collapse"
           class="Collapse"
-          aria-labelledby="accordionExample_article_3_header"
+          aria-labelledby="example_1_item_4_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque non
               nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum consectetur
               porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare fermentum et
               vehicula. Consequat bibendum, dui fusce gravida iaculis urna integer vitae id, ante purus nullam et nisl. Accumsan
               arcu, nunc nulla faucibus purus vivamus facilisis augue, volutpat convallis eget suscipit. Tellus nunc ut enim et,
               urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
+      <!-- Accordion item: end -->
 
     </section>
+    <!-- Accordion: end -->
 
   </div>
-
 </section>
 
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Accordion with one item opened</h2>
+  <h2 class="docs-Heading">One item open at a time</h2>
 
   <div class="mb-400">
 
+    <!-- Accordion: start -->
     <section
-      id="accordionExample1"
+      id="example_2"
       class="Accordion"
       data-toggle="accordion"
     >
 
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample1_article_0"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample1_article_0_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: start -->
+      <article id="example_2_item_1" class="Accordion__item">
+
+        <h3 id="example_2_item_1_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample1_article_0_collapse"
+            data-target="example_2_item_1_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
-            Accordion Header
-            <!-- // toggle -->
+            Accordion Item no. 1
           </button>
           <span class="Accordion__itemSide">
-            <span class="Accordion__itemSlot">
-              <!-- slot -->
-              <a href="#">Link</a>
-              <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
-            </span>
             <span class="Accordion__itemIcon">
               <svg width="24" height="24" aria-hidden="true">
                 <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
@@ -288,19 +252,17 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample1_article_0_collapse"
+          id="example_2_item_1_collapse"
           class="Collapse"
-          data-parent="#accordionExample1"
-          aria-labelledby="accordionExample1_article_0_header"
+          data-parent="#example_2"
+          aria-labelledby="example_2_item_1_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae curabitur odio
               leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at sem, mauris aenean
               aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus ultricies sollicitudin
@@ -308,38 +270,29 @@
               posuere, mi orci et nisi et iaculis lorem fringilla sed mauris auctor, lorem tempus a pulvinar felis scelerisque.
               Suscipit vivamus, elit vel arcu lorem fringilla finibus quis sit amet ligula convallis, consectetur potenti aenean
               efficitur.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample1_article_1"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample1_article_1_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: end -->
+
+      <!-- Accordion item: start -->
+      <article id="example_2_item_2" class="Accordion__item">
+
+        <h3 id="example_2_item_2_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample1_article_1_collapse"
-            aria-expanded="true"
+            data-target="example_2_item_2_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
-            Accordion Header
-            <!-- // toggle -->
+            Accordion Item no. 2
           </button>
           <span class="Accordion__itemSide">
-            <span class="Accordion__itemSlot">
-              <!-- slot -->
-              <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
-            </span>
             <span class="Accordion__itemIcon">
               <svg width="24" height="24" aria-hidden="true">
                 <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
@@ -347,49 +300,44 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample1_article_1_collapse"
-          class="Collapse is-open"
-          data-parent="#accordionExample1"
-          aria-labelledby="accordionExample1_article_1_header"
+          id="example_2_item_2_collapse"
+          class="Collapse"
+          data-parent="#example_2"
+          aria-labelledby="example_2_item_2_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque non
               nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum consectetur
               porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare fermentum et
               vehicula. Consequat bibendum, dui fusce gravida iaculis urna integer vitae id, ante purus nullam et nisl. Accumsan
               arcu, nunc nulla faucibus purus vivamus facilisis augue, volutpat convallis eget suscipit. Tellus nunc ut enim et,
               urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample1_article_2"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample1_article_2_header"
-          class="Accordion__itemHeader"
-        >
+      <!-- Accordion item: end -->
+
+      <!-- Accordion item: start -->
+      <article id="example_2_item_3" class="Accordion__item">
+
+        <h3 id="example_2_item_3_header" class="Accordion__itemHeader">
           <button
             type="button"
             class="Accordion__itemToggle"
             data-toggle="collapse"
-            data-target="accordionExample1_article_2_collapse"
+            data-target="example_2_item_3_collapse"
+            aria-expanded="false"
           >
-            <!-- toggle -->
-            Accordion header #2 with longer title and without slot
-            <!-- // toggle -->
+            Accordion Item no. 3
           </button>
           <span class="Accordion__itemSide">
             <span class="Accordion__itemIcon">
@@ -399,19 +347,17 @@
             </span>
           </span>
         </h3>
+
         <div
-          id="accordionExample1_article_2_collapse"
+          id="example_2_item_3_collapse"
           class="Collapse"
-          data-parent="#accordionExample1"
-          aria-labelledby="accordionExample1_article_2_header"
+          data-parent="#example_2"
+          aria-labelledby="example_2_item_3_header"
         >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
+          <div class="Collapse__content">
+            <div class="Accordion__content">
+
+              <!-- Content: start -->
               Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae curabitur odio
               leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at sem, mauris aenean
               aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus ultricies sollicitudin
@@ -419,76 +365,19 @@
               posuere, mi orci et nisi et iaculis lorem fringilla sed mauris auctor, lorem tempus a pulvinar felis scelerisque.
               Suscipit vivamus, elit vel arcu lorem fringilla finibus quis sit amet ligula convallis, consectetur potenti aenean
               efficitur.
-              <!-- // content -->
+              <!-- Content: end -->
+
             </div>
           </div>
         </div>
+
       </article>
-      <!-- // Accordion Item -->
-      <!-- Accordion Item -->
-      <article
-        id="accordionExample1_article_3"
-        class="Accordion__item"
-      >
-        <h3
-          id="accordionExample1_article_3_header"
-          class="Accordion__itemHeader"
-        >
-          <button
-            type="button"
-            class="Accordion__itemToggle"
-            data-toggle="collapse"
-            data-target="accordionExample1_article_3_collapse"
-          >
-            <!-- toggle -->
-            Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus.
-            Libero sed non nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur,
-            tellus pulvinar libero tempus
-            <!-- // toggle -->
-          </button>
-          <span class="Accordion__itemSide">
-            <span class="Accordion__itemSlot">
-              <!-- slot -->
-              <span class="Pill Pill--selected">3</span>
-              <!-- // slot -->
-            </span>
-            <span class="Accordion__itemIcon">
-              <svg width="24" height="24" aria-hidden="true">
-                <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-              </svg>
-            </span>
-          </span>
-        </h3>
-        <div
-          id="accordionExample1_article_3_collapse"
-          class="Collapse"
-          data-parent="#accordionExample1"
-          aria-labelledby="accordionExample1_article_3_header"
-        >
-          <div
-            class="Collapse__content"
-          >
-            <div
-              class="Accordion__content"
-            >
-              <!-- content -->
-              Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque non
-              nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum consectetur
-              porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare fermentum et
-              vehicula. Consequat bibendum, dui fusce gravida iaculis urna integer vitae id, ante purus nullam et nisl. Accumsan
-              arcu, nunc nulla faucibus purus vivamus facilisis augue, volutpat convallis eget suscipit. Tellus nunc ut enim et,
-              urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
-              <!-- // content -->
-            </div>
-          </div>
-        </div>
-      </article>
-      <!-- // Accordion Item -->
+      <!-- Accordion item: end -->
 
     </section>
+    <!-- Accordion: end -->
 
   </div>
-
 </section>
 
 {{/layout/plain }}
