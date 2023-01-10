@@ -14,7 +14,7 @@ const toPascalCase = (string) =>
 
 const prepareSvgForReactComponent = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg');
+    const svgs = files.filter((el) => path.extname(el) === '.svg' && el !== 'sprite.svg');
     if (svgs.length > 0) {
       svgs.forEach((svg) => {
         const svgPath = path.join(srcDir, svg);
