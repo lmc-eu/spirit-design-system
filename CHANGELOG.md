@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.20.0"></a>
+
+# [1.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.19.0...@lmc-eu/spirit-web-twig@1.20.0) (2023-01-10)
+
+### Bug Fixes
+
+- **web-twig:** Add missing test snapshots ([04f8e20](https://github.com/lmc-eu/spirit-design-system/commit/04f8e20))
+- **web-twig:** Make Collapse components props optional according to its readme [#DS-275](https://github.com/lmc-eu/spirit-design-system/issues/DS-275) ([87f8b2d](https://github.com/lmc-eu/spirit-design-system/commit/87f8b2d))
+
+### Documentation
+
+- **web-twig:** Document the missing input types of `TextField`: `number`, `search`, `tel`, `url` ([5f3ec92](https://github.com/lmc-eu/spirit-design-system/commit/5f3ec92))
+
+### Features
+
+- **web-twig:** Introduce Accordion for Twig [#DS-448](https://github.com/lmc-eu/spirit-design-system/issues/DS-448) ([74e1467](https://github.com/lmc-eu/spirit-design-system/commit/74e1467))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.19.0"></a>
 
 # [1.19.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.18.0...@lmc-eu/spirit-web-twig@1.19.0) (2022-12-16)
