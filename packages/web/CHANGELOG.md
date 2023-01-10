@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.37.0"></a>
+
+# [0.37.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.36.0...@lmc-eu/spirit-web@0.37.0) (2023-01-10)
+
+### Bug Fixes
+
+- **web:** Fix Accordion arrow stacking context [#DS-527](https://github.com/lmc-eu/spirit-design-system/issues/DS-527) ([db86857](https://github.com/lmc-eu/spirit-design-system/commit/db86857))
+- **web:** Only show `Item` background during interactions on hover-enabled devices ([342d688](https://github.com/lmc-eu/spirit-design-system/commit/342d688))
+
+### Features
+
+- **web:** Collapse toggle with variable content [#DS-501](https://github.com/lmc-eu/spirit-design-system/issues/DS-501) ([2e466f2](https://github.com/lmc-eu/spirit-design-system/commit/2e466f2))
+- **web:** Disable tap highlight on inputs in mobile Safari ([bfde960](https://github.com/lmc-eu/spirit-design-system/commit/bfde960))
+- **web:** Set foundation typography directly on body tag [#DS-523](https://github.com/lmc-eu/spirit-design-system/issues/DS-523) ([bc3c766](https://github.com/lmc-eu/spirit-design-system/commit/bc3c766))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.36.0"></a>
 
 # [0.36.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.35.0...@lmc-eu/spirit-web@0.36.0) (2022-12-26)

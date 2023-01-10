@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.35.0"></a>
+
+# [0.35.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.34.0...@lmc-eu/spirit-web-react@0.35.0) (2023-01-10)
+
+### Bug Fixes
+
+- **web-react:** Add missing component exports ([f2dae2b](https://github.com/lmc-eu/spirit-design-system/commit/f2dae2b))
+- **web-react:** Make CheckboxField implementation same as in other packages and update itemPropsTest ([b136c5f](https://github.com/lmc-eu/spirit-design-system/commit/b136c5f))
+
+### Chores
+
+- **web-react:** Remove unused variables ([309216d](https://github.com/lmc-eu/spirit-design-system/commit/309216d))
+- **web-react:** Renaming index files to the ts extension [#DS-456](https://github.com/lmc-eu/spirit-design-system/issues/DS-456) ([1f93f15](https://github.com/lmc-eu/spirit-design-system/commit/1f93f15))
+
+### Dependencies
+
+- Pin dependency @testing-library/user-event to 14.4.3 ([f57bddf](https://github.com/lmc-eu/spirit-design-system/commit/f57bddf))
+
+### Documentation
+
+- **web-react:** Fix Accordion and Modal code examples ([c308b1b](https://github.com/lmc-eu/spirit-design-system/commit/c308b1b))
+
+### Features
+
+- **web-react:** Introduce the missing input types of `TextField`: `number`, `search`, `tel`, `url` ([73aa91b](https://github.com/lmc-eu/spirit-design-system/commit/73aa91b))
+
+### Styles
+
+- **web-react:** Replacing backticks in storybook and tests [#DS-468](https://github.com/lmc-eu/spirit-design-system/issues/DS-468) ([9053322](https://github.com/lmc-eu/spirit-design-system/commit/9053322))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.34.0"></a>
 
 # [0.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.33.0...@lmc-eu/spirit-web-react@0.34.0) (2022-12-26)
