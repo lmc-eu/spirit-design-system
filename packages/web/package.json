@@ -3,6 +3,7 @@
   "version": "0.37.0",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public",
     "directory": "dist"
