@@ -3,6 +3,7 @@
   "version": "0.35.0",
   "description": "React implementation of Spirit Design System components",
   "license": "MIT",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public",
     "directory": "dist"
