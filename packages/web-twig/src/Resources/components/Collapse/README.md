@@ -59,7 +59,7 @@ attributes to register trigger events.
 | `breakpoint`  | `string` | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
 | `parent`      | `string` | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
 | `class`       | `string` | `null`  | no       | Custom CSS class                                                       |
-| `elementType` | `string` | `'div'` | no       | Custom element type                                                    |
+| `elementType` | `string` | `'div'` | no       | Custom element type for wrapper and content                            |
 
 (\*) Attribute for Accordion implementation
 
