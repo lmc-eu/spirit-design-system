@@ -25,6 +25,11 @@ const config = {
     '^.+\\.(t|j)sx?$': ['<rootDir>/../../node_modules/@swc/jest'],
   },
 
+  // This line is because of polyfill for useResizeHook
+  // An array of regexp pattern strings that are matched against all source file paths before transformation.
+  // https://jestjs.io/docs/configuration#transformignorepatterns-arraystring
+  transformIgnorePatterns: ['<rootDir>/../../node_modules/@juggle/resize-observer'],
+
   // The test environment that will be used for testing.
   // https://jestjs.io/docs/configuration#testenvironment-string
   testEnvironment: 'jsdom',
