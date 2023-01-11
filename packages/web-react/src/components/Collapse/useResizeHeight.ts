@@ -1,19 +1,13 @@
-import { useState, useEffect, MutableRefObject } from 'react';
+import { useState, RefObject } from 'react';
+import useResizeObserver from '@react-hook/resize-observer';
 
-export const useResizeHeight = (ref: MutableRefObject<HTMLElement | null | undefined>): string => {
+export const useResizeHeight = (ref: RefObject<HTMLElement>): string => {
   const [height, setHeight] = useState<string>('0px');
 
-  const adjustHeight = () => {
-    const currentHeight = ref?.current?.clientHeight || ref?.current?.offsetHeight;
+  useResizeObserver(ref, (entry: ResizeObserverEntry) => {
+    const currentHeight = entry.contentRect.height;
     setHeight(`${currentHeight}px`);
-  };
-
-  useEffect(() => {
-    adjustHeight();
-    window.addEventListener('resize', adjustHeight);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   return height;
 };
