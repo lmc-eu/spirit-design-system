@@ -24,7 +24,7 @@
     {{ _parentAttr }}
     {{ classProp(_classNames) }}
 >
-    <div class="{{ _contentClassName }}">
+    <{{ _elementType }} class="{{ _contentClassName }}">
         {%- block content %}{% endblock %}
-    </div>
+    </{{ _elementType }}>
 </{{ _elementType }}>
