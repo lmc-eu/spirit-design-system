@@ -15,7 +15,6 @@ export {default as MoreIcon} from './MoreIcon';
 export {default as ProfileIcon} from './ProfileIcon';
 export {default as ReloadIcon} from './ReloadIcon';
 export {default as SearchIcon} from './SearchIcon';
-export {default as SpriteIcon} from './SpriteIcon';
 export {default as VisibilityOffIcon} from './VisibilityOffIcon';
 export {default as VisibilityOnIcon} from './VisibilityOnIcon';
 export {default as WarningIcon} from './WarningIcon';
