@@ -76,14 +76,15 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ## Props
 
-| Prop name                 | Type                            | Default    | Required | Description                        |
-| ------------------------- | ------------------------------- | ---------- | -------- | ---------------------------------- |
-| `id`                      | `string`                        | `<random>` | no       | Component id                       |
-| `isOpen`                  | `boolean`                       | -          | no       | Is open on initialization          |
-| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'` | -          | no       | Handle for responsive breakpoint   |
-| `transitionDuration`      | `number`                        | `250`      | no       | Transition duration in miliseconds |
-| `UNSAFE_className`        | `string`                        | -          | no       | Wrapper custom class name          |
-| `UNSAFE_style`            | `CSSProperties`                 | -          | no       | Wrapper custom style               |
+| Prop name                 | Type                            | Default    | Required | Description                                 |
+| ------------------------- | ------------------------------- | ---------- | -------- | ------------------------------------------- |
+| `id`                      | `string`                        | `<random>` | no       | Component id                                |
+| `isOpen`                  | `boolean`                       | -          | no       | Is open on initialization                   |
+| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'` | -          | no       | Handle for responsive breakpoint            |
+| `transitionDuration`      | `number`                        | `250`      | no       | Transition duration in miliseconds          |
+| `elementType`             | `'span', 'div'`                 | `'div'`    | no       | Type of element used as wrapper and content |
+| `UNSAFE_className`        | `string`                        | -          | no       | Wrapper custom class name                   |
+| `UNSAFE_style`            | `CSSProperties`                 | -          | no       | Wrapper custom style                        |
 
 ## Uncontrolled Collapse
 
