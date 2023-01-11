@@ -1,6 +1,13 @@
 # Contributing to `@lmc-eu/spirit-design-system`
 
-First of all, thanks for your contribution to this project! ❤️ Here are some tips how to make your contributing efforts efficient and eventually accepted & merged.
+First of all, thanks for your contribution to this project! ❤️
+Here are some tips how to make your contributing efforts efficient and eventually accepted & merged:
+
+- [General Usage](#general-usage)
+- [Project structure](#project-structure)
+- [Commit messages](#commit-messages)
+- [Code style](#code-style)
+- [Publishing](#publishing)
 
 ## General usage
 
@@ -36,7 +43,7 @@ When the body is present it must be at least 20 characters long and must conform
 
 The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
 
-#### <a name="commit-header"></a>Commit Message Header
+#### Commit Message Header
 
 ```
 <type>(<scope>): <short summary>
@@ -98,14 +105,14 @@ Use the summary field to provide a succinct description of the change:
 - use the sentence case (capitalize the first letter of the sentence)
 - no dot (.) at the end
 
-#### <a name="commit-body"></a>Commit Message Body
+#### Commit Message Body
 
 Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor "fixes".
 
 Explain the motivation for the change in the commit message body. This commit message should explain _why_ you are making the change.
 You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
 
-#### <a name="commit-footer"></a>Commit Message Footer
+#### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues, Jira tickets, and other PRs that this commit closes or is related to.
 For example:
@@ -114,7 +121,6 @@ For example:
 BREAKING CHANGE: <breaking change summary>
 <BLANK LINE>
 <breaking change description + migration instructions>
-<BLANK LINE>
 <BLANK LINE>
 Fixes #<issue number>
 ```
