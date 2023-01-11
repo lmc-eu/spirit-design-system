@@ -2,13 +2,14 @@ const fs = require('fs');
 const path = require('path');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const jsdom = require('jsdom');
+const { filterSvgFiles } = require('./shared');
 
 const svgSrcDir = path.resolve(__dirname, `../dist/svg`);
 const distFile = path.resolve(__dirname, `../dist/icons.js`);
 
 const buildContants = (srcDir, file) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg' && el !== 'sprite.svg');
+    const svgs = filterSvgFiles(files);
 
     if (svgs.length > 0) {
       const icons = {};

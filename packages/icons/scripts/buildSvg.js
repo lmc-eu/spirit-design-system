@@ -1,12 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const { filterSvgFiles } = require('./shared');
 
 const svgSrcDir = path.resolve(__dirname, `../src/svg`);
 const svgDistDir = path.resolve(__dirname, `../dist/svg`);
 
 const normalizeAndCopySvg = (srcDir, distDir) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg');
+    const svgs = filterSvgFiles(files);
+
     if (svgs.length > 0) {
       let sprite = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n';
       const spriteDistFile = path.join(distDir, 'sprite.svg');
