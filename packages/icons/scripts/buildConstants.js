@@ -8,7 +8,7 @@ const distFile = path.resolve(__dirname, `../dist/icons.js`);
 
 const buildContants = (srcDir, file) => {
   fs.readdir(srcDir, (err, files) => {
-    const svgs = files.filter((el) => path.extname(el) === '.svg');
+    const svgs = files.filter((el) => path.extname(el) === '.svg' && el !== 'sprite.svg');
 
     if (svgs.length > 0) {
       const icons = {};
