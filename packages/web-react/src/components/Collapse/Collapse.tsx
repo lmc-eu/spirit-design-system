@@ -50,9 +50,9 @@ const Collapse = (props: SpiritCollapseProps) => {
           className={classNames(classProps.root, styleProps.className, transitioningStyles[transitionState])}
           ref={rootElementRef}
         >
-          <div ref={collapseElementRef} className={classProps.content}>
+          <ElementTag ref={collapseElementRef} className={classProps.content}>
             {children}
-          </div>
+          </ElementTag>
         </ElementTag>
       )}
     </Transition>
