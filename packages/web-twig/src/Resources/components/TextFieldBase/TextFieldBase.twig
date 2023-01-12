@@ -19,6 +19,7 @@
 {%- set _rows = props.rows | default(null) -%}
 
 {# Extended API for TextField #}
+{%- set _hasPasswordToggle = props.hasPasswordToggle | default(false) | boolprop -%}
 {%- set _inputWidth = props.inputWidth | default(null) -%}
 
 {# Class names #}
@@ -28,6 +29,11 @@
 {%- set _labelHiddenClassName = _isLabelHidden ? _rootClassName ~ '__label--hidden' : null -%}
 {%- set _labelRequiredClassName = _isRequired ? _rootClassName ~ '__label--required' : null -%}
 {%- set _messageClassName = _rootClassName ~ '__message' -%}
+{%- set _passwordToggleButtonClassName = _rootClassName ~ '__passwordToggle__button' -%}
+{%- set _passwordToggleClassName = _rootClassName ~ '__passwordToggle' -%}
+{%- set _passwordToggleIconClassName = _rootClassName ~ '__passwordToggle__icon' -%}
+{%- set _passwordToggleIconShownClassName = _rootClassName ~ '__passwordToggle__icon--shown' -%}
+{%- set _passwordToggleIconHiddenClassName = _rootClassName ~ '__passwordToggle__icon--hidden' -%}
 {%- set _rootDisabledClassName = _isDisabled ? _rootClassName ~ '--disabled' : null -%}
 {%- set _rootFluidClassName = _isFluid ? _rootClassName ~ '--fluid' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _rootClassName ~ '--' ~ _validationState : null -%}
@@ -67,18 +73,50 @@
             {{ _value | raw }}
         </textarea>
     {% else %}
-        <input
-            {{ inputProps(props) }}
-            type="{{ _type }}"
-            id="{{ _id }}"
-            name="{{ _name }}"
-            class="{{ _inputClassName }}"
-            {{ _disabledAttr | raw }}
-            {{ _inputWidthAttr | raw }}
-            {{ _placeholderAttr | raw }}
-            {{ _requiredAttr | raw }}
-            {{ _valueAttr | raw }}
-        />
+        {% if _hasPasswordToggle %}
+            <div class="TextField__passwordToggle">
+                <input
+                    {{ inputProps(props) }}
+                    type="password"
+                    id="{{ _id }}"
+                    name="{{ _name }}"
+                    class="{{ _inputClassName }}"
+                    {{ _disabledAttr | raw }}
+                    {{ _inputWidthAttr | raw }}
+                    {{ _placeholderAttr | raw }}
+                    {{ _requiredAttr | raw }}
+                    {{ _valueAttr | raw }}
+                />
+                <button
+                    type="button"
+                    class="{{ _passwordToggleButtonClassName }}"
+                    role="switch"
+                    aria-pressed="false"
+                    aria-label="Show password"
+                    data-toggle="password"
+                >
+                    <span class="{{ _passwordToggleIconClassName }} {{ _passwordToggleIconHiddenClassName }}">
+                        <Icon name="visibility-on" />
+                    </span>
+                    <span class="{{ _passwordToggleIconClassName }} {{ _passwordToggleIconShownClassName }}">
+                        <Icon name="visibility-off" />
+                    </span>
+                </button>
+            </div>
+        {% else %}
+            <input
+                {{ inputProps(props) }}
+                type="{{ _type }}"
+                id="{{ _id }}"
+                name="{{ _name }}"
+                class="{{ _inputClassName }}"
+                {{ _disabledAttr | raw }}
+                {{ _inputWidthAttr | raw }}
+                {{ _placeholderAttr | raw }}
+                {{ _requiredAttr | raw }}
+                {{ _valueAttr | raw }}
+            />
+        {% endif %}
     {% endif %}
     {% if _message %}
         <div class="{{ _messageClassName }}">
