@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.21.0"></a>
+
+# [1.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.20.0...@lmc-eu/spirit-web-twig@1.21.0) (2023-01-16)
+
+### Bug Fixes
+
+- **web-twig:** Collapse content element props ([17e7542](https://github.com/lmc-eu/spirit-design-system/commit/17e7542))
+- **web-twig:** Default filter is not working as expected for false value ([6c855ff](https://github.com/lmc-eu/spirit-design-system/commit/6c855ff))
+
+### Code Refactoring
+
+- **web-twig:** Unify quotes in attributes and print them raw ([3194ec6](https://github.com/lmc-eu/spirit-design-system/commit/3194ec6))
+
+### Documentation
+
+- **web-twig:** Add warning about using default filter in component's ([c445920](https://github.com/lmc-eu/spirit-design-system/commit/c445920))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.20.0"></a>
 
 # [1.20.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.19.0...@lmc-eu/spirit-web-twig@1.20.0) (2023-01-10)
