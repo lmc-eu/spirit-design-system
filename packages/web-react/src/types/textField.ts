@@ -11,6 +11,8 @@ export interface TextFieldProps
     MessageProps,
     TextInputProps,
     TransferProps {
+  /** If the input has password toggle */
+  hasPasswordToggle?: boolean;
   /** The type of text field */
   type?: TextFieldType;
   /** The input width */

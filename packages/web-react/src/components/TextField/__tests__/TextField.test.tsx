@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
@@ -48,6 +48,55 @@ describe('TextField', () => {
 
       const element = dom.container.querySelector('.TextField__message') as HTMLElement;
       expect(element.textContent).toBe('text');
+    });
+
+    it('should have password toggle', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('.TextField__passwordToggle') as HTMLElement;
+      expect(element).toBeInTheDocument();
+    });
+
+    it('should have password toggle button', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+      expect(element).toBeInTheDocument();
+    });
+
+    it('should have type password with password toggle', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('input') as HTMLElement;
+      expect(element).toHaveAttribute('type', 'password');
+    });
+
+    it('should have correct aria label of the password toggle', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+      expect(element).toHaveAttribute('aria-label', 'Show password');
+    });
+
+    it('should toggle type with password toggle', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('input') as HTMLElement;
+      const trigger = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+
+      expect(element).toHaveAttribute('type', 'password');
+      fireEvent.click(trigger);
+      expect(element).toHaveAttribute('type', 'text');
+    });
+
+    it('should toggle aria label of the password toggle', () => {
+      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+
+      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+
+      expect(element).toHaveAttribute('aria-label', 'Show password');
+      fireEvent.click(element);
+      expect(element).toHaveAttribute('aria-label', 'Hide password');
     });
 
     it('should have fluid classname', () => {

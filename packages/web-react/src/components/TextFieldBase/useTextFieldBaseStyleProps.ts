@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBaseProps } from '../../types';
 
 export interface TextFieldBaseStyles {
@@ -9,13 +9,16 @@ export interface TextFieldBaseStyles {
     label: string;
     input: string;
     message: string;
+    passwordToggle: string;
+    passwordToggleButton: string;
+    passwordToggleIcon: string;
   };
   /** props to be passed to the input element */
   props: TextFieldBaseProps;
 }
 
 export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): TextFieldBaseStyles {
-  const { validationState, isLabelHidden, isFluid, isMultiline, ...restProps } = props;
+  const { isFluid, isMultiline, isLabelHidden, validationState, ...restProps } = props;
   const { isDisabled, isRequired } = restProps;
 
   const TextFieldBaseClass = useClassNamePrefix(isMultiline ? 'TextArea' : 'TextField');
@@ -27,6 +30,9 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
   const TextFieldBaseLabelRequiredClass = `${TextFieldBaseClass}__label--required`;
   const TextFieldBaseLabelHiddenClass = `${TextFieldBaseClass}__label--hidden`;
   const TextFieldBaseMessageClass = `${TextFieldBaseClass}__message`;
+  const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
+  const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
+  const TextFieldBasePasswordToggleIconClass = `${TextFieldBaseClass}__passwordToggle__icon`;
 
   const rootStyles = classNames(TextFieldBaseClass, {
     [TextFieldBaseDisabledClass]: isDisabled,
@@ -44,6 +50,9 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
       label: labelStyles,
       input: TextFieldBaseInputClass,
       message: TextFieldBaseMessageClass,
+      passwordToggle: TextFieldBasePasswordToggleClass,
+      passwordToggleButton: TextFieldBasePasswordToggleButtonClass,
+      passwordToggleIcon: TextFieldBasePasswordToggleIconClass,
     },
     props: {
       ...restProps,
