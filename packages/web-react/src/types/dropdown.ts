@@ -22,15 +22,14 @@ export const DropdownFullWidthModes = {
 } as const;
 
 export type DropdownPlacementKeys = keyof typeof DropdownPlacements;
-export type DropdownPlacement = typeof DropdownPlacements[DropdownPlacementKeys];
+export type DropdownPlacement = (typeof DropdownPlacements)[DropdownPlacementKeys];
 
 /** @deprecated Will be removed in next major version */
 export type DropdownBreakpointKeys = keyof typeof DropdownBreakpoints;
-/** @deprecated Will be removed in next major version */
-export type DropdownBreakpoint = typeof DropdownBreakpoints[DropdownBreakpointKeys];
+export type DropdownBreakpoint = (typeof DropdownBreakpoints)[DropdownBreakpointKeys];
 
 export type DropdownFullWidthModeKeys = keyof typeof DropdownFullWidthModes;
-export type DropdownFullWidthMode = typeof DropdownFullWidthModes[DropdownFullWidthModeKeys];
+export type DropdownFullWidthMode = (typeof DropdownFullWidthModes)[DropdownFullWidthModeKeys];
 
 export type DropdownTriggerProps = {
   onClick: (event: ClickEvent) => void;
