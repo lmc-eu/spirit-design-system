@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.38.0"></a>
+
+# [0.38.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.37.0...@lmc-eu/spirit-web@0.38.0) (2023-01-16)
+
+### Chores
+
+- **web:** Mark package as side-effect free ([67d900c](https://github.com/lmc-eu/spirit-design-system/commit/67d900c))
+
+### Documentation
+
+- **web:** Fix misleading headline in the `Collapse` demo ([35dd370](https://github.com/lmc-eu/spirit-design-system/commit/35dd370))
+
+### Features
+
+- **web:** Make all plugins and utils available for building on product ([206fc25](https://github.com/lmc-eu/spirit-design-system/commit/206fc25))
+
+### Reverts
+
+- **web:** Mark package as side-effect free ([9224133](https://github.com/lmc-eu/spirit-design-system/commit/9224133))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.37.0"></a>
 
 # [0.37.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.36.0...@lmc-eu/spirit-web@0.37.0) (2023-01-10)

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.8.0"></a>
+
+# [0.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.7.0...@lmc-eu/spirit-icons@0.8.0) (2023-01-16)
+
+### Bug Fixes
+
+- **icons:** Ignore sprite.svg while generating constants [#DS-548](https://github.com/lmc-eu/spirit-design-system/issues/DS-548) ([49e0626](https://github.com/lmc-eu/spirit-design-system/commit/49e0626))
+- **icons:** Ignore sprite.svg while generating React icon components [#DS-545](https://github.com/lmc-eu/spirit-design-system/issues/DS-545) ([7a4e159](https://github.com/lmc-eu/spirit-design-system/commit/7a4e159))
+
+### Code Refactoring
+
+- **icons:** Create shared filter function for SVG build scripts ([03b0e0d](https://github.com/lmc-eu/spirit-design-system/commit/03b0e0d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="0.7.0"></a>
 
 # [0.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.6.0...@lmc-eu/spirit-icons@0.7.0) (2022-12-16)

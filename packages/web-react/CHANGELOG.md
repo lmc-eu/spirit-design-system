@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.36.0"></a>
+
+# [0.36.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.35.0...@lmc-eu/spirit-web-react@0.36.0) (2023-01-16)
+
+### Bug Fixes
+
+- **web-react:** Collapse content element props ([6440ef3](https://github.com/lmc-eu/spirit-design-system/commit/6440ef3))
+- **web-react:** Dynamically resize Modal base on its content ([931458e](https://github.com/lmc-eu/spirit-design-system/commit/931458e)), closes [#DS-533](https://github.com/lmc-eu/spirit-design-system/issues/DS-533)
+
+### Chores
+
+- **web-react:** Mark package as side-effect free ([71c5844](https://github.com/lmc-eu/spirit-design-system/commit/71c5844))
+
+### Features
+
+- **web-react:** Export all types in main index too [#DS-532](https://github.com/lmc-eu/spirit-design-system/issues/DS-532) ([8c79d97](https://github.com/lmc-eu/spirit-design-system/commit/8c79d97))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.35.0"></a>
 
 # [0.35.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.34.0...@lmc-eu/spirit-web-react@0.35.0) (2023-01-10)
