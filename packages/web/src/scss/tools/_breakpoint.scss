@@ -7,3 +7,13 @@
         @content;
     }
 }
+
+@mixin down($breakpoint-value) {
+    @if $breakpoint-value > 0 {
+        @media (max-width: ($breakpoint-value - 1px)) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

@@ -12,6 +12,7 @@
     background-color: theme.$background;
     box-shadow: theme.$shadow;
 
+    /** @deprecated Will be removed in next major version */
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         &[data-breakpoint='#{$breakpoint-name}'] {
             @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
@@ -20,8 +21,19 @@
             }
         }
     }
+
+    &[data-fullwidthmode='mobile-only'] {
+        @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+            width: 100%;
+        }
+    }
+
+    &[data-fullwidthmode='all'] {
+        width: 100%;
+    }
 }
 
+/** @deprecated Will be removed in next major version */
 .Dropdown[data-breakpoint],
 .Dropdown--fullWidth {
     width: 100%;
