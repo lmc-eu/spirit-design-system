@@ -9,7 +9,6 @@ interface DropdownStateProps {
 
 interface DropdownOptionsProps {
   autoClose: boolean;
-  autoWidth: boolean;
 }
 
 const NAME = 'dropdown';
@@ -40,7 +39,6 @@ class Dropdown extends BaseComponent {
     };
     this.options = {
       autoClose: true,
-      autoWidth: this.element.dataset.autowidth === 'true',
     };
   }
 

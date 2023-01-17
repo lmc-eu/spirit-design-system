@@ -25,22 +25,19 @@
 
     &[data-fullwidthmode='mobile-only'] {
         @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-            /* stylelint-disable-next-line declaration-no-important -- overriding js */
-            width: max-content !important;
+            width: 100%;
         }
     }
 
     &[data-fullwidthmode='all'] {
-        /* stylelint-disable-next-line declaration-no-important -- overriding js */
-        width: max-content !important;
+        width: 100%;
     }
 }
 
 /* Deprecation (https://jira.lmc.cz/browse/DS-493) --> */
 .Dropdown[data-breakpoint],
 /* <-- end of deprecation */
-.Dropdown[data-fullwidthmode],
-.Dropdown--fullWidth {
+.Dropdown--fullWidth:not([data-fullwidthmode]) {
     width: 100%;
 }
 
