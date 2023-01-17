@@ -7,3 +7,25 @@
         @content;
     }
 }
+
+@mixin down($breakpoint-value) {
+    @if $breakpoint-value > 0 {
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+/*
+@mixin only($breakpoint-min-value, $breakpoint-max-value) {
+    @if $breakpoint-value > 0 {
+        @media (min-width: $breakpoint-value, max-width: ...) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+*/
