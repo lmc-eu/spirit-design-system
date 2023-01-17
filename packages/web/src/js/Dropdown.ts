@@ -1,5 +1,5 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger, clickOutsideElement } from './utils/ComponentFunctions';
+import { enableToggleTrigger, clickOutsideElement, deprecatedDataAttribute } from './utils';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 
@@ -9,7 +9,6 @@ interface DropdownStateProps {
 
 interface DropdownOptionsProps {
   autoClose: boolean;
-  autoWidth: boolean;
 }
 
 const NAME = 'dropdown';
@@ -40,7 +39,6 @@ class Dropdown extends BaseComponent {
     };
     this.options = {
       autoClose: true,
-      autoWidth: this.element.dataset.autowidth === 'true',
     };
   }
 
@@ -106,6 +104,8 @@ class Dropdown extends BaseComponent {
         EventHandler.on(document, 'click', this.autoCloseHandler);
       }
     }, 0);
+
+    deprecatedDataAttribute('Dropdown', 'breakpoint', 'fullWidthMode', this.target as HTMLElement);
   }
 
   hide() {
@@ -117,6 +117,8 @@ class Dropdown extends BaseComponent {
     setTimeout(() => {
       this.target && EventHandler.trigger(this.target, EVENT_HIDDEN);
     }, 0);
+
+    deprecatedDataAttribute('Dropdown', 'breakpoint', 'fullWidthMode', this.target as HTMLElement);
   }
 
   toggle() {
