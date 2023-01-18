@@ -98,9 +98,10 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ## Dropdown
 
-| Attribute         | Type                          | Default | Required | Description                                                     |
-| ----------------- | ----------------------------- | ------- | -------- | --------------------------------------------------------------- |
-| `data-breakpoint` | `'mobile','tablet','desktop'` | -       | no       | Breakpoint to switch from the full-width to the auto-width mode |
+| Attribute            | Type                          | Default | Required | Description                                                                                                                         |
+| -------------------- | ----------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `data-breakpoint`    | `'mobile','tablet','desktop'` | -       | no       | **DEPRECATED** Breakpoint to switch from the full-width to the auto-width mode. <br> Deprecation: https://jira.lmc.cz/browse/DS-493 |
+| `data-fullwidthmode` | `'off','mobile-only','all'`   | -       | no       | Full-width mode                                                                                                                     |
 
 ## JavaScript API
 

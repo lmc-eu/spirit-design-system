@@ -19,7 +19,10 @@ const Dropdown = (props: SpiritDropdownProps) => {
     children,
     renderTrigger,
     enableAutoClose,
+    /* @deprecated (https://jira.lmc.cz/browse/DS-493) --> */
     breakpoint,
+    /* <-- end of @deprecated */
+    fullwidthMode,
     onAutoClose,
     ...rest
   } = props;
@@ -29,7 +32,7 @@ const Dropdown = (props: SpiritDropdownProps) => {
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint });
+  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint, fullwidthMode });
 
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({

@@ -21,6 +21,7 @@
             }
         }
     }
+
     /* <-- end of deprecation */
 
     &[data-fullwidthmode='mobile-only'] {
@@ -36,8 +37,8 @@
 
 /* Deprecation (https://jira.lmc.cz/browse/DS-493) --> */
 .Dropdown[data-breakpoint],
-/* <-- end of deprecation */
-.Dropdown--fullWidth:not([data-fullwidthmode]) {
+/* <-- end of @deprecated */
+.Dropdown--fullWidth {
     width: 100%;
 }
 

@@ -4,7 +4,10 @@ import { useDropdownAriaProps } from '../useDropdownAriaProps';
 describe('useDropdownAriaProps', () => {
   it('should return defaults', () => {
     const props = {
+      /* @deprecated (https://jira.lmc.cz/browse/DS-493) --> */
       breakpoint: undefined,
+      /* <-- end of @deprecated */
+      fullwidthMode: undefined,
       id: 'test-dropdown-id',
       isOpen: true,
       toggleHandler: () => null,

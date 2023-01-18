@@ -17,15 +17,3 @@
         @content;
     }
 }
-
-/*
-@mixin only($breakpoint-min-value, $breakpoint-max-value) {
-    @if $breakpoint-value > 0 {
-        @media (min-width: $breakpoint-value, max-width: ...) {
-            @content;
-        }
-    } @else {
-        @content;
-    }
-}
-*/
