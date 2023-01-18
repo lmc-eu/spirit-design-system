@@ -15,11 +15,11 @@ const Story: ComponentStory<typeof Dropdown> = (args: SpiritDropdownProps) => (
   <IconsProvider value={icons}>
     <Stack>
       Mobile only
-      <Dropdown {...args} isFullWidth fullwidthMode="mobile-only" renderTrigger={dropdownTrigger}>
+      <Dropdown {...args} fullWidthMode="mobile-only" renderTrigger={dropdownTrigger}>
         {dropdownContent}
       </Dropdown>
       All
-      <Dropdown {...args} isFullWidth fullwidthMode="all" renderTrigger={dropdownTrigger}>
+      <Dropdown {...args} fullWidthMode="all" renderTrigger={dropdownTrigger}>
         {dropdownContent}
       </Dropdown>
     </Stack>

@@ -25,7 +25,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `isFullWidth`      | `boolean`                                        | `false`       | no       | Whether is component displayed in full width                                                                                       |
 | `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | no       | Alignment of the component                                                                                                         |
 | `breakpoint`       | [`DropdownBreakpoint`][dropdownbreakpoint]       | -             | no       | **DEPRECATED** Breakpoint to switch from the full-width to the auto-width mode. <br> @deprecated https://jira.lmc.cz/browse/DS-493 |
-| `fullwidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | no       | Full-width mode                                                                                                                    |
+| `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | no       | Full-width mode                                                                                                                    |
 | `UNSAFE_className` | `string`                                         | -             | no       | Wrapper custom classname                                                                                                           |
 | `UNSAFE_style`     | `CSSProperties`                                  | -             | no       | Wrapper custom style                                                                                                               |
 

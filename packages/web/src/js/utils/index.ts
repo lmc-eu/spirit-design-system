@@ -100,3 +100,4 @@ const reflow = (element: HTMLElement): void => {
 
 export { isElement, getElement, getSelector, getElementFromSelector, reflow, executeAfterTransition };
 export * from './ComponentFunctions';
+export * from './deprecatedMessage';

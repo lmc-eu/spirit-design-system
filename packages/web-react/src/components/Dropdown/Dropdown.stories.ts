@@ -11,4 +11,4 @@ export { default as DropdownDisableAutoClose } from './stories/DropdownDisableAu
 export { default as DropdownFullWidth } from './stories/DropdownFullWidth';
 export { default as DropdownPlacements } from './stories/DropdownPlacements';
 export { default as DropdownBreakpoints } from './stories/DropdownBreakpoints';
-export { default as DropdownFullwidthMode } from './stories/DropdownFullwidthMode';
+export { default as DropdownFullWidthMode } from './stories/DropdownFullWidthMode';

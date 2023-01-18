@@ -12,7 +12,7 @@
     background-color: theme.$background;
     box-shadow: theme.$shadow;
 
-    /* Deprecation (https://jira.lmc.cz/browse/DS-493) --> */
+    /** @deprecated Will be removed in next major version */
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         &[data-breakpoint='#{$breakpoint-name}'] {
             @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
@@ -21,8 +21,6 @@
             }
         }
     }
-
-    /* <-- end of deprecation */
 
     &[data-fullwidthmode='mobile-only'] {
         @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
@@ -35,9 +33,8 @@
     }
 }
 
-/* Deprecation (https://jira.lmc.cz/browse/DS-493) --> */
+/** @deprecated Will be removed in next major version */
 .Dropdown[data-breakpoint],
-/* <-- end of @deprecated */
 .Dropdown--fullWidth {
     width: 100%;
 }

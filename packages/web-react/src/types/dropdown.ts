@@ -8,15 +8,14 @@ export const DropdownPlacements = {
   TOP_RIGHT: 'top-right',
 } as const;
 
-/* @deprecated (https://jira.lmc.cz/browse/DS-493) --> */
+/** @deprecated Will be removed in next major version */
 export const DropdownBreakpoints = {
   MOBILE: 'mobile',
   TABLET: 'tablet',
   DESKTOP: 'desktop',
 } as const;
-/* <-- end of @deprecated */
 
-export const DropdownFullwidthModes = {
+export const DropdownFullWidthModes = {
   OFF: 'off',
   MOBILE_ONLY: 'mobile-only',
   ALL: 'all',
@@ -25,13 +24,13 @@ export const DropdownFullwidthModes = {
 export type DropdownPlacementKeys = keyof typeof DropdownPlacements;
 export type DropdownPlacement = typeof DropdownPlacements[DropdownPlacementKeys];
 
-/* @deprecated (https://jira.lmc.cz/browse/DS-493) --> */
+/** @deprecated Will be removed in next major version */
 export type DropdownBreakpointKeys = keyof typeof DropdownBreakpoints;
+/** @deprecated Will be removed in next major version */
 export type DropdownBreakpoint = typeof DropdownBreakpoints[DropdownBreakpointKeys];
-/* <-- end of @deprecated */
 
-export type DropdownFullwidthModeKeys = keyof typeof DropdownFullwidthModes;
-export type DropdownFullwidthMode = typeof DropdownFullwidthModes[DropdownFullwidthModeKeys];
+export type DropdownFullWidthModeKeys = keyof typeof DropdownFullWidthModes;
+export type DropdownFullWidthMode = typeof DropdownFullWidthModes[DropdownFullWidthModeKeys];
 
 export type DropdownTriggerProps = {
   onClick: (event: ClickEvent) => void;
@@ -55,9 +54,8 @@ export interface SpiritDropdownProps extends DropdownProps {
   enableAutoClose?: boolean;
   isFullWidth?: boolean;
   placement?: DropdownPlacement;
-  /* @deprecated (https://jira.lmc.cz/browse/DS-493) --> */
+  /** @deprecated Will be removed in next major version */
   breakpoint?: DropdownBreakpoint;
-  /* <-- end of @deprecated */
-  fullwidthMode?: DropdownFullwidthMode;
+  fullWidthMode?: DropdownFullWidthMode;
   onAutoClose?: (event: Event) => void;
 }

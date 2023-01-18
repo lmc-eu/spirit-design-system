@@ -56,14 +56,15 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Prop name     | Type                                                     | Default       | Required | Description                                  |
-| ------------- | -------------------------------------------------------- | ------------- | -------- | -------------------------------------------- |
-| `id`          | `string`                                                 | -             | yes      | Dropdown ID                                  |
-| `breakpoint`  | `string`                                                 | -             | no       | Breakpoint level [tablet,desktop]            |
-| `class`       | `string`                                                 | `null`        | no       | Custom CSS class                             |
-| `elementType` | `string`                                                 | `div`         | no       | HTML tag to render                           |
-| `isFullWidth` | `boolean`                                                | `false`       | no       | Whether is component displayed in full width |
-| `placement`   | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                   |
+| Prop name       | Type                                                     | Default       | Required | Description                                                                                         |
+| --------------- | -------------------------------------------------------- | ------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `id`            | `string`                                                 | -             | yes      | Dropdown ID                                                                                         |
+| `breakpoint`    | `string`                                                 | -             | no       | **DEPRECATED** Breakpoint level [tablet,desktop] <br> @deprecated https://jira.lmc.cz/browse/DS-493 |
+| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all]                                                               |
+| `class`         | `string`                                                 | `null`        | no       | Custom CSS class                                                                                    |
+| `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                                                                                  |
+| `isFullWidth`   | `boolean`                                                | `false`       | no       | Whether is component displayed in full width                                                        |
+| `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                                                                          |
 
 ### Trigger attributes
 

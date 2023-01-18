@@ -1,5 +1,5 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger, clickOutsideElement } from './utils/ComponentFunctions';
+import { enableToggleTrigger, clickOutsideElement, checkDeprecatedDataAttribute } from './utils';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 
@@ -104,6 +104,7 @@ class Dropdown extends BaseComponent {
         EventHandler.on(document, 'click', this.autoCloseHandler);
       }
     }, 0);
+    checkDeprecatedDataAttribute('Dropdown', 'breakpoint', 'fullWidthMode', this.target as HTMLElement);
   }
 
   hide() {
@@ -115,6 +116,7 @@ class Dropdown extends BaseComponent {
     setTimeout(() => {
       this.target && EventHandler.trigger(this.target, EVENT_HIDDEN);
     }, 0);
+    checkDeprecatedDataAttribute('Dropdown', 'breakpoint', 'fullWidthMode', this.target as HTMLElement);
   }
 
   toggle() {
