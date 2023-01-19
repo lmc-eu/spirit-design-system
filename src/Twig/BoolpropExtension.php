@@ -9,7 +9,7 @@ use Twig\TwigFilter;
 
 class BoolpropExtension extends AbstractExtension
 {
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('boolprop', [$this, 'convert2Boolean'], [
