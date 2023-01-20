@@ -1,5 +1,4 @@
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritTextFieldBasePasswordToggleProps, TextFieldBaseProps } from '../../types';
 
 export interface TextFieldBasePasswordToggleStyles {
   /** className props */
@@ -8,13 +7,9 @@ export interface TextFieldBasePasswordToggleStyles {
     passwordToggleButton: string;
     passwordToggleIcon: string;
   };
-  /** props to be passed to the input element */
-  props: TextFieldBaseProps;
 }
 
-export function useTextFieldBasePasswordToggleStyleProps(
-  props: SpiritTextFieldBasePasswordToggleProps,
-): TextFieldBasePasswordToggleStyles {
+export function useTextFieldBasePasswordToggleStyleProps(): TextFieldBasePasswordToggleStyles {
   const TextFieldBaseClass = useClassNamePrefix('TextField');
   const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
   const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
@@ -25,9 +20,6 @@ export function useTextFieldBasePasswordToggleStyleProps(
       passwordToggle: TextFieldBasePasswordToggleClass,
       passwordToggleButton: TextFieldBasePasswordToggleButtonClass,
       passwordToggleIcon: TextFieldBasePasswordToggleIconClass,
-    },
-    props: {
-      ...props,
     },
   };
 }
