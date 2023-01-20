@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { PasswordToggleProps } from '../../types';
 
-export const usePasswordToggle = (): PasswordToggleProps => {
-  const [passwordShown, setPasswordShown] = useState<boolean>(false);
-  const passwordToggleHandler = () => setPasswordShown(!passwordShown);
+export const usePasswordToggle = () => {
+  const [isPasswordShown, setIsPasswordShown] = useState<boolean>(false);
+  const passwordToggle = () => setIsPasswordShown(!isPasswordShown);
 
   return {
-    passwordShown,
-    passwordToggleHandler,
+    isPasswordShown,
+    passwordToggle,
   };
 };

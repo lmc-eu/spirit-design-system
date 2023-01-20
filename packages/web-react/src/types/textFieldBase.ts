@@ -1,6 +1,7 @@
-import { ChildrenProps, ClickEvent, TextInputProps } from './shared';
+import { ChildrenProps, TextInputProps } from './shared';
 import { TextAreaProps } from './textArea';
 import { TextFieldProps, TextFieldType } from './textField';
+import { PasswordToggleAdormentProp } from './shared/adorments';
 
 export interface TextFieldBaseMultiLineProps {
   /** Whether the input is TextArea. */
@@ -21,12 +22,13 @@ export interface TextFieldBaseInputProps extends TextInputProps, TextFieldBaseMu
 export interface SpiritTextFieldBaseInputProps extends TextFieldBaseInputProps {}
 
 export interface PasswordToggleProps {
-  passwordShown: boolean;
-  passwordToggleHandler: (event: ClickEvent) => void;
+  isPasswordShown: boolean;
+  onToggleClick: () => void;
 }
 
-export interface TextFieldBasePasswordToggleProps extends ChildrenProps, PasswordToggleProps {
-  inputType?: TextFieldType;
-}
+export interface TextFieldBasePasswordToggleProps
+  extends ChildrenProps,
+    SpiritTextFieldBaseInputProps,
+    PasswordToggleAdormentProp {}
 
-export interface SpiritTextFieldBasePasswordToggleProps extends TextFieldBasePasswordToggleProps {}
+export interface SpiritTextFieldBasePasswordToggleProps extends TextFieldBasePasswordToggleProps, PasswordToggleProps {}

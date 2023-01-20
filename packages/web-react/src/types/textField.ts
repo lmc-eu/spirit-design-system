@@ -1,6 +1,7 @@
 import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
+import { PasswordToggleAdormentProp } from './shared/adorments';
 
 export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
@@ -10,9 +11,8 @@ export interface TextFieldProps
     LabelProps,
     MessageProps,
     TextInputProps,
-    TransferProps {
-  /** If the input has password toggle */
-  hasPasswordToggle?: boolean;
+    TransferProps,
+    PasswordToggleAdormentProp {
   /** The type of text field */
   type?: TextFieldType;
   /** The input width */
