@@ -28,6 +28,7 @@ interface CollapseMeta {
 }
 interface CollapseState {
   open: boolean;
+  init: boolean;
 }
 
 class Collapse extends BaseComponent {
@@ -48,6 +49,7 @@ class Collapse extends BaseComponent {
       open:
         this.element.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) &&
         this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true',
+      init: false,
     };
 
     this.init();
@@ -136,7 +138,9 @@ class Collapse extends BaseComponent {
         this.adjustCollapsibleChildrenHeight();
       }
       this.adjustCollapsibleElementHeight(open);
-      this.target?.classList.add(CLASSNAME_TRANSITION);
+      if (this.state.init) {
+        this.target?.classList.add(CLASSNAME_TRANSITION);
+      }
       executeAfterTransition(this.target, () => {
         this.target?.classList.remove(CLASSNAME_TRANSITION);
         this.target?.classList.toggle(CLASSNAME_OPEN, open);
@@ -208,6 +212,7 @@ class Collapse extends BaseComponent {
     this.updateTriggerElement();
     this.updateCollapsibleElement();
     this.initEvents();
+    this.state.init = true;
   }
 }
 

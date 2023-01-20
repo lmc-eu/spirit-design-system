@@ -15,10 +15,13 @@ Usage with link:
 <a role="button" href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample"> trigger </a> ...
 ```
 
-Open on load example (by aria-expanded):
+Open on load example:
 
 ```html
-<button ... aria-expanded="true">trigger</button> ...
+<button ... aria-expanded="true">trigger</button>
+<div id="CollapseExample" class="Collapse is-open">
+  <div class="Collapse__content">content</div>
+</div>
 ```
 
 Responsive usage for tablet

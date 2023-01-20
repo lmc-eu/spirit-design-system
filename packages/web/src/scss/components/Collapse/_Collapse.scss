@@ -20,6 +20,7 @@
     }
 
     &.is-open:not(.is-transitioning) {
+        height: 100%;
         overflow: visible;
     }
 
