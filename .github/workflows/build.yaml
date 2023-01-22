@@ -5,8 +5,13 @@ on:
 
 jobs:
   build:
+    name: Building on node ${{ matrix.node-version }})
     runs-on: ubuntu-20.04
     timeout-minutes: 10
+    strategy:
+      matrix:
+        # supporting primarily LTS
+        node-version: [16, 18]
 
     steps:
       - name: Checkout
@@ -15,7 +20,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
 
       - name: Fetch Git history
         run: git fetch --no-tags --depth=50 origin main
