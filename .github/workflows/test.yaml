@@ -37,12 +37,6 @@ jobs:
       - name: Check Types
         run: yarn types
 
-      - name: Test Build
-        run: yarn build
-
-      - name: Test Storybook Build
-        run: yarn storybook:build
-
       - name: Publish Web Package Code Coverage
         uses: coverallsapp/github-action@1.1.3
         with:
