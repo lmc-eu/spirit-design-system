@@ -1,0 +1,3 @@
+# Keep this directory for static assets like SVG icons
+# But ignore everything in it
+*
