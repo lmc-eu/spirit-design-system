@@ -4,12 +4,14 @@ on:
   push:
     paths:
       - packages/web-twig/**
-      # Because of snapshot testing
+      # Changes in SVG icons also affect snapshots in web-twig package
+      # e.g. svg content is generated into the snapshot
       - packages/icons/**
   pull_request:
     paths:
       - packages/web-twig/**
-      # Because of snapshot testing
+      # Changes in SVG icons also affect snapshots in web-twig package
+      # e.g. svg content is generated into the snapshot
       - packages/icons/**
 
 jobs:
@@ -56,7 +58,8 @@ jobs:
         run: |
           composer global require php-coveralls/php-coveralls
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=coverage/clover.xml --json_path=coverage/coveralls-upload.json -v
-  finish-tests:
+
+  finalize-tests:
     name: Tests finished
     needs: [unit-tests]
     runs-on: ubuntu-latest
