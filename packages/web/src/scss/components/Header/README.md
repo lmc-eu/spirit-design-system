@@ -314,5 +314,5 @@ demo.
 ✍️ Please do feel free to let us know when you believe this component lacks some
 important capabilities. Thank you! 🙏
 
-[examples]: https://lmc-eu.github.io/spirit-design-system/web/
+[examples]: https://lmc-eu.github.io/spirit-design-system/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
