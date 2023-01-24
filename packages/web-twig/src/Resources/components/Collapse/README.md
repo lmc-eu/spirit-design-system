@@ -12,23 +12,24 @@ Basic example usage:
 Usage with link:
 
 ```twig
-<ButtonLink href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample">Collapse trigger</ButtonLink> {# … #}
+<ButtonLink href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample">Collapse trigger</ButtonLink>
 ```
 
-Open on load example (by aria-expanded):
+Open on page load:
 
 ```twig
-<Button {# … #} aria-expanded="true">Collapse trigger</Button> {# … #}
+<Button data-toggle="collapse" data-target="CollapseExample" aria-expanded="true">Collapse trigger</Button>
+<Collapse id="CollapseExample" isOpen>Collapse content</Collapse>
 ```
 
-Responsive usage for tablet
+Activate Collapse only on mobile screens:
 
 ```twig
 <Button {# … #} class="d-tablet-none">Collapse trigger</Button>
 <Collapse breakpoint="tablet">Collapse content</Collapse>
 ```
 
-Hide button when collapse
+Hide Collapse trigger on collapse:
 
 ```twig
 <Button {# … #} data-more>Collapse trigger</Button> {# … #}
@@ -53,13 +54,14 @@ attributes to register trigger events.
 
 ## API
 
-| Prop name     | Type     | Default | Required | Description                                                            |
-| ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
-| `id`          | `string` | -       | yes      | Collapse ID                                                            |
-| `breakpoint`  | `string` | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
-| `parent`      | `string` | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
-| `class`       | `string` | `null`  | no       | Custom CSS class                                                       |
-| `elementType` | `string` | `'div'` | no       | Custom element type for wrapper and content                            |
+| Prop name     | Type      | Default | Required | Description                                                            |
+| ------------- | --------- | ------- | -------- | ---------------------------------------------------------------------- |
+| `id`          | `string`  | -       | yes      | Collapse ID                                                            |
+| `isOpen`      | `boolean` | `false` | no       | If true, make the item open on page load                               |
+| `breakpoint`  | `string`  | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
+| `parent`      | `string`  | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
+| `class`       | `string`  | `null`  | no       | Custom CSS class                                                       |
+| `elementType` | `string`  | `'div'` | no       | Custom element type for wrapper and content                            |
 
 (\*) Attribute for Accordion implementation
 
