@@ -96,13 +96,11 @@ rebranding of Spirit Sass components and styles. Once you have created your own
 design tokens, just provide them to your Sass compiler and you are ready to go!
 Learn more in the [`spirit-design-tokens` docs][rebranding].
 
-👀 Head to the [rebranding example] to see how it works.
-
 ## Development
 
 Start local development server with `yarn start` to get started. You will get the live preview of all components and plugins in your browser. Just get dirty and change something and you will see the changes live.
 
-The dev-stack is based on [vite](https://vitejs.dev/).
+The dev-stack is based on [Vite].
 
 ## Examples
 
@@ -115,6 +113,6 @@ See the [LICENSE](LICENSE.md) file for information.
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
-[rebranding example]: https://github.com/lmc-eu/spirit-design-system/tree/main/examples/web/src/jobs
-[examples]: https://lmc-eu.github.io/spirit-design-system/web/
+[examples]: https://lmc-eu.github.io/spirit-design-system/
 [postcss-prefixer]: https://www.npmjs.com/package/postcss-prefixer
+[vite]: https://vitejs.dev

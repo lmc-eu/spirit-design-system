@@ -76,12 +76,15 @@ Please consult additional styling with [web package documentation][web-pkg-rebra
 
 ## Controlled vs Uncontrolled components
 
-- A [Controlled Component](https://reactjs.org/docs/forms.html#controlled-components) is one that takes its current value through props and notifies changes through callbacks like onChange.
-  A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component.
+- A [Controlled Component][react-controlled] is one that takes its current
+  value through props and notifies changes through callbacks like onChange.
+  A parent component "controls" it by handling the callback and managing its own
+  state and passing the new values as props to the controlled component.
   You could also call this a "dumb component".
 
-- An [Uncontrolled Component](https://reactjs.org/docs/uncontrolled-components.html) is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it.
-  This is a bit more like traditional HTML.
+- An [Uncontrolled Component][react-uncontrolled] is one that stores its own
+  state internally, and you query the DOM using a ref to find its current value
+  when you need it. This is a bit more like traditional HTML.
 
 All components are by default provided as _controlled_ components so you must provide your own controlling or toggle functionality to make them work as you want.
 
@@ -90,13 +93,15 @@ You can use the `Uncontrolled` variant for faster development.
 
 ## Examples
 
-👀 See [example] for a live demo.
+👀 See [examples] for a live demo.
 
 ## License
 
 See the [LICENSE](LICENSE.md) file for information.
 
-[web-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
-[examples]: https://lmc-eu.github.io/spirit-design-system/web-react/
+[examples]: https://spirit-design-system-storybook.netlify.app
+[web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
 [web-pkg-prefixes]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
+[react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html
