@@ -22,9 +22,10 @@
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
+{%- set _allowedAttributes = [ 'name' ] -%}
 
 <button
-    {{ mainProps(props) }}
+    {{ mainProps(props, _allowedAttributes) }}
     {{ classProp(_classNames) }}
     type="{{ _type }}"
     {{ _disabledAttr | raw }}
