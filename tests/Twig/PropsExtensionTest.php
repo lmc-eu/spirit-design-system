@@ -20,9 +20,10 @@ class PropsExtensionTest extends TestCase
     /**
      * @dataProvider renderMainPropsDataProvider
      * @param array<string, mixed> $props
+     * @param array<string, mixed> $allowedAttributes
      * @param array<string, mixed> $expectedRenderProps
      */
-    public function testShouldRenderMainProps(array $props, array $expectedRenderProps): void
+    public function testShouldRenderMainProps(array $props, array $allowedAttributes, array $expectedRenderProps): void
     {
         $expectedResponse = '';
         $environment = m::mock(Environment::class);
@@ -32,67 +33,93 @@ class PropsExtensionTest extends TestCase
             ->with('@partials/mainProps.twig', $expectedRenderProps)
             ->andReturn($expectedResponse);
 
-        $renderResponse = $this->propsExtension->renderMainProps($environment, $props);
+        $renderResponse = $this->propsExtension->renderMainProps($environment, $props, $allowedAttributes);
 
         $this->assertSame($expectedResponse, $renderResponse);
     }
 
     /**
-     * @return array<string, array<int, array<string, array<string, string>|int|string|null>>>
+     * @return array<string, array<int, array<int|string, array<string, string>|int|string|null>>>
      */
     public function renderMainPropsDataProvider(): array
     {
         return [
-            'empty props' => [[], [
-                'transferringAttributes' => [],
-                'id' => null,
-            ]],
-            'id property' => [[
-                'id' => 1,
-            ], [
-                'transferringAttributes' => [],
-                'id' => 1,
-            ]],
-            'data properties' => [[
-                'data-id' => 'testDataId',
-            ], [
-                'transferringAttributes' => [
+            'empty props' => [
+                [],
+                [],
+                [
+                    'transferringAttributes' => [],
+                    'id' => null,
+                ],
+            ],
+            'id property' => [
+                [
+                    'id' => 1,
+                ],
+                [],
+                [
+                    'transferringAttributes' => [],
+                    'id' => 1,
+                ],
+            ],
+            'data properties' => [
+                [
                     'data-id' => 'testDataId',
                 ],
-                'id' => null,
-            ]],
-            'data properties & id' => [[
-                'data-id' => 'testDataId',
-                'id' => 'testId',
-            ], [
-                'transferringAttributes' => [
-                    'data-id' => 'testDataId',
+                [],
+                [
+                    'transferringAttributes' => [
+                        'data-id' => 'testDataId',
+                    ],
+                    'id' => null,
                 ],
-                'id' => 'testId',
-            ]],
-            'filter only allowed attributes' => [[
-                'test-id' => 'testDataId',
-                'aria-label' => 'testAria',
-                'data-label' => 'testData',
-                'id' => 'testId',
-            ], [
-                'transferringAttributes' => [
+            ],
+            'data properties & id' => [
+                [
+                    'data-id' => 'testDataId',
+                    'id' => 'testId',
+                ],
+                [],
+                [
+                    'transferringAttributes' => [
+                        'data-id' => 'testDataId',
+                    ],
+                    'id' => 'testId',
+                ],
+            ],
+            'filter only allowed attributes' => [
+                [
+                    'test-id' => 'testDataId',
                     'aria-label' => 'testAria',
                     'data-label' => 'testData',
+                    'id' => 'testId',
+                    'name' => 'testName',
                 ],
-                'id' => 'testId',
-            ]],
-            'skip empty transferring attributes' => [[
-                'test-id' => 'testDataId',
-                'aria-label' => '',
-                'data-label' => 'testData',
-                'id' => 'testId',
-            ], [
-                'transferringAttributes' => [
+                ['name'],
+                [
+                    'transferringAttributes' => [
+                        'aria-label' => 'testAria',
+                        'data-label' => 'testData',
+                        'name' => 'testName',
+                    ],
+                    'id' => 'testId',
+                ],
+            ],
+            'skip empty transferring attributes' => [
+                [
+                    'test-id' => 'testDataId',
+                    'aria-label' => '',
                     'data-label' => 'testData',
+                    'id' => 'testId',
                 ],
-                'id' => 'testId',
-            ]],
+                [],
+                [
+                    'transferringAttributes' => [
+                        'data-label' => 'testData',
+                    ],
+                    'id' => 'testId',
+                ],
+            ],
         ];
     }
 
@@ -118,7 +145,7 @@ class PropsExtensionTest extends TestCase
     }
 
     /**
-     * @return array<string, array<int, array<string, array<string, string>|int|string|null>>>
+     * @return array<string, array<int, array<int|string, array<string, string>|string>>>
      */
     public function renderInputPropsDataProvider(): array
     {
@@ -135,7 +162,7 @@ class PropsExtensionTest extends TestCase
                 'transferringAttributes' => [
                     'min' => '1',
                     'max' => '6',
-                    'autocomplete' => 'on'
+                    'autocomplete' => 'on',
                 ],
             ]],
         ];
