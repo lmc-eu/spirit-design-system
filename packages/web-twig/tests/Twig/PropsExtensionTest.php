@@ -44,19 +44,19 @@ class PropsExtensionTest extends TestCase
     {
         return [
             'empty props' => [[], [
-                'allowedAttributes' => [],
+                'transferringAttributes' => [],
                 'id' => null,
             ]],
             'id property' => [[
                 'id' => 1,
             ], [
-                'allowedAttributes' => [],
+                'transferringAttributes' => [],
                 'id' => 1,
             ]],
             'data properties' => [[
                 'data-id' => 'testDataId',
             ], [
-                'allowedAttributes' => [
+                'transferringAttributes' => [
                     'data-id' => 'testDataId',
                 ],
                 'id' => null,
@@ -65,7 +65,7 @@ class PropsExtensionTest extends TestCase
                 'data-id' => 'testDataId',
                 'id' => 'testId',
             ], [
-                'allowedAttributes' => [
+                'transferringAttributes' => [
                     'data-id' => 'testDataId',
                 ],
                 'id' => 'testId',
@@ -76,19 +76,19 @@ class PropsExtensionTest extends TestCase
                 'data-label' => 'testData',
                 'id' => 'testId',
             ], [
-                'allowedAttributes' => [
+                'transferringAttributes' => [
                     'aria-label' => 'testAria',
                     'data-label' => 'testData',
                 ],
                 'id' => 'testId',
             ]],
-            'skip empty allowed attributes' => [[
+            'skip empty transferring attributes' => [[
                 'test-id' => 'testDataId',
                 'aria-label' => '',
                 'data-label' => 'testData',
                 'id' => 'testId',
             ], [
-                'allowedAttributes' => [
+                'transferringAttributes' => [
                     'data-label' => 'testData',
                 ],
                 'id' => 'testId',
@@ -99,9 +99,10 @@ class PropsExtensionTest extends TestCase
     /**
      * @dataProvider renderInputPropsDataProvider
      * @param array<string, mixed> $props
+     * @param array<string, mixed> $allowedAttributes
      * @param array<string, mixed> $expectedRenderProps
      */
-    public function testShouldRenderInputProps(array $props, array $expectedRenderProps): void
+    public function testShouldRenderInputProps(array $props, array $allowedAttributes, array $expectedRenderProps): void
     {
         $expectedResponse = '';
         $environment = m::mock(Environment::class);
@@ -111,7 +112,7 @@ class PropsExtensionTest extends TestCase
             ->with('@partials/inputProps.twig', $expectedRenderProps)
             ->andReturn($expectedResponse);
 
-        $renderResponse = $this->propsExtension->renderInputProps($environment, $props);
+        $renderResponse = $this->propsExtension->renderInputProps($environment, $props, $allowedAttributes);
 
         $this->assertSame($expectedResponse, $renderResponse);
     }
@@ -122,17 +123,19 @@ class PropsExtensionTest extends TestCase
     public function renderInputPropsDataProvider(): array
     {
         return [
-            'empty props' => [[], [
-                'allowedAttributes' => [],
+            'empty props' => [[], [], [
+                'transferringAttributes' => [],
             ]],
             'filter only allowed attributes' => [[
                 'test-id' => 'testDataId',
                 'min' => '1',
                 'max' => '6',
-            ], [
-                'allowedAttributes' => [
+                'autocomplete' => 'on',
+            ], ['autocomplete'], [
+                'transferringAttributes' => [
                     'min' => '1',
                     'max' => '6',
+                    'autocomplete' => 'on'
                 ],
             ]],
         ];
