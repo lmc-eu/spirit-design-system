@@ -29,6 +29,7 @@ Without lexer:
 | ------------ | -------- | ------- | -------- | ------------------------------------- |
 | `ariaHidden` | `bool`   | `true`  | no       | If true, icon is hidden from a11y API |
 | `class`      | `string` | `null`  | no       | Custom CSS class                      |
+| `isReusable` | `bool`   | `true`  | no       | Enables reusability of SVG icons      |
 | `name`       | `string` | —       | yes      | Name of the icon, case sensitive      |
 | `size`       | `number` | `24`    | no       | Size of the icon                      |
 | `title`      | `string` | `null`  | no       | Optional title to display on hover    |
