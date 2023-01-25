@@ -54,6 +54,7 @@
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _class ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _allowedAttributes = [ 'autocomplete' ] -%}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
@@ -61,7 +62,7 @@
     </label>
     {% if _isMultiline %}
         <textarea
-            {{ inputProps(props) }}
+            {{ inputProps(props, _allowedAttributes) }}
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"
@@ -76,7 +77,7 @@
         {% if _hasPasswordToggle %}
             <div class="TextField__passwordToggle">
                 <input
-                    {{ inputProps(props) }}
+                    {{ inputProps(props, _allowedAttributes) }}
                     type="password"
                     id="{{ _id }}"
                     name="{{ _name }}"
@@ -105,7 +106,7 @@
             </div>
         {% else %}
             <input
-                {{ inputProps(props) }}
+                {{ inputProps(props, _allowedAttributes) }}
                 type="{{ _type }}"
                 id="{{ _id }}"
                 name="{{ _name }}"
