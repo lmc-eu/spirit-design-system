@@ -34,13 +34,14 @@ class PropsExtension extends AbstractExtension
 
     /**
      * @param array<string, mixed> $props
+     * @param array<string, mixed> $allowedAttributes
      */
-    public function renderMainProps(Environment $environment, $props = []): string
+    public function renderMainProps(Environment $environment, $props = [], $allowedAttributes = []): string
     {
         $transferringAttributes = [];
         if (is_array($props)) {
             foreach ($props as $propName => $propValue) {
-                if (preg_match('/^(data|aria)-*/', $propName) > 0) {
+                if (preg_match('/^(data|aria)-*/', $propName) > 0 || in_array($propName, $allowedAttributes)) {
                     if ($propValue !== '') {
                         $transferringAttributes[$propName] = $propValue;
                     }
