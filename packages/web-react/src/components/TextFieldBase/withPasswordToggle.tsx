@@ -6,11 +6,11 @@ error TS2322: Type 'Omit<T, "hasPasswordToggle"> & { type: string; }' is not ass
     'T' could be instantiated with an arbitrary type which could be unrelated to 'Omit<T, "hasPasswordToggle"> & { type: string; }'.
 */
 import React, { ComponentType } from 'react';
-import { PasswordToggleAdormentProp } from '../../types/shared/adorments';
+import { PasswordToggleAdornmentProp } from '../../types/shared/adornments';
 import TextFieldBasePasswordToggle from './TextFieldBasePasswordToggle';
 import { usePasswordToggle } from './usePasswordToggle';
 
-function withPasswordToggle<T extends PasswordToggleAdormentProp>(WrappedComponent: ComponentType<T>) {
+function withPasswordToggle<T extends PasswordToggleAdornmentProp>(WrappedComponent: ComponentType<T>) {
   const displayName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
 
   const ComponentWithPasswordToggle = (props: T) => {
