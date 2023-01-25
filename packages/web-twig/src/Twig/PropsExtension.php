@@ -37,37 +37,38 @@ class PropsExtension extends AbstractExtension
      */
     public function renderMainProps(Environment $environment, $props = []): string
     {
-        $allowedAttributes = [];
+        $transferringAttributes = [];
         if (is_array($props)) {
             foreach ($props as $propName => $propValue) {
                 if (preg_match('/^(data|aria)-*/', $propName) > 0) {
                     if ($propValue !== '') {
-                        $allowedAttributes[$propName] = $propValue;
+                        $transferringAttributes[$propName] = $propValue;
                     }
                 }
             }
         }
 
         return $environment->render('@partials/mainProps.twig', [
-            'allowedAttributes' => $allowedAttributes,
+            'transferringAttributes' => $transferringAttributes,
             'id' => $props['id'] ?? null,
         ]);
     }
 
     /**
      * @param array<string, mixed> $props
+     * @param array<string, mixed> $allowedAttributes
      */
-    public function renderInputProps(Environment $environment, array $props): string
+    public function renderInputProps(Environment $environment, array $props, $allowedAttributes = []): string
     {
-        $allowedAttributes = [];
+        $transferringAttributes = [];
         foreach ($props as $propName => $propValue) {
-            if (in_array($propName, self::VALIDATION_ATTRIBUTES, true)) {
-                $allowedAttributes[$propName] = $propValue;
+            if (in_array($propName, self::VALIDATION_ATTRIBUTES, true) || in_array($propName, $allowedAttributes)) {
+                $transferringAttributes[$propName] = $propValue;
             }
         }
 
         return $environment->render('@partials/inputProps.twig', [
-            'allowedAttributes' => $allowedAttributes,
+            'transferringAttributes' => $transferringAttributes,
         ]);
     }
 
