@@ -1,7 +1,7 @@
 import { ChildrenProps, TextInputProps } from './shared';
 import { TextAreaProps } from './textArea';
 import { TextFieldProps, TextFieldType } from './textField';
-import { PasswordToggleAdormentProp } from './shared/adorments';
+import { PasswordToggleAdornmentProp } from './shared/adornments';
 
 export interface TextFieldBaseMultiLineProps {
   /** Whether the input is TextArea. */
@@ -29,6 +29,6 @@ export interface PasswordToggleProps {
 export interface TextFieldBasePasswordToggleProps
   extends ChildrenProps,
     SpiritTextFieldBaseInputProps,
-    PasswordToggleAdormentProp {}
+    PasswordToggleAdornmentProp {}
 
 export interface SpiritTextFieldBasePasswordToggleProps extends TextFieldBasePasswordToggleProps, PasswordToggleProps {}
