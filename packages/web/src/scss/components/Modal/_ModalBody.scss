@@ -1,0 +1,28 @@
+// 1. A naïve assumption that mobile values are relevant for all viewport sizes. (And if not, it doesn't matter much
+//    because it's an edge case after all.)
+
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.ModalBody {
+    flex: 1 1 auto;
+    min-height: map.get(theme.$typography, mobile, font-size) * map.get(theme.$typography, mobile, line-height); // 1.
+    padding-inline: theme.$common-padding-x;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-block: theme.$body-divider-width solid transparent;
+    overscroll-behavior: contain;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding-inline: theme.$common-padding-x-tablet;
+    }
+}
+
+.ModalBody.is-scrolled-at-top {
+    border-top-color: theme.$body-divider-color;
+}
+
+.ModalBody.is-scrolled-at-bottom {
+    border-bottom-color: theme.$body-divider-color;
+}
