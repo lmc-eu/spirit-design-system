@@ -1,0 +1,56 @@
+// 1. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
+//    the tablet breakpoint.
+
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use '../../tools/typography';
+@use 'theme';
+
+.ModalDialog {
+    @include typography.generate(theme.$typography);
+
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    width: theme.$dialog-width;
+    height: theme.$dialog-max-height;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: theme.$dialog-text-color;
+    border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
+    background-color: theme.$dialog-background-color;
+    box-shadow: theme.$dialog-shadow;
+    transform: translate(var(--modal-translate-x), var(--modal-translate-y)) scale(var(--modal-scale));
+    transform-origin: bottom center;
+    overscroll-behavior: contain;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        bottom: 50%;
+        width: theme.$dialog-width-tablet;
+        max-width: calc(100% - #{theme.$padding-x-tablet});
+        height: theme.$dialog-height-tablet;
+        max-height: theme.$dialog-max-height-tablet;
+        border-radius: theme.$dialog-border-radius;
+        transform-origin: center center;
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        width: theme.$dialog-width-desktop;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: bottom, width, border-radius, transform; // 1.
+        transition-duration: inherit;
+    }
+}
+
+.ModalDialog--expandOnMobile {
+    height: theme.$dialog-height;
+    max-height: theme.$dialog-max-height;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        max-height: theme.$dialog-max-height-tablet;
+    }
+}

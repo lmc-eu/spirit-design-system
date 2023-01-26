@@ -1,0 +1,5 @@
+@use '@tokens' as tokens;
+
+$duration-medium: 0.25s;
+$scale-ratio-large-objects: 0.975;
+$shift-distance-medium: tokens.$space-600;
