@@ -1,5 +1,237 @@
 # Modal
 
+## Composed Modal (DEPRECATED)
+
+Modal is a composition of several subcomponents:
+
+- [Modal](#modal-1)
+  - [ModalHeader](#modalheader)
+  - [ModalBody](#modalfooter)
+  - [ModalFooter](#modalfooter)
+
+⚠️ **DEPRECATED:** The flag `Modal--composed` — which is currently necessary to
+distinguish the composed version of Modal from the simple one — is deprecated
+and will be removed in next major version: the composed Modal will supersede the
+[Simple Modal](#simple-modal-deprecated) variant.
+
+### Modal
+
+Under the hood we use the `<dialog>` element which provides several
+accessibility advantages.
+
+```html
+<dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
+  <div class="Modal__dialog">
+    <!-- ModalHeader -->
+    <!-- ModalBody -->
+    <!-- ModalFooter -->
+  </div>
+</dialog>
+```
+
+👉 Please note the `aria-labelledby` attribute is linked to the title inside
+[Modal Header](#modalheader) and provides an accessible name for the dialog.
+
+#### Expand on Mobile Screens
+
+We recommend to expand the Modal on mobile screens using the
+`Modal--expandOnMobile` modifier class. If you omit the class, the Modal shrinks
+to fit the height of its content (if smaller than viewport).
+
+### ModalHeader
+
+Modal Header contains the title of the dialog and the close button.
+
+```html
+<div class="ModalHeader">
+  <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
+  <button
+    type="button"
+    class="Button Button--tertiary Button--square Button--medium"
+    data-dismiss="modal"
+    data-target="#example_1"
+    aria-controls="example_1"
+    aria-expanded="false"
+  >
+    <svg class="Icon" width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#close" />
+    </svg>
+    <span class="accessibility-hidden">Close</span>
+  </button>
+</div>
+```
+
+👉 Even in cases you don't need the title to be visible you should provide an
+accessible name for the dialog, e.g. using the `aria-label` attribute:
+
+```html
+<dialog id="example_1" class="Modal Modal--composed" aria-label="Accessible Modal Title">
+  <!-- … -->
+</dialog>
+```
+
+### ModalBody
+
+Modal Body holds the actual content of the Modal.
+
+```html
+<div class="ModalBody">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis provident
+    unde. Eveniet, iste, molestiae?
+  </p>
+</div>
+```
+
+### ModalFooter
+
+Modal Footer is the place for actions represented by the Button component.
+While there always must be a primary Button, secondary actions are optional.
+
+👉 Please note the actions are _visually_ ordered from right to left from the
+tablet breakpoint up. However, the _actual_ order in code is followed when users
+tab over the interface.
+
+```html
+<div class="ModalFooter ModalFooter--right">
+  <div class="ModalFooter__actions">
+    <button type="button" class="Button Button--primary Button--medium" data-dismiss="modal" data-target="#example_1">
+      Primary action
+    </button>
+    <button type="button" class="Button Button--secondary Button--medium" data-dismiss="modal" data-target="#example_1">
+      Secondary action
+    </button>
+  </div>
+</div>
+```
+
+#### Footer Description
+
+Optionally, you can add a description into the footer:
+
+```html
+<div class="ModalFooter ModalFooter--right">
+  <div class="ModalFooter__description">Optional description</div>
+  <div class="ModalFooter__actions">
+    <!-- Actions… -->
+  </div>
+</div>
+```
+
+#### Footer Alignment
+
+Modal Footer can be aligned to the right (default), center, or left, using
+a corresponding modifier class:
+
+- `ModalFooter--right` (default)
+- `ModalFooter--center`
+- `ModalFooter--left`
+
+### Opening the Modal
+
+Use our JavaScript plugin to open your Modal, e.g.:
+
+```html
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  data-toggle="modal"
+  data-target="#example_1"
+  aria-controls="example_1"
+  aria-expanded="false"
+>
+  Open Modal
+</button>
+```
+
+### Full Example
+
+When you put it all together:
+
+```html
+<!-- Modal Trigger: start -->
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  data-toggle="modal"
+  data-target="#example_1"
+  aria-controls="example_1"
+  aria-expanded="false"
+>
+  Open Modal
+</button>
+<!-- Modal Trigger: end -->
+
+<!-- Modal: start -->
+<dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
+  <div class="Modal__dialog">
+    <!-- Modal Header: start -->
+    <div class="ModalHeader">
+      <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
+      <button
+        type="button"
+        class="Button Button--tertiary Button--square Button--medium"
+        data-dismiss="modal"
+        data-target="#example_1"
+        aria-controls="example_1"
+        aria-expanded="false"
+      >
+        <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#close" />
+        </svg>
+        <span class="accessibility-hidden">Close</span>
+      </button>
+    </div>
+    <!-- Modal Header: end -->
+
+    <!-- Modal Body: start -->
+    <div class="ModalBody">
+      <!-- Content: start -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis provident
+        unde. Eveniet, iste, molestiae?
+      </p>
+      <!-- Content: end -->
+    </div>
+    <!-- Modal Body: end -->
+
+    <!-- Modal Footer: start -->
+    <div class="ModalFooter ModalFooter--right">
+      <div class="ModalFooter__description">Optional description</div>
+      <div class="ModalFooter__actions">
+        <button
+          type="button"
+          class="Button Button--primary Button--medium"
+          data-dismiss="modal"
+          data-target="#example_1"
+        >
+          Primary action
+        </button>
+        <button
+          type="button"
+          class="Button Button--secondary Button--medium"
+          data-dismiss="modal"
+          data-target="#example_1"
+        >
+          Secondary action
+        </button>
+      </div>
+    </div>
+    <!-- Modal Footer: end -->
+  </div>
+</dialog>
+<!-- Modal: end -->
+```
+
+## Simple Modal (DEPRECATED)
+
+A simple version of Modal.
+
+⚠️ **DEPRECATED:** Simple Modal will be removed in next major version in favour
+of the composed Modal above.
+
 Example usage:
 
 ```html
@@ -43,6 +275,26 @@ Example usage:
   </div>
 </dialog>
 ```
+
+## Toggle Attributes
+
+Both trigger and close buttons use `data` attributes to open and close the Modal.
+
+| Prop name       | Type     | Default | Required | Description                |
+| --------------- | -------- | ------- | -------- | -------------------------- |
+| `aria-controls` | `string` | -       | no       | Aria controls state (auto) |
+| `aria-expanded` | `string` | -       | no       | Aria expanded state (auto) |
+| `data-dismiss`  | `string` | `modal` | no       | Iterable selector          |
+| `data-target`   | `string` | -       | yes      | Target selector            |
+| `data-toggle`   | `string` | `modal` | no       | Iterable selector          |
+
+## State Classes
+
+If there is more content that could fit the screen, Modal Body provides
+the following state classes:
+
+- `.is-scrolled-at-top` if there is content overflowing at the top,
+- `.is-scrolled-at-bottom` if there is content overflowing at the bottom.
 
 ## JavaScript Plugin
 

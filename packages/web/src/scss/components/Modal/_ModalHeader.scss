@@ -1,0 +1,34 @@
+// 1. Optically align the first line of the title with the close button.
+// 2. Correctly align the close button even when the title is omitted.
+
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use '../../tools/typography';
+@use 'theme';
+
+.ModalHeader {
+    display: flex;
+    flex: none;
+    gap: theme.$header-gap;
+    align-items: flex-start; // 1.
+    justify-content: flex-end; // 2.
+    padding-inline: theme.$common-padding-x;
+    padding-top: theme.$header-padding-top;
+    padding-bottom: theme.$header-padding-bottom;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding-inline: theme.$common-padding-x-tablet;
+    }
+}
+
+.ModalHeader__title {
+    @include typography.generate(theme.$header-title-typography);
+
+    padding-top: 0.55em; // 1.
+    margin-right: auto; // 2.
+    margin-bottom: 0;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding-top: 0.25em; // 1.
+    }
+}

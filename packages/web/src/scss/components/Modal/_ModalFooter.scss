@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.ModalFooter {
+    display: grid;
+    flex: none;
+    gap: theme.$footer-gap;
+    padding-inline: theme.$common-padding-x;
+    padding-top: theme.$footer-padding-top;
+    padding-bottom: theme.$footer-padding-bottom;
+    text-align: center;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding-inline: theme.$common-padding-x-tablet;
+        padding-top: theme.$footer-padding-top-tablet;
+        padding-bottom: theme.$footer-padding-bottom-tablet;
+    }
+}
+
+.ModalFooter__actions {
+    display: grid;
+    row-gap: theme.$footer-actions-row-gap;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        display: flex;
+        flex-direction: row-reverse;
+        column-gap: theme.$footer-actions-column-gap;
+        justify-content: inherit;
+    }
+}
+
+@include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+    .ModalFooter--left {
+        justify-content: start;
+        text-align: left;
+    }
+
+    .ModalFooter--center {
+        justify-content: center;
+    }
+
+    .ModalFooter--right {
+        justify-content: end;
+        text-align: right;
+    }
+}

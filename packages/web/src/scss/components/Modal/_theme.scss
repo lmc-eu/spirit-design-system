@@ -1,20 +1,62 @@
 @use '@tokens' as tokens;
+@use '../../settings/transitions';
 
-$typography: tokens.$body-medium-text-regular;
 $breakpoints: tokens.$breakpoints;
+$padding: tokens.$space-600;
+$padding-x-tablet: tokens.$space-1100;
+$typography: tokens.$body-medium-text-regular;
+$transition-duration: transitions.$duration-medium;
+$transition-scale-ratio: transitions.$scale-ratio-large-objects;
+$transition-shift-distance: transitions.$shift-distance-medium;
 
-$modal-padding: tokens.$space-600;
-$modal-padding-tablet: tokens.$space-1100;
+$dialog-width: 100%;
+$dialog-width-tablet: 640px;
+$dialog-width-desktop: 680px;
+$dialog-height: min-content;
+$dialog-height-tablet: min-content;
+$dialog-max-height: calc(100dvh - #{tokens.$space-1100});
+$dialog-max-height-tablet: min(600px, calc(100dvh - #{2 * tokens.$space-600}));
+$dialog-text-color: tokens.$text-primary-default;
+$dialog-border-radius: tokens.$radius-200;
+$dialog-background-color: tokens.$background-basic;
+$dialog-shadow: tokens.$shadow-300;
 
-$dialog-max-width-tablet: 640px;
-$dialog-max-width-desktop: 680px;
+$backdrop-background-color: tokens.$background-backdrop;
+
+$common-padding-x: tokens.$space-700;
+$common-padding-x-tablet: tokens.$space-800;
+
+// ModalHeader
+$header-gap: tokens.$space-400;
+$header-padding-top: tokens.$space-800;
+$header-padding-bottom: tokens.$space-600;
+$header-title-typography: tokens.$heading-small-text;
+
+// ModalBody
+$body-divider-width: tokens.$border-width-100;
+$body-divider-color: tokens.$border-primary-default;
+
+// ModalFooter
+$footer-gap: tokens.$space-600;
+$footer-padding-top: tokens.$space-700;
+$footer-padding-bottom: tokens.$space-700;
+$footer-padding-top-tablet: tokens.$space-600;
+$footer-padding-bottom-tablet: tokens.$space-800;
+$footer-actions-column-gap: tokens.$space-700;
+$footer-actions-row-gap: tokens.$space-600;
+
+// @deprecated Will be removed in next major version.
+// Migration: Delete all variables below.
+
+$padding-tablet: tokens.$space-1100;
 
 $content-padding: tokens.$space-700;
 $content-padding-tablet: tokens.$space-800;
+$content-text-color: tokens.$text-primary-default;
 $content-border-radius: tokens.$radius-200;
 $content-background-color: tokens.$background-basic;
 $content-shadow: tokens.$shadow-300;
 
-$header-spacing: tokens.$space-600;
+$header-spacing-deprecated: tokens.$space-600;
 
 $backdrop-background-color: tokens.$background-backdrop;
