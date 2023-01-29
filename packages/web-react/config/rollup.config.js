@@ -1,4 +1,5 @@
 import { terser as minify } from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
 import path from 'path';
 
 const entryPoints = require('../scripts/entryPoints');
@@ -84,6 +85,11 @@ function prepareCJS(input, output) {
       exports: 'named',
       externalLiveBindings: false,
     },
+    plugins: [
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }),
+    ],
   };
 }
 
@@ -101,6 +107,9 @@ function prepareCJSMinified(input) {
       format: 'cjs',
     },
     plugins: [
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      }),
       minify({
         mangle: {
           toplevel: true,
