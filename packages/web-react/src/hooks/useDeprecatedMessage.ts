@@ -14,7 +14,7 @@ export const useDeprecatedMessage = ({
   newPropName,
 }: UseDeprecatedMessageProps): void => {
   useEffect(() => {
-    if (trigger && deprecatedPropName && newPropName) {
+    if (trigger && deprecatedPropName && newPropName && process.env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
       console.warn(
         `Deprecation warning (${componentName}): "${deprecatedPropName}" property will be replaced in next major version. Please use "${newPropName}" instead. ♻️️`,
