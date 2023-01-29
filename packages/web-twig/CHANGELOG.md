@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.22.0"></a>
+
+# [1.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.21.0...@lmc-eu/spirit-web-twig@1.22.0) (2023-01-29)
+
+### Bug Fixes
+
+- **web-twig:** Add the missing `isOpen` prop to `Collapse` ([e65e7d8](https://github.com/lmc-eu/spirit-design-system/commit/e65e7d8))
+- **web-twig:** Define native return type to "Twig\Extension\ExtensionInterface::getFilters()" ([b96a428](https://github.com/lmc-eu/spirit-design-system/commit/b96a428))
+
+### Features
+
+- **web-twig:** Add `hasPasswordToggle` feature to the TextField [#DS-509](https://github.com/lmc-eu/spirit-design-system/issues/DS-509) ([2bea4d2](https://github.com/lmc-eu/spirit-design-system/commit/2bea4d2))
+- **web-twig:** Add option to Icon component to disable SVG reusability ([c1cdbec](https://github.com/lmc-eu/spirit-design-system/commit/c1cdbec))
+
+### Tests
+
+- **web-twig:** Add missing Tooltip snapshot test ([6f02dba](https://github.com/lmc-eu/spirit-design-system/commit/6f02dba))
+- **web-twig:** Update snapshost due to icons change ([8341864](https://github.com/lmc-eu/spirit-design-system/commit/8341864))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.21.0"></a>
 
 # [1.21.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.20.0...@lmc-eu/spirit-web-twig@1.21.0) (2023-01-16)

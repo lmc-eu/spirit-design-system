@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.37.0"></a>
+
+# [0.37.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.36.0...@lmc-eu/spirit-web-react@0.37.0) (2023-01-29)
+
+### Code Refactoring
+
+- **web-react:** Fix spelling `adorment` -> `adornment` ([dfb7191](https://github.com/lmc-eu/spirit-design-system/commit/dfb7191))
+- **web-react:** Use HOC to add Password Toggle to TextField ([61282e0](https://github.com/lmc-eu/spirit-design-system/commit/61282e0)), closes [#DS-508](https://github.com/lmc-eu/spirit-design-system/issues/DS-508)
+
+### Documentation
+
+- **web-react:** Introduce Bundlephobia badges about size and deps ([287ee39](https://github.com/lmc-eu/spirit-design-system/commit/287ee39))
+- **web, web-react:** Fix external links in README's ([6384a5d](https://github.com/lmc-eu/spirit-design-system/commit/6384a5d))
+
+### Features
+
+- **web-react:** Add `hasPasswordToggle` feature to the TextField [#DS-508](https://github.com/lmc-eu/spirit-design-system/issues/DS-508) ([8988667](https://github.com/lmc-eu/spirit-design-system/commit/8988667))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.36.0"></a>
 
 # [0.36.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.35.0...@lmc-eu/spirit-web-react@0.36.0) (2023-01-16)

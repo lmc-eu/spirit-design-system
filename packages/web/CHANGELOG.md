@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.39.0"></a>
+
+# [0.39.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.38.0...@lmc-eu/spirit-web@0.39.0) (2023-01-29)
+
+### Bug Fixes
+
+- **web:** Collapse content flashing when page loads [#DS-538](https://github.com/lmc-eu/spirit-design-system/issues/DS-538) ([9f21660](https://github.com/lmc-eu/spirit-design-system/commit/9f21660))
+
+### Documentation
+
+- **web, web-react:** Fix external links in README's ([6384a5d](https://github.com/lmc-eu/spirit-design-system/commit/6384a5d))
+- **web:** Improve `Accordion` README and demo preview ([9ac9124](https://github.com/lmc-eu/spirit-design-system/commit/9ac9124))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.38.0"></a>
 
 # [0.38.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.37.0...@lmc-eu/spirit-web@0.38.0) (2023-01-16)
