@@ -98,7 +98,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 <UncontrolledCollapse
   id="CollapseExample"
-  renderToggle={({ isOpen, ...restProps }) => (
+  renderTrigger={({ isOpen, ...restProps }) => (
     <Button {...restProps}>Collapse Trigger ({isOpen ? 'Open' : 'Closed'})</Button>
   )}
 >
@@ -114,7 +114,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 <UncontrolledCollapse
   id="CollapseExample"
-  renderToggle={({ isOpen, ...restProps }) => (
+  renderTrigger={({ isOpen, ...restProps }) => (
     <Button {...restProps}>Collapse Trigger ({isOpen ? 'Open' : 'Closed'})</Button>
   )}
   hideOnCollapse
