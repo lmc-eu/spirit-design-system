@@ -4,7 +4,7 @@ import headingSizeDataProvider from './headingSizeDataProvider';
 import { SpiritHeadingProps } from '../../../types';
 
 describe('useHeadingStyleProps', () => {
-  it.each(headingSizeDataProvider)('should return for size %s expected classs %s', (size, expectedClassName) => {
+  it.each(headingSizeDataProvider)('should return for size %s expected class %s', (size, expectedClassName) => {
     const props = { size } as SpiritHeadingProps;
     const { result } = renderHook(() => useHeadingStyleProps(props));
 
