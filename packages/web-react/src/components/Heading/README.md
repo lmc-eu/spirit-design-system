@@ -8,10 +8,10 @@ The Heading component provides helper classes to render headings.
 
 ## Available props
 
-| Name          | Type                                          | Default  | Description      |
-| ------------- | --------------------------------------------- | -------- | ---------------- |
-| `elementType` | `React.Element`                               | `div`    | HTML tag,        |
-| `size`        | `xlarge`, `large`, `medium`, `small`, `xmall` | `medium` | Size of the text |
+| Name          | Type                                                   | Default  | Description      |
+| ------------- | ------------------------------------------------------ | -------- | ---------------- |
+| `elementType` | `React.Element`                                        | `div`    | HTML tag,        |
+| `size`        | [Size and Size Extended dictionaries][dictionary-size] | `medium` | Size of the text |
 
 ## Custom component
 
@@ -28,3 +28,5 @@ const CustomText = (props: SpiritHeadingProps): JSX.Element => {
   );
 };
 ```
+
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/DICTIONARIES.md#size
