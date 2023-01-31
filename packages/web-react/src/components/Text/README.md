@@ -8,10 +8,10 @@ The Text component provides helper classes to render text.
 
 ## Available props
 
-| Name       | Type                                | Default  | Description          |
-| ---------- | ----------------------------------- | -------- | -------------------- |
-| `size`     | `large`, `medium`, `small`, `xmall` | `medium` | Size of the text     |
-| `emphasis` | `italic`, `bold`                    |          | Emphasis of the text |
+| Name       | Type                                                   | Default  | Description          |
+| ---------- | ------------------------------------------------------ | -------- | -------------------- |
+| `size`     | [Size and Size Extended dictionaries][dictionary-size] | `medium` | Size of the text     |
+| `emphasis` | `italic`, `bold`                                       |          | Emphasis of the text |
 
 ## Custom component
 
@@ -28,3 +28,5 @@ const CustomText = (props: SpiritTextProps): JSX.Element => {
   );
 };
 ```
+
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/DICTIONARIES.md#size

@@ -8,6 +8,7 @@ const Story = (props: unknown) => (
     <Text size="large">Body Large Text Regular</Text>
     <Text size="medium">Body Medium Text Regular</Text>
     <Text size="small">Body Small Text Regular</Text>
+    <Text size="xlarge">Body XLarge Text Regular</Text>
     <Text size="xsmall">Body XSmall Text Regular</Text>
   </>
 );

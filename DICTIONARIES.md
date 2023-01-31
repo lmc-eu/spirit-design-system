@@ -1,0 +1,19 @@
+# Dictionaries
+
+This project uses `dictionaires` to unify props between different components.
+
+- Every dictionary is always a range. E.g. the dictionary Size content Small, Medium, Large
+- If at least 1 item is used from the dictionary in a component's property, all the others should be used. E.g. if there are button sizes Medium and Large, there should also be the size small
+- A given property is not a dictionary by itself. The property is contained in the dictionary. That is, the Action Primary Default color is contained in the Action Primary dictionary entry.
+- Products can extend their dictionaries
+
+## List of dictionaries
+
+- [Size](#size)
+
+### Size
+
+| Dictionary    | Values                     | Code name    |
+| ------------- | -------------------------- | ------------ |
+| Size          | `small`, `medium`, `large` | Size         |
+| Size Extended | `xsmall`, `xlarge`         | SizeExtended |

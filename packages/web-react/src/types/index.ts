@@ -4,6 +4,7 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './checkboxField';
 export * from './collapse';
+export * from './dictionaries';
 export * from './dropdown';
 export * from './grid';
 export * from './header';
