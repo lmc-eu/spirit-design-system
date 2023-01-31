@@ -15,3 +15,13 @@ export const SizesExtended = {
 
 export type SizesExtendedKeys = keyof typeof SizesExtended;
 export type SizeExtended<S> = (typeof SizesExtended)[SizesExtendedKeys] | S;
+
+export const EmotionColors = {
+  SUCCESS: 'success',
+  INFORMATIVE: 'informative',
+  WARNING: 'warning',
+  DANGER: 'danger',
+} as const;
+
+export type EmotionColorsKeys = keyof typeof EmotionColors;
+export type EmotionColor<E> = (typeof EmotionColors)[EmotionColorsKeys] | E;
