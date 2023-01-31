@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+@use '../settings/dictionaries';
+
+@mixin -generate-colors-variant($properties, $variant-value) {
+    @each $property in $properties {
+        #{$property}: map.get($variant-value, $property);
+    }
+}
+
+@mixin generate-colors($dictionary, $properties, $className) {
+    @each $variant-name, $variant-value in $dictionary {
+        .#{$className}--#{$variant-name} {
+            @include -generate-colors-variant($properties, $variant-value);
+        }
+    }
+}

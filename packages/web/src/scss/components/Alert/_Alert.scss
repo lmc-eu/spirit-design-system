@@ -1,5 +1,5 @@
 @use 'theme';
-@use 'tools';
+@use '../../tools/dictionaries';
 @use '../../tools/typography';
 
 .Alert {
@@ -23,6 +23,4 @@
     justify-content: center;
 }
 
-@each $variant, $variables in theme.$variants {
-    @include tools.variant($variant, $variables);
-}
+@include dictionaries.generate-colors(theme.$color-dictionary, ('color', 'background-color'), 'Alert');
