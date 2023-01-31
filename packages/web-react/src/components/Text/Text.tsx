@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { SpiritTextProps } from '../../types';
 import { useTextStyleProps } from './useTextStyleProps';
 

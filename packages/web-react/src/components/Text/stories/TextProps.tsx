@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from '../Text';
 import Props from '../../../../docs/stories/Props';
+import { Text } from '../Text';
 
 const Example = () => <Props component={Text} />;
 
