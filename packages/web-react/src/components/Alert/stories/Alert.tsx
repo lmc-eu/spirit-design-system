@@ -9,7 +9,7 @@ import { IconsProvider } from '../../../context';
 import { SpiritAlertProps } from '../../../types';
 import Alert from '../Alert';
 
-const Story: ComponentStory<typeof Alert> = <T extends ElementType = 'div'>(args: SpiritAlertProps<T>) => (
+const Story: ComponentStory<typeof Alert> = <T extends ElementType = 'div', E = void>(args: SpiritAlertProps<T, E>) => (
   <IconsProvider value={icons}>
     <Alert {...args} />
   </IconsProvider>

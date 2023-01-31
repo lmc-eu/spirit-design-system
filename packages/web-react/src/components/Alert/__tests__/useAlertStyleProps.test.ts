@@ -10,7 +10,7 @@ describe('useAlertStyleProps', () => {
     expect(result.current.classProps).toBe('Alert');
   });
 
-  it.each([['success'], ['danger'], ['informative']])('should return color class %s', (color) => {
+  it.each([['success'], ['informative'], ['warning'], ['danger']])('should return color class %s', (color) => {
     const props = { color } as SpiritAlertProps;
     const { result } = renderHook(() => useAlertStyleProps(props));
 

@@ -15,12 +15,16 @@ const Story = (props: unknown) => (
       This is a success alert — check it out!
     </Alert>
     <div className="mb-500" />
-    <Alert color="danger" iconName="close">
-      This is a danger alert — check it out!
+    <Alert color="informative" iconName="info">
+      This is an informative alert — check it out!
     </Alert>
     <div className="mb-500" />
-    <Alert color="informative" iconName="warning">
-      This is an informative alert — check it out!
+    <Alert color="warning" iconName="warning">
+      This is an warning alert — check it out!
+    </Alert>
+    <div className="mb-500" />
+    <Alert color="danger" iconName="close">
+      This is a danger alert — check it out!
     </Alert>
   </IconsProvider>
 );

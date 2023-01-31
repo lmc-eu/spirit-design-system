@@ -10,7 +10,9 @@ export interface AlertStyles {
   props: AlertProps;
 }
 
-export function useAlertStyleProps<T extends ElementType = 'div'>(props: SpiritAlertProps<T>): AlertStyles {
+export function useAlertStyleProps<T extends ElementType = 'div', E = void>(
+  props: SpiritAlertProps<T, E>,
+): AlertStyles {
   const { color, isCentered, ...modifiedProps } = props;
 
   const alertClass = useClassNamePrefix('Alert');
