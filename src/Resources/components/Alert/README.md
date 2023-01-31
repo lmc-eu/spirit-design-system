@@ -29,15 +29,16 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                               | Default   | Required | Description                |
-| ------------- | ---------------------------------- | --------- | -------- | -------------------------- |
-| `class`       | `string`                           | `null`    | no       | Custom CSS class           |
-| `color`       | `success`, `danger`, `informative` | `success` | no       | Color variant              |
-| `elementType` | `string`                           | `div`     | no       | HTML tag to render         |
-| `iconName`    | `string`                           | `null`    | no       | Icon used in Alert         |
-| `isCentered`  | `bool`                             | `false`   | no       | If true, Alert is centered |
+| Prop name     | Type                                         | Default   | Required | Description                |
+| ------------- | -------------------------------------------- | --------- | -------- | -------------------------- |
+| `class`       | `string`                                     | `null`    | no       | Custom CSS class           |
+| `color`       | [Emotion Color dictionary][dictionary-color] | `success` | no       | Color variant              |
+| `elementType` | `string`                                     | `div`     | no       | HTML tag to render         |
+| `iconName`    | `string`                                     | `null`    | no       | Icon used in Alert         |
+| `isCentered`  | `bool`                                       | `false`   | no       | If true, Alert is centered |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
 [alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
