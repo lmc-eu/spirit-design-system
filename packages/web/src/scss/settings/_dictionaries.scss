@@ -1,0 +1,24 @@
+@use 'sass:list';
+@use '@tokens' as tokens;
+
+$size: small, medium, large;
+$size-extended: list.join($size, (xsmall, xlarge));
+
+$emotion-colors: (
+    success: (
+        color: tokens.$emotion-success-default,
+        background-color: tokens.$emotion-success-background,
+    ),
+    informative: (
+        color: tokens.$emotion-informative-default,
+        background-color: tokens.$emotion-informative-background,
+    ),
+    warning: (
+        color: tokens.$emotion-warning-default,
+        background-color: tokens.$emotion-warning-background,
+    ),
+    danger: (
+        color: tokens.$emotion-danger-default,
+        background-color: tokens.$emotion-danger-background,
+    ),
+);

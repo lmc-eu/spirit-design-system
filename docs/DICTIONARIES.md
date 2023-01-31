@@ -10,6 +10,7 @@ This project uses `dictionaries` to unify props between different components.
 ## List of dictionaries
 
 - [Size](#size)
+- [Color](#color)
 
 ### Size
 
@@ -17,3 +18,9 @@ This project uses `dictionaries` to unify props between different components.
 | ------------- | ------------------------------------ | ------------ |
 | Size          | `small`, `medium`, `large`           | Size         |
 | Size Extended | Size Dictionary + `xsmall`, `xlarge` | SizeExtended |
+
+### Color
+
+| Dictionary    | Values                                        | Code name    |
+| ------------- | --------------------------------------------- | ------------ |
+| Emotion Color | `success`, `informative`, `warning`, `danger` | EmotionColor |

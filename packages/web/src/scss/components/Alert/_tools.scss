@@ -1,9 +1,0 @@
-@use 'sass:map';
-@use '../../tools/svg';
-
-@mixin variant($variant, $variables) {
-    .Alert--#{$variant} {
-        color: map.get($variables, color);
-        background-color: map.get($variables, background-color);
-    }
-}

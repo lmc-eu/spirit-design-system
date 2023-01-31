@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $typography: tokens.$body-medium-text-regular;
 
@@ -11,17 +12,4 @@ $content-max-width: 640px;
 
 $emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
 
-$variants: (
-    success: (
-        color: tokens.$emotion-success-default,
-        background-color: tokens.$emotion-success-background,
-    ),
-    danger: (
-        color: tokens.$emotion-danger-default,
-        background-color: tokens.$emotion-danger-background,
-    ),
-    informative: (
-        color: tokens.$emotion-informative-default,
-        background-color: tokens.$emotion-informative-background,
-    ),
-);
+$color-dictionary: dictionaries.$emotion-colors;
