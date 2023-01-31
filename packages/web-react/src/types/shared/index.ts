@@ -2,6 +2,7 @@ import { ReactNode, ElementType, JSXElementConstructor } from 'react';
 
 export * from './colors';
 export * from './dialogs';
+export * from './dictionaries';
 export * from './dom';
 export * from './events';
 export * from './inputs';

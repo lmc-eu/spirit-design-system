@@ -5,6 +5,13 @@ import Text from '../Text';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
+    <Text size="xlarge">Body XLarge Text Regular</Text>
+    <Text size="xlarge" emphasis="bold">
+      Body XLarge Text Bold
+    </Text>
+    <Text size="xlarge" emphasis="italic">
+      Body XLarge Text Italic
+    </Text>
     <Text size="large">Body Large Text Regular</Text>
     <Text size="large" emphasis="bold">
       Body Large Text Bold
