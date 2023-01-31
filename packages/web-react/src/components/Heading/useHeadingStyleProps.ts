@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritHeadingProps, HeadingProps } from '../../types';
 
 export interface HeadingStyles<T extends ElementType = 'p'> {
@@ -9,7 +9,9 @@ export interface HeadingStyles<T extends ElementType = 'p'> {
   props: HeadingProps<T>;
 }
 
-export function useHeadingStyleProps<T extends ElementType = 'div'>(props: SpiritHeadingProps<T>): HeadingStyles<T> {
+export function useHeadingStyleProps<T extends ElementType = 'div', S = void>(
+  props: SpiritHeadingProps<T, S>,
+): HeadingStyles<T> {
   const { size, ...restProps } = props;
 
   const headingClass = useClassNamePrefix('typography-heading');
