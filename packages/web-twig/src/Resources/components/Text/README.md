@@ -29,14 +29,15 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                | Default   | Required | Description          |
-| ------------- | ----------------------------------- | --------- | -------- | -------------------- |
-| `class`       | `string`                            | `null`    | no       | Custom CSS class     |
-| `elementType` | `string`                            | `p`       | no       | HTML tag to render   |
-| `emphasis`    | `regular`, `bold`, `italic`         | `regular` | no       | Emphasis of the text |
-| `size`        | `large`, `medium`, `small`, `xmall` | `medium`  | no       | Size of the text     |
+| Prop name     | Type                                                   | Default   | Required | Description          |
+| ------------- | ------------------------------------------------------ | --------- | -------- | -------------------- |
+| `class`       | `string`                                               | `null`    | no       | Custom CSS class     |
+| `elementType` | `string`                                               | `p`       | no       | HTML tag to render   |
+| `emphasis`    | `regular`, `bold`, `italic`                            | `regular` | no       | Emphasis of the text |
+| `size`        | [Size and Size Extended dictionaries][dictionary-size] | `medium`  | no       | Size of the text     |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
 [text]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Text
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/DICTIONARIES.md#size
