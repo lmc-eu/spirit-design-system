@@ -1,7 +1,7 @@
 import React, { createElement, useRef, LegacyRef } from 'react';
 import classNames from 'classnames';
 import DropdownWrapper from './DropdownWrapper';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps, useDeprecatedMessage } from '../../hooks';
 import { DropdownPlacements, SpiritDropdownProps } from '../../types';
 import { useDropdown } from './useDropdown';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
@@ -19,7 +19,9 @@ const Dropdown = (props: SpiritDropdownProps) => {
     children,
     renderTrigger,
     enableAutoClose,
+    /** @deprecated Will be removed in next major version */
     breakpoint,
+    fullWidthMode,
     onAutoClose,
     ...rest
   } = props;
@@ -29,7 +31,7 @@ const Dropdown = (props: SpiritDropdownProps) => {
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint });
+  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint, fullWidthMode });
 
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({
@@ -65,6 +67,13 @@ const Dropdown = (props: SpiritDropdownProps) => {
     },
     children,
   );
+
+  useDeprecatedMessage({
+    trigger: !!breakpoint,
+    componentName: 'Dropdown',
+    deprecatedPropName: 'breakpoint',
+    newPropName: 'fullWidthMode',
+  });
 
   return (
     <DropdownWrapper>

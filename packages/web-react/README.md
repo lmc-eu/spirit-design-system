@@ -91,6 +91,13 @@ All components are by default provided as _controlled_ components so you must pr
 For a better developer experience there is also an _uncontrolled_ variant of the component provided.
 You can use the `Uncontrolled` variant for faster development.
 
+## Deprecations
+
+This package uses the deprecation warnings for props, functions and components that will be removed or replaced in the next major release.
+Check your browser console to see if you are using any of the deprecated functionality.
+
+![Deprecations in the Browser's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true)
+
 ## Examples
 
 👀 See [examples] for a live demo.
