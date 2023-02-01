@@ -56,14 +56,15 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Prop name     | Type                                                     | Default       | Required | Description                                  |
-| ------------- | -------------------------------------------------------- | ------------- | -------- | -------------------------------------------- |
-| `id`          | `string`                                                 | -             | yes      | Dropdown ID                                  |
-| `breakpoint`  | `string`                                                 | -             | no       | Breakpoint level [tablet,desktop]            |
-| `class`       | `string`                                                 | `null`        | no       | Custom CSS class                             |
-| `elementType` | `string`                                                 | `div`         | no       | HTML tag to render                           |
-| `isFullWidth` | `boolean`                                                | `false`       | no       | Whether is component displayed in full width |
-| `placement`   | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                   |
+| Prop name       | Type                                                     | Default       | Required | Description                                                                                 |
+| --------------- | -------------------------------------------------------- | ------------- | -------- | ------------------------------------------------------------------------------------------- |
+| `id`            | `string`                                                 | -             | yes      | Dropdown ID                                                                                 |
+| `breakpoint`    | `string`                                                 | -             | no       | [**DEPRECATED**][deprecated] in favor of `fullWidthMode`; Breakpoint level [tablet,desktop] |
+| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all]                                                       |
+| `class`         | `string`                                                 | `null`        | no       | Custom CSS class                                                                            |
+| `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                                                                          |
+| `isFullWidth`   | `boolean`                                                | `false`       | no       | Whether is component displayed in full width                                                |
+| `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                                                                  |
 
 ### Trigger attributes
 
@@ -85,3 +86,4 @@ or the width of the window is changed. There can be several triggers, the same r
 | `elementType` | `string` | `div`   | no       | HTML tag to render |
 
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
