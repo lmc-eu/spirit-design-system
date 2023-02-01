@@ -6,6 +6,6 @@
 # Recursively allow files under subtree
 !/_es2015/**
 !/_esNext/**
-!/_bundles/**
+!/bundles/**
 !package.json
 !.npmignore

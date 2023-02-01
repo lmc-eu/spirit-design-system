@@ -1,7 +1,7 @@
 # compiled output
 /_esNext
 /_es2015
-/_bundles
+/bundles
 
 # code coverage
 /_coverage
