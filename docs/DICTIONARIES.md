@@ -1,6 +1,6 @@
 # Dictionaries
 
-This project uses `dictionaires` to unify props between different components.
+This project uses `dictionaries` to unify props between different components.
 
 - Every dictionary is always a range. E.g. the dictionary Size content Small, Medium, Large
 - If at least 1 item is used from the dictionary in a component's property, all the others should be used. E.g. if there are button sizes Medium and Large, there should also be the size small
