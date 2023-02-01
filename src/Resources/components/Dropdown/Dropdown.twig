@@ -2,6 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _breakpoint = props.breakpoint | default(null)  -%}
+{%- set _fullWidthMode = props.fullWidthMode | default(null)  -%}
 {%- set _elementType = props.elementType | default('div') -%}
 {%- set _isFullWidth = props.isFullWidth | default(false) | boolprop -%}
 {%- set _placement = props.placement | default('bottom-left') -%}
@@ -16,6 +17,7 @@
 
 {# Attributes #}
 {%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint="' ~ _breakpoint ~ '"' : null -%}
+{%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-fullwidthmode="' ~ _fullWidthMode ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _placementClassNames = {
@@ -26,10 +28,16 @@
 } -%}
 {%- set _classNames = [ _rootClassName, _fullWidthClassName, _class ] | merge(_placementClassNames[_placement]) -%}
 
+{# Deprecations #}
+{% if _breakpoint %}
+    {% deprecated 'Dropdown: The "breakpoint" property is deprecated, use "fullWidthMode" instead.' %}
+{% endif %}
+
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     {{ _dataBreakpointAttr | raw }}
+    {{ _dataFullWidthModeAttr | raw }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>

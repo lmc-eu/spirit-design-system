@@ -125,6 +125,13 @@ or pure original implementation
 - [Tooltip](./src/Resources/components/Tooltip/README.md)
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
-if you want to contribute, read guide [here](./docs/contribution.md).
+if you want to contribute, read the guide [here](./docs/contribution.md).
+
+## Deprecations
+
+This package uses the deprecation warnings for props, functions and components that will be removed or replaced in the next major release.
+Check your Symfony console or log to see if you are using any of the deprecated functionality.
+
+![Deprecations in Symfony's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-symfony-console.png?raw=true)
 
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
