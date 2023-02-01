@@ -1,5 +1,5 @@
 const entryPoints = [
-  { dirs: [], bundleName: 'main' },
+  { dirs: [], bundleName: 'index' },
   { dirs: ['context'] },
   { dirs: ['hooks'] },
   { dirs: ['components'] },
