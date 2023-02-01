@@ -13,7 +13,7 @@
     "url": "https://github.com/lmc-eu/spirit-design-system.git",
     "directory": "packages/web-react"
   },
-  "main": "./main.cjs",
+  "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
