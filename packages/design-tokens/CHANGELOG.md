@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.25.0"></a>
+
+# [0.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.24.0...@lmc-eu/spirit-design-tokens@0.25.0) (2023-02-01)
+
+### Features
+
+- **design-tokens:** Introduce xlarge size token for body text ([5133ca9](https://github.com/lmc-eu/spirit-design-system/commit/5133ca9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="0.24.0"></a>
 
 # [0.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.23.0...@lmc-eu/spirit-design-tokens@0.24.0) (2022-12-16)

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.23.0"></a>
+
+# [1.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.22.0...@lmc-eu/spirit-web-twig@1.23.0) (2023-02-01)
+
+### Code Refactoring
+
+- **web-twig:** Rename allowedAttributes to transferringAttributes ([942304e](https://github.com/lmc-eu/spirit-design-system/commit/942304e))
+
+### Features
+
+- **web-twig:** Allow autocomplete attribute in TextField component ([d2ba902](https://github.com/lmc-eu/spirit-design-system/commit/d2ba902))
+- **web-twig:** Allow name attribute for Button component (refs [#DS-569](https://github.com/lmc-eu/spirit-design-system/issues/DS-569)) ([cd7009f](https://github.com/lmc-eu/spirit-design-system/commit/cd7009f))
+- **web-twig:** Allowed attributes argument for mainProps filter ([ceb04cc](https://github.com/lmc-eu/spirit-design-system/commit/ceb04cc))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.22.0"></a>
 
 # [1.22.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.21.0...@lmc-eu/spirit-web-twig@1.22.0) (2023-01-29)

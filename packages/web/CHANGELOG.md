@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.39.1"></a>
+
+## [0.39.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.39.0...@lmc-eu/spirit-web@0.39.1) (2023-02-01)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.39.0"></a>
 
 # [0.39.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.38.0...@lmc-eu/spirit-web@0.39.0) (2023-01-29)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.37.1"></a>
+
+## [0.37.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.37.0...@lmc-eu/spirit-web-react@0.37.1) (2023-02-01)
+
+### Documentation
+
+- **web-react:** Fix renderToggle to renderTrigger ([1ad3d96](https://github.com/lmc-eu/spirit-design-system/commit/1ad3d96))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.37.0"></a>
 
 # [0.37.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.36.0...@lmc-eu/spirit-web-react@0.37.0) (2023-01-29)
