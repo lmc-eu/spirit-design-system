@@ -23,6 +23,7 @@ export default defineConfig({
     }),
   ],
   css: {
+    postcss: resolve(__dirname, 'config'),
     preprocessorOptions: {
       scss: {
         includePaths: [
