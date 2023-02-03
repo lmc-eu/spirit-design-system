@@ -8,6 +8,7 @@ import { useDropdownStyleProps } from './useDropdownStyleProps';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 
 const defaultProps = {
+  /** @deprecated Will be removed in next major version */
   isFullWidth: false,
   placement: DropdownPlacements.BOTTOM_LEFT,
   enableAutoClose: true,
@@ -72,6 +73,15 @@ const Dropdown = (props: SpiritDropdownProps) => {
     trigger: !!breakpoint,
     componentName: 'Dropdown',
     deprecatedPropName: 'breakpoint',
+    newPropName: 'fullWidthMode',
+  });
+
+  useDeprecatedMessage({
+    // use only to mark deprecation
+    // eslint-disable-next-line react/destructuring-assignment
+    trigger: !!props.isFullWidth,
+    componentName: 'Dropdown',
+    deprecatedPropName: 'isFullWidth',
     newPropName: 'fullWidthMode',
   });
 

@@ -15,6 +15,7 @@ describe('useDropdownStyleProps', () => {
   it('should transfer additional props', () => {
     const props = {
       isOpen: false,
+      /** @deprecated Will be removed in next major version */
       isFullWidth: false,
       placement: DropdownPlacements.BOTTOM_LEFT,
       transferProp: 'test',
@@ -27,6 +28,7 @@ describe('useDropdownStyleProps', () => {
   it('should set `fullWidth` class', () => {
     const props = {
       isOpen: false,
+      /** @deprecated Will be removed in next major version */
       isFullWidth: true,
       placement: DropdownPlacements.BOTTOM_LEFT,
     };
@@ -40,6 +42,7 @@ describe('useDropdownStyleProps', () => {
   it('should change placement class', () => {
     const props = {
       isOpen: false,
+      /** @deprecated Will be removed in next major version */
       isFullWidth: false,
       placement: DropdownPlacements.TOP_RIGHT,
     };

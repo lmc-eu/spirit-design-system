@@ -52,6 +52,7 @@ export interface DropdownProps extends ChildrenProps, StyleProps {
 
 export interface SpiritDropdownProps extends DropdownProps {
   enableAutoClose?: boolean;
+  /** @deprecated Will be removed in next major version */
   isFullWidth?: boolean;
   placement?: DropdownPlacement;
   /** @deprecated Will be removed in next major version */
