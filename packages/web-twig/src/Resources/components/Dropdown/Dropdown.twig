@@ -29,6 +29,9 @@
 {%- set _classNames = [ _rootClassName, _fullWidthClassName, _class ] | merge(_placementClassNames[_placement]) -%}
 
 {# Deprecations #}
+{% if _isFullWidth %}
+    {% deprecated 'Dropdown: The "isFullWidth" property is deprecated, use "fullWidthMode" instead.' %}
+{% endif %}
 {% if _breakpoint %}
     {% deprecated 'Dropdown: The "breakpoint" property is deprecated, use "fullWidthMode" instead.' %}
 {% endif %}
