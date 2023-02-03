@@ -29,7 +29,7 @@ export function useButtonStyleProps<T extends ElementType = 'button'>(
   const buttonDisabledClass = `${buttonClass}--disabled`;
   const buttonSquareClass = `${buttonClass}--square`;
 
-  if (isBlock && isSquare) {
+  if (isBlock && isSquare && process.env.NODE_ENV === 'development') {
     // eslint-disable-next-line no-console
     console.warn('isBlock and isSquare props are mutually exclusive');
   }
