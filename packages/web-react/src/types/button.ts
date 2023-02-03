@@ -53,14 +53,12 @@ export interface AriaButtonProps<T extends ElementType = 'button'>
 
 export interface SpiritButtonProps<T extends ElementType = 'button'>
   extends AriaBaseButtonProps,
+    AriaButtonElementTypeProps<T>,
     ButtonProps,
-    LinkButtonProps<T>,
     StyleProps,
     TransferProps {
   // tag?: ElementType;
   innerRef?: Ref<HTMLButtonElement>;
 }
 
-/* export interface SpiritButtonLinkProps<T extends ElementType = 'a'> extends SpiritButtonProps {
-  innerRef?: Ref<HTMLAnchorElement>;
-} */
+export interface SpiritButtonLinkProps<T extends ElementType = 'a'> extends SpiritButtonProps<T>, LinkButtonProps<T> {}
