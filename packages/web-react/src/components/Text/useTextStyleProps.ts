@@ -9,7 +9,7 @@ export interface TextStyles<T extends ElementType = 'p'> {
   props: TextProps<T>;
 }
 
-export function useTextStyleProps<T extends ElementType = 'p'>(props: SpiritTextProps<T>): TextStyles<T> {
+export function useTextStyleProps<T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): TextStyles<T> {
   const { size, emphasis, ...restProps } = props;
 
   const textClass = useClassNamePrefix('typography-body');
