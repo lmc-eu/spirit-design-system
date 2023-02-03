@@ -3,7 +3,7 @@ import { ComponentStory } from '@storybook/react';
 import { SpiritTextProps } from '../../../types';
 import Text from '../Text';
 
-const Story: ComponentStory<typeof Text> = <T extends ElementType = 'div'>(args: SpiritTextProps<T>) => (
+const Story: ComponentStory<typeof Text> = <T extends ElementType = 'div', S = void>(args: SpiritTextProps<T, S>) => (
   <Text {...args} />
 );
 
