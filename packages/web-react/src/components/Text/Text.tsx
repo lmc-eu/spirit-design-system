@@ -8,7 +8,7 @@ const defaultProps = {
   size: 'medium',
 };
 
-export const Text = <T extends ElementType = 'p'>(props: SpiritTextProps<T>): JSX.Element => {
+export const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): JSX.Element => {
   const { elementType: ElementTag = 'p', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
