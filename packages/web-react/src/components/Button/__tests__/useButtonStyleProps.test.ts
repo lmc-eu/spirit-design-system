@@ -21,6 +21,8 @@ describe('useButtonStyleProps', () => {
   });
 
   it('should warn when using unsupported sizes on body', () => {
+    process.env.NODE_ENV = 'development';
+
     const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
 
     const props = { color: 'primary', size: 'medium', isBlock: true, isSquare: true } as SpiritButtonProps;
