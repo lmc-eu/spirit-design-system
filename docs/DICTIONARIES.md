@@ -13,7 +13,7 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Size
 
-| Dictionary    | Values                     | Code name    |
-| ------------- | -------------------------- | ------------ |
-| Size          | `small`, `medium`, `large` | Size         |
-| Size Extended | `xsmall`, `xlarge`         | SizeExtended |
+| Dictionary    | Values                               | Code name    |
+| ------------- | ------------------------------------ | ------------ |
+| Size          | `small`, `medium`, `large`           | Size         |
+| Size Extended | Size Dictionary + `xsmall`, `xlarge` | SizeExtended |
