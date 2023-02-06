@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.24.0"></a>
+
+# [1.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.23.0...@lmc-eu/spirit-web-twig@1.24.0) (2023-02-06)
+
+### Features
+
+- **web-twig:** Deprecate `isFullWidth` prop in Dropdown component ([544264d](https://github.com/lmc-eu/spirit-design-system/commit/544264d))
+- **web-twig:** Introduce `fullWidthMode` prop to Dropdown [#DS-493](https://github.com/lmc-eu/spirit-design-system/issues/DS-493) ([1afc53a](https://github.com/lmc-eu/spirit-design-system/commit/1afc53a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.23.0"></a>
 
 # [1.23.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.22.0...@lmc-eu/spirit-web-twig@1.23.0) (2023-02-01)

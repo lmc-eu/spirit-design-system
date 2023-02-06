@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.38.0"></a>
+
+# [0.38.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.37.1...@lmc-eu/spirit-web-react@0.38.0) (2023-02-06)
+
+### Chores
+
+- **web-react:** Add missing package entry points for distribution ([30c3195](https://github.com/lmc-eu/spirit-design-system/commit/30c3195))
+- **web-react:** Do not generate browser distribution files for UMD ([c4e4b96](https://github.com/lmc-eu/spirit-design-system/commit/c4e4b96))
+- **web-react:** Do not generate type declarations for UMD format ([2c80743](https://github.com/lmc-eu/spirit-design-system/commit/2c80743))
+- **web-react:** Log deprecations only in development mode ([630daf4](https://github.com/lmc-eu/spirit-design-system/commit/630daf4))
+- **web-react:** Rename distribution directory with UMD to `bundles` ([2a817b7](https://github.com/lmc-eu/spirit-design-system/commit/2a817b7)), closes [#DS-580](https://github.com/lmc-eu/spirit-design-system/issues/DS-580)
+- **web-react:** Rename main CommonJS entrypoint to index.cjs [#DS-580](https://github.com/lmc-eu/spirit-design-system/issues/DS-580) ([5a4ca81](https://github.com/lmc-eu/spirit-design-system/commit/5a4ca81))
+- **web-react:** Run multiple scripts with `npm-run-all` ([9cd31d7](https://github.com/lmc-eu/spirit-design-system/commit/9cd31d7))
+
+### Features
+
+- **web-react:** Depreacate `isFullWidth` prop in Dropdown component ([d317148](https://github.com/lmc-eu/spirit-design-system/commit/d317148))
+- **web-react:** Introduce `fullWidthMode` prop in Dropdown [#DS-493](https://github.com/lmc-eu/spirit-design-system/issues/DS-493) ([3e09293](https://github.com/lmc-eu/spirit-design-system/commit/3e09293))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.37.1"></a>
 
 ## [0.37.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.37.0...@lmc-eu/spirit-web-react@0.37.1) (2023-02-01)
