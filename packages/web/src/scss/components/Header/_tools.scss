@@ -1,3 +1,5 @@
+@use 'theme';
+
 @mixin create-cover($position: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
     position: $position;
     top: $top;
@@ -9,7 +11,7 @@
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: opacity, visibility;
-        transition-duration: 0.25s;
+        transition-duration: theme.$backdrop-transition-duration;
     }
 }
 

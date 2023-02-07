@@ -36,7 +36,9 @@
         background-color: canvastext; // 2.
         box-shadow: theme.$input-box-shadow-before; // 1.
         transform: scale(0);
-        transition: theme.$input-transition;
+        transition-property: transform;
+        transition-duration: theme.$input-transition-duration;
+        transition-timing-function: theme.$input-transition-timing;
     }
 
     &:checked::before {

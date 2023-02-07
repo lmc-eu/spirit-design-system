@@ -51,8 +51,8 @@
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, transform;
-        transition-duration: 0.25s;
-        transition-timing-function: ease-in-out;
+        transition-duration: theme.$pane-transition-duration;
+        transition-timing-function: theme.$pane-transition-timing;
     }
 }
 
@@ -129,7 +129,7 @@ button.Header__link {
     color: theme.$nav-link-color;
     background-color: theme.$nav-link-background-color;
     transition-property: color, background-color;
-    transition-duration: 0.25s;
+    transition-duration: theme.$nav-link-transition-duration;
 
     // Current item border
     &::after {
@@ -157,7 +157,9 @@ button.Header__link {
     @media (prefers-reduced-motion: no-preference) {
         // Current item border
         &::after {
-            transition: transform ease-out 0.25s;
+            transition-property: transform;
+            transition-duration: theme.$nav-link-current-border-transition-duration;
+            transition-timing-function: theme.$nav-link-current-border-transition-timing;
         }
     }
 }

@@ -30,7 +30,7 @@
 
     @media (prefers-reduced-motion: no-preference) {
         transition-property: opacity, visibility, transform;
-        transition-duration: 0.25s;
+        transition-duration: theme.$transition-duration;
     }
 }
 
@@ -63,28 +63,28 @@
 .Tooltip--top {
     bottom: 100%;
     left: 50%;
-    transform: translate(-50%, #{-1 * theme.$arrow-height}) scale(var(--scale, 1));
+    transform: translate(-50%, #{-1 * theme.$arrow-height}) scale(var(--tooltip-scale, 1));
     transform-origin: bottom center;
 }
 
 .Tooltip--bottom {
     top: 100%;
     left: 50%;
-    transform: translate(-50%, #{theme.$arrow-height}) scale(var(--scale, 1));
+    transform: translate(-50%, #{theme.$arrow-height}) scale(var(--tooltip-scale, 1));
     transform-origin: top center;
 }
 
 .Tooltip--left {
     top: 50%;
     right: 100%;
-    transform: translate(#{-1 * theme.$arrow-height}, -50%) scale(var(--scale, 1));
+    transform: translate(#{-1 * theme.$arrow-height}, -50%) scale(var(--tooltip-scale, 1));
     transform-origin: right center;
 }
 
 .Tooltip--right {
     top: 50%;
     left: 100%;
-    transform: translate(#{theme.$arrow-height}, -50%) scale(var(--scale, 1));
+    transform: translate(#{theme.$arrow-height}, -50%) scale(var(--tooltip-scale, 1));
     transform-origin: left center;
 }
 

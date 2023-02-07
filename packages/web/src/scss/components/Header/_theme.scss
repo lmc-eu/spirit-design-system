@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use '../../settings/transitions';
 
 $typography: tokens.$body-medium-text-regular;
 $breakpoint: tokens.$breakpoint-desktop;
@@ -15,6 +16,8 @@ $pane-padding: tokens.$space-700;
 $pane-color: tokens.$text-primary-inverted-default;
 $pane-background-color: tokens.$background-inverted;
 $pane-shadow: tokens.$shadow-400;
+$pane-transition-duration: transitions.$duration-medium;
+$pane-transition-timing: transitions.$timing-eased-in-out;
 
 $actions-padding-x: $pane-padding;
 $actions-padding-y: tokens.$space-900;
@@ -34,10 +37,14 @@ $nav-link-color-active: tokens.$text-primary-inverted-default;
 $nav-link-background-color-active: tokens.$background-interactive-inverted-active;
 $nav-link-color-current: tokens.$text-primary-inverted-default;
 $nav-link-background-color-current: tokens.$background-interactive-inverted-active;
+$nav-link-transition-duration: transitions.$duration-medium;
 $nav-link-current-border-width: 3px;
 $nav-link-current-border-color: tokens.$action-selected-default;
+$nav-link-current-border-transition-duration: transitions.$duration-medium;
+$nav-link-current-border-transition-timing: transitions.$timing-eased-out;
 
 $close-button-size: tokens.$space-1000;
 $close-button-color: tokens.$action-inverted-default;
 
 $backdrop-background-color: tokens.$background-backdrop;
+$backdrop-transition-duration: transitions.$duration-medium;
