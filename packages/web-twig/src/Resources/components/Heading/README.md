@@ -38,4 +38,4 @@ You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
 [heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
-[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/DICTIONARIES.md#size
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
