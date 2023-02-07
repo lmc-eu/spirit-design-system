@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use '../../settings/transitions';
 @use '../../theme/form-fields' as form-fields-theme;
 
 $input-border-radius: 50%;
@@ -7,5 +8,6 @@ $input-margin: 2px;
 $input-inner-dot-size: 10px;
 $input-box-shadow-before: inset tokens.$space-600 tokens.$space-600 form-fields-theme.$inline-field-input-color-checked;
 $input-box-shadow-disabled: inset tokens.$space-600 tokens.$space-600 form-fields-theme.$input-color-disabled;
-$input-transition: 0.12s transform ease-in-out;
+$input-transition-duration: transitions.$duration-fast;
+$input-transition-timing: transitions.$timing-eased-in-out;
 $input-focus-shadow: tokens.$focus;

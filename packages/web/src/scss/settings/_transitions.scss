@@ -1,5 +1,13 @@
 @use '@tokens' as tokens;
 
+$duration-fast: 0.125s;
 $duration-medium: 0.25s;
+
+$timing-eased-out: ease-out;
+$timing-eased-in-out: ease-in-out;
+$timing-eased-in-out-fast: cubic-bezier(0.4, 0, 0.2, 1);
+
+$scale-ratio-small-objects: 0.95;
 $scale-ratio-large-objects: 0.975;
+
 $shift-distance-medium: tokens.$space-600;

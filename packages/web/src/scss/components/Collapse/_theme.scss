@@ -1,5 +1,6 @@
 @use '@tokens' as tokens;
+@use '../../settings/transitions';
 
 $breakpoints: tokens.$breakpoints;
-$collapse-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
-$collapse-transition-duration: 0.25s;
+$collapse-transition-timing: transitions.$timing-eased-in-out-fast;
+$collapse-transition-duration: transitions.$duration-medium;

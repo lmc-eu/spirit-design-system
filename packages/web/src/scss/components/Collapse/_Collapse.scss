@@ -14,9 +14,11 @@
     }
 
     &.is-transitioning {
-        transition-property: height;
-        transition-duration: theme.$collapse-transition-duration;
-        transition-timing-function: theme.$collapse-transition-timing;
+        @media (prefers-reduced-motion: no-preference) {
+            transition-property: height;
+            transition-duration: theme.$collapse-transition-duration;
+            transition-timing-function: theme.$collapse-transition-timing;
+        }
     }
 
     &.is-open:not(.is-transitioning) {
