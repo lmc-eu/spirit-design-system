@@ -29,4 +29,4 @@ const CustomText = (props: SpiritHeadingProps): JSX.Element => {
 };
 ```
 
-[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/DICTIONARIES.md#size
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
