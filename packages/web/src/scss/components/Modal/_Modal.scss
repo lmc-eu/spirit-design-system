@@ -24,6 +24,12 @@
     border: 0;
     background: transparent;
     overscroll-behavior-y: contain;
+
+    &::backdrop {
+        background-color: theme.$backdrop-background-color;
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 // @deprecated Will be removed in next major version.
