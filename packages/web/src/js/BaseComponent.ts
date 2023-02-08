@@ -9,7 +9,7 @@ class BaseComponent {
   element: SpiritElement;
   NAME: string | null;
 
-  constructor(element: SpiritElement) {
+  constructor(element: SpiritElement | string) {
     this.element = getElement(element);
     this.NAME = '';
 
