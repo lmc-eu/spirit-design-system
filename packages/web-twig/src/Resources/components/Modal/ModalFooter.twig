@@ -1,0 +1,28 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _align = props.align | default('right') -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _description = props.description | default(null) -%}
+
+{# Class names #}
+{%- set _actionsClassName = _spiritClassPrefix ~ 'ModalFooter__actions' -%}
+{%- set _descriptionClassName = _spiritClassPrefix ~ 'ModalFooter__description' -%}
+{%- set _rootAlignClassName = _align ? _spiritClassPrefix ~ 'ModalFooter--' ~ _align : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'ModalFooter' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootAlignClassName, _class ] -%}
+
+<footer
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+>
+    {% if _description %}
+        <div class="{{ _descriptionClassName }}">
+            {{ _description }}
+        </div>
+    {% endif %}
+    <div class="{{ _actionsClassName }}">
+        {% block content %}{% endblock %}
+    </div>
+</footer>

@@ -1,0 +1,29 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _titleId = props.titleId | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
+{%- set _rootComposedClassName = _spiritClassPrefix ~ 'Modal--composed' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
+{%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby="' ~ _titleId ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootComposedClassName, _rootExpandOnMobileClassName, _class ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+{# Deprecations #}
+{% deprecated 'ModalComposed: The "ModalComposed" component is deprecated, it will be renamed to "Modal".' %}
+
+<dialog
+    {{ mainProps(_mainPropsWithoutId) }}
+    {{ classProp(_classNames) }}
+    {{ _idAttr | raw }}
+    {{ _ariaLabelledbyAttr | raw }}
+>
+    {% block content %}{% endblock %}
+</dialog>
