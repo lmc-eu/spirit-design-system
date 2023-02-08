@@ -4,11 +4,11 @@ import { useTabsStyleProps } from './useTabsStyleProps';
 
 type TabListProps = ChildrenProps & TransferProps;
 
-const TabList = ({ children }: TabListProps): JSX.Element => {
+const TabList = ({ children, ...restProps }: TabListProps): JSX.Element => {
   const { classProps } = useTabsStyleProps();
 
   return (
-    <ul className={classProps.root} role="tablist">
+    <ul {...restProps} className={classProps.root} role="tablist">
       {children}
     </ul>
   );

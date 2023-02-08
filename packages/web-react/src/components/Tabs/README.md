@@ -66,20 +66,22 @@ const selectTab = useCallback((tabId) => {
 
 **Available props**
 
-| Name          | Type               | Description                                  |
-| ------------- | ------------------ | -------------------------------------------- |
-| `selectedTab` | `string`, `number` | Identification of the selected tab           |
-| `toogle`      | `Function`         | Toggle function which accept tab ID as input |
-| `children`    | `any`              | Child component                              |
+| Name                | Type                     | Description                                  |
+| ------------------- | ------------------------ | -------------------------------------------- |
+| `selectedTab`       | `string`, `number`       | Identification of the selected tab           |
+| `toogle`            | `Function`               | Toggle function which accept tab ID as input |
+| `children`          | `any`                    | Child component                              |
+| `onSelectionChange` | `(tabId: TabId) => void` | When the state of the selected panel changes |
 
 ### UncontrolledTabs
 
 **Available props**
 
-| Name                 | Type               | Description                            |
-| -------------------- | ------------------ | -------------------------------------- |
-| `defaultSelectedTab` | `string`, `number` | Identification of default selected tab |
-| `children`           | `any`              | Child component                        |
+| Name                 | Type                     | Description                                  |
+| -------------------- | ------------------------ | -------------------------------------------- |
+| `defaultSelectedTab` | `string`, `number`       | Identification of default selected tab       |
+| `children`           | `any`                    | Child component                              |
+| `onSelectionChange`  | `(tabId: TabId) => void` | When the state of the selected panel changes |
 
 ### TabList
 

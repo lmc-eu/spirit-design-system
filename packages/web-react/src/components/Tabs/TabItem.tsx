@@ -1,15 +1,27 @@
 import React from 'react';
-import { ChildrenProps, TabId, TransferProps } from '../../types';
+import { ChildrenProps, TabId, TransferProps, ClickEvents, ClickEvent } from '../../types';
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-interface TabItemProps extends ChildrenProps, TransferProps {
+interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
   forTab: TabId;
 }
 
-const TabItem = ({ children, forTab, ...restProps }: TabItemProps): JSX.Element => {
-  const { selectTab, selectedTabId } = useTabContext();
+const TabItem = ({ children, forTab, onClick, ...restProps }: TabItemProps): JSX.Element => {
+  const { selectTab, selectedTabId, onSelectionChange } = useTabContext();
   const { classProps } = useTabsStyleProps({ forTab, selectedTabId });
+
+  const handleClick = (event: ClickEvent) => {
+    selectTab(forTab);
+
+    if (onClick) {
+      onClick(event);
+    }
+
+    if (onSelectionChange) {
+      onSelectionChange(selectedTabId);
+    }
+  };
 
   return (
     <li className={classProps.item}>
@@ -21,7 +33,7 @@ const TabItem = ({ children, forTab, ...restProps }: TabItemProps): JSX.Element 
         aria-selected={selectedTabId === forTab}
         id={`${forTab}-tab`}
         aria-controls={forTab.toString()}
-        onClick={() => selectTab(forTab)}
+        onClick={handleClick}
       >
         {children}
       </button>
