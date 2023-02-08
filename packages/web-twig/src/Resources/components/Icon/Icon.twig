@@ -4,7 +4,8 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _isReusable = props.isReusable ?? true -%}
 {%- set _name = props.name -%}
-{%- set _size = props.size | default('24') -%}
+{%- set _boxSize = props.size | default('24') -%}
+{%- set _size = props.size -%}
 {%- set _title = props.title | default(null) -%}
 
 {# Miscellaneous #}
@@ -12,4 +13,9 @@
     'aria-hidden': _ariaHidden ? 'true' : 'false',
 }) -%}
 
-{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _class, size: _size, title: _title, mainProps: _mainProps }, _isReusable) }}
+{# Deprecations #}
+{% if _size %}
+    {% deprecated 'Icon: The "size" property is deprecated, use "boxSize" instead.' %}
+{% endif %}
+
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _class, size: _size ? _size : _boxSize, title: _title, mainProps: _mainProps }, _isReusable) }}
