@@ -1,0 +1,42 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _closeLabel = props.closeLabel | default('Close') -%}
+{%- set _enabledDismiss = props.enableDismiss ?? true -%}
+{%- set _modalId = props.modalId -%}
+{%- set _titleId = props.titleId | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'ModalHeader' -%}
+{%- set _titleClassName = _spiritClassPrefix ~ 'ModalHeader__title' -%}
+
+{# Attributes #}
+{%- set _titleIdAttr = _titleId ? 'id="' ~ _titleId ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<header
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+>
+    {% if block('content') is not empty %}
+        <h2
+            class="{{ _titleClassName }}"
+            {{ _titleIdAttr | raw }}
+        >
+            {% block content %}{% endblock %}
+        </h2>
+    {% endif %}
+    <Button
+        aria-controls="{{ _modalId }}"
+        aria-expanded="false"
+        color="tertiary"
+        data-dismiss="{{ _enabledDismiss ? 'modal' : null }}"
+        data-target="{{ _enabledDismiss ? '#' ~ _modalId : null }}"
+        isSquare
+    >
+        <Icon name="close" />
+        <span class="accessibility-hidden">{{ _closeLabel }}</span>
+    </Button>
+</header>
