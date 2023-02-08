@@ -1,16 +1,31 @@
 import React from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
-import { useIcon } from '../../hooks';
+import { useDeprecatedMessage, useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 
 const defaultProps = {
   ariaHidden: true,
-  size: 24,
+  boxSize: 24,
 };
 
-export const Icon = ({ name, title, size, ariaHidden, ...restProps }: IconProps): JSX.Element => {
+export const Icon = (props: IconProps): JSX.Element => {
+  const {
+    boxSize,
+    name,
+    title,
+    /** @deprecated Will be removed in next major version */
+    size,
+    ariaHidden,
+    ...restProps
+  } = props;
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecatedMessage({
+    trigger: !!size,
+    componentName: 'Icon',
+    deprecatedPropName: 'size',
+    newPropName: 'boxSize',
+  });
 
   if (title) {
     icon = `<title>${title}</title>${icon}`;
@@ -22,8 +37,8 @@ export const Icon = ({ name, title, size, ariaHidden, ...restProps }: IconProps)
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      width={size}
-      height={size}
+      width={size || boxSize}
+      height={size || boxSize}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: icon }}
       aria-hidden={ariaHidden}

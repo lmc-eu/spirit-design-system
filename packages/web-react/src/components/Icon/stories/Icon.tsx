@@ -5,7 +5,7 @@ import { ComponentStory } from '@storybook/react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context/IconsContext';
+import { IconsProvider } from '../../../context';
 import Icon from '../Icon';
 import { IconProps } from '../../../types';
 
