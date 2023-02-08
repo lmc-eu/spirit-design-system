@@ -1,5 +1,5 @@
 const SelectorEngine = {
-  findAll(selector: string | null, element: SpiritElement = document.documentElement): HTMLElement[] {
+  findAll(selector: string | null | undefined, element: SpiritElement = document.documentElement): HTMLElement[] {
     return [].concat(...Element.prototype.querySelectorAll.call(element, selector));
   },
 
