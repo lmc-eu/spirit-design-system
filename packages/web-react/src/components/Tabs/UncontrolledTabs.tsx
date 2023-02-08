@@ -5,12 +5,14 @@ import { useTab } from './useTabs';
 
 interface TabsProps extends ChildrenProps, TransferProps {
   defaultSelectedTab: TabId;
+  // eslint-disable-next-line react/require-default-props
+  onSelectionChange?: (tabId: TabId) => void;
 }
 
-const Tabs = ({ children, defaultSelectedTab }: TabsProps): JSX.Element => {
+const Tabs = ({ children, defaultSelectedTab, onSelectionChange }: TabsProps): JSX.Element => {
   const { selectedTabId, selectTab } = useTab(defaultSelectedTab);
 
-  return <TabsProvider value={{ selectedTabId, selectTab }}>{children}</TabsProvider>;
+  return <TabsProvider value={{ selectedTabId, selectTab, onSelectionChange }}>{children}</TabsProvider>;
 };
 
 export default Tabs;
