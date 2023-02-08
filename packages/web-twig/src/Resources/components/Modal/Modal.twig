@@ -18,6 +18,9 @@
 {%- set _classNames = [ _rootClassName, _class ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
+{# Deprecations #}
+{% deprecated 'Modal: The "Modal" component is deprecated, it will be replaced by implementation of "ModalComposed".' %}
+
 <dialog
   {{ mainProps(_mainPropsWithoutId) }}
   {{ classProp(_classNames) }}
