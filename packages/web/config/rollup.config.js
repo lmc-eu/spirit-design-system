@@ -23,6 +23,7 @@ const plugins = [
     target: 'es6',
     compilerOptions: { rootDir: './src' },
     exclude: ['**/__tests__', '**/*.test.ts'],
+    declaration: false,
   }),
 ];
 
