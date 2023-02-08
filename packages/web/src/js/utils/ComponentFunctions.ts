@@ -1,7 +1,7 @@
 import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
-import { getElement } from './index';
+import { getElement } from './Elements';
 
 type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
 
