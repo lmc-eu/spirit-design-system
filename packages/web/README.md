@@ -69,15 +69,15 @@ Some components require JavaScript plugins for their full functionality. You can
 
 #### Individual or compiled
 
-Plugins can be included individually (using `import { <plugin> }` from `js/esm/*.esm.js`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/cjs/spirit-web.js` or the minified `js/cjs/spirit-web.min.js` (do not include both).
+Plugins can be included individually as an EcmaScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are UMD ready.
+If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are EcmaScript modules.
 
-#### Using Spirit Web as a module
+#### Using Spirit Web as a module in browser
 
 We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web.esm.min.js`) which allows you to use Spirit Web as a module in your browser.
 
@@ -87,6 +87,57 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 
   Array.from(document.querySelectorAll('.header')).forEach((headerNode) => new Header(headerNode));
 </script>
+```
+
+#### Data attributes
+
+Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
+Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
+
+ℹ️ For turning off this functionality just do not set the `data-toggle` attribute and use the Programnatic API.
+
+> #### Selectors
+>
+> Currently to query DOM elements we use the native methods `querySelector` and `querySelectorAll` for performance reasons, so you have to use valid selectors.
+> If you use special selectors, for example: `collapse:Example` be sure to escape them.
+
+#### Events
+
+Spirit-Web provides custom events for most plugins' unique actions.
+Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
+
+All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality.
+This provides the ability to stop the execution of an action before it starts.
+Returning false from an event handler will also automatically call `preventDefault()`.
+
+```javascript
+var myModal = document.getElementById('myModal');
+
+myModal.addEventListener('show.modal', function (event) {
+  if (!data) {
+    return event.preventDefault(); // stops modal from being shown
+  }
+});
+```
+
+#### Programmatic API
+
+```javascript
+var myModalEl = document.getElementById('myModal');
+
+var modal = new Modal(myModalEl); // initialized with defaults
+```
+
+If you’d like to get a particular plugin instance, each plugin exposes a `getInstance` method.
+
+#### CSS selectors in constructors
+
+You can also use a CSS selector as the first argument instead of a DOM element to initialize the plugin.
+Currently the element for the plugin is found by the `querySelector` method since our plugins support a single element only.
+
+```javascript
+var modal = new Modal('#myModal');
+var dropdown = new Dropdown('[data-toggle="dropdown"]');
 ```
 
 ## Rebranding
