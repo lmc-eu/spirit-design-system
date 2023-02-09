@@ -4,22 +4,45 @@
 $size: small, medium, large;
 $size-extended: list.join($size, (xsmall, xlarge));
 
+$action-colors: (
+    primary: (
+        default: tokens.$action-primary-default,
+        text: tokens.$text-primary-inverted-default,
+    ),
+    secondary: (
+        default: tokens.$action-secondary-default,
+        text: tokens.$text-primary-inverted-default,
+    ),
+    tertiary: (
+        default: tokens.$action-tertiary-default,
+        text: tokens.$text-primary-default,
+    ),
+    inverted: (
+        default: tokens.$action-inverted-default,
+        text: tokens.$text-primary-default,
+    ),
+);
+
 $emotion-colors: (
     success: (
-        color: tokens.$emotion-success-default,
-        background-color: tokens.$emotion-success-background,
+        background: tokens.$emotion-success-background,
+        default: tokens.$emotion-success-default,
+        text: tokens.$text-primary-inverted-default,
     ),
     informative: (
-        color: tokens.$emotion-informative-default,
-        background-color: tokens.$emotion-informative-background,
+        background: tokens.$emotion-informative-background,
+        default: tokens.$emotion-informative-default,
+        text: tokens.$text-primary-inverted-default,
     ),
     warning: (
-        color: tokens.$emotion-warning-default,
-        background-color: tokens.$emotion-warning-background,
+        background: tokens.$emotion-warning-background,
+        default: tokens.$emotion-warning-default,
+        text: tokens.$text-primary-inverted-default,
     ),
     danger: (
-        color: tokens.$emotion-danger-default,
-        background-color: tokens.$emotion-danger-background,
+        background: tokens.$emotion-danger-background,
+        default: tokens.$emotion-danger-default,
+        text: tokens.$text-primary-inverted-default,
     ),
 );
 

@@ -3,8 +3,8 @@
 @use '../settings/dictionaries';
 
 @mixin -generate-colors-variant($properties, $variant-value) {
-    @each $property in $properties {
-        #{$property}: map.get($variant-value, $property);
+    @each $property-name, $property-value in $properties {
+        #{$property-value}: map.get($variant-value, $property-name);
     }
 }
 

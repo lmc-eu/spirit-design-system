@@ -1,5 +1,5 @@
 @use 'theme';
-@use 'tools';
+@use '../../tools/dictionaries';
 @use '../../tools/typography';
 
 .Pill {
@@ -13,6 +13,11 @@
     border-radius: theme.$border-radius;
 }
 
-@each $variant, $themes in theme.$variants {
-    @include tools.variant($variant, $themes);
-}
+@include dictionaries.generate-colors(
+    theme.$color-dictionary,
+    (
+        text: 'color',
+        default: 'background-color',
+    ),
+    'Pill'
+);
