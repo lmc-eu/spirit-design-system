@@ -33,21 +33,6 @@
 }
 
 // @deprecated Will be removed in next major version.
-.Modal__backdrop {
-    position: fixed;
-    z-index: -1;
-    background-color: theme.$backdrop-background-color;
-    visibility: hidden;
-    opacity: 0;
-    inset: 0;
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: opacity, visibility;
-        transition-duration: 0.25s;
-    }
-}
-
-// @deprecated Will be removed in next major version.
 .Modal__content {
     display: flex;
     align-items: center;
@@ -162,16 +147,4 @@
     align-items: center;
     justify-content: flex-end;
     margin-bottom: theme.$header-spacing;
-}
-
-// @deprecated Will be removed in next major version.
-.Modal[open] > .Modal__backdrop {
-    visibility: visible;
-    opacity: 1;
-}
-
-// @deprecated Will be removed in next major version.
-.Modal--composed[open] > .Modal__backdrop {
-    visibility: visible;
-    opacity: 0;
 }
