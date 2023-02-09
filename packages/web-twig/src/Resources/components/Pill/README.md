@@ -29,13 +29,14 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                                      | Default    | Required | Description        |
-| ------------- | --------------------------------------------------------- | ---------- | -------- | ------------------ |
-| `class`       | `string`                                                  | `null`     | no       | Custom CSS class   |
-| `color`       | `selected`, `danger`, `informative`, `success`, `warning` | `selected` | no       | Color variant      |
-| `elementType` | `string`                                                  | `span`     | no       | HTML tag to render |
+| Prop name     | Type                                                                                                                | Default    | Required | Description        |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
+| `class`       | `string`                                                                                                            | `null`     | no       | Custom CSS class   |
+| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color], `selected`, `unselected` | `selected` | no       | Color variant      |
+| `elementType` | `string`                                                                                                            | `span`     | no       | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
 
 [pill]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pill
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
