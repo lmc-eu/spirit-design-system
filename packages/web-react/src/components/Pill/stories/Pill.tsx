@@ -3,7 +3,7 @@ import { ComponentStory } from '@storybook/react';
 import Pill from '../Pill';
 import { SpiritPillProps } from '../../../types';
 
-const Story: ComponentStory<typeof Pill> = <T extends ElementType = 'span'>(args: SpiritPillProps<T>) => (
+const Story: ComponentStory<typeof Pill> = <T extends ElementType = 'span', C = void>(args: SpiritPillProps<T, C>) => (
   <Pill {...args} />
 );
 

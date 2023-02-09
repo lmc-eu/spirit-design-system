@@ -2,13 +2,17 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
+import { actionColorPropsTest, emotionColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { PillColor } from '../../../types';
 import Pill from '../Pill';
 
 describe('Pill', () => {
   classNamePrefixProviderTest(Pill, 'Pill');
+
+  actionColorPropsTest(Pill, 'Pill--');
+
+  emotionColorPropsTest(Pill, 'Pill--');
 
   stylePropsTest(Pill);
 
@@ -28,8 +32,8 @@ describe('Pill', () => {
     expect(element.textContent).toBe('3');
   });
 
-  it.each([['selected'], ['danger'], ['informative'], ['success'], ['warning']])('should render color %s', (color) => {
-    const dom = render(<Pill color={color as PillColor}>333</Pill>);
+  it.each([['selected'], ['unselected']])('should render color %s', (color) => {
+    const dom = render(<Pill color={color}>333</Pill>);
 
     const element = dom.container.querySelector('span') as HTMLElement;
     expect(element).toHaveClass(`Pill--${color}`);
