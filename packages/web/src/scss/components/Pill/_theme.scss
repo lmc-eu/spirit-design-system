@@ -1,39 +1,21 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $typography: tokens.$body-xsmall-text-bold;
 $padding-x: tokens.$space-300;
 $padding-y: tokens.$space-0;
 $border-radius: tokens.$radius-300;
 
-$selected: (
-    default-color: tokens.$text-primary-inverted-default,
-    default-background: tokens.$action-selected-default,
+$_pill-colors: (
+    selected: (
+        default: tokens.$action-selected-default,
+        text: tokens.$text-primary-inverted-default,
+    ),
+    unselected: (
+        default: tokens.$action-unselected-default,
+        text: tokens.$text-primary-inverted-default,
+    ),
 );
 
-$danger: (
-    default-color: tokens.$text-primary-inverted-default,
-    default-background: tokens.$emotion-danger-default,
-);
-
-$informative: (
-    default-color: tokens.$text-primary-inverted-default,
-    default-background: tokens.$emotion-informative-default,
-);
-
-$success: (
-    default-color: tokens.$text-primary-inverted-default,
-    default-background: tokens.$emotion-success-default,
-);
-
-$warning: (
-    default-color: tokens.$text-primary-inverted-default,
-    default-background: tokens.$emotion-warning-default,
-);
-
-$variants: (
-    selected: $selected,
-    danger: $danger,
-    informative: $informative,
-    success: $success,
-    warning: $warning,
-);
+$color-dictionary: map.merge(map.merge(dictionaries.$emotion-colors, dictionaries.$action-colors), $_pill-colors);
