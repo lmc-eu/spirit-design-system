@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.0"></a>
+
+# [1.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.24.0...@lmc-eu/spirit-web-twig@1.25.0) (2023-02-09)
+
+### Bug Fixes
+
+- **web-twig:** Fix Heading README Dictionaries URL ([490cad8](https://github.com/lmc-eu/spirit-design-system/commit/490cad8))
+- **web-twig:** Remove `data-component` attribute from Modal ([7ca314e](https://github.com/lmc-eu/spirit-design-system/commit/7ca314e))
+
+### Features
+
+- **web-twig:** Deprecate `size` prop in Icon component in favor of `boxSize` [#DS-452](https://github.com/lmc-eu/spirit-design-system/issues/DS-452) ([fe2af13](https://github.com/lmc-eu/spirit-design-system/commit/fe2af13))
+- **web-twig:** Use Emotion Color Dictionary in Alert component [#DS-555](https://github.com/lmc-eu/spirit-design-system/issues/DS-555) ([5f2ce79](https://github.com/lmc-eu/spirit-design-system/commit/5f2ce79))
+- **web-twig:** Use size dictionaries in Heading component [#DS-572](https://github.com/lmc-eu/spirit-design-system/issues/DS-572) ([92f7745](https://github.com/lmc-eu/spirit-design-system/commit/92f7745))
+- **web-twig:** Use size dictionaries in Text component [#DS-450](https://github.com/lmc-eu/spirit-design-system/issues/DS-450) ([32f5239](https://github.com/lmc-eu/spirit-design-system/commit/32f5239))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.24.0"></a>
 
 # [1.24.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.23.0...@lmc-eu/spirit-web-twig@1.24.0) (2023-02-06)
