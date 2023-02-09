@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritPillProps } from '../../types';
 
 export interface PillStyles {
@@ -10,7 +10,7 @@ export interface PillStyles {
   props: unknown;
 }
 
-export function usePillStyleProps<T extends ElementType = 'span'>(props: SpiritPillProps<T>): PillStyles {
+export function usePillStyleProps<T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): PillStyles {
   const { color, ...modifiedProps } = props;
 
   const pillClass = useClassNamePrefix('Pill');

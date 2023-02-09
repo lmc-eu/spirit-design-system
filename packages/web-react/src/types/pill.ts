@@ -1,7 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, TransferProps } from './shared';
+import { ActionColor, ChildrenProps, EmotionColor, TransferProps } from './shared';
 
-export type PillColor = 'selected' | 'danger' | 'informative' | 'success' | 'warning';
+export type PillColor<C> = ActionColor<void> | EmotionColor<void> | 'selected' | 'unselected' | C;
 
 export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   /**
@@ -12,10 +12,10 @@ export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
-export interface SpiritPillProps<T extends ElementType = 'span'>
+export interface SpiritPillProps<T extends ElementType = 'span', C = void>
   extends AriaPillElementTypeProps<T>,
     ChildrenProps,
     TransferProps {
   /** The color of the pill. */
-  color?: PillColor;
+  color?: PillColor<C>;
 }

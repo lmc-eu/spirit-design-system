@@ -1,6 +1,6 @@
 import React, { ComponentType } from 'react';
 import { render, waitFor } from '@testing-library/react';
-import { EmotionColor, SizeExtended, Size, TextColor } from '../../src';
+import { ActionColor, EmotionColor, SizeExtended, Size, TextColor } from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,6 +23,18 @@ export const sizeExtendedPropsTest = (Component: ComponentType<any>, testId?: st
     await waitFor(() => {
       const element = getElement(dom, testId);
       expect(element.getAttribute('class')).toContain(size);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const actionColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
+  it.each([['primary'], ['secondary'], ['tertiary'], ['inverted']])('should render action color %s', async (color) => {
+    const dom = render(<Component color={color as ActionColor<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}${color}`);
     });
   });
 };
