@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.39.0"></a>
+
+# [0.39.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.38.0...@lmc-eu/spirit-web-react@0.39.0) (2023-02-09)
+
+### Bug Fixes
+
+- **web-react:** Display warning message only in development environment ([da946e0](https://github.com/lmc-eu/spirit-design-system/commit/da946e0))
+- **web-react:** Fix Heading README Dictionaries URL ([53071e2](https://github.com/lmc-eu/spirit-design-system/commit/53071e2))
+- **web-react:** Introduce SpiritButtonLinkProps for ButtonLink component ([85af50e](https://github.com/lmc-eu/spirit-design-system/commit/85af50e))
+- **web-react:** Tabs transfer properties [#DS-401](https://github.com/lmc-eu/spirit-design-system/issues/DS-401) ([5be8b17](https://github.com/lmc-eu/spirit-design-system/commit/5be8b17))
+
+### Dependencies
+
+- Update all non-major dependencies ([190529b](https://github.com/lmc-eu/spirit-design-system/commit/190529b))
+
+### Features
+
+- **web-react:** Allow extension of `size` prop of the Text component ([79563ba](https://github.com/lmc-eu/spirit-design-system/commit/79563ba))
+- **web-react:** Define size dictionaries and use them in Text component [#DS-450](https://github.com/lmc-eu/spirit-design-system/issues/DS-450) ([5e6af5e](https://github.com/lmc-eu/spirit-design-system/commit/5e6af5e))
+- **web-react:** Deprecate `size` prop in Icon component in favor of `boxSize` [#DS-452](https://github.com/lmc-eu/spirit-design-system/issues/DS-452) ([48d00e7](https://github.com/lmc-eu/spirit-design-system/commit/48d00e7))
+- **web-react:** Dictionary SizeExtended extends Size dictionary ([68bfa35](https://github.com/lmc-eu/spirit-design-system/commit/68bfa35))
+- **web-react:** Introduction Tooltip component [#DS-565](https://github.com/lmc-eu/spirit-design-system/issues/DS-565) ([d0ae08a](https://github.com/lmc-eu/spirit-design-system/commit/d0ae08a))
+- **web-react:** Use Emotion Color Dictionary in Alert component [#DS-555](https://github.com/lmc-eu/spirit-design-system/issues/DS-555) ([df463c6](https://github.com/lmc-eu/spirit-design-system/commit/df463c6))
+- **web-react:** Use size dictionaries in Heading component [#DS-572](https://github.com/lmc-eu/spirit-design-system/issues/DS-572) ([94260d3](https://github.com/lmc-eu/spirit-design-system/commit/94260d3))
+
+### Styles
+
+- **web-react:** Reformatting code using upgraded Prettier ([394c30c](https://github.com/lmc-eu/spirit-design-system/commit/394c30c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.38.0"></a>
 
 # [0.38.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.37.1...@lmc-eu/spirit-web-react@0.38.0) (2023-02-06)

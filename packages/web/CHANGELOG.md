@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.41.0"></a>
+
+# [0.41.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.40.0...@lmc-eu/spirit-web@0.41.0) (2023-02-09)
+
+### Chores
+
+- **web:** Build individual JavaScript plugins ([f7ef0e3](https://github.com/lmc-eu/spirit-design-system/commit/f7ef0e3))
+- **web:** Disable generation of declaration files for bundles ([f5aebd9](https://github.com/lmc-eu/spirit-design-system/commit/f5aebd9))
+
+### Code Refactoring
+
+- **web:** Solve circular dependency by relocating functions by context ([02df356](https://github.com/lmc-eu/spirit-design-system/commit/02df356))
+
+### Dependencies
+
+- Update all non-major dependencies ([190529b](https://github.com/lmc-eu/spirit-design-system/commit/190529b))
+
+### Documentation
+
+- **web:** How works Data and Programmatic API ([13cdfe5](https://github.com/lmc-eu/spirit-design-system/commit/13cdfe5))
+
+### Features
+
+- **web:** Introduce Emotion Color Dictionary and use it in Alert component [#DS-555](https://github.com/lmc-eu/spirit-design-system/issues/DS-555) ([175a09d](https://github.com/lmc-eu/spirit-design-system/commit/175a09d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.40.0"></a>
 
 # [0.40.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.39.1...@lmc-eu/spirit-web@0.40.0) (2023-02-06)
