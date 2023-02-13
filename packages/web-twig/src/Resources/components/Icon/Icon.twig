@@ -4,8 +4,8 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _isReusable = props.isReusable ?? true -%}
 {%- set _name = props.name -%}
-{%- set _boxSize = props.size | default('24') -%}
-{%- set _size = props.size -%}
+{%- set _boxSize = props.boxSize | default('24') -%}
+{%- set _size = props.size | default(null) -%}
 {%- set _title = props.title | default(null) -%}
 
 {# Miscellaneous #}
