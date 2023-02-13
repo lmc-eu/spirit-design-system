@@ -44,3 +44,8 @@ export const TextColors = {
 
 export type TextColorsKeys = keyof typeof TextColors;
 export type TextColor<T> = (typeof TextColors)[TextColorsKeys] | T;
+
+export interface SizeProps<S> {
+  /** Size of the text */
+  size?: S;
+}
