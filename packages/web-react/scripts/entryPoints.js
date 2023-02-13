@@ -18,6 +18,7 @@ const entryPoints = [
   { dirs: ['components', 'Icon'] },
   { dirs: ['components', 'Link'] },
   { dirs: ['components', 'Modal'] },
+  { dirs: ['components', 'ModalComposed'] },
   { dirs: ['components', 'Pill'] },
   { dirs: ['components', 'RadioField'] },
   { dirs: ['components', 'Stack'] },
