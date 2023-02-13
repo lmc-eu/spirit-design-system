@@ -18,5 +18,5 @@ export interface HeadingProps<T extends ElementType = 'div'>
 
 export interface SpiritHeadingProps<T extends ElementType = 'div', S = void> extends HeadingProps<T> {
   /** Size of the text */
-  size: SizeExtended<S>;
+  size?: SizeExtended<S>;
 }
