@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.1"></a>
+
+## [1.25.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.25.0...@lmc-eu/spirit-web-twig@1.25.1) (2023-02-13)
+
+### Bug Fixes
+
+- **web-twig:** Deprecated `size` prop on Icon cannot modify dimensions ([dc94695](https://github.com/lmc-eu/spirit-design-system/commit/dc94695)), closes [#DS-600](https://github.com/lmc-eu/spirit-design-system/issues/DS-600)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.25.0"></a>
 
 # [1.25.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.24.0...@lmc-eu/spirit-web-twig@1.25.0) (2023-02-09)
