@@ -24,3 +24,4 @@ This project uses `dictionaries` to unify props between different components.
 | Dictionary    | Values                                        | Code name    |
 | ------------- | --------------------------------------------- | ------------ |
 | Emotion Color | `success`, `informative`, `warning`, `danger` | EmotionColor |
+| Text Color    | `primary`, `secondary`, `inverted`            | TextColor    |

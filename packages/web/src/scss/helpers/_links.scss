@@ -1,9 +1,9 @@
 @use 'sass:map';
 @use '../settings/cursors';
-@use '../settings/links' as links-settings;
+@use '../settings/dictionaries';
 @use '../tools/links';
 
-@include links.variants('.link', links-settings.$variants, (default, hover, active, disabled));
+@include links.variants('.link', dictionaries.$text-colors, (default, hover, active, disabled));
 
 .link-disabled {
     cursor: cursors.$disabled;
@@ -29,7 +29,7 @@
 
 // Only links in headings have visited state
 [class*='typography-heading'] :visited {
-    color: map.get(links-settings.$variants, primary, visited);
+    color: map.get(dictionaries.$text-colors, primary, visited);
 }
 
-@include links.variants('[class*="typography-heading"] .link', links-settings.$variants, visited);
+@include links.variants('[class*="typography-heading"] .link', dictionaries.$text-colors, visited);
