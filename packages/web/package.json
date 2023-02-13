@@ -74,7 +74,7 @@
     "shx": "0.3.4",
     "stylelint": "15.1.0",
     "stylelint-config-prettier": "9.0.4",
-    "stylelint-order": "5.0.0",
+    "stylelint-order": "6.0.2",
     "tslib": "2.4.1",
     "vite": "3.2.5",
     "vite-plugin-handlebars": "1.6.0"

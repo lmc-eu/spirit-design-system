@@ -21,6 +21,6 @@
     "@lmc-eu/stylelint-config": "6.0.0",
     "shx": "0.3.4",
     "stylelint": "15.1.0",
-    "stylelint-order": "5.0.0"
+    "stylelint-order": "6.0.2"
   }
 }
