@@ -3,7 +3,7 @@ import { ComponentStory } from '@storybook/react';
 import Link from '../Link';
 import { SpiritLinkProps } from '../../../types';
 
-const Story: ComponentStory<typeof Link> = <T extends ElementType = 'a'>(args: SpiritLinkProps<T>) => (
+const Story: ComponentStory<typeof Link> = <E extends ElementType = 'a', T = void>(args: SpiritLinkProps<E, T>) => (
   <Link {...args} />
 );
 

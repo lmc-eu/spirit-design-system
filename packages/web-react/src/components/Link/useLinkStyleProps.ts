@@ -1,16 +1,16 @@
 import { ElementType } from 'react';
 import classNames from 'classnames';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritLinkProps, LinkProps } from '../../types';
 
-export interface LinkStyles<T extends ElementType = 'p'> {
+export interface LinkStyles<E extends ElementType = 'p'> {
   /** className props */
   classProps: string | null;
   /** props to be passed to the input element */
-  props: LinkProps<T>;
+  props: LinkProps<E>;
 }
 
-export function useLinkStyleProps<T extends ElementType = 'a'>(props: SpiritLinkProps<T>): LinkStyles<T> {
+export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: SpiritLinkProps<E, T>): LinkStyles<E> {
   const { color, isDisabled, isUnderlined, ...restProps } = props;
 
   const linkClass = useClassNamePrefix('link');
