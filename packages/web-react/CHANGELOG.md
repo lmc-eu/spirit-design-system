@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.39.1"></a>
+
+## [0.39.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.39.0...@lmc-eu/spirit-web-react@0.39.1) (2023-02-13)
+
+### Bug Fixes
+
+- **web-react:** Add missing id prop for TextFieldBase input element ([75fa537](https://github.com/lmc-eu/spirit-design-system/commit/75fa537)), closes [#DS-599](https://github.com/lmc-eu/spirit-design-system/issues/DS-599)
+- **web-react:** Make `size` prop on Heading component optional ([a0b09ad](https://github.com/lmc-eu/spirit-design-system/commit/a0b09ad))
+
+### Dependencies
+
+- Pin dependencies ([f695280](https://github.com/lmc-eu/spirit-design-system/commit/f695280))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.39.0"></a>
 
 # [0.39.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.38.0...@lmc-eu/spirit-web-react@0.39.0) (2023-02-09)

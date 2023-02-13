@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.41.1"></a>
+
+## [0.41.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.41.0...@lmc-eu/spirit-web@0.41.1) (2023-02-13)
+
+### Dependencies
+
+- Update dependency @lmc-eu/stylelint-config to v6 ([32caf4a](https://github.com/lmc-eu/spirit-design-system/commit/32caf4a))
+- Update dependency @rollup/plugin-typescript to v11 ([d72bc29](https://github.com/lmc-eu/spirit-design-system/commit/d72bc29))
+- Update dependency stylelint to v15 ([55f379a](https://github.com/lmc-eu/spirit-design-system/commit/55f379a))
+- Update dependency stylelint-order to v6 ([91e09c1](https://github.com/lmc-eu/spirit-design-system/commit/91e09c1))
+- Update dependency vite to v4 ([7fa207c](https://github.com/lmc-eu/spirit-design-system/commit/7fa207c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.41.0"></a>
 
 # [0.41.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.40.0...@lmc-eu/spirit-web@0.41.0) (2023-02-09)

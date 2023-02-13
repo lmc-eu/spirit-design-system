@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-design-tokens",
-  "version": "0.25.1",
+  "version": "0.25.2",
   "description": "Design tokens for Spirit Design System",
   "license": "MIT",
   "publishConfig": {
