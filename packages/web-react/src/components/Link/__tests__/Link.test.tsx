@@ -2,9 +2,10 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
+import { textColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { LinkColor } from '../../../types';
+import { TextColor } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';
 
@@ -13,13 +14,15 @@ describe('Link', () => {
 
   stylePropsTest(Link);
 
+  textColorPropsTest(Link, 'link-');
+
   restPropsTest(Link, 'a');
 
   it.each(linkPropsDataProvider)('should have class', (color, isUnderlined, isDisabled, expectedClassName) => {
     const dom = render(
       <Link
         href="/"
-        color={color as LinkColor}
+        color={color as TextColor<string>}
         isUnderlined={isUnderlined as boolean}
         isDisabled={isDisabled as boolean}
       />,

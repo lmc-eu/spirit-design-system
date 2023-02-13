@@ -25,3 +25,12 @@ export const EmotionColors = {
 
 export type EmotionColorsKeys = keyof typeof EmotionColors;
 export type EmotionColor<E> = (typeof EmotionColors)[EmotionColorsKeys] | E;
+
+export const TextColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  INVERTED: 'inverted',
+} as const;
+
+export type TextColorsKeys = keyof typeof TextColors;
+export type TextColor<T> = (typeof TextColors)[TextColorsKeys] | T;

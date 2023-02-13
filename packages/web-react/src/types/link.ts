@@ -1,7 +1,6 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, TextColor, TransferProps } from './shared';
 
-export type LinkColor = 'primary' | 'secondary' | 'inverted';
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 
 export interface LinkElementTypeProps<T extends ElementType = 'a'> {
@@ -24,9 +23,9 @@ export interface LinkProps<T extends ElementType = 'a'>
   target?: LinkTarget;
 }
 
-export interface SpiritLinkProps<T extends ElementType = 'a'> extends LinkProps<T> {
+export interface SpiritLinkProps<E extends ElementType = 'a', T = void> extends LinkProps<E> {
   /** Color of the Link */
-  color?: LinkColor;
+  color?: TextColor<T>;
   /** Whether is the Link underlined */
   isUnderlined?: boolean;
   /** Whether is the Link disabled */
