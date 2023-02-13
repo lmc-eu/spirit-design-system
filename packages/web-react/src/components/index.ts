@@ -13,6 +13,7 @@ export * from './Heading';
 export * from './Icon';
 export * from './Link';
 export * from './Modal';
+export * from './ModalComposed';
 export * from './Pill';
 export * from './RadioField';
 export * from './Stack';

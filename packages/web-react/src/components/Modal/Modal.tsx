@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ModalProps } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
 import ModalBackdrop from './ModalBackdrop';
-import { useLastActiveFocus, useStyleProps } from '../../hooks';
+import { useLastActiveFocus, useStyleProps, useDeprecationMessage } from '../../hooks';
 import Dialog from '../Dialog/Dialog';
 
 const Modal = (props: ModalProps): JSX.Element => {
@@ -12,6 +12,15 @@ const Modal = (props: ModalProps): JSX.Element => {
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   useLastActiveFocus(isOpen);
+
+  useDeprecationMessage({
+    method: 'component',
+    trigger: true,
+    componentName: 'Modal',
+    componentProps: {
+      delete: true,
+    },
+  });
 
   return (
     <Dialog

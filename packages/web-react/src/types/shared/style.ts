@@ -7,3 +7,9 @@ export interface StyleProps {
   /** Sets inline [style](https://developer.mozilla.org/en-US/docs/Web/API/Element/style) for the element. Only use as a **last resort**. Use style props instead. */
   UNSAFE_style?: CSSProperties;
 }
+
+export type UnsafeStyleProps = 'style' | 'className';
+
+export type OmittedUnsafeStyleProps<E> = Omit<E, UnsafeStyleProps>;
+
+export type OmittedExtendedUnsafeStyleProps<E, P> = Omit<E, UnsafeStyleProps & P>;
