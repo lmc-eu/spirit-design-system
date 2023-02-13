@@ -15,8 +15,8 @@
     "build": "webpack --config ./webpack.config.js --mode development"
   },
   "dependencies": {
-    "@lmc-eu/spirit-web": "0.36.0",
-    "@lmc-eu/spirit-web-react": "0.34.0",
+    "@lmc-eu/spirit-web": "0.41.0",
+    "@lmc-eu/spirit-web-react": "0.39.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
