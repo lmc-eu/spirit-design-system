@@ -1,13 +1,28 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('div') -%}
+{%- set _hasBottomDivider = props.hasBottomDivider | default(false) | boolprop -%}
+{%- set _hasMiddleDividers = props.hasMiddleDividers | default(false) | boolprop -%}
+{%- set _hasSpacing = props.hasSpacing | default(false) | boolprop -%}
+{%- set _hasTopDivider = props.hasTopDivider | default(false) | boolprop -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Stack' -%}
+{%- set _rootBottomDividerClassName = _hasBottomDivider ? _spiritClassPrefix ~ 'Stack--hasBottomDivider' : null -%}
+{%- set _rootMiddleDividersClassName = _hasMiddleDividers ? _spiritClassPrefix ~ 'Stack--hasMiddleDividers' : null -%}
+{%- set _rootSpacingClassName = _hasSpacing ? _spiritClassPrefix ~ 'Stack--hasSpacing' : null -%}
+{%- set _rootTopDividerClassName = _hasTopDivider ? _spiritClassPrefix ~ 'Stack--hasTopDivider' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _classNames = [
+    _rootClassName,
+    _rootBottomDividerClassName,
+    _rootMiddleDividersClassName,
+    _rootSpacingClassName,
+    _rootTopDividerClassName,
+    _styleProps.className,
+] -%}
 
 <{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
 {%- block content %}{% endblock -%}
