@@ -1,0 +1,15 @@
+<section class="docs-Section">
+
+    <h3 class="docs-Heading">Stacked Blocks with Vertical Spacing</h3>
+
+    <Stack elementType="ul" hasMiddleDividers>
+        {% for i in 1..3 %}
+            <li>
+                <div class="docs-Box">
+                    Block {{ i }}
+                </div>
+            </li>
+        {% endfor %}
+    </Stack>
+
+</section>
