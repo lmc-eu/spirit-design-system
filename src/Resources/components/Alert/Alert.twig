@@ -14,9 +14,14 @@
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _colorClassName, _rootCenteredClassName, _class ] -%}
 {%- set _iconNameByColor = 'info' -%}
-{% if _color == 'danger' %}
+{% if _color == 'success' %}
+  {%- set _iconNameByColor = 'check-plain' -%}
+{% elseif _color == 'warning' %}
+  {%- set _iconNameByColor = 'warning' -%}
+{% elseif _color == 'danger' %}
   {%- set _iconNameByColor = 'warning' -%}
 {% endif %}
+
 {%- set _iconNameValue = _iconName | default(_iconNameByColor) -%}
 
 <{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }} role="alert">
