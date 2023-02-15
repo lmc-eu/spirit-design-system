@@ -12,7 +12,7 @@ export * from './refs';
 export * from './rest';
 
 export interface ChildrenProps {
-  /** The content to display in the button. */
+  /** The content to display in the component. */
   children?: ReactNode | string;
 }
 
