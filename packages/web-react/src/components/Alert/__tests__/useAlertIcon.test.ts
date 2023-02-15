@@ -10,10 +10,16 @@ describe('useAlertIcon', () => {
     expect(result.current).toBe('info');
   });
 
-  it('danger alert should return warning icon', () => {
-    const props = { color: 'danger' } as SpiritAlertProps;
+  it.each([
+    // color, expected icon name
+    ['informative', 'info'],
+    ['success', 'check-plain'],
+    ['warning', 'warning'],
+    ['danger', 'warning'],
+  ])('danger alert should return warning icon', (color, iconName) => {
+    const props = { color } as SpiritAlertProps;
     const { result } = renderHook(() => useAlertIcon(props));
 
-    expect(result.current).toBe('warning');
+    expect(result.current).toBe(iconName);
   });
 });
