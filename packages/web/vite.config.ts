@@ -7,6 +7,17 @@ import { getNestedDirs } from './scripts/prepareDist';
 export default defineConfig({
   plugins: [
     handlebars({
+      helpers: {
+        setVar: (...data) => {
+          const varName = data.shift();
+          const options = data.pop();
+          if (!options.data.root) {
+            options.data.root = {};
+          }
+          options.data.root[varName] = data;
+        },
+        eq: (variable, value) => variable === value,
+      },
       partialDirectory: resolve(__dirname, 'partials'),
       runtimeOptions: {
         data: {
