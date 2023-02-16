@@ -2,11 +2,15 @@
 
 Pills can be used to show count or label.
 
-```jsx
-import { Pill } from '@lmc-eu/spirit-web-react';
+```docoff-react-base
+import { Pill } from '@lmc-eu/spirit-web-react/components/Pill';
+import '@lmc-eu/spirit-web/css/foundation.css';
+import '@lmc-eu/spirit-web/css/components.css';
+import '@lmc-eu/spirit-web/css/helpers.css';
+import '@lmc-eu/spirit-web/css/utilities.css';
 ```
 
-```jsx
+```docoff-react-preview
   <Pill color="primary">3</Pill>
   <Pill color="secondary">3</Pill>
   <Pill color="tertiary">3</Pill>
