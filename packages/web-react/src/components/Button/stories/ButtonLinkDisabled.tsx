@@ -1,41 +1,41 @@
 import React from 'react';
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
-    <Button color="primary" isDisabled>
+    <ButtonLink color="primary" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="secondary" isDisabled>
+    <ButtonLink color="secondary" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="tertiary" isDisabled>
+    <ButtonLink color="tertiary" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="docs-Box my-500">
-      <Button color="inverted" isDisabled>
+      <ButtonLink color="inverted" isDisabled>
         Click me
-      </Button>
+      </ButtonLink>
     </div>
-    <Button color="success" isDisabled>
+    <ButtonLink color="success" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="informative" isDisabled>
+    <ButtonLink color="informative" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="warning" isDisabled>
+    <ButtonLink color="warning" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="danger" isDisabled>
+    <ButtonLink color="danger" isDisabled>
       Click me
-    </Button>
+    </ButtonLink>
   </>
 );
 

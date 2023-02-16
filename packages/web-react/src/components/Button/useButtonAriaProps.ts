@@ -6,13 +6,19 @@ export interface ButtonAria<T> {
   buttonProps: T;
 }
 
-export function useButtonAriaProps(props: AriaButtonProps<'a'>): ButtonAria<AnchorHTMLAttributes<HTMLAnchorElement>>;
-export function useButtonAriaProps(
-  props: AriaButtonProps<'button'>,
+export function useButtonAriaProps<C = void, S = void>(
+  props: AriaButtonProps<'a', C, S>,
+): ButtonAria<AnchorHTMLAttributes<HTMLAnchorElement>>;
+export function useButtonAriaProps<C = void, S = void>(
+  props: AriaButtonProps<'button', C, S>,
 ): ButtonAria<ButtonHTMLAttributes<HTMLButtonElement>>;
-export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<HTMLElement>>;
+export function useButtonAriaProps<C = void, S = void>(
+  props: AriaButtonProps<ElementType, C, S>,
+): ButtonAria<HTMLAttributes<HTMLElement>>;
 
-export function useButtonAriaProps(props: AriaButtonProps<ElementType>): ButtonAria<HTMLAttributes<unknown>> {
+export function useButtonAriaProps<C = void, S = void>(
+  props: AriaButtonProps<ElementType, C, S>,
+): ButtonAria<HTMLAttributes<unknown>> {
   const { elementType = 'button', isDisabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
 
   let additionalProps;

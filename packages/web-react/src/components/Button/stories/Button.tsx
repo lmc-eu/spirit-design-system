@@ -3,9 +3,9 @@ import { ComponentStory } from '@storybook/react';
 import Button from '../Button';
 import { SpiritButtonProps } from '../../../types';
 
-const Story: ComponentStory<typeof Button> = <T extends ElementType = 'div'>(args: SpiritButtonProps<T>) => (
-  <Button {...args} />
-);
+const Story: ComponentStory<typeof Button> = <T extends ElementType = 'div', C = void, S = void>(
+  args: SpiritButtonProps<T, C, S>,
+) => <Button {...args} />;
 
 Story.args = {
   children: 'Click me',

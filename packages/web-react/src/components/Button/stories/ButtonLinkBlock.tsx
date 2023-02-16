@@ -1,41 +1,41 @@
 import React from 'react';
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
-    <Button color="primary" isBlock>
+    <ButtonLink color="primary" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="mb-500" />
-    <Button color="secondary" isBlock>
+    <ButtonLink color="secondary" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="mb-500" />
-    <Button color="tertiary" isBlock>
+    <ButtonLink color="tertiary" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="docs-Box my-500">
-      <Button color="inverted" isBlock>
+      <ButtonLink color="inverted" isBlock>
         Click me
-      </Button>
+      </ButtonLink>
     </div>
-    <Button color="success" isBlock>
+    <ButtonLink color="success" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="mb-500" />
-    <Button color="informative" isBlock>
+    <ButtonLink color="informative" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="mb-500" />
-    <Button color="warning" isBlock>
+    <ButtonLink color="warning" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
     <div className="mb-500" />
-    <Button color="danger" isBlock>
+    <ButtonLink color="danger" isBlock>
       Click me
-    </Button>
+    </ButtonLink>
   </>
 );
 
