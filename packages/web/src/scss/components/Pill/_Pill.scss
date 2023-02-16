@@ -15,9 +15,9 @@
 
 @include dictionaries.generate-colors(
     theme.$color-dictionary,
+    'Pill',
     (
         text: 'color',
         default: 'background-color',
-    ),
-    'Pill'
+    )
 );

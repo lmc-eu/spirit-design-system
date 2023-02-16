@@ -1,130 +1,68 @@
-{{#> layout/plain }}
+{{#> layout/plain }} {{setVar "colors" "primary" "secondary" "tertiary" "inverted" "success" "informative" "warning"
+"danger" }} {{setVar "sizes" "small" "medium" "large" }}
 
-  <section class="docs-Section">
+<section class="docs-Section">
+  <h2 class="docs-Heading">Default</h2>
 
-    <h2 class="docs-Heading">Variants</h2>
-
-    <button type="button" class="Button Button--primary Button--medium">Primary button</button>
-    <button type="button" class="Button Button--secondary Button--medium">Secondary button</button>
-    <button type="button" class="Button Button--tertiary Button--medium">Tertiary button</button>
-    <button type="button" class="Button Button--danger Button--medium">Danger button</button>
-
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--medium">Inverted button</button>
+  <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+    {{#each @root.sizes as |size|}}
+    <div>
+      <h3 class="docs-Heading">Size {{size}}</h3>
+      {{#each @root.colors as |color|}}
+      <div class="{{#if (eq color 'inverted')}}docs-Box {{/if}}my-600">
+        <div>
+          <button type="button" class="Button Button--{{color}} Button--{{size}}">Button {{color}}</button>
+          <button type="button" class="Button Button--{{color}} Button--{{size}}">
+            <svg class="mr-400" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+            Menu
+          </button>
+          <button type="button" class="Button Button--{{color}} Button--{{size}} Button--square">
+            <span class="accessibility-hidden">Menu</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {{/each}}
     </div>
-  </section>
-  <section class="docs-Section">
+    {{/each}}
+    <div></div>
+    <div></div>
+  </div>
+</section>
 
-    <h2 class="docs-Heading">Disabled state variants</h2>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
 
-    <button type="button" class="Button Button--primary Button--medium" disabled>Primary button disabled</button>
-    <button type="button" class="Button Button--secondary Button--medium" disabled>Secondary button disabled</button>
-    <button type="button" class="Button Button--tertiary Button--medium" disabled>Tertiary button disabled</button>
-    <button type="button" class="Button Button--danger Button--medium" disabled>Danger button disabled</button>
-
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--medium" disabled>Inverted button disabled</button>
+  <div class="Grid Grid--cols-1 Grid--tablet--cols-2 Grid--desktop--cols-3">
+    {{#each @root.sizes as |size|}}
+    <div>
+      <h3 class="docs-Heading">Size {{size}}</h3>
+      {{#each @root.colors as |color|}}
+      <div class="{{#if (eq color 'inverted')}}docs-Box {{/if}}my-600">
+        <div>
+          <button type="button" class="Button Button--{{color}} Button--{{size}}" disabled>Disabled {{color}}</button>
+          <button type="button" class="Button Button--{{color}} Button--{{size}}" disabled>
+            <svg class="mr-400" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+            Menu
+          </button>
+          <button type="button" class="Button Button--{{color}} Button--{{size}} Button--square" disabled>
+            <span class="accessibility-hidden">Menu</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {{/each}}
     </div>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Sizes</h2>
-
-    <div class="mb-400">
-      <button type="button" class="Button Button--primary Button--medium">Primary medium button</button>
-      <button type="button" class="Button Button--secondary Button--medium">Secondary medium button</button>
-      <button type="button" class="Button Button--tertiary Button--medium">Tertiary medium button</button>
-      <button type="button" class="Button Button--danger Button--medium">Danger medium button</button>
-    </div>
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--medium">Inverted medium button</button>
-    </div>
-    <div class="mb-400">
-      <button type="button" class="Button Button--primary Button--large">Primary large button</button>
-      <button type="button" class="Button Button--secondary Button--large">Secondary large button</button>
-      <button type="button" class="Button Button--tertiary Button--large">Tertiary large button</button>
-      <button type="button" class="Button Button--danger Button--large">Danger large button</button>
-    </div>
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--large">Inverted large button</button>
-    </div>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Square Button</h2>
-
-    <div class="mb-400">
-      <button type="button" class="Button Button--primary Button--medium Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--secondary Button--medium Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--tertiary Button--medium Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--danger Button--medium Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-    </div>
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--medium Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-    </div>
-
-    <div class="mb-400">
-      <button type="button" class="Button Button--primary Button--large Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--secondary Button--large Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--tertiary Button--large Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-      <button type="button" class="Button Button--danger Button--large Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24"  aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-    </div>
-    <div class="docs-Box my-600">
-      <button type="button" class="Button Button--inverted Button--large Button--square">
-        <span class="accessibility-hidden">Menu</span>
-        <svg class="Icon" width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#hamburger" />
-        </svg>
-      </button>
-    </div>
-
-  </section>
+    {{/each}}
+  </div>
+</section>
 
 {{/layout/plain }}
