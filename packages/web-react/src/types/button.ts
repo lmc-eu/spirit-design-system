@@ -1,22 +1,30 @@
 import { ElementType, JSXElementConstructor, Ref } from 'react';
-import { AriaLabelingProps } from './shared/dom';
-import { ChildrenProps, ClickEvents, StyleProps, TransferProps } from './shared';
+import {
+  ActionColor,
+  AriaLabelingProps,
+  ChildrenProps,
+  ClickEvents,
+  EmotionColor,
+  Size,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
-export type ButtonColor = 'primary' | 'secondary' | 'tertiary' | 'inverted' | 'danger';
-export type ButtonSize = 'medium' | 'large';
+export type ButtonColor<C> = ActionColor<void> | EmotionColor<void> | C;
+export type ButtonSize<S> = Size<void> | EmotionColor<void> | S;
 type ButtonType = 'button' | 'submit' | 'reset';
 
-interface ButtonProps extends ChildrenProps, ClickEvents {
+interface ButtonProps<C = void, S = void> extends ChildrenProps, ClickEvents {
   /** Whether the button is disabled. */
   isDisabled?: boolean;
   /** The color of the button. */
-  color?: ButtonColor;
+  color?: ButtonColor<C>;
   /** Whether the button should be displayed with a block style. */
   isBlock?: boolean;
   /** Whether the button should be displayed as a square. */
   isSquare?: boolean;
   /** The size of the button. */
-  size?: ButtonSize;
+  size?: ButtonSize<S>;
 }
 
 export interface AriaButtonElementTypeProps<T extends ElementType = 'button'> {
@@ -46,19 +54,21 @@ interface AriaBaseButtonProps extends AriaLabelingProps {
   type?: ButtonType;
 }
 
-export interface AriaButtonProps<T extends ElementType = 'button'>
-  extends ButtonProps,
+export interface AriaButtonProps<T extends ElementType = 'button', C = void, S = void>
+  extends ButtonProps<C, S>,
     LinkButtonProps<T>,
     AriaBaseButtonProps {}
 
-export interface SpiritButtonProps<T extends ElementType = 'button'>
+export interface SpiritButtonProps<T extends ElementType = 'button', C = void, S = void>
   extends AriaBaseButtonProps,
     AriaButtonElementTypeProps<T>,
-    ButtonProps,
+    ButtonProps<C, S>,
     StyleProps,
     TransferProps {
   // tag?: ElementType;
   innerRef?: Ref<HTMLButtonElement>;
 }
 
-export interface SpiritButtonLinkProps<T extends ElementType = 'a'> extends SpiritButtonProps<T>, LinkButtonProps<T> {}
+export interface SpiritButtonLinkProps<T extends ElementType = 'a', C = void, S = void>
+  extends SpiritButtonProps<T, C, S>,
+    LinkButtonProps<T> {}

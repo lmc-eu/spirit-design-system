@@ -10,12 +10,16 @@ const Story = (props: unknown) => (
     <Button color="secondary">Click me</Button>
     <span className="mr-500" />
     <Button color="tertiary">Click me</Button>
-    <span className="mr-500" />
-    <Button color="danger">Click me</Button>
-    <span className="mr-500 mb-500" />
-    <div className="docs-Box">
+    <div className="docs-Box my-500">
       <Button color="inverted">Click me</Button>
     </div>
+    <Button color="success">Click me</Button>
+    <span className="mr-500" />
+    <Button color="informative">Click me</Button>
+    <span className="mr-500" />
+    <Button color="warning">Click me</Button>
+    <span className="mr-500" />
+    <Button color="danger">Click me</Button>
   </>
 );
 

@@ -5,6 +5,10 @@ import Button from '../Button';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <>
+    <Button color="primary" size="small">
+      Small button
+    </Button>
+    <span className="mr-500" />
     <Button color="primary" size="medium">
       Medium button
     </Button>
@@ -13,7 +17,11 @@ const Story = (props: unknown) => (
       Large button
     </Button>
     <span className="mr-500" />
-    <div className="docs-Box">
+    <div className="docs-Box my-500">
+      <Button color="inverted" size="small">
+        Small inverted button
+      </Button>
+      <span className="mr-500" />
       <Button color="inverted" size="medium">
         Medium inverted button
       </Button>

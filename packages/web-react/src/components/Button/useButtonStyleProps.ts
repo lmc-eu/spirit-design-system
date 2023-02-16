@@ -6,11 +6,11 @@ import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
 
 // `${componentClassName}--${color}`;
-const getButtonColorClassname = (className: string, color: ButtonColor): string =>
-  compose(applyColor<ButtonColor>(color))(className);
+const getButtonColorClassname = <C = void>(className: string, color: ButtonColor<C>): string =>
+  compose(applyColor<ButtonColor<C>>(color))(className);
 
-const getButtonSizeClassname = (className: string, size: ButtonSize): string =>
-  compose(applySize<ButtonSize>(size))(className);
+const getButtonSizeClassname = <S = void>(className: string, size: ButtonSize<S>): string =>
+  compose(applySize<ButtonSize<S>>(size))(className);
 
 export interface ButtonStyles<T> {
   /** className props */
@@ -19,9 +19,9 @@ export interface ButtonStyles<T> {
   props: T;
 }
 
-export function useButtonStyleProps<T extends ElementType = 'button'>(
-  props: SpiritButtonProps<T>,
-): ButtonStyles<Omit<SpiritButtonProps<T>, 'color'>> {
+export function useButtonStyleProps<T extends ElementType = 'button', C = void, S = void>(
+  props: SpiritButtonProps<T, C, S>,
+): ButtonStyles<Omit<SpiritButtonProps<T, C, S>, 'color'>> {
   const { color, isBlock, isDisabled, isSquare, size, ...restProps } = props;
 
   const buttonClass = useClassNamePrefix('Button');
@@ -36,8 +36,8 @@ export function useButtonStyleProps<T extends ElementType = 'button'>(
 
   const classProps = classNames(
     buttonClass,
-    getButtonColorClassname(buttonClass, color as ButtonColor),
-    getButtonSizeClassname(buttonClass, size as ButtonSize),
+    getButtonColorClassname(buttonClass, color as ButtonColor<C>),
+    getButtonSizeClassname(buttonClass, size as ButtonSize<S>),
     {
       [buttonBlockClass]: isBlock && !isSquare,
       [buttonDisabledClass]: isDisabled,

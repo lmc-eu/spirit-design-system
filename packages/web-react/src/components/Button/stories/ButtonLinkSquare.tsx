@@ -6,43 +6,43 @@ import React from 'react';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import { IconsProvider } from '../../../context';
 import { Icon } from '../../Icon';
-import Button from '../Button';
+import ButtonLink from '../ButtonLink';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <IconsProvider value={icons}>
-    <Button color="primary" isSquare>
+    <ButtonLink color="primary" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="secondary" isSquare>
+    <ButtonLink color="secondary" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="tertiary" isSquare>
+    <ButtonLink color="tertiary" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <div className="docs-Box my-500">
-      <Button color="inverted" isSquare>
+      <ButtonLink color="inverted" isSquare>
         <Icon name="hamburger" />
-      </Button>
+      </ButtonLink>
     </div>
-    <Button color="success" isSquare>
+    <ButtonLink color="success" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="informative" isSquare>
+    <ButtonLink color="informative" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="warning" isSquare>
+    <ButtonLink color="warning" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
     <span className="mr-500" />
-    <Button color="danger" isSquare>
+    <ButtonLink color="danger" isSquare>
       <Icon name="hamburger" />
-    </Button>
+    </ButtonLink>
   </IconsProvider>
 );
 
