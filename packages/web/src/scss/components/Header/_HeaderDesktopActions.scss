@@ -1,0 +1,20 @@
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.HeaderDesktopActions {
+    display: none;
+
+    @include breakpoint.up(theme.$header-breakpoint) {
+        display: flex;
+        flex: none;
+        gap: theme.$header-desktop-actions-gap;
+        align-self: stretch;
+        align-items: center;
+    }
+}
+
+.HeaderDesktopActions--secondary {
+    @include breakpoint.up(theme.$header-breakpoint) {
+        margin-inline-start: auto;
+    }
+}

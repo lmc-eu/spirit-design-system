@@ -1,0 +1,50 @@
+@use '@tokens' as tokens;
+@use '../../settings/transitions';
+
+$typography: tokens.$body-medium-text-regular;
+$breakpoint: tokens.$breakpoint-desktop;
+
+$header-padding-x: tokens.$space-800;
+$header-gap: tokens.$space-1000;
+
+$header-inverted-color: tokens.$text-primary-inverted-default;
+$header-inverted-background-color: tokens.$background-inverted;
+
+$mobile-only-actions-gap: tokens.$space-600;
+
+$pane-padding: tokens.$space-700;
+$pane-color: tokens.$text-primary-inverted-default;
+$pane-background-color: tokens.$background-inverted;
+$pane-shadow: tokens.$shadow-400;
+$pane-transition-duration: transitions.$duration-medium;
+$pane-transition-timing: transitions.$timing-eased-in-out;
+
+$actions-padding-x: $pane-padding;
+$actions-padding-y: tokens.$space-900;
+$actions-row-gap: tokens.$space-700;
+$actions-column-gap: tokens.$space-700;
+
+$nav-item-padding-x: $actions-padding-x;
+$nav-item-padding-y: tokens.$space-500;
+$nav-item-padding-x-desktop: tokens.$space-600;
+$nav-item-padding-y-desktop: tokens.$space-0;
+
+$nav-link-color: tokens.$text-primary-inverted-default;
+$nav-link-background-color: tokens.$background-interactive-inverted-default;
+$nav-link-color-hover: tokens.$text-primary-inverted-default;
+$nav-link-background-color-hover: tokens.$background-interactive-inverted-hover;
+$nav-link-color-active: tokens.$text-primary-inverted-default;
+$nav-link-background-color-active: tokens.$background-interactive-inverted-active;
+$nav-link-color-current: tokens.$text-primary-inverted-default;
+$nav-link-background-color-current: tokens.$background-interactive-inverted-active;
+$nav-link-transition-duration: transitions.$duration-medium;
+$nav-link-current-border-width: 3px;
+$nav-link-current-border-color: tokens.$action-selected-default;
+$nav-link-current-border-transition-duration: transitions.$duration-medium;
+$nav-link-current-border-transition-timing: transitions.$timing-eased-out;
+
+$close-button-size: tokens.$space-1000;
+$close-button-color: tokens.$action-inverted-default;
+
+$backdrop-background-color: tokens.$background-backdrop;
+$backdrop-transition-duration: transitions.$duration-medium;

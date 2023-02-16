@@ -1,0 +1,22 @@
+@use '../../tools/reset';
+@use 'theme';
+@use 'tools';
+
+// stylelint-disable-next-line selector-no-qualifying-type -- Safely reset links with the semantics of a button.
+:where(button.HeaderLink) {
+    @include reset.button();
+}
+
+.HeaderLink {
+    @extend %link;
+
+    --header-link-decoration-height: #{theme.$header-link-current-border-thickness};
+    --header-link-decoration-scale-x: 1;
+    --header-link-decoration-transform-origin: bottom center;
+}
+
+.HeaderLink--current {
+    @extend %link-current;
+
+    --header-link-decoration-scale-y: 1;
+}
