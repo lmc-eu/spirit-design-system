@@ -9,7 +9,7 @@ import { ModalProps } from '../../../types';
 describe('Modal', () => {
   const ModalTest = (props: ModalProps) => (
     <Modal {...props} isOpen={false} onClose={() => null}>
-      Test
+      <div>Test</div>
     </Modal>
   );
 

@@ -29,17 +29,19 @@ const ModalComposed = (props: SpiritModalComposedProps) => {
   });
 
   return (
-    <Dialog
-      {...otherProps}
-      {...styleProps}
-      id={id}
-      isOpen={isOpen}
-      onClose={onClose}
-      className={classNames(classProps.root, styleProps.className)}
-      aria-labelledby={`${id}__title`}
-    >
-      <ModalProvider value={contextValue}>{children}</ModalProvider>
-    </Dialog>
+    <ModalProvider value={contextValue}>
+      <Dialog
+        {...otherProps}
+        {...styleProps}
+        id={id}
+        isOpen={isOpen}
+        onClose={onClose}
+        className={classNames(classProps.root, styleProps.className)}
+        aria-labelledby={`${id}__title`}
+      >
+        {children}
+      </Dialog>
+    </ModalProvider>
   );
 };
 
