@@ -1,21 +1,58 @@
+// 1. Use an `::after` pseudo-element to create a decorative border.
+
 @use 'theme';
 
-@mixin create-cover($position: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
-    position: $position;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-    visibility: hidden;
-    opacity: 0;
+%link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: var(--header-link-padding-y, #{theme.$header-link-padding-y})
+        var(--header-link-padding-x, #{theme.$header-link-padding-x});
+    color: theme.$header-link-color;
+    background-color: theme.$header-link-background-color;
+    transition-property: color, background-color;
+    transition-duration: theme.$header-link-transition-duration;
+
+    // 1.
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: var(--header-link-decoration-width, 100%);
+        height: var(--header-link-decoration-height, 100%);
+        background-color: theme.$header-link-current-border-color;
+        transform: scale(var(--header-link-decoration-scale-x, 0), var(--header-link-decoration-scale-y, 0));
+        transform-origin: var(--header-link-decoration-transform-origin, center);
+    }
+
+    &:hover {
+        color: theme.$header-link-color-hover;
+        background-color: theme.$header-link-background-color-hover;
+    }
+
+    &:active {
+        color: theme.$header-link-color-active;
+        background-color: theme.$header-link-background-color-active;
+    }
 
     @media (prefers-reduced-motion: no-preference) {
-        transition-property: opacity, visibility;
-        transition-duration: theme.$backdrop-transition-duration;
+        // 1.
+        &::after {
+            transition: transform theme.$header-link-transition-timing theme.$header-link-transition-duration;
+        }
     }
 }
 
-@mixin show-cover() {
-    visibility: visible;
-    opacity: 1;
+%link-current {
+    color: theme.$header-link-color-current;
+    background-color: theme.$header-link-background-color-current;
+
+    &:hover,
+    &:active {
+        color: theme.$header-link-color-current;
+        background-color: theme.$header-link-background-color-current;
+    }
 }

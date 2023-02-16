@@ -1,50 +1,62 @@
 @use '@tokens' as tokens;
 @use '../../settings/transitions';
 
-$typography: tokens.$body-medium-text-regular;
-$breakpoint: tokens.$breakpoint-desktop;
-
+// Header
+$header-typography: tokens.$body-medium-text-regular;
+$header-breakpoint: tokens.$breakpoint-desktop;
 $header-padding-x: tokens.$space-800;
 $header-gap: tokens.$space-1000;
 
 $header-inverted-color: tokens.$text-primary-inverted-default;
 $header-inverted-background-color: tokens.$background-inverted;
 
-$mobile-only-actions-gap: tokens.$space-600;
+// HeaderMobileActions
+$header-mobile-actions-gap: tokens.$space-600;
 
-$pane-padding: tokens.$space-700;
-$pane-color: tokens.$text-primary-inverted-default;
-$pane-background-color: tokens.$background-inverted;
-$pane-shadow: tokens.$shadow-400;
-$pane-transition-duration: transitions.$duration-medium;
-$pane-transition-timing: transitions.$timing-eased-in-out;
+// HeaderDesktopActions
+$header-desktop-actions-gap: tokens.$space-700;
 
-$actions-padding-x: $pane-padding;
-$actions-padding-y: tokens.$space-900;
-$actions-row-gap: tokens.$space-700;
-$actions-column-gap: tokens.$space-700;
+// HeaderLink
+$header-link-padding-x: tokens.$space-600;
+$header-link-padding-y: tokens.$space-500;
+$header-link-color: tokens.$text-primary-inverted-default;
+$header-link-background-color: tokens.$background-interactive-inverted-default;
+$header-link-color-hover: tokens.$text-primary-inverted-default;
+$header-link-background-color-hover: tokens.$background-interactive-inverted-hover;
+$header-link-color-active: tokens.$text-primary-inverted-default;
+$header-link-background-color-active: tokens.$background-interactive-inverted-active;
+$header-link-color-current: tokens.$text-primary-inverted-default;
+$header-link-background-color-current: tokens.$background-interactive-inverted-active;
+$header-link-current-border-thickness: 3px;
+$header-link-current-border-color: tokens.$action-selected-default;
+$header-link-transition-duration: transitions.$duration-medium;
+$header-link-transition-timing: transitions.$timing-eased-out;
 
-$nav-item-padding-x: $actions-padding-x;
-$nav-item-padding-y: tokens.$space-500;
-$nav-item-padding-x-desktop: tokens.$space-600;
-$nav-item-padding-y-desktop: tokens.$space-0;
+// HeaderDialog
+$header-dialog-typography: tokens.$body-medium-text-regular;
+$header-dialog-width: 280px;
+$header-dialog-padding: tokens.$space-700;
+$header-dialog-color: tokens.$text-primary-inverted-default;
+$header-dialog-background-color: tokens.$background-inverted;
+$header-dialog-shadow: tokens.$shadow-400;
+$header-dialog-transition-duration: transitions.$duration-medium;
+$header-dialog-transition-timing: transitions.$timing-eased-in-out;
+$header-dialog-backdrop-background-color: tokens.$background-backdrop;
 
-$nav-link-color: tokens.$text-primary-inverted-default;
-$nav-link-background-color: tokens.$background-interactive-inverted-default;
-$nav-link-color-hover: tokens.$text-primary-inverted-default;
-$nav-link-background-color-hover: tokens.$background-interactive-inverted-hover;
-$nav-link-color-active: tokens.$text-primary-inverted-default;
-$nav-link-background-color-active: tokens.$background-interactive-inverted-active;
-$nav-link-color-current: tokens.$text-primary-inverted-default;
-$nav-link-background-color-current: tokens.$background-interactive-inverted-active;
-$nav-link-transition-duration: transitions.$duration-medium;
-$nav-link-current-border-width: 3px;
-$nav-link-current-border-color: tokens.$action-selected-default;
-$nav-link-current-border-transition-duration: transitions.$duration-medium;
-$nav-link-current-border-transition-timing: transitions.$timing-eased-out;
+// HeaderDialogCloseButton
+$header-dialog-close-button-size: tokens.$space-1000;
+$header-dialog-close-button-color: tokens.$action-inverted-default;
 
-$close-button-size: tokens.$space-1000;
-$close-button-color: tokens.$action-inverted-default;
+// HeaderDialogActions
+$header-dialog-actions-padding-x: $header-dialog-padding;
+$header-dialog-actions-padding-y: tokens.$space-900;
+$header-dialog-actions-gap: tokens.$space-700;
 
-$backdrop-background-color: tokens.$background-backdrop;
-$backdrop-transition-duration: transitions.$duration-medium;
+// HeaderDialogLink
+$header-dialog-link-padding-x: $header-dialog-actions-padding-x;
+$header-dialog-link-padding-y: tokens.$space-500;
+$header-dialog-link-current-border-thickness: 3px;
+
+// HeaderDialogText
+$header-dialog-text-padding-x: $header-dialog-actions-padding-x;
+$header-dialog-text-padding-y: $header-dialog-link-padding-y;
