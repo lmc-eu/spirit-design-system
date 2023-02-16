@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import { ModalProps } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
-import ModalBackdrop from './ModalBackdrop';
 import { useLastActiveFocus, useStyleProps, useDeprecationMessage } from '../../hooks';
 import Dialog from '../Dialog/Dialog';
 
@@ -33,8 +32,6 @@ const Modal = (props: ModalProps): JSX.Element => {
       <div className={classProps.content}>
         <div className={classProps.dialog}>{children}</div>
       </div>
-      {/* This is not necessary after https://github.com/lmc-eu/spirit-design-system/pull/532 */}
-      <ModalBackdrop isOpen={isOpen} />
     </Dialog>
   );
 };
