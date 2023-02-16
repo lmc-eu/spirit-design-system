@@ -1,4 +1,7 @@
+@use 'sass:list';
+@use 'sass:map';
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 // We subtract the border width to achieve the same dimensions as other form elements
 $typography: tokens.$body-medium-text-bold;
@@ -7,160 +10,72 @@ $border-style: tokens.$border-style-100;
 $border-radius: tokens.$radius-100;
 $breakpoints: tokens.$breakpoints;
 
-// Primary button
-$primary-default-color: tokens.$text-primary-inverted-default;
-$primary-default-background: tokens.$action-primary-default;
-$primary-default-border-color: $primary-default-background;
-$primary-hover-color: $primary-default-color;
-$primary-hover-background: tokens.$action-primary-hover;
-$primary-hover-border-color: $primary-hover-background;
-$primary-active-color: $primary-default-color;
-$primary-active-background: tokens.$action-primary-active;
-$primary-active-border-color: $primary-active-background;
-$primary-disabled-color: tokens.$text-primary-inverted-disabled;
-$primary-disabled-background: tokens.$action-primary-disabled;
-$primary-disabled-border-color: $primary-disabled-background;
+$color-dictionary: list.join(dictionaries.$action-colors, dictionaries.$emotion-colors);
 
-$primary: (
-    default-color: $primary-default-color,
-    default-background: $primary-default-background,
-    default-border-color: $primary-default-border-color,
-    hover-color: $primary-hover-color,
-    hover-background: $primary-hover-background,
-    hover-border-color: $primary-hover-border-color,
-    active-color: $primary-active-color,
-    active-background: $primary-active-background,
-    active-border-color: $primary-active-border-color,
-    disabled-color: $primary-disabled-color,
-    disabled-background: $primary-disabled-background,
-    disabled-border-color: $primary-disabled-border-color,
+$color-dictionary-config: (
+    color: tokens.$text-primary-inverted-default,
+    border-color: 'default',
+    background-color: 'default',
 );
 
-// Secondary button
-$secondary-default-color: tokens.$text-primary-default;
-$secondary-default-background: tokens.$background-interactive-default;
-$secondary-default-border-color: tokens.$action-secondary-default;
-$secondary-hover-color: $secondary-default-color;
-$secondary-hover-background: tokens.$background-interactive-hover;
-$secondary-hover-border-color: tokens.$action-secondary-hover;
-$secondary-active-color: $secondary-default-color;
-$secondary-active-background: tokens.$background-interactive-active;
-$secondary-active-border-color: tokens.$action-secondary-active;
-$secondary-disabled-color: tokens.$text-primary-disabled;
-$secondary-disabled-background: $secondary-default-background;
-$secondary-disabled-border-color: tokens.$action-secondary-disabled;
-
-$secondary: (
-    default-color: $secondary-default-color,
-    default-background: $secondary-default-background,
-    default-border-color: $secondary-default-border-color,
-    hover-color: $secondary-hover-color,
-    hover-background: $secondary-hover-background,
-    hover-border-color: $secondary-hover-border-color,
-    active-color: $secondary-active-color,
-    active-background: $secondary-active-background,
-    active-border-color: $secondary-active-border-color,
-    disabled-color: $secondary-disabled-color,
-    disabled-background: $secondary-disabled-background,
-    disabled-border-color: $secondary-disabled-border-color,
+$color-dictionary-states: (
+    '&:hover, &:focus': (
+        color: tokens.$text-primary-inverted-default,
+        border-color: 'hover',
+        background-color: 'hover',
+    ),
+    '&:active': (
+        color: tokens.$text-primary-inverted-default,
+        border-color: 'active',
+        background-color: 'active',
+    ),
+    '&:disabled, &.is-disabled, &.Button--disabled': (
+        color: tokens.$text-primary-inverted-disabled,
+        border-color: 'disabled',
+        background-color: 'disabled',
+    ),
 );
 
-// Tertiary button
-$tertiary-default-color: tokens.$text-primary-default;
-$tertiary-default-background: tokens.$action-tertiary-default;
-$tertiary-default-border-color: $tertiary-default-background;
-$tertiary-hover-color: $tertiary-default-color;
-$tertiary-hover-background: tokens.$action-tertiary-hover;
-$tertiary-hover-border-color: $tertiary-hover-background;
-$tertiary-active-color: $tertiary-default-color;
-$tertiary-active-background: tokens.$action-tertiary-active;
-$tertiary-active-border-color: $tertiary-active-background;
-$tertiary-disabled-color: tokens.$text-primary-inverted-disabled;
-$tertiary-disabled-background: tokens.$action-tertiary-disabled;
-$tertiary-disabled-border-color: $tertiary-disabled-background;
-
-$tertiary: (
-    default-color: $tertiary-default-color,
-    default-background: $tertiary-default-background,
-    default-border-color: $tertiary-default-border-color,
-    hover-color: $tertiary-hover-color,
-    hover-background: $tertiary-hover-background,
-    hover-border-color: $tertiary-hover-border-color,
-    active-color: $tertiary-active-color,
-    active-background: $tertiary-active-background,
-    active-border-color: $tertiary-active-border-color,
-    disabled-color: $tertiary-disabled-color,
-    disabled-background: $tertiary-disabled-background,
-    disabled-border-color: $tertiary-disabled-border-color,
-);
-
-// Inverted button
-$inverted-default-color: tokens.$text-primary-inverted-default;
-$inverted-default-background: transparent;
-$inverted-default-border-color: tokens.$action-inverted-default;
-$inverted-hover-color: tokens.$text-primary-inverted-default;
-$inverted-hover-background: $inverted-default-background;
-$inverted-hover-border-color: tokens.$action-inverted-hover;
-$inverted-active-color: tokens.$text-primary-inverted-default;
-$inverted-active-background: $inverted-default-background;
-$inverted-active-border-color: tokens.$action-inverted-active;
-$inverted-disabled-color: tokens.$text-primary-inverted-disabled;
-$inverted-disabled-background: $inverted-default-background;
-$inverted-disabled-border-color: tokens.$action-inverted-disabled;
-
-$inverted: (
-    default-color: $inverted-default-color,
-    default-background: $inverted-default-background,
-    default-border-color: $inverted-default-border-color,
-    hover-color: $inverted-hover-color,
-    hover-background: $inverted-hover-background,
-    hover-border-color: $inverted-hover-border-color,
-    active-color: $inverted-active-color,
-    active-background: $inverted-active-background,
-    active-border-color: $inverted-active-border-color,
-    disabled-color: $inverted-disabled-color,
-    disabled-background: $inverted-disabled-background,
-    disabled-border-color: $inverted-disabled-border-color,
-);
-
-// Danger button
-$danger-default-color: tokens.$text-primary-inverted-default;
-$danger-default-background: tokens.$emotion-danger-default;
-$danger-default-border-color: $danger-default-background;
-$danger-hover-color: $danger-default-color;
-$danger-hover-background: tokens.$emotion-danger-hover;
-$danger-hover-border-color: $danger-hover-background;
-$danger-active-color: $danger-default-color;
-$danger-active-background: tokens.$emotion-danger-active;
-$danger-active-border-color: $danger-active-background;
-$danger-disabled-color: tokens.$text-primary-inverted-disabled;
-$danger-disabled-background: tokens.$emotion-danger-disabled;
-$danger-disabled-border-color: $danger-disabled-background;
-
-$danger: (
-    default-color: $danger-default-color,
-    default-background: $danger-default-background,
-    default-border-color: $danger-default-border-color,
-    hover-color: $danger-hover-color,
-    hover-background: $danger-hover-background,
-    hover-border-color: $danger-hover-border-color,
-    active-color: $danger-active-color,
-    active-background: $danger-active-background,
-    active-border-color: $danger-active-border-color,
-    disabled-color: $danger-disabled-color,
-    disabled-background: $danger-disabled-background,
-    disabled-border-color: $danger-disabled-border-color,
-);
-
-$variants: (
-    primary: $primary,
-    secondary: $secondary,
-    tertiary: $tertiary,
-    inverted: $inverted,
-    danger: $danger,
+$color-dictionary-overrides: (
+    secondary: (
+        color: tokens.$text-primary-default,
+        background-color: tokens.$background-interactive-default,
+        states: (
+            '&:hover, &:focus': (
+                color: tokens.$text-primary-default,
+                background-color: tokens.$background-interactive-hover,
+            ),
+            '&:active': (
+                color: tokens.$text-primary-default,
+                background-color: tokens.$background-interactive-active,
+            ),
+            '&:disabled, &.is-disabled, &.Button--disabled': (
+                color: tokens.$text-primary-disabled,
+                background-color: tokens.$background-interactive-default,
+            ),
+        ),
+    ),
+    tertiary: (
+        color: tokens.$text-primary-default,
+        states: (
+            '&:hover, &:focus, &:active': (
+                color: tokens.$text-primary-default,
+            ),
+            '&:disabled, &.is-disabled, &.Button--disabled': (
+                color: tokens.$text-primary-inverted-disabled,
+            ),
+        ),
+    ),
+    inverted: (
+        background-color: transparent,
+    ),
 );
 
 $sizes: (
+    small: (
+        padding-x: calc(#{tokens.$space-600} - #{tokens.$border-width-100}),
+        padding-y: calc(#{tokens.$space-300} - #{tokens.$border-width-100}),
+    ),
     medium: (
         padding-x: calc(#{tokens.$space-700} - #{tokens.$border-width-100}),
         padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100}),

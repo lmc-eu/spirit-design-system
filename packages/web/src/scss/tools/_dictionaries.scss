@@ -8,10 +8,26 @@
     }
 }
 
-@mixin generate-colors($dictionary, $properties, $className) {
+@mixin generate-colors($dictionary, $className, $properties, $states: null) {
     @each $variant-name, $variant-value in $dictionary {
         .#{$className}--#{$variant-name} {
             @include -generate-colors-variant($properties, $variant-value);
+
+            @if $states {
+                @each $state-name, $state-value in $states {
+                    #{$state-name} {
+                        @include -generate-colors-variant($state-value, $variant-value);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-sizes($className, $variables) {
+    @each $size, $variables in $variables {
+        .#{$className}--#{$size} {
+            padding: map.get($variables, padding-y) map.get($variables, padding-x);
         }
     }
 }

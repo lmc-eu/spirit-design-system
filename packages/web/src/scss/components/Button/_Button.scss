@@ -2,6 +2,7 @@
 @use 'theme';
 @use 'tools';
 @use '../../settings/cursors';
+@use '../../tools/dictionaries';
 @use '../../tools/typography';
 
 .Button {
@@ -32,13 +33,34 @@
     }
 }
 
-@each $size, $variables in theme.$sizes {
-    @include tools.size($size, $variables);
-}
+@include dictionaries.generate-colors(
+    theme.$color-dictionary,
+    'Button',
+    (
+        default-color: 'color',
+        default-border-color: 'border-color',
+        default-background: 'background-color',
+    ),
+    (
+        '&:hover, &:focus': (
+            hover-color: 'color',
+            hover-border-color: 'border-color',
+            hover-background: 'background-color',
+        ),
+        '&:active': (
+            active-color: 'color',
+            active-border-color: 'border-color',
+            active-background: 'background-color',
+        ),
+        '&:disabled, &.is-disabled, &.Button--disabled': (
+            disabled-color: 'color',
+            disabled-border-color: 'border-color',
+            disabled-background: 'background-color',
+        ),
+    )
+);
 
-@each $variant, $variables in theme.$variants {
-    @include tools.variant($variant, $variables);
-}
+@include dictionaries.generate-sizes('Button', theme.$sizes);
 
 .Button--block {
     display: block;
@@ -55,6 +77,15 @@
 
     flex: none;
     padding-inline: 0;
+}
+
+.Button--square.Button--small {
+    @include tools.square(
+        theme.$breakpoints,
+        theme.$typography,
+        map.get(theme.$sizes, small, padding-y),
+        theme.$border-width
+    );
 }
 
 .Button--square.Button--large {

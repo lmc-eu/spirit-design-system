@@ -25,9 +25,9 @@
 
 @include dictionaries.generate-colors(
     theme.$color-dictionary,
+    'Alert',
     (
-        default: 'color',
+        default-background: 'color',
         background: 'background-color',
-    ),
-    'Alert'
+    )
 );

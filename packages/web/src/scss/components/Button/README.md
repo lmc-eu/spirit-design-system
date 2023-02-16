@@ -7,6 +7,9 @@ Variants:
 <button type="button" class="Button Button--secondary Button--medium">Secondary Button</button>
 <button type="button" class="Button Button--tertiary Button--medium">Tertiary Button</button>
 <button type="button" class="Button Button--inverted Button--medium">Inverted button</button>
+<button type="button" class="Button Button--success Button--medium">Success button</button>
+<button type="button" class="Button Button--informative Button--medium">Informative button</button>
+<button type="button" class="Button Button--warning Button--medium">Warning button</button>
 <button type="button" class="Button Button--danger Button--medium">Danger button</button>
 ```
 
@@ -27,8 +30,7 @@ Disabling a Button:
 Sizes:
 
 ```html
+<button type="button" class="Button Button--primary Button--small">Small Button</button>
 <button type="button" class="Button Button--primary Button--medium">Medium Button</button>
-<button type="button" class="Button Button--inverted Button--medium">Medium Inverted Button</button>
 <button type="button" class="Button Button--primary Button--large">Large Button</button>
-<button type="button" class="Button Button--inverted Button--large">Large Inverted Button</button>
 ```
