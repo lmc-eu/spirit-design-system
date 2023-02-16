@@ -1,13 +1,4 @@
-import React, {
-  useRef,
-  MutableRefObject,
-  Children,
-  cloneElement,
-  forwardRef,
-  ReactElement,
-  ReactNode,
-  ForwardedRef,
-} from 'react';
+import React, { useRef, MutableRefObject, Children, cloneElement, forwardRef, ReactElement, ForwardedRef } from 'react';
 import { DialogProps } from '../../types';
 import { useDialog } from './useDialog';
 import { useCancelEvent, useClickOutside } from '../../hooks';
@@ -33,19 +24,24 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
   // handles closing using Escape key
   useCancelEvent(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, onClose);
 
+  /**
+   * Make sure that there is only one child wrapped in dialog element.
+   * Otherwise we cannot distinguish between dialog content and dialog backdrop, which is dialog element itself.
+   * useClickOutside hook uses refs to dialog and content elements to find out whether it was clicked on backdrop
+   * and dialog should be closed.
+   *
+   * @see https://reactjs.org/docs/react-api.html#reactchildren
+   * @throws Error
+   */
+  const child = Children.only(children);
+
   return (
     <dialog ref={dialogElementRef as MutableRefObject<HTMLDialogElement | null>} {...restProps}>
-      {Children.map<ReactNode, ReactNode>(children, (child) =>
-        cloneElement(child as ReactElement, {
-          ref: (clonedElementRef: HTMLElement) => {
-            // Add reference only to `Modal__content` element
-            // @TODO: remove this on https://github.com/lmc-eu/spirit-design-system/pull/532
-            if (clonedElementRef?.className?.includes('content')) {
-              contentElementRef.current = clonedElementRef;
-            }
-          },
-        }),
-      )}
+      {cloneElement(child as ReactElement, {
+        ref: (clonedElementRef: HTMLElement) => {
+          contentElementRef.current = clonedElementRef;
+        },
+      })}
     </dialog>
   );
 };
