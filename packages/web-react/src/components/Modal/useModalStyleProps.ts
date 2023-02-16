@@ -9,7 +9,6 @@ export interface ModalStyles {
     header: string;
     body: string;
     footer: string;
-    backdrop: string;
   };
 }
 
@@ -20,7 +19,6 @@ export function useModalStyleProps(): ModalStyles {
   const modalHeaderClass = `${modalClass}__header`;
   const modalBodyClass = `${modalClass}__body`;
   const modalFooterClass = `${modalClass}__footer`;
-  const modalBackdropClass = `${modalClass}__backdrop`;
   const classProps = {
     root: modalClass,
     content: modalContentClass,
@@ -28,7 +26,6 @@ export function useModalStyleProps(): ModalStyles {
     header: modalHeaderClass,
     body: modalBodyClass,
     footer: modalFooterClass,
-    backdrop: modalBackdropClass,
   };
 
   return {

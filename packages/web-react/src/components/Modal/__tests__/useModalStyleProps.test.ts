@@ -11,6 +11,5 @@ describe('useModalStyleProps', () => {
     expect(result.current.classProps.header).toBe('Modal__header');
     expect(result.current.classProps.body).toBe('Modal__body');
     expect(result.current.classProps.footer).toBe('Modal__footer');
-    expect(result.current.classProps.backdrop).toBe('Modal__backdrop');
   });
 });
