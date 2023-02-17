@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.26.0"></a>
+
+# [1.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.25.1...@lmc-eu/spirit-web-twig@1.26.0) (2023-02-17)
+
+### Bug Fixes
+
+- **web-twig:** Add missing icon colors key-pairs for Alert component ([adac3d9](https://github.com/lmc-eu/spirit-design-system/commit/adac3d9)), closes [#DS-619](https://github.com/lmc-eu/spirit-design-system/issues/DS-619)
+
+### Features
+
+- **web-twig:** Introduce Modal Composed with subcomponents [#DS-507](https://github.com/lmc-eu/spirit-design-system/issues/DS-507) ([da720e1](https://github.com/lmc-eu/spirit-design-system/commit/da720e1))
+- **web-twig:** Use Action and Emotion Color Dictionaries in Pill component [#DS-574](https://github.com/lmc-eu/spirit-design-system/issues/DS-574) ([abb4b92](https://github.com/lmc-eu/spirit-design-system/commit/abb4b92))
+- **web-twig:** Use Text Color Dictionary in Link component [#DS-573](https://github.com/lmc-eu/spirit-design-system/issues/DS-573) ([a6ad9e2](https://github.com/lmc-eu/spirit-design-system/commit/a6ad9e2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.25.1"></a>
 
 ## [1.25.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.25.0...@lmc-eu/spirit-web-twig@1.25.1) (2023-02-13)
