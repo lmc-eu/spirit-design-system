@@ -1,25 +1,3 @@
-@use 'sass:list';
-@use 'sass:map';
-@use 'sass:meta';
-
-@mixin variants($selector, $variants, $printValues: (default, hover, active, disabled, visited)) {
-    @each $variant-name, $variant-values in $variants {
-        @each $variant-value-name, $variant-value in $variant-values {
-            @if list.index($printValues, $variant-value-name) {
-                $variant-class: '#{$variant-name}';
-                @if $variant-value-name == 'disabled' {
-                    $variant-class: '#{$variant-name}.link-#{$variant-value-name}:any-link';
-                } @else if $variant-value-name != 'default' {
-                    $variant-class: '#{$variant-name}:#{$variant-value-name}';
-                }
-                #{$selector}-#{unquote($variant-class)} {
-                    color: $variant-value;
-                }
-            }
-        }
-    }
-}
-
 @mixin stretch($pseudo-element: before) {
     &::#{$pseudo-element} {
         content: '';

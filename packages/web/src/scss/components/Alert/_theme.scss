@@ -13,3 +13,8 @@ $content-max-width: 640px;
 $emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
 
 $color-dictionary: dictionaries.$emotion-colors;
+
+$color-dictionary-config: (
+    color: 'default',
+    background-color: 'background',
+);
