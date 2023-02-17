@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.42.0"></a>
+
+# [0.42.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.41.1...@lmc-eu/spirit-web@0.42.0) (2023-02-17)
+
+### Bug Fixes
+
+- **web:** Disable automatic changes of text size in mobile Safari ([c318614](https://github.com/lmc-eu/spirit-design-system/commit/c318614))
+- **web:** In `Modal`, make only text selectable to prevent interaction glitches in Chrome ([93f760c](https://github.com/lmc-eu/spirit-design-system/commit/93f760c))
+
+### Chores
+
+- **web:** Run PostCSS and Autoprefixer also in development mode ([2b6708b](https://github.com/lmc-eu/spirit-design-system/commit/2b6708b))
+
+### Code Refactoring
+
+- **web:** Keep transition settings in a single place (to make their way to design tokens easy) ([5a3a554](https://github.com/lmc-eu/spirit-design-system/commit/5a3a554))
+- **web:** Make Alert icons in demo same as it is in design ([71858e8](https://github.com/lmc-eu/spirit-design-system/commit/71858e8))
+- **web:** Simplify JS plugins with right use of this.element ([211f282](https://github.com/lmc-eu/spirit-design-system/commit/211f282))
+
+### Dependencies
+
+- Update all non-major dependencies ([fa43a3a](https://github.com/lmc-eu/spirit-design-system/commit/fa43a3a))
+
+### Features
+
+- **web:** Allow JS plugin to find component by selector ([0d5e7fb](https://github.com/lmc-eu/spirit-design-system/commit/0d5e7fb))
+- **web:** Component triggers can find target element by target dataset ([c651c30](https://github.com/lmc-eu/spirit-design-system/commit/c651c30))
+- **web:** Display backdrop for native dialog element ([b9a10f6](https://github.com/lmc-eu/spirit-design-system/commit/b9a10f6))
+- **web:** Introduce `Modal` subcomponents [#DS-505](https://github.com/lmc-eu/spirit-design-system/issues/DS-505) ([213262f](https://github.com/lmc-eu/spirit-design-system/commit/213262f))
+- **web:** Introduce Action Color Dictionary and use it in Pill component [#DS-574](https://github.com/lmc-eu/spirit-design-system/issues/DS-574) ([1fa0b91](https://github.com/lmc-eu/spirit-design-system/commit/1fa0b91))
+- **web:** Introduce Text Color Dictionary and use it in Link helper [#DS-573](https://github.com/lmc-eu/spirit-design-system/issues/DS-573) ([25a8303](https://github.com/lmc-eu/spirit-design-system/commit/25a8303))
+
+### Styles
+
+- **web:** Add support for backdrop pseudo-element for legacy modal ([bbb7413](https://github.com/lmc-eu/spirit-design-system/commit/bbb7413))
+- **web:** Removed unused legacy Modal\_\_backdrop class ([4cc6ec1](https://github.com/lmc-eu/spirit-design-system/commit/4cc6ec1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.41.1"></a>
 
 ## [0.41.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.41.0...@lmc-eu/spirit-web@0.41.1) (2023-02-13)

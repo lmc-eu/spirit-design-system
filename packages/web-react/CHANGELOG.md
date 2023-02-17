@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.40.0"></a>
+
+# [0.40.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.39.1...@lmc-eu/spirit-web-react@0.40.0) (2023-02-17)
+
+### Bug Fixes
+
+- **web-react:** Add missing icon colors key-pairs for Alert component ([4d58d30](https://github.com/lmc-eu/spirit-design-system/commit/4d58d30)), closes [#DS-619](https://github.com/lmc-eu/spirit-design-system/issues/DS-619)
+- **web-react:** Do not pass `iconName` prop to Alert html element ([0b6fef1](https://github.com/lmc-eu/spirit-design-system/commit/0b6fef1)), closes [#DS-619](https://github.com/lmc-eu/spirit-design-system/issues/DS-619)
+
+### Code Refactoring
+
+- **web-react:** Ensure that Dialog component have only one child ([26186ef](https://github.com/lmc-eu/spirit-design-system/commit/26186ef)), closes [#DS-626](https://github.com/lmc-eu/spirit-design-system/issues/DS-626)
+- **web-react:** Introduce `SizeProps` type as generic for size prop ([46283f3](https://github.com/lmc-eu/spirit-design-system/commit/46283f3))
+- **web-react:** Remove ModalBackdrop component ([242907e](https://github.com/lmc-eu/spirit-design-system/commit/242907e)), closes [#DS-626](https://github.com/lmc-eu/spirit-design-system/issues/DS-626)
+
+### Dependencies
+
+- Update all non-major dependencies ([fa43a3a](https://github.com/lmc-eu/spirit-design-system/commit/fa43a3a))
+
+### Documentation
+
+- **web-react:** Fix comment in ChildrenProps interface ([5701ddf](https://github.com/lmc-eu/spirit-design-system/commit/5701ddf))
+
+### Features
+
+- **web-react:** Introduction ModalComposed component [#DS-506](https://github.com/lmc-eu/spirit-design-system/issues/DS-506) ([b111e90](https://github.com/lmc-eu/spirit-design-system/commit/b111e90))
+- **web-react:** Use Action and Emotion Color Dictionaries in Pill component [#DS-574](https://github.com/lmc-eu/spirit-design-system/issues/DS-574) ([ce3fc3a](https://github.com/lmc-eu/spirit-design-system/commit/ce3fc3a))
+- **web-react:** Use Text Color Dictionary in Link component [#DS-573](https://github.com/lmc-eu/spirit-design-system/issues/DS-573) ([ec29a37](https://github.com/lmc-eu/spirit-design-system/commit/ec29a37))
+
+### Tests
+
+- **web-react:** Add missing test for `useIconName` hook ([be46fc4](https://github.com/lmc-eu/spirit-design-system/commit/be46fc4)), closes [#DS-619](https://github.com/lmc-eu/spirit-design-system/issues/DS-619)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.39.1"></a>
 
 ## [0.39.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.39.0...@lmc-eu/spirit-web-react@0.39.1) (2023-02-13)

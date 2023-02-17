@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.3"></a>
+
+## [1.5.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.5.2...@lmc-eu/spirit-exporters-scss@1.5.3) (2023-02-17)
+
+### Chores
+
+- **exporter-scss:** Rebuild generated functions with updated Vite ([cda8802](https://github.com/lmc-eu/spirit-design-system/commit/cda8802))
+
+### Dependencies
+
+- Update all non-major dependencies ([fa43a3a](https://github.com/lmc-eu/spirit-design-system/commit/fa43a3a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.5.2"></a>
 
 ## [1.5.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.5.1...@lmc-eu/spirit-exporters-scss@1.5.2) (2023-02-13)
