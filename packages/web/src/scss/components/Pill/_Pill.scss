@@ -14,10 +14,9 @@
 }
 
 @include dictionaries.generate-colors(
-    theme.$color-dictionary,
     'Pill',
-    (
-        text: 'color',
-        default: 'background-color',
-    )
+    theme.$color-dictionary,
+    theme.$color-dictionary-config,
+    null,
+    theme.$color-dictionary-overrides
 );

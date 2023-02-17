@@ -23,11 +23,4 @@
     justify-content: center;
 }
 
-@include dictionaries.generate-colors(
-    theme.$color-dictionary,
-    'Alert',
-    (
-        default-background: 'color',
-        background: 'background-color',
-    )
-);
+@include dictionaries.generate-colors('Alert', theme.$color-dictionary, theme.$color-dictionary-config);

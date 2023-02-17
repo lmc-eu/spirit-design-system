@@ -34,30 +34,11 @@
 }
 
 @include dictionaries.generate-colors(
-    theme.$color-dictionary,
     'Button',
-    (
-        default-color: 'color',
-        default-border-color: 'border-color',
-        default-background: 'background-color',
-    ),
-    (
-        '&:hover, &:focus': (
-            hover-color: 'color',
-            hover-border-color: 'border-color',
-            hover-background: 'background-color',
-        ),
-        '&:active': (
-            active-color: 'color',
-            active-border-color: 'border-color',
-            active-background: 'background-color',
-        ),
-        '&:disabled, &.is-disabled, &.Button--disabled': (
-            disabled-color: 'color',
-            disabled-border-color: 'border-color',
-            disabled-background: 'background-color',
-        ),
-    )
+    theme.$color-dictionary,
+    theme.$color-dictionary-config,
+    theme.$color-dictionary-states,
+    theme.$color-dictionary-overrides
 );
 
 @include dictionaries.generate-sizes('Button', theme.$sizes);

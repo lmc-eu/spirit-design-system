@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
@@ -7,15 +8,20 @@ $padding-x: tokens.$space-300;
 $padding-y: tokens.$space-0;
 $border-radius: tokens.$radius-300;
 
-$_pill-colors: (
-    selected: (
-        default: tokens.$action-selected-default,
-        text: tokens.$text-primary-inverted-default,
-    ),
-    unselected: (
-        default: tokens.$action-unselected-default,
-        text: tokens.$text-primary-inverted-default,
-    ),
+$_pill-colors: selected, unselected;
+
+$color-dictionary: list.join(list.join(dictionaries.$emotion-colors, dictionaries.$action-colors), $_pill-colors);
+
+$color-dictionary-config: (
+    color: tokens.$text-primary-inverted-default,
+    background-color: 'default',
 );
 
-$color-dictionary: map.merge(map.merge(dictionaries.$emotion-colors, dictionaries.$action-colors), $_pill-colors);
+$color-dictionary-overrides: (
+    tertiary: (
+        color: tokens.$text-primary-default,
+    ),
+    inverted: (
+        color: tokens.$text-primary-default,
+    ),
+);
