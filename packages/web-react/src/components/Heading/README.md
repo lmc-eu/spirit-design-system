@@ -8,10 +8,10 @@ The Heading component provides helper classes to render headings.
 
 ## Available props
 
-| Name          | Type                                                   | Default  | Description      |
-| ------------- | ------------------------------------------------------ | -------- | ---------------- |
-| `elementType` | `React.Element`                                        | `div`    | HTML tag,        |
-| `size`        | [Size and Size Extended dictionaries][dictionary-size] | `medium` | Size of the text |
+| Name          | Type                                        | Default  | Description      |
+| ------------- | ------------------------------------------- | -------- | ---------------- |
+| `elementType` | `React.Element`                             | `div`    | HTML tag,        |
+| `size`        | [Size Extended dictionary][dictionary-size] | `medium` | Size of the text |
 
 ## Custom component
 
