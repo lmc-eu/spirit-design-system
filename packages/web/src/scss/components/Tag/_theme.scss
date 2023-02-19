@@ -1,110 +1,43 @@
+@use 'sass:list';
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
-// Default light tag
-$default-light-color: tokens.$text-primary-default;
-$default-light-background: tokens.$background-cover;
+/** @deprecated Will be removed in the next major version */
+$_tag-colors-deprecated: default;
+$_tag-colors: neutral;
 
-$default-light: (
-    default-color: $default-light-color,
-    default-background: $default-light-background,
+$color-dictionary: list.join(dictionaries.$emotion-colors, list.join($_tag-colors-deprecated, $_tag-colors));
+
+$color-dictionary-config: (
+    color: tokens.$text-primary-inverted-default,
+    background-color: 'default',
 );
 
-// Default dark tag
-$default-dark-color: tokens.$text-primary-inverted-default;
-$default-dark-background: tokens.$background-inverted;
-
-$default-dark: (
-    default-color: $default-dark-color,
-    default-background: $default-dark-background,
+$color-dictionary-overrides: (
+    /** @deprecated Will be removed in the next major version */ default:
+        (
+            background-color: tokens.$background-inverted,
+        ),
+    neutral: (
+        background-color: tokens.$background-inverted,
+    )
 );
 
-// Informative light tag
-$informative-light-color: tokens.$emotion-informative-default;
-$informative-light-background: tokens.$emotion-informative-background;
-
-$informative-light: (
-    default-color: $informative-light-color,
-    default-background: $informative-light-background,
+$subtle-color-dictionary-config: (
+    color: 'default',
+    background-color: 'background',
 );
 
-// Informative dark tag
-$informative-dark-color: tokens.$text-primary-inverted-default;
-$informative-dark-background: tokens.$emotion-informative-default;
-
-$informative-dark: (
-    default-color: $informative-dark-color,
-    default-background: $informative-dark-background,
-);
-
-// Success light tag
-$success-light-color: tokens.$emotion-success-default;
-$success-light-background: tokens.$emotion-success-background;
-
-$success-light: (
-    default-color: $success-light-color,
-    default-background: $success-light-background,
-);
-
-// Success dark tag
-$success-dark-color: tokens.$text-primary-inverted-default;
-$success-dark-background: tokens.$emotion-success-default;
-
-$success-dark: (
-    default-color: $success-dark-color,
-    default-background: $success-dark-background,
-);
-
-// Warning light tag
-$warning-light-color: tokens.$emotion-warning-default;
-$warning-light-background: tokens.$emotion-warning-background;
-
-$warning-light: (
-    default-color: $warning-light-color,
-    default-background: $warning-light-background,
-);
-
-// Warning dark tag
-$warning-dark-color: tokens.$text-primary-inverted-default;
-$warning-dark-background: tokens.$emotion-warning-default;
-
-$warning-dark: (
-    default-color: $warning-dark-color,
-    default-background: $warning-dark-background,
-);
-
-// Danger light tag
-$danger-light-color: tokens.$emotion-danger-default;
-$danger-light-background: tokens.$emotion-danger-background;
-
-$danger-light: (
-    default-color: $danger-light-color,
-    default-background: $danger-light-background,
-);
-
-// Danger dark tag
-$danger-dark-color: tokens.$text-primary-inverted-default;
-$danger-dark-background: tokens.$emotion-danger-default;
-
-$danger-dark: (
-    default-color: $danger-dark-color,
-    default-background: $danger-dark-background,
-);
-
-$variants: (
-    light: (
-        default: $default-light,
-        informative: $informative-light,
-        success: $success-light,
-        warning: $warning-light,
-        danger: $danger-light,
-    ),
-    dark: (
-        default: $default-dark,
-        informative: $informative-dark,
-        success: $success-dark,
-        warning: $warning-dark,
-        danger: $danger-dark,
-    ),
+$subtle-color-dictionary-overrides: (
+    /** @deprecated Will be removed in the next major version */ default:
+        (
+            color: tokens.$text-primary-default,
+            background-color: tokens.$background-cover,
+        ),
+    neutral: (
+        color: tokens.$text-primary-default,
+        background-color: tokens.$background-cover,
+    )
 );
 
 $border-radius: tokens.$radius-100;
@@ -124,5 +57,15 @@ $sizes: (
         padding-x: tokens.$space-400,
         padding-y: tokens.$space-300,
         typography: tokens.$body-medium-text-regular,
+    ),
+    large: (
+        padding-x: tokens.$space-500,
+        padding-y: tokens.$space-400,
+        typography: tokens.$body-large-text-regular,
+    ),
+    xlarge: (
+        padding-x: tokens.$space-600,
+        padding-y: tokens.$space-400,
+        typography: tokens.$body-xlarge-text-regular,
     ),
 );
