@@ -1,44 +1,51 @@
-import classNames from 'classnames';
 import React, { ElementType } from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { SpiritTagProps, TagSize, TagColor, TagTheme } from '../../types';
-import { applyColor, applySize, applyTheme } from '../../utils/classname';
-import { compose } from '../../utils/compose';
+import classNames from 'classnames';
+import { useDeprecatedMessage, useDeprecationMessage, useStyleProps } from '../../hooks';
+import { SpiritTagProps, StyleProps } from '../../types';
+import { useTagStyleProps } from './useTagStyleProps';
 
 const defaultProps = {
-  color: 'default',
+  color: 'neutral',
+  elementType: 'span',
+  isSubtle: false,
   size: 'medium',
-  tag: 'span',
-  theme: 'dark',
 };
 
-// `${componentClassName}--${color}`;
-const getTagColorClassname = (className: string, color: TagColor): string =>
-  compose(applyColor<TagColor>(color))(className);
+export const Tag = <T extends ElementType = 'span', C = void, S = void>(
+  props: SpiritTagProps<T, C, S>,
+): JSX.Element => {
+  const {
+    elementType,
+    /** @deprecated Will be removed in next major version */
+    tag,
+    children,
+    ...restProps
+  } = props;
+  const { classProps, props: modifiedProps } = useTagStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
 
-// `${componentClassName}--${size}`;
-const getTagSizeClassname = (className: string, size: TagSize): string => compose(applySize<TagSize>(size))(className);
+  const ElementTag = tag || elementType || 'span';
 
-// `${componentClassName}--${theme}`;
-const getTagThemeClassname = (className: string, theme: TagTheme): string =>
-  compose(applyTheme<TagTheme>(theme))(className);
+  useDeprecatedMessage({
+    trigger: !!tag,
+    componentName: 'Tag',
+    deprecatedPropName: 'tag',
+    newPropName: 'elementType',
+  });
 
-export const Tag = <T extends ElementType = 'span'>(props: SpiritTagProps<T>): JSX.Element => {
-  const { tag: ElementTag = 'span', color, size, theme, children, ...restProps } = props;
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
-  const tagClass = useClassNamePrefix('Tag');
-
-  const classes = classNames(
-    tagClass,
-    getTagColorClassname(tagClass, color as TagColor),
-    getTagSizeClassname(tagClass, size as TagSize),
-    getTagThemeClassname(tagClass, theme as TagTheme),
-    styleProps.className,
-  );
+  useDeprecationMessage({
+    method: 'property',
+    trigger: props?.color === 'default',
+    componentName: 'Tag',
+    propertyProps: {
+      deprecatedValue: 'default',
+      newValue: 'neutral',
+      propertyName: 'color',
+    },
+  });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classes}>
+    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );
