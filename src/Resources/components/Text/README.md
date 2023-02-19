@@ -29,12 +29,12 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                                   | Default   | Required | Description          |
-| ------------- | ------------------------------------------------------ | --------- | -------- | -------------------- |
-| `class`       | `string`                                               | `null`    | no       | Custom CSS class     |
-| `elementType` | `string`                                               | `p`       | no       | HTML tag to render   |
-| `emphasis`    | `regular`, `bold`, `italic`                            | `regular` | no       | Emphasis of the text |
-| `size`        | [Size and Size Extended dictionaries][dictionary-size] | `medium`  | no       | Size of the text     |
+| Prop name     | Type                                        | Default   | Required | Description          |
+| ------------- | ------------------------------------------- | --------- | -------- | -------------------- |
+| `class`       | `string`                                    | `null`    | no       | Custom CSS class     |
+| `elementType` | `string`                                    | `p`       | no       | HTML tag to render   |
+| `emphasis`    | `regular`, `bold`, `italic`                 | `regular` | no       | Emphasis of the text |
+| `size`        | [Size Extended dictionary][dictionary-size] | `medium`  | no       | Size of the text     |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
