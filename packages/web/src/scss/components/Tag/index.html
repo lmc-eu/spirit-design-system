@@ -1,43 +1,22 @@
-{{#> layout/plain }}
+{{#> layout/plain }} {{setVar "colors" "neutral" "success" "informative" "warning" "danger" }} {{setVar "sizes" "xsmall"
+"small" "medium" "large" "xlarge" }}
 
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Variants</h2>
-
-    <div class="mb-400">
-      <span class="Tag Tag--default Tag--light Tag--small mb-400">Default light tag</span>
-      <span class="Tag Tag--informative Tag--light Tag--small mb-400">Informative light tag</span>
-      <span class="Tag Tag--success Tag--light Tag--small mb-400">Success light tag</span>
-      <span class="Tag Tag--warning Tag--light Tag--small mb-400">Warning light tag</span>
-      <span class="Tag Tag--danger Tag--light Tag--small mb-400">Danger light tag</span>
+<section class="docs-Section">
+  <div class="Grid Grid--cols-1 Grid--tablet--cols-3 Grid--desktop--cols-5">
+    {{#each @root.sizes as |size|}}
+    <div class="mb-700">
+      <h3 class="docs-Heading">Size {{size}}</h3>
+      {{#each @root.colors as |color|}}
+      <div class="my-600">
+        <span class="Tag Tag--{{color}} Tag--subtle Tag--{{size}}">Tag {{color}}</span>
+      </div>
+      <div class="my-600">
+        <span class="Tag Tag--{{color}} Tag--{{size}}">Tag {{color}}</span>
+      </div>
+      {{/each}}
     </div>
-
-    <div>
-      <span class="Tag Tag--default Tag--dark Tag--small mb-400">Default dark tag</span>
-      <span class="Tag Tag--informative Tag--dark Tag--small mb-400">Informative dark tag</span>
-      <span class="Tag Tag--success Tag--dark Tag--small mb-400">Success dark tag</span>
-      <span class="Tag Tag--warning Tag--dark Tag--small mb-400">Warning dark tag</span>
-      <span class="Tag Tag--danger Tag--dark Tag--small">Danger dark tag</span>
-    </div>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Sizes</h2>
-
-    <div class="mb-400">
-      <span class="Tag Tag--default Tag--light Tag--xsmall">XSmall tag</span>
-      <span class="Tag Tag--default Tag--dark Tag--xsmall">XSmall tag</span>
-    </div>
-    <div class="mb-400">
-      <span class="Tag Tag--default Tag--light Tag--small">Small tag</span>
-      <span class="Tag Tag--default Tag--dark Tag--small">Small tag</span>
-    </div>
-    <div>
-      <span class="Tag Tag--default Tag--light Tag--medium">Medium tag</span>
-      <span class="Tag Tag--default Tag--dark Tag--medium">Medium tag</span>
-    </div>
-
-  </section>
+    {{/each}}
+  </div>
+</section>
 
 {{/layout/plain }}

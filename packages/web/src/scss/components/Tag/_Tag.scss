@@ -1,7 +1,7 @@
 @use 'sass:map';
+@use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
-@use 'tools';
 
 .Tag {
     @include typography.generate(map.get(theme.$sizes, medium, typography));
@@ -11,14 +11,35 @@
     border-radius: theme.$border-radius;
 }
 
-@each $size, $variables in theme.$sizes {
-    @include tools.size($size, $variables);
-}
+@include dictionaries.generate-sizes('Tag', theme.$sizes);
 
-@each $variant, $themes in theme.$variants {
-    @include tools.variant($variant, $themes);
-}
+@include dictionaries.generate-colors(
+    'Tag',
+    theme.$color-dictionary,
+    theme.$color-dictionary-config,
+    null,
+    theme.$color-dictionary-overrides
+);
 
+@include dictionaries.generate-colors(
+    'Tag--subtle.Tag',
+    theme.$color-dictionary,
+    theme.$subtle-color-dictionary-config,
+    null,
+    theme.$subtle-color-dictionary-overrides
+);
+
+// @deprecated Will be removed in next major version.
+@include dictionaries.generate-colors(
+    'Tag--light.Tag',
+    theme.$color-dictionary,
+    theme.$subtle-color-dictionary-config,
+    null,
+    theme.$subtle-color-dictionary-overrides
+);
+
+.Tag--subtle.Tag--xsmall,
+// @deprecated Will be removed in next major version.
 .Tag--light.Tag--xsmall {
     background-color: transparent;
 }
