@@ -45,7 +45,19 @@ Hidden label:
 </label>
 ```
 
-Error state:
+Danger state:
+
+```html
+<label for="checkboxfield6" class="CheckboxField CheckboxField--danger">
+  <input type="checkbox" id="checkboxfield6" class="CheckboxField__input" checked />
+  <span class="CheckboxField__text">
+    <span class="CheckboxField__label">Checkbox selected</span>
+    <span class="CheckboxField__message">Message</span>
+  </span>
+</label>
+```
+
+Error state (Deprecated):
 
 ```html
 <label for="checkboxfield6" class="CheckboxField CheckboxField--error">
