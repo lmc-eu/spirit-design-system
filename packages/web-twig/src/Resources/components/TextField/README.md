@@ -21,7 +21,7 @@ Default TextField:
   name="example2"
   placeholder="Placeholder"
   type="text"
-  validationState="error"
+  validationState="danger"
 />
 ```
 
@@ -36,7 +36,7 @@ TextField with password toggle (button to reveal the password):
   messsage="validation failed"
   name="example3"
   placeholder="Placeholder"
-  validationState="error"
+  validationState="danger"
 />
 ```
 
@@ -49,7 +49,7 @@ Without lexer:
     label: "Password",
     name: "example",
     isRequired: true,
-    validationState: "error",
+    validationState: "danger",
     message: "validation failed",
 }} %}
 ```
@@ -71,7 +71,7 @@ Without lexer:
 | `placeholder`       | `string`                                                      | `null`  | no       | Input placeholder                                                       |
 | `inputWidth`        | `number`                                                      | `null`  | no       | Input width                                                             |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | `text`  | no       | Input type                                                              |
-| `validationState`   | `success`, `warning`, `error`                                 | `null`  | no       | Type of validation state                                                |
+| `validationState`   | `success`, `warning`, `danger`, `error`                       | `null`  | no       | Type of validation state                                                |
 | `value`             | `string`                                                      | `null`  | no       | Input value                                                             |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
