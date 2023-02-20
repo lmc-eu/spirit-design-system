@@ -49,3 +49,12 @@ export interface SizeProps<S> {
   /** Size of the text */
   size?: S;
 }
+
+export const ValidationStates = {
+  SUCCESS: 'success',
+  WARNING: 'warning',
+  DANGER: 'danger',
+} as const;
+
+export type ValidationStatesKeys = keyof typeof ValidationStates;
+export type ValidationStatesTypes<T> = (typeof ValidationStates)[ValidationStatesKeys] | T;

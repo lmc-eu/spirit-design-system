@@ -1,6 +1,14 @@
 import React, { ComponentType } from 'react';
 import { render, waitFor } from '@testing-library/react';
-import { ActionColor, EmotionColor, SizeExtended, Size, TextColor } from '../../src';
+import {
+  ActionColor,
+  EmotionColor,
+  SizeExtended,
+  Size,
+  TextColor,
+  ValidationStatesTypes,
+  ValidationStates,
+} from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,6 +67,18 @@ export const textColorPropsTest = (Component: ComponentType<any>, prefix: string
     await waitFor(() => {
       const element = getElement(dom, testId);
       expect(element).toHaveClass(`${prefix}${color}`);
+    });
+  });
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const validationStatePropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
+  it.each([Object.values(ValidationStates)])('should have %s validation classname', async (state) => {
+    const dom = render(<Component validationState={state as ValidationStatesTypes<string>} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(`${prefix}${state}`);
     });
   });
 };

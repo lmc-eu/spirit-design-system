@@ -1,6 +1,8 @@
 import type { ChangeEventHandler, KeyboardEventHandler } from 'react';
+import { ValidationStatesTypes } from './dictionaries';
 
-export type ValidationState = 'success' | 'warning' | 'error';
+/* @deprecated: 'error' value will be removed in the next major version. */
+export type ValidationState = ValidationStatesTypes<'error'>;
 
 export interface Validation {
   /** Whether the input should display its "valid" or "invalid" visual styling. */
@@ -47,4 +49,8 @@ export interface InputProps extends InputBase, Validation, ValueBase<string | nu
 export interface TextInputProps extends InputProps, TextInputBase {
   /** Whether the width should be controlled by container */
   isFluid?: boolean;
+}
+
+export interface HelperTextProps {
+  helperText?: string;
 }

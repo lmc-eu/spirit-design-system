@@ -94,10 +94,24 @@
     }
 }
 
-@mixin box-field-variants($field-name) {
+@mixin input-field-validation-states($field-name, $shadow-x: null, $shadow-y: null) {
     @each $variant-name, $variant-value in form-fields-theme.$box-field-variants {
         :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name}) > .#{$field-name}__input {
             border-color: map.get($variant-value, input-border-color);
+
+            @if $field-name == 'CheckboxField' {
+                &:indeterminate,
+                &:checked {
+                    background-color: map.get($variant-value, input-border-color);
+                }
+            }
+
+            @if $field-name == 'RadioField' {
+                &::before {
+                    background-color: map.get($variant-value, input-border-color);
+                    box-shadow: inset $shadow-x $shadow-y map.get($variant-value, input-border-color);
+                }
+            }
         }
 
         @if $field-name == 'TextField' {
@@ -109,9 +123,11 @@
             }
         }
 
-        :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
-            > :is(.#{$field-name}__message, [data-element='validator_message']) {
-            color: map.get($variant-value, message-color);
+        @if $field-name != 'CheckboxField' or $field-name != 'RadioField' {
+            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
+                :is(.#{$field-name}__message, [data-element='validator_message']) {
+                color: map.get($variant-value, message-color);
+            }
         }
     }
 }
@@ -161,4 +177,20 @@
 
 @mixin item-label-checked() {
     @include typography.generate(form-fields-theme.$item-label-checked-typography);
+}
+
+@mixin helper-text() {
+    @include typography.generate(form-fields-theme.$helper-text-typography);
+
+    display: block;
+    margin-top: form-fields-theme.$helper-text-margin-top;
+    color: form-fields-theme.$helper-text-color-default;
+}
+
+@mixin helper-text-disabled() {
+    color: form-fields-theme.$helper-text-color-disabled;
+}
+
+@mixin item-helper-text() {
+    @include typography.generate(form-fields-theme.$item-helper-text-typography);
 }

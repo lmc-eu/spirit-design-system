@@ -4,9 +4,12 @@
 //
 // See: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
+@use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
+
+$_field-name: 'RadioField';
 
 .RadioField {
     @include form-fields-tools.inline-field-root();
@@ -46,20 +49,17 @@
     }
 }
 
-.RadioField__message {
-    @include form-fields-tools.message();
+.RadioField__helperText {
+    @include form-fields-tools.helper-text();
 
     margin-left: form-fields-theme.$spacing;
 }
 
-.RadioField--item .RadioField__message {
-    @include form-fields-tools.item-message();
-}
-
-.RadioField--danger .RadioField__message {
-    /* @deprecated: Replace with '$message-color-danger' after merge with DS-590 */
-    color: form-fields-theme.$message-color-error;
-}
+@include form-fields-tools.input-field-validation-states(
+    $_field-name,
+    theme.$input-box-shadow-x,
+    theme.$input-box-shadow-y
+);
 
 .RadioField__label {
     @include form-fields-tools.inline-field-label();
@@ -83,8 +83,8 @@
     @include form-fields-tools.label-disabled();
 }
 
-.RadioField--disabled .RadioField__message {
-    @include form-fields-tools.message-disabled();
+.RadioField--disabled .RadioField__helperText {
+    @include form-fields-tools.helper-text-disabled();
 }
 
 .RadioField--disabled > .RadioField__input,

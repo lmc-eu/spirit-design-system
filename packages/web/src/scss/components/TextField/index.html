@@ -32,12 +32,12 @@
         data-toggle="password"
       >
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
           </svg>
         </span>
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
           </svg>
         </span>
@@ -58,12 +58,12 @@
         disabled
       >
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
           </svg>
         </span>
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
           </svg>
         </span>
@@ -86,12 +86,12 @@
         data-toggle="password"
       >
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
           </svg>
         </span>
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
           </svg>
         </span>
@@ -114,48 +114,18 @@
         data-toggle="password"
       >
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
           </svg>
         </span>
         <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
           </svg>
         </span>
       </button>
     </div>
-    <div class="TextField__message">Message</div>
-  </div>
-  <!-- Deprecated (#DS-590) -->
-  <div class="TextField TextField--error">
-    <label
-      for="textfieldPasswordErrorMessage"
-      class="TextField__label TextField__label--required"
-    >Password Toggle</label>
-    <div class="TextField__passwordToggle">
-      <input type="password" id="textfieldPasswordErrorMessage" class="TextField__input" value="Error" />
-      <button
-        type="button"
-        class="TextField__passwordToggle__button"
-        role="switch"
-        aria-pressed="false"
-        aria-label="Show password"
-        data-toggle="password"
-      >
-        <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
-          </svg>
-        </span>
-        <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
-          </svg>
-        </span>
-      </button>
-    </div>
-    <div class="TextField__message">Message</div>
+    <div class="TextField__message">Validation message</div>
   </div>
   <div class="TextField">
     <label for="textfieldEmail" class="TextField__label TextField__label--required">E-mail</label>
@@ -183,31 +153,20 @@
     <label for="textfieldDanger" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldDanger" class="TextField__input" placeholder="Placeholder" value="Filled" />
   </div>
-  <!-- Deprecated (#DS-590) -->
-  <div class="TextField TextField--error">
-    <label for="textfieldError" class="TextField__label TextField__label--required">Label</label>
-    <input type="text" id="textfieldError" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  </div>
   <div class="TextField TextField--danger">
     <label for="textfieldDangerMessage" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldDangerMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
-    <div class="TextField__message">Message</div>
-  </div>
-  <!-- Deprecated (#DS-590) -->
-  <div class="TextField TextField--error">
-    <label for="textfieldErrorMessage" class="TextField__label TextField__label--required">Label</label>
-    <input type="text" id="textfieldErrorMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
-    <div class="TextField__message">Message</div>
+    <div class="TextField__message">Validation message</div>
   </div>
   <div class="TextField TextField--success">
     <label for="textfieldSuccess" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldSuccess" class="TextField__input" placeholder="Placeholder" value="Filled" />
-    <div class="TextField__message">Message</div>
+    <div class="TextField__message">Validation message</div>
   </div>
   <div class="TextField TextField--warning">
     <label for="textfieldWarning" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldWarning" class="TextField__input" placeholder="Placeholder" value="Filled" />
-    <div class="TextField__message">Message</div>
+    <div class="TextField__message">Validation message</div>
   </div>
   <div class="TextField TextField--disabled">
     <label for="textfielDisabled" class="TextField__label TextField__label--required">Label</label>
@@ -260,21 +219,6 @@
     </div>
     <button type="button" class="Button Button--primary Button--medium">Button</button>
   </div>
-  <!-- Deprecated (#DS-590) -->
-  <div style="display: flex; align-items: start; gap: 1rem">
-    <div class="TextField TextField--error">
-      <label for="textfieldInlineErrorHiddenLabel" class="TextField__label TextField__label--hidden">Hidden Label</label>
-      <input
-        type="text"
-        id="textfieldInlineErrorHiddenLabel"
-        class="TextField__input"
-        placeholder="Placeholder"
-        value="Filled"
-      />
-      <div class="TextField__message">Message</div>
-    </div>
-    <button type="button" class="Button Button--primary Button--medium">Button</button>
-  </div>
 
   <div style="display: flex; gap: 1rem">
     <div class="TextField">
@@ -294,12 +238,12 @@
           data-toggle="password"
         >
           <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
             </svg>
           </span>
           <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
             </svg>
           </span>

@@ -5,25 +5,25 @@ and an optional message. It could be disabled or have an error state. The label 
 and show if the textarea is required.
 
 ```jsx
-<TextArea id="example" name="example" validationState="error" message="validation failed" isRequired />
+<TextArea id="example" name="example" validationState="danger" message="validation failed" isRequired />
 ```
 
 ## Available props
 
-| Name              | Type                          | Description                       |
-| ----------------- | ----------------------------- | --------------------------------- |
-| `id`              | string                        | Textarea and label identification |
-| `name`            | string                        | Textarea name                     |
-| `label`           | string                        | Label text                        |
-| `placeholder`     | string                        | Textarea placeholder              |
-| `value`           | string                        | Textarea value                    |
-| `maxLength`       | number                        | Maximum number of characters      |
-| `message`         | string                        | Validation or help message        |
-| `rows`            | number                        | Number of visible rows            |
-| `validationState` | `success`, `warning`, `error` | Type of validation state          |
-| `isDisabled`      | boolean                       | Whether is field disabled         |
-| `isRequired`      | boolean                       | Whether is field required         |
-| `isLabelHidden`   | boolean                       | Whether is label hidden           |
+| Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
+| ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `id`              | string                                                               | -       | yes      | Textarea and label identification                                                                                                  |
+| `name`            | string                                                               | -       | no       | Textarea name                                                                                                                      |
+| `label`           | string                                                               | -       | no       | Label text                                                                                                                         |
+| `placeholder`     | string                                                               | -       | no       | Textarea placeholder                                                                                                               |
+| `value`           | string                                                               | -       | no       | Textarea value                                                                                                                     |
+| `maxLength`       | number                                                               | -       | no       | Maximum number of characters                                                                                                       |
+| `message`         | string                                                               | -       | no       | Validation or help message                                                                                                         |
+| `rows`            | number                                                               | -       | no       | Number of visible rows                                                                                                             |
+| `validationState` | [Validation dictionary][dictionary-validation], `error` (deprecated) | -       | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
+| `isDisabled`      | boolean                                                              | -       | no       | Whether is field disabled                                                                                                          |
+| `isRequired`      | boolean                                                              | -       | no       | Whether is field required                                                                                                          |
+| `isLabelHidden`   | boolean                                                              | -       | no       | Whether is label hidden                                                                                                            |
 
 ## Custom component
 
@@ -45,3 +45,6 @@ const CustomTextArea = (props: SpiritTextAreaProps): JSX.Element => {
 ```
 
 For detailed information see [TextArea](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/TextArea/README.md) component.
+
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

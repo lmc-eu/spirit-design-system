@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { SpiritRadioFieldProps } from '../../../types';
+import { SpiritRadioFieldProps, ValidationStates } from '../../../types';
 import { useRadioFieldStyleProps } from '../useRadioFieldStyleProps';
 
 describe('useRadioFieldStyleProps', () => {
@@ -9,8 +9,10 @@ describe('useRadioFieldStyleProps', () => {
 
     expect(result.current.classProps).toEqual({
       root: 'RadioField',
+      text: 'RadioField__text',
       input: 'RadioField__input',
       label: 'RadioField__label',
+      helperText: 'RadioField__helperText',
     });
   });
 
@@ -33,5 +35,12 @@ describe('useRadioFieldStyleProps', () => {
     const { result } = renderHook(() => useRadioFieldStyleProps(props));
 
     expect(result.current.classProps.root).toBe('RadioField RadioField--item');
+  });
+
+  it.each([Object.values(ValidationStates)])('should return field with %s', (state) => {
+    const props = { validationState: state } as SpiritRadioFieldProps;
+    const { result } = renderHook(() => useRadioFieldStyleProps(props));
+
+    expect(result.current.classProps.root).toBe(`RadioField RadioField--${state}`);
   });
 });

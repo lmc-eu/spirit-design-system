@@ -134,7 +134,9 @@ forget to change not only the input type but also `aria-pressed` and
 Validation states can be presented either by adding a CSS modifier class
 (`TextField--success`, `TextField--warning`, `TextField--danger`, `TextField--error`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
-`has-warning`, `has-error`).
+`has-warning`, `has-danger`, `has-error`). See Validation state [dictionary][dictionary-validation].
+
+[**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger".
 
 ```html
 <div class="TextField TextField--danger">
@@ -144,26 +146,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   <input type="text" id="textfield-validation-1" class="TextField__input" placeholder="Placeholder" value="Filled" />
   <div class="TextField__message">Error message</div>
 </div>
-<div class="TextField has-error">
-  <label for="textfield-validation-2" class="TextField__label TextField__label--required">
-    Label of input with error
-  </label>
-  <input type="text" id="textfield-validation-2" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  <div class="TextField__message">Error message</div>
-</div>
-```
-
-### Deprecated usage
-
-```html
-<div class="TextField TextField--error">
-  <label for="textfield-validation-1" class="TextField__label TextField__label--required">
-    Label of input with error
-  </label>
-  <input type="text" id="textfield-validation-1" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  <div class="TextField__message">Error message</div>
-</div>
-<div class="TextField has-error">
+<div class="TextField has-danger">
   <label for="textfield-validation-2" class="TextField__label TextField__label--required">
     Label of input with error
   </label>
@@ -175,16 +158,18 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 ### JavaScript-Controlled Validation Message
 
 When implementing client-side form validation, use JS interaction state classes
-(`has-success`, `has-warning`, `has-error`) on the wrapping `<div>` element and
+(`has-success`, `has-warning`, `has-danger`, `has-error`) on the wrapping `<div>` element and
 render validation messages in a `<div>` with `data-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
+
+[**DEPRECATED**][deprecated] The value "has-error" in the dictionary will be replaced by the value "has-danger".
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<div class="TextField has-error">
+<div class="TextField has-danger">
   <label for="textfield-js-validation" class="TextField__label TextField__label--required">
     Label of input with error
   </label>
@@ -213,3 +198,5 @@ JS interaction class when controlled by JavaScript:
 ```
 
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
