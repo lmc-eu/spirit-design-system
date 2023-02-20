@@ -1,13 +1,24 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritCheckboxFieldProps } from '../../types';
 import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 
 export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
-  const { id, label, message, value, isDisabled, isRequired, isChecked, ...restProps } = modifiedProps;
+  const { id, label, message, helperText, value, isDisabled, isRequired, isChecked, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecationMessage({
+    method: 'property',
+    trigger: props?.validationState === 'error',
+    componentName: 'CheckboxField',
+    propertyProps: {
+      deprecatedValue: 'error',
+      newValue: 'danger',
+      propertyName: 'validationState',
+    },
+  });
 
   return (
     <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
@@ -23,6 +34,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
       />
       <span className={classProps.text}>
         <span className={classProps.label}>{label}</span>
+        {helperText && <span className={classProps.helperText}>{helperText}</span>}
         {message && <span className={classProps.message}>{message}</span>}
       </span>
     </label>

@@ -39,9 +39,14 @@ export interface UseDeprecationMessageProps {
     delete?: boolean;
   };
   propertyProps?: {
+    // Use for property name
     deprecatedName?: string;
     newName?: string;
     delete?: boolean;
+    // Use for property value
+    deprecatedValue?: string;
+    newValue?: string;
+    propertyName?: string;
   };
 }
 
@@ -54,6 +59,7 @@ export const useDeprecationMessage = ({
 }: UseDeprecationMessageProps) => {
   let message: string;
   let hasProps: boolean;
+  const messageBase = `Deprecation warning (${componentName}):`;
 
   useEffect(() => {
     const isExecutable = trigger && componentName && process.env.NODE_ENV === 'development';
@@ -61,9 +67,11 @@ export const useDeprecationMessage = ({
     switch (method) {
       case 'property':
         if (propertyProps?.delete) {
-          message = `Deprecation warning (${componentName}): "${propertyProps?.deprecatedName}" property will be deleted in next major version..️️`;
+          message = `${messageBase} "${propertyProps?.deprecatedName}" property will be deleted in the next major version..️️`;
+        } else if (propertyProps?.deprecatedValue && propertyProps?.newValue && propertyProps?.propertyName) {
+          message = `${messageBase} The "${propertyProps?.deprecatedValue}" value for "${propertyProps?.propertyName}" property will be renamed to "${propertyProps?.newValue}" in the next major version.`;
         } else {
-          message = `Deprecation warning (${componentName}): "${propertyProps?.deprecatedName}" property will be replaced in next major version. Please use "${propertyProps?.newName}" instead. ♻️️`;
+          message = `${messageBase} "${propertyProps?.deprecatedName}" property will be replaced in the next major version. Please use "${propertyProps?.newName}" instead. ♻️️`;
         }
         hasProps = !!propertyProps;
         break;
@@ -71,9 +79,9 @@ export const useDeprecationMessage = ({
       case 'component':
       default:
         if (componentProps?.delete) {
-          message = `Deprecation warning (${componentName}): The component and its sub components will be deleted in next major version.`;
+          message = `${messageBase} The component and its subcomponents will be deleted in the next major version.`;
         } else {
-          message = `Deprecation warning (${componentName}): The component and its sub components will be renamed to "${componentProps?.newName}" in next major version.`;
+          message = `${messageBase} The component and its subcomponents will be renamed to "${componentProps?.newName}" in the next major version.`;
         }
         hasProps = !!componentProps;
         break;

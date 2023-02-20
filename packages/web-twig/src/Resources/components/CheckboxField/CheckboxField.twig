@@ -12,6 +12,7 @@
 {%- set _name = props.name | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 
 {# Class names #}
 {%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
@@ -24,6 +25,7 @@
 {%- set _rootItemClassName = _isItem ? _spiritClassPrefix ~ 'CheckboxField--item' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'CheckboxField--' ~ _validationState : null -%}
 {%- set _textClassName = _spiritClassPrefix ~ 'CheckboxField__text' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'CheckboxField__helperText' -%}
 
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
@@ -35,6 +37,11 @@
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+{# Deprecations #}
+{% if _validationState === 'error' %}
+    {% deprecated 'CheckboxField: The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.'️️️ %}
+{% endif %}
 
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
     <input
@@ -50,6 +57,7 @@
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText | raw }}</span>{% endif %}
         {% if _message %}<span class="{{ _messageClassName }}">{{ _message | raw }}</span>{% endif %}
     </span>
 </label>

@@ -11,7 +11,7 @@
     <input type="checkbox" id="checkboxfield2" class="CheckboxField__input" />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label">Checkbox unselected</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield3" class="CheckboxField CheckboxField--disabled">
@@ -24,7 +24,7 @@
     <input type="checkbox" id="checkboxfield4" class="CheckboxField__input" disabled />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label">Checkbox unselected</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield5" class="CheckboxField">
@@ -33,19 +33,11 @@
       <span class="CheckboxField__label">Checkbox selected</span>
     </span>
   </label>
-  <label for="checkboxfield6" class="CheckboxField CheckboxField--danger">
+  <label for="checkboxfield6" class="CheckboxField">
     <input type="checkbox" id="checkboxfield6" class="CheckboxField__input" checked />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label">Checkbox selected</span>
-      <span class="CheckboxField__message">Message</span>
-    </span>
-  </label>
-  <!-- Deprecated (#DS-590) -->
-  <label for="checkboxfield6_1" class="CheckboxField CheckboxField--error">
-    <input type="checkbox" id="checkboxfield6_1" class="CheckboxField__input" checked />
-    <span class="CheckboxField__text">
-      <span class="CheckboxField__label">Checkbox selected</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield7" class="CheckboxField CheckboxField--disabled">
@@ -58,7 +50,7 @@
     <input type="checkbox" id="checkboxfield8" class="CheckboxField__input" checked disabled />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label">Checkbox selected</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield9" class="CheckboxField">
@@ -73,26 +65,11 @@
       <span class="CheckboxField__label CheckboxField__label--hidden">Label Hidden</span>
     </span>
   </label>
-  <label for="checkboxfield11" class="CheckboxField CheckboxField--danger">
-    <input type="checkbox" id="checkboxfield11" class="CheckboxField__input" value="Filled" checked />
-    <span class="CheckboxField__text">
-      <span class="CheckboxField__label CheckboxField__label--required">Label of input with error</span>
-      <span class="CheckboxField__message">Error message</span>
-    </span>
-  </label>
-  <!-- Deprecated (#DS-590) -->
-  <label for="checkboxfield11_1" class="CheckboxField CheckboxField--error">
-    <input type="checkbox" id="checkboxfield11_1" class="CheckboxField__input" value="Filled" checked />
-    <span class="CheckboxField__text">
-      <span class="CheckboxField__label CheckboxField__label--required">Label of input with error</span>
-      <span class="CheckboxField__message">Error message</span>
-    </span>
-  </label>
   <label for="checkboxfield12" class="CheckboxField CheckboxField--disabled">
     <input type="checkbox" id="checkboxfield12" class="CheckboxField__input" disabled />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label CheckboxField__label--required">Label of disabled input</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield13" class="CheckboxField">
@@ -101,7 +78,7 @@
       <span class="CheckboxField__label CheckboxField__label--required">
         Souhlasím, aby mi provozovatel jobs.cz (LMC s.r.o.) pomáhal k nalezení lepší práce a osobnímu rozvoji
       </span>
-      <span class="CheckboxField__message"><a href="#">Zobrazit více</a></span>
+      <span class="CheckboxField__helperText"><a href="#">Zobrazit více</a></span>
     </span>
   </label>
   <label for="checkboxfield14" class="CheckboxField">
@@ -110,19 +87,35 @@
       <span class="CheckboxField__label">Label of input with indeterminate</span>
     </span>
   </label>
-  <label for="checkboxfield15" class="CheckboxField CheckboxField--danger">
-    <input type="checkbox" id="checkboxfield15" class="CheckboxField__input" />
+  <label for="checkboxfield15_5" class="CheckboxField CheckboxField--danger">
+    <input type="checkbox" id="checkboxfield15_5" class="CheckboxField__input" value="Filled" />
     <span class="CheckboxField__text">
-      <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__label CheckboxField__label--required">Label of input with danger</span>
+      <span class="CheckboxField__message">Warning validation message</span>
     </span>
   </label>
-  <!-- Deprecated (#DS-590) -->
-  <label for="checkboxfield15_1" class="CheckboxField CheckboxField--error">
-    <input type="checkbox" id="checkboxfield15_1" class="CheckboxField__input" />
+  <label for="checkboxfield15" class="CheckboxField CheckboxField--danger">
+    <input type="checkbox" id="checkboxfield15" class="CheckboxField__input" value="Filled" />
     <span class="CheckboxField__text">
-      <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__label">Label of input with danger</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Danger validation message</span>
+    </span>
+  </label>
+  <label for="checkboxfield15_2" class="CheckboxField CheckboxField--success">
+    <input type="checkbox" id="checkboxfield15_2" class="CheckboxField__input" value="Filled" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label">Label of input with success</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Success validation message</span>
+    </span>
+  </label>
+  <label for="checkboxfield15_3" class="CheckboxField CheckboxField--warning">
+    <input type="checkbox" id="checkboxfield15_3" class="CheckboxField__input" value="Filled" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label">Label of input with warning</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Warning validation message</span>
     </span>
   </label>
   <label for="checkboxfield16" class="CheckboxField CheckboxField--disabled">
@@ -135,7 +128,7 @@
     <input type="checkbox" id="checkboxfield17" class="CheckboxField__input" disabled />
     <span class="CheckboxField__text">
       <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield18" class="CheckboxField CheckboxField--item">
@@ -153,15 +146,39 @@
   <label for="checkboxfield20" class="CheckboxField CheckboxField--item">
     <input type="checkbox" id="checkboxfield20" class="CheckboxField__input" />
     <span class="CheckboxField__text">
-      <span class="CheckboxField__label">Checkbox Item with message</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__label">Checkbox Item with helper text</span>
+      <span class="CheckboxField__helperText">Helper text</span>
     </span>
   </label>
   <label for="checkboxfield21" class="CheckboxField CheckboxField--item">
     <input type="checkbox" id="checkboxfield21" class="CheckboxField__input" checked />
     <span class="CheckboxField__text">
-      <span class="CheckboxField__label">Checkbox Item with message checked</span>
-      <span class="CheckboxField__message">Message</span>
+      <span class="CheckboxField__label">Checkbox Item with helper text checked</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+    </span>
+  </label>
+  <label for="checkboxfield11" class="CheckboxField CheckboxField--item CheckboxField--danger">
+    <input type="checkbox" id="checkboxfield11" class="CheckboxField__input" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label CheckboxField__label--required">Label of item with danger</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Danger validation message</span>
+    </span>
+  </label>
+  <label for="checkboxfield11_2" class="CheckboxField CheckboxField--item CheckboxField--success">
+    <input type="checkbox" id="checkboxfield11_2" class="CheckboxField__input" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label CheckboxField__label--required">Label of item with success</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Success validation message</span>
+    </span>
+  </label>
+  <label for="checkboxfield11_3" class="CheckboxField CheckboxField--item CheckboxField--warning">
+    <input type="checkbox" id="checkboxfield11_3" class="CheckboxField__input" />
+    <span class="CheckboxField__text">
+      <span class="CheckboxField__label CheckboxField__label--required">Label of item with warning</span>
+      <span class="CheckboxField__helperText">Helper text</span>
+      <span class="CheckboxField__message">Warning validation message</span>
     </span>
   </label>
 </div>

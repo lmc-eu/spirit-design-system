@@ -4,7 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { ValidationState } from '../../../types';
+import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import TextArea from '../TextArea';
 
 describe('TextArea', () => {
@@ -13,6 +13,8 @@ describe('TextArea', () => {
   stylePropsTest(TextArea);
 
   restPropsTest(TextArea, 'textarea');
+
+  validationStatePropsTest(TextArea, 'TextArea--');
 
   it('should have label classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);
@@ -54,12 +56,5 @@ describe('TextArea', () => {
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('TextArea--fluid');
-  });
-
-  it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
-    const dom = render(<TextArea id="textarea" label="Label" validationState={validationState as ValidationState} />);
-
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass(`TextArea--${validationState}`);
   });
 });

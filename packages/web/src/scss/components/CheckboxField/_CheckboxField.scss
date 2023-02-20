@@ -1,7 +1,10 @@
+@use 'sass:map';
 @use 'theme';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/svg';
+
+$_field-name: 'CheckboxField';
 
 .CheckboxField {
     @include form-fields-tools.inline-field-root();
@@ -52,14 +55,11 @@
     @include form-fields-tools.message();
 }
 
-.CheckboxField--danger .CheckboxField__message {
-    color: form-fields-theme.$message-color-danger;
+.CheckboxField__helperText {
+    @include form-fields-tools.helper-text();
 }
 
-// Deprecated (#DS-590)
-.CheckboxField--error .CheckboxField__message {
-    color: form-fields-theme.$message-color-error;
-}
+@include form-fields-tools.input-field-validation-states($_field-name);
 
 .CheckboxField--disabled {
     @include form-fields-tools.inline-field-root-disabled();
@@ -71,6 +71,10 @@
 
 .CheckboxField--disabled .CheckboxField__message {
     @include form-fields-tools.message-disabled();
+}
+
+.CheckboxField--disabled .CheckboxField__helperText {
+    @include form-fields-tools.helper-text-disabled();
 }
 
 .CheckboxField--disabled > .CheckboxField__input,
@@ -102,7 +106,13 @@
     @include form-fields-tools.item-message();
 }
 
+.CheckboxField--item .CheckboxField__helperText {
+    @include form-fields-tools.item-helper-text();
+}
+
 .CheckboxField--item:hover .CheckboxField__message,
-.CheckboxField--item:active .CheckboxField__message {
+.CheckboxField--item:active .CheckboxField__message,
+.CheckboxField--item:hover .CheckboxField__helperText,
+.CheckboxField--item:active .CheckboxField__helperText {
     color: inherit;
 }

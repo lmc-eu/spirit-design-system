@@ -56,26 +56,28 @@ Without lexer:
 
 ## API
 
-| Prop name           | Type                                                          | Default | Required | Description                                                             |
-| ------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `class`             | `string`                                                      | `null`  | no       | Custom CSS class                                                        |
-| `hasPasswordToggle` | `bool`                                                        | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown |
-| `id`                | `string`                                                      | —       | yes      | Input and label identification                                          |
-| `isDisabled`        | `bool`                                                        | `false` | no       | If true, input is disabled                                              |
-| `isFluid`           | `bool`                                                        | `false` | no       | If true, the element spans to the full width of its parent              |
-| `isLabelHidden`     | `bool`                                                        | `false` | no       | If true, label is hidden                                                |
-| `isRequired`        | `bool`                                                        | `false` | no       | If true, input is required                                              |
-| `label`             | `string`                                                      | —       | yes      | Label text                                                              |
-| `message`           | `string`                                                      | `null`  | no       | Validation or help message                                              |
-| `name`              | `string`                                                      | `null`  | no       | Input name                                                              |
-| `placeholder`       | `string`                                                      | `null`  | no       | Input placeholder                                                       |
-| `inputWidth`        | `number`                                                      | `null`  | no       | Input width                                                             |
-| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | `text`  | no       | Input type                                                              |
-| `validationState`   | `success`, `warning`, `danger`, `error`                       | `null`  | no       | Type of validation state                                                |
-| `value`             | `string`                                                      | `null`  | no       | Input value                                                             |
+| Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
+| ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `class`             | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
+| `hasPasswordToggle` | `bool`                                                               | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown                                                            |
+| `id`                | `string`                                                             | —       | yes      | Input and label identification                                                                                                     |
+| `isDisabled`        | `bool`                                                               | `false` | no       | If true, input is disabled                                                                                                         |
+| `isFluid`           | `bool`                                                               | `false` | no       | If true, the element spans to the full width of its parent                                                                         |
+| `isLabelHidden`     | `bool`                                                               | `false` | no       | If true, label is hidden                                                                                                           |
+| `isRequired`        | `bool`                                                               | `false` | no       | If true, input is required                                                                                                         |
+| `label`             | `string`                                                             | —       | yes      | Label text                                                                                                                         |
+| `message`           | `string`                                                             | `null`  | no       | Validation or help message                                                                                                         |
+| `name`              | `string`                                                             | `null`  | no       | Input name                                                                                                                         |
+| `placeholder`       | `string`                                                             | `null`  | no       | Input placeholder                                                                                                                  |
+| `inputWidth`        | `number`                                                             | `null`  | no       | Input width                                                                                                                        |
+| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url`        | `text`  | no       | Input type                                                                                                                         |
+| `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
+| `value`             | `string`                                                             | `null`  | no       | Input value                                                                                                                        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
 will be passed to the topmost HTML element of the component.
 
 [textfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations

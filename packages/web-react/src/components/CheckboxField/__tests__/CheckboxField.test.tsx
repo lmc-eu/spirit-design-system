@@ -5,6 +5,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import CheckboxField from '../CheckboxField';
 
 describe('CheckboxField', () => {
@@ -15,6 +16,8 @@ describe('CheckboxField', () => {
   stylePropsTest(CheckboxField);
 
   restPropsTest(CheckboxField, 'input');
+
+  validationStatePropsTest(CheckboxField, 'CheckboxField--');
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" />);
@@ -51,17 +54,17 @@ describe('CheckboxField', () => {
     expect(element).toHaveClass('CheckboxField__input');
   });
 
-  it('should have message', () => {
+  it('should have helper text', () => {
+    const dom = render(<CheckboxField id="checkbox" label="Label" helperText="text" />);
+
+    const element = dom.container.querySelector('.CheckboxField__helperText') as HTMLElement;
+    expect(element.textContent).toBe('text');
+  });
+
+  it('should have validation message', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" message="text" />);
 
     const element = dom.container.querySelector('.CheckboxField__message') as HTMLElement;
     expect(element.textContent).toBe('text');
-  });
-
-  it('should have error classname', () => {
-    const dom = render(<CheckboxField id="checkbox" label="Label" validationState="error" />);
-
-    const element = dom.container.querySelector('label') as HTMLElement;
-    expect(element).toHaveClass('CheckboxField--error');
   });
 });

@@ -6,28 +6,28 @@ label, and an optional message. It supports several input types like `text` or
 hidden or show if the input is required.
 
 ```jsx
-<TextField id="example-text" name="example" validationState="error" message="validation failed" isRequired />
-<TextField id="example-password" type="password" name="example" validationState="error" message="validation failed" isRequired />
-<TextField id="example-password-toggle" name="example" validationState="error" message="validation failed" hasPasswordToggle isRequired />
+<TextField id="example-text" name="example" validationState="danger" message="validation failed" isRequired />
+<TextField id="example-password" type="password" name="example" validationState="danger" message="validation failed" isRequired />
+<TextField id="example-password-toggle" name="example" validationState="danger" message="validation failed" hasPasswordToggle isRequired />
 ```
 
 ## Available props
 
-| Name                | Type                                                          | Description                                                             |
-| ------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `hasPasswordToggle` | boolean                                                       | If true, the `type` is set to `password` and a password toggle is shown |
-| `id`                | string                                                        | Input and label identification                                          |
-| `inputWidth`        | number                                                        | Input width                                                             |
-| `isDisabled`        | boolean                                                       | Whether is field disabled                                               |
-| `isLabelHidden`     | boolean                                                       | Whether is label hidden                                                 |
-| `isRequired`        | boolean                                                       | Whether is field required                                               |
-| `label`             | string                                                        | Label text                                                              |
-| `message`           | string                                                        | Validation or help message                                              |
-| `name`              | string                                                        | Input name                                                              |
-| `placeholder`       | string                                                        | Input placeholder                                                       |
-| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | Input type                                                              |
-| `validationState`   | `success`, `warning`, `error`                                 | Type of validation state                                                |
-| `value`             | string                                                        | Input value                                                             |
+| Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
+| ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `hasPasswordToggle` | boolean                                                              | -       | yes      | If true, the `type` is set to `password` and a password toggle is shown                                                            |
+| `id`                | string                                                               | -       | no       | Input and label identification                                                                                                     |
+| `inputWidth`        | number                                                               | -       | no       | Input width                                                                                                                        |
+| `isDisabled`        | boolean                                                              | -       | no       | Whether is field disabled                                                                                                          |
+| `isLabelHidden`     | boolean                                                              | -       | no       | Whether is label hidden                                                                                                            |
+| `isRequired`        | boolean                                                              | -       | no       | Whether is field required                                                                                                          |
+| `label`             | string                                                               | -       | no       | Label text                                                                                                                         |
+| `message`           | string                                                               | -       | no       | Validation or help message                                                                                                         |
+| `name`              | string                                                               | -       | no       | Input name                                                                                                                         |
+| `placeholder`       | string                                                               | -       | no       | Input placeholder                                                                                                                  |
+| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url`        | -       | no       | Input type                                                                                                                         |
+| `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | -       | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
+| `value`             | string                                                               | -       | no       | Input value                                                                                                                        |
 
 ## Custom component
 
@@ -49,3 +49,6 @@ const CustomTextField = (props: SpiritTextFieldProps): JSX.Element => {
 ```
 
 For detailed information see [TextField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/TextField/README.md) component.
+
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

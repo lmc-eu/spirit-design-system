@@ -4,7 +4,8 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { TextFieldType, ValidationState } from '../../../types';
+import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
 
 describe('TextField', () => {
@@ -14,6 +15,8 @@ describe('TextField', () => {
     stylePropsTest(TextField);
 
     restPropsTest(TextField, 'input');
+
+    validationStatePropsTest(TextField, 'TextField--');
 
     it('should have label classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
@@ -104,20 +107,6 @@ describe('TextField', () => {
 
       const element = dom.container.querySelector('div') as HTMLElement;
       expect(element).toHaveClass('TextField--fluid');
-    });
-
-    it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
-      const dom = render(
-        <TextField
-          id="textfield"
-          label="Label"
-          type={type as TextFieldType}
-          validationState={validationState as ValidationState}
-        />,
-      );
-
-      const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`TextField--${validationState}`);
     });
   });
 });

@@ -73,7 +73,9 @@ modifier to fill the available space.
 Validation states can be presented either by adding a CSS modifier class
 (`TextArea--success`, `TextArea--warning`, `TextArea--danger`, `TextArea--error`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
-`has-warning`, `has-error`).
+`has-warning`, `has-danger`, `has-error`). See Validation state [dictionary][dictionary-validation].
+
+[**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger".
 
 ```html
 <div class="TextArea TextArea--danger">
@@ -83,26 +85,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
   <textarea id="TextAreaValidation1" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
   <div class="TextArea__message">Error message</div>
 </div>
-<div class="TextArea has-error">
-  <label for="TextAreaValidation2" class="TextArea__label TextArea__label--required">
-    Label of textarea with error
-  </label>
-  <textarea id="TextAreaValidation2" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
-  <div class="TextArea__message">Error message</div>
-</div>
-```
-
-### Deprecated usage
-
-```html
-<div class="TextArea TextArea--error">
-  <label for="TextAreaValidation1" class="TextArea__label TextArea__label--required">
-    Label of textarea with error
-  </label>
-  <textarea id="TextAreaValidation1" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
-  <div class="TextArea__message">Error message</div>
-</div>
-<div class="TextArea has-error">
+<div class="TextArea has-danger">
   <label for="TextAreaValidation2" class="TextArea__label TextArea__label--required">
     Label of textarea with error
   </label>
@@ -114,16 +97,18 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 ### JavaScript-Controlled Validation Message
 
 When implementing client-side form validation, use JS interaction state classes
-(`has-success`, `has-warning`, `has-error`) on the wrapping `<div>` element and
+(`has-success`, `has-warning`, `has-danger`, `has-error`) on the wrapping `<div>` element and
 render validation messages in a `<div>` with `data-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
+
+[**DEPRECATED**][deprecated] The value "has-error" in the dictionary will be replaced by the value "has-danger".
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
-<div class="TextArea has-error">
+<div class="TextArea has-danger">
   <label for="TextAreaJSValidation1" class="TextArea__label TextArea__label--required">
     Label of textarea with error
   </label>
@@ -152,3 +137,5 @@ JS interaction class when controlled by JavaScript:
 ```
 
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
