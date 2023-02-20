@@ -73,7 +73,7 @@ modifier to fill the available space.
 Validation states can be presented either by adding a CSS modifier class
 (`TextArea--success`, `TextArea--warning`, `TextArea--danger`, `TextArea--error`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
-`has-warning`, `has-error`).
+`has-warning`, `has-danger`, `has-error`).
 
 ```html
 <div class="TextArea TextArea--danger">
@@ -114,13 +114,25 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 ### JavaScript-Controlled Validation Message
 
 When implementing client-side form validation, use JS interaction state classes
-(`has-success`, `has-warning`, `has-error`) on the wrapping `<div>` element and
+(`has-success`, `has-warning`, `has-danger`, `has-error`) on the wrapping `<div>` element and
 render validation messages in a `<div>` with `data-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**
+
+```html
+<div class="TextArea has-danger">
+  <label for="TextAreaJSValidation1" class="TextArea__label TextArea__label--required">
+    Label of textarea with error
+  </label>
+  <textarea id="TextAreaJSValidation1" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
+  <div data-element="validator_message">Error message inserted by JS</div>
+</div>
+```
+
+### Deprecated usage
 
 ```html
 <div class="TextArea has-error">

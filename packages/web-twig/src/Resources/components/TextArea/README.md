@@ -41,25 +41,26 @@ Without lexer:
 
 ## API
 
-| Prop name         | Type                                    | Default | Required | Description                                                |
-| ----------------- | --------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
-| `class`           | `string`                                | `null`  | no       | Custom CSS class                                           |
-| `id`              | `string`                                | —       | yes      | TextArea and label identification                          |
-| `isDisabled`      | `bool`                                  | `false` | no       | If true, TextArea is disabled                              |
-| `isFluid`         | `bool`                                  | `false` | no       | If true, the element spans to the full width of its parent |
-| `isLabelHidden`   | `bool`                                  | `false` | no       | If true, label is hidden                                   |
-| `isRequired`      | `bool`                                  | `false` | no       | If true, TextArea is required                              |
-| `label`           | `string`                                | —       | yes      | Label text                                                 |
-| `maxLength`       | `number`                                | `null`  | no       | Maximum number of characters                               |
-| `message`         | `string`                                | `null`  | no       | Validation or help message                                 |
-| `name`            | `string`                                | `null`  | no       | TextArea name                                              |
-| `placeholder`     | `string`                                | `null`  | no       | TextArea placeholder                                       |
-| `rows`            | `number`                                | `null`  | no       | Number of visible rows                                     |
-| `validationState` | `success`, `warning`, `danger`, `error` | `null`  | no       | Type of validation state                                   |
-| `value`           | `string`                                | `null`  | no       | TextArea value                                             |
+| Prop name         | Type                                                | Default | Required | Description                                                                                                                                |
+| ----------------- | --------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `class`           | `string`                                            | `null`  | no       | Custom CSS class                                                                                                                           |
+| `id`              | `string`                                            | —       | yes      | TextArea and label identification                                                                                                          |
+| `isDisabled`      | `bool`                                              | `false` | no       | If true, TextArea is disabled                                                                                                              |
+| `isFluid`         | `bool`                                              | `false` | no       | If true, the element spans to the full width of its parent                                                                                 |
+| `isLabelHidden`   | `bool`                                              | `false` | no       | If true, label is hidden                                                                                                                   |
+| `isRequired`      | `bool`                                              | `false` | no       | If true, TextArea is required                                                                                                              |
+| `label`           | `string`                                            | —       | yes      | Label text                                                                                                                                 |
+| `maxLength`       | `number`                                            | `null`  | no       | Maximum number of characters                                                                                                               |
+| `message`         | `string`                                            | `null`  | no       | Validation or help message                                                                                                                 |
+| `name`            | `string`                                            | `null`  | no       | TextArea name                                                                                                                              |
+| `placeholder`     | `string`                                            | `null`  | no       | TextArea placeholder                                                                                                                       |
+| `rows`            | `number`                                            | `null`  | no       | Number of visible rows                                                                                                                     |
+| `validationState` | `success`, `warning`, `danger`, `error(deprecated)` | `null`  | no       | Type of validation state. See Validation state [dictionaries]. The value "error" in the dictionary will be replaced by the value "danger". |
+| `value`           | `string`                                            | `null`  | no       | TextArea value                                                                                                                             |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
 will be passed to the topmost HTML element of the component.
 
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
+[dictionaries]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md

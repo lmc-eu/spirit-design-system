@@ -11,6 +11,7 @@ This project uses `dictionaries` to unify props between different components.
 
 - [Size](#size)
 - [Color](#color)
+- [Validation](#validation)
 
 ### Size
 
@@ -25,3 +26,9 @@ This project uses `dictionaries` to unify props between different components.
 | ------------- | --------------------------------------------- | ------------ |
 | Emotion Color | `success`, `informative`, `warning`, `danger` | EmotionColor |
 | Text Color    | `primary`, `secondary`, `inverted`            | TextColor    |
+
+### Validation
+
+| Dictionary | Values                         | Code name  |
+| ---------- | ------------------------------ | ---------- |
+| Validation | `success`, `warning`, `danger` | Validation |

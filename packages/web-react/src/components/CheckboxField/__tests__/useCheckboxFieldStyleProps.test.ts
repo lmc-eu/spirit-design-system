@@ -30,6 +30,14 @@ describe('useCheckboxFieldStyleProps', () => {
     expect(result.current.classProps.label).toBe('CheckboxField__label CheckboxField__label--hidden');
   });
 
+  it('should return field with danger', () => {
+    const props = { validationState: 'danger' } as SpiritCheckboxFieldProps;
+    const { result } = renderHook(() => useCheckboxFieldStyleProps(props));
+
+    expect(result.current.classProps.root).toBe('CheckboxField CheckboxField--danger');
+  });
+
+  /* @deprecated Will be removed in next major version. */
   it('should return field with error', () => {
     const props = { validationState: 'error' } as SpiritCheckboxFieldProps;
     const { result } = renderHook(() => useCheckboxFieldStyleProps(props));

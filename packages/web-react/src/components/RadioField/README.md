@@ -8,16 +8,16 @@ Use RadioField when you have a group of mutually exclusive choices and only one 
 
 ## Available props
 
-| Name            | Type    | Description                    |
-| --------------- | ------- | ------------------------------ |
-| `id`            | string  | Input and label identification |
-| `name`          | string  | Input name                     |
-| `label`         | string  | Label text                     |
-| `value`         | string  | Input value                    |
-| `isDisabled`    | boolean | Whether is field disabled      |
-| `isChecked`     | boolean | Whether is field checked       |
-| `isItem`        | boolean | To render in [Item][item] mode |
-| `isLabelHidden` | boolean | Whether is label hidden        |
+| Prop name       | Type    | Default | Required | Description                    |
+| --------------- | ------- | ------- | -------- | ------------------------------ |
+| `id`            | string  | -       | yes      | Input and label identification |
+| `name`          | string  | -       | no       | Input name                     |
+| `label`         | string  | -       | no       | Label text                     |
+| `value`         | string  | -       | no       | Input value                    |
+| `isDisabled`    | boolean | -       | no       | Whether is field disabled      |
+| `isChecked`     | boolean | -       | no       | Whether is field checked       |
+| `isItem`        | boolean | -       | no       | To render in [Item][item] mode |
+| `isLabelHidden` | boolean | -       | no       | Whether is label hidden        |
 
 ## Custom component
 

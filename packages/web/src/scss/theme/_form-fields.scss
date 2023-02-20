@@ -12,7 +12,9 @@ $message-typography: tokens.$body-medium-text-regular;
 $message-margin-top: tokens.$space-300;
 $message-color-default: tokens.$text-secondary-default;
 $message-color-disabled: tokens.$text-secondary-disabled;
-$message-color-error: tokens.$emotion-danger-default; // Deprecated (error)
+
+// @deprecated Will be removed in the next major version.
+$message-color-error: tokens.$emotion-danger-default;
 $message-color-danger: tokens.$emotion-danger-default;
 
 // Inline field form components – CheckboxField, RadioField, etc.
@@ -28,7 +30,9 @@ $box-field-input-border-color-default: tokens.$border-primary-default;
 $box-field-input-border-color-focus: tokens.$focus-default;
 $box-field-input-border-color-success: tokens.$emotion-success-default;
 $box-field-input-border-color-warning: tokens.$emotion-warning-default;
-$box-field-input-border-color-error: tokens.$emotion-danger-default; // Deprecated (#DS-590)
+
+// @deprecated Will be removed in the next major version.
+$box-field-input-border-color-error: tokens.$emotion-danger-default;
 $box-field-input-border-color-danger: tokens.$emotion-danger-default;
 $box-field-input-border-radius: tokens.$radius-100;
 $box-field-input-background: tokens.$background-basic;
@@ -56,7 +60,7 @@ $box-field-variants: (
         message-color: $message-color-danger,
     ),
 
-    // Deprecated (#DS-590)
+    // @deprecated Will be removed in the next major version.
     error:
         (
             input-border-color: $box-field-input-border-color-error,

@@ -58,6 +58,14 @@ describe('CheckboxField', () => {
     expect(element.textContent).toBe('text');
   });
 
+  it('should have danger classname', () => {
+    const dom = render(<CheckboxField id="checkbox" label="Label" validationState="danger" />);
+
+    const element = dom.container.querySelector('label') as HTMLElement;
+    expect(element).toHaveClass('CheckboxField--danger');
+  });
+
+  /* @deprecated Will be removed in next major version. */
   it('should have error classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" validationState="error" />);
 

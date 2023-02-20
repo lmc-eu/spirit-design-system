@@ -1,6 +1,8 @@
 import type { ChangeEventHandler, KeyboardEventHandler } from 'react';
+import { ValidationStatesTypes } from './dictionaries';
 
-export type ValidationState = 'success' | 'warning' | 'error';
+/* @deprecated: 'error' value will be removed in the next major version. */
+export type ValidationState = ValidationStatesTypes<'error'>;
 
 export interface Validation {
   /** Whether the input should display its "valid" or "invalid" visual styling. */

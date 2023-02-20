@@ -4,7 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { TextFieldType, ValidationState } from '../../../types';
+import { TextFieldType, ValidationState, ValidationStates } from '../../../types';
 import TextField from '../TextField';
 
 describe('TextField', () => {
@@ -106,18 +106,22 @@ describe('TextField', () => {
       expect(element).toHaveClass('TextField--fluid');
     });
 
-    it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
-      const dom = render(
-        <TextField
-          id="textfield"
-          label="Label"
-          type={type as TextFieldType}
-          validationState={validationState as ValidationState}
-        />,
-      );
+    // @deprecated 'error' value will be removed in next major version.
+    it.each([ValidationStates.SUCCESS, ValidationStates.WARNING, ValidationStates.DANGER, ['error']])(
+      'should have %s classname',
+      (validationState) => {
+        const dom = render(
+          <TextField
+            id="textfield"
+            label="Label"
+            type={type as TextFieldType}
+            validationState={validationState as ValidationState}
+          />,
+        );
 
-      const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass(`TextField--${validationState}`);
-    });
+        const element = dom.container.querySelector('div') as HTMLElement;
+        expect(element).toHaveClass(`TextField--${validationState}`);
+      },
+    );
   });
 });

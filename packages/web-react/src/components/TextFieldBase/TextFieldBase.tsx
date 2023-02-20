@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks';
+import { useStyleProps, useDeprecationMessage } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import TextFieldBaseInput from './TextFieldBaseInput';
@@ -12,6 +12,17 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
   const { id, label, message, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecationMessage({
+    method: 'property',
+    trigger: props?.validationState === 'error',
+    componentName: 'TextFieldBase',
+    propertyProps: {
+      deprecatedValue: 'error',
+      newValue: 'danger',
+      propertyName: 'validationState',
+    },
+  });
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>

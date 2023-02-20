@@ -1,6 +1,6 @@
 # CheckboxField
 
-Basic usage:
+## Basic usage:
 
 ```html
 <label for="checkboxfield1" class="CheckboxField">
@@ -11,7 +11,7 @@ Basic usage:
 </label>
 ```
 
-Required input:
+## Required input:
 
 ```html
 <label for="checkboxfield9" class="CheckboxField">
@@ -22,7 +22,7 @@ Required input:
 </label>
 ```
 
-Additional message:
+## Additional message:
 
 ```html
 <label for="checkboxfield2" class="CheckboxField">
@@ -34,7 +34,7 @@ Additional message:
 </label>
 ```
 
-Hidden label:
+## Hidden label:
 
 ```html
 <label for="checkboxfield10" class="CheckboxField">
@@ -45,7 +45,9 @@ Hidden label:
 </label>
 ```
 
-Danger state:
+## Danger state:
+
+See Validation state [dictionary][docs].
 
 ```html
 <label for="checkboxfield6" class="CheckboxField CheckboxField--danger">
@@ -57,7 +59,9 @@ Danger state:
 </label>
 ```
 
-Error state (Deprecated):
+## Error state (Deprecated):
+
+See Validation state [dictionary][docs].
 
 ```html
 <label for="checkboxfield6" class="CheckboxField CheckboxField--error">
@@ -69,7 +73,7 @@ Error state (Deprecated):
 </label>
 ```
 
-Disabled state:
+## Disabled state:
 
 ```html
 <label for="checkboxfield17" class="CheckboxField CheckboxField--disabled">
@@ -81,7 +85,7 @@ Disabled state:
 </label>
 ```
 
-As an Item:
+## As an Item:
 
 ```html
 <label for="checkboxfield17" class="CheckboxField CheckboxField--item">
@@ -92,3 +96,5 @@ As an Item:
   </span>
 </label>
 ```
+
+[docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md

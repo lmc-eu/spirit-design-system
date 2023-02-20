@@ -22,6 +22,8 @@ export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): Che
   const checkboxFieldClass = useClassNamePrefix('CheckboxField');
   const checkboxFieldDisabledClass = `${checkboxFieldClass}--disabled`;
   const checkboxFieldItemClass = `${checkboxFieldClass}--item`;
+  const checkboxFieldDangerClass = `${checkboxFieldClass}--danger`;
+  /* @deprecated Will be removed in next major version. */
   const checkboxFieldErrorClass = `${checkboxFieldClass}--error`;
   const checkboxFieldInputClass = `${checkboxFieldClass}__input`;
   const checkboxFieldTextClass = `${checkboxFieldClass}__text`;
@@ -33,6 +35,8 @@ export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): Che
   const rootStyles = classNames(checkboxFieldClass, {
     [checkboxFieldDisabledClass]: isDisabled,
     [checkboxFieldItemClass]: isItem,
+    [checkboxFieldDangerClass]: validationState === 'danger',
+    /* @deprecated Will be removed in next major version. */
     [checkboxFieldErrorClass]: validationState === 'error',
   });
   const labelStyles = classNames(checkboxFieldLabelClass, {

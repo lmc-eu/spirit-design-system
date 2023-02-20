@@ -56,6 +56,11 @@
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 {%- set _allowedAttributes = [ 'autocomplete' ] -%}
 
+{# Deprecations #}
+{% if _validationState === 'error' %}
+    {% deprecated _rootClassName + ': The "error" value for "validationState" property will be renamed to "danger" in the next major version.'️ %}
+{% endif %}
+
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
         {{ _label | raw }}

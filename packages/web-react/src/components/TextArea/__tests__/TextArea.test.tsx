@@ -4,7 +4,7 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { ValidationState } from '../../../types';
+import { ValidationState, ValidationStates } from '../../../types';
 import TextArea from '../TextArea';
 
 describe('TextArea', () => {
@@ -56,10 +56,14 @@ describe('TextArea', () => {
     expect(element).toHaveClass('TextArea--fluid');
   });
 
-  it.each([['success'], ['warning'], ['error']])('should have %s classname', (validationState) => {
-    const dom = render(<TextArea id="textarea" label="Label" validationState={validationState as ValidationState} />);
+  // @deprecated Will be removed in next major version.
+  it.each([ValidationStates.SUCCESS, ValidationStates.WARNING, ValidationStates.DANGER, ['error']])(
+    'should have %s classname',
+    (validationState) => {
+      const dom = render(<TextArea id="textarea" label="Label" validationState={validationState as ValidationState} />);
 
-    const element = dom.container.querySelector('div') as HTMLElement;
-    expect(element).toHaveClass(`TextArea--${validationState}`);
-  });
+      const element = dom.container.querySelector('div') as HTMLElement;
+      expect(element).toHaveClass(`TextArea--${validationState}`);
+    },
+  );
 });

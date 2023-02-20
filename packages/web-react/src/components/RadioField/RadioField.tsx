@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { SpiritRadioFieldProps } from '../../types';
 import { useRadioFieldStyleProps } from './useRadioFieldStyleProps';
 

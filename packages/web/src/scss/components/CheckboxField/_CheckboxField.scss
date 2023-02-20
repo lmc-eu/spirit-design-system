@@ -56,7 +56,7 @@
     color: form-fields-theme.$message-color-danger;
 }
 
-// Deprecated (#DS-590)
+// @deprecated Will be removed in the next major version.
 .CheckboxField--error .CheckboxField__message {
     color: form-fields-theme.$message-color-error;
 }
