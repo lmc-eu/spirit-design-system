@@ -23,15 +23,15 @@
     border-radius: theme.$item-radius;
     background-color: theme.$item-default-background;
 
-    &:active {
-        color: theme.$item-active-color;
-        background-color: theme.$item-active-background;
-    }
-
     &:focus,
     &:hover {
         color: theme.$item-hover-color;
         background-color: theme.$item-hover-background;
+    }
+
+    &:active {
+        color: theme.$item-active-color;
+        background-color: theme.$item-active-background;
     }
 }
 
