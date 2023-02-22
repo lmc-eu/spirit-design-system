@@ -39,3 +39,27 @@ As an Item:
   <span class="RadioField__label">Item</span>
 </label>
 ```
+
+Wrapped with message
+
+```html
+<label for="radiofield6" class="RadioField RadioField--item">
+  <input type="radio" id="radiofield6" class="RadioField__input" />
+  <span class="RadioField__text">
+    <span class="RadioField__label">Item</span>
+    <span class="RadioField__message">Message</span>
+  </span>
+</label>
+```
+
+Wrapped with danger message
+
+```html
+<label for="radiofield7" class="RadioField RadioField--item RadioField--danger">
+  <input type="radio" id="radiofield7" class="RadioField__input" />
+  <span class="RadioField__text">
+    <span class="RadioField__label">Item</span>
+    <span class="RadioField__message">Message</span>
+  </span>
+</label>
+```
