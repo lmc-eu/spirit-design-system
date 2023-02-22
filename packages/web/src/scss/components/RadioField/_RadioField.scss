@@ -46,6 +46,21 @@
     }
 }
 
+.RadioField__message {
+    @include form-fields-tools.message();
+
+    margin-left: form-fields-theme.$spacing;
+}
+
+.RadioField--item .RadioField__message {
+    @include form-fields-tools.item-message();
+}
+
+.RadioField--danger .RadioField__message {
+    /* @deprecated: Replace with '$message-color-danger' after merge with DS-590 */
+    color: form-fields-theme.$message-color-error;
+}
+
 .RadioField__label {
     @include form-fields-tools.inline-field-label();
 
@@ -56,12 +71,20 @@
     @include form-fields-tools.label-hidden();
 }
 
+.RadioField__label--required::after {
+    @include form-fields-tools.label-required();
+}
+
 .RadioField--disabled {
     @include form-fields-tools.inline-field-root-disabled();
 }
 
 .RadioField--disabled > .RadioField__label {
     @include form-fields-tools.label-disabled();
+}
+
+.RadioField--disabled .RadioField__message {
+    @include form-fields-tools.message-disabled();
 }
 
 .RadioField--disabled > .RadioField__input,
@@ -86,7 +109,9 @@
     @include form-fields-tools.item-disabled();
 }
 
-// stylelint-disable-next-line selector-max-class -- We need to override the default styles for the label in Item.
-.RadioField--item .RadioField__input:checked ~ .RadioField__label {
+// stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
+.RadioField--item .RadioField__input:checked ~ .RadioField__label,
+.RadioField--item .RadioField__input:checked ~ .RadioField__text > .RadioField__label {
+    // stylelint-enable selector-max-class, selector-max-compound-selectors, selector-max-specificity
     @include form-fields-tools.item-label-checked();
 }
