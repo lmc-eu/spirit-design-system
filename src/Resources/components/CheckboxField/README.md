@@ -17,7 +17,7 @@ Advanced example usage:
   isRequired
   messsage="validation failed"
   name="example2"
-  validationState="error"
+  validationState="danger"
 />
 ```
 
@@ -29,27 +29,27 @@ Without lexer:
     label: "some label",
     name: "example",
     isRequired: "true",
-    validationState: "error",
+    validationState: "danger",
     message: "validation failed",
 }} %}
 ```
 
 ## API
 
-| Prop name         | Type                          | Default | Required | Description                    |
-| ----------------- | ----------------------------- | ------- | -------- | ------------------------------ |
-| `class`           | `string`                      | `null`  | no       | Custom CSS class               |
-| `id`              | `string`                      | `null`  | no       | Input and label identification |
-| `isChecked`       | `bool`                        | `false` | no       | If true, input is checked      |
-| `isDisabled`      | `bool`                        | `false` | no       | If true, input is disabled     |
-| `isItem`          | `bool`                        | `false` | no       | To render in [Item][item] mode |
-| `isLabelHidden`   | `bool`                        | `false` | no       | If true, label is hidden       |
-| `isRequired`      | `bool`                        | `false` | no       | If true, input is required     |
-| `label`           | `string`                      | —       | yes      | Label text                     |
-| `message`         | `string`                      | `null`  | no       | Validation or help message     |
-| `name`            | `string`                      | `null`  | no       | Input name                     |
-| `validationState` | `success`, `warning`, `error` | `null`  | no       | Type of validation state       |
-| `value`           | `string`                      | `null`  | no       | Input value                    |
+| Prop name         | Type                                    | Default | Required | Description                    |
+| ----------------- | --------------------------------------- | ------- | -------- | ------------------------------ |
+| `class`           | `string`                                | `null`  | no       | Custom CSS class               |
+| `id`              | `string`                                | `null`  | no       | Input and label identification |
+| `isChecked`       | `bool`                                  | `false` | no       | If true, input is checked      |
+| `isDisabled`      | `bool`                                  | `false` | no       | If true, input is disabled     |
+| `isItem`          | `bool`                                  | `false` | no       | To render in [Item][item] mode |
+| `isLabelHidden`   | `bool`                                  | `false` | no       | If true, label is hidden       |
+| `isRequired`      | `bool`                                  | `false` | no       | If true, input is required     |
+| `label`           | `string`                                | —       | yes      | Label text                     |
+| `message`         | `string`                                | `null`  | no       | Validation or help message     |
+| `name`            | `string`                                | `null`  | no       | Input name                     |
+| `validationState` | `success`, `warning`, `danger`, `error` | `null`  | no       | Type of validation state       |
+| `value`           | `string`                                | `null`  | no       | Input value                    |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
