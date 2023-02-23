@@ -1,0 +1,25 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _dialogId = props.dialogId -%}
+{%- set _enableDismiss = props.enableDismiss ?? true -%}
+{%- set _label = props.label | default('Close') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'HeaderDialogCloseButton' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<button
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    type="button"
+    data-dismiss="{{ _enableDismiss ? 'offcanvas' : null }}"
+    data-target="{{ _enableDismiss ? '#' ~ _dialogId : null }}"
+    aria-controls="{{ _dialogId }}"
+    aria-expanded="false"
+>
+    <Icon name="close" />
+    <span class="accessibility-hidden">{{ _label }}</span>
+</button>

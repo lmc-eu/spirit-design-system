@@ -1,0 +1,10 @@
+{%- set newProps = props | merge({ rootClass: 'HeaderDialogLink' }) -%}
+{%- set renderedContent -%}
+    {% block content %}{% endblock %}
+{%- endset -%}
+
+{%- embed '@spirit/Header/_abstracts/Link.twig' with { props: newProps, renderedContent } only -%}
+    {%- block content -%}
+        {{- renderedContent -}}
+    {%- endblock -%}
+{%- endembed -%}

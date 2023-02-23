@@ -1,0 +1,26 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _dialogId = props.dialogId -%}
+{%- set _menuToggleLabel = props.menuToggleLabel | default('Menu') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'HeaderMobileActions' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<div {{ mainProps(props) }} {{ classProp(_classNames) }}>
+    {% block content %}{% endblock %}
+    <Button
+        aria-controls="{{ _dialogId }}"
+        aria-expanded="false"
+        color="inverted"
+        data-target="{{ '#' ~ _dialogId }}"
+        data-toggle="offcanvas"
+        isSquare
+    >
+        <Icon name="hamburger" />
+        <span class="accessibility-hidden">{{ _menuToggleLabel }}</span>
+    </Button>
+</div>

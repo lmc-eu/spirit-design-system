@@ -4,9 +4,25 @@ The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
 your specific design goals.
 
+The Header is a composition of several subcomponents:
+
+- [Header](#minimal-header)
+  - [HeaderMobileActions](#mobile-only-actions)
+  - [HeaderDesktopActions](#desktop-only-actions)
+    - [HeaderNav](#navigation)
+      - [HeaderNavItem](#navigation)
+        - [HeaderLink](#navigation)
+- [HeaderDialog](#header-dialog)
+  - [HeaderDialogCloseButton](#close-button)
+    - [HeaderDialogAcions](#primary-and-secondary-actions)
+      - [HeaderDialogNav](#navigation-1)
+        - [HeaderDialogNavItem](#navigation-1)
+          - [HeaderDialogLink](#navigation-1)
+          - [HeaderDialogText](#navigation-1)
+
 ## JavaScript Plugin
 
-For full functionality you need to provide Spirit JavaScript which will handle
+For full functionality, you need to provide Spirit JavaScript, which will handle
 toggling of the Header component:
 
 ```html
@@ -16,12 +32,12 @@ toggling of the Header component:
 Please consult the [main README][web-readme] for how to include JavaScript
 plugins.
 
-Or feel free to write the controlling script yourself.
+Or, feel free to write the controlling script yourself.
 
 ### DEPRECATION NOTICE
 
 ⚠️ The existing Header JavaScript plugin is deprecated and will be superseded
-by the Off-canvas plugin in next major version.
+by the Off-canvas plugin in the next major version.
 
 ## Accessibility Guidelines
 
