@@ -8,6 +8,7 @@
 {%- set _label = props.label -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _value = props.value | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'RadioField' -%}
@@ -16,6 +17,8 @@
 {%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'RadioField__label--hidden' : null -%}
 {%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'RadioField--disabled' : null -%}
 {%- set _rootItemClassName = _isItem ? _spiritClassPrefix ~ 'RadioField--item' : null -%}
+{%- set _textClassName = _spiritClassPrefix ~ 'RadioField__text' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'RadioField__message' -%}
 
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
@@ -40,5 +43,8 @@
         {{ _disabledAttr | raw }}
         {{ _valueAttr | raw }}
     />
-  <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+    <span class="{{ _textClassName }}">
+        <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
+        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText | raw }}</span>{% endif %}
+    </span>
 </label>

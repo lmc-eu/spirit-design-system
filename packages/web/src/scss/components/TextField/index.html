@@ -98,6 +98,36 @@
       </button>
     </div>
   </div>
+  <div class="TextField TextField--danger">
+    <label
+      for="textfieldPasswordDangerMessage"
+      class="TextField__label TextField__label--required"
+    >Password Toggle</label>
+    <div class="TextField__passwordToggle">
+      <input type="password" id="textfieldPasswordDangerMessage" class="TextField__input" value="Danger" />
+      <button
+        type="button"
+        class="TextField__passwordToggle__button"
+        role="switch"
+        aria-pressed="false"
+        aria-label="Show password"
+        data-toggle="password"
+      >
+        <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
+          </svg>
+        </span>
+        <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="TextField__message">Message</div>
+  </div>
+  <!-- Deprecated (#DS-590) -->
   <div class="TextField TextField--error">
     <label
       for="textfieldPasswordErrorMessage"
@@ -149,10 +179,21 @@
     <input type="text" id="textfieldFilledMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
     <div class="TextField__message">Message</div>
   </div>
+  <div class="TextField TextField--danger">
+    <label for="textfieldDanger" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfieldDanger" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  </div>
+  <!-- Deprecated (#DS-590) -->
   <div class="TextField TextField--error">
     <label for="textfieldError" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldError" class="TextField__input" placeholder="Placeholder" value="Filled" />
   </div>
+  <div class="TextField TextField--danger">
+    <label for="textfieldDangerMessage" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfieldDangerMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
+    <div class="TextField__message">Message</div>
+  </div>
+  <!-- Deprecated (#DS-590) -->
   <div class="TextField TextField--error">
     <label for="textfieldErrorMessage" class="TextField__label TextField__label--required">Label</label>
     <input type="text" id="textfieldErrorMessage" class="TextField__input" placeholder="Placeholder" value="Filled" />
@@ -205,6 +246,21 @@
     <button type="button" class="Button Button--primary Button--medium">Button</button>
   </div>
 
+  <div style="display: flex; align-items: start; gap: 1rem">
+    <div class="TextField TextField--danger">
+      <label for="textfieldInlineDangerHiddenLabel" class="TextField__label TextField__label--hidden">Hidden Label</label>
+      <input
+        type="text"
+        id="textfieldInlineDangerHiddenLabel"
+        class="TextField__input"
+        placeholder="Placeholder"
+        value="Filled"
+      />
+      <div class="TextField__message">Message</div>
+    </div>
+    <button type="button" class="Button Button--primary Button--medium">Button</button>
+  </div>
+  <!-- Deprecated (#DS-590) -->
   <div style="display: flex; align-items: start; gap: 1rem">
     <div class="TextField TextField--error">
       <label for="textfieldInlineErrorHiddenLabel" class="TextField__label TextField__label--hidden">Hidden Label</label>
