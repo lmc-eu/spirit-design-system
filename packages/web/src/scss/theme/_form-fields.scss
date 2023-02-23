@@ -12,7 +12,8 @@ $message-typography: tokens.$body-medium-text-regular;
 $message-margin-top: tokens.$space-300;
 $message-color-default: tokens.$text-secondary-default;
 $message-color-disabled: tokens.$text-secondary-disabled;
-$message-color-error: tokens.$emotion-danger-default;
+$message-color-error: tokens.$emotion-danger-default; // Deprecated (error)
+$message-color-danger: tokens.$emotion-danger-default;
 
 // Inline field form components – CheckboxField, RadioField, etc.
 $inline-field-input-color-unchecked: tokens.$action-unselected-default;
@@ -27,7 +28,8 @@ $box-field-input-border-color-default: tokens.$border-primary-default;
 $box-field-input-border-color-focus: tokens.$focus-default;
 $box-field-input-border-color-success: tokens.$emotion-success-default;
 $box-field-input-border-color-warning: tokens.$emotion-warning-default;
-$box-field-input-border-color-error: tokens.$emotion-danger-default;
+$box-field-input-border-color-error: tokens.$emotion-danger-default; // Deprecated (#DS-590)
+$box-field-input-border-color-danger: tokens.$emotion-danger-default;
 $box-field-input-border-radius: tokens.$radius-100;
 $box-field-input-background: tokens.$background-basic;
 $box-field-input-placeholder-color-default: tokens.$text-secondary-default;
@@ -49,10 +51,17 @@ $box-field-variants: (
         input-border-color: $box-field-input-border-color-warning,
         message-color: $box-field-message-color-warning,
     ),
-    error: (
-        input-border-color: $box-field-input-border-color-error,
-        message-color: $message-color-error,
+    danger: (
+        input-border-color: $box-field-input-border-color-danger,
+        message-color: $message-color-danger,
     ),
+
+    // Deprecated (#DS-590)
+    error:
+        (
+            input-border-color: $box-field-input-border-color-error,
+            message-color: $message-color-error,
+        ),
 );
 
 // Item variant

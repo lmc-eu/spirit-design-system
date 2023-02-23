@@ -52,6 +52,11 @@
     @include form-fields-tools.message();
 }
 
+.CheckboxField--danger .CheckboxField__message {
+    color: form-fields-theme.$message-color-danger;
+}
+
+// Deprecated (#DS-590)
 .CheckboxField--error .CheckboxField__message {
     color: form-fields-theme.$message-color-error;
 }

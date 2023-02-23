@@ -71,9 +71,28 @@ modifier to fill the available space.
 ## Validation States
 
 Validation states can be presented either by adding a CSS modifier class
-(`TextArea--success`, `TextArea--warning`, `TextArea--error`), or by adding
+(`TextArea--success`, `TextArea--warning`, `TextArea--danger`, `TextArea--error`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-error`).
+
+```html
+<div class="TextArea TextArea--danger">
+  <label for="TextAreaValidation1" class="TextArea__label TextArea__label--required">
+    Label of textarea with error
+  </label>
+  <textarea id="TextAreaValidation1" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
+  <div class="TextArea__message">Error message</div>
+</div>
+<div class="TextArea has-error">
+  <label for="TextAreaValidation2" class="TextArea__label TextArea__label--required">
+    Label of textarea with error
+  </label>
+  <textarea id="TextAreaValidation2" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
+  <div class="TextArea__message">Error message</div>
+</div>
+```
+
+### Deprecated usage
 
 ```html
 <div class="TextArea TextArea--error">

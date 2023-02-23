@@ -132,9 +132,28 @@ forget to change not only the input type but also `aria-pressed` and
 ## Validation States
 
 Validation states can be presented either by adding a CSS modifier class
-(`TextField--success`, `TextField--warning`, `TextField--error`), or by adding
+(`TextField--success`, `TextField--warning`, `TextField--danger`, `TextField--error`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-error`).
+
+```html
+<div class="TextField TextField--danger">
+  <label for="textfield-validation-1" class="TextField__label TextField__label--required">
+    Label of input with error
+  </label>
+  <input type="text" id="textfield-validation-1" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div class="TextField__message">Error message</div>
+</div>
+<div class="TextField has-error">
+  <label for="textfield-validation-2" class="TextField__label TextField__label--required">
+    Label of input with error
+  </label>
+  <input type="text" id="textfield-validation-2" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div class="TextField__message">Error message</div>
+</div>
+```
+
+### Deprecated usage
 
 ```html
 <div class="TextField TextField--error">
