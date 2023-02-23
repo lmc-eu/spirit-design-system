@@ -1,0 +1,23 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _id = props.id -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'HeaderDialog' -%}
+{%- set _panelClassName = _spiritClassPrefix ~ 'HeaderDialog__panel' -%}
+{%- set _contentClassName = _spiritClassPrefix ~ 'HeaderDialog__content' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<dialog {{ mainProps(props) }} {{ classProp(_classNames) }} {{ _idAttr | raw }}>
+    <div class="{{ _panelClassName }}">
+        <div class="{{ _contentClassName }}">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</dialog>

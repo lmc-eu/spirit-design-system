@@ -1,0 +1,31 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _href = props.href | default('#') -%}
+{%- set _isCurrent = props.isCurrent | default(false) -%}
+{%- set _onClick = props.onClick | default(null) -%}
+{%- set _rootClass = props.rootClass -%}
+{%- set _target = props.target | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ _rootClass -%}
+{%- set _rootCurrentClassName = _isCurrent ? _spiritClassPrefix ~ _rootClass ~ '--current' : null -%}
+
+{# Attributes #}
+{%- set _ariaCurrentAttr = _isCurrent ? 'aria-current="page"' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~ '"' : null -%}
+{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
+
+<a
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    href="{{ _href }}"
+    {{ _ariaCurrentAttr | raw }}
+    {{ _onClickAttr | raw }}
+    {{ _targetAttr | raw }}
+>
+    {% block content %}{% endblock %}
+</a>

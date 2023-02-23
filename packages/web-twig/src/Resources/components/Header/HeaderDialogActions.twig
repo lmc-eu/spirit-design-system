@@ -1,0 +1,15 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default('primary') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'HeaderDialogActions' -%}
+{%- set _rootColorClassName = _spiritClassPrefix ~ 'HeaderDialogActions--' ~ _color -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _class ] -%}
+
+<nav {{ mainProps(props) }} {{ classProp(_classNames) }}>
+    {% block content %}{% endblock %}
+</nav>

@@ -1,11 +1,17 @@
-{% set _rootClassName = _spiritClassPrefix ~ 'Header' %}
-{% set _class = (props.class is defined) ? props.class : '' %}
-{% set _invertedClassName = (props.isInverted is defined and props.isInverted == 'true' ) ? _rootClassName ~ '--inverted' : '' %}
-{% set _simpleClaccName = (props.isSimple is defined and props.isSimple == 'true' ) ? _rootClassName ~ '--simple' : '' %}
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _isInverted = props.isInverted | default(false) -%}
+{%- set _isSimple = props.isSimple | default(false) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Header' -%}
+{%- set _rootInvertedClassName = _isInverted ? _spiritClassPrefix ~ 'Header--inverted' : null -%}
+{%- set _rootSimpleClassName = _isSimple ? _spiritClassPrefix ~ 'Header--simple' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _simpleClassName, _invertedClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootInvertedClassName, _rootSimpleClassName, _class ] -%}
 
-<header {{ classProp(_classNames) }}>
-{% block content %}{% endblock %}
+<header {{ mainProps(props) }} {{ classProp(_classNames) }}>
+    {% block content %}{% endblock %}
 </header>
