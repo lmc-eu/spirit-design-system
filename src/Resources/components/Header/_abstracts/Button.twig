@@ -1,0 +1,20 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _onClick = props.onClick -%}
+{%- set _rootClass = props.rootClass -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ _rootClass -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<button
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    onclick="{{ _onClick }}"
+    type="button"
+>
+    {% block content %}{% endblock %}
+</button>
