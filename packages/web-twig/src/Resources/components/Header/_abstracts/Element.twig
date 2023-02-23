@@ -1,0 +1,15 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _elementType = props.elementType -%}
+{%- set _rootClass = props.rootClass -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ _rootClass -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _class ] -%}
+
+<{{ _elementType}} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+    {% block content %}{% endblock %}
+</{{ _elementType}}>

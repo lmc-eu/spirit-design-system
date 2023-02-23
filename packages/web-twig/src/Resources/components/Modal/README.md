@@ -227,6 +227,9 @@ When you put it all together:
 
 ## Simple Modal (DEPRECATED)
 
+<details>
+  <summary>Show instructions for the deprecated Modal</summary>
+
 A simple version of Modal.
 
 ⚠️ **DEPRECATED:** Simple Modal will be removed in next major version in favour
@@ -285,6 +288,8 @@ Without lexer:
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
 will be passed to the topmost HTML element of the component.
+
+</details>
 
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes

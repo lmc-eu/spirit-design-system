@@ -1,0 +1,10 @@
+{%- set newProps = props | merge({ elementType: 'ul', rootClass: 'HeaderDialogNav' }) -%}
+{%- set renderedContent -%}
+    {% block content %}{% endblock %}
+{%- endset -%}
+
+{%- embed '@spirit/Header/_abstracts/Element.twig' with { props: newProps, renderedContent } only -%}
+    {%- block content -%}
+        {{- renderedContent -}}
+    {%- endblock -%}
+{%- endembed -%}

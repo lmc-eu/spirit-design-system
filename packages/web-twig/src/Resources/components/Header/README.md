@@ -1,27 +1,61 @@
 # Header
 
-This is Twig implementation of the [Header] component.
+This is the Twig implementation of the [Header] component.
 
-## Examples
+The Header is a highly variable and customizable component. It comes in several
+design variants and provides a handful of building blocks you can use to achieve
+your specific design goals.
 
-pure implementation:
+The Header is a composition of several subcomponents:
 
-```twig
-{% embed "@spirit/header.twig" %}
-    {% block content %}
-    <a href="/">
-        <img
-          src="https://www.example.com/logo.png"
-          width="65"
-          height="24"
-          alt="Spirit"
-        />
-    </a>
-    {% endblock %}
-{% endembed %}
+- [Header](#minimal-header)
+  - [HeaderMobileActions](#mobile-only-actions)
+  - [HeaderDesktopActions](#desktop-only-actions)
+    - [HeaderNav](#navigation)
+      - [HeaderNavItem](#navigation)
+        - [HeaderLink](#navigation)
+        - [HeaderButton](#navigation)
+- [HeaderDialog](#header-dialog)
+  - [HeaderDialogCloseButton](#close-button)
+    - [HeaderDialogAcions](#primary-and-secondary-actions)
+      - [HeaderDialogNav](#navigation-1)
+        - [HeaderDialogNavItem](#navigation-1)
+          - [HeaderDialogLink](#navigation-1)
+          - [HeaderDialogButton](#navigation-1)
+          - [HeaderDialogText](#navigation-1)
+
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript, which will handle
+toggling of the Header component:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-With Html syntax lexer (enabled by default):
+Please consult the [main README][web-readme] for how to include JavaScript
+plugins.
+
+Or, feel free to write the controlling script yourself.
+
+### DEPRECATION NOTICE
+
+⚠️ The existing Header JavaScript plugin is deprecated and will be superseded
+by the Off-canvas plugin in the next major version.
+
+## Accessibility Guidelines
+
+👉 The animation effect of this component is dependent on the
+`prefers-reduced-motion` media query.
+
+🌍 Although we don't need it yet, this component experimentally supports RTL
+languages (because just a single line had to be added to make it all work 🎉).
+
+## Minimal Header
+
+Without any modifier, Header is ready to contain necessary blocks in a classic
+left-to-right layout (in LTR documents). Please note it is fully transparent
+unless you specify a color variant.
 
 ```twig
 <Header>
@@ -34,7 +68,16 @@ With Html syntax lexer (enabled by default):
         />
     </a>
 </Header>
-<Header isSimple isInverted>
+```
+
+## Color Variants
+
+Currently, Header comes in two color variants: **transparent** (for dark
+backgrounds) and **inverted** (for light backgrounds). Use the `color` property
+to apply the desired background color to Header.
+
+```twig
+<Header color="inverted">
     <a href="/">
         <img
           src="https://www.example.com/logo.png"
@@ -46,126 +89,453 @@ With Html syntax lexer (enabled by default):
 </Header>
 ```
 
-### Full Header example
+## Simple Header
+
+The `isSimple` modifier makes the header bar slightly shorter and aligns its
+content to the center. Use this design variant when all you need on the page is
+just branding.
 
 ```twig
-<Header isInverted>
-  <a href="/">
-    <img
-      src="https://www.example.com/logo.png"
-      width="65"
-      height="24"
-      alt="Spirit"
-    />
-  </a>
-  <NavbarToggle />
-  <Navbar variant="bar">
-    <NavbarClose />
-    <NavbarActions color="primary">
-      <Nav>
-        <NavItem>
-          <NavLink href="/" isCurrent>Nabídky práce</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Brigády</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Inspirace</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Historie odpovědí</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/">Zaměstnavatelé</NavLink>
-        </NavItem>
-      </Nav>
-    </NavbarActions>
-    <NavbarActions color="secondary">
-      <ButtonLink color="primary" href="/">Přihlásit</ButtonLink>
-      <ButtonLink color="inverted" href="/">Vstup pro firmy</ButtonLink>
-    </NavbarActions>
-  </Navbar>
+<Header isSimple>
+    <a href="/">
+        <img
+          src="https://www.example.com/logo.png"
+          width="65"
+          height="24"
+          alt="Spirit"
+        />
+    </a>
 </Header>
 ```
 
-## Header components
+## API
 
-The Header itself consists of many components which cannot be used independently.
+| Prop name  | Type                      | Default       | Required | Description                         |
+| ---------- | ------------------------- | ------------- | -------- | ----------------------------------- |
+| `class`    | `string`                  | `null`        | no       | Custom CSS class                    |
+| `color`    | `transparent`, `inverted` | `transparent` | no       | Color variant                       |
+| `isSimple` | `boolean`                 | `false`       | no       | Shorter, centered version of Header |
 
-### Header
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
 
-#### Available props
+## Supported Content
 
-| Name         | Type    | Description                      |
-| ------------ | ------- | -------------------------------- |
-| `isSimple`   | boolean | Whether it is without components |
-| `isInverted` | boolean | Whether it has inverted colors   |
-| `class`      | string  | Additional class name            |
+To create a responsive header with top-level navigation, there are the following
+building blocks to use:
 
-### Navbar
+1. Inside Header:
+   1. mobile-only actions, including toggle button by default,
+   2. desktop-only actions with primary and secondary action slots.
+2. Inside Header Dialog:
+   1. primary actions slot (all breakpoints),
+   2. secondary actions slot (all breakpoints).
 
-#### Available props
+## Header
 
-| Name    | Type   | Description           |
-| ------- | ------ | --------------------- |
-| `class` | string | Additional class name |
+### Mobile-Only Actions
 
-### NavbarActions
+Slot for actions that are intended to display on mobile and tablet screens only.
+It holds the toggle button by default, but you can add as many custom elements
+as the free space in Header allows.
 
-#### Available props
+```twig
+<HeaderMobileActions dialogId="my-header-dialog" />
+```
 
-| Name    | Type                               | Description           |
-| ------- | ---------------------------------- | --------------------- |
-| `color` | `primary`, `secondary`, `inverted` | Colors                |
-| `class` | string                             | Additional class name |
+Toggle button is already part of the mobile actions component. It is linked to
+the [Header Dialog](#header-dialog) via the `dialogId` prop.
 
-### NavbarClose
+#### Custom Mobile Actions
 
-#### Available props
+You can place any custom content into the mobile actions component:
 
-| Name           | Type   | Description                                |
-| -------------- | ------ | ------------------------------------------ |
-| `label`        | string | Label of the close button                  |
-| `ariaControls` | string | Target element which is controled by close |
-| `class`        | string | Additional class name                      |
+```twig
+<HeaderMobileActions dialogId="my-header-dialog">
+  <!-- Mobile-only actions -->
+</HeaderMobileActions>
+```
 
-### NavbarToggle
+#### API
 
-#### Available props
+| Prop name         | Type     | Default | Required | Description                     |
+| ----------------- | -------- | ------- | -------- | ------------------------------- |
+| `class`           | `string` | `null`  | no       | Custom CSS class                |
+| `dialogId`        | `string` | —       | yes      | ID of the linked HeaderDialog   |
+| `menuToggleLabel` | `string` | `Menu`  | no       | Label of the menu toggle button |
 
-| Name           | Type                               | Description                                |
-| -------------- | ---------------------------------- | ------------------------------------------ |
-| `label`        | string                             | Label of the toggle button                 |
-| `ariaControls` | string                             | Target element which is controled by close |
-| `color`        | `primary`, `secondary`, `inverted` | Colors                                     |
-| `class`        | string                             | Additional class name                      |
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
 
-### Nav
+### Desktop-Only Actions
 
-#### Available props
+As the name suggests, desktop-only actions are intended to display only on
+desktop screens. There are two slots to use: primary actions (aligned to the
+left in LTR documents) and secondary actions (aligned to the right).
 
-| Name    | Type   | Description           |
-| ------- | ------ | --------------------- |
-| `class` | string | Additional class name |
+👉 It is critical to **make sure all your actions fit the Header on the
+desktop breakpoint**. Spirit intentionally does not provide any overflow
+control here.
 
-### NavItem
+```twig
+<HeaderDesktopActions aria-label="Main navigation">
+  <!-- Desktop-only primary actions -->
+</HeaderDesktopActions>
+<HeaderDesktopActions color="secondary">
+  <!-- Desktop-only secondary actions -->
+</HeaderDesktopActions>
+```
 
-#### Available props
+#### API
 
-| Name    | Type   | Description           |
-| ------- | ------ | --------------------- |
-| `class` | string | Additional class name |
+| Prop name | Type                   | Default   | Required | Description      |
+| --------- | ---------------------- | --------- | -------- | ---------------- |
+| `class`   | `string`               | `null`    | no       | Custom CSS class |
+| `color`   | `primary`, `secondary` | `primary` | no       | Color variant    |
 
-### NavItem
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
 
-#### Available props
+#### Navigation
 
-| Name      | Type     | Default               | Description                                 |
-| --------- | -------- | --------------------- | ------------------------------------------- |
-| href      | `string` | #                     | anchor href link                            |
-| target    | `string` | \_\_self              | anchor target                               |
-| ariaLabel | `string` | undefined             | Accessible Rich Internet Applications label |
-| onClick   | `string` | undefined             | execute a JavaScript when a link is clicked |
-| `class`   | string   | Additional class name |
+Navigation is designed to live in either of the action slots.
+
+👉 As of now, only single-level navigation is supported. You may consider
+using the [Header Dialog](#header-dialog) for other use cases such as the user
+menu.
+
+```twig
+<HeaderNav>
+  <HeaderNavItem>
+    <HeaderLink href="/" isCurrent>Job offers</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Part-time jobs</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Inspiration</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Replies</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Employers</HeaderLink>
+  </HeaderNavItem>
+</HeaderNav>
+```
+
+Both links and buttons are supported:
+
+```twig
+<HeaderNav>
+  <HeaderNavItem>
+    <HeaderLink href="/">Link item</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderButton onClick="console.log('Hello!')">Button item</HeaderButton>
+  </HeaderNavItem>
+</HeaderNav>
+```
+
+##### HeaderNav API
+
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
+
+##### HeaderNavItem API
+
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
+
+##### HeaderLink API
+
+| Prop name   | Type      | Default | Required | Description               |
+| ----------- | --------- | ------- | -------- | ------------------------- |
+| `class`     | `string`  | `null`  | no       | Custom CSS class          |
+| `href`      | `string`  | —       | yes      | Link URL                  |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
+| `onClick`   | `string`  | `null`  | no       | Function to call on click |
+| `target`    | `string`  | `null`  | no       | HTML `target` attribute   |
+
+##### HeaderButton API
+
+| Prop name | Type     | Default | Required | Description               |
+| --------- | -------- | ------- | -------- | ------------------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class          |
+| `onClick` | `string` | —       | yes      | Function to call on click |
+
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
+
+## Header Dialog
+
+Header Dialog is Spirit's solution for responsive navigation and selected use
+cases such as the user menu. Please note Header Dialog is not intended to be
+used for second-level navigation in general.
+
+```twig
+<HeaderDialog id="my-header-dialog">
+  <!-- Close button with primary and secondary actions -->
+</HeaderDialog>
+```
+
+### API
+
+| Prop name | Type     | Default | Required | Description                            |
+| --------- | -------- | ------- | -------- | -------------------------------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class                       |
+| `id`      | `string` | —       | yes      | ID to be linked in HeaderMobileActions |
+
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
+
+### Close Button
+
+Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
+
+```twig
+<HeaderDialogCloseButton dialogId="my-header-dialog" />
+```
+
+| Prop name       | Type      | Default | Required | Description                     |
+| --------------- | --------- | ------- | -------- | ------------------------------- |
+| `class`         | `string`  | `null`  | no       | Custom CSS class                |
+| `dialogId`      | `string`  | —       | yes      | ID of the parent HeaderDialog   |
+| `enableDismiss` | `boolean` | `true`  | no       | Enable Off-canvas JS dismiss    |
+| `label`         | `string`  | `Close` | no       | Label of the menu toggle button |
+
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
+
+### Primary and Secondary Actions
+
+There are two slots for actions inside Header Dialog: primary actions slot and
+the optional secondary actions slot.
+
+```twig
+<HeaderDialogActions aria-label="Main navigation">
+  <!-- Primary actions -->
+</HeaderDialogActions>
+<HeaderDialogActions color="secondary">
+  <!-- Secondary actions -->
+</HeaderDialogActions>
+```
+
+#### API
+
+| Prop name | Type                   | Default   | Required | Description               |
+| --------- | ---------------------- | --------- | -------- | ------------------------- |
+| `class`   | `string`               | `null`    | no       | Custom CSS class          |
+| `color`   | `primary`, `secondary` | `primary` | no       | Color of the actions slot |
+
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
+
+#### Navigation
+
+Navigation capabilities are very similar to those of Header. All principles
+apply here as well, with the only difference in component names starting with
+`HeaderDialog` instead of `Header`.
+
+```twig
+<HeaderDialogNav>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+  </HeaderDialogNavItem>
+</HeaderDialogNav>
+```
+
+Navigation items can be links, buttons, or just text:
+
+```twig
+<HeaderDialogNav>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">
+      Link item
+    </HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogButton onClick="console.log('Hello!')">
+      Button item
+    </HeaderDialogButton>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogText>
+      Text item
+    </HeaderDialogText>
+  </HeaderDialogNavItem>
+</HeaderDialogNav>
+```
+
+##### HeaderDialogNav API
+
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
+
+##### HeaderDialogNavItem API
+
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
+
+##### HeaderDialogLink API
+
+| Prop name   | Type      | Default | Required | Description               |
+| ----------- | --------- | ------- | -------- | ------------------------- |
+| `class`     | `string`  | `null`  | no       | Custom CSS class          |
+| `href`      | `string`  | —       | yes      | Link URL                  |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
+| `onClick`   | `string`  | `null`  | no       | Function to call on click |
+| `target`    | `string`  | `null`  | no       | HTML `target` attribute   |
+
+##### HeaderDialogButton API
+
+| Prop name | Type     | Default | Required | Description               |
+| --------- | -------- | ------- | -------- | ------------------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class          |
+| `onClick` | `string` | —       | yes      | Function to call on click |
+
+##### HeaderDialogText API
+
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
+
+On top of the API options, you can add `data-*` or `aria-*` attributes to
+further extend component's descriptiveness and accessibility. These attributes
+will be passed to the topmost HTML element of the component.
+
+## Composition
+
+This is how all supported building blocks of the Header build up the complete
+composition:
+
+```twig
+<Header color="inverted">
+  <!-- Branding -->
+  <HeaderMobileActions dialogId="my-menu">
+    <!-- Optional mobile-only actions -->
+  </HeaderMobileActions>
+  <HeaderDesktopActions>
+    <!-- Desktop-only primary actions -->
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderLink href="/">Job offers</HeaderLink>
+      </HeaderNavItem>
+      <!-- … -->
+    </HeaderNav>
+  </HeaderDesktopActions>
+  <HeaderDesktopActions color="secondary">
+    <!-- Desktop-only secondary actions -->
+  </HeaderDesktopActions>
+</Header>
+```
+
+And the complete Header Dialog:
+
+```twig
+<HeaderDialog id="my-menu">
+  <HeaderDialogCloseButton dialogId="my-menu" />
+  <HeaderDialogActions>
+    <HeaderDialogNav>
+      <!-- Primary actions -->
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Job offers</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <!-- … -->
+    </HeaderDialogNav>
+  </HeaderDialogActions>
+  <HeaderDialogActions color="secondary">
+    <!-- Secondary actions -->
+  </HeaderDialogActions>
+</HeaderDialog>
+```
+
+<details>
+  <summary>Show full example code of Header with responsive navigation</summary>
+
+```twig
+<Header color="inverted">
+  <a href="/" aria-label="Spirit homepage">
+    <img src="…" width="65" height="24" alt="Spirit" />
+  </a>
+  <HeaderMobileActions dialogId="my-menu" />
+  <HeaderDesktopActions aria-label="Main navigation">
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderLink href="/" isCurrent>Job offers</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Part-time jobs</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Inspiration</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Replies</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Employers</HeaderLink>
+      </HeaderNavItem>
+    </HeaderNav>
+  </HeaderDesktopActions>
+  <HeaderDesktopActions color="secondary">
+    <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+  </HeaderDesktopActions>
+</Header>
+
+<HeaderDialog id="my-menu">
+  <HeaderDialogCloseButton dialogId="my-menu" />
+  <HeaderDialogActions aria-label="Main navigation">
+    <HeaderDialogNav>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+      </HeaderDialogNavItem>
+    </HeaderDialogNav>
+  </HeaderDialogActions>
+  <HeaderDialogActions color="secondary">
+    <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+  </HeaderDialogActions>
+</HeaderDialog>
+```
+
+</details>
 
 [header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Header
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
