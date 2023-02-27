@@ -41,6 +41,6 @@ class Password extends BaseComponent {
   }
 }
 
-enableToggleTrigger(Password);
+enableToggleTrigger(Password, 'toggle', 'trigger');
 
 export default Password;
