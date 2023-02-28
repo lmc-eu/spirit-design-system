@@ -2,7 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
-{%- set _enabledDismiss = props.enableDismiss ?? true -%}
+{%- set _enableDismiss = props.enableDismiss ?? true -%}
 {%- set _modalId = props.modalId -%}
 {%- set _titleId = props.titleId | default(null) -%}
 
@@ -32,8 +32,8 @@
         aria-controls="{{ _modalId }}"
         aria-expanded="false"
         color="tertiary"
-        data-dismiss="{{ _enabledDismiss ? 'modal' : null }}"
-        data-target="{{ _enabledDismiss ? '#' ~ _modalId : null }}"
+        data-dismiss="{{ _enableDismiss ? 'modal' : null }}"
+        data-target="{{ _enableDismiss ? '#' ~ _modalId : null }}"
         isSquare
     >
         <Icon name="close" />
