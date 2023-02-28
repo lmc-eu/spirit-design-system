@@ -45,7 +45,9 @@ final class ComponentsSnapshotTest extends TestCase
         $dataToProvide = [];
 
         foreach ($scannedDirectory as $fileName) {
-            $dataToProvide[(string) $fileName] = [(string) $fileName];
+            if (!is_dir(self::SNAPSHOT_SOURCES . '/' . $fileName)) {
+              $dataToProvide[(string) $fileName] = [(string) $fileName];
+            }
         }
 
         return $dataToProvide;

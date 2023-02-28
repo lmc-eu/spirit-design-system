@@ -7,4 +7,4 @@ services:
     command: tail -F anything
     volumes:
       - ./../:/srv/www/spirit-web-twig-bundle/:delegated
-      - ./../../icons/src/svg/:/srv/www/spirit-web-twig-bundle/static/:delegated
+      - ./../../icons/dist/svg/:/srv/www/spirit-web-twig-bundle/static/:delegated

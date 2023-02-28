@@ -88,16 +88,72 @@ See [default filter does not work issue](https://github.com/twigphp/Twig/issues/
 {% endembed %}
 ```
 
-## Components tests
+## Component tests
 
-Components testing is done by snapshots tests. It is required to create snapshot test for each component. Please create a new component fixture file in `tests/components-fixtures/` folder and name it according to the component name.
-
-Run `composer phpunit:update` or `make phpunit-update` to create or update snapshots from fixtures.
+Component testing is done by snapshots tests.
 
 ### Testing
 
-- `% cd <your-local-path>/spirit-design-system/packages/web-twig`
-- `% yarn test:unit` for unit tests
+To run the snapshot tests:
+
+1. `% cd <your-local-path>/spirit-design-system/packages/web-twig`,
+2. `% yarn test:unit` (or `make phpunit`/`composer phpunit`).
+
+### Authoring tests
+
+It is required to create at least one snapshot test for each component. Please
+create a new component fixture file in `tests/components-fixtures/` and name it
+according to the component name, e.g.:
+
+- `tests/components-fixtures/buttonDefault.twig`
+
+You can test multiple scenarios within a single fixture. These use cases must be
+always tested:
+
+1. test the mandatory props only,
+2. test all props.
+
+Aside from these test cases, feel free to test any other important scenarios as
+well.
+
+To keep both fixtures and snapshots organized, separate individual test cases
+using an HTML comment, for example:
+
+```html
+<!-- Render with all props -->
+```
+
+Note: the first test case (testing mandatory props only) is not introduced by a
+comment because Twig would render it before the opening `<html>` tag. However,
+any comments can be used when using the [test layout](#renderable-snapshots).
+
+### Renderable snapshots
+
+By default, snapshots only contain bare HTML of the tested component. This is
+sufficient for checking the output HTML, but not good enough to be viewed in a
+browser.
+
+To wrap your HTML snapshot into a minimal styled page with all Spirit CSS and
+JS, use a test layout built specifically for this purpose like this:
+
+```twig
+{% extend 'partials/testLayout.twig' %}
+{% block content %}
+    {# Your test cases here #}
+{% endblock %}
+```
+
+The result is a complete, static HTML page that can be served by any simple web
+server, e.g. the one included in [PHPStorm], [Python], or [PHP].
+
+💡 Since the test layout refers to CSS, JS, and SVG assets from other Spirit
+packages, make sure to run `yarn build` at the project-root level before trying
+to access the rendered page in your browser.
+
+### Updating snapshots
+
+Run `make phpunit-update` (which is an alias for `composer phpunit:update`) to
+create or update snapshots from fixtures.
 
 ## Release new version
 
@@ -122,3 +178,7 @@ Add remote repository only once:
 Force push current changes to remote using subtree:
 
 - `` git push web-twig-readonly `git subtree split --prefix packages/web-twig main`:main --force ``
+
+[PHPStorm]: https://www.jetbrains.com/help/phpstorm/php-built-in-web-server.html
+[Python]: https://pythonbasics.org/webserver/
+[PHP]: https://www.php.net/manual/en/features.commandline.webserver.php
