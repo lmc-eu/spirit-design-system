@@ -1,9 +1,25 @@
-<Link href="/">
+<Link>Example link</Link>
+
+<!-- Render as an underlined secondary link -->
+<Link href="/" color="secondary" isUnderlined>
     Example link
 </Link>
-<Link href="/" isUnderlined color="secondary">
+
+<!-- Render as disabled -->
+<Link href="/" isDisabled>
     Example link
 </Link>
-<Link href="/" isUnderlined isDisabled>
+
+<!-- Render with all props -->
+<Link
+    color="inverted"
+    class="my-custom-class"
+    href="https://spirit.design"
+    isDisabled
+    isUnderlined
+    onClick="console.log('Hello!');"
+    target="_blank"
+    title="test title"
+>
     Example link
 </Link>
