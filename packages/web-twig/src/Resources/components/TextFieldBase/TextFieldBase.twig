@@ -14,6 +14,7 @@
 {%- set _type = props.type | default('text') -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 
 {# Extended API for TextArea #}
 {%- set _rows = props.rows | default(null) -%}
@@ -37,6 +38,7 @@
 {%- set _rootDisabledClassName = _isDisabled ? _rootClassName ~ '--disabled' : null -%}
 {%- set _rootFluidClassName = _isFluid ? _rootClassName ~ '--fluid' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _rootClassName ~ '--' ~ _validationState : null -%}
+{%- set _helperTextClassName = _rootClassName ~ '__helperText' -%}
 
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
@@ -123,6 +125,11 @@
                 {{ _valueAttr | raw }}
             />
         {% endif %}
+    {% endif %}
+    {% if _helperText %}
+        <span class="{{ _helperTextClassName }}">
+            {{ _helperText | raw }}
+        </span>
     {% endif %}
     {% if _message %}
         <div class="{{ _messageClassName }}">

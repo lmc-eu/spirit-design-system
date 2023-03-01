@@ -22,6 +22,7 @@ Default TextFieldBase:
   placeholder="Placeholder"
   type="text"
   validationState="danger"
+  helperText="custom helper text"
 />
 ```
 
@@ -51,6 +52,7 @@ Without lexer:
     isRequired: true,
     validationState: "danger",
     message: "validation failed",
+    helperText: "custom helper text",
 }} %}
 ```
 
@@ -73,6 +75,7 @@ Without lexer:
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url`        | `text`  | no       | Input type                                                                                                                         |
 | `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
 | `value`             | `string`                                                             | `null`  | no       | Input value                                                                                                                        |
+| `helperText`        | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
