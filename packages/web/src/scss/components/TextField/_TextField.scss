@@ -138,6 +138,10 @@ $_field-name: 'TextField';
     @include form-fields-tools.message();
 }
 
+.TextField__helperText {
+    @include form-fields-tools.helper-text();
+}
+
 @include form-fields-tools.input-field-validation-states($_field-name);
 
 .TextField--disabled > .TextField__label {
@@ -174,4 +178,8 @@ $_field-name: 'TextField';
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
     @include form-fields-tools.message-disabled();
+}
+
+:is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__helperText) {
+    @include form-fields-tools.helper-text-disabled();
 }

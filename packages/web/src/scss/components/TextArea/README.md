@@ -47,6 +47,16 @@ Fluid width:
 </div>
 ```
 
+Usage with helper text:
+
+```html
+<div class="TextArea">
+  <label for="TextArea-helperText" class="TextArea__label">Label</label>
+  <textarea id="TextArea-helperText" class="TextArea__input" placeholder="Placeholder"></textarea>
+  <div class="TextArea__helperText">Helper text</div>
+</div>
+```
+
 ## Input Width
 
 There are several ways to adjust the textarea width:

@@ -252,6 +252,18 @@
     </div>
     <button type="button" class="Button Button--primary Button--medium">Button</button>
   </div>
+
+  <div class="TextField">
+    <label for="textfieldWithHelperText" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfieldWithHelperText" class="TextField__input" placeholder="Placeholder" />
+    <div class="TextField__helperText">* The field is required</div>
+  </div>
+  <div class="TextField TextField--danger">
+    <label for="textfieldWithHelperTextAndValidationMessage" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfieldWithHelperTextAndValidationMessage" class="TextField__input" placeholder="Placeholder" />
+    <div class="TextField__helperText">* The field is required</div>
+    <div class="TextField__message">Danger validation message</div>
+  </div>
 </div>
 
 {{/layout/plain }}
