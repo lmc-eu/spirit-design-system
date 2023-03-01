@@ -4,14 +4,14 @@ This is Twig implementation of the [TextArea] component.
 
 Basic example usage:
 
-```html
-<textarea id="example" label="Label" name="example"></textarea>
+```twig
+<TextArea id="example" label="Label" name="example"></TextArea>
 ```
 
 Advanced example usage:
 
-```html
-<textarea
+```twig
+<TextArea
   id="example2"
   label="Label"
   messsage="validation failed"
@@ -24,7 +24,7 @@ Advanced example usage:
   helperText="custom helper text"
 >
     TextArea
-</textarea>
+</TextArea>
 ```
 
 Without lexer:
@@ -53,7 +53,7 @@ Without lexer:
 | `isRequired`      | `bool`                                                               | `false` | no       | If true, TextArea is required                                                                                                      |
 | `label`           | `string`                                                             | —       | yes      | Label text                                                                                                                         |
 | `maxLength`       | `number`                                                             | `null`  | no       | Maximum number of characters                                                                                                       |
-| `message`         | `string`                                                             | `null`  | no       | Validation or help message                                                                                                         |
+| `message`         | `string`                                                             | `null`  | no       | Validation message                                                                                                                 |
 | `name`            | `string`                                                             | `null`  | no       | TextArea name                                                                                                                      |
 | `placeholder`     | `string`                                                             | `null`  | no       | TextArea placeholder                                                                                                               |
 | `rows`            | `number`                                                             | `null`  | no       | Number of visible rows                                                                                                             |
