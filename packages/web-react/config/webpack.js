@@ -1,10 +1,10 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const TerserPlugin = require('terser-webpack-plugin');
+const commonConfig = require('./webpack.common');
 
 const libName = 'web-react';
-
-const commonConfig = require('./webpack.common');
 
 module.exports = (env, argv) =>
   merge(commonConfig, {
@@ -18,9 +18,16 @@ module.exports = (env, argv) =>
     },
     plugins: [
       new BundleAnalyzerPlugin({
+        statsFilename: 'browser-stats.json',
         generateStatsFile: true,
         analyzerMode: 'disabled',
-        statsFilename: 'stats.json',
       }),
     ],
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false,
+        }),
+      ],
+    },
   });
