@@ -20,11 +20,11 @@ const Story = (props: unknown) => (
       validationState="warning"
     />
     <TextArea
-      id="textarea-error"
-      label="Validation error"
-      message="Error message"
-      name="textarea-error"
-      validationState="error"
+      id="textarea-danger"
+      label="Validation danger"
+      message="Danger message"
+      name="textarea-danger"
+      validationState="danger"
     />
   </div>
 );

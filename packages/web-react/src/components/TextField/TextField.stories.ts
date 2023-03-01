@@ -22,4 +22,5 @@ export { default as TextFieldPasswordToggle } from './stories/TextFieldPasswordT
 export { default as TextFieldLabelRequired } from './stories/TextFieldRequired';
 export { default as TextFieldType } from './stories/TextFieldType';
 export { default as TextFieldValidationState } from './stories/TextFieldValidationState';
+export { default as TextFieldHelperText } from './stories/TextFieldHelperText';
 export { default as HTML } from './stories/TextFieldHtml';

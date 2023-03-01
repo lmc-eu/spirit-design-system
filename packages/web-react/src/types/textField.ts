@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, TextInputProps, TransferProps, HelperTextProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 import { PasswordToggleAdornmentProp } from './shared/adornments';
@@ -10,6 +10,7 @@ export interface TextFieldProps
     StyleProps,
     LabelProps,
     MessageProps,
+    HelperTextProps,
     TextInputProps,
     TransferProps,
     PasswordToggleAdornmentProp {

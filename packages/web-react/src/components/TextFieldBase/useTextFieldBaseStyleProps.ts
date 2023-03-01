@@ -9,6 +9,7 @@ export interface TextFieldBaseStyles {
     label: string;
     input: string;
     message: string;
+    helperText: string;
     passwordToggle: string;
     passwordToggleButton: string;
     passwordToggleIcon: string;
@@ -33,6 +34,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
   const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
   const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
   const TextFieldBasePasswordToggleIconClass = `${TextFieldBaseClass}__passwordToggle__icon`;
+  const TextFieldBaseHelperTextClass = `${TextFieldBaseClass}__helperText`;
 
   const rootStyles = classNames(TextFieldBaseClass, {
     [TextFieldBaseDisabledClass]: isDisabled,
@@ -50,6 +52,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
       label: labelStyles,
       input: TextFieldBaseInputClass,
       message: TextFieldBaseMessageClass,
+      helperText: TextFieldBaseHelperTextClass,
       passwordToggle: TextFieldBasePasswordToggleClass,
       passwordToggleButton: TextFieldBasePasswordToggleButtonClass,
       passwordToggleIcon: TextFieldBasePasswordToggleIconClass,

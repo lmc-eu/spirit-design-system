@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isFluid = props.isFluid | default(false) | boolprop -%}
@@ -14,7 +15,6 @@
 {%- set _type = props.type | default('text') -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
-{%- set _helperText = props.helperText | default(null) -%}
 
 {# Extended API for TextArea #}
 {%- set _rows = props.rows | default(null) -%}
@@ -61,6 +61,9 @@
 {# Deprecations #}
 {% if _validationState is same as('error') %}
     {% deprecated _rootClassName ~ ': The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.' %}
+{% endif %}
+{% if _message and _validationState is same as(null) %}
+    {% deprecated _rootClassName ~ ': `message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.' %}
 {% endif %}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
@@ -127,9 +130,9 @@
         {% endif %}
     {% endif %}
     {% if _helperText %}
-        <span class="{{ _helperTextClassName }}">
+        <div class="{{ _helperTextClassName }}">
             {{ _helperText | raw }}
-        </span>
+        </div>
     {% endif %}
     {% if _message %}
         <div class="{{ _messageClassName }}">

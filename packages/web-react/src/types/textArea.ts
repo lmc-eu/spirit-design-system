@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps, TextInputProps, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, TextInputProps, TransferProps, HelperTextProps } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
@@ -7,6 +7,7 @@ export interface TextAreaProps
     StyleProps,
     LabelProps,
     MessageProps,
+    HelperTextProps,
     TextInputProps,
     TransferProps {
   /** Maximum characters length */

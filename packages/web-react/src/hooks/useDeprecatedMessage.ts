@@ -31,7 +31,7 @@ export const useDeprecatedMessage = ({
 };
 
 export interface UseDeprecationMessageProps {
-  method?: 'component' | 'property';
+  method?: 'component' | 'property' | 'custom';
   trigger: boolean;
   componentName: string;
   componentProps?: {
@@ -48,6 +48,7 @@ export interface UseDeprecationMessageProps {
     newValue?: string;
     propertyName?: string;
   };
+  customText?: string;
 }
 
 export const useDeprecationMessage = ({
@@ -56,8 +57,9 @@ export const useDeprecationMessage = ({
   componentName,
   componentProps,
   propertyProps,
+  customText,
 }: UseDeprecationMessageProps) => {
-  let message: string;
+  let message: string | undefined;
   let hasProps: boolean;
   const messageBase = `Deprecation warning (${componentName}):`;
 
@@ -74,6 +76,11 @@ export const useDeprecationMessage = ({
           message = `${messageBase} "${propertyProps?.deprecatedName}" property will be replaced in the next major version. Please use "${propertyProps?.newName}" instead. ♻️️`;
         }
         hasProps = !!propertyProps;
+        break;
+
+      case 'custom':
+        message = `${messageBase} ${customText}`;
+        hasProps = true;
         break;
 
       case 'component':
