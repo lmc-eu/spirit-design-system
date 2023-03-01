@@ -4,14 +4,14 @@ This is Twig implementation of the [TextArea] component.
 
 Basic example usage:
 
-```twig
-<TextArea id="example" label="Label" name="example"></TextArea>
+```html
+<textarea id="example" label="Label" name="example"></textarea>
 ```
 
 Advanced example usage:
 
-```twig
-<TextArea
+```html
+<textarea
   id="example2"
   label="Label"
   messsage="validation failed"
@@ -21,9 +21,10 @@ Advanced example usage:
   maxlength="180"
   rows="10"
   isRequired
+  helperText="custom helper text"
 >
     TextArea
-</TextArea>
+</textarea>
 ```
 
 Without lexer:
@@ -36,6 +37,7 @@ Without lexer:
     isRequired: true,
     validationState: "danger",
     message: "validation failed",
+    helperText: "custom helper text",
 }} %}
 ```
 
@@ -57,6 +59,7 @@ Without lexer:
 | `rows`            | `number`                                                             | `null`  | no       | Number of visible rows                                                                                                             |
 | `validationState` | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
 | `value`           | `string`                                                             | `null`  | no       | TextArea value                                                                                                                     |
+| `helperText`      | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
