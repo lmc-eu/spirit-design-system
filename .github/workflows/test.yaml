@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: '0 9 * * *' # every day at 9:00
 
+env:
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  NX_BRANCH: ${{ github.event.number || github.ref_name }}
+  NX_VERBOSE_LOGGING: true
+
 jobs:
   test:
     runs-on: ubuntu-20.04
@@ -40,14 +45,18 @@ jobs:
         run: yarn types
 
       - name: Publish Web Package Code Coverage
-        uses: coverallsapp/github-action@v2.2.3
+        # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
+        if: ${{ hashFiles('./packages/web/.coverage/lcov.info') != '' }}
+        uses: coverallsapp/github-action@v2.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web/.coverage/lcov.info
           flag-name: web
 
       - name: Publish Web-React Package Code Coverage
-        uses: coverallsapp/github-action@v2.2.3
+        # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
+        if: ${{ hashFiles('./packages/web-react/.coverage/lcov.info') != '' }}
+        uses: coverallsapp/github-action@v2.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web-react/.coverage/lcov.info

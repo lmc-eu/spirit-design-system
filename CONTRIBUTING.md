@@ -199,6 +199,13 @@ We are investigating how we should handle visual testing and several paths like
 
 So the visual tests do not provide full coverage now.
 
+### Speed up CI performance
+
+This project uses [Nx Cloud](https://nx.app/) for speeding up CI runs by caching its results.
+You can also benefit from this feature locally by adding `nx-cloud.env` to root of this project with `NX_CLOUD_ACCESS_TOKEN=<token>`.
+Read-write token can be generated inside the Nx Cloud App.
+Otherwise only read access is used so you cannot [upload your local cache](https://lerna.js.org/docs/features/share-your-cache).
+
 ## Publishing
 
 This project uses GitHub Actions to publish the packages automatically to npm. New packages are published after the new tag is pushed to the main branch. PR can be merged only by the appropriate group of maintainers.
