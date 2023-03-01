@@ -18,6 +18,10 @@ This exported does several operations with tokens:
 As typography in Figma and Supernova are stored in named text style groups, these groups are used to generate SCSS maps with all the values from Supernova. They are grouped by breakpoints.
 ⚠️ We do not generate `link` typography tokens (styles that include `-link` in their name).
 
+#### Ebony Font Weight Exception
+
+Font Family Ebony has a different font weight mapping in Figma and in Adobe Fonts. To match these we set its own font weight numeric-name conversion.
+
 ### Sorting
 
 Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). Except Measures - sorted by name number and Other - sorted by value.
