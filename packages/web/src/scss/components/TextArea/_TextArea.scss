@@ -42,6 +42,10 @@ $_field-name: 'TextArea';
     @include form-fields-tools.message();
 }
 
+.TextArea__helperText {
+    @include form-fields-tools.helper-text();
+}
+
 @include form-fields-tools.input-field-validation-states($_field-name);
 
 .TextArea--disabled > .TextArea__label {
@@ -55,4 +59,8 @@ $_field-name: 'TextArea';
 
 :is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__message, [data-element='validator_message']) {
     @include form-fields-tools.message-disabled();
+}
+
+:is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__helperText) {
+    @include form-fields-tools.helper-text-disabled();
 }

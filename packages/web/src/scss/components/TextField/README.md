@@ -47,6 +47,16 @@ Fluid width:
 </div>
 ```
 
+Usage with helper text:
+
+```html
+<div class="TextField">
+  <label for="textfield-helperText" class="TextField__label">Label</label>
+  <input type="text" id="textfield-helperText" class="TextField__input" placeholder="Placeholder" />
+  <div class="TextField__helperText">Helper text</div>
+</div>
+```
+
 ## Supported `type` Values
 
 TextField supports the following input types:
