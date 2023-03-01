@@ -53,6 +53,15 @@ describe('TextField', () => {
       expect(element.textContent).toBe('text');
     });
 
+    it('should have helper text', () => {
+      const dom = render(
+        <TextField id="textfield" label="Label" type={type as TextFieldType} helperText="helper text" />,
+      );
+
+      const element = dom.container.querySelector('.TextField__helperText') as HTMLElement;
+      expect(element.textContent).toBe('helper text');
+    });
+
     it('should have password toggle', () => {
       const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
 

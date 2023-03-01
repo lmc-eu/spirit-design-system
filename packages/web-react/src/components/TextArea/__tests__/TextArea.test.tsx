@@ -51,6 +51,13 @@ describe('TextArea', () => {
     expect(element.textContent).toBe('text');
   });
 
+  it('should have helper text', () => {
+    const dom = render(<TextArea id="textarea" label="Label" helperText="helper text" />);
+
+    const element = dom.container.querySelector('.TextArea__helperText') as HTMLElement;
+    expect(element.textContent).toBe('helper text');
+  });
+
   it('should have fluid classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" isFluid />);
 

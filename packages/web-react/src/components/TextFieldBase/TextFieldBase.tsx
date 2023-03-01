@@ -10,7 +10,7 @@ const TextFieldBaseInputWithPasswordToggle = withPasswordToggle<TextFieldBasePas
 
 export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
-  const { id, label, message, ...restProps } = modifiedProps;
+  const { id, label, message, helperText, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   useDeprecationMessage({
@@ -23,6 +23,13 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       propertyName: 'validationState',
     },
   });
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !!(props?.message && !props?.validationState),
+    componentName: props?.isMultiline ? 'TextArea' : 'TextField',
+    customText:
+      '`message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.',
+  });
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>
@@ -32,6 +39,7 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
       {/* @ts-expect-error Property missing in the type */}
       <TextFieldBaseInputWithPasswordToggle id={id} {...otherProps} />
+      {helperText && <div className={classProps.helperText}>{helperText}</div>}
       {message && <div className={classProps.message}>{message}</div>}
     </div>
   );

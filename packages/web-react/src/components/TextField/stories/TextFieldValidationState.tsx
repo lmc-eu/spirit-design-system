@@ -20,11 +20,11 @@ const Story = (props: unknown) => (
       validationState="warning"
     />
     <TextField
-      id="textfield-error"
-      label="Validation error"
-      message="Error message"
-      name="textfield-error"
-      validationState="error"
+      id="textfield-danger"
+      label="Validation danger"
+      message="Danger message"
+      name="textfield-danger"
+      validationState="danger"
     />
   </div>
 );
