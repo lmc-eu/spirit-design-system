@@ -50,7 +50,7 @@ export function generateTypography(
       fontFamily: `'${token.value.font.family}'${fontFamilyFallback}`,
       fontSize,
       fontStyle,
-      fontWeight: normalizeWeight(fontWeight),
+      fontWeight: normalizeWeight(fontWeight, token.value.font.family),
       lineHeight,
       letterSpacing,
       textDecoration,
