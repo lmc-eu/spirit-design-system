@@ -36,8 +36,6 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
-      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-      {/* @ts-expect-error Property missing in the type */}
       <TextFieldBaseInputWithPasswordToggle id={id} {...otherProps} />
       {helperText && <div className={classProps.helperText}>{helperText}</div>}
       {message && <div className={classProps.message}>{message}</div>}

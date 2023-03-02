@@ -10,6 +10,6 @@ export interface StyleProps {
 
 export type UnsafeStyleProps = 'style' | 'className';
 
-export type OmittedUnsafeStyleProps<E> = Omit<E, UnsafeStyleProps>;
-
 export type OmittedExtendedUnsafeStyleProps<E, P> = Omit<E, UnsafeStyleProps & P>;
+
+export type OverloadStyleProps<E> = Omit<E, UnsafeStyleProps> & StyleProps;

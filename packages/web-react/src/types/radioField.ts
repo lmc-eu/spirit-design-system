@@ -1,27 +1,27 @@
 import {
   ChildrenProps,
-  InputBase,
-  ItemProps,
-  StyleProps,
-  TransferProps,
-  ValueBase,
   HelperTextProps,
+  InputBaseProps,
+  ItemProps,
+  SpiritInputElementProps,
   Validation,
 } from './shared';
 import { LabelProps } from './label';
 
-interface InputProps extends InputBase, ValueBase<string | number>, Validation {}
+export type RadioElementBaseProps = SpiritInputElementProps;
 
 export interface RadioFieldProps
-  extends ChildrenProps,
+  extends RadioElementBaseProps,
+    ChildrenProps,
     LabelProps,
-    InputProps,
     ItemProps,
-    StyleProps,
     HelperTextProps,
-    TransferProps {
+    InputBaseProps,
+    Validation {
   /** Whether the checkbox is checked */
   isChecked?: boolean;
+  /** Text of control label */
+  label: string;
 }
 
 export interface SpiritRadioFieldProps extends RadioFieldProps {}
