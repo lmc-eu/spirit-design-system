@@ -1,19 +1,27 @@
-import { ChildrenProps, StyleProps, TextInputProps, TransferProps, HelperTextProps } from './shared';
+import {
+  ChildrenProps,
+  HelperTextProps,
+  InputBaseProps,
+  SpiritTextAreaElementProps,
+  TextInputProps,
+  Validation,
+} from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
+export type TextAreaElementBaseProps = SpiritTextAreaElementProps;
+
 export interface TextAreaProps
-  extends ChildrenProps,
-    StyleProps,
+  extends TextAreaElementBaseProps,
+    InputBaseProps,
+    ChildrenProps,
     LabelProps,
     MessageProps,
     HelperTextProps,
     TextInputProps,
-    TransferProps {
+    Validation {
   /** Maximum characters length */
   maxLength?: number;
-  /** The number of visible rows */
-  rows?: number;
 }
 
 export interface SpiritTextAreaProps extends TextAreaProps {}

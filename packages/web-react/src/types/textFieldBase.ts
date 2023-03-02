@@ -1,23 +1,17 @@
-import { ChildrenProps, TextInputProps } from './shared';
+import { ChildrenProps, PasswordToggleAdornmentProp, TextInputProps } from './shared';
 import { TextAreaProps } from './textArea';
-import { TextFieldProps, TextFieldType } from './textField';
-import { PasswordToggleAdornmentProp } from './shared/adornments';
+import { TextFieldProps } from './textField';
 
 export interface TextFieldBaseMultiLineProps {
   /** Whether the input is TextArea. */
   isMultiline?: boolean;
 }
 
-export interface TextFieldBaseProps extends ChildrenProps, TextFieldProps, TextAreaProps, TextFieldBaseMultiLineProps {}
+export type TextFieldBaseProps = ChildrenProps & TextFieldBaseMultiLineProps & (TextFieldProps | TextAreaProps);
 
-export interface SpiritTextFieldBaseProps extends TextFieldBaseProps {}
+export type SpiritTextFieldBaseProps = TextFieldBaseProps;
 
-export interface TextFieldBaseInputProps extends TextInputProps, TextFieldBaseMultiLineProps {
-  /** The input width */
-  inputWidth?: number;
-  /** The type of text field */
-  type?: TextFieldType;
-}
+export type TextFieldBaseInputProps = TextInputProps & TextFieldBaseMultiLineProps;
 
 export interface SpiritTextFieldBaseInputProps extends TextFieldBaseInputProps {}
 
