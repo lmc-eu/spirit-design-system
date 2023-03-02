@@ -57,8 +57,8 @@
 {%- set _allowedAttributes = [ 'autocomplete' ] -%}
 
 {# Deprecations #}
-{% if _validationState === 'error' %}
-    {% deprecated _rootClassName + ': The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.'️️️ %}
+{% if _validationState is same as('error') %}
+    {% deprecated _rootClassName ~ ': The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.' %}
 {% endif %}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>

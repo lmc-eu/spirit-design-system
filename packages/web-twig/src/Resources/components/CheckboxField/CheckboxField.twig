@@ -39,8 +39,8 @@
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 {# Deprecations #}
-{% if _validationState === 'error' %}
-    {% deprecated 'CheckboxField: The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.'️️️ %}
+{% if _validationState is same as('error') %}
+    {% deprecated 'CheckboxField: The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.' %}
 {% endif %}
 
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
