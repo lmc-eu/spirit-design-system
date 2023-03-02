@@ -1,0 +1,29 @@
+name: PHPUnit
+
+on:
+  push:
+#    paths:
+#      - packages/web-twig/**
+
+jobs:
+  build-test:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        uses: php-actions/composer@v6
+        working-directory: ./packages/web-twig
+        with:
+          php_version: '7.4'
+
+      - name: PHPUnit tests, PHP 7.4
+        uses: php-actions/phpunit@master
+        working-directory: ./packages/web-twig
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml.dist
+          args: --coverage-text
+          php_version: '7.4'
