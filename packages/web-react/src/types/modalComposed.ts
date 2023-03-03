@@ -35,6 +35,7 @@ export interface ModalComposedHeaderProps extends SpiritElementProps, ChildrenPr
 
 export interface ModalComposedFooterProps extends SpiritElementProps, ChildrenProps {
   align?: AlignmentXDictionaryType;
+  alignmentX?: AlignmentXDictionaryType;
   description?: string;
 }
 
