@@ -1,60 +1,27 @@
-export const Sizes = {
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  LARGE: 'large',
-} as const;
+import { ActionColors, EmotionColors, TextColors, Sizes, SizesExtended, ValidationStates } from '../../constants';
 
-export type SizesKeys = keyof typeof Sizes;
-export type Size<S> = (typeof Sizes)[SizesKeys] | S;
-
-export const SizesExtended = {
-  ...Sizes,
-  XSMALL: 'xsmall',
-  XLARGE: 'xlarge',
-} as const;
-
-export type SizesExtendedKeys = keyof typeof SizesExtended;
-export type SizeExtended<S> = (typeof SizesExtended)[SizesExtendedKeys] | S;
-
-export const ActionColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
-  INVERTED: 'inverted',
-} as const;
-
+/* Colors */
 export type ActionColorsKeys = keyof typeof ActionColors;
-export type ActionColor<A> = (typeof ActionColors)[ActionColorsKeys] | A;
-
-export const EmotionColors = {
-  SUCCESS: 'success',
-  INFORMATIVE: 'informative',
-  WARNING: 'warning',
-  DANGER: 'danger',
-} as const;
+export type ActionColor<T = undefined> = (typeof ActionColors)[ActionColorsKeys] | T;
 
 export type EmotionColorsKeys = keyof typeof EmotionColors;
-export type EmotionColor<E> = (typeof EmotionColors)[EmotionColorsKeys] | E;
-
-export const TextColors = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  INVERTED: 'inverted',
-} as const;
+export type EmotionColor<T = undefined> = (typeof EmotionColors)[EmotionColorsKeys] | T;
 
 export type TextColorsKeys = keyof typeof TextColors;
-export type TextColor<T> = (typeof TextColors)[TextColorsKeys] | T;
+export type TextColor<T = undefined> = (typeof TextColors)[TextColorsKeys] | T;
 
-export interface SizeProps<S> {
+/* Size */
+export type SizesKeys = keyof typeof Sizes;
+export type Size<T = undefined> = (typeof Sizes)[SizesKeys] | T;
+
+export type SizesExtendedKeys = keyof typeof SizesExtended;
+export type SizeExtended<T = undefined> = (typeof SizesExtended)[SizesExtendedKeys] | T;
+
+export interface SizeProps<P> {
   /** Size of the text */
-  size?: S;
+  size?: P;
 }
 
-export const ValidationStates = {
-  SUCCESS: 'success',
-  WARNING: 'warning',
-  DANGER: 'danger',
-} as const;
-
+/* Validation */
 export type ValidationStatesKeys = keyof typeof ValidationStates;
-export type ValidationStatesTypes<T> = (typeof ValidationStates)[ValidationStatesKeys] | T;
+export type ValidationStatesTypes<T = undefined> = (typeof ValidationStates)[ValidationStatesKeys] | T;

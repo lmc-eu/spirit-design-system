@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { SpiritRadioFieldProps, ValidationStates } from '../../../types';
+import { SpiritRadioFieldProps } from '../../../types';
+import { ValidationStates } from '../../../constants';
 import { useRadioFieldStyleProps } from '../useRadioFieldStyleProps';
 
 describe('useRadioFieldStyleProps', () => {
