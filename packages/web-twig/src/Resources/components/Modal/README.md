@@ -165,18 +165,19 @@ will be passed to the topmost HTML element of the component.
 <ModalFooter>
   …
 </ModalFooter>
-<ModalFooter align="left" description="Modal Footer description">
+<ModalFooter alignmentX="left" description="Modal Footer description">
   …
 </ModalFooter>
 ```
 
 #### API
 
-| Prop name     | Type     | Default | Required | Description                 |
-| ------------- | -------- | ------- | -------- | --------------------------- |
-| `align`       | `string` | `right` | no       | Alignment of Footer Actions |
-| `class`       | `string` | `null`  | no       | Custom CSS class            |
-| `description` | `string` | `null`  | no       | Optional Footer Description |
+| Prop name     | Type                                          | Default | Required | Description                                                                        |
+| ------------- | --------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------- |
+| `align`       | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | [**DEPRECATED**][deprecated] in favor of `alignmentX`; Alignment of Footer Actions |
+| `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | Alignment of Footer Actions                                                        |
+| `class`       | `string`                                      | `null`  | no       | Custom CSS class                                                                   |
+| `description` | `string`                                      | `null`  | no       | Optional Footer Description                                                        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
@@ -212,7 +213,7 @@ When you put it all together:
     <ModalBody>
       <p>Modal body form</p>
     </ModalBody>
-    <ModalFooter align="left" description="Modal Footer description">
+    <ModalFooter alignmentX="left" description="Modal Footer description">
       <Button color="primary">
         Submit
       </Button>
@@ -287,3 +288,5 @@ will be passed to the topmost HTML element of the component.
 
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations

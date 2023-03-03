@@ -1,8 +1,9 @@
 import classNames from 'classnames';
+import { AlignmentXDictionaryType } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
 
 export interface ModalComposedStylesProps {
-  footerAlign?: 'left' | 'center' | 'right';
+  footerAlignment?: AlignmentXDictionaryType;
   isExpandedOnMobile?: boolean;
 }
 
@@ -23,8 +24,8 @@ export interface ModalComposedStylesReturn {
 }
 
 export function useModalComposedStyleProps(
-  { footerAlign = 'right', isExpandedOnMobile }: ModalComposedStylesProps = {
-    footerAlign: 'right',
+  { footerAlignment = 'right', isExpandedOnMobile }: ModalComposedStylesProps = {
+    footerAlignment: 'right',
     isExpandedOnMobile: false,
   },
 ): ModalComposedStylesReturn {
@@ -50,7 +51,7 @@ export function useModalComposedStyleProps(
     header: modalHeaderClass,
     body: modalBodyClass,
     footer: {
-      root: classNames(modalFooterClass, { [footerAlignClasses[footerAlign]]: footerAlign }),
+      root: classNames(modalFooterClass, { [footerAlignClasses[footerAlignment]]: footerAlignment }),
       description: modalFooterDescriptionClass,
       actions: modalFooterActionsClass,
     },

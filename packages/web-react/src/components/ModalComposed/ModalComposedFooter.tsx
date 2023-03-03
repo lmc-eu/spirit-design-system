@@ -1,14 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks';
-import { ModalComposedFooterProps } from '../../types/modalComposed';
+import { useStyleProps, useDeprecatedMessage } from '../../hooks';
+import { ModalComposedFooterProps } from '../../types';
 import { useModalComposedStyleProps } from './useModalComposedStyleProps';
 
 const ModalComposedFooter = (props: ModalComposedFooterProps) => {
-  const { children, align = 'right', description, ...restProps } = props;
+  const { children, alignmentX = 'right', align = 'right', description, ...restProps } = props;
 
-  const { classProps } = useModalComposedStyleProps({ footerAlign: align });
+  const { classProps } = useModalComposedStyleProps({ footerAlignment: alignmentX || align });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecatedMessage({
+    trigger: !!align,
+    componentName: 'ModalComposedFooter',
+    deprecatedPropName: 'align',
+    newPropName: 'alignmentX',
+  });
 
   return (
     <footer {...otherProps} {...styleProps} className={classNames(classProps.footer.root, styleProps.className)}>
