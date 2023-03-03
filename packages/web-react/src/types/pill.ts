@@ -1,7 +1,7 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ActionColor, ChildrenProps, EmotionColor, TransferProps } from './shared';
+import { ActionColorsDictionaryType, ChildrenProps, EmotionColorsDictionaryType, TransferProps } from './shared';
 
-export type PillColor<C> = ActionColor<void> | EmotionColor<void> | 'selected' | 'unselected' | C;
+export type PillColor<C> = ActionColorsDictionaryType | EmotionColorsDictionaryType | 'selected' | 'unselected' | C;
 
 export interface AriaPillElementTypeProps<T extends ElementType = 'span'> {
   /**

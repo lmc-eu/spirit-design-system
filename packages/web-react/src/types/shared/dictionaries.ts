@@ -1,21 +1,21 @@
 import { ActionColors, EmotionColors, TextColors, Sizes, SizesExtended, ValidationStates } from '../../constants';
 
 /* Colors */
-export type ActionColorsKeys = keyof typeof ActionColors;
-export type ActionColor<T = undefined> = (typeof ActionColors)[ActionColorsKeys] | T;
+export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
+export type ActionColorsDictionaryType<T = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | T;
 
-export type EmotionColorsKeys = keyof typeof EmotionColors;
-export type EmotionColor<T = undefined> = (typeof EmotionColors)[EmotionColorsKeys] | T;
+export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
+export type EmotionColorsDictionaryType<T = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | T;
 
-export type TextColorsKeys = keyof typeof TextColors;
-export type TextColor<T = undefined> = (typeof TextColors)[TextColorsKeys] | T;
+export type TextColorsDictionaryKeys = keyof typeof TextColors;
+export type TextColorsDictionaryType<T = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | T;
 
 /* Size */
-export type SizesKeys = keyof typeof Sizes;
-export type Size<T = undefined> = (typeof Sizes)[SizesKeys] | T;
+export type SizesDictionaryKeys = keyof typeof Sizes;
+export type SizesDictionaryType<T = undefined> = (typeof Sizes)[SizesDictionaryKeys] | T;
 
-export type SizesExtendedKeys = keyof typeof SizesExtended;
-export type SizeExtended<T = undefined> = (typeof SizesExtended)[SizesExtendedKeys] | T;
+export type SizesExtendedDictionaryKeys = keyof typeof SizesExtended;
+export type SizeExtendedDictionaryType<T = undefined> = (typeof SizesExtended)[SizesExtendedDictionaryKeys] | T;
 
 export interface SizeProps<P> {
   /** Size of the text */
@@ -23,5 +23,7 @@ export interface SizeProps<P> {
 }
 
 /* Validation */
-export type ValidationStatesKeys = keyof typeof ValidationStates;
-export type ValidationStatesTypes<T = undefined> = (typeof ValidationStates)[ValidationStatesKeys] | T;
+export type ValidationStatesDictionaryKeys = keyof typeof ValidationStates;
+export type ValidationStatesDictionaryType<T = undefined> =
+  | (typeof ValidationStates)[ValidationStatesDictionaryKeys]
+  | T;

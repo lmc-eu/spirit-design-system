@@ -5,7 +5,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { textColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { TextColor } from '../../../types';
+import { TextColorsDictionaryType } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';
 
@@ -22,7 +22,7 @@ describe('Link', () => {
     const dom = render(
       <Link
         href="/"
-        color={color as TextColor<string>}
+        color={color as TextColorsDictionaryType<string>}
         isUnderlined={isUnderlined as boolean}
         isDisabled={isDisabled as boolean}
       />,

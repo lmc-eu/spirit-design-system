@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, EmotionColor, StyleProps, TransferProps } from './shared';
+import { ChildrenProps, EmotionColorsDictionaryType, StyleProps, TransferProps } from './shared';
 
 export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
   /**
@@ -16,7 +16,7 @@ export interface SpiritAlertProps<T extends ElementType = 'div', S = void>
   extends AriaAlertElementTypeProps<T>,
     AlertProps {
   /** The color of the alert. */
-  color?: EmotionColor<S>;
+  color?: EmotionColorsDictionaryType<S>;
   /** Icon used in Alert. */
   iconName?: string;
   /** Whether the alert should be centered. */
