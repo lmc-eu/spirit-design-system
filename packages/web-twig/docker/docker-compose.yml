@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: 'Dockerfile'
+      target: app_php_dev
     # To keep the image up and running
     command: tail -F anything
     volumes:
