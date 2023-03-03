@@ -7,10 +7,10 @@ import {
   SpiritDivElementProps,
   SpiritDialogElementProps,
   SpiritElementProps,
+  AlignmentXDictionaryType,
 } from './shared';
 
 export type ModalComposedDialogElementType = 'article' | 'form';
-export type ModalFooterAlignType = 'left' | 'center' | 'right';
 
 export type ModalComposedDialogHandlingProps = {
   isOpen: boolean;
@@ -34,7 +34,7 @@ export interface ModalComposedHeaderProps extends SpiritElementProps, ChildrenPr
 }
 
 export interface ModalComposedFooterProps extends SpiritElementProps, ChildrenProps {
-  align?: ModalFooterAlignType;
+  align?: AlignmentXDictionaryType;
   description?: string;
 }
 

@@ -1,4 +1,16 @@
-import { ActionColors, EmotionColors, TextColors, Sizes, SizesExtended, ValidationStates } from '../../constants';
+import {
+  AlignmentX,
+  ActionColors,
+  EmotionColors,
+  TextColors,
+  Sizes,
+  SizesExtended,
+  ValidationStates,
+} from '../../constants';
+
+/* Alignment */
+export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
+export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[AlignmentXDictionaryKeys] | T;
 
 /* Colors */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
