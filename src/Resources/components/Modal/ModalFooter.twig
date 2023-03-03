@@ -1,17 +1,23 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _align = props.align | default('right') -%}
+{%- set _align = props.align | default(null) -%}
+{%- set _alignmentX = props.alignmentX | default('right') -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _description = props.description | default(null) -%}
 
 {# Class names #}
 {%- set _actionsClassName = _spiritClassPrefix ~ 'ModalFooter__actions' -%}
 {%- set _descriptionClassName = _spiritClassPrefix ~ 'ModalFooter__description' -%}
-{%- set _rootAlignClassName = _align ? _spiritClassPrefix ~ 'ModalFooter--' ~ _align : null -%}
+{%- set _rootAlignClassName = _spiritClassPrefix ~ 'ModalFooter--' ~ (_align ? _align : _alignmentX) -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalFooter' -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootAlignClassName, _class ] -%}
+
+{# Deprecations #}
+{% if _align %}
+    {% deprecated 'ModalFooter: The "align" property is deprecated, use "alignmentX" instead.' %}
+{% endif %}
 
 <footer
     {{ mainProps(props) }}
