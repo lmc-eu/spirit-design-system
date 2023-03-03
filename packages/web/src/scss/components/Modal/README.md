@@ -146,8 +146,9 @@ Optionally, you can add a description into the footer:
 
 #### Footer Alignment
 
-ModalFooter can be aligned to the right (default), center, or left, using
-a corresponding modifier class:
+ModalFooter can be aligned to the right (default), center, or left.
+These values come from the [dictionary][dictionary-align].
+Using a corresponding modifier class:
 
 - `ModalFooter--right` (default)
 - `ModalFooter--center`
@@ -338,3 +339,4 @@ Or feel free to write controlling scripts yourself.
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[dictionary-align]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#align
