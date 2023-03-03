@@ -1,3 +1,10 @@
+/* Alignment */
+export const AlignmentX = {
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
+} as const;
+
 /* Colors */
 export const ActionColors = {
   PRIMARY: 'primary',

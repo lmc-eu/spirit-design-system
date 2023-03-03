@@ -12,6 +12,7 @@ This project uses `dictionaries` to unify props between different components.
 - [Size](#size)
 - [Color](#color)
 - [Validation](#validation)
+- [Align](#align)
 
 ### Size
 
@@ -32,3 +33,9 @@ This project uses `dictionaries` to unify props between different components.
 | Dictionary | Values                         | Code name  |
 | ---------- | ------------------------------ | ---------- |
 | Validation | `success`, `warning`, `danger` | Validation |
+
+### Align
+
+| Dictionary | Values                    | Code name |
+| ---------- | ------------------------- | --------- |
+| Align      | `left`, `center`, `right` | Align     |
