@@ -23,9 +23,15 @@ help: ## Outputs this help screen
 build: ## Builds the Docker images
 	cd ./docker/ && $(DOCKER_COMP) build --pull --no-cache
 
-up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" to docker-compose file (default docker-compose.yml)
-	@$(eval f ?= docker-compose.yml)
-	cd ./docker/ && $(DOCKER_COMP) --file $(f) up --detach
+up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" to `docker compose` file
+	@$(eval f ?=)
+	@upCommand="cd ./docker/ && $(DOCKER_COMP)"; \
+	if [ -n "$f" ]; then \
+		upCommand+=" --file $(f)"; \
+	fi; \
+	upCommand+=" up --detach"; \
+	echo $$upCommand; \
+	eval $$upCommand
 
 start: build up vendor ## Build and start the containers
 
