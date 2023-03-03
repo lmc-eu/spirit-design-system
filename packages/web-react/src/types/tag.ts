@@ -1,10 +1,10 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, EmotionColor, Size, StyleProps, TransferProps } from './shared';
+import { ChildrenProps, EmotionColorsDictionaryType, SizesDictionaryType, StyleProps, TransferProps } from './shared';
 
 /* @deprecated: 'default' value will be removed in the next major version. */
-export type TagColor<C> = EmotionColor<void> | 'default' | 'neutral' | C;
+export type TagColor<C> = EmotionColorsDictionaryType | 'default' | 'neutral' | C;
 
-export type TagSize<S> = Size<void> | EmotionColor<void> | S;
+export type TagSize<S> = SizesDictionaryType | EmotionColorsDictionaryType | S;
 
 /** @deprecated Will be removed in next major version */
 export type TagTheme = 'light' | 'dark';

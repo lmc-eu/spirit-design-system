@@ -1,20 +1,25 @@
 import React, { ComponentType } from 'react';
 import { render, waitFor } from '@testing-library/react';
 import {
-  ActionColor,
-  EmotionColor,
-  SizeExtended,
-  Size,
-  TextColor,
-  ValidationStatesTypes,
+  ActionColorsDictionaryType,
+  ActionColors,
+  EmotionColorsDictionaryType,
+  EmotionColors,
+  SizeExtendedDictionaryType,
+  SizesExtended,
+  SizesDictionaryType,
+  Sizes,
+  TextColorsDictionaryType,
+  TextColors,
+  ValidationStatesDictionaryType,
   ValidationStates,
 } from '../../src';
 import getElement from '../testUtils/getElement';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const sizePropsTest = (Component: ComponentType<any>, testId?: string) => {
-  it.each([['small'], ['medium'], ['large']])('should render size %s', async (size) => {
-    const dom = render(<Component size={size as Size<string>} />);
+  it.each([Object.values(Sizes)])('should render size %s', async (size) => {
+    const dom = render(<Component size={size as SizesDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
@@ -25,8 +30,8 @@ export const sizePropsTest = (Component: ComponentType<any>, testId?: string) =>
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const sizeExtendedPropsTest = (Component: ComponentType<any>, testId?: string) => {
-  it.each([['xsmall'], ['xlarge']])('should render extended size %s', async (size) => {
-    const dom = render(<Component size={size as SizeExtended<string>} />);
+  it.each([Object.values(SizesExtended)])('should render extended size %s', async (size) => {
+    const dom = render(<Component size={size as SizeExtendedDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
@@ -37,8 +42,8 @@ export const sizeExtendedPropsTest = (Component: ComponentType<any>, testId?: st
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const actionColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
-  it.each([['primary'], ['secondary'], ['tertiary'], ['inverted']])('should render action color %s', async (color) => {
-    const dom = render(<Component color={color as ActionColor<string>} />);
+  it.each([Object.values(ActionColors)])('should render action color %s', async (color) => {
+    const dom = render(<Component color={color as ActionColorsDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
@@ -49,8 +54,8 @@ export const actionColorPropsTest = (Component: ComponentType<any>, prefix: stri
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const emotionColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
-  it.each([['success'], ['informative'], ['warning'], ['danger']])('should render emotion color %s', async (color) => {
-    const dom = render(<Component color={color as EmotionColor<string>} />);
+  it.each([Object.values(EmotionColors)])('should render emotion color %s', async (color) => {
+    const dom = render(<Component color={color as EmotionColorsDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
@@ -61,8 +66,8 @@ export const emotionColorPropsTest = (Component: ComponentType<any>, prefix: str
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const textColorPropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
-  it.each([['primary'], ['secondary'], ['inverted']])('should render text color %s', async (color) => {
-    const dom = render(<Component color={color as TextColor<string>} />);
+  it.each([Object.values(TextColors)])('should render text color %s', async (color) => {
+    const dom = render(<Component color={color as TextColorsDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);
@@ -74,7 +79,7 @@ export const textColorPropsTest = (Component: ComponentType<any>, prefix: string
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const validationStatePropsTest = (Component: ComponentType<any>, prefix: string, testId?: string) => {
   it.each([Object.values(ValidationStates)])('should have %s validation classname', async (state) => {
-    const dom = render(<Component validationState={state as ValidationStatesTypes<string>} />);
+    const dom = render(<Component validationState={state as ValidationStatesDictionaryType<string>} />);
 
     await waitFor(() => {
       const element = getElement(dom, testId);

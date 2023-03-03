@@ -1,17 +1,18 @@
 import { ElementType, JSXElementConstructor, Ref } from 'react';
 import {
-  ActionColor,
+  ActionColorsDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
-  EmotionColor,
-  Size,
+  EmotionColorsDictionaryType,
+  SizesDictionaryType,
+  SizeExtendedDictionaryType,
   StyleProps,
   TransferProps,
 } from './shared';
 
-export type ButtonColor<C> = ActionColor<void> | EmotionColor<void> | C;
-export type ButtonSize<S> = Size<void> | EmotionColor<void> | S;
+export type ButtonColor<C> = ActionColorsDictionaryType | EmotionColorsDictionaryType | C;
+export type ButtonSize<S> = SizesDictionaryType | SizeExtendedDictionaryType | S;
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps<C = void, S = void> extends ChildrenProps, ClickEvents {
