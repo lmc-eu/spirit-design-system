@@ -21,6 +21,11 @@
     <php>
         <!-- E_ALL = 30719 -->
         <ini name="error_reporting" value="30719"/>
+
+        <!-- ###+ symfony/framework-bundle ### -->
+        <env name="APP_ENV" value="dev"/>
+        <env name="APP_SECRET" value="678653c8d31be63221cddd61278f16db"/>
+        <!-- ###- symfony/framework-bundle ### -->
     </php>
     <testsuites>
         <testsuite name="Bundle Test Suite">
