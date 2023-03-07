@@ -11,7 +11,7 @@
       {{#each @root.colors as |color|}}
       <div class="{{#if (eq color 'inverted')}}docs-Box {{/if}}my-600">
         <div>
-          <button type="button" class="Button Button--{{color}} Button--{{size}}">Button {{color}}</button>
+          <a href="#" class="Button Button--{{color}} Button--{{size}}">Button {{color}}</a>
           <button type="button" class="Button Button--{{color}} Button--{{size}}">
             <svg class="mr-400" width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#hamburger" />
