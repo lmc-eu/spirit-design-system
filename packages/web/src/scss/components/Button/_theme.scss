@@ -20,10 +20,12 @@ $color-dictionary-config: (
 
 $color-dictionary-states: (
     '&:hover, &:focus': (
+        color: tokens.$text-primary-inverted-default,
         border-color: 'hover',
         background-color: 'hover',
     ),
     '&:active': (
+        color: tokens.$text-primary-inverted-default,
         border-color: 'active',
         background-color: 'active',
     ),
@@ -40,9 +42,11 @@ $color-dictionary-overrides: (
         background-color: tokens.$background-interactive-default,
         states: (
             '&:hover, &:focus': (
+                color: tokens.$text-primary-default,
                 background-color: tokens.$background-interactive-hover,
             ),
             '&:active': (
+                color: tokens.$text-primary-default,
                 background-color: tokens.$background-interactive-active,
             ),
             '&:disabled, &.is-disabled, &.Button--disabled': (
