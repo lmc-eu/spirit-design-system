@@ -1,5 +1,5 @@
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
-import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
 import { useButtonAriaProps } from './useButtonAriaProps';
@@ -15,25 +15,29 @@ const defaultProps = {
   size: 'medium',
 };
 
-export const ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
-  props: SpiritButtonLinkProps<T, C, S>,
-): JSX.Element => {
-  const { elementType: ElementTag = 'a', children, ...restProps } = props;
-  const { buttonProps } = useButtonAriaProps(props);
-  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+export const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps>(
+  <T extends ElementType = 'a', C = void, S = void>(
+    props: SpiritButtonLinkProps<T, C, S>,
+    ref: ForwardedRef<HTMLAnchorElement>,
+  ): JSX.Element => {
+    const { elementType: ElementTag = 'a', children, ...restProps } = props;
+    const { buttonProps } = useButtonAriaProps(props);
+    const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+    const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
-  return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      {...buttonProps}
-      className={classNames(classProps, styleProps.className)}
-    >
-      {children}
-    </ElementTag>
-  );
-};
+    return (
+      <ElementTag
+        {...otherProps}
+        {...styleProps}
+        {...buttonProps}
+        ref={ref}
+        className={classNames(classProps, styleProps.className)}
+      >
+        {children}
+      </ElementTag>
+    );
+  },
+);
 
 ButtonLink.defaultProps = defaultProps;
 

@@ -1,4 +1,4 @@
-import { ElementType, JSXElementConstructor, Ref } from 'react';
+import { ElementType, JSXElementConstructor } from 'react';
 import {
   ActionColorsDictionaryType,
   AriaLabelingProps,
@@ -6,13 +6,12 @@ import {
   ClickEvents,
   EmotionColorsDictionaryType,
   SizesDictionaryType,
-  SizeExtendedDictionaryType,
   StyleProps,
   TransferProps,
 } from './shared';
 
 export type ButtonColor<C> = ActionColorsDictionaryType | EmotionColorsDictionaryType | C;
-export type ButtonSize<S> = SizesDictionaryType | SizeExtendedDictionaryType | S;
+export type ButtonSize<S> = SizesDictionaryType | S;
 type ButtonType = 'button' | 'submit' | 'reset';
 
 interface ButtonProps<C = void, S = void> extends ChildrenProps, ClickEvents {
@@ -67,7 +66,6 @@ export interface SpiritButtonProps<T extends ElementType = 'button', C = void, S
     StyleProps,
     TransferProps {
   // tag?: ElementType;
-  innerRef?: Ref<HTMLButtonElement>;
 }
 
 export interface SpiritButtonLinkProps<T extends ElementType = 'a', C = void, S = void>

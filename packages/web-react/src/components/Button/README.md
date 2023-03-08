@@ -33,6 +33,7 @@ import { Button } from '@lmc-eu/spirit-web-react';
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an icon |
 | `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                         |
 | `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                   |
+| `ref`        | `ForwardedRef<HTMLButtonElement>`                                                         | -         | no       | Button element reference                             |
 
 For more information see [Button] component.
 
@@ -68,6 +69,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an icon |
 | `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                             |
 | `target`     | `string`                                                                                  | `null`    | no       | Link target                                              |
+| `ref`        | `ForwardedRef<HTMLAnchorElement>`                                                         | -         | no       | Anchor element reference                                 |
 
 For more information see [Button] component.
 

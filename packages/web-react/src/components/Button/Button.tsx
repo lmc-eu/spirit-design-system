@@ -1,5 +1,5 @@
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
-import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
 import { useButtonAriaProps } from './useButtonAriaProps';
@@ -15,25 +15,29 @@ const defaultProps = {
   size: 'medium',
 };
 
-export const Button = <T extends ElementType = 'button', C = void, S = void>(
-  props: SpiritButtonProps<T, C, S>,
-): JSX.Element => {
-  const { elementType: ElementTag = 'button', children, ...restProps } = props;
-  const { buttonProps } = useButtonAriaProps(props);
-  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+export const Button = forwardRef<HTMLButtonElement, SpiritButtonProps>(
+  <T extends ElementType = 'button', C = void, S = void>(
+    props: SpiritButtonProps<T, C, S>,
+    ref: ForwardedRef<HTMLButtonElement>,
+  ): JSX.Element => {
+    const { elementType: ElementTag = 'button', children, ...restProps } = props;
+    const { buttonProps } = useButtonAriaProps(props);
+    const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+    const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
-  return (
-    <ElementTag
-      {...otherProps}
-      {...styleProps}
-      {...buttonProps}
-      className={classNames(classProps, styleProps.className)}
-    >
-      {children}
-    </ElementTag>
-  );
-};
+    return (
+      <ElementTag
+        {...otherProps}
+        {...styleProps}
+        {...buttonProps}
+        ref={ref}
+        className={classNames(classProps, styleProps.className)}
+      >
+        {children}
+      </ElementTag>
+    );
+  },
+);
 
 Button.defaultProps = defaultProps;
 

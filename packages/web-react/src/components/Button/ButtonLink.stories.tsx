@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import ButtonLink from './ButtonLink';
 
 export default {
@@ -9,6 +10,15 @@ export default {
       description: {
         component: 'ButtonLinks allow users to take actions.',
       },
+    },
+  },
+  argTypes: {
+    ...argTypes,
+    href: {
+      control: {
+        type: 'text',
+      },
+      defaultValue: '#',
     },
   },
 } as ComponentMeta<typeof ButtonLink>;
