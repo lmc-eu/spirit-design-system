@@ -6,9 +6,7 @@
 
 ```javascript
 <TooltipWrapper>
-  <button type="button" className="Button Button--primary Button--medium TooltipTarget">
-    I have a tooltip!
-  </button>
+  <Button UNSAFE_className="TooltipTarget">I have a tooltip!</Button>
   <Tooltip>Hello there!</Tooltip>
 </TooltipWrapper>
 ```
@@ -22,9 +20,7 @@ const [open, setOpen] = useState(true);
 const closeHandler = () => setOpen(false);
 
 <TooltipWrapper>
-  <button type="button" className="Button Button--primary Button--medium">
-    I have a tooltip!
-  </button>
+  <Button>I have a tooltip!</Button>
   <Tooltip isDismissible open={open} onClose={closeHandler}>
     Hello there!
   </Tooltip>
@@ -40,9 +36,7 @@ const [open, setOpen] = useState(false);
 const toggleHandler = () => setOpen(!open);
 
 <div>
-  <button type="button" className="Button Button--primary Button--medium" onClick={toggleHandler}>
-    Toggle tooltip
-  </button>
+  <Button onClick={toggleHandler}>Toggle tooltip</Button>
 </div>
 <TooltipWrapper>
   <div>
@@ -58,9 +52,7 @@ const toggleHandler = () => setOpen(!open);
 
 ```javascript
 <TooltipWrapper>
-  <button type="button" className="Button Button--primary Button--medium TooltipTarget">
-    I have a tooltip!
-  </button>
+  <Button UNSAFE_className="TooltipTarget">I have a tooltip!</Button>
   <UncontrolledTooltip>Hello there!</UncontrolledTooltip>
 </TooltipWrapper>
 ```
@@ -69,9 +61,7 @@ const toggleHandler = () => setOpen(!open);
 
 ```javascript
 <TooltipWrapper>
-  <button type="button" className="Button Button--primary Button--medium">
-    I have a tooltip 😎
-  </button>
+  <Button>I have a tooltip 😎</Button>
   <UncontrolledTooltip isDismissible>Hello there!</UncontrolledTooltip>
 </TooltipWrapper>
 ```

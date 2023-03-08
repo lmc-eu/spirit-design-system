@@ -1,6 +1,6 @@
 // Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
-import React from 'react';
+import React, { Ref } from 'react';
 import { ComponentStory } from '@storybook/react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
@@ -9,12 +9,13 @@ import { IconsProvider } from '../../../context';
 import { Icon } from '../../Icon';
 import { Text } from '../../Text';
 import Dropdown from '../Dropdown';
+import { Button } from '../../Button';
 import { SpiritDropdownProps, DropdownRenderProps } from '../../../types';
 
-export const dropdownTrigger = ({ isOpen, trigger: { className, ...restOf } }: DropdownRenderProps) => (
-  <button type="button" className={['Button Button--primary Button--medium', className].join(' ')} {...restOf}>
+export const dropdownTrigger = ({ isOpen, trigger: { className, ref, ...restOf } }: DropdownRenderProps) => (
+  <Button UNSAFE_className={className} ref={ref as Ref<HTMLButtonElement>} {...restOf}>
     Trigger ({isOpen ? 'open' : 'closed'})
-  </button>
+  </Button>
 );
 
 export const dropdownContent = (

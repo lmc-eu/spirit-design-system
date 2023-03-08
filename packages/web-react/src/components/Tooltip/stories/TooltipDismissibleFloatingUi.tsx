@@ -13,6 +13,7 @@ import {
 } from '@floating-ui/react';
 import { ComponentStory } from '@storybook/react';
 import Tooltip from '../Tooltip';
+import { Button } from '../../Button';
 
 const Story: ComponentStory<typeof Tooltip> = () => {
   const [open, setOpen] = useState(true);
@@ -39,14 +40,9 @@ const Story: ComponentStory<typeof Tooltip> = () => {
       <p>🖱 Try scrolling the example to see how Tooltip placement is updated.</p>
       <div className="docs-FloatingUI-Wrapper">
         <div className="docs-FloatingUI-Container">
-          <button
-            type="button"
-            className="Button Button--primary Button--medium"
-            ref={refs.setReference}
-            {...getReferenceProps()}
-          >
+          <Button ref={refs.setReference} {...getReferenceProps()}>
             I have a flipping tooltip!
-          </button>
+          </Button>
           <Tooltip
             placement="off"
             open={open}

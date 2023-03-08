@@ -4,12 +4,11 @@ import React from 'react';
 import { ComponentStory } from '@storybook/react';
 import UncontrolledTooltip from '../UncontrolledTooltip';
 import TooltipWrapper from '../TooltipWrapper';
+import { Button } from '../../Button';
 
 const Story: ComponentStory<typeof UncontrolledTooltip> = () => (
   <TooltipWrapper UNSAFE_className="d-inline-block">
-    <button type="button" className="Button Button--primary Button--medium">
-      I have a tooltip 😎
-    </button>
+    <Button UNSAFE_className="TooltipTarget">I have a tooltip 😎</Button>
     <UncontrolledTooltip isDismissible>Hello there!</UncontrolledTooltip>
   </TooltipWrapper>
 );

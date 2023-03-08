@@ -4,12 +4,11 @@ import React from 'react';
 import { ComponentStory } from '@storybook/react';
 import Tooltip from '../Tooltip';
 import TooltipWrapper from '../TooltipWrapper';
+import { Button } from '../../Button';
 
 const Story: ComponentStory<typeof Tooltip> = () => (
   <TooltipWrapper UNSAFE_className="d-inline-block">
-    <button type="button" className="Button Button--primary Button--medium TooltipTarget">
-      Tooltip on bottom
-    </button>
+    <Button UNSAFE_className="TooltipTarget">Tooltip on bottom</Button>
     <Tooltip>Hello there!</Tooltip>
   </TooltipWrapper>
 );
