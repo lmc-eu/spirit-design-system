@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ComponentStory } from '@storybook/react';
 import Tooltip from '../Tooltip';
 import TooltipWrapper from '../TooltipWrapper';
+import { Button } from '../../Button';
 
 const Story: ComponentStory<typeof Tooltip> = () => {
   const [open, setOpen] = useState(false);
@@ -13,9 +14,9 @@ const Story: ComponentStory<typeof Tooltip> = () => {
   return (
     <>
       <div className="mb-800">
-        <button type="button" className="Button Button--primary Button--medium mb-800" onClick={toggleHandler}>
+        <Button UNSAFE_className="mb-800" onClick={toggleHandler}>
           Toggle tooltip
-        </button>
+        </Button>
       </div>
       <TooltipWrapper UNSAFE_className="d-inline-block">
         <div className="docs-Box px-600 py-500">I have an externally-triggered tooltip</div>
