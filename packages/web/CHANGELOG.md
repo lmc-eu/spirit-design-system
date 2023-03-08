@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.43.0"></a>
+
+# [0.43.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.42.0...@lmc-eu/spirit-web@0.43.0) (2023-03-08)
+
+### Bug Fixes
+
+- **web:** Fix link Button color on hover, focus and active ([3e4b572](https://github.com/lmc-eu/spirit-design-system/commit/3e4b572))
+- **web:** Password toggle missing event target ([e32a86e](https://github.com/lmc-eu/spirit-design-system/commit/e32a86e))
+- **web:** Set correct order of pseudo classes on Pagination link [#DS-629](https://github.com/lmc-eu/spirit-design-system/issues/DS-629) ([ae26d0b](https://github.com/lmc-eu/spirit-design-system/commit/ae26d0b))
+
+### Code Refactoring
+
+- **web:** Redo color dictionaries and their generation in components ([2476486](https://github.com/lmc-eu/spirit-design-system/commit/2476486))
+
+### Features
+
+- **web-react:** TextField and TextArea helper text [#DS-597](https://github.com/lmc-eu/spirit-design-system/issues/DS-597) ([b0aa2de](https://github.com/lmc-eu/spirit-design-system/commit/b0aa2de))
+- **web-react:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([bb495da](https://github.com/lmc-eu/spirit-design-system/commit/bb495da))
+- **web-twig:** Align dictionaries [#DS-628](https://github.com/lmc-eu/spirit-design-system/issues/DS-628) ([061275a](https://github.com/lmc-eu/spirit-design-system/commit/061275a))
+- **web-twig:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([4d2f048](https://github.com/lmc-eu/spirit-design-system/commit/4d2f048))
+- **web:** Add `setVar` and `eq` helpers to Vite ([04f3eda](https://github.com/lmc-eu/spirit-design-system/commit/04f3eda))
+- **web:** Align dictionaries [#DS-628](https://github.com/lmc-eu/spirit-design-system/issues/DS-628) ([ef46efa](https://github.com/lmc-eu/spirit-design-system/commit/ef46efa))
+- **web:** Introduce new `Header` with subcomponents [#DS-424](https://github.com/lmc-eu/spirit-design-system/issues/DS-424) ([8b3fe19](https://github.com/lmc-eu/spirit-design-system/commit/8b3fe19))
+- **web:** Introduce new `Offcanvas` plugin derived from the `Header` plugin (refs [#DS-240](https://github.com/lmc-eu/spirit-design-system/issues/DS-240)) ([cb35ffd](https://github.com/lmc-eu/spirit-design-system/commit/cb35ffd))
+- **web:** TextField and TextArea helper text [#DS-597](https://github.com/lmc-eu/spirit-design-system/issues/DS-597) ([00712b8](https://github.com/lmc-eu/spirit-design-system/commit/00712b8))
+- **web:** Update Tag - Color and Size dictionaries, deprecate `default` and add subtle prop [#DS-442](https://github.com/lmc-eu/spirit-design-system/issues/DS-442) ([e183574](https://github.com/lmc-eu/spirit-design-system/commit/e183574))
+- **web:** Use Dictionaries in Button component - add all emotion colors and small size [#DS-436](https://github.com/lmc-eu/spirit-design-system/issues/DS-436) ([af95c8b](https://github.com/lmc-eu/spirit-design-system/commit/af95c8b))
+- **web:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([ea79db2](https://github.com/lmc-eu/spirit-design-system/commit/ea79db2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.42.0"></a>
 
 # [0.42.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.41.1...@lmc-eu/spirit-web@0.42.0) (2023-02-17)

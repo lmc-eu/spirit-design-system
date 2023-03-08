@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.27.0"></a>
+
+# [1.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.26.0...@lmc-eu/spirit-web-twig@1.27.0) (2023-03-08)
+
+### Bug Fixes
+
+- **web-twig:** Fix bugs in Validation state error deprecation ([e834758](https://github.com/lmc-eu/spirit-design-system/commit/e834758))
+
+### Documentation
+
+- **web-react, web-twig:** Fix Size Extended dictionary type in API tables ([86d8baf](https://github.com/lmc-eu/spirit-design-system/commit/86d8baf))
+
+### Features
+
+- **web-react:** TextField and TextArea helper text [#DS-597](https://github.com/lmc-eu/spirit-design-system/issues/DS-597) ([b0aa2de](https://github.com/lmc-eu/spirit-design-system/commit/b0aa2de))
+- **web-react:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([bb495da](https://github.com/lmc-eu/spirit-design-system/commit/bb495da))
+- **web-twig:** Align dictionaries [#DS-628](https://github.com/lmc-eu/spirit-design-system/issues/DS-628) ([061275a](https://github.com/lmc-eu/spirit-design-system/commit/061275a))
+- **web-twig:** TextField and TextArea helper text [#DS-597](https://github.com/lmc-eu/spirit-design-system/issues/DS-597) ([c2d8de9](https://github.com/lmc-eu/spirit-design-system/commit/c2d8de9))
+- **web-twig:** Update Tag - dictionaries and deprecate theme and `default` [#DS-442](https://github.com/lmc-eu/spirit-design-system/issues/DS-442) [#DS-377](https://github.com/lmc-eu/spirit-design-system/issues/DS-377) ([07cb957](https://github.com/lmc-eu/spirit-design-system/commit/07cb957))
+- **web-twig:** Use Color and Size Dictionaries in Button and ButtonLink components [#DS-436](https://github.com/lmc-eu/spirit-design-system/issues/DS-436) ([89f43a5](https://github.com/lmc-eu/spirit-design-system/commit/89f43a5))
+- **web-twig:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([4d2f048](https://github.com/lmc-eu/spirit-design-system/commit/4d2f048))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.26.0"></a>
 
 # [1.26.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.25.1...@lmc-eu/spirit-web-twig@1.26.0) (2023-02-17)

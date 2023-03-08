@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.41.0"></a>
+
+# [0.41.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.40.0...@lmc-eu/spirit-web-react@0.41.0) (2023-03-08)
+
+### Chores
+
+- **web-react:** Remove license file from builded package ([312751f](https://github.com/lmc-eu/spirit-design-system/commit/312751f))
+
+### Documentation
+
+- **web-react, web-twig:** Fix Size Extended dictionary type in API tables ([86d8baf](https://github.com/lmc-eu/spirit-design-system/commit/86d8baf))
+- **web-react:** Remove link to detailed information about Icons ([d443e3e](https://github.com/lmc-eu/spirit-design-system/commit/d443e3e))
+
+### Features
+
+- **web-react:** Align dictionaries [#DS-628](https://github.com/lmc-eu/spirit-design-system/issues/DS-628) ([f93525f](https://github.com/lmc-eu/spirit-design-system/commit/f93525f))
+- **web-react:** Dictionaries constants ([04f5e99](https://github.com/lmc-eu/spirit-design-system/commit/04f5e99))
+- **web-react:** Renaming dictionary types and keys ([62abba5](https://github.com/lmc-eu/spirit-design-system/commit/62abba5))
+- **web-react:** TextField and TextArea helper text [#DS-597](https://github.com/lmc-eu/spirit-design-system/issues/DS-597) ([b0aa2de](https://github.com/lmc-eu/spirit-design-system/commit/b0aa2de))
+- **web-react:** Update Tag - dictionaries and deprecate theme, tag and `default` [#DS-442](https://github.com/lmc-eu/spirit-design-system/issues/DS-442) [#DS-377](https://github.com/lmc-eu/spirit-design-system/issues/DS-377) ([0d9e729](https://github.com/lmc-eu/spirit-design-system/commit/0d9e729))
+- **web-react:** Use Color and Size Dictionaries in Button and ButtonLink components [#DS-436](https://github.com/lmc-eu/spirit-design-system/issues/DS-436) ([84daa36](https://github.com/lmc-eu/spirit-design-system/commit/84daa36))
+- **web-react:** Validation state dictionary [#DS-590](https://github.com/lmc-eu/spirit-design-system/issues/DS-590) ([bb495da](https://github.com/lmc-eu/spirit-design-system/commit/bb495da))
+- **web-twig:** Align dictionaries [#DS-628](https://github.com/lmc-eu/spirit-design-system/issues/DS-628) ([061275a](https://github.com/lmc-eu/spirit-design-system/commit/061275a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.40.0"></a>
 
 # [0.40.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.39.1...@lmc-eu/spirit-web-react@0.40.0) (2023-02-17)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+
+# [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.5.3...@lmc-eu/spirit-exporters-scss@1.6.0) (2023-03-08)
+
+### Features
+
+- **exporter-scss:** Return different font weight for Ebony [#DS-621](https://github.com/lmc-eu/spirit-design-system/issues/DS-621) ([d575050](https://github.com/lmc-eu/spirit-design-system/commit/d575050))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.5.3"></a>
 
 ## [1.5.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.5.2...@lmc-eu/spirit-exporters-scss@1.5.3) (2023-02-17)
