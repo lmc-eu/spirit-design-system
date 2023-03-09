@@ -1,6 +1,6 @@
 # Modal
 
-```jsx static
+```jsx
 import {
   ModalComposed,
   ModalComposedDialog,
@@ -11,7 +11,7 @@ import {
 } from '@lmc-eu/spirit-web-react/components';
 ```
 
-```jsx static
+```jsx
 const [isOpen, setOpen] = useState(false);
 
 const toggleModal = () => setOpen(!isOpen);
@@ -44,7 +44,7 @@ const handleClose = () => {
 
 ## An example using a form as a ModalDialog element
 
-```jsx static
+```jsx
 <ModalComposed id="ModalExample">
   <ModalComposedDialog elementType="form" name="ModalFormExample">
     ...
