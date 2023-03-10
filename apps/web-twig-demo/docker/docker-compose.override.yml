@@ -4,14 +4,15 @@ version: '3.4'
 services:
   php:
     build:
-      target: app_php_devj
+      target: app_php_dev
     volumes:
-      - ./../:/srv/www/spirit-web-twig-bundle/:delegated
-      - ./../../icons/src/svg/:/srv/www/spirit-web-twig-bundle/static/:delegated
+      - ./../:/srv/spirit-web-twig-demo/:delegated
+      - ./../../../packages/web-twig:/srv/spirit-web-twig-bundle/:delegated
+      - ./../../../packages/icons/src/svg/:/srv/spirit-web-twig-bundle/static/:delegated
       - ./../docker/php/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
       # If you develop on Mac or Windows you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
-      - /srv/app/vendor
+      - /srv/spirit-web-twig-demo/vendor
     environment:
       # See https://xdebug.org/docs/all_settings#mode
       XDEBUG_MODE: '${XDEBUG_MODE:-off}'
@@ -22,5 +23,5 @@ services:
   caddy:
     command: ['caddy', 'run', '--config', '/etc/caddy/Caddyfile', '--adapter', 'caddyfile', '--watch']
     volumes:
-      - ./../public:/srv/www/spirit-web-twig-bundle/public:ro
+      - ./../public:/srv/spirit-web-twig-demo/public:ro
       - ./../docker/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
