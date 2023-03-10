@@ -10,7 +10,7 @@
 log
 
 route {
-    root * /srv/www/spirit-web-twig-bundle/public
+    root * /srv/spirit-web-twig-demo/public
     php_fastcgi unix//var/run/php/php-fpm.sock
     encode zstd gzip
     file_server

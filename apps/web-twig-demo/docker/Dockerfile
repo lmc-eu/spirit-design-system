@@ -22,7 +22,7 @@ ENV SYMFONY_VERSION ${SYMFONY_VERSION}
 
 ENV APP_ENV=prod
 
-WORKDIR /srv/www/spirit-web-twig-bundle
+WORKDIR /srv/spirit-web-twig-demo
 
 # php extensions installer: https://github.com/mlocati/docker-php-extension-installer
 COPY --from=php_extension_installer --link /usr/bin/install-php-extensions /usr/local/bin/
@@ -40,8 +40,8 @@ RUN set -eux; \
     install-php-extensions \
       intl \
       zip \
-      # apcu \
-      # opcache \
+      apcu \
+      opcache \
     ;
 
 ###> recipes ###
@@ -96,7 +96,7 @@ RUN set -eux; \
 FROM app_php AS app_php_dev
 
 ENV APP_ENV=dev XDEBUG_MODE=off
-VOLUME /srv/www/spirit-web-twig-bundle/var/
+VOLUME /srv/spirit-web-twig-demo/var/
 
 RUN rm "$PHP_INI_DIR/conf.d/app.prod.ini"; \
   mv "$PHP_INI_DIR/php.ini" "$PHP_INI_DIR/php.ini-production"; \
@@ -112,7 +112,6 @@ RUN rm -f .env.local.php
 # Caddy image
 FROM caddy:2.6 AS app_caddy
 
-WORKDIR /srv/www/spirit-web-twig-bundle
+WORKDIR /srv/spirit-web-twig-demo
 
-# COPY --from=app_php --link /srv/www/spirit-web-twig-bundle/public public/
 COPY --link caddy/Caddyfile /etc/caddy/Caddyfile
