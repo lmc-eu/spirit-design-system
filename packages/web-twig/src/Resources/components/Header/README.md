@@ -537,5 +537,5 @@ And the complete Header Dialog:
 
 </details>
 
-[header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Header
+[header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Header
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
