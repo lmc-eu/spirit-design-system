@@ -34,4 +34,4 @@ After the previous change, we can now call the Button component with additional 
 <Button color="primary" size="small">Primary buttom</Button>
 ```
 
-[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/components/Button
+[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
