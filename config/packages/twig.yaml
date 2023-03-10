@@ -1,6 +1,0 @@
-twig:
-  default_path: '%kernel.project_dir%/app/Templates'
-
-when@test:
-  twig:
-    strict_variables: true
