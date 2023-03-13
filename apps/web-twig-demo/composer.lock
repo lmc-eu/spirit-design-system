@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "0689daf511f6e05671a6a82c4a7e10be",
+  "content-hash": "fbd9d2978a475efd7bf3d1553d297365",
   "packages": [
     {
       "name": "lmc/spirit-web-twig-bundle",
@@ -295,6 +295,76 @@
         "source": "https://github.com/php-fig/log/tree/1.1.4"
       },
       "time": "2021-05-03T11:20:27+00:00"
+    },
+    {
+      "name": "symfony/asset",
+      "version": "v5.4.21",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/asset.git",
+        "reference": "1504b6773c6b90118f9871e90a67833b5d1dca3c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/asset/zipball/1504b6773c6b90118f9871e90a67833b5d1dca3c",
+        "reference": "1504b6773c6b90118f9871e90a67833b5d1dca3c",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.2.5",
+        "symfony/deprecation-contracts": "^2.1|^3",
+        "symfony/polyfill-php80": "^1.16"
+      },
+      "conflict": {
+        "symfony/http-foundation": "<5.3"
+      },
+      "require-dev": {
+        "symfony/http-client": "^4.4|^5.0|^6.0",
+        "symfony/http-foundation": "^5.3|^6.0",
+        "symfony/http-kernel": "^4.4|^5.0|^6.0"
+      },
+      "suggest": {
+        "symfony/http-foundation": ""
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "Symfony\\Component\\Asset\\": ""
+        },
+        "exclude-from-classmap": ["/Tests/"]
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Fabien Potencier",
+          "email": "fabien@symfony.com"
+        },
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Manages URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files",
+      "homepage": "https://symfony.com",
+      "support": {
+        "source": "https://github.com/symfony/asset/tree/v5.4.21"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2023-02-14T08:03:56+00:00"
     },
     {
       "name": "symfony/cache",
@@ -2763,6 +2833,77 @@
         }
       ],
       "time": "2023-02-21T19:46:44+00:00"
+    },
+    {
+      "name": "symfony/webpack-encore-bundle",
+      "version": "v1.16.1",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/symfony/webpack-encore-bundle.git",
+        "reference": "1862d71e483769b40278548a30e756ce13ef9d4c"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/1862d71e483769b40278548a30e756ce13ef9d4c",
+        "reference": "1862d71e483769b40278548a30e756ce13ef9d4c",
+        "shasum": ""
+      },
+      "require": {
+        "php": ">=7.1.3",
+        "symfony/asset": "^4.4 || ^5.0 || ^6.0",
+        "symfony/config": "^4.4 || ^5.0 || ^6.0",
+        "symfony/dependency-injection": "^4.4 || ^5.0 || ^6.0",
+        "symfony/deprecation-contracts": "^2.1 || ^3.0",
+        "symfony/http-kernel": "^4.4 || ^5.0 || ^6.0",
+        "symfony/polyfill-php80": "^1.25.0",
+        "symfony/service-contracts": "^1.0 || ^2.0 || ^3.0"
+      },
+      "require-dev": {
+        "symfony/framework-bundle": "^4.4 || ^5.0 || ^6.0",
+        "symfony/phpunit-bridge": "^5.3 || ^6.0",
+        "symfony/twig-bundle": "^4.4 || ^5.0 || ^6.0",
+        "symfony/web-link": "^4.4 || ^5.0 || ^6.0"
+      },
+      "type": "symfony-bundle",
+      "extra": {
+        "thanks": {
+          "name": "symfony/webpack-encore",
+          "url": "https://github.com/symfony/webpack-encore"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "Symfony\\WebpackEncoreBundle\\": "src"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "Symfony Community",
+          "homepage": "https://symfony.com/contributors"
+        }
+      ],
+      "description": "Integration with your Symfony app & Webpack Encore!",
+      "support": {
+        "issues": "https://github.com/symfony/webpack-encore-bundle/issues",
+        "source": "https://github.com/symfony/webpack-encore-bundle/tree/v1.16.1"
+      },
+      "funding": [
+        {
+          "url": "https://symfony.com/sponsor",
+          "type": "custom"
+        },
+        {
+          "url": "https://github.com/fabpot",
+          "type": "github"
+        },
+        {
+          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+          "type": "tidelift"
+        }
+      ],
+      "time": "2023-01-18T19:37:55+00:00"
     },
     {
       "name": "symfony/yaml",
