@@ -19,12 +19,14 @@
     "ext-ctype": "*",
     "ext-iconv": "*",
     "lmc/spirit-web-twig-bundle": "^1.27",
+    "symfony/asset": "5.4.*",
     "symfony/console": "5.4.*",
     "symfony/dotenv": "^5.4",
     "symfony/flex": "^1",
     "symfony/framework-bundle": "^5.4",
     "symfony/runtime": "^5.4",
     "symfony/twig-bundle": "5.4.*",
+    "symfony/webpack-encore-bundle": "^1.16",
     "symfony/yaml": "^5.4"
   },
   "config": {
