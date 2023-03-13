@@ -10,6 +10,29 @@ class DefaultController extends AbstractController
     #[Route('/')]
     public function index(): Response
     {
-        return $this->render('default.html.twig');
+        return $this->render('default.html.twig', [ 'components' => $this->getWebTwigComponents() ]);
+    }
+
+    /**
+     * @return Array<string>
+     */
+    private function getWebTwigComponents(): array
+    {
+        $spiritWebTwigBundleComponentsPath = 'spirit-web-twig-bundle/src/Resources/components';
+
+        $directories = new \DirectoryIterator('../../' . $spiritWebTwigBundleComponentsPath);
+        $components = [];
+
+        /** @var SplFileInfo $file */
+        foreach ($directories as $fileinfo) {
+            if ($fileinfo->isDir() && !$fileinfo->isDot()){
+                $components[] = $fileinfo->getBasename();
+            }
+        }
+
+        // sort them alphabetically
+        sort($components);
+
+        return $components;
     }
 }
