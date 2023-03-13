@@ -79,7 +79,7 @@ $_field-name: 'RadioField';
     @include form-fields-tools.inline-field-root-disabled();
 }
 
-.RadioField--disabled > .RadioField__label {
+.RadioField--disabled .RadioField__label {
     @include form-fields-tools.label-disabled();
 }
 
