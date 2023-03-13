@@ -1,3 +1,7 @@
 index:
   path: /
   controller: App\Controller\DefaultController::index
+
+component_view:
+  path: /components/{component}
+  controller: App\Controller\ComponentsController::show
