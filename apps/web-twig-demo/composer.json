@@ -5,10 +5,20 @@
   "description": "A minimal Symfony project recommended to create bare bones applications",
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../spirit-web-twig-bundle",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
   "require": {
     "php": "^7.4",
     "ext-ctype": "*",
     "ext-iconv": "*",
+    "lmc/spirit-web-twig-bundle": "^1.27",
     "symfony/console": "5.4.*",
     "symfony/dotenv": "^5.4",
     "symfony/flex": "^1",

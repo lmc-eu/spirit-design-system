@@ -11,6 +11,9 @@
             ".php-cs-fixer.dist.php"
         ]
     },
+    "lmc/spirit-web-twig-bundle": {
+        "version": "1.27.0"
+    },
     "lmc/twigx-bundle": {
         "version": "3.2.0"
     },
