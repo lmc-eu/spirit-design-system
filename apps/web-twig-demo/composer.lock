@@ -4,8 +4,127 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "4255dc90a941abb84805391a75e28d2d",
+  "content-hash": "0689daf511f6e05671a6a82c4a7e10be",
   "packages": [
+    {
+      "name": "lmc/spirit-web-twig-bundle",
+      "version": "1.27.0",
+      "dist": {
+        "type": "path",
+        "url": "../spirit-web-twig-bundle",
+        "reference": "f0599e4be6b835b1855d3b4046776b8787748889"
+      },
+      "require": {
+        "ext-simplexml": "*",
+        "lmc/twigx-bundle": "^3.0",
+        "php": "^7.4 || ^8.1",
+        "symfony/config": "^4.4 || ^5.4 || ^6.1",
+        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.1",
+        "symfony/http-foundation": "^4.4 || ^5.4 || ^6.1",
+        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.1",
+        "symfony/polyfill-php80": "^1.23",
+        "twig/twig": "^1.44.6 || ^2.12.5 || ^3.0.0"
+      },
+      "require-dev": {
+        "lmc/coding-standard": "^3.2",
+        "mockery/mockery": "^1.5",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.2",
+        "phpstan/phpstan-mockery": "^1.0",
+        "phpstan/phpstan-symfony": "^1.0",
+        "phpunit/phpunit": "^9",
+        "spatie/phpunit-snapshot-assertions": "^4.2.12",
+        "symfony/yaml": "^4.4 || ^5.4 || ^6.1"
+      },
+      "type": "symfony-bundle",
+      "autoload": {
+        "psr-4": {
+          "Lmc\\SpiritWebTwigBundle\\": "src/"
+        }
+      },
+      "autoload-dev": {
+        "psr-4": {
+          "Lmc\\SpiritWebTwigBundle\\": "tests/"
+        }
+      },
+      "scripts": {
+        "ecs": ["vendor/bin/ecs check --no-progress-bar --ansi  src/ tests/"],
+        "ecs:fix": ["vendor/bin/ecs check --no-progress-bar --ansi --fix  src/ tests/"],
+        "phpunit": ["vendor/bin/phpunit"],
+        "phpunit:coverage": ["XDEBUG_MODE=coverage vendor/bin/phpunit"],
+        "phpunit:update": ["vendor/bin/phpunit -d --update-snapshots"],
+        "phpstan": ["vendor/bin/phpstan analyze"],
+        "tests": ["@ecs", "@phpunit", "@phpstan"]
+      },
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "LMC, s.r.o."
+        }
+      ],
+      "description": "This is Symfony bundle with twig implementation of the Spirit Design System components and extends the twig implementation with an HTML-like syntax.",
+      "transport-options": {
+        "symlink": true,
+        "relative": true
+      }
+    },
+    {
+      "name": "lmc/twigx-bundle",
+      "version": "3.2.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/lmc-eu/twigx-bundle.git",
+        "reference": "c7bfd0056aa868d42cffdc7bae7633590b2e298f"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/lmc-eu/twigx-bundle/zipball/c7bfd0056aa868d42cffdc7bae7633590b2e298f",
+        "reference": "c7bfd0056aa868d42cffdc7bae7633590b2e298f",
+        "shasum": ""
+      },
+      "require": {
+        "ext-simplexml": "*",
+        "php": "^7.4 || ^8.1",
+        "symfony/config": "^4.4 || ^5.4 || ^6.1",
+        "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.1",
+        "symfony/http-foundation": "^4.4 || ^5.4 || ^6.1",
+        "symfony/http-kernel": "^4.4 || ^5.4 || ^6.1",
+        "symfony/polyfill-php80": "^1.23",
+        "symfony/polyfill-php81": "^1.26",
+        "twig/twig": "^1.44.6 || ^2.12.5 || ^3.0.0"
+      },
+      "require-dev": {
+        "doctrine/cache": "^1.10",
+        "lmc/coding-standard": "^3.3",
+        "mockery/mockery": "^1.5",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^1.2",
+        "phpstan/phpstan-mockery": "^1.0",
+        "phpstan/phpstan-symfony": "^1.0",
+        "phpunit/phpunit": "^9.5.20",
+        "spatie/phpunit-snapshot-assertions": "^4.2.12",
+        "symfony/yaml": "^4.4 || ^5.4 || ^6.1"
+      },
+      "type": "symfony-bundle",
+      "autoload": {
+        "psr-4": {
+          "Lmc\\TwigXBundle\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": ["MIT"],
+      "authors": [
+        {
+          "name": "LMC, s.r.o."
+        }
+      ],
+      "description": "This is Symfony bundle which extends the twig implementation by an JSX like syntax.",
+      "support": {
+        "issues": "https://github.com/lmc-eu/twigx-bundle/issues",
+        "source": "https://github.com/lmc-eu/twigx-bundle/tree/3.2.0"
+      },
+      "time": "2023-01-26T10:12:34+00:00"
+    },
     {
       "name": "psr/cache",
       "version": "1.0.1",
