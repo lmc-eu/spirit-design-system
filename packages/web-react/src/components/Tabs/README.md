@@ -136,4 +136,4 @@ Tab content item
 | `tabId`    | `string`, `number` | Identification of tab |
 | `children` | `any`              | Child component       |
 
-For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Tabs/README.md) component.
+For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.

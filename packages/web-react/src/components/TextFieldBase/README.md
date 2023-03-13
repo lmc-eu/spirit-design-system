@@ -1,6 +1,6 @@
 # TextFieldBase
 
-This is React implementation of the abstract component [TextFieldBase] for the purposes of the form components TextField and TextArea.
+This is React implementation of the abstract component TextFieldBase for the purposes of the form components [TextField] and [TextArea].
 
 ```jsx
 <TextFieldBase id="example" label="Example TextFieldBase" name="example" isRequired validationState="danger" message="validation failed" />
@@ -30,3 +30,5 @@ This is React implementation of the abstract component [TextFieldBase] for the p
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
+[textfield]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextField/README.md
+[textarea]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md

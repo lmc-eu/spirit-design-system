@@ -59,4 +59,4 @@ Use custom content for ordered list as component's children instead of passing b
 | `goBackTitle` | `string`            | no       | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
 | `items`       | `BreadcrumbsItem[]` | no       | Navigation menu items                                                                                                                                                                       |
 
-For detailed information see [Breadcrumbs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Breadcrumbs/README.md) component
+For detailed information see [Breadcrumbs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md) component

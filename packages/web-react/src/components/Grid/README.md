@@ -24,4 +24,4 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 | `tablet`      | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use on tablet  |
 | `elementType` | HTML element                  | Element type to use for the Grid    |
 
-For detailed information see [Grid](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Grid/README.md) component
+For detailed information see [Grid](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md) component
