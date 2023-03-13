@@ -15,7 +15,9 @@ hidden or show if the input is required.
 
 | Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
 | ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `autocomplete`      | `boolean`                                                            | -       | no       | If the field should have autocomplete enabled                                                                                      |
 | `hasPasswordToggle` | `boolean`                                                            | -       | yes      | If true, the `type` is set to `password` and a password toggle is shown                                                            |
+| `helperText`        | `string`                                                             | -       | no       | Custom helper text                                                                                                                 |
 | `id`                | `string`                                                             | -       | no       | Input and label identification                                                                                                     |
 | `inputWidth`        | `number`                                                             | -       | no       | Input width                                                                                                                        |
 | `isDisabled`        | `boolean`                                                            | -       | no       | Whether is field disabled                                                                                                          |
@@ -24,11 +26,11 @@ hidden or show if the input is required.
 | `label`             | `string`                                                             | -       | no       | Label text                                                                                                                         |
 | `message`           | `string`                                                             | -       | no       | Validation message                                                                                                                 |
 | `name`              | `string`                                                             | -       | no       | Input name                                                                                                                         |
+| `pattern`           | `string`                                                             | -       | no       | Defines regular expressions for allowed value types                                                                                |
 | `placeholder`       | `string`                                                             | -       | no       | Input placeholder                                                                                                                  |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url`        | -       | no       | Input type                                                                                                                         |
 | `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | -       | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
 | `value`             | `string`                                                             | -       | no       | Input value                                                                                                                        |
-| `helperText`        | `string`                                                             | -       | no       | Custom helper text                                                                                                                 |
 
 ## Custom component
 

@@ -27,13 +27,14 @@ import { Button } from '@lmc-eu/spirit-web-react';
 | ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------- |
 | `children`   | `ReactNode`                                                                               | `null`    | no       | Content of the Button                                |
 | `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                        |
-| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                         |
 | `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent     |
 | `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, Button is disabled                          |
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an icon |
+| `name`       | `string`                                                                                  | -         | no       | For use a button as a form data reference            |
 | `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                         |
-| `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                   |
 | `ref`        | `ForwardedRef<HTMLButtonElement>`                                                         | -         | no       | Button element reference                             |
+| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                         |
+| `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                   |
 
 For more information see [Button] component.
 
@@ -62,14 +63,14 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 | ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------- |
 | `children`   | `ReactNode`                                                                               | `null`    | no       | Content of the ButtonLink                                |
 | `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                            |
-| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                             |
 | `href`       | `string`                                                                                  | —         | yes      | Link URL                                                 |
 | `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent         |
 | `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                          |
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an icon |
 | `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                             |
-| `target`     | `string`                                                                                  | `null`    | no       | Link target                                              |
 | `ref`        | `ForwardedRef<HTMLAnchorElement>`                                                         | -         | no       | Anchor element reference                                 |
+| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                             |
+| `target`     | `string`                                                                                  | `null`    | no       | Link target                                              |
 
 For more information see [Button] component.
 
