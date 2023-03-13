@@ -14,6 +14,7 @@ Default TextField:
 
 ```html
 <TextField
+  helperText="custom helper text"
   id="example2"
   isRequired
   label="Label"
@@ -22,7 +23,6 @@ Default TextField:
   placeholder="Placeholder"
   type="text"
   validationState="danger"
-  helperText="custom helper text"
 />
 ```
 
@@ -45,14 +45,14 @@ Without lexer:
 
 ```twig
 {% include "@spirit/textField.twig" with { props: {
-    id: "example",
-    type: "text",
-    label: "Password",
-    name: "example",
-    isRequired: true,
-    validationState: "danger",
-    message: "validation failed",
     helperText: "custom helper text",
+    id: "example",
+    isRequired: true,
+    label: "Password",
+    message: "validation failed",
+    name: "example",
+    type: "text",
+    validationState: "danger",
 }} %}
 ```
 
@@ -60,8 +60,10 @@ Without lexer:
 
 | Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
 | ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `autocomplete`      | `bool`                                                               | `false` | no       | If the field should have autocomplete enabled                                                                                      |
 | `class`             | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
 | `hasPasswordToggle` | `bool`                                                               | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown                                                            |
+| `helperText`        | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 | `id`                | `string`                                                             | —       | yes      | Input and label identification                                                                                                     |
 | `isDisabled`        | `bool`                                                               | `false` | no       | If true, input is disabled                                                                                                         |
 | `isFluid`           | `bool`                                                               | `false` | no       | If true, the element spans to the full width of its parent                                                                         |
@@ -75,7 +77,6 @@ Without lexer:
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url`        | `text`  | no       | Input type                                                                                                                         |
 | `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
 | `value`             | `string`                                                             | `null`  | no       | Input value                                                                                                                        |
-| `helperText`        | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
