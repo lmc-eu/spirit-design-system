@@ -62,4 +62,4 @@ const handleClose = () => {
 | ---------- | ----------- | ------- | ------------- |
 | `children` | `ReactNode` | -       | Children node |
 
-For detailed information see [Modal](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Modal/README.md) component
+For detailed information see [Modal](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Modal/README.md) component

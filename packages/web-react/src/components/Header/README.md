@@ -396,6 +396,8 @@ The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDo
 
 The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
 
+For detailed information see the [Header](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md) component
+
 [HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [HTMLButtonDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 [DialogElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

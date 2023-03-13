@@ -24,7 +24,7 @@ import { Tag } from '@lmc-eu/spirit-web-react';
 | `tag`         | `React.Element`                                                                 | `span`    | no       | [**DEPRECATED**][deprecated] in favor of `elementType`; HTML tag                                                 |
 | `theme`       | `light`, `dark`                                                                 | `null`    | no       | [**DEPRECATED**][deprecated] in favor of `isSubtle`; Theme of the component                                      |
 
-For detailed information see [Tag](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Tag/README.md) component
+For detailed information see [Tag](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tag/README.md) component
 
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color

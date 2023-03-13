@@ -120,6 +120,6 @@ Navigation link
 | `href`      | `string`  | Path to the referenced resource            |
 | `isCurrent` | `boolean` | Whether the menu item matches current page |
 
-For detailed information see [Header](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Header/README.md) component
+For detailed information see the [Header](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md) component
 
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

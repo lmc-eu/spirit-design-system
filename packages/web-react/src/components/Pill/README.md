@@ -26,6 +26,6 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 | `children` | `ReactNode`                                                                                                         | -          | yes      | Content of the Pill    |
 | `color`    | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color], `selected`, `unselected` | `selected` | no       | Color of the component |
 
-For detailed information see [Pill](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Pill/README.md) component
+For detailed information see [Pill](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pill/README.md) component
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
