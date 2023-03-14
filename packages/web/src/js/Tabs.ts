@@ -67,7 +67,6 @@ class Tabs extends BaseComponent {
     element.classList.add(CLASS_NAME_ACTIVE);
     this.activate(getElementFromSelector(element));
 
-    element.focus();
     element.removeAttribute('tabindex');
     element.setAttribute('aria-selected', 'true');
     EventHandler.trigger(element, EVENT_SHOWN, {
