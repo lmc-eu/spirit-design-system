@@ -45,12 +45,7 @@
   </div>
   <div class="TextArea TextArea--disabled">
     <label for="textareaDisabledFilled" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea
-      id="textareaDisabledFilled"
-      class="TextArea__input"
-      placeholder="Placeholder"
-      disabled
-   >Filled</textarea>
+    <textarea id="textareaDisabledFilled" class="TextArea__input" placeholder="Placeholder" disabled>Filled</textarea>
     <div class="TextArea__message">Message</div>
   </div>
   <div class="TextArea TextArea--fluid">
@@ -59,14 +54,10 @@
     <div class="TextArea__message">Message</div>
   </div>
 
-  <div style="display: flex; gap: 1rem; align-items: flex-end;">
+  <div style="display: flex; gap: 1rem; align-items: flex-end">
     <div class="TextArea">
       <label for="textareaInlineHiddenLabel" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
-      <textarea
-        id="textareaInlineHiddenLabel"
-        class="TextArea__input"
-        placeholder="Placeholder"
-     >Filled</textarea>
+      <textarea id="textareaInlineHiddenLabel" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
     </div>
     <button type="button" class="Button Button--primary Button--medium">Button</button>
   </div>
@@ -78,10 +69,29 @@
   </div>
 
   <div class="TextArea TextArea--danger">
-    <label for="textareaWithHelperTextAndValidationMessage" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    <label for="textareaWithHelperTextAndValidationMessage" class="TextArea__label TextArea__label--required"
+      >Label</label
+    >
+    <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">
+Filled</textarea
+    >
     <div class="TextArea__helperText">This is helper text</div>
     <div class="TextArea__message">Danger validation message</div>
+  </div>
+
+  <div class="spirit-v1-box-field-disabled docs-FormFieldGrid">
+    <h2 class="docs-Heading">V1 Feature - new disabled state</h2>
+
+    <div class="TextArea TextArea--disabled">
+      <label for="textareaDisabledFeature" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaDisabledFeature" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
+    </div>
+
+    <div class="TextArea TextArea--disabled">
+      <label for="textareaDisabledFilledFeature" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>Filled</textarea>
+      <div class="TextArea__message">Message</div>
+    </div>
   </div>
 </div>
 

@@ -1,3 +1,6 @@
+// 1. Enable redesigned disabled state of the component using `spirit-v1-box-field-disabled` on the root element, eg. body.
+//    This will be removed in v1 and the new disabled state will be the default.
+
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
@@ -56,6 +59,14 @@ $_field-name: 'TextArea';
 :is(.TextArea--disabled, .TextArea.is-disabled) .TextArea__input {
     @include form-fields-tools.box-field-disabled-input();
 }
+
+// 1.
+// stylelint-disable selector-max-class -- we need to add a feature class
+.spirit-v1-box-field-disabled .TextArea .TextArea__input:disabled,
+.spirit-v1-box-field-disabled :is(.TextArea--disabled, .TextArea.is-disabled) .TextArea__input {
+    @include form-fields-tools.box-field-disabled-input-v1();
+}
+// stylelint-enable
 
 :is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__message, [data-element='validator_message']) {
     @include form-fields-tools.message-disabled();

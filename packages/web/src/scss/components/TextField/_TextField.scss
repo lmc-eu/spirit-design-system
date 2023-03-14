@@ -1,3 +1,6 @@
+// 1. Enable redesigned disabled state of the component using `spirit-v1-box-field-disabled` on the root element, eg. body.
+//    This will be removed in v1 and the new disabled state will be the default.
+
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
@@ -66,6 +69,8 @@ $_field-name: 'TextField';
     flex-grow: 1;
     padding-right: 0;
     border-color: transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 // We position the button next to the input and use pseudo-element for border styling.
@@ -78,7 +83,8 @@ $_field-name: 'TextField';
     justify-content: center;
     padding: theme.$input-password-toggle-padding;
     color: form-fields-theme.$box-field-input-color-default;
-    border-radius: form-fields-theme.$box-field-input-border-radius;
+    border-radius: 0 form-fields-theme.$box-field-input-border-radius form-fields-theme.$box-field-input-border-radius 0;
+    background-color: form-fields-theme.$box-field-input-background;
 
     &::before {
         content: '';
@@ -153,6 +159,14 @@ $_field-name: 'TextField';
     @include form-fields-tools.box-field-disabled-input();
 }
 
+// 1.
+// stylelint-disable selector-max-class -- we need to add a feature class
+.spirit-v1-box-field-disabled .TextField .TextField__input:disabled,
+.spirit-v1-box-field-disabled :is(.TextField--disabled, .TextField.is-disabled) .TextField__input {
+    @include form-fields-tools.box-field-disabled-input-v1();
+}
+// stylelint-enable
+
 // stylelint-disable no-descending-specificity, selector-max-specificity, selector-max-class, selector-max-compound-selectors
 // -- The code is more comprehensible when styling elements in this order:
 //      1. input (with a pseudo-element),
@@ -175,6 +189,13 @@ $_field-name: 'TextField';
     pointer-events: none;
     cursor: cursors.$disabled;
 }
+
+// 1.
+.spirit-v1-box-field-disabled .TextField .TextField__input:disabled ~ .TextField__passwordToggle__button,
+.spirit-v1-box-field-disabled :is(.TextField--disabled, .TextField.is-disabled) .TextField__passwordToggle__button {
+    background-color: form-fields-theme.$box-field-input-background-disabled;
+}
+// stylelint-enable
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
     @include form-fields-tools.message-disabled();

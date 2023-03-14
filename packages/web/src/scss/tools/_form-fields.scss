@@ -6,6 +6,10 @@
 
 @mixin label-disabled() {
     color: form-fields-theme.$label-color-disabled;
+
+    &::after {
+        color: form-fields-theme.$label-color-disabled;
+    }
 }
 
 @mixin label-hidden() {
@@ -14,6 +18,7 @@
 
 @mixin label-required() {
     content: '*';
+    margin-left: form-fields-theme.$label-required-margin-left;
     color: form-fields-theme.$label-required-color;
 }
 
@@ -148,6 +153,11 @@
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-disabled;
     }
+}
+
+@mixin box-field-disabled-input-v1() {
+    border-color: form-fields-theme.$box-field-input-border-color-disabled;
+    background-color: form-fields-theme.$box-field-input-background-disabled;
 }
 
 @mixin item() {
