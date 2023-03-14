@@ -14,7 +14,7 @@ The names of icons will be constructed from the original name.
 
 Names follow `icon-name` convention.
 
-This behavior can be fully customized by simply modifying the path generation template file `asset_path.pr`. Simply fork, modify and upload as your version of the exporter. If you have never done this before, [follow our guide to modifying existing exporters](https://developers.supernova.io/building-exporters/cloning-exporters).
+This behavior can be fully customized by simply modifying the path generation template file `asset_path.pr`. Simply fork, modify and upload as your version of the exporter. If you have never done this before, [follow our guide to modifying existing exporters](https://developers.supernova.io/latest/building-exporters/cloning-exporters.html).
 
 ## Installing
 
