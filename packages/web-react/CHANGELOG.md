@@ -941,7 +941,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.4.0"></a>
 
-## [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.3.0...@lmc-eu/spirit-web@0.4.0) (2021-12-21)
+## [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.3.0...@lmc-eu/spirit-web-react@0.4.0) (2021-12-21)
 
 ### Bug Fixes
 
@@ -967,7 +967,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.3.0"></a>
 
-## [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.7...@lmc-eu/spirit-web@0.3.0) (2021-12-03)
+## [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.7...@lmc-eu/spirit-web-react@0.3.0) (2021-12-03)
 
 ### BREAKING CHANGES
 
@@ -975,7 +975,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.7"></a>
 
-## [0.2.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.6...@lmc-eu/spirit-web@0.2.7) (2021-12-02)
+## [0.2.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.6...@lmc-eu/spirit-web-react@0.2.7) (2021-12-02)
 
 ### Features
 
@@ -984,7 +984,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.6"></a>
 
-## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.5...@lmc-eu/spirit-web@0.2.6) (2021-11-26)
+## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.5...@lmc-eu/spirit-web-react@0.2.6) (2021-11-26)
 
 ### Bug Fixes
 
@@ -1000,7 +1000,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.5"></a>
 
-## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.4...@lmc-eu/spirit-web@0.2.5) (2021-11-26)
+## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.4...@lmc-eu/spirit-web-react@0.2.5) (2021-11-26)
 
 ### Features
 
@@ -1008,7 +1008,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.4"></a>
 
-## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.3...@lmc-eu/spirit-web@0.2.4) (2021-11-13)
+## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.3...@lmc-eu/spirit-web-react@0.2.4) (2021-11-13)
 
 ### Chores
 
@@ -1016,7 +1016,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.3"></a>
 
-## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.2...@lmc-eu/spirit-web@0.2.3) (2021-10-20)
+## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.2...@lmc-eu/spirit-web-react@0.2.3) (2021-10-20)
 
 ### BREAKING CHANGES
 
@@ -1026,7 +1026,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.2"></a>
 
-## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.1...@lmc-eu/spirit-web@0.2.2) (2021-10-12)
+## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.1...@lmc-eu/spirit-web-react@0.2.2) (2021-10-12)
 
 ### Code Refactoring
 
@@ -1035,7 +1035,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.1"></a>
 
-## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.0...@lmc-eu/spirit-web@0.2.1) (2021-10-07)
+## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.0...@lmc-eu/spirit-web-react@0.2.1) (2021-10-07)
 
 ### Code Refactoring
 
@@ -1044,7 +1044,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.0"></a>
 
-## [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.1.0...@lmc-eu/spirit-web@0.2.0) (2021-10-07)
+## [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.1.0...@lmc-eu/spirit-web-react@0.2.0) (2021-10-07)
 
 ### Code Refactoring
 
