@@ -15,7 +15,7 @@ This project uses `makefile` for managing various chores, like dependency instal
 
 ## Project structure
 
-This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/](../packages) directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod deps 🤷‍♂️).
+This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/][packages] directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod deps 🤷‍♂️).
 
 ## Commit messages
 
@@ -161,3 +161,4 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [conventional-commits]: https://www.conventionalcommits.org
 [lerna-home]: https://lernajs.io
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
+[packages]: packages/
