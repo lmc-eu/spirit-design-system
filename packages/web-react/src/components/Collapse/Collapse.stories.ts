@@ -17,6 +17,7 @@ export default {
 } as ComponentMeta<typeof Collapse>;
 
 export { default as Collapse } from './stories/Collapse';
+export { default as CollapseHideOnClose } from './stories/CollapseHideOnClose';
 export { default as CollapseBreakpoints } from './stories/CollapseBreakpoints';
 export { default as CollapseProps } from './stories/CollapseProps';
 export { default as CollapseHtml } from './stories/CollapseHtml';
