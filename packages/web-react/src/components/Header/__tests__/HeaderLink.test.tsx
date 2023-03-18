@@ -2,21 +2,21 @@ import '@testing-library/jest-dom';
 import React from 'react';
 import { render } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import Header from '../Header';
+import HeaderLink from '../HeaderLink';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 
-describe('Header', () => {
-  classNamePrefixProviderTest(Header, 'Header');
+describe('HeaderLink', () => {
+  classNamePrefixProviderTest(HeaderLink, 'HeaderLink');
 
-  stylePropsTest((props) => <Header {...props} data-testid="header-test" />, 'header-test');
+  stylePropsTest((props) => <HeaderLink {...props} data-testid="header-link-test" />, 'header-link-test');
 
-  restPropsTest((props) => <Header {...props} />, 'header');
+  restPropsTest((props) => <HeaderLink {...props} />, 'a');
 
   it('should render text children', () => {
-    const dom = render(<Header id="test">Hello World</Header>);
+    const dom = render(<HeaderLink id="test">Hello World</HeaderLink>);
 
-    const element = dom.container.querySelector('header') as HTMLElement;
+    const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
 });

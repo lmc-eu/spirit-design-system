@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { ElementType } from 'react';
-import { HeaderContextType, HeaderProvider } from '../../src/components/Header/HeaderContext';
+import { HeaderContextType, HeaderProvider } from '../../src/components/Header/deprecated/HeaderContext';
 
 export const renderWithHeaderContext = (
   Component: ElementType,
