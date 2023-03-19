@@ -10,9 +10,9 @@ const HeaderDialogNav = (props: HeaderDialogNavProps) => {
 
   return (
     <ul
+      {...otherProps}
       className={classNames(classProps.headerDialogNav, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     />
   );
 };

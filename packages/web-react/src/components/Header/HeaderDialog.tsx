@@ -12,19 +12,19 @@ const HeaderDialog = (props: HeaderDialogProps) => {
   const { classProps } = useHeaderModernStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  const providerValue = { id, open: isOpen, onClose };
+  const providerValue = { id, isOpen, onClose };
 
   useLastActiveFocus(isOpen);
 
   return (
     <HeaderDialogProvider value={providerValue}>
       <Dialog
+        {...otherProps}
         id={id}
         isOpen={isOpen}
         onClose={onClose}
         className={classNames(classProps.headerDialog.root, styleProps.className)}
         style={styleProps.style}
-        {...otherProps}
       >
         <div className={classProps.headerDialog.panel}>
           <div className={classProps.headerDialog.content}>{children}</div>

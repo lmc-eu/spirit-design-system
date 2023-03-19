@@ -10,9 +10,9 @@ const HeaderDialogNavItem = (props: HeaderDialogNavItemProps) => {
 
   return (
     <li
+      {...otherProps}
       className={classNames(classProps.headerDialogNavItem, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     />
   );
 };

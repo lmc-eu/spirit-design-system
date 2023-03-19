@@ -21,7 +21,7 @@ export { default as Nav } from './deprecated/Nav';
 export { default as NavItem } from './deprecated/NavItem';
 export { default as NavLink } from './deprecated/NavLink';
 
-export { default as HeaderUpdated } from './Header';
+export { default as HeaderModern } from './Header';
 export { default as HeaderButton } from './HeaderButton';
 export { default as HeaderDesktopActions } from './HeaderDesktopActions';
 export { default as HeaderDialog } from './HeaderDialog';
@@ -38,4 +38,4 @@ export { default as HeaderNav } from './HeaderNav';
 export { default as HeaderNavItem } from './HeaderNavItem';
 export * from './HeaderDialogContext';
 export * from './useHeaderStyleProps';
-export * from './const';
+export * from './constants';

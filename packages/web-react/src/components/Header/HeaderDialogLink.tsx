@@ -12,9 +12,9 @@ const HeaderDialogLink = (props: HeaderDialogLinkProps) => {
 
   return (
     <a
+      {...otherProps}
       className={classNames(classProps.headerDialogLink, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     >
       {children}
     </a>

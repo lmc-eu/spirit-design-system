@@ -2,6 +2,10 @@
 
 Header wraps top-level navigation and branding.
 
+### DEPRECATION NOTICE
+
+⚠️ This Header version will be replaced by the updated `HeaderModer` in the next major version. Read more about [deprecation][deprecated].
+
 ## Simple Header
 
 ```jsx
@@ -117,3 +121,5 @@ Navigation link
 | `isCurrent` | `boolean` | Whether the menu item matches current page |
 
 For detailed information see [Header](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Header/README.md) component
+
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

@@ -10,8 +10,8 @@ describe('HeaderDialogCloseButton', () => {
   classNamePrefixProviderTest(HeaderDialogCloseButton, 'HeaderDialogCloseButton');
 
   stylePropsTest(
-    (props) => <HeaderDialogCloseButton {...props} data-testid="header-desktop-actions-test" />,
-    'header-desktop-actions-test',
+    (props) => <HeaderDialogCloseButton {...props} data-testid="header-desktop-close-button-test" />,
+    'header-desktop-close-button-test',
   );
 
   restPropsTest((props) => <HeaderDialogCloseButton {...props} />, 'button');

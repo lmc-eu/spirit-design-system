@@ -22,7 +22,7 @@ import SpiritLogo from './SpiritLogo';
 const Story = (props: unknown) => (
   <IconsProvider value={icons}>
     <Header id="story-actions" isInverted>
-      <Link href="/Users/tomas.sychra/Projects/Repos/spirit-design-system/static">
+      <Link href="/">
         <SpiritLogo />
       </Link>
       <NavbarToggler />

@@ -10,10 +10,10 @@ const HeaderButton = (props: HeaderButtonProps) => {
 
   return (
     <button
+      {...otherProps}
       type="button"
       className={classNames(classProps.headerButton, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     />
   );
 };
