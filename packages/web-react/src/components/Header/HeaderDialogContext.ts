@@ -3,13 +3,13 @@ import { ClickEvent } from '../../types';
 
 export interface HeaderDialogContextProps {
   id: string;
-  open: boolean;
+  isOpen: boolean;
   onClose: (event: ClickEvent) => void;
 }
 
 const defaultContext: HeaderDialogContextProps = {
   id: '',
-  open: false,
+  isOpen: false,
   onClose: () => null,
 };
 

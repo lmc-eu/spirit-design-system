@@ -4,6 +4,12 @@ The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
 your specific design goals.
 
+### DEPRECATION NOTICE
+
+⚠️ The header now exists in two versions. Original `Header` and updated `HeaderModern`.
+The original version will be replaced by the updated version and at the same time
+renamed back to the original name in the next major version. Read more about [deprecation][deprecated].
+
 The Header and HeaderDialog are a composition of several subcomponents:
 
 ```jsx
@@ -207,7 +213,7 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 | `UNSAFE_className` | `string`                    | -       | no       | Header custom class name   |
 | `UNSAFE_style`     | `CSSProperties`             | -       | no       | Header custom style        |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
 ## HeaderButton
 
@@ -219,7 +225,7 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 | `UNSAFE_className` | `string`        | -       | no       | HeaderButton custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderButton custom style      |
 
-The rest of the properties are based from type of `<button>`. [Docs][HTMLButtonDocs]
+The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
 ## HeaderDesktopActions
 
@@ -232,7 +238,7 @@ The rest of the properties are based from type of `<button>`. [Docs][HTMLButtonD
 | `UNSAFE_className` | `string`                 | -       | no       | HeaderDesktopActions custom class name |
 | `UNSAFE_style`     | `CSSProperties`          | -       | no       | HeaderDesktopActions custom style      |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
 ## HeaderDialog
 
@@ -247,7 +253,7 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 | `UNSAFE_className` | `string`                                       | -       | no       | HeaderDialog custom class name  |
 | `UNSAFE_style`     | `CSSProperties`                                | -       | no       | HeaderDialog custom style       |
 
-The rest of the properties are based from type of `<dialog>`. [Docs][DialogElementDocs]
+The rest of the properties are based on the type of `<dialog>`. [Docs][DialogElementDocs]
 
 ## HeaderDialogActions
 
@@ -260,7 +266,7 @@ The rest of the properties are based from type of `<dialog>`. [Docs][DialogEleme
 | `UNSAFE_className` | `string`                 | -       | no       | HeaderDialogActions custom class name |
 | `UNSAFE_style`     | `CSSProperties`          | -       | no       | HeaderDialogActions custom style      |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
 ## HeaderDialogButton
 
@@ -272,7 +278,7 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogButton custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogButton custom style      |
 
-The rest of the properties are based from type of `<button>`. [Docs][HTMLButtonDocs]
+The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
 ## HeaderDialogCloseButton
 
@@ -286,7 +292,7 @@ HeaderDialogCloseButton already contains handles for closing and the state of th
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogCloseButton custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogCloseButton custom style      |
 
-The rest of the properties are based from type of `<button>`. [Docs][HTMLButtonDocs]
+The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
 ## HeaderDialogLink
 
@@ -299,7 +305,7 @@ The rest of the properties are based from type of `<button>`. [Docs][HTMLButtonD
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogLink custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogLink custom style      |
 
-The rest of the properties are based from type of `<a>`. [Docs][DialogAnchorDocs]
+The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
 
 ## HeaderDialogNav
 
@@ -311,7 +317,7 @@ The rest of the properties are based from type of `<a>`. [Docs][DialogAnchorDocs
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogNav custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogNav custom style      |
 
-The rest of the properties are based from type of `<ul>`. [Docs][DialogUListDocs]
+The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
 
 ## HeaderDialogNavItem
 
@@ -323,7 +329,7 @@ The rest of the properties are based from type of `<ul>`. [Docs][DialogUListDocs
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogNavItem custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogNavItem custom style      |
 
-The rest of the properties are based from type of `<li>`. [Docs][DialogListItemDocs]
+The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
 
 ## HeaderDialogText
 
@@ -335,7 +341,7 @@ The rest of the properties are based from type of `<li>`. [Docs][DialogListItemD
 | `UNSAFE_className` | `string`        | -       | no       | HeaderDialogText custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogText custom style      |
 
-The rest of the properties are based from type of `<span>`. [Docs][DialogSpanDocs]
+The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanDocs]
 
 ## HeaderLink
 
@@ -348,7 +354,7 @@ The rest of the properties are based from type of `<span>`. [Docs][DialogSpanDoc
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderLink custom style          |
 | `UNSAFE_className` | `string`        | -       | no       | HeaderLink custom class name     |
 
-The rest of the properties are based from type of `<a>`. [Docs][DialogAnchorDocs]
+The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
 
 ## HeaderMobileActions
 
@@ -364,7 +370,7 @@ The rest of the properties are based from type of `<a>`. [Docs][DialogAnchorDocs
 | `UNSAFE_style`     | `CSSProperties`                                | -       | no       | HeaderMobileActions custom style      |
 | `UNSAFE_className` | `string`                                       | -       | no       | HeaderMobileActions custom class name |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
 ## HeaderNav
 
@@ -376,7 +382,7 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 | `UNSAFE_className` | `string`        | -       | no       | HeaderNav custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderNav custom style      |
 
-The rest of the properties are based from type of `<ul>`. [Docs][DialogUListDocs]
+The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
 
 ## HeaderNavItem
 
@@ -388,7 +394,7 @@ The rest of the properties are based from type of `<ul>`. [Docs][DialogUListDocs
 | `UNSAFE_className` | `string`        | -       | no       | HeaderNavItem custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderNavItem custom style      |
 
-The rest of the properties are based from type of `<li>`. [Docs][DialogListItemDocs]
+The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
 
 [HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [HTMLButtonDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
@@ -397,3 +403,4 @@ The rest of the properties are based from type of `<li>`. [Docs][DialogListItemD
 [DialogUListDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [DialogListItemDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
 [DialogSpanDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

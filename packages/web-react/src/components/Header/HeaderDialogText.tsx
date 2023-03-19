@@ -10,9 +10,9 @@ const HeaderDialogText = (props: HeaderDialogTextProps) => {
 
   return (
     <span
+      {...otherProps}
       className={classNames(classProps.headerDialogText, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     />
   );
 };

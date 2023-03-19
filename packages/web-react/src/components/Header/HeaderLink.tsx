@@ -11,7 +11,7 @@ const HeaderLink = (props: HeaderLinkProps) => {
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <a className={classNames(classProps.headerLink, styleProps.className)} style={styleProps.style} {...otherProps}>
+    <a {...otherProps} className={classNames(classProps.headerLink, styleProps.className)} style={styleProps.style}>
       {children}
     </a>
   );

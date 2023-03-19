@@ -76,7 +76,7 @@ export interface HeaderLinkProps extends SpiritAnchorElementProps, ChildrenProps
 }
 
 export interface HeaderMobileActionsProps extends SpiritElementProps, HeaderMobileActionsHandlingProps, ChildrenProps {
-  dialogId?: string;
+  dialogId: string;
   menuToggleLabel?: string;
 }
 

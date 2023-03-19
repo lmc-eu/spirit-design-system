@@ -7,7 +7,7 @@ import SpiritLogo from './SpiritLogo';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <Header id="story-inverted" isInverted>
-    <Link href="/Users/tomas.sychra/Projects/Repos/spirit-design-system/static">
+    <Link href="/">
       <SpiritLogo />
     </Link>
   </Header>

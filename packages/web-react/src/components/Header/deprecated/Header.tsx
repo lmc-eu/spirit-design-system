@@ -1,10 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useToggle } from '../../../hooks';
+import { useToggle, useDeprecationMessage, useStyleProps } from '../../../hooks';
 import { SpiritHeaderProps } from '../../../types';
 import { HeaderProvider } from './HeaderContext';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
-import { useStyleProps } from '../../../hooks/styleProps';
 
 const defaultProps = {
   isInverted: false,
@@ -25,6 +24,15 @@ const Header = (props: SpiritHeaderProps): JSX.Element => {
       handleToggle();
     }
   };
+
+  useDeprecationMessage({
+    method: 'component',
+    trigger: true,
+    componentName: 'Header',
+    componentProps: {
+      newName: 'HeaderModern',
+    },
+  });
 
   return (
     <HeaderProvider value={{ headerClass: classProps.root, id, isExpanded, handleToggle }}>

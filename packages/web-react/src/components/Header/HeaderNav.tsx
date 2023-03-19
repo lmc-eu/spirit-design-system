@@ -5,13 +5,11 @@ import { HeaderNavProps } from '../../types';
 import { useHeaderModernStyleProps } from './useHeaderStyleProps';
 
 const HeaderNav = (props: HeaderNavProps) => {
-  const { ...restProps } = props;
-
   const { classProps } = useHeaderModernStyleProps();
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(props);
 
   return (
-    <ul className={classNames(classProps.headerNav, styleProps.className)} style={styleProps.style} {...otherProps} />
+    <ul {...otherProps} className={classNames(classProps.headerNav, styleProps.className)} style={styleProps.style} />
   );
 };
 

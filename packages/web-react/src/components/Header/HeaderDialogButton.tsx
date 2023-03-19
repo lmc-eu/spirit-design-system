@@ -10,10 +10,10 @@ const HeaderDialogButton = (props: HeaderDialogButtonProps) => {
 
   return (
     <button
+      {...otherProps}
       type="button"
       className={classNames(classProps.headerDialogButton, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     />
   );
 };

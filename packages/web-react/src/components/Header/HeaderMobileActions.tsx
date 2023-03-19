@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { HeaderMobileActionsProps } from '../../types';
-import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from './const';
+import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from './constants';
 import { useHeaderModernStyleProps } from './useHeaderStyleProps';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
@@ -22,9 +22,9 @@ const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
 
   return (
     <div
+      {...otherProps}
       className={classNames(classProps.headerMobileActions, styleProps.className)}
       style={styleProps.style}
-      {...otherProps}
     >
       {children}
       <Button aria-controls={dialogId} aria-expanded={isOpen} color="inverted" onClick={onOpen} isSquare>

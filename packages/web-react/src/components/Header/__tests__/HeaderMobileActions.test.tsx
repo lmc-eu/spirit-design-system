@@ -5,7 +5,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import HeaderMobileActions from '../HeaderMobileActions';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from '../const';
+import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from '../constants';
 
 describe('HeaderMobileActions', () => {
   classNamePrefixProviderTest(HeaderMobileActions, 'HeaderMobileActions');
@@ -19,7 +19,7 @@ describe('HeaderMobileActions', () => {
 
   it('should render text children', () => {
     const dom = render(
-      <HeaderMobileActions id="test" isOpen={false} onOpen={() => null}>
+      <HeaderMobileActions id="test" dialogId="dialog-id" isOpen={false} onOpen={() => null}>
         Hello World
       </HeaderMobileActions>,
     );
