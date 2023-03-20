@@ -17,7 +17,7 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
   const { classProps, props: modifiedProps } = usePaginationStyleProps({ ...restProps });
 
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
-  const [currentPage, setCurrentPage] = useState(defaultPage <= 0 ? 1 : defaultPage ?? 1);
+  const [currentPage, setCurrentPage] = useState(defaultPage <= 0 || defaultPage > totalPages ? 1 : defaultPage ?? 1);
   const [pagesArray, setPagesArray] = useState([CHAPTER_SIZE] ?? [5]);
 
   useMemo(() => {
@@ -42,7 +42,8 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
     const endPage = Math.min(startPage + CHAPTER_SIZE - 1, totalPages);
 
     if (totalPages - CHAPTER_SIZE < startPage - 1) {
-      startPage = totalPages - CHAPTER_SIZE + 1;
+      const tmpStartPage = totalPages - CHAPTER_SIZE + 1;
+      startPage = tmpStartPage < 1 ? 1 : tmpStartPage;
     }
 
     return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
