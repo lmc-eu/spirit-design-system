@@ -1,10 +1,10 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
-import { SpiritBreadcrumbsProps } from '../../types';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';
+import { SpiritBreadcrumbsProps } from '../../types';
 import { Icon } from '../Icon';
 import { Link } from '../Link';
+import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 
 const defaultProps = {
   goBackTitle: '',

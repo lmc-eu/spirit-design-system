@@ -24,3 +24,4 @@ export * from './textArea';
 export * from './textField';
 export * from './textFieldBase';
 export * from './tooltip';
+export * from './pagination';

@@ -5,7 +5,6 @@ $item-gap: tokens.$space-300;
 $item-min-width: 2em;
 $item-height: 2.5em;
 $item-padding-inline: tokens.$space-400;
-$item-emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
 $item-radius: tokens.$radius-100;
 
 $item-default-color: tokens.$text-secondary-default;

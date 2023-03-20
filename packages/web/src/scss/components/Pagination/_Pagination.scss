@@ -18,10 +18,11 @@
     min-width: theme.$item-min-width;
     height: theme.$item-height;
     padding-inline: theme.$item-padding-inline;
-    font-weight: theme.$item-emphasis-font-weight;
     color: theme.$item-default-color;
+    border: 0;
     border-radius: theme.$item-radius;
     background-color: theme.$item-default-background;
+    cursor: pointer;
 
     &:focus,
     &:hover {
