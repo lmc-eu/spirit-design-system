@@ -44,6 +44,7 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
     if (totalPages - CHAPTER_SIZE < startPage - 1) {
       startPage = totalPages - CHAPTER_SIZE + 1;
     }
+
     return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
   }
 
