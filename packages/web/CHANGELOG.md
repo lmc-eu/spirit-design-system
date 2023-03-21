@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.44.0"></a>
+
+# [0.44.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.43.0...@lmc-eu/spirit-web@0.44.0) (2023-03-21)
+
+### Bug Fixes
+
+- **web:** RadioField label in disabled state ([8cf9229](https://github.com/lmc-eu/spirit-design-system/commit/8cf9229))
+- **web:** Remove Tabs trigger focus causing weird scroll placement [#DS-630](https://github.com/lmc-eu/spirit-design-system/issues/DS-630) ([de78fbf](https://github.com/lmc-eu/spirit-design-system/commit/de78fbf))
+
+### Documentation
+
+- **web:** Paragraph indentation and typos ([e1c462f](https://github.com/lmc-eu/spirit-design-system/commit/e1c462f))
+
+### Features
+
+- **web-twig:** Introduce new `Header` with subcomponents [#DS-248](https://github.com/lmc-eu/spirit-design-system/issues/DS-248) ([9f5b7c4](https://github.com/lmc-eu/spirit-design-system/commit/9f5b7c4))
+- **web:** Add feature class to enable v1 disabled state style in TextArea and TextField [#DS-641](https://github.com/lmc-eu/spirit-design-system/issues/DS-641) ([b909378](https://github.com/lmc-eu/spirit-design-system/commit/b909378))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.43.0"></a>
 
 # [0.43.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.42.0...@lmc-eu/spirit-web@0.43.0) (2023-03-08)
