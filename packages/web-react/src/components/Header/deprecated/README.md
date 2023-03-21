@@ -4,7 +4,7 @@ Header wraps top-level navigation and branding.
 
 ### DEPRECATION NOTICE
 
-⚠️ This Header version will be replaced by the updated `HeaderModer` in the next major version. Read more about [deprecation][deprecated].
+⚠️ This Header version will be replaced by the updated `HeaderModern` in the next major version. Read more about [deprecation][deprecated].
 
 ## Simple Header
 

@@ -17,12 +17,12 @@ The Header is a composition of several subcomponents:
         - [HeaderButton](#navigation)
 - [HeaderDialog](#header-dialog)
   - [HeaderDialogCloseButton](#close-button)
-    - [HeaderDialogAcions](#primary-and-secondary-actions)
-      - [HeaderDialogNav](#navigation-1)
-        - [HeaderDialogNavItem](#navigation-1)
-          - [HeaderDialogLink](#navigation-1)
-          - [HeaderDialogButton](#navigation-1)
-          - [HeaderDialogText](#navigation-1)
+  - [HeaderDialogActions](#primary-and-secondary-actions)
+    - [HeaderDialogNav](#navigation-1)
+      - [HeaderDialogNavItem](#navigation-1)
+        - [HeaderDialogLink](#navigation-1)
+        - [HeaderDialogButton](#navigation-1)
+        - [HeaderDialogText](#navigation-1)
 
 ## JavaScript Plugin
 
