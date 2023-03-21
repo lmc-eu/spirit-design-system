@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.28.0"></a>
+
+# [1.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.27.0...@lmc-eu/spirit-web-twig@1.28.0) (2023-03-21)
+
+### Code Refactoring
+
+- **web-twig:** Unify internal prop name with public API of `ModalHeader` ([d15c3f0](https://github.com/lmc-eu/spirit-design-system/commit/d15c3f0))
+
+### Documentation
+
+- **web-twig:** Adding attributes to the component readme [#DS-604](https://github.com/lmc-eu/spirit-design-system/issues/DS-604) ([842f95d](https://github.com/lmc-eu/spirit-design-system/commit/842f95d))
+- **web-twig:** Fix internal links ([398f8f9](https://github.com/lmc-eu/spirit-design-system/commit/398f8f9))
+- **web-twig:** Paragraph indentation and typos ([f24dfc3](https://github.com/lmc-eu/spirit-design-system/commit/f24dfc3))
+
+### Features
+
+- **web-twig:** Introduce new `Header` with subcomponents [#DS-248](https://github.com/lmc-eu/spirit-design-system/issues/DS-248) ([9f5b7c4](https://github.com/lmc-eu/spirit-design-system/commit/9f5b7c4))
+
+### Tests
+
+- **web-twig:** Improve `Link` snapshot tests ([a7cbb87](https://github.com/lmc-eu/spirit-design-system/commit/a7cbb87))
+- **web-twig:** Offload the immense source of the Spirit logo into a partial ([7b7245c](https://github.com/lmc-eu/spirit-design-system/commit/7b7245c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.27.0"></a>
 
 # [1.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.26.0...@lmc-eu/spirit-web-twig@1.27.0) (2023-03-08)
