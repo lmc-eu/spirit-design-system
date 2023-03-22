@@ -20,3 +20,7 @@ indent_size = 4
 
 [packages/web-twig/**/*.twig]
 indent_size = 4
+
+[Makefile]
+indent_style = tab
+indent_size = 2
