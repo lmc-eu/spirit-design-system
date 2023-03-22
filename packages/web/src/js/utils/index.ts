@@ -13,4 +13,5 @@ export { reflow };
 export * from './ComponentFunctions';
 export * from './Deprecations';
 export * from './Elements';
+export { default as ScrollControl } from './ScrollControl';
 export * from './Transitions';
