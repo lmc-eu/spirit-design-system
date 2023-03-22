@@ -26,27 +26,27 @@
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
-{%- set _idAttr = _id ? 'id="' ~ _id ~'"' : null -%}
-{%- set _labelForAttr = _id ? 'for="' ~ _id ~'"' : null -%}
+{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _labelForAttr = _id ? 'for=' ~ _id : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
-<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
+<label {{ _labelForAttr  }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props) }}
         type="radio"
         name="{{ _name }}"
         class="{{ _inputClassName }}"
-        {{ _idAttr | raw }}
-        {{ _checkedAttr | raw }}
-        {{ _disabledAttr | raw }}
+        {{ _idAttr }}
+        {{ _checkedAttr }}
+        {{ _disabledAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
-        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText | raw }}</span>{% endif %}
+        <span {{ classProp(_labelClassName) }}>{{ _label  }}</span>
+        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText  }}</span>{% endif %}
     </span>
 </label>

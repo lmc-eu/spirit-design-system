@@ -12,9 +12,9 @@
 {%- set _rootCurrentClassName = _isCurrent ? _spiritClassPrefix ~ _rootClass ~ '--current' : null -%}
 
 {# Attributes #}
-{%- set _ariaCurrentAttr = _isCurrent ? 'aria-current="page"' : null -%}
-{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~ '"' : null -%}
-{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
+{%- set _ariaCurrentAttr = _isCurrent ? 'aria-current=page' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
+{%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
@@ -23,9 +23,9 @@
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
-    {{ _ariaCurrentAttr | raw }}
+    {{ _ariaCurrentAttr }}
     {{ _onClickAttr | raw }}
-    {{ _targetAttr | raw }}
+    {{ _targetAttr }}
 >
     {% block content %}{% endblock %}
 </a>

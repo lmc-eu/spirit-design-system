@@ -16,8 +16,8 @@
 {%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
 
 {# Attributes #}
-{%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint="' ~ _breakpoint ~ '"' : null -%}
-{%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-fullwidthmode="' ~ _fullWidthMode ~ '"' : null -%}
+{%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint=' ~ _breakpoint : null -%}
+{%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-fullwidthmode=' ~ _fullWidthMode : null -%}
 
 {# Miscellaneous #}
 {%- set _placementClassNames = {
@@ -39,8 +39,8 @@
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
-    {{ _dataBreakpointAttr | raw }}
-    {{ _dataFullWidthModeAttr | raw }}
+    {{ _dataBreakpointAttr }}
+    {{ _dataFullWidthModeAttr }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>
