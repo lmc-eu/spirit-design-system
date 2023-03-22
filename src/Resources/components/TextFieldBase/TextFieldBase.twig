@@ -42,15 +42,15 @@
 
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
-{%- set _placeholderAttr = _placeholder ? 'placeholder="' ~ _placeholder ~'"' : null -%}
+{%- set _placeholderAttr = _placeholder ? 'placeholder=' ~ _placeholder : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 
 {# Extended Attributes for TextArea #}
-{%- set _rowsAttr = _rows ? 'rows="' ~ _rows ~ '"' : null -%}
+{%- set _rowsAttr = _rows ? 'rows=' ~ _rows : null -%}
 
 {# Extended Attributes for TextField #}
-{%- set _inputWidthAttr = _inputWidth ? 'size="' ~ _inputWidth ~ '"' : null -%}
+{%- set _inputWidthAttr = _inputWidth ? 'size=' ~ _inputWidth : null -%}
 
 {# Miscellaneous #}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _class ] -%}
@@ -68,7 +68,7 @@
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
-        {{ _label | raw }}
+        {{ _label  }}
     </label>
     {% if _isMultiline %}
         <textarea
@@ -76,10 +76,10 @@
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"
-            {{ _rowsAttr | raw }}
-            {{ _placeholderAttr | raw }}
-            {{ _disabledAttr | raw }}
-            {{ _requiredAttr | raw }}
+            {{ _rowsAttr }}
+            {{ _placeholderAttr }}
+            {{ _disabledAttr }}
+            {{ _requiredAttr }}
         >
             {{ _value }} {# Intentionally without `raw` to prevent XSS. #}
         </textarea>
@@ -92,11 +92,11 @@
                     id="{{ _id }}"
                     name="{{ _name }}"
                     class="{{ _inputClassName }}"
-                    {{ _disabledAttr | raw }}
-                    {{ _inputWidthAttr | raw }}
-                    {{ _placeholderAttr | raw }}
-                    {{ _requiredAttr | raw }}
-                    {{ _valueAttr | raw }}
+                    {{ _disabledAttr }}
+                    {{ _inputWidthAttr }}
+                    {{ _placeholderAttr }}
+                    {{ _requiredAttr }}
+                    {{ _valueAttr }}
                 />
                 <button
                     type="button"
@@ -121,22 +121,22 @@
                 id="{{ _id }}"
                 name="{{ _name }}"
                 class="{{ _inputClassName }}"
-                {{ _disabledAttr | raw }}
-                {{ _inputWidthAttr | raw }}
-                {{ _placeholderAttr | raw }}
-                {{ _requiredAttr | raw }}
+                {{ _disabledAttr }}
+                {{ _inputWidthAttr }}
+                {{ _placeholderAttr }}
+                {{ _requiredAttr }}
                 {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
             />
         {% endif %}
     {% endif %}
     {% if _helperText %}
         <div class="{{ _helperTextClassName }}">
-            {{ _helperText | raw }}
+            {{ _helperText }}
         </div>
     {% endif %}
     {% if _message %}
         <div class="{{ _messageClassName }}">
-            {{ _message | raw }}
+            {{ _message }}
         </div>
     {% endif %}
 </div>

@@ -11,7 +11,7 @@
 {%- set _titleClassName = _spiritClassPrefix ~ 'ModalHeader__title' -%}
 
 {# Attributes #}
-{%- set _titleIdAttr = _titleId ? 'id="' ~ _titleId ~ '"' : null -%}
+{%- set _titleIdAttr = _titleId ? 'id=' ~ _titleId : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
@@ -23,7 +23,7 @@
     {% if block('content') is not empty %}
         <h2
             class="{{ _titleClassName }}"
-            {{ _titleIdAttr | raw }}
+            {{ _titleIdAttr }}
         >
             {% block content %}{% endblock %}
         </h2>

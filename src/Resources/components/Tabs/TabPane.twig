@@ -10,8 +10,8 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'TabsPane' -%}
 
 {# Attributes #}
-{%- set _ariaLabelAttr = _label ? ' aria-labelledby="' ~ _label ~ '"' : null -%}
-{%- set _idAttr = _id ? ' id="' ~ _id ~ '"' : null -%}
+{%- set _ariaLabelAttr = _label ? ' aria-labelledby=' ~ _label : null -%}
+{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}
@@ -20,8 +20,8 @@
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     role="tabpanel"
-    {{ _ariaLabelAttr | raw }}
-    {{ _idAttr | raw }}
+    {{ _ariaLabelAttr }}
+    {{ _idAttr }}
 >
     {% block content %}{% endblock %}
 </div>

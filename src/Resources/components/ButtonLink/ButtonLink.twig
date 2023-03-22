@@ -20,19 +20,28 @@
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
 
 {# Attributes #}
-{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
-{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
-{%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
+{%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
+{%- set _titleAttr = _title ? 'title=' ~ _title | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
+{%- set _allowedAttributes = [
+    'title',
+] -%}
+
+
+{# Deprecations #}
+{% if _onClick is same as('error') %}
+    {% deprecated 'ButtonLink: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
 
 <a
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
     {{ _onClickAttr | raw }}
-    {{ _targetAttr | raw }}
+    {{ _targetAttr }}
     {{ _titleAttr | raw }}
 >
     {%- block content %}{% endblock %}

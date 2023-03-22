@@ -14,7 +14,7 @@
 {%- set _rootPlacementClassName = _spiritClassPrefix ~ 'Tooltip--' ~ _placement -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
+{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootPlacementClassName, _rootDismissibleClassName, _class ] -%}
@@ -23,7 +23,7 @@
 <div
     {{ mainProps(_mainPropsWithoutId) }}
     {{ classProp(_classNames) }}
-    {{ _idAttr | raw }}
+    {{ _idAttr }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible == 'true' %}

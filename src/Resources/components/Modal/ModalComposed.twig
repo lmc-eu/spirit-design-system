@@ -9,8 +9,8 @@
 {%- set _rootComposedClassName = _spiritClassPrefix ~ 'Modal--composed' -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
-{%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby="' ~ _titleId ~ '"' : null -%}
+{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby=' ~ _titleId : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootComposedClassName, _rootExpandOnMobileClassName, _class ] -%}
@@ -22,8 +22,8 @@
 <dialog
     {{ mainProps(_mainPropsWithoutId) }}
     {{ classProp(_classNames) }}
-    {{ _idAttr | raw }}
-    {{ _ariaLabelledbyAttr | raw }}
+    {{ _idAttr }}
+    {{ _ariaLabelledbyAttr }}
 >
     {% block content %}{% endblock %}
 </dialog>

@@ -12,13 +12,13 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs__link' -%}
 
 {# Attributes #}
-{%- set _ariaControlsAttr = _target ? 'aria-controls="' ~ _target ~ '"' : null -%}
-{%- set _dataTargetAttr = _target ? 'data-target="#' ~ _target ~ '"' : null -%}
-{%- set _dataToggleAttr = _href ? null : 'data-toggle="tabs"' -%}
-{%- set _hrefAttr = _href ? 'href="' ~ _href ~ '"' : null -%}
-{%- set _idAttr = _id ? ' id="' ~ _id ~ '"' : null -%}
-{%- set _roleAttr = _href ? 'role="tab"' : null -%}
-{%- set _typeAttr = _href ? null : 'type="button"' -%}
+{%- set _ariaControlsAttr = _target ? 'aria-controls=' ~ _target : null -%}
+{%- set _dataTargetAttr = _target ? 'data-target=#' ~ _target : null -%}
+{%- set _dataToggleAttr = _href ? null : 'data-toggle=tabs' -%}
+{%- set _hrefAttr = _href ? 'href=' ~ _href : null -%}
+{%- set _idAttr = _id ? ' id=' ~ _id : null -%}
+{%- set _roleAttr = _href ? 'role=tab' : null -%}
+{%- set _typeAttr = _href ? null : 'type=button' -%}
 
 {# Miscellaneous #}
 {%- set _ariaSelected = _isSelected ? 'true' : 'false' -%}
@@ -29,13 +29,13 @@
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
     aria-selected="{{ _ariaSelected }}"
-    {{ _ariaControlsAttr | raw }}
-    {{ _dataTargetAttr | raw }}
-    {{ _dataToggleAttr | raw }}
-    {{ _hrefAttr | raw }}
-    {{ _idAttr | raw }}
-    {{ _roleAttr | raw }}
-    {{ _typeAttr | raw }}
+    {{ _ariaControlsAttr }}
+    {{ _dataTargetAttr }}
+    {{ _dataToggleAttr }}
+    {{ _hrefAttr }}
+    {{ _idAttr }}
+    {{ _roleAttr }}
+    {{ _typeAttr }}
 >
     {% block content %}{% endblock %}
 </{{ _elementType }}>
