@@ -14,9 +14,7 @@ const Story: ComponentStory<typeof Icon> = (args: IconProps) => (
     <Icon {...args} />
   </IconsProvider>
 );
-Story.args = {
-  name: 'warning',
-  title: 'Warning',
-};
+
+Story.args = {};
 
 export default Story;

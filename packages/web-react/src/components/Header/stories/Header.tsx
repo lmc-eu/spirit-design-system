@@ -13,8 +13,6 @@ Story.args = {
       <SpiritLogo />
     </Link>
   ),
-  color: 'inverted',
-  isSimple: false,
 };
 
 export default Story;

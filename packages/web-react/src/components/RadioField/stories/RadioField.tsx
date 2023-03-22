@@ -5,12 +5,6 @@ import { SpiritRadioFieldProps } from '../../../types';
 
 const Story: ComponentStory<typeof RadioField> = (args: SpiritRadioFieldProps) => <RadioField {...args} />;
 
-Story.args = {
-  isChecked: true,
-  isDisabled: false,
-  isLabelHidden: false,
-  label: 'Label',
-  name: 'example',
-};
+Story.args = {};
 
 export default Story;

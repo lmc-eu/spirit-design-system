@@ -1,9 +1,11 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import Tooltip from './Tooltip';
 
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
+  argTypes,
 } as ComponentMeta<typeof Tooltip>;
 
 export { default as Tooltip } from './stories/Tooltip';
