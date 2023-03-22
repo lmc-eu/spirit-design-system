@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import Icon from './Icon';
 
 export default {
@@ -11,6 +12,7 @@ export default {
       },
     },
   },
+  argTypes,
 } as ComponentMeta<typeof Icon>;
 
 export { default as Icon } from './stories/Icon';

@@ -9,7 +9,6 @@ const Story: ComponentStory<typeof Link> = <E extends ElementType = 'a', T = voi
 
 Story.args = {
   children: 'Going somewhere?',
-  href: 'https://www.example.com',
 };
 
 export default Story;
