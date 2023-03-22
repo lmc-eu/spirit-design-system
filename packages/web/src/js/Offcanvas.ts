@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
-import { enableToggleTrigger, enableDismissTrigger } from './utils/ComponentFunctions';
+import { enableToggleTrigger, enableDismissTrigger, ScrollControl } from './utils';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
@@ -16,6 +16,7 @@ const OPEN_CLASSNAME = 'is-open';
 
 class Offcanvas extends BaseComponent {
   isShown: boolean;
+  scrollControl: ScrollControl;
 
   static get NAME() {
     return NAME;
@@ -26,6 +27,7 @@ class Offcanvas extends BaseComponent {
     super(target);
 
     this.isShown = false;
+    this.scrollControl = new ScrollControl();
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -90,6 +92,8 @@ class Offcanvas extends BaseComponent {
     this.isShown = true;
 
     EventHandler.trigger(this.element, EVENT_SHOWN, { relatedTarget });
+
+    this.scrollControl.disableScroll();
   }
 
   hide() {
@@ -112,6 +116,8 @@ class Offcanvas extends BaseComponent {
     this.isShown = false;
 
     EventHandler.trigger(this.element, EVENT_HIDDEN);
+
+    this.scrollControl.activateScroll();
   }
 
   toggle(targetElement: HTMLElement | null) {
