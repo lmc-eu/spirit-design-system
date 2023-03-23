@@ -14,10 +14,4 @@ export default {
     },
     defaultValue: false,
   },
-  iconName: {
-    control: {
-      type: 'text',
-    },
-    defaultValue: 'check-plain',
-  },
 };

@@ -13,6 +13,4 @@ const Story: ComponentStory<typeof Tooltip> = (args) => (
   </TooltipWrapper>
 );
 
-Story.args = {};
-
 export default Story;

@@ -17,7 +17,7 @@ export interface RadioFieldProps
     ItemProps,
     HelperTextProps,
     InputBaseProps,
-    Validation {
+    Omit<Validation, 'isRequired'> {
   /** Whether the checkbox is checked */
   isChecked?: boolean;
   /** Text of control label */
