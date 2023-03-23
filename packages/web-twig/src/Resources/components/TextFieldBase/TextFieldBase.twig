@@ -44,7 +44,7 @@
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _placeholderAttr = _placeholder ? 'placeholder="' ~ _placeholder ~'"' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
-{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+{%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 
 {# Extended Attributes for TextArea #}
 {%- set _rowsAttr = _rows ? 'rows="' ~ _rows ~ '"' : null -%}
@@ -81,7 +81,7 @@
             {{ _disabledAttr | raw }}
             {{ _requiredAttr | raw }}
         >
-            {{ _value | raw }}
+            {{ _value }}
         </textarea>
     {% else %}
         {% if _hasPasswordToggle %}
@@ -125,7 +125,7 @@
                 {{ _inputWidthAttr | raw }}
                 {{ _placeholderAttr | raw }}
                 {{ _requiredAttr | raw }}
-                {{ _valueAttr | raw }}
+                {{ _valueAttr }}
             />
         {% endif %}
     {% endif %}

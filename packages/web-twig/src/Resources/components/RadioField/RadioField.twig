@@ -25,7 +25,7 @@
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
-{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+{%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 {%- set _idAttr = _id ? 'id="' ~ _id ~'"' : null -%}
 {%- set _labelForAttr = _id ? 'for="' ~ _id ~'"' : null -%}
 
@@ -43,7 +43,7 @@
         {{ _idAttr | raw }}
         {{ _checkedAttr | raw }}
         {{ _disabledAttr | raw }}
-        {{ _valueAttr | raw }}
+        {{ _valueAttr }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
