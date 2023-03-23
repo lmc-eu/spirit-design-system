@@ -18,7 +18,7 @@ Default TextFieldBase:
   id="example2"
   isRequired
   label="Label"
-  messsage="validation failed"
+  message="validation failed"
   name="example2"
   placeholder="Placeholder"
   type="text"
@@ -34,7 +34,7 @@ TextFieldBase with password toggle (button to reveal the password):
   id="example3"
   isRequired
   label="Password"
-  messsage="validation failed"
+  message="validation failed"
   name="example3"
   placeholder="Placeholder"
   validationState="danger"
