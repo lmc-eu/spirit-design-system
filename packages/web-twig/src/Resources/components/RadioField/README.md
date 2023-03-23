@@ -36,19 +36,21 @@ Without lexer:
 
 ## API
 
-| Prop name         | Type                                           | Default | Required | Description                    |
-| ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------ |
-| `class`           | `string`                                       | `null`  | no       | Custom CSS class               |
-| `id`              | `string`                                       | `null`  | no       | Input and label identification |
-| `isChecked`       | `bool`                                         | `false` | no       | If true, input is checked      |
-| `isDisabled`      | `bool`                                         | `false` | no       | If true, input is disabled     |
-| `isItem`          | `bool`                                         | `false` | no       | To render in [Item][item] mode |
-| `isLabelHidden`   | `bool`                                         | `false` | no       | If true, label is hidden       |
-| `label`           | `string`                                       | —       | yes      | Label text                     |
-| `name`            | `string`                                       | `null`  | no       | Input name                     |
-| `validationState` | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state       |
-| `value`           | `string`                                       | `null`  | no       | Input value                    |
-| `helperText`      | `string`                                       | `null`  | no       | Custom helper text             |
+| Prop name           | Type                                           | Default | Required | Description                    |
+| ------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------ |
+| `class`             | `string`                                       | `null`  | no       | Custom CSS class               |
+| `id`                | `string`                                       | `null`  | no       | Input and label identification |
+| `isChecked`         | `bool`                                         | `false` | no       | If true, input is checked      |
+| `isDisabled`        | `bool`                                         | `false` | no       | If true, input is disabled     |
+| `isItem`            | `bool`                                         | `false` | no       | To render in [Item][item] mode |
+| `isLabelHidden`     | `bool`                                         | `false` | no       | If true, label is hidden       |
+| `label`             | `string`                                       | —       | yes      | Label text                     |
+| `UNSAFE_label`      | `string`                                       | —       | yes      | Unescaped label text           |
+| `name`              | `string`                                       | `null`  | no       | Input name                     |
+| `validationState`   | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state       |
+| `value`             | `string`                                       | `null`  | no       | Input value                    |
+| `helperText`        | `string`                                       | `null`  | no       | Custom helper text             |
+| `UNSAFE_helperText` | `string`                                       | `null`  | no       | Unescaped custom helper text   |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
