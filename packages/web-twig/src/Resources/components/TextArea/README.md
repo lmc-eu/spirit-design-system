@@ -14,7 +14,7 @@ Advanced example usage:
 <TextArea
   id="example2"
   label="Label"
-  messsage="validation failed"
+  message="validation failed"
   name="example2"
   placeholder="Placeholder"
   validationState="danger"

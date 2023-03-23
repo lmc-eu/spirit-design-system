@@ -15,7 +15,7 @@ Advanced example usage:
   id="example2"
   isChecked
   isRequired
-  messsage="validation failed"
+  message="validation failed"
   name="example2"
   validationState="danger"
   helperText="Helper text"
