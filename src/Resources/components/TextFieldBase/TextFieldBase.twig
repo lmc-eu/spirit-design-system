@@ -2,14 +2,17 @@
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _helperText = props.helperText | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isFluid = props.isFluid | default(false) | boolprop -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
 {%- set _isMultiline = props.isMultiline | default(false) | boolprop -%}
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
-{%- set _label = props.label -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _message = props.message | default(null) -%}
+{%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _placeholder = props.placeholder | default(null) -%}
 {%- set _type = props.type | default('text') -%}
@@ -68,7 +71,7 @@
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_rootClassNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
-        {{ _label  }}
+        {% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}
     </label>
     {% if _isMultiline %}
         <textarea
@@ -129,14 +132,24 @@
             />
         {% endif %}
     {% endif %}
-    {% if _helperText %}
+    {% if _helperText and not _unsafeHelperText %}
         <div class="{{ _helperTextClassName }}">
             {{ _helperText }}
         </div>
     {% endif %}
-    {% if _message %}
+    {% if _unsafeHelperText %}
+        <div class="{{ _helperTextClassName }}">
+            {{ _unsafeHelperText | raw }}
+        </div>
+    {% endif %}
+    {% if _message and not _unsafeMessage %}
         <div class="{{ _messageClassName }}">
             {{ _message }}
+        </div>
+    {% endif %}
+    {% if _unsafeMessage %}
+        <div class="{{ _messageClassName }}">
+            {{ _unsafeMessage | raw }}
         </div>
     {% endif %}
 </div>

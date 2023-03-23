@@ -38,21 +38,27 @@ Without lexer:
 
 ## API
 
-| Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
-| ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `class`           | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
-| `id`              | `string`                                                             | `null`  | no       | Input and label identification                                                                                                     |
-| `isChecked`       | `bool`                                                               | `false` | no       | If true, input is checked                                                                                                          |
-| `isDisabled`      | `bool`                                                               | `false` | no       | If true, input is disabled                                                                                                         |
-| `isItem`          | `bool`                                                               | `false` | no       | To render in [Item][item] mode                                                                                                     |
-| `isLabelHidden`   | `bool`                                                               | `false` | no       | If true, label is hidden                                                                                                           |
-| `isRequired`      | `bool`                                                               | `false` | no       | If true, input is required                                                                                                         |
-| `label`           | `string`                                                             | —       | yes      | Label text                                                                                                                         |
-| `message`         | `string`                                                             | `null`  | no       | Validation message                                                                                                                 |
-| `helperText`      | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
-| `name`            | `string`                                                             | `null`  | no       | Input name                                                                                                                         |
-| `validationState` | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
-| `value`           | `string`                                                             | `null`  | no       | Input value                                                                                                                        |
+| Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
+| ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `class`             | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
+| `id`                | `string`                                                             | `null`  | no       | Input and label identification                                                                                                     |
+| `isChecked`         | `bool`                                                               | `false` | no       | If true, input is checked                                                                                                          |
+| `isDisabled`        | `bool`                                                               | `false` | no       | If true, input is disabled                                                                                                         |
+| `isItem`            | `bool`                                                               | `false` | no       | To render in [Item][item] mode                                                                                                     |
+| `isLabelHidden`     | `bool`                                                               | `false` | no       | If true, label is hidden                                                                                                           |
+| `isRequired`        | `bool`                                                               | `false` | no       | If true, input is required                                                                                                         |
+| `label`             | `string`                                                             | —       | yes\*    | Label text                                                                                                                         |
+| `UNSAFE_label`      | `string`                                                             | —       | yes\*    | Unescaped label text (allows HTML)                                                                                                 |
+| `message`           | `string`                                                             | `null`  | no\*\*   | Validation message                                                                                                                 |
+| `UNSAFE_message`    | `string`                                                             | `null`  | no\*\*   | Unescaped validation message                                                                                                       |
+| `helperText`        | `string`                                                             | `null`  | no\*\*   | Custom helper text                                                                                                                 |
+| `UNSAFE_helperText` | `string`                                                             | `null`  | no\*\*   | Unescaped custom helper text                                                                                                       |
+| `name`              | `string`                                                             | `null`  | no       | Input name                                                                                                                         |
+| `validationState`   | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
+| `value`             | `string`                                                             | `null`  | no       | Input value                                                                                                                        |
+
+\*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
+\*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes

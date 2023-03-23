@@ -6,9 +6,11 @@
 {%- set _isItem = props.isItem | default(false) | boolprop -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
 {%- set _label = props.label -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _value = props.value | default(null) -%}
 {%- set _helperText = props.helperText | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 
 {# Class names #}
@@ -34,7 +36,7 @@
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
-<label {{ _labelForAttr  }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
+<label {{ _labelForAttr }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props) }}
         type="radio"
@@ -46,7 +48,8 @@
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>{{ _label  }}</span>
-        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText  }}</span>{% endif %}
+        <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
+        {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
+        {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
     </span>
 </label>

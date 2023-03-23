@@ -8,11 +8,14 @@
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _message = props.message | default(null) -%}
+{%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
 {%- set _helperText = props.helperText | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 
 {# Class names #}
 {%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
@@ -56,8 +59,10 @@
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>{{ _label  }}</span>
-        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText  }}</span>{% endif %}
-        {% if _message %}<span class="{{ _messageClassName }}">{{ _message  }}</span>{% endif %}
+        <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
+        {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
+        {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
+        {% if _message and not _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _message }}</span>{% endif %}
+        {% if _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _unsafeMessage | raw }}</span>{% endif %}
     </span>
 </label>
