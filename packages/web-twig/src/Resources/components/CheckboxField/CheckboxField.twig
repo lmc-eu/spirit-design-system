@@ -31,7 +31,7 @@
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
-{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+{%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
@@ -53,7 +53,7 @@
         {{ _checkedAttr | raw }}
         {{ _disabledAttr | raw }}
         {{ _requiredAttr | raw }}
-        {{ _valueAttr | raw }}
+        {{ _valueAttr }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
