@@ -5,6 +5,4 @@ import { SpiritRadioFieldProps } from '../../../types';
 
 const Story: ComponentStory<typeof RadioField> = (args: SpiritRadioFieldProps) => <RadioField {...args} />;
 
-Story.args = {};
-
 export default Story;

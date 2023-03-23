@@ -15,6 +15,4 @@ const Story: ComponentStory<typeof Icon> = (args: IconProps) => (
   </IconsProvider>
 );
 
-Story.args = {};
-
 export default Story;

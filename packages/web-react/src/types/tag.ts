@@ -4,7 +4,7 @@ import { ChildrenProps, EmotionColorsDictionaryType, SizesDictionaryType, StyleP
 /* @deprecated: 'default' value will be removed in the next major version. */
 export type TagColor<C> = EmotionColorsDictionaryType | 'default' | 'neutral' | C;
 
-export type TagSize<S> = SizesDictionaryType | EmotionColorsDictionaryType | S;
+export type TagSize<S> = SizesDictionaryType | S;
 
 /** @deprecated Will be removed in next major version */
 export type TagTheme = 'light' | 'dark';

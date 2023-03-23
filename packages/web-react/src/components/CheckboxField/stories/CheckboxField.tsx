@@ -5,6 +5,4 @@ import { SpiritCheckboxFieldProps } from '../../../types';
 
 const Story: ComponentStory<typeof CheckboxField> = (args: SpiritCheckboxFieldProps) => <CheckboxField {...args} />;
 
-Story.args = {};
-
 export default Story;
