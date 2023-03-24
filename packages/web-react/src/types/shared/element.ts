@@ -1,10 +1,12 @@
-import { DetailedHTMLProps, HTMLAttributes, HTMLProps } from 'react';
+import { ComponentPropsWithRef, DetailedHTMLProps, ElementType, HTMLAttributes, HTMLProps } from 'react';
 import { OverloadStyleProps } from './style';
 
 /** Returns all relevant attributes and their types from a given HTML Element */
 export type SpiritDetailedHTMLProps<E> = DetailedHTMLProps<HTMLAttributes<E>, E>;
 /** Returns all relevant attributes and their types, combined basic and detailed, from a given HTML Element */
 export type SpiritCombinedHTMLProps<E> = DetailedHTMLProps<HTMLAttributes<E>, E> & HTMLProps<E>;
+/** Returns the appropriate elementary props based on the element's polymorphic type and excludes any duplicates from it */
+export type SpiritPolymorphicElementPropsWithRef<E extends ElementType, P> = Omit<ComponentPropsWithRef<E>, keyof P>;
 
 export type SpiritElementBaseProps = SpiritDetailedHTMLProps<HTMLElement>;
 export type SpiritAnchorElementBaseProps = SpiritCombinedHTMLProps<HTMLButtonElement>;

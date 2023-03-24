@@ -2,7 +2,7 @@ import { ElementType } from 'react';
 import classNames from 'classnames';
 import { compose } from '../../utils/compose';
 import { applyColor, applySize } from '../../utils/classname';
-import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
+import { useClassNamePrefix } from '../../hooks';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
 
 // `${componentClassName}--${color}`;
@@ -12,16 +12,16 @@ const getButtonColorClassname = <C = void>(className: string, color: ButtonColor
 const getButtonSizeClassname = <S = void>(className: string, size: ButtonSize<S>): string =>
   compose(applySize<ButtonSize<S>>(size))(className);
 
-export interface ButtonStyles<T> {
+export interface ButtonStyles {
   /** className props */
   classProps: string;
   /** Props for the button element */
-  props: T;
+  props: SpiritButtonProps;
 }
 
 export function useButtonStyleProps<T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
-): ButtonStyles<Omit<SpiritButtonProps<T, C, S>, 'color'>> {
+): ButtonStyles {
   const { color, isBlock, isDisabled, isSquare, size, ...restProps } = props;
 
   const buttonClass = useClassNamePrefix('Button');

@@ -12,7 +12,16 @@ export default {
       },
     },
   },
-  argTypes,
+  argTypes: {
+    ...argTypes,
+    type: {
+      control: {
+        type: 'select',
+        options: ['button', 'submit', 'reset'],
+      },
+      defaultValue: 'button',
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 export { default as Button } from './stories/Button';

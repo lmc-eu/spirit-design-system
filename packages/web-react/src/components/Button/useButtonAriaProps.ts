@@ -1,60 +1,60 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, HTMLAttributes } from 'react';
-import { ClickEvent, AriaButtonProps } from '../../types';
+import { ClickEvent, SpiritButtonProps, SpiritButtonLinkProps } from '../../types';
 
-export interface ButtonAria<T> {
-  /** Props for the button element. */
-  buttonProps: T;
-}
+const handleClick = (event: ClickEvent, isDisabled?: boolean, onClick?: (event: ClickEvent) => void) => {
+  if (isDisabled) {
+    event.preventDefault();
 
-export function useButtonAriaProps<C = void, S = void>(
-  props: AriaButtonProps<'a', C, S>,
-): ButtonAria<AnchorHTMLAttributes<HTMLAnchorElement>>;
-export function useButtonAriaProps<C = void, S = void>(
-  props: AriaButtonProps<'button', C, S>,
-): ButtonAria<ButtonHTMLAttributes<HTMLButtonElement>>;
-export function useButtonAriaProps<C = void, S = void>(
-  props: AriaButtonProps<ElementType, C, S>,
-): ButtonAria<HTMLAttributes<HTMLElement>>;
-
-export function useButtonAriaProps<C = void, S = void>(
-  props: AriaButtonProps<ElementType, C, S>,
-): ButtonAria<HTMLAttributes<unknown>> {
-  const { elementType = 'button', isDisabled, onClick, href, target, rel, type = 'button', ariaLabel } = props;
-
-  let additionalProps;
-  if (elementType === 'button') {
-    additionalProps = {
-      type,
-      disabled: isDisabled,
-    };
-  } else {
-    additionalProps = {
-      role: 'button',
-      href: elementType === 'a' && isDisabled ? undefined : href,
-      target: elementType === 'a' ? target : undefined,
-      type: elementType === 'a' && type === 'button' ? undefined : type,
-      disabled: isDisabled,
-      rel: elementType === 'a' ? rel : undefined,
-    };
+    return;
   }
 
-  const handleClick = (event: ClickEvent) => {
-    if (isDisabled) {
-      event.preventDefault();
+  if (onClick) {
+    onClick(event);
+  }
+};
 
-      return;
-    }
+export type UseButtonAriaProps = Partial<SpiritButtonProps>;
+export type UseButtonAriaReturn = {
+  buttonProps: UseButtonAriaProps;
+};
 
-    if (onClick) {
-      onClick(event);
-    }
+export const useButtonAriaProps = (props: UseButtonAriaProps): UseButtonAriaReturn => {
+  const { isDisabled, onClick, type = 'button', ariaLabel } = props;
+
+  const additionalProps = {
+    type,
+    disabled: isDisabled,
   };
 
   return {
     buttonProps: {
       ...additionalProps,
-      onClick: handleClick,
+      onClick: (event) => handleClick(event, isDisabled, onClick),
       'aria-label': ariaLabel || undefined,
     },
   };
-}
+};
+
+export type UseButtonLinkAriaProps = Partial<SpiritButtonLinkProps>;
+export type UseButtonLinkAriaReturn = {
+  buttonLinkProps: UseButtonLinkAriaProps;
+};
+
+export const useButtonLinkAriaProps = (props: UseButtonLinkAriaProps): UseButtonLinkAriaReturn => {
+  const { elementType, isDisabled, onClick, href, target, rel, ariaLabel } = props;
+
+  const additionalProps = {
+    role: 'button',
+    href: elementType === 'a' && isDisabled ? undefined : href,
+    target: elementType === 'a' ? target : undefined,
+    disabled: isDisabled,
+    rel: elementType === 'a' ? rel : undefined,
+  };
+
+  return {
+    buttonLinkProps: {
+      ...additionalProps,
+      onClick: (event) => handleClick(event, isDisabled, onClick),
+      'aria-label': ariaLabel || undefined,
+    },
+  };
+};
