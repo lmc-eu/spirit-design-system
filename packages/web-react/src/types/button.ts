@@ -1,24 +1,24 @@
-import { ElementType, JSXElementConstructor } from 'react';
+import { ElementType } from 'react';
 import {
   ActionColorsDictionaryType,
   AriaLabelingProps,
   ChildrenProps,
   ClickEvents,
   EmotionColorsDictionaryType,
+  SpiritPolymorphicElementPropsWithRef,
   SizesDictionaryType,
   StyleProps,
-  TransferProps,
 } from './shared';
 
 export type ButtonColor<C> = ActionColorsDictionaryType | EmotionColorsDictionaryType | C;
 export type ButtonSize<S> = SizesDictionaryType | S;
-type ButtonType = 'button' | 'submit' | 'reset';
+export type ButtonType = 'button' | 'submit' | 'reset';
 
-interface ButtonProps<C = void, S = void> extends ChildrenProps, ClickEvents {
-  /** Whether the button is disabled. */
-  isDisabled?: boolean;
+export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, StyleProps, AriaLabelingProps, ClickEvents {
   /** The color of the button. */
   color?: ButtonColor<C>;
+  /** Whether the button is disabled. */
+  isDisabled?: boolean;
   /** Whether the button should be displayed with a block style. */
   isBlock?: boolean;
   /** Whether the button should be displayed as a square. */
@@ -27,47 +27,32 @@ interface ButtonProps<C = void, S = void> extends ChildrenProps, ClickEvents {
   size?: ButtonSize<S>;
 }
 
-export interface AriaButtonElementTypeProps<T extends ElementType = 'button'> {
+export type ButtonProps<E extends ElementType, C = void, S = void> = {
   /**
    * The HTML element or React element used to render the button, e.g. 'div', 'a', or `RouterLink`.
    *
    * @default 'button'
    */
-  elementType?: T | JSXElementConstructor<unknown>;
-}
-
-export interface LinkButtonProps<T extends ElementType = 'a'> extends AriaButtonElementTypeProps<T> {
-  /** A URL to link to if elementType="a". */
-  href?: string;
-  /** The target window for the link. */
-  target?: string;
-  /** The relationship between the linked resource and the current page. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel). */
-  rel?: string;
-}
-
-interface AriaBaseButtonProps extends AriaLabelingProps {
+  elementType?: E;
   /**
    * The behavior of the button when used in an HTML form.
    *
    * @default 'button'
    */
   type?: ButtonType;
-}
+} & ButtonBaseProps<C, S>;
 
-export interface AriaButtonProps<T extends ElementType = 'button', C = void, S = void>
-  extends ButtonProps<C, S>,
-    LinkButtonProps<T>,
-    AriaBaseButtonProps {}
+export type ButtonLinkProps<E extends ElementType, C = void, S = void> = {
+  /**
+   * The HTML element or React element used to render the button, e.g. 'div', 'a', or `RouterLink`.
+   *
+   * @default 'a'
+   */
+  elementType?: E;
+} & ButtonBaseProps<C, S>;
 
-export interface SpiritButtonProps<T extends ElementType = 'button', C = void, S = void>
-  extends AriaBaseButtonProps,
-    AriaButtonElementTypeProps<T>,
-    ButtonProps<C, S>,
-    StyleProps,
-    TransferProps {
-  // tag?: ElementType;
-}
+export type SpiritButtonProps<E extends ElementType = 'button', C = void, S = void> = ButtonProps<E, C, S> &
+  SpiritPolymorphicElementPropsWithRef<E, ButtonProps<E, C, S>>;
 
-export interface SpiritButtonLinkProps<T extends ElementType = 'a', C = void, S = void>
-  extends SpiritButtonProps<T, C, S>,
-    LinkButtonProps<T> {}
+export type SpiritButtonLinkProps<E extends ElementType = 'a', C = void, S = void> = ButtonLinkProps<E, C, S> &
+  SpiritPolymorphicElementPropsWithRef<E, ButtonLinkProps<E, C, S>>;

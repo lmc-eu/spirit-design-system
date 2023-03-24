@@ -26,13 +26,6 @@ export default {
     },
     defaultValue: false,
   },
-  type: {
-    control: {
-      type: 'select',
-      options: ['button', 'submit', 'reset'],
-    },
-    defaultValue: 'button',
-  },
   size: {
     control: {
       type: 'select',
