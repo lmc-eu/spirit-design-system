@@ -42,6 +42,7 @@ RUN set -eux; \
       zip \
       apcu \
       opcache \
+      tidy \
     ;
 
 ###> recipes ###
