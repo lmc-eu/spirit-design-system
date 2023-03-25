@@ -29,6 +29,8 @@ final class ComponentsSnapshotTest extends TestCase
     {
         $html = $this->twig->render($template);
 
+        $html = $this->formatHtml($html);
+
         $this->assertMatchesHtmlSnapshot($html);
     }
 
@@ -45,11 +47,29 @@ final class ComponentsSnapshotTest extends TestCase
         $dataToProvide = [];
 
         foreach ($scannedDirectory as $fileName) {
-          if (!is_dir(self::SNAPSHOT_SOURCES . '/' . $fileName)) {
-            $dataToProvide[(string) $fileName] = [(string) $fileName];
-          }
+            if (! is_dir(self::SNAPSHOT_SOURCES . '/' . $fileName)) {
+                $dataToProvide[(string) $fileName] = [(string) $fileName];
+            }
         }
 
         return $dataToProvide;
+    }
+
+    private function formatHtml(string $html): string
+    {
+        // Specify configuration
+        $config = [
+            'indent' => true,
+            'output-xhtml' => true,
+            'wrap' => 120,
+        ];
+
+        // Tidy
+        $tidy = new \tidy();
+        $tidy->parseString($html, $config, 'utf8');
+        $tidy->cleanRepair();
+
+        // Output
+        return $tidy->root()->value;
     }
 }
