@@ -41,7 +41,14 @@ class PropsExtension extends AbstractExtension
         $transferringAttributes = [];
         if (is_array($props)) {
             foreach ($props as $propName => $propValue) {
-                if (preg_match('/^(data|aria)-*/', $propName) > 0 || in_array($propName, $allowedAttributes)) {
+                if (
+                    // allow data and aria attributes
+                    preg_match('/^(data|aria)-*/', $propName) > 0
+                    // allow event handlers attributes
+                    || preg_match('/^(on)-*/', $propName) > 0
+                    // allow manually specified attributes
+                    || in_array($propName, $allowedAttributes)
+                ) {
                     if ($propValue !== '') {
                         $transferringAttributes[$propName] = $propValue;
                     }
