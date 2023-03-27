@@ -26,7 +26,7 @@ Basic example usage:
 ```
 
 ```html
-<Breadcrumbs items="{{ items}}" />
+<Breadcrumbs items="{{ items }}" />
 ```
 
 Without lexer:

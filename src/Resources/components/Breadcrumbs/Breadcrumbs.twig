@@ -31,7 +31,9 @@
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
                         isUnderlined="{{ loop.last != true }}"
                         aria-current="{{ loop.last ? 'page' : 'false' }}"
-                    >{{ item.title }}</Link>
+                    >
+                        {{ item.title }}
+                    </Link>
                 </li>
             {% endfor %}
         </ol>
