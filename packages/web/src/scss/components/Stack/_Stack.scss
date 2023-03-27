@@ -1,14 +1,60 @@
+@use 'sass:math';
 @use 'theme';
 
 .Stack {
     display: grid;
-    gap: theme.$gap;
     padding-left: 0;
     margin-block: 0;
     list-style: none;
 }
 
-// stylelint-disable-next-line selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type.
+// stylelint-disable selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type.
 .Stack > * {
     margin-block: 0;
+}
+
+.Stack--hasMiddleDividers > * {
+    border-top: theme.$border;
+}
+
+.Stack--hasSpacing > * {
+    padding-block: math.div(theme.$padding-block, 2);
+}
+
+.Stack--hasSpacing.Stack--hasMiddleDividers > * {
+    padding-block: theme.$padding-block;
+}
+// stylelint-enable
+
+.Stack--hasSpacing > :first-child {
+    padding-block-start: 0;
+}
+
+.Stack--hasSpacing > :last-child {
+    padding-block-end: 0;
+}
+
+.Stack--hasMiddleDividers > :first-child {
+    padding-block-start: 0;
+    border-top: none;
+}
+
+.Stack--hasMiddleDividers > :last-child {
+    padding-block-end: 0;
+}
+
+.Stack--hasTopDivider > :first-child {
+    border-top: theme.$border;
+}
+
+.Stack--hasBottomDivider > :last-child {
+    border-bottom: theme.$border;
+}
+
+.Stack--hasSpacing.Stack--hasTopDivider > :first-child {
+    padding-block-start: theme.$padding-block;
+}
+
+.Stack--hasSpacing.Stack--hasBottomDivider > :last-child {
+    padding-block-end: theme.$padding-block;
 }
