@@ -12,11 +12,11 @@ export interface AriaAlertElementTypeProps<T extends ElementType = 'div'> {
 
 export interface AlertProps extends ChildrenProps, StyleProps, TransferProps {}
 
-export interface SpiritAlertProps<T extends ElementType = 'div', S = void>
+export interface SpiritAlertProps<T extends ElementType = 'div', C = void>
   extends AriaAlertElementTypeProps<T>,
     AlertProps {
   /** The color of the alert. */
-  color?: EmotionColorsDictionaryType<S>;
+  color?: EmotionColorsDictionaryType<C>;
   /** Icon used in Alert. */
   iconName?: string;
   /** Whether the alert should be centered. */

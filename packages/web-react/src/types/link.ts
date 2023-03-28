@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TextColorsDictionaryType, TransferProps } from './shared';
+import { ChildrenProps, StyleProps, ActionLinkColorsDictionaryType, TransferProps } from './shared';
 
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
 
@@ -23,9 +23,9 @@ export interface LinkProps<T extends ElementType = 'a'>
   target?: LinkTarget;
 }
 
-export interface SpiritLinkProps<E extends ElementType = 'a', T = void> extends LinkProps<E> {
+export interface SpiritLinkProps<E extends ElementType = 'a', C = void> extends LinkProps<E> {
   /** Color of the Link */
-  color?: TextColorsDictionaryType<T>;
+  color?: ActionLinkColorsDictionaryType<C>;
   /** Whether is the Link underlined */
   isUnderlined?: boolean;
   /** Whether is the Link disabled */
