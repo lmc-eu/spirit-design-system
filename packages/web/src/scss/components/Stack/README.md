@@ -45,6 +45,10 @@ Otherwise, the applied spacing via vertical padding could break the visual view 
 
 ### Spacing between items
 
+⚠ **DEPRECATED:** Be aware that the `Stack` component will have no default spacing between its descendants with the next major version.
+The spacing between items will be set via `Stack--hasSpacing`.
+Use the feature flag class `spirit-v1-stack-no-default-gap` that has been prepared for the temporary usage to achieve upcoming default behaviour and prevent breaking change.
+
 👉 The vertical spacing between items is applied via `Stack--hasSpacing`. The size corresponds with the value of the design token `$space-600`.
 In case you need another spacing, please use utility classes or add custom-defined styles to the direct descendants.
 
