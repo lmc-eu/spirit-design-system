@@ -25,7 +25,7 @@ class Header extends BaseComponent {
 
     this.isShown = false;
     this.backdrop = Header.initBackdrop(element);
-    this.scrollControl = new ScrollControl();
+    this.scrollControl = new ScrollControl(element);
   }
 
   static initBackdrop(target: HTMLElement) {
@@ -125,7 +125,7 @@ class Header extends BaseComponent {
     this.removeEventListeners();
     this.isShown = false;
 
-    this.scrollControl.activateScroll();
+    this.scrollControl.enableScroll();
   }
 
   toggle(targetElement: HTMLElement | null, event: Event & { target: HTMLElement }) {

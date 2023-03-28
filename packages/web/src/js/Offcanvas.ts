@@ -27,7 +27,7 @@ class Offcanvas extends BaseComponent {
     super(target);
 
     this.isShown = false;
-    this.scrollControl = new ScrollControl();
+    this.scrollControl = new ScrollControl(element);
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -117,7 +117,7 @@ class Offcanvas extends BaseComponent {
 
     EventHandler.trigger(this.element, EVENT_HIDDEN);
 
-    this.scrollControl.activateScroll();
+    this.scrollControl.enableScroll();
   }
 
   toggle(targetElement: HTMLElement | null) {

@@ -19,7 +19,7 @@ class Modal extends BaseComponent {
     super(element);
 
     this.isShown = false;
-    this.scrollControl = new ScrollControl();
+    this.scrollControl = new ScrollControl(element as HTMLElement);
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -96,7 +96,7 @@ class Modal extends BaseComponent {
     this.removeEventListeners();
     this.isShown = false;
 
-    this.scrollControl.activateScroll();
+    this.scrollControl.enableScroll();
   }
 
   toggle(
