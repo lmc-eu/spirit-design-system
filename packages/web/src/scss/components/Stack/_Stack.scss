@@ -1,8 +1,12 @@
+// 1. Enable a new approach for creating spacing of the component using `spirit-v1-stack-no-default-gap` on the root element, eg. body, together with `Stack--hasSpacing`.
+//    This will be removed in major release and the new spacing will be the default.
+
 @use 'sass:math';
 @use 'theme';
 
 .Stack {
     display: grid;
+    gap: theme.$gap;
     padding-left: 0;
     margin-block: 0;
     list-style: none;
@@ -57,4 +61,9 @@
 
 .Stack--hasSpacing.Stack--hasBottomDivider > :last-child {
     padding-block-end: theme.$padding-block;
+}
+
+// 1.
+:where(.spirit-v1-stack-no-default-gap) .Stack {
+    gap: 0;
 }
