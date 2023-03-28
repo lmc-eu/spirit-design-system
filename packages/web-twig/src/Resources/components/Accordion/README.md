@@ -10,9 +10,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample0Header"
       for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Link href='#'>Link</Link><Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
       Accordion Content
@@ -22,9 +26,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample1Header"
       for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Link href='#'>Link</Link><Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header">
       Accordion Content
@@ -32,7 +40,9 @@ This is Twig implementation of the [Accordion] component.
   </AccordionItem>
   <AccordionItem id="AccordionItemExample2">
     <AccordionHeader id="AccordionItemExample2Header" for="AccordionItemExample2Content">
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample2Content" labelledById="AccordionItemExample2Header">
       Accordion Content
@@ -42,9 +52,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample3Header"
       for="AccordionItemExample3Content"
-      slot="<Link href='#'>Link</Link>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Link href='#'>Link</Link>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample3Content" labelledById="AccordionItemExample3Header">
       Accordion Content
@@ -62,9 +76,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample0Header"
       for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Link href='#'>Link</Link><Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
       Accordion Content
@@ -74,10 +92,14 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample1Header"
       for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
       isOpen
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header" isOpen>
       Accordion Content
@@ -94,9 +116,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample0Header"
       for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Link href='#'>Link</Link><Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent
       id="AccordionItemExample0Content"
@@ -110,9 +136,13 @@ This is Twig implementation of the [Accordion] component.
     <AccordionHeader
       id="AccordionItemExample1Header"
       for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
     >
-      Accordion Header
+      {% block startSlot %}
+          Accordion Header
+      {% endblock %}
+      {% block endSlot %}
+          <Pill color='selected'>3</Pill>
+      {% endblock %}
     </AccordionHeader>
     <AccordionContent
       id="AccordionItemExample1Content"
@@ -139,11 +169,13 @@ This is Twig implementation of the [Accordion] component.
                 {% embed "@spirit/accordionHeader.twig" with { props: {
                   id: 'AccordionItemExampleHeader',
                   for: 'AccordionItemExampleContent',
-                  slot: '<Link href="#">Link</Link><Pill color="selected">3</Pill>',
                   isOpen: true,
                 } } %}
-                    {% block content %}
+                    {% block startSlot %}
                         Accordion Header
+                    {% endblock %}
+                    {% block endSlot %}
+                        <Link href='#'>Link</Link><Pill color='selected'>3</Pill>
                     {% endblock %}
                 {% endembed %}
                 {% embed "@spirit/accordionContent.twig" with { props: {
@@ -191,7 +223,11 @@ The Accordion itself consists of several components which cannot be used indepen
 | `for`         | `string` | `null`  | yes      | AccordionContent ID      |
 | `id`          | `string` | `null`  | yes      | AccordionHeader ID       |
 | `isOpen`      | `string` | `false` | no       | Whether the item is open |
-| `slot`        | `HTML`   | ``      | no       | Side slot in the header  |
+
+| Inner blocks | Type   | Default | Required | Description              |
+| ------------ | ------ | ------- | -------- | ------------------------ |
+| `startSlot`  | `HTML` | ``      | yes      | Start slot in the header |
+| `endSlot`    | `HTML` | ``      | no       | End slot in the header   |
 
 ### AccordionContent
 

@@ -34,12 +34,12 @@
         {{ _dataTargetAttr }}
         aria-expanded="{{ _ariaExpanded }}"
         aria-controls="{{ _for }}">
-        {% block content %}{% endblock %}
+        {% block startSlot %}{% endblock %}
     </button>
     <span class="{{ _sideClassName }}">
-        {% if slot is defined %}
+        {% if block('endSlot') is not empty %}
             <span class="{{ _slotClassName }}">
-                {% block slot %}{% endblock %}
+                {% block endSlot %}{% endblock %}
             </span>
         {% endif %}
         <span class="{{ _iconClassName }}">
