@@ -312,6 +312,151 @@
 </section>
 
 <section class="docs-Section">
+  <h2 class="docs-Heading">Stacked Modal</h2>
+
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_2_0"
+    aria-controls="example_2_0"
+    aria-expanded="false"
+  >
+    Open Modal
+  </button>
+
+  <!-- Modal: start -->
+  <dialog id="example_2_0" class="Modal Modal--composed" aria-labelledby="example_2_0_title">
+
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_2_0_title" class="ModalHeader__title">Modal Title</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_2_0"
+          aria-controls="example_2_0"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button
+            type="button"
+            class="Button Button--primary Button--medium"
+            data-toggle="modal"
+            data-target="#example_2_1"
+            aria-controls="example_2_1"
+            aria-expanded="false"
+          >
+            Open stacked dialog
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </article>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+  <!-- Modal: start -->
+  <dialog id="example_2_1" class="Modal Modal--composed" aria-labelledby="example_2_1_title">
+
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_2_1_title" class="ModalHeader__title">Stacked Modal Title</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_2_1"
+          aria-controls="example_2_1"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Dolor quis metus a lorem, et elit pulvinar ligula condimentum non congue rhoncus molestie, at sem
+          viverra maximus nunc. Posuere pretium accumsan, pharetra vel integer sit amet volutpat neque fringilla,
+          non mauris erat id augue libero. Porta non congue, et iaculis et vehicula convallis non purus placerat
+          cursus, rhoncus laoreet nec et elit. Proin luctus, bibendum adipiscing ut ollicitudin vehicula nisi
+          nunc et, sollicitudin eget tristique nec commodo. Porttitor ligula, tellus vehicula arcu vestibulum
+          sed rutrum placerat, dui quis facilisis eget. Suscipit molestie, nibh maximus enim vestibulum aenean
+          ut libero sed imperdiet, curabitur et elit venenatis posuere.
+          <br />
+          Sapien vitae, dui sollicitudin nullam dolor quis nec nulla sapien, diam a ollicitudin non nulla nisl.
+          Quis orci porta, ac nec sapien ornare imperdiet a vel convallis, adipiscing ullamcorper lectus quis
+          pharetra. At nullam rutrum, nisl eget sit amet pulvinar ultricies nec porta, diam a sem odio a mauris
+          eu. Suscipit sodales, fusce ante cursus convallis dui vel dolor potenti nulla fusce gravida.
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button type="submit" class="Button Button--primary Button--medium">
+            Primary action
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_3"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </article>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+</section>
+
+<section class="docs-Section">
 
   <h2 class="docs-Heading">Simple Modal (DEPRECATED)</h2>
 
