@@ -1,22 +1,21 @@
-{{#> layout/plain }}
+{{#> layout/default page="icons" }}
 
-  <section class="docs-Section">
+<section class="docs-Section">
 
-    <div class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 text-center my-1000">
+  <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Icons</h2>
+  <ul class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 list-unstyled text-center my-1000">
 
-      {{#each @icons as |icon|}}
+    {{#each @icons as |icon|}}
+      <li class="mb-600">
+        <svg width="24" height="24">
+          <use xlink:href="/icons/svg/sprite.svg#{{icon}}"/>
+        </svg>
+        <h3 class="mt-500">{{icon}}</h3>
+      </li>
+    {{/each}}
 
-        <div class="mb-600">
-          <svg width="24" height="24">
-            <use xlink:href="/icons/svg/sprite.svg#{{icon}}"/>
-          </svg>
+  </ul>
 
-          <h3 class="mt-500">{{icon}}</h3>
-        </div>
+</section>
 
-      {{/each}}
-
-    </div>
-  </section>
-
-{{/layout/plain }}
+{{/layout/default }}

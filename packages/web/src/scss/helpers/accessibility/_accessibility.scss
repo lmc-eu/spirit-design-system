@@ -1,4 +1,4 @@
-@use '../tools/accessibility';
+@use '../../tools/accessibility';
 
 .accessibility-hidden {
     @include accessibility.hide-text();

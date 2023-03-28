@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
-@use '../tools/typography';
+@use '../../tools/typography';
 
 @each $style-name, $style-value in tokens.$styles {
     .typography-#{$style-name} {
