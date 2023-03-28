@@ -7,7 +7,7 @@
 
 @include dictionaries.generate-link-colors(
     '.link',
-    dictionaries-settings.$text-colors,
+    dictionaries-settings.$action-link-colors,
     tokens.$action-colors,
     (default, hover, active, disabled)
 );

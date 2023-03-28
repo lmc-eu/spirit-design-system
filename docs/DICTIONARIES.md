@@ -23,10 +23,12 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Color
 
-| Dictionary    | Values                                        | Code name    |
-| ------------- | --------------------------------------------- | ------------ |
-| Emotion Color | `success`, `informative`, `warning`, `danger` | EmotionColor |
-| Text Color    | `primary`, `secondary`, `inverted`            | TextColor    |
+| Dictionary        | Values                                                           | Code name       |
+| ----------------- | ---------------------------------------------------------------- | --------------- |
+| Action Color      | `primary`, `secondary`, `tertiary`, `inverted`                   | ActionColor     |
+| Action Link Color | `primary`, `secondary`, `inverted`                               | ActionLinkColor |
+| Emotion Color     | `success`, `informative`, `warning`, `danger`                    | EmotionColor    |
+| Text Color        | `primary`, `secondary`, `primary-inverted`, `secondary-inverted` | TextColor       |
 
 ### Validation
 
