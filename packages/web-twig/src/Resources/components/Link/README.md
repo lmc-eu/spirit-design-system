@@ -35,16 +35,16 @@ Without lexer:
 
 ## API
 
-| Prop name      | Type                                      | Default   | Required | Description                        |
-| -------------- | ----------------------------------------- | --------- | -------- | ---------------------------------- |
-| `class`        | `string`                                  | `null`    | no       | Custom CSS class                   |
-| `color`        | [Text Color dictionary][dictionary-color] | `primary` | no       | Color variant                      |
-| `href`         | `string`                                  | —         | yes      | Link URL                           |
-| `isDisabled`   | `bool`                                    | `false`   | no       | If true, Link is disabled          |
-| `isUnderlined` | `bool`                                    | `false`   | no       | If true, Link is underlined        |
-| `onClick`      | `string`                                  | `null`    | no       | JS function to call on click       |
-| `target`       | `string`                                  | `null`    | no       | Link target                        |
-| `title`        | `string`                                  | `null`    | no       | Optional title to display on hover |
+| Prop name      | Type                                             | Default   | Required | Description                        |
+| -------------- | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
+| `class`        | `string`                                         | `null`    | no       | Custom CSS class                   |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | no       | Color variant                      |
+| `href`         | `string`                                         | —         | yes      | Link URL                           |
+| `isDisabled`   | `bool`                                           | `false`   | no       | If true, Link is disabled          |
+| `isUnderlined` | `bool`                                           | `false`   | no       | If true, Link is underlined        |
+| `onClick`      | `string`                                         | `null`    | no       | JS function to call on click       |
+| `target`       | `string`                                         | `null`    | no       | Link target                        |
+| `title`        | `string`                                         | `null`    | no       | Optional title to display on hover |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
