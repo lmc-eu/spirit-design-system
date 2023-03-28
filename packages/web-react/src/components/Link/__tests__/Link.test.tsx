@@ -2,10 +2,10 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { textColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { actionLinkColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import { TextColorsDictionaryType } from '../../../types';
+import { ActionLinkColorsDictionaryType } from '../../../types';
 import Link from '../Link';
 import linkPropsDataProvider from './linkPropsDataProvider';
 
@@ -14,7 +14,7 @@ describe('Link', () => {
 
   stylePropsTest(Link);
 
-  textColorPropsTest(Link, 'link-');
+  actionLinkColorPropsTest(Link, 'link-');
 
   restPropsTest(Link, 'a');
 
@@ -22,7 +22,7 @@ describe('Link', () => {
     const dom = render(
       <Link
         href="/"
-        color={color as TextColorsDictionaryType<string>}
+        color={color as ActionLinkColorsDictionaryType<string>}
         isUnderlined={isUnderlined as boolean}
         isDisabled={isDisabled as boolean}
       />,

@@ -2,6 +2,7 @@ import {
   AlignmentX,
   ActionColors,
   EmotionColors,
+  ActionLinkColors,
   TextColors,
   Sizes,
   SizesExtended,
@@ -14,13 +15,18 @@ export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[Alignm
 
 /* Colors */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
-export type ActionColorsDictionaryType<T = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | T;
+export type ActionColorsDictionaryType<C = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | C;
+
+export type ActionLinkColorsDictionaryKeys = keyof typeof ActionLinkColors;
+export type ActionLinkColorsDictionaryType<C = undefined> =
+  | (typeof ActionLinkColors)[ActionLinkColorsDictionaryKeys]
+  | C;
 
 export type EmotionColorsDictionaryKeys = keyof typeof EmotionColors;
-export type EmotionColorsDictionaryType<T = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | T;
+export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[EmotionColorsDictionaryKeys] | C;
 
 export type TextColorsDictionaryKeys = keyof typeof TextColors;
-export type TextColorsDictionaryType<T = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | T;
+export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
 
 /* Size */
 export type SizesDictionaryKeys = keyof typeof Sizes;
@@ -30,7 +36,6 @@ export type SizesExtendedDictionaryKeys = keyof typeof SizesExtended;
 export type SizeExtendedDictionaryType<T = undefined> = (typeof SizesExtended)[SizesExtendedDictionaryKeys] | T;
 
 export interface SizeProps<P> {
-  /** Size of the text */
   size?: P;
 }
 
