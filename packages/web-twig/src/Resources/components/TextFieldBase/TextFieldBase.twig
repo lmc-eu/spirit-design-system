@@ -81,7 +81,7 @@
             {{ _disabledAttr | raw }}
             {{ _requiredAttr | raw }}
         >
-            {{ _value }}
+            {{ _value }} {# Intentionally without `raw` to prevent XSS. #}
         </textarea>
     {% else %}
         {% if _hasPasswordToggle %}
@@ -125,7 +125,7 @@
                 {{ _inputWidthAttr | raw }}
                 {{ _placeholderAttr | raw }}
                 {{ _requiredAttr | raw }}
-                {{ _valueAttr }}
+                {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
             />
         {% endif %}
     {% endif %}

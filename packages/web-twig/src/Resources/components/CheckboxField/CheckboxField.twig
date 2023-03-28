@@ -53,7 +53,7 @@
         {{ _checkedAttr | raw }}
         {{ _disabledAttr | raw }}
         {{ _requiredAttr | raw }}
-        {{ _valueAttr }}
+        {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
