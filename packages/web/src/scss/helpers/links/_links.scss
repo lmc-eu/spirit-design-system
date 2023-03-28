@@ -1,10 +1,10 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
-@use '../settings/cursors';
-@use '../settings/dictionaries' as dictionaries-settings;
-@use '../settings/links' as links-settings;
-@use '../tools/dictionaries';
-@use '../tools/links' as links-tools;
+@use '../../settings/cursors';
+@use '../../settings/dictionaries' as dictionaries-settings;
+@use '../../settings/links' as links-settings;
+@use '../../tools/dictionaries';
+@use '../../tools/links' as links-tools;
 
 @include dictionaries.generate-link-colors(
     '.link',

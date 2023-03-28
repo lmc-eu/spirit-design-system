@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from './scripts/prepareDist';
+import { getListOfNestedDirectories, getListOfIcons } from './scripts/utils';
 
 export default defineConfig({
   plugins: [
@@ -22,13 +23,11 @@ export default defineConfig({
       runtimeOptions: {
         data: {
           // Get the list of components directories and pass their names to the data
-          components: [
-            ...readdirSync('src/scss/components', { withFileTypes: true })
-              .filter((item) => item.isDirectory())
-              .map((item) => item.name),
-          ],
+          components: getListOfNestedDirectories('src/scss/components'),
+          // Get the list of helpers directories and pass their names to the data
+          helpers: getListOfNestedDirectories('src/scss/helpers'),
           // Get the list of icons files from the icons package and pass their names to the data without their extensions
-          icons: [...readdirSync('../icons/src/svg', { withFileTypes: true }).map((item) => item.name.slice(0, -4))],
+          icons: getListOfIcons('../icons/src/svg'),
         },
       },
     }),
@@ -51,6 +50,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         ...getNestedDirs('src/scss/components', 'index.html'),
         helpers: resolve(__dirname, 'src/scss/helpers/index.html'),
+        ...getNestedDirs('src/scss/helpers', 'index.html'),
         icons: resolve(__dirname, 'src/icons/index.html'),
       },
       output: {

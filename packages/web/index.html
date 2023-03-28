@@ -1,4 +1,4 @@
-{{#> layout/default }}
+{{#> layout/default page="components" }}
 
   <section class="docs-Section">
 
@@ -6,31 +6,11 @@
     <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
 
       {{#each @components as |component|}}
-        <li>
-          <a href="src/scss/components/{{component}}/" class="docs-TileLink">{{component}}</a>
-        </li>
+      <li>
+        <a href="src/scss/components/{{component.name}}/" class="docs-TileLink">{{component.title}}</a>
+      </li>
       {{/each}}
 
-    </ul>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Helpers</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
-      <li>
-        <a href="src/scss/helpers/" class="docs-TileLink">Helpers</a>
-      </li>
-    </ul>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Icons</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
-      <li>
-        <a href="src/icons/" class="docs-TileLink">Icons</a>
-      </li>
     </ul>
 
   </section>

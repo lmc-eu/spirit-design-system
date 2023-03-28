@@ -9,7 +9,7 @@
 
       {% for helper in helpers %}
         <li>
-          <a href="helpers/{{ helper | lower }}/" class="docs-TileLink">{{ helper | capitalize }}</a>
+          <a href="helpers/{{ helper }}/" class="docs-TileLink">{{ helper | replace({'-': ' '}) | title }}</a>
         </li>
       {% endfor %}
 
