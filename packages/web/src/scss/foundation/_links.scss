@@ -2,14 +2,15 @@
 //    This will be removed in v1 and the new default link underline will be the default.
 
 @use '@tokens' as tokens;
+@use '../settings/links';
 
 :any-link {
     text-decoration: none;
 }
 
 a {
-    text-decoration-skip-ink: none;
-    text-underline-offset: 0.1875em;
+    text-decoration-skip-ink: links.$text-decoration-skip-ink;
+    text-underline-offset: links.$text-underline-offset;
     color: tokens.$action-link-primary-default;
 
     &:active {

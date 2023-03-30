@@ -2,8 +2,9 @@
 @use '@tokens' as tokens;
 @use '../settings/cursors';
 @use '../settings/dictionaries' as dictionaries-settings;
+@use '../settings/links' as links-settings;
 @use '../tools/dictionaries';
-@use '../tools/links';
+@use '../tools/links' as links-tools;
 
 @include dictionaries.generate-link-colors(
     '.link',
@@ -29,7 +30,13 @@
 }
 
 .link-stretched {
-    @include links.stretch();
+    @include links-tools.stretch();
+}
+
+// Make sure non-anchor elements get the same decoration style as real links
+.link-underlined:not(a) {
+    text-decoration-skip-ink: links-settings.$text-decoration-skip-ink;
+    text-underline-offset: links-settings.$text-underline-offset;
 }
 
 // Only links in headings have visited state

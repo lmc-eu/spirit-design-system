@@ -1,0 +1,92 @@
+// 1. Make whole drop zone clickable.
+
+@use '../../theme/form-fields' as form-fields-theme;
+@use '../../tools/accessibility';
+@use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/typography';
+@use 'theme';
+
+$_field-name: 'FileUploaderInput';
+
+.FileUploaderInput__label {
+    @include form-fields-tools.box-field-label();
+}
+
+.FileUploaderInput__label--hidden {
+    @include form-fields-tools.label-hidden();
+}
+
+.FileUploaderInput__label--required::after {
+    @include form-fields-tools.label-required();
+}
+
+.FileUploaderInput__dropZone {
+    position: relative; // 1.
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: theme.$input-drop-zone-column-gap;
+    padding: theme.$input-drop-zone-padding;
+    border: theme.$input-drop-zone-border;
+    border-radius: theme.$input-drop-zone-border-radius;
+    background-color: theme.$input-drop-zone-background;
+
+    &:focus-within {
+        box-shadow: form-fields-theme.$input-focus-shadow;
+    }
+}
+
+.FileUploaderInput__dropZone > svg {
+    color: theme.$input-drop-zone-icon-color;
+}
+
+.FileUploaderInput__dropZoneLabel {
+    @include typography.generate(theme.$input-drop-zone-label-typography);
+
+    color: theme.$input-drop-zone-label-color;
+}
+
+// 1.
+.FileUploaderInput__link {
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+    }
+}
+
+.FileUploaderInput__dragAndDropLabel {
+    display: none;
+}
+
+.FileUploaderInput__input {
+    @include accessibility.hide-text();
+}
+
+.FileUploaderInput__helperText {
+    @include form-fields-tools.helper-text();
+
+    grid-column-start: 2;
+}
+
+.FileUploaderInput__message,
+.FileUploaderInput > [data-element='validator_message'] {
+    @include form-fields-tools.message();
+}
+
+// stylelint-disable selector-max-class -- We need to target inner elements in a specific component state.
+.FileUploaderInput.has-drag-and-drop .FileUploaderInput__dropZone {
+    border: theme.$input-drop-zone-draggable-border;
+}
+
+.FileUploaderInput.has-drag-and-drop .FileUploaderInput__dragAndDropLabel {
+    display: initial;
+}
+
+@include form-fields-tools.input-field-validation-states($_field-name);
+
+.FileUploaderInput.is-dragging .FileUploaderInput__dropZone {
+    border: theme.$input-drop-zone-dragging-border;
+}
+// stylelint-enable selector-max-class

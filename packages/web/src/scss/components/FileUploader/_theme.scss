@@ -1,0 +1,23 @@
+@use '@tokens' as tokens;
+
+$row-gap: tokens.$space-600;
+
+$input-drop-zone-padding: tokens.$space-700;
+$input-drop-zone-column-gap: tokens.$space-600;
+$input-drop-zone-border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-primary-default;
+$input-drop-zone-draggable-border: tokens.$border-width-100 tokens.$border-style-200 tokens.$border-primary-default;
+$input-drop-zone-dragging-border: tokens.$border-width-100 tokens.$border-style-200 tokens.$border-primary-selected;
+$input-drop-zone-border-radius: tokens.$radius-100;
+$input-drop-zone-background: tokens.$background-basic;
+$input-drop-zone-label-typography: tokens.$body-medium-text-regular;
+$input-drop-zone-label-color: tokens.$text-primary-default;
+$input-drop-zone-icon-color: tokens.$action-primary-default;
+
+$attachment-column-gap: tokens.$space-600;
+$attachment-padding-x: tokens.$space-700;
+$attachment-padding-y: tokens.$space-600;
+$attachment-typography: tokens.$body-medium-text-regular;
+$attachment-color: tokens.$text-primary-default;
+$attachment-border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-primary-default;
+$attachment-background: tokens.$background-basic;
+$attachment-remove-button-size: tokens.$space-1000;
