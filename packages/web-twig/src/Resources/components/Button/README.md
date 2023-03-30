@@ -34,17 +34,18 @@ Without lexer:
 
 ## API
 
-| Prop name    | Type                                                                                      | Default   | Required | Description                                          |
-| ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------- |
-| `class`      | `string`                                                                                  | `null`    | no       | Custom CSS class                                     |
-| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                        |
-| `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent     |
-| `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, Button is disabled                          |
-| `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an icon |
-| `name`       | `string`                                                                                  | `null`    | no       | For use a button as a form data reference            |
-| `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                         |
-| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                         |
-| `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                   |
+| Prop name    | Type                                                                                      | Default   | Required | Description                                                                |
+| ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
+| `class`      | `string`                                                                                  | `null`    | no       | Custom CSS class                                                           |
+| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                                              |
+| `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent                           |
+| `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, Button is disabled                                                |
+| `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, Button is in a loading state, disabled and the Spinner is visible |
+| `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an Icon                       |
+| `name`       | `string`                                                                                  | `null`    | no       | For use a button as a form data reference                                  |
+| `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                                               |
+| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                                               |
+| `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                                         |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
