@@ -239,6 +239,9 @@ class SvgExtension extends AbstractExtension
     private function replaceAttribute(SimpleXMLElement $simpleXmlElement, string $attributeName, string $value): void
     {
         if (isset($simpleXmlElement->attributes()[$attributeName])) {
+            // SimpleXMLElement does not accept string.
+            // @see: https://github.com/phpstan/phpstan/issues/5766
+            /** @phpstan-ignore-next-line */
             $simpleXmlElement->attributes()[$attributeName] = $value;
         } else {
             $simpleXmlElement->addAttribute($attributeName, $value);
