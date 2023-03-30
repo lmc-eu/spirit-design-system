@@ -27,6 +27,36 @@ Disabling a Button:
 <button type="button" class="Button Button--primary Button--medium Button--disabled">Disabled Button</button>
 ```
 
+Loading Button:
+⚠️ In CSS we depend on the correct placement of the Spinner Icon. It should be the last child of the Button.
+
+```html
+<a href="#" class="Button Button--primary Button--medium Button--loading Button--disabled">
+  Button primary
+  <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+    <use xlink:href="/icons/svg/sprite.svg#spinner" />
+  </svg>
+</a>
+<button type="button" class="Button Button--primary Button--medium Button--loading" disabled>
+  <svg class="mr-400" width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
+  Menu
+  <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+    <use xlink:href="/icons/svg/sprite.svg#spinner" />
+  </svg>
+</button>
+<button type="button" class="Button Button--primary Button--medium Button--square Button--loading" disabled>
+  <span class="accessibility-hidden">Menu</span>
+  <svg width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+  </svg>
+  <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+    <use xlink:href="/icons/svg/sprite.svg#spinner" />
+  </svg>
+</button>
+```
+
 Sizes:
 
 ```html

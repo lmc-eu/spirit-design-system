@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:string';
 @use '@tokens' as tokens;
 @use './typography';
 
@@ -71,12 +72,29 @@
 // * $overrides: this map is used to cover exceptions in color schemes, first level is the dictionary value,
 //   second level is the property name, second level can also have key `states` and then the structure is the
 //   same as in `states` parameter
+// * $custom-variable-name: custom CSS variable name – useful when $class-name is complex
 // See Button component for real usage
-@mixin generate-colors($class-name, $dictionary-values, $config, $states: null, $overrides: null) {
+@mixin generate-colors(
+    $class-name,
+    $dictionary-values,
+    $config,
+    $states: null,
+    $overrides: null,
+    $custom-variable-name: null
+) {
     @each $dictionary-value in $dictionary-values {
         .#{$class-name}--#{$dictionary-value} {
             @each $property-name, $property-value in $config {
-                #{$property-name}: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
+                $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
+                $class-name-lowercase: if(
+                    $custom-variable-name,
+                    $custom-variable-name,
+                    string.to-lower-case($class-name)
+                );
+
+                --#{$class-name-lowercase}-#{$property-name}: #{$value};
+
+                #{$property-name}: var(--#{$class-name-lowercase}-#{$property-name});
             }
 
             @if $states {

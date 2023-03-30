@@ -29,7 +29,7 @@ $color-dictionary-states: (
         border-color: 'active',
         background-color: 'active',
     ),
-    '&:disabled, &.is-disabled, &.Button--disabled': (
+    '&:disabled:not(.Button--loading), &.is-disabled:not(.Button--loading), &.Button--disabled:not(.Button--loading)': (
         color: tokens.$text-primary-inverted-disabled,
         border-color: 'disabled',
         background-color: 'disabled',

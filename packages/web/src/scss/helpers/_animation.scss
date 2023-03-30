@@ -3,11 +3,11 @@ $_spin-easing: linear;
 
 @keyframes spin {
     0% {
-        transform: rotate(0);
+        transform: translate(var(--animation-spin-translate, 0)) rotate(0);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: translate(var(--animation-spin-translate, 0)) rotate(360deg);
     }
 }
 
