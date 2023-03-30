@@ -63,4 +63,46 @@
   </div>
 </section>
 
+<section class="docs-Section">
+  <h2 class="docs-Heading">Loading</h2>
+
+  <div class="Grid Grid--cols-1 Grid--desktop--cols-3">
+    {{#each @root.sizes as |size|}}
+    <div>
+      <h3 class="docs-Heading">Size {{size}}</h3>
+      {{#each @root.colors as |color|}}
+      <div class="{{#if (eq color 'inverted')}}docs-Box {{/if}}my-600">
+        <div>
+          <a href="#" class="Button Button--{{color}} Button--{{size}} Button--loading Button--disabled">
+            Button {{color}}
+            <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+              <use xlink:href="/icons/svg/sprite.svg#spinner" />
+            </svg>
+          </a>
+          <button type="button" class="Button Button--{{color}} Button--{{size}} Button--loading" disabled>
+            <svg class="mr-400" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+            Menu
+            <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+              <use xlink:href="/icons/svg/sprite.svg#spinner" />
+            </svg>
+          </button>
+          <button type="button" class="Button Button--{{color}} Button--{{size}} Button--square Button--loading" disabled>
+            <span class="accessibility-hidden">Menu</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#hamburger" />
+            </svg>
+            <svg width="24" height="24" aria-hidden="true" class="animation-spin-clockwise">
+              <use xlink:href="/icons/svg/sprite.svg#spinner" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</section>
+
 {{/layout/plain }}

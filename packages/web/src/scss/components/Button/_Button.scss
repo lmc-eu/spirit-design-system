@@ -77,3 +77,24 @@
         theme.$border-width
     );
 }
+
+.Button--loading {
+    position: relative;
+    color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: transparent;
+    }
+}
+
+.Button--loading > svg:last-child {
+    --animation-spin-translate: -50%, -50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--button-color);
+    transform: translate(-50%, -50%);
+}

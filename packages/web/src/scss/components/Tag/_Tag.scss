@@ -26,7 +26,8 @@
     theme.$color-dictionary,
     theme.$subtle-color-dictionary-config,
     null,
-    theme.$subtle-color-dictionary-overrides
+    theme.$subtle-color-dictionary-overrides,
+    'tag-subtle'
 );
 
 // @deprecated Will be removed in next major version.
@@ -35,7 +36,8 @@
     theme.$color-dictionary,
     theme.$subtle-color-dictionary-config,
     null,
-    theme.$subtle-color-dictionary-overrides
+    theme.$subtle-color-dictionary-overrides,
+    'tag-light'
 );
 
 .Tag--subtle.Tag--xsmall,
