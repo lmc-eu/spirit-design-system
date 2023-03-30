@@ -7,6 +7,7 @@ import {
   emotionColorPropsTest,
   sizePropsTest,
 } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { loadingPropsTest } from '../../../../tests/providerTests/loadingPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import ButtonLink from '../ButtonLink';
@@ -19,6 +20,8 @@ describe('ButtonLink', () => {
   emotionColorPropsTest(ButtonLink, 'Button--');
 
   sizePropsTest(ButtonLink);
+
+  loadingPropsTest(ButtonLink, 'a');
 
   stylePropsTest(ButtonLink);
 

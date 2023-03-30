@@ -18,11 +18,11 @@ export type UseButtonAriaReturn = {
 };
 
 export const useButtonAriaProps = (props: UseButtonAriaProps): UseButtonAriaReturn => {
-  const { isDisabled, onClick, type = 'button', ariaLabel } = props;
+  const { isDisabled, isLoading, onClick, type = 'button', ariaLabel } = props;
 
   const additionalProps = {
     type,
-    disabled: isDisabled,
+    disabled: isDisabled || isLoading,
   };
 
   return {
@@ -40,13 +40,13 @@ export type UseButtonLinkAriaReturn = {
 };
 
 export const useButtonLinkAriaProps = (props: UseButtonLinkAriaProps): UseButtonLinkAriaReturn => {
-  const { elementType, isDisabled, onClick, href, target, rel, ariaLabel } = props;
+  const { elementType, isDisabled, isLoading, onClick, href, target, rel, ariaLabel } = props;
 
   const additionalProps = {
     role: 'button',
     href: elementType === 'a' && isDisabled ? undefined : href,
     target: elementType === 'a' ? target : undefined,
-    disabled: isDisabled,
+    disabled: isDisabled || isLoading,
     rel: elementType === 'a' ? rel : undefined,
   };
 

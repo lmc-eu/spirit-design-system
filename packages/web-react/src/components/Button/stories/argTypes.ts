@@ -8,13 +8,19 @@ export default {
     },
     defaultValue: ActionColors.PRIMARY,
   },
+  isBlock: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: false,
+  },
   isDisabled: {
     control: {
       type: 'boolean',
     },
     defaultValue: false,
   },
-  isBlock: {
+  isLoading: {
     control: {
       type: 'boolean',
     },

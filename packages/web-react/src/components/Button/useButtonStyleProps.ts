@@ -22,11 +22,12 @@ export interface ButtonStyles {
 export function useButtonStyleProps<T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
 ): ButtonStyles {
-  const { color, isBlock, isDisabled, isSquare, size, ...restProps } = props;
+  const { color, isBlock, isDisabled, isLoading, isSquare, size, ...restProps } = props;
 
   const buttonClass = useClassNamePrefix('Button');
   const buttonBlockClass = `${buttonClass}--block`;
   const buttonDisabledClass = `${buttonClass}--disabled`;
+  const buttonLoadingClass = `${buttonClass}--loading`;
   const buttonSquareClass = `${buttonClass}--square`;
 
   if (isBlock && isSquare && process.env.NODE_ENV === 'development') {
@@ -40,7 +41,8 @@ export function useButtonStyleProps<T extends ElementType = 'button', C = void, 
     getButtonSizeClassname(buttonClass, size as ButtonSize<S>),
     {
       [buttonBlockClass]: isBlock && !isSquare,
-      [buttonDisabledClass]: isDisabled,
+      [buttonDisabledClass]: isDisabled || isLoading,
+      [buttonLoadingClass]: isLoading,
       [buttonSquareClass]: isSquare && !isBlock,
     },
   );

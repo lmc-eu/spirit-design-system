@@ -35,19 +35,20 @@ import { RouterLink } from 'react-router-dom';
 
 ### Available props
 
-| Prop name     | Type                                                                                      | Default    | Required | Description                                          |
-| ------------- | ----------------------------------------------------------------------------------------- | ---------- | -------- | ---------------------------------------------------- |
-| `children`    | `ReactNode`                                                                               | `null`     | no       | Content of the Button                                |
-| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary`  | no       | Color variant                                        |
-| `elementType` | `ElementType`                                                                             | `'button'` | no       | Type of element                                      |
-| `isBlock`     | `bool`                                                                                    | `false`    | no       | Span the element to the full width of its parent     |
-| `isDisabled`  | `bool`                                                                                    | `false`    | no       | If true, Button is disabled                          |
-| `isSquare`    | `bool`                                                                                    | `false`    | no       | If true, Button is square, usually only with an icon |
-| `name`        | `string`                                                                                  | -          | no       | For use a button as a form data reference            |
-| `onClick`     | `string`                                                                                  | `null`     | no       | JS function to call on click                         |
-| `ref`         | `ForwardedRef<HTMLButtonElement>`                                                         | -          | no       | Button element reference                             |
-| `size`        | [Size dictionary][dictionary-size]                                                        | `medium`   | no       | Size variant                                         |
-| `type`        | `string`                                                                                  | `button`   | no       | Type of the Button                                   |
+| Prop name     | Type                                                                                      | Default    | Required | Description                                                                |
+| ------------- | ----------------------------------------------------------------------------------------- | ---------- | -------- | -------------------------------------------------------------------------- |
+| `children`    | `ReactNode`                                                                               | `null`     | no       | Content of the Button                                                      |
+| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary`  | no       | Color variant                                                              |
+| `elementType` | `ElementType`                                                                             | `'button'` | no       | Type of element                                                            |
+| `isBlock`     | `bool`                                                                                    | `false`    | no       | Span the element to the full width of its parent                           |
+| `isDisabled`  | `bool`                                                                                    | `false`    | no       | If true, Button is disabled                                                |
+| `isLoading`   | `bool`                                                                                    | `false`    | no       | If true, Button is in a loading state, disabled and the Spinner is visible |
+| `isSquare`    | `bool`                                                                                    | `false`    | no       | If true, Button is square, usually only with an Icon                       |
+| `name`        | `string`                                                                                  | -          | no       | For use a button as a form data reference                                  |
+| `onClick`     | `string`                                                                                  | `null`     | no       | JS function to call on click                                               |
+| `ref`         | `ForwardedRef<HTMLButtonElement>`                                                         | -          | no       | Button element reference                                                   |
+| `size`        | [Size dictionary][dictionary-size]                                                        | `medium`   | no       | Size variant                                                               |
+| `type`        | `string`                                                                                  | `button`   | no       | Type of the Button                                                         |
 
 For more information see [Button] component. Button also contain all the appropriate
 attributes according to the type of element. The default element type for Button is `<button>`.
@@ -73,19 +74,20 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 
 ### Available props
 
-| Prop name     | Type                                                                                      | Default   | Required | Description                                              |
-| ------------- | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------- |
-| `children`    | `ReactNode`                                                                               | `null`    | no       | Content of the ButtonLink                                |
-| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                            |
-| `elementType` | `ElementType`                                                                             | `'a'`     | no       | Type of element                                          |
-| `href`        | `string`                                                                                  | —         | yes      | Link URL                                                 |
-| `isBlock`     | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent         |
-| `isDisabled`  | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                          |
-| `isSquare`    | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an icon |
-| `onClick`     | `string`                                                                                  | `null`    | no       | JS function to call on click                             |
-| `ref`         | `ForwardedRef<HTMLAnchorElement>`                                                         | -         | no       | Anchor element reference                                 |
-| `size`        | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                             |
-| `target`      | `string`                                                                                  | `null`    | no       | Link target                                              |
+| Prop name     | Type                                                                                      | Default   | Required | Description                                                                    |
+| ------------- | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |
+| `children`    | `ReactNode`                                                                               | `null`    | no       | Content of the ButtonLink                                                      |
+| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                                                  |
+| `elementType` | `ElementType`                                                                             | `'a'`     | no       | Type of element                                                                |
+| `href`        | `string`                                                                                  | —         | yes      | Link URL                                                                       |
+| `isBlock`     | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent                               |
+| `isDisabled`  | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                                                |
+| `isLoading`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
+| `isSquare`    | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an Icon                       |
+| `onClick`     | `string`                                                                                  | `null`    | no       | JS function to call on click                                                   |
+| `ref`         | `ForwardedRef<HTMLAnchorElement>`                                                         | -         | no       | Anchor element reference                                                       |
+| `size`        | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                                                   |
+| `target`      | `string`                                                                                  | `null`    | no       | Link target                                                                    |
 
 For more information see [Button] component. ButtonLink also contain all the appropriate
 attributes according to the type of element. The default element type for ButtonLink is `<a>`.
