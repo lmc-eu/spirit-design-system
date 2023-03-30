@@ -1,23 +1,18 @@
 import React from 'react';
-import { usePaginationStyleProps } from './usePaginationStyleProps';
 
 interface PaginationItemProps {
-  pageNumber: number;
+  isActive: boolean;
   onPageChange: (pageNumber: number) => void;
-  isPageActive: boolean;
+  pageNumber: number;
 }
 
-const PaginationItem = ({ pageNumber, onPageChange, isPageActive, ...restProps }: PaginationItemProps): JSX.Element => {
-  const { classProps } = usePaginationStyleProps({ restProps });
-
+const PaginationItem = ({ isActive, onPageChange, pageNumber, ...restProps }: PaginationItemProps): JSX.Element => {
   return (
-    <li className={`${classProps}__item`} key={`PaginationPage_${pageNumber}`}>
+    <li className="Pagination__item" key={`PaginationPage_${pageNumber}`}>
       <button
         type="button"
-        className={`${classProps}__link typography-body-medium-text-bold ${
-          isPageActive ? `${classProps}__link--current` : ''
-        }`}
-        aria-label={isPageActive ? `Current Page, Page ${pageNumber}` : `Goto Page ${pageNumber}`}
+        className={`Pagination__link typography-body-medium-text-bold ${isActive ? 'Pagination__link--current' : ''}`}
+        aria-label={isActive ? `Current Page, Page ${pageNumber}` : `Goto Page ${pageNumber}`}
         aria-current="page"
         onClick={() => onPageChange(pageNumber)}
       >

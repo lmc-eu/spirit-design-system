@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import Pagination from './Pagination';
+import Pagination from './UncontrolledPagination';
 
 export default {
   title: 'Components/Pagination',
@@ -8,7 +8,7 @@ export default {
     docs: {
       description: {
         component:
-          'This will render a pagination control with provided pages, a default current page of 1, and a chapter size of 5. When the user clicks on a page number or one of the chevron, the onPageChange callback function will be called with the new page number as its argument.',
+          'This will render a pagination control with provided pages, a default current page of 1, and a chapter size of 5. When the user clicks on a page number or one of the chevrons, the onPageChange callback function will be called with the new page number as its argument.',
       },
     },
   },

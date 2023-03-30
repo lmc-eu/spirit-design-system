@@ -1,7 +1,7 @@
 import { ComponentStory } from '@storybook/react';
 import React, { ElementType } from 'react';
 import { SpiritPaginationProps } from '../../../types';
-import Pagination from '../Pagination';
+import Pagination from '../UncontrolledPagination';
 
 const Story: ComponentStory<typeof Pagination> = <T extends ElementType = 'nav'>(args: SpiritPaginationProps<T>) => (
   <Pagination {...args} />
