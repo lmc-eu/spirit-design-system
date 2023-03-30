@@ -57,7 +57,7 @@ footer of the dialog.
   …
 </ModalDialog>
 
-<ModalDialog elementType="form" isExpandedOnMobile=false method="dialog">
+<ModalDialog elementType="form" isExpandedOnMobile={false} method="dialog">
   …
 </ModalDialog>
 ```
@@ -104,7 +104,7 @@ to fit the height of its content (if smaller than viewport).
   <ModalDialog>
     <ModalHeader
       closeLabel="Close form"
-      enableDismiss=false
+      enableDismiss={false}
       modalId="modal-composed"
       titleId="modal-composed-title"
     >
