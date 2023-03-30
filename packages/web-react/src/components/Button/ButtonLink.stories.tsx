@@ -26,6 +26,7 @@ export default {
 export { default as ButtonLink } from './stories/ButtonLink';
 export { default as ButtonLinkColors } from './stories/ButtonLinkColors';
 export { default as ButtonLinkDisabled } from './stories/ButtonLinkDisabled';
+export { default as ButtonLinkLoading } from './stories/ButtonLinkLoading';
 export { default as ButtonLinkSquare } from './stories/ButtonLinkSquare';
 export { default as ButtonLinkBlock } from './stories/ButtonLinkBlock';
 export { default as ButtonLinkSize } from './stories/ButtonLinkSize';

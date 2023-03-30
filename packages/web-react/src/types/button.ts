@@ -21,6 +21,8 @@ export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, Styl
   isDisabled?: boolean;
   /** Whether the button should be displayed with a block style. */
   isBlock?: boolean;
+  /** Whether the button should be in a loading state. */
+  isLoading?: boolean;
   /** Whether the button should be displayed as a square. */
   isSquare?: boolean;
   /** The size of the button. */

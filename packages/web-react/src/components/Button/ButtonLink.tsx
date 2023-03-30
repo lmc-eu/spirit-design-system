@@ -2,6 +2,7 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
+import { Spinner } from '../Spinner';
 import { useButtonStyleProps } from './useButtonStyleProps';
 import { useButtonLinkAriaProps } from './useButtonAriaProps';
 
@@ -9,6 +10,7 @@ const defaultProps = {
   color: 'primary',
   isBlock: false,
   isDisabled: false,
+  isLoading: false,
   isSquare: false,
   size: 'medium',
 };
@@ -19,7 +21,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   props: SpiritButtonLinkProps<T, C, S>,
   ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
-  const { elementType: ElementTag = 'a', ...restProps } = props;
+  const { elementType: ElementTag = 'a', children, ...restProps } = props;
 
   const { buttonLinkProps } = useButtonLinkAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
@@ -32,7 +34,10 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
       ref={ref}
       className={classNames(classProps, styleProps.className)}
       style={styleProps.style}
-    />
+    >
+      {children}
+      {props.isLoading && <Spinner />}
+    </ElementTag>
   );
 };
 

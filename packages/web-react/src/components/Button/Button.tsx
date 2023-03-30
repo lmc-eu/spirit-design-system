@@ -2,13 +2,15 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
-import { useButtonStyleProps } from './useButtonStyleProps';
+import { Spinner } from '../Spinner';
 import { useButtonAriaProps } from './useButtonAriaProps';
+import { useButtonStyleProps } from './useButtonStyleProps';
 
 const defaultProps = {
   color: 'primary',
   isBlock: false,
   isDisabled: false,
+  isLoading: false,
   isSquare: false,
   size: 'medium',
   type: 'button',
@@ -20,7 +22,7 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
   ref: ForwardedRef<HTMLButtonElement>,
 ) => {
-  const { elementType: ElementTag = 'button', ...restProps } = props;
+  const { elementType: ElementTag = 'button', children, ...restProps } = props;
 
   const { buttonProps } = useButtonAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
@@ -33,7 +35,10 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
       ref={ref}
       className={classNames(classProps, styleProps.className)}
       style={styleProps.style}
-    />
+    >
+      {children}
+      {props.isLoading && <Spinner />}
+    </ElementTag>
   );
 };
 
