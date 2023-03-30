@@ -6,6 +6,7 @@
 {%- set _href = props.href -%}
 {%- set _isBlock = props.isBlock | default(false) | boolprop -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
+{%- set _isLoading = props.isLoading | default(false) | boolprop -%}
 {%- set _isSquare = props.isSquare | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
@@ -13,7 +14,8 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
 {%- set _rootBlockClassName = _isBlock ? _spiritClassPrefix ~ 'Button--block' : null -%}
-{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Button--disabled' : null -%}
+{%- set _rootDisabledClassName = _isDisabled or _isLoading ? _spiritClassPrefix ~ 'Button--disabled' : null -%}
+{%- set _rootLoadingClassName = _isLoading ? _spiritClassPrefix ~ 'Button--loading' : null -%}
 {%- set _rootColorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
 {%- set _rootSizeClassName = _spiritClassPrefix ~ 'Button--' ~ _size -%}
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
@@ -23,7 +25,7 @@
 {%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootLoadingClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
 {%- set _allowedAttributes = [
     'title',
 ] -%}
@@ -42,4 +44,7 @@
     {{ _targetAttr }}
 >
     {%- block content %}{% endblock %}
+    {%- if _isLoading -%}
+        <Spinner />
+    {%- endif -%}
 </a>
