@@ -8,16 +8,22 @@ interface PaginationItemProps {
   type: 'left' | 'right';
 }
 
-const PaginationChevron = ({ currentPage, onPageChange, type, ...restProps }: PaginationItemProps): JSX.Element => {
+const PaginationChevron = ({ currentPage, onPageChange, type }: PaginationItemProps): JSX.Element => {
+  let increment = 0;
+  let text = '';
+  if (type === 'left') {
+    increment = -1;
+    text = 'Previous';
+  } else if (type === 'right') {
+    increment = 1;
+    text = 'Previous';
+  }
+
   return (
     <li className="Pagination__item">
-      <Button
-        color="secondary"
-        isSquare
-        onClick={() => onPageChange(currentPage + (type === 'left' ? -1 : type === 'right' ? 1 : 0))}
-      >
+      <Button color="secondary" isSquare onClick={() => onPageChange(currentPage + increment)}>
         <Icon name={`chevron-${type}`} />
-        <span className="accessibility-hidden">{type === 'left' ? 'Previous' : type === 'right' ? 'Next' : ''}</span>
+        <span className="accessibility-hidden">{text}</span>
       </Button>
     </li>
   );

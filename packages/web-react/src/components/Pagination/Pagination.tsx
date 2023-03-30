@@ -5,10 +5,6 @@ import PaginationChevron from './PaginationChevron';
 import PaginationItem from './PaginationItem';
 import { usePagination } from './usePagination';
 
-const defaultProps = {
-  totalPages: 0,
-};
-
 export type PaginationProps<T extends ElementType = 'nav'> = SpiritPaginationProps<T> & {
   currentPage: number;
   onPageChange: (pageNumber: number) => void;
@@ -37,7 +33,7 @@ export const Pagination = <T extends ElementType = 'nav'>({
     <ElementTag {...otherProps} {...styleProps} className="mb-800" aria-label="Page navigation">
       <ul className={classNames(classProps, styleProps.className)}>
         {currentPage !== 1 && (
-          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type={'left'} />
+          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type="left" />
         )}
         {pagesArray.map((pageNumber) => (
           <PaginationItem
@@ -48,13 +44,11 @@ export const Pagination = <T extends ElementType = 'nav'>({
           />
         ))}
         {currentPage !== totalPages && (
-          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type={'right'} />
+          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type="right" />
         )}
       </ul>
     </ElementTag>
   );
 };
-
-Pagination.defaultProps = defaultProps;
 
 export default Pagination;

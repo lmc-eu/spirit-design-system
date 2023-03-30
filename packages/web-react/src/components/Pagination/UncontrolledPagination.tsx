@@ -18,7 +18,7 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
     <ElementTag {...otherProps} {...styleProps} className="mb-800" aria-label="Page navigation">
       <ul className={classNames(classProps, styleProps.className)}>
         {currentPage !== 1 && (
-          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type={'left'} />
+          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type="left" />
         )}
         {pagesArray?.map((pageNumber) => (
           <PaginationItem
@@ -29,7 +29,7 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
           />
         ))}
         {currentPage !== totalPages && (
-          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type={'right'} />
+          <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type="right" />
         )}
       </ul>
     </ElementTag>

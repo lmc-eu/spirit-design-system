@@ -6,7 +6,7 @@ interface PaginationItemProps {
   pageNumber: number;
 }
 
-const PaginationItem = ({ isActive, onPageChange, pageNumber, ...restProps }: PaginationItemProps): JSX.Element => {
+const PaginationItem = ({ isActive, onPageChange, pageNumber }: PaginationItemProps): JSX.Element => {
   return (
     <li className="Pagination__item" key={`PaginationPage_${pageNumber}`}>
       <button
