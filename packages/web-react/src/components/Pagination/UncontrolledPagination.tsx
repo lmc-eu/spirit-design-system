@@ -15,7 +15,7 @@ export const Pagination = <T extends ElementType = 'nav'>(props: SpiritPaginatio
     usePagination(props);
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className="mb-800" aria-label="Page navigation">
+    <ElementTag {...otherProps} {...styleProps} aria-label="Page navigation">
       <ul className={classNames(classProps, styleProps.className)}>
         {currentPage !== 1 && (
           <PaginationChevron currentPage={currentPage} onPageChange={handlePageChange} type="left" />
