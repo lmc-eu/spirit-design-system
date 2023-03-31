@@ -28,50 +28,37 @@
         <div class="Container">
     
           
-            <ul class="Tabs" role="tablist">
-              <li class="Tabs__item">
-                <button
-                  class="Tabs__link is-selected"
-                  role="tab"
-                  type="button"
-                  aria-selected="true"
-                  id="pane1-tab"
-                  data-toggle="tabs"
-                  data-target="#pane1"
-                  aria-controls="pane1"
-                >
-                  Item 1
-                </button>
-              </li>
-              <li class="Tabs__item">
-                <button
-                  class="Tabs__link"
-                  role="tab"
-                  type="button"
-                  aria-selected="false"
-                  id="pane2-tab"
-                  data-toggle="tabs"
-                  data-target="#pane2"
-                  aria-controls="pane2"
-                >
-                  Item 2
-                </button>
-              </li>
-              <li class="Tabs__item">
-                <a href="https://www.example.com" class="Tabs__link">Item Link</a>
-              </li>
-              <li class="Tabs__item d-none d-desktop-block">
-                <a href="https://www.example.com" class="Tabs__link">Item Link, Desktop Only</a>
-              </li>
-            </ul>
+          <section class="docs-Section">
+            <h2 class="docs-Heading">Spinner</h2>
           
-            <div id="pane1" class="TabsPane is-selected" role="tabpanel" aria-labelledby="pane1-tab">
-              Pane 1 content
+            <div>
+              <svg width="24" height="24" class="animation-spin-clockwise">
+                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#spinner"/>
+              </svg>
             </div>
-          
-            <div id="pane2" class="TabsPane" role="tabpanel" aria-labelledby="pane2-tab">
-              Pane 2 content
+            <div>
+              <svg width="24" height="24" class="text-primary animation-spin-clockwise">
+                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#spinner"/>
+              </svg>
             </div>
+            <div>
+              <svg width="24" height="24" class="text-secondary animation-spin-clockwise">
+                <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#spinner"/>
+              </svg>
+            </div>
+            <div class="docs-Box">
+              <div>
+                <svg width="24" height="24" class="text-primary-inverted animation-spin-clockwise">
+                  <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#spinner"/>
+                </svg>
+              </div>
+              <div>
+                <svg width="24" height="24" class="text-secondary-inverted animation-spin-clockwise">
+                  <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#spinner"/>
+                </svg>
+              </div>
+            </div>
+          </section>
           
     
         </div>
