@@ -5,8 +5,15 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'TooltipWrapper' -%}
 
+{# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _allowedAttributes = [
+    'style'
+] -%}
 
-<div {{ mainProps(props) }} {{ classProp(_classNames) }}>
+<div
+    {{ mainProps(props, _allowedAttributes) }}
+    {{ classProp(_classNames) }}
+>
     {% block content %}{% endblock %}
 </div>
