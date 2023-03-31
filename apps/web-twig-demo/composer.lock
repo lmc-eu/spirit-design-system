@@ -8,15 +8,15 @@
   "packages": [
     {
       "name": "lmc/spirit-web-twig-bundle",
-      "version": "1.27.0",
+      "version": "1.28.1",
       "dist": {
         "type": "path",
         "url": "../spirit-web-twig-bundle",
-        "reference": "f0599e4be6b835b1855d3b4046776b8787748889"
+        "reference": "6d0d6702c33d0fb435435a62dd6d119a855a0a20"
       },
       "require": {
         "ext-simplexml": "*",
-        "lmc/twigx-bundle": "^3.0",
+        "lmc/twigx-bundle": "^3.0.0 !=3.2.0",
         "php": "^7.4 || ^8.1",
         "symfony/config": "^4.4 || ^5.4 || ^6.1",
         "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.1",
@@ -54,7 +54,8 @@
         "phpunit:coverage": ["XDEBUG_MODE=coverage vendor/bin/phpunit"],
         "phpunit:update": ["vendor/bin/phpunit -d --update-snapshots"],
         "phpstan": ["vendor/bin/phpstan analyze"],
-        "tests": ["@ecs", "@phpunit", "@phpstan"]
+        "tests": ["@ecs", "@phpunit", "@phpstan"],
+        "analyze": ["@ecs", "@phpstan"]
       },
       "license": ["MIT"],
       "authors": [
@@ -70,16 +71,16 @@
     },
     {
       "name": "lmc/twigx-bundle",
-      "version": "3.2.0",
+      "version": "3.2.1",
       "source": {
         "type": "git",
         "url": "https://github.com/lmc-eu/twigx-bundle.git",
-        "reference": "c7bfd0056aa868d42cffdc7bae7633590b2e298f"
+        "reference": "724bfcb4920781182978b5e10414a962dbd42caf"
       },
       "dist": {
         "type": "zip",
-        "url": "https://api.github.com/repos/lmc-eu/twigx-bundle/zipball/c7bfd0056aa868d42cffdc7bae7633590b2e298f",
-        "reference": "c7bfd0056aa868d42cffdc7bae7633590b2e298f",
+        "url": "https://api.github.com/repos/lmc-eu/twigx-bundle/zipball/724bfcb4920781182978b5e10414a962dbd42caf",
+        "reference": "724bfcb4920781182978b5e10414a962dbd42caf",
         "shasum": ""
       },
       "require": {
@@ -121,9 +122,9 @@
       "description": "This is Symfony bundle which extends the twig implementation by an JSX like syntax.",
       "support": {
         "issues": "https://github.com/lmc-eu/twigx-bundle/issues",
-        "source": "https://github.com/lmc-eu/twigx-bundle/tree/3.2.0"
+        "source": "https://github.com/lmc-eu/twigx-bundle/tree/3.2.1"
       },
-      "time": "2023-01-26T10:12:34+00:00"
+      "time": "2023-03-30T14:47:06+00:00"
     },
     {
       "name": "psr/cache",
