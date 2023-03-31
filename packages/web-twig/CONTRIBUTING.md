@@ -44,6 +44,8 @@ This is an example of a typical file structure of a component:
 {% set _privateAttr = (props.attr is defined) ? pros.attr : '' %}
 ```
 
+### Boolean Props
+
 🚨 Do not use `default(true)` filter for setting default value of the prop to `true`.
 This will lead to unexpected behavior.
 The `false` value is never passed and is treated as empty/null, so the prop will be `true` every time.
@@ -61,6 +63,16 @@ Instead use:
 ```
 
 See [default filter does not work issue](https://github.com/twigphp/Twig/issues/769) and [Twig default filter documentation](https://twig.symfony.com/doc/2.x/filters/default.html) for more information
+
+### Unescaped Props
+
+🚨 All props that uses [raw](https://twig.symfony.com/doc/3.x/filters/raw.html) filter must be prefixed with `UNSAFE_`.
+These props are unescaped.
+For example we used this prefix for props that can accept HTML string.
+
+```twig
+<CheckboxField UNSAFE_helperText="<strong>Help!</strong>" />
+```
 
 ### Example of component definition
 
