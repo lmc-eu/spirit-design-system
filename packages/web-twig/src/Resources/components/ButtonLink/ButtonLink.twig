@@ -9,7 +9,6 @@
 {%- set _isSquare = props.isSquare | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
-{%- set _title = props.title | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
@@ -22,7 +21,6 @@
 {# Attributes #}
 {%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
 {%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
-{%- set _titleAttr = _title ? 'title=' ~ _title | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
@@ -42,12 +40,11 @@
 {% endif %}
 
 <a
-    {{ mainProps(props) }}
+    {{ mainProps(props, _allowedAttributes) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
     {{ _onClickAttr | raw }}
     {{ _targetAttr }}
-    {{ _titleAttr | raw }}
 >
     {%- block content %}{% endblock %}
 </a>
