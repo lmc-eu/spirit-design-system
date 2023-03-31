@@ -60,43 +60,7 @@ spirit_web_twig:
 
 ## Usage
 
-Now you can use Twig components with JSX-like syntax in your Symfony project. You only need to remember that, unlike in HTML, component tags must always start with a capital letter:
-
-```html
-<ComponentName attr="value">Some other content</ComponentName>
-...
-<ComponentName attr="value" />
-```
-
-You can pass attributes like this:
-
-```html
-<ComponentName
-  :any="'any' ~ 'prop'" // this return as "any" prop with value "anyprop"
-  other="{{'this' ~ 'works' ~ 'too'}}"
-  anotherProp="or this still work"
-  not-this="{{'this' ~ 'does'}}{{ 'not work' }}" // this returns syntax as plain text but prop with dash work
-  ifCondition="{{ variable == 'success' ? 'true' : 'false' }}"  // condition can only be written via the ternary operator
-  jsXCondition={ variable == 'success' ? 'true' : 'false' }  // condition can only be written via the ternary operator
-  numberValue={11}  // if value is number 11
-  isOpen  // if value is not defined, it is set to true
-  isBoolean={false}  // if value is false
->
-Submit
-</ComponentName>
-```
-
-or pure original implementation
-
-```twig
-{% embed "@spirit/componentName.twig" with { props: {
-    attr: 'value'
-}} %}
-    {% block content %}
-        Some other content
-    {% endblock %}
-{% endembed %}
-```
+For detailed usage see [TwigX bundle](https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage)
 
 ### Unescaped Props
 
@@ -109,29 +73,7 @@ This is considered a way how you can pass down HTML strings.
 
 # Spirit Components
 
-- [Alert](./src/Resources/components/Alert/README.md)
-- [Breadcrumbs](./src/Resources/components/Breadcrumbs/README.md)
-- [Button](./src/Resources/components/Button/README.md)
-- [ButtonLink](./src/Resources/components/ButtonLink/README.md)
-- [CheckboxField](./src/Resources/components/CheckboxField/README.md)
-- [Collapse](./src/Resources/components/Collapse/README.md)
-- [Container](./src/Resources/components/Container/README.md)
-- [Dropdown](./src/Resources/components/Dropdown/README.md)
-- [Grid](./src/Resources/components/Grid/README.md)
-- [Header](./src/Resources/components/Header/README.md)
-- [Heading](./src/Resources/components/Heading/README.md)
-- [Icon](./src/Resources/components/Icon/README.md)
-- [Link](./src/Resources/components/Link/README.md)
-- [Modal](./src/Resources/components/Modal/README.md)
-- [Pill](./src/Resources/components/Pill/README.md)
-- [RadioField](./src/Resources/components/RadioField/README.md)
-- [Stack](./src/Resources/components/Stack/README.md)
-- [Tabs](./src/Resources/components/Tabs/README.md)
-- [Tag](./src/Resources/components/Tag/README.md)
-- [Text](./src/Resources/components/Text/README.md)
-- [TextField](./src/Resources/components/TextField/README.md)
-- [TextFieldBase](./src/Resources/components/TextFieldBase/README.md)
-- [Tooltip](./src/Resources/components/Tooltip/README.md)
+For available components see the [components directory](https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components).
 
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read the guide [here](./CONTRIBUTING.md).
