@@ -98,6 +98,15 @@ or pure original implementation
 {% endembed %}
 ```
 
+### Unescaped Props
+
+All props that internally uses the [raw](https://twig.symfony.com/doc/3.x/filters/raw.html) filter are prefixed with `UNSAFE_`.
+This is considered a way how you can pass down HTML strings.
+
+```twig
+<CheckboxField UNSAFE_helperText="<strong>Help!</strong>" />
+```
+
 # Spirit Components
 
 - [Alert](./src/Resources/components/Alert/README.md)
