@@ -19,6 +19,11 @@
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
 
+{# Deprecations #}
+{% if _onClick is same as('error') %}
+    {% deprecated 'Header: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
+
 <a
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
