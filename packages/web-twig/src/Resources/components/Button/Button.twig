@@ -24,6 +24,11 @@
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
 {%- set _allowedAttributes = [ 'name' ] -%}
 
+{# Deprecations #}
+{% if _onClick is same as('error') %}
+    {% deprecated 'Button: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
+
 <button
     {{ mainProps(props, _allowedAttributes) }}
     {{ classProp(_classNames) }}
