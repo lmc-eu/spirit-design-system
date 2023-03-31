@@ -2,6 +2,11 @@ name: Build
 
 on:
   push:
+    paths:
+      - packages/design-tokens/**
+      - packages/icons/**
+      - packages/web/**
+      - packages/web-react/**
 
 jobs:
   build:
