@@ -7,4 +7,4 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
-// import '@lmc-eu/spirit-web/js/bundle/spirit-web.bundle.js';
+import '@lmc-eu/spirit-web/js/bundle/spirit-web.bundle';

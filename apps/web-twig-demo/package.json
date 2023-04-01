@@ -4,11 +4,13 @@
   "description": "Spirit Web Twig Demo",
   "license": "MIT",
   "private": true,
+  "dependencies": {
+    "@lmc-eu/spirit-web": "^0.43.0"
+  },
   "devDependencies": {
     "@babel/core": "7.21.0",
     "@babel/preset-env": "7.20.2",
     "@hotwired/stimulus": "3.2.1",
-    "@lmc-eu/spirit-web": "^0.43.0",
     "@symfony/stimulus-bridge": "3.2.1",
     "@symfony/webpack-encore": "4.2.0",
     "core-js": "3.29.1",
