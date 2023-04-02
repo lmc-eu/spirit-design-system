@@ -1,0 +1,23 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _over = props.over | default(null) -%}
+{%- set _desktop = props.desktop | default(null) -%}
+{%- set _elementType = props.elementType | default('div') -%}
+{%- set _tablet = props.tablet | default(null) -%}
+
+{# Class names #}
+{%- set _overClassName = _over ? _spiritClassPrefix ~ 'Grid__span--over-' ~ _over : null -%}
+{%- set _desktopClassName = _desktop ? _spiritClassPrefix ~ 'Grid__span--desktop--over-' ~ _desktop : null -%}
+{%- set _tabletClassName = _tablet ? _spiritClassPrefix ~ 'Grid__span--tablet--over-' ~ _tablet : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Grid__span' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _overClassName, _tabletClassName, _desktopClassName, _class ] -%}
+
+<{{ _elementType }}
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+>
+    {%- block content %}{% endblock -%}
+</{{ _elementType }}>
