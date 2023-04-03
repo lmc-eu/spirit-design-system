@@ -5,3 +5,7 @@ index:
 component_view:
   path: /components/{component}
   controller: App\Controller\ComponentsController::show
+
+icons_index:
+  path: /icons
+  controller: App\Controller\IconsController::index
