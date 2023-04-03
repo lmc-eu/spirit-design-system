@@ -1,0 +1,22 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+    <section class="docs-Section">
+
+        <div class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 text-center my-1000">
+
+        {% for icon in icons %}
+
+            <div class="mb-600">
+                <Icon name={{ icon }} />
+
+                <h3 class="mt-500">{{icon}}</h3>
+            </div>
+
+        {% endfor %}
+
+        </div>
+    </section>
+
+{% endblock %}
