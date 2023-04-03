@@ -1,0 +1,107 @@
+<section class="docs-Section">
+
+    <h2 class="docs-Heading">Stacked Modal</h2>
+
+    <Button
+        data-toggle="modal"
+        data-target="#example_2_0"
+    >
+        Open Modal
+    </Button>
+
+    <!-- Modal: start -->
+    <ModalComposed id="example_2_0" titleId="example_2_0_title">
+
+        <!-- ModalDialog: start -->
+        <ModalDialog>
+
+            <!-- ModalHeader: start -->
+            <ModalHeader modalId="example_2_0" titleId="example_2_0_title">
+                Modal Title
+            </ModalHeader>
+            <!-- ModalHeader: end -->
+
+            <!-- ModalBody: start -->
+            <ModalBody>
+                <!-- Content: start -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <!-- Content: end -->
+            </ModalBody>
+            <!-- ModalBody: end -->
+
+            <!-- ModalFooter: start -->
+            <ModalFooter>
+                <Button
+                    data-toggle="modal"
+                    data-target="#example_2_1"
+                >
+                    Open stacked dialog
+                </Button>
+            </ModalFooter>
+            <!-- ModalFooter: end -->
+
+        </ModalDialog>
+        <!-- ModalDialog: end -->
+
+    </ModalComposed>
+    <!-- Modal: end -->
+
+    <!-- Modal: start -->
+    <ModalComposed id="example_2_1" titleId="example_2_1_title">
+
+        <!-- ModalDialog: start -->
+        <ModalDialog>
+
+            <!-- ModalHeader: start -->
+            <ModalHeader modalId="example_2_1" titleId="example_2_1_title">
+                Stacked Modal Title
+            </ModalHeader>
+            <!-- ModalHeader: end -->
+
+            <!-- ModalBody: start -->
+            <ModalBody>
+                <!-- Content: start -->
+                <p>
+                    Dolor quis metus a lorem, et elit pulvinar ligula condimentum non congue rhoncus molestie, at sem
+                    viverra maximus nunc. Posuere pretium accumsan, pharetra vel integer sit amet volutpat neque fringilla,
+                    non mauris erat id augue libero. Porta non congue, et iaculis et vehicula convallis non purus placerat
+                    cursus, rhoncus laoreet nec et elit. Proin luctus, bibendum adipiscing ut ollicitudin vehicula nisi
+                    nunc et, sollicitudin eget tristique nec commodo. Porttitor ligula, tellus vehicula arcu vestibulum
+                    sed rutrum placerat, dui quis facilisis eget. Suscipit molestie, nibh maximus enim vestibulum aenean
+                    ut libero sed imperdiet, curabitur et elit venenatis posuere.
+                    <br />
+                    Sapien vitae, dui sollicitudin nullam dolor quis nec nulla sapien, diam a ollicitudin non nulla nisl.
+                    Quis orci porta, ac nec sapien ornare imperdiet a vel convallis, adipiscing ullamcorper lectus quis
+                    pharetra. At nullam rutrum, nisl eget sit amet pulvinar ultricies nec porta, diam a sem odio a mauris
+                    eu. Suscipit sodales, fusce ante cursus convallis dui vel dolor potenti nulla fusce gravida.
+                </p>
+                <!-- Content: end -->
+            </ModalBody>
+            <!-- ModalBody: end -->
+
+            <!-- ModalFooter: start -->
+            <ModalFooter>
+                <Button type="submit">
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-dismiss="modal"
+                    data-target="#example_2_1"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+            <!-- ModalFooter: end -->
+
+        </ModalDialog>
+        <!-- ModalDialog: end -->
+
+    </ModalComposed>
+    <!-- Modal: end -->
+
+</section>

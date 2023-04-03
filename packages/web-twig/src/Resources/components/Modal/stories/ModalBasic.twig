@@ -1,0 +1,224 @@
+<section class="docs-Section">
+
+    <h2 class="docs-Heading">Modal</h2>
+
+    <Button
+        data-toggle="modal"
+        data-target="#example_1"
+    >
+        Open Modal
+    </Button>
+
+    <!-- Modal: start -->
+    <ModalComposed id="example_1" titleId="example_1_title">
+
+        <!-- ModalDialog: start -->
+        <ModalDialog>
+
+            <!-- ModalHeader: start -->
+            <ModalHeader modalId="example_1" titleId="example_1_title">
+                Modal Title
+            </ModalHeader>
+            <!-- ModalHeader: end -->
+
+            <!-- ModalBody: start -->
+            <ModalBody>
+                <!-- Content: start -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <!-- Footer alignment demo: start -->
+                <script>
+                    const setFooterAlignment = (event) => {
+                        const footerElement = document.querySelector('#example_1 .ModalFooter');
+
+                        footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
+                        footerElement.classList.add(`ModalFooter--${event.target.value}`);
+                    };
+
+                    const toggleExpandOnMobile = () => {
+                        document.querySelector('#example_1 .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
+                    };
+                </script>
+                <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
+                    <div>Footer alignment (from tablet up):</div>
+                    <RadioField id="footer_alignment_left" class="mr-600" label="Left" value="left" name="footer_alignment" autocomplete="off" />
+                    <RadioField id="footer_alignment_center" class="mr-600" label="Center" value="center" name="footer_alignment" autocomplete="off" />
+                    <RadioField id="footer_alignment_right" class="mr-600" label="Right" value="right" name="footer_alignment" autocomplete="off" isChecked />
+                </form>
+                <form class="d-tablet-none">
+                    <CheckboxField id="expand_on_mobile" label="Expand on mobile" value="right" onchange="toggleExpandOnMobile()" autocomplete="off" isChecked />
+                </form>
+                <!-- Footer alignment demo: end -->
+                <!-- Content: end -->
+            </ModalBody>
+            <!-- ModalBody: end -->
+
+            <!-- ModalFooter: start -->
+            <ModalFooter description="Optional description">
+                <Button
+                    data-dismiss="modal"
+                    data-target="#example_1"
+                >
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-dismiss="modal"
+                    data-target="#example_1"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+            <!-- ModalFooter: end -->
+
+        </ModalDialog>
+        <!-- ModalDialog: end -->
+
+    </ModalComposed>
+    <!-- Modal: end -->
+
+    <Button
+        data-toggle="modal"
+        data-target="#example_2"
+    >
+        Open Modal with Long Content
+    </Button>
+
+    <!-- Modal: start -->
+    <ModalComposed id="example_2" titleId="example_2_title">
+
+        <!-- ModalDialog: start -->
+        <ModalDialog>
+
+            <!-- ModalHeader: start -->
+            <ModalHeader modalId="example_2" titleId="example_2_title">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+            </ModalHeader>
+            <!-- ModalHeader: end -->
+
+            <!-- ModalBody: start -->
+            <ModalBody>
+                <!-- Content: start -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <!-- Content: end -->
+            </ModalBody>
+            <!-- ModalBody: end -->
+
+            <!-- ModalFooter: start -->
+            <ModalFooter>
+                <Button
+                    data-dismiss="modal"
+                    data-target="#example_2"
+                >
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-dismiss="modal"
+                    data-target="#example_2"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+            <!-- ModalFooter: end -->
+
+        </ModalDialog>
+        <!-- ModalDialog: end -->
+
+    </ModalComposed>
+    <!-- Modal: end -->
+
+    <Button
+        data-toggle="modal"
+        data-target="#example_3"
+    >
+        Open Modal with a Form
+    </Button>
+
+    <!-- Modal: start -->
+    <ModalComposed id="example_3" titleId="example_3_title">
+
+        <!-- ModalDialog: start -->
+        <ModalDialog elementType="form" method="dialog">
+
+            <!-- ModalHeader: start -->
+            <ModalHeader modalId="example_3" titleId="example_3_title">
+                Modal with a Form
+            </ModalHeader>
+            <!-- ModalHeader: end -->
+
+            <!-- ModalBody: start -->
+            <ModalBody>
+                <!-- Content: start -->
+                <TextField class="mb-400" label="Label" id="textfield" placeholder="TextField" />
+                <p>
+                    The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
+                </p>
+                <!-- Content: end -->
+            </ModalBody>
+            <!-- ModalBody: end -->
+
+            <!-- ModalFooter: start -->
+            <ModalFooter>
+                <Button type="submit">
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-dismiss="modal"
+                    data-target="#example_3"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+            <!-- ModalFooter: end -->
+
+        </ModalDialog>
+        <!-- ModalDialog: end -->
+
+    </ModalComposed>
+    <!-- Modal: end -->
+
+</section>
