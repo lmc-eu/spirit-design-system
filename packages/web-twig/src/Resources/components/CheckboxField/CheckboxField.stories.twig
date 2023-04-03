@@ -1,0 +1,44 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+    <script>
+        const inputs = ['checkboxfield14', 'checkboxfield15', 'checkboxfield16', 'checkboxfield17'];
+
+        window.addEventListener('DOMContentLoaded', function () {
+            inputs.forEach(function (input) {
+                const checkbox = document.getElementById(input);
+                checkbox.indeterminate = true;
+            });
+        });
+    </script>
+
+    <div class="docs-FormFieldGrid">
+
+        {# CheckboxField Default #}
+        {% include '@components/CheckboxField/stories/CheckboxField.twig' %}
+
+        {# CheckboxField Disabled #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldDisabled.twig' %}
+
+        {# CheckboxField Indeterminate State #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldIndeterminate.twig' %}
+
+        {# CheckboxField Hidden Label #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldHiddenLabel.twig' %}
+
+        {# CheckboxField Helper Text #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldHelperText.twig' %}
+
+        {# CheckboxField Required #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldRequired.twig' %}
+
+        {# CheckboxField Item #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldItem.twig' %}
+
+        {# CheckboxField Validation State #}
+        {% include '@components/CheckboxField/stories/CheckboxFieldValidationState.twig' %}
+
+    </div>
+
+{% endblock %}
