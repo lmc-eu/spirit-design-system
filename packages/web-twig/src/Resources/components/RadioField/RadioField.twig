@@ -1,4 +1,5 @@
 {# API #}
+{%- set _autocomplete = props.autocomplete | default(null) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isChecked = props.isChecked | default(false) | boolprop -%}
@@ -30,6 +31,7 @@
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 {%- set _idAttr = _id ? 'id=' ~ _id : null -%}
 {%- set _labelForAttr = _id ? 'for=' ~ _id : null -%}
+{%- set _autocompleteAttr = _autocomplete ? 'autocomplete=' ~ _autocomplete : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
@@ -46,6 +48,7 @@
         {{ _checkedAttr }}
         {{ _disabledAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
+        {{ _autocompleteAttr }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
