@@ -13,7 +13,7 @@
 {%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby=' ~ _titleId : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootComposedClassName, _rootExpandOnMobileClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _rootComposedClassName, _class ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 {# Deprecations #}
