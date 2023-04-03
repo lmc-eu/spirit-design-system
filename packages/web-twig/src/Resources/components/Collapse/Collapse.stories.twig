@@ -1,0 +1,23 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+{# Collapse Default with Button #}
+{% include '@components/Collapse/stories/CollapseDefaultWithButton.twig' %}
+
+{# Collapse Open on Init #}
+{% include '@components/Collapse/stories/CollapseOpenOnInit.twig' %}
+
+{# Collapse Change visibility with 'breakpoint' attribute #}
+{% include '@components/Collapse/stories/CollapseVisibilityBreakpoint.twig' %}
+
+{# Collapse Collapse with hide trigger when expanded #}
+{% include '@components/Collapse/stories/CollapseHideTrigger.twig' %}
+
+{# Collapse Default with helper class for changing content inside togglet #}
+{% include '@components/Collapse/stories/CollapseHelperClass.twig' %}
+
+{# Collapse Multiple Trigger #}
+{% include '@components/Collapse/stories/CollapseMultipleTriggers.twig' %}
+
+{% endblock %}
