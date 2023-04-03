@@ -1,0 +1,33 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+    <div class="docs-FormFieldGrid">
+
+        {# TextArea Default #}
+        {% include '@components/TextArea/stories/TextArea.twig' %}
+
+        {# TextArea Disabled #}
+        {% include '@components/TextArea/stories/TextAreaDisabled.twig' %}
+
+        {# TextArea Fluid #}
+        {% include '@components/TextArea/stories/TextAreaFluid.twig' %}
+
+        {# TextArea Helper text #}
+        {% include '@components/TextArea/stories/TextAreaHelperText.twig' %}
+
+        {# TextArea Input height #}
+        {% include '@components/TextArea/stories/TextAreaInputHeight.twig' %}
+
+        {# TextArea Label hidden #}
+        {% include '@components/TextArea/stories/TextAreaLabelHidden.twig' %}
+
+        {# TextArea Required #}
+        {% include '@components/TextArea/stories/TextAreaRequired.twig' %}
+
+        {# TextArea Validation state #}
+        {% include '@components/TextArea/stories/TextAreaValidationState.twig' %}
+
+    </div>
+
+{% endblock %}
