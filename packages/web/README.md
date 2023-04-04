@@ -45,19 +45,22 @@ your Sass stylesheet:
 
 You can add prefixes to CSS class names to better separate Spirit from other CSS
 in your project. The recommended way is using PostCSS with the
-[`postcss-prefixer`][postcss-prefixer] plugin:
+[`postcss-prefix-selector`][postcss-prefix-selector] plugin:
 
 ```js
 // postcss.config.js
 
-const postcssPrefixer = require('postcss-prefixer');
+const postcssPrefixSelector = require('postcss-prefix-selector');
 
 module.exports = {
   plugins: [
-    postcssPrefixer({
+    postcssPrefixSelector({
       prefix: 'spirit-',
-      // Ignore interaction state classes controlled by JS:
-      ignore: [/^.is-/, /^.has-/],
+      transform(prefix, selector) {
+        // Ignore interaction state classes controlled by JS: .is-* | .has-*
+        const regex = /\.(?!is-|has-)/gi;
+        return selector.replaceAll(regex, `.${prefix}`);
+      },
     }),
   ],
 };
@@ -172,5 +175,5 @@ See the [LICENSE](LICENSE.md) file for information.
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
 [examples]: https://lmc-eu.github.io/spirit-design-system/
-[postcss-prefixer]: https://www.npmjs.com/package/postcss-prefixer
+[postcss-prefix-selector]: https://www.npmjs.com/package/postcss-prefix-selector
 [vite]: https://vitejs.dev
