@@ -67,7 +67,7 @@ Encore
           options.implementation = sass;
           // eslint-disable-next-line no-param-reassign
           options.sassOptions = {
-              includePaths: ['../../node_modules', '../../node_modules/@lmc-eu/spirit-design-tokens/dist/scss'],
+              includePaths: ['../../node_modules', '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'],
           };
       },
       {
