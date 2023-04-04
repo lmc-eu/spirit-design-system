@@ -1,24 +1,38 @@
 <TextArea
-    id="textareaValidationState-success"
-    label="Validation success"
-    name="textareaValidationState-success"
-    message="Success message"
-    validationState="success"
-    isRequired={true}
-/>
-<TextArea
-    id="textareaValidationState-warning"
-    label="Validation warning"
-    message="Warning message"
-    name="textareaValidationState-warning"
-    validationState="warning"
-    isRequired={true}
-/>
-<TextArea
-    id="textareaValidationState-danger"
-    label="Validation danger"
-    message="Danger message"
-    name="textareaValidationState-danger"
+    id="textareaDanger"
+    isRequired
+    label="Label"
+    name="textareaDanger"
+    placeholder="Placeholder"
     validationState="danger"
-    isRequired={true}
-/>
+></TextArea>
+<TextArea
+    id="textareaDangerMessage"
+    isRequired
+    label="Label"
+    message="Validation message"
+    name="textareaDangerMessage"
+    placeholder="Placeholder"
+    validationState="danger"
+    value="Filled"
+></TextArea>
+<TextArea
+    id="textareaSuccess"
+    isRequired
+    label="Label"
+    message="Validation message"
+    name="textareaSuccess"
+    placeholder="Placeholder"
+    validationState="success"
+    value="Filled"
+></TextArea>
+<TextArea
+    id="textareaWarning"
+    isRequired
+    label="Label"
+    message="Validation message"
+    name="textareaWarning"
+    placeholder="Placeholder"
+    validationState="warning"
+    value="Filled"
+></TextArea>

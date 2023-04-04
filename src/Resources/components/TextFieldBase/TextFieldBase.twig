@@ -83,9 +83,7 @@
             {{ _placeholderAttr }}
             {{ _disabledAttr }}
             {{ _requiredAttr }}
-        >
-            {{ _value }} {# Intentionally without `raw` to prevent XSS. #}
-        </textarea>
+        >{{ _value }}</textarea>{# Intentionally without `raw` to prevent XSS. #}
     {% else %}
         {% if _hasPasswordToggle %}
             <div class="TextField__passwordToggle">
