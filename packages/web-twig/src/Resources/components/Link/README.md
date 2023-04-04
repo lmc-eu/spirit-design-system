@@ -5,7 +5,7 @@ This is Twig implementation of the [Link] component.
 Basic example usage:
 
 ```twig
-<Link href="#" />Link<Link />
+<Link href="#">Link</Link>
 ```
 
 Advanced example usage:
