@@ -1,0 +1,23 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+    {# Minimal Inverted Header #}
+    {% include '@components/Header/stories/HeaderMinimalInverted.twig' %}
+
+    {# Inverted Header with Actions #}
+    {% include '@components/Header/stories/HeaderInvertedWithActions.twig' %}
+
+    {# Inverted Header with Actions and Header Dialog #}
+    {% include '@components/Header/stories/HeaderInvertedWithActionsAndDialog.twig' %}
+
+    {# Simple Inverted Header #}
+    {% include '@components/Header/stories/HeaderSimpleInverted.twig' %}
+
+    {# Simple Transparent Header #}
+    {% include '@components/Header/stories/HeaderSimpleTransparent.twig' %}
+
+    {# Header with experimental RTL support #}
+    {% include '@components/Header/stories/HeaderExperimentalRTL.twig' %}
+
+{% endblock %}
