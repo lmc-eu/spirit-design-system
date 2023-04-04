@@ -1,7 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
-{%- set _onClick = props.onClick -%}
 {%- set _rootClass = props.rootClass -%}
 
 {# Class names #}
@@ -10,15 +9,9 @@
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
 
-{# Deprecations #}
-{% if _onClick %}
-    {% deprecated 'Header: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
-{% endif %}
-
 <button
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}
-    onclick="{{ _onClick }}"
     type="button"
 >
     {% block content %}{% endblock %}

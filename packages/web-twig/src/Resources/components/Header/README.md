@@ -235,7 +235,7 @@ Both links and buttons are supported:
     <HeaderLink href="/">Link item</HeaderLink>
   </HeaderNavItem>
   <HeaderNavItem>
-    <HeaderButton onClick="console.log('Hello!')">Button item</HeaderButton>
+    <HeaderButton>Button item</HeaderButton>
   </HeaderNavItem>
 </HeaderNav>
 ```
@@ -264,10 +264,9 @@ Both links and buttons are supported:
 
 ##### HeaderButton API
 
-| Prop name | Type     | Default | Required | Description               |
-| --------- | -------- | ------- | -------- | ------------------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class          |
-| `onClick` | `string` | —       | yes      | Function to call on click |
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. These attributes
@@ -376,7 +375,7 @@ Navigation items can be links, buttons, or just text:
     </HeaderDialogLink>
   </HeaderDialogNavItem>
   <HeaderDialogNavItem>
-    <HeaderDialogButton onClick="console.log('Hello!')">
+    <HeaderDialogButton>
       Button item
     </HeaderDialogButton>
   </HeaderDialogNavItem>
@@ -412,10 +411,9 @@ Navigation items can be links, buttons, or just text:
 
 ##### HeaderDialogButton API
 
-| Prop name | Type     | Default | Required | Description               |
-| --------- | -------- | ------- | -------- | ------------------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class          |
-| `onClick` | `string` | —       | yes      | Function to call on click |
+| Prop name | Type     | Default | Required | Description      |
+| --------- | -------- | ------- | -------- | ---------------- |
+| `class`   | `string` | `null`  | no       | Custom CSS class |
 
 ##### HeaderDialogText API
 
