@@ -2,8 +2,8 @@ version: '3.4'
 
 # Production environment override
 services:
-  php:
+  web-twig-demo-php:
     environment:
       APP_SECRET: ${APP_SECRET}
 
-  caddy:
+  web-twig-demo-server:

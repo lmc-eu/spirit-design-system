@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 const Encore = require('@symfony/webpack-encore');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const sass = require('sass');

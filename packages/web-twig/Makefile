@@ -1,6 +1,7 @@
 # Executables (local)
 DOCKER_COMP						= docker-compose
-DOCKER_PART_PHP_NAME	= php
+DOCKER_PHP_SERVICE		= web-twig-demo-php
+DOCKER_ENCORE_SERVICE	= web-twig-demo-encore
 SHELL									= bash
 
 # Paths
@@ -8,7 +9,7 @@ APP_DOCKER_DIR				= ../../apps/web-twig-demo/docker/
 DOCKER_PKG_DIR				= /srv/spirit-web-twig-bundle/
 
 # Docker containers
-PHP_CONT_PHP = cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec --workdir $(DOCKER_PKG_DIR) $(DOCKER_PART_PHP_NAME)
+PHP_CONT_PHP = cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec --workdir $(DOCKER_PKG_DIR) $(DOCKER_PHP_SERVICE)
 
 # Executables
 PHP				= $(PHP_CONT_PHP) php
@@ -16,8 +17,8 @@ COMPOSER	= $(PHP_CONT_PHP) composer
 MAKE			= $(PHP_CONT_PHP) make
 
 # Misc
-.DEFAULT_GOAL	= help
-.PHONY				= help build up start down logs sh bash composer vendor make phpunit test analyze
+.DEFAULT_GOAL		= help
+.PHONY					= help build up start down logs sh bash composer vendor make phpunit test analyze
 
 ## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  —————————————————————————————————
 help: ## Outputs this help screen
@@ -37,7 +38,7 @@ up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" 
 	echo $$upCommand; \
 	eval $$upCommand
 
-start: build up vendor ## Build and start the containers
+start: up vendor encore ## Start the containers
 
 down: ## Stop the docker hub
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) down --remove-orphans
@@ -49,6 +50,28 @@ bash: ## Connect to the PHP container
 	$(PHP_CONT_PHP) bash
 
 sh: bash
+
+## —— Encore 🎵 ————————————————————————————————————————————————————————————————
+
+encore-install: ## Install demo dependencies
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install --update-lockfile
+
+encore-link: ## Link demo dependencies
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-web"
+
+encore-build: ## Build demo assets
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn build
+
+encore-watch: ## Watch demo assets
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn watch
+
+encore-sh: ## Connect to encore using bash
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh
+
+encore-logs: ## Show live logs for Encore service
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs $(DOCKER_ENCORE_SERVICE) --tail=0 --follow
+
+encore: encore-install encore-link ## Start demo client
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
