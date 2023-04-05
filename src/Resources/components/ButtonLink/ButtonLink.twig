@@ -30,12 +30,7 @@
 
 
 {# Deprecations #}
-{% if _onClick is same as('error') %}
-    {% deprecated 'ButtonLink: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
-{% endif %}
-
-{# Deprecations #}
-{% if _onClick is same as('error') %}
+{% if _onClick %}
     {% deprecated 'ButtonLink: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
 {% endif %}
 
