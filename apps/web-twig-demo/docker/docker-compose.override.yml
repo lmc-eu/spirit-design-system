@@ -2,7 +2,8 @@ version: '3.4'
 
 # Development environment override
 services:
-  php:
+  web-twig-demo-php:
+    container_name: web-twig-demo-php
     build:
       target: app_php_dev
     volumes:
@@ -20,7 +21,22 @@ services:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
 
-  caddy:
+  web-twig-demo-encore:
+    container_name: web-twig-demo-encore
+    command: 'sh -c "yarn && yarn watch"'
+    image: node:16-alpine
+    # ports:
+    #   - '${DEV_SERVER_PORT:-8080}:8080'
+    volumes:
+      - ./../:/srv/spirit-web-twig-demo/:delegated
+      - ./../../../packages/web:/srv/spirit-web/:delegated
+      # If you develop on Mac or Windows you can remove the node_modules/ directory
+      #  from the bind-mount for better performance by enabling the next line:
+      # - /srv/spirit-web-twig-demo/node_modules
+    working_dir: /srv/spirit-web-twig-demo
+
+  web-twig-demo-server:
+    container_name: web-twig-demo-server
     command: ['caddy', 'run', '--config', '/etc/caddy/Caddyfile', '--adapter', 'caddyfile', '--watch']
     volumes:
       - ./../public:/srv/spirit-web-twig-demo/public:ro

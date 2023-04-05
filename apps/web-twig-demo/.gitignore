@@ -15,3 +15,6 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+# Localy handled by monorepo, in docker it is standalone
+yarn.lock

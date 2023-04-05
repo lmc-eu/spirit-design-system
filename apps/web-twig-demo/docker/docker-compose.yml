@@ -1,5 +1,5 @@
 services:
-  php:
+  web-twig-demo-php:
     build:
       context: .
       dockerfile: 'Dockerfile'
@@ -16,24 +16,24 @@ services:
       retries: 3
       start_period: 30s
 
-  caddy:
+  web-twig-demo-server:
     build:
       context: .
       target: app_caddy
     depends_on:
-      - php
+      - web-twig-demo-php
     environment:
       SERVER_NAME: ${SERVER_NAME:-localhost, caddy:80}
     restart: unless-stopped
     volumes:
       - php_socket:/var/run/php
-      - caddy_data:/data
-      - caddy_config:/config
+      - server_data:/data
+      - server_config:/config
     ports:
       # HTTP
-      - target: 80
-        published: ${HTTP_PORT:-8080}
-        protocol: tcp
+      # - target: 80
+      #   published: ${HTTP_PORT:-8880}
+      #   protocol: tcp
       # HTTPS
       - target: 443
         published: ${HTTPS_PORT:-4443}
@@ -45,5 +45,5 @@ services:
 
 volumes:
   php_socket:
-  caddy_data:
-  caddy_config:
+  server_data:
+  server_config:
