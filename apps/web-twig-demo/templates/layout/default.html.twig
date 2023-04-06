@@ -2,10 +2,13 @@
 
 
 {% block body %}
-  {% block header %}{% endblock %}
+
+  {% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
 
   <main class="py-900 py-tablet-1200">
     <div class="Container">
+
+      {% include 'partials/tabs.html.twig' %}
 
       {% block content %}{% endblock %}
 

@@ -1,0 +1,13 @@
+{% set routeName = app.request.get('_route') %}
+
+<ul class="Tabs mb-1100" role="tablist">
+  <li class="Tabs__item">
+    <a href="/" class="Tabs__link{% if routeName == 'index' %} is-selected" aria-selected="true{% endif %}">Components</a>
+  </li>
+  <li class="Tabs__item">
+    <a href="icons/" class="Tabs__link{% if routeName == 'icons_index' %} is-selected" aria-selected="true{% endif %}">Icons</a>
+  </li>
+  <li class="Tabs__item">
+    <a href="helpers/" class="Tabs__link{% if routeName == 'helpers_index' %} is-selected" aria-selected="true{% endif %}">Helpers</a>
+  </li>
+</ul>
