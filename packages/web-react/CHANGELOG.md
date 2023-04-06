@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.42.0"></a>
+
+# [0.42.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.41.0...@lmc-eu/spirit-web-react@0.42.0) (2023-03-21)
+
+### Dependencies
+
+- Pin dependency terser-webpack-plugin to v5.3.6 ([27d5338](https://github.com/lmc-eu/spirit-design-system/commit/27d5338))
+
+### Documentation
+
+- **web-react:** Adding attributes to the component readme [#DS-604](https://github.com/lmc-eu/spirit-design-system/issues/DS-604) ([94607f9](https://github.com/lmc-eu/spirit-design-system/commit/94607f9))
+- **web-react:** Collapse example hideOnClose for Storybook ([79f09f9](https://github.com/lmc-eu/spirit-design-system/commit/79f09f9))
+- **web-react:** Collapse example showMore for Storybook ([4b75f0c](https://github.com/lmc-eu/spirit-design-system/commit/4b75f0c))
+- **web-react:** Fix internal links to the components in the `web` package ([a636eee](https://github.com/lmc-eu/spirit-design-system/commit/a636eee))
+- **web-react:** Fix links to the versions compare in the `web-react` package ([781cd68](https://github.com/lmc-eu/spirit-design-system/commit/781cd68))
+- **web-react:** Remove `jsx static` example format from ModalComposed ([a9b484e](https://github.com/lmc-eu/spirit-design-system/commit/a9b484e))
+- **web-react:** Replacing button element with Button component [#DS-598](https://github.com/lmc-eu/spirit-design-system/issues/DS-598) ([be96972](https://github.com/lmc-eu/spirit-design-system/commit/be96972))
+- **web-twig:** Paragraph indentation and typos ([f24dfc3](https://github.com/lmc-eu/spirit-design-system/commit/f24dfc3))
+- **web:** Paragraph indentation and typos ([e1c462f](https://github.com/lmc-eu/spirit-design-system/commit/e1c462f))
+
+### Features
+
+- **web-react:** ForwardRef for Button and ButtonLink [#DS-445](https://github.com/lmc-eu/spirit-design-system/issues/DS-445) ([3750292](https://github.com/lmc-eu/spirit-design-system/commit/3750292))
+- **web-react:** Introduction of Header and HeaderDialog [#DS-425](https://github.com/lmc-eu/spirit-design-system/issues/DS-425) ([caab1d5](https://github.com/lmc-eu/spirit-design-system/commit/caab1d5))
+- **web-react:** TextField and TextArea props extend ([54f858c](https://github.com/lmc-eu/spirit-design-system/commit/54f858c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.41.0"></a>
 
 # [0.41.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.40.0...@lmc-eu/spirit-web-react@0.41.0) (2023-03-08)
@@ -941,7 +969,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.4.0"></a>
 
-## [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.3.0...@lmc-eu/spirit-web@0.4.0) (2021-12-21)
+## [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.3.0...@lmc-eu/spirit-web-react@0.4.0) (2021-12-21)
 
 ### Bug Fixes
 
@@ -967,7 +995,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.3.0"></a>
 
-## [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.7...@lmc-eu/spirit-web@0.3.0) (2021-12-03)
+## [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.7...@lmc-eu/spirit-web-react@0.3.0) (2021-12-03)
 
 ### BREAKING CHANGES
 
@@ -975,7 +1003,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.7"></a>
 
-## [0.2.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.6...@lmc-eu/spirit-web@0.2.7) (2021-12-02)
+## [0.2.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.6...@lmc-eu/spirit-web-react@0.2.7) (2021-12-02)
 
 ### Features
 
@@ -984,7 +1012,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.6"></a>
 
-## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.5...@lmc-eu/spirit-web@0.2.6) (2021-11-26)
+## [0.2.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.5...@lmc-eu/spirit-web-react@0.2.6) (2021-11-26)
 
 ### Bug Fixes
 
@@ -1000,7 +1028,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.5"></a>
 
-## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.4...@lmc-eu/spirit-web@0.2.5) (2021-11-26)
+## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.4...@lmc-eu/spirit-web-react@0.2.5) (2021-11-26)
 
 ### Features
 
@@ -1008,7 +1036,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.4"></a>
 
-## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.3...@lmc-eu/spirit-web@0.2.4) (2021-11-13)
+## [0.2.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.3...@lmc-eu/spirit-web-react@0.2.4) (2021-11-13)
 
 ### Chores
 
@@ -1016,7 +1044,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.3"></a>
 
-## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.2...@lmc-eu/spirit-web@0.2.3) (2021-10-20)
+## [0.2.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.2...@lmc-eu/spirit-web-react@0.2.3) (2021-10-20)
 
 ### BREAKING CHANGES
 
@@ -1026,7 +1054,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.2"></a>
 
-## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.1...@lmc-eu/spirit-web@0.2.2) (2021-10-12)
+## [0.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.1...@lmc-eu/spirit-web-react@0.2.2) (2021-10-12)
 
 ### Code Refactoring
 
@@ -1035,7 +1063,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.1"></a>
 
-## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.2.0...@lmc-eu/spirit-web@0.2.1) (2021-10-07)
+## [0.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.2.0...@lmc-eu/spirit-web-react@0.2.1) (2021-10-07)
 
 ### Code Refactoring
 
@@ -1044,7 +1072,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 <a name="0.2.0"></a>
 
-## [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.1.0...@lmc-eu/spirit-web@0.2.0) (2021-10-07)
+## [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.1.0...@lmc-eu/spirit-web-react@0.2.0) (2021-10-07)
 
 ### Code Refactoring
 

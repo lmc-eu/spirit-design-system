@@ -1,7 +1,7 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import { enableToggleTrigger, ScrollControl } from './utils';
 
 const NAME = 'modal';
 
@@ -9,6 +9,7 @@ const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
 
 class Modal extends BaseComponent {
   isShown: boolean;
+  scrollControl: ScrollControl;
 
   static get NAME() {
     return NAME;
@@ -18,6 +19,7 @@ class Modal extends BaseComponent {
     super(element);
 
     this.isShown = false;
+    this.scrollControl = new ScrollControl(element as HTMLElement);
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -64,6 +66,8 @@ class Modal extends BaseComponent {
 
     this.addEventListeners();
     this.isShown = true;
+
+    this.scrollControl.disableScroll();
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -91,6 +95,8 @@ class Modal extends BaseComponent {
 
     this.removeEventListeners();
     this.isShown = false;
+
+    this.scrollControl.enableScroll();
   }
 
   toggle(

@@ -8,11 +8,14 @@
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _message = props.message | default(null) -%}
+{%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
 {%- set _helperText = props.helperText | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 
 {# Class names #}
 {%- set _inputClassName = _spiritClassPrefix ~ 'CheckboxField__input' -%}
@@ -31,7 +34,7 @@
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
-{%- set _valueAttr = _value ? 'value="' ~ _value ~'"' : null -%}
+{%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
@@ -50,14 +53,16 @@
         id="{{ _id }}"
         name="{{ _name }}"
         class="{{ _inputClassName }}"
-        {{ _checkedAttr | raw }}
-        {{ _disabledAttr | raw }}
-        {{ _requiredAttr | raw }}
-        {{ _valueAttr | raw }}
+        {{ _checkedAttr }}
+        {{ _disabledAttr }}
+        {{ _requiredAttr }}
+        {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>{{ _label | raw }}</span>
-        {% if _helperText %}<span class="{{ _helperTextClassName }}">{{ _helperText | raw }}</span>{% endif %}
-        {% if _message %}<span class="{{ _messageClassName }}">{{ _message | raw }}</span>{% endif %}
+        <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
+        {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
+        {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
+        {% if _message and not _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _message }}</span>{% endif %}
+        {% if _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _unsafeMessage | raw }}</span>{% endif %}
     </span>
 </label>

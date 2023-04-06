@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import RadioField from './RadioField';
 
 export default {
@@ -12,6 +13,7 @@ export default {
       },
     },
   },
+  argTypes,
 } as ComponentMeta<typeof RadioField>;
 
 export { default as RadioField } from './stories/RadioField';

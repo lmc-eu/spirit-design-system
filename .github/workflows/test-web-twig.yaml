@@ -1,0 +1,92 @@
+name: 'Web Twig: Code Quality Checks'
+
+on:
+  push:
+    paths:
+      - packages/web-twig/**
+      # Changes in SVG icons also affect snapshots in web-twig package
+      # e.g. svg content is generated into the snapshot
+      - packages/icons/**
+  pull_request:
+    paths:
+      - packages/web-twig/**
+      # Changes in SVG icons also affect snapshots in web-twig package
+      # e.g. svg content is generated into the snapshot
+      - packages/icons/**
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['7.4', '8.1', '8.2']
+        dependencies: ['']
+
+    name: Unit tests - PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: json, mbstring
+          coverage: xdebug
+
+      - name: Install dependencies
+        working-directory: ./packages/web-twig
+        run: composer update --no-progress --no-interaction ${{ matrix.dependencies }}
+
+      - name: Copy Assets
+        working-directory: ./packages/web-twig
+        run: cp ../icons/src/svg/* ./static
+
+      - name: Run tests
+        working-directory: ./packages/web-twig
+        run: |
+          composer phpunit:coverage
+
+      # Publish code coverage after the code is public
+      - name: Submit coverage to Coveralls
+        working-directory: ./packages/web-twig
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COVERALLS_PARALLEL: true
+          COVERALLS_FLAG_NAME: ${{ github.job }}-PHP-${{ matrix.php-version }} ${{ matrix.dependencies }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          ~/.composer/vendor/bin/php-coveralls --coverage_clover=coverage/clover.xml --json_path=coverage/coveralls-upload.json -v
+
+  finalize-tests:
+    name: Tests finished
+    needs: [unit-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+          flag-name: web-twig
+
+  codestyle:
+    name: 'Code style and static analysis'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: json, mbstring
+
+      - name: Install dependencies
+        working-directory: ./packages/web-twig
+        run: composer update --no-progress
+
+      - name: Run checks
+        working-directory: ./packages/web-twig
+        run: composer analyze

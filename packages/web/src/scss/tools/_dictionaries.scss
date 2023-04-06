@@ -15,7 +15,7 @@
         @return tokens.$text-colors;
     }
 
-    @error 'Invalid color dictionary value as there is none #{$variant}-default token either in action-colors, emotion-colors, or text-colors dictionaries';
+    @error 'Invalid color dictionary value as there is no #{$variant}-default token either in action-colors, emotion-colors, or text-colors tokens';
     @return null;
 }
 

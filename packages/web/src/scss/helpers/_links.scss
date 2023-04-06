@@ -2,12 +2,13 @@
 @use '@tokens' as tokens;
 @use '../settings/cursors';
 @use '../settings/dictionaries' as dictionaries-settings;
+@use '../settings/links' as links-settings;
 @use '../tools/dictionaries';
-@use '../tools/links';
+@use '../tools/links' as links-tools;
 
 @include dictionaries.generate-link-colors(
     '.link',
-    dictionaries-settings.$text-colors,
+    dictionaries-settings.$action-link-colors,
     tokens.$action-colors,
     (default, hover, active, disabled)
 );
@@ -23,15 +24,19 @@
 
 // Allows link underline everywhere, except for headings default state
 .link-underlined,
-[class*='typography-heading'] a:hover,
-[class*='typography-heading'] a:focus {
+[class*='typography-heading'] a:active,
+[class*='typography-heading'] a:hover {
     text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-offset: 0.1875em;
 }
 
 .link-stretched {
-    @include links.stretch();
+    @include links-tools.stretch();
+}
+
+// Make sure non-anchor elements get the same decoration style as real links
+.link-underlined:not(a) {
+    text-decoration-skip-ink: links-settings.$text-decoration-skip-ink;
+    text-underline-offset: links-settings.$text-underline-offset;
 }
 
 // Only links in headings have visited state

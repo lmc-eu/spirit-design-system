@@ -11,7 +11,6 @@ const Story: ComponentStory<typeof TextArea> = (args: SpiritTextAreaProps) => <T
 
 Story.args = {
   id: 'textarea-example',
-  label: 'Label',
 };
 
 export default Story;

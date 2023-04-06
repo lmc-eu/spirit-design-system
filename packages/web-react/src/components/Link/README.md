@@ -8,12 +8,12 @@ Link allows users to follow navigation.
 
 ## Available props
 
-| Name           | Type                                      | Description                                     |
-| -------------- | ----------------------------------------- | ----------------------------------------------- |
-| `href`         | `string`                                  | Link's href attribute                           |
-| `color`        | [Text Color dictionary][dictionary-color] | Color of the link                               |
-| `isUnderlined` | `boolean`                                 | Whether is the link underlined, default `false` |
-| `isDisabled`   | `boolean`                                 | Wheter is the link disabled, default `false`    |
+| Name           | Type                                             | Description                                     |
+| -------------- | ------------------------------------------------ | ----------------------------------------------- |
+| `href`         | `string`                                         | Link's href attribute                           |
+| `color`        | [Action Link Color dictionary][dictionary-color] | Color of the link                               |
+| `isUnderlined` | `boolean`                                        | Whether is the link underlined, default `false` |
+| `isDisabled`   | `boolean`                                        | Wheter is the link disabled, default `false`    |
 
 ## Custom component
 

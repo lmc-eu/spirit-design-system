@@ -1,315 +1,460 @@
 {{#> layout/plain }}
 
-  <section class="docs-Section">
+<section class="docs-Section">
 
-    <h2 class="docs-Heading">Modal</h2>
+  <h2 class="docs-Heading">Modal</h2>
 
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-toggle="modal"
-      data-target="#example_1"
-      aria-controls="example_1"
-      aria-expanded="false"
-    >
-      Open Modal
-    </button>
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_1"
+    aria-controls="example_1"
+    aria-expanded="false"
+  >
+    Open Modal
+  </button>
 
-    <!-- Modal: start -->
-    <dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
+  <!-- Modal: start -->
+  <dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
 
-      <!-- ModalDialog: start -->
-      <article class="ModalDialog">
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
 
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-dismiss="modal"
-            data-target="#example_1"
-            aria-controls="example_1"
-            aria-expanded="false"
-          >
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </header>
-        <!-- ModalHeader: end -->
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_1"
+          aria-controls="example_1"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
 
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <!-- Footer alignment demo: start -->
-          <script>
-            const setFooterAlignment = (event) => {
-              const footerElement = document.querySelector('#example_1 .ModalFooter');
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <!-- Footer alignment demo: start -->
+        <script>
+          const setFooterAlignment = (event) => {
+            const footerElement = document.querySelector('#example_1 .ModalFooter');
 
-              footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
-              footerElement.classList.add(`ModalFooter--${event.target.value}`);
-            };
+            footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
+            footerElement.classList.add(`ModalFooter--${event.target.value}`);
+          };
 
-            const toggleExpandOnMobile = () => {
-              document.querySelector('#example_1 .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
-            }
-          </script>
-          <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
-            <div>Footer alignment (from tablet up):</div>
-            <label for="footer_alignment_left" class="RadioField mr-600">
-              <input type="radio" id="footer_alignment_left" name="footer_alignment" value="left" class="RadioField__input" autocomplete="off" />
-              <span class="RadioField__label">Left</span>
-            </label>
-            <label for="footer_alignment_center" class="RadioField mr-600">
-              <input type="radio" id="footer_alignment_center" name="footer_alignment" value="center" class="RadioField__input" autocomplete="off" />
-              <span class="RadioField__label">Center</span>
-            </label>
-            <label for="footer_alignment_right" class="RadioField mr-600">
-              <input type="radio" id="footer_alignment_right" name="footer_alignment" value="right" class="RadioField__input" autocomplete="off" checked />
-              <span class="RadioField__label">Right</span>
-            </label>
-          </form>
-          <form class="d-tablet-none">
-            <label for="expand_on_mobile" class="CheckboxField">
-              <input type="checkbox" id="expand_on_mobile" class="CheckboxField__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
-              <span class="CheckboxField__text">
+          const toggleExpandOnMobile = () => {
+            document.querySelector('#example_1 .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
+          }
+        </script>
+        <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
+          <div>Footer alignment (from tablet up):</div>
+          <label for="footer_alignment_left" class="RadioField mr-600">
+            <input type="radio" id="footer_alignment_left" name="footer_alignment" value="left" class="RadioField__input" autocomplete="off" />
+            <span class="RadioField__label">Left</span>
+          </label>
+          <label for="footer_alignment_center" class="RadioField mr-600">
+            <input type="radio" id="footer_alignment_center" name="footer_alignment" value="center" class="RadioField__input" autocomplete="off" />
+            <span class="RadioField__label">Center</span>
+          </label>
+          <label for="footer_alignment_right" class="RadioField mr-600">
+            <input type="radio" id="footer_alignment_right" name="footer_alignment" value="right" class="RadioField__input" autocomplete="off" checked />
+            <span class="RadioField__label">Right</span>
+          </label>
+        </form>
+        <form class="d-tablet-none">
+          <label for="expand_on_mobile" class="CheckboxField">
+            <input type="checkbox" id="expand_on_mobile" class="CheckboxField__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
+            <span class="CheckboxField__text">
                 <span class="CheckboxField__label">Expand on mobile</span>
               </span>
-            </label>
-          </form>
-          <!-- Footer alignment demo: end -->
-          <!-- Content: end -->
+          </label>
+        </form>
+        <!-- Footer alignment demo: end -->
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__description">
+          Optional description
         </div>
-        <!-- ModalBody: end -->
-
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__description">
-            Optional description
-          </div>
-          <div class="ModalFooter__actions">
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-dismiss="modal"
-              data-target="#example_1"
-            >
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-dismiss="modal"
-              data-target="#example_1"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
-
-      </article>
-      <!-- ModalDialog: end -->
-
-    </dialog>
-    <!-- Modal: end -->
-
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-toggle="modal"
-      data-target="#example_2"
-      aria-controls="example_2"
-      aria-expanded="false"
-    >
-      Open Modal with Long Content
-    </button>
-
-    <!-- Modal: start -->
-    <dialog id="example_2" class="Modal Modal--composed" aria-labelledby="example_2_title">
-
-      <!-- ModalDialog: start -->
-      <article class="ModalDialog">
-
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example_2_title" class="ModalHeader__title">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
-          </h2>
+        <div class="ModalFooter__actions">
           <button
             type="button"
-            class="Button Button--tertiary Button--square Button--medium"
+            class="Button Button--primary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_1"
+          >
+            Primary action
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_1"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </article>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_2"
+    aria-controls="example_2"
+    aria-expanded="false"
+  >
+    Open Modal with Long Content
+  </button>
+
+  <!-- Modal: start -->
+  <dialog id="example_2" class="Modal Modal--composed" aria-labelledby="example_2_title">
+
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_2_title" class="ModalHeader__title">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+        </h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_2"
+          aria-controls="example_2"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button
+            type="button"
+            class="Button Button--primary Button--medium"
             data-dismiss="modal"
             data-target="#example_2"
-            aria-controls="example_2"
-            aria-expanded="false"
           >
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
+            Primary action
           </button>
-        </header>
-        <!-- ModalHeader: end -->
-
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <!-- Content: end -->
-        </div>
-        <!-- ModalBody: end -->
-
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__actions">
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-dismiss="modal"
-              data-target="#example_2"
-            >
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-dismiss="modal"
-              data-target="#example_2"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
-
-      </article>
-      <!-- ModalDialog: end -->
-
-    </dialog>
-    <!-- Modal: end -->
-
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-toggle="modal"
-      data-target="#example_3"
-      aria-controls="example_3"
-      aria-expanded="false"
-    >
-      Open Modal with a Form
-    </button>
-
-    <!-- Modal: start -->
-    <dialog id="example_3" class="Modal Modal--composed" aria-labelledby="example_3_title">
-
-      <!-- ModalDialog: start -->
-      <form class="ModalDialog" method="dialog">
-
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example_3_title" class="ModalHeader__title">Modal with a Form</h2>
           <button
             type="button"
-            class="Button Button--tertiary Button--square Button--medium"
+            class="Button Button--secondary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_2"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </article>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_3"
+    aria-controls="example_3"
+    aria-expanded="false"
+  >
+    Open Modal with a Form
+  </button>
+
+  <!-- Modal: start -->
+  <dialog id="example_3" class="Modal Modal--composed" aria-labelledby="example_3_title">
+
+    <!-- ModalDialog: start -->
+    <form class="ModalDialog" method="dialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_3_title" class="ModalHeader__title">Modal with a Form</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_3"
+          aria-controls="example_3"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <div class="TextField mb-400">
+          <label for="textfield" class="TextField__label">Label</label>
+          <input type="text" id="textfield" class="TextField__input" placeholder="TextField" />
+        </div>
+        <p>
+          The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button type="submit" class="Button Button--primary Button--medium">
+            Primary action
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
             data-dismiss="modal"
             data-target="#example_3"
-            aria-controls="example_3"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </form>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Stacked Modal</h2>
+
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_2_0"
+    aria-controls="example_2_0"
+    aria-expanded="false"
+  >
+    Open Modal
+  </button>
+
+  <!-- Modal: start -->
+  <dialog id="example_2_0" class="Modal Modal--composed" aria-labelledby="example_2_0_title">
+
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_2_0_title" class="ModalHeader__title">Modal Title</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_2_0"
+          aria-controls="example_2_0"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button
+            type="button"
+            class="Button Button--primary Button--medium"
+            data-toggle="modal"
+            data-target="#example_2_1"
+            aria-controls="example_2_1"
             aria-expanded="false"
           >
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
+            Open stacked dialog
           </button>
-        </header>
-        <!-- ModalHeader: end -->
-
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <div class="TextField mb-400">
-            <label for="textfield" class="TextField__label">Label</label>
-            <input type="text" id="textfield" class="TextField__input" placeholder="TextField" />
-          </div>
-          <p>
-            The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
-          </p>
-          <!-- Content: end -->
         </div>
-        <!-- ModalBody: end -->
+      </footer>
+      <!-- ModalFooter: end -->
 
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__actions">
-            <button type="submit" class="Button Button--primary Button--medium">
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-dismiss="modal"
-              data-target="#example_3"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
+    </article>
+    <!-- ModalDialog: end -->
 
-      </form>
-      <!-- ModalDialog: end -->
+  </dialog>
+  <!-- Modal: end -->
+  <!-- Modal: start -->
+  <dialog id="example_2_1" class="Modal Modal--composed" aria-labelledby="example_2_1_title">
 
-    </dialog>
-    <!-- Modal: end -->
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
 
-  </section>
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_2_1_title" class="ModalHeader__title">Stacked Modal Title</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_2_1"
+          aria-controls="example_2_1"
+          aria-expanded="false"
+        >
+          <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p>
+          Dolor quis metus a lorem, et elit pulvinar ligula condimentum non congue rhoncus molestie, at sem
+          viverra maximus nunc. Posuere pretium accumsan, pharetra vel integer sit amet volutpat neque fringilla,
+          non mauris erat id augue libero. Porta non congue, et iaculis et vehicula convallis non purus placerat
+          cursus, rhoncus laoreet nec et elit. Proin luctus, bibendum adipiscing ut ollicitudin vehicula nisi
+          nunc et, sollicitudin eget tristique nec commodo. Porttitor ligula, tellus vehicula arcu vestibulum
+          sed rutrum placerat, dui quis facilisis eget. Suscipit molestie, nibh maximus enim vestibulum aenean
+          ut libero sed imperdiet, curabitur et elit venenatis posuere.
+          <br />
+          Sapien vitae, dui sollicitudin nullam dolor quis nec nulla sapien, diam a ollicitudin non nulla nisl.
+          Quis orci porta, ac nec sapien ornare imperdiet a vel convallis, adipiscing ullamcorper lectus quis
+          pharetra. At nullam rutrum, nisl eget sit amet pulvinar ultricies nec porta, diam a sem odio a mauris
+          eu. Suscipit sodales, fusce ante cursus convallis dui vel dolor potenti nulla fusce gravida.
+        </p>
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button type="submit" class="Button Button--primary Button--medium">
+            Primary action
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_2_1"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </article>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+</section>
 
 <section class="docs-Section">
 

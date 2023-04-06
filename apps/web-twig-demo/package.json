@@ -1,0 +1,28 @@
+{
+  "name": "@lmc-eu/spirit-web-twig-demo",
+  "version": "1.0.1",
+  "description": "Spirit Web Twig Demo",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@lmc-eu/spirit-web": "^0.43.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.21.0",
+    "@babel/preset-env": "7.20.2",
+    "@hotwired/stimulus": "3.2.1",
+    "@symfony/stimulus-bridge": "3.2.1",
+    "@symfony/webpack-encore": "4.2.0",
+    "core-js": "3.29.1",
+    "regenerator-runtime": "0.13.11",
+    "webpack": "5.76.1",
+    "webpack-cli": "4.10.0",
+    "webpack-notifier": "1.15.0"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  }
+}

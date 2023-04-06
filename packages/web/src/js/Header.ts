@@ -1,8 +1,7 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { reflow } from './utils';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import { enableToggleTrigger, reflow, ScrollControl } from './utils';
 
 const NAME = 'header';
 const HEADER_TOGGLE_SELECTOR = '[data-toggle="header"]';
@@ -15,6 +14,7 @@ const BACKDROP_CLASSNAME = 'Header__backdrop';
 class Header extends BaseComponent {
   isShown: boolean;
   backdrop: HTMLElement;
+  scrollControl: ScrollControl;
 
   static get NAME() {
     return NAME;
@@ -25,6 +25,7 @@ class Header extends BaseComponent {
 
     this.isShown = false;
     this.backdrop = Header.initBackdrop(element);
+    this.scrollControl = new ScrollControl(element);
   }
 
   static initBackdrop(target: HTMLElement) {
@@ -95,6 +96,8 @@ class Header extends BaseComponent {
 
     this.addEventListeners();
     this.isShown = true;
+
+    this.scrollControl.disableScroll();
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -121,6 +124,8 @@ class Header extends BaseComponent {
 
     this.removeEventListeners();
     this.isShown = false;
+
+    this.scrollControl.enableScroll();
   }
 
   toggle(targetElement: HTMLElement | null, event: Event & { target: HTMLElement }) {

@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import Alert from './Alert';
 
 export default {
@@ -11,6 +12,7 @@ export default {
       },
     },
   },
+  argTypes,
 } as ComponentMeta<typeof Alert>;
 
 export { default as Alert } from './stories/Alert';

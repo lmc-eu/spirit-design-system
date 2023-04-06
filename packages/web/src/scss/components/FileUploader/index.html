@@ -1,0 +1,323 @@
+{{#> layout/plain }}
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Input</h2>
+
+  <!-- Interaction states demo: start -->
+  <form class="mb-800">
+    <label for="has_drag_and_drop" class="CheckboxField mr-600">
+      <input type="checkbox" id="has_drag_and_drop" class="CheckboxField__input" onchange="toggleHasDragAndDrop()" autocomplete="off" checked />
+      <span class="CheckboxField__text">
+        <span class="CheckboxField__label">Has drag and drop</span>
+        <span class="CheckboxField__helperText">
+          To be
+          <a href="https://css-tricks.com/drag-and-drop-file-uploading/#aa-feature-detection" target="_blank">auto-detected</a>
+        </span>
+      </span>
+    </label>
+    <label for="is_dragging" id="is_dragging_toggle" class="CheckboxField">
+      <input type="checkbox" id="is_dragging" class="CheckboxField__input" onchange="toggleIsDragging()" autocomplete="off" />
+      <span class="CheckboxField__text">
+        <span class="CheckboxField__label">Is dragging</span>
+      </span>
+    </label>
+  </form>
+  <!-- Interaction states demo: end -->
+
+  <!-- FileUploader: start -->
+  <div id="example_1" class="FileUploader">
+
+    <!-- FileUploaderInput: start -->
+    <div class="FileUploaderInput has-drag-and-drop">
+      <label for="fileUpload" class="FileUploaderInput__label">Label</label>
+      <div class="FileUploaderInput__dropZone">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#upload" />
+        </svg>
+        <label for="fileUpload" class="FileUploaderInput__dropZoneLabel">
+          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+        </label>
+        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" />
+      </div>
+    </div>
+    <!-- FileUploaderInput: end -->
+
+  </div>
+  <!-- FileUploader: end -->
+
+  <!-- Interaction states demo control: start -->
+  <script>
+    const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
+    const IS_DRAGGING_CLASS_NAME = 'is-dragging';
+    const CHECKBOX_DISABLED_CLASS_NAME = 'CheckboxField--disabled';
+
+    const fileUploaderInputElement = document.querySelector('#example_1 > .FileUploaderInput');
+    const isDraggingToggleElement = document.querySelector('#is_dragging_toggle');
+    const isDraggingToggleInputElement = isDraggingToggleElement.querySelector('input');
+
+    const toggleHasDragAndDrop = () => {
+      fileUploaderInputElement.classList.toggle(IS_DRAGGABLE_CLASS_NAME);
+      fileUploaderInputElement.classList.remove(IS_DRAGGING_CLASS_NAME);
+      isDraggingToggleElement.classList.toggle(CHECKBOX_DISABLED_CLASS_NAME);
+      isDraggingToggleInputElement.checked = false;
+      isDraggingToggleInputElement.toggleAttribute('disabled');
+    }
+
+    const toggleIsDragging = () => fileUploaderInputElement.classList.toggle(IS_DRAGGING_CLASS_NAME);
+  </script>
+  <!-- Interaction states demo control: end -->
+
+</section>
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Input Validation States</h2>
+
+  <div class="docs-FormFieldGrid">
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput FileUploaderInput--success has-drag-and-drop">
+        <label for="fileUploadSuccess" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <div class="FileUploaderInput__dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadSuccess" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          <input type="file" id="fileUploadSuccess" name="attachment" class="FileUploaderInput__input" required />
+        </div>
+        <div class="FileUploaderInput__message">Success validation message</div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput FileUploaderInput--warning has-drag-and-drop">
+        <label for="fileUploadWarning" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <div class="FileUploaderInput__dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadWarning" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          <input type="file" id="fileUploadWarning" name="attachment" class="FileUploaderInput__input" required />
+        </div>
+        <div class="FileUploaderInput__message">Warning validation message</div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput FileUploaderInput--danger has-drag-and-drop">
+        <label for="fileUploadDanger" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <div class="FileUploaderInput__dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadDanger" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          <input type="file" id="fileUploadDanger" name="attachment" class="FileUploaderInput__input" required />
+        </div>
+        <div class="FileUploaderInput__message">Danger validation message</div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+  </div>
+
+</section>
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Input with Attachment</h2>
+
+  <div class="docs-FormFieldGrid">
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput has-drag-and-drop">
+        <label for="fileUploadWithAttachments" class="FileUploaderInput__label">Label</label>
+        <div class="FileUploaderInput__dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadWithAttachments" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          <input type="file" id="fileUploadWithAttachments" name="attachment" class="FileUploaderInput__input" />
+        </div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments">
+
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="text-truncate">My resume.docx</span>
+          <button type="button" class="FileUploaderAttachment__remove">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
+
+      </ul>
+      <!-- FileUploaderList: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput FileUploaderInput--danger has-drag-and-drop">
+        <label for="fileUploadWithAttachmentsAndValidation" class="FileUploaderInput__label">Label</label>
+        <div class="FileUploaderInput__dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadWithAttachmentsAndValidation" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          <input type="file" id="fileUploadWithAttachmentsAndValidation" name="attachment" class="FileUploaderInput__input" />
+        </div>
+        <div class="FileUploaderInput__message">Danger validation message</div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-2" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-2">
+
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="text-truncate">My resume.docx</span>
+          <button type="button" class="FileUploaderAttachment__remove">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
+
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="text-truncate">
+            My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf
+          </span>
+          <button type="button" class="FileUploaderAttachment__remove">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
+
+      </ul>
+      <!-- FileUploaderList: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+  </div>
+
+</section>
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Fluid Width</h2>
+
+  <!-- FileUploader: start -->
+  <div class="FileUploader FileUploader--fluid">
+
+    <!-- FileUploaderInput: start -->
+    <div class="FileUploaderInput has-drag-and-drop">
+      <label for="fileUploadFluid" class="FileUploaderInput__label">Label</label>
+      <div class="FileUploaderInput__dropZone">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#upload" />
+        </svg>
+        <label for="fileUploadFluid" class="FileUploaderInput__dropZoneLabel">
+          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+        </label>
+        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        <input type="file" id="fileUploadFluid" name="attachment" class="FileUploaderInput__input" />
+      </div>
+    </div>
+    <!-- FileUploaderInput: end -->
+
+    <!-- FileUploaderList: start -->
+    <h3 id="attachments-3" hidden>Attachments</h3>
+    <ul class="FileUploaderList" aria-labelledby="attachments-3">
+
+      <!-- FileUploaderAttachment: start -->
+      <li class="FileUploaderAttachment">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#file" />
+        </svg>
+        <span class="text-truncate">My resume.docx</span>
+        <button type="button" class="FileUploaderAttachment__remove">
+          <span class="accessibility-hidden">Remove</span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+        </button>
+      </li>
+      <!-- FileUploaderAttachment: end -->
+
+    </ul>
+    <!-- FileUploaderList: end -->
+
+  </div>
+  <!-- FileUploader: end -->
+
+</section>
+
+{{/layout/plain }}

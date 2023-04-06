@@ -1,6 +1,6 @@
 {
   "name": "lmc/spirit-web-twig-bundle",
-  "version": "1.27.0",
+  "version": "1.28.1",
   "type": "symfony-bundle",
   "description": "This is Symfony bundle with twig implementation of the Spirit Design System components and extends the twig implementation with an HTML-like syntax.",
   "license": "MIT",
@@ -21,7 +21,7 @@
   },
   "require": {
     "php": "^7.4 || ^8.1",
-    "lmc/twigx-bundle": "^3.0",
+    "lmc/twigx-bundle": "^3.0.0 !=3.2.0",
     "symfony/config": "^4.4 || ^5.4 || ^6.1",
     "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.1",
     "symfony/http-foundation": "^4.4 || ^5.4 || ^6.1",
@@ -52,12 +52,18 @@
       "@ecs",
       "@phpunit",
       "@phpstan"
+    ],
+    "analyze": [
+      "@ecs",
+      "@phpstan"
     ]
   },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "symfony/flex": true,
+      "symfony/runtime": true
     }
   }
 }

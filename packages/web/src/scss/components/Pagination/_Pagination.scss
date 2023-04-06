@@ -26,11 +26,13 @@
 
     &:focus,
     &:hover {
+        text-decoration: none;
         color: theme.$item-hover-color;
         background-color: theme.$item-hover-background;
     }
 
     &:active {
+        text-decoration: none;
         color: theme.$item-active-color;
         background-color: theme.$item-active-background;
     }

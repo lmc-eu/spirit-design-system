@@ -13,9 +13,9 @@
 {%- set _isOpenClassName = _isOpen ? 'is-open' : null -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id="' ~ _id ~ '"' : null -%}
-{%- set _labelledIdAttr = _labelledById ? 'aria-labelledby="' ~ _labelledById ~ '"' : null -%}
-{%- set _dataParentAttr = _parent ? 'data-parent="' ~ _parent ~ '"' : null -%}
+{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _labelledIdAttr = _labelledById ? 'aria-labelledby=' ~ _labelledById : null -%}
+{%- set _dataParentAttr = _parent ? 'data-parent=' ~ _parent : null -%}
 
 {# Miscellaneous #}
 {%- set _collapseClassNames = [ _rootClassName, _isOpenClassName ] -%}
@@ -24,10 +24,10 @@
 
 <div
     {{ mainProps(_mainPropsWithoutId) }}
-    {{ _idAttr | raw }}
+    {{ _idAttr }}
     {{ classProp(_collapseClassNames) }}
-    {{ _labelledIdAttr | raw }}
-    {{ _dataParentAttr | raw }}
+    {{ _labelledIdAttr }}
+    {{ _dataParentAttr }}
 >
     <div class="{{ _collapseClassName }}">
         <div {{ classProp(_contentClassNames) }}>

@@ -1,14 +1,18 @@
 import React from 'react';
 import { ComponentStory } from '@storybook/react';
-import Header from '../Header';
 import SpiritLogo from './SpiritLogo';
-import { SpiritHeaderProps } from '../../../types';
+import { HeaderModernProps } from '../../../types';
+import { Link } from '../../Link';
+import Header from '../Header';
 
-const Story: ComponentStory<typeof Header> = (args: SpiritHeaderProps) => <Header {...args} />;
+const Story: ComponentStory<typeof Header> = (args: HeaderModernProps) => <Header {...args} />;
 
 Story.args = {
-  children: <SpiritLogo />,
-  isInverted: true,
+  children: (
+    <Link href="#">
+      <SpiritLogo />
+    </Link>
+  ),
 };
 
 export default Story;

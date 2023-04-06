@@ -13,6 +13,12 @@ export const ActionColors = {
   INVERTED: 'inverted',
 } as const;
 
+export const ActionLinkColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  INVERTED: 'inverted',
+} as const;
+
 export const EmotionColors = {
   SUCCESS: 'success',
   INFORMATIVE: 'informative',
@@ -23,7 +29,8 @@ export const EmotionColors = {
 export const TextColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
-  INVERTED: 'inverted',
+  PRIMARY_INVERTED: 'primary-inverted',
+  SECONDARY_INVERTED: 'secondary-inverted',
 } as const;
 
 /* Size */

@@ -11,7 +11,6 @@ const Story: ComponentStory<typeof TextField> = (args: SpiritTextFieldProps) => 
 
 Story.args = {
   id: 'textfield-example',
-  label: 'Label',
 };
 
 export default Story;

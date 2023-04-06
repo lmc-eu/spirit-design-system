@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://github.com/lmc-eu/spirit-design-system/(pull|issues|commit)/"
+    },
+    {
+      "pattern": "^https://github.com/projects/lmc-eu/repos/spirit-design-system/"
+    },
+    {
+      "pattern": "^http://localhost"
+    }
+  ]
+}

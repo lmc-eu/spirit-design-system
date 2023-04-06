@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import Pill from './Pill';
 
 export default {
@@ -11,6 +12,7 @@ export default {
       },
     },
   },
+  argTypes,
 } as ComponentMeta<typeof Pill>;
 
 export { default as Pill } from './stories/Pill';

@@ -1,0 +1,29 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+{# Dropdown Basic usage with default align #}
+{% include '@components/Dropdown/stories/DropdownBasic.twig' %}
+
+{# Dropdown Usage with align to top right #}
+{% include '@components/Dropdown/stories/DropdownTopRight.twig' %}
+
+{# Usage with disabled auto close #}
+{% include '@components/Dropdown/stories/DropdownDisabledAutoclose.twig' %}
+
+{# Longer content #}
+{% include '@components/Dropdown/stories/DropdownLongerContent.twig' %}
+
+{# Longer content full width feature #}
+{% include '@components/Dropdown/stories/DropdownFullwidth.twig' %}
+
+{# Full-width dropdown on mobile #}
+{% include '@components/Dropdown/stories/DropdownFullwidthMobile.twig' %}
+
+{# Full-width mode 'all' #}
+{% include '@components/Dropdown/stories/DropdownFullwidthAll.twig' %}
+
+{# Full-width mode 'mobile-only' #}
+{% include '@components/Dropdown/stories/DropdownFullwidthMobileOnly.twig' %}
+
+{% endblock %}

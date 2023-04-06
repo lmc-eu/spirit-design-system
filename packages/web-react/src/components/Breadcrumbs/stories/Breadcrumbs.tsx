@@ -16,7 +16,6 @@ const Story: ComponentStory<typeof Breadcrumbs> = <T extends ElementType = 'nav'
 );
 
 Story.args = {
-  goBackTitle: 'Back',
   items: [
     {
       title: 'Root',

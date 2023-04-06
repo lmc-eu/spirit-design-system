@@ -1,0 +1,4 @@
+spirit_web_twig:
+  icons:
+    paths:
+      - '%kernel.project_dir%/../spirit-web-twig-bundle/static'

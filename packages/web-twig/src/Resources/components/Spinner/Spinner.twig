@@ -1,0 +1,17 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _class = props.class | default(null) -%}
+{%- set _color = props.color | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _color ? _spiritClassPrefix ~ 'text-' ~ _color : '' -%}
+{%- set _rootAnimationClassName = _spiritClassPrefix ~ 'animation-spin-clockwise' -%}
+
+{# Miscellaneous #}
+{%- set _classNames = [ _rootClassName, _rootAnimationClassName, _class ] -%}
+{%- set _mainPropsWithoutLocal = props | filter((value, prop) => prop != 'color' and prop != 'class') -%}
+
+{% embed "@spirit/icon.twig" with { props: {
+    name: 'spinner',
+    class: _classNames | join(' ') | trim
+} | merge(_mainPropsWithoutLocal) } %}{% endembed %}

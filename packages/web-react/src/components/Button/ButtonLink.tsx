@@ -2,42 +2,41 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
-import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
+import { useButtonLinkAriaProps } from './useButtonAriaProps';
 
 const defaultProps = {
   color: 'primary',
-  href: '#',
   isBlock: false,
   isDisabled: false,
   isSquare: false,
-  elementType: 'a',
   size: 'medium',
 };
 
-export const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps>(
-  <T extends ElementType = 'a', C = void, S = void>(
-    props: SpiritButtonLinkProps<T, C, S>,
-    ref: ForwardedRef<HTMLAnchorElement>,
-  ): JSX.Element => {
-    const { elementType: ElementTag = 'a', children, ...restProps } = props;
-    const { buttonProps } = useButtonAriaProps(props);
-    const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
-    const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_ButtonLink'] }] */
+const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
+  props: SpiritButtonLinkProps<T, C, S>,
+  ref: ForwardedRef<HTMLAnchorElement>,
+) => {
+  const { elementType: ElementTag = 'a', ...restProps } = props;
 
-    return (
-      <ElementTag
-        {...otherProps}
-        {...styleProps}
-        {...buttonProps}
-        ref={ref}
-        className={classNames(classProps, styleProps.className)}
-      >
-        {children}
-      </ElementTag>
-    );
-  },
-);
+  const { buttonLinkProps } = useButtonLinkAriaProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+
+  return (
+    <ElementTag
+      {...otherProps}
+      {...buttonLinkProps}
+      ref={ref}
+      className={classNames(classProps, styleProps.className)}
+      style={styleProps.style}
+    />
+  );
+};
+
+export const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
 
 ButtonLink.defaultProps = defaultProps;
 

@@ -14,6 +14,7 @@
     "yarn": "~1.22.10"
   },
   "workspaces": [
+    "apps/*",
     "packages/*",
     "exporters/*"
   ],
@@ -56,6 +57,7 @@
     "@lmc-eu/conventional-changelog-lmc-github": "2.3.1",
     "@lmc-eu/eslint-config-react": "1.1.1",
     "@lmc-eu/prettier-config": "1.2.4",
+    "@omlet/cli": "1.0.1-beta.15",
     "@rollup/plugin-babel": "6.0.3",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "5.0.2",

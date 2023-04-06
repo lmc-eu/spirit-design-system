@@ -18,17 +18,22 @@
 
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
-{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~ '"' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootSquareClassName, _class ] -%}
 {%- set _allowedAttributes = [ 'name' ] -%}
 
+{# Deprecations #}
+{% if _onClick %}
+    {% deprecated 'Button: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
+
 <button
     {{ mainProps(props, _allowedAttributes) }}
     {{ classProp(_classNames) }}
     type="{{ _type }}"
-    {{ _disabledAttr | raw }}
+    {{ _disabledAttr }}
     {{ _onClickAttr | raw }}
 >
     {%- block content %}{% endblock %}

@@ -24,6 +24,6 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 | `iconName`     | `string`                                     | Based on `color` | no       | Icon used in Alert         |
 | `isCentered` . | `boolean`                                    | `false`          | no       | If true, Alert is centered |
 
-For detailed information see [Alert](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/components/Alert/README.md) component
+For detailed information see [Alert](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Alert/README.md) component
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color

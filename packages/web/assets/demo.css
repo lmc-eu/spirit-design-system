@@ -10,10 +10,12 @@
 
 .docs-TileLink:hover,
 .docs-TileLink:focus {
+  text-decoration: none;
   border-color: #dbdbdb;
 }
 
 .docs-TileLink:active {
+  text-decoration: none;
   border-color: #d4d4d4;
 }
 

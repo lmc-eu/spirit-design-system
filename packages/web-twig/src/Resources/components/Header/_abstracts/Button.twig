@@ -10,6 +10,11 @@
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _class ] -%}
 
+{# Deprecations #}
+{% if _onClick %}
+    {% deprecated 'Header: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
+
 <button
     {{ mainProps(props) }}
     {{ classProp(_classNames) }}

@@ -1,17 +1,36 @@
+// 1. Enable fixed default link underline on hover and active states using `spirit-v1-link-underlined` on the root element, eg. body.
+//    This will be removed in v1 and the new default link underline will be the default.
+
 @use '@tokens' as tokens;
+@use '../settings/links';
 
 :any-link {
     text-decoration: none;
 }
 
 a {
+    text-decoration-skip-ink: links.$text-decoration-skip-ink;
+    text-underline-offset: links.$text-underline-offset;
     color: tokens.$action-link-primary-default;
-
-    &:hover {
-        color: tokens.$action-link-primary-hover;
-    }
 
     &:active {
         color: tokens.$action-link-primary-active;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: tokens.$action-link-primary-hover;
+        }
+    }
+}
+
+// 1.
+:where(.spirit-v1-links-underlined) a:active {
+    text-decoration: underline;
+}
+
+@media (hover: hover) {
+    :where(.spirit-v1-links-underlined) a:hover {
+        text-decoration: underline;
     }
 }

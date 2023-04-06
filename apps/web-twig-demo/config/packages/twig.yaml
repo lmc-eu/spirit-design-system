@@ -1,0 +1,9 @@
+twig:
+  default_path: '%kernel.project_dir%/templates'
+  paths:
+    '%kernel.project_dir%/../spirit-web-twig-bundle/src/Resources/components': 'components'
+    '%kernel.project_dir%/../spirit-web-twig-bundle/src/Resources/icons': 'icons'
+
+when@test:
+  twig:
+    strict_variables: true

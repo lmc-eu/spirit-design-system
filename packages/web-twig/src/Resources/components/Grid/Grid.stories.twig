@@ -1,0 +1,17 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+{# Equal Columns #}
+{% include '@components/Grid/stories/GridEqualColumns.twig' %}
+
+{# Responsive Columns #}
+{% include '@components/Grid/stories/GridResponsiveColumns.twig' %}
+
+{# Grid Span #}
+{% include '@components/Grid/stories/GridSpan.twig' %}
+
+{# Responsive Grid Span #}
+{% include '@components/Grid/stories/GridResponsiveGridSpan.twig' %}
+
+{% endblock %}

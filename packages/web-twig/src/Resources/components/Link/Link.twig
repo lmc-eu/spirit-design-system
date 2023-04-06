@@ -7,7 +7,6 @@
 {%- set _isUnderlined = props.isUnderlined | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
 {%- set _target = props.target | default(null) -%}
-{%- set _title = props.title | default(null) -%}
 
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
@@ -15,20 +14,26 @@
 {%- set _rootUnderlinedClassName = _isUnderlined ? _spiritClassPrefix ~ 'link-underlined' : null -%}
 
 {# Attributes #}
-{%- set _onClickAttr = _onClick ? 'onclick="' ~ _onClick ~'"' : null -%}
-{%- set _targetAttr = _target ? 'target="' ~ _target ~ '"' : null -%}
-{%- set _titleAttr = _title ? 'title="' ~ _title ~ '"' : null -%}
+{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
+{%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _class ] -%}
+{%- set _allowedAttributes = [
+    'title',
+] -%}
+
+{# Deprecations #}
+{% if _onClick %}
+    {% deprecated 'Link: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
+{% endif %}
 
 <a
-    {{ mainProps(props) }}
+    {{ mainProps(props, _allowedAttributes) }}
     href="{{ _href }}"
     {{ classProp(_classNames) }}
     {{ _onClickAttr | raw }}
-    {{ _targetAttr | raw }}
-    {{ _titleAttr | raw }}
+    {{ _targetAttr }}
 >
     {%- block content %}{% endblock %}
 </a>

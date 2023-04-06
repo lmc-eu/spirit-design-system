@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.28.1"></a>
+
+## [1.28.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.28.0...@lmc-eu/spirit-web-twig@1.28.1) (2023-03-23)
+
+### Bug Fixes
+
+- **web-twig:** Escape value attributtes in input components ([12219cf](https://github.com/lmc-eu/spirit-design-system/commit/12219cf)), closes [#DS-645](https://github.com/lmc-eu/spirit-design-system/issues/DS-645)
+- **web-twig:** Remove unfortunately commit index file ([0f598b7](https://github.com/lmc-eu/spirit-design-system/commit/0f598b7))
+
+### Chores
+
+- **web-twig:** Alert component story displayed in demo app ([c32b16f](https://github.com/lmc-eu/spirit-design-system/commit/c32b16f)), closes [#DS-299](https://github.com/lmc-eu/spirit-design-system/issues/DS-299)
+- **web-twig:** Build assets for demo app ([164511a](https://github.com/lmc-eu/spirit-design-system/commit/164511a)), closes [#DS-299](https://github.com/lmc-eu/spirit-design-system/issues/DS-299)
+- **web-twig:** Create default controller and template for local web ([27b6a9f](https://github.com/lmc-eu/spirit-design-system/commit/27b6a9f))
+- **web-twig:** Create new `spirit-web-twig-demo` app for local devel ([64fedb6](https://github.com/lmc-eu/spirit-design-system/commit/64fedb6))
+- **web-twig:** Create new `spirit-web-twig-demo` app for local devel ([6ec6756](https://github.com/lmc-eu/spirit-design-system/commit/6ec6756))
+- **web-twig:** Export ignore of Symfony files and directories ([098330f](https://github.com/lmc-eu/spirit-design-system/commit/098330f))
+- **web-twig:** Prepare development server for Symfony application ([b0d3d7b](https://github.com/lmc-eu/spirit-design-system/commit/b0d3d7b)), closes [#DS-469](https://github.com/lmc-eu/spirit-design-system/issues/DS-469), [#395](https://github.com/lmc-eu/spirit-design-system/issues/395)
+- **web-twig:** Prepare development server for Symfony application ([a8943cf](https://github.com/lmc-eu/spirit-design-system/commit/a8943cf)), closes [#DS-469](https://github.com/lmc-eu/spirit-design-system/issues/DS-469), [#395](https://github.com/lmc-eu/spirit-design-system/issues/395)
+- **web-twig:** Prepare multistage Docker build for hosting Symfony app ([2848ba0](https://github.com/lmc-eu/spirit-design-system/commit/2848ba0))
+- **web-twig:** Remove static directory with icons that were ([ccfc64a](https://github.com/lmc-eu/spirit-design-system/commit/ccfc64a))
+- **web-twig:** Render component detail in demo app ([254a8eb](https://github.com/lmc-eu/spirit-design-system/commit/254a8eb)), closes [#DS-299](https://github.com/lmc-eu/spirit-design-system/issues/DS-299)
+- **web-twig:** Respect override file of docker compose when starting ([844bcf4](https://github.com/lmc-eu/spirit-design-system/commit/844bcf4)), closes [#DS-469](https://github.com/lmc-eu/spirit-design-system/issues/DS-469), [#395](https://github.com/lmc-eu/spirit-design-system/issues/395)
+- **web-twig:** Setup minimul Symfony app for local webserver ([533d386](https://github.com/lmc-eu/spirit-design-system/commit/533d386))
+
+### Documentation
+
+- **web-twig:** Fix typo in message prop ([dbf1660](https://github.com/lmc-eu/spirit-design-system/commit/dbf1660))
+
+### Tests
+
+- **web-twig:** Fix typo in message prop ([308d933](https://github.com/lmc-eu/spirit-design-system/commit/308d933))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
+<a name="1.28.0"></a>
+
+# [1.28.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.27.0...@lmc-eu/spirit-web-twig@1.28.0) (2023-03-21)
+
+### Code Refactoring
+
+- **web-twig:** Unify internal prop name with public API of `ModalHeader` ([d15c3f0](https://github.com/lmc-eu/spirit-design-system/commit/d15c3f0))
+
+### Documentation
+
+- **web-twig:** Adding attributes to the component readme [#DS-604](https://github.com/lmc-eu/spirit-design-system/issues/DS-604) ([842f95d](https://github.com/lmc-eu/spirit-design-system/commit/842f95d))
+- **web-twig:** Fix internal links ([398f8f9](https://github.com/lmc-eu/spirit-design-system/commit/398f8f9))
+- **web-twig:** Paragraph indentation and typos ([f24dfc3](https://github.com/lmc-eu/spirit-design-system/commit/f24dfc3))
+
+### Features
+
+- **web-twig:** Introduce new `Header` with subcomponents [#DS-248](https://github.com/lmc-eu/spirit-design-system/issues/DS-248) ([9f5b7c4](https://github.com/lmc-eu/spirit-design-system/commit/9f5b7c4))
+
+### Tests
+
+- **web-twig:** Improve `Link` snapshot tests ([a7cbb87](https://github.com/lmc-eu/spirit-design-system/commit/a7cbb87))
+- **web-twig:** Offload the immense source of the Spirit logo into a partial ([7b7245c](https://github.com/lmc-eu/spirit-design-system/commit/7b7245c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.27.0"></a>
 
 # [1.27.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.26.0...@lmc-eu/spirit-web-twig@1.27.0) (2023-03-08)

@@ -3,17 +3,21 @@ DOCKER_COMP						= docker-compose
 DOCKER_PART_PHP_NAME	= php
 SHELL									= bash
 
+# Paths
+APP_DOCKER_DIR				= ../../apps/web-twig-demo/docker/
+DOCKER_PKG_DIR				= /srv/spirit-web-twig-bundle/
+
 # Docker containers
-PHP_CONT_PHP = cd ./docker/ && $(DOCKER_COMP) exec $(DOCKER_PART_PHP_NAME)
+PHP_CONT_PHP = cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec --workdir $(DOCKER_PKG_DIR) $(DOCKER_PART_PHP_NAME)
 
 # Executables
-PHP      = $(PHP_CONT_PHP) php
-COMPOSER = $(PHP_CONT_PHP) composer
-MAKE  	 = $(PHP_CONT_PHP) make
+PHP				= $(PHP_CONT_PHP) php
+COMPOSER	= $(PHP_CONT_PHP) composer
+MAKE			= $(PHP_CONT_PHP) make
 
 # Misc
-.DEFAULT_GOAL = help
-.PHONY        = help build up start down logs sh bash composer vendor make phpunit test analyze
+.DEFAULT_GOAL	= help
+.PHONY				= help build up start down logs sh bash composer vendor make phpunit test analyze
 
 ## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  —————————————————————————————————
 help: ## Outputs this help screen
@@ -21,19 +25,25 @@ help: ## Outputs this help screen
 
 ## —— Docker 🐳 ————————————————————————————————————————————————————————————————
 build: ## Builds the Docker images
-	cd ./docker/ && $(DOCKER_COMP) build --pull --no-cache
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) build --pull --no-cache
 
-up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" to docker-compose file (default docker-compose.yml)
-	@$(eval f ?= docker-compose.yml)
-	cd ./docker/ && $(DOCKER_COMP) --file $(f) up --detach
+up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" to `docker compose` file
+	@$(eval f ?=)
+	@upCommand="cd $(APP_DOCKER_DIR) && $(DOCKER_COMP)"; \
+	if [ -n "$f" ]; then \
+		upCommand+=" --file $(f)"; \
+	fi; \
+	upCommand+=" up --detach"; \
+	echo $$upCommand; \
+	eval $$upCommand
 
 start: build up vendor ## Build and start the containers
 
 down: ## Stop the docker hub
-	cd ./docker/ && $(DOCKER_COMP) down --remove-orphans
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) down --remove-orphans
 
 logs: ## Show live logs
-	cd ./docker/ && $(DOCKER_COMP) logs --tail=0 --follow
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs --tail=0 --follow
 
 bash: ## Connect to the PHP container
 	$(PHP_CONT_PHP) bash

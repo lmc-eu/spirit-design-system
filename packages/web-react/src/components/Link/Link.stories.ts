@@ -1,4 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
+import argTypes from './stories/argTypes';
 import Link from './Link';
 
 export default {
@@ -11,6 +12,7 @@ export default {
       },
     },
   },
+  argTypes,
 } as ComponentMeta<typeof Link>;
 
 export { default as Link } from './stories/Link';
