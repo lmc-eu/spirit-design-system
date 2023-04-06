@@ -4,12 +4,12 @@
 
   <section class="docs-Section">
 
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Components</h2>
+    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Helpers</h2>
     <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
 
-      {% for component in components %}
+      {% for helper in helpers %}
         <li>
-          <a href="components/{{ component | lower }}/" class="docs-TileLink">{{ component }}</a>
+          <a href="helpers/{{ helper | lower }}/" class="docs-TileLink">{{ helper | capitalize }}</a>
         </li>
       {% endfor %}
 

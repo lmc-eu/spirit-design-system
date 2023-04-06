@@ -9,3 +9,11 @@ component_view:
 icons_index:
   path: /icons
   controller: App\Controller\IconsController::index
+
+helpers_index:
+  path: /helpers
+  controller: App\Controller\HelpersController::index
+
+helper_view:
+  path: /helpers/{helper}
+  controller: App\Controller\HelpersController::show
