@@ -14,7 +14,7 @@ Modal is a composition of several subcomponents:
 
 ⚠️ **DEPRECATED:** The component `ModalComposed` — which is currently necessary to
 distinguish the composed version of Modal from the simple one — is deprecated
-and will be removed in next major version: the composed Modal will supersede the
+and will be removed in the next major version: the composed Modal will supersede the
 [Simple Modal](#simple-modal-deprecated) variant.
 
 ### ModalComposed
@@ -232,7 +232,7 @@ When you put it all together:
 
 A simple version of Modal.
 
-⚠️ **DEPRECATED:** Simple Modal will be removed in next major version in favour
+⚠️ **DEPRECATED:** Simple Modal will be removed in the next major version in favour
 of the composed Modal above.
 
 Basic example usage:
