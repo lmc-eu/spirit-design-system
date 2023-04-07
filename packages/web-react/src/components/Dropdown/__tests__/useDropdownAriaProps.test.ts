@@ -4,7 +4,7 @@ import { useDropdownAriaProps } from '../useDropdownAriaProps';
 describe('useDropdownAriaProps', () => {
   it('should return defaults', () => {
     const props = {
-      /** @deprecated Will be removed in next major version */
+      /** @deprecated Will be removed in the next major version. */
       breakpoint: undefined,
       fullWidthMode: undefined,
       id: 'test-dropdown-id',

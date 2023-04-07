@@ -8,7 +8,7 @@ export interface IconProps extends StyleProps, ChildrenProps, React.SVGAttribute
   boxSize?: number;
   /** Name of the icon */
   name: string;
-  /** Deprecated: Will be removed in next major version; Size of the icon */
+  /** Deprecated: Will be removed in the next major version; Size of the icon */
   size?: number;
   /** Title of the icon */
   title?: string;

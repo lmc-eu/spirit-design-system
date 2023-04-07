@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useDeprecatedMessage, useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritTagProps, StyleProps } from '../../types';
 import { useTagStyleProps } from './useTagStyleProps';
 
@@ -16,7 +16,7 @@ export const Tag = <T extends ElementType = 'span', C = void, S = void>(
 ): JSX.Element => {
   const {
     elementType,
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     tag,
     children,
     ...restProps
@@ -26,11 +26,14 @@ export const Tag = <T extends ElementType = 'span', C = void, S = void>(
 
   const ElementTag = tag || elementType || 'span';
 
-  useDeprecatedMessage({
+  useDeprecationMessage({
+    method: 'property',
     trigger: !!tag,
     componentName: 'Tag',
-    deprecatedPropName: 'tag',
-    newPropName: 'elementType',
+    propertyProps: {
+      deprecatedName: 'tag',
+      newName: 'elementType',
+    },
   });
 
   useDeprecationMessage({

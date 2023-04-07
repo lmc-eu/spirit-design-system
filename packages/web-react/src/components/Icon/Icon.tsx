@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDeprecatedMessage, useIcon, useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 
 const defaultProps = {
@@ -12,7 +12,7 @@ export const Icon = (props: IconProps): JSX.Element => {
     boxSize,
     name,
     title,
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     size,
     ariaHidden,
     ...restProps
@@ -20,11 +20,14 @@ export const Icon = (props: IconProps): JSX.Element => {
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  useDeprecatedMessage({
+  useDeprecationMessage({
+    method: 'property',
     trigger: !!size,
     componentName: 'Icon',
-    deprecatedPropName: 'size',
-    newPropName: 'boxSize',
+    propertyProps: {
+      deprecatedName: 'size',
+      newName: 'boxSize',
+    },
   });
 
   if (title) {
