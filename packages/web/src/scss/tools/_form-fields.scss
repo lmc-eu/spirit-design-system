@@ -100,44 +100,46 @@
 }
 
 @mixin input-field-validation-states($field-name, $shadow-x: null, $shadow-y: null) {
-    @each $variant-name, $variant-value in form-fields-theme.$box-field-variants {
+    @each $validation-state-name, $validation-state-value in form-fields-theme.$validation-states {
         @if $field-name == 'FileUploaderInput' {
-            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name}) > .#{$field-name}__dropZone {
-                border-color: map.get($variant-value, input-border-color);
+            :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
+                > .#{$field-name}__dropZone {
+                border-color: map.get($validation-state-value, input-border-color);
             }
         } @else {
-            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name}) > .#{$field-name}__input {
-                border-color: map.get($variant-value, input-border-color);
+            :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
+                > .#{$field-name}__input {
+                border-color: map.get($validation-state-value, input-border-color);
 
                 @if $field-name == 'CheckboxField' {
                     &:indeterminate,
                     &:checked {
-                        background-color: map.get($variant-value, input-border-color);
+                        background-color: map.get($validation-state-value, input-border-color);
                     }
                 }
 
                 @if $field-name == 'RadioField' {
                     &::before {
-                        background-color: map.get($variant-value, input-border-color);
-                        box-shadow: inset $shadow-x $shadow-y map.get($variant-value, input-border-color);
+                        background-color: map.get($validation-state-value, input-border-color);
+                        box-shadow: inset $shadow-x $shadow-y map.get($validation-state-value, input-border-color);
                     }
                 }
             }
         }
 
         @if $field-name == 'TextField' {
-            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
+            :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 .#{$field-name}__passwordToggle
                 > .#{$field-name}__input
                 ~ .#{$field-name}__passwordToggle__button::before {
-                border-color: map.get($variant-value, input-border-color);
+                border-color: map.get($validation-state-value, input-border-color);
             }
         }
 
         @if $field-name != 'CheckboxField' or $field-name != 'RadioField' {
-            :is(.#{$field-name}--#{$variant-name}, .#{$field-name}.has-#{$variant-name})
+            :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 :is(.#{$field-name}__message, [data-element='validator_message']) {
-                color: map.get($variant-value, message-color);
+                color: map.get($validation-state-value, message-color);
             }
         }
     }
