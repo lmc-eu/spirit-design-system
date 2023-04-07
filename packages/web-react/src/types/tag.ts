@@ -6,7 +6,7 @@ export type TagColor<C> = EmotionColorsDictionaryType | 'default' | 'neutral' | 
 
 export type TagSize<S> = SizesDictionaryType | S;
 
-/** @deprecated Will be removed in next major version */
+/** @deprecated Will be removed in the next major version. */
 export type TagTheme = 'light' | 'dark';
 
 export interface SpiritTagProps<T extends ElementType = 'span', C = void, S = void>
@@ -17,8 +17,8 @@ export interface SpiritTagProps<T extends ElementType = 'span', C = void, S = vo
   elementType?: T | JSXElementConstructor<unknown>;
   isSubtle?: boolean;
   size?: TagSize<S>;
-  /** @deprecated Will be removed in next major version */
+  /** @deprecated Will be removed in the next major version. */
   tag?: T | JSXElementConstructor<unknown>;
-  /** @deprecated Will be removed in next major version */
+  /** @deprecated Will be removed in the next major version. */
   theme?: TagTheme;
 }

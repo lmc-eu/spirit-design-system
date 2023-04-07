@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useStyleProps, useDeprecatedMessage } from '../../hooks';
+import { useStyleProps, useDeprecationMessage } from '../../hooks';
 import { ModalComposedFooterProps } from '../../types';
 import { useModalComposedStyleProps } from './useModalComposedStyleProps';
 
@@ -10,11 +10,14 @@ const ModalComposedFooter = (props: ModalComposedFooterProps) => {
   const { classProps } = useModalComposedStyleProps({ footerAlignment: alignmentX || align });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  useDeprecatedMessage({
+  useDeprecationMessage({
+    method: 'property',
     trigger: !!align,
     componentName: 'ModalComposedFooter',
-    deprecatedPropName: 'align',
-    newPropName: 'alignmentX',
+    propertyProps: {
+      deprecatedName: 'align',
+      newName: 'alignmentX',
+    },
   });
 
   return (

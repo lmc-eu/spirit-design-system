@@ -2,7 +2,7 @@ import { Booleanish, ClickEvent, DropdownBreakpoint, DropdownFullWidthMode } fro
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';
-/** @deprecated Will be removed in next major version */
+/** @deprecated Will be removed in the next major version. */
 const NAME_DATA_BREAKPOINT = 'data-breakpoint';
 const NAME_DATA_FULLWIDTHMODE = 'data-fullwidthmode';
 
@@ -19,7 +19,7 @@ export interface UseDropdownAriaPropsProps {
   /** toggle callback */
   toggleHandler: (event: ClickEvent) => void;
   /** breakpoint */
-  /** @deprecated Will be removed in next major version */
+  /** @deprecated Will be removed in the next major version. */
   breakpoint: DropdownBreakpoint | undefined;
   fullWidthMode: DropdownFullWidthMode | undefined;
 }
@@ -28,7 +28,7 @@ export interface UseDropdownAriaPropsReturn {
   /** content returned props */
   contentProps: {
     id: string;
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     [NAME_DATA_BREAKPOINT]?: DropdownBreakpoint | undefined;
     [NAME_DATA_FULLWIDTHMODE]?: keyof typeof fullWidthModeKeys | undefined;
   };

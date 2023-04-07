@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ElementType } from 'react';
-import { useClassNamePrefix, useDeprecatedMessage } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
 import { SpiritTagProps } from '../../types';
 
 export interface TagStyles {
@@ -19,21 +19,24 @@ export function useTagStyleProps<T extends ElementType = 'span', C = void, S = v
   const TagColorClass = `${TagClass}--${color}`;
   const TagSizeClass = `${TagClass}--${size}`;
   const TagSubtleClass = `${TagClass}--subtle`;
-  /** @deprecated Will be removed in next major version */
+  /** @deprecated Will be removed in the next major version. */
   const TagThemeClass = `${TagClass}--${theme}`;
   const classProps = classNames(TagClass, {
     [TagColorClass]: color,
     [TagSizeClass]: size,
     [TagSubtleClass]: isSubtle,
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     [TagThemeClass]: !isSubtle && theme,
   });
 
-  useDeprecatedMessage({
+  useDeprecationMessage({
+    method: 'property',
     trigger: !!theme,
     componentName: 'Tag',
-    deprecatedPropName: 'theme',
-    newPropName: 'isSubtle',
+    propertyProps: {
+      deprecatedName: 'theme',
+      newName: 'isSubtle',
+    },
   });
 
   return {

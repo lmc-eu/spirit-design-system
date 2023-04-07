@@ -1,4 +1,4 @@
-/** @deprecated Will be removed in next major version */
+/** @deprecated Will be removed in the next major version. */
 // TODO: Remove this entire story in favor of fullWidthMode
 // Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */

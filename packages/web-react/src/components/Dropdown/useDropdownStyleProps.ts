@@ -22,7 +22,7 @@ export const useDropdownStyleProps = (
   const { isOpen, isFullWidth, placement = DropdownPlacements.BOTTOM_LEFT, ...modifiedProps } = props;
   const dropdownClass = useClassNamePrefix('Dropdown');
   const dropdownWrapperClass = `${dropdownClass}Wrapper`;
-  /** @deprecated Will be removed in next major version */
+  /** @deprecated Will be removed in the next major version. */
   const dropdownFullWidthClass = `${dropdownClass}--fullWidth`;
   const dropdownBottomClass = `${dropdownClass}--bottom`;
   const dropdownTopClass = `${dropdownClass}--top`;
@@ -37,7 +37,7 @@ export const useDropdownStyleProps = (
     'top-right': classNames(dropdownTopClass, dropdownRightClass),
   };
   const dropdownClassName = classNames(dropdownClass, openClass, {
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     [dropdownFullWidthClass]: isFullWidth,
     [dropdownPlacementClassNames[placement]]: placement,
   });
