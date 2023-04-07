@@ -12,7 +12,7 @@
     background-color: theme.$background;
     box-shadow: theme.$shadow;
 
-    /** @deprecated Will be removed in next major version */
+    /** @deprecated Will be removed in the next major version. */
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         &[data-breakpoint='#{$breakpoint-name}'] {
             @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
@@ -33,9 +33,9 @@
     }
 }
 
-/** @deprecated Will be removed in next major version */
+/** @deprecated Will be removed in the next major version. */
 .Dropdown[data-breakpoint],
-/** @deprecated Will be removed in next major version */
+/** @deprecated Will be removed in the next major version. */
 .Dropdown--fullWidth {
     width: 100%;
 }

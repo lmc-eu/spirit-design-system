@@ -2,8 +2,9 @@
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-/** @deprecated Will be removed in the next major version */
+/** @deprecated Will be removed in the next major version. */
 $_tag-colors-deprecated: default;
+
 $_tag-colors: neutral;
 
 $color-dictionary: list.join(dictionaries.$emotion-colors, list.join($_tag-colors-deprecated, $_tag-colors));
@@ -14,10 +15,12 @@ $color-dictionary-config: (
 );
 
 $color-dictionary-overrides: (
-    /** @deprecated Will be removed in the next major version */ default:
+    // @deprecated Will be removed in the next major version
+    default:
         (
             background-color: tokens.$background-inverted,
         ),
+
     neutral: (
         background-color: tokens.$background-inverted,
     )
@@ -29,11 +32,13 @@ $subtle-color-dictionary-config: (
 );
 
 $subtle-color-dictionary-overrides: (
-    /** @deprecated Will be removed in the next major version */ default:
+    // @deprecated Will be removed in the next major version
+    default:
         (
             color: tokens.$text-primary-default,
             background-color: tokens.$background-cover,
         ),
+
     neutral: (
         color: tokens.$text-primary-default,
         background-color: tokens.$background-cover,

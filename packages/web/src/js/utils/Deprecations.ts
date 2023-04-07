@@ -7,7 +7,7 @@ const deprecatedDataAttribute = (
   if (element.dataset[deprecatedAttribute]) {
     // eslint-disable-next-line no-console
     console.warn(
-      `Deprecation warning (${componentName}): "${deprecatedAttribute}" property will be replaced in next major version. Please use "${newAttribute}" instead. ♻️️`,
+      `Deprecation warning (${componentName}): "${deprecatedAttribute}" property will be replaced in the next major version. Please use "${newAttribute}" instead. ♻️️`,
     );
   }
 };
