@@ -8,7 +8,7 @@
 @use '../../tools/breakpoint';
 @use 'theme';
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 .Modal {
     position: fixed;
     top: 0;
@@ -32,7 +32,7 @@
     }
 }
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 .Modal__content {
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@
     }
 }
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 .Modal__dialog {
     position: relative;
     display: flex;
@@ -70,7 +70,7 @@
     }
 }
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 // Migration: Rename to `Modal`.
 .Modal--composed {
     --modal-scale: #{theme.$transition-scale-ratio};
@@ -119,7 +119,7 @@
     }
 }
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 // Migration: Rename to `Modal`.
 .Modal--composed[open] {
     --modal-scale: 1;
@@ -141,7 +141,7 @@
     }
 }
 
-// @deprecated Will be removed in next major version.
+// @deprecated Will be removed in the next major version.
 .Modal__header {
     display: flex;
     align-items: center;
