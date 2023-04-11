@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "php": "^7.4",
+    "php": "^8.0",
     "ext-ctype": "*",
     "ext-iconv": "*",
     "lmc/spirit-web-twig-bundle": "^1.27",
