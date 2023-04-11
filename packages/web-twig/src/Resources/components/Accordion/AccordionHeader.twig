@@ -2,9 +2,10 @@
 {%- set props = props | default([]) -%}
 {%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
-{%- set _for = props.for -%}
 {%- set _elementType = (props.elementType is defined) ? props.elementType : 'h3' -%}
+{%- set _for = props.for -%}
 {%- set _isOpen = props.isOpen | default(false) | boolprop -%}
+{%- set _unsafeSlot = props.UNSAFE_slot | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Accordion__itemHeader' -%}
@@ -38,9 +39,9 @@
         {% block content %}{% endblock %}
     </button>
     <span class="{{ _sideClassName }}">
-        {% if slot is defined %}
+        {% if _unsafeSlot %}
             <span class="{{ _slotClassName }}">
-                {% block slot %}{% endblock %}
+                {{ _unsafeSlot | raw }}
             </span>
         {% endif %}
         <span class="{{ _iconClassName }}">

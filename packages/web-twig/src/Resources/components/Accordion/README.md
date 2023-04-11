@@ -7,11 +7,7 @@ This is Twig implementation of the [Accordion] component.
 ```html
 <Accordion>
   <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader
-      id="AccordionItemExample0Header"
-      for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
-    >
+    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
@@ -19,11 +15,7 @@ This is Twig implementation of the [Accordion] component.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader
-      id="AccordionItemExample1Header"
-      for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
-    >
+    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header">
@@ -39,11 +31,7 @@ This is Twig implementation of the [Accordion] component.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample3">
-    <AccordionHeader
-      id="AccordionItemExample3Header"
-      for="AccordionItemExample3Content"
-      slot="<Link href='#'>Link</Link>"
-    >
+    <AccordionHeader id="AccordionItemExample3Header" for="AccordionItemExample3Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample3Content" labelledById="AccordionItemExample3Header">
@@ -59,11 +47,7 @@ This is Twig implementation of the [Accordion] component.
 ```html
 <Accordion>
   <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader
-      id="AccordionItemExample0Header"
-      for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
-    >
+    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
@@ -71,12 +55,7 @@ This is Twig implementation of the [Accordion] component.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader
-      id="AccordionItemExample1Header"
-      for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
-      isOpen
-    >
+    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content" isOpen>
       Accordion Header
     </AccordionHeader>
     <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header" isOpen>
@@ -91,11 +70,7 @@ This is Twig implementation of the [Accordion] component.
 ```html
 <Accordion id="AccordionExample">
   <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader
-      id="AccordionItemExample0Header"
-      for="AccordionItemExample0Content"
-      slot="<Link href='#'>Link</Link><Pill color='selected'>3</Pill>"
-    >
+    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent
@@ -107,11 +82,7 @@ This is Twig implementation of the [Accordion] component.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader
-      id="AccordionItemExample1Header"
-      for="AccordionItemExample1Content"
-      slot="<Pill color='selected'>3</Pill>"
-    >
+    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent
@@ -123,6 +94,51 @@ This is Twig implementation of the [Accordion] component.
     </AccordionContent>
   </AccordionItem>
 </Accordion>
+```
+
+## Slot
+
+You can pass custom content (including HTML) into the slot inside Accordion
+Header:
+
+```html
+<AccordionHeader
+  id="AccordionItemExample1Header"
+  for="AccordionItemExample1Content"
+  UNSAFE_slot="<span>my content</span>"
+>
+  Accordion Item
+</AccordionHeader>
+```
+
+⚠️ Due to TwigX limitations, TwigX content is **not allowed** inside `slot`.
+To pass TwigX content into the slot, you must render it first and then pass the
+rendered result into the slot:
+
+```twig
+{# This works #}
+
+{% set slotContent %}
+  <Pill color="selected">3</Pill>
+{% endset %}
+
+<AccordionHeader
+    id="AccordionItemExample1Header"
+    for="AccordionItemExample1Content"
+    UNSAFE_slot={{ slotContent }}
+>
+    Accordion Item
+</AccordionHeader>
+
+{# This DOES NOT WORK #}
+
+<AccordionHeader
+    id="AccordionItemExample1Header"
+    for="AccordionItemExample1Content"
+    UNSAFE_slot="<Pill color="selected">3</Pill>"
+>
+    Accordion Item
+</AccordionHeader>
 ```
 
 ## Usage without lexer:
@@ -139,7 +155,6 @@ This is Twig implementation of the [Accordion] component.
                 {% embed "@spirit/accordionHeader.twig" with { props: {
                   id: 'AccordionItemExampleHeader',
                   for: 'AccordionItemExampleContent',
-                  slot: '<Link href="#">Link</Link><Pill color="selected">3</Pill>',
                   isOpen: true,
                 } } %}
                     {% block content %}
@@ -191,7 +206,7 @@ The Accordion itself consists of several components which cannot be used indepen
 | `for`         | `string` | `null`  | yes      | AccordionContent ID      |
 | `id`          | `string` | `null`  | yes      | AccordionHeader ID       |
 | `isOpen`      | `string` | `false` | no       | Whether the item is open |
-| `slot`        | `HTML`   | ``      | no       | Side slot in the header  |
+| `UNSAFE_slot` | `HTML`   | ``      | no       | Side slot in the header  |
 
 ### AccordionContent
 
