@@ -11,27 +11,13 @@ FileUploader is a composition of a few subcomponents:
   - [FileUploaderList](#fileuploaderlist)
     - [FileUploaderAttachment](#fileuploaderattachment)
 
-## JavaScript Plugin (TO BE IMPLEMENTED)
-
-For full functionality, you need to provide Spirit JavaScript, which will handle
-the interactions with FileUploader.
-
-```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
-```
-
-Please consult the [main README][web-readme] for how to include JavaScript
-plugins.
-
-Or, feel free to write the controlling script yourself.
-
 ## FileUploader
 
 This is the main wrapper for the whole composition. It provides proper spacing
 for its subcomponents:
 
 ```html
-<div class="FileUploader">
+<div class="FileUploader" data-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -43,7 +29,7 @@ By adding the `FileUploader--fluid` modifier class, FileUploader can take up all
 the available horizontal space:
 
 ```html
-<div class="FileUploader FileUploader--fluid">
+<div class="FileUploader FileUploader--fluid" data-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -59,9 +45,9 @@ drag-and-drop functionality (signalized by the `has-drag-and-drop` state class
 on the root element).
 
 ```html
-<div class="FileUploaderInput">
+<div class="FileUploaderInput" data-spirit-element="wrapper">
   <label for="fileUpload" class="FileUploaderInput__label">Label</label>
-  <div class="FileUploaderInput__dropZone">
+  <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#upload" />
     </svg>
@@ -70,7 +56,7 @@ on the root element).
       <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
     </label>
     <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
-    <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" />
+    <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
   </div>
 </div>
 ```
@@ -81,7 +67,14 @@ To pick more than one file, just add the [`multiple`][mdn-multiple] attribute to
 the native `input` element:
 
 ```html
-<input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" multiple />
+<input
+  type="file"
+  id="fileUpload"
+  name="attachment"
+  class="FileUploaderInput__input"
+  data-spirit-element="input"
+  multiple
+/>
 ```
 
 ### Allowed File Types
@@ -95,6 +88,7 @@ uploaded. For example, to accept Microsoft Word documents:
   id="fileUpload"
   name="attachment"
   class="FileUploaderInput__input"
+  data-spirit-element="input"
   accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 />
 ```
@@ -105,11 +99,18 @@ To mark the input as required, simply add the `required` attribute to the native
 `input` element and the `FileUploaderInput__label--required` to the label:
 
 ```html
-<div class="FileUploaderInput">
+<div class="FileUploaderInput" data-spirit-element="wrapper">
   <label for="fileUpload" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
-  <div class="FileUploaderInput__dropZone">
+  <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <!-- … -->
-    <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" required />
+    <input
+      type="file"
+      id="fileUpload"
+      name="attachment"
+      class="FileUploaderInput__input"
+      data-spirit-element="input"
+      required
+    />
   </div>
 </div>
 ```
@@ -127,7 +128,7 @@ controlled by JavaScript (`has-success`, `has-warning`, `has-danger`).
 When validated on server:
 
 ```html
-<div class="FileUploaderInput FileUploaderInput--success">
+<div class="FileUploaderInput FileUploaderInput--success" data-spirit-element="wrapper">
   <!-- Label -->
   <!-- Drop zone with input -->
   <div class="FileUploaderInput__message">Success message</div>
@@ -138,7 +139,7 @@ When validated on server:
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation messages in a `<div>` with `data-element="validator_message"`
+render validation messages in a `<div>` with `data-spirit-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -147,10 +148,10 @@ components mix CSS with JS by design and handle CSS class-name prefixes their
 own way.**
 
 ```html
-<div class="FileUploaderInput has-success">
+<div class="FileUploaderInput has-success" data-spirit-element="wrapper">
   <!-- Label -->
   <!-- Drop zone with input -->
-  <div data-element="validator_message">Success message inserted by JS</div>
+  <div data-spirit-element="validator_message">Success message inserted by JS</div>
 </div>
 ```
 
@@ -161,7 +162,7 @@ list semantics for the selected files.
 
 ```html
 <h3 id="attachments" hidden>Attachments</h3>
-<ul class="FileUploaderList" aria-labelledby="attachments">
+<ul class="FileUploaderList" aria-labelledby="attachments" data-spirit-element="list">
   <!-- Items -->
 </ul>
 ```
@@ -189,17 +190,67 @@ truncated.
 </li>
 ```
 
+This way you can customize your own template in the `<template>` tag.
+It must be inserted inside the main wrapper element that has `data-toggle="fileUploader"`.
+Content of element with `data-populate-field="name"` will be replaced with file name.
+
+```html
+<template data-spirit-snippet="item">
+  <li class="FileUploaderAttachment" data-populate-field="item">
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#file" />
+    </svg>
+    <span class="text-truncate" data-populate-field="name">File name</span>
+    <button type="button" class="FileUploaderAttachment__remove" data-populate-field="button">
+      <span class="accessibility-hidden">Remove</span>
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#close" />
+      </svg>
+    </button>
+  </li>
+</template>
+```
+
+## Custom maximum file size
+
+The maximum size of the uploaded file can be reset. The default value is 10 MB.
+If you want to increase the limit to 20 MB, set:
+
+```html
+<div class="FileUploader" data-toggle="fileUploader" data-max-file-size="20000000">
+  <!-- FileUploaderInput -->
+  <!-- FileUploaderList -->
+</div>
+```
+
 ## Composition
 
 This is how all subcomponents build up the complete FileUploader:
 
 ```html
 <!-- FileUploader: start -->
-<div class="FileUploader">
+<div class="FileUploader" data-toggle="fileUploader">
+  <!-- List item template: start -->
+  <template data-spirit-snippet="item">
+    <li class="FileUploaderAttachment" data-populate-field="item">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#file" />
+      </svg>
+      <span class="text-truncate" data-populate-field="name">File name</span>
+      <button type="button" class="FileUploaderAttachment__remove" data-populate-field="button">
+        <span class="accessibility-hidden">Remove</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#close" />
+        </svg>
+      </button>
+    </li>
+  </template>
+  <!-- List item template: end -->
+
   <!-- FileUploaderInput: start -->
-  <div class="FileUploaderInput">
+  <div class="FileUploaderInput" data-spirit-element="wrapper">
     <label for="fileUploadWithAttachments" class="FileUploaderInput__label">Label</label>
-    <div class="FileUploaderInput__dropZone">
+    <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#upload" />
       </svg>
@@ -208,14 +259,20 @@ This is how all subcomponents build up the complete FileUploader:
         <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
       </label>
       <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
-      <input type="file" id="fileUploadWithAttachments" name="attachment" class="FileUploaderInput__input" />
+      <input
+        type="file"
+        id="fileUploadWithAttachments"
+        name="attachment"
+        class="FileUploaderInput__input"
+        data-spirit-element="input"
+      />
     </div>
   </div>
   <!-- FileUploaderInput: end -->
 
   <!-- FileUploaderList: start -->
   <h3 id="attachments" hidden>Attachments</h3>
-  <ul class="FileUploaderList" aria-labelledby="attachments">
+  <ul class="FileUploaderList" aria-labelledby="attachments" data-spirit-element="list">
     <!-- FileUploaderAttachment: start -->
     <li class="FileUploaderAttachment">
       <svg width="24" height="24" aria-hidden="true">
@@ -234,6 +291,36 @@ This is how all subcomponents build up the complete FileUploader:
   <!-- FileUploaderList: end -->
 </div>
 <!-- FileUploader: end -->
+```
+
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript, which will handle
+the interactions with FileUploader.
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript
+plugins.
+
+Or, feel free to write the controlling script yourself.
+
+### Methods
+
+| Method                | Description                                                                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the FileUploader instance associated with a DOM element.                                                    |
+| `getOrCreateInstance` | _Static_ method which allows you to get the FileUploader instance associated with a DOM element, or create a new one in case it wasn’t initialized. |
+| `getFileQueue`        | Returns a list of files in the queue.                                                                                                               |
+| `clearFileQueue`      | Deletes all the files in the queue.                                                                                                                 |
+
+```js
+const myUploaderInstance = FileUploader.getInstance('#myUploader'); // Returns a file uploader instance
+
+const fileList: File[] = myUploaderInstance.getFileQueue();
+const input = myUploaderInstance.inputElement; // Returns an input element, for further use
 ```
 
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
