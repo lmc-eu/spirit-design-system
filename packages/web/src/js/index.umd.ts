@@ -1,6 +1,7 @@
 import BaseComponent from './BaseComponent';
 import Collapse from './Collapse';
 import Dropdown from './Dropdown';
+import FileUploader from './FileUploader';
 import Header from './Header';
 import Modal from './Modal';
 import Offcanvas from './Offcanvas';
@@ -15,6 +16,7 @@ export default {
   BaseComponent,
   Collapse,
   Dropdown,
+  FileUploader,
   Header,
   Modal,
   Offcanvas,
