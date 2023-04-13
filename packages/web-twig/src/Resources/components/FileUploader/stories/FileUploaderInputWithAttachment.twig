@@ -1,0 +1,42 @@
+<section class="docs-Section">
+
+    <h2 class="docs-Heading">Input with Attachment</h2>
+
+    <div class="docs-FormFieldGrid">
+
+        <FileUploader data-toggle="fileUploader">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-with-attachment"
+                label="Label"
+                name="example-with-attachment"
+            />
+            <FileUploaderList>
+                <FileUploaderAttachment fileName="My resume.docx" />
+            </FileUploaderList>
+        </FileUploader>
+
+        <FileUploader data-toggle="fileUploader">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-with-attachments-and-validation"
+                label="Label"
+                name="example-with-attachments-and-validation"
+                validationState="danger"
+                validationText="Danger validation message"
+            />
+            <FileUploaderList>
+                <FileUploaderAttachment fileName="My resume.docx" />
+                <FileUploaderAttachment fileName="My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf" />
+            </FileUploaderList>
+        </FileUploader>
+
+    </div>
+
+</section>

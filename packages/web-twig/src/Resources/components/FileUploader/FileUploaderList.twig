@@ -1,0 +1,25 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _headingId = props.headingId | default('file-uploader-attachments') -%}
+{%- set _headingText = props.headingText | default('Attachments') -%}
+
+{# Class names #}
+{%- set _listClassName = _spiritClassPrefix ~ 'FileUploaderList' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _listClassNames = [ _listClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['aria-labelledby', 'data-spirit-element']) -%}
+
+<h3 id="{{ _headingId }}" hidden>
+    {{ _headingText }}
+</h3>
+<ul
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ classProp(_listClassNames) }}
+    {{ styleProp(_styleProps) }}
+    aria-labelledby="{{ _headingId }}"
+    data-spirit-element="list"
+>
+    {%- block content -%}{%- endblock -%}
+</ul>

@@ -1,0 +1,19 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _isFluid = props.isFluid | default(false) | boolprop -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'FileUploader' -%}
+{%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'FileUploader--fluid' : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootFluidClassName, _styleProps.className ] -%}
+
+<div
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ styleProp(_styleProps) }}
+>
+    {% block content %}{% endblock %}
+</div>

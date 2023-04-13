@@ -1,5 +1,11 @@
+@use 'theme';
+
 .FileUploaderList {
     display: grid;
-    row-gap: inherit;
+    row-gap: theme.$row-gap;
     list-style: none;
+
+    &:not(:empty) {
+        margin-top: theme.$row-gap;
+    }
 }

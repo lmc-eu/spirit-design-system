@@ -11,6 +11,20 @@ FileUploader is a composition of a few subcomponents:
   - [FileUploaderList](#fileuploaderlist)
     - [FileUploaderAttachment](#fileuploaderattachment)
 
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript, which will handle toggling of the FileUploader component:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
 ## FileUploader
 
 This is the main wrapper for the whole composition. It provides proper spacing
@@ -30,6 +44,18 @@ the available horizontal space:
 
 ```html
 <div class="FileUploader FileUploader--fluid" data-toggle="fileUploader">
+  <!-- FileUploaderInput -->
+  <!-- FileUploaderList -->
+</div>
+```
+
+### Maximum File Size (JavaScript)
+
+The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
+10 MB. To increase the limit for example to 20 MB, add the `data-max-file-size` attribute:
+
+```html
+<div class="FileUploader" data-toggle="fileUploader" data-max-file-size="20000000">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -163,7 +189,7 @@ list semantics for the selected files.
 ```html
 <h3 id="attachments" hidden>Attachments</h3>
 <ul class="FileUploaderList" aria-labelledby="attachments" data-spirit-element="list">
-  <!-- Items -->
+  <!-- Attachments, typically inserted by the JavaScript plugin -->
 </ul>
 ```
 
@@ -190,47 +216,13 @@ truncated.
 </li>
 ```
 
-This way you can customize your own template in the `<template>` tag.
-It must be inserted inside the main wrapper element that has `data-toggle="fileUploader"`.
-Content of element with `data-spirit-populate-field="name"` will be replaced with file name.
+While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
+[`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
+wrapper element that has the `data-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
+up the template and apply it on any attachments the user wants to upload.
 
 ```html
-<template data-spirit-snippet="item">
-  <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-    <svg width="24" height="24" aria-hidden="true">
-      <use xlink:href="/icons/svg/sprite.svg#file" />
-    </svg>
-    <span class="text-truncate" data-spirit-populate-field="name">File name</span>
-    <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
-      <span class="accessibility-hidden">Remove</span>
-      <svg width="24" height="24" aria-hidden="true">
-        <use xlink:href="/icons/svg/sprite.svg#close" />
-      </svg>
-    </button>
-  </li>
-</template>
-```
-
-## Custom maximum file size
-
-The maximum size of the uploaded file can be reset. The default value is 10 MB.
-If you want to increase the limit to 20 MB, set:
-
-```html
-<div class="FileUploader" data-toggle="fileUploader" data-max-file-size="20000000">
-  <!-- FileUploaderInput -->
-  <!-- FileUploaderList -->
-</div>
-```
-
-## Composition
-
-This is how all subcomponents build up the complete FileUploader:
-
-```html
-<!-- FileUploader: start -->
 <div class="FileUploader" data-toggle="fileUploader">
-  <!-- List item template: start -->
   <template data-spirit-snippet="item">
     <li class="FileUploaderAttachment" data-spirit-populate-field="item">
       <svg width="24" height="24" aria-hidden="true">
@@ -245,7 +237,34 @@ This is how all subcomponents build up the complete FileUploader:
       </button>
     </li>
   </template>
-  <!-- List item template: end -->
+  <!-- FileUploaderInput -->
+  <!-- FileUploaderList -->
+</div>
+```
+
+## Composition
+
+This is how all subcomponents build up the complete FileUploader:
+
+```html
+<!-- FileUploader: start -->
+<div class="FileUploader" data-toggle="fileUploader">
+  <!-- FileUploaderAttachment template: start -->
+  <template data-spirit-snippet="item">
+    <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#file" />
+      </svg>
+      <span class="text-truncate" data-spirit-populate-field="name">File name</span>
+      <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
+        <span class="accessibility-hidden">Remove</span>
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#close" />
+        </svg>
+      </button>
+    </li>
+  </template>
+  <!-- FileUploaderAttachment template: end -->
 
   <!-- FileUploaderInput: start -->
   <div class="FileUploaderInput" data-spirit-element="wrapper">
@@ -293,21 +312,7 @@ This is how all subcomponents build up the complete FileUploader:
 <!-- FileUploader: end -->
 ```
 
-## JavaScript Plugin
-
-For full functionality, you need to provide Spirit JavaScript, which will handle
-the interactions with FileUploader.
-
-```html
-<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
-```
-
-Please consult the [main README][web-readme] for how to include JavaScript
-plugins.
-
-Or, feel free to write the controlling script yourself.
-
-### Methods
+## JavaScript Plugin API
 
 | Method                | Description                                                                                                                                         |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -327,5 +332,6 @@ const input = myUploaderInstance.inputElement; // Returns an input element, for 
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-multiple]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#multiple
 [mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
+[mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names

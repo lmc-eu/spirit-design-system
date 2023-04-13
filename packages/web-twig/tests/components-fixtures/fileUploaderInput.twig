@@ -1,0 +1,51 @@
+<FileUploaderInput
+    id="example-input"
+/>
+
+<!-- Render with custom texts -->
+<FileUploaderInput
+    dragAndDropText="or drop it here"
+    id="example-input-texts"
+    pickAFileText="Pick a file"
+/>
+
+<!-- Render in danger state -->
+<FileUploaderInput
+    id="example-input-danger"
+    label="Label"
+    validationState="danger"
+    validationText="Error message"
+/>
+
+<!-- Render with key HTML attributes transferred onto the native input -->
+<FileUploaderInput
+    accept="*.avif,*.jpg,*.png,*.webp"
+    id="example-input-html-attributes"
+    multiple
+/>
+
+<!-- Render with UNSAFE props -->
+<FileUploaderInput
+    id="example-input-unsafe"
+    UNSAFE_helperText="<span>UNSAFE helper text</span>"
+    UNSAFE_label="<span>UNSAFE label text</span>"
+    UNSAFE_validationText="<span>UNSAFE validation text</span>"
+/>
+
+<!-- Render with all props -->
+<FileUploaderInput
+    dragAndDropText="or drop it here"
+    helperText="helper text"
+    iconName="add"
+    id="example-input-all-props"
+    isLabelHidden
+    isRequired
+    label="Label"
+    name="example-input"
+    pickAFileText="Pick a file"
+    UNSAFE_helperText="<span>UNSAFE helper text</span>"
+    UNSAFE_label="<span>UNSAFE label text</span>"
+    UNSAFE_validationText="<span>UNSAFE validation text</span>"
+    validationState="danger"
+    validationText="Error message"
+/>
