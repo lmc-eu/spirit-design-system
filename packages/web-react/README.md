@@ -60,7 +60,7 @@ application conforms to design requirements, and is adaptive across platform sca
 
 While we encourage teams to utilize Spirit design as it is, we do realize that sometimes product specific customizations
 may be needed. In these cases, we encourage you or your designers to **talk to us**. We may be able to suggest
-an alternative implementation strategy, or perhaps your design can help inform future Spirit additions.
+an alternative implementation strategy, or perhaps your design can help propose future Spirit additions.
 
 While the traditional className and style props are not supported in Spirit Web React components, there are two escape
 hatches that you can **use at your own risk**. These are UNSAFE_className and UNSAFE_style. Use of these props should be

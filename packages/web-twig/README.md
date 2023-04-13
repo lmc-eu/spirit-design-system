@@ -78,6 +78,31 @@ For available components see the [components directory](https://github.com/lmc-e
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read the guide [here](./CONTRIBUTING.md).
 
+## Styling
+
+Spirit components are designed to be consistent across all LMC applications. They include built-in styling that has been
+considered carefully, and extensively tested. In general, customizing Spirit design is discouraged, but most components
+do offer control over layout and other aspects. In addition, you can use Spirit defined design tokens to ensure your
+application conforms to your design requirements, and is adaptive across platform scales and color schemes.
+
+### Escape hatches
+
+While we encourage teams to utilize Spirit design as it is, we do realize that sometimes product specific customizations
+may be needed. In these cases, we encourage you or your designers to **talk to us**. We may be able to suggest
+an alternative implementation strategy, or perhaps your design can help propose future Spirit additions.
+
+While the traditional class and style props are not supported in Spirit Web Twig components, there are two escape
+hatches that you can **use at your own risk**. These are UNSAFE_className and UNSAFE_style. Use of these props should be
+considered **a last resort**. They can be used to work around bugs or limitations in Spirit Web Twig, but should
+not be used in the long term.
+
+The reasoning behind this is that future updates to Spirit design may cause unintended breaking changes in products.
+If the internal DOM structure or CSS properties of a Spirit Web Twig component change, this may lead to conflicts
+with CSS overrides in products. For this reason, className and style are unsafe, and if you use them know that you
+are doing so at your own risk.
+
+Please consult additional styling with [web package documentation][web-pkg-rebrand].
+
 ## Deprecations
 
 This package uses the deprecation warnings for props, functions and components that will be removed or replaced in the next major release.
@@ -86,3 +111,4 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 ![Deprecations in Symfony's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-symfony-console.png?raw=true)
 
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
+[web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
