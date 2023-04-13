@@ -1,0 +1,57 @@
+<section class="docs-Section">
+
+    <h2 class="docs-Heading">Input Validation States</h2>
+
+    <div class="docs-FormFieldGrid">
+
+        <FileUploader data-toggle="fileUploader">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-validation-success"
+                isRequired
+                label="Label"
+                name="example-validation-success"
+                validationState="success"
+                validationText="Success validation message"
+            />
+            <FileUploaderList />
+        </FileUploader>
+
+        <FileUploader data-toggle="fileUploader">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-validation-warning"
+                isRequired
+                label="Label"
+                name="example-validation-warning"
+                validationState="warning"
+                validationText="Warning validation message"
+            />
+            <FileUploaderList />
+        </FileUploader>
+
+        <FileUploader data-toggle="fileUploader">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-validation-danger"
+                isRequired
+                label="Label"
+                name="example-validation-danger"
+                validationState="danger"
+                validationText="Danger validation message"
+            />
+            <FileUploaderList />
+        </FileUploader>
+
+    </div>
+
+</section>

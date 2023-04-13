@@ -1,0 +1,94 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _dragAndDropText = props.dragAndDropText | default('or drag and drop here') -%}
+{%- set _helperText = props.helperText | default(null) -%}
+{%- set _iconName = props.iconName | default('upload') -%}
+{%- set _id = props.id -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
+{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _pickAFileText = props.pickAFileText | default('Upload your file') -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderInput' -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'FileUploaderInput--' ~ _validationState : null -%}
+{%- set _dropzoneClassName = _spiritClassPrefix ~ 'FileUploaderInput__dropZone' -%}
+{%- set _dropzoneLabelClassName = _spiritClassPrefix ~ 'FileUploaderInput__dropZoneLabel' -%}
+{%- set _dragAndDropLabelClassName = _spiritClassPrefix ~ 'FileUploaderInput__dragAndDropLabel' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'FileUploaderInput__helperText' -%}
+{%- set _inputClassName = _spiritClassPrefix ~ 'FileUploaderInput__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'FileUploaderInput__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'FileUploaderInput__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'FileUploaderInput__label--required' : null -%}
+{%- set _linkClassName = _spiritClassPrefix ~ 'FileUploaderInput__link' -%}
+{%- set _validationTextClassName = _spiritClassPrefix ~ 'FileUploaderInput__validationText' -%}
+
+{# Attributes #}
+{%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _allowedAttributes = [ 'accept', 'multiple' ] -%}
+{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-element', 'id']) -%}
+{%- set _rootClassNames = [ _rootClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+
+<div
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ classProp(_rootClassNames) }}
+    {{ styleProp(_styleProps) }}
+    data-spirit-element="wrapper"
+>
+    <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
+        {%- if _label -%}
+            {{ _label }}
+        {%- else -%}
+            {{ _unsafeLabel | raw }}
+        {%- endif -%}
+    </label>
+    <input
+        {{ inputProps(props, _allowedAttributes) }}
+        type="file"
+        id="{{ _id }}"
+        class="{{ _inputClassName }}"
+        data-spirit-element="input"
+        {{ _nameAttr | raw }}
+        {{ _requiredAttr }}
+    />
+    <div class="{{ _dropzoneClassName }}" data-spirit-element="dropZone">
+        <Icon name="{{ _iconName }}" />
+        <label for="{{ _id }}" class="{{ _dropzoneLabelClassName }}">
+            <span class="{{ _linkClassName }} link-primary link-underlined">
+                {{- _pickAFileText -}}
+            </span>
+            <span class="{{  _dragAndDropLabelClassName }}">
+                {{- _dragAndDropText -}}
+            </span>
+        </label>
+        {% if _helperText or _unsafeHelperText %}
+            <div class="{{ _helperTextClassName }}">
+                {% if _helperText %}
+                    {{ _helperText }}
+                {% else %}
+                    {{ _unsafeHelperText | raw }}
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+    {% if _validationText or _unsafeValidationText %}
+        <div class="{{ _validationTextClassName }}">
+            {% if _validationText %}
+                {{ _validationText }}
+            {% else %}
+                {{ _unsafeValidationText | raw }}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

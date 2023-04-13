@@ -1,0 +1,34 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _fileName = props.fileName | default(null) -%}
+{%- set _iconName = props.iconName | default('file') -%}
+{%- set _removeText = props.removeText | default('Remove') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderAttachment' -%}
+{%- set _removeClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__remove' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'data-spirit-populate-field') -%}
+
+<li
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ classProp(_classNames) }}
+    {{ styleProp(_styleProps) }}
+    data-spirit-populate-field="item"
+>
+    <Icon name="{{ _iconName }}" isReusable={ false }/>
+    <span class="text-truncate" data-spirit-populate-field="name">
+        {{- _fileName -}}
+    </span>
+    <button
+        type="button"
+        class="{{ _removeClassName }}"
+        data-spirit-populate-field="button"
+    >
+        <span class="accessibility-hidden">{{ _removeText }}</span>
+        <Icon name="close" isReusable={ false } />
+    </button>
+</li>
