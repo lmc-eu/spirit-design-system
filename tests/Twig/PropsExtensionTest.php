@@ -226,4 +226,98 @@ class PropsExtensionTest extends TestCase
             ]],
         ];
     }
+
+    /**
+     * @dataProvider renderStylePropDataProvider
+     * @param array<string> $props
+     * @param array<string, mixed> $expectedRenderStyle
+     */
+    public function testShouldRenderStyleProp(array $props, array $expectedRenderStyle): void
+    {
+        $expectedResponse = '';
+        $environment = m::mock(Environment::class);
+
+        $environment->shouldReceive('render')
+            ->once()
+            ->with('@partials/styleProp.twig', $expectedRenderStyle)
+            ->andReturn($expectedResponse);
+
+        $renderResponse = $this->propsExtension->renderStyleProp($environment, $props);
+
+        $this->assertSame($expectedResponse, $renderResponse);
+    }
+
+    /**
+     * @return array<string, array<int, array<int|string, array<string, string>|string>>>
+     */
+    public function renderStylePropDataProvider(): array
+    {
+        return [
+            'empty props' => [[], [
+                'style' => '',
+            ]],
+            'one style' => [[
+                'style' => 'position: absolute;',
+            ], [
+                'style' => 'position: absolute;',
+            ]],
+            'filter only style' => [[
+                'style' => 'position: absolute; color: red;',
+                'class' => 'test-class',
+            ], [
+                'style' => 'position: absolute; color: red;',
+            ]],
+        ];
+    }
+
+    /**
+     * @dataProvider useStylePropDataProvider
+     * @param array<string> $props
+     * @param array<string, mixed> $expectedResponse
+     */
+    public function testShouldUseStyleProp(array $props, array $expectedResponse): void
+    {
+        $renderResponse = $this->propsExtension->useStyleProps($props);
+
+        $this->assertSame($expectedResponse, $renderResponse);
+    }
+
+    /**
+     * @return array<string, array<int, array<string, string|null>>>
+     */
+    public function useStylePropDataProvider(): array
+    {
+        return [
+            'empty props' => [[], [
+                'className' => null,
+                'style' => null,
+            ]],
+            'with UNSAFE_style' => [[
+                'UNSAFE_style' => 'position: absolute;',
+            ], [
+                'className' => null,
+                'style' => 'position: absolute;',
+            ]],
+            'with UNSAFE_className' => [[
+                'UNSAFE_className' => 'test-class',
+            ], [
+                'className' => 'test-class',
+                'style' => null,
+            ]],
+            'with both' => [[
+                'UNSAFE_className' => 'test-class',
+                'UNSAFE_style' => 'position: absolute;',
+            ], [
+                'className' => 'test-class',
+                'style' => 'position: absolute;',
+            ]],
+            'filter only supported' => [[
+                'UNSAFE_style' => 'position: absolute;',
+                'data-test' => 'test-data',
+            ], [
+                'className' => null,
+                'style' => 'position: absolute;',
+            ]],
+        ];
+    }
 }
