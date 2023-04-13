@@ -29,6 +29,11 @@ class PropsExtension extends AbstractExtension
                 'needs_environment' => true,
                 'is_safe' => ['html'],
             ]),
+            new TwigFunction('styleProp', [$this, 'renderStyleProp'], [
+                'needs_environment' => true,
+                'is_safe' => ['html'],
+            ]),
+            new TwigFunction('useStyleProps', [$this, 'useStyleProps']),
         ];
     }
 
@@ -90,5 +95,31 @@ class PropsExtension extends AbstractExtension
         return $environment->render('@partials/classProp.twig', [
             'classNames' => $filteredClassNames,
         ]);
+    }
+
+    /**
+     * @param array<string, mixed> $props
+     */
+    public function renderStyleProp(Environment $environment, array $props): string
+    {
+        return $environment->render('@partials/styleProp.twig', [
+            'style' => $props['style'] ?? null,
+        ]);
+    }
+
+    /**
+     * @param array<string, mixed> $props
+     * @return array<string, mixed>
+     */
+    public function useStyleProps(array $props): array
+    {
+        $styleProps = [];
+        if (array_key_exists('class', $props)) {
+            trigger_error('The "class" property will be removed in the next major version. Use "UNSAFE_className" instead.', E_USER_DEPRECATED);
+        }
+        $styleProps['className'] = $props['UNSAFE_className'] ?? $props['class'] ?? null;
+        $styleProps['style'] = $props['UNSAFE_style'] ?? null;
+
+        return $styleProps;
     }
 }

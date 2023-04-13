@@ -1,18 +1,18 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('success') -%}
 {%- set _iconName = props.iconName | default(null) -%}
 {%- set _isCentered = props.isCentered | default(false) | boolprop -%}
 {%- set _elementType = props.elementType | default('div') -%}
 
 {# Class names #}
-{%- set _colorClassName = _spiritClassPrefix ~ 'Alert--' ~ _color -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Alert' -%}
+{%- set _rootColorClassName = _spiritClassPrefix ~ 'Alert--' ~ _color -%}
 {%- set _rootCenteredClassName = _isCentered ? _spiritClassPrefix ~ 'Alert--center' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _rootCenteredClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootCenteredClassName, _styleProps.className ] -%}
 {%- set _iconNameByColor = 'info' -%}
 {% if _color == 'success' %}
   {%- set _iconNameByColor = 'check-plain' -%}
@@ -21,10 +21,9 @@
 {% elseif _color == 'danger' %}
   {%- set _iconNameByColor = 'warning' -%}
 {% endif %}
-
 {%- set _iconNameValue = _iconName | default(_iconNameByColor) -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }} role="alert">
+<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} role="alert">
   <Icon name="{{ _iconNameValue }}" />
   <div>
     {%- block content %}{% endblock -%}
