@@ -1,11 +1,7 @@
 @use '../../tools/form-fields' as form-fields-tools;
-@use 'theme';
 
 .FileUploader {
     @include form-fields-tools.box-field-root();
-
-    display: inline-grid;
-    row-gap: theme.$row-gap;
 }
 
 .FileUploader--fluid {

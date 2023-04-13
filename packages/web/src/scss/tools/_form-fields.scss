@@ -139,7 +139,7 @@
 
         @if $field-name != 'CheckboxField' or $field-name != 'RadioField' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
-                :is(.#{$field-name}__message, [data-element='validator_message']) {
+                :is(.#{$field-name}__message, .#{$field-name}__validationText, [data-element='validator_message']) {
                 color: map.get($validation-state-value, message-color);
             }
         }

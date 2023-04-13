@@ -71,7 +71,7 @@ $_field-name: 'FileUploaderInput';
     grid-column-start: 2;
 }
 
-.FileUploaderInput__message,
+.FileUploaderInput__validationText,
 .FileUploaderInput > [data-element='validator_message'] {
     @include form-fields-tools.message();
 }

@@ -86,7 +86,7 @@
         >{{ _value }}</textarea>{# Intentionally without `raw` to prevent XSS. #}
     {% else %}
         {% if _hasPasswordToggle %}
-            <div class="TextField__passwordToggle">
+            <div class="{{ _passwordToggleClassName }}">
                 <input
                     {{ inputProps(props, _allowedAttributes) }}
                     type="password"

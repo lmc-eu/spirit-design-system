@@ -1,0 +1,51 @@
+<section class="docs-Section">
+
+    <h2 class="docs-Heading">Example of JS-Controlled Form</h2>
+
+    <form name="example" id="form-example" method="post" enctype="multipart/form-data">
+
+        <input type="hidden" name="hiddenField" value="hidden field value" />
+
+        <FileUploader id="example-composition" data-toggle="fileUploader" data-file-queue-limit="2">
+            <template data-spirit-snippet="item">
+                <FileUploaderAttachment />
+            </template>
+            <FileUploaderInput
+                helperText="Max file size is 10 MB"
+                id="example-js-form"
+                label="Label"
+                multiple
+                name="example-js-form"
+            />
+            <FileUploaderList />
+        </FileUploader>
+
+        <div class="mt-600">
+            <Button type="submit">Submit me</Button>
+        </div>
+
+    </form>
+
+    <script type="module">
+        import FileUploader from '@lmc-eu/spirit-web/src/js/FileUploader';
+
+        const form = document.querySelector('#form-example');
+        const uploader = document.querySelector('#example-composition');
+        const fileUploader = FileUploader.createInstance(uploader);
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            console.log('form element', form);
+            console.log('form data', formData);
+            console.log('file queue', fileUploader.getFileQueue);
+
+            // Clear after submit
+            setTimeout(() => {
+                fileUploader.clearFileQueue();
+                console.log('file queue after submit', fileUploader.getFileQueue);
+            }, 250);
+        });
+    </script>
+
+</section>
