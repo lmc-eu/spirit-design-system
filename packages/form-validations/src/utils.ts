@@ -1,14 +1,15 @@
 export const findAncestor = (
   element: HTMLElement | null | undefined,
-  className: string,
+  selector: string,
 ): HTMLElement | null | undefined => {
   // from bottom up find the element with the className
-  while ((element = element?.parentElement) && !element.classList.contains(className));
+  // eslint-disable-next-line no-cond-assign, no-param-reassign
+  while ((element = element?.parentElement) && !element.matches(selector));
 
   return element;
 };
 
-export const tmpl = (message: string, params: Record<string, string>) =>
+export const fillTemplate = (message: string, params: Record<string, string>) =>
   message.replace(/\${([^{}]*)}/g, (a: string, b: string) => params[b]);
 
 export const groupedElemCount = (input: any) => {
