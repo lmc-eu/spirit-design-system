@@ -12,6 +12,7 @@ module.exports = {
       [
         // Use when committing changes/additions/removals to exact package
         'design-tokens',
+        'form-validations',
         'icons',
         'web',
         'web-react',

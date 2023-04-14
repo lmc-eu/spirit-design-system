@@ -1,0 +1,5 @@
+# code coverage
+/_coverage
+/.coverage
+/coverage
+/public
