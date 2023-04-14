@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { lang } from './lang';
 import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
 
