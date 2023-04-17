@@ -3,6 +3,8 @@ import { ValidationStatesDictionaryType } from './dictionaries';
 /* @deprecated: 'error' value will be removed in the next major version. */
 export type ValidationState = ValidationStatesDictionaryType<'error'>;
 
+export type ValidationTextType = string | string[];
+
 export interface Validation {
   /** Whether the input should display its "valid" or "invalid" visual styling. */
   validationState?: ValidationState;
