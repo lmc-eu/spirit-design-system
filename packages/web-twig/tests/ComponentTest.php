@@ -134,6 +134,40 @@ HTML,
         );
     }
 
+    public function testShouldRenderComponentWithUnsafeCaseNameAndStyle(): void
+    {
+        $html = $this->twig->render('test_component_classname_style.twig');
+        $html = $this->removeWhitespace($html);
+
+        $this->assertEquals(
+            <<<HTML
+<a
+    style="z-index: 1;"
+    class="Button Button--primary Button--medium test-class"
+    href="#"
+>Link Button</a>
+HTML,
+            $html
+        );
+    }
+
+    public function testShouldRenderComponentXSSSafe(): void
+    {
+        $html = $this->twig->render('test_component_classname_style_xss.twig');
+        $html = $this->removeWhitespace($html);
+
+        $this->assertEquals(
+            <<<HTML
+<a
+    style="z-index: 1;&lt;script&gt;alert(&#039;XSS&#039;)&lt;/script&gt;"
+    class="Button Button--primary Button--medium test-class&quot; onmouseover=&quot;alert(&#039;XSS&#039;)&quot;"
+    href="#"
+>Link Button</a>
+HTML,
+            $html
+        );
+    }
+
     /**
      * @see: https://stackoverflow.com/questions/709669/how-do-i-remove-blank-lines-from-text-in-php
      *

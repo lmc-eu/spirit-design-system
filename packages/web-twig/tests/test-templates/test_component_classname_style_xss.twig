@@ -1,0 +1,2 @@
+{% set test = 'test-class" onmouseover="alert(\'XSS\')"' %}
+<ButtonLink href="#" color="primary" UNSAFE_className="{{ test }}" UNSAFE_style="z-index: 1;<script>alert('XSS')</script>">Link Button</ButtonLink>
