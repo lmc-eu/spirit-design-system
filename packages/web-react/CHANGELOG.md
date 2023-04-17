@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.43.0"></a>
+
+# [0.43.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.42.0...@lmc-eu/spirit-web-react@0.43.0) (2023-04-17)
+
+### Bug Fixes
+
+- **web-react:** RadioField required props and Tag mixing size with color props ([027f1c0](https://github.com/lmc-eu/spirit-design-system/commit/027f1c0))
+
+### Code Refactoring
+
+- **web-react:** Remove old deprecation hook and improve deprecation messages [#DS-662](https://github.com/lmc-eu/spirit-design-system/issues/DS-662) ([e2f5b0a](https://github.com/lmc-eu/spirit-design-system/commit/e2f5b0a))
+
+### Features
+
+- **web-react:** Controllable stories states and values ​​according to dictionaries [#DS-622](https://github.com/lmc-eu/spirit-design-system/issues/DS-622) ([2ffa906](https://github.com/lmc-eu/spirit-design-system/commit/2ffa906))
+- **web-react:** Extension and modification of Button and ButtonLink [#DS-453](https://github.com/lmc-eu/spirit-design-system/issues/DS-453) ([6eccf1e](https://github.com/lmc-eu/spirit-design-system/commit/6eccf1e))
+- **web-react:** Introduce loading state to Button and ButtonLink [#DS-640](https://github.com/lmc-eu/spirit-design-system/issues/DS-640) ([9657c50](https://github.com/lmc-eu/spirit-design-system/commit/9657c50))
+- **web-react:** Introduce Spinner component [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([0fc7c35](https://github.com/lmc-eu/spirit-design-system/commit/0fc7c35))
+- **web-react:** Rename Text Color dictionary to Action Link, introduce correct Text Color [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([4d38c72](https://github.com/lmc-eu/spirit-design-system/commit/4d38c72))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.42.0"></a>
 
 # [0.42.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.41.0...@lmc-eu/spirit-web-react@0.42.0) (2023-03-21)

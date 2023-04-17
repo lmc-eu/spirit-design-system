@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.2"></a>
+
+## [1.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig-demo@1.0.1...@lmc-eu/spirit-web-twig-demo@1.0.2) (2023-04-17)
+
+### Chores
+
+- **web-twig:** Fix assets path for local directories ([8b95f99](https://github.com/lmc-eu/spirit-design-system/commit/8b95f99))
+- **web-twig:** Introduce `icons` route for demo app ([c9cb9e2](https://github.com/lmc-eu/spirit-design-system/commit/c9cb9e2))
+
+### Dependencies
+
+- Pin dependencies ([24b879e](https://github.com/lmc-eu/spirit-design-system/commit/24b879e))
+- **web-twig:** Update twigx-bundle and spirit-web-twig packages to ([40473f4](https://github.com/lmc-eu/spirit-design-system/commit/40473f4))
+
+### Documentation
+
+- **web-twig:** Enable JS plugins in demo app ([f26c31f](https://github.com/lmc-eu/spirit-design-system/commit/f26c31f))
+- **web-twig:** Introduce Helpers story refs, add Tabs to docs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([3105ded](https://github.com/lmc-eu/spirit-design-system/commit/3105ded))
+
+### Tests
+
+- **web-twig:** Introduce HTML format method for better snapshots ([ede292e](https://github.com/lmc-eu/spirit-design-system/commit/ede292e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig-demo
+
 <a name="1.0.1"></a>
 
 ## 1.0.1 (2023-03-23)

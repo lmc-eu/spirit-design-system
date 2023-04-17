@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.45.0"></a>
+
+# [0.45.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.44.0...@lmc-eu/spirit-web@0.45.0) (2023-04-17)
+
+### Bug Fixes
+
+- **web:** Remove useless script in Item index ([18025a4](https://github.com/lmc-eu/spirit-design-system/commit/18025a4))
+
+### Code Refactoring
+
+- **web:** Improve deprecation message [#DS-662](https://github.com/lmc-eu/spirit-design-system/issues/DS-662) ([6b44efa](https://github.com/lmc-eu/spirit-design-system/commit/6b44efa))
+- **web:** Improve form-fields variables naming [#DS-662](https://github.com/lmc-eu/spirit-design-system/issues/DS-662) ([1c42c11](https://github.com/lmc-eu/spirit-design-system/commit/1c42c11))
+
+### Documentation
+
+- **web:** Example for stacked Modal component ([90461b8](https://github.com/lmc-eu/spirit-design-system/commit/90461b8))
+- **web:** Fix target in stacked Modal ([11a4948](https://github.com/lmc-eu/spirit-design-system/commit/11a4948))
+- **web:** Update recommended way to prefix CSS classes [#DS-627](https://github.com/lmc-eu/spirit-design-system/issues/DS-627) ([69d54b0](https://github.com/lmc-eu/spirit-design-system/commit/69d54b0))
+
+### Features
+
+- **web:** Add feature class to make links correctly underlined [#DS-516](https://github.com/lmc-eu/spirit-design-system/issues/DS-516) ([dbc0076](https://github.com/lmc-eu/spirit-design-system/commit/dbc0076))
+- **web:** Extend Stack component [#JALL-107](https://github.com/lmc-eu/spirit-design-system/issues/JALL-107) ([07d5bc9](https://github.com/lmc-eu/spirit-design-system/commit/07d5bc9))
+- **web:** Introduce `FileUploader` component [#DS-664](https://github.com/lmc-eu/spirit-design-system/issues/DS-664) ([0a6c4f9](https://github.com/lmc-eu/spirit-design-system/commit/0a6c4f9))
+- **web:** Introduce deprecation class `spirit-v1-stack-no-default-gap` for `Stack` component ([f8daf72](https://github.com/lmc-eu/spirit-design-system/commit/f8daf72))
+- **web:** Introduce loading state to Button, add css vars to dictionaries and animations [#DS-640](https://github.com/lmc-eu/spirit-design-system/issues/DS-640) ([0f96be5](https://github.com/lmc-eu/spirit-design-system/commit/0f96be5))
+- **web:** Introduce Spinner component [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([6f9064b](https://github.com/lmc-eu/spirit-design-system/commit/6f9064b))
+- **web:** Prevent scrolling while the dialog is open [#DS-191](https://github.com/lmc-eu/spirit-design-system/issues/DS-191) ([6ad875f](https://github.com/lmc-eu/spirit-design-system/commit/6ad875f))
+- **web:** Rename Text Color dictionary to Action Link and introduce correct Text Color one [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([4ee0395](https://github.com/lmc-eu/spirit-design-system/commit/4ee0395))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.44.0"></a>
 
 # [0.44.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.43.0...@lmc-eu/spirit-web@0.44.0) (2023-03-21)

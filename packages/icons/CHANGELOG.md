@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.10.0"></a>
+
+# [0.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.9.2...@lmc-eu/spirit-icons@0.10.0) (2023-04-17)
+
+### Bug Fixes
+
+- **icons:** Add missing path to Upload icon ([6c4ef47](https://github.com/lmc-eu/spirit-design-system/commit/6c4ef47))
+
+### Features
+
+- **icons:** Add new icons manually because Supernova Figma import is broken ([5d604d4](https://github.com/lmc-eu/spirit-design-system/commit/5d604d4))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="0.9.2"></a>
 
 ## [0.9.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.9.1...@lmc-eu/spirit-icons@0.9.2) (2023-02-13)
