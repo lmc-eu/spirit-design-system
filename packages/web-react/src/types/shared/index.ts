@@ -5,6 +5,7 @@ export * from './colors';
 export * from './dialogs';
 export * from './dictionaries';
 export * from './dom';
+export * from './dragAndDrop';
 export * from './element';
 export * from './events';
 export * from './inputs';

@@ -5,6 +5,7 @@ export * from './button';
 export * from './checkboxField';
 export * from './collapse';
 export * from './dropdown';
+export * from './fileUploader';
 export * from './grid';
 export * from './header';
 export * from './heading';
