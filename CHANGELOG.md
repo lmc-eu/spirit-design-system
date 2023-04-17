@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.29.0"></a>
+
+# [1.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.28.1...@lmc-eu/spirit-web-twig@1.29.0) (2023-04-17)
+
+### Bug Fixes
+
+- **web-twig:** Condition for onClick deprecation ([978747d](https://github.com/lmc-eu/spirit-design-system/commit/978747d))
+- **web-twig:** Make `AccordionHeader` slot actually work ([bab30ef](https://github.com/lmc-eu/spirit-design-system/commit/bab30ef))
+- **web-twig:** Remove `raw` filter that cause a XSS issue ([dc76a13](https://github.com/lmc-eu/spirit-design-system/commit/dc76a13))
+- **web-twig:** Remove unused expandOnMobile variable in ModalComposed ([818e26a](https://github.com/lmc-eu/spirit-design-system/commit/818e26a))
+- **web-twig:** Remove unused Header Button onClick prop ([b9aa01c](https://github.com/lmc-eu/spirit-design-system/commit/b9aa01c))
+- **web-twig:** TextArea content offset ([c03ab2c](https://github.com/lmc-eu/spirit-design-system/commit/c03ab2c))
+
+### Chores
+
+- **web-twig:** Intruduce `analyze` script ([e4e60ef](https://github.com/lmc-eu/spirit-design-system/commit/e4e60ef))
+- **web-twig:** Keep `static` directory in git for assets ([2ac871b](https://github.com/lmc-eu/spirit-design-system/commit/2ac871b))
+
+### Code Refactoring
+
+- **web-twig:** Pass `title` prop as native attribute through rest ([80ac214](https://github.com/lmc-eu/spirit-design-system/commit/80ac214))
+
+### Dependencies
+
+- **web-twig:** Avoid TwigX of version 3.2.0 ([d2910f2](https://github.com/lmc-eu/spirit-design-system/commit/d2910f2))
+
+### Documentation
+
+- **web-twig:** Add links to examples instead of duplicating them ([e2efa73](https://github.com/lmc-eu/spirit-design-system/commit/e2efa73))
+- **web-twig:** Add missing `ol` tag in Breadcrumbs example ([cd36c21](https://github.com/lmc-eu/spirit-design-system/commit/cd36c21))
+- **web-twig:** Add stories to file structure example ([819338a](https://github.com/lmc-eu/spirit-design-system/commit/819338a))
+- **web-twig:** Explain why the `raw` filter is avoided for input `value` ([2bd1003](https://github.com/lmc-eu/spirit-design-system/commit/2bd1003))
+- **web-twig:** Improve deprecation message [#DS-662](https://github.com/lmc-eu/spirit-design-system/issues/DS-662) ([f023798](https://github.com/lmc-eu/spirit-design-system/commit/f023798))
+- **web-twig:** Introduce Breadscrumbs stories refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([1c4b7f2](https://github.com/lmc-eu/spirit-design-system/commit/1c4b7f2))
+- **web-twig:** Introduce Button story ([87b2bd4](https://github.com/lmc-eu/spirit-design-system/commit/87b2bd4)), closes [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247)
+- **web-twig:** Introduce ButtonLink story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([bdecd53](https://github.com/lmc-eu/spirit-design-system/commit/bdecd53))
+- **web-twig:** Introduce Collapse story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([2c75004](https://github.com/lmc-eu/spirit-design-system/commit/2c75004))
+- **web-twig:** Introduce Container story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([e5ca481](https://github.com/lmc-eu/spirit-design-system/commit/e5ca481))
+- **web-twig:** Introduce Dropdown stories refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([06c1684](https://github.com/lmc-eu/spirit-design-system/commit/06c1684))
+- **web-twig:** Introduce Grid story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([67d45da](https://github.com/lmc-eu/spirit-design-system/commit/67d45da))
+- **web-twig:** Introduce Header story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([946eed6](https://github.com/lmc-eu/spirit-design-system/commit/946eed6))
+- **web-twig:** Introduce Heading story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([293b0b0](https://github.com/lmc-eu/spirit-design-system/commit/293b0b0))
+- **web-twig:** Introduce Helpers story refs, add Tabs to docs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([3105ded](https://github.com/lmc-eu/spirit-design-system/commit/3105ded))
+- **web-twig:** Introduce Icons story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([b2273e1](https://github.com/lmc-eu/spirit-design-system/commit/b2273e1))
+- **web-twig:** Introduce Item story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([af33048](https://github.com/lmc-eu/spirit-design-system/commit/af33048))
+- **web-twig:** Introduce Link story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([c2273ce](https://github.com/lmc-eu/spirit-design-system/commit/c2273ce))
+- **web-twig:** Introduce Modal stories refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([52b8ca8](https://github.com/lmc-eu/spirit-design-system/commit/52b8ca8))
+- **web-twig:** Introduce Pill story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([2840af0](https://github.com/lmc-eu/spirit-design-system/commit/2840af0))
+- **web-twig:** Introduce Stack story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([9855029](https://github.com/lmc-eu/spirit-design-system/commit/9855029))
+- **web-twig:** Introduce Tabs story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([df1dcf7](https://github.com/lmc-eu/spirit-design-system/commit/df1dcf7))
+- **web-twig:** Introduce Tag story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([bb2dfbb](https://github.com/lmc-eu/spirit-design-system/commit/bb2dfbb))
+- **web-twig:** Introduce Text story refs [#DS-247](https://github.com/lmc-eu/spirit-design-system/issues/DS-247) ([a1a2315](https://github.com/lmc-eu/spirit-design-system/commit/a1a2315))
+- **web-twig:** Introduce unescaped props prefix `UNSAFE_` ([72b45f1](https://github.com/lmc-eu/spirit-design-system/commit/72b45f1))
+- **web-twig:** Introduction CheckboxField stories ([37f564c](https://github.com/lmc-eu/spirit-design-system/commit/37f564c))
+- **web-twig:** Introduction RadioField stories ([cc2798a](https://github.com/lmc-eu/spirit-design-system/commit/cc2798a))
+- **web-twig:** Introduction TextArea stories ([d9053e0](https://github.com/lmc-eu/spirit-design-system/commit/d9053e0))
+- **web-twig:** Introduction TextField stories ([48e956c](https://github.com/lmc-eu/spirit-design-system/commit/48e956c))
+- **web-twig:** Introduction Tooltip stories ([64037cb](https://github.com/lmc-eu/spirit-design-system/commit/64037cb))
+
+### Features
+
+- **web-twig:** Allow event handling attributes via transferring props ([2016587](https://github.com/lmc-eu/spirit-design-system/commit/2016587))
+- **web-twig:** Deprecate `onClick` prop on every component ([e3a7684](https://github.com/lmc-eu/spirit-design-system/commit/e3a7684)), closes [#DS-645](https://github.com/lmc-eu/spirit-design-system/issues/DS-645)
+- **web-twig:** Introduce autocomplete attribute for RadioField ([29d0547](https://github.com/lmc-eu/spirit-design-system/commit/29d0547))
+- **web-twig:** Introduce GridSpan ([d26cd3a](https://github.com/lmc-eu/spirit-design-system/commit/d26cd3a))
+- **web-twig:** Introduce loading state to Button and ButtonLink [#DS-640](https://github.com/lmc-eu/spirit-design-system/issues/DS-640) ([b7e5bab](https://github.com/lmc-eu/spirit-design-system/commit/b7e5bab))
+- **web-twig:** Introduce Spinner component [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([c9f39d5](https://github.com/lmc-eu/spirit-design-system/commit/c9f39d5))
+- **web-twig:** Introduce UNSAFE props for Field components ([9122d74](https://github.com/lmc-eu/spirit-design-system/commit/9122d74)), closes [#DS-645](https://github.com/lmc-eu/spirit-design-system/issues/DS-645)
+- **web-twig:** Rename Text Color dictionary to Action Link, introduce correct Text Color [#DS-639](https://github.com/lmc-eu/spirit-design-system/issues/DS-639) ([da6fb75](https://github.com/lmc-eu/spirit-design-system/commit/da6fb75))
+
+### Styles
+
+- **web-twig:** Fix indentation of Modal component ([e549c47](https://github.com/lmc-eu/spirit-design-system/commit/e549c47))
+- **web-twig:** Ignore SimpleXMLElement static analysis error ([515ad02](https://github.com/lmc-eu/spirit-design-system/commit/515ad02))
+
+### Tests
+
+- **web-twig:** Correct usage of boolean with attribute ([c8bc461](https://github.com/lmc-eu/spirit-design-system/commit/c8bc461))
+- **web-twig:** Introduce HTML format method for better snapshots ([ede292e](https://github.com/lmc-eu/spirit-design-system/commit/ede292e))
+- **web-twig:** Reformat all snapshots with PHP tidy extension ([4426e06](https://github.com/lmc-eu/spirit-design-system/commit/4426e06))
+- **web-twig:** Update snapshot tests with updated spinner icon ([00bfaf8](https://github.com/lmc-eu/spirit-design-system/commit/00bfaf8))
+- **web-twig:** Update Spinner snapshot ([11aac67](https://github.com/lmc-eu/spirit-design-system/commit/11aac67))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.28.1"></a>
 
 ## [1.28.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.28.0...@lmc-eu/spirit-web-twig@1.28.1) (2023-03-23)
