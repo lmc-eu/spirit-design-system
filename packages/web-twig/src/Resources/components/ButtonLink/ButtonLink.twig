@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _href = props.href -%}
@@ -25,11 +24,11 @@
 {%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootLoadingClassName, _rootSizeClassName, _rootSquareClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootLoadingClassName, _rootSizeClassName, _rootSquareClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [
     'title',
 ] -%}
-
 
 {# Deprecations #}
 {% if _onClick %}
@@ -38,6 +37,7 @@
 
 <a
     {{ mainProps(props, _allowedAttributes) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
     {{ _onClickAttr | raw }}
