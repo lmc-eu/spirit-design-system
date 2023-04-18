@@ -25,7 +25,7 @@ Advanced example usage with positioning:
 ```twig
 <DropdownWrapper>
   <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown elementType="span" id="DropdownExample" class="custom-dropdown-class" placement="top-right" isFullWidth>Dropdown Content</Dropdown>
+  <Dropdown elementType="span" id="DropdownExample" placement="top-right" isFullWidth>Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
 
@@ -36,7 +36,6 @@ Without lexer:
   {% block content %}
     {% embed "@spirit/dropdown.twig" with { props: {
         breakpoint: 'tablet',
-        class: 'dropdown-custom-class',
         elementType: 'span',
         isFullWidth: true,
         placement: 'top-right'
@@ -58,22 +57,25 @@ attributes to register trigger events.
 
 | Prop name       | Type                                                     | Default       | Required | Description                                                                                            |
 | --------------- | -------------------------------------------------------- | ------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| `id`            | `string`                                                 | -             | yes      | Dropdown ID                                                                                            |
 | `breakpoint`    | `string`                                                 | -             | no       | [**DEPRECATED**][deprecated] in favor of `fullWidthMode`; Breakpoint level [tablet,desktop]            |
-| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all]                                                                  |
-| `class`         | `string`                                                 | `null`        | no       | Custom CSS class                                                                                       |
 | `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                                                                                     |
+| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all]                                                                  |
+| `id`            | `string`                                                 | -             | yes      | Dropdown ID                                                                                            |
 | `isFullWidth`   | `boolean`                                                | `false`       | no       | [**DEPRECATED**][deprecated] in favor of `fullWidthMode`; Whether is component displayed in full width |
 | `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                                                                             |
+
+You can add `data-*` or `aria-*` attributes to further extend the component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 ### Trigger attributes
 
 | Prop name       | Type     | Default    | Required | Description                |
 | --------------- | -------- | ---------- | -------- | -------------------------- |
-| `data-toggle`   | `string` | `dropdown` | yes      | Iterable selector          |
-| `data-target`   | `string` | -          | yes      | Target selector            |
-| `aria-expanded` | `string` | -          | no       | Aria expanded state (auto) |
 | `aria-controls` | `string` | -          | no       | Aria controls state (auto) |
+| `aria-expanded` | `string` | -          | no       | Aria expanded state (auto) |
+| `data-target`   | `string` | -          | yes      | Target selector            |
+| `data-toggle`   | `string` | `dropdown` | yes      | Iterable selector          |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when the component is loaded
 or the width of the window is changed. There can be several triggers, the same rules apply to each.
@@ -82,8 +84,12 @@ or the width of the window is changed. There can be several triggers, the same r
 
 | Prop name     | Type     | Default | Required | Description        |
 | ------------- | -------- | ------- | -------- | ------------------ |
-| `class`       | `string` | `null`  | no       | Custom CSS class   |
 | `elementType` | `string` | `div`   | no       | HTML tag to render |
+
+You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
