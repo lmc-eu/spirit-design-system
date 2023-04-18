@@ -20,11 +20,11 @@ Without lexer:
 
 ## API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for Container.
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [container]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Container
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
