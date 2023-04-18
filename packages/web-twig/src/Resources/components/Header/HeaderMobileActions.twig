@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _dialogId = props.dialogId -%}
 {%- set _menuToggleLabel = props.menuToggleLabel | default('Menu') -%}
 
@@ -8,9 +7,10 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'HeaderMobileActions' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-<div {{ mainProps(props) }} {{ classProp(_classNames) }}>
+<div {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     {% block content %}{% endblock %}
     <Button
         aria-controls="{{ _dialogId }}"

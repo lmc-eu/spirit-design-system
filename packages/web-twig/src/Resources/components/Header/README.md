@@ -112,13 +112,13 @@ just branding.
 
 | Prop name  | Type                      | Default       | Required | Description                         |
 | ---------- | ------------------------- | ------------- | -------- | ----------------------------------- |
-| `class`    | `string`                  | `null`        | no       | Custom CSS class                    |
 | `color`    | `transparent`, `inverted` | `transparent` | no       | Color variant                       |
 | `isSimple` | `boolean`                 | `false`       | no       | Shorter, centered version of Header |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ## Supported Content
 
@@ -161,13 +161,13 @@ You can place any custom content into the mobile actions component:
 
 | Prop name         | Type     | Default | Required | Description                     |
 | ----------------- | -------- | ------- | -------- | ------------------------------- |
-| `class`           | `string` | `null`  | no       | Custom CSS class                |
 | `dialogId`        | `string` | —       | yes      | ID of the linked HeaderDialog   |
 | `menuToggleLabel` | `string` | `Menu`  | no       | Label of the menu toggle button |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### Desktop-Only Actions
 
@@ -190,14 +190,14 @@ control here.
 
 #### API
 
-| Prop name | Type                   | Default   | Required | Description      |
-| --------- | ---------------------- | --------- | -------- | ---------------- |
-| `class`   | `string`               | `null`    | no       | Custom CSS class |
-| `color`   | `primary`, `secondary` | `primary` | no       | Color variant    |
+| Prop name | Type                   | Default   | Required | Description   |
+| --------- | ---------------------- | --------- | -------- | ------------- |
+| `color`   | `primary`, `secondary` | `primary` | no       | Color variant |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 #### Navigation
 
@@ -242,21 +242,16 @@ Both links and buttons are supported:
 
 ##### HeaderNav API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderNav.
 
 ##### HeaderNavItem API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderNavItem.
 
 ##### HeaderLink API
 
 | Prop name   | Type      | Default | Required | Description               |
 | ----------- | --------- | ------- | -------- | ------------------------- |
-| `class`     | `string`  | `null`  | no       | Custom CSS class          |
 | `href`      | `string`  | —       | yes      | Link URL                  |
 | `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
 | `onClick`   | `string`  | `null`  | no       | Function to call on click |
@@ -264,13 +259,12 @@ Both links and buttons are supported:
 
 ##### HeaderButton API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderButton.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ## Header Dialog
 
@@ -288,12 +282,12 @@ used for second-level navigation in general.
 
 | Prop name | Type     | Default | Required | Description                            |
 | --------- | -------- | ------- | -------- | -------------------------------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class                       |
 | `id`      | `string` | —       | yes      | ID to be linked in HeaderMobileActions |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### Close Button
 
@@ -305,14 +299,14 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 
 | Prop name       | Type      | Default | Required | Description                     |
 | --------------- | --------- | ------- | -------- | ------------------------------- |
-| `class`         | `string`  | `null`  | no       | Custom CSS class                |
 | `dialogId`      | `string`  | —       | yes      | ID of the parent HeaderDialog   |
 | `enableDismiss` | `boolean` | `true`  | no       | Enable Off-canvas JS dismiss    |
 | `label`         | `string`  | `Close` | no       | Label of the menu toggle button |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### Primary and Secondary Actions
 
@@ -332,12 +326,12 @@ the optional secondary actions slot.
 
 | Prop name | Type                   | Default   | Required | Description               |
 | --------- | ---------------------- | --------- | -------- | ------------------------- |
-| `class`   | `string`               | `null`    | no       | Custom CSS class          |
 | `color`   | `primary`, `secondary` | `primary` | no       | Color of the actions slot |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 #### Navigation
 
@@ -389,21 +383,16 @@ Navigation items can be links, buttons, or just text:
 
 ##### HeaderDialogNav API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderDialogNav.
 
 ##### HeaderDialogNavItem API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderDialogNavItem.
 
 ##### HeaderDialogLink API
 
 | Prop name   | Type      | Default | Required | Description               |
 | ----------- | --------- | ------- | -------- | ------------------------- |
-| `class`     | `string`  | `null`  | no       | Custom CSS class          |
 | `href`      | `string`  | —       | yes      | Link URL                  |
 | `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
 | `onClick`   | `string`  | `null`  | no       | Function to call on click |
@@ -411,19 +400,16 @@ Navigation items can be links, buttons, or just text:
 
 ##### HeaderDialogButton API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderDialogButton.
 
 ##### HeaderDialogText API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There is no API for HeaderDialogText.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ## Composition
 
@@ -537,3 +523,4 @@ And the complete Header Dialog:
 
 [header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Header
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
