@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('neutral') -%}
 {%- set _elementType = props.elementType | default('span') -%}
 {%- set _isSubtle = props.isSubtle | default(false) -%}
@@ -15,7 +14,8 @@
 {%- set _themeClassName = _theme ? _spiritClassPrefix ~ 'Tag--' ~ _theme : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _sizeClassName, _subtleClassname, _themeClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _colorClassName, _sizeClassName, _subtleClassname, _themeClassName, _styleProps.className ] -%}
 
 {# Deprecations #}
 {% if _theme %}
@@ -25,6 +25,6 @@
     {% deprecated 'Tag: The "default" value for "color" property will be removed in the next major version. Use "neutral" instead.' %}
 {% endif %}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
 {%- block content %}{% endblock -%}
 </{{ _elementType }}>
