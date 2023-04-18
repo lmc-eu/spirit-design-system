@@ -97,9 +97,13 @@ content can be overridden by any custom block content.
 
 | Prop name     | Type     | Default | Required | Description                                                                                                                                                                                 |
 | ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `class`       | `string` | `null`  | no       | Additional CSS class                                                                                                                                                                        |
 | `elementType` | `string` | `nav`   | no       | HTML tag to render                                                                                                                                                                          |
-| `items`       | `array`  | `[]`    | no       | Navigation menu items                                                                                                                                                                       |
 | `goBackTitle` | `string` | ``      | no       | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
+| `items`       | `array`  | `[]`    | no       | Navigation menu items                                                                                                                                                                       |
+
+You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Breadcrumbs
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
