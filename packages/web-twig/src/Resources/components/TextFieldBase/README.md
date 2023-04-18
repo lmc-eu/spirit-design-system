@@ -61,7 +61,6 @@ Without lexer:
 | Prop name           | Type                                                                 | Default | Required | Description                                                                                                                        |
 | ------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `autocomplete`      | `bool`                                                               | `false` | no       | If the field should have autocomplete enabled                                                                                      |
-| `class`             | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
 | `hasPasswordToggle` | `bool`                                                               | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown                                                            |
 | `helperText`        | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 | `UNSAFE_helperText` | `string`                                                             | `null`  | no       | Unescaped custom helper text                                                                                                       |
@@ -85,9 +84,11 @@ Without lexer:
 \*: The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 [textfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
