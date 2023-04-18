@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
@@ -18,7 +17,8 @@
 {%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [
     'title',
 ] -%}
@@ -31,6 +31,7 @@
 <a
     {{ mainProps(props, _allowedAttributes) }}
     href="{{ _href }}"
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _onClickAttr | raw }}
     {{ _targetAttr }}
