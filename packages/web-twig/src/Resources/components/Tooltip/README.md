@@ -60,20 +60,21 @@ best positioning approach for your use case.
 
 | Prop name       | Type                               | Default  | Required | Description              |
 | --------------- | ---------------------------------- | -------- | -------- | ------------------------ |
-| `class`         | `string`                           | `null`   | no       | Custom CSS class         |
 | `closeLabel`    | `string`                           | `Close`  | no       | Close label              |
 | `id`            | `string`                           | `null`   | no       | Optional tooltip ID      |
 | `isDismissible` | `bool`                             | `false`  | no       | Make tooltip dismissible |
 | `placement`     | [`top`, `bottom`, `left`, `right`] | `bottom` | no       | Tooltip placement        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### TooltipWrapper
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
