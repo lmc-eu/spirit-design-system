@@ -1,6 +1,5 @@
 {# API #}
 {%- set _autocomplete = props.autocomplete | default(null) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isChecked = props.isChecked | default(false) | boolprop -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
@@ -34,11 +33,12 @@
 {%- set _autocompleteAttr = _autocomplete ? 'autocomplete=' ~ _autocomplete : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
-<label {{ _labelForAttr }} {{ mainProps(_mainPropsWithoutId) }} {{ classProp(_classNames) }}>
+<label {{ _labelForAttr }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props) }}
         type="radio"
