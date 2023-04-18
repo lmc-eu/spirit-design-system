@@ -48,21 +48,16 @@ The Tabs itself consists of many components which cannot be used independently.
 
 ### TabList
 
-| Prop name | Type     | Default | Required | Description           |
-| --------- | -------- | ------- | -------- | --------------------- |
-| `class`   | `string` | `null`  | no       | Additional class name |
+There is no API for TabList.
 
 ### TabItem
 
-| Prop name | Type     | Default | Required | Description           |
-| --------- | -------- | ------- | -------- | --------------------- |
-| `class`   | `string` | `null`  | no       | Additional class name |
+There is no API for TabItem.
 
 ### TabLink
 
 | Prop name    | Type      | Default | Required | Description                  |
 | ------------ | --------- | ------- | -------- | ---------------------------- |
-| `class`      | `string`  | `null`  | no       | Additional class name        |
 | `href`       | `string`  | `null`  | no       | URL target of a link         |
 | `id`         | `string ` | `null`  | no       | Tab item identification      |
 | `isSelected` | `boolean` | `false` | no       | Whether is tab item selected |
@@ -72,9 +67,13 @@ The Tabs itself consists of many components which cannot be used independently.
 
 | Prop name    | Type      | Default | Required | Description                    |
 | ------------ | --------- | ------- | -------- | ------------------------------ |
-| `class`      | `string`  | `null`  | no       | Additional class name          |
 | `id`         | `string ` | `null`  | yes      | Tab pane target identification |
 | `isSelected` | `boolean` | `false` | no       | Whether is tab pane selected   |
 | `label`      | `string`  | `null`  | no       | Aria label of the tab pane     |
 
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+
 [tabs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tabs
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

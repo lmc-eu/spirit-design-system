@@ -1,7 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _ariaTarget = props.ariaTarget | default(null) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _href = props.href | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isSelected = props.isSelected | default(false) | boolprop -%}
@@ -21,12 +20,14 @@
 {%- set _typeAttr = _href ? null : 'type=button' -%}
 
 {# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
 {%- set _ariaSelected = _isSelected ? 'true' : 'false' -%}
-{%- set _classNames = [ _rootClassName, _isSelectedClassName, _class ] -%}
+{%- set _classNames = [ _rootClassName, _isSelectedClassName, _styleProps.className ] -%}
 {%- set _elementType = _href ? 'a' : 'button' -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     aria-selected="{{ _ariaSelected }}"
     {{ _ariaControlsAttr }}
