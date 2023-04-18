@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
 {%- set _enableDismiss = props.enableDismiss ?? true -%}
 {%- set _modalId = props.modalId -%}
@@ -14,10 +13,12 @@
 {%- set _titleIdAttr = _titleId ? 'id=' ~ _titleId : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
 <header
     {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
 >
     {% if block('content') is not empty %}

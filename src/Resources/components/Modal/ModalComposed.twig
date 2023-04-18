@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _titleId = props.titleId | default(null) -%}
 
@@ -13,7 +12,8 @@
 {%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby=' ~ _titleId : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootComposedClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootComposedClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 {# Deprecations #}
@@ -21,6 +21,7 @@
 
 <dialog
     {{ mainProps(_mainPropsWithoutId) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr }}
     {{ _ariaLabelledbyAttr }}
