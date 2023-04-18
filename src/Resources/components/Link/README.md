@@ -37,7 +37,6 @@ Without lexer:
 
 | Prop name      | Type                                             | Default   | Required | Description                        |
 | -------------- | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
-| `class`        | `string`                                         | `null`    | no       | Custom CSS class                   |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | no       | Color variant                      |
 | `href`         | `string`                                         | —         | yes      | Link URL                           |
 | `isDisabled`   | `bool`                                           | `false`   | no       | If true, Link is disabled          |
@@ -47,7 +46,9 @@ Without lexer:
 | `title`        | `string`                                         | `null`    | no       | Optional title to display on hover |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
