@@ -45,7 +45,6 @@ Without lexer:
 
 | Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
 | ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `class`           | `string`                                                             | `null`  | no       | Custom CSS class                                                                                                                   |
 | `id`              | `string`                                                             | —       | yes      | TextArea and label identification                                                                                                  |
 | `isDisabled`      | `bool`                                                               | `false` | no       | If true, TextArea is disabled                                                                                                      |
 | `isFluid`         | `bool`                                                               | `false` | no       | If true, the element spans to the full width of its parent                                                                         |
@@ -62,9 +61,11 @@ Without lexer:
 | `helperText`      | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
