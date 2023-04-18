@@ -185,23 +185,20 @@ The Accordion itself consists of several components which cannot be used indepen
 
 | Prop name     | Type     | Default     | Required | Description                                                                                       |
 | ------------- | -------- | ----------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `class`       | `string` | `null`      | no       | Additional class name                                                                             |
 | `elementType` | `string` | `'section'` | no       | Custom element type                                                                               |
 | `id`          | `string` | `null`      | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
 
 ### AccordionItem
 
-| Prop name     | Type     | Default     | Required | Description           |
-| ------------- | -------- | ----------- | -------- | --------------------- |
-| `class`       | `string` | `null`      | no       | Additional class name |
-| `elementType` | `string` | `'article'` | no       | Custom element type   |
-| `id`          | `string` | `null`      | yes      | AccordionItem ID      |
+| Prop name     | Type     | Default     | Required | Description         |
+| ------------- | -------- | ----------- | -------- | ------------------- |
+| `elementType` | `string` | `'article'` | no       | Custom element type |
+| `id`          | `string` | `null`      | yes      | AccordionItem ID    |
 
 ### AccordionHeader
 
 | Prop name     | Type     | Default | Required | Description              |
 | ------------- | -------- | ------- | -------- | ------------------------ |
-| `class`       | `string` | `null`  | no       | Additional class name    |
 | `elementType` | `string` | `'h3'`  | no       | Custom element type      |
 | `for`         | `string` | `null`  | yes      | AccordionContent ID      |
 | `id`          | `string` | `null`  | yes      | AccordionHeader ID       |
@@ -212,14 +209,15 @@ The Accordion itself consists of several components which cannot be used indepen
 
 | Prop name      | Type      | Default | Required | Description                                                                 |
 | -------------- | --------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `class`        | `string`  | `null`  | no       | Additional class name                                                       |
 | `id`           | `string`  | `null`  | yes      | AccordionContent ID                                                         |
 | `isOpen`       | `boolean` | `false` | no       | If true, make the item open on page load                                    |
 | `labelledById` | `string`  | `null`  | yes      | AccordionHeader ID                                                          |
 | `parent`       | `string`  | `null`  | no       | A parent element selector that ensures that only one item is open at a time |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 [accordion]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Accordion
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
