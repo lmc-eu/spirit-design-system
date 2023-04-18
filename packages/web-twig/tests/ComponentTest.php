@@ -20,152 +20,58 @@ final class ComponentTest extends TestCase
         $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component');
     }
 
-    public function testShouldRenderSimpleComponent(): void
-    {
-        $html = $this->twig->render('test_simple_component.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<button
-    class="Button Button--primary Button--medium"
-    type="button"
->Demo button</button>
-HTML,
-            $html
-        );
-    }
-
-    public function testShouldRenderComponentWithArguments(): void
-    {
-        $html = $this->twig->render('test_arguments.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(<<<HTML
-<button
-    class="Button Button--primary Button--medium"
-    type="button"
-><span>Demo button</span></button>
-HTML, $html);
-    }
-
-    public function testShouldRenderWithArgumentWithoutValue(): void
-    {
-        $html = $this->twig->render('test_argument_without_value.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<button
-    class="Button Button--secondary Button--medium Button--block"
-    type="button"
->Demo button without argument value</button>
-HTML,
-            $html
-        );
-    }
-
-    public function testShouldRenderComponentWithHtmlTags(): void
-    {
-        $html = $this->twig->render('test_component_with_html_tags.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<form>
-<button
-    class="Button Button--primary Button--medium"
-    type="submit"
->Submit</button>
-</form>
-HTML,
-            $html
-        );
-    }
-
     /**
-     * @dataProvider renderExtendsComponentsDataProvider
+     * @dataProvider renderDataProvider
      */
-    public function testShouldRenderExtendsComponents(string $prefix, string $testTemplate): void
+    public function testShouldRender(string $testTemplate, string $prefix = null): void
     {
-        $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
+        if ($prefix) {
+            $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
+        }
         $html = $this->twig->render(sprintf('%s.twig', $testTemplate));
         $html = $this->removeWhitespace($html);
 
-        $this->assertEquals(
-            <<<HTML
-<button
-    class="jobs-Button jobs-Button--primary jobs-Button--small"
-    type="button"
->Primary buttom</button>
-HTML,
-            $html
-        );
+        $output = $this->twig->render(sprintf('%s.html', $testTemplate));
+        $output = $this->removeWhitespace($output);
+        $this->assertEquals($output, $html);
     }
 
     /**
      * @return array<string, array<string>>
      */
-    public function renderExtendsComponentsDataProvider(): array
+    public function renderDataProvider(): array
     {
         return [
+            'test simple component' => [
+                'test_simple_component',
+            ],
+            'test component with arguments' => [
+                'test_arguments',
+            ],
+            'test component with arguments without value' => [
+                'test_argument_without_value',
+            ],
+            'test component with html tags' => [
+                'test_component_with_html_tags',
+            ],
             'test extend component button with prefix in pure imp' => [
-                'jobs-', 'test_extends_component_pure',
+                'test_extends_component_pure',
+                'jobs-',
             ],
             'test extend component button with prefix in html imp' => [
-                'jobs-', 'test_extends_component_html',
+                'test_extends_component_html',
+                'jobs-',
+            ],
+            'text component with camelCase name' => [
+                'test_component_camel_case_name',
+            ],
+            'text component with unsafe case name and style' => [
+                'test_component_classname_style',
+            ],
+            'text component with unsafe case name and style and xss' => [
+                'test_component_classname_style_xss',
             ],
         ];
-    }
-
-    public function testShouldRenderComponentWithCamelCaseName(): void
-    {
-        $html = $this->twig->render('test_component_camel_case_name.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<a
-    class="Button Button--primary Button--medium"
-    href="#"
->Link Button</a>
-HTML,
-            $html
-        );
-    }
-
-    public function testShouldRenderComponentWithUnsafeCaseNameAndStyle(): void
-    {
-        $html = $this->twig->render('test_component_classname_style.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<a
-    style="z-index: 1;"
-    class="Button Button--primary Button--medium test-class"
-    href="#"
->Link Button</a>
-HTML,
-            $html
-        );
-    }
-
-    public function testShouldRenderComponentXSSSafe(): void
-    {
-        $html = $this->twig->render('test_component_classname_style_xss.twig');
-        $html = $this->removeWhitespace($html);
-
-        $this->assertEquals(
-            <<<HTML
-<a
-    style="z-index: 1;&lt;script&gt;alert(&#039;XSS&#039;)&lt;/script&gt;"
-    class="Button Button--primary Button--medium test-class&quot; onmouseover=&quot;alert(&#039;XSS&#039;)&quot;"
-    href="#"
->Link Button</a>
-HTML,
-            $html
-        );
     }
 
     /**
