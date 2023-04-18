@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isDismissible = props.isDismissible | default(false) | boolprop -%}
@@ -17,11 +16,13 @@
 {%- set _idAttr = _id ? 'id=' ~ _id : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootPlacementClassName, _rootDismissibleClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootPlacementClassName, _rootDismissibleClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 <div
     {{ mainProps(_mainPropsWithoutId) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr }}
 >
