@@ -1,13 +1,13 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-<ul {{ mainProps(props) }} {{ classProp(_classNames) }} role="tablist">
+<ul {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} role="tablist">
     {% block content %}{% endblock %}
 </ul>
