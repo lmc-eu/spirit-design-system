@@ -154,6 +154,10 @@ class SvgExtensionTest extends TestCase
                 'test.svg', 'test_with_size.svg', [
                     'size' => '32',
                 ], ],
+            'load with style' => [
+                'test.svg', 'test_with_style.svg', [
+                    'style' => 'position: absolute;',
+                ], ],
         ];
     }
 }
