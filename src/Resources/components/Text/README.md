@@ -31,13 +31,14 @@ Without lexer:
 
 | Prop name     | Type                                        | Default   | Required | Description          |
 | ------------- | ------------------------------------------- | --------- | -------- | -------------------- |
-| `class`       | `string`                                    | `null`    | no       | Custom CSS class     |
 | `elementType` | `string`                                    | `p`       | no       | HTML tag to render   |
 | `emphasis`    | `regular`, `bold`, `italic`                 | `regular` | no       | Emphasis of the text |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium`  | no       | Size of the text     |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [text]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Text
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
