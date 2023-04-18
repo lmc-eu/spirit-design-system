@@ -1,11 +1,10 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
+{%- set _breakpoint = props.breakpoint | default(null) -%}
+{%- set _elementType = props.elementType | default('div') -%}
 {%- set _id = props.id -%}
 {%- set _isOpen = props.isOpen | default(false) | boolprop -%}
-{%- set _breakpoint = props.breakpoint | default(null) -%}
 {%- set _parent = props.parent | default(null) -%}
-{%- set _elementType = (props.elementType is defined) ? props.elementType : 'div' -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Collapse' -%}
@@ -18,9 +17,13 @@
 {%- set _dataParentAttr = _parent ? 'data-parent=' ~ _parent : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _isOpenClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _isOpenClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 <{{ _elementType }}
+    {{ mainProps(_mainPropsWithoutId) }}
+    {{ styleProp(_styleProps) }}
     {{ _idAttr }}
     {{ _dataBreakpointAttr }}
     {{ _dataParentAttr }}
