@@ -25,12 +25,13 @@ Without lexer:
 
 ## API
 
-| Prop name | Type                                      | Default | Required | Description      |
-| --------- | ----------------------------------------- | ------- | -------- | ---------------- |
-| `class`   | `string`                                  | `null`  | no       | Custom CSS class |
-| `color`   | [Text Color dictionary][dictionary-color] | `null`  | no       | Color variant    |
+| Prop name | Type                                      | Default | Required | Description   |
+| --------- | ----------------------------------------- | ------- | -------- | ------------- |
+| `color`   | [Text Color dictionary][dictionary-color] | `null`  | no       | Color variant |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+You can add `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
