@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('selected') -%}
 {%- set _elementType = props.elementType | default('span') -%}
 
@@ -9,8 +8,9 @@
 {%- set _colorClassName = _spiritClassPrefix ~ 'Pill--' ~ _color -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _colorClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _colorClassName, _styleProps.className ] -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }}>
+<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
 {%- block content %}{% endblock -%}
 </{{ _elementType }}>
