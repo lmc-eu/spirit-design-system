@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _elementType = props.elementType | default('nav') -%}
 {%- set _goBackTitle = props.goBackTitle | default('') -%}
 {%- set _items = props.items | default([]) -%}
@@ -9,9 +8,10 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Breadcrumbs' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }} aria-label="Breadcrumb">
+<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} aria-label="Breadcrumb">
 {% apply spaceless %}
     {%- if _items|length > 0 -%}
         <ol>
