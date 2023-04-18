@@ -8,10 +8,12 @@
 {%- set _rootAnimationClassName = _spiritClassPrefix ~ 'animation-spin-clockwise' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootAnimationClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootAnimationClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutLocal = props | filter((value, prop) => prop != 'color' and prop != 'class') -%}
 
 {% embed "@spirit/icon.twig" with { props: {
     name: 'spinner',
-    class: _classNames | join(' ') | trim
+    UNSAFE_className: _classNames | join(' ') | trim,
+    UNSAFE_style: _styleProps.style,
 } | merge(_mainPropsWithoutLocal) } %}{% endembed %}
