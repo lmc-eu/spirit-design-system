@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _elementType = (props.elementType is defined) ? props.elementType : 'article' -%}
 
@@ -11,11 +10,13 @@
 {%- set _idAttr = _id ? 'id=' ~ _id : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 <{{ _elementType }}
     {{ mainProps(_mainPropsWithoutId) }}
+    {{ styleProp(_styleProps) }}
     {{ _idAttr }}
     {{ classProp(_classNames) }}
 >

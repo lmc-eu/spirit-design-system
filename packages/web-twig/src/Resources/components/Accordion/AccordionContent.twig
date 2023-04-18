@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _labelledById = props.labelledById -%}
 {%- set _parent = props.parent | default(null) -%}
@@ -18,12 +17,14 @@
 {%- set _dataParentAttr = _parent ? 'data-parent=' ~ _parent : null -%}
 
 {# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
 {%- set _collapseClassNames = [ _rootClassName, _isOpenClassName ] -%}
-{%- set _contentClassNames = [ _accordionClassName, _class ] -%}
+{%- set _contentClassNames = [ _accordionClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
 
 <div
     {{ mainProps(_mainPropsWithoutId) }}
+    {{ styleProp(_styleProps) }}
     {{ _idAttr }}
     {{ classProp(_collapseClassNames) }}
     {{ _labelledIdAttr }}
