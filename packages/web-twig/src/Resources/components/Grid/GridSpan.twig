@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _over = props.over | default(null) -%}
 {%- set _desktop = props.desktop | default(null) -%}
 {%- set _elementType = props.elementType | default('div') -%}
@@ -13,10 +12,12 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Grid__span' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _overClassName, _tabletClassName, _desktopClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _overClassName, _tabletClassName, _desktopClassName, _styleProps.className ] -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
 >
     {%- block content %}{% endblock -%}
