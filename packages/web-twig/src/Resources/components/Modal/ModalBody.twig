@@ -1,15 +1,16 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalBody' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
 <div
     {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
 >
     {% block content %}{% endblock %}
