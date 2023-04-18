@@ -37,13 +37,13 @@ and will be removed in the next major version: the composed Modal will supersede
 
 | Prop name | Type     | Default | Required | Description                        |
 | --------- | -------- | ------- | -------- | ---------------------------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class                   |
 | `id`      | `string` | —       | yes      | Modal ID                           |
 | `titleId` | `string` | `null`  | no       | ID of the title inside ModalHeader |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### ModalDialog
 
@@ -66,13 +66,13 @@ footer of the dialog.
 
 | Prop name            | Type      | Default   | Required | Description                                |
 | -------------------- | --------- | --------- | -------- | ------------------------------------------ |
-| `class`              | `string`  | `null`    | no       | Custom CSS class                           |
 | `elementType`        | `string`  | `article` | no       | HTML tag to render                         |
 | `isExpandedOnMobile` | `boolean` | `true`    | no       | If the ModalDialog should expand on mobile |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component. Also all `form` attributes
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component. Also all `form` attributes
 are allowed when the `elementType` is set to `form`.
 
 #### Forms in Modal
@@ -127,15 +127,15 @@ accessible name for the dialog, e.g. using the `aria-label` attribute on
 
 | Prop name       | Type      | Default | Required | Description             |
 | --------------- | --------- | ------- | -------- | ----------------------- |
-| `class`         | `string`  | `null`  | no       | Custom CSS class        |
 | `closeLabel`    | `string`  | `Close` | no       | Custom close label      |
 | `enableDismiss` | `boolean` | `true`  | no       | Enable JS Modal dismiss |
 | `modalId`       | `string`  | —       | yes      | Modal ID                |
 | `titleId`       | `string`  | `null`  | no       | ID of the title         |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### ModalBody
 
@@ -149,13 +149,12 @@ will be passed to the topmost HTML element of the component.
 
 #### API
 
-| Prop name | Type     | Default | Required | Description      |
-| --------- | -------- | ------- | -------- | ---------------- |
-| `class`   | `string` | `null`  | no       | Custom CSS class |
+There are no API options for ModalBody.
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+You can add `data-*` or `aria-*` attributes to further extend
+component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### ModalFooter
 
@@ -176,12 +175,12 @@ will be passed to the topmost HTML element of the component.
 | ------------- | --------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------- |
 | `align`       | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | [**DEPRECATED**][deprecated] in favor of `alignmentX`; Alignment of Footer Actions |
 | `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | Alignment of Footer Actions                                                        |
-| `class`       | `string`                                      | `null`  | no       | Custom CSS class                                                                   |
 | `description` | `string`                                      | `null`  | no       | Optional Footer Description                                                        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 ### Full Example
 
@@ -281,13 +280,13 @@ Without lexer:
 
 | Prop name    | Type     | Default | Required | Description        |
 | ------------ | -------- | ------- | -------- | ------------------ |
-| `class`      | `string` | `null`  | no       | Custom CSS class   |
 | `closeLabel` | `string` | `Close` | no       | Custom close label |
 | `id`         | `string` | —       | yes      | Modal ID           |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. These attributes
-will be passed to the topmost HTML element of the component.
+further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+These attributes will be passed to the topmost HTML element of the component.
 
 </details>
 
@@ -295,3 +294,4 @@ will be passed to the topmost HTML element of the component.
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

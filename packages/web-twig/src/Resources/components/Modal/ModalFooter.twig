@@ -2,7 +2,6 @@
 {%- set props = props | default([]) -%}
 {%- set _align = props.align | default(null) -%}
 {%- set _alignmentX = props.alignmentX | default('right') -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _description = props.description | default(null) -%}
 
 {# Class names #}
@@ -12,7 +11,8 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalFooter' -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootAlignClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootAlignClassName, _styleProps.className ] -%}
 
 {# Deprecations #}
 {% if _align %}
@@ -21,6 +21,7 @@
 
 <footer
     {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
 >
     {% if _description %}

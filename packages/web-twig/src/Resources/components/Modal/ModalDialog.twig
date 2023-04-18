@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _elementType = props.elementType | default('article') -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile ?? true -%}
 
@@ -9,7 +8,8 @@
 {%- set _rootExpandOnMobileClassName = _isExpandedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--expandOnMobile' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootExpandOnMobileClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootExpandOnMobileClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = _elementType == 'form' ? [
     'accept-charset',
     'action',
@@ -25,6 +25,7 @@
 
 <{{ _elementType }}
     {{ mainProps(props, _allowedAttributes) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
 >
     {% block content %}{% endblock %}
