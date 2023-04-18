@@ -36,7 +36,6 @@ Without lexer:
 
 | Prop name    | Type                                                                                      | Default   | Required | Description                                                                |
 | ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
-| `class`      | `string`                                                                                  | `null`    | no       | Custom CSS class                                                           |
 | `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                                              |
 | `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent                           |
 | `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, Button is disabled                                                |
@@ -48,8 +47,10 @@ Without lexer:
 | `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                                         |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
