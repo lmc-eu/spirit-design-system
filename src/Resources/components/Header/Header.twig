@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('transparent') -%}
 {%- set _isSimple = props.isSimple | default(false) -%}
 
@@ -10,8 +9,9 @@
 {%- set _rootSimpleClassName = _isSimple ? _spiritClassPrefix ~ 'Header--simple' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSimpleClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSimpleClassName, _styleProps.className ] -%}
 
-<header {{ mainProps(props) }} {{ classProp(_classNames) }}>
+<header {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     {% block content %}{% endblock %}
 </header>
