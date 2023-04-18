@@ -25,7 +25,7 @@ Open on page load:
 Activate Collapse only on mobile screens:
 
 ```twig
-<Button {# … #} class="d-tablet-none">Collapse trigger</Button>
+<Button {# … #} UNSAFE_className="d-tablet-none">Collapse trigger</Button>
 <Collapse breakpoint="tablet">Collapse content</Collapse>
 ```
 

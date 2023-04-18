@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _isBlock = props.isBlock | default(false) | boolprop -%}
@@ -23,7 +22,8 @@
 {%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSquareClassName, _class ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSquareClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'name' ] -%}
 
 {# Deprecations #}
@@ -33,6 +33,7 @@
 
 <button
     {{ mainProps(props, _allowedAttributes) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     type="{{ _type }}"
     {{ _disabledAttr }}
