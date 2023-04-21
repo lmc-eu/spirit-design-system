@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { lang } from './lang';
 import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
 
@@ -28,7 +27,7 @@ const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 
 // const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
-let currentLocale = 'en';
+const currentLocale = 'en';
 const validators: Record<string, Validator> = {};
 
 type Validator = {
@@ -76,7 +75,7 @@ const validate = (name: string, validator: Validator) => {
 
 // validate('text', { fn: (val) => true, priority: 0 });
 validate('required', {
-  fn: function (value) {
+  fn(value) {
     return this.type === 'radio' || this.type === 'checkbox'
       ? groupedElemCount(this)
       : value !== undefined && value.trim() !== '';
@@ -106,25 +105,29 @@ class FormValidations {
     this.form = form;
     this.config = mergeConfig(config || {}, defaultConfig) as Config;
     this.live = !(live === false);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore Type 'Element' is missing the following properties from type 'HTMLInputElement': accept, align, alt, autocomplete, and 173 more.
     this.fields = Array.from(form.querySelectorAll(SELECTOR)).map((input) => {
-      let fns = [] as Validator[];
-      let params = {};
-      let messages = {} as Message[];
+      const fns = [] as Validator[];
+      const params = {};
+      const messages = {} as Message[];
 
       [].forEach.call(input.attributes, (attr: HTMLAttribute) => {
         if (/^data-spirit-/.test(attr.name)) {
           let name = attr.name.substr(14);
-          let messageMatch = name.match(MESSAGE_REGEX);
+          const messageMatch = name.match(MESSAGE_REGEX);
 
           if (messageMatch !== null) {
-            let locale = messageMatch[1] === undefined ? 'en' : messageMatch[1];
+            const locale = messageMatch[1] === undefined ? 'en' : messageMatch[1];
 
+            // eslint-disable-next-line no-prototype-builtins
             if (!messages.hasOwnProperty(locale)) {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore index type
               messages[locale] = {};
             }
 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore index type
             messages[locale][name.slice(0, name.length - messageMatch[0].length)] = attr.value;
 
@@ -135,11 +138,12 @@ class FormValidations {
             name = attr.value;
           }
 
-          this.addValidatorToField(fns, params, name, attr.value);
+          FormValidations.addValidatorToField(fns, params, name, attr.value);
+          // eslint-disable-next-line no-bitwise
         } else if (~ALLOWED_ATTRIBUTES.indexOf(attr.name)) {
-          this.addValidatorToField(fns, params, attr.name, attr.value);
+          FormValidations.addValidatorToField(fns, params, attr.name, attr.value);
         } else if (attr.name === 'type') {
-          this.addValidatorToField(fns, params, attr.value);
+          FormValidations.addValidatorToField(fns, params, attr.value);
         }
       });
 
@@ -147,37 +151,43 @@ class FormValidations {
 
       this.live &&
         input.addEventListener(
+          // eslint-disable-next-line no-bitwise
           !~['radio', 'checkbox'].indexOf(input.getAttribute('type') || '') ? 'input' : 'change',
           (event) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore Argument of type 'EventTarget | null' is not assignable to parameter of type 'string | FormValidationsHTMLElement | null'.
             this.validate(event.target);
           },
         );
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore Property 'formValidations' does not exist on type 'Element'.
+      // eslint-disable-next-line no-return-assign
       return (input.formValidations = { input, validators: fns, params, messages });
     });
   }
 
-  private addValidatorToField(fns: Validator[], params: any, name: string, value: string | null = null) {
-    let validator = validators[name];
+  private static addValidatorToField(fns: Validator[], params: any, name: string, value: string | null = null) {
+    const validator = validators[name];
     if (validator) {
       fns.push(validator);
       if (value) {
-        let valueParams = name === 'pattern' ? [value] : value.split(',');
+        const valueParams = name === 'pattern' ? [value] : value.split(',');
         valueParams.unshift(''); // placeholder for input's value
         params[name] = valueParams;
       }
     }
   }
 
-  /***
+  /**
    * Checks whether the form/input elements are valid
+   *
    * @param input => input element(s) or a jquery selector, null for full form validation
    * @param silent => do not show error messages, just return true/false
    * @returns {boolean} return true when valid false otherwise
    */
-  public validate(input: FormValidationsHTMLElement | string | null, silent: boolean = false): boolean {
+  public validate(input: FormValidationsHTMLElement | string | null, silent = false): boolean {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     silent = (input && silent === true) || input === true;
     let { fields } = this;
@@ -186,6 +196,7 @@ class FormValidations {
     if (input !== true && input !== false) {
       if (input instanceof HTMLElement) {
         fields = [input.formValidations];
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
       } else if (input instanceof NodeList || input instanceof Array) {
         fields = Array.from(input).map((el) => el.formValidations);
@@ -206,11 +217,13 @@ class FormValidations {
         !silent && this.showError(field);
       }
     }
+
     return valid;
   }
 
-  /***
+  /**
    * Get errors of a specific field or the whole form
+   *
    * @param input
    * @returns {Array|*}
    */
@@ -231,27 +244,30 @@ class FormValidations {
   //   return input.length ? input[0].formValidations.errors : input.formValidations.errors;
   // };
 
-  /***
+  /**
    * Validates a single field, all validator functions are called and error messages are generated
    * when a validator fails
+   *
    * @param field
    * @returns {boolean}
    * @private
    */
-  validateField(field: Field): boolean {
-    let errors = [];
+  static validateField(field: Field): boolean {
+    const errors = [];
     let valid = true;
 
     for (let i = 0; field.validators[i]; i++) {
-      let validator = field.validators[i];
+      const validator = field.validators[i];
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore index type
-      let params = field.params[validator.name] ? field.params[validator.name] : [];
+      const params = field.params[validator.name] ? field.params[validator.name] : [];
       params[0] = field.input.value;
 
       if (!validator.fn.apply(field.input, params)) {
         valid = false;
 
         if (typeof validator.msg === 'function') {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           errors.push(validator.msg(field.input.value, params));
         } else if (typeof validator.msg === 'string') {
@@ -262,6 +278,7 @@ class FormValidations {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore index type
         } else if (field.messages[currentLocale] && field.messages[currentLocale][validator.name]) {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore index type
           errors.push(fillTemplate(field.messages[currentLocale][validator.name], params));
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -271,6 +288,7 @@ class FormValidations {
           // @ts-ignore index type
           errors.push(fillTemplate(lang[currentLocale][validator.name], params));
         } else {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore index type
           errors.push(fillTemplate(lang[currentLocale].default, params));
         }
@@ -286,8 +304,9 @@ class FormValidations {
     return valid;
   }
 
-  /***
+  /**
    * Add a validator to a specific dom element in a form
+   *
    * @param elem => The dom element where the validator is applied to
    * @param fn => validator function
    * @param msg => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
@@ -304,9 +323,10 @@ class FormValidations {
   //   }
   // };
 
-  /***
+  /**
    * An utility function that returns a 2-element array, first one is the element where error/success class is
    * applied. 2nd one is the element where error message is displayed. 2nd element is created if doesn't exist and cached.
+   *
    * @param field
    * @returns {*}
    * @private
@@ -337,6 +357,7 @@ class FormValidations {
       }
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore Type 'HTMLElement | null' is not assignable to type 'HTMLElement'.
     // eslint-disable-next-line no-return-assign
     return (field.errorElements = [errorClassElement, validationTextElement]);
@@ -369,10 +390,12 @@ class FormValidations {
     }
   }
 
-  /***
+  /**
    * Adds error to a specific field
+   *
    * @param input
    * @param error
+   * @param field
    */
   // addError = function (input, error) {
   //   input = input.length ? input[0] : input;
@@ -401,17 +424,18 @@ class FormValidations {
       validationTextElement.innerHTML = '';
       validationTextElement.style.display = 'none';
     }
+
     return errorElements;
   }
 
   private showSuccess(field: Field): void {
-    let errorClassElement = this.removeError(field)[0];
+    const errorClassElement = this.removeError(field)[0];
     if (this.config.successClass !== '' && errorClassElement) {
       errorClassElement.classList.add(this.config.successClass);
     }
   }
 
-  /***
+  /**
    * Resets the errors
    */
   // reset = function () {
@@ -427,7 +451,7 @@ class FormValidations {
   //   });
   // };
 
-  /***
+  /**
    * Resets the errors and deletes all formValidations fields
    */
   // destroy = () => {
@@ -443,7 +467,8 @@ class FormValidations {
   // };
 }
 
-/***
+/**
+ *
  *
  * @param name => Name of the global validator
  * @param fn => validator function

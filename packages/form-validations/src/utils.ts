@@ -17,7 +17,7 @@ export const groupedElemCount = (input: any) => {
 };
 
 export const mergeConfig = (obj1: Record<string, unknown>, obj2: Record<string, unknown>) => {
-  for (let attr in obj2) {
+  for (const attr in obj2) {
     if (!(attr in obj1)) {
       obj1[attr] = obj2[attr];
     }

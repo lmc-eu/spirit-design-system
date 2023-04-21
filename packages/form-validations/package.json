@@ -15,7 +15,6 @@
   "main": "bundles/cjs/spirit-form-validations.js",
   "module": "index.js",
   "types": "index.d.ts",
-  "type": "module",
   "scripts": {
     "start": "vite --host --config ./config/vite/app.ts",
     "examples:build": "vite build --config ./config/vite/app.ts",
