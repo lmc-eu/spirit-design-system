@@ -54,12 +54,10 @@ Encore
     // })
 
     // enables and configure @babel/preset-env polyfills
-    .configureBabelPresetEnv((config) => {
-        // eslint-disable-next-line no-param-reassign
-        config.useBuiltIns = 'usage';
-        // eslint-disable-next-line no-param-reassign
-        config.corejs = '3.23';
-    })
+    // .configureBabelPresetEnv((config) => {
+    //     config.useBuiltIns = 'usage';
+    //     config.corejs = '3.23';
+    // })
 
     // enables Sass/SCSS support
     .enableSassLoader(
@@ -68,7 +66,14 @@ Encore
           options.implementation = sass;
           // eslint-disable-next-line no-param-reassign
           options.sassOptions = {
-              includePaths: ['../../node_modules', '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'],
+              includePaths: [
+                // used in docker image
+                './node_modules',
+                './node_modules/@lmc-eu/spirit-design-tokens/scss',
+                // used on local machine
+                '../../node_modules',
+                '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss',
+              ],
           };
       },
       {
