@@ -16,8 +16,8 @@ module.exports = () => ({
   },
   output: {
     filename: '[name].js',
-    path: Path.join(__dirname, 'built'),
-    publicPath: '/built/',
+    path: Path.join(__dirname, 'build'),
+    publicPath: '/build/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
