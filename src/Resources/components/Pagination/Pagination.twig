@@ -1,0 +1,18 @@
+{# API #}
+{%- set props = props | default([]) -%}
+
+{# Class names #}
+{%- set _listClassName = _spiritClassPrefix ~ 'Pagination' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+
+<nav
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp( [ _styleProps.className ] ) }}
+>
+    <ul class="{{ _listClassName }}">
+        {% block content %}{% endblock %}
+    </ul>
+</nav>
