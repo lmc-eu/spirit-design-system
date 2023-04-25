@@ -1,0 +1,35 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _accessibilityLabel = props.accessibilityLabel -%}
+{%- set _href = props.href | default(null) -%}
+{%- set _isCurrent = props.isCurrent | default(false) -%}
+{%- set _pageNumber = props.pageNumber -%}
+{%- set _target = props.target | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Pagination__link' -%}
+{%- set _rootCurrentClassName = _isCurrent ? _spiritClassPrefix ~ 'Pagination__link--current' : null -%}
+
+{# Attributes #}
+{%- set _ariaCurrentAttr = _isCurrent ? 'aria-current="page"' : null -%}
+{%- set _hrefAttr = _href ? 'href=' ~ _href : null -%}
+{%- set _targetAttr = _target ? 'target=' ~ _target | escape('html_attr') : null -%}
+{%- set _typeAttr = _href ? null : 'type="button"' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _styleProps.className ] -%}
+{%- set _elementType = _href ? 'a' : 'button' -%}
+
+<{{ _elementType }}
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    {{ _hrefAttr }}
+    {{ _ariaCurrentAttr | raw }}
+    {{ _targetAttr }}
+    {{ _typeAttr | raw }}
+>
+    <span class="accessibility-hidden">{{ _accessibilityLabel }}</span>
+    <span aria-hidden="true">{{ _pageNumber }}</span>
+</{{ _elementType }}>

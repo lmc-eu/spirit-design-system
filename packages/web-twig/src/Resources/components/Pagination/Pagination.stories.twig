@@ -1,0 +1,29 @@
+{% extends 'layout/plain.html.twig' %}
+
+{% block content %}
+
+{# Pagination Current First #}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Pagination Current First</h2>
+    {% include '@components/Pagination/stories/PaginationCurrentFirst.twig' %}
+</section>
+
+{# Pagination Current Middle #}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Pagination Current Middle</h2>
+    {% include '@components/Pagination/stories/PaginationCurrentMiddle.twig' %}
+</section>
+
+{# Pagination Current Last #}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Pagination Current Last</h2>
+    {% include '@components/Pagination/stories/PaginationCurrentLast.twig' %}
+</section>
+
+{# Pagination Current First Centered #}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Pagination Current First Centered</h2>
+    {% include '@components/Pagination/stories/PaginationCurrentFirstCentered.twig' %}
+</section>
+
+{% endblock %}
