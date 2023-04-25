@@ -8,9 +8,9 @@
     "access": "restricted"
   },
   "scripts": {
-    "precopy": "mkdir -p ./built",
+    "precopy": "mkdir -p ./build",
     "copy": "yarn copy:css",
-    "copy:css": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/css/. built",
+    "copy:css": "cp -r ../../node_modules/@lmc-eu/spirit-web/dist/css/. build",
     "prebuild": "yarn copy",
     "build": "webpack --config ./webpack.config.js --mode development"
   },
