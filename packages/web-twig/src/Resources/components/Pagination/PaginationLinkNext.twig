@@ -1,0 +1,23 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _accessibilityLabel = props.accessibilityLabel | default('Next') -%}
+{%- set _href = props.href | default(null) -%}
+{%- set _target = props.target | default(null) -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _elementType = _href ? 'buttonLink' : 'button' -%}
+
+{% embed "@spirit/" ~ _elementType ~ ".twig" with { props: props | merge({
+    color: 'secondary',
+    href: _href,
+    isSquare: true,
+    target: _target,
+    UNSAFE_className: _styleProps.className,
+    UNSAFE_style: _styleProps.style,
+}) } %}
+    {% block content %}
+        <Icon name="chevron-right" />
+        <span class="accessibility-hidden">{{ _accessibilityLabel }}</span>
+    {% endblock %}
+{% endembed %}

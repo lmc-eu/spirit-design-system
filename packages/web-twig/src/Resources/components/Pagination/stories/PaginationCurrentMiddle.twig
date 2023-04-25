@@ -1,0 +1,44 @@
+<Pagination UNSAFE_className="mb-800" aria-label="Page navigation">
+    <PaginationItem>
+        <PaginationLinkPrevious onclick="console.log('previous')" />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLink
+            onclick="console.log('page 11')"
+            accessibilityLabel="Go to Page 11"
+            pageNumber="11"
+        />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLink
+            onclick="console.log('page 12')"
+            accessibilityLabel="Go to Page 12"
+            pageNumber="12"
+        />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLink
+            onclick="console.log('page 13')"
+            isCurrent
+            accessibilityLabel="Current Page, Page 13"
+            pageNumber="13"
+        />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLink
+            onclick="console.log('page 14')"
+            accessibilityLabel="Go to Page 14"
+            pageNumber="14"
+        />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLink
+            onclick="console.log('page 15')"
+            accessibilityLabel="Go to Page 15"
+            pageNumber="15"
+        />
+    </PaginationItem>
+    <PaginationItem>
+        <PaginationLinkNext onclick="console.log('next')" />
+    </PaginationItem>
+</Pagination>
