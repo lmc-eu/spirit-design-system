@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.30.0"></a>
+
+# [1.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.29.0...@lmc-eu/spirit-web-twig@1.30.0) (2023-04-26)
+
+### Code Refactoring
+
+- **web-twig:** Move ComponentTest outputs to separate files, use DataProvider [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([f3dde94](https://github.com/lmc-eu/spirit-design-system/commit/f3dde94))
+
+### Features
+
+- **web-twig:** Allow style in inlineSvg and in Icon, deprecate class in Icon and Spinner [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([12aee00](https://github.com/lmc-eu/spirit-design-system/commit/12aee00))
+- **web-twig:** Deprecate class in Accordion [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([bfd8896](https://github.com/lmc-eu/spirit-design-system/commit/bfd8896))
+- **web-twig:** Deprecate class in Breadcrumbs [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([095d015](https://github.com/lmc-eu/spirit-design-system/commit/095d015))
+- **web-twig:** Deprecate class in Button [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([e87fa15](https://github.com/lmc-eu/spirit-design-system/commit/e87fa15))
+- **web-twig:** Deprecate class in ButtonLink and add more tests [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([117afbc](https://github.com/lmc-eu/spirit-design-system/commit/117afbc))
+- **web-twig:** Deprecate class in CheckboxField [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([b382686](https://github.com/lmc-eu/spirit-design-system/commit/b382686))
+- **web-twig:** Deprecate class in Collapse [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([13155bb](https://github.com/lmc-eu/spirit-design-system/commit/13155bb))
+- **web-twig:** Deprecate class in Container [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([8878e8e](https://github.com/lmc-eu/spirit-design-system/commit/8878e8e))
+- **web-twig:** Deprecate class in Dropdown [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([488446b](https://github.com/lmc-eu/spirit-design-system/commit/488446b))
+- **web-twig:** Deprecate class in Grid [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([bf5b7f4](https://github.com/lmc-eu/spirit-design-system/commit/bf5b7f4))
+- **web-twig:** Deprecate class in Header [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([2e1334a](https://github.com/lmc-eu/spirit-design-system/commit/2e1334a))
+- **web-twig:** Deprecate class in Heading [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([f780d4b](https://github.com/lmc-eu/spirit-design-system/commit/f780d4b))
+- **web-twig:** Deprecate class in Link [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([755f75f](https://github.com/lmc-eu/spirit-design-system/commit/755f75f))
+- **web-twig:** Deprecate class in Modal [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([34c245c](https://github.com/lmc-eu/spirit-design-system/commit/34c245c))
+- **web-twig:** Deprecate class in Pill [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([51e2bbd](https://github.com/lmc-eu/spirit-design-system/commit/51e2bbd))
+- **web-twig:** Deprecate class in RadioField [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([ac19c8a](https://github.com/lmc-eu/spirit-design-system/commit/ac19c8a))
+- **web-twig:** Deprecate class in Stack [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([1a32535](https://github.com/lmc-eu/spirit-design-system/commit/1a32535))
+- **web-twig:** Deprecate class in Tabs [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([9f55b2f](https://github.com/lmc-eu/spirit-design-system/commit/9f55b2f))
+- **web-twig:** Deprecate class in Tag [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([ead773b](https://github.com/lmc-eu/spirit-design-system/commit/ead773b))
+- **web-twig:** Deprecate class in Text [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([44affe8](https://github.com/lmc-eu/spirit-design-system/commit/44affe8))
+- **web-twig:** Deprecate class in TextArea, TextField and TextFieldBase [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([21869cd](https://github.com/lmc-eu/spirit-design-system/commit/21869cd))
+- **web-twig:** Deprecate class in Tooltip [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([1470427](https://github.com/lmc-eu/spirit-design-system/commit/1470427))
+- **web-twig:** Introduce styleProps, deprecate class in Alert [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([99a8cc2](https://github.com/lmc-eu/spirit-design-system/commit/99a8cc2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.29.0"></a>
 
 # [1.29.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.28.1...@lmc-eu/spirit-web-twig@1.29.0) (2023-04-17)
