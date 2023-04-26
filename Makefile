@@ -85,13 +85,15 @@ version: ## Create new version of packages
 build: ## Builds all packages
 	$(PKG_MANAGER) build
 
-publish: ## Publish packages to repository
-# @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme
-# Publish packages updated since the last release
-# `from-package` - list of packages to publish is determined by inspecting each `package.json`
-# `--yes` - skip all confirmation prompts
-# `--no-verify-access` - disable verification of the logged-in npm user's access to the packages about to be published
+ifeq ($(pkg),web-twig)
+publish: ## Publish packages to repository, pass the parameter "pkg=" to publish specific package (supports only `web-twig`), example: make publish pkg=web-twig
+	@$(eval pkg ?=)
+	git push web-twig-readonly `git subtree split --prefix packages/web-twig main`:main
+else
+publish:
+	@$(eval pkg ?=)
 	$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes --no-verify-access $(MONOREPO_TOOL_FLAGS)
+endif
 
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
