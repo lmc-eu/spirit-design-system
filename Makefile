@@ -23,7 +23,7 @@ MONOREPO_TOOL_NO_PUSH := $(if $(DEBUG), --no-git-tag-version)
 # version control. ⚠️
 -include local.mk
 
-## —— 🐳 The Jobs Design System Makefile 🐳  —————————————————————————————————
+## —— 👻 The Spirit Design System Makefile 👻 —————————————————————————————————
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
@@ -45,6 +45,35 @@ pristine: ## Remove all `node_modules` and files
 	clean
 	rm -rf node_modules packages/*/node_modules
 
+## —— Development 🏗️ ——————————————————————————————————————————————————————————————
+
+ifeq ($(pkg),)
+start: ## Starts development environment, pass the parameter "pkg=" to start specific package environment, example: make start pkg=web
+	@$(eval pkg ?=)
+	@$(PKG_MANAGER) start
+else
+start:
+	@$(eval pkg ?=)
+	@$(PKG_MANAGER) run start --scope @lmc-eu/spirit-$(pkg)
+endif
+
+## —— Testing 🚦 ——————————————————————————————————————————————————————————————
+
+format: ## Checks code formatting of all packages
+	$(PKG_MANAGER) format
+
+format-fix: ## Fixes code formatting
+	$(PKG_MANAGER) format
+
+lint: ## Lints all packages
+	$(PKG_MANAGER) lint
+
+test: ## Run tests in all packages
+	$(PKG_MANAGER) test
+
+types: ## Check types in all packages
+	$(PKG_MANAGER) types
+
 ## —— Release 🚀 ——————————————————————————————————————————————————————————————
 
 version: ## Create new version of packages
@@ -52,6 +81,9 @@ version: ## Create new version of packages
 # Bump version of packages changed since the last release
 # --yes` - skip all confirmation prompts
 	$(PKG_MANAGER) $(MONOREPO_TOOL) version --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
+
+build: ## Builds all packages
+	$(PKG_MANAGER) build
 
 publish: ## Publish packages to repository
 # @ee: https://github.com/lerna/lerna/tree/main/commands/publish#readme

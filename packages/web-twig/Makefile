@@ -38,13 +38,15 @@ up: ## Start the docker hub in detached mode (no logs), pass the parameter "f=" 
 	echo $$upCommand; \
 	eval $$upCommand
 
-start: up vendor encore ## Start the containers
-
 down: ## Stop the docker hub
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) down --remove-orphans
 
 logs: ## Show live logs
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs --tail=0 --follow
+
+start: up vendor encore ## Start the containers
+
+stop: down ## Stop the docker hub (alias for `down`)
 
 bash: ## Connect to the PHP container
 	$(PHP_CONT_PHP) bash
