@@ -49,7 +49,7 @@ logs: ## Show live logs
 bash: ## Connect to the PHP container
 	$(PHP_CONT_PHP) bash
 
-sh: bash
+sh: bash ## Connect to the PHP container (alias for `bash`)
 
 ## —— Encore 🎵 ————————————————————————————————————————————————————————————————
 
