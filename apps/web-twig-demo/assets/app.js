@@ -7,4 +7,5 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
+// eslint-disable-next-line import/no-unresolved
 import '@lmc-eu/spirit-web/js/bundle/spirit-web.bundle';
