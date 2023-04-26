@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.44.0"></a>
+
+# [0.44.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.43.0...@lmc-eu/spirit-web-react@0.44.0) (2023-04-26)
+
+### Features
+
+- **web-twig:** Introduce styleProps, deprecate class in Alert [#DS-646](https://github.com/lmc-eu/spirit-design-system/issues/DS-646) ([99a8cc2](https://github.com/lmc-eu/spirit-design-system/commit/99a8cc2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.43.0"></a>
 
 # [0.43.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.42.0...@lmc-eu/spirit-web-react@0.43.0) (2023-04-17)

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.3"></a>
+
+## [1.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig-demo@1.0.2...@lmc-eu/spirit-web-twig-demo@1.0.3) (2023-04-26)
+
+### Dependencies
+
+- **demo:** Upgrade @lmc-eu/spirit-web to 0.45.0 ([ab81502](https://github.com/lmc-eu/spirit-design-system/commit/ab81502))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig-demo
+
 <a name="1.0.2"></a>
 
 ## [1.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig-demo@1.0.1...@lmc-eu/spirit-web-twig-demo@1.0.2) (2023-04-17)
