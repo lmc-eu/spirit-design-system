@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@lmc-eu/spirit-web": "^0.43.0"
+    "@lmc-eu/spirit-web": "^0.45.0"
   },
   "devDependencies": {
     "@babel/core": "7.21.0",
