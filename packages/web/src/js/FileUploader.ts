@@ -242,17 +242,26 @@ class FileUploader extends BaseComponent {
       }
     }
 
-    if (transferItems) {
+    let counter = 0;
+    counter += this.fileQueue.size;
+
+    if (event?.dataTransfer?.items) {
       transferItems.forEach((item) => {
         if (item.kind === 'file') {
           const file = item.getAsFile();
-          if (file) {
+          if (file && counter < this.fileQueueLimit) {
             this.addToQueue(file);
+            counter += 1;
           }
         }
       });
     } else {
-      transferFiles.forEach((file) => this.addToQueue(file));
+      transferFiles.forEach((file) => {
+        if (counter < this.fileQueueLimit) {
+          this.addToQueue(file);
+          counter += 1;
+        }
+      });
     }
   }
 
