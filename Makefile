@@ -41,9 +41,8 @@ unlock: ## Unlock dependencies
 	rm -f yarn.lock packages/*/yarn.lock
 	touch package.json
 
-pristine: ## Remove all `node_modules` and files
-	clean
-	rm -rf node_modules packages/*/node_modules
+pristine: clean ## Remove all `node_modules` and files
+	rm -rf node_modules {packages,apps}/*/node_modules
 
 ## —— Development 🏗️ ——————————————————————————————————————————————————————————————
 
@@ -98,5 +97,5 @@ endif
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
 clean: ## Clean output files
-	rm -rf {.nyc_output,coverage}
+	rm -rf {.nyc_output,coverage,dist,build}
 	find . -name '*.log' -print -delete
