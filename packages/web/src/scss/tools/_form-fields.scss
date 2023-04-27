@@ -103,7 +103,8 @@
     @each $validation-state-name, $validation-state-value in form-fields-theme.$validation-states {
         @if $field-name == 'FileUploaderInput' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
-                > .#{$field-name}__dropZone {
+                > .#{$field-name}__input
+                ~ .#{$field-name}__dropZone {
                 border-color: map.get($validation-state-value, input-border-color);
             }
         } @else {

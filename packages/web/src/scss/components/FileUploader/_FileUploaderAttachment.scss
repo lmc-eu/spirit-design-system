@@ -14,12 +14,15 @@
     padding: theme.$attachment-padding-y theme.$attachment-padding-x;
     color: theme.$attachment-color;
     border: theme.$attachment-border;
+    border-radius: theme.$attachment-border-radius;
     background-color: theme.$attachment-background;
 }
 
 .FileUploaderAttachment__remove {
     @include reset.button();
     @include accessibility.min-tap-target($size: theme.$attachment-remove-button-size);
+
+    color: inherit;
 
     &:focus {
         outline: 0;
