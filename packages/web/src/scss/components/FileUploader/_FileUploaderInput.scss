@@ -1,4 +1,5 @@
 // 1. Make whole drop zone clickable.
+// 2. Increase specificity (also in the mixin) by including `.FileUploaderInput__input` to override the `active` state.
 
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/accessibility';
@@ -29,10 +30,10 @@ $_field-name: 'FileUploaderInput';
     border: theme.$input-drop-zone-border;
     border-radius: theme.$input-drop-zone-border-radius;
     background-color: theme.$input-drop-zone-background;
+}
 
-    &:focus-within {
-        box-shadow: form-fields-theme.$input-focus-shadow;
-    }
+.FileUploaderInput__input:focus ~ .FileUploaderInput__dropZone {
+    box-shadow: form-fields-theme.$input-focus-shadow;
 }
 
 .FileUploaderInput__dropZone > svg {
@@ -84,9 +85,18 @@ $_field-name: 'FileUploaderInput';
     display: initial;
 }
 
-@include form-fields-tools.input-field-validation-states($_field-name);
+.FileUploaderInput .FileUploaderInput__dropZone:hover {
+    border-color: theme.$input-drop-zone-border-color-hover;
+}
 
-.FileUploaderInput.is-dragging .FileUploaderInput__dropZone {
+.FileUploaderInput .FileUploaderInput__input:active ~ .FileUploaderInput__dropZone {
+    border-color: theme.$input-drop-zone-border-color-active;
+}
+
+@include form-fields-tools.input-field-validation-states($_field-name); // 2.
+
+// 2.
+.FileUploaderInput.is-dragging .FileUploaderInput__input ~ .FileUploaderInput__dropZone {
     border: theme.$input-drop-zone-dragging-border;
 }
 // stylelint-enable selector-max-class

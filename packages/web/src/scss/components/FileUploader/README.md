@@ -47,6 +47,7 @@ on the root element).
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
   <label for="fileUpload" class="FileUploaderInput__label">Label</label>
+  <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#upload" />
@@ -56,7 +57,6 @@ on the root element).
       <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
     </label>
     <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
-    <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
   </div>
 </div>
 ```
@@ -101,16 +101,16 @@ To mark the input as required, simply add the `required` attribute to the native
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
   <label for="fileUpload" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+  <input
+    type="file"
+    id="fileUpload"
+    name="attachment"
+    class="FileUploaderInput__input"
+    data-spirit-element="input"
+    required
+  />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <!-- … -->
-    <input
-      type="file"
-      id="fileUpload"
-      name="attachment"
-      class="FileUploaderInput__input"
-      data-spirit-element="input"
-      required
-    />
   </div>
 </div>
 ```
@@ -250,6 +250,13 @@ This is how all subcomponents build up the complete FileUploader:
   <!-- FileUploaderInput: start -->
   <div class="FileUploaderInput" data-spirit-element="wrapper">
     <label for="fileUploadWithAttachments" class="FileUploaderInput__label">Label</label>
+    <input
+      type="file"
+      id="fileUploadWithAttachments"
+      name="attachment"
+      class="FileUploaderInput__input"
+      data-spirit-element="input"
+    />
     <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#upload" />
@@ -259,13 +266,6 @@ This is how all subcomponents build up the complete FileUploader:
         <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
       </label>
       <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
-      <input
-        type="file"
-        id="fileUploadWithAttachments"
-        name="attachment"
-        class="FileUploaderInput__input"
-        data-spirit-element="input"
-      />
     </div>
   </div>
   <!-- FileUploaderInput: end -->
