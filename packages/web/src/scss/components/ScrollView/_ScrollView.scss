@@ -1,0 +1,156 @@
+// Based on React UI ScrollView ❤️:
+// https://react-ui.io/components/scroll-view
+
+// 1. Scrolling shadows are implemented as pseudo elements. This way we can customise them only with custom properties.
+//
+// 2. Stack scrolling shadows over viewport content while keeping the content interactive.
+//
+//    - `.ScrollView__scrollingShadows` is positioned absolutely over the `.ScrollView`, with auto `z-index` (this is
+//      important!), and with `overflow: hidden` to clip the shadows (ie. its pseudo elements).
+//    - The `.ScrollView__viewport` is in `.ScrollView`'s stacking context and remains interactive because its
+//      `z-index` is higher than the auto `z-index` of `.ScrollView__scrollingShadows`.
+//
+// 3. Make the `.ScrollView__content`'s bounding rectangle spread beyond the part visible through `.ScrollView__viewport`.
+//
+// 4. Prevent undesired vertical scrolling that may occur with tables inside.
+//
+// 5. Make `ScrollView` adjust to flexible layouts.
+//
+// 6. Hide content overflowing in the other direction because scrollbars would be unreachable under scrolling shadows.
+
+@use 'theme';
+
+.ScrollView {
+    position: relative; // 2.
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+// 1.
+.ScrollView__scrollingShadows {
+    position: absolute; // 2.
+    width: 100%; // 2.
+    height: 100%; // 2.
+    overflow: hidden; // 2.
+    pointer-events: none; // 2.
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 2; // 2.
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition-property: visibility, opacity, transform;
+        transition-duration: 250ms;
+    }
+
+    &::before {
+        background: theme.$start-shadow-background;
+    }
+
+    &::after {
+        background: theme.$end-shadow-background;
+    }
+}
+
+.ScrollView__viewport {
+    z-index: 1; // 2.
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.ScrollView--vertical {
+    height: 100%;
+    min-height: 0; // 5.
+}
+
+.ScrollView--vertical > .ScrollView__viewport {
+    height: 100%;
+    overflow-x: hidden; // 6.
+    overflow-y: auto; // 2.
+}
+
+.ScrollView--horizontal {
+    min-width: 0; // 5.
+}
+
+.ScrollView--vertical > .ScrollView__scrollingShadows::before,
+.ScrollView--vertical > .ScrollView__scrollingShadows::after {
+    right: 0;
+    left: 0;
+    width: auto;
+}
+
+.ScrollView--vertical > .ScrollView__scrollingShadows::before {
+    --angle: 180deg;
+
+    top: 0;
+    height: theme.$start-shadow-size;
+    transform: translateY(#{theme.$start-shadow-initial-offset});
+}
+
+.ScrollView--vertical > .ScrollView__scrollingShadows::after {
+    --angle: 0;
+
+    bottom: 0;
+    height: theme.$end-shadow-size;
+    transform: translateY(#{-1 * theme.$end-shadow-initial-offset});
+}
+
+.ScrollView--horizontal > .ScrollView__viewport {
+    overflow-x: auto; // 2.
+    overflow-y: hidden; // 4., 6.
+}
+
+// stylelint-disable-next-line selector-max-class -- We need to be specific here.
+.ScrollView--horizontal > .ScrollView__viewport > .ScrollView__content {
+    display: inline-flex; // 3.
+    min-width: 100%;
+    vertical-align: top;
+}
+
+.ScrollView--horizontal > .ScrollView__scrollingShadows::before,
+.ScrollView--horizontal > .ScrollView__scrollingShadows::after {
+    top: 0;
+    bottom: 0;
+    height: auto;
+}
+
+.ScrollView--horizontal > .ScrollView__scrollingShadows::before {
+    --angle: 90deg;
+
+    left: 0;
+    width: theme.$start-shadow-size;
+    transform: translateX(#{theme.$start-shadow-initial-offset});
+}
+
+.ScrollView--horizontal > .ScrollView__scrollingShadows::after {
+    --angle: 270deg;
+
+    right: 0;
+    width: theme.$end-shadow-size;
+    transform: translateX(#{-1 * theme.$end-shadow-initial-offset});
+}
+
+.is-scrolled-at-start > .ScrollView__scrollingShadows::before {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.is-scrolled-at-end > .ScrollView__scrollingShadows::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.ScrollView--scrollbarDisabled > .ScrollView__viewport {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

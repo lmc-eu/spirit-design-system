@@ -7,6 +7,7 @@ import Header from './Header';
 import Modal from './Modal';
 import Offcanvas from './Offcanvas';
 import Password from './Password';
+import ScrollView from './ScrollView';
 import Tabs from './Tabs';
 import Tooltip from './Tooltip';
 import * as constants from './constants';
@@ -23,6 +24,7 @@ export default {
   Modal,
   Offcanvas,
   Password,
+  ScrollView,
   Tabs,
   Tooltip,
   constants,

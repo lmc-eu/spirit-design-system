@@ -11,6 +11,7 @@ const reflow = (element: HTMLElement): void => {
 
 export { reflow };
 export * from './ComponentFunctions';
+export * from './Debounce';
 export * from './Deprecations';
 export * from './Elements';
 export { default as ScrollControl } from './ScrollControl';
