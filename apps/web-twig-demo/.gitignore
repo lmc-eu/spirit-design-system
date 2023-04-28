@@ -4,6 +4,7 @@
 /.env.local.php
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
+/dist/
 /public/bundles/
 /var/
 /vendor/
@@ -15,6 +16,3 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
-
-# Localy handled by monorepo, in docker it is standalone
-yarn.lock
