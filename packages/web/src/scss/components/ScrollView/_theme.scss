@@ -1,0 +1,9 @@
+@use '@tokens' as tokens;
+
+$start-shadow-size: tokens.$space-600;
+$start-shadow-initial-offset: -1 * tokens.$space-600;
+$start-shadow-background: tokens.$gradient-background-basic-overlay;
+
+$end-shadow-size: tokens.$space-600;
+$end-shadow-initial-offset: -1 * tokens.$space-600;
+$end-shadow-background: tokens.$gradient-background-basic-overlay;

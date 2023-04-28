@@ -7,6 +7,7 @@ export { default as Header } from './Header';
 export { default as Modal } from './Modal';
 export { default as Offcanvas } from './Offcanvas';
 export { default as Password } from './Password';
+export { default as ScrollView } from './ScrollView';
 export { default as Tabs } from './Tabs';
 export { default as Tooltip } from './Tooltip';
 export * from './constants';
