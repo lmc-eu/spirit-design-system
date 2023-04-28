@@ -16,6 +16,8 @@
     "regenerator-runtime": "0.13.11",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.2",
+    "ts-loader": "^9.0.0",
+    "typescript": "^5.0.4",
     "webpack": "5.76.1",
     "webpack-cli": "4.10.0",
     "webpack-notifier": "1.15.0"

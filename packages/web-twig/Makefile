@@ -56,7 +56,7 @@ sh: bash ## Connect to the PHP container (alias for `bash`)
 ## —— Encore 🎵 ————————————————————————————————————————————————————————————————
 
 encore-install: ## Install demo dependencies
-	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install --update-lockfile
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
 
 encore-link: ## Link demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-web"
@@ -73,7 +73,7 @@ encore-sh: ## Connect to encore using bash
 encore-logs: ## Show live logs for Encore service
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs $(DOCKER_ENCORE_SERVICE) --tail=0 --follow
 
-encore: encore-install encore-link ## Start demo client
+encore: encore-link ## Start demo client
 
 ## —— Composer 🧙 ——————————————————————————————————————————————————————————————
 composer: ## Run composer, pass the parameter "c=" to run a given command, example: make composer c='req symfony/orm-pack'
