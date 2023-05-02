@@ -22,7 +22,9 @@ jobs:
         run: git fetch --no-tags --depth=50 origin main
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
 
       - name: Run Commitlint
         run: npx commitlint --color --verbose --from $(git merge-base origin/main HEAD)
