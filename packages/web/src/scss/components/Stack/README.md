@@ -73,7 +73,7 @@ Usage with spacing:
 Usage with middle dividers:
 
 ```html
-<ul class="Stack Stack--hasMiddleDividers">
+<ul class="Stack Stack--hasIntermediateDividers">
   <li>
     <div>Block 1</div>
   </li>
@@ -89,7 +89,7 @@ Usage with middle dividers:
 Usage with inner and outer dividers:
 
 ```html
-<ul class="Stack Stack--hasMiddleDividers Stack--hasTopDivider Stack--hasBottomDivider">
+<ul class="Stack Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider">
   <li>
     <div>Block 1</div>
   </li>
@@ -107,7 +107,7 @@ Usage with inner and outer dividers:
 Usage with combination of spacing and dividers:
 
 ```html
-<ul class="Stack Stack--hasSpacing Stack--hasMiddleDividers Stack--hasTopDivider Stack--hasBottomDivider">
+<ul class="Stack Stack--hasSpacing Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider">
   <li>
     <div>Block 1</div>
   </li>
