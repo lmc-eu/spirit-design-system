@@ -24,7 +24,9 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
 
       - name: Analyze
         run: npx omlet analyze
