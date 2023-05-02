@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: '.nvmrc'
 
       - name: Fetch Git history
         run: git fetch --no-tags --depth=50 origin main
