@@ -1,6 +1,7 @@
 import SpiritTheme from './spirit.theme';
 import '../.storybook/assets/stylesheets/index.scss';
 import { IconGlobalDecorator } from './decorators/IconGlobalDecorator';
+import { BodyClassDecorator } from './decorators/BodyClassDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -23,4 +24,5 @@ export const parameters = {
 
 export const decorators = [
   IconGlobalDecorator,
+  BodyClassDecorator,
 ];
