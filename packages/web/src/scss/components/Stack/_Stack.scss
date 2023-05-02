@@ -18,7 +18,7 @@
 }
 
 .Stack--hasIntermediateDividers > * {
-    border-top: theme.$border;
+    border-block-start: theme.$border;
 }
 
 .Stack--hasSpacing > * {
@@ -40,7 +40,7 @@
 
 .Stack--hasIntermediateDividers > :first-child {
     padding-block-start: 0;
-    border-top: none;
+    border-block-start: none;
 }
 
 .Stack--hasIntermediateDividers > :last-child {
@@ -48,11 +48,11 @@
 }
 
 .Stack--hasStartDivider > :first-child {
-    border-top: theme.$border;
+    border-block-start: theme.$border;
 }
 
 .Stack--hasEndDivider > :last-child {
-    border-bottom: theme.$border;
+    border-block-end: theme.$border;
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > :first-child {
