@@ -10,7 +10,7 @@ const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
 const DROP_ZONE_ELEMENT_SELECTOR = '[data-spirit-element="dropZone"]';
 const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
-const TEMPLATE_ELEMENT_SLOT_NAME = 'data-populate-field';
+const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
 const DATA_DISMISS_ATTRIBUTE = 'data-dismiss';
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
 const DEFAULT_FILE_QUEUE_LIMIT = 10;

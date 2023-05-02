@@ -192,16 +192,16 @@ truncated.
 
 This way you can customize your own template in the `<template>` tag.
 It must be inserted inside the main wrapper element that has `data-toggle="fileUploader"`.
-Content of element with `data-populate-field="name"` will be replaced with file name.
+Content of element with `data-spirit-populate-field="name"` will be replaced with file name.
 
 ```html
 <template data-spirit-snippet="item">
-  <li class="FileUploaderAttachment" data-populate-field="item">
+  <li class="FileUploaderAttachment" data-spirit-populate-field="item">
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#file" />
     </svg>
-    <span class="text-truncate" data-populate-field="name">File name</span>
-    <button type="button" class="FileUploaderAttachment__remove" data-populate-field="button">
+    <span class="text-truncate" data-spirit-populate-field="name">File name</span>
+    <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
       <span class="accessibility-hidden">Remove</span>
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#close" />
@@ -232,12 +232,12 @@ This is how all subcomponents build up the complete FileUploader:
 <div class="FileUploader" data-toggle="fileUploader">
   <!-- List item template: start -->
   <template data-spirit-snippet="item">
-    <li class="FileUploaderAttachment" data-populate-field="item">
+    <li class="FileUploaderAttachment" data-spirit-populate-field="item">
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#file" />
       </svg>
-      <span class="text-truncate" data-populate-field="name">File name</span>
-      <button type="button" class="FileUploaderAttachment__remove" data-populate-field="button">
+      <span class="text-truncate" data-spirit-populate-field="name">File name</span>
+      <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
         <span class="accessibility-hidden">Remove</span>
         <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#close" />
