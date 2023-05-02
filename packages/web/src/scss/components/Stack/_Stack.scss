@@ -17,7 +17,7 @@
     margin-block: 0;
 }
 
-.Stack--hasMiddleDividers > * {
+.Stack--hasIntermediateDividers > * {
     border-top: theme.$border;
 }
 
@@ -25,7 +25,7 @@
     padding-block: math.div(theme.$padding-block, 2);
 }
 
-.Stack--hasSpacing.Stack--hasMiddleDividers > * {
+.Stack--hasSpacing.Stack--hasIntermediateDividers > * {
     padding-block: theme.$padding-block;
 }
 // stylelint-enable
@@ -38,28 +38,28 @@
     padding-block-end: 0;
 }
 
-.Stack--hasMiddleDividers > :first-child {
+.Stack--hasIntermediateDividers > :first-child {
     padding-block-start: 0;
     border-top: none;
 }
 
-.Stack--hasMiddleDividers > :last-child {
+.Stack--hasIntermediateDividers > :last-child {
     padding-block-end: 0;
 }
 
-.Stack--hasTopDivider > :first-child {
+.Stack--hasStartDivider > :first-child {
     border-top: theme.$border;
 }
 
-.Stack--hasBottomDivider > :last-child {
+.Stack--hasEndDivider > :last-child {
     border-bottom: theme.$border;
 }
 
-.Stack--hasSpacing.Stack--hasTopDivider > :first-child {
+.Stack--hasSpacing.Stack--hasStartDivider > :first-child {
     padding-block-start: theme.$padding-block;
 }
 
-.Stack--hasSpacing.Stack--hasBottomDivider > :last-child {
+.Stack--hasSpacing.Stack--hasEndDivider > :last-child {
     padding-block-end: theme.$padding-block;
 }
 
