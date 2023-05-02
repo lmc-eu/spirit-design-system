@@ -35,6 +35,3 @@ jobs:
 
       - name: Build packages
         run: yarn build
-
-      - name: Build Storybook
-        run: yarn storybook:build
