@@ -78,6 +78,27 @@ For other use cases (wider textarea or textarea with unknown value length), we
 recommend placing them inside the Grid component and using `TextArea--fluid`
 modifier to fill the available space.
 
+## JavaScript Plugin for Auto-Resizing
+
+To enable auto-resizing of the textarea, first, you need to provide Spirit JavaScript,
+which will handle the functionality:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript
+plugins.
+
+Then you need to add data attribute `data-toggle="autoResize"` to the component.
+
+```html
+<div class="TextArea" data-toggle="autoResize">
+  <label for="textareaAutoResize" class="TextArea__label">Label of auto-resizing TextArea</label>
+  <textarea id="textareaAutoResize" class="TextArea__input"></textarea>
+</div>
+```
+
 ## Validation States
 
 Validation states can be presented either by adding a CSS modifier class
@@ -164,6 +185,7 @@ The preferred one is the `body` element because this way it will affect all Text
 </body>
 ```
 
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations

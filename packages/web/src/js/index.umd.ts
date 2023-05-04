@@ -1,3 +1,4 @@
+import AutoResize from './AutoResize';
 import BaseComponent from './BaseComponent';
 import Collapse from './Collapse';
 import Dropdown from './Dropdown';
@@ -13,6 +14,7 @@ import * as dom from './dom';
 import * as utils from './utils';
 
 export default {
+  AutoResize,
   BaseComponent,
   Collapse,
   Dropdown,

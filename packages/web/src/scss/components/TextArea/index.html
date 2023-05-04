@@ -72,11 +72,14 @@
     <label for="textareaWithHelperTextAndValidationMessage" class="TextArea__label TextArea__label--required"
       >Label</label
     >
-    <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">
-Filled</textarea
-    >
+    <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
     <div class="TextArea__helperText">This is helper text</div>
     <div class="TextArea__message">Danger validation message</div>
+  </div>
+
+  <div class="TextArea" data-toggle="autoResize">
+    <label for="textareaAutoResize" class="TextArea__label">Label of auto-resizing TextArea</label>
+    <textarea id="textareaAutoResize" class="TextArea__input"></textarea>
   </div>
 
   <div class="spirit-v1-box-field-disabled docs-FormFieldGrid">
@@ -89,7 +92,9 @@ Filled</textarea
 
     <div class="TextArea TextArea--disabled">
       <label for="textareaDisabledFilledFeature" class="TextArea__label TextArea__label--required">Label</label>
-      <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>Filled</textarea>
+      <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>
+Filled</textarea
+      >
       <div class="TextArea__message">Message</div>
     </div>
   </div>
