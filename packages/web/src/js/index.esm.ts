@@ -1,3 +1,4 @@
+export { default as AutoResize } from './AutoResize';
 export { default as BaseComponent } from './BaseComponent';
 export { default as Collapse } from './Collapse';
 export { default as Dropdown } from './Dropdown';

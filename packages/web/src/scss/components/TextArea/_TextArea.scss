@@ -1,6 +1,7 @@
 // 1. Enable redesigned disabled state of the component using `spirit-v1-box-field-disabled` on the root element, eg. body.
 //    This will be removed in v1 and the new disabled state will be the default.
 
+@use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
