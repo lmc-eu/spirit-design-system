@@ -25,6 +25,7 @@ class FileUploader extends BaseComponent {
   fileQueueLimit: number;
   inputName: string;
   isMultiple: boolean;
+  accept: string;
   isDragging: boolean;
   fileQueue: Map<string, File>;
 
@@ -42,6 +43,7 @@ class FileUploader extends BaseComponent {
       : DEFAULT_FILE_QUEUE_LIMIT;
     this.inputName = this.inputElement?.name || 'attachment';
     this.isMultiple = this.inputElement?.multiple;
+    this.accept = this.inputElement?.accept;
     this.isDragging = false;
     this.fileQueue = new Map();
 
@@ -65,7 +67,7 @@ class FileUploader extends BaseComponent {
   }
 
   static getUpdatedFileName(name: string): string {
-    return `file__${name.replace(/\./g, '_')}`;
+    return `file__${name.replace(/\./g, '_').replace(/\s/g, '_')}`;
   }
 
   dragReset() {
@@ -88,6 +90,43 @@ class FileUploader extends BaseComponent {
   checkQueueLimit() {
     if (this.fileQueue.size >= this.fileQueueLimit) {
       throw new Error('You have exceeded the number of files allowed in the queue');
+    }
+  }
+
+  checkAllowedFileType(file: File) {
+    const fileExtension = file.name.split('.').pop()?.toLowerCase() as string;
+    const fileType = file.type;
+    let isTypeSupported;
+    const shouldValidate = !(this.accept === '' || this.accept === '*' || this.accept === '*/*');
+
+    if (!shouldValidate) {
+      isTypeSupported = true;
+    } else {
+      const acceptArray = this.accept?.replace(/ /g, '').split(',');
+      const acceptExtensions = acceptArray?.filter((exp) => exp.match(/\./g));
+      const acceptTypes = acceptArray?.filter((exp) => exp.match(/\//g));
+
+      acceptExtensions?.forEach((acceptExtension) => {
+        const expression = acceptExtension.replace('.', '').replace('*', '');
+
+        if (fileExtension.match(expression)) {
+          isTypeSupported = true;
+        }
+      });
+
+      acceptTypes?.forEach((acceptType) => {
+        const expression = acceptType.replace('*', '');
+
+        if (fileType.match(expression)) {
+          isTypeSupported = true;
+        }
+      });
+    }
+
+    if (!isTypeSupported) {
+      throw new Error(
+        `The file "${file.name}" is not supported. Please ensure you are uploading a supported file format.`,
+      );
     }
   }
 
@@ -169,16 +208,12 @@ class FileUploader extends BaseComponent {
       return;
     }
 
-    // Appending an item into queue
     this.fileQueue.set(id, file);
 
-    // Appending node into list
     this.listElement.appendChild(attachment);
 
-    // Creating an event for the delete item button
     this.createAttachmentEvents(id);
 
-    // Reset drag state
     this.dragReset();
   }
 
@@ -186,6 +221,7 @@ class FileUploader extends BaseComponent {
     try {
       this.checkAllowedFileSize(file);
       this.checkFileQueueDuplicity(file);
+      this.checkAllowedFileType(file);
       this.checkQueueLimit();
       this.appendToList(file);
     } catch (error) {
@@ -208,9 +244,7 @@ class FileUploader extends BaseComponent {
     filesArray.forEach((file) => this.addToQueue(file));
 
     setTimeout(() => {
-      // Delete the value from the original input after adding to queue
       target.value = '';
-      // Reset focus state on input after file(s) selection
       target.blur();
     }, 0);
   }
