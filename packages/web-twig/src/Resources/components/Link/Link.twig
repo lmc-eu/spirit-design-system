@@ -5,7 +5,6 @@
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isUnderlined = props.isUnderlined | default(false) | boolprop -%}
 {%- set _onClick = props.onClick | default(null) -%}
-{%- set _target = props.target | default(null) -%}
 
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
@@ -14,13 +13,13 @@
 
 {# Attributes #}
 {%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
-{%- set _targetAttr = _target ? 'target=' ~ _target : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [
     'title',
+    'target',
 ] -%}
 
 {# Deprecations #}
@@ -34,7 +33,6 @@
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _onClickAttr | raw }}
-    {{ _targetAttr }}
 >
     {%- block content %}{% endblock %}
 </a>
