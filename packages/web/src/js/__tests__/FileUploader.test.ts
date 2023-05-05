@@ -1,4 +1,5 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import { SelectorEngine } from '../dom';
 import FileUploader from '../FileUploader';
 
 describe('FileUploader', () => {
@@ -94,6 +95,42 @@ describe('FileUploader', () => {
       const fileUploaderInstance = new FileUploader(fileUploaderEl);
       expect(fileUploaderInstance.fileSizeLimit).toBe(10000000); // Default file size limit
       expect(fileUploaderInstance.fileQueueLimit).toBe(10); // Default file queue limit
+    });
+  });
+
+  describe('Supported and Unsupported files', () => {
+    let fileUploader: FileUploader;
+
+    beforeEach(() => {
+      document.body.innerHTML = `
+      <div class="file-uploader" data-max-file-size="10000000" data-file-queue-limit="10">
+        <div class="file-uploader__wrapper" data-spirit-element="wrapper">
+          <ul class="file-uploader__list" data-spirit-element="list"></ul>
+          <input type="file" name="attachment" multiple data-spirit-element="input" accept="image/*" />
+          <div class="file-uploader__drop-zone" data-spirit-element="dropZone">Drag and drop files here</div>
+        </div>
+      </div>
+    `;
+
+      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader')!);
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    describe('checkAllowedFileType()', () => {
+      test('should allow a supported file type', () => {
+        const file = new File(['content'], 'example.jpg', { type: 'image/jpeg' });
+        expect(() => fileUploader.checkAllowedFileType(file)).not.toThrow();
+      });
+
+      test('should throw an error for an unsupported file type', () => {
+        const file = new File(['content'], 'example.txt', { type: 'text/plain' });
+        expect(() => fileUploader.checkAllowedFileType(file)).toThrowError(
+          `The file "example.txt" is not supported. Please ensure you are uploading a supported file format.`,
+        );
+      });
     });
   });
 });

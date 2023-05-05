@@ -106,7 +106,8 @@ the native `input` element:
 ### Allowed File Types
 
 Use the [`accept`][mdn-accept] HTML attribute to restrict what file types can be
-uploaded. For example, to accept Microsoft Word documents:
+uploaded. This way, it is also validated during **drag and drop**. For example, to accept
+Microsoft Word documents:
 
 ```html
 <input
