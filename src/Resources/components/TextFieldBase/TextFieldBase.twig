@@ -19,6 +19,7 @@
 {%- set _value = props.value | default(null) -%}
 
 {# Extended API for TextArea #}
+{%- set _isAutoResizing = props.isAutoResizing | default(false) | boolprop -%}
 {%- set _rows = props.rows | default(null) -%}
 
 {# Extended API for TextField #}
@@ -43,6 +44,7 @@
 {%- set _helperTextClassName = _rootClassName ~ '__helperText' -%}
 
 {# Attributes #}
+{%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-toggle=autoResize' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _placeholderAttr = _placeholder ? 'placeholder=' ~ _placeholder : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
@@ -58,7 +60,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'id' and (_isAutoResizing and prop != 'data-toggle')) -%}
 {%- set _allowedAttributes = [ 'autocomplete' ] -%}
 
 {# Deprecations #}
@@ -69,7 +71,7 @@
     {% deprecated _rootClassName ~ ': `message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.' %}
 {% endif %}
 
-<div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_rootClassNames) }}>
+<div {{ mainProps(_mainPropsWithoutReservedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_rootClassNames) }} {{ _dataToggleAttr }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
         {% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}
     </label>

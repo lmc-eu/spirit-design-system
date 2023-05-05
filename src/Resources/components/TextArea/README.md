@@ -46,6 +46,7 @@ Without lexer:
 | Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
 | ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `id`              | `string`                                                             | —       | yes      | TextArea and label identification                                                                                                  |
+| `isAutoResizing`  | `bool`                                                               | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing)                        |
 | `isDisabled`      | `bool`                                                               | `false` | no       | If true, TextArea is disabled                                                                                                      |
 | `isFluid`         | `bool`                                                               | `false` | no       | If true, the element spans to the full width of its parent                                                                         |
 | `isLabelHidden`   | `bool`                                                               | `false` | no       | If true, label is hidden                                                                                                           |
@@ -65,7 +66,30 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
+## JavaScript Plugin for Auto-Resizing
+
+To enable auto-resizing of the textarea, first, you need to provide Spirit JavaScript,
+which will handle the functionality:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript
+plugins.
+
+Then you need to add attribute `isAutoResizing` to the component.
+
+```twig
+<TextArea
+  id="textareaAutoResize"
+  isAutoResizing
+  label="Label of auto-resizing TextArea"
+></TextArea>
+```
+
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
