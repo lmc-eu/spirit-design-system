@@ -59,7 +59,6 @@ There is no API for TabItem.
 | Prop name    | Type      | Default | Required | Description                  |
 | ------------ | --------- | ------- | -------- | ---------------------------- |
 | `href`       | `string`  | `null`  | no       | URL target of a link         |
-| `id`         | `string ` | `null`  | no       | Tab item identification      |
 | `isSelected` | `boolean` | `false` | no       | Whether is tab item selected |
 | `target`     | `string`  | `null`  | no       | Target tab pane ID           |
 

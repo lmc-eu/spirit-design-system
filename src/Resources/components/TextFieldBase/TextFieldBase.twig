@@ -13,14 +13,12 @@
 {%- set _message = props.message | default(null) -%}
 {%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
 {%- set _name = props.name | default(null) -%}
-{%- set _placeholder = props.placeholder | default(null) -%}
 {%- set _type = props.type | default('text') -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
 
 {# Extended API for TextArea #}
 {%- set _isAutoResizing = props.isAutoResizing | default(false) | boolprop -%}
-{%- set _rows = props.rows | default(null) -%}
 
 {# Extended API for TextField #}
 {%- set _hasPasswordToggle = props.hasPasswordToggle | default(false) | boolprop -%}
@@ -46,22 +44,19 @@
 {# Attributes #}
 {%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-toggle=autoResize' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
-{%- set _placeholderAttr = _placeholder ? 'placeholder=' ~ _placeholder : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
-{%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
-
-{# Extended Attributes for TextArea #}
-{%- set _rowsAttr = _rows ? 'rows=' ~ _rows : null -%}
 
 {# Extended Attributes for TextField #}
-{%- set _inputWidthAttr = _inputWidth ? 'size=' ~ _inputWidth : null -%}
+{%- set _inputWidthAttr = _inputWidth ? 'size="' ~ _inputWidth | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'id' and (_isAutoResizing and prop != 'data-toggle')) -%}
-{%- set _allowedAttributes = [ 'autocomplete' ] -%}
+{%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
+{%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
+{%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
 
 {# Deprecations #}
 {% if _validationState is same as('error') %}
@@ -77,12 +72,10 @@
     </label>
     {% if _isMultiline %}
         <textarea
-            {{ inputProps(props, _allowedAttributes) }}
+            {{ inputProps(props, _textAreaAllowedAttributes) }}
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"
-            {{ _rowsAttr }}
-            {{ _placeholderAttr }}
             {{ _disabledAttr }}
             {{ _requiredAttr }}
         >{{ _value }}</textarea>{# Intentionally without `raw` to prevent XSS. #}
@@ -90,16 +83,14 @@
         {% if _hasPasswordToggle %}
             <div class="{{ _passwordToggleClassName }}">
                 <input
-                    {{ inputProps(props, _allowedAttributes) }}
+                    {{ inputProps(props, _textFieldAllowedAttributes) }}
                     type="password"
                     id="{{ _id }}"
                     name="{{ _name }}"
                     class="{{ _inputClassName }}"
                     {{ _disabledAttr }}
-                    {{ _inputWidthAttr }}
-                    {{ _placeholderAttr }}
+                    {{ _inputWidthAttr | raw }}
                     {{ _requiredAttr }}
-                    {{ _valueAttr }}
                 />
                 <button
                     type="button"
@@ -119,16 +110,14 @@
             </div>
         {% else %}
             <input
-                {{ inputProps(props, _allowedAttributes) }}
+                {{ inputProps(props, _textFieldAllowedAttributes) }}
                 type="{{ _type }}"
                 id="{{ _id }}"
                 name="{{ _name }}"
                 class="{{ _inputClassName }}"
                 {{ _disabledAttr }}
-                {{ _inputWidthAttr }}
-                {{ _placeholderAttr }}
+                {{ _inputWidthAttr | raw }}
                 {{ _requiredAttr }}
-                {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
             />
         {% endif %}
     {% endif %}

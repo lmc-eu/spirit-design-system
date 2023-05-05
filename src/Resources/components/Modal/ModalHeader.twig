@@ -10,7 +10,7 @@
 {%- set _titleClassName = _spiritClassPrefix ~ 'ModalHeader__title' -%}
 
 {# Attributes #}
-{%- set _titleIdAttr = _titleId ? 'id=' ~ _titleId : null -%}
+{%- set _titleIdAttr = _titleId ? 'id="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -24,7 +24,7 @@
     {% if block('content') is not empty %}
         <h2
             class="{{ _titleClassName }}"
-            {{ _titleIdAttr }}
+            {{ _titleIdAttr | raw }}
         >
             {% block content %}{% endblock %}
         </h2>
