@@ -7,7 +7,7 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Accordion' -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -17,7 +17,7 @@
 <{{ _elementType }}
     {{ mainProps(_mainPropsWithoutId) }}
     {{ styleProp(_styleProps) }}
-    {{ _idAttr }}
+    {{ _idAttr | raw }}
     {{ classProp(_classNames) }}
     data-toggle="accordion"
 >

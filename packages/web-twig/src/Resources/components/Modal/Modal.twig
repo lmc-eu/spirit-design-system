@@ -11,7 +11,7 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}

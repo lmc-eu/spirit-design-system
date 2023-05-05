@@ -13,7 +13,9 @@
 {%- set _rootPlacementClassName = _spiritClassPrefix ~ 'Tooltip--' ~ _placement -%}
 
 {# Attributes #}
-{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _dataTargetAttr = _id ? 'data-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -24,7 +26,7 @@
     {{ mainProps(_mainPropsWithoutId) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
-    {{ _idAttr }}
+    {{ _idAttr | raw }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible == 'true' %}
@@ -32,8 +34,8 @@
             type="button"
             class="{{ _closeClassName }}"
             data-dismiss="tooltip"
-            data-target="#{{ _id }}"
-            aria-controls="{{ _id }}"
+            {{ _ariaControlsAttr | raw }}
+            {{ _dataTargetAttr | raw }}
             aria-expanded="true"
         >
             <Icon name="close" aria-hidden="true" />

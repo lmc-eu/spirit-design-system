@@ -28,27 +28,26 @@
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
-{%- set _idAttr = _id ? 'id=' ~ _id : null -%}
-{%- set _labelForAttr = _id ? 'for=' ~ _id : null -%}
-{%- set _autocompleteAttr = _autocomplete ? 'autocomplete=' ~ _autocomplete : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _labelForAttr = _id ? 'for="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
-<label {{ _labelForAttr }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
-        {{ inputProps(props) }}
+        {{ inputProps(props, _allowedInputAttributes) }}
         type="radio"
         name="{{ _name }}"
         class="{{ _inputClassName }}"
-        {{ _idAttr }}
+        {{ _idAttr | raw }}
         {{ _checkedAttr }}
         {{ _disabledAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
-        {{ _autocompleteAttr }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
