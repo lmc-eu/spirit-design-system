@@ -36,7 +36,8 @@ const defaultConfig: Config = {
 const VALIDATIONS_ERROR = 'form-validations-message';
 const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
 const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 'pattern'];
-// const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const EMAIL_REGEX =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
 const currentLocale = 'en';
@@ -67,9 +68,9 @@ validate('required', {
   priority: 99,
   halt: true,
 });
-// validate('email', { fn: (val) => !val || EMAIL_REGEX.test(val)});
-// validate('number', { fn: (val) => !val || !isNaN(parseFloat(val)), priority: 2 });
-// validate('integer', { fn: (val) => !val || /^\d+$/.test(val) });
+validate('email', { fn: (val) => !val || EMAIL_REGEX.test(val) });
+validate('number', { fn: (val) => !val || !Number.isNaN(parseFloat(val)), priority: 2 });
+validate('integer', { fn: (val) => !val || /^\d+$/.test(val) });
 // validate('minlength', { fn: (val, length) => !val || val.length >= parseInt(length) });
 // validate('maxlength', { fn: (val, length) => !val || val.length <= parseInt(length) });
 validate('min', {
@@ -92,8 +93,20 @@ validate('max', {
     );
   },
 });
-// validate('pattern', { fn: (val, pattern) => { let m = pattern.match(new RegExp('^/(.*?)/([gimy]*)$')); return !val || (new RegExp(m[1], m[2])).test(val);} });
-// validate('equals', { fn: (val, otherFieldSelector) => { let other = document.querySelector(otherFieldSelector); return (other) && ((!val && !other.value) || (other.value === val)); } });
+validate('pattern', {
+  fn: (value, pattern) => {
+    const matched = pattern.match(/^\/(.*?)\/([gimy]*)$/);
+
+    return !value || new RegExp(matched[1], matched[2]).test(value);
+  },
+});
+validate('equals', {
+  fn: (value: string, otherFieldSelector: string) => {
+    const other = document.querySelector(otherFieldSelector) as HTMLInputElement;
+
+    return other && ((!value && !other.value) || other.value === value);
+  },
+});
 
 class FormValidations {
   config: Config;
