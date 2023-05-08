@@ -83,7 +83,7 @@ class FormValidations {
   live: boolean;
   fields: Field[];
 
-  constructor(form: HTMLElement, config: Config, live: boolean) {
+  constructor(form: HTMLElement, config?: Config, live?: boolean) {
     form.setAttribute('novalidate', 'true');
 
     this.form = form;
@@ -211,22 +211,28 @@ class FormValidations {
    * @param input
    * @returns {Array|*}
    */
-  // getErrors = function (input) {
-  //   if (!input) {
-  //     let erroneousFields = [];
-  //     for (let i = 0; i < this.fields.length; i++) {
-  //       let field = this.fields[i];
-  //       if (field.errors.length) {
-  //         erroneousFields.push({ input: field.input, errors: field.errors });
-  //       }
-  //     }
-  //     return erroneousFields;
-  //   }
-  //   if (input.tagName && input.tagName.toLowerCase() === 'select') {
-  //     return input.formValidations.errors;
-  //   }
-  //   return input.length ? input[0].formValidations.errors : input.formValidations.errors;
-  // };
+  public getErrors(input: HTMLInputElement) {
+    if (!input) {
+      const erroneousFields = [];
+      for (let i = 0; i < this.fields.length; i++) {
+        const field = this.fields[i];
+        if (field.errors?.length) {
+          erroneousFields.push({ input: field.input, errors: field.errors });
+        }
+      }
+
+      return erroneousFields;
+    }
+    if (input.tagName && input.tagName.toLowerCase() === 'select') {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore Property 'formValidationsDisplay' does not exist on type 'HTMLElement'.
+      return input.formValidations.errors;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore Property 'formValidationsDisplay' does not exist on type 'HTMLElement'.
+    return input.length ? input[0].formValidations.errors : input.formValidations.errors;
+  }
 
   /**
    * Validates a single field, all validator functions are called and error messages are generated
