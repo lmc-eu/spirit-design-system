@@ -126,4 +126,96 @@ describe('FormValidations', () => {
       }
     });
   });
+
+  describe('input types', function () {
+    beforeEach(() => {
+      const fixture = `
+        <div id="fixture">
+          <form id="form" novalidate method="post">
+            <div class="form-group" data-spirit-validate>
+              <input id="input-number" type="number" class="form-control" />
+              <input id="input-email" type="email" class="form-control" />
+              <input id="input-integer" data-spirit-type="integer" class="form-control" />
+              <input id="input-pattern" pattern="/^\\d+\\.\\d{2,2}$/g" class="form-control" />
+            </div>
+          </form>
+        </div>`;
+
+      document.body.insertAdjacentHTML('afterbegin', fixture);
+    });
+
+    afterEach(() => {
+      document.body.removeChild(document.getElementById('fixture') as HTMLDivElement);
+    });
+
+    it('should validate pattern input', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-pattern') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      for (const item of [
+        ['22.2', false],
+        ['20', false],
+        ['text', false],
+        ['22.22', true],
+      ]) {
+        input.value = item[0].toString();
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+
+    it('should validate number input', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-number') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      // text value does not actually set, because it's a number input. so the following is true
+
+      for (const item of [
+        [20, true],
+        ['20', true],
+        ['text', true],
+      ]) {
+        input.value = item[0].toString();
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+
+    it('should validate integer input', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-integer') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      for (const item of [
+        [20, true],
+        ['20', true],
+        ['20.89', false],
+        [20.89, false],
+        ['text', false],
+      ]) {
+        input.value = item[0].toString();
+
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+
+    it('should validate email input', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-email') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      for (const item of [
+        ['user@exampl.com', true],
+        ['@example.com', false],
+        ['user@example', false],
+        ['a@x.x', false],
+        ['a@x.xl', true],
+        ['a+filter@x.xl', true],
+        ['a b@c.cd', false],
+      ]) {
+        input.value = item[0].toString();
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+  });
 });
