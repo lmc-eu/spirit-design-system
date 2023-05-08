@@ -72,8 +72,26 @@ validate('required', {
 // validate('integer', { fn: (val) => !val || /^\d+$/.test(val) });
 // validate('minlength', { fn: (val, length) => !val || val.length >= parseInt(length) });
 // validate('maxlength', { fn: (val, length) => !val || val.length <= parseInt(length) });
-// validate('min', { fn: function(val, limit){ return !val || (this.type === 'checkbox' ? groupedElemCount(this) >= parseInt(limit) : parseFloat(val) >= parseFloat(limit)); } });
-// validate('max', { fn: function(val, limit){ return !val || (this.type === 'checkbox' ? groupedElemCount(this) <= parseInt(limit) : parseFloat(val) <= parseFloat(limit)); } });
+validate('min', {
+  fn(value: string, limit: string) {
+    return (
+      !value ||
+      (this.type === 'checkbox'
+        ? groupedElemCount(this) >= parseInt(limit, 10)
+        : parseFloat(value) >= parseFloat(limit))
+    );
+  },
+});
+validate('max', {
+  fn(value: string, limit: string) {
+    return (
+      !value ||
+      (this.type === 'checkbox'
+        ? groupedElemCount(this) <= parseInt(limit, 10)
+        : parseFloat(value) <= parseFloat(limit))
+    );
+  },
+});
 // validate('pattern', { fn: (val, pattern) => { let m = pattern.match(new RegExp('^/(.*?)/([gimy]*)$')); return !val || (new RegExp(m[1], m[2])).test(val);} });
 // validate('equals', { fn: (val, otherFieldSelector) => { let other = document.querySelector(otherFieldSelector); return (other) && ((!val && !other.value) || (other.value === val)); } });
 
@@ -211,7 +229,7 @@ class FormValidations {
    * @param input
    * @returns {Array|*}
    */
-  public getErrors(input: HTMLInputElement) {
+  public getErrors(input?: HTMLInputElement) {
     if (!input) {
       const erroneousFields = [];
       for (let i = 0; i < this.fields.length; i++) {
