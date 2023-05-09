@@ -100,9 +100,10 @@ class FileUploader extends BaseComponent {
     return attachmentInputElement;
   }
 
-  getAttachmentElement(file: File, id: string): HTMLElement | null {
+  getAttachmentElement(file: File, id: string): Element | null {
     const snippetTemplate = SelectorEngine.findOne(TEMPLATE_ELEMENT_SELECTOR, this.element) as HTMLTemplateElement;
-    const snippet = snippetTemplate?.content.cloneNode(true) as HTMLElement;
+    // content: [ #text, li.FileUploaderAttachment, #text ]
+    const snippet = snippetTemplate?.content.cloneNode(true) as DocumentFragment;
 
     if (!snippet) {
       return null;
@@ -126,7 +127,9 @@ class FileUploader extends BaseComponent {
     itemName!.removeAttribute(TEMPLATE_ELEMENT_SLOT_NAME);
     itemButton!.removeAttribute(TEMPLATE_ELEMENT_SLOT_NAME);
 
-    return snippet;
+    // get only first element of the document fragment
+    // @see: https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
+    return snippet.children.item(0);
   }
 
   createAttachmentEvents(id: string) {
