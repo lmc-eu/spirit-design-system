@@ -218,4 +218,54 @@ describe('FormValidations', () => {
       }
     });
   });
+
+  describe('min/max length', () => {
+    beforeEach(() => {
+      const fixture = `<div id="fixture">
+          <form id="form" novalidate method="post">
+            <div class="form-group" data-spirit-validate>
+              <input id="min-length-input" minlength="3" type="text" class="form-control" />
+              <input id="max-length-input" maxlength="5" type="text" class="form-control" />
+            </div>
+          </form>
+        </div>`;
+
+      document.body.insertAdjacentHTML('afterbegin', fixture);
+    });
+
+    afterEach(() => {
+      document.body.removeChild(document.getElementById('fixture') as HTMLDivElement);
+    });
+
+    it('should validate minlength value', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('min-length-input') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      for (const item of [
+        ['ab', false],
+        ['abc', true],
+        ['4len', true],
+        ['20.89', true],
+      ]) {
+        input.value = item[0].toString();
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+
+    it('should validate the maxlength value', () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('max-length-input') as FormValidationsHTMLElement;
+      const formValidations = new FormValidations(form);
+
+      for (const item of [
+        ['ab', true],
+        ['12345', true],
+        ['123456', false],
+      ]) {
+        input.value = item[0].toString();
+        expect(formValidations.validate(input, true)).toBe(item[1]);
+      }
+    });
+  });
 });
