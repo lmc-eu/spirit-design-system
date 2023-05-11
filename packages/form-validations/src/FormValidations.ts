@@ -59,7 +59,7 @@ const validate = (name: string, validator: Validator) => {
   validators[name] = namedValidator;
 };
 
-// validate('text', { fn: (val) => true, priority: 0 });
+validate('text', { fn: () => true, priority: 0 });
 validate('required', {
   fn(value) {
     return this.type === 'radio' || this.type === 'checkbox'
