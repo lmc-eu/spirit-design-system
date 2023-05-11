@@ -72,8 +72,8 @@ validate('required', {
 validate('email', { fn: (val) => !val || EMAIL_REGEX.test(val) });
 validate('number', { fn: (val) => !val || !Number.isNaN(parseFloat(val)), priority: 2 });
 validate('integer', { fn: (val) => !val || /^\d+$/.test(val) });
-// validate('minlength', { fn: (val, length) => !val || val.length >= parseInt(length) });
-// validate('maxlength', { fn: (val, length) => !val || val.length <= parseInt(length) });
+validate('minlength', { fn: (val, length) => !val || val.length >= parseInt(length, 10) });
+validate('maxlength', { fn: (val, length) => !val || val.length <= parseInt(length, 10) });
 validate('min', {
   fn(value: string, limit: string) {
     return (
