@@ -13,6 +13,17 @@ import {
   Params,
 } from './types';
 
+const VALIDATIONS_ERROR = 'form-validations-message';
+const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
+const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 'pattern'];
+const EMAIL_REGEX =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
+const currentLocale = 'en';
+const validators: Record<string, NamedValidator> = {};
+const DATA_ATTR_PREFIX = 'data-spirit';
+
 type Config = {
   formFieldSelector: string;
   errorClass: string;
@@ -24,24 +35,14 @@ type Config = {
 };
 
 const defaultConfig: Config = {
-  formFieldSelector: '[data-spirit-validate]',
+  formFieldSelector: `[${DATA_ATTR_PREFIX}-validate]`,
   errorClass: 'has-danger',
   successClass: 'has-success',
-  validationTextParentSelector: '[data-spirit-validate]',
+  validationTextParentSelector: `[${DATA_ATTR_PREFIX}-validate]`,
   validationTextTag: 'div',
   validationTextClass: '',
   dataElementMessage: 'validator_message',
 };
-
-const VALIDATIONS_ERROR = 'form-validations-message';
-const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
-const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 'pattern'];
-const EMAIL_REGEX =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
-const currentLocale = 'en';
-const validators: Record<string, NamedValidator> = {};
 
 type HTMLAttribute = {
   name: string;
@@ -171,7 +172,7 @@ class FormValidations {
 
         Array.from(input.attributes).forEach((attribute: HTMLAttribute) => {
           if (/^data-spirit-/.test(attribute.name)) {
-            let name = attribute.name.substr(14);
+            let name = attribute.name.replace(`${DATA_ATTR_PREFIX}-`, '');
             const messageMatch = name.match(MESSAGE_REGEX);
 
             if (messageMatch !== null) {
