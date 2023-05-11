@@ -80,6 +80,7 @@ const defaultConfig = {
   validationTextClass: '',
   dataElementMessage: 'validation-text',
 };
+```
 
 - **live** - A boolean value indicating whether FormValidations should validate as you type, default is `true`
 
@@ -109,4 +110,20 @@ _Constructor_
 | form      | -                            | ✔         | The form element                                    |
 | config    | [See above](#default-config) | ✕         | The config object                                   |
 | live      | `true`                       | ✕         | Whether FormValidations should validate as you type |
-```
+
+**FormValidations.validate(inputs, silent)**
+
+_Validate the form or field(s)_
+
+| Parameter | Default | Required? | Description                                                                                                                                                                      |
+| --------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| inputs    | -       | ✕         | When not given, the entire form is validated. Inputs can either be one DOM element or a collection of DOM elements returned by `document.getElement…`, `document.querySelector…` |
+| silent    | false   | ✕         | Does not show error messages when `silent` is `true`                                                                                                                             |
+
+**FormValidations.getErrors(input)**
+
+_Get the errors of the form or a specific field_
+
+| Parameter | Default | Required? | Description                                                                                                                                                                                                                                                            |
+| --------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| input     | -       | ✕         | When `input` is given, it returns the errors of that input element, otherwise returns all errors of the form as an object, using input element as key and corresponding errors as value. `validate()` must be called before expecting this method to return correctly. |
