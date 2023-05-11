@@ -61,6 +61,7 @@ final class ComponentsSnapshotTest extends TestCase
         $config = [
             'indent' => true,
             'output-xhtml' => true,
+            'vertical-space' => true,
             'wrap' => 120,
         ];
 
