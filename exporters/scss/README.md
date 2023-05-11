@@ -11,7 +11,7 @@ This exported does several operations with tokens:
 - Next, each token is grouped and its value is prepared to print. Grouping is made using actual groups in Supernova and if these are not present, a common name prefix is used. Separate token values are printed as separate SCSS variables.
 - Groups are used for printing SCSS maps with references to separate tokens and pluralized names. Borders groups are skipped and colors have their group name suffixed. These maps are printed into SCSS.
 - Shadows are grouped if same name.
-- Gradients names are not used from Figma, but from Supernova.
+- If Gradient names start with `gradients/gradient`, they are not used from Figma, but from Supernova
 
 ### Typography
 

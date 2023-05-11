@@ -50,7 +50,8 @@ export function generateSimple(
     // Get correct name of token
     let name = cleanName(token.name);
 
-    if (token.origin && token.tokenType !== 'Gradient') {
+    // The Gradients exception is temporary, until JDS fix their naming
+    if (token.origin && !token.origin.name.toLowerCase().startsWith('gradients/gradient')) {
       name = cleanName(token.origin.name);
     }
 
@@ -112,7 +113,7 @@ export function generateSimple(
         gradientType = 'radial-gradient';
         gradientDirection = 'circle at center';
       }
-      value = `${gradientType}(${gradientDirection}, ${token.value.stops
+      value = `${gradientType}(var(--angle, ${gradientDirection}), ${token.value.stops
         .map((stop) => `${formatColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`)
         .join(', ')})`;
     } else if (token.tokenType === 'Border') {
