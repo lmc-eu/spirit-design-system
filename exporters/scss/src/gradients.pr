@@ -1,4 +1,4 @@
 // Generated Gradients from Supernova. Do not edit manually.
 {[ if (ds.tokensByType("Gradient", ds.currentBrand().id)).count() > 0 ]}
-{{ generateSimple(ds.tokensByType("Gradient", ds.currentBrand().id), ds.tokenGroupsOfType("Gradient", ds.currentBrand().id)) }}
+{{ generateSimple(ds.tokensByType("Gradient", ds.currentBrand().id)) }}
 {[/]}
