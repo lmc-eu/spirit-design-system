@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title></title>
+    <title>
+    </title>
   </head>
   <body>
     <ul class="Tabs" role="tablist">
       <li class="Tabs__item">
         <button id="pane1-tab" class="Tabs__link is-selected" aria-selected="true" aria-controls="pane1" data-target="#pane1" data-toggle="tabs" type="button">Item selected</button>
       </li>
+
       <li class="Tabs__item">
         <button id="pane2-tab" class="Tabs__link" aria-selected="false" aria-controls="pane2" data-target="#pane2" data-toggle="tabs" type="button">Item</button>
       </li>
+
       <li class="Tabs__item">
         <a href="https://www.example.com" class="Tabs__link" aria-selected="false" role="tab">Item link</a>
       </li>
     </ul>
+
     <div class="TabsPane is-selected" role="tabpanel" aria-labelledby="pane1-tab" id="pane1">
       Pane 1
     </div>
+
     <div class="TabsPane" role="tabpanel" aria-labelledby="pane2-tab" id="pane2">
       Pane 2
     </div>
