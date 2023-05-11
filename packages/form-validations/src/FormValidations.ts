@@ -96,7 +96,7 @@ validate('max', {
 });
 validate('pattern', {
   fn: (value, pattern) => {
-    const matched = pattern.match(/^\/(.*?)\/([gimy]*)$/);
+    const matched = pattern.match(/^\/(.*?)\/([gimy]*)$/) || [];
 
     return !value || new RegExp(matched[1], matched[2]).test(value);
   },
