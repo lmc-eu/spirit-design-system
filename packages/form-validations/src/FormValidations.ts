@@ -2,6 +2,16 @@
 /* eslint no-bitwise: ["error", { "allow": ["~"] }] */
 import { lang } from './lang';
 import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
+import {
+  NamedValidator,
+  Validator,
+  Field,
+  FormValidationsElement,
+  FormValidationsFieldElement,
+  Languages,
+  ValidationTextElement,
+  Params,
+} from './types';
 
 type Config = {
   formFieldSelector: string;
@@ -32,38 +42,6 @@ const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -mes
 const currentLocale = 'en';
 const validators: Record<string, NamedValidator> = {};
 
-type Validator = {
-  fn: (value: string) => boolean;
-  priority: number;
-  halt: boolean;
-  msg?: string | ((message: string, params: any) => string);
-};
-
-type NamedValidator = Validator & {
-  name: string;
-};
-
-type Messages = typeof lang;
-
-type FormValidationsFieldElement = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-
-type Field = {
-  errorElements?: ValidationTextElement[] | HTMLElement[] | null[] | undefined[];
-  errors?: string[];
-  input: FormValidationsFieldElement;
-  messages: Messages;
-  params: any;
-  validators: NamedValidator[];
-};
-
-type FormValidationsElement = FormValidationsFieldElement & {
-  formValidations: Field;
-};
-
-type ValidationTextElement = HTMLElement & {
-  formValidationsDisplay: string;
-};
-
 type HTMLAttribute = {
   name: string;
   value: string;
@@ -72,7 +50,7 @@ type HTMLAttribute = {
 const validate = (name: string, validator: Validator) => {
   const namedValidator = { ...validator, name };
 
-  if (namedValidator.priority === undefined) {
+  if (namedValidator.priority == null) {
     namedValidator.priority = 1;
   }
 
@@ -84,7 +62,7 @@ validate('required', {
   fn(value) {
     return this.type === 'radio' || this.type === 'checkbox'
       ? groupedElemCount(this)
-      : value !== undefined && value.trim() !== '';
+      : value != null && value.trim() !== '';
   },
   priority: 99,
   halt: true,
@@ -158,7 +136,7 @@ class FormValidations {
       (input: FormValidationsElement) => {
         const validatorCallbacks = [] as NamedValidator[];
         const params = {};
-        const messages = {} as Messages;
+        const messages = {} as Languages;
 
         Array.from(input.attributes).forEach((attribute: HTMLAttribute) => {
           if (/^data-spirit-/.test(attribute.name)) {
@@ -166,15 +144,13 @@ class FormValidations {
             const messageMatch = name.match(MESSAGE_REGEX);
 
             if (messageMatch !== null) {
-              const locale = messageMatch[1] === undefined ? 'en' : messageMatch[1];
+              const locale = messageMatch[1] == null ? 'en' : messageMatch[1];
 
               // eslint-disable-next-line no-prototype-builtins
               if (!messages.hasOwnProperty(locale)) {
                 messages[locale] = {};
               }
 
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore index type
               messages[locale][name.slice(0, name.length - messageMatch[0].length)] = attribute.value;
 
               return;
@@ -194,31 +170,39 @@ class FormValidations {
 
         validatorCallbacks.sort((a, b) => b.priority - a.priority);
 
-        this.live &&
-          input.addEventListener(
-            !~['radio', 'checkbox'].indexOf(input.getAttribute('type') || '') ? 'input' : 'change',
-            (event) => {
-              this.validate(event.target);
-            },
-          );
+        this.addLiveEventListener(input);
 
-        input.formValidations = { input, validators: validatorCallbacks, params, messages };
+        input.formValidations = { input, validators: validatorCallbacks, params, messages, self: this };
 
         return input.formValidations;
       },
     );
   }
 
-  private static addValidatorToField(fns: NamedValidator[], params: any, name: string, value: string | null = null) {
+  private static addValidatorToField(fns: NamedValidator[], params: Params, name: string, value: string | null = null) {
     const validator = validators[name];
     if (validator) {
       fns.push(validator);
       if (value) {
         const valueParams = name === 'pattern' ? [value] : value.split(',');
         valueParams.unshift(''); // placeholder for input's value
-        params[name] = valueParams;
+        // params[name] = valueParams;
+        if (typeof params === 'object' && !Array.isArray(params)) {
+          const updatedParams = params as Record<string, string[] | string>;
+          updatedParams[name] = valueParams;
+        }
       }
     }
+  }
+
+  private addLiveEventListener(input: FormValidationsFieldElement) {
+    this.live &&
+      input.addEventListener(
+        !~['radio', 'checkbox'].indexOf(input.getAttribute('type') || '') ? 'input' : 'change',
+        (event) => {
+          this.validate(event.target);
+        },
+      );
   }
 
   /**
