@@ -1,3 +1,5 @@
+import { FormValidationsElement, Params } from './types';
+
 export const findAncestor = (
   element: HTMLElement | null | undefined,
   selector: string,
@@ -9,10 +11,24 @@ export const findAncestor = (
   return element;
 };
 
-export const fillTemplate = (message: string, params: Record<string, string>) =>
-  message.replace(/\${([^{}]*)}/g, (a: string, b: string) => params[b]);
+export const fillTemplate = (message: string, params: Params) =>
+  message.replace(/\${([^{}]*)}/g, (a: string, b: string) => {
+    if (typeof params === 'object' && !Array.isArray(params)) {
+      const value = params[b];
 
-export const groupedElemCount = (input: any) => {
+      if (Array.isArray(value)) {
+        return value.join(',');
+      }
+
+      if (value != null) {
+        return value;
+      }
+    }
+
+    return a;
+  });
+
+export const groupedElemCount = (input: FormValidationsElement) => {
   return input.formValidations.self.form.querySelectorAll(`input[name="${input.getAttribute('name')}"]:checked`).length;
 };
 

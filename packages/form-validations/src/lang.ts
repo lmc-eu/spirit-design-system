@@ -1,10 +1,4 @@
-export interface Language {
-  [key: string]: string;
-}
-
-export interface Languages {
-  [key: string]: Language;
-}
+import { Languages } from './types';
 
 export const lang: Languages = {
   en: {
