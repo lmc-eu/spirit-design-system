@@ -17,7 +17,7 @@ const VALIDATIONS_ERROR = 'form-validations-message';
 const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
 const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 'pattern'];
 const EMAIL_REGEX =
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
 const currentLocale = 'en';
@@ -127,11 +127,11 @@ class FormValidations {
   /**
    * Checks whether the form/input elements are valid
    *
-   * @param input => input element(s) or a jquery selector, null for full form validation
+   * @param input => input element(s), null for full form validation
    * @param silent => do not show error messages, just return true/false
    * @returns {boolean} return true when valid false otherwise
    */
-  public validate(input: FormValidationsElement | EventTarget | string | null, silent = false): boolean {
+  public validate(input?: FormValidationsElement | EventTarget | string | null, silent = false): boolean {
     const isSilent = input && silent === true;
 
     let { fields } = this;
@@ -149,7 +149,6 @@ class FormValidations {
 
     for (let i = 0; fields[i]; i++) {
       const field = fields[i];
-
       if (FormValidations.validateField(field)) {
         // valid
         !isSilent && this.showSuccess(field);
@@ -200,7 +199,8 @@ class FormValidations {
           }
         });
 
-        validatorCallbacks.sort((a, b) => b.priority - a.priority);
+        // default priority is added by validate function
+        validatorCallbacks.sort((a, b) => (b.priority as number) - (a.priority as number));
 
         this.addLiveEventListener(input);
 
@@ -218,7 +218,7 @@ class FormValidations {
       if (value) {
         const valueParams = name === 'pattern' ? [value] : value.split(',');
         valueParams.unshift(''); // placeholder for input's value
-        // params[name] = valueParams;
+
         if (typeof params === 'object' && !Array.isArray(params)) {
           const updatedParams = params as Record<string, string[] | string>;
           updatedParams[name] = valueParams;
@@ -243,7 +243,7 @@ class FormValidations {
    * @param input
    * @returns {Array|*}
    */
-  public getErrors(input?: HTMLInputElement) {
+  public getErrors(input?: FormValidationsElement) {
     if (!input) {
       const erroneousFields = [];
       for (let i = 0; i < this.fields.length; i++) {
@@ -255,15 +255,12 @@ class FormValidations {
 
       return erroneousFields;
     }
+
     if (input.tagName && input.tagName.toLowerCase() === 'select') {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore Property 'formValidationsDisplay' does not exist on type 'HTMLElement'.
       return input.formValidations.errors;
     }
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore Property 'formValidationsDisplay' does not exist on type 'HTMLElement'.
-    return input.length ? input[0].formValidations.errors : input.formValidations.errors;
+    return Array.isArray(input) ? input[0].formValidations.errors : input.formValidations.errors;
   }
 
   /**
