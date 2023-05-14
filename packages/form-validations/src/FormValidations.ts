@@ -133,9 +133,9 @@ class FormValidations {
    */
   public validate(input?: FormValidationsElement | EventTarget | string | null, silent = false): boolean {
     const isSilent = input && silent === true;
-
     let { fields } = this;
-    if (Boolean(input) !== true && Boolean(input) !== false) {
+
+    if (typeof input !== 'boolean') {
       if (input instanceof HTMLElement) {
         fields = [input.formValidations];
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -149,6 +149,7 @@ class FormValidations {
 
     for (let i = 0; fields[i]; i++) {
       const field = fields[i];
+
       if (FormValidations.validateField(field)) {
         // valid
         !isSilent && this.showSuccess(field);
@@ -218,7 +219,6 @@ class FormValidations {
       if (value) {
         const valueParams = name === 'pattern' ? [value] : value.split(',');
         valueParams.unshift(''); // placeholder for input's value
-
         if (typeof params === 'object' && !Array.isArray(params)) {
           const updatedParams = params as Record<string, string[] | string>;
           updatedParams[name] = valueParams;
@@ -436,6 +436,7 @@ class FormValidations {
   private showSuccess(field: Field): void {
     const errorElements = this.removeError(field);
     const errorClassElement = Array.isArray(errorElements) ? errorElements[0] : null;
+
     if (this.config.successClass !== '' && errorClassElement) {
       errorClassElement.classList.add(this.config.successClass);
     }
