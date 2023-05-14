@@ -6,17 +6,6 @@ export interface Languages {
   [key: string]: Language;
 }
 
-// export type Param = {
-//   [key: string]: string;
-// };
-
-// export type Params =
-//   | {
-//       [key: string]: Param;
-//     }
-//   | string;
-
-// export type Params = Record<string, string> | string | never[];
 export type Params = Record<string, string[] | string> | never[];
 
 export type Validator = {

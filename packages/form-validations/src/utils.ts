@@ -12,21 +12,9 @@ export const findAncestor = (
 };
 
 export const fillTemplate = (message: string, params: Params) =>
-  message.replace(/\${([^{}]*)}/g, (a: string, b: string) => {
-    if (typeof params === 'object' && !Array.isArray(params)) {
-      const value = params[b];
-
-      if (Array.isArray(value)) {
-        return value.join(',');
-      }
-
-      if (value != null) {
-        return value;
-      }
-    }
-
-    return a;
-  });
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore No index signature with a parameter of type 'string' was found on type 'Params'.
+  message.replace(/\${([^{}]*)}/g, (_: string, paramIndex: string) => params[paramIndex]);
 
 export const groupedElemCount = (input: FormValidationsElement) => {
   return input.formValidations.self.form.querySelectorAll(`input[name="${input.getAttribute('name')}"]:checked`).length;
