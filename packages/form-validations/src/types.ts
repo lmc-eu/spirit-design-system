@@ -20,9 +20,9 @@ export interface Languages {
 export type Params = Record<string, string[] | string> | never[];
 
 export type Validator = {
-  fn: (value: string) => boolean | number;
-  priority: number;
-  halt: boolean;
+  fn: (...args: string[]) => boolean | number;
+  priority?: number;
+  halt?: boolean;
   msg?: string | ((message: string, params: Params) => string);
 };
 
