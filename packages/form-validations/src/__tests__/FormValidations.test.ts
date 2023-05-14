@@ -1,4 +1,5 @@
-import FormValidations, { FormValidationsHTMLElement } from '../FormValidations';
+import FormValidations from '../FormValidations';
+import { FormValidationsElement } from '../types';
 
 describe('FormValidations', () => {
   describe('required', () => {
@@ -8,7 +9,7 @@ describe('FormValidations', () => {
         <form id="form" novalidate method="post">
           <div class="form-group" data-spirit-validate>
             <input id="input" type="text" required class="form-control" />
-            <textarea id="textarea" required class="form-control" ></textarea>
+            <textarea id="textarea" required class="form-control"></textarea>
             <select id="select" required class="form-control">
               <option value="">-----</option>
               <option value="bangladesh">Bangladesh</option>
@@ -30,25 +31,22 @@ describe('FormValidations', () => {
       document.body.removeChild(document.getElementById('fixture') as HTMLDivElement);
     });
 
-    for (const id of ['input', 'textarea', 'select']) {
-      it(`should validate required attribute on ${id}`, () => {
-        const form = document.getElementById('fixture') as HTMLElement;
-        const input = document.getElementById(id) as FormValidationsHTMLElement;
-        const formValidations = new FormValidations(form);
+    it.each([['input'], ['textarea'], ['select']])('should validate required attribute on %s', (id) => {
+      const form = document.getElementById('fixture') as HTMLElement;
+      const input = document.getElementById(id) as FormValidationsElement;
+      const formValidations = new FormValidations(form);
 
-        expect(formValidations.validate(input)).toBe(false);
+      expect(formValidations.validate(input)).toBe(false);
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('This field is required');
 
-        expect(formValidations.getErrors(input)).toHaveLength(1);
-        expect(formValidations.getErrors(input)[0]).toBe('This field is required');
-
-        input.value = 'bangladesh';
-        expect(formValidations.validate(input)).toBe(true);
-      });
-    }
+      input.value = 'bangladesh';
+      expect(formValidations.validate(input)).toBe(true);
+    });
 
     it(`should validate required attribute on checkbox`, () => {
       const form = document.getElementById('fixture') as HTMLElement;
-      const input = document.getElementById('checkbox') as FormValidationsHTMLElement;
+      const input = document.getElementById('checkbox') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       expect(formValidations.validate(input)).toBe(false);
@@ -56,10 +54,10 @@ describe('FormValidations', () => {
       expect(formValidations.getErrors(input)).toHaveLength(1);
       expect(formValidations.getErrors(input)[0]).toBe('This field is required');
 
-      input.checked = true;
+      (input as HTMLInputElement).checked = true;
       expect(formValidations.validate(input)).toBe(true);
 
-      input.checked = false;
+      (input as HTMLInputElement).checked = false;
       expect(formValidations.validate(input)).toBe(false);
 
       (document.getElementById('checkbox') as HTMLInputElement).checked = true;
@@ -112,7 +110,7 @@ describe('FormValidations', () => {
 
     it('should validate the max value', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('max-input') as FormValidationsHTMLElement;
+      const input = document.getElementById('max-input') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
@@ -150,7 +148,7 @@ describe('FormValidations', () => {
 
     it('should validate pattern input', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('input-pattern') as FormValidationsHTMLElement;
+      const input = document.getElementById('input-pattern') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
@@ -166,7 +164,7 @@ describe('FormValidations', () => {
 
     it('should validate number input', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('input-number') as FormValidationsHTMLElement;
+      const input = document.getElementById('input-number') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       // text value does not actually set, because it's a number input. so the following is true
@@ -183,7 +181,7 @@ describe('FormValidations', () => {
 
     it('should validate integer input', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('input-integer') as FormValidationsHTMLElement;
+      const input = document.getElementById('input-integer') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
@@ -201,7 +199,7 @@ describe('FormValidations', () => {
 
     it('should validate email input', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('input-email') as FormValidationsHTMLElement;
+      const input = document.getElementById('input-email') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
@@ -239,7 +237,7 @@ describe('FormValidations', () => {
 
     it('should validate minlength value', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('min-length-input') as FormValidationsHTMLElement;
+      const input = document.getElementById('min-length-input') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
@@ -255,7 +253,7 @@ describe('FormValidations', () => {
 
     it('should validate the maxlength value', () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
-      const input = document.getElementById('max-length-input') as FormValidationsHTMLElement;
+      const input = document.getElementById('max-length-input') as FormValidationsElement;
       const formValidations = new FormValidations(form);
 
       for (const item of [
