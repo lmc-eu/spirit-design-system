@@ -129,6 +129,10 @@ class FormValidations {
     this.fields = this.parseFieldValidators(form);
   }
 
+  public setConfig(config: Config) {
+    this.config = config;
+  }
+
   /**
    * Checks whether the form/input elements are valid
    *
@@ -364,7 +368,13 @@ class FormValidations {
    * @param priority => priority of the validator function, higher valued function gets called first.
    * @param halt => whether validation should stop for this field after current validation function
    */
-  static addValidator(name: string, validator: ValidatorCallback, message: string, priority: number, halt: boolean) {
+  static addValidator(
+    name: string,
+    validator: ValidatorCallback,
+    message: string | null,
+    priority: number,
+    halt: boolean,
+  ) {
     validate(name, { fn: validator, msg: message, priority, halt });
   }
 
@@ -483,33 +493,34 @@ class FormValidations {
   /**
    * Resets the errors
    */
-  // reset = function () {
-  //   for (let i = 0; this.fields[i]; i++) {
-  //     this.fields[i].errorElements = null;
-  //   }
-  //   Array.from(this.form.querySelectorAll('.' + VALIDATIONS_ERROR)).map(function (elem) {
-  //     elem.parentNode.removeChild(elem);
-  //   });
-  //   Array.from(this.form.querySelectorAll('.' + this.config.classTo)).map(function (elem) {
-  //     elem.classList.remove(this.config.successClass);
-  //     elem.classList.remove(this.config.errorClass);
-  //   });
-  // };
+  public reset() {
+    for (let i = 0; this.fields[i]; i++) {
+      this.fields[i].errorElements = [];
+    }
+
+    Array.from(this.form.querySelectorAll<ValidationTextElement>(`.${VALIDATIONS_ERROR}`)).forEach((element) => {
+      element.parentNode?.removeChild(element);
+    });
+
+    Array.from(this.form.querySelectorAll(this.config.formFieldSelector)).forEach((element) => {
+      element.classList.remove(this.config.successClass);
+      element.classList.remove(this.config.errorClass);
+    });
+  }
 
   /**
    * Resets the errors and deletes all formValidations fields
    */
-  // destroy = () => {
-  //   this.reset();
-  //   this.fields.forEach(function (field) {
-  //     delete field.input.formValidations;
-  //   });
-  //   this.fields = [];
-  // };
+  public destroy() {
+    this.reset();
+    this.fields.forEach((field) => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore TS2339: Property 'formValidations' does not exist on type 'FormValidationsFieldElement'. Property 'formValidations' does not exist on type 'HTMLInputElement'.
+      delete field.input.formValidations;
+    });
 
-  // setGlobalConfig = (config) => {
-  //   defaultConfig = config;
-  // };
+    this.fields = [];
+  }
 }
 
 export default FormValidations;

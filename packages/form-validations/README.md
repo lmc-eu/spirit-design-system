@@ -58,6 +58,9 @@ window.onload = () => {
 
 **Profit**
 
+> The goal of this library is not to provide every possible type of validation and thus becoming a bloat.
+> The goal is to provide most common types of validations and a neat way to add custom validators.
+
 It automatically validates `required`, `min`, `max`, `minlength`, `maxlength` attributes and the value of type attributes like `email`, `number` and more…
 The library is built on top of native validation attributes as replace for native browser validation, not a progressive enhancement.
 Using the `novalidate` attribute the library is turning off the browser validations and does the heavy lifting itself.
@@ -70,7 +73,7 @@ FormValidations takes 3 parameters:
 
 <a name="default-config"></a>
 
-````js
+```javascript
 const defaultConfig = {
   formFieldSelector: '[data-spirit-validate]',
   errorClass: 'has-danger',
@@ -103,7 +106,7 @@ const defaultConfig = {
 
 ```javascript
 FormValidations.addValidator(nameOrElem, handler, errorMessage, priority, halt);
-````
+```
 
 ### Add a custom validator to a field
 
@@ -130,14 +133,17 @@ formValidations.addElementValidator(
 
 ### Add a global custom validator
 
-```javascript
-// A validator to check if the input value is within a specified range
-// Global validators must be added before creating the FormValidations instance
+A validator to check if the input value is within a specified range.
 
+⚠️ Global validators must be added before creating the FormValidations instance.
+
+⚠️ There are several build-in validators with reserved names, see [Built-in validators](#built-in-validators) section.
+By using the same `name` you can override those validators.
+
+```javascript
 FormValidations.addValidator(
   'my-range',
   function (value, param1, param2) {
-    // here `this` refers to the respective input element
     return parseInt(param1) <= value && value <= parseInt(param2);
   },
   'The value (${0}) must be between ${1} and ${2}',
@@ -158,10 +164,12 @@ Now you can assign it to your inputs like this
 <input required data-spirit-required-message="My custom message" />
 ```
 
-Add an attribute like `data-spirit-<ValidatorName>-message`with the custom message as value to show custom error messages.
+Add an attribute like `data-spirit-<ValidatorName>-message` with the custom message as a value to show custom error messages.
 You can add custom messages like this for as many validators as you need. Here `ValidatorName` means `required`, `email`, `min`, `max` etc.
 
 ## API
+
+### Initialization
 
 **FormValidations(form, config, live)**
 
@@ -172,6 +180,8 @@ _Constructor_
 | form      | -                            | ✔         | The form element                                    |
 | config    | [See above](#default-config) | ✕         | The config object                                   |
 | live      | `true`                       | ✕         | Whether FormValidations should validate as you type |
+
+### Validation
 
 **FormValidations.validate(inputs, silent)**
 
@@ -190,12 +200,14 @@ _Get the errors of the form or a specific field_
 | --------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | input     | -       | ✕         | When `input` is given, it returns the errors of that input element, otherwise returns all errors of the form as an object, using input element as key and corresponding errors as value. `validate()` must be called before expecting this method to return correctly. |
 
+### Localization
+
 **FormValidations.setLocale(locale)**
 
 _Set the current locale globally_
 
-| Parameter | Default | Required? | Description                                                                     |
-| --------- | ------- | --------- | ------------------------------------------------------------------------------- |
+| Parameter | Default | Required? | Description                                                                            |
+| --------- | ------- | --------- | -------------------------------------------------------------------------------------- |
 | `locale`  | -       | ✔         | Error messages on new FormValidations forms will be displayed according to this locale |
 
 **FormValidations.addMessages(locale, messages)**
@@ -207,26 +219,35 @@ _Set the current locale globally_
 | `locale`   | -       | ✔         | The corresponding locale                                            |
 | `messages` | -       | ✔         | Object containing validator names as keys and error texts as values |
 
-**FormValidations.addValidator(elem, fn, msg, priority, halt)**
+### Custom validators
+
+**FormValidations.addElementValidator(elem, fn, msg, priority, halt)**
 
 _Add a custom validator_
 
-| Parameter | Default  | Required? | Description|
-| ---       | ----     |   -----   | ---        |
-| `elem`| - | ✔ | The dom element where validator is applied to.|
-| `fn`| - | ✔ | The function that validates the field. Value of the input field gets passed as the first parameter, and the attribute value (split using comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, validator function get called like `fn("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element|
-| `message`| - | ✔ | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments|
-| `priority`| 1 | ✕ | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field. |
-| `halt`| `false` | ✕ | Whether to halt validation on the current field after this validation. When `true` after validating the current validator, rest of the validators are ignored on the current field.|
-
-<br/>
+| Parameter  | Default | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                              |
+| ---------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `elem`     | -       | ✔         | The dom element where validator is applied to.                                                                                                                                                                                                                                                                                                                                                           |
+| `fn`       | -       | ✔         | The function that validates the field. The value of the input field gets passed as the first parameter, and the attribute value (split using a comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, the validator function gets called like `fn("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element |
+| `message`  | -       | ✔         | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments    |
+| `priority` | 1       | ✕         | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                    |
+| `halt`     | `false` | ✕         | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                |
 
 **FormValidations.addValidator(name, fn, msg, priority, halt)**
 
 _Add a global custom validator_
 
-| Parameter | Default  | Required? | Description|
-| ---       | ----     |   -----   | ---        |
-| `name`| - | ✔ | A string, the name of the validator, you can then use `data-spirit-<NAME>` attribute in form fields to apply this validator|
-| `....`| - | - | Other parameters same as above |
-```
+| Parameter | Default | Required? | Description                                                                                                                 |
+| --------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | -       | ✔         | A string, the name of the validator, you can then use `data-spirit-<NAME>` attribute in form fields to apply this validator |
+| `....`    | -       | -         | Other parameters same as above                                                                                              |
+
+### Resetting
+
+**FormValidations.reset()**
+
+_Reset the errors in the form_
+
+**FormValidations.destroy()**
+
+_Destroy the pristine object_

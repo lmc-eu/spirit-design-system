@@ -14,7 +14,7 @@ export type Validator = {
   fn: ValidatorCallback;
   priority?: number;
   halt?: boolean;
-  msg?: string | ((message: string, params: Params) => string);
+  msg?: string | ((message: string, params: Params) => string) | null;
 };
 
 export type NamedValidator = Validator & {
