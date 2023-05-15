@@ -449,11 +449,11 @@ class FormValidations {
    * @param error
    * @param field
    */
-  // addError = function (input, error) {
-  //   input = input.length ? input[0] : input;
-  //   input.formValidations.errors.push(error);
-  //   this.showError(input.formValidations);
-  // };
+  public addError(field: Field, error: string) {
+    const input = Array.isArray(field) ? field[0] : field;
+    input.formValidations.errors.push(error);
+    this.showError(input.formValidations);
+  }
 
   private removeError(field: Field) {
     const errorElements = this.getErrorElements(field);
