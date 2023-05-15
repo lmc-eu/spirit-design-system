@@ -19,7 +19,6 @@ export const parameters = {
       order: ['Introduction', ['Installation', 'Branding'], 'Colors', 'Typography', 'Layout', 'Components'],
     },
   },
-  viewMode: 'docs',
 };
 
 export const decorators = [
