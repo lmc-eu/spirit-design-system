@@ -8,6 +8,11 @@ export default {
     },
     defaultValue: undefined,
   },
+  iconName: {
+    control: {
+      type: 'text',
+    },
+  },
   // isDisabled: {
   //   control: {
   //     type: 'boolean',

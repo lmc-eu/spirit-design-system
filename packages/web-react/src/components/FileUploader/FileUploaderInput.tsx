@@ -12,6 +12,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     accept,
     dropZoneRef,
     helperText,
+    iconName = 'upload',
     id,
     inputRef,
     // isDisabled,
@@ -77,7 +78,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         {...restProps}
       />
       <div ref={dropZoneRef} className={classProps.input.dropZone.root}>
-        <Icon name="upload" aria-hidden="true" />
+        <Icon name={iconName} aria-hidden="true" />
         <label htmlFor={id} className={classProps.input.dropZone.label}>
           <span className={classProps.input.link}>{linkText}</span>
           &nbsp;

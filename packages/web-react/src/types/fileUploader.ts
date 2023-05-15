@@ -36,6 +36,7 @@ export interface FileUploaderErrorMessagesProps {
 }
 
 export interface FileUploaderIntermediateProps {
+  iconName?: string;
   isMultiple?: boolean;
   maxFileSize?: number;
   maxUploadedFiles?: number;
@@ -68,6 +69,7 @@ export interface FileUploaderListBaseProps extends SpiritUListElementProps {
 export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElementProps, 'onError'> {
   buttonLabel?: string;
   file: File;
+  iconName?: string;
   id: string;
   label: string;
   name: string;

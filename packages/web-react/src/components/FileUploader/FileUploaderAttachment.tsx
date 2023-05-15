@@ -8,7 +8,7 @@ import AttachmentDismissButton from './AttachmentDismissButton';
 import { Icon } from '../Icon';
 
 const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
-  const { label, name, id, onDismiss, buttonLabel = 'Remove', file, onError, ...restProps } = props;
+  const { label, name, iconName = 'file', id, onDismiss, buttonLabel = 'Remove', file, onError, ...restProps } = props;
 
   const { classProps } = useFileUploaderStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
@@ -31,7 +31,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       {...styleProps}
       className={classNames(classProps.attachment.root, styleProps.className)}
     >
-      <Icon name="file" aria-hidden="true" />
+      <Icon name={iconName} aria-hidden="true" />
       <span className="text-truncate">{label}</span>
       <AttachmentDismissButton onClick={dismissHandler}>{buttonLabel}</AttachmentDismissButton>
     </li>

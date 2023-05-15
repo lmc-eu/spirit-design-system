@@ -11,6 +11,7 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
     maxFileSize,
     maxUploadedFiles,
     helperText,
+    iconName,
     inputId,
     inputLabel,
     inputName,
@@ -53,6 +54,7 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
         maxFileSize={maxFileSize}
         maxUploadedFiles={maxUploadedFiles}
         helperText={helperText}
+        iconName={iconName}
         id={inputId}
         // isDisabled={isDisabled}
         isMultiple={isMultiple}

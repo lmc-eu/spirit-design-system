@@ -10,6 +10,7 @@ const Story: ComponentStory<typeof UncontrolledFileUploader> = (args: SpiritUnco
 
 Story.args = {
   attachmentComponent: (props) => <FileUploaderAttachment key={props.id} {...props} />,
+  iconName: 'upload',
   id: 'fileUploaderUncontrolled',
   inputId: 'fileUploaderUncontrolledInput',
   inputName: 'attachments',
