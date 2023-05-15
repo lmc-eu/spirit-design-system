@@ -1,5 +1,6 @@
 // Allow use of bitwise not in this case only, other solutions do not work
 /* eslint no-bitwise: ["error", { "allow": ["~"] }] */
+/* eslint-disable no-prototype-builtins */
 import { lang } from './lang';
 import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
 import {
@@ -9,6 +10,7 @@ import {
   FormValidationsElement,
   FormValidationsFieldElement,
   Languages,
+  Language,
   ValidationTextElement,
   Params,
 } from './types';
@@ -16,11 +18,11 @@ import {
 const VALIDATIONS_ERROR = 'form-validations-message';
 const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
 const ALLOWED_ATTRIBUTES = ['required', 'min', 'max', 'minlength', 'maxlength', 'pattern'];
+const DEFAULT_LOCALE = 'en';
 const EMAIL_REGEX =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const MESSAGE_REGEX = /-message(?:-([a-z]{2}(?:_[A-Z]{2})?))?/; // matches, -message, -message-en, -message-en_US
-const currentLocale = 'en';
 const validators: Record<string, NamedValidator> = {};
 const DATA_ATTR_PREFIX = 'data-spirit';
 
@@ -114,10 +116,12 @@ class FormValidations {
   form: HTMLElement;
   live: boolean;
   fields: Field[];
+  currentLocale: string;
 
   constructor(form: HTMLElement, config?: Config, live?: boolean) {
     form.setAttribute('novalidate', 'true');
 
+    this.currentLocale = DEFAULT_LOCALE;
     this.form = form;
     this.config = mergeConfig(config || {}, defaultConfig) as Config;
     this.live = !(live === false);
@@ -150,7 +154,7 @@ class FormValidations {
     for (let i = 0; fields[i]; i++) {
       const field = fields[i];
 
-      if (FormValidations.validateField(field)) {
+      if (this.validateField(field)) {
         // valid
         !isSilent && this.showSuccess(field);
       } else {
@@ -161,6 +165,18 @@ class FormValidations {
     }
 
     return valid;
+  }
+
+  public setLocale(locale: string) {
+    this.currentLocale = locale;
+  }
+
+  static addMessages(locale: string, messages: Language) {
+    const langObj = lang.hasOwnProperty(locale) ? lang[locale] : (lang[locale] = {});
+
+    Object.keys(messages).forEach((key) => {
+      langObj[key] = messages[key];
+    });
   }
 
   private parseFieldValidators(form: HTMLElement): Field[] {
@@ -271,7 +287,7 @@ class FormValidations {
    * @returns {boolean}
    * @private
    */
-  static validateField(field: Field): boolean {
+  validateField(field: Field): boolean {
     const errors = [];
     let valid = true;
 
@@ -289,15 +305,15 @@ class FormValidations {
           errors.push(validator.msg(field.input.value, params));
         } else if (typeof validator.msg === 'string') {
           errors.push(fillTemplate(validator.msg, params));
-        } else if (validator.msg && validator.msg === Object(validator.msg) && validator.msg[currentLocale]) {
+        } else if (validator.msg && validator.msg === Object(validator.msg) && validator.msg[this.currentLocale]) {
           // typeof generates unnecessary babel code
-          errors.push(fillTemplate(validator.msg[currentLocale], params));
-        } else if (field.messages?.[currentLocale]?.[validator.name]) {
-          errors.push(fillTemplate(field.messages[currentLocale][validator.name], params));
-        } else if (lang[currentLocale] && lang[currentLocale][validator.name]) {
-          errors.push(fillTemplate(lang[currentLocale][validator.name], params));
+          errors.push(fillTemplate(validator.msg[this.currentLocale], params));
+        } else if (field.messages?.[this.currentLocale]?.[validator.name]) {
+          errors.push(fillTemplate(field.messages[this.currentLocale][validator.name], params));
+        } else if (lang[this.currentLocale] && lang[this.currentLocale][validator.name]) {
+          errors.push(fillTemplate(lang[this.currentLocale][validator.name], params));
         } else {
-          errors.push(fillTemplate(lang[currentLocale].default, params));
+          errors.push(fillTemplate(lang[this.currentLocale].default, params));
         }
 
         if (validator.halt === true) {
@@ -486,18 +502,6 @@ class FormValidations {
  */
 // FormValidations.addValidator = function (name, fn, msg, priority, halt) {
 //   _(name, { fn, msg, priority, halt });
-// };
-
-// FormValidations.addMessages = function (locale, messages) {
-//   let langObj = lang.hasOwnProperty(locale) ? lang[locale] : (lang[locale] = {});
-
-//   Object.keys(messages).forEach(function (key, index) {
-//     langObj[key] = messages[key];
-//   });
-// };
-
-// FormValidations.setLocale = function (locale) {
-//   currentLocale = locale;
 // };
 
 export default FormValidations;

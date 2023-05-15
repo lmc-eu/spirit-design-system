@@ -127,3 +127,20 @@ _Get the errors of the form or a specific field_
 | Parameter | Default | Required? | Description                                                                                                                                                                                                                                                            |
 | --------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | input     | -       | ✕         | When `input` is given, it returns the errors of that input element, otherwise returns all errors of the form as an object, using input element as key and corresponding errors as value. `validate()` must be called before expecting this method to return correctly. |
+
+**FormValidations.setLocale(locale)**
+
+_Set the current locale globally_
+
+| Parameter | Default | Required? | Description                                                                     |
+| --------- | ------- | --------- | ------------------------------------------------------------------------------- |
+| `locale`  | -       | ✔         | Error messages on new Pristine forms will be displayed according to this locale |
+
+**FormValidations.addMessages(locale, messages)**
+
+_Set the current locale globally_
+
+| Parameter  | Default | Required? | Description                                                         |
+| ---------- | ------- | --------- | ------------------------------------------------------------------- |
+| `locale`   | -       | ✔         | The corresponding locale                                            |
+| `messages` | -       | ✔         | Object containing validator names as keys and error texts as values |
