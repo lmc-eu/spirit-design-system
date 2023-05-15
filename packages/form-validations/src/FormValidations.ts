@@ -13,6 +13,7 @@ import {
   Language,
   ValidationTextElement,
   Params,
+  ValidatorCallback,
 } from './types';
 
 const VALIDATIONS_ERROR = 'form-validations-message';
@@ -330,21 +331,42 @@ class FormValidations {
   /**
    * Add a validator to a specific dom element in a form
    *
-   * @param elem => The dom element where the validator is applied to
-   * @param fn => validator function
-   * @param msg => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
-   * so on are for the attribute values
+   * @param element FormValidationsElement => The dom element where the validator is applied to
+   * @param validator Validator => validator function
+   * @param message string => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
+   *                          so on are for the attribute values
+   * @param priority number=> priority of the validator function, higher valued function gets called first.
+   * @param halt boolean => whether validation should stop for this field after current validation function
+   */
+  static addElementValidator(
+    element: FormValidationsElement,
+    validator: ValidatorCallback,
+    message: string,
+    priority: number,
+    halt: boolean,
+  ) {
+    if (element instanceof HTMLElement) {
+      element.formValidations.validators.push({ fn: validator, msg: message, priority, halt, name: '' });
+      element.formValidations.validators.sort((a, b) => (b.priority as number) - (a.priority as number));
+    } else {
+      // eslint-disable-next-line no-console
+      console.warn('The parameter element must be a dom element');
+    }
+  }
+
+  /**
+   *
+   *
+   * @param name => Name of the global validator
+   * @param validator => validator function
+   * @param message => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
+   *                   so on are for the attribute values
    * @param priority => priority of the validator function, higher valued function gets called first.
    * @param halt => whether validation should stop for this field after current validation function
    */
-  // addValidator = function (elem, fn, msg, priority, halt) {
-  //   if (elem instanceof HTMLElement) {
-  //     elem.formValidations.validators.push({ fn, msg, priority, halt });
-  //     elem.formValidations.validators.sort((a, b) => b.priority - a.priority);
-  //   } else {
-  //     console.warn('The parameter elem must be a dom element');
-  //   }
-  // };
+  static addValidator(name: string, validator: ValidatorCallback, message: string, priority: number, halt: boolean) {
+    validate(name, { fn: validator, msg: message, priority, halt });
+  }
 
   /**
    * An utility function that returns a 2-element array, first one is the element where error/success class is
@@ -489,19 +511,5 @@ class FormValidations {
   //   defaultConfig = config;
   // };
 }
-
-/**
- *
- *
- * @param name => Name of the global validator
- * @param fn => validator function
- * @param msg => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
- * so on are for the attribute values
- * @param priority => priority of the validator function, higher valued function gets called first.
- * @param halt => whether validation should stop for this field after current validation function
- */
-// FormValidations.addValidator = function (name, fn, msg, priority, halt) {
-//   _(name, { fn, msg, priority, halt });
-// };
 
 export default FormValidations;
