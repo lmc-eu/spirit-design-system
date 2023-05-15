@@ -353,7 +353,7 @@ describe('FormValidations', () => {
       expect(formValidations.getErrors(input)[0]).toBe('বাংলা মেসেজ');
     });
 
-    /* it(`Global validators should use globally added messages when not specified`, () => {
+    it(`Global validators should use globally added messages when not specified`, () => {
       const form = document.getElementById('fixture') as HTMLDivElement;
       const input = document.getElementById('input-custom-locale-without-message') as FormValidationsElement;
 
@@ -369,6 +369,6 @@ describe('FormValidations', () => {
 
       expect(formValidations.getErrors(input)).toHaveLength(1);
       expect(formValidations.getErrors(input)[0]).toBe('First character should be capitalized');
-    }); */
+    });
   });
 });

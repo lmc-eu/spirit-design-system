@@ -8,8 +8,10 @@ export interface Languages {
 
 export type Params = Record<string, string[] | string> | never[];
 
+export type ValidatorCallback = (...args: string[]) => boolean | number;
+
 export type Validator = {
-  fn: (...args: string[]) => boolean | number;
+  fn: ValidatorCallback;
   priority?: number;
   halt?: boolean;
   msg?: string | ((message: string, params: Params) => string);
