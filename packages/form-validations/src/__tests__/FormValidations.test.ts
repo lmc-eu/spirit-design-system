@@ -266,4 +266,109 @@ describe('FormValidations', () => {
       }
     });
   });
+
+  describe('Locale', function () {
+    beforeEach(() => {
+      const fixture = `
+        <div id="fixture">
+          <form id="form" novalidate method="post">
+            <div class="form-group">
+              <input id="input" type="text" required class="form-control" />
+              <input id="input-custom" type="text" data-spirit-required-message="requires a value" required class="form-control" />
+              <input id="input-custom-locale-en" type="text" data-spirit-required-message-en="English  message" required class="form-control" />
+              <input id="input-custom-locale-bn" type="text" data-spirit-required-message-bn="বাংলা মেসেজ" required class="form-control" />
+              <input id="input-custom-locale-without-message" type="text" data-spirit-first-cap="true" class="form-control" />
+            </div>
+          </form>
+        </div>`;
+
+      document.body.insertAdjacentHTML('afterbegin', fixture);
+    });
+
+    afterEach(() => {
+      document.body.removeChild(document.getElementById('fixture') as HTMLDivElement);
+    });
+
+    it(`should show default error message`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input') as FormValidationsElement;
+      const formValidations = new FormValidations(form);
+      formValidations.setLocale('en');
+
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('This field is required');
+    });
+
+    it(`should show custom error message`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-custom') as FormValidationsElement;
+      const formValidations = new FormValidations(form);
+
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('requires a value');
+    });
+
+    it(`should show en error message when locale not set`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-custom-locale-en') as FormValidationsElement;
+      const formValidations = new FormValidations(form);
+
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('English  message');
+    });
+
+    it(`should show error message based on locale`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input') as FormValidationsElement;
+
+      FormValidations.addMessages('bn', {
+        required: 'some other language',
+      });
+
+      const formValidations = new FormValidations(form);
+      formValidations.setLocale('bn');
+
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('some other language');
+    });
+
+    it(`should show error message from attribute based on locale`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-custom-locale-bn') as FormValidationsElement;
+
+      const formValidations = new FormValidations(form);
+      formValidations.setLocale('bn');
+
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('বাংলা মেসেজ');
+    });
+
+    /* it(`Global validators should use globally added messages when not specified`, () => {
+      const form = document.getElementById('fixture') as HTMLDivElement;
+      const input = document.getElementById('input-custom-locale-without-message') as FormValidationsElement;
+
+      FormValidations.addValidator('first-cap', (val) => val[0] === val[0].toUpperCase(), null, 1, false);
+
+      FormValidations.addMessages('en', {
+        'first-cap': 'First character should be capitalized',
+      });
+
+      const formValidations = new FormValidations(form);
+      input.value = 'first';
+      expect(formValidations.validate(input)).toBe(false);
+
+      expect(formValidations.getErrors(input)).toHaveLength(1);
+      expect(formValidations.getErrors(input)[0]).toBe('First character should be capitalized');
+    }); */
+  });
 });
