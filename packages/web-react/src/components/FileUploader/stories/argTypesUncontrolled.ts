@@ -19,6 +19,13 @@ export default {
   //   },
   //   defaultValue: false,
   // },
+  queueLimitBehavior: {
+    control: {
+      type: 'select',
+      options: ['hide', 'disable', 'none'],
+    },
+    defaultValue: 'none',
+  },
   isRequired: {
     control: {
       type: 'boolean',

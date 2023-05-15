@@ -5,8 +5,10 @@ describe('useFileUploaderStyleProps', () => {
   it('should return defaults', () => {
     const { result } = renderHook(() =>
       useFileUploaderStyleProps({
+        isDropZoneHidden: true,
         isDragAndDropSupported: true,
         isDragging: true,
+        queueLimitBehavior: 'hide',
       }),
     );
 
@@ -21,7 +23,7 @@ describe('useFileUploaderStyleProps', () => {
     expect(result.current.classProps.input.link).toBe('FileUploaderInput__link link-primary link-underlined');
     expect(result.current.classProps.input.validationText).toBe('FileUploaderInput__validationText');
     expect(result.current.classProps.input.dropZone).toBeDefined();
-    expect(result.current.classProps.input.dropZone.root).toBe('FileUploaderInput__dropZone');
+    expect(result.current.classProps.input.dropZone.root).toBe('FileUploaderInput__dropZone d-none');
     expect(result.current.classProps.input.dropZone.label).toBe('FileUploaderInput__dropZoneLabel');
     expect(result.current.classProps.list).toBe('FileUploaderList');
     expect(result.current.classProps.attachment).toBeDefined();

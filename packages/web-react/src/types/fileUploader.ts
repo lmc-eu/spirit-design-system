@@ -11,7 +11,8 @@ import {
 
 export type FileUploaderAttachmentComponentType = (props: FileUploaderAttachmentBaseProps) => ReactNode;
 export type FileQueueMapType = Map<string, File>;
-export type FileUploaderErrorCallbackType = (error: string) => void;
+export type FileUploaderErrorCallbackType = (error: string | Error) => void;
+export type FileUploaderQueueLimitBehaviorType = 'hide' | 'disable' | 'none';
 
 export interface FileUploaderTextProps {
   helperText?: string;
@@ -40,6 +41,7 @@ export interface FileUploaderIntermediateProps {
   isMultiple?: boolean;
   maxFileSize?: number;
   maxUploadedFiles?: number;
+  queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
   validationText?: ValidationTextType;
 }
 

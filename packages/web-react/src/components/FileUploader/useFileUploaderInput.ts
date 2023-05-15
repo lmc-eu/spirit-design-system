@@ -1,23 +1,27 @@
-import { ChangeEvent, DragEvent } from 'react';
-import { DragAndDropHandlingProps } from '../../types';
+import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
+import { DragAndDropHandlingProps, FileQueueMapType, FileUploaderQueueLimitBehaviorType } from '../../types';
 import { useDragAndDrop } from '../../hooks';
 import { useFileUploaderContext } from './FileUploaderContext';
 
 export interface UseFileUploaderInputProps {
   accept?: string;
+  queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
   isMultiple?: boolean;
   maxFileSize: number;
   maxUploadedFiles: number;
-  onError?: (error: string) => void;
+  onError?: (error: string | Error) => void;
 }
 
 export interface UseFileUploaderInputReturn extends DragAndDropHandlingProps<HTMLDivElement> {
   isDragging: boolean;
+  isDropZoneHidden: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileUploaderInputReturn => {
-  const { maxFileSize, maxUploadedFiles, isMultiple, onError, accept } = props;
+  const { maxFileSize, maxUploadedFiles, queueLimitBehavior, isMultiple, onError, accept } = props;
+
+  const [dropZoneHidden, setDropZoneHidden] = useState(false);
 
   const { fileQueue, addToQueue, clearQueue, errorMessages } = useFileUploaderContext();
 
@@ -76,6 +80,15 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     }
   };
 
+  const updateDropZoneVisibility = (queue: FileQueueMapType) => {
+    console.log('queueLimitBehavior', queueLimitBehavior);
+    if (!queueLimitBehavior) {
+      return;
+    }
+
+    setDropZoneHidden(queue.size >= maxUploadedFiles);
+  };
+
   const clearQueueHandler = () => {
     if (!isMultiple) {
       clearQueue();
@@ -106,6 +119,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     const transferFiles = Array.from(event.dataTransfer.files);
 
     let counter = 0;
+    let overLimit;
     counter += fileQueue.size;
 
     if (event.dataTransfer.items) {
@@ -115,6 +129,8 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
           if (file && counter < maxUploadedFiles) {
             fileProcessHandler(file);
             counter += 1;
+          } else {
+            overLimit = true;
           }
         }
       });
@@ -123,8 +139,14 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
         if (counter < maxUploadedFiles) {
           fileProcessHandler(file);
           counter += 1;
+        } else {
+          overLimit = true;
         }
       });
+    }
+
+    if (overLimit && onError && errorMessages?.errorMaxUploadedFiles) {
+      onError(new Error(errorMessages?.errorMaxUploadedFiles));
     }
   };
 
@@ -132,18 +154,38 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     const { files } = event.target;
     const filesArray = Array.prototype.slice.call(files);
 
+    let counter = 0;
+    let overLimit;
+    counter += fileQueue.size;
+
     filesArray.forEach((file: File) => {
-      fileProcessHandler(file);
+      if (counter < maxUploadedFiles) {
+        fileProcessHandler(file);
+        counter += 1;
+      } else {
+        overLimit = true;
+      }
     });
+
+    if (overLimit && onError && errorMessages?.errorMaxUploadedFiles) {
+      onError(new Error(errorMessages?.errorMaxUploadedFiles));
+    }
 
     event.target.blur();
   };
+
+  useEffect(() => {
+    updateDropZoneVisibility(fileQueue);
+    // We only want a dependency for fileQueue
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fileQueue]);
 
   const dragAndDropProps = useDragAndDrop({
     onDrop: onDropHandler,
   });
 
   return {
+    isDropZoneHidden: dropZoneHidden,
     onChange: onChangeHandler,
     ...dragAndDropProps,
   };

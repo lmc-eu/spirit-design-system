@@ -16,6 +16,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     id,
     inputRef,
     // isDisabled,
+    queueLimitBehavior = 'none',
     isMultiple,
     isRequired,
     label,
@@ -31,18 +32,23 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
 
   const isDragAndDropSupported = 'draggable' in document.createElement('span');
 
-  const { isDragging, onChange, onDragOver, onDragEnter, onDragLeave, onDrop } = useFileUploaderInput({
-    accept,
-    maxFileSize,
-    maxUploadedFiles,
-    isMultiple,
-    onError,
-  });
+  const { isDragging, isDropZoneHidden, onChange, onDragOver, onDragEnter, onDragLeave, onDrop } = useFileUploaderInput(
+    {
+      accept,
+      maxFileSize,
+      maxUploadedFiles,
+      isMultiple,
+      queueLimitBehavior,
+      onError,
+    },
+  );
   const { classProps } = useFileUploaderStyleProps({
     isDragAndDropSupported,
     // isDisabled,
+    isDropZoneHidden,
     isDragging,
     isRequired,
+    queueLimitBehavior,
     validationState,
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);

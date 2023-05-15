@@ -6,6 +6,7 @@ const NAME = 'fileUploader';
 const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
 const IS_DRAGGING_CLASS_NAME = 'is-dragging';
 const DROP_ZONE_HIDDEN_CLASS_NAME = 'd-none';
+const DROP_ZONE_DISABLED_CLASS_NAME = 'd-none'; // TODO
 const WRAPPER_ELEMENT_SELECTOR = '[data-spirit-element="wrapper"]';
 const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
@@ -24,7 +25,7 @@ class FileUploader extends BaseComponent {
   isDragAndDropSupported: boolean;
   fileSizeLimit: number;
   fileQueueLimit: number;
-  isDismissible: boolean;
+  queueLimitBehavior: string;
   inputName: string;
   isMultiple: boolean;
   accept: string;
@@ -39,11 +40,15 @@ class FileUploader extends BaseComponent {
     this.listElement = SelectorEngine.findOne(LIST_ELEMENT_SELECTOR, element);
     this.dropZone = SelectorEngine.findOne(DROP_ZONE_ELEMENT_SELECTOR, element);
     this.isDragAndDropSupported = 'draggable' in document.createElement('span');
-    this.fileSizeLimit = element.dataset.maxFileSize ? Number(element.dataset.maxFileSize) : DEFAULT_FILE_SIZE_LIMIT;
-    this.fileQueueLimit = element.dataset.fileQueueLimit
-      ? Number(element.dataset.fileQueueLimit)
+    this.fileSizeLimit = this.wrapper?.dataset.spiritMaxFileSize
+      ? Number(this.wrapper?.dataset.spiritMaxFileSize)
+      : DEFAULT_FILE_SIZE_LIMIT;
+    this.fileQueueLimit = this.wrapper?.dataset.spiritFileQueueLimit
+      ? Number(this.wrapper?.dataset.spiritFileQueueLimit)
       : DEFAULT_FILE_QUEUE_LIMIT;
-    this.isDismissible = element.dataset.spiritDismissible === '' || element.dataset.spiritDismissible === 'true';
+    this.queueLimitBehavior = this.wrapper?.dataset.spiritQueueLimitBehavior
+      ? this.wrapper?.dataset.spiritQueueLimitBehavior
+      : 'none';
     this.inputName = this.inputElement?.name || 'attachment';
     this.isMultiple = this.inputElement?.multiple;
     this.accept = this.inputElement?.accept;
@@ -91,10 +96,6 @@ class FileUploader extends BaseComponent {
   }
 
   checkQueueLimit() {
-    if (this.isDismissible) {
-      return;
-    }
-
     if (this.fileQueue.size >= this.fileQueueLimit) {
       throw new Error('You have exceeded the number of files allowed in the queue');
     }
@@ -138,12 +139,14 @@ class FileUploader extends BaseComponent {
   }
 
   updateDropZoneVisibility() {
-    if (!this.isDismissible) {
+    if (this.queueLimitBehavior === 'none') {
       return;
     }
 
+    const dropZoneClassName =
+      this.queueLimitBehavior === 'hide' ? DROP_ZONE_HIDDEN_CLASS_NAME : DROP_ZONE_DISABLED_CLASS_NAME;
     setTimeout(() => {
-      this.dropZone?.classList.toggle(DROP_ZONE_HIDDEN_CLASS_NAME, this.fileQueue.size === this.fileQueueLimit);
+      this.dropZone?.classList.toggle(dropZoneClassName, this.fileQueue.size === this.fileQueueLimit);
     }, 0);
   }
 
@@ -260,7 +263,22 @@ class FileUploader extends BaseComponent {
     const { target } = event;
     const filesArray = target.files ? [...target.files] : [];
 
-    filesArray.forEach((file) => this.addToQueue(file));
+    let counter = 0;
+    let overLimit;
+    counter += this.fileQueue.size;
+
+    filesArray.forEach((file: File) => {
+      if (counter < this.fileQueueLimit) {
+        this.addToQueue(file);
+        counter += 1;
+      } else {
+        overLimit = true;
+      }
+    });
+
+    if (overLimit) {
+      this.checkQueueLimit();
+    }
 
     setTimeout(() => {
       target.value = '';
@@ -296,6 +314,7 @@ class FileUploader extends BaseComponent {
     }
 
     let counter = 0;
+    let overLimit;
     counter += this.fileQueue.size;
 
     if (event?.dataTransfer?.items) {
@@ -305,6 +324,8 @@ class FileUploader extends BaseComponent {
           if (file && counter < this.fileQueueLimit) {
             this.addToQueue(file);
             counter += 1;
+          } else {
+            overLimit = true;
           }
         }
       });
@@ -313,8 +334,14 @@ class FileUploader extends BaseComponent {
         if (counter < this.fileQueueLimit) {
           this.addToQueue(file);
           counter += 1;
+        } else {
+          overLimit = true;
         }
       });
+    }
+
+    if (overLimit) {
+      this.checkQueueLimit();
     }
   }
 
