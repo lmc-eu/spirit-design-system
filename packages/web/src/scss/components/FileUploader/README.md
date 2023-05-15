@@ -49,31 +49,6 @@ the available horizontal space:
 </div>
 ```
 
-### Maximum File Size (JavaScript)
-
-The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
-10 MB. To increase the limit for example to 20 MB, add the `data-max-file-size` attribute:
-
-```html
-<div class="FileUploader" data-toggle="fileUploader" data-max-file-size="20000000">
-  <!-- FileUploaderInput -->
-  <!-- FileUploaderList -->
-</div>
-```
-
-### Dismissible Drop Zone
-
-You can set the input/drop zone to be hidden when the file queue limit is reached.
-When you set `data-spirit-dismissible` together with the desired limit for the queue.
-The default number is **10 files**.
-
-```html
-<div class="FileUploader" data-toggle="fileUploader" data-spirit-dismissible data-file-queue-limit="2">
-  <!-- FileUploaderInput -->
-  <!-- FileUploaderList -->
-</div>
-```
-
 In this way, the error message will stop being displayed when the limit of the number
 of files in the queue is exceeded.
 
@@ -100,6 +75,48 @@ on the root element).
     </label>
     <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
   </div>
+</div>
+```
+
+### Maximum File Size (JavaScript)
+
+The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
+10 MB. To increase the limit for example to 20 MB, add the `data-spirit-max-file-size` attribute:
+
+```html
+<div class="FileUploader" data-toggle="fileUploader">
+  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-max-file-size="20000000">
+    <!-- ... -->
+  </div>
+  <!-- FileUploaderList -->
+</div>
+```
+
+### Maximum number of files in queue (JavaScript)
+
+Counter of the maximum number of uploaded files. The default value is 10, but any value can be set with
+the `data-spirit-file-queue-limit` attribute:
+
+```html
+<div class="FileUploader" data-toggle="fileUploader">
+  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2">
+    <!-- ... -->
+  </div>
+  <!-- FileUploaderList -->
+</div>
+```
+
+### Input behavior when the queue is filled (JavaScript)
+
+You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
+When you set `data-spirit-queue-limit-behavior` together with the desired limit for the queue.
+
+```html
+<div class="FileUploader" data-toggle="fileUploader">
+  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-queue-limit-behavior="hide">
+    <!-- ... -->
+  </div>
+  <!-- FileUploaderList -->
 </div>
 ```
 

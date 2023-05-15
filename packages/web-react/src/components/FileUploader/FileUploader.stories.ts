@@ -8,5 +8,6 @@ export default {
 
 export { default as FileUploader } from './stories/FileUploader';
 export { default as FileUploaderAccept } from './stories/FileUploaderAccept';
+export { default as FileUploaderDismissible } from './stories/FileUploaderDismissible';
 export { default as FileUploaderValidationState } from './stories/FileUploaderValidationState';
 export { default as FormWithFileUploader } from './stories/FormWithFileUploader';

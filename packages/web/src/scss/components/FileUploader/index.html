@@ -151,18 +151,20 @@
 </section>
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Input multiple with Dismissible Feature</h2>
+  <h2 class="docs-Heading">FileUploader Multiple with File Queue Behavior Control</h2>
 
   <p>
-    Input is hidden after the "<code>data-file-queue-limit</code>" limit is reached and "<code>data-spirit-dismissible</code>" is set.
-    After removing the file from the queue, the input will be restored.
+    If FileUploaderInput has a value for `data-spirit-file-queue-limit` set along with `data-spirit-queue-limit-behavior`,
+    the file upload field will be hidden or disabled. When the value for `data-spirit-queue-limit-behavior`
+    is set to 'hide', the input disappears completely. If you set it to 'disable', the input will only be disabled.
+    After removing a file from the queue, the input will be restored.
     <br />
     <br />
-    In this example, the queue limit is set to 2 files
+    In this case we set the `data-spirit-file-queue-limit="2"` and the `data-spirit-queue-limit-behavior="hide"`.
   </p>
 
   <!-- FileUploader: start -->
-  <div id="example_exampleWithDismissible" class="FileUploader" data-toggle="fileUploader" data-file-queue-limit="2" data-spirit-dismissible>
+  <div id="example_exampleWithDismissible" class="FileUploader" data-toggle="fileUploader">
 
     <!-- FileUploaderAttachment template: start -->
     <template data-spirit-snippet="item">
@@ -182,15 +184,15 @@
     <!-- FileUploaderAttachment template: end -->
 
     <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
+    <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2" data-spirit-queue-limit-behavior="hide">
       <label for="fileUploadWithDismissible" class="FileUploaderInput__label">Label</label>
       <input type="file" id="fileUploadWithDismissible" name="attachment1" class="FileUploaderInput__input" multiple data-spirit-element="input" />
       <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
         <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#upload" />
         </svg>
-        <label for="fileUpload" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+        <label for="fileUploadWithDismissible" class="FileUploaderInput__dropZoneLabel">
+          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
           <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
         </label>
         <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
@@ -613,7 +615,7 @@
     <input type="hidden" name="hiddenField" value="hidden field value" />
 
     <!-- FileUploader: start -->
-    <div id="example-composition" class="FileUploader" data-toggle="fileUploader" data-file-queue-limit="2">
+    <div id="example-composition" class="FileUploader" data-toggle="fileUploader">
 
       <!-- FileUploaderAttachment template: start -->
       <template data-spirit-snippet="item">
@@ -633,7 +635,7 @@
       <!-- FileUploaderAttachment template: end -->
 
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput" data-spirit-element="wrapper">
+      <div class="FileUploaderInput" data-spirit-element="wrapper" data-file-queue-limit="2">
         <label for="fileUploadInForm" class="FileUploaderInput__label">Label</label>
         <input type="file" id="fileUploadInForm" name="attachment10" class="FileUploaderInput__input" multiple data-spirit-element="input" />
         <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">

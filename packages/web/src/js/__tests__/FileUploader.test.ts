@@ -35,8 +35,8 @@ describe('FileUploader', () => {
   });
 
   it('clearFileQueue should remove all files from the queue', () => {
-    const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: Date.now() });
-    const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: Date.now() });
+    const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: 1684228128062 });
+    const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: 1684228128062 });
     instance.addToQueue(file1);
     instance.addToQueue(file2);
     instance.clearFileQueue();
@@ -67,8 +67,10 @@ describe('FileUploader', () => {
   describe('data attributes', () => {
     beforeEach(() => {
       fixtureEl.innerHTML = `
-        <div class="FileUploader" data-toggle="fileUploader" data-max-file-size="5000000" data-file-queue-limit="5">
-          <input type="file" data-spirit-element="input" />
+        <div class="FileUploader" data-toggle="fileUploader">
+            <div data-spirit-element="wrapper" data-spirit-max-file-size="5000000" data-spirit-file-queue-limit="5">
+                <input type="file" data-spirit-element="input" />
+            </div>
         </div>
       `;
     });
@@ -103,8 +105,8 @@ describe('FileUploader', () => {
 
     beforeEach(() => {
       fixtureEl.innerHTML = `
-      <div class="file-uploader" data-max-file-size="10000000" data-file-queue-limit="10">
-        <div class="file-uploader__wrapper" data-spirit-element="wrapper">
+      <div class="file-uploader">
+        <div class="file-uploader__wrapper" data-spirit-element="wrapper" data-spirit-max-file-size="10000000" data-spirit-file-queue-limit="10">
           <ul class="file-uploader__list" data-spirit-element="list"></ul>
           <input type="file" name="attachment" multiple data-spirit-element="input" accept="image/*" />
           <div class="file-uploader__drop-zone" data-spirit-element="dropZone">Drag and drop files here</div>
@@ -134,13 +136,13 @@ describe('FileUploader', () => {
     });
   });
 
-  describe('FileUploader isDismissible', () => {
+  describe('FileUploader: File Queue Limit', () => {
     let fileUploader: FileUploader;
 
     beforeEach(() => {
       fixtureEl.innerHTML = `
-      <div class="file-uploader" data-file-queue-limit="2">
-        <div class="file-uploader__wrapper" data-spirit-element="wrapper">
+      <div class="file-uploader">
+        <div class="file-uploader__wrapper" data-spirit-element="wrapper" data-spirit-file-queue-limit="2" data-spirit-queue-limit-behavior="hide">
           <ul class="file-uploader__list" data-spirit-element="list"></ul>
           <input type="file" name="attachment" multiple data-spirit-element="input" />
           <div class="file-uploader__drop-zone" data-spirit-element="dropZone">Drag and drop files here</div>
@@ -157,9 +159,9 @@ describe('FileUploader', () => {
 
     it('should hides the drop zone when the file queue limit is reached', async () => {
       const dropZone = fixtureEl.querySelector('[data-spirit-element="dropZone"]') as HTMLElement;
-      const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: Date.now() });
-      const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: Date.now() });
-      const file3 = new File([''], 'test3.txt', { type: 'text/plain', lastModified: Date.now() });
+      const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: 1684228128062 });
+      const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: 1684228128062 });
+      const file3 = new File([''], 'test3.txt', { type: 'text/plain', lastModified: 1684228128062 });
 
       fileUploader.addToQueue(file1);
       fileUploader.addToQueue(file2);

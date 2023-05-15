@@ -1,11 +1,13 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { Validation } from '../../types';
+import { FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 
 export interface FileUploaderStyleProps extends Validation {
   isDragAndDropSupported?: boolean;
   // isDisabled?: boolean;
   isDragging?: boolean;
+  isDropZoneHidden?: boolean;
+  queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
 }
 
 export interface FileUploaderStyleReturn {
@@ -43,6 +45,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputLabelRequiredClass = `${fileUploaderInputClass}__label--required`;
   const fileUploaderInputInputClass = `${fileUploaderInputClass}__input`;
   const fileUploaderInputDropZoneClass = `${fileUploaderInputClass}__dropZone`;
+  const fileUploaderInputDropZoneHiddenClass = 'd-none';
   const fileUploaderInputDropZoneLabelClass = `${fileUploaderInputDropZoneClass}Label`;
   const fileUploaderInputDropLabelClass = `${fileUploaderInputClass}__dragAndDropLabel`;
   const fileUploaderInputHelperClass = `${fileUploaderInputClass}__helperText`;
@@ -69,7 +72,9 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         link: classNames(fileUploaderInputLinkClass, ...fileUploaderInputLinkUtilityClasses),
         validationText: fileUploaderInputValidationTextClass,
         dropZone: {
-          root: fileUploaderInputDropZoneClass,
+          root: classNames(fileUploaderInputDropZoneClass, {
+            [fileUploaderInputDropZoneHiddenClass]: props?.isDropZoneHidden && props.queueLimitBehavior === 'hide', // TODO: Modify when the disabled state is ready for the entire component
+          }),
           label: fileUploaderInputDropZoneLabelClass,
         },
       },

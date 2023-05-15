@@ -17,6 +17,7 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
     inputName,
     inputProps,
     // isDisabled,
+    queueLimitBehavior,
     isMultiple,
     isRequired,
     labelText,
@@ -57,6 +58,7 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
         iconName={iconName}
         id={inputId}
         // isDisabled={isDisabled}
+        queueLimitBehavior={queueLimitBehavior}
         isMultiple={isMultiple}
         isRequired={isRequired}
         label={inputLabel}

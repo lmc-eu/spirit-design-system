@@ -42,7 +42,7 @@ const Story = () => {
     }, 2500);
   };
 
-  const errorHandler = (error: string) => {
+  const errorHandler = (error: string | Error) => {
     console.error(error);
     setValidationState('error');
     setValidationText(String(error));
