@@ -5,6 +5,7 @@ import { enableToggleAutoloader } from './utils';
 const NAME = 'fileUploader';
 const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
 const IS_DRAGGING_CLASS_NAME = 'is-dragging';
+const DROP_ZONE_HIDDEN_CLASS_NAME = 'd-none';
 const WRAPPER_ELEMENT_SELECTOR = '[data-spirit-element="wrapper"]';
 const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
@@ -23,6 +24,7 @@ class FileUploader extends BaseComponent {
   isDragAndDropSupported: boolean;
   fileSizeLimit: number;
   fileQueueLimit: number;
+  isDismissible: boolean;
   inputName: string;
   isMultiple: boolean;
   accept: string;
@@ -41,6 +43,7 @@ class FileUploader extends BaseComponent {
     this.fileQueueLimit = element.dataset.fileQueueLimit
       ? Number(element.dataset.fileQueueLimit)
       : DEFAULT_FILE_QUEUE_LIMIT;
+    this.isDismissible = element.dataset.spiritDismissible === '' || element.dataset.spiritDismissible === 'true';
     this.inputName = this.inputElement?.name || 'attachment';
     this.isMultiple = this.inputElement?.multiple;
     this.accept = this.inputElement?.accept;
@@ -88,6 +91,10 @@ class FileUploader extends BaseComponent {
   }
 
   checkQueueLimit() {
+    if (this.isDismissible) {
+      return;
+    }
+
     if (this.fileQueue.size >= this.fileQueueLimit) {
       throw new Error('You have exceeded the number of files allowed in the queue');
     }
@@ -128,6 +135,16 @@ class FileUploader extends BaseComponent {
         `The file "${file.name}" is not supported. Please ensure you are uploading a supported file format.`,
       );
     }
+  }
+
+  updateDropZoneVisibility() {
+    if (!this.isDismissible) {
+      return;
+    }
+
+    setTimeout(() => {
+      this.dropZone?.classList.toggle(DROP_ZONE_HIDDEN_CLASS_NAME, this.fileQueue.size === this.fileQueueLimit);
+    }, 0);
   }
 
   createAttachmentElement() {
@@ -224,6 +241,7 @@ class FileUploader extends BaseComponent {
       this.checkAllowedFileType(file);
       this.checkQueueLimit();
       this.appendToList(file);
+      this.updateDropZoneVisibility();
     } catch (error) {
       console.warn(error);
     }
@@ -234,6 +252,7 @@ class FileUploader extends BaseComponent {
       const itemElement = SelectorEngine.findOne(`li#${name}`);
       this.fileQueue.delete(name);
       itemElement?.remove();
+      this.updateDropZoneVisibility();
     }
   }
 

@@ -61,6 +61,22 @@ The maximum size of the uploaded file that is validated by the JavaScript plugin
 </div>
 ```
 
+### Dismissible Drop Zone
+
+You can set the input/drop zone to be hidden when the file queue limit is reached.
+When you set `data-spirit-dismissible` together with the desired limit for the queue.
+The default number is **10 files**.
+
+```html
+<div class="FileUploader" data-toggle="fileUploader" data-spirit-dismissible data-file-queue-limit="2">
+  <!-- FileUploaderInput -->
+  <!-- FileUploaderList -->
+</div>
+```
+
+In this way, the error message will stop being displayed when the limit of the number
+of files in the queue is exceeded.
+
 ## FileUploaderInput
 
 FileUploaderInput is a file picker built around the native HTML

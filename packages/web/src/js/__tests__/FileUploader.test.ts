@@ -102,7 +102,7 @@ describe('FileUploader', () => {
     let fileUploader: FileUploader;
 
     beforeEach(() => {
-      document.body.innerHTML = `
+      fixtureEl.innerHTML = `
       <div class="file-uploader" data-max-file-size="10000000" data-file-queue-limit="10">
         <div class="file-uploader__wrapper" data-spirit-element="wrapper">
           <ul class="file-uploader__list" data-spirit-element="list"></ul>
@@ -120,17 +120,57 @@ describe('FileUploader', () => {
     });
 
     describe('checkAllowedFileType()', () => {
-      test('should allow a supported file type', () => {
+      it('should allow a supported file type', () => {
         const file = new File(['content'], 'example.jpg', { type: 'image/jpeg' });
         expect(() => fileUploader.checkAllowedFileType(file)).not.toThrow();
       });
 
-      test('should throw an error for an unsupported file type', () => {
+      it('should throw an error for an unsupported file type', () => {
         const file = new File(['content'], 'example.txt', { type: 'text/plain' });
         expect(() => fileUploader.checkAllowedFileType(file)).toThrowError(
           `The file "example.txt" is not supported. Please ensure you are uploading a supported file format.`,
         );
       });
+    });
+  });
+
+  describe('FileUploader isDismissible', () => {
+    let fileUploader: FileUploader;
+
+    beforeEach(() => {
+      fixtureEl.innerHTML = `
+      <div class="file-uploader" data-file-queue-limit="2">
+        <div class="file-uploader__wrapper" data-spirit-element="wrapper">
+          <ul class="file-uploader__list" data-spirit-element="list"></ul>
+          <input type="file" name="attachment" multiple data-spirit-element="input" />
+          <div class="file-uploader__drop-zone" data-spirit-element="dropZone">Drag and drop files here</div>
+        </div>
+      </div>
+    `;
+
+      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader')!);
+    });
+
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
+    it('should hides the drop zone when the file queue limit is reached', async () => {
+      const dropZone = fixtureEl.querySelector('[data-spirit-element="dropZone"]') as HTMLElement;
+      const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: Date.now() });
+      const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: Date.now() });
+      const file3 = new File([''], 'test3.txt', { type: 'text/plain', lastModified: Date.now() });
+
+      fileUploader.addToQueue(file1);
+      fileUploader.addToQueue(file2);
+
+      expect(dropZone).toHaveClass('file-uploader__drop-zone');
+
+      fileUploader.addToQueue(file3);
+
+      await setTimeout(() => {
+        expect(dropZone).toHaveClass('file-uploader__drop-zone d-none');
+      }, 10);
     });
   });
 });
