@@ -18,7 +18,7 @@
 
     
 
-    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-chunk.56ba5f03.js"></script>
+    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-chunk.11cce462.js"></script>
     <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.e296a0d0.css">
   </head>
   <body>
@@ -100,11 +100,14 @@
               <label for="textareaWithHelperTextAndValidationMessage" class="TextArea__label TextArea__label--required"
                 >Label</label
               >
-              <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">
-          Filled</textarea
-              >
+              <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
               <div class="TextArea__helperText">This is helper text</div>
               <div class="TextArea__message">Danger validation message</div>
+            </div>
+          
+            <div class="TextArea" data-toggle="autoResize">
+              <label for="textareaAutoResize" class="TextArea__label">Label of auto-resizing TextArea</label>
+              <textarea id="textareaAutoResize" class="TextArea__input"></textarea>
             </div>
           
             <div class="spirit-v1-box-field-disabled docs-FormFieldGrid">
@@ -117,7 +120,9 @@
           
               <div class="TextArea TextArea--disabled">
                 <label for="textareaDisabledFilledFeature" class="TextArea__label TextArea__label--required">Label</label>
-                <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>Filled</textarea>
+                <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>
+          Filled</textarea
+                >
                 <div class="TextArea__message">Message</div>
               </div>
             </div>
