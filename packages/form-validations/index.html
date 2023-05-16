@@ -26,82 +26,119 @@
   };
 </script>
 
-<div class="docs-Section">
+<section class="docs-Section">
 
-  <h2 class="docs-Heading">Common Validations</h2>
+  <div class="Grid mb-1200">
+    <div
+      class="
+        Grid__span
+        Grid__span--over-10
+        Grid__span--tablet--over-6
+        Grid__span--desktop--over-4
+      "
+    >
+      <h2 class="docs-Heading">Real-World examples</h2>
 
-  <form id="form1" method="get" novalidate>
-    <div class="Stack">
-      <div class="TextField" data-spirit-validate>
-        <label for="required" class="TextField__label TextField__label--required">required</label>
-        <input type="text" id="required" class="TextField__input" required />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="email" class="TextField__label">type=email, not required</label>
-        <input type="email" id="email" class="TextField__input" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="number" class="TextField__label">number, not required</label>
-        <input type="number" id="number" class="TextField__input" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="numbermin" class="TextField__label">number, min=100, not required</label>
-        <input type="number" id="numbermin" class="TextField__input" min="100" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="numberMinRequired" class="TextField__label TextField__label--required">number, min=100, required</label>
-        <input type="number" id="numberMinRequired" class="TextField__input" min="100" required />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="patternRequired" class="TextField__label TextField__label--required">pattern=/^\d+\.\d{2}$/ (match decimal with 2 points), required</label>
-        <input type="number" id="patternRequired" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="patternCustomMessage" class="TextField__label TextField__label--required">same as above field, but with custom message</label>
-        <input type="number" id="patternCustomMessage" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
-      </div>
-      <button type="submit" class="Button Button--primary Button--medium">Submit</button>
+      <form id="form1" method="get" novalidate>
+        <div class="Stack Stack--hasSpacing">
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="username" class="TextField__label TextField__label--required">Username</label>
+            <input type="text" id="username" class="TextField__input" required data-spirit-required-message="Please choose a username" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="zipcode" class="TextField__label">ZIP code</label>
+            <input type="text" id="zipcode" class="TextField__input" placeholder="123" data-spirit-pattern="/^[0-9]{5}(?:-[0-9]{4})?$/" data-spirit-pattern-message="Invalid ZIP code" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="age" class="TextField__label TextField__label--required">Your age (min. 14)</label>
+            <input type="number" id="age" class="TextField__input" required min="14" data-spirit-min-message="You must be at least 14-years-old"/>
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="password" class="TextField__label TextField__label--required">Password</label>
+            <input type="password" id="password" class="TextField__input" required data-spirit-required-message="Please choose a password" data-spirit-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-spirit-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="retypepassword" class="TextField__label TextField__label--required">Retype password</label>
+            <input type="password" id="retypepassword" class="TextField__input" data-spirit-equals="#password" data-spirit-equals-message="Passwords don't match" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="email" class="TextField__label TextField__label--required">Email</label>
+            <input type="email" id="email" class="TextField__input" required data-spirit-required-message="Please enter your email" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="phone" class="TextField__label">Phone</label>
+            <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
+          </div>
+          <label for="checkboxfield1" class="CheckboxField">
+            <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" required />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions (required)</span>
+            </span>
+          </label>
+          <div>
+            <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
+</section>
 
-</div>
+<section class="docs-Section">
 
-<div class="docs-Section">
+  <div class="Grid mb-1200">
+    <div
+      class="
+        Grid__span
+        Grid__span--over-10
+        Grid__span--tablet--over-6
+        Grid__span--desktop--over-4
+      "
+    >
+      <h2 class="docs-Heading">Common Validations</h2>
 
-  <h2 class="docs-Heading">Real-World examples</h2>
-
-  <form id="form2" method="get" novalidate>
-    <div class="Stack">
-      <div class="TextField" data-spirit-validate>
-        <label for="username" class="TextField__label TextField__label--required">Username</label>
-        <input type="text" id="username" class="TextField__input" required data-spirit-required-message="Please choose a username" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="zipcode" class="TextField__label">ZIP code</label>
-        <input type="text" id="zipcode" class="TextField__input" placeholder="123" data-spirit-pattern="/^[0-9]{5}(?:-[0-9]{4})?$/" data-spirit-pattern-message="Invalid ZIP code" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="age" class="TextField__label TextField__label--required">Your age (min. 14)</label>
-        <input type="number" id="age" class="TextField__input" required min="14" data-spirit-min-message="You must be at least 14-years-old"/>
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="password" class="TextField__label TextField__label--required">Password</label>
-        <input type="password" id="password" class="TextField__input" required data-spirit-required-message="Please choose a password" data-spirit-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-spirit-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number" />
-      </div>
-      <div class="TextField" data-spirit-validate>
-        <label for="retypepassword" class="TextField__label TextField__label--required">Retype password</label>
-        <input type="password" id="retypepassword" class="TextField__input" data-spirit-equals="#password" data-spirit-equals-message="Passwords don't match" />
-      </div>
-      <label for="checkboxfield1" class="CheckboxField CheckboxField__label--required">
-        <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" />
-        <span class="CheckboxField__text">
-          <span class="CheckboxField__label">I accept the terms and conditions (required)</span>
-        </span>
-      </label>
-      <button type="submit" class="Button Button--primary Button--medium">Submit</button>
+      <form id="form2" method="get" novalidate>
+        <div class="Stack Stack--hasSpacing">
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="required" class="TextField__label TextField__label--required">Required TextField</label>
+            <input type="text" id="required" class="TextField__input" required />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="emailCommon" class="TextField__label">TextField <code>type="email"</code>, not required</label>
+            <input type="email" id="emailCommon" class="TextField__input" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="minlength" class="TextField__label">TextField <code>minlength="2"</code></label>
+            <input type="text" id="minlength" class="TextField__input" minlength="2" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="number" class="TextField__label">TextField <code>type="number"</code>, not required</label>
+            <input type="number" id="number" class="TextField__input" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="numbermin" class="TextField__label">TextField <code>type="number"</code>, <code>min="100"</code>, not required</label>
+            <input type="number" id="numbermin" class="TextField__input" min="100" />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="numberMinRequired" class="TextField__label TextField__label--required">TextField <code>type="number"</code>, <code>min="100"</code>, required</label>
+            <input type="number" id="numberMinRequired" class="TextField__input" min="100" required />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="patternRequired" class="TextField__label TextField__label--required">TextField with <code>pattern="/^\d+\.\d{2}$/"</code> (match decimal with 2 points), required</label>
+            <input type="number" id="patternRequired" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/" required />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="patternCustomMessage" class="TextField__label TextField__label--required">TextField with same as above field, but with custom message</label>
+            <input type="number" id="patternCustomMessage" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
+          </div>
+          <div>
+            <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 
-</div>
+</section>
 
 {{/layout/default }}
