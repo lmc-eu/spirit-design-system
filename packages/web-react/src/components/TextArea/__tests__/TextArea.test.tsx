@@ -5,6 +5,7 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import TextArea from '../TextArea';
 
 describe('TextArea', () => {
@@ -15,6 +16,8 @@ describe('TextArea', () => {
   restPropsTest(TextArea, 'textarea');
 
   validationStatePropsTest(TextArea, 'TextArea--');
+
+  validationTextPropsTest(TextArea, '.TextArea__message');
 
   it('should have label classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);
@@ -42,13 +45,6 @@ describe('TextArea', () => {
 
     const element = dom.container.querySelector('textarea') as HTMLElement;
     expect(element).toHaveClass('TextArea__input');
-  });
-
-  it('should have message', () => {
-    const dom = render(<TextArea id="textarea" label="Label" message="text" />);
-
-    const element = dom.container.querySelector('.TextArea__message') as HTMLElement;
-    expect(element.textContent).toBe('text');
   });
 
   it('should have helper text', () => {
