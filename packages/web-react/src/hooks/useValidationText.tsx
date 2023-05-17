@@ -1,30 +1,44 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ElementType, ReactNode, useMemo } from 'react';
 import { ValidationState, ValidationTextType } from '../types';
 
 export interface UseValidationTextProps {
   validationTextClassName?: string;
   validationState?: ValidationState;
   validationText?: ValidationTextType;
+  validationElementType?: ElementType;
+  /** @deprecated Will be removed in the next major version. */
+  requireValidationState?: boolean;
 }
 
 export const useValidationText = (props: UseValidationTextProps): ReactNode => {
-  const { validationTextClassName, validationState, validationText } = props;
+  const {
+    validationTextClassName,
+    validationState,
+    validationText,
+    validationElementType: ElementTag = 'div',
+    /** @deprecated Will be removed in the next major version. */
+    requireValidationState = true,
+  } = props;
 
   return useMemo(() => {
-    if (!(validationState && validationText)) {
+    if (requireValidationState && !validationState) {
       return;
     }
 
-    const getMessage = (message: string, index?: number) => (
-      <div className={validationTextClassName} key={`validationText__${index}`}>
-        {message}
-      </div>
-    );
-
-    if (typeof validationText === 'string') {
-      return getMessage(validationText);
+    if (!validationText) {
+      return;
     }
 
-    return <>{validationText.map((text, index) => getMessage(text, index))}</>;
-  }, [validationTextClassName, validationState, validationText]);
+    if (Array.isArray(validationText)) {
+      return (
+        <ul className={validationTextClassName}>
+          {validationText.map((item) => (
+            <li key={`validationText_${item}`}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    return <ElementTag className={validationTextClassName}>{validationText}</ElementTag>;
+  }, [validationState, validationText, ElementTag, validationTextClassName, requireValidationState]);
 };

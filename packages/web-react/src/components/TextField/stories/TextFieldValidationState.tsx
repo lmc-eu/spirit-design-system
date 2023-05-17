@@ -22,7 +22,7 @@ const Story = (props: unknown) => (
     <TextField
       id="textfield-danger"
       label="Validation danger"
-      message="Danger message"
+      message={['Danger message', 'Second Danger message']}
       name="textfield-danger"
       validationState="danger"
     />

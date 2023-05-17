@@ -1,6 +1,6 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useStyleProps, useDeprecationMessage } from '../../hooks';
+import { useStyleProps, useDeprecationMessage, useValidationText } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import TextFieldBaseInput from './TextFieldBaseInput';
@@ -14,12 +14,12 @@ const TextFieldBaseInputWithPasswordToggle = forwardRef(
 /* eslint no-underscore-dangle: ['error', { allow: ['_TextFieldBase'] }] */
 const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
-  const { id, label, message, helperText, ...restProps } = modifiedProps;
+  const { id, label, message, helperText, validationState, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   useDeprecationMessage({
     method: 'property',
-    trigger: props?.validationState === 'error',
+    trigger: validationState === 'error',
     componentName: props?.isMultiline ? 'TextArea' : 'TextField',
     propertyProps: {
       deprecatedValue: 'error',
@@ -29,10 +29,17 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
   });
   useDeprecationMessage({
     method: 'custom',
-    trigger: !!(props?.message && !props?.validationState),
+    trigger: !!(props?.message && !validationState),
     componentName: props?.isMultiline ? 'TextArea' : 'TextField',
     customText:
       '`message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.',
+  });
+
+  const renderValidationText = useValidationText({
+    validationTextClassName: classProps.message,
+    validationState,
+    validationText: message,
+    requireValidationState: false,
   });
 
   return (
@@ -42,7 +49,7 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       </label>
       <TextFieldBaseInputWithPasswordToggle id={id} ref={ref} {...otherProps} />
       {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {message && <div className={classProps.message}>{message}</div>}
+      {renderValidationText}
     </div>
   );
 };

@@ -26,6 +26,14 @@ Additional message:
   <input type="text" id="textfield-message" class="TextField__input" placeholder="Placeholder" />
   <div class="TextField__message">Message</div>
 </div>
+<div class="TextField">
+  <label for="textfield-message" class="TextField__label">Label of input with message</label>
+  <input type="text" id="textfield-message" class="TextField__input" placeholder="Placeholder" />
+  <ul class="TextField__message">
+    <li>First Message</li>
+    <li>Second Message</li>
+  </ul>
+</div>
 ```
 
 Hidden label:
