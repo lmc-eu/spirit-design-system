@@ -26,6 +26,14 @@ Additional message:
   <textarea id="TextArea3" class="TextArea__input" placeholder="Placeholder"></textarea>
   <div class="TextArea__message">Message</div>
 </div>
+<div class="TextArea">
+  <label for="TextArea3" class="TextArea__label">Label of textarea with message</label>
+  <textarea id="TextArea3" class="TextArea__input" placeholder="Placeholder"></textarea>
+  <ul class="TextArea__message">
+    <li>First Message</li>
+    <li>Second Message</li>
+  </ul>
+</div>
 ```
 
 Hidden label:

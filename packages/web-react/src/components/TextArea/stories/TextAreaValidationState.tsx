@@ -22,7 +22,7 @@ const Story = (props: unknown) => (
     <TextArea
       id="textarea-danger"
       label="Validation danger"
-      message="Danger message"
+      message={['Danger message', 'Second Danger message']}
       name="textarea-danger"
       validationState="danger"
     />
