@@ -62,7 +62,31 @@
         <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
         {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
         {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
-        {% if _message and not _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _message }}</span>{% endif %}
-        {% if _unsafeMessage %}<span class="{{ _messageClassName }}">{{ _unsafeMessage | raw }}</span>{% endif %}
+        {% if _message and not _unsafeMessage %}
+            {%- if _message is iterable -%}
+                <ul class="{{ _messageClassName }}">
+                    {% for _messageItem in _message %}
+                        <li>{{ _messageItem }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <span class="{{ _messageClassName }}">
+                    {{ _message }}
+                </span>
+            {%- endif -%}
+        {% endif %}
+        {% if _unsafeMessage %}
+            {%- if _unsafeMessage is iterable -%}
+                <ul class="{{ _messageClassName }}">
+                    {% for _messageItem in _unsafeMessage %}
+                    <li>{{ _messageItem | raw }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <span class="{{ _messageClassName }}">
+                    {{ _unsafeMessage | raw }}
+                </span>
+            {%- endif -%}
+        {% endif %}
     </span>
 </label>

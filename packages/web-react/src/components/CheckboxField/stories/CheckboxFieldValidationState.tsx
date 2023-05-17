@@ -22,7 +22,7 @@ const Story = () => (
       label="Checkbox danger"
       name="example"
       validationState="danger"
-      message="Danger validation message"
+      message={['Danger validation message', 'Danger validation message']}
     />
   </div>
 );
