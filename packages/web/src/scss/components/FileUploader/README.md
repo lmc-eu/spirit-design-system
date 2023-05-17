@@ -49,9 +49,6 @@ the available horizontal space:
 </div>
 ```
 
-In this way, the error message will stop being displayed when the limit of the number
-of files in the queue is exceeded.
-
 ## FileUploaderInput
 
 FileUploaderInput is a file picker built around the native HTML
@@ -110,10 +107,16 @@ the `data-spirit-file-queue-limit` attribute:
 
 You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
 When you set `data-spirit-queue-limit-behavior` together with the desired limit for the queue.
+The options to choose from are 'hide', 'disable' and 'none', which is set as the default
 
 ```html
 <div class="FileUploader" data-toggle="fileUploader">
-  <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-queue-limit-behavior="hide">
+  <div
+    class="FileUploaderInput"
+    data-spirit-element="wrapper"
+    data-spirit-file-queue-limit="2"
+    data-spirit-queue-limit-behavior="hide"
+  >
     <!-- ... -->
   </div>
   <!-- FileUploaderList -->
@@ -361,6 +364,16 @@ const myUploaderInstance = FileUploader.getInstance('#myUploader'); // Returns a
 const fileList: File[] = myUploaderInstance.getFileQueue();
 const input = myUploaderInstance.inputElement; // Returns an input element, for further use
 ```
+
+### JavaScript Events
+
+| Method                      | Description                                                                                                                                 |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `queueFile.fileUploader`    | This event is fired just before the file was added to the queue.                                                                            |
+| `queuedFile.fileUploader`   | This event is fired after the file was added to queue.                                                                                      |
+| `unqueueFile.fileUploader`  | This event is fired just before the file was removed from the queue.                                                                        |
+| `unqueuedFile.fileUploader` | This event is fired after the file was removed from queue.                                                                                  |
+| `error.fileUploader`        | This event is fired when an error occurs when adding files to the queue. A specific error message is also returned together with the event. |
 
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file

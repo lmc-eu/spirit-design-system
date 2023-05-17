@@ -130,7 +130,7 @@ describe('FileUploader', () => {
       it('should throw an error for an unsupported file type', () => {
         const file = new File(['content'], 'example.txt', { type: 'text/plain' });
         expect(() => fileUploader.checkAllowedFileType(file)).toThrowError(
-          `The file "example.txt" is not supported. Please ensure you are uploading a supported file format.`,
+          `"example.txt": is not a supported file. Please ensure you are uploading a supported file format`,
         );
       });
     });
@@ -157,7 +157,7 @@ describe('FileUploader', () => {
       jest.clearAllMocks();
     });
 
-    it('should hides the drop zone when the file queue limit is reached', async () => {
+    it('should hide the drop zone when the file queue limit is reached', async () => {
       const dropZone = fixtureEl.querySelector('[data-spirit-element="dropZone"]') as HTMLElement;
       const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: 1684228128062 });
       const file2 = new File([''], 'test2.txt', { type: 'text/plain', lastModified: 1684228128062 });
