@@ -6,6 +6,7 @@ import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import CheckboxField from '../CheckboxField';
 
 describe('CheckboxField', () => {
@@ -18,6 +19,8 @@ describe('CheckboxField', () => {
   restPropsTest(CheckboxField, 'input');
 
   validationStatePropsTest(CheckboxField, 'CheckboxField--');
+
+  validationTextPropsTest(CheckboxField, '.CheckboxField__message');
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" />);
@@ -58,13 +61,6 @@ describe('CheckboxField', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" helperText="text" />);
 
     const element = dom.container.querySelector('.CheckboxField__helperText') as HTMLElement;
-    expect(element.textContent).toBe('text');
-  });
-
-  it('should have validation message', () => {
-    const dom = render(<CheckboxField id="checkbox" label="Label" message="text" />);
-
-    const element = dom.container.querySelector('.CheckboxField__message') as HTMLElement;
     expect(element.textContent).toBe('text');
   });
 });
