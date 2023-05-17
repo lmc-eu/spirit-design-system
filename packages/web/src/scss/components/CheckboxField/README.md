@@ -32,6 +32,16 @@
     <span class="CheckboxField__message">Message</span>
   </span>
 </label>
+<label for="checkboxfield2" class="CheckboxField">
+  <input type="checkbox" id="checkboxfield2" class="CheckboxField__input" />
+  <span class="CheckboxField__text">
+    <span class="CheckboxField__label">Checkbox unselected</span>
+    <ul class="CheckboxField__message">
+      <li>Message</li>
+      <li>Message</li>
+    </ul>
+  </span>
+</label>
 ```
 
 ## Hidden label:

@@ -5,7 +5,7 @@ import { TextFieldType } from '../../src';
 export const validationTextPropsTest = (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Component: ComponentType<any>,
-  className: string,
+  selector: string,
   type: TextFieldType | null = null,
 ) => {
   it('should have message', async () => {
@@ -22,7 +22,7 @@ export const validationTextPropsTest = (
     );
 
     await waitFor(() => {
-      const element = dom.container.querySelector(className) as HTMLElement;
+      const element = dom.container.querySelector(selector) as HTMLElement;
       expect(element.textContent).toBe('text');
     });
   });
@@ -41,7 +41,7 @@ export const validationTextPropsTest = (
     );
 
     await waitFor(() => {
-      const element = dom.container.querySelector(className) as HTMLElement;
+      const element = dom.container.querySelector(selector) as HTMLElement;
       expect(element.tagName.toLowerCase()).toBe('ul');
     });
   });
