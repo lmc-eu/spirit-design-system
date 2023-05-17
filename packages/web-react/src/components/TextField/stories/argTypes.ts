@@ -65,9 +65,11 @@ export default {
   },
   message: {
     control: {
-      type: 'text',
+      type: 'object',
     },
     defaultValue: '',
+    description:
+      'The validation message. Use a string `"foo"` for single message or an array for multiple messages `["foo", "bar"]`.',
   },
   helperText: {
     control: {
