@@ -73,7 +73,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         validationText: fileUploaderInputValidationTextClass,
         dropZone: {
           root: classNames(fileUploaderInputDropZoneClass, {
-            [fileUploaderInputDropZoneHiddenClass]: props?.isDropZoneHidden && props.queueLimitBehavior === 'hide', // TODO: Modify when the disabled state is ready for the entire component
+            [fileUploaderInputDropZoneHiddenClass]: props?.isDropZoneHidden && props.queueLimitBehavior === 'hide', // TODO: Modify when the disabled state is ready for the entire component (https://jira.lmc.cz/browse/DS-772)
           }),
           label: fileUploaderInputDropZoneLabelClass,
         },

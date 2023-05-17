@@ -48,18 +48,6 @@ By adding the `isFluid` attribute, FileUploader can take up all the available ho
 </div>
 ```
 
-### Maximum File Size (JavaScript)
-
-The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
-10 MB. To increase the limit for example to 20 MB, add the `data-max-file-size` attribute:
-
-```twig
-<FileUploader data-toggle="fileUploader" data-max-file-size="20000000">
-  <!-- FileUploaderInput -->
-  <!-- FileUploaderList -->
-</FileUploader>
-```
-
 ### API
 
 | Prop name | Type      | Default | Required | Description                                                |
@@ -84,6 +72,33 @@ If supported by the device, FileUploaderInput automatically turns on the drag-an
     label="Label"
     name="example-input"
 />
+```
+
+### Maximum File Size (JavaScript)
+
+The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
+10 MB. To increase the limit for example to 20 MB, add the `maxFileSize` attribute:
+
+```twig
+<FileUploaderInput maxFileSize={20000000} />
+```
+
+### Maximum number of files in queue (JavaScript)
+
+Counter of the maximum number of uploaded files. The default value is 10, but any value can be set with
+the `maxUploadedFiles` attribute:
+
+```twig
+<FileUploaderInput maxUploadedFiles={2} />
+```
+
+### Input behavior when the queue is filled (JavaScript)
+
+You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
+When you set `queueLimitBehavior` together with the desired limit for the queue:
+
+```twig
+<FileUploaderInput maxUploadedFiles={2} queueLimitBehavior="hide" />
 ```
 
 ### Uploading Multiple Files
@@ -154,8 +169,11 @@ When validated on server:
 | `isLabelHidden`         | `bool`                                         | `false`                 | no       | If true, label is hidden                                              |
 | `isRequired`            | `bool`                                         | `false`                 | no       | If true, input is required                                            |
 | `label`                 | `string`                                       | `null`                  | no\*     | Label text                                                            |
+| `maxFileSize`           | `number`                                       | `1000000`               | no       | The maximum size of the uploaded file                                 |
+| `maxUploadedFiles`      | `number`                                       | `10`                    | no       | Maximum file upload queue size                                        |
 | `name`                  | `string`                                       | `null`                  | no       | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | no       | Text shown in the drop zone                                           |
+| `queueLimitBehavior`    | `'hide', 'disable', 'none'`                    | `none`                  | no       | Input behavior when the file queue is filled                          |
 | `UNSAFE_helperText`     | `string`                                       | `null`                  | no\*\*   | Unescaped custom helper text                                          |
 | `UNSAFE_label`          | `string`                                       | `null`                  | no\*     | Unescaped label text (allows HTML)                                    |
 | `UNSAFE_validationText` | `string`                                       | `null`                  | no\*\*   | Unescaped validation text                                             |

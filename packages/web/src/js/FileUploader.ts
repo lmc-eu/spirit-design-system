@@ -3,10 +3,16 @@ import BaseComponent from './BaseComponent';
 import { enableToggleAutoloader } from './utils';
 
 const NAME = 'fileUploader';
+const EVENT_KEY = `.${NAME}`;
+const EVENT_QUEUE_FILE = `queueFile${EVENT_KEY}`;
+const EVENT_QUEUED_FILE = `queuedFile${EVENT_KEY}`;
+const EVENT_UNQUEUE_FILE = `unqueueFile${EVENT_KEY}`;
+const EVENT_UNQUEUED_FILE = `unqueuedFile${EVENT_KEY}`;
+const EVENT_ERROR = `error${EVENT_KEY}`;
 const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
 const IS_DRAGGING_CLASS_NAME = 'is-dragging';
 const DROP_ZONE_HIDDEN_CLASS_NAME = 'd-none';
-const DROP_ZONE_DISABLED_CLASS_NAME = 'd-none'; // TODO
+const DROP_ZONE_DISABLED_CLASS_NAME = 'd-none'; // TODO: Modify when the disabled state is ready for the entire component (https://jira.lmc.cz/browse/DS-772)
 const WRAPPER_ELEMENT_SELECTOR = '[data-spirit-element="wrapper"]';
 const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
@@ -16,6 +22,12 @@ const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
 const DATA_DISMISS_ATTRIBUTE = 'data-dismiss';
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
 const DEFAULT_FILE_QUEUE_LIMIT = 10;
+const errorMessages = {
+  errorMaxFileSize: 'The file size limit has been exceeded',
+  errorFileDuplicity: 'This file already exists in the queue',
+  errorMaxUploadedFiles: 'You have exceeded the number of files allowed in the queue',
+  errorFileNotSupported: 'is not a supported file. Please ensure you are uploading a supported file format.',
+};
 
 class FileUploader extends BaseComponent {
   wrapper: HTMLElement;
@@ -85,19 +97,19 @@ class FileUploader extends BaseComponent {
 
   checkAllowedFileSize(file: File) {
     if (file.size > this.fileSizeLimit) {
-      throw new Error('The file size limit has been exceeded');
+      throw new Error(errorMessages.errorMaxFileSize);
     }
   }
 
   checkFileQueueDuplicity(file: File) {
     if (this.fileQueue.has(FileUploader.getUpdatedFileName(file.name))) {
-      throw new Error('This file already exists in the queue');
+      throw new Error(errorMessages.errorFileDuplicity);
     }
   }
 
   checkQueueLimit() {
     if (this.fileQueue.size >= this.fileQueueLimit) {
-      throw new Error('You have exceeded the number of files allowed in the queue');
+      throw new Error(errorMessages.errorMaxUploadedFiles);
     }
   }
 
@@ -132,9 +144,7 @@ class FileUploader extends BaseComponent {
     }
 
     if (!isTypeSupported) {
-      throw new Error(
-        `The file "${file.name}" is not supported. Please ensure you are uploading a supported file format.`,
-      );
+      throw new Error(`"${file.name}": ${errorMessages.errorFileNotSupported}`);
     }
   }
 
@@ -145,6 +155,8 @@ class FileUploader extends BaseComponent {
 
     const dropZoneClassName =
       this.queueLimitBehavior === 'hide' ? DROP_ZONE_HIDDEN_CLASS_NAME : DROP_ZONE_DISABLED_CLASS_NAME;
+
+    // This is forcing the callback to run last
     setTimeout(() => {
       this.dropZone?.classList.toggle(dropZoneClassName, this.fileQueue.size === this.fileQueueLimit);
     }, 0);
@@ -239,23 +251,27 @@ class FileUploader extends BaseComponent {
 
   addToQueue(file: File) {
     try {
+      EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue });
       this.checkAllowedFileSize(file);
       this.checkFileQueueDuplicity(file);
       this.checkAllowedFileType(file);
       this.checkQueueLimit();
       this.appendToList(file);
       this.updateDropZoneVisibility();
+      EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue });
     } catch (error) {
-      console.warn(error);
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, error);
     }
   }
 
   removeFromQueue(name: string) {
     if (this.fileQueue.has(name)) {
+      EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue });
       const itemElement = SelectorEngine.findOne(`li#${name}`);
       this.fileQueue.delete(name);
       itemElement?.remove();
       this.updateDropZoneVisibility();
+      EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue });
     }
   }
 
@@ -278,8 +294,10 @@ class FileUploader extends BaseComponent {
 
     if (overLimit) {
       this.checkQueueLimit();
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, new Error(errorMessages.errorMaxUploadedFiles));
     }
 
+    // This is forcing the callback to run last
     setTimeout(() => {
       target.value = '';
       target.blur();
@@ -342,6 +360,7 @@ class FileUploader extends BaseComponent {
 
     if (overLimit) {
       this.checkQueueLimit();
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, new Error(errorMessages.errorMaxUploadedFiles));
     }
   }
 

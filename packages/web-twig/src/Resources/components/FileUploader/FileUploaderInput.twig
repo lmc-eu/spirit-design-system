@@ -7,8 +7,11 @@
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
+{%- set _maxFileSize = props.maxFileSize | default(null) -%}
+{%- set _maxUploadedFiles = props.maxUploadedFiles | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _pickAFileText = props.pickAFileText | default('Upload your file') -%}
+{%- set _queueLimitBehavior = props.queueLimitBehavior | default(null) -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
@@ -32,6 +35,9 @@
 {# Attributes #}
 {%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
+{%- set _dataMaxFileSizeAttr = _maxFileSize ? 'data-spirit-max-file-size=' ~ _maxFileSize : null -%}
+{%- set _dataMaxUploadedFilesAttr = _maxUploadedFiles ? 'data-spirit-file-queue-limit=' ~ _maxUploadedFiles : null -%}
+{%- set _dataQueueLimitBehaviorAttr = _queueLimitBehavior ? 'data-spirit-queue-limit-behavior=' ~ _queueLimitBehavior : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -44,6 +50,9 @@
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ classProp(_rootClassNames) }}
     {{ styleProp(_styleProps) }}
+    {{ _dataMaxFileSizeAttr }}
+    {{ _dataMaxUploadedFilesAttr }}
+    {{ _dataQueueLimitBehaviorAttr }}
     data-spirit-element="wrapper"
 >
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>

@@ -81,12 +81,11 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
   };
 
   const updateDropZoneVisibility = (queue: FileQueueMapType) => {
-    console.log('queueLimitBehavior', queueLimitBehavior);
     if (!queueLimitBehavior) {
       return;
     }
 
-    setDropZoneHidden(queue.size >= maxUploadedFiles);
+    setDropZoneHidden(queue?.size >= maxUploadedFiles);
   };
 
   const clearQueueHandler = () => {
