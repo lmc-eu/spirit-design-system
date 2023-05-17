@@ -53,6 +53,15 @@ describe('TextField', () => {
       expect(element.textContent).toBe('text');
     });
 
+    it('should have multiline message as a list', () => {
+      const dom = render(
+        <TextField id="textfield" label="Label" type={type as TextFieldType} message={['foo', 'bar']} />,
+      );
+
+      const element = dom.container.querySelector('.TextField__message') as HTMLElement;
+      expect(element.tagName.toLowerCase()).toBe('ul');
+    });
+
     it('should have helper text', () => {
       const dom = render(
         <TextField id="textfield" label="Label" type={type as TextFieldType} helperText="helper text" />,

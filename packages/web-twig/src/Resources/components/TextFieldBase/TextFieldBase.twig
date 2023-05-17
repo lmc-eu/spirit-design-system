@@ -143,13 +143,29 @@
         </div>
     {% endif %}
     {% if _message and not _unsafeMessage %}
-        <div class="{{ _messageClassName }}">
-            {{ _message }}
-        </div>
+        {%- if _message is iterable -%}
+            <ul class="{{ _messageClassName }}">
+                {% for _messageItem in _message %}
+                    <li>{{ _messageItem }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="{{ _messageClassName }}">
+                {{ _message }}
+            </div>
+        {%- endif -%}
     {% endif %}
     {% if _unsafeMessage %}
-        <div class="{{ _messageClassName }}">
-            {{ _unsafeMessage | raw }}
-        </div>
+        {%- if _unsafeMessage is iterable -%}
+            <ul class="{{ _messageClassName }}">
+                {% for _messageItem in _unsafeMessage %}
+                    <li>{{ _messageItem | raw }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="{{ _messageClassName }}">
+                {{ _unsafeMessage | raw }}
+            </div>
+        {%- endif -%}
     {% endif %}
 </div>

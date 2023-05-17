@@ -38,7 +38,15 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       </label>
       <TextFieldBaseInputWithPasswordToggle id={id} {...otherProps} />
       {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {message && <div className={classProps.message}>{message}</div>}
+      {message && Array.isArray(message) ? (
+        <ul className={classProps.message}>
+          {message.map((item) => (
+            <li key={`message_${item}`}>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <div className={classProps.message}>{message}</div>
+      )}
     </div>
   );
 };
