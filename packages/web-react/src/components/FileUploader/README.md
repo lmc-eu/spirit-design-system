@@ -73,6 +73,10 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
   <FileUploaderInput isRequired validationState="success" validationText="Validation message" />
   <FileUploaderList />
 </FileUploader>
+<FileUploader>
+  <FileUploaderInput isRequired validationState="success" validationText={["Validation message", "Second validation message"]} />
+  <FileUploaderList />
+</FileUploader>
 ```
 
 ### Input behavior when the queue is filled
@@ -307,7 +311,7 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
 | `isRequired`         | `boolean`                            | -        | ✕        | Whether is field required                                                                                                                                       |
 | `validationState`    | `ValidationState`                    | -        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | `string`                             | -        | ✕        | Validation status text                                                                                                                                          |
+| `validationText`     | `string`, `string[]`                 | -        | ✕        | Validation status text                                                                                                                                          |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file                                                                                                                           |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `isMultiple`         | `boolean`                            | -        | ✕        | When multiple files can be selected at once                                                                                                                     |
@@ -390,7 +394,7 @@ via `inputProps` and `listProps`.
 | `onInputError`        | `FileUploaderErrorCallbackType`         | -        | ✕        | Callback on error condition                         |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | -        | ✕        | Callback on change in fileQueue                     |
 | `validationState`     | `ValidationState`                       | -        | ✕        | Validation state                                    |
-| `validationText`      | `string`                                | -        | ✕        | Validation status text                              |
+| `validationText`      | `string`, `string[]`                    | -        | ✕        | Validation status text                              |
 | `UNSAFE_className`    | `string`                                | -        | ✕        | UncontrolledFileUploader custom class name          |
 | `UNSAFE_style`        | `CSSProperties`                         | -        | ✕        | UncontrolledFileUploader custom style               |
 
