@@ -92,12 +92,17 @@
         {% endif %}
     </div>
     {% if _validationText or _unsafeValidationText %}
-        <div class="{{ _validationTextClassName }}">
-            {% if _validationText %}
-                {{ _validationText }}
-            {% else %}
-                {{ _unsafeValidationText | raw }}
-            {% endif %}
-        </div>
+        {%- if (_validationText and _validationText is iterable) or (_unsafeValidationText and _unsafeValidationText is iterable) -%}
+            <ul class="{{ _validationTextClassName }}">
+                {% set _list = _unsafeValidationText ? _unsafeValidationText : _validationText %}
+                {% for _item in _list %}
+                    <li>{{ _unsafeValidationText ? _item | raw : _item }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="{{ _validationTextClassName }}">
+                {{ _unsafeValidationText ? _unsafeValidationText | raw : _validationText }}
+            </div>
+        {%- endif -%}
     {% endif %}
 </div>
