@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.45.0"></a>
+
+# [0.45.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.44.0...@lmc-eu/spirit-web-react@0.45.0) (2023-05-18)
+
+### Features
+
+- **web-react:** Add iconName prop to FileUploader components [#DS-752](https://github.com/lmc-eu/spirit-design-system/issues/DS-752) ([f6a177a](https://github.com/lmc-eu/spirit-design-system/commit/f6a177a))
+- **web-react:** Extend Stack component [#JALL-107](https://github.com/lmc-eu/spirit-design-system/issues/JALL-107) ([ab0d73a](https://github.com/lmc-eu/spirit-design-system/commit/ab0d73a))
+- **web-react:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([159152b](https://github.com/lmc-eu/spirit-design-system/commit/159152b))
+- **web-react:** Introduction of FileUploader component [#DS-683](https://github.com/lmc-eu/spirit-design-system/issues/DS-683) ([494ab34](https://github.com/lmc-eu/spirit-design-system/commit/494ab34))
+- **web-twig:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([2612484](https://github.com/lmc-eu/spirit-design-system/commit/2612484))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.44.0"></a>
 
 # [0.44.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.43.0...@lmc-eu/spirit-web-react@0.44.0) (2023-04-26)

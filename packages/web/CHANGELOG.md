@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.46.0"></a>
+
+# [0.46.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.45.0...@lmc-eu/spirit-web@0.46.0) (2023-05-18)
+
+### Bug Fixes
+
+- **web:** Add the missing `spirit` prefix to `FileUploader`s `data-populate-field` [#DS-684](https://github.com/lmc-eu/spirit-design-system/issues/DS-684) ([07320d5](https://github.com/lmc-eu/spirit-design-system/commit/07320d5))
+- **web:** Maximum number of files in the queue during drag and drop ([2adbbda](https://github.com/lmc-eu/spirit-design-system/commit/2adbbda))
+- **web:** Remove additional whitespace added by template tag ([0aa6824](https://github.com/lmc-eu/spirit-design-system/commit/0aa6824))
+
+### Features
+
+- **web-react:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([159152b](https://github.com/lmc-eu/spirit-design-system/commit/159152b))
+- **web-twig:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([2612484](https://github.com/lmc-eu/spirit-design-system/commit/2612484))
+- **web-twig:** Introduce `FileUploader` component [#DS-684](https://github.com/lmc-eu/spirit-design-system/issues/DS-684) ([bd85a04](https://github.com/lmc-eu/spirit-design-system/commit/bd85a04))
+- **web:** Add AutoResize JS plugin to make TextArea autoresize [#DS-320](https://github.com/lmc-eu/spirit-design-system/issues/DS-320) ([a667bbf](https://github.com/lmc-eu/spirit-design-system/commit/a667bbf))
+- **web:** FileUploader onDrop validation [#DS-724](https://github.com/lmc-eu/spirit-design-system/issues/DS-724) ([e89b767](https://github.com/lmc-eu/spirit-design-system/commit/e89b767))
+- **web:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([1595537](https://github.com/lmc-eu/spirit-design-system/commit/1595537))
+- **web:** Improve `FileUploader` states, attachment border radius, and icon color [#DS-729](https://github.com/lmc-eu/spirit-design-system/issues/DS-729) ([7fd2e35](https://github.com/lmc-eu/spirit-design-system/commit/7fd2e35))
+- **web:** Introduction of JS for FileUploader component [#DS-682](https://github.com/lmc-eu/spirit-design-system/issues/DS-682) ([c79319b](https://github.com/lmc-eu/spirit-design-system/commit/c79319b))
+- **web:** Rename divider classes according to the Figma documentation ([38e8263](https://github.com/lmc-eu/spirit-design-system/commit/38e8263)), closes [#DS-571](https://github.com/lmc-eu/spirit-design-system/issues/DS-571)
+- **web:** Use logical properties to apply borders in Stack direct descendants [#JALL-107](https://github.com/lmc-eu/spirit-design-system/issues/JALL-107) ([1c38dbe](https://github.com/lmc-eu/spirit-design-system/commit/1c38dbe))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.45.0"></a>
 
 # [0.45.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.44.0...@lmc-eu/spirit-web@0.45.0) (2023-04-17)

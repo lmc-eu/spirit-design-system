@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+
+# [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.6.0...@lmc-eu/spirit-exporters-scss@1.7.0) (2023-05-18)
+
+### Features
+
+- **exporter-scss:** Improve Gradients, angle variable and unify naming, but leave JDS exception ([c9aadb7](https://github.com/lmc-eu/spirit-design-system/commit/c9aadb7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.6.0"></a>
 
 # [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.5.3...@lmc-eu/spirit-exporters-scss@1.6.0) (2023-03-08)

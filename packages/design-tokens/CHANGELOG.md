@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.25.4"></a>
+
+## [0.25.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.25.3...@lmc-eu/spirit-design-tokens@0.25.4) (2023-05-18)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="0.25.3"></a>
 
 ## [0.25.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@0.25.2...@lmc-eu/spirit-design-tokens@0.25.3) (2023-04-17)

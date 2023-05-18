@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.31.0"></a>
+
+# [1.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.30.0...@lmc-eu/spirit-web-twig@1.31.0) (2023-05-18)
+
+### Bug Fixes
+
+- **web-twig:** Custom escaping of HTML attributes ([42176b2](https://github.com/lmc-eu/spirit-design-system/commit/42176b2)), closes [#742](https://github.com/lmc-eu/spirit-design-system/issues/742), [#DS-760](https://github.com/lmc-eu/spirit-design-system/issues/DS-760)
+
+### Chores
+
+- **demo:** Enable typescript support ([07edf5f](https://github.com/lmc-eu/spirit-design-system/commit/07edf5f))
+- **repo:** Improvement of DX by adding commands to Makefile ([78d5ba2](https://github.com/lmc-eu/spirit-design-system/commit/78d5ba2))
+- **web-twig:** Add shell commands for connecting to docker containers ([f66e48b](https://github.com/lmc-eu/spirit-design-system/commit/f66e48b))
+- **web-twig:** Run Encore build in separate image ([9d2b322](https://github.com/lmc-eu/spirit-design-system/commit/9d2b322))
+
+### Documentation
+
+- **web-twig:** Remove duplicated extend in Breadcrumb story ([17e0ef8](https://github.com/lmc-eu/spirit-design-system/commit/17e0ef8))
+
+### Features
+
+- **web-twig:** Add `isAutoResizing` prop to TextArea [#DS-320](https://github.com/lmc-eu/spirit-design-system/issues/DS-320) ([8c7a785](https://github.com/lmc-eu/spirit-design-system/commit/8c7a785))
+- **web-twig:** Extend Stack component [#JALL-107](https://github.com/lmc-eu/spirit-design-system/issues/JALL-107) ([def3ef1](https://github.com/lmc-eu/spirit-design-system/commit/def3ef1))
+- **web-twig:** Hiding input when the queue is full [#DS-730](https://github.com/lmc-eu/spirit-design-system/issues/DS-730) ([2612484](https://github.com/lmc-eu/spirit-design-system/commit/2612484))
+- **web-twig:** Introduce `FileUploader` component [#DS-684](https://github.com/lmc-eu/spirit-design-system/issues/DS-684) ([bd85a04](https://github.com/lmc-eu/spirit-design-system/commit/bd85a04))
+- **web-twig:** Rename divider classes according to the Figma documentation ([7cbf2bd](https://github.com/lmc-eu/spirit-design-system/commit/7cbf2bd)), closes [#DS-571](https://github.com/lmc-eu/spirit-design-system/issues/DS-571)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.30.0"></a>
 
 # [1.30.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.29.0...@lmc-eu/spirit-web-twig@1.30.0) (2023-04-26)
