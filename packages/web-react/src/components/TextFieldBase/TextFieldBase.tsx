@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useStyleProps, useDeprecationMessage } from '../../hooks';
+import { useStyleProps, useDeprecationMessage, useValidationText } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import TextFieldBaseInput from './TextFieldBaseInput';
@@ -10,12 +10,12 @@ const TextFieldBaseInputWithPasswordToggle = withPasswordToggle<TextFieldBasePas
 
 export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
-  const { id, label, message, helperText, ...restProps } = modifiedProps;
+  const { id, label, message, helperText, validationState, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   useDeprecationMessage({
     method: 'property',
-    trigger: props?.validationState === 'error',
+    trigger: validationState === 'error',
     componentName: props?.isMultiline ? 'TextArea' : 'TextField',
     propertyProps: {
       deprecatedValue: 'error',
@@ -25,10 +25,17 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
   });
   useDeprecationMessage({
     method: 'custom',
-    trigger: !!(props?.message && !props?.validationState),
+    trigger: !!(props?.message && !validationState),
     componentName: props?.isMultiline ? 'TextArea' : 'TextField',
     customText:
       '`message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.',
+  });
+
+  const renderValidationText = useValidationText({
+    validationTextClassName: classProps.message,
+    validationState,
+    validationText: message,
+    requireValidationState: false,
   });
 
   return (
@@ -38,15 +45,7 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       </label>
       <TextFieldBaseInputWithPasswordToggle id={id} {...otherProps} />
       {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {message && Array.isArray(message) ? (
-        <ul className={classProps.message}>
-          {message.map((item) => (
-            <li key={`message_${item}`}>{item}</li>
-          ))}
-        </ul>
-      ) : (
-        <div className={classProps.message}>{message}</div>
-      )}
+      {renderValidationText}
     </div>
   );
 };

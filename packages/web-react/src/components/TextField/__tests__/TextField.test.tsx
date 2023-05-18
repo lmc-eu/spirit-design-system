@@ -7,6 +7,7 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { TextFieldType } from '../../../types';
 import TextField from '../TextField';
+import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 
 describe('TextField', () => {
   describe.each(['text', 'password', 'email'])('input type %s', (type) => {
@@ -17,6 +18,8 @@ describe('TextField', () => {
     restPropsTest(TextField, 'input');
 
     validationStatePropsTest(TextField, 'TextField--');
+
+    validationTextPropsTest(TextField, '.TextField__message', type as TextFieldType);
 
     it('should have label classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
@@ -44,22 +47,6 @@ describe('TextField', () => {
 
       const element = dom.container.querySelector('input') as HTMLElement;
       expect(element).toHaveClass('TextField__input');
-    });
-
-    it('should have message', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} message="text" />);
-
-      const element = dom.container.querySelector('.TextField__message') as HTMLElement;
-      expect(element.textContent).toBe('text');
-    });
-
-    it('should have multiline message as a list', () => {
-      const dom = render(
-        <TextField id="textfield" label="Label" type={type as TextFieldType} message={['foo', 'bar']} />,
-      );
-
-      const element = dom.container.querySelector('.TextField__message') as HTMLElement;
-      expect(element.tagName.toLowerCase()).toBe('ul');
     });
 
     it('should have helper text', () => {
