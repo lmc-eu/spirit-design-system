@@ -410,7 +410,9 @@ class FormValidations {
       validationTextElement = validationTextParent.querySelector<ValidationTextElement>(`.${VALIDATIONS_ERROR}`);
 
       if (!validationTextElement) {
-        validationTextElement = document.createElement(this.config.validationTextTag) as ValidationTextElement;
+        validationTextElement = document.createElement(
+          field.input.type === 'checkbox' ? 'span' : this.config.validationTextTag,
+        ) as ValidationTextElement;
         validationTextElement.className = `${VALIDATIONS_ERROR} ${this.config.validationTextClass}`;
         validationTextElement.dataset.element = this.config.dataElementMessage;
         validationTextParent.appendChild(validationTextElement);
