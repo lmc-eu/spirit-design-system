@@ -8,10 +8,18 @@
     var form2 = document.getElementById("form2");
     var form3 = document.getElementById("form3");
     var form4 = document.getElementById("form4");
+    var form5 = document.getElementById("form5");
 
     FormValidations.addValidator("my-range", function(value, param1, param2) {
       return parseInt(param1) <= value && value <= parseInt(param2)
     }, "The value (${0}) must be between ${1} and ${2}", 5, false);
+
+    // create the form validations instance
+    var formValidations1 = new FormValidations(form1);
+    var formValidations2 = new FormValidations(form2);
+    var formValidations3 = new FormValidations(form3);
+    var formValidations4 = new FormValidations(form4);
+    var formValidations5 = new FormValidations(form5);
 
     var specificElement = document.getElementById("custom-field-specific-validator");
 
@@ -22,12 +30,6 @@
 
       return false;
     }, "The first character must be capitalized", 2, false);
-
-    // create the form validations instance
-    var formValidations1 = new FormValidations(form1);
-    var formValidations2 = new FormValidations(form2);
-    var formValidations3 = new FormValidations(form3);
-    var formValidations4 = new FormValidations(form4);
 
     form1.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -62,6 +64,13 @@
 
       // check if the form is valid
       var valid4 = formValidations4.validate(); // returns true or false
+    });
+
+    form5.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // check if the form is valid
+      var valid5 = formValidations5.validate(); // returns true or false
     });
   };
 </script>
@@ -109,7 +118,7 @@
             <label for="phone" class="TextField__label">Phone</label>
             <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
           </div>
-          <label for="checkboxfield1" class="CheckboxField">
+          <label for="checkboxfield1" class="CheckboxField" data-spirit-validate>
             <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" required />
             <span class="CheckboxField__text">
               <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions (required)</span>
@@ -229,6 +238,45 @@
             <label for="custom-field-specific-validator" class="TextField__label TextField__label--required">Required TextField, First Letter Capitalized</label>
             <input type="text" id="custom-field-specific-validator" class="TextField__input" required />
           </div>
+          <div>
+            <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <div class="Grid mb-1200">
+    <div
+      class="
+        Grid__span
+        Grid__span--over-10
+        Grid__span--tablet--over-6
+        Grid__span--desktop--over-4
+      "
+    >
+      <h2 class="docs-Heading">Custom error messages</h2>
+
+      <form id="form5" method="get" novalidate>
+        <div class="Stack Stack--hasSpacing">
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="custom-errors-textfield" class="TextField__label TextField__label--required">Required TextField</label>
+            <input type="text" id="custom-errors-textfield" class="TextField__input" required data-spirit-required-message="My custom message"  />
+          </div>
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="custom-errors-number" class="TextField__label TextField__label--required">Required TextField, <code>type="number"</code>, <code>min="100"</code></label>
+            <input type="number" id="custom-errors-number" class="TextField__input" value="5" required min="100" data-spirit-min-message="Anything larger than 99" />
+          </div>
+          <label for="custom-errors-checkboxfield" class="CheckboxField" data-spirit-validate>
+            <input type="checkbox" id="custom-errors-checkboxfield" class="CheckboxField__input" required data-spirit-required-message="You must accept the terms and conditions" />
+            <span class="CheckboxField__text">
+              <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions</span>
+            </span>
+          </label>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
           </div>
