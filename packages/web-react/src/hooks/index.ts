@@ -6,5 +6,4 @@ export * from './useDragAndDrop';
 export * from './useIcon';
 export * from './useLastActiveFocus';
 export * from './useToggle';
-export * from './useValidationText';
 export * from './styleProps';
