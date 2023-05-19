@@ -6,10 +6,16 @@
   window.onload = function () {
     var form1 = document.getElementById("form1");
     var form2 = document.getElementById("form2");
+    var form3 = document.getElementById("form3");
+
+    FormValidations.addValidator("my-range", function(value, param1, param2) {
+      return parseInt(param1) <= value && value <= parseInt(param2)
+    }, "The value (${0}) must be between ${1} and ${2}", 5, false);
 
     // create the form validations instance
     var formValidations1 = new FormValidations(form1);
     var formValidations2 = new FormValidations(form2);
+    var formValidations3 = new FormValidations(form3);
 
     form1.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -22,6 +28,19 @@
 
       // check if the form is valid
       var valid2 = formValidations2.validate(); // returns true or false
+    });
+    form2.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // check if the form is valid
+      var valid2 = formValidations2.validate(); // returns true or false
+    });
+
+    form3.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // check if the form is valid
+      var valid3 = formValidations3.validate(); // returns true or false
     });
   };
 </script>
@@ -130,6 +149,35 @@
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="patternCustomMessage" class="TextField__label TextField__label--required">TextField with same as above field, but with custom message</label>
             <input type="number" id="patternCustomMessage" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
+          </div>
+          <div>
+            <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <div class="Grid mb-1200">
+    <div
+      class="
+        Grid__span
+        Grid__span--over-10
+        Grid__span--tablet--over-6
+        Grid__span--desktop--over-4
+      "
+    >
+      <h2 class="docs-Heading">Custom global validator</h2>
+
+      <form id="form3" method="get" novalidate>
+        <div class="Stack Stack--hasSpacing">
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="custom-global-validator" class="TextField__label TextField__label--required">Required TextField, Range 10 - 30</label>
+            <input type="text" id="custom-global-validator" class="TextField__input" required data-spirit-my-range="10,30" />
           </div>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
