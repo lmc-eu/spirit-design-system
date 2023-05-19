@@ -116,10 +116,9 @@ var formValidations = new FormValidations(document.getElementById('form1'));
 var element = document.getElementById('email');
 
 // A validator to check if the first letter is capitalized
-formValidations.addElementValidator(
+FormValidations.addElementValidator(
   element,
   function (value) {
-    // here `this` refers to the respective input element
     if (value.length && value[0] === value[0].toUpperCase()) {
       return true;
     }
