@@ -7,15 +7,27 @@
     var form1 = document.getElementById("form1");
     var form2 = document.getElementById("form2");
     var form3 = document.getElementById("form3");
+    var form4 = document.getElementById("form4");
 
     FormValidations.addValidator("my-range", function(value, param1, param2) {
       return parseInt(param1) <= value && value <= parseInt(param2)
     }, "The value (${0}) must be between ${1} and ${2}", 5, false);
 
+    var specificElement = document.getElementById("custom-field-specific-validator");
+
+    FormValidations.addElementValidator(specificElement, function(value, element) {
+      if (value.length && value[0] === value[0].toUpperCase()) {
+        return true;
+      }
+
+      return false;
+    }, "The first character must be capitalized", 2, false);
+
     // create the form validations instance
     var formValidations1 = new FormValidations(form1);
     var formValidations2 = new FormValidations(form2);
     var formValidations3 = new FormValidations(form3);
+    var formValidations4 = new FormValidations(form4);
 
     form1.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -23,12 +35,14 @@
       // check if the form is valid
       var valid1 = formValidations1.validate(); // returns true or false
     });
+
     form2.addEventListener('submit', function (event) {
       event.preventDefault();
 
       // check if the form is valid
       var valid2 = formValidations2.validate(); // returns true or false
     });
+
     form2.addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -41,6 +55,13 @@
 
       // check if the form is valid
       var valid3 = formValidations3.validate(); // returns true or false
+    });
+
+    form4.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // check if the form is valid
+      var valid4 = formValidations4.validate(); // returns true or false
     });
   };
 </script>
@@ -178,6 +199,35 @@
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="custom-global-validator" class="TextField__label TextField__label--required">Required TextField, Range 10 - 30</label>
             <input type="text" id="custom-global-validator" class="TextField__input" required data-spirit-my-range="10,30" />
+          </div>
+          <div>
+            <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <div class="Grid mb-1200">
+    <div
+      class="
+        Grid__span
+        Grid__span--over-10
+        Grid__span--tablet--over-6
+        Grid__span--desktop--over-4
+      "
+    >
+      <h2 class="docs-Heading">Custom validator to a specific field</h2>
+
+      <form id="form4" method="get" novalidate>
+        <div class="Stack Stack--hasSpacing">
+          <div class="TextField TextField--fluid" data-spirit-validate>
+            <label for="custom-field-specific-validator" class="TextField__label TextField__label--required">Required TextField, First Letter Capitalized</label>
+            <input type="text" id="custom-field-specific-validator" class="TextField__input" required />
           </div>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
