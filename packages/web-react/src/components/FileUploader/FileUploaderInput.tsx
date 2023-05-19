@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { SpiritFileUploaderInputProps } from '../../types';
-import { useStyleProps, useValidationText } from '../../hooks';
+import { useStyleProps } from '../../hooks';
+import { useValidationText } from '../Field';
 import { DEFAULT_FILE_QUEUE_LIMIT, DEFAULT_FILE_SIZE_LIMIT } from './constants';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderInput } from './useFileUploaderInput';

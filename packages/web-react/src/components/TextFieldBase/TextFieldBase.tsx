@@ -1,6 +1,7 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useStyleProps, useDeprecationMessage, useValidationText } from '../../hooks';
+import { useStyleProps, useDeprecationMessage } from '../../hooks';
+import { useValidationText } from '../Field';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import TextFieldBaseInput from './TextFieldBaseInput';

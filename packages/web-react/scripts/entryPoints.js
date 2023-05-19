@@ -12,6 +12,7 @@ const entryPoints = [
   { dirs: ['components', 'Container'] },
   { dirs: ['components', 'Dialog'] },
   { dirs: ['components', 'Dropdown'] },
+  { dirs: ['components', 'Field'] },
   { dirs: ['components', 'FileUploader'] },
   { dirs: ['components', 'Grid'] },
   { dirs: ['components', 'Header'] },
