@@ -11,7 +11,7 @@ export type Params = Record<string, string[] | string> | never[];
 export type ValidatorCallback = (...args: string[]) => boolean | number;
 
 export type Validator = {
-  fn: ValidatorCallback;
+  validatorCallback: ValidatorCallback;
   priority?: number;
   halt?: boolean;
   message?: string | ((message: string, params: Params) => string) | null;

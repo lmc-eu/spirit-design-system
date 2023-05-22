@@ -113,11 +113,11 @@ FormValidations.addValidator(nameOrElem, handler, errorMessage, priority, halt);
 ```javascript
 var formValidations = new FormValidations(document.getElementById('form1'));
 
-var elem = document.getElementById('email');
+var element = document.getElementById('email');
 
 // A validator to check if the first letter is capitalized
 formValidations.addElementValidator(
-  elem,
+  element,
   function (value) {
     // here `this` refers to the respective input element
     if (value.length && value[0] === value[0].toUpperCase()) {
@@ -225,13 +225,13 @@ _Set the current locale globally_
 
 _Add a custom validator_
 
-| Parameter  | Default | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `elem`     | -       | ✔         | The dom element where validator is applied to.                                                                                                                                                                                                                                                                                                                                                           |
-| `fn`       | -       | ✔         | The function that validates the field. The value of the input field gets passed as the first parameter, and the attribute value (split using a comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, the validator function gets called like `fn("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element |
-| `message`  | -       | ✔         | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments    |
-| `priority` | 1       | ✕         | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                    |
-| `halt`     | `false` | ✕         | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                |
+| Parameter           | Default | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `element`           | -       | ✔         | The dom element where validator is applied to.                                                                                                                                                                                                                                                                                                                                                                          |
+| `validatorCallback` | -       | ✔         | The function that validates the field. The value of the input field gets passed as the first parameter, and the attribute value (split using a comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, the validator function gets called like `validatorCallback("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element |
+| `message`           | -       | ✔         | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments                   |
+| `priority`          | 1       | ✕         | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                                   |
+| `halt`              | `false` | ✕         | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                               |
 
 **FormValidations.addValidator(name, fn, message, priority, halt)**
 

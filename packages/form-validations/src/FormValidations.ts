@@ -62,9 +62,9 @@ const validate = (name: string, validator: Validator) => {
   validators[name] = namedValidator;
 };
 
-validate('text', { fn: () => true, priority: 0 });
+validate('text', { validatorCallback: () => true, priority: 0 });
 validate('required', {
-  fn(value) {
+  validatorCallback(value) {
     return this.type === 'radio' || this.type === 'checkbox'
       ? groupedElemCount(this)
       : value != null && value.trim() !== '';
@@ -72,13 +72,13 @@ validate('required', {
   priority: 99,
   halt: true,
 });
-validate('email', { fn: (val) => !val || EMAIL_REGEX.test(val) });
-validate('number', { fn: (val) => !val || !Number.isNaN(parseFloat(val)), priority: 2 });
-validate('integer', { fn: (val) => !val || /^\d+$/.test(val) });
-validate('minlength', { fn: (val, length) => !val || val.length >= parseInt(length, 10) });
-validate('maxlength', { fn: (val, length) => !val || val.length <= parseInt(length, 10) });
+validate('email', { validatorCallback: (val) => !val || EMAIL_REGEX.test(val) });
+validate('number', { validatorCallback: (val) => !val || !Number.isNaN(parseFloat(val)), priority: 2 });
+validate('integer', { validatorCallback: (val) => !val || /^\d+$/.test(val) });
+validate('minlength', { validatorCallback: (val, length) => !val || val.length >= parseInt(length, 10) });
+validate('maxlength', { validatorCallback: (val, length) => !val || val.length <= parseInt(length, 10) });
 validate('min', {
-  fn(value: string, limit: string) {
+  validatorCallback(value: string, limit: string) {
     return (
       !value ||
       (this.type === 'checkbox'
@@ -88,7 +88,7 @@ validate('min', {
   },
 });
 validate('max', {
-  fn(value: string, limit: string) {
+  validatorCallback(value: string, limit: string) {
     return (
       !value ||
       (this.type === 'checkbox'
@@ -98,14 +98,14 @@ validate('max', {
   },
 });
 validate('pattern', {
-  fn: (value, pattern) => {
+  validatorCallback: (value, pattern) => {
     const matched = pattern.match(/^\/(.*?)\/([gimy]*)$/) || [];
 
     return !value || new RegExp(matched[1], matched[2]).test(value);
   },
 });
 validate('equals', {
-  fn: (value: string, otherFieldSelector: string) => {
+  validatorCallback: (value: string, otherFieldSelector: string) => {
     const other = document.querySelector(otherFieldSelector) as HTMLInputElement;
 
     return other && ((!value && !other.value) || other.value === value);
@@ -233,10 +233,15 @@ class FormValidations {
     );
   }
 
-  private static addValidatorToField(fns: NamedValidator[], params: Params, name: string, value: string | null = null) {
+  private static addValidatorToField(
+    validatorCallbacks: NamedValidator[],
+    params: Params,
+    name: string,
+    value: string | null = null,
+  ) {
     const validator = validators[name];
     if (validator) {
-      fns.push(validator);
+      validatorCallbacks.push(validator);
       if (value) {
         const valueParams = name === 'pattern' ? [value] : value.split(',');
         valueParams.unshift(''); // placeholder for input's value
@@ -303,7 +308,7 @@ class FormValidations {
       const params = field.params[validator.name] ? field.params[validator.name] : [];
       params[0] = field.input.value;
 
-      if (!validator.fn.apply(field.input, params)) {
+      if (!validator.validatorCallback.apply(field.input, params)) {
         valid = false;
 
         if (typeof validator.message === 'function') {
@@ -340,7 +345,7 @@ class FormValidations {
    * Add a validator to a specific dom element in a form
    *
    * @param element FormValidationsElement => The dom element where the validator is applied to
-   * @param validator Validator => validator function
+   * @param validatorCallback ValidatorCallback => validator function
    * @param message string => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
    *                          so on are for the attribute values
    * @param priority number=> priority of the validator function, higher valued function gets called first.
@@ -348,13 +353,13 @@ class FormValidations {
    */
   static addElementValidator(
     element: FormValidationsElement,
-    validator: ValidatorCallback,
+    validatorCallback: ValidatorCallback,
     message: string,
     priority: number,
     halt: boolean,
   ) {
     if (element instanceof HTMLElement) {
-      element.formValidations.validators.push({ fn: validator, message, priority, halt, name: '' });
+      element.formValidations.validators.push({ validatorCallback, message, priority, halt, name: '' });
       element.formValidations.validators.sort((a, b) => (b.priority as number) - (a.priority as number));
     } else {
       // eslint-disable-next-line no-console
@@ -366,7 +371,7 @@ class FormValidations {
    *
    *
    * @param name => Name of the global validator
-   * @param validator => validator function
+   * @param validatorCallback => validator function
    * @param message => message to show when validation fails. Supports templating. ${0} for the input's value, ${1} and
    *                   so on are for the attribute values
    * @param priority => priority of the validator function, higher valued function gets called first.
@@ -374,12 +379,12 @@ class FormValidations {
    */
   static addValidator(
     name: string,
-    validator: ValidatorCallback,
+    validatorCallback: ValidatorCallback,
     message: string | null,
     priority: number,
     halt: boolean,
   ) {
-    validate(name, { fn: validator, message, priority, halt });
+    validate(name, { validatorCallback, message, priority, halt });
   }
 
   /**
