@@ -221,7 +221,7 @@ _Set the current locale globally_
 
 ### Custom validators
 
-**FormValidations.addElementValidator(elem, fn, msg, priority, halt)**
+**FormValidations.addElementValidator(elem, fn, message, priority, halt)**
 
 _Add a custom validator_
 
@@ -233,7 +233,7 @@ _Add a custom validator_
 | `priority` | 1       | ✕         | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                    |
 | `halt`     | `false` | ✕         | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                |
 
-**FormValidations.addValidator(name, fn, msg, priority, halt)**
+**FormValidations.addValidator(name, fn, message, priority, halt)**
 
 _Add a global custom validator_
 

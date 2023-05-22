@@ -306,13 +306,17 @@ class FormValidations {
       if (!validator.fn.apply(field.input, params)) {
         valid = false;
 
-        if (typeof validator.msg === 'function') {
-          errors.push(validator.msg(field.input.value, params));
-        } else if (typeof validator.msg === 'string') {
-          errors.push(fillTemplate(validator.msg, params));
-        } else if (validator.msg && validator.msg === Object(validator.msg) && validator.msg[this.currentLocale]) {
+        if (typeof validator.message === 'function') {
+          errors.push(validator.message(field.input.value, params));
+        } else if (typeof validator.message === 'string') {
+          errors.push(fillTemplate(validator.message, params));
+        } else if (
+          validator.message &&
+          validator.message === Object(validator.message) &&
+          validator.message[this.currentLocale]
+        ) {
           // typeof generates unnecessary babel code
-          errors.push(fillTemplate(validator.msg[this.currentLocale], params));
+          errors.push(fillTemplate(validator.message[this.currentLocale], params));
         } else if (field.messages?.[this.currentLocale]?.[validator.name]) {
           errors.push(fillTemplate(field.messages[this.currentLocale][validator.name], params));
         } else if (lang[this.currentLocale] && lang[this.currentLocale][validator.name]) {
@@ -350,7 +354,7 @@ class FormValidations {
     halt: boolean,
   ) {
     if (element instanceof HTMLElement) {
-      element.formValidations.validators.push({ fn: validator, msg: message, priority, halt, name: '' });
+      element.formValidations.validators.push({ fn: validator, message, priority, halt, name: '' });
       element.formValidations.validators.sort((a, b) => (b.priority as number) - (a.priority as number));
     } else {
       // eslint-disable-next-line no-console
@@ -375,7 +379,7 @@ class FormValidations {
     priority: number,
     halt: boolean,
   ) {
-    validate(name, { fn: validator, msg: message, priority, halt });
+    validate(name, { fn: validator, message, priority, halt });
   }
 
   /**
