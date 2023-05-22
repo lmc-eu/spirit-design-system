@@ -4,24 +4,25 @@
   import FormValidations from './src/index.ts';
 
   window.onload = function () {
-    var form1 = document.getElementById("form1");
-    var form2 = document.getElementById("form2");
-    var form3 = document.getElementById("form3");
-    var form4 = document.getElementById("form4");
-    var form5 = document.getElementById("form5");
-
     FormValidations.addValidator("my-range", function(value, param1, param2) {
       return parseInt(param1) <= value && value <= parseInt(param2)
     }, "The value (${0}) must be between ${1} and ${2}", 5, false);
 
-    // create the form validations instance
-    var formValidations1 = new FormValidations(form1);
-    var formValidations2 = new FormValidations(form2);
-    var formValidations3 = new FormValidations(form3);
-    var formValidations4 = new FormValidations(form4);
-    var formValidations5 = new FormValidations(form5);
+    const specificElement = document.getElementById("custom-field-specific-validator");
 
-    var specificElement = document.getElementById("custom-field-specific-validator");
+    const demoFormIds = ['form1', 'form2', 'form3', 'form4', 'form5'];
+
+    demoFormIds.forEach((id) => {
+      const form = document.getElementById(id);
+      // create the form validations instance
+      const formValidations = new FormValidations(form);
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // check if the form is valid
+        const valid = formValidations.validate(); // returns true or false
+      });
+    });
 
     FormValidations.addElementValidator(specificElement, function(value, element) {
       if (value.length && value[0] === value[0].toUpperCase()) {
@@ -30,48 +31,6 @@
 
       return false;
     }, "The first character must be capitalized", 2, false);
-
-    form1.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid1 = formValidations1.validate(); // returns true or false
-    });
-
-    form2.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid2 = formValidations2.validate(); // returns true or false
-    });
-
-    form2.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid2 = formValidations2.validate(); // returns true or false
-    });
-
-    form3.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid3 = formValidations3.validate(); // returns true or false
-    });
-
-    form4.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid4 = formValidations4.validate(); // returns true or false
-    });
-
-    form5.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // check if the form is valid
-      var valid5 = formValidations5.validate(); // returns true or false
-    });
   };
 </script>
 
