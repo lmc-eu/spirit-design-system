@@ -89,18 +89,18 @@ const defaultConfig = {
 
 ## Built-in validators
 
-| Name      | Usage                                                                                                           | Description                     |
-| --------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| required  | `required` or `data-form-validations-required`                                                                  | Validates required fields       |
-| email     | `type="email"` or `data-form-validations-type="email"`                                                          | Validates email                 |
-| number    | `type="number"` or `data-form-validations-type="number"`                                                        |                                 |
-| integer   | `data-form-validations-type="integer"`                                                                          |                                 |
-| minlength | `minlength="10"` or `data-form-validations-minlength="10"`                                                      |                                 |
-| maxlength | `maxlength="10"` or `data-form-validations-maxlength="10"`                                                      |                                 |
-| min       | `min="20"` or `data-form-validations-min="20"`                                                                  |                                 |
-| max       | `max="100"` or `data-form-validations-max="100"`                                                                |                                 |
-| pattern   | `pattern="/[a-z]+$/i"` or `data-form-validations-pattern="/[a-z]+$/i"`, `\` must be escaped (replace with `\\`) |                                 |
-| equals    | `data-form-validations-equals="#field-selector"`                                                                | Check that two fields are equal |
+| Name      | Usage                                                                                                 | Description                     |
+| --------- | ----------------------------------------------------------------------------------------------------- | ------------------------------- |
+| required  | `required` or `data-spirit-required`                                                                  | Validates required fields       |
+| email     | `type="email"` or `data-spirit-type="email"`                                                          | Validates email                 |
+| number    | `type="number"` or `data-spirit-type="number"`                                                        |                                 |
+| integer   | `data-spirit-type="integer"`                                                                          |                                 |
+| minlength | `minlength="10"` or `data-spirit-minlength="10"`                                                      |                                 |
+| maxlength | `maxlength="10"` or `data-spirit-maxlength="10"`                                                      |                                 |
+| min       | `min="20"` or `data-spirit-min="20"`                                                                  |                                 |
+| max       | `max="100"` or `data-spirit-max="100"`                                                                |                                 |
+| pattern   | `pattern="/[a-z]+$/i"` or `data-spirit-pattern="/[a-z]+$/i"`, `\` must be escaped (replace with `\\`) |                                 |
+| equals    | `data-spirit-equals="#field-selector"`                                                                | Check that two fields are equal |
 
 ## Custom Validator
 
