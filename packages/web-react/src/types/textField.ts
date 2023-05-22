@@ -1,3 +1,4 @@
+import { ComponentPropsWithRef } from 'react';
 import {
   ChildrenProps,
   HelperTextProps,
@@ -12,7 +13,7 @@ import { MessageProps } from './message';
 
 export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
-export type TextFieldElementBaseProps = SpiritInputElementProps;
+export type TextFieldElementBaseProps = SpiritInputElementProps & ComponentPropsWithRef<'input'>;
 
 export interface TextFieldProps
   extends TextFieldElementBaseProps,

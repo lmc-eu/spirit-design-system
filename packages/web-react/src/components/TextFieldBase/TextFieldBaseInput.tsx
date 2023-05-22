@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { forwardRef, ForwardedRef, RefObject } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTextFieldBaseInputProps } from '../../types';
 import { useTextFieldBaseInputStyleProps } from './useTextFieldBaseInputStyleProps';
 
-export const TextFieldBaseInput = (props: SpiritTextFieldBaseInputProps) => {
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_TextFieldBaseInput'] }] */
+const _TextFieldBaseInput = (
+  props: SpiritTextFieldBaseInputProps,
+  ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>,
+) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseInputStyleProps(props);
   const { id, isDisabled, isMultiline, isRequired, inputWidth, type, ...restProps } = modifiedProps;
   const { props: otherProps } = useStyleProps(restProps);
@@ -17,11 +22,16 @@ export const TextFieldBaseInput = (props: SpiritTextFieldBaseInputProps) => {
       className={classProps.input}
       disabled={isDisabled}
       id={id}
+      ref={ref as RefObject<HTMLInputElement & HTMLTextAreaElement>}
       required={isRequired}
       size={inputWidth}
       type={inputType}
     />
   );
 };
+
+export const TextFieldBaseInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseInputProps>(
+  _TextFieldBaseInput,
+);
 
 export default TextFieldBaseInput;

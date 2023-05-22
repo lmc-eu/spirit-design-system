@@ -8,6 +8,12 @@ export default {
     },
     defaultValue: undefined,
   },
+  isAutoResizing: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: false,
+  },
   isDisabled: {
     control: {
       type: 'boolean',

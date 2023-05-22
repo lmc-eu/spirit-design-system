@@ -8,23 +8,32 @@ and show if the textarea is required.
 <TextArea id="example" name="example" validationState="danger" message="validation failed" isRequired />
 ```
 
+## Textarea with Auto-Height Adjustment
+
+```jsx
+<TextArea id="example" name="example" isAutoResizing autoResizingMaxHeight={500} />
+```
+
 ## Available props
 
-| Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
-| ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `id`              | `string`                                                             | -       | yes      | Textarea and label identification                                                                                                  |
-| `name`            | `string`                                                             | -       | no       | Textarea name                                                                                                                      |
-| `label`           | `string`                                                             | -       | no       | Label text                                                                                                                         |
-| `placeholder`     | `string`                                                             | -       | no       | Textarea placeholder                                                                                                               |
-| `value`           | `string`                                                             | -       | no       | Textarea value                                                                                                                     |
-| `maxLength`       | `number`                                                             | -       | no       | Maximum number of characters                                                                                                       |
-| `message`         | `string`                                                             | -       | no       | Validation message                                                                                                                 |
-| `rows`            | `number`                                                             | -       | no       | Number of visible rows                                                                                                             |
-| `validationState` | [Validation dictionary][dictionary-validation], `error` (deprecated) | -       | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
-| `isDisabled`      | `boolean`                                                            | -       | no       | Whether is field disabled                                                                                                          |
-| `isRequired`      | `boolean`                                                            | -       | no       | Whether is field required                                                                                                          |
-| `isLabelHidden`   | `boolean`                                                            | -       | no       | Whether is label hidden                                                                                                            |
-| `helperText`      | `string`                                                             | -       | no       | Custom helper text                                                                                                                 |
+| Prop name               | Type                                                                 | Default | Required | Description                                                                                                                        |
+| ----------------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                    | `string`                                                             | -       | yes      | Textarea and label identification                                                                                                  |
+| `name`                  | `string`                                                             | -       | no       | Textarea name                                                                                                                      |
+| `label`                 | `string`                                                             | -       | no       | Label text                                                                                                                         |
+| `placeholder`           | `string`                                                             | -       | no       | Textarea placeholder                                                                                                               |
+| `value`                 | `string`                                                             | -       | no       | Textarea value                                                                                                                     |
+| `maxLength`             | `number`                                                             | -       | no       | Maximum number of characters                                                                                                       |
+| `message`               | `string`                                                             | -       | no       | Validation message                                                                                                                 |
+| `rows`                  | `number`                                                             | -       | no       | Number of visible rows                                                                                                             |
+| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`                                  | -       | no       | Textarea element reference                                                                                                         |
+| `validationState`       | [Validation dictionary][dictionary-validation], `error` (deprecated) | -       | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
+| `isAutoResizing`        | `boolean`                                                            | -       | no       | Whether is field auto resizing which adjusts its height while typing                                                               |
+| `isDisabled`            | `boolean`                                                            | -       | no       | Whether is field disabled                                                                                                          |
+| `isRequired`            | `boolean`                                                            | -       | no       | Whether is field required                                                                                                          |
+| `isLabelHidden`         | `boolean`                                                            | -       | no       | Whether is label hidden                                                                                                            |
+| `helperText`            | `string`                                                             | -       | no       | Custom helper text                                                                                                                 |
+| `autoResizingMaxHeight` | `number`                                                             | `400`   | no       | Maximum field height with automatic height control                                                                                 |
 
 ## Custom component
 

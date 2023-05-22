@@ -1,3 +1,4 @@
+import { ComponentPropsWithRef } from 'react';
 import {
   ChildrenProps,
   HelperTextProps,
@@ -9,7 +10,7 @@ import {
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
-export type TextAreaElementBaseProps = SpiritTextAreaElementProps;
+export type TextAreaElementBaseProps = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;
 
 export interface TextAreaProps
   extends TextAreaElementBaseProps,
@@ -22,6 +23,10 @@ export interface TextAreaProps
     Validation {
   /** Maximum characters length */
   maxLength?: number;
+  /** Whether is field auto resizing which adjusts its height while typing */
+  isAutoResizing?: boolean;
+  /** Maximum field height with automatic height control */
+  autoResizingMaxHeight?: number;
 }
 
 export interface SpiritTextAreaProps extends TextAreaProps {}

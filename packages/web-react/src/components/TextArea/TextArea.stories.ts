@@ -22,5 +22,6 @@ export { default as TextAreaInputHeight } from './stories/TextAreaInputHeight';
 export { default as TextAreaLabelHidden } from './stories/TextAreaLabelHidden';
 export { default as TextAreaLabelRequired } from './stories/TextAreaRequired';
 export { default as TextAreaValidationState } from './stories/TextAreaValidationState';
+export { default as TextAreaWithAutoResize } from './stories/TextAreaWithAutoResize';
 export { default as TextAreaHelperText } from './stories/TextAreaHelperText';
 export { default as HTML } from './stories/TextAreaHtml';

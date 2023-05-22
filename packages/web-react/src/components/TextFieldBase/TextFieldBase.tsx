@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps, useDeprecationMessage } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
@@ -6,9 +6,13 @@ import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import TextFieldBaseInput from './TextFieldBaseInput';
 import withPasswordToggle from './withPasswordToggle';
 
-const TextFieldBaseInputWithPasswordToggle = withPasswordToggle<TextFieldBasePasswordToggleProps>(TextFieldBaseInput);
+const TextFieldBaseInputWithPasswordToggle = forwardRef(
+  withPasswordToggle<TextFieldBasePasswordToggleProps>(TextFieldBaseInput),
+);
 
-export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_TextFieldBase'] }] */
+const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
   const { id, label, message, helperText, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
@@ -36,11 +40,15 @@ export const TextFieldBase = (props: SpiritTextFieldBaseProps) => {
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
-      <TextFieldBaseInputWithPasswordToggle id={id} {...otherProps} />
+      <TextFieldBaseInputWithPasswordToggle id={id} ref={ref} {...otherProps} />
       {helperText && <div className={classProps.helperText}>{helperText}</div>}
       {message && <div className={classProps.message}>{message}</div>}
     </div>
   );
 };
+
+export const TextFieldBase = forwardRef<HTMLInputElement | HTMLTextAreaElement, SpiritTextFieldBaseProps>(
+  _TextFieldBase,
+);
 
 export default TextFieldBase;
