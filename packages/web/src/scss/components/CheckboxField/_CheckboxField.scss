@@ -51,7 +51,8 @@ $_field-name: 'CheckboxField';
     }
 }
 
-.CheckboxField__message {
+.CheckboxField__message,
+.CheckboxField > .CheckboxField__text > [data-element='validator_message'] {
     @include form-fields-tools.message();
 }
 
