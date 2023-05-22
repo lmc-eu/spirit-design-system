@@ -401,7 +401,9 @@ class FormValidations {
     const errorClassElement = findAncestor(field.input, this.config.formFieldSelector);
     let validationTextParent = null;
     let validationTextElement: ValidationTextElement | null = null;
-    if (this.config.formFieldSelector === this.config.validationTextParentSelector) {
+    if (field.input.type === 'checkbox') {
+      validationTextParent = errorClassElement?.querySelector<HTMLSpanElement>('span');
+    } else if (this.config.formFieldSelector === this.config.validationTextParentSelector) {
       validationTextParent = errorClassElement;
     } else {
       validationTextParent = errorClassElement?.querySelector<HTMLElement>(this.config.validationTextParentSelector);
