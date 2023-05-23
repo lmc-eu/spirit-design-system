@@ -55,7 +55,7 @@
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="zipcode" class="TextField__label">ZIP code</label>
-            <input type="text" id="zipcode" class="TextField__input" placeholder="123" data-spirit-pattern="/^[0-9]{5}(?:-[0-9]{4})?$/" data-spirit-pattern-message="Invalid ZIP code" />
+            <input type="text" id="zipcode" class="TextField__input" placeholder="123" data-spirit-pattern="/d{5}|\d{3}[ ]?\d{2}/" data-spirit-pattern-message="Invalid ZIP code" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="age" class="TextField__label TextField__label--required">Your age (min. 14)</label>
