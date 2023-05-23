@@ -1,6 +1,8 @@
 // 1. Make whole drop zone clickable.
 // 2. Increase specificity (also in the mixin) by including `.FileUploaderInput__input` to override the `active` state.
+// 3. Increase specificity to make the disabled state override any other
 
+@use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/accessibility';
 @use '../../tools/form-fields' as form-fields-tools;
@@ -89,14 +91,55 @@ $_field-name: 'FileUploaderInput';
     border-color: theme.$input-drop-zone-border-color-hover;
 }
 
-.FileUploaderInput .FileUploaderInput__input:active ~ .FileUploaderInput__dropZone {
+.FileUploaderInput > .FileUploaderInput__input:active ~ .FileUploaderInput__dropZone {
     border-color: theme.$input-drop-zone-border-color-active;
+}
+
+// 2.
+.FileUploaderInput.is-dragging > .FileUploaderInput__input ~ .FileUploaderInput__dropZone {
+    border: theme.$input-drop-zone-dragging-border;
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name); // 2.
 
-// 2.
-.FileUploaderInput.is-dragging .FileUploaderInput__input ~ .FileUploaderInput__dropZone {
-    border: theme.$input-drop-zone-dragging-border;
+:is(.FileUploaderInput--disabled, .FileUploaderInput.is-disabled)
+    :is(.FileUploaderInput__validationText, [data-element='validator_message']) {
+    @include form-fields-tools.message-disabled();
+}
+
+:is(.FileUploaderInput--disabled, .FileUploaderInput.is-disabled) .FileUploaderInput__helperText {
+    @include form-fields-tools.helper-text-disabled();
+}
+
+// 3.
+// stylelint-disable selector-max-compound-selectors, selector-max-specificity
+.FileUploaderInput > .FileUploaderInput__input:disabled ~ .FileUploaderInput__dropZone > svg,
+.FileUploaderInput
+    > .FileUploaderInput__input:disabled
+    ~ .FileUploaderInput__dropZone
+    > .FileUploaderInput__dropZoneLabel,
+.FileUploaderInput
+    .FileUploaderInput__input:disabled
+    ~ .FileUploaderInput__dropZone
+    > .FileUploaderInput__dropZoneLabel
+    > .FileUploaderInput__link {
+    color: form-fields-theme.$input-color-disabled;
+}
+
+.FileUploaderInput
+    .FileUploaderInput__input:disabled
+    ~ .FileUploaderInput__dropZone
+    > .FileUploaderInput__dropZoneLabel
+    > .FileUploaderInput__link {
+    cursor: cursors.$disabled;
+}
+// stylelint-enable selector-max-compound-selectors, selector-max-specificity
+
+.FileUploaderInput > .FileUploaderInput__input:disabled ~ .FileUploaderInput__dropZone {
+    @include form-fields-tools.box-field-disabled-input-v1();
 }
 // stylelint-enable selector-max-class
+
+.FileUploaderInput--disabled > .FileUploaderInput__label {
+    @include form-fields-tools.label-disabled();
+}

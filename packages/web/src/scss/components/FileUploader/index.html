@@ -358,6 +358,60 @@
 </section>
 <section class="docs-Section">
 
+  <h2 class="docs-Heading">Input Disabled</h2>
+
+  <div class="docs-FormFieldGrid">
+
+    <!-- FileUploader: start -->
+    <div class="FileUploader" data-toggle="fileUploader">
+
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="text-truncate" data-spirit-populate-field="name"></span>
+          <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput FileUploaderInput--disabled" data-spirit-element="wrapper">
+        <label for="fileUploadDisabled" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <input type="file" id="fileUploadDisabled" name="attachment4" class="FileUploaderInput__input" required disabled data-spirit-element="input" />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploadDisabled" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        </div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-fileUploadDisabled" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-fileUploadDisabled" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+
+  </div>
+
+</section>
+<section class="docs-Section">
+
   <h2 class="docs-Heading">Input with Attachment</h2>
 
   <div class="docs-FormFieldGrid">
