@@ -458,9 +458,8 @@ class FormValidations {
   /**
    * Adds error to a specific field
    *
-   * @param input
-   * @param error
    * @param field
+   * @param error
    */
   public addError(field: Field, error: string) {
     const input = Array.isArray(field) ? field[0] : field;
