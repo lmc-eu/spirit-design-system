@@ -78,7 +78,7 @@
             <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
           </div>
           <label for="checkboxfield1" class="CheckboxField" data-spirit-validate>
-            <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" required />
+            <input type="checkbox" id="checkboxfield1" name="checkboxfield1" class="CheckboxField__input" required />
             <span class="CheckboxField__text">
               <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions (required)</span>
             </span>
@@ -231,7 +231,7 @@
             <input type="number" id="custom-errors-number" class="TextField__input" value="5" required min="100" data-spirit-min-message="Anything larger than 99" />
           </div>
           <label for="custom-errors-checkboxfield" class="CheckboxField" data-spirit-validate>
-            <input type="checkbox" id="custom-errors-checkboxfield" class="CheckboxField__input" required data-spirit-required-message="You must accept the terms and conditions" />
+            <input type="checkbox" id="custom-errors-checkboxfield" name="custom-errors-checkboxfield" class="CheckboxField__input" required data-spirit-required-message="You must accept the terms and conditions" />
             <span class="CheckboxField__text">
               <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions</span>
             </span>
