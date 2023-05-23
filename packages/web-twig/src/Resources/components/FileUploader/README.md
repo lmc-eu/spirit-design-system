@@ -139,6 +139,18 @@ To mark the input as required, simply add the `isRequired` attribute:
 />
 ```
 
+### Disabled Input
+
+To mark the input as disabled, simply add the `isDisabled` attribute:
+
+```twig
+<FileUploaderInput
+  id="example-input"
+  isDisabled
+  label="Label"
+/>
+```
+
 ### Validation States
 
 Just like any other form component in Spirit, FileUploader implements the
@@ -166,6 +178,7 @@ When validated on server:
 | `helperText`            | `string`                                       | `null`                  | no\*\*   | Custom helper text                                                    |
 | `iconName`              | `string`                                       | `upload`                | no       | Icon used in the drop zone                                            |
 | `id`                    | `string`                                       | —                       | yes      | Input and label identification                                        |
+| `isDisabled`            | `bool`                                         | `false`                 | no       | If true, input is disabled                                            |
 | `isLabelHidden`         | `bool`                                         | `false`                 | no       | If true, label is hidden                                              |
 | `isRequired`            | `bool`                                         | `false`                 | no       | If true, input is required                                            |
 | `label`                 | `string`                                       | `null`                  | no\*     | Label text                                                            |
