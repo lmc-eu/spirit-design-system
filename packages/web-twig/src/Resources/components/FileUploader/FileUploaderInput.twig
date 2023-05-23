@@ -4,8 +4,9 @@
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _iconName = props.iconName | default('upload') -%}
 {%- set _id = props.id -%}
-{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
-{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
+{%- set _isRequired = props.isRequired | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _maxFileSize = props.maxFileSize | default(null) -%}
 {%- set _maxUploadedFiles = props.maxUploadedFiles | default(null) -%}
@@ -20,6 +21,7 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderInput' -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'FileUploaderInput--disabled' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'FileUploaderInput--' ~ _validationState : null -%}
 {%- set _dropzoneClassName = _spiritClassPrefix ~ 'FileUploaderInput__dropZone' -%}
 {%- set _dropzoneLabelClassName = _spiritClassPrefix ~ 'FileUploaderInput__dropZoneLabel' -%}
@@ -33,6 +35,7 @@
 {%- set _validationTextClassName = _spiritClassPrefix ~ 'FileUploaderInput__validationText' -%}
 
 {# Attributes #}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _dataMaxFileSizeAttr = _maxFileSize ? 'data-spirit-max-file-size=' ~ _maxFileSize : null -%}
@@ -44,7 +47,7 @@
 {%- set _allowedAttributes = [ 'accept', 'multiple' ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-element', 'id']) -%}
-{%- set _rootClassNames = [ _rootClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 
 <div
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
@@ -69,6 +72,7 @@
         class="{{ _inputClassName }}"
         data-spirit-element="input"
         {{ _nameAttr | raw }}
+        {{ _disabledAttr }}
         {{ _requiredAttr }}
     />
     <div class="{{ _dropzoneClassName }}" data-spirit-element="dropZone">

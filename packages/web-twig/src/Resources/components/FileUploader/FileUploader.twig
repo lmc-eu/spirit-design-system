@@ -1,6 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _isFluid = props.isFluid | default(false) | boolprop -%}
+{%- set _isFluid = props.isFluid | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'FileUploader' -%}
