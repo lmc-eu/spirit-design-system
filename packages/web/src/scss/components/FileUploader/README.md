@@ -198,6 +198,27 @@ When validated on server:
 </div>
 ```
 
+### Disabled State
+
+You can turn on the disabled state by adding the `disabled` attribute to the native `input`
+(`FileUploaderInput__input`). Do not forget to also add the class `FileUploaderInput--disabled`
+or `is-disabled` to the `FileUploaderInput` subcomponent as well.
+
+```html
+<div class="FileUploaderInput FileUploaderInput--disabled" data-spirit-element="wrapper">
+  <!-- Label -->
+  <input
+    type="file"
+    id="fileUploadDisabled"
+    name="attachment"
+    class="FileUploaderInput__input"
+    disabled
+    data-spirit-element="input"
+  />
+  <!-- Drop zone -->
+</div>
+```
+
 #### JavaScript-Controlled Validation Message
 
 When implementing client-side form validation, use JS interaction state classes

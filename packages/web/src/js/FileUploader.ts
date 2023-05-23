@@ -12,7 +12,7 @@ const EVENT_ERROR = `error${EVENT_KEY}`;
 const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
 const IS_DRAGGING_CLASS_NAME = 'is-dragging';
 const DROP_ZONE_HIDDEN_CLASS_NAME = 'd-none';
-const DROP_ZONE_DISABLED_CLASS_NAME = 'd-none'; // TODO: Modify when the disabled state is ready for the entire component (https://jira.lmc.cz/browse/DS-772)
+const DROP_ZONE_DISABLED_CLASS_NAME = 'is-disabled';
 const WRAPPER_ELEMENT_SELECTOR = '[data-spirit-element="wrapper"]';
 const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
@@ -158,7 +158,8 @@ class FileUploader extends BaseComponent {
 
     // This is forcing the callback to run last
     setTimeout(() => {
-      this.dropZone?.classList.toggle(dropZoneClassName, this.fileQueue.size === this.fileQueueLimit);
+      this.wrapper?.classList.toggle(dropZoneClassName, this.fileQueue.size === this.fileQueueLimit);
+      this.inputElement.disabled = this.fileQueue.size === this.fileQueueLimit;
     }, 0);
   }
 
