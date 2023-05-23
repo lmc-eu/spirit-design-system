@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <div data-toggle="scrollView" class="ScrollView ScrollView--vertical" data-spirit-direction="vertical">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          ScrollView
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true">
+      </div>
+    </div>
+    <!-- Render with horizontal direction -->
+
+    <div data-toggle="scrollView" class="ScrollView ScrollView--horizontal" data-spirit-direction="horizontal">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          ScrollView content
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true">
+      </div>
+    </div>
+    <!-- Render with disabled Scrollbar -->
+
+    <div data-toggle="scrollView" class="ScrollView ScrollView--horizontal ScrollView--scrollbarDisabled" data-spirit-direction="horizontal">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          <p>
+            ScrollView content
+          </p>
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true">
+      </div>
+    </div>
+    <!-- Render with borders as indicators -->
+
+    <div data-toggle="scrollView" class="ScrollView ScrollView--vertical" data-spirit-direction="vertical">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          <p>
+            ScrollView content
+          </p>
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true">
+      </div>
+    </div>
+    <!-- Render with both indicators and in horizontal direction -->
+
+    <div data-toggle="scrollView" class="ScrollView ScrollView--horizontal" data-spirit-direction="horizontal">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          <p>
+            ScrollView content
+          </p>
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--shadows ScrollView__indicators--borders" aria-hidden="true">
+      </div>
+    </div>
+    <!-- Render with all props -->
+
+    <div data-toggle="scrollView" class="ScrollView ScrollView--horizontal ScrollView--scrollbarDisabled" data-spirit-direction="horizontal">
+      <div class="ScrollView__viewport" data-spirit-element="viewport">
+        <div class="ScrollView__content" data-spirit-element="content">
+          <p>
+            ScrollView content
+          </p>
+        </div>
+      </div>
+
+      <div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true">
+      </div>
+    </div>
+  </body>
+</html>
