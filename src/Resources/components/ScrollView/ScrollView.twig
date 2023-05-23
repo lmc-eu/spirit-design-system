@@ -1,0 +1,37 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _direction = props.direction | default('vertical') -%}
+{%- set _indicators = props.indicators | default('shadows') -%}
+{%- set _isScrollbarDisabled = props.isScrollbarDisabled | default(false) -%}
+
+{# Class names #}
+{%- set _contentClassName = _spiritClassPrefix ~ 'ScrollView__content' -%}
+{%- set _indicatorsClassName = _spiritClassPrefix ~ 'ScrollView__indicators' -%}
+{%- set _indicatorsShadowsClassName = _indicators in ['shadows', 'both'] ? _spiritClassPrefix ~ 'ScrollView__indicators--shadows' : null -%}
+{%- set _indicatorsBordersClassName = _indicators in ['borders', 'both'] ? _spiritClassPrefix ~ 'ScrollView__indicators--borders' : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'ScrollView' -%}
+{%- set _rootDirectionClassName = _spiritClassPrefix ~ 'ScrollView--' ~ _direction -%}
+{%- set _rootScrollbarDisabledClassName = _isScrollbarDisabled ? _spiritClassPrefix ~ 'ScrollView--scrollbarDisabled' : '' -%}
+{%- set _viewportClassName = _spiritClassPrefix ~ 'ScrollView__viewport' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootDirectionClassName, _rootScrollbarDisabledClassName, _styleProps.className ] -%}
+{%- set _indicatorsClassNames = [ _indicatorsClassName, _indicatorsShadowsClassName, _indicatorsBordersClassName ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'data-spirit-direction') -%}
+
+<div
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    data-spirit-direction="{{ _direction }}"
+>
+    <div class="{{ _viewportClassName }}" data-spirit-element="viewport">
+        <div class="{{ _contentClassName }}" data-spirit-element="content">
+
+            {%- block content %}{% endblock -%}
+
+        </div>
+    </div>
+    <div {{ classProp(_indicatorsClassNames) }} aria-hidden="true"></div>
+</div>
