@@ -15,12 +15,14 @@ export interface UseFileUploaderInputProps {
 export interface UseFileUploaderInputReturn extends DragAndDropHandlingProps<HTMLDivElement> {
   isDragging: boolean;
   isDropZoneHidden: boolean;
+  isDisabledByQueueLimitBehavior: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileUploaderInputReturn => {
   const { maxFileSize, maxUploadedFiles, queueLimitBehavior, isMultiple, onError, accept } = props;
 
+  const [disabledByQueueLimitBehavior, setDisabledByQueueLimitBehavior] = useState(false);
   const [dropZoneHidden, setDropZoneHidden] = useState(false);
 
   const { fileQueue, addToQueue, clearQueue, errorMessages } = useFileUploaderContext();
@@ -85,7 +87,11 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
       return;
     }
 
-    setDropZoneHidden(queue?.size >= maxUploadedFiles);
+    if (queueLimitBehavior === 'hide') {
+      setDropZoneHidden(queue?.size >= maxUploadedFiles);
+    } else {
+      setDisabledByQueueLimitBehavior(queue?.size >= maxUploadedFiles);
+    }
   };
 
   const clearQueueHandler = () => {
@@ -185,6 +191,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
 
   return {
     isDropZoneHidden: dropZoneHidden,
+    isDisabledByQueueLimitBehavior: disabledByQueueLimitBehavior,
     onChange: onChangeHandler,
     ...dragAndDropProps,
   };

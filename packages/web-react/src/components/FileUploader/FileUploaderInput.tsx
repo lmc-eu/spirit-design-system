@@ -17,7 +17,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     id,
     inputRef,
     isLabelHidden,
-    // isDisabled,
+    isDisabled,
     queueLimitBehavior = 'none',
     isMultiple,
     isRequired,
@@ -34,22 +34,30 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
 
   const isDragAndDropSupported = 'draggable' in document.createElement('span');
 
-  const { isDragging, isDropZoneHidden, onChange, onDragOver, onDragEnter, onDragLeave, onDrop } = useFileUploaderInput(
-    {
-      accept,
-      maxFileSize,
-      maxUploadedFiles,
-      isMultiple,
-      queueLimitBehavior,
-      onError,
-    },
-  );
+  const {
+    isDisabledByQueueLimitBehavior,
+    isDragging,
+    isDropZoneHidden,
+    onChange,
+    onDragOver,
+    onDragEnter,
+    onDragLeave,
+    onDrop,
+  } = useFileUploaderInput({
+    accept,
+    maxFileSize,
+    maxUploadedFiles,
+    isMultiple,
+    queueLimitBehavior,
+    onError,
+  });
   const { classProps } = useFileUploaderStyleProps({
     isDragAndDropSupported,
     isLabelHidden,
-    // isDisabled,
+    isDisabled,
     isDropZoneHidden,
     isDragging,
+    isDisabledByQueueLimitBehavior,
     isRequired,
     queueLimitBehavior,
     validationState,
@@ -84,6 +92,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         onChange={onChange}
         multiple={isMultiple}
         required={isRequired}
+        disabled={isDisabled || isDisabledByQueueLimitBehavior}
         {...restProps}
       />
       <div ref={dropZoneRef} className={classProps.input.dropZone.root}>

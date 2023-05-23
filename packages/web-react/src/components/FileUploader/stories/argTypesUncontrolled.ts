@@ -13,18 +13,18 @@ export default {
       type: 'text',
     },
   },
+  isDisabled: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: false,
+  },
   isLabelHidden: {
     control: {
       type: 'boolean',
     },
     defaultValue: false,
   },
-  // isDisabled: {
-  //   control: {
-  //     type: 'boolean',
-  //   },
-  //   defaultValue: false,
-  // },
   queueLimitBehavior: {
     control: {
       type: 'select',

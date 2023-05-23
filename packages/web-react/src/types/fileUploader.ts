@@ -56,7 +56,7 @@ export interface FileUploaderInputBaseProps
   dropZoneRef?: MutableRefObject<HTMLDivElement>;
   id: string;
   inputRef?: MutableRefObject<HTMLInputElement>;
-  // isDisabled?: boolean;
+  isDisabled?: boolean;
   label?: string;
   name: string;
   onError?: FileUploaderErrorCallbackType;
@@ -82,7 +82,7 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
 
 export interface FileUploaderBaseProps extends SpiritDivElementProps, Partial<FileUploaderErrorMessagesProps> {
   id: string;
-  // isDisabled?: boolean;
+  isDisabled?: boolean;
 }
 
 export interface UncontrolledFileUploaderBaseProps
