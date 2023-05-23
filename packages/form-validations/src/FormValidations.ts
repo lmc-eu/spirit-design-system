@@ -40,7 +40,7 @@ type Config = {
 const defaultConfig: Config = {
   formFieldSelector: `[${DATA_ATTR_PREFIX}-validate]`,
   errorClass: 'has-danger',
-  successClass: 'has-success',
+  successClass: '',
   validationTextParentSelector: `[${DATA_ATTR_PREFIX}-validate]`,
   validationTextTag: 'div',
   validationTextClass: '',
