@@ -1,9 +1,11 @@
 import { ReactNode, ElementType, JSXElementConstructor } from 'react';
 
 export * from './adornments';
+export * from './alignments';
 export * from './colors';
 export * from './dialogs';
 export * from './dictionaries';
+export * from './directions';
 export * from './dom';
 export * from './dragAndDrop';
 export * from './element';

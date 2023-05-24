@@ -17,6 +17,7 @@ export * from './modal';
 export * from './modalComposed';
 export * from './pill';
 export * from './radioField';
+export * from './scrollView';
 export * from './shared';
 export * from './spinner';
 export * from './stack';
