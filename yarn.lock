@@ -3879,6 +3879,20 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.4.tgz#b6f80e55c9cc8ebb56e19abbd222c595655ed6a5"
   integrity sha512-mkIpOoA2GgkESZve2gazQCeyz6WOwe26Lll3yPDkwrx2AbA7bf2Z9ObLrQ0fhFmJJ5+fPs6gbyGZL8IM9GHMiA==
 
+"@lmc-eu/spirit-icons@^0.9.2":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.9.2.tgz#df9411253fd2ff8e2e4e2526f7e3efbe76b0cca8"
+  integrity sha512-1Ue2vD3HbQ2UW37mTLGHcq+sYz74CZFM3NqBFj1X01/wk6dL0N49bsx+tL+Gx6PX2+Bu9SQw+wgVy6huFha01A==
+
+"@lmc-eu/spirit-web@^0.44.0":
+  version "0.44.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-0.44.0.tgz#28b8bb222d4fcbc78282a58280304bd338618820"
+  integrity sha512-9E7PDGOt4k54hOOMz0EnmFfcJN2zrK0rR1F7WbX6K8ZP8fAx8ZCycgBejdnpVm/SpITNNYy5E9gstDkRpXtfWA==
+  dependencies:
+    "@csstools/normalize.css" "^12.0.0"
+    "@lmc-eu/spirit-design-tokens" "^0.25.2"
+    "@lmc-eu/spirit-icons" "^0.9.2"
+
 "@lmc-eu/stylelint-config@6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@lmc-eu/stylelint-config/-/stylelint-config-6.0.0.tgz#ab062951b0591fd0b5fc52a05c1a91bc9b553ee7"
@@ -11928,6 +11942,15 @@ eslint-module-utils@^2.7.4:
   integrity sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==
   dependencies:
     debug "^3.2.7"
+
+eslint-plugin-check-file@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-check-file/-/eslint-plugin-check-file-2.3.0.tgz#2efd46c89e45367593c589ac5d69544e8c4c6993"
+  integrity sha512-oTaKN2bdBJO8YpiuixhRgQwIPI3gXKHrgYWhO3POsXuwcXimPXUTqhgbPZpdndpgdD9GJn61y1F2s4S4Z0/xxA==
+  dependencies:
+    is-glob "^4.0.3"
+    micromatch "^4.0.5"
+    requireindex "^1.2.0"
 
 eslint-plugin-import@2.27.5, eslint-plugin-import@^2.27.5:
   version "2.27.5"
@@ -21073,6 +21096,11 @@ require-package-name@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/require-package-name/-/require-package-name-2.0.1.tgz#c11e97276b65b8e2923f75dabf5fb2ef0c3841b9"
   integrity sha1-wR6XJ2tluOKSP3Xav1+y7ww4Qbk=
+
+requireindex@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 requires-port@^1.0.0:
   version "1.0.0"

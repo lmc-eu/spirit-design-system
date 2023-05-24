@@ -21,7 +21,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
 
-  plugins: ['prettier'],
+  plugins: ['prettier', 'check-file'],
 
   rules: {
     'prettier/prettier': [
@@ -29,6 +29,24 @@ module.exports = {
       {
         ...prettierConfig,
       },
+    ],
+    'check-file/folder-match-with-fex': [
+      'error',
+      {
+        '*.test.{js,jsx,ts,tsx}': '**/__tests__/',
+      }
+    ],
+    'check-file/filename-naming-convention': [
+      'error',
+      {
+        '**/*.{!test,jsx,tsx}': 'PASCAL_CASE',
+      }
+    ],
+    'check-file/folder-naming-convention': [
+      'error',
+      {
+        'src/*/': 'FLAT_CASE',
+      }
     ],
   },
 };
