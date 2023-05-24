@@ -9,7 +9,6 @@ import {
   ValidationStates,
 } from '../../constants';
 
-/* Alignment */
 export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
 export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[AlignmentXDictionaryKeys] | T;
 

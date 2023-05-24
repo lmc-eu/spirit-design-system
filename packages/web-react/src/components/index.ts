@@ -18,6 +18,7 @@ export * from './Modal';
 export * from './ModalComposed';
 export * from './Pill';
 export * from './RadioField';
+export * from './ScrollView';
 export * from './Stack';
 export * from './Tabs';
 export * from './Tag';
