@@ -32,7 +32,7 @@ $_field-name: 'FileUploaderInput';
     background-color: theme.$input-drop-zone-background;
 }
 
-.FileUploaderInput__input:focus ~ .FileUploaderInput__dropZone {
+.FileUploaderInput__input:focus-visible ~ .FileUploaderInput__dropZone {
     box-shadow: form-fields-theme.$input-focus-shadow;
 }
 
