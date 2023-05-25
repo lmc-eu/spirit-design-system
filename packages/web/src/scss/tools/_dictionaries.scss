@@ -73,6 +73,7 @@
 //   second level is the property name, second level can also have key `states` and then the structure is the
 //   same as in `states` parameter
 // * $custom-variable-name: custom CSS variable name – useful when $class-name is complex
+// * $child-selector: additional child selector
 // See Button component for real usage
 @mixin generate-colors(
     $class-name,
@@ -80,10 +81,11 @@
     $config,
     $states: null,
     $overrides: null,
-    $custom-variable-name: null
+    $custom-variable-name: null,
+    $child-selector: null
 ) {
     @each $dictionary-value in $dictionary-values {
-        .#{$class-name}--#{$dictionary-value} {
+        .#{$class-name}--#{$dictionary-value}#{$child-selector} {
             @each $property-name, $property-value in $config {
                 $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
                 $class-name-lowercase: if(

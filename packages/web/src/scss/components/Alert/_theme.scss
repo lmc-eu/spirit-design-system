@@ -18,3 +18,12 @@ $color-dictionary-config: (
     color: 'default',
     background-color: 'background',
 );
+
+$link-color-dictionary-states: (
+    '&:hover, &:focus': (
+        color: 'hover',
+    ),
+    '&:active': (
+        color: 'active',
+    ),
+);
