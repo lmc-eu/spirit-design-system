@@ -13,6 +13,12 @@ export default {
       type: 'text',
     },
   },
+  isLabelHidden: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: false,
+  },
   // isDisabled: {
   //   control: {
   //     type: 'boolean',

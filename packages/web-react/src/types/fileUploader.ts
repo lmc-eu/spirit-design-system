@@ -38,6 +38,7 @@ export interface FileUploaderErrorMessagesProps {
 
 export interface FileUploaderIntermediateProps {
   iconName?: string;
+  isLabelHidden?: boolean;
   isMultiple?: boolean;
   maxFileSize?: number;
   maxUploadedFiles?: number;

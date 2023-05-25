@@ -4,6 +4,7 @@ import { FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 
 export interface FileUploaderStyleProps extends Validation {
   isDragAndDropSupported?: boolean;
+  isLabelHidden?: boolean;
   // isDisabled?: boolean;
   isDragging?: boolean;
   isDropZoneHidden?: boolean;
@@ -43,6 +44,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputDraggingClass = 'is-dragging';
   const fileUploaderInputLabelClass = `${fileUploaderInputClass}__label`;
   const fileUploaderInputLabelRequiredClass = `${fileUploaderInputClass}__label--required`;
+  const fileUploaderInputLabelHiddenClass = `${fileUploaderInputClass}__label--hidden`;
   const fileUploaderInputInputClass = `${fileUploaderInputClass}__input`;
   const fileUploaderInputDropZoneClass = `${fileUploaderInputClass}__dropZone`;
   const fileUploaderInputDropZoneHiddenClass = 'd-none';
@@ -65,7 +67,10 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
           [fileUploaderInputValidationClass]: props?.validationState,
           [fileUploaderInputDraggingClass]: props?.isDragging,
         }),
-        label: classNames(fileUploaderInputLabelClass, { [fileUploaderInputLabelRequiredClass]: props?.isRequired }),
+        label: classNames(fileUploaderInputLabelClass, {
+          [fileUploaderInputLabelRequiredClass]: props?.isRequired,
+          [fileUploaderInputLabelHiddenClass]: props?.isLabelHidden,
+        }),
         input: fileUploaderInputInputClass,
         dropLabel: fileUploaderInputDropLabelClass,
         helper: fileUploaderInputHelperClass,
