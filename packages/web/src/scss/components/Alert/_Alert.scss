@@ -24,3 +24,13 @@
 }
 
 @include dictionaries.generate-colors('Alert', theme.$color-dictionary, theme.$color-dictionary-config);
+
+@include dictionaries.generate-colors(
+    'Alert',
+    theme.$color-dictionary,
+    theme.$color-dictionary-config,
+    theme.$link-color-dictionary-states,
+    null,
+    'alert-link',
+    ' :where(a)' // select all <a> elements inside .Alert with low specificity
+);
