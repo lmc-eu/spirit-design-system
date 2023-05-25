@@ -16,6 +16,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     iconName = 'upload',
     id,
     inputRef,
+    isLabelHidden,
     // isDisabled,
     queueLimitBehavior = 'none',
     isMultiple,
@@ -45,6 +46,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   );
   const { classProps } = useFileUploaderStyleProps({
     isDragAndDropSupported,
+    isLabelHidden,
     // isDisabled,
     isDropZoneHidden,
     isDragging,

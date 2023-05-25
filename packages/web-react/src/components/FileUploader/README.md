@@ -314,6 +314,7 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `validationText`     | `string`, `string[]`                 | -        | ✕        | Validation status text                                                                                                                                          |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file                                                                                                                           |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
+| `isLabelHidden`      | `boolean`                            | -        | ✕        | Whether is input label hidden                                                                                                                                   |
 | `isMultiple`         | `boolean`                            | -        | ✕        | When multiple files can be selected at once                                                                                                                     |
 | `queueLimitBehavior` | `'hide', 'disable', 'none'`          | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `label`              | `string`                             | -        | ✕        | Field label                                                                                                                                                     |
@@ -387,6 +388,7 @@ via `inputProps` and `listProps`.
 | `attachmentComponent` | `string`                                | -        | ✔        | A component for rendering a single attachment       |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file               |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
+| `isLabelHidden`       | `boolean`                               | -        | ✕        | Whether is input label hidden                       |
 | `isMultiple`          | `boolean`                               | -        | ✕        | When multiple files can be selected at once         |
 | `isDisabled`          | `boolean`                               | -        | ✕        | Whether is field disabled                           |
 | `queueLimitBehavior`  | `'hide', 'disable', 'none'`             | `none`   | ✕        | Input behavior when the file queue is filled        |
