@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "1.0.4",
-    "@lmc-eu/spirit-design-tokens": "^0.25.2",
-    "@lmc-eu/spirit-web": "^0.44.0",
+    "@lmc-eu/spirit-design-tokens": "^0.25.4",
+    "@lmc-eu/spirit-web": "^0.46.0",
     "@swc/core": "1.3.35",
     "@swc/jest": "0.2.24",
     "@types/jest": "29.4.0",
