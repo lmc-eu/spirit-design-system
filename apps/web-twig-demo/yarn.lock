@@ -999,24 +999,24 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@lmc-eu/spirit-design-tokens@^0.25.3":
-  version "0.25.3"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.25.3.tgz#d1ba1b279d8f4f4cc27341a32253fe7b7255d042"
-  integrity sha512-A/lt2m+Bnr2Hd83yYuQ3vnqV706lSYsVWfrAQnpHp0yfDPjX5tk+X43yzPjLaa+Slj6avCofywyqu/rpGxXvnw==
+"@lmc-eu/spirit-design-tokens@^0.25.4":
+  version "0.25.4"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.25.4.tgz#99d641714db7bbd8d69f54debf8bfe1c3b3d30b7"
+  integrity sha512-uOW1d9nyq4/q3YnKAxFRTBIjZUmkWFakTHsCbd13kG2RQDrWDtgPOtrZSttY+3q4Jrg+u08abOOj6VeyTyGxTw==
 
-"@lmc-eu/spirit-icons@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.10.0.tgz#161d9900b31149c0f043fa829590b88b393e2ef6"
-  integrity sha512-1/6xYOwmND5PgXTmUww5o8FkilXdLg/J1pH8XIAB0QVWOsWLKp/i4vbY6osggIvJJWK9YwnFQsmCpIPUPAcw1g==
+"@lmc-eu/spirit-icons@^0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.10.1.tgz#fc80e769b1d4eb3d76fb27ad0449487433084396"
+  integrity sha512-Ccnzp/CFamLFCSUqJ4HUH6fwEo8JlRpFfyJUg3NtmEd7LmmyG39xGjfJEjnwPF+717/0R1Qe6+Tg663vcnYuiQ==
 
-"@lmc-eu/spirit-web@^0.45.0":
-  version "0.45.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-0.45.0.tgz#1427fa628ba47d860fdea7d75da4c509892405fd"
-  integrity sha512-avrfK4iPxzh0kqEvOYuG9K3njLPS/F2lTDR0+ABnPRxBcXbiIKg7axfCxgVQw+sUluxeyIOEmSJZjxO3LZk7qA==
+"@lmc-eu/spirit-web@^0.46.0":
+  version "0.46.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-0.46.0.tgz#98dcea7c26fd8675eb25fff4909aa29018de18a4"
+  integrity sha512-2gXW/N/V/VQLizn9RGy1ltmrJrglIKfGYOMs8kcTpYApzye7C5CO5J6ehmC2SaHntl4yPP5DEzMkkPi6SckxOQ==
   dependencies:
     "@csstools/normalize.css" "^12.0.0"
-    "@lmc-eu/spirit-design-tokens" "^0.25.3"
-    "@lmc-eu/spirit-icons" "^0.10.0"
+    "@lmc-eu/spirit-design-tokens" "^0.25.4"
+    "@lmc-eu/spirit-icons" "^0.10.1"
 
 "@nuxt/friendly-errors-webpack-plugin@^2.5.1":
   version "2.5.2"
