@@ -28,7 +28,7 @@ For vertical scrolling, you need to add the `ScrollView--vertical` class to the 
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
     </div>
   </div>
-  <div class="ScrollView__scrollingShadows" aria-hidden="true"></div>
+  <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
@@ -47,7 +47,7 @@ content from wrapping.
       <p class="mb-700" style="white-space: nowrap">Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
     </div>
   </div>
-  <div class="ScrollView__scrollingShadows" aria-hidden="true"></div>
+  <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
@@ -65,8 +65,32 @@ content from wrapping.
       </div>
     </div>
   </div>
-  <div class="ScrollView__scrollingShadows" aria-hidden="true"></div>
+  <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
 </div>
+```
+
+## Scrolling Indicators
+
+The ScrollView component provides indicators on its edges, showing that there is more content to scroll to. The default indicators
+use shadows:
+
+```html
+<div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
+```
+
+You can use borders instead:
+
+```html
+<div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true"></div>
+```
+
+Or both:
+
+```html
+<div
+  class="ScrollView__indicators ScrollView__indicators--borders ScrollView__indicators--shadows"
+  aria-hidden="true"
+></div>
 ```
 
 ## Scrollbar
@@ -84,7 +108,7 @@ class to your content, e.g. `mb-700` or `pb-700`.
       <p class="mb-700">…</p>
     </div>
   </div>
-  <div class="ScrollView__scrollingShadows" aria-hidden="true"></div>
+  <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
@@ -105,7 +129,7 @@ To hide the scrollbar, add the `ScrollView--hideScrollbar` class to the containe
       <!-- … -->
     </div>
   </div>
-  <div class="ScrollView__scrollingShadows" aria-hidden="true"></div>
+  <div class="ScrollView__indicators ScrollView__indicators--shadows" aria-hidden="true"></div>
 </div>
 ```
 
