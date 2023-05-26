@@ -184,6 +184,31 @@ Use our JavaScript plugin to open your Modal, e.g.:
 </button>
 ```
 
+### Scrolling Long Content
+
+When Modals become too long for the user's viewport or device, they scroll independent of the page itself. By default,
+ModalBody has `overflow-y: auto` applied to it, so it scrolls vertically.
+
+Alternatively, you can wrap the ModalBody content in a [ScrollView][scroll-view] to take over the responsibility for
+scrolling, e.g.:
+
+```html
+<article class="ModalDialog">
+  <!-- ModalHeader -->
+  <div class="ScrollView ScrollView--vertical" data-toggle="scrollView">
+    <div class="ScrollView__viewport" data-spirit-element="viewport">
+      <div class="ScrollView__content" data-spirit-element="content">
+        <div class="ModalBody">
+          <!-- … -->
+        </div>
+      </div>
+    </div>
+    <div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true"></div>
+  </div>
+  <!-- ModalFooter -->
+</article>
+```
+
 ### Full Example
 
 When you put it all together:
@@ -351,5 +376,6 @@ Or feel free to write controlling scripts yourself.
 
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
+[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
