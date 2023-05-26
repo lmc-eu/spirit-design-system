@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: column;
     width: theme.$dialog-width;
-    height: theme.$dialog-max-height;
+    height: theme.$dialog-height;
+    max-height: theme.$dialog-max-height;
     overflow-x: hidden;
     overflow-y: auto;
     color: theme.$dialog-text-color;
@@ -50,10 +51,7 @@
 }
 
 .ModalDialog--expandOnMobile {
-    height: theme.$dialog-height;
-    max-height: theme.$dialog-max-height;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        max-height: theme.$dialog-max-height-tablet;
+    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+        height: theme.$dialog-max-height;
     }
 }
