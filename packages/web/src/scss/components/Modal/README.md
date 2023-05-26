@@ -109,6 +109,19 @@ ModalBody holds the actual content of the Modal.
 </div>
 ```
 
+#### Feature Flag to Enable Extra Padding
+
+⚠️ This feature flag is only temporary and will be removed in version 1. The extra vertical padding will be made default.
+
+To enable vertical padding on ModalBody, add the feature class `spirit-v1-modal-body-padding` to a parent element.
+The preferred one is the `body` element because this way it will affect all Modal components everywhere.
+
+```html
+<body class="spirit-v1-modal-body-padding">
+  <!-- Modal -->
+</body>
+```
+
 ### ModalFooter
 
 ModalFooter is the place for actions represented by the Button component.

@@ -19,6 +19,11 @@
     }
 }
 
+// @deprecated Will be removed in the next major version.
+.spirit-v1-modal-body-padding .ModalBody {
+    padding-block: theme.$body-padding-y;
+}
+
 .ModalBody.is-scrolled-at-top {
     border-top-color: theme.$body-divider-color;
 }
