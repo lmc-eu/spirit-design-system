@@ -1,9 +1,14 @@
+@use '../../settings/transitions';
 @use '@tokens' as tokens;
 
+$border-width: tokens.$border-width-100;
+$border-style: tokens.$border-style-100;
+$border-color: tokens.$border-primary-default;
+
 $start-shadow-size: tokens.$space-600;
-$start-shadow-initial-offset: -1 * tokens.$space-600;
+$start-shadow-initial-offset: -1 * transitions.$shift-distance-medium;
 $start-shadow-background: tokens.$gradient-background-basic-overlay;
 
 $end-shadow-size: tokens.$space-600;
-$end-shadow-initial-offset: -1 * tokens.$space-600;
+$end-shadow-initial-offset: -1 * transitions.$shift-distance-medium;
 $end-shadow-background: tokens.$gradient-background-basic-overlay;

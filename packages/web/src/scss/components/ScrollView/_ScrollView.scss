@@ -1,23 +1,23 @@
 // Based on React UI ScrollView ❤️:
 // https://react-ui.io/components/scroll-view
 
-// 1. Scrolling shadows are implemented as pseudo elements. This way we can customise them only with custom properties.
+// 1. Scrolling indicators are implemented as pseudo elements. This way we can transition their visibility easily.
 //
-// 2. Stack scrolling shadows over viewport content while keeping the content interactive.
+// 2. Stack scrolling indicators over viewport content while keeping the content interactive.
 //
-//    - `.ScrollView__scrollingShadows` is positioned absolutely over the `.ScrollView`, with auto `z-index` (this is
-//      important!), and with `overflow: hidden` to clip the shadows (ie. its pseudo elements).
-//    - The `.ScrollView__viewport` is in `.ScrollView`'s stacking context and remains interactive because its
-//      `z-index` is higher than the auto `z-index` of `.ScrollView__scrollingShadows`.
+//    - Scrolling indicators are positioned absolutely over the `.ScrollView`, with auto `z-index` (this is
+//      important!), and with `overflow: hidden` to clip the shadows (ie. its pseudo elements) when offset is applied.
+//    - The `.ScrollView__viewport` remains interactive thanks to `pointer-events: none` on scrolling indicators.
 //
 // 3. Make the `.ScrollView__content`'s bounding rectangle spread beyond the part visible through `.ScrollView__viewport`.
 //
 // 4. Prevent undesired vertical scrolling that may occur with tables inside.
 //
-// 5. Make `ScrollView` adjust to flexible layouts.
+// 5. Make `.ScrollView` adjust to flexible layouts.
 //
 // 6. Hide content overflowing in the other direction because scrollbars would be unreachable under scrolling shadows.
 
+@use '../../settings/transitions';
 @use 'theme';
 
 .ScrollView {
@@ -28,7 +28,7 @@
 }
 
 // 1.
-.ScrollView__scrollingShadows {
+.ScrollView__indicators {
     position: absolute; // 2.
     width: 100%; // 2.
     height: 100%; // 2.
@@ -44,9 +44,11 @@
         visibility: hidden;
         opacity: 0;
         transition-property: visibility, opacity, transform;
-        transition-duration: 250ms;
+        transition-duration: transitions.$duration-medium;
     }
+}
 
+.ScrollView__indicators--shadows {
     &::before {
         background: theme.$start-shadow-background;
     }
@@ -77,29 +79,6 @@
     min-width: 0; // 5.
 }
 
-.ScrollView--vertical > .ScrollView__scrollingShadows::before,
-.ScrollView--vertical > .ScrollView__scrollingShadows::after {
-    right: 0;
-    left: 0;
-    width: auto;
-}
-
-.ScrollView--vertical > .ScrollView__scrollingShadows::before {
-    --angle: 180deg;
-
-    top: 0;
-    height: theme.$start-shadow-size;
-    transform: translateY(#{theme.$start-shadow-initial-offset});
-}
-
-.ScrollView--vertical > .ScrollView__scrollingShadows::after {
-    --angle: 0;
-
-    bottom: 0;
-    height: theme.$end-shadow-size;
-    transform: translateY(#{-1 * theme.$end-shadow-initial-offset});
-}
-
 .ScrollView--horizontal > .ScrollView__viewport {
     overflow-x: auto; // 2.
     overflow-y: hidden; // 4., 6.
@@ -112,36 +91,87 @@
     vertical-align: top;
 }
 
-.ScrollView--horizontal > .ScrollView__scrollingShadows::before,
-.ScrollView--horizontal > .ScrollView__scrollingShadows::after {
+.ScrollView--vertical > .ScrollView__indicators::before,
+.ScrollView--vertical > .ScrollView__indicators::after {
+    right: 0;
+    left: 0;
+    width: auto;
+}
+
+.ScrollView--vertical > .ScrollView__indicators::before {
+    top: 0;
+}
+
+.ScrollView--vertical > .ScrollView__indicators::after {
+    bottom: 0;
+}
+
+.ScrollView--vertical > .ScrollView__indicators--borders::before {
+    border-top: theme.$border-width theme.$border-style theme.$border-color;
+}
+
+.ScrollView--vertical > .ScrollView__indicators--borders::after {
+    border-bottom: theme.$border-width theme.$border-style theme.$border-color;
+}
+
+.ScrollView--vertical > .ScrollView__indicators--shadows::before {
+    --angle: 180deg;
+
+    height: theme.$start-shadow-size;
+    transform: translateY(#{theme.$start-shadow-initial-offset});
+}
+
+.ScrollView--vertical > .ScrollView__indicators--shadows::after {
+    --angle: 0;
+
+    height: theme.$end-shadow-size;
+    transform: translateY(#{-1 * theme.$end-shadow-initial-offset});
+}
+
+.ScrollView--horizontal > .ScrollView__indicators::before,
+.ScrollView--horizontal > .ScrollView__indicators::after {
     top: 0;
     bottom: 0;
     height: auto;
 }
 
-.ScrollView--horizontal > .ScrollView__scrollingShadows::before {
+.ScrollView--horizontal > .ScrollView__indicators::before {
+    left: 0;
+}
+
+.ScrollView--horizontal > .ScrollView__indicators::after {
+    right: 0;
+}
+
+.ScrollView--horizontal > .ScrollView__indicators--borders::before {
+    border-left: theme.$border-width theme.$border-style theme.$border-color;
+}
+
+.ScrollView--horizontal > .ScrollView__indicators--borders::after {
+    border-right: theme.$border-width theme.$border-style theme.$border-color;
+}
+
+.ScrollView--horizontal > .ScrollView__indicators--shadows::before {
     --angle: 90deg;
 
-    left: 0;
     width: theme.$start-shadow-size;
     transform: translateX(#{theme.$start-shadow-initial-offset});
 }
 
-.ScrollView--horizontal > .ScrollView__scrollingShadows::after {
+.ScrollView--horizontal > .ScrollView__indicators--shadows::after {
     --angle: 270deg;
 
-    right: 0;
     width: theme.$end-shadow-size;
     transform: translateX(#{-1 * theme.$end-shadow-initial-offset});
 }
 
-.is-scrolled-at-start > .ScrollView__scrollingShadows::before {
+.is-scrolled-at-start > .ScrollView__indicators::before {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
 }
 
-.is-scrolled-at-end > .ScrollView__scrollingShadows::after {
+.is-scrolled-at-end > .ScrollView__indicators::after {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
