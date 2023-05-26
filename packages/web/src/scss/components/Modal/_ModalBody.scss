@@ -11,7 +11,6 @@
     padding-inline: theme.$common-padding-x;
     overflow-x: hidden;
     overflow-y: auto;
-    border-block: theme.$body-divider-width solid transparent;
     overscroll-behavior: contain;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
@@ -22,12 +21,4 @@
 // @deprecated Will be removed in the next major version.
 .spirit-v1-modal-body-padding .ModalBody {
     padding-block: theme.$body-padding-y;
-}
-
-.ModalBody.is-scrolled-at-top {
-    border-top-color: theme.$body-divider-color;
-}
-
-.ModalBody.is-scrolled-at-bottom {
-    border-bottom-color: theme.$body-divider-color;
 }
