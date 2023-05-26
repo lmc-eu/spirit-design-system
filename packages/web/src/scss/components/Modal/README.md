@@ -30,6 +30,49 @@ advantages.
 👉 Please note the `aria-labelledby` attribute is linked to the title inside
 [ModalHeader](#modalheader) and provides an accessible name for the dialog.
 
+#### Custom Preferred Height
+
+By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
+You can override this behavior by setting a custom preferred height using a custom property:
+
+- `--modal-preferred-height-mobile` for mobile screens, and
+- `--modal-preferred-height-tablet` for tablet screens and up.
+
+This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+
+```html
+<dialog
+  id="example_1"
+  class="Modal Modal--composed"
+  aria-labelledby="example_1_title"
+  style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
+>
+  <!-- ModalDialog -->
+</dialog>
+```
+
+#### Custom Max Height
+
+The default maximum height of Modal is:
+
+- viewport height minus 1100 spacing on mobile screens, and
+- 600 px on tablet screens and up (shrunk if necessary).
+
+You can use the custom property `--modal-max-height-tablet` to override the max height on tablet screens and up:
+
+```html
+<dialog
+  id="example_1"
+  class="Modal Modal--composed"
+  aria-labelledby="example_1_title"
+  style="--modal-max-height-tablet: 700px"
+>
+  <!-- ModalDialog -->
+</dialog>
+```
+
+👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
+
 ### ModalDialog
 
 ModalDialog is the actual dialog window, a place for the header, body, and

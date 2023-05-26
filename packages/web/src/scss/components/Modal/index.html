@@ -32,7 +32,7 @@
           aria-controls="example_1"
           aria-expanded="false"
         >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#close" />
           </svg>
           <span class="accessibility-hidden">Close</span>
@@ -125,33 +125,31 @@
     type="button"
     class="Button Button--primary Button--medium"
     data-toggle="modal"
-    data-target="#example_2"
-    aria-controls="example_2"
+    data-target="#example_3"
+    aria-controls="example_3"
     aria-expanded="false"
   >
-    Open Modal with Long Content
+    Open Modal with a Form
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_2" class="Modal Modal--composed" aria-labelledby="example_2_title">
+  <dialog id="example_3" class="Modal Modal--composed" aria-labelledby="example_3_title">
 
     <!-- ModalDialog: start -->
-    <article class="ModalDialog">
+    <form class="ModalDialog" method="dialog">
 
       <!-- ModalHeader: start -->
       <header class="ModalHeader">
-        <h2 id="example_2_title" class="ModalHeader__title">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
-        </h2>
+        <h2 id="example_3_title" class="ModalHeader__title">Modal with a Form</h2>
         <button
           type="button"
           class="Button Button--tertiary Button--square Button--medium"
           data-dismiss="modal"
-          data-target="#example_2"
-          aria-controls="example_2"
+          data-target="#example_3"
+          aria-controls="example_3"
           aria-expanded="false"
         >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#close" />
           </svg>
           <span class="accessibility-hidden">Close</span>
@@ -162,45 +160,97 @@
       <!-- ModalBody: start -->
       <div class="ModalBody">
         <!-- Content: start -->
+        <div class="TextField mb-400">
+          <label for="textfield" class="TextField__label">Label</label>
+          <input type="text" id="textfield" class="TextField__input" placeholder="TextField" />
+        </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
+          The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
+        <!-- Content: end -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button type="submit" class="Button Button--primary Button--medium">
+            Primary action
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_3"
+          >
+            Secondary action
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </form>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+  <button
+    type="button"
+    class="Button Button--primary Button--medium"
+    data-toggle="modal"
+    data-target="#example_custom_height"
+    aria-controls="example_custom_height"
+    aria-expanded="false"
+  >
+    Open Modal with Custom Height
+  </button>
+
+  <!-- Modal: start -->
+  <dialog
+    id="example_custom_height"
+    class="Modal Modal--composed"
+    aria-labelledby="example_custom_height_title"
+    style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px; --modal-max-height-tablet: 700px"
+  >
+
+    <!-- ModalDialog: start -->
+    <article class="ModalDialog">
+
+      <!-- ModalHeader: start -->
+      <header class="ModalHeader">
+        <h2 id="example_custom_height_title" class="ModalHeader__title">Modal with Custom Height</h2>
+        <button
+          type="button"
+          class="Button Button--tertiary Button--square Button--medium"
+          data-dismiss="modal"
+          data-target="#example_custom_height"
+          aria-controls="example_custom_height"
+          aria-expanded="false"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
+      </header>
+      <!-- ModalHeader: end -->
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- Content: start -->
+        <p class="d-tablet-none">
+          This modal has a custom height of <code>400px</code> set via the <code>--modal-preferred-height-mobile</code> CSS
+          custom property.
+          <br /><br />
+          The max height cannot be customized on mobile though.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
+        <p class="d-none d-tablet-block">
+          This modal has a custom height of <code>500px</code> set via the <code>--modal-preferred-height-tablet</code> CSS
+          custom property.
+          <br /><br />
+          The max height of this modal is <code>700px</code> set via the <code>--modal-max-height-tablet</code> CSS custom
+          property.
         </p>
         <!-- Content: end -->
       </div>
@@ -213,7 +263,7 @@
             type="button"
             class="Button Button--primary Button--medium"
             data-dismiss="modal"
-            data-target="#example_2"
+            data-target="#example_custom_height"
           >
             Primary action
           </button>
@@ -221,7 +271,7 @@
             type="button"
             class="Button Button--secondary Button--medium"
             data-dismiss="modal"
-            data-target="#example_2"
+            data-target="#example_custom_height"
           >
             Secondary action
           </button>
@@ -234,6 +284,10 @@
 
   </dialog>
   <!-- Modal: end -->
+
+</section>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Scrolling Long Content</h2>
 
   <button
     type="button"
@@ -364,31 +418,33 @@
     type="button"
     class="Button Button--primary Button--medium"
     data-toggle="modal"
-    data-target="#example_3"
-    aria-controls="example_3"
+    data-target="#example_2"
+    aria-controls="example_2"
     aria-expanded="false"
   >
-    Open Modal with a Form
+    Open Modal with Long Content
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_3" class="Modal Modal--composed" aria-labelledby="example_3_title">
+  <dialog id="example_2" class="Modal Modal--composed" aria-labelledby="example_2_title">
 
     <!-- ModalDialog: start -->
-    <form class="ModalDialog" method="dialog">
+    <article class="ModalDialog">
 
       <!-- ModalHeader: start -->
       <header class="ModalHeader">
-        <h2 id="example_3_title" class="ModalHeader__title">Modal with a Form</h2>
+        <h2 id="example_2_title" class="ModalHeader__title">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+        </h2>
         <button
           type="button"
           class="Button Button--tertiary Button--square Button--medium"
           data-dismiss="modal"
-          data-target="#example_3"
-          aria-controls="example_3"
+          data-target="#example_2"
+          aria-controls="example_2"
           aria-expanded="false"
         >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#close" />
           </svg>
           <span class="accessibility-hidden">Close</span>
@@ -399,12 +455,45 @@
       <!-- ModalBody: start -->
       <div class="ModalBody">
         <!-- Content: start -->
-        <div class="TextField mb-400">
-          <label for="textfield" class="TextField__label">Label</label>
-          <input type="text" id="textfield" class="TextField__input" placeholder="TextField" />
-        </div>
         <p>
-          The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+          provident unde. Eveniet, iste, molestiae?
         </p>
         <!-- Content: end -->
       </div>
@@ -413,14 +502,19 @@
       <!-- ModalFooter: start -->
       <footer class="ModalFooter ModalFooter--right">
         <div class="ModalFooter__actions">
-          <button type="submit" class="Button Button--primary Button--medium">
+          <button
+            type="button"
+            class="Button Button--primary Button--medium"
+            data-dismiss="modal"
+            data-target="#example_2"
+          >
             Primary action
           </button>
           <button
             type="button"
             class="Button Button--secondary Button--medium"
             data-dismiss="modal"
-            data-target="#example_3"
+            data-target="#example_2"
           >
             Secondary action
           </button>
@@ -428,7 +522,7 @@
       </footer>
       <!-- ModalFooter: end -->
 
-    </form>
+    </article>
     <!-- ModalDialog: end -->
 
   </dialog>
@@ -511,9 +605,8 @@
   <!-- Modal: end -->
 
 </section>
-
 <section class="docs-Section">
-  <h2 class="docs-Heading">Stacked Modal</h2>
+  <h2 class="docs-Heading">Stacking Modals</h2>
 
   <button
     type="button"
@@ -543,7 +636,7 @@
           aria-controls="example_2_0"
           aria-expanded="false"
         >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#close" />
           </svg>
           <span class="accessibility-hidden">Close</span>
@@ -602,7 +695,7 @@
           aria-controls="example_2_1"
           aria-expanded="false"
         >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
+          <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#close" />
           </svg>
           <span class="accessibility-hidden">Close</span>
@@ -695,7 +788,7 @@
             aria-controls="example_simple_1"
             aria-expanded="false"
           >
-            <svg class="Icon" width="24" height="24" aria-hidden="true">
+            <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#close" />
             </svg>
             <span class="accessibility-hidden">Close</span>
@@ -724,7 +817,7 @@
             aria-controls="example_simple_2"
             aria-expanded="false"
           >
-            <svg class="Icon" width="24" height="24">
+            <svg width="24" height="24">
               <use xlink:href="/icons/svg/sprite.svg#close"/>
             </svg>
             <span class="accessibility-hidden">Close</span>
