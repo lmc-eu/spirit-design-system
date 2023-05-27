@@ -108,6 +108,12 @@
                 ~ .#{$field-name}__dropZone {
                 border-color: map.get($validation-state-value, input-border-color);
             }
+        } @else if $field-name == 'Select' {
+            :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
+                > .#{$field-name}__inputContainer
+                > .#{$field-name}__input {
+                border-color: map.get($validation-state-value, input-border-color);
+            }
         } @else {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 > .#{$field-name}__input {

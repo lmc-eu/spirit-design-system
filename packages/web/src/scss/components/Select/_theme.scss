@@ -1,0 +1,4 @@
+@use '@tokens' as tokens;
+
+$icon-color-default: tokens.$action-unselected-default;
+$icon-color-disabled: tokens.$action-unselected-disabled;
