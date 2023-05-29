@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritTagProps, StyleProps } from '../../types';
@@ -11,8 +11,11 @@ const defaultProps = {
   size: 'medium',
 };
 
-export const Tag = <T extends ElementType = 'span', C = void, S = void>(
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_Tag'] }] */
+const _Tag = <T extends ElementType = 'span', C = void, S = void>(
   props: SpiritTagProps<T, C, S>,
+  ref: ForwardedRef<HTMLSpanElement>,
 ): JSX.Element => {
   const {
     elementType,
@@ -48,11 +51,13 @@ export const Tag = <T extends ElementType = 'span', C = void, S = void>(
   });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} ref={ref}>
       {children}
     </ElementTag>
   );
 };
+
+export const Tag = forwardRef<HTMLSpanElement, SpiritTagProps<ElementType>>(_Tag);
 
 Tag.defaultProps = defaultProps;
 

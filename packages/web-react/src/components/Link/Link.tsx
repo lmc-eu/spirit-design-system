@@ -1,5 +1,5 @@
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
-import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritLinkProps } from '../../types';
 import { useLinkStyleProps } from './useLinkStyleProps';
@@ -8,7 +8,12 @@ const defaultProps = {
   color: 'primary',
 };
 
-export const Link = <E extends ElementType = 'a', T = void>(props: SpiritLinkProps<E, T>): JSX.Element => {
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_Link'] }] */
+const _Link = <E extends ElementType = 'a', T = void>(
+  props: SpiritLinkProps<E, T>,
+  ref: ForwardedRef<HTMLAnchorElement>,
+): JSX.Element => {
   const { elementType: ElementTag = 'a', children, ...restProps } = props;
   const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
@@ -19,11 +24,14 @@ export const Link = <E extends ElementType = 'a', T = void>(props: SpiritLinkPro
       {...styleProps}
       href={restProps.href}
       className={classNames(classProps, styleProps.className)}
+      ref={ref}
     >
       {children}
     </ElementTag>
   );
 };
+
+export const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
 
 Link.defaultProps = defaultProps;
 
