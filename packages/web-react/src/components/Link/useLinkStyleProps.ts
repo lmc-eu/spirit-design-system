@@ -7,7 +7,7 @@ export interface LinkStyles<E extends ElementType = 'p'> {
   /** className props */
   classProps: string | null;
   /** props to be passed to the input element */
-  props: LinkProps<E>;
+  props: Partial<LinkProps<E>>;
 }
 
 export function useLinkStyleProps<E extends ElementType = 'a', T = void>(props: SpiritLinkProps<E, T>): LinkStyles<E> {
