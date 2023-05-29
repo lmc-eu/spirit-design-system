@@ -41,3 +41,6 @@ export type SpiritLItemElementProps = OverloadStyleProps<SpiritLItemElementBaseP
 export type SpiritSpanElementProps = OverloadStyleProps<SpiritSpanElementBaseProps>;
 export type SpiritTextAreaElementProps = Omit<OverloadStyleProps<SpiritTextAreaElementBaseProps>, 'required'>;
 export type SpiritUListElementProps = OverloadStyleProps<SpiritUListElementBaseProps>;
+
+export type SpiritInputElementPropsWithRef = SpiritInputElementProps & ComponentPropsWithRef<'input'>;
+export type SpiritTextAreaElementPropsWithRef = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;

@@ -23,6 +23,7 @@ and show if the input is required.
 | `isRequired`      | `boolean`                                                            | -       | no       | Whether is field required                                                                                                          |
 | `isChecked`       | `boolean`                                                            | -       | no       | Whether is field checked                                                                                                           |
 | `isLabelHidden`   | `boolean`                                                            | -       | no       | Whether is label hidden                                                                                                            |
+| `ref`             | `ForwardedRef<HTMLInputElement>`                                     | -       | no       | Input element reference                                                                                                            |
 
 ## Custom component
 
