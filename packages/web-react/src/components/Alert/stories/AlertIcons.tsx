@@ -11,20 +11,38 @@ import Alert from '../Alert';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <IconsProvider value={icons}>
-    <Alert color="success" iconName="profile">
-      This is a success alert — check it out!
+    <Alert color="success" iconName="profile" UNSAFE_className="mb-600">
+      We sent you an activation link to email <strong>spirit@lmc.eu</strong>. See{' '}
+      <a href="./" className="link-underlined">
+        FAQ
+      </a>{' '}
+      for more info.
     </Alert>
-    <div className="mb-500" />
-    <Alert color="informative" iconName="info">
-      This is an informative alert — check it out!
+
+    <Alert color="informative" iconName="info" UNSAFE_className="mb-600">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis provident
+      unde. Eveniet, iste, molestiae? See{' '}
+      <a href="./" className="link-underlined">
+        FAQ
+      </a>{' '}
+      for more info.
     </Alert>
-    <div className="mb-500" />
-    <Alert color="warning" iconName="warning">
-      This is an warning alert — check it out!
+
+    <Alert color="warning" iconName="warning" UNSAFE_className="mb-600">
+      <strong>Warning!</strong> Data update failed due to missing internet connection. See{' '}
+      <a href="./" className="link-underlined">
+        FAQ
+      </a>{' '}
+      for more info.
     </Alert>
-    <div className="mb-500" />
-    <Alert color="danger" iconName="close">
-      This is a danger alert — check it out!
+
+    <Alert color="danger" iconName="close" UNSAFE_className="mb-600">
+      Data update failed due to missing internet connection. See{' '}
+      <a href="./" className="link-underlined">
+        FAQ
+      </a>{' '}
+      for more info.
     </Alert>
   </IconsProvider>
 );

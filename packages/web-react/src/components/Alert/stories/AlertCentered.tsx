@@ -11,7 +11,7 @@ import Alert from '../Alert';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <IconsProvider value={icons}>
-    <Alert color="success" UNSAFE_className="mb-600">
+    <Alert color="success" isCentered UNSAFE_className="mb-600">
       We sent you an activation link to email <strong>spirit@lmc.eu</strong>. See{' '}
       <a href="./" className="link-underlined">
         FAQ
@@ -19,7 +19,7 @@ const Story = (props: unknown) => (
       for more info.
     </Alert>
 
-    <Alert color="informative" UNSAFE_className="mb-600">
+    <Alert color="informative" isCentered UNSAFE_className="mb-600">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
       perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis provident
       unde. Eveniet, iste, molestiae? See{' '}
@@ -29,7 +29,7 @@ const Story = (props: unknown) => (
       for more info.
     </Alert>
 
-    <Alert color="warning" UNSAFE_className="mb-600">
+    <Alert color="warning" isCentered UNSAFE_className="mb-600">
       <strong>Warning!</strong> Data update failed due to missing internet connection. See{' '}
       <a href="./" className="link-underlined">
         FAQ
@@ -37,7 +37,7 @@ const Story = (props: unknown) => (
       for more info.
     </Alert>
 
-    <Alert color="danger" UNSAFE_className="mb-600">
+    <Alert color="danger" isCentered UNSAFE_className="mb-600">
       Data update failed due to missing internet connection. See{' '}
       <a href="./" className="link-underlined">
         FAQ
