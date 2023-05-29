@@ -1,16 +1,15 @@
-import { ComponentPropsWithRef } from 'react';
 import {
   ChildrenProps,
   HelperTextProps,
   InputBaseProps,
-  SpiritTextAreaElementProps,
+  SpiritTextAreaElementPropsWithRef,
   TextInputProps,
   Validation,
 } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
-export type TextAreaElementBaseProps = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;
+export type TextAreaElementBaseProps = SpiritTextAreaElementPropsWithRef;
 
 export interface TextAreaProps
   extends TextAreaElementBaseProps,

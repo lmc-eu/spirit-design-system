@@ -3,12 +3,12 @@ import {
   HelperTextProps,
   InputBaseProps,
   ItemProps,
-  SpiritInputElementProps,
+  SpiritInputElementPropsWithRef,
   Validation,
 } from './shared';
 import { LabelProps } from './label';
 
-export type RadioElementBaseProps = SpiritInputElementProps;
+export type RadioElementBaseProps = SpiritInputElementPropsWithRef;
 
 export interface RadioFieldProps
   extends RadioElementBaseProps,

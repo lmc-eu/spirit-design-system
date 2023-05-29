@@ -1,11 +1,13 @@
+import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import React from 'react';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritCheckboxFieldProps } from '../../types';
 import { useValidationText } from '../Field';
 import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 
-export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_CheckboxField'] }] */
+const _CheckboxField = (props: SpiritCheckboxFieldProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
   const { id, label, message, helperText, validationState, value, isDisabled, isRequired, isChecked, ...restProps } =
     modifiedProps;
@@ -48,6 +50,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
         required={isRequired}
         checked={isChecked}
         value={value}
+        ref={ref}
       />
       <span className={classProps.text}>
         <span className={classProps.label}>{label}</span>
@@ -57,5 +60,7 @@ export const CheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
     </label>
   );
 };
+
+export const CheckboxField = forwardRef<HTMLInputElement, SpiritCheckboxFieldProps>(_CheckboxField);
 
 export default CheckboxField;

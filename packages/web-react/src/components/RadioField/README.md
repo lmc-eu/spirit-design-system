@@ -18,6 +18,7 @@ Use RadioField when you have a group of mutually exclusive choices and only one 
 | `isChecked`       | boolean                                        | -       | no       | Whether is field checked       |
 | `isItem`          | boolean                                        | -       | no       | To render in [Item][item] mode |
 | `isLabelHidden`   | boolean                                        | -       | no       | Whether is label hidden        |
+| `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | no       | Input element reference        |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state       |
 
 ## Custom component

@@ -3,13 +3,13 @@ import {
   HelperTextProps,
   InputBaseProps,
   ItemProps,
-  SpiritInputElementProps,
+  SpiritInputElementPropsWithRef,
   Validation,
 } from './shared';
 import { LabelProps } from './label';
 import { MessageProps } from './message';
 
-export type CheckboxElementBaseProps = SpiritInputElementProps;
+export type CheckboxElementBaseProps = SpiritInputElementPropsWithRef;
 
 export interface CheckboxFieldProps
   extends CheckboxElementBaseProps,
