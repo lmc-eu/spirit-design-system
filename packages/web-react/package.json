@@ -84,6 +84,8 @@
   },
   "scripts": {
     "start": "vite --host --config ./config/vite/app.ts",
+    "examples:build": "vite build --config ./config/vite/app.ts",
+    "examples:preview": "vite preview --config ./config/vite/app.ts",
     "prebuild": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ ",
     "build": "npm-run-all --serial build:umd build:es2015 build:esNext",
     "build:cjs": "yarn rollup --bundleConfigAsCjs",
