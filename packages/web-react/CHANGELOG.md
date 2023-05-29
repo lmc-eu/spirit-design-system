@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.46.0"></a>
+
+# [0.46.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.45.0...@lmc-eu/spirit-web-react@0.46.0) (2023-05-29)
+
+### Bug Fixes
+
+- **web-react:** Fix missing property for hiding label on input ([e41abf6](https://github.com/lmc-eu/spirit-design-system/commit/e41abf6))
+
+### Code Refactoring
+
+- **web-react:** Separate logic of hook and component ValidationText ([fd01166](https://github.com/lmc-eu/spirit-design-system/commit/fd01166))
+
+### Documentation
+
+- **web-react:** Remove RadioField from ValidationText docs as there is no validationText prop ([829171b](https://github.com/lmc-eu/spirit-design-system/commit/829171b))
+
+### Features
+
+- **web-react:** Introduce ValidationText component ([5515bff](https://github.com/lmc-eu/spirit-design-system/commit/5515bff))
+- **web-react:** TextArea with auto grow [#DS-761](https://github.com/lmc-eu/spirit-design-system/issues/DS-761) ([64c2dd2](https://github.com/lmc-eu/spirit-design-system/commit/64c2dd2))
+- **web,web-react,web-twig:** Allow multiline message in CheckboxField [#DS-735](https://github.com/lmc-eu/spirit-design-system/issues/DS-735) ([395af3d](https://github.com/lmc-eu/spirit-design-system/commit/395af3d))
+- **web,web-react,web-twig:** Allow multiline message in TextArea [#DS-738](https://github.com/lmc-eu/spirit-design-system/issues/DS-738) ([9759666](https://github.com/lmc-eu/spirit-design-system/commit/9759666))
+- **web,web-react,web-twig:** Allow multiline message in TextField [#DS-734](https://github.com/lmc-eu/spirit-design-system/issues/DS-734) ([81b0882](https://github.com/lmc-eu/spirit-design-system/commit/81b0882))
+- **web,web-react,web-twig:** Allow multiline validationText in FileUploaderInput [#DS-737](https://github.com/lmc-eu/spirit-design-system/issues/DS-737) ([6724d7a](https://github.com/lmc-eu/spirit-design-system/commit/6724d7a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.45.0"></a>
 
 # [0.45.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.44.0...@lmc-eu/spirit-web-react@0.45.0) (2023-05-18)

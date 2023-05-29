@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.47.0"></a>
+
+# [0.47.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.46.0...@lmc-eu/spirit-web@0.47.0) (2023-05-29)
+
+### Bug Fixes
+
+- **web:** `FileUploader` focus visibility ([cfd5ba8](https://github.com/lmc-eu/spirit-design-system/commit/cfd5ba8))
+- **web:** Add missing validation text styling for CheckboxField ([95f3855](https://github.com/lmc-eu/spirit-design-system/commit/95f3855))
+
+### Features
+
+- **web,web-react,web-twig:** Allow multiline message in CheckboxField [#DS-735](https://github.com/lmc-eu/spirit-design-system/issues/DS-735) ([395af3d](https://github.com/lmc-eu/spirit-design-system/commit/395af3d))
+- **web,web-react,web-twig:** Allow multiline message in TextArea [#DS-738](https://github.com/lmc-eu/spirit-design-system/issues/DS-738) ([9759666](https://github.com/lmc-eu/spirit-design-system/commit/9759666))
+- **web,web-react,web-twig:** Allow multiline message in TextField [#DS-734](https://github.com/lmc-eu/spirit-design-system/issues/DS-734) ([81b0882](https://github.com/lmc-eu/spirit-design-system/commit/81b0882))
+- **web,web-react,web-twig:** Allow multiline validationText in FileUploaderInput [#DS-737](https://github.com/lmc-eu/spirit-design-system/issues/DS-737) ([6724d7a](https://github.com/lmc-eu/spirit-design-system/commit/6724d7a))
+- **web:** Enhance `ScrollView` scrolling indicators to be shadows, borders, or both [#DS-796](https://github.com/lmc-eu/spirit-design-system/issues/DS-796) ([cd329ca](https://github.com/lmc-eu/spirit-design-system/commit/cd329ca))
+- **web:** Introduce `ScrollView` component [#DS-449](https://github.com/lmc-eu/spirit-design-system/issues/DS-449) ([4d7265b](https://github.com/lmc-eu/spirit-design-system/commit/4d7265b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.46.0"></a>
 
 # [0.46.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.45.0...@lmc-eu/spirit-web@0.46.0) (2023-05-18)

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.32.0"></a>
+
+# [1.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.31.0...@lmc-eu/spirit-web-twig@1.32.0) (2023-05-29)
+
+### Documentation
+
+- **web-twig:** Update TextFieldBase message prop API to same type as other multiline messages ([f3c109c](https://github.com/lmc-eu/spirit-design-system/commit/f3c109c))
+
+### Features
+
+- **web-twig:** Add ScrollView component [#DS-465](https://github.com/lmc-eu/spirit-design-system/issues/DS-465) ([54dc164](https://github.com/lmc-eu/spirit-design-system/commit/54dc164))
+- **web,web-react,web-twig:** Allow multiline message in CheckboxField [#DS-735](https://github.com/lmc-eu/spirit-design-system/issues/DS-735) ([395af3d](https://github.com/lmc-eu/spirit-design-system/commit/395af3d))
+- **web,web-react,web-twig:** Allow multiline message in TextArea [#DS-738](https://github.com/lmc-eu/spirit-design-system/issues/DS-738) ([9759666](https://github.com/lmc-eu/spirit-design-system/commit/9759666))
+- **web,web-react,web-twig:** Allow multiline message in TextField [#DS-734](https://github.com/lmc-eu/spirit-design-system/issues/DS-734) ([81b0882](https://github.com/lmc-eu/spirit-design-system/commit/81b0882))
+- **web,web-react,web-twig:** Allow multiline validationText in FileUploaderInput [#DS-737](https://github.com/lmc-eu/spirit-design-system/issues/DS-737) ([6724d7a](https://github.com/lmc-eu/spirit-design-system/commit/6724d7a))
+
+### Tests
+
+- **web-twig:** Slightly improve readability of Twig snapshots by adding more line breaks ([cf212a2](https://github.com/lmc-eu/spirit-design-system/commit/cf212a2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.31.0"></a>
 
 # [1.31.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.30.0...@lmc-eu/spirit-web-twig@1.31.0) (2023-05-18)
