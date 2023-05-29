@@ -3,9 +3,21 @@
 {% block content %}
 
 {# Alert Colors #}
-{% include '@components/Alert/stories/AlertColors.twig' %}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Alert Colors</h2>
+    {% include '@components/Alert/stories/AlertColors.twig' %}
+</section>
 
 {# Alert Centered #}
-{% include '@components/Alert/stories/AlertCentered.twig' %}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Alert Centered</h2>
+    {% include '@components/Alert/stories/AlertCentered.twig' %}
+</section>
+
+{# Alert Icons #}
+<section class="docs-Section">
+    <h2 class="docs-Heading">Alert Icons</h2>
+    {% include '@components/Alert/stories/AlertIcons.twig' %}
+</section>
 
 {% endblock %}
