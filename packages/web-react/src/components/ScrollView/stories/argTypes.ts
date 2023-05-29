@@ -6,7 +6,7 @@ export default {
     },
     defaultValue: 'vertical',
   },
-  indicators: {
+  edgeIndicators: {
     control: {
       type: 'select',
       options: ['borders', 'shadows', 'both'],
