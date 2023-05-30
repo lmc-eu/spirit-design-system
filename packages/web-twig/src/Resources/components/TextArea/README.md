@@ -5,39 +5,42 @@ This is Twig implementation of the [TextArea] component.
 Basic example usage:
 
 ```twig
-<TextArea id="example" label="Label" name="example"></TextArea>
+<TextArea id="example" label="Label" name="example" />
 ```
 
 Advanced example usage:
 
 ```twig
 <TextArea
+  helperText="custom helper text"
   id="example2"
+  isRequired
   label="Label"
+  maxlength="180"
   message="validation failed"
   name="example2"
   placeholder="Placeholder"
-  validationState="danger"
-  maxlength="180"
   rows="10"
-  isRequired
-  helperText="custom helper text"
->
-    TextArea
-</TextArea>
+  validationState="danger"
+  value="TextArea"
+/>
 ```
 
 Without lexer:
 
 ```twig
 {% include "@spirit/textArea.twig" with { props: {
-    id: "example",
-    label: "Label",
-    name: "example",
-    isRequired: true,
-    validationState: "danger",
-    message: "validation failed",
     helperText: "custom helper text",
+    id: "example",
+    isRequired: true,
+    label: "Label",
+    maxLength: 180,
+    message: "validation failed",
+    name: "example",
+    placeholder: "Placeholder",
+    rows: 10,
+    validationState: "danger",
+    value: "TextArea"
 }} %}
 ```
 
@@ -85,7 +88,7 @@ Then you need to add attribute `isAutoResizing` to the component.
   id="textareaAutoResize"
   isAutoResizing
   label="Label of auto-resizing TextArea"
-></TextArea>
+/>
 ```
 
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
