@@ -1,0 +1,55 @@
+{
+  "name": "@lmc-eu/spirit-analytics",
+  "version": "0.0.0",
+  "description": "Analytic tools for Spirit Design System",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "spirit",
+    "analytics",
+    "design-system",
+    "react-scanner"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "packages/analytics"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "bin": "./bin/spirit-analytics.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "prebuild": "shx rm -rf dist && shx mkdir -p dist",
+    "build": "tsup --config ./config/tsup.config.ts",
+    "postbuild": "shx cp -r package.json README.md dist/",
+    "start": "tsup src/index.ts --watch",
+    "types": "tsc",
+    "lint": "eslint ./",
+    "lint:fix": "yarn lint --fix",
+    "test": "npm-run-all --serial lint types"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "shx": "0.3.4",
+    "tsup": "^6.7.0"
+  },
+  "dependencies": {
+    "zx": "^7.2.2",
+    "filedirname": "^2.7.0",
+    "react-scanner": "^1.1.0",
+    "sade": "^1.8.1"
+  }
+}
