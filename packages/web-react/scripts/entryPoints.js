@@ -24,6 +24,7 @@ const entryPoints = [
   { dirs: ['components', 'Pill'] },
   { dirs: ['components', 'RadioField'] },
   { dirs: ['components', 'ScrollView'] },
+  { dirs: ['components', 'Select'] },
   { dirs: ['components', 'Stack'] },
   { dirs: ['components', 'Tabs'] },
   { dirs: ['components', 'Tag'] },

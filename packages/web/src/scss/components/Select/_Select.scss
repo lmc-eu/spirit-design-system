@@ -52,8 +52,8 @@ $_field-name: 'Select';
     padding-inline-end: calc(
         #{map.get(form-fields-theme.$input-typography, mobile, font-size) *
             map.get(form-fields-theme.$input-typography, mobile, line-height)} + (
-        2 * #{form-fields-theme.$box-field-input-padding-y}
-        ) + #{form-fields-theme.$box-field-input-padding-x}
+                2 * #{form-fields-theme.$box-field-input-padding-y}
+            ) + #{form-fields-theme.$box-field-input-padding-x}
     );
 
     &::-ms-expand {

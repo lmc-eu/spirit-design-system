@@ -27,6 +27,7 @@ export type SpiritDialogElementBaseProps = SpiritDetailedHTMLProps<HTMLDialogEle
 export type SpiritDivElementBaseProps = SpiritDetailedHTMLProps<HTMLDivElement>;
 export type SpiritInputElementBaseProps = SpiritCombinedHTMLProps<HTMLInputElement>;
 export type SpiritLItemElementBaseProps = SpiritDetailedHTMLProps<HTMLLIElement>;
+export type SpiritSelectElementBaseProps = SpiritCombinedHTMLProps<HTMLSelectElement>;
 export type SpiritSpanElementBaseProps = SpiritDetailedHTMLProps<HTMLSpanElement>;
 export type SpiritTextAreaElementBaseProps = SpiritCombinedHTMLProps<HTMLTextAreaElement>;
 export type SpiritUListElementBaseProps = SpiritDetailedHTMLProps<HTMLUListElement>;
@@ -36,11 +37,19 @@ export type SpiritAnchorElementProps = OverloadStyleProps<SpiritAnchorElementBas
 export type SpiritButtonElementProps = OverloadStyleProps<SpiritButtonElementBaseProps>;
 export type SpiritDialogElementProps = OverloadStyleProps<SpiritDialogElementBaseProps>;
 export type SpiritDivElementProps = OverloadStyleProps<SpiritDivElementBaseProps>;
-export type SpiritInputElementProps = Omit<OverloadStyleProps<SpiritInputElementBaseProps>, 'required' | 'type'>;
+export type SpiritInputElementProps = Omit<
+  OverloadStyleProps<SpiritInputElementBaseProps>,
+  'required' | 'disabled' | 'type'
+>;
 export type SpiritLItemElementProps = OverloadStyleProps<SpiritLItemElementBaseProps>;
+export type SpiritSelectElementProps = Omit<OverloadStyleProps<SpiritSelectElementBaseProps>, 'required' | 'disabled'>;
 export type SpiritSpanElementProps = OverloadStyleProps<SpiritSpanElementBaseProps>;
-export type SpiritTextAreaElementProps = Omit<OverloadStyleProps<SpiritTextAreaElementBaseProps>, 'required'>;
+export type SpiritTextAreaElementProps = Omit<
+  OverloadStyleProps<SpiritTextAreaElementBaseProps>,
+  'required' | 'disabled'
+>;
 export type SpiritUListElementProps = OverloadStyleProps<SpiritUListElementBaseProps>;
 
 export type SpiritInputElementPropsWithRef = SpiritInputElementProps & ComponentPropsWithRef<'input'>;
+export type SpiritSelectElementPropsWithRef = SpiritSelectElementProps & ComponentPropsWithRef<'select'>;
 export type SpiritTextAreaElementPropsWithRef = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;
