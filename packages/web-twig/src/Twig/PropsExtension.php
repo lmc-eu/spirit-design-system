@@ -54,7 +54,7 @@ class PropsExtension extends AbstractExtension
                     // allow manually specified attributes
                     || in_array($propName, $allowedAttributes)
                 ) {
-                    if ($propValue !== '') {
+                    if (! is_null($propValue) && $propValue !== '') {
                         $transferringAttributes[$propName] = $propValue;
                     }
                 }
@@ -76,7 +76,9 @@ class PropsExtension extends AbstractExtension
         $transferringAttributes = [];
         foreach ($props as $propName => $propValue) {
             if (in_array($propName, self::VALIDATION_ATTRIBUTES, true) || in_array($propName, $allowedAttributes)) {
-                $transferringAttributes[$propName] = $propValue;
+                if (! is_null($propValue) && $propValue !== '') {
+                    $transferringAttributes[$propName] = $propValue;
+                }
             }
         }
 
