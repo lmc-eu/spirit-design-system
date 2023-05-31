@@ -11,6 +11,7 @@ module.exports = {
       'always',
       [
         // Use when committing changes/additions/removals to exact package
+        'analytics',
         'design-tokens',
         'form-validations',
         'icons',

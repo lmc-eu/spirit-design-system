@@ -1,0 +1,7 @@
+# compiled output
+/.scanner
+
+# code coverage
+/_coverage
+/.coverage
+/coverage
