@@ -105,6 +105,23 @@ class PropsExtensionTest extends TestCase
                     'id' => 'testId',
                 ],
             ],
+            'filter only allowed attributes and skip null values' => [
+                [
+                    'test-id' => 'testDataId',
+                    'aria-label' => 'testAria',
+                    'data-label' => 'testData',
+                    'id' => 'testId',
+                    'name' => null,
+                ],
+                ['name'],
+                [
+                    'transferringAttributes' => [
+                        'aria-label' => 'testAria',
+                        'data-label' => 'testData',
+                    ],
+                    'id' => 'testId',
+                ],
+            ],
             'skip empty transferring attributes' => [
                 [
                     'test-id' => 'testDataId',
@@ -145,7 +162,7 @@ class PropsExtensionTest extends TestCase
     }
 
     /**
-     * @return array<string, array<int, array<int|string, array<string, string>|string>>>
+     * @return array<string, array<int, array<int|string, array<string, string>|string|null>>>
      */
     public function renderInputPropsDataProvider(): array
     {
@@ -158,7 +175,22 @@ class PropsExtensionTest extends TestCase
                 'min' => '1',
                 'max' => '6',
                 'autocomplete' => 'on',
-            ], ['autocomplete'], [
+                'placeholder' => 'Your name',
+            ], ['autocomplete', 'placeholder'], [
+                'transferringAttributes' => [
+                    'min' => '1',
+                    'max' => '6',
+                    'autocomplete' => 'on',
+                    'placeholder' => 'Your name',
+                ],
+            ]],
+            'filter only allowed attributes and skip null values' => [[
+                'test-id' => 'testDataId',
+                'min' => '1',
+                'max' => '6',
+                'autocomplete' => 'on',
+                'placeholder' => null,
+            ], ['autocomplete', 'placeholder'], [
                 'transferringAttributes' => [
                     'min' => '1',
                     'max' => '6',
