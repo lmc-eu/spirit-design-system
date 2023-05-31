@@ -19,4 +19,4 @@
 
 [context.deploy-preview]
   # Deploy preview only if there are changes in some directories
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ./packages/web-react/src/ .storybook/"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ./packages/web-react/src/ .storybook/ ./packages/web-react/docs/stories/"
