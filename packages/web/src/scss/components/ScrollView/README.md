@@ -93,6 +93,15 @@ Or both:
 ></div>
 ```
 
+### Custom Shadows
+
+You can customize the shadows by overriding the following CSS variables:
+
+```css
+--scroll-view-start-shadow-background: linear-gradient(to bottom, #9400d3 0%, #9400d300 100%);
+--scroll-view-end-shadow-background: linear-gradient(to top, #9400d3 0%, #9400d300 100%);
+```
+
 ## Scrollbar
 
 Depending on user's operating system and browser, the scrollbar may be hidden by default, or take up space in the container element.
