@@ -64,11 +64,11 @@
 
 .ScrollView__indicators--shadows {
     &::before {
-        background: theme.$start-shadow-background;
+        background: var(--scroll-view-start-shadow-background, theme.$start-shadow-background);
     }
 
     &::after {
-        background: theme.$end-shadow-background;
+        background: var(--scroll-view-end-shadow-background, theme.$end-shadow-background);
     }
 }
 
