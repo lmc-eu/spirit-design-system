@@ -1,0 +1,36 @@
+<Select
+    id="select-success"
+    name="select-success"
+    label="Validation success"
+    validationText="Success validation text"
+    validationState="success"
+    isRequired
+>
+    <option value="" selected disabled>Placeholder</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+</Select>
+<Select
+    id="select-warning"
+    name="select-warning"
+    label="Validation warning"
+    validationText="Warning validation text"
+    validationState="warning"
+    isRequired
+>
+    <option value="" selected disabled>Placeholder</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+</Select>
+<Select
+    id="select-danger"
+    name="select-danger"
+    label="Validation danger"
+    validationText="{{ ['Danger validation text', 'Second danger validation text'] }}"
+    validationState="danger"
+    isRequired
+>
+    <option value="" selected disabled>Placeholder</option>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+</Select>
