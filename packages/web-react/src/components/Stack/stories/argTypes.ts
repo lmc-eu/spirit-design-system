@@ -3,7 +3,7 @@ export default {
     control: {
       type: 'boolean',
     },
-    defaultValue: true,
+    defaultValue: false,
   },
   hasStartDivider: {
     control: {

@@ -6,7 +6,7 @@ import { SpiritStackProps } from '../../types';
 
 const defaultProps = {
   elementType: 'div',
-  hasSpacing: true,
+  hasSpacing: false,
   hasEndDivider: false,
   hasIntermediateDividers: false,
   hasStartDivider: false,
