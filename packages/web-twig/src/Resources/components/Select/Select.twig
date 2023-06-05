@@ -1,0 +1,84 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _isFluid = props.isFluid | default(false) -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
+{%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Select' -%}
+{%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'Select--fluid' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Select--disabled' : null -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'Select--' ~ _validationState : null -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'Select__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'Select__label--hidden' : null -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'Select__label--required' : null -%}
+{%- set _inputClassName = _spiritClassPrefix ~ 'Select__input' -%}
+{%- set _containerClassName = _spiritClassPrefix ~ 'Select__inputContainer' -%}
+{%- set _iconClassName = _spiritClassPrefix ~ 'Select__icon' -%}
+{%- set _validationTextClassName = _spiritClassPrefix ~ 'Select__validationText' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'Select__helperText' -%}
+
+{# Attributes #}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+
+<div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+    <label for="{{ _id }}" {{ classProp(_labelClassName) }}>{{ _label }}</label>
+    <div class="{{ _containerClassName }}">
+        <select
+            id="{{ _id }}"
+            name="{{ _name }}"
+            class="{{ _inputClassName }}"
+            {{ _disabledAttr }}
+            {{ _requiredAttr }}
+        >
+            {%- block content %}{% endblock -%}
+        </select>
+        <div class="{{ _iconClassName }}">
+            <Icon name="chevron-down" />
+        </div>
+    </div>
+    {% if _helperText and not _unsafeHelperText %}<div class="{{ _helperTextClassName }}">{{ _helperText }}</div>{% endif %}
+    {% if _unsafeHelperText %}<div class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</div>{% endif %}
+    {% if _validationText and _validationState and not _unsafeValidationText %}
+        {%- if _validationText is iterable -%}
+            <ul class="{{ _validationTextClassName }}">
+                {% for _validationTextItem in _validationText %}
+                    <li>{{ _validationTextItem }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="{{ _validationTextClassName }}">
+                {{ _validationText }}
+            </div>
+        {%- endif -%}
+    {% endif %}
+    {% if _unsafeValidationText and _validationState %}
+        {%- if _unsafeValidationText is iterable -%}
+            <ul class="{{ _validationTextClassName }}">
+                {% for _validationTextItem in _unsafeValidationText %}
+                    <li>{{ _validationTextItem | raw }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="{{ _validationTextClassName }}">
+                {{ _unsafeValidationText | raw }}
+            </div>
+        {%- endif -%}
+    {% endif %}
+</div>
