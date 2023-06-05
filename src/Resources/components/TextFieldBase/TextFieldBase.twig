@@ -53,7 +53,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'id' and (_isAutoResizing and prop != 'data-toggle')) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id') and (_dataToggleAttr is null or prop is not same as('data-toggle'))) -%}
 {%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
 {%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
 {%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
