@@ -57,6 +57,52 @@ Hidden label:
 </div>
 ```
 
+Placeholder:
+
+Use the `option` with no value and the `selected` attribute. This
+creates a placeholder in the selection list. Add the `disabled`
+attribute so users can't pick the placeholder again, making things
+easier for them.
+
+If you must fill out the selection list, also use the `disabled`
+attribute for the placeholder. This way, the form can't be sent
+until the user picks a real option, not the placeholder. This makes
+sure users give all needed details before sending the form.
+
+```html
+<div class="Select">
+  <label for="selectPlaceholder" class="Select__label">Label</label>
+  <div class="Select__inputContainer">
+    <select id="selectPlaceholder" class="Select__input">
+      <option value="" selected>Select option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="Select">
+  <label for="selectPlaceholderDisabled" class="Select__label Select__label--required">Label</label>
+  <div class="Select__inputContainer">
+    <select id="selectPlaceholderDisabled" class="Select__input" required>
+      <option value="" selected disabled>Select option (default is disabled)</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>
+```
+
 Fluid width:
 
 ```html
