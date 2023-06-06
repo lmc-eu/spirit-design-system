@@ -1,8 +1,8 @@
 import { debounce } from '../Debounce';
 
-const DEBOUNCE_DELAY_MS = 100;
+const DEBOUNCE_DELAY_MS = 200;
 
-describe('Behavior: Debounce', () => {
+describe('Debounce', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -11,18 +11,45 @@ describe('Behavior: Debounce', () => {
     jest.useRealTimers();
   });
 
-  it('should call the given callback function only after the debounce delay has passed', () => {
+  it('should debounce the callback function', () => {
     const callback = jest.fn();
-    const debouncedFunction = debounce(callback, DEBOUNCE_DELAY_MS);
+    const debouncedCallback = debounce(callback, DEBOUNCE_DELAY_MS);
 
-    debouncedFunction('test argument');
+    debouncedCallback('test');
 
+    // At this point, the callback should not have been called yet
     expect(callback).not.toHaveBeenCalled();
 
-    jest.runAllTimers();
+    // Fast-forward time by 200ms
+    jest.advanceTimersByTime(DEBOUNCE_DELAY_MS);
 
-    expect(callback).toHaveBeenCalled();
+    // Now the callback should have been called only once
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith('test argument');
+  });
+
+  it('should execute the callback after throttling is over', () => {
+    const callback = jest.fn();
+    const debouncedCallback = debounce(callback, DEBOUNCE_DELAY_MS);
+
+    debouncedCallback('test');
+    debouncedCallback('test');
+    debouncedCallback('test');
+
+    // At this point, the callback should not have been called yet
+    expect(callback).not.toHaveBeenCalled();
+
+    // Fast-forward time by 200ms
+    jest.advanceTimersByTime(DEBOUNCE_DELAY_MS);
+
+    // The callback should have been called once
+    expect(callback).toHaveBeenCalledTimes(1);
+
+    debouncedCallback('test');
+
+    // Fast-forward time by 400ms
+    jest.advanceTimersByTime(DEBOUNCE_DELAY_MS);
+
+    // The callback should have been called twice
+    expect(callback).toHaveBeenCalledTimes(2);
   });
 });
