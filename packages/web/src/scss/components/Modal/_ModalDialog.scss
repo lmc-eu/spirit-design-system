@@ -1,5 +1,6 @@
 // 1. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
 //    the tablet breakpoint.
+// 2. Use ScrollView's backdoor to fix its height inside ModalDialog in Safari.
 
 @use 'sass:map';
 @use '../../tools/breakpoint';
@@ -8,6 +9,8 @@
 
 .ModalDialog {
     @include typography.generate(theme.$typography);
+
+    --scroll-view-vertical-height: auto; // 2.
 
     position: fixed;
     bottom: 0;

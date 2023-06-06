@@ -16,6 +16,20 @@
 // 5. Make `.ScrollView` adjust to flexible layouts.
 //
 // 6. Hide content overflowing in the other direction because scrollbars would be unreachable under scrolling shadows.
+//
+// 7. Make the height of vertical ScrollView modifiable by a CSS variable. This backdoor is necessary for the composition
+//    of ScrollView and ModalDialog. In Safari, as long as the dialog uses flex layout along with other min/max height
+//    calculations, the ScrollView can't be set to `height: 100%` because it would cause the ScrollView to collapse.
+//
+//    Recommended solution for ModalDialog:
+//
+//    - set `--scroll-view-vertical-height: auto` on the ScrollView's parent.
+//
+//    Other possible (yet more complicated and less DX friendly) solutions:
+//
+//    - require `display: flex` on the ScrollView's parent,
+//    - wrap the ScrollView inside ModalDialog with another element (see https://react-ui.io/components/modal),
+//    - rewrite ModalDialog to use `display: grid` instead of `display: flex` 🎉.
 
 @use '../../settings/transitions';
 @use 'theme';
@@ -65,7 +79,7 @@
 }
 
 .ScrollView--vertical {
-    height: 100%;
+    height: var(--scroll-view-vertical-height, 100%); // 7.
     min-height: 0; // 5.
 }
 
