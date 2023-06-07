@@ -12,9 +12,9 @@ import {
 } from './constants';
 
 const FileUploader = (props: SpiritFileUploaderProps) => {
-  const { children, id, fileQueue, onDismiss, addToQueue, clearQueue, errorMessages, ...restProps } = props;
+  const { children, id, fileQueue, onDismiss, addToQueue, clearQueue, errorMessages, isFluid, ...restProps } = props;
 
-  const { classProps } = useFileUploaderStyleProps();
+  const { classProps } = useFileUploaderStyleProps({ isFluid });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
   const contextValue = {

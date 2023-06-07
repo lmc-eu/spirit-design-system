@@ -10,4 +10,5 @@ export default {
 
 export { default as FileUploaderUncontrolled } from './stories/FileUploaderUncontrolled';
 export { default as FileUploaderUncontrolledDismissible } from './stories/FileUploaderUncontrolledDismissible';
+export { default as FileUploaderUncontrolledFluid } from './stories/FileUploaderUncontrolledFluid';
 export { default as FormWithUncontrolledFileUploader } from './stories/FormWithUncontrolledFileUploader';

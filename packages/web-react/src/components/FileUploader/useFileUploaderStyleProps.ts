@@ -9,6 +9,7 @@ export interface FileUploaderStyleProps extends Validation {
   isDisabledByQueueLimitBehavior?: boolean;
   isDragging?: boolean;
   isDropZoneHidden?: boolean;
+  isFluid?: boolean;
   queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
 }
 
@@ -40,6 +41,7 @@ export interface FileUploaderStyleReturn {
 export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileUploaderStyleReturn => {
   const fileUploaderClass = useClassNamePrefix('FileUploader');
   const fileUploaderHasDragAndDropClass = 'has-drag-and-drop';
+  const fileUploaderFluidClass = `${fileUploaderClass}--fluid`;
   const fileUploaderInputClass = `${fileUploaderClass}Input`;
   const fileUploaderInputDisabledClass = `${fileUploaderInputClass}--disabled`;
   const fileUploaderInputValidationClass = `${fileUploaderInputClass}--${props?.validationState}`;
@@ -62,7 +64,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
 
   return {
     classProps: {
-      root: fileUploaderClass,
+      root: classNames(fileUploaderClass, { [fileUploaderFluidClass]: props?.isFluid }),
       input: {
         root: classNames(fileUploaderInputClass, {
           [fileUploaderHasDragAndDropClass]: props?.isDragAndDropSupported,
