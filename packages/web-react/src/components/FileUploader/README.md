@@ -289,6 +289,7 @@ const resetStateHandler = () => {
 | `clearQueue`                          | `() => void`                                    | -       | ✔        | Callback to clear the queue                                         |
 | `fileQueue`                           | `FileQueueMapType`                              | -       | ✔        | Queue of items to upload                                            |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`             | -       | ✔        | A callback to delete a particular item from the queue               |
+| `isFluid`                             | `boolean`                                       | -       | ✕        | When the field is supposed to be fluid                              |
 | `errorMessages.errorMaxFileSize`      | `string`                                        | -       | ✕        | Translation for the error message: Maximum file size                |
 | `errorMessages.errorMaxUploadedFiles` | `string`                                        | -       | ✕        | Translation for the error message: Maximum number of uploaded files |
 | `errorMessages.errorFileDuplicity`    | `string`                                        | -       | ✕        | Translation for the error message: Duplicate file in queue          |
@@ -394,6 +395,7 @@ via `inputProps` and `listProps`.
 | `isDisabled`          | `boolean`                               | -        | ✕        | Whether is field disabled                           |
 | `queueLimitBehavior`  | `'hide', 'disable', 'none'`             | `none`   | ✕        | Input behavior when the file queue is filled        |
 | `isRequired`          | `boolean`                               | -        | ✕        | Whether is field required                           |
+| `isFluid`             | `boolean`                               | -        | ✕        | When the field is supposed to be fluid              |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | -        | ✕        | Callback on error condition                         |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | -        | ✕        | Callback on change in fileQueue                     |
 | `validationState`     | `ValidationState`                       | -        | ✕        | Validation state                                    |

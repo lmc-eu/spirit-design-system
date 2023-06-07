@@ -32,6 +32,12 @@ export default {
     },
     defaultValue: 'none',
   },
+  isFluid: {
+    control: {
+      type: 'boolean',
+    },
+    defaultValue: false,
+  },
   isRequired: {
     control: {
       type: 'boolean',
