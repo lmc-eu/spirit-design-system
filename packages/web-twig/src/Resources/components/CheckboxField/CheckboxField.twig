@@ -39,7 +39,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 {# Deprecations #}
 {% if _validationState is same as('error') %}

@@ -30,7 +30,7 @@
                     <Link
                         href="{{ item.url }}"
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
-                        isUnderlined="{{ loop.last != true }}"
+                        isUnderlined="{{ loop.last is not same as(true) }}"
                         aria-current="{{ loop.last ? 'page' : 'false' }}"
                     >{{ item.title }}</Link>
                 </li>

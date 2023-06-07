@@ -1,1 +1,1 @@
-{%- for propName, propValue in transferringAttributes  %}{%- if propValue is not null and propValue != '' %} {{ propName }}="{{ propValue }}"{% endif -%}{% endfor -%}
+{%- for propName, propValue in transferringAttributes  %}{%- if propValue is not null and propValue is not same as('') %} {{ propName }}="{{ propValue }}"{% endif -%}{% endfor -%}

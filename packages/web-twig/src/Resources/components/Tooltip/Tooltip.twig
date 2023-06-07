@@ -20,7 +20,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootPlacementClassName, _rootDismissibleClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <div
     {{ mainProps(_mainPropsWithoutId) }}
