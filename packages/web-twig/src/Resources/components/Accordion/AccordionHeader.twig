@@ -21,7 +21,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _ariaExpanded = _isOpen ? 'true' : 'false' -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <{{ _elementType }}
     {{ mainProps(_mainPropsWithoutId) }}

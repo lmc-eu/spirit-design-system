@@ -20,7 +20,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _collapseClassNames = [ _rootClassName, _isOpenClassName ] -%}
 {%- set _contentClassNames = [ _accordionClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop != 'id') -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <div
     {{ mainProps(_mainPropsWithoutId) }}

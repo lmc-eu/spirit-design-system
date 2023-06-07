@@ -18,7 +18,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootDirectionClassName, _rootScrollbarDisabledClassName, _styleProps.className ] -%}
 {%- set _indicatorsClassNames = [ _indicatorsClassName, _indicatorsShadowsClassName, _indicatorsBordersClassName ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'data-spirit-direction') -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('data-spirit-direction')) -%}
 
 <div
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}

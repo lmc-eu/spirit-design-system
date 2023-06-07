@@ -9,7 +9,7 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _mainProps = props | filter((value, prop) => prop != 'ariaHidden') | merge({
+{%- set _mainProps = props | filter((value, prop) => prop is not same as('ariaHidden')) | merge({
     'aria-hidden': _ariaHidden ? 'true' : 'false',
 }) -%}
 

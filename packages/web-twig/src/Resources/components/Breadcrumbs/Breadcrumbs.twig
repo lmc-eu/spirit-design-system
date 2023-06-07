@@ -16,20 +16,20 @@
     {%- if _items|length > 0 -%}
         <ol>
             {% for item in _items %}
-                {% if loop.index is same as(_items|length - 1) and _goBackTitle != '' %}
+                {% if loop.index is same as(_items|length - 1) and _goBackTitle is not same as('') %}
                     <li class="d-tablet-none">
                         <Icon name="chevron-left" />
                         <Link href="{{ item.url }}" color="primary" isUnderlined>{{ _goBackTitle }}</Link>
                     </li>
                 {% endif %}
                 <li class="d-none d-tablet-flex">
-                    {% if loop.index0 != 0 %}
+                    {% if loop.index0 is not same as(0) %}
                         <Icon name="chevron-right" />
                     {% endif %}
                     <Link
                         href="{{ item.url }}"
                         color="{{ loop.last ? 'secondary' : 'primary' }}"
-                        isUnderlined="{{ loop.last != true }}"
+                        isUnderlined="{{ loop.last is not same as(true) }}"
                         aria-current="{{ loop.last ? 'page' : 'false' }}"
                     >
                         {{ item.title }}

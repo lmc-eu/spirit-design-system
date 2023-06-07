@@ -11,7 +11,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop != 'data-spirit-populate-field') -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('data-spirit-populate-field')) -%}
 
 <li
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
