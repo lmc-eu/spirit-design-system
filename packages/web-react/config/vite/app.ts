@@ -2,10 +2,12 @@ import { resolve } from 'path';
 import { readdirSync } from 'fs';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
+import react from '@vitejs/plugin-react';
 import { getNestedDirs } from '../../scripts/build';
 
 export default defineConfig({
   plugins: [
+    react(),
     handlebars({
       partialDirectory: resolve(__dirname, '../../partials'),
       runtimeOptions: {
