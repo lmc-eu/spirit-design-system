@@ -10,7 +10,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootAnimationClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutLocal = props | filter((value, prop) => prop != 'color' and prop != 'class') -%}
+{%- set _mainPropsWithoutLocal = props | filter((value, prop) => prop is not same as('color') and prop is not same as('class')) -%}
 
 {% embed "@spirit/icon.twig" with { props: {
     name: 'spinner',
