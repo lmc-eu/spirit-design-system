@@ -16,6 +16,7 @@ export * from './Icon';
 export * from './Link';
 export * from './Modal';
 export * from './ModalComposed';
+export * from './Pagination';
 export * from './Pill';
 export * from './RadioField';
 export * from './ScrollView';
