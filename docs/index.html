@@ -30,12 +30,14 @@
           <h1 class="typography-heading-xlarge-text">Spirit Design System</h1>
           <h2 class="typography-heading-medium-text text-secondary-inverted-disabled mb-900">Web — Development Preview</h2>
       
-          <a href="https://github.com/lmc-eu/spirit-design-system" class="Button Button--inverted Button--large mr-400">
-            GitHub Project
-          </a>
-          <a href="https://spirit.supernova-docs.io/spirit/" class="Button Button--inverted Button--large">
-            Spirit Docs →
-          </a>
+          <div class="d-grid d-tablet-block">
+            <a href="https://github.com/lmc-eu/spirit-design-system" class="Button Button--inverted Button--large mb-400 mb-tablet-0 mr-tablet-400">
+              GitHub Project
+            </a>
+            <a href="https://spirit.supernova-docs.io/spirit/" class="Button Button--inverted Button--large">
+              Spirit Docs →
+            </a>
+          </div>
       
         </div>
       </header>
@@ -43,108 +45,100 @@
       <main class="py-900 py-tablet-1200">
         <div class="Container">
     
+          <ul class="Tabs mb-1100" role="tablist">
+            <li class="Tabs__item">
+              <a href="/" class="Tabs__link is-selected" aria-selected="true">Components</a>
+            </li>
+            <li class="Tabs__item">
+              <a href="/src/icons/" class="Tabs__link">Icons</a>
+            </li>
+            <li class="Tabs__item">
+              <a href="/src/scss/helpers/" class="Tabs__link ">Helpers</a>
+            </li>
+          </ul>
+    
           
             <section class="docs-Section">
           
               <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Components</h2>
               <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
           
-                  <li>
-                    <a href="src/scss/components/Accordion/" class="docs-TileLink">Accordion</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Alert/" class="docs-TileLink">Alert</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Breadcrumbs/" class="docs-TileLink">Breadcrumbs</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Button/" class="docs-TileLink">Button</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/CheckboxField/" class="docs-TileLink">CheckboxField</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Collapse/" class="docs-TileLink">Collapse</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Container/" class="docs-TileLink">Container</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Dropdown/" class="docs-TileLink">Dropdown</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/FileUploader/" class="docs-TileLink">FileUploader</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Grid/" class="docs-TileLink">Grid</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Header/" class="docs-TileLink">Header</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Item/" class="docs-TileLink">Item</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Modal/" class="docs-TileLink">Modal</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Pagination/" class="docs-TileLink">Pagination</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Pill/" class="docs-TileLink">Pill</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/RadioField/" class="docs-TileLink">RadioField</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/ScrollView/" class="docs-TileLink">ScrollView</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Select/" class="docs-TileLink">Select</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Spinner/" class="docs-TileLink">Spinner</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Stack/" class="docs-TileLink">Stack</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Tabs/" class="docs-TileLink">Tabs</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Tag/" class="docs-TileLink">Tag</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/TextArea/" class="docs-TileLink">TextArea</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/TextField/" class="docs-TileLink">TextField</a>
-                  </li>
-                  <li>
-                    <a href="src/scss/components/Tooltip/" class="docs-TileLink">Tooltip</a>
-                  </li>
-          
-              </ul>
-          
-            </section>
-            <section class="docs-Section">
-          
-              <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Helpers</h2>
-              <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
                 <li>
-                  <a href="src/scss/helpers/" class="docs-TileLink">Helpers</a>
+                  <a href="src/scss/components/Accordion/" class="docs-TileLink">Accordion</a>
                 </li>
-              </ul>
-          
-            </section>
-            <section class="docs-Section">
-          
-              <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Icons</h2>
-              <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
                 <li>
-                  <a href="src/icons/" class="docs-TileLink">Icons</a>
+                  <a href="src/scss/components/Alert/" class="docs-TileLink">Alert</a>
                 </li>
+                <li>
+                  <a href="src/scss/components/Breadcrumbs/" class="docs-TileLink">Breadcrumbs</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Button/" class="docs-TileLink">Button</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/CheckboxField/" class="docs-TileLink">CheckboxField</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Collapse/" class="docs-TileLink">Collapse</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Container/" class="docs-TileLink">Container</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Dropdown/" class="docs-TileLink">Dropdown</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/FileUploader/" class="docs-TileLink">FileUploader</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Grid/" class="docs-TileLink">Grid</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Header/" class="docs-TileLink">Header</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Item/" class="docs-TileLink">Item</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Modal/" class="docs-TileLink">Modal</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Pagination/" class="docs-TileLink">Pagination</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Pill/" class="docs-TileLink">Pill</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/RadioField/" class="docs-TileLink">RadioField</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/ScrollView/" class="docs-TileLink">ScrollView</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Select/" class="docs-TileLink">Select</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Spinner/" class="docs-TileLink">Spinner</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Stack/" class="docs-TileLink">Stack</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Tabs/" class="docs-TileLink">Tabs</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Tag/" class="docs-TileLink">Tag</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/TextArea/" class="docs-TileLink">TextArea</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/TextField/" class="docs-TileLink">TextField</a>
+                </li>
+                <li>
+                  <a href="src/scss/components/Tooltip/" class="docs-TileLink">Tooltip</a>
+                </li>
+          
               </ul>
           
             </section>
