@@ -1,5 +1,6 @@
 @use 'theme';
 @use '../../settings/cursors';
+@use '../../tools/reset';
 
 .Pagination {
     display: inline-flex;
@@ -12,6 +13,8 @@
 }
 
 .Pagination__link {
+    @include reset.button();
+
     display: flex;
     align-items: center;
     justify-content: center;
