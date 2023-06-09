@@ -61,13 +61,6 @@ $validation-states: (
         input-border-color: $input-border-color-danger,
         message-color: $message-color-danger,
     ),
-
-    // @deprecated Will be removed in the next major version.
-    error:
-        (
-            input-border-color: $input-border-color-danger,
-            message-color: $message-color-danger,
-        ),
 );
 
 // Item variant

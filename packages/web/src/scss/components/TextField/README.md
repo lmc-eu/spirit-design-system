@@ -150,11 +150,9 @@ forget to change not only the input type but also `aria-pressed` and
 ## Validation States
 
 Validation states can be presented either by adding a CSS modifier class
-(`TextField--success`, `TextField--warning`, `TextField--danger`, `TextField--error`), or by adding
+(`TextField--success`, `TextField--warning`, `TextField--danger`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
-`has-warning`, `has-danger`, `has-error`). See Validation state [dictionary][dictionary-validation].
-
-[**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger".
+`has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 ```html
 <div class="TextField TextField--danger">
@@ -176,12 +174,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 ### JavaScript-Controlled Validation Message
 
 When implementing client-side form validation, use JS interaction state classes
-(`has-success`, `has-warning`, `has-danger`, `has-error`) on the wrapping `<div>` element and
+(`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
 render validation messages in a `<div>` with `data-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
-
-[**DEPRECATED**][deprecated] The value "has-error" in the dictionary will be replaced by the value "has-danger".
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**
