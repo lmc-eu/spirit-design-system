@@ -66,7 +66,7 @@ const Story: ComponentStory<typeof FileUploader> = ({ id, ...args }: SpiritFileU
             labelText="or drag and drop here"
             helperText="Max file size is 10 MB"
             isRequired
-            validationState="error"
+            validationState="danger"
             validationText={['First validation message', 'Second validation message']}
           />
           {/* FileUploaderList */}

@@ -12,7 +12,7 @@ describe('useValidationText', () => {
     const { result } = renderHook(() =>
       useValidationText({
         validationTextClassName: 'TextField__message',
-        validationState: 'error',
+        validationState: 'danger',
         validationText: 'required',
       }),
     );
