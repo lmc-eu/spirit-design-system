@@ -1,7 +1,6 @@
 import { ValidationStatesDictionaryType } from './dictionaries';
 
-/* @deprecated: 'error' value will be removed in the next major version. */
-export type ValidationState = ValidationStatesDictionaryType<'error'>;
+export type ValidationState = ValidationStatesDictionaryType;
 
 export type ValidationTextType = string | string[];
 

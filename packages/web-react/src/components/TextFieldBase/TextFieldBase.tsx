@@ -19,16 +19,6 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   useDeprecationMessage({
-    method: 'property',
-    trigger: validationState === 'error',
-    componentName: props?.isMultiline ? 'TextArea' : 'TextField',
-    propertyProps: {
-      deprecatedValue: 'error',
-      newValue: 'danger',
-      propertyName: 'validationState',
-    },
-  });
-  useDeprecationMessage({
     method: 'custom',
     trigger: !!(props?.message && !validationState),
     componentName: props?.isMultiline ? 'TextArea' : 'TextField',
