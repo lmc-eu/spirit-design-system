@@ -6,10 +6,10 @@ describe('useScrollViewStyleProps', () => {
     const { result } = renderHook(() =>
       useScrollViewStyleProps({
         direction: 'vertical',
-        edgeIndicators: 'shadows',
         isScrollbarDisabled: true,
         isScrolledAtEnd: true,
         isScrolledAtStart: true,
+        overflowDecorators: 'shadows',
       }),
     );
 
@@ -19,17 +19,19 @@ describe('useScrollViewStyleProps', () => {
     );
     expect(result.current.classProps.viewport).toBe('ScrollView__viewport');
     expect(result.current.classProps.content).toBe('ScrollView__content');
-    expect(result.current.classProps.indicators).toBe('ScrollView__indicators ScrollView__indicators--shadows');
+    expect(result.current.classProps.overflowDecorators).toBe(
+      'ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows',
+    );
   });
 
-  it('should return horizontal both variants of indicator', () => {
+  it('should return horizontal both variants of overflow decorators', () => {
     const { result } = renderHook(() =>
       useScrollViewStyleProps({
         direction: 'horizontal',
-        edgeIndicators: 'both',
         isScrollbarDisabled: false,
         isScrolledAtEnd: false,
         isScrolledAtStart: false,
+        overflowDecorators: 'both',
       }),
     );
 
@@ -37,8 +39,8 @@ describe('useScrollViewStyleProps', () => {
     expect(result.current.classProps.root).toBe('ScrollView ScrollView--horizontal');
     expect(result.current.classProps.viewport).toBe('ScrollView__viewport');
     expect(result.current.classProps.content).toBe('ScrollView__content');
-    expect(result.current.classProps.indicators).toBe(
-      'ScrollView__indicators ScrollView__indicators--shadows ScrollView__indicators--borders',
+    expect(result.current.classProps.overflowDecorators).toBe(
+      'ScrollView__overflowDecorators ScrollView__overflowDecorators--shadows ScrollView__overflowDecorators--borders',
     );
   });
 });
