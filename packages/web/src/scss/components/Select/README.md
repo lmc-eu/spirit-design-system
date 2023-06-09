@@ -147,7 +147,7 @@ Usage with helper text:
 Validation states can be presented either by adding a CSS modifier class
 (`Select--success`, `Select--warning`, `Select--danger`), or by adding
 a JS interaction class when controlled by JavaScript (`has-success`,
-`has-warning`, `has-danger`, `has-error`). See Validation state [dictionary][dictionary-validation].
+`has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 ```html
 <div class="Select Select--success">
