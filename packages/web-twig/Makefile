@@ -59,7 +59,7 @@ encore-install: ## Install demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
 
 encore-link: ## Link demo dependencies
-	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-web"
+	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-web && cd /srv/spirit-form-validations && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-form-validations"
 
 encore-build: ## Build demo assets
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn build

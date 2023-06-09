@@ -17,3 +17,7 @@ helpers_index:
 helper_view:
   path: /helpers/{helper}
   controller: App\Controller\HelpersController::show
+
+validations_index:
+  path: /validations
+  controller: App\Controller\ValidationsController::index
