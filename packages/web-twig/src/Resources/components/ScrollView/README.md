@@ -11,7 +11,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<ScrollView direction="horizontal" indicators="both" data-toggle="scrollView">ScrollView content</ScrollView>
+<ScrollView direction="horizontal" overflowDecorators="both" data-toggle="scrollView">ScrollView content</ScrollView>
 ```
 
 Without lexer:
@@ -19,7 +19,7 @@ Without lexer:
 ```twig
 {% embed "@spirit/scrollView.twig" with { props: {
     direction: 'horizontal',
-    indicators: 'both',
+    overflowDecorators: 'both',
     data-toggle: 'scrollView'
 }} %}
     {% block content %}
@@ -47,8 +47,8 @@ Or, feel free to write the controlling script yourself.
 | Prop name             | Type                         | Default    | Required | Description                        |
 | --------------------- | ---------------------------- | ---------- | -------- | ---------------------------------- |
 | `direction`           | `horizontal`, `vertical`     | `vertical` | no       | Direction of the scroll            |
-| `indicators`          | `borders`, `shadows`, `both` | `shadows`  | no       | Type of indicators                 |
 | `isScrollbarDisabled` | `bool`                       | `false`    | no       | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | `borders`, `shadows`, `both` | `shadows`  | no       | Type of overflow decorators        |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
