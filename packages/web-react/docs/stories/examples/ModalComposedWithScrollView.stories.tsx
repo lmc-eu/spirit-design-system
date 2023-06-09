@@ -30,7 +30,7 @@ export const ModalComposedWithScrollView = () => {
       <ModalComposed id="ModalExample" isOpen={isOpen} onClose={handleClose}>
         <ModalComposedDialog>
           <ModalComposedHeader>Modal with ScrollView </ModalComposedHeader>
-          <ScrollView edgeIndicators="borders">
+          <ScrollView overflowDecorators="borders">
             <ModalComposedBody>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam

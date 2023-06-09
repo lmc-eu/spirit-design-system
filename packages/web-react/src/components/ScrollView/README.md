@@ -2,7 +2,7 @@
 
 ## Usage
 
-To make scrolling and scroll indicators function correctly, the parent
+To make scrolling and scroll overflow decorators function correctly, the parent
 container's height must be limited. In our examples, we set this height
 limit using inline styles for demonstration purposes only.
 
@@ -40,21 +40,21 @@ limit using inline styles for demonstration purposes only.
 </ScrollView>
 ```
 
-## Scrolling Indicators
+## Overflow Decorators
 
-The ScrollView component provides indicators on its edges, showing that there is more content to scroll to.
+The ScrollView component provides overflow decorators on its edges, showing that there is more content to scroll to.
 Shadows are used by default.
 
 You can use borders instead:
 
 ```javascript
-<ScrollView edgeIndicators="borders" />
+<ScrollView overflowDecorators="borders" />
 ```
 
 Or both:
 
 ```javascript
-<ScrollView edgeIndicators="both" />
+<ScrollView overflowDecorators="both" />
 ```
 
 ## Hiding the Scrollbar
@@ -69,7 +69,7 @@ Or both:
 | --------------------- | ---------------------------- | ---------- | -------- | ---------------------------------- |
 | `children`            | `ReactNode`                  | -          | yes      | ScrollView children's nodes        |
 | `direction`           | `horizontal`, `vertical`     | `vertical` | no       | Direction of the wrapper           |
-| `edgeIndicators`      | `borders`, `shadows`, `both` | `shadows`  | no       | ScrollView edge indicators         |
 | `isScrollbarDisabled` | `boolean`                    | `false`    | no       | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | `borders`, `shadows`, `both` | `shadows`  | no       | ScrollView overflow decorators     |
 | `UNSAFE_className`    | `string`                     | -          | no       | Wrapper custom class name          |
 | `UNSAFE_style`        | `CSSProperties`              | -          | no       | Wrapper custom style               |

@@ -6,17 +6,17 @@ export default {
     },
     defaultValue: 'vertical',
   },
-  edgeIndicators: {
-    control: {
-      type: 'select',
-      options: ['borders', 'shadows', 'both'],
-    },
-    defaultValue: 'shadows',
-  },
   isScrollbarDisabled: {
     control: {
       type: 'boolean',
     },
     defaultValue: false,
+  },
+  overflowDecorators: {
+    control: {
+      type: 'select',
+      options: ['borders', 'shadows', 'both'],
+    },
+    defaultValue: 'shadows',
   },
 };
