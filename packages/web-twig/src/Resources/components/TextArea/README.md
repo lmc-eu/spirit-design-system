@@ -46,24 +46,24 @@ Without lexer:
 
 ## API
 
-| Prop name         | Type                                                                 | Default | Required | Description                                                                                                                        |
-| ----------------- | -------------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `id`              | `string`                                                             | —       | yes      | TextArea and label identification                                                                                                  |
-| `isAutoResizing`  | `bool`                                                               | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing)                        |
-| `inputProps`      | `string[]`                                                           | `[]`    | no       | Pass additional attributes to the textarea element                                                                                 |
-| `isDisabled`      | `bool`                                                               | `false` | no       | If true, TextArea is disabled                                                                                                      |
-| `isFluid`         | `bool`                                                               | `false` | no       | If true, the element spans to the full width of its parent                                                                         |
-| `isLabelHidden`   | `bool`                                                               | `false` | no       | If true, label is hidden                                                                                                           |
-| `isRequired`      | `bool`                                                               | `false` | no       | If true, TextArea is required                                                                                                      |
-| `label`           | `string`                                                             | —       | yes      | Label text                                                                                                                         |
-| `maxLength`       | `number`                                                             | `null`  | no       | Maximum number of characters                                                                                                       |
-| `message`         | `string`, `string[]`                                                 | `null`  | no       | Validation message                                                                                                                 |
-| `name`            | `string`                                                             | `null`  | no       | TextArea name                                                                                                                      |
-| `placeholder`     | `string`                                                             | `null`  | no       | TextArea placeholder                                                                                                               |
-| `rows`            | `number`                                                             | `null`  | no       | Number of visible rows                                                                                                             |
-| `validationState` | [Validation dictionary][dictionary-validation], `error` (deprecated) | `null`  | no       | Type of validation state. [**DEPRECATED**][deprecated] The value "error" in the dictionary will be replaced by the value "danger". |
-| `value`           | `string`                                                             | `null`  | no       | TextArea value                                                                                                                     |
-| `helperText`      | `string`                                                             | `null`  | no       | Custom helper text                                                                                                                 |
+| Prop name         | Type                                           | Default | Required | Description                                                                                                 |
+| ----------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `id`              | `string`                                       | —       | yes      | TextArea and label identification                                                                           |
+| `isAutoResizing`  | `bool`                                         | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing) |
+| `inputProps`      | `string[]`                                     | `[]`    | no       | Pass additional attributes to the textarea element                                                          |
+| `isDisabled`      | `bool`                                         | `false` | no       | If true, TextArea is disabled                                                                               |
+| `isFluid`         | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent                                                  |
+| `isLabelHidden`   | `bool`                                         | `false` | no       | If true, label is hidden                                                                                    |
+| `isRequired`      | `bool`                                         | `false` | no       | If true, TextArea is required                                                                               |
+| `label`           | `string`                                       | —       | yes      | Label text                                                                                                  |
+| `maxLength`       | `number`                                       | `null`  | no       | Maximum number of characters                                                                                |
+| `message`         | `string`, `string[]`                           | `null`  | no       | Validation message                                                                                          |
+| `name`            | `string`                                       | `null`  | no       | TextArea name                                                                                               |
+| `placeholder`     | `string`                                       | `null`  | no       | TextArea placeholder                                                                                        |
+| `rows`            | `number`                                       | `null`  | no       | Number of visible rows                                                                                      |
+| `validationState` | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                                                                   |
+| `value`           | `string`                                       | `null`  | no       | TextArea value                                                                                              |
+| `helperText`      | `string`                                       | `null`  | no       | Custom helper text                                                                                          |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -95,5 +95,4 @@ Then you need to add attribute `isAutoResizing` to the component.
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
