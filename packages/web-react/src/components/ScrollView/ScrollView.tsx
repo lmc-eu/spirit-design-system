@@ -4,14 +4,14 @@ import { SpiritScrollViewProps } from '../../types';
 import { useStyleProps } from '../../hooks';
 import { useScrollViewStyleProps } from './useScrollViewStyleProps';
 import { useScrollPosition } from './useScrollPosition';
-import { SCROLL_VIEW_DEFAULT_EDGE_INDICATOR, SCROLL_VIEW_DEFAULT_DIRECTION } from './constants';
+import { SCROLL_VIEW_DEFAULT_DIRECTION, SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR } from './constants';
 
 const ScrollView = (props: SpiritScrollViewProps) => {
   const {
     children,
     direction = SCROLL_VIEW_DEFAULT_DIRECTION,
-    edgeIndicators = SCROLL_VIEW_DEFAULT_EDGE_INDICATOR,
     isScrollbarDisabled,
+    overflowDecorators = SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR,
     ...restProps
   } = props;
 
@@ -25,10 +25,10 @@ const ScrollView = (props: SpiritScrollViewProps) => {
   });
   const { classProps } = useScrollViewStyleProps({
     direction,
-    edgeIndicators,
     isScrollbarDisabled,
     isScrolledAtStart,
     isScrolledAtEnd,
+    overflowDecorators,
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
@@ -39,7 +39,7 @@ const ScrollView = (props: SpiritScrollViewProps) => {
           {children}
         </div>
       </div>
-      <div className={classProps.indicators} aria-hidden="true" />
+      <div className={classProps.overflowDecorators} aria-hidden="true" />
     </div>
   );
 };
