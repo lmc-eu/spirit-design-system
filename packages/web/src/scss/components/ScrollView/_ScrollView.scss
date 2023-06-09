@@ -1,13 +1,13 @@
 // Based on React UI ScrollView ❤️:
 // https://react-ui.io/components/scroll-view
 
-// 1. Scrolling indicators are implemented as pseudo elements. This way we can transition their visibility easily.
+// 1. Overflow decorators are implemented as pseudo elements. This way we can transition their visibility easily.
 //
-// 2. Stack scrolling indicators over viewport content while keeping the content interactive.
+// 2. Stack overflow decorators over viewport content while keeping the content interactive.
 //
-//    - Scrolling indicators are positioned absolutely over the `.ScrollView`, with auto `z-index` (this is
+//    - Overflow decorators are positioned absolutely over the `.ScrollView`, with auto `z-index` (this is
 //      important!), and with `overflow: hidden` to clip the shadows (ie. its pseudo elements) when offset is applied.
-//    - The `.ScrollView__viewport` remains interactive thanks to `pointer-events: none` on scrolling indicators.
+//    - The `.ScrollView__viewport` remains interactive thanks to `pointer-events: none` on overflow decorators.
 //
 // 3. Make the `.ScrollView__content`'s bounding rectangle spread beyond the part visible through `.ScrollView__viewport`.
 //
@@ -42,7 +42,7 @@
 }
 
 // 1.
-.ScrollView__indicators {
+.ScrollView__overflowDecorators {
     position: absolute; // 2.
     width: 100%; // 2.
     height: 100%; // 2.
@@ -62,7 +62,7 @@
     }
 }
 
-.ScrollView__indicators--shadows {
+.ScrollView__overflowDecorators--shadows {
     &::before {
         background: var(--scroll-view-start-shadow-background, theme.$start-shadow-background);
     }
@@ -105,87 +105,87 @@
     vertical-align: top;
 }
 
-.ScrollView--vertical > .ScrollView__indicators::before,
-.ScrollView--vertical > .ScrollView__indicators::after {
+.ScrollView--vertical > .ScrollView__overflowDecorators::before,
+.ScrollView--vertical > .ScrollView__overflowDecorators::after {
     right: 0;
     left: 0;
     width: auto;
 }
 
-.ScrollView--vertical > .ScrollView__indicators::before {
+.ScrollView--vertical > .ScrollView__overflowDecorators::before {
     top: 0;
 }
 
-.ScrollView--vertical > .ScrollView__indicators::after {
+.ScrollView--vertical > .ScrollView__overflowDecorators::after {
     bottom: 0;
 }
 
-.ScrollView--vertical > .ScrollView__indicators--borders::before {
+.ScrollView--vertical > .ScrollView__overflowDecorators--borders::before {
     border-top: theme.$border-width theme.$border-style theme.$border-color;
 }
 
-.ScrollView--vertical > .ScrollView__indicators--borders::after {
+.ScrollView--vertical > .ScrollView__overflowDecorators--borders::after {
     border-bottom: theme.$border-width theme.$border-style theme.$border-color;
 }
 
-.ScrollView--vertical > .ScrollView__indicators--shadows::before {
+.ScrollView--vertical > .ScrollView__overflowDecorators--shadows::before {
     --angle: 180deg;
 
     height: theme.$start-shadow-size;
     transform: translateY(#{theme.$start-shadow-initial-offset});
 }
 
-.ScrollView--vertical > .ScrollView__indicators--shadows::after {
+.ScrollView--vertical > .ScrollView__overflowDecorators--shadows::after {
     --angle: 0;
 
     height: theme.$end-shadow-size;
     transform: translateY(#{-1 * theme.$end-shadow-initial-offset});
 }
 
-.ScrollView--horizontal > .ScrollView__indicators::before,
-.ScrollView--horizontal > .ScrollView__indicators::after {
+.ScrollView--horizontal > .ScrollView__overflowDecorators::before,
+.ScrollView--horizontal > .ScrollView__overflowDecorators::after {
     top: 0;
     bottom: 0;
     height: auto;
 }
 
-.ScrollView--horizontal > .ScrollView__indicators::before {
+.ScrollView--horizontal > .ScrollView__overflowDecorators::before {
     left: 0;
 }
 
-.ScrollView--horizontal > .ScrollView__indicators::after {
+.ScrollView--horizontal > .ScrollView__overflowDecorators::after {
     right: 0;
 }
 
-.ScrollView--horizontal > .ScrollView__indicators--borders::before {
+.ScrollView--horizontal > .ScrollView__overflowDecorators--borders::before {
     border-left: theme.$border-width theme.$border-style theme.$border-color;
 }
 
-.ScrollView--horizontal > .ScrollView__indicators--borders::after {
+.ScrollView--horizontal > .ScrollView__overflowDecorators--borders::after {
     border-right: theme.$border-width theme.$border-style theme.$border-color;
 }
 
-.ScrollView--horizontal > .ScrollView__indicators--shadows::before {
+.ScrollView--horizontal > .ScrollView__overflowDecorators--shadows::before {
     --angle: 90deg;
 
     width: theme.$start-shadow-size;
     transform: translateX(#{theme.$start-shadow-initial-offset});
 }
 
-.ScrollView--horizontal > .ScrollView__indicators--shadows::after {
+.ScrollView--horizontal > .ScrollView__overflowDecorators--shadows::after {
     --angle: 270deg;
 
     width: theme.$end-shadow-size;
     transform: translateX(#{-1 * theme.$end-shadow-initial-offset});
 }
 
-.is-scrolled-at-start > .ScrollView__indicators::before {
+.is-scrolled-at-start > .ScrollView__overflowDecorators::before {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
 }
 
-.is-scrolled-at-end > .ScrollView__indicators::after {
+.is-scrolled-at-end > .ScrollView__overflowDecorators::after {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
