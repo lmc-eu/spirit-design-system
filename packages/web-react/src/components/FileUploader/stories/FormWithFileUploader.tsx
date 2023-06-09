@@ -41,7 +41,7 @@ const Story = () => {
 
   const errorHandler = (error: string | Error) => {
     console.error(error);
-    setValidationState('error');
+    setValidationState('danger');
     setValidationText(String(error));
 
     setTimeout(() => {
