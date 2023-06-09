@@ -60,9 +60,6 @@
 {%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
 
 {# Deprecations #}
-{% if _validationState is same as('error') %}
-    {% deprecated _rootClassName ~ ': The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.' %}
-{% endif %}
 {% if _message and _validationState is same as(null) %}
     {% deprecated _rootClassName ~ ': `message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.' %}
 {% endif %}
