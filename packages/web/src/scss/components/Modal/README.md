@@ -246,7 +246,7 @@ scrolling, e.g.:
         </div>
       </div>
     </div>
-    <div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true"></div>
+    <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
   </div>
   <!-- ModalFooter -->
 </article>
