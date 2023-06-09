@@ -1,4 +1,6 @@
-<Select id="example" name="example" label="Label">
+{% set inputProps = { "data-validate": "true" } %}
+
+<Select id="example" name="example" label="Label" inputProps={ inputProps }>
     <option value="" selected>Placeholder</option>
     <option value="1">Option 1</option>
     <option value="2">Option 2</option>

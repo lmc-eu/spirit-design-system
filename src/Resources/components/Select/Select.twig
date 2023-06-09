@@ -3,6 +3,7 @@
 {%- set _id = props.id | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _label = props.label | default(null) -%}
+{%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
@@ -41,6 +42,7 @@
     <label for="{{ _id }}" {{ classProp(_labelClassName) }}>{{ _label }}</label>
     <div class="{{ _containerClassName }}">
         <select
+            {{ inputProps([], [], _inputProps) }}
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"

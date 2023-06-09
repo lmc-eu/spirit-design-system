@@ -40,6 +40,7 @@ Without lexer:
 | Prop name           | Type                                           | Default | Required | Description                                          |
 | ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `id`                | `string`                                       | `null`  | no       | Input and label identification                       |
+| `inputProps`        | `string[]`                                     | `[]`    | no       | Pass additional attributes to the input element      |
 | `isChecked`         | `bool`                                         | `false` | no       | If true, input is checked                            |
 | `isDisabled`        | `bool`                                         | `false` | no       | If true, input is disabled                           |
 | `isItem`            | `bool`                                         | `false` | no       | To render in [Item][item] mode                       |
