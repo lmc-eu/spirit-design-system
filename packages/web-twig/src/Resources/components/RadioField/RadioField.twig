@@ -1,6 +1,7 @@
 {# API #}
 {%- set _autocomplete = props.autocomplete | default(null) -%}
 {%- set _id = props.id | default(null) -%}
+{%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isChecked = props.isChecked | default(false) | boolprop -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isItem = props.isItem | default(false) | boolprop -%}
@@ -40,7 +41,7 @@
 
 <label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
-        {{ inputProps(props, _allowedInputAttributes) }}
+        {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="radio"
         name="{{ _name }}"
         class="{{ _inputClassName }}"

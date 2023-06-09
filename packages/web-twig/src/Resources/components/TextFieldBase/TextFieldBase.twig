@@ -3,6 +3,7 @@
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 {%- set _id = props.id -%}
+{%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isFluid = props.isFluid | default(false) | boolprop -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
@@ -72,7 +73,7 @@
     </label>
     {% if _isMultiline %}
         <textarea
-            {{ inputProps(props, _textAreaAllowedAttributes) }}
+            {{ inputProps(props, _textAreaAllowedAttributes, _inputProps) }}
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"
@@ -83,7 +84,7 @@
         {% if _hasPasswordToggle %}
             <div class="{{ _passwordToggleClassName }}">
                 <input
-                    {{ inputProps(props, _textFieldAllowedAttributes) }}
+                    {{ inputProps(props, _textFieldAllowedAttributes, _inputProps) }}
                     type="password"
                     id="{{ _id }}"
                     name="{{ _name }}"
@@ -110,7 +111,7 @@
             </div>
         {% else %}
             <input
-                {{ inputProps(props, _textFieldAllowedAttributes) }}
+                {{ inputProps(props, _textFieldAllowedAttributes, _inputProps) }}
                 type="{{ _type }}"
                 id="{{ _id }}"
                 name="{{ _name }}"

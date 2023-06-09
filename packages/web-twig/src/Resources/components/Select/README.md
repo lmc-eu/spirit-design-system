@@ -49,6 +49,7 @@ Without lexer:
 | ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
 | `helperText`      | `string`                                       | `null`  | no       | Custom helper text                                         |
 | `id`              | `string`                                       | —       | yes      | Select and label identification                            |
+| `inputProps`      | `string[]`                                     | `[]`    | no       | Pass additional attributes to the select element           |
 | `isDisabled`      | `bool`                                         | `false` | no       | If true, select is disabled                                |
 | `isFluid`         | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent |
 | `isLabelHidden`   | `bool`                                         | `false` | no       | If true, label is hidden                                   |
