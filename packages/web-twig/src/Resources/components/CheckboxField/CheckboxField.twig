@@ -42,11 +42,6 @@
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
-{# Deprecations #}
-{% if _validationState is same as('error') %}
-    {% deprecated 'CheckboxField: The "error" value for "validationState" property will be removed in the next major version. Use "danger" instead.' %}
-{% endif %}
-
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props, [], _inputProps) }}
