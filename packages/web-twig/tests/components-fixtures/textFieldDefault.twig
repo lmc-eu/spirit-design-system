@@ -1,3 +1,5 @@
+{% set inputProps = { "data-validate": "true" } %}
+
 <TextField
     id="example"
     label="Text field"
@@ -9,4 +11,5 @@
     minlength="6"
     placeholder="Some long placeholder"
     value="Some long value"
+    inputProps={ inputProps }
 />
