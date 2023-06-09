@@ -120,9 +120,12 @@ class PropsExtension extends AbstractExtension
     {
         $styleProps = [];
         if (array_key_exists('class', $props)) {
-            trigger_error('The "class" property will be removed in the next major version. Use "UNSAFE_className" instead.', E_USER_DEPRECATED);
+            trigger_error('The "class" property is not allowed. If you really need to add a CSS class, use "UNSAFE_className" instead. Learn more at https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig#escape-hatches', E_USER_WARNING);
         }
-        $styleProps['className'] = $props['UNSAFE_className'] ?? $props['class'] ?? null;
+        if (array_key_exists('style', $props)) {
+            trigger_error('The "style" property is not allowed. If you really need to modify the CSS style, use "UNSAFE_style" instead. Learn more at https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig#escape-hatches', E_USER_WARNING);
+        }
+        $styleProps['className'] = $props['UNSAFE_className'] ?? null;
         $styleProps['style'] = $props['UNSAFE_style'] ?? null;
 
         return $styleProps;
