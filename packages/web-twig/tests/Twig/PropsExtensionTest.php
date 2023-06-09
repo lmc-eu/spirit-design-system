@@ -144,9 +144,10 @@ class PropsExtensionTest extends TestCase
      * @dataProvider renderInputPropsDataProvider
      * @param array<string, mixed> $props
      * @param array<string, mixed> $allowedAttributes
+     * @param array<string, mixed> $inputProps
      * @param array<string, mixed> $expectedRenderProps
      */
-    public function testShouldRenderInputProps(array $props, array $allowedAttributes, array $expectedRenderProps): void
+    public function testShouldRenderInputProps(array $props, array $allowedAttributes, array $inputProps, array $expectedRenderProps): void
     {
         $expectedResponse = '';
         $environment = m::mock(Environment::class);
@@ -156,7 +157,7 @@ class PropsExtensionTest extends TestCase
             ->with('@partials/inputProps.twig', $expectedRenderProps)
             ->andReturn($expectedResponse);
 
-        $renderResponse = $this->propsExtension->renderInputProps($environment, $props, $allowedAttributes);
+        $renderResponse = $this->propsExtension->renderInputProps($environment, $props, $allowedAttributes, $inputProps);
 
         $this->assertSame($expectedResponse, $renderResponse);
     }
@@ -167,7 +168,7 @@ class PropsExtensionTest extends TestCase
     public function renderInputPropsDataProvider(): array
     {
         return [
-            'empty props' => [[], [], [
+            'empty props' => [[], [], [], [
                 'transferringAttributes' => [],
             ]],
             'filter only allowed attributes' => [[
@@ -176,7 +177,7 @@ class PropsExtensionTest extends TestCase
                 'max' => '6',
                 'autocomplete' => 'on',
                 'placeholder' => 'Your name',
-            ], ['autocomplete', 'placeholder'], [
+            ], ['autocomplete', 'placeholder'], [], [
                 'transferringAttributes' => [
                     'min' => '1',
                     'max' => '6',
@@ -190,10 +191,19 @@ class PropsExtensionTest extends TestCase
                 'max' => '6',
                 'autocomplete' => 'on',
                 'placeholder' => null,
-            ], ['autocomplete', 'placeholder'], [
+            ], ['autocomplete', 'placeholder'], [], [
                 'transferringAttributes' => [
                     'min' => '1',
                     'max' => '6',
+                    'autocomplete' => 'on',
+                ],
+            ]],
+            'pass down input props' => [[], [], [
+                'data-test' => 'test-id',
+                'autocomplete' => 'on',
+            ], [
+                'transferringAttributes' => [
+                    'data-test' => 'test-id',
                     'autocomplete' => 'on',
                 ],
             ]],

@@ -70,8 +70,9 @@ class PropsExtension extends AbstractExtension
     /**
      * @param array<string, mixed> $props
      * @param array<string, mixed> $allowedAttributes
+     * @param array<string, mixed> $inputProps
      */
-    public function renderInputProps(Environment $environment, array $props, $allowedAttributes = []): string
+    public function renderInputProps(Environment $environment, array $props, $allowedAttributes = [], array $inputProps = []): string
     {
         $transferringAttributes = [];
         foreach ($props as $propName => $propValue) {
@@ -81,6 +82,8 @@ class PropsExtension extends AbstractExtension
                 }
             }
         }
+
+        $transferringAttributes = array_merge($transferringAttributes, $inputProps);
 
         return $environment->render('@partials/inputProps.twig', [
             'transferringAttributes' => $transferringAttributes,
