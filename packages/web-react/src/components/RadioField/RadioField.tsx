@@ -1,6 +1,6 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritRadioFieldProps } from '../../types';
 import { useRadioFieldStyleProps } from './useRadioFieldStyleProps';
 
@@ -10,17 +10,6 @@ const _RadioField = (props: SpiritRadioFieldProps, ref: ForwardedRef<HTMLInputEl
   const { classProps, props: modifiedProps } = useRadioFieldStyleProps(props);
   const { id, label, helperText, value, isDisabled, isChecked, onChange, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: props?.validationState === 'error',
-    componentName: 'RadioField',
-    propertyProps: {
-      deprecatedValue: 'error',
-      newValue: 'danger',
-      propertyName: 'validationState',
-    },
-  });
 
   return (
     <label htmlFor={id} {...styleProps} className={classNames(classProps.root, styleProps.className)}>
