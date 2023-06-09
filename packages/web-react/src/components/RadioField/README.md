@@ -1,6 +1,6 @@
 # RadioField
 
-Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed. It has input and label. It can be disabled or have an error state. The label can be hidden.
+Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed. It has input and label. It can be disabled or have a validation state. The label can be hidden.
 
 ```jsx
 <RadioField id="example" name="example" label="Label text" isChecked />
