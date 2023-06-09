@@ -1004,6 +1004,11 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.25.4.tgz#99d641714db7bbd8d69f54debf8bfe1c3b3d30b7"
   integrity sha512-uOW1d9nyq4/q3YnKAxFRTBIjZUmkWFakTHsCbd13kG2RQDrWDtgPOtrZSttY+3q4Jrg+u08abOOj6VeyTyGxTw==
 
+"@lmc-eu/spirit-form-validations@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-form-validations/-/spirit-form-validations-0.2.0.tgz#158366c15f2b0ee0a7cd7cc35d4fd90163b772c6"
+  integrity sha512-Ty+eheys31CdTgezULlVYSBzZ8Z6GybOtlgHqV63Vy0DUAkiLG6m+brd0ZITqcuIN7RFks85QJgp9GgdTtqZlA==
+
 "@lmc-eu/spirit-icons@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.10.1.tgz#fc80e769b1d4eb3d76fb27ad0449487433084396"

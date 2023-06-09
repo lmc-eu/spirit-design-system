@@ -30,6 +30,7 @@ services:
     volumes:
       - ./../:/srv/spirit-web-twig-demo/:delegated
       - ./../../../packages/web:/srv/spirit-web/:delegated
+      - ./../../../packages/form-validations:/srv/spirit-form-validations/:delegated
       # If you develop on Mac or Windows you can remove the node_modules/ directory
       #  from the bind-mount for better performance by enabling the next line:
       - /srv/spirit-web-twig-demo/node_modules
