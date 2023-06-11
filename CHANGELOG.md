@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.33.0"></a>
+
+# [1.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.32.0...@lmc-eu/spirit-web-twig@1.33.0) (2023-06-11)
+
+### Bug Fixes
+
+- **web-twig:** Fix rendering main props in the TextFieldBase component [#DS-811](https://github.com/lmc-eu/spirit-design-system/issues/DS-811) ([68ca267](https://github.com/lmc-eu/spirit-design-system/commit/68ca267))
+- **web-twig:** Render input and main props if the prop value is not `null` or empty ([09212b6](https://github.com/lmc-eu/spirit-design-system/commit/09212b6))
+
+### Code Refactoring
+
+- **web-twig:** Apply more stricter comparison ([75548bb](https://github.com/lmc-eu/spirit-design-system/commit/75548bb))
+
+### Documentation
+
+- **web-twig:** Demonstrate the composition of `Modal` and `ScrollView` [#DS-808](https://github.com/lmc-eu/spirit-design-system/issues/DS-808) ([d91e28a](https://github.com/lmc-eu/spirit-design-system/commit/d91e28a))
+- **web-twig:** Fix TextArea's documentation ([52a79da](https://github.com/lmc-eu/spirit-design-system/commit/52a79da))
+- **web-twig:** Introduce demo page for form validations ([86c69e2](https://github.com/lmc-eu/spirit-design-system/commit/86c69e2)), closes [#DS-812](https://github.com/lmc-eu/spirit-design-system/issues/DS-812)
+- **web-twig:** Remove unnecessary structural comments from `Modal` demos ([0f15c66](https://github.com/lmc-eu/spirit-design-system/commit/0f15c66))
+- **web-twig:** Unify syntax when use TextArea component in the stories ([5b85031](https://github.com/lmc-eu/spirit-design-system/commit/5b85031))
+- **web,web-twig:** Wrap `Alert` demos into sections and add Icons demo ([2408053](https://github.com/lmc-eu/spirit-design-system/commit/2408053)), closes [#309](https://github.com/lmc-eu/spirit-design-system/issues/309), [#DS-668](https://github.com/lmc-eu/spirit-design-system/issues/DS-668)
+
+### Features
+
+- **web-twig:** Add disabled state to the FileUploaderInput [#DS-772](https://github.com/lmc-eu/spirit-design-system/issues/DS-772) ([fa486f1](https://github.com/lmc-eu/spirit-design-system/commit/fa486f1))
+- **web-twig:** Allow transfer of attributes directly to input element ([0c9db8d](https://github.com/lmc-eu/spirit-design-system/commit/0c9db8d)), closes [#DS-812](https://github.com/lmc-eu/spirit-design-system/issues/DS-812)
+- **web-twig:** Introduce `inputProps` prop for form field components ([ee85ade](https://github.com/lmc-eu/spirit-design-system/commit/ee85ade)), closes [#DS-812](https://github.com/lmc-eu/spirit-design-system/issues/DS-812)
+- **web-twig:** Introduce Select component [#DS-790](https://github.com/lmc-eu/spirit-design-system/issues/DS-790) ([41f8af1](https://github.com/lmc-eu/spirit-design-system/commit/41f8af1))
+- **web,web-twig:** Add vertical padding to `ModalBody` [#DS-763](https://github.com/lmc-eu/spirit-design-system/issues/DS-763) ([2e668c7](https://github.com/lmc-eu/spirit-design-system/commit/2e668c7))
+
+### Tests
+
+- **web-twig:** Pass data attribute with and without value ([cd1927c](https://github.com/lmc-eu/spirit-design-system/commit/cd1927c))
+- **web-twig:** Render input and main props if the prop value is not `null` or empty ([737896b](https://github.com/lmc-eu/spirit-design-system/commit/737896b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.32.0"></a>
 
 # [1.32.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.31.0...@lmc-eu/spirit-web-twig@1.32.0) (2023-05-29)
