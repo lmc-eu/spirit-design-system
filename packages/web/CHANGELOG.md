@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.48.0"></a>
+
+# [0.48.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.47.0...@lmc-eu/spirit-web@0.48.0) (2023-06-11)
+
+### Bug Fixes
+
+- **web:** Fix `ScrollView` collapsing in Safari [#DS-808](https://github.com/lmc-eu/spirit-design-system/issues/DS-808) ([34c915b](https://github.com/lmc-eu/spirit-design-system/commit/34c915b))
+
+### Code Refactoring
+
+- **web:** Reorganize CSS helpers and create a standalone preview for each [#DS-821](https://github.com/lmc-eu/spirit-design-system/issues/DS-821) ([409c892](https://github.com/lmc-eu/spirit-design-system/commit/409c892))
+
+### Documentation
+
+- **web,web-react,web-twig:** Improve Demo Header [#DS-821](https://github.com/lmc-eu/spirit-design-system/issues/DS-821) ([c168eea](https://github.com/lmc-eu/spirit-design-system/commit/c168eea))
+- **web,web-twig:** Wrap `Alert` demos into sections and add Icons demo ([2408053](https://github.com/lmc-eu/spirit-design-system/commit/2408053)), closes [#309](https://github.com/lmc-eu/spirit-design-system/issues/309), [#DS-668](https://github.com/lmc-eu/spirit-design-system/issues/DS-668)
+- **web:** Demonstrate the composition of `Modal` and `ScrollView` [#DS-808](https://github.com/lmc-eu/spirit-design-system/issues/DS-808) ([10c8e04](https://github.com/lmc-eu/spirit-design-system/commit/10c8e04))
+- **web:** Document how to add a placeholder to the Select [#DS-810](https://github.com/lmc-eu/spirit-design-system/issues/DS-810) ([784c435](https://github.com/lmc-eu/spirit-design-system/commit/784c435))
+
+### Features
+
+- **web-react:** Introduce Select component [#DS-789](https://github.com/lmc-eu/spirit-design-system/issues/DS-789) ([8cc74f9](https://github.com/lmc-eu/spirit-design-system/commit/8cc74f9))
+- **web,web-twig:** Add vertical padding to `ModalBody` [#DS-763](https://github.com/lmc-eu/spirit-design-system/issues/DS-763) ([2e668c7](https://github.com/lmc-eu/spirit-design-system/commit/2e668c7))
+- **web:** Add disabled state to the FileUploaderInput [#DS-772](https://github.com/lmc-eu/spirit-design-system/issues/DS-772) ([676b8ab](https://github.com/lmc-eu/spirit-design-system/commit/676b8ab))
+- **web:** Enable customization of `ScrollView` shadows via custom properties ([68b0a67](https://github.com/lmc-eu/spirit-design-system/commit/68b0a67))
+- **web:** Introduce Select component [#DS-788](https://github.com/lmc-eu/spirit-design-system/issues/DS-788) ([10b2b54](https://github.com/lmc-eu/spirit-design-system/commit/10b2b54))
+- **web:** Introduce Select component [#DS-788](https://github.com/lmc-eu/spirit-design-system/issues/DS-788) ([b7ce696](https://github.com/lmc-eu/spirit-design-system/commit/b7ce696))
+- **web:** Let link in Alert inherit its color ([bcd628f](https://github.com/lmc-eu/spirit-design-system/commit/bcd628f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.47.0"></a>
 
 # [0.47.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.46.0...@lmc-eu/spirit-web@0.47.0) (2023-05-29)

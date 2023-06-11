@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.47.0"></a>
+
+# [0.47.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.46.0...@lmc-eu/spirit-web-react@0.47.0) (2023-06-11)
+
+### Bug Fixes
+
+- **web-react:** Set `hasSpacing` default value as false in the Stack component ([a0b5fe4](https://github.com/lmc-eu/spirit-design-system/commit/a0b5fe4))
+- **web-react:** Storybook argument for ScrollView edgeIndicators ([165357c](https://github.com/lmc-eu/spirit-design-system/commit/165357c))
+- **web-react:** Unexported `Tabs` components ([f9ee56c](https://github.com/lmc-eu/spirit-design-system/commit/f9ee56c))
+
+### Chores
+
+- **web-react:** Add Vite React plugin to demo app configuration ([a89b1c3](https://github.com/lmc-eu/spirit-design-system/commit/a89b1c3))
+- **web-react:** Exlude demo indexes from build ([08425bd](https://github.com/lmc-eu/spirit-design-system/commit/08425bd)), closes [#309](https://github.com/lmc-eu/spirit-design-system/issues/309), [#DS-668](https://github.com/lmc-eu/spirit-design-system/issues/DS-668)
+- **web-react:** Setup deploy of demo stack to Netlify ([2214647](https://github.com/lmc-eu/spirit-design-system/commit/2214647)), closes [#309](https://github.com/lmc-eu/spirit-design-system/issues/309), [#DS-668](https://github.com/lmc-eu/spirit-design-system/issues/DS-668)
+
+### Documentation
+
+- **web-react:** Demonstrate the composition of `ModalComposed` and `ScrollView` [#DS-808](https://github.com/lmc-eu/spirit-design-system/issues/DS-808) ([106abc1](https://github.com/lmc-eu/spirit-design-system/commit/106abc1))
+- **web-react:** Introduce demo dev stack with Alert component ([669f303](https://github.com/lmc-eu/spirit-design-system/commit/669f303)), closes [#309](https://github.com/lmc-eu/spirit-design-system/issues/309), [#DS-668](https://github.com/lmc-eu/spirit-design-system/issues/DS-668)
+- **web,web-react,web-twig:** Improve Demo Header [#DS-821](https://github.com/lmc-eu/spirit-design-system/issues/DS-821) ([c168eea](https://github.com/lmc-eu/spirit-design-system/commit/c168eea))
+
+### Features
+
+- **web-react:** Add disabled state to the FileUploader [#DS-772](https://github.com/lmc-eu/spirit-design-system/issues/DS-772) ([a5bd194](https://github.com/lmc-eu/spirit-design-system/commit/a5bd194))
+- **web-react:** Added isFluid option for FileUploader ([f2209ff](https://github.com/lmc-eu/spirit-design-system/commit/f2209ff))
+- **web-react:** CheckboxField and RadioField reference element feature ([cb404ee](https://github.com/lmc-eu/spirit-design-system/commit/cb404ee))
+- **web-react:** Introduce ScrollView component [#DS-464](https://github.com/lmc-eu/spirit-design-system/issues/DS-464) ([3845697](https://github.com/lmc-eu/spirit-design-system/commit/3845697))
+- **web-react:** Introduce Select component [#DS-789](https://github.com/lmc-eu/spirit-design-system/issues/DS-789) ([8cc74f9](https://github.com/lmc-eu/spirit-design-system/commit/8cc74f9))
+- **web-react:** Link and Tag reference polymorph element feature ([db25206](https://github.com/lmc-eu/spirit-design-system/commit/db25206))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.46.0"></a>
 
 # [0.46.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.45.0...@lmc-eu/spirit-web-react@0.46.0) (2023-05-29)
