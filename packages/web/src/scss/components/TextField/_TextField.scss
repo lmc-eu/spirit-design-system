@@ -89,10 +89,7 @@ $_field-name: 'TextField';
     &::before {
         content: '';
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        inset: 0;
         border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
             form-fields-theme.$box-field-input-border-color-default;
         border-radius: form-fields-theme.$box-field-input-border-radius;

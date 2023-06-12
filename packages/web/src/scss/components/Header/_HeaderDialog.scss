@@ -79,10 +79,7 @@
     &::after {
         content: '';
         position: absolute;
-        top: $_shadow-offset;
-        right: 0;
-        bottom: $_shadow-offset;
-        left: 0;
+        inset: $_shadow-offset 0;
         z-index: -1;
         box-shadow: theme.$header-dialog-shadow;
         visibility: hidden;
