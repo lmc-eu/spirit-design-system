@@ -2,10 +2,7 @@
 
 @mixin create-cover($position: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
     position: $position;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
+    inset: $top $right $bottom $left;
     visibility: hidden;
     opacity: 0;
 
