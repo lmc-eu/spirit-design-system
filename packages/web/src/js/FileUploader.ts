@@ -148,6 +148,15 @@ class FileUploader extends BaseComponent {
     }
   }
 
+  updateNameAttribute() {
+    // Remove the original `name` attribute to prevent duplicate files from multiple inputs
+    if (this.fileQueue.size > 0) {
+      this.inputElement?.removeAttribute('name');
+    } else {
+      this.inputElement?.setAttribute('name', this.inputName);
+    }
+  }
+
   updateDropZoneVisibility() {
     if (this.queueLimitBehavior === 'none') {
       return;
@@ -259,6 +268,7 @@ class FileUploader extends BaseComponent {
       this.checkQueueLimit();
       this.appendToList(file);
       this.updateDropZoneVisibility();
+      this.updateNameAttribute();
       EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue });
     } catch (error) {
       EventHandler.trigger(this.wrapper, EVENT_ERROR, error);
@@ -272,6 +282,7 @@ class FileUploader extends BaseComponent {
       this.fileQueue.delete(name);
       itemElement?.remove();
       this.updateDropZoneVisibility();
+      this.updateNameAttribute();
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue });
     }
   }
@@ -381,8 +392,6 @@ class FileUploader extends BaseComponent {
     if (this.isDragAndDropSupported) {
       this.wrapper?.classList.add(IS_DRAGGABLE_CLASS_NAME);
     }
-    // Removal of original name attribute for prevent of duplicate files from multiple inputs
-    this.inputElement?.removeAttribute('name');
   }
 }
 

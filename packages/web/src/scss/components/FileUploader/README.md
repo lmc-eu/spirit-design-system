@@ -396,6 +396,20 @@ const input = myUploaderInstance.inputElement; // Returns an input element, for 
 | `unqueuedFile.fileUploader` | This event is fired after the file was removed from queue.                                                                                  |
 | `error.fileUploader`        | This event is fired when an error occurs when adding files to the queue. A specific error message is also returned together with the event. |
 
+## Implementation notes
+
+### Name attribute
+
+⚠️ The `name` attribute on hidden input will be always set as an array `[]` for both single-file and multiple-file usage. Make sure you handle it correctly in your code.
+
+The `name` attribute on the default input element is used for the component's picked attachments, which are actually hidden
+inputs using this attribute as an array. The `name` attribute remains on the original input element until the first attachment
+is picked, then the original `name` attribute disappears and its value is used for individual attachments. If the
+attachment is removed from the queue, its original value is returned to the input to avoid possible error states due
+to the missing `name` attribute.
+
+Example: So if you set `name="attachments"` to the default input element, the attachments will then show `name="attachments[]"`.
+
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-multiple]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#multiple
