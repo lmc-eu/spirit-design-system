@@ -3,17 +3,12 @@
 First item selected:
 
 ```html
-<nav role="navigation" aria-label="Pagination Navigation" class="mb-800">
+<nav role="navigation" aria-label="Page navigation">
   <ul class="Pagination">
     <li class="Pagination__item">
-      <a
-        href="#"
-        class="Pagination__link Pagination__link--current"
-        aria-label="Current Page, Page 1"
-        aria-current="page"
-      >
-        <span class="accessibility-hidden">page</span>
-        1
+      <a href="#" class="Pagination__link Pagination__link--current" aria-current="page">
+        <span class="accessibility-hidden">Current Page, Page 1</span>
+        <span aria-hidden="true">1</span>
       </a>
     </li>
     <li class="Pagination__item">
@@ -55,7 +50,7 @@ First item selected:
 Middle item selected:
 
 ```html
-<nav role="navigation" aria-label="Pagination Navigation" class="mb-800">
+<nav role="navigation" aria-label="Page navigation">
   <ul class="Pagination">
     <li class="Pagination__item">
       <a href="#" class="Button Button--secondary Button--square">
@@ -78,14 +73,9 @@ Middle item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a
-        href="#"
-        class="Pagination__link Pagination__link--current"
-        aria-label="Current Page, Page 13"
-        aria-current="page"
-      >
-        <span class="accessibility-hidden">page</span>
-        13
+      <a href="#" class="Pagination__link Pagination__link--current" aria-current="page">
+        <span class="accessibility-hidden">Current Page, Page 13</span>
+        <span aria-hidden="true">13</span>
       </a>
     </li>
     <li class="Pagination__item">
@@ -115,7 +105,7 @@ Middle item selected:
 Last item selected:
 
 ```html
-<nav role="navigation" aria-label="Pagination Navigation" class="mb-800">
+<nav role="navigation" aria-label="Page navigation">
   <ul class="Pagination">
     <li class="Pagination__item">
       <a href="#" class="Button Button--secondary Button--square">
@@ -150,14 +140,9 @@ Last item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a
-        href="#"
-        class="Pagination__link Pagination__link--current"
-        aria-label="Current Page, Page 113"
-        aria-current="page"
-      >
-        <span class="accessibility-hidden">page</span>
-        113
+      <a href="#" class="Pagination__link Pagination__link--current" aria-current="page">
+        <span class="accessibility-hidden">Current Page, Page 113</span>
+        <span aria-hidden="true">113</span>
       </a>
     </li>
   </ul>
