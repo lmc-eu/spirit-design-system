@@ -26,6 +26,7 @@
         </footer>
       </article>
     </dialog>
+    <!-- Render with header title and rich footer -->
 
     <dialog class="Modal Modal--composed" id="modal-composed" aria-labelledby="modal-composed-title">
       <article class="ModalDialog ModalDialog--expandOnMobile">
@@ -40,7 +41,7 @@
 
         <div class="ModalBody">
           <p>
-            Modal body form
+            Modal body
           </p>
         </div>
 
@@ -55,9 +56,10 @@
         </footer>
       </article>
     </dialog>
+    <!-- Render with all props -->
 
     <dialog class="Modal Modal--composed" id="modal-composed-2" aria-labelledby="modal-composed-2-title">
-      <form autocomplete="on" method="dialog" class="ModalDialog">
+      <form autocomplete="on" method="dialog" class="ModalDialog" style="--modal-max-height-tablet: 700px;--modal-preferred-height-mobile: 400px;--modal-preferred-height-tablet: 500px;outline: 5px solid blue; outline-offset: -5px;">
         <header class="ModalHeader">
           <h2 class="ModalHeader__title" id="modal-composed-2-title">
             Title of the Modal

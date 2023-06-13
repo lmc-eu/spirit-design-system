@@ -2,6 +2,9 @@
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('article') -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile ?? true -%}
+{%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
+{%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
+{%- set _preferredHeightFromTabletUp = props.preferredHeightFromTabletUp | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalDialog' -%}
@@ -22,11 +25,24 @@
     'target'
 ] : [] -%}
 
+{%- set _style = '' -%}
+{%- if _maxHeightFromTabletUp -%}
+    {% set _style = _style ~ '--modal-max-height-tablet: ' ~ _maxHeightFromTabletUp ~ ';' %}
+{%- endif -%}
+{%- if _preferredHeightOnMobile -%}
+    {% set _style = _style ~ '--modal-preferred-height-mobile: ' ~ _preferredHeightOnMobile ~ ';' %}
+{%- endif -%}
+{%- if _preferredHeightFromTabletUp -%}
+    {% set _style = _style ~ '--modal-preferred-height-tablet: ' ~ _preferredHeightFromTabletUp ~ ';' %}
+{%- endif -%}
+
+{# Attributes #}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps | join() ~ '"' -%}
 
 <{{ _elementType }}
     {{ mainProps(props, _allowedAttributes) }}
-    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
+    {{ _styleAttr | raw }}
 >
     {% block content %}{% endblock %}
 </{{ _elementType }}>
