@@ -12,10 +12,8 @@
     </ModalDialog>
 </ModalComposed>
 
-<ModalComposed
-    id="modal-composed"
-    titleId="modal-composed-title"
->
+<!-- Render with header title and rich footer -->
+<ModalComposed id="modal-composed" titleId="modal-composed-title">
     <ModalDialog>
         <ModalHeader
             closeLabel="Close form"
@@ -25,7 +23,7 @@
             Title of the Modal
         </ModalHeader>
         <ModalBody>
-            <p>Modal body form</p>
+            <p>Modal body</p>
         </ModalBody>
         <ModalFooter alignmentX="left" description="Modal Footer description">
             <Button color="primary">
@@ -38,11 +36,18 @@
     </ModalDialog>
 </ModalComposed>
 
-<ModalComposed
-    id="modal-composed-2"
-    titleId="modal-composed-2-title"
->
-    <ModalDialog elementType="form" isExpandedOnMobile={false} autocomplete="on" method="dialog">
+<!-- Render with all props -->
+<ModalComposed id="modal-composed-2" titleId="modal-composed-2-title">
+    <ModalDialog
+        autocomplete="on"
+        elementType="form"
+        isExpandedOnMobile={false}
+        maxHeightFromTabletUp="700px"
+        method="dialog"
+        preferredHeightOnMobile="400px"
+        preferredHeightFromTabletUp="500px"
+        UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
+    >
         <ModalHeader
             closeLabel="Close form"
             enableDismiss={false}

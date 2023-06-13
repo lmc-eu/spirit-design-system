@@ -64,10 +64,13 @@ footer of the dialog.
 
 #### API
 
-| Prop name            | Type      | Default   | Required | Description                                |
-| -------------------- | --------- | --------- | -------- | ------------------------------------------ |
-| `elementType`        | `string`  | `article` | no       | HTML tag to render                         |
-| `isExpandedOnMobile` | `boolean` | `true`    | no       | If the ModalDialog should expand on mobile |
+| Prop name                     | Type      | Default   | Required | Description                                                                                            |
+| ----------------------------- | --------- | --------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| `elementType`                 | `string`  | `article` | no       | HTML tag to render                                                                                     |
+| `isExpandedOnMobile`          | `boolean` | `true`    | no       | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`. |
+| `maxHeightFromTabletUp`       | `string`  | `null`    | no       | Max height of the modal. Accepts any valid CSS value.                                                  |
+| `preferredHeightOnMobile`     | `string`  | `null`    | no       | Preferred height of the modal on mobile. Accepts any valid CSS value.                                  |
+| `preferredHeightFromTabletUp` | `string`  | `null`    | no       | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                       |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

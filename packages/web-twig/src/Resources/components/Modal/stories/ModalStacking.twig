@@ -1,14 +1,14 @@
 <section class="docs-Section">
 
-    <h2 class="docs-Heading">Stacked Modal</h2>
+    <h2 class="docs-Heading">Stacking Modals</h2>
 
-    <Button data-toggle="modal" data-target="#example_2_0">
+    <Button data-toggle="modal" data-target="#example_stacking_parent">
         Open Modal
     </Button>
 
-    <ModalComposed id="example_2_0" titleId="example_2_0_title">
+    <ModalComposed id="example_stacking_parent" titleId="example_stacking_parent_title">
         <ModalDialog>
-            <ModalHeader modalId="example_2_0" titleId="example_2_0_title">
+            <ModalHeader modalId="example_stacking_parent" titleId="example_stacking_parent_title">
                 Modal Title
             </ModalHeader>
             <ModalBody>
@@ -23,16 +23,16 @@
 
             </ModalBody>
             <ModalFooter>
-                <Button data-toggle="modal" data-target="#example_2_1">
+                <Button data-toggle="modal" data-target="#example_stacking_nested">
                     Open stacked dialog
                 </Button>
             </ModalFooter>
         </ModalDialog>
     </ModalComposed>
 
-    <ModalComposed id="example_2_1" titleId="example_2_1_title">
+    <ModalComposed id="example_stacking_nested" titleId="example_stacking_nested_title">
         <ModalDialog>
-            <ModalHeader modalId="example_2_1" titleId="example_2_1_title">
+            <ModalHeader modalId="example_stacking_nested" titleId="example_stacking_nested_title">
                 Stacked Modal Title
             </ModalHeader>
             <ModalBody>
@@ -62,7 +62,7 @@
                 <Button
                     color="secondary"
                     data-dismiss="modal"
-                    data-target="#example_2_1"
+                    data-target="#example_stacking_nested"
                 >
                     Secondary action
                 </Button>
