@@ -31,9 +31,26 @@ const Story = (props: unknown) => {
         </Button>
       </div>
       <ModalComposed id="ModalExample" isOpen={isOpen} onClose={handleClose}>
-        <ModalComposedDialog preferredHeightOnMobile="500px">
+        <ModalComposedDialog
+          maxHeightFromTabletUp="700px"
+          preferredHeightOnMobile="400px"
+          preferredHeightFromTabletUp="500px"
+        >
           <ModalComposedHeader>Modal title</ModalComposedHeader>
-          <ModalComposedBody>Body</ModalComposedBody>
+          <ModalComposedBody>
+            <p className="d-tablet-none">
+              This modal has a custom height of <code>400px</code>.
+              <br />
+              <br />
+              The max height cannot be customized on mobile though.
+            </p>
+            <p className="d-none d-tablet-block">
+              This modal has a custom height of <code>500px</code>.
+              <br />
+              <br />
+              The max height of this modal is <code>700px</code>.
+            </p>
+          </ModalComposedBody>
           <ModalComposedFooter>
             <Button color="primary" onClick={handleClose}>
               Confirm

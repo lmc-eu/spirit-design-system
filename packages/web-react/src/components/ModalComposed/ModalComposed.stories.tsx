@@ -14,6 +14,7 @@ export default {
 } as ComponentMeta<typeof ModalComposed>;
 
 export { default as ModalComposed } from './stories/ModalComposed';
+export { default as ModalComposedWithCustomHeight } from './stories/ModalComposedWithCustomHeight';
 export { default as ModalComposedWithLongText } from './stories/ModalComposedWithLongText';
 export { default as HTML } from './stories/ModalComposedHtml';
 export { default as Props } from './stories/ModalComposedProps';

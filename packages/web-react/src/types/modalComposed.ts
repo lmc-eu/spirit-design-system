@@ -23,9 +23,12 @@ export type ModalComposedDialogBaseProps<E extends ElementType = ModalComposedDi
 } & ChildrenProps &
   StyleProps;
 
-export type ModalComposedDialogProps<E extends ElementType = ModalComposedDialogElementType> =
-  ModalComposedDialogBaseProps<E> &
-    OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof ModalComposedDialogBaseProps<E>>;
+export type ModalComposedDialogProps<E extends ElementType = ModalComposedDialogElementType> = {
+  maxHeightFromTabletUp?: string;
+  preferredHeightOnMobile?: string;
+  preferredHeightFromTabletUp?: string;
+} & ModalComposedDialogBaseProps<E> &
+  OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof ModalComposedDialogBaseProps<E>>;
 
 export interface ModalComposedBodyProps extends SpiritDivElementProps, ChildrenProps {}
 
