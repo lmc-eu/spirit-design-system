@@ -17,7 +17,7 @@ Advanced example usage:
   isRequired
   label="Label"
   maxlength="180"
-  message="validation failed"
+  validationText="validation failed"
   name="example2"
   placeholder="Placeholder"
   rows="10"
@@ -35,7 +35,7 @@ Without lexer:
     isRequired: true,
     label: "Label",
     maxLength: 180,
-    message: "validation failed",
+    validationText: "validation failed",
     name: "example",
     placeholder: "Placeholder",
     rows: 10,
@@ -48,22 +48,22 @@ Without lexer:
 
 | Prop name         | Type                                           | Default | Required | Description                                                                                                 |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `helperText`      | `string`                                       | `null`  | no       | Custom helper text                                                                                          |
 | `id`              | `string`                                       | —       | yes      | TextArea and label identification                                                                           |
-| `isAutoResizing`  | `bool`                                         | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing) |
 | `inputProps`      | `string[]`                                     | `[]`    | no       | Pass additional attributes to the textarea element                                                          |
+| `isAutoResizing`  | `bool`                                         | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing) |
 | `isDisabled`      | `bool`                                         | `false` | no       | If true, TextArea is disabled                                                                               |
 | `isFluid`         | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent                                                  |
 | `isLabelHidden`   | `bool`                                         | `false` | no       | If true, label is hidden                                                                                    |
 | `isRequired`      | `bool`                                         | `false` | no       | If true, TextArea is required                                                                               |
 | `label`           | `string`                                       | —       | yes      | Label text                                                                                                  |
 | `maxLength`       | `number`                                       | `null`  | no       | Maximum number of characters                                                                                |
-| `message`         | `string`, `string[]`                           | `null`  | no       | Validation message                                                                                          |
 | `name`            | `string`                                       | `null`  | no       | TextArea name                                                                                               |
 | `placeholder`     | `string`                                       | `null`  | no       | TextArea placeholder                                                                                        |
 | `rows`            | `number`                                       | `null`  | no       | Number of visible rows                                                                                      |
 | `validationState` | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                                                                   |
+| `validationText`  | `string`, `string[]`                           | `null`  | no       | Validation text                                                                                             |
 | `value`           | `string`                                       | `null`  | no       | TextArea value                                                                                              |
-| `helperText`      | `string`                                       | `null`  | no       | Custom helper text                                                                                          |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

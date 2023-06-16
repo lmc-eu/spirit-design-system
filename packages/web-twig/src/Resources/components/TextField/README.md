@@ -18,7 +18,7 @@ Default TextField:
   id="example2"
   isRequired
   label="Label"
-  message="validation failed"
+  validationText="validation failed"
   name="example2"
   placeholder="Placeholder"
   type="text"
@@ -34,7 +34,7 @@ TextField with password toggle (button to reveal the password):
   id="example3"
   isRequired
   label="Password"
-  message="validation failed"
+  validationText="validation failed"
   name="example3"
   placeholder="Placeholder"
   validationState="danger"
@@ -49,7 +49,7 @@ Without lexer:
     id: "example",
     isRequired: true,
     label: "Password",
-    message: "validation failed",
+    validationText: "validation failed",
     name: "example",
     type: "text",
     validationState: "danger",
@@ -65,17 +65,17 @@ Without lexer:
 | `helperText`        | `string`                                                      | `null`  | no       | Custom helper text                                                      |
 | `id`                | `string`                                                      | —       | yes      | Input and label identification                                          |
 | `inputProps`        | `string[]`                                                    | `[]`    | no       | Pass additional attributes to the input element                         |
+| `inputWidth`        | `number`                                                      | `null`  | no       | Input width                                                             |
 | `isDisabled`        | `bool`                                                        | `false` | no       | If true, input is disabled                                              |
 | `isFluid`           | `bool`                                                        | `false` | no       | If true, the element spans to the full width of its parent              |
 | `isLabelHidden`     | `bool`                                                        | `false` | no       | If true, label is hidden                                                |
 | `isRequired`        | `bool`                                                        | `false` | no       | If true, input is required                                              |
 | `label`             | `string`                                                      | —       | yes      | Label text                                                              |
-| `message`           | `string`, `string[]`                                          | `null`  | no       | Validation message                                                      |
 | `name`              | `string`                                                      | `null`  | no       | Input name                                                              |
 | `placeholder`       | `string`                                                      | `null`  | no       | Input placeholder                                                       |
-| `inputWidth`        | `number`                                                      | `null`  | no       | Input width                                                             |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | `text`  | no       | Input type                                                              |
 | `validationState`   | [Validation dictionary][dictionary-validation]                | `null`  | no       | Type of validation state.                                               |
+| `validationText`    | `string`, `string[]`                                          | `null`  | no       | Validation text                                                         |
 | `value`             | `string`                                                      | `null`  | no       | Input value                                                             |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to

@@ -9,8 +9,8 @@
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
-{%- set _message = props.message | default(null) -%}
-{%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _value = props.value | default(null) -%}
@@ -22,13 +22,13 @@
 {%- set _labelClassName = _spiritClassPrefix ~ 'CheckboxField__label' -%}
 {%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'CheckboxField__label--hidden' : null -%}
 {%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'CheckboxField__label--required' : null -%}
-{%- set _messageClassName = _spiritClassPrefix ~ 'CheckboxField__message' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'CheckboxField' -%}
 {%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'CheckboxField--disabled' : null -%}
 {%- set _rootItemClassName = _isItem ? _spiritClassPrefix ~ 'CheckboxField--item' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'CheckboxField--' ~ _validationState : null -%}
 {%- set _textClassName = _spiritClassPrefix ~ 'CheckboxField__text' -%}
 {%- set _helperTextClassName = _spiritClassPrefix ~ 'CheckboxField__helperText' -%}
+{%- set _validationTextClassName = _spiritClassPrefix ~ 'CheckboxField__validationText' -%}
 
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
@@ -58,31 +58,12 @@
         <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
         {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
         {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
-        {% if _message and not _unsafeMessage %}
-            {%- if _message is iterable -%}
-                <ul class="{{ _messageClassName }}">
-                    {% for _messageItem in _message %}
-                        <li>{{ _messageItem }}</li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <span class="{{ _messageClassName }}">
-                    {{ _message }}
-                </span>
-            {%- endif -%}
-        {% endif %}
-        {% if _unsafeMessage %}
-            {%- if _unsafeMessage is iterable -%}
-                <ul class="{{ _messageClassName }}">
-                    {% for _messageItem in _unsafeMessage %}
-                    <li>{{ _messageItem | raw }}</li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <span class="{{ _messageClassName }}">
-                    {{ _unsafeMessage | raw }}
-                </span>
-            {%- endif -%}
-        {% endif %}
+        <ValidationText
+            className="{{ _validationTextClassName }}"
+            elementType="span"
+            validationState="{{ _validationState }}"
+            validationText="{{ _validationText }}"
+            UNSAFE_validationText="{{ _unsafeValidationText }}"
+        />
     </span>
 </label>

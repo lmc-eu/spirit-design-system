@@ -11,8 +11,8 @@
 {%- set _isRequired = props.isRequired | default(false) | boolprop -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
-{%- set _message = props.message | default(null) -%}
-{%- set _unsafeMessage = props.UNSAFE_message | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _type = props.type | default('text') -%}
 {%- set _validationState = props.validationState | default(null) -%}
@@ -31,7 +31,6 @@
 {%- set _labelClassName = _rootClassName ~ '__label' -%}
 {%- set _labelHiddenClassName = _isLabelHidden ? _rootClassName ~ '__label--hidden' : null -%}
 {%- set _labelRequiredClassName = _isRequired ? _rootClassName ~ '__label--required' : null -%}
-{%- set _messageClassName = _rootClassName ~ '__message' -%}
 {%- set _passwordToggleButtonClassName = _rootClassName ~ '__passwordToggle__button' -%}
 {%- set _passwordToggleClassName = _rootClassName ~ '__passwordToggle' -%}
 {%- set _passwordToggleIconClassName = _rootClassName ~ '__passwordToggle__icon' -%}
@@ -41,6 +40,7 @@
 {%- set _rootFluidClassName = _isFluid ? _rootClassName ~ '--fluid' : null -%}
 {%- set _rootValidationStateClassName = _validationState ? _rootClassName ~ '--' ~ _validationState : null -%}
 {%- set _helperTextClassName = _rootClassName ~ '__helperText' -%}
+{%- set _validationTextClassName = _rootClassName ~ '__validationText' -%}
 
 {# Attributes #}
 {%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-toggle=autoResize' : null -%}
@@ -58,11 +58,6 @@
 {%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
 {%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
 {%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
-
-{# Deprecations #}
-{% if _message and _validationState is same as(null) %}
-    {% deprecated _rootClassName ~ ': `message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.' %}
-{% endif %}
 
 <div {{ mainProps(_mainPropsWithoutReservedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_rootClassNames) }} {{ _dataToggleAttr }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
@@ -129,30 +124,10 @@
             {{ _unsafeHelperText | raw }}
         </div>
     {% endif %}
-    {% if _message and not _unsafeMessage %}
-        {%- if _message is iterable -%}
-            <ul class="{{ _messageClassName }}">
-                {% for _messageItem in _message %}
-                    <li>{{ _messageItem }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <div class="{{ _messageClassName }}">
-                {{ _message }}
-            </div>
-        {%- endif -%}
-    {% endif %}
-    {% if _unsafeMessage %}
-        {%- if _unsafeMessage is iterable -%}
-            <ul class="{{ _messageClassName }}">
-                {% for _messageItem in _unsafeMessage %}
-                    <li>{{ _messageItem | raw }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <div class="{{ _messageClassName }}">
-                {{ _unsafeMessage | raw }}
-            </div>
-        {%- endif -%}
-    {% endif %}
+    <ValidationText
+        className="{{ _validationTextClassName }}"
+        validationState="{{ _validationState }}"
+        validationText="{{ _validationText }}"
+        UNSAFE_validationText="{{ _unsafeValidationText }}"
+    />
 </div>

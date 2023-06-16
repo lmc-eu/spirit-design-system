@@ -1,13 +1,16 @@
 <CheckboxField
-    id="checkboxfield14"
-    label="Label of input with indeterminate"
-    name="checkboxfield14"
-    value="Filled"
+    id="checkboxfieldIndeterminate"
+    label="Checkbox Label"
+    name="checkboxfieldIndeterminate"
 />
-<CheckboxField
-    id="checkboxfield16"
-    isDisabled
-    label="Label of input with indeterminate"
-    name="checkboxfield16"
-    value="Filled"
-/>
+
+<script>
+    const inputs = ['checkboxfieldIndeterminate'];
+
+    window.addEventListener('DOMContentLoaded', function () {
+        inputs.forEach(function (input) {
+            const checkbox = document.getElementById(input);
+            checkbox.indeterminate = true;
+        });
+    });
+</script>

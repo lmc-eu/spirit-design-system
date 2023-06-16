@@ -2,43 +2,68 @@
 
 {% block content %}
 
-    <script>
-        const inputs = ['checkboxfield14', 'checkboxfield15', 'checkboxfield16', 'checkboxfield17'];
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Default</h2>
 
-        window.addEventListener('DOMContentLoaded', function () {
-            inputs.forEach(function (input) {
-                const checkbox = document.getElementById(input);
-                checkbox.indeterminate = true;
-            });
-        });
-    </script>
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldDefault.twig' %}
+        </div>
+    </section>
 
-    <div class="docs-FormFieldGrid">
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Indeterminate</h2>
 
-        {# CheckboxField Default #}
-        {% include '@components/CheckboxField/stories/CheckboxField.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldIndeterminate.twig' %}
+        </div>
+    </section>
 
-        {# CheckboxField Disabled #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldDisabled.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Required</h2>
 
-        {# CheckboxField Indeterminate State #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldIndeterminate.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldRequired.twig' %}
+        </div>
+    </section>
 
-        {# CheckboxField Hidden Label #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldHiddenLabel.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Hidden Label</h2>
 
-        {# CheckboxField Helper Text #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldHelperText.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldHiddenLabel.twig' %}
+        </div>
+    </section>
 
-        {# CheckboxField Required #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldRequired.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Helper Text</h2>
 
-        {# CheckboxField Item #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldItem.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldHelperText.twig' %}
+        </div>
+    </section>
 
-        {# CheckboxField Validation State #}
-        {% include '@components/CheckboxField/stories/CheckboxFieldValidationState.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Disabled</h2>
 
-    </div>
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldDisabled.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Validation State with Validation Text</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldValidation.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Item</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/CheckboxField/stories/CheckboxFieldItem.twig' %}
+        </div>
+    </section>
 
 {% endblock %}
