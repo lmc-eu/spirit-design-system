@@ -3,10 +3,10 @@
 ## Basic usage:
 
 ```html
-<label for="radiofield0" class="RadioField">
-  <input type="radio" id="radiofield0" name="example" class="RadioField__input" />
+<label for="radioFieldDefault" class="RadioField">
+  <input type="radio" id="radioFieldDefault" class="RadioField__input" name="default" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
 ```
@@ -14,10 +14,10 @@
 ## Selected state:
 
 ```html
-<label for="radiofield1" class="RadioField">
-  <input type="radio" id="radiofield1" name="example" class="RadioField__input" checked />
+<label for="radioFieldDefaultChecked" class="RadioField">
+  <input type="radio" id="radioFieldDefaultChecked" class="RadioField__input" name="default" checked />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label selected</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
 ```
@@ -25,41 +25,37 @@
 ## Disabled state:
 
 ```html
-<label for="radiofield2_0" class="RadioField RadioField--disabled">
-  <input type="radio" id="radiofield2_0" name="example" class="RadioField__input" disabled />
+<label for="radioFieldDisabled" class="RadioField RadioField--disabled">
+  <input type="radio" id="radioFieldDisabled" class="RadioField__input" name="default" disabled />
   <span class="RadioField__text">
-    <span class="RadioField__label">Unselected disabled label</span>
-  </span>
-</label>
-<label for="radiofield2_1" class="RadioField RadioField--disabled">
-  <input type="radio" id="radiofield2_1" name="example2" class="RadioField__input" checked disabled />
-  <span class="RadioField__text">
-    <span class="RadioField__label">Selected disabled label</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
 ```
 
-## Validation states:
+## Validation States:
 
 See Validation state [dictionary][dictionary-validation].
 
 ```html
-<label for="radiofield3_0" class="RadioField RadioField--danger">
-  <input type="radio" id="radiofield3_0" name="example" class="RadioField__input" checked />
+<label for="radioFieldSuccess" class="RadioField RadioField--success">
+  <input type="radio" id="radioFieldSuccess" class="RadioField__input" name="validation" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label with danger</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
-<label for="radiofield3_1" class="RadioField RadioField--warning">
-  <input type="radio" id="radiofield3_1" name="example" class="RadioField__input" checked />
+
+<label for="radioFieldWarning" class="RadioField RadioField--warning">
+  <input type="radio" id="radioFieldWarning" class="RadioField__input" name="validation" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label with warning</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
-<label for="radiofield3_2" class="RadioField RadioField--success">
-  <input type="radio" id="radiofield3_2" name="example" class="RadioField__input" checked />
+
+<label for="radioFieldDanger" class="RadioField RadioField--danger">
+  <input type="radio" id="radioFieldDanger" class="RadioField__input" name="validation" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label with success</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
 ```
@@ -67,10 +63,10 @@ See Validation state [dictionary][dictionary-validation].
 ## With helper text:
 
 ```html
-<label for="radiofield4" class="RadioField">
-  <input type="radio" id="radiofield4" name="example" class="RadioField__input" checked />
+<label for="radioFieldHelperText" class="RadioField">
+  <input type="radio" id="radioFieldHelperText" class="RadioField__input" name="helperText" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Label selected</span>
+    <span class="RadioField__label">Radio Label</span>
     <span class="RadioField__helperText">Helper text</span>
   </span>
 </label>
@@ -79,10 +75,10 @@ See Validation state [dictionary][dictionary-validation].
 ## As an Item:
 
 ```html
-<label for="radiofield5" class="RadioField RadioField--item">
-  <input type="radio" id="radiofield5" name="example" class="RadioField__input" checked />
+<label for="radioFieldItemDefault" class="RadioField RadioField--item">
+  <input type="radio" id="radioFieldItemDefault" class="RadioField__input" name="item" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Item</span>
+    <span class="RadioField__label">Radio Label</span>
   </span>
 </label>
 ```
@@ -90,10 +86,10 @@ See Validation state [dictionary][dictionary-validation].
 ## As an Item wrapped with helper text:
 
 ```html
-<label for="radiofield6" class="RadioField RadioField--item">
-  <input type="radio" id="radiofield6" class="RadioField__input" />
+<label for="radioFieldItemHelperText" class="RadioField RadioField--item">
+  <input type="radio" id="radioFieldItemHelperText" class="RadioField__input" name="item" />
   <span class="RadioField__text">
-    <span class="RadioField__label">Item</span>
+    <span class="RadioField__label">Radio Label</span>
     <span class="RadioField__helperText">Helper text</span>
   </span>
 </label>

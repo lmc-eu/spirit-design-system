@@ -75,7 +75,7 @@ $_field-name: 'FileUploaderInput';
 
 .FileUploaderInput__validationText,
 .FileUploaderInput > [data-element='validator_message'] {
-    @include form-fields-tools.message();
+    @include form-fields-tools.validation-text();
 }
 
 // stylelint-disable selector-max-class -- We need to target inner elements in a specific component state.
@@ -104,7 +104,7 @@ $_field-name: 'FileUploaderInput';
 
 :is(.FileUploaderInput--disabled, .FileUploaderInput.is-disabled)
     :is(.FileUploaderInput__validationText, [data-element='validator_message']) {
-    @include form-fields-tools.message-disabled();
+    @include form-fields-tools.validation-text-disabled();
 }
 
 :is(.FileUploaderInput--disabled, .FileUploaderInput.is-disabled) .FileUploaderInput__helperText {
