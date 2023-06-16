@@ -17,7 +17,7 @@
                 validationState="success"
                 validationText="Success validation message"
             />
-            <FileUploaderList />
+            <FileUploaderList headingId="attachments_example-validation-success" />
         </FileUploader>
 
         <FileUploader data-toggle="fileUploader">
@@ -33,7 +33,7 @@
                 validationState="warning"
                 validationText="Warning validation message"
             />
-            <FileUploaderList />
+            <FileUploaderList headingId="attachments_example-validation-warning" />
         </FileUploader>
 
         <FileUploader data-toggle="fileUploader">
@@ -47,9 +47,9 @@
                 label="Label"
                 name="example-validation-danger"
                 validationState="danger"
-                validationText="{{ [ 'Danger validation message', 'Second Danger validation message' ] }}"
+                validationText="{{ [ 'Danger validation message', 'Another danger validation message' ] }}"
             />
-            <FileUploaderList />
+            <FileUploaderList headingId="attachments_example-validation-danger" />
         </FileUploader>
 
     </div>

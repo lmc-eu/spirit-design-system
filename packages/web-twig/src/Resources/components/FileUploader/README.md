@@ -74,34 +74,7 @@ If supported by the device, FileUploaderInput automatically turns on the drag-an
 />
 ```
 
-### Maximum File Size (JavaScript)
-
-The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
-10 MB. To increase the limit for example to 20 MB, add the `maxFileSize` attribute:
-
-```twig
-<FileUploaderInput maxFileSize={20000000} />
-```
-
-### Maximum number of files in queue (JavaScript)
-
-Counter of the maximum number of uploaded files. The default value is 10, but any value can be set with
-the `maxUploadedFiles` attribute:
-
-```twig
-<FileUploaderInput maxUploadedFiles={2} />
-```
-
-### Input behavior when the queue is filled (JavaScript)
-
-You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
-When you set `queueLimitBehavior` together with the desired limit for the queue:
-
-```twig
-<FileUploaderInput maxUploadedFiles={2} queueLimitBehavior="hide" />
-```
-
-### Uploading Multiple Files
+### Selecting Multiple Files at Once
 
 To pick more than one file, just add the [`multiple`][mdn-multiple] attribute that will be transferred to the native
 HTML input:
@@ -112,6 +85,40 @@ HTML input:
   label="Label"
   multiple
 />
+```
+
+### Maximum File Size (JavaScript)
+
+The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
+10 MB. To increase the limit for example to 20 MB, add the `maxFileSize` attribute:
+
+```twig
+<FileUploaderInput maxFileSize={20000000} />
+```
+
+### Maximum Number of Files in Queue (JavaScript)
+
+Limit of the maximum number of uploaded files. The default value is 10, but any value can be set via
+the `maxUploadedFiles` attribute:
+
+```twig
+<FileUploaderInput maxUploadedFiles={2} />
+```
+
+### Input Behavior When the Queue is Filled (JavaScript)
+
+You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
+When you set `queueLimitBehavior` together with the desired limit for the queue:
+
+Using the `queueLimitBehavior` attribute together with the desired limit for the queue, you can set the
+input/drop zone to be hidden or disabled when the file queue limit is reached. Available options are: `hide`, `disable`,
+or `none` (default).
+
+If you set the value of `queueLimitBehavior` to `disable`, the input will be disabled. When you set it to
+`hide`, the input disappears completely. After removing a file from the queue, the input is restored.
+
+```twig
+<FileUploaderInput maxUploadedFiles={2} queueLimitBehavior="hide" />
 ```
 
 ### Allowed File Types
@@ -139,18 +146,6 @@ To mark the input as required, simply add the `isRequired` attribute:
 />
 ```
 
-### Disabled Input
-
-To mark the input as disabled, simply add the `isDisabled` attribute:
-
-```twig
-<FileUploaderInput
-  id="example-input"
-  isDisabled
-  label="Label"
-/>
-```
-
 ### Validation States
 
 Just like any other form component in Spirit, FileUploader implements the
@@ -167,6 +162,18 @@ When validated on server:
   label="Label"
   validationState="success"
   validationText="Success validation message"
+/>
+```
+
+### Disabled State
+
+To mark the input as disabled, simply add the `isDisabled` attribute:
+
+```twig
+<FileUploaderInput
+  id="example-input"
+  isDisabled
+  label="Label"
 />
 ```
 
@@ -204,6 +211,8 @@ These attributes will be passed to the topmost HTML element of the component.
 ## FileUploaderList
 
 FileUploaderList is a simple wrapper which provides an accessible title and the list semantics for the selected files.
+
+👉 When you have more than one file uploader on the page, use the `headingId` prop to set a unique ID for each list.
 
 ```twig
 <FileUploaderList>
