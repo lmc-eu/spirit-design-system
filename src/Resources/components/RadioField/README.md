@@ -5,17 +5,17 @@ This is Twig implementation of the [RadioField] component.
 Basic example usage:
 
 ```html
-<RadioField id="example" label="Label" name="example" isChecked />
+<RadioField id="radiofieldDefault" label="Label" name="radiofieldDefault" isChecked />
 ```
 
 Advanced example usage:
 
 ```html
 <RadioField
-  id="example"
+  id="radiofieldAdvanced"
   label="some label"
   isChecked
-  name="example"
+  name="radiofieldAdvanced"
   validationState="danger"
   helperText="Helper text"
   autocomplete="off"
@@ -25,10 +25,10 @@ Advanced example usage:
 Without lexer:
 
 ```twig
-{% include "@spirit/radioField.twig" with { props: {
-    id: "example",
+{% embed "@spirit/radioField.twig" with { props: {
+    id: "radiofieldEmbed",
     label: "some label",
-    name: "example",
+    name: "radiofieldEmbed",
     isChecked: "true",
     validationState: "danger",
     helperText: "Helper text",
@@ -39,6 +39,8 @@ Without lexer:
 
 | Prop name           | Type                                           | Default | Required | Description                                          |
 | ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
+| `autocomplete`      | `string`                                       | `null`  | no       | [Automated assistance in filling][autocomplete-attr] |
+| `helperText`        | `string`                                       | `null`  | no       | Custom helper text                                   |
 | `id`                | `string`                                       | `null`  | no       | Input and label identification                       |
 | `inputProps`        | `string[]`                                     | `[]`    | no       | Pass additional attributes to the input element      |
 | `isChecked`         | `bool`                                         | `false` | no       | If true, input is checked                            |
@@ -46,13 +48,11 @@ Without lexer:
 | `isItem`            | `bool`                                         | `false` | no       | To render in [Item][item] mode                       |
 | `isLabelHidden`     | `bool`                                         | `false` | no       | If true, label is hidden                             |
 | `label`             | `string`                                       | —       | yes      | Label text                                           |
-| `UNSAFE_label`      | `string`                                       | —       | yes      | Unescaped label text                                 |
 | `name`              | `string`                                       | `null`  | no       | Input name                                           |
+| `UNSAFE_helperText` | `string`                                       | `null`  | no       | Unescaped custom helper text                         |
+| `UNSAFE_label`      | `string`                                       | —       | yes      | Unescaped label text                                 |
 | `validationState`   | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state                             |
 | `value`             | `string`                                       | `null`  | no       | Input value                                          |
-| `helperText`        | `string`                                       | `null`  | no       | Custom helper text                                   |
-| `UNSAFE_helperText` | `string`                                       | `null`  | no       | Unescaped custom helper text                         |
-| `autocomplete`      | `string`                                       | `null`  | no       | [Automated assistance in filling][autocomplete-attr] |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
