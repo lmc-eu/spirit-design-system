@@ -6,7 +6,7 @@ Basic usage:
 <div class="Select">
   <label for="selectSimple" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSimple" class="Select__input">
+    <select id="selectSimple" name="simple" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -19,13 +19,14 @@ Basic usage:
 </div>
 ```
 
-Required select:
+Required select (requires a placeholder option):
 
 ```html
 <div class="Select">
   <label for="selectSimple" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSimple" class="Select__input" required>
+    <select id="selectSimple" name="simple" class="Select__input" required>
+      <option value="" selected>Select an option</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -44,7 +45,7 @@ Hidden label:
 <div class="Select">
   <label for="selectHiddenLabel" class="Select__label Select__label--hidden">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectHiddenLabel" class="Select__input">
+    <select id="selectHiddenLabel" name="hiddenLabel" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -60,9 +61,7 @@ Hidden label:
 Placeholder:
 
 Use the `option` with no value and the `selected` attribute. This
-creates a placeholder in the selection list. Add the `disabled`
-attribute so users can't pick the placeholder again, making things
-easier for them.
+creates a placeholder in the selection list.
 
 If you must fill out the selection list, also use the `disabled`
 attribute for the placeholder. This way, the form can't be sent
@@ -73,7 +72,7 @@ sure users give all needed details before sending the form.
 <div class="Select">
   <label for="selectPlaceholder" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectPlaceholder" class="Select__input">
+    <select id="selectPlaceholder" name="placeholder" class="Select__input">
       <option value="" selected>Select option</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
@@ -89,7 +88,7 @@ sure users give all needed details before sending the form.
 <div class="Select">
   <label for="selectPlaceholderDisabled" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectPlaceholderDisabled" class="Select__input" required>
+    <select id="selectPlaceholderDisabled" name="placeholderDisabled" class="Select__input" required>
       <option value="" selected disabled>Select option (default is disabled)</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
@@ -109,7 +108,7 @@ Fluid width:
 <div class="Select Select--fluid">
   <label for="selectFluid" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectFluid" class="Select__input">
+    <select id="selectFluid" name="fluid" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -128,7 +127,7 @@ Usage with helper text:
 <div class="Select">
   <label for="selectHelperText" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectHelperText" class="Select__input">
+    <select id="selectHelperText" name="helperText" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -138,7 +137,7 @@ Usage with helper text:
       </svg>
     </div>
   </div>
-  <div class="Select__helperText">Helper Text</div>
+  <div class="Select__helperText">Helper text</div>
 </div>
 ```
 
@@ -153,7 +152,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 <div class="Select Select--success">
   <label for="selectSuccess" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSuccess" class="Select__input">
+    <select id="selectSuccess" name="success" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -168,7 +167,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 <div class="Select Select--warning">
   <label for="selectWarning" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectWarning" class="Select__input">
+    <select id="selectWarning" name="warning" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -178,13 +177,13 @@ a JS interaction class when controlled by JavaScript (`has-success`,
       </svg>
     </div>
   </div>
-  <div class="Select__validationText">Validation Text</div>
+  <div class="Select__validationText">Validation text</div>
 </div>
 
 <div class="Select Select--danger">
   <label for="selectDanger" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectDanger" class="Select__input">
+    <select id="selectDanger" name="danger" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -195,17 +194,17 @@ a JS interaction class when controlled by JavaScript (`has-success`,
     </div>
   </div>
   <ul class="Select__validationText">
-    <li>First Validation text</li>
-    <li>Second Validation text</li>
+    <li>First validation text</li>
+    <li>Second validation text</li>
   </ul>
 </div>
 ```
 
-### JavaScript-Controlled Validation Message
+### JavaScript-Controlled Validation Text
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation messages in a `<div>` with `data-spirit-element="validator_message"`
+render validation texts in a `<div>` with `data-spirit-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -216,7 +215,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
 <div class="Select has-danger">
   <label for="SelectJSValidation" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="SelectJSValidation" class="Select__input">
+    <select id="SelectJSValidation" name="jsValidation" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -240,7 +239,7 @@ JS interaction class when controlled by JavaScript:
 <div class="Select Select--disabled">
   <label for="selectDisabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectDisabled" class="Select__input" disabled>
+    <select id="selectDisabled" name="disabled" class="Select__input" disabled>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -254,7 +253,7 @@ JS interaction class when controlled by JavaScript:
 <div class="Select is-disabled">
   <label for="selectIsDisabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectIsDisabled" class="Select__input" disabled>
+    <select id="selectIsDisabled" name="isDisabled" class="Select__input" disabled>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
