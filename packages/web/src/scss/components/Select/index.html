@@ -7,7 +7,7 @@
     <div class="Select">
       <label for="selectSimple" class="Select__label">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectSimple" class="Select__input">
+        <select id="selectSimple" name="default" class="Select__input">
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -22,13 +22,35 @@
 </section>
 
 <section class="docs-Section">
-  <h2 class="docs-Heading">Required</h2>
+  <h2 class="docs-Heading">Required with Placeholder</h2>
 
   <div class="docs-FormFieldGrid">
     <div class="Select">
       <label for="selectRequired" class="Select__label Select__label--required">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectRequired" class="Select__input" required>
+        <select id="selectRequired" name="required" class="Select__input" required>
+          <option value="" selected>Select an option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <div class="Select__icon">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Hidden Label</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="Select">
+      <label for="selectHiddenLabel" class="Select__label Select__label--hidden">Label</label>
+      <div class="Select__inputContainer">
+        <select id="selectHiddenLabel" name="hiddenLabel" class="Select__input">
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -49,8 +71,8 @@
     <div class="Select">
       <label for="selectPlaceholder" class="Select__label">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectPlaceholder" class="Select__input">
-          <option value="" selected>Select option</option>
+        <select id="selectPlaceholder" name="placeholder" class="Select__input">
+          <option value="" selected>Select an option</option>
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -65,8 +87,51 @@
     <div class="Select">
       <label for="selectPlaceholderDisabled" class="Select__label Select__label--required">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectPlaceholderDisabled" class="Select__input" required>
-          <option value="" selected disabled>Select option (default is disabled)</option>
+        <select id="selectPlaceholderDisabled" name="placeholderDisabled" class="Select__input" required>
+          <option value="" selected disabled>Select an option [selected & disabled]</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <div class="Select__icon">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Helper Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="Select">
+      <label for="selectHelperText" class="Select__label">Label</label>
+      <div class="Select__inputContainer">
+        <select id="selectHelperText" name="helperText" class="Select__input">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <div class="Select__icon">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+          </svg>
+        </div>
+      </div>
+      <div class="Select__helperText">Helper text</div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="Select Select--disabled">
+      <label for="selectDisabled" class="Select__label">Label</label>
+      <div class="Select__inputContainer">
+        <select id="selectDisabled" name="disabled" class="Select__input" disabled>
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -87,7 +152,7 @@
     <div class="Select Select--success">
       <label for="selectSuccess" class="Select__label">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectSuccess" class="Select__input">
+        <select id="selectSuccess" name="success" class="Select__input">
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -102,7 +167,7 @@
     <div class="Select Select--warning">
       <label for="selectWarning" class="Select__label">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectWarning" class="Select__input">
+        <select id="selectWarning" name="warning" class="Select__input">
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -112,13 +177,13 @@
           </svg>
         </div>
       </div>
-      <div class="Select__validationText">Validation Text</div>
+      <div class="Select__validationText">Validation text</div>
     </div>
 
     <div class="Select Select--danger">
       <label for="selectDanger" class="Select__label">Label</label>
       <div class="Select__inputContainer">
-        <select id="selectDanger" class="Select__input">
+        <select id="selectDanger" name="danger" class="Select__input">
           <option value="1">Option 1</option>
           <option value="2">Option 2</option>
         </select>
@@ -129,52 +194,9 @@
         </div>
       </div>
       <ul class="Select__validationText">
-        <li>First Validation text</li>
-        <li>Second Validation text</li>
+        <li>First validation text</li>
+        <li>Second validation text</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Helper Text</h2>
-
-  <div class="docs-FormFieldGrid">
-    <div class="Select">
-      <label for="selectHelperText" class="Select__label">Label</label>
-      <div class="Select__inputContainer">
-        <select id="selectHelperText" class="Select__input">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-        </select>
-        <div class="Select__icon">
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-          </svg>
-        </div>
-      </div>
-      <div class="Select__helperText">Helper Text</div>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Disabled</h2>
-
-  <div class="docs-FormFieldGrid">
-    <div class="Select Select--disabled">
-      <label for="selectDisabled" class="Select__label">Label</label>
-      <div class="Select__inputContainer">
-        <select id="selectDisabled" class="Select__input" disabled>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-        </select>
-        <div class="Select__icon">
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
-          </svg>
-        </div>
-      </div>
     </div>
   </div>
 </section>
