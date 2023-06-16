@@ -9,22 +9,22 @@ const Story = (props: unknown) => (
       id="textarea-success"
       label="Validation success"
       name="textarea-success"
-      message="Success message"
       validationState="success"
+      validationText="Success validationText"
     />
     <TextArea
       id="textarea-warning"
       label="Validation warning"
-      message="Warning message"
       name="textarea-warning"
       validationState="warning"
+      validationText="Warning validationText"
     />
     <TextArea
       id="textarea-danger"
       label="Validation danger"
-      message={['Danger message', 'Second Danger message']}
       name="textarea-danger"
       validationState="danger"
+      validationText={['Danger validationText', 'Second Danger validationText']}
     />
   </div>
 );

@@ -8,21 +8,21 @@ const Story = () => (
       label="Checkbox success"
       name="example"
       validationState="success"
-      message="Success validation message"
+      validationText="Success validation text"
     />
     <CheckboxField
       id="checkboxfield1"
       label="Checkbox warning"
       name="example"
       validationState="warning"
-      message="Warning validation message"
+      validationText="Warning validation text"
     />
     <CheckboxField
       id="checkboxfield2"
       label="Checkbox danger"
       name="example"
       validationState="danger"
-      message={['Danger validation message', 'Danger validation message']}
+      validationText={['Danger validation text', 'Danger validation text']}
     />
   </div>
 );

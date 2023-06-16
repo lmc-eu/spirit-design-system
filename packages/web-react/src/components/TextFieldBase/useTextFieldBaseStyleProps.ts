@@ -8,8 +8,8 @@ export interface TextFieldBaseStyles {
     root: string;
     label: string;
     input: string;
-    message: string;
     helperText: string;
+    validationText: string;
     passwordToggle: string;
     passwordToggleButton: string;
     passwordToggleIcon: string;
@@ -30,7 +30,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
   const TextFieldBaseLabelClass = `${TextFieldBaseClass}__label`;
   const TextFieldBaseLabelRequiredClass = `${TextFieldBaseClass}__label--required`;
   const TextFieldBaseLabelHiddenClass = `${TextFieldBaseClass}__label--hidden`;
-  const TextFieldBaseMessageClass = `${TextFieldBaseClass}__message`;
+  const TextFieldBaseValidationTextClass = `${TextFieldBaseClass}__validationText`;
   const TextFieldBasePasswordToggleClass = `${TextFieldBaseClass}__passwordToggle`;
   const TextFieldBasePasswordToggleButtonClass = `${TextFieldBaseClass}__passwordToggle__button`;
   const TextFieldBasePasswordToggleIconClass = `${TextFieldBaseClass}__passwordToggle__icon`;
@@ -51,8 +51,8 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
       root: rootStyles,
       label: labelStyles,
       input: TextFieldBaseInputClass,
-      message: TextFieldBaseMessageClass,
       helperText: TextFieldBaseHelperTextClass,
+      validationText: TextFieldBaseValidationTextClass,
       passwordToggle: TextFieldBasePasswordToggleClass,
       passwordToggleButton: TextFieldBasePasswordToggleButtonClass,
       passwordToggleIcon: TextFieldBasePasswordToggleIconClass,
@@ -60,6 +60,7 @@ export function useTextFieldBaseStyleProps(props: SpiritTextFieldBaseProps): Tex
     props: {
       ...restProps,
       isMultiline,
+      validationState,
     },
   };
 }
