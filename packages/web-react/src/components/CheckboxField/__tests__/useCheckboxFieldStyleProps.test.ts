@@ -13,7 +13,7 @@ describe('useCheckboxFieldStyleProps', () => {
       text: 'CheckboxField__text',
       input: 'CheckboxField__input',
       label: 'CheckboxField__label',
-      message: 'CheckboxField__message',
+      validationText: 'CheckboxField__validationText',
       helperText: 'CheckboxField__helperText',
     });
   });
