@@ -2,38 +2,84 @@
 
 {% block content %}
 
-    <div class="docs-FormFieldGrid">
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Default</h2>
 
-        {# TextArea Default #}
-        {% include '@components/TextArea/stories/TextArea.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaDefault.twig' %}
+        </div>
+    </section>
 
-        {# TextArea Message #}
-        {% include '@components/TextArea/stories/TextAreaMessage.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Required</h2>
 
-        {# TextArea Message #}
-        {% include '@components/TextArea/stories/TextAreaMessageMultiple.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaRequired.twig' %}
+        </div>
+    </section>
 
-        {# TextArea Validation State #}
-        {% include '@components/TextArea/stories/TextAreaValidationState.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Hidden Label</h2>
 
-        {# TextArea Disabled #}
-        {% include '@components/TextArea/stories/TextAreaDisabled.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaHiddenLabel.twig' %}
+        </div>
+    </section>
 
-        {# TextArea Fluid #}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Helper Text</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaHelperText.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Disabled</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaDisabled.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Validation State with Validation Text</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaValidation.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Fluid</h2>
+
         {% include '@components/TextArea/stories/TextAreaFluid.twig' %}
+    </section>
 
-        {# TextArea Inline #}
-        {% include '@components/TextArea/stories/TextAreaInline.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Inline</h2>
 
-        {# TextArea Helper Text #}
-        {% include '@components/TextArea/stories/TextAreaHelperText.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaInline.twig' %}
+        </div>
+    </section>
 
-        {# TextArea Auto Resize #}
-        {% include '@components/TextArea/stories/TextAreaAutoResize.twig' %}
 
-        {# TextArea V1 Feature - new disabled state #}
-        {% include '@components/TextArea/stories/TextAreaV1DisabledFeature.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">AutoResize</h2>
 
-    </div>
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaAutoResize.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section spirit-v1-box-field-disabled">
+        <h2 class="docs-Heading">V1 Feature &mdash; new disabled state</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextArea/stories/TextAreaV1DisabledFeature.twig' %}
+        </div>
+    </section>
 
 {% endblock %}
+
