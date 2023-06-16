@@ -60,13 +60,13 @@ on the root element).
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
-  <label for="fileUpload" class="FileUploaderInput__label">Label</label>
-  <input type="file" id="fileUpload" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
+  <label for="fileUploader" class="FileUploaderInput__label">Label</label>
+  <input type="file" id="fileUploader" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#upload" />
     </svg>
-    <label for="fileUpload" class="FileUploaderInput__dropZoneLabel">
+    <label for="fileUploader" class="FileUploaderInput__dropZoneLabel">
       <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
       <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
     </label>
@@ -150,7 +150,7 @@ Microsoft Word documents:
 ```html
 <input
   type="file"
-  id="fileUpload"
+  id="fileUploader"
   name="attachment"
   class="FileUploaderInput__input"
   data-spirit-element="input"
@@ -165,10 +165,10 @@ To mark the input as required, simply add the `required` attribute to the native
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
-  <label for="fileUpload" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+  <label for="fileUploader" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
   <input
     type="file"
-    id="fileUpload"
+    id="fileUploader"
     name="attachment"
     class="FileUploaderInput__input"
     data-spirit-element="input"
@@ -196,7 +196,7 @@ When validated on server:
 <div class="FileUploaderInput FileUploaderInput--success" data-spirit-element="wrapper">
   <!-- Label -->
   <!-- Drop zone with input -->
-  <div class="FileUploaderInput__message">Success message</div>
+  <div class="FileUploaderInput__validationText">Success Validation Text</div>
 </div>
 ```
 
@@ -211,7 +211,7 @@ or `is-disabled` to the `FileUploaderInput` subcomponent as well.
   <!-- Label -->
   <input
     type="file"
-    id="fileUploadDisabled"
+    id="fileUploaderDisabled"
     name="attachment"
     class="FileUploaderInput__input"
     disabled
@@ -221,7 +221,7 @@ or `is-disabled` to the `FileUploaderInput` subcomponent as well.
 </div>
 ```
 
-#### JavaScript-Controlled Validation Message
+#### JavaScript-Controlled Validation Text
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
@@ -348,10 +348,10 @@ This is how all subcomponents build up the complete FileUploader:
 
   <!-- FileUploaderInput: start -->
   <div class="FileUploaderInput" data-spirit-element="wrapper">
-    <label for="fileUploadWithAttachments" class="FileUploaderInput__label">Label</label>
+    <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
     <input
       type="file"
-      id="fileUploadWithAttachments"
+      id="fileUploaderWithAttachments"
       name="attachment"
       class="FileUploaderInput__input"
       data-spirit-element="input"
@@ -360,7 +360,7 @@ This is how all subcomponents build up the complete FileUploader:
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#upload" />
       </svg>
-      <label for="fileUploadWithAttachments" class="FileUploaderInput__dropZoneLabel">
+      <label for="fileUploaderWithAttachments" class="FileUploaderInput__dropZoneLabel">
         <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
         <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
       </label>

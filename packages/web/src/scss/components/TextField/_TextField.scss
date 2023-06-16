@@ -136,9 +136,9 @@ $_field-name: 'TextField';
     box-shadow: form-fields-theme.$input-focus-shadow;
 }
 
-.TextField__message,
+.TextField__validationText,
 .TextField > [data-element='validator_message'] {
-    @include form-fields-tools.message();
+    @include form-fields-tools.validation-text();
 }
 
 .TextField__helperText {
@@ -168,7 +168,7 @@ $_field-name: 'TextField';
 // -- The code is more comprehensible when styling elements in this order:
 //      1. input (with a pseudo-element),
 //      2. password toggle button,
-//      3. message.
+//      3. validation text.
 //    Also, high-specificity selectors are necessary to achieve the desired result.
 .TextField > .TextField__input:disabled,
 :is(.TextField--disabled, .TextField.is-disabled) > .TextField__input,
@@ -194,8 +194,9 @@ $_field-name: 'TextField';
 }
 // stylelint-enable
 
-:is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__message, [data-element='validator_message']) {
-    @include form-fields-tools.message-disabled();
+:is(.TextField--disabled, .TextField.is-disabled)
+    > :is(.TextField__validationText, [data-element='validator_message']) {
+    @include form-fields-tools.validation-text-disabled();
 }
 
 :is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__helperText) {
