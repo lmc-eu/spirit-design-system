@@ -1,111 +1,152 @@
 {{#> layout/plain }}
 
-<div class="docs-FormFieldGrid">
-  <div class="TextArea">
-    <label for="textareaSimple" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaSimple" class="TextArea__input" placeholder="Placeholder"></textarea>
-  </div>
-  <div class="TextArea">
-    <label for="textareaMessage" class="TextArea__label">Label</label>
-    <textarea id="textareaMessage" class="TextArea__input" placeholder="Placeholder"></textarea>
-    <div class="TextArea__message">Message</div>
-  </div>
-  <div class="TextArea">
-    <label for="textareaFilled" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaFilled" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-  </div>
-  <div class="TextArea">
-    <label for="textareaFilledMessage" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaFilledMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__message">Message</div>
-  </div>
-  <div class="TextArea TextArea--danger">
-    <label for="textareaDanger" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaDanger" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-  </div>
-  <div class="TextArea TextArea--danger">
-    <label for="textareaDangerMessage" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaDangerMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__message">Validation message</div>
-  </div>
-  <div class="TextArea">
-    <label for="textareaDangerMultilineMessage" class="TextArea__label">Label</label>
-    <textarea id="textareaDangerMultilineMessage" class="TextArea__input" placeholder="Placeholder"></textarea>
-    <ul class="TextArea__message">
-      <li>Validation Message</li>
-      <li>Second Validation Message</li>
-    </ul>
-  </div>
-  <div class="TextArea TextArea--success">
-    <label for="textareaSuccess" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaSuccess" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__message">Validation message</div>
-  </div>
-  <div class="TextArea TextArea--warning">
-    <label for="textareaWarning" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaWarning" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__message">Validation message</div>
-  </div>
-  <div class="TextArea TextArea--disabled">
-    <label for="textareaDisabled" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaDisabled" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
-    <div class="TextArea__message">Message</div>
-  </div>
-  <div class="TextArea TextArea--disabled">
-    <label for="textareaDisabledFilled" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaDisabledFilled" class="TextArea__input" placeholder="Placeholder" disabled>Filled</textarea>
-    <div class="TextArea__message">Message</div>
-  </div>
-  <div class="TextArea TextArea--fluid">
-    <label for="textareaFluid" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaFluid" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__message">Message</div>
-  </div>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Default</h2>
 
-  <div style="display: flex; gap: 1rem; align-items: flex-end">
+  <div class="docs-FormFieldGrid">
     <div class="TextArea">
-      <label for="textareaInlineHiddenLabel" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
-      <textarea id="textareaInlineHiddenLabel" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+      <label for="textareaDefault" class="TextArea__label">Label</label>
+      <textarea id="textareaDefault" class="TextArea__input" placeholder="Placeholder"></textarea>
     </div>
-    <button type="button" class="Button Button--primary Button--medium">Button</button>
-  </div>
 
-  <div class="TextArea">
-    <label for="textareaWithHelperText" class="TextArea__label TextArea__label--required">Label</label>
-    <textarea id="textareaWithHelperText" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__helperText">This is helper text</div>
+    <div class="TextArea">
+      <label for="textareaFilled" class="TextArea__label">Label</label>
+      <textarea id="textareaFilled" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    </div>
   </div>
+</section>
 
-  <div class="TextArea TextArea--danger">
-    <label for="textareaWithHelperTextAndValidationMessage" class="TextArea__label TextArea__label--required"
-      >Label</label
-    >
-    <textarea id="textareaWithHelperTextAndValidationMessage" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
-    <div class="TextArea__helperText">This is helper text</div>
-    <div class="TextArea__message">Danger validation message</div>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Required</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea">
+      <label for="textareaRequired" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaRequired" class="TextArea__input" placeholder="Placeholder" required></textarea>
+    </div>
   </div>
+</section>
 
-  <div class="TextArea" data-toggle="autoResize">
-    <label for="textareaAutoResize" class="TextArea__label">Label of auto-resizing TextArea</label>
-    <textarea id="textareaAutoResize" class="TextArea__input"></textarea>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Hidden Label</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea">
+      <label for="textareaHiddenLabel" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
+      <textarea id="textareaHiddenLabel" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    </div>
   </div>
+</section>
 
-  <div class="spirit-v1-box-field-disabled docs-FormFieldGrid">
-    <h2 class="docs-Heading">V1 Feature &mdash; new disabled state</h2>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Helper Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea">
+      <label for="textareaHelperText" class="TextArea__label">Label</label>
+      <textarea id="textareaHelperText" class="TextArea__input" placeholder="Placeholder"></textarea>
+      <div class="TextArea__helperText">Helper Text</div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea TextArea--disabled">
+      <label for="textareaDisabled" class="TextArea__label">Label</label>
+      <textarea id="textareaDisabled" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
+    </div>
 
     <div class="TextArea TextArea--disabled">
-      <label for="textareaDisabledFeature" class="TextArea__label TextArea__label--required">Label</label>
-      <textarea id="textareaDisabledFeature" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
+      <label for="textareaDisabledFilled" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaDisabledFilled" class="TextArea__input" disabled required>Filled</textarea>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Validation State with Validation Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea TextArea--success">
+      <label for="textareaSuccess" class="TextArea__label">Label</label>
+      <textarea id="textareaSuccess" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+    </div>
+
+    <div class="TextArea TextArea--warning">
+      <label for="textareaWarning" class="TextArea__label">Label</label>
+      <textarea id="textareaWarning" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+      <div class="TextArea__validationText">Validation text</div>
+    </div>
+
+    <div class="TextArea TextArea--danger">
+      <label for="textareaDanger" class="TextArea__label">Label</label>
+      <textarea id="textareaDanger" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+      <ul class="TextArea__validationText">
+        <li>Validation Text</li>
+        <li>Second Validation Text</li>
+      </ul>
+    </div>
+
+    <div class="TextArea TextArea--danger">
+      <label for="textareaDangerHelper" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaDangerHelper" class="TextArea__input" placeholder="Placeholder" required>Filled</textarea>
+      <div class="TextArea__helperText">This is helper text</div>
+      <div class="TextArea__validationText">Danger validation text</div>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Fluid</h2>
+
+  <div class="TextArea TextArea--fluid">
+    <label for="textareaFluid" class="TextArea__label">Label</label>
+    <textarea id="textareaFluid" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Inline</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div style="display: flex; gap: 1rem; align-items: flex-end">
+      <div class="TextArea">
+        <label for="textareaInline" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
+        <textarea id="textareaInline" class="TextArea__input" placeholder="Placeholder">Filled</textarea>
+      </div>
+      <button type="button" class="Button Button--primary Button--medium">Button</button>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">AutoResize</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea" data-toggle="autoResize">
+      <label for="textareaAutoResize" class="TextArea__label">Label</label>
+      <textarea id="textareaAutoResize" class="TextArea__input"></textarea>
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section spirit-v1-box-field-disabled">
+  <h2 class="docs-Heading">V1 Feature &mdash; new disabled state</h2>
+
+  <div class="docs-FormFieldGrid">
+    <div class="TextArea TextArea--disabled">
+      <label for="textareaDisabledV1" class="TextArea__label">Label</label>
+      <textarea id="textareaDisabledV1" class="TextArea__input" placeholder="Placeholder" disabled></textarea>
     </div>
 
     <div class="TextArea TextArea--disabled">
-      <label for="textareaDisabledFilledFeature" class="TextArea__label TextArea__label--required">Label</label>
-      <textarea id="textareaDisabledFilledFeature" class="TextArea__input" placeholder="Placeholder" disabled>
-Filled</textarea
-      >
-      <div class="TextArea__message">Message</div>
+      <label for="textareaDisabledFilledV1" class="TextArea__label TextArea__label--required">Label</label>
+      <textarea id="textareaDisabledFilledV1" class="TextArea__input" disabled required>Filled</textarea>
     </div>
   </div>
-</div>
+</section>
 
 {{/layout/plain }}

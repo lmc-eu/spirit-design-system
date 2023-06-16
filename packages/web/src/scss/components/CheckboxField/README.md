@@ -3,10 +3,10 @@
 ## Basic usage:
 
 ```html
-<label for="checkboxfield0" class="CheckboxField">
-  <input type="checkbox" id="checkboxfield0" class="CheckboxField__input" />
+<label for="checkboxfieldDefault" class="CheckboxField">
+  <input type="checkbox" id="checkboxfieldDefault" class="CheckboxField__input" />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox unselected</span>
+    <span class="CheckboxField__label">Checkbox Label</span>
   </span>
 </label>
 ```
@@ -14,71 +14,59 @@
 ## Required input:
 
 ```html
-<label for="checkboxfield1" class="CheckboxField">
-  <input type="checkbox" id="checkboxfield1" class="CheckboxField__input" required />
+<label for="checkboxfieldRequired" class="CheckboxField">
+  <input type="checkbox" id="checkboxfieldRequired" class="CheckboxField__input" required />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label CheckboxField__label--required">Label of required input</span>
+    <span class="CheckboxField__label CheckboxField__label--required">Checkbox Label</span>
   </span>
 </label>
 ```
 
-## Additional message:
+## Validation State with Validation Text:
 
+See Validation state [dictionary][dictionary-validation].
+
+````html
 ```html
-<label for="checkboxfield2" class="CheckboxField">
-  <input type="checkbox" id="checkboxfield2" class="CheckboxField__input" />
+<label for="checkboxfieldWarning" class="CheckboxField CheckboxField--warning">
+  <input type="checkbox" id="checkboxfieldWarning" class="CheckboxField__input" />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox unselected</span>
-    <span class="CheckboxField__message">Message</span>
+    <span class="CheckboxField__label">Checkbox Label</span>
+    <span class="CheckboxField__validationText">Warning validation text</span>
   </span>
 </label>
-<label for="checkboxfield2" class="CheckboxField">
-  <input type="checkbox" id="checkboxfield2" class="CheckboxField__input" />
+
+<label for="checkboxfieldDanger" class="CheckboxField CheckboxField--danger">
+  <input type="checkbox" id="checkboxfieldDanger" class="CheckboxField__input" />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox unselected</span>
-    <ul class="CheckboxField__message">
-      <li>Message</li>
-      <li>Message</li>
+    <span class="CheckboxField__label">Checkbox Label</span>
+    <ul class="CheckboxField__validationText">
+      <li>First Validation text</li>
+      <li>Second Validation text</li>
     </ul>
   </span>
 </label>
-```
+````
 
 ## Hidden label:
 
 ```html
-<label for="checkboxfield3" class="CheckboxField">
-  <input type="checkbox" id="checkboxfield3" class="CheckboxField__input" value="Filled" />
+<label for="checkboxfieldHiddenLabel" class="CheckboxField">
+  <input type="checkbox" id="checkboxfieldHiddenLabel" class="CheckboxField__input" required />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label CheckboxField__label--hidden">Label Hidden</span>
+    <span class="CheckboxField__label CheckboxField__label--hidden">Checkbox Label</span>
   </span>
 </label>
 ```
 
-## Validation states:
-
-See Validation state [dictionary][dictionary-validation].
+## Helper Text:
 
 ```html
-<label for="checkboxfield4_0" class="CheckboxField CheckboxField--danger">
-  <input type="checkbox" id="checkboxfield4_0" class="CheckboxField__input" checked />
+<label for="checkboxfieldHelperText" class="CheckboxField">
+  <input type="checkbox" id="checkboxfieldHelperText" class="CheckboxField__input" />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox with danger</span>
-    <span class="CheckboxField__message">Validation message</span>
-  </span>
-</label>
-<label for="checkboxfield4_1" class="CheckboxField CheckboxField--warning">
-  <input type="checkbox" id="checkboxfield4_1" class="CheckboxField__input" checked />
-  <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox with warning</span>
-    <span class="CheckboxField__message">Validation message</span>
-  </span>
-</label>
-<label for="checkboxfield4_2" class="CheckboxField CheckboxField--success">
-  <input type="checkbox" id="checkboxfield4_2" class="CheckboxField__input" checked />
-  <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Checkbox with success</span>
-    <span class="CheckboxField__message">Validation message</span>
+    <span class="CheckboxField__label">Checkbox Label</span>
+    <span class="CheckboxField__helperText">Helper text</span>
   </span>
 </label>
 ```
@@ -86,11 +74,10 @@ See Validation state [dictionary][dictionary-validation].
 ## Disabled state:
 
 ```html
-<label for="checkboxfield5" class="CheckboxField CheckboxField--disabled">
-  <input type="checkbox" id="checkboxfield5" class="CheckboxField__input" disabled />
+<label for="checkboxfieldDisabled" class="CheckboxField CheckboxField--disabled">
+  <input type="checkbox" id="checkboxfieldDisabled" class="CheckboxField__input" disabled />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label CheckboxField__label--required">Label of input with indeterminate</span>
-    <span class="CheckboxField__message">Message</span>
+    <span class="CheckboxField__label">Checkbox Label</span>
   </span>
 </label>
 ```
@@ -98,11 +85,10 @@ See Validation state [dictionary][dictionary-validation].
 ## As an Item:
 
 ```html
-<label for="checkboxfield6" class="CheckboxField CheckboxField--item">
-  <input type="checkbox" id="checkboxfield6" class="CheckboxField__input" />
+<label for="checkboxfieldItemDefault" class="CheckboxField CheckboxField--item">
+  <input type="checkbox" id="checkboxfieldItemDefault" class="CheckboxField__input" name="item" />
   <span class="CheckboxField__text">
-    <span class="CheckboxField__label CheckboxField__label--required">Item</span>
-    <span class="CheckboxField__message">Message</span>
+    <span class="CheckboxField__label">Checkbox Label</span>
   </span>
 </label>
 ```

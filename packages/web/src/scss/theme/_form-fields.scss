@@ -12,13 +12,13 @@ $label-color-default: tokens.$text-primary-default;
 $label-color-disabled: tokens.$text-primary-disabled;
 $label-required-margin-left: tokens.$space-200;
 $label-required-color: tokens.$emotion-danger-default;
-$message-typography: tokens.$body-medium-text-regular;
-$message-margin-top: tokens.$space-300;
-$message-color-default: tokens.$text-secondary-default;
-$message-color-disabled: tokens.$text-secondary-disabled;
-$message-color-success: tokens.$emotion-success-default;
-$message-color-warning: tokens.$emotion-warning-default;
-$message-color-danger: tokens.$emotion-danger-default;
+$validation-text-typography: tokens.$body-medium-text-regular;
+$validation-text-margin-top: tokens.$space-300;
+$validation-text-color-default: tokens.$text-secondary-default;
+$validation-text-color-disabled: tokens.$text-secondary-disabled;
+$validation-text-color-success: tokens.$emotion-success-default;
+$validation-text-color-warning: tokens.$emotion-warning-default;
+$validation-text-color-danger: tokens.$emotion-danger-default;
 $helper-text-typography: tokens.$body-small-text-regular;
 $helper-text-margin-top: tokens.$space-300;
 $helper-text-color-default: tokens.$text-secondary-default;
@@ -51,15 +51,15 @@ $box-field-label-margin-bottom: tokens.$space-300;
 $validation-states: (
     success: (
         input-border-color: $input-border-color-success,
-        message-color: $message-color-success,
+        validation-text-color: $validation-text-color-success,
     ),
     warning: (
         input-border-color: $input-border-color-warning,
-        message-color: $message-color-warning,
+        validation-text-color: $validation-text-color-warning,
     ),
     danger: (
         input-border-color: $input-border-color-danger,
-        message-color: $message-color-danger,
+        validation-text-color: $validation-text-color-danger,
     ),
 );
 
@@ -70,5 +70,5 @@ $item-background-color-default: tokens.$background-interactive-default;
 $item-background-color-hover: tokens.$background-interactive-hover;
 $item-background-color-active: tokens.$background-interactive-active;
 $item-label-checked-typography: tokens.$body-medium-text-bold;
-$item-message-typography: tokens.$body-small-text-regular;
+$item-validation-text-typography: tokens.$body-small-text-regular;
 $item-helper-text-typography: tokens.$body-small-text-regular;

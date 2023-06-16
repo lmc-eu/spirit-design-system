@@ -201,11 +201,11 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 ```
 
-### JavaScript-Controlled Validation Message
+### JavaScript-Controlled Validation Text
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation messages in a `<div>` with `data-spirit-element="validator_message"`
+render validation texts in a `<div>` with `data-spirit-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 

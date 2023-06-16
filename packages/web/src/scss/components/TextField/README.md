@@ -4,8 +4,8 @@ Basic usage:
 
 ```html
 <div class="TextField">
-  <label for="textfield" class="TextField__label">Label</label>
-  <input type="text" id="textfield" class="TextField__input" placeholder="Placeholder" />
+  <label for="textfieldDefault" class="TextField__label">Label</label>
+  <input type="text" id="textfieldDefault" class="TextField__input" placeholder="Placeholder" />
 </div>
 ```
 
@@ -13,26 +13,8 @@ Required input:
 
 ```html
 <div class="TextField">
-  <label for="textfield-required" class="TextField__label TextField__label--required">Label of required input</label>
-  <input type="text" id="textfield-required" class="TextField__input" placeholder="Placeholder" required />
-</div>
-```
-
-Additional message:
-
-```html
-<div class="TextField">
-  <label for="textfield-message" class="TextField__label">Label of input with message</label>
-  <input type="text" id="textfield-message" class="TextField__input" placeholder="Placeholder" />
-  <div class="TextField__message">Message</div>
-</div>
-<div class="TextField">
-  <label for="textfield-message" class="TextField__label">Label of input with message</label>
-  <input type="text" id="textfield-message" class="TextField__input" placeholder="Placeholder" />
-  <ul class="TextField__message">
-    <li>First Message</li>
-    <li>Second Message</li>
-  </ul>
+  <label for="textfieldRequired" class="TextField__label TextField__label--required">Label</label>
+  <input type="text" id="textfieldRequired" class="TextField__input" placeholder="Placeholder" required />
 </div>
 ```
 
@@ -40,8 +22,8 @@ Hidden label:
 
 ```html
 <div class="TextField">
-  <label for="textfield-label-hidden" class="TextField__label TextField__label--hidden">Label Hidden</label>
-  <input type="text" id="textfield-label-hidden" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <label for="textfieldHiddenLabel" class="TextField__label TextField__label--hidden">Label</label>
+  <input type="text" id="textfieldHiddenLabel" class="TextField__input" placeholder="Placeholder" />
 </div>
 ```
 
@@ -49,19 +31,18 @@ Fluid width:
 
 ```html
 <div class="TextField TextField--fluid">
-  <label for="textfield-fluid" class="TextField__label">Label of a fluid input</label>
-  <input type="text" id="textfield-fluid" class="TextField__input" placeholder="Placeholder" />
-  <div class="TextField__message">Message</div>
+  <label for="textfieldFluid" class="TextField__label">Label</label>
+  <input type="text" id="textfieldFluid" class="TextField__input" placeholder="Placeholder" value="Filled" />
 </div>
 ```
 
-Usage with helper text:
+Helper Text:
 
 ```html
 <div class="TextField">
-  <label for="textfield-helperText" class="TextField__label">Label</label>
-  <input type="text" id="textfield-helperText" class="TextField__input" placeholder="Placeholder" />
-  <div class="TextField__helperText">Helper text</div>
+  <label for="textfieldHelperText" class="TextField__label">Label</label>
+  <input type="text" id="textfieldHelperText" class="TextField__input" placeholder="Placeholder" />
+  <div class="TextField__helperText">Helper Text</div>
 </div>
 ```
 
@@ -97,8 +78,19 @@ element:
 
 ```html
 <div class="TextField">
-  <label for="textfield-size" class="TextField__label">4000 (in Roman numerals)</label>
-  <input type="text" size="4" id="textfield-size" class="TextField__input" style="--width: 4em;" />
+  <label for="textfieldSize" class="TextField__label">4000 (in Roman numerals)</label>
+  <input type="text" size="4" id="textfieldSize" class="TextField__input" placeholder="Placeholder" />
+</div>
+<div class="TextField">
+  <label for="textfieldSizeEm" class="TextField__label">4000 (in Roman numerals)</label>
+  <input
+    type="text"
+    size="4"
+    id="textfieldSizeEm"
+    class="TextField__input"
+    placeholder="Placeholder"
+    style="--width: 4em;"
+  />
 </div>
 ```
 
@@ -116,8 +108,14 @@ forget to change not only the input type but also `aria-pressed` and
 
 ```html
 <div class="TextField">
-  <label for="textfield-password-toggle" class="TextField__label TextField__label--required">Password Toggle</label>
+  <label for="textfieldPasswordToggle" class="TextField__label">Password Toggle</label>
   <div class="TextField__passwordToggle">
+    <input
+      type="password"
+      id="textfieldPasswordToggle"
+      class="TextField__input"
+      placeholder="Password must be at least 6 characters long"
+    />
     <button
       type="button"
       class="TextField__passwordToggle__button"
@@ -127,22 +125,16 @@ forget to change not only the input type but also `aria-pressed` and
       data-toggle="password"
     >
       <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
-        <svg class="Icon" width="24" height="24" aria-hidden="true">
+        <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#visibility-on" />
         </svg>
       </span>
       <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--shown">
-        <svg class="Icon" width="24" height="24" aria-hidden="true">
+        <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#visibility-off" />
         </svg>
       </span>
     </button>
-    <input
-      type="password"
-      id="textfield-password-toggle"
-      class="TextField__input"
-      placeholder="Password must be at least 6 characters long"
-    />
   </div>
 </div>
 ```
@@ -155,27 +147,32 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 `has-warning`, `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 ```html
-<div class="TextField TextField--danger">
-  <label for="textfield-validation-1" class="TextField__label TextField__label--required">
-    Label of input with error
-  </label>
-  <input type="text" id="textfield-validation-1" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  <div class="TextField__message">Error message</div>
+<div class="TextField TextField--success">
+  <label for="textfieldSuccess" class="TextField__label">Label</label>
+  <input type="text" id="textfieldSuccess" class="TextField__input" placeholder="Placeholder" value="Filled" />
 </div>
-<div class="TextField has-danger">
-  <label for="textfield-validation-2" class="TextField__label TextField__label--required">
-    Label of input with error
-  </label>
-  <input type="text" id="textfield-validation-2" class="TextField__input" placeholder="Placeholder" value="Filled" />
-  <div class="TextField__message">Error message</div>
+
+<div class="TextField TextField--warning">
+  <label for="textfieldWarning" class="TextField__label">Label</label>
+  <input type="text" id="textfieldWarning" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <div class="TextField__validationText">Validation text</div>
+</div>
+
+<div class="TextField TextField--danger">
+  <label for="textfieldDanger" class="TextField__label">Label</label>
+  <input type="text" id="textfieldDanger" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <ul class="TextField__validationText">
+    <li>Validation Text</li>
+    <li>Second Validation Text</li>
+  </ul>
 </div>
 ```
 
-### JavaScript-Controlled Validation Message
+### JavaScript-Controlled Validation Text
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation messages in a `<div>` with `data-element="validator_message"`
+render validation texts in a `<div>` with `data-element="validator_message"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -184,10 +181,8 @@ components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
 <div class="TextField has-danger">
-  <label for="textfield-js-validation" class="TextField__label TextField__label--required">
-    Label of input with error
-  </label>
-  <input type="text" id="textfield-js-validation" class="TextField__input" placeholder="Placeholder" value="Filled" />
+  <label for="textfieldHasDanger" class="TextField__label">Label</label>
+  <input type="text" id="textfieldHasDanger" class="TextField__input" placeholder="Placeholder" value="Filled" />
   <div data-element="validator_message">Error message inserted by JS</div>
 </div>
 ```
@@ -200,14 +195,21 @@ JS interaction class when controlled by JavaScript:
 
 ```html
 <div class="TextField TextField--disabled">
-  <label for="textfield-disabled-1" class="TextField__label TextField__label--required">Label of disabled input</label>
-  <input type="text" id="textfield-disabled-1" class="TextField__input" placeholder="Placeholder" disabled />
-  <div class="TextField__message">Message</div>
+  <label for="textfieldDisabled" class="TextField__label">Label</label>
+  <input type="text" id="textfieldDisabled" class="TextField__input" placeholder="Placeholder" disabled />
 </div>
-<div class="TextField is-disabled">
-  <label for="textfield-disabled-2" class="TextField__label TextField__label--required">Label of disabled input</label>
-  <input type="text" id="textfield-disabled-2" class="TextField__input" placeholder="Placeholder" disabled />
-  <div class="TextField__message">Message</div>
+
+<div class="TextField TextField--disabled">
+  <label for="textfieldDisabledFilled" class="TextField__label TextField__label--required">Label</label>
+  <input
+    type="text"
+    id="textfieldDisabledFilled"
+    class="TextField__input"
+    placeholder="Placeholder"
+    disabled
+    required
+    value="Filled"
+  />
 </div>
 ```
 
@@ -222,9 +224,8 @@ The preferred one is the `body` element because this way it will affect all Text
 <body class="spirit-v1-box-field-disabled">
   ...
   <div class="TextField TextField--disabled">
-    <label for="textfieldDisabledFeature" class="TextField__label TextField__label--required">Label</label>
-    <input type="text" id="textfieldDisabledFeature" class="TextField__input" placeholder="Placeholder" disabled />
-    <div class="TextField__message">Message</div>
+    <label for="textfieldDisabledV1" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfieldDisabledV1" class="TextField__input" placeholder="Placeholder" disabled />
   </div>
   ...
 </body>
