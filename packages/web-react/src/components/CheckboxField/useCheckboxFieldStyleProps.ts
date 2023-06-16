@@ -9,8 +9,8 @@ export interface CheckboxFieldStyles {
     text: string;
     label: string;
     input: string;
-    message: string;
     helperText: string;
+    validationText: string;
   };
   /** props to be passed to the input element */
   props: CheckboxFieldProps;
@@ -28,14 +28,14 @@ export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): Che
   const checkboxFieldLabelClass = `${checkboxFieldClass}__label`;
   const checkboxFieldLabelRequiredClass = `${checkboxFieldClass}__label--required`;
   const checkboxFieldLabelHiddenClass = `${checkboxFieldClass}__label--hidden`;
-  const checkboxFieldMessageClass = `${checkboxFieldClass}__message`;
   const checkboxFieldHelperTextClass = `${checkboxFieldClass}__helperText`;
-  const checkboxValidationClass = `${checkboxFieldClass}--${validationState}`;
+  const checkboxFieldValidationTextClass = `${checkboxFieldClass}__validationText`;
+  const checkboxFieldValidationClass = `${checkboxFieldClass}--${validationState}`;
 
   const rootStyles = classNames(checkboxFieldClass, {
     [checkboxFieldDisabledClass]: isDisabled,
     [checkboxFieldItemClass]: isItem,
-    [checkboxValidationClass]: validationState,
+    [checkboxFieldValidationClass]: validationState,
   });
   const labelStyles = classNames(checkboxFieldLabelClass, {
     [checkboxFieldLabelRequiredClass]: isRequired,
@@ -48,9 +48,12 @@ export function useCheckboxFieldStyleProps(props: SpiritCheckboxFieldProps): Che
       text: checkboxFieldTextClass,
       label: labelStyles,
       input: checkboxFieldInputClass,
-      message: checkboxFieldMessageClass,
       helperText: checkboxFieldHelperTextClass,
+      validationText: checkboxFieldValidationTextClass,
     },
-    props: restProps,
+    props: {
+      ...restProps,
+      validationState,
+    },
   };
 }

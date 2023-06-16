@@ -5,9 +5,9 @@ import {
   SpiritTextAreaElementPropsWithRef,
   TextInputProps,
   Validation,
+  ValidationTextProp,
 } from './shared';
 import { LabelProps } from './label';
-import { MessageProps } from './message';
 
 export type TextAreaElementBaseProps = SpiritTextAreaElementPropsWithRef;
 
@@ -16,8 +16,8 @@ export interface TextAreaProps
     InputBaseProps,
     ChildrenProps,
     LabelProps,
-    MessageProps,
     HelperTextProps,
+    ValidationTextProp,
     TextInputProps,
     Validation {
   /** Whether is field auto resizing which adjusts its height while typing */

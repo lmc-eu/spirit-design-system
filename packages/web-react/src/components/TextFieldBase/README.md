@@ -3,8 +3,8 @@
 This is React implementation of the abstract component TextFieldBase for the purposes of the form components [TextField] and [TextArea].
 
 ```jsx
-<TextFieldBase id="example" label="Example TextFieldBase" name="example" isRequired validationState="danger" message="validation failed" />
-<TextFieldBase id="example" label="Example multiline TextFieldBase" name="example" isMultiline isRequired validationState="danger" message="validation failed" />
+<TextFieldBase id="example" label="Example TextFieldBase" name="example" isRequired validationState="danger" validationText="validation failed" />
+<TextFieldBase id="example" label="Example multiline TextFieldBase" name="example" isMultiline isRequired validationState="danger" validationText="validation failed" />
 ```
 
 ## Available props
@@ -20,13 +20,13 @@ This is React implementation of the abstract component TextFieldBase for the pur
 | `isMultiline`       | `boolean`                                                     | -       | no       | Whether is DOM element `textarea`                                       |
 | `isRequired`        | `boolean`                                                     | -       | no       | Whether is field required                                               |
 | `label`             | `string`                                                      | -       | no       | Label text                                                              |
-| `message`           | `string`, `string[]`                                          | -       | no       | Validation message                                                      |
 | `name`              | `string`                                                      | -       | no       | Input name                                                              |
 | `pattern`           | `string`                                                      | -       | no       | Defines regular expressions for allowed value types                     |
 | `placeholder`       | `string`                                                      | -       | no       | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement or HTMLTextAreaElement>`       | -       | no       | Field element reference                                                 |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | -       | no       | Input type                                                              |
 | `validationState`   | [Validation dictionary][dictionary-validation]                | -       | no       | Type of validation state.                                               |
+| `validationText`    | `string`, `string[]`                                          | -       | no       | Validation text                                                         |
 | `value`             | `string`                                                      | -       | no       | Input value                                                             |
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
