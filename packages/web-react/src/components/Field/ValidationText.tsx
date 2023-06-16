@@ -1,7 +1,7 @@
 import React, { ElementType } from 'react';
 import { ValidationTextType } from '../../types';
 
-export interface ValidationTextProps {
+interface ValidationTextProps {
   className?: string;
   validationText: ValidationTextType;
   elementType?: ElementType;

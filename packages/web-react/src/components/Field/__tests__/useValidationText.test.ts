@@ -2,16 +2,16 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useValidationText } from '../useValidationText';
 
 describe('useValidationText', () => {
-  it('should return null', () => {
+  it('should return undefined', () => {
     const { result } = renderHook(() => useValidationText({ validationTextClassName: '', validationState: undefined }));
 
-    expect(result.current).toBeNull();
+    expect(result.current).toBeUndefined();
   });
 
   it('should return ValidationText component', () => {
     const { result } = renderHook(() =>
       useValidationText({
-        validationTextClassName: 'TextField__message',
+        validationTextClassName: 'TextField__validationText',
         validationState: 'danger',
         validationText: 'required',
       }),
@@ -19,7 +19,7 @@ describe('useValidationText', () => {
 
     expect(result.current).toMatchInlineSnapshot(`
       <ValidationText
-        className="TextField__message"
+        className="TextField__validationText"
         elementType="div"
         validationText="required"
       />

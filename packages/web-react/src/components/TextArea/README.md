@@ -1,11 +1,11 @@
 # TextArea
 
 TextArea enables the user to add longer text to a form. It has textarea, label,
-and an optional message. It could be disabled or have a validation state. The label could be hidden
+and an optional helper text. It could be disabled or have a validation state. The label could be hidden
 and show if the textarea is required.
 
 ```jsx
-<TextArea id="example" name="example" validationState="danger" message="validation failed" isRequired />
+<TextArea id="example" name="example" validationState="danger" validationText="validation failed" isRequired />
 ```
 
 ## Textarea with Auto-Height Adjustment
@@ -24,10 +24,10 @@ and show if the textarea is required.
 | `placeholder`           | `string`                                       | -       | no       | Textarea placeholder                                                 |
 | `value`                 | `string`                                       | -       | no       | Textarea value                                                       |
 | `maxLength`             | `number`                                       | -       | no       | Maximum number of characters                                         |
-| `message`               | `string`, `string[]`                           | -       | no       | Validation message                                                   |
 | `rows`                  | `number`                                       | -       | no       | Number of visible rows                                               |
 | `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | no       | Textarea element reference                                           |
-| `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state.                                            |
+| `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state                                             |
+| `validationText`        | `string`, `string[]`                           | -       | no       | Validation text                                                      |
 | `isAutoResizing`        | `boolean`                                      | -       | no       | Whether is field auto resizing which adjusts its height while typing |
 | `isDisabled`            | `boolean`                                      | -       | no       | Whether is field disabled                                            |
 | `isRequired`            | `boolean`                                      | -       | no       | Whether is field required                                            |

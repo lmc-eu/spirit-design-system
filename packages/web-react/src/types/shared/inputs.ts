@@ -36,3 +36,8 @@ export interface HelperTextProps {
   /** If I wanted some help text */
   helperText?: string;
 }
+
+export interface ValidationTextProps {
+  /** The validation text to display. */
+  validationText?: ValidationTextType;
+}

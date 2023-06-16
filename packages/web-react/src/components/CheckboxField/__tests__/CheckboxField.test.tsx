@@ -20,7 +20,7 @@ describe('CheckboxField', () => {
 
   validationStatePropsTest(CheckboxField, 'CheckboxField--');
 
-  validationTextPropsTest(CheckboxField, '.CheckboxField__message');
+  validationTextPropsTest(CheckboxField, '.CheckboxField__validationText');
 
   it('should have text classname', () => {
     const dom = render(<CheckboxField id="checkbox" label="Label" />);

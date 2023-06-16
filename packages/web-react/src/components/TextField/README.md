@@ -1,14 +1,14 @@
 # TextField
 
 TextField enables the user to type in text information. It has an input, a
-label, and an optional message. It supports several input types like `text` or
+label, and an optional helper text. It supports several input types like `text` or
 `password` etc. It can be disabled or have a validation state. The label can be
 hidden or show if the input is required.
 
 ```jsx
-<TextField id="example-text" name="example" validationState="danger" message="validation failed" isRequired />
-<TextField id="example-password" type="password" name="example" validationState="danger" message="validation failed" isRequired />
-<TextField id="example-password-toggle" name="example" validationState="danger" message="validation failed" hasPasswordToggle isRequired />
+<TextField id="example-text" name="example" validationState="danger" validationText="validation failed" isRequired />
+<TextField id="example-password" type="password" name="example" validationState="danger" validationText="validation failed" isRequired />
+<TextField id="example-password-toggle" name="example" validationState="danger" validationText="validation failed" hasPasswordToggle isRequired />
 ```
 
 ## Available props
@@ -24,13 +24,13 @@ hidden or show if the input is required.
 | `isLabelHidden`     | `boolean`                                                     | -       | no       | Whether is label hidden                                                 |
 | `isRequired`        | `boolean`                                                     | -       | no       | Whether is field required                                               |
 | `label`             | `string`                                                      | -       | no       | Label text                                                              |
-| `message`           | `string`, `string[]`                                          | -       | no       | Validation message                                                      |
 | `name`              | `string`                                                      | -       | no       | Input name                                                              |
 | `pattern`           | `string`                                                      | -       | no       | Defines regular expressions for allowed value types                     |
 | `placeholder`       | `string`                                                      | -       | no       | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement>`                              | -       | no       | Input element reference                                                 |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | -       | no       | Input type                                                              |
-| `validationState`   | [Validation dictionary][dictionary-validation]                | -       | no       | Type of validation state.                                               |
+| `validationState`   | [Validation dictionary][dictionary-validation]                | -       | no       | Type of validation state                                                |
+| `validationText`    | `string`, `string[]`                                          | -       | no       | Validation text                                                         |
 | `value`             | `string`                                                      | -       | no       | Input value                                                             |
 
 ## Custom component

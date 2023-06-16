@@ -5,9 +5,9 @@ import {
   ItemProps,
   SpiritInputElementPropsWithRef,
   Validation,
+  ValidationTextProps,
 } from './shared';
 import { LabelProps } from './label';
-import { MessageProps } from './message';
 
 export type CheckboxElementBaseProps = SpiritInputElementPropsWithRef;
 
@@ -16,9 +16,9 @@ export interface CheckboxFieldProps
     ChildrenProps,
     LabelProps,
     ItemProps,
-    MessageProps,
     InputBaseProps,
     Validation,
+    ValidationTextProps,
     HelperTextProps {
   /** Whether the checkbox is indeterminate */
   indeterminate?: boolean;

@@ -5,9 +5,9 @@ import {
   SpiritTextAreaElementPropsWithRef,
   TextInputProps,
   Validation,
+  ValidationTextProps,
 } from './shared';
 import { LabelProps } from './label';
-import { MessageProps } from './message';
 
 export type TextAreaElementBaseProps = SpiritTextAreaElementPropsWithRef;
 
@@ -16,8 +16,8 @@ export interface TextAreaProps
     InputBaseProps,
     ChildrenProps,
     LabelProps,
-    MessageProps,
     HelperTextProps,
+    ValidationTextProps,
     TextInputProps,
     Validation {
   /** Maximum characters length */

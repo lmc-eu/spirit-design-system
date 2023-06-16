@@ -6,9 +6,9 @@ import {
   SpiritInputElementPropsWithRef,
   TextInputProps,
   Validation,
+  ValidationTextProps,
 } from './shared';
 import { LabelProps } from './label';
-import { MessageProps } from './message';
 
 export type TextFieldType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
@@ -20,8 +20,8 @@ export interface TextFieldProps
     PasswordToggleAdornmentProp,
     ChildrenProps,
     LabelProps,
-    MessageProps,
     HelperTextProps,
+    ValidationTextProps,
     TextInputProps,
     Validation {
   /** The type of text field */

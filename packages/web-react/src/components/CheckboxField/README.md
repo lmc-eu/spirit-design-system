@@ -1,11 +1,18 @@
 # CheckboxField
 
 CheckboxField enables the user to check/uncheck choice. It has input, a label,
-and an optional message. It could be disabled or have a validation state. The label could be hidden
+and an optional validationText. It could be disabled or have a validation state. The label could be hidden
 and show if the input is required.
 
 ```jsx
-<CheckboxField id="example" name="example" isRequired isChecked validationState="danger" message="validation failed" />
+<CheckboxField
+  id="example"
+  name="example"
+  isRequired
+  isChecked
+  validationState="danger"
+  validationText="validation failed"
+/>
 ```
 
 ## Available props
@@ -16,8 +23,8 @@ and show if the input is required.
 | `name`            | `string`                                       | -       | no       | Input name                     |
 | `label`           | `string`                                       | -       | no       | Label text                     |
 | `value`           | `string`                                       | -       | no       | Input value                    |
-| `message`         | `string`, `string[]`                           | -       | no       | Validation or help message     |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state.      |
+| `validationText`  | `string`, `string[]`                           | -       | no       | Validation text                |
 | `isDisabled`      | `boolean`                                      | -       | no       | Whether is field disabled      |
 | `isItem`          | `boolean`                                      | -       | no       | To render in [Item][item] mode |
 | `isRequired`      | `boolean`                                      | -       | no       | Whether is field required      |
@@ -39,7 +46,7 @@ const CustomCheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
       <span className={styleProps.text}>
         <span className={styleProps.label}>{props.label}</span>
         <span className={styleProps.helperText}>{props.helperText}</span>
-        <span className={styleProps.message}>{props.message}</span>
+        <span className={styleProps.validationText}>{props.validationText}</span>
       </span>
     </label>
   );

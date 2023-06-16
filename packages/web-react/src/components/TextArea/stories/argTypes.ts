@@ -56,13 +56,13 @@ export default {
     },
     defaultValue: '',
   },
-  message: {
+  validationText: {
     control: {
       type: 'object',
     },
     defaultValue: '',
     description:
-      'The validation message. Use a string `"foo"` for single message or an array for multiple messages `["foo", "bar"]`.',
+      'The validation text. Only visible if validationState is set. Use a string `"foo"` for single validation text or an array for multiple validation texts `["foo", "bar"]`.',
   },
   helperText: {
     control: {
