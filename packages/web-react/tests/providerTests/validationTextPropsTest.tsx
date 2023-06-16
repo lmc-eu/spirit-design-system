@@ -14,8 +14,6 @@ export const validationTextPropsTest = (
         id="component"
         label="Label"
         type={type as TextFieldType}
-        /** @deprecated Will be removed in the next major version. */
-        message="text"
         validationState="danger"
         validationText="text"
       />,
@@ -33,8 +31,6 @@ export const validationTextPropsTest = (
         id="component"
         label="Label"
         type={type as TextFieldType}
-        /** @deprecated Will be removed in the next major version. */
-        message={['foo', 'bar']}
         validationState="danger"
         validationText={['foo', 'bar']}
       />,
