@@ -95,18 +95,10 @@
             </div>
         {% endif %}
     </div>
-    {% if _validationText or _unsafeValidationText %}
-        {%- if (_validationText and _validationText is iterable) or (_unsafeValidationText and _unsafeValidationText is iterable) -%}
-            <ul class="{{ _validationTextClassName }}">
-                {% set _list = _unsafeValidationText ? _unsafeValidationText : _validationText %}
-                {% for _item in _list %}
-                    <li>{{ _unsafeValidationText ? _item | raw : _item }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <div class="{{ _validationTextClassName }}">
-                {{ _unsafeValidationText ? _unsafeValidationText | raw : _validationText }}
-            </div>
-        {%- endif -%}
-    {% endif %}
+    <ValidationText
+        className="{{ _validationTextClassName }}"
+        validationState="{{ _validationState }}"
+        validationText="{{ _validationText }}"
+        UNSAFE_validationText="{{ _unsafeValidationText }}"
+    />
 </div>
