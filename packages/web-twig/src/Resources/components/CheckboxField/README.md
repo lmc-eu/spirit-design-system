@@ -5,18 +5,18 @@ This is Twig implementation of the [CheckboxField] component.
 Basic example usage:
 
 ```html
-<CheckboxField id="example" label="Label" name="example" />
+<CheckboxField id="checkboxfieldDefault" label="Label" name="checkboxfieldDefault" />
 ```
 
 Advanced example usage:
 
 ```html
 <CheckboxField
-  id="example2"
+  id="checkboxfieldAdvanced"
   isChecked
   isRequired
-  message="validation failed"
-  name="example2"
+  validationText="validation text"
+  name="checkboxfieldAdvanced"
   validationState="danger"
   helperText="Helper text"
 />
@@ -25,37 +25,37 @@ Advanced example usage:
 Without lexer:
 
 ```twig
-{% include "@spirit/checkboxField.twig" with { props: {
-    id: "example",
+{% embed "@spirit/checkboxField.twig" with { props: {
+    id: "checkboxfieldEmbed",
     label: "some label",
-    name: "example",
+    name: "checkboxfieldEmbed",
     isRequired: "true",
     validationState: "danger",
-    message: "validation failed",
+    validationText: "validation text",
     helperText: "Helper text",
 }} %}
 ```
 
 ## API
 
-| Prop name           | Type                                           | Default | Required | Description                                     |
-| ------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------- |
-| `id`                | `string`                                       | `null`  | no       | Input and label identification                  |
-| `inputProps`        | `string[]`                                     | `[]`    | no       | Pass additional attributes to the input element |
-| `isChecked`         | `bool`                                         | `false` | no       | If true, input is checked                       |
-| `isDisabled`        | `bool`                                         | `false` | no       | If true, input is disabled                      |
-| `isItem`            | `bool`                                         | `false` | no       | To render in [Item][item] mode                  |
-| `isLabelHidden`     | `bool`                                         | `false` | no       | If true, label is hidden                        |
-| `isRequired`        | `bool`                                         | `false` | no       | If true, input is required                      |
-| `label`             | `string`                                       | —       | yes\*    | Label text                                      |
-| `UNSAFE_label`      | `string`                                       | —       | yes\*    | Unescaped label text (allows HTML)              |
-| `message`           | `string`, `string[]`                           | `null`  | no\*\*   | Validation message                              |
-| `UNSAFE_message`    | `string`, `string[]`                           | `null`  | no\*\*   | Unescaped validation message                    |
-| `helperText`        | `string`                                       | `null`  | no\*\*   | Custom helper text                              |
-| `UNSAFE_helperText` | `string`                                       | `null`  | no\*\*   | Unescaped custom helper text                    |
-| `name`              | `string`                                       | `null`  | no       | Input name                                      |
-| `validationState`   | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                       |
-| `value`             | `string`                                       | `null`  | no       | Input value                                     |
+| Prop name               | Type                                           | Default | Required | Description                                     |
+| ----------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------- |
+| `helperText`            | `string`                                       | `null`  | no\*\*   | Custom helper text                              |
+| `id`                    | `string`                                       | `null`  | no       | Input and label identification                  |
+| `inputProps`            | `string[]`                                     | `[]`    | no       | Pass additional attributes to the input element |
+| `isChecked`             | `bool`                                         | `false` | no       | If true, input is checked                       |
+| `isDisabled`            | `bool`                                         | `false` | no       | If true, input is disabled                      |
+| `isItem`                | `bool`                                         | `false` | no       | To render in [Item][item] mode                  |
+| `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                        |
+| `isRequired`            | `bool`                                         | `false` | no       | If true, input is required                      |
+| `label`                 | `string`                                       | —       | yes\*    | Label text                                      |
+| `name`                  | `string`                                       | `null`  | no       | Input name                                      |
+| `UNSAFE_helperText`     | `string`                                       | `null`  | no\*\*   | Unescaped custom helper text                    |
+| `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text (allows HTML)              |
+| `UNSAFE_validationText` | `string`, `string[]`                           | `null`  | no\*\*   | Unescaped validation text                       |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                       |
+| `validationText`        | `string`, `string[]`                           | `null`  | no\*\*   | Validation text                                 |
+| `value`                 | `string`                                       | `null`  | no       | Input value                                     |
 
 \*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 \*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.
