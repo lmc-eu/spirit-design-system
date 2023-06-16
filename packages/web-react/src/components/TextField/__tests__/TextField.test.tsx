@@ -19,7 +19,7 @@ describe('TextField', () => {
 
     validationStatePropsTest(TextField, 'TextField--');
 
-    validationTextPropsTest(TextField, '.TextField__message', type as TextFieldType);
+    validationTextPropsTest(TextField, '.TextField__validationText', type as TextFieldType);
 
     it('should have label classname', () => {
       const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);

@@ -1,6 +1,6 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritCheckboxFieldProps } from '../../types';
 import { useValidationText } from '../Field';
 import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
@@ -9,24 +9,25 @@ import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
 /* eslint no-underscore-dangle: ['error', { allow: ['_CheckboxField'] }] */
 const _CheckboxField = (props: SpiritCheckboxFieldProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
-  const { id, label, message, helperText, validationState, value, isDisabled, isRequired, isChecked, ...restProps } =
-    modifiedProps;
+  const {
+    id,
+    label,
+    validationText,
+    helperText,
+    validationState,
+    value,
+    isDisabled,
+    isRequired,
+    isChecked,
+    ...restProps
+  } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !!(props?.message && !validationState),
-    componentName: 'CheckboxField',
-    customText:
-      '`message` prop without `validationState` prop will be unsupported in the next version. Use `helperText` instead.',
-  });
-
   const renderValidationText = useValidationText({
-    validationTextClassName: classProps.message,
+    validationTextClassName: classProps.validationText,
     validationState,
-    validationText: message,
+    validationText,
     validationElementType: 'span',
-    requireValidationState: false,
   });
 
   return (
