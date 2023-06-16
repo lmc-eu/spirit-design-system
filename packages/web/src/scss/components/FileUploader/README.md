@@ -75,6 +75,21 @@ on the root element).
 </div>
 ```
 
+### Selecting Multiple Files at Once
+
+To pick more than one file, just add the [`multiple`][mdn-multiple] attribute to the native `input` element:
+
+```html
+<input
+  type="file"
+  id="fileUpload"
+  name="attachment"
+  class="FileUploaderInput__input"
+  data-spirit-element="input"
+  multiple
+/>
+```
+
 ### Maximum File Size (JavaScript)
 
 The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
@@ -89,9 +104,9 @@ The maximum size of the uploaded file that is validated by the JavaScript plugin
 </div>
 ```
 
-### Maximum number of files in queue (JavaScript)
+### Maximum Number of Files in Queue (JavaScript)
 
-Counter of the maximum number of uploaded files. The default value is 10, but any value can be set with
+Limit of the maximum number of uploaded files. The default value is 10, but any value can be set via
 the `data-spirit-file-queue-limit` attribute:
 
 ```html
@@ -103,11 +118,14 @@ the `data-spirit-file-queue-limit` attribute:
 </div>
 ```
 
-### Input behavior when the queue is filled (JavaScript)
+### Input Behavior When the Queue is Filled (JavaScript)
 
-You can set the input/drop zone to be hidden or disabled when the file queue limit is reached.
-When you set `data-spirit-queue-limit-behavior` together with the desired limit for the queue.
-The options to choose from are 'hide', 'disable' and 'none', which is set as the default
+Using the `data-spirit-queue-limit-behavior` attribute together with the desired limit for the queue, you can set the
+input/drop zone to be hidden or disabled when the file queue limit is reached. Available options are: `hide`, `disable`,
+or `none` (default).
+
+If you set the value of `data-spirit-queue-limit-behavior` to `disable`, the input will be disabled. When you set it to
+`hide`, the input disappears completely. After removing a file from the queue, the input is restored.
 
 ```html
 <div class="FileUploader" data-toggle="fileUploader">
@@ -121,22 +139,6 @@ The options to choose from are 'hide', 'disable' and 'none', which is set as the
   </div>
   <!-- FileUploaderList -->
 </div>
-```
-
-### Uploading Multiple Files
-
-To pick more than one file, just add the [`multiple`][mdn-multiple] attribute to
-the native `input` element:
-
-```html
-<input
-  type="file"
-  id="fileUpload"
-  name="attachment"
-  class="FileUploaderInput__input"
-  data-spirit-element="input"
-  multiple
-/>
 ```
 
 ### Allowed File Types
