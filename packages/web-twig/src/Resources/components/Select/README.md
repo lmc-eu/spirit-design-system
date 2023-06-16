@@ -9,7 +9,7 @@ if the select field is mandatory.
 Basic example usage:
 
 ```twig
-<Select id="example" label="Label" name="example">
+<Select id="selectDefault" label="Label" name="selectDefault">
   <option value="" selected>Placeholder</option>
   <option value="1">Option 1</option>
   <option value="2">Option 2</option>
@@ -19,7 +19,7 @@ Basic example usage:
 Usage with `isRequired` attribute:
 
 ```twig
-<Select id="example" label="Label" name="example" isRequired>
+<Select id="selectRequired" label="Label" name="selectRequired" isRequired>
   <option value="" selected disabled>Placeholder</option>
   <option value="1">Option 1</option>
   <option value="2">Option 2</option>
@@ -30,8 +30,8 @@ Without lexer:
 
 ```twig
 {% embed "@spirit/select.twig" with { props: {
-    id: 'example'
-    name: 'example'
+    id: 'selectEmbed'
+    name: 'selectEmbed'
     label: 'Label'
     isRequired: true
 }} %}
@@ -45,19 +45,24 @@ Without lexer:
 
 ## API
 
-| Prop name         | Type                                           | Default | Required | Description                                                |
-| ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
-| `helperText`      | `string`                                       | `null`  | no       | Custom helper text                                         |
-| `id`              | `string`                                       | —       | yes      | Select and label identification                            |
-| `inputProps`      | `string[]`                                     | `[]`    | no       | Pass additional attributes to the select element           |
-| `isDisabled`      | `bool`                                         | `false` | no       | If true, select is disabled                                |
-| `isFluid`         | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent |
-| `isLabelHidden`   | `bool`                                         | `false` | no       | If true, label is hidden                                   |
-| `isRequired`      | `bool`                                         | `false` | no       | If true, select is required                                |
-| `label`           | `string`                                       | —       | yes      | Label text                                                 |
-| `validationText`  | `string`, `string[]`                           | `null`  | no       | Validation text                                            |
-| `name`            | `string`                                       | `null`  | no       | Select name                                                |
-| `validationState` | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                  |
+| Prop name               | Type                                           | Default | Required | Description                                                |
+| ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
+| `helperText`            | `string`                                       | `null`  | no       | Custom helper text                                         |
+| `id`                    | `string`                                       | —       | yes      | Select and label identification                            |
+| `inputProps`            | `string[]`                                     | `[]`    | no       | Pass additional attributes to the select element           |
+| `isDisabled`            | `bool`                                         | `false` | no       | If true, select is disabled                                |
+| `isFluid`               | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent |
+| `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                                   |
+| `isRequired`            | `bool`                                         | `false` | no       | If true, select is required                                |
+| `label`                 | `string`                                       | —       | yes\*    | Label text                                                 |
+| `name`                  | `string`                                       | `null`  | no       | Select name                                                |
+| `UNSAFE_helperText`     | `string`                                       | `null`  | no       | Unescaped custom helper text                               |
+| `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text                                       |
+| `UNSAFE_validationText` | `string`, `string[]`                           | `null`  | no       | Unescaped validation text                                  |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                  |
+| `validationText`        | `string`, `string[]`                           | `null`  | no       | Validation text                                            |
+
+\*: The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

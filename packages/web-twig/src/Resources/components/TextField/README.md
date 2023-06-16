@@ -5,7 +5,7 @@ This is Twig implementation of the [TextField] component.
 Basic example usage:
 
 ```html
-<TextField id="example" label="Label" name="example" />
+<TextField id="textFieldDefault" label="Label" name="textFieldDefault" />
 ```
 
 Advanced example usage:
@@ -15,14 +15,14 @@ Default TextField:
 ```html
 <TextField
   helperText="custom helper text"
-  id="example2"
+  id="textFieldAdvanced"
   isRequired
   label="Label"
-  message="validation failed"
-  name="example2"
+  name="textFieldAdvanced"
   placeholder="Placeholder"
   type="text"
   validationState="danger"
+  validationText="validation failed"
 />
 ```
 
@@ -31,52 +31,57 @@ TextField with password toggle (button to reveal the password):
 ```html
 <TextField
   hasPasswordToggle
-  id="example3"
+  id="textFieldPasswordToggle"
   isRequired
   label="Password"
-  message="validation failed"
-  name="example3"
+  name="textFieldPasswordToggle"
   placeholder="Placeholder"
   validationState="danger"
+  validationText="validation failed"
 />
 ```
 
 Without lexer:
 
 ```twig
-{% include "@spirit/textField.twig" with { props: {
+{% embed "@spirit/textField.twig" with { props: {
     helperText: "custom helper text",
-    id: "example",
+    id: "textFieldEmbed",
     isRequired: true,
     label: "Password",
-    message: "validation failed",
-    name: "example",
+    name: "textFieldEmbed",
     type: "text",
     validationState: "danger",
+    validationText: "validation failed",
 }} %}
 ```
 
 ## API
 
-| Prop name           | Type                                                          | Default | Required | Description                                                             |
-| ------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autocomplete`      | `bool`                                                        | `false` | no       | If the field should have autocomplete enabled                           |
-| `hasPasswordToggle` | `bool`                                                        | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown |
-| `helperText`        | `string`                                                      | `null`  | no       | Custom helper text                                                      |
-| `id`                | `string`                                                      | —       | yes      | Input and label identification                                          |
-| `inputProps`        | `string[]`                                                    | `[]`    | no       | Pass additional attributes to the input element                         |
-| `isDisabled`        | `bool`                                                        | `false` | no       | If true, input is disabled                                              |
-| `isFluid`           | `bool`                                                        | `false` | no       | If true, the element spans to the full width of its parent              |
-| `isLabelHidden`     | `bool`                                                        | `false` | no       | If true, label is hidden                                                |
-| `isRequired`        | `bool`                                                        | `false` | no       | If true, input is required                                              |
-| `label`             | `string`                                                      | —       | yes      | Label text                                                              |
-| `message`           | `string`, `string[]`                                          | `null`  | no       | Validation message                                                      |
-| `name`              | `string`                                                      | `null`  | no       | Input name                                                              |
-| `placeholder`       | `string`                                                      | `null`  | no       | Input placeholder                                                       |
-| `inputWidth`        | `number`                                                      | `null`  | no       | Input width                                                             |
-| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | `text`  | no       | Input type                                                              |
-| `validationState`   | [Validation dictionary][dictionary-validation]                | `null`  | no       | Type of validation state.                                               |
-| `value`             | `string`                                                      | `null`  | no       | Input value                                                             |
+| Prop name               | Type                                                          | Default | Required | Description                                                             |
+| ----------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `autocomplete`          | `bool`                                                        | `false` | no       | If the field should have autocomplete enabled                           |
+| `hasPasswordToggle`     | `bool`                                                        | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown |
+| `helperText`            | `string`                                                      | `null`  | no       | Custom helper text                                                      |
+| `id`                    | `string`                                                      | —       | yes      | Input and label identification                                          |
+| `inputProps`            | `string[]`                                                    | `[]`    | no       | Pass additional attributes to the input element                         |
+| `inputWidth`            | `number`                                                      | `null`  | no       | Input width                                                             |
+| `isDisabled`            | `bool`                                                        | `false` | no       | If true, input is disabled                                              |
+| `isFluid`               | `bool`                                                        | `false` | no       | If true, the element spans to the full width of its parent              |
+| `isLabelHidden`         | `bool`                                                        | `false` | no       | If true, label is hidden                                                |
+| `isRequired`            | `bool`                                                        | `false` | no       | If true, input is required                                              |
+| `label`                 | `string`                                                      | —       | yes\*    | Label text                                                              |
+| `name`                  | `string`                                                      | `null`  | no       | Input name                                                              |
+| `placeholder`           | `string`                                                      | `null`  | no       | Input placeholder                                                       |
+| `type`                  | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | `text`  | no       | Input type                                                              |
+| `UNSAFE_helperText`     | `string`                                                      | `null`  | no       | Unescaped custom helper text                                            |
+| `UNSAFE_label`          | `string`                                                      | —       | yes\*    | Unescaped label text                                                    |
+| `UNSAFE_validationText` | `string`, `string[]`                                          | `null`  | no       | Unescaped validation text                                               |
+| `validationState`       | [Validation dictionary][dictionary-validation]                | `null`  | no       | Type of validation state.                                               |
+| `validationText`        | `string`, `string[]`                                          | `null`  | no       | Validation text                                                         |
+| `value`                 | `string`                                                      | `null`  | no       | Input value                                                             |
+
+\*: The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

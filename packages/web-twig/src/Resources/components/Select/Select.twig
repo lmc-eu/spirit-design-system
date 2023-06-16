@@ -1,18 +1,19 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _name = props.name | default(null) -%}
-{%- set _label = props.label | default(null) -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
-{%- set _isFluid = props.isFluid | default(false) -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isFluid = props.isFluid | default(false) -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
 {%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _name = props.name | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _validationText = props.validationText | default(null) -%}
-{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
-{%- set _helperText = props.helperText | default(null) -%}
-{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Select' -%}
@@ -35,11 +36,13 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
-    <label for="{{ _id }}" {{ classProp(_labelClassName) }}>{{ _label }}</label>
+    <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
+        {%- if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif -%}
+    </label>
     <div class="{{ _containerClassName }}">
         <select
             {{ inputProps([], [], _inputProps) }}
@@ -57,30 +60,10 @@
     </div>
     {% if _helperText and not _unsafeHelperText %}<div class="{{ _helperTextClassName }}">{{ _helperText }}</div>{% endif %}
     {% if _unsafeHelperText %}<div class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</div>{% endif %}
-    {% if _validationText and _validationState and not _unsafeValidationText %}
-        {%- if _validationText is iterable -%}
-            <ul class="{{ _validationTextClassName }}">
-                {% for _validationTextItem in _validationText %}
-                    <li>{{ _validationTextItem }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <div class="{{ _validationTextClassName }}">
-                {{ _validationText }}
-            </div>
-        {%- endif -%}
-    {% endif %}
-    {% if _unsafeValidationText and _validationState %}
-        {%- if _unsafeValidationText is iterable -%}
-            <ul class="{{ _validationTextClassName }}">
-                {% for _validationTextItem in _unsafeValidationText %}
-                    <li>{{ _validationTextItem | raw }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <div class="{{ _validationTextClassName }}">
-                {{ _unsafeValidationText | raw }}
-            </div>
-        {%- endif -%}
-    {% endif %}
+    <ValidationText
+        className="{{ _validationTextClassName }}"
+        validationState="{{ _validationState }}"
+        validationText="{{ _validationText }}"
+        UNSAFE_validationText="{{ _unsafeValidationText }}"
+    />
 </div>

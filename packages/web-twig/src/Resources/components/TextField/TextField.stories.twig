@@ -2,35 +2,91 @@
 
 {% block content %}
 
-    <div class="docs-FormFieldGrid">
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Default</h2>
 
-        {# TextField Default #}
-        {% include '@components/TextField/stories/TextField.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldDefault.twig' %}
+        </div>
+    </section>
 
-        {# TextField Password Toggle #}
-        {% include '@components/TextField/stories/TextFieldPasswordToggle.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Required</h2>
 
-        {# TextField Message #}
-        {% include '@components/TextField/stories/TextFieldMessage.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldRequired.twig' %}
+        </div>
+    </section>
 
-        {# TextField Message #}
-        {% include '@components/TextField/stories/TextFieldMessageMultiple.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Hidden Label</h2>
 
-        {# TextField Validation State #}
-        {% include '@components/TextField/stories/TextFieldValidationState.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldHiddenLabel.twig' %}
+        </div>
+    </section>
 
-        {# TextField Fluid #}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Helper Text</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldHelperText.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Disabled</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldDisabled.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Validation State with Validation Text</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldValidation.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Fluid</h2>
+
         {% include '@components/TextField/stories/TextFieldFluid.twig' %}
+    </section>
 
-        {# TextField Inline #}
-        {% include '@components/TextField/stories/TextFieldInline.twig' %}
 
-        {# TextField Helper Text #}
-        {% include '@components/TextField/stories/TextFieldHelperText.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Size</h2>
 
-        {# TextField V1 Feature - new disabled state #}
-        {% include '@components/TextField/stories/TextFieldV1DisabledFeature.twig' %}
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldInputWidth.twig' %}
+        </div>
+    </section>
 
-    </div>
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Inline</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldInline.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Password Toggle</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldPasswordToggle.twig' %}
+        </div>
+    </section>
+
+    <section class="docs-Section spirit-v1-box-field-disabled">
+        <h2 class="docs-Heading">V1 Feature &mdash; new disabled state</h2>
+
+        <div class="docs-FormFieldGrid">
+            {% include '@components/TextField/stories/TextFieldV1DisabledFeature.twig' %}
+        </div>
+    </section>
 
 {% endblock %}
