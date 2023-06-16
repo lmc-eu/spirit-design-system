@@ -27,17 +27,17 @@
     cursor: cursors.$disabled;
 }
 
-@mixin message() {
-    @include typography.generate(form-fields-theme.$message-typography);
+@mixin validation-text() {
+    @include typography.generate(form-fields-theme.$validation-text-typography);
 
     display: block;
-    margin-top: form-fields-theme.$message-margin-top;
+    margin-top: form-fields-theme.$validation-text-margin-top;
     list-style: none;
-    color: form-fields-theme.$message-color-default;
+    color: form-fields-theme.$validation-text-color-default;
 }
 
-@mixin message-disabled() {
-    color: form-fields-theme.$message-color-disabled;
+@mixin validation-text-disabled() {
+    color: form-fields-theme.$validation-text-color-disabled;
 }
 
 @mixin inline-field-root() {
@@ -146,8 +146,12 @@
 
         @if $field-name != 'CheckboxField' or $field-name != 'RadioField' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
-                :is(.#{$field-name}__message, .#{$field-name}__validationText, [data-element='validator_message']) {
-                color: map.get($validation-state-value, message-color);
+                :is(
+                    .#{$field-name}__validationText,
+                    .#{$field-name}__validationText,
+                    [data-element='validator_message']
+                ) {
+                color: map.get($validation-state-value, validation-text-color);
             }
         }
     }
@@ -197,8 +201,8 @@
     background-color: form-fields-theme.$item-background-color-default;
 }
 
-@mixin item-message() {
-    @include typography.generate(form-fields-theme.$item-message-typography);
+@mixin item-validation-text() {
+    @include typography.generate(form-fields-theme.$item-validation-text-typography);
 }
 
 @mixin item-label-checked() {

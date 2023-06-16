@@ -1,86 +1,156 @@
 {{#> layout/plain }}
 
-<div class="docs-FormFieldGrid">
-  <label for="radiofield0" class="RadioField">
-    <input type="radio" id="radiofield0" name="example" class="RadioField__input" checked />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio selected</span>
-    </span>
-  </label>
-  <label for="radiofield1" class="RadioField">
-    <input type="radio" id="radiofield1" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio unselected</span>
-    </span>
-  </label>
-  <label for="radiofield2" class="RadioField RadioField--disabled">
-    <input type="radio" id="radiofield2" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio disabled</span>
-    </span>
-  </label>
-  <label for="radiofield3" class="RadioField RadioField--danger">
-    <input type="radio" id="radiofield3" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio danger</span>
-    </span>
-  </label>
-  <label for="radiofield3_1" class="RadioField RadioField--success">
-    <input type="radio" id="radiofield3_1" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio success</span>
-    </span>
-  </label>
-  <label for="radiofield3_2" class="RadioField RadioField--warning">
-    <input type="radio" id="radiofield3_2" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio warning</span>
-    </span>
-  </label>
-  <label for="radiofield3_3" class="RadioField">
-    <input type="radio" id="radiofield3_3" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio field with helper text</span>
-      <span class="RadioField__helperText">Helper text</span>
-    </span>
-  </label>
-  <label for="radiofield4" class="RadioField RadioField--item">
-    <input type="radio" id="radiofield4" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item</span>
-    </span>
-  </label>
-  <label for="radiofield5" class="RadioField RadioField--item RadioField--disabled">
-    <input type="radio" id="radiofield5" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item disabled</span>
-    </span>
-  </label>
-  <label for="radiofield6" class="RadioField RadioField--item RadioField--danger">
-    <input type="radio" id="radiofield6" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item danger</span>
-    </span>
-  </label>
-  <label for="radiofield7" class="RadioField RadioField--item RadioField--success">
-    <input type="radio" id="radiofield7" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item success</span>
-    </span>
-  </label>
-  <label for="radiofield8" class="RadioField RadioField--item RadioField--warning">
-    <input type="radio" id="radiofield8" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item warning</span>
-    </span>
-  </label>
-  <label for="radiofield9" class="RadioField RadioField--item">
-    <input type="radio" id="radiofield9" name="example" class="RadioField__input" />
-    <span class="RadioField__text">
-      <span class="RadioField__label">Radio item with helper text</span>
-      <span class="RadioField__helperText">Helper text</span>
-    </span>
-  </label>
-</div>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Default</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldDefault" class="RadioField">
+      <input type="radio" id="radioFieldDefault" class="RadioField__input" name="default" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldDefaultChecked" class="RadioField">
+      <input type="radio" id="radioFieldDefaultChecked" class="RadioField__input" name="default" checked />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Hidden Label</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldHiddenLabel" class="RadioField">
+      <input type="radio" id="radioFieldHiddenLabel" class="RadioField__input" name="hiddenLabel" />
+      <span class="RadioField__text">
+        <span class="RadioField__label RadioField__label--hidden">Radio Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Helper Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldHelperText" class="RadioField">
+      <input type="radio" id="radioFieldHelperText" class="RadioField__input" name="helperText" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+        <span class="RadioField__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldDisabled" class="RadioField RadioField--disabled">
+      <input type="radio" id="radioFieldDisabled" class="RadioField__input" name="disabled" disabled />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldDisabledHelperText" class="RadioField RadioField--disabled">
+      <input type="radio" id="radioFieldDisabledHelperText" class="RadioField__input" name="disabledHelperText" disabled checked />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+        <span class="RadioField__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Validation State</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldSuccess" class="RadioField RadioField--success">
+      <input type="radio" id="radioFieldSuccess" class="RadioField__input" name="validation" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldWarning" class="RadioField RadioField--warning">
+      <input type="radio" id="radioFieldWarning" class="RadioField__input" name="validation" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldDanger" class="RadioField RadioField--danger">
+      <input type="radio" id="radioFieldDanger" class="RadioField__input" name="validation" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldWarningHelperText" class="RadioField RadioField--warning">
+      <input type="radio" id="radioFieldWarningHelperText" class="RadioField__input" name="validation" checked />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+        <span class="RadioField__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Item</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="radioFieldItemDefault" class="RadioField RadioField--item">
+      <input type="radio" id="radioFieldItemDefault" class="RadioField__input" name="item" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldItemDefaultChecked" class="RadioField RadioField--item">
+      <input type="radio" id="radioFieldItemDefaultChecked" class="RadioField__input" name="item" checked />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldItemHelperText" class="RadioField RadioField--item">
+      <input type="radio" id="radioFieldItemHelperText" class="RadioField__input" name="item" />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+        <span class="RadioField__helperText">Helper text</span>
+      </span>
+    </label>
+
+    <label for="radioFieldItemDisabled" class="RadioField RadioField--item RadioField--disabled">
+      <input type="radio" id="radioFieldItemDisabled" class="RadioField__input" name="itemDisabled" disabled />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+      </span>
+    </label>
+
+    <label for="radioFieldItemDisabledHelperText" class="RadioField RadioField--item RadioField--disabled">
+      <input
+        type="radio"
+        id="radioFieldItemDisabledHelperText"
+        class="RadioField__input"
+        name="itemDisabled"
+        disabled
+        checked
+      />
+      <span class="RadioField__text">
+        <span class="RadioField__label">Radio Label</span>
+        <span class="RadioField__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
 
 {{/layout/plain }}
