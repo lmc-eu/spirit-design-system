@@ -51,9 +51,9 @@ $_field-name: 'CheckboxField';
     }
 }
 
-.CheckboxField__message,
+.CheckboxField__validationText,
 .CheckboxField > .CheckboxField__text > [data-element='validator_message'] {
-    @include form-fields-tools.message();
+    @include form-fields-tools.validation-text();
 }
 
 .CheckboxField__helperText {
@@ -70,8 +70,8 @@ $_field-name: 'CheckboxField';
     @include form-fields-tools.label-disabled();
 }
 
-.CheckboxField--disabled .CheckboxField__message {
-    @include form-fields-tools.message-disabled();
+.CheckboxField--disabled .CheckboxField__validationText {
+    @include form-fields-tools.validation-text-disabled();
 }
 
 .CheckboxField--disabled .CheckboxField__helperText {
@@ -103,17 +103,17 @@ $_field-name: 'CheckboxField';
     @include form-fields-tools.item-label-checked();
 }
 
-.CheckboxField--item .CheckboxField__message {
-    @include form-fields-tools.item-message();
+.CheckboxField--item .CheckboxField__validationText {
+    @include form-fields-tools.item-validation-text();
 }
 
 .CheckboxField--item .CheckboxField__helperText {
     @include form-fields-tools.item-helper-text();
 }
 
-.CheckboxField--item:hover .CheckboxField__message,
-.CheckboxField--item:active .CheckboxField__message,
-.CheckboxField--item:hover .CheckboxField__helperText,
-.CheckboxField--item:active .CheckboxField__helperText {
+.CheckboxField--item:not(.CheckboxField--disabled):hover .CheckboxField__validationText,
+.CheckboxField--item:not(.CheckboxField--disabled):active .CheckboxField__validationText,
+.CheckboxField--item:not(.CheckboxField--disabled):hover .CheckboxField__helperText,
+.CheckboxField--item:not(.CheckboxField--disabled):active .CheckboxField__helperText {
     color: inherit;
 }
