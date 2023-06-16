@@ -17,7 +17,7 @@ describe('TextArea', () => {
 
   validationStatePropsTest(TextArea, 'TextArea--');
 
-  validationTextPropsTest(TextArea, '.TextArea__message');
+  validationTextPropsTest(TextArea, '.TextArea__validationText');
 
   it('should have label classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);
