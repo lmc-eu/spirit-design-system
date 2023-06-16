@@ -115,3 +115,12 @@ $_field-name: 'RadioField';
     // stylelint-enable selector-max-class, selector-max-compound-selectors, selector-max-specificity
     @include form-fields-tools.item-label-checked();
 }
+
+.RadioField--item .RadioField__helperText {
+    @include form-fields-tools.item-helper-text();
+}
+
+.RadioField--item:not(.RadioField--disabled):hover .RadioField__helperText,
+.RadioField--item:not(.RadioField--disabled):active .RadioField__helperText {
+    color: inherit;
+}
