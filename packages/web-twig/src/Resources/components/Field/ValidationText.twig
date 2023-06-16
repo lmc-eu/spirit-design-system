@@ -1,0 +1,34 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _className = props.className -%}
+{%- set _elementType = props.elementType | default('div') -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
+
+{% if _validationState and _validationText and not _unsafeValidationText %}
+    {%- if _validationText is iterable -%}
+        <ul class="{{ _className }}">
+            {% for _validationTextItem in _validationText %}
+                <li>{{ _validationTextItem }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <{{ _elementType }} class="{{ _className }}">
+            {{ _validationText }}
+        </{{ _elementType }}>
+    {%- endif -%}
+{% endif %}
+{% if _validationState and _unsafeValidationText %}
+    {%- if _unsafeValidationText is iterable -%}
+        <ul class="{{ _className }}">
+            {% for _validationTextItem in _unsafeValidationText %}
+                <li>{{ _validationTextItem | raw }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <{{ _elementType }} class="{{ _className }}">
+            {{ _unsafeValidationText | raw }}
+        </{{ _elementType }}>
+    {%- endif -%}
+{% endif %}

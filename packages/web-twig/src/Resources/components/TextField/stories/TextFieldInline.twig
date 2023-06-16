@@ -1,28 +1,16 @@
-<div style="display: flex; gap: 1rem">
+<div style="display: flex; gap: 1rem; align-items: flex-start">
     <TextField
-        id="textfieldInlineHiddenLabel"
+        id="textfieldInline"
         isLabelHidden
         label="Hidden Label"
-        name="textfieldInlineHiddenLabel"
+        name="textfieldInline"
         placeholder="Placeholder"
         value="Filled"
     />
     <Button>Button</Button>
 </div>
-<div style="display: flex; align-items: start; gap: 1rem">
-    <TextField
-        id="textfieldInlineDangerHiddenLabel"
-        isLabelHidden
-        label="Hidden Label"
-        message="Message"
-        name="textfieldInlineDangerHiddenLabel"
-        placeholder="Placeholder"
-        validationState="danger"
-        value="Filled"
-    />
-    <Button>Button</Button>
-</div>
-<div style="display: flex; gap: 1rem">
+
+<div style="display: flex; gap: 1rem; align-items: flex-start">
     <TextField
         id="textfieldInlineFirst"
         isLabelHidden
@@ -32,13 +20,15 @@
         value="Filled"
     />
     <TextField
-        hasPasswordToggle
         id="textfieldInlinePassword"
         isLabelHidden
         label="Hidden Label"
+        hasPasswordToggle
         name="textfieldInlinePassword"
+        validationState="danger"
+        validationText="Too short"
         placeholder="Placeholder"
-        value="Password"
+        value="1234"
     />
     <Button>Button</Button>
 </div>
