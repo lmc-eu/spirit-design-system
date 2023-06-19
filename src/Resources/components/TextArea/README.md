@@ -34,7 +34,7 @@ Without lexer:
     id: "example",
     isRequired: true,
     label: "Label",
-    maxLength: 180,
+    maxlength: 180,
     message: "validation failed",
     name: "example",
     placeholder: "Placeholder",
@@ -59,7 +59,7 @@ Without lexer:
 | `isRequired`        | `bool`                                                               | `false` | no       | If true, TextArea is required                                                                                                      |
 | `label`             | `string`                                                             | —       | yes\*    | Label text                                                                                                                         |
 | `UNSAFE_label`      | `string`                                                             | —       | yes\*    | Unescaped label text                                                                                                               |
-| `maxLength`         | `number`                                                             | `null`  | no       | Maximum number of characters                                                                                                       |
+| `maxlength`         | `number`                                                             | `null`  | no       | Maximum number of characters                                                                                                       |
 | `message`           | `string`, `string[]`                                                 | `null`  | no       | Validation message                                                                                                                 |
 | `UNSAFE_message`    | `string`, `string[]`                                                 | `null`  | no       | Unescaped validation message                                                                                                       |
 | `name`              | `string`                                                             | `null`  | no       | TextArea name                                                                                                                      |
