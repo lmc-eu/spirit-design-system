@@ -52,6 +52,11 @@ const handleClose = () => {
 </ModalComposed>
 ```
 
+## Modal Stacking
+
+⚠️ If you want to use Modal in the Modal, you need to follow the exact order of the implementation.
+The Modal to be displayed on the top layer must be the first in the code and vice versa.
+
 ## Modal
 
 **Available props**
