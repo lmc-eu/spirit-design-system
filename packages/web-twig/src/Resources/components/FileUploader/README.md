@@ -89,8 +89,10 @@ HTML input:
 
 ### Maximum File Size (JavaScript)
 
-The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted. The default value is
-10 MB. To increase the limit for example to 20 MB, add the `maxFileSize` attribute:
+The maximum size of the uploaded file that is validated by the JavaScript plugin can be adjusted.
+The default value is 10 MB.
+To increase the limit for example to 20 MB, add the `maxFileSize` attribute.
+The attribute value should be given in bytes:
 
 ```twig
 <FileUploaderInput maxFileSize={20000000} />
@@ -189,7 +191,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `isLabelHidden`         | `bool`                                         | `false`                 | no       | If true, label is hidden                                              |
 | `isRequired`            | `bool`                                         | `false`                 | no       | If true, input is required                                            |
 | `label`                 | `string`                                       | `null`                  | no\*     | Label text                                                            |
-| `maxFileSize`           | `number`                                       | `1000000`               | no       | The maximum size of the uploaded file                                 |
+| `maxFileSize`           | `number`                                       | `1000000`               | no       | The maximum size of the uploaded file in bytes                        |
 | `maxUploadedFiles`      | `number`                                       | `10`                    | no       | Maximum file upload queue size                                        |
 | `name`                  | `string`                                       | `null`                  | no       | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | no       | Text shown in the drop zone                                           |
