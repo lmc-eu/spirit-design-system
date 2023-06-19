@@ -314,7 +314,7 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `isRequired`         | `boolean`                            | -        | ✕        | Whether is field required                                                                                                                                       |
 | `validationState`    | `ValidationState`                    | -        | ✕        | Validation state                                                                                                                                                |
 | `validationText`     | `string`, `string[]`                 | -        | ✕        | Validation status text                                                                                                                                          |
-| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file                                                                                                                           |
+| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `isLabelHidden`      | `boolean`                            | -        | ✕        | Whether is input label hidden                                                                                                                                   |
 | `isMultiple`         | `boolean`                            | -        | ✕        | When multiple files can be selected at once                                                                                                                     |
@@ -388,7 +388,7 @@ via `inputProps` and `listProps`.
 | `labelText`           | `string`                                | -        | ✕        | Label for input in Drop zone                        |
 | `linkText`            | `string`                                | -        | ✕        | Link text in input in Drop zone                     |
 | `attachmentComponent` | `string`                                | -        | ✔        | A component for rendering a single attachment       |
-| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file               |
+| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
 | `isLabelHidden`       | `boolean`                               | -        | ✕        | Whether is input label hidden                       |
 | `isMultiple`          | `boolean`                               | -        | ✕        | When multiple files can be selected at once         |
