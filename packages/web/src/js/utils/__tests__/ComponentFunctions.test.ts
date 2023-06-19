@@ -50,7 +50,11 @@ describe('Plugin functions', () => {
       enableToggleTrigger(DummyClass2, 'testMethod');
       await btnToggle.dispatchEvent(event);
 
-      expect(window.addEventListener).toHaveBeenCalledWith('DOMContentLoaded', expect.any(Function));
+      expect(window.addEventListener).toHaveBeenCalledWith(
+        'DOMContentLoaded',
+        expect.any(Function),
+        expect.any(Object),
+      );
       expect(getOrCreateInstanceSpy).toHaveBeenCalledWith(componentWrapper);
       expect(testMethodSpy).toHaveBeenCalled();
     });

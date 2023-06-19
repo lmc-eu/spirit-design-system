@@ -9,6 +9,7 @@ const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
 
 class Modal extends BaseComponent {
   isShown: boolean;
+  isTouchDevice: boolean;
   scrollControl: ScrollControl;
 
   static get NAME() {
@@ -19,6 +20,7 @@ class Modal extends BaseComponent {
     super(element);
 
     this.isShown = false;
+    this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     this.scrollControl = new ScrollControl(element as HTMLElement);
   }
 
@@ -47,12 +49,20 @@ class Modal extends BaseComponent {
 
   addEventListeners() {
     EventHandler.on(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
-    EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    if (this.isTouchDevice) {
+      EventHandler.on(window, 'touchstart', (event: Event & { target: Window }) => this.onClick(event));
+    } else {
+      EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    }
   }
 
   removeEventListeners() {
     EventHandler.off(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
-    EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    if (this.isTouchDevice) {
+      EventHandler.off(window, 'touchstart', (event: Event & { target: Window }) => this.onClick(event));
+    } else {
+      EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
+    }
   }
 
   show() {

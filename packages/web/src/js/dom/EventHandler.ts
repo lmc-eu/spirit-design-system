@@ -7,7 +7,7 @@ const addHandler = (element: EventHandlerElement, eventType: string, handler: an
     return;
   }
 
-  element.addEventListener(eventType, handler);
+  element.addEventListener(eventType, handler, { passive: false });
 };
 
 const removeHandler = (element: EventHandlerElement, eventType: string, handler: any): void =>
