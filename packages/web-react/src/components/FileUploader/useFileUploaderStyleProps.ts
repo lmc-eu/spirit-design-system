@@ -34,6 +34,7 @@ export interface FileUploaderStyleReturn {
     attachment: {
       root: string;
       button: string;
+      name: string;
     };
   };
 }
@@ -60,7 +61,8 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderInputValidationTextClass = `${fileUploaderInputClass}__validationText`;
   const fileUploaderListClass = `${fileUploaderClass}List`;
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
-  const fileUploaderAttachmentButtonClass = `${fileUploaderAttachmentClass}__remove`;
+  const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;
+  const fileUploaderAttachmentButtonClass = `${fileUploaderAttachmentClass}__action`;
 
   return {
     classProps: {
@@ -92,6 +94,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
       attachment: {
         root: fileUploaderAttachmentClass,
         button: fileUploaderAttachmentButtonClass,
+        name: fileUploaderAttachmentNameClass,
       },
     },
   };

@@ -22,4 +22,6 @@ $attachment-color: tokens.$text-primary-default;
 $attachment-border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-primary-default;
 $attachment-border-radius: tokens.$radius-100;
 $attachment-background: tokens.$background-basic;
-$attachment-remove-button-size: tokens.$space-1000;
+$attachment-image-border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-secondary-default;
+$attachment-image-border-radius: tokens.$radius-100;
+$attachment-button-size: tokens.$space-900;

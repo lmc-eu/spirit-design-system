@@ -32,7 +32,9 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       className={classNames(classProps.attachment.root, styleProps.className)}
     >
       <Icon name={iconName} aria-hidden="true" />
-      <span className="text-truncate">{label}</span>
+      <span className={classProps.attachment.name}>
+        <span className="text-truncate">{label}</span>
+      </span>
       <AttachmentDismissButton onClick={dismissHandler}>{buttonLabel}</AttachmentDismissButton>
     </li>
   );
