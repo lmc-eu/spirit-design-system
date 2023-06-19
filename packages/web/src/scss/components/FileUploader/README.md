@@ -283,11 +283,16 @@ truncated.
 
 ```html
 <li class="FileUploaderAttachment">
+  <!-- File icon: -->
   <svg width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#file" />
   </svg>
-  <span class="text-truncate">My resume.docx</span>
-  <button type="button" class="FileUploaderAttachment__remove">
+  <!-- File name: -->
+  <span class="FileUploaderAttachment__name">
+    <span class="text-truncate">My resume.docx</span>
+  </span>
+  <!-- Remove button: -->
+  <button type="button" class="FileUploaderAttachment__action">
     <span class="accessibility-hidden">Remove</span>
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#close" />
@@ -298,8 +303,8 @@ truncated.
 
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
-wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
-up the template and apply it on any attachments the user wants to upload.
+wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then
+pick up the template and apply it on any attachments the user wants to upload.
 
 ```html
 <div class="FileUploader" data-spirit-toggle="fileUploader">
@@ -308,8 +313,10 @@ up the template and apply it on any attachments the user wants to upload.
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#file" />
       </svg>
-      <span class="text-truncate" data-spirit-populate-field="name">File name</span>
-      <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
+      <span class="FileUploaderAttachment__name">
+        <span class="text-truncate" data-spirit-populate-field="name">File name</span>
+      </span>
+      <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
         <span class="accessibility-hidden">Remove</span>
         <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#close" />
@@ -321,6 +328,134 @@ up the template and apply it on any attachments the user wants to upload.
   <!-- FileUploaderList -->
 </div>
 ```
+
+### Preview Image
+
+You can add a preview image to the FileUploaderAttachment.
+
+```html
+<span class="FileUploaderAttachment__image">
+  <img src="http://placekitten.com/200/300" alt="" />
+</span>
+```
+
+Full example:
+
+```html
+<li class="FileUploaderAttachment">
+  <!-- Preview image: start -->
+  <span class="FileUploaderAttachment__image">
+    <img src="http://placekitten.com/200/300" alt="" />
+  </span>
+  <!-- Preview image: end -->
+  <span class="FileUploaderAttachment__name">
+    <span class="text-truncate">My resume.docx</span>
+  </span>
+  <button type="button" class="FileUploaderAttachment__action">
+    <span class="accessibility-hidden">Remove</span>
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#close" />
+    </svg>
+  </button>
+</li>
+```
+
+### Custom Actions Slot
+
+You can add custom actions to the FileUploaderAttachment.
+
+```html
+<span class="FileUploaderAttachment__slot">
+  <!-- Custom action: start -->
+  <button type="button" class="FileUploaderAttachment__action">
+    <span class="accessibility-hidden">Edit</span>
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#edit" />
+    </svg>
+  </button>
+  <!-- Custom action: end -->
+</span>
+```
+
+Full example:
+
+```html
+<li class="FileUploaderAttachment">
+  <svg width="24" height="24" aria-hidden="true">
+    <use xlink:href="/icons/svg/sprite.svg#file" />
+  </svg>
+  <span class="FileUploaderAttachment__name">
+    <span class="text-truncate">My resume.docx</span>
+  </span>
+  <span class="FileUploaderAttachment__slot">
+    <!-- Custom action: start -->
+    <button type="button" class="FileUploaderAttachment__action">
+      <span class="accessibility-hidden">Edit</span>
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#edit" />
+      </svg>
+    </button>
+    <!-- Custom action: end -->
+  </span>
+  <button type="button" class="FileUploaderAttachment__action">
+    <span class="accessibility-hidden">Remove</span>
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#close" />
+    </svg>
+  </button>
+</li>
+```
+
+#### Attaching Functionality
+
+As long as the FileUploaderAttachment lives inside the `<template>` tag, no functionality can be attached to it.
+
+👉 Don't use IDs to attach functionality to custom actions. IDs must be unique, and the FileUploaderAttachment template
+is used for every attachment.
+
+To attach functionality, you need to do so after the `queuedFile.fileUploader` event has been fired:
+
+```js
+const editHandler = (event) => {
+  alert('Custom action clicked');
+};
+
+document.addEventListener('queuedFile.fileUploader', () => {
+  document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
+    element.removeEventListener('click', editHandler); // Prevent multiple event listeners
+    element.addEventListener('click', editHandler);
+  });
+});
+```
+
+Don't forget to remove the event listener when the FileUploaderAttachment is removed from the DOM:
+
+```js
+let filesQueueCounter = 0;
+
+const editHandler = (event) => {
+  alert('Edit button clicked');
+};
+
+document.addEventListener('queuedFile.fileUploader', () => {
+  filesQueueCounter++;
+  document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
+    element.removeEventListener('click', editHandler); // Prevent multiple event listeners
+    element.addEventListener('click', editHandler);
+  });
+});
+
+document.addEventListener('unqueueFile.fileUploader', () => {
+  filesQueueCounter--;
+  if (filesQueueCounter === 0) {
+    document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
+      element.removeEventListener('click', editHandler);
+    });
+  }
+});
+```
+
+👉 Read more about [fileUploader JavaScript events](#javascript-events).
 
 ## Composition
 
@@ -335,8 +470,10 @@ This is how all subcomponents build up the complete FileUploader:
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#file" />
       </svg>
-      <span class="text-truncate" data-spirit-populate-field="name">File name</span>
-      <button type="button" class="FileUploaderAttachment__remove" data-spirit-populate-field="button">
+      <span class="FileUploaderAttachment__name">
+        <span class="text-truncate" data-spirit-populate-field="name">File name</span>
+      </span>
+      <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
         <span class="accessibility-hidden">Remove</span>
         <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#close" />
@@ -372,20 +509,22 @@ This is how all subcomponents build up the complete FileUploader:
   <!-- FileUploaderList: start -->
   <h3 id="attachments" hidden>Attachments</h3>
   <ul class="FileUploaderList" aria-labelledby="attachments" data-spirit-element="list">
-    <!-- FileUploaderAttachment: start -->
+    <!-- FileUploaderAttachment INSERTED BY THE JS PLUGIN: start -->
     <li class="FileUploaderAttachment">
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#file" />
       </svg>
-      <span class="text-truncate">My resume.docx</span>
-      <button type="button" class="FileUploaderAttachment__remove">
+      <span class="FileUploaderAttachment__name">
+        <span class="text-truncate">My resume.docx</span>
+      </span>
+      <button type="button" class="FileUploaderAttachment__action">
         <span class="accessibility-hidden">Remove</span>
         <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#close" />
         </svg>
       </button>
     </li>
-    <!-- FileUploaderAttachment: end -->
+    <!-- FileUploaderAttachment INSERTED BY THE JS PLUGIN: end -->
   </ul>
   <!-- FileUploaderList: end -->
 </div>

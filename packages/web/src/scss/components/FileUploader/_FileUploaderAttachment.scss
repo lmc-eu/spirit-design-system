@@ -7,8 +7,7 @@
 .FileUploaderAttachment {
     @include typography.generate(theme.$attachment-typography);
 
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     column-gap: theme.$attachment-column-gap;
     align-items: center;
     padding: theme.$attachment-padding;
@@ -18,9 +17,36 @@
     background-color: theme.$attachment-background;
 }
 
-.FileUploaderAttachment__remove {
+.FileUploaderAttachment__image {
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border: theme.$attachment-image-border;
+    border-radius: theme.$attachment-image-border-radius;
+}
+
+.FileUploaderAttachment__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.FileUploaderAttachment__name {
+    display: grid;
+    flex: 1;
+}
+
+.FileUploaderAttachment__slot {
+    display: flex;
+    gap: theme.$attachment-column-gap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.FileUploaderAttachment__action {
     @include reset.button();
-    @include accessibility.min-tap-target($size: theme.$attachment-remove-button-size);
+    @include accessibility.min-tap-target($size: theme.$attachment-button-size);
 
     color: inherit;
 

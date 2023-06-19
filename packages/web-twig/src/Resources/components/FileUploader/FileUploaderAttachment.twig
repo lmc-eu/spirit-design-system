@@ -6,7 +6,8 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderAttachment' -%}
-{%- set _removeClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__remove' -%}
+{%- set _nameClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__name' -%}
+{%- set _removeClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__action' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -19,9 +20,11 @@
     {{ styleProp(_styleProps) }}
     data-spirit-populate-field="item"
 >
-    <Icon name="{{ _iconName }}" isReusable={ false }/>
-    <span class="text-truncate" data-spirit-populate-field="name">
-        {{- _fileName -}}
+    <Icon name="{{ _iconName }}" isReusable={ false } />
+    <span class="{{ _nameClassName }}">
+        <span class="text-truncate" data-spirit-populate-field="name">
+            {{- _fileName -}}
+        </span>
     </span>
     <button
         type="button"
