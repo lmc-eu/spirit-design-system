@@ -17,25 +17,25 @@ First item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 2">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 2">
         <span class="accessibility-hidden">page</span>
         2
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 3">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 3">
         <span class="accessibility-hidden">page</span>
         3
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 4">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 4">
         <span class="accessibility-hidden">page</span>
         4
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 5">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 5">
         <span class="accessibility-hidden">page</span>
         5
       </a>
@@ -66,13 +66,13 @@ Middle item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 11">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 11">
         <span class="accessibility-hidden">page</span>
         11
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 12">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 12">
         <span class="accessibility-hidden">page</span>
         12
       </a>
@@ -89,13 +89,13 @@ Middle item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 14">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 14">
         <span class="accessibility-hidden">page</span>
         14
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 15">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 15">
         <span class="accessibility-hidden">page</span>
         15
       </a>
@@ -126,25 +126,25 @@ Last item selected:
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 109">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 109">
         <span class="accessibility-hidden">page</span>
         109
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 110">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 110">
         <span class="accessibility-hidden">page</span>
         110
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 111">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 111">
         <span class="accessibility-hidden">page</span>
         111
       </a>
     </li>
     <li class="Pagination__item">
-      <a href="#" class="Pagination__link" aria-label="Goto Page 112">
+      <a href="#" class="Pagination__link" aria-label="Go to Page 112">
         <span class="accessibility-hidden">page</span>
         112
       </a>
