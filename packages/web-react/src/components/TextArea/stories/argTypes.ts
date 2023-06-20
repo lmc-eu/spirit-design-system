@@ -50,6 +50,13 @@ export default {
     },
     defaultValue: 'example',
   },
+  maxLength: {
+    control: {
+      type: 'number',
+    },
+    defaultValue: 100,
+    description: 'Maximum characters length',
+  },
   for: {
     control: {
       type: 'text',
