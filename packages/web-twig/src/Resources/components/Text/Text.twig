@@ -10,7 +10,8 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _allowedAttributes = [ 'translate' ] -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+<{{ _elementType }} {{ mainProps(props, _allowedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
 {%- block content %}{% endblock -%}
 </{{ _elementType }}>
