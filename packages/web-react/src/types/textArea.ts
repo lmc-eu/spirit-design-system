@@ -20,8 +20,6 @@ export interface TextAreaProps
     HelperTextProps,
     TextInputProps,
     Validation {
-  /** Maximum characters length */
-  maxLength?: number;
   /** Whether is field auto resizing which adjusts its height while typing */
   isAutoResizing?: boolean;
   /** Maximum field height with automatic height control */
