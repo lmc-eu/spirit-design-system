@@ -7,6 +7,14 @@ const addHandler = (element: EventHandlerElement, eventType: string, handler: an
     return;
   }
 
+  /**
+   * Treat event listener as active by default
+   * Safari sets the event listeners as passive by default, other browsers the opposite
+   * This lead to the touch events were treated differently on Safari then on other devices
+   * and the touch on Modal's backdrop did not close it
+   * @see: https://chromestatus.com/feature/5093566007214080
+   * @see: https://github.com/lmc-eu/spirit-design-system/pull/892
+   */
   element.addEventListener(eventType, handler, { passive: false });
 };
 
