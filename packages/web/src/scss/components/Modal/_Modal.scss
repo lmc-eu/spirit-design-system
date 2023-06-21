@@ -8,71 +8,7 @@
 @use '../../tools/breakpoint';
 @use 'theme';
 
-// @deprecated Will be removed in the next major version.
 .Modal {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    max-width: none;
-    height: 100%;
-    max-height: none;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border: 0;
-    background: transparent;
-    overscroll-behavior-y: contain;
-
-    &::backdrop {
-        background-color: theme.$backdrop-background-color;
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-// @deprecated Will be removed in the next major version.
-.Modal__content {
-    display: flex;
-    align-items: center;
-    width: auto;
-    max-width: 100%;
-    min-height: calc(100% - #{theme.$padding * 2});
-    margin: theme.$padding;
-    pointer-events: none;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        max-width: theme.$dialog-width-tablet;
-        min-height: calc(100% - #{theme.$padding-tablet * 2});
-        margin: theme.$padding-tablet auto;
-    }
-
-    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-        max-width: theme.$dialog-width-desktop;
-    }
-}
-
-// @deprecated Will be removed in the next major version.
-.Modal__dialog {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: theme.$content-padding;
-    border-radius: theme.$content-border-radius;
-    background-color: theme.$content-background-color;
-    box-shadow: theme.$content-shadow;
-    pointer-events: auto;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        padding: theme.$content-padding-tablet;
-    }
-}
-
-// @deprecated Will be removed in the next major version.
-// Migration: Rename to `Modal`.
-.Modal--composed {
     --modal-scale: #{theme.$transition-scale-ratio};
     --modal-translate-x: -50%;
     --modal-translate-y: #{theme.$transition-shift-distance};
@@ -119,9 +55,7 @@
     }
 }
 
-// @deprecated Will be removed in the next major version.
-// Migration: Rename to `Modal`.
-.Modal--composed[open] {
+.Modal[open] {
     --modal-scale: 1;
     --modal-translate-y: 0;
 
@@ -139,12 +73,4 @@
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
         --modal-translate-y: 50%;
     }
-}
-
-// @deprecated Will be removed in the next major version.
-.Modal__header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-bottom: theme.$header-spacing;
 }
