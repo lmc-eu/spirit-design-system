@@ -16,7 +16,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_basic" class="Modal Modal--composed" aria-labelledby="example_basic_title">
+  <dialog id="example_basic" class="Modal" aria-labelledby="example_basic_title">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog ModalDialog--expandOnMobile">
@@ -133,7 +133,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_form" class="Modal Modal--composed" aria-labelledby="example_form_title">
+  <dialog id="example_form" class="Modal" aria-labelledby="example_form_title">
 
     <!-- ModalDialog: start -->
     <form class="ModalDialog" method="dialog">
@@ -209,7 +209,7 @@
   <!-- Modal: start -->
   <dialog
     id="example_custom_height"
-    class="Modal Modal--composed"
+    class="Modal"
     aria-labelledby="example_custom_height_title"
     style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px; --modal-max-height-tablet: 700px"
   >
@@ -301,7 +301,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_long_content" class="Modal Modal--composed" aria-labelledby="example_long_content_title">
+  <dialog id="example_long_content" class="Modal" aria-labelledby="example_long_content_title">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog">
@@ -415,7 +415,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_scroll_view" class="Modal Modal--composed" aria-labelledby="example_scroll_view_title">
+  <dialog id="example_scroll_view" class="Modal" aria-labelledby="example_scroll_view_title">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog">
@@ -545,7 +545,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_body_padding" class="Modal Modal--composed" aria-labelledby="example_body_paddingtitle">
+  <dialog id="example_body_padding" class="Modal" aria-labelledby="example_body_paddingtitle">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog">
@@ -620,7 +620,7 @@
   </button>
 
   <!-- Modal: start -->
-  <dialog id="example_stacking_parent" class="Modal Modal--composed" aria-labelledby="example_stacking_parent_title">
+  <dialog id="example_stacking_parent" class="Modal" aria-labelledby="example_stacking_parent_title">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog">
@@ -679,7 +679,7 @@
   </dialog>
   <!-- Modal: end -->
   <!-- Modal: start -->
-  <dialog id="example_stacking_nested" class="Modal Modal--composed" aria-labelledby="example_stacking_nested_title">
+  <dialog id="example_stacking_nested" class="Modal" aria-labelledby="example_stacking_nested_title">
 
     <!-- ModalDialog: start -->
     <article class="ModalDialog">
@@ -747,127 +747,6 @@
 
   </dialog>
   <!-- Modal: end -->
-
-</section>
-
-<section class="docs-Section">
-
-  <h2 class="docs-Heading">Simple Modal (DEPRECATED)</h2>
-
-  <button
-    type="button"
-    class="Button Button--primary Button--medium"
-    data-toggle="modal"
-    data-target="#example_simple_1"
-    aria-controls="example_simple_1"
-    aria-expanded="false"
-  >
-    Open Simple Modal
-  </button>
-
-  <button
-    type="button"
-    class="Button Button--primary Button--medium"
-    data-toggle="modal"
-    data-target="#example_simple_2"
-    aria-controls="example_simple_2"
-    aria-expanded="false"
-  >
-    Open Simple Modal with Long Content
-  </button>
-
-  <dialog id="example_simple_1" class="Modal">
-    <div class="Modal__content">
-      <div class="Modal__dialog">
-        <div class="Modal__header">
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-dismiss="modal"
-            data-target="#example_simple_1"
-            aria-controls="example_simple_1"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </div>
-        <div class="Modal__body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <dialog id="example_simple_2" class="Modal">
-    <div class="Modal__content">
-      <div class="Modal__dialog">
-        <div class="Modal__header">
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-dismiss="modal"
-            data-target="#example_simple_2"
-            aria-controls="example_simple_2"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24">
-              <use xlink:href="/icons/svg/sprite.svg#close"/>
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </div>
-        <div class="Modal__body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-        </div>
-      </div>
-    </div>
-  </dialog>
 
 </section>
 
