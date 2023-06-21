@@ -1,7 +1,5 @@
 # Modal
 
-## Composed Modal (DEPRECATED)
-
 Modal is a composition of several subcomponents:
 
 - [Modal](#modal-1)
@@ -10,19 +8,14 @@ Modal is a composition of several subcomponents:
     - [ModalBody](#modalfooter)
     - [ModalFooter](#modalfooter)
 
-⚠️ **DEPRECATED:** The flag `Modal--composed` — which is currently necessary to
-distinguish the composed version of Modal from the simple one — is deprecated
-and will be removed in the next major version: the composed Modal will supersede the
-[Simple Modal](#simple-modal-deprecated) variant.
-
-### Modal
+## Modal
 
 Modal establishes the layer with backdrop. Under the hood it uses the
 [`<dialog>` element][mdn-dialog] which provides several accessibility
 advantages.
 
 ```html
-<dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
+<dialog id="example_1" class="Modal" aria-labelledby="example_1_title">
   <!-- ModalDialog -->
 </dialog>
 ```
@@ -30,7 +23,7 @@ advantages.
 👉 Please note the `aria-labelledby` attribute is linked to the title inside
 [ModalHeader](#modalheader) and provides an accessible name for the dialog.
 
-#### Custom Preferred Height
+### Custom Preferred Height
 
 By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
 You can override this behavior by setting a custom preferred height using a custom property:
@@ -43,7 +36,7 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 ```html
 <dialog
   id="example_1"
-  class="Modal Modal--composed"
+  class="Modal"
   aria-labelledby="example_1_title"
   style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
 >
@@ -51,7 +44,7 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 </dialog>
 ```
 
-#### Custom Max Height
+### Custom Max Height
 
 The default maximum height of Modal is:
 
@@ -61,19 +54,14 @@ The default maximum height of Modal is:
 You can use the custom property `--modal-max-height-tablet` to override the max height on tablet screens and up:
 
 ```html
-<dialog
-  id="example_1"
-  class="Modal Modal--composed"
-  aria-labelledby="example_1_title"
-  style="--modal-max-height-tablet: 700px"
->
+<dialog id="example_1" class="Modal" aria-labelledby="example_1_title" style="--modal-max-height-tablet: 700px">
   <!-- ModalDialog -->
 </dialog>
 ```
 
 👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
 
-### ModalDialog
+## ModalDialog
 
 ModalDialog is the actual dialog window, a place for the header, body, and
 footer of the dialog.
@@ -86,7 +74,7 @@ footer of the dialog.
 </article>
 ```
 
-#### Forms in Modal
+### Forms in Modal
 
 Modal can also contain interactive content like forms. For such cases, you may
 find convenient to use the `<form>` element with the attribute
@@ -100,13 +88,13 @@ dialog.
 </form>
 ```
 
-#### Expand on Mobile Screens
+### Expand on Mobile Screens
 
 We recommend to expand the dialog on mobile screens using the
 `ModalDialog--expandOnMobile` modifier class. If you omit the class, the dialog
 shrinks to fit the height of its content (if smaller than viewport).
 
-### ModalHeader
+## ModalHeader
 
 ModalHeader contains the title of the dialog and the close button.
 
@@ -133,12 +121,12 @@ ModalHeader contains the title of the dialog and the close button.
 accessible name for the dialog, e.g. using the `aria-label` attribute:
 
 ```html
-<dialog id="example_1" class="Modal Modal--composed" aria-label="Accessible Modal Title">
+<dialog id="example_1" class="Modal" aria-label="Accessible Modal Title">
   <!-- … -->
 </dialog>
 ```
 
-### ModalBody
+## ModalBody
 
 ModalBody holds the actual content of the Modal.
 
@@ -152,7 +140,7 @@ ModalBody holds the actual content of the Modal.
 </div>
 ```
 
-#### Feature Flag to Enable Extra Padding
+### Feature Flag to Enable Extra Padding
 
 ⚠️ This feature flag is only temporary and will be removed in version 1. The extra vertical padding will be made default.
 
@@ -165,7 +153,7 @@ The preferred one is the `body` element because this way it will affect all Moda
 </body>
 ```
 
-### ModalFooter
+## ModalFooter
 
 ModalFooter is the place for actions represented by the Button component.
 While there always must be a primary Button, secondary actions are optional.
@@ -187,7 +175,7 @@ tab over the interface.
 </div>
 ```
 
-#### Footer Description
+### Footer Description
 
 Optionally, you can add a description into the footer:
 
@@ -200,7 +188,7 @@ Optionally, you can add a description into the footer:
 </div>
 ```
 
-#### Footer Alignment
+### Footer Alignment
 
 ModalFooter can be aligned to the right (default), center, or left.
 These values come from the [dictionary][dictionary-alignment].
@@ -210,7 +198,7 @@ Using a corresponding modifier class:
 - `ModalFooter--center`
 - `ModalFooter--left`
 
-### Opening the Modal
+## Opening the Modal
 
 Use our JavaScript plugin to open your Modal, e.g.:
 
@@ -227,7 +215,7 @@ Use our JavaScript plugin to open your Modal, e.g.:
 </button>
 ```
 
-### Scrolling Long Content
+## Scrolling Long Content
 
 When Modals become too long for the user's viewport or device, they scroll independent of the page itself. By default,
 ModalBody has `overflow-y: auto` applied to it, so it scrolls vertically.
@@ -252,7 +240,7 @@ scrolling, e.g.:
 </article>
 ```
 
-### Full Example
+## Full Example
 
 When you put it all together:
 
@@ -271,7 +259,7 @@ When you put it all together:
 <!-- Modal Trigger: end -->
 
 <!-- Modal: start -->
-<dialog id="example_1" class="Modal Modal--composed" aria-labelledby="example_1_title">
+<dialog id="example_1" class="Modal" aria-labelledby="example_1_title">
   <!-- ModalDialog: start -->
   <article class="ModalDialog">
     <!-- ModalHeader: start -->
@@ -332,57 +320,6 @@ When you put it all together:
   <!-- ModalDialog: end -->
 </dialog>
 <!-- Modal: end -->
-```
-
-## Simple Modal (DEPRECATED)
-
-A simple version of Modal.
-
-⚠️ **DEPRECATED:** Simple Modal will be removed in the next major version in favour
-of the composed Modal above.
-
-Example usage:
-
-```html
-<button
-  type="button"
-  class="Button Button--primary Button--medium"
-  data-toggle="modal"
-  data-target="#modal-example-1"
-  aria-controls="modal-example-1"
-  aria-expanded="false"
->
-  Open Modal
-</button>
-
-<dialog id="modal-example-1" class="Modal">
-  <div class="Modal__content">
-    <div class="Modal__dialog">
-      <div class="Modal__header">
-        <button
-          type="button"
-          class="Button Button--tertiary Button--medium Button--square"
-          data-dismiss="modal"
-          data-target="#modal-example-1"
-          aria-controls="modal-example-1"
-          aria-expanded="false"
-        >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-          <span class="accessibility-hidden">Close</span>
-        </button>
-      </div>
-      <div class="Modal__body">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-          perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-          provident unde. Eveniet, iste, molestiae?
-        </p>
-      </div>
-    </div>
-  </div>
-</dialog>
 ```
 
 ## Toggle Attributes
