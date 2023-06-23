@@ -1,7 +1,7 @@
 # Modal
 
 ```jsx
-import { Button, Icon, Modal, ModalHeader, ModalBody, ModalFooter } from '@lmc-eu/spirit-web-react/components';
+import { Modal, ModalDialog, ModalBody, ModalHeader, ModalFooter, Button } from '@lmc-eu/spirit-web-react/components';
 ```
 
 ```jsx
@@ -13,53 +13,110 @@ const handleClose = () => {
   setOpen(false);
 };
 
+// Trigger
 <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
   {isOpen ? 'Close' : 'Open'} Modal
 </Button>
-<Modal isOpen={isOpen} onClose={handleClose}>
-  <ModalHeader>
-    Title
-    <Button isSquare color="tertiary" onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
-      <Icon name="close" />
-    </Button>
-  </ModalHeader>
-  <ModalBody>Modal Body</ModalBody>
-  <ModalFooter>Modal Footer</ModalFooter>
-</Modal>;
+
+// Modal
+<Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+  <ModalDialog>
+    <ModalHeader>Modal Title</ModalHeader>
+    <ModalBody>Modal Body</ModalBody>
+    <ModalFooter description="ModalFooter description">
+      <Button color="primary" onClick={handleClose}>
+        Confirm
+      </Button>
+      <Button color="tertiary" onClick={handleClose}>
+        Cancel
+      </Button>
+    </ModalFooter>
+  </ModalDialog>
+</Modal>
+```
+
+## An example using a form as a ModalDialog element
+
+```jsx
+<Modal id="ModalExample">
+  <ModalDialog elementType="form" name="ModalFormExample">
+    ...
+  </ModalDialog>
+</Modal>
 ```
 
 ## Modal
 
 **Available props**
 
-| Name       | Type                                           | Default | Description               |
-| ---------- | ---------------------------------------------- | ------- | ------------------------- |
-| `isOpen`   | `boolean`                                      | `false` | Open state                |
-| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | -       | Callback on dialog closed |
-| `children` | `ReactNode`                                    | -       | Children node             |
+| Name               | Type                                           | Default | Required | Description               |
+| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
+| `id`               | `string`                                       | -       | yes      | Open state                |
+| `isOpen`           | `boolean`                                      | `false` | yes      | Open state                |
+| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -       | yes      | Callback on dialog closed |
+| `children`         | `ReactNode`                                    | -       | no       | Children node             |
+| `UNSAFE_className` | `string`                                       | -       | no       | Modal custom class name   |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | no       | Modal custom style        |
 
-## Modal Header
+The rest of the properties are created from the default `<dialog>` element. [More about the element][DialogElementDocs]
 
-**Available props**
-
-| Name       | Type        | Default | Description   |
-| ---------- | ----------- | ------- | ------------- |
-| `children` | `ReactNode` | -       | Children node |
-
-## Modal Body
+## ModalDialog
 
 **Available props**
 
-| Name       | Type        | Default | Description   |
-| ---------- | ----------- | ------- | ------------- |
-| `children` | `ReactNode` | -       | Children node |
+| Name                 | Type                | Default     | Required | Description                                          |
+| -------------------- | ------------------- | ----------- | -------- | ---------------------------------------------------- |
+| `elementType`        | `'article', 'form'` | `'article'` | no       | ModalDialog element type                             |
+| `children`           | `ReactNode`         | -           | no       | Children node                                        |
+| `UNSAFE_className`   | `string`            | -           | no       | ModalDialog custom class name                        |
+| `UNSAFE_style`       | `CSSProperties`     | -           | no       | ModalDialog custom style                             |
+| `isExpandedOnMobile` | `boolean`           | -           | no       | ModalDialog shrinks to fit the height of its content |
 
-## Modal Footer
+The rest of the properties are formed from the selected type of element. Documentation for [Article][ArticleElementDocs], [Form][FormElementDocs].
+
+## ModalHeader
 
 **Available props**
 
-| Name       | Type        | Default | Description   |
-| ---------- | ----------- | ------- | ------------- |
-| `children` | `ReactNode` | -       | Children node |
+| Name               | Type            | Default | Required | Description                   |
+| ------------------ | --------------- | ------- | -------- | ----------------------------- |
+| `children`         | `ReactNode`     | -       | no       | Children node                 |
+| `closeLabel`       | `string`        | -       | no       | Close button label            |
+| `UNSAFE_className` | `string`        | -       | no       | ModalHeader custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | no       | ModalHeader custom style      |
 
-For detailed information see [Modal](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Modal/README.md) component
+The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+
+## ModalBody
+
+**Available props**
+
+| Name               | Type            | Default | Required | Description                 |
+| ------------------ | --------------- | ------- | -------- | --------------------------- |
+| `children`         | `ReactNode`     | -       | no       | Children node               |
+| `UNSAFE_className` | `string`        | -       | no       | ModalBody custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | no       | ModalBody custom style      |
+
+The rest of the properties are created from the default `<div>` element. [Docs][DivElementDocs]
+
+## ModalFooter
+
+**Available props**
+
+| Name               | Type                                          | Default   | Required | Description                                                                  |
+| ------------------ | --------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------- |
+| `children`         | `ReactNode`                                   | -         | no       | Children node                                                                |
+| `align`            | [AlignmentX dictionary][dictionary-alignment] | `'right'` | no       | [**DEPRECATED**][deprecated] in favor of `alignmentX`; ModalFooter alignment |
+| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `'right'` | no       | ModalFooter alignment                                                        |
+| `UNSAFE_className` | `string`                                      | -         | no       | ModalFooter custom class name                                                |
+| `UNSAFE_style`     | `CSSProperties`                               | -         | no       | ModalFooter custom style                                                     |
+
+The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+
+[DialogElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[ArticleElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+[FormElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+[DivElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
+[HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
