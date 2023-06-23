@@ -5,11 +5,11 @@ import React, { useState } from 'react';
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import { IconsProvider } from '../../../context';
-import ModalComposed from '../ModalComposed';
-import ModalComposedDialog from '../ModalComposedDialog';
-import ModalComposedBody from '../ModalComposedBody';
-import ModalComposedHeader from '../ModalComposedHeader';
-import ModalComposedFooter from '../ModalComposedFooter';
+import Modal from '../Modal';
+import ModalDialog from '../ModalDialog';
+import ModalBody from '../ModalBody';
+import ModalHeader from '../ModalHeader';
+import ModalFooter from '../ModalFooter';
 import { Button } from '../../Button';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
@@ -30,20 +30,33 @@ const Story = (props: unknown) => {
           Open Modal
         </Button>
       </div>
-      <ModalComposed id="ModalExample" isOpen={isOpen} onClose={handleClose}>
-        <ModalComposedDialog preferredHeightOnMobile="500px">
-          <ModalComposedHeader>Modal title</ModalComposedHeader>
-          <ModalComposedBody>Body</ModalComposedBody>
-          <ModalComposedFooter>
+      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+        <ModalDialog maxHeightFromTabletUp="700px" preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
+          <ModalHeader>Modal title</ModalHeader>
+          <ModalBody>
+            <p className="d-tablet-none">
+              This modal has a custom height of <code>400px</code>.
+              <br />
+              <br />
+              The max height cannot be customized on mobile though.
+            </p>
+            <p className="d-none d-tablet-block">
+              This modal has a custom height of <code>500px</code>.
+              <br />
+              <br />
+              The max height of this modal is <code>700px</code>.
+            </p>
+          </ModalBody>
+          <ModalFooter>
             <Button color="primary" onClick={handleClose}>
               Confirm
             </Button>
             <Button color="tertiary" onClick={handleClose}>
               Cancel
             </Button>
-          </ModalComposedFooter>
-        </ModalComposedDialog>
-      </ModalComposed>
+          </ModalFooter>
+        </ModalDialog>
+      </Modal>
     </IconsProvider>
   );
 };

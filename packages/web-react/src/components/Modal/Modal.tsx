@@ -1,38 +1,38 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ModalProps } from '../../types';
+import { useStyleProps, useLastActiveFocus } from '../../hooks';
+import { SpiritModalProps } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
-import { useLastActiveFocus, useStyleProps, useDeprecationMessage } from '../../hooks';
+import { ModalProvider } from './ModalContext';
 import Dialog from '../Dialog/Dialog';
 
-const Modal = (props: ModalProps): JSX.Element => {
-  const { children, isOpen, onClose, ...restProps } = props;
+const Modal = (props: SpiritModalProps) => {
+  const { children, isOpen, onClose, id, ...restProps } = props;
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
+  const contextValue = {
+    id,
+    isOpen,
+    onClose,
+  };
+
   useLastActiveFocus(isOpen);
 
-  useDeprecationMessage({
-    method: 'component',
-    trigger: true,
-    componentName: 'Modal',
-    componentProps: {
-      delete: true,
-    },
-  });
-
   return (
-    <Dialog
-      {...otherProps}
-      {...styleProps}
-      isOpen={isOpen}
-      onClose={onClose}
-      className={classNames(classProps.root, styleProps.className)}
-    >
-      <div className={classProps.content}>
-        <div className={classProps.dialog}>{children}</div>
-      </div>
-    </Dialog>
+    <ModalProvider value={contextValue}>
+      <Dialog
+        {...otherProps}
+        {...styleProps}
+        id={id}
+        isOpen={isOpen}
+        onClose={onClose}
+        className={classNames(classProps.root, styleProps.className)}
+        aria-labelledby={`${id}__title`}
+      >
+        {children}
+      </Dialog>
+    </ModalProvider>
   );
 };
 

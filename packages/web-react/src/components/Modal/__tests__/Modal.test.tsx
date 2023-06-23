@@ -4,11 +4,11 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import Modal from '../Modal';
-import { ModalProps } from '../../../types';
+import { SpiritModalProps } from '../../../types';
 
 describe('Modal', () => {
-  const ModalTest = (props: ModalProps) => (
-    <Modal {...props} isOpen={false} onClose={() => null}>
+  const ModalTest = (props: SpiritModalProps) => (
+    <Modal {...props} id="ModalExample" isOpen={false} onClose={() => null}>
       <div>Test</div>
     </Modal>
   );
