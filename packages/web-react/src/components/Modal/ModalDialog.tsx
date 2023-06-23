@@ -1,8 +1,8 @@
 import React, { CSSProperties, ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { ModalComposedDialogProps, ModalComposedDialogElementType } from '../../types/modalComposed';
-import { useModalComposedStyleProps } from './useModalComposedStyleProps';
+import { ModalDialogProps, ModalDialogElementType } from '../../types';
+import { useModalStyleProps } from './useModalStyleProps';
 
 interface CustomizedHeightCSSProperties extends CSSProperties {
   '--modal-max-height-tablet'?: string;
@@ -10,8 +10,8 @@ interface CustomizedHeightCSSProperties extends CSSProperties {
   '--modal-preferred-height-tablet'?: string;
 }
 
-const ModalComposedDialog = <E extends ElementType = ModalComposedDialogElementType>(
-  props: ModalComposedDialogProps<E>,
+const ModalDialog = <E extends ElementType = ModalDialogElementType>(
+  props: ModalDialogProps<E>,
   ref: ForwardedRef<HTMLDivElement>,
 ) => {
   const {
@@ -24,7 +24,7 @@ const ModalComposedDialog = <E extends ElementType = ModalComposedDialogElementT
     ...restProps
   } = props;
 
-  const { classProps } = useModalComposedStyleProps({ isExpandedOnMobile });
+  const { classProps } = useModalStyleProps({ isExpandedOnMobile });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const customizedHeightStyle: CustomizedHeightCSSProperties = {
@@ -50,4 +50,4 @@ const ModalComposedDialog = <E extends ElementType = ModalComposedDialogElementT
   );
 };
 
-export default forwardRef(ModalComposedDialog);
+export default forwardRef(ModalDialog);
