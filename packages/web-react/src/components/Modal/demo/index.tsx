@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import ModalComposed from '../stories/ModalComposed';
-import ModalComposedWithCustomHeight from '../stories/ModalComposedWithCustomHeight';
-import ModalComposedWithLongText from '../stories/ModalComposedWithLongText';
+import Modal from '../stories/Modal';
+import ModalWithCustomHeight from '../stories/ModalWithCustomHeight';
+import ModalWithLongText from '../stories/ModalWithLongText';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <DocsSection title="Modal">
-      <ModalComposed />
+      <Modal />
     </DocsSection>
     <DocsSection title="Modal with Custom Height">
-      <ModalComposedWithCustomHeight />
+      <ModalWithCustomHeight />
     </DocsSection>
     <DocsSection title="Modal with Long Text">
-      <ModalComposedWithLongText />
+      <ModalWithLongText />
     </DocsSection>
   </React.StrictMode>,
 );
