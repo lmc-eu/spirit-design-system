@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Icon, Modal, ModalHeader, ModalBody, UncontrolledCollapse } from '../../../src/components';
+import { Button, Modal, ModalDialog, ModalHeader, ModalBody, UncontrolledCollapse } from '../../../src/components';
 import { content } from '../../../src/components/Accordion/stories/Accordion';
 import { CollapseTrigger } from '../../../src/components/Collapse/stories/Collapse';
 
@@ -22,14 +22,12 @@ export const ModalWithCollapse = () => {
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
       <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
-        <ModalHeader>
-          <Button isSquare color="tertiary" onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
-            <Icon name="close" />
-          </Button>
-        </ModalHeader>
-        <ModalBody>
-          <UncontrolledCollapse renderTrigger={CollapseTrigger}>{content}</UncontrolledCollapse>
-        </ModalBody>
+        <ModalDialog>
+          <ModalHeader />
+          <ModalBody>
+            <UncontrolledCollapse renderTrigger={CollapseTrigger}>{content}</UncontrolledCollapse>
+          </ModalBody>
+        </ModalDialog>
       </Modal>
     </>
   );

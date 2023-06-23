@@ -1,18 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ModalMemberProps } from '../../types';
-import { useModalStyleProps } from './useModalStyleProps';
 import { useStyleProps } from '../../hooks';
+import { ModalBodyProps } from '../../types';
+import { useModalStyleProps } from './useModalStyleProps';
 
-const ModalBody = (props: ModalMemberProps): JSX.Element => {
-  const { children, elementType: ElementTag = 'div', ...restProps } = props;
+const ModalBody = ({ children, ...restProps }: ModalBodyProps) => {
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps.body, styleProps.className)}>
+    <div {...otherProps} {...styleProps} className={classNames(classProps.body, styleProps.className)}>
       {children}
-    </ElementTag>
+    </div>
   );
 };
 

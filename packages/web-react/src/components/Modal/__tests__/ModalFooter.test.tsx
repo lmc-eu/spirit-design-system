@@ -4,10 +4,10 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import ModalFooter from '../ModalFooter';
 
-describe('Modal', () => {
-  classNamePrefixProviderTest(ModalFooter, 'Modal__footer');
+describe('ModalFooter', () => {
+  classNamePrefixProviderTest(ModalFooter, 'ModalFooter');
 
   stylePropsTest(ModalFooter);
 
-  restPropsTest(ModalFooter, 'div');
+  restPropsTest(ModalFooter, 'footer');
 });
