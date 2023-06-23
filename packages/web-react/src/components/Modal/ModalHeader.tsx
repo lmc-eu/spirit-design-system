@@ -1,18 +1,31 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ModalMemberProps } from '../../types';
-import { useModalStyleProps } from './useModalStyleProps';
 import { useStyleProps } from '../../hooks';
+import { ModalHeaderProps } from '../../types';
+import { useModalStyleProps } from './useModalStyleProps';
+import { useModalContext } from './ModalContext';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 
-const ModalHeader = (props: ModalMemberProps): JSX.Element => {
-  const { children, elementType: ElementTag = 'div', ...restProps } = props;
+const ModalHeader = (props: ModalHeaderProps) => {
+  const { children, closeLabel = 'Close', ...restProps } = props;
+
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { id, isOpen, onClose } = useModalContext();
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps.header, styleProps.className)}>
-      {children}
-    </ElementTag>
+    <header {...otherProps} {...styleProps} className={classNames(classProps.header, styleProps.className)}>
+      {children && (
+        <h2 id={`${id}__title`} className={classProps.title}>
+          {children}
+        </h2>
+      )}
+      <Button isSquare color="tertiary" onClick={onClose} aria-expanded={isOpen} aria-controls={id}>
+        <Icon name="close" />
+        <span className="accessibility-hidden">{closeLabel}</span>
+      </Button>
+    </header>
   );
 };
 
