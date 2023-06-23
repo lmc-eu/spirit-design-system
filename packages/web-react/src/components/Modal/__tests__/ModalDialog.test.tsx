@@ -2,12 +2,12 @@ import '@testing-library/jest-dom';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import ModalComposedBody from '../ModalComposedBody';
+import ModalDialog from '../ModalDialog';
 
-describe('ModalComposedBody', () => {
-  classNamePrefixProviderTest(ModalComposedBody, 'ModalBody');
+describe('ModalDialog', () => {
+  classNamePrefixProviderTest(ModalDialog, 'ModalDialog');
 
-  stylePropsTest(ModalComposedBody);
+  stylePropsTest(ModalDialog);
 
-  restPropsTest(ModalComposedBody, 'div');
+  restPropsTest(ModalDialog, 'article');
 });

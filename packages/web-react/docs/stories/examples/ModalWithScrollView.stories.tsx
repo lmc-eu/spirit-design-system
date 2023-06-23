@@ -1,22 +1,14 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  ModalComposed,
-  ModalComposedDialog,
-  ModalComposedHeader,
-  ModalComposedBody,
-  ModalComposedFooter,
-  ScrollView,
-} from '../../../src/components';
+import { Button, Modal, ModalDialog, ModalHeader, ModalBody, ModalFooter, ScrollView } from '../../../src/components';
 
 export default {
   title: 'Examples/Compositions',
 };
 
-export const ModalComposedWithScrollView = () => {
+export const ModalWithScrollView = () => {
   const [isOpen, setOpen] = useState(false);
 
-  const toggleModalComposed = () => setOpen(!isOpen);
+  const toggleModal = () => setOpen(!isOpen);
 
   const handleClose = () => {
     setOpen(false);
@@ -24,14 +16,14 @@ export const ModalComposedWithScrollView = () => {
 
   return (
     <>
-      <Button onClick={toggleModalComposed} aria-expanded={isOpen} aria-controls="#ModalComposedExample">
-        {isOpen ? 'Close' : 'Open'} ModalComposed
+      <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
+        {isOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <ModalComposed id="ModalExample" isOpen={isOpen} onClose={handleClose}>
-        <ModalComposedDialog>
-          <ModalComposedHeader>Modal with ScrollView </ModalComposedHeader>
+      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+        <ModalDialog>
+          <ModalHeader>Modal with ScrollView </ModalHeader>
           <ScrollView overflowDecorators="borders">
-            <ModalComposedBody>
+            <ModalBody>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
                 mollitia mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi
@@ -72,18 +64,18 @@ export const ModalComposedWithScrollView = () => {
                 mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
                 perferendis provident unde. Eveniet, iste, molestiae?
               </p>
-            </ModalComposedBody>
+            </ModalBody>
           </ScrollView>
-          <ModalComposedFooter>
+          <ModalFooter>
             <Button color="primary" onClick={handleClose}>
               Confirm
             </Button>
             <Button color="tertiary" onClick={handleClose}>
               Cancel
             </Button>
-          </ModalComposedFooter>
-        </ModalComposedDialog>
-      </ModalComposed>
+          </ModalFooter>
+        </ModalDialog>
+      </Modal>
     </>
   );
 };
