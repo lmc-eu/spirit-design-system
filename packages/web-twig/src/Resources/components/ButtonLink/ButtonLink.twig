@@ -7,7 +7,6 @@
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isLoading = props.isLoading | default(false) | boolprop -%}
 {%- set _isSquare = props.isSquare | default(false) | boolprop -%}
-{%- set _onClick = props.onClick | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}
@@ -18,9 +17,6 @@
 {%- set _rootSizeClassName = _spiritClassPrefix ~ 'Button--' ~ _size -%}
 {%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
 
-{# Attributes #}
-{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
-
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootBlockClassName, _rootDisabledClassName, _rootLoadingClassName, _rootSizeClassName, _rootSquareClassName, _styleProps.className ] -%}
@@ -29,17 +25,11 @@
     'target',
 ] -%}
 
-{# Deprecations #}
-{% if _onClick %}
-    {% deprecated 'ButtonLink: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
-{% endif %}
-
 <a
     {{ mainProps(props, _allowedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
-    {{ _onClickAttr | raw }}
 >
     {%- block content %}{% endblock %}
     {%- if _isLoading -%}

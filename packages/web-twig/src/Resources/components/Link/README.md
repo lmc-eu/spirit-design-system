@@ -41,7 +41,6 @@ Without lexer:
 | `href`         | `string`                                         | —         | yes      | Link URL                           |
 | `isDisabled`   | `bool`                                           | `false`   | no       | If true, Link is disabled          |
 | `isUnderlined` | `bool`                                           | `false`   | no       | If true, Link is underlined        |
-| `onClick`      | `string`                                         | `null`    | no       | JS function to call on click       |
 | `target`       | `string`                                         | `null`    | no       | Link target                        |
 | `title`        | `string`                                         | `null`    | no       | Optional title to display on hover |
 
