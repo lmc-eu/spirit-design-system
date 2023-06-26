@@ -4,7 +4,7 @@ export default {
   color: {
     control: {
       type: 'select',
-      options: [...Object.values(EmotionColors), 'default', 'neutral'],
+      options: [...Object.values(EmotionColors), 'neutral'],
     },
     defaultValue: 'neutral',
   },
@@ -14,13 +14,6 @@ export default {
       options: [...Object.values(Sizes)],
     },
     defaultValue: Sizes.MEDIUM,
-  },
-  theme: {
-    control: {
-      type: 'select',
-      options: ['dark', 'light', undefined],
-    },
-    defaultValue: undefined,
   },
   isSubtle: {
     control: {

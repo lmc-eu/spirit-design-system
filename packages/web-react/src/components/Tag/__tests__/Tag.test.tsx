@@ -32,10 +32,10 @@ describe('Tag', () => {
     expect(element.textContent).toBe('Tag');
   });
 
-  it.each([['neutral'], ['default']])('should render color %s', (color) => {
-    const dom = render(<Tag color={color}>333</Tag>);
+  it('should render neutral color', () => {
+    const dom = render(<Tag color="neutral">333</Tag>);
 
     const element = dom.container.querySelector('span') as HTMLElement;
-    expect(element).toHaveClass(`Tag--${color}`);
+    expect(element).toHaveClass('Tag--neutral');
   });
 });
