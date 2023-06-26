@@ -43,6 +43,7 @@ class FileUploader extends BaseComponent {
   accept: string;
   isDragging: boolean;
   fileQueue: Map<string, File>;
+  instanceUid: string;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -66,6 +67,7 @@ class FileUploader extends BaseComponent {
     this.accept = this.inputElement?.accept;
     this.isDragging = false;
     this.fileQueue = new Map();
+    this.instanceUid = FileUploader.getUid();
 
     this.init();
   }
@@ -86,8 +88,12 @@ class FileUploader extends BaseComponent {
     }
   }
 
-  static getUpdatedFileName(name: string): string {
-    return `file__${name.replace(/\./g, '_').replace(/\s/g, '_')}`;
+  static getUid(): string {
+    return Math.random().toString(36).slice(-6);
+  }
+
+  getUpdatedFileName(name: string): string {
+    return `${this.instanceUid}_file__${name.replace(/\./g, '_').replace(/\s/g, '_')}`;
   }
 
   dragReset() {
@@ -102,7 +108,7 @@ class FileUploader extends BaseComponent {
   }
 
   checkFileQueueDuplicity(file: File) {
-    if (this.fileQueue.has(FileUploader.getUpdatedFileName(file.name))) {
+    if (this.fileQueue.has(this.getUpdatedFileName(file.name))) {
       throw new Error(errorMessages.errorFileDuplicity);
     }
   }
@@ -239,7 +245,7 @@ class FileUploader extends BaseComponent {
       this.clearFileQueue();
     }
 
-    const id = FileUploader.getUpdatedFileName(file.name);
+    const id = this.getUpdatedFileName(file.name);
     const attachment = this.getAttachmentElement(file, id);
 
     if (!attachment) {
@@ -278,7 +284,7 @@ class FileUploader extends BaseComponent {
   removeFromQueue(name: string) {
     if (this.fileQueue.has(name)) {
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue });
-      const itemElement = SelectorEngine.findOne(`li#${name}`);
+      const itemElement = SelectorEngine.findOne(`#\\${name}`);
       this.fileQueue.delete(name);
       itemElement?.remove();
       this.updateDropZoneVisibility();
