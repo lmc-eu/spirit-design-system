@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDeprecationMessage, useIcon, useStyleProps } from '../../hooks';
+import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 
 const defaultProps = {
@@ -8,27 +8,9 @@ const defaultProps = {
 };
 
 export const Icon = (props: IconProps): JSX.Element => {
-  const {
-    boxSize,
-    name,
-    title,
-    /** @deprecated Will be removed in the next major version. */
-    size,
-    ariaHidden,
-    ...restProps
-  } = props;
+  const { boxSize, name, title, ariaHidden, ...restProps } = props;
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!size,
-    componentName: 'Icon',
-    propertyProps: {
-      deprecatedName: 'size',
-      newName: 'boxSize',
-    },
-  });
 
   if (title) {
     icon = `<title>${title}</title>${icon}`;
@@ -40,8 +22,8 @@ export const Icon = (props: IconProps): JSX.Element => {
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      width={size || boxSize}
-      height={size || boxSize}
+      width={boxSize}
+      height={boxSize}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: icon }}
       aria-hidden={ariaHidden}

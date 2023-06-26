@@ -16,13 +16,10 @@ import icons from '@lmc-eu/spirit-icons/icons';
 
 ## Available props
 
-| Name      | Type     | Required | Description                                                                        |
-| --------- | -------- | -------- | ---------------------------------------------------------------------------------- |
-| `boxSize` | `number` | no       | Size of the icon, default `24`                                                     |
-| `name`    | `string` | yes      | Name of the icon                                                                   |
-| `size`    | `number` | no       | [**DEPRECATED**][deprecated] in favor of `boxSize`; Size of the icon, default `24` |
-| `title`   | `string` | no       | Title of the icon                                                                  |
+| Name      | Type     | Required | Description                    |
+| --------- | -------- | -------- | ------------------------------ |
+| `boxSize` | `number` | no       | Size of the icon, default `24` |
+| `name`    | `string` | yes      | Name of the icon               |
+| `title`   | `string` | no       | Title of the icon              |
 
 For more details about Icons see [Spirit Icons](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/icons/README.md) package.
-
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
