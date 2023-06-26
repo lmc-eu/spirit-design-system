@@ -7977,7 +7977,7 @@
     resolve-from "^5.0.0"
     rollup-pluginutils "^2.8.2"
 
-"@vitejs/plugin-react@^4.0.0":
+"@vitejs/plugin-react@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-4.0.0.tgz#46d1c37c507447d10467be1c111595174555ef28"
   integrity sha512-HX0XzMjL3hhOYm+0s95pb0Z7F8O81G7joUHgfDd/9J/ZZf5k4xX6QAMFkKsHFxaHlf6X7GD7+XuaZ66ULiJuhQ==
@@ -11289,6 +11289,11 @@ core-js-pure@^3.8.1:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.20.3.tgz#6cc4f36da06c61d95254efc54024fe4797fd5d02"
   integrity sha512-Q2H6tQ5MtPtcC7f3HxJ48i4Q7T9ybPKgvWyuH7JXIoNa2pm0KuBnycsET/qw1SLLZYfbsbrZQNMeIOClb+6WIA==
 
+core-js@3.31.0, core-js@^3.29.1:
+  version "3.31.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.31.0.tgz#4471dd33e366c79d8c0977ed2d940821719db344"
+  integrity sha512-NIp2TQSGfR6ba5aalZD+ZQ1fSxGhDo/s1w0nx3RYzf2pnJxt7YynxFlFScP6eV7+GZsKO95NSjGxyJsU3DZgeQ==
+
 core-js@^2.4.0:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
@@ -11298,11 +11303,6 @@ core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2:
   version "3.20.3"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.20.3.tgz#c710d0a676e684522f3db4ee84e5e18a9d11d69a"
   integrity sha512-vVl8j8ph6tRS3B8qir40H7yw7voy17xL0piAjlbBUsH7WIfzoedL/ZOr1OV9FyZQLWXsayOJyV4tnRyXR85/ag==
-
-core-js@^3.29.1, core-js@^3.31.0:
-  version "3.31.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.31.0.tgz#4471dd33e366c79d8c0977ed2d940821719db344"
-  integrity sha512-NIp2TQSGfR6ba5aalZD+ZQ1fSxGhDo/s1w0nx3RYzf2pnJxt7YynxFlFScP6eV7+GZsKO95NSjGxyJsU3DZgeQ==
 
 core-util-is@^1.0.3, core-util-is@~1.0.0:
   version "1.0.3"
@@ -22266,7 +22266,7 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-syntax-highlighter@^15.5.0:
+react-syntax-highlighter@15.5.0:
   version "15.5.0"
   resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-15.5.0.tgz#4b3eccc2325fa2ec8eff1e2d6c18fa4a9e07ab20"
   integrity sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==
@@ -23298,19 +23298,19 @@ sass-loader@13.3.2:
   dependencies:
     neo-async "^2.6.2"
 
-sass@1.63.4:
-  version "1.63.4"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.63.4.tgz#caf60643321044c61f6a0fe638a07abbd31cfb5d"
-  integrity sha512-Sx/+weUmK+oiIlI+9sdD0wZHsqpbgQg8wSwSnGBjwb5GwqFhYNwwnI+UWZtLjKvKyFlKkatRK235qQ3mokyPoQ==
+sass@1.62.1:
+  version "1.62.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.62.1.tgz#caa8d6bf098935bc92fc73fa169fb3790cacd029"
+  integrity sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
-sass@^1.62.1:
-  version "1.62.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.62.1.tgz#caa8d6bf098935bc92fc73fa169fb3790cacd029"
-  integrity sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==
+sass@1.63.4:
+  version "1.63.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.63.4.tgz#caf60643321044c61f6a0fe638a07abbd31cfb5d"
+  integrity sha512-Sx/+weUmK+oiIlI+9sdD0wZHsqpbgQg8wSwSnGBjwb5GwqFhYNwwnI+UWZtLjKvKyFlKkatRK235qQ3mokyPoQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -26011,7 +26011,7 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
-vite-plugin-handlebars@1.6.0, vite-plugin-handlebars@^1.6.0:
+vite-plugin-handlebars@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vite-plugin-handlebars/-/vite-plugin-handlebars-1.6.0.tgz#fe74b8321d81a9267594d807c2d6135581e7a3fe"
   integrity sha512-/TZ2FadScvJW6fmQ+3m3stm6ns+tDZ3VAgzEkSQYQurAnaQ/3MJfidhmTXzD1Hu1iwgkI3lNuEqybzjjKemCTg==
@@ -26019,7 +26019,7 @@ vite-plugin-handlebars@1.6.0, vite-plugin-handlebars@^1.6.0:
     handlebars "^4.7.6"
     vite "^2.0.0"
 
-vite@4.3.9, vite@^4.3.9:
+vite@4.3.9:
   version "4.3.9"
   resolved "https://registry.yarnpkg.com/vite/-/vite-4.3.9.tgz#db896200c0b1aa13b37cdc35c9e99ee2fdd5f96d"
   integrity sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==
