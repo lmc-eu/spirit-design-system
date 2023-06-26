@@ -93,7 +93,9 @@ class FileUploader extends BaseComponent {
   }
 
   getUpdatedFileName(name: string): string {
-    return `${this.instanceUid}_file__${name.replace(/\./g, '_').replace(/\s/g, '_')}`;
+    // 1. use unique id for every file, even those with the same names
+    // 2. remove all special characters from file name
+    return `file_${this.instanceUid}_${name.replace(/[^a-zA-Z0-9]/g, '')}`;
   }
 
   dragReset() {
@@ -284,7 +286,7 @@ class FileUploader extends BaseComponent {
   removeFromQueue(name: string) {
     if (this.fileQueue.has(name)) {
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue });
-      const itemElement = SelectorEngine.findOne(`#\\${name}`);
+      const itemElement = SelectorEngine.findOne(`#${name}`);
       this.fileQueue.delete(name);
       itemElement?.remove();
       this.updateDropZoneVisibility();
