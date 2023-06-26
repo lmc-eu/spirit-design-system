@@ -4,26 +4,16 @@
 {%- set _elementType = props.elementType | default('span') -%}
 {%- set _isSubtle = props.isSubtle | default(false) -%}
 {%- set _size = props.size | default('medium') -%}
-{%- set _theme = props.theme | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tag' -%}
 {%- set _colorClassName = _spiritClassPrefix ~ 'Tag--' ~ _color -%}
 {%- set _sizeClassName = _spiritClassPrefix ~ 'Tag--' ~ _size -%}
 {%- set _subtleClassname = _isSubtle ? _spiritClassPrefix ~ 'Tag--subtle' : null -%}
-{%- set _themeClassName = _theme ? _spiritClassPrefix ~ 'Tag--' ~ _theme : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _colorClassName, _sizeClassName, _subtleClassname, _themeClassName, _styleProps.className ] -%}
-
-{# Deprecations #}
-{% if _theme %}
-    {% deprecated 'Tag: The "theme" property is deprecated, use "isSubtle" instead.' %}
-{% endif %}
-{% if _color is same as('default') %}
-    {% deprecated 'Tag: The "default" value for "color" property will be removed in the next major version. Use "neutral" instead.' %}
-{% endif %}
+{%- set _classNames = [ _rootClassName, _colorClassName, _sizeClassName, _subtleClassname, _styleProps.className ] -%}
 
 <{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
 {%- block content %}{% endblock -%}
