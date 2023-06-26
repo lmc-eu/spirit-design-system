@@ -42,7 +42,6 @@ Without lexer:
 | `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, Button is in a loading state, disabled and the Spinner is visible |
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an Icon                       |
 | `name`       | `string`                                                                                  | `null`    | no       | For use a button as a form data reference                                  |
-| `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                                               |
 | `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                                               |
 | `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                                         |
 

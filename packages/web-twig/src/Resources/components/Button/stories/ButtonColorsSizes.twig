@@ -8,7 +8,7 @@
       {% for color in colors %}
       <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
         <div>
-          <Button color={color} size={size} onClick="alert('rimmer')">Button {{ color }}</Button>
+          <Button color={color} size={size} onclick="alert('Button clicked')">Button {{ color }}</Button>
           <Button color={color} size={size}>
             <Icon name="hamburger" UNSAFE_className="mr-400" />
             Menu
