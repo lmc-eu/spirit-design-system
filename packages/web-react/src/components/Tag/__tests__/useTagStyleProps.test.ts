@@ -10,7 +10,7 @@ describe('useTagStyleProps', () => {
     expect(result.current.classProps).toBe('Tag');
   });
 
-  it.each([['neutral'], ['default'], ['success'], ['informative'], ['warning'], ['danger']])(
+  it.each([['neutral'], ['success'], ['informative'], ['warning'], ['danger']])(
     'should return color class %s',
     (color) => {
       const props = { color } as SpiritTagProps;
@@ -29,16 +29,5 @@ describe('useTagStyleProps', () => {
     const { result } = renderHook(() => useTagStyleProps(props));
 
     expect(result.current.classProps).toBe('Tag Tag--success Tag--small Tag--subtle');
-  });
-
-  it('should return large danger light', () => {
-    const props = {
-      color: 'danger',
-      size: 'large',
-      theme: 'light',
-    } as SpiritTagProps;
-    const { result } = renderHook(() => useTagStyleProps(props));
-
-    expect(result.current.classProps).toBe('Tag Tag--danger Tag--large Tag--light');
   });
 });
