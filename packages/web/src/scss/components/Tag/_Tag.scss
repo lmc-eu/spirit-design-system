@@ -30,18 +30,6 @@
     'tag-subtle'
 );
 
-// @deprecated Will be removed in the next major version.
-@include dictionaries.generate-colors(
-    'Tag--light.Tag',
-    theme.$color-dictionary,
-    theme.$subtle-color-dictionary-config,
-    null,
-    theme.$subtle-color-dictionary-overrides,
-    'tag-light'
-);
-
-.Tag--subtle.Tag--xsmall,
-// @deprecated Will be removed in the next major version.
-.Tag--light.Tag--xsmall {
+.Tag--subtle.Tag--xsmall {
     background-color: transparent;
 }
