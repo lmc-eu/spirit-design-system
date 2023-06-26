@@ -3,7 +3,6 @@
 {%- set _class = props.class | default(null) -%}
 {%- set _href = props.href -%}
 {%- set _isCurrent = props.isCurrent | default(false) -%}
-{%- set _onClick = props.onClick | default(null) -%}
 {%- set _rootClass = props.rootClass -%}
 
 {# Class names #}
@@ -12,7 +11,6 @@
 
 {# Attributes #}
 {%- set _ariaCurrentAttr = _isCurrent ? 'aria-current=page' : null -%}
-{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
@@ -20,17 +18,11 @@
     'target',
 ] -%}
 
-{# Deprecations #}
-{% if _onClick %}
-    {% deprecated 'Header: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
-{% endif %}
-
 <a
     {{ mainProps(props, _allowedAttributes) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
     {{ _ariaCurrentAttr }}
-    {{ _onClickAttr | raw }}
 >
     {% block content %}{% endblock %}
 </a>

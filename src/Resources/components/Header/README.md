@@ -250,12 +250,11 @@ There is no API for HeaderNavItem.
 
 ##### HeaderLink API
 
-| Prop name   | Type      | Default | Required | Description               |
-| ----------- | --------- | ------- | -------- | ------------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                  |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
-| `onClick`   | `string`  | `null`  | no       | Function to call on click |
-| `target`    | `string`  | `null`  | no       | HTML `target` attribute   |
+| Prop name   | Type      | Default | Required | Description             |
+| ----------- | --------- | ------- | -------- | ----------------------- |
+| `href`      | `string`  | —       | yes      | Link URL                |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current    |
+| `target`    | `string`  | `null`  | no       | HTML `target` attribute |
 
 ##### HeaderButton API
 
@@ -391,12 +390,11 @@ There is no API for HeaderDialogNavItem.
 
 ##### HeaderDialogLink API
 
-| Prop name   | Type      | Default | Required | Description               |
-| ----------- | --------- | ------- | -------- | ------------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                  |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current      |
-| `onClick`   | `string`  | `null`  | no       | Function to call on click |
-| `target`    | `string`  | `null`  | no       | HTML `target` attribute   |
+| Prop name   | Type      | Default | Required | Description             |
+| ----------- | --------- | ------- | -------- | ----------------------- |
+| `href`      | `string`  | —       | yes      | Link URL                |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current    |
+| `target`    | `string`  | `null`  | no       | HTML `target` attribute |
 
 ##### HeaderDialogButton API
 

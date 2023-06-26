@@ -6,7 +6,6 @@
 {%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
 {%- set _isLoading = props.isLoading | default(false) | boolprop -%}
 {%- set _isSquare = props.isSquare | default(false) | boolprop -%}
-{%- set _onClick = props.onClick | default(null) -%}
 {%- set _type = props.type | default('button') -%}
 
 {# Class names #}
@@ -19,17 +18,11 @@
 
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled or _isLoading ? 'disabled' : null -%}
-{%- set _onClickAttr = _onClick ? 'onclick=' ~ _onClick | escape('html_attr') : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSquareClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'name' ] -%}
-
-{# Deprecations #}
-{% if _onClick %}
-    {% deprecated 'Button: The "onClick" property will be removed in the next major version. Use native "onclick" attribute instead.' %}
-{% endif %}
 
 <button
     {{ mainProps(props, _allowedAttributes) }}
@@ -37,7 +30,6 @@
     {{ classProp(_classNames) }}
     type="{{ _type }}"
     {{ _disabledAttr }}
-    {{ _onClickAttr | raw }}
 >
     {%- block content %}{% endblock %}
     {%- if _isLoading -%}
