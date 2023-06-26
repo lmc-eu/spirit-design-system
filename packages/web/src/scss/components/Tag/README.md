@@ -10,7 +10,7 @@ Subtle variants:
 <span class="Tag Tag--danger Tag--subtle Tag--small">Danger subtle tag</span>
 ```
 
-Dark variants:
+Default (non-subtle) variants:
 
 ```html
 <span class="Tag Tag--neutral Tag--small">neutral dark tag</span>
