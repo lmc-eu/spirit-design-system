@@ -38,7 +38,6 @@ Without lexer:
 | `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                                                |
 | `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an Icon                       |
-| `onClick`    | `string`                                                                                  | `null`    | no       | JS function to call on click                                                   |
 | `target`     | `string`                                                                                  | `null`    | no       | Link target                                                                    |
 | `title`      | `string`                                                                                  | `null`    | no       | Optional title to display on hover                                             |
 
