@@ -2,14 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import { useStyleProps, useLastActiveFocus } from '../../hooks';
 import { HeaderDialogProps } from '../../types';
-import { useHeaderModernStyleProps } from './useHeaderStyleProps';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { HeaderDialogProvider } from './HeaderDialogContext';
 import { Dialog } from '../Dialog';
 
 const HeaderDialog = (props: HeaderDialogProps) => {
   const { children, id, isOpen, onClose, ...restProps } = props;
 
-  const { classProps } = useHeaderModernStyleProps();
+  const { classProps } = useHeaderStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const providerValue = { id, isOpen, onClose };

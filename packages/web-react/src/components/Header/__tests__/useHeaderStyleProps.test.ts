@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useHeaderModernStyleProps } from '../useHeaderStyleProps';
+import { useHeaderStyleProps } from '../useHeaderStyleProps';
 import { HEADER_COLOR_DEFAULT, HEADER_ACTIONS_COLOR_DEFAULT } from '../constants';
 
 describe('useHeaderStyleProps', () => {
   it('should return defaults', () => {
-    const { result } = renderHook(() => useHeaderModernStyleProps({}));
+    const { result } = renderHook(() => useHeaderStyleProps({}));
 
     expect(result.current.classProps).toBeDefined();
     expect(result.current.classProps.root).toBe(`Header Header--${HEADER_COLOR_DEFAULT}`);

@@ -3,7 +3,7 @@ import argTypes from './stories/argTypes';
 import Header from './Header';
 
 export default {
-  title: 'Components/HeaderModern',
+  title: 'Components/Header',
   component: Header,
   parameters: {
     docs: {

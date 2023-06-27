@@ -1,11 +1,11 @@
 import React, { ElementType } from 'react';
-import { HeaderContextType, HeaderProvider } from '../../src/components/Header/deprecated/HeaderContext';
+import { HeaderDialogProvider, HeaderDialogContextProps } from '../../src';
 
 export const withHeaderContext =
-  (Component: ElementType, value = { headerClass: 'Header' } as HeaderContextType) =>
+  (Component: ElementType, value = { headerClass: 'Header' } as unknown as HeaderDialogContextProps) =>
   (props: unknown) =>
     (
-      <HeaderProvider value={value}>
+      <HeaderDialogProvider value={value}>
         <Component {...(props as object)} />
-      </HeaderProvider>
+      </HeaderDialogProvider>
     );
