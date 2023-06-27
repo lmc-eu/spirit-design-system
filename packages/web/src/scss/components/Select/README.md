@@ -204,7 +204,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` with `data-spirit-element="validator_message"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -225,7 +225,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
       </svg>
     </div>
   </div>
-  <div data-spirit-element="validator_message">Validation text</div>
+  <div data-spirit-element="validation_text">Validation text</div>
 </div>
 ```
 

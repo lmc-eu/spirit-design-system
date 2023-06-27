@@ -42,7 +42,7 @@ $_field-name: 'TextArea';
 }
 
 .TextArea__validationText,
-.TextArea > [data-element='validator_message'] {
+.TextArea > [data-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
@@ -69,7 +69,7 @@ $_field-name: 'TextArea';
 }
 // stylelint-enable
 
-:is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__validationText, [data-element='validator_message']) {
+:is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__validationText, [data-element='validation_text']) {
     @include form-fields-tools.validation-text-disabled();
 }
 
