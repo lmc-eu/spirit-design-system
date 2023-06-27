@@ -41,10 +41,11 @@
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
-        {{ inputProps(props, [], _inputProps) }}
+        {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="checkbox"
         id="{{ _id }}"
         name="{{ _name }}"
