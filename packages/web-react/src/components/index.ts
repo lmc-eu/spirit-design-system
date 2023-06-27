@@ -21,6 +21,7 @@ export * from './Pill';
 export * from './RadioField';
 export * from './ScrollView';
 export * from './Select';
+export * from './Spinner';
 export * from './Stack';
 export * from './Tabs';
 export * from './Tag';
