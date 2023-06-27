@@ -2,10 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { HeaderDialogTextProps } from '../../types';
-import { useHeaderModernStyleProps } from './useHeaderStyleProps';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialogText = (props: HeaderDialogTextProps) => {
-  const { classProps } = useHeaderModernStyleProps();
+  const { classProps } = useHeaderStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(props);
 
   return (

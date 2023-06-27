@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { ClickEvent, HeaderDialogCloseButtonProps } from '../../types';
 import { HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';
-import { useHeaderModernStyleProps } from './useHeaderStyleProps';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { useHeaderDialogContext } from './HeaderDialogContext';
 import { Icon } from '../Icon';
 
 const HeaderDialogCloseButton = (props: HeaderDialogCloseButtonProps) => {
   const { label = HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT, onClick, ...restProps } = props;
 
-  const { classProps } = useHeaderModernStyleProps();
+  const { classProps } = useHeaderStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const { id, isOpen, onClose } = useHeaderDialogContext();
 

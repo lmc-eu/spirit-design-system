@@ -8,20 +8,7 @@ import {
   SpiritLItemElementProps,
   SpiritSpanElementProps,
   SpiritUListElementProps,
-  TransferProps,
 } from './shared';
-
-export interface HeaderProps extends ChildrenProps, TransferProps {
-  /* Identification of the header component */
-  id: string;
-}
-
-export interface SpiritHeaderProps extends HeaderProps {
-  /* Whether is Header inverted */
-  isInverted?: boolean;
-  /* Whether is Header simple */
-  isSimple?: boolean;
-}
 
 export type HeaderActionsColorType = 'primary' | 'secondary';
 export type HeaderColorType = 'inverted' | 'transparent';
@@ -36,7 +23,7 @@ export type HeaderMobileActionsHandlingProps = {
   onOpen: (event: ClickEvent) => void;
 };
 
-export interface HeaderModernProps extends SpiritElementProps, ChildrenProps {
+export interface HeaderProps extends SpiritElementProps, ChildrenProps {
   color?: HeaderColorType;
   isSimple?: boolean;
 }

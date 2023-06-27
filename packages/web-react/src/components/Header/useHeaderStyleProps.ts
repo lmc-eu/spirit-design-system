@@ -33,7 +33,7 @@ export interface UseHeaderStyleReturn {
   };
 }
 
-const useHeaderStyleProps = (
+export const useHeaderStyleProps = (
   {
     color = HEADER_COLOR_DEFAULT,
     isSimple,
@@ -94,5 +94,3 @@ const useHeaderStyleProps = (
     classProps,
   };
 };
-
-export const useHeaderModernStyleProps = useHeaderStyleProps;

@@ -4,12 +4,6 @@ The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
 your specific design goals.
 
-### DEPRECATION NOTICE
-
-⚠️ The header now exists in two versions. Original `Header` and updated `HeaderModern`.
-The original version will be replaced by the updated version and at the same time
-renamed back to the original name in the next major version. Read more about [deprecation][deprecated].
-
 The Header and HeaderDialog are a composition of several subcomponents:
 
 ```jsx
@@ -201,7 +195,7 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 </HeaderDialog>
 ```
 
-## Header (HeaderModern)
+## Header
 
 **Available props**
 
@@ -405,4 +399,3 @@ For detailed information see the [Header](https://github.com/lmc-eu/spirit-desig
 [DialogUListDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [DialogListItemDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
 [DialogSpanDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
