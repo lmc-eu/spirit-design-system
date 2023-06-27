@@ -69,7 +69,11 @@
 
 <div {{ mainProps(_mainPropsWithoutReservedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_rootClassNames) }} {{ _dataToggleAttr }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
-        {% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}
+        {%- if _unsafeLabel -%}
+            {{ _unsafeLabel | raw }}
+        {%- else -%}
+            {{ _label }}
+        {%- endif -%}
     </label>
     {% if _isMultiline %}
         <textarea
