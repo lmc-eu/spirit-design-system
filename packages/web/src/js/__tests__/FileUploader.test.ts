@@ -208,11 +208,11 @@ describe('FileUploader', () => {
   });
 
   describe('createValidationTextElement', () => {
-    it('should create a ul element with the correct data-element attribute', () => {
+    it('should create a ul element with the correct data-spirit-element attribute', () => {
       const validationElement = FileUploader.createValidationTextElement();
 
       expect(validationElement instanceof HTMLUListElement).toBeTruthy();
-      expect(validationElement.getAttribute('data-element')).toBe('validator_message');
+      expect(validationElement.getAttribute('data-spirit-element')).toBe('validation_text');
     });
   });
 

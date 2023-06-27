@@ -225,7 +225,7 @@ or `is-disabled` to the `FileUploaderInput` subcomponent as well.
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation messages in a `<div>` with `data-element="validator_message"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -237,7 +237,7 @@ own way.**
 <div class="FileUploaderInput has-success" data-spirit-element="wrapper">
   <!-- Label -->
   <!-- Drop zone with input -->
-  <div data-spirit-element="validator_message">Success message inserted by JS</div>
+  <div data-spirit-element="validation_text">Success message inserted by JS</div>
 </div>
 ```
 
