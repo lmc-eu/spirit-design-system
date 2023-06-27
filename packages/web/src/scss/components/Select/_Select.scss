@@ -70,7 +70,7 @@ $_field-name: 'Select';
 }
 
 .Select__validationText,
-.Select > [data-spirit-element='validator_message'] {
+.Select > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
@@ -94,7 +94,7 @@ $_field-name: 'Select';
     color: theme.$icon-color-disabled;
 }
 
-:is(.Select--disabled, .Select.is-disabled) > :is(.Select__validationText, [data-spirit-element='validator_message']) {
+:is(.Select--disabled, .Select.is-disabled) > :is(.Select__validationText, [data-spirit-element='validation_text']) {
     @include form-fields-tools.validation-text-disabled();
 }
 

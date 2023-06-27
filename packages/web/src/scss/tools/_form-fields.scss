@@ -149,7 +149,7 @@
                 :is(
                     .#{$field-name}__validationText,
                     .#{$field-name}__validationText,
-                    [data-element='validator_message']
+                    [data-element='validation_text']
                 ) {
                 color: map.get($validation-state-value, validation-text-color);
             }
