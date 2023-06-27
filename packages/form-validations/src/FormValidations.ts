@@ -44,7 +44,7 @@ const defaultConfig: Config = {
   validationTextParentSelector: `[${DATA_ATTR_PREFIX}-validate]`,
   validationTextTag: 'div',
   validationTextClass: '',
-  dataElementMessage: 'validator_message',
+  dataElementMessage: 'validation_text',
 };
 
 type HTMLAttribute = {
