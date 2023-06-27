@@ -74,7 +74,7 @@ $_field-name: 'FileUploaderInput';
 }
 
 .FileUploaderInput__validationText,
-.FileUploaderInput > [data-element='validator_message'] {
+.FileUploaderInput > [data-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
@@ -103,7 +103,7 @@ $_field-name: 'FileUploaderInput';
 @include form-fields-tools.input-field-validation-states($_field-name); // 2.
 
 :is(.FileUploaderInput--disabled, .FileUploaderInput.is-disabled)
-    :is(.FileUploaderInput__validationText, [data-element='validator_message']) {
+    :is(.FileUploaderInput__validationText, [data-element='validation_text']) {
     @include form-fields-tools.validation-text-disabled();
 }
 
