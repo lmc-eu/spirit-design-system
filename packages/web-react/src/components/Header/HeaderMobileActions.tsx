@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { HeaderMobileActionsProps } from '../../types';
 import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from './constants';
-import { useHeaderModernStyleProps } from './useHeaderStyleProps';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
@@ -17,7 +17,7 @@ const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
     ...restProps
   } = props;
 
-  const { classProps } = useHeaderModernStyleProps();
+  const { classProps } = useHeaderStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
