@@ -1,27 +1,4 @@
-export * from './deprecated/Header';
-export * from './deprecated/HeaderActions';
-export * from './deprecated/HeaderBackdrop';
-export * from './deprecated/HeaderContext';
-export * from './deprecated/Navbar';
-export * from './deprecated/NavbarClose';
-export * from './deprecated/NavbarToggler';
-export * from './deprecated/Nav';
-export * from './deprecated/NavItem';
-export * from './deprecated/NavLink';
-export * from './deprecated/useHeaderStyleProps';
-export * from './deprecated/useHeader';
-export { default as Header } from './deprecated/Header';
-export { default as HeaderActions } from './deprecated/HeaderActions';
-export { default as HeaderBackdrop } from './deprecated/HeaderBackdrop';
-export { default as HeaderContext } from './deprecated/HeaderContext';
-export { default as Navbar } from './deprecated/Navbar';
-export { default as NavbarClose } from './deprecated/NavbarClose';
-export { default as NavbarToggler } from './deprecated/NavbarToggler';
-export { default as Nav } from './deprecated/Nav';
-export { default as NavItem } from './deprecated/NavItem';
-export { default as NavLink } from './deprecated/NavLink';
-
-export { default as HeaderModern } from './Header';
+export { default as Header } from './Header';
 export { default as HeaderButton } from './HeaderButton';
 export { default as HeaderDesktopActions } from './HeaderDesktopActions';
 export { default as HeaderDialog } from './HeaderDialog';
