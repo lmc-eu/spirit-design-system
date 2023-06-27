@@ -22,10 +22,8 @@ const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
 const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
 // @deprecated Will be renamed to `data-spirit-dismiss`
 const DATA_DISMISS_ATTRIBUTE = 'data-dismiss';
-// @deprecated Will be renamed to `validation_text`
-const DATA_ELEMENT_VALIDATION_TEXT = 'validator_message';
-// @deprecated Will be renamed to `data-spirit-element`
-const SELECTOR_VALIDATION_TEXT = `[data-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
+const DATA_ELEMENT_VALIDATION_TEXT = 'validation_text';
+const SELECTOR_VALIDATION_TEXT = `[data-spirit-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
 const DEFAULT_FILE_QUEUE_LIMIT = 10;
 const DEFAULT_ERROR_MESSAGES = {
@@ -207,7 +205,7 @@ class FileUploader extends BaseComponent {
 
   static createValidationTextElement() {
     const attachmentValidationTextElement = document.createElement('ul');
-    attachmentValidationTextElement.dataset.element = DATA_ELEMENT_VALIDATION_TEXT;
+    attachmentValidationTextElement.dataset.spiritElement = DATA_ELEMENT_VALIDATION_TEXT;
 
     return attachmentValidationTextElement;
   }
