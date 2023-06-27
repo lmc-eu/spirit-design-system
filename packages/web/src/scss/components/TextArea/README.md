@@ -116,7 +116,7 @@ Filled</textarea
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` with `data-element="validator_message"`
+render validation texts in a `<div>` with `data-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -129,7 +129,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
   <textarea id="textAreaJSValidation" class="TextArea__input" name="jsValidation" placeholder="Placeholder">
 Filled</textarea
   >
-  <div data-element="validator_message">Error message inserted by JS</div>
+  <div data-element="validation_text">Error message inserted by JS</div>
 </div>
 ```
 
