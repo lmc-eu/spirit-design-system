@@ -1,14 +1,34 @@
 # TextArea
 
 TextArea enables the user to add longer text to a form.
-It could be disabled or have a validation state with validation text.
+It could be disabled or have a validation state with optional validation text.
 The label could be hidden and show if the textarea is required.
 
+Basic example usage:
+
 ```jsx
-<TextArea id="example" name="example" validationState="danger" validationText="validation failed" isRequired />
+<TextArea id="textAreaDefault" label="Label" name="textAreaDefault" />
 ```
 
-## Textarea with Auto-Height Adjustment
+Advanced example usage:
+
+```jsx
+<TextArea
+  helperText="custom helper text"
+  id="textAreaAdvanced"
+  isRequired
+  label="Label"
+  maxlength="180"
+  name="textAreaAdvanced"
+  placeholder="Placeholder"
+  rows="10"
+  validationState="danger"
+  validationText="validation failed"
+  value="TextArea"
+/>
+```
+
+Example with Auto-Height Adjustment
 
 ```jsx
 <TextArea id="example" name="example" isAutoResizing autoResizingMaxHeight={500} />

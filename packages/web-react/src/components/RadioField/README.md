@@ -1,9 +1,28 @@
 # RadioField
 
-Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed. It has input and label. It can be disabled or have a validation state. The label can be hidden.
+Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed.
+It has input and label.
+It can be disabled or have a validation state.
+The label can be hidden.
+
+Basic example usage:
 
 ```jsx
-<RadioField id="example" name="example" label="Label text" isChecked />
+<RadioField id="radiofieldDefault" isChecked label="Label" name="radiofieldDefault" />
+```
+
+Advanced example usage:
+
+```jsx
+<RadioField
+  autocomplete="off"
+  helperText="Helper text"
+  id="radiofieldAdvanced"
+  isChecked
+  label="some label"
+  name="radiofieldAdvanced"
+  validationState="danger"
+/>
 ```
 
 ## Available props
