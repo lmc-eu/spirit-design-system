@@ -12,7 +12,6 @@
 {# Attributes #}
 {%- set _ariaControlsAttr = _target ? 'aria-controls="' ~ _target | escape('html_attr') ~ '"' : null -%}
 {%- set _dataTargetAttr = _target ? 'data-target="#' ~ _target | escape('html_attr') ~ '"' : null -%}
-{%- set _dataToggleAttr = _href ? null : 'data-toggle="tabs"' -%}
 {%- set _roleAttr = _href ? 'role="tab"' : null -%}
 {%- set _typeAttr = _href ? null : 'type="button"' -%}
 
@@ -30,7 +29,6 @@
     aria-selected="{{ _ariaSelected }}"
     {{ _ariaControlsAttr | raw }}
     {{ _dataTargetAttr | raw }}
-    {{ _dataToggleAttr | raw }}
     {{ _roleAttr | raw }}
     {{ _typeAttr | raw }}
 >
