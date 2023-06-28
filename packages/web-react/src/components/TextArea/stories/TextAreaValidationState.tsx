@@ -10,21 +10,21 @@ const Story = (props: unknown) => (
       label="Validation success"
       name="textarea-success"
       validationState="success"
-      validationText="Success validationText"
+      validationText="Validation text"
     />
     <TextArea
       id="textarea-warning"
       label="Validation warning"
       name="textarea-warning"
       validationState="warning"
-      validationText="Warning validationText"
+      validationText="Validation text"
     />
     <TextArea
       id="textarea-danger"
       label="Validation danger"
       name="textarea-danger"
       validationState="danger"
-      validationText={['Danger validationText', 'Second Danger validationText']}
+      validationText={['Validation text', 'Second validation text']}
     />
   </div>
 );

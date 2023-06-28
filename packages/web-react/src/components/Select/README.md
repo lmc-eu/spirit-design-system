@@ -1,7 +1,29 @@
 # Select
 
+This is React implementation of the [Select][select] component.
+
+Basic example usage:
+
 ```jsx
-<Select id="example" name="example" validationState="danger" validationText="validation failed" isRequired>
+<Select id="selectDefault" label="Label" name="selectDefault">
+  <option value="" selected>
+    Placeholder
+  </option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+</Select>
+```
+
+Advanced example usage:
+
+```jsx
+<Select
+  id="selectAdvanced"
+  name="selectAdvanced"
+  validationState="danger"
+  validationText="validation failed"
+  isRequired
+>
   <option value="" selected disabled>
     Placeholder
   </option>

@@ -8,8 +8,16 @@ The ValidationText subcomponent displays validation texts for Field components l
 import { ValidationText } from '@lmc-eu/spirit-web-react/components';
 ```
 
+Basic example usage:
+
 ```jsx
-<ValidationText elementType="div" className="TextField__validationText" validationText="This field is required" />
+<ValidationText className="Component__validationText" validationText="Danger validation text" />
+```
+
+Advanced example:
+
+```jsx
+<ValidationText className="Component__validationText" elementType="span" validationState="danger" />
 ```
 
 ## ValidationText

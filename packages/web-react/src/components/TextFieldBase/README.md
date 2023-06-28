@@ -2,9 +2,41 @@
 
 This is React implementation of the abstract component TextFieldBase for the purposes of the form components [TextField] and [TextArea].
 
+Basic example usage:
+
 ```jsx
-<TextFieldBase id="example" label="Example TextFieldBase" name="example" isRequired validationState="danger" validationText="validation failed" />
-<TextFieldBase id="example" label="Example multiline TextFieldBase" name="example" isMultiline isRequired validationState="danger" validationText="validation failed" />
+<TextFieldBase id="textFieldBaseDefault" label="Example TextFieldBase" name="textFieldBaseDefault" />
+```
+
+Advanced example usage:
+
+```jsx
+<TextFieldBase
+  helperText="custom helper text"
+  id="textFieldBaseAdvanced"
+  isMultiline
+  isRequired
+  label="Example multiline TextFieldBase"
+  name="textFieldBaseAdvanced"
+  placeholder="Placeholder"
+  validationState="danger"
+  validationText="validation failed"
+/>
+```
+
+TextFieldBase with password toggle (button to reveal the password):
+
+```jsx
+<TextFieldBase
+  hasPasswordToggle
+  id="textFieldBasePasswordToggle"
+  isRequired
+  label="Password"
+  name="textFieldBasePasswordToggle"
+  placeholder="Placeholder"
+  validationState="danger"
+  validationText="validation failed"
+/>
 ```
 
 ## Available props
