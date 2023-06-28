@@ -7,10 +7,10 @@ Basic example usage:
 ```html
 <TabList>
   <TabItem>
-    <TabLink isSelected id="pane1-tab" target="pane1">Item selected</TabLink>
+    <TabLink isSelected id="pane1-tab" target="pane1" data-toggle="tabs">Item selected</TabLink>
   </TabItem>
   <TabItem>
-    <TabLink id="pane2-tab" target="pane2">Item</TabLink>
+    <TabLink id="pane2-tab" target="pane2" data-toggle="tabs">Item</TabLink>
   </TabItem>
   <TabItem>
     <TabLink href="https://www.example.com">Item link</TabLink>
@@ -74,5 +74,21 @@ You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Check the [component's docs in the web package][web-js-api] to see the full documentation of the plugin.
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md#javascript-plugin-api
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [tabs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tabs
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
