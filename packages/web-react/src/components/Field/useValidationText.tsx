@@ -3,14 +3,14 @@ import { ValidationState, ValidationTextType } from '../../types';
 import ValidationText from './ValidationText';
 
 export interface UseValidationTextProps {
-  validationTextClassName?: string;
+  validationElementType?: ElementType;
   validationState?: ValidationState;
   validationText?: ValidationTextType;
-  validationElementType?: ElementType;
+  validationTextClassName?: string;
 }
 
 export const useValidationText = (props: UseValidationTextProps): ReactNode => {
-  const { validationTextClassName, validationState, validationText, validationElementType } = props;
+  const { validationElementType, validationState, validationText, validationTextClassName } = props;
 
   return useMemo(
     () =>
@@ -18,10 +18,10 @@ export const useValidationText = (props: UseValidationTextProps): ReactNode => {
       validationText && (
         <ValidationText
           className={validationTextClassName}
-          validationText={validationText}
           elementType={validationElementType}
+          validationText={validationText}
         />
       ),
-    [validationState, validationText, validationElementType, validationTextClassName],
+    [validationElementType, validationState, validationText, validationTextClassName],
   );
 };
