@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.48.0"></a>
+
+# [0.48.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.47.0...@lmc-eu/spirit-web-react@0.48.0) (2023-06-28)
+
+### Bug Fixes
+
+- **web-react:** Spinner reexport ([323be71](https://github.com/lmc-eu/spirit-design-system/commit/323be71))
+- **web-react:** Stacked Modal Composed closes both dialogs [#DS-740](https://github.com/lmc-eu/spirit-design-system/issues/DS-740) ([c9bfe42](https://github.com/lmc-eu/spirit-design-system/commit/c9bfe42))
+- **web-react:** TextArea's maxLength prop is part of Detailed type ([ed0e897](https://github.com/lmc-eu/spirit-design-system/commit/ed0e897))
+
+### Chores
+
+- **web-react:** Set correct path according to the base directory ([6ebd5a3](https://github.com/lmc-eu/spirit-design-system/commit/6ebd5a3))
+
+### Dependencies
+
+- Pin dependencies ([f6bac6d](https://github.com/lmc-eu/spirit-design-system/commit/f6bac6d))
+- Update all non-major dependencies ([ba23f3d](https://github.com/lmc-eu/spirit-design-system/commit/ba23f3d))
+- Update all non-major dependencies ([c70b276](https://github.com/lmc-eu/spirit-design-system/commit/c70b276))
+
+### Documentation
+
+- **web-react:** Add unit to the `maxFileSize` in the `FileUploaderInput` props ([743eedd](https://github.com/lmc-eu/spirit-design-system/commit/743eedd))
+
+### Features
+
+- **web-react:** Introduce Pagination component [#DS-329](https://github.com/lmc-eu/spirit-design-system/issues/DS-329) ([d719485](https://github.com/lmc-eu/spirit-design-system/commit/d719485))
+- **web-react:** Make the preferred height and max height of `ModalDialog` customizable [#DS-723](https://github.com/lmc-eu/spirit-design-system/issues/DS-723) ([8666aef](https://github.com/lmc-eu/spirit-design-system/commit/8666aef))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.47.0"></a>
 
 # [0.47.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.46.0...@lmc-eu/spirit-web-react@0.47.0) (2023-06-11)

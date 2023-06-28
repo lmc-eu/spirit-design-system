@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.49.0"></a>
+
+# [0.49.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.48.0...@lmc-eu/spirit-web@0.49.0) (2023-06-28)
+
+### Bug Fixes
+
+- **web:** FileUploader can pick files with special characters in name ([72ee61e](https://github.com/lmc-eu/spirit-design-system/commit/72ee61e)), closes [#DS-830](https://github.com/lmc-eu/spirit-design-system/issues/DS-830)
+- **web:** FileUploader cannot remove files with same names ([40fa603](https://github.com/lmc-eu/spirit-design-system/commit/40fa603)), closes [#DS-830](https://github.com/lmc-eu/spirit-design-system/issues/DS-830)
+- **web:** Keep the `name` attribute on `FileUploader` input when the file queue is empty [#DS-829](https://github.com/lmc-eu/spirit-design-system/issues/DS-829) ([f70ee93](https://github.com/lmc-eu/spirit-design-system/commit/f70ee93))
+- **web:** Match the name and function of the expand-on-mobile toggle in `Modal` ([f51f50d](https://github.com/lmc-eu/spirit-design-system/commit/f51f50d))
+- **web:** Modal close on mobile safari [#DS-824](https://github.com/lmc-eu/spirit-design-system/issues/DS-824) ([ff9226f](https://github.com/lmc-eu/spirit-design-system/commit/ff9226f))
+
+### Code Refactoring
+
+- **web:** Use inset in CSS instead of separate values ([f74a9ec](https://github.com/lmc-eu/spirit-design-system/commit/f74a9ec))
+
+### Dependencies
+
+- Update all non-major dependencies ([ba23f3d](https://github.com/lmc-eu/spirit-design-system/commit/ba23f3d))
+- Update all non-major dependencies ([c70b276](https://github.com/lmc-eu/spirit-design-system/commit/c70b276))
+
+### Documentation
+
+- **web:** Change example IDs of `Modal` demos to be descriptive and order independent ([2d27e41](https://github.com/lmc-eu/spirit-design-system/commit/2d27e41))
+- **web:** Minor improvements of `FileUploader` docs ([fc3fc78](https://github.com/lmc-eu/spirit-design-system/commit/fc3fc78))
+- **web:** Why is the event listener not passive by default ([1841edb](https://github.com/lmc-eu/spirit-design-system/commit/1841edb)), closes [#DS-824](https://github.com/lmc-eu/spirit-design-system/issues/DS-824)
+
+### Features
+
+- **web:** Make the preferred height and max height of `Modal` customizable [#DS-723](https://github.com/lmc-eu/spirit-design-system/issues/DS-723) ([cfe63fd](https://github.com/lmc-eu/spirit-design-system/commit/cfe63fd))
+- **web:** Redo accessibility features of Pagination ([d4598ac](https://github.com/lmc-eu/spirit-design-system/commit/d4598ac))
+- **web:** Reset default button styles for Pagination Link ([16281f9](https://github.com/lmc-eu/spirit-design-system/commit/16281f9))
+
+### Styles
+
+- **web:** Use `go to` as a correct word form ([a79ff22](https://github.com/lmc-eu/spirit-design-system/commit/a79ff22))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.48.0"></a>
 
 # [0.48.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.47.0...@lmc-eu/spirit-web@0.48.0) (2023-06-11)

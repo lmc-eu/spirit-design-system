@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.34.0"></a>
+
+# [1.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.33.0...@lmc-eu/spirit-web-twig@1.34.0) (2023-06-28)
+
+### Bug Fixes
+
+- **web-twig:** Do not render space after label [#DS-842](https://github.com/lmc-eu/spirit-design-system/issues/DS-842) ([3802b43](https://github.com/lmc-eu/spirit-design-system/commit/3802b43))
+
+### Documentation
+
+- **web-twig:** Add unit to the `maxFileSize` in the `FileUploaderInput` props ([ca3f0be](https://github.com/lmc-eu/spirit-design-system/commit/ca3f0be))
+- **web-twig:** Fix and improve `FileUploader` docs to be uniform with the `web` package ([d808489](https://github.com/lmc-eu/spirit-design-system/commit/d808489))
+- **web-twig:** Improve TextArea's documentation ([2972d4d](https://github.com/lmc-eu/spirit-design-system/commit/2972d4d))
+- **web-twig:** Use native attribute `maxlength` in the TextArea ([20821bc](https://github.com/lmc-eu/spirit-design-system/commit/20821bc))
+
+### Features
+
+- **web-twig:** Allow pass `translate` attribute to the `Heading` and `Text` components ([82f1395](https://github.com/lmc-eu/spirit-design-system/commit/82f1395))
+- **web-twig:** Introduce Pagination component [#DS-328](https://github.com/lmc-eu/spirit-design-system/issues/DS-328) ([0184842](https://github.com/lmc-eu/spirit-design-system/commit/0184842))
+- **web-twig:** Make the preferred height and max height of `ModalDialog` customizable [#DS-723](https://github.com/lmc-eu/spirit-design-system/issues/DS-723) ([1ccba92](https://github.com/lmc-eu/spirit-design-system/commit/1ccba92))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.33.0"></a>
 
 # [1.33.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.32.0...@lmc-eu/spirit-web-twig@1.33.0) (2023-06-11)
