@@ -19,17 +19,17 @@ It could be disabled or have a validation state. The label could be hidden and s
 | Prop name         | Type                                           | Default | Required | Description                    |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------ |
 | `id`              | `string`                                       | -       | yes      | Input and label identification |
-| `name`            | `string`                                       | -       | no       | Input name                     |
+| `isDisabled`      | `boolean`                                      | -       | no       | Whether is field disabled      |
+| `isChecked`       | `boolean`                                      | -       | no       | Whether is field checked       |
+| `isItem`          | `boolean`                                      | -       | no       | To render in [Item][item] mode |
+| `isLabelHidden`   | `boolean`                                      | -       | no       | Whether is label hidden        |
+| `isRequired`      | `boolean`                                      | -       | no       | Whether is field required      |
 | `label`           | `string`                                       | -       | no       | Label text                     |
-| `value`           | `string`                                       | -       | no       | Input value                    |
+| `name`            | `string`                                       | -       | no       | Input name                     |
+| `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | no       | Input element reference        |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state.      |
 | `validationText`  | `string`, `string[]`                           | -       | no       | Validation text                |
-| `isDisabled`      | `boolean`                                      | -       | no       | Whether is field disabled      |
-| `isItem`          | `boolean`                                      | -       | no       | To render in [Item][item] mode |
-| `isRequired`      | `boolean`                                      | -       | no       | Whether is field required      |
-| `isChecked`       | `boolean`                                      | -       | no       | Whether is field checked       |
-| `isLabelHidden`   | `boolean`                                      | -       | no       | Whether is label hidden        |
-| `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | no       | Input element reference        |
+| `value`           | `string`                                       | -       | no       | Input value                    |
 
 ## Custom component
 
