@@ -5,10 +5,41 @@ label, and an optional helper text. It supports several input types like `text` 
 `password` etc. It can be disabled or have a validation state. The label can be
 hidden or show if the input is required.
 
+Basic example usage:
+
 ```jsx
-<TextField id="example-text" name="example" validationState="danger" validationText="validation failed" isRequired />
-<TextField id="example-password" type="password" name="example" validationState="danger" validationText="validation failed" isRequired />
-<TextField id="example-password-toggle" name="example" validationState="danger" validationText="validation failed" hasPasswordToggle isRequired />
+<TextField id="textFieldDefault" name="textFieldDefault" />
+```
+
+Advanced example usage:
+
+```jsx
+<TextField
+  helperText="custom helper text"
+  id="textFieldAdvanced"
+  isRequired
+  label="Label"
+  name="textFieldAdvanced"
+  placeholder="Placeholder"
+  type="text"
+  validationState="danger"
+  validationText="validation failed"
+/>
+```
+
+TextField with password toggle (button to reveal the password):
+
+```jsx
+<TextField
+  hasPasswordToggle
+  id="textFieldPasswordToggle"
+  isRequired
+  label="Password"
+  name="textFieldPasswordToggle"
+  placeholder="Placeholder"
+  validationState="danger"
+  validationText="validation failed"
+/>
 ```
 
 ## Available props

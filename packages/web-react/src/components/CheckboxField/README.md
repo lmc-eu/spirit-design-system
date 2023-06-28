@@ -1,16 +1,27 @@
 # CheckboxField
 
-CheckboxField enables the user to check/uncheck choice. It has input, a label, and an optional helperText.
-It could be disabled or have a validation state. The label could be hidden and show if the input is required.
+CheckboxField enables the user to check/uncheck choice.
+It has input, a label, and an optional helperText.
+It could be disabled or have a validation state.
+The label could be hidden and show if the input is required.
+
+Basic example usage:
+
+```jsx
+<CheckboxField id="checkboxfieldDefault" label="Label" name="checkboxfieldDefault" />
+```
+
+Advanced example usage:
 
 ```jsx
 <CheckboxField
-  id="example"
-  name="example"
-  isRequired
+  id="checkboxfieldAdvanced"
   isChecked
+  isRequired
+  name="checkboxfieldAdvanced"
+  validationText="validation text"
   validationState="danger"
-  validationText="validation failed"
+  helperText="Helper text"
 />
 ```
 

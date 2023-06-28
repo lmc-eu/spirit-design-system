@@ -7,8 +7,8 @@ export interface ValidationTextProps extends ValidationTextProp {
 }
 
 const defaultProps = {
-  elementType: 'div',
   className: undefined,
+  elementType: 'div',
 };
 
 export const ValidationText = (props: ValidationTextProps) => {
