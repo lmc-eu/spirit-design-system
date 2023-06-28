@@ -210,7 +210,7 @@ class FileUploader extends BaseComponent {
 
     item!.appendChild(attachmentInputElement);
     item!.setAttribute('id', id);
-    itemName!.innerHTML = file.name;
+    itemName!.appendChild(document.createTextNode(file.name));
     itemButton!.setAttribute(DATA_DISMISS_ATTRIBUTE, id);
     item!.removeAttribute(TEMPLATE_ELEMENT_SLOT_NAME);
     itemName!.removeAttribute(TEMPLATE_ELEMENT_SLOT_NAME);
