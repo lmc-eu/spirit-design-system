@@ -14,18 +14,18 @@
 
 | Prop name         | Type                                           | Default | Required | Description                     |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `helperText`      | `string`                                       | -       | no       | Custom helper text              |
 | `children`        | `ReactNode`                                    | `null`  | no       | Content of the Select           |
 | `id`              | `string`                                       | -       | yes      | Select and label identification |
-| `name`            | `string`                                       | -       | no       | Select name                     |
+| `isDisabled`      | `boolean`                                      | -       | no       | Whether is field disabled       |
+| `isFluid`         | `boolean`                                      | -       | no       | Whether is field is fluid       |
+| `isLabelHidden`   | `boolean`                                      | -       | no       | Whether is label hidden         |
+| `isRequired`      | `boolean`                                      | -       | no       | Whether is field required       |
 | `label`           | `string`                                       | -       | no       | Label text                      |
-| `validationText`  | `string`, `string[]`                           | -       | no       | Validation text                 |
+| `name`            | `string`                                       | -       | no       | Select name                     |
 | `ref`             | `ForwardedRef<HTMLSelectElement>`              | -       | no       | Select element reference        |
 | `validationState` | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state        |
-| `isDisabled`      | `boolean`                                      | -       | no       | Whether is field disabled       |
-| `isRequired`      | `boolean`                                      | -       | no       | Whether is field required       |
-| `isLabelHidden`   | `boolean`                                      | -       | no       | Whether is label hidden         |
-| `isFluid`         | `boolean`                                      | -       | no       | Whether is field is fluid       |
-| `helperText`      | `string`                                       | -       | no       | Custom helper text              |
+| `validationText`  | `string`, `string[]`                           | -       | no       | Validation text                 |
 
 ## Icons Provider
 

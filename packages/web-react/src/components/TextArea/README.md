@@ -18,22 +18,22 @@ The label could be hidden and show if the textarea is required.
 
 | Prop name               | Type                                           | Default | Required | Description                                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
+| `autoResizingMaxHeight` | `number`                                       | `400`   | no       | Maximum field height with automatic height control                   |
+| `helperText`            | `string`                                       | -       | no       | Custom helper text                                                   |
 | `id`                    | `string`                                       | -       | yes      | Textarea and label identification                                    |
-| `name`                  | `string`                                       | -       | no       | Textarea name                                                        |
-| `label`                 | `string`                                       | -       | no       | Label text                                                           |
-| `placeholder`           | `string`                                       | -       | no       | Textarea placeholder                                                 |
-| `value`                 | `string`                                       | -       | no       | Textarea value                                                       |
-| `maxLength`             | `number`                                       | -       | no       | Maximum number of characters                                         |
-| `rows`                  | `number`                                       | -       | no       | Number of visible rows                                               |
-| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | no       | Textarea element reference                                           |
-| `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state                                             |
-| `validationText`        | `string`, `string[]`                           | -       | no       | Validation text                                                      |
 | `isAutoResizing`        | `boolean`                                      | -       | no       | Whether is field auto resizing which adjusts its height while typing |
 | `isDisabled`            | `boolean`                                      | -       | no       | Whether is field disabled                                            |
-| `isRequired`            | `boolean`                                      | -       | no       | Whether is field required                                            |
 | `isLabelHidden`         | `boolean`                                      | -       | no       | Whether is label hidden                                              |
-| `helperText`            | `string`                                       | -       | no       | Custom helper text                                                   |
-| `autoResizingMaxHeight` | `number`                                       | `400`   | no       | Maximum field height with automatic height control                   |
+| `isRequired`            | `boolean`                                      | -       | no       | Whether is field required                                            |
+| `label`                 | `string`                                       | -       | no       | Label text                                                           |
+| `maxLength`             | `number`                                       | -       | no       | Maximum number of characters                                         |
+| `name`                  | `string`                                       | -       | no       | Textarea name                                                        |
+| `placeholder`           | `string`                                       | -       | no       | Textarea placeholder                                                 |
+| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | no       | Textarea element reference                                           |
+| `rows`                  | `number`                                       | -       | no       | Number of visible rows                                               |
+| `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state                                             |
+| `validationText`        | `string`, `string[]`                           | -       | no       | Validation text                                                      |
+| `value`                 | `string`                                       | -       | no       | Textarea value                                                       |
 
 ## Custom component
 
