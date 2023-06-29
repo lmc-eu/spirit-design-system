@@ -5,27 +5,26 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    type="button"
     data-toggle="dropdown"
-    data-target="#DropdownDemo1"
+    data-target="#dropdownDefault"
+    class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#DropdownDemo1"
+    aria-controls="#dropdownDefault"
   >
-    toggle
+    Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottom Dropdown--left" id="DropdownDemo1">
+  <div class="Dropdown Dropdown--bottom Dropdown--left" id="dropdownDefault">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
       </svg>
       <span>Information</span>
     </a>
-    </a>
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#link" />
       </svg>
-      <span>More links</span>
+      <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
     </a>
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
@@ -43,38 +42,171 @@
 </div>
 ```
 
-## Usage with full-width
+## Usage with top-right align
 
 ```html
 <div class="DropdownWrapper">
   <button
-    type="button"
     data-toggle="dropdown"
-    data-target="#DropdownDemo2"
+    data-target="#dropdownTopRight"
+    class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#DropdownDemo2"
+    aria-controls="#dropdownTopRight"
   >
-    toggle
+    Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottom Dropdown--left Dropdown--fullWidth" id="DropdownDemo2">...</div>
+  <div class="Dropdown Dropdown--top Dropdown--right" id="dropdownTopRight">
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#info" />
+      </svg>
+      <span>Information</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#link" />
+      </svg>
+      <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#profile" />
+      </svg>
+      <span>Profile</span>
+    </a>
+    <a href="#" class="d-flex">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#help" />
+      </svg>
+      <span>Help</span>
+    </a>
+  </div>
 </div>
 ```
 
-## Responsive usage
+## Usage with disabled autoclose
 
 ```html
 <div class="DropdownWrapper">
   <button
-    type="button"
     data-toggle="dropdown"
-    data-target="#DropdownDemo2"
+    data-target="#dropdownDisabledAutoClose"
+    class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#DropdownDemo2"
+    aria-controls="#dropdownDisabledAutoClose"
+    data-autoclose="true"
   >
-    toggle
+    Button as anchor
   </button>
-  <div class="Dropdown Dropdown--fullWidth Dropdown--bottom Dropdown--left" id="DropdownDemo2" data-breakpoint="tablet">
-    ...
+  <div class="Dropdown Dropdown--bottom Dropdown--left" id="dropdownDisabledAutoClose">
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#info" />
+      </svg>
+      <span>Information</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#link" />
+      </svg>
+      <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#profile" />
+      </svg>
+      <span>Profile</span>
+    </a>
+    <a href="#" class="d-flex">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#help" />
+      </svg>
+      <span>Help</span>
+    </a>
+  </div>
+</div>
+```
+
+## Usage with full width mode `all`
+
+```html
+<div class="DropdownWrapper">
+  <button
+    data-toggle="dropdown"
+    data-target="#dropdownFullWidthModeAll"
+    class="Button Button--primary Button--medium"
+    aria-expanded="false"
+    aria-controls="#dropdownFullWidthModeAll"
+  >
+    Finibus quis imperdiet, semper imperdiet aliquam
+  </button>
+  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-fullwidthmode="all">
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#info" />
+      </svg>
+      <span>Information</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#link" />
+      </svg>
+      <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#profile" />
+      </svg>
+      <span>Profile</span>
+    </a>
+    <a href="#" class="d-flex">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#help" />
+      </svg>
+      <span>Help</span>
+    </a>
+  </div>
+</div>
+```
+
+## Usage with full width mode `mobile-only`
+
+```html
+<div class="DropdownWrapper">
+  <button
+    data-toggle="dropdown"
+    data-target="#dropdownFullWidthModeMobile"
+    class="Button Button--primary Button--medium"
+    aria-expanded="false"
+    aria-controls="#dropdownFullWidthModeMobile"
+  >
+    Finibus quis imperdiet, semper imperdiet aliquam
+  </button>
+  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeMobile" data-fullwidthmode="mobile-only">
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#info" />
+      </svg>
+      <span>Information</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#link" />
+      </svg>
+      <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+    </a>
+    <a href="#" class="d-flex mb-400">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#profile" />
+      </svg>
+      <span>Profile</span>
+    </a>
+    <a href="#" class="d-flex">
+      <svg width="24" height="24" aria-hidden="true" class="mr-400">
+        <use xlink:href="/icons/svg/sprite.svg#help" />
+      </svg>
+      <span>Help</span>
+    </a>
   </div>
 </div>
 ```
@@ -98,10 +230,9 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ## Dropdown
 
-| Attribute            | Type                          | Default | Required | Description                                                                                                                     |
-| -------------------- | ----------------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `data-breakpoint`    | `'mobile','tablet','desktop'` | -       | no       | [**DEPRECATED**][deprecated] in favor of `data-fullwidthmode`; Breakpoint to switch from the full-width to the auto-width mode. |
-| `data-fullwidthmode` | `'off','mobile-only','all'`   | -       | no       | Full-width mode                                                                                                                 |
+| Attribute            | Type                        | Default | Required | Description     |
+| -------------------- | --------------------------- | ------- | -------- | --------------- |
+| `data-fullwidthmode` | `'off','mobile-only','all'` | -       | no       | Full-width mode |
 
 ## JavaScript API
 
@@ -140,5 +271,3 @@ myDropdownEl.addEventListener('hidden.dropdown', () => {
 
 dropdown.hide();
 ```
-
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
