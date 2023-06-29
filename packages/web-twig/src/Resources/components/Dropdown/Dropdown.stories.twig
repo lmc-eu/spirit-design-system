@@ -2,28 +2,39 @@
 
 {% block content %}
 
-{# Dropdown Basic usage with default align #}
-{% include '@components/Dropdown/stories/DropdownBasic.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Basic usage with default align</h2>
 
-{# Dropdown Usage with align to top right #}
-{% include '@components/Dropdown/stories/DropdownTopRight.twig' %}
+        {% include '@components/Dropdown/stories/DropdownDefault.twig' %}
+    </section>
 
-{# Usage with disabled auto close #}
-{% include '@components/Dropdown/stories/DropdownDisabledAutoclose.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Usage with align to top right</h2>
 
-{# Longer content #}
-{% include '@components/Dropdown/stories/DropdownLongerContent.twig' %}
+        {% include '@components/Dropdown/stories/DropdownTopRight.twig' %}
+    </section>
 
-{# Longer content full width feature #}
-{% include '@components/Dropdown/stories/DropdownFullwidth.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Usage with disabled auto close</h2>
 
-{# Full-width dropdown on mobile #}
-{% include '@components/Dropdown/stories/DropdownFullwidthMobile.twig' %}
+        {% include '@components/Dropdown/stories/DropdownDisabledAutoclose.twig' %}
+    </section>
 
-{# Full-width mode 'all' #}
-{% include '@components/Dropdown/stories/DropdownFullwidthAll.twig' %}
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Longer content</h2>
 
-{# Full-width mode 'mobile-only' #}
-{% include '@components/Dropdown/stories/DropdownFullwidthMobileOnly.twig' %}
+        {% include '@components/Dropdown/stories/DropdownLongerContent.twig' %}
+    </section>
 
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Full-width mode 'all'</h2>
+
+        {% include '@components/Dropdown/stories/DropdownFullwidthAll.twig' %}
+    </section>
+
+    <section class="docs-Section">
+        <h2 class="docs-Heading">Full-width mode 'mobile-only'</h2>
+
+        {% include '@components/Dropdown/stories/DropdownFullwidthMobileOnly.twig' %}
+    </section>
 {% endblock %}
