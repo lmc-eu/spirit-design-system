@@ -4,7 +4,7 @@ import { useDropdownStyleProps, UseDropdownStyleProps } from '../useDropdownStyl
 
 describe('useDropdownStyleProps', () => {
   it('should return defaults', () => {
-    const props = { isOpen: true, isFullWidth: false, placement: 'bottom-left' } as UseDropdownStyleProps;
+    const props = { isOpen: true, placement: 'bottom-left' } as UseDropdownStyleProps;
     const { result } = renderHook(() => useDropdownStyleProps(props));
 
     expect(result.current.classProps.contentClassName).toBe('Dropdown is-open Dropdown--bottom Dropdown--left');
@@ -15,8 +15,6 @@ describe('useDropdownStyleProps', () => {
   it('should transfer additional props', () => {
     const props = {
       isOpen: false,
-      /** @deprecated Will be removed in the next major version. */
-      isFullWidth: false,
       placement: DropdownPlacements.BOTTOM_LEFT,
       transferProp: 'test',
     };
@@ -25,25 +23,9 @@ describe('useDropdownStyleProps', () => {
     expect(result.current.props).toEqual({ transferProp: 'test' });
   });
 
-  it('should set `fullWidth` class', () => {
-    const props = {
-      isOpen: false,
-      /** @deprecated Will be removed in the next major version. */
-      isFullWidth: true,
-      placement: DropdownPlacements.BOTTOM_LEFT,
-    };
-    const { result } = renderHook(() => useDropdownStyleProps(props));
-
-    expect(result.current.classProps.contentClassName).toBe(
-      'Dropdown Dropdown--fullWidth Dropdown--bottom Dropdown--left',
-    );
-  });
-
   it('should change placement class', () => {
     const props = {
       isOpen: false,
-      /** @deprecated Will be removed in the next major version. */
-      isFullWidth: false,
       placement: DropdownPlacements.TOP_RIGHT,
     };
     const { result } = renderHook(() => useDropdownStyleProps(props));
