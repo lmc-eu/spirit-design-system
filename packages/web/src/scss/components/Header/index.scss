@@ -1,12 +1,4 @@
 // Header
-// @deprecated Will be removed in the next major version.
-// Migration:
-// 1. Delete all *.deprecated.scss files.
-// 2. Delete all deprecated sections and deprecation notices in README.md.
-// 3. Delete all deprecated examples in index.html.
-@forward 'Header.deprecated';
-
-// Header
 @forward 'Header';
 @forward 'HeaderDesktopActions';
 @forward 'HeaderLink';
