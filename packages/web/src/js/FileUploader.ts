@@ -13,13 +13,19 @@ const IS_DRAGGABLE_CLASS_NAME = 'has-drag-and-drop';
 const IS_DRAGGING_CLASS_NAME = 'is-dragging';
 const DROP_ZONE_HIDDEN_CLASS_NAME = 'd-none';
 const DROP_ZONE_DISABLED_CLASS_NAME = 'is-disabled';
+const CLASS_NAME_ERROR = 'has-danger';
 const WRAPPER_ELEMENT_SELECTOR = '[data-spirit-element="wrapper"]';
 const INPUT_ELEMENT_SELECTOR = '[data-spirit-element="input"]';
 const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
 const DROP_ZONE_ELEMENT_SELECTOR = '[data-spirit-element="dropZone"]';
 const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
 const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
+// @deprecated Will be renamed to `data-spirit-dismiss`
 const DATA_DISMISS_ATTRIBUTE = 'data-dismiss';
+// @deprecated Will be renamed to `validation_text`
+const DATA_ELEMENT_VALIDATION_TEXT = 'validator_message';
+// @deprecated Will be renamed to `data-spirit-element`
+const SELECTOR_VALIDATION_TEXT = `[data-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
 const DEFAULT_FILE_QUEUE_LIMIT = 10;
 const errorMessages = {
@@ -105,19 +111,19 @@ class FileUploader extends BaseComponent {
 
   checkAllowedFileSize(file: File) {
     if (file.size > this.fileSizeLimit) {
-      throw new Error(errorMessages.errorMaxFileSize);
+      throw new Error(`${file.name}: ${errorMessages.errorMaxFileSize}`);
     }
   }
 
   checkFileQueueDuplicity(file: File) {
     if (this.fileQueue.has(this.getUpdatedFileName(file.name))) {
-      throw new Error(errorMessages.errorFileDuplicity);
+      throw new Error(`${file.name}: ${errorMessages.errorFileDuplicity}`);
     }
   }
 
   checkQueueLimit() {
     if (this.fileQueue.size >= this.fileQueueLimit) {
-      throw new Error(errorMessages.errorMaxUploadedFiles);
+      throw new Error(this.errors.errorMaxUploadedFiles);
     }
   }
 
@@ -187,6 +193,27 @@ class FileUploader extends BaseComponent {
     attachmentInputElement.setAttribute('hidden', '');
 
     return attachmentInputElement;
+  }
+
+  static createValidationTextElement() {
+    const attachmentValidationTextElement = document.createElement('ul');
+    attachmentValidationTextElement.dataset.element = DATA_ELEMENT_VALIDATION_TEXT;
+
+    return attachmentValidationTextElement;
+  }
+
+  getValidationTextElement(validationText: string) {
+    const validationTextItem = document.createElement('li');
+    validationTextItem.appendChild(document.createTextNode(validationText));
+
+    let validationTextElement = SelectorEngine.findOne(SELECTOR_VALIDATION_TEXT, this.wrapper);
+
+    if (!validationTextElement) {
+      validationTextElement = FileUploader.createValidationTextElement();
+    }
+    validationTextElement.appendChild(validationTextItem);
+
+    return validationTextElement;
   }
 
   getAttachmentElement(file: File, id: string): Element | null {
@@ -270,16 +297,16 @@ class FileUploader extends BaseComponent {
   addToQueue(file: File) {
     try {
       EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue });
+      this.checkAllowedFileType(file);
       this.checkAllowedFileSize(file);
       this.checkFileQueueDuplicity(file);
-      this.checkAllowedFileType(file);
       this.checkQueueLimit();
       this.appendToList(file);
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
       EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue });
     } catch (error) {
-      EventHandler.trigger(this.wrapper, EVENT_ERROR, error);
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: error.message });
     }
   }
 
@@ -291,6 +318,7 @@ class FileUploader extends BaseComponent {
       itemElement?.remove();
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
+      this.removeValidationWError();
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue });
     }
   }
@@ -313,8 +341,7 @@ class FileUploader extends BaseComponent {
     });
 
     if (overLimit) {
-      this.checkQueueLimit();
-      EventHandler.trigger(this.wrapper, EVENT_ERROR, new Error(errorMessages.errorMaxUploadedFiles));
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: this.errors.errorMaxUploadedFiles });
     }
 
     // This is forcing the callback to run last
@@ -379,13 +406,28 @@ class FileUploader extends BaseComponent {
     }
 
     if (overLimit) {
-      this.checkQueueLimit();
-      EventHandler.trigger(this.wrapper, EVENT_ERROR, new Error(errorMessages.errorMaxUploadedFiles));
+      EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: this.errors.errorMaxUploadedFiles });
     }
   }
 
+  removeValidationWError() {
+    SelectorEngine.findOne(SELECTOR_VALIDATION_TEXT, this.wrapper)?.remove();
+    this.wrapper.classList.remove(CLASS_NAME_ERROR);
+  }
+
+  onClick() {
+    this.removeValidationWError();
+  }
+
+  onValidationError(event: Event & { validationText: string }) {
+    this.wrapper.classList.add(CLASS_NAME_ERROR);
+    this.wrapper.append(this.getValidationTextElement(event.validationText));
+  }
+
   addEventListeners() {
+    EventHandler.on(this.inputElement, 'click', this.onClick.bind(this));
     EventHandler.on(this.inputElement, 'change', this.onChange.bind(this));
+    EventHandler.on(this.wrapper, EVENT_ERROR, this.onValidationError.bind(this));
 
     if (this.isDragAndDropSupported && this.dropZone) {
       EventHandler.on(this.dropZone, 'dragover', FileUploader.onDragOver.bind(this));
