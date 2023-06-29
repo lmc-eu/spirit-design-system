@@ -1,5 +1,5 @@
-// 1. Use `box-shadow` to ensure the state of the radio field is visible when printed.
-// 2. Make sure the state of the radio field is accessible in forced-colors mode (e.g. Windows High Contrast Mode) where
+// 1. Use `box-shadow` to ensure the state of the radio is visible when printed.
+// 2. Make sure the state of the radio is accessible in forced-colors mode (e.g. Windows High Contrast Mode) where
 //    our `box-shadow` indicator is removed.
 //
 // See: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
@@ -9,13 +9,13 @@
 @use '../../tools/form-fields' as form-fields-tools;
 @use 'theme';
 
-$_field-name: 'RadioField';
+$_field-name: 'Radio';
 
-.RadioField {
+.Radio {
     @include form-fields-tools.inline-field-root();
 }
 
-.RadioField__input {
+.Radio__input {
     @include form-fields-tools.inline-field-input();
 
     display: grid;
@@ -49,7 +49,7 @@ $_field-name: 'RadioField';
     }
 }
 
-.RadioField__helperText {
+.Radio__helperText {
     @include form-fields-tools.helper-text();
 
     margin-left: form-fields-theme.$spacing;
@@ -61,34 +61,34 @@ $_field-name: 'RadioField';
     theme.$input-box-shadow-y
 );
 
-.RadioField__label {
+.Radio__label {
     @include form-fields-tools.inline-field-label();
 
     margin-left: form-fields-theme.$spacing;
 }
 
-.RadioField__label--hidden {
+.Radio__label--hidden {
     @include form-fields-tools.label-hidden();
 }
 
-.RadioField__label--required::after {
+.Radio__label--required::after {
     @include form-fields-tools.label-required();
 }
 
-.RadioField--disabled {
+.Radio--disabled {
     @include form-fields-tools.inline-field-root-disabled();
 }
 
-.RadioField--disabled .RadioField__label {
+.Radio--disabled .Radio__label {
     @include form-fields-tools.label-disabled();
 }
 
-.RadioField--disabled .RadioField__helperText {
+.Radio--disabled .Radio__helperText {
     @include form-fields-tools.helper-text-disabled();
 }
 
-.RadioField--disabled > .RadioField__input,
-.RadioField > .RadioField__input:disabled {
+.Radio--disabled > .Radio__input,
+.Radio > .Radio__input:disabled {
     border-color: form-fields-theme.$input-color-disabled;
 
     &:checked {
@@ -96,31 +96,31 @@ $_field-name: 'RadioField';
     }
 }
 
-.RadioField--disabled > .RadioField__input::before,
-.RadioField > .RadioField__input:disabled::before {
+.Radio--disabled > .Radio__input::before,
+.Radio > .Radio__input:disabled::before {
     box-shadow: theme.$input-box-shadow-disabled; // 1.
 }
 
-.RadioField--item {
+.Radio--item {
     @include form-fields-tools.item();
 }
 
-.RadioField--item.RadioField--disabled {
+.Radio--item.Radio--disabled {
     @include form-fields-tools.item-disabled();
 }
 
 // stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
-.RadioField--item .RadioField__input:checked ~ .RadioField__label,
-.RadioField--item .RadioField__input:checked ~ .RadioField__text > .RadioField__label {
+.Radio--item .Radio__input:checked ~ .Radio__label,
+.Radio--item .Radio__input:checked ~ .Radio__text > .Radio__label {
     // stylelint-enable selector-max-class, selector-max-compound-selectors, selector-max-specificity
     @include form-fields-tools.item-label-checked();
 }
 
-.RadioField--item .RadioField__helperText {
+.Radio--item .Radio__helperText {
     @include form-fields-tools.item-helper-text();
 }
 
-.RadioField--item:not(.RadioField--disabled):hover .RadioField__helperText,
-.RadioField--item:not(.RadioField--disabled):active .RadioField__helperText {
+.Radio--item:not(.Radio--disabled):hover .Radio__helperText,
+.Radio--item:not(.Radio--disabled):active .Radio__helperText {
     color: inherit;
 }
