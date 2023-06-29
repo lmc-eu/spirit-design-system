@@ -16,7 +16,7 @@ Full width on mobile
 ```twig
 <DropdownWrapper>
   <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown id="DropdownExample" isFullWidth breakpoint="tablet">Dropdown Content</Dropdown>
+  <Dropdown id="DropdownExample" fullWidthMode="mobile-only">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
 
@@ -25,7 +25,7 @@ Advanced example usage with positioning:
 ```twig
 <DropdownWrapper>
   <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown elementType="span" id="DropdownExample" placement="top-right" isFullWidth>Dropdown Content</Dropdown>
+  <Dropdown elementType="span" id="DropdownExample" placement="top-right" fullWidthMode="all">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
 
@@ -35,9 +35,8 @@ Without lexer:
 {% embed "@spirit/dropdownWrapper.twig" %}
   {% block content %}
     {% embed "@spirit/dropdown.twig" with { props: {
-        breakpoint: 'tablet',
         elementType: 'span',
-        isFullWidth: true,
+        fullWidthMode: 'mobile-only',
         placement: 'top-right'
     }} %}
         {% block content %}
@@ -55,14 +54,12 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Prop name       | Type                                                     | Default       | Required | Description                                                                                            |
-| --------------- | -------------------------------------------------------- | ------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| `breakpoint`    | `string`                                                 | -             | no       | [**DEPRECATED**][deprecated] in favor of `fullWidthMode`; Breakpoint level [tablet,desktop]            |
-| `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                                                                                     |
-| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all]                                                                  |
-| `id`            | `string`                                                 | -             | yes      | Dropdown ID                                                                                            |
-| `isFullWidth`   | `boolean`                                                | `false`       | no       | [**DEPRECATED**][deprecated] in favor of `fullWidthMode`; Whether is component displayed in full width |
-| `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component                                                                             |
+| Prop name       | Type                                                     | Default       | Required | Description                           |
+| --------------- | -------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
+| `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                    |
+| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                                 | -             | yes      | Dropdown ID                           |
+| `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component            |
 
 You can add `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -91,5 +88,4 @@ descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
