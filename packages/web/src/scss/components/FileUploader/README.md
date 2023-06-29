@@ -241,9 +241,29 @@ own way.**
 </div>
 ```
 
+##### Localization
+
+There are four types of validation errors that have their default validation text.
+You can customize those validation texts using `data-spirit-message-*` that is passed to the components' root element.
+
+```html
+<div class="FileUploaderInput has-danger" data-spirit-element="wrapper" data-spirit-message-maxfilesize="Too big file!">
+  <!-- … -->
+</div>
+```
+
+Validation Errors:
+
+| Name                  | Usage                                      | Description                                 |
+| --------------------- | ------------------------------------------ | ------------------------------------------- |
+| File Duplicity        | `data-spirit-message-duplicity="…"`        | When file is already in the queue           |
+| Max File Size         | `data-spirit-message-maxfilesize="…"`      | When file size is over allowed limit        |
+| Max Uploaded Files    | `data-spirit-message-maxuploadedfiles="…"` | When the limit of uploaded files is reached |
+| Unsupported File Type | `data-spirit-message-unsupported="…"`      | When the file is of unsupported type        |
+
 ## FileUploaderList
 
-FileUploaderList is a simple wrapper which provides an accessible title and the
+FileUploaderList is a simple wrapper that provides an accessible title and the
 list semantics for the selected files.
 
 ```html

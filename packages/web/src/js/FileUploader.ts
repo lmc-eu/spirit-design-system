@@ -28,7 +28,7 @@ const DATA_ELEMENT_VALIDATION_TEXT = 'validator_message';
 const SELECTOR_VALIDATION_TEXT = `[data-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
 const DEFAULT_FILE_QUEUE_LIMIT = 10;
-const errorMessages = {
+const DEFAULT_ERROR_MESSAGES = {
   errorMaxFileSize: 'The file size limit has been exceeded',
   errorFileDuplicity: 'This file already exists in the queue',
   errorMaxUploadedFiles: 'You have exceeded the number of files allowed in the queue',
@@ -50,6 +50,7 @@ class FileUploader extends BaseComponent {
   isDragging: boolean;
   fileQueue: Map<string, File>;
   instanceUid: string;
+  errors: Record<string, string>;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -68,6 +69,15 @@ class FileUploader extends BaseComponent {
     this.queueLimitBehavior = this.wrapper?.dataset.spiritQueueLimitBehavior
       ? this.wrapper?.dataset.spiritQueueLimitBehavior
       : 'none';
+    this.errors = {};
+    this.errors.errorMaxFileSize =
+      this.element.dataset.spiritMessageMaxfilesize ?? DEFAULT_ERROR_MESSAGES.errorMaxFileSize;
+    this.errors.errorFileDuplicity =
+      this.element.dataset.spiritMessageDuplicity ?? DEFAULT_ERROR_MESSAGES.errorFileDuplicity;
+    this.errors.errorMaxUploadedFiles =
+      this.element.dataset.spiritMessageMaxuploadedfiles ?? DEFAULT_ERROR_MESSAGES.errorMaxUploadedFiles;
+    this.errors.errorFileNotSupported =
+      this.element.dataset.spiritMessageUnsupported ?? DEFAULT_ERROR_MESSAGES.errorFileNotSupported;
     this.inputName = this.inputElement?.name || 'attachment';
     this.isMultiple = this.inputElement?.multiple;
     this.accept = this.inputElement?.accept;
@@ -111,13 +121,13 @@ class FileUploader extends BaseComponent {
 
   checkAllowedFileSize(file: File) {
     if (file.size > this.fileSizeLimit) {
-      throw new Error(`${file.name}: ${errorMessages.errorMaxFileSize}`);
+      throw new Error(`${file.name}: ${this.errors.errorMaxFileSize}`);
     }
   }
 
   checkFileQueueDuplicity(file: File) {
     if (this.fileQueue.has(this.getUpdatedFileName(file.name))) {
-      throw new Error(`${file.name}: ${errorMessages.errorFileDuplicity}`);
+      throw new Error(`${file.name}: ${this.errors.errorFileDuplicity}`);
     }
   }
 
@@ -158,7 +168,7 @@ class FileUploader extends BaseComponent {
     }
 
     if (!isTypeSupported) {
-      throw new Error(`"${file.name}": ${errorMessages.errorFileNotSupported}`);
+      throw new Error(`"${file.name}": ${this.errors.errorFileNotSupported}`);
     }
   }
 
