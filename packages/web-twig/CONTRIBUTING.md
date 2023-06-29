@@ -71,7 +71,7 @@ These props are unescaped.
 For example we used this prefix for props that can accept HTML string.
 
 ```twig
-<CheckboxField UNSAFE_helperText="<strong>Help!</strong>" />
+<Checkbox UNSAFE_helperText="<strong>Help!</strong>" />
 ```
 
 ### Example of component definition

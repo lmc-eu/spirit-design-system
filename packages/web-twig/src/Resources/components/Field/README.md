@@ -1,6 +1,6 @@
 # ValidationText
 
-The validationText subcomponent displays validation texts for Field components like TextField, TextArea, CheckboxField, FileUploader, etc.
+The validationText subcomponent displays validation texts for Field components like TextField, TextArea, Checkbox, FileUploader, etc.
 
 Basic example usage:
 
