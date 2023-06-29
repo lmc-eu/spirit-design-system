@@ -24,7 +24,6 @@ Story.args = {
     </>
   ),
   elementType: 'ul',
-  hasSpacing: true,
 };
 
 export default Story;
