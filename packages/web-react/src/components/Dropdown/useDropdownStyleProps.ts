@@ -17,13 +17,11 @@ export interface UseDropdownStylePropsReturn {
 }
 
 export const useDropdownStyleProps = (
-  props: UseDropdownStyleProps = { isOpen: false, isFullWidth: false },
+  props: UseDropdownStyleProps = { isOpen: false },
 ): UseDropdownStylePropsReturn => {
-  const { isOpen, isFullWidth, placement = DropdownPlacements.BOTTOM_LEFT, ...modifiedProps } = props;
+  const { isOpen, placement = DropdownPlacements.BOTTOM_LEFT, ...modifiedProps } = props;
   const dropdownClass = useClassNamePrefix('Dropdown');
   const dropdownWrapperClass = `${dropdownClass}Wrapper`;
-  /** @deprecated Will be removed in the next major version. */
-  const dropdownFullWidthClass = `${dropdownClass}--fullWidth`;
   const dropdownBottomClass = `${dropdownClass}--bottom`;
   const dropdownTopClass = `${dropdownClass}--top`;
   const dropdownLeftClass = `${dropdownClass}--left`;
@@ -37,8 +35,6 @@ export const useDropdownStyleProps = (
     'top-right': classNames(dropdownTopClass, dropdownRightClass),
   };
   const dropdownClassName = classNames(dropdownClass, openClass, {
-    /** @deprecated Will be removed in the next major version. */
-    [dropdownFullWidthClass]: isFullWidth,
     [dropdownPlacementClassNames[placement]]: placement,
   });
   const triggerClassName = classNames(expandedClass);

@@ -1,15 +1,13 @@
 import React, { createElement, useRef, LegacyRef } from 'react';
 import classNames from 'classnames';
 import DropdownWrapper from './DropdownWrapper';
-import { useStyleProps, useDeprecationMessage } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { DropdownPlacements, SpiritDropdownProps } from '../../types';
 import { useDropdown } from './useDropdown';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 
 const defaultProps = {
-  /** @deprecated Will be removed in the next major version. */
-  isFullWidth: false,
   placement: DropdownPlacements.BOTTOM_LEFT,
   enableAutoClose: true,
 };
@@ -20,8 +18,6 @@ const Dropdown = (props: SpiritDropdownProps) => {
     children,
     renderTrigger,
     enableAutoClose,
-    /** @deprecated Will be removed in the next major version. */
-    breakpoint,
     fullWidthMode,
     onAutoClose,
     ...rest
@@ -32,7 +28,7 @@ const Dropdown = (props: SpiritDropdownProps) => {
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, breakpoint, fullWidthMode });
+  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, fullWidthMode });
 
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({
@@ -68,28 +64,6 @@ const Dropdown = (props: SpiritDropdownProps) => {
     },
     children,
   );
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!breakpoint,
-    componentName: 'Dropdown',
-    propertyProps: {
-      deprecatedName: 'breakpoint',
-      newName: 'fullWidthMode',
-    },
-  });
-
-  useDeprecationMessage({
-    method: 'property',
-    // use only to mark deprecation
-    // eslint-disable-next-line react/destructuring-assignment
-    trigger: !!props.isFullWidth,
-    componentName: 'Dropdown',
-    propertyProps: {
-      deprecatedName: 'isFullWidth',
-      newName: 'fullWidthMode',
-    },
-  });
 
   return (
     <DropdownWrapper>
