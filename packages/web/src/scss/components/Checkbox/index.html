@@ -1,0 +1,215 @@
+{{#> layout/plain }}
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Default</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxDefault" class="Checkbox">
+      <input type="checkbox" id="checkboxDefault" class="Checkbox__input" name="default" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxDefaultChecked" class="Checkbox">
+      <input type="checkbox" id="checkboxDefaultChecked" class="Checkbox__input" name="defaultChecked" checked />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Indeterminate</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxIndeterminate" class="Checkbox">
+      <input type="checkbox" id="checkboxIndeterminate" class="Checkbox__input" name="indeterminate" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Required</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxRequired" class="Checkbox">
+      <input type="checkbox" id="checkboxRequired" class="Checkbox__input" name="required" required />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label Checkbox__label--required">Checkbox Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Hidden Label</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxHiddenLabel" class="Checkbox">
+      <input type="checkbox" id="checkboxHiddenLabel" class="Checkbox__input" name="hiddenLabel" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label Checkbox__label--hidden">Checkbox Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Helper Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxHelperText" class="Checkbox">
+      <input type="checkbox" id="checkboxHelperText" class="Checkbox__input" name="helperText" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+        <span class="Checkbox__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxDisabled" class="Checkbox Checkbox--disabled">
+      <input type="checkbox" id="checkboxDisabled" class="Checkbox__input" name="disabled" disabled />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxDisabledHelperText" class="Checkbox Checkbox--disabled">
+      <input
+        type="checkbox"
+        id="checkboxDisabledHelperText"
+        class="Checkbox__input"
+        name="disabledWithText"
+        disabled
+        checked
+        required
+      />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label Checkbox__label--required">Checkbox Label</span>
+        <span class="Checkbox__helperText">Helper text</span>
+      </span>
+    </label>
+
+    <label for="checkboxDisabledIndeterminate" class="Checkbox Checkbox--disabled">
+      <input type="checkbox" id="checkboxDisabledIndeterminate" class="Checkbox__input" name="disabledIndeterminate" disabled />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Validation State with Validation Text</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxSuccess" class="Checkbox Checkbox--success">
+      <input type="checkbox" id="checkboxSuccess" class="Checkbox__input" name="success" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxWarning" class="Checkbox Checkbox--warning">
+      <input type="checkbox" id="checkboxWarning" class="Checkbox__input" name="warning" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+        <span class="Checkbox__validationText">Warning validation text</span>
+      </span>
+    </label>
+
+    <div class="Checkbox Checkbox--danger">
+      <input type="checkbox" id="checkboxDanger" class="Checkbox__input" name="danger" />
+      <div class="Checkbox__text">
+        <label for="checkboxDanger" class="Checkbox__label">Checkbox Label</label>
+        <ul class="Checkbox__validationText">
+          <li>First validation text</li>
+          <li>Second validation text</li>
+        </ul>
+      </div>
+    </div>
+
+    <label for="checkboxWarningHelperText" class="Checkbox Checkbox--warning">
+      <input type="checkbox" id="checkboxWarningHelperText" class="Checkbox__input" name="warningWithText" checked />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+        <span class="Checkbox__helperText">Helper text</span>
+        <span class="Checkbox__validationText">Warning validation text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Item</h2>
+
+  <div class="docs-FormFieldGrid">
+    <label for="checkboxItemDefault" class="Checkbox Checkbox--item">
+      <input type="checkbox" id="checkboxItemDefault" class="Checkbox__input" name="item" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxItemDefaultChecked" class="Checkbox Checkbox--item">
+      <input type="checkbox" id="checkboxItemDefaultChecked" class="Checkbox__input" name="itemChecked" checked />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxItemHelperText" class="Checkbox Checkbox--item">
+      <input type="checkbox" id="checkboxItemHelperText" class="Checkbox__input" name="itemWithText" />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+        <span class="Checkbox__helperText">Helper text</span>
+      </span>
+    </label>
+
+    <label for="checkboxItemDisabled" class="Checkbox Checkbox--item Checkbox--disabled">
+      <input type="checkbox" id="checkboxItemDisabled" class="Checkbox__input" name="itemDisabled" disabled />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label">Checkbox Label</span>
+      </span>
+    </label>
+
+    <label for="checkboxItemDisabledHelperText" class="Checkbox Checkbox--item Checkbox--disabled">
+      <input
+        type="checkbox"
+        id="checkboxItemDisabledHelperText"
+        class="Checkbox__input"
+        name="itemDisabledChecked"
+        disabled
+        checked
+        required
+      />
+      <span class="Checkbox__text">
+        <span class="Checkbox__label Checkbox__label--required">Checkbox Label</span>
+        <span class="Checkbox__helperText">Helper text</span>
+      </span>
+    </label>
+  </div>
+</section>
+
+<script>
+  const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];
+
+  window.addEventListener('DOMContentLoaded', function () {
+    inputs.forEach(function (input) {
+      const checkbox = document.getElementById(input);
+      checkbox.indeterminate = true;
+    });
+  });
+</script>
+
+{{/layout/plain }}

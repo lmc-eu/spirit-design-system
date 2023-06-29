@@ -119,7 +119,7 @@
                 > .#{$field-name}__input {
                 border-color: map.get($validation-state-value, input-border-color);
 
-                @if $field-name == 'CheckboxField' {
+                @if $field-name == 'Checkbox' {
                     &:indeterminate,
                     &:checked {
                         background-color: map.get($validation-state-value, input-border-color);
@@ -144,7 +144,7 @@
             }
         }
 
-        @if $field-name != 'CheckboxField' or $field-name != 'RadioField' {
+        @if $field-name != 'Checkbox' or $field-name != 'RadioField' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 :is(
                     .#{$field-name}__validationText,
