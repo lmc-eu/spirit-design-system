@@ -1,22 +1,22 @@
-# CheckboxField
+# Checkbox
 
-This is Twig implementation of the [CheckboxField] component.
+This is Twig implementation of the [Checkbox] component.
 
 Basic example usage:
 
 ```html
-<CheckboxField id="checkboxfieldDefault" label="Label" name="checkboxfieldDefault" />
+<Checkbox id="checkboxDefault" label="Label" name="checkboxDefault" />
 ```
 
 Advanced example usage:
 
 ```html
-<CheckboxField
-  id="checkboxfieldAdvanced"
+<Checkbox
+  id="checkboxAdvanced"
   isChecked
   isRequired
   validationText="validation text"
-  name="checkboxfieldAdvanced"
+  name="checkboxAdvanced"
   validationState="danger"
   helperText="Helper text"
 />
@@ -25,10 +25,10 @@ Advanced example usage:
 Without lexer:
 
 ```twig
-{% embed "@spirit/checkboxField.twig" with { props: {
-    id: "checkboxfieldEmbed",
+{% embed "@spirit/checkbox.twig" with { props: {
+    id: "checkboxEmbed",
     label: "some label",
-    name: "checkboxfieldEmbed",
+    name: "checkboxEmbed",
     isRequired: "true",
     validationState: "danger",
     validationText: "validation text",
@@ -66,7 +66,7 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-[checkboxfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/CheckboxField
+[checkbox]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Checkbox
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
