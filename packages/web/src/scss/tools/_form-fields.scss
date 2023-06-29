@@ -126,7 +126,7 @@
                     }
                 }
 
-                @if $field-name == 'RadioField' {
+                @if $field-name == 'Radio' {
                     &::before {
                         background-color: map.get($validation-state-value, input-border-color);
                         box-shadow: inset $shadow-x $shadow-y map.get($validation-state-value, input-border-color);
@@ -144,7 +144,7 @@
             }
         }
 
-        @if $field-name != 'Checkbox' or $field-name != 'RadioField' {
+        @if $field-name != 'Checkbox' or $field-name != 'Radio' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 :is(
                     .#{$field-name}__validationText,
