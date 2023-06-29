@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.49.1"></a>
+
+## [0.49.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.49.0...@lmc-eu/spirit-web@0.49.1) (2023-06-29)
+
+### Bug Fixes
+
+- **web:** Escape attachment file name in FileUploader ([6142be3](https://github.com/lmc-eu/spirit-design-system/commit/6142be3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.49.0"></a>
 
 # [0.49.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.48.0...@lmc-eu/spirit-web@0.49.0) (2023-06-28)
