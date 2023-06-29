@@ -38,11 +38,6 @@ plugins.
 
 Or, feel free to write the controlling script yourself.
 
-### DEPRECATION NOTICE
-
-⚠️ The existing Header JavaScript plugin is deprecated and will be superseded
-by the Off-canvas plugin in the next major version.
-
 ## Accessibility Guidelines
 
 👉 The animation effect of this component is dependent on the
