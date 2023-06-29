@@ -15,15 +15,15 @@
 {%- set _validationState = props.validationState | default(null) -%}
 
 {# Class names #}
-{%- set _rootClassName = _spiritClassPrefix ~ 'RadioField' -%}
-{%- set _inputClassName = _spiritClassPrefix ~ 'RadioField__input' -%}
-{%- set _labelClassName = _spiritClassPrefix ~ 'RadioField__label' -%}
-{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'RadioField__label--hidden' : null -%}
-{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'RadioField--disabled' : null -%}
-{%- set _rootItemClassName = _isItem ? _spiritClassPrefix ~ 'RadioField--item' : null -%}
-{%- set _textClassName = _spiritClassPrefix ~ 'RadioField__text' -%}
-{%- set _helperTextClassName = _spiritClassPrefix ~ 'RadioField__helperText' -%}
-{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'RadioField--' ~ _validationState : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Radio' -%}
+{%- set _inputClassName = _spiritClassPrefix ~ 'Radio__input' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'Radio__label' -%}
+{%- set _labelHiddenClassName = _isLabelHidden ? _spiritClassPrefix ~ 'Radio__label--hidden' : null -%}
+{%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Radio--disabled' : null -%}
+{%- set _rootItemClassName = _isItem ? _spiritClassPrefix ~ 'Radio--item' : null -%}
+{%- set _textClassName = _spiritClassPrefix ~ 'Radio__text' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'Radio__helperText' -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'Radio--' ~ _validationState : null -%}
 
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
