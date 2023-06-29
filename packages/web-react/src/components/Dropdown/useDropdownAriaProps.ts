@@ -1,9 +1,7 @@
-import { Booleanish, ClickEvent, DropdownBreakpoint, DropdownFullWidthMode } from '../../types';
+import { Booleanish, ClickEvent, DropdownFullWidthMode } from '../../types';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';
-/** @deprecated Will be removed in the next major version. */
-const NAME_DATA_BREAKPOINT = 'data-breakpoint';
 const NAME_DATA_FULLWIDTHMODE = 'data-fullwidthmode';
 
 export enum fullWidthModeKeys {
@@ -18,9 +16,7 @@ export interface UseDropdownAriaPropsProps {
   isOpen: boolean;
   /** toggle callback */
   toggleHandler: (event: ClickEvent) => void;
-  /** breakpoint */
-  /** @deprecated Will be removed in the next major version. */
-  breakpoint: DropdownBreakpoint | undefined;
+  /** fullWidthMode */
   fullWidthMode: DropdownFullWidthMode | undefined;
 }
 
@@ -28,8 +24,6 @@ export interface UseDropdownAriaPropsReturn {
   /** content returned props */
   contentProps: {
     id: string;
-    /** @deprecated Will be removed in the next major version. */
-    [NAME_DATA_BREAKPOINT]?: DropdownBreakpoint | undefined;
     [NAME_DATA_FULLWIDTHMODE]?: keyof typeof fullWidthModeKeys | undefined;
   };
   /** trigger returned props */
@@ -41,7 +35,7 @@ export interface UseDropdownAriaPropsReturn {
 }
 
 export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropdownAriaPropsReturn => {
-  const { breakpoint, fullWidthMode, id, isOpen, toggleHandler } = props;
+  const { fullWidthMode, id, isOpen, toggleHandler } = props;
 
   const triggerProps = {
     id,
@@ -49,7 +43,7 @@ export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropd
     [NAME_ARIA_CONTROLS]: String(id),
     onClick: toggleHandler,
   };
-  const contentProps = { id, [NAME_DATA_BREAKPOINT]: breakpoint, [NAME_DATA_FULLWIDTHMODE]: fullWidthMode };
+  const contentProps = { id, [NAME_DATA_FULLWIDTHMODE]: fullWidthMode };
 
   return {
     contentProps,
