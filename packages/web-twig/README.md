@@ -68,7 +68,7 @@ All props that internally uses the [raw](https://twig.symfony.com/doc/3.x/filter
 This is considered a way how you can pass down HTML strings.
 
 ```twig
-<CheckboxField UNSAFE_helperText="<strong>Help!</strong>" />
+<Checkbox UNSAFE_helperText="<strong>Help!</strong>" />
 ```
 
 # Spirit Components
