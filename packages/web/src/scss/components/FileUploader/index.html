@@ -55,7 +55,7 @@
   <h2 class="docs-Heading">Input Multiple</h2>
 
   <!-- FileUploader: start -->
-  <div id="example_multiple" class="FileUploader" data-toggle="fileUploader">
+  <div id="example_multiple" class="FileUploader" data-toggle="fileUploader" data-spirit-message-maxfilesize="Too big file!">
 
     <!-- FileUploaderAttachment template: start -->
     <template data-spirit-snippet="item">
@@ -682,7 +682,7 @@
       <!-- FileUploaderAttachment template: end -->
 
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput" data-spirit-element="wrapper" data-file-queue-limit="2">
+      <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2">
         <label for="fileUploadInForm" class="FileUploaderInput__label">Label</label>
         <input type="file" id="fileUploadInForm" name="attachment10" class="FileUploaderInput__input" multiple data-spirit-element="input" />
         <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
