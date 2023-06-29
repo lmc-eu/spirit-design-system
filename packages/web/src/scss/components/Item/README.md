@@ -1,7 +1,7 @@
 # Item
 
 The Item component is used to display a single item in a list. Currently we support
-two types of item content: RadioField and CheckboxField. In order to unify and simplify
+two types of item content: RadioField and Checkbox. In order to unify and simplify
 API of these components and also to avoid repeating ourselves, we use Item as their modifier.
 
 So, to create an Item of RadioField content, you need to add `RadioField--item` modifier class.
@@ -13,13 +13,13 @@ So, to create an Item of RadioField content, you need to add `RadioField--item` 
 </label>
 ```
 
-And to create an Item of CheckboxField content, you need to add `CheckboxField--item` modifier class.
+And to create an Item of Checkbox content, you need to add `Checkbox--item` modifier class.
 
 ```html
-<label for="checkboxfieldItem" class="CheckboxField CheckboxField--item">
-  <input type="checkbox" id="checkboxfieldItem" class="CheckboxField__input" />
-  <span class="CheckboxField__text">
-    <span class="CheckboxField__label">Item</span>
+<label for="checkboxItem" class="Checkbox Checkbox--item">
+  <input type="checkbox" id="checkboxItem" class="Checkbox__input" />
+  <span class="Checkbox__text">
+    <span class="Checkbox__label">Item</span>
   </span>
 </label>
 ```

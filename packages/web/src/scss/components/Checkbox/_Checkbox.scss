@@ -4,29 +4,29 @@
 @use '../../tools/form-fields' as form-fields-tools;
 @use '../../tools/svg';
 
-$_field-name: 'CheckboxField';
+$_field-name: 'Checkbox';
 
-.CheckboxField {
+.Checkbox {
     @include form-fields-tools.inline-field-root();
 }
 
-.CheckboxField__text {
+.Checkbox__text {
     margin-left: form-fields-theme.$spacing;
 }
 
-.CheckboxField__label {
+.Checkbox__label {
     @include form-fields-tools.inline-field-label();
 }
 
-.CheckboxField__label--hidden {
+.Checkbox__label--hidden {
     @include form-fields-tools.label-hidden();
 }
 
-.CheckboxField__label--required::after {
+.Checkbox__label--required::after {
     @include form-fields-tools.label-required();
 }
 
-.CheckboxField__input {
+.Checkbox__input {
     @include form-fields-tools.inline-field-input();
 
     flex-shrink: 0;
@@ -51,69 +51,69 @@ $_field-name: 'CheckboxField';
     }
 }
 
-.CheckboxField__validationText,
-.CheckboxField > .CheckboxField__text > [data-element='validation_text'] {
+.Checkbox__validationText,
+.Checkbox > .Checkbox__text > [data-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
-.CheckboxField__helperText {
+.Checkbox__helperText {
     @include form-fields-tools.helper-text();
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name);
 
-.CheckboxField--disabled {
+.Checkbox--disabled {
     @include form-fields-tools.inline-field-root-disabled();
 }
 
-.CheckboxField--disabled .CheckboxField__label {
+.Checkbox--disabled .Checkbox__label {
     @include form-fields-tools.label-disabled();
 }
 
-.CheckboxField--disabled .CheckboxField__validationText {
+.Checkbox--disabled .Checkbox__validationText {
     @include form-fields-tools.validation-text-disabled();
 }
 
-.CheckboxField--disabled .CheckboxField__helperText {
+.Checkbox--disabled .Checkbox__helperText {
     @include form-fields-tools.helper-text-disabled();
 }
 
-.CheckboxField--disabled > .CheckboxField__input,
-.CheckboxField > .CheckboxField__input:disabled {
+.Checkbox--disabled > .Checkbox__input,
+.Checkbox > .Checkbox__input:disabled {
     @include form-fields-tools.input-disabled();
 }
 
-.CheckboxField--disabled > .CheckboxField__input:checked,
-.CheckboxField--disabled > .CheckboxField__input:indeterminate,
-.CheckboxField > .CheckboxField__input:disabled:checked,
-.CheckboxField > .CheckboxField__input:disabled:indeterminate {
+.Checkbox--disabled > .Checkbox__input:checked,
+.Checkbox--disabled > .Checkbox__input:indeterminate,
+.Checkbox > .Checkbox__input:disabled:checked,
+.Checkbox > .Checkbox__input:disabled:indeterminate {
     background-color: form-fields-theme.$input-color-disabled;
 }
 
-.CheckboxField--item {
+.Checkbox--item {
     @include form-fields-tools.item();
 }
 
-.CheckboxField--item.CheckboxField--disabled {
+.Checkbox--item.Checkbox--disabled {
     @include form-fields-tools.item-disabled();
 }
 
 // stylelint-disable-next-line selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
-.CheckboxField--item .CheckboxField__input:checked ~ .CheckboxField__text > .CheckboxField__label {
+.Checkbox--item .Checkbox__input:checked ~ .Checkbox__text > .Checkbox__label {
     @include form-fields-tools.item-label-checked();
 }
 
-.CheckboxField--item .CheckboxField__validationText {
+.Checkbox--item .Checkbox__validationText {
     @include form-fields-tools.item-validation-text();
 }
 
-.CheckboxField--item .CheckboxField__helperText {
+.Checkbox--item .Checkbox__helperText {
     @include form-fields-tools.item-helper-text();
 }
 
-.CheckboxField--item:not(.CheckboxField--disabled):hover .CheckboxField__validationText,
-.CheckboxField--item:not(.CheckboxField--disabled):active .CheckboxField__validationText,
-.CheckboxField--item:not(.CheckboxField--disabled):hover .CheckboxField__helperText,
-.CheckboxField--item:not(.CheckboxField--disabled):active .CheckboxField__helperText {
+.Checkbox--item:not(.Checkbox--disabled):hover .Checkbox__validationText,
+.Checkbox--item:not(.Checkbox--disabled):active .Checkbox__validationText,
+.Checkbox--item:not(.Checkbox--disabled):hover .Checkbox__helperText,
+.Checkbox--item:not(.Checkbox--disabled):active .Checkbox__helperText {
     color: inherit;
 }
