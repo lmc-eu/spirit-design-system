@@ -1,21 +1,21 @@
-# RadioField
+# Radio
 
-This is Twig implementation of the [RadioField] component.
+This is Twig implementation of the [Radio] component.
 
 Basic example usage:
 
 ```html
-<RadioField id="radiofieldDefault" label="Label" name="radiofieldDefault" isChecked />
+<Radio id="radioDefault" label="Label" name="radioDefault" isChecked />
 ```
 
 Advanced example usage:
 
 ```html
-<RadioField
-  id="radiofieldAdvanced"
+<Radio
+  id="radioAdvanced"
   label="some label"
   isChecked
-  name="radiofieldAdvanced"
+  name="radioAdvanced"
   validationState="danger"
   helperText="Helper text"
   autocomplete="off"
@@ -25,10 +25,10 @@ Advanced example usage:
 Without lexer:
 
 ```twig
-{% embed "@spirit/radioField.twig" with { props: {
-    id: "radiofieldEmbed",
+{% embed "@spirit/radio.twig" with { props: {
+    id: "radioEmbed",
     label: "some label",
-    name: "radiofieldEmbed",
+    name: "radioEmbed",
     isChecked: "true",
     validationState: "danger",
     helperText: "Helper text",
@@ -59,7 +59,7 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-[radiofield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/RadioField
+[radio]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Radio
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
