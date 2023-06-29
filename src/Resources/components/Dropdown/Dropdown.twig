@@ -1,21 +1,17 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _breakpoint = props.breakpoint | default(null)  -%}
 {%- set _fullWidthMode = props.fullWidthMode | default(null)  -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _isFullWidth = props.isFullWidth | default(false) | boolprop -%}
 {%- set _placement = props.placement | default('bottom-left') -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Dropdown' -%}
-{%- set _fullWidthClassName = _isFullWidth ? _spiritClassPrefix ~ 'Dropdown--fullWidth' : null -%}
 {%- set _topClassName = _spiritClassPrefix ~ 'Dropdown--top' -%}
 {%- set _bottomClassName = _spiritClassPrefix ~ 'Dropdown--bottom' -%}
 {%- set _rightClassName = _spiritClassPrefix ~ 'Dropdown--right' -%}
 {%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
 
 {# Attributes #}
-{%- set _dataBreakpointAttr = _breakpoint ? 'data-breakpoint="' ~ _breakpoint | escape('html_attr') ~ '"' : null -%}
 {%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
@@ -26,21 +22,12 @@
     'top-left': [ _topClassName, _leftClassName ],
     'top-right': [ _topClassName, _rightClassName ]
 } -%}
-{%- set _classNames = [ _rootClassName, _fullWidthClassName, _styleProps.className ] | merge(_placementClassNames[_placement]) -%}
-
-{# Deprecations #}
-{% if _isFullWidth %}
-    {% deprecated 'Dropdown: The "isFullWidth" property is deprecated, use "fullWidthMode" instead.' %}
-{% endif %}
-{% if _breakpoint %}
-    {% deprecated 'Dropdown: The "breakpoint" property is deprecated, use "fullWidthMode" instead.' %}
-{% endif %}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_placementClassNames[_placement]) -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
-    {{ _dataBreakpointAttr | raw }}
     {{ _dataFullWidthModeAttr | raw }}
 >
     {%- block content %}{% endblock -%}
