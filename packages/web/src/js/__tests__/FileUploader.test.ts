@@ -30,6 +30,37 @@ describe('FileUploader', () => {
     expect(FileUploader.NAME).toBe('fileUploader');
   });
 
+  it('should generate unique id', () => {
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
+
+    expect(FileUploader.getUid()).toBe('xjylrx');
+
+    jest.spyOn(global.Math, 'random').mockRestore();
+  });
+
+  it('should generate updated filename', () => {
+    jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
+
+    fixtureEl.innerHTML = `
+      <div class="FileUploader" data-toggle="fileUploader">
+        <template data-spirit-snippet="item"></template>
+        <div class="FileUploaderInput" data-spirit-element="wrapper">
+          <label for="fileUploadMultiple" class="FileUploaderInput__label">Label</label>
+          <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone"></div>
+        </div>
+        <h3 id="attachments-multipleFile" hidden>Attachments</h3>
+        <ul class="FileUploaderList" aria-labelledby="attachments-multipleFile" data-spirit-element="list"></ul>
+      </div>
+    `;
+
+    const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+
+    const fileUploader = new FileUploader(fileUploaderEl);
+    expect(fileUploader.getUpdatedFileName('test')).toBe('file_xjylrx_test');
+
+    jest.spyOn(global.Math, 'random').mockRestore();
+  });
+
   it('isDraggable should be true', () => {
     expect(instance.isDragAndDropSupported).toBeTruthy();
   });
