@@ -12,16 +12,6 @@
     background-color: theme.$background;
     box-shadow: theme.$shadow;
 
-    /** @deprecated Will be removed in the next major version. */
-    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
-        &[data-breakpoint='#{$breakpoint-name}'] {
-            @include breakpoint.up(map.get(theme.$breakpoints, $breakpoint-name)) {
-                /* stylelint-disable-next-line declaration-no-important -- overriding js */
-                width: max-content !important;
-            }
-        }
-    }
-
     &[data-fullwidthmode='mobile-only'] {
         @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
             width: 100%;
@@ -31,13 +21,6 @@
     &[data-fullwidthmode='all'] {
         width: 100%;
     }
-}
-
-/** @deprecated Will be removed in the next major version. */
-.Dropdown[data-breakpoint],
-/** @deprecated Will be removed in the next major version. */
-.Dropdown--fullWidth {
-    width: 100%;
 }
 
 .Dropdown.is-open {
