@@ -145,7 +145,7 @@ describe('FileUploader', () => {
       </div>
     `;
 
-      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader')!);
+      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader') as HTMLDivElement);
     });
 
     afterEach(() => {
@@ -181,7 +181,7 @@ describe('FileUploader', () => {
       </div>
     `;
 
-      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader')!);
+      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader') as HTMLDivElement);
     });
 
     afterEach(() => {
@@ -204,6 +204,89 @@ describe('FileUploader', () => {
       await setTimeout(() => {
         expect(dropZone).toHaveClass('file-uploader__drop-zone d-none');
       }, 10);
+    });
+  });
+
+  describe('createValidationTextElement', () => {
+    it('should create a ul element with the correct data-element attribute', () => {
+      const validationElement = FileUploader.createValidationTextElement();
+
+      expect(validationElement instanceof HTMLUListElement).toBeTruthy();
+      expect(validationElement.getAttribute('data-element')).toBe('validator_message');
+    });
+  });
+
+  describe('getValidationTextElement', () => {
+    let fileUploader: FileUploader;
+
+    beforeEach(() => {
+      fixtureEl.innerHTML = `
+      <div class="file-uploader">
+        <div class="file-uploader__wrapper" data-spirit-element="wrapper" data-spirit-file-queue-limit="2" data-spirit-queue-limit-behavior="hide">
+          <ul class="file-uploader__list" data-spirit-element="list"></ul>
+          <input type="file" name="attachment" multiple data-spirit-element="input" />
+          <div class="file-uploader__drop-zone" data-spirit-element="dropZone">Drag and drop files here</div>
+        </div>
+      </div>
+    `;
+
+      fileUploader = new FileUploader(SelectorEngine.findOne('.file-uploader') as HTMLDivElement);
+    });
+
+    it('should create a new validation text element and append the validation text', () => {
+      const validationText = 'File size is too large';
+      const validationTextElement = fileUploader.getValidationTextElement(validationText);
+
+      expect(validationTextElement instanceof HTMLUListElement).toBeTruthy();
+      expect(validationTextElement.innerHTML).toContain(`<li>${validationText}</li>`);
+    });
+
+    it('should append the validation text to the existing validation text element', () => {
+      const validationText = 'Invalid file format';
+      const existingValidationElement = FileUploader.createValidationTextElement();
+      fileUploader.wrapper.appendChild(existingValidationElement);
+
+      const validationTextElement = fileUploader.getValidationTextElement(validationText);
+
+      expect(validationTextElement).toBe(existingValidationElement);
+      expect(validationTextElement.innerHTML).toContain(`<li>${validationText}</li>`);
+    });
+  });
+
+  describe('checkAllowedFileSize', () => {
+    it('should not throw an error when the file size is within the limit', () => {
+      const file = { name: 'test.txt', size: 1024 } as File; // 1024 bytes (1 KB)
+
+      instance.fileSizeLimit = 2048; // 2048 bytes (2 KB)
+
+      expect(() => instance.checkAllowedFileSize(file)).not.toThrow();
+    });
+
+    it('should throw an error when the file size exceeds the limit', () => {
+      const file = { name: 'large_file.jpg', size: 5120 } as File; // 5120 bytes (5 KB)
+      instance.fileSizeLimit = 3072; // 3072 bytes (3 KB)
+
+      expect(() => instance.checkAllowedFileSize(file)).toThrow(`${file.name}: ${instance.errors.errorMaxFileSize}`);
+    });
+  });
+
+  describe('checkFileQueueDuplicity', () => {
+    it('should not throw an error when the file does not exist in the file queue', () => {
+      const file = { name: 'file1.txt' } as File;
+      instance.fileQueue = new Map();
+      instance.getUpdatedFileName = jest.fn().mockReturnValue('file1.txt');
+
+      expect(() => instance.checkFileQueueDuplicity(file)).not.toThrow();
+    });
+
+    it('should throw an error when the file already exists in the file queue', () => {
+      const file = { name: 'file1.txt' } as File;
+      instance.fileQueue = new Map().set('file1_updated', ['file1.txt']);
+      instance.getUpdatedFileName = jest.fn().mockReturnValue('file1_updated');
+
+      expect(() => instance.checkFileQueueDuplicity(file)).toThrow(
+        `${file.name}: ${instance.errors.errorFileDuplicity}`,
+      );
     });
   });
 });
