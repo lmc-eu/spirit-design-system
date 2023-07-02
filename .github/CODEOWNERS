@@ -7,6 +7,6 @@
 
 /packages/design-tokens           @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
 /packages/icons                   @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
-/packages/web                     @literat @adamkudrna @crishpeen @tomassychra @lmc-eu/spirit-design-system
-/packages/web-react               @literat @tomassychra @lmc-eu/spirit-design-system
-/packages/web-twig                @literat @adamkudrna @crishpeen @tomassychra @lmc-eu/spirit-design-system
+/packages/web                     @literat @adamkudrna @crishpeen @pavelklibani @lmc-eu/spirit-design-system
+/packages/web-react               @literat @pavelklibani @lmc-eu/spirit-design-system
+/packages/web-twig                @literat @adamkudrna @crishpeen @pavelklibani @lmc-eu/spirit-design-system
