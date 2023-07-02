@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.50.0"></a>
+
+# [0.50.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.49.1...@lmc-eu/spirit-web@0.50.0) (2023-07-02)
+
+### Documentation
+
+- **web:** Rename FileUloader's validation message data element ([f5a76a8](https://github.com/lmc-eu/spirit-design-system/commit/f5a76a8))
+
+### Features
+
+- **web:** Allow FileUploader to customize error messages ([027f2aa](https://github.com/lmc-eu/spirit-design-system/commit/027f2aa))
+- **web:** Display validation text on FileUploader ([5b5bf30](https://github.com/lmc-eu/spirit-design-system/commit/5b5bf30))
+
+### Tests
+
+- **web:** Add missing tests for FileUploader methods ([42c0289](https://github.com/lmc-eu/spirit-design-system/commit/42c0289))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.49.1"></a>
 
 ## [0.49.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.49.0...@lmc-eu/spirit-web@0.49.1) (2023-06-29)

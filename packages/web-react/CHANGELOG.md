@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.48.2"></a>
+
+## [0.48.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.48.1...@lmc-eu/spirit-web-react@0.48.2) (2023-07-02)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.48.1"></a>
 
 ## [0.48.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.48.0...@lmc-eu/spirit-web-react@0.48.1) (2023-06-29)
