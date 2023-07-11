@@ -87,7 +87,6 @@ $_field-name: 'Select';
 .Select .Select__input:disabled,
 :is(.Select--disabled, .Select.is-disabled) .Select__input {
     @include form-fields-tools.box-field-disabled-input();
-    @include form-fields-tools.box-field-disabled-input-v1();
 }
 
 :is(.Select--disabled, .Select.is-disabled) .Select__icon {
