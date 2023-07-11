@@ -3,10 +3,10 @@
 {%- set _color = props.color | default('primary') -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _href = props.href -%}
-{%- set _isBlock = props.isBlock | default(false) | boolprop -%}
-{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
-{%- set _isLoading = props.isLoading | default(false) | boolprop -%}
-{%- set _isSquare = props.isSquare | default(false) | boolprop -%}
+{%- set _isBlock = props.isBlock | default(false) -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isLoading = props.isLoading | default(false) -%}
+{%- set _isSquare = props.isSquare | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Button' -%}

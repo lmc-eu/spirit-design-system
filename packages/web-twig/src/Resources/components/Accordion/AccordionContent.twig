@@ -3,7 +3,7 @@
 {%- set _id = props.id -%}
 {%- set _labelledById = props.labelledById -%}
 {%- set _parent = props.parent | default(null) -%}
-{%- set _isOpen = props.isOpen | default(false) | boolprop -%}
+{%- set _isOpen = props.isOpen | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Collapse' -%}

@@ -3,7 +3,7 @@
 {%- set _id = props.id -%}
 {%- set _elementType = (props.elementType is defined) ? props.elementType : 'h3' -%}
 {%- set _for = props.for -%}
-{%- set _isOpen = props.isOpen | default(false) | boolprop -%}
+{%- set _isOpen = props.isOpen | default(false) -%}
 {%- set _unsafeSlot = props.UNSAFE_slot | default(null) -%}
 
 {# Class names #}
