@@ -136,7 +136,8 @@ $_field-name: 'FileUploaderInput';
 // stylelint-enable selector-max-compound-selectors, selector-max-specificity
 
 .FileUploaderInput > .FileUploaderInput__input:disabled ~ .FileUploaderInput__dropZone {
-    @include form-fields-tools.box-field-disabled-input-v1();
+    border-color: form-fields-theme.$box-field-input-border-color-disabled;
+    background-color: form-fields-theme.$box-field-input-background-disabled;
 }
 // stylelint-enable selector-max-class
 

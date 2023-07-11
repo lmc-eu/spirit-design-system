@@ -170,14 +170,12 @@
 @mixin box-field-disabled-input() {
     @include input-disabled();
 
+    border-color: form-fields-theme.$box-field-input-border-color-disabled;
+    background-color: form-fields-theme.$box-field-input-background-disabled;
+
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-disabled;
     }
-}
-
-@mixin box-field-disabled-input-v1() {
-    border-color: form-fields-theme.$box-field-input-border-color-disabled;
-    background-color: form-fields-theme.$box-field-input-background-disabled;
 }
 
 @mixin item() {
