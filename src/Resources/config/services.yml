@@ -11,10 +11,6 @@ services:
     tags:
       - { name: twig.extension }
 
-  Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension:
-    tags:
-      - { name: twig.extension }
-
   Lmc\TwigXBundle\Compiler\ComponentLexer:
     arguments:
       - '@twig'
