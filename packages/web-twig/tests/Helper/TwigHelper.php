@@ -6,7 +6,6 @@ namespace Lmc\SpiritWebTwigBundle\Helper;
 
 use Lmc\SpiritWebTwigBundle\DependencyInjection\CompilerPass\OverrideServiceCompilerPass;
 use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
-use Lmc\SpiritWebTwigBundle\Twig\BoolpropExtension;
 use Lmc\SpiritWebTwigBundle\Twig\PropsExtension;
 use Lmc\SpiritWebTwigBundle\Twig\SvgExtension;
 use Lmc\TwigXBundle\Compiler\ComponentLexer;
@@ -45,9 +44,6 @@ class TwigHelper
 
         $propsExtension = new PropsExtension();
         $twig->addExtension($propsExtension);
-
-        $boolpropExtension = new BoolpropExtension();
-        $twig->addExtension($boolpropExtension);
 
         $svgExtension = new SvgExtension(new Logger());
         $twig->addExtension($svgExtension);
