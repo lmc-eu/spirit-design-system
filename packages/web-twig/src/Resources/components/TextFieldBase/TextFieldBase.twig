@@ -3,11 +3,11 @@
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _id = props.id -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
-{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
-{%- set _isFluid = props.isFluid | default(false) | boolprop -%}
-{%- set _isLabelHidden = props.isLabelHidden | default(false) | boolprop -%}
-{%- set _isMultiline = props.isMultiline | default(false) | boolprop -%}
-{%- set _isRequired = props.isRequired | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isFluid = props.isFluid | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
+{%- set _isMultiline = props.isMultiline | default(false) -%}
+{%- set _isRequired = props.isRequired | default(false) -%}
 {%- set _label = props.label | default(null) -%}
 {%- set _name = props.name | default(null) -%}
 {%- set _type = props.type | default('text') -%}
@@ -19,10 +19,10 @@
 {%- set _value = props.value | default(null) -%}
 
 {# Extended API for TextArea #}
-{%- set _isAutoResizing = props.isAutoResizing | default(false) | boolprop -%}
+{%- set _isAutoResizing = props.isAutoResizing | default(false) -%}
 
 {# Extended API for TextField #}
-{%- set _hasPasswordToggle = props.hasPasswordToggle | default(false) | boolprop -%}
+{%- set _hasPasswordToggle = props.hasPasswordToggle | default(false) -%}
 {%- set _inputWidth = props.inputWidth | default(null) -%}
 
 {# Class names #}

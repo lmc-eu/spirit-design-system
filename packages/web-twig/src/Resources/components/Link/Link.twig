@@ -2,8 +2,8 @@
 {%- set props = props | default([]) -%}
 {%- set _color = props.color | default('primary') -%}
 {%- set _href = props.href -%}
-{%- set _isDisabled = props.isDisabled | default(false) | boolprop -%}
-{%- set _isUnderlined = props.isUnderlined | default(false) | boolprop -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isUnderlined = props.isUnderlined | default(false) -%}
 
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
