@@ -1,10 +1,10 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _hasEndDivider = props.hasEndDivider | default(false) | boolprop -%}
-{%- set _hasIntermediateDividers = props.hasIntermediateDividers | default(false) | boolprop -%}
-{%- set _hasSpacing = props.hasSpacing | default(false) | boolprop -%}
-{%- set _hasStartDivider = props.hasStartDivider | default(false) | boolprop -%}
+{%- set _hasEndDivider = props.hasEndDivider | default(false) -%}
+{%- set _hasIntermediateDividers = props.hasIntermediateDividers | default(false) -%}
+{%- set _hasSpacing = props.hasSpacing | default(false) -%}
+{%- set _hasStartDivider = props.hasStartDivider | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Stack' -%}
