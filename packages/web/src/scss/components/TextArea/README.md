@@ -158,30 +158,6 @@ Filled</textarea
 </div>
 ```
 
-### Feature flag to enable a new disabled style
-
-⚠️ This feature flag is only temporary and will be removed in version 1. The new disabled style will be made default.
-
-To enable a new disabled style, add the feature class `spirit-v1-box-field-disabled` to a parent element.
-The preferred one is the `body` element because this way it will affect all TextArea components everywhere.
-
-```html
-<body class="spirit-v1-box-field-disabled">
-  ...
-  <div class="TextArea TextArea--disabled">
-    <label for="textAreaDisabledV1" class="TextArea__label">Label</label>
-    <textarea
-      id="textAreaDisabledV1"
-      class="TextArea__input"
-      name="disabled"
-      placeholder="Placeholder"
-      disabled
-    ></textarea>
-  </div>
-  ...
-</body>
-```
-
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
