@@ -2,7 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
 {%- set _id = props.id | default(null) -%}
-{%- set _isDismissible = props.isDismissible | default(false) | boolprop -%}
+{%- set _isDismissible = props.isDismissible | default(false) -%}
 {%- set _placement = props.placement | default('bottom') -%}
 
 {# Class names #}

@@ -53,7 +53,7 @@ The `false` value is never passed and is treated as empty/null, so the prop will
 Do not use:
 
 ```twig
-{%- set _ariaHidden = props.ariaHidden | default(true) | boolprop -%}
+{%- set _ariaHidden = props.ariaHidden | default(true) -%}
 ```
 
 Instead use:
