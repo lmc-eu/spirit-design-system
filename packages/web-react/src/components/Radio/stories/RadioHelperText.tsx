@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory } from '@storybook/react';
-import RadioField from '../RadioField';
-import { SpiritRadioFieldProps } from '../../../types';
+import Radio from '../Radio';
+import { SpiritRadioProps } from '../../../types';
 
-const Story: ComponentStory<typeof RadioField> = (args: SpiritRadioFieldProps) => <RadioField {...args} />;
+const Story: ComponentStory<typeof Radio> = (args: SpiritRadioProps) => <Radio {...args} />;
 
 Story.args = {
   id: 'example',

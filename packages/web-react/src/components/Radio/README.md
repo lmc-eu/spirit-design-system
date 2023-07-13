@@ -1,6 +1,6 @@
-# RadioField
+# Radio
 
-Use RadioField when you have a group of mutually exclusive choices and only one selection from the group is allowed.
+Use Radio when you have a group of mutually exclusive choices and only one selection from the group is allowed.
 It has input and label.
 It can be disabled or have a validation state.
 The label can be hidden.
@@ -8,19 +8,19 @@ The label can be hidden.
 Basic example usage:
 
 ```jsx
-<RadioField id="radiofieldDefault" isChecked label="Label" name="radiofieldDefault" />
+<Radio id="radioDefault" isChecked label="Label" name="radioDefault" />
 ```
 
 Advanced example usage:
 
 ```jsx
-<RadioField
+<Radio
   autocomplete="off"
   helperText="Helper text"
-  id="radiofieldAdvanced"
+  id="radioAdvanced"
   isChecked
   label="some label"
-  name="radiofieldAdvanced"
+  name="radioAdvanced"
   validationState="danger"
 />
 ```
@@ -42,11 +42,11 @@ Advanced example usage:
 
 ## Custom component
 
-Text field classes are fabricated using `useRadioFieldStyleProps` hook. You can use it to create your own custom RadioField component.
+Text field classes are fabricated using `useRadioStyleProps` hook. You can use it to create your own custom Radio component.
 
 ```jsx
-const CustomRadioField = (props: SpiritRadioFieldProps): JSX.Element => {
-  const { classProps, props: modifiedProps } = useRadioFieldStyleProps(props);
+const CustomRadio = (props: SpiritRadioProps): JSX.Element => {
+  const { classProps, props: modifiedProps } = useRadioStyleProps(props);
 
   return (
     <label htmlFor={props.id} className={classProps.root}>
@@ -60,7 +60,7 @@ const CustomRadioField = (props: SpiritRadioFieldProps): JSX.Element => {
 };
 ```
 
-For detailed information see [RadioField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/RadioField/README.md) component
+For detailed information see [Radio](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Radio/README.md) component
 
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
