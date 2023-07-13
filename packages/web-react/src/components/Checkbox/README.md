@@ -1,6 +1,6 @@
-# CheckboxField
+# Checkbox
 
-CheckboxField enables the user to check/uncheck choice.
+Checkbox enables the user to check/uncheck choice.
 It has input, a label, and an optional helperText.
 It could be disabled or have a validation state.
 The label could be hidden and show if the input is required.
@@ -8,17 +8,17 @@ The label could be hidden and show if the input is required.
 Basic example usage:
 
 ```jsx
-<CheckboxField id="checkboxfieldDefault" label="Label" name="checkboxfieldDefault" />
+<Checkbox id="checkboxDefault" label="Label" name="checkboxDefault" />
 ```
 
 Advanced example usage:
 
 ```jsx
-<CheckboxField
-  id="checkboxfieldAdvanced"
+<Checkbox
+  id="checkboxAdvanced"
   isChecked
   isRequired
-  name="checkboxfieldAdvanced"
+  name="checkboxAdvanced"
   validationText="validation text"
   validationState="danger"
   helperText="Helper text"
@@ -44,11 +44,11 @@ Advanced example usage:
 
 ## Custom component
 
-Text field classes are fabricated using `useCheckboxFieldStyleProps` hook. You can use it to create your own custom CheckboxField component.
+Text field classes are fabricated using `useCheckboxStyleProps` hook. You can use it to create your own custom Checkbox component.
 
 ```jsx
-const CustomCheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
-  const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
+const CustomCheckbox = (props: SpiritCheckboxProps): JSX.Element => {
+  const { classProps, props: modifiedProps } = useCheckboxStyleProps(props);
 
   return (
     <label htmlFor={props.id} className={classProps.root}>
@@ -63,7 +63,7 @@ const CustomCheckboxField = (props: SpiritCheckboxFieldProps): JSX.Element => {
 };
 ```
 
-For detailed information see [CheckboxField](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/CheckboxField/README.md) component
+For detailed information see [Checkbox](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Checkbox/README.md) component
 
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation

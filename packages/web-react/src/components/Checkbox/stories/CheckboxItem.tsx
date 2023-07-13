@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory } from '@storybook/react';
-import CheckboxField from '../CheckboxField';
-import { SpiritCheckboxFieldProps } from '../../../types';
+import Checkbox from '../Checkbox';
+import { SpiritCheckboxProps } from '../../../types';
 
-const Story: ComponentStory<typeof CheckboxField> = (args: SpiritCheckboxFieldProps) => <CheckboxField {...args} />;
+const Story: ComponentStory<typeof Checkbox> = (args: SpiritCheckboxProps) => <Checkbox {...args} />;
 
 Story.args = {
   isChecked: false,
