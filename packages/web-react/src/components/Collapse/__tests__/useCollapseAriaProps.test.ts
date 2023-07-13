@@ -13,7 +13,7 @@ describe('useCollapseAriaProps', () => {
 
     expect(result.current.ariaProps).toBeDefined();
     expect(result.current.ariaProps.root).toBeDefined();
-    expect(result.current.ariaProps.root['data-breakpoint']).toBeUndefined();
+    expect(result.current.ariaProps.root['data-spirit-breakpoint']).toBeUndefined();
     expect(result.current.ariaProps.trigger['aria-expanded']).toBeTruthy();
     expect(result.current.ariaProps.trigger['aria-controls']).toBe(props.id);
     expect(result.current.props.id).toBe(props.id);
@@ -27,6 +27,6 @@ describe('useCollapseAriaProps', () => {
     } as SpiritCollapseProps;
     const { result } = renderHook(() => useCollapseAriaProps(props));
 
-    expect(result.current.ariaProps.root['data-breakpoint']).toBe('mobile');
+    expect(result.current.ariaProps.root['data-spirit-breakpoint']).toBe('mobile');
   });
 });

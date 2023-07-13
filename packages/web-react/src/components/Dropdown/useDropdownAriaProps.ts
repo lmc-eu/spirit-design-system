@@ -2,7 +2,7 @@ import { Booleanish, ClickEvent, DropdownFullWidthMode } from '../../types';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
 const NAME_ARIA_CONTROLS = 'aria-controls';
-const NAME_DATA_FULLWIDTHMODE = 'data-fullwidthmode';
+const NAME_DATA_FULLWIDTHMODE = 'data-spirit-fullwidthmode';
 
 export enum fullWidthModeKeys {
   'off' = 'off',
