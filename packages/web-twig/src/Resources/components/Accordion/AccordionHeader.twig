@@ -15,7 +15,7 @@
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _dataTargetAttr = _for ? 'data-target="' ~ _for | escape('html_attr') ~ '"' : null -%}
+{%- set _dataTargetAttr = _for ? 'data-spirit-target="' ~ _for | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -32,7 +32,7 @@
     <button
         type="button"
         class="{{ _toggleClassName }}"
-        data-toggle="collapse"
+        data-spirit-toggle="collapse"
         {{ _dataTargetAttr | raw }}
         aria-expanded="{{ _ariaExpanded }}"
         aria-controls="{{ _for }}"
