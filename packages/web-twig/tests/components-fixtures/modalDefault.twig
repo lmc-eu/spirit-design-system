@@ -1,6 +1,71 @@
-<Modal id="modal-example">
-  Modal content
+<Modal id="modal-example-mini" aria-label="Modal Title">
+    <ModalDialog>
+        <ModalHeader modalId="modal-example-mini" />
+        <ModalBody>
+            <p>Modal Body</p>
+        </ModalBody>
+        <ModalFooter>
+            <Button color="primary">
+                Submit
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
 </Modal>
-<Modal id="modal-example-dismiss" closeLabel="Dismiss">
-  Modal content
+
+<!-- Render with header title and rich footer -->
+<Modal id="modal-example" titleId="modal-example-title">
+    <ModalDialog>
+        <ModalHeader
+            closeLabel="Close form"
+            modalId="modal-example"
+            titleId="modal-example-title"
+        >
+            Title of the Modal
+        </ModalHeader>
+        <ModalBody>
+            <p>Modal body</p>
+        </ModalBody>
+        <ModalFooter alignmentX="left" description="Modal Footer description">
+            <Button color="primary">
+                Submit
+            </Button>
+            <Button color="secondary">
+                Cancel
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
+
+<!-- Render with all props -->
+<Modal id="modal-example-2" titleId="modal-example-2-title">
+    <ModalDialog
+        autocomplete="on"
+        elementType="form"
+        isExpandedOnMobile={false}
+        maxHeightFromTabletUp="700px"
+        method="dialog"
+        preferredHeightOnMobile="400px"
+        preferredHeightFromTabletUp="500px"
+        UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
+    >
+        <ModalHeader
+            closeLabel="Close form"
+            enableDismiss={false}
+            modalId="modal-example-2"
+            titleId="modal-example-2-title"
+        >
+            Title of the Modal
+        </ModalHeader>
+        <ModalBody>
+            <p>Modal body form</p>
+        </ModalBody>
+        <ModalFooter alignmentX="left" description="Modal Footer description">
+            <Button color="primary">
+                Submit
+            </Button>
+            <Button color="secondary">
+                Cancel
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
 </Modal>
