@@ -3,7 +3,7 @@
 Example usage with button:
 
 ```html
-<button type="button" role="button" data-toggle="collapse" data-target="CollapseExample">trigger</button>
+<button type="button" role="button" data-spirit-toggle="collapse" data-spirit-target="CollapseExample">trigger</button>
 <div id="CollapseExample" class="Collapse">
   <div class="Collapse__content">content</div>
 </div>
@@ -12,7 +12,10 @@ Example usage with button:
 Usage with link:
 
 ```html
-<a role="button" href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample"> trigger </a> ...
+<a role="button" href="javascript:void(0)" data-spirit-toggle="collapse" data-spirit-target="CollapseExample">
+  trigger
+</a>
+...
 ```
 
 Open on load example:
@@ -29,7 +32,7 @@ Responsive usage for tablet
 ```html
 ...
 <button ... class="d-tablet-none">trigger</button>
-<div id="CollapseExample" class="Collapse" data-breakpoint="tablet">
+<div id="CollapseExample" class="Collapse" data-spirit-breakpoint="tablet">
   <div class="Collapse__content">...</div>
 </div>
 ```
@@ -37,25 +40,25 @@ Responsive usage for tablet
 Hide button when collapse
 
 ```html
-<button ... data-more>trigger</button> ...
+<button ... data-spirit-more>trigger</button> ...
 ```
 
 ## Trigger attributes
 
-| Prop name       | Type      | Default    | Required | Description                         |
-| --------------- | --------- | ---------- | -------- | ----------------------------------- |
-| `data-toggle`   | `string`  | `collapse` | yes      | Iterable selector                   |
-| `data-target`   | `string`  | -          | yes      | Target selector                     |
-| `data-more`     | `boolean` | -          | no       | For hide on collapse as more button |
-| `aria-expanded` | `string`  | -          | no       | Aria expanded state (auto)          |
-| `aria-controls` | `string`  | -          | no       | Aria controls state (auto)          |
+| Prop name            | Type      | Default    | Required | Description                         |
+| -------------------- | --------- | ---------- | -------- | ----------------------------------- |
+| `data-spirit-toggle` | `string`  | `collapse` | yes      | Iterable selector                   |
+| `data-spirit-target` | `string`  | -          | yes      | Target selector                     |
+| `data-spirit-more`   | `boolean` | -          | no       | For hide on collapse as more button |
+| `aria-expanded`      | `string`  | -          | no       | Aria expanded state (auto)          |
+| `aria-controls`      | `string`  | -          | no       | Aria controls state (auto)          |
 
 ## Wrapper attributes
 
-| Prop name         | Type                   | Default | Required | Description                                                              |
-| ----------------- | ---------------------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint on which the collapsed content is forced to reveal \*         |
-| `data-parent`     | `string`               | -       | no       | A parent element selector that ensures that only one item is opened \*\* |
+| Prop name                | Type                   | Default | Required | Description                                                              |
+| ------------------------ | ---------------------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `data-spirit-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint on which the collapsed content is forced to reveal \*         |
+| `data-spirit-parent`     | `string`               | -       | no       | A parent element selector that ensures that only one item is opened \*\* |
 
 There can be several triggers, the same rules apply to each.
 

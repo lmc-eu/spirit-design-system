@@ -12,13 +12,13 @@
     background-color: theme.$background;
     box-shadow: theme.$shadow;
 
-    &[data-fullwidthmode='mobile-only'] {
+    &[data-spirit-fullwidthmode='mobile-only'] {
         @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
             width: 100%;
         }
     }
 
-    &[data-fullwidthmode='all'] {
+    &[data-spirit-fullwidthmode='all'] {
         width: 100%;
     }
 }

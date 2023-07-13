@@ -3,10 +3,10 @@ import EventHandler from '../dom/EventHandler';
 import SelectorEngine from '../dom/SelectorEngine';
 import { getElement, getTriggerOrTarget, Aim } from './Elements';
 
-type DataTriggerAttribute = 'data-toggle' | 'data-dismiss';
+type DataTriggerAttribute = 'data-spirit-toggle' | 'data-spirit-dismiss';
 
-const ATTRIBUTE_DATA_TOGGLE = `data-toggle`;
-const ATTRIBUTE_DATA_DISMISS = `data-dismiss`;
+const ATTRIBUTE_DATA_TOGGLE = `data-spirit-toggle`;
+const ATTRIBUTE_DATA_DISMISS = `data-spirit-dismiss`;
 
 const onClickHandler = (
   element: HTMLElement,

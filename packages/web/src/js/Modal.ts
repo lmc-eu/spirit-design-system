@@ -5,7 +5,7 @@ import { enableToggleTrigger, ScrollControl } from './utils';
 
 const NAME = 'modal';
 
-const MODAL_TOGGLE_SELECTOR = '[data-toggle="modal"]';
+const MODAL_TOGGLE_SELECTOR = '[data-spirit-toggle="modal"]';
 
 class Modal extends BaseComponent {
   isShown: boolean;
@@ -28,7 +28,7 @@ class Modal extends BaseComponent {
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
-    if (event.target === this.element || event.target.dataset.dismiss) {
+    if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
       this.hide(event);
@@ -89,8 +89,8 @@ class Modal extends BaseComponent {
     if (!event?.target?.dataset) {
       target = this.element;
       // hiding by clicking
-    } else if (event.target.dataset.target) {
-      target = SelectorEngine.findOne(event.target.dataset.target);
+    } else if (event.target.dataset.spiritTarget) {
+      target = SelectorEngine.findOne(event.target.dataset.spiritTarget);
       // hiding by keyboard
     } else {
       target = event.target;
@@ -116,7 +116,7 @@ class Modal extends BaseComponent {
     if (!relatedTarget) {
       // eslint-disable-next-line no-console
       console.warn(
-        '👻 Boo…! Target modal pane does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ',
+        '👻 Boo…! Target modal pane does not exist. Maybe you forgot to prefix the "data-spirit-target" selector with "#"? ',
       );
 
       return;

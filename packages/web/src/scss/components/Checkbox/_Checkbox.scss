@@ -52,7 +52,7 @@ $_field-name: 'Checkbox';
 }
 
 .Checkbox__validationText,
-.Checkbox > .Checkbox__text > [data-element='validation_text'] {
+.Checkbox > .Checkbox__text > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
