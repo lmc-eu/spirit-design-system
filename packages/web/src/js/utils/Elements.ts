@@ -24,12 +24,12 @@ type Aim = 'trigger' | 'target';
 
 const getTriggerOrTarget = (element?: SpiritElement, aim: Aim = 'target'): SpiritElement => {
   const trigger = element;
-  const target = trigger?.dataset?.target ? getElement(element.dataset.target) : null;
+  const target = trigger?.dataset?.spiritTarget ? getElement(element.dataset.spiritTarget) : null;
 
   return aim === 'target' ? target : trigger;
 };
 
-const getSelector = (element: HTMLElement | null) => element?.getAttribute('data-target');
+const getSelector = (element: HTMLElement | null) => element?.getAttribute('data-spirit-target');
 
 const getElementFromSelector = (element: HTMLElement | null): HTMLElement | null => {
   const selector = getSelector(element);

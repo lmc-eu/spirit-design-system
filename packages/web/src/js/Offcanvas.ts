@@ -34,7 +34,7 @@ class Offcanvas extends BaseComponent {
   // Using `Element | Window` - Property 'hasAttribute' does not exist on type 'EventTarget'.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClick(event: Event & { target: any }) {
-    if (event.target === this.element || event.target.dataset.dismiss) {
+    if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
       this.hide();
@@ -124,7 +124,7 @@ class Offcanvas extends BaseComponent {
     if (!targetElement) {
       // eslint-disable-next-line no-console
       console.warn(
-        '👻 Boo…! Target dialog does not exist. Maybe you forgot to prefix the "data-target" selector with "#"? ',
+        '👻 Boo…! Target dialog does not exist. Maybe you forgot to prefix the "data-spirit-target" selector with "#"? ',
       );
 
       return;

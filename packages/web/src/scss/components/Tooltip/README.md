@@ -44,7 +44,7 @@ improved accessibility.
 Available placements are: top, right, bottom, and left. To apply the desired
 placement, just pick a corresponding CSS modifier: `Tooltip--top`,
 `Tooltip--right`, `Tooltip--bottom`, or `Tooltip--left`. For JS-controlled
-positioning please use the `data-placement` attribute instead (more on that
+positioning please use the `data-spirit-placement` attribute instead (more on that
 below).
 
 ```html
@@ -111,7 +111,7 @@ kind of task Tooltip responds to interaction classes `is-hidden` and
 `is-visible`.
 
 ```html
-<button type="button" id="tooltip-trigger" data-target="#my-js-controlled-tooltip">Toggle tooltip</button>
+<button type="button" id="tooltip-trigger" data-spirit-target="#my-js-controlled-tooltip">Toggle tooltip</button>
 <div class="TooltipWrapper d-inline-block">
   <div aria-describedby="my-js-controlled-tooltip">I have an externally-triggered tooltip</div>
   <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--top is-hidden">
@@ -137,7 +137,7 @@ Tooltip can be made dismissible by following these steps:
 
 1. Add `Tooltip--dismissible` modifier class on Tooltip.
 2. Add closing button with `Tooltip__close` class.
-3. Bind JS plugin using `data-dismiss="tooltip"` and `data-target`
+3. Bind JS plugin using `data-spirit-dismiss="tooltip"` and `data-spirit-target`
    attributes on the closing button.
 
 ```html
@@ -146,8 +146,8 @@ Tooltip can be made dismissible by following these steps:
   <button
     type="button"
     class="Tooltip__close"
-    data-dismiss="tooltip"
-    data-target="#my-dismissible-tooltip"
+    data-spirit-dismiss="tooltip"
+    data-spirit-target="#my-dismissible-tooltip"
     aria-controls="my-dismissible-tooltip"
     aria-expanded="true"
   >
@@ -170,12 +170,12 @@ purpose.
 
 ### Placement
 
-When controlling Tooltip position with JavaScript, use `data-placement`
+When controlling Tooltip position with JavaScript, use `data-spirit-placement`
 attribute instead of CSS modifiers (`Tooltip--top` etc.) to set Tooltip
 placement. Supported values are `top`, `bottom`, `left`, and `right`.
 
 ```html
-<div id="my-advanced-tooltip" class="Tooltip" data-placement="top">
+<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
   Hello there!
   <span class="Tooltip__arrow"></span>
 </div>

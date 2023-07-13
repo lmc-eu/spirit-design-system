@@ -38,11 +38,13 @@ class Collapse extends BaseComponent {
 
   constructor(element: HTMLElement) {
     super(element);
-    this.target = this.element.dataset.target ? SelectorEngine.findOne(`#${this.element.dataset.target}`) : null;
+    this.target = this.element.dataset.spiritTarget
+      ? SelectorEngine.findOne(`#${this.element.dataset.spiritTarget}`)
+      : null;
     this.meta = {
-      id: this.element.dataset.target,
-      hideOnCollapse: !!(this.element.dataset.more || this.element.dataset.more === ''),
-      parent: this.target?.dataset.parent,
+      id: this.element.dataset.spiritTarget,
+      hideOnCollapse: !!(this.element.dataset.spiritMore || this.element.dataset.spiritMore === ''),
+      parent: this.target?.dataset.spiritParent,
       triggerParent: this.element && this.element.parentElement,
     };
     this.state = {

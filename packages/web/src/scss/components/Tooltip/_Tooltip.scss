@@ -123,30 +123,30 @@
 }
 
 // Controlled placement
-.Tooltip[data-placement] {
+.Tooltip[data-spirit-placement] {
     inset: unset; // 2.
 }
 
 // stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
-.Tooltip[data-placement='top'] {
+.Tooltip[data-spirit-placement='top'] {
     @extend .Tooltip--top;
 
     transform: translate(0, #{-1 * theme.$arrow-height}); // 3.
 }
 
-.Tooltip[data-placement='bottom'] {
+.Tooltip[data-spirit-placement='bottom'] {
     @extend .Tooltip--bottom;
 
     transform: translate(0, #{theme.$arrow-height}); // 3.
 }
 
-.Tooltip[data-placement='left'] {
+.Tooltip[data-spirit-placement='left'] {
     @extend .Tooltip--left;
 
     transform: translate(#{-1 * theme.$arrow-height}, 0); // 3.
 }
 
-.Tooltip[data-placement='right'] {
+.Tooltip[data-spirit-placement='right'] {
     @extend .Tooltip--right;
 
     transform: translate(#{theme.$arrow-height}, 0); // 3.
