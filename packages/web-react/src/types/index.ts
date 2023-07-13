@@ -15,7 +15,7 @@ export * from './link';
 export * from './modal';
 export * from './pagination';
 export * from './pill';
-export * from './radioField';
+export * from './radio';
 export * from './scrollView';
 export * from './select';
 export * from './shared';

@@ -1,13 +1,13 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { SpiritRadioFieldProps } from '../../types';
-import { useRadioFieldStyleProps } from './useRadioFieldStyleProps';
+import { SpiritRadioProps } from '../../types';
+import { useRadioStyleProps } from './useRadioStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_RadioField'] }] */
-const _RadioField = (props: SpiritRadioFieldProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
-  const { classProps, props: modifiedProps } = useRadioFieldStyleProps(props);
+/* eslint no-underscore-dangle: ['error', { allow: ['_Radio'] }] */
+const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
+  const { classProps, props: modifiedProps } = useRadioStyleProps(props);
   const { id, label, helperText, value, isDisabled, isChecked, onChange, ...restProps } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -32,6 +32,6 @@ const _RadioField = (props: SpiritRadioFieldProps, ref: ForwardedRef<HTMLInputEl
   );
 };
 
-export const RadioField = forwardRef<HTMLInputElement, SpiritRadioFieldProps>(_RadioField);
+export const Radio = forwardRef<HTMLInputElement, SpiritRadioProps>(_Radio);
 
-export default RadioField;
+export default Radio;
