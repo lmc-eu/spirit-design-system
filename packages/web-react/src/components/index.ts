@@ -2,7 +2,7 @@ export * from './Accordion';
 export * from './Alert';
 export * from './Breadcrumbs';
 export * from './Button';
-export * from './CheckboxField';
+export * from './Checkbox';
 export * from './Collapse';
 export * from './Container';
 export * from './Dialog';
