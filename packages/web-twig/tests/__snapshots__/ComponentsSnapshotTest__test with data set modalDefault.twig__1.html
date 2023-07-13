@@ -5,36 +5,86 @@
     </title>
   </head>
   <body>
-    <dialog class="Modal" id="modal-example">
-      <div class="Modal__content">
-        <div class="Modal__dialog">
-          <div class="Modal__header">
-            <button aria-controls="modal-example" aria-expanded="false" data-dismiss="modal" data-target="#modal-example" class="Button Button--tertiary Button--medium Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" id="a79dff7a255f69bbe6e39d594aa2275b" aria-hidden="true">
-            <path d="M18.3002 5.70997C17.9102 5.31997 17.2802 5.31997 16.8902 5.70997L12.0002 10.59L7.11022 5.69997C6.72022 5.30997 6.09021 5.30997 5.70021 5.69997C5.31021 6.08997 5.31021 6.71997 5.70021 7.10997L10.5902 12L5.70021 16.89C5.31021 17.28 5.31021 17.91 5.70021 18.3C6.09021 18.69 6.72022 18.69 7.11022 18.3L12.0002 13.41L16.8902 18.3C17.2802 18.69 17.9102 18.69 18.3002 18.3C18.6902 17.91 18.6902 17.28 18.3002 16.89L13.4102 12L18.3002 7.10997C18.6802 6.72997 18.6802 6.08997 18.3002 5.70997Z" fill="#132930">
-            </path></svg> <span class="accessibility-hidden">Close</span></button>
-          </div>
+    <dialog aria-label="Modal Title" class="Modal" id="modal-example-mini" aria-labelledby="">
+      <article class="ModalDialog ModalDialog--expandOnMobile">
+        <header class="ModalHeader">
+          <button aria-controls="modal-example-mini" aria-expanded="false" data-dismiss="modal" data-target="#modal-example-mini" class="Button Button--tertiary Button--medium Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" id="a79dff7a255f69bbe6e39d594aa2275b" aria-hidden="true">
+          <path d="M18.3002 5.70997C17.9102 5.31997 17.2802 5.31997 16.8902 5.70997L12.0002 10.59L7.11022 5.69997C6.72022 5.30997 6.09021 5.30997 5.70021 5.69997C5.31021 6.08997 5.31021 6.71997 5.70021 7.10997L10.5902 12L5.70021 16.89C5.31021 17.28 5.31021 17.91 5.70021 18.3C6.09021 18.69 6.72022 18.69 7.11022 18.3L12.0002 13.41L16.8902 18.3C17.2802 18.69 17.9102 18.69 18.3002 18.3C18.6902 17.91 18.6902 17.28 18.3002 16.89L13.4102 12L18.3002 7.10997C18.6802 6.72997 18.6802 6.08997 18.3002 5.70997Z" fill="#132930">
+          </path></svg> <span class="accessibility-hidden">Close</span></button>
+        </header>
 
-          <div class="Modal__body">
-            Modal content
-          </div>
+        <div class="ModalBody">
+          <p>
+            Modal Body
+          </p>
         </div>
-      </div>
+
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button class="Button Button--primary Button--medium" type="button">Submit</button>
+          </div>
+        </footer>
+      </article>
     </dialog>
+    <!-- Render with header title and rich footer -->
 
-    <dialog class="Modal" id="modal-example-dismiss">
-      <div class="Modal__content">
-        <div class="Modal__dialog">
-          <div class="Modal__header">
-            <button aria-controls="modal-example-dismiss" aria-expanded="false" data-dismiss="modal" data-target="#modal-example-dismiss" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
-            <use href="#a79dff7a255f69bbe6e39d594aa2275b">
-            </use></svg> <span class="accessibility-hidden">Dismiss</span></button>
-          </div>
+    <dialog class="Modal" id="modal-example" aria-labelledby="modal-example-title">
+      <article class="ModalDialog ModalDialog--expandOnMobile">
+        <header class="ModalHeader">
+          <h2 class="ModalHeader__title" id="modal-example-title">
+            Title of the Modal
+          </h2>
+          <button aria-controls="modal-example" aria-expanded="false" data-dismiss="modal" data-target="#modal-example" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
+          <use href="#a79dff7a255f69bbe6e39d594aa2275b">
+          </use></svg> <span class="accessibility-hidden">Close form</span></button>
+        </header>
 
-          <div class="Modal__body">
-            Modal content
-          </div>
+        <div class="ModalBody">
+          <p>
+            Modal body
+          </p>
         </div>
-      </div>
+
+        <footer class="ModalFooter ModalFooter--left">
+          <div class="ModalFooter__description">
+            Modal Footer description
+          </div>
+
+          <div class="ModalFooter__actions">
+            <button class="Button Button--primary Button--medium" type="button">Submit</button> <button class="Button Button--secondary Button--medium" type="button">Cancel</button>
+          </div>
+        </footer>
+      </article>
+    </dialog>
+    <!-- Render with all props -->
+
+    <dialog class="Modal" id="modal-example-2" aria-labelledby="modal-example-2-title">
+      <form autocomplete="on" method="dialog" class="ModalDialog" style="--modal-max-height-tablet: 700px;--modal-preferred-height-mobile: 400px;--modal-preferred-height-tablet: 500px;outline: 5px solid blue; outline-offset: -5px;">
+        <header class="ModalHeader">
+          <h2 class="ModalHeader__title" id="modal-example-2-title">
+            Title of the Modal
+          </h2>
+          <button aria-controls="modal-example-2" aria-expanded="false" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
+          <use href="#a79dff7a255f69bbe6e39d594aa2275b">
+          </use></svg> <span class="accessibility-hidden">Close form</span></button>
+        </header>
+
+        <div class="ModalBody">
+          <p>
+            Modal body form
+          </p>
+        </div>
+
+        <footer class="ModalFooter ModalFooter--left">
+          <div class="ModalFooter__description">
+            Modal Footer description
+          </div>
+
+          <div class="ModalFooter__actions">
+            <button class="Button Button--primary Button--medium" type="button">Submit</button> <button class="Button Button--secondary Button--medium" type="button">Cancel</button>
+          </div>
+        </footer>
+      </form>
     </dialog>
   </body>
 </html>
