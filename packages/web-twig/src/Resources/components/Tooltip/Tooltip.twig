@@ -15,7 +15,7 @@
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _dataTargetAttr = _id ? 'data-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _dataTargetAttr = _id ? 'data-spirit-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -33,7 +33,7 @@
         <button
             type="button"
             class="{{ _closeClassName }}"
-            data-dismiss="tooltip"
+            data-spirit-dismiss="tooltip"
             {{ _ariaControlsAttr | raw }}
             {{ _dataTargetAttr | raw }}
             aria-expanded="true"

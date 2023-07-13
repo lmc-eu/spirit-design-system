@@ -31,7 +31,7 @@ This is the main wrapper for the whole composition. It provides proper spacing f
 instance of the `FileUploader` JS class):
 
 ```twig
-<FileUploader data-toggle="fileUploader">
+<FileUploader data-spirit-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </FileUploader>
@@ -42,7 +42,7 @@ instance of the `FileUploader` JS class):
 By adding the `isFluid` attribute, FileUploader can take up all the available horizontal space:
 
 ```twig
-<FileUploader isFluid data-toggle="fileUploader">
+<FileUploader isFluid data-spirit-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -247,11 +247,11 @@ Long file names are automatically truncated.
 
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
-wrapper element that has the `data-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
+wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
 up the template and apply it on any attachments the user wants to upload.
 
 ```twig
-<FileUploader data-toggle="fileUploader">
+<FileUploader data-spirit-toggle="fileUploader">
   <template data-spirit-snippet="item">
     <FileUploaderAttachment />
   </template>
@@ -278,7 +278,7 @@ These attributes will be passed to the topmost HTML element of the component.
 This is how all subcomponents build up the complete FileUploader:
 
 ```twig
-<FileUploader data-toggle="fileUploader">
+<FileUploader data-spirit-toggle="fileUploader">
     <template data-spirit-snippet="item">
         <FileUploaderAttachment />
     </template>

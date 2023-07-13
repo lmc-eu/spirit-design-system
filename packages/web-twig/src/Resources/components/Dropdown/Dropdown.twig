@@ -12,7 +12,7 @@
 {%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
 
 {# Attributes #}
-{%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
+{%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-spirit-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
