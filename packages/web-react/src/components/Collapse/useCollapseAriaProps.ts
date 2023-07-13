@@ -2,7 +2,7 @@ import { CollapseProps, BaseCollapseProps, Booleanish } from '../../types';
 
 const ATTRIBUTE_ARIA_EXPANDED = 'aria-expanded';
 const ATTRIBUTE_ARIA_CONTROLS = 'aria-controls';
-const ATTRIBUTE_DATA_BREAKPOINT = 'data-breakpoint';
+const ATTRIBUTE_DATA_BREAKPOINT = 'data-spirit-breakpoint';
 
 export interface CollapseAria {
   ariaProps: {

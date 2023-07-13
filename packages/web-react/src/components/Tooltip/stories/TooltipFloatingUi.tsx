@@ -51,7 +51,7 @@ const Story: ComponentStory<typeof Tooltip> = () => {
               top: y ?? 0,
               left: x ?? 0,
             }}
-            data-placement={placement}
+            data-spirit-placement={placement}
             {...getFloatingProps()}
           >
             Hello there!
