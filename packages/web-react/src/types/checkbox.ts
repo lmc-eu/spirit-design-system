@@ -11,7 +11,7 @@ import { LabelProps } from './label';
 
 export type CheckboxElementBaseProps = SpiritInputElementPropsWithRef;
 
-export interface CheckboxFieldProps
+export interface CheckboxProps
   extends CheckboxElementBaseProps,
     ChildrenProps,
     LabelProps,
@@ -28,4 +28,4 @@ export interface CheckboxFieldProps
   label: string;
 }
 
-export interface SpiritCheckboxFieldProps extends CheckboxFieldProps {}
+export interface SpiritCheckboxProps extends CheckboxProps {}
