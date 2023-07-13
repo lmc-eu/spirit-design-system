@@ -1,50 +1,26 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _closeLabel = props.closeLabel | default('Close') -%}
 {%- set _id = props.id -%}
+{%- set _titleId = props.titleId | default(null) -%}
 
 {# Class names #}
-{%- set _bodyClassName = _spiritClassPrefix ~ 'Modal__body' -%}
-{%- set _contentClassName = _spiritClassPrefix ~ 'Modal__content' -%}
-{%- set _dialogClassName = _spiritClassPrefix ~ 'Modal__dialog' -%}
-{%- set _headerClassName = _spiritClassPrefix ~ 'Modal__header' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
-{# Deprecations #}
-{% deprecated 'Modal: The "Modal" component is deprecated, it will be replaced by implementation of "ModalComposed".' %}
-
 <dialog
     {{ mainProps(_mainPropsWithoutId) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr | raw }}
+    {{ _ariaLabelledbyAttr | raw }}
 >
-    <div class="{{ _contentClassName }}">
-        <div class="{{ _dialogClassName }}">
-            <div class="{{ _headerClassName }}">
-                <Button
-                aria-controls="{{ _id }}"
-                aria-expanded="false"
-                color="tertiary"
-                data-dismiss="modal"
-                data-target="{{ '#' ~ _id }}"
-                isSquare
-            >
-                <Icon name="close" aria-hidden="true" />
-                <span class="accessibility-hidden">{{ _closeLabel }}</span>
-            </Button>
-            </div>
-            <div class="{{ _bodyClassName }}">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
-    </div>
+    {% block content %}{% endblock %}
 </dialog>
