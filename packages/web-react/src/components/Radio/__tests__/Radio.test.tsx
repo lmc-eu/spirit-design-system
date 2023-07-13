@@ -6,44 +6,44 @@ import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import RadioField from '../RadioField';
+import Radio from '../Radio';
 
-describe('RadioField', () => {
-  classNamePrefixProviderTest(RadioField, 'RadioField');
+describe('Radio', () => {
+  classNamePrefixProviderTest(Radio, 'Radio');
 
-  itemPropsTest(RadioField);
+  itemPropsTest(Radio);
 
-  stylePropsTest(RadioField);
+  stylePropsTest(Radio);
 
-  restPropsTest(RadioField, 'input');
+  restPropsTest(Radio, 'input');
 
-  validationStatePropsTest(RadioField, 'RadioField--');
+  validationStatePropsTest(Radio, 'Radio--');
 
   it('should have label classname', () => {
-    const dom = render(<RadioField id="radiofield" label="label" />);
+    const dom = render(<Radio id="radio" label="label" />);
 
     const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
-    expect(element).toHaveClass('RadioField__label');
+    expect(element).toHaveClass('Radio__label');
   });
 
   it('should have hidden classname', () => {
-    const dom = render(<RadioField id="radiofield" label="hidden label" isLabelHidden />);
+    const dom = render(<Radio id="radio" label="hidden label" isLabelHidden />);
 
     const element = dom.container.querySelector('label > span > span:first-child') as HTMLElement;
-    expect(element).toHaveClass('RadioField__label--hidden');
+    expect(element).toHaveClass('Radio__label--hidden');
   });
 
   it('should have input classname', () => {
-    const dom = render(<RadioField id="radiofield" label="label" />);
+    const dom = render(<Radio id="radio" label="label" />);
 
     const element = dom.container.querySelector('input') as HTMLElement;
-    expect(element).toHaveClass('RadioField__input');
+    expect(element).toHaveClass('Radio__input');
   });
 
   it('should have helper text', () => {
-    const dom = render(<RadioField id="radiofield" label="Label" helperText="text" />);
+    const dom = render(<Radio id="radio" label="Label" helperText="text" />);
 
-    const element = dom.container.querySelector('.RadioField__helperText') as HTMLElement;
+    const element = dom.container.querySelector('.Radio__helperText') as HTMLElement;
     expect(element.textContent).toBe('text');
   });
 });

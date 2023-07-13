@@ -1,6 +1,6 @@
 # Item
 
-To implement Item component with content of `RadioField` or `Checkbox`,
+To implement Item component with content of `Radio` or `Checkbox`,
 you need to use directly these components with prop `isItem`.
 
 See `web` package [Item documentation][item-documentation] for more info.

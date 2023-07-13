@@ -1,7 +1,7 @@
 import React from 'react';
-import { RadioField } from '../RadioField';
+import { Radio } from '../Radio';
 import Props from '../../../../docs/stories/Props';
 
-const Story = () => <Props component={RadioField} />;
+const Story = () => <Props component={Radio} />;
 
 export default Story;
