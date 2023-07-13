@@ -5,13 +5,15 @@ This is the Twig implementation of the [ScrollView] component.
 Basic example usage:
 
 ```html
-<ScrollView data-toggle="scrollView">ScrollView</ScrollView>
+<ScrollView data-spirit-toggle="scrollView">ScrollView</ScrollView>
 ```
 
 Advanced example usage:
 
 ```html
-<ScrollView direction="horizontal" overflowDecorators="both" data-toggle="scrollView">ScrollView content</ScrollView>
+<ScrollView direction="horizontal" overflowDecorators="both" data-spirit-toggle="scrollView"
+  >ScrollView content</ScrollView
+>
 ```
 
 Without lexer:
@@ -20,7 +22,7 @@ Without lexer:
 {% embed "@spirit/scrollView.twig" with { props: {
     direction: 'horizontal',
     overflowDecorators: 'both',
-    data-toggle: 'scrollView'
+    data-spirit-toggle: 'scrollView'
 }} %}
     {% block content %}
         ScrollView content
