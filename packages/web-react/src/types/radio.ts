@@ -10,7 +10,7 @@ import { LabelProps } from './label';
 
 export type RadioElementBaseProps = SpiritInputElementPropsWithRef;
 
-export interface RadioFieldProps
+export interface RadioProps
   extends RadioElementBaseProps,
     ChildrenProps,
     LabelProps,
@@ -24,4 +24,4 @@ export interface RadioFieldProps
   label: string;
 }
 
-export interface SpiritRadioFieldProps extends RadioFieldProps {}
+export interface SpiritRadioProps extends RadioProps {}
