@@ -1,39 +1,32 @@
 # Modal
 
-## Composed Modal (DEPRECATED)
-
 This is Twig implementation of the [Modal] component.
 
 Modal is a composition of several subcomponents:
 
-- [ModalComposed](#modalcomposed)
+- [Modal](#modal)
   - [ModalDialog](#modaldialog)
     - [ModalHeader](#modalheader)
     - [ModalBody](#modalfooter)
     - [ModalFooter](#modalfooter)
 
-⚠️ **DEPRECATED:** The component `ModalComposed` — which is currently necessary to
-distinguish the composed version of Modal from the simple one — is deprecated
-and will be removed in the next major version: the composed Modal will supersede the
-[Simple Modal](#simple-modal-deprecated) variant.
+## Modal
 
-### ModalComposed
-
-#### Examples:
+### Examples:
 
 ```twig
-<ModalComposed id="modal-composed">
+<Modal id="modal-example">
   …
-</ModalComposed>
-<ModalComposed id="modal-composed" titleId="modal-composed-title">
+</Modal>
+<Modal id="modal-example" titleId="modal-example-title">
   …
-</ModalComposed>
+</Modal>
 ```
 
 👉 Please note the `titleId` attribute is linked to the title inside
 [Modal Header](#modalheader) and provides an accessible name for the dialog.
 
-#### API
+### API
 
 | Prop name | Type     | Default | Required | Description                        |
 | --------- | -------- | ------- | -------- | ---------------------------------- |
@@ -45,12 +38,12 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-### ModalDialog
+## ModalDialog
 
 ModalDialog is the actual dialog window, a place for the header, body, and
 footer of the dialog.
 
-#### Examples:
+### Examples:
 
 ```twig
 <ModalDialog>
@@ -62,7 +55,7 @@ footer of the dialog.
 </ModalDialog>
 ```
 
-#### API
+### API
 
 | Prop name                     | Type      | Default   | Required | Description                                                                                            |
 | ----------------------------- | --------- | --------- | -------- | ------------------------------------------------------------------------------------------------------ |
@@ -78,7 +71,7 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 These attributes will be passed to the topmost HTML element of the component. Also all `form` attributes
 are allowed when the `elementType` is set to `form`.
 
-#### Forms in Modal
+### Forms in Modal
 
 Modal can also contain interactive content like forms. For such cases, you may
 find convenient to use the prop `elementType="form"` with the attribute
@@ -90,43 +83,43 @@ dialog.
 <ModalDialog elementType="form" method="dialog"> … </ModalDialog>
 ```
 
-#### Expand on Mobile Screens
+### Expand on Mobile Screens
 
 We recommend to expand the ModalDialog on mobile screens using the
 `isExpandedOnMobile` prop. If you disable the prop, the ModalDialog shrinks
 to fit the height of its content (if smaller than viewport).
 
-### ModalHeader
+## ModalHeader
 
-#### Examples:
+### Examples:
 
 ```twig
-<ModalHeader modalId="modal-composed" />
+<ModalHeader modalId="modal-example" />
 
-<ModalComposed id="modal-composed" titleId="modal-composed-title">
+<Modal id="modal-example" titleId="modal-example-title">
   <ModalDialog>
     <ModalHeader
       closeLabel="Close form"
       enableDismiss={false}
-      modalId="modal-composed"
-      titleId="modal-composed-title"
+      modalId="modal-example"
+      titleId="modal-example-title"
     >
       Title of the Modal
     </ModalHeader>
     …
   </ModalDialog>
-</ModalComposed>
+</Modal>
 ```
 
 👉 Even in cases you don't need the title to be visible you should provide an
 accessible name for the dialog, e.g. using the `aria-label` attribute on
-`<ModalComposed>` component:
+`<Modal>` component:
 
 ```twig
-<ModalComposed id="modal-composed" aria-label="Accessible Modal Title"> … </ModalComposed>
+<Modal id="modal-example" aria-label="Accessible Modal Title"> … </Modal>
 ```
 
-#### API
+### API
 
 | Prop name       | Type      | Default | Required | Description             |
 | --------------- | --------- | ------- | -------- | ----------------------- |
@@ -140,9 +133,9 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-### ModalBody
+## ModalBody
 
-#### Examples:
+### Examples:
 
 ```twig
 <ModalBody>
@@ -150,7 +143,7 @@ These attributes will be passed to the topmost HTML element of the component.
 </ModalBody>
 ```
 
-#### API
+### API
 
 There are no API options for ModalBody.
 
@@ -159,9 +152,9 @@ component's descriptiveness and accessibility. Also, UNSAFE styling props are av
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-### ModalFooter
+## ModalFooter
 
-#### Examples:
+### Examples:
 
 ```twig
 <ModalFooter>
@@ -172,20 +165,19 @@ These attributes will be passed to the topmost HTML element of the component.
 </ModalFooter>
 ```
 
-#### API
+### API
 
-| Prop name     | Type                                          | Default | Required | Description                                                                        |
-| ------------- | --------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------- |
-| `align`       | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | [**DEPRECATED**][deprecated] in favor of `alignmentX`; Alignment of Footer Actions |
-| `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | Alignment of Footer Actions                                                        |
-| `description` | `string`                                      | `null`  | no       | Optional Footer Description                                                        |
+| Prop name     | Type                                          | Default | Required | Description                 |
+| ------------- | --------------------------------------------- | ------- | -------- | --------------------------- |
+| `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | no       | Alignment of Footer Actions |
+| `description` | `string`                                      | `null`  | no       | Optional Footer Description |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-### Full Example
+## Full Example
 
 When you put it all together:
 
@@ -193,22 +185,22 @@ When you put it all together:
 <Button
   color="primary"
   data-toggle="modal"
-  data-target="#modal-composed"
-  aria-controls="modal-composed"
+  data-target="#modal-example"
+  aria-controls="modal-example"
   aria-expanded="false"
 >
   Open Modal
 </Button>
 
-<ModalComposed
-  id="modal-composed"
-  titleId="modal-composed-title"
+<Modal
+  id="modal-example"
+  titleId="modal-example-title"
 >
   <ModalDialog>
     <ModalHeader
       closeLabel="Close form"
-      modalId="modal-composed"
-      titleId="modal-composed-title"
+      modalId="modal-example"
+      titleId="modal-example-title"
     >
       Title of the Modal
     </ModalHeader>
@@ -224,77 +216,10 @@ When you put it all together:
       </Button>
     </ModalFooter>
   </ModalDialog>
-</ModalComposed>
+</Modal>
 ```
-
-## Simple Modal (DEPRECATED)
-
-<details>
-  <summary>Show instructions for the deprecated Modal</summary>
-
-A simple version of Modal.
-
-⚠️ **DEPRECATED:** Simple Modal will be removed in the next major version in favour
-of the composed Modal above.
-
-Basic example usage:
-
-```html
-<button
-  color="primary"
-  data-toggle="modal"
-  data-target="#modal-example"
-  aria-controls="modal-example"
-  aria-expanded="false"
->
-  Open Modal
-</button>
-<Modal id="modal-example" />
-```
-
-Advanced example usage:
-
-```html
-<button
-  color="primary"
-  data-toggle="modal"
-  data-target="#modal-example"
-  aria-controls="modal-example"
-  aria-expanded="false"
->
-  Open Modal
-</button>
-<Modal id="modal-example" closeLabel="Dismiss" />
-```
-
-Without lexer:
-
-```twig
-{% embed "@spirit/modal.twig" with { props: {
-    id: 'modal-example',
-}} %}
-    {% block content %}
-        Modal content
-    {% endblock %}
-{% endembed %}
-```
-
-## API
-
-| Prop name    | Type     | Default | Required | Description        |
-| ------------ | -------- | ------- | -------- | ------------------ |
-| `closeLabel` | `string` | `Close` | no       | Custom close label |
-| `id`         | `string` | —       | yes      | Modal ID           |
-
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
-
-</details>
 
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
