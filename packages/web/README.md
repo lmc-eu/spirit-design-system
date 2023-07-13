@@ -97,7 +97,7 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
 Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
 
-ℹ️ For turning off this functionality just do not set the `data-toggle` attribute and use the Programnatic API.
+ℹ️ For turning off this functionality just do not set the `data-spirit-toggle` attribute and use the Programnatic API.
 
 > #### Selectors
 >
@@ -140,7 +140,7 @@ Currently the element for the plugin is found by the `querySelector` method sinc
 
 ```javascript
 var modal = new Modal('#myModal');
-var dropdown = new Dropdown('[data-toggle="dropdown"]');
+var dropdown = new Dropdown('[data-spirit-toggle="dropdown"]');
 ```
 
 ## Rebranding

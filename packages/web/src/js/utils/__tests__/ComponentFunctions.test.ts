@@ -29,22 +29,22 @@ describe('Plugin functions', () => {
     clearFixture();
   });
 
-  describe('data-toggle functionality', () => {
-    it('should get Plugin and execute the given method, when a click occurred on data-toggle="PluginName"', async () => {
+  describe('data-spirit-toggle functionality', () => {
+    it('should get Plugin and execute the given method, when a click occurred on data-spirit-toggle="PluginName"', async () => {
       window.addEventListener = jest.fn().mockImplementationOnce((event, callback) => {
         callback();
       });
 
       fixtureEl.innerHTML = [
         '<div id="foo" class="test">',
-        '  <button type="button" data-toggle="test" data-target="#foo"></button>',
+        '  <button type="button" data-spirit-toggle="test" data-spirit-target="#foo"></button>',
         '</div>',
       ].join('');
 
       const getOrCreateInstanceSpy = jest.spyOn(DummyClass2, 'getOrCreateInstance');
       const testMethodSpy = jest.spyOn(DummyClass2.prototype, 'testMethod');
       const componentWrapper = fixtureEl.querySelector('#foo');
-      const btnToggle = fixtureEl.querySelector('[data-toggle="test"]') as HTMLElement;
+      const btnToggle = fixtureEl.querySelector('[data-spirit-toggle="test"]') as HTMLElement;
       const event = createEvent('click');
 
       enableToggleTrigger(DummyClass2, 'testMethod');

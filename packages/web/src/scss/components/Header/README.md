@@ -128,15 +128,15 @@ small screens (up to the desktop breakpoint). It makes use of an inverted Button
 by default.
 
 The toggle button implements Spirit's Off-canvas JavaScript plugin. It is linked
-to the corresponding instance of Header Dialog via ID placed in `data-target`
+to the corresponding instance of Header Dialog via ID placed in `data-spirit-target`
 and `aria-controls` attributes.
 
 ```html
 <button
   type="button"
   class="Button Button--inverted Button--medium"
-  data-toggle="offcanvas"
-  data-target="#my-header-dialog"
+  data-spirit-toggle="offcanvas"
+  data-spirit-target="#my-header-dialog"
   aria-controls="my-header-dialog"
   aria-expanded="false"
 >
@@ -236,8 +236,8 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 <button
   type="button"
   class="HeaderDialogCloseButton"
-  data-dismiss="offcanvas"
-  data-target="#my-header-dialog"
+  data-spirit-dismiss="offcanvas"
+  data-spirit-target="#my-header-dialog"
   aria-controls="my-header-dialog"
   aria-expanded="false"
 >
@@ -351,8 +351,8 @@ And the complete Header Dialog:
     <button
       type="button"
       class="Button Button--inverted Button--medium Button--square"
-      data-toggle="offcanvas"
-      data-target="#header_dialog_example_1"
+      data-spirit-toggle="offcanvas"
+      data-spirit-target="#header_dialog_example_1"
       aria-controls="header_dialog_example_1"
       aria-expanded="false"
     >
@@ -405,8 +405,8 @@ And the complete Header Dialog:
       <button
         type="button"
         class="HeaderDialogCloseButton"
-        data-dismiss="offcanvas"
-        data-target="#header_dialog_example_1"
+        data-spirit-dismiss="offcanvas"
+        data-spirit-target="#header_dialog_example_1"
         aria-controls="header_dialog_example_1"
         aria-expanded="false"
       >

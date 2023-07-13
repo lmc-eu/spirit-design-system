@@ -32,7 +32,7 @@ class Dropdown extends BaseComponent {
 
   constructor(element: SpiritElement) {
     super(element);
-    this.target = SelectorEngine.findOne(`${this.element.dataset.target}`);
+    this.target = SelectorEngine.findOne(`${this.element.dataset.spiritTarget}`);
     this.reference = this.findReferenceElement();
     this.state = {
       open: false,
@@ -49,7 +49,7 @@ class Dropdown extends BaseComponent {
   getOptions() {
     const options = { ...this.options };
     const dataset = this.element?.dataset;
-    const optionsAutoClose = dataset?.autoclose;
+    const optionsAutoClose = dataset?.spiritAutoclose;
 
     if (optionsAutoClose) options.autoClose = Boolean(!optionsAutoClose);
 
@@ -78,7 +78,7 @@ class Dropdown extends BaseComponent {
   updateTriggerElement(open: boolean = this.state.open) {
     this.element.classList.toggle(CLASSNAME_EXPANDED, open);
     this.element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, open);
-    this.element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.element.dataset.target);
+    this.element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.element.dataset.spiritTarget);
   }
 
   updateTargetElement(open: boolean = this.state.open) {

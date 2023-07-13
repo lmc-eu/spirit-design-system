@@ -102,7 +102,7 @@ class Tooltip extends BaseComponent {
   getTipElement() {
     if (!this.tip) {
       this.tip =
-        (SelectorEngine.findOne(this.element?.dataset?.target) as HTMLElement) ||
+        (SelectorEngine.findOne(this.element?.dataset?.spiritTarget) as HTMLElement) ||
         this.element ||
         this.element?.parentElement;
     }

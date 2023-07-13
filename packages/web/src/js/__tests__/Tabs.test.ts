@@ -47,8 +47,8 @@ describe('Tabs', () => {
     it('should activate element by tab id (using buttons, the preferred semantic way)', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li><button type="button" data-target="#home" role="tab">Home</button></li>
-            <li><button type="button" id="triggerProfile" data-target="#profile" role="tab">Profile</button></li>
+            <li><button type="button" data-spirit-target="#home" role="tab">Home</button></li>
+            <li><button type="button" id="triggerProfile" data-spirit-target="#profile" role="tab">Profile</button></li>
           </ul>
           <ul>
             <li id="home" role="tabpanel"></li>
@@ -70,8 +70,8 @@ describe('Tabs', () => {
     it('should not fire shown when tab is already active', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li class="Tabs__item" role="presentation"><button type="button" data-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
-            <li class="Tabs__item" role="presentation"><button type="button" data-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
             <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
@@ -95,8 +95,8 @@ describe('Tabs', () => {
     it('show and shown events should reference correct relatedTarget', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li class="Tabs__item" role="presentation"><button type="button" data-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
-            <li class="Tabs__item" role="presentation"><button type="button" id="triggerProfile" data-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" id="triggerProfile" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
             <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
@@ -108,11 +108,11 @@ describe('Tabs', () => {
       const secondTabs = new Tabs(secondTabsTrigger);
 
       secondTabsTrigger.addEventListener('show.tabs', (ev: MouseEvent) => {
-        expect((ev.relatedTarget as HTMLElement).getAttribute('data-target')).toBe('#home');
+        expect((ev.relatedTarget as HTMLElement).getAttribute('data-spirit-target')).toBe('#home');
       });
 
       secondTabsTrigger.addEventListener('shown.tabs', (ev: MouseEvent) => {
-        expect((ev.relatedTarget as HTMLElement).getAttribute('data-target')).toBe('#home');
+        expect((ev.relatedTarget as HTMLElement).getAttribute('data-spirit-target')).toBe('#home');
         expect(secondTabsTrigger.getAttribute('aria-selected')).toBe('true');
         expect((fixtureEl.querySelector('button:not(.is-selected)') as HTMLElement).getAttribute('aria-selected')).toBe(
           'false',
@@ -125,8 +125,8 @@ describe('Tabs', () => {
     it('should fire hide and hidden events', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li><button type="button" data-target="#home" role="tab">Home</button></li>
-            <li><button type="button" data-target="#profile" role="tab">Profile</button></li>
+            <li><button type="button" data-spirit-target="#home" role="tab">Home</button></li>
+            <li><button type="button" data-spirit-target="#profile" role="tab">Profile</button></li>
           </ul>
         `;
 
@@ -141,12 +141,12 @@ describe('Tabs', () => {
 
       triggerList[0].addEventListener('hide.tabs', (ev: MouseEvent) => {
         hideCalled = true;
-        expect((ev.relatedTarget as HTMLElement)?.getAttribute('data-target')).toBe('#profile');
+        expect((ev.relatedTarget as HTMLElement)?.getAttribute('data-spirit-target')).toBe('#profile');
       });
 
       triggerList[0].addEventListener('hidden.tabs', (ev: MouseEvent) => {
         expect(hideCalled).toBeTruthy();
-        expect((ev.relatedTarget as HTMLElement)?.getAttribute('data-target')).toBe('#profile');
+        expect((ev.relatedTarget as HTMLElement)?.getAttribute('data-spirit-target')).toBe('#profile');
       });
 
       await firstTabs.show();
@@ -155,8 +155,8 @@ describe('Tabs', () => {
     it('should not fire hidden when hide is prevented', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li><button type="button" data-target="#home" role="tab">Home</button></li>
-            <li><button type="button" data-target="#profile" role="tab">Profile</button></li>
+            <li><button type="button" data-spirit-target="#home" role="tab">Home</button></li>
+            <li><button type="button" data-spirit-target="#profile" role="tab">Profile</button></li>
           </ul>
         `;
 
@@ -189,17 +189,17 @@ describe('Tabs', () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
             <li class="Tabs__item" role="presentation">
-              <a class="Tabs__link" href="#profile" role="tab" data-toggle="tabs">
+              <a class="Tabs__link" href="#profile" role="tab" data-spirit-toggle="tabs">
                 <button class="btn-close" aria-label="Close"></button>
               </a>
             </li>
             <li class="Tabs__item" role="presentation">
-              <a id="secondNav" class="Tabs__link" href="#buzz" role="tab" data-toggle="tabs">
+              <a id="secondNav" class="Tabs__link" href="#buzz" role="tab" data-spirit-toggle="tabs">
                 <button class="btn-close" aria-label="Close"></button>
               </a>
             </li>
             <li class="Tabs__item" role="presentation">
-              <a class="Tabs__link" href="#references" role="tab" data-toggle="tabs">
+              <a class="Tabs__link" href="#references" role="tab" data-spirit-toggle="tabs">
                 <button id="btnClose" class="btn-close" aria-label="Close"></button>
               </a>
             </li>
@@ -272,8 +272,8 @@ describe('Tabs', () => {
     it('should put aria attributes', () => {
       fixtureEl.innerHTML = `
         <ul class="Tabs">
-          <li class="Tabs__link is-selected" id="foo" data-target="#panel" data-toggle="tabs"></li>
-          <li class="Tabs__link" data-target="#panel2" data-toggle="tabs"></li>
+          <li class="Tabs__link is-selected" id="foo" data-spirit-target="#panel" data-spirit-toggle="tabs"></li>
+          <li class="Tabs__link" data-spirit-target="#panel2" data-spirit-toggle="tabs"></li>
         </ul>
         <div id="panel"></div>
         <div id="panel2"></div>
@@ -341,15 +341,15 @@ describe('Tabs', () => {
     });
   });
 
-  describe('data-api', () => {
+  describe('data-spirit-api', () => {
     it('should create dynamically a tab', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
             <li class="Tabs__item" role="presentation">
-              <button type="button" data-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button>
+              <button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button>
             </li>
             <li class="Tabs__item" role="presentation">
-              <button type="button" id="triggerProfile" data-toggle="tabs" data-target="#profile" class="Tabs__link" role="tab">Profile</button>
+              <button type="button" id="triggerProfile" data-spirit-toggle="tabs" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button>
             </li>
           </ul>
           <div class="Tabs-content">
@@ -371,15 +371,15 @@ describe('Tabs', () => {
     it('should handle nested tabs', async () => {
       fixtureEl.innerHTML = `
           <nav class="Tabs" role="tablist">
-            <button type="button" id="tab1" data-target="#x-tab1" class="Tabs__link" data-toggle="tabs" role="tab" aria-controls="x-tab1">Tabs 1</button>
-            <button type="button" data-target="#x-tab2" class="Tabs__link is-selected" data-toggle="tabs" role="tab" aria-controls="x-tab2" aria-selected="true">Tabs 2</button>
-            <button type="button" data-target="#x-tab3" class="Tabs__link" data-toggle="tabs" role="tab" aria-controls="x-tab3">Tabs 3</button>
+            <button type="button" id="tab1" data-spirit-target="#x-tab1" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab1">Tabs 1</button>
+            <button type="button" data-spirit-target="#x-tab2" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab2" aria-selected="true">Tabs 2</button>
+            <button type="button" data-spirit-target="#x-tab3" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab3">Tabs 3</button>
           </nav>
           <div class="Tabs__content">
             <div class="Tabs__pane" id="x-tab1" role="tabpanel">
               <nav class="Tabs" role="tablist">
-                <button type="button" data-target="#nested-tab1" class="Tabs__link is-selected" data-toggle="tabs" role="tab" aria-controls="x-tab1" aria-selected="true">Nested Tabs 1</button>
-                <button type="button" id="tabNested2" data-target="#nested-tab2" class="Tabs__link" data-toggle="tabs" role="tab" aria-controls="x-profile">Nested Tabs2</button>
+                <button type="button" data-spirit-target="#nested-tab1" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab1" aria-selected="true">Nested Tabs 1</button>
+                <button type="button" id="tabNested2" data-spirit-target="#nested-tab2" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-profile">Nested Tabs2</button>
               </nav>
               <div class="Tabs-content">
                 <div class="TabsPane is-selected" id="nested-tab1" role="tabpanel">Nested Tabs1 Content</div>
@@ -410,8 +410,8 @@ describe('Tabs', () => {
     it('should prevent default when the trigger is <a>', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li><a type="button" href="#test"  class="is-selected" role="tab" data-toggle="tabs">Home</a></li>
-            <li><a type="button" href="#test2" role="tab" data-toggle="tabs">Home</a></li>
+            <li><a type="button" href="#test"  class="is-selected" role="tab" data-spirit-toggle="tabs">Home</a></li>
+            <li><a type="button" href="#test2" role="tab" data-spirit-toggle="tabs">Home</a></li>
           </ul>
         `;
 
@@ -429,8 +429,8 @@ describe('Tabs', () => {
     it('should not fire shown when tab has disabled attribute', async () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
-            <li class="Tabs__item" role="presentation"><button type="button" data-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
-            <li class="Tabs__item" role="presentation"><button type="button" data-target="#profile" class="Tabs__link" disabled role="tab">Profile</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#profile" class="Tabs__link" disabled role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
             <div class="TabsPane is-selected" id="home" role="tabpanel"></div>

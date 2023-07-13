@@ -81,10 +81,10 @@ which will handle the functionality:
 Please consult the [main README][web-readme] for how to include JavaScript
 plugins.
 
-Then you need to add data attribute `data-toggle="autoResize"` to the component.
+Then you need to add data attribute `data-spirit-toggle="autoResize"` to the component.
 
 ```html
-<div class="TextArea" data-toggle="autoResize">
+<div class="TextArea" data-spirit-toggle="autoResize">
   <label for="textAreaAutoResize" class="TextArea__label">Label of auto-resizing TextArea</label>
   <textarea id="textAreaAutoResize" class="TextArea__input" name="autoResize"></textarea>
 </div>
@@ -116,7 +116,7 @@ Filled</textarea
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` with `data-element="validation_text"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -129,7 +129,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
   <textarea id="textAreaJSValidation" class="TextArea__input" name="jsValidation" placeholder="Placeholder">
 Filled</textarea
   >
-  <div data-element="validation_text">Error message inserted by JS</div>
+  <div data-spirit-element="validation_text">Error message inserted by JS</div>
 </div>
 ```
 
