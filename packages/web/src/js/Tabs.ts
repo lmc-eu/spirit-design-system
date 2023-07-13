@@ -18,7 +18,7 @@ const CLASS_NAME_ACTIVE = 'is-selected';
 const SELECTOR_TAB_PANEL = '[role="tablist"]';
 const SELECTOR_OUTER = '[role="presentation"]';
 const SELECTOR_INNER = '[role="tab"]';
-const SELECTOR_DATA_TOGGLE = `[data-toggle="${NAME}"]`;
+const SELECTOR_DATA_TOGGLE = `[data-spirit-toggle="${NAME}"]`;
 const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
 
 class Tabs extends BaseComponent {

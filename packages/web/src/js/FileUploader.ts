@@ -20,8 +20,7 @@ const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
 const DROP_ZONE_ELEMENT_SELECTOR = '[data-spirit-element="dropZone"]';
 const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
 const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
-// @deprecated Will be renamed to `data-spirit-dismiss`
-const DATA_DISMISS_ATTRIBUTE = 'data-dismiss';
+const DATA_DISMISS_ATTRIBUTE = 'data-spirit-dismiss';
 const DATA_ELEMENT_VALIDATION_TEXT = 'validation_text';
 const SELECTOR_VALIDATION_TEXT = `[data-spirit-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
 const DEFAULT_FILE_SIZE_LIMIT = 10000000; // = 10 MB
@@ -272,7 +271,7 @@ class FileUploader extends BaseComponent {
     currentItem &&
       EventHandler.on(currentItem, 'click', (event: Event) => {
         event.preventDefault();
-        const target = (event.target as HTMLElement)?.dataset?.dismiss;
+        const target = (event.target as HTMLElement)?.dataset?.spiritDismiss;
         if (target) {
           this.removeFromQueue(target);
         }

@@ -22,7 +22,7 @@ For vertical scrolling, you need to add the `ScrollView--vertical` class to the 
 `data-spirit-direction` attribute to `vertical`.
 
 ```html
-<div class="ScrollView ScrollView--vertical" data-toggle="scrollView" data-spirit-direction="vertical">
+<div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView" data-spirit-direction="vertical">
   <div class="ScrollView__viewport" data-spirit-element="viewport">
     <div class="ScrollView__content" data-spirit-element="content">
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
@@ -41,7 +41,7 @@ Analogically, add the `ScrollView--horizontal` class to the container element an
 content from wrapping.
 
 ```html
-<div class="ScrollView ScrollView--horizontal" data-toggle="scrollView" data-spirit-direction="horizontal">
+<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
   <div class="ScrollView__viewport" data-spirit-element="viewport">
     <div class="ScrollView__content" data-spirit-element="content">
       <p class="mb-700" style="white-space: nowrap">Lorem ipsum dolor sit amet, consectetuer adipiscing elit…</p>
@@ -54,7 +54,7 @@ content from wrapping.
 👉 For other content types, you may need to provide fixed width to the content element (or elements) to force scrolling.
 
 ```html
-<div class="ScrollView ScrollView--horizontal" data-toggle="scrollView" data-spirit-direction="horizontal">
+<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
   <div class="ScrollView__viewport" data-spirit-element="viewport">
     <div class="ScrollView__content" data-spirit-element="content">
       <div class="Grid Grid--cols-4 mb-700">
@@ -111,7 +111,7 @@ not cover your content when visible. For example, having a horizontal ScrollView
 class to your content, e.g. `mb-700` or `pb-700`.
 
 ```html
-<div class="ScrollView ScrollView--horizontal" data-toggle="scrollView" data-spirit-direction="horizontal">
+<div class="ScrollView ScrollView--horizontal" data-spirit-toggle="scrollView" data-spirit-direction="horizontal">
   <div class="ScrollView__viewport" data-spirit-element="viewport">
     <div class="ScrollView__content" data-spirit-element="content">
       <p class="mb-700">…</p>
@@ -130,7 +130,7 @@ To hide the scrollbar, add the `ScrollView--hideScrollbar` class to the containe
 ```html
 <div
   class="ScrollView ScrollView--horizontal ScrollView--scrollbarDisabled"
-  data-toggle="scrollView"
+  data-spirit-toggle="scrollView"
   data-spirit-direction="horizontal"
 >
   <div class="ScrollView__viewport" data-spirit-element="viewport">

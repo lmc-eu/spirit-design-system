@@ -138,7 +138,7 @@ forget to change not only the input type but also `aria-pressed` and
       role="switch"
       aria-pressed="false"
       aria-label="Show password"
-      data-toggle="password"
+      data-spirit-toggle="password"
     >
       <span class="TextField__passwordToggle__icon TextField__passwordToggle__icon--hidden">
         <svg width="24" height="24" aria-hidden="true">
@@ -209,7 +209,7 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` with `data-element="validation_text"`
+render validation texts in a `<div>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -227,7 +227,7 @@ components mix CSS with JS by design and handle prefixes their own way.**
     placeholder="Placeholder"
     value="Filled"
   />
-  <div data-element="validation_text">Error message inserted by JS</div>
+  <div data-spirit-element="validation_text">Error message inserted by JS</div>
 </div>
 ```
 

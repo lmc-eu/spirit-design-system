@@ -104,8 +104,8 @@ ModalHeader contains the title of the dialog and the close button.
   <button
     type="button"
     class="Button Button--tertiary Button--square Button--medium"
-    data-dismiss="modal"
-    data-target="#example_1"
+    data-spirit-dismiss="modal"
+    data-spirit-target="#example_1"
     aria-controls="example_1"
     aria-expanded="false"
   >
@@ -165,10 +165,20 @@ tab over the interface.
 ```html
 <div class="ModalFooter ModalFooter--right">
   <div class="ModalFooter__actions">
-    <button type="button" class="Button Button--primary Button--medium" data-dismiss="modal" data-target="#example_1">
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-dismiss="modal"
+      data-spirit-target="#example_1"
+    >
       Primary action
     </button>
-    <button type="button" class="Button Button--secondary Button--medium" data-dismiss="modal" data-target="#example_1">
+    <button
+      type="button"
+      class="Button Button--secondary Button--medium"
+      data-spirit-dismiss="modal"
+      data-spirit-target="#example_1"
+    >
       Secondary action
     </button>
   </div>
@@ -206,8 +216,8 @@ Use our JavaScript plugin to open your Modal, e.g.:
 <button
   type="button"
   class="Button Button--primary Button--medium"
-  data-toggle="modal"
-  data-target="#example_1"
+  data-spirit-toggle="modal"
+  data-spirit-target="#example_1"
   aria-controls="example_1"
   aria-expanded="false"
 >
@@ -226,7 +236,7 @@ scrolling, e.g.:
 ```html
 <article class="ModalDialog">
   <!-- ModalHeader -->
-  <div class="ScrollView ScrollView--vertical" data-toggle="scrollView">
+  <div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
     <div class="ScrollView__viewport" data-spirit-element="viewport">
       <div class="ScrollView__content" data-spirit-element="content">
         <div class="ModalBody">
@@ -249,8 +259,8 @@ When you put it all together:
 <button
   type="button"
   class="Button Button--primary Button--medium"
-  data-toggle="modal"
-  data-target="#example_1"
+  data-spirit-toggle="modal"
+  data-spirit-target="#example_1"
   aria-controls="example_1"
   aria-expanded="false"
 >
@@ -268,8 +278,8 @@ When you put it all together:
       <button
         type="button"
         class="Button Button--tertiary Button--square Button--medium"
-        data-dismiss="modal"
-        data-target="#example_1"
+        data-spirit-dismiss="modal"
+        data-spirit-target="#example_1"
         aria-controls="example_1"
         aria-expanded="false"
       >
@@ -300,16 +310,16 @@ When you put it all together:
         <button
           type="button"
           class="Button Button--primary Button--medium"
-          data-dismiss="modal"
-          data-target="#example_1"
+          data-spirit-dismiss="modal"
+          data-spirit-target="#example_1"
         >
           Primary action
         </button>
         <button
           type="button"
           class="Button Button--secondary Button--medium"
-          data-dismiss="modal"
-          data-target="#example_1"
+          data-spirit-dismiss="modal"
+          data-spirit-target="#example_1"
         >
           Secondary action
         </button>
@@ -326,13 +336,13 @@ When you put it all together:
 
 Both trigger and close buttons use `data` attributes to open and close the Modal.
 
-| Prop name       | Type     | Default | Required | Description                |
-| --------------- | -------- | ------- | -------- | -------------------------- |
-| `aria-controls` | `string` | -       | no       | Aria controls state (auto) |
-| `aria-expanded` | `string` | -       | no       | Aria expanded state (auto) |
-| `data-dismiss`  | `string` | `modal` | no       | Iterable selector          |
-| `data-target`   | `string` | -       | yes      | Target selector            |
-| `data-toggle`   | `string` | `modal` | no       | Iterable selector          |
+| Prop name             | Type     | Default | Required | Description                |
+| --------------------- | -------- | ------- | -------- | -------------------------- |
+| `aria-controls`       | `string` | -       | no       | Aria controls state (auto) |
+| `aria-expanded`       | `string` | -       | no       | Aria expanded state (auto) |
+| `data-spirit-dismiss` | `string` | `modal` | no       | Iterable selector          |
+| `data-spirit-target`  | `string` | -       | yes      | Target selector            |
+| `data-spirit-toggle`  | `string` | `modal` | no       | Iterable selector          |
 
 ## State Classes
 

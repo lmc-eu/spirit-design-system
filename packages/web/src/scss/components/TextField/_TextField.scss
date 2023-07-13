@@ -134,7 +134,7 @@ $_field-name: 'TextField';
 }
 
 .TextField__validationText,
-.TextField > [data-element='validation_text'] {
+.TextField > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
@@ -178,7 +178,8 @@ $_field-name: 'TextField';
 }
 // stylelint-enable
 
-:is(.TextField--disabled, .TextField.is-disabled) > :is(.TextField__validationText, [data-element='validation_text']) {
+:is(.TextField--disabled, .TextField.is-disabled)
+    > :is(.TextField__validationText, [data-spirit-element='validation_text']) {
     @include form-fields-tools.validation-text-disabled();
 }
 
