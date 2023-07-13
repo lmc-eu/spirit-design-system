@@ -1,12 +1,12 @@
 import React from 'react';
-import RadioField from '../RadioField';
+import Radio from '../Radio';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Story = (props: unknown) => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem 1rem' }}>
-    <RadioField id="radiofield" label="Radio disabled" name="example" isDisabled />
-    <RadioField id="radiofield" label="Radio disabled checked" name="example" isDisabled isChecked />
+    <Radio id="radio" label="Radio Item" name="example" isItem />
+    <Radio id="radio" label="Radio Item checked" name="example" isItem isChecked />
   </div>
 );
 
