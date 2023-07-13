@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, useState } from 'react';
-import RadioField from '../RadioField';
+import Radio from '../Radio';
 import { Stack } from '../../Stack';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
@@ -16,7 +16,7 @@ const Story = (props: unknown) => {
   return (
     <Stack>
       {radioList.map((value) => (
-        <RadioField
+        <Radio
           key={value}
           id={value}
           label={`Radio ${value}`}
