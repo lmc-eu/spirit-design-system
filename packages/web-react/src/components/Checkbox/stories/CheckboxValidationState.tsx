@@ -1,24 +1,24 @@
 import React from 'react';
-import CheckboxField from '../CheckboxField';
+import Checkbox from '../Checkbox';
 
 const Story = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem 1rem' }}>
-    <CheckboxField
-      id="checkboxfield0"
+    <Checkbox
+      id="checkbox0"
       label="Checkbox success"
       name="example"
       validationState="success"
       validationText="Success validation text"
     />
-    <CheckboxField
-      id="checkboxfield1"
+    <Checkbox
+      id="checkbox1"
       label="Checkbox warning"
       name="example"
       validationState="warning"
       validationText="Warning validation text"
     />
-    <CheckboxField
-      id="checkboxfield2"
+    <Checkbox
+      id="checkbox2"
       label="Checkbox danger"
       name="example"
       validationState="danger"

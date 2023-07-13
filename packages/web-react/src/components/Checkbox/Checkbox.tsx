@@ -1,14 +1,14 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { SpiritCheckboxFieldProps } from '../../types';
+import { SpiritCheckboxProps } from '../../types';
 import { useValidationText } from '../Field';
-import { useCheckboxFieldStyleProps } from './useCheckboxFieldStyleProps';
+import { useCheckboxStyleProps } from './useCheckboxStyleProps';
 
 /* We need an exception for components exported with forwardRef */
-/* eslint no-underscore-dangle: ['error', { allow: ['_CheckboxField'] }] */
-const _CheckboxField = (props: SpiritCheckboxFieldProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
-  const { classProps, props: modifiedProps } = useCheckboxFieldStyleProps(props);
+/* eslint no-underscore-dangle: ['error', { allow: ['_Checkbox'] }] */
+const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
+  const { classProps, props: modifiedProps } = useCheckboxStyleProps(props);
   const {
     id,
     label,
@@ -52,6 +52,6 @@ const _CheckboxField = (props: SpiritCheckboxFieldProps, ref: ForwardedRef<HTMLI
   );
 };
 
-export const CheckboxField = forwardRef<HTMLInputElement, SpiritCheckboxFieldProps>(_CheckboxField);
+export const Checkbox = forwardRef<HTMLInputElement, SpiritCheckboxProps>(_Checkbox);
 
-export default CheckboxField;
+export default Checkbox;
