@@ -5,20 +5,20 @@ This is Twig implementation of the [Collapse] component.
 Basic example usage:
 
 ```twig
-<Button data-toggle="collapse" data-target="CollapseExample">Collapse trigger</Button>
+<Button data-spirit-toggle="collapse" data-spirit-target="CollapseExample">Collapse trigger</Button>
 <Collapse id="CollapseExample">Collapse content</Collapse>
 ```
 
 Usage with link:
 
 ```twig
-<ButtonLink href="javascript:void(0)" data-toggle="collapse" data-target="CollapseExample">Collapse trigger</ButtonLink>
+<ButtonLink href="javascript:void(0)" data-spirit-toggle="collapse" data-spirit-target="CollapseExample">Collapse trigger</ButtonLink>
 ```
 
 Open on page load:
 
 ```twig
-<Button data-toggle="collapse" data-target="CollapseExample" aria-expanded="true">Collapse trigger</Button>
+<Button data-spirit-toggle="collapse" data-spirit-target="CollapseExample" aria-expanded="true">Collapse trigger</Button>
 <Collapse id="CollapseExample" isOpen>Collapse content</Collapse>
 ```
 
@@ -32,7 +32,7 @@ Activate Collapse only on mobile screens:
 Hide Collapse trigger on collapse:
 
 ```twig
-<Button {# … #} data-more>Collapse trigger</Button> {# … #}
+<Button {# … #} data-spirit-more>Collapse trigger</Button> {# … #}
 ```
 
 Without lexer:
@@ -48,7 +48,7 @@ Without lexer:
 {% endembed %}
 ```
 
-You can add any custom trigger like `<button>` or `<a>` but it is necessary to add `data-toggle="collapse"`, `data-target="<id>"`
+You can add any custom trigger like `<button>` or `<a>` but it is necessary to add `data-spirit-toggle="collapse"`, `data-spirit-target="<id>"`
 attributes to register trigger events.
 
 ## API
@@ -69,13 +69,13 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 ## Trigger attributes
 
-| Prop name       | Type      | Default    | Required | Description                         |
-| --------------- | --------- | ---------- | -------- | ----------------------------------- |
-| `aria-controls` | `string`  | -          | no       | Aria controls state (auto)          |
-| `aria-expanded` | `string`  | -          | no       | Aria expanded state (auto)          |
-| `data-more`     | `boolean` | -          | no       | For hide on collapse as more button |
-| `data-target`   | `string`  | -          | yes      | Target selector                     |
-| `data-toggle`   | `string`  | `collapse` | yes      | Iterable selector                   |
+| Prop name            | Type      | Default    | Required | Description                         |
+| -------------------- | --------- | ---------- | -------- | ----------------------------------- |
+| `aria-controls`      | `string`  | -          | no       | Aria controls state (auto)          |
+| `aria-expanded`      | `string`  | -          | no       | Aria expanded state (auto)          |
+| `data-spirit-more`   | `boolean` | -          | no       | For hide on collapse as more button |
+| `data-spirit-target` | `string`  | -          | yes      | Target selector                     |
+| `data-spirit-toggle` | `string`  | `collapse` | yes      | Iterable selector                   |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.

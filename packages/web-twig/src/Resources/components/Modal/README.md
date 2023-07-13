@@ -184,8 +184,8 @@ When you put it all together:
 ```twig
 <Button
   color="primary"
-  data-toggle="modal"
-  data-target="#modal-example"
+  data-spirit-toggle="modal"
+  data-spirit-target="#modal-example"
   aria-controls="modal-example"
   aria-expanded="false"
 >
