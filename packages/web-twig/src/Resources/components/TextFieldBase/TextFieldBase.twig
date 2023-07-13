@@ -43,7 +43,7 @@
 {%- set _validationTextClassName = _rootClassName ~ '__validationText' -%}
 
 {# Attributes #}
-{%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-toggle=autoResize' : null -%}
+{%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-spirit-toggle=autoResize' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 
@@ -54,7 +54,7 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id') and (_dataToggleAttr is null or prop is not same as('data-toggle'))) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id') and (_dataToggleAttr is null or prop is not same as('data-spirit-toggle'))) -%}
 {%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
 {%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
 {%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
@@ -95,7 +95,7 @@
                     role="switch"
                     aria-pressed="false"
                     aria-label="Show password"
-                    data-toggle="password"
+                    data-spirit-toggle="password"
                 >
                     <span class="{{ _passwordToggleIconClassName }} {{ _passwordToggleIconHiddenClassName }}">
                         <Icon name="visibility-on" />
