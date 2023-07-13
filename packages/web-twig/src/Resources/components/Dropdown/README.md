@@ -6,7 +6,7 @@ Basic example usage:
 
 ```twig
 <DropdownWrapper>
-  <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
   <Dropdown id="DropdownExample">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
@@ -15,7 +15,7 @@ Full width on mobile
 
 ```twig
 <DropdownWrapper>
-  <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
   <Dropdown id="DropdownExample" fullWidthMode="mobile-only">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
@@ -24,7 +24,7 @@ Advanced example usage with positioning:
 
 ```twig
 <DropdownWrapper>
-  <Button data-toggle="dropdown" data-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
   <Dropdown elementType="span" id="DropdownExample" placement="top-right" fullWidthMode="all">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
@@ -47,7 +47,7 @@ Without lexer:
 {% endembed %}
 ```
 
-You can add any custom trigger like a `<Button>` but it is necessary to add `data-toggle="dropdown"`, `data-target="<id>"`
+You can add any custom trigger like a `<Button>` but it is necessary to add `data-spirit-toggle="dropdown"`, `data-spirit-target="<id>"`
 attributes to register trigger events.
 
 ## API
@@ -67,12 +67,12 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 ### Trigger attributes
 
-| Prop name       | Type     | Default    | Required | Description                |
-| --------------- | -------- | ---------- | -------- | -------------------------- |
-| `aria-controls` | `string` | -          | no       | Aria controls state (auto) |
-| `aria-expanded` | `string` | -          | no       | Aria expanded state (auto) |
-| `data-target`   | `string` | -          | yes      | Target selector            |
-| `data-toggle`   | `string` | `dropdown` | yes      | Iterable selector          |
+| Prop name            | Type     | Default    | Required | Description                |
+| -------------------- | -------- | ---------- | -------- | -------------------------- |
+| `aria-controls`      | `string` | -          | no       | Aria controls state (auto) |
+| `aria-expanded`      | `string` | -          | no       | Aria expanded state (auto) |
+| `data-spirit-target` | `string` | -          | yes      | Target selector            |
+| `data-spirit-toggle` | `string` | `dropdown` | yes      | Iterable selector          |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when the component is loaded
 or the width of the window is changed. There can be several triggers, the same rules apply to each.
