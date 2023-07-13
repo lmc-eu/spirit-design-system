@@ -10,8 +10,8 @@ Example usage:
       role="tab"
       aria-selected="true"
       id="pane1-tab"
-      data-toggle="tab"
-      data-target="#pane1"
+      data-spirit-toggle="tab"
+      data-spirit-target="#pane1"
       aria-controls="pane1"
     >
       Item 1
@@ -23,8 +23,8 @@ Example usage:
       role="tab"
       aria-selected="false"
       id="pane2-tab"
-      data-toggle="tab"
-      data-target="#pane2"
+      data-spirit-toggle="tab"
+      data-spirit-target="#pane2"
       aria-controls="pane2"
     >
       Item 2
@@ -64,8 +64,8 @@ certain breakpoint up, preferably using Spirit utility classes.
     role="tab"
     aria-selected="true"
     id="pane1-tab"
-    data-toggle="tab"
-    data-target="#pane1"
+    data-spirit-toggle="tab"
+    data-spirit-target="#pane1"
     aria-controls="pane1"
   >
     Item

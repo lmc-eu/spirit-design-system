@@ -14,7 +14,7 @@ describe('AutoResize', () => {
 
   beforeEach(() => {
     fixtureEl.innerHTML = `
-      <div class="TextArea" data-toggle="autoResize">
+      <div class="TextArea" data-spirit-toggle="autoResize">
         <label for="textarea" class="TextArea__label">Label</label>
         <textarea id="textarea" class="TextArea__input">Test content</textarea>
       </div>

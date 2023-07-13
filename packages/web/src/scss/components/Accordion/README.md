@@ -19,7 +19,7 @@ Building blocks:
 Common wrapper for all items:
 
 ```html
-<section class="Accordion" data-toggle="accordion">
+<section class="Accordion" data-spirit-toggle="accordion">
   <!-- One or more items inside -->
 </section>
 ```
@@ -43,8 +43,8 @@ Minimum header with a heading and an arrow icon:
   <button
     type="button"
     class="Accordion__itemToggle"
-    data-toggle="collapse"
-    data-target="example_1_item_1_collapse"
+    data-spirit-toggle="collapse"
+    data-spirit-target="example_1_item_1_collapse"
     aria-expanded="false"
   >
     Accordion Item no. 1
@@ -117,7 +117,7 @@ When you put it all together:
 
 ```html
 <!-- Accordion: start -->
-<section class="Accordion" data-toggle="accordion">
+<section class="Accordion" data-spirit-toggle="accordion">
   <!-- Accordion item: start -->
   <article id="example_1_item_1" class="Accordion__item">
     <!-- Accordion item header: start -->
@@ -125,8 +125,8 @@ When you put it all together:
       <button
         type="button"
         class="Accordion__itemToggle"
-        data-toggle="collapse"
-        data-target="example_1_item_1_collapse"
+        data-spirit-toggle="collapse"
+        data-spirit-target="example_1_item_1_collapse"
         aria-expanded="false"
       >
         Accordion Item no. 1
@@ -175,22 +175,22 @@ When you put it all together:
 ### Open only one item at a time
 
 Link individual **Collapse items** to their **Accordion parent** via
-`data-parent` attribute to allow just a single item being open at a time.
+`data-spirit-parent` attribute to allow just a single item being open at a time.
 
 First add an `id` to your Accordion wrapper:
 
 ```html
-<section id="accordion" class="Accordion" data-toggle="accordion">
+<section id="accordion" class="Accordion" data-spirit-toggle="accordion">
   <!-- Accordion items inside -->
 </section>
 ```
 
-Then link it using the `data-parent` attribute on individual Collapse items:
+Then link it using the `data-spirit-parent` attribute on individual Collapse items:
 
 ```html
 <article class="Accordion__item">
   <!-- (Accordion item header) -->
-  <div class="Collapse" data-parent="#accordion">
+  <div class="Collapse" data-spirit-parent="#accordion">
     <div class="Collapse__content">
       <div class="Accordion__content">
         <!-- Item content -->

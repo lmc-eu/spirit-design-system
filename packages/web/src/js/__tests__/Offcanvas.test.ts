@@ -23,7 +23,7 @@ describe('Offcanvas', () => {
   describe('toggle', () => {
     it('should call show method if show class is not present', () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -40,7 +40,7 @@ describe('Offcanvas', () => {
 
     it('should call hide method if show class is present', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -64,7 +64,7 @@ describe('Offcanvas', () => {
   describe('show', () => {
     it('should do nothing if already shown', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas""></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas""></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -85,7 +85,7 @@ describe('Offcanvas', () => {
 
     it('should show a hidden element', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -104,7 +104,7 @@ describe('Offcanvas', () => {
 
     it('should not fire shown when show is prevented', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -135,7 +135,7 @@ describe('Offcanvas', () => {
   describe('hide', () => {
     it('should add `hiding` class during closing and remover `show` & `hiding` classes on end', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -177,7 +177,7 @@ describe('Offcanvas', () => {
 
     it('should hide a shown element', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -197,7 +197,7 @@ describe('Offcanvas', () => {
 
     it('should not fire hidden when hide is prevented', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas"></button>',
         '<dialog class="offcanvas"></dialog>',
       ].join('');
 
@@ -227,10 +227,10 @@ describe('Offcanvas', () => {
     });
   });
 
-  describe('data-api', () => {
+  describe('data-spirit-api', () => {
     it('should not prevent event for input', async () => {
       fixtureEl.innerHTML = [
-        '<input type="checkbox" data-toggle="offcanvas" data-target="#offcanvasdiv1">',
+        '<input type="checkbox" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvasdiv1">',
         '<dialog id="offcanvasdiv1" class="offcanvas"></dialog>',
       ].join('');
 
@@ -247,7 +247,7 @@ describe('Offcanvas', () => {
 
     it('should not call toggle on disabled elements', () => {
       fixtureEl.innerHTML = [
-        '<a href="#" data-toggle="offcanvas" data-target="#offcanvasdiv1" class="disabled"></a>',
+        '<a href="#" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvasdiv1" class="disabled"></a>',
         '<div id="offcanvasdiv1" class="offcanvas"></div>',
       ].join('');
 
@@ -262,7 +262,7 @@ describe('Offcanvas', () => {
 
     it('should call hide first, if another offcanvas is open', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn2" data-toggle="offcanvas" data-target="#offcanvas2"></button>',
+        '<button id="btn2" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas2"></button>',
         '<dialog id="offcanvas1" class="offcanvas"></dialog>',
         '<dialog id="offcanvas2" class="offcanvas"></dialog>',
       ].join('');
@@ -284,7 +284,7 @@ describe('Offcanvas', () => {
 
     it('should focus on trigger element after closing offcanvas', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas" data-target="#offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas"></button>',
         '<div id="offcanvas" class="offcanvas"></div>',
       ].join('');
 
@@ -307,7 +307,7 @@ describe('Offcanvas', () => {
 
     it('should not focus on trigger element after closing offcanvas, if it is not visible', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn" data-toggle="offcanvas" data-target="#offcanvas"></button>',
+        '<button id="btn" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas"></button>',
         '<div id="offcanvas" class="offcanvas"></div>',
       ].join('');
 

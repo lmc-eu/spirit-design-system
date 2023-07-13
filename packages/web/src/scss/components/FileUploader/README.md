@@ -31,7 +31,7 @@ This is the main wrapper for the whole composition. It provides proper spacing
 for its subcomponents:
 
 ```html
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -43,7 +43,7 @@ By adding the `FileUploader--fluid` modifier class, FileUploader can take up all
 the available horizontal space:
 
 ```html
-<div class="FileUploader FileUploader--fluid" data-toggle="fileUploader">
+<div class="FileUploader FileUploader--fluid" data-spirit-toggle="fileUploader">
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
@@ -96,7 +96,7 @@ The maximum size of the uploaded file that is validated by the JavaScript plugin
 10 MB. To increase the limit for example to 20 MB, add the `data-spirit-max-file-size` attribute:
 
 ```html
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-max-file-size="20000000">
     <!-- ... -->
   </div>
@@ -110,7 +110,7 @@ Limit of the maximum number of uploaded files. The default value is 10, but any 
 the `data-spirit-file-queue-limit` attribute:
 
 ```html
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2">
     <!-- ... -->
   </div>
@@ -128,7 +128,7 @@ If you set the value of `data-spirit-queue-limit-behavior` to `disable`, the inp
 `hide`, the input disappears completely. After removing a file from the queue, the input is restored.
 
 ```html
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <div
     class="FileUploaderInput"
     data-spirit-element="wrapper"
@@ -298,11 +298,11 @@ truncated.
 
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
-wrapper element that has the `data-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
+wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
 up the template and apply it on any attachments the user wants to upload.
 
 ```html
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <template data-spirit-snippet="item">
     <li class="FileUploaderAttachment" data-spirit-populate-field="item">
       <svg width="24" height="24" aria-hidden="true">
@@ -328,7 +328,7 @@ This is how all subcomponents build up the complete FileUploader:
 
 ```html
 <!-- FileUploader: start -->
-<div class="FileUploader" data-toggle="fileUploader">
+<div class="FileUploader" data-spirit-toggle="fileUploader">
   <!-- FileUploaderAttachment template: start -->
   <template data-spirit-snippet="item">
     <li class="FileUploaderAttachment" data-spirit-populate-field="item">

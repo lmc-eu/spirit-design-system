@@ -16,10 +16,10 @@ describe('Password', () => {
     it('should take care of element passed as a CSS selector', () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button aria-pressed="false" aria-label="Show password" data-toggle="password"></button>
+        <button aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
-      const passwordEl = fixtureEl.querySelector('[data-toggle="password"]') as HTMLElement;
+      const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
       const passwordBySelector = new Password(passwordEl);
 
       expect(passwordBySelector.element).toEqual(passwordEl);
@@ -30,13 +30,13 @@ describe('Password', () => {
     it('should toggle a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="false" aria-label="Show password" data-toggle="password"></button>
+        <button type="button" aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
       const showSpy = jest.spyOn(Password.prototype, 'show');
       const hideSpy = jest.spyOn(Password.prototype, 'hide');
 
-      const passwordEl = fixtureEl.querySelector('[data-toggle="password"]') as HTMLElement;
+      const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
       const password = new Password(passwordEl);
 
       await password.toggle(passwordEl);
@@ -53,10 +53,10 @@ describe('Password', () => {
     it('should show a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="false" aria-label="Show password" data-toggle="password"></button>
+        <button type="button" aria-pressed="false" aria-label="Show password" data-spirit-toggle="password"></button>
       `;
 
-      const passwordEl = fixtureEl.querySelector('[data-toggle="password"]') as HTMLElement;
+      const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
       const password = new Password(passwordEl);
 
       await password.show(passwordEl);
@@ -71,10 +71,10 @@ describe('Password', () => {
     it('should hide a password', async () => {
       fixtureEl.innerHTML = `
         <input type="password" />
-        <button type="button" aria-pressed="true" aria-label="Hide password" data-toggle="password"></button>
+        <button type="button" aria-pressed="true" aria-label="Hide password" data-spirit-toggle="password"></button>
       `;
 
-      const passwordEl = fixtureEl.querySelector('[data-toggle="password"]') as HTMLElement;
+      const passwordEl = fixtureEl.querySelector('[data-spirit-toggle="password"]') as HTMLElement;
       const password = new Password(passwordEl);
 
       await password.hide(passwordEl);

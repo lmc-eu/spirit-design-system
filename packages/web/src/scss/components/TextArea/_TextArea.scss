@@ -39,7 +39,7 @@ $_field-name: 'TextArea';
 }
 
 .TextArea__validationText,
-.TextArea > [data-element='validation_text'] {
+.TextArea > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
 }
 
@@ -58,7 +58,8 @@ $_field-name: 'TextArea';
     @include form-fields-tools.box-field-disabled-input();
 }
 
-:is(.TextArea--disabled, .TextArea.is-disabled) > :is(.TextArea__validationText, [data-element='validation_text']) {
+:is(.TextArea--disabled, .TextArea.is-disabled)
+    > :is(.TextArea__validationText, [data-spirit-element='validation_text']) {
     @include form-fields-tools.validation-text-disabled();
 }
 

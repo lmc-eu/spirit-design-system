@@ -25,15 +25,15 @@ describe('Dropdown', () => {
     it('should take care of element passed as a CSS selector', () => {
       fixtureEl.innerHTML = `
         <button
-          data-toggle="dropdown"
-          data-target="#DropdownDemo1"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#DropdownDemo1"
         >
           toggle
         </button>
         <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
       `;
 
-      const element = fixtureEl.querySelector('[data-toggle="dropdown"]') as HTMLElement;
+      const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
       const elementBySelector = new Dropdown(element);
 
       expect(elementBySelector.element).toEqual(element);
@@ -44,8 +44,8 @@ describe('Dropdown', () => {
     it('should toggle a dropdown', async () => {
       fixtureEl.innerHTML = `
         <button
-          data-toggle="dropdown"
-          data-target="#DropdownDemo1"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#DropdownDemo1"
         >
           toggle
         </button>
@@ -53,7 +53,7 @@ describe('Dropdown', () => {
       `;
 
       const toggleSpy = jest.spyOn(Dropdown.prototype, 'toggle');
-      const element = fixtureEl.querySelector('[data-toggle="dropdown"]') as HTMLElement;
+      const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
       const dropdown = new Dropdown(element);
 
       await dropdown.toggle();
@@ -70,15 +70,15 @@ describe('Dropdown', () => {
     it('should show a dropdown', async () => {
       fixtureEl.innerHTML = `
         <button
-          data-toggle="dropdown"
-          data-target="#DropdownDemo1"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#DropdownDemo1"
         >
           toggle
         </button>
         <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
       `;
 
-      const element = fixtureEl.querySelector('[data-toggle="dropdown"]') as HTMLElement;
+      const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
       const target = fixtureEl.querySelector('#DropdownDemo1') as HTMLElement;
       const dropdown = new Dropdown(element);
 
@@ -94,15 +94,15 @@ describe('Dropdown', () => {
     it('should hide a dropdown', async () => {
       fixtureEl.innerHTML = `
         <button
-          data-toggle="dropdown"
-          data-target="#DropdownDemo1"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#DropdownDemo1"
         >
           toggle
         </button>
         <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
       `;
 
-      const element = fixtureEl.querySelector('[data-toggle="dropdown"]') as HTMLElement;
+      const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
       const dropdown = new Dropdown(element);
 
       await dropdown.hide();

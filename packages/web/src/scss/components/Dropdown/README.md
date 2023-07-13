@@ -5,8 +5,8 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    data-toggle="dropdown"
-    data-target="#dropdownDefault"
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownDefault"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
     aria-controls="#dropdownDefault"
@@ -47,8 +47,8 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    data-toggle="dropdown"
-    data-target="#dropdownTopRight"
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownTopRight"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
     aria-controls="#dropdownTopRight"
@@ -89,12 +89,12 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    data-toggle="dropdown"
-    data-target="#dropdownDisabledAutoClose"
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownDisabledAutoClose"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
     aria-controls="#dropdownDisabledAutoClose"
-    data-autoclose="true"
+    data-spirit-autoclose="true"
   >
     Button as anchor
   </button>
@@ -132,15 +132,15 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    data-toggle="dropdown"
-    data-target="#dropdownFullWidthModeAll"
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownFullWidthModeAll"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
     aria-controls="#dropdownFullWidthModeAll"
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-fullwidthmode="all">
+  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -174,15 +174,19 @@
 ```html
 <div class="DropdownWrapper">
   <button
-    data-toggle="dropdown"
-    data-target="#dropdownFullWidthModeMobile"
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownFullWidthModeMobile"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
     aria-controls="#dropdownFullWidthModeMobile"
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeMobile" data-fullwidthmode="mobile-only">
+  <div
+    class="Dropdown Dropdown--top Dropdown--left"
+    id="dropdownFullWidthModeMobile"
+    data-spirit-fullwidthmode="mobile-only"
+  >
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -221,18 +225,18 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ### Dropdown trigger
 
-| Attribute        | Type      | Default | Required | Description                                                                                                    |
-| ---------------- | --------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `data-target`    | `string`  | -       | yes      | Target menu element selector                                                                                   |
-| `aria-expanded`  | `boolean` | -       | yes      | Is set on an element to indicate if a control is expanded or collapsed                                         |
-| `aria-controls`  | `string`  | -       | yes      | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
-| `data-autoclose` | `boolean` | true    | no       | When you need to disable autoclose feature                                                                     |
+| Attribute               | Type      | Default | Required | Description                                                                                                    |
+| ----------------------- | --------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `data-spirit-target`    | `string`  | -       | yes      | Target menu element selector                                                                                   |
+| `aria-expanded`         | `boolean` | -       | yes      | Is set on an element to indicate if a control is expanded or collapsed                                         |
+| `aria-controls`         | `string`  | -       | yes      | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
+| `data-spirit-autoclose` | `boolean` | true    | no       | When you need to disable autoclose feature                                                                     |
 
 ## Dropdown
 
-| Attribute            | Type                        | Default | Required | Description     |
-| -------------------- | --------------------------- | ------- | -------- | --------------- |
-| `data-fullwidthmode` | `'off','mobile-only','all'` | -       | no       | Full-width mode |
+| Attribute                   | Type                        | Default | Required | Description     |
+| --------------------------- | --------------------------- | ------- | -------- | --------------- |
+| `data-spirit-fullwidthmode` | `'off','mobile-only','all'` | -       | no       | Full-width mode |
 
 ## JavaScript API
 

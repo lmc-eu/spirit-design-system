@@ -42,7 +42,7 @@ describe('FileUploader', () => {
     jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
 
     fixtureEl.innerHTML = `
-      <div class="FileUploader" data-toggle="fileUploader">
+      <div class="FileUploader" data-spirit-toggle="fileUploader">
         <template data-spirit-snippet="item"></template>
         <div class="FileUploaderInput" data-spirit-element="wrapper">
           <label for="fileUploadMultiple" class="FileUploaderInput__label">Label</label>
@@ -53,7 +53,7 @@ describe('FileUploader', () => {
       </div>
     `;
 
-    const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+    const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
 
     const fileUploader = new FileUploader(fileUploaderEl);
     expect(fileUploader.getUpdatedFileName('test')).toBe('file_xjylrx_test');
@@ -77,7 +77,7 @@ describe('FileUploader', () => {
   describe('constructor', () => {
     it('should take care of element passed as a CSS selector', () => {
       fixtureEl.innerHTML = `
-        <div class="FileUploader" data-toggle="fileUploader">
+        <div class="FileUploader" data-spirit-toggle="fileUploader">
           <template data-spirit-snippet="item"></template>
           <div class="FileUploaderInput" data-spirit-element="wrapper">
             <label for="fileUploadMultiple" class="FileUploaderInput__label">Label</label>
@@ -88,7 +88,7 @@ describe('FileUploader', () => {
         </div>
       `;
 
-      const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+      const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
       const fileUploaderBySelector = new FileUploader(fileUploaderEl);
 
       expect(fileUploaderBySelector.element).toEqual(fileUploaderEl);
@@ -98,7 +98,7 @@ describe('FileUploader', () => {
   describe('data attributes', () => {
     beforeEach(() => {
       fixtureEl.innerHTML = `
-        <div class="FileUploader" data-toggle="fileUploader">
+        <div class="FileUploader" data-spirit-toggle="fileUploader">
             <div data-spirit-element="wrapper" data-spirit-max-file-size="5000000" data-spirit-file-queue-limit="5">
                 <input type="file" data-spirit-element="input" />
             </div>
@@ -106,25 +106,25 @@ describe('FileUploader', () => {
       `;
     });
 
-    it('should read data-max-file-size attribute and set fileSizeLimit', () => {
-      const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+    it('should read data-spirit-max-file-size attribute and set fileSizeLimit', () => {
+      const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
       const fileUploaderInstance = new FileUploader(fileUploaderEl);
       expect(fileUploaderInstance.fileSizeLimit).toBe(5000000);
     });
 
-    it('should read data-file-queue-limit attribute and set fileQueueLimit', () => {
-      const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+    it('should read data-spirit-file-queue-limit attribute and set fileQueueLimit', () => {
+      const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
       const fileUploaderInstance = new FileUploader(fileUploaderEl);
       expect(fileUploaderInstance.fileQueueLimit).toBe(5);
     });
 
     it('should use default values when data attributes are not provided', () => {
       fixtureEl.innerHTML = `
-        <div class="FileUploader" data-toggle="fileUploader">
+        <div class="FileUploader" data-spirit-toggle="fileUploader">
           <input type="file" data-spirit-element="input" />
         </div>
       `;
-      const fileUploaderEl = fixtureEl.querySelector('[data-toggle="fileUploader"]') as HTMLElement;
+      const fileUploaderEl = fixtureEl.querySelector('[data-spirit-toggle="fileUploader"]') as HTMLElement;
       const fileUploaderInstance = new FileUploader(fileUploaderEl);
       expect(fileUploaderInstance.fileSizeLimit).toBe(10000000); // Default file size limit
       expect(fileUploaderInstance.fileQueueLimit).toBe(10); // Default file queue limit

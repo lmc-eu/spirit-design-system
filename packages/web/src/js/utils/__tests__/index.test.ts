@@ -13,8 +13,10 @@ describe('Util', () => {
   });
 
   describe('getElementFromSelector', () => {
-    it('should get element from data-target', () => {
-      fixtureEl.innerHTML = ['<div id="test" data-target=".target"></div>', '<div class="target"></div>'].join('');
+    it('should get element from data-spirit-target', () => {
+      fixtureEl.innerHTML = ['<div id="test" data-spirit-target=".target"></div>', '<div class="target"></div>'].join(
+        '',
+      );
 
       const testEl = fixtureEl.querySelector('#test') as HTMLElement;
 
@@ -68,9 +70,9 @@ describe('Util', () => {
   });
 
   describe('getTriggerOrTarget', () => {
-    it('should try to parse element base on data-target', () => {
+    it('should try to parse element base on data-spirit-target', () => {
       fixtureEl.innerHTML = [
-        '<div id="foo" class="test" data-target="#bar"></div>',
+        '<div id="foo" class="test" data-spirit-target="#bar"></div>',
         '<div id="bar" class="test"></div>',
       ].join('');
 
