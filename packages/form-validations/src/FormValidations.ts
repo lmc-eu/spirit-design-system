@@ -416,7 +416,7 @@ class FormValidations {
           field.input.type === 'checkbox' ? 'span' : this.config.validationTextTag,
         ) as ValidationTextElement;
         validationTextElement.className = `${VALIDATIONS_ERROR} ${this.config.validationTextClass}`;
-        validationTextElement.dataset.element = this.config.dataElementMessage;
+        validationTextElement.dataset.spiritElement = this.config.dataElementMessage;
         validationTextParent.appendChild(validationTextElement);
         validationTextElement.formValidationsDisplay = validationTextElement.style.display;
       }
