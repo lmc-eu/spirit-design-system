@@ -31,7 +31,7 @@
             <TextField isFluid name="email" id="email" type="email" label="Email" isRequired  data-spirit-validate inputProps={ emailInputProps } />
             {% set phoneInputProps = { "data-spirit-pattern": "/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/", "data-spirit-pattern-message": "Invalid phone number", } %}
             <TextField isFluid name="phone" id="phone" type="tel" label="phone" isRequired placeholder="+420 733 333 333" data-spirit-validate inputProps={ phoneInputProps } />
-            <CheckboxField isFluid name="checkboxfield1" id="checkboxfield1" label="I accept the terms and conditions (required)" isRequired  data-spirit-validate />
+            <Checkbox isFluid name="checkboxfield1" id="checkboxfield1" label="I accept the terms and conditions (required)" isRequired  data-spirit-validate />
             <div>
               <Button type="submit" color="primary" isBlock>Submit</Button>
             </div>
