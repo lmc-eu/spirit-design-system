@@ -51,6 +51,7 @@ class FileUploader extends BaseComponent {
   fileQueue: Map<string, File>;
   instanceUid: string;
   errors: Record<string, string>;
+  isDisabled: boolean;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -84,6 +85,7 @@ class FileUploader extends BaseComponent {
     this.isDragging = false;
     this.fileQueue = new Map();
     this.instanceUid = FileUploader.getUid();
+    this.isDisabled = this.inputElement?.disabled || false;
 
     this.init();
   }
@@ -212,6 +214,13 @@ class FileUploader extends BaseComponent {
     return attachmentValidationTextElement;
   }
 
+  static isValidationTextInElement(validationText: string, element: HTMLElement) {
+    const listItems = element.getElementsByTagName('li');
+    const matchingItems = Array.from(listItems).filter((item) => item.textContent?.includes(validationText));
+
+    return !!matchingItems.length;
+  }
+
   getValidationTextElement(validationText: string) {
     const validationTextItem = document.createElement('li');
     validationTextItem.appendChild(document.createTextNode(validationText));
@@ -221,7 +230,9 @@ class FileUploader extends BaseComponent {
     if (!validationTextElement) {
       validationTextElement = FileUploader.createValidationTextElement();
     }
-    validationTextElement.appendChild(validationTextItem);
+
+    const isValidationTextAlreadyShown = FileUploader.isValidationTextInElement(validationText, validationTextElement);
+    !isValidationTextAlreadyShown && validationTextElement.appendChild(validationTextItem);
 
     return validationTextElement;
   }
@@ -377,6 +388,10 @@ class FileUploader extends BaseComponent {
   onDrop(event: DragEvent) {
     event.preventDefault();
 
+    if (this.isDisabled) {
+      return;
+    }
+
     const transferItems = Array.from(event?.dataTransfer?.items || []);
     const transferFiles = Array.from(event?.dataTransfer?.files || []);
 
@@ -388,35 +403,17 @@ class FileUploader extends BaseComponent {
       }
     }
 
-    let counter = 0;
-    let overLimit;
-    counter += this.fileQueue.size;
-
     if (event?.dataTransfer?.items) {
       transferItems.forEach((item) => {
         if (item.kind === 'file') {
           const file = item.getAsFile();
-          if (file && counter < this.fileQueueLimit) {
-            this.addToQueue(file);
-            counter += 1;
-          } else {
-            overLimit = true;
-          }
+          file && this.addToQueue(file);
         }
       });
     } else {
       transferFiles.forEach((file) => {
-        if (counter < this.fileQueueLimit) {
-          this.addToQueue(file);
-          counter += 1;
-        } else {
-          overLimit = true;
-        }
+        this.addToQueue(file);
       });
-    }
-
-    if (overLimit) {
-      EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: this.errors.errorMaxUploadedFiles });
     }
   }
 
