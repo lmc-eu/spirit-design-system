@@ -103,13 +103,12 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 
 **Available props**
 
-| Name               | Type                                          | Default   | Required | Description                                                                  |
-| ------------------ | --------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------- |
-| `children`         | `ReactNode`                                   | -         | no       | Children node                                                                |
-| `align`            | [AlignmentX dictionary][dictionary-alignment] | `'right'` | no       | [**DEPRECATED**][deprecated] in favor of `alignmentX`; ModalFooter alignment |
-| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `'right'` | no       | ModalFooter alignment                                                        |
-| `UNSAFE_className` | `string`                                      | -         | no       | ModalFooter custom class name                                                |
-| `UNSAFE_style`     | `CSSProperties`                               | -         | no       | ModalFooter custom style                                                     |
+| Name               | Type                                          | Default   | Required | Description                   |
+| ------------------ | --------------------------------------------- | --------- | -------- | ----------------------------- |
+| `children`         | `ReactNode`                                   | -         | no       | Children node                 |
+| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `'right'` | no       | ModalFooter alignment         |
+| `UNSAFE_className` | `string`                                      | -         | no       | ModalFooter custom class name |
+| `UNSAFE_style`     | `CSSProperties`                               | -         | no       | ModalFooter custom style      |
 
 The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -119,4 +118,3 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 [DivElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 [HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
