@@ -167,7 +167,7 @@ describe('FileUploader', () => {
     });
   });
 
-  describe('FileUploader: File Queue Limit', () => {
+  describe('File Queue Limit', () => {
     let fileUploader: FileUploader;
 
     beforeEach(() => {
@@ -287,6 +287,40 @@ describe('FileUploader', () => {
       expect(() => instance.checkFileQueueDuplicity(file)).toThrow(
         `${file.name}: ${instance.errors.errorFileDuplicity}`,
       );
+    });
+  });
+
+  describe('isValidationTextInElement', () => {
+    let listElement: HTMLElement;
+
+    beforeEach(() => {
+      listElement = document.createElement('div');
+      listElement.innerHTML = `
+      <ul>
+        <li>Validation Text 1</li>
+        <li>Validation Text 2</li>
+        <li>Validation Text 3</li>
+      </ul>`;
+    });
+
+    it('should return true if validation text is found in any <li> element', () => {
+      const validationText = 'Validation Text 2';
+
+      expect(FileUploader.isValidationTextInElement(validationText, listElement)).toBe(true);
+    });
+
+    it('should return false if validation text is not found in any <li> element', () => {
+      const validationText = 'Not Found';
+
+      expect(FileUploader.isValidationTextInElement(validationText, listElement)).toBe(false);
+    });
+
+    it('should return false for an empty element', () => {
+      const emptyElement = document.createElement('div');
+
+      const validationText = 'Validation Text';
+
+      expect(FileUploader.isValidationTextInElement(validationText, emptyElement)).toBe(false);
     });
   });
 });
