@@ -26,26 +26,4 @@
 
     </form>
 
-    <script type="module">
-        import FileUploader from '@lmc-eu/spirit-web/src/js/FileUploader';
-
-        const form = document.querySelector('#form-example');
-        const uploader = document.querySelector('#example-composition');
-        const fileUploader = FileUploader.createInstance(uploader);
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const formData = new FormData(form);
-            console.log('form element', form);
-            console.log('form data', formData);
-            console.log('file queue', fileUploader.getFileQueue);
-
-            // Clear after submit
-            setTimeout(() => {
-                fileUploader.clearFileQueue();
-                console.log('file queue after submit', fileUploader.getFileQueue);
-            }, 250);
-        });
-    </script>
-
 </section>
