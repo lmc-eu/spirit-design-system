@@ -11,6 +11,8 @@ import './styles/app.scss';
 import '@lmc-eu/spirit-web/src/js/index.esm';
 // eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions, no-unused-vars
 import FormValidations from '@lmc-eu/spirit-form-validations/src';
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved, import/extensions, no-unused-vars
+import FileUploader from '@lmc-eu/spirit-web/src/js/FileUploader';
 
 window.onload = () => {
   FormValidations.addValidator(
@@ -53,3 +55,21 @@ window.onload = () => {
     false,
   );
 };
+
+const form = document.querySelector('#form-example') as HTMLFormElement;
+const uploader = document.querySelector('#example-composition');
+const fileUploader = FileUploader.createInstance(uploader) as FileUploader;
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  console.log('form element', form);
+  console.log('form data', formData);
+  console.log('file queue', fileUploader.getFileQueue);
+
+  // Clear after submit
+  setTimeout(() => {
+    fileUploader.clearFileQueue();
+    console.log('file queue after submit', fileUploader.getFileQueue);
+  }, 250);
+});
