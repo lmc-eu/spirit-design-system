@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.34.1...@lmc-eu/spirit-web-twig@2.0.0) (2023-07-21)
+
+### BREAKING CHANGES
+
+- **web-twig:** Add `spirit` infix to data attr names in components [#DS-585](https://github.com/lmc-eu/spirit-design-system/issues/DS-585) ([9dd93ac](https://github.com/lmc-eu/spirit-design-system/commit/9dd93ac))
+- **web-twig:** Remove `class` prop from all components [#DS-678](https://github.com/lmc-eu/spirit-design-system/issues/DS-678) ([11c6ee6](https://github.com/lmc-eu/spirit-design-system/commit/11c6ee6))
+- **web-twig:** Remove `error` Validation State in favor of `danger` [#DS-677](https://github.com/lmc-eu/spirit-design-system/issues/DS-677) ([9887171](https://github.com/lmc-eu/spirit-design-system/commit/9887171))
+- **web-twig:** Remove `isFullWidth` and `breakpoint` props from `Dropdown` [#DS-588](https://github.com/lmc-eu/spirit-design-system/issues/DS-588) ([edeabac](https://github.com/lmc-eu/spirit-design-system/commit/edeabac))
+- **web-twig:** Remove `onClick` prop [#DS-686](https://github.com/lmc-eu/spirit-design-system/issues/DS-686) ([ab62f78](https://github.com/lmc-eu/spirit-design-system/commit/ab62f78))
+- **web-twig:** Remove `size` prop from `Icon` in favor of `boxSize` [#DS-647](https://github.com/lmc-eu/spirit-design-system/issues/DS-647) ([f982ce9](https://github.com/lmc-eu/spirit-design-system/commit/f982ce9))
+- **web-twig:** Remove `theme` prop and `default` color from `Tag` [#DS-648](https://github.com/lmc-eu/spirit-design-system/issues/DS-648) ([bf62242](https://github.com/lmc-eu/spirit-design-system/commit/bf62242))
+- **web-twig:** Remove boolprop filter from Twig components [#DS-798](https://github.com/lmc-eu/spirit-design-system/issues/DS-798) ([981195b](https://github.com/lmc-eu/spirit-design-system/commit/981195b))
+- **web-twig:** Remove data-toggle from TabLink component refs [#DS-840](https://github.com/lmc-eu/spirit-design-system/issues/DS-840) ([0d7df9b](https://github.com/lmc-eu/spirit-design-system/commit/0d7df9b)), closes [#935](https://github.com/lmc-eu/spirit-design-system/issues/935)
+- **web-twig:** Remove deprecated `Header` component [#652](https://github.com/lmc-eu/spirit-design-system/issues/652) ([3044ce1](https://github.com/lmc-eu/spirit-design-system/commit/3044ce1)), closes [#935](https://github.com/lmc-eu/spirit-design-system/issues/935), [#935](https://github.com/lmc-eu/spirit-design-system/issues/935)
+- **web-twig:** Remove modal body padding feature class [#DS-863](https://github.com/lmc-eu/spirit-design-system/issues/DS-863) ([933a956](https://github.com/lmc-eu/spirit-design-system/commit/933a956))
+- **web-twig:** Remove old Modal and rename ModalComposed to Modal [#DS-616](https://github.com/lmc-eu/spirit-design-system/issues/DS-616) ([ee92622](https://github.com/lmc-eu/spirit-design-system/commit/ee92622))
+- **web-twig:** Remove Twig `boolprop` filter and its extension [#DS-798](https://github.com/lmc-eu/spirit-design-system/issues/DS-798) ([f71a8b0](https://github.com/lmc-eu/spirit-design-system/commit/f71a8b0))
+- **web-twig:** Rename `CheckboxField` component to `Checkbox` [#DS-522](https://github.com/lmc-eu/spirit-design-system/issues/DS-522) ([c24d9f6](https://github.com/lmc-eu/spirit-design-system/commit/c24d9f6))
+- **web-twig:** Rename `RadioField` component to `Radio` [#DS-521](https://github.com/lmc-eu/spirit-design-system/issues/DS-521) ([cba5ec6](https://github.com/lmc-eu/spirit-design-system/commit/cba5ec6))
+- **web-twig:** Rename message prop to validationText in Form Fields [#DS-676](https://github.com/lmc-eu/spirit-design-system/issues/DS-676) ([38c0620](https://github.com/lmc-eu/spirit-design-system/commit/38c0620))
+- **web-twig:** Rename ScrollView `indicators` prop to `overflowDecorators` [#DS-825](https://github.com/lmc-eu/spirit-design-system/issues/DS-825) ([c4f64e4](https://github.com/lmc-eu/spirit-design-system/commit/c4f64e4))
+- **web-twig:** Set `Stack` default spacing to zero [#DS-741](https://github.com/lmc-eu/spirit-design-system/issues/DS-741) ([096b9a5](https://github.com/lmc-eu/spirit-design-system/commit/096b9a5))
+
+### Bug Fixes
+
+- **web-twig:** Fix animations helper using class on Icon, not UNSAFE_className ([2028c6b](https://github.com/lmc-eu/spirit-design-system/commit/2028c6b))
+
+### Documentation
+
+- **web-twig:** Introduce migration guide for v2 refs [#DS-800](https://github.com/lmc-eu/spirit-design-system/issues/DS-800) ([7ae79a3](https://github.com/lmc-eu/spirit-design-system/commit/7ae79a3))
+- **web-twig:** Remove v1 disabled demo from `TextArea` and `TextField` [#DS-649](https://github.com/lmc-eu/spirit-design-system/issues/DS-649) ([3ee812a](https://github.com/lmc-eu/spirit-design-system/commit/3ee812a))
+
+### Features
+
+- **web-twig:** Add autocomplete attribute to the CheckboxField ([1aeb91b](https://github.com/lmc-eu/spirit-design-system/commit/1aeb91b))
+
+### Styles
+
+- **web-twig:** Fix indentation of Tabs fixture ([198af86](https://github.com/lmc-eu/spirit-design-system/commit/198af86))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.34.1"></a>
 
 ## [1.34.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.34.0...@lmc-eu/spirit-web-twig@1.34.1) (2023-07-21)

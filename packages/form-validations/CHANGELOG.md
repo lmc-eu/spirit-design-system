@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@0.2.5...@lmc-eu/spirit-form-validations@1.0.0) (2023-07-21)
+
+### BREAKING CHANGES
+
+- **form-validation:** Add `spirit` infix to `data-element` in Validation Text [#DS-585](https://github.com/lmc-eu/spirit-design-system/issues/DS-585) ([0228281](https://github.com/lmc-eu/spirit-design-system/commit/0228281))
+- **form-validations:** Rename `validator_message` to `validation_text` [#DS-838](https://github.com/lmc-eu/spirit-design-system/issues/DS-838) ([b87f302](https://github.com/lmc-eu/spirit-design-system/commit/b87f302))
+
+### Documentation
+
+- **form-validations:** Introduce migration guide for v1 refs [#DS-800](https://github.com/lmc-eu/spirit-design-system/issues/DS-800) ([027004b](https://github.com/lmc-eu/spirit-design-system/commit/027004b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="0.2.5"></a>
 
 ## [0.2.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@0.2.4...@lmc-eu/spirit-form-validations@0.2.5) (2023-07-21)

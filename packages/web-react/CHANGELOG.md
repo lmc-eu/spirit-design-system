@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.48.3...@lmc-eu/spirit-web-react@1.0.0) (2023-07-21)
+
+### BREAKING CHANGES
+
+- **web-react:** Add `spirit` infix to data-placement in Tooltip [#DS-585](https://github.com/lmc-eu/spirit-design-system/issues/DS-585) ([c1f83d0](https://github.com/lmc-eu/spirit-design-system/commit/c1f83d0))
+- **web-react:** Remove `error` Validation State in favor of `danger` [#DS-677](https://github.com/lmc-eu/spirit-design-system/issues/DS-677) ([d07b23b](https://github.com/lmc-eu/spirit-design-system/commit/d07b23b))
+- **web-react:** Remove `isFullWidth` and `breakpoint` props from `Dropdown` [#DS-588](https://github.com/lmc-eu/spirit-design-system/issues/DS-588) ([d84016c](https://github.com/lmc-eu/spirit-design-system/commit/d84016c))
+- **web-react:** Remove `size` prop from `Icon` in favor of `boxSize` [#DS-647](https://github.com/lmc-eu/spirit-design-system/issues/DS-647) ([f19f8bb](https://github.com/lmc-eu/spirit-design-system/commit/f19f8bb))
+- **web-react:** Remove `theme` and `tag` props and `default` color from `Tag` [#DS-648](https://github.com/lmc-eu/spirit-design-system/issues/DS-648) ([ab5606a](https://github.com/lmc-eu/spirit-design-system/commit/ab5606a))
+- **web-react:** Remove align prop in ModalFooter ([b5638ce](https://github.com/lmc-eu/spirit-design-system/commit/b5638ce))
+- **web-react:** Remove Header deprecations [#DS-651](https://github.com/lmc-eu/spirit-design-system/issues/DS-651) ([2782212](https://github.com/lmc-eu/spirit-design-system/commit/2782212))
+- **web-react:** Remove old Modal and rename ModalComposed to Modal [#DS-617](https://github.com/lmc-eu/spirit-design-system/issues/DS-617) ([f323e9b](https://github.com/lmc-eu/spirit-design-system/commit/f323e9b))
+- **web-react:** Rename `message` prop to `validationText` in Form Fields [#DS-676](https://github.com/lmc-eu/spirit-design-system/issues/DS-676) ([b80d336](https://github.com/lmc-eu/spirit-design-system/commit/b80d336))
+- **web-react:** Rename CheckboxField component to `Checkbox` [#DS-522](https://github.com/lmc-eu/spirit-design-system/issues/DS-522) ([e44f569](https://github.com/lmc-eu/spirit-design-system/commit/e44f569))
+- **web-react:** Rename RadioField component to Radio [#DS-521](https://github.com/lmc-eu/spirit-design-system/issues/DS-521) ([d7f2d22](https://github.com/lmc-eu/spirit-design-system/commit/d7f2d22))
+- **web-react:** Rename ScrollView `indicators` prop to `overflowDecorators` [#DS-825](https://github.com/lmc-eu/spirit-design-system/issues/DS-825) ([bdc9685](https://github.com/lmc-eu/spirit-design-system/commit/bdc9685))
+- **web-react:** Set `Stack` default spacing to zero [#DS-741](https://github.com/lmc-eu/spirit-design-system/issues/DS-741) ([6cdd8af](https://github.com/lmc-eu/spirit-design-system/commit/6cdd8af))
+
+### Documentation
+
+- **web-react:** Align Field components README examples with other ([40e789c](https://github.com/lmc-eu/spirit-design-system/commit/40e789c))
+- **web-react:** Introduce migration guide for v1 refs [#DS-800](https://github.com/lmc-eu/spirit-design-system/issues/DS-800) ([c17f7d1](https://github.com/lmc-eu/spirit-design-system/commit/c17f7d1))
+- **web-react:** Sort Field components props aplhabetically in READMEs ([1f8afec](https://github.com/lmc-eu/spirit-design-system/commit/1f8afec))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="0.48.3"></a>
 
 ## [0.48.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.48.2...@lmc-eu/spirit-web-react@0.48.3) (2023-07-21)

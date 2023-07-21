@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.50.1...@lmc-eu/spirit-web@1.0.0) (2023-07-21)
+
+### BREAKING CHANGES
+
+- **web:** Add `spirit` infix to data attr names for components and JS plugins [#DS-585](https://github.com/lmc-eu/spirit-design-system/issues/DS-585) ([1a8acd9](https://github.com/lmc-eu/spirit-design-system/commit/1a8acd9))
+- **web:** Add underline to hover and active states to default links [#DS-650](https://github.com/lmc-eu/spirit-design-system/issues/DS-650) ([6e83710](https://github.com/lmc-eu/spirit-design-system/commit/6e83710))
+- **web:** Composed Modal became Modal [#DS-592](https://github.com/lmc-eu/spirit-design-system/issues/DS-592) ([369bbe1](https://github.com/lmc-eu/spirit-design-system/commit/369bbe1))
+- **web:** Remove `default` (now `neutral`) and `light` (`subtle`) `Tag` variants [#DS-648](https://github.com/lmc-eu/spirit-design-system/issues/DS-648) ([273aa26](https://github.com/lmc-eu/spirit-design-system/commit/273aa26))
+- **web:** Remove `error` state from Checkbox, Radio, TextField, and TextArea [#DS-677](https://github.com/lmc-eu/spirit-design-system/issues/DS-677) ([813d9c3](https://github.com/lmc-eu/spirit-design-system/commit/813d9c3))
+- **web:** Remove `fullWidth` and `data-breakpoint` modifiers from `Dropdown` [#DS-588](https://github.com/lmc-eu/spirit-design-system/issues/DS-588) ([31296ea](https://github.com/lmc-eu/spirit-design-system/commit/31296ea)), closes [#935](https://github.com/lmc-eu/spirit-design-system/issues/935), [#935](https://github.com/lmc-eu/spirit-design-system/issues/935), [#935](https://github.com/lmc-eu/spirit-design-system/issues/935)
+- **web:** Remove deprecated `Header` component [#653](https://github.com/lmc-eu/spirit-design-system/issues/653) ([c730a62](https://github.com/lmc-eu/spirit-design-system/commit/c730a62)), closes [#935](https://github.com/lmc-eu/spirit-design-system/issues/935), [#935](https://github.com/lmc-eu/spirit-design-system/issues/935)
+- **web:** Remove modal body padding feature class [#DS-863](https://github.com/lmc-eu/spirit-design-system/issues/DS-863) ([462a245](https://github.com/lmc-eu/spirit-design-system/commit/462a245))
+- **web:** Rename `CheckboxField` to `Checkbox` [#DS-522](https://github.com/lmc-eu/spirit-design-system/issues/DS-522) ([5270040](https://github.com/lmc-eu/spirit-design-system/commit/5270040))
+- **web:** Rename `message` to `validationText` in Form Fields [#DS-676](https://github.com/lmc-eu/spirit-design-system/issues/DS-676) ([44a9fd7](https://github.com/lmc-eu/spirit-design-system/commit/44a9fd7))
+- **web:** Rename `RadioField` to `Radio` [#DS-521](https://github.com/lmc-eu/spirit-design-system/issues/DS-521) ([c5219d1](https://github.com/lmc-eu/spirit-design-system/commit/c5219d1))
+- **web:** Rename `validator_message` to `validation_text` [#DS-838](https://github.com/lmc-eu/spirit-design-system/issues/DS-838) ([bef2d7a](https://github.com/lmc-eu/spirit-design-system/commit/bef2d7a))
+- **web:** Rename ScrollView `indicators` class to `overflowDecorators` [#DS-825](https://github.com/lmc-eu/spirit-design-system/issues/DS-825) ([d7b8026](https://github.com/lmc-eu/spirit-design-system/commit/d7b8026))
+- **web:** Set `Stack` default spacing to zero [#DS-741](https://github.com/lmc-eu/spirit-design-system/issues/DS-741) ([27deefc](https://github.com/lmc-eu/spirit-design-system/commit/27deefc))
+- **web:** Update `TextField` and `TextArea` default disabled style [#DS-649](https://github.com/lmc-eu/spirit-design-system/issues/DS-649) ([3ddf8c2](https://github.com/lmc-eu/spirit-design-system/commit/3ddf8c2))
+
+### Documentation
+
+- **web:** Introduce migration guide for v1 refs [#DS-800](https://github.com/lmc-eu/spirit-design-system/issues/DS-800) ([884ad9d](https://github.com/lmc-eu/spirit-design-system/commit/884ad9d))
+- **web:** Remove deprecation reference from Select README ([38f0189](https://github.com/lmc-eu/spirit-design-system/commit/38f0189))
+- **web:** Unify TextArea demo with Twig ([e90904b](https://github.com/lmc-eu/spirit-design-system/commit/e90904b))
+
+### Features
+
+- **web:** Unify FileUploaderInput and Attachment paddings with design [#DS-859](https://github.com/lmc-eu/spirit-design-system/issues/DS-859) ([3840d0a](https://github.com/lmc-eu/spirit-design-system/commit/3840d0a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.50.1"></a>
 
 ## [0.50.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.50.0...@lmc-eu/spirit-web@0.50.1) (2023-07-21)
