@@ -60,8 +60,19 @@ bash: ## Connect to the PHP container
 
 sh: bash ## Connect to the PHP container (alias for `bash`)
 
-cert: ## Trust the Authority of server certificates
+ifeq ($(os),win)
+cert: ## Trust the Authority of server certificates, pass the parameter "os=" with "win" | "linux" (default is "mac") for specific OS
+	@$(eval os ?=)
+	cd $(APP_DOCKER_DIR) && docker cp `docker compose ps -q $(DOCKER_SERVER_SERVICE)`:/data/caddy/pki/authorities/local/root.crt %TEMP%/root.crt && certutil -addstore -f "ROOT" %TEMP%/root.crt
+else ifeq ($(os),linux)
+cert:
+	@$(eval os ?=)
+	cd $(APP_DOCKER_DIR) && docker cp `docker compose ps -q $(DOCKER_SERVER_SERVICE)`:/data/caddy/pki/authorities/local/root.crt /usr/local/share/ca-certificates/root.crt && sudo update-ca-certificates
+else
+cert:
+	@$(eval os ?=)
 	cd $(APP_DOCKER_DIR) && docker cp `docker compose ps -q $(DOCKER_SERVER_SERVICE)`:/data/caddy/pki/authorities/local/root.crt /tmp/root.crt && sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/root.crt
+endif
 
 ## —— Encore 🎭 ————————————————————————————————————————————————————————————————
 

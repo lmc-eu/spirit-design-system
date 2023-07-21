@@ -138,3 +138,7 @@ Add remote repository only once:
 Force push current changes to remote using subtree:
 
 - `` git push web-twig-readonly `git subtree split --prefix packages/web-twig main`:main --force ``
+
+Or
+
+- use `make publish pkg=web-twig` in repository root to publish changes to remote.
