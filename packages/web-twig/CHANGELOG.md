@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.34.1"></a>
+
+## [1.34.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.34.0...@lmc-eu/spirit-web-twig@1.34.1) (2023-07-21)
+
+### Chores
+
+- **web-twig:** Remove old unused component snapshots ([153bb45](https://github.com/lmc-eu/spirit-design-system/commit/153bb45))
+
+### Code Refactoring
+
+- **web-twig:** Move FileUploader form demo script to Demo App ([4aa1d7d](https://github.com/lmc-eu/spirit-design-system/commit/4aa1d7d)), closes [#DS-831](https://github.com/lmc-eu/spirit-design-system/issues/DS-831)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="1.34.0"></a>
 
 # [1.34.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.33.0...@lmc-eu/spirit-web-twig@1.34.0) (2023-06-28)

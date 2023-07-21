@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.50.1"></a>
+
+## [0.50.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.50.0...@lmc-eu/spirit-web@0.50.1) (2023-07-21)
+
+### Bug Fixes
+
+- **web:** Fix FileUploader Drag and Drop and duplicated validation messages ([5fdd298](https://github.com/lmc-eu/spirit-design-system/commit/5fdd298)), closes [#DS-848](https://github.com/lmc-eu/spirit-design-system/issues/DS-848)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="0.50.0"></a>
 
 # [0.50.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.49.1...@lmc-eu/spirit-web@0.50.0) (2023-07-02)
