@@ -18,8 +18,8 @@
 
     
 
-    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.9b272b8b.js"></script>
-    <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.5a7c27cb.css">
+    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.6fe41c9e.js"></script>
+    <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.91194505.css">
   </head>
   <body>
 
@@ -35,8 +35,8 @@
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_basic"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_basic"
               aria-controls="example_basic"
               aria-expanded="false"
             >
@@ -44,7 +44,7 @@
             </button>
           
             <!-- Modal: start -->
-            <dialog id="example_basic" class="Modal Modal--composed" aria-labelledby="example_basic_title">
+            <dialog id="example_basic" class="Modal" aria-labelledby="example_basic_title">
           
               <!-- ModalDialog: start -->
               <article class="ModalDialog ModalDialog--expandOnMobile">
@@ -55,8 +55,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_basic"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_basic"
                     aria-controls="example_basic"
                     aria-expanded="false"
                   >
@@ -91,24 +91,24 @@
                   </script>
                   <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
                     <div>Footer alignment (from tablet up):</div>
-                    <label for="footer_alignment_left" class="RadioField mr-600">
-                      <input type="radio" id="footer_alignment_left" name="footer_alignment" value="left" class="RadioField__input" autocomplete="off" />
-                      <span class="RadioField__label">Left</span>
+                    <label for="footer_alignment_left" class="Radio mr-600">
+                      <input type="radio" id="footer_alignment_left" name="footer_alignment" value="left" class="Radio__input" autocomplete="off" />
+                      <span class="Radio__label">Left</span>
                     </label>
-                    <label for="footer_alignment_center" class="RadioField mr-600">
-                      <input type="radio" id="footer_alignment_center" name="footer_alignment" value="center" class="RadioField__input" autocomplete="off" />
-                      <span class="RadioField__label">Center</span>
+                    <label for="footer_alignment_center" class="Radio mr-600">
+                      <input type="radio" id="footer_alignment_center" name="footer_alignment" value="center" class="Radio__input" autocomplete="off" />
+                      <span class="Radio__label">Center</span>
                     </label>
-                    <label for="footer_alignment_right" class="RadioField mr-600">
-                      <input type="radio" id="footer_alignment_right" name="footer_alignment" value="right" class="RadioField__input" autocomplete="off" checked />
-                      <span class="RadioField__label">Right</span>
+                    <label for="footer_alignment_right" class="Radio mr-600">
+                      <input type="radio" id="footer_alignment_right" name="footer_alignment" value="right" class="Radio__input" autocomplete="off" checked />
+                      <span class="Radio__label">Right</span>
                     </label>
                   </form>
                   <form class="d-tablet-none">
-                    <label for="expand_on_mobile" class="CheckboxField">
-                      <input type="checkbox" id="expand_on_mobile" class="CheckboxField__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
-                      <span class="CheckboxField__text">
-                          <span class="CheckboxField__label">Expand on mobile</span>
+                    <label for="expand_on_mobile" class="Checkbox">
+                      <input type="checkbox" id="expand_on_mobile" class="Checkbox__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
+                      <span class="Checkbox__text">
+                          <span class="Checkbox__label">Expand on mobile</span>
                         </span>
                     </label>
                   </form>
@@ -126,16 +126,16 @@
                     <button
                       type="button"
                       class="Button Button--primary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_basic"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_basic"
                     >
                       Primary action
                     </button>
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_basic"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_basic"
                     >
                       Secondary action
                     </button>
@@ -152,8 +152,8 @@
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_form"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_form"
               aria-controls="example_form"
               aria-expanded="false"
             >
@@ -161,7 +161,7 @@
             </button>
           
             <!-- Modal: start -->
-            <dialog id="example_form" class="Modal Modal--composed" aria-labelledby="example_form_title">
+            <dialog id="example_form" class="Modal" aria-labelledby="example_form_title">
           
               <!-- ModalDialog: start -->
               <form class="ModalDialog" method="dialog">
@@ -172,8 +172,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_form"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_form"
                     aria-controls="example_form"
                     aria-expanded="false"
                   >
@@ -208,8 +208,8 @@
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_form"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_form"
                     >
                       Secondary action
                     </button>
@@ -226,8 +226,8 @@
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_custom_height"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_custom_height"
               aria-controls="example_custom_height"
               aria-expanded="false"
             >
@@ -237,7 +237,7 @@
             <!-- Modal: start -->
             <dialog
               id="example_custom_height"
-              class="Modal Modal--composed"
+              class="Modal"
               aria-labelledby="example_custom_height_title"
               style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px; --modal-max-height-tablet: 700px"
             >
@@ -251,8 +251,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_custom_height"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_custom_height"
                     aria-controls="example_custom_height"
                     aria-expanded="false"
                   >
@@ -290,16 +290,16 @@
                     <button
                       type="button"
                       class="Button Button--primary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_custom_height"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_custom_height"
                     >
                       Primary action
                     </button>
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_custom_height"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_custom_height"
                     >
                       Secondary action
                     </button>
@@ -320,8 +320,8 @@
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_long_content"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_long_content"
               aria-controls="example_long_content"
               aria-expanded="false"
             >
@@ -329,7 +329,7 @@
             </button>
           
             <!-- Modal: start -->
-            <dialog id="example_long_content" class="Modal Modal--composed" aria-labelledby="example_long_content_title">
+            <dialog id="example_long_content" class="Modal" aria-labelledby="example_long_content_title">
           
               <!-- ModalDialog: start -->
               <article class="ModalDialog">
@@ -342,8 +342,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_long_content"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_long_content"
                     aria-controls="example_long_content"
                     aria-expanded="false"
                   >
@@ -408,16 +408,16 @@
                     <button
                       type="button"
                       class="Button Button--primary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_long_content"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_long_content"
                     >
                       Primary action
                     </button>
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_long_content"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_long_content"
                     >
                       Secondary action
                     </button>
@@ -434,8 +434,8 @@
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_scroll_view"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_scroll_view"
               aria-controls="example_scroll_view"
               aria-expanded="false"
             >
@@ -443,7 +443,7 @@
             </button>
           
             <!-- Modal: start -->
-            <dialog id="example_scroll_view" class="Modal Modal--composed" aria-labelledby="example_scroll_view_title">
+            <dialog id="example_scroll_view" class="Modal" aria-labelledby="example_scroll_view_title">
           
               <!-- ModalDialog: start -->
               <article class="ModalDialog">
@@ -456,8 +456,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_scroll_view"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_scroll_view"
                     aria-controls="example_scroll_view"
                     aria-expanded="false"
                   >
@@ -470,7 +470,7 @@
                 <!-- ModalHeader: end -->
           
                 <!-- ScrollView: start -->
-                <div class="ScrollView ScrollView--vertical" data-toggle="scrollView">
+                <div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
                   <div class="ScrollView__viewport" data-spirit-element="viewport">
                     <div class="ScrollView__content" data-spirit-element="content">
           
@@ -523,7 +523,7 @@
           
                     </div>
                   </div>
-                  <div class="ScrollView__indicators ScrollView__indicators--borders" aria-hidden="true"></div>
+                  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
                 </div>
                 <!-- ScrollView: end -->
           
@@ -533,16 +533,16 @@
                     <button
                       type="button"
                       class="Button Button--primary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_scroll_view"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_scroll_view"
                     >
                       Primary action
                     </button>
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_scroll_view"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_scroll_view"
                     >
                       Secondary action
                     </button>
@@ -558,89 +558,14 @@
           
           </section>
           
-          <section class="docs-Section spirit-v1-modal-body-padding">
-            <h2 class="docs-Heading">V1 Feature &mdash; Vertical Padding on Body</h2>
-          
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_body_padding"
-              aria-controls="example_body_padding"
-              aria-expanded="false"
-            >
-              Open Modal
-            </button>
-          
-            <!-- Modal: start -->
-            <dialog id="example_body_padding" class="Modal Modal--composed" aria-labelledby="example_body_paddingtitle">
-          
-              <!-- ModalDialog: start -->
-              <article class="ModalDialog">
-          
-                <!-- ModalHeader: start -->
-                <header class="ModalHeader">
-                  <h2 id="example_body_paddingtitle" class="ModalHeader__title">Modal Title</h2>
-                  <button
-                    type="button"
-                    class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_body_padding"
-                    aria-controls="example_body_padding"
-                    aria-expanded="false"
-                  >
-                    <svg class="Icon" width="24" height="24" aria-hidden="true">
-                      <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#close" />
-                    </svg>
-                    <span class="accessibility-hidden">Close</span>
-                  </button>
-                </header>
-                <!-- ModalHeader: end -->
-          
-                <!-- ModalBody: start -->
-                <div class="ModalBody">
-                  <!-- Content: start -->
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                    provident unde. Eveniet, iste, molestiae?
-                  </p>
-                  <!-- Content: end -->
-                </div>
-                <!-- ModalBody: end -->
-          
-                <!-- ModalFooter: start -->
-                <footer class="ModalFooter ModalFooter--right">
-                  <div class="ModalFooter__actions">
-                    <button
-                      type="button"
-                      class="Button Button--primary Button--medium"
-                      data-toggle="modal"
-                      data-target="#example_2_1"
-                      aria-controls="example_2_1"
-                      aria-expanded="false"
-                    >
-                      Open stacked dialog
-                    </button>
-                  </div>
-                </footer>
-                <!-- ModalFooter: end -->
-          
-              </article>
-              <!-- ModalDialog: end -->
-          
-            </dialog>
-            <!-- Modal: end -->
-          
-          </section>
           <section class="docs-Section">
             <h2 class="docs-Heading">Stacking Modals</h2>
           
             <button
               type="button"
               class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_stacking_parent"
+              data-spirit-toggle="modal"
+              data-spirit-target="#example_stacking_parent"
               aria-controls="example_stacking_parent"
               aria-expanded="false"
             >
@@ -648,7 +573,7 @@
             </button>
           
             <!-- Modal: start -->
-            <dialog id="example_stacking_parent" class="Modal Modal--composed" aria-labelledby="example_stacking_parent_title">
+            <dialog id="example_stacking_parent" class="Modal" aria-labelledby="example_stacking_parent_title">
           
               <!-- ModalDialog: start -->
               <article class="ModalDialog">
@@ -659,8 +584,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_stacking_parent"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_stacking_parent"
                     aria-controls="example_stacking_parent"
                     aria-expanded="false"
                   >
@@ -690,8 +615,8 @@
                     <button
                       type="button"
                       class="Button Button--primary Button--medium"
-                      data-toggle="modal"
-                      data-target="#example_stacking_nested"
+                      data-spirit-toggle="modal"
+                      data-spirit-target="#example_stacking_nested"
                       aria-controls="example_stacking_nested"
                       aria-expanded="false"
                     >
@@ -707,7 +632,7 @@
             </dialog>
             <!-- Modal: end -->
             <!-- Modal: start -->
-            <dialog id="example_stacking_nested" class="Modal Modal--composed" aria-labelledby="example_stacking_nested_title">
+            <dialog id="example_stacking_nested" class="Modal" aria-labelledby="example_stacking_nested_title">
           
               <!-- ModalDialog: start -->
               <article class="ModalDialog">
@@ -718,8 +643,8 @@
                   <button
                     type="button"
                     class="Button Button--tertiary Button--square Button--medium"
-                    data-dismiss="modal"
-                    data-target="#example_stacking_nested"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example_stacking_nested"
                     aria-controls="example_stacking_nested"
                     aria-expanded="false"
                   >
@@ -761,8 +686,8 @@
                     <button
                       type="button"
                       class="Button Button--secondary Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_stacking_nested"
+                      data-spirit-dismiss="modal"
+                      data-spirit-target="#example_stacking_nested"
                     >
                       Secondary action
                     </button>
@@ -775,127 +700,6 @@
           
             </dialog>
             <!-- Modal: end -->
-          
-          </section>
-          
-          <section class="docs-Section">
-          
-            <h2 class="docs-Heading">Simple Modal (DEPRECATED)</h2>
-          
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_simple_1"
-              aria-controls="example_simple_1"
-              aria-expanded="false"
-            >
-              Open Simple Modal
-            </button>
-          
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-toggle="modal"
-              data-target="#example_simple_2"
-              aria-controls="example_simple_2"
-              aria-expanded="false"
-            >
-              Open Simple Modal with Long Content
-            </button>
-          
-            <dialog id="example_simple_1" class="Modal">
-              <div class="Modal__content">
-                <div class="Modal__dialog">
-                  <div class="Modal__header">
-                    <button
-                      type="button"
-                      class="Button Button--tertiary Button--square Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_simple_1"
-                      aria-controls="example_simple_1"
-                      aria-expanded="false"
-                    >
-                      <svg width="24" height="24" aria-hidden="true">
-                        <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#close" />
-                      </svg>
-                      <span class="accessibility-hidden">Close</span>
-                    </button>
-                  </div>
-                  <div class="Modal__body">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </dialog>
-          
-            <dialog id="example_simple_2" class="Modal">
-              <div class="Modal__content">
-                <div class="Modal__dialog">
-                  <div class="Modal__header">
-                    <button
-                      type="button"
-                      class="Button Button--tertiary Button--square Button--medium"
-                      data-dismiss="modal"
-                      data-target="#example_simple_2"
-                      aria-controls="example_simple_2"
-                      aria-expanded="false"
-                    >
-                      <svg width="24" height="24">
-                        <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#close"/>
-                      </svg>
-                      <span class="accessibility-hidden">Close</span>
-                    </button>
-                  </div>
-                  <div class="Modal__body">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                      perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                      provident unde. Eveniet, iste, molestiae?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </dialog>
           
           </section>
           
