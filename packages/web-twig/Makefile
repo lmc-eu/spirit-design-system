@@ -2,6 +2,7 @@
 DOCKER_COMP						= docker-compose
 DOCKER_PHP_SERVICE		= web-twig-demo-php
 DOCKER_ENCORE_SERVICE	= web-twig-demo-encore
+DOCKER_SERVER_SERVICE	= web-twig-demo-server
 SHELL									= bash
 
 # Paths
@@ -19,7 +20,7 @@ CONT_MAKE	= $(PHP_CONT_PHP) make
 
 # Misc
 .DEFAULT_GOAL		= help
-.PHONY					= help build up prestart start down logs sh bash composer vendor make phpunit test analyze icons-build
+.PHONY					= help build up prestart start down logs sh bash cert composer vendor make phpunit test analyze icons-build
 
 ## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  ———————————————————————————————
 help: ## Outputs this help screen
@@ -58,6 +59,9 @@ bash: ## Connect to the PHP container
 	$(PHP_CONT_PHP) bash
 
 sh: bash ## Connect to the PHP container (alias for `bash`)
+
+cert: ## Trust the Authority of server certificates
+	cd $(APP_DOCKER_DIR) && docker cp `docker compose ps -q $(DOCKER_SERVER_SERVICE)`:/data/caddy/pki/authorities/local/root.crt /tmp/root.crt && sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/root.crt
 
 ## —— Encore 🎭 ————————————————————————————————————————————————————————————————
 
