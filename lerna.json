@@ -9,6 +9,7 @@
     "version": {
       "conventionalCommits": true,
       "changelogPreset": "@lmc-eu/conventional-changelog-lmc-github",
+      "createRelease": "github",
       "push": false,
       "message": "Chore(release): Publish",
       "ignoreChanges": ["yarn.lock"]
