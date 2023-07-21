@@ -6,6 +6,8 @@
 
 PHP language is required to develop this package. In order to support other frontend developers which do not have installed PHP locally, there is a Docker image available to develop this package.
 
+To start this project simply run `make start` and then add project certificates to your machine by `make cert`.
+
 Please consult [`Makefile`](./Makefile) for available commands and options to setup and run this project.
 
 ## Components definition
