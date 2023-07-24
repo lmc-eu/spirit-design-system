@@ -160,7 +160,7 @@ describe('FileUploader', () => {
 
       it('should throw an error for an unsupported file type', () => {
         const file = new File(['content'], 'example.txt', { type: 'text/plain' });
-        expect(() => fileUploader.checkAllowedFileType(file)).toThrowError(
+        expect(() => fileUploader.checkAllowedFileType(file)).toThrow(
           `"example.txt": is not a supported file. Please ensure you are uploading a supported file format`,
         );
       });
