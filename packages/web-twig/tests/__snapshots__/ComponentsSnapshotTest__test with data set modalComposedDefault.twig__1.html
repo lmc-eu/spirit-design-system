@@ -5,10 +5,10 @@
     </title>
   </head>
   <body>
-    <dialog aria-label="Modal Title" class="Modal" id="modal-example-mini" aria-labelledby="">
+    <dialog aria-label="Modal Title" class="Modal Modal--composed" id="modal-composed-mini" aria-labelledby="">
       <article class="ModalDialog ModalDialog--expandOnMobile">
         <header class="ModalHeader">
-          <button aria-controls="modal-example-mini" aria-expanded="false" data-spirit-dismiss="modal" data-spirit-target="#modal-example-mini" class="Button Button--tertiary Button--medium Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" id="a79dff7a255f69bbe6e39d594aa2275b" aria-hidden="true">
+          <button aria-controls="modal-composed-mini" aria-expanded="false" data-dismiss="modal" data-target="#modal-composed-mini" class="Button Button--tertiary Button--medium Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" id="a79dff7a255f69bbe6e39d594aa2275b" aria-hidden="true">
           <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="#132930">
           </path></svg> <span class="accessibility-hidden">Close</span></button>
         </header>
@@ -28,13 +28,13 @@
     </dialog>
     <!-- Render with header title and rich footer -->
 
-    <dialog class="Modal" id="modal-example" aria-labelledby="modal-example-title">
+    <dialog class="Modal Modal--composed" id="modal-composed" aria-labelledby="modal-composed-title">
       <article class="ModalDialog ModalDialog--expandOnMobile">
         <header class="ModalHeader">
-          <h2 class="ModalHeader__title" id="modal-example-title">
+          <h2 class="ModalHeader__title" id="modal-composed-title">
             Title of the Modal
           </h2>
-          <button aria-controls="modal-example" aria-expanded="false" data-spirit-dismiss="modal" data-spirit-target="#modal-example" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
+          <button aria-controls="modal-composed" aria-expanded="false" data-dismiss="modal" data-target="#modal-composed" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
           <use href="#a79dff7a255f69bbe6e39d594aa2275b">
           </use></svg> <span class="accessibility-hidden">Close form</span></button>
         </header>
@@ -58,13 +58,13 @@
     </dialog>
     <!-- Render with all props -->
 
-    <dialog class="Modal" id="modal-example-2" aria-labelledby="modal-example-2-title">
+    <dialog class="Modal Modal--composed" id="modal-composed-2" aria-labelledby="modal-composed-2-title">
       <form autocomplete="on" method="dialog" class="ModalDialog" style="--modal-max-height-tablet: 700px;--modal-preferred-height-mobile: 400px;--modal-preferred-height-tablet: 500px;outline: 5px solid blue; outline-offset: -5px;">
         <header class="ModalHeader">
-          <h2 class="ModalHeader__title" id="modal-example-2-title">
+          <h2 class="ModalHeader__title" id="modal-composed-2-title">
             Title of the Modal
           </h2>
-          <button aria-controls="modal-example-2" aria-expanded="false" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
+          <button aria-controls="modal-composed-2" aria-expanded="false" class="Button Button--tertiary Button--medium Button--square" type="button"><svg width="24" height="24" fill="none" viewbox="0 0 24 24" aria-hidden="true">
           <use href="#a79dff7a255f69bbe6e39d594aa2275b">
           </use></svg> <span class="accessibility-hidden">Close form</span></button>
         </header>
