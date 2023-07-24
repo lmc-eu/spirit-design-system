@@ -45,12 +45,12 @@ jobs:
         uses: coverallsapp/github-action@v2.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./packages/web/.coverage/lcov.info
+          file: ./packages/web/.coverage/lcov.info
           flag-name: web
 
       - name: Publish Web-React Package Code Coverage
         uses: coverallsapp/github-action@v2.2.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./packages/web-react/.coverage/lcov.info
+          file: ./packages/web-react/.coverage/lcov.info
           flag-name: web-react
