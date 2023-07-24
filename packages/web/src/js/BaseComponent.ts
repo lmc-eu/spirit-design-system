@@ -1,7 +1,7 @@
 import { getElement } from './utils/index';
 import InstanceMap from './dom/InstanceMap';
 
-interface IBaseComponent extends Function {
+interface IBaseComponent extends FunctionConstructor {
   INSTANCE_KEY: string;
 }
 
