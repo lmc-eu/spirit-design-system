@@ -154,7 +154,7 @@
           <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
         </label>
         <div class="FileUploaderInput__helperText">
-          ️Only JPG and PNG images are allowed. Max size of each file is 10 MB
+          Only JPG and PNG images are allowed. Max size of each file is 10 MB
         </div>
       </div>
     </div>
@@ -168,7 +168,6 @@
   <!-- FileUploader: end -->
 </section>
 <section class="docs-Section">
-
   <h2 class="docs-Heading">Input Multiple with File Queue Behavior Control</h2>
 
   <!-- FileUploader: start -->
@@ -216,7 +215,7 @@
           <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
           <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
         </label>
-        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
       </div>
     </div>
     <!-- FileUploaderInput: end -->
@@ -381,8 +380,8 @@
           <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
         </div>
         <ul class="FileUploaderInput__validationText">
-          <li>Danger validation message</li>
-          <li>Another danger validation message</li>
+          <li>Danger validation text</li>
+          <li>Another danger validation text</li>
         </ul>
       </div>
       <!-- FileUploaderInput: end -->
@@ -456,11 +455,15 @@
   </div>
 </section>
 <section class="docs-Section">
+  <h2 class="docs-Heading">
+    Attachment
+    <span class="Tag Tag--medium Tag--subtle Tag--warning">Visual demo only</span>
+  </h2>
 
-  <h2 class="docs-Heading">Attachment</h2>
+  <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
   <!-- FileUploader: start -->
-  <div class="FileUploader" data-spirit-toggle="fileUploader">
+  <div class="FileUploader">
 
     <!-- FileUploaderList: start -->
     <h3 id="attachments-examples" hidden>Attachments</h3>
@@ -520,7 +523,6 @@
 
 </section>
 <section class="docs-Section">
-
   <h2 class="docs-Heading">Attachment with Custom Actions</h2>
 
   <!-- FileUploader: start -->
@@ -611,33 +613,19 @@
 
 </section>
 <section class="docs-Section">
+  <h2 class="docs-Heading">
+    Input with Attachment
+    <span class="Tag Tag--medium Tag--subtle Tag--warning">Visual demo only</span>
+  </h2>
 
-  <h2 class="docs-Heading">Input with Attachment</h2>
+  <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
   <div class="docs-FormFieldGrid">
     <!-- FileUploader: start -->
-    <div class="FileUploader" data-spirit-toggle="fileUploader">
-      <!-- FileUploaderAttachment template: start -->
-      <template data-spirit-snippet="item">
-        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#file" />
-          </svg>
-          <span class="FileUploaderAttachment__name">
-            <span class="text-truncate" data-spirit-populate-field="name"></span>
-          </span>
-          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-            <span class="accessibility-hidden">Remove</span>
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-          </button>
-        </li>
-      </template>
-      <!-- FileUploaderAttachment template: end -->
+    <div class="FileUploader">
 
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput" data-spirit-element="wrapper">
+      <div class="FileUploaderInput has-drag-and-drop" data-spirit-element="wrapper">
         <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
         <input
           type="file"
@@ -683,29 +671,13 @@
     </div>
     <!-- FileUploader: end -->
 
+    <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
+
     <!-- FileUploader: start -->
-    <div class="FileUploader" data-spirit-toggle="fileUploader">
-      <!-- FileUploaderAttachment template: start -->
-      <template data-spirit-snippet="item">
-        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#file" />
-          </svg>
-          <span class="FileUploaderAttachment__name">
-            <span class="text-truncate" data-spirit-populate-field="name"></span>
-          </span>
-          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-            <span class="accessibility-hidden">Remove</span>
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-          </button>
-        </li>
-      </template>
-      <!-- FileUploaderAttachment template: end -->
+    <div class="FileUploader">
 
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput FileUploaderInput--danger" data-spirit-element="wrapper">
+      <div class="FileUploaderInput FileUploaderInput--danger has-drag-and-drop" data-spirit-element="wrapper">
         <label for="fileUploaderWithAttachmentsAndValidation" class="FileUploaderInput__label">Label</label>
         <input
           type="file"
@@ -724,7 +696,7 @@
           </label>
           <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
         </div>
-        <div class="FileUploaderInput__validationText">Danger validation message</div>
+        <div class="FileUploaderInput__validationText">Danger validation text</div>
       </div>
       <!-- FileUploaderInput: end -->
 
@@ -773,12 +745,12 @@
   </div>
 </section>
 <section class="docs-Section">
-  <h2 class="docs-Heading">Dragging not Available</h2>
+  <h2 class="docs-Heading">
+    Dragging not Available
+    <span class="Tag Tag--medium Tag--subtle Tag--warning">Visual demo only</span>
+  </h2>
 
-  <p>
-    ℹ️ Visual example only, no attachments will show up in this demo (because the JavaScript handler is not being
-    initialized).
-  </p>
+  <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
   <!-- FileUploader: start -->
   <div class="FileUploader">
@@ -806,33 +778,21 @@
     <!-- FileUploaderInput: end -->
   </div>
   <!-- FileUploader: end -->
+
 </section>
 <section class="docs-Section">
-  <h2 class="docs-Heading">Fluid Width</h2>
+  <h2 class="docs-Heading">
+    Fluid Width
+    <span class="Tag Tag--medium Tag--subtle Tag--warning">Visual demo only</span>
+  </h2>
+
+  <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
   <!-- FileUploader: start -->
-  <div class="FileUploader FileUploader--fluid" data-spirit-toggle="fileUploader">
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
+  <div class="FileUploader FileUploader--fluid">
 
     <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
+    <div class="FileUploaderInput has-drag-and-drop" data-spirit-element="wrapper">
       <label for="fileUploaderFluid" class="FileUploaderInput__label">Label</label>
       <input
         type="file"
@@ -877,6 +837,7 @@
     <!-- FileUploaderList: end -->
   </div>
   <!-- FileUploader: end -->
+
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">Example of JS-Controlled Form</h2>
