@@ -19,6 +19,7 @@ See individual [packages](#packages) to learn how to get started.
 
 | Package name                                                     | Description                                               | Version                                                  |
 | ---------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------- |
+| [`@lmc-eu/spirit-analytics`](./packages/analytics)               | Analytic tools for Spirit Design System                   | [![@lmc-eu/spirit-analytics][sa-badge]][sa-npm]          |
 | [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)       | Design tokens for Spirit Design System                    | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm]    |
 | [`@lmc-eu/spirit-form-validations`](./packages/form-validations) | Form Validations for Spirit Design System                 | [![@lmc-eu/spirit-form-validations][sfv-badge]][sfv-npm] |
 | [`@lmc-eu/spirit-icons`](./packages/icons)                       | Icons for Spirit Design System                            | [![@lmc-eu/spirit-icons][si-badge]][si-npm]              |
@@ -48,6 +49,8 @@ See [`package.json`](./package.json) for all available tasks.
 See the [LICENSE](LICENSE.md) file for information.
 
 [lmc]: https://github.com/lmc-eu
+[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
+[sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
 [sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
 [sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
 [si-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-icons
