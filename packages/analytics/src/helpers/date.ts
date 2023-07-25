@@ -6,4 +6,4 @@ export const timestamp = () => {
   return `${year}-${month}-${day}`;
 };
 
-export const month = new Date().toLocaleString('en-US', { month: 'long' });
+export const month = () => new Date().toLocaleString('en-US', { month: 'long' });

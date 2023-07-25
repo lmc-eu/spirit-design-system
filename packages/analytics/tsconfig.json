@@ -25,7 +25,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "typeRoots": ["../../node_modules/@types"],
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules", "./dist/**/*"]
