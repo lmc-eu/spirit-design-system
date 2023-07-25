@@ -1,16 +1,18 @@
 <section class="docs-Section">
 
-    <h2 class="docs-Heading">Fluid Width</h2>
+    <h2 class="docs-Heading">
+        Fluid Width
+        <Tag color="warning" isSubtle>Visual demo only</Tag>
+    </h2>
 
-    <FileUploader data-spirit-toggle="fileUploader" isFluid>
-        <template data-spirit-snippet="item">
-            <FileUploaderAttachment />
-        </template>
+    {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
+    <FileUploader isFluid>
         <FileUploaderInput
             helperText="Max file size is 10 MB"
             id="example-fluid-width"
             label="Label"
             name="example-fluid-width"
+            UNSAFE_className="has-drag-and-drop"
         />
         <FileUploaderList headingId="attachments_example-fluid-width">
             <FileUploaderAttachment fileName="My resume.docx" />
