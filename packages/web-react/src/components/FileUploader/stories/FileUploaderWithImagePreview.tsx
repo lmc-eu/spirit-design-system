@@ -11,16 +11,23 @@ const Story: ComponentStory<typeof FileUploader> = () => {
   const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
 
   const attachmentComponent = ({ id, ...props }: SpiritFileUploaderAttachmentProps) => (
-    <FileUploaderAttachment key={id} id={id} {...props} />
+    <FileUploaderAttachment
+      key={id}
+      id={id}
+      onEdit={() => {
+        alert('Edit action');
+      }}
+      {...props}
+    />
   );
 
   return (
     <>
       <p>
-        <small>Here is an example with `accept` attribute and only images are allowed</small>
+        <small>Here is an example with `hasImagePreview` and `onEdit` attributes and only images are allowed</small>
       </p>
       <FileUploader
-        id="fileUploaderAcceptExample"
+        id="fileUploaderImagePreviewExample"
         onDismiss={onDismiss}
         fileQueue={fileQueue}
         addToQueue={addToQueue}
@@ -37,7 +44,7 @@ const Story: ComponentStory<typeof FileUploader> = () => {
           helperText="Max file size is 10 MB"
           validationText="Validation message"
           accept=".png,image/jpeg"
-          maxUploadedFiles={5}
+          maxUploadedFiles={1}
           /* eslint-disable-next-line no-console */
           onError={(error) => console.error(error)}
           isMultiple
@@ -47,6 +54,7 @@ const Story: ComponentStory<typeof FileUploader> = () => {
           label="Attachments"
           inputName="attachments"
           attachmentComponent={attachmentComponent}
+          hasImagePreview
         />
       </FileUploader>
     </>

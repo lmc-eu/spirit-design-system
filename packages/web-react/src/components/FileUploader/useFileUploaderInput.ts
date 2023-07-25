@@ -177,6 +177,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     }
 
     event.target.blur();
+    event.target.value = '';
   };
 
   useEffect(() => {

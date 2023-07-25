@@ -29,6 +29,7 @@ describe('useFileUploaderStyleProps', () => {
     expect(result.current.classProps.attachment).toBeDefined();
     expect(result.current.classProps.attachment.root).toBe('FileUploaderAttachment');
     expect(result.current.classProps.attachment.button).toBe('FileUploaderAttachment__action');
+    expect(result.current.classProps.attachment.image).toBe('FileUploaderAttachment__image');
   });
 
   it('should return disabled', () => {

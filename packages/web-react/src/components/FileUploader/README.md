@@ -66,6 +66,24 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 </FileUploader>;
 ```
 
+### List with image previews
+
+```javascript
+<FileUploaderList
+  id="fileUploaderExampleList"
+  label="Attachments"
+  inputName="attachments"
+  attachmentComponent={attachmentComponent}
+  hasImagePreview
+/>
+```
+
+### Editable Attachment
+
+```javascript
+<FileUploaderAttachment key={id} id={id} onEdit={(event, file) => console.log(event, file)} {...props} />
+```
+
 ### Validation State
 
 ```javascript
@@ -289,6 +307,8 @@ const resetStateHandler = () => {
 | `clearQueue`                          | `() => void`                                    | -       | ✔        | Callback to clear the queue                                         |
 | `fileQueue`                           | `FileQueueMapType`                              | -       | ✔        | Queue of items to upload                                            |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`             | -       | ✔        | A callback to delete a particular item from the queue               |
+| `findInQueue`                         | `(key: string) => FileQueueMapType`             | -       | ✔        | A callback to find a particular item in the queue                   |
+| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | -       | ✔        | A callback to update a particular item in the queue                 |
 | `isFluid`                             | `boolean`                                       | -       | ✕        | When the field is supposed to be fluid                              |
 | `errorMessages.errorMaxFileSize`      | `string`                                        | -       | ✕        | Translation for the error message: Maximum file size                |
 | `errorMessages.errorMaxUploadedFiles` | `string`                                        | -       | ✕        | Translation for the error message: Maximum number of uploaded files |
@@ -331,8 +351,9 @@ The rest of the properties are created from the default `<input>` element. [More
 
 | Prop name             | Type            | Default | Required | Description                                   |
 | --------------------- | --------------- | ------- | -------- | --------------------------------------------- |
-| `id`                  | `string`        | -       | ✔        | FileUploaderList id                           |
 | `attachmentComponent` | `string`        | -       | ✔        | A component for rendering a single attachment |
+| `hasImagePreview`     | `boolean`       | false   | ✕        | Show image preview in the list                |
+| `id`                  | `string`        | -       | ✔        | FileUploaderList id                           |
 | `inputName`           | `string`        | -       | ✔        | The name of the input field                   |
 | `label`               | `string`        | -       | ✕        | Label for the list                            |
 | `UNSAFE_className`    | `string`        | -       | ✕        | FileUploaderList custom class name            |
@@ -342,20 +363,32 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 
 ## FileUploaderAttachment Props
 
-| Prop name          | Type                                | Default  | Required | Description                               |
-| ------------------ | ----------------------------------- | -------- | -------- | ----------------------------------------- |
-| `buttonLabel`      | `string`                            | `Remove` | ✕        | Dismiss button label                      |
-| `file`             | `File`                              | -        | ✔        | Attachment file object                    |
-| `iconName`         | `string`                            | `file`   | ✔        | Icon shown along the file                 |
-| `id`               | `string`                            | -        | ✔        | FileUploaderAttachment id                 |
-| `label`            | `string`                            | -        | ✔        | File name                                 |
-| `name`             | `string`                            | -        | ✔        | Input field name                          |
-| `onDismiss`        | `(key: string) => FileQueueMapType` | -        | ✔        | Callback to delete an item from the queue |
-| `onError`          | `FileUploaderErrorCallbackType`     | -        | ✕        | Callback on error condition               |
-| `UNSAFE_className` | `string`                            | -        | ✕        | FileUploaderAttachment custom class name  |
-| `UNSAFE_style`     | `CSSProperties`                     | -        | ✕        | FileUploaderAttachment custom style       |
+| Prop name          | Type                                 | Default  | Required | Description                               |
+| ------------------ | ------------------------------------ | -------- | -------- | ----------------------------------------- |
+| `buttonLabel`      | `string`                             | `Remove` | ✕        | Dismiss button label                      |
+| `editButtonLabel`  | `string`                             | `Edit`   | ✕        | Edit button label                         |
+| `file`             | `File`                               | -        | ✔        | Attachment file object                    |
+| `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                 |
+| `id`               | `string`                             | -        | ✔        | FileUploaderAttachment id                 |
+| `label`            | `string`                             | -        | ✔        | File name                                 |
+| `name`             | `string`                             | -        | ✔        | Input field name                          |
+| `onDismiss`        | `(key: string) => FileQueueMapType`  | -        | ✔        | Callback to delete an item from the queue |
+| `onEdit`           | `(event: Event, file: File) => void` | -        | ✕        | Show and add function to edit button      |
+| `onError`          | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition               |
+| `UNSAFE_className` | `string`                             | -        | ✕        | FileUploaderAttachment custom class name  |
+| `UNSAFE_style`     | `CSSProperties`                      | -        | ✕        | FileUploaderAttachment custom style       |
 
 The rest of the properties are created from the default `<li>` element. [More about the element][ListItemElementDocs]
+
+## AttachmentActionButton Props
+
+| Prop name          | Type                                   | Default | Required | Description                               |
+| ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
+| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | -       | ✕        | Button click handler                      |
+| `UNSAFE_className` | `string`                               | -       | ✕        | AttachmentDismissButton custom class name |
+| `UNSAFE_style`     | `CSSProperties`                        | -       | ✕        | AttachmentDismissButton custom style      |
+
+The rest of the properties are created from the default `<button>` element. [More about the element][ButtonElementDocs]
 
 ## AttachmentDismissButton Props
 

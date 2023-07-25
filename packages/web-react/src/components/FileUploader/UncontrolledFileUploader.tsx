@@ -34,7 +34,7 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
     ...restProps
   } = props;
 
-  const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
+  const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
 
   useEffect(() => {
     if (onChange) {
@@ -50,6 +50,8 @@ const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) =>
       onDismiss={onDismiss}
       addToQueue={addToQueue}
       clearQueue={clearQueue}
+      findInQueue={findInQueue}
+      updateQueue={updateQueue}
       errorMessages={errorMessages}
       isFluid={isFluid}
       {...restProps}

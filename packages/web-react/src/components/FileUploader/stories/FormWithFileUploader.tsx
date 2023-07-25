@@ -14,7 +14,7 @@ const Story = () => {
   const [validationText, setValidationText] = useState<string | undefined>(undefined);
   const [validationState, setValidationState] = useState<ValidationState | undefined>(undefined);
 
-  const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
+  const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
 
   const inputReference = createRef() as MutableRefObject<HTMLInputElement>;
   const dropZoneReference = createRef() as MutableRefObject<HTMLDivElement>;
@@ -70,6 +70,8 @@ const Story = () => {
         fileQueue={fileQueue}
         addToQueue={addToQueue}
         clearQueue={clearQueue}
+        findInQueue={findInQueue}
+        updateQueue={updateQueue}
       >
         <FileUploaderInput
           id="fileUploaderFormExampleInput"

@@ -8,6 +8,8 @@ const defaultContext: FileUploaderContextProps = {
   clearQueue: () => null,
   fileQueue: new Map(),
   onDismiss: () => new Map(),
+  findInQueue: () => null,
+  updateQueue: () => new Map(),
   errorMessages: {
     errorFileDuplicity: '',
     errorFileNotSupported: '',
