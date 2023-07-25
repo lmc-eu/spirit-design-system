@@ -15,7 +15,7 @@ interface ForEachComponentOptions {
 type ForEachComponentHandler = (options: ForEachComponentOptions) => void;
 type Sorter = (component: Component) => unknown;
 
-interface SpiritAdoptionProcessorOptions {
+export interface SpiritAdoptionProcessorOptions {
   forEachComponent: (callback: ForEachComponentHandler) => unknown;
   sortObjectKeysByValue: (arg0: unknown, arg1?: Sorter) => unknown;
   output: (arg0: unknown, arg1: string) => void;
