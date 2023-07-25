@@ -24,6 +24,10 @@
 }
 
 .docs-Heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: baseline;
   margin-bottom: 1.5rem;
   font-size: 1.125rem; /* Based on the `heading-small-text` style. */
   font-weight: 700;

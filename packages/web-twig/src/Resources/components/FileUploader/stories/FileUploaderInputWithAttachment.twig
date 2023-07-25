@@ -1,35 +1,36 @@
 <section class="docs-Section">
 
-    <h2 class="docs-Heading">Input with Attachment</h2>
+    <h2 class="docs-Heading">
+        Input with Attachment
+        <Tag color="warning" isSubtle>Visual demo only</Tag>
+    </h2>
 
     <div class="docs-FormFieldGrid">
 
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
+        {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
+        <FileUploader>
             <FileUploaderInput
                 helperText="Max file size is 10 MB"
                 id="example-with-attachment"
                 label="Label"
                 name="example-with-attachment"
+                UNSAFE_className="has-drag-and-drop"
             />
             <FileUploaderList headingId="attachments_example-with-attachment">
                 <FileUploaderAttachment fileName="My resume.docx" />
             </FileUploaderList>
         </FileUploader>
 
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
+        {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
+        <FileUploader>
             <FileUploaderInput
                 helperText="Max file size is 10 MB"
                 id="example-with-attachments-and-validation"
                 label="Label"
                 name="example-with-attachments-and-validation"
                 validationState="danger"
-                validationText="Danger validation message"
+                validationText="Danger validation text"
+                UNSAFE_className="has-drag-and-drop"
             />
             <FileUploaderList headingId="attachments_example-with-attachments-and-validation">
                 <FileUploaderAttachment fileName="My resume.docx" />
