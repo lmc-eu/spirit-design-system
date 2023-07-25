@@ -23,6 +23,19 @@ export const useFileQueue = (): FileQueueReturn => {
     return queue;
   };
 
+  const findInQueueHandler = (key: string) => queue.get(key) || null;
+
+  const updateQueueHandler = (key: string, file: File) => {
+    setQueue((prev) => {
+      const newState = new Map(prev);
+      newState.set(key, file);
+
+      return newState;
+    });
+
+    return queue;
+  };
+
   const clearQueueHandler = () => {
     setQueue((prev) => {
       prev.clear();
@@ -32,9 +45,11 @@ export const useFileQueue = (): FileQueueReturn => {
   };
 
   return {
-    fileQueue: queue,
-    onDismiss: onDismissHandler,
     addToQueue: addToQueueHandler,
     clearQueue: clearQueueHandler,
+    fileQueue: queue,
+    findInQueue: findInQueueHandler,
+    onDismiss: onDismissHandler,
+    updateQueue: updateQueueHandler,
   };
 };

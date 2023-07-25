@@ -33,6 +33,8 @@ describe('FileUploaderList', () => {
         clearQueue={() => new Map()}
         addToQueue={() => new Map()}
         onDismiss={() => new Map()}
+        findInQueue={() => null}
+        updateQueue={() => new Map()}
       >
         <FileUploaderList {...props} attachmentComponent={attachmentComponent} />
       </FileUploader>,

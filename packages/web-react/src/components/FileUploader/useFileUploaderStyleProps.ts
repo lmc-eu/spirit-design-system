@@ -35,6 +35,8 @@ export interface FileUploaderStyleReturn {
       root: string;
       button: string;
       name: string;
+      image: string;
+      slot: string;
     };
   };
 }
@@ -63,6 +65,8 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderAttachmentClass = `${fileUploaderClass}Attachment`;
   const fileUploaderAttachmentNameClass = `${fileUploaderAttachmentClass}__name`;
   const fileUploaderAttachmentButtonClass = `${fileUploaderAttachmentClass}__action`;
+  const fileUploaderAttachmentImageClass = `${fileUploaderAttachmentClass}__image`;
+  const fileUploaderAttachmentSlotClass = `${fileUploaderAttachmentClass}__slot`;
 
   return {
     classProps: {
@@ -95,6 +99,8 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         root: fileUploaderAttachmentClass,
         button: fileUploaderAttachmentButtonClass,
         name: fileUploaderAttachmentNameClass,
+        image: fileUploaderAttachmentImageClass,
+        slot: fileUploaderAttachmentSlotClass,
       },
     },
   };

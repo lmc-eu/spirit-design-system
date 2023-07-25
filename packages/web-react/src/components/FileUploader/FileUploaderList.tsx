@@ -6,7 +6,7 @@ import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderContext } from './FileUploaderContext';
 
 const FileUploaderList = (props: SpiritFileUploaderListProps) => {
-  const { label, id, attachmentComponent, inputName, ...restProps } = props;
+  const { label, id, attachmentComponent, inputName, hasImagePreview, ...restProps } = props;
 
   const { classProps } = useFileUploaderStyleProps();
   const { styleProps, props: transferProps } = useStyleProps(restProps);
@@ -26,9 +26,10 @@ const FileUploaderList = (props: SpiritFileUploaderListProps) => {
           name: inputName,
           file,
           onDismiss,
+          hasImagePreview,
         }),
     );
-  }, [attachmentComponent, fileQueue, inputName, onDismiss]);
+  }, [attachmentComponent, fileQueue, inputName, onDismiss, hasImagePreview]);
 
   return (
     <>

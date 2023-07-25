@@ -12,7 +12,19 @@ import {
 } from './constants';
 
 const FileUploader = (props: SpiritFileUploaderProps) => {
-  const { children, id, fileQueue, onDismiss, addToQueue, clearQueue, errorMessages, isFluid, ...restProps } = props;
+  const {
+    children,
+    id,
+    fileQueue,
+    onDismiss,
+    addToQueue,
+    clearQueue,
+    findInQueue,
+    updateQueue,
+    errorMessages,
+    isFluid,
+    ...restProps
+  } = props;
 
   const { classProps } = useFileUploaderStyleProps({ isFluid });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
@@ -22,6 +34,8 @@ const FileUploader = (props: SpiritFileUploaderProps) => {
     clearQueue,
     fileQueue,
     onDismiss,
+    findInQueue,
+    updateQueue,
     errorMessages: {
       errorFileDuplicity: DEFAULT_ERROR_MESSAGE_QUEUE_DUPLICITY,
       errorFileNotSupported: DEFAULT_ERROR_MESSAGE_UNSUPPORTED_FILE,

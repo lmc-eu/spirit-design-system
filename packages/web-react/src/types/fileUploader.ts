@@ -1,4 +1,4 @@
-import { MutableRefObject, ReactNode } from 'react';
+import { MutableRefObject, ReactNode, MouseEvent } from 'react';
 import {
   SpiritButtonElementProps,
   SpiritDivElementProps,
@@ -24,7 +24,9 @@ export interface FileUploaderHandlingProps {
   addToQueue: (key: string, file: File) => FileQueueMapType;
   clearQueue: () => void;
   fileQueue: FileQueueMapType;
+  findInQueue: (key: string) => File | null;
   onDismiss: (key: string) => FileQueueMapType;
+  updateQueue: (key: string, file: File) => FileQueueMapType;
 }
 
 export interface FileUploaderErrorMessagesProps {
@@ -46,6 +48,8 @@ export interface FileUploaderIntermediateProps {
   validationText?: ValidationTextType;
 }
 
+export interface AttachmentActionButtonBaseProps extends SpiritButtonElementProps {}
+
 export interface AttachmentDismissButtonBaseProps extends SpiritButtonElementProps {}
 
 export interface FileUploaderInputBaseProps
@@ -64,6 +68,7 @@ export interface FileUploaderInputBaseProps
 
 export interface FileUploaderListBaseProps extends SpiritUListElementProps {
   attachmentComponent: FileUploaderAttachmentComponentType;
+  hasImagePreview?: boolean;
   id: string;
   inputName: string;
   label?: string;
@@ -71,6 +76,7 @@ export interface FileUploaderListBaseProps extends SpiritUListElementProps {
 
 export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElementProps, 'onError'> {
   buttonLabel?: string;
+  editButtonLabel?: string;
   file: File;
   iconName?: string;
   id: string;
@@ -78,6 +84,8 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
   name: string;
   onDismiss: (key: string) => FileQueueMapType;
   onError?: FileUploaderErrorCallbackType;
+  hasImagePreview?: boolean;
+  onEdit?: (event: MouseEvent, file: File) => void;
 }
 
 export interface FileUploaderBaseProps extends SpiritDivElementProps, Partial<FileUploaderErrorMessagesProps> {
@@ -99,6 +107,8 @@ export interface UncontrolledFileUploaderBaseProps
   onChange?: (fileQueue: FileQueueMapType) => void;
   onInputError?: FileUploaderErrorCallbackType;
 }
+
+export interface SpiritAttachmentActionButtonProps extends AttachmentActionButtonBaseProps {}
 
 export interface SpiritAttachmentDismissButtonProps extends AttachmentDismissButtonBaseProps {}
 
