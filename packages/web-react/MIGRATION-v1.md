@@ -135,7 +135,7 @@ Instead of the `size` prop, use `boxSize` in `Icon` component.
 ## Remove `error` Validation State in favor of `danger` [#DS-677](https://jira.lmc.cz/browse/DS-677) ([ad2c2fb](https://github.com/lmc-eu/spirit-design-system/commit/ad2c2fb))
 
 Instead of the `error` value of the validationState prop, use `danger`.
-This applies to Checkbox, Radio, TextField, TextArea, and TextFieldBase.
+This applies to Checkbox, Radio, TextField, TextArea and TextFieldBase.
 
 - `<TextField validationState="error" …>` → `<TextField validationState="danger" …>`
 
