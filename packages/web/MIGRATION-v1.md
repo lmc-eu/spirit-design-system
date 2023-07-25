@@ -225,13 +225,13 @@ This applies to Checkbox, TextArea, and TextField components.
 - `<div class="TextField__message" …>` → `<div class="TextField__validationText" …>`
 - `<div class="TextArea__message" …>` → `<div class="TextArea__validationText" …>`
 
-Also, the demos of Checkbox, RadioField, Select, TextArea, and TextField components
+Also, the demos of Checkbox, Radio, Select, TextArea, and TextField components
 have been unified and improved.
 
 ## Remove `error` state from Checkbox, Radio, TextField, and TextArea [#DS-677](https://jira.lmc.cz/browse/DS-677) ([f93976c](https://github.com/lmc-eu/spirit-design-system/commit/f93976c))
 
 Instead of the `--error` modifier or `has-error` class, use `--danger` or `has-danger`
-respectively. This applies to Checkbox, Radio, TextField, and TextArea.
+respectively. This applies to Checkbox, Radio, TextField and TextArea.
 
 - `<div class="TextField--error" …>` → `<div class="TextField--danger" …>`
 - `<div class="TextField has-error" …>` → `<div class="TextField has-danger" …>`
