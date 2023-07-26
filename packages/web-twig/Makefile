@@ -6,6 +6,7 @@ SHELL									= bash
 
 # Paths
 APP_DOCKER_DIR				= ../../apps/web-twig-demo/docker/
+ICONS_PKG_DIR					= ../icons/
 DOCKER_PKG_DIR				= /srv/spirit-web-twig-bundle/
 
 # Docker containers
@@ -14,13 +15,13 @@ PHP_CONT_PHP = cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec --workdir $(DOCKER_PK
 # Executables
 PHP				= $(PHP_CONT_PHP) php
 COMPOSER	= $(PHP_CONT_PHP) composer
-MAKE			= $(PHP_CONT_PHP) make
+CONT_MAKE	= $(PHP_CONT_PHP) make
 
 # Misc
 .DEFAULT_GOAL		= help
-.PHONY					= help build up start down logs sh bash composer vendor make phpunit test analyze
+.PHONY					= help build up prestart start down logs sh bash composer vendor make phpunit test analyze icons-build
 
-## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  —————————————————————————————————
+## —— 🐳 The Spirit Web Twig Bundle Makefile 🐳  ———————————————————————————————
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 
@@ -44,7 +45,12 @@ down: ## Stop the docker hub
 logs: ## Show live logs
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) logs --tail=0 --follow
 
-start: up vendor encore ## Start the containers
+prestart: ## Preparation before start
+	@if [ ! -d "$(ICONS_PKG_DIR)/dist/svg" ]; then \
+		$(MAKE) icons-build; \
+	fi
+
+start: prestart up vendor encore ## Start the containers
 
 stop: down ## Stop the docker hub (alias for `down`)
 
@@ -53,7 +59,7 @@ bash: ## Connect to the PHP container
 
 sh: bash ## Connect to the PHP container (alias for `bash`)
 
-## —— Encore 🎵 ————————————————————————————————————————————————————————————————
+## —— Encore 🎭 ————————————————————————————————————————————————————————————————
 
 encore-install: ## Install demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
@@ -105,7 +111,11 @@ ecs-fix: ## Run composer ecs-fix
 test: ## Run composer tests
 	@$(COMPOSER) tests
 
-## —— Makefile —————————————————————————————————————————————————————————————————
+## —— Helpers 🔧 —————————————————————————————————————————————————————————————————
+icons-build: ## Build Icons package
+	cd $(ICONS_PKG_DIR) && yarn build
+
+## —— Makefile 📜 ————————————————————————————————————————————————————————————————
 make: ## Run makefile in app pass the parameter "c=" to run a given command, example: make make c=npm-test
 	@$(eval c ?=)
-	@$(MAKE) $(c)
+	@$(CONT_MAKE) $(c)
