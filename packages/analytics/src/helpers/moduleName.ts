@@ -2,12 +2,12 @@ import { Instance } from '../types';
 
 export const getModuleName = (instance: Instance, componentName: string) => {
   // HTML elements
-  if (typeof instance.importInfo === 'undefined' && componentName === componentName.toLowerCase()) {
+  if (instance.importInfo == null && componentName === componentName.toLowerCase()) {
     return 'html_element';
   }
 
   // same-file components (used only in the same file where are defined)
-  if (typeof instance.importInfo === 'undefined') {
+  if (instance.importInfo == null) {
     return null;
   }
 
