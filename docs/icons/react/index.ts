@@ -8,6 +8,7 @@ export {default as ChevronRightIcon} from './ChevronRightIcon';
 export {default as ChevronUpIcon} from './ChevronUpIcon';
 export {default as CloseIcon} from './CloseIcon';
 export {default as DownloadIcon} from './DownloadIcon';
+export {default as EditIcon} from './EditIcon';
 export {default as FileIcon} from './FileIcon';
 export {default as HamburgerIcon} from './HamburgerIcon';
 export {default as HelpIcon} from './HelpIcon';
