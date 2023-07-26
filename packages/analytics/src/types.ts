@@ -1,5 +1,5 @@
 export interface Instance {
-  importInfo: {
+  importInfo?: {
     imported: string;
     local: string;
     moduleName: string;

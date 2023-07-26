@@ -1,10 +1,10 @@
 import { path } from 'zx';
-import filedirname from 'filedirname';
-import { OUTPUT_DIR } from '../constants';
+import { OUTPUT_DIR, OUTPUT_FILENAME_PREFIX } from '../constants';
 
-export const [__filename, __dirname] = filedirname();
+export const getOutputPath = (outputPath: string, name: string) => {
+  const outputFilename = `${OUTPUT_FILENAME_PREFIX}-${name}.json`;
 
-export const getOutputPath = (outputPath: string, name: string) =>
-  outputPath
-    ? path.resolve(outputPath, `spirit-analytics-${name}.json`)
-    : path.resolve(process.cwd(), `${OUTPUT_DIR}/spirit-analytics-${name}.json`);
+  return outputPath
+    ? path.resolve(outputPath, outputFilename)
+    : path.resolve(process.cwd(), `${OUTPUT_DIR}/${outputFilename}`);
+};
