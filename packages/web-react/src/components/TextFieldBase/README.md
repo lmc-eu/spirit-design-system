@@ -43,7 +43,7 @@ TextFieldBase with password toggle (button to reveal the password):
 
 | Name                | Type                                                                        | Default | Required | Description                                                             |
 | ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autocomplete`      | `bool`                                                                      | —       | ✕        | If the field should have autocomplete enabled                           |
+| `autoComplete`      | `bool`                                                                      | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle` | `bool`                                                                      | —       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
 | `id`                | `string`                                                                    | —       | ✔        | Input and label identification                                          |
@@ -66,3 +66,4 @@ TextFieldBase with password toggle (button to reveal the password):
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [textfield]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextField/README.md
 [textarea]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

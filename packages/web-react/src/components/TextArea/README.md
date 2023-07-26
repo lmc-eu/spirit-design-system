@@ -38,6 +38,7 @@ Example with Auto-Height Adjustment
 
 | Name                    | Type                                           | Default | Required | Description                                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
+| `autoComplete`          | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr]                 |
 | `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
 | `helperText`            | `string`                                       | —       | ✕        | Custom helper text                                                   |
 | `id`                    | `string`                                       | —       | ✔        | Textarea and label identification                                    |
@@ -79,3 +80,4 @@ const CustomTextArea = (props: SpiritTextAreaProps): JSX.Element => {
 For detailed information see [TextArea](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md) component.
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

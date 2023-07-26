@@ -27,20 +27,21 @@ Advanced example usage:
 
 ## API
 
-| Name               | Type                                           | Default | Required | Description                    |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------ |
-| `id`               | `string`                                       | —       | ✔        | Input and label identification |
-| `isDisabled`       | `bool`                                         | —       | ✕        | Whether is field disabled      |
-| `isChecked`        | `bool`                                         | —       | ✕        | Whether is field checked       |
-| `isItem`           | `bool`                                         | —       | ✕        | To render in [Item][item] mode |
-| `isLabelHidden`    | `bool`                                         | —       | ✕        | Whether is label hidden        |
-| `label`            | `string`                                       | —       | ✕        | Label text                     |
-| `name`             | `string`                                       | —       | ✕        | Input name                     |
-| `ref`              | `ForwardedRef<HTMLInputElement>`               | —       | ✕        | Input element reference        |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | Wrapper custom class name      |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Wrapper custom style           |
-| `validationState`  | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state       |
-| `value`            | `string`                                       | —       | ✕        | Input value                    |
+| Name               | Type                                           | Default | Required | Description                                          |
+| ------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
+| `autoComplete`     | string                                         | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `id`               | string                                         | -       | ✔        | Input and label identification                       |
+| `isDisabled`       | boolean                                        | -       | ✕        | Whether is field disabled                            |
+| `isChecked`        | boolean                                        | -       | ✕        | Whether is field checked                             |
+| `isItem`           | boolean                                        | -       | ✕        | To render in [Item][item] mode                       |
+| `isLabelHidden`    | boolean                                        | -       | ✕        | Whether is label hidden                              |
+| `label`            | string                                         | -       | ✕        | Label text                                           |
+| `name`             | string                                         | -       | ✕        | Input name                                           |
+| `ref`              | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
+| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name                            |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style                                 |
+| `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                             |
+| `value`            | string                                         | -       | ✕        | Input value                                          |
 
 ## Custom component
 
@@ -66,3 +67,4 @@ For detailed information see [Radio](https://github.com/lmc-eu/spirit-design-sys
 
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
