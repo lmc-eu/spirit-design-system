@@ -1,0 +1,4 @@
+@use '@tokens' as tokens;
+
+$gap: tokens.$space-400;
+$fields-gap: tokens.$space-600;
