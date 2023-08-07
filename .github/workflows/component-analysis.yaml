@@ -24,9 +24,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Install dependencies
-        # @TODO: uncomment after https://github.com/bahmutov/npm-install/issues/175 is resolved
-        # uses: bahmutov/npm-install@v1
-        uses: u0reo/npm-install@fix/restore-failure
+        uses: bahmutov/npm-install@v1.8.33
         with:
           useRollingCache: true
 
