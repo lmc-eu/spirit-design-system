@@ -8,7 +8,7 @@
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _ariaLabelledbyAttr = _id ? 'aria-labelledby="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
+{%- set _ariaLabelledbyAttr = _titleId ? 'aria-labelledby="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
