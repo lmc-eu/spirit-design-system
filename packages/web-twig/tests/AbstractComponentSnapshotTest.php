@@ -6,20 +6,21 @@ namespace Lmc\SpiritWebTwigBundle;
 
 use Lmc\SpiritWebTwigBundle\Helper\TwigHelper;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 use Spatie\Snapshots\MatchesSnapshots;
 use Twig\Environment;
 
-final class ComponentsSnapshotTest extends TestCase
+abstract class AbstractComponentSnapshotTest extends TestCase
 {
     use MatchesSnapshots;
 
-    protected Environment $twig;
+    protected const FIXTURES_DIR = '__fixtures__';
 
-    private const SNAPSHOT_SOURCES = __DIR__ . '/components-fixtures';
+    protected Environment $twig;
 
     public function setUp(): void
     {
-        $this->twig = TwigHelper::setup(self::SNAPSHOT_SOURCES, 'spirit');
+        $this->twig = TwigHelper::setup($this->getSnapshotSources(), 'spirit');
     }
 
     /**
@@ -39,7 +40,7 @@ final class ComponentsSnapshotTest extends TestCase
      */
     public function snapshotComponentsDataProvider(): array
     {
-        $scanDirArray = scandir(self::SNAPSHOT_SOURCES);
+        $scanDirArray = scandir($this->getSnapshotSources());
 
         assert(is_array($scanDirArray));
 
@@ -47,7 +48,7 @@ final class ComponentsSnapshotTest extends TestCase
         $dataToProvide = [];
 
         foreach ($scannedDirectory as $fileName) {
-            if (! is_dir(self::SNAPSHOT_SOURCES . '/' . $fileName)) {
+            if (! is_dir($this->getSnapshotSources() . '/' . $fileName)) {
                 $dataToProvide[(string) $fileName] = [(string) $fileName];
             }
         }
@@ -55,7 +56,15 @@ final class ComponentsSnapshotTest extends TestCase
         return $dataToProvide;
     }
 
-    private function formatHtml(string $html): string
+    protected function getSnapshotSources(): string
+    {
+        $reflector = new ReflectionClass(static::class);
+        $filename = $reflector->getFileName();
+
+        return ($filename ? dirname($filename) : '') . DIRECTORY_SEPARATOR . static::FIXTURES_DIR;
+    }
+
+    protected function formatHtml(string $html): string
     {
         // Specify configuration
         $config = [
