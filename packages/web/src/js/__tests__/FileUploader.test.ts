@@ -323,4 +323,19 @@ describe('FileUploader', () => {
       expect(FileUploader.isValidationTextInElement(validationText, emptyElement)).toBe(false);
     });
   });
+
+  describe('getFileFromQueue', () => {
+    it('should return the file from the file queue', () => {
+      const file = { name: 'test.txt' } as File;
+      instance.fileQueue = new Map().set('test', file);
+
+      expect(instance.getFileFromQueue('test')).toBe(file);
+    });
+
+    it('should return undefined if the file does not exist in the file queue', () => {
+      instance.fileQueue = new Map();
+
+      expect(instance.getFileFromQueue('test')).toBeUndefined();
+    });
+  });
 });

@@ -1,6 +1,6 @@
 import { EventHandler, SelectorEngine } from './dom';
 import BaseComponent from './BaseComponent';
-import { enableToggleAutoloader } from './utils';
+import { image2Base64Preview, enableToggleAutoloader } from './utils';
 
 const NAME = 'fileUploader';
 const EVENT_KEY = `.${NAME}`;
@@ -252,6 +252,20 @@ class FileUploader extends BaseComponent {
     const item = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="item"]`);
     const itemName = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="name"]`);
     const itemButton = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
+    const hasImagePreview = Boolean(this.listElement?.dataset?.spiritImagepreview);
+    const AttachmentSvgIcon = item?.querySelector('svg');
+    const AttachmentPreviewImage = snippet.querySelector('.FileUploaderAttachment__image');
+    const isFileImg = file.type.includes('image');
+
+    if (hasImagePreview && isFileImg) {
+      AttachmentSvgIcon?.remove();
+      AttachmentPreviewImage?.querySelector('img')?.setAttribute('alt', file.name);
+      image2Base64Preview(file, 100, (compressedDataURL) =>
+        AttachmentPreviewImage?.querySelector('img')?.setAttribute('src', compressedDataURL),
+      );
+    } else {
+      AttachmentPreviewImage?.remove();
+    }
 
     item!.appendChild(attachmentInputElement);
     item!.setAttribute('id', id);
@@ -314,7 +328,7 @@ class FileUploader extends BaseComponent {
 
   addToQueue(file: File) {
     try {
-      EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue });
+      EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue, currentFile: file });
       this.checkAllowedFileType(file);
       this.checkAllowedFileSize(file);
       this.checkFileQueueDuplicity(file);
@@ -322,7 +336,7 @@ class FileUploader extends BaseComponent {
       this.appendToList(file);
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
-      EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue });
+      EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue, currentFile: file });
     } catch (error) {
       EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: error.message });
     }
@@ -330,15 +344,19 @@ class FileUploader extends BaseComponent {
 
   removeFromQueue(name: string) {
     if (this.fileQueue.has(name)) {
-      EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue });
+      EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue, currentFile: name });
       const itemElement = SelectorEngine.findOne(`#${name}`);
       this.fileQueue.delete(name);
       itemElement?.remove();
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
       this.removeValidationWError();
-      EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue });
+      EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue, currentFile: name });
     }
+  }
+
+  getFileFromQueue(name: string) {
+    return this.fileQueue.get(name);
   }
 
   onChange(event: Event & { target: HTMLInputElement }) {
@@ -434,7 +452,7 @@ class FileUploader extends BaseComponent {
     EventHandler.on(this.wrapper, EVENT_ERROR, this.onValidationError.bind(this));
 
     if (this.isDragAndDropSupported && this.dropZone) {
-      EventHandler.on(this.dropZone, 'dragover', FileUploader.onDragOver.bind(this));
+      EventHandler.on(this.dropZone, 'dragover', FileUploader.bind(this));
       EventHandler.on(this.dropZone, 'dragenter', this.onDragEnter.bind(this));
       EventHandler.on(this.dropZone, 'dragleave', this.onDragLeave.bind(this));
       EventHandler.on(this.dropZone, 'drop', this.onDrop.bind(this));
