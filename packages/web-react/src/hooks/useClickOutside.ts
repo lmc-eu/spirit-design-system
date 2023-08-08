@@ -22,7 +22,7 @@ export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void =
       // Modal composition
       if (
         ref?.current?.parentNode?.contains(event?.target as Node) &&
-        ['DIALOG', 'BUTTON'].includes(event?.target?.nodeName)
+        ['DIALOG', 'BUTTON'].includes((event?.target as Node)?.nodeName)
       ) {
         event.preventDefault();
       }
