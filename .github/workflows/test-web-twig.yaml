@@ -39,9 +39,13 @@ jobs:
         working-directory: ./packages/web-twig
         run: composer update --no-progress --no-interaction ${{ matrix.dependencies }}
 
+      - name: Build Icons
+        working-directory: ./packages/icons
+        run: yarn build
+
       - name: Copy Assets
         working-directory: ./packages/web-twig
-        run: cp ../icons/src/svg/* ./static
+        run: cp ../icons/dist/svg/* ./static
 
       - name: Run tests
         working-directory: ./packages/web-twig
