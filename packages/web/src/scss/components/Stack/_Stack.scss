@@ -8,6 +8,16 @@
     list-style: none;
 }
 
+.Stack--hasSpacing {
+    gap: theme.$gap;
+}
+
+.Stack--hasSpacing.Stack--hasStartDivider,
+.Stack--hasSpacing.Stack--hasEndDivider,
+.Stack--hasSpacing.Stack--hasIntermediateDividers {
+    gap: 0;
+}
+
 // stylelint-disable selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type.
 .Stack > * {
     margin-block: 0;
@@ -17,20 +27,25 @@
     border-block-start: theme.$border;
 }
 
-.Stack--hasSpacing > * {
-    padding-block: math.div(theme.$padding-block, 2);
+.Stack--hasSpacing.Stack--hasStartDivider > *,
+.Stack--hasSpacing.Stack--hasEndDivider > * {
+    padding-block: math.div(theme.$gap, 2);
 }
 
 .Stack--hasSpacing.Stack--hasIntermediateDividers > * {
-    padding-block: theme.$padding-block;
+    padding-block: theme.$gap;
 }
 // stylelint-enable
 
-.Stack--hasSpacing > :first-child {
+.Stack--hasSpacing.Stack--hasStartDivider > :first-child,
+.Stack--hasSpacing.Stack--hasEndDivider > :first-child,
+.Stack--hasSpacing.Stack--hasIntermediateDividers > :first-child {
     padding-block-start: 0;
 }
 
-.Stack--hasSpacing > :last-child {
+.Stack--hasSpacing.Stack--hasStartDivider > :last-child,
+.Stack--hasSpacing.Stack--hasEndDivider > :last-child,
+.Stack--hasSpacing.Stack--hasIntermediateDividers > :last-child {
     padding-block-end: 0;
 }
 
@@ -52,9 +67,9 @@
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > :first-child {
-    padding-block-start: theme.$padding-block;
+    padding-block-start: theme.$gap;
 }
 
 .Stack--hasSpacing.Stack--hasEndDivider > :last-child {
-    padding-block-end: theme.$padding-block;
+    padding-block-end: theme.$gap;
 }
