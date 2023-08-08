@@ -39,14 +39,17 @@ Usage with a list:
 
 ## Variants
 
-⚠ `Stack--hasSpacing` uses the CSS `padding` property to be able to create dividers using the `border` property.
+⚠ `Stack--hasSpacing` with dividers uses the CSS `padding` property to be able to create dividers using the `border` property.
 It is recommended to wrap the direct descendants of the `Stack` component to the proper HTML element.
 Otherwise, the applied spacing via vertical padding could break the visual view of the children's items.
+
+`Stack--hasSpacing` without dividers uses the CSS `gap` property.
 
 ### Spacing between items
 
 👉 The vertical spacing between items is applied via `Stack--hasSpacing`. The size corresponds with the value of the design token `$space-600`.
 In case you need another spacing, please use utility classes or add custom-defined styles to the direct descendants.
+Keep in mind, that spacing is applied by the `gap` property or by `padding` property in case of dividers.
 
 Usage with spacing:
 
