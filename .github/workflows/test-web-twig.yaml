@@ -15,7 +15,34 @@ on:
       - packages/icons/**
 
 jobs:
+  prepare-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1.8.33
+        with:
+          useRollingCache: true
+
+      - name: Build Icons
+        working-directory: ./packages/icons
+        run: yarn build
+
+      - name: Save built icons
+        uses: actions/upload-artifact@v1
+        with:
+          name: icons-dist
+          path: ./packages/icons/dist
+
   unit-tests:
+    needs: [prepare-icons]
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,6 +55,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Download built icons
+        uses: actions/download-artifact@v1
+        with:
+          name: icons-dist
+          path: ./packages/icons/dist
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -38,10 +71,6 @@ jobs:
       - name: Install dependencies
         working-directory: ./packages/web-twig
         run: composer update --no-progress --no-interaction ${{ matrix.dependencies }}
-
-      - name: Build Icons
-        working-directory: ./packages/icons
-        run: yarn build
 
       - name: Copy Assets
         working-directory: ./packages/web-twig
