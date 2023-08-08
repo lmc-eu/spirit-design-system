@@ -273,6 +273,10 @@ list semantics for the selected files.
 </ul>
 ```
 
+| Name          | Usage                             | Description                         |
+| ------------- | --------------------------------- | ----------------------------------- |
+| Image preview | `data-spirit-imagePreview="true"` | Add preview for images in file list |
+
 ## FileUploaderAttachment
 
 FileUploaderAttachment represents the files to be uploaded. It is expected to be

@@ -16,3 +16,4 @@ export * from './Deprecations';
 export * from './Elements';
 export { default as ScrollControl } from './ScrollControl';
 export * from './Transitions';
+export * from './Image2Base64Preview';

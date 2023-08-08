@@ -522,6 +522,165 @@
   <!-- FileUploader: end -->
 
 </section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Attachment with Image Preview</h2>
+
+  <!-- Modal: start -->
+  <dialog id="example_image_preview" class="Modal" aria-labelledby="example_image_preview">
+
+    <!-- ModalDialog: start -->
+    <div class="ModalDialog ModalDialog--expandOnMobile">
+
+      <!-- ModalBody: start -->
+      <div class="ModalBody">
+        <!-- here will be image -->
+      </div>
+      <!-- ModalBody: end -->
+
+      <!-- ModalFooter: start -->
+      <footer class="ModalFooter ModalFooter--right">
+        <div class="ModalFooter__actions">
+          <button
+            type="button"
+            class="Button Button--primary Button--medium"
+            data-spirit-target="#example_image_preview"
+            data-spirit-dismiss="modal"
+          >
+            Confirm
+          </button>
+          <button
+            type="button"
+            class="Button Button--secondary Button--medium"
+            data-spirit-target="#example_image_preview"
+            data-element="cancel"
+          >
+            Cancel
+          </button>
+        </div>
+      </footer>
+      <!-- ModalFooter: end -->
+
+    </div>
+    <!-- ModalDialog: end -->
+
+  </dialog>
+  <!-- Modal: end -->
+
+  <!-- FileUploader: start -->
+  <div id="example_customImagePreview" class="FileUploader" data-spirit-toggle="fileUploader">
+
+    <!-- FileUploaderAttachment template: start -->
+    <template data-spirit-snippet="item">
+      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+        <span class="FileUploaderAttachment__image">
+          <img src="" width="54" height="54" alt="" />
+        </span>
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#file" />
+        </svg>
+        <span class="FileUploaderAttachment__name">
+          <span class="text-truncate" data-spirit-populate-field="name"></span>
+        </span>
+        <span class="FileUploaderAttachment__slot">
+
+          <!-- Slot content: start -->
+          <button type="button" class="FileUploaderAttachment__action" data-element="example-action">
+            <span class="accessibility-hidden">Edit</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#edit" />
+            </svg>
+          </button>
+          <!-- Slot content: end -->
+
+        </span>
+        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+          <span class="accessibility-hidden">Remove</span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+        </button>
+      </li>
+    </template>
+    <!-- FileUploaderAttachment template: end -->
+
+    <!-- FileUploaderInput: start -->
+    <div class="FileUploaderInput" data-spirit-element="wrapper">
+      <label for="fileUploaderWithImagePreview" class="FileUploaderInput__label">Label</label>
+      <input type="file" id="fileUploaderWithImagePreview" name="attachment12" class="FileUploaderInput__input" multiple data-spirit-element="input" />
+      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#upload" />
+        </svg>
+        <label for="fileUploaderWithImagePreview" class="FileUploaderInput__dropZoneLabel">
+          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+        </label>
+        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+      </div>
+    </div>
+    <!-- FileUploaderInput: end -->
+
+    <!-- FileUploaderList: start -->
+    <h3 id="attachments-customImagePreview" hidden>Attachments</h3>
+    <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list" data-spirit-imagePreview="true"></ul>
+    <!-- FileUploaderList: end -->
+
+  </div>
+  <!-- FileUploader: end -->
+
+  <script type="module">
+    import Modal from '../../../js/Modal'
+    import FileUploader from '../../../js/FileUploader'
+
+    window.addEventListener('DOMContentLoaded', () => {
+      let file;
+      const ModalElement = document.getElementById('example_image_preview');
+      const ModalInstance = new Modal(ModalElement);
+      const ModalBody = ModalElement.querySelector('.ModalBody');
+      const cancelButton = ModalElement.querySelector('[data-element="cancel"]');
+      const FileUploaderElement = document.getElementById('example_customImagePreview');
+      const FileUploaderInstance = FileUploader.getInstance(FileUploaderElement);
+
+      const isFileImage = (file) => file.type.split('/')[0] === 'image';
+
+      const showModalPreview = (file) => {
+        if(isFileImage(file)) {
+          const reader = new FileReader();
+          
+          reader.readAsDataURL(file);
+          reader.onloadend = () => {
+            const base64data = reader.result;
+            localStorage.setItem('image', base64data);
+            ModalBody.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
+            ModalInstance.show();
+          }
+        }
+      }
+
+      const removeFromQueue = () => {
+        FileUploaderInstance.removeFromQueue(FileUploaderInstance.getUpdatedFileName(file.name));
+        cleanup();
+      }
+
+      const cleanup = () => {
+        ModalInstance.hide();
+        ModalBody.innerHTML = '';
+        file = undefined;
+      }
+
+      cancelButton.addEventListener('click', removeFromQueue);
+
+      FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
+        file = event.currentFile;
+        showModalPreview(file);
+      });
+    });
+
+  </script>
+
+</section>
+
 <section class="docs-Section">
   <h2 class="docs-Heading">Attachment with Custom Actions</h2>
 
