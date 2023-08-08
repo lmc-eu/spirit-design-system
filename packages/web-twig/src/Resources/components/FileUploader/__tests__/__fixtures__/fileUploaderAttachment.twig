@@ -1,8 +1,24 @@
 <FileUploaderAttachment />
 
+<!-- Render with image preview, for template -->
+<FileUploaderAttachment generateImagePreview />
+
+<!-- Render with file name and icon -->
+<FileUploaderAttachment fileName="file.pdf" />
+
+<!-- Render with file name and image preview -->
+<FileUploaderAttachment fileName="file.pdf" imagePreview="https://picsum.photos/id/823/162/162" />
+
+<!-- Render with onEdit -->
+<FileUploaderAttachment onEdit="alert('Edit')" />
+
 <!-- Render with all props -->
 <FileUploaderAttachment
+    editText="Change"
     fileName="file.pdf"
+    generateImagePreview
     iconName="add"
+    imagePreview="https://picsum.photos/id/823/162/162"
+    onEdit="alert('Edit')"
     removeText="Delete"
 />

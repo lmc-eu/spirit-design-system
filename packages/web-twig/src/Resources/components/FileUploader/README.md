@@ -247,10 +247,17 @@ Long file names are automatically truncated.
 <FileUploaderAttachment fileName="My resume.docx" />
 ```
 
+FileUploaderAttachment with image preview and edit button:
+
+```twig
+<FileUploaderAttachment fileName="Profile.jpg" imagePreview="https://...Profile.jpg" onEdit="() => {}" />
+```
+
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
 wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
-up the template and apply it on any attachments the user wants to upload.
+up the template and apply it on any attachments the user wants to upload. In order to make the template work with image preview,
+add the `generateImagePreview` prop to the `FileUploaderAttachment` inside the `<template>`.
 
 ```twig
 <FileUploader data-spirit-toggle="fileUploader">
@@ -262,13 +269,29 @@ up the template and apply it on any attachments the user wants to upload.
 </FileUploader>
 ```
 
+With image preview:
+
+```twig
+<FileUploader data-spirit-toggle="fileUploader">
+  <template data-spirit-snippet="item">
+    <FileUploaderAttachment generateImagePreview />
+  </template>
+  <!-- FileUploaderInput -->
+  <!-- FileUploaderList -->
+</FileUploader>
+```
+
 ### API
 
-| Prop name    | Type     | Default  | Required | Description               |
-| ------------ | -------- | -------- | -------- | ------------------------- |
-| `fileName`   | `string` | `null`   | no       | File name                 |
-| `iconName`   | `string` | `file`   | no       | Icon shown along the file |
-| `removeText` | `string` | `Remove` | no       | Remove button text        |
+| Name                   | Type     | Default  | Required | Description                                                                                        |
+| ---------------------- | -------- | -------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `editText`             | `string` | `Edit`   | ✕        | Edit button text                                                                                   |
+| `fileName`             | `string` | `null`   | ✕        | File name                                                                                          |
+| `generateImagePreview` | `bool`   | `false`  | ✕        | If true and used in the attachment template, the JS plugin will try to show a preview of the image |
+| `iconName`             | `string` | `file`   | ✕        | Icon shown along the file                                                                          |
+| `imagePreview`         | `string` | `null`   | ✕        | URL or base64 of an image                                                                          |
+| `onEdit`               | `func`   | `null`   | ✕        | Function to trigger on click on edit button                                                        |
+| `removeText`           | `string` | `Remove` | ✕        | Remove button text                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

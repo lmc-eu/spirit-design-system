@@ -701,7 +701,7 @@
         <span class="FileUploaderAttachment__slot">
 
           <!-- Slot content: start -->
-          <button type="button" class="FileUploaderAttachment__action" data-element="example-action">
+          <button type="button" class="FileUploaderAttachment__action" onclick="editHandler()">
             <span class="accessibility-hidden">Edit</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#edit" />
@@ -747,28 +747,9 @@
 
   <!-- Example custom action functionality: start -->
   <script>
-    let filesQueueCounter = 0;
-
     const editHandler = () => {
       alert('Custom action clicked');
     };
-
-    document.addEventListener('queuedFile.fileUploader', () => {
-      filesQueueCounter++;
-      document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
-        element.removeEventListener('click', editHandler); // Prevent multiple event listeners
-        element.addEventListener('click', editHandler);
-      });
-    });
-
-    document.addEventListener('unqueueFile.fileUploader', () => {
-     filesQueueCounter--;
-     if (filesQueueCounter === 0) {
-       document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
-         element.removeEventListener('click', editHandler);
-       });
-     }
-    });
   </script>
   <!-- Example custom action functionality: end -->
 

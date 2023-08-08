@@ -1,0 +1,50 @@
+<section class="docs-Section">
+    <h2 class="docs-Heading">Attachment with Image Preview</h2>
+
+    <Modal id="example_image_preview" titleId="example_image_preview_title">
+        <ModalDialog>
+            <ModalHeader modalId="example_image_preview" titleId="example_image_preview_title">
+                Image Preview
+            </ModalHeader>
+            <ModalBody>
+                <div class="pt-400 pt-tablet-600" data-example-content>
+
+                </div>
+            </ModalBody>
+            <ModalFooter>
+                <Button
+                    color="primary"
+                    data-spirit-target="#example_image_preview"
+                    data-spirit-dismiss="modal"
+                >
+                    Confirm
+                </Button>
+                <Button
+                    color="secondary"
+                    data-spirit-target="#example_image_preview"
+                    data-element="cancel"
+                >
+                    Cancel
+                </Button>
+            </ModalFooter>
+        </ModalDialog>
+    </Modal>
+
+
+    <FileUploader data-spirit-toggle="fileUploader" id="example_customImagePreview">
+        <template data-spirit-snippet="item">
+            <FileUploaderAttachment onEdit="editHandler()" generateImagePreview />
+        </template>
+        <FileUploaderInput
+            helperText="Max size of each file is 10 MB"
+            id="fileUploaderWithImagePreview"
+            label="Label"
+            multiple
+            name="fileUploaderWithImagePreview"
+        />
+        <FileUploaderList headingId="attachments-customImagePreview" />
+    </FileUploader>
+
+    {{ encore_entry_script_tags('fileUploaderImagePreview') }}
+
+</section>

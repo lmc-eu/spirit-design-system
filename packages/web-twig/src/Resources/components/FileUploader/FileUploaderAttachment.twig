@@ -1,31 +1,55 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _editText = props.editText | default('Edit') -%}
 {%- set _fileName = props.fileName | default(null) -%}
+{%- set _generateImagePreview = props.generateImagePreview | default(false) -%}
 {%- set _iconName = props.iconName | default('file') -%}
+{%- set _imagePreview = props.imagePreview | default(null) -%}
+{%- set _onEdit = props.onEdit | default(null) -%}
 {%- set _removeText = props.removeText | default('Remove') -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderAttachment' -%}
+{%- set _imageClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__image' -%}
 {%- set _nameClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__name' -%}
 {%- set _removeClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__action' -%}
+
+{# Attributes #}
+{%- set _dataImagePreviewAttr = _generateImagePreview ? 'data-spirit-imagePreview="true"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('data-spirit-populate-field')) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['onEdit', 'data-spirit-populate-field', 'data-spirit-imagePreview']) -%}
 
 <li
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ classProp(_classNames) }}
     {{ styleProp(_styleProps) }}
     data-spirit-populate-field="item"
+    {{ _dataImagePreviewAttr | raw }}
 >
-    <Icon name="{{ _iconName }}" isReusable={ false } />
+    {% if _generateImagePreview or _imagePreview %}
+        <span class="{{ _imageClassName }}">
+            <img src="{{ _imagePreview }}" width="54" height="54" alt="{{- _fileName -}}" />
+        </span>
+    {% endif %}
+    {% if not _imagePreview %}
+        <Icon name="{{ _iconName }}" isReusable={ false } />
+    {% endif %}
     <span class="{{ _nameClassName }}">
         <span class="text-truncate" data-spirit-populate-field="name">
             {{- _fileName -}}
         </span>
     </span>
+    {% if _onEdit %}
+        <span class="FileUploaderAttachment__slot">
+            <button type="button" class="FileUploaderAttachment__action" onclick="{{ _onEdit }}">
+                <span class="accessibility-hidden">{{ _editText }}</span>
+                <Icon name="edit" isReusable={ false } />
+            </button>
+        </span>
+    {% endif %}
     <button
         type="button"
         class="{{ _removeClassName }}"
