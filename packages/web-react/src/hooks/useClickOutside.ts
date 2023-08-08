@@ -17,8 +17,13 @@ export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void =
         callback(event);
       }
 
-      // Cancel the default action to avoid it being handled twice.
-      if (ref?.current?.parentNode?.contains(event?.target as Node)) {
+      // Cancel the default action to avoid it being handled twice for button click.
+      // This whitelist do not seems right to me but it is quick workaround until we can better support
+      // Modal composition
+      if (
+        ref?.current?.parentNode?.contains(event?.target as Node) &&
+        ['DIALOG', 'BUTTON'].includes((event?.target as Node)?.nodeName)
+      ) {
         event.preventDefault();
       }
     },
