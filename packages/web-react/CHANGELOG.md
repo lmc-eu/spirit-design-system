@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.0.0...@lmc-eu/spirit-web-react@1.1.0) (2023-08-09)
+
+### Bug Fixes
+
+- **web-react:** Click outside hook prevents click on input label ([dcc9ff2](https://github.com/lmc-eu/spirit-design-system/commit/dcc9ff2)), closes [#DS-879](https://github.com/lmc-eu/spirit-design-system/issues/DS-879)
+
+### Dependencies
+
+- Update all non-major dependencies ([19335a3](https://github.com/lmc-eu/spirit-design-system/commit/19335a3))
+
+### Documentation
+
+- **web-react:** Introduce Stacked Modals and Modal with Checkbox demo ([baf8392](https://github.com/lmc-eu/spirit-design-system/commit/baf8392))
+- **web, web-react, web-twig:** Minor typo fix ([be40478](https://github.com/lmc-eu/spirit-design-system/commit/be40478))
+- **web,web-twig:** Mark visual-only examples in `FileUploader` demo ([27b3533](https://github.com/lmc-eu/spirit-design-system/commit/27b3533))
+
+### Features
+
+- **web:** Extend `FileUploaderAttachment` with preview and custom actions slot ([768906f](https://github.com/lmc-eu/spirit-design-system/commit/768906f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@0.48.3...@lmc-eu/spirit-web-react@1.0.0) (2023-07-21)

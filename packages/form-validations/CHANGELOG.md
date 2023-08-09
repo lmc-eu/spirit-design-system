@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.1"></a>
+
+## [1.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.0...@lmc-eu/spirit-form-validations@1.0.1) (2023-08-09)
+
+### Dependencies
+
+- Update all non-major dependencies ([19335a3](https://github.com/lmc-eu/spirit-design-system/commit/19335a3))
+
+### Documentation
+
+- **web,web-twig:** Mark visual-only examples in `FileUploader` demo ([27b3533](https://github.com/lmc-eu/spirit-design-system/commit/27b3533))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@0.2.5...@lmc-eu/spirit-form-validations@1.0.0) (2023-07-21)

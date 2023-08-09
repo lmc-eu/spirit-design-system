@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.1"></a>
+
+## [1.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.0.0...@lmc-eu/spirit-icons@1.0.1) (2023-08-09)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@0.10.2...@lmc-eu/spirit-icons@1.0.0) (2023-07-21)

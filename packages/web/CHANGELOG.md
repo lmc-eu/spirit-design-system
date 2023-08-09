@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.0.0...@lmc-eu/spirit-web@1.1.0) (2023-08-09)
+
+### Bug Fixes
+
+- **web:** Fix ModalDialog unset box-sizing [#DS-878](https://github.com/lmc-eu/spirit-design-system/issues/DS-878) ([8392bbc](https://github.com/lmc-eu/spirit-design-system/commit/8392bbc))
+
+### Chores
+
+- **web:** Remove `readdirSync` because it is defined but never used ([5de1ef4](https://github.com/lmc-eu/spirit-design-system/commit/5de1ef4))
+
+### Code Refactoring
+
+- **web:** Function is banned type, use FunctionConstructor instead ([716b067](https://github.com/lmc-eu/spirit-design-system/commit/716b067))
+
+### Dependencies
+
+- Update all non-major dependencies ([19335a3](https://github.com/lmc-eu/spirit-design-system/commit/19335a3))
+
+### Documentation
+
+- **web, web-react, web-twig:** Minor typo fix ([be40478](https://github.com/lmc-eu/spirit-design-system/commit/be40478))
+- **web,web-twig:** Mark visual-only examples in `FileUploader` demo ([27b3533](https://github.com/lmc-eu/spirit-design-system/commit/27b3533))
+- **web,web-twig:** Showcase the fluid variant of `Select` ([3486a99](https://github.com/lmc-eu/spirit-design-system/commit/3486a99))
+
+### Features
+
+- **web:** Extend `FileUploaderAttachment` with preview and custom actions slot ([768906f](https://github.com/lmc-eu/spirit-design-system/commit/768906f))
+- **web:** Introduce `FieldGroup` component [#DS-855](https://github.com/lmc-eu/spirit-design-system/issues/DS-855) ([76b9a0f](https://github.com/lmc-eu/spirit-design-system/commit/76b9a0f))
+
+### Styles
+
+- **web:** Fix JSDoc formatting in EventHandler ([9e20aba](https://github.com/lmc-eu/spirit-design-system/commit/9e20aba))
+
+### Tests
+
+- **web-react:** Replace toThrowError() with its canonical name of toThrow() ([a84e5c1](https://github.com/lmc-eu/spirit-design-system/commit/a84e5c1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@0.50.1...@lmc-eu/spirit-web@1.0.0) (2023-07-21)
