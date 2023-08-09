@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.0.0...@lmc-eu/spirit-web-twig@2.1.0) (2023-08-09)
+
+### Bug Fixes
+
+- **demo:** Use builded icons for web-twig demo refs [#DS-748](https://github.com/lmc-eu/spirit-design-system/issues/DS-748) ([17c2a2b](https://github.com/lmc-eu/spirit-design-system/commit/17c2a2b))
+
+### Chores
+
+- **demo:** Add command for trusting self-signed certificates ([cf0da2f](https://github.com/lmc-eu/spirit-design-system/commit/cf0da2f)), closes [#DS-743](https://github.com/lmc-eu/spirit-design-system/issues/DS-743)
+
+### Documentation
+
+- **web-twig:** Use command for packagist sync ([20ba79a](https://github.com/lmc-eu/spirit-design-system/commit/20ba79a))
+- **web, web-react, web-twig:** Minor typo fix ([be40478](https://github.com/lmc-eu/spirit-design-system/commit/be40478))
+- **web,web-twig:** Mark visual-only examples in `FileUploader` demo ([27b3533](https://github.com/lmc-eu/spirit-design-system/commit/27b3533))
+- **web,web-twig:** Showcase the fluid variant of `Select` ([3486a99](https://github.com/lmc-eu/spirit-design-system/commit/3486a99))
+
+### Features
+
+- **web:** Extend `FileUploaderAttachment` with preview and custom actions slot ([768906f](https://github.com/lmc-eu/spirit-design-system/commit/768906f))
+
+### Tests
+
+- **twig:** Update snapshots with icons using `currentColor` ([40cb7ec](https://github.com/lmc-eu/spirit-design-system/commit/40cb7ec))
+- **web-twig:** Update snapshots due to spirit-icons change ([3c62953](https://github.com/lmc-eu/spirit-design-system/commit/3c62953))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@1.34.1...@lmc-eu/spirit-web-twig@2.0.0) (2023-07-21)
