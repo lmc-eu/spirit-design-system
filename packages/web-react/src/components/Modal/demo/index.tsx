@@ -4,6 +4,8 @@ import DocsSection from '../../../../docs/DocsSections';
 import Modal from '../stories/Modal';
 import ModalWithCustomHeight from '../stories/ModalWithCustomHeight';
 import ModalWithLongText from '../stories/ModalWithLongText';
+import ModalWithCheckbox from '../stories/ModalWithCheckbox';
+import { ModalStacked } from '../stories/StackedModals';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -15,6 +17,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Modal with Long Text">
       <ModalWithLongText />
+    </DocsSection>
+    <DocsSection title="Modal with Checkbox">
+      <ModalWithCheckbox />
+    </DocsSection>
+    <DocsSection title="Modal Stacked">
+      <ModalStacked />
     </DocsSection>
   </React.StrictMode>,
 );
