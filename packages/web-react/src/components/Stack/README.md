@@ -32,12 +32,12 @@ Advanced example usage:
 
 | Prop name                 | Type     | Default | Required | Description                            |
 | ------------------------- | -------- | ------- | -------- | -------------------------------------- |
-| `class`                   | `string` | `null`  | no       | Custom CSS class                       |
 | `elementType`             | `string` | `div`   | no       | Element type of the wrapper element    |
 | `hasEndDivider`           | `bool`   | `false` | no       | Render a divider after the last item   |
 | `hasIntermediateDividers` | `bool`   | `false` | no       | Render dividers between items          |
 | `hasSpacing`              | `bool`   | `false` | no       | Apply a spacing between items          |
 | `hasStartDivider`         | `bool`   | `false` | no       | Render a divider before the first item |
+| `UNSAFE_className`        | `string` | `null`  | no       | Wrapper custom classname               |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
