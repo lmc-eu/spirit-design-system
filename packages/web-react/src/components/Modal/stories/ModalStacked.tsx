@@ -1,0 +1,81 @@
+// Because there is no `dist` directory during the CI run
+/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
+import React, { useState } from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No declaration file
+import icons from '@lmc-eu/spirit-icons/dist/icons';
+import { Modal, ModalDialog, ModalHeader, ModalBody, ModalFooter } from '..';
+import { Button } from '../../Button';
+import { IconsProvider } from '../../../context';
+
+// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Story = (props: unknown) => {
+  const [isFirstOpen, setFirstOpen] = useState(false);
+  const [isSecondOpen, setSecondOpen] = useState(false);
+
+  const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
+  const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
+
+  const handleFirstClose = () => {
+    setFirstOpen(false);
+  };
+  const handleSecondClose = () => {
+    setSecondOpen(false);
+  };
+
+  return (
+    <IconsProvider value={icons}>
+      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="#ModalExample">
+        {isFirstOpen ? 'Close' : 'Open'} Modal
+      </Button>
+      <Modal id="ModalExampleStacked" isOpen={isSecondOpen} onClose={handleSecondClose}>
+        <ModalDialog>
+          <ModalHeader>Modal stacked</ModalHeader>
+          <ModalBody>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
+              provident unde. Eveniet, iste, molestiae?
+            </p>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={handleSecondClose}>
+              Confirm
+            </Button>
+            <Button color="tertiary" onClick={handleSecondClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalDialog>
+      </Modal>
+      <Modal id="ModalExample" isOpen={isFirstOpen} onClose={handleFirstClose}>
+        <ModalDialog>
+          <ModalHeader>Modal </ModalHeader>
+          <ModalBody>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
+              provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
+              provident unde. Eveniet, iste, molestiae?
+            </p>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={toggleSecondModal}>
+              Open stacked
+            </Button>
+            <Button color="tertiary" onClick={handleFirstClose}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </ModalDialog>
+      </Modal>
+    </IconsProvider>
+  );
+};
+
+export default Story;
