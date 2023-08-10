@@ -38,11 +38,11 @@ For full functionality, you need to provide Spirit JavaScript:
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-Check the [component's docs in the web package][web-js-api] to see the full documentation of the plugin.
-
 Please consult the [main README][web-readme] for how to include JavaScript plugins.
 
 Or, feel free to write the controlling script yourself.
+
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 ## API
 

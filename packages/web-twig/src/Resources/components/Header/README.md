@@ -38,6 +38,8 @@ plugins.
 
 Or, feel free to write the controlling script yourself.
 
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
 ## Accessibility Guidelines
 
 👉 The animation effect of this component is dependent on the
@@ -514,6 +516,7 @@ And the complete Header Dialog:
 
 </details>
 
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md#javascript-plugin
 [header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Header
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

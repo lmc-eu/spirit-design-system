@@ -80,5 +80,21 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.
 
-[collapse]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Collapse/README.md#javascript-plugin
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[collapse]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Collapse
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

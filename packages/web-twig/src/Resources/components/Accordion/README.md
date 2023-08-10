@@ -219,5 +219,21 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Accordion/README.md#javascript-plugin
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [accordion]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Accordion
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
