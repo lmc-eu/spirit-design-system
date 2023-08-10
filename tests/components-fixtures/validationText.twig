@@ -1,0 +1,25 @@
+<!-- DO NOT render without children -->
+<ValidationText />
+
+<!-- DO NOT render when validationState is not set -->
+<ValidationText
+    validationText="Validation text"
+/>
+
+<!-- Render with plain validation text -->
+<ValidationText
+    className="myClass"
+    id="validationText"
+    validationState="success"
+    validationText="Validation text"
+/>
+
+<!-- Render with all props -->
+<ValidationText
+    className="myClass"
+    elementType="span"
+    id="validationTextAllProps"
+    validationState="success"
+    validationText="Validation text"
+    UNSAFE_validationText="<span>Unsafe validation text</span>"
+/>

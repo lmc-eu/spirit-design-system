@@ -2,32 +2,41 @@
 {%- set props = props | default([]) -%}
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _validationText = props.validationText | default(null) -%}
-{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
+
+{# Deprecations #}
+{% if not _id %}
+    {% deprecated 'ValidationText: The "id" property will be required starting from the next major version.' %}
+{% endif %}
 
 {% if _validationState and _validationText and not _unsafeValidationText %}
     {%- if _validationText is iterable -%}
-        <ul class="{{ _className }}">
+        <ul class="{{ _className }}" {{ _idAttr | raw }}>
             {% for _validationTextItem in _validationText %}
                 <li>{{ _validationTextItem }}</li>
             {% endfor %}
         </ul>
     {% else %}
-        <{{ _elementType }} class="{{ _className }}">
+        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
             {{ _validationText }}
         </{{ _elementType }}>
     {%- endif -%}
 {% endif %}
 {% if _validationState and _unsafeValidationText %}
     {%- if _unsafeValidationText is iterable -%}
-        <ul class="{{ _className }}">
+        <ul class="{{ _className }}" {{ _idAttr | raw }}>
             {% for _validationTextItem in _unsafeValidationText %}
                 <li>{{ _validationTextItem | raw }}</li>
             {% endfor %}
         </ul>
     {% else %}
-        <{{ _elementType }} class="{{ _className }}">
+        <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
             {{ _unsafeValidationText | raw }}
         </{{ _elementType }}>
     {%- endif -%}
