@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <fieldset id="fieldGroup" class="FieldGroup">
+    </fieldset>
+    <!-- Render with children -->
+
+    <fieldset id="fieldGroupWithChildren" class="FieldGroup">
+      <div class="FieldGroup__fields">
+        <div>
+          Item 1
+        </div>
+
+        <div>
+          Item 2
+        </div>
+
+        <div>
+          Item 3
+        </div>
+      </div>
+    </fieldset>
+    <!-- Render with hidden label -->
+
+    <fieldset id="fieldGroupHiddenLabel" class="FieldGroup">
+      <legend class="accessibility-hidden">Label</legend>
+    </fieldset>
+    <!-- Render in danger state -->
+
+    <fieldset id="fieldGroupValidationDanger" class="FieldGroup FieldGroup--danger">
+    </fieldset>
+    <!-- Render with allowed HTML attributes -->
+
+    <fieldset id="fieldGroupWithAllowedHTMLAttributes" form="myFormId" name="myFieldGroupName" class="FieldGroup">
+    </fieldset>
+    <!-- Render with UNSAFE props -->
+
+    <fieldset id="fieldGroupWithUnsafeProps" class="FieldGroup FieldGroup--danger" aria-describedby="fieldGroupWithUnsafeProps__helperText fieldGroupWithUnsafeProps__validationText">
+      <legend class="accessibility-hidden"><span>UNSAFE label text</span></legend>
+      <div class="FieldGroup__label" aria-hidden="true">
+        <span>UNSAFE label text</span>
+      </div>
+
+      <div class="FieldGroup__helperText" id="fieldGroupWithUnsafeProps__helperText">
+        <span>UNSAFE helper text</span>
+      </div>
+
+      <div class="FieldGroup__validationText" id="fieldGroupWithUnsafeProps__validationText">
+        <span>UNSAFE validation text</span>
+      </div>
+    </fieldset>
+    <!-- Render with all props -->
+
+    <fieldset id="fieldGroupValidationSuccess" class="FieldGroup FieldGroup--fluid FieldGroup--success" aria-describedby="fieldGroupValidationSuccess__helperText fieldGroupValidationSuccess__validationText" disabled>
+      <legend class="accessibility-hidden">Label</legend>
+      <div class="FieldGroup__fields">
+        <div>
+          Item 1
+        </div>
+
+        <div>
+          Item 2
+        </div>
+
+        <div>
+          Item 3
+        </div>
+      </div>
+
+      <div class="FieldGroup__helperText" id="fieldGroupValidationSuccess__helperText">
+        <span>UNSAFE helper text</span>
+      </div>
+
+      <div class="FieldGroup__validationText" id="fieldGroupValidationSuccess__validationText">
+        <span>UNSAFE validation text</span>
+      </div>
+    </fieldset>
+  </body>
+</html>

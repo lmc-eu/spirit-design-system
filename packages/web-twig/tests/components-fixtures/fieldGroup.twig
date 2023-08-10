@@ -1,0 +1,57 @@
+<FieldGroup id="fieldGroup"></FieldGroup>
+
+<!-- Render with children -->
+<FieldGroup id="fieldGroupWithChildren">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</FieldGroup>
+
+<!-- Render with hidden label -->
+<FieldGroup
+    id="fieldGroupHiddenLabel"
+    isLabelHidden
+    label="Label"
+></FieldGroup>
+
+<!-- Render in danger state -->
+<FieldGroup
+    id="fieldGroupValidationDanger"
+    validationState="danger"
+></FieldGroup>
+
+<!-- Render with allowed HTML attributes -->
+<FieldGroup
+    form="myFormId"
+    id="fieldGroupWithAllowedHTMLAttributes"
+    name="myFieldGroupName"
+></FieldGroup>
+
+<!-- Render with UNSAFE props -->
+<FieldGroup
+    id="fieldGroupWithUnsafeProps"
+    UNSAFE_helperText="<span>UNSAFE helper text</span>"
+    UNSAFE_label="<span>UNSAFE label text</span>"
+    UNSAFE_validationText="<span>UNSAFE validation text</span>"
+    validationState="danger"
+/>
+
+<!-- Render with all props -->
+<FieldGroup
+    helperText="Helper text"
+    id="fieldGroupValidationSuccess"
+    isDisabled
+    isFluid
+    isLabelHidden
+    isRequired
+    label="Label"
+    UNSAFE_helperText="<span>UNSAFE helper text</span>"
+    UNSAFE_label="<span>UNSAFE label text</span>"
+    UNSAFE_validationText="<span>UNSAFE validation text</span>"
+    validationState="success"
+    validationText="Validation text"
+>
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</FieldGroup>
