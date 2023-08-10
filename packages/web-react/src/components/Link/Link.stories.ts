@@ -20,5 +20,3 @@ export { default as LinkColors } from './stories/LinkColors';
 export { default as LinkDisabled } from './stories/DisabledLink';
 export { default as LinkUnderlined } from './stories/UnderlinedLink';
 export { default as LinkDisabledUnderlined } from './stories/DisabledUnderlinedLink';
-export { default as HTML } from './stories/LinkHtml';
-export { default as Props } from './stories/LinkProps';

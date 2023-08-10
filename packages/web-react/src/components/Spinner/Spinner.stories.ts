@@ -17,5 +17,3 @@ export default {
 
 export { default as Spinner } from './stories/Spinner';
 export { default as SpinnerColors } from './stories/SpinnerColors';
-export { default as HTML } from './stories/SpinnerHtml';
-export { default as Props } from './stories/SpinnerProps';

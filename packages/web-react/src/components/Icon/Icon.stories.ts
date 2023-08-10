@@ -16,5 +16,3 @@ export default {
 } as ComponentMeta<typeof Icon>;
 
 export { default as Icon } from './stories/Icon';
-export { default as HTML } from './stories/IconHtml';
-export { default as Props } from './stories/IconProps';

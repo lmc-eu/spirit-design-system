@@ -22,4 +22,3 @@ export { default as RadioHelperText } from './stories/RadioHelperText';
 export { default as RadioDisabled } from './stories/RadioDisabled';
 export { default as RadioItem } from './stories/RadioItem';
 export { default as RadioList } from './stories/RadioList';
-export { default as Props } from './stories/RadioProps';

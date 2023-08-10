@@ -19030,11 +19030,6 @@ nanocolors@^0.2.2:
   resolved "https://registry.yarnpkg.com/nanocolors/-/nanocolors-0.2.13.tgz#dfd1ed0bfab05e9fe540eb6874525f0a1684099b"
   integrity sha512-0n3mSAQLPpGLV9ORXT5+C/D4mwew7Ebws69Hx4E2sgz2ZA5+32Q80B9tL8PbL7XHnRDiAxH/pnrUJ9a4fkTNTA==
 
-nanoid@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-4.0.2.tgz#140b3c5003959adbebf521c170f282c5e7f9fb9e"
-  integrity sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==
-
 nanoid@^3.1.25:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
