@@ -56,8 +56,18 @@
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
     <span class="{{ _textClassName }}">
-        <span {{ classProp(_labelClassName) }}>{% if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif %}</span>
-        {% if _helperText and not _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _helperText }}</span>{% endif %}
-        {% if _unsafeHelperText %}<span class="{{ _helperTextClassName }}">{{ _unsafeHelperText | raw }}</span>{% endif %}
+        <span {{ classProp(_labelClassName) }}>
+            {%- if _unsafeLabel -%}
+                {{ _unsafeLabel | raw }}
+            {%- else -%}
+                {{ _label }}
+            {%- endif -%}
+        </span>
+        <HelperText
+            className="{{ _helperTextClassName }}"
+            elementType="span"
+            helperText="{{ _helperText }}"
+            UNSAFE_helperText="{{ _unsafeHelperText }}"
+        />
     </span>
 </label>
