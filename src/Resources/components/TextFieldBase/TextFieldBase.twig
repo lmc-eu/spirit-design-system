@@ -118,16 +118,11 @@
             />
         {% endif %}
     {% endif %}
-    {% if _helperText and not _unsafeHelperText %}
-        <div class="{{ _helperTextClassName }}">
-            {{ _helperText }}
-        </div>
-    {% endif %}
-    {% if _unsafeHelperText %}
-        <div class="{{ _helperTextClassName }}">
-            {{ _unsafeHelperText | raw }}
-        </div>
-    {% endif %}
+    <HelperText
+        className="{{ _helperTextClassName }}"
+        helperText="{{ _helperText }}"
+        UNSAFE_helperText="{{ _unsafeHelperText }}"
+    />
     <ValidationText
         className="{{ _validationTextClassName }}"
         validationState="{{ _validationState }}"

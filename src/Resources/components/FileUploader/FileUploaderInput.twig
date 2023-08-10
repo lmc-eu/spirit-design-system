@@ -85,15 +85,11 @@
                 {{- _dragAndDropText -}}
             </span>
         </label>
-        {% if _helperText or _unsafeHelperText %}
-            <div class="{{ _helperTextClassName }}">
-                {% if _helperText %}
-                    {{ _helperText }}
-                {% else %}
-                    {{ _unsafeHelperText | raw }}
-                {% endif %}
-            </div>
-        {% endif %}
+        <HelperText
+            className="{{ _helperTextClassName }}"
+            helperText="{{ _helperText }}"
+            UNSAFE_helperText="{{ _unsafeHelperText }}"
+        />
     </div>
     <ValidationText
         className="{{ _validationTextClassName }}"

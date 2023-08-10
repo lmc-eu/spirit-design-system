@@ -1,17 +1,24 @@
-<!-- DO NOT render without children -->
-<ValidationText />
+<!-- DO NOT render when there is nothing to display -->
+<ValidationText className="myClass" />
 
 <!-- DO NOT render when validationState is not set -->
 <ValidationText
+    className="myClass"
     validationText="Validation text"
 />
 
 <!-- Render with plain validation text -->
 <ValidationText
     className="myClass"
-    id="validationText"
     validationState="success"
     validationText="Validation text"
+/>
+
+<!-- Render with iterable validation text -->
+<ValidationText
+    className="myClass"
+    validationState="success"
+    validationText="{{ ['Validation text 1', 'Validation text 2'] }}"
 />
 
 <!-- Render with all props -->
