@@ -17,5 +17,3 @@ export default {
 
 export { default as Pill } from './stories/Pill';
 export { default as PillColors } from './stories/PillColors';
-export { default as HTML } from './stories/PillHtml';
-export { default as Props } from './stories/PillProps';

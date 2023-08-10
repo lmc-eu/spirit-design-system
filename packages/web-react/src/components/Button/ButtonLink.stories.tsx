@@ -30,5 +30,3 @@ export { default as ButtonLinkLoading } from './stories/ButtonLinkLoading';
 export { default as ButtonLinkSquare } from './stories/ButtonLinkSquare';
 export { default as ButtonLinkBlock } from './stories/ButtonLinkBlock';
 export { default as ButtonLinkSize } from './stories/ButtonLinkSize';
-export { default as HTML } from './stories/ButtonLinkHtml';
-export { default as Props } from './stories/ButtonLinkProps';

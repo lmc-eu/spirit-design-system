@@ -31,5 +31,3 @@ export { default as ButtonLoading } from './stories/ButtonLoading';
 export { default as ButtonSquare } from './stories/ButtonSquare';
 export { default as ButtonBlock } from './stories/ButtonBlock';
 export { default as ButtonSize } from './stories/ButtonSize';
-export { default as HTML } from './stories/ButtonHtml';
-export { default as Props } from './stories/ButtonProps';

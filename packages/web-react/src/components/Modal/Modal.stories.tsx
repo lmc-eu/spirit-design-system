@@ -16,5 +16,3 @@ export default {
 export { default as Modal } from './stories/Modal';
 export { default as ModalWithCustomHeight } from './stories/ModalWithCustomHeight';
 export { default as ModalWithLongText } from './stories/ModalWithLongText';
-export { default as HTML } from './stories/ModalHtml';
-export { default as Props } from './stories/ModalProps';

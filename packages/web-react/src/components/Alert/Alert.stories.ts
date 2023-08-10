@@ -19,5 +19,3 @@ export { default as Alert } from './stories/Alert';
 export { default as AlertColors } from './stories/AlertColors';
 export { default as AlertCentered } from './stories/AlertCentered';
 export { default as AlertIcons } from './stories/AlertIcons';
-export { default as HTML } from './stories/AlertHtml';
-export { default as Props } from './stories/AlertProps';

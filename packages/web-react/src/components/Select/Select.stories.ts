@@ -21,4 +21,3 @@ export { default as SelectFluid } from './stories/SelectFluid';
 export { default as SelectHelperText } from './stories/SelectHelperText';
 export { default as SelectLabelHidden } from './stories/SelectLabelHidden';
 export { default as SelectValidationState } from './stories/SelectValidationState';
-export { default as HTML } from './stories/SelectHtml';

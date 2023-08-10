@@ -16,5 +16,3 @@ export default {
 } as ComponentMeta<typeof Breadcrumbs>;
 
 export { default as Breadcrumbs } from './stories/Breadcrumbs';
-export { default as HTML } from './stories/BreadcrumbsHtml';
-export { default as Props } from './stories/BreadcrumbsProps';

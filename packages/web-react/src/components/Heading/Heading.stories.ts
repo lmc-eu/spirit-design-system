@@ -18,5 +18,3 @@ export default {
 export { default as Heading } from './stories/Heading';
 export { default as Sizes } from './stories/HeadingSizes';
 export { default as Links } from './stories/HeadingLinks';
-export { default as HTML } from './stories/HeadingHtml';
-export { default as Props } from './stories/HeadingProps';
