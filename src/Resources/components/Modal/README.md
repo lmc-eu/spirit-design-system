@@ -228,6 +228,22 @@ When you put it all together:
 </Modal>
 ```
 
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Modal/README.md#javascript-plugin
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

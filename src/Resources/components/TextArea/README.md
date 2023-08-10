@@ -98,6 +98,9 @@ Then you need to add attribute `isAutoResizing` to the component.
 />
 ```
 
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md#javascript-plugin-for-auto-resizing
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

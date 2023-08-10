@@ -82,13 +82,13 @@ For full functionality, you need to provide Spirit JavaScript:
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-Check the [component's docs in the web package][web-js-api] to see the full documentation of the plugin.
-
 Please consult the [main README][web-readme] for how to include JavaScript plugins.
 
 Or, feel free to write the controlling script yourself.
 
-[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md#javascript-plugin-api
+👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md#javascript-plugin
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [tabs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tabs
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
