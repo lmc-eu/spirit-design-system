@@ -1,0 +1,85 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _helperText = props.helperText | default(null) -%}
+{%- set _id = props.id -%}
+{%- set _isDisabled = props.isDisabled | default(false) -%}
+{%- set _isFluid = props.isFluid | default(false) -%}
+{%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
+{%- set _isRequired = props.isRequired | default(false) -%}
+{%- set _label = props.label | default(null) -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
+{%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
+{%- set _validationState = props.validationState | default(null) -%}
+{%- set _validationText = props.validationText | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'FieldGroup' -%}
+{%- set _rootFluidClassName = _isFluid ? _spiritClassPrefix ~ 'FieldGroup--fluid' : null -%}
+{%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'FieldGroup--' ~ _validationState : null -%}
+{%- set _fieldsClassName = _spiritClassPrefix ~ 'FieldGroup__fields' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'FieldGroup__helperText' -%}
+{%- set _labelClassName = _spiritClassPrefix ~ 'FieldGroup__label' -%}
+{%- set _labelRequiredClassName = _isRequired ? _spiritClassPrefix ~ 'FieldGroup__label--required' : null -%}
+{%- set _validationTextClassName = _spiritClassPrefix ~ 'FieldGroup__validationText' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%} {# Must be (anywhere) before _rootClassNames #}
+{%- set _allowedAttributes = [ 'form', 'name' ] -%}
+{%- set _ariaDescribedByIds = [] -%}
+{%- set _helperTextId = _id ~ '__helperText' -%}
+{%- set _labelClassNames = [ _labelClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['aria-describedby']) -%}
+{%- set _rootClassNames = [ _rootClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _validationTextId = _id ~ '__validationText' -%}
+{%- set _labelRendered -%}
+    {%- if _label -%}
+        {{ _label }}
+    {%- else -%}
+        {{ _unsafeLabel | raw }}
+    {%- endif -%}
+{%- endset -%}
+
+{%- set _ariaDescribedByIds = _helperText or _unsafeHelperText ? _ariaDescribedByIds | merge([_helperTextId]) : _ariaDescribedByIds -%}
+{%- set _ariaDescribedByIds = _validationText or _unsafeValidationText ? _ariaDescribedByIds | merge([_validationTextId]) : _ariaDescribedByIds -%}
+
+{# Attributes #}
+{%- set _ariaDescribedByAttr = _ariaDescribedByIds | length ? 'aria-describedby="' ~ _ariaDescribedByIds | join(' ') | escape('html_attr') ~ '"' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+
+<fieldset
+    {{ mainProps(_mainPropsWithoutReservedAttributes, _allowedAttributes) }}
+    {{ classProp(_rootClassNames) }}
+    {{ styleProp(_styleProps) }}
+    {{ _ariaDescribedByAttr | raw }} {# The raw filter is necessary to un-escape the space between multiple IDs #}
+    {{ _disabledAttr }}
+>
+    {% if _labelRendered %}
+        <legend class="accessibility-hidden">
+            {{- _labelRendered -}}
+        </legend>
+        {% if not _isLabelHidden %}
+            <div {{ classProp(_labelClassNames) }} aria-hidden="true">
+                {{- _labelRendered -}}
+            </div>
+        {% endif %}
+    {% endif %}
+    {% if block('content') is not empty %}
+        <div class="{{ _fieldsClassName }}">
+            {% block content %}{% endblock %}
+        </div>
+    {% endif %}
+    <HelperText
+        className="{{ _helperTextClassName }}"
+        id="{{ _helperTextId }}"
+        helperText="{{ _helperText }}"
+        UNSAFE_helperText="{{ _unsafeHelperText }}"
+    />
+    <ValidationText
+        className="{{ _validationTextClassName }}"
+        id="{{ _validationTextId }}"
+        validationState="{{ _validationState }}"
+        validationText="{{ _validationText }}"
+        UNSAFE_validationText="{{ _unsafeValidationText }}"
+    />
+</fieldset>

@@ -1,0 +1,38 @@
+<FieldGroup
+    id="fieldGroupValidationSuccess"
+    label="Label"
+    validationState="success"
+    validationText="Validation text"
+>
+    {% for i in 1..3 %}
+        <div class="docs-Box">
+            Item
+        </div>
+    {% endfor %}
+</FieldGroup>
+
+<FieldGroup
+    id="fieldGroupValidationWarning"
+    label="Label"
+    validationState="warning"
+    validationText="Validation text"
+>
+    {% for i in 1..3 %}
+        <div class="docs-Box">
+            Item
+        </div>
+    {% endfor %}
+</FieldGroup>
+
+<FieldGroup
+    id="fieldGroupValidationDanger"
+    label="Label"
+    validationState="danger"
+    validationText="{{ ['First validation text', 'Second validation text'] }}"
+>
+    {% for i in 1..3 %}
+        <div class="docs-Box">
+            Item
+        </div>
+    {% endfor %}
+</FieldGroup>
