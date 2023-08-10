@@ -115,11 +115,23 @@ For other use cases (wider input or input with unknown value length), we
 recommend placing them inside the Grid component and using `TextField--fluid`
 modifier to fill the available space.
 
-## Password Toggle
+## JavaScript Plugin for Password Toggle
 
 TextField with `type="password"` can have a toggle button. When toggling don't
 forget to change not only the input type but also `aria-pressed` and
 `aria-label`.
+
+To enable password toggle, first, you need to provide Spirit JavaScript,
+which will handle the functionality:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+Please consult the [main README][web-readme] for how to include JavaScript
+plugins.
+
+Then you need to add data attribute `data-spirit-toggle="password"` to the input.
 
 ```html
 <div class="TextField">
