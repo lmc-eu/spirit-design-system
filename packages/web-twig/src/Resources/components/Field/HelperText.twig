@@ -18,7 +18,7 @@
     <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
         {% if _helperText and not _unsafeHelperText %}
             {{ _helperText }}
-        {% elseif _unsafeHelperText %}
+        {% else %}
             {{ _unsafeHelperText | raw }}
         {% endif %}
     </{{ _elementType }}>

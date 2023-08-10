@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<!-- DO NOT render without children --><!-- DO NOT render when validationState is not set --><!-- Render with plain validation text --><html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DO NOT render when there is nothing to display --><!-- DO NOT render when validationState is not set --><!-- Render with plain validation text --><html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>
     </title>
   </head>
   <body>
-    <div class="myClass" id="validationText">
+    <div class="myClass">
       Validation text
     </div>
+    <!-- Render with iterable validation text -->
+
+    <ul class="myClass">
+      <li>Validation text 1
+      </li>
+
+      <li>Validation text 2
+      </li>
+    </ul>
     <!-- Render with all props -->
      <span class="myClass" id="validationTextAllProps"><span>Unsafe validation text</span></span>
   </body>
