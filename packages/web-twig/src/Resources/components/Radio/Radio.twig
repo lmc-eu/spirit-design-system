@@ -1,5 +1,6 @@
 {# API #}
 {%- set _autocomplete = props.autocomplete | default(null) -%}
+{%- set _helperText = props.helperText | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isChecked = props.isChecked | default(false) -%}
@@ -7,12 +8,11 @@
 {%- set _isItem = props.isItem | default(false) -%}
 {%- set _isLabelHidden = props.isLabelHidden | default(false) -%}
 {%- set _label = props.label -%}
-{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _name = props.name | default(null) -%}
-{%- set _value = props.value | default(null) -%}
-{%- set _helperText = props.helperText | default(null) -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
+{%- set _value = props.value | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Radio' -%}
@@ -25,31 +25,39 @@
 {%- set _helperTextClassName = _spiritClassPrefix ~ 'Radio__helperText' -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'Radio--' ~ _validationState : null -%}
 
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%} {# Must be (anywhere) before _rootClassNames #}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _id ? _id ~ '__helperText' : null -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['aria-describedby', 'id']) -%}
+
 {# Attributes #}
+{%- set _ariaDescribedbyAttr = _id and (_helperText or _unsafeHelperText) ? 'aria-describedby="' ~ _helperTextId ~ '"' : null -%}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _labelForAttr = _id ? 'for="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
-{# Miscellaneous #}
-{%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
-{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
-
 {# Deprecations #}
 {% if not _id %}
     {% deprecated 'Radio: The "id" property will be required starting from the next major version.' %}
 {% endif %}
 
-<label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+<label
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ classProp(_classNames) }}
+    {{ styleProp(_styleProps) }}
+    {{ _labelForAttr | raw }}
+>
     <input
         {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="radio"
         name="{{ _name }}"
         class="{{ _inputClassName }}"
+        {{ _ariaDescribedbyAttr | raw }}
         {{ _idAttr | raw }}
         {{ _checkedAttr }}
         {{ _disabledAttr }}
@@ -66,6 +74,7 @@
         <HelperText
             className="{{ _helperTextClassName }}"
             elementType="span"
+            id="{{ _helperTextId }}"
             helperText="{{ _helperText }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
