@@ -21,6 +21,7 @@
     cursor: cursors.$button-links;
 
     &:hover,
+    &:active,
     &:focus {
         text-decoration: none;
     }
