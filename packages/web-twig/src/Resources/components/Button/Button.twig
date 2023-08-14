@@ -22,7 +22,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSquareClassName, _styleProps.className ] -%}
-{%- set _allowedAttributes = [ 'name' ] -%}
+{%- set _allowedAttributes = [ 'formtarget', 'name' ] -%}
 
 <button
     {{ mainProps(props, _allowedAttributes) }}
