@@ -31,6 +31,7 @@ export type SpiritSelectElementBaseProps = SpiritCombinedHTMLProps<HTMLSelectEle
 export type SpiritSpanElementBaseProps = SpiritDetailedHTMLProps<HTMLSpanElement>;
 export type SpiritTextAreaElementBaseProps = SpiritCombinedHTMLProps<HTMLTextAreaElement>;
 export type SpiritUListElementBaseProps = SpiritDetailedHTMLProps<HTMLUListElement>;
+export type SpiritFieldGroupElementBaseProps = SpiritDetailedHTMLProps<HTMLFieldSetElement>;
 
 export type SpiritElementProps = OverloadStyleProps<SpiritElementBaseProps>;
 export type SpiritAnchorElementProps = OverloadStyleProps<SpiritAnchorElementBaseProps>;
@@ -49,7 +50,9 @@ export type SpiritTextAreaElementProps = Omit<
   'required' | 'disabled'
 >;
 export type SpiritUListElementProps = OverloadStyleProps<SpiritUListElementBaseProps>;
+export type SpiritFieldGroupElementProps = OverloadStyleProps<SpiritFieldGroupElementBaseProps>;
 
 export type SpiritInputElementPropsWithRef = SpiritInputElementProps & ComponentPropsWithRef<'input'>;
 export type SpiritSelectElementPropsWithRef = SpiritSelectElementProps & ComponentPropsWithRef<'select'>;
 export type SpiritTextAreaElementPropsWithRef = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;
+export type SpiritFieldGroupElementPropsWithRef = SpiritFieldGroupElementProps & ComponentPropsWithRef<'fieldset'>;

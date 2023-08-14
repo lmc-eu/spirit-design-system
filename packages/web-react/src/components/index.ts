@@ -8,6 +8,7 @@ export * from './Container';
 export * from './Dialog';
 export * from './Dropdown';
 export * from './Field';
+export * from './FieldGroup';
 export * from './FileUploader';
 export * from './Grid';
 export * from './Header';
