@@ -1213,10 +1213,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.10.2.tgz#8e5891b6685f2eb86f80c82c331ee9993b7c8e6d"
   integrity sha512-YsvnppB6jUMLP2aR0raXlFBEca10DIqWWoIB6iS+1LswcYDUQmEh0NfYYacNEdLeKLHN/fGdtDHInvNUmU2y3w==
 
-"@lmc-eu/spirit-web@0.50.1":
-  version "0.50.1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-0.50.1.tgz#985a90272225b94c44dac267404327c16e04dbc2"
-  integrity sha512-1MK3AeY8V+3Vc5rk28XKI2pzt+jUBsPiSv1xbPV0qoC6/q4AK0BEkLP2G66v9EsbHtbCoO1nEvZCA7c/UmRRgQ==
+"@lmc-eu/spirit-web@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-1.1.0.tgz#f63690cb3fc0149bd64db564bfc81b28dc69646b"
+  integrity sha512-cKX0i2MMB3VRQToVCI14x8NaIhsjcbb1zbQ8I1gp7NZ6sN2KHqaG8C1yOWBmh4OnQEWMDJW8DKdyXRSOMdvzkQ==
   dependencies:
     "@csstools/normalize.css" "^12.0.0"
     "@lmc-eu/spirit-design-tokens" "^0.25.5"
