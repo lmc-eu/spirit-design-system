@@ -108,7 +108,7 @@ just branding.
 | Prop name  | Type                      | Default       | Required | Description                         |
 | ---------- | ------------------------- | ------------- | -------- | ----------------------------------- |
 | `color`    | `transparent`, `inverted` | `transparent` | no       | Color variant                       |
-| `isSimple` | `boolean`                 | `false`       | no       | Shorter, centered version of Header |
+| `isSimple` | `bool`                    | `false`       | no       | Shorter, centered version of Header |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -245,11 +245,11 @@ There is no API for HeaderNavItem.
 
 ##### HeaderLink API
 
-| Prop name   | Type      | Default | Required | Description                   |
-| ----------- | --------- | ------- | -------- | ----------------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                      |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current          |
-| `target`    | `string`  | `null`  | no       | Browsing context for the link |
+| Prop name   | Type     | Default | Required | Description                   |
+| ----------- | -------- | ------- | -------- | ----------------------------- |
+| `href`      | `string` | —       | yes      | Link URL                      |
+| `isCurrent` | `bool`   | `false` | no       | Mark link as current          |
+| `target`    | `string` | `null`  | no       | Browsing context for the link |
 
 ##### HeaderButton API
 
@@ -291,11 +291,11 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 <HeaderDialogCloseButton dialogId="my-header-dialog" />
 ```
 
-| Prop name       | Type      | Default | Required | Description                     |
-| --------------- | --------- | ------- | -------- | ------------------------------- |
-| `dialogId`      | `string`  | —       | yes      | ID of the parent HeaderDialog   |
-| `enableDismiss` | `boolean` | `true`  | no       | Enable Off-canvas JS dismiss    |
-| `label`         | `string`  | `Close` | no       | Label of the menu toggle button |
+| Prop name       | Type     | Default | Required | Description                     |
+| --------------- | -------- | ------- | -------- | ------------------------------- |
+| `dialogId`      | `string` | —       | yes      | ID of the parent HeaderDialog   |
+| `enableDismiss` | `bool`   | `true`  | no       | Enable Off-canvas JS dismiss    |
+| `label`         | `string` | `Close` | no       | Label of the menu toggle button |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -385,11 +385,11 @@ There is no API for HeaderDialogNavItem.
 
 ##### HeaderDialogLink API
 
-| Prop name   | Type      | Default | Required | Description                   |
-| ----------- | --------- | ------- | -------- | ----------------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                      |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current          |
-| `target`    | `string`  | `null`  | no       | Browsing context for the link |
+| Prop name   | Type     | Default | Required | Description                   |
+| ----------- | -------- | ------- | -------- | ----------------------------- |
+| `href`      | `string` | —       | yes      | Link URL                      |
+| `isCurrent` | `bool`   | `false` | no       | Mark link as current          |
+| `target`    | `string` | `null`  | no       | Browsing context for the link |
 
 ##### HeaderDialogButton API
 

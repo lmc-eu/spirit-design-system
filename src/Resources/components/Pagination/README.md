@@ -96,13 +96,13 @@ These attributes will be passed to the topmost HTML element of the component.
 
 #### API
 
-| Prop name            | Type      | Default | Required | Description                            |
-| -------------------- | --------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string`  | `null`  | yes      | Accessibility label of the link        |
-| `href`               | `string`  | `null`  | no       | URL target of a link                   |
-| `isCurrent`          | `boolean` | `false` | no       | Mark link as current                   |
-| `pageNumber`         | `string`  | `null`  | yes      | Page number, hidden for screen readers |
-| `target`             | `string`  | `null`  | no       | Browsing context for the link          |
+| Prop name            | Type     | Default | Required | Description                            |
+| -------------------- | -------- | ------- | -------- | -------------------------------------- |
+| `accessibilityLabel` | `string` | `null`  | yes      | Accessibility label of the link        |
+| `href`               | `string` | `null`  | no       | URL target of a link                   |
+| `isCurrent`          | `bool`   | `false` | no       | Mark link as current                   |
+| `pageNumber`         | `string` | `null`  | yes      | Page number, hidden for screen readers |
+| `target`             | `string` | `null`  | no       | Browsing context for the link          |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

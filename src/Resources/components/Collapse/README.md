@@ -53,13 +53,13 @@ attributes to register trigger events.
 
 ## API
 
-| Prop name     | Type      | Default | Required | Description                                                            |
-| ------------- | --------- | ------- | -------- | ---------------------------------------------------------------------- |
-| `breakpoint`  | `string`  | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
-| `elementType` | `string`  | `'div'` | no       | Custom element type for wrapper and content                            |
-| `id`          | `string`  | -       | yes      | Collapse ID                                                            |
-| `isOpen`      | `boolean` | `false` | no       | If true, make the item open on page load                               |
-| `parent`      | `string`  | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
+| Prop name     | Type     | Default | Required | Description                                                            |
+| ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
+| `breakpoint`  | `string` | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
+| `elementType` | `string` | `'div'` | no       | Custom element type for wrapper and content                            |
+| `id`          | `string` | -       | yes      | Collapse ID                                                            |
+| `isOpen`      | `bool`   | `false` | no       | If true, make the item open on page load                               |
+| `parent`      | `string` | `null`  | no       | A parent element selector that ensures that only one item is opened \* |
 
 (\*) Attribute for Accordion implementation
 
@@ -69,13 +69,13 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 ## Trigger attributes
 
-| Prop name            | Type      | Default    | Required | Description                         |
-| -------------------- | --------- | ---------- | -------- | ----------------------------------- |
-| `aria-controls`      | `string`  | -          | no       | Aria controls state (auto)          |
-| `aria-expanded`      | `string`  | -          | no       | Aria expanded state (auto)          |
-| `data-spirit-more`   | `boolean` | -          | no       | For hide on collapse as more button |
-| `data-spirit-target` | `string`  | -          | yes      | Target selector                     |
-| `data-spirit-toggle` | `string`  | `collapse` | yes      | Iterable selector                   |
+| Prop name            | Type     | Default    | Required | Description                         |
+| -------------------- | -------- | ---------- | -------- | ----------------------------------- |
+| `aria-controls`      | `string` | -          | no       | Aria controls state (auto)          |
+| `aria-expanded`      | `string` | -          | no       | Aria expanded state (auto)          |
+| `data-spirit-more`   | `bool`   | -          | no       | For hide on collapse as more button |
+| `data-spirit-target` | `string` | -          | yes      | Target selector                     |
+| `data-spirit-toggle` | `string` | `collapse` | yes      | Iterable selector                   |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.

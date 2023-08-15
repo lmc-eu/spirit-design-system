@@ -207,12 +207,12 @@ The Accordion itself consists of several components which cannot be used indepen
 
 ### AccordionContent
 
-| Prop name      | Type      | Default | Required | Description                                                                 |
-| -------------- | --------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `id`           | `string`  | `null`  | yes      | AccordionContent ID                                                         |
-| `isOpen`       | `boolean` | `false` | no       | If true, make the item open on page load                                    |
-| `labelledById` | `string`  | `null`  | yes      | AccordionHeader ID                                                          |
-| `parent`       | `string`  | `null`  | no       | A parent element selector that ensures that only one item is open at a time |
+| Prop name      | Type     | Default | Required | Description                                                                 |
+| -------------- | -------- | ------- | -------- | --------------------------------------------------------------------------- |
+| `id`           | `string` | `null`  | yes      | AccordionContent ID                                                         |
+| `isOpen`       | `bool`   | `false` | no       | If true, make the item open on page load                                    |
+| `labelledById` | `string` | `null`  | yes      | AccordionHeader ID                                                          |
+| `parent`       | `string` | `null`  | no       | A parent element selector that ensures that only one item is open at a time |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
