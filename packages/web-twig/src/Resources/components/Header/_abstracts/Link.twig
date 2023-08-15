@@ -13,11 +13,24 @@
 {%- set _ariaCurrentAttr = _isCurrent ? 'aria-current=page' : null -%}
 
 {# Miscellaneous #}
-{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
+{## `_propsWithoutClassAndStyleProps` is a temporary prop until the `class` prop will be removed ##}
+{%- set _propsWithoutClassAndStyleProps = props | filter((value, prop) => prop not in ['class', 'style']) -%}
+
+{%- set _styleProps = useStyleProps(_propsWithoutClassAndStyleProps) -%}
+{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target' ] -%}
+
+{# Deprecations #}
+{% if _class %}
+    {% deprecated 'Header/_abstracts/Link: The "class" property is deprecated and will be removed in the next major version. Please use "UNSAFE_className" instead.' %}
+{% endif %}
+{% if props.style is defined %}
+    {% deprecated 'Header/_abstracts/Link: The "style" property is deprecated and will be removed in the next major version. Please  use "UNSAFE_style" instead.' %}
+{% endif %}
 
 <a
     {{ mainProps(props, _allowedAttributes) }}
+    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     href="{{ _href }}"
     {{ _ariaCurrentAttr }}
