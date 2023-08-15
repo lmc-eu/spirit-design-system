@@ -50,9 +50,9 @@ By adding the `isFluid` attribute, FileUploader can take up all the available ho
 
 ### API
 
-| Prop name | Type      | Default | Required | Description                                                |
-| --------- | --------- | ------- | -------- | ---------------------------------------------------------- |
-| `isFluid` | `boolean` | `false` | no       | If true, the element spans to the full width of its parent |
+| Prop name | Type   | Default | Required | Description                                                |
+| --------- | ------ | ------- | -------- | ---------------------------------------------------------- |
+| `isFluid` | `bool` | `false` | no       | If true, the element spans to the full width of its parent |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
