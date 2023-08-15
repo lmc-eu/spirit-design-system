@@ -26,8 +26,8 @@
     border-radius: theme.$item-radius;
     background-color: theme.$item-default-background;
 
-    &:focus,
-    &:hover {
+    &:hover,
+    &:focus {
         text-decoration: none;
         color: theme.$item-hover-color;
         background-color: theme.$item-hover-background;
@@ -41,9 +41,9 @@
 }
 
 .Pagination__link--current,
-.Pagination__link--current:active,
+.Pagination__link--current:hover,
 .Pagination__link--current:focus,
-.Pagination__link--current:hover {
+.Pagination__link--current:active {
     color: theme.$item-selected-color;
     background-color: theme.$item-selected-background;
     cursor: cursors.$disabled;
