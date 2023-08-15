@@ -41,7 +41,7 @@ Without lexer:
 | `href`         | `string`                                         | —         | yes      | Link URL                           |
 | `isDisabled`   | `bool`                                           | `false`   | no       | If true, Link is disabled          |
 | `isUnderlined` | `bool`                                           | `false`   | no       | If true, Link is underlined        |
-| `target`       | `string`                                         | `null`    | no       | Link target                        |
+| `target`       | `string`                                         | `null`    | no       | Browsing context for the link      |
 | `title`        | `string`                                         | `null`    | no       | Optional title to display on hover |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's

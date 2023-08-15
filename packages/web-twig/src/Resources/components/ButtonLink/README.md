@@ -38,7 +38,7 @@ Without lexer:
 | `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                                                |
 | `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
 | `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an Icon                       |
-| `target`     | `string`                                                                                  | `null`    | no       | Link target                                                                    |
+| `target`     | `string`                                                                                  | `null`    | no       | Browsing context for the link                                                  |
 | `title`      | `string`                                                                                  | `null`    | no       | Optional title to display on hover                                             |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's

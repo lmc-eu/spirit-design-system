@@ -48,6 +48,7 @@ Without lexer:
 
 | Prop name               | Type                                           | Default | Required | Description                                                                                                 |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `autocomplete`          | `string`                                       | `null`  | no       | [Automated assistance in filling][autocomplete-attr]                                                        |
 | `helperText`            | `string`                                       | `null`  | no       | Custom helper text                                                                                          |
 | `id`                    | `string`                                       | —       | yes      | TextArea and label identification                                                                           |
 | `inputProps`            | `string[]`                                     | `[]`    | no       | Pass additional attributes to the textarea element                                                          |
@@ -99,5 +100,6 @@ Then you need to add attribute `isAutoResizing` to the component.
 
 [textarea]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextArea
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
