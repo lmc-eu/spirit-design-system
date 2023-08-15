@@ -99,8 +99,8 @@ When validated on server:
 
 | Prop name               | Type                                           | Default | Required | Description                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------------------ |
-| `helperText`            | `string`                                       | `null`  | no\*\*   | Custom helper text                         |
 | `form`                  | `string`                                       | `null`  | no       | Parent form ID                             |
+| `helperText`            | `string`                                       | `null`  | no\*\*   | Custom helper text                         |
 | `id`                    | `string`                                       | —       | yes      | Group and label identification             |
 | `isDisabled`            | `bool`                                         | `false` | no       | If true, the group is disabled             |
 | `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                   |

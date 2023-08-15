@@ -14,9 +14,7 @@
 
 {# Miscellaneous #}
 {%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class ] -%}
-{%- set _allowedAttributes = [
-    'target',
-] -%}
+{%- set _allowedAttributes = [ 'target' ] -%}
 
 <a
     {{ mainProps(props, _allowedAttributes) }}

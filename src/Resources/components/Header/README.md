@@ -245,11 +245,11 @@ There is no API for HeaderNavItem.
 
 ##### HeaderLink API
 
-| Prop name   | Type      | Default | Required | Description             |
-| ----------- | --------- | ------- | -------- | ----------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current    |
-| `target`    | `string`  | `null`  | no       | HTML `target` attribute |
+| Prop name   | Type      | Default | Required | Description                   |
+| ----------- | --------- | ------- | -------- | ----------------------------- |
+| `href`      | `string`  | —       | yes      | Link URL                      |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current          |
+| `target`    | `string`  | `null`  | no       | Browsing context for the link |
 
 ##### HeaderButton API
 
@@ -385,11 +385,11 @@ There is no API for HeaderDialogNavItem.
 
 ##### HeaderDialogLink API
 
-| Prop name   | Type      | Default | Required | Description             |
-| ----------- | --------- | ------- | -------- | ----------------------- |
-| `href`      | `string`  | —       | yes      | Link URL                |
-| `isCurrent` | `boolean` | `false` | no       | Mark link as current    |
-| `target`    | `string`  | `null`  | no       | HTML `target` attribute |
+| Prop name   | Type      | Default | Required | Description                   |
+| ----------- | --------- | ------- | -------- | ----------------------------- |
+| `href`      | `string`  | —       | yes      | Link URL                      |
+| `isCurrent` | `boolean` | `false` | no       | Mark link as current          |
+| `target`    | `string`  | `null`  | no       | Browsing context for the link |
 
 ##### HeaderDialogButton API
 

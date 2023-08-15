@@ -102,7 +102,7 @@ These attributes will be passed to the topmost HTML element of the component.
 | `href`               | `string`  | `null`  | no       | URL target of a link                   |
 | `isCurrent`          | `boolean` | `false` | no       | Mark link as current                   |
 | `pageNumber`         | `string`  | `null`  | yes      | Page number, hidden for screen readers |
-| `target`             | `string`  | `null`  | no       | HTML `target` attribute                |
+| `target`             | `string`  | `null`  | no       | Browsing context for the link          |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -142,7 +142,7 @@ These attributes will be passed to the topmost HTML element of the component.
 | -------------------- | -------- | -------------------- | -------- | --------------------------------- |
 | `accessibilityLabel` | `string` | `Next` or `Previous` | no       | Accessibility label of the button |
 | `href`               | `string` | —                    | no       | Link URL                          |
-| `target`             | `string` | `null`               | no       | HTML `target` attribute           |
+| `target`             | `string` | `null`               | no       | Browsing context for the link     |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

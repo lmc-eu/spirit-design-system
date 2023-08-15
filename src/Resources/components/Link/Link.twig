@@ -13,10 +13,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _styleProps.className ] -%}
-{%- set _allowedAttributes = [
-    'title',
-    'target',
-] -%}
+{%- set _allowedAttributes = [ 'target', 'title' ] -%}
 
 <a
     {{ mainProps(props, _allowedAttributes) }}
