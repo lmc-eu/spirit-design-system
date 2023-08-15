@@ -19,7 +19,7 @@ Building blocks:
 Common wrapper for all items:
 
 ```html
-<section class="Accordion" data-spirit-toggle="accordion">
+<section class="Accordion">
   <!-- One or more items inside -->
 </section>
 ```
@@ -117,7 +117,7 @@ When you put it all together:
 
 ```html
 <!-- Accordion: start -->
-<section class="Accordion" data-spirit-toggle="accordion">
+<section class="Accordion">
   <!-- Accordion item: start -->
   <article id="example_1_item_1" class="Accordion__item">
     <!-- Accordion item header: start -->
@@ -180,7 +180,7 @@ Link individual **Collapse items** to their **Accordion parent** via
 First add an `id` to your Accordion wrapper:
 
 ```html
-<section id="accordion" class="Accordion" data-spirit-toggle="accordion">
+<section id="accordion" class="Accordion">
   <!-- Accordion items inside -->
 </section>
 ```
