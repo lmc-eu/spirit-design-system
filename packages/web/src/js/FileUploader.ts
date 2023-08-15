@@ -252,7 +252,7 @@ class FileUploader extends BaseComponent {
     const item = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="item"]`);
     const itemName = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="name"]`);
     const itemButton = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
-    const hasImagePreview = Boolean(this.listElement?.dataset?.spiritImagepreview);
+    const hasImagePreview = Boolean((item as HTMLElement)?.dataset?.spiritImagepreview);
     const AttachmentSvgIcon = item?.querySelector('svg');
     const AttachmentPreviewImage = snippet.querySelector('.FileUploaderAttachment__image');
     const isFileImg = file.type.includes('image');
