@@ -84,8 +84,8 @@
     color: transparent;
 
     &:hover,
-    &:active,
-    &:focus {
+    &:focus,
+    &:active {
         color: transparent;
     }
 }
