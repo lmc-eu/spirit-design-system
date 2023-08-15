@@ -79,6 +79,8 @@ export const FileUploaderWithModalImagePreview = (args) => {
           validationText="Validation message"
           /* eslint-disable-next-line no-console */
           onError={(error) => console.error('My error log', error)}
+          maxUploadedFiles={1}
+          accept=".png,image/jpeg"
         />
         <FileUploaderList
           id="fileUploaderExampleList"
