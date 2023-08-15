@@ -273,10 +273,6 @@ list semantics for the selected files.
 </ul>
 ```
 
-| Name          | Usage                             | Description                         |
-| ------------- | --------------------------------- | ----------------------------------- |
-| Image preview | `data-spirit-imagePreview="true"` | Add preview for images in file list |
-
 ## FileUploaderAttachment
 
 FileUploaderAttachment represents the files to be uploaded. It is expected to be
@@ -331,6 +327,12 @@ pick up the template and apply it on any attachments the user wants to upload.
   <!-- FileUploaderInput -->
   <!-- FileUploaderList -->
 </div>
+```
+
+🖼️ Add `data-spirit-imagePreview="true"` to the `FileUploaderAttachment` component to generate preview for images in the file list.
+
+```html
+<li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true"></li>
 ```
 
 ### Preview Image

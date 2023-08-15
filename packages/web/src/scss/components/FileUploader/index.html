@@ -534,7 +534,9 @@
 
       <!-- ModalBody: start -->
       <div class="ModalBody">
-        <!-- here will be image -->
+        <div class="pt-400 pt-tablet-600" data-example-content>
+          <!-- here will be an image -->
+        </div>
       </div>
       <!-- ModalBody: end -->
 
@@ -572,7 +574,7 @@
 
     <!-- FileUploaderAttachment template: start -->
     <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+      <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
         <span class="FileUploaderAttachment__image">
           <img src="" width="54" height="54" alt="" />
         </span>
@@ -623,7 +625,7 @@
 
     <!-- FileUploaderList: start -->
     <h3 id="attachments-customImagePreview" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list" data-spirit-imagePreview="true"></ul>
+    <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list"></ul>
     <!-- FileUploaderList: end -->
 
   </div>
@@ -637,7 +639,7 @@
       let file;
       const ModalElement = document.getElementById('example_image_preview');
       const ModalInstance = new Modal(ModalElement);
-      const ModalBody = ModalElement.querySelector('.ModalBody');
+      const Content = ModalElement.querySelector('[data-example-content]');
       const cancelButton = ModalElement.querySelector('[data-element="cancel"]');
       const FileUploaderElement = document.getElementById('example_customImagePreview');
       const FileUploaderInstance = FileUploader.getInstance(FileUploaderElement);
@@ -647,12 +649,12 @@
       const showModalPreview = (file) => {
         if(isFileImage(file)) {
           const reader = new FileReader();
-          
+
           reader.readAsDataURL(file);
           reader.onloadend = () => {
             const base64data = reader.result;
             localStorage.setItem('image', base64data);
-            ModalBody.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
+            Content.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
             ModalInstance.show();
           }
         }
@@ -665,7 +667,7 @@
 
       const cleanup = () => {
         ModalInstance.hide();
-        ModalBody.innerHTML = '';
+        Content.innerHTML = '';
         file = undefined;
       }
 
