@@ -108,7 +108,6 @@ describe('Collapse', () => {
         <section
           id="accordionExample1"
           class="Accordion"
-          data-spirit-toggle="accordion"
         >
           <article
             id="accordionExample1_article_0"
