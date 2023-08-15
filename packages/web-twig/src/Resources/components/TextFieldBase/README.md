@@ -60,7 +60,7 @@ Without lexer:
 
 | Prop name               | Type                                                          | Default | Required | Description                                                             |
 | ----------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autocomplete`          | `bool`                                                        | `false` | no       | If the field should have autocomplete enabled                           |
+| `autocomplete`          | `string`                                                      | `null`  | no       | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle`     | `bool`                                                        | `false` | no       | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`            | `string`                                                      | `null`  | no       | Custom helper text                                                      |
 | `id`                    | `string`                                                      | —       | yes      | Input and label identification                                          |
@@ -91,5 +91,6 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 These attributes will be passed to the topmost HTML element of the component.
 
 [textfield]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/TextField
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

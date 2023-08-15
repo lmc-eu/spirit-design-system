@@ -183,6 +183,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 
 | Prop name               | Type                                           | Default                 | Required | Description                                                           |
 | ----------------------- | ---------------------------------------------- | ----------------------- | -------- | --------------------------------------------------------------------- |
+| `accept`                | `string`                                       | `null`                  | no       | Allowed file types                                                    |
 | `dragAndDropText`       | `string`                                       | `or drag and drop here` | no       | Text shown in the drop zone if drag-and-drop is enabled on the device |
 | `helperText`            | `string`                                       | `null`                  | no\*\*   | Custom helper text                                                    |
 | `iconName`              | `string`                                       | `upload`                | no       | Icon used in the drop zone                                            |
@@ -193,6 +194,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `label`                 | `string`                                       | `null`                  | no\*     | Label text                                                            |
 | `maxFileSize`           | `number`                                       | `1000000`               | no       | The maximum size of the uploaded file in bytes                        |
 | `maxUploadedFiles`      | `number`                                       | `10`                    | no       | Maximum file upload queue size                                        |
+| `multiple`              | `bool`                                         | `false`                 | no       | If true, multiple files can be selected                               |
 | `name`                  | `string`                                       | `null`                  | no       | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | no       | Text shown in the drop zone                                           |
 | `queueLimitBehavior`    | `'hide', 'disable', 'none'`                    | `none`                  | no       | Input behavior when the file queue is filled                          |
