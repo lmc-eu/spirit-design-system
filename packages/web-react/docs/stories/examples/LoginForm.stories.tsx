@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, CheckboxField, Button, Container, Stack } from '../../../src/components';
+import { TextField, Checkbox, Button, Container, Stack } from '../../../src/components';
 
 export default {
   title: 'Examples/Forms',
@@ -7,10 +7,10 @@ export default {
 
 export const LoginForm = () => (
   <Container>
-    <Stack>
+    <Stack hasSpacing>
       <TextField type="text" id="name" label="Name" isFluid />
       <TextField type="password" id="password" label="Password" isFluid />
-      <CheckboxField id="keep-logged" label="Stay Logged In" />
+      <Checkbox id="keep-logged" label="Stay Logged In" />
       <Button isBlock>Login</Button>
     </Stack>
   </Container>
