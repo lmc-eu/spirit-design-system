@@ -8,13 +8,15 @@ Link allows users to follow navigation.
 
 ## Available props
 
-| Name           | Type                                             | Default   | Required | Description                    |
-| -------------- | ------------------------------------------------ | --------- | -------- | ------------------------------ |
-| `href`         | `string`                                         | -         | ✕        | Link's href attribute          |
-| `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
-| `isUnderlined` | `boolean`                                        | `false`   | ✕        | Whether is the link underlined |
-| `isDisabled`   | `boolean`                                        | `false`   | ✕        | Whether is the link disabled   |
-| `ref`          | `ForwardedRef<HTMLAnchorElement>`                | -         | ✕        | Link element reference         |
+| Name               | Type                                             | Default   | Required | Description                    |
+| ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |
+| `href`             | `string`                                         | -         | ✕        | Link's href attribute          |
+| `color`            | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
+| `isUnderlined`     | `boolean`                                        | `false`   | ✕        | Whether is the link underlined |
+| `isDisabled`       | `boolean`                                        | `false`   | ✕        | Whether is the link disabled   |
+| `ref`              | `ForwardedRef<HTMLAnchorElement>`                | -         | ✕        | Link element reference         |
+| `UNSAFE_className` | `string`                                         | -         | no       | Wrapper custom class name      |
+| `UNSAFE_style`     | `CSSProperties`                                  | -         | no       | Wrapper custom style           |
 
 ## Custom component
 

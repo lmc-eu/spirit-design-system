@@ -51,6 +51,8 @@ Example with Auto-Height Adjustment
 | `placeholder`           | `string`                                       | -       | no       | Textarea placeholder                                                 |
 | `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | no       | Textarea element reference                                           |
 | `rows`                  | `number`                                       | -       | no       | Number of visible rows                                               |
+| `UNSAFE_className`      | `string`                                       | -       | no       | Wrapper custom class name                                            |
+| `UNSAFE_style`          | `CSSProperties`                                | -       | no       | Wrapper custom style                                                 |
 | `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state                                             |
 | `validationText`        | `string`, `string[]`                           | -       | no       | Validation text                                                      |
 | `value`                 | `string`                                       | -       | no       | Textarea value                                                       |
