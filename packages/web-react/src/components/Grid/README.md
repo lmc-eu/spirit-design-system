@@ -17,11 +17,13 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 
 ## Available props
 
-| Name          | Type                          | Description                         |
-| ------------- | ----------------------------- | ----------------------------------- |
-| `cols`        | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use            |
-| `desktop`     | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use on desktop |
-| `tablet`      | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use on tablet  |
-| `elementType` | HTML element                  | Element type to use for the Grid    |
+| Name               | Type                          | Description                         |
+| ------------------ | ----------------------------- | ----------------------------------- | --- | ------------------------- |
+| `cols`             | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use            |
+| `desktop`          | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use on desktop |
+| `tablet`           | `1`, `2`, `3`, `4`, `6`, `12` | Number of columns to use on tablet  |
+| `elementType`      | HTML element                  | Element type to use for the Grid    |
+| `UNSAFE_className` | `string`                      | -                                   | no  | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties`               | -                                   | no  | Wrapper custom style      |
 
 For detailed information see [Grid](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md) component

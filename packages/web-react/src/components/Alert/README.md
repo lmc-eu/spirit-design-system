@@ -17,12 +17,14 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 
 ## Available props
 
-| Prop name      | Type                                         | Default          | Required | Description                |
-| -------------- | -------------------------------------------- | ---------------- | -------- | -------------------------- |
-| `children`     | `ReactNode`                                  | -                | yes      | Content of the Alert       |
-| `color`        | [Emotion Color dictionary][dictionary-color] | `success`        | no       | Color of the component     |
-| `iconName`     | `string`                                     | Based on `color` | no       | Icon used in Alert         |
-| `isCentered` . | `boolean`                                    | `false`          | no       | If true, Alert is centered |
+| Prop name          | Type                                         | Default          | Required | Description                |
+| ------------------ | -------------------------------------------- | ---------------- | -------- | -------------------------- |
+| `children`         | `ReactNode`                                  | -                | yes      | Content of the Alert       |
+| `color`            | [Emotion Color dictionary][dictionary-color] | `success`        | no       | Color of the component     |
+| `iconName`         | `string`                                     | Based on `color` | no       | Icon used in Alert         |
+| `isCentered` .     | `boolean`                                    | `false`          | no       | If true, Alert is centered |
+| `UNSAFE_className` | `string`                                     | -                | no       | Wrapper custom class name  |
+| `UNSAFE_style`     | `CSSProperties`                              | -                | no       | Wrapper custom style       |
 
 For detailed information see [Alert](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Alert/README.md) component
 

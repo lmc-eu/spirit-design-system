@@ -16,10 +16,12 @@ import icons from '@lmc-eu/spirit-icons/icons';
 
 ## Available props
 
-| Name      | Type     | Required | Description                    |
-| --------- | -------- | -------- | ------------------------------ |
-| `boxSize` | `number` | no       | Size of the icon, default `24` |
-| `name`    | `string` | yes      | Name of the icon               |
-| `title`   | `string` | no       | Title of the icon              |
+| Name               | Type            | Required | Description                    |
+| ------------------ | --------------- | -------- | ------------------------------ |
+| `boxSize`          | `number`        | no       | Size of the icon, default `24` |
+| `name`             | `string`        | yes      | Name of the icon               |
+| `title`            | `string`        | no       | Title of the icon              |
+| `UNSAFE_className` | `string`        | no       | Wrapper custom class name      |
+| `UNSAFE_style`     | `CSSProperties` | no       | Wrapper custom style           |
 
 For more details about Icons see [Spirit Icons](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/icons/README.md) package.

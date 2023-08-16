@@ -14,14 +14,16 @@ import { Tag } from '@lmc-eu/spirit-web-react';
 
 ## Available props
 
-| Prop name     | Type                                                    | Default   | Required | Description                     |
-| ------------- | ------------------------------------------------------- | --------- | -------- | ------------------------------- |
-| `children`    | `ReactNode`                                             | -         | ✔        | Content of the Tag              |
-| `color`       | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component          |
-| `elementType` | `React.Element`                                         | `span`    | ✕        | HTML tag                        |
-| `isSubtle`    | `boolean`                                               | `false`   | ✕        | If is Subtle color variant used |
-| `ref`         | `ForwardedRef<HTMLSpanElement>`                         | -         | ✕        | Tag element reference           |
-| `size`        | [Size Extended dictionary][dictionary-size]             | `medium`  | ✕        | Size of the Tag                 |
+| Prop name          | Type                                                    | Default   | Required | Description                     |
+| ------------------ | ------------------------------------------------------- | --------- | -------- | ------------------------------- |
+| `children`         | `ReactNode`                                             | -         | ✔        | Content of the Tag              |
+| `color`            | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component          |
+| `elementType`      | `React.Element`                                         | `span`    | ✕        | HTML tag                        |
+| `isSubtle`         | `boolean`                                               | `false`   | ✕        | If is Subtle color variant used |
+| `ref`              | `ForwardedRef<HTMLSpanElement>`                         | -         | ✕        | Tag element reference           |
+| `size`             | [Size Extended dictionary][dictionary-size]             | `medium`  | ✕        | Size of the Tag                 |
+| `UNSAFE_className` | `string`                                                | -         | no       | Wrapper custom class name       |
+| `UNSAFE_style`     | `CSSProperties`                                         | -         | no       | Wrapper custom style            |
 
 For detailed information see [Tag](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tag/README.md) component
 

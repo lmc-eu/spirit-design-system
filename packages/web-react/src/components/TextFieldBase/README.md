@@ -57,6 +57,8 @@ TextFieldBase with password toggle (button to reveal the password):
 | `placeholder`       | `string`                                                      | -       | no       | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement or HTMLTextAreaElement>`       | -       | no       | Field element reference                                                 |
 | `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | -       | no       | Input type                                                              |
+| `UNSAFE_className`  | `string`                                                      | -       | no       | Wrapper custom class name                                               |
+| `UNSAFE_style`      | `CSSProperties`                                               | -       | no       | Wrapper custom style                                                    |
 | `validationState`   | [Validation dictionary][dictionary-validation]                | -       | no       | Type of validation state.                                               |
 | `validationText`    | `string`, `string[]`                                          | -       | no       | Validation text                                                         |
 | `value`             | `string`                                                      | -       | no       | Input value                                                             |
