@@ -1,15 +1,23 @@
-import { resolve } from 'path';
+import { resolve, dirname, join } from 'path';
 import { mergeConfig } from 'vite';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const config: StorybookViteConfig = {
   stories: ['../packages/**/*.stories.mdx', '../packages/**/*.stories.@(ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-docs', '@storybook/addon-essentials'],
+
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@storybook/addon-mdx-gfm'),
+  ],
+
   features: {
     storyStoreV7: true,
   },
+
   core: {
-    builder: '@storybook/builder-vite',
+    disableTelemetry: true,
   },
 
   async viteFinal(config) {
@@ -28,6 +36,19 @@ const config: StorybookViteConfig = {
       },
     });
   },
+
+  framework: {
+    name: getAbsolutePath('@storybook/react-vite'),
+    options: {},
+  },
+
+  docs: {
+    autodocs: true,
+  },
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, 'package.json')));
+}
