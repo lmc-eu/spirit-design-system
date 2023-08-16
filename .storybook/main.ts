@@ -1,21 +1,15 @@
-const { resolve } = require('path');
-const { mergeConfig } = require('vite');
+import { resolve } from 'path';
+import { mergeConfig } from 'vite';
+import type { StorybookViteConfig } from '@storybook/builder-vite';
 
-module.exports = {
-  stories: [
-    '../packages/**/*.stories.mdx',
-    '../packages/**/*.stories.@(js|jsx|ts|tsx)'
-  ],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-docs',
-    '@storybook/addon-essentials',
-  ],
+const config: StorybookViteConfig = {
+  stories: ['../packages/**/*.stories.mdx', '../packages/**/*.stories.@(ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-docs', '@storybook/addon-essentials'],
   features: {
     storyStoreV7: true,
   },
   core: {
-    builder: '@storybook/builder-vite'
+    builder: '@storybook/builder-vite',
   },
 
   async viteFinal(config) {
@@ -35,3 +29,5 @@ module.exports = {
     });
   },
 };
+
+export default config;

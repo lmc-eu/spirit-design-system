@@ -20,6 +20,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  IconGlobalDecorator,
-];
+export const decorators = [IconGlobalDecorator];
