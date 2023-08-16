@@ -78,13 +78,13 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 | Prop name                 | Type                            | Default    | Required | Description                                 |
 | ------------------------- | ------------------------------- | ---------- | -------- | ------------------------------------------- |
-| `id`                      | `string`                        | `<random>` | no       | Component id                                |
-| `isOpen`                  | `boolean`                       | -          | no       | Is open on initialization                   |
-| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'` | -          | no       | Handle for responsive breakpoint            |
-| `transitionDuration`      | `number`                        | `250`      | no       | Transition duration in miliseconds          |
-| `elementType`             | `'span', 'div'`                 | `'div'`    | no       | Type of element used as wrapper and content |
-| `UNSAFE_className`        | `string`                        | -          | no       | Wrapper custom class name                   |
-| `UNSAFE_style`            | `CSSProperties`                 | -          | no       | Wrapper custom style                        |
+| `id`                      | `string`                        | `<random>` | ✕        | Component id                                |
+| `isOpen`                  | `boolean`                       | -          | ✕        | Is open on initialization                   |
+| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'` | -          | ✕        | Handle for responsive breakpoint            |
+| `transitionDuration`      | `number`                        | `250`      | ✕        | Transition duration in miliseconds          |
+| `elementType`             | `'span', 'div'`                 | `'div'`    | ✕        | Type of element used as wrapper and content |
+| `UNSAFE_className`        | `string`                        | -          | ✕        | Wrapper custom class name                   |
+| `UNSAFE_style`            | `CSSProperties`                 | -          | ✕        | Wrapper custom style                        |
 
 ## Uncontrolled Collapse
 
@@ -127,13 +127,13 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 | Prop name                 | Type                                         | Default    | Required | Description                            |
 | ------------------------- | -------------------------------------------- | ---------- | -------- | -------------------------------------- |
-| `id`                      | `string`                                     | `<random>` | no       | Component id                           |
-| `isOpen`                  | `boolean`                                    | -          | no       | Is open on initialization              |
-| `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | -          | no       | Properties for trigger render          |
-| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'`              | -          | no       | Handle for responsive breakpoint       |
-| `hideOnCollapse`          | `boolean`                                    | -          | no       | Hides button when content is displayed |
-| `UNSAFE_className`        | `string`                                     | -          | no       | Wrapper custom classname               |
-| `UNSAFE_style`            | `CSSProperties`                              | -          | no       | Wrapper custom style                   |
+| `id`                      | `string`                                     | `<random>` | ✕        | Component id                           |
+| `isOpen`                  | `boolean`                                    | -          | ✕        | Is open on initialization              |
+| `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | -          | ✕        | Properties for trigger render          |
+| `collapsibleToBreakpoint` | `'mobile', 'tablet', 'desktop'`              | -          | ✕        | Handle for responsive breakpoint       |
+| `hideOnCollapse`          | `boolean`                                    | -          | ✕        | Hides button when content is displayed |
+| `UNSAFE_className`        | `string`                                     | -          | ✕        | Wrapper custom classname               |
+| `UNSAFE_style`            | `CSSProperties`                              | -          | ✕        | Wrapper custom style                   |
 
 ## Render Toggle Props
 

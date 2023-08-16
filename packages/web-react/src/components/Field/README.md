@@ -26,6 +26,6 @@ Advanced example:
 
 | Name             | Type                 | Default | Required | Description                                                                                    |
 | ---------------- | -------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`      | `string`             | -       | yes      | Wrapper custom class name                                                                      |
-| `elementType`    | `span`, `div`        | `div`   | no       | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `validationText` | `string`, `string[]` | -       | yes      | Validation text                                                                                |
+| `className`      | `string`             | -       | ✔        | Wrapper custom class name                                                                      |
+| `elementType`    | `span`, `div`        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `validationText` | `string`, `string[]` | -       | ✔        | Validation text                                                                                |

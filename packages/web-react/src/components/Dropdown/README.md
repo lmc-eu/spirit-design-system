@@ -18,14 +18,14 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 | Prop name          | Type                                             | Default       | Required | Description                                    |
 | ------------------ | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose`  | `boolean`                                        | `true`        | no       | Enables close on click outside of Dropdown     |
-| `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | no       | Full-width mode                                |
-| `id`               | `string`                                         | `<random>`    | no       | Component id                                   |
-| `onAutoClose` .    | `(event: Event) => void`                         |               | no       | Callback on close on click outside of Dropdown |
-| `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | no       | Alignment of the component                     |
-| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | -             | no       | Properties for trigger render                  |
-| `UNSAFE_className` | `string`                                         | -             | no       | Wrapper custom classname                       |
-| `UNSAFE_style`     | `CSSProperties`                                  | -             | no       | Wrapper custom style                           |
+| `enableAutoClose`  | `boolean`                                        | `true`        | ✕        | Enables close on click outside of Dropdown     |
+| `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
+| `id`               | `string`                                         | `<random>`    | ✕        | Component id                                   |
+| `onAutoClose` .    | `(event: Event) => void`                         |               | ✕        | Callback on close on click outside of Dropdown |
+| `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | ✕        | Alignment of the component                     |
+| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | -             | ✕        | Properties for trigger render                  |
+| `UNSAFE_className` | `string`                                         | -             | ✕        | Wrapper custom classname                       |
+| `UNSAFE_style`     | `CSSProperties`                                  | -             | ✕        | Wrapper custom style                           |
 
 ## DropdownRenderProps
 
