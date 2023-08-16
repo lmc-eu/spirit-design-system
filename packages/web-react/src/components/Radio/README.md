@@ -29,18 +29,18 @@ Advanced example usage:
 
 | Prop name          | Type                                           | Default | Required | Description                    |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------ |
-| `id`               | string                                         | -       | yes      | Input and label identification |
-| `isDisabled`       | boolean                                        | -       | no       | Whether is field disabled      |
-| `isChecked`        | boolean                                        | -       | no       | Whether is field checked       |
-| `isItem`           | boolean                                        | -       | no       | To render in [Item][item] mode |
-| `isLabelHidden`    | boolean                                        | -       | no       | Whether is label hidden        |
-| `label`            | string                                         | -       | no       | Label text                     |
-| `name`             | string                                         | -       | no       | Input name                     |
-| `ref`              | `ForwardedRef<HTMLInputElement>`               | -       | no       | Input element reference        |
-| `UNSAFE_className` | `string`                                       | -       | no       | Wrapper custom class name      |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | no       | Wrapper custom style           |
-| `validationState`  | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state       |
-| `value`            | string                                         | -       | no       | Input value                    |
+| `id`               | string                                         | -       | ✔        | Input and label identification |
+| `isDisabled`       | boolean                                        | -       | ✕        | Whether is field disabled      |
+| `isChecked`        | boolean                                        | -       | ✕        | Whether is field checked       |
+| `isItem`           | boolean                                        | -       | ✕        | To render in [Item][item] mode |
+| `isLabelHidden`    | boolean                                        | -       | ✕        | Whether is label hidden        |
+| `label`            | string                                         | -       | ✕        | Label text                     |
+| `name`             | string                                         | -       | ✕        | Input name                     |
+| `ref`              | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference        |
+| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name      |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style           |
+| `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state       |
+| `value`            | string                                         | -       | ✕        | Input value                    |
 
 ## Custom component
 

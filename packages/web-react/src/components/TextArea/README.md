@@ -38,24 +38,24 @@ Example with Auto-Height Adjustment
 
 | Prop name               | Type                                           | Default | Required | Description                                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `autoResizingMaxHeight` | `number`                                       | `400`   | no       | Maximum field height with automatic height control                   |
-| `helperText`            | `string`                                       | -       | no       | Custom helper text                                                   |
-| `id`                    | `string`                                       | -       | yes      | Textarea and label identification                                    |
-| `isAutoResizing`        | `boolean`                                      | -       | no       | Whether is field auto resizing which adjusts its height while typing |
-| `isDisabled`            | `boolean`                                      | -       | no       | Whether is field disabled                                            |
-| `isLabelHidden`         | `boolean`                                      | -       | no       | Whether is label hidden                                              |
-| `isRequired`            | `boolean`                                      | -       | no       | Whether is field required                                            |
-| `label`                 | `string`                                       | -       | no       | Label text                                                           |
-| `maxLength`             | `number`                                       | -       | no       | Maximum number of characters                                         |
-| `name`                  | `string`                                       | -       | no       | Textarea name                                                        |
-| `placeholder`           | `string`                                       | -       | no       | Textarea placeholder                                                 |
-| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | no       | Textarea element reference                                           |
-| `rows`                  | `number`                                       | -       | no       | Number of visible rows                                               |
-| `UNSAFE_className`      | `string`                                       | -       | no       | Wrapper custom class name                                            |
-| `UNSAFE_style`          | `CSSProperties`                                | -       | no       | Wrapper custom style                                                 |
-| `validationState`       | [Validation dictionary][dictionary-validation] | -       | no       | Type of validation state                                             |
-| `validationText`        | `string`, `string[]`                           | -       | no       | Validation text                                                      |
-| `value`                 | `string`                                       | -       | no       | Textarea value                                                       |
+| `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
+| `helperText`            | `string`                                       | -       | ✕        | Custom helper text                                                   |
+| `id`                    | `string`                                       | -       | ✔        | Textarea and label identification                                    |
+| `isAutoResizing`        | `boolean`                                      | -       | ✕        | Whether is field auto resizing which adjusts its height while typing |
+| `isDisabled`            | `boolean`                                      | -       | ✕        | Whether is field disabled                                            |
+| `isLabelHidden`         | `boolean`                                      | -       | ✕        | Whether is label hidden                                              |
+| `isRequired`            | `boolean`                                      | -       | ✕        | Whether is field required                                            |
+| `label`                 | `string`                                       | -       | ✕        | Label text                                                           |
+| `maxLength`             | `number`                                       | -       | ✕        | Maximum number of characters                                         |
+| `name`                  | `string`                                       | -       | ✕        | Textarea name                                                        |
+| `placeholder`           | `string`                                       | -       | ✕        | Textarea placeholder                                                 |
+| `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | -       | ✕        | Textarea element reference                                           |
+| `rows`                  | `number`                                       | -       | ✕        | Number of visible rows                                               |
+| `UNSAFE_className`      | `string`                                       | -       | ✕        | Wrapper custom class name                                            |
+| `UNSAFE_style`          | `CSSProperties`                                | -       | ✕        | Wrapper custom style                                                 |
+| `validationState`       | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state                                             |
+| `validationText`        | `string`, `string[]`                           | -       | ✕        | Validation text                                                      |
+| `value`                 | `string`                                       | -       | ✕        | Textarea value                                                       |
 
 ## Custom component
 

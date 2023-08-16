@@ -15,8 +15,8 @@ Link allows users to follow navigation.
 | `isUnderlined`     | `boolean`                                        | `false`   | ✕        | Whether is the link underlined |
 | `isDisabled`       | `boolean`                                        | `false`   | ✕        | Whether is the link disabled   |
 | `ref`              | `ForwardedRef<HTMLAnchorElement>`                | -         | ✕        | Link element reference         |
-| `UNSAFE_className` | `string`                                         | -         | no       | Wrapper custom class name      |
-| `UNSAFE_style`     | `CSSProperties`                                  | -         | no       | Wrapper custom style           |
+| `UNSAFE_className` | `string`                                         | -         | ✕        | Wrapper custom class name      |
+| `UNSAFE_style`     | `CSSProperties`                                  | -         | ✕        | Wrapper custom style           |
 
 ## Custom component
 

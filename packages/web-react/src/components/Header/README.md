@@ -201,11 +201,11 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 
 | Name               | Type                        | Default | Required | Description                |
 | ------------------ | --------------------------- | ------- | -------- | -------------------------- |
-| `children`         | `ReactNode`                 | -       | no       | Children node              |
-| `color`            | `'inverted', 'transparent'` | -       | no       | Header background color    |
-| `isSimple`         | `boolean`                   | -       | no       | If header should be simple |
-| `UNSAFE_className` | `string`                    | -       | no       | Header custom class name   |
-| `UNSAFE_style`     | `CSSProperties`             | -       | no       | Header custom style        |
+| `children`         | `ReactNode`                 | -       | ✕        | Children node              |
+| `color`            | `'inverted', 'transparent'` | -       | ✕        | Header background color    |
+| `isSimple`         | `boolean`                   | -       | ✕        | If header should be simple |
+| `UNSAFE_className` | `string`                    | -       | ✕        | Header custom class name   |
+| `UNSAFE_style`     | `CSSProperties`             | -       | ✕        | Header custom style        |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -215,9 +215,9 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 | Name               | Type            | Default | Required | Description                    |
 | ------------------ | --------------- | ------- | -------- | ------------------------------ |
-| `children`         | `ReactNode`     | -       | no       | Children node                  |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderButton custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                  |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderButton custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderButton custom style      |
 
 The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
@@ -227,10 +227,10 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 | Name               | Type                     | Default | Required | Description                            |
 | ------------------ | ------------------------ | ------- | -------- | -------------------------------------- |
-| `children`         | `ReactNode`              | -       | no       | Children node                          |
-| `color`            | `'primary', 'secondary'` | -       | no       | HeaderDesktopActions background color  |
-| `UNSAFE_className` | `string`                 | -       | no       | HeaderDesktopActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`          | -       | no       | HeaderDesktopActions custom style      |
+| `children`         | `ReactNode`              | -       | ✕        | Children node                          |
+| `color`            | `'primary', 'secondary'` | -       | ✕        | HeaderDesktopActions background color  |
+| `UNSAFE_className` | `string`                 | -       | ✕        | HeaderDesktopActions custom class name |
+| `UNSAFE_style`     | `CSSProperties`          | -       | ✕        | HeaderDesktopActions custom style      |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -240,12 +240,12 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 | Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`                                    | -       | no       | Children node                   |
-| `id`               | `string`                                       | -       | yes      | Dialog ID                       |
-| `isOpen`           | `boolean`                                      | `false` | yes      | Open state                      |
-| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -       | yes      | Callback for dialog when closed |
-| `UNSAFE_className` | `string`                                       | -       | no       | HeaderDialog custom class name  |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | no       | HeaderDialog custom style       |
+| `children`         | `ReactNode`                                    | -       | ✕        | Children node                   |
+| `id`               | `string`                                       | -       | ✔        | Dialog ID                       |
+| `isOpen`           | `boolean`                                      | `false` | ✔        | Open state                      |
+| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback for dialog when closed |
+| `UNSAFE_className` | `string`                                       | -       | ✕        | HeaderDialog custom class name  |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | HeaderDialog custom style       |
 
 The rest of the properties are based on the type of `<dialog>`. [Docs][DialogElementDocs]
 
@@ -255,10 +255,10 @@ The rest of the properties are based on the type of `<dialog>`. [Docs][DialogEle
 
 | Name               | Type                     | Default | Required | Description                           |
 | ------------------ | ------------------------ | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`              | -       | no       | Children node                         |
-| `color`            | `'primary', 'secondary'` | -       | no       | HeaderDialogActions background color  |
-| `UNSAFE_className` | `string`                 | -       | no       | HeaderDialogActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`          | -       | no       | HeaderDialogActions custom style      |
+| `children`         | `ReactNode`              | -       | ✕        | Children node                         |
+| `color`            | `'primary', 'secondary'` | -       | ✕        | HeaderDialogActions background color  |
+| `UNSAFE_className` | `string`                 | -       | ✕        | HeaderDialogActions custom class name |
+| `UNSAFE_style`     | `CSSProperties`          | -       | ✕        | HeaderDialogActions custom style      |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -268,9 +268,9 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 | Name               | Type            | Default | Required | Description                          |
 | ------------------ | --------------- | ------- | -------- | ------------------------------------ |
-| `children`         | `ReactNode`     | -       | no       | Children node                        |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogButton custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                        |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogButton custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogButton custom style      |
 
 The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
@@ -282,9 +282,9 @@ HeaderDialogCloseButton already contains handles for closing and the state of th
 
 | Name               | Type            | Default | Required | Description                               |
 | ------------------ | --------------- | ------- | -------- | ----------------------------------------- |
-| `label`            | `string`        | `Close` | no       | Button label                              |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogCloseButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogCloseButton custom style      |
+| `label`            | `string`        | `Close` | ✕        | Button label                              |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogCloseButton custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogCloseButton custom style      |
 
 The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
 
@@ -294,10 +294,10 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 | Name               | Type            | Default | Required | Description                        |
 | ------------------ | --------------- | ------- | -------- | ---------------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node                      |
-| `isCurrent`        | `boolean`       | -       | no       | When link should be current page   |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogLink custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogLink custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                      |
+| `isCurrent`        | `boolean`       | -       | ✕        | When link should be current page   |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogLink custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogLink custom style      |
 
 The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
 
@@ -307,9 +307,9 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 
 | Name               | Type            | Default | Required | Description                       |
 | ------------------ | --------------- | ------- | -------- | --------------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node                     |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogNav custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogNav custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                     |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogNav custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogNav custom style      |
 
 The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
 
@@ -319,9 +319,9 @@ The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDo
 
 | Name               | Type            | Default | Required | Description                           |
 | ------------------ | --------------- | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node                         |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogNavItem custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogNavItem custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                         |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogNavItem custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogNavItem custom style      |
 
 The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
 
@@ -331,9 +331,9 @@ The rest of the properties are based on the type of `<li>`. [Docs][DialogListIte
 
 | Name               | Type            | Default | Required | Description                        |
 | ------------------ | --------------- | ------- | -------- | ---------------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node                      |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderDialogText custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderDialogText custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                      |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderDialogText custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderDialogText custom style      |
 
 The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanDocs]
 
@@ -343,10 +343,10 @@ The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanD
 
 | Name               | Type            | Default | Required | Description                      |
 | ------------------ | --------------- | ------- | -------- | -------------------------------- |
-| `isCurrent`        | `boolean`       | -       | no       | When link should be current page |
-| `children`         | `ReactNode`     | -       | no       | Children node                    |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderLink custom style          |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderLink custom class name     |
+| `isCurrent`        | `boolean`       | -       | ✕        | When link should be current page |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                    |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderLink custom style          |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderLink custom class name     |
 
 The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
 
@@ -356,13 +356,13 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 
 | Name               | Type                                           | Default | Required | Description                           |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------------- |
-| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | -       | yes      | Callback for dialog when opened       |
+| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback for dialog when opened       |
 | `menuToggleLabel`  | `string`                                       | -       | `Menu`   | Label for button toggle               |
-| `isOpen`           | `boolean`                                      | `false` | yes      | Dialog open state                     |
-| `dialogId`         | `string`                                       | -       | no       | ID of dialog element                  |
-| `children`         | `ReactNode`                                    | -       | no       | Children node                         |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | no       | HeaderMobileActions custom style      |
-| `UNSAFE_className` | `string`                                       | -       | no       | HeaderMobileActions custom class name |
+| `isOpen`           | `boolean`                                      | `false` | ✔        | Dialog open state                     |
+| `dialogId`         | `string`                                       | -       | ✕        | ID of dialog element                  |
+| `children`         | `ReactNode`                                    | -       | ✕        | Children node                         |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | HeaderMobileActions custom style      |
+| `UNSAFE_className` | `string`                                       | -       | ✕        | HeaderMobileActions custom class name |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -372,9 +372,9 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 | Name               | Type            | Default | Required | Description                 |
 | ------------------ | --------------- | ------- | -------- | --------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node               |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderNav custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderNav custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node               |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderNav custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderNav custom style      |
 
 The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
 
@@ -384,9 +384,9 @@ The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDo
 
 | Name               | Type            | Default | Required | Description                     |
 | ------------------ | --------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`     | -       | no       | Children node                   |
-| `UNSAFE_className` | `string`        | -       | no       | HeaderNavItem custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | no       | HeaderNavItem custom style      |
+| `children`         | `ReactNode`     | -       | ✕        | Children node                   |
+| `UNSAFE_className` | `string`        | -       | ✕        | HeaderNavItem custom class name |
+| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderNavItem custom style      |
 
 The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
 
