@@ -8,7 +8,7 @@ Container centers your content horizontally and sets its max-width with horizont
 
 ## Available props
 
-| Prop name          | Type            | Default | Required | Description               |
+| Name               | Type            | Default | Required | Description               |
 | ------------------ | --------------- | ------- | -------- | ------------------------- |
 | `UNSAFE_className` | `string`        | -       | ✕        | Wrapper custom class name |
 | `UNSAFE_style`     | `CSSProperties` | -       | ✕        | Wrapper custom style      |

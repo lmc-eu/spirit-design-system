@@ -300,7 +300,7 @@ const resetStateHandler = () => {
 
 ## FileUploader Props
 
-| Prop name                             | Type                                            | Default | Required | Description                                                         |
+| Name                                  | Type                                            | Default | Required | Description                                                         |
 | ------------------------------------- | ----------------------------------------------- | ------- | -------- | ------------------------------------------------------------------- |
 | `id`                                  | `string`                                        | -       | ✔        | FileUploader id                                                     |
 | `addToQueue`                          | `(key: string, file: File) => FileQueueMapType` | -       | ✔        | Callback to add an item to the queue                                |
@@ -320,7 +320,7 @@ The rest of the properties are created from the default `<div>` element. [More a
 
 ## FileUploaderInput Props
 
-| Prop name            | Type                                 | Default  | Required | Description                                                                                                                                                     |
+| Name                 | Type                                 | Default  | Required | Description                                                                                                                                                     |
 | -------------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `accept`             | `string`                             | -        | ✕        | The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. |
 | `id`                 | `string`                             | -        | ✔        | FileUploaderInput id                                                                                                                                            |
@@ -349,7 +349,7 @@ The rest of the properties are created from the default `<input>` element. [More
 
 ## FileUploaderList Props
 
-| Prop name             | Type            | Default | Required | Description                                   |
+| Name                  | Type            | Default | Required | Description                                   |
 | --------------------- | --------------- | ------- | -------- | --------------------------------------------- |
 | `attachmentComponent` | `string`        | -       | ✔        | A component for rendering a single attachment |
 | `hasImagePreview`     | `boolean`       | false   | ✕        | Show image preview in the list                |
@@ -363,7 +363,7 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 
 ## FileUploaderAttachment Props
 
-| Prop name          | Type                                 | Default  | Required | Description                               |
+| Name               | Type                                 | Default  | Required | Description                               |
 | ------------------ | ------------------------------------ | -------- | -------- | ----------------------------------------- |
 | `buttonLabel`      | `string`                             | `Remove` | ✕        | Dismiss button label                      |
 | `editButtonLabel`  | `string`                             | `Edit`   | ✕        | Edit button label                         |
@@ -382,7 +382,7 @@ The rest of the properties are created from the default `<li>` element. [More ab
 
 ## AttachmentActionButton Props
 
-| Prop name          | Type                                   | Default | Required | Description                               |
+| Name               | Type                                   | Default | Required | Description                               |
 | ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
 | `onClick`          | `MouseEventHandler<HTMLButtonElement>` | -       | ✕        | Button click handler                      |
 | `UNSAFE_className` | `string`                               | -       | ✕        | AttachmentDismissButton custom class name |
@@ -392,7 +392,7 @@ The rest of the properties are created from the default `<button>` element. [Mor
 
 ## AttachmentDismissButton Props
 
-| Prop name          | Type                                   | Default | Required | Description                               |
+| Name               | Type                                   | Default | Required | Description                               |
 | ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
 | `onClick`          | `MouseEventHandler<HTMLButtonElement>` | -       | ✕        | Button click handler                      |
 | `UNSAFE_className` | `string`                               | -       | ✕        | AttachmentDismissButton custom class name |
@@ -407,7 +407,7 @@ and a collection of props selected above for easier implementation. Other props 
 via `inputProps` and `listProps`.
 `UncontrolledFileUploaderBaseProps` extends `FileUploaderBaseProps`.
 
-| Prop name             | Type                                    | Default  | Required | Description                                         |
+| Name                  | Type                                    | Default  | Required | Description                                         |
 | --------------------- | --------------------------------------- | -------- | -------- | --------------------------------------------------- |
 | `iconName`            | `string`                                | `upload` | ✔        | Icon used in the UncontrolledFileUploader drop zone |
 | `id`                  | `string`                                | -        | ✔        | UncontrolledFileUploader id                         |

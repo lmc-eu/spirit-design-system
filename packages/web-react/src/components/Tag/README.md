@@ -14,7 +14,7 @@ import { Tag } from '@lmc-eu/spirit-web-react';
 
 ## Available props
 
-| Prop name          | Type                                                    | Default   | Required | Description                     |
+| Name               | Type                                                    | Default   | Required | Description                     |
 | ------------------ | ------------------------------------------------------- | --------- | -------- | ------------------------------- |
 | `children`         | `ReactNode`                                             | -         | ✔        | Content of the Tag              |
 | `color`            | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component          |

@@ -30,7 +30,7 @@ Advanced example usage:
 
 ## API
 
-| Prop name                 | Type            | Default | Required | Description                            |
+| Name                      | Type            | Default | Required | Description                            |
 | ------------------------- | --------------- | ------- | -------- | -------------------------------------- |
 | `elementType`             | `string`        | `div`   | ✕        | Element type of the wrapper element    |
 | `hasEndDivider`           | `bool`          | `false` | ✕        | Render a divider after the last item   |

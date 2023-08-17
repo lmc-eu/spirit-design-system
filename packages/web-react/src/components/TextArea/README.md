@@ -36,7 +36,7 @@ Example with Auto-Height Adjustment
 
 ## Available props
 
-| Prop name               | Type                                           | Default | Required | Description                                                          |
+| Name                    | Type                                           | Default | Required | Description                                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |
 | `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
 | `helperText`            | `string`                                       | -       | ✕        | Custom helper text                                                   |

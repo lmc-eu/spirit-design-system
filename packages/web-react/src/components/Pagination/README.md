@@ -77,7 +77,7 @@
 
 ## Pagination props
 
-| Prop name          | Type                      | Default | Required | Description                                        |
+| Name               | Type                      | Default | Required | Description                                        |
 | ------------------ | ------------------------- | ------- | -------- | -------------------------------------------------- |
 | `children`         | `ReactNode`               | `null`  | ✕        | Content of the Pagination wrapper                  |
 | `listProps`        | `SpiritUListElementProps` | `{}`    | ✕        | Props for the inner [UL element props][ul-element] |
@@ -88,7 +88,7 @@ Other unnamed props of this component are formed from the [HTML element][html-el
 
 ## PaginationItem props
 
-| Prop name          | Type            | Default | Required | Description            |
+| Name               | Type            | Default | Required | Description            |
 | ------------------ | --------------- | ------- | -------- | ---------------------- |
 | `children`         | `ReactNode`     | `null`  | ✕        | Content of the Item    |
 | `UNSAFE_className` | `string`        | -       | ✕        | Item custom class name |
@@ -98,7 +98,7 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 
 ## PaginationLink props
 
-| Prop name            | Type            | Default | Required | Description                            |
+| Name                 | Type            | Default | Required | Description                            |
 | -------------------- | --------------- | ------- | -------- | -------------------------------------- |
 | `pageNumber`         | `number`        | -       | ✔        | Page number, hidden for screen readers |
 | `isCurrent`          | `boolean`       | `null`  | ✕        | If true, the link is marked as current |
@@ -111,7 +111,7 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 
 This component extends the [Button][button] component with directional arrows and a hidden label.
 
-| Prop name            | Type                 | Default | Required | Description                                                          |
+| Name                 | Type                 | Default | Required | Description                                                          |
 | -------------------- | -------------------- | ------- | -------- | -------------------------------------------------------------------- |
 | `direction`          | `'previous', 'next'` | `null`  | ✔        | The direction according to which the corresponding icon is displayed |
 | `accessibilityLabel` | `string`             | `null`  | ✔        | Accessibility label of the link                                      |
@@ -120,7 +120,7 @@ This component extends the [Button][button] component with directional arrows an
 
 This component extends the `PaginationButtonLink` component.
 
-| Prop name            | Type     | Default      | Required | Description                     |
+| Name                 | Type     | Default      | Required | Description                     |
 | -------------------- | -------- | ------------ | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `'Previous'` | ✕        | Accessibility label of the link |
 
@@ -128,7 +128,7 @@ This component extends the `PaginationButtonLink` component.
 
 This component extends the `PaginationButtonLink` component.
 
-| Prop name            | Type     | Default  | Required | Description                     |
+| Name                 | Type     | Default  | Required | Description                     |
 | -------------------- | -------- | -------- | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `'Next'` | ✕        | Accessibility label of the link |
 

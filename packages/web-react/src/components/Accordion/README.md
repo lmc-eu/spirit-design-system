@@ -136,7 +136,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## Accordion Props
 
-| Prop name          | Type                          | Default     | Required | Description                                      |
+| Name               | Type                          | Default     | Required | Description                                      |
 | ------------------ | ----------------------------- | ----------- | -------- | ------------------------------------------------ |
 | `children`         | `ReactNode`                   | -           | ✔        | Accordion children's nodes                       |
 | `elementType`      | `'section', 'article', 'div'` | `'section'` | ✕        | Type of element used as wrapper                  |
@@ -149,7 +149,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## Uncontrolled Accordion Props
 
-| Prop name          | Type                          | Default     | Required | Description                                    |
+| Name               | Type                          | Default     | Required | Description                                    |
 | ------------------ | ----------------------------- | ----------- | -------- | ---------------------------------------------- |
 | `children`         | `ReactNode`                   | -           | ✔        | Accordion children's nodes                     |
 | `elementType`      | `'section', 'article', 'div'` | `'section'` | ✕        | Type of element used as wrapper                |
@@ -162,7 +162,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## AccordionItem Props
 
-| Prop name          | Type                          | Default     | Required | Description                                     |
+| Name               | Type                          | Default     | Required | Description                                     |
 | ------------------ | ----------------------------- | ----------- | -------- | ----------------------------------------------- |
 | `id`               | `string`                      | -           | ✔        | Item id                                         |
 | `children`         | `ReactNode`                   | -           | ✔        | Item children node                              |
@@ -172,7 +172,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## AccordionHeader Props
 
-| Prop name          | Type            | Default | Required | Description              |
+| Name               | Type            | Default | Required | Description              |
 | ------------------ | --------------- | ------- | -------- | ------------------------ |
 | `children`         | `ReactNode`     | -       | ✔        | Header children node     |
 | `slot`             | `ReactNode`     | -       | ✕        | Side slot in the header  |
@@ -181,7 +181,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## AccordionContent Props
 
-| Prop name          | Type            | Default | Required | Description               |
+| Name               | Type            | Default | Required | Description               |
 | ------------------ | --------------- | ------- | -------- | ------------------------- |
 | `children`         | `ReactNode`     | -       | ✔        | Content children node     |
 | `UNSAFE_className` | `string`        | -       | ✕        | Content custom class name |

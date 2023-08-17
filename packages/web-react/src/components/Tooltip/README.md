@@ -68,7 +68,7 @@ const toggleHandler = () => setOpen(!open);
 
 ## Tooltip Props
 
-| Prop name          | Type                                      | Default    | Required | Description                               |
+| Name               | Type                                      | Default    | Required | Description                               |
 | ------------------ | ----------------------------------------- | ---------- | -------- | ----------------------------------------- |
 | `children`         | `ReactNode`                               | -          | ✔        | Tooltip children's nodes                  |
 | `UNSAFE_className` | `string`                                  | -          | ✕        | Tooltip custom class name                 |
@@ -81,7 +81,7 @@ const toggleHandler = () => setOpen(!open);
 
 ## UncontrolledTooltip Props
 
-| Prop name          | Type                                      | Default    | Required | Description                               |
+| Name               | Type                                      | Default    | Required | Description                               |
 | ------------------ | ----------------------------------------- | ---------- | -------- | ----------------------------------------- |
 | `children`         | `ReactNode`                               | -          | ✔        | Tooltip children's nodes                  |
 | `UNSAFE_className` | `string`                                  | -          | ✕        | Tooltip custom class name                 |
@@ -92,7 +92,7 @@ const toggleHandler = () => setOpen(!open);
 
 ## TooltipWrapper Props
 
-| Prop name          | Type            | Default | Required | Description                     |
+| Name               | Type            | Default | Required | Description                     |
 | ------------------ | --------------- | ------- | -------- | ------------------------------- |
 | `children`         | `ReactNode`     | -       | ✔        | TooltipWrapper children's nodes |
 | `UNSAFE_className` | `string`        | -       | ✕        | Wrapper custom class name       |
@@ -100,7 +100,7 @@ const toggleHandler = () => setOpen(!open);
 
 ## TooltipCloseButton Props
 
-| Prop name          | Type                          | Default   | Required | Description                    |
+| Name               | Type                          | Default   | Required | Description                    |
 | ------------------ | ----------------------------- | --------- | -------- | ------------------------------ |
 | `label`            | `string`                      | `'Close'` | ✕        | Text label                     |
 | `onClick`          | `(event: ClickEvent) => void` | -         | ✕        | Close Button callback          |

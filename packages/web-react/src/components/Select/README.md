@@ -34,7 +34,7 @@ Advanced example usage:
 
 ## Available props
 
-| Prop name          | Type                                           | Default | Required | Description                     |
+| Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
 | `helperText`       | `string`                                       | -       | ✕        | Custom helper text              |
 | `children`         | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |

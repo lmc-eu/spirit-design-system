@@ -65,7 +65,7 @@ Or both:
 
 ## ScrollView Props
 
-| Prop name             | Type                         | Default    | Required | Description                        |
+| Name                  | Type                         | Default    | Required | Description                        |
 | --------------------- | ---------------------------- | ---------- | -------- | ---------------------------------- |
 | `children`            | `ReactNode`                  | -          | ✔        | ScrollView children's nodes        |
 | `direction`           | `horizontal`, `vertical`     | `vertical` | ✕        | Direction of the wrapper           |

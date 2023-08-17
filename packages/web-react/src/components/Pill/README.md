@@ -21,7 +21,7 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## Available props
 
-| Prop name          | Type                                                                                                                | Default    | Required | Description               |
+| Name               | Type                                                                                                                | Default    | Required | Description               |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------- |
 | `children`         | `ReactNode`                                                                                                         | -          | ✔        | Content of the Pill       |
 | `color`            | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color], `selected`, `unselected` | `selected` | ✕        | Color of the component    |

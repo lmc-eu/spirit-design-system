@@ -16,7 +16,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 ## Props
 
-| Prop name          | Type                                             | Default       | Required | Description                                    |
+| Name               | Type                                             | Default       | Required | Description                                    |
 | ------------------ | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose`  | `boolean`                                        | `true`        | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
@@ -29,7 +29,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 ## DropdownRenderProps
 
-| Prop name                  | Type                                               | Description             |
+| Name                       | Type                                               | Description             |
 | -------------------------- | -------------------------------------------------- | ----------------------- |
 | `isOpen`                   | `boolean`                                          | When dropdown is open   |
 | `trigger`                  | `Object`                                           | Trigger properties      |
