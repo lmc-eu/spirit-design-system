@@ -53,7 +53,7 @@ attributes to register trigger events.
 
 ## API
 
-| Prop name     | Type     | Default | Required | Description                                                            |
+| Name          | Type     | Default | Required | Description                                                            |
 | ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
 | `breakpoint`  | `string` | `null`  | ✕        | Breakpoint level [mobile,tablet,desktop]                               |
 | `elementType` | `string` | `div`   | ✕        | Custom element type for wrapper and content                            |
@@ -69,7 +69,7 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 ## Trigger attributes
 
-| Prop name            | Type     | Default    | Required | Description                         |
+| Name                 | Type     | Default    | Required | Description                         |
 | -------------------- | -------- | ---------- | -------- | ----------------------------------- |
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |

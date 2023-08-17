@@ -31,7 +31,7 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                                    | Default   | Required | Description                                    |
+| Name          | Type                                                    | Default   | Required | Description                                    |
 | ------------- | ------------------------------------------------------- | --------- | -------- | ---------------------------------------------- |
 | `color`       | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component                         |
 | `elementType` | `string`                                                | `span`    | ✕        | HTML tag to render                             |

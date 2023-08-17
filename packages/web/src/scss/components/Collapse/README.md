@@ -45,7 +45,7 @@ Hide button when collapse
 
 ## Trigger attributes
 
-| Prop name            | Type     | Default    | Required | Description                         |
+| Name                 | Type     | Default    | Required | Description                         |
 | -------------------- | -------- | ---------- | -------- | ----------------------------------- |
 | `data-spirit-toggle` | `string` | `collapse` | ✔        | Iterable selector                   |
 | `data-spirit-target` | `string` | —          | ✔        | Target selector                     |
@@ -55,7 +55,7 @@ Hide button when collapse
 
 ## Wrapper attributes
 
-| Prop name                | Type                    | Default | Required | Description                                                              |
+| Name                     | Type                    | Default | Required | Description                                                              |
 | ------------------------ | ----------------------- | ------- | -------- | ------------------------------------------------------------------------ |
 | `data-spirit-breakpoint` | [`tablet` \| `desktop`] | —       | ✕        | Breakpoint on which the collapsed content is forced to reveal \*         |
 | `data-spirit-parent`     | `string`                | —       | ✕        | A parent element selector that ensures that only one item is opened \*\* |

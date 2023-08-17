@@ -107,7 +107,7 @@ just branding.
 
 ## API
 
-| Prop name  | Type                          | Default       | Required | Description                         |
+| Name       | Type                          | Default       | Required | Description                         |
 | ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
 | `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
 | `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
@@ -156,7 +156,7 @@ You can place any custom content into the mobile actions component:
 
 #### API
 
-| Prop name         | Type     | Default | Required | Description                     |
+| Name              | Type     | Default | Required | Description                     |
 | ----------------- | -------- | ------- | -------- | ------------------------------- |
 | `dialogId`        | `string` | —       | ✔        | ID of the linked HeaderDialog   |
 | `menuToggleLabel` | `string` | `Menu`  | ✕        | Label of the menu toggle button |
@@ -187,9 +187,9 @@ control here.
 
 #### API
 
-| Prop name | Type                       | Default   | Required | Description   |
-| --------- | -------------------------- | --------- | -------- | ------------- |
-| `color`   | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
+| Name    | Type                       | Default   | Required | Description   |
+| ------- | -------------------------- | --------- | -------- | ------------- |
+| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -247,7 +247,7 @@ There is no API for HeaderNavItem.
 
 ##### HeaderLink API
 
-| Prop name   | Type     | Default | Required | Description                   |
+| Name        | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
 | `href`      | `string` | —       | ✔        | Link URL                      |
 | `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |
@@ -276,9 +276,9 @@ used for second-level navigation in general.
 
 ### API
 
-| Prop name | Type     | Default | Required | Description                            |
-| --------- | -------- | ------- | -------- | -------------------------------------- |
-| `id`      | `string` | —       | ✔        | ID to be linked in HeaderMobileActions |
+| Name | Type     | Default | Required | Description                            |
+| ---- | -------- | ------- | -------- | -------------------------------------- |
+| `id` | `string` | —       | ✔        | ID to be linked in HeaderMobileActions |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -293,7 +293,7 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 <HeaderDialogCloseButton dialogId="my-header-dialog" />
 ```
 
-| Prop name       | Type     | Default | Required | Description                     |
+| Name            | Type     | Default | Required | Description                     |
 | --------------- | -------- | ------- | -------- | ------------------------------- |
 | `dialogId`      | `string` | —       | ✔        | ID of the parent HeaderDialog   |
 | `enableDismiss` | `bool`   | `true`  | ✕        | Enable Off-canvas JS dismiss    |
@@ -320,9 +320,9 @@ the optional secondary actions slot.
 
 #### API
 
-| Prop name | Type                       | Default   | Required | Description               |
-| --------- | -------------------------- | --------- | -------- | ------------------------- |
-| `color`   | [`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
+| Name    | Type                       | Default   | Required | Description               |
+| ------- | -------------------------- | --------- | -------- | ------------------------- |
+| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -387,7 +387,7 @@ There is no API for HeaderDialogNavItem.
 
 ##### HeaderDialogLink API
 
-| Prop name   | Type     | Default | Required | Description                   |
+| Name        | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
 | `href`      | `string` | —       | ✔        | Link URL                      |
 | `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |

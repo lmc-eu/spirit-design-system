@@ -58,7 +58,7 @@ best positioning approach for your use case.
 
 ### Tooltip
 
-| Prop name       | Type                                     | Default  | Required | Description              |
+| Name            | Type                                     | Default  | Required | Description              |
 | --------------- | ---------------------------------------- | -------- | -------- | ------------------------ |
 | `closeLabel`    | `string`                                 | `Close`  | ✕        | Close label              |
 | `id`            | `string`                                 | `null`   | ✕        | Optional tooltip ID      |

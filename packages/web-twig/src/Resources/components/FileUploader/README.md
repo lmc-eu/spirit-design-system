@@ -50,7 +50,7 @@ By adding the `isFluid` attribute, FileUploader can take up all the available ho
 
 ### API
 
-| Prop name | Type   | Default | Required | Description                                                |
+| Name      | Type   | Default | Required | Description                                                |
 | --------- | ------ | ------- | -------- | ---------------------------------------------------------- |
 | `isFluid` | `bool` | `false` | ✕        | If true, the element spans to the full width of its parent |
 
@@ -181,7 +181,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 
 ### API
 
-| Prop name               | Type                                           | Default                 | Required | Description                                                           |
+| Name                    | Type                                           | Default                 | Required | Description                                                           |
 | ----------------------- | ---------------------------------------------- | ----------------------- | -------- | --------------------------------------------------------------------- |
 | `accept`                | `string`                                       | `null`                  | ✕        | Allowed file types                                                    |
 | `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device |
@@ -226,7 +226,7 @@ FileUploaderList is a simple wrapper which provides an accessible title and the 
 
 ### API
 
-| Prop name     | Type     | Default                     | Required | Description                     |
+| Name          | Type     | Default                     | Required | Description                     |
 | ------------- | -------- | --------------------------- | -------- | ------------------------------- |
 | `headingId`   | `string` | `file-uploader-attachments` | ✕        | List and heading identification |
 | `headingText` | `string` | `Attachments`               | ✕        | List title                      |

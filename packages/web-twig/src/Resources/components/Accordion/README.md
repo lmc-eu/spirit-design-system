@@ -183,21 +183,21 @@ The Accordion itself consists of several components which cannot be used indepen
 
 ### Accordion
 
-| Prop name     | Type     | Default   | Required | Description                                                                                       |
+| Name          | Type     | Default   | Required | Description                                                                                       |
 | ------------- | -------- | --------- | -------- | ------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `section` | ✕        | Custom element type                                                                               |
 | `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
 
 ### AccordionItem
 
-| Prop name     | Type     | Default   | Required | Description         |
+| Name          | Type     | Default   | Required | Description         |
 | ------------- | -------- | --------- | -------- | ------------------- |
 | `elementType` | `string` | `article` | ✕        | Custom element type |
 | `id`          | `string` | `null`    | ✔        | AccordionItem ID    |
 
 ### AccordionHeader
 
-| Prop name     | Type     | Default | Required | Description              |
+| Name          | Type     | Default | Required | Description              |
 | ------------- | -------- | ------- | -------- | ------------------------ |
 | `elementType` | `string` | `h3`    | ✕        | Custom element type      |
 | `for`         | `string` | `null`  | ✔        | AccordionContent ID      |
@@ -207,7 +207,7 @@ The Accordion itself consists of several components which cannot be used indepen
 
 ### AccordionContent
 
-| Prop name      | Type     | Default | Required | Description                                                                 |
+| Name           | Type     | Default | Required | Description                                                                 |
 | -------------- | -------- | ------- | -------- | --------------------------------------------------------------------------- |
 | `id`           | `string` | `null`  | ✔        | AccordionContent ID                                                         |
 | `isOpen`       | `bool`   | `false` | ✕        | If true, make the item open on page load                                    |

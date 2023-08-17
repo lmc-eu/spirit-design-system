@@ -28,7 +28,7 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                        | Default  | Required | Description                                                    |
+| Name          | Type                                        | Default  | Required | Description                                                    |
 | ------------- | ------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
 | `elementType` | `string`                                    | `div`    | ✕        | HTML tag to render                                             |

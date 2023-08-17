@@ -35,7 +35,7 @@ Without lexer:
 
 ## API
 
-| Prop name      | Type                                             | Default   | Required | Description                        |
+| Name           | Type                                             | Default   | Required | Description                        |
 | -------------- | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                      |
 | `href`         | `string`                                         | —         | ✔        | Link URL                           |

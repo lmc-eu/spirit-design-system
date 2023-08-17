@@ -54,7 +54,7 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Prop name       | Type                                                           | Default       | Required | Description                           |
+| Name            | Type                                                           | Default       | Required | Description                           |
 | --------------- | -------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
 | `elementType`   | `string`                                                       | `div`         | ✕        | HTML tag to render                    |
 | `fullWidthMode` | `string`                                                       | —             | ✕        | Full-width mode [off,mobile-only,all] |
@@ -67,7 +67,7 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 ### Trigger attributes
 
-| Prop name            | Type     | Default    | Required | Description                |
+| Name                 | Type     | Default    | Required | Description                |
 | -------------------- | -------- | ---------- | -------- | -------------------------- |
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto) |
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto) |
@@ -79,7 +79,7 @@ or the width of the window is changed. There can be several triggers, the same r
 
 ### DropdownWrapper
 
-| Prop name     | Type     | Default | Required | Description        |
+| Name          | Type     | Default | Required | Description        |
 | ------------- | -------- | ------- | -------- | ------------------ |
 | `elementType` | `string` | `div`   | ✕        | HTML tag to render |
 

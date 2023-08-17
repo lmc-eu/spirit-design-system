@@ -323,7 +323,7 @@ When you put it all together:
 
 Both trigger and close buttons use `data` attributes to open and close the Modal.
 
-| Prop name             | Type     | Default | Required | Description                |
+| Name                  | Type     | Default | Required | Description                |
 | --------------------- | -------- | ------- | -------- | -------------------------- |
 | `aria-controls`       | `string` | —       | ✕        | Aria controls state (auto) |
 | `aria-expanded`       | `string` | —       | ✕        | Aria expanded state (auto) |
