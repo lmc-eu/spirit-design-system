@@ -363,20 +363,22 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 
 ## FileUploaderAttachment Props
 
-| Name               | Type                                 | Default  | Required | Description                               |
-| ------------------ | ------------------------------------ | -------- | -------- | ----------------------------------------- |
-| `buttonLabel`      | `string`                             | `Remove` | ✕        | Dismiss button label                      |
-| `editButtonLabel`  | `string`                             | `Edit`   | ✕        | Edit button label                         |
-| `file`             | `File`                               | -        | ✔        | Attachment file object                    |
-| `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                 |
-| `id`               | `string`                             | -        | ✔        | FileUploaderAttachment id                 |
-| `label`            | `string`                             | -        | ✔        | File name                                 |
-| `name`             | `string`                             | -        | ✔        | Input field name                          |
-| `onDismiss`        | `(key: string) => FileQueueMapType`  | -        | ✔        | Callback to delete an item from the queue |
-| `onEdit`           | `(event: Event, file: File) => void` | -        | ✕        | Show and add function to edit button      |
-| `onError`          | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition               |
-| `UNSAFE_className` | `string`                             | -        | ✕        | FileUploaderAttachment custom class name  |
-| `UNSAFE_style`     | `CSSProperties`                      | -        | ✕        | FileUploaderAttachment custom style       |
+| Name               | Type                                 | Default  | Required | Description                                                                 |
+| ------------------ | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------- |
+| `buttonLabel`      | `string`                             | `Remove` | ✕        | [**DEPRECATED**][Deprecated] in favor of `removeText`; Dismiss button label |
+| `editButtonLabel`  | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][Deprecated] in favor of `editText`; Edit button label      |
+| `editText`         | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
+| `file`             | `File`                               | -        | ✔        | Attachment file object                                                      |
+| `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
+| `id`               | `string`                             | -        | ✔        | FileUploaderAttachment id                                                   |
+| `label`            | `string`                             | -        | ✔        | File name                                                                   |
+| `name`             | `string`                             | -        | ✔        | Input field name                                                            |
+| `onDismiss`        | `(key: string) => FileQueueMapType`  | -        | ✔        | Callback to delete an item from the queue                                   |
+| `onEdit`           | `(event: Event, file: File) => void` | -        | ✕        | Show and add function to edit button                                        |
+| `onError`          | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition                                                 |
+| `removeText`       | `string`                             | `Remove` | ✕        | Dismiss button label                                                        |
+| `UNSAFE_className` | `string`                             | -        | ✕        | FileUploaderAttachment custom class name                                    |
+| `UNSAFE_style`     | `CSSProperties`                      | -        | ✕        | FileUploaderAttachment custom style                                         |
 
 The rest of the properties are created from the default `<li>` element. [More about the element][ListItemElementDocs]
 
@@ -444,3 +446,4 @@ For detailed information see [FileUploader] component.
 [InputElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
 [ListElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [ListItemElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+[Deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations

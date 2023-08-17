@@ -75,17 +75,21 @@ export interface FileUploaderListBaseProps extends SpiritUListElementProps {
 }
 
 export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElementProps, 'onError'> {
+  /** @deprecated Will be removed in the next major version. */
   buttonLabel?: string;
+  /** @deprecated Will be removed in the next major version. */
   editButtonLabel?: string;
+  editText?: string;
   file: File;
+  hasImagePreview?: boolean;
   iconName?: string;
   id: string;
   label: string;
   name: string;
   onDismiss: (key: string) => FileQueueMapType;
-  onError?: FileUploaderErrorCallbackType;
-  hasImagePreview?: boolean;
   onEdit?: (event: MouseEvent, file: File) => void;
+  onError?: FileUploaderErrorCallbackType;
+  removeText?: string;
 }
 
 export interface FileUploaderBaseProps extends SpiritDivElementProps, Partial<FileUploaderErrorMessagesProps> {
