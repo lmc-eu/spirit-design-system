@@ -7,6 +7,7 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 - [Project structure](#project-structure)
 - [Commit Conventions](#commit-conventions)
 - [Code style](#code-style)
+- [Documenting the Components](#documenting-the-components)
 - [Publishing](#publishing)
 
 ## General usage
@@ -19,11 +20,11 @@ This project is a monorepo managed by [Lerna][lerna-home]. This means that each 
 
 ## Commit Conventions
 
-All commits you make should adhere to our commit guidelines. We use [conventional commits][conventional-commits] strategy with slight modification of our own - [@lmc-eu/commitlint-config][commitlint-config]. This is later used during release phase to determine how to bump the packages' version numbers based on commit history. 🚀
+All commits you make SHOULD adhere to our commit guidelines. We use [conventional commits][conventional-commits] strategy with slight modification of our own - [@lmc-eu/commitlint-config][commitlint-config]. This is later used during release phase to determine how to bump the packages' version numbers based on commit history. 🚀
 
 ### Commit Message Format
 
-We have very precise rules over how our Git commit messages must be formatted.
+We have very precise rules over how our Git commit messages MUST be formatted.
 This format leads to **easier to read commit history**.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
@@ -36,12 +37,12 @@ Each commit message consists of a **header**, a **body**, and a **footer**.
 <footer>
 ```
 
-The `header` is mandatory and must conform to the [Commit Message Header](#commit-header) format.
+The `header` is mandatory and MUST conform to the [Commit Message Header](#commit-header) format.
 
 The `body` is optional but recommended for all commits except for those of type "Docs".
-When the body is present it must be at least 20 characters long and must conform to the [Commit Message Body](#commit-body) format.
+When the body is present it MUST be at least 20 characters long and MUST conform to the [Commit Message Body](#commit-body) format.
 
-The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
+The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it MUST have.
 
 #### Commit Message Header
 
@@ -50,8 +51,8 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   │       │             │
   │       │             └─⫸ Summary in present tense. Sentence case. No period at the end.
   │       │
-  │       └─⫸ Commit Scope: design-tokens|icons|web|web-react|web-twig|exporter-css|exporter-svg|
-  │                          ci|repo
+  │       └─⫸ Commit Scope: analytics|design-tokens|form-validations|icons|web|web-react|web-twig|exporter-scss|
+  │                          exporter-svg|ci|repo
   │
   └─⫸ Commit Type: Feat|Fix|Perf|Revert|Docs|Style|Refactor|Test|Chore|Deps
 ```
@@ -60,7 +61,7 @@ The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is opti
 
 ##### Type
 
-Must be one of the following:
+MUST be one of the following:
 
 - **Chore**: Changes to our CI configuration files and scripts (examples: CircleCI, SauceLabs) or changes that affect build system
 - **Deps**: Changes to dependencies
@@ -75,27 +76,27 @@ Must be one of the following:
 
 ##### Scope
 
-The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages).
+The scope SHOULD be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages).
 
 The following is the list of supported scopes:
 
-- `design-tokens`
-- `icons`
-- `web`
-- `web-react`
-- `web-twig`
-- `exporter-css`
-- `exporter-svg`
-- `ci`
-- `repo`
-
-There are currently a few exceptions to the "use package name" rule:
-
-- `ci`: used for changes that affects Continuous Integration process and builds
-
-- `repo`: used for repository wide changes
-
-- none/empty string: useful for `test` and `refactor` changes that are done across all packages (e.g. `Test: Add missing unit tests`) and for docs changes that are not related to a specific package (e.g. `Docs: Fix typo in tutorial`).
+- Apps:
+  - `demo`
+- Exporters:
+  - `exporter-scss`
+  - `exporter-svg`
+- Packages:
+  - `analytics`
+  - `design-tokens`
+  - `form-validations`
+  - `icons`
+  - `web`
+  - `web-react`
+  - `web-twig`
+- Repository-wide:
+  - `ci`: used for changes that affects Continuous Integration process and builds
+  - `repo`: used for repository wide changes
+  - none/empty string: useful for `Test` and `Refactor` changes that are done across all packages (e.g. `Test: Add missing unit tests`) and for docs changes that are not related to a specific package (e.g. `Docs: Fix typo in tutorial`).
 
 ##### Summary
 
@@ -109,7 +110,7 @@ Use the summary field to provide a succinct description of the change:
 
 Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor "fixes".
 
-Explain the motivation for the change in the commit message body. This commit message should explain _why_ you are making the change.
+Explain the motivation for the change in the commit message body. This commit message SHOULD explain _why_ you are making the change.
 You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
 
 #### Commit Message Footer
@@ -125,13 +126,13 @@ BREAKING CHANGE: <breaking change summary>
 Fixes #<issue number>
 ```
 
-Breaking Change section should start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
+Breaking Change section SHOULD start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
 
 ### Revert commits
 
-If the commit reverts a previous commit, it should begin with `Revert: `, followed by the header of the reverted commit.
+If the commit reverts a previous commit, it SHOULD begin with `Revert: `, followed by the header of the reverted commit.
 
-The content of the commit message body should contain:
+The content of the commit message body SHOULD contain:
 
 - information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
@@ -140,9 +141,25 @@ The content of the commit message body should contain:
 
 Test your code before committing with `% yarn test` or `% yarn packages:test`. It will run type linting, code listing, testing, and code formatting.
 
-## Code style
+## Code Style
 
 This project uses Prettier for code formatting. You can run `make format` to format all your code before you submit your code for review.
+
+## Documenting the Components
+
+1. All components MUST be documented in a `README` file in the root of the component, e.g. `packages/web-react/Accordion/README.md`.
+2. The documentation MUST be written in Markdown.
+3. The documentation MUST contain at least a basic example usage of the component.
+4. For complex components or components with subcomponents, the documentation SHOULD contain examples of individual building blocks as well as an example composition.
+5. Component and subcomponent props MUST be documented in a table.
+   1. The table MUST be placed in a section introduced by a headline called `API`.
+   2. The table MUST contain the following columns:
+      - `Name` — the name of the prop, e.g. `title`
+      - `Type` — the type of the prop, e.g. `string`, `number`, `bool`, `[horizontal | vertical]`, an existing [dictionary], etc.
+      - `Default` — the default value of the prop, e.g. `null` or `—` (em-dash) if there is no default value
+      - `Required` — if the prop is required `✔` or not `✕`
+      - `Description` — the description of the prop, e.g. `Title of the accordion`
+   3. The props MUST be sorted alphabetically by their name.
 
 ## Publishing
 
@@ -162,3 +179,4 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [lerna-home]: https://lernajs.io
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
 [packages]: packages/
+[dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
