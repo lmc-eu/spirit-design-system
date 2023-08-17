@@ -68,7 +68,7 @@ const selectTab = useCallback((tabId) => {
 
 | Name                | Type                     | Description                                  |
 | ------------------- | ------------------------ | -------------------------------------------- |
-| `selectedTab`       | `string`, `number`       | Identification of the selected tab           |
+| `selectedTab`       | [`string` \| `number`]   | Identification of the selected tab           |
 | `toogle`            | `Function`               | Toggle function which accept tab ID as input |
 | `children`          | `any`                    | Child component                              |
 | `onSelectionChange` | `(tabId: TabId) => void` | When the state of the selected panel changes |
@@ -79,7 +79,7 @@ const selectTab = useCallback((tabId) => {
 
 | Name                 | Type                     | Description                                  |
 | -------------------- | ------------------------ | -------------------------------------------- |
-| `defaultSelectedTab` | `string`, `number`       | Identification of default selected tab       |
+| `defaultSelectedTab` | [`string` \| `number`]   | Identification of default selected tab       |
 | `children`           | `any`                    | Child component                              |
 | `onSelectionChange`  | `(tabId: TabId) => void` | When the state of the selected panel changes |
 
@@ -99,10 +99,10 @@ Tab list item
 
 **Available props**
 
-| Name       | Type               | Description           |
-| ---------- | ------------------ | --------------------- |
-| `forTab`   | `string`, `number` | Identification of tab |
-| `children` | `any`              | Child component       |
+| Name       | Type                   | Description           |
+| ---------- | ---------------------- | --------------------- |
+| `forTab`   | [`string` \| `number`] | Identification of tab |
+| `children` | `any`                  | Child component       |
 
 ### TabLink
 
@@ -131,9 +131,9 @@ Tab content item
 
 **Available props**
 
-| Name       | Type               | Description           |
-| ---------- | ------------------ | --------------------- |
-| `tabId`    | `string`, `number` | Identification of tab |
-| `children` | `any`              | Child component       |
+| Name       | Type                   | Description           |
+| ---------- | ---------------------- | --------------------- |
+| `tabId`    | [`string` \| `number`] | Identification of tab |
+| `children` | `any`                  | Child component       |
 
 For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.

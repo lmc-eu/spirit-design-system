@@ -101,7 +101,7 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 | Name                 | Type            | Default | Required | Description                            |
 | -------------------- | --------------- | ------- | -------- | -------------------------------------- |
 | `accessibilityLabel` | `string`        | `null`  | ✔        | Accessibility label of the link        |
-| `elementType`        | `ElementType`   | `'a'`   | ✕        | Type of an element                     |
+| `elementType`        | `ElementType`   | `a`     | ✕        | Type of an element                     |
 | `isCurrent`          | `boolean`       | `null`  | ✕        | If true, the link is marked as current |
 | `pageNumber`         | `number`        | -       | ✔        | Page number, hidden for screen readers |
 | `UNSAFE_className`   | `string`        | -       | ✕        | Link custom class name                 |
@@ -111,26 +111,26 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 
 This component extends the [Button][button] component with directional arrows and a hidden label.
 
-| Name                 | Type                 | Default | Required | Description                                                          |
-| -------------------- | -------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `accessibilityLabel` | `string`             | `null`  | ✔        | Accessibility label of the link                                      |
-| `direction`          | `'previous', 'next'` | `null`  | ✔        | The direction according to which the corresponding icon is displayed |
+| Name                 | Type                   | Default | Required | Description                                                          |
+| -------------------- | ---------------------- | ------- | -------- | -------------------------------------------------------------------- |
+| `accessibilityLabel` | `string`               | `null`  | ✔        | Accessibility label of the link                                      |
+| `direction`          | [`previous` \| `next`] | `null`  | ✔        | The direction according to which the corresponding icon is displayed |
 
 ## PaginationLinkPrevious props
 
 This component extends the `PaginationButtonLink` component.
 
-| Name                 | Type     | Default      | Required | Description                     |
-| -------------------- | -------- | ------------ | -------- | ------------------------------- |
-| `accessibilityLabel` | `string` | `'Previous'` | ✕        | Accessibility label of the link |
+| Name                 | Type     | Default    | Required | Description                     |
+| -------------------- | -------- | ---------- | -------- | ------------------------------- |
+| `accessibilityLabel` | `string` | `Previous` | ✕        | Accessibility label of the link |
 
 ## PaginationLinkNext props
 
 This component extends the `PaginationButtonLink` component.
 
-| Name                 | Type     | Default  | Required | Description                     |
-| -------------------- | -------- | -------- | -------- | ------------------------------- |
-| `accessibilityLabel` | `string` | `'Next'` | ✕        | Accessibility label of the link |
+| Name                 | Type     | Default | Required | Description                     |
+| -------------------- | -------- | ------- | -------- | ------------------------------- |
+| `accessibilityLabel` | `string` | `Next`  | ✕        | Accessibility label of the link |
 
 ## Icons Provider
 

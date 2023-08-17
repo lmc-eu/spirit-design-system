@@ -49,7 +49,7 @@ Advanced example usage:
 | `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name       |
 | `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style            |
 | `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state        |
-| `validationText`   | `string`, `string[]`                           | -       | ✕        | Validation text                 |
+| `validationText`   | [`string` \| `string[]`]                       | -       | ✕        | Validation text                 |
 
 ## Icons Provider
 

@@ -17,13 +17,13 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 
 ## Available props
 
-| Name               | Type                          | Default | Required | Description                         |
-| ------------------ | ----------------------------- | ------- | -------- | ----------------------------------- |
-| `cols`             | `1`, `2`, `3`, `4`, `6`, `12` | -       | ✕        | Number of columns to use            |
-| `desktop`          | `1`, `2`, `3`, `4`, `6`, `12` | -       | ✕        | Number of columns to use on desktop |
-| `elementType`      | HTML element                  | -       | ✕        | Element type to use for the Grid    |
-| `tablet`           | `1`, `2`, `3`, `4`, `6`, `12` | -       | ✕        | Number of columns to use on tablet  |
-| `UNSAFE_className` | `string`                      | -       | ✕        | Wrapper custom class name           |
-| `UNSAFE_style`     | `CSSProperties`               | -       | ✕        | Wrapper custom style                |
+| Name               | Type                                      | Default | Required | Description                         |
+| ------------------ | ----------------------------------------- | ------- | -------- | ----------------------------------- |
+| `cols`             | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | -       | ✕        | Number of columns to use            |
+| `desktop`          | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | -       | ✕        | Number of columns to use on desktop |
+| `elementType`      | HTML element                              | -       | ✕        | Element type to use for the Grid    |
+| `tablet`           | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | -       | ✕        | Number of columns to use on tablet  |
+| `UNSAFE_className` | `string`                                  | -       | ✕        | Wrapper custom class name           |
+| `UNSAFE_style`     | `CSSProperties`                           | -       | ✕        | Wrapper custom style                |
 
 For detailed information see [Grid](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md) component

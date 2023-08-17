@@ -107,10 +107,10 @@ just branding.
 
 ## API
 
-| Prop name  | Type                      | Default       | Required | Description                         |
-| ---------- | ------------------------- | ------------- | -------- | ----------------------------------- |
-| `color`    | `transparent`, `inverted` | `transparent` | no       | Color variant                       |
-| `isSimple` | `bool`                    | `false`       | no       | Shorter, centered version of Header |
+| Prop name  | Type                          | Default       | Required | Description                         |
+| ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
+| `color`    | [`transparent` \| `inverted`] | `transparent` | no       | Color variant                       |
+| `isSimple` | `bool`                        | `false`       | no       | Shorter, centered version of Header |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -187,9 +187,9 @@ control here.
 
 #### API
 
-| Prop name | Type                   | Default   | Required | Description   |
-| --------- | ---------------------- | --------- | -------- | ------------- |
-| `color`   | `primary`, `secondary` | `primary` | no       | Color variant |
+| Prop name | Type                       | Default   | Required | Description   |
+| --------- | -------------------------- | --------- | -------- | ------------- |
+| `color`   | [`primary` \| `secondary`] | `primary` | no       | Color variant |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -320,9 +320,9 @@ the optional secondary actions slot.
 
 #### API
 
-| Prop name | Type                   | Default   | Required | Description               |
-| --------- | ---------------------- | --------- | -------- | ------------------------- |
-| `color`   | `primary`, `secondary` | `primary` | no       | Color of the actions slot |
+| Prop name | Type                       | Default   | Required | Description               |
+| --------- | -------------------------- | --------- | -------- | ------------------------- |
+| `color`   | [`primary` \| `secondary`] | `primary` | no       | Color of the actions slot |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

@@ -55,10 +55,10 @@ Hide button when collapse
 
 ## Wrapper attributes
 
-| Prop name                | Type                   | Default | Required | Description                                                              |
-| ------------------------ | ---------------------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-spirit-breakpoint` | `'tablet'`,`'desktop'` | -       | no       | Breakpoint on which the collapsed content is forced to reveal \*         |
-| `data-spirit-parent`     | `string`               | -       | no       | A parent element selector that ensures that only one item is opened \*\* |
+| Prop name                | Type                    | Default | Required | Description                                                              |
+| ------------------------ | ----------------------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `data-spirit-breakpoint` | [`tablet` \| `desktop`] | -       | no       | Breakpoint on which the collapsed content is forced to reveal \*         |
+| `data-spirit-parent`     | `string`                | -       | no       | A parent element selector that ensures that only one item is opened \*\* |
 
 There can be several triggers, the same rules apply to each.
 

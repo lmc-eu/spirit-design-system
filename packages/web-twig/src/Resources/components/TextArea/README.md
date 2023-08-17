@@ -64,9 +64,9 @@ Without lexer:
 | `rows`                  | `number`                                       | `null`  | no       | Number of visible rows                                                                                      |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | no       | Unescaped custom helper text                                                                                |
 | `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text                                                                                        |
-| `UNSAFE_validationText` | `string`, `string[]`                           | `null`  | no       | Unescaped custom validation text                                                                            |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | no       | Unescaped custom validation text                                                                            |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                                                                   |
-| `validationText`        | `string`, `string[]`                           | `null`  | no       | Validation text                                                                                             |
+| `validationText`        | [`string` \| `string[]`]                       | `null`  | no       | Validation text                                                                                             |
 | `value`                 | `string`                                       | `null`  | no       | TextArea value                                                                                              |
 
 \*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.

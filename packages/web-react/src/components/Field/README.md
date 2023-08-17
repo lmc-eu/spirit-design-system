@@ -24,8 +24,8 @@ Advanced example:
 
 **Available props**
 
-| Name             | Type                 | Default | Required | Description                                                                                    |
-| ---------------- | -------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `className`      | `string`             | -       | ✔        | Wrapper custom class name                                                                      |
-| `elementType`    | `span`, `div`        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
-| `validationText` | `string`, `string[]` | -       | ✔        | Validation text                                                                                |
+| Name             | Type                     | Default | Required | Description                                                                                    |
+| ---------------- | ------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `className`      | `string`                 | -       | ✔        | Wrapper custom class name                                                                      |
+| `elementType`    | [`span` \| `div`]        | `div`   | ✕        | Type of element used as main wrapper (applied only for single validation text, otherwise `ul`) |
+| `validationText` | [`string` \| `string[]`] | -       | ✔        | Validation text                                                                                |

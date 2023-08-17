@@ -64,13 +64,13 @@ The rest of the properties are created from the default `<dialog>` element. [Mor
 
 **Available props**
 
-| Name                 | Type                | Default     | Required | Description                                          |
-| -------------------- | ------------------- | ----------- | -------- | ---------------------------------------------------- |
-| `children`           | `ReactNode`         | -           | ✕        | Children node                                        |
-| `elementType`        | `'article', 'form'` | `'article'` | ✕        | ModalDialog element type                             |
-| `UNSAFE_className`   | `string`            | -           | ✕        | ModalDialog custom class name                        |
-| `UNSAFE_style`       | `CSSProperties`     | -           | ✕        | ModalDialog custom style                             |
-| `isExpandedOnMobile` | `boolean`           | -           | ✕        | ModalDialog shrinks to fit the height of its content |
+| Name                 | Type                  | Default   | Required | Description                                          |
+| -------------------- | --------------------- | --------- | -------- | ---------------------------------------------------- |
+| `children`           | `ReactNode`           | -         | ✕        | Children node                                        |
+| `elementType`        | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                             |
+| `UNSAFE_className`   | `string`              | -         | ✕        | ModalDialog custom class name                        |
+| `UNSAFE_style`       | `CSSProperties`       | -         | ✕        | ModalDialog custom style                             |
+| `isExpandedOnMobile` | `boolean`             | -         | ✕        | ModalDialog shrinks to fit the height of its content |
 
 The rest of the properties are formed from the selected type of element. Documentation for [Article][ArticleElementDocs], [Form][FormElementDocs].
 
@@ -103,12 +103,12 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 
 **Available props**
 
-| Name               | Type                                          | Default   | Required | Description                   |
-| ------------------ | --------------------------------------------- | --------- | -------- | ----------------------------- |
-| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `'right'` | ✕        | ModalFooter alignment         |
-| `children`         | `ReactNode`                                   | -         | ✕        | Children node                 |
-| `UNSAFE_className` | `string`                                      | -         | ✕        | ModalFooter custom class name |
-| `UNSAFE_style`     | `CSSProperties`                               | -         | ✕        | ModalFooter custom style      |
+| Name               | Type                                          | Default | Required | Description                   |
+| ------------------ | --------------------------------------------- | ------- | -------- | ----------------------------- |
+| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | ModalFooter alignment         |
+| `children`         | `ReactNode`                                   | -       | ✕        | Children node                 |
+| `UNSAFE_className` | `string`                                      | -       | ✕        | ModalFooter custom class name |
+| `UNSAFE_style`     | `CSSProperties`                               | -       | ✕        | ModalFooter custom style      |
 
 The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
 

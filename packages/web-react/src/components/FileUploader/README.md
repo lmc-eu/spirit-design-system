@@ -333,12 +333,12 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `isDisabled`         | `boolean`                            | -        | ✕        | Whether is field disabled                                                                                                                                       |
 | `isRequired`         | `boolean`                            | -        | ✕        | Whether is field required                                                                                                                                       |
 | `validationState`    | `ValidationState`                    | -        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | `string`, `string[]`                 | -        | ✕        | Validation status text                                                                                                                                          |
+| `validationText`     | [`string` \| `string[]`]             | -        | ✕        | Validation status text                                                                                                                                          |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `isLabelHidden`      | `boolean`                            | -        | ✕        | Whether is input label hidden                                                                                                                                   |
 | `isMultiple`         | `boolean`                            | -        | ✕        | When multiple files can be selected at once                                                                                                                     |
-| `queueLimitBehavior` | `'hide', 'disable', 'none'`          | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
+| `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `label`              | `string`                             | -        | ✕        | Field label                                                                                                                                                     |
 | `name`               | `string`                             | -        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition                                                                                                                                     |
@@ -428,13 +428,13 @@ via `inputProps` and `listProps`.
 | `isLabelHidden`       | `boolean`                               | -        | ✕        | Whether is input label hidden                       |
 | `isMultiple`          | `boolean`                               | -        | ✕        | When multiple files can be selected at once         |
 | `isDisabled`          | `boolean`                               | -        | ✕        | Whether is field disabled                           |
-| `queueLimitBehavior`  | `'hide', 'disable', 'none'`             | `none`   | ✕        | Input behavior when the file queue is filled        |
+| `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
 | `isRequired`          | `boolean`                               | -        | ✕        | Whether is field required                           |
 | `isFluid`             | `boolean`                               | -        | ✕        | When the field is supposed to be fluid              |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | -        | ✕        | Callback on error condition                         |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | -        | ✕        | Callback on change in fileQueue                     |
 | `validationState`     | `ValidationState`                       | -        | ✕        | Validation state                                    |
-| `validationText`      | `string`, `string[]`                    | -        | ✕        | Validation status text                              |
+| `validationText`      | [`string` \| `string[]`]                | -        | ✕        | Validation status text                              |
 | `UNSAFE_className`    | `string`                                | -        | ✕        | UncontrolledFileUploader custom class name          |
 | `UNSAFE_style`        | `CSSProperties`                         | -        | ✕        | UncontrolledFileUploader custom style               |
 

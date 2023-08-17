@@ -107,7 +107,7 @@ Validation states can be presented either by adding the `validationState` attrib
 | `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name                |
 | `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style                     |
 | `validationState`  | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state                 |
-| `validationText`   | `string`, `string[]`                           | `null`  | no       | Validation text                          |
+| `validationText`   | [`string` \| `string[]`]                       | `null`  | no       | Validation text                          |
 
 [gh-web-field-group-html]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#html-semantics
 [gh-web-field-group-disabled]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#disabled-state

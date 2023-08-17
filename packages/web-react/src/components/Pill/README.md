@@ -21,12 +21,12 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## Available props
 
-| Name               | Type                                                                                                                | Default    | Required | Description               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------- |
-| `children`         | `ReactNode`                                                                                                         | -          | ✔        | Content of the Pill       |
-| `color`            | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color], `selected`, `unselected` | `selected` | ✕        | Color of the component    |
-| `UNSAFE_className` | `string`                                                                                                            | -          | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`                                                                                                     | -          | ✕        | Wrapper custom style      |
+| Name               | Type                                                                                                                        | Default    | Required | Description               |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------- |
+| `children`         | `ReactNode`                                                                                                                 | -          | ✔        | Content of the Pill       |
+| `color`            | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color of the component    |
+| `UNSAFE_className` | `string`                                                                                                                    | -          | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties`                                                                                                             | -          | ✕        | Wrapper custom style      |
 
 For detailed information see [Pill](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pill/README.md) component
 

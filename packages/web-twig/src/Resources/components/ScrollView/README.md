@@ -46,11 +46,11 @@ Or, feel free to write the controlling script yourself.
 
 ## API
 
-| Prop name             | Type                         | Default    | Required | Description                        |
-| --------------------- | ---------------------------- | ---------- | -------- | ---------------------------------- |
-| `direction`           | `horizontal`, `vertical`     | `vertical` | no       | Direction of the scroll            |
-| `isScrollbarDisabled` | `bool`                       | `false`    | no       | If true, the Scrollbar is disabled |
-| `overflowDecorators`  | `borders`, `shadows`, `both` | `shadows`  | no       | Type of overflow decorators        |
+| Prop name             | Type                               | Default    | Required | Description                        |
+| --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
+| `direction`           | [`horizontal` \| `vertical`]       | `vertical` | no       | Direction of the scroll            |
+| `isScrollbarDisabled` | `bool`                             | `false`    | no       | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | [`borders` \| `shadows` \| `both`] | `shadows`  | no       | Type of overflow decorators        |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
