@@ -62,7 +62,7 @@ format: ## Checks code formatting of all packages
 	$(PKG_MANAGER) format
 
 format-fix: ## Fixes code formatting
-	$(PKG_MANAGER) format
+	$(PKG_MANAGER) format:fix
 
 lint: ## Lints all packages
 	$(PKG_MANAGER) lint
