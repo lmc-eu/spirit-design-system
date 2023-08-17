@@ -25,7 +25,7 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
 
-## Available props
+## API
 
 | Name               | Type                                         | Default   | Required | Description                |
 | ------------------ | -------------------------------------------- | --------- | -------- | -------------------------- |

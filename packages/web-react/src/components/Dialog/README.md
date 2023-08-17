@@ -22,7 +22,7 @@ const handleClose = () => {
 
 ## Dialog
 
-**Available props**
+### API
 
 | Name       | Type                                           | Default | Description               |
 | ---------- | ---------------------------------------------- | ------- | ------------------------- |

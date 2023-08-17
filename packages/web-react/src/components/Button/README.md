@@ -33,7 +33,7 @@ import { RouterLink } from 'react-router-dom';
 </Button>;
 ```
 
-### Available props
+### API
 
 | Name               | Type                                                                                      | Default   | Required | Description                                                                |
 | ------------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
@@ -74,7 +74,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
   <ButtonLink color="danger">Click me</ButtonLink>
 ```
 
-### Available props
+### API
 
 | Name               | Type                                                                                      | Default   | Required | Description                                                                    |
 | ------------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |

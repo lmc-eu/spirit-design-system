@@ -34,7 +34,7 @@ Example with Auto-Height Adjustment
 <TextArea id="example" name="example" isAutoResizing autoResizingMaxHeight={500} />
 ```
 
-## Available props
+## API
 
 | Name                    | Type                                           | Default | Required | Description                                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | -------------------------------------------------------------------- |

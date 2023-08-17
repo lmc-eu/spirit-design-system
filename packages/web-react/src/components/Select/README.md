@@ -32,7 +32,7 @@ Advanced example usage:
 </Select>
 ```
 
-## Available props
+## API
 
 | Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |

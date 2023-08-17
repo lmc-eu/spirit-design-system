@@ -6,7 +6,7 @@ Link allows users to follow navigation.
 <Link href="/" color="primary" isUnderlined isDisabled />
 ```
 
-## Available props
+## API
 
 | Name               | Type                                             | Default   | Required | Description                    |
 | ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |

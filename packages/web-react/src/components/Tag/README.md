@@ -12,7 +12,7 @@ import { Tag } from '@lmc-eu/spirit-web-react';
   <Tag color="danger">Tag</Tag>
 ```
 
-## Available props
+## API
 
 | Name               | Type                                                    | Default   | Required | Description                     |
 | ------------------ | ------------------------------------------------------- | --------- | -------- | ------------------------------- |

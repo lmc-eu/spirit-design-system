@@ -6,7 +6,7 @@ The Text component provides helper classes to render text.
 <Text size="large" emphasis="bold" />
 ```
 
-## Available props
+## API
 
 | Name               | Type                                        | Default  | Required | Description               |
 | ------------------ | ------------------------------------------- | -------- | -------- | ------------------------- |

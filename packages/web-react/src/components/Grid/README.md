@@ -15,7 +15,7 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 </Grid>
 ```
 
-## Available props
+## API
 
 | Name               | Type                                      | Default | Required | Description                         |
 | ------------------ | ----------------------------------------- | ------- | -------- | ----------------------------------- |

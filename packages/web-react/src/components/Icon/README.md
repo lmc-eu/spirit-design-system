@@ -14,7 +14,7 @@ import icons from '@lmc-eu/spirit-icons/icons';
 </IconsProvider>
 ```
 
-## Available props
+## API
 
 | Name               | Type            | Required | Description                    |
 | ------------------ | --------------- | -------- | ------------------------------ |

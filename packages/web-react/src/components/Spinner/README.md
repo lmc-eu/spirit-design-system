@@ -7,7 +7,7 @@ The Spinner indicates something is loading.
 <Spinner color="secondary" />
 ```
 
-## Available props
+## API
 
 | Name               | Type                                      | Default | Required | Description               |
 | ------------------ | ----------------------------------------- | ------- | -------- | ------------------------- |

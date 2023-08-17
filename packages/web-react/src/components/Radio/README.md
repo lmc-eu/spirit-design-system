@@ -25,7 +25,7 @@ Advanced example usage:
 />
 ```
 
-## Available props
+## API
 
 | Name               | Type                                           | Default | Required | Description                    |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------ |

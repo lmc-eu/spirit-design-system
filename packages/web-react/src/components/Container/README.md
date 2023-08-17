@@ -6,7 +6,7 @@ Container centers your content horizontally and sets its max-width with horizont
 <Container>Content</Container>
 ```
 
-## Available props
+## API
 
 | Name               | Type            | Default | Required | Description               |
 | ------------------ | --------------- | ------- | -------- | ------------------------- |
