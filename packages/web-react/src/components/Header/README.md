@@ -343,8 +343,8 @@ The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanD
 
 | Name               | Type            | Default | Required | Description                      |
 | ------------------ | --------------- | ------- | -------- | -------------------------------- |
-| `isCurrent`        | `boolean`       | -       | ✕        | When link should be current page |
 | `children`         | `ReactNode`     | -       | ✕        | Children node                    |
+| `isCurrent`        | `boolean`       | -       | ✕        | When link should be current page |
 | `UNSAFE_style`     | `CSSProperties` | -       | ✕        | HeaderLink custom style          |
 | `UNSAFE_className` | `string`        | -       | ✕        | HeaderLink custom class name     |
 
@@ -356,11 +356,11 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 
 | Name               | Type                                           | Default | Required | Description                           |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------------- |
-| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback for dialog when opened       |
-| `menuToggleLabel`  | `string`                                       | -       | `Menu`   | Label for button toggle               |
-| `isOpen`           | `boolean`                                      | `false` | ✔        | Dialog open state                     |
-| `dialogId`         | `string`                                       | -       | ✕        | ID of dialog element                  |
 | `children`         | `ReactNode`                                    | -       | ✕        | Children node                         |
+| `dialogId`         | `string`                                       | -       | ✕        | ID of dialog element                  |
+| `isOpen`           | `boolean`                                      | `false` | ✔        | Dialog open state                     |
+| `menuToggleLabel`  | `string`                                       | -       | `Menu`   | Label for button toggle               |
+| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback for dialog when opened       |
 | `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | HeaderMobileActions custom style      |
 | `UNSAFE_className` | `string`                                       | -       | ✕        | HeaderMobileActions custom class name |
 

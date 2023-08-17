@@ -10,8 +10,8 @@ Link allows users to follow navigation.
 
 | Name               | Type                                             | Default   | Required | Description                    |
 | ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |
-| `href`             | `string`                                         | -         | ✕        | Link's href attribute          |
 | `color`            | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
+| `href`             | `string`                                         | -         | ✕        | Link's href attribute          |
 | `isUnderlined`     | `boolean`                                        | `false`   | ✕        | Whether is the link underlined |
 | `isDisabled`       | `boolean`                                        | `false`   | ✕        | Whether is the link disabled   |
 | `ref`              | `ForwardedRef<HTMLAnchorElement>`                | -         | ✕        | Link element reference         |

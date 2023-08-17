@@ -38,11 +38,11 @@ Advanced example usage:
 | `label`            | `string`                                       | -       | ✕        | Label text                     |
 | `name`             | `string`                                       | -       | ✕        | Input name                     |
 | `ref`              | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference        |
+| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name      |
+| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style           |
 | `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.      |
 | `validationText`   | `string`, `string[]`                           | -       | ✕        | Validation text                |
 | `value`            | `string`                                       | -       | ✕        | Input value                    |
-| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name      |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style           |
 
 ## Custom component
 

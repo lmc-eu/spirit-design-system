@@ -51,10 +51,10 @@ const handleClose = () => {
 
 | Name               | Type                                           | Default | Required | Description               |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
+| `children`         | `ReactNode`                                    | -       | ✕        | Children node             |
 | `id`               | `string`                                       | -       | ✔        | Open state                |
 | `isOpen`           | `boolean`                                      | `false` | ✔        | Open state                |
 | `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback on dialog closed |
-| `children`         | `ReactNode`                                    | -       | ✕        | Children node             |
 | `UNSAFE_className` | `string`                                       | -       | ✕        | Modal custom class name   |
 | `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Modal custom style        |
 
@@ -66,8 +66,8 @@ The rest of the properties are created from the default `<dialog>` element. [Mor
 
 | Name                 | Type                | Default     | Required | Description                                          |
 | -------------------- | ------------------- | ----------- | -------- | ---------------------------------------------------- |
-| `elementType`        | `'article', 'form'` | `'article'` | ✕        | ModalDialog element type                             |
 | `children`           | `ReactNode`         | -           | ✕        | Children node                                        |
+| `elementType`        | `'article', 'form'` | `'article'` | ✕        | ModalDialog element type                             |
 | `UNSAFE_className`   | `string`            | -           | ✕        | ModalDialog custom class name                        |
 | `UNSAFE_style`       | `CSSProperties`     | -           | ✕        | ModalDialog custom style                             |
 | `isExpandedOnMobile` | `boolean`           | -           | ✕        | ModalDialog shrinks to fit the height of its content |
@@ -105,8 +105,8 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 
 | Name               | Type                                          | Default   | Required | Description                   |
 | ------------------ | --------------------------------------------- | --------- | -------- | ----------------------------- |
-| `children`         | `ReactNode`                                   | -         | ✕        | Children node                 |
 | `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `'right'` | ✕        | ModalFooter alignment         |
+| `children`         | `ReactNode`                                   | -         | ✕        | Children node                 |
 | `UNSAFE_className` | `string`                                      | -         | ✕        | ModalFooter custom class name |
 | `UNSAFE_style`     | `CSSProperties`                               | -         | ✕        | ModalFooter custom style      |
 

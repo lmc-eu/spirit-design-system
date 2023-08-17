@@ -152,8 +152,8 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 | Name               | Type                          | Default     | Required | Description                                    |
 | ------------------ | ----------------------------- | ----------- | -------- | ---------------------------------------------- |
 | `children`         | `ReactNode`                   | -           | ✔        | Accordion children's nodes                     |
-| `elementType`      | `'section', 'article', 'div'` | `'section'` | ✕        | Type of element used as wrapper                |
 | `defaultOpen`      | `string, string[]`            | -           | ✕        | Default open item(s) \*                        |
+| `elementType`      | `'section', 'article', 'div'` | `'section'` | ✕        | Type of element used as wrapper                |
 | `stayOpen`         | `boolean`                     | -           | ✕        | Item stay open when another one is also opened |
 | `UNSAFE_className` | `string`                      | -           | ✕        | Wrapper custom class name                      |
 | `UNSAFE_style`     | `CSSProperties`               | -           | ✕        | Wrapper custom style                           |
@@ -164,9 +164,9 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 | Name               | Type                          | Default     | Required | Description                                     |
 | ------------------ | ----------------------------- | ----------- | -------- | ----------------------------------------------- |
-| `id`               | `string`                      | -           | ✔        | Item id                                         |
 | `children`         | `ReactNode`                   | -           | ✔        | Item children node                              |
 | `elementType`      | `'article', 'section', 'div'` | `'article'` | ✕        | Type of element used as wrapper for single item |
+| `id`               | `string`                      | -           | ✔        | Item id                                         |
 | `UNSAFE_className` | `string`                      | -           | ✕        | Item custom class name                          |
 | `UNSAFE_style`     | `CSSProperties`               | -           | ✕        | Item custom style                               |
 
