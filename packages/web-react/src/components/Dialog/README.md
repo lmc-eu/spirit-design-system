@@ -24,10 +24,10 @@ const handleClose = () => {
 
 ### API
 
-| Name       | Type                                           | Default | Description               |
-| ---------- | ---------------------------------------------- | ------- | ------------------------- |
-| `isOpen`   | `bool`                                         | `false` | Open state                |
-| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | Callback on dialog closed |
-| `children` | `ReactNode`                                    | —       | Children node             |
+| Name       | Type                                           | Default | Required | Description               |
+| ---------- | ---------------------------------------------- | ------- | -------- | ------------------------- |
+| `isOpen`   | `bool`                                         | `false` | ✕        | Open state                |
+| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✕        | Callback on dialog closed |
+| `children` | `ReactNode`                                    | —       | ✕        | Children node             |
 
 [dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

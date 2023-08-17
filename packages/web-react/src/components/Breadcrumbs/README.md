@@ -53,12 +53,12 @@ Use custom content for ordered list as component's children instead of passing b
 
 ## API
 
-| Name               | Type                | Required | Description                                                                                                                                                                                 |
-| ------------------ | ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| `children`         | `ReactNode`         | ✕        | Custom content to override items rendering from array                                                                                                                                       |
-| `goBackTitle`      | `string`            | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
-| `items`            | `BreadcrumbsItem[]` | ✕        | Navigation menu items                                                                                                                                                                       |
-| `UNSAFE_className` | `string`            | —        | ✕                                                                                                                                                                                           | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`     | —        | ✕                                                                                                                                                                                           | Wrapper custom style      |
+| Name               | Type                | Default | Required | Description                                                                                                                                                                                 |
+| ------------------ | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`         | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                       |
+| `goBackTitle`      | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
+| `items`            | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                       |
+| `UNSAFE_className` | `string`            | —       | ✕        | Wrapper custom class name                                                                                                                                                                   |
+| `UNSAFE_style`     | `CSSProperties`     | —       | ✕        | Wrapper custom style                                                                                                                                                                        |
 
 For detailed information see [Breadcrumbs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md) component

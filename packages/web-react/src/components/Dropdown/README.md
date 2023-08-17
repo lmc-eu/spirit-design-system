@@ -14,20 +14,20 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 </Dropdown>
 ```
 
-## Props
+## API
 
 | Name               | Type                                             | Default       | Required | Description                                    |
 | ------------------ | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose`  | `bool`                                           | `true`        | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
 | `id`               | `string`                                         | `<random>`    | ✕        | Component id                                   |
-| `onAutoClose` .    | `(event: Event) => void`                         |               | ✕        | Callback on close on click outside of Dropdown |
+| `onAutoClose` .    | `(event: Event) => void`                         | —             | ✕        | Callback on close on click outside of Dropdown |
 | `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | ✕        | Alignment of the component                     |
 | `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | —             | ✕        | Properties for trigger render                  |
 | `UNSAFE_className` | `string`                                         | —             | ✕        | Wrapper custom classname                       |
 | `UNSAFE_style`     | `CSSProperties`                                  | —             | ✕        | Wrapper custom style                           |
 
-## DropdownRenderProps
+### DropdownRenderProps
 
 | Name                       | Type                                               | Description             |
 | -------------------------- | -------------------------------------------------- | ----------------------- |
