@@ -197,12 +197,12 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `multiple`              | `bool`                                         | `false`                 | no       | If true, multiple files can be selected                               |
 | `name`                  | `string`                                       | `null`                  | no       | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | no       | Text shown in the drop zone                                           |
-| `queueLimitBehavior`    | `'hide', 'disable', 'none'`                    | `none`                  | no       | Input behavior when the file queue is filled                          |
+| `queueLimitBehavior`    | [`hide` \| `disable` \| `none`]                | `none`                  | no       | Input behavior when the file queue is filled                          |
 | `UNSAFE_helperText`     | `string`                                       | `null`                  | no\*\*   | Unescaped custom helper text                                          |
 | `UNSAFE_label`          | `string`                                       | `null`                  | no\*     | Unescaped label text (allows HTML)                                    |
-| `UNSAFE_validationText` | `string`, `string[]`                           | `null`                  | no\*\*   | Unescaped validation text                                             |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`                  | no\*\*   | Unescaped validation text                                             |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | no       | Type of validation state                                              |
-| `validationText`        | `string`, `string[]`                           | `null`                  | no\*\*   | Validation text                                                       |
+| `validationText`        | [`string` \| `string[]`]                       | `null`                  | no\*\*   | Validation text                                                       |
 
 \*: To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 \*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.

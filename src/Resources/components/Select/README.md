@@ -58,9 +58,9 @@ Without lexer:
 | `name`                  | `string`                                       | `null`  | no       | Select name                                                |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | no       | Unescaped custom helper text                               |
 | `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text                                       |
-| `UNSAFE_validationText` | `string`, `string[]`                           | `null`  | no       | Unescaped validation text                                  |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | no       | Unescaped validation text                                  |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                  |
-| `validationText`        | `string`, `string[]`                           | `null`  | no       | Validation text                                            |
+| `validationText`        | [`string` \| `string[]`]                       | `null`  | no       | Validation text                                            |
 
 \*: The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
 
