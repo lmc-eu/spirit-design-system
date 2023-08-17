@@ -25,7 +25,7 @@ Without lexer:
 
 ## API
 
-| Prop name    | Type     | Default | Required | Description                           |
+| Name         | Type     | Default | Required | Description                           |
 | ------------ | -------- | ------- | -------- | ------------------------------------- |
 | `ariaHidden` | `bool`   | `true`  | ✕        | If true, icon is hidden from a11y API |
 | `boxSize`    | `number` | `24`    | ✕        | Size of the icon                      |

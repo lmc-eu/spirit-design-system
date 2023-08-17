@@ -96,7 +96,7 @@ These attributes will be passed to the topmost HTML element of the component.
 
 #### API
 
-| Prop name            | Type     | Default | Required | Description                            |
+| Name                 | Type     | Default | Required | Description                            |
 | -------------------- | -------- | ------- | -------- | -------------------------------------- |
 | `accessibilityLabel` | `string` | `null`  | ✔        | Accessibility label of the link        |
 | `href`               | `string` | `null`  | ✕        | URL target of a link                   |
@@ -138,7 +138,7 @@ These attributes will be passed to the topmost HTML element of the component.
 
 #### API
 
-| Prop name            | Type     | Default              | Required | Description                       |
+| Name                 | Type     | Default              | Required | Description                       |
 | -------------------- | -------- | -------------------- | -------- | --------------------------------- |
 | `accessibilityLabel` | `string` | `Next` or `Previous` | ✕        | Accessibility label of the button |
 | `href`               | `string` | —                    | ✕        | Link URL                          |

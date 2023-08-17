@@ -28,7 +28,7 @@ Modal is a composition of several subcomponents:
 
 ### API
 
-| Prop name | Type     | Default | Required | Description                        |
+| Name      | Type     | Default | Required | Description                        |
 | --------- | -------- | ------- | -------- | ---------------------------------- |
 | `id`      | `string` | —       | ✔        | Modal ID                           |
 | `titleId` | `string` | `null`  | ✕        | ID of the title inside ModalHeader |
@@ -57,7 +57,7 @@ footer of the dialog.
 
 ### API
 
-| Prop name                     | Type                          | Default   | Required | Description                                                                                             |
+| Name                          | Type                          | Default   | Required | Description                                                                                             |
 | ----------------------------- | ----------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------- |
 | `accept-charset`              | `string`                      | `null`    | ✕        | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case) |
 | `action`                      | `string`                      | `null`    | ✕        | `elementType="form"` only: URL to use for form submission                                               |
@@ -130,7 +130,7 @@ accessible name for the dialog, e.g. using the `aria-label` attribute on
 
 ### API
 
-| Prop name       | Type     | Default | Required | Description             |
+| Name            | Type     | Default | Required | Description             |
 | --------------- | -------- | ------- | -------- | ----------------------- |
 | `closeLabel`    | `string` | `Close` | ✕        | Custom close label      |
 | `enableDismiss` | `bool`   | `true`  | ✕        | Enable JS Modal dismiss |
@@ -176,7 +176,7 @@ These attributes will be passed to the topmost HTML element of the component.
 
 ### API
 
-| Prop name     | Type                                          | Default | Required | Description                 |
+| Name          | Type                                          | Default | Required | Description                 |
 | ------------- | --------------------------------------------- | ------- | -------- | --------------------------- |
 | `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | Alignment of Footer Actions |
 | `description` | `string`                                      | `null`  | ✕        | Optional Footer Description |

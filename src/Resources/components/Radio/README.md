@@ -37,7 +37,7 @@ Without lexer:
 
 ## API
 
-| Prop name           | Type                                           | Default | Required | Description                                          |
+| Name                | Type                                           | Default | Required | Description                                          |
 | ------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autocomplete`      | `string`                                       | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr] |
 | `helperText`        | `string`                                       | `null`  | ✕        | Custom helper text                                   |

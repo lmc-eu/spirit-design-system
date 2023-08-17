@@ -39,7 +39,7 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                         | Default   | Required | Description                |
+| Name          | Type                                         | Default   | Required | Description                |
 | ------------- | -------------------------------------------- | --------- | -------- | -------------------------- |
 | `color`       | [Emotion Color dictionary][dictionary-color] | `success` | ✕        | Color variant              |
 | `elementType` | `string`                                     | `div`     | ✕        | HTML tag to render         |

@@ -56,7 +56,7 @@ There is no API for TabItem.
 
 ### TabLink
 
-| Prop name    | Type     | Default | Required | Description                  |
+| Name         | Type     | Default | Required | Description                  |
 | ------------ | -------- | ------- | -------- | ---------------------------- |
 | `href`       | `string` | `null`  | ✕        | URL target of a link         |
 | `isSelected` | `bool`   | `false` | ✕        | Whether is tab item selected |
@@ -64,7 +64,7 @@ There is no API for TabItem.
 
 ### TabPane
 
-| Prop name    | Type      | Default | Required | Description                    |
+| Name         | Type      | Default | Required | Description                    |
 | ------------ | --------- | ------- | -------- | ------------------------------ |
 | `id`         | `string ` | `null`  | ✔        | Tab pane target identification |
 | `isSelected` | `bool`    | `false` | ✕        | Whether is tab pane selected   |

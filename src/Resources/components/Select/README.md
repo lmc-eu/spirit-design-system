@@ -45,7 +45,7 @@ Without lexer:
 
 ## API
 
-| Prop name               | Type                                           | Default | Required | Description                                                |
+| Name                    | Type                                           | Default | Required | Description                                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
 | `helperText`            | `string`                                       | `null`  | ✕        | Custom helper text                                         |
 | `id`                    | `string`                                       | —       | ✔        | Select and label identification                            |
