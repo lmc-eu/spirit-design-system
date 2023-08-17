@@ -1,7 +1,7 @@
 import React, { useRef, RefObject, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
 import { SpiritFileUploaderAttachmentProps } from '../../types';
-import { useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderAttachment } from './useFileUploaderAttachment';
 import AttachmentImagePreview from './AttachmentImagePreview';
@@ -13,17 +13,21 @@ import AttachmentDismissButton from './AttachmentDismissButton';
 
 const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   const {
+    /** @deprecated Will be removed in the next major version. */
+    buttonLabel,
+    /** @deprecated Will be removed in the next major version. */
+    editButtonLabel,
+    editText,
     file,
     hasImagePreview,
+    iconName = DEFAULT_ICON_NAME,
     id,
     label,
     name,
     onDismiss,
-    onError,
     onEdit,
-    iconName = DEFAULT_ICON_NAME,
-    buttonLabel = DEFAULT_BUTTON_LABEL,
-    editButtonLabel = DEFAULT_EDIT_BUTTON_LABEL,
+    onError,
+    removeText,
     ...restProps
   } = props;
   const [imagePreview, setImagePreview] = useState<string>('');
@@ -49,6 +53,26 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
 
   useFileUploaderAttachment({ attachmentRef, file, name, onError });
 
+  useDeprecationMessage({
+    method: 'property',
+    trigger: !!buttonLabel,
+    componentName: 'FileUploaderAttachment',
+    propertyProps: {
+      deprecatedName: 'buttonLabel',
+      newName: 'removeText',
+    },
+  });
+
+  useDeprecationMessage({
+    method: 'property',
+    trigger: !!editButtonLabel,
+    componentName: 'FileUploaderAttachment',
+    propertyProps: {
+      deprecatedName: 'editButtonLabel',
+      newName: 'editText',
+    },
+  });
+
   return (
     <li
       id={id}
@@ -67,10 +91,14 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       </span>
       {onEdit && (
         <span className={classProps.attachment.slot}>
-          <AttachmentActionButton onClick={onEditHandler}>{editButtonLabel}</AttachmentActionButton>
+          <AttachmentActionButton onClick={onEditHandler}>
+            {editText || editButtonLabel || DEFAULT_EDIT_BUTTON_LABEL}
+          </AttachmentActionButton>
         </span>
       )}
-      <AttachmentDismissButton onClick={dismissHandler}>{buttonLabel}</AttachmentDismissButton>
+      <AttachmentDismissButton onClick={dismissHandler}>
+        {removeText || buttonLabel || DEFAULT_BUTTON_LABEL}
+      </AttachmentDismissButton>
     </li>
   );
 };
