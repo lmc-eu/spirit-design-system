@@ -58,17 +58,17 @@ There is no API for TabItem.
 
 | Prop name    | Type     | Default | Required | Description                  |
 | ------------ | -------- | ------- | -------- | ---------------------------- |
-| `href`       | `string` | `null`  | no       | URL target of a link         |
-| `isSelected` | `bool`   | `false` | no       | Whether is tab item selected |
-| `target`     | `string` | `null`  | no       | Target tab pane ID           |
+| `href`       | `string` | `null`  | ✕        | URL target of a link         |
+| `isSelected` | `bool`   | `false` | ✕        | Whether is tab item selected |
+| `target`     | `string` | `null`  | ✕        | Target tab pane ID           |
 
 ### TabPane
 
 | Prop name    | Type      | Default | Required | Description                    |
 | ------------ | --------- | ------- | -------- | ------------------------------ |
-| `id`         | `string ` | `null`  | yes      | Tab pane target identification |
-| `isSelected` | `bool`    | `false` | no       | Whether is tab pane selected   |
-| `label`      | `string`  | `null`  | no       | Aria label of the tab pane     |
+| `id`         | `string ` | `null`  | ✔        | Tab pane target identification |
+| `isSelected` | `bool`    | `false` | ✕        | Whether is tab pane selected   |
+| `label`      | `string`  | `null`  | ✕        | Aria label of the tab pane     |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

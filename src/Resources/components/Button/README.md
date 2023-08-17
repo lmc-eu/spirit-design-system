@@ -36,15 +36,15 @@ Without lexer:
 
 | Prop name    | Type                                                                                      | Default   | Required | Description                                                                |
 | ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------- |
-| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                                              |
-| `formtarget` | `string`                                                                                  | `null`    | no       | Submit button target                                                       |
-| `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent                           |
-| `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, Button is disabled                                                |
-| `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, Button is in a loading state, disabled and the Spinner is visible |
-| `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, Button is square, usually only with an Icon                       |
-| `name`       | `string`                                                                                  | `null`    | no       | Submit button name                                                         |
-| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                                               |
-| `type`       | `string`                                                                                  | `button`  | no       | Type of the Button                                                         |
+| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                              |
+| `formtarget` | `string`                                                                                  | `null`    | ✕        | Submit button target                                                       |
+| `isBlock`    | `bool`                                                                                    | `false`   | ✕        | Span the element to the full width of its parent                           |
+| `isDisabled` | `bool`                                                                                    | `false`   | ✕        | If true, Button is disabled                                                |
+| `isLoading`  | `bool`                                                                                    | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
+| `isSquare`   | `bool`                                                                                    | `false`   | ✕        | If true, Button is square, usually only with an Icon                       |
+| `name`       | `string`                                                                                  | `null`    | ✕        | Submit button name                                                         |
+| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                               |
+| `type`       | `string`                                                                                  | `button`  | ✕        | Type of the Button                                                         |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

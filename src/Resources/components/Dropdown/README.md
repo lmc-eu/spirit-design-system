@@ -56,10 +56,10 @@ attributes to register trigger events.
 
 | Prop name       | Type                                                           | Default       | Required | Description                           |
 | --------------- | -------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                                       | `div`         | no       | HTML tag to render                    |
-| `fullWidthMode` | `string`                                                       | -             | no       | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                                       | -             | yes      | Dropdown ID                           |
-| `placement`     | [`bottom-left` \| `bottom-right` \| `top-left` \| `top-right`] | `bottom-left` | no       | Alignment of the component            |
+| `elementType`   | `string`                                                       | `div`         | ✕        | HTML tag to render                    |
+| `fullWidthMode` | `string`                                                       | —             | ✕        | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                                       | —             | ✔        | Dropdown ID                           |
+| `placement`     | [`bottom-left` \| `bottom-right` \| `top-left` \| `top-right`] | `bottom-left` | ✕        | Alignment of the component            |
 
 You can add `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -69,10 +69,10 @@ see the [Escape hatches][escape-hatches] section in README to learn how and when
 
 | Prop name            | Type     | Default    | Required | Description                |
 | -------------------- | -------- | ---------- | -------- | -------------------------- |
-| `aria-controls`      | `string` | -          | no       | Aria controls state (auto) |
-| `aria-expanded`      | `string` | -          | no       | Aria expanded state (auto) |
-| `data-spirit-target` | `string` | -          | yes      | Target selector            |
-| `data-spirit-toggle` | `string` | `dropdown` | yes      | Iterable selector          |
+| `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto) |
+| `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto) |
+| `data-spirit-target` | `string` | —          | ✔        | Target selector            |
+| `data-spirit-toggle` | `string` | `dropdown` | ✔        | Iterable selector          |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when the component is loaded
 or the width of the window is changed. There can be several triggers, the same rules apply to each.
@@ -81,7 +81,7 @@ or the width of the window is changed. There can be several triggers, the same r
 
 | Prop name     | Type     | Default | Required | Description        |
 | ------------- | -------- | ------- | -------- | ------------------ |
-| `elementType` | `string` | `div`   | no       | HTML tag to render |
+| `elementType` | `string` | `div`   | ✕        | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

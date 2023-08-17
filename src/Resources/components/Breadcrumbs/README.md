@@ -97,9 +97,9 @@ content can be overridden by any custom block content.
 
 | Prop name     | Type     | Default | Required | Description                                                                                                                                                                                 |
 | ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `elementType` | `string` | `nav`   | no       | HTML tag to render                                                                                                                                                                          |
-| `goBackTitle` | `string` | ``      | no       | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
-| `items`       | `array`  | `[]`    | no       | Navigation menu items                                                                                                                                                                       |
+| `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                          |
+| `goBackTitle` | `string` | ``      | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
+| `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                       |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

@@ -53,10 +53,10 @@ Without lexer:
 
 | Prop name     | Type                                             | Default | Required | Description                         |
 | ------------- | ------------------------------------------------ | ------- | -------- | ----------------------------------- |
-| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | no       | Number of columns to use            |
-| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | no       | Number of columns to use on tablet  |
-| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | no       | Number of columns to use on desktop |
-| `elementType` | `string`                                         | `div`   | no       | HTML tag to render                  |
+| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use            |
+| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use on tablet  |
+| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use on desktop |
+| `elementType` | `string`                                         | `div`   | ✕        | HTML tag to render                  |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -104,10 +104,10 @@ Without lexer:
 
 | Prop name     | Type                                       | Default | Required | Description                               |
 | ------------- | ------------------------------------------ | ------- | -------- | ----------------------------------------- |
-| `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | no       | Number of columns to span over            |
-| `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | no       | Number of columns to span over on tablet  |
-| `desktop`     | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | no       | Number of columns to span over on desktop |
-| `elementType` | `string`                                   | `div`   | no       | HTML tag to render                        |
+| `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over            |
+| `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on tablet  |
+| `desktop`     | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on desktop |
+| `elementType` | `string`                                   | `div`   | ✕        | HTML tag to render                        |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

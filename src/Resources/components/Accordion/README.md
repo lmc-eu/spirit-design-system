@@ -185,34 +185,34 @@ The Accordion itself consists of several components which cannot be used indepen
 
 | Prop name     | Type     | Default   | Required | Description                                                                                       |
 | ------------- | -------- | --------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `elementType` | `string` | `section` | no       | Custom element type                                                                               |
+| `elementType` | `string` | `section` | ✕        | Custom element type                                                                               |
 | `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
 
 ### AccordionItem
 
 | Prop name     | Type     | Default   | Required | Description         |
 | ------------- | -------- | --------- | -------- | ------------------- |
-| `elementType` | `string` | `article` | no       | Custom element type |
-| `id`          | `string` | `null`    | yes      | AccordionItem ID    |
+| `elementType` | `string` | `article` | ✕        | Custom element type |
+| `id`          | `string` | `null`    | ✔        | AccordionItem ID    |
 
 ### AccordionHeader
 
 | Prop name     | Type     | Default | Required | Description              |
 | ------------- | -------- | ------- | -------- | ------------------------ |
-| `elementType` | `string` | `h3`    | no       | Custom element type      |
-| `for`         | `string` | `null`  | yes      | AccordionContent ID      |
-| `id`          | `string` | `null`  | yes      | AccordionHeader ID       |
-| `isOpen`      | `string` | `false` | no       | Whether the item is open |
-| `UNSAFE_slot` | `HTML`   | —       | no       | Side slot in the header  |
+| `elementType` | `string` | `h3`    | ✕        | Custom element type      |
+| `for`         | `string` | `null`  | ✔        | AccordionContent ID      |
+| `id`          | `string` | `null`  | ✔        | AccordionHeader ID       |
+| `isOpen`      | `string` | `false` | ✕        | Whether the item is open |
+| `UNSAFE_slot` | `HTML`   | —       | ✕        | Side slot in the header  |
 
 ### AccordionContent
 
 | Prop name      | Type     | Default | Required | Description                                                                 |
 | -------------- | -------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `id`           | `string` | `null`  | yes      | AccordionContent ID                                                         |
-| `isOpen`       | `bool`   | `false` | no       | If true, make the item open on page load                                    |
-| `labelledById` | `string` | `null`  | yes      | AccordionHeader ID                                                          |
-| `parent`       | `string` | `null`  | no       | A parent element selector that ensures that only one item is open at a time |
+| `id`           | `string` | `null`  | ✔        | AccordionContent ID                                                         |
+| `isOpen`       | `bool`   | `false` | ✕        | If true, make the item open on page load                                    |
+| `labelledById` | `string` | `null`  | ✔        | AccordionHeader ID                                                          |
+| `parent`       | `string` | `null`  | ✕        | A parent element selector that ensures that only one item is open at a time |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

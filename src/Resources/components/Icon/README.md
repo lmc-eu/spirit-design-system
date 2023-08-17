@@ -27,11 +27,11 @@ Without lexer:
 
 | Prop name    | Type     | Default | Required | Description                           |
 | ------------ | -------- | ------- | -------- | ------------------------------------- |
-| `ariaHidden` | `bool`   | `true`  | no       | If true, icon is hidden from a11y API |
-| `boxSize`    | `number` | `24`    | no       | Size of the icon                      |
-| `isReusable` | `bool`   | `true`  | no       | Enables reusability of SVG icons      |
-| `name`       | `string` | —       | yes      | Name of the icon, case sensitive      |
-| `title`      | `string` | `null`  | no       | Optional title to display on hover    |
+| `ariaHidden` | `bool`   | `true`  | ✕        | If true, icon is hidden from a11y API |
+| `boxSize`    | `number` | `24`    | ✕        | Size of the icon                      |
+| `isReusable` | `bool`   | `true`  | ✕        | Enables reusability of SVG icons      |
+| `name`       | `string` | —       | ✔        | Name of the icon, case sensitive      |
+| `title`      | `string` | `null`  | ✕        | Optional title to display on hover    |
 
 Get the list of `name` options in the [Icon package] or your source of icons.
 
