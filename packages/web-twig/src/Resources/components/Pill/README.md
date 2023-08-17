@@ -29,7 +29,7 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                                                                                                        | Default    | Required | Description        |
+| Name          | Type                                                                                                                        | Default    | Required | Description        |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
 | `color`       | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color variant      |
 | `elementType` | `string`                                                                                                                    | `span`     | ✕        | HTML tag to render |

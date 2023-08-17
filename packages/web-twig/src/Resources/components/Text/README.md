@@ -29,7 +29,7 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                        | Default   | Required | Description                                                    |
+| Name          | Type                                        | Default   | Required | Description                                                    |
 | ------------- | ------------------------------------------- | --------- | -------- | -------------------------------------------------------------- |
 | `elementType` | `string`                                    | `p`       | ✕        | HTML tag to render                                             |
 | `emphasis`    | [`regular` \| `bold` \| `italic`]           | `regular` | ✕        | Emphasis of the text                                           |

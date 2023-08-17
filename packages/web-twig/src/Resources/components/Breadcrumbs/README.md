@@ -95,10 +95,10 @@ content can be overridden by any custom block content.
 
 ## Breadcrumbs
 
-| Prop name     | Type     | Default | Required | Description                                                                                                                                                                                 |
+| Name          | Type     | Default | Required | Description                                                                                                                                                                                 |
 | ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                          |
-| `goBackTitle` | `string` | ``      | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
+| `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
 | `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                       |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend the component's

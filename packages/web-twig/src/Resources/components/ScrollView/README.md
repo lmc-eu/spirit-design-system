@@ -46,7 +46,7 @@ Or, feel free to write the controlling script yourself.
 
 ## API
 
-| Prop name             | Type                               | Default    | Required | Description                        |
+| Name                  | Type                               | Default    | Required | Description                        |
 | --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
 | `direction`           | [`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the scroll            |
 | `isScrollbarDisabled` | `bool`                             | `false`    | ✕        | If true, the Scrollbar is disabled |

@@ -97,7 +97,7 @@ When validated on server:
 
 ## API
 
-| Prop name               | Type                                           | Default | Required | Description                                |
+| Name                    | Type                                           | Default | Required | Description                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------------------ |
 | `form`                  | `string`                                       | `null`  | ✕        | Parent form ID                             |
 | `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                         |

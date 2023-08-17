@@ -25,9 +25,9 @@ Without lexer:
 
 ## API
 
-| Prop name | Type                                      | Default | Required | Description   |
-| --------- | ----------------------------------------- | ------- | -------- | ------------- |
-| `color`   | [Text Color dictionary][dictionary-color] | `null`  | ✕        | Color variant |
+| Name    | Type                                      | Default | Required | Description   |
+| ------- | ----------------------------------------- | ------- | -------- | ------------- |
+| `color` | [Text Color dictionary][dictionary-color] | `null`  | ✕        | Color variant |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

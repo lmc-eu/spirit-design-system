@@ -51,7 +51,7 @@ Without lexer:
 
 ### API
 
-| Prop name     | Type                                             | Default | Required | Description                         |
+| Name          | Type                                             | Default | Required | Description                         |
 | ------------- | ------------------------------------------------ | ------- | -------- | ----------------------------------- |
 | `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use            |
 | `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use on tablet  |
@@ -102,7 +102,7 @@ Without lexer:
 
 ### API
 
-| Prop name     | Type                                       | Default | Required | Description                               |
+| Name          | Type                                       | Default | Required | Description                               |
 | ------------- | ------------------------------------------ | ------- | -------- | ----------------------------------------- |
 | `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over            |
 | `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on tablet  |

@@ -58,7 +58,7 @@ Without lexer:
 
 ## API
 
-| Prop name               | Type                                                                        | Default | Required | Description                                                             |
+| Name                    | Type                                                                        | Default | Required | Description                                                             |
 | ----------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autocomplete`          | `string`                                                                    | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle`     | `bool`                                                                      | `false` | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
