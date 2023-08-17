@@ -64,6 +64,11 @@ abstract class AbstractComponentSnapshotTest extends TestCase
         return ($filename ? dirname($filename) : '') . DIRECTORY_SEPARATOR . static::FIXTURES_DIR;
     }
 
+    protected function getSnapshotId(): string
+    {
+        return $this->dataName() . '.snap';
+    }
+
     protected function formatHtml(string $html): string
     {
         // Specify configuration
