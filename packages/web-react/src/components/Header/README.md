@@ -197,7 +197,7 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 
 ## Header
 
-**Available props**
+### API
 
 | Name               | Type                          | Default | Required | Description                |
 | ------------------ | ----------------------------- | ------- | -------- | -------------------------- |
@@ -211,7 +211,7 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 ## HeaderButton
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                    |
 | ------------------ | --------------- | ------- | -------- | ------------------------------ |
@@ -223,7 +223,7 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 ## HeaderDesktopActions
 
-**Available props**
+### API
 
 | Name               | Type                       | Default | Required | Description                            |
 | ------------------ | -------------------------- | ------- | -------- | -------------------------------------- |
@@ -236,7 +236,7 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 ## HeaderDialog
 
-**Available props**
+### API
 
 | Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
@@ -251,7 +251,7 @@ The rest of the properties are based on the type of `<dialog>`. [Docs][DialogEle
 
 ## HeaderDialogActions
 
-**Available props**
+### API
 
 | Name               | Type                       | Default | Required | Description                           |
 | ------------------ | -------------------------- | ------- | -------- | ------------------------------------- |
@@ -264,7 +264,7 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 ## HeaderDialogButton
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                          |
 | ------------------ | --------------- | ------- | -------- | ------------------------------------ |
@@ -278,7 +278,7 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 HeaderDialogCloseButton already contains handles for closing and the state of the open dialog.
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                               |
 | ------------------ | --------------- | ------- | -------- | ----------------------------------------- |
@@ -290,7 +290,7 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 ## HeaderDialogLink
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                        |
 | ------------------ | --------------- | ------- | -------- | ---------------------------------- |
@@ -303,7 +303,7 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 
 ## HeaderDialogNav
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                       |
 | ------------------ | --------------- | ------- | -------- | --------------------------------- |
@@ -315,7 +315,7 @@ The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDo
 
 ## HeaderDialogNavItem
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                           |
 | ------------------ | --------------- | ------- | -------- | ------------------------------------- |
@@ -327,7 +327,7 @@ The rest of the properties are based on the type of `<li>`. [Docs][DialogListIte
 
 ## HeaderDialogText
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                        |
 | ------------------ | --------------- | ------- | -------- | ---------------------------------- |
@@ -339,7 +339,7 @@ The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanD
 
 ## HeaderLink
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                      |
 | ------------------ | --------------- | ------- | -------- | -------------------------------- |
@@ -352,7 +352,7 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 
 ## HeaderMobileActions
 
-**Available props**
+### API
 
 | Name               | Type                                           | Default | Required | Description                           |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------------- |
@@ -368,7 +368,7 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 
 ## HeaderNav
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                 |
 | ------------------ | --------------- | ------- | -------- | --------------------------- |
@@ -380,7 +380,7 @@ The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDo
 
 ## HeaderNavItem
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                     |
 | ------------------ | --------------- | ------- | -------- | ------------------------------- |

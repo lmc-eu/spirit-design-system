@@ -64,7 +64,7 @@ const selectTab = useCallback((tabId) => {
 
 ### Tabs
 
-**Available props**
+#### API
 
 | Name                | Type                     | Description                                  |
 | ------------------- | ------------------------ | -------------------------------------------- |
@@ -75,7 +75,7 @@ const selectTab = useCallback((tabId) => {
 
 ### UncontrolledTabs
 
-**Available props**
+#### API
 
 | Name                 | Type                     | Description                                  |
 | -------------------- | ------------------------ | -------------------------------------------- |
@@ -87,7 +87,7 @@ const selectTab = useCallback((tabId) => {
 
 Tab list
 
-**Available props**
+#### API
 
 | Name       | Type  | Description     |
 | ---------- | ----- | --------------- |
@@ -97,7 +97,7 @@ Tab list
 
 Tab list item
 
-**Available props**
+#### API
 
 | Name       | Type                   | Description           |
 | ---------- | ---------------------- | --------------------- |
@@ -108,7 +108,7 @@ Tab list item
 
 Tab list link
 
-**Available props**
+#### API
 
 | Name       | Type     | Description     |
 | ---------- | -------- | --------------- |
@@ -119,7 +119,7 @@ Tab list link
 
 Tab content wrapper
 
-**Available props**
+#### API
 
 | Name       | Type  | Description     |
 | ---------- | ----- | --------------- |
@@ -129,7 +129,7 @@ Tab content wrapper
 
 Tab content item
 
-**Available props**
+#### API
 
 | Name       | Type                   | Description           |
 | ---------- | ---------------------- | --------------------- |

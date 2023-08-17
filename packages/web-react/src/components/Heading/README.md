@@ -6,7 +6,7 @@ The Heading component provides helper classes to render headings.
 <Heading elementType="h1" size="large" />
 ```
 
-## Available props
+## API
 
 | Name               | Type                                        | Default  | Description      |
 | ------------------ | ------------------------------------------- | -------- | ---------------- | ------------------------- |

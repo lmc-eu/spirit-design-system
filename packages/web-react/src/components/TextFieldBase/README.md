@@ -39,7 +39,7 @@ TextFieldBase with password toggle (button to reveal the password):
 />
 ```
 
-## Available props
+## API
 
 | Name                | Type                                                                        | Default | Required | Description                                                             |
 | ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |

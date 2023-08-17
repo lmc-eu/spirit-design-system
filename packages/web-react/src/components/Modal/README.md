@@ -47,7 +47,7 @@ const handleClose = () => {
 
 ## Modal
 
-**Available props**
+### API
 
 | Name               | Type                                           | Default | Required | Description               |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
@@ -62,7 +62,7 @@ The rest of the properties are created from the default `<dialog>` element. [Mor
 
 ## ModalDialog
 
-**Available props**
+### API
 
 | Name                 | Type                  | Default   | Required | Description                                          |
 | -------------------- | --------------------- | --------- | -------- | ---------------------------------------------------- |
@@ -76,7 +76,7 @@ The rest of the properties are formed from the selected type of element. Documen
 
 ## ModalHeader
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                   |
 | ------------------ | --------------- | ------- | -------- | ----------------------------- |
@@ -89,7 +89,7 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 
 ## ModalBody
 
-**Available props**
+### API
 
 | Name               | Type            | Default | Required | Description                 |
 | ------------------ | --------------- | ------- | -------- | --------------------------- |
@@ -101,7 +101,7 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 
 ## ModalFooter
 
-**Available props**
+### API
 
 | Name               | Type                                          | Default | Required | Description                   |
 | ------------------ | --------------------------------------------- | ------- | -------- | ----------------------------- |

@@ -19,7 +19,7 @@ import { Pill } from '@lmc-eu/spirit-web-react';
   <Pill color="danger">3</Pill>
 ```
 
-## Available props
+## API
 
 | Name               | Type                                                                                                                        | Default    | Required | Description               |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------- |
