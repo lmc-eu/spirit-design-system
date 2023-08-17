@@ -36,8 +36,8 @@ Advanced example usage:
 
 | Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `helperText`       | `string`                                       | -       | ✕        | Custom helper text              |
 | `children`         | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
+| `helperText`       | `string`                                       | -       | ✕        | Custom helper text              |
 | `id`               | `string`                                       | -       | ✔        | Select and label identification |
 | `isDisabled`       | `boolean`                                      | -       | ✕        | Whether is field disabled       |
 | `isFluid`          | `boolean`                                      | -       | ✕        | Whether is field is fluid       |
