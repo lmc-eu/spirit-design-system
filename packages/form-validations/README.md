@@ -174,11 +174,11 @@ You can add custom messages like this for as many validators as you need. Here `
 
 _Constructor_
 
-| Parameter | Default                      | Required? | Description                                         |
-| --------- | ---------------------------- | --------- | --------------------------------------------------- |
-| form      | -                            | ✔         | The form element                                    |
-| config    | [See above](#default-config) | ✕         | The config object                                   |
-| live      | `true`                       | ✕         | Whether FormValidations should validate as you type |
+| Parameter | Default                      | Required | Description                                         |
+| --------- | ---------------------------- | -------- | --------------------------------------------------- |
+| form      | —                            | ✔        | The form element                                    |
+| config    | [See above](#default-config) | ✕        | The config object                                   |
+| live      | `true`                       | ✕        | Whether FormValidations should validate as you type |
 
 ### Validation
 
@@ -186,18 +186,18 @@ _Constructor_
 
 _Validate the form or field(s)_
 
-| Parameter | Default | Required? | Description                                                                                                                                                                      |
-| --------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| inputs    | -       | ✕         | When not given, the entire form is validated. Inputs can either be one DOM element or a collection of DOM elements returned by `document.getElement…`, `document.querySelector…` |
-| silent    | false   | ✕         | Does not show error messages when `silent` is `true`                                                                                                                             |
+| Parameter | Default | Required | Description                                                                                                                                                                      |
+| --------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| inputs    | —       | ✕        | When not given, the entire form is validated. Inputs can either be one DOM element or a collection of DOM elements returned by `document.getElement…`, `document.querySelector…` |
+| silent    | `false` | ✕        | Does not show error messages when `silent` is `true`                                                                                                                             |
 
 **FormValidations.getErrors(input)**
 
 _Get the errors of the form or a specific field_
 
-| Parameter | Default | Required? | Description                                                                                                                                                                                                                                                            |
-| --------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| input     | -       | ✕         | When `input` is given, it returns the errors of that input element, otherwise returns all errors of the form as an object, using input element as key and corresponding errors as value. `validate()` must be called before expecting this method to return correctly. |
+| Parameter | Default | Required | Description                                                                                                                                                                                                                                                            |
+| --------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| input     | —       | ✕        | When `input` is given, it returns the errors of that input element, otherwise returns all errors of the form as an object, using input element as key and corresponding errors as value. `validate()` must be called before expecting this method to return correctly. |
 
 ### Localization
 
@@ -205,18 +205,18 @@ _Get the errors of the form or a specific field_
 
 _Set the current locale globally_
 
-| Parameter | Default | Required? | Description                                                                            |
-| --------- | ------- | --------- | -------------------------------------------------------------------------------------- |
-| `locale`  | -       | ✔         | Error messages on new FormValidations forms will be displayed according to this locale |
+| Parameter | Default | Required | Description                                                                            |
+| --------- | ------- | -------- | -------------------------------------------------------------------------------------- |
+| `locale`  | —       | ✔        | Error messages on new FormValidations forms will be displayed according to this locale |
 
 **FormValidations.addMessages(locale, messages)**
 
 _Set the current locale globally_
 
-| Parameter  | Default | Required? | Description                                                         |
-| ---------- | ------- | --------- | ------------------------------------------------------------------- |
-| `locale`   | -       | ✔         | The corresponding locale                                            |
-| `messages` | -       | ✔         | Object containing validator names as keys and error texts as values |
+| Parameter  | Default | Required | Description                                                         |
+| ---------- | ------- | -------- | ------------------------------------------------------------------- |
+| `locale`   | —       | ✔        | The corresponding locale                                            |
+| `messages` | —       | ✔        | Object containing validator names as keys and error texts as values |
 
 ### Custom validators
 
@@ -224,22 +224,22 @@ _Set the current locale globally_
 
 _Add a custom validator_
 
-| Parameter           | Default | Required? | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `element`           | -       | ✔         | The dom element where validator is applied to.                                                                                                                                                                                                                                                                                                                                                                          |
-| `validatorCallback` | -       | ✔         | The function that validates the field. The value of the input field gets passed as the first parameter, and the attribute value (split using a comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, the validator function gets called like `validatorCallback("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element |
-| `message`           | -       | ✔         | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments                   |
-| `priority`          | 1       | ✕         | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                                   |
-| `halt`              | `false` | ✕         | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                               |
+| Parameter           | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `element`           | —       | ✔        | The dom element where validator is applied to.                                                                                                                                                                                                                                                                                                                                                                          |
+| `validatorCallback` | —       | ✔        | The function that validates the field. The value of the input field gets passed as the first parameter, and the attribute value (split using a comma) as the subsequent parameters. For example, for `<input data-spirit-my-validator="10,20,dhaka" value="myValue"/>`, the validator function gets called like `validatorCallback("myValue", 10, 20, "dhaka")`. Inside the function `this` refers to the input element |
+| `message`           | —       | ✔        | The message to show when the validation fails. It supports simple templating. `${0}` for the input's value, `${1}` and so on are for the attribute values. For the above example, `${0}` will get replaced by `myValue`, `${1}` by `10`, `${2}` by `20`, `${3}` by `dhaka`. It can also be a function which should return the error string. The values and inputs are available as function arguments                   |
+| `priority`          | 1       | ✕        | Priority of the validator function. The higher the value, the earlier it gets called when there are multiple validators on one field.                                                                                                                                                                                                                                                                                   |
+| `halt`              | `false` | ✕        | Whether to stop validation of the field after this validator is applied on the field. When `true`, after this validator finishes validating, the rest of the validators are ignored on the current field.                                                                                                                                                                                                               |
 
 **FormValidations.addValidator(name, fn, message, priority, halt)**
 
 _Add a global custom validator_
 
-| Parameter | Default | Required? | Description                                                                                                                 |
-| --------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `name`    | -       | ✔         | A string, the name of the validator, you can then use `data-spirit-<NAME>` attribute in form fields to apply this validator |
-| `....`    | -       | -         | Other parameters same as above                                                                                              |
+| Parameter | Default | Required | Description                                                                                                                 |
+| --------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `name`    | —       | ✔        | A string, the name of the validator, you can then use `data-spirit-<NAME>` attribute in form fields to apply this validator |
+| `....`    | —       | —        | Other parameters same as above                                                                                              |
 
 ### Resetting
 

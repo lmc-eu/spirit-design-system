@@ -48,26 +48,26 @@ Without lexer:
 
 | Prop name               | Type                                           | Default | Required | Description                                                                                                 |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| `autocomplete`          | `string`                                       | `null`  | no       | [Automated assistance in filling][autocomplete-attr]                                                        |
-| `helperText`            | `string`                                       | `null`  | no       | Custom helper text                                                                                          |
-| `id`                    | `string`                                       | —       | yes      | TextArea and label identification                                                                           |
-| `inputProps`            | `string[]`                                     | `[]`    | no       | Pass additional attributes to the textarea element                                                          |
-| `isAutoResizing`        | `bool`                                         | `false` | no       | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing) |
-| `isDisabled`            | `bool`                                         | `false` | no       | If true, TextArea is disabled                                                                               |
-| `isFluid`               | `bool`                                         | `false` | no       | If true, the element spans to the full width of its parent                                                  |
-| `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                                                                                    |
-| `isRequired`            | `bool`                                         | `false` | no       | If true, TextArea is required                                                                               |
-| `label`                 | `string`                                       | —       | yes\*    | Label text                                                                                                  |
-| `maxlength`             | `number`                                       | `null`  | no       | Maximum number of characters                                                                                |
-| `name`                  | `string`                                       | `null`  | no       | TextArea name                                                                                               |
-| `placeholder`           | `string`                                       | `null`  | no       | TextArea placeholder                                                                                        |
-| `rows`                  | `number`                                       | `null`  | no       | Number of visible rows                                                                                      |
-| `UNSAFE_helperText`     | `string`                                       | `null`  | no       | Unescaped custom helper text                                                                                |
-| `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text                                                                                        |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | no       | Unescaped custom validation text                                                                            |
-| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                                                                                   |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | no       | Validation text                                                                                             |
-| `value`                 | `string`                                       | `null`  | no       | TextArea value                                                                                              |
+| `autocomplete`          | `string`                                       | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                                                        |
+| `helperText`            | `string`                                       | `null`  | ✕        | Custom helper text                                                                                          |
+| `id`                    | `string`                                       | —       | ✔        | TextArea and label identification                                                                           |
+| `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the textarea element                                                          |
+| `isAutoResizing`        | `bool`                                         | `false` | ✕        | If true, TextArea adjusts its height as user types, see [plugin info](#javascript-plugin-for-auto-resizing) |
+| `isDisabled`            | `bool`                                         | `false` | ✕        | If true, TextArea is disabled                                                                               |
+| `isFluid`               | `bool`                                         | `false` | ✕        | If true, the element spans to the full width of its parent                                                  |
+| `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                                                                                    |
+| `isRequired`            | `bool`                                         | `false` | ✕        | If true, TextArea is required                                                                               |
+| `label`                 | `string`                                       | —       | ✔\*      | Label text                                                                                                  |
+| `maxlength`             | `number`                                       | `null`  | ✕        | Maximum number of characters                                                                                |
+| `name`                  | `string`                                       | `null`  | ✕        | TextArea name                                                                                               |
+| `placeholder`           | `string`                                       | `null`  | ✕        | TextArea placeholder                                                                                        |
+| `rows`                  | `number`                                       | `null`  | ✕        | Number of visible rows                                                                                      |
+| `UNSAFE_helperText`     | `string`                                       | `null`  | ✕        | Unescaped custom helper text                                                                                |
+| `UNSAFE_label`          | `string`                                       | —       | ✔\*      | Unescaped label text                                                                                        |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕        | Unescaped custom validation text                                                                            |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                                                                                   |
+| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                                                                             |
+| `value`                 | `string`                                       | `null`  | ✕        | TextArea value                                                                                              |
 
 \*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 

@@ -44,13 +44,13 @@ import { RouterLink } from 'react-router-dom';
 | `isDisabled`       | `bool`                                                                                    | `false`   | ✕        | If true, Button is disabled                                                |
 | `isLoading`        | `bool`                                                                                    | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
 | `isSquare`         | `bool`                                                                                    | `false`   | ✕        | If true, Button is square, usually only with an Icon                       |
-| `name`             | `string`                                                                                  | -         | ✕        | For use a button as a form data reference                                  |
+| `name`             | `string`                                                                                  | —         | ✕        | For use a button as a form data reference                                  |
 | `onClick`          | `string`                                                                                  | `null`    | ✕        | JS function to call on click                                               |
-| `ref`              | `ForwardedRef<HTMLButtonElement>`                                                         | -         | ✕        | Button element reference                                                   |
+| `ref`              | `ForwardedRef<HTMLButtonElement>`                                                         | —         | ✕        | Button element reference                                                   |
 | `size`             | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                               |
 | `type`             | `string`                                                                                  | `button`  | ✕        | Type of the Button                                                         |
-| `UNSAFE_className` | `string`                                                                                  | -         | ✕        | Wrapper custom class name                                                  |
-| `UNSAFE_style`     | `CSSProperties`                                                                           | -         | ✕        | Wrapper custom style                                                       |
+| `UNSAFE_className` | `string`                                                                                  | —         | ✕        | Wrapper custom class name                                                  |
+| `UNSAFE_style`     | `CSSProperties`                                                                           | —         | ✕        | Wrapper custom style                                                       |
 
 For more information see [Button] component. Button also contain all the appropriate
 attributes according to the type of element. The default element type for Button is `<button>`.
@@ -87,11 +87,11 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 | `isLoading`        | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
 | `isSquare`         | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is square, usually only with an Icon                       |
 | `onClick`          | `string`                                                                                  | `null`    | ✕        | JS function to call on click                                                   |
-| `ref`              | `ForwardedRef<HTMLAnchorElement>`                                                         | -         | ✕        | Anchor element reference                                                       |
+| `ref`              | `ForwardedRef<HTMLAnchorElement>`                                                         | —         | ✕        | Anchor element reference                                                       |
 | `size`             | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                                   |
 | `target`           | `string`                                                                                  | `null`    | ✕        | Link target                                                                    |
-| `UNSAFE_className` | `string`                                                                                  | -         | ✕        | Wrapper custom class name                                                      |
-| `UNSAFE_style`     | `CSSProperties`                                                                           | -         | ✕        | Wrapper custom style                                                           |
+| `UNSAFE_className` | `string`                                                                                  | —         | ✕        | Wrapper custom class name                                                      |
+| `UNSAFE_style`     | `CSSProperties`                                                                           | —         | ✕        | Wrapper custom style                                                           |
 
 For more information see [Button] component. ButtonLink also contain all the appropriate
 attributes according to the type of element. The default element type for ButtonLink is `<a>`.

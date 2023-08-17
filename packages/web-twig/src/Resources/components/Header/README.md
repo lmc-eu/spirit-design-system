@@ -109,8 +109,8 @@ just branding.
 
 | Prop name  | Type                          | Default       | Required | Description                         |
 | ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
-| `color`    | [`transparent` \| `inverted`] | `transparent` | no       | Color variant                       |
-| `isSimple` | `bool`                        | `false`       | no       | Shorter, centered version of Header |
+| `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
+| `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -158,8 +158,8 @@ You can place any custom content into the mobile actions component:
 
 | Prop name         | Type     | Default | Required | Description                     |
 | ----------------- | -------- | ------- | -------- | ------------------------------- |
-| `dialogId`        | `string` | —       | yes      | ID of the linked HeaderDialog   |
-| `menuToggleLabel` | `string` | `Menu`  | no       | Label of the menu toggle button |
+| `dialogId`        | `string` | —       | ✔        | ID of the linked HeaderDialog   |
+| `menuToggleLabel` | `string` | `Menu`  | ✕        | Label of the menu toggle button |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -189,7 +189,7 @@ control here.
 
 | Prop name | Type                       | Default   | Required | Description   |
 | --------- | -------------------------- | --------- | -------- | ------------- |
-| `color`   | [`primary` \| `secondary`] | `primary` | no       | Color variant |
+| `color`   | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -249,9 +249,9 @@ There is no API for HeaderNavItem.
 
 | Prop name   | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
-| `href`      | `string` | —       | yes      | Link URL                      |
-| `isCurrent` | `bool`   | `false` | no       | Mark link as current          |
-| `target`    | `string` | `null`  | no       | Browsing context for the link |
+| `href`      | `string` | —       | ✔        | Link URL                      |
+| `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |
+| `target`    | `string` | `null`  | ✕        | Browsing context for the link |
 
 ##### HeaderButton API
 
@@ -278,7 +278,7 @@ used for second-level navigation in general.
 
 | Prop name | Type     | Default | Required | Description                            |
 | --------- | -------- | ------- | -------- | -------------------------------------- |
-| `id`      | `string` | —       | yes      | ID to be linked in HeaderMobileActions |
+| `id`      | `string` | —       | ✔        | ID to be linked in HeaderMobileActions |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -295,9 +295,9 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 
 | Prop name       | Type     | Default | Required | Description                     |
 | --------------- | -------- | ------- | -------- | ------------------------------- |
-| `dialogId`      | `string` | —       | yes      | ID of the parent HeaderDialog   |
-| `enableDismiss` | `bool`   | `true`  | no       | Enable Off-canvas JS dismiss    |
-| `label`         | `string` | `Close` | no       | Label of the menu toggle button |
+| `dialogId`      | `string` | —       | ✔        | ID of the parent HeaderDialog   |
+| `enableDismiss` | `bool`   | `true`  | ✕        | Enable Off-canvas JS dismiss    |
+| `label`         | `string` | `Close` | ✕        | Label of the menu toggle button |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -322,7 +322,7 @@ the optional secondary actions slot.
 
 | Prop name | Type                       | Default   | Required | Description               |
 | --------- | -------------------------- | --------- | -------- | ------------------------- |
-| `color`   | [`primary` \| `secondary`] | `primary` | no       | Color of the actions slot |
+| `color`   | [`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -389,9 +389,9 @@ There is no API for HeaderDialogNavItem.
 
 | Prop name   | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
-| `href`      | `string` | —       | yes      | Link URL                      |
-| `isCurrent` | `bool`   | `false` | no       | Mark link as current          |
-| `target`    | `string` | `null`  | no       | Browsing context for the link |
+| `href`      | `string` | —       | ✔        | Link URL                      |
+| `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |
+| `target`    | `string` | `null`  | ✕        | Browsing context for the link |
 
 ##### HeaderDialogButton API
 

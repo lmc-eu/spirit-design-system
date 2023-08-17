@@ -27,7 +27,7 @@ const handleClose = () => {
 | Name       | Type                                           | Default | Description               |
 | ---------- | ---------------------------------------------- | ------- | ------------------------- |
 | `isOpen`   | `boolean`                                      | `false` | Open state                |
-| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | -       | Callback on dialog closed |
-| `children` | `ReactNode`                                    | -       | Children node             |
+| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | Callback on dialog closed |
+| `children` | `ReactNode`                                    | —       | Children node             |
 
 [dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

@@ -81,8 +81,8 @@
 | ------------------ | ------------------------- | ------- | -------- | -------------------------------------------------- |
 | `children`         | `ReactNode`               | `null`  | ✕        | Content of the Pagination wrapper                  |
 | `listProps`        | `SpiritUListElementProps` | `{}`    | ✕        | Props for the inner [UL element props][ul-element] |
-| `UNSAFE_className` | `string`                  | -       | ✕        | Wrapper custom class name                          |
-| `UNSAFE_style`     | `CSSProperties`           | -       | ✕        | Wrapper custom style                               |
+| `UNSAFE_className` | `string`                  | —       | ✕        | Wrapper custom class name                          |
+| `UNSAFE_style`     | `CSSProperties`           | —       | ✕        | Wrapper custom style                               |
 
 Other unnamed props of this component are formed from the [HTML element][html-element].
 
@@ -91,8 +91,8 @@ Other unnamed props of this component are formed from the [HTML element][html-el
 | Name               | Type            | Default | Required | Description            |
 | ------------------ | --------------- | ------- | -------- | ---------------------- |
 | `children`         | `ReactNode`     | `null`  | ✕        | Content of the Item    |
-| `UNSAFE_className` | `string`        | -       | ✕        | Item custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | Item custom style      |
+| `UNSAFE_className` | `string`        | —       | ✕        | Item custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Item custom style      |
 
 Other unnamed props of this component are formed from the [LI element][li-element].
 
@@ -103,9 +103,9 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 | `accessibilityLabel` | `string`        | `null`  | ✔        | Accessibility label of the link        |
 | `elementType`        | `ElementType`   | `a`     | ✕        | Type of an element                     |
 | `isCurrent`          | `boolean`       | `null`  | ✕        | If true, the link is marked as current |
-| `pageNumber`         | `number`        | -       | ✔        | Page number, hidden for screen readers |
-| `UNSAFE_className`   | `string`        | -       | ✕        | Link custom class name                 |
-| `UNSAFE_style`       | `CSSProperties` | -       | ✕        | Link custom style                      |
+| `pageNumber`         | `number`        | —       | ✔        | Page number, hidden for screen readers |
+| `UNSAFE_className`   | `string`        | —       | ✕        | Link custom class name                 |
+| `UNSAFE_style`       | `CSSProperties` | —       | ✕        | Link custom style                      |
 
 ## PaginationButtonLink props
 

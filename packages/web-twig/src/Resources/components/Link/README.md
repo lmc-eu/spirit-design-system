@@ -37,12 +37,12 @@ Without lexer:
 
 | Prop name      | Type                                             | Default   | Required | Description                        |
 | -------------- | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
-| `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | no       | Color variant                      |
-| `href`         | `string`                                         | —         | yes      | Link URL                           |
-| `isDisabled`   | `bool`                                           | `false`   | no       | If true, Link is disabled          |
-| `isUnderlined` | `bool`                                           | `false`   | no       | If true, Link is underlined        |
-| `target`       | `string`                                         | `null`    | no       | Browsing context for the link      |
-| `title`        | `string`                                         | `null`    | no       | Optional title to display on hover |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                      |
+| `href`         | `string`                                         | —         | ✔        | Link URL                           |
+| `isDisabled`   | `bool`                                           | `false`   | ✕        | If true, Link is disabled          |
+| `isUnderlined` | `bool`                                           | `false`   | ✕        | If true, Link is underlined        |
+| `target`       | `string`                                         | `null`    | ✕        | Browsing context for the link      |
+| `title`        | `string`                                         | `null`    | ✕        | Optional title to display on hover |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

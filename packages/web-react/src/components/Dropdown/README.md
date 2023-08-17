@@ -23,9 +23,9 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `id`               | `string`                                         | `<random>`    | ✕        | Component id                                   |
 | `onAutoClose` .    | `(event: Event) => void`                         |               | ✕        | Callback on close on click outside of Dropdown |
 | `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | ✕        | Alignment of the component                     |
-| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | -             | ✕        | Properties for trigger render                  |
-| `UNSAFE_className` | `string`                                         | -             | ✕        | Wrapper custom classname                       |
-| `UNSAFE_style`     | `CSSProperties`                                  | -             | ✕        | Wrapper custom style                           |
+| `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | —             | ✕        | Properties for trigger render                  |
+| `UNSAFE_className` | `string`                                         | —             | ✕        | Wrapper custom classname                       |
+| `UNSAFE_style`     | `CSSProperties`                                  | —             | ✕        | Wrapper custom style                           |
 
 ## DropdownRenderProps
 

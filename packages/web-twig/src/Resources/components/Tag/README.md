@@ -33,10 +33,10 @@ Without lexer:
 
 | Prop name     | Type                                                    | Default   | Required | Description                                    |
 | ------------- | ------------------------------------------------------- | --------- | -------- | ---------------------------------------------- |
-| `color`       | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | no       | Color of the component                         |
-| `elementType` | `string`                                                | `span`    | no       | HTML tag to render                             |
-| `isSubtle`    | `bool`                                                  | `false`   | no       | Whether the Tag is displayed in subtle variant |
-| `size`        | [Size Extended dictionary][dictionary-size]             | `medium`  | no       | Size of the Tag                                |
+| `color`       | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component                         |
+| `elementType` | `string`                                                | `span`    | ✕        | HTML tag to render                             |
+| `isSubtle`    | `bool`                                                  | `false`   | ✕        | Whether the Tag is displayed in subtle variant |
+| `size`        | [Size Extended dictionary][dictionary-size]             | `medium`  | ✕        | Size of the Tag                                |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

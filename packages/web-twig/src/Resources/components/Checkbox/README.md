@@ -40,23 +40,23 @@ Without lexer:
 
 | Prop name               | Type                                           | Default | Required | Description                                          |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
-| `autocomplete`          | `string`                                       | `null`  | no       | [Automated assistance in filling][autocomplete-attr] |
-| `helperText`            | `string`                                       | `null`  | no\*\*   | Custom helper text                                   |
-| `id`                    | `string`                                       | `null`  | no       | Input and label identification                       |
-| `inputProps`            | `string[]`                                     | `[]`    | no       | Pass additional attributes to the input element      |
-| `isChecked`             | `bool`                                         | `false` | no       | If true, input is checked                            |
-| `isDisabled`            | `bool`                                         | `false` | no       | If true, input is disabled                           |
-| `isItem`                | `bool`                                         | `false` | no       | To render in [Item][item] mode                       |
-| `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                             |
-| `isRequired`            | `bool`                                         | `false` | no       | If true, input is required                           |
-| `label`                 | `string`                                       | —       | yes\*    | Label text                                           |
-| `name`                  | `string`                                       | `null`  | no       | Input name                                           |
-| `UNSAFE_helperText`     | `string`                                       | `null`  | no\*\*   | Unescaped custom helper text                         |
-| `UNSAFE_label`          | `string`                                       | —       | yes\*    | Unescaped label text (allows HTML)                   |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | no\*\*   | Unescaped validation text                            |
-| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state.                            |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | no\*\*   | Validation text                                      |
-| `value`                 | `string`                                       | `null`  | no       | Input value                                          |
+| `autocomplete`          | `string`                                       | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                                   |
+| `id`                    | `string`                                       | `null`  | ✕        | Input and label identification                       |
+| `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the input element      |
+| `isChecked`             | `bool`                                         | `false` | ✕        | If true, input is checked                            |
+| `isDisabled`            | `bool`                                         | `false` | ✕        | If true, input is disabled                           |
+| `isItem`                | `bool`                                         | `false` | ✕        | To render in [Item][item] mode                       |
+| `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                             |
+| `isRequired`            | `bool`                                         | `false` | ✕        | If true, input is required                           |
+| `label`                 | `string`                                       | —       | ✔\*      | Label text                                           |
+| `name`                  | `string`                                       | `null`  | ✕        | Input name                                           |
+| `UNSAFE_helperText`     | `string`                                       | `null`  | ✕\*\*    | Unescaped custom helper text                         |
+| `UNSAFE_label`          | `string`                                       | —       | ✔\*      | Unescaped label text (allows HTML)                   |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Unescaped validation text                            |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                            |
+| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                                      |
+| `value`                 | `string`                                       | `null`  | ✕        | Input value                                          |
 
 \*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 \*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.

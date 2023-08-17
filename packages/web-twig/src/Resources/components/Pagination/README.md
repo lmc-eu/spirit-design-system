@@ -98,11 +98,11 @@ These attributes will be passed to the topmost HTML element of the component.
 
 | Prop name            | Type     | Default | Required | Description                            |
 | -------------------- | -------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string` | `null`  | yes      | Accessibility label of the link        |
-| `href`               | `string` | `null`  | no       | URL target of a link                   |
-| `isCurrent`          | `bool`   | `false` | no       | Mark link as current                   |
-| `pageNumber`         | `string` | `null`  | yes      | Page number, hidden for screen readers |
-| `target`             | `string` | `null`  | no       | Browsing context for the link          |
+| `accessibilityLabel` | `string` | `null`  | ✔        | Accessibility label of the link        |
+| `href`               | `string` | `null`  | ✕        | URL target of a link                   |
+| `isCurrent`          | `bool`   | `false` | ✕        | Mark link as current                   |
+| `pageNumber`         | `string` | `null`  | ✔        | Page number, hidden for screen readers |
+| `target`             | `string` | `null`  | ✕        | Browsing context for the link          |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -140,9 +140,9 @@ These attributes will be passed to the topmost HTML element of the component.
 
 | Prop name            | Type     | Default              | Required | Description                       |
 | -------------------- | -------- | -------------------- | -------- | --------------------------------- |
-| `accessibilityLabel` | `string` | `Next` or `Previous` | no       | Accessibility label of the button |
-| `href`               | `string` | —                    | no       | Link URL                          |
-| `target`             | `string` | `null`               | no       | Browsing context for the link     |
+| `accessibilityLabel` | `string` | `Next` or `Previous` | ✕        | Accessibility label of the button |
+| `href`               | `string` | —                    | ✕        | Link URL                          |
+| `target`             | `string` | `null`               | ✕        | Browsing context for the link     |
 
 You can add `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

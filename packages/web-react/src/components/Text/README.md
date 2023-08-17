@@ -10,10 +10,10 @@ The Text component provides helper classes to render text.
 
 | Name               | Type                                        | Default  | Required | Description               |
 | ------------------ | ------------------------------------------- | -------- | -------- | ------------------------- |
-| `emphasis`         | [`italic` \| `bold`]                        | -        | ✕        | Emphasis of the text      |
+| `emphasis`         | [`italic` \| `bold`]                        | —        | ✕        | Emphasis of the text      |
 | `size`             | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text          |
-| `UNSAFE_className` | `string`                                    | -        | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`                             | -        | ✕        | Wrapper custom style      |
+| `UNSAFE_className` | `string`                                    | —        | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties`                             | —        | ✕        | Wrapper custom style      |
 
 ## Custom component
 

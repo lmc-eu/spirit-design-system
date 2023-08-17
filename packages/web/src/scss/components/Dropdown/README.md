@@ -227,16 +227,16 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 | Attribute               | Type      | Default | Required | Description                                                                                                    |
 | ----------------------- | --------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `data-spirit-target`    | `string`  | -       | yes      | Target menu element selector                                                                                   |
-| `aria-expanded`         | `boolean` | -       | yes      | Is set on an element to indicate if a control is expanded or collapsed                                         |
-| `aria-controls`         | `string`  | -       | yes      | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
-| `data-spirit-autoclose` | `boolean` | true    | no       | When you need to disable autoclose feature                                                                     |
+| `data-spirit-target`    | `string`  | —       | ✔        | Target menu element selector                                                                                   |
+| `aria-expanded`         | `boolean` | —       | ✔        | Is set on an element to indicate if a control is expanded or collapsed                                         |
+| `aria-controls`         | `string`  | —       | ✔        | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
+| `data-spirit-autoclose` | `boolean` | true    | ✕        | When you need to disable autoclose feature                                                                     |
 
 ## Dropdown
 
 | Attribute                   | Type                              | Default | Required | Description     |
 | --------------------------- | --------------------------------- | ------- | -------- | --------------- |
-| `data-spirit-fullwidthmode` | [`off` \| `mobile-only` \| `all`] | -       | no       | Full-width mode |
+| `data-spirit-fullwidthmode` | [`off` \| `mobile-only` \| `all`] | —       | ✕        | Full-width mode |
 
 ## JavaScript API
 

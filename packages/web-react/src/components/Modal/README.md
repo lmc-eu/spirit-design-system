@@ -51,12 +51,12 @@ const handleClose = () => {
 
 | Name               | Type                                           | Default | Required | Description               |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
-| `children`         | `ReactNode`                                    | -       | ✕        | Children node             |
-| `id`               | `string`                                       | -       | ✔        | Open state                |
+| `children`         | `ReactNode`                                    | —       | ✕        | Children node             |
+| `id`               | `string`                                       | —       | ✔        | Open state                |
 | `isOpen`           | `boolean`                                      | `false` | ✔        | Open state                |
-| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | -       | ✔        | Callback on dialog closed |
-| `UNSAFE_className` | `string`                                       | -       | ✕        | Modal custom class name   |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Modal custom style        |
+| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback on dialog closed |
+| `UNSAFE_className` | `string`                                       | —       | ✕        | Modal custom class name   |
+| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Modal custom style        |
 
 The rest of the properties are created from the default `<dialog>` element. [More about the element][DialogElementDocs]
 
@@ -66,11 +66,11 @@ The rest of the properties are created from the default `<dialog>` element. [Mor
 
 | Name                 | Type                  | Default   | Required | Description                                          |
 | -------------------- | --------------------- | --------- | -------- | ---------------------------------------------------- |
-| `children`           | `ReactNode`           | -         | ✕        | Children node                                        |
+| `children`           | `ReactNode`           | —         | ✕        | Children node                                        |
 | `elementType`        | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                             |
-| `UNSAFE_className`   | `string`              | -         | ✕        | ModalDialog custom class name                        |
-| `UNSAFE_style`       | `CSSProperties`       | -         | ✕        | ModalDialog custom style                             |
-| `isExpandedOnMobile` | `boolean`             | -         | ✕        | ModalDialog shrinks to fit the height of its content |
+| `UNSAFE_className`   | `string`              | —         | ✕        | ModalDialog custom class name                        |
+| `UNSAFE_style`       | `CSSProperties`       | —         | ✕        | ModalDialog custom style                             |
+| `isExpandedOnMobile` | `boolean`             | —         | ✕        | ModalDialog shrinks to fit the height of its content |
 
 The rest of the properties are formed from the selected type of element. Documentation for [Article][ArticleElementDocs], [Form][FormElementDocs].
 
@@ -80,10 +80,10 @@ The rest of the properties are formed from the selected type of element. Documen
 
 | Name               | Type            | Default | Required | Description                   |
 | ------------------ | --------------- | ------- | -------- | ----------------------------- |
-| `children`         | `ReactNode`     | -       | ✕        | Children node                 |
-| `closeLabel`       | `string`        | -       | ✕        | Close button label            |
-| `UNSAFE_className` | `string`        | -       | ✕        | ModalHeader custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | ModalHeader custom style      |
+| `children`         | `ReactNode`     | —       | ✕        | Children node                 |
+| `closeLabel`       | `string`        | —       | ✕        | Close button label            |
+| `UNSAFE_className` | `string`        | —       | ✕        | ModalHeader custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalHeader custom style      |
 
 The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -93,9 +93,9 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 
 | Name               | Type            | Default | Required | Description                 |
 | ------------------ | --------------- | ------- | -------- | --------------------------- |
-| `children`         | `ReactNode`     | -       | ✕        | Children node               |
-| `UNSAFE_className` | `string`        | -       | ✕        | ModalBody custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | ModalBody custom style      |
+| `children`         | `ReactNode`     | —       | ✕        | Children node               |
+| `UNSAFE_className` | `string`        | —       | ✕        | ModalBody custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalBody custom style      |
 
 The rest of the properties are created from the default `<div>` element. [Docs][DivElementDocs]
 
@@ -106,9 +106,9 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 | Name               | Type                                          | Default | Required | Description                   |
 | ------------------ | --------------------------------------------- | ------- | -------- | ----------------------------- |
 | `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | ModalFooter alignment         |
-| `children`         | `ReactNode`                                   | -       | ✕        | Children node                 |
-| `UNSAFE_className` | `string`                                      | -       | ✕        | ModalFooter custom class name |
-| `UNSAFE_style`     | `CSSProperties`                               | -       | ✕        | ModalFooter custom style      |
+| `children`         | `ReactNode`                                   | —       | ✕        | Children node                 |
+| `UNSAFE_className` | `string`                                      | —       | ✕        | ModalFooter custom class name |
+| `UNSAFE_style`     | `CSSProperties`                               | —       | ✕        | ModalFooter custom style      |
 
 The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
 

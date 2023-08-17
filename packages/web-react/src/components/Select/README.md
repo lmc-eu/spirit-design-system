@@ -37,19 +37,19 @@ Advanced example usage:
 | Name               | Type                                           | Default | Required | Description                     |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
 | `children`         | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
-| `helperText`       | `string`                                       | -       | ✕        | Custom helper text              |
-| `id`               | `string`                                       | -       | ✔        | Select and label identification |
-| `isDisabled`       | `boolean`                                      | -       | ✕        | Whether is field disabled       |
-| `isFluid`          | `boolean`                                      | -       | ✕        | Whether is field is fluid       |
-| `isLabelHidden`    | `boolean`                                      | -       | ✕        | Whether is label hidden         |
-| `isRequired`       | `boolean`                                      | -       | ✕        | Whether is field required       |
-| `label`            | `string`                                       | -       | ✕        | Label text                      |
-| `name`             | `string`                                       | -       | ✕        | Select name                     |
-| `ref`              | `ForwardedRef<HTMLSelectElement>`              | -       | ✕        | Select element reference        |
-| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name       |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style            |
-| `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state        |
-| `validationText`   | [`string` \| `string[]`]                       | -       | ✕        | Validation text                 |
+| `helperText`       | `string`                                       | —       | ✕        | Custom helper text              |
+| `id`               | `string`                                       | —       | ✔        | Select and label identification |
+| `isDisabled`       | `boolean`                                      | —       | ✕        | Whether is field disabled       |
+| `isFluid`          | `boolean`                                      | —       | ✕        | Whether is field is fluid       |
+| `isLabelHidden`    | `boolean`                                      | —       | ✕        | Whether is label hidden         |
+| `isRequired`       | `boolean`                                      | —       | ✕        | Whether is field required       |
+| `label`            | `string`                                       | —       | ✕        | Label text                      |
+| `name`             | `string`                                       | —       | ✕        | Select name                     |
+| `ref`              | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
+| `UNSAFE_className` | `string`                                       | —       | ✕        | Wrapper custom class name       |
+| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Wrapper custom style            |
+| `validationState`  | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
+| `validationText`   | [`string` \| `string[]`]                       | —       | ✕        | Validation text                 |
 
 ## Icons Provider
 

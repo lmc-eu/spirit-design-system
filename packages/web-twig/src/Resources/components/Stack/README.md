@@ -52,11 +52,11 @@ Without lexer:
 
 | Prop name                 | Type     | Default | Required | Description                            |
 | ------------------------- | -------- | ------- | -------- | -------------------------------------- |
-| `elementType`             | `string` | `div`   | no       | Element type of the wrapper element    |
-| `hasEndDivider`           | `bool`   | `false` | no       | Render a divider after the last item   |
-| `hasIntermediateDividers` | `bool`   | `false` | no       | Render dividers between items          |
-| `hasSpacing`              | `bool`   | `false` | no       | Apply a spacing between items          |
-| `hasStartDivider`         | `bool`   | `false` | no       | Render a divider before the first item |
+| `elementType`             | `string` | `div`   | ✕        | Element type of the wrapper element    |
+| `hasEndDivider`           | `bool`   | `false` | ✕        | Render a divider after the last item   |
+| `hasIntermediateDividers` | `bool`   | `false` | ✕        | Render dividers between items          |
+| `hasSpacing`              | `bool`   | `false` | ✕        | Apply a spacing between items          |
+| `hasStartDivider`         | `bool`   | `false` | ✕        | Render a divider before the first item |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

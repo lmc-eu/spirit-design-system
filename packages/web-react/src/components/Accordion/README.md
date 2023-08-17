@@ -138,12 +138,12 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 | Name               | Type                              | Default   | Required | Description                                      |
 | ------------------ | --------------------------------- | --------- | -------- | ------------------------------------------------ |
-| `children`         | `ReactNode`                       | -         | ✔        | Accordion children's nodes                       |
+| `children`         | `ReactNode`                       | —         | ✔        | Accordion children's nodes                       |
 | `elementType`      | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
-| `open`             | [`string` \| `string[]`]          | -         | ✕        | Open item or list of open items \*               |
-| `toggle`           | `(id: string) => void`            | -         | ✕        | A generic handler for a single **AccordionItem** |
-| `UNSAFE_className` | `string`                          | -         | ✕        | Wrapper custom class name                        |
-| `UNSAFE_style`     | `CSSProperties`                   | -         | ✕        | Wrapper custom style                             |
+| `open`             | [`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
+| `toggle`           | `(id: string) => void`            | —         | ✕        | A generic handler for a single **AccordionItem** |
+| `UNSAFE_className` | `string`                          | —         | ✕        | Wrapper custom class name                        |
+| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Wrapper custom style                             |
 
 (\*) Depending on the type of default value, what is set as the default will affect whether one or more will be open at the same time.
 
@@ -151,12 +151,12 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 | Name               | Type                              | Default   | Required | Description                                    |
 | ------------------ | --------------------------------- | --------- | -------- | ---------------------------------------------- |
-| `children`         | `ReactNode`                       | -         | ✔        | Accordion children's nodes                     |
-| `defaultOpen`      | [`string` \| `string[]`]          | -         | ✕        | Default open item(s) \*                        |
+| `children`         | `ReactNode`                       | —         | ✔        | Accordion children's nodes                     |
+| `defaultOpen`      | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
 | `elementType`      | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
-| `stayOpen`         | `boolean`                         | -         | ✕        | Item stay open when another one is also opened |
-| `UNSAFE_className` | `string`                          | -         | ✕        | Wrapper custom class name                      |
-| `UNSAFE_style`     | `CSSProperties`                   | -         | ✕        | Wrapper custom style                           |
+| `stayOpen`         | `boolean`                         | —         | ✕        | Item stay open when another one is also opened |
+| `UNSAFE_className` | `string`                          | —         | ✕        | Wrapper custom class name                      |
+| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Wrapper custom style                           |
 
 (\*) If this attribute is an array, then the `stayOpen` parameter should also be set.
 
@@ -164,25 +164,25 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 | Name               | Type                              | Default   | Required | Description                                     |
 | ------------------ | --------------------------------- | --------- | -------- | ----------------------------------------------- |
-| `children`         | `ReactNode`                       | -         | ✔        | Item children node                              |
+| `children`         | `ReactNode`                       | —         | ✔        | Item children node                              |
 | `elementType`      | [`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
-| `id`               | `string`                          | -         | ✔        | Item id                                         |
-| `UNSAFE_className` | `string`                          | -         | ✕        | Item custom class name                          |
-| `UNSAFE_style`     | `CSSProperties`                   | -         | ✕        | Item custom style                               |
+| `id`               | `string`                          | —         | ✔        | Item id                                         |
+| `UNSAFE_className` | `string`                          | —         | ✕        | Item custom class name                          |
+| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Item custom style                               |
 
 ## AccordionHeader Props
 
 | Name               | Type            | Default | Required | Description              |
 | ------------------ | --------------- | ------- | -------- | ------------------------ |
-| `children`         | `ReactNode`     | -       | ✔        | Header children node     |
-| `slot`             | `ReactNode`     | -       | ✕        | Side slot in the header  |
-| `UNSAFE_className` | `string`        | -       | ✕        | Header custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | Header custom style      |
+| `children`         | `ReactNode`     | —       | ✔        | Header children node     |
+| `slot`             | `ReactNode`     | —       | ✕        | Side slot in the header  |
+| `UNSAFE_className` | `string`        | —       | ✕        | Header custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Header custom style      |
 
 ## AccordionContent Props
 
 | Name               | Type            | Default | Required | Description               |
 | ------------------ | --------------- | ------- | -------- | ------------------------- |
-| `children`         | `ReactNode`     | -       | ✔        | Content children node     |
-| `UNSAFE_className` | `string`        | -       | ✕        | Content custom class name |
-| `UNSAFE_style`     | `CSSProperties` | -       | ✕        | Content custom style      |
+| `children`         | `ReactNode`     | —       | ✔        | Content children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Content custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Content custom style      |
