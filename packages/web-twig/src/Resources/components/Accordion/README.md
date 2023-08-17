@@ -183,27 +183,27 @@ The Accordion itself consists of several components which cannot be used indepen
 
 ### Accordion
 
-| Prop name     | Type     | Default     | Required | Description                                                                                       |
-| ------------- | -------- | ----------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `elementType` | `string` | `'section'` | no       | Custom element type                                                                               |
-| `id`          | `string` | `null`      | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
+| Prop name     | Type     | Default   | Required | Description                                                                                       |
+| ------------- | -------- | --------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `elementType` | `string` | `section` | no       | Custom element type                                                                               |
+| `id`          | `string` | `null`    | optional | It depends on whether the "Stay open" functionality is used. If so, the id field is not required. |
 
 ### AccordionItem
 
-| Prop name     | Type     | Default     | Required | Description         |
-| ------------- | -------- | ----------- | -------- | ------------------- |
-| `elementType` | `string` | `'article'` | no       | Custom element type |
-| `id`          | `string` | `null`      | yes      | AccordionItem ID    |
+| Prop name     | Type     | Default   | Required | Description         |
+| ------------- | -------- | --------- | -------- | ------------------- |
+| `elementType` | `string` | `article` | no       | Custom element type |
+| `id`          | `string` | `null`    | yes      | AccordionItem ID    |
 
 ### AccordionHeader
 
 | Prop name     | Type     | Default | Required | Description              |
 | ------------- | -------- | ------- | -------- | ------------------------ |
-| `elementType` | `string` | `'h3'`  | no       | Custom element type      |
+| `elementType` | `string` | `h3`    | no       | Custom element type      |
 | `for`         | `string` | `null`  | yes      | AccordionContent ID      |
 | `id`          | `string` | `null`  | yes      | AccordionHeader ID       |
 | `isOpen`      | `string` | `false` | no       | Whether the item is open |
-| `UNSAFE_slot` | `HTML`   | ``      | no       | Side slot in the header  |
+| `UNSAFE_slot` | `HTML`   | —       | no       | Side slot in the header  |
 
 ### AccordionContent
 

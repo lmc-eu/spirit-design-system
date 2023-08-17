@@ -199,13 +199,13 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 
 **Available props**
 
-| Name               | Type                        | Default | Required | Description                |
-| ------------------ | --------------------------- | ------- | -------- | -------------------------- |
-| `children`         | `ReactNode`                 | -       | ✕        | Children node              |
-| `color`            | `'inverted', 'transparent'` | -       | ✕        | Header background color    |
-| `isSimple`         | `boolean`                   | -       | ✕        | If header should be simple |
-| `UNSAFE_className` | `string`                    | -       | ✕        | Header custom class name   |
-| `UNSAFE_style`     | `CSSProperties`             | -       | ✕        | Header custom style        |
+| Name               | Type                          | Default | Required | Description                |
+| ------------------ | ----------------------------- | ------- | -------- | -------------------------- |
+| `children`         | `ReactNode`                   | -       | ✕        | Children node              |
+| `color`            | [`inverted` \| `transparent`] | -       | ✕        | Header background color    |
+| `isSimple`         | `boolean`                     | -       | ✕        | If header should be simple |
+| `UNSAFE_className` | `string`                      | -       | ✕        | Header custom class name   |
+| `UNSAFE_style`     | `CSSProperties`               | -       | ✕        | Header custom style        |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -225,12 +225,12 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 
 **Available props**
 
-| Name               | Type                     | Default | Required | Description                            |
-| ------------------ | ------------------------ | ------- | -------- | -------------------------------------- |
-| `children`         | `ReactNode`              | -       | ✕        | Children node                          |
-| `color`            | `'primary', 'secondary'` | -       | ✕        | HeaderDesktopActions background color  |
-| `UNSAFE_className` | `string`                 | -       | ✕        | HeaderDesktopActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`          | -       | ✕        | HeaderDesktopActions custom style      |
+| Name               | Type                       | Default | Required | Description                            |
+| ------------------ | -------------------------- | ------- | -------- | -------------------------------------- |
+| `children`         | `ReactNode`                | -       | ✕        | Children node                          |
+| `color`            | [`primary` \| `secondary`] | -       | ✕        | HeaderDesktopActions background color  |
+| `UNSAFE_className` | `string`                   | -       | ✕        | HeaderDesktopActions custom class name |
+| `UNSAFE_style`     | `CSSProperties`            | -       | ✕        | HeaderDesktopActions custom style      |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 
@@ -253,12 +253,12 @@ The rest of the properties are based on the type of `<dialog>`. [Docs][DialogEle
 
 **Available props**
 
-| Name               | Type                     | Default | Required | Description                           |
-| ------------------ | ------------------------ | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`              | -       | ✕        | Children node                         |
-| `color`            | `'primary', 'secondary'` | -       | ✕        | HeaderDialogActions background color  |
-| `UNSAFE_className` | `string`                 | -       | ✕        | HeaderDialogActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`          | -       | ✕        | HeaderDialogActions custom style      |
+| Name               | Type                       | Default | Required | Description                           |
+| ------------------ | -------------------------- | ------- | -------- | ------------------------------------- |
+| `children`         | `ReactNode`                | -       | ✕        | Children node                         |
+| `color`            | [`primary` \| `secondary`] | -       | ✕        | HeaderDialogActions background color  |
+| `UNSAFE_className` | `string`                   | -       | ✕        | HeaderDialogActions custom class name |
+| `UNSAFE_style`     | `CSSProperties`            | -       | ✕        | HeaderDialogActions custom style      |
 
 The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
 

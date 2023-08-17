@@ -54,12 +54,12 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Prop name       | Type                                                     | Default       | Required | Description                           |
-| --------------- | -------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                                 | `div`         | no       | HTML tag to render                    |
-| `fullWidthMode` | `string`                                                 | -             | no       | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                                 | -             | yes      | Dropdown ID                           |
-| `placement`     | [`bottom-left`, `bottom-right`, `top-left`, `top-right`] | `bottom-left` | no       | Alignment of the component            |
+| Prop name       | Type                                                           | Default       | Required | Description                           |
+| --------------- | -------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
+| `elementType`   | `string`                                                       | `div`         | no       | HTML tag to render                    |
+| `fullWidthMode` | `string`                                                       | -             | no       | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                                       | -             | yes      | Dropdown ID                           |
+| `placement`     | [`bottom-left` \| `bottom-right` \| `top-left` \| `top-right`] | `bottom-left` | no       | Alignment of the component            |
 
 You can add `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

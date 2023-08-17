@@ -234,9 +234,9 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ## Dropdown
 
-| Attribute                   | Type                        | Default | Required | Description     |
-| --------------------------- | --------------------------- | ------- | -------- | --------------- |
-| `data-spirit-fullwidthmode` | `'off','mobile-only','all'` | -       | no       | Full-width mode |
+| Attribute                   | Type                              | Default | Required | Description     |
+| --------------------------- | --------------------------------- | ------- | -------- | --------------- |
+| `data-spirit-fullwidthmode` | [`off` \| `mobile-only` \| `all`] | -       | no       | Full-width mode |
 
 ## JavaScript API
 

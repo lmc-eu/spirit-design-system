@@ -57,22 +57,22 @@ footer of the dialog.
 
 ### API
 
-| Prop name                     | Type                      | Default   | Required | Description                                                                                             |
-| ----------------------------- | ------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------- |
-| `accept-charset`              | `string`                  | `null`    | no       | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case) |
-| `action`                      | `string`                  | `null`    | no       | `elementType="form"` only: URL to use for form submission                                               |
-| `autocomplete`                | `string`                  | `null`    | no       | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                         |
-| `elementType`                 | `string`                  | `article` | no       | HTML tag to render                                                                                      |
-| `enctype`                     | `string`                  | `null`    | no       | `elementType="form"` only: Encoding to use for form submission                                          |
-| `isExpandedOnMobile`          | `bool`                    | `true`    | no       | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.  |
-| `maxHeightFromTabletUp`       | `string`                  | `null`    | no       | Max height of the modal. Accepts any valid CSS value.                                                   |
-| `method`                      | [`get`, `post`, `dialog`] | `null`    | no       | `elementType="form"` only: HTTP method to use for form submission                                       |
-| `name`                        | `string`                  | `null`    | no       | `elementType="form"` only: Name of the form                                                             |
-| `novalidate`                  | `bool`                    | `false`   | no       | `elementType="form"` only: If the dialog should have validation disabled                                |
-| `preferredHeightOnMobile`     | `string`                  | `null`    | no       | Preferred height of the modal on mobile. Accepts any valid CSS value.                                   |
-| `preferredHeightFromTabletUp` | `string`                  | `null`    | no       | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                        |
-| `rel`                         | `string`                  | `null`    | no       | `elementType="form"` only: Relationship between the current document and the linked resource            |
-| `target`                      | `string`                  | `null`    | no       | `elementType="form"` only: Browsing context for form submission                                         |
+| Prop name                     | Type                          | Default   | Required | Description                                                                                             |
+| ----------------------------- | ----------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `accept-charset`              | `string`                      | `null`    | no       | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case) |
+| `action`                      | `string`                      | `null`    | no       | `elementType="form"` only: URL to use for form submission                                               |
+| `autocomplete`                | `string`                      | `null`    | no       | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                         |
+| `elementType`                 | `string`                      | `article` | no       | HTML tag to render                                                                                      |
+| `enctype`                     | `string`                      | `null`    | no       | `elementType="form"` only: Encoding to use for form submission                                          |
+| `isExpandedOnMobile`          | `bool`                        | `true`    | no       | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.  |
+| `maxHeightFromTabletUp`       | `string`                      | `null`    | no       | Max height of the modal. Accepts any valid CSS value.                                                   |
+| `method`                      | [`get` \| `post` \| `dialog`] | `null`    | no       | `elementType="form"` only: HTTP method to use for form submission                                       |
+| `name`                        | `string`                      | `null`    | no       | `elementType="form"` only: Name of the form                                                             |
+| `novalidate`                  | `bool`                        | `false`   | no       | `elementType="form"` only: If the dialog should have validation disabled                                |
+| `preferredHeightOnMobile`     | `string`                      | `null`    | no       | Preferred height of the modal on mobile. Accepts any valid CSS value.                                   |
+| `preferredHeightFromTabletUp` | `string`                      | `null`    | no       | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                        |
+| `rel`                         | `string`                      | `null`    | no       | `elementType="form"` only: Relationship between the current document and the linked resource            |
+| `target`                      | `string`                      | `null`    | no       | `elementType="form"` only: Browsing context for form submission                                         |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

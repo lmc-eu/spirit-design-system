@@ -41,27 +41,27 @@ TextFieldBase with password toggle (button to reveal the password):
 
 ## Available props
 
-| Name                | Type                                                          | Default | Required | Description                                                             |
-| ------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autocomplete`      | `boolean`                                                     | -       | ✕        | If the field should have autocomplete enabled                           |
-| `hasPasswordToggle` | `boolean`                                                     | -       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
-| `helperText`        | `string`                                                      | -       | ✕        | Custom helper text                                                      |
-| `id`                | `string`                                                      | -       | ✔        | Input and label identification                                          |
-| `isDisabled`        | `boolean`                                                     | -       | ✕        | Whether is field disabled                                               |
-| `isLabelHidden`     | `boolean`                                                     | -       | ✕        | Whether is label hidden                                                 |
-| `isMultiline`       | `boolean`                                                     | -       | ✕        | Whether is DOM element `textarea`                                       |
-| `isRequired`        | `boolean`                                                     | -       | ✕        | Whether is field required                                               |
-| `label`             | `string`                                                      | -       | ✕        | Label text                                                              |
-| `name`              | `string`                                                      | -       | ✕        | Input name                                                              |
-| `pattern`           | `string`                                                      | -       | ✕        | Defines regular expressions for allowed value types                     |
-| `placeholder`       | `string`                                                      | -       | ✕        | Input placeholder                                                       |
-| `ref`               | `ForwardedRef<HTMLInputElement or HTMLTextAreaElement>`       | -       | ✕        | Field element reference                                                 |
-| `type`              | `email`, `number`, `password`, `search`, `tel`, `text`, `url` | -       | ✕        | Input type                                                              |
-| `UNSAFE_className`  | `string`                                                      | -       | ✕        | Wrapper custom class name                                               |
-| `UNSAFE_style`      | `CSSProperties`                                               | -       | ✕        | Wrapper custom style                                                    |
-| `validationState`   | [Validation dictionary][dictionary-validation]                | -       | ✕        | Type of validation state.                                               |
-| `validationText`    | `string`, `string[]`                                          | -       | ✕        | Validation text                                                         |
-| `value`             | `string`                                                      | -       | ✕        | Input value                                                             |
+| Name                | Type                                                                        | Default | Required | Description                                                             |
+| ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
+| `autocomplete`      | `boolean`                                                                   | -       | ✕        | If the field should have autocomplete enabled                           |
+| `hasPasswordToggle` | `boolean`                                                                   | -       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
+| `helperText`        | `string`                                                                    | -       | ✕        | Custom helper text                                                      |
+| `id`                | `string`                                                                    | -       | ✔        | Input and label identification                                          |
+| `isDisabled`        | `boolean`                                                                   | -       | ✕        | Whether is field disabled                                               |
+| `isLabelHidden`     | `boolean`                                                                   | -       | ✕        | Whether is label hidden                                                 |
+| `isMultiline`       | `boolean`                                                                   | -       | ✕        | Whether is DOM element `textarea`                                       |
+| `isRequired`        | `boolean`                                                                   | -       | ✕        | Whether is field required                                               |
+| `label`             | `string`                                                                    | -       | ✕        | Label text                                                              |
+| `name`              | `string`                                                                    | -       | ✕        | Input name                                                              |
+| `pattern`           | `string`                                                                    | -       | ✕        | Defines regular expressions for allowed value types                     |
+| `placeholder`       | `string`                                                                    | -       | ✕        | Input placeholder                                                       |
+| `ref`               | `ForwardedRef<HTMLInputElement or HTMLTextAreaElement>`                     | -       | ✕        | Field element reference                                                 |
+| `type`              | [`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | -       | ✕        | Input type                                                              |
+| `UNSAFE_className`  | `string`                                                                    | -       | ✕        | Wrapper custom class name                                               |
+| `UNSAFE_style`      | `CSSProperties`                                                             | -       | ✕        | Wrapper custom style                                                    |
+| `validationState`   | [Validation dictionary][dictionary-validation]                              | -       | ✕        | Type of validation state.                                               |
+| `validationText`    | [`string` \| `string[]`]                                                    | -       | ✕        | Validation text                                                         |
+| `value`             | `string`                                                                    | -       | ✕        | Input value                                                             |
 
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [textfield]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextField/README.md

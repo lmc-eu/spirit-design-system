@@ -65,11 +65,11 @@ Or both:
 
 ## ScrollView Props
 
-| Name                  | Type                         | Default    | Required | Description                        |
-| --------------------- | ---------------------------- | ---------- | -------- | ---------------------------------- |
-| `children`            | `ReactNode`                  | -          | ✔        | ScrollView children's nodes        |
-| `direction`           | `horizontal`, `vertical`     | `vertical` | ✕        | Direction of the wrapper           |
-| `isScrollbarDisabled` | `boolean`                    | `false`    | ✕        | If true, the Scrollbar is disabled |
-| `overflowDecorators`  | `borders`, `shadows`, `both` | `shadows`  | ✕        | ScrollView overflow decorators     |
-| `UNSAFE_className`    | `string`                     | -          | ✕        | Wrapper custom class name          |
-| `UNSAFE_style`        | `CSSProperties`              | -          | ✕        | Wrapper custom style               |
+| Name                  | Type                               | Default    | Required | Description                        |
+| --------------------- | ---------------------------------- | ---------- | -------- | ---------------------------------- |
+| `children`            | `ReactNode`                        | -          | ✔        | ScrollView children's nodes        |
+| `direction`           | [`horizontal` \| `vertical`]       | `vertical` | ✕        | Direction of the wrapper           |
+| `isScrollbarDisabled` | `boolean`                          | `false`    | ✕        | If true, the Scrollbar is disabled |
+| `overflowDecorators`  | [`borders` \| `shadows` \| `both`] | `shadows`  | ✕        | ScrollView overflow decorators     |
+| `UNSAFE_className`    | `string`                           | -          | ✕        | Wrapper custom class name          |
+| `UNSAFE_style`        | `CSSProperties`                    | -          | ✕        | Wrapper custom style               |

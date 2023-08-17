@@ -68,27 +68,27 @@ const toggleHandler = () => setOpen(!open);
 
 ## Tooltip Props
 
-| Name               | Type                                      | Default    | Required | Description                               |
-| ------------------ | ----------------------------------------- | ---------- | -------- | ----------------------------------------- |
-| `children`         | `ReactNode`                               | -          | ✔        | Tooltip children's nodes                  |
-| `closeLabel`       | `string`                                  | `'Close'`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `boolean`                                 | -          | ✕        | When it should appear with a close button |
-| `onClose`          | `(event: ClickEvent) => void`             | -          | ✕        | Close button callback                     |
-| `open`             | `boolean`                                 | -          | ✕        | Tooltip open state control                |
-| `placement`        | `'top', 'right', 'bottom', 'left', 'off'` | `'bottom'` | ✕        | Tooltip placement                         |
-| `UNSAFE_className` | `string`                                  | -          | ✕        | Tooltip custom class name                 |
-| `UNSAFE_style`     | `CSSProperties`                           | -          | ✕        | Tooltip custom style                      |
+| Name               | Type                                              | Default  | Required | Description                               |
+| ------------------ | ------------------------------------------------- | -------- | -------- | ----------------------------------------- |
+| `children`         | `ReactNode`                                       | -        | ✔        | Tooltip children's nodes                  |
+| `closeLabel`       | `string`                                          | `Close`  | ✕        | Tooltip label on close button             |
+| `isDismissible`    | `boolean`                                         | -        | ✕        | When it should appear with a close button |
+| `onClose`          | `(event: ClickEvent) => void`                     | -        | ✕        | Close button callback                     |
+| `open`             | `boolean`                                         | -        | ✕        | Tooltip open state control                |
+| `placement`        | [`top` \| `right` \| `bottom` \| `left` \| `off`] | `bottom` | ✕        | Tooltip placement                         |
+| `UNSAFE_className` | `string`                                          | -        | ✕        | Tooltip custom class name                 |
+| `UNSAFE_style`     | `CSSProperties`                                   | -        | ✕        | Tooltip custom style                      |
 
 ## UncontrolledTooltip Props
 
-| Name               | Type                                      | Default    | Required | Description                               |
-| ------------------ | ----------------------------------------- | ---------- | -------- | ----------------------------------------- |
-| `children`         | `ReactNode`                               | -          | ✔        | Tooltip children's nodes                  |
-| `closeLabel`       | `string`                                  | `'Close'`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `boolean`                                 | -          | ✕        | When it should appear with a close button |
-| `placement`        | `'top', 'right', 'bottom', 'left', 'off'` | `'bottom'` | ✕        | Tooltip placement                         |
-| `UNSAFE_className` | `string`                                  | -          | ✕        | Tooltip custom class name                 |
-| `UNSAFE_style`     | `CSSProperties`                           | -          | ✕        | Tooltip custom style                      |
+| Name               | Type                                              | Default  | Required | Description                               |
+| ------------------ | ------------------------------------------------- | -------- | -------- | ----------------------------------------- |
+| `children`         | `ReactNode`                                       | -        | ✔        | Tooltip children's nodes                  |
+| `closeLabel`       | `string`                                          | `Close`  | ✕        | Tooltip label on close button             |
+| `isDismissible`    | `boolean`                                         | -        | ✕        | When it should appear with a close button |
+| `placement`        | [`top` \| `right` \| `bottom` \| `left` \| `off`] | `bottom` | ✕        | Tooltip placement                         |
+| `UNSAFE_className` | `string`                                          | -        | ✕        | Tooltip custom class name                 |
+| `UNSAFE_style`     | `CSSProperties`                                   | -        | ✕        | Tooltip custom style                      |
 
 ## TooltipWrapper Props
 
@@ -100,12 +100,12 @@ const toggleHandler = () => setOpen(!open);
 
 ## TooltipCloseButton Props
 
-| Name               | Type                          | Default   | Required | Description                    |
-| ------------------ | ----------------------------- | --------- | -------- | ------------------------------ |
-| `label`            | `string`                      | `'Close'` | ✕        | Text label                     |
-| `onClick`          | `(event: ClickEvent) => void` | -         | ✕        | Close Button callback          |
-| `UNSAFE_className` | `string`                      | -         | ✕        | Close Button custom class name |
-| `UNSAFE_style`     | `CSSProperties`               | -         | ✕        | Close Button custom style      |
+| Name               | Type                          | Default | Required | Description                    |
+| ------------------ | ----------------------------- | ------- | -------- | ------------------------------ |
+| `label`            | `string`                      | `Close` | ✕        | Text label                     |
+| `onClick`          | `(event: ClickEvent) => void` | -       | ✕        | Close Button callback          |
+| `UNSAFE_className` | `string`                      | -       | ✕        | Close Button custom class name |
+| `UNSAFE_style`     | `CSSProperties`               | -       | ✕        | Close Button custom style      |
 
 ## Advanced Positioning with Floating UI
 

@@ -56,7 +56,7 @@ attributes to register trigger events.
 | Prop name     | Type     | Default | Required | Description                                                            |
 | ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
 | `breakpoint`  | `string` | `null`  | no       | Breakpoint level [mobile,tablet,desktop]                               |
-| `elementType` | `string` | `'div'` | no       | Custom element type for wrapper and content                            |
+| `elementType` | `string` | `div`   | no       | Custom element type for wrapper and content                            |
 | `id`          | `string` | -       | yes      | Collapse ID                                                            |
 | `isOpen`      | `bool`   | `false` | no       | If true, make the item open on page load                               |
 | `parent`      | `string` | `null`  | no       | A parent element selector that ensures that only one item is opened \* |

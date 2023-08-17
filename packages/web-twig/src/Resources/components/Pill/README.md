@@ -29,10 +29,10 @@ Without lexer:
 
 ## API
 
-| Prop name     | Type                                                                                                                | Default    | Required | Description        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
-| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color], `selected`, `unselected` | `selected` | no       | Color variant      |
-| `elementType` | `string`                                                                                                            | `span`     | no       | HTML tag to render |
+| Prop name     | Type                                                                                                                        | Default    | Required | Description        |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------ |
+| `color`       | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | no       | Color variant      |
+| `elementType` | `string`                                                                                                                    | `span`     | no       | HTML tag to render |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
