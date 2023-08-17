@@ -102,7 +102,7 @@ Other unnamed props of this component are formed from the [LI element][li-elemen
 | -------------------- | --------------- | ------- | -------- | -------------------------------------- |
 | `accessibilityLabel` | `string`        | `null`  | ✔        | Accessibility label of the link        |
 | `elementType`        | `ElementType`   | `a`     | ✕        | Type of an element                     |
-| `isCurrent`          | `boolean`       | `null`  | ✕        | If true, the link is marked as current |
+| `isCurrent`          | `bool`          | `null`  | ✕        | If true, the link is marked as current |
 | `pageNumber`         | `number`        | —       | ✔        | Page number, hidden for screen readers |
 | `UNSAFE_className`   | `string`        | —       | ✕        | Link custom class name                 |
 | `UNSAFE_style`       | `CSSProperties` | —       | ✕        | Link custom style                      |

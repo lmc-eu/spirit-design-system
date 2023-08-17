@@ -309,7 +309,7 @@ const resetStateHandler = () => {
 | `onDismiss`                           | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to delete a particular item from the queue               |
 | `findInQueue`                         | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to find a particular item in the queue                   |
 | `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
-| `isFluid`                             | `boolean`                                       | —       | ✕        | When the field is supposed to be fluid                              |
+| `isFluid`                             | `bool`                                          | —       | ✕        | When the field is supposed to be fluid                              |
 | `errorMessages.errorMaxFileSize`      | `string`                                        | —       | ✕        | Translation for the error message: Maximum file size                |
 | `errorMessages.errorMaxUploadedFiles` | `string`                                        | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
 | `errorMessages.errorFileDuplicity`    | `string`                                        | —       | ✕        | Translation for the error message: Duplicate file in queue          |
@@ -330,14 +330,14 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
 | `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
-| `isDisabled`         | `boolean`                            | —        | ✕        | Whether is field disabled                                                                                                                                       |
-| `isRequired`         | `boolean`                            | —        | ✕        | Whether is field required                                                                                                                                       |
+| `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
+| `isRequired`         | `bool`                               | —        | ✕        | Whether is field required                                                                                                                                       |
 | `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
 | `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
-| `isLabelHidden`      | `boolean`                            | —        | ✕        | Whether is input label hidden                                                                                                                                   |
-| `isMultiple`         | `boolean`                            | —        | ✕        | When multiple files can be selected at once                                                                                                                     |
+| `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
+| `isMultiple`         | `bool`                               | —        | ✕        | When multiple files can be selected at once                                                                                                                     |
 | `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `label`              | `string`                             | —        | ✕        | Field label                                                                                                                                                     |
 | `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
@@ -352,7 +352,7 @@ The rest of the properties are created from the default `<input>` element. [More
 | Name                  | Type            | Default | Required | Description                                   |
 | --------------------- | --------------- | ------- | -------- | --------------------------------------------- |
 | `attachmentComponent` | `string`        | —       | ✔        | A component for rendering a single attachment |
-| `hasImagePreview`     | `boolean`       | false   | ✕        | Show image preview in the list                |
+| `hasImagePreview`     | `bool`          | false   | ✕        | Show image preview in the list                |
 | `id`                  | `string`        | —       | ✔        | FileUploaderList id                           |
 | `inputName`           | `string`        | —       | ✔        | The name of the input field                   |
 | `label`               | `string`        | —       | ✕        | Label for the list                            |
@@ -425,12 +425,12 @@ via `inputProps` and `listProps`.
 | `attachmentComponent` | `string`                                | —        | ✔        | A component for rendering a single attachment       |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
-| `isLabelHidden`       | `boolean`                               | —        | ✕        | Whether is input label hidden                       |
-| `isMultiple`          | `boolean`                               | —        | ✕        | When multiple files can be selected at once         |
-| `isDisabled`          | `boolean`                               | —        | ✕        | Whether is field disabled                           |
+| `isLabelHidden`       | `bool`                                  | —        | ✕        | Whether is input label hidden                       |
+| `isMultiple`          | `bool`                                  | —        | ✕        | When multiple files can be selected at once         |
+| `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                           |
 | `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
-| `isRequired`          | `boolean`                               | —        | ✕        | Whether is field required                           |
-| `isFluid`             | `boolean`                               | —        | ✕        | When the field is supposed to be fluid              |
+| `isRequired`          | `bool`                                  | —        | ✕        | Whether is field required                           |
+| `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
 | `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |

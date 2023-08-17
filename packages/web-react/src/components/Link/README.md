@@ -12,8 +12,8 @@ Link allows users to follow navigation.
 | ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |
 | `color`            | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
 | `href`             | `string`                                         | —         | ✕        | Link's href attribute          |
-| `isUnderlined`     | `boolean`                                        | `false`   | ✕        | Whether is the link underlined |
-| `isDisabled`       | `boolean`                                        | `false`   | ✕        | Whether is the link disabled   |
+| `isUnderlined`     | `bool`                                           | `false`   | ✕        | Whether is the link underlined |
+| `isDisabled`       | `bool`                                           | `false`   | ✕        | Whether is the link disabled   |
 | `ref`              | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference         |
 | `UNSAFE_className` | `string`                                         | —         | ✕        | Wrapper custom class name      |
 | `UNSAFE_style`     | `CSSProperties`                                  | —         | ✕        | Wrapper custom style           |

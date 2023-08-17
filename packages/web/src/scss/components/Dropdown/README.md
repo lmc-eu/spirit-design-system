@@ -225,12 +225,12 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ### Dropdown trigger
 
-| Attribute               | Type      | Default | Required | Description                                                                                                    |
-| ----------------------- | --------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `data-spirit-target`    | `string`  | —       | ✔        | Target menu element selector                                                                                   |
-| `aria-expanded`         | `boolean` | —       | ✔        | Is set on an element to indicate if a control is expanded or collapsed                                         |
-| `aria-controls`         | `string`  | —       | ✔        | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
-| `data-spirit-autoclose` | `boolean` | true    | ✕        | When you need to disable autoclose feature                                                                     |
+| Attribute               | Type     | Default | Required | Description                                                                                                    |
+| ----------------------- | -------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| `data-spirit-target`    | `string` | —       | ✔        | Target menu element selector                                                                                   |
+| `aria-expanded`         | `bool`   | —       | ✔        | Is set on an element to indicate if a control is expanded or collapsed                                         |
+| `aria-controls`         | `string` | —       | ✔        | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
+| `data-spirit-autoclose` | `bool`   | `true`  | ✕        | When you need to disable autoclose feature                                                                     |
 
 ## Dropdown
 

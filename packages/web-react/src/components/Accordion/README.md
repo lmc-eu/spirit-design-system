@@ -154,7 +154,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 | `children`         | `ReactNode`                       | —         | ✔        | Accordion children's nodes                     |
 | `defaultOpen`      | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
 | `elementType`      | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
-| `stayOpen`         | `boolean`                         | —         | ✕        | Item stay open when another one is also opened |
+| `stayOpen`         | `bool`                            | —         | ✕        | Item stay open when another one is also opened |
 | `UNSAFE_className` | `string`                          | —         | ✕        | Wrapper custom class name                      |
 | `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Wrapper custom style                           |
 

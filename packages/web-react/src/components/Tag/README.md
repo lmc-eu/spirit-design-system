@@ -19,7 +19,7 @@ import { Tag } from '@lmc-eu/spirit-web-react';
 | `children`         | `ReactNode`                                             | —         | ✔        | Content of the Tag              |
 | `color`            | [Emotion Color dictionary][dictionary-color], `neutral` | `neutral` | ✕        | Color of the component          |
 | `elementType`      | `React.Element`                                         | `span`    | ✕        | HTML tag                        |
-| `isSubtle`         | `boolean`                                               | `false`   | ✕        | If is Subtle color variant used |
+| `isSubtle`         | `bool`                                                  | `false`   | ✕        | If is Subtle color variant used |
 | `ref`              | `ForwardedRef<HTMLSpanElement>`                         | —         | ✕        | Tag element reference           |
 | `size`             | [Size Extended dictionary][dictionary-size]             | `medium`  | ✕        | Size of the Tag                 |
 | `UNSAFE_className` | `string`                                                | —         | ✕        | Wrapper custom class name       |

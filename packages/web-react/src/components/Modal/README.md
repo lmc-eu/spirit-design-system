@@ -53,7 +53,7 @@ const handleClose = () => {
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
 | `children`         | `ReactNode`                                    | —       | ✕        | Children node             |
 | `id`               | `string`                                       | —       | ✔        | Open state                |
-| `isOpen`           | `boolean`                                      | `false` | ✔        | Open state                |
+| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                |
 | `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback on dialog closed |
 | `UNSAFE_className` | `string`                                       | —       | ✕        | Modal custom class name   |
 | `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Modal custom style        |
@@ -70,7 +70,7 @@ The rest of the properties are created from the default `<dialog>` element. [Mor
 | `elementType`        | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                             |
 | `UNSAFE_className`   | `string`              | —         | ✕        | ModalDialog custom class name                        |
 | `UNSAFE_style`       | `CSSProperties`       | —         | ✕        | ModalDialog custom style                             |
-| `isExpandedOnMobile` | `boolean`             | —         | ✕        | ModalDialog shrinks to fit the height of its content |
+| `isExpandedOnMobile` | `bool`                | —         | ✕        | ModalDialog shrinks to fit the height of its content |
 
 The rest of the properties are formed from the selected type of element. Documentation for [Article][ArticleElementDocs], [Form][FormElementDocs].
 
