@@ -15,9 +15,12 @@
 /phpstan.neon.dist  export-ignore
 /phpunit.xml.dist   export-ignore
 
-# Exclude story fiels from archive
+# Exclude story files from archive
 *.stories.twig
 **/stories/*
+
+# Exclude test files from archive
+**/__tests__/*
 
 # Configure diff output for .php and .phar files.
 *.php diff=php
