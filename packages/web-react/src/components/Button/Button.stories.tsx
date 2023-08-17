@@ -2,25 +2,34 @@ import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ButtonLink } from './ButtonLink';
+import { Button } from './Button';
 import { args, argTypes } from './stories/args';
 import ReadMe from './README.md?raw';
 
-const meta: Meta<typeof ButtonLink> = {
-  title: 'Components/ButtonLink',
-  component: ButtonLink,
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
+  component: Button,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
   },
-  argTypes,
-  args,
+  argTypes: {
+    ...argTypes,
+    type: {
+      control: 'select',
+      options: ['button', 'submit', 'reset'],
+    },
+  },
+  args: {
+    ...args,
+    type: 'button',
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof ButtonLink>;
+type Story = StoryObj<typeof Button>;
 
 export const Playground: Story = {
-  name: 'ButtonLink',
+  name: 'Button',
 };

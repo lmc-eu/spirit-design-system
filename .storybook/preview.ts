@@ -9,6 +9,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+    expanded: true,
+    sort: 'alpha',
+    hideNoControlsWarning: true,
   },
   docs: {
     theme: SpiritTheme,

@@ -44,6 +44,7 @@ const config: StorybookViteConfig = {
 
   docs: {
     autodocs: true,
+    defaultName: 'Overview',
   },
 };
 
