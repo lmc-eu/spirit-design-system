@@ -78,13 +78,13 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 | Name                      | Type                                | Default    | Required | Description                                 |
 | ------------------------- | ----------------------------------- | ---------- | -------- | ------------------------------------------- |
-| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`] | -          | ✕        | Handle for responsive breakpoint            |
+| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`] | —          | ✕        | Handle for responsive breakpoint            |
 | `elementType`             | [`span` \| `div`]                   | `div`      | ✕        | Type of element used as wrapper and content |
 | `id`                      | `string`                            | `<random>` | ✕        | Component id                                |
-| `isOpen`                  | `boolean`                           | -          | ✕        | Is open on initialization                   |
+| `isOpen`                  | `boolean`                           | —          | ✕        | Is open on initialization                   |
 | `transitionDuration`      | `number`                            | `250`      | ✕        | Transition duration in miliseconds          |
-| `UNSAFE_className`        | `string`                            | -          | ✕        | Wrapper custom class name                   |
-| `UNSAFE_style`            | `CSSProperties`                     | -          | ✕        | Wrapper custom style                        |
+| `UNSAFE_className`        | `string`                            | —          | ✕        | Wrapper custom class name                   |
+| `UNSAFE_style`            | `CSSProperties`                     | —          | ✕        | Wrapper custom style                        |
 
 ## Uncontrolled Collapse
 
@@ -127,13 +127,13 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 | Name                      | Type                                         | Default    | Required | Description                            |
 | ------------------------- | -------------------------------------------- | ---------- | -------- | -------------------------------------- |
-| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`]          | -          | ✕        | Handle for responsive breakpoint       |
+| `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`]          | —          | ✕        | Handle for responsive breakpoint       |
 | `id`                      | `string`                                     | `<random>` | ✕        | Component id                           |
-| `isOpen`                  | `boolean`                                    | -          | ✕        | Is open on initialization              |
-| `hideOnCollapse`          | `boolean`                                    | -          | ✕        | Hides button when content is displayed |
-| `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | -          | ✕        | Properties for trigger render          |
-| `UNSAFE_className`        | `string`                                     | -          | ✕        | Wrapper custom classname               |
-| `UNSAFE_style`            | `CSSProperties`                              | -          | ✕        | Wrapper custom style                   |
+| `isOpen`                  | `boolean`                                    | —          | ✕        | Is open on initialization              |
+| `hideOnCollapse`          | `boolean`                                    | —          | ✕        | Hides button when content is displayed |
+| `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | —          | ✕        | Properties for trigger render          |
+| `UNSAFE_className`        | `string`                                     | —          | ✕        | Wrapper custom classname               |
+| `UNSAFE_style`            | `CSSProperties`                              | —          | ✕        | Wrapper custom style                   |
 
 ## Render Toggle Props
 

@@ -31,15 +31,15 @@ Without lexer:
 
 | Prop name    | Type                                                                                      | Default   | Required | Description                                                                    |
 | ------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |
-| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | no       | Color variant                                                                  |
-| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | no       | Size variant                                                                   |
-| `href`       | `string`                                                                                  | —         | yes      | Link URL                                                                       |
-| `isBlock`    | `bool`                                                                                    | `false`   | no       | Span the element to the full width of its parent                               |
-| `isDisabled` | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is disabled                                                |
-| `isLoading`  | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
-| `isSquare`   | `bool`                                                                                    | `false`   | no       | If true, ButtonLink is square, usually only with an Icon                       |
-| `target`     | `string`                                                                                  | `null`    | no       | Browsing context for the link                                                  |
-| `title`      | `string`                                                                                  | `null`    | no       | Optional title to display on hover                                             |
+| `color`      | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
+| `size`       | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                                   |
+| `href`       | `string`                                                                                  | —         | ✔        | Link URL                                                                       |
+| `isBlock`    | `bool`                                                                                    | `false`   | ✕        | Span the element to the full width of its parent                               |
+| `isDisabled` | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is disabled                                                |
+| `isLoading`  | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
+| `isSquare`   | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is square, usually only with an Icon                       |
+| `target`     | `string`                                                                                  | `null`    | ✕        | Browsing context for the link                                                  |
+| `title`      | `string`                                                                                  | `null`    | ✕        | Optional title to display on hover                                             |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

@@ -31,10 +31,10 @@ Without lexer:
 
 | Prop name     | Type                                        | Default   | Required | Description                                                    |
 | ------------- | ------------------------------------------- | --------- | -------- | -------------------------------------------------------------- |
-| `elementType` | `string`                                    | `p`       | no       | HTML tag to render                                             |
-| `emphasis`    | [`regular` \| `bold` \| `italic`]           | `regular` | no       | Emphasis of the text                                           |
-| `size`        | [Size Extended dictionary][dictionary-size] | `medium`  | no       | Size of the text                                               |
-| `translate`   | [`yes` \| `no` \| `''`]                     | `null`    | no       | Set to `no` to disable machine translation of the text content |
+| `elementType` | `string`                                    | `p`       | ✕        | HTML tag to render                                             |
+| `emphasis`    | [`regular` \| `bold` \| `italic`]           | `regular` | ✕        | Emphasis of the text                                           |
+| `size`        | [Size Extended dictionary][dictionary-size] | `medium`  | ✕        | Size of the text                                               |
+| `translate`   | [`yes` \| `no` \| `''`]                     | `null`    | ✕        | Set to `no` to disable machine translation of the text content |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

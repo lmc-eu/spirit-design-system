@@ -52,7 +52,7 @@ By adding the `isFluid` attribute, FileUploader can take up all the available ho
 
 | Prop name | Type   | Default | Required | Description                                                |
 | --------- | ------ | ------- | -------- | ---------------------------------------------------------- |
-| `isFluid` | `bool` | `false` | no       | If true, the element spans to the full width of its parent |
+| `isFluid` | `bool` | `false` | ✕        | If true, the element spans to the full width of its parent |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -183,26 +183,26 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 
 | Prop name               | Type                                           | Default                 | Required | Description                                                           |
 | ----------------------- | ---------------------------------------------- | ----------------------- | -------- | --------------------------------------------------------------------- |
-| `accept`                | `string`                                       | `null`                  | no       | Allowed file types                                                    |
-| `dragAndDropText`       | `string`                                       | `or drag and drop here` | no       | Text shown in the drop zone if drag-and-drop is enabled on the device |
-| `helperText`            | `string`                                       | `null`                  | no\*\*   | Custom helper text                                                    |
-| `iconName`              | `string`                                       | `upload`                | no       | Icon used in the drop zone                                            |
-| `id`                    | `string`                                       | —                       | yes      | Input and label identification                                        |
-| `isDisabled`            | `bool`                                         | `false`                 | no       | If true, input is disabled                                            |
-| `isLabelHidden`         | `bool`                                         | `false`                 | no       | If true, label is hidden                                              |
-| `isRequired`            | `bool`                                         | `false`                 | no       | If true, input is required                                            |
-| `label`                 | `string`                                       | `null`                  | no\*     | Label text                                                            |
-| `maxFileSize`           | `number`                                       | `1000000`               | no       | The maximum size of the uploaded file in bytes                        |
-| `maxUploadedFiles`      | `number`                                       | `10`                    | no       | Maximum file upload queue size                                        |
-| `multiple`              | `bool`                                         | `false`                 | no       | If true, multiple files can be selected                               |
-| `name`                  | `string`                                       | `null`                  | no       | Input name                                                            |
-| `pickAFileText`         | `string`                                       | `Upload your file`      | no       | Text shown in the drop zone                                           |
-| `queueLimitBehavior`    | [`hide` \| `disable` \| `none`]                | `none`                  | no       | Input behavior when the file queue is filled                          |
-| `UNSAFE_helperText`     | `string`                                       | `null`                  | no\*\*   | Unescaped custom helper text                                          |
-| `UNSAFE_label`          | `string`                                       | `null`                  | no\*     | Unescaped label text (allows HTML)                                    |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`                  | no\*\*   | Unescaped validation text                                             |
-| `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | no       | Type of validation state                                              |
-| `validationText`        | [`string` \| `string[]`]                       | `null`                  | no\*\*   | Validation text                                                       |
+| `accept`                | `string`                                       | `null`                  | ✕        | Allowed file types                                                    |
+| `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device |
+| `helperText`            | `string`                                       | `null`                  | ✕\*\*    | Custom helper text                                                    |
+| `iconName`              | `string`                                       | `upload`                | ✕        | Icon used in the drop zone                                            |
+| `id`                    | `string`                                       | —                       | ✔        | Input and label identification                                        |
+| `isDisabled`            | `bool`                                         | `false`                 | ✕        | If true, input is disabled                                            |
+| `isLabelHidden`         | `bool`                                         | `false`                 | ✕        | If true, label is hidden                                              |
+| `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is required                                            |
+| `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                            |
+| `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in bytes                        |
+| `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                        |
+| `multiple`              | `bool`                                         | `false`                 | ✕        | If true, multiple files can be selected                               |
+| `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                            |
+| `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                           |
+| `queueLimitBehavior`    | [`hide` \| `disable` \| `none`]                | `none`                  | ✕        | Input behavior when the file queue is filled                          |
+| `UNSAFE_helperText`     | `string`                                       | `null`                  | ✕\*\*    | Unescaped custom helper text                                          |
+| `UNSAFE_label`          | `string`                                       | `null`                  | ✕\*      | Unescaped label text (allows HTML)                                    |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`                  | ✕\*\*    | Unescaped validation text                                             |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`                  | ✕        | Type of validation state                                              |
+| `validationText`        | [`string` \| `string[]`]                       | `null`                  | ✕\*\*    | Validation text                                                       |
 
 \*: To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 \*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.
@@ -228,8 +228,8 @@ FileUploaderList is a simple wrapper which provides an accessible title and the 
 
 | Prop name     | Type     | Default                     | Required | Description                     |
 | ------------- | -------- | --------------------------- | -------- | ------------------------------- |
-| `headingId`   | `string` | `file-uploader-attachments` | no       | List and heading identification |
-| `headingText` | `string` | `Attachments`               | no       | List title                      |
+| `headingId`   | `string` | `file-uploader-attachments` | ✕        | List and heading identification |
+| `headingText` | `string` | `Attachments`               | ✕        | List title                      |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

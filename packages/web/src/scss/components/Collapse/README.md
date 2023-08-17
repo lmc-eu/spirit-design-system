@@ -47,18 +47,18 @@ Hide button when collapse
 
 | Prop name            | Type      | Default    | Required | Description                         |
 | -------------------- | --------- | ---------- | -------- | ----------------------------------- |
-| `data-spirit-toggle` | `string`  | `collapse` | yes      | Iterable selector                   |
-| `data-spirit-target` | `string`  | -          | yes      | Target selector                     |
-| `data-spirit-more`   | `boolean` | -          | no       | For hide on collapse as more button |
-| `aria-expanded`      | `string`  | -          | no       | Aria expanded state (auto)          |
-| `aria-controls`      | `string`  | -          | no       | Aria controls state (auto)          |
+| `data-spirit-toggle` | `string`  | `collapse` | ✔        | Iterable selector                   |
+| `data-spirit-target` | `string`  | —          | ✔        | Target selector                     |
+| `data-spirit-more`   | `boolean` | —          | ✕        | For hide on collapse as more button |
+| `aria-expanded`      | `string`  | —          | ✕        | Aria expanded state (auto)          |
+| `aria-controls`      | `string`  | —          | ✕        | Aria controls state (auto)          |
 
 ## Wrapper attributes
 
 | Prop name                | Type                    | Default | Required | Description                                                              |
 | ------------------------ | ----------------------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-spirit-breakpoint` | [`tablet` \| `desktop`] | -       | no       | Breakpoint on which the collapsed content is forced to reveal \*         |
-| `data-spirit-parent`     | `string`                | -       | no       | A parent element selector that ensures that only one item is opened \*\* |
+| `data-spirit-breakpoint` | [`tablet` \| `desktop`] | —       | ✕        | Breakpoint on which the collapsed content is forced to reveal \*         |
+| `data-spirit-parent`     | `string`                | —       | ✕        | A parent element selector that ensures that only one item is opened \*\* |
 
 There can be several triggers, the same rules apply to each.
 

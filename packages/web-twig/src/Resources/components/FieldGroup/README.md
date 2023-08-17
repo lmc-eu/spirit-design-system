@@ -99,19 +99,19 @@ When validated on server:
 
 | Prop name               | Type                                           | Default | Required | Description                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ------------------------------------------ |
-| `form`                  | `string`                                       | `null`  | no       | Parent form ID                             |
-| `helperText`            | `string`                                       | `null`  | no\*\*   | Custom helper text                         |
-| `id`                    | `string`                                       | —       | yes      | Group and label identification             |
-| `isDisabled`            | `bool`                                         | `false` | no       | If true, the group is disabled             |
-| `isLabelHidden`         | `bool`                                         | `false` | no       | If true, label is hidden                   |
-| `isRequired`            | `bool`                                         | `false` | no       | If true, the group is marked as required   |
-| `label`                 | `string`                                       | `null`  | no\*     | Label text                                 |
-| `name`                  | `string`                                       | `null`  | no       | Group name                                 |
-| `UNSAFE_helperText`     | `string`                                       | `null`  | no\*\*   | Unescaped custom helper text (allows HTML) |
-| `UNSAFE_label`          | `string`                                       | `null`  | no\*     | Unescaped label text (allows HTML)         |
-| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | no\*\*   | Unescaped validation text (allows HTML)    |
-| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state                   |
-| `validationText`        | [`string` \| `string[]`]                       | `null`  | no\*\*   | Validation text                            |
+| `form`                  | `string`                                       | `null`  | ✕        | Parent form ID                             |
+| `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                         |
+| `id`                    | `string`                                       | —       | ✔        | Group and label identification             |
+| `isDisabled`            | `bool`                                         | `false` | ✕        | If true, the group is disabled             |
+| `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                   |
+| `isRequired`            | `bool`                                         | `false` | ✕        | If true, the group is marked as required   |
+| `label`                 | `string`                                       | `null`  | ✕\*      | Label text                                 |
+| `name`                  | `string`                                       | `null`  | ✕        | Group name                                 |
+| `UNSAFE_helperText`     | `string`                                       | `null`  | ✕\*\*    | Unescaped custom helper text (allows HTML) |
+| `UNSAFE_label`          | `string`                                       | `null`  | ✕\*      | Unescaped label text (allows HTML)         |
+| `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Unescaped validation text (allows HTML)    |
+| `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                   |
+| `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                            |
 
 \*: To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 \*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.

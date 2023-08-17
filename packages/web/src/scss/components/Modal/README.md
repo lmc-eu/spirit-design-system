@@ -325,11 +325,11 @@ Both trigger and close buttons use `data` attributes to open and close the Modal
 
 | Prop name             | Type     | Default | Required | Description                |
 | --------------------- | -------- | ------- | -------- | -------------------------- |
-| `aria-controls`       | `string` | -       | no       | Aria controls state (auto) |
-| `aria-expanded`       | `string` | -       | no       | Aria expanded state (auto) |
-| `data-spirit-dismiss` | `string` | `modal` | no       | Iterable selector          |
-| `data-spirit-target`  | `string` | -       | yes      | Target selector            |
-| `data-spirit-toggle`  | `string` | `modal` | no       | Iterable selector          |
+| `aria-controls`       | `string` | —       | ✕        | Aria controls state (auto) |
+| `aria-expanded`       | `string` | —       | ✕        | Aria expanded state (auto) |
+| `data-spirit-dismiss` | `string` | `modal` | ✕        | Iterable selector          |
+| `data-spirit-target`  | `string` | —       | ✔        | Target selector            |
+| `data-spirit-toggle`  | `string` | `modal` | ✕        | Iterable selector          |
 
 ## State Classes
 

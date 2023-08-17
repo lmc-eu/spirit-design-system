@@ -41,10 +41,10 @@ Without lexer:
 
 | Prop name     | Type                                         | Default   | Required | Description                |
 | ------------- | -------------------------------------------- | --------- | -------- | -------------------------- |
-| `color`       | [Emotion Color dictionary][dictionary-color] | `success` | no       | Color variant              |
-| `elementType` | `string`                                     | `div`     | no       | HTML tag to render         |
-| `iconName`    | `string`                                     | `info` \* | no       | Icon used in Alert         |
-| `isCentered`  | `bool`                                       | `false`   | no       | If true, Alert is centered |
+| `color`       | [Emotion Color dictionary][dictionary-color] | `success` | ✕        | Color variant              |
+| `elementType` | `string`                                     | `div`     | ✕        | HTML tag to render         |
+| `iconName`    | `string`                                     | `info` \* | ✕        | Icon used in Alert         |
+| `isCentered`  | `bool`                                       | `false`   | ✕        | If true, Alert is centered |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package], or from your custom source of icons.

@@ -302,19 +302,19 @@ const resetStateHandler = () => {
 
 | Name                                  | Type                                            | Default | Required | Description                                                         |
 | ------------------------------------- | ----------------------------------------------- | ------- | -------- | ------------------------------------------------------------------- |
-| `id`                                  | `string`                                        | -       | ✔        | FileUploader id                                                     |
-| `addToQueue`                          | `(key: string, file: File) => FileQueueMapType` | -       | ✔        | Callback to add an item to the queue                                |
-| `clearQueue`                          | `() => void`                                    | -       | ✔        | Callback to clear the queue                                         |
-| `fileQueue`                           | `FileQueueMapType`                              | -       | ✔        | Queue of items to upload                                            |
-| `onDismiss`                           | `(key: string) => FileQueueMapType`             | -       | ✔        | A callback to delete a particular item from the queue               |
-| `findInQueue`                         | `(key: string) => FileQueueMapType`             | -       | ✔        | A callback to find a particular item in the queue                   |
-| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | -       | ✔        | A callback to update a particular item in the queue                 |
-| `isFluid`                             | `boolean`                                       | -       | ✕        | When the field is supposed to be fluid                              |
-| `errorMessages.errorMaxFileSize`      | `string`                                        | -       | ✕        | Translation for the error message: Maximum file size                |
-| `errorMessages.errorMaxUploadedFiles` | `string`                                        | -       | ✕        | Translation for the error message: Maximum number of uploaded files |
-| `errorMessages.errorFileDuplicity`    | `string`                                        | -       | ✕        | Translation for the error message: Duplicate file in queue          |
-| `UNSAFE_className`                    | `string`                                        | -       | ✕        | FileUploader custom class name                                      |
-| `UNSAFE_style`                        | `CSSProperties`                                 | -       | ✕        | FileUploader custom style                                           |
+| `id`                                  | `string`                                        | —       | ✔        | FileUploader id                                                     |
+| `addToQueue`                          | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | Callback to add an item to the queue                                |
+| `clearQueue`                          | `() => void`                                    | —       | ✔        | Callback to clear the queue                                         |
+| `fileQueue`                           | `FileQueueMapType`                              | —       | ✔        | Queue of items to upload                                            |
+| `onDismiss`                           | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to delete a particular item from the queue               |
+| `findInQueue`                         | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to find a particular item in the queue                   |
+| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
+| `isFluid`                             | `boolean`                                       | —       | ✕        | When the field is supposed to be fluid                              |
+| `errorMessages.errorMaxFileSize`      | `string`                                        | —       | ✕        | Translation for the error message: Maximum file size                |
+| `errorMessages.errorMaxUploadedFiles` | `string`                                        | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
+| `errorMessages.errorFileDuplicity`    | `string`                                        | —       | ✕        | Translation for the error message: Duplicate file in queue          |
+| `UNSAFE_className`                    | `string`                                        | —       | ✕        | FileUploader custom class name                                      |
+| `UNSAFE_style`                        | `CSSProperties`                                 | —       | ✕        | FileUploader custom style                                           |
 
 The rest of the properties are created from the default `<div>` element. [More about the element][DivElementDocs]
 
@@ -322,28 +322,28 @@ The rest of the properties are created from the default `<div>` element. [More a
 
 | Name                 | Type                                 | Default  | Required | Description                                                                                                                                                     |
 | -------------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `accept`             | `string`                             | -        | ✕        | The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. |
-| `id`                 | `string`                             | -        | ✔        | FileUploaderInput id                                                                                                                                            |
-| `inputRef`           | `MutableRefObject<HTMLInputElement>` | -        | ✕        | Input element reference                                                                                                                                         |
-| `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | -        | ✕        | Drop zone element reference                                                                                                                                     |
-| `helperText`         | `string`                             | -        | ✕        | Custom helper text                                                                                                                                              |
-| `labelText`          | `string`                             | -        | ✕        | Label for input in Drop zone                                                                                                                                    |
-| `linkText`           | `string`                             | -        | ✕        | Link text in input in Drop zone                                                                                                                                 |
+| `accept`             | `string`                             | —        | ✕        | The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. |
+| `id`                 | `string`                             | —        | ✔        | FileUploaderInput id                                                                                                                                            |
+| `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
+| `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
+| `helperText`         | `string`                             | —        | ✕        | Custom helper text                                                                                                                                              |
+| `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
+| `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
-| `isDisabled`         | `boolean`                            | -        | ✕        | Whether is field disabled                                                                                                                                       |
-| `isRequired`         | `boolean`                            | -        | ✕        | Whether is field required                                                                                                                                       |
-| `validationState`    | `ValidationState`                    | -        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | [`string` \| `string[]`]             | -        | ✕        | Validation status text                                                                                                                                          |
+| `isDisabled`         | `boolean`                            | —        | ✕        | Whether is field disabled                                                                                                                                       |
+| `isRequired`         | `boolean`                            | —        | ✕        | Whether is field required                                                                                                                                       |
+| `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
+| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
-| `isLabelHidden`      | `boolean`                            | -        | ✕        | Whether is input label hidden                                                                                                                                   |
-| `isMultiple`         | `boolean`                            | -        | ✕        | When multiple files can be selected at once                                                                                                                     |
+| `isLabelHidden`      | `boolean`                            | —        | ✕        | Whether is input label hidden                                                                                                                                   |
+| `isMultiple`         | `boolean`                            | —        | ✕        | When multiple files can be selected at once                                                                                                                     |
 | `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
-| `label`              | `string`                             | -        | ✕        | Field label                                                                                                                                                     |
-| `name`               | `string`                             | -        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
-| `onError`            | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition                                                                                                                                     |
-| `UNSAFE_className`   | `string`                             | -        | ✕        | FileUploaderInput custom class name                                                                                                                             |
-| `UNSAFE_style`       | `CSSProperties`                      | -        | ✕        | FileUploaderInput custom style                                                                                                                                  |
+| `label`              | `string`                             | —        | ✕        | Field label                                                                                                                                                     |
+| `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
+| `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
+| `UNSAFE_className`   | `string`                             | —        | ✕        | FileUploaderInput custom class name                                                                                                                             |
+| `UNSAFE_style`       | `CSSProperties`                      | —        | ✕        | FileUploaderInput custom style                                                                                                                                  |
 
 The rest of the properties are created from the default `<input>` element. [More about the element][InputElementDocs]
 
@@ -351,13 +351,13 @@ The rest of the properties are created from the default `<input>` element. [More
 
 | Name                  | Type            | Default | Required | Description                                   |
 | --------------------- | --------------- | ------- | -------- | --------------------------------------------- |
-| `attachmentComponent` | `string`        | -       | ✔        | A component for rendering a single attachment |
+| `attachmentComponent` | `string`        | —       | ✔        | A component for rendering a single attachment |
 | `hasImagePreview`     | `boolean`       | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string`        | -       | ✔        | FileUploaderList id                           |
-| `inputName`           | `string`        | -       | ✔        | The name of the input field                   |
-| `label`               | `string`        | -       | ✕        | Label for the list                            |
-| `UNSAFE_className`    | `string`        | -       | ✕        | FileUploaderList custom class name            |
-| `UNSAFE_style`        | `CSSProperties` | -       | ✕        | FileUploaderList custom style                 |
+| `id`                  | `string`        | —       | ✔        | FileUploaderList id                           |
+| `inputName`           | `string`        | —       | ✔        | The name of the input field                   |
+| `label`               | `string`        | —       | ✕        | Label for the list                            |
+| `UNSAFE_className`    | `string`        | —       | ✕        | FileUploaderList custom class name            |
+| `UNSAFE_style`        | `CSSProperties` | —       | ✕        | FileUploaderList custom style                 |
 
 The rest of the properties are created from the default `<ul>` element. [More about the element][ListElementDocs]
 
@@ -368,17 +368,17 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 | `buttonLabel`      | `string`                             | `Remove` | ✕        | [**DEPRECATED**][Deprecated] in favor of `removeText`; Dismiss button label |
 | `editButtonLabel`  | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][Deprecated] in favor of `editText`; Edit button label      |
 | `editText`         | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
-| `file`             | `File`                               | -        | ✔        | Attachment file object                                                      |
+| `file`             | `File`                               | —        | ✔        | Attachment file object                                                      |
 | `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
-| `id`               | `string`                             | -        | ✔        | FileUploaderAttachment id                                                   |
-| `label`            | `string`                             | -        | ✔        | File name                                                                   |
-| `name`             | `string`                             | -        | ✔        | Input field name                                                            |
-| `onDismiss`        | `(key: string) => FileQueueMapType`  | -        | ✔        | Callback to delete an item from the queue                                   |
-| `onEdit`           | `(event: Event, file: File) => void` | -        | ✕        | Show and add function to edit button                                        |
-| `onError`          | `FileUploaderErrorCallbackType`      | -        | ✕        | Callback on error condition                                                 |
+| `id`               | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
+| `label`            | `string`                             | —        | ✔        | File name                                                                   |
+| `name`             | `string`                             | —        | ✔        | Input field name                                                            |
+| `onDismiss`        | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue                                   |
+| `onEdit`           | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                                        |
+| `onError`          | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                 |
 | `removeText`       | `string`                             | `Remove` | ✕        | Dismiss button label                                                        |
-| `UNSAFE_className` | `string`                             | -        | ✕        | FileUploaderAttachment custom class name                                    |
-| `UNSAFE_style`     | `CSSProperties`                      | -        | ✕        | FileUploaderAttachment custom style                                         |
+| `UNSAFE_className` | `string`                             | —        | ✕        | FileUploaderAttachment custom class name                                    |
+| `UNSAFE_style`     | `CSSProperties`                      | —        | ✕        | FileUploaderAttachment custom style                                         |
 
 The rest of the properties are created from the default `<li>` element. [More about the element][ListItemElementDocs]
 
@@ -386,9 +386,9 @@ The rest of the properties are created from the default `<li>` element. [More ab
 
 | Name               | Type                                   | Default | Required | Description                               |
 | ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
-| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | -       | ✕        | Button click handler                      |
-| `UNSAFE_className` | `string`                               | -       | ✕        | AttachmentDismissButton custom class name |
-| `UNSAFE_style`     | `CSSProperties`                        | -       | ✕        | AttachmentDismissButton custom style      |
+| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler                      |
+| `UNSAFE_className` | `string`                               | —       | ✕        | AttachmentDismissButton custom class name |
+| `UNSAFE_style`     | `CSSProperties`                        | —       | ✕        | AttachmentDismissButton custom style      |
 
 The rest of the properties are created from the default `<button>` element. [More about the element][ButtonElementDocs]
 
@@ -396,9 +396,9 @@ The rest of the properties are created from the default `<button>` element. [Mor
 
 | Name               | Type                                   | Default | Required | Description                               |
 | ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
-| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | -       | ✕        | Button click handler                      |
-| `UNSAFE_className` | `string`                               | -       | ✕        | AttachmentDismissButton custom class name |
-| `UNSAFE_style`     | `CSSProperties`                        | -       | ✕        | AttachmentDismissButton custom style      |
+| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler                      |
+| `UNSAFE_className` | `string`                               | —       | ✕        | AttachmentDismissButton custom class name |
+| `UNSAFE_style`     | `CSSProperties`                        | —       | ✕        | AttachmentDismissButton custom style      |
 
 The rest of the properties are created from the default `<button>` element. [More about the element][ButtonElementDocs]
 
@@ -412,31 +412,31 @@ via `inputProps` and `listProps`.
 | Name                  | Type                                    | Default  | Required | Description                                         |
 | --------------------- | --------------------------------------- | -------- | -------- | --------------------------------------------------- |
 | `iconName`            | `string`                                | `upload` | ✔        | Icon used in the UncontrolledFileUploader drop zone |
-| `id`                  | `string`                                | -        | ✔        | UncontrolledFileUploader id                         |
-| `inputId`             | `string`                                | -        | ✔        | FileUploaderInput id                                |
-| `inputLabel`          | `string`                                | -        | ✔        | FileUploaderInput label                             |
-| `inputName`           | `string`                                | -        | ✔        | FileUploaderInput name                              |
-| `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | -        | ✕        | Rest of FileUploaderInput props                     |
-| `listId`              | `string`                                | -        | ✔        | FileUploaderList id                                 |
-| `listProps`           | `Partial<FileUploaderListBaseProps>`    | -        | ✕        | Rest of FileUploaderList props                      |
-| `helperText`          | `string`                                | -        | ✕        | Custom helper text                                  |
-| `labelText`           | `string`                                | -        | ✕        | Label for input in Drop zone                        |
-| `linkText`            | `string`                                | -        | ✕        | Link text in input in Drop zone                     |
-| `attachmentComponent` | `string`                                | -        | ✔        | A component for rendering a single attachment       |
+| `id`                  | `string`                                | —        | ✔        | UncontrolledFileUploader id                         |
+| `inputId`             | `string`                                | —        | ✔        | FileUploaderInput id                                |
+| `inputLabel`          | `string`                                | —        | ✔        | FileUploaderInput label                             |
+| `inputName`           | `string`                                | —        | ✔        | FileUploaderInput name                              |
+| `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                     |
+| `listId`              | `string`                                | —        | ✔        | FileUploaderList id                                 |
+| `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
+| `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
+| `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
+| `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
+| `attachmentComponent` | `string`                                | —        | ✔        | A component for rendering a single attachment       |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
-| `isLabelHidden`       | `boolean`                               | -        | ✕        | Whether is input label hidden                       |
-| `isMultiple`          | `boolean`                               | -        | ✕        | When multiple files can be selected at once         |
-| `isDisabled`          | `boolean`                               | -        | ✕        | Whether is field disabled                           |
+| `isLabelHidden`       | `boolean`                               | —        | ✕        | Whether is input label hidden                       |
+| `isMultiple`          | `boolean`                               | —        | ✕        | When multiple files can be selected at once         |
+| `isDisabled`          | `boolean`                               | —        | ✕        | Whether is field disabled                           |
 | `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
-| `isRequired`          | `boolean`                               | -        | ✕        | Whether is field required                           |
-| `isFluid`             | `boolean`                               | -        | ✕        | When the field is supposed to be fluid              |
-| `onInputError`        | `FileUploaderErrorCallbackType`         | -        | ✕        | Callback on error condition                         |
-| `onChange`            | `(fileQueue: FileQueueMapType) => void` | -        | ✕        | Callback on change in fileQueue                     |
-| `validationState`     | `ValidationState`                       | -        | ✕        | Validation state                                    |
-| `validationText`      | [`string` \| `string[]`]                | -        | ✕        | Validation status text                              |
-| `UNSAFE_className`    | `string`                                | -        | ✕        | UncontrolledFileUploader custom class name          |
-| `UNSAFE_style`        | `CSSProperties`                         | -        | ✕        | UncontrolledFileUploader custom style               |
+| `isRequired`          | `boolean`                               | —        | ✕        | Whether is field required                           |
+| `isFluid`             | `boolean`                               | —        | ✕        | When the field is supposed to be fluid              |
+| `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
+| `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
+| `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
+| `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
+| `UNSAFE_className`    | `string`                                | —        | ✕        | UncontrolledFileUploader custom class name          |
+| `UNSAFE_style`        | `CSSProperties`                         | —        | ✕        | UncontrolledFileUploader custom style               |
 
 For detailed information see [FileUploader] component.
 

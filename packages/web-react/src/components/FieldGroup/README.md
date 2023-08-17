@@ -96,18 +96,18 @@ Validation states can be presented either by adding the `validationState` attrib
 
 | Name               | Type                                           | Default | Required | Description                              |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------- |
-| `form`             | `string`                                       | `null`  | no       | Parent form ID                           |
-| `helperText`       | `string`                                       | `null`  | no       | Custom helper text                       |
-| `id`               | `string`                                       | —       | yes      | Group and label identification           |
-| `isDisabled`       | `bool`                                         | `false` | no       | If true, the group is disabled           |
-| `isLabelHidden`    | `bool`                                         | `false` | no       | If true, label is hidden                 |
-| `isRequired`       | `bool`                                         | `false` | no       | If true, the group is marked as required |
-| `label`            | `string`                                       | —       | yes      | Label text                               |
-| `name`             | `string`                                       | `null`  | no       | Group name                               |
-| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name                |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style                     |
-| `validationState`  | [Validation dictionary][dictionary-validation] | `null`  | no       | Type of validation state                 |
-| `validationText`   | [`string` \| `string[]`]                       | `null`  | no       | Validation text                          |
+| `form`             | `string`                                       | `null`  | ✕        | Parent form ID                           |
+| `helperText`       | `string`                                       | `null`  | ✕        | Custom helper text                       |
+| `id`               | `string`                                       | —       | ✔        | Group and label identification           |
+| `isDisabled`       | `bool`                                         | `false` | ✕        | If true, the group is disabled           |
+| `isLabelHidden`    | `bool`                                         | `false` | ✕        | If true, label is hidden                 |
+| `isRequired`       | `bool`                                         | `false` | ✕        | If true, the group is marked as required |
+| `label`            | `string`                                       | —       | ✔        | Label text                               |
+| `name`             | `string`                                       | `null`  | ✕        | Group name                               |
+| `UNSAFE_className` | `string`                                       | —       | ✕        | Wrapper custom class name                |
+| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Wrapper custom style                     |
+| `validationState`  | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                 |
+| `validationText`   | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                          |
 
 [gh-web-field-group-html]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#html-semantics
 [gh-web-field-group-disabled]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#disabled-state

@@ -37,8 +37,8 @@ Advanced example usage:
 | `hasIntermediateDividers` | `bool`          | `false` | ✕        | Render dividers between items          |
 | `hasSpacing`              | `bool`          | `false` | ✕        | Apply a spacing between items          |
 | `hasStartDivider`         | `bool`          | `false` | ✕        | Render a divider before the first item |
-| `UNSAFE_className`        | `string`        | -       | ✕        | Wrapper custom class name              |
-| `UNSAFE_style`            | `CSSProperties` | -       | ✕        | Wrapper custom style                   |
+| `UNSAFE_className`        | `string`        | —       | ✕        | Wrapper custom class name              |
+| `UNSAFE_style`            | `CSSProperties` | —       | ✕        | Wrapper custom style                   |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility.
