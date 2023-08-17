@@ -66,22 +66,22 @@ const selectTab = useCallback((tabId) => {
 
 #### API
 
-| Name                | Type                     | Description                                  |
-| ------------------- | ------------------------ | -------------------------------------------- |
-| `selectedTab`       | [`string` \| `number`]   | Identification of the selected tab           |
-| `toogle`            | `Function`               | Toggle function which accept tab ID as input |
-| `children`          | `any`                    | Child component                              |
-| `onSelectionChange` | `(tabId: TabId) => void` | When the state of the selected panel changes |
+| Name                | Type                     | Default | Required | Description                                  |
+| ------------------- | ------------------------ | ------- | -------- | -------------------------------------------- |
+| `selectedTab`       | [`string` \| `number`]   | —       | ✔        | Identification of the selected tab           |
+| `toogle`            | `Function`               | —       | ✔        | Toggle function which accept tab ID as input |
+| `children`          | `any`                    | —       | ✕        | Child component                              |
+| `onSelectionChange` | `(tabId: TabId) => void` | —       | ✕        | When the state of the selected panel changes |
 
 ### UncontrolledTabs
 
 #### API
 
-| Name                 | Type                     | Description                                  |
-| -------------------- | ------------------------ | -------------------------------------------- |
-| `defaultSelectedTab` | [`string` \| `number`]   | Identification of default selected tab       |
-| `children`           | `any`                    | Child component                              |
-| `onSelectionChange`  | `(tabId: TabId) => void` | When the state of the selected panel changes |
+| Name                 | Type                     | Default | Required | Description                                  |
+| -------------------- | ------------------------ | ------- | -------- | -------------------------------------------- |
+| `defaultSelectedTab` | [`string` \| `number`]   | —       | ✔        | Identification of default selected tab       |
+| `children`           | `any`                    | —       | ✕        | Child component                              |
+| `onSelectionChange`  | `(tabId: TabId) => void` | —       | ✕        | When the state of the selected panel changes |
 
 ### TabList
 
@@ -89,9 +89,9 @@ Tab list
 
 #### API
 
-| Name       | Type  | Description     |
-| ---------- | ----- | --------------- |
-| `children` | `any` | Child component |
+| Name       | Type  | Default | Required | Description     |
+| ---------- | ----- | ------- | -------- | --------------- |
+| `children` | `any` | —       | ✕        | Child component |
 
 ### TabItem
 
@@ -99,10 +99,10 @@ Tab list item
 
 #### API
 
-| Name       | Type                   | Description           |
-| ---------- | ---------------------- | --------------------- |
-| `forTab`   | [`string` \| `number`] | Identification of tab |
-| `children` | `any`                  | Child component       |
+| Name       | Type                   | Default | Required | Description           |
+| ---------- | ---------------------- | ------- | -------- | --------------------- |
+| `forTab`   | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `children` | `any`                  | —       | ✕        | Child component       |
 
 ### TabLink
 
@@ -110,10 +110,10 @@ Tab list link
 
 #### API
 
-| Name       | Type     | Description     |
-| ---------- | -------- | --------------- |
-| `href`     | `string` | External link   |
-| `children` | `any`    | Child component |
+| Name       | Type     | Default | Required | Description     |
+| ---------- | -------- | ------- | -------- | --------------- |
+| `href`     | `string` | —       | ✔        | External link   |
+| `children` | `any`    | —       | ✕        | Child component |
 
 ### TabContent
 
@@ -121,9 +121,9 @@ Tab content wrapper
 
 #### API
 
-| Name       | Type  | Description     |
-| ---------- | ----- | --------------- |
-| `children` | `any` | Child component |
+| Name       | Type  | Default | Required | Description     |
+| ---------- | ----- | ------- | -------- | --------------- |
+| `children` | `any` | —       | ✕        | Child component |
 
 ### TabPane
 
@@ -131,9 +131,9 @@ Tab content item
 
 #### API
 
-| Name       | Type                   | Description           |
-| ---------- | ---------------------- | --------------------- |
-| `tabId`    | [`string` \| `number`] | Identification of tab |
-| `children` | `any`                  | Child component       |
+| Name       | Type                   | Default | Required | Description           |
+| ---------- | ---------------------- | ------- | -------- | --------------------- |
+| `tabId`    | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `children` | `any`                  | —       | ✕        | Child component       |
 
 For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.

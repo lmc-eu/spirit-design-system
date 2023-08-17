@@ -74,7 +74,7 @@ const [isOpen, toggle] = useState<boolean>(true);
 </Collapse>
 ```
 
-## Props
+## API
 
 | Name                      | Type                                | Default    | Required | Description                                 |
 | ------------------------- | ----------------------------------- | ---------- | -------- | ------------------------------------------- |
@@ -123,7 +123,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 </UncontrolledCollapse>;
 ```
 
-## Props
+## API
 
 | Name                      | Type                                         | Default    | Required | Description                            |
 | ------------------------- | -------------------------------------------- | ---------- | -------- | -------------------------------------- |
@@ -135,11 +135,11 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 | `UNSAFE_className`        | `string`                                     | —          | ✕        | Wrapper custom classname               |
 | `UNSAFE_style`            | `CSSProperties`                              | —          | ✕        | Wrapper custom style                   |
 
-## Render Toggle Props
+## Render Toggle API
 
-| Name            | Type         | Description           |
-| --------------- | ------------ | --------------------- |
-| `isOpen`        | `bool`       | When collapse is open |
-| `onClick`       | `string`     | Trigger onClick event |
-| `aria-expanded` | `Booleanish` | Trigger aria expanded |
-| `aria-controls` | `string`     | Trigger aria controls |
+| Name            | Type         | Default | Required | Description           |
+| --------------- | ------------ | ------- | -------- | --------------------- |
+| `isOpen`        | `bool`       | —       | ✕        | When collapse is open |
+| `onClick`       | `string`     | —       | ✕        | Trigger onClick event |
+| `aria-expanded` | `Booleanish` | —       | ✕        | Trigger aria expanded |
+| `aria-controls` | `string`     | —       | ✕        | Trigger aria controls |
