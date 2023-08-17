@@ -27,7 +27,7 @@ Advanced example usage:
 
 ## Available props
 
-| Prop name          | Type                                           | Default | Required | Description                    |
+| Name               | Type                                           | Default | Required | Description                    |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------ |
 | `id`               | string                                         | -       | ✔        | Input and label identification |
 | `isDisabled`       | boolean                                        | -       | ✕        | Whether is field disabled      |

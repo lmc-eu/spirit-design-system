@@ -41,7 +41,7 @@ TextFieldBase with password toggle (button to reveal the password):
 
 ## Available props
 
-| Prop name           | Type                                                          | Default | Required | Description                                                             |
+| Name                | Type                                                          | Default | Required | Description                                                             |
 | ------------------- | ------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autocomplete`      | `boolean`                                                     | -       | ✕        | If the field should have autocomplete enabled                           |
 | `hasPasswordToggle` | `boolean`                                                     | -       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |

@@ -94,7 +94,7 @@ Validation states can be presented either by adding the `validationState` attrib
 
 ## API
 
-| Prop name          | Type                                           | Default | Required | Description                              |
+| Name               | Type                                           | Default | Required | Description                              |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------- |
 | `form`             | `string`                                       | `null`  | no       | Parent form ID                           |
 | `helperText`       | `string`                                       | `null`  | no       | Custom helper text                       |

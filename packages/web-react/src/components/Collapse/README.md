@@ -76,7 +76,7 @@ const [isOpen, toggle] = useState<boolean>(true);
 
 ## Props
 
-| Prop name                 | Type                            | Default    | Required | Description                                 |
+| Name                      | Type                            | Default    | Required | Description                                 |
 | ------------------------- | ------------------------------- | ---------- | -------- | ------------------------------------------- |
 | `id`                      | `string`                        | `<random>` | ✕        | Component id                                |
 | `isOpen`                  | `boolean`                       | -          | ✕        | Is open on initialization                   |
@@ -125,7 +125,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 ## Props
 
-| Prop name                 | Type                                         | Default    | Required | Description                            |
+| Name                      | Type                                         | Default    | Required | Description                            |
 | ------------------------- | -------------------------------------------- | ---------- | -------- | -------------------------------------- |
 | `id`                      | `string`                                     | `<random>` | ✕        | Component id                           |
 | `isOpen`                  | `boolean`                                    | -          | ✕        | Is open on initialization              |
@@ -137,7 +137,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 
 ## Render Toggle Props
 
-| Prop name       | Type         | Description           |
+| Name            | Type         | Description           |
 | --------------- | ------------ | --------------------- |
 | `isOpen`        | `boolean`    | When collapse is open |
 | `onClick`       | `string`     | Trigger onClick event |

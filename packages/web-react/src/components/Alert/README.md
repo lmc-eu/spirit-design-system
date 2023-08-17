@@ -17,7 +17,7 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 
 ## Available props
 
-| Prop name          | Type                                         | Default          | Required | Description                |
+| Name               | Type                                         | Default          | Required | Description                |
 | ------------------ | -------------------------------------------- | ---------------- | -------- | -------------------------- |
 | `children`         | `ReactNode`                                  | -                | ✔        | Content of the Alert       |
 | `color`            | [Emotion Color dictionary][dictionary-color] | `success`        | ✕        | Color of the component     |

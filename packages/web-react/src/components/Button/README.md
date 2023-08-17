@@ -35,7 +35,7 @@ import { RouterLink } from 'react-router-dom';
 
 ### Available props
 
-| Prop name          | Type                                                                                      | Default    | Required | Description                                                                |
+| Name               | Type                                                                                      | Default    | Required | Description                                                                |
 | ------------------ | ----------------------------------------------------------------------------------------- | ---------- | -------- | -------------------------------------------------------------------------- |
 | `children`         | `ReactNode`                                                                               | `null`     | ✕        | Content of the Button                                                      |
 | `color`            | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary`  | ✕        | Color variant                                                              |
@@ -76,7 +76,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 
 ### Available props
 
-| Prop name          | Type                                                                                      | Default   | Required | Description                                                                    |
+| Name               | Type                                                                                      | Default   | Required | Description                                                                    |
 | ------------------ | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |
 | `children`         | `ReactNode`                                                                               | `null`    | ✕        | Content of the ButtonLink                                                      |
 | `color`            | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
