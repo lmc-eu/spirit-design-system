@@ -72,9 +72,9 @@ const toggleHandler = () => setOpen(!open);
 | ------------------ | ------------------------------------------------- | -------- | -------- | ----------------------------------------- |
 | `children`         | `ReactNode`                                       | —        | ✔        | Tooltip children's nodes                  |
 | `closeLabel`       | `string`                                          | `Close`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `boolean`                                         | —        | ✕        | When it should appear with a close button |
+| `isDismissible`    | `bool`                                            | —        | ✕        | When it should appear with a close button |
 | `onClose`          | `(event: ClickEvent) => void`                     | —        | ✕        | Close button callback                     |
-| `open`             | `boolean`                                         | —        | ✕        | Tooltip open state control                |
+| `open`             | `bool`                                            | —        | ✕        | Tooltip open state control                |
 | `placement`        | [`top` \| `right` \| `bottom` \| `left` \| `off`] | `bottom` | ✕        | Tooltip placement                         |
 | `UNSAFE_className` | `string`                                          | —        | ✕        | Tooltip custom class name                 |
 | `UNSAFE_style`     | `CSSProperties`                                   | —        | ✕        | Tooltip custom style                      |
@@ -85,7 +85,7 @@ const toggleHandler = () => setOpen(!open);
 | ------------------ | ------------------------------------------------- | -------- | -------- | ----------------------------------------- |
 | `children`         | `ReactNode`                                       | —        | ✔        | Tooltip children's nodes                  |
 | `closeLabel`       | `string`                                          | `Close`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `boolean`                                         | —        | ✕        | When it should appear with a close button |
+| `isDismissible`    | `bool`                                            | —        | ✕        | When it should appear with a close button |
 | `placement`        | [`top` \| `right` \| `bottom` \| `left` \| `off`] | `bottom` | ✕        | Tooltip placement                         |
 | `UNSAFE_className` | `string`                                          | —        | ✕        | Tooltip custom class name                 |
 | `UNSAFE_style`     | `CSSProperties`                                   | —        | ✕        | Tooltip custom style                      |

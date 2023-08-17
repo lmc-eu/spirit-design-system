@@ -30,11 +30,11 @@ Advanced example usage:
 | Name               | Type                                           | Default | Required | Description                    |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------ |
 | `id`               | `string`                                       | —       | ✔        | Input and label identification |
-| `isDisabled`       | `boolean`                                      | —       | ✕        | Whether is field disabled      |
-| `isChecked`        | `boolean`                                      | —       | ✕        | Whether is field checked       |
-| `isItem`           | `boolean`                                      | —       | ✕        | To render in [Item][item] mode |
-| `isLabelHidden`    | `boolean`                                      | —       | ✕        | Whether is label hidden        |
-| `isRequired`       | `boolean`                                      | —       | ✕        | Whether is field required      |
+| `isDisabled`       | `bool`                                         | —       | ✕        | Whether is field disabled      |
+| `isChecked`        | `bool`                                         | —       | ✕        | Whether is field checked       |
+| `isItem`           | `bool`                                         | —       | ✕        | To render in [Item][item] mode |
+| `isLabelHidden`    | `bool`                                         | —       | ✕        | Whether is label hidden        |
+| `isRequired`       | `bool`                                         | —       | ✕        | Whether is field required      |
 | `label`            | `string`                                       | —       | ✕        | Label text                     |
 | `name`             | `string`                                       | —       | ✕        | Input name                     |
 | `ref`              | `ForwardedRef<HTMLInputElement>`               | —       | ✕        | Input element reference        |

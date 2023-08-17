@@ -203,7 +203,7 @@ const handleUserMenuClose = () => setUserMenuOpen(false);
 | ------------------ | ----------------------------- | ------- | -------- | -------------------------- |
 | `children`         | `ReactNode`                   | —       | ✕        | Children node              |
 | `color`            | [`inverted` \| `transparent`] | —       | ✕        | Header background color    |
-| `isSimple`         | `boolean`                     | —       | ✕        | If header should be simple |
+| `isSimple`         | `bool`                        | —       | ✕        | If header should be simple |
 | `UNSAFE_className` | `string`                      | —       | ✕        | Header custom class name   |
 | `UNSAFE_style`     | `CSSProperties`               | —       | ✕        | Header custom style        |
 
@@ -242,7 +242,7 @@ The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLEl
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
 | `children`         | `ReactNode`                                    | —       | ✕        | Children node                   |
 | `id`               | `string`                                       | —       | ✔        | Dialog ID                       |
-| `isOpen`           | `boolean`                                      | `false` | ✔        | Open state                      |
+| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                      |
 | `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed |
 | `UNSAFE_className` | `string`                                       | —       | ✕        | HeaderDialog custom class name  |
 | `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderDialog custom style       |
@@ -295,7 +295,7 @@ The rest of the properties are based on the type of `<button>`. [Docs][HTMLButto
 | Name               | Type            | Default | Required | Description                        |
 | ------------------ | --------------- | ------- | -------- | ---------------------------------- |
 | `children`         | `ReactNode`     | —       | ✕        | Children node                      |
-| `isCurrent`        | `boolean`       | —       | ✕        | When link should be current page   |
+| `isCurrent`        | `bool`          | —       | ✕        | When link should be current page   |
 | `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogLink custom class name |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogLink custom style      |
 
@@ -344,7 +344,7 @@ The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanD
 | Name               | Type            | Default | Required | Description                      |
 | ------------------ | --------------- | ------- | -------- | -------------------------------- |
 | `children`         | `ReactNode`     | —       | ✕        | Children node                    |
-| `isCurrent`        | `boolean`       | —       | ✕        | When link should be current page |
+| `isCurrent`        | `bool`          | —       | ✕        | When link should be current page |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderLink custom style          |
 | `UNSAFE_className` | `string`        | —       | ✕        | HeaderLink custom class name     |
 
@@ -358,7 +358,7 @@ The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDo
 | ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------------- |
 | `children`         | `ReactNode`                                    | —       | ✕        | Children node                         |
 | `dialogId`         | `string`                                       | —       | ✕        | ID of dialog element                  |
-| `isOpen`           | `boolean`                                      | `false` | ✔        | Dialog open state                     |
+| `isOpen`           | `bool`                                         | `false` | ✔        | Dialog open state                     |
 | `menuToggleLabel`  | `string`                                       | —       | `Menu`   | Label for button toggle               |
 | `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened       |
 | `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderMobileActions custom style      |

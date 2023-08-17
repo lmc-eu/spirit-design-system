@@ -18,7 +18,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 | Name               | Type                                             | Default       | Required | Description                                    |
 | ------------------ | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose`  | `boolean`                                        | `true`        | ✕        | Enables close on click outside of Dropdown     |
+| `enableAutoClose`  | `bool`                                           | `true`        | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
 | `id`               | `string`                                         | `<random>`    | ✕        | Component id                                   |
 | `onAutoClose` .    | `(event: Event) => void`                         |               | ✕        | Callback on close on click outside of Dropdown |
@@ -31,7 +31,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 
 | Name                       | Type                                               | Description             |
 | -------------------------- | -------------------------------------------------- | ----------------------- |
-| `isOpen`                   | `boolean`                                          | When dropdown is open   |
+| `isOpen`                   | `bool`                                             | When dropdown is open   |
 | `trigger`                  | `Object`                                           | Trigger properties      |
 | `trigger.onClick`          | `string`                                           | Trigger onClick event   |
 | `trigger.className`        | `string`                                           | Trigger state classname |

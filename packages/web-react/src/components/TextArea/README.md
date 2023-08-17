@@ -41,10 +41,10 @@ Example with Auto-Height Adjustment
 | `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
 | `helperText`            | `string`                                       | —       | ✕        | Custom helper text                                                   |
 | `id`                    | `string`                                       | —       | ✔        | Textarea and label identification                                    |
-| `isAutoResizing`        | `boolean`                                      | —       | ✕        | Whether is field auto resizing which adjusts its height while typing |
-| `isDisabled`            | `boolean`                                      | —       | ✕        | Whether is field disabled                                            |
-| `isLabelHidden`         | `boolean`                                      | —       | ✕        | Whether is label hidden                                              |
-| `isRequired`            | `boolean`                                      | —       | ✕        | Whether is field required                                            |
+| `isAutoResizing`        | `bool`                                         | —       | ✕        | Whether is field auto resizing which adjusts its height while typing |
+| `isDisabled`            | `bool`                                         | —       | ✕        | Whether is field disabled                                            |
+| `isLabelHidden`         | `bool`                                         | —       | ✕        | Whether is label hidden                                              |
+| `isRequired`            | `bool`                                         | —       | ✕        | Whether is field required                                            |
 | `label`                 | `string`                                       | —       | ✕        | Label text                                                           |
 | `maxLength`             | `number`                                       | —       | ✕        | Maximum number of characters                                         |
 | `name`                  | `string`                                       | —       | ✕        | Textarea name                                                        |

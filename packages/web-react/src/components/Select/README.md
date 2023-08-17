@@ -39,10 +39,10 @@ Advanced example usage:
 | `children`         | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
 | `helperText`       | `string`                                       | —       | ✕        | Custom helper text              |
 | `id`               | `string`                                       | —       | ✔        | Select and label identification |
-| `isDisabled`       | `boolean`                                      | —       | ✕        | Whether is field disabled       |
-| `isFluid`          | `boolean`                                      | —       | ✕        | Whether is field is fluid       |
-| `isLabelHidden`    | `boolean`                                      | —       | ✕        | Whether is label hidden         |
-| `isRequired`       | `boolean`                                      | —       | ✕        | Whether is field required       |
+| `isDisabled`       | `bool`                                         | —       | ✕        | Whether is field disabled       |
+| `isFluid`          | `bool`                                         | —       | ✕        | Whether is field is fluid       |
+| `isLabelHidden`    | `bool`                                         | —       | ✕        | Whether is label hidden         |
+| `isRequired`       | `bool`                                         | —       | ✕        | Whether is field required       |
 | `label`            | `string`                                       | —       | ✕        | Label text                      |
 | `name`             | `string`                                       | —       | ✕        | Select name                     |
 | `ref`              | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
