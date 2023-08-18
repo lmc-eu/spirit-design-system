@@ -37,7 +37,6 @@ export interface ModalHeaderProps extends SpiritElementProps, ChildrenProps {
 }
 
 export interface ModalFooterProps extends SpiritElementProps, ChildrenProps {
-  align?: AlignmentXDictionaryType;
   alignmentX?: AlignmentXDictionaryType;
   description?: string;
 }
