@@ -1,8 +1,4 @@
 // 1. Use `box-shadow` to ensure the state of the radio is visible when printed.
-// 2. Make sure the state of the radio is accessible in forced-colors mode (e.g. Windows High Contrast Mode) where
-//    our `box-shadow` indicator is removed.
-//
-// See: https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 
 @use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;
@@ -36,7 +32,6 @@ $_field-name: 'Radio';
         width: theme.$input-inner-dot-size;
         height: theme.$input-inner-dot-size;
         border-radius: theme.$input-border-radius;
-        background-color: canvastext; // 2.
         box-shadow: theme.$input-box-shadow-before; // 1.
         transform: scale(0);
         transition-property: transform;
