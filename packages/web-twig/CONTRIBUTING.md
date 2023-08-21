@@ -8,6 +8,8 @@ PHP language is required to develop this package. In order to support other fron
 
 To start this project simply run `make start` and then add project certificates to your machine by `make cert`.
 
+In a moment the app will be setup and ready on `https://localhost:4443`.
+
 Please consult [`Makefile`](./Makefile) for available commands and options to setup and run this project.
 
 ## Components definition
