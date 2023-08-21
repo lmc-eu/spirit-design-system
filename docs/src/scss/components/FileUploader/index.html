@@ -18,8 +18,8 @@
 
     
 
-    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.96def04b.js"></script>
-    <link rel="modulepreload" crossorigin href="/spirit-design-system/assets/spirit-web-chunk.5f551d17.js">
+    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.7d343f4f.js"></script>
+    <link rel="modulepreload" crossorigin href="/spirit-design-system/assets/spirit-web-chunk.74ecb0f4.js">
     <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.a9f11e34.css">
   </head>
   <body>
@@ -563,7 +563,9 @@
           
                 <!-- ModalBody: start -->
                 <div class="ModalBody">
-                  <!-- here will be image -->
+                  <div class="pt-400 pt-tablet-600" data-example-content>
+                    <!-- here will be an image -->
+                  </div>
                 </div>
                 <!-- ModalBody: end -->
           
@@ -601,7 +603,7 @@
           
               <!-- FileUploaderAttachment template: start -->
               <template data-spirit-snippet="item">
-                <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+                <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
                   <span class="FileUploaderAttachment__image">
                     <img src="" width="54" height="54" alt="" />
                   </span>
@@ -652,7 +654,7 @@
           
               <!-- FileUploaderList: start -->
               <h3 id="attachments-customImagePreview" hidden>Attachments</h3>
-              <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list" data-spirit-imagePreview="true"></ul>
+              <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list"></ul>
               <!-- FileUploaderList: end -->
           
             </div>
@@ -680,7 +682,7 @@
                   <span class="FileUploaderAttachment__slot">
           
                     <!-- Slot content: start -->
-                    <button type="button" class="FileUploaderAttachment__action" data-element="example-action">
+                    <button type="button" class="FileUploaderAttachment__action" onclick="editHandler()">
                       <span class="accessibility-hidden">Edit</span>
                       <svg width="24" height="24" aria-hidden="true">
                         <use xlink:href="/icons/svg/sprite.svg#edit" />
@@ -726,28 +728,9 @@
           
             <!-- Example custom action functionality: start -->
             <script>
-              let filesQueueCounter = 0;
-          
               const editHandler = () => {
                 alert('Custom action clicked');
               };
-          
-              document.addEventListener('queuedFile.fileUploader', () => {
-                filesQueueCounter++;
-                document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
-                  element.removeEventListener('click', editHandler); // Prevent multiple event listeners
-                  element.addEventListener('click', editHandler);
-                });
-              });
-          
-              document.addEventListener('unqueueFile.fileUploader', () => {
-               filesQueueCounter--;
-               if (filesQueueCounter === 0) {
-                 document.querySelectorAll('[data-element="example-action"]').forEach((element) => {
-                   element.removeEventListener('click', editHandler);
-                 });
-               }
-              });
             </script>
             <!-- Example custom action functionality: end -->
           
