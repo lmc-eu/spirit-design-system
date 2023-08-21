@@ -117,6 +117,29 @@ Run `composer phpunit:update` or `make phpunit-update` to create or update snaps
 - `% cd <your-local-path>/spirit-design-system/packages/web-twig`
 - `% yarn test:unit` for unit tests
 
+#### Snapshots
+
+The component testing is done only via snapshot testing.
+When adding new functionality or removing an old one, please, check twice the output of the snapshot test.
+
+Every component has its own suite of snapshot tests in the following directory architecture:
+
+```
+├── src
+    └── Resources
+        └── components
+            └── <ComponentName>
+                └── __tests__ - Component tests
+                    ├── <ComponentName>SnapshotTest.php - Test class that extends tests/AbstractComponentSnapshotTest.php
+                    ├── __fixtures__ — Directory with prescriptions
+                    └── __snapshots__ — Directory with snapshots
+```
+
+Snapshots are generated based on prescription by the [command above](#components-tests).
+
+**Note:** Every component MUST contain the test that extends `tests/AbstractComponentSnapshotTest.php` which contains the current logic of the test itself.
+It is balanced between the DRY principle and how the PHPUnit works.
+
 ## Release new version
 
 TODO: [Automate release process](https://github.com/lmc-eu/spirit-design-system/issues/393).
