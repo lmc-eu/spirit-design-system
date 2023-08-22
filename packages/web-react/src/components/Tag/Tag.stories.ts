@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Tag from './Tag';
 
 export default {
@@ -15,6 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Tag>;
 
-export { default as Tag } from './stories/Tag';
-export { default as TagColors } from './stories/TagColors';
-export { default as TagSizes } from './stories/TagSizes';
+export { default as Tag } from './demo/Tag';

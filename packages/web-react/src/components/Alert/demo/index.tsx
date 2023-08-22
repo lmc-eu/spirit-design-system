@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import AlertCentered from '../stories/AlertCentered';
-import AlertColors from '../stories/AlertColors';
-import AlertIcons from '../stories/AlertIcons';
+import AlertCentered from './AlertCentered';
+import AlertColors from './AlertColors';
+import AlertIcons from './AlertIcons';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

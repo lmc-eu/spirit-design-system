@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '../Select';
-import ChildrenNode from '../stories/ChildrenNode';
+import ChildrenNode from './ChildrenNode';
 
 const SelectDisabled = () => (
   <Select id="selectDisabled" name="selectDisabled" label="Label" isDisabled>

@@ -14,6 +14,5 @@ export default {
   },
 } as ComponentMeta<typeof Tab>;
 
-export { default as Tabs } from './stories/Tabs';
-export { default as TabLinks } from './stories/TabLinks';
-export { default as UncontrolledTabs } from './stories/UncontrolledTabs';
+export { default as Tabs } from './demo/Tabs';
+export { default as UncontrolledTabs } from './demo/UncontrolledTabs';

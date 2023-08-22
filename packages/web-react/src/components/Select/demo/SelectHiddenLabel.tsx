@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from '../Select';
-import ChildrenNode from '../stories/ChildrenNode';
+import ChildrenNode from './ChildrenNode';
 
 const SelectHiddenLabel = () => (
   <Select id="selectHiddenLabel" name="selectHiddenLabel" label="Label" isLabelHidden>

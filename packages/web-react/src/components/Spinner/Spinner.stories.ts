@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Spinner from './Spinner';
 
 export default {
@@ -15,5 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Spinner>;
 
-export { default as Spinner } from './stories/Spinner';
-export { default as SpinnerColors } from './stories/SpinnerColors';
+export { default as Spinner } from './demo/Spinner';

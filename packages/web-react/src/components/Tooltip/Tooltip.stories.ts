@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Tooltip from './Tooltip';
 
 export default {
@@ -8,10 +8,5 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Tooltip>;
 
-export { default as Tooltip } from './stories/Tooltip';
-export { default as TooltipDismissible } from './stories/TooltipDismissible';
-export { default as TooltipClickable } from './stories/TooltipClickable';
-export { default as TooltipFloatingUi } from './stories/TooltipFloatingUi';
-export { default as TooltipDismissibleFloatingUi } from './stories/TooltipDismissibleFloatingUi';
-export { default as TooltipUncontrolled } from './stories/TooltipUncontrolled';
-export { default as TooltipDismissibleUncontrolled } from './stories/TooltipDismissibleUncontrolled';
+export { default as Tooltip } from './demo/Tooltip';
+export { default as TooltipUncontrolled } from './demo/TooltipUncontrolled';

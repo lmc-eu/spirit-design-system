@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Breadcrumbs from './Breadcrumbs';
 
 export default {
@@ -15,4 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Breadcrumbs>;
 
-export { default as Breadcrumbs } from './stories/Breadcrumbs';
+export { default as Breadcrumbs } from './demo/Breadcrumbs';

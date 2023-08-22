@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import FieldGroup from './FieldGroup';
 
 export default {
@@ -15,4 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof FieldGroup>;
 
-export { default as FieldGroup } from './stories/FieldGroup';
+export { default as FieldGroup } from './demo/FieldGroup';
