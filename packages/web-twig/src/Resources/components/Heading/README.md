@@ -32,7 +32,7 @@ Without lexer:
 | ------------- | ------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
 | `elementType` | `string`                                    | `div`    | ✕        | HTML tag to render                                             |
-| `translate`   | [`yes` \| `no`]                             | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
+| `translate`   | [`yes` \| `no` \| `''`]                     | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
