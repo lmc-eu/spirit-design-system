@@ -113,8 +113,8 @@ When validated on server:
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                   |
 | `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                            |
 
-\*: To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
-\*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.
+(\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
+(\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
 
 On top of the API options, you can add `data-*` or `aria-*` (except `aria-describedby` which is reserved for linking
 helper text and validation text to the group) attributes to further extend component's descriptiveness and

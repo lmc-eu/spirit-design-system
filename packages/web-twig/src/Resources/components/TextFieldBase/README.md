@@ -83,7 +83,7 @@ Without lexer:
 | `validationText`        | [`string` \| `string[]`]                                                    | `null`  | ✕        | Validation text                                                         |
 | `value`                 | `string`                                                                    | `null`  | ✕        | Input value                                                             |
 
-\*: The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
+(\*) The label is required for this component. Use `label` or `UNSAFE_label` to set the label.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
