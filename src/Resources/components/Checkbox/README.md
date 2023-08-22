@@ -58,8 +58,8 @@ Without lexer:
 | `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                                      |
 | `value`                 | `string`                                       | `null`  | ✕        | Input value                                          |
 
-\*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
-\*\*: Props with and without `UNSAFE_` prefix are mutually exclusive.
+(\*) Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
+(\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

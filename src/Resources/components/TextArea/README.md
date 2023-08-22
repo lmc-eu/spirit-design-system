@@ -69,7 +69,7 @@ Without lexer:
 | `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                                                                             |
 | `value`                 | `string`                                       | `null`  | ✕        | TextArea value                                                                                              |
 
-\*: Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
+(\*) Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
