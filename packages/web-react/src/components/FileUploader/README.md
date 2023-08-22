@@ -323,25 +323,25 @@ The rest of the properties are created from the default `<div>` element. [More a
 | Name                 | Type                                 | Default  | Required | Description                                                                                                                                                     |
 | -------------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `accept`             | `string`                             | —        | ✕        | The accept attribute takes as its value a comma-separated list of one or more file types, or unique file type specifiers, describing which file types to allow. |
-| `id`                 | `string`                             | —        | ✔        | FileUploaderInput id                                                                                                                                            |
-| `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
 | `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
 | `helperText`         | `string`                             | —        | ✕        | Custom helper text                                                                                                                                              |
-| `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
-| `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
+| `id`                 | `string`                             | —        | ✔        | FileUploaderInput id                                                                                                                                            |
+| `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
 | `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
-| `isRequired`         | `bool`                               | —        | ✕        | Whether is field required                                                                                                                                       |
-| `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
-| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
-| `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
 | `isMultiple`         | `bool`                               | —        | ✕        | When multiple files can be selected at once                                                                                                                     |
-| `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
+| `isRequired`         | `bool`                               | —        | ✕        | Whether is field required                                                                                                                                       |
 | `label`              | `string`                             | —        | ✕        | Field label                                                                                                                                                     |
+| `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
+| `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
+| `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
+| `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
 | `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
+| `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
+| `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
+| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 | `UNSAFE_className`   | `string`                             | —        | ✕        | FileUploaderInput custom class name                                                                                                                             |
 | `UNSAFE_style`       | `CSSProperties`                      | —        | ✕        | FileUploaderInput custom style                                                                                                                                  |
 
@@ -411,28 +411,28 @@ via `inputProps` and `listProps`.
 
 | Name                  | Type                                    | Default  | Required | Description                                         |
 | --------------------- | --------------------------------------- | -------- | -------- | --------------------------------------------------- |
+| `attachmentComponent` | `string`                                | —        | ✔        | A component for rendering a single attachment       |
+| `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
 | `iconName`            | `string`                                | `upload` | ✔        | Icon used in the UncontrolledFileUploader drop zone |
 | `id`                  | `string`                                | —        | ✔        | UncontrolledFileUploader id                         |
 | `inputId`             | `string`                                | —        | ✔        | FileUploaderInput id                                |
 | `inputLabel`          | `string`                                | —        | ✔        | FileUploaderInput label                             |
 | `inputName`           | `string`                                | —        | ✔        | FileUploaderInput name                              |
 | `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                     |
-| `listId`              | `string`                                | —        | ✔        | FileUploaderList id                                 |
-| `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
-| `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
-| `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
-| `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
-| `attachmentComponent` | `string`                                | —        | ✔        | A component for rendering a single attachment       |
-| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
-| `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
+| `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                           |
+| `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
 | `isLabelHidden`       | `bool`                                  | —        | ✕        | Whether is input label hidden                       |
 | `isMultiple`          | `bool`                                  | —        | ✕        | When multiple files can be selected at once         |
-| `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                           |
-| `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
 | `isRequired`          | `bool`                                  | —        | ✕        | Whether is field required                           |
-| `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
-| `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
+| `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
+| `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
+| `listId`              | `string`                                | —        | ✔        | FileUploaderList id                                 |
+| `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
+| `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
+| `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
+| `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
+| `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
 | `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
 | `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
 | `UNSAFE_className`    | `string`                                | —        | ✕        | UncontrolledFileUploader custom class name          |
