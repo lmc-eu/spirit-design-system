@@ -12,7 +12,7 @@ import {
   AccordionHeader,
   AccordionContent,
 } from '../../../src/components';
-import { content } from '../../../src/components/Accordion/stories/Accordion';
+import { content } from '../../../src/components/Accordion/demo/Accordion';
 
 export default {
   title: 'Examples/Compositions',

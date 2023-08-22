@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Pagination from './Pagination';
 
 export default {
@@ -15,7 +15,6 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Pagination>;
 
-export { default as PaginationCurrentFirst } from './stories/PaginationCurrentFirst';
-export { default as PaginationCurrentMiddle } from './stories/PaginationCurrentMiddle';
-export { default as PaginationCurrentLast } from './stories/PaginationCurrentLast';
-export { default as PaginationCurrentFirstCentered } from './stories/PaginationCurrentFirstCentered';
+export { default as PaginationCurrentFirst } from './demo/PaginationCurrentFirst';
+export { default as PaginationCurrentMiddle } from './demo/PaginationCurrentMiddle';
+export { default as PaginationCurrentLast } from './demo/PaginationCurrentLast';

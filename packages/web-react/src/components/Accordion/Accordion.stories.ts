@@ -16,7 +16,5 @@ export default {
   },
 } as ComponentMeta<typeof Accordion>;
 
-export { default as Accordion } from './stories/Accordion';
-export { default as AccordionStayOpen } from './stories/AccordionStayOpen';
-export { default as AccordionUncontrolled } from './stories/AccordionUncontrolled';
-export { default as AccordionUncontrolledStayOpen } from './stories/AccordionUncontrolledStayOpen';
+export { default as Accordion } from './demo/Accordion';
+export { default as AccordionUncontrolled } from './demo/AccordionUncontrolled';

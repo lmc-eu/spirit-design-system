@@ -1,0 +1,17 @@
+import React from 'react';
+import Radio from '../Radio';
+import { SpiritRadioProps } from '../../../types';
+
+const Story = (args: SpiritRadioProps) => <Radio {...args} />;
+
+Story.args = {
+  id: 'example',
+  isChecked: true,
+  isDisabled: false,
+  isLabelHidden: false,
+  label: 'Label',
+  name: 'example',
+  helperText: 'Helper text',
+};
+
+export default Story;

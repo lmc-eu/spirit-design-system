@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Radio from './Radio';
 
 export default {
@@ -13,12 +13,10 @@ export default {
       },
     },
   },
+  args: {
+    label: 'Radio',
+  },
   argTypes,
 } as ComponentMeta<typeof Radio>;
 
-export { default as Radio } from './stories/Radio';
-export { default as RadioValidationState } from './stories/RadioValidationState';
-export { default as RadioHelperText } from './stories/RadioHelperText';
-export { default as RadioDisabled } from './stories/RadioDisabled';
-export { default as RadioItem } from './stories/RadioItem';
-export { default as RadioList } from './stories/RadioList';
+export { default as Radio } from './demo/Radio';

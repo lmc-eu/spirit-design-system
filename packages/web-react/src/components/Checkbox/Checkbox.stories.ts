@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Checkbox from './Checkbox';
 
 export default {
@@ -12,10 +12,10 @@ export default {
       },
     },
   },
+  args: {
+    label: 'Checkbox',
+  },
   argTypes,
 } as ComponentMeta<typeof Checkbox>;
 
-export { default as Checkbox } from './stories/Checkbox';
-export { default as CheckboxValidationState } from './stories/CheckboxValidationState';
-export { default as CheckboxHelperText } from './stories/CheckboxHelperText';
-export { default as CheckboxItem } from './stories/CheckboxItem';
+export { default as Checkbox } from './demo/Checkbox';

@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Link from './Link';
 
 export default {
@@ -15,8 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Link>;
 
-export { default as Link } from './stories/Link';
-export { default as LinkColors } from './stories/LinkColors';
-export { default as LinkDisabled } from './stories/DisabledLink';
-export { default as LinkUnderlined } from './stories/UnderlinedLink';
-export { default as LinkDisabledUnderlined } from './stories/DisabledUnderlinedLink';
+export { default as Link } from './demo/Link';

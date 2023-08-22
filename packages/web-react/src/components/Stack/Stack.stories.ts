@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Stack from './Stack';
 
 export default {
@@ -15,4 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Stack>;
 
-export { default as Stack } from './stories/Stack';
+export { default as Stack } from './demo/Stack';

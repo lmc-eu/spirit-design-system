@@ -16,10 +16,5 @@ export default {
   },
 } as ComponentMeta<typeof Collapse>;
 
-export { default as Collapse } from './stories/Collapse';
-export { default as CollapseHideOnClose } from './stories/CollapseHideOnClose';
-export { default as CollapseShowMore } from './stories/CollapseShowMore';
-export { default as CollapseBreakpoints } from './stories/CollapseBreakpoints';
-export { default as CollapseUncontrolled } from './stories/CollapseUncontrolled';
-export { default as CollapseUncontrolledHideOnClose } from './stories/CollapseUncontrolledHideOnClose';
-export { default as CollapseUncontrolledShowMore } from './stories/CollapseUncontrolledShowMore';
+export { default as Collapse } from './demo/Collapse';
+export { default as CollapseUncontrolled } from './demo/CollapseUncontrolled';

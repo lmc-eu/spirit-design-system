@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import ScrollView from './ScrollView';
 
 export default {
@@ -15,6 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof ScrollView>;
 
-export { default as ScrollView } from './stories/ScrollView';
-export { default as ScrollViewHorizontal } from './stories/ScrollViewHorizontal';
-export { default as ScrollViewScrollbarDisabled } from './stories/ScrollViewScrollbarDisabled';
+export { default as ScrollView } from './demo/ScrollView';

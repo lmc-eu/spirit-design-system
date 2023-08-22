@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypes';
+import argTypes from './demo/argTypes';
 import Header from './Header';
 
 export default {
@@ -12,9 +12,10 @@ export default {
       },
     },
   },
+  args: {
+    color: 'inverted',
+  },
   argTypes,
 } as ComponentMeta<typeof Header>;
 
-export { default as Header } from './stories/Header';
-export { default as HeaderActions } from './stories/HeaderActions';
-export { default as HeaderActionsAndHeaderDialog } from './stories/HeaderActionsAndHeaderDialog';
+export { default as Header } from './demo/Header';

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import FieldGroup from '../stories/FieldGroup';
+import FieldGroup from './FieldGroup';
 import { Radio } from '../../Radio';
 import { Checkbox } from '../../Checkbox';
 

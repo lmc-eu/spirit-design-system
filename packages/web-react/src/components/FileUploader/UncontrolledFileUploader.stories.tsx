@@ -1,5 +1,5 @@
 import { ComponentMeta } from '@storybook/react';
-import argTypes from './stories/argTypesUncontrolled';
+import argTypes from './demo/argTypesUncontrolled';
 import UncontrolledFileUploader from './UncontrolledFileUploader';
 
 export default {
@@ -8,7 +8,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof UncontrolledFileUploader>;
 
-export { default as FileUploaderUncontrolled } from './stories/FileUploaderUncontrolled';
-export { default as FileUploaderUncontrolledDismissible } from './stories/FileUploaderUncontrolledDismissible';
-export { default as FileUploaderUncontrolledFluid } from './stories/FileUploaderUncontrolledFluid';
-export { default as FormWithUncontrolledFileUploader } from './stories/FormWithUncontrolledFileUploader';
+export { default as FileUploaderUncontrolled } from './demo/FileUploaderUncontrolled';
