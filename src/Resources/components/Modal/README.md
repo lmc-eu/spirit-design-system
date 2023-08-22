@@ -69,8 +69,8 @@ footer of the dialog.
 | `method`                      | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                       |
 | `name`                        | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                             |
 | `novalidate`                  | `bool`                        | `false`   | ✕        | `elementType="form"` only: If the dialog should have validation disabled                                |
-| `preferredHeightOnMobile`     | `string`                      | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                   |
 | `preferredHeightFromTabletUp` | `string`                      | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                        |
+| `preferredHeightOnMobile`     | `string`                      | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                   |
 | `rel`                         | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource            |
 | `target`                      | `string`                      | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                         |
 
