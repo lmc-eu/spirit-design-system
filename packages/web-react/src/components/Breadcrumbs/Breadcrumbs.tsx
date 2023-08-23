@@ -7,7 +7,6 @@ import { Icon } from '../Icon';
 import { Link } from '../Link';
 
 const defaultProps = {
-  goBackTitle: '',
   items: [],
 };
 
