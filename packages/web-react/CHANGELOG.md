@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.1.0...@lmc-eu/spirit-web-react@1.2.0) (2023-08-23)
+
+### Dependencies
+
+- Update all non-major dependencies ([acba328](https://github.com/lmc-eu/spirit-design-system/commit/acba328))
+- Update dependency @testing-library/jest-dom to v6 ([d21b678](https://github.com/lmc-eu/spirit-design-system/commit/d21b678))
+
+### Documentation
+
+- **form-validations, web-react, web-twig:** Sort props in tables ([4d8fb15](https://github.com/lmc-eu/spirit-design-system/commit/4d8fb15))
+- **form-validations, web, web-twig, web-react:** Unify unicode characters in API tables ([8c837eb](https://github.com/lmc-eu/spirit-design-system/commit/8c837eb))
+- **web-react, web-twig:** Unify the syntax of enums in API tables ([f83e9ac](https://github.com/lmc-eu/spirit-design-system/commit/f83e9ac))
+- **web-react:** Add missing columns to API tables ([50b8b57](https://github.com/lmc-eu/spirit-design-system/commit/50b8b57))
+- **web-react:** Add missing style props into components readmes ([e6f3533](https://github.com/lmc-eu/spirit-design-system/commit/e6f3533))
+- **web-react:** All Select demos are same [#DS-816](https://github.com/lmc-eu/spirit-design-system/issues/DS-816) ([c8f137f](https://github.com/lmc-eu/spirit-design-system/commit/c8f137f))
+- **web-react:** Default `icon` according to `color` variant in the `Alert` ([17471cf](https://github.com/lmc-eu/spirit-design-system/commit/17471cf))
+- **web-react:** FileUploader Storybook demo ([4edef48](https://github.com/lmc-eu/spirit-design-system/commit/4edef48))
+- **web-react:** Remove HTML and Props stories from components and remove nanoid package [#DS-589](https://github.com/lmc-eu/spirit-design-system/issues/DS-589) ([a7950e7](https://github.com/lmc-eu/spirit-design-system/commit/a7950e7))
+- **web-react:** Rename components in example compositions ([2528fad](https://github.com/lmc-eu/spirit-design-system/commit/2528fad))
+- **web-react:** Rename unsupported class property to UNSAFE_classname in Stack component ([b70a206](https://github.com/lmc-eu/spirit-design-system/commit/b70a206))
+- **web-react:** Sort props alphabetically ([470fefd](https://github.com/lmc-eu/spirit-design-system/commit/470fefd))
+- **web-react:** Standardize column heading of prop name ([757a8f4](https://github.com/lmc-eu/spirit-design-system/commit/757a8f4))
+- **web-react:** Standardize usage of symbols in `Required` column ([faa7b03](https://github.com/lmc-eu/spirit-design-system/commit/faa7b03))
+- **web-react:** Unify API of the `autoComplete` and `label` props ([f8aa168](https://github.com/lmc-eu/spirit-design-system/commit/f8aa168))
+- **web-react:** Unify API table captions ([7861c18](https://github.com/lmc-eu/spirit-design-system/commit/7861c18))
+- **web-twig:** Default `icon` according to `color` variant in the `Alert` ([4d51643](https://github.com/lmc-eu/spirit-design-system/commit/4d51643))
+- **web, web-react:** Unify the syntax of boolean and string props ([8449ae8](https://github.com/lmc-eu/spirit-design-system/commit/8449ae8))
+
+### Features
+
+- **web-react:** Deprecate buttonLabel and editButtonLabel in ([985f2e0](https://github.com/lmc-eu/spirit-design-system/commit/985f2e0)), closes [#DS-881](https://github.com/lmc-eu/spirit-design-system/issues/DS-881)
+- **web-react:** FileUploader Image attachment preview [#DS-852](https://github.com/lmc-eu/spirit-design-system/issues/DS-852) ([fb126fa](https://github.com/lmc-eu/spirit-design-system/commit/fb126fa))
+- **web-react:** Introduce FieldGroup component ([33a6e90](https://github.com/lmc-eu/spirit-design-system/commit/33a6e90))
+- **web-react:** Transfer Icon props from Spinner to Icon component ([73d61f9](https://github.com/lmc-eu/spirit-design-system/commit/73d61f9)), closes [#DS-759](https://github.com/lmc-eu/spirit-design-system/issues/DS-759)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.0.0...@lmc-eu/spirit-web-react@1.1.0) (2023-08-09)

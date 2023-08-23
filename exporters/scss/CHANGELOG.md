@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.3"></a>
+
+## [1.7.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.2...@lmc-eu/spirit-exporters-scss@1.7.3) (2023-08-23)
+
+### Dependencies
+
+- Update all non-major dependencies ([acba328](https://github.com/lmc-eu/spirit-design-system/commit/acba328))
+- Update dependency @testing-library/jest-dom to v6 ([d21b678](https://github.com/lmc-eu/spirit-design-system/commit/d21b678))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.7.2"></a>
 
 ## [1.7.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.1...@lmc-eu/spirit-exporters-scss@1.7.2) (2023-08-09)

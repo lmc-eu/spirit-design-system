@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.1.0...@lmc-eu/spirit-web@1.2.0) (2023-08-23)
+
+### Bug Fixes
+
+- **web:** Drop support of Windows high contrast mode in `Radio` to fix antialiasing issues ([8d80269](https://github.com/lmc-eu/spirit-design-system/commit/8d80269))
+- **web:** Prevent underline in ButtonLink in the active state ([7c8b27a](https://github.com/lmc-eu/spirit-design-system/commit/7c8b27a))
+- **web:** Remove unused data attribute in Accordion [#DS-883](https://github.com/lmc-eu/spirit-design-system/issues/DS-883) ([fcfb261](https://github.com/lmc-eu/spirit-design-system/commit/fcfb261))
+- **web:** Set correct order of hover, focus and active states in CSS ([6bcf3cf](https://github.com/lmc-eu/spirit-design-system/commit/6bcf3cf))
+- **web:** Use gap in Stack with spacing and without dividers [#DS-880](https://github.com/lmc-eu/spirit-design-system/issues/DS-880) ([04fe707](https://github.com/lmc-eu/spirit-design-system/commit/04fe707))
+
+### Dependencies
+
+- Update all non-major dependencies ([acba328](https://github.com/lmc-eu/spirit-design-system/commit/acba328))
+- Update dependency @testing-library/jest-dom to v6 ([d21b678](https://github.com/lmc-eu/spirit-design-system/commit/d21b678))
+
+### Documentation
+
+- **form-validations, web, web-twig, web-react:** Unify unicode characters in API tables ([8c837eb](https://github.com/lmc-eu/spirit-design-system/commit/8c837eb))
+- **web-react, web-twig:** Unify the syntax of enums in API tables ([f83e9ac](https://github.com/lmc-eu/spirit-design-system/commit/f83e9ac))
+- **web, web-react:** Unify the syntax of boolean and string props ([8449ae8](https://github.com/lmc-eu/spirit-design-system/commit/8449ae8))
+- **web, web-twig:** Unify column names in API tables ([b33b8ff](https://github.com/lmc-eu/spirit-design-system/commit/b33b8ff))
+- **web:** Add missing JS plugin info to TextField Password Toggle [#DS-870](https://github.com/lmc-eu/spirit-design-system/issues/DS-870) ([3975c19](https://github.com/lmc-eu/spirit-design-system/commit/3975c19))
+
+### Features
+
+- **web-twig:** Add support of image preview and edit button to FileUploaderAttachment [#DS-851](https://github.com/lmc-eu/spirit-design-system/issues/DS-851) ([401c399](https://github.com/lmc-eu/spirit-design-system/commit/401c399))
+- **web:** FileUploader Image attachment preview ([350aeee](https://github.com/lmc-eu/spirit-design-system/commit/350aeee))
+- **web:** Set image preview dataset on the attachment instead on the list [#DS-851](https://github.com/lmc-eu/spirit-design-system/issues/DS-851) ([89daf60](https://github.com/lmc-eu/spirit-design-system/commit/89daf60))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.0.0...@lmc-eu/spirit-web@1.1.0) (2023-08-09)
