@@ -1,8 +1,9 @@
-import { StyleProps, TextColorsDictionaryType, TransferProps } from './shared';
+import { TextColorsDictionaryType } from './shared';
+import { IconProps } from './icon';
 
-export interface SpinnerProps extends StyleProps, TransferProps {}
+export interface SpinnerProps extends Omit<IconProps, 'name'> {}
 
-export interface SpiritSpinnerProps<C = void> extends SpinnerProps {
+export interface SpiritSpinnerProps<C extends string | undefined = undefined> extends SpinnerProps {
   /** Color of the Spinner */
   color?: TextColorsDictionaryType<C>;
 }

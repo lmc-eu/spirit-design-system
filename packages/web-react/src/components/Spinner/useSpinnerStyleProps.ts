@@ -9,7 +9,9 @@ export interface SpinnerStyles {
   props: SpinnerProps;
 }
 
-export function useSpinnerStyleProps<C = undefined>(props: SpiritSpinnerProps<C>): SpinnerStyles {
+export function useSpinnerStyleProps<C extends string | undefined = undefined>(
+  props: SpiritSpinnerProps<C>,
+): SpinnerStyles {
   const { color, ...restProps } = props;
 
   const spinnerClass = useClassNamePrefix('text');

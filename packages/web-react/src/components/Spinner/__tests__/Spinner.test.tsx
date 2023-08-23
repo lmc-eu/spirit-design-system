@@ -21,4 +21,13 @@ describe('Spinner', () => {
 
     expect(dom.container.querySelector('svg') as SVGSVGElement).toHaveClass('animation-spin-clockwise');
   });
+
+  it('should have correct width and height', () => {
+    const boxSize = 33;
+    const dom = render(<Spinner name="add" boxSize={boxSize} />);
+
+    const element = dom.container.querySelector('svg') as SVGSVGElement;
+    expect(element).toHaveAttribute('width', boxSize.toString());
+    expect(element).toHaveAttribute('height', boxSize.toString());
+  });
 });
