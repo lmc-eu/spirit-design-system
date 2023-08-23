@@ -34,7 +34,6 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
       {...styleProps}
       className={classNames(classProps.root, styleProps.className)}
       disabled={isDisabled}
-      {...rest}
     >
       <legend className="accessibility-hidden">{label}</legend>
       {!isLabelHidden && (
