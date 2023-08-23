@@ -2,8 +2,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { useFileQueue } from '../useFileQueue';
 
 describe('useFileQueue', () => {
-  const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: Date.now() });
-  const file2 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: Date.now() });
+  const file1 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: 123456789 });
+  const file2 = new File([''], 'test1.txt', { type: 'text/plain', lastModified: 123456789 });
 
   it('should return defaults', () => {
     const { result } = renderHook(() => useFileQueue());
