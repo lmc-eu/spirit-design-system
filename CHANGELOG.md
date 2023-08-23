@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+
+# [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.1.0...@lmc-eu/spirit-web-twig@2.2.0) (2023-08-23)
+
+### Bug Fixes
+
+- **web-twig:** Deprecate `class` prop in the `Header` abstract components ([1cea973](https://github.com/lmc-eu/spirit-design-system/commit/1cea973))
+- **web-twig:** Fix condition to render `aria-labelledby` attribute in the Modal component ([70fb37b](https://github.com/lmc-eu/spirit-design-system/commit/70fb37b))
+- **web:** Remove unused data attribute in Accordion [#DS-883](https://github.com/lmc-eu/spirit-design-system/issues/DS-883) ([fcfb261](https://github.com/lmc-eu/spirit-design-system/commit/fcfb261))
+
+### Chores
+
+- **web-twig:** Exclude **tests** directory from archive refs [#DS-635](https://github.com/lmc-eu/spirit-design-system/issues/DS-635) ([736c4b1](https://github.com/lmc-eu/spirit-design-system/commit/736c4b1))
+
+### Code Refactoring
+
+- **web-twig:** Mark the `id` prop in form fields as required starting from next major version ([28cfcf1](https://github.com/lmc-eu/spirit-design-system/commit/28cfcf1))
+- **web-twig:** Use new `HelperText` component in all form fields ([6f284d3](https://github.com/lmc-eu/spirit-design-system/commit/6f284d3))
+
+### Documentation
+
+- **form-validations, web-react, web-twig:** Sort props in tables ([4d8fb15](https://github.com/lmc-eu/spirit-design-system/commit/4d8fb15))
+- **form-validations, web, web-twig, web-react:** Unify unicode characters in API tables ([8c837eb](https://github.com/lmc-eu/spirit-design-system/commit/8c837eb))
+- **web-react, web-twig:** Unify the syntax of enums in API tables ([f83e9ac](https://github.com/lmc-eu/spirit-design-system/commit/f83e9ac))
+- **web-twig:** Default `icon` according to `color` variant in the `Alert` ([4d51643](https://github.com/lmc-eu/spirit-design-system/commit/4d51643))
+- **web-twig:** Document all allowed HTML attributes in all components ([02b1dac](https://github.com/lmc-eu/spirit-design-system/commit/02b1dac))
+- **web-twig:** Highlight and unify links to Web package JS plugin documentations [#DS-870](https://github.com/lmc-eu/spirit-design-system/issues/DS-870) ([92da34f](https://github.com/lmc-eu/spirit-design-system/commit/92da34f))
+- **web-twig:** Introduce section about snapshot tests refs [#DS-636](https://github.com/lmc-eu/spirit-design-system/issues/DS-636) ([5fb0b63](https://github.com/lmc-eu/spirit-design-system/commit/5fb0b63))
+- **web-twig:** Introduce showcase app localhost url ([4fdc03e](https://github.com/lmc-eu/spirit-design-system/commit/4fdc03e))
+- **web-twig:** Unify API of the `autocomplete` and `label` props ([f514829](https://github.com/lmc-eu/spirit-design-system/commit/f514829))
+- **web-twig:** Unify table comments in Docs ([840c6be](https://github.com/lmc-eu/spirit-design-system/commit/840c6be))
+- **web-twig:** Unify the syntax of boolean props ([5ad6a98](https://github.com/lmc-eu/spirit-design-system/commit/5ad6a98))
+- **web, web-twig:** Unify column names in API tables ([b33b8ff](https://github.com/lmc-eu/spirit-design-system/commit/b33b8ff))
+
+### Features
+
+- **web-twig:** Add support of image preview and edit button to FileUploaderAttachment [#DS-851](https://github.com/lmc-eu/spirit-design-system/issues/DS-851) ([401c399](https://github.com/lmc-eu/spirit-design-system/commit/401c399))
+- **web-twig:** Document and test `Icon` props in the `Spinner` component ([14c4aef](https://github.com/lmc-eu/spirit-design-system/commit/14c4aef)), closes [#DS-759](https://github.com/lmc-eu/spirit-design-system/issues/DS-759)
+- **web-twig:** Enable pass `formtarget` attribute to the `Button` ([b39befd](https://github.com/lmc-eu/spirit-design-system/commit/b39befd))
+- **web-twig:** Introduce `FieldGroup` component ([74a4e01](https://github.com/lmc-eu/spirit-design-system/commit/74a4e01))
+- **web-twig:** Introduce `HelperText` component ([d2ab6d1](https://github.com/lmc-eu/spirit-design-system/commit/d2ab6d1))
+- **web-twig:** Introduce `id` prop in `ValidationText` component ([f8e5ee4](https://github.com/lmc-eu/spirit-design-system/commit/f8e5ee4))
+
+### Tests
+
+- **web-twig:** Colocate snapshot tests with components refs [#DS-635](https://github.com/lmc-eu/spirit-design-system/issues/DS-635) ([7530d7a](https://github.com/lmc-eu/spirit-design-system/commit/7530d7a))
+- **web-twig:** Delete orphan snapshots ([c7f3f9e](https://github.com/lmc-eu/spirit-design-system/commit/c7f3f9e))
+- **web-twig:** Use shorter snapshot file name refs [#DS-635](https://github.com/lmc-eu/spirit-design-system/issues/DS-635) ([8831ba7](https://github.com/lmc-eu/spirit-design-system/commit/8831ba7))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.0.0...@lmc-eu/spirit-web-twig@2.1.0) (2023-08-09)
