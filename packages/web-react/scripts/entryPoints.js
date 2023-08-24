@@ -35,6 +35,7 @@ const entryPoints = [
   { dirs: ['components', 'TextField'] },
   { dirs: ['components', 'TextFieldBase'] },
   { dirs: ['components', 'Tooltip'] },
+  { dirs: ['components', 'VisuallyHidden'] },
 ];
 
 const lookupTrie = Object.create(null);
