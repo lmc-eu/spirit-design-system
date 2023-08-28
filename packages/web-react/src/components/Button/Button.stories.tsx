@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Button } from './Button';
 import { args, argTypes } from './stories/args';
-import ReadMe from './README.md?raw';
+import ReadMe from './README.md';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',

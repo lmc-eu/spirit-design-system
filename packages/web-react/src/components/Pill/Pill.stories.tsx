@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ActionColors, EmotionColors } from '../../constants';
 import { Pill } from './Pill';
-import ReadMe from './README.md?raw';
+import ReadMe from './README.md';
 
 const meta: Meta<typeof Pill> = {
   title: 'Components/Pill',
