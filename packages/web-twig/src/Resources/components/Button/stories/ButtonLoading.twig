@@ -5,13 +5,13 @@
     {% for color in colors %}
     <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
       <div>
-        <Button color={color} size={size} onclick="alert('Button clicked')">Button {{ color }}</Button>
-        <Button color={color} size={size}>
+        <Button color={color} size={size} isLoading>Loading {{ color }}</Button>
+        <Button color={color} size={size} isLoading>
           <Icon name="hamburger" UNSAFE_className="mr-400" />
           Menu
         </Button>
-        <Button color={color} size={size} isSquare>
-          <span class="accessibility-hidden">Menu</span>
+        <Button color={color} size={size} isSquare isLoading>
+          <VisuallyHidden>Menu</VisuallyHidden>
           <Icon name="hamburger" />
         </Button>
       </div>
