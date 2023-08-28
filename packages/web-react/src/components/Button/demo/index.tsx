@@ -7,37 +7,21 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import Button from './Button';
-import ButtonLinkColors from './ButtonLinkColors';
+import ButtonDefault from './ButtonDefault';
 import ButtonDisabled from './ButtonDisabled';
 import ButtonLoading from './ButtonLoading';
-import ButtonSquare from './ButtonSquare';
-import ButtonBlock from './ButtonBlock';
-import ButtonSize from './ButtonSize';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
-        <Button {...Button.args} />
-      </DocsSection>
-      <DocsSection title="Link Colors">
-        <ButtonLinkColors />
+        <ButtonDefault />
       </DocsSection>
       <DocsSection title="Disabled">
         <ButtonDisabled />
       </DocsSection>
       <DocsSection title="Loading">
         <ButtonLoading />
-      </DocsSection>
-      <DocsSection title="Square">
-        <ButtonSquare />
-      </DocsSection>
-      <DocsSection title="Block">
-        <ButtonBlock />
-      </DocsSection>
-      <DocsSection title="Size">
-        <ButtonSize />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
