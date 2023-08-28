@@ -1,26 +1,22 @@
-<section class="docs-Section">
-  <h2 class="docs-Heading">Disabled</h2>
-
-  <Grid cols="1" tablet="2" desktop="3">
-    {% for size in sizes %}
-    <div>
-      <h3 class="docs-Heading">Size {{size}}</h3>
-      {% for color in colors %}
-      <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
-        <div>
-          <Button color={color} size={size} isDisabled>Disabled {{ color }}</Button>
-          <Button color={color} size={size} isDisabled>
-            <Icon name="hamburger" UNSAFE_className="mr-400" />
-            Menu
-          </Button>
-          <Button color={color} size={size} isSquare isDisabled>
-            <span class="accessibility-hidden">Menu</span>
-            <Icon name="hamburger" />
-          </Button>
-        </div>
+<Grid cols="1" desktop="3">
+  {% for size in sizes %}
+  <div>
+    <h3 class="docs-Heading">Size {{size}}</h3>
+    {% for color in colors %}
+    <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
+      <div>
+        <Button color={color} size={size} isDisabled>Disabled {{ color }}</Button>
+        <Button color={color} size={size} isDisabled>
+          <Icon name="hamburger" UNSAFE_className="mr-400" />
+          Menu
+        </Button>
+        <Button color={color} size={size} isSquare isDisabled>
+          <span class="accessibility-hidden">Menu</span>
+          <Icon name="hamburger" />
+        </Button>
       </div>
-      {% endfor %}
     </div>
     {% endfor %}
-  </Grid>
-</section>
+  </div>
+  {% endfor %}
+</Grid>
