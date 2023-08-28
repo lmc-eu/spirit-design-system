@@ -1,18 +1,35 @@
 import React from 'react';
-import { StoryFn } from '@storybook/react';
 import Checkbox from '../Checkbox';
-import { SpiritCheckboxProps } from '../../../types';
 
-const Story: StoryFn<typeof Checkbox> = (args: SpiritCheckboxProps) => <Checkbox {...args} />;
+const CheckboxItem = () => (
+  <>
+    <Checkbox id="checkboxItemDefault" name="checkboxItemDefault" label="Checkbox Label" isItem />
+    <Checkbox
+      id="checkboxItemDefaultChecked"
+      name="checkboxItemDefaultChecked"
+      label="Checkbox Label"
+      isItem
+      isChecked
+    />
+    <Checkbox
+      id="checkboxItemHelperText"
+      name="checkboxItemHelperText"
+      label="Checkbox Label"
+      isItem
+      helperText="Helper text"
+    />
+    <Checkbox id="checkboxItemDisabled" name="checkboxItemDisabled" label="Checkbox Label" isItem isDisabled />
+    <Checkbox
+      id="checkboxItemDisabledHelperText"
+      name="checkboxItemDisabledHelperText"
+      label="Checkbox Label"
+      isItem
+      helperText="Helper text"
+      isDisabled
+      isRequired
+      isChecked
+    />
+  </>
+);
 
-Story.args = {
-  isChecked: false,
-  isDisabled: false,
-  isItem: true,
-  isLabelHidden: false,
-  isRequired: false,
-  label: 'Label Item',
-  name: 'example',
-};
-
-export default Story;
+export default CheckboxItem;
