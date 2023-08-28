@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ButtonLink } from './ButtonLink';
 import { args, argTypes } from './stories/args';
-import ReadMe from './README.md?raw';
+import ReadMe from './README.md';
 
 const meta: Meta<typeof ButtonLink> = {
   title: 'Components/ButtonLink',

@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { SpiritModalProps } from '../../types';
 import { Button } from '../Button';
-import ReadMe from './README.md?raw';
+import ReadMe from './README.md';
 import { Modal, ModalHeader, ModalDialog, ModalBody, ModalFooter } from '.';
 
 const meta: Meta<typeof Modal> = {

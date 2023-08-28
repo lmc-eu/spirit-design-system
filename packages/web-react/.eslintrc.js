@@ -25,7 +25,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.md', 'raw', '.md?raw'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.md'],
       },
     },
   },
@@ -63,15 +63,6 @@ module.exports = {
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
-    'import/no-unresolved': [
-      2,
-      {
-        ignore: [
-          // Ignore vite's ?raw imports
-          '.*?raw',
-        ],
-      },
-    ],
     // disable double quotes
     quotes: ['warn', 'single'],
   },

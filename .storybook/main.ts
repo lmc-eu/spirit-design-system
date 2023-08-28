@@ -1,6 +1,7 @@
 import { resolve, dirname, join } from 'path';
 import { mergeConfig } from 'vite';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
+import markdownRawPlugin from 'vite-raw-plugin';
 
 const config: StorybookViteConfig = {
   stories: ['../packages/**/*.stories.mdx', '../packages/**/*.stories.@(ts|tsx)'],
@@ -23,6 +24,11 @@ const config: StorybookViteConfig = {
   async viteFinal(config) {
     // Merge custom configuration into the default config
     return mergeConfig(config, {
+      plugins: [
+        markdownRawPlugin({
+          fileRegex: /\.md$/,
+        }),
+      ],
       css: {
         postcss: resolve(__dirname, 'config'),
         preprocessorOptions: {
