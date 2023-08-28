@@ -63,7 +63,7 @@
     "@storybook/addon-links": "7.3.2",
     "@storybook/addon-mdx-gfm": "7.3.2",
     "@storybook/addons": "7.3.2",
-    "@storybook/client-api": "7.3.1",
+    "@storybook/client-api": "7.3.2",
     "@storybook/html": "7.3.2",
     "@storybook/react": "7.3.2",
     "@storybook/react-vite": "7.3.2",
