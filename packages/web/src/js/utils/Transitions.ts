@@ -23,9 +23,8 @@ const getTransitionDurationFromElement = (element: HTMLElement) => {
   return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * 1000;
 };
 
-const execute = (possibleCallback: (...args: any[]) => void, args = [], defaultValue = possibleCallback) => {
-  return typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
-};
+const execute = (possibleCallback: (...args: unknown[]) => void, args = [], defaultValue = possibleCallback) =>
+  typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
 
 const executeAfterTransition = (transitionElement: HTMLElement, callback: () => void, waitForTransition = true) => {
   if (!waitForTransition) {
