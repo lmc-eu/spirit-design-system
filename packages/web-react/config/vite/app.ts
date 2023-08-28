@@ -41,9 +41,9 @@ export default defineConfig({
         ...getNestedDirs('src/components', 'index.html'),
       },
       output: {
-        entryFileNames: `assets/spirit-web-react-entry.[hash].js`,
-        chunkFileNames: `assets/spirit-web-react-chunk.[hash].js`,
-        assetFileNames: `assets/spirit-web-react-asset.[hash].[ext]`,
+        entryFileNames: 'assets/spirit-web-react-entry.[hash].js',
+        chunkFileNames: 'assets/spirit-web-react-chunk.[hash].js',
+        assetFileNames: 'assets/spirit-web-react-asset.[hash].[ext]',
       },
     },
   },
