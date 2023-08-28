@@ -15,4 +15,4 @@ export default {
   argTypes,
 } as ComponentMeta<typeof Breadcrumbs>;
 
-export { default as Breadcrumbs } from './demo/Breadcrumbs';
+export { default as Breadcrumbs } from './demo/BreadcrumbsDefault';

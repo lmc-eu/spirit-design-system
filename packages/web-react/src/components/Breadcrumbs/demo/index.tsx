@@ -6,36 +6,19 @@ import ReactDOM from 'react-dom/client';
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
-import Breadcrumbs from '../Breadcrumbs';
-
 import { IconsProvider } from '../../../context';
+import BreadcrumbsDefault from './BreadcrumbsDefault';
+import BreadcrumbsCustom from './BreadcrumbsCustom';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <DocsSection title="Breadcrumbs">
-      <IconsProvider value={icons}>
-        <Breadcrumbs
-          items={[
-            {
-              title: 'Root',
-              url: '#rootUrl',
-            },
-            {
-              title: 'Category',
-              url: '#categoryUrl',
-            },
-            {
-              title: 'Subcategory',
-              url: '#subcategoryUrl',
-            },
-            {
-              title: 'Current page',
-              url: '#currentUrl',
-            },
-          ]}
-          goBackTitle="Back"
-        />
-      </IconsProvider>
-    </DocsSection>
+    <IconsProvider value={icons}>
+      <DocsSection title="Default">
+        <BreadcrumbsDefault />
+      </DocsSection>
+      <DocsSection title="Custom">
+        <BreadcrumbsCustom />
+      </DocsSection>
+    </IconsProvider>
   </React.StrictMode>,
 );
