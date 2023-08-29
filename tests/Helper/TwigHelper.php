@@ -25,7 +25,15 @@ class TwigHelper
         array $extendedComponentsPath = []
     ): Environment {
         $loader = new FilesystemLoader($defaultTemplatePath);
-        $paths = array_merge($extendedComponentsPath, [SpiritWebTwigExtension::DEFAULT_TWIG_COMPONENTS_PATH, SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH]);
+        $paths = array_merge(
+            $extendedComponentsPath,
+            [
+                SpiritWebTwigExtension::DEFAULT_TWIG_COMPONENTS_PATH,
+                SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH,
+                __DIR__ . '/../../docs/components',
+                __DIR__ . '/../../docs/twig-components',
+            ]
+        );
 
         foreach ($paths as $path) {
             $loader->addPath($path, $defaultAlias);

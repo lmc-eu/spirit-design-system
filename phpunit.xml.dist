@@ -27,6 +27,7 @@
             <!-- Tests defined by directory are run in serial mode. Mind the order! -->
             <!-- Solves the problem of AbstractComponentSnapshotTest vs ComponentTest where Twig namespace differs from each other -->
             <!-- @see: https://stackoverflow.com/questions/10228/run-phpunit-tests-in-certain-order -->
+            <directory suffix="Test.php">docs/components/**/__tests__/</directory>
             <directory suffix="Test.php">src/Resources/components/**/__tests__/</directory>
             <directory suffix="Test.php">tests/</directory>
         </testsuite>

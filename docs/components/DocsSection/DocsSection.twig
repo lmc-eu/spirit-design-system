@@ -1,0 +1,32 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _hasFluidLayout = props.hasFluidLayout | default(false) -%}
+{%- set _tag = props.tag | default(null) -%}
+{%- set _title = props.title -%}
+
+{# Class names #}
+{%- set _rootClassName = 'docs-Section' -%}
+{%- set _headingClassName = 'docs-Heading' -%}
+{%- set _stackClassName = 'docs-Stack' -%}
+{%- set _stackFluidClassName = _hasFluidLayout ? 'docs-Stack--fluid' : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _rootClassNames = [_rootClassName, _styleProps.className] -%}
+{%- set _stackClassNames = [_stackClassName, _stackFluidClassName] -%}
+
+<section
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_rootClassNames) }}
+>
+    <h2 class="{{ _headingClassName }}">
+        {{ _title }}
+        {% if _tag %}
+            <Tag color="warning" isSubtle>{{ _tag }}</Tag>
+        {% endif %}
+    </h2>
+    <div {{ classProp(_stackClassNames) }}>
+        {% block content %}{% endblock %}
+    </div>
+</section>
