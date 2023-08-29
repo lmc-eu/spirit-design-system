@@ -2,7 +2,7 @@ import { ElementType } from 'react';
 import {
   ChildrenProps,
   EmotionColorsDictionaryType,
-  SizesDictionaryType,
+  SizeExtendedDictionaryType,
   SpiritPolymorphicElementPropsWithRef,
   StyleProps,
   TransferProps,
@@ -10,7 +10,7 @@ import {
 
 export type TagColor<C> = EmotionColorsDictionaryType | 'neutral' | C;
 
-export type TagSize<S> = SizesDictionaryType | S;
+export type TagSize<S> = SizeExtendedDictionaryType | S;
 
 export interface TagProps<E extends ElementType = 'span', C = void, S = void>
   extends ChildrenProps,
