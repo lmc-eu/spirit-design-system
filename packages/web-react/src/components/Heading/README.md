@@ -10,7 +10,7 @@ The Heading component provides helper classes to render headings.
 
 | Name               | Type                                        | Default  | Required | Description               |
 | ------------------ | ------------------------------------------- | -------- | -------- | ------------------------- |
-| `elementType`      | `React.Element`                             | `div`    | ✕        | HTML tag,                 |
+| `elementType`      | `React.Element`                             | `div`    | ✕        | HTML tag                  |
 | `size`             | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text          |
 | `UNSAFE_className` | `string`                                    | —        | ✕        | Wrapper custom class name |
 | `UNSAFE_style`     | `CSSProperties`                             | —        | ✕        | Wrapper custom style      |

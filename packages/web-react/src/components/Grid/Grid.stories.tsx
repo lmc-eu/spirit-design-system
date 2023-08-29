@@ -1,123 +1,67 @@
 import React from 'react';
-import Grid from './Grid';
-import { SpiritGridProps } from '../../types';
+import { Markdown } from '@storybook/blocks';
+import type { Meta, StoryObj } from '@storybook/react';
 
-const ExampleBox = () => <div className="docs-Box" />;
+import { Grid } from './Grid';
+import ReadMe from './README.md';
 
-export default {
+const gridColumnsArray = [1, 2, 3, 4, 5, 6, 12, undefined];
+
+const meta: Meta<typeof Grid> = {
   title: 'Components/Grid',
   component: Grid,
+  parameters: {
+    docs: {
+      page: () => <Markdown>{ReadMe}</Markdown>,
+    },
+  },
   argTypes: {
     children: {
-      control: 'text',
+      control: 'object',
     },
+    cols: {
+      control: 'select',
+      options: gridColumnsArray,
+    },
+    desktop: {
+      control: 'select',
+      options: gridColumnsArray,
+    },
+    elementType: {
+      control: 'text',
+      table: {
+        defaultValue: { summary: 'div' },
+      },
+    },
+    tablet: {
+      control: 'select',
+      options: gridColumnsArray,
+    },
+  },
+  args: {
+    children: (
+      <>
+        {[...Array(12)].map((_, index) => {
+          const key = `item-${index}`;
+
+          return (
+            <div key={key} className="docs-Box">
+              Item
+            </div>
+          );
+        })}
+      </>
+    ),
     cols: 12,
-    tablet: 12,
     desktop: 12,
+    elementType: 'div',
+    tablet: 12,
   },
 };
 
-const Template = (args: SpiritGridProps) => <Grid {...args} />;
+export default meta;
+type Story = StoryObj<typeof Grid>;
 
-export const EqualColumns = Template.bind({});
-EqualColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 12,
-  tablet: 12,
-  desktop: 12,
-};
-
-export const SixColumns = Template.bind({});
-SixColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 6,
-};
-
-export const FiveColumns = Template.bind({});
-FiveColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 5,
-};
-
-export const FourColumns = Template.bind({});
-FourColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 4,
-};
-
-export const ThreeColumns = Template.bind({});
-ThreeColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 3,
-};
-
-export const TwoColumns = Template.bind({});
-TwoColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  cols: 2,
-};
-
-export const ResponsiveColumns = Template.bind({});
-ResponsiveColumns.args = {
-  children: (
-    <>
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-      <ExampleBox />
-    </>
-  ),
-  desktop: 4,
-  tablet: 3,
-  cols: 2,
+export const Playground: Story = {
+  name: 'Grid',
 };
