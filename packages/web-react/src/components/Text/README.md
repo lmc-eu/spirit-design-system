@@ -10,6 +10,7 @@ The Text component provides helper classes to render text.
 
 | Name               | Type                                        | Default  | Required | Description               |
 | ------------------ | ------------------------------------------- | -------- | -------- | ------------------------- |
+| `elementType`      | `React.Element`                             | `p`      | ✕        | HTML tag                  |
 | `emphasis`         | [`italic` \| `bold`]                        | —        | ✕        | Emphasis of the text      |
 | `size`             | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text          |
 | `UNSAFE_className` | `string`                                    | —        | ✕        | Wrapper custom class name |

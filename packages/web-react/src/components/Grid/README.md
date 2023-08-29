@@ -21,7 +21,7 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 | ------------------ | ----------------------------------------- | ------- | -------- | ----------------------------------- |
 | `cols`             | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use            |
 | `desktop`          | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use on desktop |
-| `elementType`      | HTML element                              | —       | ✕        | Element type to use for the Grid    |
+| `elementType`      | HTML element                              | `div`   | ✕        | Element type to use for the Grid    |
 | `tablet`           | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use on tablet  |
 | `UNSAFE_className` | `string`                                  | —       | ✕        | Wrapper custom class name           |
 | `UNSAFE_style`     | `CSSProperties`                           | —       | ✕        | Wrapper custom style                |

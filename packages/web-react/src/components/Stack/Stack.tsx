@@ -4,7 +4,7 @@ import { useStackStyleProps } from './useStackStyleProps';
 import { useStyleProps } from '../../hooks';
 import { SpiritStackProps } from '../../types';
 
-const defaultProps = {
+const defaultProps: SpiritStackProps = {
   elementType: 'div',
   hasSpacing: false,
   hasEndDivider: false,
