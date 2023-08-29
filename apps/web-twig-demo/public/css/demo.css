@@ -32,6 +32,16 @@
   line-height: 1.2;
 }
 
+.docs-Stack {
+  display: grid;
+  row-gap: 1rem;
+  justify-items: start;
+}
+
+.docs-Stack--fluid {
+  justify-items: initial;
+}
+
 .docs-Box {
   min-height: 2rem;
   padding: 1rem;
@@ -46,12 +56,6 @@
   font-size: 0.75rem;
   text-align: center;
   white-space: normal;
-}
-
-.docs-FormFieldGrid {
-  display: grid;
-  grid-template-columns: 25rem;
-  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {

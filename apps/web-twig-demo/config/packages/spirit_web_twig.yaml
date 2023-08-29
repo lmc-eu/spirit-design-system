@@ -1,4 +1,7 @@
 spirit_web_twig:
+  paths:
+    - '%kernel.project_dir%/../spirit-web-twig-bundle/docs/components'
+    - '%kernel.project_dir%/../spirit-web-twig-bundle/docs/twig-components'
   icons:
     paths:
       - '%kernel.project_dir%/../spirit-web-twig-bundle/static'
