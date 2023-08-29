@@ -76,6 +76,23 @@ The rest of the properties are formed from the selected type of element. Documen
 
 ## ModalHeader
 
+### Hidden Title
+
+Even in cases you don't need the title to be visible you should provide an
+accessible name for the dialog, e.g. using the `aria-label` attribute on
+`<Modal>` component:
+
+```twig
+<Modal id="modal-example" aria-label="Accessible Modal Title">
+  <ModalDialog>
+    <ModalHeader />
+    <ModalBody>
+      …
+    </ModalBody>
+  </ModalDialog>
+</Modal>
+```
+
 ### API
 
 | Name               | Type            | Default | Required | Description                   |
@@ -112,9 +129,23 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 
 The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
 
+## Scrolling Long Content
+
+When Modals become too long for the user's viewport or device, they automatically scroll independent of the page itself.
+
+To make content overflow more obvious to users, you can wrap the `ModalBody` content in a [ScrollView][scroll-view] that
+takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
+
+```jsx
+<ScrollView overflowDecorators="both">
+  <ModalBody>…Long content…</ModalBody>
+</ScrollView>
+```
+
 [DialogElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [ArticleElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
 [FormElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 [DivElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 [HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md
