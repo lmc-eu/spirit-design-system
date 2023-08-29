@@ -120,12 +120,21 @@ to fit the height of its content (if smaller than viewport).
 </Modal>
 ```
 
-👉 Even in cases you don't need the title to be visible you should provide an
+### Hidden Title
+
+Even in cases you don't need the title to be visible you should provide an
 accessible name for the dialog, e.g. using the `aria-label` attribute on
 `<Modal>` component:
 
 ```twig
-<Modal id="modal-example" aria-label="Accessible Modal Title"> … </Modal>
+<Modal id="modal-example" aria-label="Accessible Modal Title">
+  <ModalDialog>
+    <ModalHeader modalId="modal-example" />
+    <ModalBody>
+      …
+    </ModalBody>
+  </ModalDialog>
+</Modal>
 ```
 
 ### API
@@ -186,6 +195,21 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
+## Scrolling Long Content
+
+When Modals become too long for the user's viewport or device, they automatically scroll independent of the page itself.
+
+To make content overflow more obvious to users, you can wrap the ModalBody content in a [ScrollView][scroll-view] that
+takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
+
+```twig
+<ScrollView data-spirit-toggle="scrollView" overflowDecorators="both">
+  <ModalBody>
+    …Long content…
+  </ModalBody>
+</ScrollView>
+```
+
 ## Full Example
 
 When you put it all together:
@@ -213,9 +237,11 @@ When you put it all together:
     >
       Title of the Modal
     </ModalHeader>
-    <ModalBody>
-      <p>Modal body form</p>
-    </ModalBody>
+    <ScrollView data-spirit-toggle="scrollView" overflowDecorators="both">
+      <ModalBody>
+        <p>Modal body form</p>
+      </ModalBody>
+    </ScrollView>
     <ModalFooter alignmentX="left" description="Modal Footer description">
       <Button color="primary">
         Submit
@@ -249,3 +275,4 @@ Or, feel free to write the controlling script yourself.
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ScrollView/README.md

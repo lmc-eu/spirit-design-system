@@ -22,7 +22,7 @@ export const ModalWithScrollView = () => {
       <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader>Modal with ScrollView </ModalHeader>
-          <ScrollView overflowDecorators="borders">
+          <ScrollView overflowDecorators="both">
             <ModalBody>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
