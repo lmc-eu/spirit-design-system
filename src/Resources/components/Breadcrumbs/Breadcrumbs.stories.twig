@@ -2,10 +2,12 @@
 
 {% block content %}
 
-{# Breadcrumbs Basic #}
-{% include '@components/Breadcrumbs/stories/BreadcrumbsBasic.twig' %}
+<DocsSection title="Default">
+    {% include '@components/Breadcrumbs/stories/BreadcrumbsDefault.twig' %}
+</DocsSection>
 
-{# Breadcrumbs Custom #}
-{% include '@components/Breadcrumbs/stories/BreadcrumbsCustom.twig' %}
+<DocsSection title="Custom">
+    {% include '@components/Breadcrumbs/stories/BreadcrumbsCustom.twig' %}
+</DocsSection>
 
 {% endblock %}
