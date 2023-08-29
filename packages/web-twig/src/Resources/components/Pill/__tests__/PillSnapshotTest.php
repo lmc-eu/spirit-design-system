@@ -6,6 +6,6 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Pill;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class PillwSnapshotTest extends AbstractComponentSnapshotTest
+class PillSnapshotTest extends AbstractComponentSnapshotTest
 {
 }
