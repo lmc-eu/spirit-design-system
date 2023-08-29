@@ -1,53 +1,39 @@
-<section class="docs-Section">
+<Grid cols="12">
+    {% for i in 1..12 %}
+        <DocsBox size="small" UNSAFE_className="px-0">1/12</DocsBox>
+    {% endfor %}
+</Grid>
 
-    <h2 class="docs-Heading">Equal Columns</h2>
+<Grid cols="6">
+    {% for i in 1..6 %}
+        <DocsBox size="small">1/6</DocsBox>
+    {% endfor %}
+</Grid>
 
-    <Grid cols="12" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-        <div class="docs-Box docs-Box--small px-0">1/12</div>
-    </Grid>
-    <Grid cols="6" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small">1/6</div>
-        <div class="docs-Box docs-Box--small">1/6</div>
-        <div class="docs-Box docs-Box--small">1/6</div>
-        <div class="docs-Box docs-Box--small">1/6</div>
-        <div class="docs-Box docs-Box--small">1/6</div>
-        <div class="docs-Box docs-Box--small">1/6</div>
-    </Grid>
-    <Grid cols="5" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small">1/5</div>
-        <div class="docs-Box docs-Box--small">1/5</div>
-        <div class="docs-Box docs-Box--small">1/5</div>
-        <div class="docs-Box docs-Box--small">1/5</div>
-        <div class="docs-Box docs-Box--small">1/5</div>
-    </Grid>
-    <Grid cols="4" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small">1/4</div>
-        <div class="docs-Box docs-Box--small">1/4</div>
-        <div class="docs-Box docs-Box--small">1/4</div>
-        <div class="docs-Box docs-Box--small">1/4</div>
-    </Grid>
-    <Grid cols="3" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small">1/3</div>
-        <div class="docs-Box docs-Box--small">1/3</div>
-        <div class="docs-Box docs-Box--small">1/3</div>
-    </Grid>
-    <Grid cols="2" UNSAFE_className="mb-1000">
-        <div class="docs-Box docs-Box--small">1/2</div>
-        <div class="docs-Box docs-Box--small">1/2</div>
-    </Grid>
-    <Grid cols="1">
-        <div class="docs-Box docs-Box--small">1</div>
-    </Grid>
+<Grid cols="5">
+    {% for i in 1..5 %}
+        <DocsBox size="small">1/5</DocsBox>
+    {% endfor %}
+</Grid>
 
-</section>
+<Grid cols="4">
+    {% for i in 1..4 %}
+        <DocsBox size="small">1/4</DocsBox>
+    {% endfor %}
+</Grid>
+
+<Grid cols="3">
+    {% for i in 1..3 %}
+        <DocsBox size="small">1/3</DocsBox>
+    {% endfor %}
+</Grid>
+
+<Grid cols="2">
+    {% for i in 1..2 %}
+        <DocsBox size="small">1/2</DocsBox>
+    {% endfor %}
+</Grid>
+
+<Grid cols="1">
+    <DocsBox size="small">1</DocsBox>
+</Grid>

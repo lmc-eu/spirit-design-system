@@ -2,52 +2,28 @@
 
 {% block content %}
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Default</h2>
+    <DocsSection title="Default">
+        {% include '@components/Radio/stories/RadioDefault.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioDefault.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Hidden Label">
+        {% include '@components/Radio/stories/RadioHiddenLabel.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Hidden Label</h2>
+    <DocsSection title="Helper Text">
+        {% include '@components/Radio/stories/RadioHelperText.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioHiddenLabel.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Disabled">
+        {% include '@components/Radio/stories/RadioDisabled.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Helper Text</h2>
+    <DocsSection title="Validation State">
+        {% include '@components/Radio/stories/RadioValidation.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioHelperText.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Disabled</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioDisabled.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Validation State</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioValidation.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Item</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Radio/stories/RadioItem.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Item">
+        {% include '@components/Radio/stories/RadioItem.twig' %}
+    </DocsSection>
 
 {% endblock %}

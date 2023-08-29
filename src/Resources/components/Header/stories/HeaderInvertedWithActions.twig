@@ -1,67 +1,59 @@
-<section class="docs-Section">
+<Header color="inverted">
+    {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
 
-    <h2 class="docs-Heading">Inverted Header with Actions</h2>
+    <HeaderMobileActions dialogId="header_dialog_example_1" />
 
-    <p>Using the Offcanvas JS plugin.</p>
+    <HeaderDesktopActions aria-label="Main navigation">
+        <HeaderNav>
+            <HeaderNavItem>
+                <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Part-time jobs</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Inspiration</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Replies</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Employers</HeaderLink>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
 
-    <Header color="inverted">
-        {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+    <HeaderDesktopActions color="secondary">
+        <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+        <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    </HeaderDesktopActions>
+</Header>
 
-        <HeaderMobileActions dialogId="header_dialog_example_1" />
+<HeaderDialog id="header_dialog_example_1">
+    <HeaderDialogCloseButton dialogId="header_dialog_example_1" />
 
-        <HeaderDesktopActions aria-label="Main navigation">
-            <HeaderNav>
-                <HeaderNavItem>
-                    <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Part-time jobs</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Inspiration</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Replies</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Employers</HeaderLink>
-                </HeaderNavItem>
-            </HeaderNav>
-        </HeaderDesktopActions>
+    <HeaderDialogActions aria-label="Main navigation">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
 
-        <HeaderDesktopActions color="secondary">
-            <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-            <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
-        </HeaderDesktopActions>
-    </Header>
-
-    <HeaderDialog id="header_dialog_example_1">
-        <HeaderDialogCloseButton dialogId="header_dialog_example_1" />
-
-        <HeaderDialogActions aria-label="Main navigation">
-            <HeaderDialogNav>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="/">Replies</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="/">Employers</HeaderDialogLink>
-                </HeaderDialogNavItem>
-            </HeaderDialogNav>
-        </HeaderDialogActions>
-
-        <HeaderDialogActions color="secondary">
-            <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-            <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
-        </HeaderDialogActions>
-    </HeaderDialog>
-
-</section>
+    <HeaderDialogActions color="secondary">
+        <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+        <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    </HeaderDialogActions>
+</HeaderDialog>

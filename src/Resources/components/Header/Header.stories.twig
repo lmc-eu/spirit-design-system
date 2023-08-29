@@ -2,22 +2,28 @@
 
 {% block content %}
 
-    {# Minimal Inverted Header #}
-    {% include '@components/Header/stories/HeaderMinimalInverted.twig' %}
+    <DocsSection title="Minimal Inverted Header" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderMinimalInverted.twig' %}
+    </DocsSection>
 
-    {# Inverted Header with Actions #}
-    {% include '@components/Header/stories/HeaderInvertedWithActions.twig' %}
+    <DocsSection title="Inverted Header with Actions" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderInvertedWithActions.twig' %}
+    </DocsSection>
 
-    {# Inverted Header with Actions and Header Dialog #}
-    {% include '@components/Header/stories/HeaderInvertedWithActionsAndDialog.twig' %}
+    <DocsSection title="Inverted Header with Actions and Header Dialog" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderInvertedWithActionsAndDialog.twig' %}
+    </DocsSection>
 
-    {# Simple Inverted Header #}
-    {% include '@components/Header/stories/HeaderSimpleInverted.twig' %}
+    <DocsSection title="Simple Inverted Header" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderSimpleInverted.twig' %}
+    </DocsSection>
 
-    {# Simple Transparent Header #}
-    {% include '@components/Header/stories/HeaderSimpleTransparent.twig' %}
+    <DocsSection title="Simple Transparent Header" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderSimpleTransparent.twig' %}
+    </DocsSection>
 
-    {# Header with experimental RTL support #}
-    {% include '@components/Header/stories/HeaderExperimentalRTL.twig' %}
+    <DocsSection title="Experimental RTL Support" hasFluidLayout>
+        {% include '@components/Header/stories/HeaderExperimentalRTL.twig' %}
+    </DocsSection>
 
 {% endblock %}

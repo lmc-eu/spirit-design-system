@@ -2,66 +2,36 @@
 
 {% block content %}
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Default</h2>
+    <DocsSection title="Default">
+        {% include '@components/Select/stories/SelectDefault.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectDefault.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Required with Placeholder">
+        {% include '@components/Select/stories/SelectRequiredWithPlaceholder.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Required with Placeholder</h2>
+    <DocsSection title="Hidden Label">
+        {% include '@components/Select/stories/SelectHiddenLabel.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectRequiredWithPlaceholder.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Placeholder">
+        {% include '@components/Select/stories/SelectPlaceholder.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Hidden Label</h2>
+    <DocsSection title="Helper Text">
+        {% include '@components/Select/stories/SelectHelperText.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectHiddenLabel.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Disabled">
+        {% include '@components/Select/stories/SelectDisabled.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Placeholder</h2>
+    <DocsSection title="Validation State with Validation Text">
+        {% include '@components/Select/stories/SelectValidation.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectPlaceholder.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Helper Text</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectHelperText.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Disabled</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectDisabled.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Validation State with Validation Text</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Select/stories/SelectValidation.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Fluid</h2>
-
+    <DocsSection title="Fluid">
         {% include '@components/Select/stories/SelectFluid.twig' %}
-    </section>
+    </DocsSection>
 
 {% endblock %}

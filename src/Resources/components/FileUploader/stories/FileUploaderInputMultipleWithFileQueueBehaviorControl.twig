@@ -1,22 +1,16 @@
-<section class="docs-Section">
-
-    <h2 class="docs-Heading">Input Multiple with File Queue Behavior Control</h2>
-
-    <FileUploader data-spirit-toggle="fileUploader">
-        <template data-spirit-snippet="item">
-            <FileUploaderAttachment />
-        </template>
-        <FileUploaderInput
-            helperText="Max size of each file is 10 MB"
-            id="example-input-multiple-queue-control"
-            label="Label"
-            maxUploadedFiles={2}
-            multiple
-            name="example-input-multiple-queue-control"
-            pickAFileText="Upload your file(s)"
-            queueLimitBehavior="hide"
-        />
-        <FileUploaderList headingId="attachments_example-input-multiple-queue-control" />
-    </FileUploader>
-
-</section>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        helperText="Max size of each file is 10 MB"
+        id="example-input-multiple-queue-control"
+        label="Label"
+        maxUploadedFiles={2}
+        multiple
+        name="example-input-multiple-queue-control"
+        pickAFileText="Upload your file(s)"
+        queueLimitBehavior="hide"
+    />
+    <FileUploaderList headingId="attachments_example-input-multiple-queue-control" />
+</FileUploader>

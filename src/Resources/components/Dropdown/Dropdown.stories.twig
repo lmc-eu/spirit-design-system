@@ -2,39 +2,28 @@
 
 {% block content %}
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Basic usage with default align</h2>
-
+    <DocsSection title="Basic usage with default align">
         {% include '@components/Dropdown/stories/DropdownDefault.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Usage with align to top right</h2>
-
+    <DocsSection title="Usage with align to top right">
         {% include '@components/Dropdown/stories/DropdownTopRight.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Usage with disabled auto close</h2>
-
+    <DocsSection title="Usage with disabled auto close">
         {% include '@components/Dropdown/stories/DropdownDisabledAutoclose.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Longer content</h2>
-
+    <DocsSection title="Longer content">
         {% include '@components/Dropdown/stories/DropdownLongerContent.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Full-width mode 'all'</h2>
-
+    <DocsSection title="Full-width mode 'all'">
         {% include '@components/Dropdown/stories/DropdownFullwidthAll.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Full-width mode 'mobile-only'</h2>
-
+    <DocsSection title="Full-width mode 'mobile-only'">
         {% include '@components/Dropdown/stories/DropdownFullwidthMobileOnly.twig' %}
-    </section>
+    </DocsSection>
+
 {% endblock %}

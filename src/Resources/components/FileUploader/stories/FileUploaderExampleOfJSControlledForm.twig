@@ -1,29 +1,23 @@
-<section class="docs-Section">
+<form name="example" id="form-example" method="post" enctype="multipart/form-data">
 
-    <h2 class="docs-Heading">Example of JS-Controlled Form</h2>
+    <input type="hidden" name="hiddenField" value="hidden field value" />
 
-    <form name="example" id="form-example" method="post" enctype="multipart/form-data">
+    <FileUploader id="example-composition" data-spirit-toggle="fileUploader" data-spirit-file-queue-limit="2">
+        <template data-spirit-snippet="item">
+            <FileUploaderAttachment />
+        </template>
+        <FileUploaderInput
+            helperText="Max file size is 10 MB"
+            id="example-js-form"
+            label="Label"
+            multiple
+            name="example-js-form"
+        />
+        <FileUploaderList headingId="attachments_example-js-form" />
+    </FileUploader>
 
-        <input type="hidden" name="hiddenField" value="hidden field value" />
+    <div class="mt-600">
+        <Button type="submit">Submit me</Button>
+    </div>
 
-        <FileUploader id="example-composition" data-spirit-toggle="fileUploader" data-spirit-file-queue-limit="2">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-js-form"
-                label="Label"
-                multiple
-                name="example-js-form"
-            />
-            <FileUploaderList headingId="attachments_example-js-form" />
-        </FileUploader>
-
-        <div class="mt-600">
-            <Button type="submit">Submit me</Button>
-        </div>
-
-    </form>
-
-</section>
+</form>

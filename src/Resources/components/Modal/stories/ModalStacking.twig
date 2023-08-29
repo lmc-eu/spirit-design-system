@@ -1,73 +1,67 @@
-<section class="docs-Section">
+<Button data-spirit-toggle="modal" data-spirit-target="#example_stacking_parent">
+    Open Modal
+</Button>
 
-    <h2 class="docs-Heading">Stacking Modals</h2>
+<Modal id="example_stacking_parent" titleId="example_stacking_parent_title">
+    <ModalDialog>
+        <ModalHeader modalId="example_stacking_parent" titleId="example_stacking_parent_title">
+            Modal Title
+        </ModalHeader>
+        <ModalBody>
 
-    <Button data-spirit-toggle="modal" data-spirit-target="#example_stacking_parent">
-        Open Modal
-    </Button>
+            <!-- Content: start -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <!-- Content: end -->
 
-    <Modal id="example_stacking_parent" titleId="example_stacking_parent_title">
-        <ModalDialog>
-            <ModalHeader modalId="example_stacking_parent" titleId="example_stacking_parent_title">
-                Modal Title
-            </ModalHeader>
-            <ModalBody>
+        </ModalBody>
+        <ModalFooter>
+            <Button data-spirit-toggle="modal" data-spirit-target="#example_stacking_nested">
+                Open stacked dialog
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
 
-                <!-- Content: start -->
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                    provident unde. Eveniet, iste, molestiae?
-                </p>
-                <!-- Content: end -->
+<Modal id="example_stacking_nested" titleId="example_stacking_nested_title">
+    <ModalDialog>
+        <ModalHeader modalId="example_stacking_nested" titleId="example_stacking_nested_title">
+            Stacked Modal Title
+        </ModalHeader>
+        <ModalBody>
 
-            </ModalBody>
-            <ModalFooter>
-                <Button data-spirit-toggle="modal" data-spirit-target="#example_stacking_nested">
-                    Open stacked dialog
-                </Button>
-            </ModalFooter>
-        </ModalDialog>
-    </Modal>
+            <!-- Content: start -->
+            <p>
+                Dolor quis metus a lorem, et elit pulvinar ligula condimentum non congue rhoncus molestie, at sem
+                viverra maximus nunc. Posuere pretium accumsan, pharetra vel integer sit amet volutpat neque fringilla,
+                non mauris erat id augue libero. Porta non congue, et iaculis et vehicula convallis non purus placerat
+                cursus, rhoncus laoreet nec et elit. Proin luctus, bibendum adipiscing ut ollicitudin vehicula nisi
+                nunc et, sollicitudin eget tristique nec commodo. Porttitor ligula, tellus vehicula arcu vestibulum
+                sed rutrum placerat, dui quis facilisis eget. Suscipit molestie, nibh maximus enim vestibulum aenean
+                ut libero sed imperdiet, curabitur et elit venenatis posuere.
+                <br />
+                Sapien vitae, dui sollicitudin nullam dolor quis nec nulla sapien, diam a ollicitudin non nulla nisl.
+                Quis orci porta, ac nec sapien ornare imperdiet a vel convallis, adipiscing ullamcorper lectus quis
+                pharetra. At nullam rutrum, nisl eget sit amet pulvinar ultricies nec porta, diam a sem odio a mauris
+                eu. Suscipit sodales, fusce ante cursus convallis dui vel dolor potenti nulla fusce gravida.
+            </p>
+            <!-- Content: end -->
 
-    <Modal id="example_stacking_nested" titleId="example_stacking_nested_title">
-        <ModalDialog>
-            <ModalHeader modalId="example_stacking_nested" titleId="example_stacking_nested_title">
-                Stacked Modal Title
-            </ModalHeader>
-            <ModalBody>
-
-                <!-- Content: start -->
-                <p>
-                    Dolor quis metus a lorem, et elit pulvinar ligula condimentum non congue rhoncus molestie, at sem
-                    viverra maximus nunc. Posuere pretium accumsan, pharetra vel integer sit amet volutpat neque fringilla,
-                    non mauris erat id augue libero. Porta non congue, et iaculis et vehicula convallis non purus placerat
-                    cursus, rhoncus laoreet nec et elit. Proin luctus, bibendum adipiscing ut ollicitudin vehicula nisi
-                    nunc et, sollicitudin eget tristique nec commodo. Porttitor ligula, tellus vehicula arcu vestibulum
-                    sed rutrum placerat, dui quis facilisis eget. Suscipit molestie, nibh maximus enim vestibulum aenean
-                    ut libero sed imperdiet, curabitur et elit venenatis posuere.
-                    <br />
-                    Sapien vitae, dui sollicitudin nullam dolor quis nec nulla sapien, diam a ollicitudin non nulla nisl.
-                    Quis orci porta, ac nec sapien ornare imperdiet a vel convallis, adipiscing ullamcorper lectus quis
-                    pharetra. At nullam rutrum, nisl eget sit amet pulvinar ultricies nec porta, diam a sem odio a mauris
-                    eu. Suscipit sodales, fusce ante cursus convallis dui vel dolor potenti nulla fusce gravida.
-                </p>
-                <!-- Content: end -->
-
-            </ModalBody>
-            <ModalFooter>
-                <Button type="submit">
-                    Primary action
-                </Button>
-                <Button
-                    color="secondary"
-                    data-spirit-dismiss="modal"
-                    data-spirit-target="#example_stacking_nested"
-                >
-                    Secondary action
-                </Button>
-            </ModalFooter>
-        </ModalDialog>
-    </Modal>
-
-</section>
+        </ModalBody>
+        <ModalFooter>
+            <Button type="submit">
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example_stacking_nested"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>

@@ -2,40 +2,28 @@
 
 {% block content %}
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Form Fields</h2>
-
+    <DocsSection title="Stacked Form Fields" hasFluidLayout>
         {% include '@components/Stack/stories/StackFormFields.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Blocks</h2>
-
+    <DocsSection title="Stacked Blocks" hasFluidLayout>
         {% include '@components/Stack/stories/StackBlocks.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Blocks with Vertical Spacing</h2>
-
+    <DocsSection title="Stacked Blocks with Vertical Spacing" hasFluidLayout>
         {% include '@components/Stack/stories/StackBlocksWithVerticalSpacing.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Blocks with Inner Dividers and Vertical Spacing</h2>
-
+    <DocsSection title="Stacked Blocks with Inner Dividers and Vertical Spacing" hasFluidLayout>
         {% include '@components/Stack/stories/StackBlocksWithInnerDividersAndVerticalSpacing.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Blocks with Inner and Outer Dividers and Vertical Spacing</h2>
-
+    <DocsSection title="Stacked Blocks with Inner and Outer Dividers and Vertical Spacing" hasFluidLayout>
         {% include '@components/Stack/stories/StackBlocksWithInnerAndOuterDividersAndVerticalSpacing.twig' %}
-    </section>
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Stacked Blocks with Inner Dividers without Vertical Spacing</h2>
-
+    <DocsSection title="Stacked Blocks with Inner Dividers without Vertical Spacing" hasFluidLayout>
         {% include '@components/Stack/stories/StackBlocksWithInnerDividersWithoutVerticalSpacing.twig' %}
-    </section>
+    </DocsSection>
 
 {% endblock %}

@@ -1,22 +1,37 @@
 <Grid cols="1" desktop="3">
-  {% for size in sizes %}
-  <div>
-    <h3 class="docs-Heading">Size {{ size }}</h3>
-    {% for color in colors %}
-    <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
-      <div>
-        <Button color={color} size={size} isLoading>Loading {{ color }}</Button>
-        <Button color={color} size={size} isLoading>
-          <Icon name="hamburger" UNSAFE_className="mr-400" />
-          Menu
-        </Button>
-        <Button color={color} size={size} isSquare isLoading>
-          <VisuallyHidden>Menu</VisuallyHidden>
-          <Icon name="hamburger" />
-        </Button>
-      </div>
-    </div>
+    {% for size in sizes %}
+
+        {% set title = 'Size ' ~ size %}
+
+        <DocsSection title={{ title }}>
+            {% for color in colors %}
+
+                {% set renderedContent %}
+                    <Button color={ color } size={ size } onclick="alert('Button clicked')" isLoading>
+                        Button {{ color }}
+                    </Button>
+                    <Button color={ color } size={ size } isLoading>
+                        <Icon name="hamburger" UNSAFE_className="mr-400" />
+                        Menu
+                    </Button>
+                    <Button color={ color } size={ size } isLoading isSquare>
+                        <VisuallyHidden>Menu</VisuallyHidden>
+                        <Icon name="hamburger" />
+                    </Button>
+                {% endset %}
+
+                {% if color is same as('inverted') %}
+                    <DocsBox>
+                        {{ renderedContent }}
+                    </DocsBox>
+                {% else %}
+                    <div>
+                        {{ renderedContent }}
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </DocsSection>
+
     {% endfor %}
-  </div>
-  {% endfor %}
 </Grid>

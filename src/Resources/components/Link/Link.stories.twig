@@ -2,10 +2,12 @@
 
 {% block content %}
 
-{# Link Default #}
-{% include '@components/Link/stories/LinkDefault.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Link/stories/LinkDefault.twig' %}
+    </DocsSection>
 
-{# Link Colors #}
-{% include '@components/Link/stories/LinkColors.twig' %}
+    <DocsSection title="Colors">
+        {% include '@components/Link/stories/LinkColors.twig' %}
+    </DocsSection>
 
 {% endblock %}
