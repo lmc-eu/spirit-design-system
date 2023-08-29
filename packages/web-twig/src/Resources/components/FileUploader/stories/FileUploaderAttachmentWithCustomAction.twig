@@ -1,25 +1,17 @@
-<section class="docs-Section">
-
-    <h2 class="docs-Heading">
-        Attachment with Custom Actions
-    </h2>
-
-    <FileUploader data-spirit-toggle="fileUploader">
-        <template data-spirit-snippet="item">
-            <FileUploaderAttachment onEdit="editHandler()" />
-        </template>
-        <FileUploaderInput
-            helperText="Max size of each file is 10 MB"
-            id="fileUploaderWithCustomAttachmentActions"
-            label="Label"
-            multiple
-            name="fileUploaderWithCustomAttachmentActions"
-            pickAFileText="Upload your file(s)"
-        />
-        <FileUploaderList headingId="attachments_example-input" />
-    </FileUploader>
-
-</section>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment onEdit="editHandler()" />
+    </template>
+    <FileUploaderInput
+        helperText="Max size of each file is 10 MB"
+        id="fileUploaderWithCustomAttachmentActions"
+        label="Label"
+        multiple
+        name="fileUploaderWithCustomAttachmentActions"
+        pickAFileText="Upload your file(s)"
+    />
+    <FileUploaderList headingId="attachments_example-input" />
+</FileUploader>
 
 <!-- Example custom action functionality: start -->
 <script>

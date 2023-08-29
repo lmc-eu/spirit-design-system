@@ -2,13 +2,16 @@
 
 {% block content %}
 
-{# Spinner #}
-{% include '@components/Spinner/stories/Spinner.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Spinner/stories/SpinnerDefault.twig' %}
+    </DocsSection>
 
-{# Spinner Colors #}
-{% include '@components/Spinner/stories/SpinnerColors.twig' %}
+    <DocsSection title="Colors">
+        {% include '@components/Spinner/stories/SpinnerColors.twig' %}
+    </DocsSection>
 
-{# Spinner Icon Props #}
-{% include '@components/Spinner/stories/SpinnerIconProps.twig' %}
+    <DocsSection title="Icon Props">
+        {% include '@components/Spinner/stories/SpinnerIconProps.twig' %}
+    </DocsSection>
 
 {% endblock %}

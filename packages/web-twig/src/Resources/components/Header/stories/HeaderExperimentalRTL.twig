@@ -1,24 +1,17 @@
-<section class="docs-Section">
+<script>
+    const toggleRtl = () => {
+        const htmlElement = document.querySelector('html');
 
-    <h2 class="docs-Heading">Experimental RTL Support</h2>
-
-    <script>
-        const toggleRtl = () => {
-            const htmlElement = document.querySelector('html');
-
-            if (htmlElement.hasAttribute('dir')) {
-                document.querySelector('html').removeAttribute('dir');
-                return;
-            }
-
-            document.querySelector('html').setAttribute('dir', 'rtl');
+        if (htmlElement.hasAttribute('dir')) {
+            htmlElement.removeAttribute('dir');
+        } else {
+            htmlElement.setAttribute('dir', 'rtl');
         }
-    </script>
+    }
+</script>
 
-    <Checkbox
-        id="rtl"
-        label="Switch writing mode to RTL"
-        onChange="toggleRtl()"
-    />
-
-</section>
+<Checkbox
+    id="rtl"
+    label="Switch writing mode to RTL"
+    onChange="toggleRtl()"
+/>

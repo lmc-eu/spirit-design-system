@@ -1,57 +1,47 @@
-<section class="docs-Section">
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-validation-success"
+        isRequired
+        label="Label"
+        name="example-validation-success"
+        validationState="success"
+        validationText="Success validation text"
+    />
+    <FileUploaderList headingId="attachments_example-validation-success" />
+</FileUploader>
 
-    <h2 class="docs-Heading">Input Validation States</h2>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-validation-warning"
+        isRequired
+        label="Label"
+        name="example-validation-warning"
+        validationState="warning"
+        validationText="Warning validation text"
+    />
+    <FileUploaderList headingId="attachments_example-validation-warning" />
+</FileUploader>
 
-    <div class="docs-FormFieldGrid">
-
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-validation-success"
-                isRequired
-                label="Label"
-                name="example-validation-success"
-                validationState="success"
-                validationText="Success validation text"
-            />
-            <FileUploaderList headingId="attachments_example-validation-success" />
-        </FileUploader>
-
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-validation-warning"
-                isRequired
-                label="Label"
-                name="example-validation-warning"
-                validationState="warning"
-                validationText="Warning validation text"
-            />
-            <FileUploaderList headingId="attachments_example-validation-warning" />
-        </FileUploader>
-
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-validation-danger"
-                isRequired
-                label="Label"
-                name="example-validation-danger"
-                validationState="danger"
-                validationText="{{ [ 'Danger validation text', 'Another danger validation text' ] }}"
-            />
-            <FileUploaderList headingId="attachments_example-validation-danger" />
-        </FileUploader>
-
-    </div>
-
-</section>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-validation-danger"
+        isRequired
+        label="Label"
+        name="example-validation-danger"
+        validationState="danger"
+        validationText="{{ [ 'Danger validation text', 'Another danger validation text' ] }}"
+    />
+    <FileUploaderList headingId="attachments_example-validation-danger" />
+</FileUploader>

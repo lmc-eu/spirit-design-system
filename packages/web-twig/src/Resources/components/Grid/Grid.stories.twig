@@ -2,16 +2,20 @@
 
 {% block content %}
 
-{# Equal Columns #}
-{% include '@components/Grid/stories/GridEqualColumns.twig' %}
+    <DocsSection title="Equal Columns">
+        {% include '@components/Grid/stories/GridEqualColumns.twig' %}
+    </DocsSection>
 
-{# Responsive Columns #}
-{% include '@components/Grid/stories/GridResponsiveColumns.twig' %}
+    <DocsSection title="Responsive Columns">
+        {% include '@components/Grid/stories/GridResponsiveColumns.twig' %}
+    </DocsSection>
 
-{# Grid Span #}
-{% include '@components/Grid/stories/GridSpan.twig' %}
+    <DocsSection title="Grid Span">
+        {% include '@components/Grid/stories/GridSpan.twig' %}
+    </DocsSection>
 
-{# Responsive Grid Span #}
-{% include '@components/Grid/stories/GridResponsiveGridSpan.twig' %}
+    <DocsSection title="Responsive Grid Span">
+        {% include '@components/Grid/stories/GridResponsiveGridSpan.twig' %}
+    </DocsSection>
 
 {% endblock %}

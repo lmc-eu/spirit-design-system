@@ -2,10 +2,12 @@
 
 {% block content %}
 
-{# Heading Default #}
-{% include '@components/Heading/stories/HeadingDefault.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Heading/stories/HeadingDefault.twig' %}
+    </DocsSection>
 
-{# Heading Sizes #}
-{% include '@components/Heading/stories/HeadingSizes.twig' %}
+    <DocsSection title="Sizes">
+        {% include '@components/Heading/stories/HeadingSizes.twig' %}
+    </DocsSection>
 
 {% endblock %}

@@ -2,16 +2,20 @@
 
 {% block content %}
 
-    {# Tooltip Default #}
-    {% include '@components/Tooltip/stories/Tooltip.twig' %}
+    <DocsSection title="Static Tooltip (No Interaction)" hasFluidLayout>
+        {% include '@components/Tooltip/stories/TooltipDefault.twig' %}
+    </DocsSection>
 
-    {# Tooltip Placements #}
-    {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
+    <DocsSection title="Tooltip on Hover (Pure CSS)">
+        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
+    </DocsSection>
 
-    {# Tooltip Clickable #}
-    {% include '@components/Tooltip/stories/TooltipClickable.twig' %}
+    <DocsSection title="Tooltip on Click (JavaScript)">
+        {% include '@components/Tooltip/stories/TooltipClickable.twig' %}
+    </DocsSection>
 
-    {# Tooltip Dismissible #}
-    {% include '@components/Tooltip/stories/TooltipDismissible.twig' %}
+    <DocsSection title="Dismissible Tooltip">
+        {% include '@components/Tooltip/stories/TooltipDismissible.twig' %}
+    </DocsSection>
 
 {% endblock %}

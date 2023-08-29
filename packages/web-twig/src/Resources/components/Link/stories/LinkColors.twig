@@ -1,12 +1,7 @@
-{% set colors = [ "primary", "secondary", "inverted" ] %}
+<Link href="#" color="primary">Link primary</Link>
 
-<section class="docs-Section">
+<Link href="#" color="secondary">Link secondary</Link>
 
-    <h2 class="docs-Heading">Colors</h2>
-
-    {% for color in colors %}
-        <p{% if color is same as('inverted') %} class="docs-Box"{% endif %}>
-            <Link href="#" color={color}>Link {{ color }}</Link>
-        </p>
-    {% endfor %}
-</section>
+<DocsBox>
+    <Link href="#" color="inverted">Link inverted</Link>
+</DocsBox>

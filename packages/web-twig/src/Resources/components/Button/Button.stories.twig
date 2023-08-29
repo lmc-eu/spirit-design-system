@@ -2,21 +2,21 @@
 
 {% block content %}
 
-{% set colors = [
-    "primary", "secondary", "tertiary", "inverted", "success", "informative", "warning", "danger"
-] %}
-{% set sizes = [ "small", "medium", "large" ] %}
+    {% set colors = [
+        'primary', 'secondary', 'tertiary', 'inverted', 'success', 'informative', 'warning', 'danger'
+    ] %}
+    {% set sizes = [ 'small', 'medium', 'large' ] %}
 
-<DocsSection title="Default">
-    {% include '@components/Button/stories/ButtonColorsSizes.twig' %}
-</DocsSection>
+    <DocsSection title="Default">
+        {% include '@components/Button/stories/ButtonColorsSizes.twig' %}
+    </DocsSection>
 
-<DocsSection title="Disabled">
-    {% include '@components/Button/stories/ButtonDisabled.twig' %}
-</DocsSection>
+    <DocsSection title="Disabled">
+        {% include '@components/Button/stories/ButtonDisabled.twig' %}
+    </DocsSection>
 
-<DocsSection title="Loading">
-    {% include '@components/Button/stories/ButtonLoading.twig' %}
-</DocsSection>
+    <DocsSection title="Loading">
+        {% include '@components/Button/stories/ButtonLoading.twig' %}
+    </DocsSection>
 
 {% endblock %}

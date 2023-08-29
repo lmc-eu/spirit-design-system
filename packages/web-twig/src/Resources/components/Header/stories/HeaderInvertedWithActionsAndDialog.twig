@@ -1,121 +1,113 @@
-<section class="docs-Section">
+<Header color="inverted">
 
-    <h2 class="docs-Heading">Inverted Header with Actions and Header Dialog</h2>
+    {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
 
-    <p>Using the Offcanvas JS plugin.</p>
+    <HeaderMobileActions dialogId="header_dialog_example_2_main_navigation" />
 
-    <Header color="inverted">
+    <HeaderDesktopActions aria-label="Main navigation">
+        <HeaderNav>
+            <HeaderNavItem>
+                <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Part-time jobs</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Inspiration</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Replies</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Employers</HeaderLink>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
 
-        {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+    <HeaderDesktopActions color="secondary" aria-label="User area">
+        <HeaderNav>
+            <HeaderNavItem UNSAFE_className="d-none d-desktop-flex">
+                <HeaderButton
+                    data-spirit-toggle="offcanvas"
+                    data-spirit-target="#header_dialog_example_2_user_menu"
+                    aria-controls="header_dialog_example_2_user_menu"
+                    aria-expanded="false"
+                >
+                    Marian
+                </HeaderButton>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
 
-        <HeaderMobileActions dialogId="header_dialog_example_2_main_navigation" />
+</Header>
 
-        <HeaderDesktopActions aria-label="Main navigation">
-            <HeaderNav>
-                <HeaderNavItem>
-                    <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Part-time jobs</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Inspiration</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Replies</HeaderLink>
-                </HeaderNavItem>
-                <HeaderNavItem>
-                    <HeaderLink href="#">Employers</HeaderLink>
-                </HeaderNavItem>
-            </HeaderNav>
-        </HeaderDesktopActions>
+<HeaderDialog id="header_dialog_example_2_main_navigation" aria-label="Menu">
+    <HeaderDialogCloseButton dialogId="header_dialog_example_2_main_navigation" />
 
-        <HeaderDesktopActions color="secondary" aria-label="User area">
-            <HeaderNav>
-                <HeaderNavItem UNSAFE_className="d-none d-desktop-flex">
-                    <HeaderButton
-                        data-spirit-toggle="offcanvas"
-                        data-spirit-target="#header_dialog_example_2_user_menu"
-                        aria-controls="header_dialog_example_2_user_menu"
-                        aria-expanded="false"
-                    >
-                        Marian
-                    </HeaderButton>
-                </HeaderNavItem>
-            </HeaderNav>
-        </HeaderDesktopActions>
+    <HeaderDialogActions aria-label="Main navigation">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#" isCurrent>Job offers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Part-time jobs</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Inspiration</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Replies</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Employers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
 
-    </Header>
+    <HeaderDialogActions color="secondary" aria-label="User menu">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Profile</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogButton>Sign out</HeaderDialogButton>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
+</HeaderDialog>
 
-    <HeaderDialog id="header_dialog_example_2_main_navigation" aria-label="Menu">
-        <HeaderDialogCloseButton dialogId="header_dialog_example_2_main_navigation" />
+<HeaderDialog id="header_dialog_example_2_user_menu" aria-label="User menu">
+    <HeaderDialogCloseButton dialogId="header_dialog_example_2_user_menu" />
 
-        <HeaderDialogActions aria-label="Main navigation">
-            <HeaderDialogNav>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#" isCurrent>Job offers</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Part-time jobs</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Inspiration</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Replies</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Employers</HeaderDialogLink>
-                </HeaderDialogNavItem>
-            </HeaderDialogNav>
-        </HeaderDialogActions>
-
-        <HeaderDialogActions color="secondary" aria-label="User menu">
-            <HeaderDialogNav>
-                <HeaderDialogNavItem>
-                    <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Profile</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogButton>Sign out</HeaderDialogButton>
-                </HeaderDialogNavItem>
-            </HeaderDialogNav>
-        </HeaderDialogActions>
-    </HeaderDialog>
-
-    <HeaderDialog id="header_dialog_example_2_user_menu" aria-label="User menu">
-        <HeaderDialogCloseButton dialogId="header_dialog_example_2_user_menu" />
-
-        <HeaderDialogActions aria-label="User menu">
-            <HeaderDialogNav>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Profile</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
-                </HeaderDialogNavItem>
-                <HeaderDialogNavItem>
-                    <HeaderDialogButton>Sign out</HeaderDialogButton>
-                </HeaderDialogNavItem>
-            </HeaderDialogNav>
-        </HeaderDialogActions>
-    </HeaderDialog>
-
-</section>
+    <HeaderDialogActions aria-label="User menu">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Dashboard</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Profile</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Favourites</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="#">Notifications</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogButton>Sign out</HeaderDialogButton>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
+</HeaderDialog>

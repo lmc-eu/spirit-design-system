@@ -2,28 +2,20 @@
 
 {% block content %}
 
-{# Pagination Current First #}
-<section class="docs-Section">
-    <h2 class="docs-Heading">Pagination Current First</h2>
-    {% include '@components/Pagination/stories/PaginationCurrentFirst.twig' %}
-</section>
+    <DocsSection title="Pagination Current First">
+        {% include '@components/Pagination/stories/PaginationCurrentFirst.twig' %}
+    </DocsSection>
 
-{# Pagination Current Middle #}
-<section class="docs-Section">
-    <h2 class="docs-Heading">Pagination Current Middle</h2>
-    {% include '@components/Pagination/stories/PaginationCurrentMiddle.twig' %}
-</section>
+    <DocsSection title="Pagination Current Middle">
+        {% include '@components/Pagination/stories/PaginationCurrentMiddle.twig' %}
+    </DocsSection>
 
-{# Pagination Current Last #}
-<section class="docs-Section">
-    <h2 class="docs-Heading">Pagination Current Last</h2>
-    {% include '@components/Pagination/stories/PaginationCurrentLast.twig' %}
-</section>
+    <DocsSection title="Pagination Current Last">
+        {% include '@components/Pagination/stories/PaginationCurrentLast.twig' %}
+    </DocsSection>
 
-{# Pagination Current First Centered #}
-<section class="docs-Section">
-    <h2 class="docs-Heading">Pagination Current First Centered</h2>
-    {% include '@components/Pagination/stories/PaginationCurrentFirstCentered.twig' %}
-</section>
+    <DocsSection title="Pagination Current First Centered" hasFluidLayout>
+        {% include '@components/Pagination/stories/PaginationCurrentFirstCentered.twig' %}
+    </DocsSection>
 
 {% endblock %}

@@ -1,24 +1,16 @@
-<section class="docs-Section">
+<Button
+    id="tooltip-trigger"
+    data-spirit-target="#my-js-controlled-tooltip"
+    data-spirit-toggle="tooltip"
+>
+    Toggle tooltip
+</Button>
 
-    <h2 class="docs-Heading">Tooltip on Click (JavaScript)</h2>
-
-    <div class="mb-800">
-        <Button
-            id="tooltip-trigger"
-            UNSAFE_className="mb-800"
-            data-spirit-target="#my-js-controlled-tooltip"
-            data-spirit-toggle="tooltip"
-        >
-            Toggle tooltip
-        </Button>
-    </div>
-    <TooltipWrapper UNSAFE_className="d-inline-block">
-        <div class="docs-Box px-600 py-500" aria-describedby="my-js-controlled-tooltip">
-            I have an externally-triggered tooltip
-        </div>
-        <Tooltip id="my-js-controlled-tooltip" UNSAFE_className="is-hidden">
-            Hello there!
-        </Tooltip>
-    </TooltipWrapper>
-
-</section>
+<TooltipWrapper>
+    <DocsBox aria-describedby="my-js-controlled-tooltip">
+        I have an externally-triggered tooltip
+    </DocsBox>
+    <Tooltip id="my-js-controlled-tooltip" UNSAFE_className="is-hidden">
+        Hello there!
+    </Tooltip>
+</TooltipWrapper>

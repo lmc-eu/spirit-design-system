@@ -1,15 +1,9 @@
-<section class="docs-Section">
+<div style="display: flex; flex-direction: column; justify-content: space-between; height: 300px; color: white; background: linear-gradient(121.59deg, #073256 0%, #185C95 100%);">
 
-    <h2 class="docs-Heading">Simple Transparent Header</h2>
+    <Header isSimple>
+        {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+    </Header>
 
-    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 300px; color: white; background: linear-gradient(121.59deg, #073256 0%, #185C95 100%);">
+    <Heading elementType="div" size="large" UNSAFE_className="text-center mb-1200">Example Cover</Heading>
 
-        <Header isSimple>
-            {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
-        </Header>
-
-        <Heading elementType="div" size="large" UNSAFE_className="text-center mb-1200">Example Cover</Heading>
-
-    </div>
-
-</section>
+</div>

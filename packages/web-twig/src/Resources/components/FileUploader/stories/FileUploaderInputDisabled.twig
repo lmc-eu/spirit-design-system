@@ -1,24 +1,14 @@
-<section class="docs-Section">
-
-    <h2 class="docs-Heading">Input Disabled</h2>
-
-    <div class="docs-FormFieldGrid">
-
-        <FileUploader data-spirit-toggle="fileUploader">
-            <template data-spirit-snippet="item">
-                <FileUploaderAttachment />
-            </template>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-disabled"
-                isDisabled
-                isRequired
-                label="Label"
-                name="example-disabled"
-            />
-            <FileUploaderList headingId="attachments_example-disabled" />
-        </FileUploader>
-
-    </div>
-
-</section>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-disabled"
+        isDisabled
+        isRequired
+        label="Label"
+        name="example-disabled"
+    />
+    <FileUploaderList headingId="attachments_example-disabled" />
+</FileUploader>

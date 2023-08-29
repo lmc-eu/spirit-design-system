@@ -2,7 +2,12 @@
 
 {% block content %}
 
-{# Item Default #}
-{% include '@components/Item/stories/ItemDefault.twig' %}
+    <DocsSection title="Checkbox Item">
+        {% include '@components/Item/stories/CheckboxItem.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Radio Item">
+        {% include '@components/Item/stories/RadioItem.twig' %}
+    </DocsSection>
 
 {% endblock %}

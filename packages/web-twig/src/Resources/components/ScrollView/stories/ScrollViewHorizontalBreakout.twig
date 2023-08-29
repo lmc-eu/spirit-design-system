@@ -1,19 +1,14 @@
-<section class="docs-Section">
+<div class="breakout-container">
 
-    <h2 class="docs-Heading">Horizontal Scrolling with Container Breakout</h2>
+    <ScrollView
+        direction="horizontal"
+        data-spirit-toggle="scrollView"
+    >
+        <Grid cols="4" UNSAFE_className="mb-700" UNSAFE_style="padding-inline: var(--container-padding-inline)">
+            {% for i in 1..4 %}
+                <DocsBox size="small" UNSAFE_style="width: 20rem; aspect-ratio: 2/1">1/4</DocsBox>
+            {% endfor %}
+        </Grid>
+    </ScrollView>
 
-    <div class="breakout-container">
-        <ScrollView
-            direction="horizontal"
-            data-spirit-toggle="scrollView"
-        >
-            <Grid cols="4" UNSAFE_className="mb-700" UNSAFE_style="padding-inline: var(--container-padding-inline)">
-                <div class="docs-Box docs-Box--small" style="width: 20rem; aspect-ratio: 2/1">1/4</div>
-                <div class="docs-Box docs-Box--small" style="width: 20rem; aspect-ratio: 2/1">1/4</div>
-                <div class="docs-Box docs-Box--small" style="width: 20rem; aspect-ratio: 2/1">1/4</div>
-                <div class="docs-Box docs-Box--small" style="width: 20rem; aspect-ratio: 2/1">1/4</div>
-            </Grid>
-        </ScrollView>
-    </div>
-
-</section>
+</div>

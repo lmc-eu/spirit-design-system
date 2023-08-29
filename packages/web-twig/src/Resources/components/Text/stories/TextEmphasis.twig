@@ -1,10 +1,5 @@
-{% set emphases = [ "regular", "bold", "italic" ] %}
+<Text emphasis="regular">Text regular</Text>
 
-<section class="docs-Section">
+<Text emphasis="bold">Text bold</Text>
 
-    <h2 class="docs-Heading">Emphasis</h2>
-
-    {% for emphasis in emphases %}
-        <Text emphasis={emphasis}>Text {{ emphasis }}</Text>
-    {% endfor %}
-</section>
+<Text emphasis="italic">Text italic</Text>

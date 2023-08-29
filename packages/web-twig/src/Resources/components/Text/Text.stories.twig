@@ -2,13 +2,16 @@
 
 {% block content %}
 
-{# Text Default #}
-{% include '@components/Text/stories/TextDefault.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Text/stories/TextDefault.twig' %}
+    </DocsSection>
 
-{# Text Sizes #}
-{% include '@components/Text/stories/TextSizes.twig' %}
+    <DocsSection title="Sizes">
+        {% include '@components/Text/stories/TextSizes.twig' %}
+    </DocsSection>
 
-{# Text Emphasis #}
-{% include '@components/Text/stories/TextEmphasis.twig' %}
+    <DocsSection title="Emphasis">
+        {% include '@components/Text/stories/TextEmphasis.twig' %}
+    </DocsSection>
 
 {% endblock %}
