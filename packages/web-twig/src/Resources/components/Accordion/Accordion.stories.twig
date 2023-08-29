@@ -2,10 +2,12 @@
 
 {% block content %}
 
-    {# Basic Usage #}
-    {% include '@components/Accordion/stories/AccordionBasicUsage.twig' %}
+    <DocsSection title="Basic Usage">
+        {% include '@components/Accordion/stories/AccordionBasicUsage.twig' %}
+    </DocsSection>
 
-    {# One Item Open at a Time #}
-    {% include '@components/Accordion/stories/AccordionOneItemOpenAtATime.twig' %}
+    <DocsSection title="One Item Open at a Time">
+        {% include '@components/Accordion/stories/AccordionOneItemOpenAtATime.twig' %}
+    </DocsSection>
 
 {% endblock %}

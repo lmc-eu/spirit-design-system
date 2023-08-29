@@ -1,43 +1,32 @@
-<section class="docs-Section">
+{# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
 
-    <h2 class="docs-Heading">
-        Input with Attachment
-        <Tag color="warning" isSubtle>Visual demo only</Tag>
-    </h2>
+<FileUploader>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-with-attachment"
+        label="Label"
+        name="example-with-attachment"
+        UNSAFE_className="has-drag-and-drop"
+    />
+    <FileUploaderList headingId="attachments_example-with-attachment">
+        <FileUploaderAttachment fileName="My resume.docx" />
+    </FileUploaderList>
+</FileUploader>
 
-    <div class="docs-FormFieldGrid">
+{# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
 
-        {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
-        <FileUploader>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-with-attachment"
-                label="Label"
-                name="example-with-attachment"
-                UNSAFE_className="has-drag-and-drop"
-            />
-            <FileUploaderList headingId="attachments_example-with-attachment">
-                <FileUploaderAttachment fileName="My resume.docx" />
-            </FileUploaderList>
-        </FileUploader>
-
-        {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
-        <FileUploader>
-            <FileUploaderInput
-                helperText="Max file size is 10 MB"
-                id="example-with-attachments-and-validation"
-                label="Label"
-                name="example-with-attachments-and-validation"
-                validationState="danger"
-                validationText="Danger validation text"
-                UNSAFE_className="has-drag-and-drop"
-            />
-            <FileUploaderList headingId="attachments_example-with-attachments-and-validation">
-                <FileUploaderAttachment fileName="My resume.docx" />
-                <FileUploaderAttachment fileName="My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf" />
-            </FileUploaderList>
-        </FileUploader>
-
-    </div>
-
-</section>
+<FileUploader>
+    <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="example-with-attachments-and-validation"
+        label="Label"
+        name="example-with-attachments-and-validation"
+        validationState="danger"
+        validationText="Danger validation text"
+        UNSAFE_className="has-drag-and-drop"
+    />
+    <FileUploaderList headingId="attachments_example-with-attachments-and-validation">
+        <FileUploaderAttachment fileName="My resume.docx" />
+        <FileUploaderAttachment fileName="My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf" />
+    </FileUploaderList>
+</FileUploader>

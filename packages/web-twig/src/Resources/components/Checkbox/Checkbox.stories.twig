@@ -2,69 +2,37 @@
 
 {% block content %}
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Default</h2>
+    <DocsSection title="Default">
+        {% include '@components/Checkbox/stories/CheckboxDefault.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxDefault.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Indeterminate">
+        {% include '@components/Checkbox/stories/CheckboxIndeterminate.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Indeterminate</h2>
+    <DocsSection title="Required">
+        {% include '@components/Checkbox/stories/CheckboxRequired.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxIndeterminate.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Hidden Label">
+        {% include '@components/Checkbox/stories/CheckboxHiddenLabel.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Required</h2>
+    <DocsSection title="Helper Text">
+        {% include '@components/Checkbox/stories/CheckboxHelperText.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxRequired.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Disabled">
+        {% include '@components/Checkbox/stories/CheckboxDisabled.twig' %}
+    </DocsSection>
 
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Hidden Label</h2>
+    <DocsSection title="Validation State with Validation Text">
+        {% include '@components/Checkbox/stories/CheckboxValidation.twig' %}
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxHiddenLabel.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Helper Text</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxHelperText.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Disabled</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxDisabled.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Validation State with Validation Text</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxValidation.twig' %}
-        </div>
-    </section>
-
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Item</h2>
-
-        <div class="docs-FormFieldGrid">
-            {% include '@components/Checkbox/stories/CheckboxItem.twig' %}
-        </div>
-    </section>
+    <DocsSection title="Item">
+        {% include '@components/Checkbox/stories/CheckboxItem.twig' %}
+    </DocsSection>
 
     <script>
         const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];

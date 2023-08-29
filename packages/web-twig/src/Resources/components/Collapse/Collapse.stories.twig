@@ -2,22 +2,32 @@
 
 {% block content %}
 
-{# Collapse Default with Button #}
-{% include '@components/Collapse/stories/CollapseDefaultWithButton.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Collapse/stories/CollapseDefault.twig' %}
+    </DocsSection>
 
-{# Collapse Open on Init #}
-{% include '@components/Collapse/stories/CollapseOpenOnInit.twig' %}
+    <DocsSection title="Open on Load">
+        {% include '@components/Collapse/stories/CollapseOpenOnInit.twig' %}
+    </DocsSection>
 
-{# Collapse Change visibility with 'breakpoint' attribute #}
-{% include '@components/Collapse/stories/CollapseVisibilityBreakpoint.twig' %}
+    <DocsSection title="Destroy Collapsing on Tablet" tag="Resize your viewport to test">
+        {% include '@components/Collapse/stories/CollapseVisibilityBreakpointTablet.twig' %}
+    </DocsSection>
 
-{# Collapse Collapse with hide trigger when expanded #}
-{% include '@components/Collapse/stories/CollapseHideTrigger.twig' %}
+    <DocsSection title="Destroy Collapsing on Desktop" tag="Resize your viewport to test">
+        {% include '@components/Collapse/stories/CollapseVisibilityBreakpointDesktop.twig' %}
+    </DocsSection>
 
-{# Collapse Default with helper class for changing content inside togglet #}
-{% include '@components/Collapse/stories/CollapseHelperClass.twig' %}
+    <DocsSection title="One-time Inline Expanding">
+        {% include '@components/Collapse/stories/CollapseHideTrigger.twig' %}
+    </DocsSection>
 
-{# Collapse Multiple Trigger #}
-{% include '@components/Collapse/stories/CollapseMultipleTriggers.twig' %}
+    <DocsSection title="Toggle Trigger Text">
+        {% include '@components/Collapse/stories/CollapseHelperClass.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Multiple Triggers">
+        {% include '@components/Collapse/stories/CollapseMultipleTriggers.twig' %}
+    </DocsSection>
 
 {% endblock %}

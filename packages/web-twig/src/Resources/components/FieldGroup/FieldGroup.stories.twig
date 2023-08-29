@@ -1,51 +1,41 @@
 {% extends 'layout/plain.html.twig' %}
 
 {% block content %}
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Default</h2>
 
+    <DocsSection title="Default">
         {% include '@components/FieldGroup/stories/FieldGroupDefault.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Required</h2>
+    </DocsSection>
 
+    <DocsSection title="Required">
         {% include '@components/FieldGroup/stories/FieldGroupRequired.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Hidden Label</h2>
+    </DocsSection>
 
+    <DocsSection title="Hidden Label">
         {% include '@components/FieldGroup/stories/FieldGroupHiddenLabel.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Helper Text</h2>
+    </DocsSection>
 
+    <DocsSection title="Helper Text">
         {% include '@components/FieldGroup/stories/FieldGroupHelperText.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Disabled</h2>
+    </DocsSection>
 
+    <DocsSection title="Disabled">
         {% include '@components/FieldGroup/stories/FieldGroupDisabled.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Validation State with Validation Text</h2>
+    </DocsSection>
 
-        <div class="docs-FormFieldGrid">
-            {% include '@components/FieldGroup/stories/FieldGroupValidation.twig' %}
-        </div>
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Fluid</h2>
+    <DocsSection title="Validation State with Validation Text">
+        {% include '@components/FieldGroup/stories/FieldGroupValidation.twig' %}
+    </DocsSection>
 
+    <DocsSection title="Fluid">
         {% include '@components/FieldGroup/stories/FieldGroupFluid.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Grouped Checkboxes</h2>
+    </DocsSection>
 
+    <DocsSection title="Grouped Checkboxes">
         {% include '@components/FieldGroup/stories/FieldGroupCheckboxes.twig' %}
-    </section>
-    <section class="docs-Section">
-        <h2 class="docs-Heading">Grouped Radios</h2>
+    </DocsSection>
 
+    <DocsSection title="Grouped Radios">
         {% include '@components/FieldGroup/stories/FieldGroupRadios.twig' %}
-    </section>
+    </DocsSection>
+
 {% endblock %}

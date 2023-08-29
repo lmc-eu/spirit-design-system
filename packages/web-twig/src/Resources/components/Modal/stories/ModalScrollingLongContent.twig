@@ -1,16 +1,86 @@
-<section class="docs-Section">
+<Button data-spirit-toggle="modal" data-spirit-target="#example_long_content">
+    Open Modal with Long Content
+</Button>
 
-    <h2 class="docs-Heading">Scrolling Long Content</h2>
+<Modal id="example_long_content" titleId="example_long_content_title">
+    <ModalDialog>
+        <ModalHeader modalId="example_long_content" titleId="example_long_content_title">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+        </ModalHeader>
+        <ModalBody>
 
-    <Button data-spirit-toggle="modal" data-spirit-target="#example_long_content">
-        Open Modal with Long Content
-    </Button>
+            <!-- Content: start -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <!-- Content: end -->
 
-    <Modal id="example_long_content" titleId="example_long_content_title">
-        <ModalDialog>
-            <ModalHeader modalId="example_long_content" titleId="example_long_content_title">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
-            </ModalHeader>
+        </ModalBody>
+        <ModalFooter>
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example_long_content"
+            >
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example_long_content"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
+
+<Button data-spirit-toggle="modal" data-spirit-target="#example_scroll_view">
+    Open Modal with ScrollView
+</Button>
+
+<Modal id="example_scroll_view" titleId="example_scroll_view_title">
+    <ModalDialog>
+        <ModalHeader modalId="example_scroll_view" titleId="example_scroll_view_title">
+            Modal with ScrollView
+        </ModalHeader>
+        <ScrollView data-spirit-toggle="scrollView" overflowDecorators="both">
             <ModalBody>
 
                 <!-- Content: start -->
@@ -57,97 +127,21 @@
                 <!-- Content: end -->
 
             </ModalBody>
-            <ModalFooter>
-                <Button
-                    data-spirit-dismiss="modal"
-                    data-spirit-target="#example_long_content"
-                >
-                    Primary action
-                </Button>
-                <Button
-                    color="secondary"
-                    data-spirit-dismiss="modal"
-                    data-spirit-target="#example_long_content"
-                >
-                    Secondary action
-                </Button>
-            </ModalFooter>
-        </ModalDialog>
-    </Modal>
-
-    <Button data-spirit-toggle="modal" data-spirit-target="#example_scroll_view">
-        Open Modal with ScrollView
-    </Button>
-
-    <Modal id="example_scroll_view" titleId="example_scroll_view_title">
-        <ModalDialog>
-            <ModalHeader modalId="example_scroll_view" titleId="example_scroll_view_title">
-                Modal with ScrollView
-            </ModalHeader>
-            <ScrollView data-spirit-toggle="scrollView" overflowDecorators="both">
-                <ModalBody>
-
-                    <!-- Content: start -->
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-                        perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-                        provident unde. Eveniet, iste, molestiae?
-                    </p>
-                    <!-- Content: end -->
-
-                </ModalBody>
-            </ScrollView>
-            <ModalFooter>
-                <Button
-                    data-spirit-dismiss="modal"
-                    data-spirit-target="#example_scroll_view"
-                >
-                    Primary action
-                </Button>
-                <Button
-                    color="secondary"
-                    data-spirit-dismiss="modal"
-                    data-spirit-target="#example_scroll_view"
-                >
-                    Secondary action
-                </Button>
-            </ModalFooter>
-        </ModalDialog>
-    </Modal>
-
-</section>
+        </ScrollView>
+        <ModalFooter>
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example_scroll_view"
+            >
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example_scroll_view"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>

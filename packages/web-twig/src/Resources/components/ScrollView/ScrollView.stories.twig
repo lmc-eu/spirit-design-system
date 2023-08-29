@@ -2,19 +2,29 @@
 
 {% block content %}
 
-    {# ScrollView Default #}
-    {% include '@components/ScrollView/stories/ScrollViewDefault.twig' %}
+    <DocsSection title="Vertical Scrolling">
+        {% include '@components/ScrollView/stories/ScrollViewDefault.twig' %}
+    </DocsSection>
 
-    {# ScrollView Horizontal #}
-    {% include '@components/ScrollView/stories/ScrollViewHorizontal.twig' %}
+    <DocsSection title="Horizontal Scrolling">
+        {% include '@components/ScrollView/stories/ScrollViewHorizontal.twig' %}
+    </DocsSection>
 
-    {# ScrollView Horizontal with Container Breakout #}
-    {% include '@components/ScrollView/stories/ScrollViewHorizontalBreakout.twig' %}
+    <DocsSection title="Horizontal Scrolling with Container Breakout">
+        {# Use Grid to prepare the ground for container breakout (inside of the included example). #}
+        <Grid>
+            <GridSpan over={12}>
+                {% include '@components/ScrollView/stories/ScrollViewHorizontalBreakout.twig' %}
+            </GridSpan>
+        </Grid>
+    </DocsSection>
 
-    {# ScrollView Overflow Decorators #}
-    {% include '@components/ScrollView/stories/ScrollViewOverflowDecorators.twig' %}
+    <DocsSection title="Overflow Decorators">
+        {% include '@components/ScrollView/stories/ScrollViewOverflowDecorators.twig' %}
+    </DocsSection>
 
-    {# ScrollView Hidden Scrollbar #}
-    {% include '@components/ScrollView/stories/ScrollViewHiddenScrollbar.twig' %}
+    <DocsSection title="Hidden Scrollbar">
+        {% include '@components/ScrollView/stories/ScrollViewHiddenScrollbar.twig' %}
+    </DocsSection>
 
 {% endblock %}

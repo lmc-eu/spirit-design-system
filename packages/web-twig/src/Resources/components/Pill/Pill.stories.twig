@@ -2,7 +2,12 @@
 
 {% block content %}
 
-{# Pill Default #}
-{% include '@components/Pill/stories/PillDefault.twig' %}
+    <DocsSection title="Colors">
+        {% include '@components/Pill/stories/PillColors.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Long Text">
+        {% include '@components/Pill/stories/PillLongText.twig' %}
+    </DocsSection>
 
 {% endblock %}

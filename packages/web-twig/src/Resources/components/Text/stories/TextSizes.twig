@@ -1,10 +1,5 @@
-{% set sizes = [ "xsmall", "small", "medium", "large", "xlarge" ] %}
+{% set sizes = [ 'xsmall', 'small', 'medium', 'large', 'xlarge' ] %}
 
-<section class="docs-Section">
-
-    <h2 class="docs-Heading">Sizes</h2>
-
-    {% for size in sizes %}
-        <Text size={size}>Text {{ size }}</Text>
-    {% endfor %}
-</section>
+{% for size in sizes %}
+    <Text size={{ size }}>Text {{ size }}</Text>
+{% endfor %}

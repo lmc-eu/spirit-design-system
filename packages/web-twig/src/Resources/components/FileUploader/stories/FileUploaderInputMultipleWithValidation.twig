@@ -1,21 +1,15 @@
-<section class="docs-Section">
-
-    <h2 class="docs-Heading">Input Multiple with Validation</h2>
-
-    <FileUploader data-spirit-toggle="fileUploader">
-        <template data-spirit-snippet="item">
-            <FileUploaderAttachment />
-        </template>
-        <FileUploaderInput
-            accept=".png,image/jpeg"
-            helperText="Only JPG and PNG images are allowed. Max size of each file is 10 MB"
-            id="example-input-multiple-with-validation"
-            label="Label"
-            multiple
-            name="example-input-multiple"
-            pickAFileText="Upload your file(s)"
-        />
-        <FileUploaderList headingId="attachments_example-input-multiple-with-validation" />
-    </FileUploader>
-
-</section>
+<FileUploader data-spirit-toggle="fileUploader">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment />
+    </template>
+    <FileUploaderInput
+        accept=".png,image/jpeg"
+        helperText="Only JPG and PNG images are allowed. Max size of each file is 10 MB"
+        id="example-input-multiple-with-validation"
+        label="Label"
+        multiple
+        name="example-input-multiple"
+        pickAFileText="Upload your file(s)"
+    />
+    <FileUploaderList headingId="attachments_example-input-multiple-with-validation" />
+</FileUploader>

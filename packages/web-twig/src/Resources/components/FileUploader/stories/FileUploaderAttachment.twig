@@ -1,20 +1,12 @@
-<section class="docs-Section">
+{# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
 
-    <h2 class="docs-Heading">
-        Attachment
-        <Tag color="warning" isSubtle>Visual demo only</Tag>
-    </h2>
-
-    {# ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE #}
-    <FileUploader>
-        <FileUploaderList headingId="attachments_example-with-attachment">
-            <FileUploaderAttachment fileName="Document.pdf" />
-            <FileUploaderAttachment
-                fileName="Image with a long name.jpg"
-                imagePreview="https://picsum.photos/id/823/162/162"
-                onEdit="{() => {}}"
-            />
-        </FileUploaderList>
-    </FileUploader>
-
-</section>
+<FileUploader>
+    <FileUploaderList headingId="attachments_example-with-attachment">
+        <FileUploaderAttachment fileName="Document.pdf" />
+        <FileUploaderAttachment
+            fileName="Image with a long name.jpg"
+            imagePreview="https://picsum.photos/id/823/162/162"
+            onEdit="{() => {}}"
+        />
+    </FileUploaderList>
+</FileUploader>

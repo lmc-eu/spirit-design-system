@@ -2,18 +2,56 @@
 
 {% block content %}
 
-{% include '@components/FileUploader/stories/FileUploaderInput.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputMultiple.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputMultipleWithValidation.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputMultipleWithFileQueueBehaviorControl.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputValidationStates.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputDisabled.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderAttachment.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderAttachmentWithImagePreview.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderAttachmentWithCustomAction.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderInputWithAttachment.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderDraggingNotAvailable.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderFluidWidth.twig' %}
-{% include '@components/FileUploader/stories/FileUploaderExampleOfJSControlledForm.twig' %}
+    <DocsSection title="Input">
+        {% include '@components/FileUploader/stories/FileUploaderInput.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input Multiple">
+        {% include '@components/FileUploader/stories/FileUploaderInputMultiple.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input Multiple with Validation">
+        {% include '@components/FileUploader/stories/FileUploaderInputMultipleWithValidation.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input Multiple with File Queue Behavior Control">
+        {% include '@components/FileUploader/stories/FileUploaderInputMultipleWithFileQueueBehaviorControl.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input Validation States">
+        {% include '@components/FileUploader/stories/FileUploaderInputValidationStates.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input Disabled">
+        {% include '@components/FileUploader/stories/FileUploaderInputDisabled.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Attachment" tag="Visual demo only">
+        {% include '@components/FileUploader/stories/FileUploaderAttachment.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Attachment with Image Preview">
+        {% include '@components/FileUploader/stories/FileUploaderAttachmentWithImagePreview.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Attachment with Custom Actions">
+        {% include '@components/FileUploader/stories/FileUploaderAttachmentWithCustomAction.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Input with Attachment" tag="Visual demo only">
+        {% include '@components/FileUploader/stories/FileUploaderInputWithAttachment.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Dragging not Available" tag="Visual demo only">
+        {% include '@components/FileUploader/stories/FileUploaderDraggingNotAvailable.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Fluid Width" tag="Visual demo only">
+        {% include '@components/FileUploader/stories/FileUploaderFluidWidth.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Example of JS-Controlled Form">
+        {% include '@components/FileUploader/stories/FileUploaderExampleOfJSControlledForm.twig' %}
+    </DocsSection>
 
 {% endblock %}

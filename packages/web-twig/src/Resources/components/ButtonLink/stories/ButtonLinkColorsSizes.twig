@@ -1,22 +1,37 @@
-<section class="docs-Section">
-    <h2 class="docs-Heading">Default</h2>
+<Grid cols="1" desktop="3">
+    {% for size in sizes %}
 
-    <Grid cols="1" desktop="3">
-        {% for size in sizes %}
-        <div>
-        <h3 class="docs-Heading">Size {{ size }}</h3>
-        {% for color in colors %}
-        <div class="{% if color is same as('inverted') %}docs-Box {% endif %}my-600">
-            <div>
-            <ButtonLink color={color} size={size} href="#">Button {{ color }}</ButtonLink>
-            <ButtonLink color={color} size={size} href="#" isSquare>
-                <span class="accessibility-hidden">Menu</span>
-                <Icon name="link" />
-            </ButtonLink>
-            </div>
-        </div>
-        {% endfor %}
-        </div>
-        {% endfor %}
-    </Grid>
-</section>
+        {% set title = 'Size ' ~ size %}
+
+        <DocsSection title={{ title }}>
+            {% for color in colors %}
+
+                {% set renderedContent %}
+                    <ButtonLink color={ color } size={ size } href="#">
+                        Button {{ color }}
+                    </ButtonLink>
+                    <ButtonLink color={ color } size={ size } href="#">
+                        <Icon name="link" UNSAFE_className="mr-400" />
+                        Menu
+                    </ButtonLink>
+                    <ButtonLink color={ color } size={ size } href="#" isSquare>
+                        <VisuallyHidden>Menu</VisuallyHidden>
+                        <Icon name="link" />
+                    </ButtonLink>
+                {% endset %}
+
+                {% if color is same as('inverted') %}
+                    <DocsBox>
+                        {{ renderedContent }}
+                    </DocsBox>
+                {% else %}
+                    <div>
+                        {{ renderedContent }}
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </DocsSection>
+
+    {% endfor %}
+</Grid>
