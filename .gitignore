@@ -38,3 +38,13 @@ nx-cloud.env
 
 # Demo app
 /static/assets/icons
+
+# Yarn Modern
+# @see: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
