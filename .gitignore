@@ -38,3 +38,13 @@ packages/*/build
 # This prevents accidental commit of this token to the repository.
 nx-cloud.env
 .nx
+
+# Yarn Modern
+# @see: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
