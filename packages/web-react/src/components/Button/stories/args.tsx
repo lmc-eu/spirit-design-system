@@ -5,12 +5,12 @@ import { Icon } from '../../Icon';
 export const argTypes = {
   children: {
     control: 'text',
-    description:
-      'This is the place for the content of the button. In the real code you can pass in any JSX. ' +
-      'In this demo you can set any text you want, or use one of the predefined texts: `<Icon />` ' +
-      '(to see how it looks with an Icon) or `<Icon /> Text` (to see how it looks with an Icon ' +
-      'and text).  Please note the predefined texts in this demo are not customizable and have ' +
-      'to be written exactly as shown.',
+    description: `This is the place for the content of the button. In the real code you
+      can pass in any JSX. In this demo you can set any text you want, or use one
+      of the predefined texts: \`<Icon />\` (to see how it looks with an Icon) or
+      \`<Icon /> Text\` (to see how it looks with an Icon and text).  Please note the
+      predefined texts in this demo are not customizable and have to be written exactly
+      as shown.`,
     mapping: {
       '<Icon />': <Icon name="profile" />,
       '<Icon /> Text': (
