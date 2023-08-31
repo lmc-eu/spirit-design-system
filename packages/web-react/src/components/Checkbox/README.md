@@ -30,6 +30,7 @@ Advanced example usage:
 | Name               | Type                                           | Default | Required | Description                                          |
 | ------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
 | `autoComplete`     | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `helperText`       | `string`                                       | —       | ✕        | Custom helper text                                   |
 | `id`               | `string`                                       | -       | ✔        | Input and label identification                       |
 | `isDisabled`       | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
 | `isChecked`        | `boolean`                                      | -       | ✕        | Whether is field checked                             |
