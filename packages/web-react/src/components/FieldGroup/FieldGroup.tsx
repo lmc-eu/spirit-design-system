@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritFieldGroupProps } from '../../types';
-import { useValidationText } from '../Field/useValidationText';
+import { useValidationText } from '../Field';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
 
