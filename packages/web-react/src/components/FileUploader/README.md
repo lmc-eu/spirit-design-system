@@ -302,19 +302,20 @@ const resetStateHandler = () => {
 
 | Name                                  | Type                                            | Default | Required | Description                                                         |
 | ------------------------------------- | ----------------------------------------------- | ------- | -------- | ------------------------------------------------------------------- |
-| `id`                                  | `string`                                        | —       | ✔        | FileUploader id                                                     |
 | `addToQueue`                          | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | Callback to add an item to the queue                                |
 | `clearQueue`                          | `() => void`                                    | —       | ✔        | Callback to clear the queue                                         |
-| `fileQueue`                           | `FileQueueMapType`                              | —       | ✔        | Queue of items to upload                                            |
-| `onDismiss`                           | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to delete a particular item from the queue               |
-| `findInQueue`                         | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to find a particular item in the queue                   |
-| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
-| `isFluid`                             | `bool`                                          | —       | ✕        | When the field is supposed to be fluid                              |
+| `errorMessages.errorFileDuplicity`    | `string`                                        | —       | ✕        | Translation for the error message: Duplicate file in queue          |
 | `errorMessages.errorMaxFileSize`      | `string`                                        | —       | ✕        | Translation for the error message: Maximum file size                |
 | `errorMessages.errorMaxUploadedFiles` | `string`                                        | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
-| `errorMessages.errorFileDuplicity`    | `string`                                        | —       | ✕        | Translation for the error message: Duplicate file in queue          |
+| `fileQueue`                           | `FileQueueMapType`                              | —       | ✔        | Queue of items to upload                                            |
+| `findInQueue`                         | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to find a particular item in the queue                   |
+| `id`                                  | `string`                                        | —       | ✔        | FileUploader id                                                     |
+| `isDisabled`                          | `bool`                                          | —       | ✕        | When the field is supposed to be disabled                           |
+| `isFluid`                             | `bool`                                          | —       | ✕        | When the field is supposed to be fluid                              |
+| `onDismiss`                           | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to delete a particular item from the queue               |
 | `UNSAFE_className`                    | `string`                                        | —       | ✕        | FileUploader custom class name                                      |
 | `UNSAFE_style`                        | `CSSProperties`                                 | —       | ✕        | FileUploader custom style                                           |
+| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
 
 The rest of the properties are created from the default `<div>` element. [More about the element][DivElementDocs]
 
@@ -340,10 +341,10 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
 | `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
-| `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
-| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 | `UNSAFE_className`   | `string`                             | —        | ✕        | FileUploaderInput custom class name                                                                                                                             |
 | `UNSAFE_style`       | `CSSProperties`                      | —        | ✕        | FileUploaderInput custom style                                                                                                                                  |
+| `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
+| `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 
 The rest of the properties are created from the default `<input>` element. [More about the element][InputElementDocs]
 
@@ -369,6 +370,7 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 | `editButtonLabel`  | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][Deprecated] in favor of `editText`; Edit button label      |
 | `editText`         | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
 | `file`             | `File`                               | —        | ✔        | Attachment file object                                                      |
+| `hasImagePreview`  | `bool`                               | false    | ✕        | Show image preview                                                          |
 | `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
 | `id`               | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
 | `label`            | `string`                             | —        | ✔        | File name                                                                   |
@@ -433,10 +435,10 @@ via `inputProps` and `listProps`.
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
 | `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
-| `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
-| `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
 | `UNSAFE_className`    | `string`                                | —        | ✕        | UncontrolledFileUploader custom class name          |
 | `UNSAFE_style`        | `CSSProperties`                         | —        | ✕        | UncontrolledFileUploader custom style               |
+| `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
+| `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
 
 For detailed information see [FileUploader] component.
 
