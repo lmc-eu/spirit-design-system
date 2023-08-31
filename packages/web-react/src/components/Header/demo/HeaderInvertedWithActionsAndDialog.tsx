@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import { ComponentStory } from '@storybook/react';
 import { Link } from '../../Link';
+import {
+  Header,
+  HeaderButton,
+  HeaderDesktopActions,
+  HeaderDialog,
+  HeaderDialogActions,
+  HeaderDialogButton,
+  HeaderDialogCloseButton,
+  HeaderDialogLink,
+  HeaderDialogNav,
+  HeaderDialogNavItem,
+  HeaderDialogText,
+  HeaderLink,
+  HeaderMobileActions,
+  HeaderNav,
+  HeaderNavItem,
+} from '..';
 import SpiritLogo from './SpiritLogo';
-import Header from '../Header';
-import HeaderMobileActions from '../HeaderMobileActions';
-import HeaderDesktopActions from '../HeaderDesktopActions';
-import HeaderNav from '../HeaderNav';
-import HeaderNavItem from '../HeaderNavItem';
-import HeaderLink from '../HeaderLink';
-import HeaderDialog from '../HeaderDialog';
-import HeaderDialogCloseButton from '../HeaderDialogCloseButton';
-import HeaderDialogActions from '../HeaderDialogActions';
-import HeaderDialogNav from '../HeaderDialogNav';
-import HeaderDialogNavItem from '../HeaderDialogNavItem';
-import HeaderDialogLink from '../HeaderDialogLink';
-import HeaderDialogText from '../HeaderDialogText';
-import HeaderDialogButton from '../HeaderDialogButton';
 
-const Story: ComponentStory<typeof Header> = () => {
+const HeaderInvertedWithActionsAndDialog = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isUserMenuOpen, setUserMenuOpen] = useState(false);
 
@@ -57,13 +59,13 @@ const Story: ComponentStory<typeof Header> = () => {
         <HeaderDesktopActions color="secondary" aria-label="User area">
           <HeaderNav>
             <HeaderNavItem>
-              <HeaderDialogButton
+              <HeaderButton
                 onClick={handleUserMenuOpen}
                 aria-controls="header_dialog_example_2"
                 aria-expanded={isUserMenuOpen}
               >
                 Marian
-              </HeaderDialogButton>
+              </HeaderButton>
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
@@ -143,4 +145,4 @@ const Story: ComponentStory<typeof Header> = () => {
   );
 };
 
-export default Story;
+export default HeaderInvertedWithActionsAndDialog;
