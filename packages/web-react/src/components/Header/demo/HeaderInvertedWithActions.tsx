@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import { ComponentStory } from '@storybook/react';
-import { Link } from '../../Link';
 import { Button } from '../../Button';
+import { Link } from '../../Link';
+import {
+  Header,
+  HeaderDesktopActions,
+  HeaderDialog,
+  HeaderDialogActions,
+  HeaderDialogCloseButton,
+  HeaderDialogLink,
+  HeaderDialogNav,
+  HeaderDialogNavItem,
+  HeaderLink,
+  HeaderMobileActions,
+  HeaderNav,
+  HeaderNavItem,
+} from '..';
 import SpiritLogo from './SpiritLogo';
-import Header from '../Header';
-import HeaderMobileActions from '../HeaderMobileActions';
-import HeaderDesktopActions from '../HeaderDesktopActions';
-import HeaderNav from '../HeaderNav';
-import HeaderNavItem from '../HeaderNavItem';
-import HeaderLink from '../HeaderLink';
-import HeaderDialog from '../HeaderDialog';
-import HeaderDialogCloseButton from '../HeaderDialogCloseButton';
-import HeaderDialogActions from '../HeaderDialogActions';
-import HeaderDialogNav from '../HeaderDialogNav';
-import HeaderDialogNavItem from '../HeaderDialogNavItem';
-import HeaderDialogLink from '../HeaderDialogLink';
 
-const Story: ComponentStory<typeof Header> = () => {
+const HeaderInvertedWithActions = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -83,4 +84,4 @@ const Story: ComponentStory<typeof Header> = () => {
   );
 };
 
-export default Story;
+export default HeaderInvertedWithActions;
