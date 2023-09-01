@@ -2,7 +2,7 @@ import React from 'react';
 import { ChildrenProps, TransferProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-type TabListProps = ChildrenProps & TransferProps;
+export type TabListProps = ChildrenProps & TransferProps;
 
 const TabList = ({ children, ...restProps }: TabListProps): JSX.Element => {
   const { classProps } = useTabsStyleProps();

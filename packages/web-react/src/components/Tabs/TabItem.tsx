@@ -3,7 +3,7 @@ import { ChildrenProps, TabId, TransferProps, ClickEvents, ClickEvent } from '..
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
+export interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
   forTab: TabId;
 }
 
