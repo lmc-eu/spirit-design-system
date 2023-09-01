@@ -2,7 +2,7 @@ import React from 'react';
 import { ChildrenProps, TabId, TransferProps } from '../../types';
 import { TabsProvider, TabsToggler } from './TabContext';
 
-interface TabsProps extends ChildrenProps, TransferProps {
+export interface TabsProps extends ChildrenProps, TransferProps {
   selectedTab: TabId;
   toggle: TabsToggler;
   // eslint-disable-next-line react/require-default-props

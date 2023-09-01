@@ -3,7 +3,7 @@ import { ChildrenProps, TabId, TransferProps } from '../../types';
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-interface TabPaneProps extends ChildrenProps, TransferProps {
+export interface TabPaneProps extends ChildrenProps, TransferProps {
   tabId: TabId;
 }
 
