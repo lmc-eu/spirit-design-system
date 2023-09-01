@@ -175,6 +175,7 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 | Name               | Type            | Default | Required | Description              |
 | ------------------ | --------------- | ------- | -------- | ------------------------ |
 | `children`         | `ReactNode`     | —       | ✔        | Header children node     |
+| `elementType`      | `ElementType`   | `h3`    | ✕        | Type of element          |
 | `slot`             | `ReactNode`     | —       | ✕        | Side slot in the header  |
 | `UNSAFE_className` | `string`        | —       | ✕        | Header custom class name |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Header custom style      |

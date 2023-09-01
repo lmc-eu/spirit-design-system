@@ -8,7 +8,7 @@ export type BreadcrumbsItem = {
 
 export interface AriaBreadcrumbsElementTypeProps<T extends ElementType = 'nav'> {
   /**
-   * The HTML element or React element used to render the alert, e.g. 'div', 'span'.
+   * The HTML element or React element used to render the breadcrumbs, e.g. 'div', 'span'.
    *
    * @default 'nav'
    */
