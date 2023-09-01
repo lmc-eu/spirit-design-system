@@ -1,7 +1,6 @@
 import React from 'react';
+import DocsBox from '../../../../docs/DocsBox';
 
-const ContainerDefault = () => {
-  return <div className="docs-Box">Container</div>;
-};
+const ContainerDefault = () => <DocsBox>Container</DocsBox>;
 
 export default ContainerDefault;
