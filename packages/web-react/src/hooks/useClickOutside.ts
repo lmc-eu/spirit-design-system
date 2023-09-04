@@ -1,4 +1,4 @@
-import { useEffect, useCallback, MutableRefObject } from 'react';
+import { useLayoutEffect, useCallback, MutableRefObject } from 'react';
 
 export interface UseClickOutsideProps {
   ref: MutableRefObject<HTMLElement | null>;
@@ -8,33 +8,37 @@ export interface UseClickOutsideProps {
 export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void => {
   const clickHandler = useCallback(
     (event: Event) => {
+      // Do nothing if there is no reference or no callback
+      if (!ref || !callback) {
+        return;
+      }
+
       // Do nothing if the event was already processed.
       if (event.defaultPrevented) {
         return;
       }
 
-      if (ref.current && !ref.current.contains(event?.target as Node) && callback) {
-        callback(event);
-      }
-
-      // Cancel the default action to avoid it being handled twice for button click.
-      // This whitelist do not seems right to me but it is quick workaround until we can better support
-      // Modal composition
+      // we can call callback only
       if (
-        ref?.current?.parentNode?.contains(event?.target as Node) &&
-        ['DIALOG', 'BUTTON'].includes((event?.target as Node)?.nodeName)
+        // reference to current element exists
+        ref.current &&
+        // and the use the not clicked into the container,
+        // e. g. the user clicked outside of the Dialog (click on backdrop)
+        !ref.current.contains(event?.target as Node) &&
+        // and when the click was triggered inside of the element's parent
+        ref.current.parentNode?.contains(event?.target as Node) &&
+        // and callback should exits, of course
+        callback
       ) {
-        event.preventDefault();
+        callback(event);
       }
     },
     [ref, callback],
   );
 
-  useEffect(() => {
-    document.addEventListener('click', clickHandler, true);
+  useLayoutEffect(() => {
+    document.addEventListener('click', clickHandler, { capture: true });
 
-    return () => document.removeEventListener('click', clickHandler, true);
-    /* We want to call this hook only once */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return () => document.removeEventListener('click', clickHandler, { capture: true });
+  }, [clickHandler]);
 };

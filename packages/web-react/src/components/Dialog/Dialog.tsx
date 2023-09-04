@@ -13,14 +13,17 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
 
   // handles toggling based on state
   const { closeDialog } = useDialog(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, isOpen);
+  const handleClickOutside = (event: Event) => {
+    closeDialog();
+    onClose(event);
+  };
+
   // handles closing by clicking outside the dialog
   useClickOutside({
     ref: contentElementRef,
-    callback: (event: Event) => {
-      closeDialog();
-      onClose(event);
-    },
+    callback: isOpen ? handleClickOutside : undefined,
   });
+
   // handles closing using Escape key
   useCancelEvent(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, onClose);
 

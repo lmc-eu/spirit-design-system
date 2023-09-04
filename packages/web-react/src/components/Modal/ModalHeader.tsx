@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { ModalHeaderProps } from '../../types';
+import { ClickEvent, ModalHeaderProps } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
 import { useModalContext } from './ModalContext';
 import { Button } from '../Button';
@@ -21,7 +21,15 @@ const ModalHeader = (props: ModalHeaderProps) => {
           {children}
         </h2>
       )}
-      <Button isSquare color="tertiary" onClick={onClose} aria-expanded={isOpen} aria-controls={id}>
+      <Button
+        isSquare
+        color="tertiary"
+        onClick={(event: ClickEvent) => {
+          onClose(event);
+        }}
+        aria-expanded={isOpen}
+        aria-controls={id}
+      >
         <Icon name="close" />
         <span className="accessibility-hidden">{closeLabel}</span>
       </Button>
