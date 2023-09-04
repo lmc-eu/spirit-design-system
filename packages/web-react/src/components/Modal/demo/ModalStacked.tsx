@@ -26,10 +26,10 @@ const Story = (props: unknown) => {
 
   return (
     <IconsProvider value={icons}>
-      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="#ModalExample">
+      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="#NestedModal">
         {isFirstOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExampleStacked" isOpen={isSecondOpen} onClose={handleSecondClose}>
+      <Modal id="ChildModal" isOpen={isSecondOpen} onClose={handleSecondClose}>
         <ModalDialog>
           <ModalHeader>Modal stacked</ModalHeader>
           <ModalBody>
@@ -49,7 +49,7 @@ const Story = (props: unknown) => {
           </ModalFooter>
         </ModalDialog>
       </Modal>
-      <Modal id="ModalExample" isOpen={isFirstOpen} onClose={handleFirstClose}>
+      <Modal id="NestedModal" isOpen={isFirstOpen} onClose={handleFirstClose}>
         <ModalDialog>
           <ModalHeader>Modal </ModalHeader>
           <ModalBody>
