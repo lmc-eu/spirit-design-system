@@ -33,6 +33,6 @@
 >
     {%- block content %}{% endblock %}
     {%- if _isLoading -%}
-        <Spinner />
+        <Spinner isReusable={ false } />
     {%- endif -%}
 </button>
