@@ -1,3 +1,5 @@
+// 1. Clip the loading spinner to fix button flickering during spinner animation.
+
 @use 'sass:map';
 @use 'theme';
 @use 'tools';
@@ -81,6 +83,7 @@
 
 .Button--loading {
     position: relative;
+    overflow: hidden; // 1.
     color: transparent;
 
     &:hover,
