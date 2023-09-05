@@ -452,7 +452,7 @@ class FileUploader extends BaseComponent {
     EventHandler.on(this.wrapper, EVENT_ERROR, this.onValidationError.bind(this));
 
     if (this.isDragAndDropSupported && this.dropZone) {
-      EventHandler.on(this.dropZone, 'dragover', FileUploader.bind(this));
+      EventHandler.on(this.dropZone, 'dragover', FileUploader.onDragOver.bind(this));
       EventHandler.on(this.dropZone, 'dragenter', this.onDragEnter.bind(this));
       EventHandler.on(this.dropZone, 'dragleave', this.onDragLeave.bind(this));
       EventHandler.on(this.dropZone, 'drop', this.onDrop.bind(this));
