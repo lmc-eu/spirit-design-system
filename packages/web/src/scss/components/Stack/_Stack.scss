@@ -50,12 +50,7 @@
 }
 
 .Stack--hasIntermediateDividers > :first-child {
-    padding-block-start: 0;
     border-block-start: none;
-}
-
-.Stack--hasIntermediateDividers > :last-child {
-    padding-block-end: 0;
 }
 
 .Stack--hasStartDivider > :first-child {
