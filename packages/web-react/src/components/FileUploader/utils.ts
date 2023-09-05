@@ -48,4 +48,15 @@ const image2Base64Preview = (file: File, maxWidth: number, callback: (base64Prev
   reader.readAsDataURL(file);
 };
 
-export { getAttachmentInput, image2Base64Preview };
+const base64ToByteArray = (base64Image: string) => {
+  const byteCharacters = atob(base64Image);
+  const byteNumbers = new Array(byteCharacters.length);
+  for (let i = 0; i < byteCharacters.length; i++) {
+    byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+  const byteArray = new Uint8Array(byteNumbers);
+
+  return byteArray;
+};
+
+export { getAttachmentInput, image2Base64Preview, base64ToByteArray };
