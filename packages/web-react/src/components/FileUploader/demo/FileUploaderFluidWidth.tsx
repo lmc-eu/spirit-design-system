@@ -1,0 +1,42 @@
+import React from 'react';
+import { FileUploader, FileUploaderAttachment, FileUploaderInput, useFileQueue } from '..';
+
+const FileUploaderFluidWidth = () => {
+  const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();
+
+  // ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE
+  return (
+    <FileUploader
+      addToQueue={addToQueue}
+      clearQueue={clearQueue}
+      fileQueue={fileQueue}
+      findInQueue={findInQueue}
+      id="fileUploaderFluidWidth"
+      onDismiss={onDismiss}
+      updateQueue={updateQueue}
+      isFluid
+    >
+      <FileUploaderInput
+        helperText="Max file size is 10 MB"
+        id="fileUploaderFluidWidthInput"
+        label="Label"
+        labelText="or drag and drop here"
+        linkText="Upload your file"
+        name="attachments"
+        /* eslint-disable-next-line no-console */
+        onError={(error) => console.error('My error log', error)}
+      />
+      <div className="FileUploaderList">
+        <FileUploaderAttachment
+          name="test"
+          file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
+          id="1"
+          label="My resume.docx"
+          onDismiss={onDismiss}
+        />
+      </div>
+    </FileUploader>
+  );
+};
+
+export default FileUploaderFluidWidth;

@@ -5,47 +5,68 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import FileUploader from './FileUploader';
-import FileUploaderAccept from './FileUploaderAccept';
-import FileUploaderWithImagePreview from './FileUploaderWithImagePreview';
-import FileUploaderDismissible from './FileUploaderDismissible';
-import FileUploaderFluid from './FileUploaderFluid';
-import FileUploaderValidationState from './FileUploaderValidationState';
-import FileUploaderUncontrolled from './FileUploaderUncontrolled';
-import FormWithFileUploader from './FormWithFileUploader';
-import FormWithUncontrolledFileUploader from './FormWithUncontrolledFileUploader';
+import DocsFormFieldGrid from '../../../../docs/DocsFormFieldGrid';
+import { IconsProvider } from '../../../context';
+import FileUploaderDefault from './FileUploaderDefault';
+import FileUploaderInputMultiple from './FileUploaderInputMultiple';
+import FileUploaderMultipleWithValidation from './FileUploaderMultipleWithValidation';
+import FileUploaderInputMultipleWithFileQueueBehaviorControl from './FileUploaderInputMultipleWithFileQueueBehaviorControl';
+import FileUploaderInputValidationStates from './FileUploaderInputValidationStates';
+import FileUploaderInputDisabled from './FileUploaderInputDisabled';
+import FileUploaderAttachment from './FileUploaderAttachment';
+import FileUploaderAttachmentWithImagePreview from './FileUploaderAttachmentWithImagePreview';
+import FileUploaderAttachmentWithCustomAction from './FileUploaderAttachmentWithCustomAction';
+import FileUploaderInputWithAttachment from './FileUploaderInputWithAttachment';
+import FileUploaderDraggingNotAvailable from './FileUploaderDraggingNotAvailable';
+import FileUploaderFluidWidth from './FileUploaderFluidWidth';
+import FileUploaderExampleOfJSControlledForm from './FileUploaderExampleOfJSControlledForm';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Default">
-        <FileUploader id="fileUploaderExample" />
+      <DocsSection title="Input">
+        <FileUploaderDefault />
       </DocsSection>
-      <DocsSection title="Accept">
-        <FileUploaderAccept />
+      <DocsSection title="Input Multiple">
+        <FileUploaderInputMultiple />
       </DocsSection>
-      <DocsSection title="With Image Preview">
-        <FileUploaderWithImagePreview />
+      <DocsSection title="Input Multiple with Validation">
+        <FileUploaderMultipleWithValidation />
       </DocsSection>
-      <DocsSection title="Dismissible">
-        <FileUploaderDismissible id="fileUploaderDismissibleExample" />
+      <DocsSection title="Input Multiple with File Queue Behavior Control">
+        <FileUploaderInputMultipleWithFileQueueBehaviorControl />
       </DocsSection>
-      <DocsSection title="Fluid">
-        <FileUploaderFluid id="fileUploaderFluidExample" />
+      <DocsSection title="Input Validation States">
+        <DocsFormFieldGrid>
+          <FileUploaderInputValidationStates />
+        </DocsFormFieldGrid>
       </DocsSection>
-      <DocsSection title="ValidationState">
-        <FileUploaderValidationState />
+      <DocsSection title="Input Disabled">
+        <FileUploaderInputDisabled />
       </DocsSection>
-      <DocsSection title="Uncontrolled">
-        <FileUploaderUncontrolled {...FileUploaderUncontrolled.args} />
+      <DocsSection title="Attachment" tag="Visual demo only">
+        <FileUploaderAttachment />
       </DocsSection>
-      <DocsSection title="Form With FileUploader">
-        <FormWithFileUploader />
+      <DocsSection title="Attachment with Image Preview">
+        <FileUploaderAttachmentWithImagePreview />
       </DocsSection>
-      <DocsSection title="Form With Uncontrolled FileUploader">
-        <FormWithUncontrolledFileUploader />
+      <DocsSection title="Attachment with Custom Actions">
+        <FileUploaderAttachmentWithCustomAction />
+      </DocsSection>
+      <DocsSection title="Input with Attachment" tag="Visual demo only">
+        <DocsFormFieldGrid>
+          <FileUploaderInputWithAttachment />
+        </DocsFormFieldGrid>
+      </DocsSection>
+      <DocsSection title="Dragging not Available" tag="Visual demo only">
+        <FileUploaderDraggingNotAvailable />
+      </DocsSection>
+      <DocsSection title="Fluid Width" tag="Visual demo only">
+        <FileUploaderFluidWidth />
+      </DocsSection>
+      <DocsSection title="Example of JS-Controlled Form">
+        <FileUploaderExampleOfJSControlledForm />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
