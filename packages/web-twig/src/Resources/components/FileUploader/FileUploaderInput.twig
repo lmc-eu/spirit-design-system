@@ -76,7 +76,7 @@
         {{ _requiredAttr }}
     />
     <div class="{{ _dropzoneClassName }}" data-spirit-element="dropZone">
-        <Icon name="{{ _iconName }}" />
+        <Icon name="{{ _iconName }}" isReusable={false} />
         <label for="{{ _id }}" class="{{ _dropzoneLabelClassName }}">
             <span class="{{ _linkClassName }} link-primary link-underlined">
                 {{- _pickAFileText -}}
