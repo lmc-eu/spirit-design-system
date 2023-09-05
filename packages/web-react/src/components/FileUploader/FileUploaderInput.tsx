@@ -74,10 +74,10 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     <div
       {...transferProps}
       {...styleProps}
-      onDragOver={isDragAndDropSupported ? onDragOver : undefined}
-      onDragEnter={isDragAndDropSupported ? onDragEnter : undefined}
-      onDragLeave={isDragAndDropSupported ? onDragLeave : undefined}
-      onDrop={isDragAndDropSupported ? onDrop : undefined}
+      onDragOver={!isDisabled && isDragAndDropSupported ? onDragOver : undefined}
+      onDragEnter={!isDisabled && isDragAndDropSupported ? onDragEnter : undefined}
+      onDragLeave={!isDisabled && isDragAndDropSupported ? onDragLeave : undefined}
+      onDrop={!isDisabled && isDragAndDropSupported ? onDrop : undefined}
       className={classNames(classProps.input.root, styleProps.className)}
     >
       <label htmlFor={id} className={classProps.input.label}>
