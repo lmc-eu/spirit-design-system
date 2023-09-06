@@ -6,27 +6,27 @@ export default {
 };
 
 export const ModalStacked = () => {
-  const [isFirstOpen, setFirstOpen] = useState(false);
-  const [isSecondOpen, setSecondOpen] = useState(false);
+  const [isStackedOpen, setStackedOpen] = useState(false);
+  const [isChildOpen, setChildOpen] = useState(false);
 
-  const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
-  const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
+  const toggleStackedModal = () => setStackedOpen(!isStackedOpen);
+  const toggleChildModal = () => setChildOpen(!isChildOpen);
 
-  const handleFirstClose = () => {
-    setFirstOpen(false);
+  const handleStackedClose = () => {
+    setStackedOpen(false);
   };
-  const handleSecondClose = () => {
-    setSecondOpen(false);
+  const handleChildClose = () => {
+    setChildOpen(false);
   };
 
   return (
     <>
-      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="#ModalExample">
-        {isFirstOpen ? 'Close' : 'Open'} Modal
+      <Button onClick={toggleStackedModal} aria-expanded={isStackedOpen} aria-controls="#ModalStacked">
+        {isStackedOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExampleStacked" isOpen={isSecondOpen} onClose={handleSecondClose}>
+      <Modal id="ModalChild" isOpen={isChildOpen} onClose={handleChildClose}>
         <ModalDialog>
-          <ModalHeader>Modal stacked</ModalHeader>
+          <ModalHeader>Child Modal</ModalHeader>
           <ModalBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
@@ -35,18 +35,15 @@ export const ModalStacked = () => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={handleSecondClose}>
-              Confirm
-            </Button>
-            <Button color="tertiary" onClick={handleSecondClose}>
-              Cancel
+            <Button color="primary" onClick={handleChildClose}>
+              Close Child Modal
             </Button>
           </ModalFooter>
         </ModalDialog>
       </Modal>
-      <Modal id="ModalExample" isOpen={isFirstOpen} onClose={handleFirstClose}>
+      <Modal id="ModalStacked" isOpen={isStackedOpen} onClose={handleStackedClose}>
         <ModalDialog>
-          <ModalHeader>Modal </ModalHeader>
+          <ModalHeader>Modal</ModalHeader>
           <ModalBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
@@ -60,11 +57,11 @@ export const ModalStacked = () => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={toggleSecondModal}>
-              Open stacked
+            <Button color="primary" onClick={toggleChildModal}>
+              Open Child Modal
             </Button>
-            <Button color="tertiary" onClick={handleFirstClose}>
-              Cancel
+            <Button color="tertiary" onClick={handleStackedClose}>
+              Close Modal
             </Button>
           </ModalFooter>
         </ModalDialog>
