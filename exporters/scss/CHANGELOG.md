@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.4"></a>
+
+## [1.7.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.3...@lmc-eu/spirit-exporters-scss@1.7.4) (2023-09-06)
+
+### Dependencies
+
+- Update all non-major dependencies ([2ed3156](https://github.com/lmc-eu/spirit-design-system/commit/2ed3156))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.7.3"></a>
 
 ## [1.7.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.2...@lmc-eu/spirit-exporters-scss@1.7.3) (2023-08-23)

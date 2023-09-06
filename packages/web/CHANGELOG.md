@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.1"></a>
+
+## [1.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.0...@lmc-eu/spirit-web@1.2.1) (2023-09-06)
+
+### Bug Fixes
+
+- **web:** Add missing event call in FileUploader event handler [#DS-938](https://github.com/lmc-eu/spirit-design-system/issues/DS-938) ([714f626](https://github.com/lmc-eu/spirit-design-system/commit/714f626))
+- **web:** Debounce in ScrollView now trigger correctly during scrolling ([b5911df](https://github.com/lmc-eu/spirit-design-system/commit/b5911df))
+- **web:** Use `unknown` instead of `any` type in Transitions ([7fa47fd](https://github.com/lmc-eu/spirit-design-system/commit/7fa47fd))
+
+### Dependencies
+
+- Update all non-major dependencies ([2ed3156](https://github.com/lmc-eu/spirit-design-system/commit/2ed3156))
+
+### Documentation
+
+- **web:** Add Breadcrumbs demo [#DS-981](https://github.com/lmc-eu/spirit-design-system/issues/DS-981) ([8390b10](https://github.com/lmc-eu/spirit-design-system/commit/8390b10))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.1.0...@lmc-eu/spirit-web@1.2.0) (2023-08-23)

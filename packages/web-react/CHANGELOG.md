@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.2.0...@lmc-eu/spirit-web-react@1.3.0) (2023-09-06)
+
+### Bug Fixes
+
+- **web-react:** Debounce in ScrollView now trigger correctly during scrolling ([9affe52](https://github.com/lmc-eu/spirit-design-system/commit/9affe52)), closes [#DS-826](https://github.com/lmc-eu/spirit-design-system/issues/DS-826)
+- **web-react:** Handle event capturing correctly in Dialog ([6ef0d0d](https://github.com/lmc-eu/spirit-design-system/commit/6ef0d0d)), closes [#DS-937](https://github.com/lmc-eu/spirit-design-system/issues/DS-937)
+- **web-react:** Remove unused and already deprecated type ([a0fe11c](https://github.com/lmc-eu/spirit-design-system/commit/a0fe11c))
+- **web-react:** Required `goBackTitle` in Breadcrumbs refs [#DS-834](https://github.com/lmc-eu/spirit-design-system/issues/DS-834) ([a31febc](https://github.com/lmc-eu/spirit-design-system/commit/a31febc))
+- **web-react:** The rest props were transfered twice on FieldGroup ([dfbaf56](https://github.com/lmc-eu/spirit-design-system/commit/dfbaf56))
+
+### Chores
+
+- **web-react:** Use vite-raw-plugin to import markdown files in story ([e9dfab2](https://github.com/lmc-eu/spirit-design-system/commit/e9dfab2))
+
+### Dependencies
+
+- Pin dependencies ([1636a94](https://github.com/lmc-eu/spirit-design-system/commit/1636a94))
+- Update all non-major dependencies ([2ed3156](https://github.com/lmc-eu/spirit-design-system/commit/2ed3156))
+- Update dependency @testing-library/react to v14 ([25128ce](https://github.com/lmc-eu/spirit-design-system/commit/25128ce))
+- Update dependency @typescript-eslint/eslint-plugin to v6 ([8a8b660](https://github.com/lmc-eu/spirit-design-system/commit/8a8b660))
+- Update dependency eslint-config-prettier to v9 ([d9248a5](https://github.com/lmc-eu/spirit-design-system/commit/d9248a5))
+
+### Documentation
+
+- **web-react:** Add Accordion demo [#DS-890](https://github.com/lmc-eu/spirit-design-system/issues/DS-890) ([da8efe0](https://github.com/lmc-eu/spirit-design-system/commit/da8efe0))
+- **web-react:** Add Breadcrumbs demo [#DS-981](https://github.com/lmc-eu/spirit-design-system/issues/DS-981) ([1dfaa07](https://github.com/lmc-eu/spirit-design-system/commit/1dfaa07))
+- **web-react:** Add Button demo DS-892 ([51af5e3](https://github.com/lmc-eu/spirit-design-system/commit/51af5e3))
+- **web-react:** Add Checkbox demos [#DS-889](https://github.com/lmc-eu/spirit-design-system/issues/DS-889) ([439654f](https://github.com/lmc-eu/spirit-design-system/commit/439654f))
+- **web-react:** Add Container demo [#DS-894](https://github.com/lmc-eu/spirit-design-system/issues/DS-894) ([2feb782](https://github.com/lmc-eu/spirit-design-system/commit/2feb782))
+- **web-react:** Add Grid demo [#DS-897](https://github.com/lmc-eu/spirit-design-system/issues/DS-897) ([3692aa7](https://github.com/lmc-eu/spirit-design-system/commit/3692aa7))
+- **web-react:** Introduce DocsBox component ([ec381f7](https://github.com/lmc-eu/spirit-design-system/commit/ec381f7))
+- **web-react:** Introduce new Stories for Button, Modal and Pill ([86acc0b](https://github.com/lmc-eu/spirit-design-system/commit/86acc0b))
+- **web-react:** Separate stories and demos [#DS-873](https://github.com/lmc-eu/spirit-design-system/issues/DS-873) ([e25fa16](https://github.com/lmc-eu/spirit-design-system/commit/e25fa16))
+- **web-twig, web-react:** Improve `Modal` documentation regarding `ScrollView` and optional title ([f4a54ca](https://github.com/lmc-eu/spirit-design-system/commit/f4a54ca))
+
+### Features
+
+- **web-react:** Introduce GridSpan component [#DS-431](https://github.com/lmc-eu/spirit-design-system/issues/DS-431) ([9d2ceaf](https://github.com/lmc-eu/spirit-design-system/commit/9d2ceaf))
+- **web-react:** Introduce VisuallyHidden component ([6a3fa18](https://github.com/lmc-eu/spirit-design-system/commit/6a3fa18))
+
+### Styles
+
+- **web-react:** Declare missing `prettier` module for types ([0733ec0](https://github.com/lmc-eu/spirit-design-system/commit/0733ec0))
+- **web-react:** Strings must use singlequote quotes ([c6ae0f3](https://github.com/lmc-eu/spirit-design-system/commit/c6ae0f3))
+
+### Tests
+
+- **web-react:** Find `goBackTitle` in Breadcrumbs refs [#DS-834](https://github.com/lmc-eu/spirit-design-system/issues/DS-834) ([a6dc3af](https://github.com/lmc-eu/spirit-design-system/commit/a6dc3af))
+- **web-react:** Unnecessary use of `Date.now` refs [#DS-766](https://github.com/lmc-eu/spirit-design-system/issues/DS-766) ([06a1fdf](https://github.com/lmc-eu/spirit-design-system/commit/06a1fdf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.1.0...@lmc-eu/spirit-web-react@1.2.0) (2023-08-23)

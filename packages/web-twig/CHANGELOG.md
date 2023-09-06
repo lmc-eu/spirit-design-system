@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+
+# [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.2.0...@lmc-eu/spirit-web-twig@2.3.0) (2023-09-06)
+
+### Documentation
+
+- **web-twig, web-react:** Improve `Modal` documentation regarding `ScrollView` and optional title ([f4a54ca](https://github.com/lmc-eu/spirit-design-system/commit/f4a54ca))
+- **web-twig:** Add Breadcrumbs demo [#DS-981](https://github.com/lmc-eu/spirit-design-system/issues/DS-981) ([c7ae091](https://github.com/lmc-eu/spirit-design-system/commit/c7ae091))
+- **web-twig:** Add Button demo [#DS-892](https://github.com/lmc-eu/spirit-design-system/issues/DS-892) ([b351ad0](https://github.com/lmc-eu/spirit-design-system/commit/b351ad0))
+- **web-twig:** Introduce `DocsSection` and `DocsBox` components ([fcb97dc](https://github.com/lmc-eu/spirit-design-system/commit/fcb97dc))
+
+### Features
+
+- **web-twig:** Deprecate optional `goBackTitle` in Breadcrumbs ([b469abe](https://github.com/lmc-eu/spirit-design-system/commit/b469abe)), closes [#DS-834](https://github.com/lmc-eu/spirit-design-system/issues/DS-834)
+- **web-twig:** Introduce VisuallyHidden component ([3122a4d](https://github.com/lmc-eu/spirit-design-system/commit/3122a4d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.2.0"></a>
 
 # [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.1.0...@lmc-eu/spirit-web-twig@2.2.0) (2023-08-23)
