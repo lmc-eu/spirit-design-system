@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalDialog, ModalHeader, ModalBody, ModalFooter } from '../../../src/components';
 
 export default {
-  title: 'Examples/Compositions',
+  title: 'Examples/Compositions/Modals',
 };
 
 export const ModalStacked = () => {

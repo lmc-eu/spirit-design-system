@@ -4,7 +4,7 @@ import { content } from '../../../src/components/Accordion/demo/Accordion';
 import { CollapseTrigger } from '../../../src/components/Collapse/demo/Collapse';
 
 export default {
-  title: 'Examples/Compositions',
+  title: 'Examples/Compositions/Modals',
 };
 
 export const ModalWithCollapse = () => {

@@ -15,7 +15,7 @@ import {
 import { content } from '../../../src/components/Accordion/demo/Accordion';
 
 export default {
-  title: 'Examples/Compositions',
+  title: 'Examples/Compositions/Modals',
 };
 
 export const ModalWithAccordion = () => {
