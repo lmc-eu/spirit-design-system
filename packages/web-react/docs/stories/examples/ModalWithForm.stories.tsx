@@ -38,7 +38,7 @@ export const ModalWithForm = () => {
           <ModalHeader>Modal with Form </ModalHeader>
           <ModalBody>
             <form method="get" action="#">
-              <Stack>
+              <Stack hasSpacing>
                 <TextField label="Name" />
                 <Select label="Choose your allegiance">
                   <option value="" selected disabled>
