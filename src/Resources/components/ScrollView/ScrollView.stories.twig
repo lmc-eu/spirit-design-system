@@ -10,13 +10,8 @@
         {% include '@components/ScrollView/stories/ScrollViewHorizontal.twig' %}
     </DocsSection>
 
-    <DocsSection title="Horizontal Scrolling with Container Breakout">
-        {# Use Grid to prepare the ground for container breakout (inside of the included example). #}
-        <Grid>
-            <GridSpan over={12}>
-                {% include '@components/ScrollView/stories/ScrollViewHorizontalBreakout.twig' %}
-            </GridSpan>
-        </Grid>
+    <DocsSection title="Horizontal Scrolling with Container Breakout" hasStack={ false }>
+        {% include '@components/ScrollView/stories/ScrollViewHorizontalBreakout.twig' %}
     </DocsSection>
 
     <DocsSection title="Overflow Decorators">
