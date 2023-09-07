@@ -27,15 +27,21 @@ export const ValidationText = (props: ValidationTextProps) => {
     };
   }, [id, registerAria]);
 
-  return Array.isArray(validationText) ? (
-    <ul className={className}>
-      {validationText.map((item) => (
-        <li key={`validationText_${item}`}>{item}</li>
-      ))}
-    </ul>
-  ) : (
-    <ElementTag className={className}>{validationText}</ElementTag>
-  );
+  if (validationText) {
+    return Array.isArray(validationText) ? (
+      <ul className={className} id={id}>
+        {validationText.map((item) => (
+          <li key={`validationText_${item}`}>{item}</li>
+        ))}
+      </ul>
+    ) : (
+      <ElementTag className={className} id={id}>
+        {validationText}
+      </ElementTag>
+    );
+  }
+
+  return null;
 };
 
 ValidationText.defaultProps = defaultProps;
