@@ -1,0 +1,92 @@
+<Header color="inverted">
+    {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+
+    <HeaderMobileActions dialogId="header_dialog_example_3_main_navigation">
+        <DropdownWrapper>
+            <Button
+                color="inverted"
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdownUserMobile"
+                isSquare
+            >
+                <Icon name="profile" />
+                <VisuallyHidden>My Profile</VisuallyHidden>
+            </Button>
+            <Dropdown id="dropdownUserMobile" placement="bottom-right">
+                <Stack hasSpacing>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Favourites</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Sign out</a>
+                </Stack>
+            </Dropdown>
+        </DropdownWrapper>
+    </HeaderMobileActions>
+
+    <HeaderDesktopActions aria-label="Main navigation">
+        <HeaderNav>
+            <HeaderNavItem>
+                <HeaderLink href="#" isCurrent>Job offers</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Part-time jobs</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Inspiration</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Replies</HeaderLink>
+            </HeaderNavItem>
+            <HeaderNavItem>
+                <HeaderLink href="#">Employers</HeaderLink>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
+
+    <HeaderDesktopActions color="secondary">
+        <HeaderNav>
+            <HeaderNavItem UNSAFE_style="position: relative;">
+                <HeaderLink
+                    href="#"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdownUserDesktop"
+                >
+                    Marian
+                </HeaderLink>
+                <Dropdown id="dropdownUserDesktop" placement="bottom-right">
+                    <Stack hasSpacing>
+                        <a href="#">Dashboard</a>
+                        <a href="#">Profile</a>
+                        <a href="#">Favourites</a>
+                        <a href="#">Notifications</a>
+                        <a href="#">Sign out</a>
+                    </Stack>
+                </Dropdown>
+            </HeaderNavItem>
+        </HeaderNav>
+    </HeaderDesktopActions>
+</Header>
+
+<HeaderDialog id="header_dialog_example_3_main_navigation">
+    <HeaderDialogCloseButton dialogId="header_dialog_example_3_main_navigation" />
+    <HeaderDialogActions aria-label="Main navigation">
+        <HeaderDialogNav>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+            </HeaderDialogNavItem>
+            <HeaderDialogNavItem>
+                <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+            </HeaderDialogNavItem>
+        </HeaderDialogNav>
+    </HeaderDialogActions>
+</HeaderDialog>
