@@ -1,7 +1,8 @@
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
-import { SpiritPaginationLinkProps } from '../../types';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
+import { SpiritPaginationLinkProps } from '../../types';
+import { VisuallyHidden } from '../VisuallyHidden';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -22,7 +23,7 @@ const _PaginationLink = <E extends ElementType = 'a'>(
       {...styleProps}
       className={classNames(classProps.link, styleProps.className)}
     >
-      <span className="accessibility-hidden">{accessibilityLabel}</span>
+      <VisuallyHidden>{accessibilityLabel}</VisuallyHidden>
       <span aria-hidden="true">{pageNumber}</span>
     </ElementTag>
   );

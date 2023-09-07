@@ -1,9 +1,10 @@
-import React from 'react';
 import classNames from 'classnames';
-import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
-import { SpiritFieldGroupProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
+import { SpiritFieldGroupProps } from '../../types';
 import { useValidationText } from '../Field/useValidationText';
+import { VisuallyHidden } from '../VisuallyHidden';
+import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
 
 const FieldGroup = (props: SpiritFieldGroupProps) => {
   const {
@@ -35,7 +36,7 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
       className={classNames(classProps.root, styleProps.className)}
       disabled={isDisabled}
     >
-      <legend className="accessibility-hidden">{label}</legend>
+      <VisuallyHidden elementType="legend">{label}</VisuallyHidden>
       {!isLabelHidden && (
         <div className={classProps.label} aria-hidden="true">
           {label}

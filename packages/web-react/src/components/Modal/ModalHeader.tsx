@@ -1,11 +1,12 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { ClickEvent, ModalHeaderProps } from '../../types';
-import { useModalStyleProps } from './useModalStyleProps';
-import { useModalContext } from './ModalContext';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
+import { useModalContext } from './ModalContext';
+import { useModalStyleProps } from './useModalStyleProps';
 
 const ModalHeader = (props: ModalHeaderProps) => {
   const { children, closeLabel = 'Close', ...restProps } = props;
@@ -31,7 +32,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
         aria-controls={id}
       >
         <Icon name="close" />
-        <span className="accessibility-hidden">{closeLabel}</span>
+        <VisuallyHidden>{closeLabel}</VisuallyHidden>
       </Button>
     </header>
   );

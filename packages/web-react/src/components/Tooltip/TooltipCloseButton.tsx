@@ -1,8 +1,9 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { Icon } from '../Icon';
 import { TooltipCloseButtonProps } from '../../types';
+import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
 const TooltipCloseButton = ({ label = 'Close', onClick, ...restProps }: TooltipCloseButtonProps) => {
@@ -18,7 +19,7 @@ const TooltipCloseButton = ({ label = 'Close', onClick, ...restProps }: TooltipC
       aria-expanded="true"
     >
       <Icon name="close" aria-hidden="true" />
-      <span className="accessibility-hidden">{label}</span>
+      <VisuallyHidden>{label}</VisuallyHidden>
     </button>
   );
 };
