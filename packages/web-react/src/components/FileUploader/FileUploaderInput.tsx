@@ -1,12 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import { SpiritFileUploaderInputProps } from '../../types';
-import { useStyleProps } from '../../hooks';
-import { useValidationText } from '../Field';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { HelperText, ValidationText, useAriaIds } from '../Field';
+import { Icon } from '../Icon';
 import { DEFAULT_FILE_QUEUE_LIMIT, DEFAULT_FILE_SIZE_LIMIT } from './constants';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderInput } from './useFileUploaderInput';
-import { Icon } from '../Icon';
 
 const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   const {
@@ -64,10 +64,13 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
-  const renderValidationText = useValidationText({
-    validationTextClassName: classProps.input.validationText,
-    validationState,
-    validationText,
+  const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !id,
+    componentName: 'FileUploader',
+    customText: 'The "id" property will be required instead of optional starting from the next major version.',
   });
 
   return (
@@ -84,6 +87,7 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         {label}
       </label>
       <input
+        aria-describedby={ids.join(' ')}
         type="file"
         accept={accept}
         id={id}
@@ -102,9 +106,22 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
           &nbsp;
           <span className={classProps.input.dropLabel}>{labelText}</span>
         </label>
-        <div className={classProps.input.helper}>{helperText}</div>
+        <HelperText
+          className={classProps.input.helper}
+          id={`${id}__helperText`}
+          registerAria={register}
+          helperText={helperText}
+        />
       </div>
-      {renderValidationText}
+      {validationState && (
+        <ValidationText
+          className={classProps.input.validationText}
+          elementType="span"
+          id={`${id}__validationText`}
+          validationText={validationText}
+          registerAria={register}
+        />
+      )}
     </div>
   );
 };

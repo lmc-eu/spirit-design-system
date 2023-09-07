@@ -22,6 +22,8 @@ export interface RadioProps
   isChecked?: boolean;
   /** Text of control label */
   label: string;
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
+  id?: string;
 }
 
 export interface SpiritRadioProps extends RadioProps {}

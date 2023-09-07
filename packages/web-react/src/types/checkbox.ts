@@ -26,6 +26,8 @@ export interface CheckboxProps
   isChecked?: boolean;
   /** Text of control label */
   label: string;
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
+  id?: string;
 }
 
 export interface SpiritCheckboxProps extends CheckboxProps {}

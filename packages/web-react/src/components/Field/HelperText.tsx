@@ -1,26 +1,41 @@
-import React, { ElementType } from 'react';
+import React, { ElementType, useEffect } from 'react';
+import { RegisterType } from './useAriaIds';
 
 interface Props {
-  children: React.ReactNode;
+  helperText: React.ReactNode;
   className?: string;
   elementType?: ElementType;
   id?: string;
+  registerAria?: RegisterType;
 }
 
 const defaultProps = {
   className: undefined,
   elementType: 'div',
   id: undefined,
+  registerAria: undefined,
 };
 
 const HelperText = (props: Props) => {
-  const { children, className, elementType: ElementTag = 'div', id } = props;
+  const { helperText, className, elementType: ElementTag = 'div', id, registerAria } = props;
 
-  return (
-    <ElementTag className={className} id={id}>
-      {children}
-    </ElementTag>
-  );
+  useEffect(() => {
+    registerAria?.({ add: id });
+
+    return () => {
+      registerAria?.({ remove: id });
+    };
+  }, [id, registerAria]);
+
+  if (helperText) {
+    return (
+      <ElementTag className={className} id={id}>
+        {helperText}
+      </ElementTag>
+    );
+  }
+
+  return null;
 };
 
 HelperText.defaultProps = defaultProps;
