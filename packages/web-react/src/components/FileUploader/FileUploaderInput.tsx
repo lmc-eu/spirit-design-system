@@ -11,6 +11,7 @@ import { useFileUploaderInput } from './useFileUploaderInput';
 const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   const {
     accept,
+    'aria-describedby': ariaDescribedBy = '',
     dropZoneRef,
     helperText,
     iconName = 'upload',
