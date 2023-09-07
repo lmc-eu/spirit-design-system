@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import {
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
   Button,
-  Icon,
-  Pill,
   Modal,
+  ModalBody,
   ModalDialog,
   ModalHeader,
-  ModalBody,
+  Pill,
   UncontrolledAccordion,
-  AccordionItem,
-  AccordionHeader,
-  AccordionContent,
 } from '../../../src/components';
 import { content } from '../../../src/components/Accordion/demo/Accordion';
 
@@ -34,17 +33,7 @@ export const ModalWithAccordion = () => {
       </Button>
       <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
-          <ModalHeader>
-            <Button
-              isSquare
-              color="tertiary"
-              onClick={toggleModal}
-              aria-expanded={isOpen}
-              aria-controls="#ModalExample"
-            >
-              <Icon name="close" />
-            </Button>
-          </ModalHeader>
+          <ModalHeader>Modal With Accordion</ModalHeader>
           <ModalBody>
             <UncontrolledAccordion id="AccordionExample" defaultOpen="AccordionItemExample1">
               <AccordionItem id="AccordionItemExample0">
