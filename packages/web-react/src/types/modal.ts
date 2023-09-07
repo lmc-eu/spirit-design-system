@@ -17,6 +17,11 @@ export type ModalDialogHandlingProps = {
   onClose: (event: ClickEvent) => void;
 };
 
+export interface ModalCloseButtonProps extends ModalDialogHandlingProps {
+  label: string;
+  id: string;
+}
+
 export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType> = {
   elementType?: E;
   isExpandedOnMobile?: boolean;
