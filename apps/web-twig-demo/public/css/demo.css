@@ -35,11 +35,14 @@
 .docs-Stack {
   display: grid;
   row-gap: 1rem;
+}
+
+.docs-Stack--start {
   justify-items: start;
 }
 
-.docs-Stack--fluid {
-  justify-items: initial;
+.docs-Stack--stretch {
+  justify-items: stretch;
 }
 
 .docs-Box {

@@ -1,5 +1,14 @@
 {% extends 'layout/plain.html.twig' %}
 
 {% block content %}
-    {% include '@components/Container/stories/ContainerDefault.twig' %}
+
+    <DocsSection title="Default" stackAlignment="stretch">
+
+        {# Use `.breakout-container` to make the example Container overlap with the Container in the page layout. #}
+        <div class="breakout-container">
+            {% include '@components/Container/stories/ContainerDefault.twig' %}
+        </div>
+
+    </DocsSection>
+
 {% endblock %}
