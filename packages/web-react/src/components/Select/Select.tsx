@@ -1,35 +1,39 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import { SpiritSelectProps } from '../../types';
-import { useStyleProps } from '../../hooks';
-import { useSelectStyleProps } from './useSelectStyleProps';
-import { useValidationText } from '../Field';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { Icon } from '../Icon';
+import { useSelectStyleProps } from './useSelectStyleProps';
 
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_Select'] }] */
 const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>) => {
   const {
+    'aria-describedby': ariaDescribedBy = '',
     children,
-    validationState,
-    validationText,
+    helperText,
     id,
     isDisabled,
     isFluid,
-    isRequired,
     isLabelHidden,
+    isRequired,
     label,
-    helperText,
+    validationState,
+    validationText,
     ...restProps
   } = props;
 
   const { classProps } = useSelectStyleProps({ isDisabled, isFluid, isRequired, isLabelHidden, validationState });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
-  const renderValidationText = useValidationText({
-    validationTextClassName: classProps.validationText,
-    validationState,
-    validationText,
+  const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !id,
+    componentName: 'Select',
+    customText: 'The "id" property will be required instead of optional starting from the next major version.',
   });
 
   return (
@@ -40,6 +44,7 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
       <div className={classProps.container}>
         <select
           {...transferProps}
+          aria-describedby={ids.join(' ')}
           id={id}
           className={classProps.input}
           ref={ref}
@@ -52,8 +57,20 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
           <Icon name="chevron-down" />
         </div>
       </div>
-      {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {renderValidationText}
+      <HelperText
+        className={classProps.helperText}
+        id={`${id}__helperText`}
+        registerAria={register}
+        helperText={helperText}
+      />
+      {validationState && (
+        <ValidationText
+          className={classProps.validationText}
+          id={`${id}__validationText`}
+          validationText={validationText}
+          registerAria={register}
+        />
+      )}
     </div>
   );
 };

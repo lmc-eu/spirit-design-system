@@ -9,6 +9,8 @@ export interface FieldGroupProps extends FieldGroupElementBaseProps, LabelProps,
   isLabelHidden?: boolean;
   label: string | JSX.Element;
   validationText?: ValidationTextType;
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
+  id?: string;
 }
 
 export interface SpiritFieldGroupProps extends FieldGroupProps {}

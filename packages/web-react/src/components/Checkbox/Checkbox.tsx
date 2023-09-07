@@ -1,8 +1,8 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
-import { useValidationText } from '../Field';
+import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { useCheckboxStyleProps } from './useCheckboxStyleProps';
 
 /* We need an exception for components exported with forwardRef */
@@ -10,30 +10,34 @@ import { useCheckboxStyleProps } from './useCheckboxStyleProps';
 const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElement>): JSX.Element => {
   const { classProps, props: modifiedProps } = useCheckboxStyleProps(props);
   const {
-    id,
-    label,
-    validationText,
+    'aria-describedby': ariaDescribedBy = '',
     helperText,
-    validationState,
-    value,
+    id,
+    isChecked,
     isDisabled,
     isRequired,
-    isChecked,
+    label,
+    validationState,
+    validationText,
+    value,
     ...restProps
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
-  const renderValidationText = useValidationText({
-    validationTextClassName: classProps.validationText,
-    validationState,
-    validationText,
-    validationElementType: 'span',
+  const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !id,
+    componentName: 'Checkbox',
+    customText: 'The "id" property will be required instead of optional starting from the next major version.',
   });
 
   return (
     <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
       <input
         {...otherProps}
+        aria-describedby={ids.join(' ')}
         type="checkbox"
         id={id}
         className={classProps.input}
@@ -45,8 +49,22 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
       />
       <span className={classProps.text}>
         <span className={classProps.label}>{label}</span>
-        {helperText && <span className={classProps.helperText}>{helperText}</span>}
-        {renderValidationText}
+        <HelperText
+          className={classProps.helperText}
+          elementType="span"
+          id={`${id}__helperText`}
+          registerAria={register}
+          helperText={helperText}
+        />
+        {validationState && (
+          <ValidationText
+            className={classProps.validationText}
+            elementType="span"
+            id={`${id}__validationText`}
+            validationText={validationText}
+            registerAria={register}
+          />
+        )}
       </span>
     </label>
   );

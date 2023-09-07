@@ -24,6 +24,8 @@ export interface TextAreaProps
   isAutoResizing?: boolean;
   /** Maximum field height with automatic height control */
   autoResizingMaxHeight?: number;
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
+  id?: string;
 }
 
 export interface SpiritTextAreaProps extends TextAreaProps {}

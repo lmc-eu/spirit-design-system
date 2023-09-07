@@ -1,38 +1,44 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks';
 import { SpiritFieldGroupProps } from '../../types';
-import { useValidationText } from '../Field';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
 
 const FieldGroup = (props: SpiritFieldGroupProps) => {
   const {
-    label,
-    isRequired,
+    'aria-describedby': ariaDescribedBy = '',
+    children,
+    helperText,
+    id,
     isDisabled,
     isFluid,
     isLabelHidden,
-    helperText,
+    isRequired,
+    label,
     validationState,
     validationText,
-    children,
     ...rest
   } = props;
 
   const { classProps } = useFieldGroupStyleProps({ isFluid, isRequired, validationState });
   const { styleProps, props: transferProps } = useStyleProps(rest);
 
-  const renderValidationText = useValidationText({
-    validationTextClassName: classProps.validationText,
-    validationState,
-    validationText,
+  const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !id,
+    componentName: 'FiledGroup',
+    customText: 'The "id" property will be required instead of optional starting from the next major version.',
   });
 
   return (
     <fieldset
       {...transferProps}
       {...styleProps}
+      aria-describedby={ids.join(' ')}
       className={classNames(classProps.root, styleProps.className)}
       disabled={isDisabled}
     >
@@ -43,8 +49,20 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
         </div>
       )}
       <div className={classProps.fields}>{children}</div>
-      {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {renderValidationText}
+      <HelperText
+        className={classProps.helperText}
+        id={`${id}__helperText`}
+        registerAria={register}
+        helperText={helperText}
+      />
+      {validationState && (
+        <ValidationText
+          className={classProps.validationText}
+          id={`${id}__helperText`}
+          validationText={validationText}
+          registerAria={register}
+        />
+      )}
     </fieldset>
   );
 };

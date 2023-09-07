@@ -1,10 +1,10 @@
-import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks';
-import { useValidationText } from '../Field';
+import React, { ForwardedRef, forwardRef } from 'react';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
-import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
+import { HelperText, ValidationText, useAriaIds } from '../Field';
 import TextFieldBaseInput from './TextFieldBaseInput';
+import { useTextFieldBaseStyleProps } from './useTextFieldBaseStyleProps';
 import withPasswordToggle from './withPasswordToggle';
 
 const TextFieldBaseInputWithPasswordToggle = forwardRef(
@@ -15,13 +15,24 @@ const TextFieldBaseInputWithPasswordToggle = forwardRef(
 /* eslint no-underscore-dangle: ['error', { allow: ['_TextFieldBase'] }] */
 const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
   const { classProps, props: modifiedProps } = useTextFieldBaseStyleProps(props);
-  const { id, label, validationText, helperText, validationState, ...restProps } = modifiedProps;
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
-
-  const renderValidationText = useValidationText({
-    validationTextClassName: classProps.validationText,
+  const {
+    'aria-describedby': ariaDescribedBy = '',
+    helperText,
+    id,
+    label,
     validationState,
     validationText,
+    ...restProps
+  } = modifiedProps;
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: !id,
+    componentName: 'TextField/TextArea',
+    customText: 'The "id" property will be required instead of optional starting from the next major version.',
   });
 
   return (
@@ -29,9 +40,22 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
       <label htmlFor={id} className={classProps.label}>
         {label}
       </label>
-      <TextFieldBaseInputWithPasswordToggle id={id} ref={ref} {...otherProps} />
-      {helperText && <div className={classProps.helperText}>{helperText}</div>}
-      {renderValidationText}
+      <TextFieldBaseInputWithPasswordToggle id={id} ref={ref} aria-describedby={ids.join(' ')} {...otherProps} />
+      <HelperText
+        className={classProps.helperText}
+        id={`${id}__helperText`}
+        registerAria={register}
+        helperText={helperText}
+      />
+      {validationState && (
+        <ValidationText
+          className={classProps.validationText}
+          elementType="span"
+          id={`${id}__validationText`}
+          validationText={validationText}
+          registerAria={register}
+        />
+      )}
     </div>
   );
 };

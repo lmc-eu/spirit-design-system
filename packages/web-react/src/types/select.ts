@@ -8,6 +8,8 @@ export interface SelectProps extends SelectElementBaseProps, LabelProps, HelperT
   isFluid?: boolean;
   isLabelHidden?: boolean;
   validationText?: ValidationTextType;
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
+  id?: string;
 }
 
 export interface SpiritSelectProps extends SelectProps {}

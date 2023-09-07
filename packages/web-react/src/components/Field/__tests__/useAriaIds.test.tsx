@@ -1,0 +1,23 @@
+import React, { useEffect } from 'react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import useAriaIds from '../useAriaIds';
+
+describe('useAriaIds', () => {
+  it('should initialize with an empty array of ids', () => {
+    const TestComponent: React.FC = () => {
+      const [ids, register] = useAriaIds();
+
+      useEffect(() => {
+        register({ add: 'test-id' });
+      }, [register]);
+
+      return <div data-testid="ids-container">{ids.join(' ')}</div>;
+    };
+
+    const { getByTestId } = render(<TestComponent />);
+    const idsElement = getByTestId('ids-container');
+
+    expect(idsElement).toHaveTextContent('test-id');
+  });
+});
