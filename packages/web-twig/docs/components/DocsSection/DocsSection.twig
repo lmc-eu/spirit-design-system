@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _hasFluidLayout = props.hasFluidLayout | default(false) -%}
+{%- set _hasStack = props.hasStack ?? true -%}
+{%- set _stackAlignment = props.stackAlignment | default('start') -%}
 {%- set _tag = props.tag | default(null) -%}
 {%- set _title = props.title -%}
 
@@ -8,12 +9,16 @@
 {%- set _rootClassName = 'docs-Section' -%}
 {%- set _headingClassName = 'docs-Heading' -%}
 {%- set _stackClassName = 'docs-Stack' -%}
-{%- set _stackFluidClassName = _hasFluidLayout ? 'docs-Stack--fluid' : null -%}
+{%- set _stackAlignmentClassName = 'docs-Stack--' ~ _stackAlignment -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [_rootClassName, _styleProps.className] -%}
-{%- set _stackClassNames = [_stackClassName, _stackFluidClassName] -%}
+{%- set _stackClassNames = [_stackClassName, _stackAlignmentClassName] -%}
+
+{%- set _renderedContent %}
+    {% block content %}{% endblock %}
+{% endset -%}
 
 <section
     {{ mainProps(props) }}
@@ -26,7 +31,11 @@
             <Tag color="warning" isSubtle>{{ _tag }}</Tag>
         {% endif %}
     </h2>
-    <div {{ classProp(_stackClassNames) }}>
-        {% block content %}{% endblock %}
-    </div>
+    {% if _hasStack %}
+        <div {{ classProp(_stackClassNames) }}>
+            {{ _renderedContent }}
+        </div>
+    {% else %}
+        {{ _renderedContent }}
+    {% endif %}
 </section>
