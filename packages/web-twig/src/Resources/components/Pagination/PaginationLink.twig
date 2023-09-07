@@ -30,6 +30,6 @@
     {{ _targetAttr }}
     {{ _typeAttr | raw }}
 >
-    <span class="accessibility-hidden">{{ _accessibilityLabel }}</span>
+    <VisuallyHidden>{{ _accessibilityLabel }}</VisuallyHidden>
     <span aria-hidden="true">{{ _pageNumber }}</span>
 </{{ _elementType }}>

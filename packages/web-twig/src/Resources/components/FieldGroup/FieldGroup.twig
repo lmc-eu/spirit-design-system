@@ -55,9 +55,9 @@
     {{ _disabledAttr }}
 >
     {% if _labelRendered %}
-        <legend class="accessibility-hidden">
+        <VisuallyHidden elementType="legend">
             {{- _labelRendered -}}
-        </legend>
+        </VisuallyHidden>
         {% if not _isLabelHidden %}
             <div {{ classProp(_labelClassNames) }} aria-hidden="true">
                 {{- _labelRendered -}}
