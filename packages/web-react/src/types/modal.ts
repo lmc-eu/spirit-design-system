@@ -1,13 +1,13 @@
-import { ElementType, ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithRef, ElementType } from 'react';
 import {
+  AlignmentXDictionaryType,
   ChildrenProps,
   ClickEvent,
   OmittedExtendedUnsafeStyleProps,
-  StyleProps,
-  SpiritDivElementProps,
   SpiritDialogElementProps,
+  SpiritDivElementProps,
   SpiritElementProps,
-  AlignmentXDictionaryType,
+  StyleProps,
 } from './shared';
 
 export type ModalDialogElementType = 'article' | 'form';
@@ -16,6 +16,11 @@ export type ModalDialogHandlingProps = {
   isOpen: boolean;
   onClose: (event: ClickEvent) => void;
 };
+
+export interface ModalCloseButtonProps extends ModalDialogHandlingProps {
+  id: string;
+  label: string;
+}
 
 export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType> = {
   elementType?: E;
