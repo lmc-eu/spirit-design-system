@@ -2,6 +2,7 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { SpiritPaginationButtonLinkProps } from '../../types';
 import { ButtonLink } from '../Button';
 import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
 
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_PaginationButtonLink'] }] */
@@ -19,7 +20,7 @@ const _PaginationButtonLink = <E extends ElementType = 'a'>(
   return (
     <ButtonLink color="secondary" isSquare {...restProps} ref={ref}>
       <Icon name={iconType[direction]} />
-      <span className="accessibility-hidden">{accessibilityLabel}</span>
+      <VisuallyHidden>{accessibilityLabel}</VisuallyHidden>
     </ButtonLink>
   );
 };

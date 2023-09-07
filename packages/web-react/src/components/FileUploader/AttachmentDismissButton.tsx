@@ -1,9 +1,10 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
+import { useStyleProps } from '../../hooks';
 import { SpiritAttachmentDismissButtonProps } from '../../types';
 import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
-import { useStyleProps } from '../../hooks';
 
 const AttachmentDismissButton = (props: SpiritAttachmentDismissButtonProps) => {
   const { children, ...restProps } = props;
@@ -18,7 +19,7 @@ const AttachmentDismissButton = (props: SpiritAttachmentDismissButtonProps) => {
       {...styleProps}
       className={classNames(classProps.attachment.button, styleProps.className)}
     >
-      <span className="accessibility-hidden">{children}</span>
+      <VisuallyHidden>{children}</VisuallyHidden>
       <Icon name="close" aria-hidden="true" />
     </button>
   );

@@ -1,11 +1,12 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { ClickEvent, HeaderDialogCloseButtonProps } from '../../types';
+import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
+import { useHeaderDialogContext } from './HeaderDialogContext';
 import { HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
-import { useHeaderDialogContext } from './HeaderDialogContext';
-import { Icon } from '../Icon';
 
 const HeaderDialogCloseButton = (props: HeaderDialogCloseButtonProps) => {
   const { label = HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT, onClick, ...restProps } = props;
@@ -30,7 +31,7 @@ const HeaderDialogCloseButton = (props: HeaderDialogCloseButtonProps) => {
       style={styleProps.style}
     >
       <Icon name="close" />
-      <span className="accessibility-hidden">{label}</span>
+      <VisuallyHidden>{label}</VisuallyHidden>
     </button>
   );
 };

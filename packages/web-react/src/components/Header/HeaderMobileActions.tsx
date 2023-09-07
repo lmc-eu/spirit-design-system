@@ -1,11 +1,12 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { HeaderMobileActionsProps } from '../../types';
-import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from './constants';
-import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { VisuallyHidden } from '../VisuallyHidden';
+import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from './constants';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
   const {
@@ -29,7 +30,7 @@ const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
       {children}
       <Button aria-controls={dialogId} aria-expanded={isOpen} color="inverted" onClick={onOpen} isSquare>
         <Icon name="hamburger" />
-        <span className="accessibility-hidden">{menuToggleLabel}</span>
+        <VisuallyHidden>{menuToggleLabel}</VisuallyHidden>
       </Button>
     </div>
   );
