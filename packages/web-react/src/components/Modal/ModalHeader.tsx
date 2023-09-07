@@ -1,10 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { ClickEvent, ModalHeaderProps } from '../../types';
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { VisuallyHidden } from '../VisuallyHidden';
+import { ModalHeaderProps } from '../../types';
+import ModalCloseButton from './ModalCloseButton';
 import { useModalContext } from './ModalContext';
 import { useModalStyleProps } from './useModalStyleProps';
 
@@ -22,18 +20,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
           {children}
         </h2>
       )}
-      <Button
-        isSquare
-        color="tertiary"
-        onClick={(event: ClickEvent) => {
-          onClose(event);
-        }}
-        aria-expanded={isOpen}
-        aria-controls={id}
-      >
-        <Icon name="close" />
-        <VisuallyHidden>{closeLabel}</VisuallyHidden>
-      </Button>
+      <ModalCloseButton id={id} isOpen={isOpen} label={closeLabel} onClose={onClose} />
     </header>
   );
 };
