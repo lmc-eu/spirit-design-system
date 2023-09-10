@@ -33,6 +33,5 @@ export default create({
   // inputBorderRadius: 4,
 
   brandTitle: 'Spirit Design System',
-  brandUrl: 'https://spirit.lmc.eu',
   brandImage: Logo,
 });
