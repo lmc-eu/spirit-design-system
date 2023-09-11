@@ -1,7 +1,7 @@
 import React, { useRef, RefObject, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
 import { SpiritFileUploaderAttachmentProps } from '../../types';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useClassNamePrefix, useDeprecationMessage, useStyleProps } from '../../hooks';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderAttachment } from './useFileUploaderAttachment';
 import AttachmentImagePreview from './AttachmentImagePreview';
@@ -87,7 +87,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
         <Icon name={iconName} aria-hidden="true" />
       )}
       <span className={classProps.attachment.name}>
-        <span className="text-truncate">{label}</span>
+        <span className={useClassNamePrefix('text-truncate')}>{label}</span>
       </span>
       {onEdit && (
         <span className={classProps.attachment.slot}>

@@ -1,10 +1,11 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
-import { SpiritBreadcrumbsProps } from '../../types';
+import React, { ElementType } from 'react';
+import { useClassNamePrefix } from '../../hooks';
 import { useStyleProps } from '../../hooks/styleProps';
+import { SpiritBreadcrumbsProps } from '../../types';
 import { Icon } from '../Icon';
 import { Link } from '../Link';
+import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 
 const defaultProps = {
   items: [],
@@ -14,6 +15,10 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
   const { children, elementType: ElementTag = 'nav', goBackTitle, items, ...restProps } = props;
   const { classProps, props: modifiedProps } = useBreadcrumbsStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+
+  const displayTabletNoneClassName = useClassNamePrefix('d-tablet-none');
+  const displayNoneClassName = useClassNamePrefix('d-none');
+  const displayTabletFlexClassName = useClassNamePrefix('d-tablet-flex');
 
   const isLast = (index: number, itemsCount: number) => {
     return index === itemsCount - 1;
@@ -31,14 +36,14 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
           items?.map((item, index) => (
             <React.Fragment key={`BreadcrumbsItem_${item.title}`}>
               {index === items.length - 2 && goBackTitle && (
-                <li className="d-tablet-none">
+                <li className={displayTabletNoneClassName}>
                   <Icon name="chevron-left" />
                   <Link href={item.url} color="primary" isUnderlined>
                     {goBackTitle}
                   </Link>
                 </li>
               )}
-              <li className="d-none d-tablet-flex">
+              <li className={classNames(displayNoneClassName, displayTabletFlexClassName)}>
                 {index !== 0 && <Icon name="chevron-right" />}
                 <Link
                   href={item.url}
