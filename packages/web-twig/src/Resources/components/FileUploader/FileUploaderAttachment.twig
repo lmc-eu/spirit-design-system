@@ -12,7 +12,9 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'FileUploaderAttachment' -%}
 {%- set _imageClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__image' -%}
 {%- set _nameClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__name' -%}
-{%- set _removeClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__action' -%}
+{%- set _actionClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__action' -%}
+{%- set _slotClassName = _spiritClassPrefix ~ 'FileUploaderAttachment__slot' -%}
+{%- set _textTruncateClassName = _spiritClassPrefix ~ 'text-truncate' -%}
 
 {# Attributes #}
 {%- set _dataImagePreviewAttr = _generateImagePreview ? 'data-spirit-imagePreview="true"' : null -%}
@@ -38,13 +40,13 @@
         <Icon name="{{ _iconName }}" isReusable={ false } />
     {% endif %}
     <span class="{{ _nameClassName }}">
-        <span class="text-truncate" data-spirit-populate-field="name">
+        <span class="{{ _textTruncateClassName }}" data-spirit-populate-field="name">
             {{- _fileName -}}
         </span>
     </span>
     {% if _onEdit %}
-        <span class="FileUploaderAttachment__slot">
-            <button type="button" class="FileUploaderAttachment__action" onclick="{{ _onEdit }}">
+        <span class="{{ _slotClassName }}">
+            <button type="button" class="{{ _actionClassName }}" onclick="{{ _onEdit }}">
                 <VisuallyHidden>{{ _editText }}</VisuallyHidden>
                 <Icon name="edit" isReusable={ false } />
             </button>
@@ -52,7 +54,7 @@
     {% endif %}
     <button
         type="button"
-        class="{{ _removeClassName }}"
+        class="{{ _actionClassName }}"
         data-spirit-populate-field="button"
     >
         <VisuallyHidden>{{ _removeText }}</VisuallyHidden>
