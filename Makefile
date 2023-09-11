@@ -70,6 +70,9 @@ lint: ## Lints all packages
 test: ## Run tests in all packages
 	$(PKG_MANAGER) test
 
+test-e2e: ## Run End-to-End tests
+	./bin/make/e2e.sh
+
 types: ## Check types in all packages
 	$(PKG_MANAGER) types
 

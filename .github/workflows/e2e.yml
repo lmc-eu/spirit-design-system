@@ -7,7 +7,9 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    container:
+      image: mcr.microsoft.com/playwright:v1.38.0-jammy
     timeout-minutes: 60
 
     steps:
@@ -23,11 +25,8 @@ jobs:
         with:
           useRollingCache: true
 
-      - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
-
       - name: Run Playwright tests
-        run: yarn playwright test
+        run: HOME=/root yarn playwright test
 
       - uses: actions/upload-artifact@v3
         if: always()
