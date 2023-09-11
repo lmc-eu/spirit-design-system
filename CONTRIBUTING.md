@@ -8,6 +8,7 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 - [Commit Conventions](#commit-conventions)
 - [Code style](#code-style)
 - [Documenting the Components](#documenting-the-components)
+- [Testing](#testing)
 - [Publishing](#publishing)
 
 ## General usage
@@ -161,6 +162,43 @@ This project uses Prettier for code formatting. You can run `make format` to for
       - `Description` — the description of the prop, e.g. `Title of the accordion`
    3. The props MUST be sorted alphabetically by their name.
 
+## Testing
+
+Each package contains a script called `test`.
+Using this you can test entire package and verify that all parts of the package are in good shape and all rules are met.
+
+Testing script includes:
+
+- linting using [ESlint][eslint]
+- checking formatting using [Prettier][prettier]
+- checking types using [Typescript][typescript] compiler
+- running unit test using [Jest][jest]
+
+### Unit testing
+
+You can run unit testing via `test:unit` scripts.
+For all available scripts see the package's `package.json` file.
+
+### Visual regression testing
+
+**Prerequisites:** [Docker][docker] 🐳
+
+You can run visual regression testing via `Makefile` in the project root.
+Using `make test-e2e` you will execute docker command that starts [Playwright][playwright] in containerized environment.
+
+👉 Visual snapshots are generated based on platform, so we need to use same platform locally and on CI (GitHub Actions).
+
+⚠️ Version number of the [Playwright][playwright] dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional [Playwright][playwright] dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
+
+⚠️ Visual regression testing currently targets only deploys on Netlify.
+We are investigating how we should handle visual testing and several paths like
+
+- running tests against localhost
+- running tests against Netlify preview branches
+- …
+
+So the visual tests do not provide full coverage now.
+
 ## Publishing
 
 This project uses GitHub Actions to publish the packages automatically to npm. New packages are published after the new tag is pushed to the main branch. PR can be merged only by the appropriate group of maintainers.
@@ -180,3 +218,9 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
 [packages]: packages/
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
+[eslint]: https://eslint.org/
+[prettier]: https://prettier.io/
+[typescript]: https://www.typescriptlang.org/
+[jest]: https://jestjs.io/
+[docker]: https://www.docker.com/
+[playwright]: https://playwright.dev/
