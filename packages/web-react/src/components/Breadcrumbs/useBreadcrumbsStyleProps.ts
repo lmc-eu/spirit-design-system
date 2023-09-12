@@ -1,14 +1,15 @@
 import { useClassNamePrefix } from '../../hooks/useClassNamePrefix';
-import { BreadcrumbsProps } from '../../types';
+import { BreadcrumbsStyleProps } from '../../types';
 
 export interface BreadcrumbsStyles {
   /** className props */
   classProps: string;
   /** props to be passed to the element */
-  props: BreadcrumbsProps;
+  props: BreadcrumbsStyleProps;
 }
 
-export function useBreadcrumbsStyleProps(props: BreadcrumbsProps): BreadcrumbsStyles {
+export function useBreadcrumbsStyleProps<P extends BreadcrumbsStyleProps>(props: P): BreadcrumbsStyles {
+  const { isGoBackOnly, ...restProps } = props;
   const breadcrumbsClass = useClassNamePrefix('Breadcrumbs');
 
   return {
