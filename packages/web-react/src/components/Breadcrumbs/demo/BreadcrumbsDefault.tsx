@@ -21,7 +21,7 @@ const BreadcrumbsDefault = () => {
     },
   ];
 
-  return <Breadcrumbs items={items} goBackTitle="Custom back link translation" />;
+  return <Breadcrumbs items={items} goBackTitle="Back" />;
 };
 
 export default BreadcrumbsDefault;

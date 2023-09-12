@@ -1,10 +1,14 @@
 # Breadcrumbs
 
+## Usage
+
+### Basic
+
 ```jsx
 import { Breadcrumbs } from '@lmc-eu/spirit-web-react/components';
 ```
 
-Define breadcrumb items as array type of `BreadcrumbsItem[]`.
+Define breadcrumb items as an array type of `BreadcrumbsItem[]`.
 
 ```jsx
 const items = [
@@ -27,17 +31,15 @@ const items = [
 ];
 ```
 
-## Basic example usage
-
 Simply pass the breadcrumbs array as a prop:
 
 ```jsx
 <Breadcrumbs items={items} goBackTitle="Custom back link translation" />
 ```
 
-## Example of custom usage
+### Custom usage
 
-Use custom content for ordered list as component's children instead of passing breadcrumb items array via props:
+Use custom content for the ordered list as component's children instead of passing breadcrumb items array via props:
 
 ```jsx
 <Breadcrumbs>
@@ -51,15 +53,42 @@ Use custom content for ordered list as component's children instead of passing b
 </Breadcrumbs>
 ```
 
-## API
+### API
 
-| Name               | Type                | Default | Required | Description                                                                                                                                                                                 |
-| ------------------ | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`         | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                       |
-| `elementType`      | `ElementType`       | `nav`   | ✕        | Type of element used as wrapper                                                                                                                                                             |
-| `goBackTitle`      | `string`            | —       | ✔        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. |
-| `items`            | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                       |
-| `UNSAFE_className` | `string`            | —       | ✕        | Wrapper custom class name                                                                                                                                                                   |
-| `UNSAFE_style`     | `CSSProperties`     | —       | ✕        | Wrapper custom style                                                                                                                                                                        |
+| Name               | Type                | Default | Required | Description                                                                                                                                                                                      |
+| ------------------ | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `children`         | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                            |
+| `elementType`      | `ElementType`       | `nav`   | ✕        | Type of element used as wrapper                                                                                                                                                                  |
+| `goBackTitle`      | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, the back link is to be created within children property. |
+| `items`            | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                            |
+| `UNSAFE_className` | `string`            | —       | ✕        | Wrapper custom class name                                                                                                                                                                        |
+| `UNSAFE_style`     | `CSSProperties`     | —       | ✕        | Wrapper custom style                                                                                                                                                                             |
+
+## BreadcrumbsItem
+
+Use the `BreadcrumbsItem` component for the ordered list as the component's children instead of passing the breadcrumb items array via props:
+
+```jsx
+<Breadcrumbs>
+  {items.map((item, index) => (
+    <BreadcrumbsItem key={`BreadcrumbsItem_${item.title}`} isCurrent={items.length === index - 1} href={item.url}>
+      {item.title}
+    </BreadcrumbsItem>
+  ))}
+</Breadcrumbs>
+```
+
+### API
+
+| Name               | Type            | Default         | Required | Description                                 |
+| ------------------ | --------------- | --------------- | -------- | ------------------------------------------- |
+| `children`         | `ReactNode`     | —               | ✕        | Children node                               |
+| `href`             | `string`        | —               | ✔        | URL                                         |
+| `iconNameEnd`      | `string`        | `chevron-right` | ✕        | Icon name at the end of the item            |
+| `iconNameStart`    | `string`        | `chevron-left`  | ✕        | Icon name at the start of the item          |
+| `isCurrent`        | `boolean`       | `false`         | ✕        | Whether is the item the current page        |
+| `isGoBackOnly`     | `boolean`       | `false`         | ✕        | Whether should be displayed in go back mode |
+| `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                   |
+| `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                        |
 
 For detailed information see [Breadcrumbs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md) component
