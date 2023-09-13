@@ -1,26 +1,14 @@
 import React from 'react';
 import Heading from '../Heading';
 
-// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Story = (props: unknown) => (
+const HeadingSizes = () => (
   <>
-    <Heading elementType="p" size="xlarge">
-      Heading XLarge Text
-    </Heading>
-    <Heading elementType="p" size="large">
-      Heading Large Text
-    </Heading>
-    <Heading elementType="p" size="medium">
-      Heading Medium Text
-    </Heading>
-    <Heading elementType="p" size="small">
-      Heading Small Text
-    </Heading>
-    <Heading elementType="p" size="xsmall">
-      Heading XSmall Text
-    </Heading>
+    <Heading size="xsmall">Heading xsmall</Heading>
+    <Heading size="small">Heading small</Heading>
+    <Heading size="medium">Heading medium</Heading>
+    <Heading size="large">Heading large</Heading>
+    <Heading size="xlarge">Heading xlarge</Heading>
   </>
 );
 
-export default Story;
+export default HeadingSizes;
