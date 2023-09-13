@@ -8,13 +8,10 @@
 {# Class names #}
 {%- set _rootClassName = 'docs-Section' -%}
 {%- set _headingClassName = 'docs-Heading' -%}
-{%- set _stackClassName = 'docs-Stack' -%}
-{%- set _stackAlignmentClassName = 'docs-Stack--' ~ _stackAlignment -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _rootClassNames = [_rootClassName, _styleProps.className] -%}
-{%- set _stackClassNames = [_stackClassName, _stackAlignmentClassName] -%}
 
 {%- set _renderedContent %}
     {% block content %}{% endblock %}
@@ -32,9 +29,9 @@
         {% endif %}
     </h2>
     {% if _hasStack %}
-        <div {{ classProp(_stackClassNames) }}>
+        <DocsStack stackAlignment={{ _stackAlignment }}>
             {{ _renderedContent }}
-        </div>
+        </DocsStack>
     {% else %}
         {{ _renderedContent }}
     {% endif %}
