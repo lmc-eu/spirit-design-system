@@ -10,9 +10,10 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <dialog
-    {{ mainProps(props) }}
+    {{ mainProps(_mainPropsWithoutId) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     id="{{ _id }}"
