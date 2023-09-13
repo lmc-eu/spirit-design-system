@@ -5,10 +5,15 @@ import handlebars from 'vite-plugin-handlebars';
 import react from '@vitejs/plugin-react';
 import { getNestedDirs } from '../../scripts/build';
 
+const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden'];
+
 export default defineConfig({
   plugins: [
     react(),
     handlebars({
+      helpers: {
+        eq: (variable, value) => variable === value,
+      },
       partialDirectory: resolve(__dirname, '../../partials'),
       runtimeOptions: {
         data: {
@@ -16,6 +21,7 @@ export default defineConfig({
           components: [
             ...readdirSync('src/components', { withFileTypes: true })
               .filter((item) => item.isDirectory())
+              .filter((item) => !hiddenDemoComponents.includes(item.name))
               .map((item) => item.name),
           ],
         },

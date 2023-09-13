@@ -12,6 +12,7 @@
     "../src/**/stories/**/*",
     "../src/**/demo/**/*",
     "../src/**/*.demo.*",
-    "../src/**/*.html"
+    "../src/**/*.html",
+    "../src/icons/**/*"
   ]
 }
