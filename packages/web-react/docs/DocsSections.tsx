@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Tag } from '../src/components';
+import DocsStack from './DocsStack';
 
 interface DocsSectionProps {
   children: ReactNode;
@@ -19,7 +20,7 @@ const DocsSection = ({ children, hasStack = true, stackAlignment = 'start', titl
         </Tag>
       )}
     </h2>
-    {hasStack ? <div className={`docs-Stack docs-Stack--${stackAlignment}`}>{children}</div> : children}
+    {hasStack ? <DocsStack stackAlignment={stackAlignment}>{children}</DocsStack> : children}
   </section>
 );
 
