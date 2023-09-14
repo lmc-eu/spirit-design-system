@@ -6,9 +6,6 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Breadcrumbs' -%}
-{%- set _displayNoneClassName = _spiritClassPrefix ~ 'd-none' -%}
-{%- set _displayTabletNoneClassName = _spiritClassPrefix ~ 'd-tablet-none' -%}
-{%- set _displayTabletFlexClassName = _spiritClassPrefix ~ 'd-tablet-flex' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -25,24 +22,9 @@
         <ol>
             {% for item in _items %}
                 {% if loop.index is same as(_items|length - 1) and _goBackTitle is not same as('') %}
-                    <li class="{{ _displayTabletNoneClassName }}">
-                        <Icon name="chevron-left" />
-                        <Link href="{{ item.url }}" color="primary" isUnderlined>{{ _goBackTitle }}</Link>
-                    </li>
+                    <BreadcrumbsItem href={ item.url } isGoBackOnly>{{ _goBackTitle }}</BreadcrumbsItem>
                 {% endif %}
-                <li {{ classProp([_displayNoneClassName, _displayTabletFlexClassName]) }}>
-                    {% if loop.index0 is not same as(0) %}
-                        <Icon name="chevron-right" />
-                    {% endif %}
-                    <Link
-                        href="{{ item.url }}"
-                        color="{{ loop.last ? 'secondary' : 'primary' }}"
-                        isUnderlined="{{ loop.last is not same as(true) }}"
-                        aria-current="{{ loop.last ? 'page' : 'false' }}"
-                    >
-                        {{ item.title }}
-                    </Link>
-                </li>
+                <BreadcrumbsItem isCurrent={ loop.last } href={ item.url }>{{ item.title }}</BreadcrumbsItem>
             {% endfor %}
         </ol>
     {%- else -%}

@@ -1,6 +1,6 @@
 # Breadcrumbs
 
-This is Twig implementation of the [Breadcrumbs] component.
+This is the Twig implementation of the [Breadcrumbs] component.
 
 Basic example usage:
 
@@ -25,8 +25,8 @@ Basic example usage:
 ] %}
 ```
 
-```html
-<Breadcrumbs items="{{ items }}" />
+```twig
+<Breadcrumbs items={ items } />
 ```
 
 Without lexer:
@@ -88,18 +88,48 @@ Without lexer:
 {% endembed %}
 ```
 
-## API
+## Breadcrumbs
 
 The Breadcrumbs component works with breadcrumb items passed from parent and renders the content by itself or its
 content can be overridden by any custom block content.
 
-## Breadcrumbs
+### API
 
 | Name          | Type     | Default | Required | Description                                                                                                                                                                                                                                                                       |
 | ------------- | -------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                                                                                                                |
 | `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. [**Optional DEPRECATED**][Deprecated] Will be **required** in the next major version. |
 | `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                                             |
+
+You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+
+## BreadcrumbsItem
+
+Use the `BreadcrumbsItem` component for the ordered list as the component's children instead of passing the breadcrumb items array via props:
+
+```twig
+<Breadcrumbs>
+  {% for item in items %}
+    <BreadcrumbsItem isCurrent={ loop.last } href={ item.url }>
+        {{ item.title }}
+    </BreadcrumbsItem>
+  {% endfor %}
+</Breadcrumbs>
+```
+
+### API
+
+| Name               | Type            | Default         | Required | Description                                 |
+| ------------------ | --------------- | --------------- | -------- | ------------------------------------------- |
+| `href`             | `string`        | —               | ✔        | URL                                         |
+| `iconNameEnd`      | `string`        | `chevron-right` | ✕        | Icon name at the end of the item            |
+| `iconNameStart`    | `string`        | `chevron-left`  | ✕        | Icon name at the start of the item          |
+| `isCurrent`        | `boolean`       | `false`         | ✕        | Whether is the item the current page        |
+| `isGoBackOnly`     | `boolean`       | `false`         | ✕        | Whether should be displayed in go back mode |
+| `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                   |
+| `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                        |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
