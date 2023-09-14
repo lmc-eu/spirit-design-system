@@ -10,9 +10,8 @@ Modal is a composition of several subcomponents:
 
 ## Modal
 
-Modal establishes the layer with backdrop. Under the hood it uses the
-[`<dialog>` element][mdn-dialog] which provides several accessibility
-advantages.
+Modal establishes the top layer with a backdrop. Under the hood it uses the [`<dialog>` element][mdn-dialog] which
+provides several accessibility advantages.
 
 ```html
 <dialog id="example_1" class="Modal" aria-labelledby="example_1_title">
@@ -20,10 +19,10 @@ advantages.
 </dialog>
 ```
 
-👉 Please note the `aria-labelledby` attribute is linked to the title inside
-[ModalHeader](#modalheader) and provides an accessible name for the dialog.
+👉 Please note the `aria-labelledby` attribute is linked to the title inside [ModalHeader](#modalheader) and provides an
+accessible name for the dialog.
 
-### Custom Preferred Height
+### Custom Height
 
 By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
 You can override this behavior by setting a custom preferred height using a custom property:
@@ -44,6 +43,8 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 </dialog>
 ```
 
+👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
+
 ### Custom Max Height
 
 The default maximum height of Modal is:
@@ -63,8 +64,7 @@ You can use the custom property `--modal-max-height-tablet` to override the max 
 
 ## ModalDialog
 
-ModalDialog is the actual dialog window, a place for the header, body, and
-footer of the dialog.
+ModalDialog is the actual dialog window, a place for the header, body, and footer of the dialog.
 
 ```html
 <article class="ModalDialog">
@@ -76,23 +76,27 @@ footer of the dialog.
 
 ### Forms in Modal
 
-Modal can also contain interactive content like forms. For such cases, you may
-find convenient to use the `<form>` element with the attribute
-`method="dialog"`. Buttons with `type="submit"` then
-[handle both][mdn-dialog-form] saving the state of the form and closing the
-dialog.
+Modal can also contain interactive content like forms. For such cases, you may find it convenient to use the `<form>`
+element with the attribute `method="dialog"`. Buttons with `type="submit"` then [handle both][mdn-dialog-form] saving
+the state of the form and closing the dialog.
 
 ```html
 <form class="ModalDialog" method="dialog">
   <!-- … -->
+  <button type="submit" class="Button Button--primary Button--medium">Save</button>
 </form>
 ```
 
 ### Expand on Mobile Screens
 
-We recommend to expand the dialog on mobile screens using the
-`ModalDialog--expandOnMobile` modifier class. If you omit the class, the dialog
-shrinks to fit the height of its content (if smaller than viewport).
+We recommend expanding the dialog on mobile screens using the `ModalDialog--expandOnMobile` modifier class. If you omit
+the class, the dialog shrinks to fit the height of its content (if smaller than the viewport).
+
+```html
+<article class="ModalDialog ModalDialog--expandOnMobile">
+  <!-- … -->
+</article>
+```
 
 ## ModalHeader
 
@@ -117,8 +121,10 @@ ModalHeader contains the title of the dialog and the close button.
 </div>
 ```
 
-👉 Even in cases you don't need the title to be visible you should provide an
-accessible name for the dialog, e.g. using the `aria-label` attribute:
+### Hidden Title
+
+Even in cases you don't need the title to be visible you should provide an accessible name for the dialog, e.g. using
+the `aria-label` attribute on the `<dialog>` element:
 
 ```html
 <dialog id="example_1" class="Modal" aria-label="Accessible Modal Title">
@@ -142,12 +148,11 @@ ModalBody holds the actual content of the Modal.
 
 ## ModalFooter
 
-ModalFooter is the place for actions represented by the Button component.
-While there always must be a primary Button, secondary actions are optional.
+ModalFooter is the place for actions represented by the Button component. While there always must be a primary Button,
+secondary actions are optional.
 
-👉 Please note the actions are _visually_ ordered from right to left from the
-tablet breakpoint up. However, the _actual_ order in code is followed when users
-tab over the interface.
+👉 Please note the actions are _visually_ ordered from right to left from the tablet breakpoint up. However, the
+_actual_ order in code is followed when users tab over the interface.
 
 ```html
 <div class="ModalFooter ModalFooter--right">
@@ -174,7 +179,7 @@ tab over the interface.
 
 ### Footer Description
 
-Optionally, you can add a description into the footer:
+Optionally, you can add a description to the footer:
 
 ```html
 <div class="ModalFooter ModalFooter--right">
@@ -187,9 +192,8 @@ Optionally, you can add a description into the footer:
 
 ### Footer Alignment
 
-ModalFooter can be aligned to the right (default), center, or left.
-These values come from the [dictionary][dictionary-alignment].
-Using a corresponding modifier class:
+ModalFooter can be aligned to the right (default), center, or left. These values come from the
+[dictionary][dictionary-alignment]. Using a corresponding modifier class will align the footer actions accordingly:
 
 - `ModalFooter--right` (default)
 - `ModalFooter--center`
@@ -214,27 +218,25 @@ Use our JavaScript plugin to open your Modal, e.g.:
 
 ## Scrolling Long Content
 
-When Modals become too long for the user's viewport or device, they scroll independent of the page itself. By default,
+When Modals become too long for the user's viewport or device, they scroll independently of the page itself. By default,
 ModalBody has `overflow-y: auto` applied to it, so it scrolls vertically.
+
+### Scrolling with ScrollView
 
 Alternatively, you can wrap the ModalBody content in a [ScrollView][scroll-view] to take over the responsibility for
 scrolling, e.g.:
 
 ```html
-<article class="ModalDialog">
-  <!-- ModalHeader -->
-  <div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
-    <div class="ScrollView__viewport" data-spirit-element="viewport">
-      <div class="ScrollView__content" data-spirit-element="content">
-        <div class="ModalBody">
-          <!-- … -->
-        </div>
+<div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
+  <div class="ScrollView__viewport" data-spirit-element="viewport">
+    <div class="ScrollView__content" data-spirit-element="content">
+      <div class="ModalBody">
+        <!-- … -->
       </div>
     </div>
-    <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
   </div>
-  <!-- ModalFooter -->
-</article>
+  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
+</div>
 ```
 
 ## Full Example
@@ -331,23 +333,15 @@ Both trigger and close buttons use `data` attributes to open and close the Modal
 | `data-spirit-target`  | `string` | —       | ✔        | Target selector            |
 | `data-spirit-toggle`  | `string` | `modal` | ✕        | Iterable selector          |
 
-## State Classes
-
-If there is more content that could fit the screen, ModalBody provides
-the following state classes:
-
-- `.is-scrolled-at-top` if there is content overflowing at the top,
-- `.is-scrolled-at-bottom` if there is content overflowing at the bottom.
-
 ## JavaScript Plugin
 
-For full functionality you need to provide JavaScript which will handle toggling of the Modal dialog component.
+For full functionality you need to provide JavaScript which will handle the toggling of the Modal dialog component.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-Please consult [main package README][web-readme] for how to include JavaScript plugins.
+Please consult the [main package README][web-readme] for how to include JavaScript plugins.
 
 Or feel free to write controlling scripts yourself.
 
