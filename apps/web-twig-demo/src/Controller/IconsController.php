@@ -34,6 +34,13 @@ class IconsController extends AbstractController
         // sort them alphabetically
         sort($icons);
 
+        // remove unwanted 'sprite' from the array
+        $filterCallback = function ($value) {
+            return $value !== 'sprite';
+        };
+
+        $icons = array_filter($icons, $filterCallback);
+
         return $icons;
     }
 }
