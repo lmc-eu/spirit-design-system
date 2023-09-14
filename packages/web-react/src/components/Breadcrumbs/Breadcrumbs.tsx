@@ -22,7 +22,7 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
     <ElementTag
       {...otherProps}
       {...styleProps}
-      className={classNames(classProps, styleProps.className)}
+      className={classNames(classProps.root, styleProps.className)}
       aria-label="Breadcrumb"
     >
       <ol>

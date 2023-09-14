@@ -1,0 +1,38 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _children = block('content') -%}
+{%- set _href = props.href -%}
+{%- set _iconNameEnd = props.iconNameEnd | default('chevron-right') -%}
+{%- set _iconNameStart = props.iconNameStart | default('chevron-left') -%}
+{%- set _isCurrent = props.isCurrent | default(false) -%}
+{%- set _isGoBackOnly = props.isGoBackOnly | default(false) -%}
+
+{# Class names #}
+{%- set _displayNoneClassName = _spiritClassPrefix ~ 'd-none' -%}
+{%- set _displayTabletNoneClassName = _spiritClassPrefix ~ 'd-tablet-none' -%}
+{%- set _displayTabletFlexClassName = _spiritClassPrefix ~ 'd-tablet-flex' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{% if _isGoBackOnly is not same as(true) %}
+    {%- set _classNames = [ _styleProps.className, _displayNoneClassName, _displayTabletFlexClassName ] -%}
+{% else %}
+    {%- set _classNames = [ _styleProps.className, _displayTabletNoneClassName ] -%}
+{% endif %}
+
+<li {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+    {% if _isGoBackOnly and _iconNameStart %}
+        <Icon name={ _iconNameStart } />
+    {% endif %}
+    <Link
+        href={ _href }
+        color="{{ _isCurrent ? 'secondary' : 'primary' }}"
+        isUnderlined="{{ _isCurrent is not same as(true) }}"
+        aria-current="{{ _isCurrent ? 'page' : 'false' }}"
+    >
+        {{ _children }}
+    </Link>
+    {% if _isCurrent is not same as(true) and _isGoBackOnly is not same as(true) and _iconNameEnd %}
+        <Icon name={ _iconNameEnd } />
+    {% endif %}
+</li>
