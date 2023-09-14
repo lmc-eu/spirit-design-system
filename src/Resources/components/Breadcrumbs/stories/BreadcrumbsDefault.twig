@@ -1,20 +1,20 @@
 {% set items = [
-  {
-    title: 'Root',
-    url: '#rootUrl',
-  },
-  {
-    title: 'Category',
-    url: '#categoryUrl',
-  },
-  {
-    title: 'Subcategory',
-    url: '#subcategoryUrl',
-  },
-  {
-    title: 'Current page',
-    url: '#currentUrl',
-  },
+    {
+        title: 'Root',
+        url: '#rootUrl',
+    },
+    {
+        title: 'Category',
+        url: '#categoryUrl',
+    },
+    {
+        title: 'Subcategory',
+        url: '#subcategoryUrl',
+    },
+    {
+        title: 'Current page',
+        url: '#currentUrl',
+    },
 ] %}
 
-<Breadcrumbs items={{ items }} />
+<Breadcrumbs goBackTitle="Back" items={{ items }} />
