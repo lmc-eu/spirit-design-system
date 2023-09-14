@@ -2,22 +2,20 @@
 
 {% block content %}
 
-    <section class="docs-Section">
+    <DocsSection title="Icons">
 
-        <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Icons</h2>
-
-        <ul class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 list-unstyled text-center my-1000">
+        <Grid elementType="ul" cols={2} tablet={4} desktop={6} UNSAFE_className="text-center my-1000 list-unstyled">
 
             {% for icon in icons %}
                 <li class="mb-600">
                     <Icon name={{ icon }} />
 
-                    <h3 class="mt-500">{{ icon }}</h3>
+                    <Text UNSAFE_className="mt-500" emphasis="bold">{{ icon }}</Text>
                 </li>
             {% endfor %}
 
-        </ul>
+        </Grid>
 
-    </section>
+    </DocsSection>
 
 {% endblock %}
