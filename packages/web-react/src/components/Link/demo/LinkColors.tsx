@@ -1,26 +1,23 @@
 import React from 'react';
+import DocsBox from '../../../../docs/DocsBox';
 import Link from '../Link';
 
-// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Story = (props: unknown) => (
+const LinkColors = () => (
   <>
-    <p>
-      <Link href="/" color="primary">
-        Primary Link
+    <Link href="#" color="primary">
+      Link primary
+    </Link>
+
+    <Link href="#" color="secondary">
+      Link secondary
+    </Link>
+
+    <DocsBox>
+      <Link href="#" color="inverted">
+        Link inverted
       </Link>
-    </p>
-    <p>
-      <Link href="/" color="secondary">
-        Secondary Link
-      </Link>
-    </p>
-    <p className="docs-Box">
-      <Link href="/" color="inverted">
-        Inverted Link
-      </Link>
-    </p>
+    </DocsBox>
   </>
 );
 
-export default Story;
+export default LinkColors;
