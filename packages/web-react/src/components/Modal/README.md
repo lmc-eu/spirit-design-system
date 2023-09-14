@@ -1,51 +1,23 @@
 # Modal
 
-```jsx
-import { Modal, ModalDialog, ModalBody, ModalHeader, ModalFooter, Button } from '@lmc-eu/spirit-web-react/components';
-```
+This is the React implementation of the [Modal] component.
 
-```jsx
-const [isOpen, setOpen] = useState(false);
+Modal is a composition of several subcomponents:
 
-const toggleModal = () => setOpen(!isOpen);
-
-const handleClose = () => {
-  setOpen(false);
-};
-
-// Trigger
-<Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
-  {isOpen ? 'Close' : 'Open'} Modal
-</Button>
-
-// Modal
-<Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
-  <ModalDialog>
-    <ModalHeader>Modal Title</ModalHeader>
-    <ModalBody>Modal Body</ModalBody>
-    <ModalFooter description="ModalFooter description">
-      <Button color="primary" onClick={handleClose}>
-        Confirm
-      </Button>
-      <Button color="tertiary" onClick={handleClose}>
-        Cancel
-      </Button>
-    </ModalFooter>
-  </ModalDialog>
-</Modal>
-```
-
-## An example using a form as a ModalDialog element
-
-```jsx
-<Modal id="ModalExample">
-  <ModalDialog elementType="form" name="ModalFormExample">
-    ...
-  </ModalDialog>
-</Modal>
-```
+- [Modal](#modal)
+  - [ModalDialog](#modaldialog)
+    - [ModalHeader](#modalheader)
+    - [ModalBody](#modalfooter)
+    - [ModalFooter](#modalfooter)
 
 ## Modal
+
+Modal establishes the top layer with a backdrop. Under the hood it uses the [`<dialog>` element][mdn-dialog] which
+provides several accessibility advantages.
+
+```jsx
+<Modal id="modal-example">…</Modal>
+```
 
 ### API
 
@@ -58,37 +30,104 @@ const handleClose = () => {
 | `UNSAFE_className` | `string`                                       | —       | ✕        | Modal custom class name   |
 | `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Modal custom style        |
 
-The rest of the properties are created from the default `<dialog>` element. [More about the element][DialogElementDocs]
+Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
 
 ## ModalDialog
 
+ModalDialog is the actual dialog window, a place for the header, body, and footer of the dialog.
+
+```jsx
+<ModalDialog>…</ModalDialog>
+```
+
+### Forms in Modal
+
+Modal can also contain interactive content like forms. For such cases, you may find it convenient to use the `<form>`
+element with the attribute `method="dialog"`. Buttons with `type="submit"` then [handle both][mdn-dialog-form] saving
+the state of the form and closing the dialog.
+
+```jsx
+<ModalDialog elementType="form" method="dialog" name="modal-example">
+  …<Button type="submit">Save</Button>
+</ModalDialog>
+```
+
+### Expand on Mobile Screens
+
+We recommend expanding the dialog on mobile screens using the `isExpandedOnMobile` option. If you omit the option, the
+dialog shrinks to fit the height of its content (if smaller than the viewport).
+
+```jsx
+<ModalDialog isExpandedOnMobile>…</ModalDialog>
+```
+
+### Custom Height
+
+By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
+You can override this behavior by setting a preferred height using the following options:
+
+- `preferredHeightOnMobile` for mobile screens, and
+- `preferredHeightFromTabletUp` for tablet screens and up.
+
+This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+
+```jsx
+<ModalDialog preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
+  …
+</ModalDialog>
+```
+
+👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
+
+### Custom Max Height
+
+The default maximum height of Modal is:
+
+- viewport height minus 1100 spacing on mobile screens, and
+- 600 px on tablet screens and up (shrunk if necessary).
+
+You can use the `maxHeightFromTabletUp` option to override the max height on tablet screens and up:
+
+```jsx
+<ModalDialog maxHeightFromTabletUp="700px">…</ModalDialog>
+```
+
+👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
+
 ### API
 
-| Name                 | Type                  | Default   | Required | Description                                          |
-| -------------------- | --------------------- | --------- | -------- | ---------------------------------------------------- |
-| `children`           | `ReactNode`           | —         | ✕        | Children node                                        |
-| `elementType`        | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                             |
-| `UNSAFE_className`   | `string`              | —         | ✕        | ModalDialog custom class name                        |
-| `UNSAFE_style`       | `CSSProperties`       | —         | ✕        | ModalDialog custom style                             |
-| `isExpandedOnMobile` | `bool`                | —         | ✕        | ModalDialog shrinks to fit the height of its content |
+| Name                          | Type                  | Default   | Required | Description                                                                      |
+| ----------------------------- | --------------------- | --------- | -------- | -------------------------------------------------------------------------------- |
+| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                    |
+| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                         |
+| `isExpandedOnMobile`          | `bool`                | —         | ✕        | ModalDialog shrinks to fit the height of its content                             |
+| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                            |
+| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value. |
+| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.            |
+| `UNSAFE_className`            | `string`              | —         | ✕        | ModalDialog custom class name                                                    |
+| `UNSAFE_style`                | `CSSProperties`       | —         | ✕        | ModalDialog custom style                                                         |
 
-The rest of the properties are formed from the selected type of element. Documentation for [Article][ArticleElementDocs], [Form][FormElementDocs].
+Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
 ## ModalHeader
 
+ModalHeader contains the title of the dialog and the close button.
+
+```jsx
+<ModalHeader>Modal Title</ModalHeader>
+```
+
 ### Hidden Title
 
-Even in cases you don't need the title to be visible you should provide an
+Even in cases where you don't need the title to be visible you should provide an
 accessible name for the dialog, e.g. using the `aria-label` attribute on
 `<Modal>` component:
 
-```twig
+```jsx
 <Modal id="modal-example" aria-label="Accessible Modal Title">
   <ModalDialog>
     <ModalHeader />
-    <ModalBody>
-      …
-    </ModalBody>
+    <ModalBody>…</ModalBody>
   </ModalDialog>
 </Modal>
 ```
@@ -102,9 +141,19 @@ accessible name for the dialog, e.g. using the `aria-label` attribute on
 | `UNSAFE_className` | `string`        | —       | ✕        | ModalHeader custom class name |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalHeader custom style      |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
-
 ## ModalBody
+
+ModalBody holds the actual content of the Modal.
+
+```jsx
+<ModalBody>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis provident
+    unde. Eveniet, iste, molestiae?
+  </p>
+</ModalBody>
+```
 
 ### API
 
@@ -114,9 +163,41 @@ The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElem
 | `UNSAFE_className` | `string`        | —       | ✕        | ModalBody custom class name |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalBody custom style      |
 
-The rest of the properties are created from the default `<div>` element. [Docs][DivElementDocs]
-
 ## ModalFooter
+
+ModalFooter is the place for actions represented by the Button component. While there always must be a primary Button,
+secondary actions are optional.
+
+👉 Please note the actions are _visually_ ordered from right to left from the tablet breakpoint up. However, the
+_actual_ order in code is followed when users tab over the interface.
+
+```jsx
+<ModalFooter>
+  <Button color="primary">Primary action</Button>
+  <Button color="secondary">Secondary action</Button>
+</ModalFooter>
+```
+
+### Footer Description
+
+Optionally, you can add a description to the footer:
+
+```jsx
+<ModalFooter description="Optional description">…</ModalFooter>
+```
+
+### Footer Alignment
+
+ModalFooter can be aligned to the right (default), center, or left. These values come from the
+[dictionary][dictionary-alignment]. Using a corresponding alignment option will align the footer actions accordingly:
+
+- `right` (default)
+- `center`
+- `left`
+
+```jsx
+<ModalFooter alignmentX="right">…</ModalFooter>
+```
 
 ### API
 
@@ -124,14 +205,29 @@ The rest of the properties are created from the default `<div>` element. [Docs][
 | ------------------ | --------------------------------------------- | ------- | -------- | ----------------------------- |
 | `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | ModalFooter alignment         |
 | `children`         | `ReactNode`                                   | —       | ✕        | Children node                 |
+| `description`      | `string`                                      | `null`  | ✕        | Optional Footer Description   |
 | `UNSAFE_className` | `string`                                      | —       | ✕        | ModalFooter custom class name |
 | `UNSAFE_style`     | `CSSProperties`                               | —       | ✕        | ModalFooter custom style      |
 
-The rest of the properties are based from type of `HTMLElement`. [Docs][HTMLElementDocs]
+## Opening the Modal
+
+Use a hook to open your Modal, e.g.:
+
+```jsx
+const [isOpen, setOpen] = useState(false);
+const toggleModal = () => setOpen(!isOpen);
+const handleClose = () => setOpen(false);
+
+<Button onClick={toggleModal} aria-controls="#modal-example" aria-expanded={isOpen}>
+  Open Modal
+</Button>;
+```
 
 ## Scrolling Long Content
 
-When Modals become too long for the user's viewport or device, they automatically scroll independent of the page itself.
+When Modals become too long for the user's viewport or device, they automatically scroll independently of the page itself.
+
+### Scrolling with ScrollView
 
 To make content overflow more obvious to users, you can wrap the `ModalBody` content in a [ScrollView][scroll-view] that
 takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
@@ -142,10 +238,55 @@ takes over the responsibility for scrolling and provides visual overflow decorat
 </ScrollView>
 ```
 
-[DialogElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-[ArticleElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
-[FormElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
-[DivElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
-[HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+## Full Example
+
+When you put it all together:
+
+```jsx
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalDialog,
+  ModalFooter,
+  ModalHeader,
+  ScrollView,
+} from '@lmc-eu/spirit-web-react/components';
+
+const [isOpen, setOpen] = useState(false);
+const toggleModal = () => setOpen(!isOpen);
+const handleClose = () => setOpen(false);
+
+<Button
+  onClick={toggleModal}
+  aria-controls="#modal-example"
+  aria-expanded={isOpen}
+>
+  Open Modal
+</Button>
+
+<Modal id="modal-example" isOpen={isOpen} onClose={handleClose}>
+  <ModalDialog>
+    <ModalHeader>Title of the Modal</ModalHeader>
+    <ScrollView overflowDecorators="both">
+      <ModalBody>Modal body</ModalBody>
+    </ScrollView>
+    <ModalFooter description="Modal footer description">
+      <Button color="primary" onClick={handleClose}>
+        Submit
+      </Button>
+      <Button color="tertiary" onClick={handleClose}>
+        Cancel
+      </Button>
+    </ModalFooter>
+  </ModalDialog>
+</Modal>
+```
+
+[modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
+[mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
+[mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+[mdn-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md
