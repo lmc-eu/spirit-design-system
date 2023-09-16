@@ -1,14 +1,12 @@
 import React from 'react';
 import Text from '../Text';
 
-// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Story = (props: unknown) => (
+const TextEmphasis = () => (
   <>
-    <Text>Body Medium Text Regular</Text>
-    <Text emphasis="bold">Body Medium Text Bold</Text>
-    <Text emphasis="italic">Body Medium Text Italic</Text>
+    <Text>Text regular</Text>
+    <Text emphasis="bold">Text bold</Text>
+    <Text emphasis="italic">Text italic</Text>
   </>
 );
 
-export default Story;
+export default TextEmphasis;
