@@ -1,20 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import ScrollView from './ScrollView';
+import ScrollViewDefault from './ScrollViewDefault';
 import ScrollViewHorizontal from './ScrollViewHorizontal';
-import ScrollViewScrollbarDisabled from './ScrollViewScrollbarDisabled';
+import ScrollViewHorizontalBreakout from './ScrollViewHorizontalBreakout';
+import ScrollViewOverflowDecorators from './ScrollViewOverflowDecorators';
+import ScrollViewHiddenScrollbar from './ScrollViewHiddenScrollbar';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <DocsSection title="Default">
-      <ScrollView {...ScrollView.args} />
+    <DocsSection title="Vertical Scrolling">
+      <ScrollViewDefault />
     </DocsSection>
-    <DocsSection title="Horizontal">
-      <ScrollViewHorizontal {...ScrollViewHorizontal.args} />
+    <DocsSection title="Horizontal Scrolling">
+      <ScrollViewHorizontal />
     </DocsSection>
-    <DocsSection title="Scrollbar Disabled">
-      <ScrollViewScrollbarDisabled {...ScrollViewScrollbarDisabled.args} />
+    <DocsSection title="Horizontal Scrolling with Container Breakout" hasStack={false}>
+      <ScrollViewHorizontalBreakout />
+    </DocsSection>
+    <DocsSection title="Overflow Decorators">
+      <ScrollViewOverflowDecorators />
+    </DocsSection>
+    <DocsSection title="Hidden Scrollbar">
+      <ScrollViewHiddenScrollbar />
     </DocsSection>
   </React.StrictMode>,
 );
