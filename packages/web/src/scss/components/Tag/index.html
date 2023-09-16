@@ -2,21 +2,23 @@
 "small" "medium" "large" "xlarge" }}
 
 <section class="docs-Section">
-  <div class="Grid Grid--cols-1 Grid--tablet--cols-3 Grid--desktop--cols-5">
-    {{#each @root.sizes as |size|}}
-    <div class="mb-700">
-      <h3 class="docs-Heading">Size {{size}}</h3>
-      {{#each @root.colors as |color|}}
-      <div class="my-600">
-        <span class="Tag Tag--{{color}} Tag--subtle Tag--{{size}}">Tag {{color}}</span>
-      </div>
-      <div class="my-600">
-        <span class="Tag Tag--{{color}} Tag--{{size}}">Tag {{color}}</span>
-      </div>
+  <h2 class="docs-Heading">Default</h2>
+  <div class="docs-Stack docs-Stack--stretch">
+    <div class="Grid Grid--cols-1 Grid--tablet--cols-3 Grid--desktop--cols-5">
+      {{#each @root.sizes as |size|}}
+        <section class="docs-Section">
+          <h3 class="docs-Heading">Size {{size}}</h3>
+          <div class="docs-Stack docs-Stack--start">
+            {{#each @root.colors as |color|}}
+              <span class="Tag Tag--{{color}} Tag--subtle Tag--{{size}}">Tag {{color}}</span>
+              <span class="Tag Tag--{{color}} Tag--{{size}}">Tag {{color}}</span>
+            {{/each}}
+          </div>
+        </section>
       {{/each}}
     </div>
-    {{/each}}
   </div>
 </section>
+  
 
 {{/layout/plain }}
