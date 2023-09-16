@@ -11,104 +11,21 @@ import PaginationCurrentFirst from './PaginationCurrentFirst';
 import PaginationCurrentMiddle from './PaginationCurrentMiddle';
 import PaginationCurrentLast from './PaginationCurrentLast';
 import PaginationCurrentFirstCentered from './PaginationCurrentFirstCentered';
-import PaginationItem from '../PaginationItem';
-import PaginationLink from '../PaginationLink';
-import PaginationLinkNext from '../PaginationLinkNext';
-import PaginationLinkPrevious from '../PaginationLinkPrevious';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Pagination Current First">
-        <PaginationCurrentFirst>
-          <PaginationItem>
-            <PaginationLink href="#" isCurrent accessibilityLabel="Current Page, Page 1" pageNumber={1} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 2" pageNumber={2} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 3" pageNumber={3} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 4" pageNumber={4} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 5" pageNumber={5} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLinkNext href="#" />
-          </PaginationItem>
-        </PaginationCurrentFirst>
+        <PaginationCurrentFirst />
       </DocsSection>
       <DocsSection title="Pagination Current Middle">
-        <PaginationCurrentMiddle>
-          <PaginationItem>
-            <PaginationLinkPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 11" pageNumber={11} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 12" pageNumber={12} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" isCurrent accessibilityLabel="Current Page, Page 13" pageNumber={13} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 14" pageNumber={14} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 15" pageNumber={15} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLinkNext href="#" />
-          </PaginationItem>
-        </PaginationCurrentMiddle>
+        <PaginationCurrentMiddle />
       </DocsSection>
       <DocsSection title="Pagination Current Last">
-        <PaginationCurrentLast>
-          <PaginationItem>
-            <PaginationLinkPrevious href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 109" pageNumber={109} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 110" pageNumber={110} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 111" pageNumber={111} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 112" pageNumber={112} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" isCurrent accessibilityLabel="Current Page, Page 113" pageNumber={113} />
-          </PaginationItem>
-        </PaginationCurrentLast>
+        <PaginationCurrentLast />
       </DocsSection>
       <DocsSection title="Pagination Current First Centered">
-        <PaginationCurrentFirstCentered UNSAFE_className="text-center">
-          <PaginationItem>
-            <PaginationLink href="#" isCurrent accessibilityLabel="Current Page, Page 1" pageNumber={1} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 2" pageNumber={2} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 3" pageNumber={3} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 4" pageNumber={4} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" accessibilityLabel="Go to Page 5" pageNumber={5} />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLinkNext href="#" />
-          </PaginationItem>
-        </PaginationCurrentFirstCentered>
+        <PaginationCurrentFirstCentered />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
