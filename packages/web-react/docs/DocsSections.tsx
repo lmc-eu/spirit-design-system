@@ -5,7 +5,7 @@ import DocsStack from './DocsStack';
 interface DocsSectionProps {
   children: ReactNode;
   hasStack?: boolean;
-  stackAlignment?: 'start' | 'center' | 'end';
+  stackAlignment?: 'start' | 'center' | 'end' | 'stretch';
   tag?: string;
   title: string;
 }

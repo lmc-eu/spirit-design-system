@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 interface DocsStackProps {
   children: ReactNode;
-  stackAlignment?: 'start' | 'center' | 'end';
+  stackAlignment?: 'start' | 'center' | 'end' | 'stretch';
 }
 
 const DocsStack = ({ children, stackAlignment }: DocsStackProps) => {
