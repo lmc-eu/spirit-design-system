@@ -41,8 +41,8 @@ export const Sizes = {
 } as const;
 
 export const SizesExtended = {
-  ...Sizes,
   XSMALL: 'xsmall',
+  ...Sizes,
   XLARGE: 'xlarge',
 } as const;
 
