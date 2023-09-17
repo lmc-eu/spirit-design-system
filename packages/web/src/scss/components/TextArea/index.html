@@ -1,9 +1,11 @@
 {{#> layout/plain }}
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Default</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea">
       <label for="textAreaDefault" class="TextArea__label">Label</label>
       <textarea id="textAreaDefault" class="TextArea__input" name="default" placeholder="Placeholder"></textarea>
@@ -13,47 +15,63 @@
       <label for="textAreaFilled" class="TextArea__label">Label</label>
       <textarea id="textAreaFilled" class="TextArea__input" name="defaultFilled" placeholder="Placeholder">Filled</textarea>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Required</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea">
       <label for="textAreaRequired" class="TextArea__label TextArea__label--required">Label</label>
       <textarea id="textAreaRequired" class="TextArea__input" name="required" placeholder="Placeholder" required></textarea>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Hidden Label</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea">
       <label for="textAreaHiddenLabel" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
       <textarea id="textAreaHiddenLabel" class="TextArea__input" name="hiddenLabel" placeholder="Placeholder"></textarea>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Helper Text</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea">
       <label for="textAreaHelperText" class="TextArea__label">Label</label>
       <textarea id="textAreaHelperText" class="TextArea__input" name="helperText" placeholder="Placeholder"></textarea>
       <div class="TextArea__helperText">Helper text</div>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Disabled</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea TextArea--disabled">
       <label for="textAreaDisabled" class="TextArea__label">Label</label>
       <textarea id="textAreaDisabled" class="TextArea__input" name="disabled" placeholder="Placeholder" disabled></textarea>
@@ -63,13 +81,17 @@
       <label for="textAreaDisabledFilled" class="TextArea__label TextArea__label--required">Label</label>
       <textarea id="textAreaDisabledFilled" class="TextArea__input" name="disabledFilled" disabled required>Filled</textarea>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Validation State with Validation Text</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea TextArea--success">
       <label for="textAreaSuccess" class="TextArea__label">Label</label>
       <textarea id="textAreaSuccess" class="TextArea__input" name="success" placeholder="Placeholder">Filled</textarea>
@@ -96,22 +118,32 @@
       <div class="TextArea__helperText">This is helper text</div>
       <div class="TextArea__validationText">Danger validation text</div>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Fluid</h2>
 
-  <div class="TextArea TextArea--fluid">
-    <label for="textAreaFluid" class="TextArea__label">Label</label>
-    <textarea id="textAreaFluid" class="TextArea__input" name="fluid" placeholder="Placeholder">Filled</textarea>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div class="TextArea TextArea--fluid">
+      <label for="textAreaFluid" class="TextArea__label">Label</label>
+      <textarea id="textAreaFluid" class="TextArea__input" name="fluid" placeholder="Placeholder">Filled</textarea>
+    </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">Inline</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div style="display: flex; gap: 1rem; align-items: flex-start">
       <div class="TextArea">
         <label for="textAreaInline" class="TextArea__label TextArea__label--hidden">Hidden Label</label>
@@ -119,18 +151,24 @@
       </div>
       <button type="button" class="Button Button--primary Button--medium">Button</button>
     </div>
+
   </div>
+
 </section>
 
 <section class="docs-Section">
+
   <h2 class="docs-Heading">AutoResize</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
+
     <div class="TextArea" data-spirit-toggle="autoResize">
       <label for="textAreaAutoResize" class="TextArea__label">Label</label>
       <textarea id="textAreaAutoResize" class="TextArea__input" name="autoResize"></textarea>
     </div>
+
   </div>
+  
 </section>
 
 {{/layout/plain }}
