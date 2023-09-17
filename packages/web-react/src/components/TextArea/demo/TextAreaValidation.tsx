@@ -1,0 +1,49 @@
+import React from 'react';
+import TextArea from '../TextArea';
+
+const TextAreaValidation = () => (
+  <>
+    <TextArea
+      id="textareaSuccess"
+      label="Label"
+      name="textareaSuccess"
+      placeholder="Placeholder"
+      validationState="success"
+      value="Filled"
+    />
+
+    <TextArea
+      id="textareaWarning"
+      label="Label"
+      validationText="Validation text"
+      name="textareaWarning"
+      placeholder="Placeholder"
+      validationState="warning"
+      value="Filled"
+    />
+
+    <TextArea
+      id="textareaDanger"
+      label="Label"
+      validationText={['Validation text', 'Second validation text']}
+      name="textareaDanger"
+      placeholder="Placeholder"
+      validationState="danger"
+      value="Filled"
+    />
+
+    <TextArea
+      id="textareaDangerHelper"
+      isRequired
+      label="Label"
+      helperText="This is helper text"
+      validationText="Danger validation text"
+      validationState="danger"
+      name="textareaDangerHelper"
+      placeholder="Placeholder"
+      value="Filled"
+    />
+  </>
+);
+
+export default TextAreaValidation;
