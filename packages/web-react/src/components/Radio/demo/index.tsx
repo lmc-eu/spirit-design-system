@@ -5,35 +5,35 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import Radio from './Radio';
-import RadioValidationState from './RadioValidationState';
+import { IconsProvider } from '../../../context';
+import RadioDefault from './RadioDefault';
+import RadioHiddenLabel from './RadioHiddenLabel';
 import RadioHelperText from './RadioHelperText';
 import RadioDisabled from './RadioDisabled';
+import RadioValidation from './RadioValidation';
 import RadioItem from './RadioItem';
-import RadioList from './RadioList';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
-        <Radio label="Field label" />
+        <RadioDefault />
       </DocsSection>
-      <DocsSection title="Validation State">
-        <RadioValidationState />
+      <DocsSection title="Hidden Label">
+        <RadioHiddenLabel />
       </DocsSection>
       <DocsSection title="Helper Text">
-        <RadioHelperText {...RadioHelperText.args} />
+        <RadioHelperText />
       </DocsSection>
       <DocsSection title="Disabled">
         <RadioDisabled />
       </DocsSection>
+      <DocsSection title="Validation State">
+        <RadioValidation />
+      </DocsSection>
       <DocsSection title="Item">
         <RadioItem />
-      </DocsSection>
-      <DocsSection title="List">
-        <RadioList />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -1,13 +1,19 @@
 import React from 'react';
 import Radio from '../Radio';
 
-// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Story = (props: unknown) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem 1rem' }}>
-    <Radio id="radio" label="Radio disabled" name="example" isDisabled />
-    <Radio id="radio" label="Radio disabled checked" name="example" isDisabled isChecked />
-  </div>
+const RadioDisabled = () => (
+  <>
+    <Radio id="radioDisabled" isDisabled label="Radio Label" name="radioDisabled" />
+
+    <Radio
+      helperText="Helper text"
+      id="radioDisabledHelperText"
+      isChecked
+      isDisabled
+      label="Radio Label"
+      name="radioDisabledHelperText"
+    />
+  </>
 );
 
-export default Story;
+export default RadioDisabled;
