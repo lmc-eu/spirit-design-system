@@ -5,51 +5,51 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import TextField from './TextField';
+import { IconsProvider } from '../../../context';
+import TextFieldDefault from './TextFieldDefault';
+import TextFieldRequired from './TextFieldRequired';
+import TextFieldHiddenLabel from './TextFieldHiddenLabel';
+import TextFieldHelperText from './TextFieldHelperText';
 import TextFieldDisabled from './TextFieldDisabled';
+import TextFieldValidation from './TextFieldValidation';
 import TextFieldFluid from './TextFieldFluid';
 import TextFieldInputWidth from './TextFieldInputWidth';
-import TextFieldLabelHidden from './TextFieldLabelHidden';
+import TextFieldInline from './TextFieldInline';
 import TextFieldPasswordToggle from './TextFieldPasswordToggle';
-import TextFieldLabelRequired from './TextFieldRequired';
-import TextFieldType from './TextFieldType';
-import TextFieldValidationState from './TextFieldValidationState';
-import TextFieldHelperText from './TextFieldHelperText';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
-        <TextField {...TextField.args} />
+        <TextFieldDefault />
+      </DocsSection>
+      <DocsSection title="Required">
+        <TextFieldRequired />
+      </DocsSection>
+      <DocsSection title="Hidden Label">
+        <TextFieldHiddenLabel />
+      </DocsSection>
+      <DocsSection title="Helper Text">
+        <TextFieldHelperText />
       </DocsSection>
       <DocsSection title="Disabled">
         <TextFieldDisabled />
       </DocsSection>
+      <DocsSection title="Validation State with Validation Text">
+        <TextFieldValidation />
+      </DocsSection>
       <DocsSection title="Fluid">
         <TextFieldFluid />
       </DocsSection>
-      <DocsSection title="Input Width">
+      <DocsSection title="Size">
         <TextFieldInputWidth />
       </DocsSection>
-      <DocsSection title="Label Hidden">
-        <TextFieldLabelHidden />
+      <DocsSection title="Inline">
+        <TextFieldInline />
       </DocsSection>
       <DocsSection title="Password Toggle">
         <TextFieldPasswordToggle />
-      </DocsSection>
-      <DocsSection title="Required">
-        <TextFieldLabelRequired />
-      </DocsSection>
-      <DocsSection title="Field Type">
-        <TextFieldType />
-      </DocsSection>
-      <DocsSection title="Validation State">
-        <TextFieldValidationState />
-      </DocsSection>
-      <DocsSection title="Helper Text">
-        <TextFieldHelperText {...TextFieldHelperText.args} />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
