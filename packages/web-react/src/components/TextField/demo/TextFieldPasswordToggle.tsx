@@ -1,15 +1,25 @@
 import React from 'react';
 import TextField from '../TextField';
 
-// @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Story = (props: unknown) => (
-  <TextField
-    id="textfield-password-toggle"
-    label="Password toggle"
-    name="textfield-password-toggle"
-    hasPasswordToggle
-  />
+const TextFieldPasswordToggle = () => (
+  <>
+    <TextField
+      id="textfieldPasswordToggle"
+      label="Password Toggle"
+      hasPasswordToggle
+      name="textfieldPasswordToggle"
+      placeholder="Password must be at least 6 characters long"
+    />
+
+    <TextField
+      id="textfieldPasswordToggleDisabled"
+      label="Password Toggle"
+      hasPasswordToggle
+      isDisabled
+      name="textfieldPasswordToggleDisabled"
+      placeholder="Password must be at least 6 characters long"
+    />
+  </>
 );
 
-export default Story;
+export default TextFieldPasswordToggle;
