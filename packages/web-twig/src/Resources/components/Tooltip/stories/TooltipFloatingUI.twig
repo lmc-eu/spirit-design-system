@@ -1,0 +1,64 @@
+<style>
+  .example-viewport {
+    width: 40rem;
+    max-width: 100%;
+    height: 10rem;
+    overflow: auto;
+  }
+
+  .example-content {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    padding-block: 7rem;
+    text-align: center;
+  }
+</style>
+
+<p>
+  The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
+</p>
+<p>🖱 Try scrolling the example to see how Tooltip placement is updated.</p>
+
+<div class="example-viewport bg-cover">
+  <div class="example-content">
+    <Button 
+      type="button"
+      id="my-button"
+      UNSAFE_className="Button Button--primary Button--medium"
+      aria-describedby="my-advanced-tooltip"
+    >
+      I have a flipping tooltip!
+    </Button>
+    <Tooltip id="my-advanced-tooltip" UNSAFE_className="Tooltip" data-spirit-placement="top">
+      Hello there!
+      <span class="Tooltip__arrow"></span>
+    </Tooltip>
+  </div>
+</div>
+
+<script type="module">
+  // To fully understand Floating UI and its options, please consult Floating UI docs:
+  // @see https://floating-ui.com
+
+  import { autoUpdate, computePosition, flip } from 'https://cdn.skypack.dev/@floating-ui/dom@1.5.3';
+
+  const button = document.getElementById('my-button');
+  const tooltip = document.getElementById('my-advanced-tooltip');
+
+  const cleanup = autoUpdate(button, tooltip, () => {
+    computePosition(button, tooltip, {
+      placement: 'top',
+      middleware: [flip()],
+    }).then(({ x, y, placement }) => {
+      Object.assign(tooltip.style, {
+        top: `${y}px`,
+        left: `${x}px`,
+      });
+      tooltip.dataset.spiritPlacement = placement;
+    });
+  });
+
+  // Call cleanup function when tooltip is removed from DOM.
+  // cleanup();
+</script>
