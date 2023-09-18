@@ -1207,6 +1207,11 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@lmc-eu/spirit-demo@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-demo/-/spirit-demo-0.0.1.tgz#1ef098fc45d99cc64c9655b7760946d888465212"
+  integrity sha512-ZX6Z/mS7K6VLFRjDoACzUKkNyDdO5xNiRgOqA3MztVMGL5Ahg7kom//8AqQkM1DW4UVSkrtsHzkx9gRuYy0J4A==
+
 "@lmc-eu/spirit-design-tokens@^0.25.5":
   version "0.25.5"
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-0.25.5.tgz#1663518f3e07572d5c228dc72aebce3a6caa8058"
