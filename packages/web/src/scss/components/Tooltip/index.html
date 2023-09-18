@@ -4,214 +4,229 @@
 
     <h2 class="docs-Heading">Static Tooltip (No Interaction)</h2>
 
-    <div class="TooltipWrapper" style="max-width: 15rem; margin: 6rem auto;">
-      <div class="docs-Box px-600 py-500">
-        Tooltips<br />
-        all day long…
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="TooltipWrapper" style="max-width: 15rem; margin: 6rem auto;">
+        <div class="docs-Box">
+          Tooltips<br />
+          all day long…
+        </div>
+        <div class="Tooltip Tooltip--top">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
+        <div class="Tooltip Tooltip--right">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
+        <div class="Tooltip Tooltip--bottom">
+          Hello there! There is slightly more text in this tooltip.
+          <span class="Tooltip__arrow"></span>
+        </div>
+        <div class="Tooltip Tooltip--left">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
       </div>
-      <div class="Tooltip Tooltip--top">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
-      </div>
-      <div class="Tooltip Tooltip--right">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
-      </div>
-      <div class="Tooltip Tooltip--bottom">
-        Hello there! There is slightly more text in this tooltip.
-        <span class="Tooltip__arrow"></span>
-      </div>
-      <div class="Tooltip Tooltip--left">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
-      </div>
+
     </div>
 
   </section>
+
   <section class="docs-Section">
 
     <h2 class="docs-Heading">Tooltip on Hover (Pure CSS)</h2>
 
-    <div class="TooltipWrapper d-inline-block">
-      <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-top">
-        Tooltip on top
-      </button>
-      <div id="my-tooltip-hover-top" class="Tooltip Tooltip--top">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="TooltipWrapper d-inline-block">
+        <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-top">
+          Tooltip on top
+        </button>
+        <div id="my-tooltip-hover-top" class="Tooltip Tooltip--top">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
       </div>
-    </div>
-    <div class="TooltipWrapper d-inline-block">
-      <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-right">
-        Tooltip on right
-      </button>
-      <div id="my-tooltip-hover-right" class="Tooltip Tooltip--right">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
+      <div class="TooltipWrapper d-inline-block">
+        <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-right">
+          Tooltip on right
+        </button>
+        <div id="my-tooltip-hover-right" class="Tooltip Tooltip--right">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
       </div>
-    </div>
-    <div class="TooltipWrapper d-inline-block">
-      <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-bottom">
-        Tooltip on bottom
-      </button>
-      <div id="my-tooltip-hover-bottom" class="Tooltip Tooltip--bottom">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
+      <div class="TooltipWrapper d-inline-block">
+        <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-bottom">
+          Tooltip on bottom
+        </button>
+        <div id="my-tooltip-hover-bottom" class="Tooltip Tooltip--bottom">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
       </div>
-    </div>
-    <div class="TooltipWrapper d-inline-block">
-      <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-left">
-        Tooltip on left
-      </button>
-      <div id="my-tooltip-hover-left" class="Tooltip Tooltip--left">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
+      <div class="TooltipWrapper d-inline-block">
+        <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-left">
+          Tooltip on left
+        </button>
+        <div id="my-tooltip-hover-left" class="Tooltip Tooltip--left">
+          Hello there!
+          <span class="Tooltip__arrow"></span>
+        </div>
       </div>
+
     </div>
 
   </section>
+
   <section class="docs-Section">
 
     <h2 class="docs-Heading">Tooltip on Click (JavaScript)</h2>
 
-    <div class="mb-800">
+    <div class="docs-Stack docs-Stack--start">
+
       <button
         type="button"
         id="tooltip-trigger"
-        class="Button Button--primary Button--medium mb-800"
+        class="Button Button--primary Button--medium"
         data-spirit-target="#my-js-controlled-tooltip"
         data-spirit-toggle="tooltip"
       >
         Toggle tooltip
       </button>
-    </div>
-    <div class="TooltipWrapper d-inline-block">
-      <div class="docs-Box px-600 py-500" aria-describedby="my-js-controlled-tooltip">
-        I have an externally-triggered tooltip
-      </div>
-      <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--top is-hidden">
-        Hello there!
-        <span class="Tooltip__arrow"></span>
-      </div>
-    </div>
 
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Dismissible Tooltip</h2>
-
-    <div class="TooltipWrapper d-inline-block">
-      <button class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</button>
-      <div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
-        Close me
-        <button
-          type="button"
-          class="Tooltip__close"
-          data-spirit-dismiss="tooltip"
-          data-spirit-target="#my-dismissible-tooltip"
-          aria-controls="my-dismissible-tooltip"
-          aria-expanded="true"
-        >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-          <span class="accessibility-hidden">Close</span>
-        </button>
-        <span class="Tooltip__arrow"></span>
-      </div>
-    </div>
-
-  </section>
-  <section class="docs-Section">
-
-    <h2 class="docs-Heading">Dismissible Tooltip via JS API</h2>
-    <p>
-      Saves data to local storage.
-    </p>
-
-    <div class="TooltipWrapper d-inline-block">
-      <button class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip2">I have a tooltip 😎</button>
-      <div id="my-dismissible-tooltip2" class="Tooltip Tooltip--right Tooltip--dismissible is-hidden">
-        Close me
-        <button
-          id="my-dismissible-tooltip2-button"
-          type="button"
-          class="Tooltip__close"
-          data-spirit-target="#my-dismissible-tooltip2"
-          aria-controls="my-dismissible-tooltip2"
-          aria-expanded="true"
-        >
-          <svg class="Icon" width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-          <span class="accessibility-hidden">Close</span>
-        </button>
-        <span class="Tooltip__arrow"></span>
-      </div>
-    </div>
-
-    <script type="module">
-      import Tooltip from '../../../js/Tooltip.ts';
-      const myTooltipEl = document.getElementById('my-dismissible-tooltip2');
-      const myTooltip = new Tooltip(myTooltipEl);
-
-      if(!window.localStorage.getItem('my-tooltip')) {
-        myTooltip.show();
-      }
-
-      document.getElementById('my-dismissible-tooltip2-button').addEventListener('click', () => {
-        myTooltip.hide();
-        window.localStorage.setItem('my-tooltip', true);
-      });
-    </script>
-
-  </section>
-  <section id="advanced-positioning" class="docs-Section">
-
-    <h3 class="docs-Heading">Advanced Positioning</h3>
-
-    <p>
-      The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
-    </p>
-
-    <p>
-      🖱 Try scrolling the example to see how Tooltip placement is updated.
-    </p>
-
-    <script type="module" src="floating-ui-example.mjs"></script>
-
-    <style>
-      .example-viewport {
-        width: 40rem;
-        max-width: 100%;
-        height: 10rem;
-        overflow: auto;
-      }
-
-      .example-content {
-        position: relative;
-        width: 100%;
-        height: 20rem;
-        padding-block: 7rem;
-        text-align: center;
-      }
-    </style>
-
-    <div class="example-viewport bg-cover">
-      <div class="example-content">
-        <button
-          type="button"
-          id="my-button"
-          class="Button Button--primary Button--medium"
-          aria-describedby="my-advanced-tooltip"
-        >
-          I have a flipping tooltip!
-        </button>
-        <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
+      <div class="TooltipWrapper d-inline-block">
+        <div class="docs-Box" aria-describedby="my-js-controlled-tooltip">
+          I have an externally-triggered tooltip
+        </div>
+        <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--bottom is-hidden">
           Hello there!
           <span class="Tooltip__arrow"></span>
         </div>
       </div>
+
+    </div>
+
+  </section>
+
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Dismissible Tooltip</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="TooltipWrapper d-inline-block">
+        <button class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</button>
+        <div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
+          Close me
+          <button
+            type="button"
+            class="Tooltip__close"
+            data-spirit-dismiss="tooltip"
+            data-spirit-target="#my-dismissible-tooltip"
+            aria-controls="my-dismissible-tooltip"
+            aria-expanded="true"
+          >
+            <svg class="Icon" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+          <span class="Tooltip__arrow"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="docs-Section">
+
+    <h2 class="docs-Heading">Dismissible Tooltip via JS API</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+      <p>
+        Saves data to local storage.
+      </p>
+
+      <script type="module" src="dismissible-tooltip.mjs"></script>
+
+      <div class="TooltipWrapper d-inline-block">
+        <button id="my-dismissible-button" class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip2">I have a tooltip 😎</button>
+        <div id="my-dismissible-tooltip2" class="Tooltip Tooltip--right Tooltip--dismissible is-hidden">
+          Close me
+          <button
+            id="my-dismissible-tooltip2-button"
+            type="button"
+            class="Tooltip__close"
+            data-spirit-target="#my-dismissible-tooltip2"
+            aria-controls="my-dismissible-tooltip2"
+            aria-expanded="true"
+          >
+            <svg class="Icon" width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+          <span class="Tooltip__arrow"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="advanced-positioning" class="docs-Section">
+
+    <h2 class="docs-Heading">Advanced Positioning</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <p>
+        The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
+      </p>
+
+      <p>
+        🖱 Try scrolling the example to see how Tooltip placement is updated.
+      </p>
+
+      <script type="module" src="floating-ui-example.mjs"></script>
+
+      <style>
+        .example-viewport {
+          width: 40rem;
+          max-width: 100%;
+          height: 10rem;
+          overflow: auto;
+        }
+
+        .example-content {
+          position: relative;
+          width: 100%;
+          height: 20rem;
+          padding-block: 7rem;
+          text-align: center;
+        }
+      </style>
+
+      <div class="example-viewport bg-cover">
+        <div class="example-content">
+          <button
+            type="button"
+            id="my-button"
+            class="Button Button--primary Button--medium"
+            aria-describedby="my-advanced-tooltip"
+          >
+            I have a flipping tooltip!
+          </button>
+          <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
+            Hello there!
+            <span class="Tooltip__arrow"></span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </section>
