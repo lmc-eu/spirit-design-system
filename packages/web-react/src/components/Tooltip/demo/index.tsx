@@ -5,39 +5,35 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import Tooltip from './Tooltip';
-import TooltipDismissible from './TooltipDismissible';
+import { IconsProvider } from '../../../context';
+import TooltipDefault from './TooltipDefault';
+import TooltipPlacements from './TooltipPlacements';
 import TooltipClickable from './TooltipClickable';
-import TooltipFloatingUi from './TooltipFloatingUi';
-import TooltipDismissibleFloatingUi from './TooltipDismissibleFloatingUi';
-import TooltipUncontrolled from './TooltipUncontrolled';
-import TooltipDismissibleUncontrolled from './TooltipDismissibleUncontrolled';
+import TooltipDismissible from './TooltipDismissible';
+import TooltipFloatingUI from './TooltipFloatingUi';
+import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Default">
-        <Tooltip />
+      <DocsSection title="Static Tooltip (No Interaction)">
+        <TooltipDefault />
       </DocsSection>
-      <DocsSection title="Dismissible">
-        <TooltipDismissible />
+      <DocsSection title="Tooltip on Hover (Pure CSS)">
+        <TooltipPlacements />
       </DocsSection>
-      <DocsSection title="Clickable">
+      <DocsSection title="Tooltip on Click (JavaScript)">
         <TooltipClickable />
       </DocsSection>
-      <DocsSection title="Floating UI">
-        <TooltipFloatingUi />
+      <DocsSection title="Dismissible Tooltip">
+        <TooltipDismissible />
       </DocsSection>
-      <DocsSection title="Dismissible Floating UI">
-        <TooltipDismissibleFloatingUi />
+      <DocsSection title="Dismissible Tooltip via JS API">
+        <TooltipDismissibleViaJS />
       </DocsSection>
-      <DocsSection title="Uncontrolled">
-        <TooltipUncontrolled />
-      </DocsSection>
-      <DocsSection title="Dismissible Uncontrolled">
-        <TooltipDismissibleUncontrolled />
+      <DocsSection title="Advanced Positioning">
+        <TooltipFloatingUI />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

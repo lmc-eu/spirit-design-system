@@ -6,9 +6,10 @@ export interface TooltipHandlingProps {
 }
 
 export interface BaseTooltipProps extends ChildrenProps, StyleProps {
-  placement?: 'top' | 'right' | 'bottom' | 'left' | 'off';
-  isDismissible?: boolean;
   closeLabel?: string;
+  id?: string;
+  isDismissible?: boolean;
+  placement?: 'top' | 'right' | 'bottom' | 'left' | 'off';
 }
 
 export interface TooltipWrapperProps extends ChildrenProps, StyleProps {}
