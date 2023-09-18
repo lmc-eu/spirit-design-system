@@ -29,6 +29,7 @@
     "@lmc-eu/eslint-config-base": "1.1.6",
     "@lmc-eu/eslint-config-jest": "2.1.0",
     "@lmc-eu/eslint-config-react": "1.1.1",
+    "@lmc-eu/spirit-demo": "^0.0.1",
     "@lmc-eu/spirit-design-tokens": "^0.25.5",
     "@lmc-eu/spirit-web": "^1.2.1",
     "@rollup/plugin-node-resolve": "15.2.1",
