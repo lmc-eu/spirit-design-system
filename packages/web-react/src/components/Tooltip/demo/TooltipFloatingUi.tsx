@@ -1,5 +1,3 @@
-// Because there is no `dist` directory during the CI run
-/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React, { useState } from 'react';
 import {
   autoUpdate,
@@ -11,11 +9,10 @@ import {
   useInteractions,
   useRole,
 } from '@floating-ui/react';
-import { ComponentStory } from '@storybook/react';
-import Tooltip from '../Tooltip';
 import { Button } from '../../Button';
+import Tooltip from '../Tooltip';
 
-const Story: ComponentStory<typeof Tooltip> = () => {
+const TooltipFloatingUI = () => {
   const [open, setOpen] = useState(true);
 
   const { x, y, refs, context, placement } = useFloating({
@@ -38,8 +35,14 @@ const Story: ComponentStory<typeof Tooltip> = () => {
         The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
       </p>
       <p>🖱 Try scrolling the example to see how Tooltip placement is updated.</p>
-      <div className="docs-FloatingUI-Wrapper">
-        <div className="docs-FloatingUI-Container">
+      <div
+        className="docs-FloatingUI-Wrapper bg-cover"
+        style={{ width: '40rem', maxWidth: '100%', height: '10rem', overflow: 'auto' }}
+      >
+        <div
+          className="docs-FloatingUI-Container"
+          style={{ position: 'relative', width: '100%', height: '20rem', paddingBlock: '7rem', textAlign: 'center' }}
+        >
           <Button ref={refs.setReference} {...getReferenceProps()}>
             I have a flipping tooltip!
           </Button>
@@ -62,6 +65,4 @@ const Story: ComponentStory<typeof Tooltip> = () => {
   );
 };
 
-Story.args = {};
-
-export default Story;
+export default TooltipFloatingUI;

@@ -1,31 +1,28 @@
-// Because there is no `dist` directory during the CI run
-/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React, { useState } from 'react';
-import { ComponentStory } from '@storybook/react';
-import Tooltip from '../Tooltip';
-import TooltipWrapper from '../TooltipWrapper';
+import DocsBox from '../../../../docs/DocsBox';
 import { Button } from '../../Button';
+import TooltipWrapper from '../TooltipWrapper';
+import Tooltip from '../Tooltip';
 
-const Story: ComponentStory<typeof Tooltip> = () => {
+const TooltipClickable = () => {
   const [open, setOpen] = useState(false);
 
   const toggleHandler = () => setOpen(!open);
 
   return (
     <>
-      <div className="mb-800">
-        <Button UNSAFE_className="mb-800" onClick={toggleHandler}>
-          Toggle tooltip
-        </Button>
-      </div>
+      <Button id="tooltip-trigger" onClick={toggleHandler}>
+        Toggle tooltip
+      </Button>
+
       <TooltipWrapper UNSAFE_className="d-inline-block">
-        <div className="docs-Box px-600 py-500">I have an externally-triggered tooltip</div>
-        <Tooltip open={open}>Hello there!</Tooltip>
+        <DocsBox aria-describedby="my-js-controlled-tooltip">I have an externally-triggered tooltip</DocsBox>
+        <Tooltip open={open} id="my-js-controlled-tooltip">
+          Hello there!
+        </Tooltip>
       </TooltipWrapper>
     </>
   );
 };
 
-Story.args = {};
-
-export default Story;
+export default TooltipClickable;

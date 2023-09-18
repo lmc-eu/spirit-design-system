@@ -1,26 +1,22 @@
-// Because there is no `dist` directory during the CI run
-/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React, { useState } from 'react';
-import { ComponentStory } from '@storybook/react';
-import Tooltip from '../Tooltip';
-import TooltipWrapper from '../TooltipWrapper';
 import { Button } from '../../Button';
+import TooltipWrapper from '../TooltipWrapper';
+import Tooltip from '../Tooltip';
 
-const Story: ComponentStory<typeof Tooltip> = () => {
+const TooltipDismissible = () => {
   const [open, setOpen] = useState(true);
 
+  const openHandler = () => setOpen(true);
   const closeHandler = () => setOpen(false);
 
   return (
     <TooltipWrapper UNSAFE_className="d-inline-block">
-      <Button>I have a tooltip 😎</Button>
-      <Tooltip isDismissible open={open} onClose={closeHandler}>
-        Hello there!
+      <Button onClick={openHandler}>I have a tooltip 😎</Button>
+      <Tooltip isDismissible placement="right" open={open} onClose={closeHandler}>
+        Close me
       </Tooltip>
     </TooltipWrapper>
   );
 };
 
-Story.args = {};
-
-export default Story;
+export default TooltipDismissible;
