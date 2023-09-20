@@ -16,11 +16,11 @@
 /phpunit.xml.dist   export-ignore
 
 # Exclude story files from archive
-*.stories.twig
-**/stories/*
+*.stories.twig      export-ignore
+**/stories          export-ignore
 
 # Exclude test files from archive
-**/__tests__/*
+**/__tests__        export-ignore
 
 # Configure diff output for .php and .phar files.
 *.php diff=php
