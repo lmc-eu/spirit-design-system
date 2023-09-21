@@ -1,16 +1,19 @@
-{% set routeName = app.request.get('_route') %}
+{% set currentRoute = app.request.get('_route') %}
 
-<ul class="Tabs mb-1100" role="tablist">
-  <li class="Tabs__item">
-    <a href="/" class="Tabs__link{% if routeName == 'index' %} is-selected" aria-selected="true{% endif %}">Components</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="icons/" class="Tabs__link{% if routeName == 'icons_index' %} is-selected" aria-selected="true{% endif %}">Icons</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="helpers/" class="Tabs__link{% if routeName == 'helpers_index' %} is-selected" aria-selected="true{% endif %}">Helpers</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="validations/" class="Tabs__link{% if routeName == 'validations_index' %} is-selected" aria-selected="true{% endif %}">Validations</a>
-  </li>
-</ul>
+{% set pages = {
+  'index': 'Components',
+  'icons_index': 'Icons',
+  'helpers_index': 'Helpers',
+  'validations_index': 'Validations',
+} %}
+
+<TabList>
+  {% for route, title in pages %}
+    {% set _isSelected = currentRoute == route %}
+    <TabItem>
+      <TabLink href="{{ path(route) }}" isSelected={{ _isSelected }}>
+        {{ title }}
+      </TabLink>
+    </TabItem>
+  {% endfor %}
+</TabList>

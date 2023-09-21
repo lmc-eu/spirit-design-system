@@ -1,11 +1,13 @@
 {% extends 'layout/base.html.twig' %}
 
+{% block header %}
+  {% include 'partials/header.html.twig' %}
+{% endblock %}
+
 {% block body %}
   <main class="py-800">
     <div class="Container">
-
       {% block content %}{% endblock %}
-
     </div>
   </main>
 {% endblock %}

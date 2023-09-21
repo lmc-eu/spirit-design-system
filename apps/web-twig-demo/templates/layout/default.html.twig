@@ -1,17 +1,22 @@
 {% extends 'layout/base.html.twig' %}
 
+{% set renderedContent %}
+  {% block content %}{% endblock %}
+{% endset %}
+
+{% block header %}
+  {% include 'partials/header.html.twig' %}
+{% endblock %}
 
 {% block body %}
-
-  {% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
-
-  <main class="py-900 py-tablet-1200">
-    <div class="Container">
-
-      {% include 'partials/tabs.html.twig' %}
-
-      {% block content %}{% endblock %}
-
+  <main>
+    {% block cover %}
+      {% include 'partials/cover.html.twig' %}
+    {% endblock %}
+    <div class="py-900 py-tablet-1200">
+      <Container>
+        {{ renderedContent }}
+      </Container>
     </div>
   </main>
 {% endblock %}

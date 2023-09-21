@@ -1,0 +1,29 @@
+<div class="bg-cover pt-1000 pt-tablet-1200">
+  <Container>
+
+    <div class="mx-600 mx-tablet-0 mb-900 mb-tablet-1100">
+      <Heading elementType="h1" size="xlarge">
+        Spirit Design System
+      </Heading>
+      <Heading elementType="h2" size="medium">
+        <Tag size="xlarge">Twig</Tag>
+      </Heading>
+    </div>
+
+    <div class="breakout-container">
+      <ScrollView
+        direction="horizontal"
+        data-spirit-toggle="scrollView"
+        UNSAFE_style="
+          --scroll-view-start-shadow-background: linear-gradient(to right, #f0f4f5 0%, #f0f4f500 100%);
+          --scroll-view-end-shadow-background: linear-gradient(to left, #f0f4f5 0%, #f0f4f500 100%);
+        "
+      >
+        <Container UNSAFE_className="pb-800">
+          {% include 'partials/tabs.html.twig' %}
+        </Container>
+      </ScrollView>
+    </div>
+
+  </Container>
+</div>

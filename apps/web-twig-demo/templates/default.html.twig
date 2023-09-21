@@ -4,16 +4,19 @@
 
   <section class="docs-Section">
 
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Components</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
+    <Heading elementType="h2" size="medium" UNSAFE_className="mb-700 mb-tablet-900">
+      Components
+    </Heading>
+
+    <Grid elementType="ul" cols="2" tablet="3" UNSAFE_className="list-unstyled">
 
       {% for component in components %}
         <li>
-          <a href="components/{{ component | lower }}/" class="docs-TileLink">{{ component }}</a>
+          <a href="/components/{{ component | lower }}/" class="docs-TileLink">{{ component }}</a>
         </li>
       {% endfor %}
 
-    </ul>
+    </Grid>
 
   </section>
 
