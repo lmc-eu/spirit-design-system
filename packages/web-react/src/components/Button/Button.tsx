@@ -37,7 +37,7 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
       style={styleProps.style}
     >
       {children}
-      {props.isLoading && <Spinner />}
+      {restProps.isLoading && <Spinner />}
     </ElementTag>
   );
 };
