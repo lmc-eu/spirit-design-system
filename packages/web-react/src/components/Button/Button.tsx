@@ -1,5 +1,5 @@
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonProps } from '../../types';
 import { Spinner } from '../Spinner';

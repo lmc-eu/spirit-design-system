@@ -1,10 +1,10 @@
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
 import { Spinner } from '../Spinner';
-import { useButtonStyleProps } from './useButtonStyleProps';
 import { useButtonLinkAriaProps } from './useButtonAriaProps';
+import { useButtonStyleProps } from './useButtonStyleProps';
 
 const defaultProps = {
   color: 'primary',
