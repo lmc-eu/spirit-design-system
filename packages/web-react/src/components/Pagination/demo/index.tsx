@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Pagination Current Last">
         <PaginationCurrentLast />
       </DocsSection>
-      <DocsSection title="Pagination Current First Centered">
+      <DocsSection title="Pagination Current First Centered" stackAlignment="stretch">
         <PaginationCurrentFirstCentered />
       </DocsSection>
     </IconsProvider>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
-import DocsFormFieldGrid from '../../../../docs/DocsFormFieldGrid';
 import CheckboxDefault from './CheckboxDefault';
 import CheckboxIndeterminate from './CheckboxIndeterminate';
 import CheckboxRequired from './CheckboxRequired';
@@ -14,9 +13,7 @@ import CheckboxItem from './CheckboxItem';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <DocsSection title="Default">
-      <DocsFormFieldGrid>
-        <CheckboxDefault />
-      </DocsFormFieldGrid>
+      <CheckboxDefault />
     </DocsSection>
     <DocsSection title="Indeterminate">
       <CheckboxIndeterminate />
@@ -31,19 +28,13 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <CheckboxHelperText />
     </DocsSection>
     <DocsSection title="Disabled">
-      <DocsFormFieldGrid>
-        <CheckboxDisabled />
-      </DocsFormFieldGrid>
+      <CheckboxDisabled />
     </DocsSection>
     <DocsSection title="Validation State with Validation Text">
-      <DocsFormFieldGrid>
-        <CheckboxValidation />
-      </DocsFormFieldGrid>
+      <CheckboxValidation />
     </DocsSection>
     <DocsSection title="Item">
-      <DocsFormFieldGrid>
-        <CheckboxItem />
-      </DocsFormFieldGrid>
+      <CheckboxItem />
     </DocsSection>
   </React.StrictMode>,
 );

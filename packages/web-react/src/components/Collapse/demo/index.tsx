@@ -36,7 +36,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Toggle Trigger Text">
         <CollapseHelperClass />
       </DocsSection>
-      <DocsSection title="Multiple triggers">
+      <DocsSection title="Multiple Triggers">
         <CollapseMultipleTriggers />
       </DocsSection>
     </IconsProvider>

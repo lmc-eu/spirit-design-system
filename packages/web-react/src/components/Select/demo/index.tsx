@@ -5,9 +5,8 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import DocsFormFieldGrid from '../../../../docs/DocsFormFieldGrid';
+import { IconsProvider } from '../../../context';
 import SelectSimple from './SelectSimple';
 import SelectRequired from './SelectRequired';
 import SelectHiddenLabel from './SelectHiddenLabel';
@@ -30,9 +29,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <SelectHiddenLabel />
       </DocsSection>
       <DocsSection title="Placeholder">
-        <DocsFormFieldGrid>
-          <SelectPlaceholder />
-        </DocsFormFieldGrid>
+        <SelectPlaceholder />
       </DocsSection>
       <DocsSection title="Helper Text">
         <SelectHelperText />
@@ -41,9 +38,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <SelectDisabled />
       </DocsSection>
       <DocsSection title="Validation State with Validation Text">
-        <DocsFormFieldGrid>
-          <SelectValidation />
-        </DocsFormFieldGrid>
+        <SelectValidation />
       </DocsSection>
       <DocsSection title="Fluid">
         <SelectFluid />

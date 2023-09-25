@@ -26,17 +26,14 @@ const CollapseHelperClass = () => {
         bibendum nunc aenean facilisis. Phasellus euismod, donec sem odio ligula praesent finibus nibh convallis,
         tristique aliquam sed id tortor sem lobortis.
       </Collapse>
-      <div className="mb-400">
-        <Button isOpen={isOpen} onClick={toggleHandler} aria-expanded={isOpen}>
-          <span className="accessibility-open">Show less</span>
-          <span className="accessibility-closed">Show more</span>
-        </Button>{' '}
-        &nbsp;{' '}
-        <a href="#" role="button" onClick={toggleHandler} aria-expanded={isOpen}>
-          <span className="accessibility-open">Show less</span>
-          <span className="accessibility-closed">Show more</span>
-        </a>
-      </div>
+      <Button isOpen={isOpen} onClick={toggleHandler} aria-expanded={isOpen}>
+        <span className="accessibility-open">Show less</span>
+        <span className="accessibility-closed">Show more</span>
+      </Button>
+      <a href="#" role="button" onClick={toggleHandler} aria-expanded={isOpen}>
+        <span className="accessibility-open">Show less</span>
+        <span className="accessibility-closed">Show more</span>
+      </a>
     </>
   );
 };
