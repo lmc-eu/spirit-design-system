@@ -15,7 +15,7 @@ const CollapseHideTrigger = () => {
       Scelerisque fringilla, viverra nisl vel purus sed porttitor porttitor et iaculis commodo, vehicula urna purus
       ultrices.{' '}
       <a href="#" role="button" onClick={toggleHandler} aria-expanded={isOpen}>
-        <span className="accessibility-closed">…more</span>
+        <span className="accessibility-closed">… more</span>
       </a>
       <Collapse isOpen={isOpen}>
         Commodo metus a lorem, a aliquet vestibulum rutrum pharetra sapien sed, ullamcorper quis odio dolor ut aliquam.

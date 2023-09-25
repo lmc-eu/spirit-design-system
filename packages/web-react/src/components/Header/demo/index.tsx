@@ -17,22 +17,22 @@ import HeaderExperimentalRTL from './HeaderExperimentalRTL';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Minimal Inverted Header">
+      <DocsSection title="Minimal Inverted Header" stackAlignment="stretch">
         <HeaderMinimalInverted />
       </DocsSection>
-      <DocsSection title="Inverted Header with Actions">
+      <DocsSection title="Inverted Header with Actions" stackAlignment="stretch">
         <HeaderInvertedWithActions />
       </DocsSection>
-      <DocsSection title="Inverted Header with Actions and Header Dialog">
+      <DocsSection title="Inverted Header with Actions and Header Dialog" stackAlignment="stretch">
         <HeaderInvertedWithActionsAndDialog />
       </DocsSection>
-      <DocsSection title="Simple Inverted Header">
+      <DocsSection title="Simple Inverted Header" stackAlignment="stretch">
         <HeaderSimpleInverted />
       </DocsSection>
-      <DocsSection title="Simple Transparent Header">
+      <DocsSection title="Simple Transparent Header" stackAlignment="stretch">
         <HeaderSimpleTransparent />
       </DocsSection>
-      <DocsSection title="Experimental RTL Support">
+      <DocsSection title="Experimental RTL Support" stackAlignment="stretch">
         <HeaderExperimentalRTL />
       </DocsSection>
     </IconsProvider>
