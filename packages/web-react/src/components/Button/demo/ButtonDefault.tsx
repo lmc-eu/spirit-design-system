@@ -3,8 +3,8 @@ import { Grid } from '../../Grid';
 import ButtonDemoFactory from './ButtonDemoFactory';
 
 const ButtonDefault = () => (
-  <Grid cols={1} tablet={2} desktop={3}>
-    <ButtonDemoFactory label="Button" />
+  <Grid cols={1} desktop={3}>
+    <ButtonDemoFactory />
   </Grid>
 );
 

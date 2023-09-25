@@ -3,9 +3,9 @@ import DocsSection from '../../../../docs/DocsSections';
 import { ActionColors, EmotionColors, Sizes } from '../../../constants';
 import { ButtonBaseProps } from '../../../types';
 import { Icon } from '../../Icon';
-import { Button } from '../Button';
+import { ButtonLink } from '../ButtonLink';
 
-const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
+const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
   const sizes = Object.values(Sizes);
   const actionColors = Object.values(ActionColors);
   const emotionColors = Object.values(EmotionColors);
@@ -18,16 +18,16 @@ const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
           {colors.map((color) => (
             <div key={color} className={`${color === 'inverted' ? 'docs-Box ' : ''}`}>
               <div>
-                <Button size={size} color={color} elementType="a" {...props}>
+                <ButtonLink size={size} color={color} elementType="a" {...props}>
                   {`Button ${color}`}
-                </Button>{' '}
-                <Button size={size} color={color} {...props}>
-                  <Icon name="hamburger" UNSAFE_className="mr-400" />
+                </ButtonLink>{' '}
+                <ButtonLink size={size} color={color} {...props}>
+                  <Icon name="link" UNSAFE_className="mr-400" />
                   Menu
-                </Button>{' '}
-                <Button size={size} color={color} isSquare {...props}>
-                  <Icon name="hamburger" />
-                </Button>
+                </ButtonLink>{' '}
+                <ButtonLink size={size} color={color} isSquare {...props}>
+                  <Icon name="link" />
+                </ButtonLink>
               </div>
             </div>
           ))}
@@ -37,4 +37,4 @@ const ButtonDemoFactory = ({ ...props }: ButtonBaseProps) => {
   );
 };
 
-export default ButtonDemoFactory;
+export default ButtonLinkDemoFactory;
