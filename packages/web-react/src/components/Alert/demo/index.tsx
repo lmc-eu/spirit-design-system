@@ -1,20 +1,28 @@
+// Because there is no `dist` directory during the CI run
+/* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No declaration file
+import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
+import { IconsProvider } from '../../../context';
 import AlertCentered from './AlertCentered';
 import AlertColors from './AlertColors';
 import AlertIcons from './AlertIcons';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <DocsSection title="Alert Colors">
-      <AlertColors />
-    </DocsSection>
-    <DocsSection title="Alert Centered">
-      <AlertCentered />
-    </DocsSection>
-    <DocsSection title="Alert Icons">
-      <AlertIcons />
-    </DocsSection>
+    <IconsProvider value={icons}>
+      <DocsSection title="Alert Colors" stackAlignment="stretch">
+        <AlertColors />
+      </DocsSection>
+      <DocsSection title="Alert Centered" stackAlignment="stretch">
+        <AlertCentered />
+      </DocsSection>
+      <DocsSection title="Alert Icons" stackAlignment="stretch">
+        <AlertIcons />
+      </DocsSection>
+    </IconsProvider>
   </React.StrictMode>,
 );
