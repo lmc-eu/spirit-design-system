@@ -7,21 +7,17 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import ButtonDefault from './ButtonDefault';
-import ButtonDisabled from './ButtonDisabled';
-import ButtonLoading from './ButtonLoading';
+import ButtonLinkDefault from './ButtonLinkDefault';
+import ButtonLinkDisabled from './ButtonLinkDisabled';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default" stackAlignment="stretch">
-        <ButtonDefault />
+        <ButtonLinkDefault />
       </DocsSection>
       <DocsSection title="Disabled" stackAlignment="stretch">
-        <ButtonDisabled />
-      </DocsSection>
-      <DocsSection title="Loading" stackAlignment="stretch">
-        <ButtonLoading />
+        <ButtonLinkDisabled />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

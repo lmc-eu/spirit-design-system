@@ -3,8 +3,8 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
 import { Spinner } from '../Spinner';
-import { useButtonLinkAriaProps } from './useButtonAriaProps';
-import { useButtonStyleProps } from './useButtonStyleProps';
+import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
+import { useButtonLinkAriaProps } from './useButtonLinkAriaProps';
 
 const defaultProps = {
   color: 'primary',
@@ -24,7 +24,7 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   const { elementType: ElementTag = 'a', children, ...restProps } = props;
 
   const { buttonLinkProps } = useButtonLinkAriaProps(restProps);
-  const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
