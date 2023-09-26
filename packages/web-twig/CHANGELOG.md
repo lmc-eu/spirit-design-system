@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.1"></a>
+
+## [2.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.3.0...@lmc-eu/spirit-web-twig@2.3.1) (2023-09-26)
+
+### Bug Fixes
+
+- **web-twig:** Do not render `id` twice in the `HeaderDialog` ([9350c8a](https://github.com/lmc-eu/spirit-design-system/commit/9350c8a))
+- **web-twig:** Icon in FileUploader when disabled ([f0b9619](https://github.com/lmc-eu/spirit-design-system/commit/f0b9619))
+- **web,web-twig:** Fix `Button` flickering during spinner animation in Firefox ([f3cfd93](https://github.com/lmc-eu/spirit-design-system/commit/f3cfd93))
+
+### Chores
+
+- **web-twig:** Ignore tests and stories from exported package ([7205145](https://github.com/lmc-eu/spirit-design-system/commit/7205145)), closes [#DS-969](https://github.com/lmc-eu/spirit-design-system/issues/DS-969)
+
+### Code Refactoring
+
+- **web-twig:** Use `VisuallyHidden` component instead of className ([46a120a](https://github.com/lmc-eu/spirit-design-system/commit/46a120a)), closes [#DS-926](https://github.com/lmc-eu/spirit-design-system/issues/DS-926)
+- **web-twig:** Use class name prefix for utilities and helpers ([4e1b5eb](https://github.com/lmc-eu/spirit-design-system/commit/4e1b5eb)), closes [#DS-926](https://github.com/lmc-eu/spirit-design-system/issues/DS-926)
+- **web-twig:** Use demo package css instead of own ([b16595c](https://github.com/lmc-eu/spirit-design-system/commit/b16595c))
+
+### Documentation
+
+- **web-react, web-twig:** Add DocsStack component ([a52215d](https://github.com/lmc-eu/spirit-design-system/commit/a52215d))
+- **web-twig:** Add Dropdown demo [#DS-895](https://github.com/lmc-eu/spirit-design-system/issues/DS-895) ([e987ea3](https://github.com/lmc-eu/spirit-design-system/commit/e987ea3))
+- **web-twig:** Add FileUploader demo [#DS-896](https://github.com/lmc-eu/spirit-design-system/issues/DS-896) ([9b5432c](https://github.com/lmc-eu/spirit-design-system/commit/9b5432c))
+- **web-twig:** Add Icons demo [#DS-900](https://github.com/lmc-eu/spirit-design-system/issues/DS-900) ([cce1910](https://github.com/lmc-eu/spirit-design-system/commit/cce1910))
+- **web-twig:** Add Tooltip demo [#DS-914](https://github.com/lmc-eu/spirit-design-system/issues/DS-914) ([a84b9fb](https://github.com/lmc-eu/spirit-design-system/commit/a84b9fb))
+- **web-twig:** Make stack inside `DocsSection` optional ([53fc021](https://github.com/lmc-eu/spirit-design-system/commit/53fc021))
+- **web-twig:** Use new docs components in all demos ([d120c65](https://github.com/lmc-eu/spirit-design-system/commit/d120c65))
+- **web, web-react, web-twig:** Unify `Modal` READMEs ([f126dca](https://github.com/lmc-eu/spirit-design-system/commit/f126dca))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.3.0"></a>
 
 # [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.2.0...@lmc-eu/spirit-web-twig@2.3.0) (2023-09-06)

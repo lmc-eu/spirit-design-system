@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.2"></a>
+
+## [1.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.1...@lmc-eu/spirit-web@1.2.2) (2023-09-26)
+
+### Bug Fixes
+
+- **web,web-twig:** Fix `Button` flickering during spinner animation in Firefox ([f3cfd93](https://github.com/lmc-eu/spirit-design-system/commit/f3cfd93))
+- **web:** Prevent Stack with inner dividers from removing vertical padding of outer items ([e32b945](https://github.com/lmc-eu/spirit-design-system/commit/e32b945))
+
+### Code Refactoring
+
+- **web:** Use demo package css instead of own ([1db1d90](https://github.com/lmc-eu/spirit-design-system/commit/1db1d90))
+
+### Documentation
+
+- **web-react:** Add Collapse demo [#DS-893](https://github.com/lmc-eu/spirit-design-system/issues/DS-893) ([d3cd38c](https://github.com/lmc-eu/spirit-design-system/commit/d3cd38c))
+- **web, web-react, web-twig:** Unify `Modal` READMEs ([f126dca](https://github.com/lmc-eu/spirit-design-system/commit/f126dca))
+- **web:** Add Collapse demo [#DS-893](https://github.com/lmc-eu/spirit-design-system/issues/DS-893) ([b73811e](https://github.com/lmc-eu/spirit-design-system/commit/b73811e))
+- **web:** Add Icons demo [#DS-900](https://github.com/lmc-eu/spirit-design-system/issues/DS-900) ([e59b123](https://github.com/lmc-eu/spirit-design-system/commit/e59b123))
+- **web:** Add Link demo [#DS-901](https://github.com/lmc-eu/spirit-design-system/issues/DS-901) ([108d295](https://github.com/lmc-eu/spirit-design-system/commit/108d295))
+- **web:** Add Modal demo [#DS-902](https://github.com/lmc-eu/spirit-design-system/issues/DS-902) ([92a97f4](https://github.com/lmc-eu/spirit-design-system/commit/92a97f4))
+- **web:** Add Pagination demo DS-903 ([8db680a](https://github.com/lmc-eu/spirit-design-system/commit/8db680a))
+- **web:** Add Pill demo [#DS-904](https://github.com/lmc-eu/spirit-design-system/issues/DS-904) ([b63bf9e](https://github.com/lmc-eu/spirit-design-system/commit/b63bf9e))
+- **web:** Add Radio demo [#DS-905](https://github.com/lmc-eu/spirit-design-system/issues/DS-905) ([546c714](https://github.com/lmc-eu/spirit-design-system/commit/546c714))
+- **web:** Add ScrollView demo [#DS-906](https://github.com/lmc-eu/spirit-design-system/issues/DS-906) ([38004cf](https://github.com/lmc-eu/spirit-design-system/commit/38004cf))
+- **web:** Add Spinner demo [#DS-907](https://github.com/lmc-eu/spirit-design-system/issues/DS-907) ([4860146](https://github.com/lmc-eu/spirit-design-system/commit/4860146))
+- **web:** Add Stack demo [#DS-908](https://github.com/lmc-eu/spirit-design-system/issues/DS-908) ([a2d8b85](https://github.com/lmc-eu/spirit-design-system/commit/a2d8b85))
+- **web:** Add Tabs demo [#DS-909](https://github.com/lmc-eu/spirit-design-system/issues/DS-909) ([254afeb](https://github.com/lmc-eu/spirit-design-system/commit/254afeb))
+- **web:** Add Tag demo [#DS-911](https://github.com/lmc-eu/spirit-design-system/issues/DS-911) ([e1debbf](https://github.com/lmc-eu/spirit-design-system/commit/e1debbf))
+- **web:** Add Text demo [#DS-911](https://github.com/lmc-eu/spirit-design-system/issues/DS-911) ([01211cb](https://github.com/lmc-eu/spirit-design-system/commit/01211cb))
+- **web:** Add TextArea demo [#DS-912](https://github.com/lmc-eu/spirit-design-system/issues/DS-912) ([17eb911](https://github.com/lmc-eu/spirit-design-system/commit/17eb911))
+- **web:** Add TextField demo [#DS-913](https://github.com/lmc-eu/spirit-design-system/issues/DS-913) ([a34e914](https://github.com/lmc-eu/spirit-design-system/commit/a34e914))
+- **web:** Add Tooltip demo [#DS-914](https://github.com/lmc-eu/spirit-design-system/issues/DS-914) ([3dd7c3b](https://github.com/lmc-eu/spirit-design-system/commit/3dd7c3b))
+- **web:** Removing subtitles about using JS plugin ([28113e9](https://github.com/lmc-eu/spirit-design-system/commit/28113e9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.2.1"></a>
 
 ## [1.2.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.0...@lmc-eu/spirit-web@1.2.1) (2023-09-06)

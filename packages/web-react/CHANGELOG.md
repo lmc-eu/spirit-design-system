@@ -3,6 +3,77 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.0"></a>
+
+# [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.3.0...@lmc-eu/spirit-web-react@1.4.0) (2023-09-26)
+
+### Bug Fixes
+
+- **web-react:** Drag and drop on disabled input ([4f64672](https://github.com/lmc-eu/spirit-design-system/commit/4f64672))
+
+### Code Refactoring
+
+- **web-react:** Remove useValidationText hook ([70e4cd4](https://github.com/lmc-eu/spirit-design-system/commit/70e4cd4))
+- **web-react:** Use `VisuallyHidden` component instead of className ([f795b81](https://github.com/lmc-eu/spirit-design-system/commit/f795b81)), closes [#DS-926](https://github.com/lmc-eu/spirit-design-system/issues/DS-926)
+- **web-react:** Use class name prefix for utilities and helpers ([678bcb1](https://github.com/lmc-eu/spirit-design-system/commit/678bcb1)), closes [#DS-926](https://github.com/lmc-eu/spirit-design-system/issues/DS-926)
+- **web-react:** Use demo package css instead of own ([5325ad4](https://github.com/lmc-eu/spirit-design-system/commit/5325ad4))
+
+### Documentation
+
+- **web-react, web-twig:** Add DocsStack component ([a52215d](https://github.com/lmc-eu/spirit-design-system/commit/a52215d))
+- **web-react:** Add Collapse demo [#DS-893](https://github.com/lmc-eu/spirit-design-system/issues/DS-893) ([d3cd38c](https://github.com/lmc-eu/spirit-design-system/commit/d3cd38c))
+- **web-react:** Add Dropdown demo [#DS-895](https://github.com/lmc-eu/spirit-design-system/issues/DS-895) ([8d89302](https://github.com/lmc-eu/spirit-design-system/commit/8d89302))
+- **web-react:** Add FileUploader demo [#DS-896](https://github.com/lmc-eu/spirit-design-system/issues/DS-896) ([29fd57a](https://github.com/lmc-eu/spirit-design-system/commit/29fd57a))
+- **web-react:** Add hasStack and stackAlignment to DocsSection comp ([340613d](https://github.com/lmc-eu/spirit-design-system/commit/340613d))
+- **web-react:** Add Header demo [#DS-898](https://github.com/lmc-eu/spirit-design-system/issues/DS-898) ([7e99b36](https://github.com/lmc-eu/spirit-design-system/commit/7e99b36))
+- **web-react:** Add Heading demo [#DS-899](https://github.com/lmc-eu/spirit-design-system/issues/DS-899) ([41dac12](https://github.com/lmc-eu/spirit-design-system/commit/41dac12))
+- **web-react:** Add Icons demo [#DS-900](https://github.com/lmc-eu/spirit-design-system/issues/DS-900) ([2904d10](https://github.com/lmc-eu/spirit-design-system/commit/2904d10))
+- **web-react:** Add Link demo [#DS-901](https://github.com/lmc-eu/spirit-design-system/issues/DS-901) ([d1c2ae6](https://github.com/lmc-eu/spirit-design-system/commit/d1c2ae6))
+- **web-react:** Add missing helperText to Checkbox README ([43e3160](https://github.com/lmc-eu/spirit-design-system/commit/43e3160))
+- **web-react:** Add missing info in READMEs ([68e1123](https://github.com/lmc-eu/spirit-design-system/commit/68e1123))
+- **web-react:** Add Modal demo [#DS-902](https://github.com/lmc-eu/spirit-design-system/issues/DS-902) ([d8487d4](https://github.com/lmc-eu/spirit-design-system/commit/d8487d4))
+- **web-react:** Add Pagination demo DS-903 ([472097f](https://github.com/lmc-eu/spirit-design-system/commit/472097f))
+- **web-react:** Add Pill demo [#DS-904](https://github.com/lmc-eu/spirit-design-system/issues/DS-904) ([f66fc35](https://github.com/lmc-eu/spirit-design-system/commit/f66fc35))
+- **web-react:** Add Radio demo [#DS-905](https://github.com/lmc-eu/spirit-design-system/issues/DS-905) ([6675e31](https://github.com/lmc-eu/spirit-design-system/commit/6675e31))
+- **web-react:** Add ScrollView demo [#DS-906](https://github.com/lmc-eu/spirit-design-system/issues/DS-906) ([cd08338](https://github.com/lmc-eu/spirit-design-system/commit/cd08338))
+- **web-react:** Add Spinner demo [#DS-907](https://github.com/lmc-eu/spirit-design-system/issues/DS-907) ([54aef51](https://github.com/lmc-eu/spirit-design-system/commit/54aef51))
+- **web-react:** Add Stack demo [#DS-908](https://github.com/lmc-eu/spirit-design-system/issues/DS-908) ([d61febc](https://github.com/lmc-eu/spirit-design-system/commit/d61febc))
+- **web-react:** Add Tabs demo [#DS-909](https://github.com/lmc-eu/spirit-design-system/issues/DS-909) ([24b39c6](https://github.com/lmc-eu/spirit-design-system/commit/24b39c6))
+- **web-react:** Add Tag demo [#DS-911](https://github.com/lmc-eu/spirit-design-system/issues/DS-911) ([37ddfbe](https://github.com/lmc-eu/spirit-design-system/commit/37ddfbe))
+- **web-react:** Add Text demo [#DS-911](https://github.com/lmc-eu/spirit-design-system/issues/DS-911) ([160142d](https://github.com/lmc-eu/spirit-design-system/commit/160142d))
+- **web-react:** Add TextArea demo [#DS-912](https://github.com/lmc-eu/spirit-design-system/issues/DS-912) ([08b5940](https://github.com/lmc-eu/spirit-design-system/commit/08b5940))
+- **web-react:** Add TextField demo [#DS-913](https://github.com/lmc-eu/spirit-design-system/issues/DS-913) ([99f40f6](https://github.com/lmc-eu/spirit-design-system/commit/99f40f6))
+- **web-react:** Add Tooltip demo [#DS-914](https://github.com/lmc-eu/spirit-design-system/issues/DS-914) ([fe96038](https://github.com/lmc-eu/spirit-design-system/commit/fe96038))
+- **web-react:** Change copies of Stacked Modal composition ([52da584](https://github.com/lmc-eu/spirit-design-system/commit/52da584))
+- **web-react:** Improve FileUploader API tables ([a69b414](https://github.com/lmc-eu/spirit-design-system/commit/a69b414))
+- **web-react:** Introduce Modal with Dropdown component composition ([1cc6753](https://github.com/lmc-eu/spirit-design-system/commit/1cc6753))
+- **web-react:** Introduce Modal with form components composition ([2a5a7ea](https://github.com/lmc-eu/spirit-design-system/commit/2a5a7ea))
+- **web-react:** Introduce new stories for form fields [#DS-476](https://github.com/lmc-eu/spirit-design-system/issues/DS-476) ([5fdd555](https://github.com/lmc-eu/spirit-design-system/commit/5fdd555))
+- **web-react:** Introduce new stories in components [#DS-476](https://github.com/lmc-eu/spirit-design-system/issues/DS-476) ([7f05e3e](https://github.com/lmc-eu/spirit-design-system/commit/7f05e3e))
+- **web-react:** Introduce stories to the rest of the components [#DS-476](https://github.com/lmc-eu/spirit-design-system/issues/DS-476) ([8b0255f](https://github.com/lmc-eu/spirit-design-system/commit/8b0255f))
+- **web-react:** Move all stories to their folder ([74e7fa8](https://github.com/lmc-eu/spirit-design-system/commit/74e7fa8))
+- **web-react:** Move Modal compositions into `Modals` directory ([b487cf3](https://github.com/lmc-eu/spirit-design-system/commit/b487cf3))
+- **web-react:** Remove redundant button from Modal With Accordion ([509d15c](https://github.com/lmc-eu/spirit-design-system/commit/509d15c))
+- **web, web-react, web-twig:** Unify `Modal` READMEs ([f126dca](https://github.com/lmc-eu/spirit-design-system/commit/f126dca))
+
+### Features
+
+- **web-react:** Allow extended Size dictionary in Tag ([3dc975c](https://github.com/lmc-eu/spirit-design-system/commit/3dc975c))
+- **web-react:** Implement new HelperText component [#DS-886](https://github.com/lmc-eu/spirit-design-system/issues/DS-886) ([23def5c](https://github.com/lmc-eu/spirit-design-system/commit/23def5c))
+- **web-react:** Introduce HelperText component [#DS-886](https://github.com/lmc-eu/spirit-design-system/issues/DS-886) ([b978ee4](https://github.com/lmc-eu/spirit-design-system/commit/b978ee4))
+- **web-react:** Shorten FieldGroup useValidationText path ([a21cce8](https://github.com/lmc-eu/spirit-design-system/commit/a21cce8))
+
+### Styles
+
+- **web-react:** Alphabetical reordering in ButtonLink ([ea75846](https://github.com/lmc-eu/spirit-design-system/commit/ea75846))
+- **web-react:** Must use destructurring assignment ([761f782](https://github.com/lmc-eu/spirit-design-system/commit/761f782))
+
+### Tests
+
+- **web-react:** Ignore module pattern for `dist` directory ([193eecf](https://github.com/lmc-eu/spirit-design-system/commit/193eecf))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.2.0...@lmc-eu/spirit-web-react@1.3.0) (2023-09-06)
