@@ -2,11 +2,15 @@
 // @TODO: https://github.com/lmc-eu/spirit-design-system/issues/470
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { cleanName } from '../normalizers/names';
+import { slugifyName } from '../normalizers/names';
 import { printUnit } from '../printers/unit';
-import { normalizeWeight } from '../normalizers/weight';
 import { localeSort } from '../sorters/localeSort';
 import { Token } from '..';
+
+const ebonyFontWeights = {
+  400: 300,
+  600: 400,
+};
 
 export function generateTypography(
   allTokens: Array<Token>,
@@ -19,10 +23,7 @@ export function generateTypography(
   const breakpoints = breakpointsString.trim().split(',');
   const styles = {};
   tokens.forEach((token) => {
-    let name = cleanName(token.name);
-    if (token.origin) {
-      name = cleanName(token.origin.name);
-    }
+    const name = slugifyName(token.origin?.name || token.name);
     let nameWithoutBreakpoint = name;
     let breakpoint = breakpoints[0];
     breakpoints.forEach((bp) => {
@@ -32,15 +33,20 @@ export function generateTypography(
       }
     });
 
-    const subfamily = token.value.font.subfamily.toLowerCase();
     const fontSize = printUnit(Math.round((token.value.fontSize.measure / defaultFontSize) * 1000) / 1000, 'rem');
     let fontStyle = 'normal';
-    let fontWeight = 'normal';
-    if (subfamily === 'italic') {
-      fontStyle = 'italic';
-    } else {
-      fontWeight = subfamily;
+    let fontWeight = +token.value.font.subfamily;
+
+    // Font Ebony has a different font weight mapping, so we remap these values directly
+    if (token.value.font.family === 'Ebony') {
+      fontWeight = ebonyFontWeights[fontWeight];
     }
+
+    // TODO: This is a hack to get around the fact that I don't know how to check if font is italic in JS
+    if (name.includes('italic')) {
+      fontStyle = 'italic';
+    }
+
     const lineHeight = token.value.lineHeight && Math.round((token.value.lineHeight.measure / 100) * 1000) / 1000;
     const letterSpacing = printUnit(token.value.letterSpacing.measure, token.value.letterSpacing.unit);
     const textDecoration = token.value.textDecoration.toLowerCase();
@@ -50,7 +56,7 @@ export function generateTypography(
       fontFamily: `'${token.value.font.family}'${fontFamilyFallback}`,
       fontSize,
       fontStyle,
-      fontWeight: normalizeWeight(fontWeight, token.value.font.family),
+      fontWeight,
       lineHeight,
       letterSpacing,
       textDecoration,
