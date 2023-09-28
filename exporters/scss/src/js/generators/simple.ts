@@ -2,7 +2,7 @@
 // @TODO: https://github.com/lmc-eu/spirit-design-system/issues/470
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { cleanName } from '../normalizers/names';
+import { slugifyName } from '../normalizers/names';
 import { singular } from '../normalizers/singular';
 import { printTypes } from '../printers/types';
 import { printUnit } from '../printers/unit';
@@ -13,12 +13,18 @@ import { valueSort } from '../sorters/valueSort';
 import { breakpointSort } from '../sorters/breakpointSort';
 import { Token } from '..';
 
+function isGroupToken(token: Token): boolean {
+  // Check if token is a group token, because it has a single digit at the end of the name
+  return token.name.match(/ \d$/);
+}
+
 export function generateSimple(
   allTokens: Array<Token>,
   groups = [],
   sortByNum = false,
   sortByValue = false,
   breakpointsString = '',
+  skipByName = '',
 ): string {
   let tokens = allTokens.sort((a, b) => {
     if (sortByNum) {
@@ -45,30 +51,26 @@ export function generateSimple(
 
   const vars: string[] = [];
   const types = {};
-  const names: string[] = [];
   tokens.forEach((token) => {
+    if (skipByName.length > 0 && !token.name.startsWith(skipByName)) {
+      return;
+    }
     // Get correct name of token
-    let name = cleanName(token.name);
+    let name = slugifyName(token.name);
 
     // The Gradients exception is temporary, until JDS fix their naming
     if (token.origin && !token.origin.name.toLowerCase().startsWith('gradients/gradient')) {
-      name = cleanName(token.origin.name);
+      name = slugifyName(token.origin.name);
     }
 
-    let groupToken = false;
-
-    if (names.indexOf(name) > -1) {
-      groupToken = true;
-    } else {
-      names.push(name);
-    }
+    const groupToken = isGroupToken(token);
 
     // Set token types
     let groupName = '';
     if (!groupToken && groups.length > 0) {
       groups.forEach((group: Token) => {
         if (Object.values(group.tokenIds).indexOf(token.id) > -1 && group.isRoot === false) {
-          groupName = singular(cleanName(group.name));
+          groupName = singular(slugifyName(group.name));
         }
       });
     }
@@ -124,7 +126,8 @@ export function generateSimple(
     }
 
     if (groupToken) {
-      const groupOriginal = vars.filter((item) => item.startsWith(`$${name}: `))[0];
+      const nameWithoutGroup = slugifyName(token.name.replace(/ \d$/, ''));
+      const groupOriginal = vars.filter((item) => item.startsWith(`$${nameWithoutGroup}: `))[0];
       const index = vars.indexOf(groupOriginal);
       if (index > -1) {
         vars[index] = vars[index].replace(/: (.*) !default;/g, `: ${value}, $1 !default;`);

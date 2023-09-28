@@ -1,18 +1,18 @@
 [
   {
     "id": "149fc92b-8586-11eb-a324-c7f25166e00c",
-    "name": "10",
-    "description": "10",
-    "tokenType": "Color",
+    "name": "Text-Light",
+    "description": "Text-Light",
+    "tokenType": "Typography",
     "origin": {
       "source": "Figma",
       "id": "S:494296a45a5072718577cc0faae3bd89e6c47207,",
-      "name": "Base/Pink/10"
+      "name": "Body/Medium/Text-Light"
     },
     "value": {
       "font": {
         "family": "Test",
-        "subfamily": "Test"
+        "subfamily": "300"
       },
       "fontSize": {
         "measure": 10
@@ -33,18 +33,50 @@
   },
   {
     "id": "149fc92c-8586-11eb-a324-c7f25166e00c",
-    "name": "20",
-    "description": "20",
-    "tokenType": "Color",
+    "name": "Text-Regular",
+    "description": "Text-Regular",
+    "tokenType": "Typography",
     "origin": {
       "source": "Figma",
       "id": "S:5642100401a4019c765b51f22f0f203de2cd1a02,",
-      "name": "Base/Pink/20"
+      "name": "Body/Medium/Text-Regular"
     },
     "value": {
       "font": {
         "family": "Test",
-        "subfamily": "Test"
+        "subfamily": "400"
+      },
+      "fontSize": {
+        "measure": 10
+      },
+      "lineHeight": {
+        "measure": 10
+      },
+      "letterSpacing": {
+        "measure": 10
+      },
+      "textDecoration": "none",
+      "paragraphIndent": {
+        "measure": 10
+      },
+      "textCase": "Original",
+      "referencedToken": null
+    }
+  },
+  {
+    "id": "149fc92c-8586-11eb-a324-c7f25166e00c",
+    "name": "Text-Italic",
+    "description": "Text-Italic",
+    "tokenType": "Typography",
+    "origin": {
+      "source": "Figma",
+      "id": "S:5642100401a4019c765b51f22f0f203de2cd1a02,",
+      "name": "Body/Medium/Text-Italic"
+    },
+    "value": {
+      "font": {
+        "family": "Ebony",
+        "subfamily": "400"
       },
       "fontSize": {
         "measure": 10
