@@ -215,7 +215,7 @@
 </div>
 ```
 
-## Align
+## Placement
 
 Dropdown content can be vertically aligned with `.Dropdown--top` or `.Dropdown--bottom` and horizontally `.Dropdown--left` or `.Dropdown--right` side of parent.
 

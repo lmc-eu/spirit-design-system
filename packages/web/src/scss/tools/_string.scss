@@ -2,6 +2,26 @@
 
 @use 'sass:string';
 
+// Convert kebab-case to camelCase
+// Example: convert-kebab-case-to-camel-case('top-left') will return 'topLeft'
+@function convert-kebab-case-to-camel-case($string) {
+    $camel-case: string.slice($string, 1); // Remove the first hyphen
+    $length: string.length($camel-case);
+
+    @for $i from 1 through $length {
+        $char: string.slice($camel-case, $i, $i);
+        @if $char == '-' {
+            $next-char: string.slice($camel-case, $i + 1, $i + 1);
+            $camel-case: string.insert($camel-case, $i + 1, string.to-upper-case($next-char));
+            $camel-case: string.slice($camel-case, 1, $i) + string.slice($camel-case, $i + 2);
+        }
+    }
+
+    @return $camel-case;
+}
+
+// Replace all occurrences of a string with another string
+// Example: replace('top-left', '-', '') will return 'topleft'
 @function replace($string, $search, $replace: '') {
     $index: string.index($string, $search);
 

@@ -1,10 +1,11 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
+@use '../../tools/placement';
 @use 'theme' as theme;
 
 .Dropdown {
-    position: absolute;
-    z-index: 1;
+    @include placement.child();
+
     display: none;
     width: max-content;
     padding: theme.$padding;
@@ -27,20 +28,62 @@
     display: block;
 }
 
+// Placement: top
 .Dropdown--top {
-    bottom: 100%;
-    margin-bottom: theme.$offset;
+    @include placement.top-center($offset: theme.$offset);
 }
 
-.Dropdown--right {
-    right: 0;
+.Dropdown--topLeft,
+.Dropdown--top.Dropdown--left {
+    // @deprecated The class combination will be removed in the next major version.
+    @include placement.top-left($offset: theme.$offset);
 }
 
+.Dropdown--topRight,
+.Dropdown--top.Dropdown--right {
+    // @deprecated The class combination will be removed in the next major version.
+    @include placement.top-right($offset: theme.$offset);
+}
+
+// Placement: bottom
 .Dropdown--bottom {
-    top: 100%;
-    margin-top: theme.$offset;
+    @include placement.bottom-center($offset: theme.$offset);
 }
 
+.Dropdown--bottomLeft,
+.Dropdown--bottom.Dropdown--left {
+    // @deprecated The class combination will be removed in the next major version.
+    @include placement.bottom-left($offset: theme.$offset);
+}
+
+.Dropdown--bottomRight,
+.Dropdown--bottom.Dropdown--right {
+    // @deprecated The class combination will be removed in the next major version.
+    @include placement.bottom-right($offset: theme.$offset);
+}
+
+// Placement: left
 .Dropdown--left {
-    left: 0;
+    @include placement.left-center($offset: theme.$offset);
+}
+
+.Dropdown--leftTop {
+    @include placement.left-top($offset: theme.$offset);
+}
+
+.Dropdown--leftBottom {
+    @include placement.left-bottom($offset: theme.$offset);
+}
+
+// Placement: right
+.Dropdown--right {
+    @include placement.right-center($offset: theme.$offset);
+}
+
+.Dropdown--rightTop {
+    @include placement.right-top($offset: theme.$offset);
+}
+
+.Dropdown--rightBottom {
+    @include placement.right-bottom($offset: theme.$offset);
 }

@@ -1,0 +1,84 @@
+@mixin parent() {
+    position: relative;
+}
+
+@mixin child($z-index: 1) {
+    position: absolute;
+    z-index: $z-index;
+}
+
+// Top
+@mixin top-left($offset: 0, $scale: 1) {
+    inset: auto auto 100% 0;
+    transform: translate(0, #{-1 * $offset}) scale(#{$scale});
+    transform-origin: bottom left;
+}
+
+@mixin top-center($offset: 0, $scale: 1) {
+    inset: auto auto 100% 50%;
+    transform: translate(-50%, #{-1 * $offset}) scale(#{$scale});
+    transform-origin: bottom center;
+}
+
+@mixin top-right($offset: 0, $scale: 1) {
+    inset: auto 0 100% auto;
+    transform: translate(0, #{-1 * $offset}) scale(#{$scale});
+    transform-origin: bottom right;
+}
+
+// Bottom
+@mixin bottom-left($offset: 0, $scale: 1) {
+    inset: 100% auto auto 0;
+    transform: translate(0, #{$offset}) scale(#{$scale});
+    transform-origin: top left;
+}
+
+@mixin bottom-center($offset: 0, $scale: 1) {
+    inset: 100% auto auto 50%;
+    transform: translate(-50%, #{$offset}) scale(#{$scale});
+    transform-origin: top center;
+}
+
+@mixin bottom-right($offset: 0, $scale: 1) {
+    inset: 100% 0 auto auto;
+    transform: translate(0, #{$offset}) scale(#{$scale});
+    transform-origin: top right;
+}
+
+// Left
+@mixin left-top($offset: 0, $scale: 1) {
+    inset: 0 100% auto auto;
+    transform: translate(#{-1 * $offset}, 0) scale(#{$scale});
+    transform-origin: right top;
+}
+
+@mixin left-center($offset: 0, $scale: 1) {
+    inset: 50% 100% auto auto;
+    transform: translate(#{-1 * $offset}, -50%) scale(#{$scale});
+    transform-origin: right center;
+}
+
+@mixin left-bottom($offset: 0, $scale: 1) {
+    inset: auto 100% 0 auto;
+    transform: translate(#{-1 * $offset}, 0) scale(#{$scale});
+    transform-origin: right bottom;
+}
+
+// Right
+@mixin right-top($offset: 0, $scale: 1) {
+    inset: 0 auto auto 100%;
+    transform: translate(#{$offset}, 0) scale(#{$scale});
+    transform-origin: left top;
+}
+
+@mixin right-center($offset: 0, $scale: 1) {
+    inset: 50% auto auto 100%;
+    transform: translate(#{$offset}, -50%) scale(#{$scale});
+    transform-origin: left center;
+}
+
+@mixin right-bottom($offset: 0, $scale: 1) {
+    inset: auto auto 0 100%;
+    transform: translate(#{$offset}, 0) scale(#{$scale});
+    transform-origin: left bottom;
+}

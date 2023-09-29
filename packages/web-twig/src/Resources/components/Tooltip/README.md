@@ -58,12 +58,12 @@ best positioning approach for your use case.
 
 ### Tooltip
 
-| Name            | Type                                     | Default  | Required | Description              |
-| --------------- | ---------------------------------------- | -------- | -------- | ------------------------ |
-| `closeLabel`    | `string`                                 | `Close`  | ✕        | Close label              |
-| `id`            | `string`                                 | `null`   | ✕        | Optional tooltip ID      |
-| `isDismissible` | `bool`                                   | `false`  | ✕        | Make tooltip dismissible |
-| `placement`     | [`top` \| `bottom` \| `left` \| `right`] | `bottom` | ✕        | Tooltip placement        |
+| Name            | Type                                                                                                       | Default  | Required | Description              |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | -------- | -------- | ------------------------ |
+| `closeLabel`    | `string`                                                                                                   | `Close`  | ✕        | Close label              |
+| `id`            | `string`                                                                                                   | `null`   | ✕        | Optional tooltip ID      |
+| `isDismissible` | `bool`                                                                                                     | `false`  | ✕        | Make tooltip dismissible |
+| `placement`     | [ `top` \| `top-left` \| `top-right` \| `bottom` \| `bottom-left` \| `bottom-right` \| `left` \| `right` ] | `bottom` | ✕        | Tooltip placement        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,

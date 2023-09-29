@@ -1,3 +1,5 @@
+@use '../../tools/placement';
+
 .DropdownWrapper {
-    position: relative;
+    @include placement.parent();
 }

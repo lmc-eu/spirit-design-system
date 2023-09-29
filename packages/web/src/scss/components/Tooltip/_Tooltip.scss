@@ -5,6 +5,7 @@
 // 3. Shift Tooltip so there is space for the arrow between Tooltip and reference element.
 
 @use 'sass:math';
+@use '../../tools/placement';
 @use '../../tools/reset';
 @use '../../tools/svg';
 @use '../../tools/typography';
@@ -12,10 +13,9 @@
 @use 'tools';
 
 .Tooltip {
+    @include placement.child();
     @include typography.generate(theme.$typography);
 
-    position: absolute;
-    z-index: 1;
     width: max-content;
     max-width: theme.$max-width;
     padding: theme.$padding;
@@ -61,31 +61,19 @@
 
 // Sides
 .Tooltip--top {
-    bottom: 100%;
-    left: 50%;
-    transform: translate(-50%, #{-1 * theme.$arrow-height}) scale(var(--tooltip-scale, 1));
-    transform-origin: bottom center;
+    @include placement.top-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--bottom {
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, #{theme.$arrow-height}) scale(var(--tooltip-scale, 1));
-    transform-origin: top center;
+    @include placement.bottom-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--left {
-    top: 50%;
-    right: 100%;
-    transform: translate(#{-1 * theme.$arrow-height}, -50%) scale(var(--tooltip-scale, 1));
-    transform-origin: right center;
+    @include placement.left-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--right {
-    top: 50%;
-    left: 100%;
-    transform: translate(#{theme.$arrow-height}, -50%) scale(var(--tooltip-scale, 1));
-    transform-origin: left center;
+    @include placement.right-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 // Arrows

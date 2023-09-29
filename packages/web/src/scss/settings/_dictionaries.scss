@@ -1,9 +1,14 @@
 @use 'sass:list';
 @use '@tokens' as tokens;
 
-$size: small, medium, large;
-$size-extended: list.join($size, (xsmall, xlarge));
+_$placement-sides: top, bottom, left, right;
+_$placement-side-corners: top-left, top-right, bottom-left, bottom-right, left-top, left-bottom, right-top, right-bottom;
+_$size-extended: xsmall, xlarge;
+
 $action-colors: primary, secondary, tertiary, inverted;
 $action-link-colors: primary, secondary, inverted;
 $emotion-colors: success, informative, warning, danger;
+$placement: list.join(_$placement-sides, _$placement-side-corners);
+$size: small, medium, large;
+$size-extended: list.join($size, _$size-extended);
 $text-colors: primary, secondary, primary-inverted, secondary-inverted;

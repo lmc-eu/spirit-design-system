@@ -29,24 +29,6 @@ Advanced example usage with positioning:
 </DropdownWrapper>
 ```
 
-Without lexer:
-
-```twig
-{% embed "@spirit/dropdownWrapper.twig" %}
-  {% block content %}
-    {% embed "@spirit/dropdown.twig" with { props: {
-        elementType: 'span',
-        fullWidthMode: 'mobile-only',
-        placement: 'top-right'
-    }} %}
-        {% block content %}
-              Dropdown content
-        {% endblock %}
-    {% endembed %}
-  {% endblock %}
-{% endembed %}
-```
-
 You can add any custom trigger like a `<Button>` but it is necessary to add `data-spirit-toggle="dropdown"`, `data-spirit-target="<id>"`
 attributes to register trigger events.
 
@@ -54,12 +36,12 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Name            | Type                                                           | Default       | Required | Description                           |
-| --------------- | -------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                                       | `div`         | ✕        | HTML tag to render                    |
-| `fullWidthMode` | `string`                                                       | —             | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                                       | —             | ✔        | Dropdown ID                           |
-| `placement`     | [`bottom-left` \| `bottom-right` \| `top-left` \| `top-right`] | `bottom-left` | ✕        | Alignment of the component            |
+| Name            | Type                                                                                                       | Default       | Required | Description                           |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
+| `elementType`   | `string`                                                                                                   | `div`         | ✕        | HTML tag to render                    |
+| `fullWidthMode` | `string`                                                                                                   | —             | ✕        | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                                                                                   | —             | ✔        | Dropdown ID                           |
+| `placement`     | [ `top` \| `top-left` \| `top-right` \| `bottom` \| `bottom-left` \| `bottom-right` \| `left` \| `right` ] | `bottom-left` | ✕        | Placement of the dropdown             |
 
 You can add `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,

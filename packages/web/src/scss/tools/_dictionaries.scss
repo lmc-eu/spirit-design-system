@@ -1,6 +1,8 @@
 @use 'sass:map';
 @use 'sass:string';
 @use '@tokens' as tokens;
+@use './placement';
+@use './string' as spirit-string;
 @use './typography';
 
 // Function to get the tokens map from the dictionary value name
@@ -141,6 +143,18 @@
             #{$selector}-#{unquote($variant-class)} {
                 color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
             }
+        }
+    }
+}
+
+// Mixin to generate placement classes based on a dictionary
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $placements: map of the placements to generate
+@mixin generate-placements($class-name, $placements) {
+    @each $placement in $placements {
+        .#{$class-name}--#{spirit-string.convert-kebab-case-to-camel-case($placement)} {
+            @include placement.#{$placement }();
         }
     }
 }
