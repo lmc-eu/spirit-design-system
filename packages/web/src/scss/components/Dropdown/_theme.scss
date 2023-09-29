@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 
 $breakpoints: tokens.$breakpoints;
 $offset: tokens.$space-400;
@@ -6,3 +7,4 @@ $padding: tokens.$space-600;
 $border-radius: tokens.$radius-200;
 $background: tokens.$background-basic;
 $shadow: tokens.$shadow-100;
+$placement-dictionary: dictionaries.$placement;

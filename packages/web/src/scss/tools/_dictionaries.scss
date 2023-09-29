@@ -151,10 +151,12 @@
 // Parameters are:
 // * $class-name: the name of the component class to generate
 // * $placements: map of the placements to generate
-@mixin generate-placements($class-name, $placements) {
+// * $offset: the offset of child from its parent, typically for an arrow
+// * $scale: the scale of child
+@mixin generate-placements($class-name, $placements, $offset: 0, $scale: 1) {
     @each $placement in $placements {
         .#{$class-name}--#{spirit-string.convert-kebab-case-to-camel-case($placement)} {
-            @include placement.#{$placement }();
+            @include placement.variant($placement, $offset, $scale);
         }
     }
 }

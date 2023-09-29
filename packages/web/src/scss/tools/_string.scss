@@ -1,5 +1,4 @@
-// Author: Kitty Giraudel
-
+@use 'sass:meta';
 @use 'sass:string';
 
 // Convert kebab-case to camelCase
@@ -10,10 +9,11 @@
 
     @for $i from 1 through $length {
         $char: string.slice($camel-case, $i, $i);
+
         @if $char == '-' {
             $next-char: string.slice($camel-case, $i + 1, $i + 1);
-            $camel-case: string.insert($camel-case, $i + 1, string.to-upper-case($next-char));
-            $camel-case: string.slice($camel-case, 1, $i) + string.slice($camel-case, $i + 2);
+            $camel-case: string.insert($camel-case, string.to-upper-case($next-char), $i + 2);
+            $camel-case: string.slice($camel-case, 1, $i - 1) + string.slice($camel-case, $i + 2);
         }
     }
 
@@ -21,6 +21,7 @@
 }
 
 // Replace all occurrences of a string with another string
+// Author: Kitty Giraudel
 // Example: replace('top-left', '-', '') will return 'topleft'
 @function replace($string, $search, $replace: '') {
     $index: string.index($string, $search);

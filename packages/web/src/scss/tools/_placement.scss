@@ -7,78 +7,112 @@
     z-index: $z-index;
 }
 
-// Top
-@mixin top-left($offset: 0, $scale: 1) {
-    inset: auto auto 100% 0;
-    transform: translate(0, #{-1 * $offset}) scale(#{$scale});
-    transform-origin: bottom left;
+// Mixin to generate child placement styles by a placement name
+// Parameters are:
+// * $placement: the placement name
+// * $offset: the offset of child from its parent, typically for an arrow
+// * $scale: the initial scale of child
+//
+// `--tooltip-offset-orthogonal` is a custom property to translate orthogonal to the placement axis.
+// This is useful in case of an absolutely positioned child element that only needs the
+// `$offset` property.
+@mixin variant($placement, $offset: 0, $scale: 1) {
+    @if $placement == 'top' {
+        inset: auto auto 100% 50%;
+        transform: translate(var(--tooltip-offset-orthogonal, -50%), #{-1 * $offset}) scale(#{$scale});
+        transform-origin: bottom center;
+    }
+
+    @if $placement == 'top-left' {
+        inset: auto auto 100% 0;
+        transform: translate(var(--tooltip-offset-orthogonal, 0), #{-1 * $offset}) scale(#{$scale});
+        transform-origin: bottom left;
+    }
+
+    @if $placement == 'top-right' {
+        inset: auto 0 100% auto;
+        transform: translate(var(--tooltip-offset-orthogonal, 0), #{-1 * $offset}) scale(#{$scale});
+        transform-origin: bottom right;
+    }
+
+    @if $placement == 'bottom' {
+        inset: 100% auto auto 50%;
+        transform: translate(var(--tooltip-offset-orthogonal, -50%), #{$offset}) scale(#{$scale});
+        transform-origin: top center;
+    }
+
+    @if $placement == 'bottom-left' {
+        inset: 100% auto auto 0;
+        transform: translate(var(--tooltip-offset-orthogonal, 0), #{$offset}) scale(#{$scale});
+        transform-origin: top left;
+    }
+
+    @if $placement == 'bottom-right' {
+        inset: 100% 0 auto auto;
+        transform: translate(var(--tooltip-offset-orthogonal, 0), #{$offset}) scale(#{$scale});
+        transform-origin: top right;
+    }
+
+    @if $placement == 'left' {
+        inset: 50% 100% auto auto;
+        transform: translate(#{-1 * $offset}, var(--tooltip-offset-orthogonal, -50%)) scale(#{$scale});
+        transform-origin: right center;
+    }
+
+    @if $placement == 'left-top' {
+        inset: 0 100% auto auto;
+        transform: translate(#{-1 * $offset}, var(--tooltip-offset-orthogonal, 0)) scale(#{$scale});
+        transform-origin: right top;
+    }
+
+    @if $placement == 'left-bottom' {
+        inset: auto 100% 0 auto;
+        transform: translate(#{-1 * $offset}, var(--tooltip-offset-orthogonal, 0)) scale(#{$scale});
+        transform-origin: right bottom;
+    }
+
+    @if $placement == 'right' {
+        inset: 50% auto auto 100%;
+        transform: translate(#{$offset}, var(--tooltip-offset-orthogonal, -50%)) scale(#{$scale});
+        transform-origin: left center;
+    }
+
+    @if $placement == 'right-top' {
+        inset: 0 auto auto 100%;
+        transform: translate(#{$offset}, var(--tooltip-offset-orthogonal, 0)) scale(#{$scale});
+        transform-origin: left top;
+    }
+
+    @if $placement == 'right-bottom' {
+        inset: auto auto 0 100%;
+        transform: translate(#{$offset}, var(--tooltip-offset-orthogonal, 0)) scale(#{$scale});
+        transform-origin: left bottom;
+    }
 }
 
-@mixin top-center($offset: 0, $scale: 1) {
-    inset: auto auto 100% 50%;
-    transform: translate(-50%, #{-1 * $offset}) scale(#{$scale});
-    transform-origin: bottom center;
-}
+// Mixin to generate child arrow styles by a placement name
+@mixin arrow($placement) {
+    @if $placement == 'top' {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -100%) rotateZ(180deg);
+    }
 
-@mixin top-right($offset: 0, $scale: 1) {
-    inset: auto 0 100% auto;
-    transform: translate(0, #{-1 * $offset}) scale(#{$scale});
-    transform-origin: bottom right;
-}
+    @if $placement == 'bottom' {
+        bottom: 100%;
+        left: 50%;
+        transform: translate(-50%, 0) rotateZ(0);
+    }
 
-// Bottom
-@mixin bottom-left($offset: 0, $scale: 1) {
-    inset: 100% auto auto 0;
-    transform: translate(0, #{$offset}) scale(#{$scale});
-    transform-origin: top left;
-}
+    @if $placement == 'left' {
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -100%) rotateZ(90deg);
+    }
 
-@mixin bottom-center($offset: 0, $scale: 1) {
-    inset: 100% auto auto 50%;
-    transform: translate(-50%, #{$offset}) scale(#{$scale});
-    transform-origin: top center;
-}
-
-@mixin bottom-right($offset: 0, $scale: 1) {
-    inset: 100% 0 auto auto;
-    transform: translate(0, #{$offset}) scale(#{$scale});
-    transform-origin: top right;
-}
-
-// Left
-@mixin left-top($offset: 0, $scale: 1) {
-    inset: 0 100% auto auto;
-    transform: translate(#{-1 * $offset}, 0) scale(#{$scale});
-    transform-origin: right top;
-}
-
-@mixin left-center($offset: 0, $scale: 1) {
-    inset: 50% 100% auto auto;
-    transform: translate(#{-1 * $offset}, -50%) scale(#{$scale});
-    transform-origin: right center;
-}
-
-@mixin left-bottom($offset: 0, $scale: 1) {
-    inset: auto 100% 0 auto;
-    transform: translate(#{-1 * $offset}, 0) scale(#{$scale});
-    transform-origin: right bottom;
-}
-
-// Right
-@mixin right-top($offset: 0, $scale: 1) {
-    inset: 0 auto auto 100%;
-    transform: translate(#{$offset}, 0) scale(#{$scale});
-    transform-origin: left top;
-}
-
-@mixin right-center($offset: 0, $scale: 1) {
-    inset: 50% auto auto 100%;
-    transform: translate(#{$offset}, -50%) scale(#{$scale});
-    transform-origin: left center;
-}
-
-@mixin right-bottom($offset: 0, $scale: 1) {
-    inset: auto auto 0 100%;
-    transform: translate(#{$offset}, 0) scale(#{$scale});
-    transform-origin: left bottom;
+    @if $placement == 'right' {
+        top: 50%;
+        right: 100%;
+        transform: translate(50%, -100%) rotateZ(-90deg);
+    }
 }

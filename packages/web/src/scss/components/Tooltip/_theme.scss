@@ -1,4 +1,5 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
 @use '../../settings/transitions';
 
 $max-width: 18rem;
@@ -17,3 +18,5 @@ $arrow-width: 13px;
 $arrow-height: 8px;
 
 $close-button-size: tokens.$space-700;
+
+$placement-dictionary: dictionaries.$placement;

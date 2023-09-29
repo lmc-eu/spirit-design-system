@@ -1,8 +1,9 @@
 // 1. Although it seems pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
 //    precisely positioned in sticky tooltips, e.g. with Floating UI:
 //    https://floating-ui.com
-// 2. Reset positioning for controlled variant.
-// 3. Shift Tooltip so there is space for the arrow between Tooltip and reference element.
+// 2. `--tooltip-offset-orthogonal` is a custom property to translate orthogonal to the placement axis.
+//    It is reset to 0 in the controlled variant when the placement is controlled e.g. by Floating UI.
+// 3. Reset positioning for controlled variant when the placement is controlled e.g. by Floating UI.
 
 @use 'sass:math';
 @use '../../tools/placement';
@@ -61,44 +62,36 @@
 
 // Sides
 .Tooltip--top {
-    @include placement.top-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
+    @include placement.variant('top', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--bottom {
-    @include placement.bottom-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
+    @include placement.variant('bottom', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--left {
-    @include placement.left-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
+    @include placement.variant('left', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 .Tooltip--right {
-    @include placement.right-center($offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
+    @include placement.variant('right', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
 }
 
 // Arrows
 .Tooltip--top > .Tooltip__arrow {
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -100%) rotateZ(180deg);
+    @include placement.arrow('top');
 }
 
 .Tooltip--bottom > .Tooltip__arrow {
-    bottom: 100%;
-    left: 50%;
-    transform: translate(-50%, 0) rotateZ(0);
+    @include placement.arrow('bottom');
 }
 
 .Tooltip--left > .Tooltip__arrow {
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -100%) rotateZ(90deg);
+    @include placement.arrow('left');
 }
 
 .Tooltip--right > .Tooltip__arrow {
-    top: 50%;
-    right: 100%;
-    transform: translate(50%, -100%) rotateZ(-90deg);
+    @include placement.arrow('right');
 }
 
 // Controlled visibility
@@ -112,30 +105,25 @@
 
 // Controlled placement
 .Tooltip[data-spirit-placement] {
-    inset: unset; // 2.
+    --tooltip-offset-orthogonal: 0; // 2.
+
+    inset: unset; // 3.
 }
 
+// Use @extend for controlled placement (of both tooltip and arrow) to avoid specificity issues
 // stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
 .Tooltip[data-spirit-placement='top'] {
     @extend .Tooltip--top;
-
-    transform: translate(0, #{-1 * theme.$arrow-height}); // 3.
 }
 
 .Tooltip[data-spirit-placement='bottom'] {
     @extend .Tooltip--bottom;
-
-    transform: translate(0, #{theme.$arrow-height}); // 3.
 }
 
 .Tooltip[data-spirit-placement='left'] {
     @extend .Tooltip--left;
-
-    transform: translate(#{-1 * theme.$arrow-height}, 0); // 3.
 }
 
 .Tooltip[data-spirit-placement='right'] {
     @extend .Tooltip--right;
-
-    transform: translate(#{theme.$arrow-height}, 0); // 3.
 }

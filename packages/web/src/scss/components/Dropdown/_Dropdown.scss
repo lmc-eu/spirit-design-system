@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
+@use '../../tools/dictionaries';
 @use '../../tools/placement';
 @use 'theme' as theme;
 
@@ -28,62 +29,22 @@
     display: block;
 }
 
-// Placement: top
-.Dropdown--top {
-    @include placement.top-center($offset: theme.$offset);
-}
+@include dictionaries.generate-placements('Dropdown', theme.$placement-dictionary, $offset: theme.$offset);
 
-.Dropdown--topLeft,
+// @deprecated The class combination will be removed in the next major version.
+// Migration: delete all class combinations below.
 .Dropdown--top.Dropdown--left {
-    // @deprecated The class combination will be removed in the next major version.
-    @include placement.top-left($offset: theme.$offset);
+    @include placement.variant('top-left', $offset: theme.$offset);
 }
 
-.Dropdown--topRight,
 .Dropdown--top.Dropdown--right {
-    // @deprecated The class combination will be removed in the next major version.
-    @include placement.top-right($offset: theme.$offset);
+    @include placement.variant('top-right', $offset: theme.$offset);
 }
 
-// Placement: bottom
-.Dropdown--bottom {
-    @include placement.bottom-center($offset: theme.$offset);
-}
-
-.Dropdown--bottomLeft,
 .Dropdown--bottom.Dropdown--left {
-    // @deprecated The class combination will be removed in the next major version.
-    @include placement.bottom-left($offset: theme.$offset);
+    @include placement.variant('bottom-left', $offset: theme.$offset);
 }
 
-.Dropdown--bottomRight,
 .Dropdown--bottom.Dropdown--right {
-    // @deprecated The class combination will be removed in the next major version.
-    @include placement.bottom-right($offset: theme.$offset);
-}
-
-// Placement: left
-.Dropdown--left {
-    @include placement.left-center($offset: theme.$offset);
-}
-
-.Dropdown--leftTop {
-    @include placement.left-top($offset: theme.$offset);
-}
-
-.Dropdown--leftBottom {
-    @include placement.left-bottom($offset: theme.$offset);
-}
-
-// Placement: right
-.Dropdown--right {
-    @include placement.right-center($offset: theme.$offset);
-}
-
-.Dropdown--rightTop {
-    @include placement.right-top($offset: theme.$offset);
-}
-
-.Dropdown--rightBottom {
-    @include placement.right-bottom($offset: theme.$offset);
+    @include placement.variant('bottom-right', $offset: theme.$offset);
 }
