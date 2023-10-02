@@ -26,10 +26,11 @@ accessible name for the dialog.
 
 ### API
 
-| Name      | Type     | Default | Required | Description                        |
-| --------- | -------- | ------- | -------- | ---------------------------------- |
-| `id`      | `string` | —       | ✔        | Modal ID                           |
-| `titleId` | `string` | `null`  | ✕        | ID of the title inside ModalHeader |
+| Name                   | Type     | Default | Required | Description                                           |
+| ---------------------- | -------- | ------- | -------- | ----------------------------------------------------- |
+| `closeOnBackdropClick` | `bool`   | `true`  | ✕        | Whether the modal will close when backdrop is clicked |
+| `id`                   | `string` | —       | ✔        | Modal ID                                              |
+| `titleId`              | `string` | `null`  | ✕        | ID of the title inside ModalHeader                    |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
