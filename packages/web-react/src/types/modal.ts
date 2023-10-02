@@ -15,6 +15,7 @@ export type ModalDialogElementType = 'article' | 'form';
 export type ModalDialogHandlingProps = {
   isOpen: boolean;
   onClose: (event: ClickEvent) => void;
+  closeOnBackdropClick?: boolean;
 };
 
 export interface ModalCloseButtonProps extends ModalDialogHandlingProps {

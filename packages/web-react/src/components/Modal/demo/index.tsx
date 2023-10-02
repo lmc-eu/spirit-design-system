@@ -10,6 +10,7 @@ import { IconsProvider } from '../../../context';
 import ModalDefault from './ModalDefault';
 import ModalScrollingLongContent from './ModalScrollingLongContent';
 import ModalStacking from './ModalStacking';
+import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -22,6 +23,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Stacking Modals">
         <ModalStacking />
+      </DocsSection>
+      <DocsSection title="Disabled Backdrop Click">
+        <ModalDisabledBackdropClick />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

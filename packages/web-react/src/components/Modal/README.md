@@ -5,10 +5,27 @@ This is the React implementation of the [Modal] component.
 Modal is a composition of several subcomponents:
 
 - [Modal](#modal)
+  - [Modal](#modal-1)
+    - [API](#api)
   - [ModalDialog](#modaldialog)
-    - [ModalHeader](#modalheader)
-    - [ModalBody](#modalfooter)
-    - [ModalFooter](#modalfooter)
+    - [Forms in Modal](#forms-in-modal)
+    - [Expand on Mobile Screens](#expand-on-mobile-screens)
+    - [Custom Height](#custom-height)
+    - [Custom Max Height](#custom-max-height)
+    - [API](#api-1)
+  - [ModalHeader](#modalheader)
+    - [Hidden Title](#hidden-title)
+    - [API](#api-2)
+  - [ModalBody](#modalbody)
+    - [API](#api-3)
+  - [ModalFooter](#modalfooter)
+    - [Footer Description](#footer-description)
+    - [Footer Alignment](#footer-alignment)
+    - [API](#api-4)
+  - [Opening the Modal](#opening-the-modal)
+  - [Scrolling Long Content](#scrolling-long-content)
+    - [Scrolling with ScrollView](#scrolling-with-scrollview)
+  - [Full Example](#full-example)
 
 ## Modal
 
@@ -21,14 +38,15 @@ provides several accessibility advantages.
 
 ### API
 
-| Name               | Type                                           | Default | Required | Description               |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------- |
-| `children`         | `ReactNode`                                    | —       | ✕        | Children node             |
-| `id`               | `string`                                       | —       | ✔        | Open state                |
-| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                |
-| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback on dialog closed |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | Modal custom class name   |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Modal custom style        |
+| Name                   | Type                                           | Default | Required | Description                                           |
+| ---------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
+| `children`             | `ReactNode`                                    | —       | ✕        | Children node                                         |
+| `closeOnBackdropClick` | `bool`                                         | `true`  | ✕        | Whether the modal will close when backdrop is clicked |
+| `id`                   | `string`                                       | —       | ✔        | Modal ID                                              |
+| `isOpen`               | `bool`                                         | `false` | ✔        | Open state                                            |
+| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback on dialog closed                             |
+| `UNSAFE_className`     | `string`                                       | —       | ✕        | Modal custom class name                               |
+| `UNSAFE_style`         | `CSSProperties`                                | —       | ✕        | Modal custom style                                    |
 
 Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
 

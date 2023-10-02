@@ -7,7 +7,7 @@ import { ModalProvider } from './ModalContext';
 import Dialog from '../Dialog/Dialog';
 
 const Modal = (props: SpiritModalProps) => {
-  const { children, isOpen, onClose, id, ...restProps } = props;
+  const { children, isOpen, onClose, closeOnBackdropClick = true, id, ...restProps } = props;
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -27,6 +27,7 @@ const Modal = (props: SpiritModalProps) => {
         id={id}
         isOpen={isOpen}
         onClose={onClose}
+        closeOnBackdropClick={closeOnBackdropClick}
         className={classNames(classProps.root, styleProps.className)}
         aria-labelledby={`${id}__title`}
       >
