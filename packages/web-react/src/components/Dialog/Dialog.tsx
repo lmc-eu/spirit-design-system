@@ -7,15 +7,17 @@ import { useCancelEvent, useClickOutside } from '../../hooks';
 // Solved using `as MutableRefObject<HTMLDialogElement | null>` but I do not like it
 
 const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>): JSX.Element => {
-  const { children, isOpen, onClose, ...restProps } = props;
+  const { children, isOpen, onClose, closeOnBackdropClick, ...restProps } = props;
   const dialogElementRef: MutableRefObject<ForwardedRef<HTMLDialogElement | null>> = useRef(ref);
   const contentElementRef: MutableRefObject<HTMLElement | null> = useRef(null);
 
   // handles toggling based on state
   const { closeDialog } = useDialog(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, isOpen);
   const handleClickOutside = (event: Event) => {
-    closeDialog();
-    onClose(event);
+    if (closeOnBackdropClick) {
+      closeDialog();
+      onClose(event);
+    }
   };
 
   // handles closing by clicking outside the dialog

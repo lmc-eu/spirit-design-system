@@ -1,10 +1,11 @@
 import '@testing-library/jest-dom';
 import React from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import Modal from '../Modal';
 import { SpiritModalProps } from '../../../types';
+import Modal from '../Modal';
 
 describe('Modal', () => {
   const ModalTest = (props: SpiritModalProps) => (
@@ -18,4 +19,32 @@ describe('Modal', () => {
   stylePropsTest(ModalTest);
 
   restPropsTest(ModalTest, 'dialog');
+
+  it('should not close modal dialog', () => {
+    const mockedOnClose = jest.fn();
+    const dom = render(
+      <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick={false}>
+        <div>Test</div>
+      </Modal>,
+    );
+
+    const dialog = dom.container.querySelector('.Modal') as HTMLElement;
+    fireEvent.click(dialog);
+
+    expect(mockedOnClose).not.toHaveBeenCalled();
+  });
+
+  it('should close modal dialog', () => {
+    const mockedOnClose = jest.fn();
+    const dom = render(
+      <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick>
+        <div>Test</div>
+      </Modal>,
+    );
+
+    const dialog = dom.container.querySelector('.Modal') as HTMLElement;
+    fireEvent.click(dialog);
+
+    expect(mockedOnClose).toHaveBeenCalled();
+  });
 });
