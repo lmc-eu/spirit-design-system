@@ -31,7 +31,12 @@ class Modal extends BaseComponent {
     if (event.target === this.element || event.target.dataset.spiritDismiss) {
       event.preventDefault();
       event.stopPropagation();
-      this.hide(event);
+      if (
+        !event.target.dataset.spiritCloseOnBackdropClick ||
+        event.target.dataset.spiritCloseOnBackdropClick === 'true'
+      ) {
+        this.hide(event);
+      }
     }
   }
 

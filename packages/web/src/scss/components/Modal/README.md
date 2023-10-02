@@ -216,6 +216,17 @@ Use our JavaScript plugin to open your Modal, e.g.:
 </button>
 ```
 
+## Disable Modal closing on backdrop click
+
+Disable modal close when clicking on the backdrop.
+You can still close modal with close buttons or ESC key.
+
+```html
+<dialog id="example_1" class="Modal" data-spirit-backdrop-close-disabled="true">
+  <!-- … -->
+</dialog>
+```
+
 ## Scrolling Long Content
 
 When Modals become too long for the user's viewport or device, they scroll independently of the page itself. By default,
@@ -325,13 +336,14 @@ When you put it all together:
 
 Both trigger and close buttons use `data` attributes to open and close the Modal.
 
-| Name                  | Type     | Default | Required | Description                |
-| --------------------- | -------- | ------- | -------- | -------------------------- |
-| `aria-controls`       | `string` | —       | ✕        | Aria controls state (auto) |
-| `aria-expanded`       | `string` | —       | ✕        | Aria expanded state (auto) |
-| `data-spirit-dismiss` | `string` | `modal` | ✕        | Iterable selector          |
-| `data-spirit-target`  | `string` | —       | ✔        | Target selector            |
-| `data-spirit-toggle`  | `string` | `modal` | ✕        | Iterable selector          |
+| Name                                  | Type     | Default | Required | Description                                           |
+| ------------------------------------- | -------- | ------- | -------- | ----------------------------------------------------- |
+| `aria-controls`                       | `string` | —       | ✕        | Aria controls state (auto)                            |
+| `aria-expanded`                       | `string` | —       | ✕        | Aria expanded state (auto)                            |
+| `data-spirit-close-on-backdrop-click` | `bool`   | `true`  | ✕        | Whether the modal will close when backdrop is clicked |
+| `data-spirit-dismiss`                 | `string` | `modal` | ✕        | Iterable selector                                     |
+| `data-spirit-target`                  | `string` | —       | ✔        | Target selector                                       |
+| `data-spirit-toggle`                  | `string` | `modal` | ✕        | Iterable selector                                     |
 
 ## JavaScript Plugin
 
