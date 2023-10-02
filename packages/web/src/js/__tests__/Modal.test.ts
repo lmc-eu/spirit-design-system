@@ -99,4 +99,38 @@ describe('Modal', () => {
       expect(Modal.getOrCreateInstance(dialog)).toBeInstanceOf(Modal);
     });
   });
+
+  describe('backdrop', () => {
+    it('should not hide the modal when backdrop close is disabled', () => {
+      fixtureEl.innerHTML = '<dialog class="Modal" data-spirit-close-on-backdrop-click="false"></dialog>';
+      const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
+      const modal = new Modal(dialog);
+
+      const event = new Event('click', { bubbles: true });
+      const targetElement = modal.element;
+      Object.defineProperty(event, 'target', { writable: false, value: targetElement });
+
+      jest.spyOn(modal, 'hide');
+
+      modal.onClick(event);
+
+      expect(modal.hide).not.toHaveBeenCalled();
+    });
+
+    it('should hide the modal when backdrop close is not disabled', () => {
+      fixtureEl.innerHTML = '<dialog class="Modal" data-spirit-close-on-backdrop-click="true"></dialog>';
+      const dialog = fixtureEl.querySelector('dialog') as HTMLElement;
+      const modal = new Modal(dialog);
+
+      const event = new Event('click', { bubbles: true });
+      const targetElement = modal.element;
+      Object.defineProperty(event, 'target', { writable: false, value: targetElement });
+
+      jest.spyOn(modal, 'hide');
+
+      modal.onClick(event);
+
+      expect(modal.hide).toHaveBeenCalled();
+    });
+  });
 });

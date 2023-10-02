@@ -687,4 +687,78 @@
 
 </section>
 
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled Backdrop Click</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example_disabled_backdrop_click"
+      aria-controls="example_disabled_backdrop_click"
+      aria-expanded="false"
+    >
+      Open Modal
+    </button>
+
+    <dialog id="example_disabled_backdrop_click" class="Modal" aria-labelledby="example_disabled_backdrop_click_title" data-spirit-close-on-backdrop-click="false">
+
+      <article class="ModalDialog ModalDialog--expandOnMobile">
+
+        <header class="ModalHeader">
+          <h2 id="example_disabled_backdrop_click_title" class="ModalHeader__title">Modal Title</h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example_disabled_backdrop_click"
+            aria-controls="example_disabled_backdrop_click"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+
+        <div class="ModalBody">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+        </div>
+
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_disabled_backdrop_click"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_disabled_backdrop_click"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+
+      </article>
+
+    </dialog>
+
+  </div>
+
+</section>
+
 {{/layout/plain }}
