@@ -2,6 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _id = props.id -%}
 {%- set _titleId = props.titleId | default(null) -%}
+{%- set _closeOnBackdropClick = props.closeOnBackdropClick ?? true -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
@@ -9,6 +10,9 @@
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaLabelledbyAttr = _titleId ? 'aria-labelledby="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
+{%- set _closeOnBackdropClickString = _closeOnBackdropClick ? 'true' : 'false' -%}
+{%- set _dataBackdropCloseDisabledAttr = 
+    _closeOnBackdropClick ? null : 'data-spirit-close-on-backdrop-click="' ~ _closeOnBackdropClickString | escape('html_attr') ~ '"' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -21,6 +25,7 @@
     {{ classProp(_classNames) }}
     {{ _idAttr | raw }}
     {{ _ariaLabelledbyAttr | raw }}
+    {{ _dataBackdropCloseDisabledAttr | raw }}
 >
     {% block content %}{% endblock %}
 </dialog>
