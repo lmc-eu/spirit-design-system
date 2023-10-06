@@ -2,6 +2,132 @@
 
   <section class="docs-Section">
 
+    <h2 class="docs-Heading">Placements</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <form autocomplete="off" class="mx-auto">
+        <div class="Grid Grid--cols-3" style="align-items: center; justify-items: center">
+          <div style="grid-row: 1; grid-column: 2">
+
+            <label for="placement_top_left" class="Radio">
+              <input type="radio" name="placement" value="topLeft" id="placement_top_left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-left</span>
+              </span>
+            </label>
+            <label for="placement_top" class="Radio">
+              <input type="radio" name="placement" value="top" id="placement_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top</span>
+              </span>
+            </label>
+            <label for="placement_top_right" class="Radio">
+              <input type="radio" name="placement" value="topRight" id="placement_top_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-right</span>
+              </span>
+            </label>
+
+          </div>
+          <div style="grid-row: 3; grid-column: 2">
+
+            <label for="placement_bottom_left" class="Radio">
+              <input type="radio" name="placement" value="bottomLeft" id="placement_bottom_left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-left</span>
+              </span>
+            </label>
+            <label for="placement_bottom" class="Radio">
+              <input type="radio" name="placement" value="bottom" id="placement_bottom" class="Radio__input" checked />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom</span>
+              </span>
+            </label>
+            <label for="placement_bottom_right" class="Radio">
+              <input type="radio" name="placement" value="bottomRight" id="placement_bottom_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-right</span>
+              </span>
+            </label>
+
+          </div>
+          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1">
+
+            <label for="placement_left_top" class="Radio">
+              <input type="radio" name="placement" value="leftTop" id="placement_left_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-top</span>
+              </span>
+            </label>
+            <label for="placement_left" class="Radio">
+              <input type="radio" name="placement" value="left" id="placement_left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left</span>
+              </span>
+            </label>
+            <label for="placement_left_bottom" class="Radio">
+              <input type="radio" name="placement" value="leftBottom" id="placement_left_bottom" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-bottom</span>
+              </span>
+            </label>
+
+          </div>
+          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3">
+
+            <label for="placement_right_top" class="Radio">
+              <input type="radio" name="placement" value="rightTop" id="placement_right_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-top</span>
+              </span>
+            </label>
+            <label for="placement_right" class="Radio">
+              <input type="radio" name="placement" value="right" id="placement_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right</span>
+              </span>
+            </label>
+            <label for="placement_right_bottom" class="Radio">
+              <input type="radio" name="placement" value="rightBottom" id="placement_right_bottom" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-bottom</span>
+              </span>
+            </label>
+
+          </div>
+          <div style="grid-row: 2; grid-column: 2">
+
+            <div class="TooltipWrapper" style="margin: 6rem auto">
+              <div class="docs-Box">Click the dots!</div>
+              <div class="Tooltip Tooltip--bottom" id="tooltip_placements_example">
+                Hello!
+                <span class="Tooltip__arrow"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+      <script>
+        const radios = document.querySelectorAll('input[type="radio"]');
+
+        radios.forEach(radio => {
+          radio.addEventListener('change', () => {
+            const placement = radio.value;
+            const tooltip = document.getElementById('tooltip_placements_example');
+
+            tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
+          });
+        });
+      </script>
+
+    </div>
+  </section>
+
+  <section class="docs-Section">
+
     <h2 class="docs-Heading">Static Tooltip (No Interaction)</h2>
 
     <div class="docs-Stack docs-Stack--start">

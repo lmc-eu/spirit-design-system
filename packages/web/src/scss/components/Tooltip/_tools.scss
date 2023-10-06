@@ -1,15 +1,13 @@
 @use 'theme';
 
 %hidden {
-    --tooltip-scale: #{theme.$transition-scale-ratio};
-
     visibility: hidden;
     opacity: 0;
+    scale: theme.$transition-scale-ratio;
 }
 
 %visible {
-    --tooltip-scale: 1;
-
     visibility: visible;
     opacity: 1;
+    scale: 1;
 }

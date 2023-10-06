@@ -29,22 +29,26 @@
     display: block;
 }
 
-@include dictionaries.generate-placements('Dropdown', theme.$placement-dictionary, $offset: theme.$offset);
+@include dictionaries.generate-placements(
+    $class-name: 'Dropdown',
+    $dictionary-values: theme.$placement-dictionary,
+    $offset: theme.$offset
+);
 
 // @deprecated The class combination will be removed in the next major version.
-// Migration: delete all class combinations below.
+// Migration: delete all placement class combinations below.
 .Dropdown--top.Dropdown--left {
-    @include placement.variant('top-left', $offset: theme.$offset);
+    @include placement.child-variant('top-left', $offset: theme.$offset);
 }
 
 .Dropdown--top.Dropdown--right {
-    @include placement.variant('top-right', $offset: theme.$offset);
+    @include placement.child-variant('top-right', $offset: theme.$offset);
 }
 
 .Dropdown--bottom.Dropdown--left {
-    @include placement.variant('bottom-left', $offset: theme.$offset);
+    @include placement.child-variant('bottom-left', $offset: theme.$offset);
 }
 
 .Dropdown--bottom.Dropdown--right {
-    @include placement.variant('bottom-right', $offset: theme.$offset);
+    @include placement.child-variant('bottom-right', $offset: theme.$offset);
 }

@@ -36,12 +36,12 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Name            | Type                                                                                                       | Default       | Required | Description                           |
-| --------------- | ---------------------------------------------------------------------------------------------------------- | ------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                                                                                   | `div`         | ✕        | HTML tag to render                    |
-| `fullWidthMode` | `string`                                                                                                   | —             | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                                                                                   | —             | ✔        | Dropdown ID                           |
-| `placement`     | [ `top` \| `top-left` \| `top-right` \| `bottom` \| `bottom-left` \| `bottom-right` \| `left` \| `right` ] | `bottom-left` | ✕        | Placement of the dropdown             |
+| Name            | Type                                         | Default       | Required | Description                           |
+| --------------- | -------------------------------------------- | ------------- | -------- | ------------------------------------- |
+| `elementType`   | `string`                                     | `div`         | ✕        | HTML tag to render                    |
+| `fullWidthMode` | `string`                                     | —             | ✕        | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                     | —             | ✔        | Dropdown ID                           |
+| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-left` | ✕        | Placement of the dropdown             |
 
 You can add `data-*` or `aria-*` attributes to further extend the component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -86,4 +86,5 @@ Or, feel free to write the controlling script yourself.
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md#javascript
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

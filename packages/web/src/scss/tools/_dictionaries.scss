@@ -150,13 +150,21 @@
 // Mixin to generate placement classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
-// * $placements: map of the placements to generate
-// * $offset: the offset of child from its parent, typically for an arrow
-// * $scale: the scale of child
-@mixin generate-placements($class-name, $placements, $offset: 0, $scale: 1) {
-    @each $placement in $placements {
-        .#{$class-name}--#{spirit-string.convert-kebab-case-to-camel-case($placement)} {
-            @include placement.variant($placement, $offset, $scale);
+// * $dictionary-values: map of the placements to generate
+// * $offset: offset of child from its parent, typically for an arrow
+// * $has-arrow: whether the component has an arrow
+@mixin generate-placements($class-name, $dictionary-values, $offset: 0, $has-arrow: false) {
+    @each $placement in $dictionary-values {
+        $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
+
+        .#{$class-name}--#{$placement-modifier} {
+            @include placement.child-variant($placement, $offset);
+        }
+
+        @if $has-arrow {
+            .#{$class-name}--#{$placement-modifier} > .#{$class-name}__arrow {
+                @include placement.arrow-variant(placement.inverse($placement, $main-axis-only: true));
+            }
         }
     }
 }

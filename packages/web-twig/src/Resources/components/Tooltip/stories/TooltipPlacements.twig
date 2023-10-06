@@ -1,51 +1,53 @@
-<TooltipWrapper>
-    <ButtonLink
-        href="#"
-        aria-describedby="my-tooltip-hover-top"
-        UNSAFE_className="TooltipTarget"
-    >
-        Tooltip on top
-    </ButtonLink>
-    <Tooltip id="my-tooltip-hover-top" placement="top">
-        Hello there!
-    </Tooltip>
-</TooltipWrapper>
+<form autocomplete="off" class="mx-auto">
+    <Grid cols="3" UNSAFE_style="align-items: center; justify-items: center">
+        <div style="grid-row: 1; grid-column: 2">
 
-<TooltipWrapper>
-    <ButtonLink
-        href="#"
-        aria-describedby="my-tooltip-hover-right"
-        UNSAFE_className="TooltipTarget"
-    >
-        Tooltip on right
-    </ButtonLink>
-    <Tooltip id="my-tooltip-hover-right" placement="right">
-        Hello there!
-    </Tooltip>
-</TooltipWrapper>
+            <Radio name="placement" isLabelHidden value="topLeft" id="placement_top_left" label="top-left" />
+            <Radio name="placement" isLabelHidden value="top" id="placement_top" label="top" />
+            <Radio name="placement" isLabelHidden value="topRight" id="placement_top_right" label="top-right" />
 
-<TooltipWrapper>
-    <ButtonLink
-        href="#"
-        aria-describedby="my-tooltip-hover-bottom"
-        UNSAFE_className="TooltipTarget"
-    >
-        Tooltip on bottom
-    </ButtonLink>
-    <Tooltip id="my-tooltip-hover-bottom" placement="bottom">
-        Hello there!
-    </Tooltip>
-</TooltipWrapper>
+        </div>
+        <div style="grid-row: 3; grid-column: 2">
 
-<TooltipWrapper>
-    <ButtonLink
-        href="#"
-        aria-describedby="my-tooltip-hover-left"
-        UNSAFE_className="TooltipTarget"
-    >
-        Tooltip on left
-    </ButtonLink>
-    <Tooltip id="my-tooltip-hover-left" placement="left">
-        Hello there!
-    </Tooltip>
-</TooltipWrapper>
+            <Radio name="placement" isLabelHidden value="bottomLeft" id="placement_bottom_left" label="bottom-left" />
+            <Radio name="placement" isLabelHidden value="bottom" id="placement_bottom" label="bottom" isChecked />
+            <Radio name="placement" isLabelHidden value="bottomRight" id="placement_bottom_right" label="bottom-right" />
+
+        </div>
+        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1">
+
+            <Radio name="placement" isLabelHidden value="leftTop" id="placement_left_top" label="left-top" />
+            <Radio name="placement" isLabelHidden value="left" id="placement_left" label="left" />
+            <Radio name="placement" isLabelHidden value="leftBottom" id="placement_left_bottom" label="left-bottom" />
+
+        </div>
+        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3">
+
+            <Radio name="placement" isLabelHidden value="rightTop" id="placement_right_top" label="right-top" />
+            <Radio name="placement" isLabelHidden value="right" id="placement_right" label="right" />
+            <Radio name="placement" isLabelHidden value="rightBottom" id="placement_right_bottom" label="right-bottom" />
+
+        </div>
+        <div style="grid-row: 2; grid-column: 2">
+
+            <TooltipWrapper UNSAFE_style="margin: 6rem auto">
+                <DocsBox>Click the dots!</DocsBox>
+                <Tooltip id="tooltip_placements_example">Hello!</Tooltip>
+            </TooltipWrapper>
+
+        </div>
+    </Grid>
+</form>
+
+<script>
+    const radios = document.querySelectorAll('input[type="radio"]');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            const placement = radio.value;
+            const tooltip = document.getElementById('tooltip_placements_example');
+
+            tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
+        });
+    });
+</script>

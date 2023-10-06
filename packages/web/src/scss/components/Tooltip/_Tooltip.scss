@@ -1,11 +1,13 @@
 // 1. Although it seems pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
 //    precisely positioned in sticky tooltips, e.g. with Floating UI:
 //    https://floating-ui.com
-// 2. `--tooltip-offset-orthogonal` is a custom property to translate orthogonal to the placement axis.
+// 2. `--placement-offset-orthogonal` is a custom property to translate orthogonal to the placement axis.
 //    It is reset to 0 in the controlled variant when the placement is controlled e.g. by Floating UI.
 // 3. Reset positioning for controlled variant when the placement is controlled e.g. by Floating UI.
+// 4. Use custom properties just to allow overriding the arrow appearance live in the browser.
 
 @use 'sass:math';
+@use '../../tools/dictionaries';
 @use '../../tools/placement';
 @use '../../tools/reset';
 @use '../../tools/svg';
@@ -30,18 +32,22 @@
     word-wrap: break-word;
 
     @media (prefers-reduced-motion: no-preference) {
-        transition-property: opacity, visibility, transform;
+        transition-property: opacity, visibility, scale;
         transition-duration: theme.$transition-duration;
     }
 }
 
 // 1.
 .Tooltip__arrow {
-    position: absolute;
-    width: theme.$arrow-width;
-    height: theme.$arrow-height;
-    background-image: svg.escape(theme.$arrow-shape);
-    transform-origin: center bottom;
+    @include placement.arrow(var(--tooltip-arrow-width), var(--tooltip-arrow-height), theme.$arrow-corner-offset);
+
+    // 4.
+    --tooltip-arrow-width: #{theme.$arrow-width};
+    --tooltip-arrow-height: #{theme.$arrow-height};
+
+    width: var(--tooltip-arrow-width);
+    height: var(--tooltip-arrow-height);
+    background: no-repeat center/cover svg.escape(theme.$arrow-shape);
 }
 
 .Tooltip__close {
@@ -60,39 +66,12 @@
     max-width: calc(#{theme.$max-width} + #{theme.$gap} + #{theme.$close-button-size});
 }
 
-// Sides
-.Tooltip--top {
-    @include placement.variant('top', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
-}
-
-.Tooltip--bottom {
-    @include placement.variant('bottom', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
-}
-
-.Tooltip--left {
-    @include placement.variant('left', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
-}
-
-.Tooltip--right {
-    @include placement.variant('right', $offset: theme.$arrow-height, $scale: var(--tooltip-scale, 1));
-}
-
-// Arrows
-.Tooltip--top > .Tooltip__arrow {
-    @include placement.arrow('top');
-}
-
-.Tooltip--bottom > .Tooltip__arrow {
-    @include placement.arrow('bottom');
-}
-
-.Tooltip--left > .Tooltip__arrow {
-    @include placement.arrow('left');
-}
-
-.Tooltip--right > .Tooltip__arrow {
-    @include placement.arrow('right');
-}
+@include dictionaries.generate-placements(
+    $class-name: 'Tooltip',
+    $dictionary-values: theme.$placement-dictionary,
+    $offset: theme.$arrow-height,
+    $has-arrow: true
+);
 
 // Controlled visibility
 .Tooltip.is-hidden {
@@ -105,7 +84,7 @@
 
 // Controlled placement
 .Tooltip[data-spirit-placement] {
-    --tooltip-offset-orthogonal: 0; // 2.
+    --placement-offset-orthogonal: 0; // 2.
 
     inset: unset; // 3.
 }

@@ -1,0 +1,17 @@
+@use 'sass:list';
+
+// Converts a list to a string with a separator
+// Example: to-string((1, 2, 3), '-') will return '1-2-3'
+@function to-string($list, $separator: ' ') {
+    $string: '';
+
+    @for $i from 1 through length($list) {
+        $string: $string + list.nth($list, $i);
+
+        @if $i < length($list) {
+            $string: $string + $separator;
+        }
+    }
+
+    @return $string;
+}
