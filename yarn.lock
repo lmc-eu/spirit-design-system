@@ -2160,14 +2160,14 @@
   resolved "https://registry.yarnpkg.com/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.0.1.tgz#08de79f54eb3406f9daaf77c76e35313da963963"
   integrity sha512-jT/qyKZ9rzLErtrjGgdkMBn2OP8wl0G3sQlBb3YPryvKHsjvINUhVaPFfP+fpBcOkmrVOVEEHQFJ7nbj2TH2gw==
 
-"@es-joy/jsdoccomment@~0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.29.0.tgz#527c7eefadeaf5c5d0c3b2721b5fa425d2119e98"
-  integrity sha512-4yKy5t+/joLihG+ei6CCU6sc08sjUdEdXCQ2U+9h9VP13EiqHQ4YMgDC18ys/AsLdJDBX3KRx/AWY6PR7hn52Q==
+"@es-joy/jsdoccomment@~0.40.1":
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/@es-joy/jsdoccomment/-/jsdoccomment-0.40.1.tgz#13acd77fb372ed1c83b7355edd865a3b370c9ec4"
+  integrity sha512-YORCdZSusAlBrFpZ77pJjc5r1bQs5caPWtAu+WWmiSo+8XaUzseapVrfAtiRFbQWnrBxxLLEwF6f6ZG/UgCQCg==
   dependencies:
-    comment-parser "1.3.1"
-    esquery "^1.4.0"
-    jsdoc-type-pratt-parser "~3.0.1"
+    comment-parser "1.4.0"
+    esquery "^1.5.0"
+    jsdoc-type-pratt-parser "~4.0.0"
 
 "@esbuild/android-arm64@0.17.19":
   version "0.17.19"
@@ -3258,32 +3258,32 @@
   dependencies:
     compare-func "^2.0.0"
 
-"@lmc-eu/eslint-config-base@1.1.6", "@lmc-eu/eslint-config-base@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-base/-/eslint-config-base-1.1.6.tgz#78fc8b73812b7d1f1317142d63727a318d7436f1"
-  integrity sha512-nu5MVQUo1ThAqairVzer04so/1gWYhDmAF+1u4Nvjpkewthl7Ky9MzHwub5CE9qTGeLehyTuCcHxbwQ08gY4iQ==
+"@lmc-eu/eslint-config-base@3.0.1", "@lmc-eu/eslint-config-base@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-base/-/eslint-config-base-3.0.1.tgz#00e4a26b6c67d07fc0f8ad9e07a4e8b125fb5762"
+  integrity sha512-tpJARBRr+Qc0d+CBCXyMXh3l4WpdWMipzUFOwc4uXZL6frzlxXtN3JF8LpJcjvn5mt3lOF8Y0Lqiuaw1kM9BnQ==
   dependencies:
     eslint-config-airbnb-base "^15.0.0"
     eslint-plugin-import "^2.25.2"
-    eslint-plugin-jsdoc "^39.0.0"
+    eslint-plugin-jsdoc "^46.0.0"
 
-"@lmc-eu/eslint-config-jest@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-jest/-/eslint-config-jest-2.1.0.tgz#f16ce113d92290dfcb053fa2d64bc1cc1903c323"
-  integrity sha512-rrw4kPKVC0AG4RCxxDX1FTvSGG4juNpEgt/HZ4Gsvx+6MEqeh4x9LOufvRgz+0UM30Wgab7Iam26uScooNELVA==
+"@lmc-eu/eslint-config-jest@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-jest/-/eslint-config-jest-3.0.1.tgz#488ddc2c88d75db6c8c9dfe66dcc90ce0cf8df33"
+  integrity sha512-hqyjq5KGCEpHaocdQFrEGgG2zdyFTWZGE9gaBXwsBRCsVt+iHDVJntvtPQKRBEMHUpj3fe9JT4jJYjmYSdE6wg==
   dependencies:
-    "@lmc-eu/eslint-config-base" "^1.1.6"
+    "@lmc-eu/eslint-config-base" "^3.0.1"
     eslint-plugin-jest "^27.0.0"
     eslint-plugin-jest-formatting "^3.1.0"
 
-"@lmc-eu/eslint-config-react@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-react/-/eslint-config-react-1.1.1.tgz#9e95e91f9037f1d05e119cae93b1b4d7c0fd115b"
-  integrity sha512-6p5CHIUIY7U2oyiGMjHQlwb0MFKAgHL6yPZyWtRmB/AUl2UoisdMkmjf1F7lVyqnv8eFUSW14JUKQ9rHd89+tQ==
+"@lmc-eu/eslint-config-react@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/eslint-config-react/-/eslint-config-react-2.0.1.tgz#349344eeb8975a434355a8a57915b00331618aaa"
+  integrity sha512-4I6fORBiQfdasWqsW6b1taNyOo2qsbVO5z3AZ1n90jO83DXK5ieJgYLH+PGt6P3a97NkTMNtXX16EbgF9q5WrQ==
   dependencies:
     "@babel/core" "^7.16.5"
     "@babel/eslint-parser" "^7.16.5"
-    "@lmc-eu/eslint-config-base" "^1.1.6"
+    "@lmc-eu/eslint-config-base" "^3.0.1"
     eslint-config-airbnb "^19.0.2"
 
 "@lmc-eu/prettier-config@1.2.4":
@@ -7449,6 +7449,11 @@ archy@^1.0.0:
   resolved "https://registry.yarnpkg.com/archy/-/archy-1.0.0.tgz#f9c8c13757cc1dd7bc379ac77b2c62a5c2868c40"
   integrity sha512-Xg+9RwCg/0p32teKdGMPTPnVXKD0w3DfHnFTficozsAgsvq2XenPJq/MYpzzQ/v8zrOyJn6Ds39VA4JIDwFfqw==
 
+are-docs-informative@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/are-docs-informative/-/are-docs-informative-0.0.2.tgz#387f0e93f5d45280373d387a59d34c96db321963"
+  integrity sha512-ixiS0nLNNG5jNQzgZJNoUpBKdo9yTYZMGJ+QgT2jmjR7G7+QHRCc4v6LQ3NgE7EBJq+o0ams3waJwkrlBom8Ig==
+
 are-we-there-yet@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-2.0.0.tgz#372e0e7bd279d8e94c653aaa1f67200884bf3e1c"
@@ -9149,10 +9154,10 @@ comment-json@^4.2.3:
     has-own-prop "^2.0.0"
     repeat-string "^1.6.1"
 
-comment-parser@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-1.3.1.tgz#3d7ea3adaf9345594aedee6563f422348f165c1b"
-  integrity sha512-B52sN2VNghyq5ofvUsqZjmk6YkihBX5vMSChmSK9v4ShjKf3Vk5Xcmgpw4o+iIgtrnM/u5FiMpz9VKb8lpBveA==
+comment-parser@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/comment-parser/-/comment-parser-1.4.0.tgz#0f8c560f59698193854f12884c20c0e39a26d32c"
+  integrity sha512-QLyTNiZ2KDOibvFPlZ6ZngVsZ/0gYnE6uTXi5aoDg8ed3AkJAz4sEje3Y8a29hQ1s6A99MZXe47fLAXQ1rTqaw==
 
 common-ancestor-path@^1.0.1:
   version "1.0.1"
@@ -11508,17 +11513,19 @@ eslint-plugin-jest@^27.0.0:
   dependencies:
     "@typescript-eslint/utils" "^5.10.0"
 
-eslint-plugin-jsdoc@^39.0.0:
-  version "39.2.9"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-39.2.9.tgz#bc351de403f1862f1ef8c440d12dedc28e74cbbb"
-  integrity sha512-gaPYJT94rWlWyQcisQyyEJHtLaaJqN4baFlLCEr/LcXVibS9wzQTL2dskqk327ggwqQopR+Xecu2Lng1IJ9Ypw==
+eslint-plugin-jsdoc@^46.0.0:
+  version "46.8.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.8.2.tgz#3e6b1c93e91e38fe01874d45da121b56393c54a5"
+  integrity sha512-5TSnD018f3tUJNne4s4gDWQflbsgOycIKEUBoCLn6XtBMgNHxQFmV8vVxUtiPxAQq8lrX85OaSG/2gnctxw9uQ==
   dependencies:
-    "@es-joy/jsdoccomment" "~0.29.0"
-    comment-parser "1.3.1"
+    "@es-joy/jsdoccomment" "~0.40.1"
+    are-docs-informative "^0.0.2"
+    comment-parser "1.4.0"
     debug "^4.3.4"
     escape-string-regexp "^4.0.0"
-    esquery "^1.4.0"
-    semver "^7.3.7"
+    esquery "^1.5.0"
+    is-builtin-module "^3.2.1"
+    semver "^7.5.4"
     spdx-expression-parse "^3.0.1"
 
 eslint-plugin-jsx-a11y@6.7.1:
@@ -11707,14 +11714,14 @@ esprima@^4.0.0, esprima@^4.0.1, esprima@~4.0.0:
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
-esquery@^1.0.1, esquery@^1.4.0:
+esquery@^1.0.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.4.0.tgz#2148ffc38b82e8c7057dfed48425b3e61f0f24a5"
   integrity sha512-cCDispWt5vHHtwMY2YrAQ4ibFkAL8RbH5YGBnZBc90MolvvfkkQcJro/aZiAQUlQ3qgrYS6D6v8Gc5G5CQsc9w==
   dependencies:
     estraverse "^5.1.0"
 
-esquery@^1.4.2:
+esquery@^1.4.2, esquery@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.5.0.tgz#6ce17738de8577694edd7361c57182ac8cb0db0b"
   integrity sha512-YQLXUplAwJgCydQ78IMJywZCceoqk1oH01OERdSAJc/7U2AylwjhSCLDEtqwg811idIS/9fIU5GjG73IgjKMVg==
@@ -15453,10 +15460,10 @@ jscodeshift@^0.14.0:
     temp "^0.8.4"
     write-file-atomic "^2.3.0"
 
-jsdoc-type-pratt-parser@~3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-3.0.1.tgz#ccbc7a4180bc8748af64d2cc431aaa92f88175bb"
-  integrity sha512-vqMCdAFVIiFhVgBYE/X8naf3L/7qiJsaYWTfUJZZZ124dR3OUz9HrmaMUGpYIYAN4VSuodf6gIZY0e8ktPw9cg==
+jsdoc-type-pratt-parser@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsdoc-type-pratt-parser/-/jsdoc-type-pratt-parser-4.0.0.tgz#136f0571a99c184d84ec84662c45c29ceff71114"
+  integrity sha512-YtOli5Cmzy3q4dP26GraSOeAhqecewG04hoO8DY56CH4KJ9Fvv5qKWUCCo3HZob7esJQHCv6/+bnTy72xZZaVQ==
 
 jsdom@21.1.2:
   version "21.1.2"
