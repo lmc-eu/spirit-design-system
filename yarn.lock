@@ -3655,10 +3655,10 @@
     write-pkg "4.0.0"
     yargs "16.2.0"
 
-"@lmc-eu/browserslist-config@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/browserslist-config/-/browserslist-config-1.0.4.tgz#56c224e745604e4300c8f58911d86643efb01ef4"
-  integrity sha512-lXM8vUOK5JUvMk/TSVw1+my9coc5dht7gNF3hV/7MbToDv5Y4fu5APC78XMxVRBEEzC2+KWOnB6+XNQHh66B8g==
+"@lmc-eu/browserslist-config@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/browserslist-config/-/browserslist-config-2.0.0.tgz#8eada0c9ca178a838cb25846a59db3f9dc52961e"
+  integrity sha512-xRjvQARAfdkyy5SJctIGBmoniw8zevohsgxL2nzORp5f18sD3AW1qw2NA7NcUMDZnTYJs62znRUUaaQ4HwO93A==
 
 "@lmc-eu/commitlint-config@1.0.18":
   version "1.0.18"

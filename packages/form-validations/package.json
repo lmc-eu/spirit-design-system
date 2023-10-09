@@ -33,7 +33,7 @@
     "types": "tsc"
   },
   "devDependencies": {
-    "@lmc-eu/browserslist-config": "1.0.4",
+    "@lmc-eu/browserslist-config": "2.0.0",
     "@lmc-eu/spirit-demo": "^0.1.0",
     "@lmc-eu/spirit-design-tokens": "^0.25.5",
     "@lmc-eu/spirit-web": "^1.2.2",
