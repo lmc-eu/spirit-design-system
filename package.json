@@ -100,7 +100,7 @@
     "storybook": "7.3.2",
     "style-loader": "3.3.3",
     "typescript": "4.7.4",
-    "vite-raw-plugin": "^1.0.2",
+    "vite-raw-plugin": "1.0.2",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4"
   },
