@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     container:
-      image: mcr.microsoft.com/playwright:v1.38.0-jammy
+      image: mcr.microsoft.com/playwright:v1.38.1-jammy
     timeout-minutes: 60
 
     steps:
@@ -21,7 +21,7 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1.8.34
+        uses: bahmutov/npm-install@v1.8.35
         with:
           useRollingCache: true
 
