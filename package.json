@@ -54,7 +54,7 @@
     "@babel/preset-react": "7.22.15",
     "@commitlint/cli": "17.7.2",
     "@lmc-eu/commitlint-config": "2.0.0",
-    "@lmc-eu/conventional-changelog-lmc-github": "2.3.2",
+    "@lmc-eu/conventional-changelog-lmc-github": "3.0.0",
     "@lmc-eu/eslint-config-react": "2.0.1",
     "@lmc-eu/prettier-config": "1.2.4",
     "@omlet/cli": "1.0.1-beta.37",

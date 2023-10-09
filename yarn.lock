@@ -3668,20 +3668,13 @@
     "@commitlint/config-conventional" "^17.0.0"
     "@lmc-eu/conventional-changelog-lmc" "^2.0.0"
 
-"@lmc-eu/conventional-changelog-lmc-github@2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-github/-/conventional-changelog-lmc-github-2.3.2.tgz#7a756956bf3315147d08ad1f96999b6c6c57f6bb"
-  integrity sha512-iO6Tx6zVeGKkeSbnX/vdN88gnjueYoW2aCUdiN1BgQ/RecclUXT2Sq9+ymnlah6uwsoc5c3PHdWUacmbld2f3A==
+"@lmc-eu/conventional-changelog-lmc-github@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc-github/-/conventional-changelog-lmc-github-3.0.0.tgz#6b2aa5dfc51e49f53910933b466cad832d2f3ce0"
+  integrity sha512-Il01cdNomPyXg+eoDzFxcVTTyzqPvqC2dxdZpGAwLnKGoqCIGitinaP85RnMlDFiGl3zmrkvJHDhUIBd9BZ5Mw==
   dependencies:
-    "@lmc-eu/conventional-changelog-lmc" "^1.3.2"
+    "@lmc-eu/conventional-changelog-lmc" "^2.0.0"
     q "^1.5.1"
-
-"@lmc-eu/conventional-changelog-lmc@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/conventional-changelog-lmc/-/conventional-changelog-lmc-1.3.2.tgz#08a8a9625c757f90a8d42efead0658bf9d9f2f58"
-  integrity sha512-Gu1KkLPqbwfAnzWcg/E1L56rBxxNOz34eCzx5uXyK3DEFRdbWAq4E9qev9qQ7rEkkBZBt365dMbSfrqoRXVorw==
-  dependencies:
-    compare-func "^2.0.0"
 
 "@lmc-eu/conventional-changelog-lmc@^2.0.0":
   version "2.0.0"
