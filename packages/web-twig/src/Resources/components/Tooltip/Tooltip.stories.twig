@@ -2,12 +2,16 @@
 
 {% block content %}
 
+    <DocsSection title="Placements">
+        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
+    </DocsSection>
+
     <DocsSection title="Static Tooltip (No Interaction)" stackAlignment="stretch">
-        {% include '@components/Tooltip/stories/TooltipDefault.twig' %}
+        {% include '@components/Tooltip/stories/TooltipStatic.twig' %}
     </DocsSection>
 
     <DocsSection title="Tooltip on Hover (Pure CSS)">
-        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
+        {% include '@components/Tooltip/stories/TooltipOnHover.twig' %}
     </DocsSection>
 
     <DocsSection title="Tooltip on Click (JavaScript)">
