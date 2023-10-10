@@ -7,9 +7,17 @@
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Dropdown' -%}
 {%- set _topClassName = _spiritClassPrefix ~ 'Dropdown--top' -%}
+{%- set _topLeftClassName = _spiritClassPrefix ~ 'Dropdown--topLeft' -%}
+{%- set _topRightClassName = _spiritClassPrefix ~ 'Dropdown--topRight' -%}
 {%- set _bottomClassName = _spiritClassPrefix ~ 'Dropdown--bottom' -%}
-{%- set _rightClassName = _spiritClassPrefix ~ 'Dropdown--right' -%}
+{%- set _bottomLeftClassName = _spiritClassPrefix ~ 'Dropdown--bottomLeft' -%}
+{%- set _bottomRightClassName = _spiritClassPrefix ~ 'Dropdown--bottomRight' -%}
 {%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
+{%- set _leftTopClassName = _spiritClassPrefix ~ 'Dropdown--leftTop' -%}
+{%- set _leftBottomClassName = _spiritClassPrefix ~ 'Dropdown--leftBottom' -%}
+{%- set _rightClassName = _spiritClassPrefix ~ 'Dropdown--right' -%}
+{%- set _rightTopClassName = _spiritClassPrefix ~ 'Dropdown--rightTop' -%}
+{%- set _rightBottomClassName = _spiritClassPrefix ~ 'Dropdown--rightBottom' -%}
 
 {# Attributes #}
 {%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-spirit-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
@@ -17,12 +25,20 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _placementClassNames = {
-    'bottom-left': [ _bottomClassName, _leftClassName ],
-    'bottom-right': [ _bottomClassName, _rightClassName ],
-    'top-left': [ _topClassName, _leftClassName ],
-    'top-right': [ _topClassName, _rightClassName ]
+    'top': _topClassName,
+    'top-left': _topLeftClassName,
+    'top-right': _topRightClassName,
+    'bottom': _bottomClassName,
+    'bottom-left': _bottomLeftClassName,
+    'bottom-right': _bottomRightClassName,
+    'left': _leftClassName,
+    'left-top': _leftTopClassName,
+    'left-bottom': _leftBottomClassName,
+    'right': _rightClassName,
+    'right-top': _rightTopClassName,
+    'right-bottom': _rightBottomClassName,
 } -%}
-{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_placementClassNames[_placement]) -%}
+{%- set _classNames = [ _rootClassName, _placementClassNames[_placement], _styleProps.className ] -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}

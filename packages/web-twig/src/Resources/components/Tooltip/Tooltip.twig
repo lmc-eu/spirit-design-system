@@ -10,7 +10,18 @@
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
 {%- set _rootDismissibleClassName = _isDismissible == 'true' ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
-{%- set _rootPlacementClassName = _spiritClassPrefix ~ 'Tooltip--' ~ _placement -%}
+{%- set _topClassName = _spiritClassPrefix ~ 'Tooltip--top' -%}
+{%- set _topLeftClassName = _spiritClassPrefix ~ 'Tooltip--topLeft' -%}
+{%- set _topRightClassName = _spiritClassPrefix ~ 'Tooltip--topRight' -%}
+{%- set _bottomClassName = _spiritClassPrefix ~ 'Tooltip--bottom' -%}
+{%- set _bottomLeftClassName = _spiritClassPrefix ~ 'Tooltip--bottomLeft' -%}
+{%- set _bottomRightClassName = _spiritClassPrefix ~ 'Tooltip--bottomRight' -%}
+{%- set _leftClassName = _spiritClassPrefix ~ 'Tooltip--left' -%}
+{%- set _leftTopClassName = _spiritClassPrefix ~ 'Tooltip--leftTop' -%}
+{%- set _leftBottomClassName = _spiritClassPrefix ~ 'Tooltip--leftBottom' -%}
+{%- set _rightClassName = _spiritClassPrefix ~ 'Tooltip--right' -%}
+{%- set _rightTopClassName = _spiritClassPrefix ~ 'Tooltip--rightTop' -%}
+{%- set _rightBottomClassName = _spiritClassPrefix ~ 'Tooltip--rightBottom' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
@@ -19,7 +30,21 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootPlacementClassName, _rootDismissibleClassName, _styleProps.className ] -%}
+{%- set _placementClassNames = {
+    'top': _topClassName,
+    'top-left': _topLeftClassName,
+    'top-right': _topRightClassName,
+    'bottom': _bottomClassName,
+    'bottom-left': _bottomLeftClassName,
+    'bottom-right': _bottomRightClassName,
+    'left': _leftClassName,
+    'left-top': _leftTopClassName,
+    'left-bottom': _leftBottomClassName,
+    'right': _rightClassName,
+    'right-top': _rightTopClassName,
+    'right-bottom': _rightBottomClassName,
+} -%}
+{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _placementClassNames[_placement], _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <div
