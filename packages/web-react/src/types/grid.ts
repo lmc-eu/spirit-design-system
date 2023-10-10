@@ -3,6 +3,13 @@ import { ChildrenProps, StyleProps, TransferProps } from './shared';
 
 export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
 export type GridSpanOverColumns = 2 | 4 | 6 | 8 | 10 | 12;
+export type GridItemSpan = `span ${number}`;
+export type GridItemPositionBreakpoints = {
+  mobile?: number | GridItemSpan;
+  tablet?: number | GridItemSpan;
+  desktop?: number | GridItemSpan;
+};
+export type GridItemPosition = number | GridItemSpan | GridItemPositionBreakpoints;
 
 export interface GridElementTypeProps<T extends ElementType = 'div'> {
   /**
@@ -22,6 +29,15 @@ export interface GridSpanElementTypeProps<T extends ElementType = 'div'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
+export interface GridItemElementTypeProps<T extends ElementType = 'div'> {
+  /**
+   * The HTML element or React element used to render the GridItem, e.g. 'div'.
+   *
+   * @default 'div'
+   */
+  elementType?: T | JSXElementConstructor<unknown>;
+}
+
 export interface GridCustomLayoutProps {
   cols?: GridColumns;
   tablet?: GridColumns;
@@ -34,11 +50,22 @@ export interface GridSpanCustomLayoutProps {
   desktop?: GridSpanOverColumns;
 }
 
+export interface GridItemCustomLayoutProps {
+  columnEnd?: GridItemPosition;
+  columnStart?: GridItemPosition;
+  rowEnd?: GridItemPosition;
+  rowStart?: GridItemPosition;
+}
+
 export interface GridProps<T extends ElementType = 'div'> extends GridElementTypeProps<T>, GridCustomLayoutProps {}
 
 export interface GridSpanProps<T extends ElementType = 'div'>
   extends GridSpanElementTypeProps<T>,
     GridSpanCustomLayoutProps {}
+
+export interface GridItemProps<T extends ElementType = 'div'>
+  extends GridItemElementTypeProps<T>,
+    GridItemCustomLayoutProps {}
 
 export interface SpiritGridProps<T extends ElementType = 'div'>
   extends GridProps<T>,
@@ -48,6 +75,12 @@ export interface SpiritGridProps<T extends ElementType = 'div'>
 
 export interface SpiritGridSpanProps<T extends ElementType = 'div'>
   extends GridSpanProps<T>,
+    ChildrenProps,
+    StyleProps,
+    TransferProps {}
+
+export interface SpiritGridItemProps<T extends ElementType = 'div'>
+  extends GridItemProps<T>,
     ChildrenProps,
     StyleProps,
     TransferProps {}
