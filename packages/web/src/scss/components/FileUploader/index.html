@@ -672,7 +672,6 @@
       }
 
       cancelButton.addEventListener('click', removeFromQueue);
-
       FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
         file = event.currentFile;
         showModalPreview(file);
@@ -754,6 +753,230 @@
   <!-- Example custom action functionality: end -->
 
 </section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">FileUploader with Meta Data</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+
+    <!-- Modal: start -->
+    <dialog id="example_modal_data" class="Modal" aria-labelledby="example_modal_data">
+
+      <!-- ModalDialog: start -->
+      <div class="ModalDialog ModalDialog--expandOnMobile">
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <div class="pt-400 pt-tablet-600" data-example-content>
+            <!-- here will be an image -->
+          </div>
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-target="#example_modal_data"
+              data-spirit-dismiss="modal"
+            >
+              Confirm
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-target="#example_modal_data"
+              data-element="cancel"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </div>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
+    <!-- FileUploader: start -->
+    <div id="example_customMetaData" class="FileUploader" data-spirit-toggle="fileUploader">
+
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
+          <span class="FileUploaderAttachment__image">
+            <img src="" width="54" height="54" alt="" />
+          </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <span class="FileUploaderAttachment__slot">
+
+            <!-- Slot content: start -->
+            <button type="button" class="FileUploaderAttachment__action" onclick="moduleFunctions.customEdit(event)">
+              <span class="accessibility-hidden">Edit</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#edit" />
+              </svg>
+            </button>
+            <!-- Slot content: end -->
+
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
+
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="1" data-spirit-queue-limit-behavior="disable" >
+        <label for="fileUploaderWithMetaData" class="FileUploaderInput__label">Label</label>
+        <input type="file" id="fileUploaderWithMetaData" name="attachmentMetaData" class="FileUploaderInput__input" data-spirit-element="input" />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploaderWithMetaData" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+        </div>
+      </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-fileUploaderWithMetaData" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-fileUploaderWithMetaData" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
+
+    </div>
+    <!-- FileUploader: end -->
+    <script>
+      const moduleFunctions = {}
+    </script>
+
+    <script type="module">
+      import Modal from '../../../js/Modal'
+      import FileUploader from '../../../js/FileUploader'
+
+      window.addEventListener('DOMContentLoaded', () => {
+        let file;
+        const ModalElement = document.getElementById('example_modal_data');
+        const ModalInstance = new Modal(ModalElement);
+        const Content = ModalElement.querySelector('[data-example-content]');
+        const CancelButton = ModalElement.querySelector('[data-element="cancel"]');
+        const FileUploaderElement = document.getElementById('example_customMetaData');
+        const FileUploaderInstance = FileUploader.getInstance(FileUploaderElement);
+        let toggleMetaData = false; // allow toggling meta data between two different values when clicking on edit button
+
+        const isFileImage = (file) => file.type.split('/')[0] === 'image';
+
+        // callbacks
+
+        const updateQueueCallback = (key, file, meta) => {
+          const attachmentElement = document.querySelector('.FileUploaderList');
+          const fileName = FileUploaderInstance.getUpdatedFileName(file.name);
+          const metaInput = attachmentElement?.querySelector(`input[name="attachments_${fileName}_meta"]`);
+
+          // if we have meta data update input if exist OR create new one if not exist
+          if (meta) {
+            if (metaInput) {
+              metaInput.value = JSON.stringify(meta);
+            } else {
+              const attachmentMetaInputElement = document.createElement('input');
+              attachmentMetaInputElement.setAttribute('type', 'hidden');
+              attachmentMetaInputElement.setAttribute('name', `attachments_${fileName}_meta`);
+              attachmentMetaInputElement.setAttribute('value', JSON.stringify(meta));
+              attachmentElement?.appendChild(attachmentMetaInputElement);
+            }
+          }
+
+          // remove input if exist AND we have no meta data
+          if (!meta) {
+            metaInput && metaInput.remove();
+          }
+        }
+
+        const callbackOnDismiss = (key) => {
+          document.querySelector(`input[name="attachments_${key}_meta"]`)?.remove();
+        };
+
+        // custom functions
+
+        const customAddToQueue = (file, meta) => {
+          console.log('file:', file)
+          if(isFileImage(file)) {
+            const reader = new FileReader();
+
+            reader.readAsDataURL(file);
+            reader.onloadend = () => {
+              const base64data = reader.result;
+              localStorage.setItem('image', base64data);
+              Content.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
+              ModalInstance.show();
+            }
+          }
+
+          FileUploaderInstance.updateQueue(FileUploaderInstance.getUpdatedFileName(file.name), file, meta, updateQueueCallback);
+        }
+
+        const customEdit = (event) => {
+          const key = event.target.closest('li').id
+          const newMeta = toggleMetaData ? { x: 30, y: 30, width: 150, height: 150 } : { x: 22, y: 0, width: 110, height: 100 };
+          toggleMetaData = !toggleMetaData;
+          const file = FileUploaderInstance.getFileFromQueue(key).file;
+          FileUploaderInstance.updateQueue(key, file, newMeta, updateQueueCallback);
+        }
+        moduleFunctions.customEdit = customEdit
+
+        // modal functions
+
+        const removeFromQueue = () => {
+          FileUploaderInstance.removeFromQueue(FileUploaderInstance.getUpdatedFileName(file.name));
+          cleanup();
+        }
+
+        const cleanup = () => {
+          ModalInstance.hide();
+          Content.innerHTML = '';
+          file = undefined;
+        }
+
+        CancelButton.addEventListener('click', removeFromQueue);
+        
+        FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
+          file = event.currentFile;
+
+          customAddToQueue(file);
+        });
+
+        FileUploaderElement.addEventListener('unqueuedFile.fileUploader', (event) => {
+          callbackOnDismiss(event.currentFile);
+        });
+        
+        FileUploaderElement.addEventListener('editFile.fileUploader', (event) => {
+          customEdit(event.currentFile);
+        });
+      });
+
+    </script>
+
+  </div>
+
+</section>
+
 <section class="docs-Section">
   <h2 class="docs-Heading">
     Input with Attachment
