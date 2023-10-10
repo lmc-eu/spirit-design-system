@@ -4,9 +4,8 @@
 // Example: convert-kebab-case-to-camel-case('top-left') will return 'topLeft'
 @function convert-kebab-case-to-camel-case($string) {
     $camel-case: string.slice($string, 1); // Remove the first hyphen
-    $length: string.length($camel-case);
 
-    @for $i from 1 through $length {
+    @for $i from 1 through string.length($camel-case) {
         $char: string.slice($camel-case, $i, $i);
 
         @if $char == '-' {
@@ -17,6 +16,24 @@
     }
 
     @return $camel-case;
+}
+
+// Convert PascalCase to kebab-case
+// Example: convert-pascal-case-to-kebab-case('TopLeft') will return 'top-left'
+@function convert-pascal-case-to-kebab-case($string) {
+    $kebab-case: '';
+
+    @for $i from 1 through string.length($string) {
+        $char: string.slice($string, $i, $i);
+
+        @if string.to-upper-case($char) == $char {
+            $kebab-case: $kebab-case + '-' + string.to-lower-case($char);
+        } @else {
+            $kebab-case: $kebab-case + $char;
+        }
+    }
+
+    @return $kebab-case;
 }
 
 // Replace all occurrences of a string with another string

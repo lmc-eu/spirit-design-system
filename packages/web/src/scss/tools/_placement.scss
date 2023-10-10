@@ -1,13 +1,25 @@
-// 1. `--placement-offset` is a custom property to translate along the main placement axis.
-// 2. `--placement-offset-orthogonal` is a custom property to translate orthogonal to the main placement axis.
-//    It can be reset to 0 in case of an absolutely positioned child element that only needs the
-//    `$offset` property, typically when the placement is controlled e.g. by Floating UI.
+// 1. The placement logic works as follows:
+//
+//    1. The parent element is positioned relatively.
+//    2. The child element is positioned absolutely into the corresponding position using the inset map.
+//    3. The child element is then translated:
+//       a) using the `--placement-offset` custom property to make space for an arrow or just to add an offset,
+//       b) using the `--placement-offset-orthogonal` custom property to center the child element.
+//
+// 2. When using a positioning library, e.g. Floating UI, the placement offset is controlled by the library.
+//
+//    In this case, `inset` is set to `unset` because the library will look after it. Also, the
+//    `--placement-offset-orthogonal` custom property is reset to 0 because the library will center the child element,
+//    using the absolute position.
+//
+//    See https://floating-ui.com
 
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:string';
 @use 'list' as spirit-list;
 
+// 1.2
 $_inset-map: (
     top: auto auto 100% 50%,
     top-left: auto auto 100% 0,
@@ -23,7 +35,7 @@ $_inset-map: (
     right-bottom: auto auto 0 100%,
 );
 
-// 1., 2.
+// 1.3
 $_child-translate-map: (
     top: var(--placement-offset-orthogonal, -50%) calc(-1 * var(--placement-offset, 0)),
     top-left: var(--placement-offset-orthogonal, 0) calc(-1 * var(--placement-offset, 0)),
@@ -104,44 +116,40 @@ $_placement-inverse-map: (
     @return spirit-list.to-string($placement-inverse-chunks, $join-with);
 }
 
-// Base styles for parent element
 @mixin parent() {
-    position: relative;
+    position: relative; // 1.1
 }
 
-// Base styles for child element
 @mixin child($z-index: 1) {
-    position: absolute;
+    position: absolute; // 1.2
     z-index: $z-index;
 }
 
-// Base styles for the arrow element
+@mixin child-variant($placement, $offset: 0) {
+    --placement-offset: #{$offset}; // 1.3.a
+
+    inset: map.get($_inset-map, $placement); // 1.2
+    translate: map.get($_child-translate-map, $placement); // 1.3
+    transform-origin: string.unquote(inverse($placement, $hyphenate: false));
+}
+
+@mixin child-controlled() {
+    --placement-offset-orthogonal: 0; // 2.
+
+    inset: unset; // 2.
+}
+
 @mixin arrow($width, $height, $corner-offset) {
     --placement-arrow-width: #{$width};
     --placement-arrow-height: #{$height};
     --placement-arrow-corner-offset: #{$corner-offset};
 
-    position: absolute;
+    position: absolute; // 1.2
     transform-origin: bottom center;
 }
 
-// Mixin to generate child placement styles by a placement name
-// Parameters are:
-// * $placement: the placement name
-// * $offset: the offset of child from its parent, typically to make place for arrow
-@mixin child-variant($placement, $offset: 0) {
-    --placement-offset: #{$offset}; // 1.
-
-    inset: map.get($_inset-map, $placement);
-    translate: map.get($_child-translate-map, $placement);
-    transform-origin: string.unquote(inverse($placement, $hyphenate: false));
-}
-
-// Mixin to generate child arrow styles by a placement name
-// Parameters are:
-// * $placement: the placement name
 @mixin arrow-variant($placement) {
-    inset: map.get($_inset-map, $placement);
-    translate: map.get($_arrow-translate-map, $placement);
+    inset: map.get($_inset-map, $placement); // 1.2
+    translate: map.get($_arrow-translate-map, $placement); // 1.3
     rotate: z map.get($_arrow-rotate-map, $placement);
 }

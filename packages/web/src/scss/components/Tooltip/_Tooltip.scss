@@ -1,10 +1,8 @@
-// 1. Although it seems pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
+// 1. Although it may seem pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
 //    precisely positioned in sticky tooltips, e.g. with Floating UI:
 //    https://floating-ui.com
-// 2. `--placement-offset-orthogonal` is a custom property to translate orthogonal to the placement axis.
-//    It is reset to 0 in the controlled variant when the placement is controlled e.g. by Floating UI.
-// 3. Reset positioning for controlled variant when the placement is controlled e.g. by Floating UI.
-// 4. Use custom properties just to allow overriding the arrow appearance live in the browser.
+//
+// 2. Use custom properties just to allow overriding the arrow appearance live in the browser.
 
 @use 'sass:math';
 @use '../../tools/dictionaries';
@@ -41,7 +39,7 @@
 .Tooltip__arrow {
     @include placement.arrow(var(--tooltip-arrow-width), var(--tooltip-arrow-height), theme.$arrow-corner-offset);
 
-    // 4.
+    // 2.
     --tooltip-arrow-width: #{theme.$arrow-width};
     --tooltip-arrow-height: #{theme.$arrow-height};
 
@@ -84,25 +82,11 @@
 
 // Controlled placement
 .Tooltip[data-spirit-placement] {
-    --placement-offset-orthogonal: 0; // 2.
-
-    inset: unset; // 3.
+    @include placement.child-controlled();
 }
 
-// Use @extend for controlled placement (of both tooltip and arrow) to avoid specificity issues
-// stylelint-disable scss/at-extend-no-missing-placeholder -- We know what we are doing here. (Do we?)
-.Tooltip[data-spirit-placement='top'] {
-    @extend .Tooltip--top;
-}
-
-.Tooltip[data-spirit-placement='bottom'] {
-    @extend .Tooltip--bottom;
-}
-
-.Tooltip[data-spirit-placement='left'] {
-    @extend .Tooltip--left;
-}
-
-.Tooltip[data-spirit-placement='right'] {
-    @extend .Tooltip--right;
-}
+@include dictionaries.generate-controlled-placements(
+    $class-name: 'Tooltip',
+    $dictionary-values: theme.$placement-dictionary,
+    $data-attribute: 'data-spirit-placement'
+);
