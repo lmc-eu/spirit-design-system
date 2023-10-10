@@ -1,7 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _children = block('content') -%}
-{%- set _href = props.href -%}
+{%- set _href = props.href | default(null) -%}
 {%- set _iconNameEnd = props.iconNameEnd | default('chevron-right') -%}
 {%- set _iconNameStart = props.iconNameStart | default('chevron-left') -%}
 {%- set _isCurrent = props.isCurrent | default(false) -%}
@@ -24,14 +24,18 @@
     {% if _isGoBackOnly and _iconNameStart %}
         <Icon name={ _iconNameStart } />
     {% endif %}
-    <Link
-        href={ _href }
-        color="{{ _isCurrent ? 'secondary' : 'primary' }}"
-        isUnderlined="{{ _isCurrent is not same as(true) }}"
-        aria-current="{{ _isCurrent ? 'page' : 'false' }}"
-    >
+    {% if not _href and _isCurrent %}
         {{ _children }}
-    </Link>
+    {% else %}
+        <Link
+            href={ _href }
+            color="{{ _isCurrent ? 'secondary' : 'primary' }}"
+            isUnderlined="{{ _isCurrent is not same as(true) }}"
+            aria-current="{{ _isCurrent ? 'page' : 'false' }}"
+        >
+            {{ _children }}
+        </Link>
+    {% endif %}
     {% if _isCurrent is not same as(true) and _isGoBackOnly is not same as(true) and _iconNameEnd %}
         <Icon name={ _iconNameEnd } />
     {% endif %}

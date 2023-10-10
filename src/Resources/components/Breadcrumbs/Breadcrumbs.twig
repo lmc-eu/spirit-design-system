@@ -22,9 +22,9 @@
         <ol>
             {% for item in _items %}
                 {% if loop.index is same as(_items|length - 1) and _goBackTitle is not same as('') %}
-                    <BreadcrumbsItem href={ item.url } isGoBackOnly>{{ _goBackTitle }}</BreadcrumbsItem>
+                    <BreadcrumbsItem href="{{ item.url ?? null }}" isGoBackOnly>{{ _goBackTitle }}</BreadcrumbsItem>
                 {% endif %}
-                <BreadcrumbsItem isCurrent={ loop.last } href={ item.url }>{{ item.title }}</BreadcrumbsItem>
+                <BreadcrumbsItem isCurrent={ loop.last } href={ item.url ?? null }>{{ item.title }}</BreadcrumbsItem>
             {% endfor %}
         </ol>
     {%- else -%}
