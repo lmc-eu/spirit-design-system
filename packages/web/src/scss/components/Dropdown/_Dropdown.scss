@@ -1,10 +1,12 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
+@use '../../tools/dictionaries';
+@use '../../tools/placement';
 @use 'theme' as theme;
 
 .Dropdown {
-    position: absolute;
-    z-index: 1;
+    @include placement.child();
+
     display: none;
     width: max-content;
     padding: theme.$padding;
@@ -27,20 +29,26 @@
     display: block;
 }
 
-.Dropdown--top {
-    bottom: 100%;
-    margin-bottom: theme.$offset;
+@include dictionaries.generate-placements(
+    $class-name: 'Dropdown',
+    $dictionary-values: theme.$placement-dictionary,
+    $offset: theme.$offset
+);
+
+// @deprecated The class combination will be removed in the next major version.
+// Migration: delete all placement class combinations below.
+.Dropdown--top.Dropdown--left {
+    @include placement.child-variant($prefix: 'dropdown', $placement: 'top-left', $offset: theme.$offset);
 }
 
-.Dropdown--right {
-    right: 0;
+.Dropdown--top.Dropdown--right {
+    @include placement.child-variant($prefix: 'dropdown', $placement: 'top-right', $offset: theme.$offset);
 }
 
-.Dropdown--bottom {
-    top: 100%;
-    margin-top: theme.$offset;
+.Dropdown--bottom.Dropdown--left {
+    @include placement.child-variant($prefix: 'dropdown', $placement: 'bottom-left', $offset: theme.$offset);
 }
 
-.Dropdown--left {
-    left: 0;
+.Dropdown--bottom.Dropdown--right {
+    @include placement.child-variant($prefix: 'dropdown', $placement: 'bottom-right', $offset: theme.$offset);
 }
