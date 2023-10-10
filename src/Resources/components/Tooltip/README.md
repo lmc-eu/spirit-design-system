@@ -58,12 +58,12 @@ best positioning approach for your use case.
 
 ### Tooltip
 
-| Name            | Type                                     | Default  | Required | Description              |
-| --------------- | ---------------------------------------- | -------- | -------- | ------------------------ |
-| `closeLabel`    | `string`                                 | `Close`  | ✕        | Close label              |
-| `id`            | `string`                                 | `null`   | ✕        | Optional tooltip ID      |
-| `isDismissible` | `bool`                                   | `false`  | ✕        | Make tooltip dismissible |
-| `placement`     | [`top` \| `bottom` \| `left` \| `right`] | `bottom` | ✕        | Tooltip placement        |
+| Name            | Type                                         | Default  | Required | Description              |
+| --------------- | -------------------------------------------- | -------- | -------- | ------------------------ |
+| `closeLabel`    | `string`                                     | `Close`  | ✕        | Close label              |
+| `id`            | `string`                                     | `null`   | ✕        | Optional tooltip ID      |
+| `isDismissible` | `bool`                                       | `false`  | ✕        | Make tooltip dismissible |
+| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom` | ✕        | Tooltip placement        |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -93,4 +93,5 @@ Or, feel free to write the controlling script yourself.
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tooltip/README.md#javascript-api
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
