@@ -41,14 +41,14 @@ improved accessibility.
 
 ## Placement
 
-Available placements are: top, right, bottom, and left. To apply the desired
-placement, just pick a corresponding CSS modifier: `Tooltip--top`,
-`Tooltip--right`, `Tooltip--bottom`, or `Tooltip--left`. For JS-controlled
-positioning please use the `data-spirit-placement` attribute instead (more on that
-below).
+Tooltip implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as CSS
+modifiers in the camelCase format: `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--leftBottom`, etc.
+
+For JS-controlled positioning please use the `data-spirit-placement` attribute instead of CSS modifiers (more on that
+[below](#advanced-positioning)).
 
 ```html
-<div class="Tooltip Tooltip--right">
+<div class="Tooltip Tooltip--rightTop">
   Tooltip on right
   <span class="Tooltip__arrow"></span>
 </div>
@@ -172,7 +172,7 @@ purpose.
 
 When controlling Tooltip position with JavaScript, use `data-spirit-placement`
 attribute instead of CSS modifiers (`Tooltip--top` etc.) to set Tooltip
-placement. Supported values are `top`, `bottom`, `left`, and `right`.
+placement. All [Placement Dictionary][dictionary-placement] values are supported.
 
 ```html
 <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
@@ -228,4 +228,5 @@ tooltip.hide();
 ```
 
 [example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [floating-ui]: https://floating-ui.com

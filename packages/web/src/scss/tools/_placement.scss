@@ -1,0 +1,168 @@
+// 1. The placement logic works as follows:
+//
+//    1. The parent element is positioned relatively.
+//    2. The child element is positioned absolutely into the corresponding position using the inset map.
+//    3. The child element is then translated:
+//       a) using the `--placement-offset` custom property to make space for an arrow or just to add an offset,
+//       b) using the `--placement-offset-orthogonal` custom property to center the child element.
+//
+// 2. When using a positioning library, e.g. Floating UI, the placement offset is controlled by the library.
+//
+//    In this case, `inset` is set to `unset` because the library will look after it. Also, the
+//    `--placement-offset-orthogonal` custom property is reset to 0 because the library will center the child element,
+//    using the absolute position.
+//
+//    See https://floating-ui.com
+
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:string';
+@use 'list' as spirit-list;
+
+$_arrow-rotate-map: (
+    top: 0deg,
+    top-left: 0deg,
+    top-right: 0deg,
+    bottom: 180deg,
+    bottom-left: 180deg,
+    bottom-right: 180deg,
+    left: -90deg,
+    left-top: -90deg,
+    left-bottom: -90deg,
+    right: 90deg,
+    right-top: 90deg,
+    right-bottom: 90deg,
+);
+
+// 1.2
+$_inset-map: (
+    top: auto auto 100% 50%,
+    top-left: auto auto 100% 0,
+    top-right: auto 0 100% auto,
+    bottom: 100% auto auto 50%,
+    bottom-left: 100% auto auto 0,
+    bottom-right: 100% 0 auto auto,
+    left: 50% 100% auto auto,
+    left-top: 0 100% auto auto,
+    left-bottom: auto 100% 0 auto,
+    right: 50% auto auto 100%,
+    right-top: 0 auto auto 100%,
+    right-bottom: auto auto 0 100%,
+);
+
+$_placement-inverse-map: (
+    top: bottom,
+    bottom: top,
+    left: right,
+    right: left,
+);
+
+@function -get-arrow-translate-map($prefix) {
+    @return (
+        top: -50% 0%,
+        top-left: var(--#{$prefix}-arrow-corner-offset) 0%,
+        top-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
+        bottom: -50% -100%,
+        bottom-left: var(--#{$prefix}-arrow-corner-offset) -100%,
+        bottom-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
+        left: 50% -100%,
+        left-top: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        left-bottom: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
+        right: -50% -100%,
+        right-top: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        right-bottom: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset))
+    );
+}
+
+// 1.3
+@function -get-child-translate-map($prefix) {
+    @return (
+        top: var(--#{$prefix}-offset-orthogonal, -50%) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-left: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-right: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        bottom: var(--#{$prefix}-offset-orthogonal, -50%) var(--#{$prefix}-offset, 0),
+        bottom-left: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        bottom-right: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        left: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, -50%),
+        left-top: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        left-bottom: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        right: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, -50%),
+        right-top: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
+        right-bottom: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0)
+    );
+}
+
+// Function to return an inverse placement name
+// Example: inverse('top') will return 'bottom'
+// Example: inverse('top-left') will return 'bottom-right'
+// Example: inverse('top-left', true) will return 'bottom-left'
+// Example: inverse('top-left', true, false) will return 'bottom left'
+@function inverse($placement, $main-axis-only: false, $hyphenate: true) {
+    $hyphen: '-';
+    $placement-chunks: string.split($placement, $hyphen);
+    $placement-inverse-chunks: ();
+    $join-with: if($hyphenate, $hyphen, ' ');
+
+    @for $i from 1 through list.length($placement-chunks) {
+        $chunk: list.nth($placement-chunks, $i);
+        $new-chunk: null;
+
+        @if $main-axis-only and $i > 1 {
+            $new-chunk: $chunk;
+        } @else {
+            $new-chunk: map.get($_placement-inverse-map, $chunk);
+        }
+
+        $placement-inverse-chunks: list.append($placement-inverse-chunks, $new-chunk);
+    }
+
+    @return spirit-list.to-string($placement-inverse-chunks, $join-with);
+}
+
+@mixin parent() {
+    position: relative; // 1.1
+}
+
+@mixin child($z-index: 1) {
+    position: absolute; // 1.2
+    z-index: $z-index;
+}
+
+@mixin child-variant($prefix, $placement, $offset: 0) {
+    --#{$prefix}-offset: #{$offset}; // 1.3.a
+
+    inset: map.get($_inset-map, $placement); // 1.2
+    translate: map.get(-get-child-translate-map($prefix), $placement); // 1.3
+    transform-origin: string.unquote(inverse($placement, $hyphenate: false));
+}
+
+@mixin child-controlled($prefix) {
+    --#{$prefix}-offset-orthogonal: 0; // 2.
+
+    inset: unset; // 2.
+}
+
+@mixin arrow($prefix, $width, $height, $corner-offset) {
+    --#{$prefix}-arrow-width: #{$width};
+    --#{$prefix}-arrow-height: #{$height};
+    --#{$prefix}-arrow-corner-offset: #{$corner-offset};
+
+    position: absolute; // 1.2
+    transform-origin: bottom center;
+}
+
+@mixin arrow-variant($prefix, $placement) {
+    inset: map.get($_inset-map, $placement); // 1.2
+    translate: map.get(-get-arrow-translate-map($prefix), $placement); // 1.3
+    rotate: z map.get($_arrow-rotate-map, $placement);
+}

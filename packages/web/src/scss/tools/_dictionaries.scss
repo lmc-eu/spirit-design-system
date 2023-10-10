@@ -1,6 +1,8 @@
 @use 'sass:map';
 @use 'sass:string';
 @use '@tokens' as tokens;
+@use './placement';
+@use './string' as spirit-string;
 @use './typography';
 
 // Function to get the tokens map from the dictionary value name
@@ -88,15 +90,15 @@
         .#{$class-name}--#{$dictionary-value}#{$child-selector} {
             @each $property-name, $property-value in $config {
                 $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
-                $class-name-lowercase: if(
+                $prefix: if(
                     $custom-variable-name,
                     $custom-variable-name,
-                    string.to-lower-case($class-name)
+                    spirit-string.convert-pascal-case-to-kebab-case($class-name)
                 );
 
-                --#{$class-name-lowercase}-#{$property-name}: #{$value};
+                --#{$prefix}-#{$property-name}: #{$value};
 
-                #{$property-name}: var(--#{$class-name-lowercase}-#{$property-name});
+                #{$property-name}: var(--#{$prefix}-#{$property-name});
             }
 
             @if $states {
@@ -141,6 +143,46 @@
             #{$selector}-#{unquote($variant-class)} {
                 color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
             }
+        }
+    }
+}
+
+// Mixin to generate placement classes based on a dictionary
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $dictionary-values: map of the placements to generate
+// * $offset: offset of child from its parent, typically for an arrow
+// * $has-arrow: whether the component has an arrow
+@mixin generate-placements($class-name, $dictionary-values, $offset: 0, $has-arrow: false) {
+    $prefix: spirit-string.convert-pascal-case-to-kebab-case($class-name);
+
+    @each $placement in $dictionary-values {
+        $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
+
+        .#{$class-name}--#{$placement-modifier} {
+            @include placement.child-variant($prefix, $placement, $offset);
+        }
+
+        @if $has-arrow {
+            .#{$class-name}--#{$placement-modifier} > .#{$class-name}__arrow {
+                @include placement.arrow-variant($prefix, placement.inverse($placement, $main-axis-only: true));
+            }
+        }
+    }
+}
+
+// Mixin to generate controlled placement classes based on a dictionary
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $dictionary-values: map of the placements to generate
+// * $data-attribute: the data attribute to use for the controlled placement
+@mixin generate-controlled-placements($class-name, $dictionary-values, $data-attribute) {
+    @each $placement in $dictionary-values {
+        $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
+
+        .#{$class-name}[#{$data-attribute}='#{$placement-modifier}'] {
+            // stylelint-disable scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
+            @extend .#{$class-name}--#{$placement-modifier};
         }
     }
 }

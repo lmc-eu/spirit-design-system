@@ -7,19 +7,19 @@ This project uses `dictionaries` to unify props between different components.
 - A given property is not a dictionary by itself. The property is contained in the dictionary. That is, the Action Primary Default color is contained in the Action Primary dictionary entry.
 - Products can extend their dictionaries.
 
-## List of dictionaries
+## List of Dictionaries
 
-- [Size](#size)
-- [Color](#color)
-- [Validation](#validation)
 - [Alignment](#alignment)
+- [Color](#color)
+- [Placement](#placement)
+- [Size](#size)
+- [Validation](#validation)
 
-### Size
+### Alignment
 
-| Dictionary    | Values                               | Code name    |
-| ------------- | ------------------------------------ | ------------ |
-| Size          | `small`, `medium`, `large`           | Size         |
-| Size Extended | Size Dictionary + `xsmall`, `xlarge` | SizeExtended |
+| Dictionary | Values                    | Code name  |
+| ---------- | ------------------------- | ---------- |
+| AlignmentX | `left`, `center`, `right` | AlignmentX |
 
 ### Color
 
@@ -30,14 +30,21 @@ This project uses `dictionaries` to unify props between different components.
 | Emotion Color     | `success`, `informative`, `warning`, `danger`                    | EmotionColor    |
 | Text Color        | `primary`, `secondary`, `primary-inverted`, `secondary-inverted` | TextColor       |
 
+### Placement
+
+| Dictionary | Values                                                                                                                                           | Code name |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| Placement  | `top`, `top-left`, `top-right`, `bottom`, `bottom-left`, `bottom-right`, `left`, `left-top`, `left-bottom`, `right`, `right-top`, `right-bottom` | Placement |
+
+### Size
+
+| Dictionary    | Values                               | Code name    |
+| ------------- | ------------------------------------ | ------------ |
+| Size          | `small`, `medium`, `large`           | Size         |
+| Size Extended | Size Dictionary + `xsmall`, `xlarge` | SizeExtended |
+
 ### Validation
 
 | Dictionary | Values                         | Code name  |
 | ---------- | ------------------------------ | ---------- |
 | Validation | `success`, `warning`, `danger` | Validation |
-
-### Alignment
-
-| Dictionary | Values                    | Code name  |
-| ---------- | ------------------------- | ---------- |
-| AlignmentX | `left`, `center`, `right` | AlignmentX |
