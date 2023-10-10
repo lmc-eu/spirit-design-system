@@ -29,9 +29,13 @@
         {% endif %}
     </h2>
     {% if _hasStack %}
-        <DocsStack stackAlignment={{ _stackAlignment }}>
-            {{ _renderedContent }}
-        </DocsStack>
+        {%- embed '@spirit/DocsStack/DocsStack.twig' with { props: {
+            stackAlignment: _stackAlignment,
+        }, _renderedContent } only -%}
+            {%- block content -%}
+                {{- _renderedContent -}}
+            {%- endblock -%}
+        {%- endembed -%}
     {% else %}
         {{ _renderedContent }}
     {% endif %}
