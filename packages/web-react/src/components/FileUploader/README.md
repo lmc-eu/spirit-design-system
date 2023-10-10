@@ -300,22 +300,22 @@ const resetStateHandler = () => {
 
 ## FileUploader Props
 
-| Name                                  | Type                                            | Default | Required | Description                                                         |
-| ------------------------------------- | ----------------------------------------------- | ------- | -------- | ------------------------------------------------------------------- |
-| `addToQueue`                          | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | Callback to add an item to the queue                                |
-| `clearQueue`                          | `() => void`                                    | —       | ✔        | Callback to clear the queue                                         |
-| `errorMessages.errorFileDuplicity`    | `string`                                        | —       | ✕        | Translation for the error message: Duplicate file in queue          |
-| `errorMessages.errorMaxFileSize`      | `string`                                        | —       | ✕        | Translation for the error message: Maximum file size                |
-| `errorMessages.errorMaxUploadedFiles` | `string`                                        | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
-| `fileQueue`                           | `FileQueueMapType`                              | —       | ✔        | Queue of items to upload                                            |
-| `findInQueue`                         | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to find a particular item in the queue                   |
-| `id`                                  | `string`                                        | —       | ✔        | FileUploader id                                                     |
-| `isDisabled`                          | `bool`                                          | —       | ✕        | When the field is supposed to be disabled                           |
-| `isFluid`                             | `bool`                                          | —       | ✕        | When the field is supposed to be fluid                              |
-| `onDismiss`                           | `(key: string) => FileQueueMapType`             | —       | ✔        | A callback to delete a particular item from the queue               |
-| `UNSAFE_className`                    | `string`                                        | —       | ✕        | FileUploader custom class name                                      |
-| `UNSAFE_style`                        | `CSSProperties`                                 | —       | ✕        | FileUploader custom style                                           |
-| `updateQueue`                         | `(key: string, file: File) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
+| Name                                  | Type                                                                           | Default | Required | Description                                                         |
+| ------------------------------------- | ------------------------------------------------------------------------------ | ------- | -------- | ------------------------------------------------------------------- |
+| `addToQueue`                          | `(key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType` | —       | ✔        | Callback to add an item to the queue                                |
+| `clearQueue`                          | `() => void`                                                                   | —       | ✔        | Callback to clear the queue                                         |
+| `errorMessages.errorFileDuplicity`    | `string`                                                                       | —       | ✕        | Translation for the error message: Duplicate file in queue          |
+| `errorMessages.errorMaxFileSize`      | `string`                                                                       | —       | ✕        | Translation for the error message: Maximum file size                |
+| `errorMessages.errorMaxUploadedFiles` | `string`                                                                       | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
+| `fileQueue`                           | `FileQueueMapType`                                                             | —       | ✔        | Queue of items to upload                                            |
+| `findInQueue`                         | `(key: string) => FileQueueMapType`                                            | —       | ✔        | A callback to find a particular item in the queue                   |
+| `id`                                  | `string`                                                                       | —       | ✔        | FileUploader id                                                     |
+| `isDisabled`                          | `bool`                                                                         | —       | ✕        | When the field is supposed to be disabled                           |
+| `isFluid`                             | `bool`                                                                         | —       | ✕        | When the field is supposed to be fluid                              |
+| `onDismiss`                           | `(key: string) => FileQueueMapType`                                            | —       | ✔        | A callback to delete a particular item from the queue               |
+| `UNSAFE_className`                    | `string`                                                                       | —       | ✕        | FileUploader custom class name                                      |
+| `UNSAFE_style`                        | `CSSProperties`                                                                | —       | ✕        | FileUploader custom style                                           |
+| `updateQueue`                         | `(key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
 
 The rest of the properties are created from the default `<div>` element. [More about the element][DivElementDocs]
 

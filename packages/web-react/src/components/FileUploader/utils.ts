@@ -1,3 +1,5 @@
+import { FileQueueValueMetaType } from '../../types/fileUploader';
+
 const getAttachmentInput = (file: File, name: string, onError?: (error: string) => void) => {
   const attachmentInputElement = document.createElement('input');
   const dataContainer = new DataTransfer();
@@ -21,6 +23,17 @@ const getAttachmentInput = (file: File, name: string, onError?: (error: string) 
   attachmentInputElement.setAttribute('hidden', '');
 
   attachmentInputElement.files = dataContainer.files;
+
+  return attachmentInputElement;
+};
+
+const getAttachmentMetaInput = (file: File, name: string, meta: FileQueueValueMetaType) => {
+  const attachmentInputElement = document.createElement('input');
+
+  attachmentInputElement.setAttribute('type', 'text');
+  attachmentInputElement.setAttribute('name', `${name}_meta`);
+  attachmentInputElement.setAttribute('value', JSON.stringify(meta));
+  attachmentInputElement.setAttribute('hidden', '');
 
   return attachmentInputElement;
 };
@@ -59,4 +72,4 @@ const base64ToByteArray = (base64Image: string) => {
   return byteArray;
 };
 
-export { getAttachmentInput, image2Base64Preview, base64ToByteArray };
+export { base64ToByteArray, getAttachmentInput, getAttachmentMetaInput, image2Base64Preview };

@@ -96,7 +96,7 @@ describe('useFileQueue', () => {
     });
 
     expect(result.current.fileQueue.size).toBe(2);
-    expect(result.current.fileQueue.get('test1_txt')).toBe(file2);
-    expect(result.current.fileQueue.get('test2_txt')).toBe(file1);
+    expect(result.current.fileQueue.get('test1_txt')).toEqual({ file: file2 });
+    expect(result.current.fileQueue.get('test2_txt')).toEqual({ file: file1 });
   });
 });

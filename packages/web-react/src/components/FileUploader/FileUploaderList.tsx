@@ -13,18 +13,17 @@ const FileUploaderList = (props: SpiritFileUploaderListProps) => {
   const { fileQueue, onDismiss } = useFileUploaderContext();
 
   const renderAttachments = useMemo(() => {
-    const fileArray = Array.from(fileQueue, (entry) => {
-      return { key: entry[0], file: entry[1] };
-    });
+    const fileArray = Array.from(fileQueue, (entry) => ({ key: entry[0], file: entry[1].file, meta: entry[1].meta }));
 
     return fileArray.map(
-      ({ key, file }) =>
+      ({ key, file, meta }) =>
         attachmentComponent &&
         attachmentComponent({
           id: key,
           label: file.name,
           name: inputName,
           file,
+          meta,
           onDismiss,
           hasImagePreview,
         }),

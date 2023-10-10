@@ -10,7 +10,7 @@ import {
 } from './shared';
 
 export type FileUploaderAttachmentComponentType = (props: FileUploaderAttachmentBaseProps) => ReactNode;
-export type FileQueueMapType = Map<string, File>;
+export type FileQueueMapType = Map<string, FileQueueValueType>;
 export type FileUploaderErrorCallbackType = (error: string | Error) => void;
 export type FileUploaderQueueLimitBehaviorType = 'hide' | 'disable' | 'none';
 
@@ -20,13 +20,28 @@ export interface FileUploaderTextProps {
   linkText?: string;
 }
 
+export interface FileQueueValueMetaType {
+  [key: string | number]: unknown;
+}
+
+export interface FileQueueValueType {
+  file: File;
+  meta?: FileQueueValueMetaType;
+}
+
+export interface UpdateQueueBaseType {
+  key: string;
+  file: File;
+  meta?: FileQueueValueMetaType;
+}
+
 export interface FileUploaderHandlingProps {
-  addToQueue: (key: string, file: File) => FileQueueMapType;
+  addToQueue: (key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType;
   clearQueue: () => void;
   fileQueue: FileQueueMapType;
-  findInQueue: (key: string) => File | null;
+  findInQueue: (key: string) => FileQueueValueType | null;
   onDismiss: (key: string) => FileQueueMapType;
-  updateQueue: (key: string, file: File) => FileQueueMapType;
+  updateQueue: (key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType;
 }
 
 export interface FileUploaderErrorMessagesProps {
@@ -85,8 +100,9 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
   iconName?: string;
   id: string;
   label: string;
+  meta?: FileQueueValueMetaType;
   name: string;
-  onDismiss: (key: string) => FileQueueMapType;
+  onDismiss: (key: string, callback?: (key: string) => void) => FileQueueMapType;
   onEdit?: (event: MouseEvent, file: File) => void;
   onError?: FileUploaderErrorCallbackType;
   removeText?: string;
