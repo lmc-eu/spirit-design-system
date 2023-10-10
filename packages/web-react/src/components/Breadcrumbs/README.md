@@ -80,16 +80,18 @@ Use the `BreadcrumbsItem` component for the ordered list as the component's chil
 
 ### API
 
-| Name               | Type            | Default         | Required | Description                                 |
-| ------------------ | --------------- | --------------- | -------- | ------------------------------------------- |
-| `children`         | `ReactNode`     | —               | ✕        | Children node                               |
-| `href`             | `string`        | —               | ✔        | URL                                         |
-| `iconNameEnd`      | `string`        | `chevron-right` | ✕        | Icon name at the end of the item            |
-| `iconNameStart`    | `string`        | `chevron-left`  | ✕        | Icon name at the start of the item          |
-| `isCurrent`        | `boolean`       | `false`         | ✕        | Whether is the item the current page        |
-| `isGoBackOnly`     | `boolean`       | `false`         | ✕        | Whether should be displayed in go back mode |
-| `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                   |
-| `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                        |
+| Name               | Type            | Default         | Required | Description                                           |
+| ------------------ | --------------- | --------------- | -------- | ----------------------------------------------------- |
+| `children`         | `ReactNode`     | —               | ✕        | Children node                                         |
+| `href`             | `string`        | —               | ✕ \*     | URL, if not set, the item is rendered as a plain text |
+| `iconNameEnd`      | `string`        | `chevron-right` | ✕        | Icon name at the end of the item                      |
+| `iconNameStart`    | `string`        | `chevron-left`  | ✕        | Icon name at the start of the item                    |
+| `isCurrent`        | `boolean`       | `false`         | ✕        | Whether is the item the current page                  |
+| `isGoBackOnly`     | `boolean`       | `false`         | ✕        | Whether should be displayed in go back mode           |
+| `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                             |
+| `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                                  |
+
+(\*) Optional only for the current page.
 
 ### Dealing with long titles
 

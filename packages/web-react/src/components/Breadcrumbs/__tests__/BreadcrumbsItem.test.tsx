@@ -70,4 +70,27 @@ describe('BreadcrumbsItem', () => {
       expect(lastElement.tagName).not.toBe('svg');
     });
   });
+
+  describe('BreadcrumbsItem without a link', () => {
+    it('should render BreadcrumbsItem as a plain text', () => {
+      const dom = render(<BreadcrumbsItem isCurrent>test_title</BreadcrumbsItem>);
+      const listElement = dom.container.querySelector('li') as HTMLLIElement;
+      const anchorElement = dom.container.querySelector('a') as HTMLAnchorElement;
+
+      expect(listElement).toHaveTextContent('test_title');
+      expect(anchorElement).toBeNull();
+    });
+
+    it('should render BreadcrumbsItem as a Link', () => {
+      const dom = render(
+        <BreadcrumbsItem href="/" isCurrent>
+          test_title
+        </BreadcrumbsItem>,
+      );
+      const anchorElement = dom.container.querySelector('a') as HTMLAnchorElement;
+
+      expect(anchorElement).toHaveTextContent('test_title');
+      expect(anchorElement).toBeDefined();
+    });
+  });
 });

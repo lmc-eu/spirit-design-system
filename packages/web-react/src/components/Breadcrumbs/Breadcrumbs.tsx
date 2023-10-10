@@ -30,11 +30,11 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
           items?.map((item, index) => (
             <Fragment key={`BreadcrumbsItem_${item.title}`}>
               {index === items.length - 2 && goBackTitle && (
-                <BreadcrumbsItem href={item.url} isGoBackOnly>
+                <BreadcrumbsItem href={item.url || undefined} isGoBackOnly>
                   {goBackTitle}
                 </BreadcrumbsItem>
               )}
-              <BreadcrumbsItem href={item.url} isCurrent={isLast(index, items?.length)}>
+              <BreadcrumbsItem href={item.url || undefined} isCurrent={isLast(index, items?.length)}>
                 {item.title}
               </BreadcrumbsItem>
             </Fragment>
