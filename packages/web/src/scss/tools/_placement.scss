@@ -19,6 +19,21 @@
 @use 'sass:string';
 @use 'list' as spirit-list;
 
+$_arrow-rotate-map: (
+    top: 0deg,
+    top-left: 0deg,
+    top-right: 0deg,
+    bottom: 180deg,
+    bottom-left: 180deg,
+    bottom-right: 180deg,
+    left: -90deg,
+    left-top: -90deg,
+    left-bottom: -90deg,
+    right: 90deg,
+    right-top: 90deg,
+    right-bottom: 90deg,
+);
+
 // 1.2
 $_inset-map: (
     top: auto auto 100% 50%,
@@ -35,59 +50,57 @@ $_inset-map: (
     right-bottom: auto auto 0 100%,
 );
 
-// 1.3
-$_child-translate-map: (
-    top: var(--placement-offset-orthogonal, -50%) calc(-1 * var(--placement-offset, 0)),
-    top-left: var(--placement-offset-orthogonal, 0) calc(-1 * var(--placement-offset, 0)),
-    top-right: var(--placement-offset-orthogonal, 0) calc(-1 * var(--placement-offset, 0)),
-    bottom: var(--placement-offset-orthogonal, -50%) var(--placement-offset, 0),
-    bottom-left: var(--placement-offset-orthogonal, 0) var(--placement-offset, 0),
-    bottom-right: var(--placement-offset-orthogonal, 0) var(--placement-offset, 0),
-    left: calc(-1 * var(--placement-offset, 0)) var(--placement-offset-orthogonal, -50%),
-    left-top: calc(-1 * var(--placement-offset, 0)) var(--placement-offset-orthogonal, 0),
-    left-bottom: calc(-1 * var(--placement-offset, 0)) var(--placement-offset-orthogonal, 0),
-    right: var(--placement-offset, 0) var(--placement-offset-orthogonal, -50%),
-    right-top: var(--placement-offset, 0) var(--placement-offset-orthogonal, 0),
-    right-bottom: var(--placement-offset, 0) var(--placement-offset-orthogonal, 0),
-);
-$_arrow-translate-map: (
-    top: -50% 0%,
-    top-left: var(--placement-arrow-corner-offset) 0%,
-    top-right: calc(-1 * var(--placement-arrow-corner-offset)) 0%,
-    bottom: -50% -100%,
-    bottom-left: var(--placement-arrow-corner-offset) -100%,
-    bottom-right: calc(-1 * var(--placement-arrow-corner-offset)) -100%,
-    left: 50% -100%,
-    left-top: calc(var(--placement-arrow-width) / 2)
-        calc(var(--placement-arrow-width) / 2 - var(--placement-arrow-height) + var(--placement-arrow-corner-offset)),
-    left-bottom: calc(var(--placement-arrow-width) / 2)
-        calc(var(--placement-arrow-width) / -2 - var(--placement-arrow-corner-offset)),
-    right: -50% -100%,
-    right-top: calc(var(--placement-arrow-width) / -2)
-        calc(var(--placement-arrow-width) / 2 - var(--placement-arrow-height) + var(--placement-arrow-corner-offset)),
-    right-bottom: calc(var(--placement-arrow-width) / -2)
-        calc(var(--placement-arrow-width) / -2 - var(--placement-arrow-corner-offset)),
-);
-$_arrow-rotate-map: (
-    top: 0deg,
-    top-left: 0deg,
-    top-right: 0deg,
-    bottom: 180deg,
-    bottom-left: 180deg,
-    bottom-right: 180deg,
-    left: -90deg,
-    left-top: -90deg,
-    left-bottom: -90deg,
-    right: 90deg,
-    right-top: 90deg,
-    right-bottom: 90deg,
-);
 $_placement-inverse-map: (
     top: bottom,
     bottom: top,
     left: right,
     right: left,
 );
+
+@function -get-arrow-translate-map($prefix) {
+    @return (
+        top: -50% 0%,
+        top-left: var(--#{$prefix}-arrow-corner-offset) 0%,
+        top-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
+        bottom: -50% -100%,
+        bottom-left: var(--#{$prefix}-arrow-corner-offset) -100%,
+        bottom-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
+        left: 50% -100%,
+        left-top: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        left-bottom: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
+        right: -50% -100%,
+        right-top: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        right-bottom: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset))
+    );
+}
+
+// 1.3
+@function -get-child-translate-map($prefix) {
+    @return (
+        top: var(--#{$prefix}-offset-orthogonal, -50%) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-left: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-right: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        bottom: var(--#{$prefix}-offset-orthogonal, -50%) var(--#{$prefix}-offset, 0),
+        bottom-left: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        bottom-right: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        left: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, -50%),
+        left-top: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        left-bottom: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        right: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, -50%),
+        right-top: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
+        right-bottom: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0)
+    );
+}
 
 // Function to return an inverse placement name
 // Example: inverse('top') will return 'bottom'
@@ -125,31 +138,31 @@ $_placement-inverse-map: (
     z-index: $z-index;
 }
 
-@mixin child-variant($placement, $offset: 0) {
-    --placement-offset: #{$offset}; // 1.3.a
+@mixin child-variant($prefix, $placement, $offset: 0) {
+    --#{$prefix}-offset: #{$offset}; // 1.3.a
 
     inset: map.get($_inset-map, $placement); // 1.2
-    translate: map.get($_child-translate-map, $placement); // 1.3
+    translate: map.get(-get-child-translate-map($prefix), $placement); // 1.3
     transform-origin: string.unquote(inverse($placement, $hyphenate: false));
 }
 
-@mixin child-controlled() {
-    --placement-offset-orthogonal: 0; // 2.
+@mixin child-controlled($prefix) {
+    --#{$prefix}-offset-orthogonal: 0; // 2.
 
     inset: unset; // 2.
 }
 
-@mixin arrow($width, $height, $corner-offset) {
-    --placement-arrow-width: #{$width};
-    --placement-arrow-height: #{$height};
-    --placement-arrow-corner-offset: #{$corner-offset};
+@mixin arrow($prefix, $width, $height, $corner-offset) {
+    --#{$prefix}-arrow-width: #{$width};
+    --#{$prefix}-arrow-height: #{$height};
+    --#{$prefix}-arrow-corner-offset: #{$corner-offset};
 
     position: absolute; // 1.2
     transform-origin: bottom center;
 }
 
-@mixin arrow-variant($placement) {
+@mixin arrow-variant($prefix, $placement) {
     inset: map.get($_inset-map, $placement); // 1.2
-    translate: map.get($_arrow-translate-map, $placement); // 1.3
+    translate: map.get(-get-arrow-translate-map($prefix), $placement); // 1.3
     rotate: z map.get($_arrow-rotate-map, $placement);
 }

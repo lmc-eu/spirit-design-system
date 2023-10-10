@@ -2,7 +2,7 @@
 //    precisely positioned in sticky tooltips, e.g. with Floating UI:
 //    https://floating-ui.com
 //
-// 2. Use custom properties just to allow overriding the arrow appearance live in the browser.
+// 2. Reuse already generated custom properties to allow overriding the arrow appearance live in the browser.
 
 @use 'sass:math';
 @use '../../tools/dictionaries';
@@ -37,14 +37,15 @@
 
 // 1.
 .Tooltip__arrow {
-    @include placement.arrow(var(--tooltip-arrow-width), var(--tooltip-arrow-height), theme.$arrow-corner-offset);
+    @include placement.arrow(
+        $prefix: 'tooltip',
+        $width: theme.$arrow-width,
+        $height: theme.$arrow-height,
+        $corner-offset: theme.$arrow-corner-offset
+    );
 
-    // 2.
-    --tooltip-arrow-width: #{theme.$arrow-width};
-    --tooltip-arrow-height: #{theme.$arrow-height};
-
-    width: var(--tooltip-arrow-width);
-    height: var(--tooltip-arrow-height);
+    width: var(--tooltip-arrow-width); // 2.
+    height: var(--tooltip-arrow-height); // 2.
     background: no-repeat center/cover svg.escape(theme.$arrow-shape);
 }
 
@@ -82,7 +83,7 @@
 
 // Controlled placement
 .Tooltip[data-spirit-placement] {
-    @include placement.child-controlled();
+    @include placement.child-controlled($prefix: 'tooltip');
 }
 
 @include dictionaries.generate-controlled-placements(

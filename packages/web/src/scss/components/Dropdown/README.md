@@ -13,7 +13,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottom Dropdown--left" id="dropdownDefault">
+  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -55,7 +55,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--top Dropdown--right" id="dropdownTopRight">
+  <div class="Dropdown Dropdown--topRight" id="dropdownTopRight">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -98,7 +98,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottom Dropdown--left" id="dropdownDisabledAutoClose">
+  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDisabledAutoClose">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -140,7 +140,7 @@
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
+  <div class="Dropdown Dropdown--topLeft" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -182,11 +182,7 @@
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div
-    class="Dropdown Dropdown--top Dropdown--left"
-    id="dropdownFullWidthModeMobile"
-    data-spirit-fullwidthmode="mobile-only"
-  >
+  <div class="Dropdown Dropdown--topLeft" id="dropdownFullWidthModeMobile" data-spirit-fullwidthmode="mobile-only">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -217,7 +213,8 @@
 
 ## Placement
 
-Dropdown content can be vertically aligned with `.Dropdown--top` or `.Dropdown--bottom` and horizontally `.Dropdown--left` or `.Dropdown--right` side of parent.
+Dropdown implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as CSS
+modifiers in the camelCase format: `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--leftBottom`, etc.
 
 ## JavaScript
 
@@ -275,3 +272,5 @@ myDropdownEl.addEventListener('hidden.dropdown', () => {
 
 dropdown.hide();
 ```
+
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement

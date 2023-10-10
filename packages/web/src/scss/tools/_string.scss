@@ -26,10 +26,14 @@
     @for $i from 1 through string.length($string) {
         $char: string.slice($string, $i, $i);
 
-        @if string.to-upper-case($char) == $char {
-            $kebab-case: $kebab-case + '-' + string.to-lower-case($char);
+        @if $i == 1 {
+            $kebab-case: string.to-lower-case($char);
         } @else {
-            $kebab-case: $kebab-case + $char;
+            @if string.to-upper-case($char) == $char {
+                $kebab-case: $kebab-case + '-' + string.to-lower-case($char);
+            } @else {
+                $kebab-case: $kebab-case + $char;
+            }
         }
     }
 
