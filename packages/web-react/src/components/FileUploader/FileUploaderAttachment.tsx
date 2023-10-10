@@ -1,15 +1,15 @@
-import React, { useRef, RefObject, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
-import { SpiritFileUploaderAttachmentProps } from '../../types';
+import React, { MouseEvent, RefObject, useRef, useState } from 'react';
 import { useClassNamePrefix, useDeprecationMessage, useStyleProps } from '../../hooks';
-import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
-import { useFileUploaderAttachment } from './useFileUploaderAttachment';
-import AttachmentImagePreview from './AttachmentImagePreview';
+import { SpiritFileUploaderAttachmentProps } from '../../types';
 import { Icon } from '../Icon';
-import { DEFAULT_ICON_NAME, DEFAULT_BUTTON_LABEL, DEFAULT_EDIT_BUTTON_LABEL } from './constants';
-import { image2Base64Preview } from './utils';
 import AttachmentActionButton from './AttachmentActionButton';
 import AttachmentDismissButton from './AttachmentDismissButton';
+import AttachmentImagePreview from './AttachmentImagePreview';
+import { DEFAULT_BUTTON_LABEL, DEFAULT_EDIT_BUTTON_LABEL, DEFAULT_ICON_NAME } from './constants';
+import { useFileUploaderAttachment } from './useFileUploaderAttachment';
+import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
+import { image2Base64Preview } from './utils';
 
 const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   const {
@@ -28,6 +28,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
     onEdit,
     onError,
     removeText,
+    meta,
     ...restProps
   } = props;
   const [imagePreview, setImagePreview] = useState<string>('');
@@ -51,7 +52,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
     image2Base64Preview(file, 100, (compressedDataURL) => setImagePreview(compressedDataURL));
   }
 
-  useFileUploaderAttachment({ attachmentRef, file, name, onError });
+  useFileUploaderAttachment({ attachmentRef, file, name, meta, onError });
 
   useDeprecationMessage({
     method: 'property',
@@ -82,7 +83,7 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       className={classNames(classProps.attachment.root, styleProps.className)}
     >
       {hasImagePreview && imagePreview ? (
-        <AttachmentImagePreview label={label} imagePreview={imagePreview} />
+        <AttachmentImagePreview label={label} imagePreview={imagePreview} meta={meta} />
       ) : (
         <Icon name={iconName} aria-hidden="true" />
       )}
