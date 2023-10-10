@@ -1,0 +1,42 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _columnEnd = props.columnEnd | default(null) -%}
+{%- set _columnStart = props.columnStart | default(null) -%}
+{%- set _rowEnd = props.rowEnd | default(null) -%}
+{%- set _rowStart = props.rowStart | default(null) -%}
+{%- set _elementType = props.elementType | default('div') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'GridItem' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+
+{%- set _style = '' -%}
+
+{%- for key, value in props | filter((value, key) => key|slice(0, 6) == 'column' or key|slice(0, 3) == 'row') -%}
+    {%- set type = key | slice(0, 6) == 'column' ? 'column' : 'row' -%}
+    {%- set item = key | slice(type | length) -%}
+    {%- if value is iterable -%}
+        {%- set itemType = 'grid-item-' ~ type ~ '-' ~ item | lower -%}
+        {%- for breakpoint, bpValue in value -%}
+            {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+            {%- set _style = _style ~ '--' ~ itemType ~ suffix ~ ': ' ~ bpValue ~ ';' -%}
+        {%- endfor -%}
+    {%- else -%}
+        {%- set itemType = 'grid-item-' ~ type ~ '-' ~ item | lower -%}
+        {%- set _style = _style ~ '--' ~ itemType ~ ': ' ~ value ~ ';' -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{# Attributes #}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps | join() ~ '"' -%}
+
+<{{ _elementType }}
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ _styleAttr | raw }}
+>
+    {%- block content %}{% endblock -%}
+</{{ _elementType }}>

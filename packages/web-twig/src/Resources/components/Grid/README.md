@@ -113,5 +113,86 @@ You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
+## GridItem
+
+Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure
+as you wish. Use props to set a column and rows where the Grid Item should start or end.
+Numeric values are used as a coordinates in the grid.
+
+If you want to set how to item should span over columns or rows, set the value as `span X`
+where X is the number of columns or rows the item should span, like this `columnStart="span 2"`
+or `rowEnd="span 3"`. Span could be used with responsive props as well and for both start and end.
+To understand how to use `span` read one of many articles about CSS Grid,
+eg. [CSS Grid Layout: The Span Keyword][digitalocean-span].
+
+If you need to set a layout with repetitive columns, you can set this on the `Grid`
+component itself using the [`cols` prop](#api) and might not need to set columns on the items. Eg. article
+listing with 3 columns is easier to set using `cols="3"` on the `Grid` component than setting
+`columnStart` and `columnEnd` on each `GridItem`.
+
+Basic example usage:
+
+```twig
+<Grid>
+  <GridItem columnStart="1" columnEnd="4">
+    1–4
+  </GridItem>
+  <GridItem columnStart="5" columnEnd="9">
+    5–9
+  </GridItem>
+  <GridItem columnStart="10" columnEnd="span 2" rowStart="2">
+    10–12
+  </GridItem>
+</Grid>
+```
+
+### Responsive example usage:
+
+Pass an object to props to set different values for different breakpoints. The values will
+be applied from mobile to desktop and if not set for a breakpoint, the value from the
+previous breakpoint will be used.
+
+```twig
+<Grid elementType="ul">
+  <GridItem elementType="li" columnStart="1" columnEnd="4">
+    1–4
+  </GridItem>
+  <GridItem elementType="li" columnStart="5" columnEnd="{{ { mobile: 8, tablet: 9 } }}">
+    5–9 (5–8 on mobile)
+  </GridItem>
+  <GridItem elementType="li" columnStart="{{ { mobile: 9, tablet: 10 } }}" columnEnd="{{ { mobile: 'span 3', tablet: 'span 2' } }}">
+    10–12 (9–12 on mobile)
+  </GridItem>
+</Grid>
+```
+
+Without lexer:
+
+```twig
+{% embed "@spirit/gridItem.twig" with { props: {
+    columnStart: 1,
+    columnEnd: 4,
+}} %}
+    {% block content %}
+        1–4
+    {% endblock %}
+{% endembed %}
+```
+
+### API
+
+| Name          | Type                               | Default | Required | Description                        |
+| ------------- | ---------------------------------- | ------- | -------- | ---------------------------------- |
+| `elementType` | `string`                           | `div`   | ✕        | HTML tag to render                 |
+| `columnEnd`   | [`number` \| `string` \| `object`] | `null`  | ✕        | Column where the item should end   |
+| `columnStart` | [`number` \| `string` \| `object`] | `null`  | ✕        | Column where the item should start |
+| `rowEnd`      | [`number` \| `string` \| `object`] | `null`  | ✕        | Row where the item should end      |
+| `rowStart`    | [`number` \| `string` \| `object`] | `null`  | ✕        | Row where the item should start    |
+
+You can add `id`, `data-*` or `aria-*` attributes to further extend component's
+descriptiveness and accessibility. Also, UNSAFE styling props are available,
+see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+
 [grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
