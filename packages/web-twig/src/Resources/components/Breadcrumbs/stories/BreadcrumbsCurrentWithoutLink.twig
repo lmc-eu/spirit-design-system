@@ -1,0 +1,19 @@
+{% set items = [
+    {
+        title: 'Root',
+        url: '#rootUrl',
+    },
+    {
+        title: 'Category',
+        url: '#categoryUrl',
+    },
+    {
+        title: 'Subcategory',
+        url: '#subcategoryUrl',
+    },
+    {
+        title: 'Current page',
+    },
+] %}
+
+<Breadcrumbs goBackTitle="Back" items={{ items }} />
