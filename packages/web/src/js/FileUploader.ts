@@ -32,6 +32,15 @@ const DEFAULT_ERROR_MESSAGES = {
   errorFileNotSupported: 'is not a supported file. Please ensure you are uploading a supported file format.',
 };
 
+export interface FileMetadata {
+  [key: string | number]: unknown;
+}
+
+export interface FileQueueValueType {
+  file: File;
+  meta?: FileMetadata;
+}
+
 class FileUploader extends BaseComponent {
   wrapper: HTMLElement;
   inputElement: HTMLInputElement;
@@ -45,7 +54,7 @@ class FileUploader extends BaseComponent {
   isMultiple: boolean;
   accept: string;
   isDragging: boolean;
-  fileQueue: Map<string, File>;
+  fileQueue: Map<string, FileQueueValueType>;
   instanceUid: string;
   errors: Record<string, string>;
   isDisabled: boolean;
@@ -292,7 +301,7 @@ class FileUploader extends BaseComponent {
       });
   }
 
-  appendToList(file: File) {
+  appendToList(file: File, meta?: FileMetadata) {
     if (!this.listElement) {
       if (process.env.NODE_ENV === 'development') {
         /* Because part of the sheet is also a hidden title with an identifier */
@@ -317,7 +326,12 @@ class FileUploader extends BaseComponent {
       return;
     }
 
-    this.fileQueue.set(id, file);
+    const newValue: FileQueueValueType = { file };
+    if (meta) {
+      newValue.meta = meta;
+    }
+
+    this.fileQueue.set(id, newValue);
 
     this.listElement.appendChild(attachment);
 
@@ -326,23 +340,57 @@ class FileUploader extends BaseComponent {
     this.dragReset();
   }
 
-  addToQueue(file: File) {
+  addToQueue(file: File, meta?: FileMetadata, callback?: (key: string, file: File, meta?: FileMetadata) => void) {
     try {
       EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue, currentFile: file });
       this.checkAllowedFileType(file);
       this.checkAllowedFileSize(file);
       this.checkFileQueueDuplicity(file);
       this.checkQueueLimit();
-      this.appendToList(file);
+      this.appendToList(file, meta);
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
+      callback && callback(this.getUpdatedFileName(file.name), file, meta);
       EventHandler.trigger(this.wrapper, EVENT_QUEUED_FILE, { fileQueue: this.fileQueue, currentFile: file });
     } catch (error) {
       EventHandler.trigger(this.wrapper, EVENT_ERROR, { validationText: error.message });
     }
   }
 
-  removeFromQueue(name: string) {
+  static isCoordsInMeta = (meta: FileMetadata) => {
+    return ['x', 'y', 'width', 'height'].every((coord) => meta[coord] != null);
+  };
+
+  updateQueue(
+    name: string,
+    file: File,
+    meta?: FileMetadata,
+    callback?: (key: string, file: File, meta?: FileMetadata) => void,
+  ) {
+    if (this.fileQueue.has(name)) {
+      const newValue: FileQueueValueType = { file };
+      if (meta) {
+        newValue.meta = meta;
+      }
+
+      this.fileQueue.set(name, newValue);
+
+      const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`);
+      if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
+        const cropStyles = `
+          --file-uploader-attachment-image-top: -${meta.y}px;
+          --file-uploader-attachment-image-left: -${meta.x}px;
+          --file-uploader-attachment-image-width: ${meta.width}px;
+          --file-uploader-attachment-image-height: ${meta.height}px
+        `;
+        itemImgElement?.setAttribute('style', cropStyles);
+      }
+
+      callback && callback(name, file, meta);
+    }
+  }
+
+  removeFromQueue(name: string, callback?: (key: string) => void) {
     if (this.fileQueue.has(name)) {
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUE_FILE, { fileQueue: this.fileQueue, currentFile: name });
       const itemElement = SelectorEngine.findOne(`#${name}`);
@@ -351,6 +399,7 @@ class FileUploader extends BaseComponent {
       this.updateDropZoneVisibility();
       this.updateNameAttribute();
       this.removeValidationWError();
+      callback && callback(name);
       EventHandler.trigger(this.wrapper, EVENT_UNQUEUED_FILE, { fileQueue: this.fileQueue, currentFile: name });
     }
   }
@@ -359,7 +408,7 @@ class FileUploader extends BaseComponent {
     return this.fileQueue.get(name);
   }
 
-  onChange(event: Event & { target: HTMLInputElement }) {
+  onChange(event: Event & { target: HTMLInputElement }, meta?: FileMetadata) {
     const { target } = event;
     const filesArray = target.files ? [...target.files] : [];
 
@@ -369,7 +418,7 @@ class FileUploader extends BaseComponent {
 
     filesArray.forEach((file: File) => {
       if (counter < this.fileQueueLimit) {
-        this.addToQueue(file);
+        this.addToQueue(file, meta);
         counter += 1;
       } else {
         overLimit = true;

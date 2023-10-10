@@ -338,4 +338,29 @@ describe('FileUploader', () => {
       expect(instance.getFileFromQueue('test')).toBeUndefined();
     });
   });
+
+  describe('updateQueue', () => {
+    it('should update the file in the queue without meta and callback', () => {
+      const name = 'test';
+      const file = { name: 'test.txt' } as File;
+      instance.fileQueue = new Map().set(name, { file: null });
+
+      instance.updateQueue(name, file);
+
+      expect(instance.fileQueue.get(name)).toEqual({ file });
+    });
+
+    it('should update the file in the queue with meta data and trigger callback', () => {
+      const name = 'test';
+      const file = { name: 'test.txt' } as File;
+      const meta = { y: 10, x: 20, width: 100, height: 50 };
+      const callback = jest.fn();
+      instance.fileQueue = new Map().set(name, { file: null });
+
+      instance.updateQueue(name, file, meta, callback);
+
+      expect(instance.fileQueue.get(name)).toEqual({ file, meta });
+      expect(callback).toHaveBeenCalledWith(name, file, meta);
+    });
+  });
 });
