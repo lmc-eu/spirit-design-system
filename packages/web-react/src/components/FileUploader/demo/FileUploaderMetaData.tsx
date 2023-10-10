@@ -1,23 +1,21 @@
 import React, { useState, MouseEvent } from 'react';
-import { SpiritFileUploaderAttachmentProps } from '../../../src/types';
-import { useFileQueue } from '../../../src/components/FileUploader/useFileQueue';
-import FileUploader from '../../../src/components/FileUploader/FileUploader';
-import FileUploaderInput from '../../../src/components/FileUploader/FileUploaderInput';
-import FileUploaderList from '../../../src/components/FileUploader/FileUploaderList';
-import FileUploaderAttachment from '../../../src/components/FileUploader/FileUploaderAttachment';
-import { Button, Modal, ModalBody, ModalDialog, ModalFooter } from '../../../src/components';
+import { SpiritFileUploaderAttachmentProps } from '../../../types';
+import { Button } from '../../Button';
+import { Modal, ModalDialog, ModalBody, ModalFooter } from '../../Modal';
+import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 
-export default {
-  title: 'Examples/Compositions',
-};
-
-export const FileUploaderWithModalImagePreview = (args) => {
+const FileUploaderMetaData = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [base64File, setBase64File] = useState<string>('');
   const [fileToPreview, setFileToPreview] = useState<File | null>(null);
-  const { fileQueue, addToQueue, clearQueue, onDismiss, updateQueue } = useFileQueue();
+  const [toggleMeta, setToggleMeta] = useState<boolean>(false);
+  const { fileQueue, addToQueue, clearQueue, onDismiss, updateQueue, findInQueue } = useFileQueue();
 
-  const imagePreview = (key: string, file: File) => {
+  const customOnDismiss = (key: string) => {
+    return onDismiss(key);
+  };
+
+  const customAddToQueue = (key: string, file: File) => {
     if (file.type.includes('image')) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -29,10 +27,26 @@ export const FileUploaderWithModalImagePreview = (args) => {
       setFileToPreview(file);
       setIsModalOpen(true);
 
-      return;
+      return fileQueue;
     }
 
     return addToQueue(key, file);
+  };
+
+  const customUpdate = (_event: MouseEvent, file: File) => {
+    const newMeta = toggleMeta ? { x: 30, y: 30, width: 150, height: 150 } : { x: 22, y: 0, width: 110, height: 100 };
+
+    setIsModalOpen(false);
+    setToggleMeta(!toggleMeta);
+
+    return updateQueue(file.name, file, newMeta);
+  };
+
+  const confirmPreview = () => {
+    const newMeta = { x: 0, y: 0, width: 100, height: 100 };
+
+    setIsModalOpen(false);
+    addToQueue(fileToPreview?.name || '', fileToPreview as File, newMeta);
   };
 
   const resetCropImageState = () => {
@@ -45,48 +59,37 @@ export const FileUploaderWithModalImagePreview = (args) => {
     resetCropImageState();
   };
 
-  const confirmPreview = () => {
-    setIsModalOpen(false);
-    addToQueue(fileToPreview?.name || '', fileToPreview as File);
-  };
-
-  const onEdit = (event: MouseEvent, file: File) => {
-    imagePreview(file.name, file);
-  };
-
   const attachmentComponent = ({ id, meta, ...props }: SpiritFileUploaderAttachmentProps) => (
-    <FileUploaderAttachment key={id} id={id} meta={meta} onEdit={onEdit} {...props} />
+    <FileUploaderAttachment key={id} id={id} meta={meta} onEdit={customUpdate} {...props} />
   );
 
   return (
     <>
       <FileUploader
-        {...args}
-        id="fileUploaderExample"
-        onDismiss={onDismiss}
-        fileQueue={fileQueue}
-        addToQueue={imagePreview}
+        addToQueue={customAddToQueue}
         clearQueue={clearQueue}
+        fileQueue={fileQueue}
+        findInQueue={findInQueue}
+        id="fileUploaderWithMetaData"
+        onDismiss={customOnDismiss}
         updateQueue={updateQueue}
       >
         <FileUploaderInput
-          id="fileUploaderExampleInput"
-          name="attachments"
+          helperText="Max size of each file is 10 MB"
+          id="fileUploaderWithMetaDataInput"
           label="Label"
-          linkText="Upload your file(s)"
           labelText="or drag and drop here"
-          helperText="Max file size is 10 MB"
-          validationText="Validation message"
+          linkText="Upload your file(s)"
+          name="attachments"
+          maxUploadedFiles={1}
           /* eslint-disable-next-line no-console */
           onError={(error) => console.error('My error log', error)}
-          maxUploadedFiles={1}
-          accept=".png,image/jpeg"
         />
         <FileUploaderList
-          id="fileUploaderExampleList"
-          label="Attachments"
-          inputName="attachments"
           attachmentComponent={attachmentComponent}
+          id="fileUploaderWithMetaDataAttachment"
+          inputName="attachments"
+          label="Attachments"
           hasImagePreview
         />
       </FileUploader>
@@ -110,3 +113,5 @@ export const FileUploaderWithModalImagePreview = (args) => {
     </>
   );
 };
+
+export default FileUploaderMetaData;

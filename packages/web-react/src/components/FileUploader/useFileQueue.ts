@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { FileUploaderHandlingProps } from '../../types';
+import { FileMetadata, FileQueueValueType, FileUploaderHandlingProps } from '../../types';
 
 export interface FileQueueReturn extends FileUploaderHandlingProps {}
 
 export const useFileQueue = (): FileQueueReturn => {
-  const [queue, setQueue] = useState<Map<string, File>>(new Map());
+  const [queue, setQueue] = useState<Map<string, FileQueueValueType>>(new Map());
 
   const onDismissHandler = (name: string) => {
     setQueue((prev) => {
@@ -17,18 +17,31 @@ export const useFileQueue = (): FileQueueReturn => {
     return queue;
   };
 
-  const addToQueueHandler = (key: string, file: File) => {
-    setQueue((prev) => new Map(prev.set(key, file)));
+  const addToQueueHandler = (key: string, file: File, meta?: FileMetadata) => {
+    setQueue((prev) => {
+      const newValue: FileQueueValueType = { file };
+      if (meta != null) {
+        newValue.meta = meta;
+      }
+
+      return new Map(prev.set(key, newValue));
+    });
 
     return queue;
   };
 
   const findInQueueHandler = (key: string) => queue.get(key) || null;
 
-  const updateQueueHandler = (key: string, file: File) => {
+  const updateQueueHandler = (key: string, file: File, meta?: FileMetadata) => {
     setQueue((prev) => {
       const newState = new Map(prev);
-      newState.set(key, file);
+      const newValue: FileQueueValueType = { file };
+
+      if (meta != null) {
+        newValue.meta = meta;
+      }
+
+      newState.set(key, newValue);
 
       return newState;
     });

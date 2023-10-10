@@ -24,8 +24,8 @@ describe('FileUploaderList', () => {
   it('should render the attachments', () => {
     const attachmentComponent = (ps: SpiritFileUploaderAttachmentProps) => <li key={ps.id}>{ps.label}</li>;
     const fileQueue = new Map();
-    fileQueue.set('1', { name: 'file1.txt' });
-    fileQueue.set('2', { name: 'file2.txt' });
+    fileQueue.set('1', { file: { name: 'file1.txt' } });
+    fileQueue.set('2', { file: { name: 'file2.txt' } });
     const { getByText } = render(
       <FileUploader
         fileQueue={fileQueue}

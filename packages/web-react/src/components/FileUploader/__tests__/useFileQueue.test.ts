@@ -82,21 +82,27 @@ describe('useFileQueue', () => {
 
   it('should update queue', () => {
     const { result } = renderHook(() => useFileQueue());
+    const testMeta = { test: 'test' };
+    const testUpdateMeta = { test: 'test updated' };
 
     act(() => {
       result.current.addToQueue('test1_txt', file1);
       result.current.addToQueue('test2_txt', file2);
+      result.current.addToQueue('test3_txt', file2, testMeta);
     });
 
-    expect(result.current.fileQueue.size).toBe(2);
+    expect(result.current.fileQueue.size).toBe(3);
+    expect(result.current.fileQueue.get('test3_txt')).toEqual({ file: file2, meta: testMeta });
 
     act(() => {
       result.current.updateQueue('test1_txt', file2);
       result.current.updateQueue('test2_txt', file1);
+      result.current.updateQueue('test3_txt', file2, testUpdateMeta);
     });
 
-    expect(result.current.fileQueue.size).toBe(2);
-    expect(result.current.fileQueue.get('test1_txt')).toBe(file2);
-    expect(result.current.fileQueue.get('test2_txt')).toBe(file1);
+    expect(result.current.fileQueue.size).toBe(3);
+    expect(result.current.fileQueue.get('test1_txt')).toEqual({ file: file2 });
+    expect(result.current.fileQueue.get('test2_txt')).toEqual({ file: file1 });
+    expect(result.current.fileQueue.get('test3_txt')).toEqual({ file: file2, meta: testUpdateMeta });
   });
 });

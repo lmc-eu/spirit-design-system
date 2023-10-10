@@ -1,6 +1,8 @@
+import { CSSProperties } from 'react';
 import classNames from 'classnames';
+import { FileUploaderCropCSS } from '../../constants/dictionaries';
 import { useClassNamePrefix } from '../../hooks';
-import { FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
+import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 
 export interface FileUploaderStyleProps extends Validation {
   isDragAndDropSupported?: boolean;
@@ -11,7 +13,15 @@ export interface FileUploaderStyleProps extends Validation {
   isDropZoneHidden?: boolean;
   isFluid?: boolean;
   queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
+  meta?: FileMetadata;
 }
+
+type ImageCropCSS = {
+  [FileUploaderCropCSS.TOP]?: string;
+  [FileUploaderCropCSS.LEFT]?: string;
+  [FileUploaderCropCSS.WIDTH]?: string;
+  [FileUploaderCropCSS.HEIGHT]?: string;
+} & CSSProperties;
 
 export interface FileUploaderStyleReturn {
   /** className props */
@@ -38,6 +48,7 @@ export interface FileUploaderStyleReturn {
       image: string;
       slot: string;
     };
+    imageCropStyles?: ImageCropCSS;
   };
 }
 
@@ -67,6 +78,21 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderAttachmentButtonClass = `${fileUploaderAttachmentClass}__action`;
   const fileUploaderAttachmentImageClass = `${fileUploaderAttachmentClass}__image`;
   const fileUploaderAttachmentSlotClass = `${fileUploaderAttachmentClass}__slot`;
+
+  const { meta } = props || {};
+  let imageCropCSS: ImageCropCSS | undefined;
+  const hasCoords = meta && meta.x != null && meta.y != null && meta.width != null && meta.height != null;
+
+  if (hasCoords) {
+    const { x, y, width, height } = meta;
+
+    imageCropCSS = {
+      [FileUploaderCropCSS.TOP]: `-${y}px`,
+      [FileUploaderCropCSS.LEFT]: `-${x}px`,
+      [FileUploaderCropCSS.WIDTH]: `${width}px`,
+      [FileUploaderCropCSS.HEIGHT]: `${height}px`,
+    };
+  }
 
   return {
     classProps: {
@@ -102,6 +128,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         image: fileUploaderAttachmentImageClass,
         slot: fileUploaderAttachmentSlotClass,
       },
+      ...(hasCoords && { imageCropStyles: imageCropCSS }),
     },
   };
 };

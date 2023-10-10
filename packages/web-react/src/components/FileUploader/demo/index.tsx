@@ -21,6 +21,7 @@ import FileUploaderInputWithAttachment from './FileUploaderInputWithAttachment';
 import FileUploaderDraggingNotAvailable from './FileUploaderDraggingNotAvailable';
 import FileUploaderFluidWidth from './FileUploaderFluidWidth';
 import FileUploaderExampleOfJSControlledForm from './FileUploaderExampleOfJSControlledForm';
+import FileUploaderMetaData from './FileUploaderMetaData';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -53,6 +54,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Attachment with Custom Actions">
         <FileUploaderAttachmentWithCustomAction />
+      </DocsSection>
+      <DocsSection title="FileUploader with Meta Data">
+        <FileUploaderMetaData />
       </DocsSection>
       <DocsSection title="Input with Attachment" tag="Visual demo only">
         <DocsFormFieldGrid>
