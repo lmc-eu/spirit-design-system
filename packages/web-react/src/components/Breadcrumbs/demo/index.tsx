@@ -7,8 +7,9 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import BreadcrumbsDefault from './BreadcrumbsDefault';
+import BreadcrumbsCurrentWithoutLink from './BreadcrumbsCurrentWithoutLink';
 import BreadcrumbsCustom from './BreadcrumbsCustom';
+import BreadcrumbsDefault from './BreadcrumbsDefault';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -18,6 +19,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Custom">
         <BreadcrumbsCustom />
+      </DocsSection>
+      <DocsSection title="Current page is not a link">
+        <BreadcrumbsCurrentWithoutLink />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

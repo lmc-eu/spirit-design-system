@@ -21,14 +21,18 @@ export const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
   return (
     <li {...transferProps} {...styleProps} className={classNames(classProps.item, styleProps.className)}>
       {restProps.isGoBackOnly && iconNameStart && <Icon name={iconNameStart} />}
-      <Link
-        href={href}
-        color={isCurrent ? 'secondary' : 'primary'}
-        isUnderlined={!isCurrent}
-        aria-current={isCurrent ? 'page' : undefined}
-      >
-        {children}
-      </Link>
+      {!href && isCurrent ? (
+        children
+      ) : (
+        <Link
+          href={href}
+          color={isCurrent ? 'secondary' : 'primary'}
+          isUnderlined={!isCurrent}
+          aria-current={isCurrent ? 'page' : undefined}
+        >
+          {children}
+        </Link>
+      )}
       {!isCurrent && !restProps.isGoBackOnly && iconNameEnd && <Icon name={iconNameEnd} />}
     </li>
   );

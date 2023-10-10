@@ -3,13 +3,13 @@ import { ChildrenProps, StyleProps, TransferProps } from './shared';
 
 type BreadcrumbsItem = {
   title: string;
-  url: string;
+  url?: string;
 };
 
 export type BreadcrumbsItems = BreadcrumbsItem[];
 
 export interface SpiritBreadcrumbsItemProps extends ChildrenProps {
-  href: string;
+  href?: string;
   iconNameEnd?: string;
   iconNameStart?: string;
   isCurrent?: boolean;
