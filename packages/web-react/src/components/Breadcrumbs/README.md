@@ -91,4 +91,16 @@ Use the `BreadcrumbsItem` component for the ordered list as the component's chil
 | `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                   |
 | `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                        |
 
-For detailed information see [Breadcrumbs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md) component
+### Dealing with long titles
+
+When you need to shorten the title of the BreadcrumbsItem the preferred way is to use platform native helpers.
+There are multiple ways in JavaScript which will truncate a string for you like `.slice` or `.substring`, e.g. `str.slice(0, num) + '…'`.
+
+Additional option is to use helper class `text-truncate` with defined width.
+
+You can also use any of the existing [npm packages which deal with truncating the string][truncate-npm-search].
+
+For detailed information see [Breadcrumbs][breadcrumbs] component.
+
+[truncate-npm-search]: https://www.npmjs.com/search?q=truncate
+[breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md
