@@ -1,35 +1,56 @@
 # Breadcrumbs
 
+Shows where the user is within the app hierarchy.
+
+## Usage
+
 ```html
 <nav aria-label="Breadcrumb" class="Breadcrumbs">
   <ol>
     <li class="d-none d-tablet-flex">
       <a href="#rootUrl" class="link-primary link-underlined">Root</a>
-    </li>
-    <li class="d-none d-tablet-flex">
-      <svg class="Icon" width="24" height="24">
+      <svg width="24" height="24">
         <use xlink:href="/icons/svg/sprite.svg#chevron-right" />
       </svg>
+    </li>
+    <li class="d-none d-tablet-flex">
       <a href="#categoryUrl" class="link-primary link-underlined">Category</a>
+      <svg width="24" height="24">
+        <use xlink:href="/icons/svg/sprite.svg#chevron-right" />
+      </svg>
     </li>
     <li class="d-tablet-none">
-      <svg class="Icon" width="24" height="24">
+      <svg width="24" height="24">
         <use xlink:href="/icons/svg/sprite.svg#chevron-left" />
       </svg>
       <a href="#subcategoryUrl" class="link-primary link-underlined">Back</a>
     </li>
     <li class="d-none d-tablet-flex">
-      <svg class="Icon" width="24" height="24">
+      <a href="#subcategoryUrl" class="link-primary link-underlined">Subcategory</a>
+      <svg width="24" height="24">
         <use xlink:href="/icons/svg/sprite.svg#chevron-right" />
       </svg>
-      <a href="#subcategoryUrl" class="link-primary link-underlined">Subcategory</a>
     </li>
     <li class="d-none d-tablet-flex">
-      <svg class="Icon" width="24" height="24">
-        <use xlink:href="/icons/svg/sprite.svg#chevron-right" />
-      </svg>
       <a href="#currentUrl" aria-current="page" class="link-secondary">Current page</a>
     </li>
   </ol>
 </nav>
+```
+
+### Dealing with long titles
+
+When you need to shorten the title of the Breadcrumbs item you can use a helper class `text-truncate` with defined width.
+
+```html
+<!-- … --->
+<li class="d-none d-tablet-flex">
+  <a href="#currentUrl" aria-current="page" class="link-secondary text-truncate" style="max-width: 100px;">
+    This is a very long title of the current page
+  </a>
+  <svg width="24" height="24">
+    <use xlink:href="/icons/svg/sprite.svg#chevron-right" />
+  </svg>
+</li>
+<!-- … --->
 ```

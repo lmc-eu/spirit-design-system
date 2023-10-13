@@ -135,5 +135,18 @@ You can add `id`, `data-*` or `aria-*` attributes to further extend the componen
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
+### Dealing with long titles
+
+When you need to shorten the title of the BreadcrumbsItem the preferred way is to use platform native helpers.
+Twig has an implementation of text truncating using [`u` filter][twig-truncate].
+Please see the documentation for more details.
+
+```twig
+{{ 'Lorem ipsum'|u.truncate(8, '…') }}
+```
+
+Additional option is to use helper class `text-truncate` with defined width.
+
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Breadcrumbs
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[twig-truncate]: https://twig.symfony.com/doc/3.x/filters/u.html
