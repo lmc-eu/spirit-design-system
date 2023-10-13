@@ -1,0 +1,48 @@
+<Modal id="example_modal_data" titleId="example_modal_data_title">
+    <ModalDialog>
+        <ModalHeader modalId="example_modal_data" titleId="example_modal_data_title">
+            Image Preview
+        </ModalHeader>
+        <ModalBody>
+            <div class="pt-400 pt-tablet-600" data-example-content></div>
+        </ModalBody>
+        <ModalFooter>
+            <Button
+                color="primary"
+                data-spirit-target="#example_modal_data"
+                data-spirit-dismiss="modal"
+            >
+                Confirm
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-target="#example_modal_data"
+                data-element="cancel"
+            >
+                Cancel
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
+
+<FileUploader data-spirit-toggle="fileUploader" id="example_customMetaData">
+    <template data-spirit-snippet="item">
+        <FileUploaderAttachment onEdit="moduleFunctions.customEdit(event)" generateImagePreview />
+    </template>
+    <FileUploaderInput
+        helperText="Max size of each file is 10 MB"
+        id="fileUploaderWithMetaData"
+        label="Label"
+        multiple
+        name="fileUploaderWithMetaData"
+        maxUploadedFiles={1} 
+        queueLimitBehavior="disable"
+    />
+    <FileUploaderList headingId="attachments-fileUploaderMetaData" id="FileUploaderListWithMetaData" />
+</FileUploader>
+
+<script>
+  const moduleFunctions = {};
+</script>
+
+{{ encore_entry_script_tags('fileUploaderMetaData') }}

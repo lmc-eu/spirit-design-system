@@ -61,5 +61,11 @@ describe('useFileUploaderStyleProps', () => {
     );
 
     expect(result.current.classProps.imageCropStyles).toBeDefined();
+    expect(result.current.classProps.imageCropStyles).toStrictEqual({
+      '--file-uploader-attachment-image-height': '4px',
+      '--file-uploader-attachment-image-left': '-1px',
+      '--file-uploader-attachment-image-top': '-2px',
+      '--file-uploader-attachment-image-width': '3px',
+    });
   });
 });
