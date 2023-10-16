@@ -25,8 +25,11 @@ Link the full, vendor-prefixed and minimised CSS with default Spirit branding
 in your HTML template:
 
 ```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
 <link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
 ```
+
+👉 Alternatively, you can use [CDN](#cdn) links when you don't want to install any npm packages.
 
 ### Advanced Implementation in Product with Sass
 
@@ -142,6 +145,20 @@ Currently the element for the plugin is found by the `querySelector` method sinc
 var modal = new Modal('#myModal');
 var dropdown = new Dropdown('[data-spirit-toggle="dropdown"]');
 ```
+
+### CDN
+
+Spirit Design System is also available on CDN:
+
+| Description     | URL                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------- |
+| CSS: Foundation | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/foundation.min.css             |
+| CSS: Components | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/components.min.css             |
+| CSS: Helpers    | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/helpers.min.css                |
+| CSS: Utilities  | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/utilities.min.css              |
+| JavaScript      | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/js/bundle/spirit-web.bundle.min.js |
+
+👉 Consider using a specific version instead of `latest` in production.
 
 ## Rebranding
 
