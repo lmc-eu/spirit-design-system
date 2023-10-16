@@ -1,10 +1,10 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button } from '../..';
-import ReadMe from '../README.md';
+import React from 'react';
 import { Tooltip, TooltipWrapper } from '..';
+import { Button } from '../..';
+import { Placements } from '../../../constants';
+import ReadMe from '../README.md';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
@@ -33,7 +33,7 @@ const meta: Meta<typeof Tooltip> = {
     },
     placement: {
       control: 'select',
-      options: ['top', 'right', 'bottom', 'left', 'off'],
+      options: [...Object.values(Placements), 'off'],
       table: {
         defaultValue: { summary: 'bottom' },
       },

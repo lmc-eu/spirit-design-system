@@ -1,46 +1,146 @@
-import React from 'react';
-import { ButtonLink } from '../../Button';
-import TooltipWrapper from '../TooltipWrapper';
+import React, { ChangeEvent, useState } from 'react';
+import DocsBox from '../../../../docs/DocsBox';
+import { PlacementDictionaryType } from '../../../types';
+import { Grid } from '../../Grid';
+import { Radio } from '../../Radio';
 import Tooltip from '../Tooltip';
+import TooltipWrapper from '../TooltipWrapper';
 
-const TooltipPlacements = () => (
-  <>
-    <TooltipWrapper>
-      <ButtonLink href="#" aria-describedby="my-tooltip-hover-top" UNSAFE_className="TooltipTarget">
-        Tooltip on top
-      </ButtonLink>
-      <Tooltip id="my-tooltip-hover-top" placement="top">
-        Hello there!
-      </Tooltip>
-    </TooltipWrapper>
+const TooltipPlacements = () => {
+  const [placement, setPlacement] = useState<PlacementDictionaryType>('bottom');
 
-    <TooltipWrapper>
-      <ButtonLink href="#" aria-describedby="my-tooltip-hover-right" UNSAFE_className="TooltipTarget">
-        Tooltip on right
-      </ButtonLink>
-      <Tooltip id="my-tooltip-hover-right" placement="right">
-        Hello there!
-      </Tooltip>
-    </TooltipWrapper>
+  const handlePlacementChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPlacement(e.target.value as PlacementDictionaryType);
+  };
 
-    <TooltipWrapper>
-      <ButtonLink href="#" aria-describedby="my-tooltip-hover-bottom" UNSAFE_className="TooltipTarget">
-        Tooltip on bottom
-      </ButtonLink>
-      <Tooltip id="my-tooltip-hover-bottom" placement="bottom">
-        Hello there!
-      </Tooltip>
-    </TooltipWrapper>
-
-    <TooltipWrapper>
-      <ButtonLink href="#" aria-describedby="my-tooltip-hover-left" UNSAFE_className="TooltipTarget">
-        Tooltip on left
-      </ButtonLink>
-      <Tooltip id="my-tooltip-hover-left" placement="left">
-        Hello there!
-      </Tooltip>
-    </TooltipWrapper>
-  </>
-);
+  return (
+    <form autoComplete="off" className="mx-auto">
+      <Grid cols={3} UNSAFE_style={{ alignItems: 'center', justifyItems: 'center' }}>
+        <div style={{ gridRow: 1, gridColumn: 2 }}>
+          <Radio
+            name="placement"
+            isChecked={placement === 'top-left'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_top_left"
+            label="top-left"
+            value="top-left"
+          />{' '}
+          <Radio
+            name="placement"
+            isChecked={placement === 'top'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_top"
+            label="top"
+            value="top"
+          />{' '}
+          <Radio
+            name="placement"
+            isChecked={placement === 'top-right'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_top_right"
+            label="top-right"
+            value="top-right"
+          />
+        </div>
+        <div style={{ gridRow: 3, gridColumn: 2 }}>
+          <Radio
+            name="placement"
+            isChecked={placement === 'bottom-left'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_bottom_left"
+            label="bottom-left"
+            value="bottom-left"
+          />{' '}
+          <Radio
+            name="placement"
+            isChecked={placement === 'bottom'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_bottom"
+            label="bottom"
+            value="bottom"
+          />{' '}
+          <Radio
+            name="placement"
+            isChecked={placement === 'bottom-right'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_bottom_right"
+            label="bottom-right"
+            value="bottom-right"
+          />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 1 }}>
+          <Radio
+            name="placement"
+            isChecked={placement === 'left-top'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_left_top"
+            label="left-top"
+            value="left-top"
+          />
+          <Radio
+            name="placement"
+            isChecked={placement === 'left'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_left"
+            label="left"
+            value="left"
+          />
+          <Radio
+            name="placement"
+            isChecked={placement === 'left-bottom'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_left_bottom"
+            label="left-bottom"
+            value="left-bottom"
+          />
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 3 }}>
+          <Radio
+            name="placement"
+            isChecked={placement === 'right-top'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_right_top"
+            label="right-top"
+            value="right-top"
+          />
+          <Radio
+            name="placement"
+            isChecked={placement === 'right'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_right"
+            label="right"
+            value="right"
+          />
+          <Radio
+            name="placement"
+            isChecked={placement === 'right-bottom'}
+            isLabelHidden
+            onChange={handlePlacementChange}
+            id="placement_right_bottom"
+            label="right-bottom"
+            value="right-bottom"
+          />
+        </div>
+        <div style={{ gridRow: 2, gridColumn: 2 }}>
+          <TooltipWrapper UNSAFE_style={{ margin: '6rem auto' }}>
+            <DocsBox>Click the dots!</DocsBox>
+            <Tooltip placement={placement as PlacementDictionaryType}>Hello!</Tooltip>
+          </TooltipWrapper>
+        </div>
+      </Grid>
+    </form>
+  );
+};
 
 export default TooltipPlacements;

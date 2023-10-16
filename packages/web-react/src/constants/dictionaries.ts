@@ -46,6 +46,22 @@ export const SizesExtended = {
   XLARGE: 'xlarge',
 } as const;
 
+/* Placement */
+export const Placements = {
+  TOP: 'top',
+  TOP_RIGHT: 'top-right',
+  TOP_LEFT: 'top-left',
+  BOTTOM: 'bottom',
+  BOTTOM_RIGHT: 'bottom-right',
+  BOTTOM_LEFT: 'bottom-left',
+  LEFT: 'left',
+  LEFT_TOP: 'left-top',
+  LEFT_BOTTOM: 'left-bottom',
+  RIGHT: 'right',
+  RIGHT_TOP: 'right-top',
+  RIGHT_BOTTOM: 'right-bottom',
+} as const;
+
 /* Validation */
 export const ValidationStates = {
   SUCCESS: 'success',

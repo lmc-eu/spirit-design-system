@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 import classNames from 'classnames';
 import { SpiritTooltipProps, TooltipProps } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
+import { kebabCaseToCamelCase } from '../../utils';
 
-export interface UseTooltipStylePropsProps extends SpiritTooltipProps {}
+export interface UseTooltipStyleProps extends SpiritTooltipProps {}
 
 export interface UseTooltipStylePropsReturn {
   classProps: {
@@ -15,7 +16,7 @@ export interface UseTooltipStylePropsReturn {
   props: TooltipProps;
 }
 
-export const useTooltipStyleProps = (props: UseTooltipStylePropsProps): UseTooltipStylePropsReturn => {
+export const useTooltipStyleProps = (props: UseTooltipStyleProps): UseTooltipStylePropsReturn => {
   const { placement = 'bottom', isDismissible, open, ...modifiedProps } = props;
 
   const tooltipClass = useClassNamePrefix('Tooltip');
@@ -23,7 +24,7 @@ export const useTooltipStyleProps = (props: UseTooltipStylePropsProps): UseToolt
   const arrowClass = `${tooltipClass}__arrow`;
   const closeButtonClass = `${tooltipClass}__close`;
   const rootDismissibleClass = `${tooltipClass}--dismissible`;
-  const rootPlacementClass = placement !== 'off' ? `${tooltipClass}--${placement}` : null;
+  const rootPlacementClass = placement !== 'off' ? `${tooltipClass}--${kebabCaseToCamelCase(placement)}` : null;
   const rootHiddenClass = 'is-hidden';
 
   const isHiddenClass = useMemo(() => open === false, [open]);
