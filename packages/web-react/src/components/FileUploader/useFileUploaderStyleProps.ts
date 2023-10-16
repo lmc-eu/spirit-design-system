@@ -1,7 +1,8 @@
 import { CSSProperties } from 'react';
 import classNames from 'classnames';
+import { FileUploaderCropCSS } from '../../constants/dictionaries';
 import { useClassNamePrefix } from '../../hooks';
-import { FileQueueValueMetaType, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
+import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 
 export interface FileUploaderStyleProps extends Validation {
   isDragAndDropSupported?: boolean;
@@ -12,15 +13,15 @@ export interface FileUploaderStyleProps extends Validation {
   isDropZoneHidden?: boolean;
   isFluid?: boolean;
   queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
-  meta?: FileQueueValueMetaType;
+  meta?: FileMetadata;
 }
 
-interface ImageCropCSS extends CSSProperties {
-  '--file-uploader-attachment-image-top'?: string;
-  '--file-uploader-attachment-image-left'?: string;
-  '--file-uploader-attachment-image-width'?: string;
-  '--file-uploader-attachment-image-height'?: string;
-}
+type ImageCropCSS = {
+  [FileUploaderCropCSS.TOP]?: string;
+  [FileUploaderCropCSS.LEFT]?: string;
+  [FileUploaderCropCSS.WIDTH]?: string;
+  [FileUploaderCropCSS.HEIGHT]?: string;
+} & CSSProperties;
 
 export interface FileUploaderStyleReturn {
   /** className props */
@@ -81,10 +82,10 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const { x, y, width, height } = props?.meta || {};
   const hasCoords = x != null && y != null && width != null && height != null;
   const imageCropCSS: ImageCropCSS = {
-    '--file-uploader-attachment-image-top': `-${props?.meta?.y}px`,
-    '--file-uploader-attachment-image-left': `-${props?.meta?.x}px`,
-    '--file-uploader-attachment-image-width': `${props?.meta?.width}px`,
-    '--file-uploader-attachment-image-height': `${props?.meta?.height}px`,
+    [FileUploaderCropCSS.TOP]: `-${props?.meta?.y}px`,
+    [FileUploaderCropCSS.LEFT]: `-${props?.meta?.x}px`,
+    [FileUploaderCropCSS.WIDTH]: `${props?.meta?.width}px`,
+    [FileUploaderCropCSS.HEIGHT]: `${props?.meta?.height}px`,
   };
 
   return {

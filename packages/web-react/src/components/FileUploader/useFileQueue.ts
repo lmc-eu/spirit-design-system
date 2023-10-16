@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileQueueValueMetaType, FileQueueValueType, FileUploaderHandlingProps } from '../../types';
+import { FileMetadata, FileQueueValueType, FileUploaderHandlingProps } from '../../types';
 
 export interface FileQueueReturn extends FileUploaderHandlingProps {}
 
@@ -17,7 +17,7 @@ export const useFileQueue = (): FileQueueReturn => {
     return queue;
   };
 
-  const addToQueueHandler = (key: string, file: File, meta?: FileQueueValueMetaType) => {
+  const addToQueueHandler = (key: string, file: File, meta?: FileMetadata) => {
     setQueue((prev) => {
       const newValue: FileQueueValueType = { file };
       if (meta != null) {
@@ -32,7 +32,7 @@ export const useFileQueue = (): FileQueueReturn => {
 
   const findInQueueHandler = (key: string) => queue.get(key) || null;
 
-  const updateQueueHandler = (key: string, file: File, meta?: FileQueueValueMetaType) => {
+  const updateQueueHandler = (key: string, file: File, meta?: FileMetadata) => {
     setQueue((prev) => {
       const newState = new Map(prev);
       const newValue: FileQueueValueType = { file };

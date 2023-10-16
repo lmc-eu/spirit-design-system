@@ -1,6 +1,10 @@
-import { FileQueueValueMetaType } from '../../types/fileUploader';
+import { FileMetadata } from '../../types/fileUploader';
 
-const getAttachmentInput = (file: File, name: string, onError?: (error: string) => void) => {
+const getAttachmentInput = (
+  file: File,
+  name: string,
+  onError?: (error: string) => void,
+): HTMLInputElement | undefined => {
   const attachmentInputElement = document.createElement('input');
   const dataContainer = new DataTransfer();
 
@@ -27,7 +31,7 @@ const getAttachmentInput = (file: File, name: string, onError?: (error: string) 
   return attachmentInputElement;
 };
 
-const getAttachmentMetaInput = (file: File, name: string, meta: FileQueueValueMetaType) => {
+const getAttachmentMetaInput = (file: File, name: string, meta: FileMetadata): HTMLInputElement => {
   const attachmentInputElement = document.createElement('input');
 
   attachmentInputElement.setAttribute('type', 'text');

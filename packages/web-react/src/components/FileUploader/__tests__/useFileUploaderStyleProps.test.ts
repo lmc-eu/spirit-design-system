@@ -52,4 +52,14 @@ describe('useFileUploaderStyleProps', () => {
 
     expect(result.current.classProps.input.root).toBe('FileUploaderInput FileUploaderInput--disabled');
   });
+
+  it('should have CSS for crop image', () => {
+    const { result } = renderHook(() =>
+      useFileUploaderStyleProps({
+        meta: { x: 1, y: 2, width: 3, height: 4 },
+      }),
+    );
+
+    expect(result.current.classProps.imageCropStyles).toBeDefined();
+  });
 });

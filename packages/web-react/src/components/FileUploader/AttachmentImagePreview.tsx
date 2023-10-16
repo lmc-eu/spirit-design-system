@@ -1,12 +1,12 @@
 import React from 'react';
-import { FileQueueValueMetaType } from '../../types/fileUploader';
+import { FileMetadata } from '../../types/fileUploader';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { IMAGE_DIMENSION } from './constants';
 
 type AttachmentImagePreviewProps = {
   label: string;
   imagePreview: string;
-  meta?: FileQueueValueMetaType;
+  meta?: FileMetadata;
 };
 
 const AttachmentImagePreview = ({ label, imagePreview, meta }: AttachmentImagePreviewProps) => {

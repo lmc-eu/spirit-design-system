@@ -20,28 +20,26 @@ export interface FileUploaderTextProps {
   linkText?: string;
 }
 
-export interface FileQueueValueMetaType {
+export interface FileMetadata {
   [key: string | number]: unknown;
 }
 
 export interface FileQueueValueType {
   file: File;
-  meta?: FileQueueValueMetaType;
+  meta?: FileMetadata;
 }
 
-export interface UpdateQueueBaseType {
+export interface UpdateQueueBaseType extends FileQueueValueType {
   key: string;
-  file: File;
-  meta?: FileQueueValueMetaType;
 }
 
 export interface FileUploaderHandlingProps {
-  addToQueue: (key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType;
+  addToQueue: (key: string, file: File, meta?: FileMetadata) => FileQueueMapType;
   clearQueue: () => void;
   fileQueue: FileQueueMapType;
   findInQueue: (key: string) => FileQueueValueType | null;
   onDismiss: (key: string) => FileQueueMapType;
-  updateQueue: (key: string, file: File, meta?: FileQueueValueMetaType) => FileQueueMapType;
+  updateQueue: (key: string, file: File, meta?: FileMetadata) => FileQueueMapType;
 }
 
 export interface FileUploaderErrorMessagesProps {
@@ -100,7 +98,7 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
   iconName?: string;
   id: string;
   label: string;
-  meta?: FileQueueValueMetaType;
+  meta?: FileMetadata;
   name: string;
   onDismiss: (key: string, callback?: (key: string) => void) => FileQueueMapType;
   onEdit?: (event: MouseEvent, file: File) => void;
