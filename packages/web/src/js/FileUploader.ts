@@ -357,6 +357,10 @@ class FileUploader extends BaseComponent {
     }
   }
 
+  static isCoordsInMeta = (meta: FileMetadata) => {
+    return ['x', 'y', 'width', 'height'].every((coord) => meta[coord] != null);
+  };
+
   updateQueue(
     name: string,
     file: File,
@@ -372,14 +376,9 @@ class FileUploader extends BaseComponent {
       this.fileQueue.set(name, newValue);
 
       const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`);
-      if (
-        meta &&
-        meta.y !== undefined &&
-        meta.x !== undefined &&
-        meta.width !== undefined &&
-        meta.height !== undefined
-      ) {
-        const cropStyles = `--file-uploader-attachment-image-top: -${meta.y}px;
+      if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
+        const cropStyles = `
+          --file-uploader-attachment-image-top: -${meta.y}px;
           --file-uploader-attachment-image-left: -${meta.x}px;
           --file-uploader-attachment-image-width: ${meta.width}px;
           --file-uploader-attachment-image-height: ${meta.height}px
