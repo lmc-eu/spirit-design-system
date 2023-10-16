@@ -32,13 +32,13 @@ const DEFAULT_ERROR_MESSAGES = {
   errorFileNotSupported: 'is not a supported file. Please ensure you are uploading a supported file format.',
 };
 
-export interface FileQueueValueMetaType {
+export interface FileMetadata {
   [key: string | number]: unknown;
 }
 
 export interface FileQueueValueType {
   file: File;
-  meta?: FileQueueValueMetaType;
+  meta?: FileMetadata;
 }
 
 class FileUploader extends BaseComponent {
@@ -301,7 +301,7 @@ class FileUploader extends BaseComponent {
       });
   }
 
-  appendToList(file: File, meta?: FileQueueValueMetaType) {
+  appendToList(file: File, meta?: FileMetadata) {
     if (!this.listElement) {
       if (process.env.NODE_ENV === 'development') {
         /* Because part of the sheet is also a hidden title with an identifier */
@@ -340,11 +340,7 @@ class FileUploader extends BaseComponent {
     this.dragReset();
   }
 
-  addToQueue(
-    file: File,
-    meta?: FileQueueValueMetaType,
-    callback?: (key: string, file: File, meta?: FileQueueValueMetaType) => void,
-  ) {
+  addToQueue(file: File, meta?: FileMetadata, callback?: (key: string, file: File, meta?: FileMetadata) => void) {
     try {
       EventHandler.trigger(this.wrapper, EVENT_QUEUE_FILE, { fileQueue: this.fileQueue, currentFile: file });
       this.checkAllowedFileType(file);
@@ -364,8 +360,8 @@ class FileUploader extends BaseComponent {
   updateQueue(
     name: string,
     file: File,
-    meta?: FileQueueValueMetaType,
-    callback?: (key: string, file: File, meta?: FileQueueValueMetaType) => void,
+    meta?: FileMetadata,
+    callback?: (key: string, file: File, meta?: FileMetadata) => void,
   ) {
     if (this.fileQueue.has(name)) {
       const newValue: FileQueueValueType = { file };
@@ -413,7 +409,7 @@ class FileUploader extends BaseComponent {
     return this.fileQueue.get(name);
   }
 
-  onChange(event: Event & { target: HTMLInputElement }, meta?: FileQueueValueMetaType) {
+  onChange(event: Event & { target: HTMLInputElement }, meta?: FileMetadata) {
     const { target } = event;
     const filesArray = target.files ? [...target.files] : [];
 
