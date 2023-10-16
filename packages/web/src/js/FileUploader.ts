@@ -376,7 +376,13 @@ class FileUploader extends BaseComponent {
       this.fileQueue.set(name, newValue);
 
       const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`);
-      if (meta && meta.y && meta.x && meta.width && meta.height) {
+      if (
+        meta &&
+        meta.y !== undefined &&
+        meta.x !== undefined &&
+        meta.width !== undefined &&
+        meta.height !== undefined
+      ) {
         const cropStyles = `--file-uploader-attachment-image-top: -${meta.y}px;
           --file-uploader-attachment-image-left: -${meta.x}px;
           --file-uploader-attachment-image-width: ${meta.width}px;

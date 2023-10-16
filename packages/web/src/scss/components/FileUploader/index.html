@@ -858,7 +858,7 @@
 
       <!-- FileUploaderList: start -->
       <h3 id="attachments-fileUploaderWithMetaData" hidden>Attachments</h3>
-      <ul class="FileUploaderList" aria-labelledby="attachments-fileUploaderWithMetaData" data-spirit-element="list"></ul>
+      <ul class="FileUploaderList" id="FileUploaderListWithMetaData" aria-labelledby="attachments-fileUploaderWithMetaData" data-spirit-element="list"></ul>
       <!-- FileUploaderList: end -->
 
     </div>
@@ -886,7 +886,7 @@
         // callbacks
 
         const updateQueueCallback = (key, file, meta) => {
-          const attachmentElement = document.querySelector('.FileUploaderList');
+          const attachmentElement = document.querySelector('#FileUploaderListWithMetaData');
           const fileName = FileUploaderInstance.getUpdatedFileName(file.name);
           const metaInput = attachmentElement?.querySelector(`input[name="attachments_${fileName}_meta"]`);
 
@@ -916,7 +916,6 @@
         // custom functions
 
         const customAddToQueue = (file, meta) => {
-          console.log('file:', file)
           if(isFileImage(file)) {
             const reader = new FileReader();
 
