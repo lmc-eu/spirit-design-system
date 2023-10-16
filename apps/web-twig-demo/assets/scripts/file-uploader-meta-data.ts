@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // callbacks
 
   const updateQueueCallback = (key, file, meta) => {
-    const attachmentElement = document.querySelector('.FileUploaderList');
+    const attachmentElement = document.querySelector('#FileUploaderListWithMetaData');
     const fileName = FileUploaderInstance.getUpdatedFileName(file.name);
     const metaInput = attachmentElement?.querySelector(`input[name="attachments_${fileName}_meta"]`);
 
