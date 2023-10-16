@@ -1,8 +1,8 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button } from '../..';
+import React from 'react';
 import { TooltipWrapper, UncontrolledTooltip } from '..';
+import { Button } from '../..';
+import { Placements } from '../../../constants';
 
 const meta: Meta<typeof UncontrolledTooltip> = {
   title: 'Components/Tooltip',
@@ -25,7 +25,7 @@ const meta: Meta<typeof UncontrolledTooltip> = {
     },
     placement: {
       control: 'select',
-      options: ['top', 'right', 'bottom', 'left', 'off'],
+      options: [...Object.values(Placements), 'off'],
       table: {
         defaultValue: { summary: 'bottom' },
       },

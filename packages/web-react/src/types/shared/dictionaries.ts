@@ -4,6 +4,7 @@ import {
   EmotionColors,
   ActionLinkColors,
   TextColors,
+  Placements,
   Sizes,
   SizesExtended,
   ValidationStates,
@@ -26,6 +27,10 @@ export type EmotionColorsDictionaryType<C = undefined> = (typeof EmotionColors)[
 
 export type TextColorsDictionaryKeys = keyof typeof TextColors;
 export type TextColorsDictionaryType<C = undefined> = (typeof TextColors)[TextColorsDictionaryKeys] | C;
+
+/* Placement */
+export type PlacementDictionaryKeys = keyof typeof Placements;
+export type PlacementDictionaryType<T = undefined> = (typeof Placements)[PlacementDictionaryKeys] | T;
 
 /* Size */
 export type SizesDictionaryKeys = keyof typeof Sizes;
