@@ -48,7 +48,7 @@ export interface FileUploaderStyleReturn {
       image: string;
       slot: string;
     };
-    imageCropStyles: ImageCropCSS | undefined;
+    imageCropStyles?: ImageCropCSS;
   };
 }
 
@@ -79,14 +79,20 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderAttachmentImageClass = `${fileUploaderAttachmentClass}__image`;
   const fileUploaderAttachmentSlotClass = `${fileUploaderAttachmentClass}__slot`;
 
-  const { x, y, width, height } = props?.meta || {};
-  const hasCoords = x != null && y != null && width != null && height != null;
-  const imageCropCSS: ImageCropCSS = {
-    [FileUploaderCropCSS.TOP]: `-${props?.meta?.y}px`,
-    [FileUploaderCropCSS.LEFT]: `-${props?.meta?.x}px`,
-    [FileUploaderCropCSS.WIDTH]: `${props?.meta?.width}px`,
-    [FileUploaderCropCSS.HEIGHT]: `${props?.meta?.height}px`,
-  };
+  const { meta } = props || {};
+  let imageCropCSS: ImageCropCSS | undefined;
+  const hasCoords = meta && meta.x != null && meta.y != null && meta.width != null && meta.height != null;
+
+  if (hasCoords) {
+    const { x, y, width, height } = meta;
+
+    imageCropCSS = {
+      [FileUploaderCropCSS.TOP]: `-${y}px`,
+      [FileUploaderCropCSS.LEFT]: `-${x}px`,
+      [FileUploaderCropCSS.WIDTH]: `${width}px`,
+      [FileUploaderCropCSS.HEIGHT]: `${height}px`,
+    };
+  }
 
   return {
     classProps: {
@@ -122,7 +128,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         image: fileUploaderAttachmentImageClass,
         slot: fileUploaderAttachmentSlotClass,
       },
-      imageCropStyles: hasCoords ? imageCropCSS : undefined,
+      ...(hasCoords && { imageCropStyles: imageCropCSS }),
     },
   };
 };
