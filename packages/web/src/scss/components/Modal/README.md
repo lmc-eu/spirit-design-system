@@ -113,7 +113,7 @@ ModalHeader contains the title of the dialog and the close button.
     aria-controls="example_1"
     aria-expanded="false"
   >
-    <svg class="Icon" width="24" height="24" aria-hidden="true">
+    <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#close" />
     </svg>
     <span class="accessibility-hidden">Close</span>
@@ -283,7 +283,7 @@ When you put it all together:
         aria-controls="example_1"
         aria-expanded="false"
       >
-        <svg class="Icon" width="24" height="24" aria-hidden="true">
+        <svg width="24" height="24" aria-hidden="true">
           <use xlink:href="/icons/svg/sprite.svg#close" />
         </svg>
         <span class="accessibility-hidden">Close</span>
