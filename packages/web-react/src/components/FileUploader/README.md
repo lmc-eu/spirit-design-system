@@ -298,6 +298,50 @@ const resetStateHandler = () => {
 </form>;
 ```
 
+### Passing additional metadata
+
+When you need to send additional data along with the image you can do it with the `meta` argument on `addToQueue` and `updateQueue` callbacks.
+If any data in `meta` option will be present, the FileUploader adds an additional hidden input with JSON stringified data to the form.
+The identification of this input (`name`) will be the name of the file.
+Thus you can pass to the server any additional text data you need.
+
+```javascript
+const customAddToQueue = (key: string, file: File) => {
+  // passing additional data using the `meta` argument
+  return addToQueue(key, file, { fileDescription: 'custom file description' });
+};
+
+const customUpdate = (_event: MouseEvent, file: File) => {
+  return updateQueue(file.name, file, { fileDescription: 'changing the custom description' });
+};
+
+// …
+<FileUploader
+  addToQueue={customAddToQueue}
+  // …
+  updateQueue={updateQueue}
+>
+  // …
+</FileUploader>;
+// …
+```
+
+#### Updating Image Preview with cropped image
+
+When you are using FileUploader with some kind of image cropper you want to also update the image preview on FileUploaderAttachment when image changes.
+You can do this by passing a specific object in shape of coordinates (`{ x: number, y: number, width: number, height: number }`) to the `meta` argument.
+Then the coordinates will be applied to the preview image in the attachment.
+
+```javascript
+// …
+const customUpdate = (_event: MouseEvent, file: File) => {
+  const meta = { x: 30, y: 30, width: 150, height: 150 };
+
+  return updateQueue(file.name, file, meta);
+};
+// …
+```
+
 ## FileUploader Props
 
 | Name                                  | Type                                                                 | Default | Required | Description                                                         |
