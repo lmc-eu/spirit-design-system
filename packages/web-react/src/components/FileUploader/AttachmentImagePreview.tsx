@@ -1,11 +1,11 @@
 import React from 'react';
 import { FileMetadata } from '../../types/fileUploader';
-import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { IMAGE_DIMENSION } from './constants';
+import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 type AttachmentImagePreviewProps = {
-  label: string;
   imagePreview: string;
+  label: string;
   meta?: FileMetadata;
 };
 
