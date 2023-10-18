@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const fileName = FileUploaderInstance.getUpdatedFileName(file.name);
     const metaInput = attachmentElement?.querySelector(`input[name="attachments_${fileName}_meta"]`);
 
-    // if we have meta data update input if exist OR create new one if not exist
+    // If we have metadata, we check if the input exists and if so we update its value else we create a new one
     if (meta) {
       if (metaInput) {
         metaInput.value = JSON.stringify(meta);
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // remove input if exist AND we have no meta data
+    // If we do not have metadata, we remove the input
     if (!meta) {
       metaInput && metaInput.remove();
     }
