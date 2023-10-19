@@ -22,7 +22,7 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `fullWidthMode`    | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
 | `id`               | `string`                                         | `<random>`    | ✕        | Component id                                   |
 | `onAutoClose` .    | `(event: Event) => void`                         | —             | ✕        | Callback on close on click outside of Dropdown |
-| `placement`        | [`DropdownPlacement`][dropdownplacement]         | `bottom-left` | ✕        | Alignment of the component                     |
+| `placement`        | [Placement dictionary][dictionary-placement]     | `bottom-left` | ✕        | Alignment of the component                     |
 | `renderTrigger`    | `(render: DropdownRenderProps) => ReactNode`     | —             | ✕        | Properties for trigger render                  |
 | `UNSAFE_className` | `string`                                         | —             | ✕        | Wrapper custom classname                       |
 | `UNSAFE_style`     | `CSSProperties`                                  | —             | ✕        | Wrapper custom style                           |
@@ -40,6 +40,6 @@ import { Dropdown } from '@lmc-eu/spirit-web-react/components';
 | `trigger.ref`              | `LegacyRef<HTMLButtonElement & HTMLAnchorElement>` | Trigger reference       |
 
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
-[dropdownplacement]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L4
 [dropdownbreakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L11
 [dropdownfullwidthmode]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L19
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement

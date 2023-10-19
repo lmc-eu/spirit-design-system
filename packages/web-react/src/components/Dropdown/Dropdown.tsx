@@ -1,15 +1,16 @@
-import React, { createElement, useRef, LegacyRef } from 'react';
 import classNames from 'classnames';
-import DropdownWrapper from './DropdownWrapper';
+import React, { LegacyRef, createElement, useRef } from 'react';
+import { Placements } from '../../constants';
 import { useStyleProps } from '../../hooks';
-import { DropdownPlacements, SpiritDropdownProps } from '../../types';
+import { SpiritDropdownProps } from '../../types';
+import DropdownWrapper from './DropdownWrapper';
 import { useDropdown } from './useDropdown';
-import { useDropdownStyleProps } from './useDropdownStyleProps';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
+import { useDropdownStyleProps } from './useDropdownStyleProps';
 
 const defaultProps = {
-  placement: DropdownPlacements.BOTTOM_LEFT,
   enableAutoClose: true,
+  placement: Placements.BOTTOM_LEFT,
 };
 
 const Dropdown = (props: SpiritDropdownProps) => {
