@@ -19,7 +19,7 @@ module.exports = (env, argv) =>
     plugins: [
       new BundleAnalyzerPlugin({
         statsFilename: 'browser-stats.json',
-        generateStatsFile: true,
+        generateStatsFile: false,
         analyzerMode: 'disabled',
       }),
     ],
