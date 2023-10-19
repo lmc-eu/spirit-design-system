@@ -11,8 +11,8 @@
 {%- set _classNames = [ _rootClassName, _rootAnimationClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutColor = props | filter((value, prop) => prop is not same as('color')) -%}
 
-{% embed "@spirit/icon.twig" with { props: {
+{% embed "@spirit/icon.twig" with { props: _mainPropsWithoutColor | merge({
     name: 'spinner',
     UNSAFE_className: _classNames | join(' ') | trim,
     UNSAFE_style: _styleProps.style,
-} | merge(_mainPropsWithoutColor) } %}{% endembed %}
+}) } %}{% endembed %}
