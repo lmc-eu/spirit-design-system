@@ -84,6 +84,18 @@ incompatible with `@tokens` API that makes rebranding possible.
 
 </details>
 
+### In JavaScript
+
+Additionally the design tokens are also provided as a JavaScript object.
+
+```js
+import * as SpiritDesignTokens from '@lmc-eu/spirit-design-tokens';
+
+const desktopBreakpoint = SpiritDesignTokens.breakpoints.desktop;
+```
+
+The structure is the same as in the SASS.
+
 ## `@tokens` API
 
 `@tokens` API enables quick and easy rebranding of Spirit Sass styles by
