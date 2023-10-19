@@ -1,11 +1,11 @@
-import React, { Ref } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { DropdownFullWidthModes, DropdownPlacements } from '../../../types';
-import { Button, Icon, Text } from '../..';
-import ReadMe from '../README.md';
+import React, { Ref } from 'react';
 import { Dropdown } from '..';
+import { Button, Icon, Text } from '../..';
+import { Placements } from '../../../constants';
+import { DropdownFullWidthModes } from '../../../types';
+import ReadMe from '../README.md';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
@@ -38,9 +38,9 @@ const meta: Meta<typeof Dropdown> = {
     },
     placement: {
       control: 'select',
-      options: [...Object.values(DropdownPlacements), undefined],
+      options: Object.values(Placements),
       table: {
-        defaultValue: { summary: DropdownPlacements.BOTTOM_LEFT },
+        defaultValue: { summary: Placements.BOTTOM_LEFT },
       },
     },
   },
@@ -66,6 +66,7 @@ const meta: Meta<typeof Dropdown> = {
       </>
     ),
     id: 'DropdownExample',
+    placement: Placements.BOTTOM_LEFT,
   },
 };
 
