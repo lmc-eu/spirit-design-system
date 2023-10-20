@@ -41,7 +41,7 @@
     "packages:start": "lerna run start --parallel",
     "packages:test": "lerna run test",
     "packages:types": "lerna run types --no-sort",
-    "packages:build": "lerna run --ignore @lmc-eu/spirit-web-twig-demo build --no-sort",
+    "packages:build": "lerna run --ignore @lmc-eu/spirit-web-twig-demo build",
     "packages:publish": "lerna publish",
     "packages:diff": "lerna diff",
     "packages:changed": "lerna changed",
