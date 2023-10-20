@@ -32,6 +32,9 @@ jobs:
         with:
           useRollingCache: true
 
+      - name: Build
+        run: yarn build
+
       - name: Check code-style format
         run: yarn format:check
 

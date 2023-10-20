@@ -24,7 +24,7 @@
     "examples:build:gh": "yarn examples:build --base=/spirit-design-system/",
     "examples:preview": "vite preview",
     "prebuild": "shx rm -rf dist && shx mkdir -p dist/scss && shx cp package.json README.md dist/ && shx cp -r src/scss dist/",
-    "build": "npm-run-all --serial css js",
+    "build": "npm-run-all --serial design-tokens:build css js",
     "precss": "yarn css:lint",
     "css": "yarn css:compile && yarn css:prefix && yarn css:minify",
     "css:lint": "stylelint --config ../../.stylelintrc.js \"src/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
