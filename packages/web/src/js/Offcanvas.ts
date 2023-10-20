@@ -1,6 +1,8 @@
+// eslint-disable-next-line import/no-unresolved
+import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
-import { enableToggleTrigger, enableDismissTrigger, ScrollControl } from './utils';
+import { ScrollControl, enableDismissTrigger, enableToggleTrigger } from './utils';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
@@ -11,7 +13,7 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 
-const OFFCANVAS_BREAKPOINT = 1280;
+const OFFCANVAS_BREAKPOINT = parseInt(breakpoints.desktop, 10);
 const OPEN_CLASSNAME = 'is-open';
 
 class Offcanvas extends BaseComponent {
