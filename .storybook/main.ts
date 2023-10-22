@@ -1,6 +1,6 @@
-import { resolve, dirname, join } from 'path';
-import { mergeConfig } from 'vite';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
+import { dirname, join, resolve } from 'path';
+import { mergeConfig } from 'vite';
 import markdownRawPlugin from 'vite-raw-plugin';
 
 const config: StorybookViteConfig = {
@@ -10,7 +10,6 @@ const config: StorybookViteConfig = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-essentials'),
-    getAbsolutePath('@storybook/addon-mdx-gfm'),
   ],
 
   features: {
