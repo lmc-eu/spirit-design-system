@@ -75,6 +75,18 @@
 </Pagination>
 ```
 
+## Uncontrolled Pagination
+
+```jsx
+<UncontrolledPagination
+  totalPages={10}
+  defaultPage={5}
+  onChange={(pageNumber) => {
+    console.log(pageNumber);
+  }}
+/>
+```
+
 ## Pagination props
 
 | Name               | Type                      | Default | Required | Description                                        |
@@ -131,6 +143,18 @@ This component extends the `PaginationButtonLink` component.
 | Name                 | Type     | Default | Required | Description                     |
 | -------------------- | -------- | ------- | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `Next`  | ✕        | Accessibility label of the link |
+
+## UncontrolledPagination props
+
+| Name                         | Type                           | Default    | Required | Description                                                         |
+| ---------------------------- | ------------------------------ | ---------- | -------- | ------------------------------------------------------------------- |
+| `accessibilityLabel`         | `string`                       | -          | ✕        | Accessibility label of the page links                               |
+| `accessibilityLabelNext`     | `string`                       | `Next`     | ✕        | Accessibility label of the next link                                |
+| `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
+| `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
+| `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
+| `totalPages`                 | `number`                       | 0          | ✔        | Total count of pages                                                |
+| `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
 
 ## Icons Provider
 
