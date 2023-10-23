@@ -16,7 +16,7 @@
   publish = "build"
 
   # Default build command.
-  command = "cd ../../ && yarn lerna run --scope @lmc-eu/spirit-icons build && yarn lerna run --scope @lmc-eu/spirit-web-react examples:build"
+  command = "cd ../../ && yarn lerna run --scope @lmc-eu/spirit-icons build --skip-nx-cache && yarn lerna run --scope @lmc-eu/spirit-web-react examples:build --skip-nx-cache"
 
   # Ignore builds on Netlify
   ignore = "node ../../scripts/ignoreNetlifyBuilds.js"
