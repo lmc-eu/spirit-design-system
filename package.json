@@ -57,6 +57,7 @@
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.0",
     "@lmc-eu/eslint-config-react": "2.0.1",
     "@lmc-eu/prettier-config": "2.0.0",
+    "@nrwl/cli": "^15.9.3",
     "@nrwl/nx-cloud": "16.5.2",
     "@omlet/cli": "1.0.1-beta.38",
     "@playwright/test": "1.39.0",
