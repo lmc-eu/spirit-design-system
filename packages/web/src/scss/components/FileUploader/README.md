@@ -337,11 +337,12 @@ pick up the template and apply it on any attachments the user wants to upload.
 
 ### Preview Image
 
-You can add a preview image to the FileUploaderAttachment.
+You can add a preview image and image object fit to the FileUploaderAttachment.
+Object fit is `cover` by default.
 
 ```html
 <span class="FileUploaderAttachment__image">
-  <img src="http://placekitten.com/200/300" alt="" />
+  <img src="http://placekitten.com/200/300" alt="" data-spirit-object-fit="contain" />
 </span>
 ```
 
@@ -351,7 +352,7 @@ Full example:
 <li class="FileUploaderAttachment">
   <!-- Preview image: start -->
   <span class="FileUploaderAttachment__image">
-    <img src="http://placekitten.com/200/300" alt="" />
+    <img src="http://placekitten.com/200/300" alt="" data-spirit-object-fit="contain" />
   </span>
   <!-- Preview image: end -->
   <span class="FileUploaderAttachment__name">
