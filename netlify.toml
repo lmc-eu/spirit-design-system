@@ -12,7 +12,7 @@
   publish = ".storybook/build"
 
   # Default build command.
-  command = "yarn lerna run --scope @lmc-eu/spirit-icons build && yarn storybook:build"
+  command = "yarn lerna run --scope @lmc-eu/spirit-icons build --skip-nx-cache && yarn storybook:build"
 
   # Ignore builds on Netlify
   ignore = "node ./scripts/ignoreNetlifyBuilds.js"
