@@ -13,16 +13,16 @@ import {
 
 const FileUploader = (props: SpiritFileUploaderProps) => {
   const {
-    children,
-    id,
-    fileQueue,
-    onDismiss,
     addToQueue,
+    children,
     clearQueue,
-    findInQueue,
-    updateQueue,
     errorMessages,
+    fileQueue,
+    findInQueue,
+    id,
     isFluid,
+    onDismiss,
+    updateQueue,
     ...restProps
   } = props;
 
