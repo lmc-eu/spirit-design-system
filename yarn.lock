@@ -3794,10 +3794,10 @@
     "@lmc-eu/eslint-config-base" "^3.0.1"
     eslint-config-airbnb "^19.0.2"
 
-"@lmc-eu/prettier-config@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-1.2.4.tgz#b6f80e55c9cc8ebb56e19abbd222c595655ed6a5"
-  integrity sha512-mkIpOoA2GgkESZve2gazQCeyz6WOwe26Lll3yPDkwrx2AbA7bf2Z9ObLrQ0fhFmJJ5+fPs6gbyGZL8IM9GHMiA==
+"@lmc-eu/prettier-config@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/prettier-config/-/prettier-config-2.0.0.tgz#6414823497c78355f72ce2967920e6e98c19d7c8"
+  integrity sha512-OSfKbTotpw20c25A+oDHdKC5uidsB15kdwrZ2VJJIjXMPgmCDH+n3vyCwsvXwSx6+9Xk5AuexH/9r+24f99JKw==
 
 "@lmc-eu/spirit-design-tokens@^0.25.5":
   version "0.25.5"
