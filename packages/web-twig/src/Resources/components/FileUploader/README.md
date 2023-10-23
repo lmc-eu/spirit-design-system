@@ -6,10 +6,26 @@ FileUploader allows users to pick one or more files to upload.
 
 FileUploader is a composition of a few subcomponents:
 
-- [FileUploader](#fileuploader-1)
+- [FileUploader](#fileuploader)
+  - [JavaScript Plugin](#javascript-plugin)
+  - [FileUploader](#fileuploader-1)
+    - [Fluid Width](#fluid-width)
+    - [API](#api)
   - [FileUploaderInput](#fileuploaderinput)
+    - [Selecting Multiple Files at Once](#selecting-multiple-files-at-once)
+    - [Maximum File Size (JavaScript)](#maximum-file-size-javascript)
+    - [Maximum Number of Files in Queue (JavaScript)](#maximum-number-of-files-in-queue-javascript)
+    - [Input Behavior When the Queue is Filled (JavaScript)](#input-behavior-when-the-queue-is-filled-javascript)
+    - [Allowed File Types](#allowed-file-types)
+    - [Required Input](#required-input)
+    - [Validation States](#validation-states)
+    - [Disabled State](#disabled-state)
+    - [API](#api-1)
   - [FileUploaderList](#fileuploaderlist)
-    - [FileUploaderAttachment](#fileuploaderattachment)
+    - [API](#api-2)
+  - [FileUploaderAttachment](#fileuploaderattachment)
+    - [API](#api-3)
+  - [Composition](#composition)
 
 ## JavaScript Plugin
 
@@ -283,15 +299,16 @@ With image preview:
 
 ### API
 
-| Name                   | Type     | Default  | Required | Description                                                                                        |
-| ---------------------- | -------- | -------- | -------- | -------------------------------------------------------------------------------------------------- |
-| `editText`             | `string` | `Edit`   | ✕        | Edit button text                                                                                   |
-| `fileName`             | `string` | `null`   | ✕        | File name                                                                                          |
-| `generateImagePreview` | `bool`   | `false`  | ✕        | If true and used in the attachment template, the JS plugin will try to show a preview of the image |
-| `iconName`             | `string` | `file`   | ✕        | Icon shown along the file                                                                          |
-| `imagePreview`         | `string` | `null`   | ✕        | URL or base64 of an image                                                                          |
-| `onEdit`               | `func`   | `null`   | ✕        | Function to trigger on click on edit button                                                        |
-| `removeText`           | `string` | `Remove` | ✕        | Remove button text                                                                                 |
+| Name                   | Type                   | Default  | Required | Description                                                                                        |
+| ---------------------- | ---------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `editText`             | `string`               | `Edit`   | ✕        | Edit button text                                                                                   |
+| `fileName`             | `string`               | `null`   | ✕        | File name                                                                                          |
+| `generateImagePreview` | `bool`                 | `false`  | ✕        | If true and used in the attachment template, the JS plugin will try to show a preview of the image |
+| `iconName`             | `string`               | `file`   | ✕        | Icon shown along the file                                                                          |
+| `imagePreview`         | `string`               | `null`   | ✕        | URL or base64 of an image                                                                          |
+| `imageObjectFit`       | [`cover` \| `contain`] | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                                              |
+| `onEdit`               | `func`                 | `null`   | ✕        | Function to trigger on click on edit button                                                        |
+| `removeText`           | `string`               | `Remove` | ✕        | Remove button text                                                                                 |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
