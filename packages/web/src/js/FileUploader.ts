@@ -265,6 +265,8 @@ class FileUploader extends BaseComponent {
     const AttachmentSvgIcon = item?.querySelector('svg');
     const AttachmentPreviewImage = snippet.querySelector('.FileUploaderAttachment__image');
     const isFileImg = file.type.includes('image');
+    const itemImageObjectFit = (item?.querySelector('.FileUploaderAttachment__image img') as HTMLElement)?.dataset
+      ?.spiritImageObjectFit;
 
     if (hasImagePreview && isFileImg) {
       AttachmentSvgIcon?.remove();
@@ -274,6 +276,13 @@ class FileUploader extends BaseComponent {
       );
     } else {
       AttachmentPreviewImage?.remove();
+    }
+
+    if (itemImageObjectFit) {
+      AttachmentPreviewImage?.querySelector('img')?.setAttribute(
+        'style',
+        `--file-uploader-attachment-image-object-fit: ${itemImageObjectFit}`,
+      );
     }
 
     item!.appendChild(attachmentInputElement);
@@ -376,13 +385,21 @@ class FileUploader extends BaseComponent {
       this.fileQueue.set(name, newValue);
 
       const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`);
+      const itemImageObjectFit = itemImgElement?.dataset?.spiritImageObjectFit;
+      let cropStyles;
+
       if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
-        const cropStyles = `
+        cropStyles = `
           --file-uploader-attachment-image-top: -${meta.y}px;
           --file-uploader-attachment-image-left: -${meta.x}px;
           --file-uploader-attachment-image-width: ${meta.width}px;
-          --file-uploader-attachment-image-height: ${meta.height}px
+          --file-uploader-attachment-image-height: ${meta.height}px;
         `;
+
+        if (itemImageObjectFit) {
+          cropStyles += `--file-uploader-attachment-image-object-fit: ${itemImageObjectFit};`;
+        }
+
         itemImgElement?.setAttribute('style', cropStyles);
       }
 
