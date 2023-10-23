@@ -5,15 +5,16 @@ import { useClassNamePrefix } from '../../hooks';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
 
 export interface FileUploaderStyleProps extends Validation {
-  isDragAndDropSupported?: boolean;
-  isLabelHidden?: boolean;
+  imageObjectFit?: 'contain' | 'cover';
   isDisabled?: boolean;
   isDisabledByQueueLimitBehavior?: boolean;
+  isDragAndDropSupported?: boolean;
   isDragging?: boolean;
   isDropZoneHidden?: boolean;
   isFluid?: boolean;
-  queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
+  isLabelHidden?: boolean;
   meta?: FileMetadata;
+  queueLimitBehavior?: FileUploaderQueueLimitBehaviorType;
 }
 
 type ImageCropCSS = {
@@ -22,6 +23,10 @@ type ImageCropCSS = {
   [FileUploaderCropCSS.WIDTH]?: string;
   [FileUploaderCropCSS.HEIGHT]?: string;
 } & CSSProperties;
+
+type ImageObjectFit = {
+  '--file-uploader-attachment-image-object-fit': string;
+};
 
 export interface FileUploaderStyleReturn {
   /** className props */
@@ -49,6 +54,7 @@ export interface FileUploaderStyleReturn {
       slot: string;
     };
     imageCropStyles?: ImageCropCSS;
+    attachmentStyles?: ImageObjectFit;
   };
 }
 
@@ -79,8 +85,9 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const fileUploaderAttachmentImageClass = `${fileUploaderAttachmentClass}__image`;
   const fileUploaderAttachmentSlotClass = `${fileUploaderAttachmentClass}__slot`;
 
-  const { meta } = props || {};
+  const { meta, imageObjectFit } = props || {};
   let imageCropCSS: ImageCropCSS | undefined;
+  let imageObjectFitCSS: ImageObjectFit | undefined;
   const hasCoords = meta && meta.x != null && meta.y != null && meta.width != null && meta.height != null;
 
   if (hasCoords) {
@@ -91,6 +98,12 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
       [FileUploaderCropCSS.LEFT]: `-${x}px`,
       [FileUploaderCropCSS.WIDTH]: `${width}px`,
       [FileUploaderCropCSS.HEIGHT]: `${height}px`,
+    };
+  }
+
+  if (imageObjectFit) {
+    imageObjectFitCSS = {
+      '--file-uploader-attachment-image-object-fit': imageObjectFit,
     };
   }
 
@@ -129,6 +142,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         slot: fileUploaderAttachmentSlotClass,
       },
       ...(hasCoords && { imageCropStyles: imageCropCSS }),
+      ...(imageObjectFit && { attachmentStyles: imageObjectFitCSS }),
     },
   };
 };

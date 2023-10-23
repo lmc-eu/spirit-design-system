@@ -97,6 +97,7 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
   hasImagePreview?: boolean;
   iconName?: string;
   id: string;
+  imageObjectFit?: 'contain' | 'cover';
   label: string;
   meta?: FileMetadata;
   name: string;

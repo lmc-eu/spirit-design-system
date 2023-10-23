@@ -416,6 +416,7 @@ The rest of the properties are created from the default `<ul>` element. [More ab
 | `hasImagePreview`  | `bool`                               | false    | ✕        | Show image preview                                                          |
 | `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
 | `id`               | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
+| `imageObjectFit`   | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                       |
 | `label`            | `string`                             | —        | ✔        | File name                                                                   |
 | `name`             | `string`                             | —        | ✔        | Input field name                                                            |
 | `onDismiss`        | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue                                   |
