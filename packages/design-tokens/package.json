@@ -18,7 +18,7 @@
     "test": "yarn lint"
   },
   "devDependencies": {
-    "@lmc-eu/stylelint-config": "6.0.0",
+    "@lmc-eu/stylelint-config": "7.0.1",
     "shx": "0.3.4",
     "stylelint": "15.11.0",
     "stylelint-order": "6.0.3"
