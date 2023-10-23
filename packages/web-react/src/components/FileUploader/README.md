@@ -354,7 +354,6 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 | `fileQueue`                           | `FileQueueMapType`                                                   | —       | ✔        | Queue of items to upload                                            |
 | `findInQueue`                         | `(key: string) => FileQueueMapType`                                  | —       | ✔        | A callback to find a particular item in the queue                   |
 | `id`                                  | `string`                                                             | —       | ✔        | FileUploader id                                                     |
-| `isDisabled`                          | `bool`                                                               | —       | ✕        | When the field is supposed to be disabled                           |
 | `isFluid`                             | `bool`                                                               | —       | ✕        | When the field is supposed to be fluid                              |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✔        | A callback to delete a particular item from the queue               |
 | `UNSAFE_className`                    | `string`                                                             | —       | ✕        | FileUploader custom class name                                      |

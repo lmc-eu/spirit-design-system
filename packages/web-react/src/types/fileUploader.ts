@@ -108,7 +108,6 @@ export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElement
 
 export interface FileUploaderBaseProps extends SpiritDivElementProps, Partial<FileUploaderErrorMessagesProps> {
   id: string;
-  isDisabled?: boolean;
   isFluid?: boolean;
 }
 
@@ -120,6 +119,7 @@ export interface UncontrolledFileUploaderBaseProps
   inputLabel: string;
   inputName: string;
   inputProps?: Partial<FileUploaderInputBaseProps>;
+  isDisabled?: boolean;
   listId: string;
   listProps?: Partial<FileUploaderListBaseProps>;
   onChange?: (fileQueue: FileQueueMapType) => void;
