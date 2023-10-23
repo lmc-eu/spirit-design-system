@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { DEMO_ATTACHMENT_BASE64_IMAGE } from '../demo/constants';
+import { DEMO_ATTACHMENT_BASE64_IMAGE_40X52 } from '../demo/constants';
 import { base64ToByteArray, FileUploader, FileUploaderAttachment } from '..';
 
-const byteArray = base64ToByteArray(DEMO_ATTACHMENT_BASE64_IMAGE);
+const byteArray = base64ToByteArray(DEMO_ATTACHMENT_BASE64_IMAGE_40X52);
 
 const meta: Meta<typeof FileUploaderAttachment> = {
   title: 'Components/FileUploader',
