@@ -25,8 +25,6 @@ export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void =
         // and the use the not clicked into the container,
         // e. g. the user clicked outside of the Dialog (click on backdrop)
         !ref.current.contains(event?.target as Node) &&
-        // and when the click was triggered inside of the element's parent
-        ref.current.parentNode?.contains(event?.target as Node) &&
         // and callback should exits, of course
         callback
       ) {
