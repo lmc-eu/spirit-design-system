@@ -4,6 +4,7 @@
 {%- set _fileName = props.fileName | default(null) -%}
 {%- set _generateImagePreview = props.generateImagePreview | default(false) -%}
 {%- set _iconName = props.iconName | default('file') -%}
+{%- set _imageObjectFit = props.imageObjectFit | default(null) -%}
 {%- set _imagePreview = props.imagePreview | default(null) -%}
 {%- set _onEdit = props.onEdit | default(null) -%}
 {%- set _removeText = props.removeText | default('Remove') -%}
@@ -18,6 +19,7 @@
 
 {# Attributes #}
 {%- set _dataImagePreviewAttr = _generateImagePreview ? 'data-spirit-imagePreview="true"' : null -%}
+{%- set _imageObjectFitAttr = _imageObjectFit ? 'data-spirit-image-object-fit=' ~ _imageObjectFit : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -33,7 +35,7 @@
 >
     {% if _generateImagePreview or _imagePreview %}
         <span class="{{ _imageClassName }}">
-            <img src="{{ _imagePreview }}" width="54" height="54" alt="{{- _fileName -}}" />
+            <img src="{{ _imagePreview }}" {{ _imageObjectFitAttr }} width="54" height="54" alt="{{- _fileName -}}" />
         </span>
     {% endif %}
     {% if not _imagePreview %}
