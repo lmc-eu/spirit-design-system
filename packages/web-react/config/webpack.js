@@ -1,6 +1,5 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const TerserPlugin = require('terser-webpack-plugin');
 const commonConfig = require('./webpack.common');
 
@@ -16,13 +15,6 @@ module.exports = (env, argv) =>
       umdNamedDefine: true,
       library: 'webReact',
     },
-    plugins: [
-      new BundleAnalyzerPlugin({
-        statsFilename: 'browser-stats.json',
-        generateStatsFile: false,
-        analyzerMode: 'disabled',
-      }),
-    ],
     optimization: {
       minimizer: [
         new TerserPlugin({
