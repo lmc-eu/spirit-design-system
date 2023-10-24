@@ -1,6 +1,5 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const commonConfig = require('./webpack.common');
 
 const libName = 'web-react.browser';
@@ -15,11 +14,4 @@ module.exports = (env, argv) =>
       umdNamedDefine: true,
       library: 'webReact',
     },
-    plugins: [
-      new BundleAnalyzerPlugin({
-        statsFilename: 'browser-stats.json',
-        generateStatsFile: true,
-        analyzerMode: 'disabled',
-      }),
-    ],
   });
