@@ -18,8 +18,8 @@
 
     
 
-    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-chunk.bdd9ab57.js"></script>
-    <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.258c6295.css">
+    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-chunk.7d518b9e.js"></script>
+    <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.bf03351f.css">
   </head>
   <body>
 
@@ -176,6 +176,161 @@
           
             </div>
           </section>
+          <section class="docs-Section">
+            <h2 class="docs-Heading">Grid Item</h2>
+            <div class="docs-Stack docs-Stack--start">
+          
+              <div class="Grid">
+                <div
+                  class="GridItem"
+                  style="
+                    --grid-item-column-start: 1;
+                    --grid-item-column-end: 8;
+                  "
+                >
+                  <div class="docs-Box docs-Box--small">
+                    Content
+                  </div>
+                </div>
+                <div
+                  class="GridItem"
+                  style="
+                    --grid-item-column-start: 9;
+                    --grid-item-column-end: span 4;
+                  "
+                >
+                  <div class="docs-Box docs-Box--small">
+                    Sidebar
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </section>
+          <section class="docs-Section">
+            <h2 class="docs-Heading">Responsive Grid Item</h2>
+            <div class="docs-Stack docs-Stack--start">
+          
+              <div class="Grid">
+                <div
+                  class="GridItem"
+                  style="
+                    --grid-item-column-start: 1;
+                    --grid-item-column-end: 9;
+                    --grid-item-column-end-tablet: 8;
+                  "
+                >
+                  <div class="docs-Box docs-Box--small">
+                    Content
+                  </div>
+                </div>
+                <div
+                  class="GridItem"
+                  style="
+                    --grid-item-column-start: 9;
+                    --grid-item-column-end: span 4;
+                    --grid-item-column-start-tablet: 11;
+                    --grid-item-column-end-tablet: span 2;
+                  "
+                >
+                  <div class="docs-Box docs-Box--small">
+                    Sidebar
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+            </section>
+            <section class="docs-Section">
+              <h2 class="docs-Heading">Nested Grid with Grid Item</h2>
+              <div class="docs-Stack docs-Stack--start">
+          
+                <div class="Grid">
+                  <div
+                    class="GridItem"
+                    style="
+                      --grid-item-column-start: 1;
+                      --grid-item-column-end: 9;
+                      --grid-item-column-end-tablet: 10;
+                    "
+                  >
+                    <div class="bg-cover py-400">
+                      <div class="Grid">
+                        <div
+                          class="GridItem"
+                          style="
+                          --grid-item-column-start: 1;
+                          --grid-item-column-end: span 4;
+                        "
+                        >
+                          <div class="docs-Box docs-Box--small">
+                            First Nested Content
+                          </div>
+                        </div>
+                        <div
+                          class="GridItem"
+                          style="
+                          --grid-item-column-start: 6;
+                          --grid-item-column-end: span 5;
+                        "
+                        >
+                          <div class="docs-Box docs-Box--small">
+                            Second Nested Content
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="GridItem"
+                    style="
+                      --grid-item-column-start: 9;
+                      --grid-item-column-end: span 4;
+                      --grid-item-column-start-tablet: 10;
+                      --grid-item-column-end-tablet: span 3;
+                    "
+                  >
+                    <div class="docs-Box docs-Box--small">
+                      Sidebar
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+            </section>
+          
+            <section class="docs-Section">
+              <h2 class="docs-Heading">Grid Item with sidebar in second row on desktop</h2>
+              <div class="docs-Stack docs-Stack--start">
+          
+                <div class="Grid">
+                  <div
+                    class="GridItem"
+                    style="
+                      --grid-item-column-start: 1;
+                      --grid-item-column-end: 8;
+                    "
+                  >
+                    <div class="docs-Box docs-Box--small">
+                      Content
+                    </div>
+                  </div>
+                  <div
+                    class="GridItem"
+                    style="
+                      --grid-item-column-start: 9;
+                      --grid-item-column-end: span 4;
+                      --grid-item-row-start-desktop: 2;
+                    "
+                  >
+                    <div class="docs-Box docs-Box--small">
+                      Sidebar
+                    </div>
+                  </div>
+                </div>
+          
+              </div>
+            </section>
           
     
         </div>
