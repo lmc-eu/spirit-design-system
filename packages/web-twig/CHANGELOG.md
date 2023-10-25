@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+
+# [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.3.1...@lmc-eu/spirit-web-twig@2.4.0) (2023-10-25)
+
+### Bug Fixes
+
+- **web-twig:** Fix pass custom classnames to the `Spinner` component ([5ad7dc9](https://github.com/lmc-eu/spirit-design-system/commit/5ad7dc9))
+- **web-twig:** Use correct brackets when setting prop to false in Modal ([7352b96](https://github.com/lmc-eu/spirit-design-system/commit/7352b96))
+- **web-twig:** Use embed in DocsSection to fix falling tests with unclosed block ([96f3c2e](https://github.com/lmc-eu/spirit-design-system/commit/96f3c2e))
+
+### Documentation
+
+- **web-twig:** Explain abbreviation in the Accessibility section ([c8b4d97](https://github.com/lmc-eu/spirit-design-system/commit/c8b4d97))
+- **web-twig:** Unified Alert copies [#DS-979](https://github.com/lmc-eu/spirit-design-system/issues/DS-979) ([9c9df69](https://github.com/lmc-eu/spirit-design-system/commit/9c9df69))
+- **web, web-react, web-twig:** Dealing with text truncate in Breadcrumb ([d15fd1b](https://github.com/lmc-eu/spirit-design-system/commit/d15fd1b)), closes [#DS-960](https://github.com/lmc-eu/spirit-design-system/issues/DS-960)
+
+### Features
+
+- **web-twig:** Add disabled backdrop click option to Modal component ([ffe1835](https://github.com/lmc-eu/spirit-design-system/commit/ffe1835))
+- **web-twig:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([96559cf](https://github.com/lmc-eu/spirit-design-system/commit/96559cf))
+- **web-twig:** Introduce BreadcrumbsItem component ([3c9cf8c](https://github.com/lmc-eu/spirit-design-system/commit/3c9cf8c)), closes [#DS-835](https://github.com/lmc-eu/spirit-design-system/issues/DS-835)
+- **web-twig:** Introduce Grid Item component [#DS-961](https://github.com/lmc-eu/spirit-design-system/issues/DS-961) ([d3fb1ef](https://github.com/lmc-eu/spirit-design-system/commit/d3fb1ef))
+- **web-twig:** Make BreadcrumbsItem href optional [#DS-957](https://github.com/lmc-eu/spirit-design-system/issues/DS-957) ([439577e](https://github.com/lmc-eu/spirit-design-system/commit/439577e))
+- **web-twig:** Use the new Placement dictionary in `Dropdown` and `Tooltip` [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923) ([eae000d](https://github.com/lmc-eu/spirit-design-system/commit/eae000d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.3.1"></a>
 
 ## [2.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.3.0...@lmc-eu/spirit-web-twig@2.3.1) (2023-09-26)

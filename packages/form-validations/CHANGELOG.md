@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.5"></a>
+
+## [1.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.4...@lmc-eu/spirit-form-validations@1.0.5) (2023-10-25)
+
+### Dependencies
+
+- Update all non-major dependencies ([e7b6413](https://github.com/lmc-eu/spirit-design-system/commit/e7b6413))
+- Update all non-major dependencies ([f8e1a11](https://github.com/lmc-eu/spirit-design-system/commit/f8e1a11))
+- Update dependency @lmc-eu/browserslist-config to v2 ([29d7a59](https://github.com/lmc-eu/spirit-design-system/commit/29d7a59))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.0.4"></a>
 
 ## [1.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.3...@lmc-eu/spirit-form-validations@1.0.4) (2023-09-26)

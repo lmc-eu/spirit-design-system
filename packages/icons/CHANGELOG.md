@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.2"></a>
+
+## [1.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.0.1...@lmc-eu/spirit-icons@1.0.2) (2023-10-25)
+
+### Dependencies
+
+- Update dependency jsdom to v22 ([8e3e160](https://github.com/lmc-eu/spirit-design-system/commit/8e3e160))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="1.0.1"></a>
 
 ## [1.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.0.0...@lmc-eu/spirit-icons@1.0.1) (2023-08-09)

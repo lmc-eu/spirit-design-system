@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.5"></a>
+
+## [1.7.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.4...@lmc-eu/spirit-exporters-scss@1.7.5) (2023-10-25)
+
+### Bug Fixes
+
+- **exporter-scss:** Fix exporter to make it work again after Supernova token changes [#DS-936](https://github.com/lmc-eu/spirit-design-system/issues/DS-936) ([05865fd](https://github.com/lmc-eu/spirit-design-system/commit/05865fd))
+
+### Dependencies
+
+- Update all non-major dependencies ([e7b6413](https://github.com/lmc-eu/spirit-design-system/commit/e7b6413))
+- Update all non-major dependencies ([f8e1a11](https://github.com/lmc-eu/spirit-design-system/commit/f8e1a11))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.7.4"></a>
 
 ## [1.7.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.3...@lmc-eu/spirit-exporters-scss@1.7.4) (2023-09-06)

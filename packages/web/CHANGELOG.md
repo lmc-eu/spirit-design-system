@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.2...@lmc-eu/spirit-web@1.3.0) (2023-10-25)
+
+### Dependencies
+
+- Update all non-major dependencies ([e7b6413](https://github.com/lmc-eu/spirit-design-system/commit/e7b6413))
+- Update all non-major dependencies ([f8e1a11](https://github.com/lmc-eu/spirit-design-system/commit/f8e1a11))
+- Update dependency @lmc-eu/browserslist-config to v2 ([29d7a59](https://github.com/lmc-eu/spirit-design-system/commit/29d7a59))
+- Update dependency @lmc-eu/stylelint-config to v7 ([ff26da7](https://github.com/lmc-eu/spirit-design-system/commit/ff26da7))
+
+### Documentation
+
+- **web, web-react, web-twig:** Dealing with text truncate in Breadcrumb ([d15fd1b](https://github.com/lmc-eu/spirit-design-system/commit/d15fd1b)), closes [#DS-960](https://github.com/lmc-eu/spirit-design-system/issues/DS-960)
+- **web:** Add CDN links for quick usage of the `spirit-web` package ([93577b2](https://github.com/lmc-eu/spirit-design-system/commit/93577b2))
+- **web:** Explain abbreviation in the Accessibility section ([73a80f2](https://github.com/lmc-eu/spirit-design-system/commit/73a80f2))
+- **web:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([0cb30d5](https://github.com/lmc-eu/spirit-design-system/commit/0cb30d5))
+- **web:** Remove unexisting `Icon` class ([02bb9ff](https://github.com/lmc-eu/spirit-design-system/commit/02bb9ff))
+- **web:** Switch sides of the icon in Breadcrumbs ([9cfc538](https://github.com/lmc-eu/spirit-design-system/commit/9cfc538))
+- **web:** Unify component examples in demos [#DS-979](https://github.com/lmc-eu/spirit-design-system/issues/DS-979) ([bba851d](https://github.com/lmc-eu/spirit-design-system/commit/bba851d))
+
+### Features
+
+- **web-react:** Introduce Grid Item component [#DS-961](https://github.com/lmc-eu/spirit-design-system/issues/DS-961) ([2cf07c9](https://github.com/lmc-eu/spirit-design-system/commit/2cf07c9))
+- **web:** Add disabled backdrop click option to Modal component ([ef1f268](https://github.com/lmc-eu/spirit-design-system/commit/ef1f268))
+- **web:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([3c94b1c](https://github.com/lmc-eu/spirit-design-system/commit/3c94b1c))
+- **web:** Introduce Grid Item component [#DS-961](https://github.com/lmc-eu/spirit-design-system/issues/DS-961) ([23bce0f](https://github.com/lmc-eu/spirit-design-system/commit/23bce0f))
+- **web:** Introduce Placement dictionary and use it in `Dropdown` and `Tooltip` [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923) ([3cd80e6](https://github.com/lmc-eu/spirit-design-system/commit/3cd80e6))
+- **web:** Showcase noninteractive breadcrumbs item [#DS-957](https://github.com/lmc-eu/spirit-design-system/issues/DS-957) ([4af0774](https://github.com/lmc-eu/spirit-design-system/commit/4af0774))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.2.2"></a>
 
 ## [1.2.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.1...@lmc-eu/spirit-web@1.2.2) (2023-09-26)

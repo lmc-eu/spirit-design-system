@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.4.0...@lmc-eu/spirit-web-react@1.5.0) (2023-10-25)
+
+### Bug Fixes
+
+- **web-react:** ClickOutside working with Dialog and Dropdown [#DS-945](https://github.com/lmc-eu/spirit-design-system/issues/DS-945) ([ec1539c](https://github.com/lmc-eu/spirit-design-system/commit/ec1539c))
+- **web-react:** Remove unused `isDisabled` prop from FileUploader ([ab66984](https://github.com/lmc-eu/spirit-design-system/commit/ab66984)), closes [#DS-933](https://github.com/lmc-eu/spirit-design-system/issues/DS-933)
+
+### Chores
+
+- **ci:** Skip Nx cache on Netlify builds ([c99bdbe](https://github.com/lmc-eu/spirit-design-system/commit/c99bdbe))
+- **web-react:** Disable generating browser stats file ([e8f4c53](https://github.com/lmc-eu/spirit-design-system/commit/e8f4c53))
+- **web-react:** Get rid of WebpackAnalyzerPlugin ([0fe93c4](https://github.com/lmc-eu/spirit-design-system/commit/0fe93c4))
+
+### Code Refactoring
+
+- **web-react:** Introduce `ModalCloseButton` component ([cdc8913](https://github.com/lmc-eu/spirit-design-system/commit/cdc8913))
+
+### Dependencies
+
+- Update all non-major dependencies ([e7b6413](https://github.com/lmc-eu/spirit-design-system/commit/e7b6413))
+- Update all non-major dependencies ([f8e1a11](https://github.com/lmc-eu/spirit-design-system/commit/f8e1a11))
+- Update dependency @types/react to v18.2.26 ([2094a04](https://github.com/lmc-eu/spirit-design-system/commit/2094a04))
+- Update dependency @typescript-eslint/parser to v6 ([cfc6968](https://github.com/lmc-eu/spirit-design-system/commit/cfc6968))
+- Upgrade @lmc-eu/eslint-config-base in all eslint configs ([3d83860](https://github.com/lmc-eu/spirit-design-system/commit/3d83860))
+
+### Documentation
+
+- **web-react:** FieldGroup demo separated to more files ([9de3cf4](https://github.com/lmc-eu/spirit-design-system/commit/9de3cf4))
+- **web-react:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([5ea21c8](https://github.com/lmc-eu/spirit-design-system/commit/5ea21c8))
+- **web-react:** Multiple demos tweak to mach other technologies [#DS-979](https://github.com/lmc-eu/spirit-design-system/issues/DS-979) ([1ab7873](https://github.com/lmc-eu/spirit-design-system/commit/1ab7873))
+- **web-react:** Separate ButtonLink component [#DS-979](https://github.com/lmc-eu/spirit-design-system/issues/DS-979) ([7a39ef6](https://github.com/lmc-eu/spirit-design-system/commit/7a39ef6))
+- **web-react:** Unify Alert demo cross packages [#DS-979](https://github.com/lmc-eu/spirit-design-system/issues/DS-979) ([8f10eaf](https://github.com/lmc-eu/spirit-design-system/commit/8f10eaf))
+- **web, web-react, web-twig:** Dealing with text truncate in Breadcrumb ([d15fd1b](https://github.com/lmc-eu/spirit-design-system/commit/d15fd1b)), closes [#DS-960](https://github.com/lmc-eu/spirit-design-system/issues/DS-960)
+
+### Features
+
+- **web-react:** Add disabled backdrop click option to Modal component ([59de9ab](https://github.com/lmc-eu/spirit-design-system/commit/59de9ab))
+- **web-react:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([6180f36](https://github.com/lmc-eu/spirit-design-system/commit/6180f36))
+- **web-react:** Introduce BreadcrumbsItem component ([5927bed](https://github.com/lmc-eu/spirit-design-system/commit/5927bed)), closes [#DS-835](https://github.com/lmc-eu/spirit-design-system/issues/DS-835)
+- **web-react:** Introduce Grid Item component [#DS-961](https://github.com/lmc-eu/spirit-design-system/issues/DS-961) ([2cf07c9](https://github.com/lmc-eu/spirit-design-system/commit/2cf07c9))
+- **web-react:** Introduce UncontrolledPagination component ([d8368d1](https://github.com/lmc-eu/spirit-design-system/commit/d8368d1))
+- **web-react:** Make BreadcrumbsItem href optional [#DS-957](https://github.com/lmc-eu/spirit-design-system/issues/DS-957) ([6cf75ad](https://github.com/lmc-eu/spirit-design-system/commit/6cf75ad))
+- **web-twig:** FileUploader - Support for crop image [#DS-954](https://github.com/lmc-eu/spirit-design-system/issues/DS-954) ([96559cf](https://github.com/lmc-eu/spirit-design-system/commit/96559cf))
+- **web-twig:** Introduce BreadcrumbsItem component ([3c9cf8c](https://github.com/lmc-eu/spirit-design-system/commit/3c9cf8c)), closes [#DS-835](https://github.com/lmc-eu/spirit-design-system/issues/DS-835)
+
+### Styles
+
+- **ci:** Use multiline strings for Netlify config commands ([4768e24](https://github.com/lmc-eu/spirit-design-system/commit/4768e24))
+- **web-react:** Ignore `build` directory from linting ([d8f2d10](https://github.com/lmc-eu/spirit-design-system/commit/d8f2d10))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.4.0"></a>
 
 # [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.3.0...@lmc-eu/spirit-web-react@1.4.0) (2023-09-26)
