@@ -1,0 +1,68 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
+@use 'true';
+@use '../placement';
+
+@include true.describe('placement functions and mixins') {
+    @include true.it('should returns correct values for inverse function') {
+        @include true.assert {
+            @include true.output {
+                $inverse-top: placement.inverse('top');
+                $inverse-bottom-left: placement.inverse('bottom-left');
+            }
+            @include true.expect {
+                $inverse-top: 'bottom';
+                $inverse-bottom-left: 'top-right';
+            }
+        }
+    }
+
+    @include true.it('should return parent position') {
+        @include true.assert {
+            @include true.output {
+                .parent-test {
+                    @include placement.parent();
+                }
+            }
+            @include true.expect {
+                .parent-test {
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    @include true.it('should return child position with z-index') {
+        @include true.assert {
+            @include true.output {
+                .child-test {
+                    @include placement.child(2);
+                }
+            }
+            @include true.expect {
+                .child-test {
+                    position: absolute;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+
+    @include true.it('should return child-variant with correct styles') {
+        @include true.assert {
+            @include true.output {
+                .child-variant-test {
+                    @include placement.child-variant('test', 'top', 10px);
+                }
+            }
+            @include true.expect {
+                .child-variant-test {
+                    --test-offset: 10px;
+
+                    inset: auto auto 100% 50%;
+                    translate: var(--test-offset-orthogonal, -50%) calc(-1 * var(--test-offset, 0));
+                    transform-origin: bottom;
+                }
+            }
+        }
+    }
+}

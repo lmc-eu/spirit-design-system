@@ -1,0 +1,59 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
+@use 'true';
+@use '../utilities';
+
+@include true.describe('generate mixin') {
+    @include true.it('should generate utility classes based on the provided utility map and infix') {
+        $sample-utility: (
+            property: display,
+            class: d,
+            values: (
+                block,
+                flex,
+                grid,
+                inline,
+                inline-block,
+                inline-flex,
+                none,
+            ),
+        );
+
+        @include true.assert {
+            @include true.output {
+                @include utilities.generate($sample-utility, '');
+            }
+
+            @include true.expect {
+                // stylelint-disable declaration-no-important -- We need to allow this to make sass-true work
+                .d-block {
+                    display: block !important;
+                }
+
+                .d-flex {
+                    display: flex !important;
+                }
+
+                .d-grid {
+                    display: grid !important;
+                }
+
+                .d-inline {
+                    display: inline !important;
+                }
+
+                .d-inline-block {
+                    display: inline-block !important;
+                }
+
+                .d-inline-flex {
+                    display: inline-flex !important;
+                }
+
+                .d-none {
+                    display: none !important;
+                }
+                // stylelint-enable declaration-no-important
+            }
+        }
+    }
+}

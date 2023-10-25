@@ -204,7 +204,7 @@
 
         .#{$class-name}[#{$data-attribute}='#{$placement-modifier}'] {
             // stylelint-disable-next-line scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
-            @extend .#{$class-name}--#{$placement-modifier};
+            @extend .#{$class-name}--#{$placement-modifier} !optional;
         }
     }
 }
@@ -217,11 +217,11 @@
 @mixin generate-sizes($class-name, $variables) {
     @each $size, $variables in $variables {
         .#{$class-name}--#{$size} {
+            padding: map.get($variables, padding-y) map.get($variables, padding-x);
+
             @if map.has-key($variables, typography) {
                 @include typography.generate(map.get($variables, typography));
             }
-
-            padding: map.get($variables, padding-y) map.get($variables, padding-x);
         }
     }
 }

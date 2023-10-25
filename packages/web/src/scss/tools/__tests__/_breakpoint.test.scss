@@ -1,0 +1,83 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
+@use 'true';
+@use '../breakpoint';
+
+@include true.describe('up mixin from breakpoint') {
+    @include true.it('should output media query for provided breakpoint value') {
+        @include true.assert {
+            @include true.output {
+                @include breakpoint.up(600px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include true.expect {
+                @media (min-width: 600px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+
+    @include true.it('should output styles directly without media query for 0 value') {
+        @include true.assert {
+            @include true.output {
+                @include breakpoint.up(0) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include true.expect {
+                .selector {
+                    color: #bada55;
+                }
+            }
+        }
+    }
+}
+
+@include true.describe('down mixin from breakpoint') {
+    @include true.it('should output media query for provided breakpoint value') {
+        @include true.assert {
+            @include true.output {
+                @include breakpoint.down(600px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include true.expect {
+                @media (max-width: 599px) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+        }
+    }
+
+    @include true.it('should output styles directly without media query for 0 value') {
+        @include true.assert {
+            @include true.output {
+                @include breakpoint.down(0) {
+                    .selector {
+                        color: #bada55;
+                    }
+                }
+            }
+
+            @include true.expect {
+                .selector {
+                    color: #bada55;
+                }
+            }
+        }
+    }
+}

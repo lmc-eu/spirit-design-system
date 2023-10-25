@@ -1,0 +1,43 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
+@use 'true';
+@use '../links';
+
+@include true.describe('stretch mixin') {
+    @include true.it('should output default styles for ::before pseudo-element') {
+        @include true.assert {
+            @include true.output {
+                .test {
+                    @include links.stretch();
+                }
+            }
+
+            @include true.expect {
+                .test::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 0;
+                    inset: 0;
+                }
+            }
+        }
+    }
+
+    @include true.it('should output styles for provided pseudo-element') {
+        @include true.assert {
+            @include true.output {
+                .test {
+                    @include links.stretch('after');
+                }
+            }
+
+            @include true.expect {
+                .test::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 0;
+                    inset: 0;
+                }
+            }
+        }
+    }
+}

@@ -126,6 +126,14 @@ Now use the reference from the theme in component styles:
 - `% yarn test` for test package (lint, format, unit testing, types)
 - `% yarn test:unit` for unit tests
 
+### SASS Unit Testing
+
+We use [sass-true][sass-true] for unit testing of our SASS components. The
+tests are located in `src/scss/components/<ComponentName>/__tests__` and are
+named `<ComponentName>.test.scss`. The tests are run as a part of the Jest
+testing suite. Our primary focus is on testing mixins and functions as they
+are the most complex parts of our SASS components.
+
 ## Migrating Your Components to Spirit
 
 ### Code Conventions
@@ -196,3 +204,4 @@ in a special way. Read more about it in
 [design-tokens-faq]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#faq
 [sass-modules]: https://sass-lang.com/blog/the-module-system-is-launched
 [es modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[sass-true]: https://github.com/oddbird/true
