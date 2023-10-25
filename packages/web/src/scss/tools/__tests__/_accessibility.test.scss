@@ -1,0 +1,82 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
+@use 'true';
+@use '../accessibility';
+
+@include true.describe('hide-text mixin') {
+    @include true.it('should output styles to visually hide text') {
+        @include true.assert {
+            @include true.output {
+                .text-hidden {
+                    @include accessibility.hide-text();
+                }
+            }
+
+            @include true.expect {
+                .text-hidden {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+@include true.describe('min-tap-target mixin') {
+    @include true.it('should output styles for default centered tap target') {
+        @include true.assert {
+            @include true.output {
+                .tap-target-centered {
+                    @include accessibility.min-tap-target(40px);
+                }
+            }
+
+            @include true.expect {
+                .tap-target-centered {
+                    position: relative;
+                }
+
+                // stylelint-disable order/properties-order -- Disabling rule due to conditional rendering affecting property order
+                .tap-target-centered::before {
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                // stylelint-enable order/properties-order
+            }
+        }
+    }
+
+    @include true.it('should output styles for non-centered tap target') {
+        @include true.assert {
+            @include true.output {
+                .tap-target-non-centered {
+                    @include accessibility.min-tap-target(40px, false);
+                }
+            }
+
+            @include true.expect {
+                .tap-target-non-centered {
+                    position: relative;
+                }
+
+                .tap-target-non-centered::before {
+                    content: '';
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

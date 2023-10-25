@@ -1,0 +1,170 @@
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses
+@use 'true';
+@use '../../settings/dictionaries' as dictionaries-settings;
+@use '../dictionaries';
+@use '@tokens' as tokens;
+
+@include true.describe('generate-colors mixin') {
+    @include true.it('should generate correct color classes based on a dictionary') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-colors(
+                    'Test',
+                    ('primary'),
+                    (
+                        color: 'default',
+                    )
+                );
+            }
+
+            @include true.expect {
+                .Test--primary {
+                    --test-color: #29616f;
+
+                    color: var(--test-color);
+                }
+            }
+        }
+    }
+}
+
+@include true.describe('generate-link-colors mixin') {
+    @include true.it('should generate correct link color classes based on a dictionary') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-link-colors(
+                    '.link',
+                    dictionaries-settings.$action-link-colors,
+                    tokens.$action-colors,
+                    (default, hover, active, disabled)
+                );
+            }
+
+            @include true.expect {
+                .link-primary {
+                    color: #29616f;
+                }
+
+                .link-primary:hover {
+                    color: #1b5260;
+                }
+
+                .link-primary:active {
+                    color: #0b3a46;
+                }
+
+                .link-primary.link-disabled {
+                    color: #c4c4c4;
+                }
+
+                .link-secondary {
+                    color: #90a2a7;
+                }
+
+                .link-secondary:hover {
+                    color: #849499;
+                }
+
+                .link-secondary:active {
+                    color: #6e7b80;
+                }
+
+                .link-secondary.link-disabled {
+                    color: #c4c4c4;
+                }
+
+                .link-inverted {
+                    color: #e9e9e9;
+                }
+
+                .link-inverted:hover {
+                    color: #dbdbdb;
+                }
+
+                .link-inverted:active {
+                    color: #d4d4d4;
+                }
+
+                .link-inverted.link-disabled {
+                    color: #c4c4c4;
+                }
+            }
+        }
+    }
+}
+
+@include true.describe('generate-placements mixin') {
+    @include true.it('should generate correct placement classes based on a dictionary') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-placements('Test', ('top-left'));
+            }
+
+            @include true.expect {
+                .Test--topLeft {
+                    --test-offset: 0;
+
+                    inset: auto auto 100% 0;
+                    translate: var(--test-offset-orthogonal, 0) calc(-1 * var(--test-offset, 0));
+                    transform-origin: bottom right;
+                }
+            }
+        }
+    }
+}
+
+// Create Test classes in order to test extend in next mixin test
+.Test--topLeft,
+.Test--bottomRight {
+    position: relative;
+}
+
+@include true.describe('generate-controlled-placements mixin') {
+    @include true.it('should generate correct controlled placement classes based on a dictionary') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-controlled-placements(
+                    'Test',
+                    ('top-left', 'bottom-right'),
+                    'data-placement'
+                );
+            }
+
+            @include true.expect {
+                // stylelint-disable scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
+                .Test[data-placement='topLeft'] {
+                    @extend .Test--topLeft !optional;
+                }
+
+                .Test[data-placement='bottomRight'] {
+                    @extend .Test--bottomRight !optional;
+                }
+                // stylelint-enable scss/at-extend-no-missing-placeholder
+            }
+        }
+    }
+}
+
+@include true.describe('generate-sizes mixin') {
+    @include true.it('should generate correct size classes based on a config') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-sizes(
+                    'TestSize',
+                    (
+                        large: (
+                            padding-y: 12px,
+                            padding-x: 16px,
+                        ),
+                    )
+                );
+            }
+
+            @include true.expect {
+                .TestSize--large {
+                    padding: 12px 16px;
+                }
+            }
+        }
+    }
+}
