@@ -1,6 +1,6 @@
 export function printUnit(value: number, unit: string): string {
   let result = value.toString();
-  if (value > 0) {
+  if (+value !== 0) {
     if (unit === 'Pixels') {
       result += 'px';
     }
