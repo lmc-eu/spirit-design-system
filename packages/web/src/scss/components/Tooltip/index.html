@@ -4,10 +4,10 @@
 
     <h2 class="docs-Heading">Placements</h2>
 
-    <div class="docs-Stack docs-Stack--start">
+    <div class="docs-Stack docs-Stack--stretch">
 
-      <form autocomplete="off" class="mx-auto">
-        <div class="Grid Grid--cols-3" style="align-items: center; justify-items: center">
+      <form autocomplete="off">
+        <div class="Grid Grid--cols-3 mx-auto" style="align-items: center; justify-items: center; max-width: 30rem;">
           <div style="grid-row: 1; grid-column: 2">
 
             <label for="placement_top_left" class="Radio">
@@ -52,7 +52,7 @@
             </label>
 
           </div>
-          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1">
+          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1; justify-self: start;">
 
             <label for="placement_left_top" class="Radio">
               <input type="radio" name="placement" value="leftTop" id="placement_left_top" class="Radio__input" />
@@ -74,7 +74,7 @@
             </label>
 
           </div>
-          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3">
+          <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3; justify-self: end;">
 
             <label for="placement_right_top" class="Radio">
               <input type="radio" name="placement" value="rightTop" id="placement_right_top" class="Radio__input" />
@@ -98,10 +98,13 @@
           </div>
           <div style="grid-row: 2; grid-column: 2">
 
-            <div class="TooltipWrapper" style="margin: 6rem auto">
-              <div class="docs-Box">Click the dots!</div>
+            <div class="TooltipWrapper" style="margin: 5rem auto">
+              <div class="docs-Box px-900 py-900">
+                Click<br />
+                the dots!
+              </div>
               <div class="Tooltip Tooltip--bottom" id="tooltip_placements_example">
-                Hello!
+                <span id="tooltip_placements_example_text">bottom</span>
                 <span class="Tooltip__arrow"></span>
               </div>
             </div>
@@ -117,8 +120,10 @@
           radio.addEventListener('change', () => {
             const placement = radio.value;
             const tooltip = document.getElementById('tooltip_placements_example');
+            const tooltipText = document.getElementById('tooltip_placements_example_text');
 
             tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
+            tooltipText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
           });
         });
       </script>
