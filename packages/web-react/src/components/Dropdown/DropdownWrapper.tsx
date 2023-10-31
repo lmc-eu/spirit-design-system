@@ -4,7 +4,7 @@ import { useDropdownStyleProps } from './useDropdownStyleProps';
 
 interface DropdownWrapperProps extends ChildrenProps {}
 
-const DropdownWrapper = ({ children }: DropdownWrapperProps) => {
+export const DropdownWrapper = ({ children }: DropdownWrapperProps) => {
   const { classProps } = useDropdownStyleProps();
 
   return <div className={classProps.wrapperClassName}>{children}</div>;

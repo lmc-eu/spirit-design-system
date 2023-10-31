@@ -39,7 +39,7 @@ export const useDeprecationMessage = ({
     switch (method) {
       case 'property':
         if (propertyProps?.delete) {
-          message = `${messageBase} "${propertyProps?.deprecatedName}" property will be deleted in the next major version..️️`;
+          message = `${messageBase} "${propertyProps?.deprecatedName}" property will be deleted in the next major version.`;
         } else if (propertyProps?.deprecatedValue && propertyProps?.newValue && propertyProps?.propertyName) {
           message = `${messageBase} The "${propertyProps?.deprecatedValue}" value for "${propertyProps?.propertyName}" property will be renamed to "${propertyProps?.newValue}" in the next major version.`;
         } else {

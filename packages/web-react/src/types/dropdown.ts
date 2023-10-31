@@ -25,7 +25,12 @@ export type DropdownRenderProps = {
 
 export interface DropdownProps extends ChildrenProps, StyleProps {
   id?: string;
+  /** @deprecated Will be removed in the next major version. Use modern version of dropdown instead: DropdownModern */
   renderTrigger?: (render: DropdownRenderProps) => ReactNode;
+}
+
+export interface DropdownModernProps extends ChildrenProps, StyleProps {
+  id: string;
 }
 
 export interface SpiritDropdownProps extends DropdownProps {
@@ -34,3 +39,16 @@ export interface SpiritDropdownProps extends DropdownProps {
   fullWidthMode?: DropdownFullWidthMode;
   onAutoClose?: (event: Event) => void;
 }
+
+export interface SpiritDropdownModernProps extends DropdownModernProps, ChildrenProps {
+  enableAutoClose?: boolean;
+  placement?: PlacementDictionaryType;
+  fullWidthMode?: DropdownFullWidthMode;
+  onAutoClose?: (event: Event) => void;
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+export interface UncontrolledDropdownProps
+  extends ChildrenProps,
+    Omit<SpiritDropdownModernProps, 'isOpen' | 'onToggle'> {}
