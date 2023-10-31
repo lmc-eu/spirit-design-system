@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React, { LegacyRef, createElement, useRef } from 'react';
 import { Placements } from '../../constants';
-import { useStyleProps } from '../../hooks';
-import { SpiritDropdownProps } from '../../types';
 import DropdownWrapper from './DropdownWrapper';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { SpiritDropdownProps } from '../../types';
 import { useDropdown } from './useDropdown';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
@@ -13,7 +13,10 @@ const defaultProps = {
   placement: Placements.BOTTOM_LEFT,
 };
 
-const Dropdown = (props: SpiritDropdownProps) => {
+/**
+ * @deprecated Dropdown component is deprecated and will be removed in the next major version. Please use "DropdownModern" component instead.
+ */
+export const Dropdown = (props: SpiritDropdownProps) => {
   const {
     id = Math.random().toString(36).slice(2, 7),
     children,
@@ -34,6 +37,14 @@ const Dropdown = (props: SpiritDropdownProps) => {
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({
     UNSAFE_className: classProps.triggerClassName,
+  });
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: true,
+    componentName: 'Dropdown',
+    customText:
+      'Dropdown component is deprecated and will be removed in the next major version. Please use "DropdownModern" component instead.',
   });
 
   const triggerRenderHandler = () => {

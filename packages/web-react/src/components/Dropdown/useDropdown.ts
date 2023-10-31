@@ -5,12 +5,12 @@ import { useClickOutside } from '../../hooks';
 export interface UseDropdownProps {
   /** dropdown element reference */
   dropdownRef: MutableRefObject<HTMLElement | null>;
-  /** trigger element reference */
-  triggerRef: MutableRefObject<HTMLElement | undefined>;
   /** enabled click outside event */
   enableAutoClose?: boolean;
   /** on close callback */
   onAutoClose?: (event: Event) => void;
+  /** trigger element reference */
+  triggerRef: MutableRefObject<HTMLElement | undefined>;
 }
 
 export interface UseDropdownReturn {
