@@ -9,11 +9,11 @@ const reflow = (element: HTMLElement): void => {
   element.offsetHeight;
 };
 
-export { reflow };
 export * from './ComponentFunctions';
 export * from './Debounce';
 export * from './Deprecations';
 export * from './Elements';
+export * from './Image2Base64Preview';
 export { default as ScrollControl } from './ScrollControl';
 export * from './Transitions';
-export * from './Image2Base64Preview';
+export { reflow };
