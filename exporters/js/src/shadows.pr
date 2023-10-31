@@ -1,0 +1,4 @@
+// Generated Shadows from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Shadow", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple("shadows", ds.tokensByType("Shadow", ds.currentBrand().id), ds.tokenGroupsOfType("Shadow", ds.currentBrand().id)) }}
+{[/]}

@@ -1,0 +1,4 @@
+// Generated Radii from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Measure", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple("radii", ds.tokensByType("Measure", ds.currentBrand().id), [], true, false, '', 'radius') }}
+{[/]}

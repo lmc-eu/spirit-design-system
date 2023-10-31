@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateSimple should generate simple output 1`] = `
+"export const basePink10 = '#fef0f5';
+export const basePink20 = '#fdd5e4';
+
+export const base = {
+    pink10: basePink10,
+    pink20: basePink20,
+};
+
+export const test = {
+    base,
+};
+"
+`;

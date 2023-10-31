@@ -19,7 +19,8 @@ module.exports = {
     'packages/web-react',
     'packages/web',
     'packages/form-validations',
-    'exporters/scss'
+    'exporters/scss',
+    'exporters/js',
   ],
 
   extends: ['@lmc-eu/eslint-config-react/base', '@lmc-eu/eslint-config-react/optional', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
