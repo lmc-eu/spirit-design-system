@@ -1,17 +1,20 @@
-import { getElement } from './utils/index';
 import InstanceMap from './dom/InstanceMap';
+import Config from './utils/Config';
+import { getElement } from './utils/index';
 
 interface IBaseComponent extends FunctionConstructor {
   INSTANCE_KEY: string;
 }
 
-class BaseComponent {
+class BaseComponent extends Config {
   element: SpiritElement;
+  config: unknown;
   NAME: string | null;
 
-  constructor(element: SpiritElement | string) {
+  constructor(element: SpiritElement | string, config) {
     this.element = getElement(element);
     this.NAME = '';
+    this.config = this.getConfig(config);
 
     InstanceMap.set(this.element, (this.constructor as IBaseComponent).INSTANCE_KEY, this);
   }
@@ -25,6 +28,13 @@ class BaseComponent {
       // TS2322: Type 'null' is not assignable to type 'Element & (string | null) & (() => void)'
       this[propertyName as keyof BaseComponent] = null;
     }
+  }
+
+  getConfig(config?: SpiritConfig) {
+    const mergedConfig = this.mergeConfigObj(config, this.element);
+    this.typeCheckConfig(mergedConfig);
+
+    return mergedConfig;
   }
 
   static get NAME() {
