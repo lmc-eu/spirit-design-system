@@ -1,0 +1,4 @@
+// Generated Colors from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Color", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple("colors", ds.tokensByType("Color", ds.currentBrand().id)) }}
+{[/]}

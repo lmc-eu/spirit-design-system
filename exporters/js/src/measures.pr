@@ -1,0 +1,4 @@
+// Generated Measures from Supernova. Do not edit manually.
+{[ if (ds.tokensByType("Measure", ds.currentBrand().id)).count() > 0 ]}
+{{ generateSimple("measures", ds.tokensByType("Measure", ds.currentBrand().id), [], true, false, '', 'space') }}
+{[/]}

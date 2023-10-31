@@ -1,0 +1,40 @@
+{
+  "blueprints": [
+    {
+      "invoke": "borders.pr",
+      "write_to": "borders.ts"
+    },
+    {
+      "invoke": "colors.pr",
+      "write_to": "colors.ts"
+    },
+    {
+      "invoke": "gradients.pr",
+      "write_to": "gradients.ts"
+    },
+    {
+      "invoke": "measures.pr",
+      "write_to": "measures.ts"
+    },
+    {
+      "invoke": "other.pr",
+      "write_to": "other.ts"
+    },
+    {
+      "invoke": "radii.pr",
+      "write_to": "radii.ts"
+    },
+    {
+      "invoke": "shadows.pr",
+      "write_to": "shadows.ts"
+    },
+    {
+      "invoke": "typography.pr",
+      "write_to": "typography.ts"
+    },
+    {
+      "invoke": "index.pr",
+      "write_to": "index.ts"
+    }
+  ]
+}
