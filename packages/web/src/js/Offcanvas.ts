@@ -3,6 +3,7 @@ import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import { ScrollControl, enableDismissTrigger, enableToggleTrigger } from './utils';
+import { SpiritConfig } from './utils/Config';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';
@@ -16,20 +17,49 @@ const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const OFFCANVAS_BREAKPOINT = parseInt(breakpoints.desktop, 10);
 const OPEN_CLASSNAME = 'is-open';
 
+const VARIABLE_BREAKPOINT_DESKTOP = '--spirit-breakpoint-desktop';
+
+const Default = {
+  breakpointDesktop: OFFCANVAS_BREAKPOINT,
+};
+
+const DefaultType = {
+  breakpointDesktop: 'number',
+};
+
 class Offcanvas extends BaseComponent {
   isShown: boolean;
   scrollControl: ScrollControl;
+  breakpoint: number;
+
+  static get Default() {
+    return Default;
+  }
+
+  static get DefaultType() {
+    return DefaultType;
+  }
 
   static get NAME() {
     return NAME;
   }
 
-  constructor(element: HTMLElement) {
+  constructor(element: SpiritElement, config?: SpiritConfig) {
     const target = element;
-    super(target);
+    super(target, config);
 
     this.isShown = false;
     this.scrollControl = new ScrollControl(element);
+    this.breakpoint = this.getBreakpoint();
+  }
+
+  getBreakpoint() {
+    return (
+      parseInt(getComputedStyle(document.documentElement).getPropertyValue(VARIABLE_BREAKPOINT_DESKTOP), 10) ||
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore Object is of type 'unknown'.
+      this.config?.breakpointDesktop
+    );
   }
 
   // Using `unknown` - Object is possibly 'null'.
@@ -44,7 +74,7 @@ class Offcanvas extends BaseComponent {
   }
 
   onWindowResize(event: Event & { target: Window }) {
-    if (event.target.innerWidth >= OFFCANVAS_BREAKPOINT) {
+    if (event.target.innerWidth >= this.breakpoint) {
       this.hide();
     }
   }
