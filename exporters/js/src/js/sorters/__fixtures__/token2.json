@@ -1,0 +1,14 @@
+{
+  "id": "test",
+  "name": "b",
+  "description": "test",
+  "tokenType": "test",
+  "origin": {
+    "source": "test",
+    "id": "test",
+    "name": "b"
+  },
+  "value": {
+    "text": "20"
+  }
+}

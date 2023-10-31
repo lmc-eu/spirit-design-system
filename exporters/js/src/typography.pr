@@ -1,0 +1,7 @@
+// Generated Typography from Supernova. Do not edit manually.
+{[ let defaultFontSize = exportConfiguration().defaultFontSize /]}
+{[ let fontFamilyFallback = exportConfiguration().fontFamilyFallback /]}
+{[ let breakpoints = exportConfiguration().breakpoints /]}
+{[ if (ds.tokensByType("Typography", ds.currentBrand().id)).count() > 0 ]}
+{{ generateTypography(ds.tokensByType("Typography", ds.currentBrand().id), defaultFontSize, fontFamilyFallback, breakpoints) }}
+{[/]}

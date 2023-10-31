@@ -19,6 +19,7 @@ module.exports = {
         'web-react',
         'web-twig',
         // Use when committing changes/additions/removals to exact exporter
+        'exporter-js',
         'exporter-scss',
         'exporter-svg',
         // Use when affecting CI process
