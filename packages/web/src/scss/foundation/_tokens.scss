@@ -1,0 +1,7 @@
+@use '@tokens' as tokens;
+
+:root {
+    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
+        --spirit-breakpoint-#{$breakpoint-name}: #{$breakpoint-value};
+    }
+}
