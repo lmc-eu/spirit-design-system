@@ -273,7 +273,7 @@ class FileUploader extends BaseComponent {
     if (hasImagePreview && isFileImg) {
       AttachmentSvgIcon?.remove();
       AttachmentPreviewImage?.querySelector('img')?.setAttribute('alt', file.name);
-      image2Base64Preview(file, 100, (compressedDataURL) =>
+      image2Base64Preview(file, IMAGE_PREVIEW_BASE64_MAX_WIDTH, (compressedDataURL) =>
         AttachmentPreviewImage?.querySelector('img')?.setAttribute('src', compressedDataURL),
       );
     } else {
