@@ -1,6 +1,6 @@
-import { EventHandler, SelectorEngine } from './dom';
 import BaseComponent from './BaseComponent';
-import { image2Base64Preview, enableToggleAutoloader } from './utils';
+import { EventHandler, SelectorEngine } from './dom';
+import { enableToggleAutoloader, image2Base64Preview } from './utils';
 
 const NAME = 'fileUploader';
 const EVENT_KEY = `.${NAME}`;
@@ -31,6 +31,8 @@ const DEFAULT_ERROR_MESSAGES = {
   errorMaxUploadedFiles: 'You have exceeded the number of files allowed in the queue',
   errorFileNotSupported: 'is not a supported file. Please ensure you are uploading a supported file format.',
 };
+const IMAGE_PREVIEW_HEIGHT = 54; // px; @see: CSS class `.FileUploaderAttachment__image` in _FileUploaderAttachment.scss
+const IMAGE_PREVIEW_BASE64_MAX_WIDTH = 500; // px
 
 export interface FileMetadata {
   [key: string | number]: unknown;
@@ -367,7 +369,9 @@ class FileUploader extends BaseComponent {
   }
 
   static isCoordsInMeta = (meta: FileMetadata) => {
-    return ['x', 'y', 'width', 'height'].every((coord) => meta[coord] != null);
+    return ['x', 'y', 'cropWidth', 'cropHeight', 'originalWidth', 'originalHeight'].every(
+      (coord) => meta[coord] != null,
+    );
   };
 
   updateQueue(
@@ -384,16 +388,34 @@ class FileUploader extends BaseComponent {
 
       this.fileQueue.set(name, newValue);
 
-      const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`);
+      const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`) as HTMLImageElement;
       const itemImageObjectFit = itemImgElement?.dataset?.spiritImageObjectFit;
       let cropStyles;
 
       if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
+        const previewHeight = IMAGE_PREVIEW_HEIGHT;
+        const cropWidth = parseInt(meta.cropWidth as string, 10);
+        const cropHeight = parseInt(meta.cropHeight as string, 10);
+
+        let scale;
+        if (cropHeight > cropWidth) {
+          // scale for portrait images
+          scale = previewHeight / cropWidth;
+        } else {
+          // scale for landscape images
+          scale = previewHeight / cropHeight;
+        }
+
+        const cropX = Math.round(parseInt(meta.x as string, 10) * scale);
+        const cropY = Math.round(parseInt(meta.y as string, 10) * scale);
+        const imageWidth = Math.round(parseInt(meta.originalWidth as string, 10) * scale);
+        const imageHeight = Math.round(parseInt(meta.originalHeight as string, 10) * scale);
+
         cropStyles = `
-          --file-uploader-attachment-image-top: -${meta.y}px;
-          --file-uploader-attachment-image-left: -${meta.x}px;
-          --file-uploader-attachment-image-width: ${meta.width}px;
-          --file-uploader-attachment-image-height: ${meta.height}px;
+          --file-uploader-attachment-image-top: -${cropY}px;
+          --file-uploader-attachment-image-left: -${cropX}px;
+          --file-uploader-attachment-image-width: ${imageWidth}px;
+          --file-uploader-attachment-image-height: ${imageHeight}px;
         `;
 
         if (itemImageObjectFit) {
