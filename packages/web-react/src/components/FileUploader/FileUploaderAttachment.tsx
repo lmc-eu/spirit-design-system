@@ -6,7 +6,12 @@ import { Icon } from '../Icon';
 import AttachmentActionButton from './AttachmentActionButton';
 import AttachmentDismissButton from './AttachmentDismissButton';
 import AttachmentImagePreview from './AttachmentImagePreview';
-import { DEFAULT_BUTTON_LABEL, DEFAULT_EDIT_BUTTON_LABEL, DEFAULT_ICON_NAME } from './constants';
+import {
+  DEFAULT_BUTTON_LABEL,
+  DEFAULT_EDIT_BUTTON_LABEL,
+  DEFAULT_ICON_NAME,
+  IMAGE_PREVIEW_BASE64_MAX_WIDTH,
+} from './constants';
 import { useFileUploaderAttachment } from './useFileUploaderAttachment';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { image2Base64Preview } from './utils';
@@ -50,7 +55,9 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   const onEditHandler = (event: MouseEvent) => onEdit && onEdit(event, file);
 
   if (isFileImage) {
-    image2Base64Preview(file, 100, (compressedDataURL) => setImagePreview(compressedDataURL));
+    image2Base64Preview(file, IMAGE_PREVIEW_BASE64_MAX_WIDTH, (compressedDataURL) =>
+      setImagePreview(compressedDataURL),
+    );
   }
 
   useFileUploaderAttachment({ attachmentRef, file, name, meta, onError });
