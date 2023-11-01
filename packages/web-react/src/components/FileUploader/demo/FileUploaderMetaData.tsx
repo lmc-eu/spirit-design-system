@@ -1,8 +1,8 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { MouseEvent, useState } from 'react';
+import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import { Button } from '../../Button';
-import { Modal, ModalDialog, ModalBody, ModalFooter } from '../../Modal';
-import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
+import { Modal, ModalBody, ModalDialog, ModalFooter } from '../../Modal';
 
 const FileUploaderMetaData = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +34,9 @@ const FileUploaderMetaData = () => {
   };
 
   const customUpdate = (_event: MouseEvent, file: File) => {
-    const newMeta = toggleMeta ? { x: 30, y: 30, width: 150, height: 150 } : { x: 22, y: 0, width: 110, height: 100 };
+    const newMeta = toggleMeta
+      ? { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 }
+      : { x: 22, y: 0, cropWidth: 110, cropHeight: 100, originalWidth: 560, originalHeight: 330 };
 
     setIsModalOpen(false);
     setToggleMeta(!toggleMeta);
