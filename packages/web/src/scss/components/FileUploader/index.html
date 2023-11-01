@@ -933,7 +933,7 @@
 
         const customEdit = (event) => {
           const key = event.target.closest('li').id
-          const newMeta = toggleMetaData ? { x: 30, y: 30, width: 150, height: 150 } : { x: 22, y: 0, width: 110, height: 100 };
+          const newMeta = toggleMetaData ? { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 } : { x: 22, y: 0, cropWidth: 110, cropHeight: 100, originalWidth: 560, originalHeight: 330 };
           toggleMetaData = !toggleMetaData;
           const file = FileUploaderInstance.getFileFromQueue(key).file;
           FileUploaderInstance.updateQueue(key, file, newMeta, updateQueueCallback);
@@ -954,7 +954,7 @@
         }
 
         CancelButton.addEventListener('click', removeFromQueue);
-        
+
         FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
           file = event.currentFile;
 
@@ -964,7 +964,7 @@
         FileUploaderElement.addEventListener('unqueuedFile.fileUploader', (event) => {
           callbackOnDismiss(event.currentFile);
         });
-        
+
         FileUploaderElement.addEventListener('editFile.fileUploader', (event) => {
           customEdit(event.currentFile);
         });

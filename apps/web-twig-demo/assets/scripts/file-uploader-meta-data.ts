@@ -69,8 +69,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const customEdit = (event) => {
     const key = event.target.closest('li').id;
     const newMeta = toggleMetaData
-      ? { x: 30, y: 30, width: 150, height: 150 }
-      : { x: 22, y: 0, width: 110, height: 100 };
+      ? { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 }
+      : { x: 22, y: 0, cropWidth: 110, cropHeight: 100, originalWidth: 560, originalHeight: 330 };
     toggleMetaData = !toggleMetaData;
     const file = FileUploaderInstance.getFileFromQueue(key).file;
     FileUploaderInstance.updateQueue(key, file, newMeta, updateQueueCallback);
