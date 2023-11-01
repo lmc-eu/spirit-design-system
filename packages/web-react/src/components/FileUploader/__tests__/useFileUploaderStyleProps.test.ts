@@ -56,16 +56,16 @@ describe('useFileUploaderStyleProps', () => {
   it('should have CSS for crop image', () => {
     const { result } = renderHook(() =>
       useFileUploaderStyleProps({
-        meta: { x: 1, y: 2, width: 3, height: 4 },
+        meta: { x: 0, y: 0, cropWidth: 100, cropHeight: 100, originalWidth: 350, originalHeight: 200 },
       }),
     );
 
     expect(result.current.classProps.imageCropStyles).toBeDefined();
     expect(result.current.classProps.imageCropStyles).toStrictEqual({
-      '--file-uploader-attachment-image-height': '4px',
-      '--file-uploader-attachment-image-left': '-1px',
-      '--file-uploader-attachment-image-top': '-2px',
-      '--file-uploader-attachment-image-width': '3px',
+      '--file-uploader-attachment-image-height': '108px',
+      '--file-uploader-attachment-image-left': '-0px',
+      '--file-uploader-attachment-image-top': '-0px',
+      '--file-uploader-attachment-image-width': '189px',
     });
   });
 });

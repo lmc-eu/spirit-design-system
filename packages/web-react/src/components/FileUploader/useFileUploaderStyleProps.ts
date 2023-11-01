@@ -1,8 +1,9 @@
-import { CSSProperties } from 'react';
 import classNames from 'classnames';
+import { CSSProperties } from 'react';
 import { FileUploaderCropCSS } from '../../constants/dictionaries';
 import { useClassNamePrefix } from '../../hooks';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
+import { IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {
   imageObjectFit?: 'contain' | 'cover';
@@ -26,6 +27,15 @@ type ImageCropCSS = {
 
 type ImageObjectFit = {
   '--file-uploader-attachment-image-object-fit': string;
+};
+
+type ImageCropMeta = {
+  x: number;
+  y: number;
+  cropWidth: number;
+  cropHeight: number;
+  originalWidth: number;
+  originalHeight: number;
 };
 
 export interface FileUploaderStyleReturn {
@@ -88,16 +98,32 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
   const { meta, imageObjectFit } = props || {};
   let imageCropCSS: ImageCropCSS | undefined;
   let imageObjectFitCSS: ImageObjectFit | undefined;
-  const hasCoords = meta && meta.x != null && meta.y != null && meta.width != null && meta.height != null;
+  const hasCoordsInMeta =
+    meta != null &&
+    ['x', 'y', 'cropWidth', 'cropHeight', 'originalWidth', 'originalHeight'].every((coord) => meta[coord] != null);
 
-  if (hasCoords) {
-    const { x, y, width, height } = meta;
+  if (hasCoordsInMeta) {
+    const { x, y, cropWidth, cropHeight, originalWidth, originalHeight } = meta as ImageCropMeta;
+    const previewHeight = IMAGE_DIMENSION;
+    let scale;
+    if (cropHeight > cropWidth) {
+      // scale for portrait images
+      scale = previewHeight / cropWidth;
+    } else {
+      // scale for landscape images
+      scale = previewHeight / cropHeight;
+    }
+
+    const cropX = Math.round(x * scale);
+    const cropY = Math.round(y * scale);
+    const imageWidth = Math.round(originalWidth * scale);
+    const imageHeight = Math.round(originalHeight * scale);
 
     imageCropCSS = {
-      [FileUploaderCropCSS.TOP]: `-${y}px`,
-      [FileUploaderCropCSS.LEFT]: `-${x}px`,
-      [FileUploaderCropCSS.WIDTH]: `${width}px`,
-      [FileUploaderCropCSS.HEIGHT]: `${height}px`,
+      [FileUploaderCropCSS.TOP]: `-${cropY}px`,
+      [FileUploaderCropCSS.LEFT]: `-${cropX}px`,
+      [FileUploaderCropCSS.WIDTH]: `${imageWidth}px`,
+      [FileUploaderCropCSS.HEIGHT]: `${imageHeight}px`,
     };
   }
 
@@ -141,7 +167,7 @@ export const useFileUploaderStyleProps = (props?: FileUploaderStyleProps): FileU
         image: fileUploaderAttachmentImageClass,
         slot: fileUploaderAttachmentSlotClass,
       },
-      ...(hasCoords && { imageCropStyles: imageCropCSS }),
+      ...(hasCoordsInMeta && { imageCropStyles: imageCropCSS }),
       ...(imageObjectFit && { attachmentStyles: imageObjectFitCSS }),
     },
   };

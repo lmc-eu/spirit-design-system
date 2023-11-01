@@ -329,13 +329,13 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 #### Updating Image Preview with cropped image
 
 When you are using FileUploader with some kind of image cropper you want to also update the image preview on FileUploaderAttachment when image changes.
-You can do this by passing a specific object in shape of coordinates (`{ x: number, y: number, width: number, height: number }`) to the `meta` argument.
+You can do this by passing a specific object in shape of coordinates (`{ x: number, y: number, cropWidth: number, cropHeight: number, originalWidth: number, originalHeight: number }`) to the `meta` argument.
 Then the coordinates will be applied to the preview image in the attachment.
 
 ```javascript
 // …
 const customUpdate = (_event: MouseEvent, file: File) => {
-  const meta = { x: 30, y: 30, width: 150, height: 150 };
+  const meta = { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 };
 
   return updateQueue(file.name, file, meta);
 };
