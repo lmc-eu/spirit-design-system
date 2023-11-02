@@ -214,23 +214,25 @@
       <!-- HeaderDesktopActions: end -->
 
       <!-- HeaderDesktopActions: start -->
-      <nav class="HeaderDesktopActions HeaderDesktopActions--secondary" aria-label="User area">
+      <nav class="HeaderDesktopActions HeaderDesktopActions--secondary">
 
         <!-- HeaderNav: start -->
-        <ul class="HeaderNav">
-          <li class="HeaderNavItem d-none d-desktop-flex">
-            <button
-              type="button"
-              class="HeaderLink"
-              data-spirit-toggle="offcanvas"
-              data-spirit-target="#header_dialog_example_2_user_menu"
-              aria-controls="header_dialog_example_2_user_menu"
-              aria-expanded="false"
-            >
-              Marian
-            </button>
-          </li>
-        </ul>
+        <button
+          type="button"
+          class="HeaderLink"
+          data-spirit-toggle="offcanvas"
+          data-spirit-target="#header_dialog_example_2_user_menu"
+          aria-controls="header_dialog_example_2_user_menu"
+          aria-expanded="false"
+        >
+          Marian
+        </button>
+        <button type="button" class="Button Button--inverted Button--square Button--medium">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#search" />
+          </svg>
+          <span class="accessibility-hidden">Search</span>
+        </button>
         <!-- HeaderNav: end -->
 
       </nav>
