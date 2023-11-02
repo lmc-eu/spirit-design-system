@@ -131,6 +131,9 @@ Also, all properties of the [`<article>` element][mdn-article] and [`<form>` ele
 
 ModalHeader contains the title of the dialog and the close button.
 
+ℹ️ We strongly recommend providing the ModalHeader in every use case to ensure the dialog is accessible
+and allows users to easily close it.
+
 ```jsx
 <ModalHeader>Modal Title</ModalHeader>
 ```
@@ -188,6 +191,10 @@ secondary actions are optional.
 
 👉 Please note the actions are _visually_ ordered from right to left from the tablet breakpoint up. However, the
 _actual_ order in code is followed when users tab over the interface.
+
+ℹ️ We strongly recommend including the ModalFooter with at least one primary action in every use case to facilitate
+user interaction and ensure consistent spacing within the dialog. Should the ModalFooter be omitted, please ensure
+to compensate for the lost spacing by applying utility spacing classes to the ModalBody.
 
 ```jsx
 <ModalFooter>

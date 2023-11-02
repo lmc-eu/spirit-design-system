@@ -102,6 +102,9 @@ the class, the dialog shrinks to fit the height of its content (if smaller than 
 
 ModalHeader contains the title of the dialog and the close button.
 
+ℹ️ We strongly recommend providing the ModalHeader in every use case to ensure the dialog is accessible
+and allows users to easily close it.
+
 ```html
 <div class="ModalHeader">
   <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
@@ -153,6 +156,10 @@ secondary actions are optional.
 
 👉 Please note the actions are _visually_ ordered from right to left from the tablet breakpoint up. However, the
 _actual_ order in code is followed when users tab over the interface.
+
+ℹ️ We strongly recommend including the ModalFooter with at least one primary action in every use case to facilitate
+user interaction and ensure consistent spacing within the dialog. Should the ModalFooter be omitted, please ensure
+to compensate for the lost spacing by applying utility spacing classes to the ModalBody.
 
 ```html
 <div class="ModalFooter ModalFooter--right">
