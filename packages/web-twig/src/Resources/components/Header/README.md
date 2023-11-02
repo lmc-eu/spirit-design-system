@@ -168,9 +168,11 @@ These attributes will be passed to the topmost HTML element of the component.
 
 ### Desktop-Only Actions
 
-As the name suggests, desktop-only actions are intended to display only on
-desktop screens. There are two slots to use: primary actions (aligned to the
-left in LTR documents) and secondary actions (aligned to the right).
+As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
+containers that define vertical alignment and spacing.
+
+There are two slots you can use: primary actions (aligned to left in LTR documents), and secondary actions (aligned to
+right).
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
@@ -187,9 +189,9 @@ control here.
 
 #### API
 
-| Name    | Type                       | Default   | Required | Description   |
-| ------- | -------------------------- | --------- | -------- | ------------- |
-| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
+| Name    | Type                       | Default   | Required | Description                 |
+| ------- | -------------------------- | --------- | -------- | --------------------------- |
+| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -235,6 +237,18 @@ Both links and buttons are supported:
     <HeaderButton>Button item</HeaderButton>
   </HeaderNavItem>
 </HeaderNav>
+```
+
+#### Other Content
+
+You can avoid using the [HeaderNav](#navigation) for standalone links. That way, you can combine links and buttons in
+the same container:
+
+```twig
+<HeaderDesktopActions color="secondary">
+  <HeaderButton>Marian</HeaderButton>
+  <Button color="primary">Sign in</Button>
+</HeaderDesktopActions>
 ```
 
 ##### HeaderNav API
@@ -292,6 +306,8 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 ```twig
 <HeaderDialogCloseButton dialogId="my-header-dialog" />
 ```
+
+#### API
 
 | Name            | Type     | Default | Required | Description                     |
 | --------------- | -------- | ------- | -------- | ------------------------------- |
