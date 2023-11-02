@@ -221,6 +221,19 @@ modifiers in the camelCase format: `Dropdown--top`, `Dropdown--rightTop`, `Dropd
 Current class combinations (`Dropdown--top.Dropdown--left`, `.Dropdown--top.Dropdown--right`,
 `.Dropdown--bottom.Dropdown--left`, `.Dropdown--bottom.Dropdown--right`) will be removed in the next major release.
 
+## Feature Flag: Enhanced Shadow
+
+The enhanced shadow feature is disabled by default. To enable it, either set the `$dropdown-enable-enhanced-shadow`
+feature flag to `true` or use the `spirit-dropdown-enable-enhanced-shadow` CSS class on any parent of the dropdown.
+
+For more info, see main [README][readme-feature-flags].
+
+### ⚠️ DEPRECATION NOTICE
+
+The enhanced shadow will replace current shadow in the next major release.
+
+[What are deprecations?][readme-deprecations]
+
 ## JavaScript
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.DropdownWrapper` class.
@@ -279,3 +292,5 @@ dropdown.hide();
 ```
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
