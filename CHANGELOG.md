@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.0"></a>
+
+# [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.4.0...@lmc-eu/spirit-web-twig@2.5.0) (2023-11-02)
+
+### Features
+
+- **web-twig:** Attachment image preview object fit [#DS-1005](https://github.com/lmc-eu/spirit-design-system/issues/DS-1005) ([e54e840](https://github.com/lmc-eu/spirit-design-system/commit/e54e840))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.4.0"></a>
 
 # [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.3.1...@lmc-eu/spirit-web-twig@2.4.0) (2023-10-25)
