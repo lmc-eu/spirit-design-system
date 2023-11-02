@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.6"></a>
+
+## [1.7.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.5...@lmc-eu/spirit-exporters-scss@1.7.6) (2023-11-02)
+
+### Bug Fixes
+
+- **exporter-scss:** Allow negative numbers in unit printer ([9ff78de](https://github.com/lmc-eu/spirit-design-system/commit/9ff78de))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.7.5"></a>
 
 ## [1.7.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.4...@lmc-eu/spirit-exporters-scss@1.7.5) (2023-10-25)

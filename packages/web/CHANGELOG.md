@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.4.0"></a>
+
+# [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.3.0...@lmc-eu/spirit-web@1.4.0) (2023-11-02)
+
+### Bug Fixes
+
+- **web:** Increase image quality of FileUploader image preview ([ccbd6c0](https://github.com/lmc-eu/spirit-design-system/commit/ccbd6c0)), closes [#DS-1039](https://github.com/lmc-eu/spirit-design-system/issues/DS-1039)
+- **web:** Recalculate FileUploader image preview by crop values ([1d9ed7d](https://github.com/lmc-eu/spirit-design-system/commit/1d9ed7d)), closes [#DS-1038](https://github.com/lmc-eu/spirit-design-system/issues/DS-1038)
+
+### Features
+
+- **web:** Attachment image preview object fit [#DS-1005](https://github.com/lmc-eu/spirit-design-system/issues/DS-1005) ([90ecd0e](https://github.com/lmc-eu/spirit-design-system/commit/90ecd0e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.2.2...@lmc-eu/spirit-web@1.3.0) (2023-10-25)

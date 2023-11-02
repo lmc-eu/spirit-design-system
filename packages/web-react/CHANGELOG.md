@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+
+# [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.5.0...@lmc-eu/spirit-web-react@1.6.0) (2023-11-02)
+
+### Bug Fixes
+
+- **web-react:** Increase image quality of FileUploader image preview ([52b9538](https://github.com/lmc-eu/spirit-design-system/commit/52b9538)), closes [#DS-1039](https://github.com/lmc-eu/spirit-design-system/issues/DS-1039)
+- **web-react:** Recalculate FileUploader image preview by crop values ([92ffd4b](https://github.com/lmc-eu/spirit-design-system/commit/92ffd4b)), closes [#DS-1038](https://github.com/lmc-eu/spirit-design-system/issues/DS-1038)
+
+### Features
+
+- **web-react:** Attachment image preview object fit [#DS-1005](https://github.com/lmc-eu/spirit-design-system/issues/DS-1005) ([79aa88b](https://github.com/lmc-eu/spirit-design-system/commit/79aa88b))
+- **web-react:** Use the new Placement dictionary in `Dropdown` [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923) ([e07eb5a](https://github.com/lmc-eu/spirit-design-system/commit/e07eb5a))
+- **web-react:** Use the new Placement dictionary in `Tooltip` [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923) ([4ff2bda](https://github.com/lmc-eu/spirit-design-system/commit/4ff2bda))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.5.0"></a>
 
 # [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.4.0...@lmc-eu/spirit-web-react@1.5.0) (2023-10-25)
