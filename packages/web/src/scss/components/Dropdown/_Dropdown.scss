@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use '../../settings/feature-flags';
 @use '../../tools/breakpoint';
 @use '../../tools/dictionaries';
 @use '../../tools/placement';
@@ -12,7 +13,14 @@
     padding: theme.$padding;
     border-radius: theme.$border-radius;
     background-color: theme.$background;
-    box-shadow: theme.$shadow;
+
+    // @deprecated The feature flag will be removed in the next major version.
+    // Migration: delete this feature flag and make the enhanced shadow the default.
+    @if feature-flags.$dropdown-enable-enhanced-shadow {
+        box-shadow: theme.$shadow-enhanced;
+    } @else {
+        box-shadow: theme.$shadow;
+    }
 
     &[data-spirit-fullwidthmode='mobile-only'] {
         @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
@@ -23,6 +31,12 @@
     &[data-spirit-fullwidthmode='all'] {
         width: 100%;
     }
+}
+
+// @deprecated The feature flag will be removed in the next major version.
+// Migration: delete this feature flag and make the enhanced shadow the default.
+.spirit-feature-dropdown-enable-enhanced-shadow .Dropdown {
+    box-shadow: theme.$shadow-enhanced;
 }
 
 .Dropdown.is-open {
