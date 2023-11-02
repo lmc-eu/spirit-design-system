@@ -13,6 +13,7 @@ import DropdownDisabledAutoclose from './DropdownDisabledAutoclose';
 import DropdownLongerContent from './DropdownLongerContent';
 import DropdownFullwidthAll from './DropdownFullwidthAll';
 import DropdownFullwidthMobileOnly from './DropdownFullwidthMobileOnly';
+import DropdownEnhancedShadow from './DropdownEnhancedShadow';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -34,6 +35,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Full-width mode 'mobile-only'">
         <DropdownFullwidthMobileOnly />
+      </DocsSection>
+      <DocsSection title="Feature Flag: Enhanced Shadow">
+        <DropdownEnhancedShadow />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
