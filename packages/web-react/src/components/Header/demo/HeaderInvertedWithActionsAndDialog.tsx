@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Button } from '../../Button';
+import { Icon } from '../../Icon';
 import { Link } from '../../Link';
+import { VisuallyHidden } from '../../VisuallyHidden';
 import {
   Header,
   HeaderButton,
@@ -56,18 +59,18 @@ const HeaderInvertedWithActionsAndDialog = () => {
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
-        <HeaderDesktopActions color="secondary" aria-label="User area">
-          <HeaderNav>
-            <HeaderNavItem>
-              <HeaderButton
-                onClick={handleUserMenuOpen}
-                aria-controls="header_dialog_example_2"
-                aria-expanded={isUserMenuOpen}
-              >
-                Marian
-              </HeaderButton>
-            </HeaderNavItem>
-          </HeaderNav>
+        <HeaderDesktopActions color="secondary">
+          <HeaderButton
+            onClick={handleUserMenuOpen}
+            aria-controls="header_dialog_example_2"
+            aria-expanded={isUserMenuOpen}
+          >
+            Marian
+          </HeaderButton>
+          <Button color="inverted" isSquare>
+            <Icon name="search" />
+            <VisuallyHidden>Search</VisuallyHidden>
+          </Button>
         </HeaderDesktopActions>
       </Header>
       <HeaderDialog id="header_dialog_example_1" aria-label="Menu" isOpen={isMenuOpen} onClose={handleMenuClose}>
