@@ -1,3 +1,5 @@
+// 1. Stretch over the entire height of the header.
+
 @use '../../tools/reset';
 @use 'theme';
 @use 'tools';
@@ -13,6 +15,8 @@
     --header-link-decoration-height: #{theme.$header-link-current-border-thickness};
     --header-link-decoration-scale-x: 1;
     --header-link-decoration-transform-origin: bottom center;
+
+    align-self: stretch; // 1.
 }
 
 .HeaderLink--current {

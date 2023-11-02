@@ -7,7 +7,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%;
     padding: var(--header-link-padding-y, #{theme.$header-link-padding-y})
         var(--header-link-padding-x, #{theme.$header-link-padding-x});
     color: theme.$header-link-color;

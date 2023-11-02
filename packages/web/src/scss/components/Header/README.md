@@ -149,9 +149,11 @@ and `aria-controls` attributes.
 
 ### Desktop-Only Actions
 
-As the name suggests, desktop-only actions are intended to display on desktop
-screens only. There are two slots you can use: primary actions (aligned to
-left in LTR documents), and secondary actions (aligned to right).
+As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
+containers that define vertical alignment and spacing.
+
+There are two slots you can use: primary actions (aligned to left in LTR documents), and secondary actions (aligned to
+right).
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
@@ -207,6 +209,18 @@ Both links and buttons are supported by `HeaderLink` class:
     <button type="button" class="HeaderLink">Button item</button>
   </li>
 </ul>
+```
+
+#### Other Content
+
+You can avoid using the [HeaderNav](#navigation) for standalone links. That way, you can combine links and buttons in
+the same container:
+
+```html
+<nav class="HeaderDesktopActions HeaderDesktopActions--secondary">
+  <a href="#" class="HeaderLink">Marian</a>
+  <a href="#" class="Button Button--primary Button--medium">Sign in</a>
+</nav>
 ```
 
 ## Header Dialog
