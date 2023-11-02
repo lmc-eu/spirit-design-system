@@ -4,398 +4,531 @@ The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
 your specific design goals.
 
-The Header and HeaderDialog are a composition of several subcomponents:
+The Header is a composition of several subcomponents:
+
+- [Header](#minimal-header)
+  - [HeaderMobileActions](#mobile-only-actions)
+  - [HeaderDesktopActions](#desktop-only-actions)
+    - [HeaderNav](#navigation)
+      - [HeaderNavItem](#navigation)
+        - [HeaderLink](#navigation)
+- [HeaderDialog](#header-dialog)
+  - [HeaderDialogCloseButton](#close-button)
+  - [HeaderDialogActions](#primary-and-secondary-actions)
+    - [HeaderDialogNav](#navigation-1)
+      - [HeaderDialogNavItem](#navigation-1)
+        - [HeaderDialogLink](#navigation-1)
+        - [HeaderDialogText](#navigation-1)
+
+## Accessibility Guidelines
+
+👉 The animation effect of this component is dependent on the
+`prefers-reduced-motion` media query.
+
+🌍 Although we don't need it yet, this component experimentally supports RTL
+languages (because just a single line had to be added to make it all work 🎉).
+
+## Minimal Header
+
+Without any modifier, Header is ready to contain necessary blocks in a classic
+left-to-right layout (in LTR documents). Please note it is fully transparent
+unless you specify a color variant.
 
 ```jsx
-<Header />
-  <HeaderMobileActions />
-  <HeaderDesktopActions />
-    <HeaderNav />
-      <HeaderNavItem />
-        <HeaderLink />
-<HeaderDialog />
-  <HeaderDialogCloseButton />
-  <HeaderDialogActions />
-    <HeaderDialogNav />
-      <HeaderDialogNavItem />
-        <HeaderDialogButton />
-        <HeaderDialogLink />
-        <HeaderDialogText />
-```
-
-## Minimal inverted Header
-
-```jsx
-<Header color="inverted">
-  <Link href="#" aria-label="Company homepage">
-    <img src="…" alt="Company" />
+<Header>
+  <Link href="/">
+    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
   </Link>
 </Header>
 ```
 
-## Header Actions
+## Color Variants
+
+Currently, Header comes in two color variants: **transparent** (for dark
+backgrounds) and **inverted** (for light backgrounds). Use the `color` property
+to apply the desired background color to Header.
+
+```jsx
+<Header color="inverted">
+  <Link href="/">
+    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+  </Link>
+</Header>
+```
+
+## Simple Header
+
+The `isSimple` modifier makes the header bar slightly shorter and aligns its
+content to the center. Use this design variant when all you need on the page is
+just branding.
+
+```jsx
+<Header isSimple>
+  <a href="/">
+    <img src="https://www.example.com/logo.png" width="65" height="24" alt="Spirit" />
+  </a>
+</Header>
+```
+
+## API
+
+| Name               | Type                          | Default       | Required | Description                         |
+| ------------------ | ----------------------------- | ------------- | -------- | ----------------------------------- |
+| `children`         | `ReactNode`                   | —             | ✕        | Children node                       |
+| `color`            | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
+| `isSimple`         | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
+| `UNSAFE_className` | `string`                      | —             | ✕        | Custom class name                   |
+| `UNSAFE_style`     | `CSSProperties`               | —             | ✕        | Custom style                        |
+
+The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+## Supported Content
+
+To create a responsive header with top-level navigation, there are the following
+building blocks to use:
+
+1. Inside Header:
+   1. mobile-only actions, including toggle button by default,
+   2. desktop-only actions with primary and secondary action slots.
+2. Inside Header Dialog:
+   1. primary actions slot (all breakpoints),
+   2. secondary actions slot (all breakpoints).
+
+## Header
+
+### Mobile-Only Actions
+
+Slot for actions that are intended to display on mobile and tablet screens only.
+It holds the toggle button by default, but you can add as many custom elements
+as the free space in Header allows.
+
+```jsx
+<HeaderMobileActions dialogId="my-header-dialog" />
+```
+
+Toggle button is already part of the mobile actions component. It is linked to
+the [Header Dialog](#header-dialog) via the `dialogId` prop.
+
+#### Custom Mobile Actions
+
+You can place any custom content into the mobile actions component:
+
+```jsx
+<HeaderMobileActions dialogId="my-header-dialog">{/* Mobile-only actions */}</HeaderMobileActions>
+```
+
+#### API
+
+| Name               | Type                                           | Default | Required | Description                     |
+| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `children`         | `ReactNode`                                    | —       | ✕        | Children node                   |
+| `dialogId`         | `string`                                       | —       | ✔        | ID of the linked HeaderDialog   |
+| `isOpen`           | `bool`                                         | `false` | ✔        | Dialog open state               |
+| `menuToggleLabel`  | `string`                                       | `Menu`  | ✕        | Label of the menu toggle button |
+| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened |
+| `UNSAFE_className` | `string`                                       | —       | ✕        | Custom class name               |
+| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Custom style                    |
+
+The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+### Desktop-Only Actions
+
+As the name suggests, desktop-only actions are intended to display only on
+desktop screens. There are two slots to use: primary actions (aligned to the
+left in LTR documents) and secondary actions (aligned to the right).
+
+👉 It is critical to **make sure all your actions fit the Header on the
+desktop breakpoint**. Spirit intentionally does not provide any overflow
+control here.
+
+```jsx
+<HeaderDesktopActions aria-label="Main navigation">
+  {/* Desktop-only primary actions */}
+</HeaderDesktopActions>
+<HeaderDesktopActions color="secondary">
+  {/* Desktop-only secondary actions */}
+</HeaderDesktopActions>
+```
+
+#### API
+
+| Name               | Type                       | Default   | Required | Description                 |
+| ------------------ | -------------------------- | --------- | -------- | --------------------------- |
+| `children`         | `ReactNode`                | —         | ✕        | Children node               |
+| `color`            | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
+| `UNSAFE_className` | `string`                   | —         | ✕        | Custom class name           |
+| `UNSAFE_style`     | `CSSProperties`            | —         | ✕        | Custom style                |
+
+The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+#### Navigation
+
+Navigation is designed to live in either of the action slots.
+
+👉 As of now, only single-level navigation is supported. You may consider
+using the [Header Dialog](#header-dialog) for other use cases such as the user
+menu.
+
+```jsx
+<HeaderNav>
+  <HeaderNavItem>
+    <HeaderLink href="/" isCurrent>
+      Job offers
+    </HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Part-time jobs</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Inspiration</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Replies</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderLink href="/">Employers</HeaderLink>
+  </HeaderNavItem>
+</HeaderNav>
+```
+
+Both links and buttons are supported:
+
+```jsx
+<HeaderNav>
+  <HeaderNavItem>
+    <HeaderLink href="/">Link item</HeaderLink>
+  </HeaderNavItem>
+  <HeaderNavItem>
+    <HeaderButton>Button item</HeaderButton>
+  </HeaderNavItem>
+</HeaderNav>
+```
+
+##### HeaderNav API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<ul>`][mdn-ul-element] element.
+
+##### HeaderNavItem API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<li>`][mdn-li-element] element.
+
+##### HeaderLink API
+
+| Name               | Type            | Default | Required | Description          |
+| ------------------ | --------------- | ------- | -------- | -------------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node        |
+| `isCurrent`        | `bool`          | `false` | ✕        | Mark link as current |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name    |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style         |
+
+The component further inherits properties from the [`<a>`][mdn-a-element] element.
+
+##### HeaderButton API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<button>`][mdn-button-element] element.
+
+## Header Dialog
+
+Header Dialog is Spirit's solution for responsive navigation and selected use
+cases such as the user menu. Please note Header Dialog is not intended to be
+used for second-level navigation in general.
 
 ```jsx
 const [isOpen, setOpen] = useState(false);
 
+<HeaderDialog id="my-header-dialog" isOpen={isOpen} onClose={() => setOpen(false)}>
+  {/* Close button with primary and secondary actions */}
+</HeaderDialog>;
+```
+
+### API
+
+| Name               | Type                                           | Default | Required | Description                            |
+| ------------------ | ---------------------------------------------- | ------- | -------- | -------------------------------------- |
+| `children`         | `ReactNode`                                    | —       | ✕        | Children node                          |
+| `id`               | `string`                                       | —       | ✔        | ID to be linked in HeaderMobileActions |
+| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                             |
+| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed        |
+| `UNSAFE_className` | `string`                                       | —       | ✕        | HeaderDialog custom class name         |
+| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderDialog custom style              |
+
+The component further inherits properties from the [`<dialog>`][mdn-dialog-element] element.
+
+### Close Button
+
+HeaderDialogCloseButton contains all necessary handles to control parent dialog.
+
+```jsx
+<HeaderDialogCloseButton />
+```
+
+#### API
+
+| Name               | Type            | Default | Required | Description                     |
+| ------------------ | --------------- | ------- | -------- | ------------------------------- |
+| `label`            | `string`        | `Close` | ✕        | Label of the menu toggle button |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name               |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style                    |
+
+The component further inherits properties from the [`<button>`][mdn-button-element] element.
+
+### Primary and Secondary Actions
+
+There are two slots for actions inside Header Dialog: primary actions slot and
+the optional secondary actions slot.
+
+```jsx
+<HeaderDialogActions aria-label="Main navigation">
+  {/* Primary actions */}
+</HeaderDialogActions>
+<HeaderDialogActions color="secondary">
+  {/* Secondary actions */}
+</HeaderDialogActions>
+```
+
+#### API
+
+| Name               | Type                       | Default   | Required | Description       |
+| ------------------ | -------------------------- | --------- | -------- | ----------------- |
+| `children`         | `ReactNode`                | —         | ✕        | Children node     |
+| `color`            | [`primary` \| `secondary`] | `primary` | ✕        | Color variant     |
+| `UNSAFE_className` | `string`                   | —         | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties`            | —         | ✕        | Custom style      |
+
+The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+#### Navigation
+
+Navigation capabilities are very similar to those of Header. All principles
+apply here as well, with the only difference in component names starting with
+`HeaderDialog` instead of `Header`.
+
+```jsx
+<HeaderDialogNav>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/" isCurrent>
+      Job offers
+    </HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+  </HeaderDialogNavItem>
+</HeaderDialogNav>
+```
+
+Navigation items can be links, buttons, or just text:
+
+```jsx
+<HeaderDialogNav>
+  <HeaderDialogNavItem>
+    <HeaderDialogLink href="/">Link item</HeaderDialogLink>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogButton>Button item</HeaderDialogButton>
+  </HeaderDialogNavItem>
+  <HeaderDialogNavItem>
+    <HeaderDialogText>Text item</HeaderDialogText>
+  </HeaderDialogNavItem>
+</HeaderDialogNav>
+```
+
+##### HeaderDialogNav API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<ul>`][mdn-ul-element] element.
+
+##### HeaderDialogNavItem API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<li>`][mdn-li-element] element.
+
+##### HeaderDialogLink API
+
+| Name               | Type            | Default | Required | Description          |
+| ------------------ | --------------- | ------- | -------- | -------------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node        |
+| `isCurrent`        | `bool`          | `false` | ✕        | Mark link as current |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name    |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style         |
+
+The component further inherits properties from the [`<a>`][mdn-a-element] element.
+
+##### HeaderDialogButton API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component further inherits properties from the [`<button>`][mdn-button-element] element.
+
+##### HeaderDialogText API
+
+| Name               | Type            | Default | Required | Description       |
+| ------------------ | --------------- | ------- | -------- | ----------------- |
+| `children`         | `ReactNode`     | —       | ✕        | Children node     |
+| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+
+The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+## Composition
+
+This is how all supported building blocks of the Header build up the complete
+composition:
+
+```jsx
+<Header color="inverted">
+  {/* Branding */}
+  <HeaderMobileActions dialogId="header_dialog_example" isOpen={isOpen} onOpen={handleOpen}>
+    {/* Optional mobile-only actions */}
+  </HeaderMobileActions>
+  <HeaderDesktopActions aria-label="Navigation">
+    {/* Desktop-only primary actions */}
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderLink href="/">Job offers</HeaderLink>
+      </HeaderNavItem>
+      {/* … */}
+    </HeaderNav>
+  </HeaderDesktopActions>
+  <HeaderDesktopActions color="secondary">{/* Desktop-only secondary actions */}</HeaderDesktopActions>
+</Header>
+```
+
+And the complete Header Dialog:
+
+```jsx
+<HeaderDialog id="header_dialog_example" aria-label="Menu" isOpen={isOpen} onClose={handleClose}>
+  <HeaderDialogCloseButton />
+  <HeaderDialogActions>
+    <HeaderDialogNav>
+      {/* Primary actions */}
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Job offers</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      {/* … */}
+    </HeaderDialogNav>
+  </HeaderDialogActions>
+  <HeaderDialogActions color="secondary">{/* Secondary actions */}</HeaderDialogActions>
+</HeaderDialog>
+```
+
+<details>
+  <summary>Show full example code of Header with responsive navigation</summary>
+
+```jsx
+const [isOpen, setOpen] = React.useState(false);
+
 const handleOpen = () => setOpen(true);
 const handleClose = () => setOpen(false);
 
-// Header
 <Header color="inverted">
-  <Link href="#" aria-label="Company homepage">
-    <img src="…" alt="Company" />
+  <Link href="/" aria-label="Spirit homepage">
+    <img src="…" width="65" height="24" alt="Spirit" />
   </Link>
-  <HeaderMobileActions dialogId="header_dialog_example" isOpen={isOpen} onOpen={handleOpen} />
-  <HeaderDesktopActions color="primary" aria-label="Navigation">
+  <HeaderMobileActions dialogId="my-menu" isOpen={isOpen} onOpen={handleOpen} />
+  <HeaderDesktopActions aria-label="Navigation">
     <HeaderNav>
       <HeaderNavItem>
-        <HeaderLink href="…" isCurrent>Current menu link</HeaderLink>
+        <HeaderLink href="/" isCurrent>Job offers</HeaderLink>
       </HeaderNavItem>
       <HeaderNavItem>
-        <HeaderLink href="…">Menu link</HeaderLink>
+        <HeaderLink href="/">Part-time jobs</HeaderLink>
       </HeaderNavItem>
-      …
+      <HeaderNavItem>
+        <HeaderLink href="/">Inspiration</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Replies</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/">Employers</HeaderLink>
+      </HeaderNavItem>
     </HeaderNav>
   </HeaderDesktopActions>
   <HeaderDesktopActions color="secondary">
-    <Button color="primary">Primary button</Button>
-    <Button color="inverted">Inverted button</Button>
-    …
+    <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
   </HeaderDesktopActions>
 </Header>
-// HeaderDialog
+
 <HeaderDialog
-  id="header_dialog_example"
+  id="my-menu"
   aria-label="Menu"
   isOpen={isOpen}
   onClose={handleClose}
 >
   <HeaderDialogCloseButton />
-  <HeaderDialogActions color="primary" aria-label="Main navigation">
+  <HeaderDialogActions aria-label="Main navigation">
     <HeaderDialogNav>
       <HeaderDialogNavItem>
-        <HeaderDialogLink href="…" isCurrent>Current menu link</HeaderDialogLink>
+        <HeaderDialogLink href="/" isCurrent>Job offers</HeaderDialogLink>
       </HeaderDialogNavItem>
       <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Menu link</HeaderDialogLink>
+        <HeaderDialogLink href="/">Part-time jobs</HeaderDialogLink>
       </HeaderDialogNavItem>
-      …
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Inspiration</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Replies</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="/">Employers</HeaderDialogLink>
+      </HeaderDialogNavItem>
     </HeaderDialogNav>
   </HeaderDialogActions>
   <HeaderDialogActions color="secondary">
-    <Button color="primary">Primary button</Button>
-    <Button color="inverted">Inverted button</Button>
-    …
+    <ButtonLink color="primary" href="/">Sign in</ButtonLink>
+    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
   </HeaderDialogActions>
 </HeaderDialog>
 ```
 
-## Header Actions and Header Dialog
-
-```jsx
-const [isMenuOpen, setMenuOpen] = useState(false);
-const [isUserMenuOpen, setUserMenuOpen] = useState(false);
-
-const handleMenuOpen = () => setMenuOpen(true);
-const handleMenuClose = () => setMenuOpen(false);
-const handleUserMenuOpen = () => setUserMenuOpen(true);
-const handleUserMenuClose = () => setUserMenuOpen(false);
-
-// Header
-<Header color="inverted">
-  <Link href="/">
-    <SpiritLogo />
-  </Link>
-  <HeaderMobileActions dialogId="header_dialog_example_1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
-  <HeaderDesktopActions color="primary" aria-label="Main navigation">
-    <HeaderNav>
-      <HeaderNavItem>
-        <HeaderLink href="…" isCurrent>Current menu link</HeaderLink>
-      </HeaderNavItem>
-      <HeaderNavItem>
-        <HeaderLink href="…">Menu link</HeaderLink>
-      </HeaderNavItem>
-      …
-    </HeaderNav>
-  </HeaderDesktopActions>
-  <HeaderDesktopActions color="secondary" aria-label="User area">
-    <HeaderNav>
-      <HeaderNavItem>
-        <HeaderDialogButton
-          onClick={handleUserMenuOpen}
-          aria-controls="header_dialog_example_2"
-          aria-expanded={isUserMenuOpen}
-        >
-          Marian
-        </HeaderDialogButton>
-      </HeaderNavItem>
-    </HeaderNav>
-  </HeaderDesktopActions>
-</Header>
-// HeaderDialog #1
-<HeaderDialog
-  id="header_dialog_example_1"
-  aria-label="Menu"
-  isOpen={isMenuOpen}
-  onClose={handleMenuClose}
->
-  <HeaderDialogCloseButton />
-  <HeaderDialogActions color="primary" aria-label="Main navigation">
-    <HeaderDialogNav>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…" isCurrent>Current menu link</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Menu link</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      …
-    </HeaderDialogNav>
-  </HeaderDialogActions>
-  <HeaderDialogActions color="secondary" aria-label="Menu">
-    <HeaderDialogNav>
-      <HeaderDialogNavItem>
-        <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
-      </HeaderDialogNavItem>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Dashboard</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Profile</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      …
-      <HeaderDialogNavItem>
-        <HeaderDialogButton>Sign out</HeaderDialogButton>
-      </HeaderDialogNavItem>
-    </HeaderDialogNav>
-  </HeaderDialogActions>
-</HeaderDialog>
-// HeaderDialog #2
-<HeaderDialog
-  id="header_dialog_example_2"
-  aria-label="User menu"
-  isOpen={isUserMenuOpen}
-  onClose={handleUserMenuClose}
->
-  <HeaderDialogCloseButton />
-  <HeaderDialogActions color="primary" aria-label="User menu">
-    <HeaderDialogNav>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Dashboard</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      <HeaderDialogNavItem>
-        <HeaderDialogLink href="…">Profile</HeaderDialogLink>
-      </HeaderDialogNavItem>
-      …
-      <HeaderDialogNavItem>
-        <HeaderDialogButton>Sign out</HeaderDialogButton>
-      </HeaderDialogNavItem>
-    </HeaderDialogNav>
-  </HeaderDialogActions>
-</HeaderDialog>
-```
-
-## Header
-
-### API
-
-| Name               | Type                          | Default | Required | Description                |
-| ------------------ | ----------------------------- | ------- | -------- | -------------------------- |
-| `children`         | `ReactNode`                   | —       | ✕        | Children node              |
-| `color`            | [`inverted` \| `transparent`] | —       | ✕        | Header background color    |
-| `isSimple`         | `bool`                        | —       | ✕        | If header should be simple |
-| `UNSAFE_className` | `string`                      | —       | ✕        | Header custom class name   |
-| `UNSAFE_style`     | `CSSProperties`               | —       | ✕        | Header custom style        |
-
-The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
-
-## HeaderButton
-
-### API
-
-| Name               | Type            | Default | Required | Description                    |
-| ------------------ | --------------- | ------- | -------- | ------------------------------ |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                  |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderButton custom style      |
-
-The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
-
-## HeaderDesktopActions
-
-### API
-
-| Name               | Type                       | Default | Required | Description                            |
-| ------------------ | -------------------------- | ------- | -------- | -------------------------------------- |
-| `children`         | `ReactNode`                | —       | ✕        | Children node                          |
-| `color`            | [`primary` \| `secondary`] | —       | ✕        | HeaderDesktopActions background color  |
-| `UNSAFE_className` | `string`                   | —       | ✕        | HeaderDesktopActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`            | —       | ✕        | HeaderDesktopActions custom style      |
-
-The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
-
-## HeaderDialog
-
-### API
-
-| Name               | Type                                           | Default | Required | Description                     |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`                                    | —       | ✕        | Children node                   |
-| `id`               | `string`                                       | —       | ✔        | Dialog ID                       |
-| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                      |
-| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | HeaderDialog custom class name  |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderDialog custom style       |
-
-The rest of the properties are based on the type of `<dialog>`. [Docs][DialogElementDocs]
-
-## HeaderDialogActions
-
-### API
-
-| Name               | Type                       | Default | Required | Description                           |
-| ------------------ | -------------------------- | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`                | —       | ✕        | Children node                         |
-| `color`            | [`primary` \| `secondary`] | —       | ✕        | HeaderDialogActions background color  |
-| `UNSAFE_className` | `string`                   | —       | ✕        | HeaderDialogActions custom class name |
-| `UNSAFE_style`     | `CSSProperties`            | —       | ✕        | HeaderDialogActions custom style      |
-
-The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
-
-## HeaderDialogButton
-
-### API
-
-| Name               | Type            | Default | Required | Description                          |
-| ------------------ | --------------- | ------- | -------- | ------------------------------------ |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                        |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogButton custom style      |
-
-The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
-
-## HeaderDialogCloseButton
-
-HeaderDialogCloseButton already contains handles for closing and the state of the open dialog.
-
-### API
-
-| Name               | Type            | Default | Required | Description                               |
-| ------------------ | --------------- | ------- | -------- | ----------------------------------------- |
-| `label`            | `string`        | `Close` | ✕        | Button label                              |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogCloseButton custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogCloseButton custom style      |
-
-The rest of the properties are based on the type of `<button>`. [Docs][HTMLButtonDocs]
-
-## HeaderDialogLink
-
-### API
-
-| Name               | Type            | Default | Required | Description                        |
-| ------------------ | --------------- | ------- | -------- | ---------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                      |
-| `isCurrent`        | `bool`          | —       | ✕        | When link should be current page   |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogLink custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogLink custom style      |
-
-The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
-
-## HeaderDialogNav
-
-### API
-
-| Name               | Type            | Default | Required | Description                       |
-| ------------------ | --------------- | ------- | -------- | --------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                     |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogNav custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogNav custom style      |
-
-The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
-
-## HeaderDialogNavItem
-
-### API
-
-| Name               | Type            | Default | Required | Description                           |
-| ------------------ | --------------- | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                         |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogNavItem custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogNavItem custom style      |
-
-The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
-
-## HeaderDialogText
-
-### API
-
-| Name               | Type            | Default | Required | Description                        |
-| ------------------ | --------------- | ------- | -------- | ---------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                      |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderDialogText custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderDialogText custom style      |
-
-The rest of the properties are based on the type of `<span>`. [Docs][DialogSpanDocs]
-
-## HeaderLink
-
-### API
-
-| Name               | Type            | Default | Required | Description                      |
-| ------------------ | --------------- | ------- | -------- | -------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                    |
-| `isCurrent`        | `bool`          | —       | ✕        | When link should be current page |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderLink custom style          |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderLink custom class name     |
-
-The rest of the properties are based on the type of `<a>`. [Docs][DialogAnchorDocs]
-
-## HeaderMobileActions
-
-### API
-
-| Name               | Type                                           | Default | Required | Description                           |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------------- |
-| `children`         | `ReactNode`                                    | —       | ✕        | Children node                         |
-| `dialogId`         | `string`                                       | —       | ✕        | ID of dialog element                  |
-| `isOpen`           | `bool`                                         | `false` | ✔        | Dialog open state                     |
-| `menuToggleLabel`  | `string`                                       | —       | `Menu`   | Label for button toggle               |
-| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened       |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderMobileActions custom style      |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | HeaderMobileActions custom class name |
-
-The rest of the properties are based on the type of `HTMLElement`. [Docs][HTMLElementDocs]
-
-## HeaderNav
-
-### API
-
-| Name               | Type            | Default | Required | Description                 |
-| ------------------ | --------------- | ------- | -------- | --------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node               |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderNav custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderNav custom style      |
-
-The rest of the properties are based on the type of `<ul>`. [Docs][DialogUListDocs]
-
-## HeaderNavItem
-
-### API
-
-| Name               | Type            | Default | Required | Description                     |
-| ------------------ | --------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                   |
-| `UNSAFE_className` | `string`        | —       | ✕        | HeaderNavItem custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | HeaderNavItem custom style      |
-
-The rest of the properties are based on the type of `<li>`. [Docs][DialogListItemDocs]
-
-For detailed information see the [Header](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md) component
-
-[HTMLElementDocs]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
-[HTMLButtonDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-[DialogElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-[DialogAnchorDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
-[DialogUListDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
-[DialogListItemDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
-[DialogSpanDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
+</details>
+
+[mdn-a-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+[mdn-api-html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+[mdn-button-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+[mdn-dialog-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[mdn-li-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+[mdn-ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
