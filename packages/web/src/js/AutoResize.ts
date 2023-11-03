@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
-import { enableToggleAutoloader } from './utils';
+import { SpiritConfig, enableToggleAutoloader } from './utils';
 
 const NAME = 'autoResize';
 const RESIZE_EVENT = 'resize';
@@ -17,8 +17,8 @@ class AutoResize extends BaseComponent {
     return `${this.NAME}`;
   }
 
-  constructor(element: HTMLElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
     this.input = SelectorEngine.findOne('textarea', this.element) as HTMLTextAreaElement;
 
     this.init();

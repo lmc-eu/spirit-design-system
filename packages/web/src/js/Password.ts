@@ -1,6 +1,6 @@
-import SelectorEngine from './dom/SelectorEngine';
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
+import SelectorEngine from './dom/SelectorEngine';
+import { enableToggleTrigger, SpiritConfig } from './utils';
 
 const NAME = 'password';
 const PASSWORD_ARIA_PRESSED = 'aria-pressed';
@@ -14,8 +14,8 @@ class Password extends BaseComponent {
     return NAME;
   }
 
-  constructor(element: HTMLElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
 
     this.isShown = false;
   }

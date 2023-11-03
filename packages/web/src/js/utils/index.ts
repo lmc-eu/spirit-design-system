@@ -10,6 +10,8 @@ const reflow = (element: HTMLElement): void => {
 };
 
 export * from './ComponentFunctions';
+export * from './Config';
+export { default as Config } from './Config';
 export * from './Debounce';
 export * from './Deprecations';
 export * from './Elements';

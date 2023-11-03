@@ -1,7 +1,7 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleTrigger, clickOutsideElement } from './utils';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
+import { clickOutsideElement, enableToggleTrigger, SpiritConfig } from './utils';
 
 interface DropdownStateProps {
   open: boolean;
@@ -30,8 +30,8 @@ class Dropdown extends BaseComponent {
   state: DropdownStateProps;
   options: DropdownOptionsProps;
 
-  constructor(element: SpiritElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
     this.target = SelectorEngine.findOne(`${this.element.dataset.spiritTarget}`);
     this.reference = this.findReferenceElement();
     this.state = {

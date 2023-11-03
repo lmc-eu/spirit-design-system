@@ -1,8 +1,7 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger } from './utils/ComponentFunctions';
-import { getElementFromSelector } from './utils/index';
+import { SpiritConfig, enableToggleTrigger, getElementFromSelector } from './utils';
 
 const NAME = 'tabs';
 const DATA_KEY = 'tabs';
@@ -24,8 +23,8 @@ const SELECTOR_INNER_ELEM = `${SELECTOR_INNER}, ${SELECTOR_DATA_TOGGLE}`;
 class Tabs extends BaseComponent {
   parent: HTMLElement;
 
-  constructor(element: HTMLElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
     this.parent = (this.element as Element).closest(SELECTOR_TAB_PANEL) as HTMLElement;
 
     if (!this.parent) {
