@@ -1,7 +1,7 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger, enableDismissTrigger } from './utils/ComponentFunctions';
+import { enableDismissTrigger, enableToggleTrigger, SpiritConfig } from './utils';
 
 const NAME = 'tooltip';
 const DATA_KEY = 'tooltip';
@@ -18,8 +18,8 @@ const CLASS_NAME_HIDDEN = 'is-hidden';
 class Tooltip extends BaseComponent {
   tip: HTMLElement;
 
-  constructor(element: SpiritElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
 
     this.tip = this.getTipElement();
   }
