@@ -17,9 +17,10 @@
   "types": "js/index.d.ts",
   "scripts": {
     "icons:build": "shx mkdir -p public/icons && cd ../icons && yarn build && shx cp -r dist/. ../web/public/icons",
+    "design-tokens:build": "cd ../design-tokens && yarn build",
     "prestart": "yarn icons:build",
     "start": "vite --host",
-    "preexamples:build": "yarn icons:build",
+    "preexamples:build": "npm-run-all icons:build design-tokens:build",
     "examples:build": "vite build",
     "examples:build:gh": "yarn examples:build --base=/spirit-design-system/",
     "examples:preview": "vite preview",
