@@ -6,7 +6,7 @@ import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
-const TooltipCloseButton = ({ label = 'Close', onClick, ...restProps }: TooltipCloseButtonProps) => {
+export const TooltipCloseButton = ({ label = 'Close', onClick, ...restProps }: TooltipCloseButtonProps) => {
   const { classProps, props: modifiedProps } = useTooltipStyleProps({ ...restProps });
   const { styleProps } = useStyleProps({ ...modifiedProps });
 

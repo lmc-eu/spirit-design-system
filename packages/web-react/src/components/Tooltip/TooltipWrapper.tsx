@@ -1,10 +1,10 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { TooltipWrapperProps } from '../../types';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
-const TooltipWrapper = ({ children, ...restProps }: TooltipWrapperProps) => {
+export const TooltipWrapper = ({ children, ...restProps }: TooltipWrapperProps) => {
   const { classProps, props: modifiedProps } = useTooltipStyleProps({ ...restProps });
   const { styleProps } = useStyleProps({ ...modifiedProps });
 
