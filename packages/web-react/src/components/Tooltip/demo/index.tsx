@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Static Tooltip (No Interaction)">
         <TooltipDefault />
       </DocsSection>
-      <DocsSection title="Tooltip on Hover (Pure CSS)">
+      <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
         <TooltipOnHover />
       </DocsSection>
       <DocsSection title="Tooltip on Click (JavaScript)">
