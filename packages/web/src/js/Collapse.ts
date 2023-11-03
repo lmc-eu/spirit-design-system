@@ -1,16 +1,15 @@
 import BaseComponent from './BaseComponent';
-import { enableToggleAutoloader } from './utils/ComponentFunctions';
-import { executeAfterTransition } from './utils';
-import SelectorEngine from './dom/SelectorEngine';
-import EventHandler from './dom/EventHandler';
 import {
-  ARIA_EXPANDED_ATTRIBUTE,
   ARIA_CONTROLS_ATTRIBUTE,
-  NAME_DATA_TOGGLE,
-  NAME_DATA_TARGET,
+  ARIA_EXPANDED_ATTRIBUTE,
   CLASSNAME_OPEN,
   CLASSNAME_TRANSITION,
+  NAME_DATA_TARGET,
+  NAME_DATA_TOGGLE,
 } from './constants';
+import EventHandler from './dom/EventHandler';
+import SelectorEngine from './dom/SelectorEngine';
+import { SpiritConfig, enableToggleAutoloader, executeAfterTransition } from './utils';
 
 const NAME = 'collapse';
 const DATA_KEY = 'collapse';
@@ -36,8 +35,8 @@ class Collapse extends BaseComponent {
   meta: CollapseMeta;
   state: CollapseState;
 
-  constructor(element: HTMLElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
     this.target = this.element.dataset.spiritTarget
       ? SelectorEngine.findOne(`#${this.element.dataset.spiritTarget}`)
       : null;

@@ -1,9 +1,7 @@
-// eslint-disable-next-line import/no-unresolved
 import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
-import { ScrollControl, enableDismissTrigger, enableToggleTrigger } from './utils';
-import { SpiritConfig } from './utils/Config';
+import { ScrollControl, SpiritConfig, enableDismissTrigger, enableToggleTrigger } from './utils';
 
 const NAME = 'offcanvas';
 const DATA_KEY = 'offcanvas';

@@ -3,7 +3,7 @@
 
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
-import { debounce, enableToggleAutoloader } from './utils';
+import { SpiritConfig, debounce, enableToggleAutoloader } from './utils';
 
 export const Alignment = {
   LEFT: 'left',
@@ -59,8 +59,8 @@ class ScrollView extends BaseComponent {
     return `${this.NAME}`;
   }
 
-  constructor(element: SpiritElement) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
 
     this.currentPosition = {
       bottom: 0,

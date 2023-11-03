@@ -1,7 +1,7 @@
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
-import { enableToggleTrigger, ScrollControl } from './utils';
+import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
 
 const NAME = 'modal';
 
@@ -16,8 +16,8 @@ class Modal extends BaseComponent {
     return NAME;
   }
 
-  constructor(element: HTMLElement | string) {
-    super(element);
+  constructor(element: SpiritElement, config?: SpiritConfig) {
+    super(element, config);
 
     this.isShown = false;
     this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;

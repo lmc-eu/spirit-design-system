@@ -1,6 +1,5 @@
 import InstanceMap from './dom/InstanceMap';
-import Config from './utils/Config';
-import { getElement } from './utils/index';
+import { Config, SpiritConfig, getElement } from './utils';
 
 interface IBaseComponent extends FunctionConstructor {
   INSTANCE_KEY: string;
@@ -11,7 +10,8 @@ class BaseComponent extends Config {
   config: unknown;
   NAME: string | null;
 
-  constructor(element: SpiritElement | string, config) {
+  constructor(element: SpiritElement | string, config?: SpiritConfig) {
+    super();
     this.element = getElement(element);
     this.NAME = '';
     this.config = this.getConfig(config);
@@ -45,12 +45,12 @@ class BaseComponent extends Config {
     return InstanceMap.get(getElement(element), this.INSTANCE_KEY);
   }
 
-  static getOrCreateInstance(element: SpiritElement) {
-    return this.getInstance(element) || this.createInstance(element);
+  static getOrCreateInstance(element: SpiritElement, config = {}) {
+    return this.getInstance(element) || this.createInstance(element, config);
   }
 
-  static createInstance(element: SpiritElement) {
-    return new this(element);
+  static createInstance(element: SpiritElement, config: SpiritConfig) {
+    return new this(element, typeof config === 'object' ? config : null);
   }
 
   static get INSTANCE_KEY() {

@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
-import { enableToggleAutoloader, image2Base64Preview } from './utils';
+import { SpiritConfig, enableToggleAutoloader, image2Base64Preview } from './utils';
 
 const NAME = 'fileUploader';
 const EVENT_KEY = `.${NAME}`;
@@ -61,8 +61,8 @@ class FileUploader extends BaseComponent {
   errors: Record<string, string>;
   isDisabled: boolean;
 
-  constructor(element: HTMLElement) {
-    super(element);
+  constructor(element: HTMLElement, config?: SpiritConfig) {
+    super(element, config);
 
     this.wrapper = SelectorEngine.findOne(WRAPPER_ELEMENT_SELECTOR, element) as HTMLInputElement;
     this.inputElement = SelectorEngine.findOne(INPUT_ELEMENT_SELECTOR, element) as HTMLInputElement;
