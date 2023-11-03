@@ -1,11 +1,11 @@
-import React, { useMemo, forwardRef, LegacyRef } from 'react';
 import classNames from 'classnames';
+import React, { LegacyRef, forwardRef, useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTooltipProps } from '../../types';
 import TooltipCloseButton from './TooltipCloseButton';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
-const Tooltip = forwardRef((props: SpiritTooltipProps, ref) => {
+export const Tooltip = forwardRef((props: SpiritTooltipProps, ref) => {
   const { children, isDismissible, closeLabel = 'Close', open, onClose, ...restProps } = props;
 
   const { classProps, props: modifiedProps } = useTooltipStyleProps({
