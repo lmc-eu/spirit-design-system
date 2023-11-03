@@ -14,8 +14,12 @@ const TooltipPlacements = () => {
   };
 
   return (
-    <form autoComplete="off" className="mx-auto">
-      <Grid cols={3} UNSAFE_style={{ alignItems: 'center', justifyItems: 'center' }}>
+    <form autoComplete="off">
+      <Grid
+        cols={3}
+        UNSAFE_className="mx-auto"
+        UNSAFE_style={{ alignItems: 'center', justifyItems: 'center', maxWidth: '30rem' }}
+      >
         <div style={{ gridRow: 1, gridColumn: 2 }}>
           <Radio
             name="placement"
@@ -74,7 +78,7 @@ const TooltipPlacements = () => {
             value="bottom-right"
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 1 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 1, justifySelf: 'start' }}>
           <Radio
             name="placement"
             isChecked={placement === 'left-top'}
@@ -103,7 +107,7 @@ const TooltipPlacements = () => {
             value="left-bottom"
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 3 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gridRow: 2, gridColumn: 3, justifySelf: 'end' }}>
           <Radio
             name="placement"
             isChecked={placement === 'right-top'}
@@ -133,9 +137,12 @@ const TooltipPlacements = () => {
           />
         </div>
         <div style={{ gridRow: 2, gridColumn: 2 }}>
-          <TooltipWrapper UNSAFE_style={{ margin: '6rem auto' }}>
-            <DocsBox>Click the dots!</DocsBox>
-            <Tooltip placement={placement as PlacementDictionaryType}>Hello!</Tooltip>
+          <TooltipWrapper UNSAFE_style={{ margin: '5rem auto' }}>
+            <DocsBox UNSAFE_className="px-900 py-900">
+              Click
+              <br /> the dots!
+            </DocsBox>
+            <Tooltip placement={placement as PlacementDictionaryType}>{placement}</Tooltip>
           </TooltipWrapper>
         </div>
       </Grid>
