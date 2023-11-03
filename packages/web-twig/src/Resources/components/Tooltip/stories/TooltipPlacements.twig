@@ -1,44 +1,45 @@
-<form autocomplete="off" class="mx-auto">
-    <Grid cols="3" UNSAFE_style="align-items: center; justify-items: center">
+<form autocomplete="off">
+    <Grid cols="3" UNSAFE_className="mx-auto" UNSAFE_style="align-items: center; justify-items: center; max-width: 30rem;">
         <div style="grid-row: 1; grid-column: 2">
 
-            <Radio name="placement" isLabelHidden value="topLeft" id="placement_top_left" label="top-left" />
-            <Radio name="placement" isLabelHidden value="top" id="placement_top" label="top" />
-            <Radio name="placement" isLabelHidden value="topRight" id="placement_top_right" label="top-right" />
+            <Radio name="placement" isLabelHidden value="topLeft" id="placement_top_left" label="top-left"/>
+            <Radio name="placement" isLabelHidden value="top" id="placement_top" label="top"/>
+            <Radio name="placement" isLabelHidden value="topRight" id="placement_top_right" label="top-right"/>
 
         </div>
         <div style="grid-row: 3; grid-column: 2">
 
-            <Radio name="placement" isLabelHidden value="bottomLeft" id="placement_bottom_left" label="bottom-left" />
-            <Radio name="placement" isLabelHidden value="bottom" id="placement_bottom" label="bottom" isChecked />
-            <Radio name="placement" isLabelHidden value="bottomRight" id="placement_bottom_right" label="bottom-right" />
+            <Radio name="placement" isLabelHidden value="bottomLeft" id="placement_bottom_left" label="bottom-left"/>
+            <Radio name="placement" isLabelHidden value="bottom" id="placement_bottom" label="bottom" isChecked/>
+            <Radio name="placement" isLabelHidden value="bottomRight" id="placement_bottom_right" label="bottom-right"/>
 
         </div>
-        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1">
+        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 1; justify-self: start;">
 
-            <Radio name="placement" isLabelHidden value="leftTop" id="placement_left_top" label="left-top" />
-            <Radio name="placement" isLabelHidden value="left" id="placement_left" label="left" />
-            <Radio name="placement" isLabelHidden value="leftBottom" id="placement_left_bottom" label="left-bottom" />
+            <Radio name="placement" isLabelHidden value="leftTop" id="placement_left_top" label="left-top"/>
+            <Radio name="placement" isLabelHidden value="left" id="placement_left" label="left"/>
+            <Radio name="placement" isLabelHidden value="leftBottom" id="placement_left_bottom" label="left-bottom"/>
 
         </div>
-        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3">
+        <div style="display: flex; flex-direction: column; grid-row: 2; grid-column: 3; justify-self: end;">
 
-            <Radio name="placement" isLabelHidden value="rightTop" id="placement_right_top" label="right-top" />
-            <Radio name="placement" isLabelHidden value="right" id="placement_right" label="right" />
-            <Radio name="placement" isLabelHidden value="rightBottom" id="placement_right_bottom" label="right-bottom" />
+            <Radio name="placement" isLabelHidden value="rightTop" id="placement_right_top" label="right-top"/>
+            <Radio name="placement" isLabelHidden value="right" id="placement_right" label="right"/>
+            <Radio name="placement" isLabelHidden value="rightBottom" id="placement_right_bottom" label="right-bottom"/>
 
         </div>
         <div style="grid-row: 2; grid-column: 2">
 
-            <TooltipWrapper UNSAFE_style="margin: 6rem auto">
-                <DocsBox>Click the dots!</DocsBox>
-                <Tooltip id="tooltip_placements_example">Hello!</Tooltip>
+            <TooltipWrapper UNSAFE_style="margin: 5rem auto">
+                <DocsBox UNSAFE_className="px-900 py-900">Click<br /> the dots!</DocsBox>
+                <Tooltip id="tooltip_placements_example">
+                    <span id="tooltip_placements_example_text">bottom</span>
+                </Tooltip>
             </TooltipWrapper>
 
         </div>
     </Grid>
 </form>
-
 <script>
     const radios = document.querySelectorAll('input[type="radio"]');
 
@@ -46,8 +47,10 @@
         radio.addEventListener('change', () => {
             const placement = radio.value;
             const tooltip = document.getElementById('tooltip_placements_example');
+            const tooltipText = document.getElementById('tooltip_placements_example_text');
 
             tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
+            tooltipText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
         });
     });
 </script>
