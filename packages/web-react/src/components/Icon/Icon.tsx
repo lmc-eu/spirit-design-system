@@ -1,6 +1,7 @@
 import React from 'react';
 import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
+import { htmlParser } from '../../utils/htmlParser';
 
 const defaultProps = {
   ariaHidden: true,
@@ -16,6 +17,14 @@ export const Icon = (props: IconProps): JSX.Element => {
     icon = `<title>${title}</title>${icon}`;
   }
 
+  // @deprecated Usage of `html-react-parser` will be required in the next major version.
+  if (typeof window === 'undefined' && htmlParser == null) {
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Icon component is not supported in SSR without use of `html-react-parser`. Please install, missing peer dependency.',
+    );
+  }
+
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: Incompatible HTMLElement and SVGSVGElement
@@ -24,13 +33,15 @@ export const Icon = (props: IconProps): JSX.Element => {
       fill="none"
       width={boxSize}
       height={boxSize}
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: icon }}
       aria-hidden={ariaHidden}
+      // @deprecated Usage of dangerouslySetInnerHTML is discouraged due to support of SSR and will be removed in the next major version.
+      {...(typeof window !== 'undefined' ? { dangerouslySetInnerHTML: { __html: icon } } : {})}
       {...otherProps}
       {...styleProps}
       className={styleProps.className}
-    />
+    >
+      {typeof window === 'undefined' && htmlParser != null ? htmlParser(icon) : null}
+    </svg>
   );
 };
 
