@@ -65,5 +65,16 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
     // disable double quotes
     quotes: ['warn', 'single'],
+    // use useIsomorphicLayoutEffect instead of useLayoutEffect
+    // @see: https://medium.com/@alexandereardon/uselayouteffect-and-ssr-192986cdcf7a
+    'no-restricted-imports': [
+      'error',
+      // Disabling using of useLayoutEffect from react
+      {
+        name: 'react',
+        importNames: ['useLayoutEffect'],
+        message: '`useLayoutEffect` causes a warning in SSR. Use `useIsomorphicLayoutEffect`',
+      },
+    ],
   },
 };
