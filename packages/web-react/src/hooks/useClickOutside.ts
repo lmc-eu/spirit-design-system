@@ -1,4 +1,5 @@
-import { useLayoutEffect, useCallback, MutableRefObject } from 'react';
+import { MutableRefObject, useCallback } from 'react';
+import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 
 export interface UseClickOutsideProps {
   ref: MutableRefObject<HTMLElement | null>;
@@ -34,7 +35,7 @@ export const useClickOutside = ({ ref, callback }: UseClickOutsideProps): void =
     [ref, callback],
   );
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     document.addEventListener('click', clickHandler, { capture: true });
 
     return () => document.removeEventListener('click', clickHandler, { capture: true });

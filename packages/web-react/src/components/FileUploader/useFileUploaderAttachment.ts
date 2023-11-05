@@ -1,4 +1,5 @@
-import { RefObject, useLayoutEffect } from 'react';
+import { RefObject } from 'react';
+import { useIsomorphicLayoutEffect } from '../../hooks';
 import { FileMetadata } from '../../types/fileUploader';
 import { getAttachmentInput, getAttachmentMetaInput } from './utils';
 
@@ -17,7 +18,7 @@ export const useFileUploaderAttachment = ({
   meta,
   onError,
 }: UseFileUploaderAttachmentProps) => {
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const createAttachmentInput = (metadata: FileMetadata) => {
       attachmentRef.current?.querySelectorAll('input').forEach((element) => element.remove());
       const attachmentInputElement = getAttachmentInput(file, name, onError);
