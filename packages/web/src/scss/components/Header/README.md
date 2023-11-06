@@ -34,6 +34,9 @@ plugins.
 
 Or, feel free to write the controlling script yourself.
 
+The HeaderDialog uses the Offcanvas JS Plugin to toggle the dialog.
+See [Offcanvas documentation][offcanvas-docs] for more details.
+
 ## Accessibility Guidelines
 
 - Ensure accessibility by using a `<nav>` element or, if using a more generic
@@ -488,3 +491,4 @@ some important capabilities. Thank you! 🙏
 [examples]: https://lmc-eu.github.io/spirit-design-system/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[offcanvas-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Offcanvas/README.md
