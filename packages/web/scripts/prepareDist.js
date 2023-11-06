@@ -1,5 +1,5 @@
+import { existsSync, readdirSync } from 'fs';
 import { resolve } from 'path';
-import { readdirSync } from 'fs';
 
 const getDirs = (source) =>
   readdirSync(source, { withFileTypes: true })
@@ -8,9 +8,12 @@ const getDirs = (source) =>
 
 export const getNestedDirs = (baseDir, mainFile) =>
   getDirs(resolve(__dirname, `../${baseDir}`)).reduce(
-    (accumulator, dirName) => ({
-      ...accumulator,
-      [dirName]: resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`),
-    }),
+    (accumulator, dirName) =>
+      existsSync(resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`))
+        ? {
+            ...accumulator,
+            [dirName]: resolve(__dirname, `../${baseDir}/${dirName}/${mainFile}`),
+          }
+        : accumulator,
     {},
   );
