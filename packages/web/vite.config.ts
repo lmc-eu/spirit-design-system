@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from './scripts/prepareDist';
-import { getListOfNestedDirectories, getListOfIcons } from './scripts/utils';
+import { getListOfIcons, getListOfNestedDirectories } from './scripts/utils';
 
 export default defineConfig({
   plugins: [
