@@ -6,11 +6,11 @@ This is the React implementation of the [Dropdown] component.
 ## Usage
 
 ```jsx
-import { Dropdown } from '@lmc-eu/spirit-web-react/components';
+import { Dropdown, Button } from '@lmc-eu/spirit-web-react/components';
 ```
 
 ```jsx
-<Dropdown id="DropdownExample" renderToggle={({ trigger }) => <button {...trigger}>…</button>}>
+<Dropdown id="DropdownExample" renderTrigger={({ trigger }) => <Button {...trigger}>Trigger</Button>}>
   …
 </Dropdown>
 ```
