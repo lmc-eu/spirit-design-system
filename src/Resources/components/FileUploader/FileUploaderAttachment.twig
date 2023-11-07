@@ -19,7 +19,7 @@
 
 {# Attributes #}
 {%- set _dataImagePreviewAttr = _generateImagePreview ? 'data-spirit-imagePreview="true"' : null -%}
-{%- set _imageObjectFitAttr = _imageObjectFit ? 'data-spirit-image-object-fit=' ~ _imageObjectFit : null -%}
+{%- set _imageObjectFitAttr = _imageObjectFit ? 'style="--file-uploader-attachment-image-object-fit: ' ~ _imageObjectFit | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -34,8 +34,8 @@
     {{ _dataImagePreviewAttr | raw }}
 >
     {% if _generateImagePreview or _imagePreview %}
-        <span class="{{ _imageClassName }}">
-            <img src="{{ _imagePreview }}" {{ _imageObjectFitAttr }} width="54" height="54" alt="{{- _fileName -}}" />
+        <span class="{{ _imageClassName }}" data-spirit-element="attachment-image">
+            <img src="{{ _imagePreview }}" {{ _imageObjectFitAttr | raw }} width="54" height="54" alt="{{- _fileName -}}" />
         </span>
     {% endif %}
     {% if not _imagePreview %}
