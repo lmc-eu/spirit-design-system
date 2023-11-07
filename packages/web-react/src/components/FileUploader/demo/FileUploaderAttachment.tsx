@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEMO_ATTACHMENT_BASE64_IMAGE } from './constants';
+import { DEMO_ATTACHMENT_BASE64_IMAGE, DEMO_ATTACHMENT_BASE64_IMAGE_40X52 } from './constants';
 import { base64ToByteArray } from '../utils';
 import { FileUploaderAttachment as FileUploaderAttachmentComponent, useFileQueue } from '..';
 
@@ -7,6 +7,7 @@ const FileUploaderAttachment = () => {
   const { onDismiss } = useFileQueue();
 
   const byteArray = base64ToByteArray(DEMO_ATTACHMENT_BASE64_IMAGE);
+  const byteArrayPortrait = base64ToByteArray(DEMO_ATTACHMENT_BASE64_IMAGE_40X52);
 
   // ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE
   return (
@@ -29,6 +30,15 @@ const FileUploaderAttachment = () => {
           onEdit={() => {
             alert('Edit');
           }}
+        />
+        <FileUploaderAttachmentComponent
+          hasImagePreview
+          name="test"
+          file={new File([byteArrayPortrait], 'test1.png', { type: 'image/png', lastModified: 123456789 })}
+          id="2"
+          label="Contained image"
+          onDismiss={onDismiss}
+          imageObjectFit="contain"
         />
       </div>
     </div>
