@@ -267,8 +267,6 @@ class FileUploader extends BaseComponent {
     const AttachmentSvgIcon = item?.querySelector('svg');
     const AttachmentPreviewImage = snippet.querySelector('.FileUploaderAttachment__image');
     const isFileImg = file.type.includes('image');
-    const itemImageObjectFit = (item?.querySelector('.FileUploaderAttachment__image img') as HTMLElement)?.dataset
-      ?.spiritImageObjectFit;
 
     if (hasImagePreview && isFileImg) {
       AttachmentSvgIcon?.remove();
@@ -278,13 +276,6 @@ class FileUploader extends BaseComponent {
       );
     } else {
       AttachmentPreviewImage?.remove();
-    }
-
-    if (itemImageObjectFit) {
-      AttachmentPreviewImage?.querySelector('img')?.setAttribute(
-        'style',
-        `--file-uploader-attachment-image-object-fit: ${itemImageObjectFit}`,
-      );
     }
 
     item!.appendChild(attachmentInputElement);
@@ -389,8 +380,6 @@ class FileUploader extends BaseComponent {
       this.fileQueue.set(name, newValue);
 
       const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`) as HTMLImageElement;
-      const itemImageObjectFit = itemImgElement?.dataset?.spiritImageObjectFit;
-      let cropStyles;
 
       if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
         const previewHeight = IMAGE_PREVIEW_HEIGHT;
@@ -411,18 +400,10 @@ class FileUploader extends BaseComponent {
         const imageWidth = Math.round(parseInt(meta.originalWidth as string, 10) * scale);
         const imageHeight = Math.round(parseInt(meta.originalHeight as string, 10) * scale);
 
-        cropStyles = `
-          --file-uploader-attachment-image-top: -${cropY}px;
-          --file-uploader-attachment-image-left: -${cropX}px;
-          --file-uploader-attachment-image-width: ${imageWidth}px;
-          --file-uploader-attachment-image-height: ${imageHeight}px;
-        `;
-
-        if (itemImageObjectFit) {
-          cropStyles += `--file-uploader-attachment-image-object-fit: ${itemImageObjectFit};`;
-        }
-
-        itemImgElement?.setAttribute('style', cropStyles);
+        itemImgElement?.style.setProperty('--file-uploader-attachment-image-top', `-${cropY}px`);
+        itemImgElement?.style.setProperty('--file-uploader-attachment-image-left', `-${cropX}px`);
+        itemImgElement?.style.setProperty('--file-uploader-attachment-image-width', `${imageWidth}px`);
+        itemImgElement?.style.setProperty('--file-uploader-attachment-image-height', `${imageHeight}px`);
       }
 
       callback && callback(name, file, meta);
