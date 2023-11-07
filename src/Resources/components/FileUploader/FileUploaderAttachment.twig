@@ -35,7 +35,13 @@
 >
     {% if _generateImagePreview or _imagePreview %}
         <span class="{{ _imageClassName }}" data-spirit-element="attachment-image">
-            <img src="{{ _imagePreview }}" {{ _imageObjectFitAttr | raw }} width="54" height="54" alt="{{- _fileName -}}" />
+            <img 
+                src="{{ _imagePreview }}" 
+                {{ _imageObjectFitAttr | raw }} 
+                width="54" 
+                height="54" 
+                alt="{{- _fileName -}}" 
+            />
         </span>
     {% endif %}
     {% if not _imagePreview %}
