@@ -20,6 +20,7 @@ const LIST_ELEMENT_SELECTOR = '[data-spirit-element="list"]';
 const DROP_ZONE_ELEMENT_SELECTOR = '[data-spirit-element="dropZone"]';
 const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
 const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
+const ATTACHMENT_IMAGE = '[data-spirit-element="attachment-image"]';
 const DATA_DISMISS_ATTRIBUTE = 'data-spirit-dismiss';
 const DATA_ELEMENT_VALIDATION_TEXT = 'validation_text';
 const SELECTOR_VALIDATION_TEXT = `[data-spirit-element="${DATA_ELEMENT_VALIDATION_TEXT}"]`;
@@ -265,7 +266,7 @@ class FileUploader extends BaseComponent {
     const itemButton = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
     const hasImagePreview = Boolean((item as HTMLElement)?.dataset?.spiritImagepreview);
     const AttachmentSvgIcon = item?.querySelector('svg');
-    const AttachmentPreviewImage = snippet.querySelector('.FileUploaderAttachment__image');
+    const AttachmentPreviewImage = item?.querySelector(ATTACHMENT_IMAGE);
     const isFileImg = file.type.includes('image');
 
     if (hasImagePreview && isFileImg) {
@@ -379,7 +380,7 @@ class FileUploader extends BaseComponent {
 
       this.fileQueue.set(name, newValue);
 
-      const itemImgElement = SelectorEngine.findOne(`#${name} .FileUploaderAttachment__image img`) as HTMLImageElement;
+      const itemImgElement = SelectorEngine.findOne(`#${name} ${ATTACHMENT_IMAGE} img`) as HTMLImageElement;
 
       if (meta && itemImgElement && FileUploader.isCoordsInMeta(meta)) {
         const previewHeight = IMAGE_PREVIEW_HEIGHT;
