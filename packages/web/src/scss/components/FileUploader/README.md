@@ -342,7 +342,7 @@ Object fit is `cover` by default.
 
 ```html
 <span class="FileUploaderAttachment__image">
-  <img src="http://placekitten.com/200/300" alt="" data-spirit-object-fit="contain" />
+  <img src="http://placekitten.com/200/300" alt="" style="--file-uploader-attachment-image-object-fit: contain;" />
 </span>
 ```
 
@@ -352,7 +352,7 @@ Full example:
 <li class="FileUploaderAttachment">
   <!-- Preview image: start -->
   <span class="FileUploaderAttachment__image">
-    <img src="http://placekitten.com/200/300" alt="" data-spirit-object-fit="contain" />
+    <img src="http://placekitten.com/200/300" alt="" style="--file-uploader-attachment-image-object-fit: contain;" />
   </span>
   <!-- Preview image: end -->
   <span class="FileUploaderAttachment__name">
