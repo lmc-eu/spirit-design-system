@@ -18,8 +18,8 @@
 
     
 
-    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.84e08728.js"></script>
-    <link rel="modulepreload" crossorigin href="/spirit-design-system/assets/spirit-web-chunk.8b629c29.js">
+    <script type="module" crossorigin src="/spirit-design-system/assets/spirit-web-entry.a2769670.js"></script>
+    <link rel="modulepreload" crossorigin href="/spirit-design-system/assets/spirit-web-chunk.78e5e8ca.js">
     <link rel="stylesheet" href="/spirit-design-system/assets/spirit-web-asset.08cb5238.css">
   </head>
   <body>
@@ -544,6 +544,24 @@
                 </li>
                 <!-- FileUploaderAttachment: end -->
           
+                <!-- FileUploaderAttachment: start -->
+                <li class="FileUploaderAttachment">
+                  <span class="FileUploaderAttachment__image">
+                    <img src="https://picsum.photos/id/823/130/162" alt="Contained image" style="--file-uploader-attachment-image-object-fit: contain;" />
+                  </span>
+                  <span class="FileUploaderAttachment__name">
+                    <span class="text-truncate">Contained image</span>
+                  </span>
+          
+                  <button type="button" class="FileUploaderAttachment__action">
+                    <span class="accessibility-hidden">Remove</span>
+                    <svg width="24" height="24" aria-hidden="true">
+                      <use xlink:href="/spirit-design-system/icons/svg/sprite.svg#close" />
+                    </svg>
+                  </button>
+                </li>
+                <!-- FileUploaderAttachment: end -->
+          
               </ul>
               <!-- FileUploaderList: end -->
           
@@ -790,7 +808,7 @@
                 <!-- FileUploaderAttachment template: start -->
                 <template data-spirit-snippet="item">
                   <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
-                    <span class="FileUploaderAttachment__image">
+                    <span class="FileUploaderAttachment__image" data-spirit-element="attachment-image">
                       <img src="" width="54" height="54" alt="" />
                     </span>
                     <svg width="24" height="24" aria-hidden="true">
