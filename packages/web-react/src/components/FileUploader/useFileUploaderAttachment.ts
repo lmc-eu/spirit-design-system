@@ -19,7 +19,7 @@ export const useFileUploaderAttachment = ({
   onError,
 }: UseFileUploaderAttachmentProps) => {
   useIsomorphicLayoutEffect(() => {
-    const createAttachmentInput = (metadata: FileMetadata) => {
+    const createAttachmentInput = (metadata?: FileMetadata) => {
       attachmentRef.current?.querySelectorAll('input').forEach((element) => element.remove());
       const attachmentInputElement = getAttachmentInput(file, name, onError);
       attachmentInputElement && attachmentRef.current?.appendChild(attachmentInputElement);
@@ -30,6 +30,6 @@ export const useFileUploaderAttachment = ({
       }
     };
 
-    meta && createAttachmentInput(meta);
+    createAttachmentInput(meta);
   }, [attachmentRef, file, name, meta, onError]);
 };
