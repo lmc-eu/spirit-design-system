@@ -6,15 +6,15 @@
             <Button
                 color="inverted"
                 data-spirit-toggle="dropdown"
-                data-spirit-target="#dropdownUserMobile"
-                aria-controls="dropdownUserMobile"
+                data-spirit-target="#dropdown_user_mobile"
+                aria-controls="dropdown_user_mobile"
                 aria-expanded="false"
                 isSquare
             >
                 <Icon name="profile" />
                 <VisuallyHidden>My Profile</VisuallyHidden>
             </Button>
-            <Dropdown id="dropdownUserMobile" placement="bottom-right">
+            <Dropdown id="dropdown_user_mobile" placement="bottom-right">
                 <Stack hasSpacing>
                     <a href="#">Dashboard</a>
                     <a href="#">Profile</a>
@@ -47,27 +47,30 @@
     </HeaderDesktopActions>
 
     <HeaderDesktopActions color="secondary">
-        <HeaderNav>
-            <HeaderNavItem UNSAFE_style="position: relative;">
-                <HeaderButton
-                    data-spirit-toggle="dropdown"
-                    data-spirit-target="#dropdownUserDesktop"
-                    aria-controls="dropdownUserDesktop"
-                    aria-expanded="false"
-                >
-                    Marian
-                </HeaderButton>
-                <Dropdown id="dropdownUserDesktop" placement="bottom-right">
-                    <Stack hasSpacing>
-                        <a href="#">Dashboard</a>
-                        <a href="#">Profile</a>
-                        <a href="#">Favourites</a>
-                        <a href="#">Notifications</a>
-                        <a href="#">Sign out</a>
-                    </Stack>
-                </Dropdown>
-            </HeaderNavItem>
-        </HeaderNav>
+        <DropdownWrapper UNSAFE_className="d-flex" UNSAFE_style="align-self: stretch">
+            <HeaderButton
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdown_user_desktop"
+                aria-controls="dropdown_user_desktop"
+                aria-expanded="false"
+            >
+                Marian
+                <span class="pl-500">▾</span>
+            </HeaderButton>
+            <Dropdown id="dropdown_user_desktop" placement="bottom-right">
+                <Stack hasSpacing>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Favourites</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Sign out</a>
+                </Stack>
+            </Dropdown>
+        </DropdownWrapper>
+        <Button color="inverted" isSquare>
+            <Icon name="search" />
+            <VisuallyHidden>Search</VisuallyHidden>
+        </Button>
     </HeaderDesktopActions>
 </Header>
 
