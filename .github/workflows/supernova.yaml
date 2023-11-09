@@ -7,7 +7,6 @@ on:
 
 jobs:
   publish:
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     name: Publish Supernova Documentation
     runs-on: ubuntu-20.04
     steps:
