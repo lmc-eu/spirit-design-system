@@ -20,4 +20,4 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Publish Supernova Documentation
-        run: npx @supernovaio/cli publish-documentation --apiKey="${{secrets.SUPERNOVA_TOKEN}}" --designSystemId="${{secrets.SUPERNOVA_DS_ID}"
+        run: npx @supernovaio/cli publish-documentation --apiKey="${{secrets.SUPERNOVA_TOKEN}}" --designSystemId="${{secrets.SUPERNOVA_DS_ID}}"
