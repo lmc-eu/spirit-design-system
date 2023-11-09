@@ -20,6 +20,12 @@ or
 npm install --save @lmc-eu/spirit-icons
 ```
 
+## Colors
+
+Icons with the suffix `-colored` come with predefined colors, so no additional coloring is needed.
+In contrast, icons without this suffix inherit the color from the `currentColor` CSS property of their parent element
+or themself.
+
 ## Usage
 
 ### SVG files
