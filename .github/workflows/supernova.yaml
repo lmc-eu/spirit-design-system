@@ -1,0 +1,23 @@
+name: Supernova
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    name: Publish Supernova Documentation
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Publish Supernova Documentation
+        run: npx @supernovaio/cli publish-documentation --apiKey="${{secrets.SUPERNOVA_TOKEN}}" --designSystemId="${{secrets.SUPERNOVA_DS_ID}"
