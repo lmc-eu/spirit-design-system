@@ -1,7 +1,11 @@
+@use 'sass:list';
 @use 'sass:map';
 @use 'sass:string';
 @use '@tokens' as tokens;
+@use './links';
+@use './list' as spirit-list;
 @use './placement';
+@use './reset';
 @use './string' as spirit-string;
 @use './typography';
 
@@ -120,6 +124,24 @@
     }
 }
 
+// Mixin to reset button styling for individual link variants.
+// Parameters are:
+// * $dictionary-values: list of the dictionary values to generate
+@mixin prepare-button-links($dictionary-values) {
+    $selectors: ();
+
+    @each $dictionary-value in $dictionary-values {
+        $selectors: list.append($selectors, 'button.link-#{$dictionary-value}');
+    }
+
+    #{spirit-list.to-string($selectors, ', ')} {
+        @include reset.button();
+        @include links.base();
+
+        user-select: text;
+    }
+}
+
 // Mixin to generate link color classes based on a dictionary
 // Parameters are:
 // * $selector: the selector to generate
@@ -136,7 +158,7 @@
         @each $print-value in $print-values {
             $variant-class: '#{$dictionary-value}';
             @if $print-value == 'disabled' {
-                $variant-class: '#{$dictionary-value}.link-#{$print-value}:any-link';
+                $variant-class: '#{$dictionary-value}.link-#{$print-value}';
             } @else if $print-value != 'default' {
                 $variant-class: '#{$dictionary-value}:#{$print-value}';
             }
@@ -181,7 +203,7 @@
         $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
 
         .#{$class-name}[#{$data-attribute}='#{$placement-modifier}'] {
-            // stylelint-disable scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
+            // stylelint-disable-next-line scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
             @extend .#{$class-name}--#{$placement-modifier};
         }
     }
