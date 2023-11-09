@@ -1,3 +1,10 @@
+// 1. Reset button styles for individual link variants.
+// 2. Generate link colors for all link states.
+// 3. Links in headings always have the default decoration, even those with `.link-underlined`.
+// 4. Allow link underline everywhere, except for headings in default state.
+// 5. Allow link stretching over the closest element with `position: relative`.
+// 6. Only links in headings have visited state.
+
 @use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../settings/cursors';
@@ -6,6 +13,10 @@
 @use '../../tools/dictionaries';
 @use '../../tools/links' as links-tools;
 
+// 1.
+@include dictionaries.prepare-button-links(dictionaries-settings.$action-link-colors);
+
+// 2.
 @include dictionaries.generate-link-colors(
     '.link',
     dictionaries-settings.$action-link-colors,
@@ -13,37 +24,35 @@
     (default, hover, active, disabled)
 );
 
-.link-disabled {
+// stylelint-disable-next-line selector-no-qualifying-type -- Increase specificity to override button variant styles.
+.link-disabled,
+button.link-disabled {
     cursor: cursors.$disabled;
 }
 
-// All links in headings behave the same
+// 3.
 [class*='typography-heading'] a {
-    text-decoration: none;
+    text-decoration: links-settings.$text-decoration-default;
 }
 
-// Allows link underline everywhere, except for headings default state
+// 4.
 .link-underlined,
 [class*='typography-heading'] a:hover,
 [class*='typography-heading'] a:active {
-    text-decoration: underline;
+    text-decoration: links-settings.$text-decoration-hover;
 }
 
+// 5.
 .link-stretched {
     @include links-tools.stretch();
 }
 
-// Make sure non-anchor elements get the same decoration style as real links
-.link-underlined:not(a) {
-    text-decoration-skip-ink: links-settings.$text-decoration-skip-ink;
-    text-underline-offset: links-settings.$text-underline-offset;
-}
-
-// Only links in headings have visited state
+// 6.
 [class*='typography-heading'] :visited {
     color: map.get(tokens.$action-colors, link-primary-visited);
 }
 
+// 6.
 @include dictionaries.generate-link-colors(
     '[class*="typography-heading"] .link',
     dictionaries-settings.$text-colors,

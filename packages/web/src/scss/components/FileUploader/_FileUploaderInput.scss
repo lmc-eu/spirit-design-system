@@ -1,4 +1,4 @@
-// 1. Make whole drop zone clickable.
+// 1. Make whole drop zone clickable. Cursor is hard-coded because links always use pointer.
 // 2. Increase specificity (also in the mixin) by including `.FileUploaderInput__input` to override the `active` state.
 // 3. Increase specificity to make the disabled state override any other
 
@@ -6,6 +6,7 @@
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../../tools/accessibility';
 @use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/links';
 @use '../../tools/typography';
 @use 'theme';
 
@@ -50,13 +51,10 @@ $_field-name: 'FileUploaderInput';
 
 // 1.
 .FileUploaderInput__link {
-    cursor: pointer;
+    @include links.base();
+    @include links.stretch();
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-    }
+    cursor: pointer;
 }
 
 .FileUploaderInput__dragAndDropLabel {

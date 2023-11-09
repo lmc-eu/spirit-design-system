@@ -1,9 +1,38 @@
+@use '@tokens' as tokens;
+@use '../settings/links';
+
+@mixin base($set-color: false) {
+    text-decoration-skip-ink: links.$text-decoration-skip-ink;
+    text-underline-offset: links.$text-underline-offset;
+
+    @if $set-color {
+        color: tokens.$action-link-primary-default;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: links.$text-decoration-hover;
+
+            @if $set-color {
+                color: tokens.$action-link-primary-hover;
+            }
+        }
+    }
+
+    &:active {
+        text-decoration: links.$text-decoration-hover;
+
+        @if $set-color {
+            color: tokens.$action-link-primary-active;
+        }
+    }
+}
+
 @mixin stretch($pseudo-element: before) {
     &::#{$pseudo-element} {
         content: '';
         position: absolute;
         z-index: 0;
-        display: block;
         inset: 0;
     }
 }
