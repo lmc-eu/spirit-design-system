@@ -21,21 +21,21 @@ describe('Grid', () => {
   });
 
   it('should have desktop cols classname', () => {
-    const dom = render(<Grid desktop={3} />);
+    const dom = render(<Grid cols={{ desktop: 3 }} />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Grid--desktop--cols-3');
   });
 
   it('should have tablet cols classname', () => {
-    const dom = render(<Grid tablet={3} />);
+    const dom = render(<Grid cols={{ tablet: 3 }} />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Grid--tablet--cols-3');
   });
 
   it('should have all cols classnames', () => {
-    const dom = render(<Grid cols={2} tablet={3} desktop={4} />);
+    const dom = render(<Grid cols={{ mobile: 2, tablet: 3, desktop: 4 }} />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Grid--cols-2');
