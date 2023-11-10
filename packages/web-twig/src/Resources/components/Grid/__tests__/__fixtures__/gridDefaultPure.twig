@@ -1,7 +1,9 @@
 {% embed "@spirit/grid.twig" with { props: {
-    cols: 2,
-    tablet: 3,
-    desktop: 4,
+    cols: {
+        mobile: 2,
+        tablet: 3,
+        desktop: 4,
+    },
 }} %}
     {% block content %}
         <span>col 1</span>

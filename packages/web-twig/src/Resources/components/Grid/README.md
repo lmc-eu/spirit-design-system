@@ -20,7 +20,7 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Grid cols="2" tablet="3" desktop="4" elementType="section">
+<Grid cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}" elementType="section">
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -34,9 +34,11 @@ Without lexer:
 
 ```twig
 {% embed "@spirit/grid.twig" with { props: {
-    cols: 2,
-    tablet: 3,
-    desktop: 4,
+    cols: {
+        mobile: 2,
+        tablet: 3,
+        desktop: 4,
+    },
 }} %}
     {% block content %}
         <span>col 1</span>
@@ -51,12 +53,12 @@ Without lexer:
 
 ### API
 
-| Name          | Type                                             | Default | Required | Description                         |
-| ------------- | ------------------------------------------------ | ------- | -------- | ----------------------------------- |
-| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use            |
-| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use on desktop |
-| `elementType` | `string`                                         | `div`   | ✕        | HTML tag to render                  |
-| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`] | `null`  | ✕        | Number of columns to use on tablet  |
+| Name          | Type                                                         | Default | Required | Description                                                                                                |
+| ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | `null`  | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
+| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
+| `elementType` | `string`                                                     | `div`   | ✕        | HTML tag to render                                                                                         |
+| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -193,6 +195,7 @@ You can add `id`, `data-*` or `aria-*` attributes to further extend component's
 descriptiveness and accessibility. Also, UNSAFE styling props are available,
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 
-[grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
