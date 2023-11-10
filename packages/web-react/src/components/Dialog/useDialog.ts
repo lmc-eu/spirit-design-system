@@ -1,4 +1,5 @@
 import { useEffect, MutableRefObject } from 'react';
+import { useScrollControl } from '../../hooks';
 
 export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpen: boolean) => {
   useEffect(() => {
@@ -12,6 +13,8 @@ export const useDialog = (ref: MutableRefObject<HTMLDialogElement | null>, isOpe
       }
     }
   }, [isOpen, ref]);
+
+  useScrollControl(ref, isOpen);
 
   const openDialog = () => {
     if (ref?.current) {
