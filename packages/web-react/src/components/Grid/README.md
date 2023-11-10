@@ -5,7 +5,7 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 **Custom layout**
 
 ```jsx
-<Grid cols={2} tablet={3} desktop={4}>
+<Grid cols={{ mobile: 2, tablet: 3, desktop: 4 }}>
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -17,14 +17,14 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 
 ## API
 
-| Name               | Type                                      | Default | Required | Description                         |
-| ------------------ | ----------------------------------------- | ------- | -------- | ----------------------------------- |
-| `cols`             | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use            |
-| `desktop`          | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use on desktop |
-| `elementType`      | HTML element                              | `div`   | ✕        | Element type to use for the Grid    |
-| `tablet`           | [`1` \| `2` \| `3` \| `4` \| `6` \| `12`] | —       | ✕        | Number of columns to use on tablet  |
-| `UNSAFE_className` | `string`                                  | —       | ✕        | Wrapper custom class name           |
-| `UNSAFE_style`     | `CSSProperties`                           | —       | ✕        | Wrapper custom style                |
+| Name               | Type                                                         | Default | Required | Description                                                                                                |
+| ------------------ | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `cols`             | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
+| `desktop`          | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
+| `elementType`      | HTML element                                                 | `div`   | ✕        | Element type to use for the Grid                                                                           |
+| `tablet`           | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
+| `UNSAFE_className` | `string`                                                     | —       | ✕        | Wrapper custom class name                                                                                  |
+| `UNSAFE_style`     | `CSSProperties`                                              | —       | ✕        | Wrapper custom style                                                                                       |
 
 For detailed information see [Grid] component
 
@@ -129,4 +129,5 @@ previous breakpoint will be used.
 | `rowStart`    | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should start    |
 
 [Grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword

@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks/styleProps';
-import { useGridStyleProps } from './useGridStyleProps';
+import { useStyleProps } from '../../hooks';
 import { SpiritGridProps } from '../../types';
+import { useGridStyleProps } from './useGridStyleProps';
 
 export const Grid = <T extends ElementType = 'div'>(props: SpiritGridProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;

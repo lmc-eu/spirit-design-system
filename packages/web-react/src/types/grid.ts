@@ -2,6 +2,11 @@ import { ElementType, JSXElementConstructor } from 'react';
 import { ChildrenProps, StyleProps, TransferProps } from './shared';
 
 export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
+export type GridColsBreakpoints = {
+  mobile?: GridColumns;
+  tablet?: GridColumns;
+  desktop?: GridColumns;
+};
 export type GridSpanOverColumns = 2 | 4 | 6 | 8 | 10 | 12;
 export type GridItemSpan = `span ${number}`;
 export type GridItemPositionBreakpoints = {
@@ -39,8 +44,10 @@ export interface GridItemElementTypeProps<T extends ElementType = 'div'> {
 }
 
 export interface GridCustomLayoutProps {
-  cols?: GridColumns;
+  cols?: GridColumns | GridColsBreakpoints;
+  // @deprecated Use `cols` with object instead. This prop will be removed in the next major version.
   tablet?: GridColumns;
+  // @deprecated Use `cols` with object instead. This prop will be removed in the next major version.
   desktop?: GridColumns;
 }
 

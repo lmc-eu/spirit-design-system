@@ -6,8 +6,6 @@ import DocsBox from '../../../../docs/DocsBox';
 import ReadMe from '../README.md';
 import { Grid } from '..';
 
-const gridColumnsArray = [1, 2, 3, 4, 5, 6, 12, undefined];
-
 const meta: Meta<typeof Grid> = {
   title: 'Components/Grid',
   component: Grid,
@@ -21,22 +19,13 @@ const meta: Meta<typeof Grid> = {
       control: 'object',
     },
     cols: {
-      control: 'select',
-      options: gridColumnsArray,
-    },
-    desktop: {
-      control: 'select',
-      options: gridColumnsArray,
+      control: 'object',
     },
     elementType: {
       control: 'text',
       table: {
         defaultValue: { summary: 'div' },
       },
-    },
-    tablet: {
-      control: 'select',
-      options: gridColumnsArray,
     },
   },
   args: {
@@ -49,10 +38,12 @@ const meta: Meta<typeof Grid> = {
         })}
       </>
     ),
-    cols: 12,
-    desktop: 12,
+    cols: {
+      mobile: 2,
+      tablet: 3,
+      desktop: 4,
+    },
     elementType: 'div',
-    tablet: 12,
   },
 };
 
