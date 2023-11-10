@@ -98,7 +98,7 @@ content can be overridden by any custom block content.
 | Name          | Type     | Default | Required | Description                                                                                                                                                                                                                                                                       |
 | ------------- | -------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                                                                                                                |
-| `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. [**Optional DEPRECATED**][Deprecated] Will be **required** in the next major version. |
+| `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. [**Optional DEPRECATED**][deprecated] Will be **required** in the next major version. |
 | `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                                             |
 
 You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
@@ -150,5 +150,6 @@ Please see the documentation for more details.
 Additional option is to use helper class `text-truncate` with defined width.
 
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Breadcrumbs
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [twig-truncate]: https://twig.symfony.com/doc/3.x/filters/u.html

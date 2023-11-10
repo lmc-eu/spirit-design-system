@@ -3,7 +3,7 @@ import { Grid } from '../../Grid';
 import ButtonDemoFactory from './ButtonDemoFactory';
 
 const ButtonDisabled = () => (
-  <Grid cols={1} desktop={3}>
+  <Grid cols={{ mobile: 1, desktop: 3 }}>
     <ButtonDemoFactory isDisabled />
   </Grid>
 );
