@@ -11,7 +11,11 @@ const Icons = () => {
   }
 
   return (
-    <Grid elementType="ul" cols={2} tablet={4} desktop={6} UNSAFE_className="text-center my-1000 list-unstyled">
+    <Grid
+      elementType="ul"
+      cols={{ mobile: 2, tablet: 4, desktop: 6 }}
+      UNSAFE_className="text-center my-1000 list-unstyled"
+    >
       {icons?.map((icon) => (
         <li key={icon} className="mb-600">
           <Icon name={icon} />

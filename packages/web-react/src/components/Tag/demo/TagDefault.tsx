@@ -10,7 +10,7 @@ const TagDefault = () => {
   const colors = ['neutral', ...emotionColors];
 
   return (
-    <Grid cols={1} tablet={3} desktop={5}>
+    <Grid cols={{ mobile: 1, tablet: 3, desktop: 5 }}>
       {sizes.map((size) => (
         <DocsSection key={size} title={`Size ${size}`}>
           {colors.map((color) => (
