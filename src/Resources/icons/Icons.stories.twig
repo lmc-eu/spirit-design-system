@@ -4,7 +4,7 @@
 
     <DocsSection title="Icons">
 
-        <Grid elementType="ul" cols={2} tablet={4} desktop={6} UNSAFE_className="text-center my-1000 list-unstyled">
+        <Grid elementType="ul" cols="{{ { mobile: 2, tablet: 4, desktop: 6 } }}" UNSAFE_className="text-center my-1000 list-unstyled">
 
             {% for icon in icons %}
                 <li class="mb-600">
