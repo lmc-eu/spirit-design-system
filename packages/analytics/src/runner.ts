@@ -1,29 +1,42 @@
 import { path } from 'zx';
-import scanner from 'react-scanner';
 
-import { TrackedData } from './types';
 import { ROOT_PATH } from './constants';
+import { _dirname } from './helpers';
 import { getVersions } from './helpers/versions';
+import reactScanner from './scanners/reactScanner';
+import twigScanner from './scanners/twigScanner';
+import { RunnerConfig, TrackedData } from './types';
 
 interface ProjectOutput {
+  spiritVersion: string;
   trackedData: TrackedData;
 }
 
-type Runner = (config: string, source: string) => Promise<ProjectOutput>;
+type Runner = (config: RunnerConfig, source: string) => Promise<ProjectOutput>;
 
-const getTrackedData = async ({ config, source }: { config: string; source: string }): Promise<ProjectOutput> => {
-  const crawlFrom = path.resolve(source) || path.resolve(ROOT_PATH);
+const getTrackedData = async ({
+  config,
+  source,
+  type,
+}: {
+  config: RunnerConfig;
+  source: string;
+  type: ScannerType;
+}): Promise<ProjectOutput> => {
+  const crawlFrom = path.resolve(source) || path.resolve(_dirname, ROOT_PATH);
   const spiritVersion = await getVersions(crawlFrom);
-  // in this case it is usefull to resolve this at runtime
-  // eslint-disable-next-line import/no-dynamic-require, global-require
-  const scannerConfig = require(config);
 
-  return scanner.run({ ...scannerConfig, crawlFrom }).then((output: string) => {
-    return {
-      spiritVersion,
-      trackedData: output,
-    };
-  });
+  const reactOutput = await reactScanner({ ...config, crawlFrom });
+
+  const twigResult = await twigScanner({ ...config, crawlFrom });
+
+  return {
+    spiritVersion,
+    trackedData: {
+      ...reactOutput,
+      ...twigResult,
+    },
+  };
 };
 
 export const runner: Runner = (config, source) => {

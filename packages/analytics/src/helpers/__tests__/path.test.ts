@@ -15,29 +15,6 @@ jest.mock('../../constants', () => ({
 
 describe('path', () => {
   describe('getOutputPath', () => {
-    let originalDirname: string;
-    let originalFilename: string;
-
-    beforeAll(() => {
-      // Store the original values of __dirname and __filename
-      originalDirname = global.__dirname;
-      originalFilename = global.__filename;
-
-      // Mock the global __dirname and __filename
-      global.__dirname = 'mocked-global-dirname';
-      global.__filename = 'mocked-global-filename';
-    });
-
-    afterAll(() => {
-      // Restore the original values of __dirname and __filename
-      global.__dirname = originalDirname;
-      global.__filename = originalFilename;
-    });
-
-    afterEach(() => {
-      jest.clearAllMocks();
-    });
-
     it('should use the provided outputPath if available', () => {
       const outputPath = '/path/to/output';
       const name = 'example';

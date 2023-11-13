@@ -1,11 +1,11 @@
 import { path } from 'zx';
-import { ROOT_PATH } from '../constants';
-import { __dirname, getModuleName } from '../helpers';
+import { OUTPUT_DIR, REACT_OUTPUT_FILE, ROOT_PATH } from '../constants';
+import { _dirname, getModuleName } from '../helpers';
 import { Component } from '../types';
 
-const OUTPUT_FILE = path.resolve(__dirname, '../.scanner/adoption-data-react.json');
+const OUTPUT_FILE = path.resolve(process.cwd(), `${OUTPUT_DIR}/${REACT_OUTPUT_FILE}`);
 
-const getRelativePath = (absolutePath: string) => path.relative(ROOT_PATH, absolutePath);
+const getRelativePath = (absolutePath: string) => path.relative(path.resolve(_dirname, ROOT_PATH), absolutePath);
 
 interface ForEachComponentOptions {
   componentName: string;

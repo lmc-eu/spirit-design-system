@@ -46,3 +46,15 @@ interface OutputInstance {
 }
 
 export type TrackedData = Record<string, OutputInstance>;
+
+export interface RunnerConfig {
+  crawlFrom: string;
+  exclude?: Array<string>;
+  configFile?: string;
+  outputFile?: string;
+  coreComponentsPath?: string;
+  config: string;
+  configDir?: string;
+  startTime?: string;
+  method?: string;
+}
