@@ -4560,7 +4560,7 @@
   dependencies:
     nx "15.7.0"
 
-"@nrwl/cli@15.9.3", "@nrwl/cli@^15.9.3":
+"@nrwl/cli@15.9.3":
   version "15.9.3"
   resolved "https://registry.yarnpkg.com/@nrwl/cli/-/cli-15.9.3.tgz#5946ee84953fd9e67708fd39049f0f5f328ede14"
   integrity sha512-qiAKHkov3iBx6hroPTitUrkRSUZFQqVgNJiF9gXRFC6pNJe9RS4rlmcIaoUFOboi9CnH5jwblNJVcz8YSVYOvA==
@@ -14375,7 +14375,7 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
-html-react-parser@^5.0.6:
+html-react-parser@5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/html-react-parser/-/html-react-parser-5.0.6.tgz#ee9e8ae404aa38cfbaf3825cb26fabced46024a1"
   integrity sha512-aPSzFhO2bK/L/mYQbMwFz+1QG8nhxozbwENt/52HTApasrBvDX87MFD5uSQIjq7Io0bnKzH4uh7PM42zZ4ag9A==
