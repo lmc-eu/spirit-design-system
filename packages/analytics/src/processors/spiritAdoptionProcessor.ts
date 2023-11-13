@@ -1,6 +1,6 @@
 import { path } from 'zx';
-import { getModuleName } from '../helpers';
 import { ROOT_PATH } from '../constants';
+import { __dirname, getModuleName } from '../helpers';
 import { Component } from '../types';
 
 const OUTPUT_FILE = path.resolve(__dirname, '../.scanner/adoption-data-react.json');

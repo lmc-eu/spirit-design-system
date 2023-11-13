@@ -34,7 +34,7 @@
   "scripts": {
     "prebuild": "shx rm -rf dist && shx mkdir -p dist",
     "build": "tsup --config ./config/tsup.config.ts",
-    "postbuild": "shx cp -r package.json README.md dist/",
+    "postbuild": "shx cp -r package.json README.md src/bin dist/",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
     "lint": "eslint ./",

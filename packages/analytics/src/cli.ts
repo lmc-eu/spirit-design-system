@@ -1,8 +1,8 @@
 import sade from 'sade';
 import { fs, path } from 'zx';
-import { errorMessage, infoMessage } from './helpers';
-import scanner from './scanner';
 import { ROOT_PATH } from './constants';
+import { __dirname, errorMessage, infoMessage } from './helpers';
+import scanner from './scanner';
 
 const packageJson = fs.readJsonSync(path.resolve(__dirname, '../package.json'));
 

@@ -1,5 +1,8 @@
+import filedirname from 'filedirname';
 import { path } from 'zx';
 import { OUTPUT_DIR, OUTPUT_FILENAME_PREFIX } from '../constants';
+
+export const [__filename, __dirname] = filedirname();
 
 export const getOutputPath = (outputPath: string, name: string) => {
   const outputFilename = `${OUTPUT_FILENAME_PREFIX}-${name}.json`;
