@@ -1,10 +1,10 @@
 import sade from 'sade';
 import { fs, path } from 'zx';
 import { ROOT_PATH } from './constants';
-import { __dirname, errorMessage, infoMessage } from './helpers';
+import { _dirname, errorMessage, infoMessage } from './helpers';
 import scanner from './scanner';
 
-const packageJson = fs.readJsonSync(path.resolve(__dirname, '../package.json'));
+const packageJson = fs.readJsonSync(path.resolve(_dirname, './package.json'));
 
 export default async function cli(args: string[]) {
   sade('analytics', true)
@@ -16,14 +16,20 @@ export default async function cli(args: string[]) {
     .example('-o path/to/folder')
     .option('-c --config', 'Path to scanner config')
     .example('-c path/to/scanner.config.js')
-    .action(({ output, config, source }) => {
+    .option('-t --type', 'Type of scanner')
+    .example('-t react')
+    .action(async ({ output, config, source, type }) => {
+      let selectedConfig;
+
       if (config && !fs.existsSync(config)) {
         errorMessage('Could not find config file');
         process.exit(1);
+      } else if (config && fs.existsSync(config)) {
+        infoMessage(`Using provided config file: ${config}`);
+        selectedConfig = path.resolve(process.cwd(), config);
       } else {
         infoMessage('Using default config file');
-        // eslint-disable-next-line no-param-reassign
-        config = path.resolve(__dirname, '../react-scanner.config.js');
+        selectedConfig = path.resolve(_dirname, './spirit-analytics.config.js');
       }
 
       if (output && !fs.existsSync(output)) {
@@ -31,11 +37,24 @@ export default async function cli(args: string[]) {
         process.exit(1);
       }
 
+      const { default: loadedConfig } = await import(selectedConfig);
+
+      let selectedType: ScannerType = null;
+
+      if (type) {
+        selectedType = type;
+      }
+
       if (source) {
-        scanner({ source, outputPath: output, config });
+        scanner({ source, outputPath: output, config: loadedConfig });
         infoMessage(`Start scanning: ${source}`);
       } else {
-        scanner({ source: ROOT_PATH, outputPath: output, config });
+        scanner({
+          source: path.resolve(process.cwd(), ROOT_PATH),
+          outputPath: output,
+          config: loadedConfig,
+          type: selectedType,
+        });
         infoMessage('Start scanning from default scope');
       }
     })

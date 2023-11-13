@@ -7,10 +7,10 @@ declare module 'react-scanner' {
     method,
   }: {
     config: string;
-    configDir: string;
+    configDir?: string;
     crawlFrom: string;
-    startTime: string;
-    method: string;
+    startTime?: string;
+    method?: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }): any;
 }
