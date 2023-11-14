@@ -7,8 +7,7 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import DropdownDefault from './DropdownDefault';
-import DropdownTopRight from './DropdownTopRight';
+import DropdownPlacements from './DropdownPlacements';
 import DropdownDisabledAutoclose from './DropdownDisabledAutoclose';
 import DropdownLongerContent from './DropdownLongerContent';
 import DropdownFullwidthAll from './DropdownFullwidthAll';
@@ -18,11 +17,8 @@ import DropdownEnhancedShadow from './DropdownEnhancedShadow';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Basic usage with default align">
-        <DropdownDefault />
-      </DocsSection>
-      <DocsSection title="Usage with align to top right">
-        <DropdownTopRight />
+      <DocsSection title="Placements" stackAlignment="stretch">
+        <DropdownPlacements />
       </DocsSection>
       <DocsSection title="Usage with disabled auto close">
         <DropdownDisabledAutoclose />

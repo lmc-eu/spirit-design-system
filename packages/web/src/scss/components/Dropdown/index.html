@@ -1,304 +1,401 @@
 {{#> layout/plain }}
 
-<section class="docs-Section">
-  <h2 class="docs-Heading">Basic usage with default align</h2>
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Placements</h2>
 
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownDefault"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownDefault"
-    >
-      Button as anchor
-    </button>
-    <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Information</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Help</span>
-      </a>
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <form autocomplete="off">
+        <div class="Grid Grid--cols-3 mx-auto" style="align-items: center; justify-items: center; max-width: 40rem;">
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 1">
+
+            <label for="placement_top_left" class="Radio">
+              <input type="radio" name="placement" value="topLeft" id="placement_top_left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-left</span>
+              </span>
+            </label>
+            <label for="placement_top" class="Radio">
+              <input type="radio" name="placement" value="top" id="placement_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top</span>
+              </span>
+            </label>
+            <label for="placement_top_right" class="Radio">
+              <input type="radio" name="placement" value="topRight" id="placement_top_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-right</span>
+              </span>
+            </label>
+
+          </div>
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 3">
+
+            <label for="placement_bottom_left" class="Radio">
+              <input type="radio" name="placement" value="bottomLeft" id="placement_bottom_left" class="Radio__input" checked />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-left</span>
+              </span>
+            </label>
+            <label for="placement_bottom" class="Radio">
+              <input type="radio" name="placement" value="bottom" id="placement_bottom" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom</span>
+              </span>
+            </label>
+            <label for="placement_bottom_right" class="Radio">
+              <input type="radio" name="placement" value="bottomRight" id="placement_bottom_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-right</span>
+              </span>
+            </label>
+
+          </div>
+          <div
+            class="GridItem"
+            style="
+              --grid-item-column-start: 1;
+              --grid-item-row-start: 2;
+              display: flex;
+              flex-direction: column;
+              justify-self: start;
+            "
+          >
+
+            <label for="placement_left_top" class="Radio">
+              <input type="radio" name="placement" value="leftTop" id="placement_left_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-top</span>
+              </span>
+            </label>
+            <label for="placement_left" class="Radio">
+              <input type="radio" name="placement" value="left" id="placement_left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left</span>
+              </span>
+            </label>
+            <label for="placement_left_bottom" class="Radio">
+              <input type="radio" name="placement" value="leftBottom" id="placement_left_bottom" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-bottom</span>
+              </span>
+            </label>
+
+          </div>
+          <div
+            class="GridItem"
+            style="
+              --grid-item-column-start: 3;
+              --grid-item-row-start: 2;
+              display: flex;
+              flex-direction: column;
+              justify-self: end;
+            "
+          >
+
+            <label for="placement_right_top" class="Radio">
+              <input type="radio" name="placement" value="rightTop" id="placement_right_top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-top</span>
+              </span>
+            </label>
+            <label for="placement_right" class="Radio">
+              <input type="radio" name="placement" value="right" id="placement_right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right</span>
+              </span>
+            </label>
+            <label for="placement_right_bottom" class="Radio">
+              <input type="radio" name="placement" value="rightBottom" id="placement_right_bottom" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-bottom</span>
+              </span>
+            </label>
+
+          </div>
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 2">
+
+            <div class="DropdownWrapper" style="margin: 8rem auto">
+              <button
+                type="button"
+                data-spirit-toggle="dropdown"
+                data-spirit-target="#dropdown_placements_example"
+                data-spirit-autoclose="false"
+                class="Button Button--primary Button--medium"
+                aria-expanded="false"
+                aria-controls="#dropdown_placements_example"
+              >
+                <span id="dropdown_placements_example_text" style="white-space: nowrap">bottom-left</span>
+              </button>
+              <div class="Dropdown Dropdown--bottomLeft" id="dropdown_placements_example">
+                <a href="#" class="d-flex mb-400">Action</a>
+                <a href="#" class="d-flex mb-400">Another action</a>
+                <a href="#" class="d-flex">Something else here</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+      <script>
+        const radios = document.querySelectorAll('input[type="radio"]');
+
+        radios.forEach(radio => {
+          radio.addEventListener('change', () => {
+            const placement = radio.value;
+            const dropdown = document.getElementById('dropdown_placements_example');
+            const placementText = document.getElementById('dropdown_placements_example_text');
+
+            dropdown.classList.replace(dropdown.classList[1], `Dropdown--${placement}`);
+            placementText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
+          });
+        });
+      </script>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="docs-Section">
-  <h2 class="docs-Heading">Usage with align to top right</h2>
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Usage with disabled auto close</h2>
 
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownTopRight"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownTopRight"
-    >
-      Button as anchor
-    </button>
-    <div class="Dropdown Dropdown--topRight" id="dropdownTopRight">
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Information</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Help</span>
-      </a>
-    </div>
-  </div>
-</section>
+    <div class="docs-Stack docs-Stack--start">
 
-<section class="docs-Section">
-  <h2 class="docs-Heading">Usage with disabled auto close</h2>
-
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownDisabledAutoClose"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownDisabledAutoClose"
-      data-spirit-autoclose="true"
-    >
-      Button as anchor
-    </button>
-    <div class="Dropdown Dropdown--bottomLeft" id="dropdownDisabledAutoClose">
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Information</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Help</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Longer content</h2>
-
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownLonger"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownLonger"
-    >
-      Button as anchor
-    </button>
-    <div class="Dropdown Dropdown--bottomLeft" id="dropdownLonger">
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Nulla condimentum, purus commodo cursus non nulla rhoncus</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Mauris nunc, elementum enim in lacinia vitae quam placerat sem, euismod accumsan</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Donec dui, nunc dui vel varius libero molestie nibh nunc</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Full-width mode 'all'</h2>
-
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownFullWidthModeAll"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownFullWidthModeAll"
-    >
-      Finibus quis imperdiet, semper imperdiet aliquam
-    </button>
-    <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Information</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Help</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Full-width mode 'mobile-only'</h2>
-
-  <div class="DropdownWrapper">
-    <button
-      data-spirit-toggle="dropdown"
-      data-spirit-target="#dropdownFullWidthModeMobile"
-      class="Button Button--primary Button--medium"
-      aria-expanded="false"
-      aria-controls="#dropdownFullWidthModeMobile"
-    >
-      Finibus quis imperdiet, semper imperdiet aliquam
-    </button>
-    <div
-      class="Dropdown Dropdown--top Dropdown--left"
-      id="dropdownFullWidthModeMobile"
-      data-spirit-fullwidthmode="mobile-only"
-    >
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <span>Information</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#link" />
-        </svg>
-        <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-      </a>
-      <a href="#" class="d-flex mb-400">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#profile" />
-        </svg>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="d-flex">
-        <svg width="24" height="24" aria-hidden="true" class="mr-400">
-          <use xlink:href="/icons/svg/sprite.svg#help" />
-        </svg>
-        <span>Help</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Feature Flag: Enhanced Shadow</h2>
-
-  <div class="spirit-feature-dropdown-enable-enhanced-shadow">
-    <div class="DropdownWrapper">
-      <button
-        data-spirit-toggle="dropdown"
-        data-spirit-target="#dropdownEnhancedShadow"
-        class="Button Button--primary Button--medium"
-        aria-expanded="false"
-        aria-controls="#dropdownEnhancedShadow"
-      >
-        Finibus quis imperdiet, semper imperdiet aliquam
-      </button>
-      <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownEnhancedShadow">
-        <a href="#" class="d-flex mb-400">
-          <svg width="24" height="24" aria-hidden="true" class="mr-400">
-            <use xlink:href="/icons/svg/sprite.svg#info" />
-          </svg>
-          <span>Information</span>
-        </a>
-        <a href="#" class="d-flex mb-400">
-          <svg width="24" height="24" aria-hidden="true" class="mr-400">
-            <use xlink:href="/icons/svg/sprite.svg#link" />
-          </svg>
-          <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
-        </a>
-        <a href="#" class="d-flex mb-400">
-          <svg width="24" height="24" aria-hidden="true" class="mr-400">
-            <use xlink:href="/icons/svg/sprite.svg#profile" />
-          </svg>
-          <span>Profile</span>
-        </a>
-        <a href="#" class="d-flex">
-          <svg width="24" height="24" aria-hidden="true" class="mr-400">
-            <use xlink:href="/icons/svg/sprite.svg#help" />
-          </svg>
-          <span>Help</span>
-        </a>
+      <div class="DropdownWrapper">
+        <button
+          type="button"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#dropdownDisabledAutoClose"
+          class="Button Button--primary Button--medium"
+          aria-expanded="false"
+          aria-controls="#dropdownDisabledAutoClose"
+          data-spirit-autoclose="true"
+        >
+          Button as anchor
+        </button>
+        <div class="Dropdown Dropdown--bottomLeft" id="dropdownDisabledAutoClose">
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <span>Information</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#link" />
+            </svg>
+            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#profile" />
+            </svg>
+            <span>Profile</span>
+          </a>
+          <a href="#" class="d-flex">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#help" />
+            </svg>
+            <span>Help</span>
+          </a>
+        </div>
       </div>
+
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Longer content</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="DropdownWrapper">
+        <button
+          type="button"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#dropdownLonger"
+          class="Button Button--primary Button--medium"
+          aria-expanded="false"
+          aria-controls="#dropdownLonger"
+        >
+          Button as anchor
+        </button>
+        <div class="Dropdown Dropdown--bottomLeft" id="dropdownLonger">
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#link" />
+            </svg>
+            <span>Nulla condimentum, purus commodo cursus non nulla rhoncus</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#profile" />
+            </svg>
+            <span>Mauris nunc, elementum enim in lacinia vitae quam placerat sem, euismod accumsan</span>
+          </a>
+          <a href="#" class="d-flex">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#help" />
+            </svg>
+            <span>Donec dui, nunc dui vel varius libero molestie nibh nunc</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Full-width mode 'all'</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="DropdownWrapper">
+        <button
+          type="button"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#dropdownFullWidthModeAll"
+          class="Button Button--primary Button--medium"
+          aria-expanded="false"
+          aria-controls="#dropdownFullWidthModeAll"
+        >
+          Finibus quis imperdiet, semper imperdiet aliquam
+        </button>
+        <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <span>Information</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#link" />
+            </svg>
+            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#profile" />
+            </svg>
+            <span>Profile</span>
+          </a>
+          <a href="#" class="d-flex">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#help" />
+            </svg>
+            <span>Help</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Full-width mode 'mobile-only'</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="DropdownWrapper">
+        <button
+          type="button"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#dropdownFullWidthModeMobile"
+          class="Button Button--primary Button--medium"
+          aria-expanded="false"
+          aria-controls="#dropdownFullWidthModeMobile"
+        >
+          Finibus quis imperdiet, semper imperdiet aliquam
+        </button>
+        <div
+          class="Dropdown Dropdown--top Dropdown--left"
+          id="dropdownFullWidthModeMobile"
+          data-spirit-fullwidthmode="mobile-only"
+        >
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <span>Information</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#link" />
+            </svg>
+            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          </a>
+          <a href="#" class="d-flex mb-400">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#profile" />
+            </svg>
+            <span>Profile</span>
+          </a>
+          <a href="#" class="d-flex">
+            <svg width="24" height="24" aria-hidden="true" class="mr-400">
+              <use xlink:href="/icons/svg/sprite.svg#help" />
+            </svg>
+            <span>Help</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="docs-Section">
+    <h2 class="docs-Heading">Feature Flag: Enhanced Shadow</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="spirit-feature-dropdown-enable-enhanced-shadow">
+        <div class="DropdownWrapper">
+          <button
+            type="button"
+            data-spirit-toggle="dropdown"
+            data-spirit-target="#dropdownEnhancedShadow"
+            class="Button Button--primary Button--medium"
+            aria-expanded="false"
+            aria-controls="#dropdownEnhancedShadow"
+          >
+            Finibus quis imperdiet, semper imperdiet aliquam
+          </button>
+          <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownEnhancedShadow">
+            <a href="#" class="d-flex mb-400">
+              <svg width="24" height="24" aria-hidden="true" class="mr-400">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+              <span>Information</span>
+            </a>
+            <a href="#" class="d-flex mb-400">
+              <svg width="24" height="24" aria-hidden="true" class="mr-400">
+                <use xlink:href="/icons/svg/sprite.svg#link" />
+              </svg>
+              <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+            </a>
+            <a href="#" class="d-flex mb-400">
+              <svg width="24" height="24" aria-hidden="true" class="mr-400">
+                <use xlink:href="/icons/svg/sprite.svg#profile" />
+              </svg>
+              <span>Profile</span>
+            </a>
+            <a href="#" class="d-flex">
+              <svg width="24" height="24" aria-hidden="true" class="mr-400">
+                <use xlink:href="/icons/svg/sprite.svg#help" />
+              </svg>
+              <span>Help</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 {{/layout/plain }}
