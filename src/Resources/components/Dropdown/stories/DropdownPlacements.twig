@@ -1,0 +1,65 @@
+<form autocomplete="off">
+    <Grid cols="3" UNSAFE_className="mx-auto" UNSAFE_style="align-items: center; justify-items: center; max-width: 40rem;">
+        <GridItem columnStart="2" rowStart="1">
+
+            <Radio name="placement" isLabelHidden value="topLeft" id="placement_top_left" label="top-left"/>
+            <Radio name="placement" isLabelHidden value="top" id="placement_top" label="top"/>
+            <Radio name="placement" isLabelHidden value="topRight" id="placement_top_right" label="top-right"/>
+
+        </GridItem>
+        <GridItem columnStart="2" rowStart="3">
+
+            <Radio name="placement" isLabelHidden value="bottomLeft" id="placement_bottom_left" label="bottom-left" isChecked />
+            <Radio name="placement" isLabelHidden value="bottom" id="placement_bottom" label="bottom" />
+            <Radio name="placement" isLabelHidden value="bottomRight" id="placement_bottom_right" label="bottom-right"/>
+
+        </GridItem>
+        <GridItem columnStart="1" rowStart="2" UNSAFE_style="display: flex; flex-direction: column; justify-self: start;">
+
+            <Radio name="placement" isLabelHidden value="leftTop" id="placement_left_top" label="left-top"/>
+            <Radio name="placement" isLabelHidden value="left" id="placement_left" label="left"/>
+            <Radio name="placement" isLabelHidden value="leftBottom" id="placement_left_bottom" label="left-bottom"/>
+
+        </GridItem>
+        <GridItem columnStart="3" rowStart="2" UNSAFE_style="display: flex; flex-direction: column; justify-self: end;">
+
+            <Radio name="placement" isLabelHidden value="rightTop" id="placement_right_top" label="right-top"/>
+            <Radio name="placement" isLabelHidden value="right" id="placement_right" label="right"/>
+            <Radio name="placement" isLabelHidden value="rightBottom" id="placement_right_bottom" label="right-bottom"/>
+
+        </GridItem>
+        <GridItem columnStart="2" rowStart="2">
+
+            <DropdownWrapper UNSAFE_style="margin: 8rem auto">
+                <Button
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown_placements_example"
+                    data-spirit-autoclose="false"
+                >
+                    <span id="dropdown_placements_example_text" style="white-space: nowrap">bottom-left</span>
+                </Button>
+                <Dropdown id="dropdown_placements_example">
+                    <a href="#" class="d-flex mb-400">Action</a>
+                    <a href="#" class="d-flex mb-400">Another action</a>
+                    <a href="#" class="d-flex">Something else here</a>
+                </Dropdown>
+            </DropdownWrapper>
+
+        </GridItem>
+    </Grid>
+</form>
+
+<script>
+    const radios = document.querySelectorAll('input[type="radio"]');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            const placement = radio.value;
+            const dropdown = document.getElementById('dropdown_placements_example');
+            const placementText = document.getElementById('dropdown_placements_example_text');
+
+            dropdown.classList.replace(dropdown.classList[1], `Dropdown--${placement}`);
+            placementText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
+        });
+    });
+</script>
