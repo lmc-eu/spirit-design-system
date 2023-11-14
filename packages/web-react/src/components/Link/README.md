@@ -11,9 +11,10 @@ Link allows users to follow navigation.
 | Name               | Type                                             | Default   | Required | Description                    |
 | ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |
 | `color`            | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
+| `elementType`      | `ElementType`                                    | `a`       | ✕        | Type of element used as        |
 | `href`             | `string`                                         | —         | ✕        | Link's href attribute          |
-| `isUnderlined`     | `bool`                                           | `false`   | ✕        | Whether is the link underlined |
 | `isDisabled`       | `bool`                                           | `false`   | ✕        | Whether is the link disabled   |
+| `isUnderlined`     | `bool`                                           | `false`   | ✕        | Whether is the link underlined |
 | `ref`              | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference         |
 | `UNSAFE_className` | `string`                                         | —         | ✕        | Wrapper custom class name      |
 | `UNSAFE_style`     | `CSSProperties`                                  | —         | ✕        | Wrapper custom style           |
@@ -32,6 +33,31 @@ const CustomLink = (props: SpiritLinkProps): JSX.Element => {
     </a>
   );
 };
+```
+
+## Custom polymorphic component
+
+If you are using `forwardRef`, use the `PolymorphicRef` type for the reference.
+
+```jsx
+import { forwardRef } from 'react
+import { Link } from '@lmc-eu/spirit-web-react';
+import { PolymorphicRef } from '@lmc-eu/spirit-web-react/types';
+
+type LinkProps<T extends ElementType = 'button'> = SpiritLinkProps<T, 'tertiary'>;
+
+const CustomLinkRoot = <T extends ElementType = 'button'>(
+  props: LinkProps<T>,
+  ref: PolymorphicRef<T> // <-- Type `ref` prop with the `PolymorphicRef` here
+): JSX.Element => (
+  <Link
+      ref={ref}
+      elementType="button"
+      {...props}
+  />
+);
+
+export const CustomLink = forwardRef(CustomLinkRoot);
 ```
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
