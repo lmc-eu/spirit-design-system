@@ -32,6 +32,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Full-width mode 'mobile-only'">
         <DropdownModernFullwidthMobileOnly />
       </DocsSection>
+      <DocsSection title="Feature Flag: Enhanced Shadow">
+        <DropdownModernEnhancedShadow />
+      </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
 );
