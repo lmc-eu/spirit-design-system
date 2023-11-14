@@ -1,9 +1,6 @@
 name: Component Analysis
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 6 * * *' # every day at 6:00
 
