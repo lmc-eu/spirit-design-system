@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+
+# [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.6.0...@lmc-eu/spirit-web-react@1.7.0) (2023-11-15)
+
+### Bug Fixes
+
+- **web-react:** Add missing exports for Tooltip components ([eb16312](https://github.com/lmc-eu/spirit-design-system/commit/eb16312))
+- **web-react:** FileUploader hidden input were not added without meta ([4bb4b21](https://github.com/lmc-eu/spirit-design-system/commit/4bb4b21))
+- **web-react:** Icon component supports SSR ([79f9f6f](https://github.com/lmc-eu/spirit-design-system/commit/79f9f6f))
+- **web-react:** Polymorph Link component types [#DS-1060](https://github.com/lmc-eu/spirit-design-system/issues/DS-1060) ([98864cf](https://github.com/lmc-eu/spirit-design-system/commit/98864cf))
+- **web-react:** Replace useLayoutEffect with useIsomorphicLayoutEffect ([ea9f333](https://github.com/lmc-eu/spirit-design-system/commit/ea9f333))
+
+### Code Refactoring
+
+- **web-react:** Refactor Dropdown to controlled component [#DS-637](https://github.com/lmc-eu/spirit-design-system/issues/DS-637) ([3c0f08b](https://github.com/lmc-eu/spirit-design-system/commit/3c0f08b))
+
+### Dependencies
+
+- Pin dependencies ([84fe6f5](https://github.com/lmc-eu/spirit-design-system/commit/84fe6f5))
+- Update all non-major dependencies ([828bc68](https://github.com/lmc-eu/spirit-design-system/commit/828bc68))
+
+### Documentation
+
+- **web-react:** Add the missing demo of `DropdownModern` with enhanced shadow ([4430fbb](https://github.com/lmc-eu/spirit-design-system/commit/4430fbb))
+- **web-react:** Adding elementType to api table and new poly. example ([e7d8cda](https://github.com/lmc-eu/spirit-design-system/commit/e7d8cda))
+- **web-react:** Corrected the example for Dropdown [#DS-601](https://github.com/lmc-eu/spirit-design-system/issues/DS-601) ([ddd7e20](https://github.com/lmc-eu/spirit-design-system/commit/ddd7e20))
+- **web-react:** Extend `Header` README to be as detailed as in the Twig implementation ([5ba5ff1](https://github.com/lmc-eu/spirit-design-system/commit/5ba5ff1))
+- **web-react:** FileUploaderAttachment documentation FileUploaderAttachment ([dd56280](https://github.com/lmc-eu/spirit-design-system/commit/dd56280))
+- **web-react:** Put pure CSS examples of Tooltip in line so they are usable in more viewport sizes ([8ff9d3a](https://github.com/lmc-eu/spirit-design-system/commit/8ff9d3a))
+- **web-react:** Showcase Dropdown enhanced shadow Feature flag [#DS-963](https://github.com/lmc-eu/spirit-design-system/issues/DS-963) ([8e8ea36](https://github.com/lmc-eu/spirit-design-system/commit/8e8ea36))
+- **web-react:** Showcase placement valuse on Tooltip demo ([ec9c97d](https://github.com/lmc-eu/spirit-design-system/commit/ec9c97d)), closes [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923)
+- **web, web-twig, web-react:** Document ModalHeader and ModalFooter usage recommendations [#DS-1033](https://github.com/lmc-eu/spirit-design-system/issues/DS-1033) ([403cc0b](https://github.com/lmc-eu/spirit-design-system/commit/403cc0b))
+- **web,web-twig,web-react:** Add interactive demo of `Dropdown` placements [#DS-1037](https://github.com/lmc-eu/spirit-design-system/issues/DS-1037) ([deb054c](https://github.com/lmc-eu/spirit-design-system/commit/deb054c))
+- **web,web-twig,web-react:** Make use of new `GridItem` component in `Tooltip` placement examples ([81d9952](https://github.com/lmc-eu/spirit-design-system/commit/81d9952))
+
+### Features
+
+- **web-react:** Allow combining links and buttons in `HeaderDesktopActions` ([1f5e4ae](https://github.com/lmc-eu/spirit-design-system/commit/1f5e4ae))
+- **web-react:** Introduce `useIsomorphicLayoutEffect` hook ([a7f3c1d](https://github.com/lmc-eu/spirit-design-system/commit/a7f3c1d))
+
+### Styles
+
+- **web-react:** Introduce ESlint rule to avoid using useLayoutEffect ([563b7fb](https://github.com/lmc-eu/spirit-design-system/commit/563b7fb)), closes [#DS-1004](https://github.com/lmc-eu/spirit-design-system/issues/DS-1004)
+
+### Tests
+
+- **web-react:** Ignore demo files from code coverage reports ([7147a6d](https://github.com/lmc-eu/spirit-design-system/commit/7147a6d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.6.0"></a>
 
 # [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.5.0...@lmc-eu/spirit-web-react@1.6.0) (2023-11-02)

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.0.3...@lmc-eu/spirit-design-tokens@1.1.0) (2023-11-15)
+
+### Chores
+
+- **design-tokens:** Introduce distribution process for JS files ([af09f2f](https://github.com/lmc-eu/spirit-design-system/commit/af09f2f)), closes [#DS-1012](https://github.com/lmc-eu/spirit-design-system/issues/DS-1012)
+
+### Features
+
+- **design-tokens:** Introduce structure of exported tokens to JS ([529d27e](https://github.com/lmc-eu/spirit-design-system/commit/529d27e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.0.3"></a>
 
 ## [1.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.0.2...@lmc-eu/spirit-design-tokens@1.0.3) (2023-10-25)

@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.6.0"></a>
+
+# [2.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.5.0...@lmc-eu/spirit-web-twig@2.6.0) (2023-11-15)
+
+### Bug Fixes
+
+- **web, web-twig:** FileUploader changed selectors in JS plugin ([967d5a4](https://github.com/lmc-eu/spirit-design-system/commit/967d5a4))
+
+### Code Refactoring
+
+- **web-twig:** FileUploader imageObjectFit data attr changed to style ([37c34c1](https://github.com/lmc-eu/spirit-design-system/commit/37c34c1))
+
+### Documentation
+
+- **web-twig:** FileUploaderAttachment documentation update ([b80a155](https://github.com/lmc-eu/spirit-design-system/commit/b80a155)), closes [#DS-1036](https://github.com/lmc-eu/spirit-design-system/issues/DS-1036)
+- **web-twig:** Put pure CSS examples of `Tooltip` in line so they are usable in more viewport sizes ([1b7d8a4](https://github.com/lmc-eu/spirit-design-system/commit/1b7d8a4))
+- **web-twig:** Showcase Dropdown enhanced shadow Feature flag [#DS-963](https://github.com/lmc-eu/spirit-design-system/issues/DS-963) ([92503c0](https://github.com/lmc-eu/spirit-design-system/commit/92503c0))
+- **web-twig:** Showcase placement valuse on Tooltip demo ([6d6c600](https://github.com/lmc-eu/spirit-design-system/commit/6d6c600)), closes [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923)
+- **web, web-twig, web-react:** Document ModalHeader and ModalFooter usage recommendations [#DS-1033](https://github.com/lmc-eu/spirit-design-system/issues/DS-1033) ([403cc0b](https://github.com/lmc-eu/spirit-design-system/commit/403cc0b))
+- **web,web-twig,web-react:** Add interactive demo of `Dropdown` placements [#DS-1037](https://github.com/lmc-eu/spirit-design-system/issues/DS-1037) ([deb054c](https://github.com/lmc-eu/spirit-design-system/commit/deb054c))
+- **web,web-twig,web-react:** Make use of new `GridItem` component in `Tooltip` placement examples ([81d9952](https://github.com/lmc-eu/spirit-design-system/commit/81d9952))
+
+### Features
+
+- **web-twig:** Allow combining links and buttons in `HeaderDesktopActions` ([8144702](https://github.com/lmc-eu/spirit-design-system/commit/8144702))
+
+### Tests
+
+- **web-twig:** Add tests for imageObjectFit property ([495c4d5](https://github.com/lmc-eu/spirit-design-system/commit/495c4d5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.5.0"></a>
 
 # [2.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.4.0...@lmc-eu/spirit-web-twig@2.5.0) (2023-11-02)

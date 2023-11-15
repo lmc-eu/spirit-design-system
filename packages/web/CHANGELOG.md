@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.4.0...@lmc-eu/spirit-web@1.5.0) (2023-11-15)
+
+### Bug Fixes
+
+- **web, web-twig:** FileUploader changed selectors in JS plugin ([967d5a4](https://github.com/lmc-eu/spirit-design-system/commit/967d5a4))
+- **web:** Disable text decoration changes for disabled links ([c01055a](https://github.com/lmc-eu/spirit-design-system/commit/c01055a))
+
+### Chores
+
+- **ci:** Build packages before running tests ([e310181](https://github.com/lmc-eu/spirit-design-system/commit/e310181))
+- **web:** Build design tokens before building examples ([e4d9586](https://github.com/lmc-eu/spirit-design-system/commit/e4d9586))
+- **web:** Change design-tokens path in scripts ([d3e14a2](https://github.com/lmc-eu/spirit-design-system/commit/d3e14a2))
+- **web:** Do not deploy Offcanvas component as it is empty ([c18effd](https://github.com/lmc-eu/spirit-design-system/commit/c18effd))
+
+### Code Refactoring
+
+- **web:** FileUploader imageObjectFit data attr changed to style ([0b21067](https://github.com/lmc-eu/spirit-design-system/commit/0b21067))
+- **web:** Offcanvas uses design token instead of hardcoded value ([f4ce7b0](https://github.com/lmc-eu/spirit-design-system/commit/f4ce7b0)), closes [#DS-1012](https://github.com/lmc-eu/spirit-design-system/issues/DS-1012)
+
+### Dependencies
+
+- Update all non-major dependencies ([828bc68](https://github.com/lmc-eu/spirit-design-system/commit/828bc68))
+
+### Documentation
+
+- **web, web-twig, web-react:** Document ModalHeader and ModalFooter usage recommendations [#DS-1033](https://github.com/lmc-eu/spirit-design-system/issues/DS-1033) ([403cc0b](https://github.com/lmc-eu/spirit-design-system/commit/403cc0b))
+- **web,web-twig,web-react:** Add interactive demo of `Dropdown` placements [#DS-1037](https://github.com/lmc-eu/spirit-design-system/issues/DS-1037) ([deb054c](https://github.com/lmc-eu/spirit-design-system/commit/deb054c))
+- **web,web-twig,web-react:** Make use of new `GridItem` component in `Tooltip` placement examples ([81d9952](https://github.com/lmc-eu/spirit-design-system/commit/81d9952))
+- **web:** FileUploaderAttachment documentation update ([728f31b](https://github.com/lmc-eu/spirit-design-system/commit/728f31b))
+- **web:** Introduce Offcanvas readme and bind it to the Header ([16dff9a](https://github.com/lmc-eu/spirit-design-system/commit/16dff9a)), closes [#DS-1012](https://github.com/lmc-eu/spirit-design-system/issues/DS-1012)
+- **web:** Put pure CSS examples of `Tooltip` in line so they are usable in more viewport sizes ([753867a](https://github.com/lmc-eu/spirit-design-system/commit/753867a))
+- **web:** Showcase placement valuse on Tooltip demo ([1aa8b5c](https://github.com/lmc-eu/spirit-design-system/commit/1aa8b5c)), closes [#DS-923](https://github.com/lmc-eu/spirit-design-system/issues/DS-923)
+
+### Features
+
+- **web:** Add breakpoint tokens to root CSS variables ([a16707e](https://github.com/lmc-eu/spirit-design-system/commit/a16707e))
+- **web:** Add Feature flag to enable enhanced Dropdown shadow [#DS-963](https://github.com/lmc-eu/spirit-design-system/issues/DS-963) ([c59507b](https://github.com/lmc-eu/spirit-design-system/commit/c59507b))
+- **web:** All JS plugins can now load configuration ([0836854](https://github.com/lmc-eu/spirit-design-system/commit/0836854))
+- **web:** Allow combining links and buttons in `HeaderDesktopActions` ([14f8ee5](https://github.com/lmc-eu/spirit-design-system/commit/14f8ee5))
+- **web:** Enable `<button>` elements to be styled as links ([89809e8](https://github.com/lmc-eu/spirit-design-system/commit/89809e8))
+- **web:** Introduce Config class for loading configuration ([08916d9](https://github.com/lmc-eu/spirit-design-system/commit/08916d9)), closes [#DS-1012](https://github.com/lmc-eu/spirit-design-system/issues/DS-1012)
+- **web:** Offcanvas plugin can load breakpoint option ([79108ab](https://github.com/lmc-eu/spirit-design-system/commit/79108ab)), closes [#DS-1012](https://github.com/lmc-eu/spirit-design-system/issues/DS-1012)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.4.0"></a>
 
 # [1.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.3.0...@lmc-eu/spirit-web@1.4.0) (2023-11-02)
