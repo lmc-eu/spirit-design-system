@@ -94,7 +94,7 @@ publish: ## Publish packages to repository, pass the parameter "pkg=" to publish
 else
 publish:
 	@$(eval pkg ?=)
-	$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes --no-verify-access $(MONOREPO_TOOL_FLAGS)
+	$(PKG_EXECUTE) $(MONOREPO_TOOL) publish from-package --yes $(MONOREPO_TOOL_FLAGS)
 endif
 
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
