@@ -1,10 +1,15 @@
-@use '../settings/links' as links-settings;
+@use '@tokens' as tokens;
+@use '../settings/dictionaries' as dictionaries-settings;
+@use '../tools/dictionaries';
 @use '../tools/links' as links-tools;
 
-:any-link {
-    text-decoration: links-settings.$text-decoration-default;
+a {
+    @include links-tools.base();
 }
 
-a {
-    @include links-tools.base($set-color: true);
-}
+// @include dictionaries.generate-link-colors(
+//    'a',
+//    (primary),
+//    tokens.$action-colors,
+//    (default, hover, active)
+// );

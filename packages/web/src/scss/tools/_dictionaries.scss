@@ -157,12 +157,19 @@
     @each $dictionary-value in $dictionary-values {
         @each $print-value in $print-values {
             $variant-class: '#{$dictionary-value}';
+            $selector-composed: 'a';
+
             @if $print-value == 'disabled' {
                 $variant-class: '#{$dictionary-value}.link-#{$print-value}';
             } @else if $print-value != 'default' {
                 $variant-class: '#{$dictionary-value}:#{$print-value}';
             }
-            #{$selector}-#{unquote($variant-class)} {
+
+            @if $selector {
+                $selector-composed: #{$selector}-#{unquote($variant-class)};
+            }
+
+            #{$selector-composed} {
                 color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
             }
         }

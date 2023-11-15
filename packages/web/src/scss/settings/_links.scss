@@ -1,4 +1,5 @@
-$text-decoration-default: none;
-$text-decoration-hover: underline;
+$text-decoration-default: underline dotted;
+$text-decoration-hover: none;
+$text-decoration-underlined-default: underline dashed;
 $text-decoration-skip-ink: none;
 $text-underline-offset: 0.1875em;

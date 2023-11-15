@@ -2,6 +2,7 @@
 @use '../settings/links';
 
 @mixin base($set-color: false) {
+    text-decoration: links.$text-decoration-default;
     text-decoration-skip-ink: links.$text-decoration-skip-ink;
     text-underline-offset: links.$text-underline-offset;
 

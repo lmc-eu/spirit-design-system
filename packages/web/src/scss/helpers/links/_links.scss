@@ -31,10 +31,13 @@
 }
 
 // 4.
-.link-underlined,
 [class*='typography-heading'] a:hover,
 [class*='typography-heading'] a:active {
     text-decoration: links-settings.$text-decoration-hover;
+}
+
+.link-underlined {
+    text-decoration: links-settings.$text-decoration-underlined-default;
 }
 
 // 5.
