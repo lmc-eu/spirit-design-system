@@ -188,10 +188,10 @@
         &:hover {
             background-color: form-fields-theme.$item-background-color-hover;
         }
+    }
 
-        &:active {
-            background-color: form-fields-theme.$item-background-color-active;
-        }
+    &:active {
+        background-color: form-fields-theme.$item-background-color-active;
     }
 }
 
