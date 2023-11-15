@@ -2,8 +2,9 @@
 // 2. Generate link colors for all link states.
 // 3. Links in headings always have the default decoration, even those with `.link-underlined`.
 // 4. Allow link underline everywhere, except for headings in default state.
-// 5. Allow link stretching over the closest element with `position: relative`.
-// 6. Only links in headings have visited state.
+// 5. Disable pointer and text decoration changes for "disabled" links (intended for link-like `<button>` elements).
+// 6. Allow link stretching over the closest element with `position: relative`.
+// 7. Only links in headings can have visited state (that's our design decision).
 
 @use 'sass:map';
 @use '@tokens' as tokens;
@@ -24,12 +25,6 @@
     (default, hover, active, disabled)
 );
 
-// stylelint-disable-next-line selector-no-qualifying-type -- Increase specificity to override button variant styles.
-.link-disabled,
-button.link-disabled {
-    cursor: cursors.$disabled;
-}
-
 // 3.
 [class*='typography-heading'] a {
     text-decoration: links-settings.$text-decoration-default;
@@ -43,16 +38,30 @@ button.link-disabled {
 }
 
 // 5.
+// stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
+.link-disabled,
+button.link-disabled {
+    cursor: cursors.$disabled;
+}
+
+// 5.
+.link-disabled:not(.link-underlined),
+button.link-disabled:not(.link-underlined) {
+    text-decoration: links-settings.$text-decoration-default;
+}
+// stylelint-enable selector-no-qualifying-type
+
+// 6.
 .link-stretched {
     @include links-tools.stretch();
 }
 
-// 6.
+// 7.
 [class*='typography-heading'] :visited {
     color: map.get(tokens.$action-colors, link-primary-visited);
 }
 
-// 6.
+// 7.
 @include dictionaries.generate-link-colors(
     '[class*="typography-heading"] .link',
     dictionaries-settings.$text-colors,
