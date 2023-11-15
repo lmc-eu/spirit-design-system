@@ -89,9 +89,11 @@ Tab list
 
 #### API
 
-| Name       | Type  | Default | Required | Description     |
-| ---------- | ----- | ------- | -------- | --------------- |
-| `children` | `any` | —       | ✕        | Child component |
+| Name               | Type            | Default | Required | Description               |
+| ------------------ | --------------- | ------- | -------- | ------------------------- |
+| `children`         | `any`           | —       | ✕        | Child component           |
+| `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style      |
 
 ### TabItem
 
@@ -99,10 +101,12 @@ Tab list item
 
 #### API
 
-| Name       | Type                   | Default | Required | Description           |
-| ---------- | ---------------------- | ------- | -------- | --------------------- |
-| `forTab`   | [`string` \| `number`] | —       | ✔        | Identification of tab |
-| `children` | `any`                  | —       | ✕        | Child component       |
+| Name               | Type                   | Default | Required | Description               |
+| ------------------ | ---------------------- | ------- | -------- | ------------------------- |
+| `forTab`           | [`string` \| `number`] | —       | ✔        | Identification of tab     |
+| `children`         | `any`                  | —       | ✕        | Child component           |
+| `UNSAFE_className` | `string`               | —       | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties`        | —       | ✕        | Wrapper custom style      |
 
 ### TabLink
 
@@ -122,9 +126,11 @@ Tab content wrapper
 
 #### API
 
-| Name       | Type  | Default | Required | Description     |
-| ---------- | ----- | ------- | -------- | --------------- |
-| `children` | `any` | —       | ✕        | Child component |
+| Name               | Type            | Default | Required | Description               |
+| ------------------ | --------------- | ------- | -------- | ------------------------- |
+| `children`         | `any`           | —       | ✕        | Child component           |
+| `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style      |
 
 ### TabPane
 
@@ -132,9 +138,11 @@ Tab content item
 
 #### API
 
-| Name       | Type                   | Default | Required | Description           |
-| ---------- | ---------------------- | ------- | -------- | --------------------- |
-| `tabId`    | [`string` \| `number`] | —       | ✔        | Identification of tab |
-| `children` | `any`                  | —       | ✕        | Child component       |
+| Name               | Type                   | Default | Required | Description               |
+| ------------------ | ---------------------- | ------- | -------- | ------------------------- |
+| `tabId`            | [`string` \| `number`] | —       | ✔        | Identification of tab     |
+| `children`         | `any`                  | —       | ✕        | Child component           |
+| `UNSAFE_className` | `string`               | —       | ✕        | Wrapper custom class name |
+| `UNSAFE_style`     | `CSSProperties`        | —       | ✕        | Wrapper custom style      |
 
 For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.
