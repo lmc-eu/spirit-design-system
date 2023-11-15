@@ -1,7 +1,7 @@
 /* eslint-disable no-undefined */
+import { clearFixture, createEvent, getFixture, noop } from '../../../tests/helpers/fixture';
 import Tooltip from '../Tooltip';
 import EventHandler from '../dom/EventHandler';
-import { clearFixture, getFixture, createEvent, noop } from '../../../tests/helpers/fixture';
 
 describe('Tooltip', () => {
   let fixtureEl: Element;
@@ -101,7 +101,7 @@ describe('Tooltip', () => {
       it('should show a tooltip when hovering a child element', async () => {
         fixtureEl.innerHTML = [
           '<a href="#" rel="tooltip" title="Another tooltip">',
-          '  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100">',
+          '  <svg xmlns="https://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100">',
           '    <rect width="100%" fill="#563d7c"/>',
           '    <circle cx="50" cy="50" r="30" fill="#fff"/>',
           '  </svg>',
