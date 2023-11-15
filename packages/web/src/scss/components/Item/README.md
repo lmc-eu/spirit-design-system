@@ -1,10 +1,90 @@
 # Item
 
-The Item component is used to display a single item in a list. Currently we support
-two types of item content: Radio and Checkbox. In order to unify and simplify
-API of these components and also to avoid repeating ourselves, we use Item as their modifier.
+The Item component is used to display a single item in a list. It can be used in Dropdown or similar.
+To use Item with checkbox or radio please use components [Checkbox][checkbox] or [Radio][radio]
+with `item` modifier. We do this to avoid repeating the same code and to simplify the API.
 
-So, to create an Item of Radio content, you need to add `Radio--item` modifier class.
+Simple Item example:
+
+```html
+<button type="button" class="Item">
+  <span class="Item__label">Item</span>
+</button>
+```
+
+Item with icon example:
+
+```html
+<button type="button" class="Item">
+  <span class="Item__icon Item__icon--start">
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#search" />
+    </svg>
+  </span>
+  <span class="Item__label">Item</span>
+</button>
+```
+
+Item in selected state example:
+
+```html
+<button type="button" class="Item Item--selected">
+  <span class="Item__label">Item</span>
+  <span class="Item__icon Item__icon--end">
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#check-plain" />
+    </svg>
+  </span>
+</button>
+```
+
+Item with Helper text example:
+
+```html
+<button type="button" class="Item">
+  <span class="Item__label">Item</span>
+  <span class="Item__helperText">Helper text</span>
+</button>
+```
+
+Item in disabled state example:
+
+```html
+<button type="button" class="Item Item--disabled">
+  <span class="Item__label">Item</span>
+</button>
+```
+
+Item with icon and helper text in selected state example:
+
+```html
+<button type="button" class="Item Item--selected">
+  <span class="Item__icon Item__icon--start">
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#search" />
+    </svg>
+  </span>
+  <span class="Item__label">Item</span>
+  <span class="Item__helperText">Helper text</span>
+  <span class="Item__icon Item__icon--end">
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#check-plain" />
+    </svg>
+  </span>
+</button>
+```
+
+Item as a link example:
+
+```html
+<a href="#" class="Item">
+  <span class="Item__label">Item</span>
+</a>
+```
+
+ℹ️ Active style is visible only when the root element can obtain active state.
+
+Radio as a Item:
 
 ```html
 <label for="radioItem" class="Radio Radio--item">
@@ -13,7 +93,7 @@ So, to create an Item of Radio content, you need to add `Radio--item` modifier c
 </label>
 ```
 
-And to create an Item of Checkbox content, you need to add `Checkbox--item` modifier class.
+Checkbox as a Item:
 
 ```html
 <label for="checkboxItem" class="Checkbox Checkbox--item">
@@ -23,3 +103,6 @@ And to create an Item of Checkbox content, you need to add `Checkbox--item` modi
   </span>
 </label>
 ```
+
+[checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Checkbox/README.md
+[radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Radio/README.md
