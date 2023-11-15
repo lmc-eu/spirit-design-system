@@ -9,7 +9,7 @@ import AccordionItem from '../AccordionItem';
 import toggleValueByType from './toggleValueByType';
 
 const AccordionBasic = () => {
-  const [openState, setOpenState] = useState<AccordionOpenStateType>('AccordionItemExample0');
+  const [openState, setOpenState] = useState<AccordionOpenStateType>(['AccordionItemExample0']);
 
   const toggle = (id: string) => {
     setOpenState(toggleValueByType(id, openState));
@@ -18,10 +18,8 @@ const AccordionBasic = () => {
   return (
     <Accordion open={openState} toggle={toggle}>
       <AccordionItem id="AccordionItemExample0">
-        <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
-          Accordion Item no. 1
-        </AccordionHeader>
-        <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
+        <AccordionHeader>Accordion Item no. 1</AccordionHeader>
+        <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
           curabitur odio leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at
           sem, mauris aenean aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus
@@ -33,8 +31,6 @@ const AccordionBasic = () => {
       </AccordionItem>
       <AccordionItem id="AccordionItemExample1">
         <AccordionHeader
-          id="AccordionItemExample1Header"
-          for="AccordionItemExample1Content"
           slot={
             <>
               <Link href="/">Link</Link>
@@ -44,7 +40,7 @@ const AccordionBasic = () => {
         >
           Accordion Item no. 2
         </AccordionHeader>
-        <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header">
+        <AccordionContent>
           Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque
           non nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum
           consectetur porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare
@@ -54,10 +50,8 @@ const AccordionBasic = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample2">
-        <AccordionHeader id="AccordionItemExample2Header" for="AccordionItemExample2Content">
-          Accordion Item no. 3
-        </AccordionHeader>
-        <AccordionContent id="AccordionItemExample2Content" labelledById="AccordionItemExample2Header">
+        <AccordionHeader>Accordion Item no. 3</AccordionHeader>
+        <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
           curabitur odio leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at
           sem, mauris aenean aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus
@@ -68,15 +62,11 @@ const AccordionBasic = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample3">
-        <AccordionHeader
-          id="AccordionItemExample3Header"
-          for="AccordionItemExample3Content"
-          slot={<Pill color="selected">3</Pill>}
-        >
+        <AccordionHeader slot={<Pill color="selected">3</Pill>}>
           Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus. Libero sed non
           nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur, tellus pulvinar libero tempus
         </AccordionHeader>
-        <AccordionContent id="AccordionItemExample3Content" labelledById="AccordionItemExample3Header">
+        <AccordionContent>
           Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque
           non nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum
           consectetur porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare

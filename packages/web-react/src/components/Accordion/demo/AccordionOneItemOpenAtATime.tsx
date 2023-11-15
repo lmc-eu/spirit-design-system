@@ -16,14 +16,8 @@ const AccordionOneItemOpenAtATime = () => {
   return (
     <Accordion open={openState} toggle={toggle} id="AccordionExample">
       <AccordionItem id="AccordionItemExample4">
-        <AccordionHeader id="AccordionItemExample4Header" for="AccordionItemExample4Content">
-          Accordion Item no. 1
-        </AccordionHeader>
-        <AccordionContent
-          id="AccordionItemExample4Content"
-          labelledById="AccordionItemExample4Header"
-          parent="#AccordionExample"
-        >
+        <AccordionHeader>Accordion Item no. 1</AccordionHeader>
+        <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
           curabitur odio leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at
           sem, mauris aenean aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus
@@ -34,14 +28,8 @@ const AccordionOneItemOpenAtATime = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample5">
-        <AccordionHeader id="AccordionItemExample5Header" for="AccordionItemExample5Content">
-          Accordion Item no. 2
-        </AccordionHeader>
-        <AccordionContent
-          id="AccordionItemExample5Content"
-          labelledById="AccordionItemExample5Header"
-          parent="#AccordionExample"
-        >
+        <AccordionHeader>Accordion Item no. 2</AccordionHeader>
+        <AccordionContent>
           Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque
           non nulla. Erat nec, integer nec egestas integer consequat cursus sed porttitor, dolor sit amet lorem ipsum
           consectetur porta. Condimentum urna, suspendisse mauris ligula duis id vivamus quis odio eget, integer ornare
@@ -51,14 +39,8 @@ const AccordionOneItemOpenAtATime = () => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="AccordionItemExample6">
-        <AccordionHeader id="AccordionItemExample6Header" for="AccordionItemExample6Content">
-          Accordion Item no. 3
-        </AccordionHeader>
-        <AccordionContent
-          id="AccordionItemExample6Content"
-          labelledById="AccordionItemExample6Header"
-          parent="#AccordionExample"
-        >
+        <AccordionHeader>Accordion Item no. 3</AccordionHeader>
+        <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
           curabitur odio leo. Dignissim tristique, consequat vel arcu et nisi odio leo pretium accumsan condimentum at
           sem, mauris aenean aliquet enim. Neque sapien, volutpat erat id nunc facilisis eget ipsum phasellus, tellus
