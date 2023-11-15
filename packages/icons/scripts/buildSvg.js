@@ -13,7 +13,7 @@ const normalizeAndCopySvg = (srcDir, distDir) => {
     const svgs = filterSvgFiles(files);
 
     if (svgs.length > 0) {
-      let sprite = '<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">\n';
+      let sprite = '<svg xmlns="https://www.w3.org/2000/svg" style="display: none;">\n';
       const spriteDistFile = path.join(distDir, 'sprite.svg');
 
       svgs.forEach((svg) => {
