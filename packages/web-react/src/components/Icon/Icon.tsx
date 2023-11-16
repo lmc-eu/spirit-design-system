@@ -40,7 +40,7 @@ export const Icon = (props: IconProps): JSX.Element => {
       {...styleProps}
       className={styleProps.className}
     >
-      {typeof window === 'undefined' && htmlParser != null ? htmlParser(icon) : null}
+      {typeof window === 'undefined' && typeof htmlParser === 'function' ? htmlParser(icon) : null}
     </svg>
   );
 };
