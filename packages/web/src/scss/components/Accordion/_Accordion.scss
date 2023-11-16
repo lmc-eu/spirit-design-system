@@ -25,10 +25,6 @@
     }
 
     @media (hover: hover) {
-        &:hover {
-            background-color: theme.$accordion-item-background-color-hover;
-        }
-
         &:hover::before {
             border-bottom-color: transparent;
         }
@@ -48,12 +44,20 @@
     color: theme.$accordion-header-typography-color;
     -webkit-tap-highlight-color: transparent;
 
+    &:first-of-type::after,
     &:first-of-type::before {
         content: '';
         position: absolute;
-        z-index: 0;
         inset: 0;
         border-radius: theme.$accordion-border-radius;
+    }
+
+    &:first-of-type::before {
+        z-index: -1;
+    }
+
+    &:first-of-type::after {
+        z-index: 0;
     }
 
     &[aria-expanded='true'] {
@@ -65,8 +69,14 @@
         transform: rotate(180deg);
     }
 
-    &:active:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-active;
+    @media (hover: hover) {
+        &:hover:first-of-type::before {
+            background-color: theme.$accordion-item-background-color-hover;
+        }
+
+        &:active:first-of-type::before {
+            background-color: theme.$accordion-item-background-color-active;
+        }
     }
 }
 
