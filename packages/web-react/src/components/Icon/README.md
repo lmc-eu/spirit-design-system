@@ -7,13 +7,13 @@ Icons are graphical metaphors or symbols that can be used to complement existing
 To use this component in your project you need to run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @lcm-eu/spirit-icons html-react-parser
+npm install -S @lmc-eu/spirit-icons html-react-parser
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/), use the following command instead:
 
 ```bash
-yarn add @lcm-eu/spirit-icons html-react-parser
+yarn add @lmc-eu/spirit-icons html-react-parser
 ```
 
 ### 📦 Dependencies
