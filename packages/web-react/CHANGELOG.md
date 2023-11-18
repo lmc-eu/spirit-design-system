@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.1"></a>
+
+## [1.7.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.7.0...@lmc-eu/spirit-web-react@1.7.1) (2023-11-18)
+
+### Bug Fixes
+
+- **web-react:** Check `htmlParser` for function type ([14b195e](https://github.com/lmc-eu/spirit-design-system/commit/14b195e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.7.0"></a>
 
 # [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.6.0...@lmc-eu/spirit-web-react@1.7.0) (2023-11-15)

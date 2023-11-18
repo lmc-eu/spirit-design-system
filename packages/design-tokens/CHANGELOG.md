@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+
+## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.0...@lmc-eu/spirit-design-tokens@1.1.1) (2023-11-18)
+
+### Bug Fixes
+
+- **design-tokens:** Use `sass` condition in `exports` field ([acc13ae](https://github.com/lmc-eu/spirit-design-system/commit/acc13ae))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.0.3...@lmc-eu/spirit-design-tokens@1.1.0) (2023-11-15)

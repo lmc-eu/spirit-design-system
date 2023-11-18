@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.8"></a>
+
+## [1.0.8](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.7...@lmc-eu/spirit-form-validations@1.0.8) (2023-11-18)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.0.7"></a>
 
 ## [1.0.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.6...@lmc-eu/spirit-form-validations@1.0.7) (2023-11-15)
