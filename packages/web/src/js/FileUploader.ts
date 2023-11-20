@@ -179,7 +179,7 @@ class FileUploader extends BaseComponent {
     }
 
     if (!isTypeSupported) {
-      throw new Error(`"${file.name}": ${this.errors.errorFileNotSupported}`);
+      throw new Error(`${file.name}: ${this.errors.errorFileNotSupported}`);
     }
   }
 
