@@ -21,13 +21,6 @@
   "module": "esm/index.js",
   "main": "cjs/index.js",
   "types": "types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "require": "./cjs/index.js",
-      "sass": "./scss/index.scss"
-    }
-  },
   "scripts": {
     "prebuild": "yarn clean",
     "build:js": "vite build",
