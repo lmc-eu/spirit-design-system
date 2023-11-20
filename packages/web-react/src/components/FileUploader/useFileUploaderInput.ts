@@ -31,13 +31,13 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
 
   const checkAllowedFileSize = (file: File) => {
     if (file.size > maxFileSize) {
-      throw new Error(`${errorMessages?.errorMaxFileSize} "${file.name}"`);
+      throw new Error(`${file.name}: ${errorMessages?.errorMaxFileSize}`);
     }
   };
 
   const checkFileDuplicity = (file: File) => {
     if (isMultiple && fileQueue.has(getUpdatedFileName(file.name))) {
-      throw new Error(`${errorMessages?.errorFileDuplicity} "${file.name}"`);
+      throw new Error(`${file.name}: ${errorMessages?.errorFileDuplicity}`);
     }
   };
 
@@ -78,7 +78,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
     }
 
     if (!isTypeSupported) {
-      throw new Error(`${errorMessages?.errorFileNotSupported} "${file.name}"`);
+      throw new Error(`${file.name}: ${errorMessages?.errorFileNotSupported}`);
     }
   };
 
