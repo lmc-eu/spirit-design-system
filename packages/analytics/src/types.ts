@@ -58,3 +58,5 @@ export interface RunnerConfig {
   startTime?: string;
   method?: string;
 }
+
+export type ScannerType = 'react' | 'twig' | null;

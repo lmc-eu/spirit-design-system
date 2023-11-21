@@ -19,7 +19,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "main": "./index.js",
+  "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
   "bin": "./bin/spirit-analytics.js",

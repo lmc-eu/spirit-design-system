@@ -38,6 +38,8 @@ export async function getLocalComponentsFromPaths(paths: Array<string>): Promise
         (file: string) => path.basename(file).charAt(0).toUpperCase() + path.basename(file).slice(1, -5),
       );
     }
+
+    return [];
   });
 }
 
@@ -123,7 +125,7 @@ function searchDirectoryForComponents(
   localComponents: Array<string>,
   baseComponents: Array<string>,
   exclude: Array<string>,
-): void | Result {
+): Result {
   let result: Result = {};
 
   if (!exclude.includes(path.basename(dir))) {
