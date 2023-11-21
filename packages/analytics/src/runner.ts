@@ -29,18 +29,18 @@ const getTrackedData = async ({
   let twigOutput = {};
 
   if (type === 'react' || type === null) {
-    reactOutput = await reactScanner({ ...config, crawlFrom });
+    reactOutput = await reactScanner({ ...config.react, crawlFrom });
   }
 
   if (type === 'twig' || type === null) {
-    twigOutput = await twigScanner({ ...config, crawlFrom });
+    twigOutput = await twigScanner({ ...config.twig, crawlFrom });
   }
 
   return {
     spiritVersion,
     trackedData: {
-      ...reactOutput,
-      ...twigOutput,
+      react: reactOutput,
+      twig: twigOutput,
     },
   };
 };

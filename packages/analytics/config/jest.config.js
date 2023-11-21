@@ -31,11 +31,15 @@ const config = {
 
   // An array of regexp pattern strings that are matched against all file paths before executing the test.
   // https://jestjs.io/docs/configuration#coveragepathignorepatterns-arraystring
-  coveragePathIgnorePatterns: ['__fixtures__'],
+  coveragePathIgnorePatterns: ['__fixtures__', 'bin'],
 
   // A list of reporter names that Jest uses when writing coverage reports. Any istanbul reporter can be used.
   // https://jestjs.io/docs/configuration#coveragereporters-arraystring--string-options
   coverageReporters: ['text', 'text-summary', ['lcov', { projectRoot: '../../' }]],
+
+  // An array of regexp pattern strings that are matched against all source file paths before transformation.
+  // https://jestjs.io/docs/configuration#transformignorepatterns-arraystring
+  transformIgnorePatterns: ['<rootDir>/../../node_modules/zx'],
 };
 
 export default config;

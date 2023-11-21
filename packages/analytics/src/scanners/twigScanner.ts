@@ -1,11 +1,12 @@
 import { fs, glob, path } from 'zx';
 
 // Get list of names of Spirit components from twig-components directory in SPIRIT_COMPONENTS_PATH
-function getComponentsFromDirectory(directoryPath: string) {
-  return fs.readdirSync(directoryPath).map((file: string) => file.charAt(0).toUpperCase() + file.slice(1, -5));
+export function getComponentsFromDirectory(directoryPath: string) {
+  // `component.twig` -> `Component`
+  return fs.readdirSync(directoryPath).map((file: string) => `${file.charAt(0).toUpperCase()}${file.slice(1, -5)}`);
 }
 
-function getPathsFromYamlConfig(configFile: string) {
+export function getPathsFromYamlConfig(configFile: string) {
   // Get lines of TwigX config file
   // Input: TWIGX_CONFIG_FILE (path)
   // Output example: ['spirit_web_twig:', '    paths:', '        - "%kernel.project_dir%/app/Resources/views"', ...]
@@ -46,7 +47,7 @@ export async function getLocalComponentsFromPaths(paths: Array<string>): Promise
 // Get module name from node name
 // Input: nodeName (string)
 // Output example: 'local_component', '@lmc-eu/spirit-web-twig', 'html_element'
-function determineModuleNameFromComponents(
+export function determineModuleNameFromComponents(
   nodeName: string,
   localComponents: Array<string>,
   baseComponents: Array<string>,
@@ -78,7 +79,7 @@ interface Result {
 // Search file for adoption data and save it to result
 // Input: file (path)
 // Output example: { 'local_component:Card': [{ path: 'app/Resources/views/.../card.twig:1', props: { ... } }], ...
-function searchFileForComponents(file: string, localComponents: Array<string>, baseComponents: Array<string>) {
+export function searchFileForComponents(file: string, localComponents: Array<string>, baseComponents: Array<string>) {
   const reStartTag = /<([a-zA-Z][a-zA-Z0-9]*)([^>]*)>/g;
   const reAttr = /([\w-]+)="?([^"]*)"?/g;
 
@@ -120,7 +121,7 @@ function searchFileForComponents(file: string, localComponents: Array<string>, b
 
 // Search directory for twig files and call searchInFile for each of them
 // Input: dir (path)
-function searchDirectoryForComponents(
+export function searchDirectoryForComponents(
   dir: string,
   localComponents: Array<string>,
   baseComponents: Array<string>,
@@ -145,7 +146,7 @@ function searchDirectoryForComponents(
   return result;
 }
 
-const output = (data: unknown, destination: string) => {
+export const output = (data: unknown, destination: string) => {
   // Create output folder if missing
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   // Save result to output file
