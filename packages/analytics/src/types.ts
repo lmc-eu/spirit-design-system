@@ -45,18 +45,28 @@ interface OutputInstance {
   isDeprecated: boolean;
 }
 
-export type TrackedData = Record<string, OutputInstance>;
+export type TrackedData = {
+  react: Record<string, OutputInstance>;
+  twig: Record<string, OutputInstance>;
+};
+
+export interface ReactScannerConfig {
+  config: string;
+  configDir?: string;
+  crawlFrom: string;
+  startTime?: string;
+  method?: string;
+  exclude?: Array<string>;
+}
 
 export interface RunnerConfig {
   crawlFrom: string;
-  exclude?: Array<string>;
-  configFile?: string;
-  outputFile?: string;
-  coreComponentsPath?: string;
-  config: string;
-  configDir?: string;
-  startTime?: string;
-  method?: string;
+  react: ReactScannerConfig;
+  twig: {
+    configFile?: string;
+    outputFile?: string;
+    coreComponentsPath?: string;
+  };
 }
 
 export type ScannerType = 'react' | 'twig' | null;
