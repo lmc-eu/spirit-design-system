@@ -1,10 +1,29 @@
+// 1. Decorative border before every item (only visible in the default state).
+//
+// 2. Create a pseudo element of the toggle button to:
+//    a) spread the interactive area of the header button to the whole item,
+//    b) bear the background color in hover and active states (see 3.b and 3.c).
+//
+// 3. Header background:
+//    a) in the default state, the background is applied on the button pseudo element (2),
+//    b) in the hover state, the background is applied on the button pseudo element (2) based on **header** state,
+//    c) in the active state, the background is applied on the button pseudo element (2) based on the **button** state
+//       (because non-interactive elements cannot have an active state).
+//
+// 4. Create local stacking context to keep the icon and the slot above the clickable background (2), but…
+// 5. … pass pointer events to the button pseudo element (2) so the whole header (excluding interactive items, see 6.)
+//    is ready for toggling.
+// 6. Only allow pointer events on the interactive children.
+// 7. The button pseudo element (2) is stacked behind the button text.
+// 8. Decorative border after the last item in the open state.
+
 @use 'sass:map';
 @use 'theme';
 @use '../../tools/typography';
 @use '../../tools/reset';
 
 .Accordion__itemHeader {
-    position: relative;
+    position: relative; // 2.
     display: flex;
     gap: theme.$accordion-header-gap;
     align-items: flex-start;
@@ -13,61 +32,67 @@
     padding: theme.$accordion-header-padding-y theme.$accordion-header-padding-x;
     margin-bottom: 0;
     border-radius: theme.$accordion-border-radius;
-    background-color: theme.$accordion-item-background-color-default;
 
+    // 1
     &::before {
         content: '';
         position: absolute;
         top: 0;
-        right: theme.$accordion-header-padding-x;
-        left: theme.$accordion-header-padding-x;
+        inset-inline: theme.$accordion-header-padding-x;
+        z-index: 1;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
 
     @media (hover: hover) {
-        &:hover {
-            background-color: theme.$accordion-item-background-color-hover;
-        }
-
+        // 1.
         &:hover::before {
             border-bottom-color: transparent;
         }
     }
 }
 
-.Accordion__itemIcon {
-    pointer-events: none;
-}
-
 .Accordion__itemToggle {
     @include reset.button();
     @include typography.generate(theme.$accordion-header-typography);
 
+    z-index: 0; // 7.
     flex: initial;
     text-align: left;
     color: theme.$accordion-header-typography-color;
     -webkit-tap-highlight-color: transparent;
 
+    // 2.
     &:first-of-type::before {
         content: '';
         position: absolute;
-        z-index: 0;
         inset: 0;
+        z-index: -1; // 7.
         border-radius: theme.$accordion-border-radius;
+        background-color: theme.$accordion-item-background-color-default; // 3.a
     }
 
     &[aria-expanded='true'] {
         @include typography.generate(theme.$accordion-header-typography-active);
     }
 
-    // stylelint-disable-next-line selector-max-class -- We have to control the state of the Icon
-    &[aria-expanded='true'] + .Accordion__itemSide .Accordion__itemIcon {
+    // stylelint-disable-next-line selector-max-class -- We want to control the icon based on header state.
+    &[aria-expanded='true'] + .Accordion__itemSide > .Accordion__itemIcon {
         transform: rotate(180deg);
     }
+}
 
-    &:active:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-active;
+@media (hover: hover) {
+    // 3.b
+    // stylelint-disable-next-line selector-max-specificity -- High specificity to target the background pseudo element (2).
+    .Accordion__itemHeader:hover .Accordion__itemToggle:first-of-type::before {
+        background-color: theme.$accordion-item-background-color-hover;
     }
+}
+
+// 3.c
+// stylelint-disable-next-line selector-max-specificity -- High specificity to override the hover state selector 3.b.
+.Accordion__itemHeader .Accordion__itemToggle:active:first-of-type::before {
+    background-color: theme.$accordion-item-background-color-active;
 }
 
 .Accordion__itemSide,
@@ -78,25 +103,28 @@
     justify-content: space-between;
 }
 
-.Accordion__itemSlot :is(a, button) {
-    position: relative;
+.Accordion__itemSide {
+    isolation: isolate; // 4.
+    pointer-events: none; // 5.
+}
+
+.Accordion__itemSide :is(a, button, input, select, textarea) {
+    pointer-events: auto; // 6.
 }
 
 .Accordion__content {
-    position: relative;
     padding-bottom: theme.$accordion-content-bottom-offset;
+}
+
+// 8.
+.Accordion__item:last-child .Accordion__content {
+    position: relative;
 
     &::after {
         content: '';
         position: absolute;
         top: 100%;
-        right: theme.$accordion-header-padding-x;
-        left: theme.$accordion-header-padding-x;
+        inset-inline: theme.$accordion-header-padding-x;
         border-bottom: theme.$accordion-divider-width theme.$accordion-divider-style theme.$accordion-divider-color;
     }
-}
-
-// stylelint-disable-next-line selector-max-class, selector-max-specificity -- We want to hide the border above the header of the adjacent item
-.Accordion__item:not(:last-child) .is-open .Accordion__content::after {
-    border-bottom-color: transparent;
 }
