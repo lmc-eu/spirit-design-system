@@ -3,6 +3,7 @@ import { fs, path } from 'zx';
 import { ROOT_PATH } from './constants';
 import { _dirname, errorMessage, infoMessage } from './helpers';
 import scanner from './scanner';
+import { ScannerType } from './types';
 
 const packageJson = fs.readJsonSync(path.resolve(_dirname, './package.json'));
 
@@ -46,7 +47,7 @@ export default async function cli(args: string[]) {
       }
 
       if (source) {
-        scanner({ source, outputPath: output, config: loadedConfig });
+        scanner({ source, outputPath: output, config: loadedConfig, type: selectedType });
         infoMessage(`Start scanning: ${source}`);
       } else {
         scanner({

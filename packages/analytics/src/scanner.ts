@@ -1,7 +1,7 @@
 import { fs } from 'zx';
 import { errorMessage, getOutputPath, infoMessage, timestamp } from './helpers';
 import { runner } from './runner';
-import { RunnerConfig } from './types';
+import { RunnerConfig, ScannerType } from './types';
 
 interface BaseArgs {
   outputPath: string;
@@ -11,10 +11,11 @@ interface BaseArgs {
 
 interface Args extends BaseArgs {
   source: string;
+  type: ScannerType;
 }
 
-export const getRunnerCall = async ({ outputPath, config, source }: Args) => {
-  const result = await runner(config, source);
+export const getRunnerCall = async ({ outputPath, config, source, type }: Args) => {
+  const result = await runner(config, source, type);
 
   if (outputPath) {
     fs.writeFile(getOutputPath(outputPath, timestamp()), JSON.stringify(result, null, 2), 'utf8').then(() => {
@@ -26,9 +27,9 @@ export const getRunnerCall = async ({ outputPath, config, source }: Args) => {
   }
 };
 
-async function scanner({ source, outputPath, config }: Args) {
+async function scanner({ source, outputPath, config, type }: Args) {
   try {
-    await getRunnerCall({ outputPath, config, source });
+    await getRunnerCall({ outputPath, config, source, type });
   } catch (err) {
     errorMessage(`\n ${err}`);
   }

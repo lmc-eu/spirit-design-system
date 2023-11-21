@@ -5,14 +5,14 @@ import { _dirname } from './helpers';
 import { getVersions } from './helpers/versions';
 import reactScanner from './scanners/reactScanner';
 import twigScanner from './scanners/twigScanner';
-import { RunnerConfig, TrackedData } from './types';
+import { RunnerConfig, ScannerType, TrackedData } from './types';
 
 interface ProjectOutput {
   spiritVersion: string;
   trackedData: TrackedData;
 }
 
-type Runner = (config: RunnerConfig, source: string) => Promise<ProjectOutput>;
+type Runner = (config: RunnerConfig, source: string, type: ScannerType) => Promise<ProjectOutput>;
 
 const getTrackedData = async ({
   config,
@@ -25,20 +25,26 @@ const getTrackedData = async ({
 }): Promise<ProjectOutput> => {
   const crawlFrom = path.resolve(source) || path.resolve(_dirname, ROOT_PATH);
   const spiritVersion = await getVersions(crawlFrom);
+  let reactOutput = {};
+  let twigOutput = {};
 
-  const reactOutput = await reactScanner({ ...config, crawlFrom });
+  if (type === 'react' || type === null) {
+    reactOutput = await reactScanner({ ...config, crawlFrom });
+  }
 
-  const twigResult = await twigScanner({ ...config, crawlFrom });
+  if (type === 'twig' || type === null) {
+    twigOutput = await twigScanner({ ...config, crawlFrom });
+  }
 
   return {
     spiritVersion,
     trackedData: {
       ...reactOutput,
-      ...twigResult,
+      ...twigOutput,
     },
   };
 };
 
-export const runner: Runner = (config, source) => {
-  return getTrackedData({ config, source });
+export const runner: Runner = (config, source, type) => {
+  return getTrackedData({ config, source, type });
 };
