@@ -19,6 +19,7 @@ const entryPoints = [
   { dirs: ['components', 'Header'] },
   { dirs: ['components', 'Heading'] },
   { dirs: ['components', 'Icon'] },
+  { dirs: ['components', 'Item'] },
   { dirs: ['components', 'Link'] },
   { dirs: ['components', 'Modal'] },
   { dirs: ['components', 'Pagination'] },

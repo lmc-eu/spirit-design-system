@@ -5,7 +5,7 @@ import handlebars from 'vite-plugin-handlebars';
 import react from '@vitejs/plugin-react';
 import { getNestedDirs } from '../../scripts/build';
 
-const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden', 'Item'];
+const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden'];
 
 export default defineConfig({
   plugins: [
