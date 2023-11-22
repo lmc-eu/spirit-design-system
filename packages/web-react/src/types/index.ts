@@ -11,6 +11,7 @@ export * from './grid';
 export * from './header';
 export * from './heading';
 export * from './icon';
+export * from './item';
 export * from './label';
 export * from './link';
 export * from './modal';

@@ -14,6 +14,7 @@ export * from './Grid';
 export * from './Header';
 export * from './Heading';
 export * from './Icon';
+export * from './Item';
 export * from './Link';
 export * from './Modal';
 export * from './Pagination';
