@@ -64,3 +64,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web-react/.coverage/lcov.info
           flag-name: web-react
+
+      - name: Publish Analytics Package Code Coverage
+        # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
+        if: ${{ hashFiles('./packages/analytics/.coverage/lcov.info') != '' }}
+        uses: coverallsapp/github-action@v2.2.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./packages/analytics/.coverage/lcov.info
+          flag-name: analytics
