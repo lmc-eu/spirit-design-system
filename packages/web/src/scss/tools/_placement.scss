@@ -21,32 +21,64 @@
 
 $_arrow-rotate-map: (
     top: 0deg,
-    top-left: 0deg,
-    top-right: 0deg,
+    top-start: 0deg,
+    top-end: 0deg,
     bottom: 180deg,
-    bottom-left: 180deg,
-    bottom-right: 180deg,
+    bottom-start: 180deg,
+    bottom-end: 180deg,
     left: -90deg,
-    left-top: -90deg,
-    left-bottom: -90deg,
+    left-start: -90deg,
+    left-end: -90deg,
     right: 90deg,
+    right-start: 90deg,
+    right-end: 90deg,
+    // Deprecated in favor of top-start, will be removed in the next major version
+    top-left: 0deg,
+    // Deprecated in favor of top-end, will be removed in the next major version
+    top-right: 0deg,
+    // Deprecated in favor of bottom-start, will be removed in the next major version
+    bottom-left: 180deg,
+    // Deprecated in favor of bottom-end, will be removed in the next major version
+    bottom-right: 180deg,
+    // Deprecated in favor of left-start, will be removed in the next major version
+    left-top: -90deg,
+    // Deprecated in favor of left-end, will be removed in the next major version
+    left-bottom: -90deg,
+    // Deprecated in favor of right-start, will be removed in the next major version
     right-top: 90deg,
+    // Deprecated in favor of right-end, will be removed in the next major version
     right-bottom: 90deg,
 );
 
 // 1.2
 $_inset-map: (
     top: auto auto 100% 50%,
-    top-left: auto auto 100% 0,
-    top-right: auto 0 100% auto,
+    top-start: auto auto 100% 0,
+    top-end: auto 0 100% auto,
     bottom: 100% auto auto 50%,
-    bottom-left: 100% auto auto 0,
-    bottom-right: 100% 0 auto auto,
+    bottom-start: 100% auto auto 0,
+    bottom-end: 100% 0 auto auto,
     left: 50% 100% auto auto,
-    left-top: 0 100% auto auto,
-    left-bottom: auto 100% 0 auto,
+    left-start: 0 100% auto auto,
+    left-end: auto 100% 0 auto,
     right: 50% auto auto 100%,
+    right-start: 0 auto auto 100%,
+    right-end: auto auto 0 100%,
+    // Deprecated in favor of top-start, will be removed in the next major version
+    top-left: auto auto 100% 0,
+    // Deprecated in favor of top-end, will be removed in the next major version
+    top-right: auto 0 100% auto,
+    // Deprecated in favor of bottom-start, will be removed in the next major version
+    bottom-left: 100% auto auto 0,
+    // Deprecated in favor of bottom-end, will be removed in the next major version
+    bottom-right: 100% 0 auto auto,
+    // Deprecated in favor of left-start, will be removed in the next major version
+    left-top: 0 100% auto auto,
+    // Deprecated in favor of left-end, will be removed in the next major version
+    left-bottom: auto 100% 0 auto,
+    // Deprecated in favor of right-start, will be removed in the next major version
     right-top: 0 auto auto 100%,
+    // Deprecated in favor of right-end, will be removed in the next major version
     right-bottom: auto auto 0 100%,
 );
 
@@ -60,25 +92,51 @@ $_placement-inverse-map: (
 @function -get-arrow-translate-map($prefix) {
     @return (
         top: -50% 0%,
-        top-left: var(--#{$prefix}-arrow-corner-offset) 0%,
-        top-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
+        top-start: var(--#{$prefix}-arrow-corner-offset) 0%,
+        top-end: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
         bottom: -50% -100%,
-        bottom-left: var(--#{$prefix}-arrow-corner-offset) -100%,
-        bottom-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
+        bottom-start: var(--#{$prefix}-arrow-corner-offset) -100%,
+        bottom-end: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
         left: 50% -100%,
+        left-start: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        left-end: calc(var(--#{$prefix}-arrow-width) / 2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
+        right: -50% -100%,
+        right-start: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(
+                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
+                    var(--#{$prefix}-arrow-corner-offset)
+            ),
+        right-end: calc(var(--#{$prefix}-arrow-width) / -2)
+            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
+        // Deprecated in favor of top-start, will be removed in the next major version
+        top-left: var(--#{$prefix}-arrow-corner-offset) 0%,
+        // Deprecated in favor of top-end, will be removed in the next major version
+        top-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
+        // Deprecated in favor of bottom-start, will be removed in the next major version
+        bottom-left: var(--#{$prefix}-arrow-corner-offset) -100%,
+        // Deprecated in favor of bottom-end, will be removed in the next major version
+        bottom-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
+        // Deprecated in favor of left-start, will be removed in the next major version
         left-top: calc(var(--#{$prefix}-arrow-width) / 2)
             calc(
                 var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
                     var(--#{$prefix}-arrow-corner-offset)
             ),
+        // Deprecated in favor of left-end, will be removed in the next major version
         left-bottom: calc(var(--#{$prefix}-arrow-width) / 2)
             calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
-        right: -50% -100%,
+        // Deprecated in favor of right-start, will be removed in the next major version
         right-top: calc(var(--#{$prefix}-arrow-width) / -2)
             calc(
                 var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
                     var(--#{$prefix}-arrow-corner-offset)
             ),
+        // Deprecated in favor of right-end, will be removed in the next major version
         right-bottom: calc(var(--#{$prefix}-arrow-width) / -2)
             calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset))
     );
@@ -88,25 +146,41 @@ $_placement-inverse-map: (
 @function -get-child-translate-map($prefix) {
     @return (
         top: var(--#{$prefix}-offset-orthogonal, -50%) calc(-1 * var(--#{$prefix}-offset, 0)),
-        top-left: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
-        top-right: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-start: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        top-end: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
         bottom: var(--#{$prefix}-offset-orthogonal, -50%) var(--#{$prefix}-offset, 0),
-        bottom-left: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
-        bottom-right: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        bottom-start: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        bottom-end: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
         left: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, -50%),
-        left-top: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
-        left-bottom: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        left-start: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        left-end: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
         right: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, -50%),
+        right-start: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
+        right-end: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
+        // Deprecated in favor of top-start, will be removed in the next major version
+        top-left: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        // Deprecated in favor of top-end, will be removed in the next major version
+        top-right: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
+        // Deprecated in favor of bottom-start, will be removed in the next major version
+        bottom-left: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        // Deprecated in favor of bottom-end, will be removed in the next major version
+        bottom-right: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
+        // Deprecated in favor of left-start, will be removed in the next major version
+        left-top: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        // Deprecated in favor of left-end, will be removed in the next major version
+        left-bottom: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
+        // Deprecated in favor of right-start, will be removed in the next major version
         right-top: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
+        // Deprecated in favor of right-end, will be removed in the next major version
         right-bottom: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0)
     );
 }
 
 // Function to return an inverse placement name
 // Example: inverse('top') will return 'bottom'
-// Example: inverse('top-left') will return 'bottom-right'
-// Example: inverse('top-left', true) will return 'bottom-left'
-// Example: inverse('top-left', true, false) will return 'bottom left'
+// Example: inverse('top-start') will return 'bottom'
+// Example: inverse('top-start', true) will return 'bottom-start'
+// Example: inverse('top-start', true, false) will return 'bottom start'
 @function inverse($placement, $main-axis-only: false, $hyphenate: true) {
     $hyphen: '-';
     $placement-chunks: string.split($placement, $hyphen);
@@ -146,10 +220,17 @@ $_placement-inverse-map: (
     transform-origin: string.unquote(inverse($placement, $hyphenate: false));
 }
 
-@mixin child-controlled($prefix) {
+@mixin child-controlled($prefix, $offset: 0) {
     --#{$prefix}-offset-orthogonal: 0; // 2.
 
     inset: unset; // 2.
+
+    // @deprecated This condition is deprecated because in the next major version offset will be always set
+    @if $offset != 0 {
+        --#{$prefix}-offset: #{$offset}; // 2.
+
+        translate: unset; // 2.
+    }
 }
 
 @mixin arrow($prefix, $width, $height, $corner-offset) {
@@ -165,4 +246,10 @@ $_placement-inverse-map: (
     inset: map.get($_inset-map, $placement); // 1.2
     translate: map.get(-get-arrow-translate-map($prefix), $placement); // 1.3
     rotate: z map.get($_arrow-rotate-map, $placement);
+}
+
+@mixin arrow-controlled() {
+    inset: unset; // 2.
+    translate: unset; // 2.
+    transform-origin: center; // 2.
 }

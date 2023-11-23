@@ -181,11 +181,17 @@
     @each $placement in $dictionary-values {
         $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
 
+        .#{$class-name}[data-spirit-placement='#{$placement}'],
+        // @deprecated CSS modifier classes are deprecated and will be removed in the next major version
+        // Migration: delete this selector
         .#{$class-name}--#{$placement-modifier} {
             @include placement.child-variant($prefix, $placement, $offset);
         }
 
         @if $has-arrow {
+            .#{$class-name}[data-spirit-placement='#{$placement}'] > .#{$class-name}__arrow,
+            // @deprecated CSS modifier classes are deprecated and will be removed in the next major version
+            // Migration: delete this selector
             .#{$class-name}--#{$placement-modifier} > .#{$class-name}__arrow {
                 @include placement.arrow-variant($prefix, placement.inverse($placement, $main-axis-only: true));
             }
@@ -193,6 +199,8 @@
     }
 }
 
+// @deprecated This mixin is deprecated and will be removed in the next major version
+// Migration: delete this mixin
 // Mixin to generate controlled placement classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
