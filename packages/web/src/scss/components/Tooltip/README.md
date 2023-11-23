@@ -3,11 +3,31 @@
 Bare Tooltip HTML:
 
 ```html
-<div class="Tooltip Tooltip--top">
+<div class="Tooltip" data-spirit-placement="top">
   Hello there!
   <span class="Tooltip__arrow"></span>
 </div>
 ```
+
+## Feature Flag: Data Selector Placement
+
+Tooltip placement is currently using CSS modifiers. In the future it will be using `data-spirit-placement`
+attribute in order to make the placement independent of the component and compatible with Floating UI.
+To enable this behavior now you can use the feature flag, either set the `$tooltip-enable-data-placement`
+feature flag to `true` or use the `spirit-feature-tooltip-enable-data-placement` CSS class on any parent of the Tooltip.
+
+For more info, see main [README][readme-feature-flags].
+
+## ⚠️ DEPRECATION NOTICE
+
+CSS modifiers `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--bottom`, etc. are deprecated and will be
+removed in the next major release. Use `data-spirit-placement` attribute instead.
+
+Also both axis side placements are renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
+etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. Old names are deprecated and will be
+removed in the next major release.
+
+[What are deprecations?][readme-deprecations]
 
 ## Linking with Content
 
@@ -32,7 +52,7 @@ improved accessibility.
 ```html
 <div class="TooltipWrapper d-inline-block">
   <a href="#" aria-describedby="my-tooltip">I have a tooltip!</a>
-  <div id="my-tooltip" class="Tooltip Tooltip--top">
+  <div id="my-tooltip" class="Tooltip" data-spirit-placement="top">
     Hello there!
     <span class="Tooltip__arrow"></span>
   </div>
@@ -41,14 +61,14 @@ improved accessibility.
 
 ## Placement
 
-Tooltip implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as CSS
-modifiers in the camelCase format: `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--leftBottom`, etc.
+Tooltip implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
+a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
-For JS-controlled positioning please use the `data-spirit-placement` attribute instead of CSS modifiers (more on that
-[below](#advanced-positioning)).
+For JS-controlled positioning please use the `data-spirit-placement-controlled` attribute instead of specifying the placement
+using the `data-spirit-placement` modifiers (more on that [below](#advanced-positioning)).
 
 ```html
-<div class="Tooltip Tooltip--rightTop">
+<div class="Tooltip" data-spirit-placement="right-start">
   Tooltip on right
   <span class="Tooltip__arrow"></span>
 </div>
@@ -65,7 +85,7 @@ Tooltip HTML right after it.
 ```html
 <div class="TooltipWrapper d-inline-block">
   <a href="#" class="TooltipTarget" aria-describedby="my-tooltip-on-hover">I have a tooltip!</a>
-  <div id="my-tooltip-on-hover" class="Tooltip Tooltip--top">
+  <div id="my-tooltip-on-hover" class="Tooltip" data-spirit-placement="top">
     Hello there!
     <span class="Tooltip__arrow"></span>
   </div>
@@ -78,7 +98,7 @@ Add `tabindex="0"` to non-focusable elements to ensure keyboard accessibility.
 ```html
 <div class="TooltipWrapper d-inline-block">
   <span class="TooltipTarget" aria-describedby="my-tooltip-on-focus" tabindex="0">I have a tooltip!</span>
-  <div id="my-tooltip-on-focus" class="Tooltip Tooltip--top">
+  <div id="my-tooltip-on-focus" class="Tooltip" data-spirit-placement="top">
     Hello there!
     <span class="Tooltip__arrow"></span>
   </div>
@@ -95,7 +115,7 @@ Tooltip. As a workaround, you'll want to trigger the Tooltip from a wrapper
   <div class="TooltipTarget" aria-describedby="my-tooltip-for-disabled-button" tabindex="0">
     <button type="button" disabled>I have a tooltip though I'm disabled</button>
   </div>
-  <div id="my-tooltip-for-disabled-button" class="Tooltip Tooltip--top">
+  <div id="my-tooltip-for-disabled-button" class="Tooltip" data-spirit-placement="top">
     Hello there!
     <span class="Tooltip__arrow"></span>
   </div>
@@ -114,7 +134,7 @@ kind of task Tooltip responds to interaction classes `is-hidden` and
 <button type="button" id="tooltip-trigger" data-spirit-target="#my-js-controlled-tooltip">Toggle tooltip</button>
 <div class="TooltipWrapper d-inline-block">
   <div aria-describedby="my-js-controlled-tooltip">I have an externally-triggered tooltip</div>
-  <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--top is-hidden">
+  <div id="my-js-controlled-tooltip" class="Tooltip is-hidden" data-spirit-placement="top">
     Hello there!
     <span class="Tooltip__arrow"></span>
   </div>
@@ -141,7 +161,7 @@ Tooltip can be made dismissible by following these steps:
    attributes on the closing button.
 
 ```html
-<div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
+<div id="my-dismissible-tooltip" class="Tooltip Tooltip--dismissible" data-spirit-placement="right">
   Close me
   <button
     type="button"
@@ -181,9 +201,32 @@ placement. All [Placement Dictionary][dictionary-placement] values are supported
 </div>
 ```
 
+If you have the [Data Selector Placement feature flag](#feature-flag-data-selector-placement) enabled,
+set `data-spirit-placement-controlled` on the `.Tooltip` to control it and prevent conflicts with
+the default CSS positioning.
+
+```html
+<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement-controlled>
+  Hello there!
+  <span class="Tooltip__arrow"></span>
+</div>
+```
+
+### Arrow
+
+When controlling Tooltip arrow with JavaScript, set `data-spirit-element="arrow"`
+on the `.Tooltip__arrow` to control it and prevent conflicts with the default CSS positioning.
+
+```html
+<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement-controlled>
+  Hello there!
+  <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+</div>
+```
+
 ### Example
 
-💻 Check our minimum [example] that uses external library
+💻 Check our [example] that uses external library
 [Floating UI][floating-ui] (see the [JS source](./floating-ui-example.mjs)).
 
 👉 Please consult [Floating UI][floating-ui] documentation to understand how it
@@ -230,3 +273,5 @@ tooltip.hide();
 [example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [floating-ui]: https://floating-ui.com
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations

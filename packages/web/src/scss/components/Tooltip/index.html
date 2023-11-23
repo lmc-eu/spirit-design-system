@@ -1,6 +1,6 @@
 {{#> layout/plain }}
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Placements</h2>
 
@@ -10,10 +10,10 @@
         <div class="Grid Grid--cols-3 mx-auto" style="align-items: center; justify-items: center; max-width: 30rem;">
           <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 1">
 
-            <label for="placement_top_left" class="Radio">
-              <input type="radio" name="placement" value="topLeft" id="placement_top_left" class="Radio__input" />
+            <label for="placement_top_start" class="Radio">
+              <input type="radio" name="placement" value="top-start" id="placement_top_start" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">top-left</span>
+                <span class="Radio__label Radio__label--hidden">top-start</span>
               </span>
             </label>
             <label for="placement_top" class="Radio">
@@ -22,20 +22,20 @@
                 <span class="Radio__label Radio__label--hidden">top</span>
               </span>
             </label>
-            <label for="placement_top_right" class="Radio">
-              <input type="radio" name="placement" value="topRight" id="placement_top_right" class="Radio__input" />
+            <label for="placement_top_end" class="Radio">
+              <input type="radio" name="placement" value="top-end" id="placement_top_end" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">top-right</span>
+                <span class="Radio__label Radio__label--hidden">top-end</span>
               </span>
             </label>
 
           </div>
           <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 3">
 
-            <label for="placement_bottom_left" class="Radio">
-              <input type="radio" name="placement" value="bottomLeft" id="placement_bottom_left" class="Radio__input" />
+            <label for="placement_bottom_start" class="Radio">
+              <input type="radio" name="placement" value="bottom-start" id="placement_bottom_start" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">bottom-left</span>
+                <span class="Radio__label Radio__label--hidden">bottom-start</span>
               </span>
             </label>
             <label for="placement_bottom" class="Radio">
@@ -44,10 +44,10 @@
                 <span class="Radio__label Radio__label--hidden">bottom</span>
               </span>
             </label>
-            <label for="placement_bottom_right" class="Radio">
-              <input type="radio" name="placement" value="bottomRight" id="placement_bottom_right" class="Radio__input" />
+            <label for="placement_bottom_end" class="Radio">
+              <input type="radio" name="placement" value="bottom-end" id="placement_bottom_end" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">bottom-right</span>
+                <span class="Radio__label Radio__label--hidden">bottom-end</span>
               </span>
             </label>
 
@@ -63,10 +63,10 @@
             "
           >
 
-            <label for="placement_left_top" class="Radio">
-              <input type="radio" name="placement" value="leftTop" id="placement_left_top" class="Radio__input" />
+            <label for="placement_left_start" class="Radio">
+              <input type="radio" name="placement" value="left-start" id="placement_left_start" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">left-top</span>
+                <span class="Radio__label Radio__label--hidden">left-start</span>
               </span>
             </label>
             <label for="placement_left" class="Radio">
@@ -75,10 +75,10 @@
                 <span class="Radio__label Radio__label--hidden">left</span>
               </span>
             </label>
-            <label for="placement_left_bottom" class="Radio">
-              <input type="radio" name="placement" value="leftBottom" id="placement_left_bottom" class="Radio__input" />
+            <label for="placement_left_end" class="Radio">
+              <input type="radio" name="placement" value="left-end" id="placement_left_end" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">left-bottom</span>
+                <span class="Radio__label Radio__label--hidden">left-end</span>
               </span>
             </label>
 
@@ -94,10 +94,10 @@
             "
           >
 
-            <label for="placement_right_top" class="Radio">
-              <input type="radio" name="placement" value="rightTop" id="placement_right_top" class="Radio__input" />
+            <label for="placement_right_start" class="Radio">
+              <input type="radio" name="placement" value="right-start" id="placement_right_start" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">right-top</span>
+                <span class="Radio__label Radio__label--hidden">right-start</span>
               </span>
             </label>
             <label for="placement_right" class="Radio">
@@ -106,10 +106,10 @@
                 <span class="Radio__label Radio__label--hidden">right</span>
               </span>
             </label>
-            <label for="placement_right_bottom" class="Radio">
-              <input type="radio" name="placement" value="rightBottom" id="placement_right_bottom" class="Radio__input" />
+            <label for="placement_right_end" class="Radio">
+              <input type="radio" name="placement" value="right-end" id="placement_right_end" class="Radio__input" />
               <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">right-bottom</span>
+                <span class="Radio__label Radio__label--hidden">right-end</span>
               </span>
             </label>
 
@@ -121,7 +121,7 @@
                 Click<br />
                 the dots!
               </div>
-              <div class="Tooltip Tooltip--bottom" id="tooltip_placements_example">
+              <div class="Tooltip" id="tooltip_placements_example" data-spirit-placement="bottom">
                 <span id="tooltip_placements_example_text">bottom</span>
                 <span class="Tooltip__arrow"></span>
               </div>
@@ -140,8 +140,8 @@
             const tooltip = document.getElementById('tooltip_placements_example');
             const tooltipText = document.getElementById('tooltip_placements_example_text');
 
-            tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
-            tooltipText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
+            tooltip.dataset.spiritPlacement = placement;
+            tooltipText.textContent = placement;
           });
         });
       </script>
@@ -149,7 +149,7 @@
     </div>
   </section>
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Static Tooltip (No Interaction)</h2>
 
@@ -160,19 +160,19 @@
           Tooltips<br />
           all day long…
         </div>
-        <div class="Tooltip Tooltip--top">
+        <div class="Tooltip" data-spirit-placement="top">
           Hello there!
           <span class="Tooltip__arrow"></span>
         </div>
-        <div class="Tooltip Tooltip--right">
+        <div class="Tooltip" data-spirit-placement="right">
           Hello there!
           <span class="Tooltip__arrow"></span>
         </div>
-        <div class="Tooltip Tooltip--bottom">
+        <div class="Tooltip" data-spirit-placement="bottom">
           Hello there! There is slightly more text in this tooltip.
           <span class="Tooltip__arrow"></span>
         </div>
-        <div class="Tooltip Tooltip--left">
+        <div class="Tooltip" data-spirit-placement="left">
           Hello there!
           <span class="Tooltip__arrow"></span>
         </div>
@@ -182,7 +182,7 @@
 
   </section>
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Tooltip on Hover (Pure CSS)</h2>
 
@@ -193,7 +193,7 @@
           <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-top">
             Tooltip on top
           </button>
-          <div id="my-tooltip-hover-top" class="Tooltip Tooltip--top">
+          <div id="my-tooltip-hover-top" class="Tooltip" data-spirit-placement="top">
             Hello there!
             <span class="Tooltip__arrow"></span>
           </div>
@@ -202,7 +202,7 @@
           <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-right">
             Tooltip on right
           </button>
-          <div id="my-tooltip-hover-right" class="Tooltip Tooltip--right">
+          <div id="my-tooltip-hover-right" class="Tooltip" data-spirit-placement="right">
             Hello there!
             <span class="Tooltip__arrow"></span>
           </div>
@@ -211,7 +211,7 @@
           <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-bottom">
             Tooltip on bottom
           </button>
-          <div id="my-tooltip-hover-bottom" class="Tooltip Tooltip--bottom">
+          <div id="my-tooltip-hover-bottom" class="Tooltip" data-spirit-placement="bottom">
             Hello there!
             <span class="Tooltip__arrow"></span>
           </div>
@@ -220,7 +220,7 @@
           <button type="button" class="Button Button--primary Button--medium TooltipTarget" aria-describedby="my-tooltip-hover-left">
             Tooltip on left
           </button>
-          <div id="my-tooltip-hover-left" class="Tooltip Tooltip--left">
+          <div id="my-tooltip-hover-left" class="Tooltip" data-spirit-placement="left">
             Hello there!
             <span class="Tooltip__arrow"></span>
           </div>
@@ -231,7 +231,7 @@
 
   </section>
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Tooltip on Click (JavaScript)</h2>
 
@@ -251,7 +251,7 @@
         <div class="docs-Box" aria-describedby="my-js-controlled-tooltip">
           I have an externally-triggered tooltip
         </div>
-        <div id="my-js-controlled-tooltip" class="Tooltip Tooltip--bottom is-hidden">
+        <div id="my-js-controlled-tooltip" class="Tooltip is-hidden" data-spirit-placement="bottom">
           Hello there!
           <span class="Tooltip__arrow"></span>
         </div>
@@ -261,7 +261,7 @@
 
   </section>
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Dismissible Tooltip</h2>
 
@@ -269,7 +269,7 @@
 
       <div class="TooltipWrapper d-inline-block">
         <button class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</button>
-        <div id="my-dismissible-tooltip" class="Tooltip Tooltip--right Tooltip--dismissible">
+        <div id="my-dismissible-tooltip" class="Tooltip Tooltip--dismissible" data-spirit-placement="right">
           Close me
           <button
             type="button"
@@ -292,7 +292,7 @@
 
   </section>
 
-  <section class="docs-Section">
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
     <h2 class="docs-Heading">Dismissible Tooltip via JS API</h2>
 
@@ -305,7 +305,7 @@
 
       <div class="TooltipWrapper d-inline-block">
         <button id="my-dismissible-button" class="Button Button--primary Button--medium" aria-describedby="my-dismissible-tooltip2">I have a tooltip 😎</button>
-        <div id="my-dismissible-tooltip2" class="Tooltip Tooltip--right Tooltip--dismissible is-hidden">
+        <div id="my-dismissible-tooltip2" class="Tooltip Tooltip--dismissible is-hidden" data-spirit-placement="right">
           Close me
           <button
             id="my-dismissible-tooltip2-button"
@@ -328,52 +328,88 @@
 
   </section>
 
-  <section id="advanced-positioning" class="docs-Section">
+  <section id="full-floating-ui" class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
-    <h2 class="docs-Heading">Advanced Positioning</h2>
+    <h2 class="docs-Heading">Full Floating UI Usage</h2>
 
-    <div class="docs-Stack docs-Stack--start">
+    <div class="docs-Stack docs-Stack--stretch">
 
-      <p>
+      <p class="mb-0">
         The following example is using external library <a href="https://floating-ui.com">Floating UI</a>.
+        Try scrolling the frame or resizing the window to see how the Tooltip behaves. The Floating UI
+        library is trying to keep the Tooltip in the viewport and it is also flipping, shifting and
+        resizing the Tooltip when it is not possible to keep it in the viewport.
       </p>
 
-      <p>
-        🖱 Try scrolling the example to see how Tooltip placement is updated.
-      </p>
+      <div class="Alert Alert--informative" role="alert">
+        <svg width="24" height="24">
+          <use xlink:href="/icons/svg/sprite.svg#info" />
+        </svg>
+        <div>
+          Please note that the Floating UI library is trying to point the arrow to the center
+          of the trigger element. This is not possible to achieve in CSS only so our behavior
+          is slightly different for tooltips not using Floating UI.
+        </div>
+      </div>
+
+      <div class="Select">
+        <label for="my-advanced-select" class="Select__label">Suggested placement</label>
+        <div class="Select__inputContainer">
+          <select id="my-advanced-select" name="advanced-placement" class="Select__input">
+            <option value="top-start" selected>top-start</option>
+            <option value="top">top</option>
+            <option value="top-end">top-end</option>
+            <option value="right-start">right-start</option>
+            <option value="right">right</option>
+            <option value="right-end">right-end</option>
+            <option value="bottom-start">bottom-start</option>
+            <option value="bottom">bottom</option>
+            <option value="bottom-end">bottom-end</option>
+            <option value="left-start">left-start</option>
+            <option value="left">left</option>
+            <option value="left-end">left-end</option>
+          </select>
+          <div class="Select__icon">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#chevron-down" />
+            </svg>
+          </div>
+        </div>
+      </div>
 
       <script type="module" src="floating-ui-example.mjs"></script>
 
       <style>
         .example-viewport {
-          width: 40rem;
+          width: 100%;
           max-width: 100%;
-          height: 10rem;
+          height: 30rem;
           overflow: auto;
         }
 
         .example-content {
           position: relative;
-          width: 100%;
-          height: 20rem;
-          padding-block: 7rem;
+          width: 300%;
+          height: 60rem;
+          padding-block: 12rem;
           text-align: center;
         }
       </style>
 
-      <div class="example-viewport bg-cover">
-        <div class="example-content">
+      <div class="example-viewport bg-cover" id="my-advanced-viewport">
+        <div class="example-content" id="my-advanced-content">
           <button
             type="button"
             id="my-button"
             class="Button Button--primary Button--medium"
             aria-describedby="my-advanced-tooltip"
           >
-            I have a flipping tooltip!
+            I have a Floating tooltip!
           </button>
-          <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
-            Hello there!
-            <span class="Tooltip__arrow"></span>
+          <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top-start" data-spirit-placement-controlled>
+            This long tooltip is flipping, resizing and shifting to stay in the viewport.
+            Also its arrow is always trying to point to the center of the trigger.
+            <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses
+// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
 @use 'true';
 @use '../../settings/dictionaries' as dictionaries-settings;
 @use '../dictionaries';
@@ -101,6 +101,7 @@
             }
 
             @include true.expect {
+                .Test[data-spirit-placement='top-left'],
                 .Test--topLeft {
                     --test-offset: 0;
 
@@ -110,13 +111,24 @@
                 }
             }
         }
-    }
-}
 
-// Create Test classes in order to test extend in next mixin test
-.Test--topLeft,
-.Test--bottomRight {
-    position: relative;
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-placements('Test', ('top-start'));
+            }
+
+            @include true.expect {
+                .Test[data-spirit-placement='top-start'],
+                .Test--topStart {
+                    --test-offset: 0;
+
+                    inset: auto auto 100% 0;
+                    translate: var(--test-offset-orthogonal, 0) calc(-1 * var(--test-offset, 0));
+                    transform-origin: bottom;
+                }
+            }
+        }
+    }
 }
 
 @include true.describe('generate-controlled-placements mixin') {
