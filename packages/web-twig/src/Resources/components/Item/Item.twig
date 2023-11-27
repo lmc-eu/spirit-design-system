@@ -1,0 +1,70 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _elementType = props.elementType | default('button') -%}
+{%- set _helperText = props.helperText | default(null) -%}
+{%- set _href = props.href | default(null) -%}
+{%- set _iconName = props.iconName | default(null) -%}
+{%- set _isDisabled = props.isDisabled | default(null) -%}
+{%- set _isSelected = props.isSelected | default(null) -%}
+{%- set _label = props.label | default('') -%}
+{%- set _target = props.target | default(null) -%}
+{%- set _type = props.type | default('button') -%}
+{%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
+{%- set _unsafeLabel = props.UNSAFE_label | default(null) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Item' -%}
+{%- set _disabledClassName = _isDisabled ? _spiritClassPrefix ~ 'Item--disabled' : null -%}
+{%- set _selectedClassName = _isSelected ? _spiritClassPrefix ~ 'Item--selected' : null -%}
+{%- set _iconClassName = _spiritClassPrefix ~ 'Item__icon' -%}
+{%- set _startIconClassName = _iconClassName ~ ' ' ~ _spiritClassPrefix ~ 'Item__icon--start' -%}
+{%- set _endIconClassName = _iconClassName ~ ' ' ~ _spiritClassPrefix ~ 'Item__icon--end' -%}
+{%- set _helperTextClassName = _spiritClassPrefix ~ 'Item__helperText' -%}
+{%- set _labelClassName =  _spiritClassPrefix ~ 'Item__label' -%}
+
+{# Attributes #}
+{%- set _ariaSelectedAttr = 'aria-selected="' ~ (_isSelected ? 'true' : 'false') ~ '"' -%}
+{%- set _buttonDisabledAttr = (_elementType == 'button' and _isDisabled) ? 'disabled' : null -%}
+{%- set _hrefAttr = (_elementType == 'a' and _href) ? 'href=' ~ _href : null -%}
+{%- set _targetAttr = (_elementType == 'a' and _target) ? 'target=' ~ _target | escape('html_attr') : null -%}
+{%- set _typeAttr = (_elementType == 'button' and _type) ? 'type=' ~ _type : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _disabledClassName, _selectedClassName, _styleProps.className ] -%}
+{%- set _selectedIconName = 'check-plain' -%}
+
+<{{ _elementType }} 
+  {{ mainProps(props) }} 
+  {{ styleProp(_styleProps) }} 
+  {{ classProp(_classNames) }} 
+  {{ _hrefAttr }}
+  {{ _targetAttr }}
+  {{ _typeAttr }}
+  {{ _buttonDisabledAttr }}
+  {{ _ariaSelectedAttr | raw  }}
+>
+  {% if _iconName %}
+    <span class="{{ _startIconClassName }}">
+      <Icon name="{{ _iconName }}" isReusable={ false } />
+    </span>
+  {% endif %}
+  <span class="{{ _labelClassName }}">
+    {%- if _unsafeLabel -%}
+      {{ _unsafeLabel | raw }}
+    {%- else -%}
+      {{ _label }}
+    {%- endif -%}
+  </span>
+  <HelperText
+    elementType="span"
+    className="{{ _helperTextClassName }}"
+    helperText="{{ _helperText }}"
+    UNSAFE_helperText="{{ _unsafeHelperText }}"
+  />
+  {% if _isSelected %}
+    <span class="{{ _endIconClassName }}">
+      <Icon name="{{ _selectedIconName }}" isReusable={ false } />
+    </span>
+  {% endif %}
+</{{ _elementType }}>
