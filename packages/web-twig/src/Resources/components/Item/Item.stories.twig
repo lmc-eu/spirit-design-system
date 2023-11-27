@@ -2,6 +2,26 @@
 
 {% block content %}
 
+    <DocsSection title="Default">
+        {% include '@components/Item/stories/ItemDefault.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Selected">
+        {% include '@components/Item/stories/ItemSelected.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Disabled">
+        {% include '@components/Item/stories/ItemDisabled.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Helper Text">
+        {% include '@components/Item/stories/ItemHelperText.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Icon">
+        {% include '@components/Item/stories/ItemIcon.twig' %}
+    </DocsSection>
+
     <DocsSection title="Checkbox Item">
         {% include '@components/Item/stories/CheckboxItem.twig' %}
     </DocsSection>
