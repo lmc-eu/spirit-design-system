@@ -37,7 +37,7 @@
 {%- endif -%}
 
 {# Attributes #}
-{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps | join() ~ '"' -%}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps.style | join() ~ '"' -%}
 
 <{{ _elementType }}
     {{ mainProps(props, _allowedAttributes) }}
