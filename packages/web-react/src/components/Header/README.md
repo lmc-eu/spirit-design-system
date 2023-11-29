@@ -6,38 +6,19 @@ your specific design goals.
 
 The Header is a composition of several subcomponents:
 
-- [Header and HeaderDialog](#header-and-headerdialog)
-  - [Accessibility Guidelines](#accessibility-guidelines)
-  - [Minimal Header](#minimal-header)
-  - [Color Variants](#color-variants)
-  - [Simple Header](#simple-header)
-  - [API](#api)
-  - [Supported Content](#supported-content)
-  - [Header](#header)
-    - [Mobile-Only Actions](#mobile-only-actions)
-      - [Custom Mobile Actions](#custom-mobile-actions)
-      - [API](#api-1)
-    - [Desktop-Only Actions](#desktop-only-actions)
-      - [API](#api-2)
-      - [Navigation](#navigation)
-      - [Other Content](#other-content)
-        - [HeaderNav API](#headernav-api)
-        - [HeaderNavItem API](#headernavitem-api)
-        - [HeaderLink API](#headerlink-api)
-        - [HeaderButton API](#headerbutton-api)
-  - [Header Dialog](#header-dialog)
-    - [API](#api-3)
-    - [Close Button](#close-button)
-      - [API](#api-4)
-    - [Primary and Secondary Actions](#primary-and-secondary-actions)
-      - [API](#api-5)
-      - [Navigation](#navigation-1)
-        - [HeaderDialogNav API](#headerdialognav-api)
-        - [HeaderDialogNavItem API](#headerdialognavitem-api)
-        - [HeaderDialogLink API](#headerdialoglink-api)
-        - [HeaderDialogButton API](#headerdialogbutton-api)
-        - [HeaderDialogText API](#headerdialogtext-api)
-  - [Composition](#composition)
+- [Header](#minimal-header)
+  - [HeaderMobileActions](#mobile-only-actions)
+  - [HeaderDesktopActions](#desktop-only-actions)
+    - [HeaderNav](#navigation)
+      - [HeaderNavItem](#navigation)
+        - [HeaderLink](#navigation)
+- [HeaderDialog](#header-dialog)
+  - [HeaderDialogCloseButton](#close-button)
+  - [HeaderDialogActions](#primary-and-secondary-actions)
+    - [HeaderDialogNav](#navigation-1)
+      - [HeaderDialogNavItem](#navigation-1)
+        - [HeaderDialogLink](#navigation-1)
+        - [HeaderDialogText](#navigation-1)
 
 ## Accessibility Guidelines
 
@@ -418,6 +399,7 @@ The component further inherits properties from the [`<li>`][mdn-li-element] elem
 | Name               | Type            | Default | Required | Description          |
 | ------------------ | --------------- | ------- | -------- | -------------------- |
 | `children`         | `ReactNode`     | —       | ✕        | Children node        |
+| `elementType`      | `ElementType`   | `a`     | ✕        | Type of element      |
 | `isCurrent`        | `bool`          | `false` | ✕        | Mark link as current |
 | `UNSAFE_className` | `string`        | —       | ✕        | Custom class name    |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style         |
