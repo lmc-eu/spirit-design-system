@@ -114,11 +114,11 @@ Tab list link
 
 #### API
 
-| Name        | Type                         | Default | Required | Description                   |
-| ----------- | ---------------------------- | ------- | -------- | ----------------------------- |
-| `children`  | `any`                        | —       | ✕        | Child component               |
-| `href`      | `string`                     | —       | ✔        | External link                 |
-| `itemProps` | `StyleProps & HTMLLIElement` | —       | ✕        | Props for parent list element |
+| Name          | Type                         | Default | Required | Description                   |
+| ------------- | ---------------------------- | ------- | -------- | ----------------------------- |
+| `children`    | `any`                        | —       | ✕        | Child component               |
+| `elementType` | `ElementType`                | `a`     | ✕        | Type of element               |
+| `itemProps`   | `StyleProps & HTMLLIElement` | —       | ✕        | Props for parent list element |
 
 ### TabContent
 

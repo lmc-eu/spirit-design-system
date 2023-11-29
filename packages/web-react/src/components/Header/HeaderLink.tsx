@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { ElementType, forwardRef } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { HeaderLinkProps } from '../../types';
+import { PolymorphicRef, SpiritHeaderLinkProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
-const HeaderLink = (props: HeaderLinkProps) => {
-  const { children, isCurrent, ...restProps } = props;
-
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_HeaderLink'] }] */
+const _HeaderLink = <E extends ElementType = 'a'>(
+  props: SpiritHeaderLinkProps<E>,
+  ref: PolymorphicRef<E>,
+): JSX.Element => {
+  const { elementType: ElementTag = 'a', children, isCurrent, ...restProps } = props;
   const { classProps } = useHeaderStyleProps({ isCurrentLink: isCurrent });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <a {...otherProps} className={classNames(classProps.headerLink, styleProps.className)} style={styleProps.style}>
+    <ElementTag
+      {...otherProps}
+      className={classNames(classProps.headerLink, styleProps.className)}
+      style={styleProps.style}
+      ref={ref}
+    >
       {children}
-    </a>
+    </ElementTag>
   );
 };
+
+export const HeaderLink = forwardRef<HTMLAnchorElement, SpiritHeaderLinkProps<ElementType>>(_HeaderLink);
 
 export default HeaderLink;

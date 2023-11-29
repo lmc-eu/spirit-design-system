@@ -19,4 +19,15 @@ describe('HeaderLink', () => {
     const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
+
+  it('should render button element', () => {
+    const dom = render(
+      <HeaderLink id="test" elementType="button">
+        Hello World
+      </HeaderLink>,
+    );
+
+    const element = dom.container.querySelector('button') as HTMLElement;
+    expect(element.textContent).toBe('Hello World');
+  });
 });

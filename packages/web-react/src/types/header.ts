@@ -1,3 +1,4 @@
+import { ElementType } from 'react';
 import {
   ChildrenProps,
   ClickEvent,
@@ -6,8 +7,11 @@ import {
   SpiritDialogElementProps,
   SpiritElementProps,
   SpiritLItemElementProps,
+  SpiritPolymorphicElementPropsWithRef,
   SpiritSpanElementProps,
   SpiritUListElementProps,
+  StyleProps,
+  TransferProps,
 } from './shared';
 
 export type HeaderActionsColorType = 'primary' | 'secondary';
@@ -58,9 +62,20 @@ export interface HeaderDialogNavItemProps extends SpiritLItemElementProps, Child
 
 export interface HeaderDialogTextProps extends SpiritSpanElementProps, ChildrenProps {}
 
-export interface HeaderLinkProps extends SpiritAnchorElementProps, ChildrenProps {
+export interface HeaderLinkBaseProps extends ChildrenProps, StyleProps, TransferProps {
   isCurrent?: boolean;
 }
+
+export type HeaderLinkProps<E extends ElementType = 'a'> = {
+  /**
+   * The HTML element or React element used to render the Link, e.g. 'a'.
+   * @default 'a'
+   */
+  elementType?: E;
+} & HeaderLinkBaseProps;
+
+export type SpiritHeaderLinkProps<E extends ElementType = 'a'> = HeaderLinkProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, HeaderLinkProps<E>>;
 
 export interface HeaderMobileActionsProps extends SpiritElementProps, HeaderMobileActionsHandlingProps, ChildrenProps {
   dialogId: string;
