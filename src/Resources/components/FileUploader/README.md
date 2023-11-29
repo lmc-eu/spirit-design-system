@@ -111,7 +111,7 @@ To increase the limit for example to 20 MB, add the `maxFileSize` attribute.
 The attribute value should be given in bytes:
 
 ```twig
-<FileUploaderInput maxFileSize={20000000} />
+<FileUploaderInput maxFileSize={ 20000000 } />
 ```
 
 ### Maximum Number of Files in Queue (JavaScript)
@@ -120,7 +120,7 @@ Limit of the maximum number of uploaded files. The default value is 10, but any 
 the `maxUploadedFiles` attribute:
 
 ```twig
-<FileUploaderInput maxUploadedFiles={2} />
+<FileUploaderInput maxUploadedFiles={ 2 } />
 ```
 
 ### Input Behavior When the Queue is Filled (JavaScript)
@@ -136,7 +136,7 @@ If you set the value of `queueLimitBehavior` to `disable`, the input will be dis
 `hide`, the input disappears completely. After removing a file from the queue, the input is restored.
 
 ```twig
-<FileUploaderInput maxUploadedFiles={2} queueLimitBehavior="hide" />
+<FileUploaderInput maxUploadedFiles={ 2 } queueLimitBehavior="hide" />
 ```
 
 ### Allowed File Types
