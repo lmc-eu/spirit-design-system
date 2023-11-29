@@ -210,7 +210,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                            |
 | `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in bytes                        |
 | `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                        |
-| `multiple`              | `bool`                                         | `false`                 | ✕        | If true, multiple files can be selected                               |
+| `multiple`              | `void`                                         | `null`                  | ✕        | If set, [multiple files can be selected][multiple-attr]               |
 | `name`                  | `string`                                       | `null`                  | ✕        | Input name                                                            |
 | `pickAFileText`         | `string`                                       | `Upload your file`      | ✕        | Text shown in the drop zone                                           |
 | `queueLimitBehavior`    | [`hide` \| `disable` \| `none`]                | `none`                  | ✕        | Input behavior when the file queue is filled                          |
@@ -342,3 +342,4 @@ This is how all subcomponents build up the complete FileUploader:
 [mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[multiple-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/multiple

@@ -119,7 +119,7 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 | `maxHeightFromTabletUp`       | `string`                      | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                   |
 | `method`                      | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                       |
 | `name`                        | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                             |
-| `novalidate`                  | `bool`                        | `false`   | ✕        | `elementType="form"` only: If the dialog should have validation disabled                                |
+| `novalidate`                  | `void`                        | `null`    | ✕        | `elementType="form"` only: [If the dialog should have validation disabled][novalidate-attr]             |
 | `preferredHeightFromTabletUp` | `string`                      | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                        |
 | `preferredHeightOnMobile`     | `string`                      | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                   |
 | `rel`                         | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource            |
@@ -341,6 +341,7 @@ Or, feel free to write the controlling script yourself.
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[novalidate-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#novalidate
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ScrollView/README.md
