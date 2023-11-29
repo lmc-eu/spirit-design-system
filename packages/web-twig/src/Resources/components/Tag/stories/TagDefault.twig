@@ -6,8 +6,8 @@
         {% set title = 'Size ' ~ size %}
         <DocsSection title={{ title }}>
             {% for color in colors %}
-                <Tag color={color} size={size} isSubtle>Tag {{ color }}</Tag>
-                <Tag color={color} size={size}>Tag {{ color }}</Tag>
+                <Tag color={ color } size={ size } isSubtle>Tag {{ color }}</Tag>
+                <Tag color={ color } size={ size }>Tag {{ color }}</Tag>
             {% endfor %}
         </DocsSection>
     {% endfor %}
