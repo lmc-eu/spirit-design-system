@@ -4,7 +4,7 @@ import { mergeConfig } from 'vite';
 import markdownRawPlugin from 'vite-raw-plugin';
 
 const config: StorybookViteConfig = {
-  stories: ['../packages/**/*.stories.mdx', '../packages/**/*.stories.@(ts|tsx)'],
+  stories: ['../packages/**/stories/**/*.mdx', '../packages/**/*.stories.@(ts|tsx)'],
 
   addons: [
     getAbsolutePath('@storybook/addon-links'),
