@@ -2,7 +2,6 @@ import { ElementType } from 'react';
 import {
   ChildrenProps,
   ClickEvent,
-  SpiritAnchorElementProps,
   SpiritButtonElementProps,
   SpiritDialogElementProps,
   SpiritElementProps,
@@ -52,9 +51,20 @@ export interface HeaderDialogCloseButtonProps extends Omit<SpiritButtonElementPr
   label?: string;
 }
 
-export interface HeaderDialogLinkProps extends SpiritAnchorElementProps, ChildrenProps {
+export interface BaseHeaderDialogLinkProps extends ChildrenProps, StyleProps, TransferProps {
   isCurrent?: boolean;
 }
+
+export type HeaderDialogLinkProps<E extends ElementType = 'a'> = {
+  /**
+   * The HTML element or React element used to render the Link, e.g. 'a'.
+   * @default 'a'
+   */
+  elementType?: E;
+} & BaseHeaderDialogLinkProps;
+
+export type SpiritDialogHeaderLinkProps<E extends ElementType = 'a'> = HeaderDialogLinkProps<E> &
+  SpiritPolymorphicElementPropsWithRef<E, HeaderDialogLinkProps<E>>;
 
 export interface HeaderDialogNavProps extends SpiritUListElementProps, ChildrenProps {}
 

@@ -22,4 +22,15 @@ describe('HeaderDialogLink', () => {
     const element = dom.container.querySelector('a') as HTMLElement;
     expect(element.textContent).toBe('Hello World');
   });
+
+  it('should render button element', () => {
+    const dom = render(
+      <HeaderDialogLink id="test" elementType="button">
+        Hello World
+      </HeaderDialogLink>,
+    );
+
+    const element = dom.container.querySelector('button') as HTMLElement;
+    expect(element.textContent).toBe('Hello World');
+  });
 });
