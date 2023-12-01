@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         const attachmentMetaInputElement = document.createElement('input');
         attachmentMetaInputElement.setAttribute('type', 'hidden');
-        attachmentMetaInputElement.setAttribute('name', `attachments_${fileName}_meta`);
+        attachmentMetaInputElement.setAttribute('name', `attachments_${fileName}_meta[]`);
         attachmentMetaInputElement.setAttribute('value', JSON.stringify(meta));
         attachmentElement?.appendChild(attachmentMetaInputElement);
       }
