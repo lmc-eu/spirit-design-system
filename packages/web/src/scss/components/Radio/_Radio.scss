@@ -98,6 +98,8 @@ $_field-name: 'Radio';
 
 .Radio--item {
     @include form-fields-tools.item();
+
+    display: flex;
 }
 
 .Radio--item.Radio--disabled {
