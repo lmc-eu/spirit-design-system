@@ -35,7 +35,7 @@ const getAttachmentMetaInput = (file: File, name: string, meta: FileMetadata): H
   const attachmentInputElement = document.createElement('input');
 
   attachmentInputElement.setAttribute('type', 'text');
-  attachmentInputElement.setAttribute('name', `${name}_meta`);
+  attachmentInputElement.setAttribute('name', `${name}_meta[]`);
   attachmentInputElement.setAttribute('value', JSON.stringify(meta));
   attachmentInputElement.setAttribute('hidden', '');
 
