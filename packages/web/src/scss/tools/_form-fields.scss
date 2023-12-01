@@ -179,6 +179,7 @@
 }
 
 @mixin item() {
+    width: 100%;
     padding: form-fields-theme.$item-spacing;
     margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;

@@ -92,6 +92,8 @@ $_field-name: 'Checkbox';
 
 .Checkbox--item {
     @include form-fields-tools.item();
+
+    display: flex;
 }
 
 .Checkbox--item.Checkbox--disabled {
