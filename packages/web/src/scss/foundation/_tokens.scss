@@ -4,4 +4,8 @@
     @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
         --spirit-breakpoint-#{$breakpoint-name}: #{$breakpoint-value};
     }
+
+    @each $space-name, $space-value in tokens.$spaces {
+        --spirit-space-#{$space-name}: #{$space-value};
+    }
 }

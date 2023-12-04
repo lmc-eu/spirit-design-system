@@ -118,3 +118,87 @@ Usage with combination of spacing and dividers:
   </li>
 </ul>
 ```
+
+## Custom Spacing
+
+Use CSS custom properties to define custom spacing between items in `Stack--hasSpacing`. Set the `--stack-spacing`
+property to one of spacing token values defined on the `:root` element, e.g. `--stack-spacing: var(--spirit-space-800)`.
+This will set the spacing to `var(--spirit-space-800)` for all breakpoints.
+
+```html
+<ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-1200)">
+  <li>
+    <div>Block 1</div>
+  </li>
+  <li>
+    <div>Block 2</div>
+  </li>
+  <li>
+    <div>Block 3</div>
+  </li>
+</ul>
+```
+
+ℹ️ We highly discourage you from using absolute values like `--stack-spacing: 1rem`. It will work, but you will lose
+the consistency between the spacing and the design tokens.
+
+If you need to set custom spacing from a specific breakpoint, use the `--stack-spacing-{breakpoint}` property,
+e.g. `--stack-spacing-tablet: var(--spirit-space-800)`. The breakpoint value must be one of the breakpoint tokens
+except for the `mobile` breakpoint you don't need the suffix at all. The spacing is set to all larger breakpoints
+automatically if you don't set them explicitly. E.g. if you set only `--stack-spacing-tablet: var(--spirit-space-800)`
+the spacing will be set to `var(--spirit-space-800)` for `tablet` and `desktop` breakpoints while on the `mobile`
+breakpoint the default spacing will be used.
+
+Custom spacing from tablet up:
+
+```html
+<ul class="Stack Stack--hasSpacing" style="--stack-spacing-tablet: var(--spirit-space-1200)">
+  <li>
+    <div>Block 1</div>
+  </li>
+  <li>
+    <div>Block 2</div>
+  </li>
+  <li>
+    <div>Block 3</div>
+  </li>
+</ul>
+```
+
+Custom spacing for each breakpoint:
+
+```html
+<ul
+  class="Stack Stack--hasSpacing"
+  style="--stack-spacing: var(--spirit-space-800); --stack-spacing-tablet: var(--spirit-space-1000); --stack-spacing-desktop: var(--spirit-space-1200)"
+>
+  <li>
+    <div>Block 1</div>
+  </li>
+  <li>
+    <div>Block 2</div>
+  </li>
+  <li>
+    <div>Block 3</div>
+  </li>
+</ul>
+```
+
+Custom spacing works with dividers too.
+
+```html
+<ul
+  class="Stack Stack--hasSpacing Stack--hasIntermediateDividers Stack--hasStartDivider Stack--hasEndDivider"
+  style="--stack-spacing: var(--spirit-space-800)"
+>
+  <li>
+    <div>Block 1</div>
+  </li>
+  <li>
+    <div>Block 2</div>
+  </li>
+  <li>
+    <div>Block 3</div>
+  </li>
+</ul>
+```

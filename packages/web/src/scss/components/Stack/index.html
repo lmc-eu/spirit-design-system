@@ -1,5 +1,4 @@
-{{#> layout/plain }}
-
+{{#> layout/plain }} {{setVar "blocks" "Block 1" "Block 2" "Block 3" }}
 <section class="docs-Section">
 
   <h2 class="docs-Heading">Stacked Form Fields</h2>
@@ -18,7 +17,7 @@
     </div>
 
   </div>
-    
+
 </section>
 
 <section class="docs-Section">
@@ -28,21 +27,13 @@
   <div class="docs-Stack docs-Stack--stretch">
 
     <ul class="Stack">
+    {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 1
+          {{block}}
         </div>
       </li>
-      <li>
-        <div class="docs-Box">
-          Block 2
-        </div>
-      </li>
-      <li>
-        <div class="docs-Box">
-          Block 3
-        </div>
-      </li>
+    {{/each}}
     </ul>
 
   </div>
@@ -56,21 +47,13 @@
   <div class="docs-Stack docs-Stack--stretch">
 
     <ul class="Stack Stack--hasSpacing">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 1
+          {{block}}
         </div>
       </li>
-      <li>
-        <div class="docs-Box">
-          Block 2
-        </div>
-      </li>
-      <li>
-        <div class="docs-Box">
-          Block 3
-        </div>
-      </li>
+      {{/each}}
     </ul>
 
   </div>
@@ -84,23 +67,15 @@
   <div class="docs-Stack docs-Stack--stretch">
 
     <ul class="Stack Stack--hasIntermediateDividers Stack--hasSpacing">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 1
+          {{block}}
         </div>
       </li>
-      <li>
-        <div class="docs-Box">
-          Block 2
-        </div>
-      </li>
-      <li>
-        <div class="docs-Box">
-          Block 3
-        </div>
-      </li>
+      {{/each}}
     </ul>
-    
+
   </div>
 
 </section>
@@ -112,21 +87,13 @@
   <div class="docs-Stack docs-Stack--stretch">
 
     <ul class="Stack Stack--hasIntermediateDividers Stack--hasEndDivider Stack--hasStartDivider Stack--hasSpacing">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 1
+          {{block}}
         </div>
       </li>
-      <li>
-        <div class="docs-Box">
-          Block 2
-        </div>
-      </li>
-      <li>
-        <div class="docs-Box">
-          Block 3
-        </div>
-      </li>
+      {{/each}}
     </ul>
 
   </div>
@@ -140,21 +107,94 @@
   <div class="docs-Stack docs-Stack--stretch">
 
     <ul class="Stack Stack--hasIntermediateDividers">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 1
+          {{block}}
         </div>
       </li>
+      {{/each}}
+    </ul>
+
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Stacked Blocks with Custom Spacing</h2>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-1200)">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 2
+          {{block}}
         </div>
       </li>
+      {{/each}}
+    </ul>
+
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Stacked Blocks with Custom Spacing from Tablet Breakpoint</h2>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <ul class="Stack Stack--hasSpacing" style="--stack-spacing-tablet: var(--spirit-space-1200)">
+      {{#each @root.blocks as |block|}}
       <li>
         <div class="docs-Box">
-          Block 3
+          {{block}}
         </div>
       </li>
+      {{/each}}
+    </ul>
+
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Stacked Blocks with Custom Spacing for Each Breakpoint</h2>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <ul class="Stack Stack--hasSpacing" style="--stack-spacing: var(--spirit-space-100);--stack-spacing-tablet: var(--spirit-space-1000);--stack-spacing-desktop: var(--spirit-space-1200)">
+      {{#each @root.blocks as |block|}}
+      <li>
+        <div class="docs-Box">
+          {{block}}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+
+  </div>
+
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Stacked Blocks with Custom Spacing and Inner and Outer Dividers</h2>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <ul
+      class="Stack Stack--hasSpacing Stack--hasStartDivider Stack--hasEndDivider Stack--hasIntermediateDividers"
+      style="--stack-spacing: var(--spirit-space-800)"
+    >
+      {{#each @root.blocks as |block|}}
+      <li>
+        <div class="docs-Box">{{block}}</div>
+      </li>
+      {{/each}}
     </ul>
 
   </div>
