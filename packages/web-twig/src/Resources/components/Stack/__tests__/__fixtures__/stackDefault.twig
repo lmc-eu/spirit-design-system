@@ -3,7 +3,52 @@
     <div>Block 2</div>
     <div>Block 3</div>
 </Stack>
+
+<!-- Render as different element type -->
 <Stack elementType="ul">
+    <li>
+        <div>List item 1</div>
+    </li>
+    <li>
+        <div>List item 1</div>
+    </li>
+    <li>
+        <div>List item 1</div>
+    </li>
+</Stack>
+
+<!-- Render with spacing -->
+<Stack hasSpacing>
+    <div>Block 1</div>
+    <div>Block 2</div>
+    <div>Block 3</div>
+</Stack>
+
+<!-- Render with custom spacing -->
+<Stack hasSpacing spacing="space-1200">
+    <div>Block 1</div>
+    <div>Block 2</div>
+    <div>Block 3</div>
+</Stack>
+
+<!-- Render with custom breakpoint spacing -->
+<Stack hasSpacing spacing="{{ { mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' } }}">
+    <div>Block 1</div>
+    <div>Block 2</div>
+    <div>Block 3</div>
+</Stack>
+
+<!-- Render with all props -->
+<Stack
+    as="ul"
+    hasSpacing
+    spacing="space-1200"
+    hasEndDivider
+    hasIntermediateDividers
+    hasStartDivider
+    UNSAFE_className="custom-class-name"
+    UNSAFE_style="color: red;"
+>
     <li>
         <div>List item 1</div>
     </li>

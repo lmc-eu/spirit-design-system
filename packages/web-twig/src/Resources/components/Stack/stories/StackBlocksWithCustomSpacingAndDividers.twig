@@ -1,0 +1,14 @@
+<Stack
+    elementType="ul"
+    hasSpacing
+    hasStartDivider
+    hasEndDivider
+    hasIntermediateDividers
+    spacing="space-800"
+>
+    {% for i in 1..3 %}
+        <li>
+            <DocsBox>Block {{ i }}</DocsBox>
+        </li>
+    {% endfor %}
+</Stack>
