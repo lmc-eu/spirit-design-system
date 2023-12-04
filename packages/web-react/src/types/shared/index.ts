@@ -12,9 +12,10 @@ export * from './element';
 export * from './events';
 export * from './inputs';
 export * from './item';
-export * from './style';
 export * from './refs';
 export * from './rest';
+export * from './style';
+export * from './tokens';
 
 export interface ChildrenProps {
   /** The content to display in the component. */

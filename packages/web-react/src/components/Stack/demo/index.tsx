@@ -9,6 +9,10 @@ import StackBlocksWithVerticalSpacing from './StackBlocksWithVerticalSpacing';
 import StackBlocksWithInnerDividersAndVerticalSpacing from './StackBlocksWithInnerDividersAndVerticalSpacing';
 import StackBlocksWithInnerAndOuterDividersAndVerticalSpacing from './StackBlocksWithInnerAndOuterDividersAndVerticalSpacing';
 import StackBlocksWithInnerDividersWithoutVerticalSpacing from './StackBlocksWithInnerDividersWithoutVerticalSpacing';
+import StackBlocksWithCustomSpacing from './StackBlocksWithCustomSpacing';
+import StackBlocksWithCustomSpacingFromTabletBreakpoint from './StackBlocksWithCustomSpacingFromTabletBreakpoint';
+import StackBlocksWithCustomSpacingForEachBreakpoint from './StackBlocksWithCustomSpacingForEachBreakpoint';
+import StackBlocksWithCustomSpacingAndDividers from './StackBlocksWithCustomSpacingAndDividers';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -29,6 +33,18 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Stacked Blocks with Inner Dividers without Vertical Spacing" stackAlignment="stretch">
       <StackBlocksWithInnerDividersWithoutVerticalSpacing />
+    </DocsSection>
+    <DocsSection title="Stacked Blocks with Custom Spacing" stackAlignment="stretch">
+      <StackBlocksWithCustomSpacing />
+    </DocsSection>
+    <DocsSection title="Stacked Blocks with Custom Spacing from Tablet Breakpoint" stackAlignment="stretch">
+      <StackBlocksWithCustomSpacingFromTabletBreakpoint />
+    </DocsSection>
+    <DocsSection title="Stacked Blocks with Custom Spacing for Each Breakpoint" stackAlignment="stretch">
+      <StackBlocksWithCustomSpacingForEachBreakpoint />
+    </DocsSection>
+    <DocsSection title="Stacked Blocks with Custom Spacing and Inner and Outer Dividers" stackAlignment="stretch">
+      <StackBlocksWithCustomSpacingAndDividers />
     </DocsSection>
   </React.StrictMode>,
 );

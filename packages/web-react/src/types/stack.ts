@@ -1,5 +1,11 @@
 import { ElementType } from 'react';
-import { ChildrenProps, StyleProps, SpiritPolymorphicElementPropsWithoutRef } from './shared';
+import {
+  BreakpointToken,
+  ChildrenProps,
+  SpaceToken,
+  SpiritPolymorphicElementPropsWithoutRef,
+  StyleProps,
+} from './shared';
 
 export interface StackBaseProps extends ChildrenProps, StyleProps {
   /** Whether the Stack has divider on the end */
@@ -10,12 +16,13 @@ export interface StackBaseProps extends ChildrenProps, StyleProps {
   hasSpacing?: boolean;
   /** Whether the Stack has divider on the start */
   hasStartDivider?: boolean;
+  /** Custom spacing between items */
+  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
 }
 
 export type StackProps<E extends ElementType> = {
   /**
    * The HTML element or React element used to render the stack, e.g. 'div'.
-   *
    * @default 'div'
    */
   elementType?: E;

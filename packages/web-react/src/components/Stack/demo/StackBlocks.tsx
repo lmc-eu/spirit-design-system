@@ -5,7 +5,7 @@ import Stack from '../Stack';
 const StackBlocks = () => (
   <Stack elementType="ul">
     {[1, 2, 3].map((i) => (
-      <li key={i}>
+      <li key={`stack-default-${i}`}>
         <DocsBox>Block {i}</DocsBox>
       </li>
     ))}
