@@ -59,6 +59,17 @@ Checkbox as Item:
 <Checkbox id="checkboxItem" name="example" label="Checkbox Label" isItem />;
 ```
 
+Usage in [Dropdown][dropdown] component:
+
+```twig
+<DropdownWrapper>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
+  <Dropdown id="DropdownExample">
+    <Item elementType="a" href="#" label="Item label" />
+  </Dropdown>
+</DropdownWrapper>
+```
+
 ## API
 
 | Name                | Type            | Default  | Required | Description                           |
@@ -85,6 +96,7 @@ further extend component's descriptiveness and accessibility. Also, UNSAFE styli
 see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
 These attributes will be passed to the topmost HTML element of the component.
 
-[checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Checkbox/README.md
-[radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Radio/README.md
+[checkbox]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components/Checkbox/README.md
+[dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[radio]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components/Radio/README.md

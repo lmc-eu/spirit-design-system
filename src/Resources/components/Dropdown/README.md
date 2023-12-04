@@ -29,6 +29,17 @@ Advanced example usage with positioning:
 </DropdownWrapper>
 ```
 
+Example with [Item] component:
+
+```twig
+<DropdownWrapper>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
+  <Dropdown id="DropdownExample">
+    <Item elementType="a" href="#" label="Item label" />
+  </Dropdown>
+</DropdownWrapper>
+```
+
 You can add any custom trigger like a `<Button>` but it is necessary to add `data-spirit-toggle="dropdown"`, `data-spirit-target="<id>"`
 attributes to register trigger events.
 
@@ -83,8 +94,9 @@ Or, feel free to write the controlling script yourself.
 
 👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
+[dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
+[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md#javascript
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
-[dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
-[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
