@@ -2,6 +2,7 @@ import React, { ChangeEvent, Ref, useState } from 'react';
 import { DropdownRenderProps, PlacementDictionaryType } from '../../../types';
 import { Button } from '../../Button';
 import { Grid, GridItem } from '../../Grid';
+import { Item } from '../../Item';
 import { Radio } from '../../Radio';
 import { Dropdown } from '..';
 
@@ -156,15 +157,9 @@ const DropdownPlacements = () => {
               placement={placement as PlacementDictionaryType}
               renderTrigger={dropdownTrigger}
             >
-              <a href="#" className="d-flex mb-400">
-                Action
-              </a>
-              <a href="#" className="d-flex mb-400">
-                Another action
-              </a>
-              <a href="#" className="d-flex">
-                Something else here
-              </a>
+              <Item elementType="a" href="#" label="Action" />
+              <Item elementType="a" href="#" label="Another action" />
+              <Item elementType="a" href="#" label="Something else here" />
             </Dropdown>
           </div>
         </GridItem>

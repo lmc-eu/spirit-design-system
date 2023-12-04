@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '../../Icon';
+import { Item } from '../../Item';
 
 type Props = {
   content: Content[];
@@ -11,15 +11,10 @@ type Content = {
 };
 
 const DropdownContentFactory = ({ content }: Props) => {
-  const lastRow = content.length - 1;
-
   return (
     <>
-      {content.map(({ icon, text }, index) => (
-        <a href={`#${icon}`} className={`d-flex ${index !== lastRow && 'mb-400'}`} key={icon}>
-          <Icon name={icon} UNSAFE_className="mr-400" />
-          <span>{text}</span>
-        </a>
+      {content.map(({ icon, text }) => (
+        <Item key={icon} label={text} elementType="a" iconName={icon} href={`#${icon}`} />
       ))}
     </>
   );
