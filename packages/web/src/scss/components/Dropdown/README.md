@@ -211,6 +211,32 @@
 </div>
 ```
 
+## Usage with [Item] component
+
+```html
+<div class="DropdownWrapper">
+  <button
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownDefault"
+    class="Button Button--primary Button--medium"
+    aria-expanded="false"
+    aria-controls="#dropdownDefault"
+  >
+    Button as anchor
+  </button>
+  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
+    <a href="#" class="Item">
+      <span class="Item__icon Item__icon--start">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#info" />
+        </svg>
+      </span>
+      <span class="Item__label">Information</span>
+    </a>
+  </div>
+</div>
+```
+
 ## Placement
 
 Dropdown implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as CSS
@@ -292,5 +318,6 @@ dropdown.hide();
 ```
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
+[item]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Item/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags

@@ -128,9 +128,15 @@
                 <span id="dropdown_placements_example_text" style="white-space: nowrap">bottom-left</span>
               </button>
               <div class="Dropdown Dropdown--bottomLeft" id="dropdown_placements_example">
-                <a href="#" class="d-flex mb-400">Action</a>
-                <a href="#" class="d-flex mb-400">Another action</a>
-                <a href="#" class="d-flex">Something else here</a>
+                <a href="#" class="Item">
+                  <span class="Item__label">Action</span>
+                </a>
+                <a href="#" class="Item">
+                  <span class="Item__label">Another action</span>
+                </a>
+                <a href="#" class="Item">
+                  <span class="Item__label">Something else here</span>
+                </a>
               </div>
             </div>
 
@@ -157,6 +163,51 @@
   </section>
 
   <section class="docs-Section">
+    <h2 class="docs-Heading">Various items</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <div class="DropdownWrapper">
+        <button
+          type="button"
+          data-spirit-toggle="dropdown"
+          data-spirit-target="#dropdownVariousItems"
+          class="Button Button--primary Button--medium"
+          aria-expanded="false"
+          aria-controls="#dropdownVariousItems"
+          data-spirit-autoclose="true"
+        >
+          Button as anchor
+        </button>
+        <div class="Dropdown Dropdown--bottomLeft" id="dropdownVariousItems">
+          <a href="#" class="Item">
+            <span class="Item__label">Plain text</span>
+          </a>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+            </span>
+            <span class="Item__label">Item with icon</span>
+          </a>
+          <label for="checkbox-item" class="Checkbox Checkbox--item">
+            <input type="checkbox" id="checkbox-item" name="checkbox-item" class="Checkbox__input" />
+            <span class="Checkbox__text">
+              <span class="Checkbox__label">Item with checkbox</span>
+            </span>
+          </label>
+          <label for="radio-item" class="Radio Radio--item">
+            <input type="radio" id="radio-item" name="radio-item" class="Radio__input" checked />
+            <span class="Radio__label">Item with radio</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="docs-Section">
     <h2 class="docs-Heading">Usage with disabled auto close</h2>
 
     <div class="docs-Stack docs-Stack--start">
@@ -174,29 +225,37 @@
           Button as anchor
         </button>
         <div class="Dropdown Dropdown--bottomLeft" id="dropdownDisabledAutoClose">
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#info" />
-            </svg>
-            <span>Information</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+            </span>
+            <span class="Item__label">Information</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#link" />
-            </svg>
-            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#link" />
+              </svg>
+            </span>
+            <span class="Item__label">Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#profile" />
-            </svg>
-            <span>Profile</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#profile" />
+              </svg>
+            </span>
+            <span class="Item__label">Profile</span>
           </a>
-          <a href="#" class="d-flex">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#help" />
-            </svg>
-            <span>Help</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#help" />
+              </svg>
+            </span>
+            <span class="Item__label">Help</span>
           </a>
         </div>
       </div>
@@ -221,29 +280,37 @@
           Button as anchor
         </button>
         <div class="Dropdown Dropdown--bottomLeft" id="dropdownLonger">
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#info" />
-            </svg>
-            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+            </span>
+            <span class="Item__label">Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#link" />
-            </svg>
-            <span>Nulla condimentum, purus commodo cursus non nulla rhoncus</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#link" />
+              </svg>
+            </span>
+            <span class="Item__label">Nulla condimentum, purus commodo cursus non nulla rhoncus</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#profile" />
-            </svg>
-            <span>Mauris nunc, elementum enim in lacinia vitae quam placerat sem, euismod accumsan</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#profile" />
+              </svg>
+            </span>
+            <span class="Item__label">Mauris nunc, elementum enim in lacinia vitae quam placerat sem, euismod accumsan</span>
           </a>
-          <a href="#" class="d-flex">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#help" />
-            </svg>
-            <span>Donec dui, nunc dui vel varius libero molestie nibh nunc</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#help" />
+              </svg>
+            </span>
+            <span class="Item__label">Donec dui, nunc dui vel varius libero molestie nibh nunc</span>
           </a>
         </div>
       </div>
@@ -268,29 +335,37 @@
           Finibus quis imperdiet, semper imperdiet aliquam
         </button>
         <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#info" />
-            </svg>
-            <span>Information</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+            </span>
+            <span class="Item__label">Information</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#link" />
-            </svg>
-            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#link" />
+              </svg>
+            </span>
+            <span class="Item__label">Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#profile" />
-            </svg>
-            <span>Profile</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#profile" />
+              </svg>
+            </span>
+            <span class="Item__label">Profile</span>
           </a>
-          <a href="#" class="d-flex">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#help" />
-            </svg>
-            <span>Help</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#help" />
+              </svg>
+            </span>
+            <span class="Item__label">Help</span>
           </a>
         </div>
       </div>
@@ -319,29 +394,37 @@
           id="dropdownFullWidthModeMobile"
           data-spirit-fullwidthmode="mobile-only"
         >
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#info" />
-            </svg>
-            <span>Information</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#info" />
+              </svg>
+            </span>
+            <span class="Item__label">Information</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#link" />
-            </svg>
-            <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#link" />
+              </svg>
+            </span>
+            <span class="Item__label">Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
           </a>
-          <a href="#" class="d-flex mb-400">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#profile" />
-            </svg>
-            <span>Profile</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#profile" />
+              </svg>
+            </span>
+            <span class="Item__label">Profile</span>
           </a>
-          <a href="#" class="d-flex">
-            <svg width="24" height="24" aria-hidden="true" class="mr-400">
-              <use xlink:href="/icons/svg/sprite.svg#help" />
-            </svg>
-            <span>Help</span>
+          <a href="#" class="Item">
+            <span class="Item__icon Item__icon--start">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#help" />
+              </svg>
+            </span>
+            <span class="Item__label">Help</span>
           </a>
         </div>
       </div>
@@ -367,29 +450,37 @@
             Finibus quis imperdiet, semper imperdiet aliquam
           </button>
           <div class="Dropdown Dropdown--top Dropdown--left" id="dropdownEnhancedShadow">
-            <a href="#" class="d-flex mb-400">
-              <svg width="24" height="24" aria-hidden="true" class="mr-400">
-                <use xlink:href="/icons/svg/sprite.svg#info" />
-              </svg>
-              <span>Information</span>
+            <a href="#" class="Item">
+              <span class="Item__icon Item__icon--start">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/icons/svg/sprite.svg#info" />
+                </svg>
+              </span>
+              <span class="Item__label">Information</span>
             </a>
-            <a href="#" class="d-flex mb-400">
-              <svg width="24" height="24" aria-hidden="true" class="mr-400">
-                <use xlink:href="/icons/svg/sprite.svg#link" />
-              </svg>
-              <span>Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
+            <a href="#" class="Item">
+              <span class="Item__icon Item__icon--start">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/icons/svg/sprite.svg#link" />
+                </svg>
+              </span>
+              <span class="Item__label">Bibendum aliquam, fusce integer sit amet congue non nulla aliquet enim</span>
             </a>
-            <a href="#" class="d-flex mb-400">
-              <svg width="24" height="24" aria-hidden="true" class="mr-400">
-                <use xlink:href="/icons/svg/sprite.svg#profile" />
-              </svg>
-              <span>Profile</span>
+            <a href="#" class="Item">
+              <span class="Item__icon Item__icon--start">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/icons/svg/sprite.svg#profile" />
+                </svg>
+              </span>
+              <span class="Item__label">Profile</span>
             </a>
-            <a href="#" class="d-flex">
-              <svg width="24" height="24" aria-hidden="true" class="mr-400">
-                <use xlink:href="/icons/svg/sprite.svg#help" />
-              </svg>
-              <span>Help</span>
+            <a href="#" class="Item">
+              <span class="Item__icon Item__icon--start">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/icons/svg/sprite.svg#help" />
+                </svg>
+              </span>
+              <span class="Item__label">Help</span>
             </a>
           </div>
         </div>
