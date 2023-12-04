@@ -104,5 +104,32 @@ Checkbox as a Item:
 </label>
 ```
 
+Usage in [Dropdown] component:
+
+```html
+<div class="DropdownWrapper">
+  <button
+    data-spirit-toggle="dropdown"
+    data-spirit-target="#dropdownDefault"
+    class="Button Button--primary Button--medium"
+    aria-expanded="false"
+    aria-controls="#dropdownDefault"
+  >
+    Button as anchor
+  </button>
+  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
+    <a href="#" class="Item">
+      <span class="Item__icon Item__icon--start">
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#info" />
+        </svg>
+      </span>
+      <span class="Item__label">Information</span>
+    </a>
+  </div>
+</div>
+```
+
 [checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Checkbox/README.md
+[dropdown]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md
 [radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Radio/README.md
