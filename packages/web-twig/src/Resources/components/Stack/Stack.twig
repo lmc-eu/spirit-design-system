@@ -5,6 +5,7 @@
 {%- set _hasIntermediateDividers = props.hasIntermediateDividers | default(false) -%}
 {%- set _hasSpacing = props.hasSpacing | default(false) -%}
 {%- set _hasStartDivider = props.hasStartDivider | default(false) -%}
+{%- set _spacing = props.spacing | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Stack' -%}
@@ -24,6 +25,20 @@
     _styleProps.className,
 ] -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
+{%- set _style = '' -%}
+
+{%- if _spacing is iterable -%}
+    {%- for breakpoint, bpValue in _spacing -%}
+        {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+        {%- set _style = _style ~ '--stack-spacing' ~ suffix ~ ': var(--spirit-' ~ bpValue ~ ');' -%}
+    {%- endfor -%}
+{%- elseif _spacing -%}
+    {%- set _style = _style ~ '--stack-spacing: var(--spirit-' ~ _spacing ~ ');' -%}
+{%- endif -%}
+
+{# Attributes #}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps.style | join() ~ '"' -%}
+
+<{{ _elementType }} {{ mainProps(props) }} {{ classProp(_classNames) }} {{ _styleAttr | raw }}>
 {%- block content %}{% endblock -%}
 </{{ _elementType }}>
