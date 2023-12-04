@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use '../../tools/breakpoint';
 @use 'theme';
 
 .Stack {
@@ -9,7 +10,24 @@
 }
 
 .Stack--hasSpacing {
-    gap: theme.$gap;
+    // stylelint-disable-next-line custom-property-no-missing-var-function -- We are only building the fallback value here.
+    $property-name: --stack-spacing;
+    $fallback: theme.$spacing-fallback;
+
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        @if $breakpoint-value > 0 {
+            // stylelint-disable-next-line custom-property-no-missing-var-function -- We are only building the fallback value here.
+            $property-name: --stack-spacing-#{$breakpoint-name};
+        }
+
+        @include breakpoint.up($breakpoint-value) {
+            --gap: var(#{$property-name}, #{$fallback});
+        }
+
+        $fallback: var(#{$property-name}, #{$fallback});
+    }
+
+    gap: var(--gap);
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider,
@@ -27,13 +45,23 @@
     border-block-start: theme.$border;
 }
 
+.Stack--hasSpacing > * {
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        @if $breakpoint-value > 0 {
+            --stack-spacing-#{$breakpoint-name}: initial;
+        } @else {
+            --stack-spacing: initial;
+        }
+    }
+}
+
 .Stack--hasSpacing.Stack--hasStartDivider > *,
 .Stack--hasSpacing.Stack--hasEndDivider > * {
-    padding-block: math.div(theme.$gap, 2);
+    padding-block: calc(var(--gap) / 2);
 }
 
 .Stack--hasSpacing.Stack--hasIntermediateDividers > * {
-    padding-block: theme.$gap;
+    padding-block: var(--gap);
 }
 // stylelint-enable
 
@@ -62,9 +90,9 @@
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > :first-child {
-    padding-block-start: theme.$gap;
+    padding-block-start: var(--gap);
 }
 
 .Stack--hasSpacing.Stack--hasEndDivider > :last-child {
-    padding-block-end: theme.$gap;
+    padding-block-end: var(--gap);
 }
