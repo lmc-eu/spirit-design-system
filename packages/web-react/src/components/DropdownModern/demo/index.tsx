@@ -8,6 +8,7 @@ import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import DropdownModernPlacements from './DropdownModernPlacements';
+import DropdownModernVariousItems from './DropdownVariousItems';
 import DropdownModernDisabledAutoclose from './DropdownModernDisabledAutoclose';
 import DropdownModernLongerContent from './DropdownModernLongerContent';
 import DropdownModernFullwidthAll from './DropdownModernFullwidthAll';
@@ -19,6 +20,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <IconsProvider value={icons}>
       <DocsSection title="Placements" stackAlignment="stretch">
         <DropdownModernPlacements />
+      </DocsSection>
+      <DocsSection title="Various items">
+        <DropdownModernVariousItems />
       </DocsSection>
       <DocsSection title="Usage with disabled auto close">
         <DropdownModernDisabledAutoclose />

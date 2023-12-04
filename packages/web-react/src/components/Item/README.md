@@ -77,6 +77,22 @@ import { Checkbox } from '@lmc-eu/spirit-web-react';
 <Checkbox id="checkboxItem" name="example" label="Checkbox Label" isItem />;
 ```
 
+Usage in [Dropdown][dropdown] component:
+
+```jsx
+import { DropdownModern, DropdownTrigger, DropdownPopover, Item } from '@lmc-eu/spirit-web-react/components';
+
+const [isOpen, setIsOpen] = React.useState(false);
+const onToggle = () => setIsOpen(!isOpen);
+
+<DropdownModern id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+  <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
+  <DropdownPopover>
+    <Item elementType="a" href="#" label="Item label" />
+  </DropdownPopover>
+</DropdownModern>;
+```
+
 ## API
 
 | Name               | Type                      | Default  | Required | Description                     |
@@ -91,4 +107,5 @@ import { Checkbox } from '@lmc-eu/spirit-web-react';
 | `UNSAFE_style`     | `CSSProperties`           | —        | ✕        | Wrapper custom style            |
 
 [checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Checkbox/README.md
+[dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Radio/README.md

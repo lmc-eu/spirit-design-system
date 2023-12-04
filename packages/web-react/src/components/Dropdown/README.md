@@ -1,7 +1,7 @@
 # Dropdown
 
 ⚠️ Dropdown component is [deprecated][deprecated] and will be removed in the next major version. Please use "DropdownModern" component instead.
-This is the React implementation of the [Dropdown] component.
+This is the React implementation of the [Dropdown][dropdown] component.
 
 ## Usage
 
@@ -13,6 +13,19 @@ import { Dropdown, Button } from '@lmc-eu/spirit-web-react/components';
 <Dropdown id="DropdownExample" renderTrigger={({ trigger }) => <Button {...trigger}>Trigger</Button>}>
   …
 </Dropdown>
+```
+
+### Dropdown with Item
+
+Enhance your DropdownPopover by incorporating the versatile [Item][item] component.
+Explore additional examples and insights within the dedicated documentation for the [Item][item] component.
+
+```jsx
+import { Dropdown, Button, Item } from '@lmc-eu/spirit-web-react/components';
+
+<Dropdown id="DropdownExample" renderTrigger={({ trigger }) => <Button {...trigger}>Trigger</Button>}>
+  <Item elementType="a" href="#" label="Item label" />
+</Dropdown>;
 ```
 
 ## API
@@ -44,7 +57,7 @@ import { Dropdown, Button } from '@lmc-eu/spirit-web-react/components';
 
 # DropdownModern
 
-⚠️ `DropdownModern` component is [deprecated] and will be renamed to `Dropdown` in the next major version.
+⚠️ `DropdownModern` component is [deprecated][deprecated] and will be renamed to `Dropdown` in the next major version.
 
 ## Usage
 
@@ -59,6 +72,23 @@ const onToggle = () => setIsOpen(!isOpen);
 <DropdownModern id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>…</DropdownPopover>
+</DropdownModern>;
+```
+
+### Dropdown with Item
+
+Enhance your DropdownPopover by incorporating the versatile [Item][item] component.
+Explore additional examples and insights within the dedicated documentation for the [Item][item] component.
+
+```jsx
+const [isOpen, setIsOpen] = React.useState(false);
+const onToggle = () => setIsOpen(!isOpen);
+
+<DropdownModern id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+  <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
+  <DropdownPopover>
+    <Item elementType="a" href="#" label="Item label" />
+  </DropdownPopover>
 </DropdownModern>;
 ```
 
@@ -125,3 +155,4 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [dropdownbreakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L11
 [dropdownfullwidthmode]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L19
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
