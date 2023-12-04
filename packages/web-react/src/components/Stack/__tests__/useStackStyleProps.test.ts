@@ -24,4 +24,24 @@ describe('useStackStyleProps', () => {
       expect(result.current.classProps).toBe(expectedClasses);
     },
   );
+
+  it.each([
+    // spacing, expectedStyle
+    [undefined, {}],
+    ['space-100', { '--stack-spacing': 'var(--spirit-space-100)' }],
+    [{ tablet: 'space-100' }, { '--stack-spacing-tablet': 'var(--spirit-space-100)' }],
+    [
+      { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' },
+      {
+        '--stack-spacing': 'var(--spirit-space-100)',
+        '--stack-spacing-tablet': 'var(--spirit-space-200)',
+        '--stack-spacing-desktop': 'var(--spirit-space-300)',
+      },
+    ],
+  ])('should return style', (spacing, expectedStyle) => {
+    const props = { spacing } as SpiritStackProps;
+    const { result } = renderHook(() => useStackStyleProps(props));
+
+    expect(result.current.styleProps).toEqual(expectedStyle);
+  });
 });

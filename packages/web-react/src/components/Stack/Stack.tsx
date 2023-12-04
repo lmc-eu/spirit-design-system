@@ -14,11 +14,18 @@ const defaultProps: SpiritStackProps = {
 
 export const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.Element => {
   const { elementType: ElementTag = 'div', children, ...restProps } = props;
-  const { classProps, props: modifiedProps } = useStackStyleProps(restProps);
+  const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
+  const stackStyleProps = {
+    style: {
+      ...styleProps.style,
+      ...stackStyle,
+    },
+  };
+
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
+    <ElementTag {...otherProps} {...stackStyleProps} className={classNames(classProps, styleProps.className)}>
       {children}
     </ElementTag>
   );

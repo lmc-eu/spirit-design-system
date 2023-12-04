@@ -45,6 +45,9 @@ const meta: Meta<typeof Stack> = {
         defaultValue: { summary: false },
       },
     },
+    spacing: {
+      control: 'object',
+    },
   },
   args: {
     children: (
@@ -65,6 +68,10 @@ const meta: Meta<typeof Stack> = {
     hasIntermediateDividers: false,
     hasSpacing: false,
     hasStartDivider: false,
+    spacing: {
+      mobile: 'space-500',
+      tablet: 'space-600',
+    },
   },
 };
 
