@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.7.0"></a>
+
+# [2.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.6.0...@lmc-eu/spirit-web-twig@2.7.0) (2023-12-05)
+
+### Bug Fixes
+
+- **web-twig:** Do not render class in the `style` attribute of the `GridItem` ([38bcd4e](https://github.com/lmc-eu/spirit-design-system/commit/38bcd4e))
+- **web-twig:** Do not render class in the style attribute of the `ModalDialog` ([4adbc16](https://github.com/lmc-eu/spirit-design-system/commit/4adbc16))
+
+### Documentation
+
+- **web-react, web-twig:** Switch responsive Grid props to the cols object ([18f3df9](https://github.com/lmc-eu/spirit-design-system/commit/18f3df9))
+- **web-twig:** Better document void attributes like `novalidate` ([5562ddc](https://github.com/lmc-eu/spirit-design-system/commit/5562ddc))
+
+### Features
+
+- **web-twig:** Allow object in Grid prop cols, deprecate desktop and tablet [#DS-995](https://github.com/lmc-eu/spirit-design-system/issues/DS-995) ([7d9d4f0](https://github.com/lmc-eu/spirit-design-system/commit/7d9d4f0))
+- **web-twig:** Introduce Item component [#DS-1049](https://github.com/lmc-eu/spirit-design-system/issues/DS-1049) ([02c0f7c](https://github.com/lmc-eu/spirit-design-system/commit/02c0f7c))
+
+### Styles
+
+- **web-twig:** Unify usage of space between compound braces of props ([40b99a0](https://github.com/lmc-eu/spirit-design-system/commit/40b99a0))
+
+### Tests
+
+- **web-twig:** Remove Grid layout prop test - the prop is no longer there ([8dd95de](https://github.com/lmc-eu/spirit-design-system/commit/8dd95de))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.6.0"></a>
 
 # [2.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.5.0...@lmc-eu/spirit-web-twig@2.6.0) (2023-11-15)
