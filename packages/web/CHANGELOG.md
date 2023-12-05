@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+
+# [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.5.1...@lmc-eu/spirit-web@1.6.0) (2023-12-05)
+
+### Bug Fixes
+
+- **web:** FileUploader error message changed to be same across all ([0ee008b](https://github.com/lmc-eu/spirit-design-system/commit/0ee008b))
+- **web:** Make Item, Checkbox Item and Radio Item full width ([3bf097c](https://github.com/lmc-eu/spirit-design-system/commit/3bf097c))
+- **web:** Refactor `Accordion` styles to fully support theming via design tokens [#DS-1074](https://github.com/lmc-eu/spirit-design-system/issues/DS-1074) ([ac0fec6](https://github.com/lmc-eu/spirit-design-system/commit/ac0fec6))
+
+### Features
+
+- **web:** Introduce Item component [#DS-1047](https://github.com/lmc-eu/spirit-design-system/issues/DS-1047) ([684560d](https://github.com/lmc-eu/spirit-design-system/commit/684560d))
+
+### Tests
+
+- **web:** Fixed test to expect updated error message ([1d0d80f](https://github.com/lmc-eu/spirit-design-system/commit/1d0d80f))
+- **web:** Introduce SASS unit tests ([7b88d4c](https://github.com/lmc-eu/spirit-design-system/commit/7b88d4c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.5.1"></a>
 
 ## [1.5.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.5.0...@lmc-eu/spirit-web@1.5.1) (2023-11-18)

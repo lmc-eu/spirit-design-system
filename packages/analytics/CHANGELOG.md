@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+
+# [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.1.4...@lmc-eu/spirit-analytics@0.2.0) (2023-12-05)
+
+### Bug Fixes
+
+- **analytics:** Import polymorphic `__dirname` and add single binary ([8746d98](https://github.com/lmc-eu/spirit-design-system/commit/8746d98))
+
+### Features
+
+- **analytics:** Introduce scanner `type` option ([b292f8c](https://github.com/lmc-eu/spirit-design-system/commit/b292f8c)), closes [#DS-874](https://github.com/lmc-eu/spirit-design-system/issues/DS-874)
+- **analytics:** Introduce Twig scanner ([b48b386](https://github.com/lmc-eu/spirit-design-system/commit/b48b386)), closes [#DS-874](https://github.com/lmc-eu/spirit-design-system/issues/DS-874)
+
+### Tests
+
+- **analytics:** Introduce tests for the Twig scanner ([5dd7d71](https://github.com/lmc-eu/spirit-design-system/commit/5dd7d71)), closes [#DS-874](https://github.com/lmc-eu/spirit-design-system/issues/DS-874)
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="0.1.4"></a>
 
 ## [0.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.1.3...@lmc-eu/spirit-analytics@0.1.4) (2023-11-15)

@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.8.0"></a>
+
+# [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.7.1...@lmc-eu/spirit-web-react@1.8.0) (2023-12-05)
+
+### Bug Fixes
+
+- **web-react:** Accordion DOM errors [#DS-948](https://github.com/lmc-eu/spirit-design-system/issues/DS-948) ([3f87401](https://github.com/lmc-eu/spirit-design-system/commit/3f87401))
+- **web-react:** Add useScrollControl hook and block scrolling when Dialog open [#DS-1052](https://github.com/lmc-eu/spirit-design-system/issues/DS-1052) ([37cae9e](https://github.com/lmc-eu/spirit-design-system/commit/37cae9e))
+- **web-react:** FileUploader error message changed to be same across all ([d617bc0](https://github.com/lmc-eu/spirit-design-system/commit/d617bc0))
+- **web-react:** HeaderDialog is now closable on backdrop click ([6cd4c84](https://github.com/lmc-eu/spirit-design-system/commit/6cd4c84)), closes [#DS-1075](https://github.com/lmc-eu/spirit-design-system/issues/DS-1075)
+- **web-react:** HeaderDialogLink now accept a NextLink [#DS-1003](https://github.com/lmc-eu/spirit-design-system/issues/DS-1003) ([5bf52c1](https://github.com/lmc-eu/spirit-design-system/commit/5bf52c1))
+- **web-react:** Tablink and HeaderLink now accept a NextLink [#DS-1018](https://github.com/lmc-eu/spirit-design-system/issues/DS-1018) ([48bb80b](https://github.com/lmc-eu/spirit-design-system/commit/48bb80b))
+- **web-react:** Tabs now have styleProps [#DS-977](https://github.com/lmc-eu/spirit-design-system/issues/DS-977) ([1ce3110](https://github.com/lmc-eu/spirit-design-system/commit/1ce3110))
+
+### Documentation
+
+- **web-react, web-twig:** Switch responsive Grid props to the cols object ([18f3df9](https://github.com/lmc-eu/spirit-design-system/commit/18f3df9))
+- **web-react:** Added styleProps in the Tabs README API Tables [#DS-977](https://github.com/lmc-eu/spirit-design-system/issues/DS-977) ([adff622](https://github.com/lmc-eu/spirit-design-system/commit/adff622))
+- **web-react:** Fix typo in README.md of Icon component ([f700adf](https://github.com/lmc-eu/spirit-design-system/commit/f700adf))
+
+### Features
+
+- **web-react:** Allow object in Grid prop cols, deprecate desktop and tablet [#DS-995](https://github.com/lmc-eu/spirit-design-system/issues/DS-995) ([85abe02](https://github.com/lmc-eu/spirit-design-system/commit/85abe02))
+- **web-react:** Introduce Item component [#DS-1049](https://github.com/lmc-eu/spirit-design-system/issues/DS-1049) ([c3200a9](https://github.com/lmc-eu/spirit-design-system/commit/c3200a9))
+
+### Tests
+
+- **web-react:** Tabs tests for styleProps [#DS-977](https://github.com/lmc-eu/spirit-design-system/issues/DS-977) ([4ccaf16](https://github.com/lmc-eu/spirit-design-system/commit/4ccaf16))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.7.1"></a>
 
 ## [1.7.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.7.0...@lmc-eu/spirit-web-react@1.7.1) (2023-11-18)

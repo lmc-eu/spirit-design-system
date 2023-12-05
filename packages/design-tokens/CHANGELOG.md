@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.2"></a>
+
+## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.1...@lmc-eu/spirit-design-tokens@1.1.2) (2023-12-05)
+
+### Bug Fixes
+
+- **design-tokens:** Remove `exports` field block build on product applications ([4307f68](https://github.com/lmc-eu/spirit-design-system/commit/4307f68))
+
+### Dependencies
+
+- Pin dependencies ([c0ec4aa](https://github.com/lmc-eu/spirit-design-system/commit/c0ec4aa))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.1.1"></a>
 
 ## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.0...@lmc-eu/spirit-design-tokens@1.1.1) (2023-11-18)
