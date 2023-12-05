@@ -1,6 +1,6 @@
 # Button
 
-This is React implementation of the [Button].
+This is React implementation of the [Button][button].
 
 ### Basic example usage
 
@@ -50,5 +50,9 @@ import { RouterLink } from 'react-router-dom';
 | `UNSAFE_className` | `string`                                                                                  | —         | ✕        | Wrapper custom class name                                                  |
 | `UNSAFE_style`     | `CSSProperties`                                                                           | —         | ✕        | Wrapper custom style                                                       |
 
-For more information see [Button] component. Button also contain all the appropriate
+For more information see [Button][button] component. Button also contain all the appropriate
 attributes according to the type of element. The default element type for Button is `<button>`.
+
+[button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size

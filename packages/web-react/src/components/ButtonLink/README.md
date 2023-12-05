@@ -36,7 +36,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 | `UNSAFE_className` | `string`                                                                                  | —         | ✕        | Wrapper custom class name                                                      |
 | `UNSAFE_style`     | `CSSProperties`                                                                           | —         | ✕        | Wrapper custom style                                                           |
 
-For more information see [Button] component. ButtonLink also contain all the appropriate
+For more information see [Button][button] component. ButtonLink also contain all the appropriate
 attributes according to the type of element.
 
 [button]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Button
