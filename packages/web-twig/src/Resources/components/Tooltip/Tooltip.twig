@@ -10,48 +10,40 @@
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
 {%- set _rootDismissibleClassName = _isDismissible == 'true' ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
-{%- set _topClassName = _spiritClassPrefix ~ 'Tooltip--top' -%}
-{%- set _topLeftClassName = _spiritClassPrefix ~ 'Tooltip--topLeft' -%}
-{%- set _topRightClassName = _spiritClassPrefix ~ 'Tooltip--topRight' -%}
-{%- set _bottomClassName = _spiritClassPrefix ~ 'Tooltip--bottom' -%}
-{%- set _bottomLeftClassName = _spiritClassPrefix ~ 'Tooltip--bottomLeft' -%}
-{%- set _bottomRightClassName = _spiritClassPrefix ~ 'Tooltip--bottomRight' -%}
-{%- set _leftClassName = _spiritClassPrefix ~ 'Tooltip--left' -%}
-{%- set _leftTopClassName = _spiritClassPrefix ~ 'Tooltip--leftTop' -%}
-{%- set _leftBottomClassName = _spiritClassPrefix ~ 'Tooltip--leftBottom' -%}
-{%- set _rightClassName = _spiritClassPrefix ~ 'Tooltip--right' -%}
-{%- set _rightTopClassName = _spiritClassPrefix ~ 'Tooltip--rightTop' -%}
-{%- set _rightBottomClassName = _spiritClassPrefix ~ 'Tooltip--rightBottom' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
 {%- set _dataTargetAttr = _id ? 'data-spirit-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _placementClassNames = {
-    'top': _topClassName,
-    'top-left': _topLeftClassName,
-    'top-right': _topRightClassName,
-    'bottom': _bottomClassName,
-    'bottom-left': _bottomLeftClassName,
-    'bottom-right': _bottomRightClassName,
-    'left': _leftClassName,
-    'left-top': _leftTopClassName,
-    'left-bottom': _leftBottomClassName,
-    'right': _rightClassName,
-    'right-top': _rightTopClassName,
-    'right-bottom': _rightBottomClassName,
-} -%}
-{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _placementClassNames[_placement], _styleProps.className ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['id', 'data-spirit-placement']) -%}
+
+{# Deprecations #}
+{% set deprecatedPlacements = {
+    'top-left': 'top-start',
+    'top-right': 'top-end',
+    'right-top': 'right-start',
+    'right-bottom': 'right-end',
+    'bottom-left': 'bottom-start',
+    'bottom-right': 'bottom-end',
+    'left-top': 'left-start',
+    'left-bottom': 'left-end',
+} %}
+
+{% if deprecatedPlacements[_placement] is defined %}
+    {% deprecated 'Tooltip: Non-flow-relative values (eg. "' ~ _placement ~ '") in "placement" property are deprecated and will be removed in the next major version. Use flow-relative (eg. "' ~ deprecatedPlacements[_placement] ~ '") instead.' %}
+{% endif %}
 
 <div
-    {{ mainProps(_mainPropsWithoutId) }}
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr | raw }}
+    {{ _dataPlacementAttr | raw }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible == 'true' %}
@@ -67,5 +59,5 @@
             <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
         </button>
     {% endif %}
-    <span class="{{ _arrowClassName }}"></span>
+    <span class="{{ _arrowClassName }}" data-spirit-element="arrow"></span>
 </div>

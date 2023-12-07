@@ -2,30 +2,30 @@
     <Grid cols="3" UNSAFE_className="mx-auto" UNSAFE_style="align-items: center; justify-items: center; max-width: 30rem;">
         <GridItem columnStart="2" rowStart="1">
 
-            <Radio name="placement" isLabelHidden value="topLeft" id="placement_top_left" label="top-left"/>
+            <Radio name="placement" isLabelHidden value="top-start" id="placement_top_start" label="top-left"/>
             <Radio name="placement" isLabelHidden value="top" id="placement_top" label="top"/>
-            <Radio name="placement" isLabelHidden value="topRight" id="placement_top_right" label="top-right"/>
+            <Radio name="placement" isLabelHidden value="top-end" id="placement_top_end" label="top-right"/>
 
         </GridItem>
         <GridItem columnStart="2" rowStart="3">
 
-            <Radio name="placement" isLabelHidden value="bottomLeft" id="placement_bottom_left" label="bottom-left"/>
+            <Radio name="placement" isLabelHidden value="bottom-start" id="placement_bottom_start" label="bottom-left"/>
             <Radio name="placement" isLabelHidden value="bottom" id="placement_bottom" label="bottom" isChecked/>
-            <Radio name="placement" isLabelHidden value="bottomRight" id="placement_bottom_right" label="bottom-right"/>
+            <Radio name="placement" isLabelHidden value="bottom-end" id="placement_bottom_end" label="bottom-right"/>
 
         </GridItem>
         <GridItem columnStart="1" rowStart="2" UNSAFE_style="display: flex; flex-direction: column; justify-self: start;">
 
-            <Radio name="placement" isLabelHidden value="leftTop" id="placement_left_top" label="left-top"/>
+            <Radio name="placement" isLabelHidden value="left-start" id="placement_left_start" label="left-top"/>
             <Radio name="placement" isLabelHidden value="left" id="placement_left" label="left"/>
-            <Radio name="placement" isLabelHidden value="leftBottom" id="placement_left_bottom" label="left-bottom"/>
+            <Radio name="placement" isLabelHidden value="left-end" id="placement_left_end" label="left-bottom"/>
 
         </GridItem>
         <GridItem columnStart="3" rowStart="2" UNSAFE_style="display: flex; flex-direction: column; justify-self: end;">
 
-            <Radio name="placement" isLabelHidden value="rightTop" id="placement_right_top" label="right-top"/>
+            <Radio name="placement" isLabelHidden value="right-start" id="placement_right_start" label="right-top"/>
             <Radio name="placement" isLabelHidden value="right" id="placement_right" label="right"/>
-            <Radio name="placement" isLabelHidden value="rightBottom" id="placement_right_bottom" label="right-bottom"/>
+            <Radio name="placement" isLabelHidden value="right-end" id="placement_right_end" label="right-bottom"/>
 
         </GridItem>
         <GridItem columnStart="2" rowStart="2">
@@ -48,10 +48,10 @@
         radio.addEventListener('change', () => {
             const placement = radio.value;
             const tooltip = document.getElementById('tooltip_placements_example');
-            const placementText = document.getElementById('tooltip_placements_example_text');
+            const tooltipText = document.getElementById('tooltip_placements_example_text');
 
-            tooltip.classList.replace(tooltip.classList[1], `Tooltip--${placement}`);
-            placementText.textContent = placement.split(/(?=[A-Z])/).join('-').toLowerCase();
+            tooltip.dataset.spiritPlacement = placement;
+            tooltipText.textContent = placement;
         });
     });
 </script>
