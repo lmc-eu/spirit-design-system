@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useStyleProps } from '../styleProps';
 import { StyleProps } from '../../types';
+import { useStyleProps } from '../styleProps';
 
 describe('styleProps', () => {
   describe('#useStyleProps', () => {
@@ -9,11 +9,12 @@ describe('styleProps', () => {
         { UNSAFE_style: { 'vertical-align': 'center' }, UNSAFE_className: 'Button' },
         { className: 'Button', style: { 'vertical-align': 'center' } },
       ],
-      [{ role: 'button' }, { UNSAFE_className: undefined, style: {} }],
+      [{ role: 'button' }, { UNSAFE_className: undefined, style: undefined }],
       [
         { role: 'button', UNSAFE_style: { 'vertical-align': 'center' } },
         { className: undefined, style: { 'vertical-align': 'center' } },
       ],
+      [{ role: 'button' }, { className: undefined, style: undefined }],
     ])('should use UNSAFE_style and UNSAFE_className props', (input, expected) => {
       expect(useStyleProps(input as StyleProps).styleProps).toEqual(expected);
     });
