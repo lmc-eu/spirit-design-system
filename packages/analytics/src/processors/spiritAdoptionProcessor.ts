@@ -1,9 +1,9 @@
 import { path } from 'zx';
-import { OUTPUT_DIR, REACT_OUTPUT_FILE, ROOT_PATH } from '../constants';
-import { _dirname, getModuleName } from '../helpers';
+import { OUTPUT_DIR, REACT_OUTPUT_FILE_NAME, ROOT_PATH } from '../constants';
+import { _dirname, getModuleName, timestamp } from '../helpers';
 import { Component } from '../types';
 
-const OUTPUT_FILE = path.resolve(process.cwd(), `${OUTPUT_DIR}/${REACT_OUTPUT_FILE}`);
+const OUTPUT_FILE = path.resolve(process.cwd(), `${OUTPUT_DIR}/${REACT_OUTPUT_FILE_NAME}-${timestamp()}.json`);
 
 const getRelativePath = (absolutePath: string) => path.relative(path.resolve(_dirname, ROOT_PATH), absolutePath);
 
