@@ -40,7 +40,7 @@ export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult 
   }
 
   const styleProps = {
-    style,
+    style: Object.keys(style).length > 0 ? style : undefined,
     className: UNSAFE_className,
   };
 
