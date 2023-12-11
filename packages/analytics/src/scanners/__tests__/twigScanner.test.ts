@@ -55,6 +55,16 @@ describe('twigScanner', () => {
       expect(result).toBe('local_component');
     });
 
+    it('should return "local_component" if the nodeName is not in the localComponents array but it is a Component', () => {
+      const nodeName = 'ComponentTest';
+      const localComponents = ['Component1', 'Component2', 'Component3'];
+      const baseComponents = ['BaseComponent1', 'BaseComponent2'];
+
+      const result = twigScanner.determineModuleNameFromComponents(nodeName, localComponents, baseComponents);
+
+      expect(result).toBe('local_component');
+    });
+
     it('should return "@lmc-eu/spirit-web-twig" if the nodeName is in the baseComponents array', () => {
       const nodeName = 'BaseComponent2';
       const localComponents = ['Component1', 'Component2', 'Component3'];
@@ -66,7 +76,7 @@ describe('twigScanner', () => {
     });
 
     it('should return "html_element" if the nodeName is not in the localComponents or baseComponents array', () => {
-      const nodeName = 'UnknownComponent';
+      const nodeName = 'div';
       const localComponents = ['Component1', 'Component2', 'Component3'];
       const baseComponents = ['BaseComponent1', 'BaseComponent2'];
 
