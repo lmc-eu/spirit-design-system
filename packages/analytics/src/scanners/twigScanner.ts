@@ -52,12 +52,13 @@ export function determineModuleNameFromComponents(
   localComponents: Array<string>,
   baseComponents: Array<string>,
 ) {
-  if (localComponents.includes(nodeName)) {
-    return 'local_component';
-  }
-
   if (baseComponents.includes(nodeName)) {
     return '@lmc-eu/spirit-web-twig';
+  }
+
+  const pascalCaseRegex = /^([A-Z][a-z0-9]+)+$/;
+  if (localComponents.includes(nodeName) || nodeName.match(pascalCaseRegex)) {
+    return 'local_component';
   }
 
   return 'html_element';
