@@ -1,3 +1,4 @@
+import { MutableRefObject } from 'react';
 import { ChildrenProps, PlacementDictionaryType, StyleProps, ClickEvent } from './shared';
 
 export interface TooltipHandlingProps {
@@ -6,6 +7,7 @@ export interface TooltipHandlingProps {
 }
 
 export interface BaseTooltipProps extends ChildrenProps, StyleProps {
+  arrowRef?: MutableRefObject<HTMLSpanElement | null>;
   closeLabel?: string;
   id?: string;
   isDismissible?: boolean;

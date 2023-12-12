@@ -6,7 +6,16 @@ import TooltipCloseButton from './TooltipCloseButton';
 import { useTooltipStyleProps } from './useTooltipStyleProps';
 
 export const Tooltip = forwardRef((props: SpiritTooltipProps, ref) => {
-  const { children, isDismissible, closeLabel = 'Close', open, onClose, ...restProps } = props;
+  const {
+    arrowRef,
+    children,
+    isDismissible,
+    closeLabel = 'Close',
+    open,
+    onClose,
+    placement = 'bottom',
+    ...restProps
+  } = props;
 
   const { classProps, props: modifiedProps } = useTooltipStyleProps({
     isDismissible,
@@ -25,10 +34,15 @@ export const Tooltip = forwardRef((props: SpiritTooltipProps, ref) => {
       style={styleProps.style}
       ref={ref as LegacyRef<HTMLDivElement> | undefined}
       {...transferProps}
+      data-spirit-placement={placement}
     >
       {children}
       {renderCloseButton}
-      <span className={classProps.arrowClassName} />
+      <span
+        ref={arrowRef as LegacyRef<HTMLDivElement> | undefined}
+        className={classProps.arrowClassName}
+        data-spirit-element="arrow"
+      />
     </div>
   );
 });

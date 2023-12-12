@@ -18,27 +18,29 @@ import TooltipPlacements from './TooltipPlacements';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Placements" stackAlignment="stretch">
-        <TooltipPlacements />
-      </DocsSection>
-      <DocsSection title="Static Tooltip (No Interaction)">
-        <TooltipDefault />
-      </DocsSection>
-      <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
-        <TooltipOnHover />
-      </DocsSection>
-      <DocsSection title="Tooltip on Click (JavaScript)">
-        <TooltipClickable />
-      </DocsSection>
-      <DocsSection title="Dismissible Tooltip">
-        <TooltipDismissible />
-      </DocsSection>
-      <DocsSection title="Dismissible Tooltip via JS API">
-        <TooltipDismissibleViaJS />
-      </DocsSection>
-      <DocsSection title="Advanced Positioning">
-        <TooltipFloatingUI />
-      </DocsSection>
+      <div className="spirit-feature-tooltip-enable-data-placement">
+        <DocsSection title="Placements" stackAlignment="stretch">
+          <TooltipPlacements />
+        </DocsSection>
+        <DocsSection title="Static Tooltip (No Interaction)">
+          <TooltipDefault />
+        </DocsSection>
+        <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
+          <TooltipOnHover />
+        </DocsSection>
+        <DocsSection title="Tooltip on Click (JavaScript)">
+          <TooltipClickable />
+        </DocsSection>
+        <DocsSection title="Dismissible Tooltip">
+          <TooltipDismissible />
+        </DocsSection>
+        <DocsSection title="Dismissible Tooltip via JS API">
+          <TooltipDismissibleViaJS />
+        </DocsSection>
+        <DocsSection title="Full Floating UI Usage">
+          <TooltipFloatingUI />
+        </DocsSection>
+      </div>
     </IconsProvider>
   </React.StrictMode>,
 );
