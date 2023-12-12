@@ -233,7 +233,11 @@ class SvgExtension extends AbstractExtension
                         }
                     }
 
-                    $reuseSvg->addChild('use')->addAttribute('href', '#' . $iconId);
+                    $reuseSvgWithUseElement = $reuseSvg->addChild('use');
+
+                    if ($reuseSvgWithUseElement instanceof SimpleXMLElement) {
+                        $reuseSvgWithUseElement->addAttribute('href', '#' . $iconId);
+                    }
                 } elseif ($key !== self::ATTR_VIEWBOX) {
                     $reuseSvg->addAttribute((string) $key, (string) $value);
                 }
