@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "2.0.0",
+    "@lmc-eu/spirit-common": "^0.0.0",
     "@lmc-eu/spirit-demo": "^0.1.0",
     "@lmc-eu/stylelint-config": "7.0.1",
     "@rollup/plugin-typescript": "11.1.5",

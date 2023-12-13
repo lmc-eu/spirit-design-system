@@ -1,10 +1,12 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
+import { SERVERS } from '../common/constants/servers';
 import { getNestedDirs } from './scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from './scripts/utils';
 
 export default defineConfig({
+  server: SERVERS.DEVELOPMENT.web,
   plugins: [
     handlebars({
       helpers: {
