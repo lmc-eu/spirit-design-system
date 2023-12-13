@@ -1,13 +1,14 @@
 import { expect, test } from '@playwright/test';
+import { SERVERS } from '../../common/constants/servers';
 
 test.describe('Demo Homepages', () => {
   const demos = [
     {
-      url: 'https://spirit-design-system-demo.netlify.app/',
+      url: process.env.CI ? SERVERS.PRODUCTION.web : SERVERS.DEVELOPMENT.web,
       package: 'web',
     },
     {
-      url: 'https://spirit-design-system-react.netlify.app/',
+      url: process.env.CI ? SERVERS.PRODUCTION['web-react'] : SERVERS.DEVELOPMENT['web-react'],
       package: 'web-react',
     },
   ];

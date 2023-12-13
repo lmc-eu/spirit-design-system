@@ -1,7 +1,7 @@
+import { SERVERS } from '@lmc-eu/spirit-common/constants/servers';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import { SERVERS } from '../common/constants/servers';
 import { getNestedDirs } from './scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from './scripts/utils';
 
