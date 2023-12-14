@@ -9,6 +9,7 @@ node_modules
 # If you compile JavaScript into some output folder, exclude it here
 dist
 build
+public
 
 # Highly recommended to re-include JavaScript dotfiles to lint them
 # (This will cause .eslintrc.js to be linted by ESLint 🤘)
