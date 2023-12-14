@@ -1,10 +1,8 @@
-/**
- * @jest-environment node
- */
+/* @jest-environment node */
 
+import { sync } from 'glob';
 import { resolve } from 'path';
 import { runSass } from 'sass-true';
-import { sync } from 'glob';
 import { pathToFileURL } from 'url';
 
 const importers = [

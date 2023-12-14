@@ -174,6 +174,7 @@ describe('Config', () => {
       const obj = new DummyConfigClass();
       const config = {
         toggle: true,
+        // eslint-disable-next-line no-undefined -- testing undefined
         parent: undefined,
       };
 
