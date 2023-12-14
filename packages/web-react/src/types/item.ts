@@ -4,6 +4,7 @@ import { StyleProps, TransferProps } from './shared';
 export interface AriaItemElementTypeProps<T extends ElementType = 'button'> {
   /**
    * The HTML element or React element used to render the item, e.g. 'div', 'span'.
+   *
    * @default 'button'
    */
   elementType?: T | JSXElementConstructor<unknown>;
