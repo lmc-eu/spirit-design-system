@@ -1,13 +1,15 @@
-import { resolve } from 'path';
+import { SERVERS } from '@lmc-eu/spirit-common/constants/servers';
+import react from '@vitejs/plugin-react';
 import { readdirSync } from 'fs';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import react from '@vitejs/plugin-react';
 import { getNestedDirs } from '../../scripts/build';
 
 const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden'];
 
 export default defineConfig({
+  server: SERVERS.DEVELOPMENT['web-react'],
   plugins: [
     react(),
     handlebars({
