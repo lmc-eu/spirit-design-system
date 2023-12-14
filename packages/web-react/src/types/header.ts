@@ -58,6 +58,7 @@ export interface BaseHeaderDialogLinkProps extends ChildrenProps, StyleProps, Tr
 export type HeaderDialogLinkProps<E extends ElementType = 'a'> = {
   /**
    * The HTML element or React element used to render the Link, e.g. 'a'.
+   *
    * @default 'a'
    */
   elementType?: E;
@@ -79,6 +80,7 @@ export interface HeaderLinkBaseProps extends ChildrenProps, StyleProps, Transfer
 export type HeaderLinkProps<E extends ElementType = 'a'> = {
   /**
    * The HTML element or React element used to render the Link, e.g. 'a'.
+   *
    * @default 'a'
    */
   elementType?: E;

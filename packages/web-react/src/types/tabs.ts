@@ -21,6 +21,7 @@ export interface TabLinkBaseProps extends ChildrenProps, StyleProps, TransferPro
 export type TabLinkProps<E extends ElementType = 'a'> = {
   /**
    * The HTML element or React element used to render the Link, e.g. 'a'.
+   *
    * @default 'a'
    */
   elementType?: E;

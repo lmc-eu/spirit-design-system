@@ -1,6 +1,6 @@
+import replace from '@rollup/plugin-replace';
 import path from 'path';
 import { terser as minify } from 'rollup-plugin-terser';
-import replace from '@rollup/plugin-replace';
 
 const entryPoints = require('../scripts/entryPoints');
 
