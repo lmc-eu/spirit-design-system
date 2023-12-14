@@ -3,10 +3,11 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    types: [labeled]
 
 jobs:
   test:
+    if: ${{ (github.event.label.name == 'e2e') || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
     container:
       image: mcr.microsoft.com/playwright:v1.40.1-jammy
