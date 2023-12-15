@@ -32,9 +32,9 @@ See individual [packages](#packages) to learn how to get started.
 
 ### Prerequisites
 
-- [Node >= 14](https://nodejs.org)
-- [Yarn 1.22](https://yarnpkg.com)
-- [Lerna 4.x](https://lerna.js.org)
+- [NodeJS](https://nodejs.org)
+- [Yarn](https://yarnpkg.com)
+- [Lerna](https://lerna.js.org)
 
 ### Start Development
 
