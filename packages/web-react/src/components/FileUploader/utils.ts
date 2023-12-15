@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { FileMetadata } from '../../types/fileUploader';
 
 const getAttachmentInput = (
@@ -14,9 +15,7 @@ const getAttachmentInput = (
     if (onError) {
       onError('File not found');
     } else {
-      // We want to print an error in the console
-      // eslint-disable-next-line no-console
-      console.warn('File not found');
+      warning(false, 'File not found');
     }
 
     return;

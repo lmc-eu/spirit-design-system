@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import React from 'react';
 import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
@@ -19,8 +20,8 @@ export const Icon = (props: IconProps): JSX.Element => {
 
   // @deprecated Usage of `html-react-parser` will be required in the next major version.
   if (typeof window === 'undefined' && htmlParser == null) {
-    // eslint-disable-next-line no-console
-    console.warn(
+    warning(
+      false,
       'Icon component is not supported in SSR without use of `html-react-parser`. Please install, missing peer dependency.',
     );
   }

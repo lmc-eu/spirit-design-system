@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { useEffect } from 'react';
 
 export interface UseDeprecationMessageProps {
@@ -65,8 +66,7 @@ export const useDeprecationMessage = ({
     }
 
     if (message && isExecutable && hasProps) {
-      // eslint-disable-next-line no-console
-      console.warn(message);
+      warning(false, message);
     }
 
     /* We want to call this hook only once */

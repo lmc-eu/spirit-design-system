@@ -1,6 +1,7 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
-import { DragAndDropHandlingProps, FileQueueMapType, FileUploaderQueueLimitBehaviorType } from '../../types';
 import { useDragAndDrop } from '../../hooks';
+import { DragAndDropHandlingProps, FileQueueMapType, FileUploaderQueueLimitBehaviorType } from '../../types';
 import { useFileUploaderContext } from './FileUploaderContext';
 
 export interface UseFileUploaderInputProps {
@@ -112,9 +113,7 @@ export const useFileUploaderInput = (props: UseFileUploaderInputProps): UseFileU
       if (onError) {
         onError(error);
       } else {
-        // We want to show error message in console
-        /* eslint-disable-next-line no-console */
-        console.warn(error);
+        warning(false, error);
       }
     }
   };
