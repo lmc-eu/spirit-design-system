@@ -1,14 +1,15 @@
+import { isTesting } from '@lmc-eu/spirit-common/constants/environments';
 import { SERVERS, getDevelopmentEndpointUri } from '@lmc-eu/spirit-common/constants/servers';
 import { expect, test } from '@playwright/test';
 
 test.describe('Demo Homepages', () => {
   const demos = [
     {
-      url: process.env.CI ? SERVERS.PRODUCTION.web : getDevelopmentEndpointUri('web'),
+      url: isTesting() ? SERVERS.TESTING.web : getDevelopmentEndpointUri('web'),
       package: 'web',
     },
     {
-      url: process.env.CI ? SERVERS.PRODUCTION['web-react'] : getDevelopmentEndpointUri('web-react'),
+      url: isTesting() ? SERVERS.TESTING['web-react'] : getDevelopmentEndpointUri('web-react'),
       package: 'web-react',
     },
   ];
