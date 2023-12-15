@@ -26,7 +26,7 @@ const SERVERS = {
       port: 4443,
     },
   },
-  PRODUCTION: {
+  TESTING: {
     web: 'https://spirit-design-system-demo.netlify.app/',
     'web-react': 'https://spirit-design-system-react.netlify.app/',
     'web-twig': '',
