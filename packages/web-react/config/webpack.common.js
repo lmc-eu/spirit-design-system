@@ -29,6 +29,7 @@ module.exports = {
         loader: 'ts-loader',
         include: [
           path.resolve(__dirname, '../src'), // library
+          path.resolve(__dirname, '../../common'), // common
         ],
         options: {
           configFile: require.resolve('./tsconfig.webpack.json'),

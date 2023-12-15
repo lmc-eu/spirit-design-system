@@ -1,9 +1,10 @@
-import { ElementType } from 'react';
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import classNames from 'classnames';
-import { compose } from '../../utils/compose';
-import { applyColor, applySize } from '../../utils/classname';
+import { ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
+import { applyColor, applySize } from '../../utils/classname';
+import { compose } from '../../utils/compose';
 
 // `${componentClassName}--${color}`;
 const getButtonColorClassname = <C = void>(className: string, color: ButtonColor<C>): string =>
@@ -30,9 +31,8 @@ export function useButtonStyleProps<T extends ElementType = 'button', C = void, 
   const buttonLoadingClass = `${buttonClass}--loading`;
   const buttonSquareClass = `${buttonClass}--square`;
 
-  if (isBlock && isSquare && process.env.NODE_ENV === 'development') {
-    // eslint-disable-next-line no-console
-    console.warn('isBlock and isSquare props are mutually exclusive');
+  if (isBlock && isSquare) {
+    warning(false, 'isBlock and isSquare props are mutually exclusive');
   }
 
   const classProps = classNames(

@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { CSSProperties, HTMLAttributes } from 'react';
 import { StyleProps } from '../types/shared/style';
 
@@ -14,8 +15,8 @@ export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult 
   // Want to check if className prop exists, but not to define it in StyleProps type
   // @ts-expect-error Property 'className' does not exist on type 'Omit<T, "UNSAFE_className" | "UNSAFE_style">'.
   if (otherProps.className) {
-    // eslint-disable-next-line no-console
-    console.warn(
+    warning(
+      false,
       'The className prop is unsafe and is unsupported in Spirit Web React. ' +
         'Please use style props with Spirit Design Tokens, or UNSAFE_className if you absolutely must do something custom. ' +
         'Note that this may break in future versions due to DOM structure changes.',
@@ -28,8 +29,8 @@ export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult 
   // Want to check if style prop exists, but not to define it in StyleProps type
   // @ts-expect-error Property 'style' does not exist on type 'Omit<T, "UNSAFE_className" | "UNSAFE_style">'.
   if (otherProps.style) {
-    // eslint-disable-next-line no-console
-    console.warn(
+    warning(
+      false,
       'The style prop is unsafe and is unsupported in Spirit Web React. ' +
         'Please use style props with Spirit Design Tokens, or UNSAFE_style if you absolutely must do something custom. ' +
         'Note that this may break in future versions due to DOM structure changes.',
