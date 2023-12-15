@@ -20,6 +20,7 @@ See individual [packages](#packages) to learn how to get started.
 | Package name                                                     | Description                                               | Version                                                  |
 | ---------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------- |
 | [`@lmc-eu/spirit-analytics`](./packages/analytics)               | Analytic tools for Spirit Design System                   | [![@lmc-eu/spirit-analytics][sa-badge]][sa-npm]          |
+| [`@lmc-eu/spirit-common`](./packages/common)                     | Common scripts for Spirit Design System                   | Private                                                  |
 | [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)       | Design tokens for Spirit Design System                    | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm]    |
 | [`@lmc-eu/spirit-form-validations`](./packages/form-validations) | Form Validations for Spirit Design System                 | [![@lmc-eu/spirit-form-validations][sfv-badge]][sfv-npm] |
 | [`@lmc-eu/spirit-icons`](./packages/icons)                       | Icons for Spirit Design System                            | [![@lmc-eu/spirit-icons][si-badge]][si-npm]              |
