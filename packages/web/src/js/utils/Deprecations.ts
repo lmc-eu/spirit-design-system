@@ -1,15 +1,15 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
+
 const deprecatedDataAttribute = (
   componentName: string,
   deprecatedAttribute: string,
   newAttribute: string,
   element: HTMLElement,
 ): void => {
-  if (element.dataset[deprecatedAttribute]) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      `Deprecation warning (${componentName}): "${deprecatedAttribute}" property will be replaced in the next major version. Please use "${newAttribute}" instead. ♻️️`,
-    );
-  }
+  warning(
+    !element.dataset[deprecatedAttribute],
+    `Deprecation warning (${componentName}): "${deprecatedAttribute}" property will be replaced in the next major version. Please use "${newAttribute}" instead. ♻️️`,
+  );
 };
 
 export { deprecatedDataAttribute };

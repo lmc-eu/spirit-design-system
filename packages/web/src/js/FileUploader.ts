@@ -1,3 +1,4 @@
+import { info, warning } from '@lmc-eu/spirit-common/utilities';
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
 import { SpiritConfig, enableToggleAutoloader, image2Base64Preview } from './utils';
@@ -306,10 +307,8 @@ class FileUploader extends BaseComponent {
 
   appendToList(file: File, meta?: FileMetadata) {
     if (!this.listElement) {
-      if (process.env.NODE_ENV === 'development') {
-        /* Because part of the sheet is also a hidden title with an identifier */
-        console.warn('Unfortunately, there is no list element created for inserting files to upload');
-      }
+      /* Because part of the sheet is also a hidden title with an identifier */
+      warning(false, 'Unfortunately, there is no list element created for inserting files to upload');
 
       return;
     }
@@ -322,9 +321,7 @@ class FileUploader extends BaseComponent {
     const attachment = this.getAttachmentElement(file, id);
 
     if (!attachment) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Cannot find element with template to render');
-      }
+      warning(false, 'Cannot find element with template to render');
 
       return;
     }
@@ -481,11 +478,10 @@ class FileUploader extends BaseComponent {
     const transferFiles = Array.from(event?.dataTransfer?.files || []);
 
     if (!this.isMultiple && (transferItems.length > 1 || transferFiles.length > 1)) {
-      if (process.env.NODE_ENV === 'development') {
-        console.info(
-          `If you want to upload multiple files, set the multiple attribute to the input element. <input type="file" multiple>`,
-        );
-      }
+      info(
+        false,
+        `If you want to upload multiple files, set the multiple attribute to the input element. <input type="file" multiple>`,
+      );
     }
 
     if (event?.dataTransfer?.items) {

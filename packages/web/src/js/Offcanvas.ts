@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
@@ -152,8 +153,8 @@ class Offcanvas extends BaseComponent {
 
   toggle(targetElement: HTMLElement | null) {
     if (!targetElement) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      warning(
+        false,
         '👻 Boo…! Target dialog does not exist. Maybe you forgot to prefix the "data-spirit-target" selector with "#"? ',
       );
 
