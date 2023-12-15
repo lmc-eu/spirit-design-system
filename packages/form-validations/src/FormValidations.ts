@@ -1,20 +1,21 @@
 // Allow use of bitwise not in this case only, other solutions do not work
 /* eslint no-bitwise: ["error", { "allow": ["~"] }] */
 /* eslint-disable no-prototype-builtins */
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import { lang } from './lang';
-import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
 import {
-  NamedValidator,
-  Validator,
   Field,
   FormValidationsElement,
   FormValidationsFieldElement,
-  Languages,
   Language,
-  ValidationTextElement,
+  Languages,
+  NamedValidator,
   Params,
+  ValidationTextElement,
+  Validator,
   ValidatorCallback,
 } from './types';
+import { fillTemplate, findAncestor, groupedElemCount, mergeConfig } from './utils';
 
 const VALIDATIONS_ERROR = 'form-validations-message';
 const SELECTOR = 'input:not([type^=hidden]):not([type^=submit]), select, textarea';
@@ -363,7 +364,7 @@ class FormValidations {
       element.formValidations.validators.sort((a, b) => (b.priority as number) - (a.priority as number));
     } else {
       // eslint-disable-next-line no-console
-      console.warn('The parameter element must be a dom element');
+      warning(false, 'The parameter element must be a dom element');
     }
   }
 
