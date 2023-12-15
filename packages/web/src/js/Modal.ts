@@ -1,3 +1,4 @@
+import { warning } from '@lmc-eu/spirit-common/utilities';
 import BaseComponent from './BaseComponent';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
@@ -119,8 +120,8 @@ class Modal extends BaseComponent {
     event: Event & { target: HTMLOrSVGElement; currentTarget: HTMLOrSVGElement },
   ) {
     if (!relatedTarget) {
-      // eslint-disable-next-line no-console
-      console.warn(
+      warning(
+        false,
         '👻 Boo…! Target modal pane does not exist. Maybe you forgot to prefix the "data-spirit-target" selector with "#"? ',
       );
 
