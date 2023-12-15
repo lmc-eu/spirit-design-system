@@ -16,6 +16,7 @@ module.exports = {
     'node_modules',
     '!.*.js',
     'packages/analytics',
+    'packages/common',
     'packages/web-react',
     'packages/web',
     'packages/form-validations',

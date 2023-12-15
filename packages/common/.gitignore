@@ -1,0 +1,11 @@
+# Dependency directory
+node_modules
+
+# Caches
+.cache
+
+# Log files
+*.log
+
+# Code coverage
+.coverage
