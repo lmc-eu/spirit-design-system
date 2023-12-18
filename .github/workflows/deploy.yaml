@@ -26,7 +26,7 @@ jobs:
           cd packages/web && yarn examples:build:gh
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.3
+        uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           folder: packages/web/build
           branch: gh-pages
