@@ -73,6 +73,15 @@ test: ## Run tests in all packages
 test-e2e: ## Run End-to-End tests
 	./bin/make/e2e.sh
 
+test-e2e-update: ## Update snapshots for End-to-End tests
+	./bin/make/e2e.sh --update
+
+test-e2e-report: ## Open report for End-to-End tests
+	./bin/make/e2e.sh --report
+
+test-e2e-ui: ## Open UI for End-to-End tests
+	./bin/make/e2e.sh --ui
+
 types: ## Check types in all packages
 	$(PKG_MANAGER) types
 
