@@ -32,3 +32,17 @@
         padding-top: 0.25em; // 1.
     }
 }
+
+// stylelint-disable selector-max-class -- We need high specificity for the feature flag.
+.spirit-feature-modal-enable-uniform-dialog .ModalHeader {
+    padding-top: theme.$header-uniform-padding-top;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        padding-top: theme.$header-uniform-padding-top-tablet;
+    }
+}
+
+.spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile .ModalHeader {
+    padding-top: theme.$header-docked-padding-top;
+}
+// stylelint-enable selector-max-class

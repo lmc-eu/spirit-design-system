@@ -3,6 +3,7 @@
 
 $breakpoints: tokens.$breakpoints;
 $padding: tokens.$space-600;
+$padding-x: tokens.$space-700;
 $padding-x-tablet: tokens.$space-1100;
 $typography: tokens.$body-medium-text-regular;
 $transition-duration: transitions.$duration-medium;
@@ -27,11 +28,24 @@ $dialog-border-radius: tokens.$radius-200;
 $dialog-background-color: tokens.$background-basic;
 $dialog-shadow: tokens.$shadow-300;
 
+// @deprecated The "uniform" Header padding is deprecated and will be removed in the next major release.
+// Migration: Rename the variables containing the `uniform` keyword to remove it.
+$dialog-uniform-width: 640px;
+$dialog-uniform-height: var(--modal-preferred-height-mobile, min-content);
+$dialog-uniform-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * tokens.$space-600}));
+$dialog-uniform-max-height-tablet: min(var(--modal-max-height-tablet, 600px), calc(100dvh - #{2 * tokens.$space-600}));
+
 // ModalHeader
 $header-gap: tokens.$space-400;
 $header-padding-top: tokens.$space-800;
 $header-padding-bottom: tokens.$space-600;
 $header-title-typography: tokens.$heading-small-text;
+
+// @deprecated The "uniform" Header padding is deprecated and will be removed in the next major release.
+// Migration: Rename the variables containing the `uniform` keyword to remove it.
+$header-uniform-padding-top: tokens.$space-700;
+$header-uniform-padding-top-tablet: tokens.$space-800;
+$header-docked-padding-top: tokens.$space-800;
 
 // ModalBody
 $body-padding-y: tokens.$space-600;
