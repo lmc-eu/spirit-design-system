@@ -46,7 +46,6 @@
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$transition-duration;
-        will-change: visibility, opacity;
 
         // 2.
         &::before {
