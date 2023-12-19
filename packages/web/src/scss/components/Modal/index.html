@@ -761,4 +761,172 @@
 
 </section>
 
+<section class="docs-Section spirit-feature-modal-enable-uniform-dialog">
+  <h2 class="docs-Heading">Feature Flag: Uniform Modal on Mobile</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example_uniform"
+      aria-controls="example_uniform"
+      aria-expanded="false"
+    >
+      Open Modal
+    </button>
+
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example_docked"
+      aria-controls="example_docked"
+      aria-expanded="false"
+    >
+      Open Docked Modal (mobile only)
+    </button>
+
+    <!-- Modal: start -->
+    <dialog id="example_uniform" class="Modal" aria-labelledby="example_uniform_title">
+
+      <!-- ModalDialog: start -->
+      <article id="example_uniform_dialog" class="ModalDialog">
+
+        <!-- ModalHeader: start -->
+        <header class="ModalHeader">
+          <h2 id="example_uniform_title" class="ModalHeader__title">Modal Title</h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example_uniform"
+            aria-controls="example_uniform"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+        <!-- ModalHeader: end -->
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <!-- Content: start -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <!-- Content: end -->
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__description">
+            Optional description
+          </div>
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_uniform"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_uniform"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </article>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
+    <!-- Modal: start -->
+    <dialog id="example_docked" class="Modal" aria-labelledby="example_docked_title">
+
+      <!-- ModalDialog: start -->
+      <article id="example_docked_dialog" class="ModalDialog ModalDialog--dockOnMobile ModalDialog--expandOnMobile">
+
+        <!-- ModalHeader: start -->
+        <header class="ModalHeader">
+          <h2 id="example_docked_title" class="ModalHeader__title">Modal Title</h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example_docked"
+            aria-controls="example_docked"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+        <!-- ModalHeader: end -->
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <!-- Content: start -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <!-- Content: end -->
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__description">
+            Optional description
+          </div>
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_docked"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example_docked"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </article>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
+  </div>
+</section>
+
 {{/layout/plain }}

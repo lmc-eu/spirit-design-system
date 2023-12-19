@@ -352,6 +352,21 @@ Both trigger and close buttons use `data` attributes to open and close the Modal
 | `data-spirit-target`                  | `string` | —       | ✔        | Target selector                                       |
 | `data-spirit-toggle`                  | `string` | `modal` | ✕        | Iterable selector                                     |
 
+## Feature Flag: Uniform Appearance on All Breakpoints
+
+The uniform appearance of modal dialog on all breakpoints is disabled by default. To enable it, either set the
+`$modal-enable-uniform-dialog` feature flag to `true` or use the `spirit-modal-enable-uniform-dialog` CSS class on any
+parent of the modal.
+
+For more info, see main [README][readme-feature-flags].
+
+### ⚠️ DEPRECATION NOTICE
+
+The uniform dialog appearance will replace current behavior in the next major release. Current mobile appearance will
+remain accessible via the `.ModalDialog--dockOnMobile` modifier class.
+
+[What are deprecations?][readme-deprecations]
+
 ## JavaScript Plugin
 
 For full functionality you need to provide JavaScript which will handle the toggling of the Modal dialog component.
@@ -369,3 +384,5 @@ Or feel free to write controlling scripts yourself.
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

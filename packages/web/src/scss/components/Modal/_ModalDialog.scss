@@ -4,9 +4,51 @@
 // 3. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
 
 @use 'sass:map';
+@use '../../settings/feature-flags';
 @use '../../tools/breakpoint';
 @use '../../tools/typography';
 @use 'theme';
+
+@mixin -uniform-modal-dialog() {
+    --modal-translate-y: 50%;
+
+    bottom: 50%;
+    width: theme.$dialog-uniform-width;
+    max-width: calc(100% - #{theme.$padding-x});
+    height: theme.$dialog-uniform-height;
+    max-height: theme.$dialog-uniform-max-height;
+    border-radius: theme.$dialog-border-radius;
+    transform-origin: center center;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        height: theme.$dialog-height-tablet;
+        max-height: theme.$dialog-uniform-max-height-tablet;
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        width: theme.$dialog-width-desktop;
+    }
+}
+
+@mixin -docked-modal-dialog() {
+    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+        --modal-translate-y: 0;
+
+        bottom: 0;
+        width: theme.$dialog-width;
+        max-width: none;
+        height: theme.$dialog-height;
+        max-height: theme.$dialog-max-height;
+        border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
+        transform-origin: bottom center;
+    }
+}
+
+@mixin -expand-docked-modal-dialog() {
+    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+        height: theme.$dialog-max-height;
+    }
+}
 
 .ModalDialog {
     @include typography.generate(theme.$typography);
@@ -46,14 +88,42 @@
         width: theme.$dialog-width-desktop;
     }
 
+    // @deprecated The "uniform" dialog variant is deprecated and will be removed in the next major release.
+    // Migration:
+    // 1. Remove the feature flag and make the uniform dialog the default.
+    // 2. Adjust transitions below.
+    @if feature-flags.$modal-enable-uniform-dialog {
+        @include -uniform-modal-dialog();
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         transition-property: bottom, width, border-radius, transform; // 1.
         transition-duration: inherit;
     }
 }
 
-.ModalDialog--expandOnMobile {
-    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-        height: theme.$dialog-max-height;
+// @deprecated The "uniform" dialog variant is deprecated and will be removed in the next major release.
+// Migration: Remove the feature flag and make the uniform dialog the default.
+@if feature-flags.$modal-enable-uniform-dialog {
+    .ModalDialog--dockOnMobile {
+        @include -docked-modal-dialog();
+    }
+
+    .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
+        @include -expand-docked-modal-dialog();
+    }
+} @else {
+    .spirit-feature-modal-enable-uniform-dialog .ModalDialog {
+        @include -uniform-modal-dialog();
+    }
+
+    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile {
+        @include -docked-modal-dialog();
+    }
+
+    // stylelint-disable-next-line selector-max-class -- Only target the docked variant.
+    .ModalDialog--expandOnMobile,
+    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
+        @include -expand-docked-modal-dialog();
     }
 }
