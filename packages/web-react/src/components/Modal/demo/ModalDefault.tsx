@@ -42,7 +42,7 @@ const ModalDefault = () => {
               <div>Modal alignment (from tablet up):</div>
               <Radio
                 id="modal-alignment-top"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Top"
                 value="top"
                 name="modal_alignment"
@@ -52,7 +52,7 @@ const ModalDefault = () => {
               />{' '}
               <Radio
                 id="modal-alignment-center"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Center"
                 value="center"
                 name="modal_alignment"
@@ -62,7 +62,7 @@ const ModalDefault = () => {
               />{' '}
               <Radio
                 id="modal-alignment-bottom"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Bottom"
                 value="bottom"
                 name="modal_alignment"
@@ -75,7 +75,7 @@ const ModalDefault = () => {
               <div>Footer alignment (from tablet up):</div>
               <Radio
                 id="footer-alignment-left"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Left"
                 value="left"
                 name="footer_alignment"
@@ -85,7 +85,7 @@ const ModalDefault = () => {
               />{' '}
               <Radio
                 id="footer-alignment-center"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Center"
                 value="center"
                 name="footer_alignment"
@@ -95,7 +95,7 @@ const ModalDefault = () => {
               />{' '}
               <Radio
                 id="footer-alignment-right"
-                UNSAFE_className="mr-600"
+                marginRight="space-600"
                 label="Right"
                 value="right"
                 name="footer_alignment"
@@ -130,7 +130,7 @@ const ModalDefault = () => {
         <ModalDialog elementType="form" method="dialog">
           <ModalHeader>Modal with a Form</ModalHeader>
           <ModalBody>
-            <TextField UNSAFE_className="mb-400" label="Label" id="textfield" placeholder="TextField" />
+            <TextField marginBottom="space-400" label="Label" id="textfield" placeholder="TextField" />
             <p>
               The primary action is a button with <code>type=&quot;submit&quot;</code> and closes the dialog on
               submission.

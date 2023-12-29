@@ -5,7 +5,7 @@ import TooltipWrapper from '../TooltipWrapper';
 
 const TooltipOnHover = () => (
   <div>
-    <TooltipWrapper UNSAFE_className="d-inline-block mr-600 mb-600">
+    <TooltipWrapper marginRight="space-600" marginBottom="space-600" UNSAFE_className="d-inline-block">
       <ButtonLink href="#" aria-describedby="my-tooltip-hover-top" UNSAFE_className="TooltipTarget">
         Tooltip on top
       </ButtonLink>
@@ -13,7 +13,7 @@ const TooltipOnHover = () => (
         Hello there!
       </Tooltip>
     </TooltipWrapper>{' '}
-    <TooltipWrapper UNSAFE_className="d-inline-block mr-600 mb-600">
+    <TooltipWrapper marginRight="space-600" marginBottom="space-600" UNSAFE_className="d-inline-block">
       <ButtonLink href="#" aria-describedby="my-tooltip-hover-right" UNSAFE_className="TooltipTarget">
         Tooltip on right
       </ButtonLink>
@@ -21,7 +21,7 @@ const TooltipOnHover = () => (
         Hello there!
       </Tooltip>
     </TooltipWrapper>{' '}
-    <TooltipWrapper UNSAFE_className="d-inline-block mr-600 mb-600">
+    <TooltipWrapper marginRight="space-600" marginBottom="space-600" UNSAFE_className="d-inline-block">
       <ButtonLink href="#" aria-describedby="my-tooltip-hover-bottom" UNSAFE_className="TooltipTarget">
         Tooltip on bottom
       </ButtonLink>
@@ -29,7 +29,7 @@ const TooltipOnHover = () => (
         Hello there!
       </Tooltip>
     </TooltipWrapper>{' '}
-    <TooltipWrapper UNSAFE_className="d-inline-block mr-600 mb-600">
+    <TooltipWrapper marginRight="space-600" marginBottom="space-600" UNSAFE_className="d-inline-block">
       <ButtonLink href="#" aria-describedby="my-tooltip-hover-left" UNSAFE_className="TooltipTarget">
         Tooltip on left
       </ButtonLink>

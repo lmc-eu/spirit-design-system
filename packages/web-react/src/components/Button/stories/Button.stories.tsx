@@ -28,7 +28,7 @@ const meta: Meta<typeof Button> = {
         '<Icon />': <Icon name="profile" />,
         '<Icon /> Text': (
           <>
-            <Icon name="profile" UNSAFE_className="mr-400" /> Text
+            <Icon name="profile" marginRight="space-400" /> Text
           </>
         ),
       },

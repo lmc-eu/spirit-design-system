@@ -10,7 +10,7 @@ const ScrollViewOverflowDecorators = () => (
       </ScrollView>
     </div>
 
-    <ScrollView direction="horizontal" overflowDecorators="borders" UNSAFE_className="mb-1000">
+    <ScrollView direction="horizontal" overflowDecorators="borders" marginBottom="space-1000">
       <p className="py-700" style={{ whiteSpace: 'nowrap' }}>
         {HORIZONTAL_CONTENT}
       </p>

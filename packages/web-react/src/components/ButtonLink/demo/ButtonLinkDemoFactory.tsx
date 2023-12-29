@@ -22,7 +22,7 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
                   {`Button ${color}`}
                 </ButtonLink>{' '}
                 <ButtonLink size={size} color={color} {...props}>
-                  <Icon name="link" UNSAFE_className="mr-400" />
+                  <Icon name="link" marginRight="space-400" />
                   Menu
                 </ButtonLink>{' '}
                 <ButtonLink size={size} color={color} isSquare {...props}>

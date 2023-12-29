@@ -14,12 +14,13 @@ const Icons = () => {
     <Grid
       elementType="ul"
       cols={{ mobile: 2, tablet: 4, desktop: 6 }}
-      UNSAFE_className="text-center my-1000 list-unstyled"
+      marginY="space-1000"
+      UNSAFE_className="text-center list-unstyled"
     >
       {icons?.map((icon) => (
         <li key={icon} className="mb-600">
           <Icon name={icon} />
-          <Text UNSAFE_className="mt-500" emphasis="bold">
+          <Text marginTop="space-500" emphasis="bold">
             {icon}
           </Text>
         </li>
