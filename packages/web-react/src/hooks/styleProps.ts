@@ -1,6 +1,9 @@
-import { CSSProperties, HTMLAttributes } from 'react';
+import { CSSProperties, HTMLAttributes, useContext } from 'react';
+import classNames from 'classnames';
 import { warning } from '../common/utilities';
-import { StyleProps } from '../types/shared/style';
+import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
+import { StyleProps } from '../types';
+import { useStyleUtilities } from './useStyleUtilities';
 
 export type StylePropsResult = {
   styleProps: HTMLAttributes<HTMLElement>;
@@ -8,7 +11,9 @@ export type StylePropsResult = {
 };
 
 export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult {
+  const classNamePrefix = useContext(ClassNamePrefixContext);
   const { UNSAFE_className, UNSAFE_style, ...otherProps } = props;
+  const { styleUtilities, props: modifiedProps } = useStyleUtilities(otherProps, classNamePrefix);
 
   const style: CSSProperties = { ...UNSAFE_style };
 
@@ -42,11 +47,11 @@ export function useStyleProps<T extends StyleProps>(props: T): StylePropsResult 
 
   const styleProps = {
     style: Object.keys(style).length > 0 ? style : undefined,
-    className: UNSAFE_className,
+    className: classNames(UNSAFE_className, ...styleUtilities) || undefined,
   };
 
   return {
     styleProps,
-    props: otherProps,
+    props: modifiedProps as HTMLAttributes<HTMLElement>,
   };
 }

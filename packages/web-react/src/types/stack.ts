@@ -23,6 +23,7 @@ export interface StackBaseProps extends ChildrenProps, StyleProps {
 export type StackProps<E extends ElementType> = {
   /**
    * The HTML element or React element used to render the stack, e.g. 'div'.
+   *
    * @default 'div'
    */
   elementType?: E;
