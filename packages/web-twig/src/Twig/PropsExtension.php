@@ -4,12 +4,32 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Twig;
 
+use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class PropsExtension extends AbstractExtension
 {
+    private const BREAKPOINT_MOBILE = 'mobile';
+
+    private const CLASS_SEPARATOR = '-';
+
+    private const CLASS_NAMES_SEPARATOR = ' ';
+
+    private const STYLE_SPACING_AUTO = 'auto';
+
+    public const STYLE_SPACING_PROPS = [
+        'margin' => 'm',
+        'marginBottom' => 'mb',
+        'marginLeft' => 'ml',
+        'marginRight' => 'mr',
+        'marginTop' => 'mt',
+        'marginX' => 'mx',
+        'marginY' => 'my',
+    ];
+
     public const VALIDATION_ATTRIBUTES = [
         'min', 'max', 'minlength', 'maxlength', 'pattern',
     ];
@@ -113,6 +133,26 @@ class PropsExtension extends AbstractExtension
     }
 
     /**
+     * Converts a mixed value to a string.
+     *
+     * @return string value as a string.
+     */
+    private function getSpacingClassName(string $propName, string $propValue, ?string $breakpoint = null): string
+    {
+        $container = new ContainerBuilder();
+        $classPrefix = $container->hasParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX) && is_string($container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX))
+            ? $container->getParameter(SpiritWebTwigExtension::PARAMETER_SPIRIT_CSS_CLASS_PREFIX)
+            : '';
+        $utilityName = self::STYLE_SPACING_PROPS[$propName];
+
+        // Return just a number from the value if not `auto`
+        $utilityValue = $propValue == self::STYLE_SPACING_AUTO ? self::STYLE_SPACING_AUTO : preg_replace('/[^0-9]/', '', $propValue);
+        $infix = $breakpoint !== null && $breakpoint !== self::BREAKPOINT_MOBILE ? self::CLASS_SEPARATOR . $breakpoint : '';
+
+        return $classPrefix . $utilityName . $infix . self::CLASS_SEPARATOR . $utilityValue;
+    }
+
+    /**
      * @param array<string, mixed> $props
      * @return array<string, mixed>
      */
@@ -127,6 +167,28 @@ class PropsExtension extends AbstractExtension
         }
         $styleProps['className'] = $props['UNSAFE_className'] ?? null;
         $styleProps['style'] = $props['UNSAFE_style'] ?? null;
+
+        foreach ($props as $propName => $propValue) {
+            if (array_key_exists($propName, self::STYLE_SPACING_PROPS)) {
+                $spacingClasses = [];
+
+                if (is_array($propValue)) {
+                    foreach ($propValue as $breakpoint => $value) {
+                        if (is_scalar($value)) {
+                            $spacingClasses[] = $this->getSpacingClassName($propName, (string) $value, $breakpoint);
+                        }
+                    }
+                } elseif (is_scalar($propValue)) {
+                    $spacingClasses[] = $this->getSpacingClassName($propName, (string) $propValue);
+                }
+
+                if (count($spacingClasses)) {
+                    $styleProps['className'] .= self::CLASS_NAMES_SEPARATOR . implode(self::CLASS_NAMES_SEPARATOR, $spacingClasses);
+                }
+            }
+        }
+
+        $styleProps['className'] = is_string($styleProps['className']) ? trim($styleProps['className']) : null;
 
         return $styleProps;
     }

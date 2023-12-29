@@ -85,7 +85,34 @@ considered carefully, and extensively tested. In general, customizing Spirit des
 do offer control over layout and other aspects. In addition, you can use Spirit defined design tokens to ensure your
 application conforms to your design requirements, and is adaptive across platform scales and color schemes.
 
-### Escape hatches
+### Style Props
+
+All Spirit components accept a set of props that can be used to control their outer spacing. The props are:
+
+- `margin`
+- `marginTop`
+- `marginRight`
+- `marginBottom`
+- `marginLeft`
+- `marginX`
+- `marginY`
+
+These props accept a spacing token (eg. `space-100`), `auto` or an object with breakpoint keys and spacing token
+values or `auto`. We use these props to set global CSS utility classes on the root element of the component.
+
+Examples:
+
+```twig
+<Alert marginBottom="space-100" />
+
+<Button marginX="{{ { mobile: 'space-100', tablet: 'space-200' } }}" />
+
+<Button marginLeft="{{ { mobile: 'space-100', tablet: 'space-200', desktop: 'auto' } }}" />
+```
+
+If you need more control over the styling of a component, you can use [escape hatches](#escape-hatches).
+
+### Escape Hatches
 
 While we encourage teams to utilize Spirit design as it is, we do realize that sometimes product specific customizations
 may be needed. In these cases, we encourage you or your designers to **talk to us**. We may be able to suggest
