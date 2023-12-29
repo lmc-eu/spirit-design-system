@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Twig;
 
+use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Twig\Environment;
 
 class PropsExtensionTest extends TestCase
@@ -325,7 +327,7 @@ class PropsExtensionTest extends TestCase
     }
 
     /**
-     * @return array<string, array<int, array<string, string|null>>>
+     * @return array<string, array<int, array<int|string, array<string, string>|string|null>>>
      */
     public function useStylePropDataProvider(): array
     {
@@ -359,6 +361,57 @@ class PropsExtensionTest extends TestCase
             ], [
                 'className' => null,
                 'style' => 'position: absolute;',
+            ]],
+            'simple spacing style prop' => [[
+                'margin' => 'space-100',
+            ], [
+                'className' => 'm-100',
+                'style' => null,
+            ]],
+            'complex spacing style prop' => [[
+                'marginX' => [
+                    'mobile' => 'space-100',
+                    'tablet' => 'auto',
+                    'desktop' => 'space-200',
+                ],
+            ], [
+                'className' => 'mx-100 mx-tablet-auto mx-desktop-200',
+                'style' => null,
+            ]],
+            'skipping breakpoint with spacing style prop' => [[
+                'marginX' => [
+                    'mobile' => 'space-100',
+                    'desktop' => 'auto',
+                ],
+            ], [
+                'className' => 'mx-100 mx-desktop-auto',
+                'style' => null,
+            ]],
+            'all spacing style props' => [[
+                'margin' => 'space-100',
+                'marginTop' => 'space-200',
+                'marginRight' => 'space-300',
+                'marginBottom' => 'space-400',
+                'marginLeft' => 'space-500',
+                'marginX' => 'space-600',
+                'marginY' => 'space-700',
+            ], [
+                'className' => 'm-100 mt-200 mr-300 mb-400 ml-500 mx-600 my-700',
+                'style' => null,
+            ]],
+            'both spacing and UNSAFE_style' => [[
+                'margin' => 'space-100',
+                'UNSAFE_style' => 'position: absolute;',
+            ], [
+                'className' => 'm-100',
+                'style' => 'position: absolute;',
+            ]],
+            'both spacing and UNSAFE_className' => [[
+                'margin' => 'space-100',
+                'UNSAFE_className' => 'm-500',
+            ], [
+                'className' => 'm-500 m-100',
+                'style' => null,
             ]],
         ];
     }
