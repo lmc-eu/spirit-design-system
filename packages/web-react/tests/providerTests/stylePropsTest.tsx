@@ -53,4 +53,44 @@ export const stylePropsTest = (Component: ComponentType<any>, testId?: string) =
 
     consoleWarnMock.mockRestore();
   });
+
+  it.each([
+    [{ margin: 'space-100' }, { className: 'm-100' }],
+    [
+      { margin: { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' } },
+      { className: 'm-100 m-tablet-200 m-desktop-300' },
+    ],
+    [{ marginX: { mobile: 'auto', desktop: 'space-300' } }, { className: 'mx-auto mx-desktop-300' }],
+    [
+      {
+        margin: 'space-100',
+        marginTop: 'space-200',
+        marginRight: 'space-300',
+        marginBottom: 'space-400',
+        marginLeft: 'space-500',
+        marginX: 'space-600',
+        marginY: 'space-700',
+      },
+      { className: 'm-100 mt-200 mr-300 mb-400 ml-500 mx-600 my-700' },
+    ],
+    [
+      {
+        margin: 'auto',
+        marginTop: 'auto',
+        marginRight: 'auto',
+        marginBottom: 'auto',
+        marginLeft: 'auto',
+        marginX: 'auto',
+        marginY: 'auto',
+      },
+      { className: 'm-auto mt-auto mr-auto mb-auto ml-auto mx-auto my-auto' },
+    ],
+  ])('renders margin props', async (props, expected) => {
+    const dom = render(<Component {...props} />);
+
+    await waitFor(() => {
+      const element = getElement(dom, testId);
+      expect(element).toHaveClass(expected.className);
+    });
+  });
 };
