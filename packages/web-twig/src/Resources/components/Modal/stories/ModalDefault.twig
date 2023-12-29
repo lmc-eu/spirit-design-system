@@ -28,9 +28,9 @@
             <!-- Footer alignment demo: start -->
             <form onchange="setFooterAlignment(event, '#example-basic .ModalFooter')" class="d-none d-tablet-block">
                 <div>Footer alignment (from tablet up):</div>
-                <Radio id="footer-alignment-left" UNSAFE_className="mr-600" label="Left" value="left" name="footer-alignment" autocomplete="off" />
-                <Radio id="footer-alignment-center" UNSAFE_className="mr-600" label="Center" value="center" name="footer-alignment" autocomplete="off" />
-                <Radio id="footer-alignment-right" UNSAFE_className="mr-600" label="Right" value="right" name="footer-alignment" autocomplete="off" isChecked />
+                <Radio id="footer-alignment-left" marginRight="space-600" label="Left" value="left" name="footer-alignment" autocomplete="off" />
+                <Radio id="footer-alignment-center" marginRight="space-600" label="Center" value="center" name="footer-alignment" autocomplete="off" />
+                <Radio id="footer-alignment-right" marginRight="space-600" label="Right" value="right" name="footer-alignment" autocomplete="off" isChecked />
             </form>
             <form class="d-tablet-none">
                 <Checkbox id="expand-on-mobile" label="Expand on mobile" value="right" onchange="toggleExpandOnMobile('#example-basic .ModalDialog')" autocomplete="off" isChecked />
@@ -70,7 +70,7 @@
         <ModalBody>
 
             <!-- Content: start -->
-            <TextField UNSAFE_className="mb-400" label="Label" id="textfield" placeholder="TextField" />
+            <TextField marginBottom="space-400" label="Label" id="textfield" placeholder="TextField" />
             <p>
                 The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
             </p>
