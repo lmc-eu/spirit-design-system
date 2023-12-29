@@ -19,11 +19,7 @@ const DropdownModernPlacements = () => {
 
   return (
     <form autoComplete="off">
-      <Grid
-        cols={3}
-        UNSAFE_className="mx-auto"
-        UNSAFE_style={{ alignItems: 'center', justifyItems: 'center', maxWidth: '40rem' }}
-      >
+      <Grid cols={3} marginX="auto" UNSAFE_style={{ alignItems: 'center', justifyItems: 'center', maxWidth: '40rem' }}>
         <GridItem columnStart={2} rowStart={1}>
           <Radio
             name="placement"

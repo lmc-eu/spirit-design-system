@@ -22,7 +22,7 @@ const HeaderSimpleTransparent = () => {
         </Link>
       </Header>
 
-      <Heading elementType="div" size="large" UNSAFE_className="text-center mb-1200">
+      <Heading elementType="div" size="large" marginBottom="space-1200" UNSAFE_className="text-center">
         Example Cover
       </Heading>
     </div>

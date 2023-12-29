@@ -15,11 +15,7 @@ const TooltipPlacements = () => {
 
   return (
     <form autoComplete="off">
-      <Grid
-        cols={3}
-        UNSAFE_className="mx-auto"
-        UNSAFE_style={{ alignItems: 'center', justifyItems: 'center', maxWidth: '30rem' }}
-      >
+      <Grid cols={3} marginX="auto" UNSAFE_style={{ alignItems: 'center', justifyItems: 'center', maxWidth: '30rem' }}>
         <GridItem columnStart={2} rowStart={1}>
           <Radio
             name="placement"

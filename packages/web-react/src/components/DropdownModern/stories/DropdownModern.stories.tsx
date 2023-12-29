@@ -50,19 +50,19 @@ const meta: Meta<typeof DropdownModern> = {
       <>
         <a href="#info" className="d-flex mb-400">
           <Icon name="info" />
-          <Text UNSAFE_className="ml-300">Information</Text>
+          <Text marginLeft="space-300">Information</Text>
         </a>
         <a href="#link" className="d-flex mb-400">
           <Icon name="link" />
-          <Text UNSAFE_className="ml-300">More links</Text>
+          <Text marginLeft="space-300">More links</Text>
         </a>
         <a href="#profile" className="d-flex mb-400">
           <Icon name="profile" />
-          <Text UNSAFE_className="ml-300">Profile</Text>
+          <Text marginLeft="space-300">Profile</Text>
         </a>
         <a href="#help" className="d-flex">
           <Icon name="help" />
-          <Text UNSAFE_className="ml-300">Help</Text>
+          <Text marginLeft="space-300">Help</Text>
         </a>
       </>
     ),
