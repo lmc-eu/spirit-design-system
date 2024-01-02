@@ -6,7 +6,13 @@ import { getNestedDirs } from './scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from './scripts/utils';
 
 export default defineConfig({
-  server: SERVERS.DEVELOPMENT.web,
+  // Disable HMR overlay to avoid flaky screenshots in visual regression tests
+  server: {
+    hmr: {
+      overlay: false,
+    },
+    ...SERVERS.DEVELOPMENT.web,
+  },
   plugins: [
     handlebars({
       helpers: {
