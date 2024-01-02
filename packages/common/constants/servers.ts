@@ -25,6 +25,12 @@ const SERVERS = {
       host: 'localhost',
       port: 4443,
     },
+    // @see: https://vitejs.dev/config/server-options.html
+    'form-validations': {
+      host: 'localhost',
+      port: 5174,
+      strictPort: true,
+    },
   },
   TESTING: {
     web: 'https://spirit-design-system-demo.netlify.app/',
