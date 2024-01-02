@@ -5,11 +5,11 @@ import { expect, test } from '@playwright/test';
 test.describe('Demo Homepages', () => {
   const demos = [
     {
-      url: isTesting() ? SERVERS.TESTING.web : getDevelopmentEndpointUri('web'),
+      url: isTesting() ? SERVERS.TESTING.web : getDevelopmentEndpointUri('web', { isDocker: true }),
       package: 'web',
     },
     {
-      url: isTesting() ? SERVERS.TESTING['web-react'] : getDevelopmentEndpointUri('web-react'),
+      url: isTesting() ? SERVERS.TESTING['web-react'] : getDevelopmentEndpointUri('web-react', { isDocker: true }),
       package: 'web-react',
     },
   ];
