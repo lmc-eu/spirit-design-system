@@ -9,7 +9,13 @@ import { getNestedDirs } from '../../scripts/build';
 const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'NoSrr', 'TextFieldBase', 'VisuallyHidden'];
 
 export default defineConfig({
-  server: SERVERS.DEVELOPMENT['web-react'],
+  // Disable HMR overlay to avoid flaky screenshots in visual regression tests
+  server: {
+    hmr: {
+      overlay: false,
+    },
+    ...SERVERS.DEVELOPMENT['web-react'],
+  },
   plugins: [
     react(),
     handlebars({
