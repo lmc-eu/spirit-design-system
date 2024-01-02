@@ -39,7 +39,9 @@ const SERVERS = {
   },
 };
 
-const getDevelopmentEndpointUri = (packageName) =>
-  `http://${SERVERS.DEVELOPMENT[packageName].host}:${SERVERS.DEVELOPMENT[packageName].port}`;
+const getDevelopmentEndpointUri = (packageName, { isDocker } = { isDocker: false }) =>
+  `http://${isDocker ? 'host.docker.internal' : SERVERS.DEVELOPMENT[packageName].host}:${
+    SERVERS.DEVELOPMENT[packageName].port
+  }`;
 
 module.exports = { SERVERS, getDevelopmentEndpointUri };
