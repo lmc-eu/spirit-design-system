@@ -185,27 +185,32 @@ For all available scripts see the package's `package.json` file.
 **Prerequisites:** [Docker][docker] 🐳
 
 You can run visual regression testing via `Makefile` in the project root.
-Using `make test-e2e` you will execute docker command that starts [Playwright][playwright] in containerized environment.
+All commands will execute Docker command that starts [Playwright][playwright] in containerized environment.
+
+- Use `make test-e2e` to run the tests.
+- Use `make test-e2e-update` to update the snapshots.
+- Use `make test-e2e-report` to generate and serve report of visual regression testing. Find report URL in the terminal output.
 
 👉 Visual snapshots are generated based on platform, so we need to use same platform locally and on CI (GitHub Actions).
 
-⚠️ Version number of the [Playwright][playwright] dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional [Playwright][playwright] dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
+⚠️ Version number of the Playwright dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional Playwright dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
 
-⚠️ Visual regression testing currently targets only deploys on Netlify.
-We are investigating how we should handle visual testing and several paths like
+We run visual regression testing locally against our demo apps. Web and Web React packages are served using Vite.
+Web Twig package is served using Symfony app.
 
-- running tests against localhost
-- running tests against Netlify preview branches
-- …
+In CI we use Netlify to test against.
 
-So the visual tests do not provide full coverage now.
+⚠️ Currently we do not deploy the Web Twig package to any environment, so you can only test it locally.
 
-### Speed up CI performance
+We have two test suites and you can find them in the `./tests/e2e` directory:
 
-This project uses [Nx Cloud](https://nx.app/) for speeding up CI runs by caching its results.
-You can also benefit from this feature locally by adding `nx-cloud.env` to root of this project with `NX_CLOUD_ACCESS_TOKEN=<token>`.
-Read-write token can be generated inside the Nx Cloud App.
-Otherwise only read access is used so you cannot [upload your local cache](https://lerna.js.org/docs/features/share-your-cache).
+- `demo-homepages` - tests the homepages of our demo apps.
+  - This test is used to verify that the demo apps are working properly and their homepages are not broken.
+- `demo-components-compare` - tests components' pages of our demo apps'.
+  - This test gets the list of components from file system for each package and then it goes through each component and compares its page in all demo apps.
+  - Only one screenshot is taken for each component. If you run the update command, only the last screenshot will be saved.
+
+👉 To save time and repository size, we test only in Chromium browser and only on desktop viewport.
 
 ## Publishing
 
