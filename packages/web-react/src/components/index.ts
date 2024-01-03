@@ -17,6 +17,7 @@ export * from './Icon';
 export * from './Item';
 export * from './Link';
 export * from './Modal';
+export * from './NoSsr';
 export * from './Pagination';
 export * from './Pill';
 export * from './Radio';

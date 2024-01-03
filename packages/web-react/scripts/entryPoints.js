@@ -22,6 +22,7 @@ const entryPoints = [
   { dirs: ['components', 'Item'] },
   { dirs: ['components', 'Link'] },
   { dirs: ['components', 'Modal'] },
+  { dirs: ['components', 'NoSsr'] },
   { dirs: ['components', 'Pagination'] },
   { dirs: ['components', 'Pill'] },
   { dirs: ['components', 'Radio'] },

@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from '../../scripts/build';
 
-const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden'];
+const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'NoSrr', 'TextFieldBase', 'VisuallyHidden'];
 
 export default defineConfig({
   server: SERVERS.DEVELOPMENT['web-react'],
