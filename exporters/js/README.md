@@ -1,6 +1,6 @@
 # Exporter Spirit JS
 
-[Supernova][supernova-studio] JS exporter made for Spirit Design System developed by [LMC][lmc].
+[Supernova][supernova-studio] JS exporter made for Spirit Design System developed by [Alma Career (formerly LMC)][alma-career].
 
 ## Token operations
 
@@ -41,4 +41,4 @@ Tokens are sorted alphabetically by origin (Figma) name or by name (Supernova). 
 The index file contains exports from all other outputs.
 
 [supernova-studio]: https://github.com/Supernova-Studio
-[lmc]: https://github.com/lmc-eu
+[alma-career]: https://github.com/lmc-eu

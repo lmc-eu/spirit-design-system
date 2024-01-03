@@ -7,7 +7,7 @@
 [![Code Quality Checks](https://github.com/lmc-eu/spirit-design-system/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/lmc-eu/spirit-design-system/actions)
 [![Coverage Status](https://coveralls.io/repos/github/lmc-eu/spirit-design-system/badge.svg?branch=main)](https://coveralls.io/github/lmc-eu/spirit-design-system?branch=main)
 
-Spirit is an open-source design system developed by [LMC][lmc].
+Spirit is an open-source design system developed by [Alma Career (formerly LMC)][alma-career].
 
 </div>
 
@@ -50,7 +50,8 @@ See [`package.json`](./package.json) for all available tasks.
 
 See the [LICENSE](LICENSE.md) file for information.
 
-[lmc]: https://github.com/lmc-eu
+[alma-career]: https://github.com/lmc-eu
+[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
 [sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
 [sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
 [sc-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-codemods

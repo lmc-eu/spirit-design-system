@@ -76,7 +76,7 @@ Most components also accept native HTML attributes based on the component's elem
 
 ## Styling
 
-Spirit components are designed to be consistent across all LMC applications. They include built-in styling that has been
+Spirit components are designed to be consistent across all Alma Career applications. They include built-in styling that has been
 considered carefully, and extensively tested. In general, customizing Spirit design is discouraged, but most components
 do offer control over layout and other aspects. In addition, you can use Spirit defined design tokens to ensure your
 application conforms to design requirements, and is adaptive across platform scales and color schemes.
