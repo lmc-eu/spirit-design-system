@@ -224,13 +224,45 @@ on the `.Tooltip__arrow` to control it and prevent conflicts with the default CS
 </div>
 ```
 
-### Example
+### Advanced Floating Functionality
 
-💻 Check our [example] that uses external library
-[Floating UI][floating-ui] (see the [JS source](./floating-ui-example.mjs)).
+To enable the advanced floating functionality, you need to have activated [feature flag][readme-feature-flags] for placement, activate the JS plugin, wrap your tooltip with an element having the `data-spirit-element="tooltip-wrapper"` data attribute, and add the `data-spirit-placement-controlled` attribute to your tooltip element to modify the styling of arrows and tooltip placement.
+
+```html
+<div class="spirit-feature-tooltip-enable-data-placement">
+  <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+    <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#floating-ui-example">
+      Toggle tooltip
+    </button>
+    <div
+      id="floating-ui-example"
+      class="Tooltip is-hidden"
+      data-spirit-placement="bottom"
+      data-spirit-placement-controlled
+    >
+      Hello there!
+      <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+    </div>
+  </div>
+</div>
+```
 
 👉 Please consult [Floating UI][floating-ui] documentation to understand how it
 works and to get an idea of all possible cases you may need to cover.
+
+## Floating UI Attributes
+
+| Attribute                                       | Type                                         | Default  | Required | Description                                                                                                                                                                                                                                                                |
+| ----------------------------------------------- | -------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-spirit-enable-flipping`                   | [true \| false]                              | true     | ✕        | Enables [flipping[floating-ui-flip] of the element’s placement when it starts to overflow its boundary area. For example `top` can be flipped to `bottom`.                                                                                                                 |
+| `data-spirit-enable-flipping-cross-axis`        | [true \| false]                              | true     | ✕        | Enables flipping on the [cross axis][floating-ui-flip-cross-axis], the axis perpendicular to main axis. For example `top-end` can be flipped to the `top-start`.                                                                                                           |
+| `data-spirit-flip-fallback-axis-side-direction` | ["none" \| "start" \| "end" ]                | "none"   | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
+| `data-spirit-flip-fallback-placements`          | string                                       | -        | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
+| `data-spirit-placement`                         | [Placement Dictionary][dictionary-placement] | "bottom" | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
+| `data-spirit-enable-shifting`                   | [true \| false]                              | true     | ✕        | Enables [shifting][floating-ui-shift] of the element to keep it inside the boundary area by adjusting its position.                                                                                                                                                        |
+| `data-spirit-enable-sizing`                     | [true \| false]                              | true     | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
+
+👆 All the attributes mentioned above can be also set as an object in the `config` attribute, like this: `data-spirit-config='{"flip": "true", "flipFallbackPlacements": "top, right, bottom"}'`. Please note that this configuration has lower priority than individual attributes and will be overwritten by them.
 
 ## JavaScript API
 
@@ -254,8 +286,8 @@ tooltip.show();
 
 | Method           | Description                                                                           |
 | ---------------- | ------------------------------------------------------------------------------------- |
-| `hide.tooltip`   | This event is fired immediately when the `hide` instance method has been called.      |
 | `hidden.tooltip` | This event is fired when the `hide` instance has finished being hidden from the user. |
+| `hide.tooltip`   | This event is fired immediately when the `hide` instance method has been called.      |
 | `show.tooltip`   | This event fires immediately when the `show` instance method is called.               |
 | `shown.tooltip`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
@@ -270,8 +302,14 @@ myTooltipEl.addEventListener('hidden.tooltip', () => {
 tooltip.hide();
 ```
 
-[example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
+[example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
+[floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis
+[floating-ui-flip-floating-ui-flip-fallback-axis-side-direction]: https://floating-ui.com/docs/flip#fallbackaxissidedirection
+[floating-ui-flip-fallback-placements]: https://floating-ui.com/docs/flip#fallbackplacements
+[floating-ui-flip]: https://floating-ui.com/docs/flip
+[floating-ui-shift]: https://floating-ui.com/docs/shift
+[floating-ui-size]: https://floating-ui.com/docs/size
 [floating-ui]: https://floating-ui.com
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

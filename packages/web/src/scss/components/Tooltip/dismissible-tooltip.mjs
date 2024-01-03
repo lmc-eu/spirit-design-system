@@ -1,6 +1,6 @@
 import Tooltip from '../../../js/Tooltip';
 
-const myTooltipEl = document.getElementById('my-dismissible-tooltip2');
+const myTooltipEl = document.getElementById('my-dismissible-tooltip-with-floating-ui');
 const myTooltip = new Tooltip(myTooltipEl);
 
 if (!window.localStorage.getItem('my-tooltip')) {
@@ -12,7 +12,7 @@ document.getElementById('my-dismissible-button').addEventListener('click', () =>
   window.localStorage.removeItem('my-tooltip');
 });
 
-document.getElementById('my-dismissible-tooltip2-button').addEventListener('click', () => {
+document.getElementById('my-dismissible-tooltip-with-floating-ui-button').addEventListener('click', () => {
   myTooltip.hide();
   window.localStorage.setItem('my-tooltip', true);
 });
