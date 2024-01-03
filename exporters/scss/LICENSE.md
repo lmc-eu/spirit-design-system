@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 LMC s.r.o.
+Copyright (c) 2022 Alma Career Czechia s.r.o., formerly LMC s.r.o.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
