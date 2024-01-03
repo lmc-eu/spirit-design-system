@@ -19,7 +19,7 @@ export const Icon = (props: IconProps): JSX.Element => {
   }
 
   // @deprecated Usage of `html-react-parser` will be required in the next major version.
-  if (typeof window === 'undefined' && htmlParser == null) {
+  if (htmlParser == null) {
     warning(
       false,
       'Icon component is not supported in SSR without use of `html-react-parser`. Please install, missing peer dependency.',
@@ -36,12 +36,12 @@ export const Icon = (props: IconProps): JSX.Element => {
       height={boxSize}
       aria-hidden={ariaHidden}
       // @deprecated Usage of dangerouslySetInnerHTML is discouraged due to support of SSR and will be removed in the next major version.
-      {...(typeof window !== 'undefined' ? { dangerouslySetInnerHTML: { __html: icon } } : {})}
+      {...(typeof htmlParser !== 'function' ? { dangerouslySetInnerHTML: { __html: icon } } : {})}
       {...otherProps}
       {...styleProps}
       className={styleProps.className}
     >
-      {typeof window === 'undefined' && typeof htmlParser === 'function' ? htmlParser(icon) : null}
+      {typeof htmlParser === 'function' ? htmlParser(icon) : null}
     </svg>
   );
 };
