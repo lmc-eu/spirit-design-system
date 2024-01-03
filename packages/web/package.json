@@ -88,6 +88,7 @@
     "vite-plugin-handlebars": "1.6.0"
   },
   "peerDependencies": {
+    "@floating-ui/dom": "^1.5.3",
     "sass": ">=1.57.0"
   },
   "nx": {
