@@ -427,5 +427,91 @@ describe('Tooltip', () => {
         expect(Tooltip.getOrCreateInstance(div)).toBeInstanceOf(Tooltip);
       });
     });
+
+    describe('getTooltipFloatingProps', () => {
+      it('should return object with data from data attributes', () => {
+        fixtureEl.innerHTML = `
+          <div class="TooltipWrapper">
+            <div
+              id="test-tooltip"
+              class="Tooltip is-hidden"
+              data-spirit-enable-flipping="true"
+              data-spirit-enable-shifting="true"
+              data-spirit-enable-sizing="true"
+              data-spirit-placement="top-start"
+              data-spirit-enable-flipping-cross-axis="true"
+              data-spirit-flip-fallback-placements="top, right, left, bottom"
+              data-spirit-placement-controlled
+            >
+              This is tooltip.
+              <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+            </div>
+          </div>
+        `;
+
+        const tooltipEl = fixtureEl.querySelector('.Tooltip') as HTMLElement;
+        const tooltip = new Tooltip(tooltipEl);
+
+        const tooltipProps = tooltip.getTooltipFloatingProps();
+
+        expect(tooltipProps).toEqual({
+          placement: 'top-start',
+          flip: true,
+          shift: true,
+          size: true,
+          flipCrossAxis: true,
+          flipFallbackPlacements: ['top', 'right', 'left', 'bottom'],
+          flipFallbackAxisSideDirection: 'none',
+        });
+      });
+    });
+
+    describe('updateConfig', () => {
+      it('should update config', () => {
+        fixtureEl.innerHTML = `
+          <div class="TooltipWrapper" data-spirit-element="tooltip-wrapper">
+            <div
+              id="test-tooltip"
+              class="Tooltip is-hidden"
+              data-spirit-enable-flipping="true"
+              data-spirit-enable-shifting="true"
+              data-spirit-enable-sizing="true"
+              data-spirit-placement="top-start"
+              data-spirit-enable-flipping-cross-axis="true"
+              data-spirit-flip-fallback-placements="top, right, left, bottom"
+              data-spirit-placement-controlled
+            >
+              This is tooltip.
+              <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+            </div>
+          </div>
+        `;
+
+        const tooltipEl = fixtureEl.querySelector('.Tooltip') as HTMLElement;
+        const tooltip = new Tooltip(tooltipEl);
+
+        tooltip.updateConfig({
+          enableFlipping: false,
+          enableFlippingCrossAxis: false,
+          enableShifting: false,
+          enableSizing: false,
+          flipFallbackAxisSideDirection: 'start',
+          flipFallbackPlacements: 'top, right, bottom',
+          placement: 'bottom',
+        });
+
+        const tooltipProps = tooltip.getTooltipFloatingProps();
+
+        expect(tooltipProps).toEqual({
+          flip: false,
+          flipCrossAxis: false,
+          flipFallbackAxisSideDirection: 'start',
+          flipFallbackPlacements: ['top', 'right', 'bottom'],
+          placement: 'bottom',
+          shift: false,
+          size: false,
+        });
+      });
+    });
   });
 });
