@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('article') -%}
+{%- set _isDockedOnMobile = props.isDockedOnMobile | default(false) -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile ?? true -%}
 {%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
 {%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
@@ -8,11 +9,12 @@
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalDialog' -%}
+{%- set _rootDockOnMobileClassName = _isDockedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--dockOnMobile' : null -%}
 {%- set _rootExpandOnMobileClassName = _isExpandedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--expandOnMobile' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootExpandOnMobileClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootDockOnMobileClassName, _rootExpandOnMobileClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = _elementType == 'form' ? [
     'accept-charset',
     'action',

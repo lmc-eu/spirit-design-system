@@ -1,0 +1,77 @@
+<div class="spirit-feature-modal-enable-uniform-dialog" style="display: contents"><!-- Set `display: contents` to enable parent stack layout. -->
+    <Button data-spirit-toggle="modal" data-spirit-target="#example-uniform">
+        Open Modal
+    </Button>
+
+    <Button data-spirit-toggle="modal" data-spirit-target="#example-docked">
+        Open Docked Modal (mobile only)
+    </Button>
+
+    <Modal id="example-uniform" titleId="example-uniform-title">
+        <ModalDialog>
+            <ModalHeader modalId="example-uniform" titleId="example-uniform-title">
+                Modal Title
+            </ModalHeader>
+            <ModalBody>
+
+                <!-- Content: start -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <!-- Content: end -->
+
+            </ModalBody>
+            <ModalFooter description="Optional description">
+                <Button
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example-uniform"
+                >
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example-uniform"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+        </ModalDialog>
+    </Modal>
+
+    <Modal id="example-docked" titleId="example-docked-title">
+        <ModalDialog isDockedOnMobile>
+            <ModalHeader modalId="example-docked" titleId="example-docked-title">
+                Modal Title
+            </ModalHeader>
+            <ModalBody>
+
+                <!-- Content: start -->
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                    perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                    provident unde. Eveniet, iste, molestiae?
+                </p>
+                <!-- Content: end -->
+
+            </ModalBody>
+            <ModalFooter description="Optional description">
+                <Button
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example-docked"
+                >
+                    Primary action
+                </Button>
+                <Button
+                    color="secondary"
+                    data-spirit-dismiss="modal"
+                    data-spirit-target="#example-docked"
+                >
+                    Secondary action
+                </Button>
+            </ModalFooter>
+        </ModalDialog>
+    </Modal>
+</div>
