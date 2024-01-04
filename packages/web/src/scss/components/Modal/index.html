@@ -10,28 +10,28 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_basic"
-      aria-controls="example_basic"
+      data-spirit-target="#example-basic"
+      aria-controls="example-basic"
       aria-expanded="false"
     >
       Open Modal
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_basic" class="Modal" aria-labelledby="example_basic_title">
+    <dialog id="example-basic" class="Modal" aria-labelledby="example-basic-title">
 
       <!-- ModalDialog: start -->
       <article class="ModalDialog ModalDialog--expandOnMobile">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_basic_title" class="ModalHeader__title">Modal Title</h2>
+          <h2 id="example-basic-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_basic"
-            aria-controls="example_basic"
+            data-spirit-target="#example-basic"
+            aria-controls="example-basic"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -53,34 +53,34 @@
           <!-- Footer alignment demo: start -->
           <script>
             const setFooterAlignment = (event) => {
-              const footerElement = document.querySelector('#example_basic .ModalFooter');
+              const footerElement = document.querySelector('#example-basic .ModalFooter');
 
               footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
               footerElement.classList.add(`ModalFooter--${event.target.value}`);
             };
 
             const toggleExpandOnMobile = () => {
-              document.querySelector('#example_basic .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
+              document.querySelector('#example-basic .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
             }
           </script>
           <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
             <div>Footer alignment (from tablet up):</div>
-            <label for="footer_alignment_left" class="Radio mr-600">
-              <input type="radio" id="footer_alignment_left" name="footer_alignment" value="left" class="Radio__input" autocomplete="off" />
+            <label for="footer-alignment-left" class="Radio mr-600">
+              <input type="radio" id="footer-alignment-left" name="footer-alignment" value="left" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Left</span>
             </label>
-            <label for="footer_alignment_center" class="Radio mr-600">
-              <input type="radio" id="footer_alignment_center" name="footer_alignment" value="center" class="Radio__input" autocomplete="off" />
+            <label for="footer-alignment-center" class="Radio mr-600">
+              <input type="radio" id="footer-alignment-center" name="footer-alignment" value="center" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Center</span>
             </label>
-            <label for="footer_alignment_right" class="Radio mr-600">
-              <input type="radio" id="footer_alignment_right" name="footer_alignment" value="right" class="Radio__input" autocomplete="off" checked />
+            <label for="footer-alignment-right" class="Radio mr-600">
+              <input type="radio" id="footer-alignment-right" name="footer-alignment" value="right" class="Radio__input" autocomplete="off" checked />
               <span class="Radio__label">Right</span>
             </label>
           </form>
           <form class="d-tablet-none">
-            <label for="expand_on_mobile" class="Checkbox">
-              <input type="checkbox" id="expand_on_mobile" class="Checkbox__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
+            <label for="expand-on-mobile" class="Checkbox">
+              <input type="checkbox" id="expand-on-mobile" class="Checkbox__input" onchange="toggleExpandOnMobile()" autocomplete="off" checked />
               <span class="Checkbox__text">
                   <span class="Checkbox__label">Expand on mobile</span>
                 </span>
@@ -101,7 +101,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_basic"
+              data-spirit-target="#example-basic"
             >
               Primary action
             </button>
@@ -109,7 +109,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_basic"
+              data-spirit-target="#example-basic"
             >
               Secondary action
             </button>
@@ -127,28 +127,28 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_form"
-      aria-controls="example_form"
+      data-spirit-target="#example-form"
+      aria-controls="example-form"
       aria-expanded="false"
     >
       Open Modal with a Form
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_form" class="Modal" aria-labelledby="example_form_title">
+    <dialog id="example-form" class="Modal" aria-labelledby="example-form-title">
 
       <!-- ModalDialog: start -->
       <form class="ModalDialog" method="dialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_form_title" class="ModalHeader__title">Modal with a Form</h2>
+          <h2 id="example-form-title" class="ModalHeader__title">Modal with a Form</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_form"
-            aria-controls="example_form"
+            data-spirit-target="#example-form"
+            aria-controls="example-form"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -163,8 +163,8 @@
         <div class="ModalBody">
           <!-- Content: start -->
           <div class="TextField mb-400">
-            <label for="textfield" class="TextField__label">Label</label>
-            <input type="text" id="textfield" class="TextField__input" placeholder="TextField" />
+            <label for="text-field" class="TextField__label">Label</label>
+            <input type="text" id="text-field" class="TextField__input" placeholder="TextField" />
           </div>
           <p>
             The primary action is a button with <code>type="submit"</code> and closes the dialog on submission.
@@ -183,7 +183,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_form"
+              data-spirit-target="#example-form"
             >
               Secondary action
             </button>
@@ -201,8 +201,8 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_custom_height"
-      aria-controls="example_custom_height"
+      data-spirit-target="#example-custom-height"
+      aria-controls="example-custom-height"
       aria-expanded="false"
     >
       Open Modal with Custom Height
@@ -210,9 +210,9 @@
 
     <!-- Modal: start -->
     <dialog
-      id="example_custom_height"
+      id="example-custom-height"
       class="Modal"
-      aria-labelledby="example_custom_height_title"
+      aria-labelledby="example-custom-height-title"
       style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px; --modal-max-height-tablet: 700px"
     >
 
@@ -221,13 +221,13 @@
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_custom_height_title" class="ModalHeader__title">Modal with Custom Height</h2>
+          <h2 id="example-custom-height-title" class="ModalHeader__title">Modal with Custom Height</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_custom_height"
-            aria-controls="example_custom_height"
+            data-spirit-target="#example-custom-height"
+            aria-controls="example-custom-height"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -265,7 +265,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_custom_height"
+              data-spirit-target="#example-custom-height"
             >
               Primary action
             </button>
@@ -273,7 +273,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_custom_height"
+              data-spirit-target="#example-custom-height"
             >
               Secondary action
             </button>
@@ -299,30 +299,30 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_long_content"
-      aria-controls="example_long_content"
+      data-spirit-target="#example-long-content"
+      aria-controls="example-long-content"
       aria-expanded="false"
     >
       Open Modal with Long Content
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_long_content" class="Modal" aria-labelledby="example_long_content_title">
+    <dialog id="example-long-content" class="Modal" aria-labelledby="example-long-content-title">
 
       <!-- ModalDialog: start -->
       <article class="ModalDialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_long_content_title" class="ModalHeader__title">
+          <h2 id="example-long-content-title" class="ModalHeader__title">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
           </h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_long_content"
-            aria-controls="example_long_content"
+            data-spirit-target="#example-long-content"
+            aria-controls="example-long-content"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -387,7 +387,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_long_content"
+              data-spirit-target="#example-long-content"
             >
               Primary action
             </button>
@@ -395,7 +395,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_long_content"
+              data-spirit-target="#example-long-content"
             >
               Secondary action
             </button>
@@ -413,30 +413,30 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_scroll_view"
-      aria-controls="example_scroll_view"
+      data-spirit-target="#example-scroll-view"
+      aria-controls="example-scroll-view"
       aria-expanded="false"
     >
       Open Modal with ScrollView
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_scroll_view" class="Modal" aria-labelledby="example_scroll_view_title">
+    <dialog id="example-scroll-view" class="Modal" aria-labelledby="example-scroll-view-title">
 
       <!-- ModalDialog: start -->
       <article class="ModalDialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_scroll_view_title" class="ModalHeader__title">
+          <h2 id="example-scroll-view-title" class="ModalHeader__title">
             Modal with ScrollView
           </h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_scroll_view"
-            aria-controls="example_scroll_view"
+            data-spirit-target="#example-scroll-view"
+            aria-controls="example-scroll-view"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -512,7 +512,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_scroll_view"
+              data-spirit-target="#example-scroll-view"
             >
               Primary action
             </button>
@@ -520,7 +520,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_scroll_view"
+              data-spirit-target="#example-scroll-view"
             >
               Secondary action
             </button>
@@ -547,28 +547,28 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_stacking_parent"
-      aria-controls="example_stacking_parent"
+      data-spirit-target="#example-stacking-parent"
+      aria-controls="example-stacking-parent"
       aria-expanded="false"
     >
       Open Modal
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_stacking_parent" class="Modal" aria-labelledby="example_stacking_parent_title">
+    <dialog id="example-stacking-parent" class="Modal" aria-labelledby="example-stacking-parent-title">
 
       <!-- ModalDialog: start -->
       <article class="ModalDialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_stacking_parent_title" class="ModalHeader__title">Modal Title</h2>
+          <h2 id="example-stacking-parent-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_stacking_parent"
-            aria-controls="example_stacking_parent"
+            data-spirit-target="#example-stacking-parent"
+            aria-controls="example-stacking-parent"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -598,8 +598,8 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-toggle="modal"
-              data-spirit-target="#example_stacking_nested"
-              aria-controls="example_stacking_nested"
+              data-spirit-target="#example-stacking-nested"
+              aria-controls="example-stacking-nested"
               aria-expanded="false"
             >
               Open stacked dialog
@@ -614,20 +614,20 @@
     </dialog>
     <!-- Modal: end -->
     <!-- Modal: start -->
-    <dialog id="example_stacking_nested" class="Modal" aria-labelledby="example_stacking_nested_title">
+    <dialog id="example-stacking-nested" class="Modal" aria-labelledby="example-stacking-nested-title">
 
       <!-- ModalDialog: start -->
       <article class="ModalDialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_stacking_nested_title" class="ModalHeader__title">Stacked Modal Title</h2>
+          <h2 id="example-stacking-nested-title" class="ModalHeader__title">Stacked Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_stacking_nested"
-            aria-controls="example_stacking_nested"
+            data-spirit-target="#example-stacking-nested"
+            aria-controls="example-stacking-nested"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -669,7 +669,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_stacking_nested"
+              data-spirit-target="#example-stacking-nested"
             >
               Secondary action
             </button>
@@ -696,25 +696,25 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_disabled_backdrop_click"
-      aria-controls="example_disabled_backdrop_click"
+      data-spirit-target="#example-disabled-backdrop-click"
+      aria-controls="example-disabled-backdrop-click"
       aria-expanded="false"
     >
       Open Modal
     </button>
 
-    <dialog id="example_disabled_backdrop_click" class="Modal" aria-labelledby="example_disabled_backdrop_click_title" data-spirit-close-on-backdrop-click="false">
+    <dialog id="example-disabled-backdrop-click" class="Modal" aria-labelledby="example-disabled-backdrop-click-title" data-spirit-close-on-backdrop-click="false">
 
       <article class="ModalDialog ModalDialog--expandOnMobile">
 
         <header class="ModalHeader">
-          <h2 id="example_disabled_backdrop_click_title" class="ModalHeader__title">Modal Title</h2>
+          <h2 id="example-disabled-backdrop-click-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_disabled_backdrop_click"
-            aria-controls="example_disabled_backdrop_click"
+            data-spirit-target="#example-disabled-backdrop-click"
+            aria-controls="example-disabled-backdrop-click"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -738,7 +738,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_disabled_backdrop_click"
+              data-spirit-target="#example-disabled-backdrop-click"
             >
               Primary action
             </button>
@@ -746,7 +746,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_disabled_backdrop_click"
+              data-spirit-target="#example-disabled-backdrop-click"
             >
               Secondary action
             </button>
@@ -770,8 +770,8 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_uniform"
-      aria-controls="example_uniform"
+      data-spirit-target="#example-uniform"
+      aria-controls="example-uniform"
       aria-expanded="false"
     >
       Open Modal
@@ -781,28 +781,28 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example_docked"
-      aria-controls="example_docked"
+      data-spirit-target="#example-docked"
+      aria-controls="example-docked"
       aria-expanded="false"
     >
       Open Docked Modal (mobile only)
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example_uniform" class="Modal" aria-labelledby="example_uniform_title">
+    <dialog id="example-uniform" class="Modal" aria-labelledby="example-uniform-title">
 
       <!-- ModalDialog: start -->
-      <article id="example_uniform_dialog" class="ModalDialog">
+      <article id="example-uniform-dialog" class="ModalDialog">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_uniform_title" class="ModalHeader__title">Modal Title</h2>
+          <h2 id="example-uniform-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_uniform"
-            aria-controls="example_uniform"
+            data-spirit-target="#example-uniform"
+            aria-controls="example-uniform"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -835,7 +835,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_uniform"
+              data-spirit-target="#example-uniform"
             >
               Primary action
             </button>
@@ -843,7 +843,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_uniform"
+              data-spirit-target="#example-uniform"
             >
               Secondary action
             </button>
@@ -858,20 +858,20 @@
     <!-- Modal: end -->
 
     <!-- Modal: start -->
-    <dialog id="example_docked" class="Modal" aria-labelledby="example_docked_title">
+    <dialog id="example-docked" class="Modal" aria-labelledby="example-docked-title">
 
       <!-- ModalDialog: start -->
-      <article id="example_docked_dialog" class="ModalDialog ModalDialog--dockOnMobile ModalDialog--expandOnMobile">
+      <article id="example-docked-dialog" class="ModalDialog ModalDialog--dockOnMobile ModalDialog--expandOnMobile">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example_docked_title" class="ModalHeader__title">Modal Title</h2>
+          <h2 id="example-docked-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example_docked"
-            aria-controls="example_docked"
+            data-spirit-target="#example-docked"
+            aria-controls="example-docked"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -904,7 +904,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_docked"
+              data-spirit-target="#example-docked"
             >
               Primary action
             </button>
@@ -912,7 +912,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example_docked"
+              data-spirit-target="#example-docked"
             >
               Secondary action
             </button>
