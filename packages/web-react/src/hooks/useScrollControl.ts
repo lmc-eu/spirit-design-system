@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 
 const CLASSNAME_SCROLLING_DISABLED = 'is-scrolling-disabled';
 
@@ -17,7 +17,7 @@ const enableScroll = (offsetY: number) => {
   body.style.paddingRight = '';
   body.style.top = '';
   body.classList.remove(CLASSNAME_SCROLLING_DISABLED);
-  window.scrollTo(0, -offsetY);
+  window.scrollTo(0, offsetY);
 };
 
 export const useScrollControl = (ref: MutableRefObject<HTMLDialogElement | null>, isOpen: boolean) => {
@@ -25,7 +25,7 @@ export const useScrollControl = (ref: MutableRefObject<HTMLDialogElement | null>
     if (isOpen) {
       disableScroll();
     } else if (ref.current && !ref.current.open) {
-      const offsetY = parseFloat(document.body.style.top || '0');
+      const offsetY = parseFloat(document.body.style.top || '0') || window.scrollY;
       enableScroll(offsetY);
     }
   }, [isOpen, ref]);
