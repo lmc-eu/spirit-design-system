@@ -23,59 +23,59 @@ const TooltipPlacements = () => {
         <GridItem columnStart={2} rowStart={1}>
           <Radio
             name="placement"
-            isChecked={placement === 'top-left'}
+            isChecked={placement === 'top-start'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_top_left"
-            label="top-left"
-            value="top-left"
+            id="placement-top-start"
+            label="top-start"
+            value="top-start"
           />{' '}
           <Radio
             name="placement"
             isChecked={placement === 'top'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_top"
+            id="placement-top"
             label="top"
             value="top"
           />{' '}
           <Radio
             name="placement"
-            isChecked={placement === 'top-right'}
+            isChecked={placement === 'top-end'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_top_right"
-            label="top-right"
-            value="top-right"
+            id="placement-top-end"
+            label="top-end"
+            value="top-end"
           />
         </GridItem>
         <GridItem columnStart={2} rowStart={3}>
           <Radio
             name="placement"
-            isChecked={placement === 'bottom-left'}
+            isChecked={placement === 'bottom-start'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_bottom_left"
-            label="bottom-left"
-            value="bottom-left"
+            id="placement-bottom-start"
+            label="bottom-start"
+            value="bottom-start"
           />{' '}
           <Radio
             name="placement"
             isChecked={placement === 'bottom'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_bottom"
+            id="placement-bottom"
             label="bottom"
             value="bottom"
           />{' '}
           <Radio
             name="placement"
-            isChecked={placement === 'bottom-right'}
+            isChecked={placement === 'bottom-end'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_bottom_right"
-            label="bottom-right"
-            value="bottom-right"
+            id="placement-bottom-end"
+            label="bottom-end"
+            value="bottom-end"
           />
         </GridItem>
         <GridItem
@@ -85,30 +85,30 @@ const TooltipPlacements = () => {
         >
           <Radio
             name="placement"
-            isChecked={placement === 'left-top'}
+            isChecked={placement === 'left-start'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_left_top"
-            label="left-top"
-            value="left-top"
+            id="placement-left-start"
+            label="left-start"
+            value="left-start"
           />
           <Radio
             name="placement"
             isChecked={placement === 'left'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_left"
+            id="placement-left"
             label="left"
             value="left"
           />
           <Radio
             name="placement"
-            isChecked={placement === 'left-bottom'}
+            isChecked={placement === 'left-end'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_left_bottom"
-            label="left-bottom"
-            value="left-bottom"
+            id="placement-left-end"
+            label="left-end"
+            value="left-end"
           />
         </GridItem>
         <GridItem
@@ -118,30 +118,30 @@ const TooltipPlacements = () => {
         >
           <Radio
             name="placement"
-            isChecked={placement === 'right-top'}
+            isChecked={placement === 'right-start'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_right_top"
-            label="right-top"
-            value="right-top"
+            id="placement-right-start"
+            label="right-start"
+            value="right-start"
           />
           <Radio
             name="placement"
             isChecked={placement === 'right'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_right"
+            id="placement-right"
             label="right"
             value="right"
           />
           <Radio
             name="placement"
-            isChecked={placement === 'right-bottom'}
+            isChecked={placement === 'right-end'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement_right_bottom"
-            label="right-bottom"
-            value="right-bottom"
+            id="placement-right-end"
+            label="right-end"
+            value="right-end"
           />
         </GridItem>
         <GridItem columnStart={2} rowStart={2}>
