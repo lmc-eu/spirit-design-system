@@ -49,15 +49,24 @@ export const SizesExtended = {
 /* Placement */
 export const Placements = {
   TOP: 'top',
+  TOP_START: 'top-start',
+  TOP_END: 'top-end',
+  BOTTOM: 'bottom',
+  BOTTOM_START: 'bottom-start',
+  BOTTOM_END: 'bottom-end',
+  LEFT: 'left',
+  LEFT_START: 'left-start',
+  LEFT_END: 'left-end',
+  RIGHT: 'right',
+  RIGHT_START: 'right-start',
+  RIGHT_END: 'right-end',
+  // @deprecated All next placements are deprecated and will be removed in the next mayor version, use flow relative placement instead
   TOP_RIGHT: 'top-right',
   TOP_LEFT: 'top-left',
-  BOTTOM: 'bottom',
   BOTTOM_RIGHT: 'bottom-right',
   BOTTOM_LEFT: 'bottom-left',
-  LEFT: 'left',
   LEFT_TOP: 'left-top',
   LEFT_BOTTOM: 'left-bottom',
-  RIGHT: 'right',
   RIGHT_TOP: 'right-top',
   RIGHT_BOTTOM: 'right-bottom',
 } as const;
