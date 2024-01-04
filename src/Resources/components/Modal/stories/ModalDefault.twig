@@ -1,10 +1,10 @@
-<Button data-spirit-toggle="modal" data-spirit-target="#example_basic">
+<Button data-spirit-toggle="modal" data-spirit-target="#example-basic">
     Open Modal
 </Button>
 
-<Modal id="example_basic" titleId="example_basic_title">
+<Modal id="example-basic" titleId="example-basic-title">
     <ModalDialog>
-        <ModalHeader modalId="example_basic" titleId="example_basic_title">
+        <ModalHeader modalId="example-basic" titleId="example-basic-title">
             Modal Title
         </ModalHeader>
         <ModalBody>
@@ -19,24 +19,24 @@
             <!-- Footer alignment demo: start -->
             <script>
                 const setFooterAlignment = (event) => {
-                    const footerElement = document.querySelector('#example_basic .ModalFooter');
+                    const footerElement = document.querySelector('#example-basic .ModalFooter');
 
                     footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
                     footerElement.classList.add(`ModalFooter--${event.target.value}`);
                 };
 
                 const toggleExpandOnMobile = () => {
-                    document.querySelector('#example_basic .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
+                    document.querySelector('#example-basic .ModalDialog').classList.toggle('ModalDialog--expandOnMobile');
                 };
             </script>
             <form onchange="setFooterAlignment(event)" class="d-none d-tablet-block">
                 <div>Footer alignment (from tablet up):</div>
-                <Radio id="footer_alignment_left" UNSAFE_className="mr-600" label="Left" value="left" name="footer_alignment" autocomplete="off" />
-                <Radio id="footer_alignment_center" UNSAFE_className="mr-600" label="Center" value="center" name="footer_alignment" autocomplete="off" />
-                <Radio id="footer_alignment_right" UNSAFE_className="mr-600" label="Right" value="right" name="footer_alignment" autocomplete="off" isChecked />
+                <Radio id="footer-alignment-left" UNSAFE_className="mr-600" label="Left" value="left" name="footer-alignment" autocomplete="off" />
+                <Radio id="footer-alignment-center" UNSAFE_className="mr-600" label="Center" value="center" name="footer-alignment" autocomplete="off" />
+                <Radio id="footer-alignment-right" UNSAFE_className="mr-600" label="Right" value="right" name="footer-alignment" autocomplete="off" isChecked />
             </form>
             <form class="d-tablet-none">
-                <Checkbox id="expand_on_mobile" label="Expand on mobile" value="right" onchange="toggleExpandOnMobile()" autocomplete="off" isChecked />
+                <Checkbox id="expand-on-mobile" label="Expand on mobile" value="right" onchange="toggleExpandOnMobile()" autocomplete="off" isChecked />
             </form>
             <!-- Footer alignment demo: end -->
             <!-- Content: end -->
@@ -45,14 +45,14 @@
         <ModalFooter description="Optional description">
             <Button
                 data-spirit-dismiss="modal"
-                data-spirit-target="#example_basic"
+                data-spirit-target="#example-basic"
             >
                 Primary action
             </Button>
             <Button
                 color="secondary"
                 data-spirit-dismiss="modal"
-                data-spirit-target="#example_basic"
+                data-spirit-target="#example-basic"
             >
                 Secondary action
             </Button>
@@ -60,13 +60,13 @@
     </ModalDialog>
 </Modal>
 
-<Button data-spirit-toggle="modal" data-spirit-target="#example_form">
+<Button data-spirit-toggle="modal" data-spirit-target="#example-form">
     Open Modal with a Form
 </Button>
 
-<Modal id="example_form" titleId="example_form_title">
+<Modal id="example-form" titleId="example-form-title">
     <ModalDialog elementType="form" method="dialog">
-        <ModalHeader modalId="example_form" titleId="example_form_title">
+        <ModalHeader modalId="example-form" titleId="example-form-title">
             Modal with a Form
         </ModalHeader>
         <ModalBody>
@@ -86,7 +86,7 @@
             <Button
                 color="secondary"
                 data-spirit-dismiss="modal"
-                data-spirit-target="#example_form"
+                data-spirit-target="#example-form"
             >
                 Secondary action
             </Button>
@@ -94,11 +94,11 @@
     </ModalDialog>
 </Modal>
 
-<Button data-spirit-toggle="modal" data-spirit-target="#example_custom_height">
+<Button data-spirit-toggle="modal" data-spirit-target="#example-custom-height">
     Open Modal with Custom Height
 </Button>
 
-<Modal id="example_custom_height" titleId="example_custom_height_title">
+<Modal id="example-custom-height" titleId="example-custom-height-title">
     <ModalDialog
         elementType="form"
         isExpandedOnMobile={ false }
@@ -107,7 +107,7 @@
         preferredHeightOnMobile="400px"
         preferredHeightFromTabletUp="500px"
     >
-        <ModalHeader modalId="example_custom_height" titleId="example_custom_height_title">
+        <ModalHeader modalId="example-custom-height" titleId="example-custom-height-title">
             Modal with Custom Height
         </ModalHeader>
         <ModalBody>
@@ -133,7 +133,7 @@
             <Button
                 color="secondary"
                 data-spirit-dismiss="modal"
-                data-spirit-target="#example_custom_height"
+                data-spirit-target="#example-custom-height"
             >
                 Secondary action
             </Button>
