@@ -14,7 +14,7 @@ Modal establishes the top layer with a backdrop. Under the hood it uses the [`<d
 provides several accessibility advantages.
 
 ```html
-<dialog id="example_1" class="Modal" aria-labelledby="example_1_title">
+<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title">
   <!-- ModalDialog -->
 </dialog>
 ```
@@ -34,9 +34,9 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 
 ```html
 <dialog
-  id="example_1"
+  id="modal-example"
   class="Modal"
-  aria-labelledby="example_1_title"
+  aria-labelledby="modal-example-title"
   style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
 >
   <!-- ModalDialog -->
@@ -55,7 +55,7 @@ The default maximum height of Modal is:
 You can use the custom property `--modal-max-height-tablet` to override the max height on tablet screens and up:
 
 ```html
-<dialog id="example_1" class="Modal" aria-labelledby="example_1_title" style="--modal-max-height-tablet: 700px">
+<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title" style="--modal-max-height-tablet: 700px">
   <!-- ModalDialog -->
 </dialog>
 ```
@@ -107,13 +107,13 @@ and allows users to easily close it.
 
 ```html
 <div class="ModalHeader">
-  <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
+  <h2 id="modal-example-title" class="ModalHeader__title">Modal Title</h2>
   <button
     type="button"
     class="Button Button--tertiary Button--square Button--medium"
     data-spirit-dismiss="modal"
-    data-spirit-target="#example_1"
-    aria-controls="example_1"
+    data-spirit-target="#modal-example"
+    aria-controls="modal-example"
     aria-expanded="false"
   >
     <svg width="24" height="24" aria-hidden="true">
@@ -130,7 +130,7 @@ Even in cases you don't need the title to be visible you should provide an acces
 the `aria-label` attribute on the `<dialog>` element:
 
 ```html
-<dialog id="example_1" class="Modal" aria-label="Accessible Modal Title">
+<dialog id="modal-example" class="Modal" aria-label="Accessible Modal Title">
   <!-- … -->
 </dialog>
 ```
@@ -168,7 +168,7 @@ to compensate for the lost spacing by applying utility spacing classes to the Mo
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-dismiss="modal"
-      data-spirit-target="#example_1"
+      data-spirit-target="#modal-example"
     >
       Primary action
     </button>
@@ -176,7 +176,7 @@ to compensate for the lost spacing by applying utility spacing classes to the Mo
       type="button"
       class="Button Button--secondary Button--medium"
       data-spirit-dismiss="modal"
-      data-spirit-target="#example_1"
+      data-spirit-target="#modal-example"
     >
       Secondary action
     </button>
@@ -215,8 +215,8 @@ Use our JavaScript plugin to open your Modal, e.g.:
   type="button"
   class="Button Button--primary Button--medium"
   data-spirit-toggle="modal"
-  data-spirit-target="#example_1"
-  aria-controls="example_1"
+  data-spirit-target="#modal-example"
+  aria-controls="modal-example"
   aria-expanded="false"
 >
   Open Modal
@@ -229,7 +229,7 @@ Disable modal close when clicking on the backdrop.
 You can still close modal with close buttons or ESC key.
 
 ```html
-<dialog id="example_1" class="Modal" data-spirit-backdrop-close-disabled="true">
+<dialog id="modal-example" class="Modal" data-spirit-backdrop-close-disabled="true">
   <!-- … -->
 </dialog>
 ```
@@ -267,8 +267,8 @@ When you put it all together:
   type="button"
   class="Button Button--primary Button--medium"
   data-spirit-toggle="modal"
-  data-spirit-target="#example_1"
-  aria-controls="example_1"
+  data-spirit-target="#modal-example"
+  aria-controls="modal-example"
   aria-expanded="false"
 >
   Open Modal
@@ -276,18 +276,18 @@ When you put it all together:
 <!-- Modal Trigger: end -->
 
 <!-- Modal: start -->
-<dialog id="example_1" class="Modal" aria-labelledby="example_1_title">
+<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title">
   <!-- ModalDialog: start -->
   <article class="ModalDialog">
     <!-- ModalHeader: start -->
     <div class="ModalHeader">
-      <h2 id="example_1_title" class="ModalHeader__title">Modal Title</h2>
+      <h2 id="modal-example-title" class="ModalHeader__title">Modal Title</h2>
       <button
         type="button"
         class="Button Button--tertiary Button--square Button--medium"
         data-spirit-dismiss="modal"
-        data-spirit-target="#example_1"
-        aria-controls="example_1"
+        data-spirit-target="#modal-example"
+        aria-controls="modal-example"
         aria-expanded="false"
       >
         <svg width="24" height="24" aria-hidden="true">
@@ -318,7 +318,7 @@ When you put it all together:
           type="button"
           class="Button Button--primary Button--medium"
           data-spirit-dismiss="modal"
-          data-spirit-target="#example_1"
+          data-spirit-target="#modal-example"
         >
           Primary action
         </button>
@@ -326,7 +326,7 @@ When you put it all together:
           type="button"
           class="Button Button--secondary Button--medium"
           data-spirit-dismiss="modal"
-          data-spirit-target="#example_1"
+          data-spirit-target="#modal-example"
         >
           Secondary action
         </button>
