@@ -1,6 +1,12 @@
-import { useCallback, useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useCallback, useEffect } from 'react';
 
-const EVENT_CANCEL = 'cancel';
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/cancel_event
+ * @see https://jira.lmc.cz/browse/DS-1108
+ * Here should be used `cancel` event instead of `close` event.
+ * But when dialog is closed using `escape` key, `cancel` event is not fired.
+ */
+const EVENT_CANCEL = 'close';
 
 export const useCancelEvent = (ref: MutableRefObject<HTMLElement | null>, callback: (event: Event) => void) => {
   const handleCancel = useCallback(
