@@ -86,6 +86,9 @@
     "vite": "4.5.1",
     "vite-plugin-handlebars": "1.6.0"
   },
+  "peerDependencies": {
+    "sass": ">=1.57.0"
+  },
   "nx": {
     "targets": {
       "build": {
