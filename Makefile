@@ -109,5 +109,5 @@ endif
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
 clean: ## Clean output files
-	rm -rf {.nyc_output,coverage,dist,build}
+	rm -rf {.nyc_output,coverage,dist,build,esm,cjs,umd,types}
 	find . -name '*.log' -print -delete
