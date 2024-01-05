@@ -8,10 +8,18 @@ interface DocsSectionProps {
   stackAlignment?: 'start' | 'center' | 'end' | 'stretch';
   tag?: string;
   title: string;
+  [x: string]: unknown;
 }
 
-const DocsSection = ({ children, hasStack = true, stackAlignment = 'start', title, tag }: DocsSectionProps) => (
-  <section className="docs-Section">
+const DocsSection = ({
+  children,
+  hasStack = true,
+  stackAlignment = 'start',
+  title,
+  tag,
+  ...restProps
+}: DocsSectionProps) => (
+  <section className="docs-Section" {...restProps}>
     <h2 className="docs-Heading">
       {title}
       {tag && (

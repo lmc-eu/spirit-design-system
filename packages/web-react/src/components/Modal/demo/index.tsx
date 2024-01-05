@@ -8,9 +8,9 @@ import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import ModalDefault from './ModalDefault';
+import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 import ModalScrollingLongContent from './ModalScrollingLongContent';
 import ModalStacking from './ModalStacking';
-import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -24,7 +24,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Stacking Modals">
         <ModalStacking />
       </DocsSection>
-      <DocsSection title="Disabled Backdrop Click">
+      <a href="#test" title="test">
+        test
+      </a>
+      <DocsSection title="Disabled Backdrop Click" id="test" style={{ marginBottom: '2000px' }}>
         <ModalDisabledBackdropClick />
       </DocsSection>
     </IconsProvider>

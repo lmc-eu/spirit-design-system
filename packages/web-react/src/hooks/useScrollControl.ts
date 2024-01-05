@@ -17,7 +17,7 @@ const enableScroll = (offsetY: number) => {
   body.style.paddingRight = '';
   body.style.top = '';
   body.classList.remove(CLASSNAME_SCROLLING_DISABLED);
-  window.scrollTo(0, offsetY);
+  window.scrollTo(0, -offsetY);
 };
 
 export const useScrollControl = (ref: MutableRefObject<HTMLDialogElement | null>, isOpen: boolean) => {
