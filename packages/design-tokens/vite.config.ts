@@ -21,16 +21,19 @@ export default defineConfig({
       output: [
         {
           format: 'cjs',
-          entryFileNames: '[format]/[name].js',
+          dir: 'cjs',
+          entryFileNames: '[name].js',
         },
         {
           format: 'es',
-          entryFileNames: 'esm/[name].js',
+          dir: 'esm',
+          entryFileNames: '[name].js',
         },
         {
           name: 'spirit-design-tokens',
           format: 'umd',
-          entryFileNames: '[format]/[name].js',
+          dir: 'umd',
+          entryFileNames: '[name].js',
         },
       ],
     },
