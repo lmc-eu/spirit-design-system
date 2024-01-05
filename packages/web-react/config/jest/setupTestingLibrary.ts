@@ -2,6 +2,7 @@
 import '@testing-library/jest-dom';
 
 const originalError = console.error;
+let originalScrollTo: typeof window.scrollTo;
 
 beforeAll(() => {
   console.error = (...args) => {
@@ -10,10 +11,14 @@ beforeAll(() => {
     }
     originalError.call(console, ...args);
   };
+
+  originalScrollTo = window.scrollTo;
+  window.scrollTo = jest.fn();
 });
 
 afterAll(() => {
   console.error = originalError;
+  window.scrollTo = originalScrollTo;
 });
 
 // jsdom not support dialog events

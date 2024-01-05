@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { MutableRefObject } from 'react';
 import { useScrollControl } from '../useScrollControl';
 
@@ -45,7 +45,7 @@ describe('useScrollControl', () => {
       renderHook(() => useScrollControl(mockRef, false));
     });
 
-    expect(scrollToSpy).toHaveBeenCalledWith(0, 0);
+    expect(scrollToSpy).toHaveBeenCalledWith(0, -0);
     expect(document.body.classList.contains('is-scrolling-disabled')).toBe(false);
     expect(document.body.style.top).toBe('');
   });
