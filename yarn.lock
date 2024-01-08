@@ -2710,6 +2710,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bevry/file-url-to-path@^1.0.1":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@bevry/file-url-to-path/-/file-url-to-path-1.1.0.tgz#52d8ecbe47bc7bffff40bb117e35b5222927bc70"
+  integrity sha512-vT7EM6CaDMo+n4F1B1lNmyB+/kfBc+M5G0T6ht35HggAQLM2E7kOgM/pZ50oz5PNlhq4vmekaXEUJGLe/siJAw==
+
 "@bugsnag/browser@^7.16.2":
   version "7.16.2"
   resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.16.2.tgz#b6fc7ebaeae4800d195b660abc770caf33670e03"
@@ -11793,6 +11798,13 @@ ecdsa-sig-formatter@1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
+editions@^6.21.0:
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/editions/-/editions-6.21.0.tgz#8da2d85611106e0891a72619b7bee8e0c830089b"
+  integrity sha512-ofkXJtn7z0urokN62DI3SBo/5xAtF0rR7tn+S/bSYV79Ka8pTajIIl+fFQ1q88DQEImymmo97M4azY3WX/nUdg==
+  dependencies:
+    version-range "^4.13.0"
+
 editorconfig@^0.13.2:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/editorconfig/-/editorconfig-0.13.3.tgz#e5219e587951d60958fd94ea9a9a008cdeff1b34"
@@ -13572,12 +13584,14 @@ file-url@3.0.0:
   resolved "https://registry.yarnpkg.com/file-url/-/file-url-3.0.0.tgz#247a586a746ce9f7a8ed05560290968afc262a77"
   integrity sha512-g872QGsHexznxkIAdK8UiZRe7SkE6kvylShU4Nsj8NvfvZag7S0QuQ4IgvPDkk75HxgjIVDwycFTDAgIiO4nDA==
 
-filedirname@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/filedirname/-/filedirname-2.7.0.tgz#aff98ce95590b89de5b502d51885095c01b1f36e"
-  integrity sha512-rw4NZ0XCpm4EeBp0NK2b1WUkCm/LSDg6mJR8ywV2JYvIiwe+fimMgwVxjgd94lbmx4rOOmxybeVHsB6SRNeaXQ==
+filedirname@^3.0.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/filedirname/-/filedirname-3.4.0.tgz#4607eff03ee2f99674de6c2fbf6481fb2fcce298"
+  integrity sha512-wD4qJFZ7V75B6LUXjGd5pNlBSl9uVhwLckq/2R1T0kQaTC0LvOT6unN4dUIb5gzzLUm7AZqZWrUbooiNIysmlw==
   dependencies:
-    get-current-line "^6.5.0"
+    "@bevry/file-url-to-path" "^1.0.1"
+    editions "^6.21.0"
+    get-current-line "^7.3.0"
 
 filelist@^1.0.1:
   version "1.0.4"
@@ -14096,10 +14110,12 @@ get-caller-file@^2.0.5:
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
-get-current-line@^6.5.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/get-current-line/-/get-current-line-6.6.0.tgz#3b01ef83a1bc732e190755853516e13783d5ea93"
-  integrity sha512-9q/tqdL4+GMb0P28N/oSFruQE/8Sa1l9ew73AWS4j/KEMY32wD8+5QRB8LSTgt9HUZuLplmi8vc5dFFf5OvROA==
+get-current-line@^7.3.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/get-current-line/-/get-current-line-7.4.0.tgz#eaecb56bcc3235d768e47ca582788f3f0745b1aa"
+  integrity sha512-iPHQyqGX7ztEviLIrgq9qYZ/xTbxpQrOsZeUwiFs03uixOPK4IBQRQI4YE4Nsk9A5edUynAqK4BmRnd2Hh2a3g==
+  dependencies:
+    editions "^6.21.0"
 
 get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
   version "1.1.1"
@@ -24912,6 +24928,11 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+version-range@^4.13.0:
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/version-range/-/version-range-4.14.0.tgz#91c12e4665756a9101d1af43faeda399abe0edec"
+  integrity sha512-gjb0ARm9qlcBAonU4zPwkl9ecKkas+tC2CGwFfptTCWWIVTWY1YUbT2zZKsOAF1jR/tNxxyLwwG0cb42XlYcTg==
 
 vite-plugin-dts@3.7.0:
   version "3.7.0"

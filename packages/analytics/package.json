@@ -55,7 +55,7 @@
     "tsup": "6.7.0"
   },
   "dependencies": {
-    "filedirname": "^2.7.0",
+    "filedirname": "^3.0.0",
     "react-scanner": "^1.1.0",
     "sade": "^1.8.1",
     "zx": "^7.2.2"
