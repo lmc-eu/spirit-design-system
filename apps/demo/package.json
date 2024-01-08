@@ -27,6 +27,6 @@
     "sass-true": "7.0.1",
     "shx": "0.3.4",
     "vite": "5.2.13",
-    "vite-plugin-handlebars": "1.6.0"
+    "vite-plugin-handlebars": "2.0.0"
   }
 }
