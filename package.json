@@ -90,7 +90,7 @@
     "lerna": "7.4.2",
     "netlify-cli": "12.14.0",
     "npm-run-all": "4.1.5",
-    "nx": "16.10.0",
+    "nx": "17.2.8",
     "postcss": "8.4.33",
     "prettier": "2.8.8",
     "pretty-quick": "3.1.3",
