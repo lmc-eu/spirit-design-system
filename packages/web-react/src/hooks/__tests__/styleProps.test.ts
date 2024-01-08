@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useStyleProps } from '../styleProps';
 import { StyleProps } from '../../types';
+import { useStyleProps } from '../styleProps';
 
 describe('styleProps', () => {
   describe('#useStyleProps', () => {
@@ -25,7 +25,7 @@ describe('styleProps', () => {
       renderHook(() => useStyleProps(props as StyleProps));
 
       expect(consoleWarnMock).toHaveBeenCalledWith(
-        'The style prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_style if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
+        'Warning: The style prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_style if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
       );
 
       consoleWarnMock.mockRestore();
@@ -38,7 +38,7 @@ describe('styleProps', () => {
       renderHook(() => useStyleProps(props as StyleProps));
 
       expect(consoleWarnMock).toHaveBeenCalledWith(
-        'The className prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_className if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
+        'Warning: The className prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_className if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
       );
 
       consoleWarnMock.mockRestore();
