@@ -80,7 +80,7 @@
     "sass": "1.69.7",
     "sass-true": "7.0.1",
     "shx": "0.3.4",
-    "stylelint": "15.11.0",
+    "stylelint": "16.1.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-order": "6.0.4",
     "tslib": "2.6.2",
