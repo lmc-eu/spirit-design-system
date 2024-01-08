@@ -45,7 +45,7 @@
     "sass": "1.69.7",
     "shx": "0.3.4",
     "tslib": "2.6.2",
-    "vite": "4.5.1",
+    "vite": "5.0.11",
     "vite-plugin-handlebars": "1.6.0"
   },
   "nx": {
