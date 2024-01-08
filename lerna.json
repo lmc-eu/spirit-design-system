@@ -3,7 +3,6 @@
   "packages": ["packages/*", "exporters/*"],
   "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "useNx": true,
   "command": {
     "version": {
