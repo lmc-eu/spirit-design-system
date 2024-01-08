@@ -85,7 +85,7 @@
     "stylelint-order": "6.0.4",
     "tslib": "2.6.2",
     "vite": "4.5.1",
-    "vite-plugin-handlebars": "1.6.0"
+    "vite-plugin-handlebars": "2.0.0"
   },
   "peerDependencies": {
     "sass": ">=1.57.0"
