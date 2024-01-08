@@ -37,7 +37,7 @@ describe('useButtonStyleProps', () => {
     const props = { color: 'primary', size: 'medium', isBlock: true, isSquare: true } as SpiritButtonProps;
     renderHook(() => useButtonLinkStyleProps(props));
 
-    expect(consoleWarnMock).toHaveBeenCalledWith('isBlock and isSquare props are mutually exclusive');
+    expect(consoleWarnMock).toHaveBeenCalledWith('Warning: isBlock and isSquare props are mutually exclusive');
 
     consoleWarnMock.mockRestore();
   });
