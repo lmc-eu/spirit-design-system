@@ -24,7 +24,7 @@ services:
   web-twig-demo-encore:
     container_name: web-twig-demo-encore
     command: 'sh -c "yarn && yarn watch"'
-    image: node:16-alpine
+    image: node:20-alpine
     # ports:
     #   - '${DEV_SERVER_PORT:-8080}:8080'
     volumes:
