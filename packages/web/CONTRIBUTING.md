@@ -196,6 +196,17 @@ in a special way. Read more about it in
 
 </details>
 
+<details>
+<summary>What are <code>.is-*</code> and <code>.has-*</code> CSS classes and is there a convention for CSS/JS selectors?</summary>
+
+CSS and JS development is very often done by different people. However, they both meet in the same place: HTML.
+To avoid conflicts, we need a convention to distinguish situations when something is accessed by both CSS and JS.
+
+- `.Component` classes, helper classes and utilities can be used by **CSS only**,
+- `.is-*` and `.has-*` classes, `data-*` and other attributes can be used by both **CSS and JS**,
+- `id` attribute can be used by **JS only**.
+</details>
+
 [design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
 [`spirit-design-tokens`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
