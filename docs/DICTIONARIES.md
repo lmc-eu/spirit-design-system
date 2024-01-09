@@ -32,9 +32,9 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Placement
 
-| Dictionary | Values                                                                                                                                           | Code name |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| Placement  | `top`, `top-left`, `top-right`, `bottom`, `bottom-left`, `bottom-right`, `left`, `left-top`, `left-bottom`, `right`, `right-top`, `right-bottom` | Placement |
+| Dictionary | Values                                                                                                                                       | Code name |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| Placement  | `top`, `top-start`, `top-end`, `bottom`, `bottom-start`, `bottom-end`, `left`, `left-start`, `left-end`, `right`, `right-start`, `right-end` | Placement |
 
 ### Size
 
