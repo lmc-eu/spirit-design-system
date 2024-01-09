@@ -9,6 +9,14 @@ const meta: Meta<typeof ModalDialog> = {
   title: 'Components/Modal',
   component: ModalDialog,
   argTypes: {
+    isDockedOnMobile: {
+      control: 'boolean',
+      description: `**REQUIRES FEATURE FLAG** which is turned on in this demo. To view Modal without feature flag, navigate
+      to the "Modal" story in the "Components/Modal" section of the sidebar.`,
+    },
+    isExpandedOnMobile: {
+      control: 'boolean',
+    },
     maxHeightFromTabletUp: {
       control: 'text',
     },
@@ -20,6 +28,8 @@ const meta: Meta<typeof ModalDialog> = {
     },
   },
   args: {
+    isDockedOnMobile: false,
+    isExpandedOnMobile: false,
     maxHeightFromTabletUp: '',
     preferredHeightOnMobile: '',
     preferredHeightFromTabletUp: '',
@@ -43,7 +53,7 @@ const ModalWithHooks = (
   };
 
   return (
-    <>
+    <div className="spirit-feature-modal-enable-uniform-dialog">
       <Button onClick={toggleModal} aria-expanded={isOpen}>
         Open Modal
       </Button>
@@ -61,7 +71,7 @@ const ModalWithHooks = (
           </ModalFooter>
         </ModalDialog>
       </Modal>
-    </>
+    </div>
   );
 };
 

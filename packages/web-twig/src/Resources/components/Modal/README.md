@@ -325,8 +325,8 @@ When you put it all together:
 ## Feature Flag: Uniform Appearance on All Breakpoints
 
 The uniform appearance of modal dialog on all breakpoints is disabled by default. To enable it, either set the
-`$modal-enable-uniform-dialog` feature flag to `true` or use the `spirit-modal-enable-uniform-dialog` CSS class on any
-parent of the modal.
+`$modal-enable-uniform-dialog` Sass feature flag to `true` or use the `spirit-feature-modal-enable-uniform-dialog` CSS
+class on any parent of the modal.
 
 For more info, see main [README][readme-feature-flags].
 
