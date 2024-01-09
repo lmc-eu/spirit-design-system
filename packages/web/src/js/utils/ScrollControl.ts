@@ -27,12 +27,8 @@ class ScrollControl {
     const clientOffset = this.element.tagName === 'BODY' ? window.innerWidth : this.element.offsetWidth;
     // Browser scrollbar width, may be 0 on some devices, but solves offset when is not 0.
     const scrollBarWidth = clientOffset - this.element.clientWidth;
-    // Save Y offset for later purpose
-    this.offsetY = window.scrollY;
     // Fixing page offset causing scrollbar on some devices
     this.element.style.paddingRight = `${scrollBarWidth}px`;
-    // Fixing position
-    this.element.style.top = `-${this.offsetY}px`;
     // Add body class
     this.element.classList.add(SCROLLING_DISABLED_CLASSNAME);
   }
@@ -44,11 +40,8 @@ class ScrollControl {
       executeAfterTransition(this.target, () => {
         // Reset style values
         this.element.style.paddingRight = '';
-        this.element.style.top = '';
         // Remove body class
         this.element.classList.remove(SCROLLING_DISABLED_CLASSNAME);
-        // Scroll after close to saved Y offset position
-        window.scrollTo(0, this.offsetY);
       });
     }
   }
