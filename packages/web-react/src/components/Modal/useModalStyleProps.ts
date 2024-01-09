@@ -4,6 +4,7 @@ import { useClassNamePrefix } from '../../hooks';
 
 export interface ModalStylesProps {
   footerAlignment?: AlignmentXDictionaryType;
+  isDockedOnMobile?: boolean;
   isExpandedOnMobile?: boolean;
 }
 
@@ -24,13 +25,15 @@ export interface ModalStylesReturn {
 }
 
 export function useModalStyleProps(
-  { footerAlignment = 'right', isExpandedOnMobile }: ModalStylesProps = {
+  { footerAlignment = 'right', isDockedOnMobile, isExpandedOnMobile }: ModalStylesProps = {
     footerAlignment: 'right',
+    isDockedOnMobile: false,
     isExpandedOnMobile: false,
   },
 ): ModalStylesReturn {
   const modalClass = useClassNamePrefix('Modal');
   const modalDialogClass = `${modalClass}Dialog`;
+  const modalDialogDockedOnMobileClass = `${modalDialogClass}--dockOnMobile`;
   const modalDialogExpandedOnMobileClass = `${modalDialogClass}--expandOnMobile`;
   const modalHeaderClass = `${modalClass}Header`;
   const modalTitleClass = `${modalHeaderClass}__title`;
@@ -45,7 +48,10 @@ export function useModalStyleProps(
   };
   const classProps = {
     root: modalClass,
-    dialog: classNames(modalDialogClass, { [modalDialogExpandedOnMobileClass]: isExpandedOnMobile }),
+    dialog: classNames(modalDialogClass, {
+      [modalDialogDockedOnMobileClass]: isDockedOnMobile,
+      [modalDialogExpandedOnMobileClass]: isExpandedOnMobile,
+    }),
     title: modalTitleClass,
     header: modalHeaderClass,
     body: modalBodyClass,

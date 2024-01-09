@@ -17,6 +17,7 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
   const {
     elementType: ElementTag = 'article',
     children,
+    isDockedOnMobile,
     isExpandedOnMobile,
     maxHeightFromTabletUp,
     preferredHeightOnMobile,
@@ -24,7 +25,7 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
     ...restProps
   } = props;
 
-  const { classProps } = useModalStyleProps({ isExpandedOnMobile });
+  const { classProps } = useModalStyleProps({ isDockedOnMobile, isExpandedOnMobile });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const customizedHeightStyle: CustomizedHeightCSSProperties = {

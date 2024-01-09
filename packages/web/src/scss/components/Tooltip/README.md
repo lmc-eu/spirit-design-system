@@ -13,7 +13,7 @@ Bare Tooltip HTML:
 
 Tooltip placement is currently using CSS modifiers. In the future it will be using `data-spirit-placement`
 attribute in order to make the placement independent of the component and compatible with Floating UI.
-To enable this behavior now you can use the feature flag, either set the `$tooltip-enable-data-placement`
+To enable this behavior now you can use the feature flag, either set the `$tooltip-enable-data-placement` Sass
 feature flag to `true` or use the `spirit-feature-tooltip-enable-data-placement` CSS class on any parent of the Tooltip.
 
 For more info, see main [README][readme-feature-flags].

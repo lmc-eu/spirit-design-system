@@ -7,7 +7,7 @@ const ModalDefault = () => {
   const [isSecondOpen, setSecondOpen] = useState(false);
   const [isThirdOpen, setThirdOpen] = useState(false);
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>('right');
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
   const toggleSecondModal = () => setSecondOpen(!isSecondOpen);

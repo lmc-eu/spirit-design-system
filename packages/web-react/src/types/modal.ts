@@ -25,6 +25,7 @@ export interface ModalCloseButtonProps extends ModalDialogHandlingProps {
 
 export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType> = {
   elementType?: E;
+  isDockedOnMobile?: boolean;
   isExpandedOnMobile?: boolean;
 } & ChildrenProps &
   StyleProps;

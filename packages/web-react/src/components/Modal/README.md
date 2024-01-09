@@ -114,16 +114,17 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 
 ### API
 
-| Name                          | Type                  | Default   | Required | Description                                                                      |
-| ----------------------------- | --------------------- | --------- | -------- | -------------------------------------------------------------------------------- |
-| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                    |
-| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                         |
-| `isExpandedOnMobile`          | `bool`                | —         | ✕        | ModalDialog shrinks to fit the height of its content                             |
-| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                            |
-| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value. |
-| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.            |
-| `UNSAFE_className`            | `string`              | —         | ✕        | ModalDialog custom class name                                                    |
-| `UNSAFE_style`                | `CSSProperties`       | —         | ✕        | ModalDialog custom style                                                         |
+| Name                          | Type                  | Default   | Required | Description                                                                                                                              |
+| ----------------------------- | --------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                                            |
+| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                                 |
+| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile |
+| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | ModalDialog shrinks to fit the height of its content                                                                                     |
+| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                    |
+| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                                                         |
+| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                                                    |
+| `UNSAFE_className`            | `string`              | —         | ✕        | ModalDialog custom class name                                                                                                            |
+| `UNSAFE_style`                | `CSSProperties`       | —         | ✕        | ModalDialog custom style                                                                                                                 |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
@@ -308,6 +309,21 @@ const handleClose = () => setOpen(false);
 </Modal>
 ```
 
+## Feature Flag: Uniform Appearance on All Breakpoints
+
+The uniform appearance of modal dialog on all breakpoints is disabled by default. To enable it, either set the
+`$modal-enable-uniform-dialog` Sass feature flag to `true` or use the `spirit-feature-modal-enable-uniform-dialog` CSS
+class on any parent of the modal.
+
+For more info, see main [README][readme-feature-flags].
+
+### ⚠️ DEPRECATION NOTICE
+
+The uniform dialog appearance will replace current behavior in the next major release. Current mobile appearance will
+remain accessible via the `isDockedOnMobile` property.
+
+[What are deprecations?][readme-deprecations]
+
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
@@ -315,3 +331,5 @@ const handleClose = () => setOpen(false);
 [mdn-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

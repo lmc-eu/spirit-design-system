@@ -250,7 +250,7 @@ Current class combinations (`Dropdown--top.Dropdown--left`, `.Dropdown--top.Drop
 ## Feature Flag: Enhanced Shadow
 
 The enhanced shadow feature is disabled by default. To enable it, either set the `$dropdown-enable-enhanced-shadow`
-feature flag to `true` or use the `spirit-dropdown-enable-enhanced-shadow` CSS class on any parent of the dropdown.
+Sass feature flag to `true` or use the `spirit-dropdown-enable-enhanced-shadow` CSS class on any parent of the dropdown.
 
 For more info, see main [README][readme-feature-flags].
 
