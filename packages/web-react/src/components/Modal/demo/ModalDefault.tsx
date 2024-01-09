@@ -79,10 +79,8 @@ const ModalDefault = () => {
             </form>
           </ModalBody>
           <ModalFooter description="Optional description" alignmentX={footerAlign}>
-            <Button data-spirit-dismiss="modal" data-spirit-target="#example_basic">
-              Primary action
-            </Button>
-            <Button color="secondary" data-spirit-dismiss="modal" data-spirit-target="#example_basic">
+            <Button onClick={handleFirstClose}>Primary action</Button>
+            <Button color="secondary" onClick={handleFirstClose}>
               Secondary action
             </Button>
           </ModalFooter>
@@ -103,7 +101,7 @@ const ModalDefault = () => {
           </ModalBody>
           <ModalFooter>
             <Button type="submit">Primary action</Button>
-            <Button color="secondary" data-spirit-dismiss="modal" data-spirit-target="#example_form">
+            <Button color="secondary" onClick={handleSecondClose}>
               Secondary action
             </Button>
           </ModalFooter>
@@ -137,8 +135,8 @@ const ModalDefault = () => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button type="submit">Primary action</Button>
-            <Button color="secondary" data-spirit-dismiss="modal" data-spirit-target="#example_custom_height">
+            <Button onClick={handleThirdClose}>Primary action</Button>
+            <Button color="secondary" onClick={handleThirdClose}>
               Secondary action
             </Button>
           </ModalFooter>

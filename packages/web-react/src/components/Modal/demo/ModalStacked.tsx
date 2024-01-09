@@ -65,9 +65,7 @@ const Story = (props: unknown) => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={toggleSecondModal}>
-              Open stacked
-            </Button>
+            <Button onClick={toggleSecondModal}>Open stacked</Button>
             <Button color="tertiary" onClick={handleFirstClose}>
               Cancel
             </Button>

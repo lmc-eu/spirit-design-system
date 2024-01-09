@@ -21,9 +21,7 @@ const ModalDisabledBackdropClick = () => {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={handleClose}>
-              Primary action
-            </Button>
+            <Button onClick={handleClose}>Primary action</Button>
             <Button color="secondary" onClick={handleClose}>
               Secondary action
             </Button>
