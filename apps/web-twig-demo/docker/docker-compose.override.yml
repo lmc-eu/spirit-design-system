@@ -30,6 +30,8 @@ services:
     volumes:
       - ./../:/srv/spirit-web-twig-demo/:delegated
       - ./../../../packages/web:/srv/spirit-web/:delegated
+      - ./../../../packages/common:/srv/spirit-common/:delegated
+      - ./../../../packages/design-tokens:/srv/spirit-design-tokens/:delegated
       - ./../../../packages/demo:/srv/spirit-demo/:delegated
       - ./../../../packages/form-validations:/srv/spirit-form-validations/:delegated
       # If you develop on Mac or Windows you can remove the node_modules/ directory
