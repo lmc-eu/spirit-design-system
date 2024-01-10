@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
+        {/* @ts-expect-error -- JSX element type 'Icon' does not have any construct or call signatures. */}
         <Icon name="warning" />
       </DocsSection>
     </IconsProvider>
