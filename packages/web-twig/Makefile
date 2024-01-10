@@ -79,9 +79,39 @@ endif
 encore-install: ## Install demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
 
-encore-link: ## Link demo dependencies
-	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-web && cd /srv/spirit-form-validations && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-form-validations && cd /srv/spirit-demo && yarn link && cd /srv/spirit-web-twig-demo && yarn link @lmc-eu/spirit-demo"
+## Every time you create a new package and use it in the demo, you need to link it here.
+## This is because the demo is not using the packages from npm, but from the local filesystem.
+## It ensures that the demo is always using the latest version of the package.
+## Thus the realtime local development is possible.
 
+encore-link: ## Link demo dependencies
+	cd $(APP_DOCKER_DIR) && \
+		$(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) sh -c "cd /srv/spirit-web && \
+		yarn link && \
+		cd /srv/spirit-web-twig-demo && \
+		yarn link @lmc-eu/spirit-web && \
+		\
+		cd /srv/spirit-form-validations && \
+		yarn link && \
+		cd /srv/spirit-web-twig-demo && \
+		yarn link @lmc-eu/spirit-form-validations && \
+		\
+		cd /srv/spirit-demo && \
+		yarn link && \
+		cd /srv/spirit-web-twig-demo && \
+		yarn link @lmc-eu/spirit-demo && \
+		\
+		cd /srv/spirit-design-tokens && \
+		yarn link && \
+		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-web && \
+		yarn link @lmc-eu/spirit-design-tokens && \
+		\
+		cd /srv/spirit-common && \
+		yarn link && \
+		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-web && \
+		yarn link @lmc-eu/spirit-common && \
+		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-form-validations && \
+		yarn link @lmc-eu/spirit-common"
 encore-build: ## Build demo assets
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn build
 
