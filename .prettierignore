@@ -25,3 +25,6 @@ packages/**/*.hbs
 # PHP vendor files
 **/vendor
 **/vendor/**
+
+# Narwal NX files (cache etc.)
+.nx
