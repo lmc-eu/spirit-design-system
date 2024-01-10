@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
+// eslint-disable-next-line import/extensions, import/no-unresolved
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
+import CheckboxItem from './CheckboxItem';
 import ItemDefault from './ItemDefault';
-import ItemSelected from './ItemSelected';
 import ItemDisabled from './ItemDisabled';
 import ItemHelperText from './ItemHelperText';
 import ItemIcon from './ItemIcon';
-import CheckboxItem from './CheckboxItem';
+import ItemSelected from './ItemSelected';
 import RadioItem from './RadioItem';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
