@@ -8,8 +8,8 @@ services:
       target: app_php_dev
     volumes:
       - ./../:/srv/spirit-web-twig-demo/:delegated
-      - ./../../../packages/web-twig:/srv/spirit-web-twig-bundle/:delegated
       - ./../../../packages/icons/dist/svg/:/srv/spirit-web-twig-bundle/static/:delegated
+      - ./../../../packages/web-twig:/srv/spirit-web-twig-bundle/:delegated
       - ./../docker/php/conf.d/app.dev.ini:/usr/local/etc/php/conf.d/app.dev.ini:ro
       # If you develop on Mac or Windows you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
@@ -29,11 +29,11 @@ services:
     #   - '${DEV_SERVER_PORT:-8080}:8080'
     volumes:
       - ./../:/srv/spirit-web-twig-demo/:delegated
-      - ./../../../packages/web:/srv/spirit-web/:delegated
       - ./../../../packages/common:/srv/spirit-common/:delegated
-      - ./../../../packages/design-tokens:/srv/spirit-design-tokens/:delegated
       - ./../../../packages/demo:/srv/spirit-demo/:delegated
+      - ./../../../packages/design-tokens:/srv/spirit-design-tokens/:delegated
       - ./../../../packages/form-validations:/srv/spirit-form-validations/:delegated
+      - ./../../../packages/web:/srv/spirit-web/:delegated
       # If you develop on Mac or Windows you can remove the node_modules/ directory
       #  from the bind-mount for better performance by enabling the next line:
       - /srv/spirit-web-twig-demo/node_modules
