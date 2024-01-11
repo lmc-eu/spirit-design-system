@@ -247,7 +247,7 @@ There are four types of validation errors that have their default validation tex
 You can customize those validation texts using `data-spirit-message-*` that is passed to the components' root element.
 
 ```html
-<div class="FileUploaderInput has-danger" data-spirit-element="wrapper" data-spirit-message-maxfilesize="Too big file!">
+<div class="FileUploaderInput has-danger" data-spirit-element="wrapper" data-spirit-message-maxfilesize="File too big!">
   <!-- … -->
 </div>
 ```

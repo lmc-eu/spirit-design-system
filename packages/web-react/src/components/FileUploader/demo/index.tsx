@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom/client';
 // @ts-ignore: No declaration file
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import DocsSection from '../../../../docs/DocsSections';
-import DocsFormFieldGrid from '../../../../docs/DocsFormFieldGrid';
 import { IconsProvider } from '../../../context';
 import FileUploaderDefault from './FileUploaderDefault';
 import FileUploaderInputMultiple from './FileUploaderInputMultiple';
@@ -39,9 +38,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <FileUploaderInputMultipleWithFileQueueBehaviorControl />
       </DocsSection>
       <DocsSection title="Input Validation States">
-        <DocsFormFieldGrid>
-          <FileUploaderInputValidationStates />
-        </DocsFormFieldGrid>
+        <FileUploaderInputValidationStates />
       </DocsSection>
       <DocsSection title="Input Disabled">
         <FileUploaderInputDisabled />
@@ -59,9 +56,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <FileUploaderMetaData />
       </DocsSection>
       <DocsSection title="Input with Attachment" tag="Visual demo only">
-        <DocsFormFieldGrid>
-          <FileUploaderInputWithAttachment />
-        </DocsFormFieldGrid>
+        <FileUploaderInputWithAttachment />
       </DocsSection>
       <DocsSection title="Dragging not Available" tag="Visual demo only">
         <FileUploaderDraggingNotAvailable />

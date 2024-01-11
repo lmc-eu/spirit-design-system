@@ -13,10 +13,10 @@ import AccordionOneItemOpenAtATime from './AccordionOneItemOpenAtATime';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Basic usage">
+      <DocsSection title="Basic Usage">
         <AccordionBasic />
       </DocsSection>
-      <DocsSection title="One item open at a time">
+      <DocsSection title="One Item Open at a Time">
         <AccordionOneItemOpenAtATime />
       </DocsSection>
     </IconsProvider>

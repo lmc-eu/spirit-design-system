@@ -61,12 +61,6 @@
     white-space: normal;
 }
 
-.docs-FormFieldGrid {
-    display: grid;
-    grid-template-columns: 25rem;
-    gap: 1.5rem;
-}
-
 @media (min-width: 768px) {
     .docs-TileLink {
         padding: 1.5rem;

@@ -22,11 +22,48 @@ const ScrollViewOverflowDecorators = () => (
       </ScrollView>
     </div>
 
-    <ScrollView direction="horizontal" overflowDecorators="both">
+    <ScrollView direction="horizontal" overflowDecorators="both" UNSAFE_className="mb-1000">
       <p className="py-700" style={{ whiteSpace: 'nowrap' }}>
         {HORIZONTAL_CONTENT}
       </p>
     </ScrollView>
+
+    <div className="mb-1000 px-700 py-600" style={{ height: '160px', color: 'white', backgroundColor: '#9400d3' }}>
+      <ScrollView
+        direction="vertical"
+        overflowDecorators="shadows"
+        data-spirit-toggle="scrollView"
+        UNSAFE_style={
+          {
+            '--scroll-view-start-shadow-background': 'linear-gradient(to bottom, #9400d3 0%, #9400d300 100%)',
+            '--scroll-view-end-shadow-background': 'linear-gradient(to top, #9400d3 0%, #9400d300 100%)',
+          } as React.CSSProperties
+        }
+      >
+        <p>{VERTICAL_CONTENT}</p>
+      </ScrollView>
+    </div>
+
+    <div
+      className="px-700 py-600"
+      style={{ width: '100%', overflow: 'hidden', color: 'white', backgroundColor: '#9400d3' }}
+    >
+      <ScrollView
+        direction="horizontal"
+        overflowDecorators="shadows"
+        data-spirit-toggle="scrollView"
+        UNSAFE_style={
+          {
+            '--scroll-view-start-shadow-background': 'linear-gradient(to right, #9400d3 0%, #9400d300 100%)',
+            '--scroll-view-end-shadow-background': 'linear-gradient(to left, #9400d3 0%, #9400d300 100%)',
+          } as React.CSSProperties
+        }
+      >
+        <p className="py-700" style={{ whiteSpace: 'nowrap' }}>
+          {HORIZONTAL_CONTENT}
+        </p>
+      </ScrollView>
+    </div>
   </>
 );
 

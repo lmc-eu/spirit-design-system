@@ -3,234 +3,251 @@
 <section class="docs-Section">
   <h2 class="docs-Heading">Input</h2>
 
-  <!-- FileUploader: start -->
-  <div id="example_1" class="FileUploader" data-spirit-toggle="fileUploader">
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div id="example_1" class="FileUploader" data-spirit-toggle="fileUploader">
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#file" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploader" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploader"
-        name="attachment1"
-        class="FileUploaderInput__input"
-        data-spirit-element="input"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploader" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploader" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploader"
+          name="attachment1"
+          class="FileUploaderInput__input"
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploader" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        </div>
       </div>
-    </div>
-    <!-- FileUploaderInput: end -->
+      <!-- FileUploaderInput: end -->
 
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-singleFile" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-singleFile" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-singleFile" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-singleFile" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
+    </div>
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">Input Multiple</h2>
 
-  <!-- FileUploader: start -->
-  <div id="example_multiple" class="FileUploader" data-spirit-toggle="fileUploader" data-spirit-message-maxfilesize="Too big file!">
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div
+      id="example_multiple"
+      class="FileUploader"
+      data-spirit-toggle="fileUploader"
+      data-spirit-message-maxfilesize="File too big!"
+    >
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#file" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploaderMultiple" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploaderMultiple"
-        name="attachment2"
-        class="FileUploaderInput__input"
-        multiple
-        data-spirit-element="input"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderMultiple" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploaderMultiple" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderMultiple"
+          name="attachment2"
+          class="FileUploaderInput__input"
+          multiple
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploaderMultiple" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+        </div>
       </div>
-    </div>
-    <!-- FileUploaderInput: end -->
+      <!-- FileUploaderInput: end -->
 
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-multipleFile" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-multipleFile" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-multipleFile" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-multipleFile" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
+    </div>
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">Input Multiple with Validation</h2>
 
-  <!-- FileUploader: start -->
-  <div id="example_multipleWithAccept" class="FileUploader" data-spirit-toggle="fileUploader">
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div id="example_multipleWithAccept" class="FileUploader" data-spirit-toggle="fileUploader">
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#file" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploaderMultipleWithAccept" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploaderMultipleWithAccept"
-        name="attachment3"
-        class="FileUploaderInput__input"
-        multiple
-        data-spirit-element="input"
-        accept=".png,image/jpeg"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderMultipleWithAccept" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">
-          Only JPG and PNG images are allowed. Max size of each file is 10 MB
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploaderMultipleWithAccept" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderMultipleWithAccept"
+          name="attachment3"
+          class="FileUploaderInput__input"
+          multiple
+          data-spirit-element="input"
+          accept=".png,image/jpeg"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploaderMultipleWithAccept" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">
+            Only JPG and PNG images are allowed. Max size of each file is 10 MB
+          </div>
         </div>
       </div>
-    </div>
-    <!-- FileUploaderInput: end -->
+      <!-- FileUploaderInput: end -->
 
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-multipleWithAccept" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-multipleWithAccept" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-multipleWithAccept" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-multipleWithAccept" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
+    </div>
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">Input Multiple with File Queue Behavior Control</h2>
 
-  <!-- FileUploader: start -->
-  <div id="example_exampleWithDismissible" class="FileUploader" data-spirit-toggle="fileUploader">
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div id="example_exampleWithDismissible" class="FileUploader" data-spirit-toggle="fileUploader">
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#file" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-    <!-- FileUploaderInput: start -->
-    <div
-      class="FileUploaderInput"
-      data-spirit-element="wrapper"
-      data-spirit-file-queue-limit="2"
-      data-spirit-queue-limit-behavior="hide"
-    >
-      <label for="fileUploaderWithDismissible" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploaderWithDismissible"
-        name="attachment1"
-        class="FileUploaderInput__input"
-        multiple
-        data-spirit-element="input"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderWithDismissible" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+      <!-- FileUploaderInput: start -->
+      <div
+        class="FileUploaderInput"
+        data-spirit-element="wrapper"
+        data-spirit-file-queue-limit="2"
+        data-spirit-queue-limit-behavior="hide"
+      >
+        <label for="fileUploaderWithDismissible" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderWithDismissible"
+          name="attachment1"
+          class="FileUploaderInput__input"
+          multiple
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploaderWithDismissible" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+        </div>
       </div>
-    </div>
-    <!-- FileUploaderInput: end -->
+      <!-- FileUploaderInput: end -->
 
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-multipleWithFileQueueBehavior" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-multipleWithFileQueueBehavior" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-multipleWithFileQueueBehavior" hidden>Attachments</h3>
+      <ul
+        class="FileUploaderList"
+        aria-labelledby="attachments-multipleWithFileQueueBehavior"
+        data-spirit-element="list"
+      ></ul>
+      <!-- FileUploaderList: end -->
+    </div>
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">Input Validation States</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
     <!-- FileUploader: start -->
     <div class="FileUploader" data-spirit-toggle="fileUploader">
       <!-- FileUploaderAttachment template: start -->
@@ -254,7 +271,9 @@
 
       <!-- FileUploaderInput: start -->
       <div class="FileUploaderInput FileUploaderInput--success" data-spirit-element="wrapper">
-        <label for="fileUploaderSuccess" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <label for="fileUploaderSuccess" class="FileUploaderInput__label FileUploaderInput__label--required"
+          >Label</label
+        >
         <input
           type="file"
           id="fileUploaderSuccess"
@@ -307,7 +326,9 @@
 
       <!-- FileUploaderInput: start -->
       <div class="FileUploaderInput FileUploaderInput--warning" data-spirit-element="wrapper">
-        <label for="fileUploaderWarning" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <label for="fileUploaderWarning" class="FileUploaderInput__label FileUploaderInput__label--required"
+          >Label</label
+        >
         <input
           type="file"
           id="fileUploaderWarning"
@@ -360,7 +381,9 @@
 
       <!-- FileUploaderInput: start -->
       <div class="FileUploaderInput FileUploaderInput--danger" data-spirit-element="wrapper">
-        <label for="fileUploaderDanger" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+        <label for="fileUploaderDanger" class="FileUploaderInput__label FileUploaderInput__label--required"
+          >Label</label
+        >
         <input
           type="file"
           id="fileUploaderDanger"
@@ -397,7 +420,7 @@
 <section class="docs-Section">
   <h2 class="docs-Heading">Input Disabled</h2>
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
     <!-- FileUploader: start -->
     <div class="FileUploader" data-spirit-toggle="fileUploader">
       <!-- FileUploaderAttachment template: start -->
@@ -462,196 +485,196 @@
 
   <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
-  <!-- FileUploader: start -->
-  <div class="FileUploader">
-
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-examples" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-examples" data-spirit-element="list">
-
-      <!-- FileUploaderAttachment: start -->
-      <li class="FileUploaderAttachment">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate">Document.pdf</span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action">
-          <span class="accessibility-hidden">Remove</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-examples" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-examples" data-spirit-element="list">
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#file" />
           </svg>
-        </button>
-      </li>
-      <!-- FileUploaderAttachment: end -->
-
-      <!-- FileUploaderAttachment: start -->
-      <li class="FileUploaderAttachment">
-        <span class="FileUploaderAttachment__image">
-          <img src="https://picsum.photos/id/823/162/162" alt="Image with a long name.jpg" />
-        </span>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate">Image with a long name.jpg</span>
-        </span>
-        <span class="FileUploaderAttachment__slot">
-
-          <!-- Slot content: start -->
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate">Document.pdf</span>
+          </span>
           <button type="button" class="FileUploaderAttachment__action">
-            <span class="accessibility-hidden">Edit</span>
+            <span class="accessibility-hidden">Remove</span>
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#edit" />
+              <use xlink:href="/icons/svg/sprite.svg#close" />
             </svg>
           </button>
-          <!-- Slot content: end -->
+        </li>
+        <!-- FileUploaderAttachment: end -->
 
-        </span>
-        <button type="button" class="FileUploaderAttachment__action">
-          <span class="accessibility-hidden">Remove</span>
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-        </button>
-      </li>
-      <!-- FileUploaderAttachment: end -->
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <span class="FileUploaderAttachment__image">
+            <img src="https://picsum.photos/id/823/162/162" alt="Image with a long name.jpg" />
+          </span>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate">Image with a long name.jpg</span>
+          </span>
+          <span class="FileUploaderAttachment__slot">
+            <!-- Slot content: start -->
+            <button type="button" class="FileUploaderAttachment__action">
+              <span class="accessibility-hidden">Edit</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#edit" />
+              </svg>
+            </button>
+            <!-- Slot content: end -->
+          </span>
+          <button type="button" class="FileUploaderAttachment__action">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
 
-      <!-- FileUploaderAttachment: start -->
-      <li class="FileUploaderAttachment">
-        <span class="FileUploaderAttachment__image">
-          <img src="https://picsum.photos/id/823/130/162" alt="Contained image" style="--file-uploader-attachment-image-object-fit: contain;" />
-        </span>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate">Contained image</span>
-        </span>
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <span class="FileUploaderAttachment__image">
+            <img
+              src="https://picsum.photos/id/823/130/162"
+              alt="Contained image"
+              style="--file-uploader-attachment-image-object-fit: contain"
+            />
+          </span>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate">Contained image</span>
+          </span>
 
-        <button type="button" class="FileUploaderAttachment__action">
-          <span class="accessibility-hidden">Remove</span>
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-        </button>
-      </li>
-      <!-- FileUploaderAttachment: end -->
-
-    </ul>
-    <!-- FileUploaderList: end -->
-
+          <button type="button" class="FileUploaderAttachment__action">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
+      </ul>
+      <!-- FileUploaderList: end -->
+    </div>
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
-
 </section>
 
 <section class="docs-Section">
   <h2 class="docs-Heading">Attachment with Image Preview</h2>
 
-  <!-- Modal: start -->
-  <dialog id="example_image_preview" class="Modal" aria-labelledby="example_image_preview">
-
-    <!-- ModalDialog: start -->
-    <div class="ModalDialog ModalDialog--expandOnMobile">
-
-      <!-- ModalBody: start -->
-      <div class="ModalBody">
-        <div class="pt-400 pt-tablet-600" data-example-content>
-          <!-- here will be an image -->
+  <div class="docs-Stack docs-Stack--start">
+    <!-- Modal: start -->
+    <dialog id="example_image_preview" class="Modal" aria-labelledby="example_image_preview">
+      <!-- ModalDialog: start -->
+      <div class="ModalDialog ModalDialog--expandOnMobile">
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <div class="pt-400 pt-tablet-600" data-example-content>
+            <!-- here will be an image -->
+          </div>
         </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-target="#example_image_preview"
+              data-spirit-dismiss="modal"
+            >
+              Confirm
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-target="#example_image_preview"
+              data-element="cancel"
+            >
+              Cancel
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
       </div>
-      <!-- ModalBody: end -->
+      <!-- ModalDialog: end -->
+    </dialog>
+    <!-- Modal: end -->
 
-      <!-- ModalFooter: start -->
-      <footer class="ModalFooter ModalFooter--right">
-        <div class="ModalFooter__actions">
-          <button
-            type="button"
-            class="Button Button--primary Button--medium"
-            data-spirit-target="#example_image_preview"
-            data-spirit-dismiss="modal"
-          >
-            Confirm
-          </button>
-          <button
-            type="button"
-            class="Button Button--secondary Button--medium"
-            data-spirit-target="#example_image_preview"
-            data-element="cancel"
-          >
-            Cancel
-          </button>
-        </div>
-      </footer>
-      <!-- ModalFooter: end -->
-
-    </div>
-    <!-- ModalDialog: end -->
-
-  </dialog>
-  <!-- Modal: end -->
-
-  <!-- FileUploader: start -->
-  <div id="example_customImagePreview" class="FileUploader" data-spirit-toggle="fileUploader">
-
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
-        <span class="FileUploaderAttachment__image">
-          <img src="" width="54" height="54" alt="" />
-        </span>
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <span class="FileUploaderAttachment__slot">
-
-          <!-- Slot content: start -->
-          <button type="button" class="FileUploaderAttachment__action" data-element="example-action">
-            <span class="accessibility-hidden">Edit</span>
+    <!-- FileUploader: start -->
+    <div id="example_customImagePreview" class="FileUploader" data-spirit-toggle="fileUploader">
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
+          <span class="FileUploaderAttachment__image">
+            <img src="" width="54" height="54" alt="" />
+          </span>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <span class="FileUploaderAttachment__slot">
+            <!-- Slot content: start -->
+            <button type="button" class="FileUploaderAttachment__action" data-element="example-action">
+              <span class="accessibility-hidden">Edit</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#edit" />
+              </svg>
+            </button>
+            <!-- Slot content: end -->
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#edit" />
+              <use xlink:href="/icons/svg/sprite.svg#close" />
             </svg>
           </button>
-          <!-- Slot content: end -->
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploaderWithImagePreview" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderWithImagePreview"
+          name="attachment12"
+          class="FileUploaderInput__input"
+          multiple
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
-
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploaderWithImagePreview" class="FileUploaderInput__label">Label</label>
-      <input type="file" id="fileUploaderWithImagePreview" name="attachment12" class="FileUploaderInput__input" multiple data-spirit-element="input" />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderWithImagePreview" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+          <label for="fileUploaderWithImagePreview" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+        </div>
       </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-customImagePreview" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list"></ul>
+      <!-- FileUploaderList: end -->
     </div>
-    <!-- FileUploaderInput: end -->
-
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-customImagePreview" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-customImagePreview" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
-
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 
   <script type="module">
-    import Modal from '../../../js/Modal'
-    import FileUploader from '../../../js/FileUploader'
+    import Modal from '../../../js/Modal';
+    import FileUploader from '../../../js/FileUploader';
 
     window.addEventListener('DOMContentLoaded', () => {
       let file;
@@ -665,7 +688,7 @@
       const isFileImage = (file) => file.type.split('/')[0] === 'image';
 
       const showModalPreview = (file) => {
-        if(isFileImage(file)) {
+        if (isFileImage(file)) {
           const reader = new FileReader();
 
           reader.readAsDataURL(file);
@@ -674,93 +697,100 @@
             localStorage.setItem('image', base64data);
             Content.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
             ModalInstance.show();
-          }
+          };
         }
-      }
+      };
 
       const removeFromQueue = () => {
         FileUploaderInstance.removeFromQueue(FileUploaderInstance.getUpdatedFileName(file.name));
         cleanup();
-      }
+      };
 
       const cleanup = () => {
         ModalInstance.hide();
         Content.innerHTML = '';
         file = undefined;
-      }
+      };
 
       cancelButton.addEventListener('click', removeFromQueue);
-      FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
+      FileUploaderElement.addEventListener('queuedFile.fileUploader', (event) => {
         file = event.currentFile;
         showModalPreview(file);
       });
     });
-
   </script>
-
 </section>
 
 <section class="docs-Section">
   <h2 class="docs-Heading">Attachment with Custom Actions</h2>
 
-  <!-- FileUploader: start -->
-  <div id="example_customAttachmentActions" class="FileUploader" data-spirit-toggle="fileUploader">
-
-    <!-- FileUploaderAttachment template: start -->
-    <template data-spirit-snippet="item">
-      <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate" data-spirit-populate-field="name"></span>
-        </span>
-        <span class="FileUploaderAttachment__slot">
-
-          <!-- Slot content: start -->
-          <button type="button" class="FileUploaderAttachment__action" onclick="editHandler()">
-            <span class="accessibility-hidden">Edit</span>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div id="example_customAttachmentActions" class="FileUploader" data-spirit-toggle="fileUploader">
+      <!-- FileUploaderAttachment template: start -->
+      <template data-spirit-snippet="item">
+        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate" data-spirit-populate-field="name"></span>
+          </span>
+          <span class="FileUploaderAttachment__slot">
+            <!-- Slot content: start -->
+            <button type="button" class="FileUploaderAttachment__action" onclick="editHandler()">
+              <span class="accessibility-hidden">Edit</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#edit" />
+              </svg>
+            </button>
+            <!-- Slot content: end -->
+          </span>
+          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+            <span class="accessibility-hidden">Remove</span>
             <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#edit" />
+              <use xlink:href="/icons/svg/sprite.svg#close" />
             </svg>
           </button>
-          <!-- Slot content: end -->
+        </li>
+      </template>
+      <!-- FileUploaderAttachment template: end -->
 
-        </span>
-        <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-          <span class="accessibility-hidden">Remove</span>
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploaderWithCustomAttachmentActions" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderWithCustomAttachmentActions"
+          name="attachment2"
+          class="FileUploaderInput__input"
+          multiple
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
           <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
           </svg>
-        </button>
-      </li>
-    </template>
-    <!-- FileUploaderAttachment template: end -->
-
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploaderWithCustomAttachmentActions" class="FileUploaderInput__label">Label</label>
-      <input type="file" id="fileUploaderWithCustomAttachmentActions" name="attachment2" class="FileUploaderInput__input" multiple data-spirit-element="input" />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderWithCustomAttachmentActions" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+          <label for="fileUploaderWithCustomAttachmentActions" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file(s)</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max size of each file is 10 MB</div>
+        </div>
       </div>
+      <!-- FileUploaderInput: end -->
+
+      <!-- FileUploaderList: start -->
+      <h3 id="attachments-customAttachmentActions" hidden>Attachments</h3>
+      <ul
+        class="FileUploaderList"
+        aria-labelledby="attachments-customAttachmentActions"
+        data-spirit-element="list"
+      ></ul>
+      <!-- FileUploaderList: end -->
     </div>
-    <!-- FileUploaderInput: end -->
-
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-customAttachmentActions" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-customAttachmentActions" data-spirit-element="list"></ul>
-    <!-- FileUploaderList: end -->
-
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
 
   <!-- Example custom action functionality: start -->
   <script>
@@ -769,20 +799,16 @@
     };
   </script>
   <!-- Example custom action functionality: end -->
-
 </section>
 
 <section class="docs-Section">
   <h2 class="docs-Heading">FileUploader with Meta Data</h2>
 
   <div class="docs-Stack docs-Stack--start">
-
     <!-- Modal: start -->
     <dialog id="example_modal_data" class="Modal" aria-labelledby="example_modal_data">
-
       <!-- ModalDialog: start -->
       <div class="ModalDialog ModalDialog--expandOnMobile">
-
         <!-- ModalBody: start -->
         <div class="ModalBody">
           <div class="pt-400 pt-tablet-600" data-example-content>
@@ -813,16 +839,13 @@
           </div>
         </footer>
         <!-- ModalFooter: end -->
-
       </div>
       <!-- ModalDialog: end -->
-
     </dialog>
     <!-- Modal: end -->
 
     <!-- FileUploader: start -->
     <div id="example_customMetaData" class="FileUploader" data-spirit-toggle="fileUploader">
-
       <!-- FileUploaderAttachment template: start -->
       <template data-spirit-snippet="item">
         <li class="FileUploaderAttachment" data-spirit-populate-field="item" data-spirit-imagePreview="true">
@@ -836,7 +859,6 @@
             <span class="text-truncate" data-spirit-populate-field="name"></span>
           </span>
           <span class="FileUploaderAttachment__slot">
-
             <!-- Slot content: start -->
             <button type="button" class="FileUploaderAttachment__action" onclick="moduleFunctions.customEdit(event)">
               <span class="accessibility-hidden">Edit</span>
@@ -845,7 +867,6 @@
               </svg>
             </button>
             <!-- Slot content: end -->
-
           </span>
           <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
             <span class="accessibility-hidden">Remove</span>
@@ -858,9 +879,20 @@
       <!-- FileUploaderAttachment template: end -->
 
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="1" data-spirit-queue-limit-behavior="disable" >
+      <div
+        class="FileUploaderInput"
+        data-spirit-element="wrapper"
+        data-spirit-file-queue-limit="1"
+        data-spirit-queue-limit-behavior="disable"
+      >
         <label for="fileUploaderWithMetaData" class="FileUploaderInput__label">Label</label>
-        <input type="file" id="fileUploaderWithMetaData" name="attachmentMetaData" class="FileUploaderInput__input" data-spirit-element="input" />
+        <input
+          type="file"
+          id="fileUploaderWithMetaData"
+          name="attachmentMetaData"
+          class="FileUploaderInput__input"
+          data-spirit-element="input"
+        />
         <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
           <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#upload" />
@@ -876,18 +908,22 @@
 
       <!-- FileUploaderList: start -->
       <h3 id="attachments-fileUploaderWithMetaData" hidden>Attachments</h3>
-      <ul class="FileUploaderList" id="FileUploaderListWithMetaData" aria-labelledby="attachments-fileUploaderWithMetaData" data-spirit-element="list"></ul>
+      <ul
+        class="FileUploaderList"
+        id="FileUploaderListWithMetaData"
+        aria-labelledby="attachments-fileUploaderWithMetaData"
+        data-spirit-element="list"
+      ></ul>
       <!-- FileUploaderList: end -->
-
     </div>
     <!-- FileUploader: end -->
     <script>
-      const moduleFunctions = {}
+      const moduleFunctions = {};
     </script>
 
     <script type="module">
-      import Modal from '../../../js/Modal'
-      import FileUploader from '../../../js/FileUploader'
+      import Modal from '../../../js/Modal';
+      import FileUploader from '../../../js/FileUploader';
 
       window.addEventListener('DOMContentLoaded', () => {
         let file;
@@ -925,7 +961,7 @@
           if (!meta) {
             metaInput && metaInput.remove();
           }
-        }
+        };
 
         const callbackOnDismiss = (key) => {
           document.querySelector(`input[name="attachments_${key}_meta"]`)?.remove();
@@ -934,7 +970,7 @@
         // custom functions
 
         const customAddToQueue = (file, meta) => {
-          if(isFileImage(file)) {
+          if (isFileImage(file)) {
             const reader = new FileReader();
 
             reader.readAsDataURL(file);
@@ -943,37 +979,44 @@
               localStorage.setItem('image', base64data);
               Content.innerHTML = `<img src="${base64data}" style="width: 100%; height: auto" alt="${file.name}" />`;
               ModalInstance.show();
-            }
+            };
           }
 
-          FileUploaderInstance.updateQueue(FileUploaderInstance.getUpdatedFileName(file.name), file, meta, updateQueueCallback);
-        }
+          FileUploaderInstance.updateQueue(
+            FileUploaderInstance.getUpdatedFileName(file.name),
+            file,
+            meta,
+            updateQueueCallback,
+          );
+        };
 
         const customEdit = (event) => {
-          const key = event.target.closest('li').id
-          const newMeta = toggleMetaData ? { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 } : { x: 22, y: 0, cropWidth: 110, cropHeight: 100, originalWidth: 560, originalHeight: 330 };
+          const key = event.target.closest('li').id;
+          const newMeta = toggleMetaData
+            ? { x: 30, y: 30, cropWidth: 150, cropHeight: 150, originalWidth: 560, originalHeight: 330 }
+            : { x: 22, y: 0, cropWidth: 110, cropHeight: 100, originalWidth: 560, originalHeight: 330 };
           toggleMetaData = !toggleMetaData;
           const file = FileUploaderInstance.getFileFromQueue(key).file;
           FileUploaderInstance.updateQueue(key, file, newMeta, updateQueueCallback);
-        }
-        moduleFunctions.customEdit = customEdit
+        };
+        moduleFunctions.customEdit = customEdit;
 
         // modal functions
 
         const removeFromQueue = () => {
           FileUploaderInstance.removeFromQueue(FileUploaderInstance.getUpdatedFileName(file.name));
           cleanup();
-        }
+        };
 
         const cleanup = () => {
           ModalInstance.hide();
           Content.innerHTML = '';
           file = undefined;
-        }
+        };
 
         CancelButton.addEventListener('click', removeFromQueue);
 
-        FileUploaderElement.addEventListener('queuedFile.fileUploader', event => {
+        FileUploaderElement.addEventListener('queuedFile.fileUploader', (event) => {
           file = event.currentFile;
 
           customAddToQueue(file);
@@ -987,11 +1030,8 @@
           customEdit(event.currentFile);
         });
       });
-
     </script>
-
   </div>
-
 </section>
 
 <section class="docs-Section">
@@ -1002,10 +1042,9 @@
 
   <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
-  <div class="docs-FormFieldGrid">
+  <div class="docs-Stack docs-Stack--start">
     <!-- FileUploader: start -->
     <div class="FileUploader">
-
       <!-- FileUploaderInput: start -->
       <div class="FileUploaderInput has-drag-and-drop" data-spirit-element="wrapper">
         <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
@@ -1057,7 +1096,6 @@
 
     <!-- FileUploader: start -->
     <div class="FileUploader">
-
       <!-- FileUploaderInput: start -->
       <div class="FileUploaderInput FileUploaderInput--danger has-drag-and-drop" data-spirit-element="wrapper">
         <label for="fileUploaderWithAttachmentsAndValidation" class="FileUploaderInput__label">Label</label>
@@ -1134,33 +1172,34 @@
 
   <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
-  <!-- FileUploader: start -->
-  <div class="FileUploader">
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput" data-spirit-element="wrapper">
-      <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploaderNotDraggable"
-        name="attachment8"
-        class="FileUploaderInput__input"
-        data-spirit-element="input"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderWithAttachments" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+  <div class="docs-Stack docs-Stack--start">
+    <!-- FileUploader: start -->
+    <div class="FileUploader">
+      <!-- FileUploaderInput: start -->
+      <div class="FileUploaderInput" data-spirit-element="wrapper">
+        <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderNotDraggable"
+          name="attachment8"
+          class="FileUploaderInput__input"
+          data-spirit-element="input"
+        />
+        <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#upload" />
+          </svg>
+          <label for="fileUploaderWithAttachments" class="FileUploaderInput__dropZoneLabel">
+            <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+            <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+          </label>
+          <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+        </div>
       </div>
+      <!-- FileUploaderInput: end -->
     </div>
-    <!-- FileUploaderInput: end -->
+    <!-- FileUploader: end -->
   </div>
-  <!-- FileUploader: end -->
-
 </section>
 <section class="docs-Section">
   <h2 class="docs-Heading">
@@ -1170,93 +1209,24 @@
 
   <!-- ⚠️ VISUAL EXAMPLE ONLY, DO NOT COPY-PASTE -->
 
-  <!-- FileUploader: start -->
-  <div class="FileUploader FileUploader--fluid">
-
-    <!-- FileUploaderInput: start -->
-    <div class="FileUploaderInput has-drag-and-drop" data-spirit-element="wrapper">
-      <label for="fileUploaderFluid" class="FileUploaderInput__label">Label</label>
-      <input
-        type="file"
-        id="fileUploaderFluid"
-        name="attachment9"
-        class="FileUploaderInput__input"
-        data-spirit-element="input"
-      />
-      <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#upload" />
-        </svg>
-        <label for="fileUploaderFluid" class="FileUploaderInput__dropZoneLabel">
-          <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
-          <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
-        </label>
-        <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
-      </div>
-    </div>
-    <!-- FileUploaderInput: end -->
-
-    <!-- FileUploaderList: start -->
-    <h3 id="attachments-fileUploadFluid" hidden>Attachments</h3>
-    <ul class="FileUploaderList" aria-labelledby="attachments-fileUploadFluid" data-spirit-element="list">
-      <!-- FileUploaderAttachment: start -->
-      <li class="FileUploaderAttachment">
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#file" />
-        </svg>
-        <span class="FileUploaderAttachment__name">
-          <span class="text-truncate">My resume.docx</span>
-        </span>
-        <button type="button" class="FileUploaderAttachment__action">
-          <span class="accessibility-hidden">Remove</span>
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#close" />
-          </svg>
-        </button>
-      </li>
-      <!-- FileUploaderAttachment: end -->
-    </ul>
-    <!-- FileUploaderList: end -->
-  </div>
-  <!-- FileUploader: end -->
-
-</section>
-<section class="docs-Section">
-  <h2 class="docs-Heading">Example of JS-Controlled Form</h2>
-
-  <form name="example" id="form-example" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="hiddenField" value="hidden field value" />
-
+  <div class="docs-Stack docs-Stack--start">
     <!-- FileUploader: start -->
-    <div id="example-composition" class="FileUploader" data-spirit-toggle="fileUploader">
-      <!-- FileUploaderAttachment template: start -->
-      <template data-spirit-snippet="item">
-        <li class="FileUploaderAttachment" data-spirit-populate-field="item">
-          <svg width="24" height="24" aria-hidden="true">
-            <use xlink:href="/icons/svg/sprite.svg#file" />
-          </svg>
-          <span class="FileUploaderAttachment__name">
-            <span class="text-truncate" data-spirit-populate-field="name"></span>
-          </span>
-          <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
-            <span class="accessibility-hidden">Remove</span>
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-          </button>
-        </li>
-      </template>
-      <!-- FileUploaderAttachment template: end -->
-
+    <div class="FileUploader FileUploader--fluid">
       <!-- FileUploaderInput: start -->
-      <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2">
-        <label for="fileUploadInForm" class="FileUploaderInput__label">Label</label>
-        <input type="file" id="fileUploadInForm" name="attachment10" class="FileUploaderInput__input" multiple data-spirit-element="input" />
+      <div class="FileUploaderInput has-drag-and-drop" data-spirit-element="wrapper">
+        <label for="fileUploaderFluid" class="FileUploaderInput__label">Label</label>
+        <input
+          type="file"
+          id="fileUploaderFluid"
+          name="attachment9"
+          class="FileUploaderInput__input"
+          data-spirit-element="input"
+        />
         <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
           <svg width="24" height="24" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#upload" />
           </svg>
-          <label for="fileUploaderInForm" class="FileUploaderInput__dropZoneLabel">
+          <label for="fileUploaderFluid" class="FileUploaderInput__dropZoneLabel">
             <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
             <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
           </label>
@@ -1266,16 +1236,94 @@
       <!-- FileUploaderInput: end -->
 
       <!-- FileUploaderList: start -->
-      <h3 id="attachments-composition" hidden>Attachments</h3>
-      <ul class="FileUploaderList" aria-labelledby="attachments-composition" data-spirit-element="list"></ul>
+      <h3 id="attachments-fileUploadFluid" hidden>Attachments</h3>
+      <ul class="FileUploaderList" aria-labelledby="attachments-fileUploadFluid" data-spirit-element="list">
+        <!-- FileUploaderAttachment: start -->
+        <li class="FileUploaderAttachment">
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#file" />
+          </svg>
+          <span class="FileUploaderAttachment__name">
+            <span class="text-truncate">My resume.docx</span>
+          </span>
+          <button type="button" class="FileUploaderAttachment__action">
+            <span class="accessibility-hidden">Remove</span>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+          </button>
+        </li>
+        <!-- FileUploaderAttachment: end -->
+      </ul>
       <!-- FileUploaderList: end -->
     </div>
     <!-- FileUploader: end -->
+  </div>
+</section>
+<section class="docs-Section">
+  <h2 class="docs-Heading">Example of JS-Controlled Form</h2>
 
-    <div class="mt-600">
-      <button type="submit" class="Button Button--primary Button--medium">Submit me</button>
-    </div>
-  </form>
+  <div class="docs-Stack docs-Stack--start">
+    <form name="example" id="form-example" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="hiddenField" value="hidden field value" />
+
+      <!-- FileUploader: start -->
+      <div id="example-composition" class="FileUploader" data-spirit-toggle="fileUploader">
+        <!-- FileUploaderAttachment template: start -->
+        <template data-spirit-snippet="item">
+          <li class="FileUploaderAttachment" data-spirit-populate-field="item">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#file" />
+            </svg>
+            <span class="FileUploaderAttachment__name">
+              <span class="text-truncate" data-spirit-populate-field="name"></span>
+            </span>
+            <button type="button" class="FileUploaderAttachment__action" data-spirit-populate-field="button">
+              <span class="accessibility-hidden">Remove</span>
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#close" />
+              </svg>
+            </button>
+          </li>
+        </template>
+        <!-- FileUploaderAttachment template: end -->
+
+        <!-- FileUploaderInput: start -->
+        <div class="FileUploaderInput" data-spirit-element="wrapper" data-spirit-file-queue-limit="2">
+          <label for="fileUploadInForm" class="FileUploaderInput__label">Label</label>
+          <input
+            type="file"
+            id="fileUploadInForm"
+            name="attachment10"
+            class="FileUploaderInput__input"
+            multiple
+            data-spirit-element="input"
+          />
+          <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#upload" />
+            </svg>
+            <label for="fileUploaderInForm" class="FileUploaderInput__dropZoneLabel">
+              <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
+              <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
+            </label>
+            <div class="FileUploaderInput__helperText">Max file size is 10 MB</div>
+          </div>
+        </div>
+        <!-- FileUploaderInput: end -->
+
+        <!-- FileUploaderList: start -->
+        <h3 id="attachments-composition" hidden>Attachments</h3>
+        <ul class="FileUploaderList" aria-labelledby="attachments-composition" data-spirit-element="list"></ul>
+        <!-- FileUploaderList: end -->
+      </div>
+      <!-- FileUploader: end -->
+
+      <div class="mt-600">
+        <button type="submit" class="Button Button--primary Button--medium">Submit me</button>
+      </div>
+    </form>
+  </div>
 
   <script type="module">
     import FileUploader from '../../../js/FileUploader';
