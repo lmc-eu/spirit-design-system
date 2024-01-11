@@ -2,6 +2,17 @@
 
 {% block content %}
 
+    <script>
+        const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];
+
+        window.addEventListener('DOMContentLoaded', function () {
+            inputs.forEach(function (input) {
+                const checkbox = document.getElementById(input);
+                checkbox.indeterminate = true;
+            });
+        });
+    </script>
+
     <DocsSection title="Default">
         {% include '@components/Checkbox/stories/CheckboxDefault.twig' %}
     </DocsSection>
@@ -33,16 +44,5 @@
     <DocsSection title="Item">
         {% include '@components/Checkbox/stories/CheckboxItem.twig' %}
     </DocsSection>
-
-    <script>
-        const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];
-
-        window.addEventListener('DOMContentLoaded', function () {
-            inputs.forEach(function (input) {
-                const checkbox = document.getElementById(input);
-                checkbox.indeterminate = true;
-            });
-        });
-    </script>
 
 {% endblock %}

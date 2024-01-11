@@ -1,5 +1,16 @@
 {{#> layout/plain }}
 
+<script>
+  const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];
+
+  window.addEventListener('DOMContentLoaded', function () {
+    inputs.forEach(function (input) {
+      const checkbox = document.getElementById(input);
+      checkbox.indeterminate = true;
+    });
+  });
+</script>
+
 <section class="docs-Section">
   <h2 class="docs-Heading">Default</h2>
   <div class="docs-Stack docs-Stack--start">
@@ -205,19 +216,8 @@
         <span class="Checkbox__helperText">Helper text</span>
       </span>
     </label>
-    
+
   </div>
 </section>
-
-<script>
-  const inputs = ['checkboxIndeterminate', 'checkboxDisabledIndeterminate'];
-
-  window.addEventListener('DOMContentLoaded', function () {
-    inputs.forEach(function (input) {
-      const checkbox = document.getElementById(input);
-      checkbox.indeterminate = true;
-    });
-  });
-</script>
 
 {{/layout/plain }}
