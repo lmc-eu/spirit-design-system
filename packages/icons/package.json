@@ -16,14 +16,14 @@
     "prepare:react": "node ./scripts/prepareSvgReact.js",
     "build:svg": "node ./scripts/buildSvg.js",
     "build:clean": "shx rm -rf dist",
-    "build:prepare": "shx mkdir -p dist/svg dist/react dist/.tmp-svg",
+    "build:dist": "shx mkdir -p dist/svg dist/react dist/.tmp-svg",
     "build:copy": "shx cp -r package.json README.md dist/",
     "build:react": "svg2react-icon --typescript --no-sub-dir ./dist/.tmp-svg ./dist/react",
-    "build:react:clean": "shx rm -rf dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg",
+    "build:react:clean": "shx rm -rf 'dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg'",
     "build:const": "node ./scripts/buildConstants.js",
-    "prebuild": "npm-run-all build:clean build:prepare",
-    "build": "npm-run-all build:svg prepare:react build:react build:const",
-    "postbuild": "npm-run-all build:react:clean build:copy"
+    "build:prepare": "npm-run-all build:clean build:dist",
+    "build": "npm-run-all --serial build:prepare build:svg prepare:react build:react build:const build:finalize",
+    "build:finalize": "npm-run-all build:react:clean build:copy"
   },
   "devDependencies": {
     "jsdom": "22.1.0",

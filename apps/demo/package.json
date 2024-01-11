@@ -11,8 +11,8 @@
   },
   "scripts": {
     "icons:build": "shx mkdir -p public/icons && cd ../../packages/icons && yarn build && shx cp -r dist/. ../../static/assets/icons",
-    "prestart": "yarn icons:build",
-    "start": "vite --host --config config/vite/app.ts",
+    "start:prepare": "yarn icons:build",
+    "start": "yarn start:prepare && vite --host --config config/vite/app.ts",
     "build": "vite build --config config/vite/app.ts",
     "preview": "vite preview --config config/vite/app.ts"
   },
