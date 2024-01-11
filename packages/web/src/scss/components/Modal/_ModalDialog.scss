@@ -1,7 +1,10 @@
 // 1. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
-//    the tablet breakpoint.
+//    the tablet breakpoint. However, `top` and `bottom` are not transitioned when switching from and to `auto`.
 // 2. Use ScrollView's backdoor to fix its height inside ModalDialog in Safari.
 // 3. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
+// 4. Suppress bottom alignment of the docked variant and use the alignment variants of `.Modal` instead.
+// 5. Unfortunately, the open state cannot be part of the parent `-docked-modal-dialog()` mixin because it's not
+//    possible to generate selector for the feature class scenario.
 
 @use 'sass:map';
 @use '../../settings/feature-flags';
@@ -9,16 +12,50 @@
 @use '../../tools/typography';
 @use 'theme';
 
-@mixin -uniform-modal-dialog() {
-    --modal-translate-y: 50%;
+@mixin -modal-dialog() {
+    @include typography.generate(theme.$typography);
 
-    bottom: 50%;
-    width: theme.$dialog-uniform-width;
-    max-width: calc(100% - #{theme.$padding-x});
-    height: theme.$dialog-uniform-height;
-    max-height: theme.$dialog-uniform-max-height;
-    border-radius: theme.$dialog-border-radius;
-    transform-origin: center center;
+    --scroll-view-vertical-height: auto; // 2.
+
+    position: fixed;
+    top: var(--modal-top);
+    bottom: var(--modal-bottom);
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; // 3.
+    width: theme.$dialog-width;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: theme.$dialog-text-color;
+    background-color: theme.$dialog-background-color;
+    box-shadow: theme.$dialog-shadow;
+    transform: translate(var(--modal-translate-x), var(--modal-translate-y)) scale(var(--modal-scale));
+    overscroll-behavior: contain;
+    transform-origin: var(--modal-transform-origin);
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: bottom, width, height, max-height, border-radius, transform; // 1.
+        transition-duration: inherit;
+    }
+}
+
+@mixin -uniform-modal-dialog($from-breakpoint) {
+    @include breakpoint.up($from-breakpoint) {
+        // 4.
+        @if $from-breakpoint == 0 {
+            --modal-top: unset;
+            --modal-bottom: unset;
+            --modal-translate-y: unset;
+            --modal-transform-origin: unset;
+        }
+
+        width: theme.$dialog-uniform-width;
+        max-width: calc(100% - #{theme.$padding-x});
+        height: theme.$dialog-uniform-height;
+        max-height: theme.$dialog-uniform-max-height;
+        border-radius: theme.$dialog-border-radius;
+    }
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
         height: theme.$dialog-height-tablet;
@@ -32,15 +69,23 @@
 
 @mixin -docked-modal-dialog() {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-        --modal-translate-y: 0;
+        --modal-top: auto;
+        --modal-bottom: 0;
+        --modal-translate-y: #{theme.$transition-shift-distance};
+        --modal-transform-origin: bottom center;
 
-        bottom: 0;
         width: theme.$dialog-width;
         max-width: none;
         height: theme.$dialog-height;
         max-height: theme.$dialog-max-height;
         border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
-        transform-origin: bottom center;
+    }
+}
+
+@mixin -open-docked-modal-dialog() {
+    // 5.
+    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+        --modal-translate-y: 0;
     }
 }
 
@@ -51,54 +96,19 @@
 }
 
 .ModalDialog {
-    @include typography.generate(theme.$typography);
-
-    --scroll-view-vertical-height: auto; // 2.
-
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box; // 3.
-    width: theme.$dialog-width;
-    height: theme.$dialog-height;
-    max-height: theme.$dialog-max-height;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: theme.$dialog-text-color;
-    border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
-    background-color: theme.$dialog-background-color;
-    box-shadow: theme.$dialog-shadow;
-    transform: translate(var(--modal-translate-x), var(--modal-translate-y)) scale(var(--modal-scale));
-    transform-origin: bottom center;
-    overscroll-behavior: contain;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        bottom: 50%;
-        width: theme.$dialog-width-tablet;
-        max-width: calc(100% - #{theme.$padding-x-tablet});
-        height: theme.$dialog-height-tablet;
-        max-height: theme.$dialog-max-height-tablet;
-        border-radius: theme.$dialog-border-radius;
-        transform-origin: center center;
-    }
-
-    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-        width: theme.$dialog-width-desktop;
-    }
+    @include -modal-dialog();
 
     // @deprecated The "uniform" dialog variant is deprecated and will be removed in the next major release.
-    // Migration:
-    // 1. Remove the feature flag and make the uniform dialog the default.
-    // 2. Adjust transitions below.
+    // Migration: Remove the feature flag and make the uniform dialog the default.
     @if feature-flags.$modal-enable-uniform-dialog {
-        @include -uniform-modal-dialog();
-    }
+        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
+    } @else {
+        @include -docked-modal-dialog();
+        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, tablet));
 
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: bottom, width, border-radius, transform; // 1.
-        transition-duration: inherit;
+        [open] > & {
+            @include -open-docked-modal-dialog();
+        }
     }
 }
 
@@ -109,16 +119,24 @@
         @include -docked-modal-dialog();
     }
 
+    [open] > .ModalDialog--dockOnMobile {
+        @include -open-docked-modal-dialog();
+    }
+
     .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
         @include -expand-docked-modal-dialog();
     }
 } @else {
     .spirit-feature-modal-enable-uniform-dialog .ModalDialog {
-        @include -uniform-modal-dialog();
+        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
     }
 
     .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile {
         @include -docked-modal-dialog();
+    }
+
+    .spirit-feature-modal-enable-uniform-dialog [open] > .ModalDialog--dockOnMobile {
+        @include -open-docked-modal-dialog();
     }
 
     // stylelint-disable-next-line selector-max-class -- Only target the docked variant.
