@@ -30,9 +30,10 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "prebuild": "shx rm -rf dist && shx mkdir -p dist",
-    "build": "tsup --config ./config/tsup.config.ts",
-    "postbuild": "shx cp -r package.json README.md src/bin dist/ && node scripts/copyTransforms.js",
+    "build": "npm-run-all --serial build:prepare compile build:finalize",
+    "build:prepare": "shx rm -rf dist && shx mkdir -p dist",
+    "build:finalize": "shx cp -r package.json README.md src/bin dist/ && node scripts/copyTransforms.js",
+    "compile": "tsup --config ./config/tsup.config.ts",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
     "lint": "eslint ./",

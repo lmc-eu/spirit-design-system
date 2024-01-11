@@ -22,10 +22,10 @@
   "main": "cjs/index.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "prebuild": "yarn clean",
+    "build": "npm-run-all --serial build:prepare build:scss build:js",
+    "build:prepare": "yarn clean",
     "build:js": "vite build",
     "build:scss": "shx mkdir -p scss && shx cp -r src/scss/generated/* src/scss/@tokens.scss scss/",
-    "build": "npm-run-all -s build:scss build:js",
     "clean": "rimraf esm cjs umd scss types",
     "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
     "test": "yarn lint",
