@@ -20,6 +20,7 @@ This project uses `dictionaries` to unify props between different components.
 | Dictionary | Values                    | Code name  |
 | ---------- | ------------------------- | ---------- |
 | AlignmentX | `left`, `center`, `right` | AlignmentX |
+| AlignmentY | `top`, `center`, `bottom` | AlignmentY |
 
 ### Color
 

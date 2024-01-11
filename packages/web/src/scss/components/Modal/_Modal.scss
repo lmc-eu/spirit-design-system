@@ -3,6 +3,8 @@
 // 2. Use a `::before` pseudo-element instead of `::backdrop` to make fading possible.
 // 3. Clip overflow during transition on mobile screens.
 // 4. Restore text selection after `all: unset`.
+// 5. For alignments other than `top`, prefer the `bottom` CSS property to enable smooth transitions between the uniform
+//    and docked variants (see `_ModalDialog.scss`).
 
 @use 'sass:map';
 @use '../../tools/breakpoint';
@@ -11,7 +13,6 @@
 .Modal {
     --modal-scale: #{theme.$transition-scale-ratio};
     --modal-translate-x: -50%;
-    --modal-translate-y: #{theme.$transition-shift-distance};
 
     all: unset;
     position: fixed;
@@ -40,10 +41,6 @@
         opacity: 0;
     }
 
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        --modal-translate-y: 50%;
-    }
-
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$transition-duration;
@@ -53,6 +50,29 @@
             transition: inherit;
         }
     }
+}
+
+// 5.
+.Modal--center,
+.Modal:not(.Modal--top, .Modal--bottom) {
+    --modal-top: auto;
+    --modal-bottom: 50%;
+    --modal-translate-y: 50%;
+    --modal-transform-origin: center center;
+}
+
+.Modal--top {
+    --modal-top: #{theme.$padding-y};
+    --modal-bottom: auto;
+    --modal-translate-y: #{-1 * theme.$transition-shift-distance};
+    --modal-transform-origin: top center;
+}
+
+.Modal--bottom {
+    --modal-top: auto;
+    --modal-bottom: #{theme.$padding-y};
+    --modal-translate-y: #{theme.$transition-shift-distance};
+    --modal-transform-origin: bottom center;
 }
 
 .Modal[open] {
@@ -69,8 +89,9 @@
         visibility: visible;
         opacity: 1;
     }
+}
 
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        --modal-translate-y: 50%;
-    }
+.Modal--center[open],
+.Modal[open]:not(.Modal--top, .Modal--bottom) {
+    --modal-translate-y: 50%;
 }

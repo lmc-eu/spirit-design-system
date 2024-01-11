@@ -14,13 +14,30 @@ Modal establishes the top layer with a backdrop. Under the hood it uses the [`<d
 provides several accessibility advantages.
 
 ```html
-<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title">
+<dialog id="modal-example" class="Modal Modal--center" aria-labelledby="modal-example-title">
   <!-- ModalDialog -->
 </dialog>
 ```
 
 👉 Please note the `aria-labelledby` attribute is linked to the title inside [ModalHeader](#modalheader) and provides an
 accessible name for the dialog.
+
+### Vertical Alignment
+
+Modal can be aligned to the center (default), top, or bottom. These values come from the
+[alignment dictionary][dictionary-alignment]. Using a corresponding modifier class will align the modal accordingly:
+
+- `Modal--top`
+- `Modal--center` (default)
+- `Modal--bottom`
+
+Example:
+
+```html
+<dialog id="modal-example" class="Modal Modal--top" aria-labelledby="modal-example-title">
+  <!-- ModalDialog -->
+</dialog>
+```
 
 ### Custom Height
 
@@ -35,7 +52,7 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 ```html
 <dialog
   id="modal-example"
-  class="Modal"
+  class="Modal Modal--center"
   aria-labelledby="modal-example-title"
   style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
 >
@@ -55,7 +72,12 @@ The default maximum height of Modal is:
 You can use the custom property `--modal-max-height-tablet` to override the max height on tablet screens and up:
 
 ```html
-<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title" style="--modal-max-height-tablet: 700px">
+<dialog
+  id="modal-example"
+  class="Modal Modal--center"
+  aria-labelledby="modal-example-title"
+  style="--modal-max-height-tablet: 700px"
+>
   <!-- ModalDialog -->
 </dialog>
 ```
@@ -200,7 +222,8 @@ Optionally, you can add a description to the footer:
 ### Footer Alignment
 
 ModalFooter can be aligned to the right (default), center, or left. These values come from the
-[dictionary][dictionary-alignment]. Using a corresponding modifier class will align the footer actions accordingly:
+[alignment dictionary][dictionary-alignment]. Using a corresponding modifier class will align the footer actions
+accordingly:
 
 - `ModalFooter--right` (default)
 - `ModalFooter--center`
@@ -229,7 +252,7 @@ Disable modal close when clicking on the backdrop.
 You can still close modal with close buttons or ESC key.
 
 ```html
-<dialog id="modal-example" class="Modal" data-spirit-backdrop-close-disabled="true">
+<dialog id="modal-example" class="Modal Modal--center" data-spirit-backdrop-close-disabled="true">
   <!-- … -->
 </dialog>
 ```
@@ -276,7 +299,7 @@ When you put it all together:
 <!-- Modal Trigger: end -->
 
 <!-- Modal: start -->
-<dialog id="modal-example" class="Modal" aria-labelledby="modal-example-title">
+<dialog id="modal-example" class="Modal Modal--center" aria-labelledby="modal-example-title">
   <!-- ModalDialog: start -->
   <article class="ModalDialog">
     <!-- ModalHeader: start -->
