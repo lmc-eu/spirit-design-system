@@ -110,5 +110,5 @@
     "@types/react": "18.2.37",
     "typescript": "4.7.4"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@3.7.0"
 }
