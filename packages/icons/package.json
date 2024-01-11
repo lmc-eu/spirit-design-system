@@ -19,10 +19,10 @@
     "build:prepare": "shx mkdir -p dist/svg dist/react dist/.tmp-svg",
     "build:copy": "shx cp -r package.json README.md dist/",
     "build:react": "svg2react-icon --typescript --no-sub-dir ./dist/.tmp-svg ./dist/react",
-    "build:react:clean": "shx rm -rf dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg",
+    "build:react:clean": "shx rm -rf 'dist/react/**.d.ts dist/react/**.js.map dist/.tmp-svg'",
     "build:const": "node ./scripts/buildConstants.js",
     "prebuild": "npm-run-all build:clean build:prepare",
-    "build": "npm-run-all build:svg prepare:react build:react build:const",
+    "build": "npm-run-all --serial prebuild build:svg prepare:react build:react build:const postbuild",
     "postbuild": "npm-run-all build:react:clean build:copy"
   },
   "devDependencies": {
