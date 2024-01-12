@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1"></a>
+
+## [1.1.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.1.0...@lmc-eu/spirit-icons@1.1.1) (2024-01-12)
+
+### Bug Fixes
+
+- **icons:** Replace all dashes in React Icons prepare ([3a6f9f0](https://github.com/lmc-eu/spirit-design-system/commit/3a6f9f0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="1.1.0"></a>
 
 # [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.0.2...@lmc-eu/spirit-icons@1.1.0) (2023-11-15)

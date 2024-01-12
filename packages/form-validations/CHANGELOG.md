@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.10"></a>
+
+## [1.0.10](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.9...@lmc-eu/spirit-form-validations@1.0.10) (2024-01-12)
+
+### Chores
+
+- **form-validations:** Use common local server configuration ([6dbd751](https://github.com/lmc-eu/spirit-design-system/commit/6dbd751)), closes [#DS-1093](https://github.com/lmc-eu/spirit-design-system/issues/DS-1093)
+
+### Code Refactoring
+
+- **form-validations:** Use `warning` utility instead of console ([d0ff3ce](https://github.com/lmc-eu/spirit-design-system/commit/d0ff3ce))
+
+### Dependencies
+
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update all non-major dependencies ([04252f1](https://github.com/lmc-eu/spirit-design-system/commit/04252f1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.0.9"></a>
 
 ## [1.0.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.8...@lmc-eu/spirit-form-validations@1.0.9) (2023-12-05)

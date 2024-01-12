@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.3"></a>
+
+## [1.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.2...@lmc-eu/spirit-design-tokens@1.1.3) (2024-01-12)
+
+### Chores
+
+- **design-tokens:** Fix subdirectory path while build from root ([f8992d4](https://github.com/lmc-eu/spirit-design-system/commit/f8992d4))
+
+### Dependencies
+
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update all non-major dependencies ([04252f1](https://github.com/lmc-eu/spirit-design-system/commit/04252f1))
+- Update dependency typescript to v5 ([0d99d02](https://github.com/lmc-eu/spirit-design-system/commit/0d99d02))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.1...@lmc-eu/spirit-design-tokens@1.1.2) (2023-12-05)

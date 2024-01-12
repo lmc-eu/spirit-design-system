@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+
+# [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.2.0...@lmc-eu/spirit-analytics@0.3.0) (2024-01-12)
+
+### Bug Fixes
+
+- **analytics:** HTML element is not the PascalCase component ([4ddf584](https://github.com/lmc-eu/spirit-design-system/commit/4ddf584))
+
+### Dependencies
+
+- Pin dependencies ([1906e75](https://github.com/lmc-eu/spirit-design-system/commit/1906e75))
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update all non-major dependencies ([8acf2e7](https://github.com/lmc-eu/spirit-design-system/commit/8acf2e7))
+- Update all non-major dependencies ([04252f1](https://github.com/lmc-eu/spirit-design-system/commit/04252f1))
+- Update dependency filedirname to v3 ([299d19b](https://github.com/lmc-eu/spirit-design-system/commit/299d19b))
+- Update dependency tsup to v7 ([cbc1a9f](https://github.com/lmc-eu/spirit-design-system/commit/cbc1a9f))
+
+### Features
+
+- **analytics:** Add a timestamp to the scanner result files ([75b479a](https://github.com/lmc-eu/spirit-design-system/commit/75b479a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.1.4...@lmc-eu/spirit-analytics@0.2.0) (2023-12-05)

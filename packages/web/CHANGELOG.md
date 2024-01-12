@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+
+# [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.6.0...@lmc-eu/spirit-web@1.7.0) (2024-01-12)
+
+### Bug Fixes
+
+- **web:** Remove `will-change` from `Modal` to prevent high memory consumption ([a907e23](https://github.com/lmc-eu/spirit-design-system/commit/a907e23))
+- **web:** Simplify scroll blocking used by `Modal` and `OffCanvas` to CSS-only solution [#DS-1124](https://github.com/lmc-eu/spirit-design-system/issues/DS-1124) ([e9277ea](https://github.com/lmc-eu/spirit-design-system/commit/e9277ea))
+
+### Chores
+
+- **web:** Build desing tokens only if they do not exists ([e3eee15](https://github.com/lmc-eu/spirit-design-system/commit/e3eee15))
+- **web:** Require `sass` from v1.57.0 above due to `string.split` ([cf65e20](https://github.com/lmc-eu/spirit-design-system/commit/cf65e20))
+- **web:** Use common local server configuration ([6846b69](https://github.com/lmc-eu/spirit-design-system/commit/6846b69)), closes [#DS-1093](https://github.com/lmc-eu/spirit-design-system/issues/DS-1093)
+
+### Code Refactoring
+
+- **web:** Use `warning` utility instead of `console.warn` ([bf4e899](https://github.com/lmc-eu/spirit-design-system/commit/bf4e899))
+
+### Dependencies
+
+- Pin dependencies ([1906e75](https://github.com/lmc-eu/spirit-design-system/commit/1906e75))
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update all non-major dependencies ([8acf2e7](https://github.com/lmc-eu/spirit-design-system/commit/8acf2e7))
+- Update all non-major dependencies ([04252f1](https://github.com/lmc-eu/spirit-design-system/commit/04252f1))
+
+### Documentation
+
+- **web:** Record our convention for CSS and JS selectors to avoid confusion ([bfa569f](https://github.com/lmc-eu/spirit-design-system/commit/bfa569f))
+- **web:** Update Dropdown demo with Item usage [#DS-956](https://github.com/lmc-eu/spirit-design-system/issues/DS-956) ([1209da8](https://github.com/lmc-eu/spirit-design-system/commit/1209da8))
+- **web:** Use dash instead of underscore for `id` and `name` attribute values in `Modal` docs ([cbe878b](https://github.com/lmc-eu/spirit-design-system/commit/cbe878b))
+
+### Features
+
+- **web:** Extend Tooltip Floating UI example, deprecate CSS modifiers and side corners names ([02c3ddf](https://github.com/lmc-eu/spirit-design-system/commit/02c3ddf)), closes [#DS-618](https://github.com/lmc-eu/spirit-design-system/issues/DS-618)
+- **web:** Introduce custom Stack spacing [#DS-1079](https://github.com/lmc-eu/spirit-design-system/issues/DS-1079) ([72e58ec](https://github.com/lmc-eu/spirit-design-system/commit/72e58ec))
+- **web:** Introduce optional uniform appearance of `Modal` [#DS-1091](https://github.com/lmc-eu/spirit-design-system/issues/DS-1091) ([8eefa26](https://github.com/lmc-eu/spirit-design-system/commit/8eefa26))
+
+### Styles
+
+- **web:** Fix lint errors and warnings ([feeda8f](https://github.com/lmc-eu/spirit-design-system/commit/feeda8f))
+
+### Tests
+
+- **repo:** Use common configuration for server endpoints ([a057101](https://github.com/lmc-eu/spirit-design-system/commit/a057101)), closes [#DS-1093](https://github.com/lmc-eu/spirit-design-system/issues/DS-1093)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.6.0"></a>
 
 # [1.6.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.5.1...@lmc-eu/spirit-web@1.6.0) (2023-12-05)

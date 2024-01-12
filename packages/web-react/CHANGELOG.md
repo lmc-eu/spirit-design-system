@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.0"></a>
+
+# [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.8.0...@lmc-eu/spirit-web-react@1.9.0) (2024-01-12)
+
+### Bug Fixes
+
+- **web-react:** Do not check `window` object on server ([409343f](https://github.com/lmc-eu/spirit-design-system/commit/409343f)), closes [#DS-1110](https://github.com/lmc-eu/spirit-design-system/issues/DS-1110)
+- **web-react:** Do not render empty `style` prop ([5bd5dfa](https://github.com/lmc-eu/spirit-design-system/commit/5bd5dfa))
+- **web-react:** Mock window.scrollTo in test of useScrollControl hook ([343ab51](https://github.com/lmc-eu/spirit-design-system/commit/343ab51))
+- **web-react:** Simplify useScrollControl to not scroll or set top offset [#DS-1124](https://github.com/lmc-eu/spirit-design-system/issues/DS-1124) ([0df3c47](https://github.com/lmc-eu/spirit-design-system/commit/0df3c47))
+
+### Chores
+
+- **web-react:** Add `design-tokens` as peer dependency ([15ee46d](https://github.com/lmc-eu/spirit-design-system/commit/15ee46d))
+- **web-react:** Use common local server configuration ([dac87dd](https://github.com/lmc-eu/spirit-design-system/commit/dac87dd)), closes [#DS-1093](https://github.com/lmc-eu/spirit-design-system/issues/DS-1093)
+
+### Code Refactoring
+
+- **web-react:** Check for loaded html parser otherwise use NoSsr ([d4fc36e](https://github.com/lmc-eu/spirit-design-system/commit/d4fc36e))
+- **web-react:** Dynamically check for html parser loading ([fd456b4](https://github.com/lmc-eu/spirit-design-system/commit/fd456b4))
+- **web-react:** Use `warning` utility instead of console.warn ([631c00e](https://github.com/lmc-eu/spirit-design-system/commit/631c00e))
+
+### Dependencies
+
+- Update all non-major dependencies ([67f8357](https://github.com/lmc-eu/spirit-design-system/commit/67f8357))
+- Update all non-major dependencies ([8acf2e7](https://github.com/lmc-eu/spirit-design-system/commit/8acf2e7))
+- Update dependency typescript to v5 ([0d99d02](https://github.com/lmc-eu/spirit-design-system/commit/0d99d02))
+
+### Documentation
+
+- **web-react:** Fixed links in Button and ButtonLink markdown ([63c4679](https://github.com/lmc-eu/spirit-design-system/commit/63c4679))
+- **web-react:** Update Dropdown demo with Item usage [#DS-956](https://github.com/lmc-eu/spirit-design-system/issues/DS-956) ([1bde4ec](https://github.com/lmc-eu/spirit-design-system/commit/1bde4ec))
+
+### Features
+
+- **web-react:** Deprecate non-flow-relative Tooltip placements [#DS-1085](https://github.com/lmc-eu/spirit-design-system/issues/DS-1085) ([c1577bf](https://github.com/lmc-eu/spirit-design-system/commit/c1577bf))
+- **web-react:** Introduce custom Stack spacing [#DS-1079](https://github.com/lmc-eu/spirit-design-system/issues/DS-1079) ([c0a678a](https://github.com/lmc-eu/spirit-design-system/commit/c0a678a))
+- **web-react:** Introduce NoSsr component ([17c6b2c](https://github.com/lmc-eu/spirit-design-system/commit/17c6b2c)), closes [#DS-1110](https://github.com/lmc-eu/spirit-design-system/issues/DS-1110)
+
+### Styles
+
+- **web-react:** Fix lint errors and warnings ([a4bc522](https://github.com/lmc-eu/spirit-design-system/commit/a4bc522))
+
+### Tests
+
+- **web-react:** Add missing `Warning:` prefix to expected messages ([afb2bfc](https://github.com/lmc-eu/spirit-design-system/commit/afb2bfc))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.8.0"></a>
 
 # [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.7.1...@lmc-eu/spirit-web-react@1.8.0) (2023-12-05)
