@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.8.0"></a>
+
+# [2.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.7.0...@lmc-eu/spirit-web-twig@2.8.0) (2024-01-12)
+
+### Chores
+
+- **demo:** Link packages to missing modules ([c255f8c](https://github.com/lmc-eu/spirit-design-system/commit/c255f8c))
+
+### Documentation
+
+- **web-twig:** Update Dropdown demo with Item usage [#DS-956](https://github.com/lmc-eu/spirit-design-system/issues/DS-956) ([3b9d464](https://github.com/lmc-eu/spirit-design-system/commit/3b9d464))
+- **web-twig:** Use dash instead of underscore for `id` and `name` attribute values in `Modal` docs ([05b5803](https://github.com/lmc-eu/spirit-design-system/commit/05b5803))
+
+### Features
+
+- **web-twig:** Introduce custom Stack spacing [#DS-1079](https://github.com/lmc-eu/spirit-design-system/issues/DS-1079) ([cb55f5b](https://github.com/lmc-eu/spirit-design-system/commit/cb55f5b))
+- **web-twig:** Introduce Full Floating UI demo to Tooltip, update internal implementation [#DS-1084](https://github.com/lmc-eu/spirit-design-system/issues/DS-1084) ([08822a4](https://github.com/lmc-eu/spirit-design-system/commit/08822a4))
+- **web-twig:** Introduce optional uniform appearance of `Modal` ([c5ff3bc](https://github.com/lmc-eu/spirit-design-system/commit/c5ff3bc))
+
+### Styles
+
+- **web-twig:** Fix PHPStan issue with adding SimpleXMLElement ([b8a89f9](https://github.com/lmc-eu/spirit-design-system/commit/b8a89f9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.7.0"></a>
 
 # [2.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.6.0...@lmc-eu/spirit-web-twig@2.7.0) (2023-12-05)
