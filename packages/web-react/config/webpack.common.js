@@ -4,7 +4,12 @@ module.exports = {
   entry: {
     index: './src/index.ts',
   },
-  resolve: { extensions: ['.ts', '.tsx', '.js'] },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@lmc-eu/spirit-common': path.resolve(__dirname, '../../common/'),
+    },
+  },
   externals: [
     {
       react: {
