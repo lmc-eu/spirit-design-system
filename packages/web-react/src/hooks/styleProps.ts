@@ -1,5 +1,5 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import { CSSProperties, HTMLAttributes } from 'react';
+import { warning } from '../common/utilities';
 import { StyleProps } from '../types/shared/style';
 
 export type StylePropsResult = {
