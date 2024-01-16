@@ -21,8 +21,10 @@
     {%- if value is iterable -%}
         {%- set itemType = 'grid-item-' ~ type ~ '-' ~ item | lower -%}
         {%- for breakpoint, bpValue in value -%}
-            {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-            {%- set _style = _style ~ '--' ~ itemType ~ suffix ~ ': ' ~ bpValue ~ ';' -%}
+            {%- if bpValue -%}
+                {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+                {%- set _style = _style ~ '--' ~ itemType ~ suffix ~ ': ' ~ bpValue ~ ';' -%}
+            {%- endif -%}
         {%- endfor -%}
     {%- else -%}
         {%- set itemType = 'grid-item-' ~ type ~ '-' ~ item | lower -%}
