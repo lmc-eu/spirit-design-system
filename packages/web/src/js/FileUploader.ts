@@ -1,5 +1,5 @@
-import { info, warning } from '@lmc-eu/spirit-common/utilities';
 import BaseComponent from './BaseComponent';
+import { info, warning } from './common/utilities';
 import { EventHandler, SelectorEngine } from './dom';
 import { SpiritConfig, enableToggleAutoloader, image2Base64Preview } from './utils';
 

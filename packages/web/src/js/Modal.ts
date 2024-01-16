@@ -1,5 +1,5 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import BaseComponent from './BaseComponent';
+import { warning } from './common/utilities';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
