@@ -1,6 +1,6 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import { breakpoints } from '@lmc-eu/spirit-design-tokens';
 import BaseComponent from './BaseComponent';
+import { warning } from './common/utilities';
 import EventHandler from './dom/EventHandler';
 import { ScrollControl, SpiritConfig, enableDismissTrigger, enableToggleTrigger } from './utils';
 

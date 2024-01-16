@@ -1,4 +1,4 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
+import { warning } from '../common/utilities';
 
 const deprecatedDataAttribute = (
   componentName: string,
