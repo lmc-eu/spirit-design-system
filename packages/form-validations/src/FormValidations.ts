@@ -1,7 +1,7 @@
 // Allow use of bitwise not in this case only, other solutions do not work
 /* eslint no-bitwise: ["error", { "allow": ["~"] }] */
 /* eslint-disable no-prototype-builtins */
-import { warning } from '@lmc-eu/spirit-common/utilities';
+import { warning } from './common/utilities';
 import { lang } from './lang';
 import {
   Field,
