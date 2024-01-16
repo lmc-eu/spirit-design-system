@@ -1,5 +1,5 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
+import { warning } from '../../common/utilities';
 import { useDragAndDrop } from '../../hooks';
 import { DragAndDropHandlingProps, FileQueueMapType, FileUploaderQueueLimitBehaviorType } from '../../types';
 import { useFileUploaderContext } from './FileUploaderContext';

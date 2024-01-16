@@ -1,5 +1,5 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import React from 'react';
+import { warning } from '../../common/utilities';
 import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 import { htmlParser } from '../../utils/htmlParser';

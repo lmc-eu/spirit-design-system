@@ -1,5 +1,5 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import { useEffect } from 'react';
+import { warning } from '../common/utilities';
 
 export interface UseDeprecationMessageProps {
   method?: 'component' | 'property' | 'custom';

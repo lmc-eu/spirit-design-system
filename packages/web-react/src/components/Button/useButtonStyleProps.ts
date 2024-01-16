@@ -1,6 +1,6 @@
-import { warning } from '@lmc-eu/spirit-common/utilities';
 import classNames from 'classnames';
 import { ElementType } from 'react';
+import { warning } from '../../common/utilities';
 import { useClassNamePrefix } from '../../hooks';
 import { ButtonColor, ButtonSize, SpiritButtonProps } from '../../types';
 import { applyColor, applySize } from '../../utils/classname';
