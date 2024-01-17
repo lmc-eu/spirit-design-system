@@ -37,14 +37,14 @@ const TooltipFloatingUI = () => {
       <p>🖱 Try scrolling the example to see how Tooltip placement is updated.</p>
       <div
         className="docs-FloatingUI-Wrapper bg-cover"
-        style={{ width: '40rem', maxWidth: '100%', height: '10rem', overflow: 'auto' }}
+        style={{ width: '40rem', maxWidth: '100%', height: '12rem', overflow: 'auto' }}
       >
         <div
           className="docs-FloatingUI-Container"
           style={{ position: 'relative', width: '100%', height: '20rem', paddingBlock: '7rem', textAlign: 'center' }}
         >
           <Button ref={refs.setReference} {...getReferenceProps()}>
-            I have a flipping tooltip!
+            I have a tooltip!
           </Button>
           <Tooltip
             placement="off"
