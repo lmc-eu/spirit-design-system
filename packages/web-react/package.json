@@ -84,7 +84,8 @@
     "@lmc-eu/spirit-web": "*",
     "html-react-parser": "^5.0.6",
     "react": "^17.0.2 || ^18.0.0",
-    "react-dom": "^17.0.2 || ^18.0.0"
+    "react-dom": "^17.0.2 || ^18.0.0",
+    "@floating-ui/react": "^0.26.5"
   },
   "scripts": {
     "start": "vite --host --config ./config/vite/app.ts",
