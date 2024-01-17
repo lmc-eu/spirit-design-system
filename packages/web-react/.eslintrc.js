@@ -62,7 +62,13 @@ module.exports = {
     // allow reassign in properties
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
-    'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        packageDir: ['./', '../../'],
+        peerDependencies: true,
+      },
+    ],
     // disable double quotes
     quotes: ['warn', 'single'],
     // use useIsomorphicLayoutEffect instead of useLayoutEffect
