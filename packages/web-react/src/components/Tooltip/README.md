@@ -220,4 +220,73 @@ const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, d
 </div>;
 ```
 
+# TooltipModern
+
+⚠️ `TooltipModern` component is [deprecated] and will be renamed to `Tooltip` in the next major version.
+
+## Usage
+
+To enable the advanced floating functionality, you need to have activated feature flag `spirit-feature-tooltip-enable-data-placement` on any parent element.
+This requirement will be removed in future major version.
+
+### Basic
+
+```javascript
+import { TooltipModern, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+
+const [open, setOpen] = React.useState(false);
+
+<div className="spirit-feature-tooltip-enable-data-placement">
+  <TooltipModern id="TooltipModern" isOpen={open} onToggle={setOpen}>
+    <TooltipTrigger>I have a tooltip!</TooltipTrigger>
+    <TooltipPopover>Hello there!</TooltipPopover>
+  </TooltipModern>
+</div>;
+```
+
+### Dismissible
+
+Add `isDismissible` prop to `TooltipModern` component.
+there will be automatically displayed close button in `TooltipPopover`` component
+
+```javascript
+import { TooltipModern, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
+
+const [open, setOpen] = React.useState(false);
+
+<div className="spirit-feature-tooltip-enable-data-placement">
+  <TooltipModern id="TooltipModernDismissible" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
+    <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
+    <TooltipPopover>Close me</TooltipPopover>
+  </TooltipModern>
+</div>;
+```
+
+## API
+
+| Attribute                       | Type                                         | Default  | Required | Description                                                                                                                                                                                                                                                                |
+| ------------------------------- | -------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`                      | `ReactNode`                                  | —        | ✔        | Tooltip children's nodes - `TooltipTrigger` and `TooltipPopover`                                                                                                                                                                                                           |
+| `enableFlipping`                | `bool`                                       | true     | ✕        | Enables [flipping][floating-ui-flip] of the element’s placement when it starts to overflow its boundary area. For example `top` can be flipped to `bottom`.                                                                                                                |
+| `enableFlippingCrossAxis`       | `bool`                                       | true     | ✕        | Enables flipping on the [cross axis][floating-ui-flip-cross-axis], the axis perpendicular to main axis. For example `top-end` can be flipped to the `top-start`.                                                                                                           |
+| `enableShifting`                | `bool`                                       | true     | ✕        | Enables [shifting][floating-ui-shift] of the element to keep it inside the boundary area by adjusting its position.                                                                                                                                                        |
+| `enableSizing`                  | `bool`                                       | true     | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
+| `flipFallbackAxisSideDirection` | ["none" \| "start" \| "end"]                 | "none"   | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
+| `flipFallbackPlacements`        | `string`                                     | -        | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
+| `id`                            | `string`                                     | -        | ✔        | Tooltip id                                                                                                                                                                                                                                                                 |
+| `isDismissible`                 | `bool`                                       | false    | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
+| `isOpen`                        | `bool`                                       | -        | ✔        | Open state                                                                                                                                                                                                                                                                 |
+| `onToggle`                      | `() => void`                                 | -        | ✔        | Function for toggle open state of dropdown                                                                                                                                                                                                                                 |
+| `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom" | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
+
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
+[example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
+[floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis
+[floating-ui-flip-fallback-axis-side-direction]: https://floating-ui.com/docs/flip#fallbackaxissidedirection
+[floating-ui-flip-fallback-placements]: https://floating-ui.com/docs/flip#fallbackplacements
+[floating-ui-flip]: https://floating-ui.com/docs/flip
+[floating-ui-shift]: https://floating-ui.com/docs/shift
+[floating-ui-size]: https://floating-ui.com/docs/size
+[floating-ui]: https://floating-ui.com
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
