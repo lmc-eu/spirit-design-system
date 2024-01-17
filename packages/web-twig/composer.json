@@ -1,6 +1,6 @@
 {
   "name": "lmc/spirit-web-twig-bundle",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "type": "symfony-bundle",
   "description": "This is Symfony bundle with twig implementation of the Spirit Design System components and extends the twig implementation with an HTML-like syntax.",
   "license": "MIT",

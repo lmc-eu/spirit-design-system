@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.8.0"></a>
+
+# [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.7.0...@lmc-eu/spirit-web@1.8.0) (2024-01-17)
+
+### Features
+
+- **web-react:** Introduce optional uniform appearance of `Modal` [#DS-1091](https://github.com/lmc-eu/spirit-design-system/issues/DS-1091) ([531a9d9](https://github.com/lmc-eu/spirit-design-system/commit/531a9d9))
+
+### Reverts
+
+- **web:** Move `common` files back to the package ([08eb968](https://github.com/lmc-eu/spirit-design-system/commit/08eb968))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.7.0"></a>
 
 # [1.7.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.6.0...@lmc-eu/spirit-web@1.7.0) (2024-01-12)

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.0"></a>
+
+# [1.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.9.0...@lmc-eu/spirit-web-react@1.10.0) (2024-01-17)
+
+### Documentation
+
+- **web-react:** Make example `Modal` actions work ([b1d558b](https://github.com/lmc-eu/spirit-design-system/commit/b1d558b))
+
+### Features
+
+- **web-react:** Introduce optional uniform appearance of `Modal` [#DS-1091](https://github.com/lmc-eu/spirit-design-system/issues/DS-1091) ([531a9d9](https://github.com/lmc-eu/spirit-design-system/commit/531a9d9))
+
+### Reverts
+
+- **web-react:** Move `common` dependency back to package ([10af61a](https://github.com/lmc-eu/spirit-design-system/commit/10af61a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.9.0"></a>
 
 # [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.8.0...@lmc-eu/spirit-web-react@1.9.0) (2024-01-12)
