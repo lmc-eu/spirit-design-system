@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.0"></a>
+
+# [2.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.8.0...@lmc-eu/spirit-web-twig@2.9.0) (2024-01-17)
+
+### Bug Fixes
+
+- **web-twig:** Do not render CSS property in the `GridItem` style attribute if the value is empty ([146a21c](https://github.com/lmc-eu/spirit-design-system/commit/146a21c))
+
+### Features
+
+- **web-react:** Introduce optional uniform appearance of `Modal` [#DS-1091](https://github.com/lmc-eu/spirit-design-system/issues/DS-1091) ([531a9d9](https://github.com/lmc-eu/spirit-design-system/commit/531a9d9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.8.0"></a>
 
 # [2.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.7.0...@lmc-eu/spirit-web-twig@2.8.0) (2024-01-12)
