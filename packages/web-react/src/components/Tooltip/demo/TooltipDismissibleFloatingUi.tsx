@@ -41,7 +41,7 @@ const Story: ComponentStory<typeof Tooltip> = () => {
       <div className="docs-FloatingUI-Wrapper">
         <div className="docs-FloatingUI-Container">
           <Button ref={refs.setReference} {...getReferenceProps()}>
-            I have a flipping tooltip!
+            I have a tooltip!
           </Button>
           <Tooltip
             placement="off"
