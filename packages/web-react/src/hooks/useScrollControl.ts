@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 
 const CLASSNAME_SCROLLING_DISABLED = 'is-scrolling-disabled';
 
@@ -23,5 +23,20 @@ export const useScrollControl = (ref: MutableRefObject<HTMLDialogElement | null>
     } else if (ref.current && !ref.current.open) {
       enableScroll();
     }
+
+    /**
+     * Cleanup scrolling when unmounting
+     *
+     * @see https://jira.lmc.cz/browse/DS-1126
+     *
+     * When the use of the Dialog in page is optimized by the condition like
+     * `isOpen && <Dialog />`, the Dialog component will be unmounted sooner
+     * than the Dialog is closed correctly and all side effects are fulfilled.
+     * In this case, the class and style attributes added to the body element
+     * will not be removed, and the page will be scrolled.
+     */
+    return () => {
+      enableScroll();
+    };
   }, [isOpen, ref]);
 };
