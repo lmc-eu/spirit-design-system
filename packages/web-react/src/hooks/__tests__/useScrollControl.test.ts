@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { MutableRefObject } from 'react';
 import { useScrollControl } from '../useScrollControl';
 
@@ -30,6 +30,16 @@ describe('useScrollControl', () => {
     act(() => {
       renderHook(() => useScrollControl(mockRef, false));
     });
+
+    expect(document.body.classList.contains('is-scrolling-disabled')).toBe(false);
+  });
+
+  it('should clean up on unmount', () => {
+    const mockRef = createMockRef(true) as MutableRefObject<HTMLDialogElement | null>;
+
+    const { unmount } = renderHook(() => useScrollControl(mockRef, true));
+
+    unmount();
 
     expect(document.body.classList.contains('is-scrolling-disabled')).toBe(false);
   });
