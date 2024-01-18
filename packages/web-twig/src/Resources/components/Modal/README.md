@@ -286,6 +286,20 @@ takes over the responsibility for scrolling and provides visual overflow decorat
 </ScrollView>
 ```
 
+## Stacking Modals
+
+Multiple Modals can be open at the same time. That means, you can open a Modal from another Modal, and they will display
+stacked on top of each other. The topmost Modal is always the one that is **last in the DOM**.
+
+```twig
+<!-- First Modal: -->
+<Modal id="modal-first" titleId="modal-first-title"></Modal>
+<!-- This Modal will stack up on the previous Modal: -->
+<Modal id="modal-topmost" titleId="modal-topmost-title"></Modal>
+```
+
+👉 Please note that Modals **cannot be nested** into each other **in the DOM**.
+
 ## Full Example
 
 When you put it all together:

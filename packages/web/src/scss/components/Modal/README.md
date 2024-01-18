@@ -280,6 +280,20 @@ scrolling, e.g.:
 </div>
 ```
 
+## Stacking Modals
+
+Multiple Modals can be open at the same time. That means, you can open a Modal from another Modal, and they will display
+stacked on top of each other. The topmost Modal is always the one that is **last in the DOM**.
+
+```html
+<!-- First Modal: -->
+<dialog id="modal-first" class="Modal Modal--center" aria-labelledby="modal-first-title"></dialog>
+<!-- This Modal will stack up on the previous Modal: -->
+<dialog id="modal-topmost" class="Modal Modal--center" aria-labelledby="modal-topmost-title"></dialog>
+```
+
+👉 Please note that Modals **cannot be nested** into each other **in the DOM**.
+
 ## Full Example
 
 When you put it all together:
