@@ -43,7 +43,7 @@
     }
 </style>
 
-<div class="example-viewport bg-cover" id="my-advanced-viewport">
+<div class="example-viewport bg-cover spirit-feature-tooltip-enable-data-placement" id="my-advanced-viewport">
     <div class="example-content" id="my-advanced-content">
         <Button
             id="my-button"
@@ -51,7 +51,14 @@
         >
             I have a Floating tooltip!
         </Button>
-        <Tooltip id="my-advanced-tooltip" placement="top-start" data-spirit-placement-controlled>
+        <Tooltip
+            id="my-advanced-tooltip"
+            {# We should be setting the placement prop here and not data attribute because that should be set
+            in the Tooltip inner implementation. But we cannot change the inner implementation because it would
+            break code of our users. But we can set the data attribute manually and make it work this way. #}
+            data-spirit-placement="top-start"
+            data-spirit-placement-controlled
+        >
             This long tooltip is flipping, resizing and shifting to stay in the viewport.
             Also its arrow is always trying to point to the center of the trigger.
         </Tooltip>
