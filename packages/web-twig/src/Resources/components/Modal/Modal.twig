@@ -1,22 +1,24 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _alignmentY = props.alignmentY | default('center') -%}
 {%- set _id = props.id -%}
 {%- set _titleId = props.titleId | default(null) -%}
 {%- set _closeOnBackdropClick = props.closeOnBackdropClick ?? true -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Modal' -%}
+{%- set _rootAlignmentYClassName = _spiritClassPrefix ~ 'Modal--' ~ _alignmentY -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaLabelledbyAttr = _titleId ? 'aria-labelledby="' ~ _titleId | escape('html_attr') ~ '"' : null -%}
 {%- set _closeOnBackdropClickString = _closeOnBackdropClick ? 'true' : 'false' -%}
-{%- set _dataBackdropCloseDisabledAttr = 
+{%- set _dataBackdropCloseDisabledAttr =
     _closeOnBackdropClick ? null : 'data-spirit-close-on-backdrop-click="' ~ _closeOnBackdropClickString | escape('html_attr') ~ '"' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootAlignmentYClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <dialog

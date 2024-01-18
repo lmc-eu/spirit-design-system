@@ -2,6 +2,26 @@
 
 {% block content %}
 
+    <script>
+        const setModalAlignment = (event, selector) => {
+            const modalElement = document.querySelector(selector);
+
+            modalElement.classList.remove('Modal--top', 'Modal--center', 'Modal--bottom');
+            modalElement.classList.add(`Modal--${event.target.value}`);
+        };
+
+        const setFooterAlignment = (event, selector) => {
+            const footerElement = document.querySelector(selector);
+
+            footerElement.classList.remove('ModalFooter--left', 'ModalFooter--center', 'ModalFooter--right');
+            footerElement.classList.add(`ModalFooter--${event.target.value}`);
+        };
+
+        const toggleExpandOnMobile = (selector) => {
+            document.querySelector(selector).classList.toggle('ModalDialog--expandOnMobile');
+        }
+    </script>
+
     <DocsSection title="Modal">
         {% include '@components/Modal/stories/ModalDefault.twig' %}
     </DocsSection>
