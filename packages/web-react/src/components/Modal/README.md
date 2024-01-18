@@ -25,6 +25,7 @@ Modal is a composition of several subcomponents:
   - [Opening the Modal](#opening-the-modal)
   - [Scrolling Long Content](#scrolling-long-content)
     - [Scrolling with ScrollView](#scrolling-with-scrollview)
+  - [Stacking Modals](#stacking-modals)
   - [Full Example](#full-example)
 
 ## Modal
@@ -36,17 +37,35 @@ provides several accessibility advantages.
 <Modal id="modal-example">…</Modal>
 ```
 
+### Vertical Alignment
+
+Modal can be aligned to the center (default), top, or bottom. These values come from the
+[alignment dictionary][dictionary-alignment]. Using a corresponding alignment option will align the modal accordingly:
+
+- `top`
+- `center` (default)
+- `bottom`
+
+Example:
+
+```jsx
+<Modal alignmentY="top" id="modal-example">
+  …
+</Modal>
+```
+
 ### API
 
-| Name                   | Type                                           | Default | Required | Description                                           |
-| ---------------------- | ---------------------------------------------- | ------- | -------- | ----------------------------------------------------- |
-| `children`             | `ReactNode`                                    | —       | ✕        | Children node                                         |
-| `closeOnBackdropClick` | `bool`                                         | `true`  | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string`                                       | —       | ✔        | Modal ID                                              |
-| `isOpen`               | `bool`                                         | `false` | ✔        | Open state                                            |
-| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback on dialog closed                             |
-| `UNSAFE_className`     | `string`                                       | —       | ✕        | Modal custom class name                               |
-| `UNSAFE_style`         | `CSSProperties`                                | —       | ✕        | Modal custom style                                    |
+| Name                   | Type                                           | Default  | Required | Description                                           |
+| ---------------------- | ---------------------------------------------- | -------- | -------- | ----------------------------------------------------- |
+| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment]  | `center` | ✕        | Vertical alignment of modal                           |
+| `children`             | `ReactNode`                                    | —        | ✕        | Children node                                         |
+| `closeOnBackdropClick` | `bool`                                         | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
+| `id`                   | `string`                                       | —        | ✔        | Modal ID                                              |
+| `isOpen`               | `bool`                                         | `false`  | ✔        | Open state                                            |
+| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✔        | Callback on dialog closed                             |
+| `UNSAFE_className`     | `string`                                       | —        | ✕        | Modal custom class name                               |
+| `UNSAFE_style`         | `CSSProperties`                                | —        | ✕        | Modal custom style                                    |
 
 Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
 
@@ -215,7 +234,8 @@ Optionally, you can add a description to the footer:
 ### Footer Alignment
 
 ModalFooter can be aligned to the right (default), center, or left. These values come from the
-[dictionary][dictionary-alignment]. Using a corresponding alignment option will align the footer actions accordingly:
+[alignment dictionary][dictionary-alignment]. Using a corresponding alignment option will align the footer actions
+accordingly:
 
 - `right` (default)
 - `center`

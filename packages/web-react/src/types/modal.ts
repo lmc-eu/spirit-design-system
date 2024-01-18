@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, ElementType } from 'react';
 import {
   AlignmentXDictionaryType,
+  AlignmentYDictionaryType,
   ChildrenProps,
   ClickEvent,
   OmittedExtendedUnsafeStyleProps,
@@ -49,6 +50,7 @@ export interface ModalFooterProps extends SpiritElementProps, ChildrenProps {
 }
 
 export interface ModalBaseProps extends Omit<SpiritDialogElementProps, 'id'>, ModalDialogHandlingProps, ChildrenProps {
+  alignmentY?: AlignmentYDictionaryType;
   id: string;
 }
 

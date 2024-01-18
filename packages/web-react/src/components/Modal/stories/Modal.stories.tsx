@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { AlignmentY } from '../../../constants';
 import { SpiritModalProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
@@ -16,6 +17,13 @@ const meta: Meta<typeof Modal> = {
     },
   },
   argTypes: {
+    alignmentY: {
+      control: 'select',
+      options: [...Object.values(AlignmentY)],
+      table: {
+        defaultValue: { summary: AlignmentY.CENTER },
+      },
+    },
     id: {
       control: 'text',
     },
@@ -30,6 +38,7 @@ const meta: Meta<typeof Modal> = {
     },
   },
   args: {
+    alignmentY: AlignmentY.CENTER,
     id: 'modal',
     isOpen: false,
   },
