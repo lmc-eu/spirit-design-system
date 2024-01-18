@@ -18,8 +18,10 @@
     @include placement.child();
     @include typography.generate(theme.$typography);
 
+    --tooltip-max-width: #{theme.$max-width};
+
     width: max-content;
-    max-width: theme.$max-width;
+    max-width: var(--tooltip-max-width);
     padding: theme.$padding;
     text-align: left;
     white-space: normal;

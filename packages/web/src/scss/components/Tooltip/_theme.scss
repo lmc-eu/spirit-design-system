@@ -2,7 +2,7 @@
 @use '../../settings/dictionaries';
 @use '../../settings/transitions';
 
-$max-width: 18rem;
+$max-width: 288px;
 $typography: tokens.$body-medium-text-regular;
 $padding: tokens.$space-500 tokens.$space-600;
 $gap: tokens.$space-500;
