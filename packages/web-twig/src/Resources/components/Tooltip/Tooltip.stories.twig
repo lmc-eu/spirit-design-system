@@ -2,34 +2,32 @@
 
 {% block content %}
 
-    <div class="spirit-feature-tooltip-enable-data-placement">
-        <DocsSection title="Placements" stackAlignment="stretch">
-            {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
-        </DocsSection>
+    <DocsSection title="Placements" stackAlignment="stretch">
+        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Static Tooltip (No Interaction)" stackAlignment="stretch">
-            {% include '@components/Tooltip/stories/TooltipStatic.twig' %}
-        </DocsSection>
+    <DocsSection title="Static Tooltip (No Interaction)" stackAlignment="stretch">
+        {% include '@components/Tooltip/stories/TooltipStatic.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
-            {% include '@components/Tooltip/stories/TooltipOnHover.twig' %}
-        </DocsSection>
+    <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
+        {% include '@components/Tooltip/stories/TooltipOnHover.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Tooltip on Click (JavaScript)">
-            {% include '@components/Tooltip/stories/TooltipClickable.twig' %}
-        </DocsSection>
+    <DocsSection title="Tooltip on Click (JavaScript)">
+        {% include '@components/Tooltip/stories/TooltipClickable.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Dismissible Tooltip">
-            {% include '@components/Tooltip/stories/TooltipDismissible.twig' %}
-        </DocsSection>
+    <DocsSection title="Dismissible Tooltip">
+        {% include '@components/Tooltip/stories/TooltipDismissible.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Dismissible Tooltip via JS API">
-            {% include '@components/Tooltip/stories/TooltipDismissibleViaJS.twig' %}
-        </DocsSection>
+    <DocsSection title="Dismissible Tooltip via JS API">
+        {% include '@components/Tooltip/stories/TooltipDismissibleViaJS.twig' %}
+    </DocsSection>
 
-        <DocsSection title="Full Floating UI Usage">
-            {% include '@components/Tooltip/stories/TooltipFloatingUI.twig' %}
-        </DocsSection>
-    </div>
+    <DocsSection title="Full Floating UI Usage">
+        {% include '@components/Tooltip/stories/TooltipFloatingUI.twig' %}
+    </DocsSection>
 
 {% endblock %}
