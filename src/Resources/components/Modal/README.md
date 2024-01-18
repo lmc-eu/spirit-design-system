@@ -24,13 +24,31 @@ provides several accessibility advantages.
 👉 Please note the `titleId` attribute is linked to the title inside the [Modal Header](#modalheader) and provides an
 accessible name for the dialog.
 
+### Vertical Alignment
+
+Modal can be aligned to the center (default), top, or bottom. These values come from the
+[alignment dictionary][dictionary-alignment]. Using a corresponding alignment option will align the modal accordingly:
+
+- `top`
+- `center` (default)
+- `bottom`
+
+Example:
+
+```twig
+<Modal alignmentY="top" id="modal-example" titleId="modal-example-title">
+  …
+</Modal>
+```
+
 ### API
 
-| Name                   | Type     | Default | Required | Description                                           |
-| ---------------------- | -------- | ------- | -------- | ----------------------------------------------------- |
-| `closeOnBackdropClick` | `bool`   | `true`  | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string` | —       | ✔        | Modal ID                                              |
-| `titleId`              | `string` | `null`  | ✕        | ID of the title inside ModalHeader                    |
+| Name                   | Type                                          | Default  | Required | Description                                           |
+| ---------------------- | --------------------------------------------- | -------- | -------- | ----------------------------------------------------- |
+| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment] | `center` | ✕        | Vertical alignment of modal                           |
+| `closeOnBackdropClick` | `bool`                                        | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
+| `id`                   | `string`                                      | —        | ✔        | Modal ID                                              |
+| `titleId`              | `string`                                      | `null`   | ✕        | ID of the title inside ModalHeader                    |
 
 On top of the API options, you can add `data-*` or `aria-*` attributes to
 further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
@@ -230,7 +248,8 @@ Optionally, you can add a description into the footer:
 ### Footer Alignment
 
 ModalFooter can be aligned to the right (default), center, or left. These values come from the
-[dictionary][dictionary-alignment]. Using a corresponding alignment option will align the footer actions accordingly:
+[alignment dictionary][dictionary-alignment]. Using a corresponding alignment option will align the footer actions
+accordingly:
 
 - `right` (default)
 - `center`
