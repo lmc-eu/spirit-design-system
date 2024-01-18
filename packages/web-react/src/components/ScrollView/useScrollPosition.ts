@@ -1,7 +1,7 @@
 import { UIEvent, MutableRefObject, useState, useEffect } from 'react';
 import { debounce } from '../../utils';
-import { ScrollViewDirectionType, AlignmentDictionaryType } from '../../types';
-import { Alignment, Direction } from '../../constants';
+import { PositionType, ScrollViewDirectionType } from '../../types';
+import { Direction, Position } from '../../constants';
 import { EDGE_DETECTION_INACCURACY_PX, DEBOUNCE_DELAY } from './constants';
 
 export interface UseScrollPositionProps {
@@ -17,7 +17,7 @@ export interface UseScrollPositionReturn {
 }
 
 export type CurrentPositionProps = {
-  [key in AlignmentDictionaryType]: number;
+  [key in PositionType]: number;
 };
 
 export const useScrollPosition = ({
@@ -37,17 +37,17 @@ export const useScrollPosition = ({
     const viewportPosition: DOMRect = viewportReference.current.getBoundingClientRect();
 
     return {
-      [Alignment.BOTTOM]: contentPosition.bottom - viewportPosition.bottom,
-      [Alignment.LEFT]: contentPosition.left - viewportPosition.left,
-      [Alignment.RIGHT]: contentPosition.right - viewportPosition.right,
-      [Alignment.TOP]: contentPosition.top - viewportPosition.top,
+      [Position.BOTTOM]: contentPosition.bottom - viewportPosition.bottom,
+      [Position.LEFT]: contentPosition.left - viewportPosition.left,
+      [Position.RIGHT]: contentPosition.right - viewportPosition.right,
+      [Position.TOP]: contentPosition.top - viewportPosition.top,
     };
   };
 
   const handleScrollViewState = () => {
     const isDirectionHorizontal = direction === Direction.HORIZONTAL;
-    const scrollPositionStart = isDirectionHorizontal ? Alignment.LEFT : Alignment.TOP;
-    const scrollPositionEnd = isDirectionHorizontal ? Alignment.RIGHT : Alignment.BOTTOM;
+    const scrollPositionStart = isDirectionHorizontal ? Position.LEFT : Position.TOP;
+    const scrollPositionEnd = isDirectionHorizontal ? Position.RIGHT : Position.BOTTOM;
     const currentPosition = getElementsPositionDifference();
 
     if (!currentPosition) {

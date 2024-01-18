@@ -1,8 +1,6 @@
 import { ReactNode, ElementType, JSXElementConstructor } from 'react';
 
 export * from './adornments';
-export * from './alignments';
-export * from './colors';
 export * from './dialogs';
 export * from './dictionaries';
 export * from './directions';
@@ -12,6 +10,7 @@ export * from './element';
 export * from './events';
 export * from './inputs';
 export * from './item';
+export * from './positions';
 export * from './refs';
 export * from './rest';
 export * from './style';
