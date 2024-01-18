@@ -10,3 +10,10 @@ export const DEFAULT_ERROR_MESSAGE_UNSUPPORTED_FILE = 'This file type is not sup
 export const DEFAULT_ICON_NAME = 'file';
 export const DEFAULT_BUTTON_LABEL = 'Remove';
 export const DEFAULT_EDIT_BUTTON_LABEL = 'Edit';
+
+export const FileUploaderCropCSS = {
+  TOP: '--file-uploader-attachment-image-top',
+  LEFT: '--file-uploader-attachment-image-left',
+  WIDTH: '--file-uploader-attachment-image-width',
+  HEIGHT: '--file-uploader-attachment-image-height',
+} as const;

@@ -1,3 +1,3 @@
-export * from './alignment';
 export * from './dictionaries';
 export * from './direction';
+export * from './position';

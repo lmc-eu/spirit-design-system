@@ -10,10 +10,11 @@ import {
   ValidationStates,
 } from '../../constants';
 
+/* Alignment */
 export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
 export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[AlignmentXDictionaryKeys] | T;
 
-/* Colors */
+/* Color */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
 export type ActionColorsDictionaryType<C = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | C;
 

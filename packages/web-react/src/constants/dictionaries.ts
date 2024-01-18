@@ -5,7 +5,7 @@ export const AlignmentX = {
   RIGHT: 'right',
 } as const;
 
-/* Colors */
+/* Color */
 export const ActionColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
@@ -76,12 +76,4 @@ export const ValidationStates = {
   SUCCESS: 'success',
   WARNING: 'warning',
   DANGER: 'danger',
-} as const;
-
-/* FileUploader CSS crop */
-export const FileUploaderCropCSS = {
-  TOP: '--file-uploader-attachment-image-top',
-  LEFT: '--file-uploader-attachment-image-left',
-  WIDTH: '--file-uploader-attachment-image-width',
-  HEIGHT: '--file-uploader-attachment-image-height',
 } as const;

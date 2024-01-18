@@ -1,9 +1,8 @@
 import classNames from 'classnames';
 import { CSSProperties } from 'react';
-import { FileUploaderCropCSS } from '../../constants/dictionaries';
 import { useClassNamePrefix } from '../../hooks';
 import { FileMetadata, FileUploaderQueueLimitBehaviorType, Validation } from '../../types';
-import { IMAGE_DIMENSION } from './constants';
+import { FileUploaderCropCSS, IMAGE_DIMENSION } from './constants';
 
 export interface FileUploaderStyleProps extends Validation {
   imageObjectFit?: 'contain' | 'cover';
