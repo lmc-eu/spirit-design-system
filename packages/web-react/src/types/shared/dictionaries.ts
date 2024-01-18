@@ -1,5 +1,6 @@
 import {
   AlignmentX,
+  AlignmentY,
   ActionColors,
   EmotionColors,
   ActionLinkColors,
@@ -13,6 +14,9 @@ import {
 /* Alignment */
 export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
 export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[AlignmentXDictionaryKeys] | T;
+
+export type AlignmentYDictionaryKeys = keyof typeof AlignmentY;
+export type AlignmentYDictionaryType<T = undefined> = (typeof AlignmentY)[AlignmentYDictionaryKeys] | T;
 
 /* Color */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;

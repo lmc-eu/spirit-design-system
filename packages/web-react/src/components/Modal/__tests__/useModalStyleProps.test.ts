@@ -5,7 +5,7 @@ describe('useModalStyleProps', () => {
   it('should return defaults', () => {
     const { result } = renderHook(() => useModalStyleProps({}));
 
-    expect(result.current.classProps.root).toBe('Modal');
+    expect(result.current.classProps.root).toBe('Modal Modal--center');
     expect(result.current.classProps.dialog).toBe('ModalDialog');
     expect(result.current.classProps.title).toBe('ModalHeader__title');
     expect(result.current.classProps.header).toBe('ModalHeader');

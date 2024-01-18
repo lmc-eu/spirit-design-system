@@ -5,6 +5,12 @@ export const AlignmentX = {
   RIGHT: 'right',
 } as const;
 
+export const AlignmentY = {
+  TOP: 'top',
+  CENTER: 'center',
+  BOTTOM: 'bottom',
+} as const;
+
 /* Color */
 export const ActionColors = {
   PRIMARY: 'primary',
@@ -60,7 +66,7 @@ export const Placements = {
   RIGHT: 'right',
   RIGHT_START: 'right-start',
   RIGHT_END: 'right-end',
-  // @deprecated All next placements are deprecated and will be removed in the next mayor version, use flow relative placement instead
+  // @deprecated All following placements are deprecated and will be removed in the next major version. Use flow-relative placements (above) instead.
   TOP_RIGHT: 'top-right',
   TOP_LEFT: 'top-left',
   BOTTOM_RIGHT: 'bottom-right',

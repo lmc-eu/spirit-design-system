@@ -1,12 +1,13 @@
 import React, { ChangeEvent, useState } from 'react';
-import { AlignmentXDictionaryType } from '../../..';
+import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
 import { Button, Checkbox, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, Radio, TextField } from '../..';
 
 const ModalDefault = () => {
   const [isFirstOpen, setFirstOpen] = useState(false);
   const [isSecondOpen, setSecondOpen] = useState(false);
   const [isThirdOpen, setThirdOpen] = useState(false);
-  const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>('right');
+  const [modalAlign, setModalAlign] = useState<AlignmentYDictionaryType>(AlignmentY.CENTER);
+  const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
   const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
@@ -17,59 +18,95 @@ const ModalDefault = () => {
   const handleFirstClose = () => setFirstOpen(false);
   const handleSecondClose = () => setSecondOpen(false);
   const handleThirdClose = () => setThirdOpen(false);
-  const handleFooterAlignChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFooterAlign(e.target.value as AlignmentXDictionaryType);
+  const handleModalAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setModalAlign(event.target.value as AlignmentYDictionaryType);
+  };
+  const handleFooterAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFooterAlign(event.target.value as AlignmentXDictionaryType);
   };
 
   return (
     <>
       <Button onClick={toggleFirstModal}>Open Modal</Button>
 
-      <Modal id="example_basic" isOpen={isFirstOpen} onClose={handleFirstClose}>
+      <Modal alignmentY={modalAlign} id="example-basic" isOpen={isFirstOpen} onClose={handleFirstClose}>
         <ModalDialog isExpandedOnMobile={isExpanded}>
-          <ModalHeader id="example_basic">Modal Title</ModalHeader>
+          <ModalHeader id="example-basic">Modal Title</ModalHeader>
           <ModalBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
               perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
               provident unde. Eveniet, iste, molestiae?
             </p>
+            <form className="d-none d-tablet-block mb-600">
+              <div>Modal alignment (from tablet up):</div>
+              <Radio
+                id="modal-alignment-top"
+                UNSAFE_className="mr-600"
+                label="Top"
+                value="top"
+                name="modal_alignment"
+                autoComplete="off"
+                isChecked={modalAlign === AlignmentY.TOP}
+                onChange={handleModalAlignChange}
+              />{' '}
+              <Radio
+                id="modal-alignment-center"
+                UNSAFE_className="mr-600"
+                label="Center"
+                value="center"
+                name="modal_alignment"
+                autoComplete="off"
+                isChecked={modalAlign === AlignmentY.CENTER}
+                onChange={handleModalAlignChange}
+              />{' '}
+              <Radio
+                id="modal-alignment-bottom"
+                UNSAFE_className="mr-600"
+                label="Bottom"
+                value="bottom"
+                name="modal_alignment"
+                autoComplete="off"
+                isChecked={modalAlign === AlignmentY.BOTTOM}
+                onChange={handleModalAlignChange}
+              />
+            </form>
             <form className="d-none d-tablet-block">
               <div>Footer alignment (from tablet up):</div>
               <Radio
-                id="footer_alignment_left"
+                id="footer-alignment-left"
                 UNSAFE_className="mr-600"
                 label="Left"
                 value="left"
                 name="footer_alignment"
                 autoComplete="off"
-                isChecked={footerAlign === 'left'}
+                isChecked={footerAlign === AlignmentX.LEFT}
                 onChange={handleFooterAlignChange}
-              />
+              />{' '}
               <Radio
-                id="footer_alignment_center"
+                id="footer-alignment-center"
                 UNSAFE_className="mr-600"
                 label="Center"
                 value="center"
                 name="footer_alignment"
                 autoComplete="off"
-                isChecked={footerAlign === 'center'}
+                isChecked={footerAlign === AlignmentX.CENTER}
                 onChange={handleFooterAlignChange}
-              />
+              />{' '}
               <Radio
-                id="footer_alignment_right"
+                id="footer-alignment-right"
                 UNSAFE_className="mr-600"
                 label="Right"
                 value="right"
                 name="footer_alignment"
                 autoComplete="off"
-                isChecked={footerAlign === 'right'}
+                isChecked={footerAlign === AlignmentX.RIGHT}
                 onChange={handleFooterAlignChange}
               />
             </form>
             <form className="d-tablet-none">
               <Checkbox
-                id="expand_on_mobile"
+                id="expand-on-mobile"
                 label="Expand on mobile"
                 value="right"
                 autoComplete="off"
@@ -78,7 +115,7 @@ const ModalDefault = () => {
               />
             </form>
           </ModalBody>
-          <ModalFooter description="Optional description" alignmentX={footerAlign}>
+          <ModalFooter alignmentX={footerAlign} description="Optional description">
             <Button onClick={handleFirstClose}>Primary action</Button>
             <Button color="secondary" onClick={handleFirstClose}>
               Secondary action
@@ -89,7 +126,7 @@ const ModalDefault = () => {
 
       <Button onClick={toggleSecondModal}>Open Modal with a Form</Button>
 
-      <Modal id="example_form" isOpen={isSecondOpen} onClose={handleSecondClose}>
+      <Modal id="example-form" isOpen={isSecondOpen} onClose={handleSecondClose}>
         <ModalDialog elementType="form" method="dialog">
           <ModalHeader>Modal with a Form</ModalHeader>
           <ModalBody>
@@ -110,7 +147,7 @@ const ModalDefault = () => {
 
       <Button onClick={toggleThirdModal}>Open Modal with Custom Height</Button>
 
-      <Modal id="example_custom_height" isOpen={isThirdOpen} onClose={handleThirdClose}>
+      <Modal id="example-custom-height" isOpen={isThirdOpen} onClose={handleThirdClose}>
         <ModalDialog
           elementType="form"
           isExpandedOnMobile={false}
