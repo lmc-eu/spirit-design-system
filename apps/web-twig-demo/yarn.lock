@@ -1150,6 +1150,26 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@floating-ui/core@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.5.3.tgz#b6aa0827708d70971c8679a16cf680a515b8a52a"
+  integrity sha512-O0WKDOo0yhJuugCx6trZQj5jVJ9yR0ystG2JaNAemYUWce+pmM6WUEFIibnWyEJKdrDxhm75NoSRME35FNaM/Q==
+  dependencies:
+    "@floating-ui/utils" "^0.2.0"
+
+"@floating-ui/dom@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.5.4.tgz#28df1e1cb373884224a463235c218dcbd81a16bb"
+  integrity sha512-jByEsHIY+eEdCjnTVu+E3ephzTOzkQ8hgUfGwos+bg7NlH33Zc5uO+QHz1mrQUOgIKKDD1RtS201P9NvAfq3XQ==
+  dependencies:
+    "@floating-ui/core" "^1.5.3"
+    "@floating-ui/utils" "^0.2.0"
+
+"@floating-ui/utils@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
+  integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
+
 "@hotwired/stimulus-webpack-helpers@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz#4cd74487adeca576c9865ac2b9fe5cb20cef16dd"
@@ -1966,25 +1986,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001449:
-  version "1.0.30001481"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001481.tgz#f58a717afe92f9e69d0e35ff64df596bfad93912"
-  integrity sha512-KCqHwRnaa1InZBtqXzP98LPg0ajCVujMKjqKDhZEthIpAsJl/YEIa3YvXjGXPVqzZVguccuu7ga9KOE1J9rKPQ==
-
-caniuse-lite@^1.0.30001503:
-  version "1.0.30001517"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001517.tgz#90fabae294215c3495807eb24fc809e11dc2f0a8"
-  integrity sha512-Vdhm5S11DaFVLlyiKu4hiUTkpZu+y1KA/rZZqVQfOD5YdDT/eQKlkt7NaE0WGOFgX32diqt9MiP9CAiFeRklaA==
-
-caniuse-lite@^1.0.30001541:
-  version "1.0.30001553"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001553.tgz#e64e7dc8fd4885cd246bb476471420beb5e474b5"
-  integrity sha512-N0ttd6TrFfuqKNi+pMgWJTb9qrdJu4JSpgPFLe/lrD19ugC6fZgF0pUewRowDwzdDnb9V41mFcdlYgl/PyKf4A==
-
-caniuse-lite@^1.0.30001565:
-  version "1.0.30001570"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001570.tgz#b4e5c1fa786f733ab78fc70f592df6b3f23244ca"
-  integrity sha512-+3e0ASu4sw1SWaoCtvPeyXp+5PsjigkSt8OXZbF9StH5pQWbxEjLAZE3n8Aup5udop1uRiKA7a4utUk/uoSpUw==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001503, caniuse-lite@^1.0.30001541, caniuse-lite@^1.0.30001565:
+  version "1.0.30001579"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001579.tgz"
+  integrity sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==
 
 chalk@^2.0.0, chalk@^2.3.2, chalk@^2.4.2:
   version "2.4.2"

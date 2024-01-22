@@ -1,3 +1,4 @@
+const path = require('path');
 // eslint-disable-next-line import/no-unresolved
 const Encore = require('@symfony/webpack-encore');
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -93,4 +94,10 @@ Encore
     // .enableIntegrityHashes(Encore.isProduction())
 ;
 
-module.exports = Encore.getWebpackConfig();
+const config = Encore.getWebpackConfig();
+
+config.resolve.alias = {
+    '@floating-ui/dom': path.resolve(__dirname, 'node_modules/@floating-ui/dom'),
+};
+
+module.exports = config;
