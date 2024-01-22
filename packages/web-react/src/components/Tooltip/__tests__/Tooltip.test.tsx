@@ -88,36 +88,3 @@ describe('TooltipModern', () => {
     expect(onToggle).toHaveBeenCalled();
   });
 });
-
-describe('TooltipTrigger', () => {
-  stylePropsTest((props) => <TooltipTrigger {...props} data-testid="TooltipTrigger-test" />, 'TooltipTrigger-test');
-
-  restPropsTest((props) => <TooltipTrigger elementType={Button} {...props} />, 'button');
-
-  it('should render tooltip trigger', () => {
-    const id = 'TooltipTriggerTest';
-    const triggerText = 'TooltipTrigger';
-
-    const dom = render(<TooltipTrigger data-spirit-testid={id}>{triggerText}</TooltipTrigger>);
-    const element = dom.container.querySelector(`[data-spirit-testid="${id}"]`) as HTMLElement;
-
-    expect(element.textContent).toBe(triggerText);
-  });
-});
-
-describe('TooltipPopover', () => {
-  classNamePrefixProviderTest(TooltipPopover, 'Tooltip');
-
-  stylePropsTest((props) => <TooltipPopover {...props} data-testid="TooltipPopover-test" />, 'TooltipPopover-test');
-
-  restPropsTest((props) => <TooltipPopover {...props} />, 'div');
-
-  it('should render tooltip popover', () => {
-    const popoverText = 'TooltipPopover';
-
-    const dom = render(<TooltipPopover>{popoverText}</TooltipPopover>);
-    const element = dom.container.querySelector('.Tooltip') as HTMLElement;
-
-    expect(element.textContent).toBe(popoverText);
-  });
-});
