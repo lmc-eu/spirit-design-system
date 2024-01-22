@@ -1,3 +1,5 @@
+<h3>Without Floating UI</h3>
+
 <Button
     id="tooltip-trigger"
     data-spirit-target="#my-js-controlled-tooltip"
@@ -6,11 +8,42 @@
     Toggle tooltip
 </Button>
 
-<TooltipWrapper>
+<TooltipWrapper UNSAFE_className="spirit-feature-tooltip-enable-data-placement d-inline-block">
     <DocsBox aria-describedby="my-js-controlled-tooltip">
         I have an externally-triggered tooltip
     </DocsBox>
-    <Tooltip id="my-js-controlled-tooltip" UNSAFE_className="is-hidden">
+    <Tooltip
+        id="my-js-controlled-tooltip"
+        UNSAFE_className="is-hidden"
+        placement="bottom-start"
+    >
         Hello there!
     </Tooltip>
+</TooltipWrapper>
+
+<h3 class="mt-1000">With Floating UI and Placement Fallbacks</h3>
+
+<Button
+    id="tooltip-trigger2"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="#my-js-controlled-tooltip-fui"
+>
+    Toggle tooltip
+</Button>
+
+<TooltipWrapper UNSAFE_className="spirit-feature-tooltip-enable-data-placement">
+    <div
+        class="docs-Box"
+        aria-describedby="my-js-controlled-tooltip-fui"
+    >
+        I have an externally-triggered tooltip
+    </div>
+    <TooltipPopover
+        id="my-js-controlled-tooltip-fui"
+        UNSAFE_className="is-hidden"
+        enableControlledPlacement
+        placement="bottom-start"
+    >
+        Hello there!
+    </TooltipPopover>
 </TooltipWrapper>

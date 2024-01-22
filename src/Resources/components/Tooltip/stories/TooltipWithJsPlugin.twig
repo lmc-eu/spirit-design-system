@@ -1,0 +1,39 @@
+<h3>Without Floating UI</h3>
+
+<TooltipWrapper UNSAFE_className="spirit-feature-tooltip-enable-data-placement d-inline-block">
+    <Button
+        id="button-example-js-plugin"
+        aria-describedby="tooltip-example-js-plugin"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#tooltip-example-js-plugin"
+    >
+        I have a tooltip 😎
+    </Button>
+    <Tooltip
+        id="tooltip-example-js-plugin"
+        UNSAFE_className="is-hidden"
+        placement="right"
+    >
+        This long tooltip is not flipping to stay in the viewport.
+    </Tooltip>
+</TooltipWrapper>
+
+<h3 class="mt-1000">With Floating UI and placement fallbacks</h3>
+
+<TooltipWrapper UNSAFE_className="spirit-feature-tooltip-enable-data-placement">
+    <Button
+        id="button-example-with-floating"
+        aria-describedby="tooltip-example-with-floating"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#tooltip-example-with-floating"
+    >
+        I have a tooltip 😎
+    </Button>
+    <TooltipPopover
+        id="tooltip-example-with-floating"
+        UNSAFE_className="is-hidden"
+        enableControlledPlacement
+    >
+        This long tooltip is flipping to stay in the viewport.
+    </TooltipPopov>
+</TooltipWrapper>
