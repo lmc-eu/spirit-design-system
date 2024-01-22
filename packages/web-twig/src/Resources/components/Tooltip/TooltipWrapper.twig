@@ -8,10 +8,14 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
+{# Deprecations #}
+{% deprecated 'TooltipWrapper: This component will be renamed to Tooltip in the next major version.' %}
+
 <div
     {{ mainProps(props) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
+    data-spirit-element="tooltip-wrapper"
 >
     {% block content %}{% endblock %}
 </div>
