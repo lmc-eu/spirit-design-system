@@ -1,4 +1,4 @@
-import Tooltip from '@lmc-eu/spirit-web/src/js/Tooltip';
+import { Tooltip } from '@lmc-eu/spirit-web/src/js/index.esm';
 
 const myTooltipEl = document.getElementById('my-dismissible-tooltip2');
 const myTooltip = new Tooltip(myTooltipEl);
