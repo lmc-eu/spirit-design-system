@@ -79,6 +79,8 @@
     {% deprecated 'Tooltip: Non-flow-relative values (eg. "' ~ _placement ~ '") in "placement" property are deprecated and will be removed in the next major version. Use flow-relative (eg. "' ~ deprecatedPlacements[_placement] ~ '") instead.' %}
 {% endif %}
 
+{% deprecated 'Tooltip: The implementation of this component is deprecated and will be replaced with the implementation of the TooltipPopover in the next major version. Please, use TooltipPopover instead.' %}
+
 <div
     {{ mainProps(_mainPropsWithoutId) }}
     {{ styleProp(_styleProps) }}
