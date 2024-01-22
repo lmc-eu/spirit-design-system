@@ -29,6 +29,7 @@ Encore
     .addEntry('fileUploaderMetaData', './assets/scripts/file-uploader-meta-data.ts')
     .addEntry('formValidations', './assets/scripts/form-validations.ts')
     .addEntry('tooltipDismissibleViaJS', './assets/scripts/tooltip-dismissible-via-js.ts')
+    .addEntry('tooltipAdvancedUsage', './assets/scripts/tooltip-advanced-usage.ts')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     // .enableStimulusBridge('./assets/controllers.json')
