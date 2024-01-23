@@ -180,6 +180,22 @@ Testing script includes:
 You can run unit testing via `test:unit` scripts.
 For all available scripts see the package's `package.json` file.
 
+### Manual testing
+
+For better testing experience we are using deploy previews on Netlify.
+If your modification affects the publishable code and when you create a PR, every push then will be deployed to Netlify.
+Netlify will create a deploy preview and you can test your changes there.
+Netlify will also attach a link to the deploy preview to your PR so you can easily access it.
+
+#### Readable Netlify links
+
+For better UI experience when searching for the deploy preview link, you can use our [userContent.css](./docs/ci/userContent.css) file which will highlight the link in the PR.
+
+![Example of the modified Netlify link](./docs/ci/pr-netlify-links.png)
+
+👉 [How to Create a userContent.css File](https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data)
+👉 [How to Create a userChrome.css File](https://www.userchrome.org/how-create-userchrome-css.html)
+
 ### Visual regression testing
 
 **Prerequisites:** [Docker][docker] 🐳
