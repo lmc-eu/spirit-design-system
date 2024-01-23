@@ -52,12 +52,12 @@
 
 .Item__icon--start {
     grid-column: 1;
-    margin-inline-end: theme.$icon-spacing;
+    margin-inline-end: theme.$gap;
 }
 
 .Item__icon--end {
     grid-column: 3;
-    margin-inline-start: theme.$icon-spacing;
+    margin-inline-start: theme.$gap;
 }
 
 .Item--selected .Item__label {

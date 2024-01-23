@@ -1,7 +1,7 @@
 @use '@tokens' as tokens;
 
 // Common for all form components
-$spacing: tokens.$space-400;
+$gap: tokens.$space-400;
 $input-typography: tokens.$body-medium-text-regular;
 $input-color-disabled: tokens.$text-primary-disabled;
 $input-border-color-success: tokens.$emotion-success-default;
@@ -64,7 +64,7 @@ $validation-states: (
 );
 
 // Item variant
-$item-spacing: tokens.$space-400;
+$item-gap: tokens.$space-400;
 $item-border-radius: tokens.$radius-100;
 $item-background-color-default: tokens.$background-interactive-default;
 $item-background-color-hover: tokens.$background-interactive-hover;
