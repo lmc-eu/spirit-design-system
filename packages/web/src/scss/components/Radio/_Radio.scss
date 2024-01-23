@@ -47,7 +47,7 @@ $_field-name: 'Radio';
 .Radio__helperText {
     @include form-fields-tools.helper-text();
 
-    margin-left: form-fields-theme.$spacing;
+    margin-left: form-fields-theme.$gap;
 }
 
 @include form-fields-tools.input-field-validation-states(
@@ -59,7 +59,7 @@ $_field-name: 'Radio';
 .Radio__label {
     @include form-fields-tools.inline-field-label();
 
-    margin-left: form-fields-theme.$spacing;
+    margin-left: form-fields-theme.$gap;
 }
 
 .Radio__label--hidden {

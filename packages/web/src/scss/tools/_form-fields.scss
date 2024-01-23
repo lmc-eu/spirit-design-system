@@ -42,7 +42,7 @@
 
 @mixin inline-field-root() {
     display: inline-flex;
-    margin-block: form-fields-theme.$spacing;
+    margin-block: form-fields-theme.$gap;
     cursor: cursors.$form-fields;
 }
 
@@ -180,7 +180,7 @@
 
 @mixin item() {
     width: 100%;
-    padding: form-fields-theme.$item-spacing;
+    padding: form-fields-theme.$item-gap;
     margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;
     background-color: form-fields-theme.$item-background-color-default;
