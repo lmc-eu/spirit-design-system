@@ -191,6 +191,17 @@ Testing script includes:
 You can run unit testing via `test:unit` scripts.
 For all available scripts see the package's `package.json` file.
 
+### Manual testing
+
+For better testing experience we are using deploy previews on Netlify.
+If your modification affects the publishable code and when you create a PR, every push then will be deployed to Netlify.
+Netlify will create a deploy preview and you can test your changes there.
+Netlify will also attach a link to the deploy preview to your PR so you can easily access it.
+
+#### Readable Netlify links
+
+For better UI experience when searching for the deploy preview link, you can use this [Gist with userContent.css][netlify-preview-gist].
+
 ### Visual regression testing
 
 **Prerequisites:** [Docker][docker] 🐳
@@ -269,3 +280,4 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [jest]: https://jestjs.io/
 [docker]: https://www.docker.com/
 [playwright]: https://playwright.dev/
+[netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
