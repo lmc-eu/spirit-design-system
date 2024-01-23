@@ -1,7 +1,8 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { glob } from 'glob';
 import * as path from 'path';
 import * as recast from 'recast';
 import * as parser from 'recast/parsers/babel';
-import glob = require('glob');
 
 export const distDir = path.resolve(__dirname, '..', 'dist');
 
@@ -9,10 +10,11 @@ export function eachFile(dir: string, callback: (absPath: string, relPath: strin
   const promises: Promise<unknown>[] = [];
 
   return new Promise<void>((resolve, reject) => {
-    glob(`${dir}/**/*.js`, (error, files) => {
+    // @ts-expect-error -- has no properties in common with type 'GlobOptions'
+    glob(`${dir}/**/*.js`, (error: Error | null, files: string[]) => {
       if (error) return reject(error);
 
-      files.sort().forEach((file) => {
+      files.sort().forEach((file: string) => {
         const relPath = path.relative(dir, file);
 
         // Outside the distDir, somehow.
