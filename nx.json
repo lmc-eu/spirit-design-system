@@ -1,12 +1,7 @@
 {
-  "implicitDependencies": {
-    "package.json": "*"
-  },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["lint", "test", "types", "build"],
         "accessToken": "NGYxNTY3NTAtOWY5NC00MWVmLThiNWEtY2MwNjE4OWJjZTcxfHJlYWQ="
       }
     }
@@ -22,6 +17,25 @@
     },
     "test": {
       "dependsOn": ["^build"]
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [],
+    "production": ["default"]
+  },
+  "targetDefaults": {
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "types": {
+      "cache": true
+    },
+    "build": {
+      "cache": true
     }
   }
 }
