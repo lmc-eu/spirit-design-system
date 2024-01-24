@@ -2,18 +2,18 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import CollapseDefault from './CollapseDefault';
-import CollapseOpenOnInit from './CollapseOpenOnInit';
-import CollapseVisibilityBreakpointTablet from './CollapseVisibilityBreakpointTablet';
-import CollapseVisibilityBreakpointDesktop from './CollapseVisibilityBreakpointDesktop';
-import CollapseHideTrigger from './CollapseHideTrigger';
 import CollapseHelperClass from './CollapseHelperClass';
+import CollapseHideTrigger from './CollapseHideTrigger';
 import CollapseMultipleTriggers from './CollapseMultipleTriggers';
+import CollapseOpenOnInit from './CollapseOpenOnInit';
+import CollapseVisibilityBreakpointDesktop from './CollapseVisibilityBreakpointDesktop';
+import CollapseVisibilityBreakpointTablet from './CollapseVisibilityBreakpointTablet';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

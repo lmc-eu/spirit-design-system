@@ -3,18 +3,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import SelectSimple from './SelectSimple';
-import SelectRequired from './SelectRequired';
+import SelectDisabled from './SelectDisabled';
+import SelectFluid from './SelectFluid';
+import SelectHelperText from './SelectHelperText';
 import SelectHiddenLabel from './SelectHiddenLabel';
 import SelectPlaceholder from './SelectPlaceholder';
-import SelectHelperText from './SelectHelperText';
-import SelectDisabled from './SelectDisabled';
+import SelectRequired from './SelectRequired';
+import SelectSimple from './SelectSimple';
 import SelectValidation from './SelectValidation';
-import SelectFluid from './SelectFluid';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
