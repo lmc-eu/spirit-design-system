@@ -3,16 +3,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import RadioDefault from './RadioDefault';
-import RadioHiddenLabel from './RadioHiddenLabel';
-import RadioHelperText from './RadioHelperText';
 import RadioDisabled from './RadioDisabled';
-import RadioValidation from './RadioValidation';
+import RadioHelperText from './RadioHelperText';
+import RadioHiddenLabel from './RadioHiddenLabel';
 import RadioItem from './RadioItem';
+import RadioValidation from './RadioValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

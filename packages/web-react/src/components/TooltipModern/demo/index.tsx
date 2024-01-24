@@ -3,18 +3,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import TooltipDefault from './TooltipDefault';
 import TooltipDismissible from './TooltipDismissible';
 import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
+import TooltipHover from './TooltipHover';
+import TooltipIcon from './TooltipIcon';
 import TooltipOnHover from './TooltipOnHover';
 import TooltipPlacements from './TooltipPlacements';
 import TooltipWithFloatingUI from './TooltipWithFloatingUI';
-import TooltipHover from './TooltipHover';
-import TooltipIcon from './TooltipIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

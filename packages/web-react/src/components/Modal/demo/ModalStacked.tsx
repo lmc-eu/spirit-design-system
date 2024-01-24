@@ -2,11 +2,11 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React, { useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { Modal, ModalDialog, ModalHeader, ModalBody, ModalFooter } from '..';
-import { Button } from '../../Button';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
+import { Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader } from '..';
 import { IconsProvider } from '../../../context';
+import { Button } from '../../Button';
 
 // @see: https://github.com/storybookjs/storybook/issues/8104#issuecomment-932310244
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

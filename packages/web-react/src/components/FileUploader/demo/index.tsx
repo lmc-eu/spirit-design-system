@@ -3,24 +3,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
+import FileUploaderAttachment from './FileUploaderAttachment';
+import FileUploaderAttachmentWithCustomAction from './FileUploaderAttachmentWithCustomAction';
+import FileUploaderAttachmentWithImagePreview from './FileUploaderAttachmentWithImagePreview';
 import FileUploaderDefault from './FileUploaderDefault';
+import FileUploaderDraggingNotAvailable from './FileUploaderDraggingNotAvailable';
+import FileUploaderExampleOfJSControlledForm from './FileUploaderExampleOfJSControlledForm';
+import FileUploaderFluidWidth from './FileUploaderFluidWidth';
+import FileUploaderInputDisabled from './FileUploaderInputDisabled';
 import FileUploaderInputMultiple from './FileUploaderInputMultiple';
-import FileUploaderMultipleWithValidation from './FileUploaderMultipleWithValidation';
 import FileUploaderInputMultipleWithFileQueueBehaviorControl from './FileUploaderInputMultipleWithFileQueueBehaviorControl';
 import FileUploaderInputValidationStates from './FileUploaderInputValidationStates';
-import FileUploaderInputDisabled from './FileUploaderInputDisabled';
-import FileUploaderAttachment from './FileUploaderAttachment';
-import FileUploaderAttachmentWithImagePreview from './FileUploaderAttachmentWithImagePreview';
-import FileUploaderAttachmentWithCustomAction from './FileUploaderAttachmentWithCustomAction';
 import FileUploaderInputWithAttachment from './FileUploaderInputWithAttachment';
-import FileUploaderDraggingNotAvailable from './FileUploaderDraggingNotAvailable';
-import FileUploaderFluidWidth from './FileUploaderFluidWidth';
-import FileUploaderExampleOfJSControlledForm from './FileUploaderExampleOfJSControlledForm';
 import FileUploaderMetaData from './FileUploaderMetaData';
+import FileUploaderMultipleWithValidation from './FileUploaderMultipleWithValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

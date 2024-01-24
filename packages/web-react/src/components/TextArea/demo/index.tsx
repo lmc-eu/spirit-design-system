@@ -3,19 +3,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import TextAreaDefault from './TextAreaDefault';
-import TextAreaRequired from './TextAreaRequired';
-import TextAreaHiddenLabel from './TextAreaHiddenLabel';
-import TextAreaHelperText from './TextAreaHelperText';
-import TextAreaDisabled from './TextAreaDisabled';
-import TextAreaValidation from './TextAreaValidation';
-import TextAreaFluid from './TextAreaFluid';
-import TextAreaInline from './TextAreaInline';
 import TextAreaAutoResize from './TextAreaAutoResize';
+import TextAreaDefault from './TextAreaDefault';
+import TextAreaDisabled from './TextAreaDisabled';
+import TextAreaFluid from './TextAreaFluid';
+import TextAreaHelperText from './TextAreaHelperText';
+import TextAreaHiddenLabel from './TextAreaHiddenLabel';
+import TextAreaInline from './TextAreaInline';
+import TextAreaRequired from './TextAreaRequired';
+import TextAreaValidation from './TextAreaValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

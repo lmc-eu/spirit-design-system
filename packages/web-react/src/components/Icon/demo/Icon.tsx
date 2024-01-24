@@ -3,7 +3,7 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: No declaration file
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
 import icons from '@lmc-eu/spirit-icons/icons';
 import { IconsProvider } from '../../../context';
 import { IconProps } from '../../../types';
