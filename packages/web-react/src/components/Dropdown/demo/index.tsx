@@ -4,16 +4,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import DropdownPlacements from './DropdownPlacements';
-import DropdownVariousItems from './DropdownVariousItems';
 import DropdownDisabledAutoclose from './DropdownDisabledAutoclose';
-import DropdownLongerContent from './DropdownLongerContent';
+import DropdownEnhancedShadow from './DropdownEnhancedShadow';
 import DropdownFullwidthAll from './DropdownFullwidthAll';
 import DropdownFullwidthMobileOnly from './DropdownFullwidthMobileOnly';
-import DropdownEnhancedShadow from './DropdownEnhancedShadow';
+import DropdownLongerContent from './DropdownLongerContent';
+import DropdownPlacements from './DropdownPlacements';
+import DropdownVariousItems from './DropdownVariousItems';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

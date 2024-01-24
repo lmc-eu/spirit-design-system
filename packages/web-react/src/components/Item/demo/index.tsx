@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
 // eslint-disable-next-line import/extensions, import/no-unresolved
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import CheckboxItem from './CheckboxItem';

@@ -41,6 +41,11 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      '@lmc-eu/spirit-icons': resolve(__dirname, '../../../icons/dist'),
+    },
+  },
   build: {
     outDir: 'build',
     rollupOptions: {

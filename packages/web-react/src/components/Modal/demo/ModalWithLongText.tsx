@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+import icons from '@lmc-eu/spirit-icons/icons';
 import { IconsProvider } from '../../../context';
-import Modal from '../Modal';
-import ModalDialog from '../ModalDialog';
-import ModalBody from '../ModalBody';
-import ModalHeader from '../ModalHeader';
-import ModalFooter from '../ModalFooter';
 import { Button } from '../../Button';
+import Modal from '../Modal';
+import ModalBody from '../ModalBody';
+import ModalDialog from '../ModalDialog';
+import ModalFooter from '../ModalFooter';
+import ModalHeader from '../ModalHeader';
 
 const Story = () => {
   const [isOpen, setOpen] = useState(false);

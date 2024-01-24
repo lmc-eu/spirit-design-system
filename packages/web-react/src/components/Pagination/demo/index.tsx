@@ -4,13 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
+import { IconsProvider } from '../../../context';
 import PaginationCurrentFirst from './PaginationCurrentFirst';
-import PaginationCurrentMiddle from './PaginationCurrentMiddle';
-import PaginationCurrentLast from './PaginationCurrentLast';
 import PaginationCurrentFirstCentered from './PaginationCurrentFirstCentered';
+import PaginationCurrentLast from './PaginationCurrentLast';
+import PaginationCurrentMiddle from './PaginationCurrentMiddle';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

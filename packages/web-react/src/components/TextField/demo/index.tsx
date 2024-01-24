@@ -4,19 +4,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
 // @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import TextFieldDefault from './TextFieldDefault';
-import TextFieldRequired from './TextFieldRequired';
-import TextFieldHiddenLabel from './TextFieldHiddenLabel';
-import TextFieldHelperText from './TextFieldHelperText';
 import TextFieldDisabled from './TextFieldDisabled';
-import TextFieldValidation from './TextFieldValidation';
 import TextFieldFluid from './TextFieldFluid';
-import TextFieldInputWidth from './TextFieldInputWidth';
+import TextFieldHelperText from './TextFieldHelperText';
+import TextFieldHiddenLabel from './TextFieldHiddenLabel';
 import TextFieldInline from './TextFieldInline';
+import TextFieldInputWidth from './TextFieldInputWidth';
 import TextFieldPasswordToggle from './TextFieldPasswordToggle';
+import TextFieldRequired from './TextFieldRequired';
+import TextFieldValidation from './TextFieldValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
