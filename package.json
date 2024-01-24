@@ -58,7 +58,6 @@
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.1",
     "@lmc-eu/eslint-config-react": "2.0.2",
     "@lmc-eu/prettier-config": "2.0.0",
-    "@nrwl/cli": "15.9.3",
     "@omlet/cli": "1.4.2",
     "@playwright/test": "1.42.1",
     "@rollup/plugin-babel": "6.0.4",
