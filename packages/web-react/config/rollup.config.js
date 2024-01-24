@@ -1,3 +1,4 @@
+import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import path from 'path';
 import { terser as minify } from 'rollup-plugin-terser';
@@ -45,7 +46,8 @@ function isExternal(id, parentId, entryPointsAreExternal = true) {
   let absoluteId = id;
   if (path.isAbsolute(id)) {
     const posixId = toPosixPath(id);
-    const posixParentId = toPosixPath(parentId);
+    // parentId of the first entry point is undefined, because there is nothing abowe starting point
+    const posixParentId = parentId ? toPosixPath(parentId) : '';
     absoluteId = path.posix.relative(path.posix.dirname(posixParentId), posixId);
     if (!absoluteId.startsWith('.')) {
       absoluteId = `./${absoluteId}`;
@@ -86,8 +88,10 @@ function prepareCJS(input, output) {
       externalLiveBindings: false,
     },
     plugins: [
+      resolve(),
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
+        preventAssignment: true,
       }),
     ],
   };
