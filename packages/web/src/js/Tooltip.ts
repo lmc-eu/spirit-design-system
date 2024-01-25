@@ -84,9 +84,11 @@ class Tooltip extends BaseComponent {
   }
 
   isPlacementControlled() {
-    const { placementControlled } = this.config as Config;
+    const config = this.config as Config;
+    const placementControlledKey = 'placementControlled';
 
-    return placementControlled !== false;
+    // key can exist in the dataset but can have undefined value
+    return placementControlledKey in config && config[placementControlledKey] !== false;
   }
 
   updateConfig(newConfig: Partial<Config>) {
