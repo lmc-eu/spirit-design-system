@@ -1,6 +1,6 @@
 # Text
 
-This is Twig implementation of the [Link] component.
+This is Twig implementation of the [Link][link] component.
 
 Basic example usage:
 
@@ -44,10 +44,12 @@ Without lexer:
 | `target`       | `string`                                         | `null`    | ✕        | Browsing context for the link      |
 | `title`        | `string`                                         | `null`    | ✕        | Optional title to display on hover |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
-[link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[link]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Link
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches

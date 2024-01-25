@@ -1,7 +1,7 @@
 # Tooltip
 
 ⚠️ Tooltip component is [deprecated][deprecated] and will be removed in the next major version. Please use "TooltipModern" component instead.
-This is Twig implementation of the [Tooltip] component.
+This is Twig implementation of the [Tooltip][tooltip] component.
 
 Basic usage:
 
@@ -66,18 +66,17 @@ best positioning approach for your use case.
 | `isDismissible` | `bool`                                       | `false`  | ✕        | Make tooltip dismissible |
 | `placement`     | [Placement Dictionary][dictionary-placement] | `bottom` | ✕        | Tooltip placement        |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### TooltipWrapper
 
-⚠️ `TooltipWrapper` component is [deprecated] and will be renamed to the `Tooltip` in the next major version.
+⚠️ `TooltipWrapper` component is [deprecated][deprecated] and will be renamed to the `Tooltip` in the next major version.
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### TooltipPopover
 
@@ -153,6 +152,10 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
 | `isDismissible`                 | `bool`                                       | false    | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
 | `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom" | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## JavaScript Plugin
 
 For full functionality, you need to provide Spirit JavaScript:
@@ -169,7 +172,6 @@ Or, feel free to write the controlling script yourself.
 
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis
 [floating-ui-flip-fallback-axis-side-direction]: https://floating-ui.com/docs/flip#fallbackaxissidedirection
 [floating-ui-flip-fallback-placements]: https://floating-ui.com/docs/flip#fallbackplacements
@@ -177,7 +179,10 @@ Or, feel free to write the controlling script yourself.
 [floating-ui-shift]: https://floating-ui.com/docs/shift
 [floating-ui-size]: https://floating-ui.com/docs/size
 [floating-ui]: https://floating-ui.com
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tooltip/README.md#javascript-api
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

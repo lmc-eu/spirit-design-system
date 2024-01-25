@@ -1,6 +1,6 @@
 # Breadcrumbs
 
-This is the Twig implementation of the [Breadcrumbs] component.
+This is the Twig implementation of the [Breadcrumbs][breadcrumbs] component.
 
 Basic example usage:
 
@@ -101,9 +101,9 @@ content can be overridden by any custom block content.
 | `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. [**Optional DEPRECATED**][deprecated] Will be **required** in the next major version. |
 | `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                                             |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## BreadcrumbsItem
 
@@ -133,9 +133,9 @@ Use the `BreadcrumbsItem` component for the ordered list as the component's chil
 
 (\*) Optional only for the current page.
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Dealing with long titles
 
@@ -151,5 +151,7 @@ Additional option is to use helper class `text-truncate` with defined width.
 
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Breadcrumbs
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [twig-truncate]: https://twig.symfony.com/doc/3.x/filters/u.html

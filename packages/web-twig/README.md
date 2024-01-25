@@ -78,6 +78,24 @@ For available components see the [components directory](https://github.com/lmc-e
 if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
 if you want to contribute, read the guide [here](./CONTRIBUTING.md).
 
+## Additional Attributes
+
+All components accept additional attributes that are passed down to the root element of the component.
+This is useful for adding custom event handlers, accessibility attributes, or other attributes that
+are not supported by the component API.
+
+ℹ️ If you need to pass down event handlers to the native form elements in our form components,
+you can use the `inputProps` prop.
+
+Supported attributes are:
+
+- `on*` (eg. `onclick`)
+- `data-*`
+- `aria-*`
+- `id`
+
+If the component sets a value for any of these attributes, the value passed in will be overwritten.
+
 ## Styling
 
 Spirit components are designed to be consistent across all LMC applications. They include built-in styling that has been
