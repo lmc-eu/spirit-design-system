@@ -1,6 +1,6 @@
 # Modal
 
-This is the Twig implementation of the [Modal] component.
+This is the Twig implementation of the [Modal][modal] component.
 
 Modal is a composition of several subcomponents:
 
@@ -50,10 +50,9 @@ Example:
 | `id`                   | `string`                                      | —        | ✔        | Modal ID                                              |
 | `titleId`              | `string`                                      | `null`   | ✕        | ID of the title inside ModalHeader                    |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalDialog
 
@@ -150,11 +149,9 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 | `rel`                         | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource                                             |
 | `target`                      | `string`                      | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                                                          |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component. Also, all `form` attributes
-are allowed when the `elementType` is set to `form`.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalHeader
 
@@ -194,10 +191,9 @@ using the `aria-label` attribute on `<Modal>` component:
 | `modalId`       | `string` | —       | ✔        | Modal ID                |
 | `titleId`       | `string` | `null`  | ✕        | ID of the title         |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalBody
 
@@ -217,10 +213,9 @@ ModalBody holds the actual content of the Modal.
 
 There are no API options for ModalBody.
 
-You can add `data-*` or `aria-*` attributes to further extend the
-component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalFooter
 
@@ -274,10 +269,9 @@ accordingly:
 | `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | Alignment of Footer Actions |
 | `description` | `string`                                      | `null`  | ✕        | Optional Footer Description |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend the component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Opening the Modal
 
@@ -411,15 +405,17 @@ Or, feel free to write the controlling script yourself.
 
 👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
+[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
+[mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
+[novalidate-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#novalidate
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ScrollView/README.md
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Modal/README.md#javascript-plugin
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
-[modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
-[mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-[mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
-[autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
-[novalidate-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#novalidate
-[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
-[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/ScrollView/README.md
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

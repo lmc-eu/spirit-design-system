@@ -1,6 +1,6 @@
 # Pagination
 
-This is Twig implementation of the [Pagination] component.
+This is Twig implementation of the [Pagination][pagination] component.
 
 The Pagination is a composition of several subcomponents:
 
@@ -26,10 +26,9 @@ Basic example usage:
 
 There are no API options for Pagination.
 
-You can add `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### PaginationItem
 
@@ -51,10 +50,9 @@ These attributes will be passed to the topmost HTML element of the component.
 
 There are no API options for PaginationItem.
 
-You can add `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### PaginationLink
 
@@ -104,10 +102,9 @@ These attributes will be passed to the topmost HTML element of the component.
 | `pageNumber`         | `string` | `null`  | ✔        | Page number, hidden for screen readers |
 | `target`             | `string` | `null`  | ✕        | Browsing context for the link          |
 
-You can add `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### PaginationLinkNext & PaginationLinkPrevious
 
@@ -144,10 +141,9 @@ These attributes will be passed to the topmost HTML element of the component.
 | `href`               | `string` | —                    | ✕        | Link URL                          |
 | `target`             | `string` | `null`               | ✕        | Browsing context for the link     |
 
-You can add `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Full Example
 
@@ -197,5 +193,7 @@ When you put it all together:
 </Pagination>
 ```
 
-[Pagination]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pagination
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[pagination]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Pagination
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches

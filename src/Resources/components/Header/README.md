@@ -1,6 +1,6 @@
 # Header
 
-This is the Twig implementation of the [Header] component.
+This is the Twig implementation of the [Header][header] component.
 
 The Header is a highly variable and customizable component. It comes in several
 design variants and provides a handful of building blocks you can use to achieve
@@ -112,10 +112,9 @@ just branding.
 | `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
 | `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Supported Content
 
@@ -161,10 +160,9 @@ You can place any custom content into the mobile actions component:
 | `dialogId`        | `string` | —       | ✔        | ID of the linked HeaderDialog   |
 | `menuToggleLabel` | `string` | `Menu`  | ✕        | Label of the menu toggle button |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Desktop-Only Actions
 
@@ -193,10 +191,9 @@ control here.
 | ------- | -------------------------- | --------- | -------- | --------------------------- |
 | `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 #### Navigation
 
@@ -271,10 +268,9 @@ There is no API for HeaderNavItem.
 
 There is no API for HeaderButton.
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Header Dialog
 
@@ -294,10 +290,9 @@ used for second-level navigation in general.
 | ---- | -------- | ------- | -------- | -------------------------------------- |
 | `id` | `string` | —       | ✔        | ID to be linked in HeaderMobileActions |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Close Button
 
@@ -315,10 +310,9 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 | `enableDismiss` | `bool`   | `true`  | ✕        | Enable Off-canvas JS dismiss    |
 | `label`         | `string` | `Close` | ✕        | Label of the menu toggle button |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Primary and Secondary Actions
 
@@ -340,10 +334,9 @@ the optional secondary actions slot.
 | ------- | -------------------------- | --------- | -------- | ------------------------- |
 | `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color of the actions slot |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 #### Navigation
 
@@ -417,10 +410,9 @@ There is no API for HeaderDialogButton.
 
 There is no API for HeaderDialogText.
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+The components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Composition
 
@@ -532,7 +524,9 @@ And the complete Header Dialog:
 
 </details>
 
-[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md#javascript-plugin
 [header]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Header
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Header/README.md#javascript-plugin
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches

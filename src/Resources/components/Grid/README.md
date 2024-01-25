@@ -1,6 +1,6 @@
 # Grid
 
-This is Twig implementation of the [Grid] component.
+This is Twig implementation of the [Grid][grid] component.
 
 ## Grid
 
@@ -60,15 +60,15 @@ Without lexer:
 | `elementType` | `string`                                                     | `div`   | ✕        | HTML tag to render                                                                                         |
 | `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## GridSpan
 
 Grid Span allows to center content over multiple grid columns.
 
-For more info when and why to use it, see [Grid] component.
+For more info when and why to use it, see [Grid][grid] component.
 
 Basic example usage:
 
@@ -111,9 +111,9 @@ Without lexer:
 | `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over            |
 | `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on tablet  |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## GridItem
 
@@ -191,11 +191,13 @@ Without lexer:
 | `rowEnd`      | [`number` \| `string` \| `object`] | `null`  | ✕        | Row where the item should end      |
 | `rowStart`    | [`number` \| `string` \| `object`] | `null`  | ✕        | Row where the item should start    |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches

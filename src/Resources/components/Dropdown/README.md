@@ -1,6 +1,6 @@
 # Dropdown
 
-This is the Twig implementation of the [Dropdown] component.
+This is the Twig implementation of the [Dropdown][dropdown] component.
 
 Basic example usage:
 
@@ -29,7 +29,7 @@ Advanced example usage with positioning:
 </DropdownWrapper>
 ```
 
-Example with [Item] component:
+Example with [Item][item] component:
 
 ```twig
 <DropdownWrapper>
@@ -54,9 +54,9 @@ attributes to register trigger events.
 | `id`            | `string`                                     | —             | ✔        | Dropdown ID                           |
 | `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-left` | ✕        | Placement of the dropdown             |
 
-You can add `data-*` or `aria-*` attributes to further extend the component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Trigger attributes
 
@@ -76,9 +76,9 @@ or the width of the window is changed. There can be several triggers, the same r
 | ------------- | -------- | ------- | -------- | ------------------ |
 | `elementType` | `string` | `div`   | ✕        | HTML tag to render |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend the component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## JavaScript Plugin
 
@@ -96,7 +96,9 @@ Or, feel free to write the controlling script yourself.
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md#javascript
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

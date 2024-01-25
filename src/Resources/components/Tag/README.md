@@ -1,6 +1,6 @@
 # Tag
 
-This is Twig implementation of the [Tag] component.
+This is Twig implementation of the [Tag][tag] component.
 
 Basic example usage:
 
@@ -38,11 +38,13 @@ Without lexer:
 | `isSubtle`    | `bool`                                                  | `false`   | ✕        | Whether the Tag is displayed in subtle variant |
 | `size`        | [Size Extended dictionary][dictionary-size]             | `medium`  | ✕        | Size of the Tag                                |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
-[tag]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tag
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[tag]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tag

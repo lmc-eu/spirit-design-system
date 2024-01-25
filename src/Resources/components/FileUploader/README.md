@@ -70,10 +70,9 @@ By adding the `isFluid` attribute, FileUploader can take up all the available ho
 | --------- | ------ | ------- | -------- | ---------------------------------------------------------- |
 | `isFluid` | `bool` | `false` | ✕        | If true, the element spans to the full width of its parent |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderInput
 
@@ -223,10 +222,9 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 (\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderList
 
@@ -247,10 +245,9 @@ FileUploaderList is a simple wrapper which provides an accessible title and the 
 | `headingId`   | `string` | `file-uploader-attachments` | ✕        | List and heading identification |
 | `headingText` | `string` | `Attachments`               | ✕        | List title                      |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderAttachment
 
@@ -310,10 +307,9 @@ With image preview:
 | `onEdit`               | `func`                 | `null`   | ✕        | Function to trigger on click on edit button                                                        |
 | `removeText`           | `string`               | `Remove` | ✕        | Remove button text                                                                                 |
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Composition
 
@@ -334,12 +330,14 @@ This is how all subcomponents build up the complete FileUploader:
 </FileUploader>
 ```
 
-[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md#javascript-plugin-api
-[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-input-file]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-multiple]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#multiple
-[mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [multiple-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/multiple
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md#javascript-plugin-api
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

@@ -1,6 +1,6 @@
 # Checkbox
 
-This is Twig implementation of the [Checkbox] component.
+This is Twig implementation of the [Checkbox][checkbox] component.
 
 Basic example usage:
 
@@ -61,13 +61,14 @@ Without lexer:
 (\*) Label is required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
 
-On top of the API options, you can add `data-*` or `aria-*` attributes to
-further extend component's descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
-These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
-[checkbox]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Checkbox
-[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[checkbox]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Checkbox
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
