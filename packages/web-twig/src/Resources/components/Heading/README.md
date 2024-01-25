@@ -1,6 +1,6 @@
 # Heading
 
-This is Twig implementation of the [Heading] component.
+This is Twig implementation of the [Heading][heading] component.
 
 Basic example usage:
 
@@ -34,10 +34,12 @@ Without lexer:
 | `elementType` | `string`                                    | `div`    | ✕        | HTML tag to render                                             |
 | `translate`   | [`yes` \| `no` \| `''`]                     | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility. Also, UNSAFE styling props are available,
-see the [Escape hatches][escape-hatches] section in README to learn how and when to use them.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
-[heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
 [dictionary-size]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#size
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[heading]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/src/components/Heading
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches

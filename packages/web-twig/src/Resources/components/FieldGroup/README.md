@@ -116,12 +116,13 @@ When validated on server:
 (\*) To keep the component accessible, a label is always required. You can use the `label` for simple text or `UNSAFE_label` for HTML content.
 (\*\*) Props with and without `UNSAFE_` prefix are mutually exclusive.
 
-On top of the API options, you can add `data-*` or `aria-*` (except `aria-describedby` which is reserved for linking
-helper text and validation text to the group) attributes to further extend component's descriptiveness and
-accessibility. Also, UNSAFE styling props are available, see the [Escape hatches][escape-hatches] section in README to
-learn how and when to use them. These attributes will be passed to the topmost HTML element of the component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [gh-web-field-group-html]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#html-semantics
 [gh-web-field-group-disabled]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/FieldGroup#disabled-state
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[escape-hatches]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#escape-hatches
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
