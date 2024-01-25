@@ -1,7 +1,7 @@
 // 1. In order to be transitioned, the visibility of the dialog is controlled through `opacity` and `visibility`
 //    properties instead of the default `display`.
 // 2. Use a `::before` pseudo-element instead of `::backdrop` to make fading possible.
-// 3. Clip overflow during transition on mobile screens.
+// 3. Allow scrolling through the backdrop.
 // 4. Restore text selection after `all: unset`.
 // 5. For alignments other than `top`, prefer the `bottom` CSS property to enable smooth transitions between the uniform
 //    and docked variants (see `_ModalDialog.scss`).
@@ -12,14 +12,13 @@
 
 .Modal {
     --modal-scale: #{theme.$transition-scale-ratio};
-    --modal-translate-x: -50%;
 
     all: unset;
     position: fixed;
     inset: 0;
     z-index: 1;
     display: flex; // 1.
-    overflow: hidden; // 3.
+    padding-block: theme.$padding-y;
     visibility: hidden; // 1.
     opacity: 0; // 1.
     pointer-events: none; // 1.
@@ -56,13 +55,13 @@
 .Modal--center,
 .Modal:not(.Modal--top, .Modal--bottom) {
     --modal-top: auto;
-    --modal-bottom: 50%;
-    --modal-translate-y: 50%;
+    --modal-bottom: auto;
+    --modal-translate-y: 0;
     --modal-transform-origin: center center;
 }
 
 .Modal--top {
-    --modal-top: #{theme.$padding-y};
+    --modal-top: 0;
     --modal-bottom: auto;
     --modal-translate-y: #{-1 * theme.$transition-shift-distance};
     --modal-transform-origin: top center;
@@ -70,7 +69,7 @@
 
 .Modal--bottom {
     --modal-top: auto;
-    --modal-bottom: #{theme.$padding-y};
+    --modal-bottom: 0;
     --modal-translate-y: #{theme.$transition-shift-distance};
     --modal-transform-origin: bottom center;
 }
@@ -88,10 +87,6 @@
     &::before {
         visibility: visible;
         opacity: 1;
+        pointer-events: none; // 3.
     }
-}
-
-.Modal--center[open],
-.Modal[open]:not(.Modal--top, .Modal--bottom) {
-    --modal-translate-y: 50%;
 }
