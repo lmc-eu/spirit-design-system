@@ -5,6 +5,7 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 
 - [General Usage](#general-usage)
 - [Project structure](#project-structure)
+- [Decisions](#decisions)
 - [Commit Conventions](#commit-conventions)
 - [Code style](#code-style)
 - [Documenting the Components](#documenting-the-components)
@@ -18,6 +19,10 @@ This project uses `makefile` for managing various chores, like dependency instal
 ## Project structure
 
 This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/][packages] directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod deps 🤷‍♂️).
+
+## [Decisions](./docs/decisions/README.md)
+
+The reasoning behind various decisions made for the Spirit Design System. A good historical record.
 
 ## Commit Conventions
 
