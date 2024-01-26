@@ -4,7 +4,9 @@ First of all, thanks for your contribution to this project! ❤️
 Here are some tips how to make your contributing efforts efficient and eventually accepted & merged:
 
 - [General Usage](#general-usage)
+- [Decisions](#decisions)
 - [Project structure](#project-structure)
+- [Development](#development)
 - [Commit Conventions](#commit-conventions)
 - [Code style](#code-style)
 - [Documenting the Components](#documenting-the-components)
@@ -14,6 +16,10 @@ Here are some tips how to make your contributing efforts efficient and eventuall
 ## General usage
 
 This project uses `makefile` for managing various chores, like dependency installation, testing, linting etc. Make sure you run `make` right after you clone the repository - it will set you up with everything needed to get started. Once you are done with that, have a look at what commands (targets) are available for you to run using `make` - `make install` etc.
+
+## [Decisions](./docs/decisions/README.md)
+
+The reasoning behind various decisions made for the Spirit Design System. A good historical record.
 
 ## Project structure
 
