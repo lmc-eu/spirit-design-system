@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
     {
         $spiritWebTwigBundleComponentsPath = 'spirit-web-twig-bundle/src/Resources/components';
 
-        $directories = new \DirectoryIterator('../../' . $spiritWebTwigBundleComponentsPath);
+        $directories = new \DirectoryIterator('../vendor/lmc/' . $spiritWebTwigBundleComponentsPath);
         $components = [];
 
         /** @var SplFileInfo $file */

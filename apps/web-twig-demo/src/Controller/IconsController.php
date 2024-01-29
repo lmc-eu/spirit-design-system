@@ -20,7 +20,7 @@ class IconsController extends AbstractController
     {
         $spiritWebIconsPath = 'spirit-web-twig-bundle/static';
 
-        $directories = new \DirectoryIterator('../../' . $spiritWebIconsPath);
+        $directories = new \DirectoryIterator('../vendor/lmc/' . $spiritWebIconsPath);
         $icons = [];
 
         /** @var SplFileInfo $file */

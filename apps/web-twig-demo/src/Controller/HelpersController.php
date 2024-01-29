@@ -21,7 +21,7 @@ class HelpersController extends AbstractController
     {
         $spiritWebTwigBundleHelpersPath = 'spirit-web-twig-bundle/src/Resources/helpers';
 
-        $directories = new \DirectoryIterator('../../' . $spiritWebTwigBundleHelpersPath);
+        $directories = new \DirectoryIterator('../vendor/lmc/' . $spiritWebTwigBundleHelpersPath);
         $helpers = [];
 
         /** @var SplFileInfo $file */

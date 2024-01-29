@@ -8,9 +8,9 @@
   "repositories": [
     {
       "type": "path",
-      "url": "../spirit-web-twig-bundle",
+      "url": "../../packages/web-twig",
       "options": {
-        "symlink": true
+        "symlink": false
       }
     }
   ],
@@ -18,6 +18,8 @@
     "php": "^8.3",
     "ext-ctype": "*",
     "ext-iconv": "*",
+    "bref/bref": "^1.7",
+    "bref/symfony-bridge": "^0.2.1",
     "lmc/spirit-web-twig-bundle": "^4.0",
     "symfony/asset": "^6.4",
     "symfony/console": "^6.4",

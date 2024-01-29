@@ -17,6 +17,11 @@ framework:
   php_errors:
     log: true
 
+  # trust the remote address because API Gateway has no fixed IP or CIDR range that we can target
+  trusted_proxies: '127.0.0.1'
+  # trust "X-Forwarded-*" headers coming from API Gateway
+  trusted_headers: ['x-forwarded-for', 'x-forwarded-proto', 'x-forwarded-port', 'x-forwarded-host']
+
 when@test:
   framework:
     test: true

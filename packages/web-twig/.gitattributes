@@ -3,7 +3,7 @@
 # Exclude build/test files from archive
 /.github            export-ignore
 /bin                export-ignore
-/docs               export-ignore
+# /docs               export-ignore
 /tests              export-ignore
 /.editorconfig      export-ignore
 /.gitattributes     export-ignore
@@ -16,8 +16,8 @@
 /phpunit.xml.dist   export-ignore
 
 # Exclude story files from archive
-*.stories.twig      export-ignore
-**/stories          export-ignore
+# *.stories.twig      export-ignore
+# **/stories          export-ignore
 
 # Exclude test files from archive
 **/__tests__        export-ignore
