@@ -15,8 +15,21 @@
     footerElement.classList.add(`ModalFooter--${event.target.value}`);
   };
 
+  const toggleDockOnMobile = (selector, dependingInputSelector) => {
+    const dependingInputElement = document.querySelector(dependingInputSelector);
+    const dependingLabelElement = dependingInputElement.closest('label');
+
+    document.querySelector(selector).classList.toggle('ModalDialog--dockOnMobile');
+    dependingInputElement.disabled = !dependingInputElement.disabled;
+    dependingLabelElement.classList.toggle('Checkbox--disabled');
+  }
+
   const toggleExpandOnMobile = (selector) => {
     document.querySelector(selector).classList.toggle('ModalDialog--expandOnMobile');
+  }
+
+  const toggleScrolling = (selector) => {
+    document.querySelector(selector).classList.toggle('ModalDialog--nonScrollable');
   }
 </script>
 
@@ -559,6 +572,100 @@
     </dialog>
     <!-- Modal: end -->
 
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example-non-scrolling-modal"
+      aria-controls="example-non-scrolling-modal"
+      aria-expanded="false"
+    >
+      Open Modal with Disabled Scrolling Inside
+    </button>
+
+    <!-- Modal: start -->
+    <dialog id="example-non-scrolling-modal" class="Modal Modal--center" aria-labelledby="example-non-scrolling-modal-title">
+
+      <!-- ModalDialog: start -->
+      <article class="ModalDialog ModalDialog--nonScrollable">
+
+        <!-- ModalHeader: start -->
+        <header class="ModalHeader">
+          <h2 id="example-non-scrolling-modal-title" class="ModalHeader__title">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+          </h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example-non-scrolling-modal"
+            aria-controls="example-non-scrolling-modal"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+        <!-- ModalHeader: end -->
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <!-- Content: start -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p style="margin-bottom: 100vh">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <!-- Content: end -->
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-non-scrolling-modal"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-non-scrolling-modal"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </article>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
   </div>
 
 </section>
@@ -802,17 +909,6 @@
       Open Modal
     </button>
 
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-spirit-toggle="modal"
-      data-spirit-target="#example-docked"
-      aria-controls="example-docked"
-      aria-expanded="false"
-    >
-      Open Docked Modal (mobile only)
-    </button>
-
     <!-- Modal: start -->
     <dialog id="example-uniform" class="Modal Modal--center" aria-labelledby="example-uniform-title">
 
@@ -847,7 +943,7 @@
             provident unde. Eveniet, iste, molestiae?
           </p>
           <!-- Modal alignment demo: start -->
-          <form onchange="setModalAlignment(event, '#example-uniform')" class="mb-tablet-600">
+          <form onchange="setModalAlignment(event, '#example-uniform')" class="mb-600">
             <div>Modal alignment:</div>
             <label for="modal-uniform-alignment-top" class="Radio mr-600">
               <input type="radio" id="modal-uniform-alignment-top" name="modal-alignment" value="top" class="Radio__input" autocomplete="off" />
@@ -864,7 +960,7 @@
           </form>
           <!-- Modal alignment demo: end -->
           <!-- Footer alignment demo: start -->
-          <form onchange="setFooterAlignment(event, '#example-uniform .ModalFooter')" class="d-none d-tablet-block">
+          <form onchange="setFooterAlignment(event, '#example-uniform .ModalFooter')" class="d-none d-tablet-block mb-600">
             <div>Footer alignment (from tablet up):</div>
             <label for="footer-uniform-alignment-left" class="Radio mr-600">
               <input type="radio" id="footer-uniform-alignment-left" name="footer-alignment" value="left" class="Radio__input" autocomplete="off" />
@@ -880,6 +976,29 @@
             </label>
           </form>
           <!-- Footer alignment demo: end -->
+          <!-- Modal features demo: start -->
+          <form class="Stack Stack--hasSpacing">
+            <label for="modal-uniform-docked" class="Checkbox">
+              <input type="checkbox" id="modal-uniform-docked" class="Checkbox__input" onchange="toggleDockOnMobile('#example-uniform-dialog', '#modal-uniform-expanded')" autocomplete="off" />
+              <span class="Checkbox__text">
+                  <span class="Checkbox__label">Dock on mobile</span>
+                </span>
+            </label>
+            <label for="modal-uniform-expanded" class="Checkbox Checkbox--disabled" id="modal-uniform-expanded-label">
+              <input type="checkbox" id="modal-uniform-expanded" class="Checkbox__input" onchange="toggleExpandOnMobile('#example-uniform-dialog')" autocomplete="off" disabled />
+              <span class="Checkbox__text">
+                  <span class="Checkbox__label">Expand on mobile (docked only)</span>
+                </span>
+            </label>
+            <label for="modal-uniform-non-scrolling" class="Checkbox">
+              <input type="checkbox" id="modal-uniform-non-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-uniform-dialog')" autocomplete="off" checked />
+              <span class="Checkbox__text">
+                  <span class="Checkbox__label">Scrolling inside</span>
+                </span>
+            </label>
+          </form>
+          <!-- Modal features demo: end -->
+
           <!-- Content: end -->
         </div>
         <!-- ModalBody: end -->
@@ -903,75 +1022,6 @@
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
               data-spirit-target="#example-uniform"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
-
-      </article>
-      <!-- ModalDialog: end -->
-
-    </dialog>
-    <!-- Modal: end -->
-
-    <!-- Modal: start -->
-    <dialog id="example-docked" class="Modal Modal--center" aria-labelledby="example-docked-title">
-
-      <!-- ModalDialog: start -->
-      <article id="example-docked-dialog" class="ModalDialog ModalDialog--dockOnMobile ModalDialog--expandOnMobile">
-
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example-docked-title" class="ModalHeader__title">Modal Title</h2>
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-spirit-dismiss="modal"
-            data-spirit-target="#example-docked"
-            aria-controls="example-docked"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </header>
-        <!-- ModalHeader: end -->
-
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <!-- Content: end -->
-        </div>
-        <!-- ModalBody: end -->
-
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__description">
-            Optional description
-          </div>
-          <div class="ModalFooter__actions">
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-docked"
-            >
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-docked"
             >
               Secondary action
             </button>
