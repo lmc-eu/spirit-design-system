@@ -1,0 +1,75 @@
+{% block header %}
+    {% set isHeaderInverted = false %}
+    {% set hasHeaderBottomDivider = true %}
+    {% set headerParent = parent() %}
+    <Cover illustration="balloon" illustrationVisibleBreakpoint="desktop">
+        {{- headerParent | raw -}}
+        <Container variant="cygnus">
+            <CoverTitle variant="companies">
+                <Heading
+                    elementType="h1"
+                    size="medium"
+                    UNSAFE_className="mb-800"
+                >
+                    {{ 'COVER_TITLE' | trans }}
+                </Heading>
+                <DefaultCoverLoginButtons />
+
+                <Divider UNSAFE_className="mb-600" />
+
+                <Grid cols="1" tablet="3">
+                    <div>
+                        <Text
+                            size="xlarge"
+                            emphasis="bold"
+                            UNSAFE_className="mb-300"
+                        >
+                            {{ 'COVER_SUBTITLE_FIRST_TOP' | trans }}
+                        </Text>
+                        <Text>{{ 'COVER_SUBTITLE_FIRST_BOTTOM' | trans }}</Text>
+                    </div>
+                    <div>
+                        <Text
+                            size="xlarge"
+                            emphasis="bold"
+                            UNSAFE_className="mb-300"
+                        >
+                            {{ 'COVER_SUBTITLE_SECOND_TOP' | trans }}
+                        </Text>
+                        <Text>{{ 'COVER_SUBTITLE_SECOND_BOTTOM' | trans }}</Text>
+                    </div>
+                    <div>
+                        <Text
+                            size="xlarge"
+                            emphasis="bold"
+                            UNSAFE_className="mb-300"
+                        >
+                            {{ 'COVER_SUBTITLE_THIRD_TOP' | trans }}
+                        </Text>
+                        <TooltipModern placement="top-left">tooltip</TooltipModern>
+                        <Text>{{ 'COVER_SUBTITLE_THIRD_BOTTOM' | trans }}</Text>
+                    </div>
+                </Grid>
+            </CoverTitle>
+        </Container>
+    </Cover>
+{% endblock %}
+
+{% block body %}
+    {% spaceless %}
+        <Container
+            variant="cygnus"
+            UNSAFE_className="pt-700 mb-900 pt-tablet-800 mb-tablet-1000 mb-desktop-1100 text-center"
+        >
+            <DefaultTabs activeTab="{{ activePart }}" />
+        </Container>
+
+        {% block content %}{% endblock %}
+
+        <Container variant="cygnus" UNSAFE_className="mb-1000">
+            <DefaultPriceListBlock />
+            <DefaultStartToday />
+            <DefaultQuestionsContact />
+        </Container>
+    {% endspaceless %}
+{% endblock %}
