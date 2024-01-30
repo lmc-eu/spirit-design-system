@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.10.0"></a>
+
+# [2.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.9.0...@lmc-eu/spirit-web-twig@2.10.0) (2024-01-30)
+
+### Chores
+
+- **web,web-twig,web-react:** Unify demo differences in components [#DS-660](https://github.com/lmc-eu/spirit-design-system/issues/DS-660) ([db7426e](https://github.com/lmc-eu/spirit-design-system/commit/db7426e))
+
+### Code Refactoring
+
+- **web-twig, demo:** Move Tooltip demo scripts to the demo app ([9fc6ae0](https://github.com/lmc-eu/spirit-design-system/commit/9fc6ae0))
+
+### Documentation
+
+- **web-twig:** Use spacing style props in all components [#DS-1109](https://github.com/lmc-eu/spirit-design-system/issues/DS-1109) ([3692198](https://github.com/lmc-eu/spirit-design-system/commit/3692198))
+- **web, web-twig, web-react:** Clarify that `Modal` can be stacked, but not nested in the DOM ([16f3b70](https://github.com/lmc-eu/spirit-design-system/commit/16f3b70))
+
+### Features
+
+- **web-react:** Introduce vertical alignment options for `Modal` [#DS-940](https://github.com/lmc-eu/spirit-design-system/issues/DS-940) ([67e2594](https://github.com/lmc-eu/spirit-design-system/commit/67e2594))
+- **web-twig:** Introduce advanced Tooltip usage supported by FloatingUI ([91eaec0](https://github.com/lmc-eu/spirit-design-system/commit/91eaec0)), closes [#DS-1087](https://github.com/lmc-eu/spirit-design-system/issues/DS-1087)
+- **web-twig:** Introduce spacing style props to all components [#DS-1109](https://github.com/lmc-eu/spirit-design-system/issues/DS-1109) ([78a697e](https://github.com/lmc-eu/spirit-design-system/commit/78a697e))
+- **web-twig:** Introduce vertical alignment options for `Modal` [#DS-940](https://github.com/lmc-eu/spirit-design-system/issues/DS-940) ([d1da586](https://github.com/lmc-eu/spirit-design-system/commit/d1da586))
+
+### Reverts
+
+- **web-twig:** Set Tooltip to use modifier class instead of data attr to set the placement inside ([0fa635a](https://github.com/lmc-eu/spirit-design-system/commit/0fa635a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.9.0"></a>
 
 # [2.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.8.0...@lmc-eu/spirit-web-twig@2.9.0) (2024-01-17)
