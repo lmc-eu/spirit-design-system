@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.11...@lmc-eu/spirit-form-validations@1.1.0) (2024-01-30)
+
+### Features
+
+- **demo,web,web-react,form-validations:** Set font-display to block in google fonts load ([258d9e9](https://github.com/lmc-eu/spirit-design-system/commit/258d9e9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.0.11"></a>
 
 ## [1.0.11](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.0.10...@lmc-eu/spirit-form-validations@1.0.11) (2024-01-17)

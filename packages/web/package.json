@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
   "publishConfig": {
@@ -61,8 +61,8 @@
   },
   "devDependencies": {
     "@lmc-eu/browserslist-config": "2.0.0",
-    "@lmc-eu/spirit-common": "^0.1.0",
-    "@lmc-eu/spirit-demo": "^0.1.0",
+    "@lmc-eu/spirit-common": "^0.2.0",
+    "@lmc-eu/spirit-demo": "^0.1.1",
     "@lmc-eu/stylelint-config": "7.0.1",
     "@rollup/plugin-typescript": "11.1.5",
     "@swc/core": "1.3.102",

@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.0"></a>
+
+# [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.8.0...@lmc-eu/spirit-web@1.9.0) (2024-01-30)
+
+### Bug Fixes
+
+- **web:** Check if controlled placement on Tooltip is also undefined ([049ebf7](https://github.com/lmc-eu/spirit-design-system/commit/049ebf7))
+
+### Chores
+
+- **web,web-react:** Hide Vite HMR overlay ([66bb64a](https://github.com/lmc-eu/spirit-design-system/commit/66bb64a))
+- **web,web-twig,web-react:** Unify demo differences in components [#DS-660](https://github.com/lmc-eu/spirit-design-system/issues/DS-660) ([db7426e](https://github.com/lmc-eu/spirit-design-system/commit/db7426e))
+
+### Dependencies
+
+- **web:** Adding peer FloatingUI dependency to web package.json ([6484314](https://github.com/lmc-eu/spirit-design-system/commit/6484314))
+
+### Documentation
+
+- **web, web-twig, web-react:** Clarify that `Modal` can be stacked, but not nested in the DOM ([16f3b70](https://github.com/lmc-eu/spirit-design-system/commit/16f3b70))
+
+### Features
+
+- **demo,web,web-react,form-validations:** Set font-display to block in google fonts load ([258d9e9](https://github.com/lmc-eu/spirit-design-system/commit/258d9e9))
+- **web-react:** Introduce vertical alignment options for `Modal` [#DS-940](https://github.com/lmc-eu/spirit-design-system/issues/DS-940) ([67e2594](https://github.com/lmc-eu/spirit-design-system/commit/67e2594))
+- **web:** Add FloatingUI support to Tooltip components ([40887b2](https://github.com/lmc-eu/spirit-design-system/commit/40887b2))
+- **web:** Introduce vertical alignment options for `Modal` [#DS-940](https://github.com/lmc-eu/spirit-design-system/issues/DS-940) ([966f44e](https://github.com/lmc-eu/spirit-design-system/commit/966f44e))
+- **web:** New CSS variable for Tooltip maxWidth ([1db03e9](https://github.com/lmc-eu/spirit-design-system/commit/1db03e9))
+
+### Tests
+
+- **web:** Adding test for tooltip config attribute ([274bab6](https://github.com/lmc-eu/spirit-design-system/commit/274bab6))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.8.0"></a>
 
 # [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.7.0...@lmc-eu/spirit-web@1.8.0) (2024-01-17)

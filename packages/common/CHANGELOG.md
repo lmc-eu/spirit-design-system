@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+
+# [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.1.0...@lmc-eu/spirit-common@0.2.0) (2024-01-30)
+
+### Features
+
+- **common:** Configure https in server constants ([c7824b3](https://github.com/lmc-eu/spirit-design-system/commit/c7824b3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.1.0"></a>
 
 # 0.1.0 (2024-01-12)

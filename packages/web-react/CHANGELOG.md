@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.11.0"></a>
+
+# [1.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.10.0...@lmc-eu/spirit-web-react@1.11.0) (2024-01-30)
+
+### Bug Fixes
+
+- **web-react:** Cleanup scrolling when Modal is unmounted ([654a147](https://github.com/lmc-eu/spirit-design-system/commit/654a147)), closes [#DS-1126](https://github.com/lmc-eu/spirit-design-system/issues/DS-1126)
+
+### Chores
+
+- **web,web-react:** Hide Vite HMR overlay ([66bb64a](https://github.com/lmc-eu/spirit-design-system/commit/66bb64a))
+- **web,web-twig,web-react:** Unify demo differences in components [#DS-660](https://github.com/lmc-eu/spirit-design-system/issues/DS-660) ([db7426e](https://github.com/lmc-eu/spirit-design-system/commit/db7426e))
+
+### Code Refactoring
+
+- **web-react:** Clean up shared non-dictionary types and constants ([e7b9317](https://github.com/lmc-eu/spirit-design-system/commit/e7b9317))
+
+### Dependencies
+
+- **web-react:** Adding peer FloatingUI dependency to package.json ([33df3ee](https://github.com/lmc-eu/spirit-design-system/commit/33df3ee))
+
+### Documentation
+
+- **web-react:** Use spacing style props in all components [#DS-475](https://github.com/lmc-eu/spirit-design-system/issues/DS-475) ([b6b8721](https://github.com/lmc-eu/spirit-design-system/commit/b6b8721))
+- **web, web-twig, web-react:** Clarify that `Modal` can be stacked, but not nested in the DOM ([16f3b70](https://github.com/lmc-eu/spirit-design-system/commit/16f3b70))
+
+### Features
+
+- **demo,web,web-react,form-validations:** Set font-display to block in google fonts load ([258d9e9](https://github.com/lmc-eu/spirit-design-system/commit/258d9e9))
+- **web-react:** Introduce new TooltipModern component with FloatingUI ([14cbadc](https://github.com/lmc-eu/spirit-design-system/commit/14cbadc))
+- **web-react:** Introduce spacing style props to all components [#DS-475](https://github.com/lmc-eu/spirit-design-system/issues/DS-475) ([867ba37](https://github.com/lmc-eu/spirit-design-system/commit/867ba37))
+- **web-react:** Introduce vertical alignment options for `Modal` [#DS-940](https://github.com/lmc-eu/spirit-design-system/issues/DS-940) ([67e2594](https://github.com/lmc-eu/spirit-design-system/commit/67e2594))
+
+### Tests
+
+- **web-react:** Add test for hook useFloatingUI ([cce1551](https://github.com/lmc-eu/spirit-design-system/commit/cce1551))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.10.0"></a>
 
 # [1.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.9.0...@lmc-eu/spirit-web-react@1.10.0) (2024-01-17)
