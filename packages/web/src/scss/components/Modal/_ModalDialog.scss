@@ -6,6 +6,7 @@
 // 5. Unfortunately, the open state cannot be part of the parent `-docked-modal-dialog()` mixin because it's not
 //    possible to generate selector for the feature class scenario.
 // 6. Override bottom padding of parent `.Modal` in the docked variant.
+// 7. Override the min-height of the expanded docked variant.
 
 @use 'sass:map';
 @use '../../settings/feature-flags';
@@ -53,17 +54,26 @@
         width: theme.$dialog-uniform-width;
         max-width: calc(100% - #{theme.$padding-x});
         height: theme.$dialog-uniform-height;
-        max-height: theme.$dialog-uniform-max-height;
+        min-height: unset; // 7. @deprecated Can be removed once the uniform modal dialog has been made default.
         border-radius: theme.$dialog-border-radius;
     }
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        height: theme.$dialog-height-tablet;
-        max-height: theme.$dialog-uniform-max-height-tablet;
+        height: theme.$dialog-uniform-height-tablet;
     }
 
     @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
         width: theme.$dialog-width-desktop;
+    }
+}
+
+@mixin -scrollable-uniform-modal-dialog($from-breakpoint) {
+    @if $from-breakpoint == 0 {
+        max-height: theme.$dialog-uniform-max-height;
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        max-height: theme.$dialog-uniform-max-height-tablet;
     }
 }
 
@@ -76,8 +86,7 @@
 
         width: theme.$dialog-width;
         max-width: none;
-        height: theme.$dialog-height;
-        max-height: theme.$dialog-max-height;
+        height: theme.$dialog-docked-height;
         border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
     }
 }
@@ -91,8 +100,21 @@
 
 @mixin -expand-docked-modal-dialog() {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-        height: theme.$dialog-max-height;
+        min-height: theme.$dialog-docked-expanded-height;
     }
+}
+
+@mixin -scrollable-docked-modal-dialog() {
+    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
+        max-height: theme.$dialog-docked-expanded-height;
+    }
+}
+
+// @deprecated The non-scrollable modal dialog is deprecated and will be removed in the next major release.
+// Migration: In CSS, make the modal dialog non-scrollable by default so scrolling inside is turned on by a modifier class.
+@mixin -non-scrollable-modal-dialog() {
+    height: auto;
+    max-height: none;
 }
 
 .ModalDialog {
@@ -102,9 +124,12 @@
     // Migration: Remove the feature flag and make the uniform dialog the default.
     @if feature-flags.$modal-enable-uniform-dialog {
         @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
+        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
     } @else {
         @include -docked-modal-dialog();
+        @include -scrollable-docked-modal-dialog();
         @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, tablet));
+        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, tablet));
 
         [open] > & {
             @include -open-docked-modal-dialog();
@@ -126,22 +151,36 @@
     .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
         @include -expand-docked-modal-dialog();
     }
+
+    .ModalDialog--nonScrollable {
+        @include -non-scrollable-modal-dialog();
+    }
 } @else {
     .spirit-feature-modal-enable-uniform-dialog .ModalDialog {
         @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
+        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
     }
 
     .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile {
         @include -docked-modal-dialog();
+        @include -scrollable-docked-modal-dialog();
     }
 
     .spirit-feature-modal-enable-uniform-dialog [open] > .ModalDialog--dockOnMobile {
         @include -open-docked-modal-dialog();
     }
 
-    // stylelint-disable-next-line selector-max-class -- Only target the docked variant.
+    // stylelint-disable selector-max-class, no-descending-specificity -- Only target the docked variant.
     .ModalDialog--expandOnMobile,
     .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
         @include -expand-docked-modal-dialog();
+    }
+    // stylelint-enable selector-max-class
+
+    // @deprecated The non-scrollable modal dialog is deprecated and will be removed in the next major release.
+    // Migration: In CSS, make the modal dialog non-scrollable by default so scrolling inside is turned on by a modifier class.
+    .ModalDialog--nonScrollable,
+    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--nonScrollable {
+        @include -non-scrollable-modal-dialog();
     }
 }

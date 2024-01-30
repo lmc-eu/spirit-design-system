@@ -1,10 +1,11 @@
 // 1. In order to be transitioned, the visibility of the dialog is controlled through `opacity` and `visibility`
 //    properties instead of the default `display`.
-// 2. Use a `::before` pseudo-element instead of `::backdrop` to make fading possible.
-// 3. Allow scrolling through the backdrop.
-// 4. Restore text selection after `all: unset`.
-// 5. For alignments other than `top`, prefer the `bottom` CSS property to enable smooth transitions between the uniform
-//    and docked variants (see `_ModalDialog.scss`).
+// 2. Simply use Modal background color instead of `::backdrop` to make fading possible. (A pseudo-element cannot be
+//    used because it covers the scrollbar of the ModalDialog with the inside scrolling turned off.)
+// 3. Use background gradient to prevent background from flickering in Safari.
+// 4. Clip overflow during transition of the docked variant on mobile screens.
+// 5. Allow scrolling through the modal. Has no effect unless the modal is taller than the viewport.
+// 6. Restore text selection after `all: unset`.
 
 @use 'sass:map';
 @use '../../tools/breakpoint';
@@ -19,6 +20,8 @@
     z-index: 1;
     display: flex; // 1.
     padding-block: theme.$padding-y;
+    overflow: hidden; // 4.
+    background: linear-gradient(#{theme.$backdrop-background-color}, #{theme.$backdrop-background-color}); // 8.
     visibility: hidden; // 1.
     opacity: 0; // 1.
     pointer-events: none; // 1.
@@ -29,29 +32,16 @@
         background-color: transparent;
     }
 
-    // 2.
-    &::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: -2;
-        background-color: theme.$backdrop-background-color;
-        visibility: hidden;
-        opacity: 0;
-    }
-
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$transition-duration;
-
-        // 2.
-        &::before {
-            transition: inherit;
-        }
     }
 }
 
-// 5.
+.Modal:has(.ModalDialog--nonScrollable) {
+    overflow-y: auto; // 5.
+}
+
 .Modal--center,
 .Modal:not(.Modal--top, .Modal--bottom) {
     --modal-top: auto;
@@ -80,13 +70,6 @@
 
     visibility: visible;
     opacity: 1;
-    user-select: text; // 4.
+    user-select: text; // 6.
     pointer-events: auto;
-
-    // 2.
-    &::before {
-        visibility: visible;
-        opacity: 1;
-        pointer-events: none; // 3.
-    }
 }

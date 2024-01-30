@@ -60,6 +60,9 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 </dialog>
 ```
 
+👉 Please note the preferred height options are ignored when scrolling inside ModalDialog is
+[turned off](#disable-scrolling-inside-modaldialog).
+
 👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
 
 ### Custom Max Height
@@ -81,6 +84,8 @@ You can use the custom property `--modal-max-height-tablet` to override the max 
   <!-- ModalDialog -->
 </dialog>
 ```
+
+👉 Please note the max height is ignored when scrolling inside ModalDialog is [turned off](#disable-scrolling-inside-modaldialog).
 
 👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
 
@@ -246,7 +251,7 @@ Use our JavaScript plugin to open your Modal, e.g.:
 </button>
 ```
 
-## Disable Modal closing on backdrop click
+## Disable Modal Closing on Backdrop Click
 
 Disable modal close when clicking on the backdrop.
 You can still close modal with close buttons or ESC key.
@@ -279,6 +284,27 @@ scrolling, e.g.:
   <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
 </div>
 ```
+
+### Disable Scrolling Inside ModalDialog
+
+Scrolling inside ModalDialog can be turned off by adding the `ModalDialog--nonScrollable` modifier class:
+
+```html
+<article class="ModalDialog ModalDialog--nonScrollable">
+  <!-- … -->
+</article>
+```
+
+This way, the ModalBody will expand to fit the height of its content and the whole ModalDialog will scroll in case the
+content is longer than user's viewport.
+
+👉 Please note that this modifier class can produce unexpected results when used in combination with ScrollView.
+
+#### ⚠️ DEPRECATION NOTICE
+
+The `.ModalDialog--nonScrollable` modifier will be removed in the next major release and the ModalDialog will be made
+non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the
+`.ModalDialog--scrollable` modifier class (which will remain the recommended default usage).
 
 ## Stacking Modals
 
