@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/dist/icons';
 import { IconsProvider } from '../../../context';
 import DocsSection from '../../../../docs/DocsSections';
-import Icon from './Icon';
+import Icon from '../Icon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

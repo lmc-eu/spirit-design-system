@@ -1,5 +1,5 @@
 import htmlReactParser from 'html-react-parser';
-import React from 'react';
+import React, { ForwardedRef, forwardRef } from 'react';
 import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 
@@ -8,7 +8,9 @@ const defaultProps = {
   boxSize: 24,
 };
 
-export const Icon = (props: IconProps) => {
+/* We need an exception for components exported with forwardRef */
+/* eslint no-underscore-dangle: ['error', { allow: ['_Icon'] }] */
+export const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
   const { boxSize, name, title, ariaHidden, ...restProps } = props;
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
@@ -29,11 +31,14 @@ export const Icon = (props: IconProps) => {
       {...otherProps}
       {...styleProps}
       className={styleProps.className}
+      ref={ref}
     >
       {htmlReactParser(icon)}
     </svg>
   );
 };
+
+export const Icon = forwardRef<SVGSVGElement, IconProps>(_Icon);
 
 Icon.defaultProps = defaultProps;
 
