@@ -1,11 +1,11 @@
 import React, { ElementType, ReactNode } from 'react';
 import { useStyleProps } from '../../hooks';
-import { StyleProps } from '../../types';
+import { StyleProps, TransferProps } from '../../types';
 import { useTooltipContext } from './TooltipContext';
 
-interface TooltipTriggerProps extends StyleProps {
+interface TooltipTriggerProps extends StyleProps, TransferProps {
   elementType?: ElementType | string;
-  children: string | ReactNode | ((props: { isOpen: boolean }) => React.ReactNode);
+  children?: string | ReactNode | ((props: { isOpen: boolean }) => React.ReactNode);
 }
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {
@@ -25,6 +25,7 @@ const TooltipTrigger = (props: TooltipTriggerProps) => {
 
 TooltipTrigger.defaultProps = {
   elementType: 'button',
+  children: null,
 };
 
 export default TooltipTrigger;
