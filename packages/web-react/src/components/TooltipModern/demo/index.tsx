@@ -13,6 +13,7 @@ import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
 import TooltipOnHover from './TooltipOnHover';
 import TooltipPlacements from './TooltipPlacements';
 import TooltipWithFloatingUI from './TooltipWithFloatingUI';
+import TooltipIcon from './TooltipIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -31,6 +32,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Dismissible Tooltip via JS API and Floating UI">
         <TooltipDismissibleViaJS />
+      </DocsSection>
+      <DocsSection title="Tooltip on Icon Component">
+        <TooltipIcon />
       </DocsSection>
       <DocsSection title="Advanced Floating Functionality" stackAlignment="stretch">
         <TooltipWithFloatingUI />
