@@ -224,6 +224,37 @@ on the `.Tooltip__arrow` to control it and prevent conflicts with the default CS
 </div>
 ```
 
+### Trigger
+
+You can choose whether you want to open the tooltip on `click` and/or `hover`.
+By default, both options are active, e.g., `data-spirit-trigger="click, hover"`.
+If you only want the `click` trigger, you need to specify the trigger, as shown in the example below.
+This setup might be preferable when you have a link in your tooltip, for example.
+
+```html
+<button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-trigger">
+  Toggle tooltip
+</button>
+<div class="TooltipWrapper d-inline-block">
+  <div
+    id="my-tooltip-trigger"
+    class="Tooltip is-hidden"
+    data-spirit-trigger="click"
+    <!--
+    Only
+    `click`
+    trigger
+    is
+    active
+    now.
+    --
+  >
+    > You can click on the link: <a href="#">Link to unknown</a>
+    <span class="Tooltip__arrow"></span>
+  </div>
+</div>
+```
+
 ### Advanced Floating Functionality
 
 To enable the advanced floating functionality, you need to have activated [feature flag][readme-feature-flags] for placement, activate the JS plugin, wrap your tooltip with an element having the `data-spirit-element="tooltip-wrapper"` data attribute, and add the `data-spirit-placement-controlled` attribute to your tooltip element to modify the styling of arrows and tooltip placement.
@@ -261,7 +292,7 @@ works and to get an idea of all possible cases you may need to cover.
 | `data-spirit-flip-fallback-axis-side-direction` | ["none" \| "start" \| "end" ]                | "none"         | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
 | `data-spirit-flip-fallback-placements`          | string                                       | -              | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
 | `data-spirit-placement`                         | [Placement Dictionary][dictionary-placement] | "bottom"       | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
-| `data-spirit-trigger`                           | string                                       | "click, hover" | ✕        | How tooltip is triggered: click, hover. You may pass multiple triggers; separate them with a comma.                                                                                                                                                                        |
+| `data-spirit-trigger`                           | ["click" \| "hover" \| "manual"]             | "click, hover" | ✕        | How tooltip is triggered: `click`, `hover`, `manual`. You may pass multiple triggers; separate them with a comma. If you pass `manual`, no event listener will be added, and you should provide your own toggle solution.                                                  |
 
 👆 All the attributes mentioned above can be also set as an object in the `config` attribute, like this: `data-spirit-config='{"flip": "true", "flipFallbackPlacements": "top, right, bottom"}'`. Please note that this configuration has lower priority than individual attributes and will be overwritten by them.
 
