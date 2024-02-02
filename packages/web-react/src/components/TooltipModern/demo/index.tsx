@@ -14,6 +14,7 @@ import TooltipOnHover from './TooltipOnHover';
 import TooltipPlacements from './TooltipPlacements';
 import TooltipWithFloatingUI from './TooltipWithFloatingUI';
 import TooltipHover from './TooltipHover';
+import TooltipIcon from './TooltipIcon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -35,6 +36,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Tooltip on Hover with Floating UI">
         <TooltipHover />
+      </DocsSection>
+      <DocsSection title="Tooltip on Icon Component">
+        <TooltipIcon />
       </DocsSection>
       <DocsSection title="Advanced Floating Functionality" stackAlignment="stretch">
         <TooltipWithFloatingUI />
