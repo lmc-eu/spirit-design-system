@@ -105,6 +105,24 @@ there will be automatically displayed close button in `TooltipPopover`` componen
 </div>
 ```
 
+### Trigger
+
+You can choose whether you want to open the tooltip on `click` and/or `hover`.
+By default, both options are active, e.g., `trigger="click, hover"`.
+If you only want the `click` trigger, you need to specify the trigger, as shown in the example below.
+This setup might be preferable when you have a link in your tooltip, for example.
+
+```html
+<div className="spirit-feature-tooltip-enable-data-placement">
+  <TooltipWrapper>
+    <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-trigger">I have a tooltip 😎</button>
+    <TooltipPopover id="my-tooltip-trigger" trigger="click" <!-- Only `click` trigger is active now. -->
+      > You can click on the link: <a href="#">Link to unknown</a>
+    </TooltipPopover>
+  </TooltipWrapper>
+</div>
+```
+
 #### Advanced Floating Functionality
 
 To enable the advanced floating functionality, you need to have activated feature flag `spirit-feature-tooltip-enable-data-placement` on any parent element.
@@ -139,18 +157,19 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
 
 #### API
 
-| Attribute                       | Type                                         | Default  | Required | Description                                                                                                                                                                                                                                                                |
-| ------------------------------- | -------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `closeLabel`                    | `string`                                     | `Close`  | ✕        | Close label                                                                                                                                                                                                                                                                |
-| `enableFlipping`                | `bool`                                       | true     | ✕        | Enables [flipping][floating-ui-flip] of the element’s placement when it starts to overflow its boundary area. For example `top` can be flipped to `bottom`.                                                                                                                |
-| `enableFlippingCrossAxis`       | `bool`                                       | true     | ✕        | Enables flipping on the [cross axis][floating-ui-flip-cross-axis], the axis perpendicular to main axis. For example `top-end` can be flipped to the `top-start`.                                                                                                           |
-| `enableShifting`                | `bool`                                       | true     | ✕        | Enables [shifting][floating-ui-shift] of the element to keep it inside the boundary area by adjusting its position.                                                                                                                                                        |
-| `enableSizing`                  | `bool`                                       | true     | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
-| `flipFallbackAxisSideDirection` | ["none" \| "start" \| "end"]                 | "none"   | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
-| `flipFallbackPlacements`        | `string`                                     | -        | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
-| `id`                            | `string`                                     | -        | ✔        | Tooltip id                                                                                                                                                                                                                                                                 |
-| `isDismissible`                 | `bool`                                       | false    | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
-| `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom" | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
+| Attribute                       | Type                                         | Default        | Required | Description                                                                                                                                                                                                                                                                |
+| ------------------------------- | -------------------------------------------- | -------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `closeLabel`                    | `string`                                     | `Close`        | ✕        | Close label                                                                                                                                                                                                                                                                |
+| `enableFlipping`                | `bool`                                       | true           | ✕        | Enables [flipping][floating-ui-flip] of the element’s placement when it starts to overflow its boundary area. For example `top` can be flipped to `bottom`.                                                                                                                |
+| `enableFlippingCrossAxis`       | `bool`                                       | true           | ✕        | Enables flipping on the [cross axis][floating-ui-flip-cross-axis], the axis perpendicular to main axis. For example `top-end` can be flipped to the `top-start`.                                                                                                           |
+| `enableShifting`                | `bool`                                       | true           | ✕        | Enables [shifting][floating-ui-shift] of the element to keep it inside the boundary area by adjusting its position.                                                                                                                                                        |
+| `enableSizing`                  | `bool`                                       | true           | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
+| `flipFallbackAxisSideDirection` | ["none" \| "start" \| "end"]                 | "none"         | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
+| `flipFallbackPlacements`        | `string`                                     | -              | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
+| `id`                            | `string`                                     | -              | ✔        | Tooltip id                                                                                                                                                                                                                                                                 |
+| `isDismissible`                 | `bool`                                       | false          | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
+| `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom"       | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
+| `triggers`                      | ["click" \| "hover" \| "manual"]             | "click, hover" | ✕        | How tooltip is triggered: `click`, `hover`. You may pass multiple triggers; separate them with a comma. If you pass `manual`, no event listener will be added, and you should provide your own toggle solution.                                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
