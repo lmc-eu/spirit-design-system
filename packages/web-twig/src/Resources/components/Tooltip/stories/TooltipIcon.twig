@@ -1,0 +1,24 @@
+<span>
+  Click on the icon on the right to view the tooltip
+  <TooltipWrapper UNSAFE_className="spirit-feature-tooltip-enable-data-placement d-inline-block">
+        <Icon
+          id="button-example-with-icon"
+          name="info"
+          boxSize="16"
+          marginBottom="space-200"
+          aria-describedby="tooltip-example-with-icon"
+          data-spirit-toggle="tooltip"
+          data-spirit-target="#tooltip-example-with-icon"
+      />
+      <TooltipPopover
+          id="tooltip-example-with-icon"
+          UNSAFE_className="is-hidden"
+          enableControlledPlacement
+          placement="right"
+          flipFallbackPlacements="top-start, top-bottom, left"
+          isDismissible
+      >
+          Close me
+      </TooltipPopov>
+  </TooltipWrapper>
+</span>
