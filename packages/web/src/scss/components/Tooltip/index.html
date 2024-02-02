@@ -446,6 +446,53 @@
 
   <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
 
+    <h2 class="docs-Heading">Tooltip on Icon Component</h2>
+
+    <div class="docs-Stack docs-Stack--start">
+
+      <span>
+        Click on the icon on the right to view the tooltip
+        <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+          <svg 
+            width="16" 
+            height="16" 
+            data-spirit-toggle="tooltip"
+            data-spirit-target="#tooltip-example-with-icon">
+            <use xlink:href="/icons/svg/sprite.svg#info"/>
+          </svg>
+          <div
+            id="tooltip-example-with-icon"
+            class="Tooltip Tooltip--dismissible is-hidden"
+            data-spirit-placement="right"
+            data-spirit-flip="true"
+            data-spirit-flip-cross-axis="true"
+            data-spirit-flip-fallback-placements="top-start, bottom-start, left"
+            data-spirit-placement-controlled
+          >
+            Close me
+            <button
+              id="tooltip-example-with-icon-button"
+              type="button"
+              class="Tooltip__close"
+              aria-controls="tooltip-example-with-icon"
+              aria-expanded="true"
+            >
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/icons/svg/sprite.svg#close" />
+              </svg>
+              <span class="accessibility-hidden">Close</span>
+            </button>
+            <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          </div>
+        </div>
+      </span>
+
+    </div>
+
+  </section>
+
+  <section class="docs-Section spirit-feature-tooltip-enable-data-placement">
+
     <script type="module" src="floating-ui-example.mjs"></script>
 
     <style>
