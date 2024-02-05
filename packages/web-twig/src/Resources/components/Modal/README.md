@@ -105,6 +105,9 @@ This is useful for Modals with dynamic content, e.g. a list of items that can be
 </ModalDialog>
 ```
 
+👉 Please note the preferred height options are ignored when scrolling inside ModalDialog is
+[turned off](#disable-scrolling-inside-modaldialog).
+
 👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
 
 ### Custom Max Height
@@ -122,6 +125,8 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 </ModalDialog>
 ```
 
+👉 Please note the max height is ignored when scrolling inside ModalDialog is [turned off](#disable-scrolling-inside-modaldialog).
+
 👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
 
 ### API
@@ -135,6 +140,7 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 | `enctype`                     | `string`                      | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                                           |
 | `isDockedOnMobile`            | `bool`                        | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile |
 | `isExpandedOnMobile`          | `bool`                        | `true`    | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                                   |
+| `isScrollable`                | `bool`                        | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content.               |
 | `maxHeightFromTabletUp`       | `string`                      | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                    |
 | `method`                      | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                                        |
 | `name`                        | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                                                              |
@@ -304,6 +310,27 @@ takes over the responsibility for scrolling and provides visual overflow decorat
   </ModalBody>
 </ScrollView>
 ```
+
+### Disable Scrolling Inside ModalDialog
+
+Scrolling inside ModalDialog can be turned off by setting the `ModalDialog` prop `isScrollable` to `false`:
+
+```twig
+<ModalDialog isScrollable={ false }>
+  <!-- … -->
+</ModalDialog>
+```
+
+This way, the ModalBody will expand to fit the height of its content and the whole ModalDialog will scroll in case the
+content is longer than user's viewport.
+
+👉 Please note that this modifier class can produce unexpected results when used in combination with ScrollView.
+
+#### ⚠️ DEPRECATION NOTICE
+
+The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
+non-scrollable by default. It will be possible to re-enable the inside scrolling by setting the
+`isScrollable` prop to `true` explicitly.
 
 ## Stacking Modals
 

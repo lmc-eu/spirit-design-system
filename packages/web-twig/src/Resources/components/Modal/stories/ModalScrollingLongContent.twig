@@ -145,3 +145,57 @@
         </ModalFooter>
     </ModalDialog>
 </Modal>
+
+<Button data-spirit-toggle="modal" data-spirit-target="#example-non-scrolling-modal">
+    Open Modal with Disabled Scrolling Inside
+</Button>
+
+<Modal id="example-non-scrolling-modal" titleId="example-non-scrolling-modal-title">
+    <ModalDialog isScrollable={ false }>
+        <ModalHeader modalId="example-non-scrolling-modal" titleId="example-non-scrolling-modal-title">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta
+        </ModalHeader>
+        <ModalBody>
+
+            <!-- Content: start -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p style="margin-bottom: 100vh">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <!-- Content: end -->
+
+        </ModalBody>
+        <ModalFooter>
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-non-scrolling-modal"
+            >
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-non-scrolling-modal"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
