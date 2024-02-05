@@ -17,8 +17,22 @@
             footerElement.classList.add(`ModalFooter--${event.target.value}`);
         };
 
+        const toggleDockOnMobile = (selector, dependingInputSelector) => {
+            const dependingInputElement = document.querySelector(dependingInputSelector);
+            const dependingLabelElement = dependingInputElement.closest('label');
+            const modalDialogElement = document.querySelector(selector);
+
+            modalDialogElement.classList.toggle('ModalDialog--dockOnMobile');
+            dependingInputElement.disabled = !dependingInputElement.disabled;
+            dependingLabelElement.classList.toggle('Checkbox--disabled');
+        }
+
         const toggleExpandOnMobile = (selector) => {
             document.querySelector(selector).classList.toggle('ModalDialog--expandOnMobile');
+        }
+
+        const toggleScrolling = (selector) => {
+            document.querySelector(selector).classList.toggle('ModalDialog--nonScrollable');
         }
     </script>
 
