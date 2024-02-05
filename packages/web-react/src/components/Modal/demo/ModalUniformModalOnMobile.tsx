@@ -1,33 +1,46 @@
 import React, { ChangeEvent, useState } from 'react';
 import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
-import { Button, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, Radio } from '../..';
+import { Button, Checkbox, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, Radio, Stack } from '../..';
 
 const ModalDefault = () => {
-  const [isFirstOpen, setFirstOpen] = useState(false);
-  const [isSecondOpen, setSecondOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const [modalAlign, setModalAlign] = useState<AlignmentYDictionaryType>(AlignmentY.CENTER);
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
+  const [isDockedOnMobile, setIsDockedOnMobile] = useState(false);
+  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
+  const [isScrollable, setIsScrollable] = useState(true);
 
-  const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
-  const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
+  const toggleModal = () => setOpen(!isOpen);
 
-  const handleFirstClose = () => setFirstOpen(false);
-  const handleSecondClose = () => setSecondOpen(false);
+  const handleClose = () => setOpen(false);
   const handleModalAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
     setModalAlign(event.target.value as AlignmentYDictionaryType);
   };
   const handleFooterAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFooterAlign(event.target.value as AlignmentXDictionaryType);
   };
+  const handleDockedOnMobileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsDockedOnMobile(event.target.checked);
+  };
+  const handleExpandedOnMobileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsExpandedOnMobile(event.target.checked);
+  };
+  const handleScrollableChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsScrollable(event.target.checked);
+  };
 
   return (
     <>
       {/* Set `display: contents` to enable parent stack layout. */}
       <div className="spirit-feature-modal-enable-uniform-dialog" style={{ display: 'contents' }}>
-        <Button onClick={toggleFirstModal}>Open Modal</Button>
+        <Button onClick={toggleModal}>Open Modal</Button>
 
-        <Modal alignmentY={modalAlign} id="example-uniform" isOpen={isFirstOpen} onClose={handleFirstClose}>
-          <ModalDialog>
+        <Modal alignmentY={modalAlign} id="example-uniform" isOpen={isOpen} onClose={handleClose}>
+          <ModalDialog
+            isExpandedOnMobile={isExpandedOnMobile}
+            isDockedOnMobile={isDockedOnMobile}
+            isScrollable={isScrollable}
+          >
             <ModalHeader>Modal Title</ModalHeader>
             <ModalBody>
               <p>
@@ -35,7 +48,7 @@ const ModalDefault = () => {
                 mollitia mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi
                 natus provident unde. Eveniet, iste, molestiae?
               </p>
-              <form className="mb-tablet-600">
+              <form className="mb-600">
                 <div>Modal alignment:</div>
                 <Radio
                   id="modal-uniform-alignment-top"
@@ -68,7 +81,7 @@ const ModalDefault = () => {
                   onChange={handleModalAlignChange}
                 />
               </form>
-              <form className="d-none d-tablet-block">
+              <form className="d-none d-tablet-block mb-600">
                 <div>Footer alignment (from tablet up):</div>
                 <Radio
                   id="footer-uniform-alignment-left"
@@ -101,31 +114,37 @@ const ModalDefault = () => {
                   onChange={handleFooterAlignChange}
                 />
               </form>
+              <Stack hasSpacing elementType="form">
+                <Checkbox
+                  autoComplete="off"
+                  id="modal-uniform-docked"
+                  label="Dock on mobile"
+                  name="modal-uniform-docked"
+                  isChecked={isDockedOnMobile}
+                  onChange={handleDockedOnMobileChange}
+                />
+                <Checkbox
+                  autoComplete="off"
+                  id="modal-uniform-expanded"
+                  isDisabled={!isDockedOnMobile}
+                  label="Expand on mobile (docked only)"
+                  name="modal-uniform-expanded"
+                  isChecked={isExpandedOnMobile}
+                  onChange={handleExpandedOnMobileChange}
+                />
+                <Checkbox
+                  autoComplete="off"
+                  id="modal-uniform-non-scrolling"
+                  label="Scrolling inside"
+                  name="modal-uniform-non-scrolling"
+                  isChecked={isScrollable}
+                  onChange={handleScrollableChange}
+                />
+              </Stack>
             </ModalBody>
             <ModalFooter alignmentX={footerAlign} description="Optional description">
-              <Button onClick={handleFirstClose}>Primary action</Button>
-              <Button color="secondary" onClick={handleFirstClose}>
-                Secondary action
-              </Button>
-            </ModalFooter>
-          </ModalDialog>
-        </Modal>
-
-        <Button onClick={toggleSecondModal}>Open Docked Modal (mobile only)</Button>
-
-        <Modal id="example-docked" isOpen={isSecondOpen} onClose={handleSecondClose}>
-          <ModalDialog isDockedOnMobile isExpandedOnMobile>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalBody>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-            </ModalBody>
-            <ModalFooter description="Optional description">
-              <Button onClick={handleSecondClose}>Primary action</Button>
-              <Button color="secondary" onClick={handleSecondClose}>
+              <Button onClick={handleClose}>Primary action</Button>
+              <Button color="secondary" onClick={handleClose}>
                 Secondary action
               </Button>
             </ModalFooter>
