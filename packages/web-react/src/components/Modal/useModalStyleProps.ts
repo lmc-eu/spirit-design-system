@@ -7,6 +7,7 @@ export interface ModalStylesProps {
   footerAlignment?: AlignmentXDictionaryType;
   isDockedOnMobile?: boolean;
   isExpandedOnMobile?: boolean;
+  isScrollable?: boolean;
   modalAlignment?: AlignmentYDictionaryType;
 }
 
@@ -26,19 +27,13 @@ export interface ModalStylesReturn {
   };
 }
 
-export function useModalStyleProps(
-  {
-    footerAlignment = AlignmentX.RIGHT,
-    isDockedOnMobile,
-    isExpandedOnMobile,
-    modalAlignment = AlignmentY.CENTER,
-  }: ModalStylesProps = {
-    footerAlignment: AlignmentX.RIGHT,
-    isDockedOnMobile: false,
-    isExpandedOnMobile: false,
-    modalAlignment: AlignmentX.CENTER,
-  },
-): ModalStylesReturn {
+export function useModalStyleProps({
+  footerAlignment = AlignmentX.RIGHT,
+  isDockedOnMobile = false,
+  isExpandedOnMobile = false,
+  isScrollable = true,
+  modalAlignment = AlignmentY.CENTER,
+}: ModalStylesProps = {}): ModalStylesReturn {
   const modalClass = useClassNamePrefix('Modal');
   const modalAlignClasses = {
     top: `${modalClass}--top`,
@@ -48,6 +43,7 @@ export function useModalStyleProps(
   const modalDialogClass = `${modalClass}Dialog`;
   const modalDialogDockedOnMobileClass = `${modalDialogClass}--dockOnMobile`;
   const modalDialogExpandedOnMobileClass = `${modalDialogClass}--expandOnMobile`;
+  const modalDialogNonScrollableClass = `${modalDialogClass}--nonScrollable`;
   const modalHeaderClass = `${modalClass}Header`;
   const modalTitleClass = `${modalHeaderClass}__title`;
   const modalBodyClass = `${modalClass}Body`;
@@ -64,6 +60,7 @@ export function useModalStyleProps(
     dialog: classNames(modalDialogClass, {
       [modalDialogDockedOnMobileClass]: isDockedOnMobile,
       [modalDialogExpandedOnMobileClass]: isExpandedOnMobile,
+      [modalDialogNonScrollableClass]: !isScrollable,
     }),
     title: modalTitleClass,
     header: modalHeaderClass,

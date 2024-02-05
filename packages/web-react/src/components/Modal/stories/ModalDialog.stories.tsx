@@ -17,6 +17,9 @@ const meta: Meta<typeof ModalDialog> = {
     isExpandedOnMobile: {
       control: 'boolean',
     },
+    isScrollable: {
+      control: 'boolean',
+    },
     maxHeightFromTabletUp: {
       control: 'text',
     },
@@ -30,6 +33,7 @@ const meta: Meta<typeof ModalDialog> = {
   args: {
     isDockedOnMobile: false,
     isExpandedOnMobile: false,
+    isScrollable: true,
     maxHeightFromTabletUp: '',
     preferredHeightOnMobile: '',
     preferredHeightFromTabletUp: '',
