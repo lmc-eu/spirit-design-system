@@ -3,6 +3,7 @@
 {%- set _elementType = props.elementType | default('article') -%}
 {%- set _isDockedOnMobile = props.isDockedOnMobile | default(false) -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile ?? true -%}
+{%- set _isScrollable = props.isScrollable ?? true -%}
 {%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
 {%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
 {%- set _preferredHeightFromTabletUp = props.preferredHeightFromTabletUp | default(null) -%}
@@ -11,10 +12,11 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalDialog' -%}
 {%- set _rootDockOnMobileClassName = _isDockedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--dockOnMobile' : null -%}
 {%- set _rootExpandOnMobileClassName = _isExpandedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--expandOnMobile' : null -%}
+{%- set _rootScrollableClassName = _isScrollable ? null : _spiritClassPrefix ~ 'ModalDialog--nonScrollable' -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDockOnMobileClassName, _rootExpandOnMobileClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootDockOnMobileClassName, _rootExpandOnMobileClassName, _rootScrollableClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = _elementType == 'form' ? [
     'accept-charset',
     'action',
