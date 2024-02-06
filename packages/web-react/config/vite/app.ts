@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from '../../scripts/build';
 
-const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'NoSrr', 'TextFieldBase', 'VisuallyHidden'];
+const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'NoSsr', 'TextFieldBase', 'VisuallyHidden'];
 
 export default defineConfig({
   // Disable HMR overlay to avoid flaky screenshots in visual regression tests
