@@ -7,7 +7,7 @@ import { Select } from '../../Select';
 import { TooltipModern, TooltipPopover, TooltipTrigger } from '../../Tooltip';
 
 const TooltipWithFloatingUI = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [flip, setFlip] = useState(true);
   const [flipCrossAxis, setFlipCrossAxis] = useState(true);
   const [shift, setShift] = useState(true);

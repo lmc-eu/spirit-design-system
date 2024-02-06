@@ -1,6 +1,16 @@
 import { Placement } from '@floating-ui/react';
 import { ChildrenProps, PlacementDictionaryType, StyleProps, ClickEvent } from './shared';
 
+export const TOOLTIP_TRIGGER = {
+  CLICK: 'click',
+  HOVER: 'hover',
+  MANUAL: 'manual',
+  OUTSIDE_PRESS: 'outside-press',
+  ESCAPE_KEY: 'escape-key',
+} as const;
+
+export type TooltipTriggerType = 'click' | 'hover' | 'manual';
+
 export interface TooltipHandlingProps {
   open?: boolean | undefined;
   onClose?: (event: ClickEvent) => void;
@@ -48,4 +58,5 @@ export interface SpiritTooltipModernProps extends TooltipModernProps, ChildrenPr
   enableSizing?: boolean;
   flipFallbackAxisSideDirection?: 'none' | 'start' | 'end';
   flipFallbackPlacements?: Placement | Placement[];
+  trigger?: TooltipTriggerType[];
 }

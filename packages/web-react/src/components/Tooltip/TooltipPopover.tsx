@@ -69,7 +69,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
       return {
         left: arrow?.x,
         top: arrow?.y,
-        [staticSide]: -offset,
+        [staticSide]: offset && -Math.floor(offset), // remove 0.5 pixels values for arrow offset
       };
     }
 

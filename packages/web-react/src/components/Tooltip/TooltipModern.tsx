@@ -10,9 +10,9 @@ const TooltipModern = (props: TooltipModernProps) => {
   const {
     children,
     enableFlipping: flipProp = true,
+    enableFlippingCrossAxis: flipCrossAxis = true,
     enableShifting: shiftProp = true,
     enableSizing: sizeProp = false,
-    enableFlippingCrossAxis: flipCrossAxis = true,
     flipFallbackAxisSideDirection = 'none',
     flipFallbackPlacements = ['bottom', 'top'],
     id,
@@ -20,6 +20,7 @@ const TooltipModern = (props: TooltipModernProps) => {
     isOpen = false,
     onToggle,
     placement: tooltipPlacement,
+    trigger = ['click', 'hover'],
     ...rest
   } = props;
 
@@ -64,6 +65,7 @@ const TooltipModern = (props: TooltipModernProps) => {
     tooltipArrowWidth,
     tooltipMaxWidth,
     tooltipPlacement,
+    trigger,
   });
 
   useDeprecationMessage({
