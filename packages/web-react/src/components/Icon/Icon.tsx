@@ -1,5 +1,4 @@
 import React from 'react';
-import { warning } from '../../common/utilities';
 import { useIcon, useStyleProps } from '../../hooks';
 import { IconProps } from '../../types';
 import { htmlParser } from '../../utils/htmlParser';
@@ -18,14 +17,6 @@ export const Icon = (props: IconProps) => {
 
   if (title) {
     icon = `<title>${title}</title>${icon}`;
-  }
-
-  // @deprecated Usage of `html-react-parser` will be required in the next major version.
-  if (htmlParser == null) {
-    warning(
-      false,
-      'Icon component is not supported in SSR without use of `html-react-parser`. Please install, missing peer dependency.',
-    );
   }
 
   if (isHtmlParserLoaded) {
@@ -48,6 +39,9 @@ export const Icon = (props: IconProps) => {
     );
   }
 
+  // @deprecated Usage of `html-react-parser` will be required in the next major version.
+  // @TODO: Remove this block in the next major version.
+  // @see { @link https://jira.almacareer.tech/browse/DS-1149 }
   return (
     <NoSsr>
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
