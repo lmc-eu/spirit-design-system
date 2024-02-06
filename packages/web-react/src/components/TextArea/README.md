@@ -52,11 +52,13 @@ Example with Auto-Height Adjustment
 | `placeholder`           | `string`                                       | —       | ✕        | Textarea placeholder                                                 |
 | `ref`                   | `ForwardedRef<HTMLTextAreaElement>`            | —       | ✕        | Textarea element reference                                           |
 | `rows`                  | `number`                                       | —       | ✕        | Number of visible rows                                               |
-| `UNSAFE_className`      | `string`                                       | —       | ✕        | Wrapper custom class name                                            |
-| `UNSAFE_style`          | `CSSProperties`                                | —       | ✕        | Wrapper custom style                                                 |
 | `validationState`       | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state                                             |
 | `validationText`        | [`string` \| `string[]`]                       | —       | ✕        | Validation text                                                      |
 | `value`                 | `string`                                       | —       | ✕        | Textarea value                                                       |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Custom component
 
@@ -79,5 +81,8 @@ const CustomTextArea = (props: SpiritTextAreaProps): JSX.Element => {
 
 For detailed information see [TextArea](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md) component.
 
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

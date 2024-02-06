@@ -72,15 +72,17 @@ just branding.
 
 ## API
 
-| Name               | Type                          | Default       | Required | Description                         |
-| ------------------ | ----------------------------- | ------------- | -------- | ----------------------------------- |
-| `children`         | `ReactNode`                   | —             | ✕        | Children node                       |
-| `color`            | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
-| `isSimple`         | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
-| `UNSAFE_className` | `string`                      | —             | ✕        | Custom class name                   |
-| `UNSAFE_style`     | `CSSProperties`               | —             | ✕        | Custom style                        |
+| Name       | Type                          | Default       | Required | Description                         |
+| ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
+| `children` | `ReactNode`                   | —             | ✕        | Children node                       |
+| `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
+| `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Supported Content
 
@@ -119,17 +121,19 @@ You can place any custom content into the mobile actions component:
 
 #### API
 
-| Name               | Type                                           | Default | Required | Description                     |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`                                    | —       | ✕        | Children node                   |
-| `dialogId`         | `string`                                       | —       | ✔        | ID of the linked HeaderDialog   |
-| `isOpen`           | `bool`                                         | `false` | ✔        | Dialog open state               |
-| `menuToggleLabel`  | `string`                                       | `Menu`  | ✕        | Label of the menu toggle button |
-| `onOpen`           | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | Custom class name               |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Custom style                    |
+| Name              | Type                                           | Default | Required | Description                     |
+| ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `children`        | `ReactNode`                                    | —       | ✕        | Children node                   |
+| `dialogId`        | `string`                                       | —       | ✔        | ID of the linked HeaderDialog   |
+| `isOpen`          | `bool`                                         | `false` | ✔        | Dialog open state               |
+| `menuToggleLabel` | `string`                                       | `Menu`  | ✕        | Label of the menu toggle button |
+| `onOpen`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Desktop-Only Actions
 
@@ -154,14 +158,16 @@ control here.
 
 #### API
 
-| Name               | Type                       | Default   | Required | Description                 |
-| ------------------ | -------------------------- | --------- | -------- | --------------------------- |
-| `children`         | `ReactNode`                | —         | ✕        | Children node               |
-| `color`            | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
-| `UNSAFE_className` | `string`                   | —         | ✕        | Custom class name           |
-| `UNSAFE_style`     | `CSSProperties`            | —         | ✕        | Custom style                |
+| Name       | Type                       | Default   | Required | Description                 |
+| ---------- | -------------------------- | --------- | -------- | --------------------------- |
+| `children` | `ReactNode`                | —         | ✕        | Children node               |
+| `color`    | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 #### Navigation
 
@@ -220,45 +226,53 @@ the same container:
 
 ##### HeaderNav API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<ul>`][mdn-ul-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderNavItem API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<li>`][mdn-li-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderLink API
 
-| Name               | Type            | Default | Required | Description          |
-| ------------------ | --------------- | ------- | -------- | -------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node        |
-| `elementType`      | `ElementType`   | `a`     | ✕        | Type of element      |
-| `isCurrent`        | `bool`          | `false` | ✕        | Mark link as current |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name    |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style         |
+| Name          | Type          | Default | Required | Description          |
+| ------------- | ------------- | ------- | -------- | -------------------- |
+| `children`    | `ReactNode`   | —       | ✕        | Children node        |
+| `elementType` | `ElementType` | `a`     | ✕        | Type of element      |
+| `isCurrent`   | `bool`        | `false` | ✕        | Mark link as current |
 
 The component further inherits properties from the [`<a>`][mdn-a-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderButton API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<button>`][mdn-button-element] element.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Header Dialog
 
@@ -276,16 +290,18 @@ const [isOpen, setOpen] = useState(false);
 
 ### API
 
-| Name               | Type                                           | Default | Required | Description                            |
-| ------------------ | ---------------------------------------------- | ------- | -------- | -------------------------------------- |
-| `children`         | `ReactNode`                                    | —       | ✕        | Children node                          |
-| `id`               | `string`                                       | —       | ✔        | ID to be linked in HeaderMobileActions |
-| `isOpen`           | `bool`                                         | `false` | ✔        | Open state                             |
-| `onClose`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed        |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | HeaderDialog custom class name         |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | HeaderDialog custom style              |
+| Name       | Type                                           | Default | Required | Description                            |
+| ---------- | ---------------------------------------------- | ------- | -------- | -------------------------------------- |
+| `children` | `ReactNode`                                    | —       | ✕        | Children node                          |
+| `id`       | `string`                                       | —       | ✔        | ID to be linked in HeaderMobileActions |
+| `isOpen`   | `bool`                                         | `false` | ✔        | Open state                             |
+| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed        |
 
 The component further inherits properties from the [`<dialog>`][mdn-dialog-element] element.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Close Button
 
@@ -297,13 +313,15 @@ HeaderDialogCloseButton contains all necessary handles to control parent dialog.
 
 #### API
 
-| Name               | Type            | Default | Required | Description                     |
-| ------------------ | --------------- | ------- | -------- | ------------------------------- |
-| `label`            | `string`        | `Close` | ✕        | Label of the menu toggle button |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name               |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style                    |
+| Name    | Type     | Default | Required | Description                     |
+| ------- | -------- | ------- | -------- | ------------------------------- |
+| `label` | `string` | `Close` | ✕        | Label of the menu toggle button |
 
 The component further inherits properties from the [`<button>`][mdn-button-element] element.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Primary and Secondary Actions
 
@@ -321,14 +339,16 @@ the optional secondary actions slot.
 
 #### API
 
-| Name               | Type                       | Default   | Required | Description       |
-| ------------------ | -------------------------- | --------- | -------- | ----------------- |
-| `children`         | `ReactNode`                | —         | ✕        | Children node     |
-| `color`            | [`primary` \| `secondary`] | `primary` | ✕        | Color variant     |
-| `UNSAFE_className` | `string`                   | —         | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties`            | —         | ✕        | Custom style      |
+| Name       | Type                       | Default   | Required | Description   |
+| ---------- | -------------------------- | --------- | -------- | ------------- |
+| `children` | `ReactNode`                | —         | ✕        | Children node |
+| `color`    | [`primary` \| `secondary`] | `primary` | ✕        | Color variant |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 #### Navigation
 
@@ -376,55 +396,65 @@ Navigation items can be links, buttons, or just text:
 
 ##### HeaderDialogNav API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<ul>`][mdn-ul-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderDialogNavItem API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<li>`][mdn-li-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderDialogLink API
 
-| Name               | Type            | Default | Required | Description          |
-| ------------------ | --------------- | ------- | -------- | -------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node        |
-| `elementType`      | `ElementType`   | `a`     | ✕        | Type of element      |
-| `isCurrent`        | `bool`          | `false` | ✕        | Mark link as current |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name    |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style         |
+| Name          | Type          | Default | Required | Description          |
+| ------------- | ------------- | ------- | -------- | -------------------- |
+| `children`    | `ReactNode`   | —       | ✕        | Children node        |
+| `elementType` | `ElementType` | `a`     | ✕        | Type of element      |
+| `isCurrent`   | `bool`        | `false` | ✕        | Mark link as current |
 
 The component further inherits properties from the [`<a>`][mdn-a-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderDialogButton API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component further inherits properties from the [`<button>`][mdn-button-element] element.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ##### HeaderDialogText API
 
-| Name               | Type            | Default | Required | Description       |
-| ------------------ | --------------- | ------- | -------- | ----------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Composition
 
@@ -548,3 +578,6 @@ const handleClose = () => setOpen(false);
 [mdn-dialog-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [mdn-li-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
 [mdn-ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

@@ -34,22 +34,24 @@ Advanced example usage:
 
 ## API
 
-| Name               | Type                                           | Default | Required | Description                     |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
-| `helperText`       | `string`                                       | —       | ✕        | Custom helper text              |
-| `id`               | `string`                                       | —       | ✔        | Select and label identification |
-| `isDisabled`       | `bool`                                         | —       | ✕        | Whether is field disabled       |
-| `isFluid`          | `bool`                                         | —       | ✕        | Whether is field is fluid       |
-| `isLabelHidden`    | `bool`                                         | —       | ✕        | Whether is label hidden         |
-| `isRequired`       | `bool`                                         | —       | ✕        | Whether is field required       |
-| `label`            | `string`                                       | —       | ✕        | Label text                      |
-| `name`             | `string`                                       | —       | ✕        | Select name                     |
-| `ref`              | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
-| `UNSAFE_className` | `string`                                       | —       | ✕        | Wrapper custom class name       |
-| `UNSAFE_style`     | `CSSProperties`                                | —       | ✕        | Wrapper custom style            |
-| `validationState`  | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
-| `validationText`   | [`string` \| `string[]`]                       | —       | ✕        | Validation text                 |
+| Name              | Type                                           | Default | Required | Description                     |
+| ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
+| `children`        | `ReactNode`                                    | `null`  | ✕        | Content of the Select           |
+| `helperText`      | `string`                                       | —       | ✕        | Custom helper text              |
+| `id`              | `string`                                       | —       | ✔        | Select and label identification |
+| `isDisabled`      | `bool`                                         | —       | ✕        | Whether is field disabled       |
+| `isFluid`         | `bool`                                         | —       | ✕        | Whether is field is fluid       |
+| `isLabelHidden`   | `bool`                                         | —       | ✕        | Whether is label hidden         |
+| `isRequired`      | `bool`                                         | —       | ✕        | Whether is field required       |
+| `label`           | `string`                                       | —       | ✕        | Label text                      |
+| `name`            | `string`                                       | —       | ✕        | Select name                     |
+| `ref`             | `ForwardedRef<HTMLSelectElement>`              | —       | ✕        | Select element reference        |
+| `validationState` | [Validation dictionary][dictionary-validation] | —       | ✕        | Type of validation state        |
+| `validationText`  | [`string` \| `string[]`]                       | —       | ✕        | Validation text                 |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Icons Provider
 
@@ -101,6 +103,9 @@ const CustomSelect = (props: SpiritSelectProps): JSX.Element => {
 
 For detailed information see [Select][select] component or [Select][select-element] element.
 
-[select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Select/README.md
-[select-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[select-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
+[select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Select/README.md

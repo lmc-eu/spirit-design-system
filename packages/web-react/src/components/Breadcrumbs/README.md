@@ -55,14 +55,16 @@ Use custom content for the ordered list as component's children instead of passi
 
 ### API
 
-| Name               | Type                | Default | Required | Description                                                                                                                                                                                      |
-| ------------------ | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `children`         | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                            |
-| `elementType`      | `ElementType`       | `nav`   | ✕        | Type of element used as wrapper                                                                                                                                                                  |
-| `goBackTitle`      | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, the back link is to be created within children property. |
-| `items`            | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                            |
-| `UNSAFE_className` | `string`            | —       | ✕        | Wrapper custom class name                                                                                                                                                                        |
-| `UNSAFE_style`     | `CSSProperties`     | —       | ✕        | Wrapper custom style                                                                                                                                                                             |
+| Name          | Type                | Default | Required | Description                                                                                                                                                                                      |
+| ------------- | ------------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `children`    | `ReactNode`         | —       | ✕        | Custom content to override items rendering from array                                                                                                                                            |
+| `elementType` | `ElementType`       | `nav`   | ✕        | Type of element used as wrapper                                                                                                                                                                  |
+| `goBackTitle` | `string`            | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, the back link is to be created within children property. |
+| `items`       | `BreadcrumbsItem[]` | —       | ✕        | Navigation menu items                                                                                                                                                                            |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## BreadcrumbsItem
 
@@ -80,18 +82,20 @@ Use the `BreadcrumbsItem` component for the ordered list as the component's chil
 
 ### API
 
-| Name               | Type            | Default         | Required | Description                                           |
-| ------------------ | --------------- | --------------- | -------- | ----------------------------------------------------- |
-| `children`         | `ReactNode`     | —               | ✕        | Children node                                         |
-| `href`             | `string`        | —               | ✕ \*     | URL, if not set, the item is rendered as a plain text |
-| `iconNameEnd`      | `string`        | `chevron-right` | ✕        | Icon name at the end of the item                      |
-| `iconNameStart`    | `string`        | `chevron-left`  | ✕        | Icon name at the start of the item                    |
-| `isCurrent`        | `boolean`       | `false`         | ✕        | Whether is the item the current page                  |
-| `isGoBackOnly`     | `boolean`       | `false`         | ✕        | Whether should be displayed in go back mode           |
-| `UNSAFE_className` | `string`        | —               | ✕        | Wrapper custom class name                             |
-| `UNSAFE_style`     | `CSSProperties` | —               | ✕        | Wrapper custom style                                  |
+| Name            | Type        | Default         | Required | Description                                           |
+| --------------- | ----------- | --------------- | -------- | ----------------------------------------------------- |
+| `children`      | `ReactNode` | —               | ✕        | Children node                                         |
+| `href`          | `string`    | —               | ✕ \*     | URL, if not set, the item is rendered as a plain text |
+| `iconNameEnd`   | `string`    | `chevron-right` | ✕        | Icon name at the end of the item                      |
+| `iconNameStart` | `string`    | `chevron-left`  | ✕        | Icon name at the start of the item                    |
+| `isCurrent`     | `boolean`   | `false`         | ✕        | Whether is the item the current page                  |
+| `isGoBackOnly`  | `boolean`   | `false`         | ✕        | Whether should be displayed in go back mode           |
 
 (\*) Optional only for the current page.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### Dealing with long titles
 
@@ -104,5 +108,8 @@ You can also use any of the existing [npm packages which deal with truncating th
 
 For detailed information see [Breadcrumbs][breadcrumbs] component.
 
-[truncate-npm-search]: https://www.npmjs.com/search?q=truncate
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Breadcrumbs/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[truncate-npm-search]: https://www.npmjs.com/search?q=truncate

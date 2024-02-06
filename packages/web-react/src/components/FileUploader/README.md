@@ -1,7 +1,7 @@
 # FileUploader
 
 The FileUploader implementation is used to select files either by selecting files from the device itself,
-or by drag and drop if the device supports it. React package extends [web package][FileUploader].
+or by drag and drop if the device supports it. React package extends [web package][file-uploader].
 
 ## Usage
 
@@ -356,11 +356,13 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 | `id`                                  | `string`                                                             | —       | ✔        | FileUploader id                                                     |
 | `isFluid`                             | `bool`                                                               | —       | ✕        | When the field is supposed to be fluid                              |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✔        | A callback to delete a particular item from the queue               |
-| `UNSAFE_className`                    | `string`                                                             | —       | ✕        | FileUploader custom class name                                      |
-| `UNSAFE_style`                        | `CSSProperties`                                                      | —       | ✕        | FileUploader custom style                                           |
 | `updateQueue`                         | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
 
-The rest of the properties are created from the default `<div>` element. [More about the element][DivElementDocs]
+The rest of the properties are created from the default `<div>` element. [More about the element][div-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderInput Props
 
@@ -384,69 +386,79 @@ The rest of the properties are created from the default `<div>` element. [More a
 | `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
 | `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
-| `UNSAFE_className`   | `string`                             | —        | ✕        | FileUploaderInput custom class name                                                                                                                             |
-| `UNSAFE_style`       | `CSSProperties`                      | —        | ✕        | FileUploaderInput custom style                                                                                                                                  |
 | `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
 | `validationText`     | [`string` \| `string[]`]             | —        | ✕        | Validation status text                                                                                                                                          |
 
-The rest of the properties are created from the default `<input>` element. [More about the element][InputElementDocs]
+The rest of the properties are created from the default `<input>` element. [More about the element][input-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderList Props
 
-| Name                  | Type            | Default | Required | Description                                   |
-| --------------------- | --------------- | ------- | -------- | --------------------------------------------- |
-| `attachmentComponent` | `string`        | —       | ✔        | A component for rendering a single attachment |
-| `hasImagePreview`     | `bool`          | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string`        | —       | ✔        | FileUploaderList id                           |
-| `inputName`           | `string`        | —       | ✔        | The name of the input field                   |
-| `label`               | `string`        | —       | ✕        | Label for the list                            |
-| `UNSAFE_className`    | `string`        | —       | ✕        | FileUploaderList custom class name            |
-| `UNSAFE_style`        | `CSSProperties` | —       | ✕        | FileUploaderList custom style                 |
+| Name                  | Type     | Default | Required | Description                                   |
+| --------------------- | -------- | ------- | -------- | --------------------------------------------- |
+| `attachmentComponent` | `string` | —       | ✔        | A component for rendering a single attachment |
+| `hasImagePreview`     | `bool`   | false   | ✕        | Show image preview in the list                |
+| `id`                  | `string` | —       | ✔        | FileUploaderList id                           |
+| `inputName`           | `string` | —       | ✔        | The name of the input field                   |
+| `label`               | `string` | —       | ✕        | Label for the list                            |
 
-The rest of the properties are created from the default `<ul>` element. [More about the element][ListElementDocs]
+The rest of the properties are created from the default `<ul>` element. [More about the element][list-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderAttachment Props
 
-| Name               | Type                                 | Default  | Required | Description                                                                 |
-| ------------------ | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------- |
-| `buttonLabel`      | `string`                             | `Remove` | ✕        | [**DEPRECATED**][Deprecated] in favor of `removeText`; Dismiss button label |
-| `editButtonLabel`  | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][Deprecated] in favor of `editText`; Edit button label      |
-| `editText`         | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
-| `file`             | `File`                               | —        | ✔        | Attachment file object                                                      |
-| `hasImagePreview`  | `bool`                               | false    | ✕        | Show image preview                                                          |
-| `iconName`         | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
-| `id`               | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
-| `imageObjectFit`   | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                       |
-| `label`            | `string`                             | —        | ✔        | File name                                                                   |
-| `name`             | `string`                             | —        | ✔        | Input field name                                                            |
-| `onDismiss`        | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue                                   |
-| `onEdit`           | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                                        |
-| `onError`          | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                 |
-| `removeText`       | `string`                             | `Remove` | ✕        | Dismiss button label                                                        |
-| `UNSAFE_className` | `string`                             | —        | ✕        | FileUploaderAttachment custom class name                                    |
-| `UNSAFE_style`     | `CSSProperties`                      | —        | ✕        | FileUploaderAttachment custom style                                         |
+| Name              | Type                                 | Default  | Required | Description                                                                 |
+| ----------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------- |
+| `buttonLabel`     | `string`                             | `Remove` | ✕        | [**DEPRECATED**][deprecated] in favor of `removeText`; Dismiss button label |
+| `editButtonLabel` | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][deprecated] in favor of `editText`; Edit button label      |
+| `editText`        | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
+| `file`            | `File`                               | —        | ✔        | Attachment file object                                                      |
+| `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                                          |
+| `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
+| `id`              | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
+| `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                       |
+| `label`           | `string`                             | —        | ✔        | File name                                                                   |
+| `name`            | `string`                             | —        | ✔        | Input field name                                                            |
+| `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue                                   |
+| `onEdit`          | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                                        |
+| `onError`         | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                 |
+| `removeText`      | `string`                             | `Remove` | ✕        | Dismiss button label                                                        |
 
-The rest of the properties are created from the default `<li>` element. [More about the element][ListItemElementDocs]
+The rest of the properties are created from the default `<li>` element. [More about the element][list-item-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## AttachmentActionButton Props
 
-| Name               | Type                                   | Default | Required | Description                               |
-| ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
-| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler                      |
-| `UNSAFE_className` | `string`                               | —       | ✕        | AttachmentDismissButton custom class name |
-| `UNSAFE_style`     | `CSSProperties`                        | —       | ✕        | AttachmentDismissButton custom style      |
+| Name      | Type                                   | Default | Required | Description          |
+| --------- | -------------------------------------- | ------- | -------- | -------------------- |
+| `onClick` | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler |
 
-The rest of the properties are created from the default `<button>` element. [More about the element][ButtonElementDocs]
+The rest of the properties are created from the default `<button>` element. [More about the element][button-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## AttachmentDismissButton Props
 
-| Name               | Type                                   | Default | Required | Description                               |
-| ------------------ | -------------------------------------- | ------- | -------- | ----------------------------------------- |
-| `onClick`          | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler                      |
-| `UNSAFE_className` | `string`                               | —       | ✕        | AttachmentDismissButton custom class name |
-| `UNSAFE_style`     | `CSSProperties`                        | —       | ✕        | AttachmentDismissButton custom style      |
+| Name      | Type                                   | Default | Required | Description          |
+| --------- | -------------------------------------- | ------- | -------- | -------------------- |
+| `onClick` | `MouseEventHandler<HTMLButtonElement>` | —       | ✕        | Button click handler |
 
-The rest of the properties are created from the default `<button>` element. [More about the element][ButtonElementDocs]
+The rest of the properties are created from the default `<button>` element. [More about the element][button-element-docs]
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## UncontrolledFileUploader Props
 
@@ -479,17 +491,22 @@ via `inputProps` and `listProps`.
 | `onChange`            | `(fileQueue: FileQueueMapType) => void` | —        | ✕        | Callback on change in fileQueue                     |
 | `onInputError`        | `FileUploaderErrorCallbackType`         | —        | ✕        | Callback on error condition                         |
 | `queueLimitBehavior`  | [`hide` \| `disable` \| `none`]         | `none`   | ✕        | Input behavior when the file queue is filled        |
-| `UNSAFE_className`    | `string`                                | —        | ✕        | UncontrolledFileUploader custom class name          |
-| `UNSAFE_style`        | `CSSProperties`                         | —        | ✕        | UncontrolledFileUploader custom style               |
 | `validationState`     | `ValidationState`                       | —        | ✕        | Validation state                                    |
 | `validationText`      | [`string` \| `string[]`]                | —        | ✕        | Validation status text                              |
 
-For detailed information see [FileUploader] component.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
-[FileUploader]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md
-[ButtonElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-[DivElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
-[InputElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
-[ListElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
-[ListItemElementDocs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
-[Deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
+For detailed information see [FileUploader][file-uploader] component.
+
+[button-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
+[div-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
+[file-uploader]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md
+[input-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+[list-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+[list-item-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

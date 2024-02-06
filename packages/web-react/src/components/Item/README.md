@@ -95,17 +95,22 @@ const onToggle = () => setIsOpen(!isOpen);
 
 ## API
 
-| Name               | Type                      | Default  | Required | Description                     |
-| ------------------ | ------------------------- | -------- | -------- | ------------------------------- |
-| `elementType`      | `ElementType`             | `button` | ✕        | Type of element used as wrapper |
-| `helperText`       | `string`                  | —        | ✕        | Custom helper text              |
-| `iconName`         | `string`                  | —        | ✕        | Icon used in item               |
-| `isDisabled`       | `bool`                    | `false`  | ✕        | Whether is the item disabled    |
-| `isSelected`       | `bool`                    | `false`  | ✕        | Whether is the item selected    |
-| `label`            | [`string` \| `ReactNode`] | -        | ✔        | Label of the item               |
-| `UNSAFE_className` | `string`                  | —        | ✕        | Wrapper custom class name       |
-| `UNSAFE_style`     | `CSSProperties`           | —        | ✕        | Wrapper custom style            |
+| Name          | Type                      | Default  | Required | Description                     |
+| ------------- | ------------------------- | -------- | -------- | ------------------------------- |
+| `elementType` | `ElementType`             | `button` | ✕        | Type of element used as wrapper |
+| `helperText`  | `string`                  | —        | ✕        | Custom helper text              |
+| `iconName`    | `string`                  | —        | ✕        | Icon used in item               |
+| `isDisabled`  | `bool`                    | `false`  | ✕        | Whether is the item disabled    |
+| `isSelected`  | `bool`                    | `false`  | ✕        | Whether is the item selected    |
+| `label`       | [`string` \| `ReactNode`] | -        | ✔        | Label of the item               |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 [checkbox]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Checkbox/README.md
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [radio]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Radio/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

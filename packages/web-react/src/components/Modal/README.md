@@ -1,6 +1,6 @@
 # Modal
 
-This is the React implementation of the [Modal] component.
+This is the React implementation of the [Modal][modal] component.
 
 Modal is a composition of several subcomponents:
 
@@ -64,10 +64,12 @@ Example:
 | `id`                   | `string`                                       | —        | ✔        | Modal ID                                              |
 | `isOpen`               | `bool`                                         | `false`  | ✔        | Open state                                            |
 | `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✔        | Callback on dialog closed                             |
-| `UNSAFE_className`     | `string`                                       | —        | ✕        | Modal custom class name                               |
-| `UNSAFE_style`         | `CSSProperties`                                | —        | ✕        | Modal custom style                                    |
 
 Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalDialog
 
@@ -142,10 +144,12 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 | `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                    |
 | `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                                                         |
 | `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                                                    |
-| `UNSAFE_className`            | `string`              | —         | ✕        | ModalDialog custom class name                                                                                                            |
-| `UNSAFE_style`                | `CSSProperties`       | —         | ✕        | ModalDialog custom style                                                                                                                 |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalHeader
 
@@ -175,12 +179,14 @@ accessible name for the dialog, e.g. using the `aria-label` attribute on
 
 ### API
 
-| Name               | Type            | Default | Required | Description                   |
-| ------------------ | --------------- | ------- | -------- | ----------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node                 |
-| `closeLabel`       | `string`        | —       | ✕        | Close button label            |
-| `UNSAFE_className` | `string`        | —       | ✕        | ModalHeader custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalHeader custom style      |
+| Name         | Type        | Default | Required | Description        |
+| ------------ | ----------- | ------- | -------- | ------------------ |
+| `children`   | `ReactNode` | —       | ✕        | Children node      |
+| `closeLabel` | `string`    | —       | ✕        | Close button label |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalBody
 
@@ -198,11 +204,13 @@ ModalBody holds the actual content of the Modal.
 
 ### API
 
-| Name               | Type            | Default | Required | Description                 |
-| ------------------ | --------------- | ------- | -------- | --------------------------- |
-| `children`         | `ReactNode`     | —       | ✕        | Children node               |
-| `UNSAFE_className` | `string`        | —       | ✕        | ModalBody custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | ModalBody custom style      |
+| Name       | Type        | Default | Required | Description   |
+| ---------- | ----------- | ------- | -------- | ------------- |
+| `children` | `ReactNode` | —       | ✕        | Children node |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## ModalFooter
 
@@ -247,13 +255,15 @@ accordingly:
 
 ### API
 
-| Name               | Type                                          | Default | Required | Description                   |
-| ------------------ | --------------------------------------------- | ------- | -------- | ----------------------------- |
-| `alignmentX`       | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | ModalFooter alignment         |
-| `children`         | `ReactNode`                                   | —       | ✕        | Children node                 |
-| `description`      | `string`                                      | `null`  | ✕        | Optional Footer Description   |
-| `UNSAFE_className` | `string`                                      | —       | ✕        | ModalFooter custom class name |
-| `UNSAFE_style`     | `CSSProperties`                               | —       | ✕        | ModalFooter custom style      |
+| Name          | Type                                          | Default | Required | Description                 |
+| ------------- | --------------------------------------------- | ------- | -------- | --------------------------- |
+| `alignmentX`  | [AlignmentX dictionary][dictionary-alignment] | `right` | ✕        | ModalFooter alignment       |
+| `children`    | `ReactNode`                                   | —       | ✕        | Children node               |
+| `description` | `string`                                      | `null`  | ✕        | Optional Footer Description |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Opening the Modal
 
@@ -358,12 +368,15 @@ remain accessible via the `isDockedOnMobile` property.
 
 [What are deprecations?][readme-deprecations]
 
-[modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
-[mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-[mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
-[mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
-[mdn-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md
+[mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+[mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
+[mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+[mdn-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+[modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md

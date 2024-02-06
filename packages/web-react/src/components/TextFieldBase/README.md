@@ -57,13 +57,18 @@ TextFieldBase with password toggle (button to reveal the password):
 | `placeholder`       | `string`                                                                    | —       | ✕        | Input placeholder                                                       |
 | `ref`               | `ForwardedRef<HTMLInputElement or HTMLTextAreaElement>`                     | —       | ✕        | Field element reference                                                 |
 | `type`              | [`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | —       | ✕        | Input type                                                              |
-| `UNSAFE_className`  | `string`                                                                    | —       | ✕        | Wrapper custom class name                                               |
-| `UNSAFE_style`      | `CSSProperties`                                                             | —       | ✕        | Wrapper custom style                                                    |
 | `validationState`   | [Validation dictionary][dictionary-validation]                              | —       | ✕        | Type of validation state.                                               |
 | `validationText`    | [`string` \| `string[]`]                                                    | —       | ✕        | Validation text                                                         |
 | `value`             | `string`                                                                    | —       | ✕        | Input value                                                             |
 
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[textfield]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextField/README.md
-[textarea]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[textarea]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextArea/README.md
+[textfield]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/TextField/README.md

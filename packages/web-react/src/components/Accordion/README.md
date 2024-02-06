@@ -136,54 +136,68 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ## Accordion Props
 
-| Name               | Type                              | Default   | Required | Description                                      |
-| ------------------ | --------------------------------- | --------- | -------- | ------------------------------------------------ |
-| `children`         | `ReactNode`                       | —         | ✔        | Accordion children's nodes                       |
-| `elementType`      | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
-| `open`             | [`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
-| `toggle`           | `(id: string) => void`            | —         | ✕        | A generic handler for a single **AccordionItem** |
-| `UNSAFE_className` | `string`                          | —         | ✕        | Wrapper custom class name                        |
-| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Wrapper custom style                             |
+| Name          | Type                              | Default   | Required | Description                                      |
+| ------------- | --------------------------------- | --------- | -------- | ------------------------------------------------ |
+| `children`    | `ReactNode`                       | —         | ✔        | Accordion children's nodes                       |
+| `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                  |
+| `open`        | [`string` \| `string[]`]          | —         | ✕        | Open item or list of open items \*               |
+| `toggle`      | `(id: string) => void`            | —         | ✕        | A generic handler for a single **AccordionItem** |
 
 (\*) Depending on the type of default value, what is set as the default will affect whether one or more will be open at the same time.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## Uncontrolled Accordion Props
 
-| Name               | Type                              | Default   | Required | Description                                    |
-| ------------------ | --------------------------------- | --------- | -------- | ---------------------------------------------- |
-| `children`         | `ReactNode`                       | —         | ✔        | Accordion children's nodes                     |
-| `defaultOpen`      | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
-| `elementType`      | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
-| `stayOpen`         | `bool`                            | —         | ✕        | Item stay open when another one is also opened |
-| `UNSAFE_className` | `string`                          | —         | ✕        | Wrapper custom class name                      |
-| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Wrapper custom style                           |
+| Name          | Type                              | Default   | Required | Description                                    |
+| ------------- | --------------------------------- | --------- | -------- | ---------------------------------------------- |
+| `children`    | `ReactNode`                       | —         | ✔        | Accordion children's nodes                     |
+| `defaultOpen` | [`string` \| `string[]`]          | —         | ✕        | Default open item(s) \*                        |
+| `elementType` | [`section` \| `article` \| `div`] | `section` | ✕        | Type of element used as wrapper                |
+| `stayOpen`    | `bool`                            | —         | ✕        | Item stay open when another one is also opened |
 
 (\*) If this attribute is an array, then the `stayOpen` parameter should also be set.
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## AccordionItem Props
 
-| Name               | Type                              | Default   | Required | Description                                     |
-| ------------------ | --------------------------------- | --------- | -------- | ----------------------------------------------- |
-| `children`         | `ReactNode`                       | —         | ✔        | Item children node                              |
-| `elementType`      | [`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
-| `id`               | `string`                          | —         | ✔        | Item id                                         |
-| `UNSAFE_className` | `string`                          | —         | ✕        | Item custom class name                          |
-| `UNSAFE_style`     | `CSSProperties`                   | —         | ✕        | Item custom style                               |
+| Name          | Type                              | Default   | Required | Description                                     |
+| ------------- | --------------------------------- | --------- | -------- | ----------------------------------------------- |
+| `children`    | `ReactNode`                       | —         | ✔        | Item children node                              |
+| `elementType` | [`article` \| `section` \| `div`] | `article` | ✕        | Type of element used as wrapper for single item |
+| `id`          | `string`                          | —         | ✔        | Item id                                         |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## AccordionHeader Props
 
-| Name               | Type            | Default | Required | Description              |
-| ------------------ | --------------- | ------- | -------- | ------------------------ |
-| `children`         | `ReactNode`     | —       | ✔        | Header children node     |
-| `elementType`      | `ElementType`   | `h3`    | ✕        | Type of element          |
-| `slot`             | `ReactNode`     | —       | ✕        | Side slot in the header  |
-| `UNSAFE_className` | `string`        | —       | ✕        | Header custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Header custom style      |
+| Name          | Type          | Default | Required | Description             |
+| ------------- | ------------- | ------- | -------- | ----------------------- |
+| `children`    | `ReactNode`   | —       | ✔        | Header children node    |
+| `elementType` | `ElementType` | `h3`    | ✕        | Type of element         |
+| `slot`        | `ReactNode`   | —       | ✕        | Side slot in the header |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## AccordionContent Props
 
-| Name               | Type            | Default | Required | Description               |
-| ------------------ | --------------- | ------- | -------- | ------------------------- |
-| `children`         | `ReactNode`     | —       | ✔        | Content children node     |
-| `UNSAFE_className` | `string`        | —       | ✕        | Content custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Content custom style      |
+| Name       | Type        | Default | Required | Description           |
+| ---------- | ----------- | ------- | -------- | --------------------- |
+| `children` | `ReactNode` | —       | ✔        | Content children node |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

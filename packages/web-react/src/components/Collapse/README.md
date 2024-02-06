@@ -83,8 +83,10 @@ const [isOpen, toggle] = useState<boolean>(true);
 | `id`                      | `string`                            | `<random>` | ✕        | Component id                                |
 | `isOpen`                  | `bool`                              | —          | ✕        | Is open on initialization                   |
 | `transitionDuration`      | `number`                            | `250`      | ✕        | Transition duration in miliseconds          |
-| `UNSAFE_className`        | `string`                            | —          | ✕        | Wrapper custom class name                   |
-| `UNSAFE_style`            | `CSSProperties`                     | —          | ✕        | Wrapper custom style                        |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Uncontrolled Collapse
 
@@ -133,8 +135,10 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 | `isOpen`                  | `bool`                                       | —          | ✕        | Is open on initialization                   |
 | `hideOnCollapse`          | `bool`                                       | —          | ✕        | Hides button when content is displayed      |
 | `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | —          | ✕        | Properties for trigger render               |
-| `UNSAFE_className`        | `string`                                     | —          | ✕        | Wrapper custom classname                    |
-| `UNSAFE_style`            | `CSSProperties`                              | —          | ✕        | Wrapper custom style                        |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Render Toggle API
 
@@ -144,3 +148,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 | `onClick`       | `string`     | —       | ✕        | Trigger onClick event |
 | `aria-expanded` | `Booleanish` | —       | ✕        | Trigger aria expanded |
 | `aria-controls` | `string`     | —       | ✕        | Trigger aria controls |
+
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

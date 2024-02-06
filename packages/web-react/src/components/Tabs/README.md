@@ -73,6 +73,10 @@ const selectTab = useCallback((tabId) => {
 | `children`          | `any`                    | —       | ✕        | Child component                              |
 | `onSelectionChange` | `(tabId: TabId) => void` | —       | ✕        | When the state of the selected panel changes |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ### UncontrolledTabs
 
 #### API
@@ -83,17 +87,23 @@ const selectTab = useCallback((tabId) => {
 | `children`           | `any`                    | —       | ✕        | Child component                              |
 | `onSelectionChange`  | `(tabId: TabId) => void` | —       | ✕        | When the state of the selected panel changes |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ### TabList
 
 Tab list
 
 #### API
 
-| Name               | Type            | Default | Required | Description               |
-| ------------------ | --------------- | ------- | -------- | ------------------------- |
-| `children`         | `any`           | —       | ✕        | Child component           |
-| `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style      |
+| Name       | Type  | Default | Required | Description     |
+| ---------- | ----- | ------- | -------- | --------------- |
+| `children` | `any` | —       | ✕        | Child component |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### TabItem
 
@@ -101,12 +111,14 @@ Tab list item
 
 #### API
 
-| Name               | Type                   | Default | Required | Description               |
-| ------------------ | ---------------------- | ------- | -------- | ------------------------- |
-| `forTab`           | [`string` \| `number`] | —       | ✔        | Identification of tab     |
-| `children`         | `any`                  | —       | ✕        | Child component           |
-| `UNSAFE_className` | `string`               | —       | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`        | —       | ✕        | Wrapper custom style      |
+| Name       | Type                   | Default | Required | Description           |
+| ---------- | ---------------------- | ------- | -------- | --------------------- |
+| `forTab`   | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `children` | `any`                  | —       | ✕        | Child component       |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### TabLink
 
@@ -120,17 +132,23 @@ Tab list link
 | `elementType` | `ElementType`                | `a`     | ✕        | Type of element               |
 | `itemProps`   | `StyleProps & HTMLLIElement` | —       | ✕        | Props for parent list element |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ### TabContent
 
 Tab content wrapper
 
 #### API
 
-| Name               | Type            | Default | Required | Description               |
-| ------------------ | --------------- | ------- | -------- | ------------------------- |
-| `children`         | `any`           | —       | ✕        | Child component           |
-| `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style      |
+| Name       | Type  | Default | Required | Description     |
+| ---------- | ----- | ------- | -------- | --------------- |
+| `children` | `any` | —       | ✕        | Child component |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ### TabPane
 
@@ -138,11 +156,17 @@ Tab content item
 
 #### API
 
-| Name               | Type                   | Default | Required | Description               |
-| ------------------ | ---------------------- | ------- | -------- | ------------------------- |
-| `tabId`            | [`string` \| `number`] | —       | ✔        | Identification of tab     |
-| `children`         | `any`                  | —       | ✕        | Child component           |
-| `UNSAFE_className` | `string`               | —       | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`        | —       | ✕        | Wrapper custom style      |
+| Name       | Type                   | Default | Required | Description           |
+| ---------- | ---------------------- | ------- | -------- | --------------------- |
+| `tabId`    | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `children` | `any`                  | —       | ✕        | Child component       |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Tabs](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tabs/README.md) component.
+
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
