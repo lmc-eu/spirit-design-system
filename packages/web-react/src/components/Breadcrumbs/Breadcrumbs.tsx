@@ -5,12 +5,20 @@ import { SpiritBreadcrumbsProps } from '../../types';
 import BreadcrumbsItem from './BreadcrumbsItem';
 import { useBreadcrumbsStyleProps } from './useBreadcrumbsStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritBreadcrumbsProps> = {
+  elementType: 'nav',
   items: [],
 };
 
 export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcrumbsProps<T>): JSX.Element => {
-  const { children, elementType: ElementTag = 'nav', goBackTitle, items, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    children,
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    goBackTitle,
+    items,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useBreadcrumbsStyleProps({ ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -43,7 +51,5 @@ export const Breadcrumbs = <T extends ElementType = 'nav'>(props: SpiritBreadcru
     </ElementTag>
   );
 };
-
-Breadcrumbs.defaultProps = defaultProps;
 
 export default Breadcrumbs;

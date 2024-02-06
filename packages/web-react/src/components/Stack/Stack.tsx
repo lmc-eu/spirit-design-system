@@ -1,8 +1,8 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { useStackStyleProps } from './useStackStyleProps';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritStackProps } from '../../types';
+import { useStackStyleProps } from './useStackStyleProps';
 
 const defaultProps: SpiritStackProps = {
   elementType: 'div',
@@ -13,7 +13,12 @@ const defaultProps: SpiritStackProps = {
 };
 
 export const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>): JSX.Element => {
-  const { elementType: ElementTag = 'div', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps, styleProps: stackStyle } = useStackStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -30,7 +35,5 @@ export const Stack = <T extends ElementType = 'div'>(props: SpiritStackProps<T>)
     </ElementTag>
   );
 };
-
-Stack.defaultProps = defaultProps;
 
 export default Stack;

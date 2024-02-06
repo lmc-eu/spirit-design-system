@@ -1,10 +1,11 @@
-import React, { ElementType, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { SpiritLinkProps, PolymorphicRef } from '../../types';
+import { PolymorphicRef, SpiritLinkProps } from '../../types';
 import { useLinkStyleProps } from './useLinkStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritLinkProps> = {
+  elementType: 'a',
   color: 'primary',
 };
 
@@ -14,7 +15,12 @@ const _Link = <E extends ElementType = 'a', T = void>(
   props: SpiritLinkProps<E, T>,
   ref: PolymorphicRef<E>,
 ): JSX.Element => {
-  const { elementType: ElementTag = 'a', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -32,7 +38,5 @@ const _Link = <E extends ElementType = 'a', T = void>(
 };
 
 export const Link = forwardRef<HTMLAnchorElement, SpiritLinkProps<ElementType>>(_Link);
-
-Link.defaultProps = defaultProps;
 
 export default Link;

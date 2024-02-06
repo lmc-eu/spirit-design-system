@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ChildrenProps, ClickEvent, StyleProps, Booleanish } from './shared';
+import { Booleanish, ChildrenProps, ClickEvent, StyleProps } from './shared';
 
 export type CollapseElementType = 'div' | 'article' | 'section' | 'main' | 'header' | 'footer';
 
@@ -28,7 +28,8 @@ export interface TransitionCollapseProps {
 
 export interface SpiritCollapseProps extends CollapseProps, TransitionCollapseProps {}
 
-export interface SpiritUncontrolledCollapseProps extends SpiritCollapseProps {
+export interface SpiritUncontrolledCollapseProps extends Omit<SpiritCollapseProps, 'isOpen'> {
+  isOpen?: boolean;
   hideOnCollapse?: boolean;
   renderTrigger?: (render: CollapseRenderProps) => ReactNode;
 }

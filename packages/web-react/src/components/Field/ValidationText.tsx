@@ -1,23 +1,22 @@
 import React, { ElementType, useEffect } from 'react';
-import { ValidationTextProp } from '../../types';
-import { RegisterType } from './useAriaIds';
+import { ValidationTextProps } from './types';
 
-export interface ValidationTextProps extends ValidationTextProp {
-  className?: string;
-  elementType?: ElementType;
-  id?: string;
-  registerAria?: RegisterType;
-}
-
-const defaultProps = {
+const defaultProps: Partial<ValidationTextProps> = {
   className: undefined,
   elementType: 'div',
   id: undefined,
   registerAria: undefined,
 };
 
-export const ValidationText = (props: ValidationTextProps) => {
-  const { className, validationText, elementType: ElementTag = 'div', id, registerAria } = props;
+export const ValidationText = <T extends ElementType = 'div'>(props: ValidationTextProps<T>) => {
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    className,
+    validationText,
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    id,
+    registerAria,
+  } = propsWithDefaults;
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -43,7 +42,5 @@ export const ValidationText = (props: ValidationTextProps) => {
 
   return null;
 };
-
-ValidationText.defaultProps = defaultProps;
 
 export default ValidationText;

@@ -11,7 +11,8 @@ const defaultProps = {
 };
 
 const UncontrolledCollapse = (props: SpiritUncontrolledCollapseProps) => {
-  const { children, hideOnCollapse, renderTrigger, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, hideOnCollapse, renderTrigger, ...restProps } = propsWithDefaults;
   const { isOpen, toggleHandler } = useCollapse(restProps.isOpen);
   const { ariaProps } = useCollapseAriaProps({ ...restProps, isOpen });
 
@@ -40,7 +41,5 @@ const UncontrolledCollapse = (props: SpiritUncontrolledCollapseProps) => {
     </>
   );
 };
-
-UncontrolledCollapse.defaultProps = defaultProps;
 
 export default UncontrolledCollapse;

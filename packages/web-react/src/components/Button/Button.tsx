@@ -6,7 +6,7 @@ import { Spinner } from '../Spinner';
 import { useButtonAriaProps } from './useButtonAriaProps';
 import { useButtonStyleProps } from './useButtonStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritButtonProps> = {
   color: 'primary',
   isBlock: false,
   isDisabled: false,
@@ -14,6 +14,7 @@ const defaultProps = {
   isSquare: false,
   size: 'medium',
   type: 'button',
+  elementType: 'button',
 };
 
 /* We need an exception for components exported with forwardRef */
@@ -22,7 +23,12 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
   props: SpiritButtonProps<T, C, S>,
   ref: ForwardedRef<HTMLButtonElement>,
 ) => {
-  const { elementType: ElementTag = 'button', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
 
   const { buttonProps } = useButtonAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonStyleProps(restProps);
@@ -43,7 +49,5 @@ const _Button = <T extends ElementType = 'button', C = void, S = void>(
 };
 
 export const Button = forwardRef<HTMLButtonElement, SpiritButtonProps<ElementType>>(_Button);
-
-Button.defaultProps = defaultProps;
 
 export default Button;

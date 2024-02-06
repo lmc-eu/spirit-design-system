@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import UncontrolledCollapse from '../UncontrolledCollapse';
 
 describe('UncontrolledCollapse', () => {

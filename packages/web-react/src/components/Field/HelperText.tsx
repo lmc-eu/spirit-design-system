@@ -1,23 +1,22 @@
 import React, { ElementType, useEffect } from 'react';
-import { RegisterType } from './useAriaIds';
+import { HelperTextProps } from './types';
 
-interface Props {
-  helperText: React.ReactNode;
-  className?: string;
-  elementType?: ElementType;
-  id?: string;
-  registerAria?: RegisterType;
-}
-
-const defaultProps = {
+const defaultProps: Partial<HelperTextProps> = {
   className: undefined,
   elementType: 'div',
   id: undefined,
   registerAria: undefined,
 };
 
-const HelperText = (props: Props) => {
-  const { helperText, className, elementType: ElementTag = 'div', id, registerAria } = props;
+const HelperText = <T extends ElementType = 'div'>(props: HelperTextProps<T>) => {
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    helperText,
+    className,
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    id,
+    registerAria,
+  } = propsWithDefaults;
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -37,7 +36,5 @@ const HelperText = (props: Props) => {
 
   return null;
 };
-
-HelperText.defaultProps = defaultProps;
 
 export default HelperText;

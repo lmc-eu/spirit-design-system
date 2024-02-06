@@ -11,7 +11,8 @@ const defaultProps = {
 /* We need an exception for components exported with forwardRef */
 /* eslint no-underscore-dangle: ['error', { allow: ['_Icon'] }] */
 export const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
-  const { boxSize, name, title, ariaHidden, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { boxSize, name, title, ariaHidden, ...restProps } = propsWithDefaults;
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
@@ -39,7 +40,4 @@ export const _Icon = (props: IconProps, ref: ForwardedRef<SVGSVGElement>) => {
 };
 
 export const Icon = forwardRef<SVGSVGElement, IconProps>(_Icon);
-
-Icon.defaultProps = defaultProps;
-
 export default Icon;
