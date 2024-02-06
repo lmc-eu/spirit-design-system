@@ -13,7 +13,14 @@ const TooltipDismissibleViaJS = () => {
   return (
     <div className="docs-Stack docs-Stack-stretch spirit-feature-tooltip-enable-data-placement">
       <p>Saves data to local storage.</p>
-      <TooltipModern id="TooltipDismissibleViaJS" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
+      <TooltipModern
+        id="TooltipDismissibleViaJS"
+        isOpen={open}
+        onToggle={setOpen}
+        placement="right"
+        isDismissible
+        trigger={['click']}
+      >
         <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
         <TooltipPopover>Close me</TooltipPopover>
       </TooltipModern>

@@ -5,7 +5,7 @@ import { useTooltipContext } from './TooltipContext';
 
 interface TooltipTriggerProps extends StyleProps {
   elementType?: ElementType | string;
-  children: string | ReactNode | ((props: { isOpen: boolean }) => React.ReactNode);
+  children?: string | ReactNode | ((props: { isOpen: boolean }) => ReactNode);
 }
 
 const TooltipTrigger = (props: TooltipTriggerProps) => {

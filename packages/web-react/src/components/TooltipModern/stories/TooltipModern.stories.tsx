@@ -53,11 +53,13 @@ const meta: Meta<typeof TooltipModern> = {
         point to the center of the trigger.
       </>
     ),
+    isOpen: true,
     id: 'TooltipModernExample',
     enableFlipping: true,
     enableShifting: true,
     enableSizing: true,
     enableFlippingCrossAxis: true,
+    trigger: ['click', 'hover'],
     placement: 'bottom',
     flipFallbackPlacements: ['bottom', 'left', 'right', 'top'],
   },
@@ -69,7 +71,6 @@ type Story = StoryObj<typeof TooltipModern>;
 const TooltipModernWithHooks = (args: SpiritTooltipModernProps) => {
   const { children, isOpen } = args;
   const [isTooltipOpen, setIsTooltipOpen] = useState(true);
-  const onTooltipToggle = () => setIsTooltipOpen(!isTooltipOpen);
 
   const viewportRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,7 @@ const TooltipModernWithHooks = (args: SpiritTooltipModernProps) => {
 
   return (
     <div
-      className="bg-cover"
+      className="bg-cover spirit-feature-tooltip-enable-data-placement"
       style={{ width: '40rem', maxWidth: '100%', height: '30rem', overflow: 'auto' }}
       ref={viewportRef}
     >
@@ -93,12 +94,10 @@ const TooltipModernWithHooks = (args: SpiritTooltipModernProps) => {
         style={{ position: 'relative', width: '300%', height: '90rem', paddingBlock: '44rem', textAlign: 'center' }}
         ref={contentRef}
       >
-        <div className="example-content" id="my-advanced-content">
-          <TooltipModern {...args} isOpen={isOpen || isTooltipOpen} onToggle={onTooltipToggle}>
-            <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
-            <TooltipPopover>{children}</TooltipPopover>
-          </TooltipModern>
-        </div>
+        <TooltipModern {...args} isOpen={isOpen || isTooltipOpen} onToggle={setIsTooltipOpen}>
+          <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
+          <TooltipPopover>{children}</TooltipPopover>
+        </TooltipModern>
       </div>
     </div>
   );
