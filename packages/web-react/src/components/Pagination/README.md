@@ -89,35 +89,41 @@
 
 ## Pagination props
 
-| Name               | Type                      | Default | Required | Description                                        |
-| ------------------ | ------------------------- | ------- | -------- | -------------------------------------------------- |
-| `children`         | `ReactNode`               | `null`  | ✕        | Content of the Pagination wrapper                  |
-| `listProps`        | `SpiritUListElementProps` | `{}`    | ✕        | Props for the inner [UL element props][ul-element] |
-| `UNSAFE_className` | `string`                  | —       | ✕        | Wrapper custom class name                          |
-| `UNSAFE_style`     | `CSSProperties`           | —       | ✕        | Wrapper custom style                               |
+| Name        | Type                      | Default | Required | Description                                        |
+| ----------- | ------------------------- | ------- | -------- | -------------------------------------------------- |
+| `children`  | `ReactNode`               | `null`  | ✕        | Content of the Pagination wrapper                  |
+| `listProps` | `SpiritUListElementProps` | `{}`    | ✕        | Props for the inner [UL element props][ul-element] |
 
 Other unnamed props of this component are formed from the [HTML element][html-element].
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## PaginationItem props
 
-| Name               | Type            | Default | Required | Description            |
-| ------------------ | --------------- | ------- | -------- | ---------------------- |
-| `children`         | `ReactNode`     | `null`  | ✕        | Content of the Item    |
-| `UNSAFE_className` | `string`        | —       | ✕        | Item custom class name |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Item custom style      |
+| Name       | Type        | Default | Required | Description         |
+| ---------- | ----------- | ------- | -------- | ------------------- |
+| `children` | `ReactNode` | `null`  | ✕        | Content of the Item |
 
 Other unnamed props of this component are formed from the [LI element][li-element].
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## PaginationLink props
 
-| Name                 | Type            | Default | Required | Description                            |
-| -------------------- | --------------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string`        | `null`  | ✔        | Accessibility label of the link        |
-| `elementType`        | `ElementType`   | `a`     | ✕        | Type of an element                     |
-| `isCurrent`          | `bool`          | `null`  | ✕        | If true, the link is marked as current |
-| `pageNumber`         | `number`        | —       | ✔        | Page number, hidden for screen readers |
-| `UNSAFE_className`   | `string`        | —       | ✕        | Link custom class name                 |
-| `UNSAFE_style`       | `CSSProperties` | —       | ✕        | Link custom style                      |
+| Name                 | Type          | Default | Required | Description                            |
+| -------------------- | ------------- | ------- | -------- | -------------------------------------- |
+| `accessibilityLabel` | `string`      | `null`  | ✔        | Accessibility label of the link        |
+| `elementType`        | `ElementType` | `a`     | ✕        | Type of an element                     |
+| `isCurrent`          | `bool`        | `null`  | ✕        | If true, the link is marked as current |
+| `pageNumber`         | `number`      | —       | ✔        | Page number, hidden for screen readers |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## PaginationButtonLink props
 
@@ -128,6 +134,10 @@ This component extends the [Button][button] component with directional arrows an
 | `accessibilityLabel` | `string`               | `null`  | ✔        | Accessibility label of the link                                      |
 | `direction`          | [`previous` \| `next`] | `null`  | ✔        | The direction according to which the corresponding icon is displayed |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## PaginationLinkPrevious props
 
 This component extends the `PaginationButtonLink` component.
@@ -136,6 +146,10 @@ This component extends the `PaginationButtonLink` component.
 | -------------------- | -------- | ---------- | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `Previous` | ✕        | Accessibility label of the link |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 ## PaginationLinkNext props
 
 This component extends the `PaginationButtonLink` component.
@@ -143,6 +157,10 @@ This component extends the `PaginationButtonLink` component.
 | Name                 | Type     | Default | Required | Description                     |
 | -------------------- | -------- | ------- | -------- | ------------------------------- |
 | `accessibilityLabel` | `string` | `Next`  | ✕        | Accessibility label of the link |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## UncontrolledPagination props
 
@@ -155,6 +173,10 @@ This component extends the `PaginationButtonLink` component.
 | `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
 | `totalPages`                 | `number`                       | 0          | ✔        | Total count of pages                                                |
 | `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Icons Provider
 
@@ -170,8 +192,11 @@ import { IconsProvider } from 'packages/web-react/src/context';
 
 For detailed information see [Pagination][pagination] component.
 
-[pagination]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pagination/README.md
 [button]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Button/README.md
 [html-element]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
-[ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
 [li-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li
+[pagination]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pagination/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
+[ul-element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul

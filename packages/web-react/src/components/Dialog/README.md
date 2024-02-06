@@ -1,6 +1,6 @@
 # Dialog
 
-React implementation of native HTML [dialog] element.
+React implementation of native HTML [dialog][dialog] element.
 
 ```jsx
 import { Dialog } from '@lmc-eu/spirit-web-react/components';

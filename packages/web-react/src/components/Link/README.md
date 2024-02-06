@@ -8,16 +8,18 @@ Link allows users to follow navigation.
 
 ## API
 
-| Name               | Type                                             | Default   | Required | Description                    |
-| ------------------ | ------------------------------------------------ | --------- | -------- | ------------------------------ |
-| `color`            | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
-| `elementType`      | `ElementType`                                    | `a`       | ✕        | Type of element used as        |
-| `href`             | `string`                                         | —         | ✕        | Link's href attribute          |
-| `isDisabled`       | `bool`                                           | `false`   | ✕        | Whether is the link disabled   |
-| `isUnderlined`     | `bool`                                           | `false`   | ✕        | Whether is the link underlined |
-| `ref`              | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference         |
-| `UNSAFE_className` | `string`                                         | —         | ✕        | Wrapper custom class name      |
-| `UNSAFE_style`     | `CSSProperties`                                  | —         | ✕        | Wrapper custom style           |
+| Name           | Type                                             | Default   | Required | Description                    |
+| -------------- | ------------------------------------------------ | --------- | -------- | ------------------------------ |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color of the link              |
+| `elementType`  | `ElementType`                                    | `a`       | ✕        | Type of element used as        |
+| `href`         | `string`                                         | —         | ✕        | Link's href attribute          |
+| `isDisabled`   | `bool`                                           | `false`   | ✕        | Whether is the link disabled   |
+| `isUnderlined` | `bool`                                           | `false`   | ✕        | Whether is the link underlined |
+| `ref`          | `ForwardedRef<HTMLAnchorElement>`                | —         | ✕        | Link element reference         |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Custom component
 
@@ -61,3 +63,6 @@ export const CustomLink = forwardRef(CustomLinkRoot);
 ```
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

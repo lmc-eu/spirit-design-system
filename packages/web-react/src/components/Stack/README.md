@@ -57,10 +57,12 @@ accepts either a spacing token (eg. `space-100`) or an object with breakpoint ke
 | `hasSpacing`              | `bool`                                                           | `false` | ✕        | Apply a spacing between items                                       |
 | `hasStartDivider`         | `bool`                                                           | `false` | ✕        | Render a divider before the first item                              |
 | `spacing`                 | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Custom spacing between items, see [Custom Spacing](#custom-spacing) |
-| `UNSAFE_className`        | `string`                                                         | —       | ✕        | Wrapper custom class name                                           |
-| `UNSAFE_style`            | `CSSProperties`                                                  | —       | ✕        | Wrapper custom style                                                |
 
-You can add `id`, `data-*` or `aria-*` attributes to further extend component's
-descriptiveness and accessibility.
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [stack]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Stack

@@ -27,24 +27,26 @@ Advanced example usage:
 
 ## API
 
-| Name               | Type                                           | Default | Required | Description                                          |
-| ------------------ | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
-| `autoComplete`     | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
-| `helperText`       | `string`                                       | —       | ✕        | Custom helper text                                   |
-| `id`               | `string`                                       | -       | ✔        | Input and label identification                       |
-| `isDisabled`       | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
-| `isChecked`        | `boolean`                                      | -       | ✕        | Whether is field checked                             |
-| `isItem`           | `boolean`                                      | -       | ✕        | To render in [Item][item] mode                       |
-| `isLabelHidden`    | `boolean`                                      | -       | ✕        | Whether is label hidden                              |
-| `isRequired`       | `boolean`                                      | -       | ✕        | Whether is field required                            |
-| `label`            | `string`                                       | -       | ✕        | Label text                                           |
-| `name`             | `string`                                       | -       | ✕        | Input name                                           |
-| `ref`              | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
-| `UNSAFE_className` | `string`                                       | -       | ✕        | Wrapper custom class name                            |
-| `UNSAFE_style`     | `CSSProperties`                                | -       | ✕        | Wrapper custom style                                 |
-| `validationState`  | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                            |
-| `validationText`   | `string`, `string[]`                           | -       | ✕        | Validation text                                      |
-| `value`            | `string`                                       | -       | ✕        | Input value                                          |
+| Name              | Type                                           | Default | Required | Description                                          |
+| ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------- |
+| `autoComplete`    | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr] |
+| `helperText`      | `string`                                       | —       | ✕        | Custom helper text                                   |
+| `id`              | `string`                                       | -       | ✔        | Input and label identification                       |
+| `isDisabled`      | `boolean`                                      | -       | ✕        | Whether is field disabled                            |
+| `isChecked`       | `boolean`                                      | -       | ✕        | Whether is field checked                             |
+| `isItem`          | `boolean`                                      | -       | ✕        | To render in [Item][item] mode                       |
+| `isLabelHidden`   | `boolean`                                      | -       | ✕        | Whether is label hidden                              |
+| `isRequired`      | `boolean`                                      | -       | ✕        | Whether is field required                            |
+| `label`           | `string`                                       | -       | ✕        | Label text                                           |
+| `name`            | `string`                                       | -       | ✕        | Input name                                           |
+| `ref`             | `ForwardedRef<HTMLInputElement>`               | -       | ✕        | Input element reference                              |
+| `validationState` | [Validation dictionary][dictionary-validation] | -       | ✕        | Type of validation state.                            |
+| `validationText`  | `string`, `string[]`                           | -       | ✕        | Validation text                                      |
+| `value`           | `string`                                       | -       | ✕        | Input value                                          |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Custom component
 
@@ -69,6 +71,9 @@ const CustomCheckbox = (props: SpiritCheckboxProps): JSX.Element => {
 
 For detailed information see [Checkbox](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Checkbox/README.md) component
 
-[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
-[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+[dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

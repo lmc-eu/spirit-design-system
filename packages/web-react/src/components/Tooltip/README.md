@@ -68,44 +68,52 @@ const toggleHandler = () => setOpen(!open);
 
 ## Tooltip Props
 
-| Name               | Type                                                | Default  | Required | Description                               |
-| ------------------ | --------------------------------------------------- | -------- | -------- | ----------------------------------------- |
-| `children`         | `ReactNode`                                         | —        | ✔        | Tooltip children's nodes                  |
-| `closeLabel`       | `string`                                            | `Close`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `bool`                                              | —        | ✕        | When it should appear with a close button |
-| `onClose`          | `(event: ClickEvent) => void`                       | —        | ✕        | Close button callback                     |
-| `open`             | `bool`                                              | —        | ✕        | Tooltip open state control                |
-| `placement`        | [Placement dictionary][dictionary-placement], 'off' | `bottom` | ✕        | Tooltip placement                         |
-| `UNSAFE_className` | `string`                                            | —        | ✕        | Tooltip custom class name                 |
-| `UNSAFE_style`     | `CSSProperties`                                     | —        | ✕        | Tooltip custom style                      |
+| Name            | Type                                                | Default  | Required | Description                               |
+| --------------- | --------------------------------------------------- | -------- | -------- | ----------------------------------------- |
+| `children`      | `ReactNode`                                         | —        | ✔        | Tooltip children's nodes                  |
+| `closeLabel`    | `string`                                            | `Close`  | ✕        | Tooltip label on close button             |
+| `isDismissible` | `bool`                                              | —        | ✕        | When it should appear with a close button |
+| `onClose`       | `(event: ClickEvent) => void`                       | —        | ✕        | Close button callback                     |
+| `open`          | `bool`                                              | —        | ✕        | Tooltip open state control                |
+| `placement`     | [Placement dictionary][dictionary-placement], 'off' | `bottom` | ✕        | Tooltip placement                         |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## UncontrolledTooltip Props
 
-| Name               | Type                                                | Default  | Required | Description                               |
-| ------------------ | --------------------------------------------------- | -------- | -------- | ----------------------------------------- |
-| `children`         | `ReactNode`                                         | —        | ✔        | Tooltip children's nodes                  |
-| `closeLabel`       | `string`                                            | `Close`  | ✕        | Tooltip label on close button             |
-| `isDismissible`    | `bool`                                              | —        | ✕        | When it should appear with a close button |
-| `placement`        | [Placement dictionary][dictionary-placement], 'off' | `bottom` | ✕        | Tooltip placement                         |
-| `UNSAFE_className` | `string`                                            | —        | ✕        | Tooltip custom class name                 |
-| `UNSAFE_style`     | `CSSProperties`                                     | —        | ✕        | Tooltip custom style                      |
+| Name            | Type                                                | Default  | Required | Description                               |
+| --------------- | --------------------------------------------------- | -------- | -------- | ----------------------------------------- |
+| `children`      | `ReactNode`                                         | —        | ✔        | Tooltip children's nodes                  |
+| `closeLabel`    | `string`                                            | `Close`  | ✕        | Tooltip label on close button             |
+| `isDismissible` | `bool`                                              | —        | ✕        | When it should appear with a close button |
+| `placement`     | [Placement dictionary][dictionary-placement], 'off' | `bottom` | ✕        | Tooltip placement                         |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## TooltipWrapper Props
 
-| Name               | Type            | Default | Required | Description                     |
-| ------------------ | --------------- | ------- | -------- | ------------------------------- |
-| `children`         | `ReactNode`     | —       | ✔        | TooltipWrapper children's nodes |
-| `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name       |
-| `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style            |
+| Name       | Type        | Default | Required | Description                     |
+| ---------- | ----------- | ------- | -------- | ------------------------------- |
+| `children` | `ReactNode` | —       | ✔        | TooltipWrapper children's nodes |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## TooltipCloseButton Props
 
-| Name               | Type                          | Default | Required | Description                    |
-| ------------------ | ----------------------------- | ------- | -------- | ------------------------------ |
-| `label`            | `string`                      | `Close` | ✕        | Text label                     |
-| `onClick`          | `(event: ClickEvent) => void` | —       | ✕        | Close Button callback          |
-| `UNSAFE_className` | `string`                      | —       | ✕        | Close Button custom class name |
-| `UNSAFE_style`     | `CSSProperties`               | —       | ✕        | Close Button custom style      |
+| Name      | Type                          | Default | Required | Description           |
+| --------- | ----------------------------- | ------- | -------- | --------------------- |
+| `label`   | `string`                      | `Close` | ✕        | Text label            |
+| `onClick` | `(event: ClickEvent) => void` | —       | ✕        | Close Button callback |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## Advanced Positioning with Floating UI
 
@@ -279,6 +287,10 @@ const [open, setOpen] = React.useState(false);
 | `onToggle`                      | `() => void`                                 | -        | ✔        | Function for toggle open state of dropdown                                                                                                                                                                                                                                 |
 | `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom" | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
 
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [example]: https://spirit-design-system-demo.netlify.app/src/scss/components/tooltip/#advanced-positioning
 [floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis
@@ -288,5 +300,8 @@ const [open, setOpen] = React.useState(false);
 [floating-ui-shift]: https://floating-ui.com/docs/shift
 [floating-ui-size]: https://floating-ui.com/docs/size
 [floating-ui]: https://floating-ui.com
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

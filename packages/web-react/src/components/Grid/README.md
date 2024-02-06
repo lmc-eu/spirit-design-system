@@ -17,22 +17,24 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 
 ## API
 
-| Name               | Type                                                         | Default | Required | Description                                                                                                |
-| ------------------ | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| `cols`             | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `desktop`          | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
-| `elementType`      | HTML element                                                 | `div`   | ✕        | Element type to use for the Grid                                                                           |
-| `tablet`           | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
-| `UNSAFE_className` | `string`                                                     | —       | ✕        | Wrapper custom class name                                                                                  |
-| `UNSAFE_style`     | `CSSProperties`                                              | —       | ✕        | Wrapper custom style                                                                                       |
+| Name          | Type                                                         | Default | Required | Description                                                                                                |
+| ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
+| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
+| `elementType` | HTML element                                                 | `div`   | ✕        | Element type to use for the Grid                                                                           |
+| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
 
-For detailed information see [Grid] component
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+For detailed information see [Grid][grid] component.
 
 ## GridSpan
 
 Grid Span allows to center content over multiple grid columns.
 
-For more info when and why to use it, see [Grid] component.
+For more info when and why to use it, see [Grid][grid] component.
 
 Basic example usage:
 
@@ -64,6 +66,10 @@ Advanced example usage:
 | `elementType` | `string`                                   | `div`   | ✕        | HTML tag to render                        |
 | `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over            |
 | `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on tablet  |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 ## GridItem
 
@@ -128,6 +134,13 @@ previous breakpoint will be used.
 | `rowEnd`      | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should end      |
 | `rowStart`    | [`number` \| `span \d+` \| `object`] | `null`  | ✕        | Row where the item should start    |
 
-[Grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+[grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

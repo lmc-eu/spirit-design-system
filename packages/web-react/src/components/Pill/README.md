@@ -21,13 +21,19 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name               | Type                                                                                                                        | Default    | Required | Description               |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ------------------------- |
-| `children`         | `ReactNode`                                                                                                                 | —          | ✔        | Content of the Pill       |
-| `color`            | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color of the component    |
-| `UNSAFE_className` | `string`                                                                                                                    | —          | ✕        | Wrapper custom class name |
-| `UNSAFE_style`     | `CSSProperties`                                                                                                             | —          | ✕        | Wrapper custom style      |
+| Name       | Type                                                                                                                        | Default    | Required | Description            |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
+| `children` | `ReactNode`                                                                                                                 | —          | ✔        | Content of the Pill    |
+| `color`    | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color of the component |
 
-For detailed information see [Pill](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pill/README.md) component
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+For detailed information see [Pill][pill] component
 
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
+[pill]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Pill/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
+[readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
