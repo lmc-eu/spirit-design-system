@@ -26,7 +26,6 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
-    "@floating-ui/react": "0.26.5",
     "@lmc-eu/eslint-config-base": "3.0.2",
     "@lmc-eu/eslint-config-jest": "3.0.2",
     "@lmc-eu/eslint-config-react": "2.0.2",
