@@ -5,12 +5,13 @@ import { htmlParser } from '../../utils/htmlParser';
 import { NoSsr } from '../NoSsr';
 
 const defaultProps = {
-  ariaHidden: true,
   boxSize: 24,
+  ariaHidden: true,
 };
 
 export const Icon = (props: IconProps) => {
-  const { boxSize, name, title, ariaHidden, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { boxSize, name, title, ariaHidden, ...restProps } = propsWithDefaults;
   let icon = useIcon(name);
   const { styleProps, props: otherProps } = useStyleProps(restProps);
   const isHtmlParserLoaded = typeof htmlParser === 'function';
@@ -62,7 +63,5 @@ export const Icon = (props: IconProps) => {
     </NoSsr>
   );
 };
-
-Icon.defaultProps = defaultProps;
 
 export default Icon;

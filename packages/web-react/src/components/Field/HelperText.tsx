@@ -17,7 +17,8 @@ const defaultProps = {
 };
 
 const HelperText = (props: Props) => {
-  const { helperText, className, elementType: ElementTag = 'div', id, registerAria } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { helperText, className, elementType: ElementTag = 'div', id, registerAria } = propsWithDefaults;
 
   useEffect(() => {
     registerAria?.({ add: id });
@@ -37,7 +38,5 @@ const HelperText = (props: Props) => {
 
   return null;
 };
-
-HelperText.defaultProps = defaultProps;
 
 export default HelperText;

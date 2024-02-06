@@ -9,7 +9,8 @@ const defaultProps = {
 };
 
 export const Heading = <T extends ElementType = 'div', S = void>(props: SpiritHeadingProps<T, S>): JSX.Element => {
-  const { elementType: ElementTag = 'div', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { elementType: ElementTag = 'div', children, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useHeadingStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -19,7 +20,5 @@ export const Heading = <T extends ElementType = 'div', S = void>(props: SpiritHe
     </ElementTag>
   );
 };
-
-Heading.defaultProps = defaultProps;
 
 export default Heading;
