@@ -13,10 +13,14 @@ import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
 import TooltipOnHover from './TooltipOnHover';
 import TooltipPlacements from './TooltipPlacements';
 import TooltipWithFloatingUI from './TooltipWithFloatingUI';
+import TooltipHover from './TooltipHover';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
+      <DocsSection title="Tooltip on Hover with Floating UI">
+        <TooltipHover />
+      </DocsSection>
       <DocsSection title="Placements" stackAlignment="stretch">
         <TooltipPlacements />
       </DocsSection>

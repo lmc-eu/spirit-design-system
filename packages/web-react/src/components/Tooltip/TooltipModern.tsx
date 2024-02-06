@@ -10,9 +10,10 @@ const TooltipModern = (props: TooltipModernProps) => {
   const {
     children,
     enableFlipping: flipProp = true,
+    enableFlippingCrossAxis: flipCrossAxis = true,
+    enableHover = false,
     enableShifting: shiftProp = true,
     enableSizing: sizeProp = false,
-    enableFlippingCrossAxis: flipCrossAxis = true,
     flipFallbackAxisSideDirection = 'none',
     flipFallbackPlacements = ['bottom', 'top'],
     id,
@@ -52,6 +53,7 @@ const TooltipModern = (props: TooltipModernProps) => {
   const { getFloatingProps, getReferenceProps, maxWidth, middlewareData, placement, refs, x, y } = useFloating({
     arrowRef,
     cornerOffset: tooltipCornerOffset,
+    enableHover,
     flipCrossAxis,
     flipFallbackAxisSideDirection,
     flipFallbackPlacements,

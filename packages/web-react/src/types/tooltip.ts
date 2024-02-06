@@ -46,6 +46,7 @@ export interface SpiritTooltipModernProps extends TooltipModernProps, ChildrenPr
   enableFlippingCrossAxis?: boolean;
   enableShifting?: boolean;
   enableSizing?: boolean;
+  enableHover?: boolean;
   flipFallbackAxisSideDirection?: 'none' | 'start' | 'end';
   flipFallbackPlacements?: Placement | Placement[];
 }
