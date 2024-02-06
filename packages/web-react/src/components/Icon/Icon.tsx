@@ -39,6 +39,9 @@ export const Icon = (props: IconProps) => {
     );
   }
 
+  // @deprecated Usage of `html-react-parser` will be required in the next major version.
+  // @TODO: Remove this block in the next major version.
+  // @see { @link https://jira.almacareer.tech/browse/DS-1149 }
   return (
     <NoSsr>
       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
