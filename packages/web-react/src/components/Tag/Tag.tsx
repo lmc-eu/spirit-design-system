@@ -1,10 +1,10 @@
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTagProps, StyleProps } from '../../types';
 import { useTagStyleProps } from './useTagStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritTagProps> = {
   color: 'neutral',
   elementType: 'span',
   isSubtle: false,
@@ -17,7 +17,12 @@ const _Tag = <T extends ElementType = 'span', C = void, S = void>(
   props: SpiritTagProps<T, C, S>,
   ref: ForwardedRef<HTMLSpanElement>,
 ): JSX.Element => {
-  const { elementType: ElementTag = 'span', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTagStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
 
@@ -29,7 +34,5 @@ const _Tag = <T extends ElementType = 'span', C = void, S = void>(
 };
 
 export const Tag = forwardRef<HTMLSpanElement, SpiritTagProps<ElementType>>(_Tag);
-
-Tag.defaultProps = defaultProps;
 
 export default Tag;

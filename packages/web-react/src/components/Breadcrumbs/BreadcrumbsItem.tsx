@@ -14,7 +14,8 @@ const defaultProps = {
 };
 
 export const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
-  const { children, href, isCurrent, iconNameStart, iconNameEnd, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, href, isCurrent, iconNameStart, iconNameEnd, ...restProps } = propsWithDefaults;
   const { classProps, props: otherProps } = useBreadcrumbsStyleProps({ ...restProps });
   const { styleProps, props: transferProps } = useStyleProps(otherProps);
 
@@ -37,7 +38,5 @@ export const BreadcrumbsItem = (props: SpiritBreadcrumbsItemProps) => {
     </li>
   );
 };
-
-BreadcrumbsItem.defaultProps = defaultProps;
 
 export default BreadcrumbsItem;

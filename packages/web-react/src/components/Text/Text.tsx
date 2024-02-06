@@ -4,12 +4,18 @@ import { useStyleProps } from '../../hooks';
 import { SpiritTextProps } from '../../types';
 import { useTextStyleProps } from './useTextStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritTextProps> = {
+  elementType: 'p',
   size: 'medium',
 };
 
 export const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextProps<T, S>): JSX.Element => {
-  const { elementType: ElementTag = 'p', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useTextStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -19,7 +25,5 @@ export const Text = <T extends ElementType = 'p', S = void>(props: SpiritTextPro
     </ElementTag>
   );
 };
-
-Text.defaultProps = defaultProps;
 
 export default Text;

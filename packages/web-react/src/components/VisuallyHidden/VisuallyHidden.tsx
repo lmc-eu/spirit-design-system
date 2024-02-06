@@ -1,12 +1,8 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritVisuallyHiddenProps } from '../../types/visuallyHidden';
 import { useVisuallyHiddenProps } from './useVisuallyHiddenProps';
-
-const defaultProps = {
-  elementType: 'span',
-};
 
 const VisuallyHidden = <T extends ElementType = 'span'>(props: SpiritVisuallyHiddenProps<T>): JSX.Element => {
   const { children, elementType: ElementTag = 'span', ...rest } = props;
@@ -19,7 +15,5 @@ const VisuallyHidden = <T extends ElementType = 'span'>(props: SpiritVisuallyHid
     </ElementTag>
   );
 };
-
-VisuallyHidden.defaultProps = defaultProps;
 
 export default VisuallyHidden;

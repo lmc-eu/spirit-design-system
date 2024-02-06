@@ -17,6 +17,7 @@ const defaultProps = {
 };
 
 export const Dropdown = (props: SpiritDropdownProps) => {
+  const propsWithDefaults = { ...defaultProps, ...props };
   const {
     /** @deprecated ID will be made a required user input in the next major version. */
     id = Math.random().toString(36).slice(2, 7),
@@ -24,10 +25,10 @@ export const Dropdown = (props: SpiritDropdownProps) => {
     enableAutoClose,
     fullWidthMode,
     onAutoClose,
-    placement = defaultProps.placement,
+    placement,
     renderTrigger,
     ...rest
-  } = props;
+  } = propsWithDefaults;
 
   const dropdownRef = useRef(null);
   const triggerRef = useRef();
@@ -86,7 +87,5 @@ export const Dropdown = (props: SpiritDropdownProps) => {
     </DropdownWrapper>
   );
 };
-
-Dropdown.defaultProps = defaultProps;
 
 export default Dropdown;

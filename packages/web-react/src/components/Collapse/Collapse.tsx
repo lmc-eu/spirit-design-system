@@ -16,14 +16,21 @@ const transitioningStyles = {
   exited: '',
 };
 
-const defaultProps = {
+const defaultProps: Partial<SpiritCollapseProps> = {
+  elementType: 'div',
   isOpen: false,
   collapsibleToBreakpoint: undefined,
   transitionDuration: TRANSITION_DURATION,
 };
 
 const Collapse = (props: SpiritCollapseProps) => {
-  const { elementType: ElementTag = 'div', children, transitionDuration = TRANSITION_DURATION, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as React.ElementType,
+    children,
+    transitionDuration = TRANSITION_DURATION,
+    ...restProps
+  } = propsWithDefaults;
 
   const rootElementRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const collapseElementRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
@@ -58,7 +65,5 @@ const Collapse = (props: SpiritCollapseProps) => {
     </Transition>
   );
 };
-
-Collapse.defaultProps = defaultProps;
 
 export default Collapse;

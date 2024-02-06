@@ -1,15 +1,21 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritPillProps, StyleProps } from '../../types';
 import { usePillStyleProps } from './usePillStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritPillProps> = {
+  elementType: 'span',
   color: 'selected',
 };
 
 export const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPillProps<T, C>): JSX.Element => {
-  const { elementType: ElementTag = 'span', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
   const { classProps, props: modifiedProps } = usePillStyleProps(restProps);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps as StyleProps);
 
@@ -19,7 +25,5 @@ export const Pill = <T extends ElementType = 'span', C = void>(props: SpiritPill
     </ElementTag>
   );
 };
-
-Pill.defaultProps = defaultProps;
 
 export default Pill;

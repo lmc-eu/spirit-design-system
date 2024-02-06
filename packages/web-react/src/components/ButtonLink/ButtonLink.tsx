@@ -3,11 +3,12 @@ import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritButtonLinkProps } from '../../types';
 import { Spinner } from '../Spinner';
-import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
 import { useButtonLinkAriaProps } from './useButtonLinkAriaProps';
+import { useButtonLinkStyleProps } from './useButtonLinkStyleProps';
 
-const defaultProps = {
+const defaultProps: Partial<SpiritButtonLinkProps> = {
   color: 'primary',
+  elementType: 'a',
   isBlock: false,
   isDisabled: false,
   isLoading: false,
@@ -21,7 +22,12 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
   props: SpiritButtonLinkProps<T, C, S>,
   ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
-  const { elementType: ElementTag = 'a', children, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const {
+    elementType: ElementTag = defaultProps.elementType as ElementType,
+    children,
+    ...restProps
+  } = propsWithDefaults;
 
   const { buttonLinkProps } = useButtonLinkAriaProps(restProps);
   const { classProps, props: modifiedProps } = useButtonLinkStyleProps(restProps);
@@ -42,7 +48,5 @@ const _ButtonLink = <T extends ElementType = 'a', C = void, S = void>(
 };
 
 export const ButtonLink = forwardRef<HTMLAnchorElement, SpiritButtonLinkProps<ElementType>>(_ButtonLink);
-
-ButtonLink.defaultProps = defaultProps;
 
 export default ButtonLink;
