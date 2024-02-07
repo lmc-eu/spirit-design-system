@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.11.0"></a>
+
+# [2.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.10.0...@lmc-eu/spirit-web-twig@2.11.0) (2024-02-07)
+
+### Documentation
+
+- **web-twig:** Improve additional API options info [#DS-1099](https://github.com/lmc-eu/spirit-design-system/issues/DS-1099) ([cd38d9a](https://github.com/lmc-eu/spirit-design-system/commit/cd38d9a))
+
+### Features
+
+- **web-twig:** Introduce option to disable scrolling inside Modal [#DS-732](https://github.com/lmc-eu/spirit-design-system/issues/DS-732) ([c0515b5](https://github.com/lmc-eu/spirit-design-system/commit/c0515b5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.10.0"></a>
 
 # [2.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.9.0...@lmc-eu/spirit-web-twig@2.10.0) (2024-01-30)
