@@ -147,6 +147,34 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ![Deprecations in the Browser's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true)
 
+### Warnings in environments
+
+#### Production
+
+The `warning` utility which is used for deprecation warnings checks the `process.env.NODE_ENV` variable to determine if the warnings should be shown.
+If the environment variable is set to the `production` the warnings will not be shown.
+
+#### Testing
+
+While running tests, you likely will see the deprecation warnings.
+You can suppress the warnings by simply mocking the implementation of the `warning` utility or `console.warn` function.
+But we strongly discourage you from doing so, as the deprecation warnings are there to help you to prepare for the next major release.
+
+<details>
+  <summary>Example for Jest:</summary>
+
+```ts
+beforeEach(() => {
+  jest.spyOn(console, 'warn').mockImplementation(() => {});
+});
+
+afterEach(() => {
+  console.warn.mockRestore();
+});
+```
+
+</details>
+
 ## Examples
 
 👀 See [examples] for a live demo.
