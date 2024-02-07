@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.0"></a>
+
+# [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.11.0...@lmc-eu/spirit-web-react@1.12.0) (2024-02-07)
+
+### Bug Fixes
+
+- **web-react:** Remove useless condition use of HTML parser ([ad74e08](https://github.com/lmc-eu/spirit-design-system/commit/ad74e08)), closes [#DS-1145](https://github.com/lmc-eu/spirit-design-system/issues/DS-1145)
+
+### Chores
+
+- **web-react:** Fix typo in demo app configuration ([3f0b66e](https://github.com/lmc-eu/spirit-design-system/commit/3f0b66e))
+- **web-react:** Remove @floating-ui/react from devDependencies ([9623b9e](https://github.com/lmc-eu/spirit-design-system/commit/9623b9e))
+
+### Code Refactoring
+
+- **web-react:** Use `warning` utility instead of console.warn ([b293d3c](https://github.com/lmc-eu/spirit-design-system/commit/b293d3c))
+
+### Documentation
+
+- **web-react:** Improve additional API options info [#DS-1099](https://github.com/lmc-eu/spirit-design-system/issues/DS-1099) ([417f89a](https://github.com/lmc-eu/spirit-design-system/commit/417f89a))
+- **web-react:** Usage of warnings in deprecations ([f18cdc8](https://github.com/lmc-eu/spirit-design-system/commit/f18cdc8)), closes [#DS-1145](https://github.com/lmc-eu/spirit-design-system/issues/DS-1145)
+
+### Features
+
+- **web-react:** Introduce option to disable scrolling inside Modal [#DS-732](https://github.com/lmc-eu/spirit-design-system/issues/DS-732) ([3e52d60](https://github.com/lmc-eu/spirit-design-system/commit/3e52d60))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.11.0"></a>
 
 # [1.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.10.0...@lmc-eu/spirit-web-react@1.11.0) (2024-01-30)

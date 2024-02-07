@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.0"></a>
+
+# [1.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.9.0...@lmc-eu/spirit-web@1.10.0) (2024-02-07)
+
+### Code Refactoring
+
+- **web:** Change `Modal` positioning from fixed position to margins ([26a8289](https://github.com/lmc-eu/spirit-design-system/commit/26a8289))
+
+### Features
+
+- **web:** Introduce option to disable scrolling inside `Modal` [#DS-732](https://github.com/lmc-eu/spirit-design-system/issues/DS-732) ([e3c385a](https://github.com/lmc-eu/spirit-design-system/commit/e3c385a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.9.0"></a>
 
 # [1.9.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.8.0...@lmc-eu/spirit-web@1.9.0) (2024-01-30)
