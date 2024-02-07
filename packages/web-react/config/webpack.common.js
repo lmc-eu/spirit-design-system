@@ -19,6 +19,12 @@ module.exports = {
         amd: 'react-dom',
         root: 'react-dom',
       },
+      'html-react-parser': {
+        commonjs: 'html-react-parser',
+        commonjs2: 'html-react-parser',
+        amd: 'html-react-parser',
+        root: 'html-react-parser',
+      },
     },
   ],
   devtool: 'source-map',
