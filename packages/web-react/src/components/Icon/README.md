@@ -7,19 +7,19 @@ Icons are graphical metaphors or symbols that can be used to complement existing
 To use this component in your project you need to run the following command using [npm][npm]:
 
 ```bash
-npm install -S @lmc-eu/spirit-icons html-react-parser
+npm install -S @lmc-eu/spirit-icons
 ```
 
 If you prefer [Yarn][yarn], use the following command instead:
 
 ```bash
-yarn add @lmc-eu/spirit-icons html-react-parser
+yarn add @lmc-eu/spirit-icons
 ```
 
 ### 📦 Dependencies
 
-Both packages are required as **peer dependency** to keep package size as low as possible.
-So they will not be automatically installed with `@lmc-eu/spirit-web-react`.
+`@lmc-eu/spirit-icons` is required as a **peer dependency** to keep package size as low as possible.
+So it will not be automatically installed with `@lmc-eu/spirit-web-react`.
 
 - [`@lmc-eu/spirit-icons`][icons-package] - Spirit Icons package
 - [`html-react-parser`][html-react-parser-package] - HTML to React parser (avoid usage of `dangerouslySetInnerHTML` on the server side)
