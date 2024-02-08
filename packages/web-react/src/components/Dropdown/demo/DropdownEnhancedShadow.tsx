@@ -14,7 +14,7 @@ const DropdownEnhancedShadow = () => {
 
   return (
     <div className="spirit-feature-dropdown-enable-enhanced-shadow">
-      <Dropdown renderTrigger={dropdownTrigger} placement="top-left">
+      <Dropdown renderTrigger={dropdownTrigger} placement="top-start">
         <DropdownContentFactory content={dropdownContent} />
       </Dropdown>
     </div>

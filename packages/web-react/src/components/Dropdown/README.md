@@ -30,14 +30,14 @@ import { Dropdown, Button, Item } from '@lmc-eu/spirit-web-react/components';
 
 ## API
 
-| Name              | Type                                             | Default       | Required | Description                                    |
-| ----------------- | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose` | `bool`                                           | `true`        | ✕        | Enables close on click outside of Dropdown     |
-| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | `<random>`    | ✕        | Component id                                   |
-| `onAutoClose` .   | `(event: Event) => void`                         | —             | ✕        | Callback on close on click outside of Dropdown |
-| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-left` | ✕        | Alignment of the component                     |
-| `renderTrigger`   | `(render: DropdownRenderProps) => ReactNode`     | —             | ✕        | Properties for trigger render                  |
+| Name              | Type                                             | Default        | Required | Description                                    |
+| ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
+| `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
+| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
+| `id`              | `string`                                         | `<random>`     | ✕        | Component id                                   |
+| `onAutoClose` .   | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
+| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-start` | ✕        | Alignment of the component                     |
+| `renderTrigger`   | `(render: DropdownRenderProps) => ReactNode`     | —              | ✕        | Properties for trigger render                  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -77,6 +77,14 @@ const onToggle = () => setIsOpen(!isOpen);
 </DropdownModern>;
 ```
 
+### ⚠️ DEPRECATION NOTICE
+
+Both cross-axis placements have been renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
+etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
+removed in the next major release.
+
+[What are deprecations?][readme-deprecations]
+
 ### Dropdown with Item
 
 Enhance your DropdownPopover by incorporating the versatile [Item][item] component.
@@ -111,15 +119,15 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 
 ### DropdownModern
 
-| Name              | Type                                             | Default       | Required | Description                                    |
-| ----------------- | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose` | `bool`                                           | `true`        | ✕        | Enables close on click outside of Dropdown     |
-| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | -             | ✔        | Component id                                   |
-| `isOpen`          | `bool`                                           | `false`       | ✔        | Open state                                     |
-| `onAutoClose`     | `(event: Event) => void`                         | —             | ✕        | Callback on close on click outside of Dropdown |
-| `onToggle`        | `() => void`                                     | —             | ✔        | Function for toggle open state of dropdown     |
-| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-left` | ✕        | Alignment of the component                     |
+| Name              | Type                                             | Default        | Required | Description                                    |
+| ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
+| `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
+| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
+| `id`              | `string`                                         | -              | ✔        | Component id                                   |
+| `isOpen`          | `bool`                                           | `false`        | ✔        | Open state                                     |
+| `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
+| `onToggle`        | `() => void`                                     | —              | ✔        | Function for toggle open state of dropdown     |
+| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-start` | ✕        | Alignment of the component                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -148,13 +156,13 @@ and [escape hatches][readme-escape-hatches].
 
 ### UncontrolledDropdown
 
-| Name              | Type                                             | Default       | Required | Description                                    |
-| ----------------- | ------------------------------------------------ | ------------- | -------- | ---------------------------------------------- |
-| `enableAutoClose` | `bool`                                           | `true`        | ✕        | Enables close on click outside of Dropdown     |
-| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`         | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | `<random>`    | ✕        | Component id                                   |
-| `onAutoClose`     | `(event: Event) => void`                         | —             | ✕        | Callback on close on click outside of Dropdown |
-| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-left` | ✕        | Alignment of the component                     |
+| Name              | Type                                             | Default        | Required | Description                                    |
+| ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
+| `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
+| `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
+| `id`              | `string`                                         | `<random>`     | ✕        | Component id                                   |
+| `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
+| `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-start` | ✕        | Alignment of the component                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -167,5 +175,6 @@ and [escape hatches][readme-escape-hatches].
 [dropdownfullwidthmode]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L19
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Item/README.md
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

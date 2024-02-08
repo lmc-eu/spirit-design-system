@@ -11,9 +11,9 @@ interface DropdownPopoverProps extends ChildrenProps, StyleProps {}
 export const DropdownPopover = (props: DropdownPopoverProps) => {
   const { children, ...rest } = props;
   const { id, isOpen, onToggle, fullWidthMode, placement } = useDropdownContext();
-  const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, placement, ...rest });
+  const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
-  const { contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, fullWidthMode });
+  const { contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, placement, fullWidthMode });
 
   return (
     <div

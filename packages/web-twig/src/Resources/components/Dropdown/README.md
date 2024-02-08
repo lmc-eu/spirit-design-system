@@ -60,7 +60,7 @@ and [escape hatches][readme-escape-hatches].
 
 #### ⚠️ DEPRECATION NOTICE
 
-Both cross-axis placements are renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
+Both cross-axis placements have been renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
 etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
 removed in the next major release.
 
