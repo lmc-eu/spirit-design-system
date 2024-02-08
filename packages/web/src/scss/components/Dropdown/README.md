@@ -6,14 +6,14 @@
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownDefault"
+    data-spirit-target="#dropdown-default"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownDefault"
+    aria-controls="dropdown-default"
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
+  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-default">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -42,20 +42,20 @@
 </div>
 ```
 
-## Usage with top-right align
+## Usage with top-end align
 
 ```html
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownTopRight"
+    data-spirit-target="#dropdown-top-end"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownTopRight"
+    aria-controls="dropdown-top-end"
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--topRight" id="dropdownTopRight">
+  <div class="Dropdown" data-spirit-placement="top-end" id="dropdown-top-end">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -90,15 +90,15 @@
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownDisabledAutoClose"
+    data-spirit-target="#dropdown-disabled-auto-close"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownDisabledAutoClose"
+    aria-controls="dropdown-disabled-auto-close"
     data-spirit-autoclose="true"
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDisabledAutoClose">
+  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-disabled-auto-close">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -133,14 +133,19 @@
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownFullWidthModeAll"
+    data-spirit-target="#dropdown-full-width-mode-all"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownFullWidthModeAll"
+    aria-controls="dropdown-full-width-mode-all"
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div class="Dropdown Dropdown--topLeft" id="dropdownFullWidthModeAll" data-spirit-fullwidthmode="all">
+  <div
+    class="Dropdown"
+    data-spirit-placement="top-start"
+    id="dropdown-full-width-mode-all"
+    data-spirit-fullwidthmode="all"
+  >
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -175,14 +180,19 @@
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownFullWidthModeMobile"
+    data-spirit-target="#dropdown-full-width-mode-mobile"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownFullWidthModeMobile"
+    aria-controls="dropdown-full-width-mode-mobile"
   >
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
-  <div class="Dropdown Dropdown--topLeft" id="dropdownFullWidthModeMobile" data-spirit-fullwidthmode="mobile-only">
+  <div
+    class="Dropdown"
+    data-spirit-placement="top-start"
+    id="dropdown-full-width-mode-mobile"
+    data-spirit-fullwidthmode="mobile-only"
+  >
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -217,14 +227,14 @@
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownDefault"
+    data-spirit-target="#dropdown-default"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownDefault"
+    aria-controls="dropdown-default"
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
+  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-default">
     <a href="#" class="Item">
       <span class="Item__icon Item__icon--start">
         <svg width="24" height="24" aria-hidden="true">
@@ -239,13 +249,26 @@
 
 ## Placement
 
-Dropdown implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as CSS
-modifiers in the camelCase format: `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--leftBottom`, etc.
+Dropdown implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
+a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
 ### ⚠️ DEPRECATION NOTICE
 
 Current class combinations (`Dropdown--top.Dropdown--left`, `.Dropdown--top.Dropdown--right`,
 `.Dropdown--bottom.Dropdown--left`, `.Dropdown--bottom.Dropdown--right`) will be removed in the next major release.
+
+[What are deprecations?][readme-deprecations]
+
+### ⚠️ DEPRECATION NOTICE
+
+CSS modifiers `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--bottom`, etc. are deprecated and will be
+removed in the next major release. Use `data-spirit-placement` attribute instead.
+
+Also, all cross-axis placements have been renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
+etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
+removed in the next major release.
+
+[What are deprecations?][readme-deprecations]
 
 ## Feature Flag: Enhanced Shadow
 

@@ -117,7 +117,7 @@ Usage in [Dropdown] component:
   >
     Button as anchor
   </button>
-  <div class="Dropdown Dropdown--bottomLeft" id="dropdownDefault">
+  <div class="Dropdown" id="dropdownDefault" data-spirit-placement="bottom-start">
     <a href="#" class="Item">
       <span class="Item__icon Item__icon--start">
         <svg width="24" height="24" aria-hidden="true">
