@@ -13,7 +13,7 @@ const DropdownFullwidthMobileOnly = () => {
   );
 
   return (
-    <Dropdown renderTrigger={dropdownTrigger} fullWidthMode="mobile-only" placement="top-left">
+    <Dropdown renderTrigger={dropdownTrigger} fullWidthMode="mobile-only" placement="top-start">
       <DropdownContentFactory content={dropdownContent} />
     </Dropdown>
   );

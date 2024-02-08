@@ -19,7 +19,7 @@ const defaultContext: DropdownContextType = {
   id: '',
   isOpen: false,
   onToggle: () => {},
-  placement: Placements.BOTTOM_LEFT,
+  placement: Placements.BOTTOM_START,
   triggerRef: { current: undefined },
 };
 

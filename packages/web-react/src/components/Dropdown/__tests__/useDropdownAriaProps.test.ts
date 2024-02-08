@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { PlacementDictionaryType } from '../../../types';
 import { useDropdownAriaProps } from '../useDropdownAriaProps';
 
 describe('useDropdownAriaProps', () => {
@@ -7,6 +8,7 @@ describe('useDropdownAriaProps', () => {
       fullWidthMode: undefined,
       id: 'test-dropdown-id',
       isOpen: true,
+      placement: 'bottom-start' as PlacementDictionaryType,
       toggleHandler: () => null,
     };
     const { result } = renderHook(() => useDropdownAriaProps(props));
@@ -15,5 +17,8 @@ describe('useDropdownAriaProps', () => {
     expect(result.current.triggerProps['aria-expanded']).toBeDefined();
     expect(result.current.triggerProps['aria-controls']).toBeDefined();
     expect(result.current.triggerProps.onClick).toBeDefined();
+    expect(result.current.contentProps).toBeDefined();
+    expect(result.current.contentProps['data-spirit-placement']).toBeDefined();
+    expect(result.current.contentProps['data-spirit-placement']).toBe('bottom-start');
   });
 });

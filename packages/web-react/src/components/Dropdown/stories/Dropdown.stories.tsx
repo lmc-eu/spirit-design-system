@@ -40,7 +40,7 @@ const meta: Meta<typeof Dropdown> = {
       control: 'select',
       options: Object.values(Placements),
       table: {
-        defaultValue: { summary: Placements.BOTTOM_LEFT },
+        defaultValue: { summary: Placements.BOTTOM_START },
       },
     },
   },
@@ -66,7 +66,7 @@ const meta: Meta<typeof Dropdown> = {
       </>
     ),
     id: 'DropdownExample',
-    placement: Placements.BOTTOM_LEFT,
+    placement: Placements.BOTTOM_START,
   },
 };
 

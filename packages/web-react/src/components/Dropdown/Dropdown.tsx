@@ -13,17 +13,19 @@ import { useDropdownStyleProps } from './useDropdownStyleProps';
 
 const defaultProps = {
   enableAutoClose: true,
-  placement: Placements.BOTTOM_LEFT,
+  placement: Placements.BOTTOM_START,
 };
 
 export const Dropdown = (props: SpiritDropdownProps) => {
   const {
+    /** @deprecated ID will be made a required user input in the next major version. */
     id = Math.random().toString(36).slice(2, 7),
     children,
-    renderTrigger,
     enableAutoClose,
     fullWidthMode,
     onAutoClose,
+    placement = defaultProps.placement,
+    renderTrigger,
     ...rest
   } = props;
 
@@ -32,7 +34,7 @@ export const Dropdown = (props: SpiritDropdownProps) => {
 
   const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler, fullWidthMode });
+  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, fullWidthMode, placement, toggleHandler });
 
   const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
   const { styleProps: triggerStyleProps } = useStyleProps({

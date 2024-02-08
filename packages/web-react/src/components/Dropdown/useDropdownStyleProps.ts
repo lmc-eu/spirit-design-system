@@ -1,8 +1,6 @@
 import classNames from 'classnames';
-import { Placements } from '../../constants';
 import { useClassNamePrefix } from '../../hooks';
 import { DropdownProps, SpiritDropdownProps } from '../../types';
-import { kebabCaseToCamelCase } from '../../utils';
 
 export interface UseDropdownStyleProps extends SpiritDropdownProps {
   /** open state */
@@ -21,15 +19,14 @@ export interface UseDropdownStylePropsReturn {
 export const useDropdownStyleProps = (
   props: UseDropdownStyleProps = { isOpen: false },
 ): UseDropdownStylePropsReturn => {
-  const { isOpen, placement = Placements.BOTTOM_LEFT, ...modifiedProps } = props;
+  const { isOpen, ...modifiedProps } = props;
 
   const dropdownClass = useClassNamePrefix('Dropdown');
   const dropdownWrapperClass = `${dropdownClass}Wrapper`;
-  const dropdownPlacementClass = `${dropdownClass}--${kebabCaseToCamelCase(placement)}`;
   const expandedClass = isOpen ? 'is-expanded' : '';
   const openClass = isOpen ? 'is-open' : '';
 
-  const dropdownClassName = classNames(dropdownClass, dropdownPlacementClass, openClass);
+  const dropdownClassName = classNames(dropdownClass, openClass);
   const triggerClassName = classNames(expandedClass);
 
   return {

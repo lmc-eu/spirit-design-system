@@ -13,7 +13,7 @@ const DropdownFullwidthAll = () => {
   );
 
   return (
-    <Dropdown renderTrigger={dropdownTrigger} fullWidthMode="all" placement="top-left">
+    <Dropdown renderTrigger={dropdownTrigger} fullWidthMode="all" placement="top-start">
       <DropdownContentFactory content={dropdownContent} />
     </Dropdown>
   );
