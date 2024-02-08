@@ -25,7 +25,7 @@ Advanced example usage with positioning:
 ```twig
 <DropdownWrapper>
   <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown elementType="span" id="DropdownExample" placement="top-right" fullWidthMode="all">Dropdown Content</Dropdown>
+  <Dropdown elementType="span" id="DropdownExample" placement="top-end" fullWidthMode="all">Dropdown Content</Dropdown>
 </DropdownWrapper>
 ```
 
@@ -47,16 +47,24 @@ attributes to register trigger events.
 
 ### Dropdown
 
-| Name            | Type                                         | Default       | Required | Description                           |
-| --------------- | -------------------------------------------- | ------------- | -------- | ------------------------------------- |
-| `elementType`   | `string`                                     | `div`         | ✕        | HTML tag to render                    |
-| `fullWidthMode` | `string`                                     | —             | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                     | —             | ✔        | Dropdown ID                           |
-| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-left` | ✕        | Placement of the dropdown             |
+| Name            | Type                                         | Default        | Required | Description                           |
+| --------------- | -------------------------------------------- | -------------- | -------- | ------------------------------------- |
+| `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render                    |
+| `fullWidthMode` | `string`                                     | —              | ✕        | Full-width mode [off,mobile-only,all] |
+| `id`            | `string`                                     | —              | ✔        | Dropdown ID                           |
+| `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
+
+#### ⚠️ DEPRECATION NOTICE
+
+Both cross-axis placements are renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
+etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
+removed in the next major release.
+
+[What are deprecations?][readme-deprecations]
 
 ### Trigger attributes
 
@@ -98,6 +106,7 @@ Or, feel free to write the controlling script yourself.
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md#javascript

@@ -2,49 +2,42 @@
 {%- set props = props | default([]) -%}
 {%- set _fullWidthMode = props.fullWidthMode | default(null)  -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _placement = props.placement | default('bottom-left') -%}
+{%- set _placement = props.placement | default('bottom-start') -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Dropdown' -%}
-{%- set _topClassName = _spiritClassPrefix ~ 'Dropdown--top' -%}
-{%- set _topLeftClassName = _spiritClassPrefix ~ 'Dropdown--topLeft' -%}
-{%- set _topRightClassName = _spiritClassPrefix ~ 'Dropdown--topRight' -%}
-{%- set _bottomClassName = _spiritClassPrefix ~ 'Dropdown--bottom' -%}
-{%- set _bottomLeftClassName = _spiritClassPrefix ~ 'Dropdown--bottomLeft' -%}
-{%- set _bottomRightClassName = _spiritClassPrefix ~ 'Dropdown--bottomRight' -%}
-{%- set _leftClassName = _spiritClassPrefix ~ 'Dropdown--left' -%}
-{%- set _leftTopClassName = _spiritClassPrefix ~ 'Dropdown--leftTop' -%}
-{%- set _leftBottomClassName = _spiritClassPrefix ~ 'Dropdown--leftBottom' -%}
-{%- set _rightClassName = _spiritClassPrefix ~ 'Dropdown--right' -%}
-{%- set _rightTopClassName = _spiritClassPrefix ~ 'Dropdown--rightTop' -%}
-{%- set _rightBottomClassName = _spiritClassPrefix ~ 'Dropdown--rightBottom' -%}
 
 {# Attributes #}
 {%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-spirit-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
+{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _placementClassNames = {
-    'top': _topClassName,
-    'top-left': _topLeftClassName,
-    'top-right': _topRightClassName,
-    'bottom': _bottomClassName,
-    'bottom-left': _bottomLeftClassName,
-    'bottom-right': _bottomRightClassName,
-    'left': _leftClassName,
-    'left-top': _leftTopClassName,
-    'left-bottom': _leftBottomClassName,
-    'right': _rightClassName,
-    'right-top': _rightTopClassName,
-    'right-bottom': _rightBottomClassName,
-} -%}
-{%- set _classNames = [ _rootClassName, _placementClassNames[_placement], _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-placement']) -%}
+
+{# Deprecations #}
+{% set deprecatedPlacements = {
+    'top-left': 'top-start',
+    'top-right': 'top-end',
+    'right-top': 'right-start',
+    'right-bottom': 'right-end',
+    'bottom-left': 'bottom-start',
+    'bottom-right': 'bottom-end',
+    'left-top': 'left-start',
+    'left-bottom': 'left-end',
+} %}
+
+{% if deprecatedPlacements[_placement] is defined %}
+    {% deprecated 'Dropdown: Non-flow-relative values (e.g. "' ~ _placement ~ '") of the "placement" property are deprecated and will be removed in the next major version. Use a flow-relative placement (e.g. "' ~ deprecatedPlacements[_placement] ~ '") instead.' %}
+{% endif %}
 
 <{{ _elementType }}
-    {{ mainProps(props) }}
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _dataFullWidthModeAttr | raw }}
+    {{ _dataPlacementAttr | raw }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>
