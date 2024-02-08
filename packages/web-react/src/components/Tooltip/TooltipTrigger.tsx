@@ -17,7 +17,7 @@ const TooltipTrigger = (props: TooltipTriggerProps) => {
   const { styleProps: triggerStyleProps, props: transferProps } = useStyleProps(rest);
 
   return (
-    <Component {...transferProps} {...triggerStyleProps} id={id} {...rest} ref={triggerRef} {...getReferenceProps()}>
+    <Component {...transferProps} {...triggerStyleProps} id={id} ref={triggerRef} {...getReferenceProps()}>
       {typeof children === 'function' ? children({ isOpen }) : children}
     </Component>
   );
