@@ -26,8 +26,20 @@ const onClickHandler = (
   });
 };
 
-const onLoadHandler = (element: HTMLElement, component: typeof BaseComponent) => {
-  component.getOrCreateInstance(element);
+const onLoadHandler = (
+  element: HTMLElement,
+  component: typeof BaseComponent,
+  method: string,
+  event: Event,
+  aim: Aim = 'trigger',
+) => {
+  if (aim === 'target') {
+    const target = getTriggerOrTarget(getElement(element), aim);
+    const instance = component.getOrCreateInstance(target);
+    instance[method](target, event);
+  } else {
+    component.getOrCreateInstance(element);
+  }
 };
 
 const enableDataTrigger = (
@@ -54,8 +66,8 @@ const enableDismissTrigger = (component: typeof BaseComponent, method = 'dismiss
   enableDataTrigger(ATTRIBUTE_DATA_DISMISS, component, onClickHandler, method, aim);
 };
 
-const enableToggleAutoloader = (component: typeof BaseComponent, method = 'toggle') => {
-  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onLoadHandler, method);
+const enableToggleAutoloader = (component: typeof BaseComponent, method = 'toggle', aim: Aim = 'trigger') => {
+  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onLoadHandler, method, aim);
 };
 
 const clickOutsideElement = (target: Element, event: Event) => !event.composedPath().includes(target);

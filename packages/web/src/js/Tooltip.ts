@@ -1,8 +1,13 @@
 import * as FloatingUI from '@floating-ui/dom';
 import BaseComponent from './BaseComponent';
-import EventHandler from './dom/EventHandler';
-import SelectorEngine from './dom/SelectorEngine';
-import { enableDismissTrigger, enableToggleTrigger, SpiritConfig } from './utils';
+import { EventHandler, SelectorEngine } from './dom';
+import {
+  enableDismissTrigger,
+  enableToggleAutoloader,
+  enableToggleTrigger,
+  SpiritConfig,
+  clickOutsideElement,
+} from './utils';
 
 const NAME = 'tooltip';
 const DATA_KEY = 'tooltip';
@@ -19,9 +24,10 @@ const CLASS_NAME_HIDDEN = 'is-hidden';
 
 type Config = {
   enableFlipping: boolean;
+  enableFlippingCrossAxis: boolean;
+  enableHover: boolean;
   enableShifting: boolean;
   enableSizing: boolean;
-  enableFlippingCrossAxis: boolean;
   flipFallbackAxisSideDirection: 'none' | 'start' | 'end';
   flipFallbackPlacements: string;
   placement: FloatingUI.Placement;
@@ -33,13 +39,14 @@ export const transformStringToArray = (str: string) =>
 
 class Tooltip extends BaseComponent {
   arrow?: HTMLElement;
-  arrowWidth?: number;
   arrowCornerOffset?: number;
+  arrowWidth?: number;
   tip: HTMLElement;
   tooltipComputedStyle?: CSSStyleDeclaration;
   tooltipMaxWidth?: number;
   tooltipOffset?: number;
   trigger?: HTMLElement;
+  isToggled: boolean;
 
   constructor(element: SpiritElement, config?: SpiritConfig) {
     if (typeof FloatingUI === 'undefined') {
@@ -49,6 +56,7 @@ class Tooltip extends BaseComponent {
     super(element, config);
 
     this.tip = this.getTipElement();
+    this.isToggled = false;
 
     if (this.isPlacementControlled()) {
       this.trigger = this.getTipTooltipWrapper();
@@ -69,6 +77,8 @@ class Tooltip extends BaseComponent {
         );
       }
     }
+
+    this.addEventListeners();
   }
 
   static get NAME() {
@@ -322,9 +332,59 @@ class Tooltip extends BaseComponent {
       });
     }
   }
+
+  autoCloseHandler = (event: Event) => {
+    const shouldClose = this.trigger && clickOutsideElement(this.trigger, event);
+
+    if (event.target && shouldClose) {
+      this.hide();
+    }
+
+    this.isToggled = false;
+  };
+
+  changeToggle() {
+    console.log('this.isToggled(before):', this.isToggled);
+    this.isToggled = !this.isToggled;
+    console.log('this.isToggled(after):', this.isToggled);
+  }
+
+  addEventListeners() {
+    const button = this.trigger?.querySelector('button') as HTMLButtonElement;
+    const { enableHover } = this.config as Config;
+
+    EventHandler.on(document, 'click', (event: Event) => this.autoCloseHandler(event));
+
+    if (!enableHover) {
+      EventHandler.on(button, 'click', this.toggle.bind(this));
+    } else {
+      EventHandler.on(button, 'click', this.changeToggle.bind(this));
+
+      this.addMouseEventListeners();
+    }
+  }
+
+  addMouseEventListeners() {
+    const button = this.trigger?.querySelector('button') as HTMLButtonElement;
+    EventHandler.on(button, 'mouseenter', () => {
+      console.log('this.isToggled(mouseenter):', this.isToggled);
+
+      if (!this.isToggled) {
+        this.show();
+      }
+    });
+    EventHandler.on(button, 'mouseleave', () => {
+      console.log('this.isToggled(mouseleave):', this.isToggled);
+
+      if (!this.isToggled) {
+        this.hide();
+      }
+    });
+  }
 }
 
-enableToggleTrigger(Tooltip, 'toggle');
+enableToggleAutoloader(Tooltip, 'hide', 'target');
+// enableToggleTrigger(Tooltip, 'toggle');
 enableDismissTrigger(Tooltip, 'hide');
 
 export default Tooltip;
