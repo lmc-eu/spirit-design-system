@@ -1,18 +1,29 @@
 import Tooltip from '../../../js/Tooltip';
 
-const myTooltipEl = document.getElementById('my-dismissible-tooltip-with-floating-ui');
+const buttonId = 'my-dismissible-button';
+const tooltipId = 'my-dismissible-tooltip-with-floating-ui';
+const storageName = 'show-tooltip';
+const myTooltipEl = document.getElementById(tooltipId);
 const myTooltip = new Tooltip(myTooltipEl);
 
-if (!window.localStorage.getItem('my-tooltip')) {
-  myTooltip.show();
+// show tooltip if it was toggled
+if (window.localStorage.getItem(storageName)) {
+  myTooltip.toggle();
 }
 
-document.getElementById('my-dismissible-button').addEventListener('click', () => {
-  myTooltip.show();
-  window.localStorage.removeItem('my-tooltip');
+// tooltip trigger button
+document.getElementById(buttonId).addEventListener('click', () => {
+  const isToggled = window.localStorage.getItem(storageName);
+  const isShown = myTooltip.isShown();
+
+  if (isToggled && !isShown) {
+    window.localStorage.removeItem(storageName);
+  } else {
+    window.localStorage.setItem(storageName, true);
+  }
 });
 
-document.getElementById('my-dismissible-tooltip-with-floating-ui-button').addEventListener('click', () => {
-  myTooltip.hide();
-  window.localStorage.setItem('my-tooltip', true);
+// close button inside the tooltip
+document.getElementById('my-dismissible-tooltip-button').addEventListener('click', () => {
+  window.localStorage.removeItem(storageName);
 });

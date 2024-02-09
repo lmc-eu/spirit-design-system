@@ -1,8 +1,7 @@
 import * as FloatingUI from '@floating-ui/dom';
 import BaseComponent from './BaseComponent';
-import EventHandler from './dom/EventHandler';
-import SelectorEngine from './dom/SelectorEngine';
-import { enableDismissTrigger, enableToggleTrigger, SpiritConfig } from './utils';
+import { EventHandler, SelectorEngine } from './dom';
+import { SpiritConfig, clickOutsideElement, enableDismissTrigger, enableToggleAutoloader } from './utils';
 
 const NAME = 'tooltip';
 const DATA_KEY = 'tooltip';
@@ -12,43 +11,58 @@ const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
+const EVENT_CLICK = 'click';
+const EVENT_MOUSEENTER = 'mouseenter';
+const EVENT_MOUSELEAVE = 'mouseleave';
+
+const TRIGGER_HOVER = 'hover';
+const TRIGGER_CLICK = 'click';
 
 const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
+const SELECTOR_WRAPPER = '[data-spirit-element="tooltip-wrapper"]';
 const CLASS_NAME_VISIBLE = 'is-visible';
 const CLASS_NAME_HIDDEN = 'is-hidden';
 
 type Config = {
   enableFlipping: boolean;
+  enableFlippingCrossAxis: boolean;
   enableShifting: boolean;
   enableSizing: boolean;
-  enableFlippingCrossAxis: boolean;
   flipFallbackAxisSideDirection: 'none' | 'start' | 'end';
   flipFallbackPlacements: string;
   placement: FloatingUI.Placement;
   placementControlled: boolean;
+  trigger: string;
 };
 
 export const transformStringToArray = (str: string) =>
   str.split(',').map((item) => item.trim()) as FloatingUI.Placement[];
 
 class Tooltip extends BaseComponent {
+  activeTrigger: { [key: string]: boolean };
   arrow?: HTMLElement;
-  arrowWidth?: number;
   arrowCornerOffset?: number;
+  arrowWidth?: number;
+  isHovered: boolean;
+  isToggled: boolean;
   tip: HTMLElement;
   tooltipComputedStyle?: CSSStyleDeclaration;
   tooltipMaxWidth?: number;
   tooltipOffset?: number;
   trigger?: HTMLElement;
+  triggers?: string[];
 
   constructor(element: SpiritElement, config?: SpiritConfig) {
     if (typeof FloatingUI === 'undefined') {
       throw new TypeError('Floating UI dependency is missing. Please, install it (https://floating-ui.com/)');
     }
-
     super(element, config);
 
+    this.activeTrigger = {};
+    this.isHovered = false;
+    this.isToggled = false;
     this.tip = this.getTipElement();
+    this.triggers = this.getTriggers();
 
     if (this.isPlacementControlled()) {
       this.trigger = this.getTipTooltipWrapper();
@@ -69,18 +83,32 @@ class Tooltip extends BaseComponent {
         );
       }
     }
+
+    this.addEventListeners();
   }
 
   static get NAME() {
     return NAME;
   }
 
+  getTriggers() {
+    const config = this.config as Config;
+    const defaultTriggers = [TRIGGER_CLICK, TRIGGER_HOVER];
+
+    return config.trigger ? transformStringToArray(config.trigger) : defaultTriggers;
+  }
+
   toggle() {
+    this.activeTrigger[TRIGGER_CLICK] = 'click' in this.activeTrigger ? !this.activeTrigger[TRIGGER_CLICK] : true;
+    this.activeTrigger[TRIGGER_HOVER] = 'hover' in this.activeTrigger ? !this.activeTrigger[TRIGGER_HOVER] : true;
+
     if (this.isShown()) {
-      this.hide();
-    } else {
-      this.show();
+      this.leave();
+
+      return;
     }
+
+    this.enter();
   }
 
   isPlacementControlled() {
@@ -157,6 +185,14 @@ class Tooltip extends BaseComponent {
       }
     }
 
+    this.activeTrigger[TRIGGER_CLICK] = false;
+    this.activeTrigger[TRIGGER_HOVER] = false;
+    this.isHovered = false;
+
+    if (this.isWithActiveTrigger()) {
+      return;
+    }
+
     this.element.removeAttribute('aria-describedby');
     EventHandler.trigger(this.element, Tooltip.eventName(EVENT_HIDDEN));
   }
@@ -170,9 +206,7 @@ class Tooltip extends BaseComponent {
   getTipTooltipWrapper() {
     const id = this.tip.getAttribute('id') as string;
 
-    const triggerWrapperElement = document
-      .getElementById(id)
-      ?.closest('[data-spirit-element="tooltip-wrapper"]') as HTMLElement;
+    const triggerWrapperElement = document.getElementById(id)?.closest(SELECTOR_WRAPPER) as HTMLElement;
 
     return triggerWrapperElement;
   }
@@ -267,6 +301,12 @@ class Tooltip extends BaseComponent {
     return null;
   }
 
+  getTrigger() {
+    const id = this.tip && (this.tip.getAttribute('id') as string);
+
+    return document.querySelector(`[data-spirit-target="#${id}"]`) as HTMLElement;
+  }
+
   updateTooltipPosition(button: HTMLElement, tooltip: HTMLElement) {
     const { computePosition, offset: floatingOffset, arrow: floatingArrow } = FloatingUI;
     const { tooltipOffset, arrowCornerOffset, arrow } = this;
@@ -322,9 +362,83 @@ class Tooltip extends BaseComponent {
       });
     }
   }
+
+  autoCloseHandler = (event: Event) => {
+    const trigger = this.getTrigger();
+
+    const shouldClose = trigger && clickOutsideElement(trigger, event) && event.target !== this.tip;
+    if (event.target && shouldClose) {
+      this.activeTrigger[TRIGGER_CLICK] = false;
+      this.activeTrigger[TRIGGER_HOVER] = false;
+      this.leave();
+    }
+  };
+
+  isWithActiveTrigger() {
+    return Object.values(this.activeTrigger).includes(true);
+  }
+
+  enter() {
+    if (this.isShown() || this.isHovered) {
+      this.isHovered = true;
+
+      return;
+    }
+
+    this.isHovered = true;
+
+    this.show();
+  }
+
+  leave() {
+    if (this.isWithActiveTrigger()) {
+      return;
+    }
+
+    this.isHovered = false;
+
+    this.hide();
+  }
+
+  addEventListeners() {
+    if (this.triggers?.includes(TRIGGER_CLICK)) {
+      this.addClickEventListeners();
+    }
+
+    if (this.triggers?.includes(TRIGGER_HOVER)) {
+      this.addMouseEventListeners();
+    }
+  }
+
+  addClickEventListeners() {
+    const trigger = this.getTrigger();
+
+    EventHandler.on(document, EVENT_CLICK, (event: Event) => this.autoCloseHandler(event));
+
+    EventHandler.on(trigger, EVENT_CLICK, () => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      context.toggle();
+    });
+  }
+
+  addMouseEventListeners() {
+    const trigger = this.getTrigger();
+
+    EventHandler.on(trigger, EVENT_MOUSEENTER, () => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      context.activeTrigger[TRIGGER_HOVER] = true;
+      context.enter();
+    });
+
+    EventHandler.on(trigger, EVENT_MOUSELEAVE, () => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      context.activeTrigger[TRIGGER_HOVER] = false;
+      context.leave();
+    });
+  }
 }
 
-enableToggleTrigger(Tooltip, 'toggle');
+enableToggleAutoloader(Tooltip, undefined, 'target');
 enableDismissTrigger(Tooltip, 'hide');
 
 export default Tooltip;
