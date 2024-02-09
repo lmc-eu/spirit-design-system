@@ -1,13 +1,7 @@
 import * as FloatingUI from '@floating-ui/dom';
 import BaseComponent from './BaseComponent';
 import { EventHandler, SelectorEngine } from './dom';
-import {
-  enableDismissTrigger,
-  enableToggleAutoloader,
-  enableToggleTrigger,
-  SpiritConfig,
-  clickOutsideElement,
-} from './utils';
+import { SpiritConfig, clickOutsideElement, enableDismissTrigger, enableToggleAutoloader } from './utils';
 
 const NAME = 'tooltip';
 const DATA_KEY = 'tooltip';
@@ -17,6 +11,12 @@ const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
+const EVENT_CLICK = 'click';
+const EVENT_MOUSEENTER = 'mouseenter';
+const EVENT_MOUSELEAVE = 'mouseleave';
+
+const TRIGGER_HOVER = 'hover';
+const TRIGGER_CLICK = 'click';
 
 const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
 const CLASS_NAME_VISIBLE = 'is-visible';
@@ -47,16 +47,20 @@ class Tooltip extends BaseComponent {
   tooltipOffset?: number;
   trigger?: HTMLElement;
   isToggled: boolean;
+  isHovered: boolean;
+  activeTrigger: object;
 
   constructor(element: SpiritElement, config?: SpiritConfig) {
     if (typeof FloatingUI === 'undefined') {
       throw new TypeError('Floating UI dependency is missing. Please, install it (https://floating-ui.com/)');
     }
-
+    console.log('construct', element);
     super(element, config);
 
     this.tip = this.getTipElement();
     this.isToggled = false;
+    this.isHovered = false;
+    this.activeTrigger = {};
 
     if (this.isPlacementControlled()) {
       this.trigger = this.getTipTooltipWrapper();
@@ -78,6 +82,8 @@ class Tooltip extends BaseComponent {
       }
     }
 
+    console.log(this.trigger);
+
     this.addEventListeners();
   }
 
@@ -86,11 +92,17 @@ class Tooltip extends BaseComponent {
   }
 
   toggle() {
+    this.activeTrigger[TRIGGER_CLICK] = 'click' in this.activeTrigger ? !this.activeTrigger[TRIGGER_CLICK] : true;
+    this.activeTrigger[TRIGGER_HOVER] = 'hover' in this.activeTrigger ? !this.activeTrigger[TRIGGER_HOVER] : true;
+    console.log('toggle', this.activeTrigger);
+
     if (this.isShown()) {
-      this.hide();
-    } else {
-      this.show();
+      this.leave();
+
+      return;
     }
+
+    this.enter();
   }
 
   isPlacementControlled() {
@@ -143,9 +155,16 @@ class Tooltip extends BaseComponent {
     }
 
     EventHandler.trigger(this.element, Tooltip.eventName(EVENT_SHOWN));
+
+    if (this.isHovered === false) {
+      this.leave();
+    }
+
+    this.isHovered = false;
   }
 
   hide() {
+    console.log('hide', this.activeTrigger);
     if (!this.isShown()) {
       return;
     }
@@ -165,6 +184,14 @@ class Tooltip extends BaseComponent {
       for (const element of [].concat(...document.body.children)) {
         EventHandler.off(element, 'mouseover', null);
       }
+    }
+
+    this.activeTrigger[TRIGGER_CLICK] = false;
+    this.activeTrigger[TRIGGER_HOVER] = false;
+    this.isHovered = false;
+
+    if (this.isWithActiveTrigger()) {
+      return;
     }
 
     this.element.removeAttribute('aria-describedby');
@@ -334,57 +361,79 @@ class Tooltip extends BaseComponent {
   }
 
   autoCloseHandler = (event: Event) => {
+    console.log('autoclose');
     const shouldClose = this.trigger && clickOutsideElement(this.trigger, event);
-
+    console.log(shouldClose);
     if (event.target && shouldClose) {
-      this.hide();
-    }
+      this.activeTrigger[TRIGGER_CLICK] = false;
+      this.activeTrigger[TRIGGER_HOVER] = false;
 
-    this.isToggled = false;
+      this.leave();
+    }
   };
 
-  changeToggle() {
-    console.log('this.isToggled(before):', this.isToggled);
-    this.isToggled = !this.isToggled;
-    console.log('this.isToggled(after):', this.isToggled);
+  isWithActiveTrigger() {
+    return Object.values(this.activeTrigger).includes(true);
+  }
+
+  enter() {
+    console.log('enter');
+    if (this.isShown() || this.isHovered) {
+      this.isHovered = true;
+
+      return;
+    }
+
+    this.isHovered = true;
+
+    this.show();
+  }
+
+  leave() {
+    if (this.isWithActiveTrigger()) {
+      return;
+    }
+    console.log('leave', this.activeTrigger, this.isWithActiveTrigger());
+
+    this.isHovered = false;
+
+    this.hide();
   }
 
   addEventListeners() {
     const button = this.trigger?.querySelector('button') as HTMLButtonElement;
     const { enableHover } = this.config as Config;
 
-    EventHandler.on(document, 'click', (event: Event) => this.autoCloseHandler(event));
+    EventHandler.on(document, EVENT_CLICK, (event: Event) => this.autoCloseHandler(event));
 
-    if (!enableHover) {
-      EventHandler.on(button, 'click', this.toggle.bind(this));
-    } else {
-      EventHandler.on(button, 'click', this.changeToggle.bind(this));
+    EventHandler.on(button, EVENT_CLICK, (event) => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      console.log('click instance', context);
+      // context.activeTrigger[TRIGGER_CLICK] = true;
+      context.toggle();
+    });
 
-      this.addMouseEventListeners();
-    }
+    this.addMouseEventListeners();
   }
 
   addMouseEventListeners() {
     const button = this.trigger?.querySelector('button') as HTMLButtonElement;
-    EventHandler.on(button, 'mouseenter', () => {
-      console.log('this.isToggled(mouseenter):', this.isToggled);
-
-      if (!this.isToggled) {
-        this.show();
-      }
+    EventHandler.on(button, EVENT_MOUSEENTER, (event) => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      console.log('hover enter', context);
+      context.activeTrigger[TRIGGER_HOVER] = true;
+      context.enter();
     });
-    EventHandler.on(button, 'mouseleave', () => {
-      console.log('this.isToggled(mouseleave):', this.isToggled);
-
-      if (!this.isToggled) {
-        this.hide();
-      }
+    EventHandler.on(button, EVENT_MOUSELEAVE, (event) => {
+      const context = Tooltip.getOrCreateInstance(this.element as HTMLElement);
+      console.log('hover leave', context, context.activeTrigger);
+      context.activeTrigger[TRIGGER_HOVER] = false;
+      context.leave();
     });
   }
 }
 
 enableToggleAutoloader(Tooltip, 'hide', 'target');
-// enableToggleTrigger(Tooltip, 'toggle');
 enableDismissTrigger(Tooltip, 'hide');
 
 export default Tooltip;
