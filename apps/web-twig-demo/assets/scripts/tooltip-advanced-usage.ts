@@ -9,8 +9,6 @@ const selectFallback = document.getElementById('my-advanced-select-fallback') as
 
 const tooltip = Tooltip.getOrCreateInstance(document.getElementById('my-advanced-tooltip'));
 
-tooltip.show();
-
 checkboxFlip.addEventListener('change', () => tooltip.updateConfig({ enableFlipping: checkboxFlip.checked }));
 
 checkboxFlipCrossAxis.addEventListener('change', () => {

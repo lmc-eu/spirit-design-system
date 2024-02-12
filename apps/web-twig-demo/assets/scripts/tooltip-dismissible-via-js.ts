@@ -1,21 +1,24 @@
 import { Tooltip } from '@lmc-eu/spirit-web/src/js/index.esm';
 
-const myTooltipEl = document.getElementById('my-dismissible-tooltip2');
+const buttonId = 'my-dismissible-button';
+const tooltipId = 'my-dismissible-tooltip-with-floating-ui';
+const storageName = 'show-tooltip';
+const myTooltipEl = document.getElementById(tooltipId);
 const myTooltip = new Tooltip(myTooltipEl);
 
-if (!window.localStorage.getItem('my-tooltip-twig')) {
-  myTooltip.show();
+// show tooltip if it was toggled
+if (window.localStorage.getItem(storageName)) {
+  myTooltip.toggle();
 }
 
-document.getElementById('my-dismissible-button').addEventListener('click', () => {
-  myTooltip.show();
-  window.localStorage.removeItem('my-tooltip-twig');
-});
+// tooltip trigger button
+document.getElementById(buttonId).addEventListener('click', () => {
+  const isToggled = window.localStorage.getItem(storageName);
+  const isShown = myTooltip.isShown();
 
-document
-  .getElementById('my-dismissible-tooltip2')
-  .querySelector('button')
-  .addEventListener('click', () => {
-    myTooltip.hide();
-    window.localStorage.setItem('my-tooltip-twig', 'true');
-  });
+  if (isToggled && !isShown) {
+    window.localStorage.removeItem(storageName);
+  } else {
+    window.localStorage.setItem(storageName, 'true');
+  }
+});

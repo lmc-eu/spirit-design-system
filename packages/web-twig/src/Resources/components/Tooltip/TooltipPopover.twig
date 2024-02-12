@@ -1,8 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
-{%- set _id = props.id | default(null) -%}
-{%- set _isDismissible = props.isDismissible | default(false) -%}
 {%- set _enableControlledPlacement = props.enableControlledPlacement | default(false) -%}
 {%- set _enableFlipping = props.enableFlipping | default(null) -%}
 {%- set _enableFlippingCrossAxis = props.enableFlippingCrossAxis | default(null) -%}
@@ -10,7 +8,10 @@
 {%- set _enableSizing = props.enableSizing | default(null) -%}
 {%- set _flipFallbackAxisSideDirection = props.flipFallbackAxisSideDirection | default(null) -%}
 {%- set _flipFallbackPlacements = props.flipFallbackPlacements | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isDismissible = props.isDismissible | default(false) -%}
 {%- set _placement = props.placement | default('bottom') -%}
+{%- set _trigger = props.trigger | default('click, hover') -%}
 
 {# Class names #}
 {%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
@@ -24,17 +25,18 @@
 {%- set _enableShiftingValue = _enableShifting ? 'true' : 'false' -%}
 {%- set _enableSizingValue = _enableSizing ? 'true' : 'false' -%}
 
-{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
+{%- set _dataEnableControlledPlacement = _enableControlledPlacement ? 'data-spirit-placement-controlled' : null -%}
 {%- set _dataEnableFlippingAttr = _enableFlipping and _enableControlledPlacement ? 'data-spirit-enable-flipping="' ~ _enableFlippingValue ~ '"' : null -%}
 {%- set _dataEnableFlippingCrossAxisAttr = _enableFlippingCrossAxis and _enableControlledPlacement ? 'data-spirit-enable-flipping-cross-axis="' ~ _enableFlippingCrossAxisValue ~ '"' : null -%}
-{%- set _dataFillFallbackAxisSideDirectionAttr = _flipFallbackAxisSideDirection and _enableControlledPlacement ? 'data-spirit-flip-fallback-axis-side-direction="' ~ _flipFallbackAxisSideDirection | escape('html_attr') ~ '"' : null -%}
-{%- set _dataFlipFallbackPlacementsAttr = _flipFallbackPlacements and _enableControlledPlacement ? 'data-spirit-flip-fallback-placements="' ~ _flipFallbackPlacements | escape('html_attr') ~ '"' : null -%}
 {%- set _dataEnableShiftingAttr = _enableShifting and _enableControlledPlacement ? 'data-spirit-enable-shifting="' ~ _enableShiftingValue ~ '"' : null -%}
 {%- set _dataEnableSizingAttr = _enableSizing and _enableControlledPlacement ? 'data-spirit-enable-sizing="' ~ _enableSizingValue ~ '"' : null -%}
-{%- set _dataEnableControlledPlacement = _enableControlledPlacement ? 'data-spirit-placement-controlled' : null -%}
+{%- set _dataFillFallbackAxisSideDirectionAttr = _flipFallbackAxisSideDirection and _enableControlledPlacement ? 'data-spirit-flip-fallback-axis-side-direction="' ~ _flipFallbackAxisSideDirection | escape('html_attr') ~ '"' : null -%}
+{%- set _dataFlipFallbackPlacementsAttr = _flipFallbackPlacements and _enableControlledPlacement ? 'data-spirit-flip-fallback-placements="' ~ _flipFallbackPlacements | escape('html_attr') ~ '"' : null -%}
+{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
 {%- set _dataTargetAttr = _id ? 'data-spirit-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _dataTriggerAttr =  _enableControlledPlacement ? 'data-spirit-trigger="' ~ _trigger ~ '"' : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
@@ -54,6 +56,7 @@
     {{ _dataFlipFallbackPlacementsAttr | raw }}
     {{ _dataEnableShiftingAttr | raw }}
     {{ _dataEnableSizingAttr | raw }}
+    {{ _dataTriggerAttr | raw }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible == 'true' %}
