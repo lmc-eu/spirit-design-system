@@ -318,8 +318,7 @@ content is longer than user's viewport.
 #### ⚠️ DEPRECATION NOTICE
 
 The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
-non-scrollable by default. It will be possible to re-enable the inside scrolling by setting the
-`isScrollable` boolean prop.
+non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the `isScrollable` prop.
 
 ## Stacking Modals
 
