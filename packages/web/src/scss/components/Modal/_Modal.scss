@@ -1,8 +1,8 @@
 // 1. In order to be transitioned, the visibility of the dialog is controlled through `opacity` and `visibility`
 //    properties instead of the default `display`.
 // 2. Simply use Modal background color instead of `::backdrop` to make fading possible. (A pseudo-element cannot be
-//    used because it covers the scrollbar of the ModalDialog with the inside scrolling turned off.)
-// 3. Use background gradient to prevent background from flickering in Safari.
+//    used because it covers the scrollbar of the ModalDialog when the inside scrolling is turned off.)
+// 3. Use background gradient to prevent background from flickering during transition in Safari.
 // 4. Clip overflow during transition of the docked variant on mobile screens.
 // 5. Allow scrolling through the modal. Has no effect unless the modal is taller than the viewport.
 // 6. Restore text selection after `all: unset`.
@@ -21,7 +21,7 @@
     display: flex; // 1.
     padding-block: theme.$padding-y;
     overflow: hidden; // 4.
-    background: linear-gradient(#{theme.$backdrop-background-color}, #{theme.$backdrop-background-color}); // 8.
+    background: linear-gradient(#{theme.$backdrop-background-color}, #{theme.$backdrop-background-color}); // 2., 3.
     visibility: hidden; // 1.
     opacity: 0; // 1.
     pointer-events: none; // 1.
