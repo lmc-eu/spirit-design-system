@@ -13,7 +13,7 @@ The `@lmc-eu/spirit-web-react@1.7.0` is shipped with a new deprecation warning a
 
 **Impact**
 
-<!-- What was the scope of impact from the event occuring? How many teams were
+<!-- What was the scope of impact from the event occurring? How many teams were
 impacted? -->
 
 The teams the use the `@lmc-eu/spirit-web-react@1.7.0` and above are impacted by this deprecation warning.
