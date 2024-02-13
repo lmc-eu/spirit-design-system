@@ -13,7 +13,7 @@ I will refer you to that documentation to understand how the release cycle works
 Deciding which version of Node.js to use for a project is a trade-off between using the latest features and stability.
 
 The Spirit Design System is more focused on stably shipping its components than experimenting
-with the latest features which is where the Active Long-Term Support (LTS) version really shines.
+with the latest features which is where the Active Long-Term Support (LTS) version shines.
 
 We distribute our code as npm packages where we define minimal support Node.js engine.
 
@@ -25,9 +25,7 @@ Support the minimal Node.js version which is used by our adopters.
 
 ## Consequences
 
-Folks should hopefully run into few compatibility issues. It's possible they
-will need features that are not back-ported to the current active LTS version,
-however it's trivial to update the Node.js version.
+Folks should hopefully run into a few compatibility issues. They may need features that are not back-ported to the current active LTS version, however, it's trivial to update the Node.js version.
 
 We'll need to update the Node.js version in the packages whenever the active LTS
 version changes.

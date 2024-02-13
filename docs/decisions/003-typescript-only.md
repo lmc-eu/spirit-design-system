@@ -10,7 +10,7 @@ Teams and individuals building modern web applications have many great reasons
 to build them with TypeScript.
 
 One of the challenges with TypeScript is getting it configured properly.
-This is not an issue with a stack which starts you off on the right foot without needing
+This is not an issue with a stack that starts you off on the right foot without needing
 to configure anything.
 
 Another challenge with TypeScript is handling dependencies that are not written in TypeScript.
@@ -20,11 +20,11 @@ This is increasingly becoming less of an issue with more and more dependencies b
 
 We strongly advise the use of TypeScript even for simple projects and those worked on by single developers.
 
-This project uses and leverages Typescript by every possible way to have the best developer experience.
+This project uses and leverages Typescript in every possible way to have the best developer experience.
 
 ## Consequences
 
 This makes the initial experience not great for folks using JavaScript.
 
 This also may anger some folks who really don't like TypeScript.
-For those folks, we provide also transpiled packages which can be used in JavaScript environment.
+For those folks, we provide also transpiled packages that can be used in a JavaScript environment.
