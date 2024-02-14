@@ -14,6 +14,9 @@ validation messages for all fields in the group.
 ⚠️ **The FieldGroup component does not provide all necessary semantics and any styling to its child fields. It is up
 to the developer to configure the child fields correctly.**
 
+⚠️ Remember the FieldGroup component is required to be used with content.
+Otherwise, it is useless. If it is used dynamically, make sure the FieldGroup component without content has been removed correctly.
+
 👉 The FieldGroup component implements the `<fieldset>` HTML element. Read more about the advantages and limitations in
 the [`web` implementation][gh-web-field-group-html] of `FieldGroup`.
 
