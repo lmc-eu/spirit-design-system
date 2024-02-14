@@ -94,18 +94,19 @@ Validation states can be presented either by adding the `validationState` attrib
 
 ## API
 
-| Name              | Type                                           | Default | Required | Description                              |
-| ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------- |
-| `form`            | `string`                                       | `null`  | ✕        | Parent form ID                           |
-| `helperText`      | `string`                                       | `null`  | ✕        | Custom helper text                       |
-| `id`              | `string`                                       | —       | ✔        | Group and label identification           |
-| `isDisabled`      | `bool`                                         | `false` | ✕        | If true, the group is disabled           |
-| `isLabelHidden`   | `bool`                                         | `false` | ✕        | If true, label is hidden                 |
-| `isRequired`      | `bool`                                         | `false` | ✕        | If true, the group is marked as required |
-| `label`           | `string`                                       | —       | ✔        | Label text                               |
-| `name`            | `string`                                       | `null`  | ✕        | Group name                               |
-| `validationState` | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                 |
-| `validationText`  | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                          |
+| Name              | Type                                           | Default | Required | Description                                                |
+| ----------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
+| `form`            | `string`                                       | `null`  | ✕        | Parent form ID                                             |
+| `helperText`      | `string`                                       | `null`  | ✕        | Custom helper text                                         |
+| `id`              | `string`                                       | —       | ✔        | Group and label identification                             |
+| `isDisabled`      | `bool`                                         | `false` | ✕        | If true, the group is disabled                             |
+| `isFluid`         | `bool`                                         | —       | ✕        | If true, the element spans to the full width of its parent |
+| `isLabelHidden`   | `bool`                                         | `false` | ✕        | If true, label is hidden                                   |
+| `isRequired`      | `bool`                                         | `false` | ✕        | If true, the group is marked as required                   |
+| `label`           | `string`                                       | —       | ✔        | Label text                                                 |
+| `name`            | `string`                                       | `null`  | ✕        | Group name                                                 |
+| `validationState` | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state                                   |
+| `validationText`  | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
