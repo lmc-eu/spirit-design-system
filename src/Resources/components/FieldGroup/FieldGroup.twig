@@ -64,11 +64,9 @@
             </div>
         {% endif %}
     {% endif %}
-    {% if block('content') is not empty %}
-        <div class="{{ _fieldsClassName }}">
-            {% block content %}{% endblock %}
-        </div>
-    {% endif %}
+    <div class="{{ _fieldsClassName }}">
+        {% block content %}{% endblock %}
+    </div>
     <HelperText
         className="{{ _helperTextClassName }}"
         id="{{ _helperTextId }}"
