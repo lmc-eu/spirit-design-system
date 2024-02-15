@@ -26,7 +26,7 @@ const Story = (props: unknown) => {
 
   return (
     <IconsProvider value={icons}>
-      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="#NestedModal">
+      <Button onClick={toggleFirstModal} aria-expanded={isFirstOpen} aria-controls="NestedModal">
         {isFirstOpen ? 'Close' : 'Open'} Modal
       </Button>
       <Modal id="ChildModal" isOpen={isSecondOpen} onClose={handleSecondClose}>

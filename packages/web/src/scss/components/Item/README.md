@@ -113,7 +113,7 @@ Usage in [Dropdown] component:
     data-spirit-target="#dropdownDefault"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="#dropdownDefault"
+    aria-controls="dropdownDefault"
   >
     Button as anchor
   </button>
