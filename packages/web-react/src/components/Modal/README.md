@@ -280,7 +280,7 @@ const [isOpen, setOpen] = useState(false);
 const toggleModal = () => setOpen(!isOpen);
 const handleClose = () => setOpen(false);
 
-<Button onClick={toggleModal} aria-controls="#modal-example" aria-expanded={isOpen}>
+<Button onClick={toggleModal} aria-controls="modal-example" aria-expanded={isOpen}>
   Open Modal
 </Button>;
 ```
@@ -355,7 +355,7 @@ const handleClose = () => setOpen(false);
 
 <Button
   onClick={toggleModal}
-  aria-controls="#modal-example"
+  aria-controls="modal-example"
   aria-expanded={isOpen}
 >
   Open Modal

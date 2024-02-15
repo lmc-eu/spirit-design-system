@@ -30,7 +30,7 @@ export const ModalWithForm = () => {
 
   return (
     <>
-      <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="#ModalExample">
+      <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="ModalExample">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
       <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>

@@ -21,7 +21,7 @@ export const ModalStacked = () => {
 
   return (
     <>
-      <Button onClick={toggleStackedModal} aria-expanded={isStackedOpen} aria-controls="#ModalStacked">
+      <Button onClick={toggleStackedModal} aria-expanded={isStackedOpen} aria-controls="ModalStacked">
         {isStackedOpen ? 'Close' : 'Open'} Modal
       </Button>
       <Modal id="ModalChild" isOpen={isChildOpen} onClose={handleChildClose}>
