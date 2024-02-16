@@ -85,11 +85,18 @@
     "webpack-merge": "6.0.1"
   },
   "peerDependencies": {
-    "@lmc-eu/spirit-design-tokens": "*",
-    "@lmc-eu/spirit-icons": "*",
-    "@lmc-eu/spirit-web": "*",
-    "react": "^17.0.2 || ^18.0.0",
-    "react-dom": "^17.0.2 || ^18.0.0"
+    "@lmc-eu/spirit-icons": "^2.0.0",
+    "@lmc-eu/spirit-web": "^3.0.0",
+    "react": "^17.0.2 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@lmc-eu/spirit-icons": {
+      "optional": true
+    },
+    "@lmc-eu/spirit-web": {
+      "optional": true
+    }
   },
   "scripts": {
     "build:prepare": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ ",
