@@ -33,8 +33,8 @@ in your HTML template:
 
 ### Advanced Implementation in Product with Sass
 
-❗ **Important:** Make sure you have
-[configured Sass load path][configuring-load-path] for `@tokens` and
+❗ **Important:** Make sure you have `sass` dependency installed in your project (`sass` is marked as optional peer dependency since you can use the pre-built distribution CSS).
+And also [configure Sass load path][configuring-load-path] for `@tokens` and
 `node_modules` so all dependencies are resolved correctly by Sass.
 
 Having the Sass load path configured, import just the components you need in
