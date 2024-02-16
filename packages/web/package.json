@@ -89,7 +89,12 @@
     "vite-plugin-handlebars": "1.6.0"
   },
   "peerDependencies": {
-    "sass": ">=1.57.0"
+    "sass": ">=1.57.0 < 2"
+  },
+  "peerDependenciesMeta": {
+    "sass": {
+      "optional": true
+    }
   },
   "nx": {
     "targets": {
