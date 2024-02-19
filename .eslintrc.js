@@ -20,6 +20,7 @@ module.exports = {
     'packages/web-react',
     'packages/web',
     'packages/form-validations',
+    'packages/codemods',
     'exporters/scss',
     'exporters/js',
   ],
