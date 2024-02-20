@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.12.0"></a>
+
+# [2.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.11.0...@lmc-eu/spirit-web-twig@2.12.0) (2024-02-20)
+
+### Bug Fixes
+
+- **web-twig:** Enable rendering Symfony Forms fields inside `FieldGroup` ([59fc8a2](https://github.com/lmc-eu/spirit-design-system/commit/59fc8a2))
+
+### Documentation
+
+- **web-react, web-twig:** Add `isFluid` to the API documentations of `FieldGroup` ([7e69912](https://github.com/lmc-eu/spirit-design-system/commit/7e69912))
+- **web-twig:** Add demo with Tooltip on Icon cmp ([2f13597](https://github.com/lmc-eu/spirit-design-system/commit/2f13597))
+- **web:** Fix Sass implementation notes ([24054e1](https://github.com/lmc-eu/spirit-design-system/commit/24054e1))
+
+### Features
+
+- **web-react:** Deprecate non-flow-relative placements in `Dropdown` [#DS-1132](https://github.com/lmc-eu/spirit-design-system/issues/DS-1132) ([51da754](https://github.com/lmc-eu/spirit-design-system/commit/51da754))
+- **web-twig:** Deprecate non-flow-relative placements in `Dropdown` [#DS-1132](https://github.com/lmc-eu/spirit-design-system/issues/DS-1132) ([8e171ed](https://github.com/lmc-eu/spirit-design-system/commit/8e171ed))
+- **web-twig:** Tooltip can be opened by hover ([eab479c](https://github.com/lmc-eu/spirit-design-system/commit/eab479c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.11.0"></a>
 
 # [2.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.10.0...@lmc-eu/spirit-web-twig@2.11.0) (2024-02-07)

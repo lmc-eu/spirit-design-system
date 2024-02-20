@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-form-validations",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Validation library for form fields of Spirit Design System",
   "license": "MIT",
   "publishConfig": {
@@ -37,7 +37,7 @@
     "@lmc-eu/spirit-common": "^0.2.0",
     "@lmc-eu/spirit-demo": "^0.1.1",
     "@lmc-eu/spirit-design-tokens": "^0.25.5",
-    "@lmc-eu/spirit-web": "^1.10.0",
+    "@lmc-eu/spirit-web": "^1.11.0",
     "@swc/core": "1.3.102",
     "@swc/jest": "0.2.29",
     "@types/jest": "29.5.11",

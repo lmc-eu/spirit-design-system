@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.13.0"></a>
+
+# [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.12.0...@lmc-eu/spirit-web-react@1.13.0) (2024-02-20)
+
+### Bug Fixes
+
+- **web-react:** Add forwardRef to Icon components ([f5cec52](https://github.com/lmc-eu/spirit-design-system/commit/f5cec52))
+- **web-react:** Remove unnecessary rest props on Tooltip Trigger [#DS-1150](https://github.com/lmc-eu/spirit-design-system/issues/DS-1150) ([b7c145f](https://github.com/lmc-eu/spirit-design-system/commit/b7c145f))
+- **web-react:** Require `html-react-parser` as dependency ([84ef862](https://github.com/lmc-eu/spirit-design-system/commit/84ef862))
+- **web-react:** TooltipTrigger props update ([40b3ffd](https://github.com/lmc-eu/spirit-design-system/commit/40b3ffd))
+
+### Documentation
+
+- **web-react, web-twig:** Add `isFluid` to the API documentations of `FieldGroup` ([7e69912](https://github.com/lmc-eu/spirit-design-system/commit/7e69912))
+- **web-react:** Add demo with Tooltip on Icon cmp ([a768a78](https://github.com/lmc-eu/spirit-design-system/commit/a768a78))
+- **web, web-react, web-twig:** Fix the `aria-controls` ID references in examples ([2a7c1aa](https://github.com/lmc-eu/spirit-design-system/commit/2a7c1aa))
+- **web:** Fix Sass implementation notes ([24054e1](https://github.com/lmc-eu/spirit-design-system/commit/24054e1))
+
+### Features
+
+- **web-react:** Deprecate non-flow-relative placements in `Dropdown` [#DS-1132](https://github.com/lmc-eu/spirit-design-system/issues/DS-1132) ([51da754](https://github.com/lmc-eu/spirit-design-system/commit/51da754))
+- **web-react:** Tooltip can be opened by hover ([caac686](https://github.com/lmc-eu/spirit-design-system/commit/caac686)), closes [#DS-1140](https://github.com/lmc-eu/spirit-design-system/issues/DS-1140)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.12.0"></a>
 
 # [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.11.0...@lmc-eu/spirit-web-react@1.12.0) (2024-02-07)

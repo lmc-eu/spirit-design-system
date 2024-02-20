@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.11.0"></a>
+
+# [1.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.10.0...@lmc-eu/spirit-web@1.11.0) (2024-02-20)
+
+### Chores
+
+- **web:** Set `sass` as optional peer dependency ([a680690](https://github.com/lmc-eu/spirit-design-system/commit/a680690)), closes [#DS-1162](https://github.com/lmc-eu/spirit-design-system/issues/DS-1162)
+
+### Documentation
+
+- **web, web-react, web-twig:** Fix the `aria-controls` ID references in examples ([2a7c1aa](https://github.com/lmc-eu/spirit-design-system/commit/2a7c1aa))
+- **web:** Add demo with Tooltip on Icon element ([fae7fde](https://github.com/lmc-eu/spirit-design-system/commit/fae7fde))
+- **web:** Fix Sass implementation notes ([24054e1](https://github.com/lmc-eu/spirit-design-system/commit/24054e1))
+
+### Features
+
+- **web:** Deprecate Dropdown non flow and modifier placement DS-1132 ([28ef059](https://github.com/lmc-eu/spirit-design-system/commit/28ef059))
+- **web:** Tooltip hover ([dfd1dd1](https://github.com/lmc-eu/spirit-design-system/commit/dfd1dd1))
+- **web:** Unify naming in SCSS, use padding or gap [#DS-782](https://github.com/lmc-eu/spirit-design-system/issues/DS-782) ([eab44eb](https://github.com/lmc-eu/spirit-design-system/commit/eab44eb))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.10.0"></a>
 
 # [1.10.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.9.0...@lmc-eu/spirit-web@1.10.0) (2024-02-07)
