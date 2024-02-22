@@ -12,7 +12,7 @@ const TooltipModern = (props: TooltipModernProps) => {
     enableFlipping: flipProp = true,
     enableFlippingCrossAxis: flipCrossAxis = true,
     enableShifting: shiftProp = true,
-    enableSizing: sizeProp = false,
+    enableSizing: sizeProp = true,
     flipFallbackAxisSideDirection = 'none',
     flipFallbackPlacements = ['bottom', 'top'],
     id,
