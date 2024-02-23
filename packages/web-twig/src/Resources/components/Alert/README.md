@@ -31,11 +31,15 @@ Without lexer:
 
 | Color name    | Icon name     |
 | ------------- | ------------- |
-| `danger`      | `warning`     |
+| `danger`      | `warning`\*   |
 | `default`     | `info`        |
 | `informative` | `info`        |
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
+
+(\*) The `warning` icon for the `danger` color has been marked as [deprecated].
+Please make sure you have the `danger` icon in your project assets.
+The `warning` icon for the `danger` color will be removed in favor of the `danger` icon in the next major version.
 
 ## API
 
@@ -55,6 +59,7 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert
+[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
