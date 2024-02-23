@@ -1,0 +1,259 @@
+# Toast
+
+Toast displays a brief, temporary notification that appears at a prescribed location of an application window.
+
+Toast is a composition of a few subcomponents:
+
+- [Toast](#toast)
+  - [ToastBar](#toastbar)
+
+## Toast
+
+The Toast component is a container responsible for positioning the [ToastBar](#toastbar) component. It is capable of
+handling even multiple toast messages at once, stacking them in a [queue](#toast-queue).
+
+```html
+<div class="Toast" role="log">
+  <div class="Toast__queue">
+    <!-- ToastBar components go here -->
+  </div>
+</div>
+```
+
+### Accessibility
+
+The wrapping Toast container has the [`role="log"`][mdn-role-log] attribute set (which results in an implicit
+[`aria-live`][mdn-aria-live] value of `polite`). Assistive technologies then announce any **dynamic changes** inside the
+container as they happen. In order for this to work, the Toast component **must be present in the DOM** on the initial
+page load, even when empty.
+
+👉 Unless you are absolutely sure that your toast messages are critical to interrupt the user, you should not change the
+(implicit) `polite` value of the [`aria-live`][mdn-aria-live] attribute. When set to `assertive`, assistive technologies
+immediately notify the user, potentially clearing the speech queue of previous updates.
+
+### Alignment
+
+The Toast component is positioned at the bottom of the screen by default. It is also fixed to the bottom of the screen,
+so it will always be visible, even when the user scrolls. Available alignment options are derived from the
+[AlignmentX and AlignmentY][dictionary-alignment] dictionaries and are as follows:
+
+- `top` `left`,
+- `top` `center`,
+- `top` `right`,
+- `bottom` `left`,
+- `bottom` `center` (default),
+- `bottom` `right`.
+
+Use the `Toast--<alignmentX>` and `Toast--<alignmentY>` modifiers to change the alignment of the Toast component:
+
+| AlignmentX/Y | left                        | center                        | right                        |
+| ------------ | --------------------------- | ----------------------------- | ---------------------------- |
+| top          | `Toast--top Toast--left`    | `Toast--top Toast--center`    | `Toast--top Toast--right`    |
+| bottom       | `Toast--bottom Toast--left` | `Toast--bottom Toast--center` | `Toast--bottom Toast--right` |
+
+ℹ️ The `center` vertical alignment is not supported, as it would not make sense for a toast notification to be in the
+middle of the screen.
+
+Example:
+
+```html
+<div class="Toast Toast--bottom Toast--right" role="log">
+  <div class="Toast__queue">
+    <!-- ToastBar components go here -->
+  </div>
+</div>
+```
+
+### Responsive Alignment
+
+The Toast container can be aligned differently on different screen sizes. Use the `Toast--<breakpoint>--<alignmentX/Y>`
+modifiers to change the alignment of the Toast component starting on a specific screen size, e.g. `Toast--tablet--top`,
+`Tablet--desktop--left`, etc. (leave the breakpoint empty for alignment on all screen sizes, including mobile screens).
+
+Example:
+
+```html
+<div class="Toast Toast--bottom Toast--center Toast--tablet--right" role="log">
+  <div class="Toast__queue">
+    <!-- ToastBar components go here -->
+  </div>
+</div>
+```
+
+### Mobile Screens
+
+Positioning becomes trickier on mobile screens due to the presence of notches, rounded corners, and the virtual
+keyboard. The Toast component tries to find the best position to be visible using the following detection mechanisms:
+
+1. On devices with rounded displays and/or notches (e.g. iPhone X and newer), the Toast component is pushed inwards to
+   avoid the rounded corners. The `viewport-fit="cover"` meta tag is required for this feature to work:
+
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+   ```
+
+2. Android Chrome only: When the vertical alignment is set to `bottom` and the virtual keyboard is open, the Toast
+   component is pushed upwards to avoid being covered by the keyboard. This feature requires the following JavaScript
+   snippet and is currently supported only in Chrome 94 on Android and later.
+
+   ```js
+   // Enable CSS to detect the presence of virtual keyboard:
+   if ('virtualKeyboard' in navigator) {
+     navigator.virtualKeyboard.overlaysContent = true;
+   }
+   ```
+
+### Toast Queue
+
+When multiple ToastBar components are present, they stack up in a queue, separated by a gap. The ToastBar components are
+sorted from top to bottom for the `top` vertical alignment, and from bottom to top for the `bottom` vertical alignment.
+
+#### Toast Queue Limitations
+
+While the Toast queue becomes scrollable when it does not fit the screen, we recommend displaying only a few toasts at
+once for several reasons:
+
+⚠️ **We strongly discourage from displaying too many toasts at once as it may cause the page to be unusable,
+especially on mobile screens. As of now, there is no automatic stacking of the toast queue items. It is the
+responsibility of the developer to ensure that the Toast queue does not overflow the screen.**
+
+⚠️ Please note that scrolling is only available on pointer-equipped devices (mouse, trackpad). Furthermore, scrolling is
+only possible when the cursor is placed over the toast message boxes. This way the page content behind the toast
+messages can remain accessible.
+
+👉 Please note that the initial scroll position is always at the **top** of the queue.
+
+## ToastBar
+
+The ToastBar component is the actual toast notification. It is a simple container with a message and a few optional
+elements.
+
+Minimum example:
+
+```html
+<div class="ToastBar ToastBar--inverted">
+  <div class="ToastBar__content">
+    <div class="ToastBar__message">Message only</div>
+  </div>
+</div>
+```
+
+### Optional Icon
+
+An icon can be added to the ToastBar component:
+
+```html
+<div class="ToastBar ToastBar--inverted">
+  <div class="ToastBar__content">
+    <svg width="20" height="20" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#info" />
+    </svg>
+    <div class="ToastBar__message">Message with icon</div>
+  </div>
+</div>
+```
+
+### Action Link
+
+An action link can be added to the ToastBar component:
+
+```html
+<div class="ToastBar ToastBar--inverted">
+  <div class="ToastBar__content">
+    <div class="ToastBar__message">
+      Message with action
+      <a href="#" class="link-inverted link-underlined">Action</a>
+    </div>
+  </div>
+</div>
+```
+
+👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
+said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
+[Toast accessibility](#scott-o-hara-toast) at Scott O'Hara's blog.
+
+### Colors
+
+The ToastBar component is available in all [emotion colors][dictionary-color], plus the `inverted` variant (default).
+Use the `ToastBar--<color>` modifier class to change the color of the ToastBar component.
+
+For example:
+
+```html
+<div class="ToastBar ToastBar--success">
+  <div class="ToastBar__content">
+    <div class="ToastBar__message">Success message</div>
+  </div>
+</div>
+```
+
+### Dismissible ToastBar
+
+To make the ToastBar dismissible, add the `ToastBar--dismissible` modifier class, a unique `id` attribute, and a close
+button:
+
+```html
+<div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
+  <div class="ToastBar__content">
+    <div class="ToastBar__message">Dismissible message</div>
+  </div>
+  <button
+    type="button"
+    class="Button Button--small Button--square Button--inverted"
+    data-spirit-dismiss="toast"
+    aria-controls="my-dismissible-toast"
+    aria-expanded="true"
+  >
+    <svg width="24" height="24" aria-hidden="true">
+      <use xlink:href="/icons/svg/sprite.svg#close" />
+    </svg>
+    <span class="accessibility-hidden">Close</span>
+  </button>
+</div>
+```
+
+👉 Please keep in mind that the Button color should match the ToastBar color.
+
+⚠️ The JavaScript functionality for dismissing the ToastBar is yet to be implemented.
+
+## Full Example
+
+```html
+<!-- Toast: start -->
+<div class="Toast Toast--bottom Toast--center" role="log">
+  <div class="Toast__queue">
+    <!-- ToastBar: start -->
+    <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
+      <div class="ToastBar__content">
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#info" />
+        </svg>
+        <div class="ToastBar__message">
+          Toast message
+          <a href="#" class="link-inverted link-underlined">Action</a>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="Button Button--small Button--square Button--inverted"
+        data-spirit-dismiss="toast"
+        aria-controls="my-dismissible-toast"
+        aria-expanded="true"
+      >
+        <svg width="24" height="24" aria-hidden="true">
+          <use xlink:href="/icons/svg/sprite.svg#close" />
+        </svg>
+        <span class="accessibility-hidden">Close</span>
+      </button>
+    </div>
+    <!-- ToastBar: end -->
+  </div>
+</div>
+<!-- Toast: end -->
+```
+
+[mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
+[mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+[dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
+[dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
+[scott-o-hara-toast]: https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html

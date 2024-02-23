@@ -4,25 +4,6 @@
 @use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
-// Function to get the breakpoint name as a infix or suffix
-// Example: -get-breakpoint-infix('tablet', 768px) will return 'tablet--'
-// Example: -get-breakpoint-infix('mobile', 0) will return ''
-// Parameters are:
-// * $name: the breakpoint name
-// * $value: the breakpoint value
-// * $infix: whether to return the suffix or infix
-@function -get-breakpoint-name($name, $value, $infix: true) {
-    @if $value > 0 {
-        @if $infix {
-            @return unquote($name + '--');
-        }
-
-        @return unquote('-' + $name);
-    }
-
-    @return '';
-}
-
 // Generates grid-gap values for each breakpoint
 // Parameters are:
 // * $gutters: the gutters map
@@ -46,7 +27,7 @@
     @each $breakpoint-name, $breakpoint-value in $breakpoints {
         @include breakpoint.up($breakpoint-value) {
             @each $column in $column-count {
-                .Grid--#{-get-breakpoint-name($breakpoint-name, $breakpoint-value)}cols-#{$column} {
+                .Grid--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}cols-#{$column} {
                     grid-template-columns: repeat(#{$column}, 1fr);
                 }
             }
@@ -63,7 +44,7 @@
     @each $breakpoint-name, $breakpoint-value in $breakpoints {
         @include breakpoint.up($breakpoint-value) {
             @each $option in $grid-span-variants {
-                .Grid__span--#{-get-breakpoint-name($breakpoint-name, $breakpoint-value)}over-#{$option} {
+                .Grid__span--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}over-#{$option} {
                     $start: 1 + math.div(($grid-columns - $option), 2);
 
                     grid-column: $start / span $option;
@@ -83,7 +64,7 @@
     $row-end: 'initial';
 
     @each $breakpoint-name, $breakpoint-value in $breakpoints {
-        $suffix: -get-breakpoint-name($breakpoint-name, $breakpoint-value, false);
+        $suffix: breakpoint.get-modifier('suffix', $breakpoint-name, $breakpoint-value);
 
         @include breakpoint.up($breakpoint-value) {
             $column-start: var(--grid-item-column-start#{$suffix}, $column-start);
@@ -102,7 +83,7 @@
 
     :where(.GridItem .GridItem) {
         @each $breakpoint-name, $breakpoint-value in $breakpoints {
-            $suffix: -get-breakpoint-name($breakpoint-name, $breakpoint-value, false);
+            $suffix: breakpoint.get-modifier('suffix', $breakpoint-name, $breakpoint-value);
 
             --grid-item-column-start#{$suffix}: initial;
             --grid-item-column-end#{$suffix}: initial;

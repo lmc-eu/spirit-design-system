@@ -1,0 +1,56 @@
+// 1. Restore pointer events that have been disabled by parent `Toast` component.
+// 2. If the message is short enough, align it vertically to the center of the bar.
+// 3. Allow the action to wrap to the next line if the message is too long.
+// 4. Add margin to the action to separate it from the dismiss button.
+
+@use '../../tools/dictionaries';
+@use '../../tools/typography';
+@use 'theme';
+
+.ToastBar {
+    max-width: theme.$bar-max-width;
+    padding: theme.$bar-padding;
+    border-radius: theme.$bar-border-radius;
+    box-shadow: theme.$bar-box-shadow;
+    pointer-events: initial; // 1.
+}
+
+.ToastBar--dismissible {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: theme.$bar-gap;
+    align-items: start;
+}
+
+.ToastBar--dismissible > .ToastBar__content {
+    align-self: center; // 2.
+}
+
+.ToastBar__content:has(> svg:first-child) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: theme.$bar-content-gap;
+}
+
+.ToastBar__message {
+    @include typography.generate(theme.$bar-typography);
+
+    display: flex;
+    flex-wrap: wrap; // 3.
+    gap: theme.$bar-message-gap-y theme.$bar-message-gap-x;
+}
+
+.ToastBar__message > :is(a, button):last-child {
+    font-weight: 400;
+}
+
+.ToastBar--dismissible .ToastBar__message > :is(a, button):last-child {
+    margin-inline-end: theme.$bar-action-margin-inline-end; // 4.
+}
+
+@include dictionaries.generate-colors(
+    $class-name: 'ToastBar',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config,
+    $overrides: theme.$color-dictionary-overrides
+);

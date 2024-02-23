@@ -1,0 +1,43 @@
+@use 'sass:list';
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$alignments-x: (
+    left: start,
+    center: center,
+    right: end,
+);
+$alignments-y: (
+    top: start,
+    bottom: end,
+);
+$breakpoints: tokens.$breakpoints;
+
+$gap: tokens.$space-600;
+$padding-x: tokens.$space-700;
+$padding-x-tablet: tokens.$space-800;
+$padding-x-desktop: tokens.$space-900;
+$padding-y: tokens.$space-700;
+
+$bar-typography: tokens.$body-small-text-bold;
+$bar-max-width: 480px;
+$bar-gap: tokens.$space-600;
+$bar-padding: tokens.$space-600;
+$bar-border-radius: tokens.$radius-200;
+$bar-box-shadow: tokens.$shadow-400;
+$bar-content-gap: tokens.$space-500;
+$bar-message-gap-x: tokens.$space-700;
+$bar-message-gap-y: tokens.$space-500;
+$bar-action-margin-inline-end: tokens.$space-400;
+
+$color-dictionary: list.join('inverted', dictionaries.$emotion-colors);
+$color-dictionary-config: (
+    color: tokens.$text-primary-inverted-default,
+    background-color: 'default',
+);
+$color-dictionary-overrides: (
+    inverted: (
+        color: tokens.$text-primary-inverted-default,
+        background-color: tokens.$background-inverted,
+    ),
+);

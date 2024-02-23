@@ -1,0 +1,135 @@
+// 1. Spread the `Toast` container over the viewport.
+//
+//    a) For top-to-bottom languages, the `inset-inline` of `0` is a safe way to spread the container horizontally.
+//    b) For the best scrolling experience on mobile devices with dynamic viewports, only one of the `inset-block`
+//       values can be set to `0` at a time. Having both set to `0` would lead to sluggish scrolling on mobile devices.
+//    c) The `height` property is set to `100lvh` to spread the container over the entire viewport so the toast messages
+//       (and their shadows) are not clipped, even during dynamic viewport changes (again, using the `dvh` unit would
+//       lead to sluggish scrolling on mobile devices).
+//
+// 2. Use grid layout to control horizontal (x) and vertical (y) alignment of the messages.
+//
+//    a) Horizontal alignment is controlled by the `justify-content` property of the grid container. This is further
+//       reinforced by the `align-items` property of the toast queue (7).
+//    b) Vertical alignment is controlled by the `align-self` property of the toast queue itself (7). The reason for
+//       this is that vertical scrolling of the toast container is not possible with `align-content: end` (more on that
+//       below). This is also the reason why the initial scroll position is at the top of the container in both cases.
+//
+//    ⚠️ CAUTION: Vertical scrolling of grid containers works only with `align-content` other than `end`.
+//    While the CSS spec speaks [1] about the interaction of `overflow` and `align-content` properties, there may be
+//    a blind spot in the spec because all major browsers (Firefox, Chrome, Safari) do not allow scrolling for
+//    `align-content: end`.
+//
+//    [1] https://drafts.csswg.org/css-align-3/#overflow-scroll-position
+//
+//    A similar Chromium bug with flex containers is tracked here:
+//
+//    https://issues.chromium.org/issues/41130651
+//
+// 3. Allow scrolling when the messages do not fit the screen. Scrolling is only possible over the toast message boxes
+//    and not over the entire container. This is because the `pointer-events` property of the container is set to `none`
+//    (4) so neither the toast container, nor the toast queue stands in the way of the user's interaction with the page
+//    content beneath it.
+//
+//    (The alternative would be to scroll the toast queue itself, but this would go against (4) by blocking user's
+//    interaction with the underlying content.)
+//
+//    ⚠️ CAUTION: As a result of this construction, vertical scrolling of the toast queue only works with pointers, not
+//    with touch events.
+//
+// 4. Because the `Toast` container is present on the page all the time, we must allow interaction with the page content
+//    beneath it. The same applies to the toast queue element (7).
+//
+// 5. On devices with rounded displays (like iPhone X and later), prefer the safe area value over our spacing, if
+//    bigger. The `viewport-fit="cover"` viewport meta must be present in HTML for this to work. Zero value is used as
+//    a fallback.
+//
+// 6. EXPERIMENTAL: When the virtual keyboard is open, the toast container should be pushed up to make space for the
+//    keyboard. This is achieved by setting the bottom margin of the container to the height of the keyboard. This
+//    feature requires the following JavaScript snippet and is currently supported only in Chrome 94 on Android and
+//    later.
+//
+//    ```js
+//    if ('virtualKeyboard' in navigator) {
+//      navigator.virtualKeyboard.overlaysContent = true;
+//    }
+//    ```
+//
+//    ℹ️ Similar behavior can be achieved with the `interactive-widget=resizes-content` viewport meta, but then it would
+//    affect the entire page, not just the toast container. Again, this feature is currently supported only in Chrome
+//    108 on Android and later.
+//
+//    https://ishadeed.com/article/virtual-keyboard-api/
+//    https://developer.chrome.com/blog/viewport-resize-behavior/
+//
+// 7. The toast queue element is in place so we can reverse the visual order of child toast messages when vertical
+//    alignment is set to `bottom`. Reversing order of all child elements is only possible with flex containers.
+//
+// 8. Generate:
+//
+//    a) horizontal (x) and
+//    b) vertical (y) alignment classes for each breakpoint.
+
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.Toast {
+    --toast-padding-x: #{theme.$padding-x};
+    --toast-padding-y: #{theme.$padding-y};
+
+    position: fixed; // 1.
+    inset-inline: 0; // 1.a
+    inset-block: var(--toast-inset-top, 0) var(--toast-inset-bottom, 0); // 1.b
+    display: grid; // 2.
+    justify-content: var(--toast-alignment-x); // 2.a
+    height: 100lvh; // 1.c
+
+    // 5.
+    padding: max(var(--toast-padding-y), env(safe-area-inset-top, 0))
+        max(var(--toast-padding-x), env(safe-area-inset-right, 0))
+        max(var(--toast-padding-y), env(safe-area-inset-bottom, 0))
+        max(var(--toast-padding-x), env(safe-area-inset-left, 0));
+    margin-bottom: env(keyboard-inset-height, 0); // 6.
+    overflow-y: auto; // 3.
+    pointer-events: none; // 4.
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        --toast-padding-x: #{theme.$padding-x-tablet};
+    }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        --toast-padding-x: #{theme.$padding-x-desktop};
+    }
+}
+
+.Toast__queue {
+    display: flex;
+    flex-direction: var(--toast-queue-direction, column-reverse); // 7.
+    row-gap: theme.$gap;
+    align-self: var(--toast-alignment-y, end); // 2.b
+    align-items: var(--toast-alignment-x, center); // 2.a
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        // 8.a
+        @each $alignment-name, $alignment-value in theme.$alignments-x {
+            .Toast--#{$infix}#{$alignment-name} {
+                --toast-alignment-x: #{$alignment-value};
+            }
+        }
+
+        // 8.b
+        @each $alignment-name, $alignment-value in theme.$alignments-y {
+            .Toast--#{$infix}#{$alignment-name} {
+                --toast-alignment-y: #{$alignment-value};
+                --toast-inset-top: #{if($alignment-name == 'top', 0, 'auto')};
+                --toast-inset-bottom: #{if($alignment-name == 'bottom', 0, 'auto')};
+                --toast-queue-direction: #{if($alignment-name == 'bottom', 'column-reverse', 'column')};
+            }
+        }
+    }
+}

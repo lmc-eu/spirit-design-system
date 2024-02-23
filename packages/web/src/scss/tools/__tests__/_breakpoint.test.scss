@@ -81,3 +81,17 @@
         }
     }
 }
+
+@include true.describe('get-modifier mixin') {
+    @include true.it('should output empty string for a zero breakpoint value') {
+        @include true.assert-equal(breakpoint.get-modifier('infix', 'mobile', 0), '');
+    }
+
+    @include true.it('should output an infix for a non-zero breakpoint value') {
+        @include true.assert-equal(breakpoint.get-modifier('infix', 'tablet', 768px), 'tablet--');
+    }
+
+    @include true.it('should output a suffix for a non-zero breakpoint value') {
+        @include true.assert-equal(breakpoint.get-modifier('suffix', 'tablet', 768px), '-tablet');
+    }
+}
