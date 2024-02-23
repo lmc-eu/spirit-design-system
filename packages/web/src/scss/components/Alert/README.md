@@ -67,3 +67,20 @@ Variants:
   <div>Data update failed due to missing internet connection</div>
 </div>
 ```
+
+## Feature Flag: Bordered Alert
+
+The Alert border feature flag is not disabled by default. To enable it, either set the
+`$alert-enable-bordered` Sass feature flag to `true` or use the `spirit-feature-alert-enable-bordered`
+CSS class on any parent of the Alert.
+
+For more info, see main [README][readme-feature-flags].
+
+### ⚠️ DEPRECATION NOTICE
+
+The Alert will be bordered by default in the next major release.
+
+[What are deprecations?][readme-deprecations]
+
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
+[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
