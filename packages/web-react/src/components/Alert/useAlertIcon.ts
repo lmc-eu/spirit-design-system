@@ -8,7 +8,7 @@ export function useAlertIcon<T extends ElementType = 'div', E = void>({ color, i
     success: 'check-plain',
     informative: 'info',
     warning: 'warning',
-    danger: 'warning',
+    danger: 'danger',
   });
 
   return iconName || iconNameValue;

@@ -15,7 +15,7 @@ describe('useAlertIcon', () => {
     ['informative', 'info'],
     ['success', 'check-plain'],
     ['warning', 'warning'],
-    ['danger', 'warning'],
+    ['danger', 'danger'],
   ])('danger alert should return warning icon', (color, iconName) => {
     const props = { color } as SpiritAlertProps;
     const { result } = renderHook(() => useAlertIcon(props));
