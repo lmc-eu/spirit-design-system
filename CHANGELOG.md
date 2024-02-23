@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.12.1"></a>
+
+## [2.12.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.12.0...@lmc-eu/spirit-web-twig@2.12.1) (2024-02-23)
+
+### Bug Fixes
+
+- **web-twig:** Tooltip docs changes ([18c3650](https://github.com/lmc-eu/spirit-design-system/commit/18c3650))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.12.0"></a>
 
 # [2.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.11.0...@lmc-eu/spirit-web-twig@2.12.0) (2024-02-20)
