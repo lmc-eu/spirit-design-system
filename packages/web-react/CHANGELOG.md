@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.13.1"></a>
+
+## [1.13.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.13.0...@lmc-eu/spirit-web-react@1.13.1) (2024-02-23)
+
+### Bug Fixes
+
+- **web-react:** Replace usage of `html-react-parser` in CommonJS files ([705ef1d](https://github.com/lmc-eu/spirit-design-system/commit/705ef1d))
+- **web-react:** TooltipModern default sizing ([4dce6ab](https://github.com/lmc-eu/spirit-design-system/commit/4dce6ab))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.13.0"></a>
 
 # [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.12.0...@lmc-eu/spirit-web-react@1.13.0) (2024-02-20)
