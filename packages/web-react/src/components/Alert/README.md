@@ -17,13 +17,17 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 
 ## Default Icons according to Color Variant
 
-| Color name    | Icon name     |
-| ------------- | ------------- |
-| `danger`      | `warning`     |
-| `default`     | `info`        |
-| `informative` | `info`        |
-| `success`     | `check-plain` |
-| `warning`     | `warning`     |
+| Color name    | Icon name            |
+| ------------- | -------------------- |
+| `danger`      | `warning`/`danger`\* |
+| `default`     | `info`               |
+| `informative` | `info`               |
+| `success`     | `check-plain`        |
+| `warning`     | `warning`            |
+
+(\*) The `warning` icon for the `danger` color has been marked as [deprecated][readme-deprecated].
+Please make sure you have the `danger` icon in your project assets.
+The `warning` icon for the `danger` color will be removed in favor of the `danger` icon in the next major version.
 
 ## API
 
@@ -48,5 +52,6 @@ For detailed information see [Alert][alert] component.
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecated]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
