@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, RefObject, ForwardedRef } from 'react';
+import React, { ForwardedRef, RefObject, forwardRef, useRef } from 'react';
 import { SpiritTextAreaProps } from '../../types';
 import { TextFieldBase } from '../TextFieldBase';
 import { useAdjustHeight } from './useAdjustHeight';
@@ -8,7 +8,7 @@ import { useAdjustHeight } from './useAdjustHeight';
 const _TextArea = (props: SpiritTextAreaProps, ref: ForwardedRef<HTMLTextAreaElement>): JSX.Element => {
   const { onInput, isAutoResizing, autoResizingMaxHeight = 400, ...restProps } = props;
   const elementReference = useRef(ref);
-  const { onInput: onInputHandler } = useAdjustHeight({
+  const { adjustHeightOnAutoresize, onInput: onInputHandler } = useAdjustHeight({
     elementReference,
     onInput,
     isAutoResizing,
@@ -20,6 +20,7 @@ const _TextArea = (props: SpiritTextAreaProps, ref: ForwardedRef<HTMLTextAreaEle
       isMultiline
       ref={elementReference as RefObject<HTMLTextAreaElement>}
       onInput={onInputHandler}
+      onFocus={adjustHeightOnAutoresize}
       {...restProps}
     />
   );
