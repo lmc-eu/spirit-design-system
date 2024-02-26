@@ -51,7 +51,9 @@ class Dropdown extends BaseComponent {
     const dataset = this.element?.dataset;
     const optionsAutoClose = dataset?.spiritAutoclose;
 
-    if (optionsAutoClose) options.autoClose = Boolean(!optionsAutoClose);
+    if (optionsAutoClose) {
+      options.autoClose = optionsAutoClose !== 'false';
+    }
 
     return options;
   }
