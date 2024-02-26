@@ -1,4 +1,4 @@
-import { FormEvent, FormEventHandler, MutableRefObject, ForwardedRef } from 'react';
+import { FormEvent, FormEventHandler, ForwardedRef, MutableRefObject, useEffect } from 'react';
 
 export interface UseAdjustHeightProps {
   elementReference?: MutableRefObject<ForwardedRef<HTMLTextAreaElement>>;
@@ -8,6 +8,8 @@ export interface UseAdjustHeightProps {
 }
 
 export interface UseAdjustHeightReturn {
+  adjustHeight: (element: HTMLTextAreaElement) => void;
+  adjustHeightOnAutoresize: () => void;
   onInput: FormEventHandler<HTMLTextAreaElement>;
 }
 
@@ -31,7 +33,7 @@ export const useAdjustHeight = ({
     element.style.overflow = totalHeight < maxHeight ? 'hidden' : 'auto';
   };
 
-  const inputHandler = (event: FormEvent<HTMLTextAreaElement>) => {
+  const adjustHeightOnAutoresize = () => {
     if (isAutoResizing) {
       // Because of mixed props for input and textarea
       const textArea = elementReference?.current as unknown as HTMLTextAreaElement;
@@ -40,13 +42,28 @@ export const useAdjustHeight = ({
         adjustHeight(textArea);
       }
     }
+  };
+
+  const inputHandler = (event: FormEvent<HTMLTextAreaElement>) => {
+    adjustHeightOnAutoresize();
 
     if (onInput) {
       onInput(event);
     }
   };
 
+  /**
+   * This is the equivalent of the initialization function
+   * It will run only once when the component is mounted
+   */
+  useEffect(() => {
+    adjustHeightOnAutoresize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Empty deps array to run only once
+  }, []);
+
   return {
+    adjustHeight,
+    adjustHeightOnAutoresize,
     onInput: inputHandler,
   };
 };

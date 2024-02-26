@@ -60,4 +60,20 @@ describe('TextArea', () => {
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('TextArea--fluid');
   });
+
+  describe('autoresizing', () => {
+    it('should adjust height when mounted and autoresizing is enabled', () => {
+      const dom = render(<TextArea id="textarea" label="Label" isFluid isAutoResizing />);
+
+      const element = dom.container.querySelector('textarea') as HTMLElement;
+      expect(element.style.height).toBe('2px');
+    });
+
+    it('should not adjust height when mounted and autoresizing is not used', () => {
+      const dom = render(<TextArea id="textarea" label="Label" isFluid />);
+
+      const element = dom.container.querySelector('textarea') as HTMLElement;
+      expect(element.style.height).toBe('');
+    });
+  });
 });
