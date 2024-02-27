@@ -16,3 +16,8 @@ build
 
 # Some tools use this pattern for their configuration files. Lint them!
 !*.config.js
+
+# Folder __testfixtures__ is used by jscodeshift and cannot be renamed
+# There are just test fixtures, no need to lint them
+# https://github.com/facebook/jscodeshift?tab=readme-ov-file#unit-testing
+**/__testfixtures__/**

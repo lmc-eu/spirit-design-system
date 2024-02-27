@@ -32,7 +32,7 @@
   "scripts": {
     "prebuild": "shx rm -rf dist && shx mkdir -p dist",
     "build": "tsup --config ./config/tsup.config.ts",
-    "postbuild": "shx cp -r package.json README.md src/bin dist/",
+    "postbuild": "shx cp -r package.json README.md src/bin dist/ && node scripts/copyTransforms.js",
     "start": "tsup src/index.ts --watch",
     "types": "tsc",
     "lint": "eslint ./",
@@ -43,7 +43,12 @@
     "test:unit:coverage": "yarn test:unit --coverage"
   },
   "dependencies": {
-    "jscodeshift": "^0.15.1"
+    "@types/jscodeshift": "^0.11.11",
+    "execa": "^8.0.1",
+    "filedirname": "^3.0.0",
+    "jscodeshift": "^0.15.1",
+    "sade": "^1.8.1",
+    "zx": "^7.2.2"
   },
   "devDependencies": {
     "@lmc-eu/eslint-config-jest": "3.0.2",
