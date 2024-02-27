@@ -31,6 +31,8 @@ const config = {
 
   // An array of regexp pattern strings that are matched against all file paths before executing the test.
   // https://jestjs.io/docs/configuration#coveragepathignorepatterns-arraystring
+  // Folder __testfixtures__ is used by jscodeshift and cannot be renamed
+  // https://github.com/facebook/jscodeshift?tab=readme-ov-file#unit-testing
   coveragePathIgnorePatterns: ['__fixtures__', '__testfixtures__', 'bin'],
 
   // A list of reporter names that Jest uses when writing coverage reports. Any istanbul reporter can be used.
@@ -43,7 +45,7 @@ const config = {
 
   // An array of regexp pattern strings that are matched against all module paths before those paths are 'visible' to the loader.
   // https://jestjs.io/docs/configuration#modulepathignorepatterns-arraystring
-  modulePathIgnorePatterns: ['<rootDir>/dist/'],
+  modulePathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/*/__testfixtures__/'],
 };
 
 export default config;
