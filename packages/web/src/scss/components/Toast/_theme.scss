@@ -13,26 +13,6 @@ $alignments-y: (
     bottom: end,
 );
 $breakpoints: tokens.$breakpoints;
-
-$gap: tokens.$space-600;
-$padding-x: tokens.$space-700;
-$padding-x-tablet: tokens.$space-800;
-$padding-x-desktop: tokens.$space-900;
-$padding-y: tokens.$space-700;
-
-$bar-typography: tokens.$body-small-text-bold;
-$bar-max-width: 480px;
-$bar-gap: tokens.$space-600;
-$bar-padding: tokens.$space-600;
-$bar-border-radius: tokens.$radius-200;
-$bar-box-shadow: tokens.$shadow-400;
-$bar-content-gap: tokens.$space-500;
-$bar-message-gap-x: tokens.$space-700;
-$bar-message-gap-y: tokens.$space-500;
-$bar-action-margin-inline-end: tokens.$space-400;
-$bar-transition-duration: transitions.$duration-medium;
-$bar-transition-timing: transitions.$timing-eased-out;
-
 $color-dictionary: list.join('inverted', dictionaries.$emotion-colors);
 $color-dictionary-config: (
     color: tokens.$text-primary-inverted-default,
@@ -44,3 +24,36 @@ $color-dictionary-overrides: (
         background-color: tokens.$background-inverted,
     ),
 );
+
+$padding-x: tokens.$space-700;
+$padding-x-tablet: tokens.$space-800;
+$padding-x-desktop: tokens.$space-900;
+$padding-y: tokens.$space-700;
+
+$queue-collapse-after: 3;
+$queue-gap: tokens.$space-600;
+
+$bar-typography: tokens.$body-small-text-bold;
+$bar-max-width: 480px;
+$bar-max-height: 200px; // Whatever larger than the largest toast message. ⚠️ CAUTION: Affects animation timing!
+$bar-gap: tokens.$space-600;
+$bar-padding: tokens.$space-600;
+$bar-border-radius: tokens.$radius-200;
+$bar-box-shadow: tokens.$shadow-400;
+$bar-content-gap: tokens.$space-500;
+$bar-message-gap-x: tokens.$space-700;
+$bar-message-gap-y: tokens.$space-500;
+$bar-action-margin-inline-end: tokens.$space-400;
+
+// ⚠️ Keep the slowest transition in sync with `js/Toast.ts`.
+$bar-transition-delay-margin: transitions.$duration-300;
+$bar-transition-duration-max-height: transitions.$duration-500;
+$bar-transition-duration-margin: transitions.$duration-300;
+$bar-transition-duration-opacity: transitions.$duration-400;
+$bar-transition-duration-scale: transitions.$duration-300;
+$bar-transition-timing-max-height: transitions.$timing-eased-in-out-fast;
+$bar-transition-timing-margin: transitions.$timing-eased-in-out;
+$bar-transition-timing-opacity: transitions.$timing-eased-out;
+$bar-transition-timing-scale: transitions.$timing-eased-out;
+$bar-box-transition-duration: transitions.$duration-200;
+$bar-box-transition-timing: transitions.$timing-eased-out;
