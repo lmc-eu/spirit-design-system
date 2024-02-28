@@ -29,7 +29,7 @@ $header-link-color-current: tokens.$text-primary-inverted-default;
 $header-link-background-color-current: tokens.$background-interactive-inverted-active;
 $header-link-current-border-thickness: 3px;
 $header-link-current-border-color: tokens.$action-selected-default;
-$header-link-transition-duration: transitions.$duration-medium;
+$header-link-transition-duration: transitions.$duration-200;
 $header-link-transition-timing: transitions.$timing-eased-out;
 
 // HeaderDialog
@@ -39,7 +39,7 @@ $header-dialog-padding: tokens.$space-700;
 $header-dialog-color: tokens.$text-primary-inverted-default;
 $header-dialog-background-color: tokens.$background-inverted;
 $header-dialog-shadow: tokens.$shadow-400;
-$header-dialog-transition-duration: transitions.$duration-medium;
+$header-dialog-transition-duration: transitions.$duration-200;
 $header-dialog-transition-timing: transitions.$timing-eased-in-out;
 $header-dialog-backdrop-background-color: tokens.$background-backdrop;
 

@@ -236,20 +236,10 @@ This setup might be preferable when you have a link in your tooltip, for example
   Toggle tooltip
 </button>
 <div class="TooltipWrapper d-inline-block">
-  <div
-    id="my-tooltip-trigger"
-    class="Tooltip is-hidden"
-    data-spirit-trigger="click"
-    <!--
-    Only
-    `click`
-    trigger
-    is
-    active
-    now.
-    --
-  >
-    > You can click on the link: <a href="#">Link to unknown</a>
+  <div id="my-tooltip-trigger" class="Tooltip is-hidden" data-spirit-trigger="click">
+    <!-- Only `click` trigger is active now. -->
+    You can click on the link:
+    <a href="#">Link to unknown</a>
     <span class="Tooltip__arrow"></span>
   </div>
 </div>

@@ -80,6 +80,7 @@
 //   same as in `states` parameter
 // * $custom-variable-name: custom CSS variable name – useful when $class-name is complex
 // * $child-selector: additional child selector
+// * $generate-data-attribute: whether to generate data attribute selectors (for JS usage)
 // See Button component for real usage
 @mixin generate-colors(
     $class-name,
@@ -88,10 +89,18 @@
     $states: null,
     $overrides: null,
     $custom-variable-name: null,
-    $child-selector: null
+    $child-selector: null,
+    $generate-data-attribute: false
 ) {
     @each $dictionary-value in $dictionary-values {
-        .#{$class-name}--#{$dictionary-value}#{$child-selector} {
+        $data-attribute-selector: if(
+            $generate-data-attribute,
+            '.#{$class-name}[data-spirit-color="#{$dictionary-value}"]#{$child-selector}',
+            null
+        );
+
+        .#{$class-name}--#{$dictionary-value}#{$child-selector},
+        #{$data-attribute-selector} {
             @each $property-name, $property-value in $config {
                 $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
                 $prefix: if(
