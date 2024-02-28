@@ -9,9 +9,11 @@
         @include true.assert {
             @include true.output {
                 @include dictionaries.generate-colors(
-                    'Test',
-                    ('primary'),
-                    (
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'primary',
+                    ),
+                    $config: (
                         color: 'default',
                     )
                 );
@@ -19,6 +21,33 @@
 
             @include true.expect {
                 .Test--primary {
+                    --test-color: #29616f;
+
+                    color: var(--test-color);
+                }
+            }
+        }
+    }
+
+    @include true.it('should generate correct color classes and data attributes based on a dictionary') {
+        @include true.assert {
+            @include true.output {
+                @include dictionaries.generate-colors(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'primary',
+                    ),
+                    $config: (
+                        color: 'default',
+                    ),
+                    $child-selector: ' > .Test__box',
+                    $generate-data-attribute: true
+                );
+            }
+
+            @include true.expect {
+                .Test--primary > .Test__box,
+                .Test[data-spirit-color='primary'] > .Test__box {
                     --test-color: #29616f;
 
                     color: var(--test-color);

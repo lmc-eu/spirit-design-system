@@ -125,20 +125,34 @@ sorted from top to bottom for the `top` vertical alignment, and from bottom to t
 👉 Please note the _actual_ order in the DOM is followed when users tab over the interface, no matter the _visual_
 order of the toast queue.
 
-#### Toast Queue Limitations
+#### Scrolling
 
-While the Toast queue becomes scrollable when it does not fit the screen, we recommend displaying only a few toasts at
-once for several reasons:
+By default, the Toast queue becomes scrollable when it does not fit the screen.
 
-⚠️ **We strongly discourage from displaying too many toasts at once as it may cause the page to be unusable,
-especially on mobile screens. As of now, there is no automatic stacking of the toast queue items. It is the
-responsibility of the developer to ensure that the Toast queue does not overflow the screen.**
-
-⚠️ Please note that scrolling is only available on pointer-equipped devices (mouse, trackpad). Furthermore, scrolling is
-only possible when the cursor is placed over the toast message boxes. This way the page content behind the toast
-messages can remain accessible.
+⚠️ Please note that scrolling is not available on iOS devices due to a limitation in the WebKit engine.
 
 👉 Please note that the initial scroll position is always at the **top** of the queue.
+
+#### Collapsing
+
+To make the queue collapsible, just add the `.Toast--collapsible` modifier class. The collapsible Toast queue can then
+hold up to 3 ToastBar components. When the queue is full, the oldest ToastBar components are collapsed at the start of
+the queue and are only accessible by closing the newer ones.
+
+```html
+<div class="Toast Toast--collapsible" role="log">
+  <div class="Toast__queue">
+    <!-- ToastBar components go here -->
+  </div>
+</div>
+```
+
+#### Toast Queue Limitations
+
+👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
+items are dismissed.
+
+👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
 
 ## ToastBar
 
@@ -149,8 +163,10 @@ Minimum example:
 
 ```html
 <div class="ToastBar ToastBar--inverted">
-  <div class="ToastBar__content">
-    <div class="ToastBar__message">Message only</div>
+  <div class="ToastBar__box">
+    <div class="ToastBar__content">
+      <div class="ToastBar__message">Message only</div>
+    </div>
   </div>
 </div>
 ```
@@ -161,11 +177,13 @@ An icon can be added to the ToastBar component:
 
 ```html
 <div class="ToastBar ToastBar--inverted">
-  <div class="ToastBar__content">
-    <svg width="20" height="20" aria-hidden="true">
-      <use xlink:href="/icons/svg/sprite.svg#info" />
-    </svg>
-    <div class="ToastBar__message">Message with icon</div>
+  <div class="ToastBar__box">
+    <div class="ToastBar__content">
+      <svg width="20" height="20" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#info" />
+      </svg>
+      <div class="ToastBar__message">Message with icon</div>
+    </div>
   </div>
 </div>
 ```
@@ -176,10 +194,12 @@ An action link can be added to the ToastBar component:
 
 ```html
 <div class="ToastBar ToastBar--inverted">
-  <div class="ToastBar__content">
-    <div class="ToastBar__message">
-      Message with action
-      <a href="#" class="link-inverted link-underlined">Action</a>
+  <div class="ToastBar__box">
+    <div class="ToastBar__content">
+      <div class="ToastBar__message">
+        Message with action
+        <a href="#" class="link-inverted link-underlined">Action</a>
+      </div>
     </div>
   </div>
 </div>
@@ -187,7 +207,7 @@ An action link can be added to the ToastBar component:
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
-[Toast accessibility](#scott-o-hara-toast) at Scott O'Hara's blog.
+[Toast accessibility][scott-o-hara-toast] at Scott O'Hara's blog.
 
 ### Colors
 
@@ -198,15 +218,22 @@ For example:
 
 ```html
 <div class="ToastBar ToastBar--success">
-  <div class="ToastBar__content">
-    <div class="ToastBar__message">Success message</div>
+  <div class="ToastBar__box">
+    <div class="ToastBar__content">
+      <div class="ToastBar__message">Success message</div>
+    </div>
   </div>
 </div>
 ```
 
-### Opening the ToastBar
+### Basic Interactions
 
-Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
+For basic use cases, you can simply place the ToastBar component inside the Toast container and show/hide it using our
+JavaScript plugin.
+
+#### Showing the Static ToastBar
+
+Use our JavaScript plugin to show a Toast **that is present in the DOM,** e.g.:
 
 ```html
 <button
@@ -217,69 +244,82 @@ Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
   aria-controls="my-hidden-toast"
   aria-expanded="false"
 >
-  Show the hidden toast
+  Show hidden toast
 </button>
 ```
 
-👉 Advanced toast queue control is not yet implemented.
-
-### Dismissible ToastBar
+#### Dismissible ToastBar
 
 To make the ToastBar dismissible, add the `ToastBar--dismissible` modifier class, a unique `id` attribute, and a close
 button:
 
 ```html
 <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
-  <div class="ToastBar__content">
-    <div class="ToastBar__message">Dismissible message</div>
+  <div class="ToastBar__box">
+    <div class="ToastBar__content">
+      <div class="ToastBar__message">Dismissible message</div>
+    </div>
+    <button
+      type="button"
+      class="Button Button--small Button--square Button--inverted"
+      data-spirit-dismiss="toast"
+      data-spirit-target="#my-dismissible-toast"
+      aria-controls="my-dismissible-toast"
+      aria-expanded="true"
+    >
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#close" />
+      </svg>
+      <span class="accessibility-hidden">Close</span>
+    </button>
   </div>
-  <button
-    type="button"
-    class="Button Button--small Button--square Button--inverted"
-    data-spirit-dismiss="toast"
-    data-spirit-target="#my-dismissible-toast"
-    aria-controls="my-dismissible-toast"
-    aria-expanded="true"
-  >
-    <svg width="24" height="24" aria-hidden="true">
-      <use xlink:href="/icons/svg/sprite.svg#close" />
-    </svg>
-    <span class="accessibility-hidden">Close</span>
-  </button>
 </div>
 ```
 
 👉 Please keep in mind that the Button color should match the ToastBar color.
 
-## Full Example
+#### Full Example
 
 ```html
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  data-spirit-toggle="toast"
+  data-spirit-target="#my-dismissible-toast"
+  aria-controls="my-dismissible-toast"
+  aria-expanded="false"
+>
+  Show hidden toast
+</button>
+
 <!-- Toast: start -->
 <div class="Toast Toast--bottom Toast--center" role="log">
   <div class="Toast__queue">
     <!-- ToastBar: start -->
-    <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#info" />
-        </svg>
-        <div class="ToastBar__message">
-          Toast message
-          <a href="#" class="link-inverted link-underlined">Action</a>
+    <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible is-hidden">
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#info" />
+          </svg>
+          <div class="ToastBar__message">
+            Toast message
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--inverted"
+          data-spirit-dismiss="toast"
+          aria-controls="my-dismissible-toast"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--inverted"
-        data-spirit-dismiss="toast"
-        aria-controls="my-dismissible-toast"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
     <!-- ToastBar: end -->
   </div>
@@ -287,14 +327,72 @@ button:
 <!-- Toast: end -->
 ```
 
+### Creating Dynamic ToastBars
+
+To create ToastBar components dynamically, make sure you have the `data-spirit-element="toast-queue"` attribute set on
+the `.Toast__queue` element, with just the ToastBar template inside the [`<template>`][mdn-template] tag.
+The `<template>` tag must be inserted anywhere inside the Toast container. Our JavaScript Toast plugin will then pick up
+the template and apply it on any toasts to be shown to the user, using the configuration provided.
+
+```html
+<div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
+  <div class="Toast__queue" data-spirit-element="toast-queue">
+    <!-- This is the template for new ToastBar components: -->
+    <template data-spirit-snippet="item">
+      <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
+        <div class="ToastBar__box">
+          <div class="ToastBar__content">
+            <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <div class="ToastBar__message" data-spirit-populate-field="message"></div>
+          </div>
+          <button
+            type="button"
+            class="Button Button--small Button--square"
+            data-spirit-color="inverted"
+            data-spirit-populate-field="close-button"
+            data-spirit-dismiss="toast"
+            aria-expanded="true"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+```
+
+Then configure and create a new Toast instance and call the `show` method on it, for example:
+
+```js
+import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
+
+const toast = new Toast(null, {
+  color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
+  containerId: 'toast-example', // Must match the ID of the Toast container in HTML
+  content: 'Hello, this is my toast message!', // Can be plain text or HTML
+  hasIcon: true,
+  // iconName: 'info', // Optional icon name used as the #fragment in the SVG sprite URL
+  id: 'my-toast', // An ID is required for dismissible ToastBar
+  isDismissible: true,
+});
+
+toast.show();
+```
+
 ## JavaScript Plugin API
 
-| Method                | Description                                                                                                                                           |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `getInstance`         | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element.                                                    |
-| `getOrCreateInstance` | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element, or create a new one in case it wasn’t initialized. |
-| `hide`                | Hides the toast element. Returns to the caller before the toast has actually been hidden (i.e. before the `hidden.toast` event occurs).               |
-| `show`                | Reveals the toast element. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.toast` event occurs).           |
+| Method                | Description                                                                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `getInstance`         | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element.                                                     |
+| `getOrCreateInstance` | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element, or create a new one in case it wasn’t initialized.  |
+| `hide`                | Hides the toast element. Returns to the caller before the toast has actually been hidden (i.e. before the `hidden.toast` event occurs).                |
+| `show`                | Reveals or creates the toast element. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.toast` event occurs). |
 
 ```js
 const toast = Toast.getInstance('#example'); // Returns a toast instance
@@ -325,6 +423,7 @@ toast.hide();
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
 [mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+[mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
 [scott-o-hara-toast]: https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html

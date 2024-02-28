@@ -2,7 +2,63 @@
 
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Alignment</h2>
+  <h2 class="docs-Heading">Static Toast</h2>
+
+  <div class="docs-Stack">
+
+    <!-- Toast show and hide demo: start -->
+    <fieldset id="toast-in-dom-toggle" class="mb-0" style="border: 0;">
+      <legend class="mb-500">Show hidden toast in the DOM:</legend>
+      <button
+        class="Button Button--medium Button--primary"
+        data-spirit-toggle="toast"
+        data-spirit-target="#my-hidden-dismissible-toast"
+        onclick="this.setAttribute('disabled', 'disabled')"
+        aria-expanded="false"
+      >
+        Show
+      </button>
+    </fieldset>
+    <!-- Toast show and hide demo: end -->
+
+    <div class="Toast Toast--top Toast--center" role="log">
+      <div class="Toast__queue">
+
+        <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
+          <div class="ToastBar__box">
+            <div class="ToastBar__content">
+              <svg width="20" height="20" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+              </svg>
+              <div class="ToastBar__message">
+                I was hidden and you exposed me!
+              </div>
+            </div>
+            <button
+              type="button"
+              class="Button Button--small Button--square Button--warning"
+              data-spirit-dismiss="toast"
+              data-spirit-target="#my-hidden-dismissible-toast"
+              aria-controls="my-hidden-dismissible-toast"
+              aria-expanded="true"
+            >
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+              </svg>
+              <span class="accessibility-hidden">Close</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="docs-Section">
+
+  <h2 class="docs-Heading">Dynamic Toast Queue</h2>
 
   <div class="docs-Stack">
 
@@ -21,39 +77,121 @@
         toastElement.classList.remove('Toast--top', 'Toast--bottom');
         toastElement.classList.add(`Toast--${event.target.value}`);
       };
+
+      const setToastCollapsing = (event, selector) => {
+        const toastElement = document.querySelector(selector);
+
+        toastElement.classList.toggle('Toast--collapsible');
+      };
     </script>
 
     <form>
+      <fieldset onchange="setToastCollapsing(event, '#toast-example')" style="border: 0;">
+        <label for="toast-is-collapsible" class="Checkbox">
+          <input type="checkbox" id="toast-is-collapsible" class="Checkbox__input" name="is-collapsible" autocomplete="off" checked />
+          <span class="Checkbox__text">
+            <span class="Checkbox__label">Collapsible</span>
+          </span>
+        </label>
+      </fieldset>
       <fieldset onchange="setToastAlignmentY(event, '#toast-example')" style="border: 0;">
         <legend>Vertical alignment:</legend>
         <label for="toast-alignment-top" class="Radio mr-600">
           <input type="radio" id="toast-alignment-top" name="toast-alignment-y" value="top" class="Radio__input" autocomplete="off" />
-          <span class="Radio__label">Top</span>
+          <span class="Radio__text">
+            <span class="Radio__label">Top</span>
+          </span>
         </label>
         <label for="toast-alignment-bottom" class="Radio mr-600">
           <input type="radio" id="toast-alignment-bottom" name="toast-alignment-y" value="bottom" class="Radio__input" autocomplete="off" checked />
-          <span class="Radio__label">Bottom</span>
+          <span class="Radio__text">
+            <span class="Radio__label">Bottom</span>
+          </span>
         </label>
       </fieldset>
       <fieldset onchange="setToastAlignmentX(event, '#toast-example')" style="border: 0;">
         <legend>Horizontal alignment:</legend>
         <label for="toast-alignment-left" class="Radio mr-600">
           <input type="radio" id="toast-alignment-left" name="toast-alignment-x" value="left" class="Radio__input" autocomplete="off" />
-          <span class="Radio__label">Left</span>
+          <span class="Radio__text">
+            <span class="Radio__label">Left</span>
+          </span>
         </label>
         <label for="toast-alignment-center" class="Radio mr-600">
           <input type="radio" id="toast-alignment-center" name="toast-alignment-x" value="center" class="Radio__input" autocomplete="off" checked />
-          <span class="Radio__label">Center</span>
+          <span class="Radio__text">
+            <span class="Radio__label">Center</span>
+          </span>
         </label>
         <label for="toast-alignment-right" class="Radio mr-600">
           <input type="radio" id="toast-alignment-right" name="toast-alignment-x" value="right" class="Radio__input" autocomplete="off" />
-          <span class="Radio__label">Right</span>
+          <span class="Radio__text">
+            <span class="Radio__label">Right</span>
+          </span>
         </label>
       </fieldset>
     </form>
     <!-- Toast alignment demo: end -->
 
-    <!-- Toast and visual keyboard demo: start -->
+    <!-- Dynamic queue demo: start -->
+    <script type="module">
+      import { addDynamicToast } from './dynamic-toast.mjs';
+      window.addDynamicToast = addDynamicToast;
+    </script>
+
+    <form>
+      <fieldset style="border: 0;">
+        <legend class="mb-500">New Toast:</legend>
+        <div class="Stack Stack--hasSpacing">
+          <div class="Select">
+            <label for="toast-color" class="Select__label">Color</label>
+            <div class="Select__inputContainer">
+              <select id="toast-color" name="color" class="Select__input" autocomplete="off">
+                <option value="inverted">Inverted</option>
+                <option value="success">Success</option>
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+                <option value="informative">Informative</option>
+              </select>
+              <div class="Select__icon">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <label for="toast-has-icon" class="Checkbox">
+            <input type="checkbox" id="toast-has-icon" class="Checkbox__input" name="is-dismissible" autocomplete="off" checked />
+            <span class="Checkbox__text">
+              <span class="Checkbox__label">Has icon</span>
+            </span>
+          </label>
+          <label for="toast-is-dismissible" class="Checkbox">
+            <input type="checkbox" id="toast-is-dismissible" class="Checkbox__input" name="is-dismissible" autocomplete="off" checked />
+            <span class="Checkbox__text">
+              <span class="Checkbox__label">Dismissible</span>
+            </span>
+          </label>
+          <div class="TextArea">
+            <label for="toast-content" class="TextArea__label">Message</label>
+            <textarea id="toast-content" class="TextArea__input" autocomplete="off">This is a new toast message.</textarea>
+            <div class="TextArea__helperText">Can contain HTML.</div>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="Button Button--medium Button--primary"
+              onclick="addDynamicToast(event, 'toast-example');"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <!-- Dynamic queue demo: end -->
+
+    <!-- Toast and virtual keyboard demo: start -->
     <script>
       // Experimental, Chrome 94+ on Android only:
       // Enable CSS to detect the presence of virtual keyboard.
@@ -70,105 +208,96 @@
         </div>
       </fieldset>
     </form>
-    <!-- Toast and visual keyboard demo: end -->
+    <!-- Toast and virtual keyboard demo: end -->
 
-    <!-- Toast show and hide demo: start -->
-    <fieldset style="border: 0;">
-      <legend class="mb-500">Show the toast prepared in the DOM:</legend>
-      <button
-        class="Button Button--medium Button--primary"
-        data-spirit-toggle="toast"
-        data-spirit-target="#my-hidden-dismissible-toast"
-        onclick="this.setAttribute('disabled', 'disabled')"
-        aria-expanded="false"
-      >
-        Show the hidden toast
-      </button>
-    </fieldset>
-    <!-- Toast show and hide demo: end -->
+    <div id="toast-example" class="Toast Toast--bottom Toast--center Toast--collapsible" role="log">
+      <div class="Toast__queue" data-spirit-element="toast-queue">
 
-    <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
-      <div class="Toast__queue">
-
-        <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-open">
-          <div class="ToastBar__content">
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-            </svg>
-            <div class="ToastBar__message">
-              I was first!
-              <a href="#" class="link-inverted link-underlined">Action</a>
+        <template data-spirit-snippet="item">
+          <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
+            <div class="ToastBar__box">
+              <div class="ToastBar__content">
+                <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#info" />
+                </svg>
+                <div class="ToastBar__message" data-spirit-populate-field="message"></div>
+              </div>
+              <button
+                type="button"
+                class="Button Button--small Button--square"
+                data-spirit-color="inverted"
+                data-spirit-populate-field="close-button"
+                data-spirit-dismiss="toast"
+                aria-expanded="true"
+              >
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+                </svg>
+                <span class="accessibility-hidden">Close</span>
+              </button>
             </div>
           </div>
-          <button
-            type="button"
-            class="Button Button--small Button--square Button--success"
-            data-spirit-dismiss="toast"
-            data-spirit-target="#my-dismissible-toast"
-            aria-controls="my-dismissible-toast"
-            aria-expanded="true"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
+        </template>
+
+        <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-visible">
+          <div class="ToastBar__box">
+            <div class="ToastBar__content">
+              <svg width="20" height="20" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+              </svg>
+              <div class="ToastBar__message">
+                I was first!
+                <a href="#" class="link-inverted link-underlined">Action</a>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="Button Button--small Button--square Button--success"
+              data-spirit-dismiss="toast"
+              data-spirit-target="#my-dismissible-toast"
+              aria-controls="my-dismissible-toast"
+              aria-expanded="true"
+            >
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+              </svg>
+              <span class="accessibility-hidden">Close</span>
+            </button>
+          </div>
         </div>
 
-        <div id="my-other-dismissible-toast" class="ToastBar ToastBar--informative ToastBar--dismissible">
-          <div class="ToastBar__content">
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#info" />
-            </svg>
-            <div class="ToastBar__message">
-              I appeared later. This toast has a long message that wraps automatically.
-              <a href="#" class="link-inverted link-underlined">Action</a>
+        <div id="my-other-dismissible-toast" class="ToastBar ToastBar--informative ToastBar--dismissible is-visible">
+          <div class="ToastBar__box">
+            <div class="ToastBar__content">
+              <svg width="20" height="20" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#info" />
+              </svg>
+              <div class="ToastBar__message">
+                I appeared later. This toast has a long message that wraps automatically.
+                <a href="#" class="link-inverted link-underlined">Action</a>
+              </div>
             </div>
+            <button
+              type="button"
+              class="Button Button--small Button--square Button--informative"
+              data-spirit-dismiss="toast"
+              data-spirit-target="#my-other-dismissible-toast"
+              aria-controls="my-other-dismissible-toast"
+              aria-expanded="true"
+            >
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+              </svg>
+              <span class="accessibility-hidden">Close</span>
+            </button>
           </div>
-          <button
-            type="button"
-            class="Button Button--small Button--square Button--informative"
-            data-spirit-dismiss="toast"
-            data-spirit-target="#my-other-dismissible-toast"
-            aria-controls="my-other-dismissible-toast"
-            aria-expanded="true"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </div>
 
-        <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
-          <div class="ToastBar__content">
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#warning" />
-            </svg>
-            <div class="ToastBar__message">
-              I was hidden and you exposed me!
-            </div>
-          </div>
-          <button
-            type="button"
-            class="Button Button--small Button--square Button--warning"
-            data-spirit-dismiss="toast"
-            data-spirit-target="#my-hidden-dismissible-toast"
-            aria-controls="my-hidden-dismissible-toast"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
         </div>
 
       </div>
     </div>
 
   </div>
-
 </section>
 
 <section class="docs-Section">
@@ -178,85 +307,97 @@
   <div class="docs-Stack docs-Stack--start">
 
     <div class="ToastBar ToastBar--inverted">
-      <div class="ToastBar__content">
-        <div class="ToastBar__message">
-          Message only
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <div class="ToastBar__message">
+            Message only
+          </div>
         </div>
       </div>
     </div>
 
     <div class="ToastBar ToastBar--inverted">
-      <div class="ToastBar__content">
-        <div class="ToastBar__message">
-          Message with action
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <div class="ToastBar__message">
+            Message with action
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="ToastBar ToastBar--inverted">
-      <div class="ToastBar__content">
-        <div class="ToastBar__message">
-          When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <div class="ToastBar__message">
+            When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="ToastBar ToastBar--inverted">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#info" />
-        </svg>
-        <div class="ToastBar__message">
-          Message with icon and action
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#info" />
+          </svg>
+          <div class="ToastBar__message">
+            Message with icon and action
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
       </div>
     </div>
 
     <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--inverted ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <div class="ToastBar__message">
-          Dismissible message
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <div class="ToastBar__message">
+            Dismissible message
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--inverted"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-variation-dismissible"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--inverted"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-variation-dismissible"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
     <div id="my-toast-variation-dismissible-with-icon-and-action" class="ToastBar ToastBar--inverted ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/static/assets/icons/svg/sprite.svg#download" />
-        </svg>
-        <div class="ToastBar__message">
-          Dismissible message with custom icon and action
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#download" />
+          </svg>
+          <div class="ToastBar__message">
+            Dismissible message with custom icon and action
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--inverted"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-variation-dismissible-with-icon-and-action"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--inverted"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-variation-dismissible-with-icon-and-action"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
   </div>
@@ -269,123 +410,133 @@
   <div class="docs-Stack docs-Stack--start">
 
     <div id="my-toast-color-inverted" class="ToastBar ToastBar--inverted ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#info" />
-        </svg>
-        <div class="ToastBar__message">
-          Inverted
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#info" />
+          </svg>
+          <div class="ToastBar__message">
+            Inverted
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--inverted"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-color-inverted"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--inverted"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-color-inverted"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
     <div id="my-toast-color-informative" class="ToastBar ToastBar--informative ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#info" />
-        </svg>
-        <div class="ToastBar__message">
-          Informative
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#info" />
+          </svg>
+          <div class="ToastBar__message">
+            Informative
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--informative"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-color-informative"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--informative"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-color-informative"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
     <div id="my-toast-color-success" class="ToastBar ToastBar--success ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
-        </svg>
-        <div class="ToastBar__message">
-          Success
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
+          </svg>
+          <div class="ToastBar__message">
+            Success
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--success"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-color-success"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--success"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-color-success"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
     <div id="my-toast-color-warning" class="ToastBar ToastBar--warning ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
-        </svg>
-        <div class="ToastBar__message">
-          Warning
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
+          </svg>
+          <div class="ToastBar__message">
+            Warning
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--warning"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-color-warning"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--warning"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-color-warning"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
     <div id="my-toast-color-danger" class="ToastBar ToastBar--danger ToastBar--dismissible">
-      <div class="ToastBar__content">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#danger" />
-        </svg>
-        <div class="ToastBar__message">
-          Danger
-          <a href="#" class="link-inverted link-underlined">Action</a>
+      <div class="ToastBar__box">
+        <div class="ToastBar__content">
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#danger" />
+          </svg>
+          <div class="ToastBar__message">
+            Danger
+            <a href="#" class="link-inverted link-underlined">Action</a>
+          </div>
         </div>
+        <button
+          type="button"
+          class="Button Button--small Button--square Button--danger"
+          data-spirit-dismiss="toast"
+          aria-controls="my-toast-color-danger"
+          aria-expanded="true"
+        >
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+          </svg>
+          <span class="accessibility-hidden">Close</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="Button Button--small Button--square Button--danger"
-        data-spirit-dismiss="toast"
-        aria-controls="my-toast-color-danger"
-        aria-expanded="true"
-      >
-        <svg width="24" height="24" aria-hidden="true">
-          <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-        </svg>
-        <span class="accessibility-hidden">Close</span>
-      </button>
     </div>
 
   </div>

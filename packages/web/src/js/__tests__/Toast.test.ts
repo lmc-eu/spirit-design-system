@@ -1,25 +1,29 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
-import Toast from '../Toast';
+import Toast, { SLOWEST_TRANSITION_PROPERTY_NAME } from '../Toast';
 import {
   ATTRIBUTE_ARIA_EXPANDED,
   ATTRIBUTE_DATA_TARGET,
   CLASS_NAME_HIDDEN,
-  CLASS_NAME_OPEN,
   CLASS_NAME_TRANSITIONING,
+  CLASS_NAME_VISIBLE,
 } from '../constants';
 import EventHandler from '../dom/EventHandler';
 
 const testId = 'toast-test';
 
-const toastHtmlClosed = `
+const toastHtmlHidden = `
   <div id="${testId}" class="ToastBar ToastBar--success ToastBar--dismissible is-hidden">
-    <button type="button" data-spirit-target="#${testId}" aria-expanded="false">Close</button>
+    <div class="ToastBar__box">
+        <button type="button" data-spirit-target="#${testId}" aria-expanded="false">Close</button>
+    </div>
   </div>
 `;
 
-const toastHtmlOpened = `
-  <div id="${testId}" class="ToastBar ToastBar--success ToastBar--dismissible is-open">
-    <button type="button" data-spirit-target="#${testId}" aria-expanded="true">Close</button>
+const toastHtmlVisible = `
+  <div id="${testId}" class="ToastBar ToastBar--success ToastBar--dismissible is-visible">
+    <div class="ToastBar__box">
+      <button type="button" data-spirit-target="#${testId}" aria-expanded="true">Close</button>
+    </div>
   </div>
 `;
 
@@ -54,7 +58,7 @@ describe('Toast', () => {
 
   describe('constructor', () => {
     it('should construct a toast', () => {
-      fixtureEl.innerHTML = toastHtmlClosed;
+      fixtureEl.innerHTML = toastHtmlHidden;
       const element = fixtureEl.querySelector('.ToastBar') as HTMLElement;
       const toast = new Toast(element);
 
@@ -64,7 +68,7 @@ describe('Toast', () => {
 
   describe('show', () => {
     it('should show a toast', async () => {
-      fixtureEl.innerHTML = toastHtmlClosed;
+      fixtureEl.innerHTML = toastHtmlHidden;
 
       const element = fixtureEl.querySelector('.ToastBar') as HTMLElement;
       const toast = new Toast(element);
@@ -72,24 +76,27 @@ describe('Toast', () => {
 
       const showSpy = jest.spyOn(Toast.prototype, 'show');
 
-      await toast.show();
+      toast.show();
 
       expect(showSpy).toHaveBeenCalled();
       expect(trigger).toHaveAttribute(ATTRIBUTE_ARIA_EXPANDED, 'true');
-      expect(element).toHaveClass(CLASS_NAME_OPEN);
-      expect(element).toHaveClass(CLASS_NAME_TRANSITIONING);
-
-      EventHandler.trigger(element, 'transitionend');
-
-      expect(element).toHaveClass(CLASS_NAME_OPEN);
-      expect(element).not.toHaveClass(CLASS_NAME_HIDDEN);
+      expect(element).toHaveClass(CLASS_NAME_HIDDEN);
       expect(element).not.toHaveClass(CLASS_NAME_TRANSITIONING);
+      expect(element).not.toHaveClass(CLASS_NAME_VISIBLE);
+
+      EventHandler.trigger(element, 'transitionend', { propertyName: SLOWEST_TRANSITION_PROPERTY_NAME });
+
+      setTimeout(() => {
+        expect(element).toHaveClass(CLASS_NAME_VISIBLE);
+        expect(element).not.toHaveClass(CLASS_NAME_HIDDEN);
+        expect(element).not.toHaveClass(CLASS_NAME_TRANSITIONING);
+      }, 0);
     });
   });
 
   describe('hide', () => {
     it('should hide a toast', async () => {
-      fixtureEl.innerHTML = toastHtmlOpened;
+      fixtureEl.innerHTML = toastHtmlVisible;
 
       const element = fixtureEl.querySelector('.ToastBar') as HTMLElement;
       const toast = new Toast(element);
@@ -97,16 +104,19 @@ describe('Toast', () => {
 
       const hideSpy = jest.spyOn(Toast.prototype, 'hide');
 
-      await toast.hide();
+      toast.hide();
 
       expect(hideSpy).toHaveBeenCalled();
       expect(trigger).toHaveAttribute(ATTRIBUTE_ARIA_EXPANDED, 'false');
       expect(element).toHaveClass(CLASS_NAME_HIDDEN);
       expect(element).toHaveClass(CLASS_NAME_TRANSITIONING);
+      expect(element).not.toHaveClass(CLASS_NAME_VISIBLE);
 
-      EventHandler.trigger(element, 'transitionend');
+      EventHandler.trigger(element, 'transitionend', { propertyName: SLOWEST_TRANSITION_PROPERTY_NAME });
 
-      expect(fixtureEl.querySelector('.ToastBar')).toBeNull();
+      setTimeout(() => {
+        expect(fixtureEl.querySelector('.ToastBar')).toBeNull();
+      }, 0);
     });
   });
 });

@@ -11,6 +11,6 @@ $input-box-shadow-y: tokens.$space-600;
 $input-box-shadow-before: inset $input-box-shadow-x $input-box-shadow-y
     form-fields-theme.$inline-field-input-color-checked;
 $input-box-shadow-disabled: inset $input-box-shadow-x $input-box-shadow-y form-fields-theme.$input-color-disabled;
-$input-transition-duration: transitions.$duration-fast;
+$input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
 $input-focus-shadow: tokens.$focus;

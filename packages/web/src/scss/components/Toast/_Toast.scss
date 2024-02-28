@@ -65,14 +65,31 @@
 // 7. The toast queue element is in place so we can reverse the visual order of child toast messages when vertical
 //    alignment is set to `bottom`. Reversing order of all child elements is only possible with flex containers.
 //
-// 8. Generate:
+// 8. Put a gap between all items in the queue.
+//
+// 9. Visible items.
+//
+// 10. Collapsed items:
+//
+//    a) first,
+//    b) second,
+//    c) both collapsed and invisible items.
+//
+//    Using Sass variable as a constant for the sake of readability. A different value would require code generation.
+//
+// 11. Invisible items.
+//
+// 12. Generate:
 //
 //    a) horizontal (x) and
 //    b) vertical (y) alignment classes for each breakpoint.
 
 @use 'sass:map';
+@use 'sass:math';
 @use '../../tools/breakpoint';
 @use 'theme';
+
+$_queue-collapsed-visible-limit: 2; // 10.
 
 .Toast {
     --toast-padding-x: #{theme.$padding-x};
@@ -106,23 +123,81 @@
 .Toast__queue {
     display: flex;
     flex-direction: var(--toast-queue-direction, column-reverse); // 7.
-    row-gap: theme.$gap;
     align-self: var(--toast-alignment-y, end); // 2.b
     align-items: var(--toast-alignment-x, center); // 2.a
+}
+
+// 8.
+// stylelint-disable-next-line selector-max-universal -- We want to target all children.
+.Toast__queue > * {
+    margin-block: var(--toast-bar-margin-top, 0) var(--toast-bar-margin-bottom, 0);
+}
+
+// 9.
+.Toast--collapsible > .Toast__queue > :nth-last-child(-n + #{theme.$queue-collapse-after}) {
+    z-index: 1;
+}
+
+// 10.a
+.Toast--collapsible
+    > .Toast__queue
+    > :nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit - 1}) {
+    scale: 0.95;
+}
+
+// 10.b
+.Toast--collapsible
+    > .Toast__queue
+    > :nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit}) {
+    opacity: 0.5;
+    scale: 0.9;
+}
+
+// 10.c
+.Toast--collapsible > .Toast__queue > :nth-last-child(n + #{theme.$queue-collapse-after + 1}) {
+    --toast-bar-pointer-events: none;
+
+    max-height: 0;
+}
+
+// 11.
+.Toast--collapsible
+    > .Toast__queue
+    > :nth-last-child(n + #{theme.$queue-collapse-after + $_queue-collapsed-visible-limit + 1}) {
+    margin-block: 0;
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.8;
 }
 
 @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
     $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
 
+    .Toast--#{$infix}top {
+        --toast-bar-margin-bottom: #{theme.$queue-gap};
+    }
+
+    .Toast--#{$infix}bottom {
+        --toast-bar-margin-top: #{theme.$queue-gap};
+    }
+
+    .Toast--#{$infix}left {
+        --toast-transform-origin-x: #{math.div(theme.$bar-max-width, 2)};
+    }
+
+    .Toast--#{$infix}right {
+        --toast-transform-origin-x: calc(100% - #{math.div(theme.$bar-max-width, 2)});
+    }
+
     @include breakpoint.up($breakpoint-value) {
-        // 8.a
+        // 12.a
         @each $alignment-name, $alignment-value in theme.$alignments-x {
             .Toast--#{$infix}#{$alignment-name} {
                 --toast-alignment-x: #{$alignment-value};
             }
         }
 
-        // 8.b
+        // 12.b
         @each $alignment-name, $alignment-value in theme.$alignments-y {
             .Toast--#{$infix}#{$alignment-name} {
                 --toast-alignment-y: #{$alignment-value};
