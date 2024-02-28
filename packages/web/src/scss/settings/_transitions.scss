@@ -1,7 +1,13 @@
 @use '@tokens' as tokens;
 
-$duration-fast: 0.125s;
-$duration-medium: 0.25s;
+$_coefficient: 1; // Tweak this to adjust the duration of all transitions during development.
+
+$duration-100: $_coefficient * 0.125s;
+$duration-200: $_coefficient * 0.25s;
+$duration-300: $_coefficient * 0.5s;
+$duration-400: $_coefficient * 0.75s;
+$duration-500: $_coefficient * 1s;
+$duration-600: $_coefficient * 1.25s;
 
 $timing-eased-out: ease-out;
 $timing-eased-in-out: ease-in-out;

@@ -37,11 +37,12 @@
 }
 
 @include dictionaries.generate-colors(
-    'Button',
-    theme.$color-dictionary,
-    theme.$color-dictionary-config,
-    theme.$color-dictionary-states,
-    theme.$color-dictionary-overrides
+    $class-name: 'Button',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config,
+    $states: theme.$color-dictionary-states,
+    $overrides: theme.$color-dictionary-overrides,
+    $generate-data-attribute: true
 );
 
 @include dictionaries.generate-sizes('Button', theme.$sizes);

@@ -1,29 +1,51 @@
-// 1. Restore pointer events that have been disabled by parent `Toast` component.
-// 2. If the message is short enough, align it vertically to the center of the bar.
-// 3. Allow the action to wrap to the next line if the message is too long.
-// 4. Add margin to the action to separate it from the dismiss button.
+// 1. Define a `max-height` so the item height can be animated (which cannot be achieved with the `height` property).
+// 2. Manually set `transform-origin` so items of different widths are always correctly aligned when stacked.
+// 3. Restore pointer events that have been disabled by parent `Toast` component.
+// 4. If the message is short enough, align it vertically to the center of the bar.
+// 5. Allow the action to wrap to the next line if the message is too long.
+// 6. Add margin to the action to separate it from the dismiss button.
+// 7. Invisible items should not take up space in the queue.
 
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
 
 .ToastBar {
+    display: grid;
+    align-content: var(--toast-alignment-y);
+    justify-content: var(--toast-alignment-x);
+    max-height: theme.$bar-max-height; // 1.
+    transform-origin: var(--toast-transform-origin-x, center) bottom; // 2.
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: max-height theme.$bar-transition-duration-max-height theme.$bar-transition-timing-max-height,
+            margin theme.$bar-transition-duration-margin theme.$bar-transition-timing-margin
+                theme.$bar-transition-delay-margin,
+            visibility theme.$bar-transition-duration-opacity theme.$bar-transition-timing-opacity,
+            opacity theme.$bar-transition-duration-opacity theme.$bar-transition-timing-opacity,
+            scale theme.$bar-transition-duration-scale theme.$bar-transition-timing-scale;
+    }
+}
+
+.ToastBar__box {
     max-width: theme.$bar-max-width;
     padding: theme.$bar-padding;
     border-radius: theme.$bar-border-radius;
     box-shadow: theme.$bar-box-shadow;
-    pointer-events: initial; // 1.
+    pointer-events: var(--toast-bar-pointer-events, initial); // 3.
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: visibility, opacity;
+        transition-duration: theme.$bar-box-transition-duration;
+        transition-timing-function: theme.$bar-box-transition-timing;
+    }
 }
 
-.ToastBar--dismissible {
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast'])) > .ToastBar__box {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: theme.$bar-gap;
     align-items: start;
-}
-
-.ToastBar--dismissible > .ToastBar__content {
-    align-self: center; // 2.
 }
 
 .ToastBar__content:has(> svg:first-child) {
@@ -32,11 +54,15 @@
     column-gap: theme.$bar-content-gap;
 }
 
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast'])) .ToastBar__content {
+    align-self: center; // 4.
+}
+
 .ToastBar__message {
     @include typography.generate(theme.$bar-typography);
 
     display: flex;
-    flex-wrap: wrap; // 3.
+    flex-wrap: wrap; // 5.
     gap: theme.$bar-message-gap-y theme.$bar-message-gap-x;
 }
 
@@ -44,31 +70,25 @@
     font-weight: 400;
 }
 
-.ToastBar--dismissible .ToastBar__message > :is(a, button):last-child {
-    margin-inline-end: theme.$bar-action-margin-inline-end; // 4.
-}
-
-.ToastBar.is-transitioning {
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: visibility, opacity;
-        transition-duration: theme.$bar-transition-duration;
-        transition-timing-function: theme.$bar-transition-timing;
-    }
-}
-
-.ToastBar.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.ToastBar.is-visible {
-    visibility: visible;
-    opacity: 1;
+// stylelint-disable-next-line selector-max-specificity -- Specificity is needed to precisely target the action.
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast']))
+    .ToastBar__message
+    > :is(a, button):last-child {
+    margin-inline-end: theme.$bar-action-margin-inline-end; // 6.
 }
 
 @include dictionaries.generate-colors(
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,
     $config: theme.$color-dictionary-config,
-    $overrides: theme.$color-dictionary-overrides
+    $overrides: theme.$color-dictionary-overrides,
+    $child-selector: ' > .ToastBar__box',
+    $generate-data-attribute: true
 );
+
+.ToastBar.is-hidden {
+    max-height: 0; // 7.
+    margin-block: 0; // 7.
+    visibility: hidden;
+    opacity: 0;
+}

@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import EventHandler from '../dom/EventHandler';
 
 const triggerTransitionEnd = (element: HTMLElement) => {
@@ -26,7 +27,12 @@ const getTransitionDurationFromElement = (element: HTMLElement) => {
 const execute = (possibleCallback: (...args: unknown[]) => void, args = [], defaultValue = possibleCallback) =>
   typeof possibleCallback === 'function' ? possibleCallback(...args) : defaultValue;
 
-const executeAfterTransition = (transitionElement: HTMLElement, callback: () => void, waitForTransition = true) => {
+const executeAfterTransition = (
+  transitionElement: HTMLElement,
+  callback: () => void,
+  waitForTransition = true,
+  propertyName: CSSProperties | null = null,
+) => {
   if (!waitForTransition) {
     execute(callback);
 
@@ -38,8 +44,8 @@ const executeAfterTransition = (transitionElement: HTMLElement, callback: () => 
 
   let called = false;
 
-  const handler = (event: Event) => {
-    if (event.target !== transitionElement) {
+  const handler = (event: TransitionEvent) => {
+    if (event.target !== transitionElement || (propertyName && event.propertyName !== propertyName)) {
       return;
     }
 

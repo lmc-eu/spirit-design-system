@@ -115,6 +115,21 @@ Now use the reference from the theme in component styles:
 }
 ```
 
+## Documenting
+
+### JavaScript
+
+Our JavaScript plugins are documented in components' `README.md` files in the `src/scss` directory.
+The documentation should include these sections:
+
+- Information that a JavaScript plugin is available, usually at the top of the README.
+- JavaScript Plugin API — a list of available options and methods, including an example.
+- JavaScript Events — a list of events that the plugin emits, including an example.
+- As many examples as necessary throughout the whole README.
+
+👉 We usually document only the “key” class methods which might be also described as
+“methods that do not call any other methods”.
+
 ## Testing
 
 - `% cd <your-local-path>/spirit-design-system/packages/web`
