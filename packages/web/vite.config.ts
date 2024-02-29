@@ -30,9 +30,9 @@ export default defineConfig({
       runtimeOptions: {
         data: {
           // Get the list of components directories and pass their names to the data
-          components: getListOfNestedDirectories('src/scss/components'),
+          components: getListOfNestedDirectories('src/scss/components', 'index.html'),
           // Get the list of helpers directories and pass their names to the data
-          helpers: getListOfNestedDirectories('src/scss/helpers'),
+          helpers: getListOfNestedDirectories('src/scss/helpers', 'index.html'),
           // Get the list of icons files from the icons package and pass their names to the data without their extensions
           icons: getListOfIcons('../icons/src/svg'),
         },
