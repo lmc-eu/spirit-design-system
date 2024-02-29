@@ -49,7 +49,7 @@ describe('Stack', () => {
   });
 
   it('should render with custom spacing', () => {
-    const dom = render(<Stack hasSpacing spacing="space-1000" />);
+    const dom = render(<Stack spacing="space-1000" />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Stack--hasSpacing');
@@ -57,9 +57,7 @@ describe('Stack', () => {
   });
 
   it('should render with custom spacing for each breakpoint', () => {
-    const dom = render(
-      <Stack hasSpacing spacing={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }} />,
-    );
+    const dom = render(<Stack spacing={{ mobile: 'space-100', tablet: 'space-1000', desktop: 'space-1200' }} />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Stack--hasSpacing');
@@ -69,7 +67,7 @@ describe('Stack', () => {
   });
 
   it('should render with custom spacing for only one breakpoint', () => {
-    const dom = render(<Stack hasSpacing spacing={{ tablet: 'space-1000' }} />);
+    const dom = render(<Stack spacing={{ tablet: 'space-1000' }} />);
 
     const element = dom.container.querySelector('div') as HTMLElement;
     expect(element).toHaveClass('Stack--hasSpacing');
