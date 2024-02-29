@@ -6,8 +6,6 @@ import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
 import { getNestedDirs } from '../../scripts/build';
 
-const hiddenDemoComponents = ['Field', 'Dialog', 'Icon', 'NoSsr', 'TextFieldBase', 'VisuallyHidden'];
-
 export default defineConfig({
   // Disable HMR overlay to avoid flaky screenshots in visual regression tests
   server: {
@@ -29,7 +27,7 @@ export default defineConfig({
           components: [
             ...readdirSync('src/components', { withFileTypes: true })
               .filter((item) => item.isDirectory())
-              .filter((item) => !hiddenDemoComponents.includes(item.name))
+              .filter((item) => readdirSync(`src/components/${item.name}`).includes('index.html'))
               .map((item) => item.name),
           ],
         },
