@@ -11,7 +11,7 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'Stack' -%}
 {%- set _rootBottomDividerClassName = _hasEndDivider ? _spiritClassPrefix ~ 'Stack--hasEndDivider' : null -%}
 {%- set _rootMiddleDividersClassName = _hasIntermediateDividers ? _spiritClassPrefix ~ 'Stack--hasIntermediateDividers' : null -%}
-{%- set _rootSpacingClassName = _hasSpacing ? _spiritClassPrefix ~ 'Stack--hasSpacing' : null -%}
+{%- set _rootSpacingClassName = _hasSpacing or _spacing is not null ? _spiritClassPrefix ~ 'Stack--hasSpacing' : null -%}
 {%- set _rootTopDividerClassName = _hasStartDivider ? _spiritClassPrefix ~ 'Stack--hasStartDivider' : null -%}
 
 {# Miscellaneous #}
