@@ -3,7 +3,7 @@ import DocsBox from '../../../../docs/DocsBox';
 import Stack from '../Stack';
 
 const StackBlocksWithCustomSpacing = () => (
-  <Stack elementType="ul" hasSpacing spacing="space-1200">
+  <Stack elementType="ul" spacing="space-1200">
     {[1, 2, 3].map((i) => (
       <li key={`stack-custom-spacing-${i}`}>
         <DocsBox>Block {i}</DocsBox>

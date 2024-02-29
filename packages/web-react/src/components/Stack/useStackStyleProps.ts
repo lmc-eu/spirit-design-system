@@ -27,7 +27,7 @@ export function useStackStyleProps<T extends ElementType = 'div'>(props: SpiritS
   const classProps = classNames(StackClass, {
     [StackBottomDividerClass]: hasEndDivider,
     [StackMiddleDividersClass]: hasIntermediateDividers,
-    [StackSpacingClass]: hasSpacing,
+    [StackSpacingClass]: hasSpacing || spacing,
     [StackTopDividerClass]: hasStartDivider,
   });
 
