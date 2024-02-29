@@ -9,7 +9,7 @@ const IGNORED_TESTS = [
 ];
 
 const runComponentCompareTests = (testConfig) => {
-  const { packageDir, componentsDir, srcDir = '', ignoredComponents = [], packageName } = testConfig;
+  const { packageDir, componentsDir, srcDir = '', packageName } = testConfig;
   if (packageName) {
     const formattedPackageName = packageName
       .split('-')
@@ -19,7 +19,11 @@ const runComponentCompareTests = (testConfig) => {
     test.describe(`Demo ${formattedPackageName} Components`, () => {
       const componentDirs = readdirSync(`${packageDir}${srcDir}${componentsDir}`, { withFileTypes: true })
         .filter((item) => item.isDirectory())
-        .filter((item) => !ignoredComponents.includes(item.name))
+        .filter((item) =>
+          readdirSync(`${packageDir}${srcDir}${componentsDir}/${item.name}`).includes(
+            packageName !== 'web-twig' ? 'index.html' : `${item.name}.stories.twig`,
+          ),
+        )
         .filter((item) => !IGNORED_TESTS.includes(item.name))
         .map((item) => item.name.toLowerCase());
 
@@ -56,14 +60,12 @@ const testConfigs = [
   },
   {
     componentsDir: '/src/components',
-    ignoredComponents: ['Field', 'Dialog', 'Icon', 'TextFieldBase', 'VisuallyHidden'],
     packageDir: 'packages/web-react',
     packageName: 'web-react',
   },
   // Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
   !isTestingEnvironment() && {
     componentsDir: '/components',
-    ignoredComponents: ['Field', 'Icon', 'TextFieldBase', 'VisuallyHidden'],
     packageDir: 'packages/web-twig',
     packageName: 'web-twig',
     srcDir: '/src/Resources',
