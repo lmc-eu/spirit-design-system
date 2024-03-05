@@ -1,7 +1,7 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
 import EventHandler from '../dom/EventHandler';
 import Collapse from '../Collapse';
-import { CLASSNAME_OPEN, CLASSNAME_TRANSITION } from '../constants';
+import { CLASS_NAME_OPEN, CLASS_NAME_TRANSITIONING } from '../constants';
 
 describe('Collapse', () => {
   let fixtureEl: Element;
@@ -75,10 +75,10 @@ describe('Collapse', () => {
       await collapse.show();
 
       expect(element.getAttribute('aria-expanded')).toBe('true');
-      expect(target).toHaveClass(CLASSNAME_TRANSITION);
+      expect(target).toHaveClass(CLASS_NAME_TRANSITIONING);
 
       EventHandler.trigger(target, 'transitionend');
-      expect(target).toHaveClass(CLASSNAME_OPEN);
+      expect(target).toHaveClass(CLASS_NAME_OPEN);
     });
   });
 
@@ -197,16 +197,16 @@ describe('Collapse', () => {
       const collapse0 = new Collapse(element0);
 
       expect(target0).toHaveClass('Collapse');
-      expect(target1).toHaveClass(CLASSNAME_OPEN);
+      expect(target1).toHaveClass(CLASS_NAME_OPEN);
 
       await collapse0.show();
 
-      expect(target0).toHaveClass(CLASSNAME_TRANSITION);
+      expect(target0).toHaveClass(CLASS_NAME_TRANSITIONING);
 
       EventHandler.trigger(target0, 'transitionend');
       EventHandler.trigger(target1, 'transitionend');
 
-      expect(target0).toHaveClass(CLASSNAME_OPEN);
+      expect(target0).toHaveClass(CLASS_NAME_OPEN);
       expect(target1).toHaveClass('Collapse');
     });
   });

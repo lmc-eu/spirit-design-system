@@ -1,6 +1,7 @@
 @use 'sass:list';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
+@use '../../settings/transitions';
 
 $alignments-x: (
     left: start,
@@ -29,6 +30,8 @@ $bar-content-gap: tokens.$space-500;
 $bar-message-gap-x: tokens.$space-700;
 $bar-message-gap-y: tokens.$space-500;
 $bar-action-margin-inline-end: tokens.$space-400;
+$bar-transition-duration: transitions.$duration-medium;
+$bar-transition-timing: transitions.$timing-eased-out;
 
 $color-dictionary: list.join('inverted', dictionaries.$emotion-colors);
 $color-dictionary-config: (

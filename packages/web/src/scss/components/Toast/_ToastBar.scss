@@ -48,6 +48,24 @@
     margin-inline-end: theme.$bar-action-margin-inline-end; // 4.
 }
 
+.ToastBar.is-transitioning {
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: visibility, opacity;
+        transition-duration: theme.$bar-transition-duration;
+        transition-timing-function: theme.$bar-transition-timing;
+    }
+}
+
+.ToastBar.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.ToastBar.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
 @include dictionaries.generate-colors(
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,

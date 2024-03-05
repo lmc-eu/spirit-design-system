@@ -7,6 +7,20 @@ Toast is a composition of a few subcomponents:
 - [Toast](#toast)
   - [ToastBar](#toastbar)
 
+## JavaScript Plugin
+
+For full functionality, you need to provide Spirit JavaScript, which will handle toggling of the Toast component:
+
+```html
+<script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
+```
+
+You will find the [full documentation](#javascript-plugin-api) of the plugin below on this page.
+
+Please consult the [main README][web-readme] for how to include JavaScript plugins.
+
+Or, feel free to write the controlling script yourself.
+
 ## Toast
 
 The Toast component is a container responsible for positioning the [ToastBar](#toastbar) component. It is capable of
@@ -187,6 +201,25 @@ For example:
 </div>
 ```
 
+### Opening the ToastBar
+
+Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
+
+```html
+<button
+  type="button"
+  class="Button Button--primary Button--medium"
+  data-spirit-toggle="toast"
+  data-spirit-target="#toast-example"
+  aria-controls="toast-example"
+  aria-expanded="false"
+>
+  Open Modal
+</button>
+```
+
+👉 Advanced toast queue control is not yet implemented.
+
 ### Dismissible ToastBar
 
 To make the ToastBar dismissible, add the `ToastBar--dismissible` modifier class, a unique `id` attribute, and a close
@@ -201,6 +234,7 @@ button:
     type="button"
     class="Button Button--small Button--square Button--inverted"
     data-spirit-dismiss="toast"
+    data-spirit-target="#my-dismissible-toast"
     aria-controls="my-dismissible-toast"
     aria-expanded="true"
   >
@@ -213,8 +247,6 @@ button:
 ```
 
 👉 Please keep in mind that the Button color should match the ToastBar color.
-
-⚠️ The JavaScript functionality for dismissing the ToastBar is yet to be implemented.
 
 ## Full Example
 
@@ -252,6 +284,42 @@ button:
 <!-- Toast: end -->
 ```
 
+## JavaScript Plugin API
+
+| Method                | Description                                                                                                                                           |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `getInstance`         | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element.                                                    |
+| `getOrCreateInstance` | _Static_ method which allows you to get the Toast instance associated with a ToastBar DOM element, or create a new one in case it wasn’t initialized. |
+| `hide`                | Hides the toast element. Returns to the caller before the toast has actually been hidden (i.e. before the `hidden.toast` event occurs).               |
+| `show`                | Reveals the toast element. **Returns to the caller before the toast has actually been shown** (i.e. before the `shown.toast` event occurs).           |
+
+```js
+const toast = Toast.getInstance('#example'); // Returns a toast instance
+
+toast.show();
+```
+
+### JavaScript Events
+
+| Method         | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| `hidden.toast` | This event is fired when the `hide` instance has finished being hidden from the user. |
+| `hide.toast`   | This event is fired immediately when the `hide` instance method has been called.      |
+| `show.toast`   | This event fires immediately when the `show` instance method is called.               |
+| `shown.toast`  | This event is fired when the `show` instance has finished being shown to the user.    |
+
+```js
+const myToastEl = document.getElementById('myToast');
+const toast = Toast.getOrCreateInstance(myToastEl);
+
+myToastEl.addEventListener('hidden.toast', () => {
+  // Do something…
+});
+
+toast.hide();
+```
+
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
 [mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment

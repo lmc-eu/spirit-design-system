@@ -8,6 +8,7 @@ import Offcanvas from './Offcanvas';
 import Password from './Password';
 import ScrollView from './ScrollView';
 import Tabs from './Tabs';
+import Toast from './Toast';
 import Tooltip from './Tooltip';
 import * as constants from './constants';
 import * as dom from './dom';
@@ -24,6 +25,7 @@ export default {
   Password,
   ScrollView,
   Tabs,
+  Toast,
   Tooltip,
   constants,
   dom,
