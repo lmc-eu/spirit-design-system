@@ -1,11 +1,11 @@
 import BaseComponent from './BaseComponent';
 import {
-  ARIA_CONTROLS_ATTRIBUTE,
-  ARIA_EXPANDED_ATTRIBUTE,
-  CLASSNAME_OPEN,
-  CLASSNAME_TRANSITION,
-  NAME_DATA_TARGET,
-  NAME_DATA_TOGGLE,
+  ATTRIBUTE_ARIA_CONTROLS,
+  ATTRIBUTE_ARIA_EXPANDED,
+  ATTRIBUTE_DATA_TARGET,
+  ATTRIBUTE_DATA_TOGGLE,
+  CLASS_NAME_OPEN,
+  CLASS_NAME_TRANSITIONING,
 } from './constants';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
@@ -48,8 +48,8 @@ class Collapse extends BaseComponent {
     };
     this.state = {
       open:
-        this.element.hasAttribute(ARIA_EXPANDED_ATTRIBUTE) &&
-        this.element.getAttribute(ARIA_EXPANDED_ATTRIBUTE) === 'true',
+        this.element.hasAttribute(ATTRIBUTE_ARIA_EXPANDED) &&
+        this.element.getAttribute(ATTRIBUTE_ARIA_EXPANDED) === 'true',
       init: false,
     };
 
@@ -74,7 +74,7 @@ class Collapse extends BaseComponent {
       }
 
       for (const item of children) {
-        const itemTrigger = SelectorEngine.findOne(`[${NAME_DATA_TOGGLE}="${NAME}"]`, item);
+        const itemTrigger = SelectorEngine.findOne(`[${ATTRIBUTE_DATA_TOGGLE}="${NAME}"]`, item);
         const instance = Collapse.getInstance(itemTrigger);
 
         if (instance?.state?.open && itemTrigger !== trigger) {
@@ -113,10 +113,10 @@ class Collapse extends BaseComponent {
   }
 
   updateTriggerElement(open: boolean = this.state.open) {
-    const triggers = SelectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
+    const triggers = SelectorEngine.findAll(`[${ATTRIBUTE_DATA_TARGET}="${this.meta.id}"]`);
     const updateElement = (element: Element | HTMLElement) => {
-      element.setAttribute(ARIA_CONTROLS_ATTRIBUTE, this.meta.id);
-      element.setAttribute(ARIA_EXPANDED_ATTRIBUTE, String(open));
+      element.setAttribute(ATTRIBUTE_ARIA_CONTROLS, this.meta.id);
+      element.setAttribute(ATTRIBUTE_ARIA_EXPANDED, String(open));
       if (this.meta.hideOnCollapse && open) {
         element.remove();
         this.appendNodeToParent();
@@ -140,11 +140,11 @@ class Collapse extends BaseComponent {
       }
       this.adjustCollapsibleElementHeight(open);
       if (this.state.init) {
-        this.target?.classList.add(CLASSNAME_TRANSITION);
+        this.target?.classList.add(CLASS_NAME_TRANSITIONING);
       }
       executeAfterTransition(this.target, () => {
-        this.target?.classList.remove(CLASSNAME_TRANSITION);
-        this.target?.classList.toggle(CLASSNAME_OPEN, open);
+        this.target?.classList.remove(CLASS_NAME_TRANSITIONING);
+        this.target?.classList.toggle(CLASS_NAME_OPEN, open);
         if (open) {
           this.target?.setAttribute('style', 'height: 100%');
         } else {
@@ -188,7 +188,7 @@ class Collapse extends BaseComponent {
   }
 
   initEvents() {
-    const triggers = SelectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
+    const triggers = SelectorEngine.findAll(`[${ATTRIBUTE_DATA_TARGET}="${this.meta.id}"]`);
     if (triggers.length === 1) {
       EventHandler.on(this.element, 'click', () => this.toggle());
     } else {
@@ -197,7 +197,7 @@ class Collapse extends BaseComponent {
   }
 
   destroyEvents() {
-    const triggers = SelectorEngine.findAll(`[${NAME_DATA_TARGET}="${this.meta.id}"]`);
+    const triggers = SelectorEngine.findAll(`[${ATTRIBUTE_DATA_TARGET}="${this.meta.id}"]`);
     if (triggers.length === 1) {
       EventHandler.off(this.element, 'click', () => this.toggle());
     } else {

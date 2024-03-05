@@ -72,10 +72,25 @@
     </form>
     <!-- Toast and visual keyboard demo: end -->
 
+    <!-- Toast show and hide demo: start -->
+    <fieldset style="border: 0;">
+      <legend class="mb-500">Show the toast prepared in the DOM:</legend>
+      <button
+        class="Button Button--medium Button--primary"
+        data-spirit-toggle="toast"
+        data-spirit-target="#my-hidden-dismissible-toast"
+        onclick="this.setAttribute('disabled', 'disabled')"
+        aria-expanded="false"
+      >
+        Show the hidden toast
+      </button>
+    </fieldset>
+    <!-- Toast show and hide demo: end -->
+
     <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
       <div class="Toast__queue">
 
-        <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible">
+        <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-open">
           <div class="ToastBar__content">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#check-plain" />
@@ -89,6 +104,7 @@
             type="button"
             class="Button Button--small Button--square Button--success"
             data-spirit-dismiss="toast"
+            data-spirit-target="#my-dismissible-toast"
             aria-controls="my-dismissible-toast"
             aria-expanded="true"
           >
@@ -113,8 +129,33 @@
             type="button"
             class="Button Button--small Button--square Button--informative"
             data-spirit-dismiss="toast"
+            data-spirit-target="#my-other-dismissible-toast"
             aria-controls="my-other-dismissible-toast"
             aria-expanded="true"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </div>
+
+        <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
+          <div class="ToastBar__content">
+            <svg width="20" height="20" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#warning" />
+            </svg>
+            <div class="ToastBar__message">
+              I was hidden and you exposed me!
+            </div>
+          </div>
+          <button
+            type="button"
+            class="Button Button--small Button--square Button--warning"
+            data-spirit-dismiss="toast"
+            data-spirit-target="#my-hidden-dismissible-toast"
+            aria-controls="my-hidden-dismissible-toast"
+            aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#close" />

@@ -1,9 +1,10 @@
-export const ARIA_EXPANDED_ATTRIBUTE = 'aria-expanded';
-export const ARIA_CONTROLS_ATTRIBUTE = 'aria-controls';
+export const ATTRIBUTE_ARIA_EXPANDED = 'aria-expanded';
+export const ATTRIBUTE_ARIA_CONTROLS = 'aria-controls';
+export const ATTRIBUTE_DATA_DISMISS = 'data-spirit-dismiss';
+export const ATTRIBUTE_DATA_TARGET = 'data-spirit-target';
+export const ATTRIBUTE_DATA_TOGGLE = 'data-spirit-toggle';
 
-export const NAME_DATA_TOGGLE = 'data-spirit-toggle';
-export const NAME_DATA_TARGET = 'data-spirit-target';
-
-export const CLASSNAME_EXPANDED = 'is-expanded';
-export const CLASSNAME_OPEN = 'is-open';
-export const CLASSNAME_TRANSITION = 'is-transitioning';
+export const CLASS_NAME_HIDDEN = 'is-hidden';
+export const CLASS_NAME_OPEN = 'is-open';
+export const CLASS_NAME_TRANSITIONING = 'is-transitioning';
+export const CLASS_NAME_VISIBLE = 'is-visible';
