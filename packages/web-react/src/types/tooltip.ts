@@ -16,11 +16,14 @@ export interface TooltipHandlingProps {
   onClose?: (event: ClickEvent) => void;
 }
 
+// @deprecated Off placement will be removed in the next major version
+type TooltipOffPlacement = 'off';
+
 export interface BaseTooltipProps extends ChildrenProps, StyleProps {
   closeLabel?: string;
   id?: string;
   isDismissible?: boolean;
-  placement?: PlacementDictionaryType | 'off';
+  placement?: PlacementDictionaryType | TooltipOffPlacement;
 }
 
 export interface TooltipWrapperProps extends ChildrenProps, StyleProps {}
