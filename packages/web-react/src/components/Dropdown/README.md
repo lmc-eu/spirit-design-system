@@ -1,6 +1,6 @@
 # Dropdown
 
-⚠️ Dropdown component is [deprecated][deprecated] and will be removed in the next major version. Please use "DropdownModern" component instead.
+⚠️ Dropdown component is [deprecated][readme-deprecations] and will be removed in the next major version. Please use "DropdownModern" component instead.
 This is the React implementation of the [Dropdown][dropdown] component.
 
 ## Usage
@@ -59,7 +59,7 @@ and [escape hatches][readme-escape-hatches].
 
 # DropdownModern
 
-⚠️ `DropdownModern` component is [deprecated][deprecated] and will be renamed to `Dropdown` in the next major version.
+⚠️ `DropdownModern` component is [deprecated][readme-deprecations] and will be renamed to `Dropdown` in the next major version.
 
 ## Usage
 
@@ -168,7 +168,6 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [dropdownbreakpoint]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/types/dropdown.ts#L11
