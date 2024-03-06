@@ -117,6 +117,14 @@ and [escape hatches][readme-escape-hatches].
 
 ## Advanced Positioning with Floating UI
 
+### ⚠️ DEPRECATION NOTICE
+
+The `off` placement is [deprecated][readme-deprecations] and will be removed in the next major version.
+Please use the `TooltipModern` component instead, which is the successor of the `Tooltip` component and
+provides improved functionality.
+
+[What are deprecations?][readme-deprecations]
+
 ### Basic
 
 ```javascript
@@ -230,7 +238,7 @@ const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, d
 
 # TooltipModern
 
-⚠️ `TooltipModern` component is [deprecated] and will be renamed to `Tooltip` in the next major version.
+⚠️ `TooltipModern` component is [deprecated][readme-deprecations] and will be renamed to `Tooltip` in the next major version.
 
 ## Usage
 

@@ -41,6 +41,14 @@ export const useTooltipStyleProps = (props: UseTooltipStyleProps): UseTooltipSty
     },
   });
 
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: placement === 'off',
+    componentName: 'Tooltip',
+    customText:
+      'The "off" value of property "placement" is deprecated and will be removed in the next major version. Use TooltipModern component instead.',
+  });
+
   const tooltipClass = useClassNamePrefix('Tooltip');
   const tooltipWrapperClass = `${tooltipClass}Wrapper`;
   const arrowClass = `${tooltipClass}__arrow`;
