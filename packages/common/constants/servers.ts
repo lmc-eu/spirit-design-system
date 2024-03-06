@@ -37,9 +37,9 @@ const SERVERS = {
     },
   },
   TESTING: {
-    web: 'https://spirit-design-system-demo.netlify.app/',
-    'web-react': 'https://spirit-design-system-react.netlify.app/',
-    'web-twig': '',
+    web: process.env.DEMO_WEB_URL || 'https://spirit-design-system-demo.netlify.app/',
+    'web-react': process.env.DEMO_WEB_REACT_URL || 'https://spirit-design-system-react.netlify.app/',
+    'web-twig': process.env.DEMO_WEB_TWIG_URL || '',
   },
 };
 
