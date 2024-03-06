@@ -9,8 +9,26 @@ env:
   NODE_ENV: testing
 
 jobs:
+  haslabel:
+    name: analyse labels
+    runs-on: ubuntu-latest
+    outputs:
+      e2e: ${{ steps.haslabel.outputs.labeled-run-visual-tests }}
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ github.token }}
+      - uses: actions/checkout@v4
+      - name: Labeled to e2e
+        id: haslabel
+        uses: DanielTamkin/HasLabel@v1.0.4
+        with:
+          contains: 'run-visual-tests'
+
   test:
-    if: ${{ (github.event.label.name == 'run-visual-tests') || (github.ref == 'refs/heads/main') }}
+    needs: hasLabel
+    if: ${{ needs.haslabel.outputs.e2e || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
     container:
       image: mcr.microsoft.com/playwright:v1.40.1-jammy
@@ -29,8 +47,24 @@ jobs:
         with:
           useRollingCache: true
 
+      # Wait for the Netlify preview URL to be ready
+      - name: Wait for Netlify Deploy
+        uses: mmazzarolo/wait-for-netlify-action@8a7a8d8cf5b313c916d805b76cc498380062d268
+        id: get-netlify-preview-url
+        continue-on-error: true
+        with:
+          site_id: ${{ secrets.NETLIFY_SITE_SPIRIT_DESIGN_SYSTEM }}
+          max_timeout: 1
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+      # The Netlify preview URL is now available
+      # as `steps.get-netlify-preview-url.outputs.url`
+
       - name: Run Playwright tests
-        run: HOME=/root yarn playwright test
+        run: yarn playwright test
+        env:
+          HOME: /root
+          WEBSITE_URL: ${{ steps.get-netlify-preview-url.outputs.url }}
 
       - name: Notify slack if tests fail
         id: Slack
@@ -101,3 +135,21 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      - name: Comment PR with artifact URL
+        if: failure()
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const artifactName = 'playwright-report';
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}/artifacts/${artifactName}`;
+            const issue_number = context.issue.number;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number,
+              body: `Here is the URL of the uploaded artifact: ${artifactUrl}`
+            });
