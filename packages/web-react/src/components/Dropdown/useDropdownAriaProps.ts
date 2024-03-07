@@ -56,7 +56,7 @@ export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropd
   useDeprecationMessage({
     method: 'property',
     trigger: !!deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
-    componentName: 'Tooltip',
+    componentName: 'Dropdown',
     propertyProps: {
       deprecatedValue: placement,
       newValue: deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
