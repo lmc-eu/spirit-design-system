@@ -1,6 +1,6 @@
 import React, { CSSProperties, ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
-import { useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { ModalDialogProps, ModalDialogElementType } from '../../types';
 import { useModalStyleProps } from './useModalStyleProps';
 
@@ -28,6 +28,13 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
 
   const { classProps } = useModalStyleProps({ isDockedOnMobile, isExpandedOnMobile, isScrollable });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
+
+  useDeprecationMessage({
+    method: 'custom',
+    trigger: isExpandedOnMobile === undefined,
+    componentName: 'ModalDialog',
+    customText: 'The "isExpandedOnMobile" property will be enabled by default in the next major version.',
+  });
 
   const customizedHeightStyle: CustomizedHeightCSSProperties = {
     '--modal-max-height-tablet': maxHeightFromTabletUp,

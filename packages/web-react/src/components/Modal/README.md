@@ -100,6 +100,12 @@ dialog shrinks to fit the height of its content (if smaller than the viewport).
 <ModalDialog isExpandedOnMobile>…</ModalDialog>
 ```
 
+#### ⚠️ DEPRECATION NOTICE
+
+The `isExpandedOnMobile` prop will be set to `true` by default in the next major release and the ModalDialog will be
+expanded on mobile by default. It will be possible to re-collapse the inside by setting the `isExpandedOnMobile` prop
+to `false` value.
+
 ### Custom Height
 
 By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
@@ -140,16 +146,16 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 
 ### API
 
-| Name                          | Type                  | Default   | Required | Description                                                                                                                              |
-| ----------------------------- | --------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                                            |
-| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                                 |
-| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile |
-| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | ModalDialog shrinks to fit the height of its content                                                                                     |
-| `isScrollable`                | `bool`                | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content.               |
-| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                    |
-| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                                                         |
-| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                                                    |
+| Name                          | Type                  | Default   | Required | Description                                                                                                                                                 |
+| ----------------------------- | --------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                                                               |
+| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                                                    |
+| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile                    |
+| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | ModalDialog shrinks to fit the height of its content. [**DEPRECATED**][readme-deprecations] the default value will be set to true in the next major version |
+| `isScrollable`                | `bool`                | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content.                                  |
+| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                                       |
+| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                                                                            |
+| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                                                                       |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
