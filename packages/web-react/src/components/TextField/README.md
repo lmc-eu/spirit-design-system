@@ -42,6 +42,52 @@ TextField with password toggle (button to reveal the password):
 />
 ```
 
+## Input Width
+
+There are several ways to adjust the input width:
+
+### `inputWidth` Attribute
+
+The `inputWidth` attribute is supported on inputs of the following types: `email`,
+`password`, `tel`, `text`, `url`.
+
+```jsx
+<TextField
+  id="textFieldWidthCh"
+  inputWidth={4}
+  label="Input width wide 4 characters"
+  name="textFieldWidthCh"
+  placeholder="Placeholder"
+  type="text"
+/>
+```
+
+This option is generally recommended for inputs with a limited value length
+(e.g. numeric representation of day, month, year). Supported values are `2`, `3`
+and `4` (characters).
+
+### `--width` CSS Custom Property
+
+If you need any other value or prefer using `em` unit
+instead of default `ch`, define a `--width` CSS custom property on the `<input>`
+element via `inputProps` attribute:
+
+```jsx
+<TextField
+  id="textFieldWidthCh"
+  inputProps="{{ { style: '--width: 10ch' } }}"
+  label="Input width wide 10 characters"
+  name="textFieldWidthCh"
+  placeholder="Placeholder"
+  type="text"
+/>
+```
+
+### Grid
+
+For other use cases (wider input or input with unknown value length), we
+recommend placing them inside the Grid component and set `isFluid` to `true` to fill the available space.
+
 ## API
 
 | Name                | Type                                                                        | Default | Required | Description                                                             |
@@ -50,8 +96,9 @@ TextField with password toggle (button to reveal the password):
 | `hasPasswordToggle` | `bool`                                                                      | —       | ✔        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
 | `id`                | `string`                                                                    | —       | ✕        | Input and label identification                                          |
-| `inputWidth`        | `number`                                                                    | —       | ✕        | Input width                                                             |
+| `inputWidth`        | `[2, 3, 4]`                                                                 | —       | ✕        | Input width in the characters                                           |
 | `isDisabled`        | `bool`                                                                      | —       | ✕        | Whether is field disabled                                               |
+| `isFluid`           | `bool`                                                                      | —       | ✕        | If true, the element spans to the full width of its parent              |
 | `isLabelHidden`     | `bool`                                                                      | —       | ✕        | Whether is label hidden                                                 |
 | `isRequired`        | `bool`                                                                      | —       | ✕        | Whether is field required                                               |
 | `label`             | `string`                                                                    | —       | ✕        | Label text                                                              |

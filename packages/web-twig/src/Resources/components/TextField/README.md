@@ -56,6 +56,52 @@ Without lexer:
 }} %}
 ```
 
+## Input Width
+
+There are several ways to adjust the input width:
+
+### `inputWidth` Attribute
+
+The `inputWidth` attribute is supported on inputs of the following types: `email`,
+`password`, `tel`, `text`, `url`.
+
+```twig
+<TextField
+  id="textFieldWidthCh"
+  inputWidth="4"
+  label="Input width wide 4 characters"
+  name="textFieldWidthCh"
+  placeholder="Placeholder"
+  type="text"
+/>
+```
+
+This option is generally recommended for inputs with a limited value length
+(e.g. numeric representation of day, month, year). Supported values are `2`, `3`
+and `4` (characters).
+
+### `--width` CSS Custom Property
+
+If you need any other value or prefer using `em` unit
+instead of default `ch`, define a `--width` CSS custom property on the `<input>`
+element via `inputProps` attribute:
+
+```twig
+<TextField
+  id="textFieldWidthCh"
+  inputProps="{{ { style: '--width: 10ch' } }}"
+  label="Input width wide 10 characters"
+  name="textFieldWidthCh"
+  placeholder="Placeholder"
+  type="text"
+/>
+```
+
+### Grid
+
+For other use cases (wider input or input with unknown value length), we
+recommend placing them inside the Grid component and set `isFluid` to `true` to fill the available space.
+
 ## API
 
 | Name                    | Type                                                                        | Default | Required | Description                                                             |
@@ -65,7 +111,7 @@ Without lexer:
 | `helperText`            | `string`                                                                    | `null`  | ✕        | Custom helper text                                                      |
 | `id`                    | `string`                                                                    | —       | ✔        | Input and label identification                                          |
 | `inputProps`            | `string[]`                                                                  | `[]`    | ✕        | Pass additional attributes to the input element                         |
-| `inputWidth`            | `number`                                                                    | `null`  | ✕        | Input width                                                             |
+| `inputWidth`            | `[2, 3, 4]`                                                                 | `null`  | ✕        | Input width in the characters                                           |
 | `isDisabled`            | `bool`                                                                      | `false` | ✕        | If true, input is disabled                                              |
 | `isFluid`               | `bool`                                                                      | `false` | ✕        | If true, the element spans to the full width of its parent              |
 | `isLabelHidden`         | `bool`                                                                      | `false` | ✕        | If true, label is hidden                                                |
