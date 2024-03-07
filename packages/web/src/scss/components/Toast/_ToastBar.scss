@@ -48,7 +48,8 @@
     margin-inline-end: theme.$bar-action-margin-inline-end; // 4.
 }
 
-.ToastBar.is-transitioning {
+.ToastBar.is-transitioning,
+[data-spirit-element='toast-bar'].is-transitioning {
     @media (prefers-reduced-motion: no-preference) {
         transition-property: visibility, opacity;
         transition-duration: theme.$bar-transition-duration;
@@ -56,12 +57,14 @@
     }
 }
 
-.ToastBar.is-hidden {
+.ToastBar.is-hidden,
+[data-spirit-element='toast-bar'].is-hidden {
     visibility: hidden;
     opacity: 0;
 }
 
-.ToastBar.is-visible {
+.ToastBar.is-visible,
+[data-spirit-element='toast-bar'].is-visible {
     visibility: visible;
     opacity: 1;
 }

@@ -87,11 +87,72 @@
     </fieldset>
     <!-- Toast show and hide demo: end -->
 
-    <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
-      <div class="Toast__queue">
-        <div class="Toast__item">
+    <!-- Dynamic queue demo: start -->
+    <script>
+      const QUEUE_ELEMENT_SELECTOR = '[data-spirit-element="toast-queue"]';
+      const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
+      const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
 
-          <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-open">
+      const addDynamicToast = () => {
+        const id = `dynamic-toast-${Date.now()}`;
+
+        const toastQueueElement = document.querySelector(QUEUE_ELEMENT_SELECTOR);
+        const snippetTemplate = document.querySelector(TEMPLATE_ELEMENT_SELECTOR);
+
+        const snippet = snippetTemplate?.content.cloneNode(true);
+
+        const item = snippet;
+        const itemButton = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
+
+        item.setAttribute('id', id);
+        itemButton.setAttribute('data-spirit-dismiss', 'toast');
+        itemButton.setAttribute('aria-controls', id);
+
+        toastQueueElement.appendChild(item);
+      };
+    </script>
+
+    <template data-spirit-snippet="item">
+      <div class="Toast__item is-open" data-spirit-element="item">
+        <div class="ToastBar ToastBar--informative ToastBar--dismissible" data-spirit-populate-field="item">
+          <div class="ToastBar__content">
+            <svg width="20" height="20" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#info" />
+            </svg>
+            <div class="ToastBar__message" data-spirit-populate-field="message">
+              This is a dynamic toast.
+              <a href="#" class="link-inverted link-underlined">Action</a>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="Button Button--small Button--square Button--informative"
+            data-spirit-populate-field="button"
+            data-spirit-dismiss="toast"
+            aria-expanded="true"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <fieldset style="border: 0;">
+      <legend class="mb-500">Dynamic queue demo:</legend>
+      <button class="Button Button--medium Button--primary" onclick="addDynamicToast()">
+        Add toast
+      </button>
+    </fieldset>
+    <!-- Dynamic queue demo: end -->
+
+    <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
+      <div class="Toast__queue" data-spirit-element="toast-queue">
+        <div id="my-dismissible-toast" class="Toast__item is-open" data-spirit-element="toast-bar">
+
+          <div class="ToastBar ToastBar--success ToastBar--dismissible">
             <div class="ToastBar__content">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
@@ -116,9 +177,9 @@
             </button>
           </div>
         </div>
-        <div class="Toast__item">
+        <div id="my-other-dismissible-toast" class="Toast__item is-open" data-spirit-element="toast-bar">
 
-          <div id="my-other-dismissible-toast" class="ToastBar ToastBar--informative ToastBar--dismissible is-open">
+          <div class="ToastBar ToastBar--informative ToastBar--dismissible">
             <div class="ToastBar__content">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#info" />
@@ -144,9 +205,9 @@
           </div>
 
         </div>
-        <div class="Toast__item">
+        <div id="my-hidden-dismissible-toast" class="Toast__item is-hidden" data-spirit-element="toast-bar">
 
-          <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
+          <div id="my-hidden-dismissible-toast-bar" class="ToastBar ToastBar--warning ToastBar--dismissible">
             <div class="ToastBar__content">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/icons/svg/sprite.svg#warning" />
@@ -170,10 +231,11 @@
             </button>
           </div>
 
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </section>
 
 <section class="docs-Section">
