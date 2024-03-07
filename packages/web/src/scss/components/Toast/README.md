@@ -71,7 +71,7 @@ middle of the screen.
 Example:
 
 ```html
-<div class="Toast Toast--bottom Toast--right" role="log">
+<div class="Toast Toast--top Toast--right" role="log">
   <div class="Toast__queue">
     <!-- ToastBar components go here -->
   </div>
@@ -121,6 +121,9 @@ keyboard. The Toast component tries to find the best position to be visible usin
 
 When multiple ToastBar components are present, they stack up in a queue, separated by a gap. The ToastBar components are
 sorted from top to bottom for the `top` vertical alignment, and from bottom to top for the `bottom` vertical alignment.
+
+👉 Please note the _actual_ order in the DOM is followed when users tab over the interface, no matter the _visual_
+order of the toast queue.
 
 #### Toast Queue Limitations
 
@@ -210,11 +213,11 @@ Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
   type="button"
   class="Button Button--primary Button--medium"
   data-spirit-toggle="toast"
-  data-spirit-target="#toast-example"
-  aria-controls="toast-example"
+  data-spirit-target="#my-hidden-toast"
+  aria-controls="my-hidden-toast"
   aria-expanded="false"
 >
-  Open Modal
+  Show the hidden toast
 </button>
 ```
 

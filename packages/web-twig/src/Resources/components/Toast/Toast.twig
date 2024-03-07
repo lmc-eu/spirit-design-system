@@ -1,0 +1,36 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _alignmentX = props.alignmentX | default('center') %}
+{%- set _alignmentY = props.alignmentY | default('bottom') %}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'Toast' -%}
+{%- set _queueClassName = _spiritClassPrefix ~ 'Toast__queue' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+
+{%- set _alignmentClasses = [] -%}
+{%- for alignment in [_alignmentX, _alignmentY] -%}
+    {%- if alignment is iterable -%}
+        {%- for breakpoint, breakpointValue in alignment -%}
+            {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
+            {%- set _alignmentClasses = _alignmentClasses | merge([ _spiritClassPrefix ~ 'Toast' ~ infix ~ '--' ~ breakpointValue ]) -%}
+        {%- endfor -%}
+    {%- else -%}
+        {%- set _alignmentClasses = _alignmentClasses | merge([ _spiritClassPrefix ~ 'Toast--' ~ alignment ]) -%}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_alignmentClasses) -%}
+
+<div
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    role="log"
+>
+    <div class="Toast__queue">
+        {% block content %}{% endblock %}
+    </div>
+</div>
