@@ -1,0 +1,27 @@
+<Toast>Toast container</Toast>
+
+<!-- Render with alignment -->
+<Toast
+    alignmentX="top"
+    alignmentY="right"
+>
+    Toast container
+</Toast>
+
+<!-- Render with responsive alignment -->
+<Toast
+    alignmentX="{{ { tablet: 'center', desktop: 'right' } }}"
+    alignmentY="{{ { mobile: 'bottom', desktop: 'top' } }}"
+>
+    Toast container
+</Toast>
+
+<!-- Render with all props -->
+<Toast
+    alignmentX="{{ { mobile: 'center', tablet: 'left', desktop: 'right' } }}"
+    alignmentY="{{ { tablet: 'top' } }}"
+    UNSAFE_className="custom-class"
+    UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
+>
+    Toast container
+</Toast>

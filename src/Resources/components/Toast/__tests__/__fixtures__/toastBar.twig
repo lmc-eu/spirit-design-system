@@ -1,0 +1,32 @@
+<ToastBar>Message only</ToastBar>
+
+<!-- Render with default icon -->
+<ToastBar hasIcon>
+    Message with icon
+</ToastBar>
+
+<!-- Render with custom icon using `iconName` alone -->
+<ToastBar iconName="download">
+    Message with custom icon
+</ToastBar>
+
+<!-- Render in success color with matching icon and close button -->
+<ToastBar color="success" isDismissible>
+    Dismissible message with success color
+</ToastBar>
+
+<!-- Render with all props -->
+<ToastBar
+    color="success"
+    closeLabel="Dismiss"
+    hasIcon
+    id="my-toast"
+    iconName="download"
+    isDismissible
+    isOpen="{{ false }}"
+    UNSAFE_className="custom-class"
+    UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
+>
+    Dismissible message with custom icon and action
+    <Link href="#" color="inverted" isUnderlined>Action</Link>
+</ToastBar>

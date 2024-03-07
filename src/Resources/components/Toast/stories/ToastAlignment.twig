@@ -1,0 +1,85 @@
+<!-- Toast alignment demo: start -->
+<script>
+    const setToastAlignmentX = (event, selector) => {
+        const toastElement = document.querySelector(selector);
+
+        toastElement.classList.remove('Toast--left', 'Toast--center', 'Toast--right');
+        toastElement.classList.add(`Toast--${event.target.value}`);
+    };
+
+    const setToastAlignmentY = (event, selector) => {
+        const toastElement = document.querySelector(selector);
+
+        toastElement.classList.remove('Toast--top', 'Toast--bottom');
+        toastElement.classList.add(`Toast--${event.target.value}`);
+    };
+</script>
+
+<form>
+    <fieldset onchange="setToastAlignmentY(event, '#toast-example')" style="border: 0;">
+        <legend>Vertical alignment:</legend>
+        <Radio name="toast-alignment-y" autocomplete="off" marginRight="600" value="top" id="toast-alignment-top" label="Top" />
+        <Radio name="toast-alignment-y" autocomplete="off" marginRight="600" value="bottom" id="toast-alignment-bottom" label="Bottom" isChecked />
+    </fieldset>
+    <fieldset onchange="setToastAlignmentX(event, '#toast-example')" style="border: 0;">
+        <legend>Horizontal alignment:</legend>
+        <Radio name="toast-alignment-x" autocomplete="off" marginRight="600" value="left" id="toast-alignment-left" label="Left" />
+        <Radio name="toast-alignment-x" autocomplete="off" marginRight="600" value="center" id="toast-alignment-center" label="Center" isChecked />
+        <Radio name="toast-alignment-x" autocomplete="off" marginRight="600" value="right" id="toast-alignment-right" label="Right" />
+    </fieldset>
+</form>
+<!-- Toast alignment demo: end -->
+
+<!-- Toast and visual keyboard demo: start -->
+<script>
+    // Experimental, Chrome 94+ on Android only:
+    // Enable CSS to detect the presence of virtual keyboard.
+    if ('virtualKeyboard' in navigator) {
+        navigator.virtualKeyboard.overlaysContent = true;
+    }
+</script>
+<form>
+    <fieldset style="border: 0;">
+        <legend class="mb-500">Virtual keyboard interaction:</legend>
+        <TextField
+            id="text-field-for-focus"
+            label="In Chrome on Android, tap into this text field to see how Toast position updates:"
+            name="default"
+            placeholder="Tap here!"
+        />
+    </fieldset>
+</form>
+<!-- Toast and visual keyboard demo: end -->
+
+<!-- Toast show and hide demo: start -->
+<fieldset style="border: 0;">
+    <legend class="mb-500">Show the toast prepared in the DOM:</legend>
+    <Button
+        data-spirit-toggle="toast"
+        data-spirit-target="#my-hidden-dismissible-toast"
+        onclick="this.setAttribute('disabled', 'disabled')"
+        aria-expanded="false"
+    >
+        Show the hidden toast
+    </Button>
+</fieldset>
+<!-- Toast show and hide demo: end -->
+
+<Toast id="toast-example">
+
+    <ToastBar color="success" id="my-dismissible-toast" hasIcon isDismissible>
+        I was first!
+        <a href="#" class="link-inverted link-underlined">Action</a>
+    </ToastBar>
+
+    <ToastBar color="informative" id="my-other-dismissible-toast" hasIcon isDismissible>
+        I appeared later. This toast has a long message that wraps automatically.
+        <Link href="#" color="inverted" isUnderlined>Action</Link>
+    </ToastBar>
+
+    <ToastBar color="warning" id="my-hidden-dismissible-toast" isOpen="{{ false }}" hasIcon isDismissible>
+        I was hidden and you exposed me!
+        <Link href="#" color="inverted" isUnderlined>Action</Link>
+    </ToastBar>
+
+</Toast>

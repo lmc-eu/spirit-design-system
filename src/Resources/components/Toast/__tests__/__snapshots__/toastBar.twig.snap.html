@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <div class="ToastBar ToastBar--inverted is-open">
+      <div class="ToastBar__content">
+        <div class="ToastBar__message">
+          Message only
+        </div>
+      </div>
+    </div>
+    <!-- Render with default icon -->
+
+    <div class="ToastBar ToastBar--inverted is-open">
+      <div class="ToastBar__content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" id="ca51b98f12baeb77494d0344a40891d8" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" fill="currentColor">
+        </path></svg>
+        <div class="ToastBar__message">
+          Message with icon
+        </div>
+      </div>
+    </div>
+    <!-- Render with custom icon using `iconName` alone -->
+
+    <div class="ToastBar ToastBar--inverted is-open">
+      <div class="ToastBar__content">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" id="a5dbe2a72059b1d61464c99ae53ac468" aria-hidden="true">
+        <path d="M12 16.575C11.8667 16.575 11.7417 16.5542 11.625 16.5125C11.5083 16.4708 11.4 16.4 11.3 16.3L6.7 11.7C6.51667 11.5167 6.425 11.2833 6.425 11C6.425 10.7167 6.51667 10.4833 6.7 10.3C6.88333 10.1167 7.12083 10.0208 7.4125 10.0125C7.70417 10.0042 7.94167 10.0917 8.125 10.275L11 13.15V4C11 3.71667 11.0958 3.47917 11.2875 3.2875C11.4792 3.09583 11.7167 3 12 3C12.2833 3 12.5208 3.09583 12.7125 3.2875C12.9042 3.47917 13 3.71667 13 4V13.15L15.875 10.275C16.0583 10.0917 16.2958 10.0042 16.5875 10.0125C16.8792 10.0208 17.1167 10.1167 17.3 10.3C17.4833 10.4833 17.575 10.7167 17.575 11C17.575 11.2833 17.4833 11.5167 17.3 11.7L12.7 16.3C12.6 16.4 12.4917 16.4708 12.375 16.5125C12.2583 16.5542 12.1333 16.575 12 16.575ZM5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16C4.28333 16 4.52083 16.0958 4.7125 16.2875C4.90417 16.4792 5 16.7167 5 17V19H19V17C19 16.7167 19.0958 16.4792 19.2875 16.2875C19.4792 16.0958 19.7167 16 20 16C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5Z" fill="currentColor">
+        </path></svg>
+        <div class="ToastBar__message">
+          Message with custom icon
+        </div>
+      </div>
+    </div>
+    <!-- Render in success color with matching icon and close button -->
+
+    <div class="ToastBar ToastBar--success ToastBar--dismissible is-open">
+      <div class="ToastBar__content">
+        <div class="ToastBar__message">
+          Dismissible message with success color
+        </div>
+      </div>
+      <button data-spirit-dismiss="toast" data-spirit-target="#" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
+      </path></svg> <span class="accessibility-hidden">Close</span></button>
+    </div>
+    <!-- Render with all props -->
+
+    <div style="outline: 5px solid blue; outline-offset: -5px;" class="ToastBar ToastBar--success ToastBar--dismissible is-hidden custom-class" id="my-toast">
+      <div class="ToastBar__content">
+        <svg width="20" height="20" fill="none" viewbox="0 0 20 20" aria-hidden="true">
+        <use href="#a5dbe2a72059b1d61464c99ae53ac468">
+        </use></svg>
+        <div class="ToastBar__message">
+          Dismissible message with custom icon and action <a href="#" class="link-inverted link-underlined">Action</a>
+        </div>
+      </div>
+      <button data-spirit-dismiss="toast" data-spirit-target="#my-toast" aria-controls="my-toast" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.11 5.69997C6.72 5.30997 6.09 5.30997 5.7 5.69997C5.31 6.08997 5.31 6.71997 5.7 7.10997L10.59 12L5.7 16.89C5.31 17.28 5.31 17.91 5.7 18.3C6.09 18.69 6.72 18.69 7.11 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" fill="currentColor">
+      </path></svg> <span class="accessibility-hidden">Dismiss</span></button>
+    </div>
+  </body>
+</html>

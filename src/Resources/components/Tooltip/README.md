@@ -1,7 +1,8 @@
 # Tooltip
 
-⚠️ Tooltip component is [deprecated][deprecated] and will be removed in the next major version. Please use "TooltipModern" component instead.
 This is Twig implementation of the [Tooltip][tooltip] component.
+
+⚠️ `Tooltip` component is [deprecated][deprecated] and will be renamed to the `TooltipPopover` in the next major version.
 
 Basic usage:
 
@@ -80,6 +81,9 @@ and [escape hatches][readme-escape-hatches].
 
 ### TooltipPopover
 
+TooltipPopover is a new name for the Tooltip component. Some features are only available when the feature flag
+`spirit-feature-tooltip-enable-data-placement` is activated and TooltipPopover is used.
+
 #### Basic
 
 ```html
@@ -100,7 +104,7 @@ there will be automatically displayed close button in `TooltipPopover`` componen
 <div className="spirit-feature-tooltip-enable-data-placement">
   <TooltipWrapper>
     <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-dismissible">I have a tooltip 😎</button>
-    <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible> Close me </TooltipPopover>
+    <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
   </TooltipWrapper>
 </div>
 ```
@@ -166,7 +170,7 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
 | `enableSizing`                  | `bool`                                       | false          | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
 | `flipFallbackAxisSideDirection` | ["none" \| "start" \| "end"]                 | "none"         | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
 | `flipFallbackPlacements`        | `string`                                     | -              | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
-| `id`                            | `string`                                     | -              | ✔        | Tooltip id                                                                                                                                                                                                                                                                 |
+| `id`                            | `string`                                     | -              | ✔        | Tooltip ID                                                                                                                                                                                                                                                                 |
 | `isDismissible`                 | `bool`                                       | false          | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
 | `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom"       | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
 | `triggers`                      | ["click" \| "hover" \| "manual"]             | "click, hover" | ✕        | How tooltip is triggered: `click`, `hover`. You may pass multiple triggers; separate them with a comma. If you pass `manual`, no event listener will be added, and you should provide your own toggle solution.                                                            |

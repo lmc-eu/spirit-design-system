@@ -17,7 +17,7 @@
 {%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
-{%- set _rootDismissibleClassName = _isDismissible == 'true' ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
+{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
 
 {# Attributes #}
 {%- set _enableFlippingValue = _enableFlipping ? 'true' : 'false' -%}
@@ -59,7 +59,7 @@
     {{ _dataTriggerAttr | raw }}
 >
     {% block content %}{% endblock %}
-    {% if _isDismissible == 'true' %}
+    {% if _isDismissible is same as(true) %}
         <button
             type="button"
             class="{{ _closeClassName }}"

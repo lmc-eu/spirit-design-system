@@ -9,7 +9,7 @@
 {%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
-{%- set _rootDismissibleClassName = _isDismissible == 'true' ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
+{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
 {%- set _topClassName = _spiritClassPrefix ~ 'Tooltip--top' -%}
 {%- set _topStartClassName = _spiritClassPrefix ~ 'Tooltip--topStart' -%}
 {%- set _topEndClassName = _spiritClassPrefix ~ 'Tooltip--topEnd' -%}
@@ -88,7 +88,7 @@
     {{ _idAttr | raw }}
 >
     {% block content %}{% endblock %}
-    {% if _isDismissible == 'true' %}
+    {% if _isDismissible is same as(true) %}
         <button
             type="button"
             class="{{ _closeClassName }}"
@@ -97,7 +97,7 @@
             {{ _dataTargetAttr | raw }}
             aria-expanded="true"
         >
-            <Icon name="close" aria-hidden="true" />
+            <Icon name="close" />
             <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
         </button>
     {% endif %}
