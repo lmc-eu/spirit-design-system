@@ -13,25 +13,25 @@ const transform = (fileInfo: FileInfo, api: API) => {
 
   // Check if the module is imported
   if (importStatements.length > 0) {
-    const buttonSpecifier = importStatements.find(j.ImportSpecifier, {
+    const componentSpecifier = importStatements.find(j.ImportSpecifier, {
       imported: {
         type: 'Identifier',
-        name: 'Button',
+        name: 'FileUploaderAttachment',
       },
     });
 
     // Check if Button specifier is present
-    if (buttonSpecifier.length > 0) {
+    if (componentSpecifier.length > 0) {
       // Find Button components in the module
-      const buttonComponents = root.find(j.JSXOpeningElement, {
+      const components = root.find(j.JSXOpeningElement, {
         name: {
           type: 'JSXIdentifier',
-          name: 'Button',
+          name: 'FileUploaderAttachment',
         },
       });
 
-      // Rename 'buttonLabel' attribute to 'buttonText'
-      buttonComponents
+      // Rename 'buttonLabel' attribute to 'removeText'
+      components
         .find(j.JSXAttribute, {
           name: {
             type: 'JSXIdentifier',
@@ -39,8 +39,19 @@ const transform = (fileInfo: FileInfo, api: API) => {
           },
         })
         .forEach((attributePath) => {
-          // Change attribute name to 'buttonText'
-          attributePath.node.name.name = 'buttonText';
+          attributePath.node.name.name = 'removeText';
+        });
+
+      // Rename 'editButtonLabel' attribute to 'editText'
+      components
+        .find(j.JSXAttribute, {
+          name: {
+            type: 'JSXIdentifier',
+            name: 'editButtonLabel',
+          },
+        })
+        .forEach((attributePath) => {
+          attributePath.node.name.name = 'editText';
         });
     }
   }

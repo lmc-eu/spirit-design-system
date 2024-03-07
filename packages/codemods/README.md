@@ -36,7 +36,7 @@ Other optional arguments include:
 For example, this could be the command you will run:
 
 ```shell
-npx @lmc-eu/spirit-codemods -p ./src -t v2/web-react/button-text -e js,jsx --parser babel
+npx @lmc-eu/spirit-codemods -p ./src -t v2/web-react/fileuploader-prop-names -e js,jsx --parser babel
 ```
 
 [jscodeshift]: https://github.com/facebook/jscodeshift
