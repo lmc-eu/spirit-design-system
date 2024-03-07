@@ -89,40 +89,45 @@
 
     <!-- Dynamic queue demo: start -->
     <script>
-      const QUEUE_ELEMENT_SELECTOR = '[data-spirit-element="toast-queue"]';
+      // TODO move this to Toast.js
+
       const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
       const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
+      const QUEUE_ELEMENT_SELECTOR = '[data-spirit-element="toast-queue"]';
 
       const addDynamicToast = () => {
-        const id = `dynamic-toast-${Date.now()}`;
-
-        const toastQueueElement = document.querySelector(QUEUE_ELEMENT_SELECTOR);
         const snippetTemplate = document.querySelector(TEMPLATE_ELEMENT_SELECTOR);
+
+        const id = `dynamic-toast-${Date.now()}`;
+        const toastQueueElement = document.querySelector(QUEUE_ELEMENT_SELECTOR);
 
         const snippet = snippetTemplate?.content.cloneNode(true);
 
-        const item = snippet;
+        const item = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="item"]`);
         const itemButton = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
+        const itemMessage = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="message"]`);
 
         item.setAttribute('id', id);
         itemButton.setAttribute('data-spirit-dismiss', 'toast');
+        itemButton.setAttribute('data-spirit-target', `#${id}`);
         itemButton.setAttribute('aria-controls', id);
+        itemMessage.innerHTML = `
+            This is a dynamic toast.
+            <a href="#" class="link-inverted link-underlined">Action</a>
+        `;
 
         toastQueueElement.appendChild(item);
       };
     </script>
 
     <template data-spirit-snippet="item">
-      <div class="Toast__item is-open" data-spirit-element="item">
-        <div class="ToastBar ToastBar--informative ToastBar--dismissible" data-spirit-populate-field="item">
+      <div class="Toast__item is-open" data-spirit-populate-field="item">
+        <div class="ToastBar ToastBar--informative ToastBar--dismissible" data-spirit-populate-field="toast-bar">
           <div class="ToastBar__content">
             <svg width="20" height="20" aria-hidden="true">
               <use xlink:href="/icons/svg/sprite.svg#info" />
             </svg>
-            <div class="ToastBar__message" data-spirit-populate-field="message">
-              This is a dynamic toast.
-              <a href="#" class="link-inverted link-underlined">Action</a>
-            </div>
+            <div class="ToastBar__message" data-spirit-populate-field="message"></div>
           </div>
           <button
             type="button"
