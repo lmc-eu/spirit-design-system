@@ -20,10 +20,10 @@
     {%- set item = key | slice(type | length) -%}
     {%- if value is iterable -%}
         {%- set itemType = 'grid-item-' ~ type ~ '-' ~ item | lower -%}
-        {%- for breakpoint, bpValue in value -%}
-            {%- if bpValue -%}
+        {%- for breakpoint, breakpointValue in value -%}
+            {%- if breakpointValue -%}
                 {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-                {%- set _style = _style ~ '--' ~ itemType ~ suffix ~ ': ' ~ bpValue ~ ';' -%}
+                {%- set _style = _style ~ '--' ~ itemType ~ suffix ~ ': ' ~ breakpointValue ~ ';' -%}
             {%- endif -%}
         {%- endfor -%}
     {%- else -%}

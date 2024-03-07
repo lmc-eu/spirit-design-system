@@ -1,0 +1,17 @@
+{% extends 'layout/plain.html.twig' %}
+
+{% block content %}
+
+    <DocsSection title="Alignment">
+        {% include '@components/Toast/stories/ToastAlignment.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Content Variations">
+        {% include '@components/Toast/stories/ToastContentVariations.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Colors">
+        {% include '@components/Toast/stories/ToastColors.twig' %}
+    </DocsSection>
+
+{% endblock %}

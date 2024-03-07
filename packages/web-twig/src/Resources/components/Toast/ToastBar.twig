@@ -1,0 +1,64 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _closeLabel = props.closeLabel | default('Close') -%}
+{%- set _color = props.color | default('inverted') -%}
+{%- set _hasIcon = props.hasIcon | default(false) -%}
+{%- set _iconName = props.iconName | default(null) -%}
+{%- set _id = props.id | default(null) -%}
+{%- set _isDismissible = props.isDismissible | default(false) -%}
+{%- set _isOpen = props.isOpen ?? true -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'ToastBar' -%}
+{%- set _rootColorClassName = _spiritClassPrefix ~ 'ToastBar--' ~ _color -%}
+{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'ToastBar--dismissible' : null -%}
+{%- set _contentClassName = _spiritClassPrefix ~ 'ToastBar__content' -%}
+{%- set _messageClassName = _spiritClassPrefix ~ 'ToastBar__message' -%}
+{%- set _isOpenClassName = _isOpen ? 'is-open' : 'is-hidden' -%}
+
+{# Attributes #}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootDismissibleClassName, _isOpenClassName, _styleProps.className ] -%}
+{%- set _iconNameByColor = 'info' -%}
+{% if _color == 'success' %}
+    {%- set _iconNameByColor = 'check-plain' -%}
+{% elseif _color == 'warning' %}
+    {%- set _iconNameByColor = 'warning' -%}
+{% elseif _color == 'danger' %}
+    {%- set _iconNameByColor = 'danger' -%}
+{% endif %}
+{%- set _iconNameValue = _iconName | default(_iconNameByColor) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id')) -%}
+
+<div
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    {{ _idAttr | raw }}
+>
+    <div class="{{ _contentClassName }}">
+        {% if _hasIcon or _iconName %}
+            <Icon boxSize="20" name="{{ _iconNameValue }}" />
+        {% endif %}
+        <div class="{{ _messageClassName }}">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    {% if _isDismissible is same as(true) %}
+        <Button
+            color="{{ _color }}"
+            data-spirit-dismiss="toast"
+            data-spirit-target="{{ '#' ~ _id | escape('html_attr') }}"
+            aria-controls="{{ _id | escape('html_attr') }}"
+            aria-expanded="true"
+            size="small"
+            isSquare
+        >
+            <Icon isReusable="{{ false }}" name="close" />
+            <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
+        </Button>
+    {% endif %}
+</div>

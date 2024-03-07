@@ -28,9 +28,9 @@
 {%- set _style = '' -%}
 
 {%- if _spacing is iterable -%}
-    {%- for breakpoint, bpValue in _spacing -%}
+    {%- for breakpoint, breakpointValue in _spacing -%}
         {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
-        {%- set _style = _style ~ '--stack-spacing' ~ suffix ~ ': var(--spirit-' ~ bpValue ~ ');' -%}
+        {%- set _style = _style ~ '--stack-spacing' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
     {%- endfor -%}
 {%- elseif _spacing -%}
     {%- set _style = _style ~ '--stack-spacing: var(--spirit-' ~ _spacing ~ ');' -%}

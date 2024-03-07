@@ -12,9 +12,9 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _colsClasses = [] -%}
 {%- if _cols is iterable -%}
-    {%- for breakpoint, bpValue in _cols -%}
+    {%- for breakpoint, breakpointValue in _cols -%}
         {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
-        {%- set _colsClasses = _colsClasses | merge([ _spiritClassPrefix ~ 'Grid' ~ infix ~ '--cols-' ~ bpValue ]) -%}
+        {%- set _colsClasses = _colsClasses | merge([ _spiritClassPrefix ~ 'Grid' ~ infix ~ '--cols-' ~ breakpointValue ]) -%}
     {%- endfor -%}
 {%- else -%}
     {%- set _colsClasses = _colsClasses | merge([
