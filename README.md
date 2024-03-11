@@ -17,16 +17,17 @@ See individual [packages](#packages) to learn how to get started.
 
 ## Packages
 
-| Package name                                                     | Description                                               | Version                                                  |
-| ---------------------------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------- |
-| [`@lmc-eu/spirit-analytics`](./packages/analytics)               | Analytic tools for Spirit Design System                   | [![@lmc-eu/spirit-analytics][sa-badge]][sa-npm]          |
-| [`@lmc-eu/spirit-common`](./packages/common)                     | Common scripts for Spirit Design System                   | Private                                                  |
-| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)       | Design tokens for Spirit Design System                    | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm]    |
-| [`@lmc-eu/spirit-form-validations`](./packages/form-validations) | Form Validations for Spirit Design System                 | [![@lmc-eu/spirit-form-validations][sfv-badge]][sfv-npm] |
-| [`@lmc-eu/spirit-icons`](./packages/icons)                       | Icons for Spirit Design System                            | [![@lmc-eu/spirit-icons][si-badge]][si-npm]              |
-| [`@lmc-eu/spirit-web`](./packages/web)                           | CSS and vanilla JS implementation of Spirit Design System | [![@lmc-eu/spirit-web][sw-badge]][sw-npm]                |
-| [`@lmc-eu/spirit-web-react`](./packages/web-react)               | React implementation of Spirit Design System components   | [![@lmc-eu/spirit-web-react][swr-badge]][swr-npm]        |
-| [`@lmc-eu/spirit-web-twig`](./packages/web-twig)                 | Twig implementation of Spirit Design System components    | [![@lmc-eu/spirit-web-twig][swt-badge]][swt-packagist]   |
+| Package name                                                     | Description                                                   | Version                                                  |
+| ---------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------- |
+| [`@lmc-eu/spirit-analytics`](./packages/analytics)               | Analytic tools for Spirit Design System                       | [![@lmc-eu/spirit-analytics][sa-badge]][sa-npm]          |
+| [`@lmc-eu/spirit-codemods`](./packages/codemods)                 | Codemod transforms for Spirit Design System version migration | [![@lmc-eu/spirit-codemods][sc-badge]][sc-npm]           |
+| [`@lmc-eu/spirit-common`](./packages/common)                     | Common scripts for Spirit Design System                       | Private                                                  |
+| [`@lmc-eu/spirit-design-tokens`](./packages/design-tokens)       | Design tokens for Spirit Design System                        | [![@lmc-eu/spirit-design-tokens][sdt-badge]][sdt-npm]    |
+| [`@lmc-eu/spirit-form-validations`](./packages/form-validations) | Form Validations for Spirit Design System                     | [![@lmc-eu/spirit-form-validations][sfv-badge]][sfv-npm] |
+| [`@lmc-eu/spirit-icons`](./packages/icons)                       | Icons for Spirit Design System                                | [![@lmc-eu/spirit-icons][si-badge]][si-npm]              |
+| [`@lmc-eu/spirit-web`](./packages/web)                           | CSS and vanilla JS implementation of Spirit Design System     | [![@lmc-eu/spirit-web][sw-badge]][sw-npm]                |
+| [`@lmc-eu/spirit-web-react`](./packages/web-react)               | React implementation of Spirit Design System components       | [![@lmc-eu/spirit-web-react][swr-badge]][swr-npm]        |
+| [`@lmc-eu/spirit-web-twig`](./packages/web-twig)                 | Twig implementation of Spirit Design System components        | [![@lmc-eu/spirit-web-twig][swt-badge]][swt-packagist]   |
 
 ## Development
 
@@ -50,17 +51,18 @@ See [`package.json`](./package.json) for all available tasks.
 See the [LICENSE](LICENSE.md) file for information.
 
 [lmc]: https://github.com/lmc-eu
-[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
 [sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
-[sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
+[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
+[sc-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-codemods
 [sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
-[si-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-icons
-[si-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-icons.svg?style=flat-square
-[sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
-[sw-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web.svg?style=flat-square
-[swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
-[swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
-[swt-packagist]: https://packagist.org/packages/lmc/spirit-web-twig-bundle
-[swt-badge]: https://img.shields.io/packagist/v/lmc/spirit-web-twig-bundle.svg?style=flat-square
-[sfv-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-form-validations
+[sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
 [sfv-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-form-validations.svg?style=flat-square
+[sfv-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-form-validations
+[si-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-icons.svg?style=flat-square
+[si-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-icons
+[sw-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web.svg?style=flat-square
+[sw-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web
+[swr-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-web-react.svg?style=flat-square
+[swr-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-web-react
+[swt-badge]: https://img.shields.io/packagist/v/lmc/spirit-web-twig-bundle.svg?style=flat-square
+[swt-packagist]: https://packagist.org/packages/lmc/spirit-web-twig-bundle
