@@ -156,3 +156,5 @@ jobs:
               issue_number,
               body: `Here is the URL of the uploaded artifact: ${artifactUrl}`
             });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
