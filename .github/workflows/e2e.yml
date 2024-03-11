@@ -10,7 +10,7 @@ env:
 
 jobs:
   test:
-    if: ${{ (github.event.label.name == 'run visual tests') || (github.ref == 'refs/heads/main') }}
+    if: ${{ (github.event.label.name == 'run-visual-tests') || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
     container:
       image: mcr.microsoft.com/playwright:v1.40.1-jammy
@@ -31,6 +31,69 @@ jobs:
 
       - name: Run Playwright tests
         run: HOME=/root yarn playwright test
+
+      - name: Notify slack if tests fail
+        id: Slack
+        uses: slackapi/slack-github-action@v1.25.0
+        if: ${{ failure() }}
+        with:
+          channel-id: 'C050BHERJTW' # Slack channel-id of #spirit-design-system-notifications_en
+          payload: |
+            {
+              "attachments": [
+                {
+                  "color": "#ff0000",
+                  "blocks": [
+                    {
+                      "type": "header",
+                      "text": {
+                        "type": "plain_text",
+                        "text": ":boom: GitHub Action failed",
+                        "emoji": true
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "*Pull request title:* `${{ github.event.pull_request.title }}`"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "*E2E tests result:* `${{ job.status }}`"
+                      }
+                    },
+                    {
+                      "type": "actions",
+                      "elements": [
+                        {
+                          "type": "button",
+                          "text": {
+                            "type": "plain_text",
+                            "text": ":github: Open pull request"
+                          },
+                          "url": "${{ github.event.pull_request.html_url }}"
+                        },
+                        {
+                          "type": "button",
+                          "text": {
+                            "type": "plain_text",
+                            "text": ":github: Open failed github action"
+                          },
+                          "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFICATIONS_TOKEN }} # Webhook from Slack Application
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
       - uses: actions/upload-artifact@v4
         if: always()
