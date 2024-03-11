@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.0"></a>
+
+# [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.11.0...@lmc-eu/spirit-web@1.12.0) (2024-03-11)
+
+### Bug Fixes
+
+- **web:** Dropdown autoclose option should be strictly checked ([b8966a4](https://github.com/lmc-eu/spirit-design-system/commit/b8966a4)), closes [#DS-1157](https://github.com/lmc-eu/spirit-design-system/issues/DS-1157)
+
+### Documentation
+
+- **web:** Do not list components that don't have index.html on Demo homepage [#DS-1185](https://github.com/lmc-eu/spirit-design-system/issues/DS-1185) ([7162a16](https://github.com/lmc-eu/spirit-design-system/commit/7162a16))
+- **web:** Dropdown demo with disabled autoclose should be disabled ([0bd9836](https://github.com/lmc-eu/spirit-design-system/commit/0bd9836)), closes [#DS-1157](https://github.com/lmc-eu/spirit-design-system/issues/DS-1157)
+- **web:** Use danger icon for danger color in Alert and Toast ([3324d6b](https://github.com/lmc-eu/spirit-design-system/commit/3324d6b))
+
+### Features
+
+- **web:** Add Bordered Alert Feature Flag and showcase it in Demo ([b5ff0f5](https://github.com/lmc-eu/spirit-design-system/commit/b5ff0f5)), closes [#DS-1156](https://github.com/lmc-eu/spirit-design-system/issues/DS-1156)
+- **web:** Introduce the `Toast` component [#DS-1112](https://github.com/lmc-eu/spirit-design-system/issues/DS-1112) ([07742b8](https://github.com/lmc-eu/spirit-design-system/commit/07742b8))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.11.0"></a>
 
 # [1.11.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.10.0...@lmc-eu/spirit-web@1.11.0) (2024-02-20)

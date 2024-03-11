@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.14.0"></a>
+
+# [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.13.1...@lmc-eu/spirit-web-react@1.14.0) (2024-03-11)
+
+### Bug Fixes
+
+- **web-react:** TextArea should autoresize when mounted ([20059b0](https://github.com/lmc-eu/spirit-design-system/commit/20059b0)), closes [#DS-1158](https://github.com/lmc-eu/spirit-design-system/issues/DS-1158)
+
+### Chores
+
+- **web-react:** Remove post process script ([9a51d3e](https://github.com/lmc-eu/spirit-design-system/commit/9a51d3e))
+
+### Code Refactoring
+
+- **web-react:** Introduce `htmlReactParser` for rendering SVG icons ([63a4a7e](https://github.com/lmc-eu/spirit-design-system/commit/63a4a7e))
+
+### Documentation
+
+- **web-react:** Do not list components that don't have index.html on Demo homepage [#DS-1185](https://github.com/lmc-eu/spirit-design-system/issues/DS-1185) ([6eedb11](https://github.com/lmc-eu/spirit-design-system/commit/6eedb11))
+- **web-react:** Introducing deprecations list ([2f48e67](https://github.com/lmc-eu/spirit-design-system/commit/2f48e67)), closes [#DS-1147](https://github.com/lmc-eu/spirit-design-system/issues/DS-1147)
+- **web-react:** Show Bordered Alert Feature Flag in Demo [#DS-1156](https://github.com/lmc-eu/spirit-design-system/issues/DS-1156) ([5b448eb](https://github.com/lmc-eu/spirit-design-system/commit/5b448eb))
+
+### Features
+
+- **web-react:** `Stack` no longer requires the `hasSpacing` prop to apply custom `spacing` [#DS-1133](https://github.com/lmc-eu/spirit-design-system/issues/DS-1133) ([9920fbf](https://github.com/lmc-eu/spirit-design-system/commit/9920fbf))
+- **web-react:** Deprecate icon for `danger` color in Alert component ([2d17821](https://github.com/lmc-eu/spirit-design-system/commit/2d17821)), closes [#DS-1156](https://github.com/lmc-eu/spirit-design-system/issues/DS-1156)
+
+### Styles
+
+- **web-react:** Sort imports in TextArea component test ([4a00ca5](https://github.com/lmc-eu/spirit-design-system/commit/4a00ca5))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.13.1"></a>
 
 ## [1.13.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.13.0...@lmc-eu/spirit-web-react@1.13.1) (2024-02-23)

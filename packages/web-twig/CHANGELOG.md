@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.13.0"></a>
+
+# [2.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.12.1...@lmc-eu/spirit-web-twig@2.13.0) (2024-03-11)
+
+### Documentation
+
+- **web-twig:** Fix default placement in Dropdown demo ([9f17156](https://github.com/lmc-eu/spirit-design-system/commit/9f17156))
+- **web-twig:** Introducing deprecations list ([6a0c065](https://github.com/lmc-eu/spirit-design-system/commit/6a0c065)), closes [#DS-1148](https://github.com/lmc-eu/spirit-design-system/issues/DS-1148)
+- **web-twig:** Show Bordered Alert Feature Flag in Demo [#DS-1156](https://github.com/lmc-eu/spirit-design-system/issues/DS-1156) ([a6edcfe](https://github.com/lmc-eu/spirit-design-system/commit/a6edcfe))
+- **web-twig:** Unify the `Dropdown` demo according to its `web` package counterpart ([f25bfe0](https://github.com/lmc-eu/spirit-design-system/commit/f25bfe0))
+
+### Features
+
+- **web-twig:** `Stack` no longer requires the `hasSpacing` prop to apply custom `spacing` [#DS-1133](https://github.com/lmc-eu/spirit-design-system/issues/DS-1133) ([c75af1d](https://github.com/lmc-eu/spirit-design-system/commit/c75af1d))
+- **web-twig:** Deprecate icon for `danger` color in Alert component ([4241478](https://github.com/lmc-eu/spirit-design-system/commit/4241478)), closes [#DS-1156](https://github.com/lmc-eu/spirit-design-system/issues/DS-1156)
+
+### Tests
+
+- **web-twig:** Update snapshots according to the modified icons ([4a3df20](https://github.com/lmc-eu/spirit-design-system/commit/4a3df20))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.12.1"></a>
 
 ## [2.12.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.12.0...@lmc-eu/spirit-web-twig@2.12.1) (2024-02-23)
