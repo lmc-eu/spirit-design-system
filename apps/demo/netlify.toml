@@ -15,15 +15,13 @@
   publish = "/apps/demo/build/"
 
   # Default build command.
+  # Default build command.
   command = """\
-    cd ../../ \
+    yarn lerna run --scope @lmc-eu/spirit-design-tokens build --skip-nx-cache \
     && yarn lerna run --scope @lmc-eu/spirit-icons build --skip-nx-cache \
-    && yarn lerna run --scope @lmc-eu/spirit-web-react examples:build --skip-nx-cache \
+    && cp -r packages/icons/dist/svg/. static/assets/icons/svg \
+    && yarn lerna run --scope @lmc-eu/spirit-docs build --skip-nx-cache \
     """
 
   # Ignore builds on Netlify
-  ignore = "node ../../scripts/ignoreNetlifyBuilds.js"
-
-[context.deploy-preview]
-  # Deploy preview only if there are changes in some directories
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ./src/"
+  ignore = "node scripts/ignoreNetlifyBuilds.js"
