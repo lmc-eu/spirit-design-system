@@ -21,6 +21,7 @@ packages/**/umd/*
 
 # Handlebars partials are not supported by Prettier
 packages/**/*.hbs
+*.hbs
 
 # PHP vendor files
 **/vendor

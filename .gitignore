@@ -38,3 +38,6 @@ packages/*/build
 # This prevents accidental commit of this token to the repository.
 nx-cloud.env
 .nx
+
+# Demo app
+/static/assets/icons

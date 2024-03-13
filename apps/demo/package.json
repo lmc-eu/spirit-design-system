@@ -1,0 +1,33 @@
+{
+  "name": "@lmc-eu/spirit-docs",
+  "version": "0.0.0",
+  "description": "Demo platform of the Spirit Design System",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "apps/demo"
+  },
+  "scripts": {
+    "icons:build": "shx mkdir -p public/icons && cd ../../packages/icons && yarn build && shx cp -r dist/. ../../static/assets/icons",
+    "design-tokens:build": "test ! -f ../../packages/design-tokens/esm/index.js && cd ../design-tokens && yarn build || true",
+    "prestart": "yarn icons:build",
+    "start": "vite --host --config config/vite/app.ts",
+    "prebuild": "npm-run-all icons:build design-tokens:build",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "11.1.5",
+    "autoprefixer": "10.4.16",
+    "clean-css-cli": "5.6.3",
+    "rollup": "3.29.4",
+    "rollup-plugin-terser": "7.0.2",
+    "sass": "1.69.7",
+    "sass-true": "7.0.1",
+    "shx": "0.3.4",
+    "vite": "4.5.1",
+    "vite-plugin-handlebars": "1.6.0"
+  }
+}
