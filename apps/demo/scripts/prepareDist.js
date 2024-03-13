@@ -17,3 +17,11 @@ export const getNestedDirs = (baseDir, mainFile) =>
         : accumulator,
     {},
   );
+
+export const mapKeys = (obj, fn) =>
+  Object.keys(obj).reduce((acc, k) => {
+    // eslint-disable-next-line no-param-reassign -- it's a reducer
+    acc[fn(obj[k], k, obj)] = obj[k];
+
+    return acc;
+  }, {});

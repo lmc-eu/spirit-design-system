@@ -2,7 +2,7 @@ import { readdirSync } from 'fs';
 import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import { getNestedDirs } from '../../scripts/prepareDist';
+import { getNestedDirs, mapKeys } from '../../scripts/prepareDist';
 import { getListOfIcons, getListOfNestedDirectories } from '../../scripts/utils';
 
 const pathRelativeToRepositoryRoot = resolve(__dirname, '../../../../');
