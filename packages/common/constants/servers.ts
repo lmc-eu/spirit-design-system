@@ -13,15 +13,17 @@ const SERVERS = {
     web: {
       host: 'localhost',
       https: false,
-      port: 5172,
+      port: 3456,
       strictPort: true,
+      path: 'packages/web/',
     },
     // @see: https://vitejs.dev/config/server-options.html
     'web-react': {
       host: 'localhost',
       https: false,
-      port: 5173,
+      port: 3456,
       strictPort: true,
+      path: 'packages/web-react/',
     },
     'web-twig': {
       host: 'localhost',
@@ -37,16 +39,16 @@ const SERVERS = {
     },
   },
   TESTING: {
-    web: process.env.DEMO_WEB_URL || 'https://spirit-design-system-demo.netlify.app/',
-    'web-react': process.env.DEMO_WEB_REACT_URL || 'https://spirit-design-system-react.netlify.app/',
+    web: `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app'}/packages/web/`,
+    'web-react': `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app/'}/packages/web-react/`,
     'web-twig': process.env.DEMO_WEB_TWIG_URL || '',
   },
 };
 
 const getDevelopmentEndpointUri = (packageName, { isDocker } = { isDocker: false }) => {
-  const { https, host, port } = SERVERS.DEVELOPMENT[packageName];
+  const { https, host, port, path } = SERVERS.DEVELOPMENT[packageName];
 
-  return `http${https ? 's' : ''}://${isDocker ? 'host.docker.internal' : host}:${port}`;
+  return `http${https ? 's' : ''}://${isDocker ? 'host.docker.internal' : host}:${port}${path ? `/${path}` : ''}`;
 };
 
 module.exports = { SERVERS, getDevelopmentEndpointUri };
