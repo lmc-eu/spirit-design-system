@@ -1,8 +1,3 @@
-// eslint-disable-next-line import/extensions
-const { defineTest } = require('jscodeshift/dist/testUtils');
+import { testTransform } from '../../../../../tests/testUtils';
 
-defineTest(__dirname, 'fileuploader-prop-names', null, 'fileuploader-prop-names', {
-  parser: 'tsx',
-  fixture: 'input',
-  snapshot: true,
-});
+testTransform(__dirname, 'fileuploader-prop-names');
