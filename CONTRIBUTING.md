@@ -93,6 +93,7 @@ The following is the list of supported scopes:
   - `exporter-svg`
 - Packages:
   - `analytics`
+  - `codemods`
   - `design-tokens`
   - `form-validations`
   - `icons`
@@ -202,10 +203,6 @@ All commands will execute Docker command that starts [Playwright][playwright] in
 We run visual regression testing locally against our demo apps. Web and Web React packages are served using Vite.
 Web Twig package is served using Symfony app.
 
-In CI we use Netlify to test against.
-
-⚠️ Currently we do not deploy the Web Twig package to any environment, so you can only test it locally.
-
 We have two test suites and you can find them in the `./tests/e2e` directory:
 
 - `demo-homepages` - tests the homepages of our demo apps.
@@ -215,6 +212,19 @@ We have two test suites and you can find them in the `./tests/e2e` directory:
   - Only one screenshot is taken for each component. If you run the update command, only the last screenshot will be saved.
 
 👉 To save time and repository size, we test only in Chromium browser and only on desktop viewport.
+
+#### On CI pipeline
+
+In CI we use Netlify to test against.
+
+To enable visual regression testing on CI, you need to add label `run-visual-tests` to your PR.
+Then the tests will be run against the Netlify deployment on every change pushed.
+
+When the tests fail, there will be a comment in the PR with a link to the report and a message about the failure will be raised in the Slack channel `#spirit-design-system-notifications_en`.
+You can also find the report URL in the GitHub Actions run under the `Run actions/upload-artifact` section.
+Look for `Artifact download URL: https://github.com/lmc-eu/spirit-design-system/actions/runs/<run-id>/artifacts/<artifact-id>`.
+
+⚠️ Currently we do not deploy the Web Twig package to any environment, so you can only test it locally.
 
 ## Publishing
 
