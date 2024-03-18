@@ -488,7 +488,7 @@ And the complete Header Dialog:
 ✍️ Please do feel free to let us know should you believe this component lacks
 some important capabilities. Thank you! 🙏
 
-[examples]: https://lmc-eu.github.io/spirit-design-system/
+[examples]: https://spirit-design-system.netlify.app/packages/web/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [offcanvas-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Offcanvas/README.md

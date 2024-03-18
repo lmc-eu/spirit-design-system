@@ -222,6 +222,6 @@ See the [LICENSE](LICENSE.md) file for information.
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
-[examples]: https://lmc-eu.github.io/spirit-design-system/
+[examples]: https://spirit-design-system.netlify.app/packages/web/
 [postcss-prefix-selector]: https://www.npmjs.com/package/postcss-prefix-selector
 [vite]: https://vitejs.dev
