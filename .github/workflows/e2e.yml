@@ -69,12 +69,39 @@ jobs:
           HOME: /root
           WEBSITE_URL: ${{ steps.get-netlify-preview-url.outputs.url }}
 
-      - name: Notify slack if tests fail
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Comment PR with artifact URL
+        if: failure()
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const artifactName = 'playwright-report';
+            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}/artifacts/${artifactName}`;
+            const issue_number = context.issue.number;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number,
+              body: `Here is the URL of the uploaded artifact: ${artifactUrl}`
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify Slack when failure
         id: Slack
         uses: slackapi/slack-github-action@v1.25.0
-        if: ${{ failure() }}
+        if: failure()
         with:
-          channel-id: 'C050BHERJTW' # Slack channel-id of #spirit-design-system-notifications_en
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }} # Slack channel-id of #spirit-design-system-notifications_en
           payload: |
             {
               "attachments": [
@@ -110,7 +137,7 @@ jobs:
                           "type": "button",
                           "text": {
                             "type": "plain_text",
-                            "text": ":github: Open pull request"
+                            "text": ":github: Open Pull request"
                           },
                           "url": "${{ github.event.pull_request.html_url }}"
                         },
@@ -118,9 +145,17 @@ jobs:
                           "type": "button",
                           "text": {
                             "type": "plain_text",
-                            "text": ":github: Open failed github action"
+                            "text": ":github: Open failed GitHub Action"
                           },
                           "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                        },
+                        {
+                          "type": "button",
+                          "text": {
+                            "type": "plain_text",
+                            "text": ":github: Download Report"
+                          },
+                          "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/playwright-report"
                         }
                       ]
                     }
@@ -131,30 +166,3 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFICATIONS_TOKEN }} # Webhook from Slack Application
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-
-      - name: Comment PR with artifact URL
-        if: failure()
-        uses: actions/github-script@v5
-        with:
-          script: |
-            const artifactName = 'playwright-report';
-            const artifactUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}/artifacts/${artifactName}`;
-            const issue_number = context.issue.number;
-            const repo = context.repo.repo;
-            const owner = context.repo.owner;
-
-            await github.rest.issues.createComment({
-              owner,
-              repo,
-              issue_number,
-              body: `Here is the URL of the uploaded artifact: ${artifactUrl}`
-            });
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
