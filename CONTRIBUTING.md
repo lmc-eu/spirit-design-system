@@ -226,6 +226,15 @@ Look for `Artifact download URL: https://github.com/lmc-eu/spirit-design-system/
 
 ⚠️ Currently we do not deploy the Web Twig package to any environment, so you can only test it locally.
 
+### Developing and Testing GitHub Actions
+
+It can be time-consuming and painful to test GitHub Actions.
+First, you have to change the GitHub Actions file locally, push your local code into GitHub repository, and wait for the result.
+
+To solve this issue, you can use [act][act] CLI tool to test and write the GitHub actions locally.
+
+For more, please read the article [How to Run GitHub Actions Locally with the act CLI tool][act-article].
+
 ## Publishing
 
 This project uses GitHub Actions to publish the packages automatically to npm. New packages are published after the new tag is pushed to the main branch. PR can be merged only by the appropriate group of maintainers.
@@ -240,6 +249,8 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
 
+[act]: https://github.com/nektos/act
+[act-article]: https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 [conventional-commits]: https://www.conventionalcommits.org
 [lerna-home]: https://lernajs.io
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
