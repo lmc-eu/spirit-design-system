@@ -115,11 +115,6 @@ Now use the reference from the theme in component styles:
 }
 ```
 
-## Building preview example
-
-- `% cd <your-local-path>/spirit-design-system/packages/web`
-- `% yarn examples:build`
-
 ## Testing
 
 - `% cd <your-local-path>/spirit-design-system/packages/web`
