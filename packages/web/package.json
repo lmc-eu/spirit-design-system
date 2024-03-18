@@ -16,14 +16,7 @@
   "module": "js/index.js",
   "types": "js/index.d.ts",
   "scripts": {
-    "icons:build": "shx mkdir -p public/icons && cd ../icons && yarn build && shx cp -r dist/. ../web/public/icons",
     "design-tokens:build": "test ! -f ../design-tokens/esm/index.js && cd ../design-tokens && yarn build || true",
-    "prestart": "yarn icons:build",
-    "start": "vite --host",
-    "preexamples:build": "npm-run-all icons:build design-tokens:build",
-    "examples:build": "vite build",
-    "examples:build:gh": "yarn examples:build --base=/spirit-design-system/",
-    "examples:preview": "vite preview",
     "prebuild": "shx rm -rf dist && shx mkdir -p dist/scss && shx cp package.json README.md dist/ && shx cp -r src/scss dist/ && shx rm -rf dist/scss/**/__tests__",
     "build": "npm-run-all --serial --continue-on-error design-tokens:build css js",
     "precss": "yarn css:lint",
@@ -84,9 +77,7 @@
     "stylelint": "15.11.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-order": "6.0.4",
-    "tslib": "2.6.2",
-    "vite": "4.5.1",
-    "vite-plugin-handlebars": "1.6.0"
+    "tslib": "2.6.2"
   },
   "peerDependencies": {
     "sass": ">=1.57.0 < 2"
