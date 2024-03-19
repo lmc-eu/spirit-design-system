@@ -1,6 +1,9 @@
 import BaseComponent from './BaseComponent';
 import {
   ATTRIBUTE_ARIA_EXPANDED,
+  ATTRIBUTE_DATA_ELEMENT,
+  ATTRIBUTE_DATA_POPULATE_FIELD,
+  ATTRIBUTE_DATA_SNIPPET,
   ATTRIBUTE_DATA_TARGET,
   CLASS_NAME_HIDDEN,
   CLASS_NAME_OPEN,
@@ -17,6 +20,10 @@ const EVENT_HIDE = `hide${EVENT_KEY}`;
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`;
 const EVENT_SHOW = `show${EVENT_KEY}`;
 const EVENT_SHOWN = `shown${EVENT_KEY}`;
+
+const TEMPLATE_ELEMENT_SELECTOR = `[${ATTRIBUTE_DATA_SNIPPET}="item"]`;
+const TEMPLATE_ELEMENT_SLOT_NAME = ATTRIBUTE_DATA_POPULATE_FIELD;
+const QUEUE_ELEMENT_SELECTOR = `[${ATTRIBUTE_DATA_ELEMENT}="queue"]`;
 
 class Toast extends BaseComponent {
   isShown: boolean;
@@ -42,6 +49,52 @@ class Toast extends BaseComponent {
     const id = this.element && (this.element.getAttribute('id') as string);
 
     return SelectorEngine.findAll(`[${ATTRIBUTE_DATA_TARGET}="#${id}"]`);
+  }
+
+  create(): void {
+    const snippetTemplate = document.querySelector(TEMPLATE_ELEMENT_SELECTOR) as HTMLTemplateElement;
+
+    if (!snippetTemplate) {
+      // eslint-disable-next-line no-console -- We want to throw an error if the snippet is not found.
+      console.error('No toast snippet template found.');
+
+      return;
+    }
+
+    const toastQueueElement = document.querySelector(QUEUE_ELEMENT_SELECTOR);
+
+    if (!toastQueueElement) {
+      // eslint-disable-next-line no-console -- We want to throw an error if the queue element is not found.
+      console.error('No toast queue element found.');
+
+      return;
+    }
+
+    const snippet = snippetTemplate.content.cloneNode(true) as DocumentFragment;
+
+    if (!snippet) {
+      // eslint-disable-next-line no-console -- We want to throw an error if the snippet cannot be created.
+      console.error('Toast cannot be created.');
+
+      return;
+    }
+
+    const id = `dynamic-toast-${Date.now()}`;
+
+    const item = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="item"]`);
+    const itemButton = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
+    const itemMessage = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="message"]`);
+
+    item.setAttribute('id', id);
+    itemButton.setAttribute('data-spirit-dismiss', 'toast');
+    itemButton.setAttribute('data-spirit-target', `#${id}`);
+    itemButton.setAttribute('aria-controls', id);
+    itemMessage.innerHTML = `
+      This is a dynamic toast.
+      <a href="#" class="link-inverted link-underlined">Action</a>
+    `;
+
+    toastQueueElement?.appendChild(item);
   }
 
   show() {
@@ -97,6 +150,7 @@ class Toast extends BaseComponent {
   }
 }
 
+enableAddTrigger(Toast, 'create', 'target');
 enableToggleTrigger(Toast, 'show', 'target');
 enableDismissTrigger(Toast, 'hide', 'target');
 

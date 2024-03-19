@@ -124,7 +124,6 @@ $_queue-collapsed-visible-limit: 2; // Not to be changed, a different value woul
     display: grid;
     align-content: var(--toast-alignment-y);
     justify-content: var(--toast-alignment-x);
-    width: 100%;
     max-height: 200px; // Whatever larger than the largest toast message. CAUTION, AFFECTS COLLAPSE ANIMATION!
     transition: max-height 1.25s cubic-bezier(0.4, 0, 0.2, 1), margin 0.5s cubic-bezier(0.4, 0, 0.2, 1),
         visibility 0.75s ease-out, opacity 0.75s ease-out, scale 0.5s ease-out;

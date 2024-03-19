@@ -72,54 +72,7 @@
     </form>
     <!-- Toast and visual keyboard demo: end -->
 
-    <!-- Toast show and hide demo: start -->
-    <fieldset style="border: 0;">
-      <legend class="mb-500">Show the toast prepared in the DOM:</legend>
-      <button
-        class="Button Button--medium Button--primary"
-        data-spirit-toggle="toast"
-        data-spirit-target="#my-hidden-dismissible-toast"
-        onclick="this.setAttribute('disabled', 'disabled')"
-        aria-expanded="false"
-      >
-        Show the hidden toast
-      </button>
-    </fieldset>
-    <!-- Toast show and hide demo: end -->
-
     <!-- Dynamic queue demo: start -->
-    <script>
-      // TODO move this to Toast.js
-
-      const TEMPLATE_ELEMENT_SELECTOR = '[data-spirit-snippet="item"]';
-      const TEMPLATE_ELEMENT_SLOT_NAME = 'data-spirit-populate-field';
-      const QUEUE_ELEMENT_SELECTOR = '[data-spirit-element="toast-queue"]';
-
-      const addDynamicToast = () => {
-        const snippetTemplate = document.querySelector(TEMPLATE_ELEMENT_SELECTOR);
-
-        const id = `dynamic-toast-${Date.now()}`;
-        const toastQueueElement = document.querySelector(QUEUE_ELEMENT_SELECTOR);
-
-        const snippet = snippetTemplate?.content.cloneNode(true);
-
-        const item = snippet.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="item"]`);
-        const itemButton = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="button"]`);
-        const itemMessage = item.querySelector(`[${TEMPLATE_ELEMENT_SLOT_NAME}="message"]`);
-
-        item.setAttribute('id', id);
-        itemButton.setAttribute('data-spirit-dismiss', 'toast');
-        itemButton.setAttribute('data-spirit-target', `#${id}`);
-        itemButton.setAttribute('aria-controls', id);
-        itemMessage.innerHTML = `
-            This is a dynamic toast.
-            <a href="#" class="link-inverted link-underlined">Action</a>
-        `;
-
-        toastQueueElement.appendChild(item);
-      };
-    </script>
-
     <template data-spirit-snippet="item">
       <div class="Toast__item is-open" data-spirit-populate-field="item">
         <div class="ToastBar ToastBar--informative ToastBar--dismissible" data-spirit-populate-field="toast-bar">
@@ -204,33 +157,6 @@
             >
               <svg width="24" height="24" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-              </svg>
-              <span class="accessibility-hidden">Close</span>
-            </button>
-          </div>
-
-        </div>
-        <div id="my-hidden-dismissible-toast" class="Toast__item is-hidden" data-spirit-element="toast-bar">
-
-          <div id="my-hidden-dismissible-toast-bar" class="ToastBar ToastBar--warning ToastBar--dismissible">
-            <div class="ToastBar__content">
-              <svg width="20" height="20" aria-hidden="true">
-                <use xlink:href="/icons/svg/sprite.svg#warning" />
-              </svg>
-              <div class="ToastBar__message">
-                I was hidden and you exposed me!
-              </div>
-            </div>
-            <button
-              type="button"
-              class="Button Button--small Button--square Button--warning"
-              data-spirit-dismiss="toast"
-              data-spirit-target="#my-hidden-dismissible-toast"
-              aria-controls="my-hidden-dismissible-toast"
-              aria-expanded="false"
-            >
-              <svg width="24" height="24" aria-hidden="true">
-                <use xlink:href="/icons/svg/sprite.svg#close" />
               </svg>
               <span class="accessibility-hidden">Close</span>
             </button>

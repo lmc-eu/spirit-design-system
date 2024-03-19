@@ -58,6 +58,10 @@ const enableDataTrigger = (
   });
 };
 
+const enableAddTrigger = (component: typeof BaseComponent, method = 'add', aim: Aim = 'target') => {
+  enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onClickHandler, method, aim);
+};
+
 const enableToggleTrigger = (component: typeof BaseComponent, method = 'toggle', aim: Aim = 'target') => {
   enableDataTrigger(ATTRIBUTE_DATA_TOGGLE, component, onClickHandler, method, aim);
 };
