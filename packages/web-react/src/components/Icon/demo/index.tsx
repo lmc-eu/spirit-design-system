@@ -3,16 +3,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment, import/extensions, import/no-unresolved
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
-import { IconsProvider } from '../../../context';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
-import Icon from '../Icon';
+import { IconsProvider } from '../../../context';
+import Icon from './Icon';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
       <DocsSection title="Default">
+        {/* @ts-expect-error -- JSX element type 'Icon' does not have any construct or call signatures. */}
         <Icon name="warning" />
       </DocsSection>
     </IconsProvider>

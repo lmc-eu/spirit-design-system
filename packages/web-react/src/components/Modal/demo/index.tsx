@@ -3,14 +3,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore: No declaration file
-import icons from '@lmc-eu/spirit-icons/dist/icons';
+// @ts-ignore: No declaration file -- @see https://jira.almacareer.tech/browse/DS-561
+import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import ModalDefault from './ModalDefault';
+import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 import ModalScrollingLongContent from './ModalScrollingLongContent';
 import ModalStacking from './ModalStacking';
-import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 import ModalUniformModalOnMobile from './ModalUniformModalOnMobile';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -23,6 +23,7 @@
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "lib": ["es2016", "dom", "dom.iterable"],
     "types": ["jest", "node"]
   },

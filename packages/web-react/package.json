@@ -64,6 +64,7 @@
     "jest": "29.7.0",
     "jest-cli": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
+    "npm-run-all": "4.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recast": "0.23.4",
@@ -77,6 +78,8 @@
     "typescript": "5.3.3",
     "vite": "4.5.1",
     "vite-plugin-handlebars": "1.6.0",
+    "webpack": "5.89.0",
+    "webpack-cli": "5.1.4",
     "webpack-merge": "5.10.0"
   },
   "peerDependencies": {
@@ -91,7 +94,7 @@
     "examples:build": "vite build --config ./config/vite/app.ts",
     "examples:preview": "vite preview --config ./config/vite/app.ts",
     "prebuild": "shx rm -rf dist && shx mkdir -p dist && shx cp package.json README.md dist/ ",
-    "build": "npm-run-all --serial build:umd build:es2020 build:esNext",
+    "build": "npm-run-all --serial prebuild build:umd build:es2020 build:esNext postbuild",
     "build:cjs": "yarn rollup --bundleConfigAsCjs",
     "build:umd": "npm-run-all --serial webpack:dev webpack:prod",
     "build:es2020": "tsc --module es2020 --outDir dist --project ./config/tsconfig.prod.json",
