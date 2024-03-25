@@ -34,7 +34,7 @@ jobs:
     if: ${{ needs.haslabel.outputs.e2e || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
     container:
-      image: mcr.microsoft.com/playwright:v1.40.1-jammy
+      image: mcr.microsoft.com/playwright:v1.42.1-jammy
     timeout-minutes: 60
 
     steps:
