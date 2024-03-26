@@ -4,9 +4,12 @@ import { mergeConfig } from 'vite';
 import markdownRawPlugin from 'vite-raw-plugin';
 
 const config: StorybookViteConfig = {
-  stories: ['../packages/**/stories/**/*.mdx', '../packages/**/*.stories.@(ts|tsx)'],
+  stories: ['../../packages/**/*.mdx', '../../packages/**/*.stories.@(ts|tsx)'],
 
-  addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
+  addons: [
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-essentials'),
+  ],
 
   features: {
     storyStoreV7: true,
@@ -29,8 +32,8 @@ const config: StorybookViteConfig = {
         preprocessorOptions: {
           scss: {
             includePaths: [
-              resolve(__dirname, '../node_modules'),
-              resolve(__dirname, '../node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
+              resolve(__dirname, '../../node_modules'),
+              resolve(__dirname, '../../node_modules/@lmc-eu/spirit-design-tokens/src/scss'),
             ],
           },
         },
