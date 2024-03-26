@@ -6,11 +6,7 @@ import markdownRawPlugin from 'vite-raw-plugin';
 const config: StorybookViteConfig = {
   stories: ['../packages/**/stories/**/*.mdx', '../packages/**/*.stories.@(ts|tsx)'],
 
-  addons: [
-    getAbsolutePath('@storybook/addon-links'),
-    getAbsolutePath('@storybook/addon-docs'),
-    getAbsolutePath('@storybook/addon-essentials'),
-  ],
+  addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
 
   features: {
     storyStoreV7: true,
