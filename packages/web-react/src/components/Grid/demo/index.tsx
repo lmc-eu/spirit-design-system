@@ -6,9 +6,8 @@ import GridItem from './GridItem';
 import GridNestedGridItem from './GridNestedGridItem';
 import GridResponsive from './GridResponsive';
 import GridResponsiveGridItem from './GridResponsiveGridItem';
-import GridSpan from './GridSpan';
-import GridSpanResponsive from './GridSpanResponsive';
 import GridItemRow from './GridItemRow';
+import GridResponsiveCenteredGridItem from './GridResponsiveCenteredGridItem';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -17,12 +16,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Responsive Columns">
       <GridResponsive />
-    </DocsSection>
-    <DocsSection title="Grid Span">
-      <GridSpan />
-    </DocsSection>
-    <DocsSection title="Responsive Grid Span">
-      <GridSpanResponsive />
     </DocsSection>
     <DocsSection title="Grid Item">
       <GridItem />
@@ -33,8 +26,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <DocsSection title="Nested Grid with Grid Item">
       <GridNestedGridItem />
     </DocsSection>
-    <DocsSection title="Grid Item with sidebar in second row on desktop">
+    <DocsSection title="Grid Item with Sidebar in Second Row on Desktop">
       <GridItemRow />
+    </DocsSection>
+    <DocsSection title="Responsive Centered Grid Item">
+      <GridResponsiveCenteredGridItem />
     </DocsSection>
   </React.StrictMode>,
 );
