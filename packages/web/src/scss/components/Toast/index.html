@@ -2,7 +2,7 @@
 
 <section class="docs-Section">
 
-  <h2 class="docs-Heading">Alignment</h2>
+  <h2 class="docs-Heading">Toast Queue</h2>
 
   <div class="docs-Stack">
 
@@ -73,30 +73,11 @@
     <!-- Toast and visual keyboard demo: end -->
 
     <!-- Dynamic queue demo: start -->
-    <template data-spirit-snippet="item">
-      <div class="Toast__item is-open" data-spirit-populate-field="item">
-        <div class="ToastBar ToastBar--informative ToastBar--dismissible" data-spirit-populate-field="toast-bar">
-          <div class="ToastBar__content">
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#info" />
-            </svg>
-            <div class="ToastBar__message" data-spirit-populate-field="message"></div>
-          </div>
-          <button
-            type="button"
-            class="Button Button--small Button--square Button--informative"
-            data-spirit-populate-field="button"
-            data-spirit-dismiss="toast"
-            aria-expanded="true"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </div>
-      </div>
-    </template>
+    <script type="module">
+      import { addDynamicToast } from './dynamic-toast.mjs';
+      window.addDynamicToast = addDynamicToast;
+    </script>
+
 
     <fieldset style="border: 0;">
       <legend class="mb-500">Dynamic queue demo:</legend>
@@ -108,7 +89,34 @@
 
     <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
       <div class="Toast__queue" data-spirit-element="toast-queue">
-        <div id="my-dismissible-toast" class="Toast__item is-open" data-spirit-element="toast-bar">
+
+        <template data-spirit-snippet="item">
+          <div class="Toast__item" data-spirit-populate-field="item">
+            <div class="ToastBar" data-spirit-color="informative" data-spirit-populate-field="toast-bar">
+              <div class="ToastBar__content">
+                <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
+                  <use xlink:href="/icons/svg/sprite.svg#info" />
+                </svg>
+                <div class="ToastBar__message" data-spirit-populate-field="message"></div>
+              </div>
+              <button
+                type="button"
+                class="Button Button--small Button--square"
+                data-spirit-color="informative"
+                data-spirit-populate-field="close-button"
+                data-spirit-dismiss="toast"
+                aria-expanded="true"
+              >
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/icons/svg/sprite.svg#close" />
+                </svg>
+                <span class="accessibility-hidden">Close</span>
+              </button>
+            </div>
+          </div>
+        </template>
+
+        <div id="my-dismissible-toast" class="Toast__item is-open">
 
           <div class="ToastBar ToastBar--success ToastBar--dismissible">
             <div class="ToastBar__content">
@@ -135,7 +143,7 @@
             </button>
           </div>
         </div>
-        <div id="my-other-dismissible-toast" class="Toast__item is-open" data-spirit-element="toast-bar">
+        <div id="my-other-dismissible-toast" class="Toast__item is-open">
 
           <div class="ToastBar ToastBar--informative ToastBar--dismissible">
             <div class="ToastBar__content">

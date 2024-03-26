@@ -15,7 +15,8 @@
     pointer-events: initial; // 1.
 }
 
-.ToastBar--dismissible {
+.ToastBar--dismissible,
+.ToastBar:has([data-spirit-dismiss='toast']) {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: theme.$bar-gap;
@@ -73,5 +74,6 @@
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,
     $config: theme.$color-dictionary-config,
-    $overrides: theme.$color-dictionary-overrides
+    $overrides: theme.$color-dictionary-overrides,
+    $generate-data-attribute: true
 );
