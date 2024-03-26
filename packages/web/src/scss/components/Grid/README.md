@@ -148,6 +148,10 @@ on larger breakpoints, you can combine Grid Span with responsive Grid columns:
 👉 Keep in mind Grid Span modifiers are designed to work only with a 12-column
 Grid (`.Grid[--cols-12]`, `.Grid--tablet--cols-12`, `.Grid--desktop--cols-12`).
 
+### ⚠️ DEPRECATION NOTICE
+
+GridSpan classes are deprecated and will be removed in the next major version. Use `GridItem` class instead.
+
 ## Grid Item
 
 Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure
