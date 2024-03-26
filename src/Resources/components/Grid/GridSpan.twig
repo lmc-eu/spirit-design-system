@@ -15,6 +15,9 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _overClassName, _tabletClassName, _desktopClassName, _styleProps.className ] -%}
 
+{# Deprecations #}
+{% deprecated 'GridSpan: This component is deprecated and will be removed in the next major version. Please, use GridItem instead.' %}
+
 <{{ _elementType }}
     {{ mainProps(props) }}
     {{ styleProp(_styleProps) }}

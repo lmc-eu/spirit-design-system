@@ -56,9 +56,9 @@ Without lexer:
 | Name          | Type                                                         | Default | Required | Description                                                                                                |
 | ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
 | `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | `null`  | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
+| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `cols`; Number of columns to use on desktop              |
 | `elementType` | `string`                                                     | `div`   | ✕        | HTML tag to render                                                                                         |
-| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
+| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | `null`  | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `cols`; Number of columns to use on tablet               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -101,6 +101,12 @@ Without lexer:
     {% endblock %}
 {% endembed %}
 ```
+
+### ⚠️ DEPRECATION NOTICE
+
+GridSpan component is deprecated and will be removed in the next major version. Use `GridItem` instead.
+
+[What are deprecations?][readme-deprecations]
 
 ### API
 
@@ -196,8 +202,8 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [grid]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Grid
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
