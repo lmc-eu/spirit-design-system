@@ -12,7 +12,7 @@ const AlertColors = () => (
       <AlertInfoContent />
     </Alert>
 
-    <Alert color="warning">
+    <Alert color="close">
       <AlertWarningContent />
     </Alert>
 
