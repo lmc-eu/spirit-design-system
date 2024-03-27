@@ -33,8 +33,6 @@ jobs:
     needs: hasLabel
     if: ${{ needs.haslabel.outputs.e2e || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
-    container:
-      image: mcr.microsoft.com/playwright:v1.42.1-jammy
     timeout-minutes: 60
 
     steps:
@@ -64,9 +62,10 @@ jobs:
       # as `steps.get-netlify-preview-url.outputs.url`
 
       - name: Run Playwright tests
-        run: yarn playwright test
+        uses: docker://mcr.microsoft.com/playwright:v1.42.1-jammy
+        with:
+          args: WEBSITE_URL="${{ steps.get-netlify-preview-url.outputs.url }}" yarn playwright test
         env:
-          HOME: /root
           WEBSITE_URL: ${{ steps.get-netlify-preview-url.outputs.url }}
 
       - uses: actions/upload-artifact@v4
