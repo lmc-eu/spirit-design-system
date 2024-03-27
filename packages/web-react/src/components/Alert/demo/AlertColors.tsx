@@ -8,7 +8,7 @@ const AlertColors = () => (
       <AlertSuccessContent />
     </Alert>
 
-    <Alert color="informative">
+    <Alert color="close">
       <AlertInfoContent />
     </Alert>
 
