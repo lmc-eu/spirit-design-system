@@ -35,6 +35,9 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 60
 
+    env:
+      NETLIFY_DEPLOY_PREVIEW_URL: 'https://deploy-preview-${{ github.event.pull_request.number }}--spirit-design-system.netlify.app/'
+
     steps:
       - uses: actions/checkout@v4
 
@@ -64,9 +67,9 @@ jobs:
       - name: Run Playwright tests
         uses: docker://mcr.microsoft.com/playwright:v1.42.1-jammy
         with:
-          args: WEBSITE_URL="${{ steps.get-netlify-preview-url.outputs.url }}" yarn playwright test
+          args: yarn playwright test
         env:
-          WEBSITE_URL: ${{ steps.get-netlify-preview-url.outputs.url }}
+          WEBSITE_URL: ${{ steps.get-netlify-preview-url.outcome == 'success' && steps.get-netlify-preview-url.outputs.url || env.NETLIFY_DEPLOY_PREVIEW_URL }}
 
       - uses: actions/upload-artifact@v4
         if: failure()
