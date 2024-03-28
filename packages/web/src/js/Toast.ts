@@ -132,11 +132,6 @@ class Toast extends BaseComponent {
     }
 
     const config = this.config as Config;
-
-    // TODO: remove
-    console.log('config', config);
-
-    // TODO: use other properties for toast
     if (!config.content) {
       warning(false, `No Toast content given.`);
 
@@ -190,6 +185,8 @@ class Toast extends BaseComponent {
   }
 
   show(): void {
+    const config = this.config as Config;
+
     if (this.isShown) {
       return;
     }
@@ -205,7 +202,10 @@ class Toast extends BaseComponent {
     }
 
     this.container?.appendChild(this.element);
-    this.addEvents();
+
+    if (config.isDismissible) {
+      this.addEvents();
+    }
 
     this.triggers.forEach((element) => {
       element?.setAttribute(ATTRIBUTE_ARIA_EXPANDED, 'true');

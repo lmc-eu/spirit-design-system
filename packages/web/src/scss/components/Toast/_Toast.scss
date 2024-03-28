@@ -73,6 +73,7 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
 @use 'theme';
+@use 'tools';
 
 .Toast {
     --toast-padding-x: #{theme.$padding-x};
@@ -111,6 +112,7 @@
     align-items: var(--toast-alignment-x, center); // 2.a
 }
 
+// TODO: Refactor.
 // Stacking draft start
 
 $_queue-collapse-after: 3;
@@ -172,6 +174,18 @@ $_queue-collapsed-visible-limit: 2; // Not to be changed, a different value woul
     visibility: hidden;
     opacity: 0;
     scale: 0.5;
+}
+
+.Toast__item.is-hidden {
+    @include tools.hidden();
+}
+
+.Toast__item.is-visible {
+    @include tools.visible();
+}
+
+.Toast__item.is-transitioning {
+    @include tools.transitioning();
 }
 
 // Stacking draft end

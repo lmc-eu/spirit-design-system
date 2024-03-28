@@ -53,7 +53,64 @@
     </form>
     <!-- Toast alignment demo: end -->
 
-    <!-- Toast and visual keyboard demo: start -->
+    <!-- Dynamic queue demo: start -->
+    <script type="module">
+      import { addDynamicToast } from './dynamic-toast.mjs';
+      window.addDynamicToast = addDynamicToast;
+    </script>
+
+    <form>
+      <fieldset style="border: 0;">
+        <legend class="mb-500">New Toast:</legend>
+        <div class="Stack Stack--hasSpacing">
+          <div class="Select">
+            <label for="toast-color" class="Select__label">Color</label>
+            <div class="Select__inputContainer">
+              <select id="toast-color" name="color" class="Select__input" autocomplete="off">
+                <option value="inverted">Inverted</option>
+                <option value="success">Success</option>
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+                <option value="informative">Informative</option>
+              </select>
+              <div class="Select__icon">
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <label for="toast-has-icon" class="Checkbox">
+            <input type="checkbox" id="toast-has-icon" class="Checkbox__input" name="is-dismissible" autocomplete="off" checked />
+            <span class="Checkbox__text">
+              <span class="Checkbox__label">Has icon</span>
+            </span>
+          </label>
+          <label for="toast-is-dismissible" class="Checkbox">
+            <input type="checkbox" id="toast-is-dismissible" class="Checkbox__input" name="is-dismissible" autocomplete="off" checked />
+            <span class="Checkbox__text">
+              <span class="Checkbox__label">Dismissible</span>
+            </span>
+          </label>
+          <div class="TextArea">
+            <label for="toast-content" class="TextArea__label">Message</label>
+            <textarea id="toast-content" class="TextArea__input" autocomplete="off">This is a new toast message.</textarea>
+            <div class="TextArea__helperText">Can contain HTML.</div>
+          </div>
+          <button
+            type="button"
+            class="Button Button--medium Button--primary"
+            onclick="addDynamicToast(event, 'toast-example')"
+            style="justify-self: start;"
+          >
+            Add
+          </button>
+        </div>
+      </fieldset>
+    </form>
+    <!-- Dynamic queue demo: end -->
+
+    <!-- Toast and virtual keyboard demo: start -->
     <script>
       // Experimental, Chrome 94+ on Android only:
       // Enable CSS to detect the presence of virtual keyboard.
@@ -70,22 +127,7 @@
         </div>
       </fieldset>
     </form>
-    <!-- Toast and visual keyboard demo: end -->
-
-    <!-- Dynamic queue demo: start -->
-    <script type="module">
-      import { addDynamicToast } from './dynamic-toast.mjs';
-      window.addDynamicToast = addDynamicToast;
-    </script>
-
-
-    <fieldset style="border: 0;">
-      <legend class="mb-500">Dynamic queue demo:</legend>
-      <button class="Button Button--medium Button--primary" onclick="addDynamicToast()">
-        Add toast
-      </button>
-    </fieldset>
-    <!-- Dynamic queue demo: end -->
+    <!-- Toast and virtual keyboard demo: end -->
 
     <div id="toast-example" class="Toast Toast--bottom Toast--center" role="log">
       <div class="Toast__queue" data-spirit-element="toast-queue">
@@ -95,7 +137,7 @@
             <div class="ToastBar" data-spirit-color="informative" data-spirit-populate-field="toast-bar">
               <div class="ToastBar__content">
                 <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
-                  <use xlink:href="/icons/svg/sprite.svg#info" />
+                  <use xlink:href="/assets/icons/svg/sprite.svg#info" />
                 </svg>
                 <div class="ToastBar__message" data-spirit-populate-field="message"></div>
               </div>
@@ -108,7 +150,7 @@
                 aria-expanded="true"
               >
                 <svg width="24" height="24" aria-hidden="true">
-                  <use xlink:href="/icons/svg/sprite.svg#close" />
+                  <use xlink:href="/assets/icons/svg/sprite.svg#close" />
                 </svg>
                 <span class="accessibility-hidden">Close</span>
               </button>
