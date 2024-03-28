@@ -73,6 +73,7 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
 @use 'theme';
+@use 'tools';
 
 .Toast {
     --toast-padding-x: #{theme.$padding-x};
@@ -110,6 +111,84 @@
     align-self: var(--toast-alignment-y, end); // 2.b
     align-items: var(--toast-alignment-x, center); // 2.a
 }
+
+// TODO: Refactor.
+// Stacking draft start
+
+$_queue-collapse-after: 3;
+$_queue-collapsed-visible-limit: 2; // Not to be changed, a different value would require CSS generation.
+
+.Toast__queue:has(.Toast__item) {
+    row-gap: 0; // Use margin instead of gap to avoid margin accumulation at the start of the queue.
+}
+
+.Toast__item {
+    display: grid;
+    align-content: var(--toast-alignment-y);
+    justify-content: var(--toast-alignment-x);
+    max-height: 200px; // Whatever larger than the largest toast message. CAUTION, AFFECTS COLLAPSE ANIMATION!
+    transition: max-height 1.25s cubic-bezier(0.4, 0, 0.2, 1), margin 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.75s ease-out, opacity 0.75s ease-out, scale 0.5s ease-out;
+}
+
+// Put gap between all visible and collapsed items
+.Toast__item:nth-last-child(-n + #{$_queue-collapse-after + $_queue-collapsed-visible-limit}):not(:last-child) {
+    margin-block: var(--toast-item-top-margin, 0) var(--toast-item-bottom-margin, 0);
+}
+
+.Toast--top,
+.Toast--tablet--top,
+.Toast--desktop--top {
+    --toast-item-bottom-margin: #{theme.$gap};
+}
+
+.Toast--bottom,
+.Toast--tablet--bottom,
+.Toast--desktop--bottom {
+    --toast-item-top-margin: #{theme.$gap};
+}
+
+// Visible items
+.Toast__item:nth-last-child(-n + #{$_queue-collapse-after}) {
+    z-index: 1;
+}
+
+// Collapsed items
+.Toast__item:nth-last-child(n + #{$_queue-collapse-after + 1}) {
+    max-height: 0;
+}
+
+// Collapsed items: first
+.Toast__item:nth-last-child(#{$_queue-collapse-after + $_queue-collapsed-visible-limit - 1}) {
+    scale: 0.95;
+}
+
+// Collapsed items: second
+.Toast__item:nth-last-child(#{$_queue-collapse-after + $_queue-collapsed-visible-limit}) {
+    opacity: 0.5;
+    scale: 0.9;
+}
+
+// Invisible items
+.Toast__item:nth-last-child(n + #{$_queue-collapse-after + $_queue-collapsed-visible-limit + 1}) {
+    visibility: hidden;
+    opacity: 0;
+    scale: 0.5;
+}
+
+.Toast__item.is-hidden {
+    @include tools.hidden();
+}
+
+.Toast__item.is-visible {
+    @include tools.visible();
+}
+
+.Toast__item.is-transitioning {
+    @include tools.transitioning();
+}
+
+// Stacking draft end
 
 @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
     $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);

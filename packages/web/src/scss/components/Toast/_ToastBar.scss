@@ -6,6 +6,7 @@
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
+@use 'tools';
 
 .ToastBar {
     max-width: theme.$bar-max-width;
@@ -15,21 +16,21 @@
     pointer-events: initial; // 1.
 }
 
-.ToastBar--dismissible {
+.ToastBar__content:has(> svg:first-child) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: theme.$bar-content-gap;
+}
+
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast'])) {
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: theme.$bar-gap;
     align-items: start;
 }
 
-.ToastBar--dismissible > .ToastBar__content {
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast'])) > .ToastBar__content {
     align-self: center; // 2.
-}
-
-.ToastBar__content:has(> svg:first-child) {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: theme.$bar-content-gap;
 }
 
 .ToastBar__message {
@@ -44,31 +45,32 @@
     font-weight: 400;
 }
 
-.ToastBar--dismissible .ToastBar__message > :is(a, button):last-child {
+// stylelint-disable-next-line selector-max-specificity -- Specificity is needed to precisely target the action.
+.ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast']))
+    .ToastBar__message
+    > :is(a, button):last-child {
     margin-inline-end: theme.$bar-action-margin-inline-end; // 4.
 }
 
-.ToastBar.is-transitioning {
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: visibility, opacity;
-        transition-duration: theme.$bar-transition-duration;
-        transition-timing-function: theme.$bar-transition-timing;
-    }
+.ToastBar.is-transitioning,
+[data-spirit-element='toast-bar'].is-transitioning {
+    @include tools.transitioning();
 }
 
-.ToastBar.is-hidden {
-    visibility: hidden;
-    opacity: 0;
+.ToastBar.is-hidden,
+[data-spirit-element='toast-bar'].is-hidden {
+    @include tools.hidden();
 }
 
-.ToastBar.is-visible {
-    visibility: visible;
-    opacity: 1;
+.ToastBar.is-visible,
+[data-spirit-element='toast-bar'].is-visible {
+    @include tools.visible();
 }
 
 @include dictionaries.generate-colors(
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,
     $config: theme.$color-dictionary-config,
-    $overrides: theme.$color-dictionary-overrides
+    $overrides: theme.$color-dictionary-overrides,
+    $generate-data-attribute: true
 );
