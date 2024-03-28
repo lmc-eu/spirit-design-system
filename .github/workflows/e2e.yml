@@ -110,7 +110,7 @@ jobs:
                       "type": "header",
                       "text": {
                         "type": "plain_text",
-                      "text": ":boom: GitHub Action failed",
+                        "text": ":boom: GitHub Action failed",
                         "emoji": true
                       }
                     },
