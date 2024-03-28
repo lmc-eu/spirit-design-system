@@ -4,7 +4,7 @@ import { GridItem } from '@lmc-eu/spirit-web-react';
 
 export const MyComponent = () => (
   <>
-    <GridItem columnStart={5} columnEnd="span 4" />
+    <GridItem columnStart={5} columnEnd="span 4">Item</GridItem>
     <GridItem
       columnStart={{
         mobile: 6,
@@ -15,8 +15,9 @@ export const MyComponent = () => (
         mobile: 'span 2',
         tablet: 'span 4',
         desktop: 'span 6',
-      }}
-    />
+      }}>
+      Item
+    </GridItem>
     <GridItem
       UNSAFE_className="test"
       columnStart={{
@@ -24,7 +25,8 @@ export const MyComponent = () => (
       }}
       columnEnd={{
         desktop: 'span 10',
-      }}
-    />
+      }}>
+      Item
+    </GridItem>
   </>
 );

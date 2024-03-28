@@ -4,8 +4,12 @@ import { GridSpan } from '@lmc-eu/spirit-web-react';
 
 export const MyComponent = () => (
   <>
-    <GridSpan over={4} />
-    <GridSpan over={2} tablet={4} desktop={6} />
-    <GridSpan desktop={10} UNSAFE_className="test" />
+    <GridSpan over={4}>Item</GridSpan>
+    <GridSpan over={2} tablet={4} desktop={6}>
+      Item
+    </GridSpan>
+    <GridSpan desktop={10} UNSAFE_className="test">
+      Item
+    </GridSpan>
   </>
 );

@@ -92,7 +92,20 @@ const transform = (fileInfo: FileInfo, api: API) => {
       path.node.attributes = Object.values(attributesMap).filter(Boolean) as JSXAttribute[];
     });
 
-  let source = root.toSource();
+  root
+    .find(j.JSXClosingElement, {
+      name: {
+        type: 'JSXIdentifier',
+        name: 'GridSpan',
+      },
+    })
+    .forEach((path) => {
+      if (path.node.name.type === 'JSXIdentifier') {
+        path.node.name.name = 'GridItem';
+      }
+    });
+
+  let source = root.toSource({ trailingComma: true });
 
   // Post-process the generated code to replace double quotes with single quotes in columnEnd object values
   // jscodeshift doesn't support this transformation natively
