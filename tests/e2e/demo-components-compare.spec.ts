@@ -1,7 +1,7 @@
 import { isTesting as isTestingEnvironment } from '@lmc-eu/spirit-common/constants/environments';
 import { SERVERS, getDevelopmentEndpointUri } from '@lmc-eu/spirit-common/constants/servers';
-import { readdirSync } from 'fs';
 import { expect, test } from '@playwright/test';
+import { readdirSync } from 'fs';
 
 // Tests that are intentionally broken, but will be fixed in the future
 const IGNORED_TESTS = [

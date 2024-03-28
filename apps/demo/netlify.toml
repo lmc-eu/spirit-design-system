@@ -20,7 +20,7 @@
     yarn lerna run --scope @lmc-eu/spirit-design-tokens build --skip-nx-cache \
     && yarn lerna run --scope @lmc-eu/spirit-icons build --skip-nx-cache \
     && cp -r packages/icons/dist/svg/. static/assets/icons/svg \
-    && yarn lerna run --scope @lmc-eu/spirit-docs build --skip-nx-cache \
+    && yarn lerna run --scope @lmc-eu/spirit-demo-app build --skip-nx-cache \
     """
 
   # Ignore builds on Netlify

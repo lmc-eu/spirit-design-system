@@ -1,6 +1,6 @@
 import React from 'react';
 import Alert from '../Alert';
-import { AlertInfoContent, AlertSuccessContent, AlertWarningContent, AlertDangerContent } from './AlertContents';
+import { AlertDangerContent, AlertInfoContent, AlertSuccessContent, AlertWarningContent } from './AlertContents';
 
 const AlertColors = () => (
   <>
@@ -8,15 +8,15 @@ const AlertColors = () => (
       <AlertSuccessContent />
     </Alert>
 
-    <Alert color="informative">
+    <Alert color="close">
       <AlertInfoContent />
     </Alert>
 
-    <Alert color="warning">
+    <Alert color="close">
       <AlertWarningContent />
     </Alert>
 
-    <Alert color="danger">
+    <Alert color="close">
       <AlertDangerContent />
     </Alert>
   </>
