@@ -20,9 +20,9 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 | Name          | Type                                                         | Default | Required | Description                                                                                                |
 | ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
 | `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on desktop                       |
+| `desktop`     | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `cols`; Number of columns to use on desktop              |
 | `elementType` | HTML element                                                 | `div`   | ✕        | Element type to use for the Grid                                                                           |
-| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][deprecated] in favor of `cols`; Number of columns to use on tablet                        |
+| `tablet`      | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12`]             | —       | ✕        | [**DEPRECATED**][readme-deprecations] in favor of `cols`; Number of columns to use on tablet               |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -57,6 +57,39 @@ Advanced example usage:
   </GridSpan>
 </Grid>
 ```
+
+### ⚠️ DEPRECATION NOTICE
+
+GridSpan component is deprecated and will be removed in the next major version. Use `GridItem` instead.
+
+[What are deprecations?][readme-deprecations]
+
+#### Migration Guide
+
+Use our codemod to automatically migrate your code.
+
+Or follow these steps:
+
+The hardest part in the migration is to get the `columnStart` value. The equation is `1 + (columns - over) / 2`,
+where `columns` is the number of columns in the grid and `over` is the value from the `GridSpan` component.
+The default number of columns is 12, so the equation is `1 + (12 - over) / 2` most of the time.
+
+1. Replace `GridSpan` with `GridItem`.
+2. Calculate and set the `columnStart` value `1 + (columns - over) / 2`, in our 12-column grid, the equation is `1 + (12 - over) / 2`, where `over` is the value from the `GridSpan` component.
+3. Set the `columnEnd` value to `span over` or you can use `columnStart + over`.
+4. If you use responsive props, calculate the values for each breakpoint and pass them to the `GridItem` component `columnStart` and `columnEnd` props as an object.
+5. Remove the `over` prop.
+
+Examples:
+
+- `<GridSpan over="4">…</GridSpan>` → `<GridItem columnStart="5" columnEnd="span 4">…</GridItem>`
+  - `columnStart` = 1 + (12 - 4) / 2 = 5
+- `<GridSpan over="6">…</GridSpan>` → `<GridItem columnStart="4" columnEnd="span 6">…</GridItem>`
+  - `columnStart` = 1 + (12 - 6) / 2 = 4
+- `<GridSpan over="8" tablet="6" desktop="4">…</GridSpan>` → `<GridItem columnStart="{{ { mobile: 3, tablet: 4, desktop: 5 } }}" columnEnd="{{ { mobile: 'span 8', tablet: 'span 6', desktop: 'span 4' } }}">…</GridItem>`
+  - `columnStart` = 1 + (12 - 8) / 2 = 3
+  - `columnStart` = 1 + (12 - 6) / 2 = 4
+  - `columnStart` = 1 + (12 - 4) / 2 = 5
 
 ### API
 
@@ -139,8 +172,8 @@ If you need more control over the styling of a component, you can use [style pro
 and [escape hatches][readme-escape-hatches].
 
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
+[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props

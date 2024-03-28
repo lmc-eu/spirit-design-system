@@ -6,8 +6,6 @@ import GridItem from './GridItem';
 import GridNestedGridItem from './GridNestedGridItem';
 import GridResponsive from './GridResponsive';
 import GridResponsiveGridItem from './GridResponsiveGridItem';
-import GridSpan from './GridSpan';
-import GridSpanResponsive from './GridSpanResponsive';
 import GridItemRow from './GridItemRow';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -17,12 +15,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Responsive Columns">
       <GridResponsive />
-    </DocsSection>
-    <DocsSection title="Grid Span">
-      <GridSpan />
-    </DocsSection>
-    <DocsSection title="Responsive Grid Span">
-      <GridSpanResponsive />
     </DocsSection>
     <DocsSection title="Grid Item">
       <GridItem />
