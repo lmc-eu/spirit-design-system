@@ -1,0 +1,62 @@
+/* Disable some rules because we are tweaking GitHub's PR look */
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-no-qualifying-type */
+
+/**
+ * Make Netlify deploy preview links on GitHub stand out.
+ */
+@-moz-document domain("github.com") {
+  /* Turn Netlify links into buttons using GitHub design tokens. */
+  .comment-body a[href$='netlify.app'] {
+    position: relative;
+    display: block;
+    padding: 1em;
+    margin-block: 1em;
+    overflow: hidden;
+    font-weight: 500;
+    color: var(--color-btn-primary-text) !important;
+    border: 1px solid var(--color-btn-primary-border);
+    border-radius: 6px;
+    background-color: var(--color-btn-primary-bg) !important;
+    box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-inset-shadow);
+  }
+
+  .comment-body a[href$='netlify.app']::after {
+    content: 'Preview';
+    position: absolute;
+    inset: 1px;
+    display: grid;
+    place-content: center;
+    font-size: 1.25rem;
+    color: inherit;
+    background-color: inherit;
+  }
+
+  .comment-body a[href$='netlify.app']:hover {
+    border-color: var(--color-btn-primary-hover-border);
+    background-color: var(--color-btn-primary-hover-bg) !important;
+  }
+
+  .comment-body a[href$='netlify.app']:active {
+    border-color: var(--color-btn-active-border);
+    background-color: var(--color-btn-primary-selected-bg) !important;
+    box-shadow: var(--color-btn-primary-selected-shadow);
+  }
+
+  /* Spirit Design System: Adjust individual button labels by URL. */
+  .comment-body a[href$='spirit-design-system-demo.netlify.app']::after {
+    content: 'CSS Preview';
+  }
+
+  .comment-body a[href$='spirit-design-system-react.netlify.app']::after {
+    content: 'React Preview';
+  }
+
+  .comment-body a[href$='spirit-design-system-storybook.netlify.app']::after {
+    content: 'Storybook Preview';
+  }
+
+  .comment-body a[href$='spirit-design-system-validations.netlify.app']::after {
+    content: 'Form Validations Preview';
+  }
+}
