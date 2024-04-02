@@ -16,7 +16,8 @@
   "workspaces": [
     "packages/*",
     "exporters/*",
-    "apps/demo"
+    "apps/demo",
+    "apps/storybook"
   ],
   "scripts": {
     "start": "yarn packages:start",
