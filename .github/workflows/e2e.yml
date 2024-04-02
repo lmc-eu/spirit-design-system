@@ -10,6 +10,9 @@ on:
 
 env:
   NODE_ENV: testing
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+  NETLIFY_MAIN_URL: 'https://spirit-design-system.netlify.app/'
+  NETLIFY_DEPLOY_PREVIEW_URL: 'https://deploy-preview-${{ github.event.pull_request.number }}--spirit-design-system.netlify.app/'
 
 jobs:
   haslabel:
@@ -34,12 +37,6 @@ jobs:
     if: ${{ needs.haslabel.outputs.e2e || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-22.04
     timeout-minutes: 60
-
-    env:
-      NETLIFY_MAIN_URL: 'https://spirit-design-system.netlify.app/'
-      NETLIFY_DEPLOY_PREVIEW_URL: 'https://deploy-preview-${{ github.event.pull_request.number }}--spirit-design-system.netlify.app/'
-      # fallback to main url if the main branch is deployed
-      NETLIFY_DEPLOYED_URL: ${{ github.event.pull_request.number && env.NETLIFY_DEPLOY_PREVIEW_URL || env.NETLIFY_MAIN_URL }}
 
     steps:
       - uses: actions/checkout@v4
@@ -67,12 +64,19 @@ jobs:
       # The Netlify preview URL is now available
       # as `steps.get-netlify-preview-url.outputs.url`
 
+      - name: Get Site URL
+        id: get-site-url
+        env:
+          # fallback to main url if the main branch is deployed
+          NETLIFY_DEPLOYED_URL: ${{ env.PR_NUMBER && env.NETLIFY_DEPLOY_PREVIEW_URL || env.NETLIFY_MAIN_URL }}
+        run: echo "site_url=${{ env.NETLIFY_DEPLOYED_URL }}" >> "$GITHUB_OUTPUT"
+
       - name: Run Playwright tests
         uses: docker://mcr.microsoft.com/playwright:v1.42.1-jammy
         with:
           args: yarn playwright test
         env:
-          WEBSITE_URL: ${{ steps.get-netlify-preview-url.outcome == 'success' && steps.get-netlify-preview-url.outputs.url || env.NETLIFY_DEPLOYED_URL }}
+          WEBSITE_URL: ${{ steps.get-netlify-preview-url.outcome == 'success' && steps.get-netlify-preview-url.outputs.url || steps.get-site-url.outputs.site_url }}
 
       - uses: actions/upload-artifact@v4
         if: failure()
