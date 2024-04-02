@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { MutableRefObject, useRef } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';
-import { useStyleProps } from '../../hooks/styleProps';
+import { useStyleProps } from '../../hooks';
 import { SpiritCollapseProps } from '../../types';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
 import { useCollapseStyleProps } from './useCollapseStyleProps';
