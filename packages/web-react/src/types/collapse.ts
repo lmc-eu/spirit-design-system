@@ -13,6 +13,7 @@ export type CollapseRenderProps = {
 };
 
 export interface BaseCollapseProps extends ChildrenProps, StyleProps {
+  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
   id?: string;
 }
 

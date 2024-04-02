@@ -46,13 +46,14 @@ Or manually replace the props in your project.
 - `<FileUploaderAttachment buttonLabel="Remove this attachment" … />` → `<FileUploaderAttachment removeText="Remove this attachment" … />`
 - `<FileUploaderAttachment editButtonLabel="Edit this attachment" … />` → `<FileUploaderAttachment editText="Edit this attachment" … />`
 
-### Dropdown `id` Prop
+### Dropdown and Collapse `id` Prop
 
-The `id` prop will be mandatory for the `Dropdown` component.
+The `id` prop will be mandatory for the `Dropdown` and `Collapse` components.
 
 #### Migration Guide
 
 Add `id` prop to the `Dropdown` component.
+Add `id` prop to the `Collapse` component.
 
 ### Tooltip and Dropdown Placements
 

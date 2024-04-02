@@ -5,6 +5,7 @@ import { useCollapse } from './useCollapse';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
 
 const defaultProps = {
+  /** @deprecated ID will be made a required user input in the next major version. */
   id: Math.random().toString(36).slice(2, 7),
   isOpen: false,
 };

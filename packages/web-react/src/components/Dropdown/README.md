@@ -123,7 +123,7 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 | ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | -              | ✔        | Component id                                   |
+| `id`              | `string`                                         | —              | ✔        | Component id                                   |
 | `isOpen`          | `bool`                                           | `false`        | ✔        | Open state                                     |
 | `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
 | `onToggle`        | `() => void`                                     | —              | ✔        | Function for toggle open state of dropdown     |
