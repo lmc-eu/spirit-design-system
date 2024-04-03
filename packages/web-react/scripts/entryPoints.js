@@ -36,6 +36,7 @@ const entryPoints = [
   { dirs: ['components', 'TextArea'] },
   { dirs: ['components', 'TextField'] },
   { dirs: ['components', 'TextFieldBase'] },
+  { dirs: ['components', 'Toast'] },
   { dirs: ['components', 'Tooltip'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];
