@@ -29,5 +29,6 @@ export * from './text';
 export * from './textArea';
 export * from './textField';
 export * from './textFieldBase';
+export * from './toast';
 export * from './tooltip';
 export * from './visuallyHidden';
