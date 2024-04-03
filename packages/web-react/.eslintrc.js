@@ -83,4 +83,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['**/stories/**'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
 };
