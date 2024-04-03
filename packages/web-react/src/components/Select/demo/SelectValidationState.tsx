@@ -1,9 +1,8 @@
 import React from 'react';
-import { ComponentStory } from '@storybook/react';
 import Select from '../Select';
 import ChildrenNode from './ChildrenNode';
 
-const Story: ComponentStory<typeof Select> = () => (
+const SelectValidationState = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem 1rem' }}>
     <Select
       id="select-success"
@@ -38,4 +37,4 @@ const Story: ComponentStory<typeof Select> = () => (
   </div>
 );
 
-export default Story;
+export default SelectValidationState;
