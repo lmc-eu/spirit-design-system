@@ -666,6 +666,109 @@
     </dialog>
     <!-- Modal: end -->
 
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example-dropdown"
+      aria-controls="example-dropdown"
+      aria-expanded="false"
+    >
+      Open Non-Scrolling Modal with Dropdown
+    </button>
+
+    <!-- Modal: start -->
+    <dialog id="example-dropdown" class="Modal Modal--center" aria-labelledby="example-dropdown-title">
+
+      <!-- ModalDialog: start -->
+      <article class="ModalDialog ModalDialog--nonScrollable ModalDialog--expandOnMobile">
+
+        <!-- ModalHeader: start -->
+        <header class="ModalHeader">
+          <h2 id="example-dropdown-title" class="ModalHeader__title">Modal Title</h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example-dropdown"
+            aria-controls="example-dropdown"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+        <!-- ModalHeader: end -->
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <!-- Content: start -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <div class="DropdownWrapper">
+            <button
+              type="button"
+              data-spirit-toggle="dropdown"
+              data-spirit-target="#dropdown-in-modal"
+              class="Button Button--secondary Button--medium"
+              aria-expanded="false"
+              aria-controls="dropdown-in-modal"
+            >
+              Dropdown
+            </button>
+            <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-in-modal">
+              <a href="#" class="Item">
+                <span class="Item__label">Action</span>
+              </a>
+              <a href="#" class="Item">
+                <span class="Item__label">Another action</span>
+              </a>
+              <a href="#" class="Item">
+                <span class="Item__label">Something else here</span>
+              </a>
+            </div>
+          </div>
+          <!-- Content: end -->
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__description">
+            Optional description
+          </div>
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-dropdown"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-dropdown"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </article>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
   </div>
 
 </section>

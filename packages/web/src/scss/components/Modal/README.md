@@ -114,6 +114,13 @@ the state of the form and closing the dialog.
 </form>
 ```
 
+### Dropdowns in Modal
+
+Dropdowns can be safely used inside **non-scrollable** Modals so that the Dropdown popover is not clipped by the Modal's
+boundaries.
+
+👉 See the [Scrolling Long Content](#scrolling-long-content) section for more information on scroll control of Modals.
+
 ### Expand on Mobile Screens
 
 We recommend expanding the dialog on mobile screens using the `ModalDialog--expandOnMobile` modifier class. If you omit
