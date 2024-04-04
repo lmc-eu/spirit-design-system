@@ -10,7 +10,7 @@
     "directory": "apps/storybook"
   },
   "scripts": {
-    "start": "storybook dev --config-dir ./ --port 6006",
+    "start": "storybook dev --config-dir ./ --port 6006 --no-open",
     "build": "storybook build --config-dir ./ --output-dir ./build"
   },
   "dependencies": {},
