@@ -26,8 +26,8 @@
     margin-inline: auto;
     margin-top: var(--modal-top);
     margin-bottom: var(--modal-bottom);
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: var(--modal-body-overflow-x, hidden);
+    overflow-y: var(--modal-body-overflow-x, auto);
     color: theme.$dialog-text-color;
     background-color: theme.$dialog-background-color;
     box-shadow: theme.$dialog-shadow;
@@ -113,6 +113,9 @@
 // @deprecated The non-scrollable modal dialog is deprecated and will be removed in the next major release.
 // Migration: In CSS, make the modal dialog non-scrollable by default so scrolling inside is turned on by a modifier class.
 @mixin -non-scrollable-modal-dialog() {
+    --modal-body-overflow-x: visible;
+    --modal-body-overflow-y: visible;
+
     height: auto;
     max-height: none;
 }
