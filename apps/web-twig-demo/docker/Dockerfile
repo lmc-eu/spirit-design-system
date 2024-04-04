@@ -10,7 +10,7 @@ FROM composer/composer:2-bin AS composer
 FROM mlocati/php-extension-installer:latest AS php_extension_installer
 
 # Prod image
-FROM php:7.4-fpm AS app_php
+FROM php:8.3-fpm AS app_php
 
 # Allow to use development versions of Symfony
 ARG STABILITY="stable"
