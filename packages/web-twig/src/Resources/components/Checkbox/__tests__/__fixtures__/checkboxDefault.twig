@@ -1,3 +1,49 @@
-{% set inputProps = { "data-validate": "true" } %}
+<Checkbox />
 
-<Checkbox id="example" name="example" isRequired isChecked validationState="danger" validationText="validation failed" inputProps={ inputProps } />
+<!-- Render with minimum props -->
+<Checkbox
+    id="example-id"
+    label="Example label"
+/>
+
+<!-- Render checked -->
+<Checkbox
+    id="example-id"
+    isChecked
+    label="Example label"
+/>
+
+<!-- Render with helper text -->
+<Checkbox
+    id="example-id"
+    label="Example label"
+    helperText="Example helper text"
+/>
+
+<!-- Render with hidden label -->
+<Checkbox
+    id="example-id"
+    isLabelHidden
+    label="Example label"
+/>
+
+<!-- Render with all props -->
+{% set inputProps = { "data-validate": "true" } %}
+<Checkbox
+    helperText="Example helper text"
+    id="example-id"
+    inputProps={ inputProps }
+    isChecked
+    isDisabled
+    isItem
+    isLabelHidden
+    isRequired
+    label="Example label"
+    name="example-name"
+    UNSAFE_helperText="UNSAFE helper text"
+    UNSAFE_label="UNSAFE label"
+    UNSAFE_validationState="UNSAFE validation state"
+    validationState="danger"
+    validationText="Example validation text"
+    value="example value"
+/>
