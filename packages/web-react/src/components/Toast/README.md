@@ -8,6 +8,7 @@ Toast is a composition of a few subcomponents:
 
 - [Toast](#toast)
   - [ToastBar](#toastbar)
+- [UncontrolledToast](#uncontrolledToast)
 
 ## Toast
 
@@ -225,16 +226,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 
 ### API
 
-| Name            | Type                                                         | Default    | Required | Description                                                          |
-| --------------- | ------------------------------------------------------------ | ---------- | -------- | -------------------------------------------------------------------- |
-| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                                          |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                                        |
-| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message                          |
-| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
-| `id`            | `string`                                                     | —          | ✔        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
-| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
-| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                                         |
-| `onClose`       | `function`                                                   | —          | ✕        | Close button callback                                                |
+| Name            | Type                                                         | Default    | Required | Description                                         |
+| --------------- | ------------------------------------------------------------ | ---------- | -------- | --------------------------------------------------- |
+| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                         |
+| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                       |
+| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
+| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
+| `id`            | `string`                                                     | —          | ✔        | ToastBar ID                                         |
+| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
+| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                        |
+| `onClose`       | `function`                                                   | —          | ✕        | Close button callback                               |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -263,13 +264,107 @@ const [isOpen, setIsOpen] = React.useState(false)
 </Toast>
 ```
 
-[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast
-[mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
-[mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+## UncontrolledToast
+
+```jsx
+import { ToastProvider, UncontrolledToast } from '@lmc-eu/spirit-web-react/components';
+```
+
+### Minimal props
+
+```jsx
+const { show } = useToast(); // must be inside ToastProvider
+
+<ToastProvider>
+  <Button type="button" onClick={() => show(ToastTextWithLink, 'toast-id')}>
+    Show Toast
+  </Button>
+
+  <UncontrolledToast />
+</ToastProvider>;
+```
+
+### All possible props
+
+```jsx
+const { show } = useToast(); // must be inside ToastProvider
+
+<ToastProvider>
+  <Button
+    type="button"
+    onClick={() =>
+      show('Toast message', 'toast-id', {
+        color: 'danger',
+        iconName: 'download',
+      })
+    }
+  >
+    Show Toast
+  </Button>
+
+  <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close toast" hasIcon isDismissible />
+</ToastProvider>;
+```
+
+### useToast hook
+
+Hook that provides information on `UncontrolledToast` and functions for opening and closing.
+What is uncontrolled component you can find [here][react-uncontrolled]
+
+This hook returns:
+
+| Name       | Type                                                         | Default    | Description                                         |
+| ---------- | ------------------------------------------------------------ | ---------- | --------------------------------------------------- |
+| `color`    | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | Color variant                                       |
+| `hide`     | `function`                                                   | () => {}   | Function that will hide UncontrolledToast           |
+| `iconName` | `string`                                                     | —          | Name of a custom icon to be shown along the message |
+| `id`       | `string`                                                     | `''`       | ToastBar ID                                         |
+| `isOpen`   | `bool`                                                       | `false`    | Open state of UncontrolledToast                     |
+| `message`  | [`string` \| `ReactNode`]                                    | null       | Message inside UncontrolledToast                    |
+| `show`     | `function`                                                   | () => {}   | Function that will show UncontrolledToast           |
+
+#### How to use `showToast` function:
+
+This function has two required parameters: message and ID.
+All other options are not required and can be omitted entirely.
+
+```jsx
+         ┌─⫸ Message inside UncontrolledToast (required)
+         │
+         │                 ┌─⫸ ToastBar ID (required)
+         │                 │
+show('Toast message', 'toast-id', {
+  color: 'danger',         // Color variant, default: 'inverted'
+  iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
+})
+```
+
+### API
+
+| Name            | Type                                                        | Default    | Required | Description                                 |
+| --------------- | ----------------------------------------------------------- | ---------- | -------- | ------------------------------------------- |
+| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center`   | ✕        | Horizontal alignment of the toast queue     |
+| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom`   | ✕        | Vertical alignment of the toast queue       |
+| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                 |
+| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message |
+| `isDismissible` | `bool`                                                      | `true`     | ✕        | If true, ToastBar can be dismissed by user  |
+
+(\*) For each emotion color, a default icon is defined.
+The icons come from the [Icon package][icon-package], or from your custom source of icons.
+Read the section [Default Icons according to Color Variant](#default-icons-according-to-color-variant).
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
+[icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
+[mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+[mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
+[react-uncontrolled]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#controlled-vs-uncontrolled-components
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [scott-o-hara-toast]: https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html
-[icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
+[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast

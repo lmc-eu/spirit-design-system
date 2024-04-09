@@ -6,6 +6,8 @@ import {
   StyleProps,
 } from './shared';
 
+export type ToastColorType = 'inverted' | EmotionColorsDictionaryType;
+
 export interface BaseToastProps extends ChildrenProps, StyleProps {}
 
 export interface SpiritToastProps extends BaseToastProps {
@@ -31,11 +33,19 @@ export interface TransitionToastBarProps {
 
 export interface SpiritToastBarProps extends ToastBarProps, TransitionToastBarProps {
   closeLabel?: string;
-  color?: EmotionColorsDictionaryType | 'inverted';
+  color?: ToastColorType;
   hasIcon?: boolean;
   iconName?: string;
 }
 
 export interface ToastCloseButtonProps extends ToastBarHandlingProps, SpiritToastBarProps {
   label?: string;
+}
+
+export interface UncontrolledToastProps extends ChildrenProps, StyleProps {
+  alignmentX?: 'left' | 'center' | 'right';
+  alignmentY?: 'top' | 'bottom';
+  closeLabel?: string;
+  hasIcon?: boolean;
+  isDismissible?: boolean;
 }
