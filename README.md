@@ -51,9 +51,9 @@ See [`package.json`](./package.json) for all available tasks.
 See the [LICENSE](LICENSE.md) file for information.
 
 [alma-career]: https://github.com/lmc-eu
-[sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
 [sa-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-analytics.svg?style=flat-square
 [sa-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-analytics
+[sc-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-codemods.svg?style=flat-square
 [sc-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-codemods
 [sdt-badge]: https://img.shields.io/npm/v/%40lmc-eu/spirit-design-tokens.svg?style=flat-square
 [sdt-npm]: https://www.npmjs.com/package/@lmc-eu/spirit-design-tokens
