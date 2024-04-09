@@ -33,6 +33,7 @@
 {# Attributes #}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 
@@ -53,10 +54,10 @@
         {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
         type="checkbox"
         id="{{ _id }}"
-        name="{{ _name }}"
         class="{{ _inputClassName }}"
         {{ _checkedAttr }}
         {{ _disabledAttr }}
+        {{ _nameAttr | raw }}"
         {{ _requiredAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
     />
