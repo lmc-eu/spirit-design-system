@@ -61,7 +61,16 @@ The `Tooltip` and `Dropdown` components no longer support non-flow-relative plac
 
 #### Migration Guide
 
-Instead of using `top-left` or `left-bottom` and etc, use `top-start` or `left-end` and so on.
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/dropdown-tooltip-flow-placement
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually edit your usages of Tooltip and Dropdown. Instead of using `top-left` or
+`left-bottom` and etc, use `top-start` or `left-end` and so on.
 See [Placement dictionary][dictionary-placement] for more details.
 
 - `<Tooltip placement="top-left" … />` → `<Tooltip placement="top-start" … />`
