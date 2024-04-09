@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, ScrollView } from '../..';
+import {
+  Button,
+  DropdownModern,
+  DropdownPopover,
+  DropdownTrigger,
+  Item,
+  Modal,
+  ModalBody,
+  ModalDialog,
+  ModalFooter,
+  ModalHeader,
+  ScrollView,
+} from '../..';
 
 const ModalScrollingLongContent = () => {
   const [isFirstOpen, setFirstOpen] = useState(false);
   const [isSecondOpen, setSecondOpen] = useState(false);
   const [isThirdOpen, setThirdOpen] = useState(false);
+  const [isModalWithDropdownOpen, setModalWithDropdownOpen] = useState(false);
 
   const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
   const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
   const toggleThirdModal = () => setThirdOpen(!isThirdOpen);
+  const toggleModalWithDropdown = () => setModalWithDropdownOpen(!isModalWithDropdownOpen);
 
   const handleFirstClose = () => setFirstOpen(false);
   const handleSecondClose = () => setSecondOpen(false);
   const handleThirdClose = () => setThirdOpen(false);
+  const handleModalWithDropdownClose = () => setModalWithDropdownOpen(false);
+
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const handleDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <>
@@ -168,6 +186,38 @@ const ModalScrollingLongContent = () => {
           <ModalFooter>
             <Button onClick={handleThirdClose}>Primary action</Button>
             <Button color="secondary" onClick={handleThirdClose}>
+              Secondary action
+            </Button>
+          </ModalFooter>
+        </ModalDialog>
+      </Modal>
+
+      <Button onClick={toggleModalWithDropdown}>Open Non-Scrolling Modal with Dropdown</Button>
+
+      <Modal id="example-dropdown" isOpen={isModalWithDropdownOpen} onClose={handleModalWithDropdownClose}>
+        <ModalDialog isScrollable={false}>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalBody>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+              provident unde. Eveniet, iste, molestiae?
+            </p>
+            <DropdownModern id="dropdown-in-modal" isOpen={isDropdownOpen} onToggle={handleDropdownToggle}>
+              {/* @ts-expect-error -- TS2322: Property color does not exist on type … */}
+              <DropdownTrigger elementType={Button} color="secondary">
+                Dropdown
+              </DropdownTrigger>
+              <DropdownPopover>
+                <Item elementType="a" href="#" label="Action" />
+                <Item elementType="a" href="#" label="Another action" />
+                <Item elementType="a" href="#" label="Something else here" />
+              </DropdownPopover>
+            </DropdownModern>
+          </ModalBody>
+          <ModalFooter description="Optional description">
+            <Button onClick={handleModalWithDropdownClose}>Primary action</Button>
+            <Button color="secondary" onClick={handleModalWithDropdownClose}>
               Secondary action
             </Button>
           </ModalFooter>
