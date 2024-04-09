@@ -199,3 +199,56 @@
         </ModalFooter>
     </ModalDialog>
 </Modal>
+
+<Button data-spirit-toggle="modal" data-spirit-target="#example-dropdown">
+    Open Non-Scrolling Modal with Dropdown
+</Button>
+
+<Modal id="example-dropdown" titleId="example-dropdown-title">
+    <ModalDialog isScrollable={ false }>
+        <ModalHeader modalId="example-dropdown" titleId="example-dropdown-title">
+            Modal Title
+        </ModalHeader>
+        <ModalBody>
+
+            <!-- Content: start -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+            <DropdownWrapper>
+                <Button
+                    color="secondary"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown-in-modal"
+                    data-spirit-autoclose="true"
+                >
+                    Dropdown
+                </Button>
+                <Dropdown id="dropdown-in-modal">
+                    <Item elementType="a" href="#" label="Action" />
+                    <Item elementType="a" href="#" label="Another action" />
+                    <Item elementType="a" href="#" label="Something else here" />
+                </Dropdown>
+            </DropdownWrapper>
+            <!-- Content: end -->
+
+        </ModalBody>
+        <ModalFooter description="Optional description">
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-dropdown"
+            >
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-dropdown"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
