@@ -171,7 +171,15 @@ The `tablet` and `desktop` props will be removed in the next major version.
 
 #### Migration Guide
 
-Replace `tablet` and `desktop` props with the `cols` object prop.
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-breakpoint-props
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually replace `tablet` and `desktop` props with the `cols` object prop.
 
 - `<Grid cols="2" tablet="3" … />` → `<Grid cols={{ mobile: 2, tablet: 3 }} … />`
 - `<Grid desktop="3" … />` → `<Grid cols={{ desktop: 3 }} … />`
