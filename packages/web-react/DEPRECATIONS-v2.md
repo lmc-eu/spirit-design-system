@@ -175,7 +175,33 @@ non-scrollable by default. It will be possible to re-enable the inside scrolling
 
 #### Migration Guide
 
-Add `isScrollable` prop to the `ModalDialog` component.
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-iscrollable-prop
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually add `isScrollable` prop to the `ModalDialog` component.
+
+### ModalDialog `isExpandedOnMobile` Prop
+
+The `isExpandedOnMobile` prop will be set to `true` by default in the next major release and the ModalDialog will be
+expanded on mobile by default. It will be possible to re-collapse the inside by setting the `isExpandedOnMobile` prop
+to `false` value.
+
+#### Migration Guide
+
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isexpandedonmobile-prop
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually add `isExpandedOnMobile={false}` prop to the `ModalDialog` component to keep the current behavior.
 
 ### ModalDialog Uniform Appearance
 
@@ -184,7 +210,15 @@ remain accessible via the `isDockedOnMobile` property.
 
 #### Migration Guide
 
-Add `isDockedOnMobile` prop to the `ModalDialog` component.
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isdockeonmobile-prop
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually add `isDockedOnMobile` prop to the `ModalDialog` component.
 
 ### Alert `danger` Icon
 
