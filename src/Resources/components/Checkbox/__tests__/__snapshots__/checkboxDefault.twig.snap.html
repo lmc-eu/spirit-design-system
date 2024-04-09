@@ -5,6 +5,19 @@
     </title>
   </head>
   <body>
-    <label for="example" class="Checkbox Checkbox--danger"><input data-validate="true" type="checkbox" id="example" name="example" class="Checkbox__input" checked required=""> <span class="Checkbox__text"> <span class="Checkbox__validationText">validation failed</span></span></label>
+    <label for="" class="Checkbox"><input type="checkbox" id="" class="Checkbox__input"></label> 
+    <!-- Render with minimum props -->
+     <label for="example-id" class="Checkbox"><input type="checkbox" id="example-id" class="Checkbox__input">
+    <span class="Checkbox__text"><span class="Checkbox__label">Example label</span></span></label> 
+    <!-- Render checked -->
+     <label for="example-id" class="Checkbox"><input type="checkbox" id="example-id" class="Checkbox__input" checked> <span class="Checkbox__text"><span class="Checkbox__label">Example label</span></span></label> 
+    <!-- Render with helper text -->
+     <label for="example-id" class="Checkbox"><input type="checkbox" id="example-id" class="Checkbox__input">
+    <span class="Checkbox__text"><span class="Checkbox__label">Example label</span> <span class="Checkbox__helperText">Example helper text</span></span></label> <!-- Render with hidden label -->
+     <label for="example-id" class="Checkbox"><input type="checkbox" id="example-id" class="Checkbox__input">
+    <span class="Checkbox__text"><span class="Checkbox__label Checkbox__label--hidden">Example
+    label</span></span></label> <!-- Render with all props -->
+     <label for="example-id" class="Checkbox Checkbox--disabled Checkbox--item Checkbox--danger"><input data-validate="true" type="checkbox" id="example-id" class="Checkbox__input" checked disabled name="example-name" required="" value=""> <span class="Checkbox__text"><span class="Checkbox__label Checkbox__label--hidden Checkbox__label--required">UNSAFE label</span> <span class="Checkbox__helperText">UNSAFE helper text</span> <span class="Checkbox__validationText">Example validation
+    text</span></span></label>
   </body>
 </html>
