@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.15.0"></a>
+
+# [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.14.0...@lmc-eu/spirit-web-react@1.15.0) (2024-04-11)
+
+### Bug Fixes
+
+- **web-react:** Set correct component in Dropdown deprecation message ([c63c128](https://github.com/lmc-eu/spirit-design-system/commit/c63c128))
+
+### Chores
+
+- **repo:** Introduce simplified Demo app for web and web-react packages ([273564c](https://github.com/lmc-eu/spirit-design-system/commit/273564c))
+- **web-react:** Customize demos for Docs app ([87e12aa](https://github.com/lmc-eu/spirit-design-system/commit/87e12aa))
+- **web-react:** Remove configuration for the demo app ([2880c7d](https://github.com/lmc-eu/spirit-design-system/commit/2880c7d))
+
+### Dependencies
+
+- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
+
+### Documentation
+
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+- **web-react:** Fix Dropdown deprecation README links ([5817321](https://github.com/lmc-eu/spirit-design-system/commit/5817321))
+- **web-react:** List Deprecations in the web react package [#DS-1147](https://github.com/lmc-eu/spirit-design-system/issues/DS-1147) ([421f2eb](https://github.com/lmc-eu/spirit-design-system/commit/421f2eb))
+- **web-react:** Remove unused stories ([b36ed74](https://github.com/lmc-eu/spirit-design-system/commit/b36ed74))
+- **web-react:** Rename standalone Storybook MDX files ([4f74626](https://github.com/lmc-eu/spirit-design-system/commit/4f74626))
+
+### Features
+
+- **web-react:** Deprecate `off` placement in Tooltip [#DS-1078](https://github.com/lmc-eu/spirit-design-system/issues/DS-1078) ([0943d15](https://github.com/lmc-eu/spirit-design-system/commit/0943d15))
+- **web-react:** Deprecate default value of isExpandedOnMobile prop of ModalDialog [#DS-1146](https://github.com/lmc-eu/spirit-design-system/issues/DS-1146) ([3d8173d](https://github.com/lmc-eu/spirit-design-system/commit/3d8173d))
+- **web-react:** Deprecate Grid Span in favor of Grid Item [#DS-1041](https://github.com/lmc-eu/spirit-design-system/issues/DS-1041) ([6d63742](https://github.com/lmc-eu/spirit-design-system/commit/6d63742))
+- **web-react:** Deprecate optional id prop in Collapse component [#DS-1170](https://github.com/lmc-eu/spirit-design-system/issues/DS-1170) ([796b843](https://github.com/lmc-eu/spirit-design-system/commit/796b843))
+- **web-react:** Introduce Toast component ([94fa553](https://github.com/lmc-eu/spirit-design-system/commit/94fa553)), closes [#DS-1113](https://github.com/lmc-eu/spirit-design-system/issues/DS-1113)
+
+### Styles
+
+- **web-react:** Switch off extraneous deps lint for stories directory ([54acdc3](https://github.com/lmc-eu/spirit-design-system/commit/54acdc3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.14.0"></a>
 
 # [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.13.1...@lmc-eu/spirit-web-react@1.14.0) (2024-03-11)

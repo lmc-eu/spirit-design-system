@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.0"></a>
+
+# [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.2.0...@lmc-eu/spirit-common@0.3.0) (2024-04-11)
+
+### Dependencies
+
+- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
+
+### Documentation
+
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+
+### Features
+
+- **common:** Read the testings url from the environment ([80d55c8](https://github.com/lmc-eu/spirit-design-system/commit/80d55c8)), closes [#DS-980](https://github.com/lmc-eu/spirit-design-system/issues/DS-980)
+
+### Tests
+
+- **repo:** Use unified demo app for visual testing ([9aeaba3](https://github.com/lmc-eu/spirit-design-system/commit/9aeaba3))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.2.0"></a>
 
 # [0.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.1.0...@lmc-eu/spirit-common@0.2.0) (2024-01-30)

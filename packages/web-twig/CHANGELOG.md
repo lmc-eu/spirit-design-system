@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.14.0"></a>
+
+# [2.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.13.0...@lmc-eu/spirit-web-twig@2.14.0) (2024-04-11)
+
+### Documentation
+
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+- **web-twig:** List Deprecations in the web twig package [#DS-1148](https://github.com/lmc-eu/spirit-design-system/issues/DS-1148) ([eb8d07f](https://github.com/lmc-eu/spirit-design-system/commit/eb8d07f))
+- **web-twig:** Set danger icons in Alert component ([caeff6f](https://github.com/lmc-eu/spirit-design-system/commit/caeff6f))
+
+### Features
+
+- **web-twig:** Deprecate Grid Span in favor of Grid Item [#DS-1041](https://github.com/lmc-eu/spirit-design-system/issues/DS-1041) ([d6a1c4e](https://github.com/lmc-eu/spirit-design-system/commit/d6a1c4e))
+- **web-twig:** Introduce the `Toast` component [#DS-1115](https://github.com/lmc-eu/spirit-design-system/issues/DS-1115) ([ee9789d](https://github.com/lmc-eu/spirit-design-system/commit/ee9789d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.13.0"></a>
 
 # [2.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.12.1...@lmc-eu/spirit-web-twig@2.13.0) (2024-03-11)

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.1"></a>
+
+## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.3.0...@lmc-eu/spirit-analytics@0.3.1) (2024-04-11)
+
+### Dependencies
+
+- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
+
+### Documentation
+
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="0.3.0"></a>
 
 # [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.2.0...@lmc-eu/spirit-analytics@0.3.0) (2024-01-12)

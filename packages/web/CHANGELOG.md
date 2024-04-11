@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.13.0"></a>
+
+# [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.12.0...@lmc-eu/spirit-web@1.13.0) (2024-04-11)
+
+### Chores
+
+- **ci:** Remove deploy to GitHub pages in favor of the Netlify app ([b3558c0](https://github.com/lmc-eu/spirit-design-system/commit/b3558c0))
+- **web:** Customize demos for Docs app ([3ddeef9](https://github.com/lmc-eu/spirit-design-system/commit/3ddeef9))
+- **web:** Remove configuration for the demo app ([bd8183d](https://github.com/lmc-eu/spirit-design-system/commit/bd8183d))
+
+### Dependencies
+
+- Update all non-major dependencies ([b971d44](https://github.com/lmc-eu/spirit-design-system/commit/b971d44))
+
+### Documentation
+
+- **repo:** Deploy Docs app to Netlify ([23d0455](https://github.com/lmc-eu/spirit-design-system/commit/23d0455))
+- **repo:** How to setup and start this project ([b6ec3a7](https://github.com/lmc-eu/spirit-design-system/commit/b6ec3a7))
+- **repo:** Rebrand to Alma Career ([4a9a28b](https://github.com/lmc-eu/spirit-design-system/commit/4a9a28b))
+- **web:** List Deprecations in the web package [#DS-1043](https://github.com/lmc-eu/spirit-design-system/issues/DS-1043) ([3b9499d](https://github.com/lmc-eu/spirit-design-system/commit/3b9499d))
+
+### Features
+
+- **web-twig:** Introduce the `Toast` component [#DS-1115](https://github.com/lmc-eu/spirit-design-system/issues/DS-1115) ([ee9789d](https://github.com/lmc-eu/spirit-design-system/commit/ee9789d))
+- **web:** Deprecate Grid Span in favor of Grid Item [#DS-1041](https://github.com/lmc-eu/spirit-design-system/issues/DS-1041) ([6b2ebe0](https://github.com/lmc-eu/spirit-design-system/commit/6b2ebe0))
+- **web:** Introduce `Toast` JavaScript plugin [#DS-1115](https://github.com/lmc-eu/spirit-design-system/issues/DS-1115) ([1ab3f7f](https://github.com/lmc-eu/spirit-design-system/commit/1ab3f7f))
+- **web:** Print all design tokens as CSS root variables [#DS-1200](https://github.com/lmc-eu/spirit-design-system/issues/DS-1200) ([b0a7ee7](https://github.com/lmc-eu/spirit-design-system/commit/b0a7ee7))
+
+### Tests
+
+- **web:** Add tests for Toast component ([2d63d05](https://github.com/lmc-eu/spirit-design-system/commit/2d63d05))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.12.0"></a>
 
 # [1.12.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.11.0...@lmc-eu/spirit-web@1.12.0) (2024-03-11)

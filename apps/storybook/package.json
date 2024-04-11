@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-storybook",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Storybook of the Spirit Design System",
   "license": "MIT",
   "private": true,
@@ -13,7 +13,6 @@
     "start": "storybook dev --config-dir ./ --port 6006 --no-open",
     "build": "storybook build --config-dir ./ --output-dir ./build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.23.7",
     "@storybook/addon-actions": "7.6.16",
