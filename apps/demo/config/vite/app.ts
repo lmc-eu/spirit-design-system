@@ -32,6 +32,7 @@ export default defineConfig({
         join(pathRelativeToPackageRoot, 'partials'),
         join(pathRelativeToRepositoryRoot, 'packages/web/partials'),
         join(pathRelativeToRepositoryRoot, 'packages/web-react/partials'),
+        join(pathRelativeToRepositoryRoot, 'packages/web-vue/partials'),
       ],
       helpers: {
         setVar: (...data) => {
@@ -58,6 +59,14 @@ export default defineConfig({
               .filter((item) => item.isDirectory())
               .filter((item) =>
                 readdirSync(`../../packages/web-react/src/components/${item.name}`).includes('index.html'),
+              )
+              .map((item) => item.name),
+          ],
+          web_vue_components: [
+            ...readdirSync('../../packages/web-vue/src/components', { withFileTypes: true })
+              .filter((item) => item.isDirectory())
+              .filter((item) =>
+                readdirSync(`../../packages/web-vue/src/components/${item.name}`).includes('index.html'),
               )
               .map((item) => item.name),
           ],
@@ -89,6 +98,7 @@ export default defineConfig({
         webReactMain: join(pathRelativeToRepositoryRoot, 'packages/web-react/index.html'),
         ...mapKeys(getNestedDirs('../../packages/web-react/src/components', 'index.html'), (key) => `web-react-${key}`),
         webReactIcons: join(pathRelativeToRepositoryRoot, 'packages/web-react/src/icons/index.html'),
+        ...mapKeys(getNestedDirs('../../packages/web-vue/src/components', 'index.html'), (key) => `web-vue-${key}`),
       },
       output: {
         entryFileNames: `assets/spirit-entry.[hash].js`,
