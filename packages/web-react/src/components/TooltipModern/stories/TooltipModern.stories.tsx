@@ -45,6 +45,19 @@ const meta: Meta<typeof TooltipModern> = {
         defaultValue: { summary: 'bottom' },
       },
     },
+    isFocusableOnHover: {
+      control: 'boolean',
+    },
+    trigger: {
+      control: 'select',
+      options: ['click, hover', 'hover', 'click'],
+      table: {
+        defaultValue: { summary: 'click, hover' },
+      },
+    },
+    isOpen: {
+      control: 'boolean',
+    },
   },
   args: {
     children: (
@@ -53,7 +66,7 @@ const meta: Meta<typeof TooltipModern> = {
         point to the center of the trigger.
       </>
     ),
-    isOpen: true,
+    isOpen: false,
     id: 'TooltipModernExample',
     enableFlipping: true,
     enableShifting: true,
@@ -61,6 +74,7 @@ const meta: Meta<typeof TooltipModern> = {
     enableFlippingCrossAxis: true,
     trigger: ['click', 'hover'],
     placement: 'bottom',
+    isFocusableOnHover: false,
     flipFallbackPlacements: ['bottom', 'left', 'right', 'top'],
   },
 };
@@ -70,7 +84,7 @@ type Story = StoryObj<typeof TooltipModern>;
 
 const TooltipModernWithHooks = (args: SpiritTooltipModernProps) => {
   const { children, isOpen } = args;
-  const [isTooltipOpen, setIsTooltipOpen] = useState(true);
+  const [isTooltipOpen, setIsTooltipOpen] = useState(isOpen);
 
   const viewportRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);

@@ -129,6 +129,8 @@ const TooltipWithFloatingUI = () => {
             flipFallbackPlacements={suggestedFallbackPlacement}
             enableShifting={shift}
             enableSizing={size}
+            trigger={['hover']}
+            isFocusableOnHover
           >
             <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
             <TooltipPopover>
