@@ -6,6 +6,7 @@ import {
   inline,
   limitShift,
   offset,
+  safePolygon,
   shift,
   size,
   useClick,
@@ -28,6 +29,7 @@ type UseTooltipUIProps = {
   isOpen?: boolean;
   offset?: number;
   onToggle: (isOpen: boolean) => void;
+  isFocusableOnHover?: boolean;
   shiftProp: boolean;
   sizeProp: boolean;
   tooltipArrowWidth?: number;
@@ -51,6 +53,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
     isOpen = false,
     offset: tooltipOffset = 0,
     onToggle,
+    isFocusableOnHover,
     shiftProp,
     sizeProp,
     tooltipArrowWidth = 0,
@@ -64,6 +67,13 @@ export const useFloating = (props: UseTooltipUIProps) => {
 
   const isHoverEnabled = trigger?.includes(TOOLTIP_TRIGGER.HOVER);
   const isClickEnabled = trigger?.includes(TOOLTIP_TRIGGER.CLICK);
+
+  const useSafePolygons = (isClickable: boolean) =>
+    isClickable
+      ? safePolygon({
+          requireIntent: false,
+        })
+      : undefined;
 
   // Floating UI library settings
   const { x, y, refs, context, placement, middlewareData } = useFloatingUI({
@@ -125,7 +135,10 @@ export const useFloating = (props: UseTooltipUIProps) => {
 
   // Floating UI library interaction hooks
   const click = useClick(context, { enabled: isClickEnabled });
-  const hover = useHover(context, { enabled: isHoverEnabled });
+  const hover = useHover(context, {
+    enabled: isHoverEnabled,
+    handleClose: useSafePolygons(!!isFocusableOnHover),
+  });
   const dismiss = useDismiss(context);
   const role = useRole(context, { role: 'tooltip' });
   const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, dismiss, role]);
