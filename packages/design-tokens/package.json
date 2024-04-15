@@ -40,6 +40,6 @@
     "stylelint-order": "6.0.4",
     "typescript": "5.3.3",
     "vite": "4.5.3",
-    "vite-plugin-dts": "3.7.3"
+    "vite-plugin-dts": "3.8.3"
   }
 }
