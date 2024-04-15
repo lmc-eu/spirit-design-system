@@ -72,7 +72,7 @@ jobs:
         run: echo "site_url=${{ env.NETLIFY_DEPLOYED_URL }}" >> "$GITHUB_OUTPUT"
 
       - name: Run Playwright tests
-        uses: docker://mcr.microsoft.com/playwright:v1.42.1-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.43.1-jammy
         with:
           args: yarn playwright test
         env:

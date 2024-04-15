@@ -21,11 +21,11 @@
     "@react-hook/resize-observer": "^1.2.6",
     "classnames": "^2.3.1",
     "html-dom-parser": "5.0.8",
-    "html-react-parser": "5.1.9",
+    "html-react-parser": "5.1.10",
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.24.3",
+    "@babel/preset-env": "7.24.4",
     "@babel/preset-react": "7.24.1",
     "@babel/preset-typescript": "7.24.1",
     "@lmc-eu/eslint-config-base": "3.0.2",
@@ -36,17 +36,17 @@
     "@lmc-eu/spirit-design-tokens": "^1.1.4",
     "@lmc-eu/spirit-web": "^1.13.0",
     "@rollup/plugin-node-resolve": "15.2.3",
-    "@swc/core": "1.4.8",
+    "@swc/core": "1.4.14",
     "@swc/jest": "0.2.36",
     "@testing-library/dom": "9.3.4",
     "@testing-library/jest-dom": "6.4.2",
-    "@testing-library/react": "14.2.2",
+    "@testing-library/react": "14.3.1",
     "@testing-library/react-hooks": "8.0.1",
     "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.30",
-    "@types/react": "18.2.69",
-    "@types/react-dom": "18.2.22",
+    "@types/node": "20.12.7",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
     "@types/react-transition-group": "4.4.10",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
@@ -70,7 +70,7 @@
     "recast": "0.23.6",
     "rollup": "3.29.4",
     "rollup-plugin-terser": "7.0.2",
-    "sass": "1.72.0",
+    "sass": "1.75.0",
     "shx": "0.3.4",
     "terser-webpack-plugin": "5.3.10",
     "ts-loader": "9.5.1",
@@ -110,7 +110,7 @@
     "test:unit:coverage": "yarn test:unit --coverage"
   },
   "resolutions": {
-    "@types/react-dom": "18.2.22"
+    "@types/react-dom": "18.2.25"
   },
   "nx": {
     "targets": {
