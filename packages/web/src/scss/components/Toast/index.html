@@ -135,8 +135,9 @@
 
     <!-- Dynamic queue demo: start -->
     <script type="module">
-      import { addDynamicToast } from './dynamic-toast.mjs';
+      import { addDynamicToast, clearQueue } from './dynamic-toast.mjs';
       window.addDynamicToast = addDynamicToast;
+      window.clearQueue = clearQueue;
     </script>
 
     <form>
@@ -184,6 +185,13 @@
               onclick="addDynamicToast(event, 'toast-example');"
             >
               Add
+            </button>
+            <button
+              type="button"
+              class="Button Button--medium Button--secondary"
+              onclick="clearQueue(event, 'toast-example')"
+            >
+              Clear queue
             </button>
           </div>
         </div>

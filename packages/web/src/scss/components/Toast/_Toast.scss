@@ -79,7 +79,10 @@
 //
 // 11. Invisible items.
 //
-// 12. Generate:
+// 12. The `:where` is used to lower the specificity of the selector. Otherwise, the selector `.ToastBar.is-hidden`
+//     won't be able to override the visibility of the item.
+//
+// 13. Generate:
 //
 //    a) horizontal (x) and
 //    b) vertical (y) alignment classes for each breakpoint.
@@ -129,41 +132,41 @@ $_queue-collapsed-visible-limit: 2; // 10.
 
 // 8.
 // stylelint-disable-next-line selector-max-universal -- We want to target all children.
-.Toast__queue > * {
+.Toast__queue > .ToastBar {
     margin-block: var(--toast-bar-margin-top, 0) var(--toast-bar-margin-bottom, 0);
 }
 
-// 9.
-.Toast--collapsible > .Toast__queue > :nth-last-child(-n + #{theme.$queue-collapse-after}) {
+// 9., 12.
+.Toast--collapsible > .Toast__queue > :where(.ToastBar:nth-last-child(-n + #{theme.$queue-collapse-after})) {
     z-index: 1;
 }
 
-// 10.a
+// 10.a, 12.
 .Toast--collapsible
     > .Toast__queue
-    > :nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit - 1}) {
+    > :where(.ToastBar:nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit - 1})) {
     scale: 0.95;
 }
 
-// 10.b
+// 10.b, 12.
 .Toast--collapsible
     > .Toast__queue
-    > :nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit}) {
+    > :where(.ToastBar:nth-last-child(#{theme.$queue-collapse-after + $_queue-collapsed-visible-limit})) {
     opacity: 0.5;
     scale: 0.9;
 }
 
-// 10.c
-.Toast--collapsible > .Toast__queue > :nth-last-child(n + #{theme.$queue-collapse-after + 1}) {
+// 10.c, 12.
+.Toast--collapsible > .Toast__queue > :where(.ToastBar:nth-last-child(n + #{theme.$queue-collapse-after + 1})) {
     --toast-bar-pointer-events: none;
 
     max-height: 0;
 }
 
-// 11.
+// 11., 12.
 .Toast--collapsible
     > .Toast__queue
-    > :nth-last-child(n + #{theme.$queue-collapse-after + $_queue-collapsed-visible-limit + 1}) {
+    > :where(.ToastBar:nth-last-child(n + #{theme.$queue-collapse-after + $_queue-collapsed-visible-limit + 1})) {
     margin-block: 0;
     visibility: hidden;
     opacity: 0;
@@ -190,14 +193,14 @@ $_queue-collapsed-visible-limit: 2; // 10.
     }
 
     @include breakpoint.up($breakpoint-value) {
-        // 12.a
+        // 13.a
         @each $alignment-name, $alignment-value in theme.$alignments-x {
             .Toast--#{$infix}#{$alignment-name} {
                 --toast-alignment-x: #{$alignment-value};
             }
         }
 
-        // 12.b
+        // 13.b
         @each $alignment-name, $alignment-value in theme.$alignments-y {
             .Toast--#{$infix}#{$alignment-name} {
                 --toast-alignment-y: #{$alignment-value};

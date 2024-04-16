@@ -17,3 +17,25 @@ export const addDynamicToast = (event, containerId) => {
 
   console.log('Created dynamic toast with config:', config);
 };
+
+export const clearQueue = (event, containerId) => {
+  const container = document.getElementById(containerId);
+  const children = container.querySelectorAll('.ToastBar');
+
+  let cleared = 0;
+
+  children.forEach((element) => {
+    const instance = Toast.getOrCreateInstance(element);
+
+    if (instance instanceof Toast && instance?.isShown) {
+      instance?.hide();
+      cleared++;
+    }
+  });
+
+  if (cleared) {
+    console.log('Cleared toast queue of length:', cleared);
+  } else {
+    console.log('No toasts to clear.');
+  }
+};
