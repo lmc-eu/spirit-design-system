@@ -40,7 +40,12 @@ const SELECTOR_CLOSE_BUTTON_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="close-
 const SELECTOR_DISMISS_TRIGGER_ELEMENT = `[${ATTRIBUTE_DATA_DISMISS}="${NAME}"]`;
 const SELECTOR_MESSAGE_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="message"]`;
 
-export const SLOWEST_TRANSITION_PROPERTY_NAME = 'max-height'; // Keep in sync with transitions in `scss/Toast/_theme.scss`.
+// Keep in sync with transitions in `scss/Toast/_theme.scss`.
+export const PROPERTY_NAME_SLOWEST_TRANSITION = {
+  css: 'max-height',
+  js: 'maxHeight',
+};
+const PROPERTY_NAME_FALLBACK_TRANSITION = 'opacity';
 
 type Color = keyof typeof COLOR_ICON_MAP;
 
@@ -75,6 +80,13 @@ class Toast extends BaseComponent {
     return this.element
       ? this.element.classList.contains(CLASS_NAME_VISIBLE) || !this.element.classList.contains(CLASS_NAME_HIDDEN)
       : false;
+  }
+
+  getAwaitedTransitionPropertyName(): CSSProperties {
+    // @ts-expect-error -- TS7015: Element implicitly has an any type because index expression is not of type number.
+    return parseInt(getComputedStyle(this.element)[PROPERTY_NAME_SLOWEST_TRANSITION.js], 10) > 0
+      ? PROPERTY_NAME_SLOWEST_TRANSITION.css
+      : PROPERTY_NAME_FALLBACK_TRANSITION;
   }
 
   getContainer(): SpiritElement {
@@ -238,14 +250,19 @@ class Toast extends BaseComponent {
         this.element.classList.remove(CLASS_NAME_TRANSITIONING);
       },
       true,
-      SLOWEST_TRANSITION_PROPERTY_NAME as CSSProperties,
+      this.getAwaitedTransitionPropertyName(),
     );
 
     this.isShown = true;
   }
 
+  finishHiding = (): void => {
+    EventHandler.trigger(this.element, Toast.eventName(EVENT_HIDDEN));
+    this.element.remove();
+  };
+
   hide(): void {
-    if (!this.isShown) {
+    if (!this.isShown || !this.element) {
       return;
     }
 
@@ -258,21 +275,18 @@ class Toast extends BaseComponent {
       element?.setAttribute(ATTRIBUTE_ARIA_EXPANDED, 'false');
     });
 
-    this.element.classList.remove(CLASS_NAME_VISIBLE);
-    this.element.classList.add(CLASS_NAME_HIDDEN);
-    this.element.classList.add(CLASS_NAME_TRANSITIONING);
+    // Use the visibility style to check if the toast is already visually hidden
+    const { visibility } = getComputedStyle(this.element);
 
-    executeAfterTransition(
-      this.element,
-      () => {
-        EventHandler.trigger(this.element, Toast.eventName(EVENT_HIDDEN));
-        this.element.remove();
-      },
-      true,
-      SLOWEST_TRANSITION_PROPERTY_NAME as CSSProperties,
-    );
+    if (visibility === 'hidden') {
+      this.finishHiding();
+    } else {
+      this.element.classList.remove(CLASS_NAME_VISIBLE);
+      this.element.classList.add(CLASS_NAME_HIDDEN);
+      this.element.classList.add(CLASS_NAME_TRANSITIONING);
 
-    this.isShown = false;
+      executeAfterTransition(this.element, this.finishHiding, true, this.getAwaitedTransitionPropertyName());
+    }
   }
 }
 

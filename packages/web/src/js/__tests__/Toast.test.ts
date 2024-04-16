@@ -1,5 +1,5 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
-import Toast, { SLOWEST_TRANSITION_PROPERTY_NAME } from '../Toast';
+import Toast, { PROPERTY_NAME_SLOWEST_TRANSITION } from '../Toast';
 import {
   ATTRIBUTE_ARIA_EXPANDED,
   ATTRIBUTE_DATA_TARGET,
@@ -84,7 +84,7 @@ describe('Toast', () => {
       expect(element).not.toHaveClass(CLASS_NAME_TRANSITIONING);
       expect(element).not.toHaveClass(CLASS_NAME_VISIBLE);
 
-      EventHandler.trigger(element, 'transitionend', { propertyName: SLOWEST_TRANSITION_PROPERTY_NAME });
+      EventHandler.trigger(element, 'transitionend', { propertyName: PROPERTY_NAME_SLOWEST_TRANSITION });
 
       setTimeout(() => {
         expect(element).toHaveClass(CLASS_NAME_VISIBLE);
@@ -112,7 +112,7 @@ describe('Toast', () => {
       expect(element).toHaveClass(CLASS_NAME_TRANSITIONING);
       expect(element).not.toHaveClass(CLASS_NAME_VISIBLE);
 
-      EventHandler.trigger(element, 'transitionend', { propertyName: SLOWEST_TRANSITION_PROPERTY_NAME });
+      EventHandler.trigger(element, 'transitionend', { propertyName: PROPERTY_NAME_SLOWEST_TRANSITION });
 
       setTimeout(() => {
         expect(fixtureEl.querySelector('.ToastBar')).toBeNull();
