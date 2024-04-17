@@ -23,7 +23,7 @@ The reasoning behind various decisions made for the Spirit Design System. A good
 
 ## Project structure
 
-This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/][packages] directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod deps 🤷‍♂️).
+This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/][packages] directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod dependencies 🤷‍♂️).
 
 ## Development
 
@@ -31,12 +31,12 @@ See [Developer Handbook][developer-handbook] for more information about developm
 
 ## Commit Conventions
 
-All commits you make SHOULD adhere to our commit guidelines. We use [conventional commits][conventional-commits] strategy with slight modification of our own - [@lmc-eu/commitlint-config][commitlint-config]. This is later used during release phase to determine how to bump the packages' version numbers based on commit history. 🚀
+All commits you make SHOULD adhere to our commit guidelines. We use [conventional commits][conventional-commits] strategy with a slight modification of our own - [@lmc-eu/commitlint-config][commitlint-config]. This is later used during the release phase to determine how to bump the packages' version numbers based on commit history. 🚀
 
 ### Commit Message Format
 
 We have very precise rules over how our Git commit messages MUST be formatted.
-This format leads to **easier to read commit history**.
+This format leads to **easier-to-read commit history**.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
@@ -74,7 +74,7 @@ The `<type>` and `<summary>` fields are mandatory, the `(<scope>)` field is opti
 
 MUST be one of the following:
 
-- **Chore**: Changes to our CI configuration files and scripts (examples: CircleCI, SauceLabs) or changes that affect build system
+- **Chore**: Changes to our CI configuration files and scripts (examples: CircleCI, SauceLabs) or changes that affect the build system
 - **Deps**: Changes to dependencies
 - **Docs**: Documentation only changes
 - **Feat**: A new feature
@@ -107,9 +107,9 @@ The following is the list of supported scopes:
   - `web-react`
   - `web-twig`
 - Repository-wide:
-  - `ci`: used for changes that affects Continuous Integration process and builds
-  - `repo`: used for repository wide changes
-  - none/empty string: useful for `Test` and `Refactor` changes that are done across all packages (e.g. `Test: Add missing unit tests`) and for docs changes that are not related to a specific package (e.g. `Docs: Fix typo in tutorial`).
+  - `ci`: used for changes that affect the Continuous Integration process and builds
+  - `repo`: used for repository-wide changes
+  - none/empty string: useful for `Test` and `Refactor` changes that are done across all packages (e.g. `Test: Add missing unit tests`) and for docs changes that are not related to a specific package (e.g. `Docs: Fix typo in the tutorial`).
 
 ##### Summary
 
@@ -129,6 +129,7 @@ You can include a comparison of the previous behavior with the new behavior in o
 #### Commit Message Footer
 
 The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues, Jira tickets, and other PRs that this commit closes or is related to.
+
 For example:
 
 ```
@@ -139,7 +140,7 @@ BREAKING CHANGE: <breaking change summary>
 Fixes #<issue number>
 ```
 
-Breaking Change section SHOULD start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
+The breaking change section SHOULD start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
 
 ### Revert commits
 
@@ -177,14 +178,14 @@ This project uses Prettier for code formatting. You can run `make format` to for
 ## Testing
 
 Each package contains a script called `test`.
-Using this you can test entire package and verify that all parts of the package are in good shape and all rules are met.
+Using this you can test the entire package and verify that all parts of the package are in good shape and all rules are met.
 
-Testing script includes:
+The testing script includes:
 
 - linting using [ESlint][eslint]
-- checking formatting using [Prettier][prettier]
-- checking types using [Typescript][typescript] compiler
-- running unit test using [Jest][jest]
+- checking format using the [Prettier][prettier]
+- checking types using the [Typescript][typescript] compiler
+- running unit test using the [Jest][jest]
 
 ### Unit testing
 
@@ -193,42 +194,42 @@ For all available scripts see the package's `package.json` file.
 
 ### Manual testing
 
-For better testing experience we are using deploy previews on Netlify.
+For a better testing experience, we are using deploy previews on Netlify.
 If your modification affects the publishable code and when you create a PR, every push then will be deployed to Netlify.
 Netlify will create a deploy preview and you can test your changes there.
 Netlify will also attach a link to the deploy preview to your PR so you can easily access it.
 
 #### Readable Netlify links
 
-For better UI experience when searching for the deploy preview link, you can use this [Gist with userContent.css][netlify-preview-gist].
+For a better UI experience when searching for the deploy preview link, you can use this [Gist with userContent.css][netlify-preview-gist].
 
 ### Visual regression testing
 
 **Prerequisites:** [Docker][docker] 🐳
 
 You can run visual regression testing via `Makefile` in the project root.
-All commands will execute Docker command that starts [Playwright][playwright] in containerized environment.
+All commands will execute a Docker command that starts [Playwright][playwright] in a containerized environment.
 
 - Use `make test-e2e` to run the tests.
 - Use `make test-e2e-update` to update the snapshots.
-- Use `make test-e2e-report` to generate and serve report of visual regression testing. Find report URL in the terminal output.
+- Use `make test-e2e-report` to generate and serve a report of visual regression testing. Find a report URL in the terminal output.
 
-👉 Visual snapshots are generated based on platform, so we need to use same platform locally and on CI (GitHub Actions).
+👉 Visual snapshots are generated based on the platform, so we need to use the same platform locally and on CI (GitHub Actions).
 
-⚠️ Version number of the Playwright dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional Playwright dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
+⚠️ The version number of the [Playwright][playwright] dependency must be the same in `package.json` file and in the `./bin/make/e2e.sh` to ensure that no additional [Playwright][playwright] dependencies will need to install (browsers are backed in the Docker image). See https://playwright.dev/docs/docker.
 
 We run visual regression testing locally against our demo apps. Web and Web React packages are served using Vite.
-Web Twig package is served using Symfony app.
+Web Twig package is served using the Symfony app.
 
 We have two test suites and you can find them in the `./tests/e2e` directory:
 
 - `demo-homepages` - tests the homepages of our demo apps.
   - This test is used to verify that the demo apps are working properly and their homepages are not broken.
 - `demo-components-compare` - tests components' pages of our demo apps'.
-  - This test gets the list of components from file system for each package and then it goes through each component and compares its page in all demo apps.
+  - This test gets the list of components from the file system for each package and then it goes through each component and compares its page in all demo apps.
   - Only one screenshot is taken for each component. If you run the update command, only the last screenshot will be saved.
 
-👉 To save time and repository size, we test only in Chromium browser and only on desktop viewport.
+👉 To save time and repository size, we test only in the Chromium browser and only on the desktop viewport.
 
 #### On CI pipeline
 
@@ -246,7 +247,7 @@ Look for `Artifact download URL: https://github.com/lmc-eu/spirit-design-system/
 ### Developing and Testing GitHub Actions
 
 It can be time-consuming and painful to test GitHub Actions.
-First, you have to change the GitHub Actions file locally, push your local code into GitHub repository, and wait for the result.
+First, you have to change the GitHub Actions file locally, push your local code into the GitHub repository, and wait for the result.
 
 To solve this issue, you can use [act][act] CLI tool to test and write the GitHub actions locally.
 
@@ -258,10 +259,10 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 
 ### Steps to create a new package version
 
-1. Merge all appropriate PRs you want to publish into main branch
-2. Run the `make version` command to bump the version number in packages (new version number is determined automatically based on commit history)
+1. Merge all appropriate PRs you want to publish into the main branch
+2. Run the `make version` command to bump the version number in packages (a new version number is determined automatically based on commit history)
 3. Check that the version number is correct and everything looks good
-4. Run manually `git push && git push --tags` to push the changes to remote
+4. Run manually `git push && git push --tags` to push the changes to the remote
 5. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
 
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
@@ -269,15 +270,17 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [act]: https://github.com/nektos/act
 [act-article]: https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 [conventional-commits]: https://www.conventionalcommits.org
-[lerna-home]: https://lernajs.io
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
-[packages]: packages/
+[conventional-commits]: https://www.conventionalcommits.org
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
 [developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contributtion/development.md
+[docker]: https://www.docker.com/
 [eslint]: https://eslint.org/
+[jest]: https://jestjs.io/
+[lerna-home]: https://lernajs.io
+[netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
+[nx-cloud]: https://nx.app/
+[packages]: packages/
+[playwright]: https://playwright.dev/
 [prettier]: https://prettier.io/
 [typescript]: https://www.typescriptlang.org/
-[jest]: https://jestjs.io/
-[docker]: https://www.docker.com/
-[playwright]: https://playwright.dev/
-[netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
