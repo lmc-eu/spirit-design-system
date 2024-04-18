@@ -15,13 +15,22 @@
     footerElement.classList.add(`ModalFooter--${event.target.value}`);
   };
 
-  const toggleDockOnMobile = (selector, dependingInputSelector) => {
-    const dependingInputElement = document.querySelector(dependingInputSelector);
-    const dependingLabelElement = dependingInputElement.closest('label');
+  const toggleDockOnMobile = (selector, dependingInputSelectors) => {
+    const dependingInputElements = document.querySelectorAll(dependingInputSelectors);
 
     document.querySelector(selector).classList.toggle('ModalDialog--dockOnMobile');
-    dependingInputElement.disabled = !dependingInputElement.disabled;
-    dependingLabelElement.classList.toggle('Checkbox--disabled');
+
+    dependingInputElements.forEach((element) => {
+      element.disabled = !element.disabled;
+
+      if (element.type == 'checkbox') {
+        element.closest('label').classList.toggle('Checkbox--disabled');
+      }
+
+      if (element.type == 'radio') {
+        element.closest('label').classList.toggle('Radio--disabled');
+      }
+    });
   }
 
   const toggleExpandOnMobile = (selector) => {
@@ -84,47 +93,61 @@
             provident unde. Eveniet, iste, molestiae?
           </p>
           <!-- Modal alignment demo: start -->
-          <form onchange="setModalAlignment(event, '#example-basic')" class="d-none d-tablet-block mb-600">
-            <div>Modal alignment (from tablet up):</div>
-            <label for="modal-alignment-top" class="Radio mr-600">
-              <input type="radio" id="modal-alignment-top" name="modal-alignment" value="top" class="Radio__input" autocomplete="off" />
+          <form onchange="setModalAlignment(event, '#example-basic')" class="mb-600">
+            <div>Modal alignment:</div>
+            <label for="modal-demo-alignment-top" class="Radio mr-600">
+              <input type="radio" id="modal-demo-alignment-top" name="modal-alignment" value="top" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Top</span>
             </label>
-            <label for="modal-alignment-center" class="Radio mr-600">
-              <input type="radio" id="modal-alignment-center" name="modal-alignment" value="center" class="Radio__input" autocomplete="off" checked />
+            <label for="modal-demo-alignment-center" class="Radio mr-600">
+              <input type="radio" id="modal-demo-alignment-center" name="modal-alignment" value="center" class="Radio__input" autocomplete="off" checked />
               <span class="Radio__label">Center</span>
             </label>
-            <label for="modal-alignment-bottom" class="Radio mr-600">
-              <input type="radio" id="modal-alignment-bottom" name="modal-alignment" value="bottom" class="Radio__input" autocomplete="off" />
+            <label for="modal-demo-alignment-bottom" class="Radio mr-600">
+              <input type="radio" id="modal-demo-alignment-bottom" name="modal-alignment" value="bottom" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Bottom</span>
             </label>
           </form>
           <!-- Modal alignment demo: end -->
           <!-- Footer alignment demo: start -->
-          <form onchange="setFooterAlignment(event, '#example-basic .ModalFooter')" class="d-none d-tablet-block">
+          <form onchange="setFooterAlignment(event, '#example-basic .ModalFooter')" class="d-none d-tablet-block mb-600">
             <div>Footer alignment (from tablet up):</div>
-            <label for="footer-alignment-left" class="Radio mr-600">
-              <input type="radio" id="footer-alignment-left" name="footer-alignment" value="left" class="Radio__input" autocomplete="off" />
+            <label for="footer-uniform-alignment-left" class="Radio mr-600">
+              <input type="radio" id="footer-uniform-alignment-left" name="footer-alignment" value="left" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Left</span>
             </label>
-            <label for="footer-alignment-center" class="Radio mr-600">
-              <input type="radio" id="footer-alignment-center" name="footer-alignment" value="center" class="Radio__input" autocomplete="off" />
+            <label for="footer-uniform-alignment-center" class="Radio mr-600">
+              <input type="radio" id="footer-uniform-alignment-center" name="footer-alignment" value="center" class="Radio__input" autocomplete="off" />
               <span class="Radio__label">Center</span>
             </label>
-            <label for="footer-alignment-right" class="Radio mr-600">
-              <input type="radio" id="footer-alignment-right" name="footer-alignment" value="right" class="Radio__input" autocomplete="off" checked />
+            <label for="footer-uniform-alignment-right" class="Radio mr-600">
+              <input type="radio" id="footer-uniform-alignment-right" name="footer-alignment" value="right" class="Radio__input" autocomplete="off" checked />
               <span class="Radio__label">Right</span>
             </label>
           </form>
-          <form class="d-tablet-none">
-            <label for="expand-on-mobile" class="Checkbox">
-              <input type="checkbox" id="expand-on-mobile" class="Checkbox__input" onchange="toggleExpandOnMobile('#example-basic .ModalDialog')" autocomplete="off" checked />
+          <!-- Footer alignment demo: end -->
+          <!-- Modal features demo: start -->
+          <form class="Stack Stack--hasSpacing">
+            <label for="modal-demo-docked" class="Checkbox">
+              <input type="checkbox" id="modal-demo-docked" class="Checkbox__input" onchange="toggleDockOnMobile('#example-basic > .ModalDialog', '#modal-demo-expanded')" autocomplete="off" />
               <span class="Checkbox__text">
-                  <span class="Checkbox__label">Expand on mobile</span>
-                </span>
+                <span class="Checkbox__label">Dock on mobile</span>
+              </span>
+            </label>
+            <label for="modal-demo-expanded" class="Checkbox Checkbox--disabled" id="modal-demo-expanded-label">
+              <input type="checkbox" id="modal-demo-expanded" class="Checkbox__input" onchange="toggleExpandOnMobile('#example-basic > .ModalDialog')" autocomplete="off" checked disabled />
+              <span class="Checkbox__text">
+                <span class="Checkbox__label">Expand on mobile (docked only)</span>
+              </span>
+            </label>
+            <label for="modal-demo-non-scrolling" class="Checkbox">
+              <input type="checkbox" id="modal-demo-non-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" checked />
+              <span class="Checkbox__text">
+                <span class="Checkbox__label">Scrolling inside</span>
+              </span>
             </label>
           </form>
-          <!-- Footer alignment demo: end -->
+          <!-- Modal features demo: end -->
           <!-- Content: end -->
         </div>
         <!-- ModalBody: end -->
@@ -994,151 +1017,6 @@
 
   </div>
 
-</section>
-
-<section class="docs-Section spirit-feature-modal-enable-uniform-dialog">
-  <h2 class="docs-Heading">Feature Flag: Uniform Modal on Mobile</h2>
-
-  <div class="docs-Stack docs-Stack--start">
-
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-spirit-toggle="modal"
-      data-spirit-target="#example-uniform"
-      aria-controls="example-uniform"
-      aria-expanded="false"
-    >
-      Open Modal
-    </button>
-
-    <!-- Modal: start -->
-    <dialog id="example-uniform" class="Modal Modal--center" aria-labelledby="example-uniform-title">
-
-      <!-- ModalDialog: start -->
-      <article id="example-uniform-dialog" class="ModalDialog">
-
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example-uniform-title" class="ModalHeader__title">Modal Title</h2>
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-spirit-dismiss="modal"
-            data-spirit-target="#example-uniform"
-            aria-controls="example-uniform"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </header>
-        <!-- ModalHeader: end -->
-
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <!-- Modal alignment demo: start -->
-          <form onchange="setModalAlignment(event, '#example-uniform')" class="mb-600">
-            <div>Modal alignment:</div>
-            <label for="modal-uniform-alignment-top" class="Radio mr-600">
-              <input type="radio" id="modal-uniform-alignment-top" name="modal-alignment" value="top" class="Radio__input" autocomplete="off" />
-              <span class="Radio__label">Top</span>
-            </label>
-            <label for="modal-uniform-alignment-center" class="Radio mr-600">
-              <input type="radio" id="modal-uniform-alignment-center" name="modal-alignment" value="center" class="Radio__input" autocomplete="off" checked />
-              <span class="Radio__label">Center</span>
-            </label>
-            <label for="modal-uniform-alignment-bottom" class="Radio mr-600">
-              <input type="radio" id="modal-uniform-alignment-bottom" name="modal-alignment" value="bottom" class="Radio__input" autocomplete="off" />
-              <span class="Radio__label">Bottom</span>
-            </label>
-          </form>
-          <!-- Modal alignment demo: end -->
-          <!-- Footer alignment demo: start -->
-          <form onchange="setFooterAlignment(event, '#example-uniform .ModalFooter')" class="d-none d-tablet-block mb-600">
-            <div>Footer alignment (from tablet up):</div>
-            <label for="footer-uniform-alignment-left" class="Radio mr-600">
-              <input type="radio" id="footer-uniform-alignment-left" name="footer-alignment" value="left" class="Radio__input" autocomplete="off" />
-              <span class="Radio__label">Left</span>
-            </label>
-            <label for="footer-uniform-alignment-center" class="Radio mr-600">
-              <input type="radio" id="footer-uniform-alignment-center" name="footer-alignment" value="center" class="Radio__input" autocomplete="off" />
-              <span class="Radio__label">Center</span>
-            </label>
-            <label for="footer-uniform-alignment-right" class="Radio mr-600">
-              <input type="radio" id="footer-uniform-alignment-right" name="footer-alignment" value="right" class="Radio__input" autocomplete="off" checked />
-              <span class="Radio__label">Right</span>
-            </label>
-          </form>
-          <!-- Footer alignment demo: end -->
-          <!-- Modal features demo: start -->
-          <form class="Stack Stack--hasSpacing">
-            <label for="modal-uniform-docked" class="Checkbox">
-              <input type="checkbox" id="modal-uniform-docked" class="Checkbox__input" onchange="toggleDockOnMobile('#example-uniform-dialog', '#modal-uniform-expanded')" autocomplete="off" />
-              <span class="Checkbox__text">
-                  <span class="Checkbox__label">Dock on mobile</span>
-                </span>
-            </label>
-            <label for="modal-uniform-expanded" class="Checkbox Checkbox--disabled" id="modal-uniform-expanded-label">
-              <input type="checkbox" id="modal-uniform-expanded" class="Checkbox__input" onchange="toggleExpandOnMobile('#example-uniform-dialog')" autocomplete="off" disabled />
-              <span class="Checkbox__text">
-                  <span class="Checkbox__label">Expand on mobile (docked only)</span>
-                </span>
-            </label>
-            <label for="modal-uniform-non-scrolling" class="Checkbox">
-              <input type="checkbox" id="modal-uniform-non-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-uniform-dialog')" autocomplete="off" checked />
-              <span class="Checkbox__text">
-                  <span class="Checkbox__label">Scrolling inside</span>
-                </span>
-            </label>
-          </form>
-          <!-- Modal features demo: end -->
-
-          <!-- Content: end -->
-        </div>
-        <!-- ModalBody: end -->
-
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__description">
-            Optional description
-          </div>
-          <div class="ModalFooter__actions">
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-uniform"
-            >
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-uniform"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
-
-      </article>
-      <!-- ModalDialog: end -->
-
-    </dialog>
-    <!-- Modal: end -->
-
-  </div>
 </section>
 
 {{/layout/web-plain }}
