@@ -2,7 +2,7 @@
 
 Introducing version 2 of the _spirit-web-twig_ package
 
-> Please follow these steps to safely upgrade your Design System to Spirit Design System v1 components.
+> Please follow these steps to safely upgrade your Design System to Spirit Design System v2 components.
 
 ## Remove modal body padding feature class [#DS-863](https://jira.lmc.cz/browse/DS-863) ([ba8b949](https://github.com/lmc-eu/spirit-design-system/commit/ba8b949))
 
