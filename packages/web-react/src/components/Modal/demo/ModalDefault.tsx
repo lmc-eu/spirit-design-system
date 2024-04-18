@@ -1,6 +1,17 @@
 import React, { ChangeEvent, useState } from 'react';
 import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
-import { Button, Checkbox, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, Radio, TextField } from '../..';
+import {
+  Button,
+  Checkbox,
+  Modal,
+  ModalBody,
+  ModalDialog,
+  ModalFooter,
+  ModalHeader,
+  Radio,
+  Stack,
+  TextField,
+} from '../..';
 
 const ModalDefault = () => {
   const [isFirstOpen, setFirstOpen] = useState(false);
@@ -8,12 +19,13 @@ const ModalDefault = () => {
   const [isThirdOpen, setThirdOpen] = useState(false);
   const [modalAlign, setModalAlign] = useState<AlignmentYDictionaryType>(AlignmentY.CENTER);
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isDockedOnMobile, setIsDockedOnMobile] = useState(false);
+  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(true);
+  const [isScrollable, setIsScrollable] = useState(true);
 
   const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
   const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
   const toggleThirdModal = () => setThirdOpen(!isSecondOpen);
-  const toggleIsExpanded = () => setIsExpanded(!isExpanded);
 
   const handleFirstClose = () => setFirstOpen(false);
   const handleSecondClose = () => setSecondOpen(false);
@@ -24,13 +36,26 @@ const ModalDefault = () => {
   const handleFooterAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFooterAlign(event.target.value as AlignmentXDictionaryType);
   };
+  const handleDockedOnMobileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsDockedOnMobile(event.target.checked);
+  };
+  const handleExpandedOnMobileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsExpandedOnMobile(event.target.checked);
+  };
+  const handleScrollableChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIsScrollable(event.target.checked);
+  };
 
   return (
     <>
       <Button onClick={toggleFirstModal}>Open Modal</Button>
 
       <Modal alignmentY={modalAlign} id="example-basic" isOpen={isFirstOpen} onClose={handleFirstClose}>
-        <ModalDialog isExpandedOnMobile={isExpanded}>
+        <ModalDialog
+          isDockedOnMobile={isDockedOnMobile}
+          isExpandedOnMobile={isExpandedOnMobile}
+          isScrollable={isScrollable}
+        >
           <ModalHeader id="example-basic">Modal Title</ModalHeader>
           <ModalBody>
             <p>
@@ -38,8 +63,8 @@ const ModalDefault = () => {
               perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
               provident unde. Eveniet, iste, molestiae?
             </p>
-            <form className="d-none d-tablet-block mb-600">
-              <div>Modal alignment (from tablet up):</div>
+            <form className="mb-600">
+              <div>Modal alignment:</div>
               <Radio
                 id="modal-alignment-top"
                 marginRight="space-600"
@@ -71,7 +96,7 @@ const ModalDefault = () => {
                 onChange={handleModalAlignChange}
               />
             </form>
-            <form className="d-none d-tablet-block">
+            <form className="d-none d-tablet-block mb-600">
               <div>Footer alignment (from tablet up):</div>
               <Radio
                 id="footer-alignment-left"
@@ -104,16 +129,33 @@ const ModalDefault = () => {
                 onChange={handleFooterAlignChange}
               />
             </form>
-            <form className="d-tablet-none">
+            <Stack hasSpacing elementType="form">
               <Checkbox
-                id="expand-on-mobile"
-                label="Expand on mobile"
-                value="right"
                 autoComplete="off"
-                onChange={toggleIsExpanded}
-                isChecked={isExpanded}
+                id="modal-uniform-docked"
+                label="Dock on mobile"
+                name="modal-uniform-docked"
+                isChecked={isDockedOnMobile}
+                onChange={handleDockedOnMobileChange}
               />
-            </form>
+              <Checkbox
+                autoComplete="off"
+                id="modal-uniform-expanded"
+                isDisabled={!isDockedOnMobile}
+                label="Expand on mobile (docked only)"
+                name="modal-uniform-expanded"
+                isChecked={isExpandedOnMobile}
+                onChange={handleExpandedOnMobileChange}
+              />
+              <Checkbox
+                autoComplete="off"
+                id="modal-uniform-non-scrolling"
+                label="Scrolling inside"
+                name="modal-uniform-non-scrolling"
+                isChecked={isScrollable}
+                onChange={handleScrollableChange}
+              />
+            </Stack>
           </ModalBody>
           <ModalFooter alignmentX={footerAlign} description="Optional description">
             <Button onClick={handleFirstClose}>Primary action</Button>
