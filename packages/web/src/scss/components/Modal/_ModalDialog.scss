@@ -27,7 +27,7 @@
     margin-top: var(--modal-top);
     margin-bottom: var(--modal-bottom);
     overflow-x: var(--modal-body-overflow-x, hidden);
-    overflow-y: var(--modal-body-overflow-x, auto);
+    overflow-y: var(--modal-body-overflow-y, auto);
     color: theme.$dialog-text-color;
     background-color: theme.$dialog-background-color;
     box-shadow: theme.$dialog-shadow;
