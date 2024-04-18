@@ -84,13 +84,23 @@ boundaries.
 
 👉 See the [Scrolling Long Content](#scrolling-long-content) section for more information on scroll control of Modals.
 
-### Expand on Mobile Screens
+### Docked Modals on Mobile Screens
 
-We recommend expanding the dialog on mobile screens using the `isExpandedOnMobile` option. If you omit the option, the
-dialog shrinks to fit the height of its content (if smaller than the viewport).
+On mobile screens, Modal can be docked to the bottom of the viewport using the `isDockedOnMobile` option.
 
 ```twig
-<ModalDialog isExpandedOnMobile>
+<ModalDialog isDockedOnMobile>
+  …
+</ModalDialog>
+```
+
+#### Expanded Variant
+
+We recommend expanding the docked dialog on mobile screens using the `isExpandedOnMobile` option.
+If you omit the option, the dialog shrinks to fit the height of its content (if smaller than the viewport).
+
+```twig
+<ModalDialog isDockedOnMobile isExpandedOnMobile>
   …
 </ModalDialog>
 ```
@@ -381,21 +391,6 @@ When you put it all together:
   </ModalDialog>
 </Modal>
 ```
-
-## Feature Flag: Uniform Appearance on All Breakpoints
-
-The uniform appearance of modal dialog on all breakpoints is disabled by default. To enable it, either set the
-`$modal-enable-uniform-dialog` Sass feature flag to `true` or use the `spirit-feature-modal-enable-uniform-dialog` CSS
-class on any parent of the modal.
-
-For more info, see main [README][readme-feature-flags].
-
-### ⚠️ DEPRECATION NOTICE
-
-The uniform dialog appearance will replace current behavior in the next major release. Current mobile appearance will
-remain accessible via the `isDockedOnMobile` property.
-
-[What are deprecations?][readme-deprecations]
 
 ## JavaScript Plugin
 
