@@ -84,11 +84,9 @@
             @include true.expect {
                 .child-controlled-test {
                     --test-offset-orthogonal: 0;
-
-                    inset: unset;
-
                     --test-offset: 10px;
 
+                    inset: unset;
                     translate: unset;
                 }
             }
