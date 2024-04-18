@@ -16,36 +16,29 @@ $common-padding-x: tokens.$space-700;
 $common-padding-x-tablet: tokens.$space-800;
 
 // ModalDialog
-$dialog-width: 100%;
-$dialog-width-tablet: 640px;
+$dialog-width: 640px;
 $dialog-width-desktop: 680px;
+$dialog-height: var(--modal-preferred-height-mobile, min-content);
+$dialog-height-tablet: var(--modal-preferred-height-tablet, min-content);
+$dialog-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * $padding-y}));
+$dialog-max-height-tablet: min(var(--modal-max-height-tablet, 600px), calc(100dvh - #{2 * $padding-y}));
 $dialog-text-color: tokens.$text-primary-default;
 $dialog-border-radius: tokens.$radius-200;
 $dialog-background-color: tokens.$background-basic;
 $dialog-shadow: tokens.$shadow-300;
 
-// @deprecated The "uniform" dialog dimensions are deprecated and will be removed in the next major release.
-// Migration: Rename the variables containing the `uniform` keyword to remove it.
-$dialog-uniform-width: 640px;
-$dialog-uniform-height: var(--modal-preferred-height-mobile, min-content);
-$dialog-uniform-height-tablet: var(--modal-preferred-height-tablet, min-content);
-$dialog-uniform-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * $padding-y}));
-$dialog-uniform-max-height-tablet: min(var(--modal-max-height-tablet, 600px), calc(100dvh - #{2 * $padding-y}));
-
+$dialog-docked-width: 100%;
 $dialog-docked-height: var(--modal-preferred-height-mobile, min-content);
 $dialog-docked-margin-top: tokens.$space-1100;
 $dialog-docked-expanded-height: calc(100dvh - #{$dialog-docked-margin-top});
 
 // ModalHeader
 $header-gap: tokens.$space-400;
-$header-padding-top: tokens.$space-800;
+$header-padding-top: tokens.$space-700;
+$header-padding-top-tablet: tokens.$space-800;
 $header-padding-bottom: tokens.$space-600;
 $header-title-typography: tokens.$heading-small-text;
 
-// @deprecated The "uniform" Header padding is deprecated and will be removed in the next major release.
-// Migration: Rename the variables containing the `uniform` keyword to remove it.
-$header-uniform-padding-top: tokens.$space-700;
-$header-uniform-padding-top-tablet: tokens.$space-800;
 $header-docked-padding-top: tokens.$space-800;
 
 // ModalBody

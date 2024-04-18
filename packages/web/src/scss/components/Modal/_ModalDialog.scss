@@ -1,12 +1,8 @@
-// 1. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
+// 1. Use ScrollView's backdoor to fix its height inside ModalDialog in Safari.
+// 2. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
+// 3. Intentionally transition also the worse performing properties to smooth out the changes of viewport size around
 //    the tablet breakpoint. However, `top` and `bottom` are not transitioned when switching from and to `auto`.
-// 2. Use ScrollView's backdoor to fix its height inside ModalDialog in Safari.
-// 3. We need to set the box-sizing again because the parent element unsets styles using `all: unset`.
-// 4. Suppress bottom alignment of the docked variant and use the alignment variants of `.Modal` instead.
-// 5. Unfortunately, the open state cannot be part of the parent `-docked-modal-dialog()` mixin because it's not
-//    possible to generate selector for the feature class scenario.
-// 6. Override bottom padding of parent `.Modal` in the docked variant.
-// 7. Override the min-height of the expanded docked variant.
+// 4. Override bottom padding of parent `.Modal` in the docked variant.
 
 @use 'sass:map';
 @use '../../settings/feature-flags';
@@ -14,176 +10,79 @@
 @use '../../tools/typography';
 @use 'theme';
 
-@mixin -modal-dialog() {
+.ModalDialog {
     @include typography.generate(theme.$typography);
 
-    --scroll-view-vertical-height: auto; // 2.
+    --scroll-view-vertical-height: auto; // 1.
 
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; // 3.
+    box-sizing: border-box; // 2.
     width: theme.$dialog-width;
+    max-width: calc(100% - #{theme.$padding-x});
+    height: theme.$dialog-height;
+    max-height: theme.$dialog-max-height;
     margin-inline: auto;
     margin-top: var(--modal-top);
     margin-bottom: var(--modal-bottom);
     overflow-x: var(--modal-body-overflow-x, hidden);
     overflow-y: var(--modal-body-overflow-y, auto);
     color: theme.$dialog-text-color;
+    border-radius: theme.$dialog-border-radius;
     background-color: theme.$dialog-background-color;
     box-shadow: theme.$dialog-shadow;
     transform: translateY(var(--modal-translate-y)) scale(var(--modal-scale));
-    overscroll-behavior: contain;
     transform-origin: var(--modal-transform-origin);
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition-property: width, height, max-height, border-radius, transform; // 1.
-        transition-duration: inherit;
-    }
-}
-
-@mixin -uniform-modal-dialog($from-breakpoint) {
-    @include breakpoint.up($from-breakpoint) {
-        // 4.
-        @if $from-breakpoint == 0 {
-            --modal-top: unset;
-            --modal-bottom: unset;
-            --modal-translate-y: unset;
-            --modal-transform-origin: unset;
-        }
-
-        width: theme.$dialog-uniform-width;
-        max-width: calc(100% - #{theme.$padding-x});
-        height: theme.$dialog-uniform-height;
-        min-height: unset; // 7. @deprecated Can be removed once the uniform modal dialog has been made default.
-        border-radius: theme.$dialog-border-radius;
-    }
+    overscroll-behavior: contain;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        height: theme.$dialog-uniform-height-tablet;
+        height: theme.$dialog-height-tablet;
+        max-height: theme.$dialog-max-height-tablet;
     }
 
     @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
         width: theme.$dialog-width-desktop;
     }
-}
 
-@mixin -scrollable-uniform-modal-dialog($from-breakpoint) {
-    @if $from-breakpoint == 0 {
-        max-height: theme.$dialog-uniform-max-height;
-    }
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        max-height: theme.$dialog-uniform-max-height-tablet;
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: width, height, max-height, border-radius, transform; // 3.
+        transition-duration: inherit;
     }
 }
 
-@mixin -docked-modal-dialog() {
+.ModalDialog--dockOnMobile {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
         --modal-top: auto;
-        --modal-bottom: #{-1 * theme.$padding-y}; // 6.
+        --modal-bottom: #{-1 * theme.$padding-y}; // 4.
         --modal-translate-y: #{theme.$transition-shift-distance};
         --modal-transform-origin: bottom center;
 
-        width: theme.$dialog-width;
+        width: theme.$dialog-docked-width;
         max-width: none;
         height: theme.$dialog-docked-height;
+        max-height: theme.$dialog-docked-expanded-height;
         border-radius: theme.$dialog-border-radius theme.$dialog-border-radius 0 0;
     }
 }
 
-@mixin -open-docked-modal-dialog() {
-    // 5.
+[open] > .ModalDialog--dockOnMobile {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
         --modal-translate-y: 0;
     }
 }
 
-@mixin -expand-docked-modal-dialog() {
+.ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
     @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
         min-height: theme.$dialog-docked-expanded-height;
     }
 }
 
-@mixin -scrollable-docked-modal-dialog() {
-    @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-        max-height: theme.$dialog-docked-expanded-height;
-    }
-}
-
 // @deprecated The non-scrollable modal dialog is deprecated and will be removed in the next major release.
 // Migration: In CSS, make the modal dialog non-scrollable by default so scrolling inside is turned on by a modifier class.
-@mixin -non-scrollable-modal-dialog() {
+.ModalDialog--nonScrollable {
     --modal-body-overflow-x: visible;
     --modal-body-overflow-y: visible;
 
     height: auto;
     max-height: none;
-}
-
-.ModalDialog {
-    @include -modal-dialog();
-
-    // @deprecated The "uniform" dialog variant is deprecated and will be removed in the next major release.
-    // Migration: Remove the feature flag and make the uniform dialog the default.
-    @if feature-flags.$modal-enable-uniform-dialog {
-        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
-        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
-    } @else {
-        @include -docked-modal-dialog();
-        @include -scrollable-docked-modal-dialog();
-        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, tablet));
-        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, tablet));
-
-        [open] > & {
-            @include -open-docked-modal-dialog();
-        }
-    }
-}
-
-// @deprecated The "uniform" dialog variant is deprecated and will be removed in the next major release.
-// Migration: Remove the feature flag and make the uniform dialog the default.
-@if feature-flags.$modal-enable-uniform-dialog {
-    .ModalDialog--dockOnMobile {
-        @include -docked-modal-dialog();
-    }
-
-    [open] > .ModalDialog--dockOnMobile {
-        @include -open-docked-modal-dialog();
-    }
-
-    .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
-        @include -expand-docked-modal-dialog();
-    }
-
-    .ModalDialog--nonScrollable {
-        @include -non-scrollable-modal-dialog();
-    }
-} @else {
-    .spirit-feature-modal-enable-uniform-dialog .ModalDialog {
-        @include -uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
-        @include -scrollable-uniform-modal-dialog($from-breakpoint: map.get(theme.$breakpoints, mobile));
-    }
-
-    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile {
-        @include -docked-modal-dialog();
-        @include -scrollable-docked-modal-dialog();
-    }
-
-    .spirit-feature-modal-enable-uniform-dialog [open] > .ModalDialog--dockOnMobile {
-        @include -open-docked-modal-dialog();
-    }
-
-    // stylelint-disable selector-max-class, no-descending-specificity -- Only target the docked variant.
-    .ModalDialog--expandOnMobile,
-    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--dockOnMobile.ModalDialog--expandOnMobile {
-        @include -expand-docked-modal-dialog();
-    }
-    // stylelint-enable selector-max-class
-
-    // @deprecated The non-scrollable modal dialog is deprecated and will be removed in the next major release.
-    // Migration: In CSS, make the modal dialog non-scrollable by default so scrolling inside is turned on by a modifier class.
-    .ModalDialog--nonScrollable,
-    .spirit-feature-modal-enable-uniform-dialog .ModalDialog--nonScrollable {
-        @include -non-scrollable-modal-dialog();
-    }
 }
