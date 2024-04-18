@@ -11,7 +11,6 @@ import ModalDefault from './ModalDefault';
 import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
 import ModalScrollingLongContent from './ModalScrollingLongContent';
 import ModalStacking from './ModalStacking';
-import ModalUniformModalOnMobile from './ModalUniformModalOnMobile';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -27,9 +26,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Disabled Backdrop Click">
         <ModalDisabledBackdropClick />
-      </DocsSection>
-      <DocsSection title="Feature Flag: Uniform Modal on Mobile">
-        <ModalUniformModalOnMobile />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
