@@ -63,6 +63,11 @@ See [Placement dictionary][dictionary-placement] for more details.
 The feature flag enabling the bordered variant of alert was removed and the bordered variant
 is the default.
 
+#### Migration Guide
+
+You can now safely delete the CSS class `.spirit-feature-alert-enable-bordered` and/or the Sass variable
+`$alert-enable-bordered` from your project as they have no effect.
+
 ### Dropdown: Combined Placements
 
 Combined placement classes for Dropdown were removed.
@@ -85,6 +90,11 @@ Instead of using `.Dropdown--bottom.Dropdown--left`, use combination `bottom-sta
 The feature flag enabling the dropdown shadow was removed and the enhanced
 shadow is the default.
 
+#### Migration Guide
+
+You can now safely delete the CSS class `.spirit-feature-dropdown-enable-enhanced-shadow` and/or the Sass variable
+`$dropdown-enable-enhanced-shadow` from your project as they have no effect.
+
 ### Modal: (Non)Scrollable
 
 The `.ModalDialog--nonScrollable` modifier was removed and the ModalDialog is made non-scrollable by default.
@@ -99,6 +109,11 @@ In the new version, use the `.ModalDialog--scrollable` modifier class to make th
 
 The feature flag enabling the uniform variant of modal was removed and the
 uniform variant is the default.
+
+#### Migration Guide
+
+You can now safely delete the CSS class `.spirit-feature-modal-enable-uniform-dialog` and/or the Sass variable
+`$modal-enable-uniform-dialog` from your project as they have no effect.
 
 ### Grid: GridSpan Component
 
