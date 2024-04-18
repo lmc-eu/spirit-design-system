@@ -26,14 +26,15 @@ Basic example usage:
 ```
 
 ```twig
-<Breadcrumbs items={ items } />
+<Breadcrumbs goBackTitle="Back" items={ items } />
 ```
 
 Without lexer:
 
 ```twig
 {% embed "@spirit/breadcrumbs.twig" with { props: {
-    items: items
+  goBackTitle: "Go back",
+  items: items
 }} %}{% endembed %}
 ```
 
@@ -66,7 +67,6 @@ Without lexer:
 ```twig
 {% embed "@spirit/breadcrumbs.twig" with { props: {
     elementType: 'nav'
-    goBackTitle: 'Custom go back link title'
 }} %}
     {% block content %}
       <li class="d-none d-tablet-flex">
@@ -95,11 +95,11 @@ content can be overridden by any custom block content.
 
 ### API
 
-| Name          | Type     | Default | Required | Description                                                                                                                                                                                                                                                                       |
-| ------------- | -------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                                                                                                                |
-| `goBackTitle` | `string` | —       | ✕        | Title/translation for back link to previous page on mobile. It's essential to be set along with items. If items property is not passed, backlink is to be created within children property. [**Optional DEPRECATED**][deprecated] Will be **required** in the next major version. |
-| `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                                             |
+| Name          | Type     | Default | Required | Description                                                                                                                                                                                                                                                        |
+| ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                                                                                                 |
+| `goBackTitle` | `string` | —       | ✕        | Title/translation for backlink to previous page on mobile. It's required to be set when `items` are present. If the `items` property is not passed and the link tree is constructed manually within the children, the backlink needs to be included there as well. |
+| `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -150,7 +150,6 @@ Please see the documentation for more details.
 Additional option is to use helper class `text-truncate` with defined width.
 
 [breadcrumbs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Breadcrumbs
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
