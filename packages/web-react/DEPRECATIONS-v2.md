@@ -220,23 +220,6 @@ See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isExpandedOnMobile={false}` prop to the `ModalDialog` component to keep the current behavior.
 
-### ModalDialog Uniform Appearance
-
-The uniform `ModalDialog` appearance will replace current behavior in the next major release. Current mobile appearance will
-remain accessible via the `isDockedOnMobile` property.
-
-#### Migration Guide
-
-Use codemod to automatically update your codebase.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isdockeonmobile-prop
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or manually add `isDockedOnMobile` prop to the `ModalDialog` component.
-
 ### Alert `danger` Icon
 
 The `warning` icon as a fallback for the `danger` color in the Alert component will be removed in favor of the `danger` icon.
