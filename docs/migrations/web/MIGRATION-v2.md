@@ -141,6 +141,11 @@ The `GridSpan` component was removed and the `GridItem` component should be used
 The feature flag enabling the data-selector-controlled placement (`data-spirit-placement-controlled`)
 for tooltip was removed and the data-selector-controlled placement is the default.
 
+#### Migration Guide
+
+You can now safely delete the CSS class `.spirit-feature-tooltip-enable-data-placement` and/or the Sass variable
+`$tooltip-enable-data-placement` from your project as they have no effect.
+
 ---
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.

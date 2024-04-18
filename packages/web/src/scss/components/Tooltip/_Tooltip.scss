@@ -85,35 +85,10 @@
 }
 
 // Controlled placement
-// @deprecated The feature flag will be removed in the next major version.
-// Migration: delete this feature flag condition
-@if feature-flags.$tooltip-enable-data-placement {
-    .Tooltip[data-spirit-placement-controlled] {
-        @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
-    }
-} @else {
-    // @deprecated The feature flag will be removed in the next major version.
-    // Migration: delete this selector
-    // stylelint-disable-next-line selector-max-specificity
-    .Tooltip[data-spirit-placement]:not(.spirit-feature-tooltip-enable-data-placement .Tooltip[data-spirit-placement]) {
-        @include placement.child-controlled($prefix: 'tooltip');
-    }
-}
-
-// @deprecated The feature flag will be removed in the next major version.
-// Migration: delete this feature class selector
-.spirit-feature-tooltip-enable-data-placement .Tooltip[data-spirit-placement-controlled] {
+.Tooltip[data-spirit-placement-controlled] {
     @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
 }
 
 .Tooltip[data-spirit-placement-controlled] .Tooltip__arrow {
     @include placement.arrow-controlled();
 }
-
-// @deprecated This is deprecated and will be removed in the next major version
-// Migration: delete this mixin
-@include dictionaries.generate-controlled-placements(
-    $class-name: 'Tooltip',
-    $dictionary-values: theme.$placement-dictionary,
-    $data-attribute: 'data-spirit-placement'
-);
