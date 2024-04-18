@@ -15,11 +15,6 @@ Following deprecations and feature flags will be removed in version 2 of the _sp
 The feature flag enabling the dropdown shadow will be removed and the enhanced
 shadow will be enabled by default.
 
-### Modal Uniform Variant
-
-The feature flag enabling the uniform variant of modal will be removed and the
-uniform variant will be enabled by default.
-
 ### Tooltip Data Selector Controlled Placement
 
 The feature flag enabling the data selector controlled placement (`data-spirit-placement-controlled`)
