@@ -10,11 +10,6 @@ Following deprecations and feature flags will be removed in version 2 of the _sp
 
 ## Feature Flags
 
-### Tooltip Data Selector Controlled Placement
-
-The feature flag enabling the data selector controlled placement (`data-spirit-placement-controlled`)
-for tooltip will be removed and the data selector controlled placement will be enabled by default.
-
 ### Alert Bordered
 
 The feature flag enabling the bordered variant of alert will be removed and the bordered variant will
