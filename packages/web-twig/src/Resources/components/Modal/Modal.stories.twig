@@ -17,14 +17,22 @@
             footerElement.classList.add(`ModalFooter--${event.target.value}`);
         };
 
-        const toggleDockOnMobile = (selector, dependingInputSelector) => {
-            const dependingInputElement = document.querySelector(dependingInputSelector);
-            const dependingLabelElement = dependingInputElement.closest('label');
-            const modalDialogElement = document.querySelector(selector);
+        const toggleDockOnMobile = (selector, dependingInputSelectors) => {
+            const dependingInputElements = document.querySelectorAll(dependingInputSelectors);
 
-            modalDialogElement.classList.toggle('ModalDialog--dockOnMobile');
-            dependingInputElement.disabled = !dependingInputElement.disabled;
-            dependingLabelElement.classList.toggle('Checkbox--disabled');
+            document.querySelector(selector).classList.toggle('ModalDialog--dockOnMobile');
+
+            dependingInputElements.forEach((element) => {
+                element.disabled = !element.disabled;
+
+                if (element.type == 'checkbox') {
+                    element.closest('label').classList.toggle('Checkbox--disabled');
+                }
+
+                if (element.type == 'radio') {
+                    element.closest('label').classList.toggle('Radio--disabled');
+                }
+            });
         }
 
         const toggleExpandOnMobile = (selector) => {
@@ -50,10 +58,6 @@
 
     <DocsSection title="Disabled Backdrop Click">
         {% include '@components/Modal/stories/ModalDisabledBackdropClick.twig' %}
-    </DocsSection>
-
-    <DocsSection title="Feature Flag: Uniform Modal on Mobile">
-        {% include '@components/Modal/stories/ModalUniformModalOnMobile.twig' %}
     </DocsSection>
 
 {% endblock %}
