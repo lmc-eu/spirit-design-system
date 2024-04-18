@@ -8,7 +8,6 @@ import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import DropdownDisabledAutoclose from './DropdownDisabledAutoclose';
-import DropdownEnhancedShadow from './DropdownEnhancedShadow';
 import DropdownFullwidthAll from './DropdownFullwidthAll';
 import DropdownFullwidthMobileOnly from './DropdownFullwidthMobileOnly';
 import DropdownLongerContent from './DropdownLongerContent';
@@ -35,9 +34,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Full-width mode 'mobile-only'">
         <DropdownFullwidthMobileOnly />
-      </DocsSection>
-      <DocsSection title="Feature Flag: Enhanced Shadow">
-        <DropdownEnhancedShadow />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,
