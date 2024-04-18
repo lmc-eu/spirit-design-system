@@ -101,14 +101,6 @@ Use:
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
-### Breadcrumbs `goBackTitle` Prop
-
-The `goBackTitle` prop will be required for the `Breadcrumbs` component.
-
-#### Migration Guide
-
-Add `goBackTitle` prop to the `Breadcrumbs` component.
-
 ### Header Abstracts Class and Style
 
 The `style` and `class` props will be removed from these `Header` abstracts:
