@@ -9,15 +9,6 @@ Bare Tooltip HTML:
 </div>
 ```
 
-## Feature Flag: Data Selector Placement
-
-Tooltip placement is currently using CSS modifiers. In the future it will be using `data-spirit-placement`
-attribute in order to make the placement independent of the component and compatible with Floating UI.
-To enable this behavior now you can use the feature flag, either set the `$tooltip-enable-data-placement` Sass
-feature flag to `true` or use the `spirit-feature-tooltip-enable-data-placement` CSS class on any parent of the Tooltip.
-
-For more info, see main [README][readme-feature-flags].
-
 ## ⚠️ DEPRECATION NOTICE
 
 CSS modifiers `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--bottom`, etc. are deprecated and will be
@@ -257,23 +248,21 @@ This setup might be preferable when you have a link in your tooltip, for example
 
 ### Advanced Floating Functionality
 
-To enable the advanced floating functionality, you need to have activated [feature flag][readme-feature-flags] for placement, activate the JS plugin, wrap your tooltip with an element having the `data-spirit-element="tooltip-wrapper"` data attribute, and add the `data-spirit-placement-controlled` attribute to your tooltip element to modify the styling of arrows and tooltip placement.
+To enable the advanced floating functionality, you need to activate the JS plugin, wrap your tooltip with an element having the `data-spirit-element="tooltip-wrapper"` data attribute, and add the `data-spirit-placement-controlled` attribute to your tooltip element to modify the styling of arrows and tooltip placement.
 
 ```html
-<div class="spirit-feature-tooltip-enable-data-placement">
-  <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
-    <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#floating-ui-example">
-      Toggle tooltip
-    </button>
-    <div
-      id="floating-ui-example"
-      class="Tooltip is-hidden"
-      data-spirit-placement="bottom"
-      data-spirit-placement-controlled
-    >
-      Hello there!
-      <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
-    </div>
+<div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#floating-ui-example">
+    Toggle tooltip
+  </button>
+  <div
+    id="floating-ui-example"
+    class="Tooltip is-hidden"
+    data-spirit-placement="bottom"
+    data-spirit-placement-controlled
+  >
+    Hello there!
+    <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
   </div>
 </div>
 ```

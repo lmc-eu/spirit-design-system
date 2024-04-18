@@ -199,24 +199,6 @@
     }
 }
 
-// @deprecated This mixin is deprecated and will be removed in the next major version
-// Migration: delete this mixin
-// Mixin to generate controlled placement classes based on a dictionary
-// Parameters are:
-// * $class-name: the name of the component class to generate
-// * $dictionary-values: map of the placements to generate
-// * $data-attribute: the data attribute to use for the controlled placement
-@mixin generate-controlled-placements($class-name, $dictionary-values, $data-attribute) {
-    @each $placement in $dictionary-values {
-        $placement-modifier: spirit-string.convert-kebab-case-to-camel-case($placement);
-
-        .#{$class-name}[#{$data-attribute}='#{$placement-modifier}'] {
-            // stylelint-disable-next-line scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
-            @extend .#{$class-name}--#{$placement-modifier} !optional;
-        }
-    }
-}
-
 // Mixin to generate size classes based on a config
 // Parameters are:
 // * $class-name: the name of the component class to generate

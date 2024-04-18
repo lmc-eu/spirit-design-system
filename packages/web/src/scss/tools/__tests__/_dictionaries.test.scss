@@ -131,32 +131,6 @@
     }
 }
 
-@include true.describe('generate-controlled-placements mixin') {
-    @include true.it('should generate correct controlled placement classes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
-                @include dictionaries.generate-controlled-placements(
-                    'Test',
-                    ('top-left', 'bottom-right'),
-                    'data-placement'
-                );
-            }
-
-            @include true.expect {
-                // stylelint-disable scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
-                .Test[data-placement='topLeft'] {
-                    @extend .Test--topLeft !optional;
-                }
-
-                .Test[data-placement='bottomRight'] {
-                    @extend .Test--bottomRight !optional;
-                }
-                // stylelint-enable scss/at-extend-no-missing-placeholder
-            }
-        }
-    }
-}
-
 @include true.describe('generate-sizes mixin') {
     @include true.it('should generate correct size classes based on a config') {
         @include true.assert {
