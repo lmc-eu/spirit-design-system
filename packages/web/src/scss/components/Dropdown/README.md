@@ -270,19 +270,6 @@ removed in the next major release.
 
 [What are deprecations?][readme-deprecations]
 
-## Feature Flag: Enhanced Shadow
-
-The enhanced shadow feature is disabled by default. To enable it, either set the `$dropdown-enable-enhanced-shadow`
-Sass feature flag to `true` or use the `spirit-dropdown-enable-enhanced-shadow` CSS class on any parent of the dropdown.
-
-For more info, see main [README][readme-feature-flags].
-
-### ⚠️ DEPRECATION NOTICE
-
-The enhanced shadow will replace current shadow in the next major release.
-
-[What are deprecations?][readme-deprecations]
-
 ## JavaScript
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.DropdownWrapper` class.
@@ -343,4 +330,3 @@ dropdown.hide();
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [item]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Item/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#feature-flags
