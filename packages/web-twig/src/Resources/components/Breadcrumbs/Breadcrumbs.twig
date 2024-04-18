@@ -11,11 +11,6 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-{# Deprecations #}
-{% if not _goBackTitle %}
-    {% deprecated 'Breadcrumbs: The "goBackTitle" property will be required starting from the next major version.' %}
-{% endif %}
-
 <{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} aria-label="Breadcrumb">
 {% apply spaceless %}
     {%- if _items|length > 0 -%}
