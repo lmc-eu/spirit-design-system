@@ -17,8 +17,8 @@
             </p>
 
             <!-- Modal alignment demo: start -->
-            <form onchange="setModalAlignment(event, '#example-basic')" class="d-none d-tablet-block mb-600">
-                <div>Modal alignment (from tablet up):</div>
+            <form onchange="setModalAlignment(event, '#example-basic')" class="mb-600">
+                <div>Modal alignment:</div>
                 <Radio id="modal-alignment-top" marginRight="600" label="Top" value="top" name="modal-alignment" autocomplete="off" />
                 <Radio id="modal-alignment-center" marginRight="600" label="Center" value="center" name="modal-alignment" autocomplete="off" isChecked />
                 <Radio id="modal-alignment-bottom" marginRight="600" label="Bottom" value="bottom" name="modal-alignment" autocomplete="off" />
@@ -26,16 +26,21 @@
             <!-- Modal alignment demo: end -->
 
             <!-- Footer alignment demo: start -->
-            <form onchange="setFooterAlignment(event, '#example-basic .ModalFooter')" class="d-none d-tablet-block">
+            <form onchange="setFooterAlignment(event, '#example-basic .ModalFooter')" class="d-none d-tablet-block mb-600">
                 <div>Footer alignment (from tablet up):</div>
                 <Radio id="footer-alignment-left" marginRight="space-600" label="Left" value="left" name="footer-alignment" autocomplete="off" />
                 <Radio id="footer-alignment-center" marginRight="space-600" label="Center" value="center" name="footer-alignment" autocomplete="off" />
                 <Radio id="footer-alignment-right" marginRight="space-600" label="Right" value="right" name="footer-alignment" autocomplete="off" isChecked />
             </form>
-            <form class="d-tablet-none">
-                <Checkbox id="expand-on-mobile" label="Expand on mobile" value="right" onchange="toggleExpandOnMobile('#example-basic .ModalDialog')" autocomplete="off" isChecked />
-            </form>
             <!-- Footer alignment demo: end -->
+
+            <!-- Modal features demo: start -->
+            <Stack hasSpacing elementType="form">
+                <Checkbox id="modal-docked" label="Dock on mobile" onChange="toggleDockOnMobile('#example-basic > .ModalDialog', '#modal-expanded')" autocomplete="off" />
+                <Checkbox id="modal-expanded" label="Expand on mobile (docked only)" onChange="toggleExpandOnMobile('#example-basic > .ModalDialog')" autocomplete="off" isChecked isDisabled />
+                <Checkbox id="modal-non-scrolling" label="Scrolling inside" onChange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" isChecked />
+            </Stack>
+            <!-- Modal features demo: end -->
 
             <!-- Content: end -->
 

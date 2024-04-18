@@ -137,15 +137,6 @@ non-scrollable by default. It will be possible to re-enable the inside scrolling
 
 Add `isScrollable` prop to the `ModalDialog` component.
 
-### ModalDialog Uniform Appearance
-
-The uniform `ModalDialog` appearance will replace current behavior in the next major release. Current mobile appearance will
-remain accessible via the `isDockedOnMobile` property.
-
-#### Migration Guide
-
-Add `isDockedOnMobile` prop to the `ModalDialog` component.
-
 ### Alert `danger` Icon
 
 The `warning` icon as a fallback for the `danger` color in the Alert component will be removed in favor of the `danger` icon.
