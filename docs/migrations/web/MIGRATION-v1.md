@@ -1,6 +1,6 @@
 # Migration Guide
 
-Introducing version 1 of the spirit-web package
+Introducing version 1 of the _spirit-web_ package
 
 > Please follow these steps to safely upgrade your Design System to Spirit Design System v1 components.
 
