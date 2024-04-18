@@ -220,17 +220,12 @@ $_placement-inverse-map: (
     transform-origin: string.unquote(inverse($placement, $hyphenate: false));
 }
 
-@mixin child-controlled($prefix, $offset: 0) {
+@mixin child-controlled($prefix, $offset) {
     --#{$prefix}-offset-orthogonal: 0; // 2.
+    --#{$prefix}-offset: #{$offset}; // 2.
 
     inset: unset; // 2.
-
-    // @deprecated This condition is deprecated because in the next major version offset will be always set
-    @if $offset != 0 {
-        --#{$prefix}-offset: #{$offset}; // 2.
-
-        translate: unset; // 2.
-    }
+    translate: unset; // 2.
 }
 
 @mixin arrow($prefix, $width, $height, $corner-offset) {
