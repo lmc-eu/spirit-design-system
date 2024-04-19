@@ -11,9 +11,15 @@
 </ToastBar>
 
 <!-- Render in success color with matching icon and close button -->
-<ToastBar color="success" isDismissible>
+<ToastBar color="success" id="toast-dismiss" isDismissible>
     Dismissible message with success color
 </ToastBar>
+
+<!-- Render as template -->
+<ToastBar isTemplate />
+
+<!-- Render as template with props -->
+<ToastBar color="inverted" id="template-toast" isTemplate hasIcon isDismissible isOpen={ false } />
 
 <!-- Render with all props -->
 <ToastBar
@@ -23,7 +29,24 @@
     id="my-toast"
     iconName="download"
     isDismissible
-    isOpen="{{ false }}"
+    isOpen={ false }
+    UNSAFE_className="custom-class"
+    UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
+>
+    Dismissible message with custom icon and action
+    <Link href="#" color="inverted" isUnderlined>Action</Link>
+</ToastBar>
+
+<!-- Render as template with all props -->
+<ToastBar
+    color="success"
+    closeLabel="Dismiss"
+    hasIcon
+    id="my-toast-template"
+    iconName="download"
+    isDismissible
+    isOpen={ false }
+    isTemplate
     UNSAFE_className="custom-class"
     UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
 >

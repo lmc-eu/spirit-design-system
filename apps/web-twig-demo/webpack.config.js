@@ -25,6 +25,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.ts')
+    .addEntry('toastDynamic', './assets/scripts/toast-dynamic.ts')
     .addEntry('fileUploaderImagePreview', './assets/scripts/file-uploader-image-preview.ts')
     .addEntry('fileUploaderMetaData', './assets/scripts/file-uploader-meta-data.ts')
     .addEntry('formValidations', './assets/scripts/form-validations.ts')

@@ -1,0 +1,24 @@
+<fieldset id="toast-in-dom-toggle" class="mb-0" style="border: 0;">
+    <legend class="mb-500">Show hidden toast in the DOM:</legend>
+    <Button
+        data-spirit-toggle="toast"
+        data-spirit-target="#my-hidden-dismissible-toast"
+        onclick="this.setAttribute('disabled', 'disabled')"
+        aria-expanded="false"
+    >
+        Show
+    </Button>
+</fieldset>
+<!-- Toast show and hide demo: end -->
+
+<Toast alignmentY="top">
+    <ToastBar
+        color="warning"
+        hasIcon
+        id="my-hidden-dismissible-toast"
+        isDismissible
+        isOpen={ false }
+    >
+        I was hidden and you exposed me!
+    </ToastBar>
+</Toast>

@@ -6,15 +6,17 @@
 {%- set _iconName = props.iconName | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isDismissible = props.isDismissible | default(false) -%}
+{%- set _isTemplate = props.isTemplate | default(false) -%}
 {%- set _isOpen = props.isOpen ?? true -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ToastBar' -%}
 {%- set _rootColorClassName = _spiritClassPrefix ~ 'ToastBar--' ~ _color -%}
-{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'ToastBar--dismissible' : null -%}
+{%- set _rootDismissibleClassName = _isDismissible is same as(true) and _isTemplate is same as(false) ? _spiritClassPrefix ~ 'ToastBar--dismissible' : null -%}
+{%- set _boxClassName = _spiritClassPrefix ~ 'ToastBar__box' -%}
 {%- set _contentClassName = _spiritClassPrefix ~ 'ToastBar__content' -%}
 {%- set _messageClassName = _spiritClassPrefix ~ 'ToastBar__message' -%}
-{%- set _isOpenClassName = _isOpen ? 'is-open' : 'is-hidden' -%}
+{%- set _isOpenClassName = _isOpen or _isTemplate ? 'is-open' : 'is-hidden' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
@@ -31,34 +33,44 @@
     {%- set _iconNameByColor = 'danger' -%}
 {% endif %}
 {%- set _iconNameValue = _iconName | default(_iconNameByColor) -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['id', 'data-spirit-populate-field']) -%}
 
 <div
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr | raw }}
+    data-spirit-populate-field="item"
 >
-    <div class="{{ _contentClassName }}">
-        {% if _hasIcon or _iconName %}
-            <Icon boxSize="20" name="{{ _iconNameValue }}" />
-        {% endif %}
-        <div class="{{ _messageClassName }}">
-            {% block content %}{% endblock %}
+    <div class="{{ _boxClassName }}">
+        <div class="{{ _contentClassName }}">
+            {% if _hasIcon or _iconName %}
+                {% if _isTemplate %}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" data-spirit-populate-field="icon">
+                        <use xlink:href="#" />
+                    </svg>
+                {% else %}
+                   <Icon boxSize="20" name="{{ _iconNameValue }}" isReusable={ false } />
+                {% endif %}
+            {% endif %}
+            <div class="{{ _messageClassName }}" data-spirit-populate-field="message">
+                {% block content %}{% endblock %}
+            </div>
         </div>
+        {% if _isDismissible is same as(true) %}
+            <Button
+                color="{{ _color }}"
+                data-spirit-dismiss="toast"
+                data-spirit-populate-field="close-button"
+                data-spirit-target="{{ '#' ~ _id | escape('html_attr') }}"
+                aria-controls="{{ _id | escape('html_attr') }}"
+                aria-expanded="true"
+                size="small"
+                isSquare
+            >
+                <Icon isReusable={ false } name="close" />
+                <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
+            </Button>
+        {% endif %}
     </div>
-    {% if _isDismissible is same as(true) %}
-        <Button
-            color="{{ _color }}"
-            data-spirit-dismiss="toast"
-            data-spirit-target="{{ '#' ~ _id | escape('html_attr') }}"
-            aria-controls="{{ _id | escape('html_attr') }}"
-            aria-expanded="true"
-            size="small"
-            isSquare
-        >
-            <Icon isReusable="{{ false }}" name="close" />
-            <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
-        </Button>
-    {% endif %}
 </div>
