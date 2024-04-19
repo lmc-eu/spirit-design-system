@@ -101,27 +101,41 @@ sorted from top to bottom for the `top` vertical alignment, and from bottom to t
 👉 Please note the _actual_ order in the DOM is followed when users tab over the interface, no matter the _visual_
 order of the toast queue.
 
-#### Toast Queue Limitations
+#### Collapsing
 
-While the Toast queue becomes scrollable when it does not fit the screen, we recommend displaying only a few toasts at
-once for several reasons:
+The collapsible Toast queue is turned on by default and can hold up to 3 ToastBar components.
+When the queue is full, the oldest ToastBar components are collapsed at the start of
+the queue and are only accessible by closing the newer ones.
 
-⚠️ **We strongly discourage from displaying too many toasts at once as it may cause the page to be unusable,
-especially on mobile screens. As of now, there is no automatic stacking of the toast queue items. It is the
-responsibility of the developer to ensure that the Toast queue does not overflow the screen.**
+#### Scrolling
 
-⚠️ Please note that scrolling is only available on pointer-equipped devices (mouse, trackpad). Furthermore, scrolling is
-only possible when the cursor is placed over the toast message boxes. This way the page content behind the toast
-messages can remain accessible.
+By default, the Toast queue collapses when there are more than 3 ToastBars. To turn off this behavior and make the queue scrollable when it does not fit the screen,
+set the `isCollapsible` prop to `false`.
+
+⚠️ Please note that scrolling is not available on iOS devices due to a limitation in the WebKit engine.
 
 👉 Please note that the initial scroll position is always at the **top** of the queue.
 
+```html
+<Toast isCollapsible="{" false }>
+  <!-- ToastBar components go here -->
+</Toast>
+```
+
+#### Toast Queue Limitations
+
+👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
+items are dismissed.
+
+👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
+
 ### API
 
-| Name         | Type                                                        | Default  | Required | Description                             |
-| ------------ | ----------------------------------------------------------- | -------- | -------- | --------------------------------------- |
-| `alignmentX` | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue |
-| `alignmentY` | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue   |
+| Name            | Type                                                        | Default  | Required | Description                                                       |
+| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -184,7 +198,7 @@ to use the **inverted underlined** variant of the link (for all ToastBar colors)
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
-[Toast accessibility](#scott-o-hara-toast) at Scott O'Hara's blog.
+[Toast accessibility][scott-o-hara-toast] at Scott O'Hara's blog.
 
 ### Colors
 
@@ -199,9 +213,14 @@ For example:
 </ToastBar>
 ```
 
-### Opening the ToastBar
+### Basic Interactions
 
-Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
+For basic use cases, you can simply place the ToastBar component inside the Toast container and show/hide it using our
+JavaScript plugin.
+
+#### Showing the Static ToastBar
+
+Use our JavaScript plugin to show a Toast **that is present in the DOM,** e.g.:
 
 ```twig
 <Button
@@ -209,7 +228,7 @@ Use our JavaScript plugin to open a Toast **that is present in the DOM,** e.g.:
   data-spirit-target="#my-hidden-toast"
   aria-expanded="false"
 >
-  Show the hidden toast
+  Show hidden toast
 </Button>
 ```
 
@@ -229,12 +248,13 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a uniq
 
 | Name            | Type                                                         | Default    | Required | Description                                                          |
 | --------------- | ------------------------------------------------------------ | ---------- | -------- | -------------------------------------------------------------------- |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                                        |
 | `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                                          |
+| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                                        |
 | `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message                          |
 | `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
 | `id`            | `string`                                                     | —          | ✕        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
 | `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
+| `isTemplate`    | `bool`                                                       | `false`    | ✕        | If true, ToastBar will be adjusted for rendering inside `<template>` |
 | `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                                         |
 
 (\*) For each emotion color, a default icon is defined.
@@ -256,6 +276,68 @@ and [escape hatches][readme-escape-hatches].
 </Toast>
 ```
 
+### Creating Dynamic ToastBars
+
+To create ToastBar components dynamically, make sure to add the ToastBar template inside the [`<template>`][mdn-template] tag.
+The `<template>` tag must be inserted anywhere inside the Toast container. Our [JavaScript Toast plugin][web-toast-js-plugin] will then pick up
+the template and apply it on any toasts to be shown to the user, using the configuration provided.
+The template `ToastBar` has to have the `isTemplate` prop set.
+
+⚠️ In order to make the dynamic ToastBar icons work, you need to include the SVG sprites in your project. You
+can use the `Icon` component with `isSymbol` prop. Otherwise, the icons will not be displayed as the JS plugin
+does not render the icons by itself, it just sets the `use` tag with the correct `xlink:href` attribute.
+Also, do not forget to set the `hidden` attribute on the wrapping element to hide the icons from the screen.
+
+```twig
+<div hidden>
+    <Icon name="check-plain" isSymbol />
+    <Icon name="danger" isSymbol />
+    <Icon name="info" isSymbol />
+    <Icon name="warning" isSymbol />
+</div>
+
+<Toast id="toast-example">
+    <template data-spirit-snippet="item">
+        <ToastBar isTemplate />
+    </template>
+</Toast>
+```
+
+Or preconfigure the template with some default values:
+
+```twig
+<div hidden>
+    <Icon name="check-plain" isSymbol />
+    <Icon name="danger" isSymbol />
+    <Icon name="info" isSymbol />
+    <Icon name="warning" isSymbol />
+</div>
+
+<Toast id="toast-example">
+    <template data-spirit-snippet="item">
+        <ToastBar isTemplate color="success" hasIcon isDismissible />
+    </template>
+</Toast>
+```
+
+Then configure and create a new Toast instance and call the `show` method on it, for example:
+
+```js
+import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
+
+const toast = new Toast(null, {
+  color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
+  containerId: 'toast-example', // Must match the ID of the Toast container in HTML
+  content: 'Hello, this is my toast message!', // Can be plain text or HTML
+  hasIcon: true,
+  // iconName: 'info', // Optional icon name used as the #fragment in the SVG sprite URL
+  id: 'my-toast', // An ID is required for dismissible ToastBar
+  isDismissible: true,
+});
+
+toast.show();
+```
+
 ## JavaScript Plugin
 
 For full functionality you need to provide JavaScript which will handle the toggling of the Toast component.
@@ -270,15 +352,17 @@ Or feel free to write controlling scripts yourself.
 
 👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
-[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast
-[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
-[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Toast/README.md#javascript-api
-[mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
-[mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#color
+[icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
+[mdn-aria-live]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live
+[mdn-role-log]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/log_role
+[mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [scott-o-hara-toast]: https://www.scottohara.me/blog/2019/07/08/a-toast-to-a11y-toasts.html
-[icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
+[web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Toast/README.md#javascript-api
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
+[web-toast-js-plugin]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast#javascript-plugin-api
+[web-toast]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Toast
