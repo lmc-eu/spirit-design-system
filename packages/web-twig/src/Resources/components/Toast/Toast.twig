@@ -1,10 +1,12 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _alignmentX = props.alignmentX | default('center') %}
-{%- set _alignmentY = props.alignmentY | default('bottom') %}
+{%- set _alignmentX = props.alignmentX | default('center') -%}
+{%- set _alignmentY = props.alignmentY | default('bottom') -%}
+{%- set _isCollapsible = props.isCollapsible ?? true -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Toast' -%}
+{%- set _rootCollapsibleClassName = _isCollapsible ? _spiritClassPrefix ~ 'Toast--collapsible' : null -%}
 {%- set _queueClassName = _spiritClassPrefix ~ 'Toast__queue' -%}
 
 {# Miscellaneous #}
@@ -22,7 +24,7 @@
     {%- endif -%}
 {%- endfor -%}
 
-{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_alignmentClasses) -%}
+{%- set _classNames = [ _rootClassName, _rootCollapsibleClassName, _styleProps.className ] | merge(_alignmentClasses) -%}
 
 <div
     {{ mainProps(props) }}
@@ -30,7 +32,7 @@
     {{ classProp(_classNames) }}
     role="log"
 >
-    <div class="Toast__queue">
+    <div class="Toast__queue" data-spirit-element="toast-queue">
         {% block content %}{% endblock %}
     </div>
 </div>

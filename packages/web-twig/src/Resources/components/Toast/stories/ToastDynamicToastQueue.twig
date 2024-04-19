@@ -13,9 +13,18 @@
         toastElement.classList.remove('Toast--top', 'Toast--bottom');
         toastElement.classList.add(`Toast--${event.target.value}`);
     };
+
+    const setToastCollapsing = (event, selector) => {
+        const toastElement = document.querySelector(selector);
+
+        toastElement.classList.toggle('Toast--collapsible');
+    };
 </script>
 
 <form>
+    <fieldset onchange="setToastCollapsing(event, '#toast-example')" style="border: 0;">
+        <Checkbox name="is-collapsible" autocomplete="off" id="toast-is-collapsible" isChecked label="Collapsible" />
+    </fieldset>
     <fieldset onchange="setToastAlignmentY(event, '#toast-example')" style="border: 0;">
         <legend>Vertical alignment:</legend>
         <Radio name="toast-alignment-y" autocomplete="off" marginRight="600" value="top" id="toast-alignment-top" label="Top" />
@@ -29,6 +38,43 @@
     </fieldset>
 </form>
 <!-- Toast alignment demo: end -->
+
+<!-- Dynamic queue demo: start -->
+<form>
+    <fieldset style="border: 0;">
+        <legend class="mb-500">New Toast:</legend>
+        <Stack hasSpacing>
+            <Select
+                label="Color"
+                name="color"
+                id="toast-color"
+                autocomplete="off"
+            >
+                <option value="inverted">Inverted</option>
+                <option value="success">Success</option>
+                <option value="warning">Warning</option>
+                <option value="danger">Danger</option>
+                <option value="informative">Informative</option>
+            </Select>
+            <Checkbox name="has-icon" autocomplete="off" id="toast-has-icon" isChecked label="Has icon" />
+            <Checkbox name="is-dismissible" autocomplete="off" id="toast-is-dismissible" isChecked label="Dismissible" />
+            <TextArea
+                autocomplete="off"
+                label="Message"
+                name="content"
+                id="toast-content"
+                helperText="Can contain HTML."
+                value="This is a new toast message."
+            />
+            <div>
+                <Button onclick="addDynamicToast(event, 'toast-example');">
+                    Add
+                </Button>
+            </div>
+        </Stack>
+    </fieldset>
+</form>
+<!-- Dynamic queue demo: end -->
 
 <!-- Toast and visual keyboard demo: start -->
 <script>
@@ -51,21 +97,18 @@
 </form>
 <!-- Toast and visual keyboard demo: end -->
 
-<!-- Toast show and hide demo: start -->
-<fieldset style="border: 0;">
-    <legend class="mb-500">Show the toast prepared in the DOM:</legend>
-    <Button
-        data-spirit-toggle="toast"
-        data-spirit-target="#my-hidden-dismissible-toast"
-        onclick="this.setAttribute('disabled', 'disabled')"
-        aria-expanded="false"
-    >
-        Show the hidden toast
-    </Button>
-</fieldset>
-<!-- Toast show and hide demo: end -->
+<div hidden>
+    <Icon name="check-plain" isSymbol />
+    <Icon name="danger" isSymbol />
+    <Icon name="info" isSymbol />
+    <Icon name="warning" isSymbol />
+</div>
 
 <Toast id="toast-example">
+
+    <template data-spirit-snippet="item">
+        <ToastBar isTemplate color="success" hasIcon isDismissible />
+    </template>
 
     <ToastBar color="success" id="my-dismissible-toast" hasIcon isDismissible>
         I was first!
@@ -77,9 +120,6 @@
         <Link href="#" color="inverted" isUnderlined>Action</Link>
     </ToastBar>
 
-    <ToastBar color="warning" id="my-hidden-dismissible-toast" isOpen="{{ false }}" hasIcon isDismissible>
-        I was hidden and you exposed me!
-        <Link href="#" color="inverted" isUnderlined>Action</Link>
-    </ToastBar>
-
 </Toast>
+
+{{ encore_entry_script_tags('toastDynamic') }}
