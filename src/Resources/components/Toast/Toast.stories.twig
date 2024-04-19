@@ -2,8 +2,12 @@
 
 {% block content %}
 
-    <DocsSection title="Alignment">
-        {% include '@components/Toast/stories/ToastAlignment.twig' %}
+    <DocsSection title="Static Toast">
+        {% include '@components/Toast/stories/ToastStaticToast.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Dynamic Toast Queue">
+        {% include '@components/Toast/stories/ToastDynamicToastQueue.twig' %}
     </DocsSection>
 
     <DocsSection title="Content Variations">
