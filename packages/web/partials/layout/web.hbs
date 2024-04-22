@@ -1,6 +1,10 @@
-{{#> layout/web-base }}
+{{#> layout/base package="Spirit Web" }}
 
   {{> header package="Web" }}
+
+  {{#*inline "scripts"}}
+  <script src="/packages/web/src/js/index.esm.ts" type="module"></script>
+  {{/inline}}
 
   <main class="py-900 py-tablet-1200">
     <div class="Container">
@@ -12,4 +16,4 @@
     </div>
   </main>
 
-{{/layout/web-base }}
+{{/layout/base }}
