@@ -21,6 +21,11 @@ export default defineConfig({
     port: 3456,
     strictPort: true,
   },
+  resolve: {
+    alias: {
+      '@lmc-eu/spirit-icons': join(pathRelativeToRepositoryRoot, 'packages/icons/dist'),
+    },
+  },
   plugins: [
     handlebars({
       partialDirectory: [
