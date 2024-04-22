@@ -1,4 +1,8 @@
-{{#> layout/web-react-base }}
+{{#> layout/base package="Spirit Web React" }}
+
+  {{#*inline "scripts"}}
+  <script src="/packages/web-react/src/index.ts" type="module"></script>
+  {{/inline}}
 
   {{> header package="Web React" }}
 
@@ -12,4 +16,4 @@
     </div>
   </main>
 
-{{/layout/web-react-base }}
+{{/layout/base }}
