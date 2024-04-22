@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Spirit Web — Development Preview</title>
+    <title>{{#unless (eq package "")}}{{package}} - {{/unless}}Development Preview</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,9 @@
 
     {{!-- As we also use this demo for visual testing we need to block render until the font is loaded. --}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=block">
-    <link rel="stylesheet" href="/static/assets/index.scss">
+    <link rel="stylesheet" href="/apps/demo/assets/index.scss">
+
+    {{> scripts}}
 
   </head>
   <body>
