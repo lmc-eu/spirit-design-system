@@ -2,15 +2,13 @@ import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Placements } from '../../../constants';
-import { DropdownFullWidthModes } from '../../../types';
-import ReadMe from '../../Dropdown/README.md';
+import ReadMe from '../README.md';
 import { Button, Icon, Text } from '../..';
-import { DropdownTrigger, DropdownPopover, UncontrolledDropdown } from '../../Dropdown';
+import { Dropdown, DropdownPopover, DropdownTrigger } from '..';
 
-const meta: Meta<typeof UncontrolledDropdown> = {
-  title: 'Components/DropdownModern',
-  component: UncontrolledDropdown,
+const meta: Meta<typeof DropdownPopover> = {
+  title: 'Components/Dropdown',
+  component: DropdownPopover,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -20,29 +18,6 @@ const meta: Meta<typeof UncontrolledDropdown> = {
   argTypes: {
     children: {
       control: 'object',
-    },
-    enableAutoClose: {
-      control: 'boolean',
-      table: {
-        defaultValue: { summary: true },
-      },
-    },
-    fullWidthMode: {
-      control: 'select',
-      options: [...Object.values(DropdownFullWidthModes), undefined],
-      table: {
-        defaultValue: { summary: undefined },
-      },
-    },
-    id: {
-      control: 'text',
-    },
-    placement: {
-      control: 'select',
-      options: Object.values(Placements),
-      table: {
-        defaultValue: { summary: Placements.BOTTOM_LEFT },
-      },
     },
   },
   args: {
@@ -66,19 +41,18 @@ const meta: Meta<typeof UncontrolledDropdown> = {
         </a>
       </>
     ),
-    id: 'UncontrolledDropdownExample',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof UncontrolledDropdown>;
+type Story = StoryObj<typeof DropdownPopover>;
 
-export const UncontrolledDropdownPlayground: Story = {
-  name: 'UncontrolledDropdown',
+export const DropdownPopoverPlayground: Story = {
+  name: 'DropdownPopover',
   render: (args) => (
-    <UncontrolledDropdown {...args}>
+    <Dropdown id="DropdownExample" isOpen onToggle={() => {}}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
       <DropdownPopover>{args.children}</DropdownPopover>
-    </UncontrolledDropdown>
+    </Dropdown>
   ),
 };

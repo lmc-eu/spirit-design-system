@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Button,
-  DropdownModern,
+  Dropdown,
   DropdownPopover,
   DropdownTrigger,
   Item,
@@ -203,7 +203,7 @@ const ModalScrollingLongContent = () => {
               perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
               provident unde. Eveniet, iste, molestiae?
             </p>
-            <DropdownModern id="dropdown-in-modal" isOpen={isDropdownOpen} onToggle={handleDropdownToggle}>
+            <Dropdown id="dropdown-in-modal" isOpen={isDropdownOpen} onToggle={handleDropdownToggle}>
               {/* @ts-expect-error -- TS2322: Property color does not exist on type … */}
               <DropdownTrigger elementType={Button} color="secondary">
                 Dropdown
@@ -213,7 +213,7 @@ const ModalScrollingLongContent = () => {
                 <Item elementType="a" href="#" label="Another action" />
                 <Item elementType="a" href="#" label="Something else here" />
               </DropdownPopover>
-            </DropdownModern>
+            </Dropdown>
           </ModalBody>
           <ModalFooter description="Optional description">
             <Button onClick={handleModalWithDropdownClose}>Primary action</Button>
