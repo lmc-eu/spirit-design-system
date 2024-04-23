@@ -1,4 +1,3 @@
-import { readdirSync } from 'fs';
 import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
@@ -48,28 +47,14 @@ export default defineConfig({
       runtimeOptions: {
         data: {
           // Get the list of components directories and pass their names to the data
-          components: getListOfNestedDirectories('../../packages/web/src/scss/components', 'index.html'),
+          web_components: getListOfNestedDirectories('../../packages/web/src/scss/components', 'index.html'),
           // Get the list of helpers directories and pass their names to the data
           helpers: getListOfNestedDirectories('../../packages/web/src/scss/helpers', 'index.html'),
           // Get the list of icons files from the icons package and pass their names to the data without their extensions
           icons: getListOfIcons('../../packages/icons/src/svg'),
           // Get the list of components directories and pass their names to the data
-          web_react_components: [
-            ...readdirSync('../../packages/web-react/src/components', { withFileTypes: true })
-              .filter((item) => item.isDirectory())
-              .filter((item) =>
-                readdirSync(`../../packages/web-react/src/components/${item.name}`).includes('index.html'),
-              )
-              .map((item) => item.name),
-          ],
-          web_vue_components: [
-            ...readdirSync('../../packages/web-vue/src/components', { withFileTypes: true })
-              .filter((item) => item.isDirectory())
-              .filter((item) =>
-                readdirSync(`../../packages/web-vue/src/components/${item.name}`).includes('index.html'),
-              )
-              .map((item) => item.name),
-          ],
+          web_react_components: getListOfNestedDirectories('../../packages/web-react/src/components', 'index.html'),
+          // web_vue_components: getListOfNestedDirectories('../../packages/web-vue/src/components', 'index.html'),
         },
       },
     }),
@@ -98,7 +83,7 @@ export default defineConfig({
         webReactMain: join(pathRelativeToRepositoryRoot, 'packages/web-react/index.html'),
         ...mapKeys(getNestedDirs('../../packages/web-react/src/components', 'index.html'), (key) => `web-react-${key}`),
         webReactIcons: join(pathRelativeToRepositoryRoot, 'packages/web-react/src/icons/index.html'),
-        ...mapKeys(getNestedDirs('../../packages/web-vue/src/components', 'index.html'), (key) => `web-vue-${key}`),
+        // ...mapKeys(getNestedDirs('../../packages/web-vue/src/components', 'index.html'), (key) => `web-vue-${key}`),
       },
       output: {
         entryFileNames: `assets/spirit-entry.[hash].js`,
