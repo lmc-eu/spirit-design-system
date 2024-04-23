@@ -27,12 +27,7 @@ export default defineConfig({
   },
   plugins: [
     handlebars({
-      partialDirectory: [
-        join(pathRelativeToPackageRoot, 'partials'),
-        join(pathRelativeToRepositoryRoot, 'packages/web/partials'),
-        join(pathRelativeToRepositoryRoot, 'packages/web-react/partials'),
-        join(pathRelativeToRepositoryRoot, 'packages/web-vue/partials'),
-      ],
+      partialDirectory: [join(pathRelativeToPackageRoot, 'partials')],
       helpers: {
         setVar: (...data) => {
           const varName = data.shift();
