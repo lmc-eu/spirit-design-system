@@ -146,6 +146,12 @@ const onToggle = () => setIsOpen(!isOpen);
 </Dropdown>;
 ```
 
+If you are still using the `DropdownModern` component name instead of `Dropdown`, you can use codemode to automatically update your code.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/dropdownmodern-component-name
+```
+
 ### Grid: Breakpoint Props
 
 The `cols` prop in the `Grid` now supports object values for different breakpoints.

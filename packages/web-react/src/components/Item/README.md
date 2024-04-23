@@ -80,17 +80,17 @@ import { Checkbox } from '@lmc-eu/spirit-web-react';
 Usage in [Dropdown][dropdown] component:
 
 ```jsx
-import { DropdownModern, DropdownTrigger, DropdownPopover, Item } from '@lmc-eu/spirit-web-react/components';
+import { Dropdown, DropdownTrigger, DropdownPopover, Item } from '@lmc-eu/spirit-web-react/components';
 
 const [isOpen, setIsOpen] = React.useState(false);
 const onToggle = () => setIsOpen(!isOpen);
 
-<DropdownModern id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+<Dropdown id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>
     <Item elementType="a" href="#" label="Item label" />
   </DropdownPopover>
-</DropdownModern>;
+</Dropdown>;
 ```
 
 ## API

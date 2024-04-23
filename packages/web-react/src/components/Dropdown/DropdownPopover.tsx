@@ -12,14 +12,15 @@ export const DropdownPopover = (props: DropdownPopoverProps) => {
   const { children, ...rest } = props;
   const { id, isOpen, onToggle, fullWidthMode, placement } = useDropdownContext();
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const { contentProps } = useDropdownAriaProps({ id, isOpen, toggleHandler: onToggle, placement, fullWidthMode });
 
   return (
     <div
-      className={classNames(classProps.contentClassName, contentStyleProps.className)}
-      {...contentOtherProps}
+      className={classNames(classProps.contentClassName, styleProps.className)}
+      style={styleProps.style}
       {...contentProps}
+      {...otherProps}
     >
       {children}
     </div>

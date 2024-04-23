@@ -8,8 +8,8 @@ import { useDropdown } from './useDropdown';
 
 export const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
   const { children, enableAutoClose = true, fullWidthMode, id, onAutoClose, placement, ...rest } = props;
-  const { classProps } = useDropdownStyleProps();
-  const { styleProps, props: otherProps } = useStyleProps({ ...rest });
+  const { classProps, props: modifiedProps } = useDropdownStyleProps(rest);
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>();

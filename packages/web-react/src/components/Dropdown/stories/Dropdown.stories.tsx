@@ -1,11 +1,12 @@
+import React, { useState } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { Ref } from 'react';
-import { Dropdown } from '..';
-import { Button, Icon, Text } from '../..';
+
 import { Placements } from '../../../constants';
-import { DropdownFullWidthModes } from '../../../types';
+import { DropdownFullWidthModes, SpiritDropdownProps } from '../../../types';
 import ReadMe from '../README.md';
+import { Button, Icon, Text } from '../..';
+import { Dropdown, DropdownTrigger, DropdownPopover } from '..';
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
@@ -73,16 +74,20 @@ const meta: Meta<typeof Dropdown> = {
 export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
-export const Playground: Story = {
+const DropdownWithHooks = (args: SpiritDropdownProps) => {
+  const { children, isOpen } = args;
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const onDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
+
+  return (
+    <Dropdown {...args} isOpen={isOpen || isDropdownOpen} onToggle={onDropdownToggle}>
+      <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
+      <DropdownPopover>{children}</DropdownPopover>
+    </Dropdown>
+  );
+};
+
+export const DropdownPlayground: Story = {
   name: 'Dropdown',
-  render: (args) => (
-    <Dropdown
-      {...args}
-      renderTrigger={({ isOpen, trigger: { className, ref, ...restOf } }) => (
-        <Button UNSAFE_className={className} ref={ref as Ref<HTMLButtonElement>} {...restOf}>
-          Trigger ({isOpen ? 'open' : 'closed'})
-        </Button>
-      )}
-    />
-  ),
+  render: (args) => <DropdownWithHooks {...args} />,
 };

@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useDropdownStyleProps, UseDropdownStyleProps } from '../useDropdownStyleProps';
+import { useDropdownStyleProps } from '../useDropdownStyleProps';
 
 describe('useDropdownStyleProps', () => {
   it('should return defaults', () => {
@@ -12,7 +12,7 @@ describe('useDropdownStyleProps', () => {
   it('should render as open', () => {
     const props = {
       isOpen: true,
-    } as UseDropdownStyleProps;
+    };
     const { result } = renderHook(() => useDropdownStyleProps(props));
 
     expect(result.current.classProps.contentClassName).toBe('Dropdown is-open');
@@ -23,7 +23,7 @@ describe('useDropdownStyleProps', () => {
     const props = {
       isOpen: false,
       transferProp: 'test',
-    } as UseDropdownStyleProps;
+    };
     const { result } = renderHook(() => useDropdownStyleProps(props));
 
     expect(result.current.classProps.contentClassName).toBe('Dropdown');
