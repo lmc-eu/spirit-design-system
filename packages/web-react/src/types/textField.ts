@@ -28,4 +28,6 @@ export interface TextFieldProps
   type?: TextFieldType;
 }
 
-export interface SpiritTextFieldProps extends TextFieldProps {}
+export interface SpiritTextFieldProps extends TextFieldProps {
+  label: string;
+}
