@@ -1,18 +1,1 @@
-{{#> layout/web/default page="components" }}
-
-  <section class="docs-Section">
-
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Components</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
-
-      {{#each @components as |component|}}
-      <li>
-        <a href="src/scss/components/{{component.name}}/" class="docs-TileLink">{{component.title}}</a>
-      </li>
-      {{/each}}
-
-    </ul>
-
-  </section>
-
-{{/layout/web/default }}
+{{> web/index }}
