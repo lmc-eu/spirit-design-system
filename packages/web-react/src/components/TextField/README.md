@@ -8,7 +8,7 @@ hidden or show if the input is required.
 Basic example usage:
 
 ```jsx
-<TextField id="textFieldDefault" name="textFieldDefault" />
+<TextField id="textFieldDefault" label="Label" name="textFieldDefault" />
 ```
 
 Advanced example usage:
@@ -54,7 +54,7 @@ TextField with password toggle (button to reveal the password):
 | `isDisabled`        | `bool`                                                                      | —       | ✕        | Whether is field disabled                                               |
 | `isLabelHidden`     | `bool`                                                                      | —       | ✕        | Whether is label hidden                                                 |
 | `isRequired`        | `bool`                                                                      | —       | ✕        | Whether is field required                                               |
-| `label`             | `string`                                                                    | —       | ✕        | Label text                                                              |
+| `label`             | `string`                                                                    | —       | ✔        | Label text                                                              |
 | `name`              | `string`                                                                    | —       | ✕        | Input name                                                              |
 | `pattern`           | `string`                                                                    | —       | ✕        | Defines regular expressions for allowed value types                     |
 | `placeholder`       | `string`                                                                    | —       | ✕        | Input placeholder                                                       |
