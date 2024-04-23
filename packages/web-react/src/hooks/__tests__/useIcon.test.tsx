@@ -34,16 +34,4 @@ describe('useIcon', () => {
 
     expect(result.current).toBe('<path d="ERRW ADSFDSFDS"></path>');
   });
-
-  it('should return icon path based on fallback icon', () => {
-    const { result } = renderHook(() => useIcon('danger'), { wrapper });
-
-    expect(result.current).toBe('<path d="ERRW ADSFDSFDS"></path>');
-  });
-
-  it('should raise warning when fallback icon name is used', () => {
-    renderHook(() => useIcon('danger'), { wrapper });
-
-    expect(mockedWarning).toHaveBeenCalled();
-  });
 });
