@@ -132,38 +132,6 @@ The `off` placement is deprecated and will be removed in the next major version.
 Please use the `TooltipModern` component instead, which is the successor of the `Tooltip` component and
 provides improved functionality.
 
-### Dropdown & DropdownModern
-
-The `Dropdown` component will be replaced by the `DropdownModern` component.
-Use the `DropdownModern` component now and rename it to `Dropdown` in the next major version.
-
-#### Migration Guide
-
-Replace `Dropdown` with `DropdownModern` in your project.
-The `DropdownModern` has a different API.
-
-Instead of:
-
-```jsx
-<Dropdown id="DropdownExample" renderTrigger={({ trigger }) => <Button {...trigger}>Trigger</Button>}>
-  …
-</Dropdown>
-```
-
-Use:
-
-```jsx
-const [isOpen, setIsOpen] = React.useState(false);
-const onToggle = () => setIsOpen(!isOpen);
-
-<DropdownModern id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
-  <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
-  <DropdownPopover>…</DropdownPopover>
-</DropdownModern>;
-```
-
-See [`Dropdown` documentation][dropdown-readme] for more details and examples.
-
 ### Grid Breakpoint Props
 
 The `cols` prop in the `Grid` now supports object values for different breakpoints.
