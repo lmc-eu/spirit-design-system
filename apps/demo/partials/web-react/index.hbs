@@ -1,0 +1,9 @@
+{{#> web-react/layout/default page="components" }}
+
+  {{#> components }}
+    {{#each @web_react_components as |component|}}
+      {{> component component=component path="src/components"}}
+    {{/each}}
+  {{/components }}
+
+{{/web-react/layout/default }}
