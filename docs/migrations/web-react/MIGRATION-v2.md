@@ -19,6 +19,7 @@ Introducing version 2 of the _spirit-web-react_ package
   - [Modal: ModalDialog `isExpandedOnMobile` Prop](#modal-modaldialog-isexpandedonmobile-prop)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
+  - [TextField: `label` prop](#textfield-label-prop)
   - [Tooltip: `off` Placement](#tooltip-off-placement)
   - [Tooltip: Refactored](#tooltip-refactored)
 
@@ -255,6 +256,15 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isdockeonmobile-prop
 See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isDockedOnMobile` prop to the `ModalDialog` component.
+
+### TextField: `label` prop
+
+The `label` prop is now required.
+
+#### Migration Guide
+
+Please ensure that `label` is added to all `TextField` components.
+If you need to hide your `label`, you can use the `isLabelHidden` prop.
 
 ### Tooltip: `off` Placement
 
