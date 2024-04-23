@@ -5,6 +5,7 @@ packages/**/types/*
 packages/**/esm/*
 packages/**/cjs/*
 packages/**/umd/*
+static/assets/icons/react
 
 # Ignoring html files because Prettier prefers closing slash on the end of the tag
 # @See: https://github.com/lmc-eu/spirit-design-system/pull/77/files#r764183332
@@ -33,3 +34,8 @@ packages/**/*.hbs
 
 # Ignore codemods test outputs, because we compare them with generated code which we cannot format
 packages/codemods/src/transforms/**/*.output.tsx
+
+# Yarn Modern
+# @see: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.yarn/plugins
+.yarn/releases
