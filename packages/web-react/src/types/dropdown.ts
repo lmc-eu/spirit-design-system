@@ -1,4 +1,4 @@
-import { LegacyRef, ReactNode } from 'react';
+import { LegacyRef } from 'react';
 import { Booleanish, ChildrenProps, ClickEvent, PlacementDictionaryType, StyleProps } from './shared';
 
 export const DropdownFullWidthModes = {
@@ -24,23 +24,14 @@ export type DropdownRenderProps = {
 };
 
 export interface DropdownProps extends ChildrenProps, StyleProps {
-  id?: string;
-  /** @deprecated Will be removed in the next major version. Use modern version of dropdown instead: DropdownModern */
-  renderTrigger?: (render: DropdownRenderProps) => ReactNode;
-}
-
-export interface DropdownModernProps extends ChildrenProps, StyleProps {
   id: string;
 }
 
-export interface SpiritDropdownProps extends DropdownProps {
-  enableAutoClose?: boolean;
-  placement?: PlacementDictionaryType;
-  fullWidthMode?: DropdownFullWidthMode;
-  onAutoClose?: (event: Event) => void;
+export interface DropdownStyleProps extends StyleProps {
+  isOpen?: boolean;
 }
 
-export interface SpiritDropdownModernProps extends DropdownModernProps, ChildrenProps {
+export interface SpiritDropdownProps extends DropdownProps, ChildrenProps {
   enableAutoClose?: boolean;
   placement?: PlacementDictionaryType;
   fullWidthMode?: DropdownFullWidthMode;
@@ -49,6 +40,4 @@ export interface SpiritDropdownModernProps extends DropdownModernProps, Children
   onToggle: () => void;
 }
 
-export interface UncontrolledDropdownProps
-  extends ChildrenProps,
-    Omit<SpiritDropdownModernProps, 'isOpen' | 'onToggle'> {}
+export interface UncontrolledDropdownProps extends ChildrenProps, Omit<SpiritDropdownProps, 'isOpen' | 'onToggle'> {}

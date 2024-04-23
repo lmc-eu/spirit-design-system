@@ -1,23 +1,21 @@
-import React, { ChangeEvent, Ref, useState } from 'react';
-import { DropdownRenderProps, PlacementDictionaryType } from '../../../types';
+import React, { ChangeEvent, useState } from 'react';
+import { PlacementDictionaryType } from '../../../types';
 import { Button } from '../../Button';
 import { Grid, GridItem } from '../../Grid';
 import { Item } from '../../Item';
 import { Radio } from '../../Radio';
-import { Dropdown } from '..';
+import Dropdown from '../Dropdown';
+import DropdownPopover from '../DropdownPopover';
+import DropdownTrigger from '../DropdownTrigger';
 
 const DropdownPlacements = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const [placement, setPlacement] = useState<PlacementDictionaryType>('bottom-start');
+  const onToggle = () => setIsOpen(!isOpen);
 
   const handlePlacementChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPlacement(e.target.value as PlacementDictionaryType);
   };
-
-  const dropdownTrigger = ({ trigger: { className, ref, ...restOf } }: DropdownRenderProps) => (
-    <Button UNSAFE_className={className} ref={ref as Ref<HTMLButtonElement>} {...restOf}>
-      <span style={{ whiteSpace: 'nowrap' }}>{placement}</span>
-    </Button>
-  );
 
   return (
     <form autoComplete="off">
@@ -132,7 +130,7 @@ const DropdownPlacements = () => {
             isChecked={placement === 'right'}
             isLabelHidden
             onChange={handlePlacementChange}
-            id="placement-end"
+            id="placement-right"
             label="right"
             value="right"
           />
@@ -147,17 +145,24 @@ const DropdownPlacements = () => {
           />
         </GridItem>
         <GridItem columnStart={2} rowStart={2}>
-          <div style={{ margin: '8rem auto' }}>
-            <Dropdown
-              enableAutoClose={false}
-              placement={placement as PlacementDictionaryType}
-              renderTrigger={dropdownTrigger}
-            >
+          <Dropdown
+            enableAutoClose={false}
+            id="DropdownDefault"
+            isOpen={isOpen}
+            onToggle={onToggle}
+            placement={placement}
+            UNSAFE_style={{ margin: '8rem auto' }}
+            test-id="dropdown"
+          >
+            <DropdownTrigger elementType={Button} test-id="dropdown-trigger">
+              <span style={{ whiteSpace: 'nowrap' }}>{placement}</span>
+            </DropdownTrigger>
+            <DropdownPopover test-id="dropdown-popover">
               <Item elementType="a" href="#" label="Action" />
               <Item elementType="a" href="#" label="Another action" />
               <Item elementType="a" href="#" label="Something else here" />
-            </Dropdown>
-          </div>
+            </DropdownPopover>
+          </Dropdown>
         </GridItem>
       </Grid>
     </form>
