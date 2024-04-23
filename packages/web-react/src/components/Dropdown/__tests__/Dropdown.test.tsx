@@ -5,57 +5,64 @@ import { classNamePrefixProviderTest } from '../../../../tests/providerTests/cla
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import Dropdown from '../Dropdown';
+import DropdownPopover from '../DropdownPopover';
+import DropdownTrigger from '../DropdownTrigger';
 
 describe('Dropdown', () => {
   classNamePrefixProviderTest(Dropdown, 'DropdownWrapper');
 
   stylePropsTest(
-    (props: Record<string, unknown>) => <Dropdown {...props} data-testid="test-dropdown" />,
+    (props: Record<string, unknown>) => (
+      <Dropdown id="dropdown" isOpen={false} onToggle={() => {}} {...props} data-testid="test-dropdown" />
+    ),
     'test-dropdown',
   );
 
-  restPropsTest(Dropdown, '.Dropdown');
+  restPropsTest(Dropdown, '.DropdownWrapper');
 
   it('should render text children', () => {
     const dom = render(
-      <Dropdown
-        renderTrigger={({ trigger }) => (
-          <button type="button" {...trigger}>
-            trigger
-          </button>
-        )}
-      >
-        Hello World
+      <Dropdown id="dropdown" isOpen={false} onToggle={() => {}}>
+        <DropdownTrigger>Trigger</DropdownTrigger>
+        <DropdownPopover>Hello World</DropdownPopover>
       </Dropdown>,
     );
+    const trigger = dom.container.querySelector('button') as HTMLElement;
     const element = dom.container.querySelector('.Dropdown') as HTMLElement;
 
+    expect(trigger.textContent).toBe('Trigger');
     expect(element.textContent).toBe('Hello World');
   });
 
-  it('should toggle a dropdown', () => {
+  it('should be opened', () => {
+    const onToggle = jest.fn();
+
     const dom = render(
-      <Dropdown
-        renderTrigger={({ trigger }) => (
-          <button type="button" {...trigger}>
-            trigger
-          </button>
-        )}
-      >
-        Hello World
+      <Dropdown id="dropdown" isOpen onToggle={onToggle}>
+        <DropdownTrigger>trigger</DropdownTrigger>
+        <DropdownPopover>Hello World</DropdownPopover>
       </Dropdown>,
     );
     const element = dom.container.querySelector('.Dropdown') as HTMLElement;
     const trigger = dom.container.querySelector('button') as HTMLElement;
 
-    fireEvent.click(trigger);
-
     expect(element).toHaveClass('is-open');
     expect(trigger).toHaveClass('is-expanded');
-    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('should call toggle function', () => {
+    const onToggle = jest.fn();
+
+    const dom = render(
+      <Dropdown id="dropdown" isOpen={false} onToggle={onToggle}>
+        <DropdownTrigger>trigger</DropdownTrigger>
+        <DropdownPopover>Hello World</DropdownPopover>
+      </Dropdown>,
+    );
+    const trigger = dom.container.querySelector('button') as HTMLElement;
 
     fireEvent.click(trigger);
 
-    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(onToggle).toHaveBeenCalled();
   });
 });
