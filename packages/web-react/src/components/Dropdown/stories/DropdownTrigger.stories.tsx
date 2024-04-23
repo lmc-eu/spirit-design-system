@@ -2,12 +2,12 @@ import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ReadMe from '../../Dropdown/README.md';
-import { DropdownTrigger } from '../../Dropdown';
 import { Button } from '../../Button';
+import ReadMe from '../README.md';
+import { DropdownTrigger } from '..';
 
 const meta: Meta<typeof DropdownTrigger> = {
-  title: 'Components/DropdownModern',
+  title: 'Components/Dropdown',
   component: DropdownTrigger,
   parameters: {
     docs: {
