@@ -1,20 +1,21 @@
-import React, { Ref } from 'react';
-import { DropdownRenderProps } from '../../../types';
+import React from 'react';
 import { Button } from '../../Button';
-import { Dropdown } from '..';
+import Dropdown from '../Dropdown';
+import DropdownPopover from '../DropdownPopover';
+import DropdownTrigger from '../DropdownTrigger';
 import DropdownContentFactory from './DropdownContentFactory';
 import { dropdownContent } from './constants';
 
 const DropdownDisabledAutoclose = () => {
-  const dropdownTrigger = ({ trigger: { className, ref, ...restOf } }: DropdownRenderProps) => (
-    <Button UNSAFE_className={className} ref={ref as Ref<HTMLButtonElement>} {...restOf}>
-      Button as anchor
-    </Button>
-  );
+  const [isOpen, setIsOpen] = React.useState(false);
+  const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown renderTrigger={dropdownTrigger} enableAutoClose={false}>
-      <DropdownContentFactory content={dropdownContent} />
+    <Dropdown id="DropdownDisabledAutoclose" isOpen={isOpen} onToggle={onToggle} enableAutoClose={false}>
+      <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
+      <DropdownPopover>
+        <DropdownContentFactory content={dropdownContent} />
+      </DropdownPopover>
     </Dropdown>
   );
 };

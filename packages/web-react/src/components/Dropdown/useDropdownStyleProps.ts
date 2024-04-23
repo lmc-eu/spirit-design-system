@@ -1,11 +1,6 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { DropdownProps, SpiritDropdownProps } from '../../types';
-
-export interface UseDropdownStyleProps extends SpiritDropdownProps {
-  /** open state */
-  isOpen: boolean;
-}
+import { DropdownStyleProps } from '../../types';
 
 export interface UseDropdownStylePropsReturn {
   classProps: {
@@ -13,12 +8,10 @@ export interface UseDropdownStylePropsReturn {
     triggerClassName: string;
     contentClassName: string;
   };
-  props: DropdownProps;
+  props: DropdownStyleProps;
 }
 
-export const useDropdownStyleProps = (
-  props: UseDropdownStyleProps = { isOpen: false },
-): UseDropdownStylePropsReturn => {
+export const useDropdownStyleProps = (props: DropdownStyleProps = { isOpen: false }): UseDropdownStylePropsReturn => {
   const { isOpen, ...modifiedProps } = props;
 
   const dropdownClass = useClassNamePrefix('Dropdown');

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Placements } from '../../../constants';
-import { DropdownFullWidthModes, SpiritDropdownModernProps } from '../../../types';
-import ReadMe from '../../Dropdown/README.md';
+import { DropdownFullWidthModes } from '../../../types';
 import { Button, Icon, Text } from '../..';
-import { DropdownModern, DropdownTrigger, DropdownPopover } from '../../Dropdown';
+import ReadMe from '../README.md';
+import { DropdownTrigger, DropdownPopover, UncontrolledDropdown } from '..';
 
-const meta: Meta<typeof DropdownModern> = {
-  title: 'Components/DropdownModern',
-  component: DropdownModern,
+const meta: Meta<typeof UncontrolledDropdown> = {
+  title: 'Components/Dropdown',
+  component: UncontrolledDropdown,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -66,27 +66,19 @@ const meta: Meta<typeof DropdownModern> = {
         </a>
       </>
     ),
-    id: 'DropdownModernExample',
+    id: 'UncontrolledDropdownExample',
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof DropdownModern>;
+type Story = StoryObj<typeof UncontrolledDropdown>;
 
-const DropdownModernWithHooks = (args: SpiritDropdownModernProps) => {
-  const { children, isOpen } = args;
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const onDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
-
-  return (
-    <DropdownModern {...args} isOpen={isOpen || isDropdownOpen} onToggle={onDropdownToggle}>
+export const UncontrolledDropdownPlayground: Story = {
+  name: 'UncontrolledDropdown',
+  render: (args) => (
+    <UncontrolledDropdown {...args}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
-      <DropdownPopover>{children}</DropdownPopover>
-    </DropdownModern>
-  );
-};
-
-export const DropdownModernPlayground: Story = {
-  name: 'DropdownModern',
-  render: (args) => <DropdownModernWithHooks {...args} />,
+      <DropdownPopover>{args.children}</DropdownPopover>
+    </UncontrolledDropdown>
+  ),
 };

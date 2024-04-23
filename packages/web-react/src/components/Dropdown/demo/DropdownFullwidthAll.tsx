@@ -1,20 +1,21 @@
-import React, { Ref } from 'react';
-import { DropdownRenderProps } from '../../../types';
+import React from 'react';
 import { Button } from '../../Button';
-import { Dropdown } from '..';
+import Dropdown from '../Dropdown';
+import DropdownPopover from '../DropdownPopover';
+import DropdownTrigger from '../DropdownTrigger';
 import DropdownContentFactory from './DropdownContentFactory';
 import { dropdownContent } from './constants';
 
 const DropdownFullwidthAll = () => {
-  const dropdownTrigger = ({ trigger: { className, ref, ...restOf } }: DropdownRenderProps) => (
-    <Button UNSAFE_className={className} ref={ref as Ref<HTMLButtonElement>} {...restOf}>
-      Finibus quis imperdiet, semper imperdiet aliquam
-    </Button>
-  );
+  const [isOpen, setIsOpen] = React.useState(false);
+  const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown renderTrigger={dropdownTrigger} fullWidthMode="all" placement="top-start">
-      <DropdownContentFactory content={dropdownContent} />
+    <Dropdown id="DropdownFullwidthAll" isOpen={isOpen} onToggle={onToggle} fullWidthMode="all" placement="top-left">
+      <DropdownTrigger elementType={Button}>Finibus quis imperdiet, semper imperdiet aliquam</DropdownTrigger>
+      <DropdownPopover>
+        <DropdownContentFactory content={dropdownContent} />
+      </DropdownPopover>
     </Dropdown>
   );
 };

@@ -1,90 +1,55 @@
-/**
- * @deprecated Dropdown component is deprecated and will be removed in the next major version. Please use "DropdownModern" component instead.
- */
+import React, { useRef } from 'react';
 import classNames from 'classnames';
-import React, { LegacyRef, createElement, useRef } from 'react';
-import { Placements } from '../../constants';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useClickOutside, useStyleProps } from '../../hooks';
 import { SpiritDropdownProps } from '../../types';
-import DropdownWrapper from './DropdownWrapper';
-import { useDropdown } from './useDropdown';
-import { useDropdownAriaProps } from './useDropdownAriaProps';
+import { DropdownProvider } from './DropdownContext';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
 
-const defaultProps = {
-  enableAutoClose: true,
-  placement: Placements.BOTTOM_START,
-};
-
 export const Dropdown = (props: SpiritDropdownProps) => {
-  const propsWithDefaults = { ...defaultProps, ...props };
   const {
-    /** @deprecated ID will be made a required user input in the next major version. */
-    id = Math.random().toString(36).slice(2, 7),
     children,
-    enableAutoClose,
+    enableAutoClose = true,
     fullWidthMode,
+    id,
+    isOpen = false,
     onAutoClose,
+    onToggle,
     placement,
-    renderTrigger,
     ...rest
-  } = propsWithDefaults;
-
-  const dropdownRef = useRef(null);
-  const triggerRef = useRef();
-
-  const { isOpen, toggleHandler } = useDropdown({ dropdownRef, triggerRef, enableAutoClose, onAutoClose });
+  } = props;
   const { classProps, props: modifiedProps } = useDropdownStyleProps({ isOpen, ...rest });
-  const { triggerProps, contentProps } = useDropdownAriaProps({ id, isOpen, fullWidthMode, placement, toggleHandler });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
-  const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
-  const { styleProps: triggerStyleProps } = useStyleProps({
-    UNSAFE_className: classProps.triggerClassName,
-  });
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>();
 
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: true,
-    componentName: 'Dropdown',
-    customText:
-      'Dropdown component is deprecated and will be removed in the next major version. Please use "DropdownModern" component instead.',
-  });
-
-  const triggerRenderHandler = () => {
-    if (renderTrigger) {
-      return renderTrigger({
-        isOpen,
-        trigger: {
-          ...triggerStyleProps,
-          ...triggerProps,
-          ref: triggerRef as unknown as LegacyRef<HTMLButtonElement & HTMLAnchorElement>,
-        },
-      });
+  const closeHandler = (event: Event) => {
+    if (!enableAutoClose) {
+      return;
     }
 
-    return null;
+    if (!triggerRef?.current?.contains(event?.target as Node)) {
+      if (onAutoClose) {
+        onAutoClose(event);
+      }
+
+      onToggle && isOpen && onToggle();
+    }
   };
 
-  const content = createElement(
-    'div',
-    {
-      ...contentOtherProps,
-      ...contentStyleProps,
-      ...contentProps,
-      className: classNames(classProps.contentClassName, contentStyleProps.className),
-      style: {
-        ...contentStyleProps.style,
-      },
-      ref: dropdownRef,
-    },
-    children,
-  );
+  useClickOutside({ ref: dropdownRef, callback: closeHandler });
 
   return (
-    <DropdownWrapper>
-      {triggerRenderHandler()}
-      {content}
-    </DropdownWrapper>
+    <DropdownProvider value={{ id, isOpen, fullWidthMode, placement, onToggle, dropdownRef, triggerRef }}>
+      <div
+        ref={dropdownRef}
+        className={classNames(classProps.wrapperClassName, styleProps.className)}
+        style={styleProps.style}
+        {...otherProps}
+      >
+        {children}
+      </div>
+    </DropdownProvider>
   );
 };
 
