@@ -220,15 +220,6 @@ See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isExpandedOnMobile={false}` prop to the `ModalDialog` component to keep the current behavior.
 
-### Alert `danger` Icon
-
-The `warning` icon as a fallback for the `danger` color in the Alert component will be removed in favor of the `danger` icon.
-Please, add the `danger` icon to your project's assets.
-
-#### Migration Guide
-
-Either install newer version of the `spirit-icons` package or add `danger` named icon to your project's icons.
-
 ### GridSpan Component
 
 The `GridSpan` component is deprecated and will be removed in the next major version. Use `GridItem` instead.
