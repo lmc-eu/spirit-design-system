@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Placements" stackAlignment="stretch">
         <DropdownPlacements />
       </DocsSection>
-      <DocsSection title="Various items" stackAlignment="stretch">
+      <DocsSection title="Various items">
         <DropdownVariousItems />
       </DocsSection>
       <DocsSection title="Usage with disabled auto close">
