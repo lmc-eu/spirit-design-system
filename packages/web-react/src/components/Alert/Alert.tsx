@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import React, { ElementType, useContext } from 'react';
-import IconsContext from '../../context/IconsContext';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import React, { ElementType } from 'react';
+import { useStyleProps } from '../../hooks';
 import { SpiritAlertProps } from '../../types';
 import { Icon } from '../Icon';
 import { useAlertIcon } from './useAlertIcon';
@@ -25,16 +24,6 @@ export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAler
   const { classProps, props: modifiedProps } = useAlertStyleProps({ color, ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const alertIconName = useAlertIcon({ color, iconName, ...otherProps });
-  const icons = useContext(IconsContext);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: color === 'danger' && (icons == null || icons[alertIconName] == null),
-    componentName: 'Alert',
-    customText: `The "warning" icon for the "danger" color is deprecated.
-    Make sure you have the "danger" icon in your project assets.
-    The fallback to the "warning" icon will be removed in favor of the "danger" icon in the next major version.`,
-  });
 
   return (
     <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} role="alert">
