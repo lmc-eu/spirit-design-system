@@ -3421,7 +3421,7 @@ __metadata:
     "@rollup/plugin-typescript": 11.1.6
     autoprefixer: 10.4.19
     clean-css-cli: 5.6.3
-    npm-run-all2: 5.0.0
+    npm-run-all2: 5.0.2
     rollup: 3.29.4
     rollup-plugin-terser: 7.0.2
     sass: 1.75.0
@@ -3443,14 +3443,14 @@ __metadata:
   resolution: "@lmc-eu/spirit-design-tokens@workspace:packages/design-tokens"
   dependencies:
     "@lmc-eu/stylelint-config": 7.0.1
-    npm-run-all2: 5.0.0
+    npm-run-all2: 5.0.2
     rimraf: 5.0.5
     shx: 0.3.4
     stylelint: 15.11.0
     stylelint-order: 6.0.4
-    typescript: 5.3.3
+    typescript: 5.4.5
     vite: 4.5.3
-    vite-plugin-dts: 3.8.3
+    vite-plugin-dts: 3.9.0
   languageName: unknown
   linkType: soft
 
@@ -3465,12 +3465,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-exporters-js@workspace:exporters/js"
   dependencies:
-    "@swc/core": 1.4.14
+    "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     eslint: 8.57.0
     jest: 29.7.0
     npm-run-all: 4.1.5
-    typescript: 5.3.3
+    typescript: 5.4.5
     vite: 4.5.3
   languageName: unknown
   linkType: soft
@@ -3479,12 +3479,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-exporters-scss@workspace:exporters/scss"
   dependencies:
-    "@swc/core": 1.4.14
+    "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     eslint: 8.57.0
     jest: 29.7.0
     npm-run-all: 4.1.5
-    typescript: 5.3.3
+    typescript: 5.4.5
     vite: 4.5.3
   languageName: unknown
   linkType: soft
@@ -3498,7 +3498,7 @@ __metadata:
     "@lmc-eu/spirit-demo": ^0.1.1
     "@lmc-eu/spirit-design-tokens": ^0.25.5
     "@lmc-eu/spirit-web": ^1.13.0
-    "@swc/core": 1.4.14
+    "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     "@types/jest": 29.5.12
     jest: 29.7.0
@@ -3524,7 +3524,7 @@ __metadata:
   resolution: "@lmc-eu/spirit-icons@workspace:packages/icons"
   dependencies:
     jsdom: 22.1.0
-    npm-run-all2: 5.0.0
+    npm-run-all2: 5.0.2
     shx: 0.3.4
     svg2react-icon: 3.1.178
   languageName: unknown
@@ -3570,7 +3570,7 @@ __metadata:
     "@lmc-eu/spirit-web": ^1.13.0
     "@react-hook/resize-observer": ^1.2.6
     "@rollup/plugin-node-resolve": 15.2.3
-    "@swc/core": 1.4.14
+    "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     "@testing-library/dom": 9.3.4
     "@testing-library/jest-dom": 6.4.2
@@ -3595,7 +3595,7 @@ __metadata:
     eslint-plugin-react: 7.34.1
     eslint-plugin-react-hooks: 4.6.0
     eslint-plugin-standard: 5.0.0
-    glob: 10.3.10
+    glob: 10.3.12
     html-dom-parser: 5.0.8
     html-react-parser: 5.1.10
     jest: 29.7.0
@@ -3613,8 +3613,8 @@ __metadata:
     terser-webpack-plugin: 5.3.10
     ts-loader: 9.5.1
     ts-node: 10.9.2
-    typescript: 5.3.3
-    webpack: 5.89.0
+    typescript: 5.4.5
+    webpack: 5.91.0
     webpack-cli: 5.1.4
     webpack-merge: 5.10.0
   peerDependencies:
@@ -3645,7 +3645,7 @@ __metadata:
     "@lmc-eu/spirit-icons": ^0.10.2
     "@lmc-eu/stylelint-config": 7.0.1
     "@rollup/plugin-typescript": 11.1.6
-    "@swc/core": 1.4.14
+    "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     "@types/jest": 29.5.12
     autoprefixer: 10.4.19
@@ -4859,67 +4859,67 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-arm64@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-darwin-arm64@npm:1.5.0"
+"@omlet/cli-darwin-arm64@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-darwin-arm64@npm:1.5.1"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@omlet/cli-darwin-x64@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-darwin-x64@npm:1.5.0"
+"@omlet/cli-darwin-x64@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-darwin-x64@npm:1.5.1"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-gnu@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.5.0"
+"@omlet/cli-linux-arm64-gnu@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-linux-arm64-gnu@npm:1.5.1"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-arm64-musl@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-linux-arm64-musl@npm:1.5.0"
+"@omlet/cli-linux-arm64-musl@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-linux-arm64-musl@npm:1.5.1"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-gnu@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-linux-x64-gnu@npm:1.5.0"
+"@omlet/cli-linux-x64-gnu@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-linux-x64-gnu@npm:1.5.1"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@omlet/cli-linux-x64-musl@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-linux-x64-musl@npm:1.5.0"
+"@omlet/cli-linux-x64-musl@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-linux-x64-musl@npm:1.5.1"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@omlet/cli-win32-x64-msvc@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli-win32-x64-msvc@npm:1.5.0"
+"@omlet/cli-win32-x64-msvc@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli-win32-x64-msvc@npm:1.5.1"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@omlet/cli@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@omlet/cli@npm:1.5.0"
+"@omlet/cli@npm:1.5.1":
+  version: 1.5.1
+  resolution: "@omlet/cli@npm:1.5.1"
   dependencies:
     "@hapi/joi": ^17.1.1
-    "@omlet/cli-darwin-arm64": 1.5.0
-    "@omlet/cli-darwin-x64": 1.5.0
-    "@omlet/cli-linux-arm64-gnu": 1.5.0
-    "@omlet/cli-linux-arm64-musl": 1.5.0
-    "@omlet/cli-linux-x64-gnu": 1.5.0
-    "@omlet/cli-linux-x64-musl": 1.5.0
-    "@omlet/cli-win32-x64-msvc": 1.5.0
+    "@omlet/cli-darwin-arm64": 1.5.1
+    "@omlet/cli-darwin-x64": 1.5.1
+    "@omlet/cli-linux-arm64-gnu": 1.5.1
+    "@omlet/cli-linux-arm64-musl": 1.5.1
+    "@omlet/cli-linux-x64-gnu": 1.5.1
+    "@omlet/cli-linux-x64-musl": 1.5.1
+    "@omlet/cli-win32-x64-msvc": 1.5.1
     "@sentry/node": ^7.108.0
     ci-info: ^4.0.0
     colorette: ^2.0.19
@@ -4970,7 +4970,7 @@ __metadata:
       optional: true
   bin:
     omlet: bin/omlet
-  checksum: d23bafd0d9a5140bf251573dce0dd9f605a1274d2b6c188026c17d080247f28b8615a0e251bb33e430108f80403d041d4f624c04e4cba542a01e3bed6ff4e5cf
+  checksum: 7e5a6f9bba374084c59df9d2ef422f0535e5446caa47a5208b60f24d93f2d425f9f5b8a16e00ac2764407ab1ea5ed02cee1f24980b25e9b60da63655d90f0b9a
   languageName: node
   linkType: hard
 
@@ -7766,90 +7766,90 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-darwin-arm64@npm:1.4.14"
+"@swc/core-darwin-arm64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-darwin-arm64@npm:1.5.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-darwin-x64@npm:1.4.14"
+"@swc/core-darwin-x64@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-darwin-x64@npm:1.5.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.4.14"
+"@swc/core-linux-arm-gnueabihf@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.5.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.4.14"
+"@swc/core-linux-arm64-gnu@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.5.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-linux-arm64-musl@npm:1.4.14"
+"@swc/core-linux-arm64-musl@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-linux-arm64-musl@npm:1.5.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-linux-x64-gnu@npm:1.4.14"
+"@swc/core-linux-x64-gnu@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-linux-x64-gnu@npm:1.5.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-linux-x64-musl@npm:1.4.14"
+"@swc/core-linux-x64-musl@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-linux-x64-musl@npm:1.5.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.4.14"
+"@swc/core-win32-arm64-msvc@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.5.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.4.14"
+"@swc/core-win32-ia32-msvc@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.5.0"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core-win32-x64-msvc@npm:1.4.14"
+"@swc/core-win32-x64-msvc@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core-win32-x64-msvc@npm:1.5.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.4.14":
-  version: 1.4.14
-  resolution: "@swc/core@npm:1.4.14"
+"@swc/core@npm:1.5.0":
+  version: 1.5.0
+  resolution: "@swc/core@npm:1.5.0"
   dependencies:
-    "@swc/core-darwin-arm64": 1.4.14
-    "@swc/core-darwin-x64": 1.4.14
-    "@swc/core-linux-arm-gnueabihf": 1.4.14
-    "@swc/core-linux-arm64-gnu": 1.4.14
-    "@swc/core-linux-arm64-musl": 1.4.14
-    "@swc/core-linux-x64-gnu": 1.4.14
-    "@swc/core-linux-x64-musl": 1.4.14
-    "@swc/core-win32-arm64-msvc": 1.4.14
-    "@swc/core-win32-ia32-msvc": 1.4.14
-    "@swc/core-win32-x64-msvc": 1.4.14
+    "@swc/core-darwin-arm64": 1.5.0
+    "@swc/core-darwin-x64": 1.5.0
+    "@swc/core-linux-arm-gnueabihf": 1.5.0
+    "@swc/core-linux-arm64-gnu": 1.5.0
+    "@swc/core-linux-arm64-musl": 1.5.0
+    "@swc/core-linux-x64-gnu": 1.5.0
+    "@swc/core-linux-x64-musl": 1.5.0
+    "@swc/core-win32-arm64-msvc": 1.5.0
+    "@swc/core-win32-ia32-msvc": 1.5.0
+    "@swc/core-win32-x64-msvc": 1.5.0
     "@swc/counter": ^0.1.2
     "@swc/types": ^0.1.5
   peerDependencies:
@@ -7878,7 +7878,7 @@ __metadata:
   peerDependenciesMeta:
     "@swc/helpers":
       optional: true
-  checksum: 11f2c7c79a26e49d164884c1c8395eebe468a1ac46bf7f6ee2d76a600ced80fec962c1dbb0e87ad3f3debc6fbb92fbd13fb1cf92029fee3493b1a02e08f2e596
+  checksum: 1abab0b57755020b60ebf2557629c23c65c3546e4cd80f9d02fbdf208d4169c9300a0229c088081b43a01e630c9d86d02f8c240c9fc2842eaed2a517770fcd1d
   languageName: node
   linkType: hard
 
@@ -8903,7 +8903,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^5.10.0, @typescript-eslint/utils@npm:^5.45.0":
+"@typescript-eslint/utils@npm:^5.10.0, @typescript-eslint/utils@npm:^5.62.0":
   version: 5.62.0
   resolution: "@typescript-eslint/utils@npm:5.62.0"
   dependencies:
@@ -9095,7 +9095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webassemblyjs/ast@npm:1.12.1, @webassemblyjs/ast@npm:^1.11.5, @webassemblyjs/ast@npm:^1.12.1":
+"@webassemblyjs/ast@npm:1.12.1, @webassemblyjs/ast@npm:^1.12.1":
   version: 1.12.1
   resolution: "@webassemblyjs/ast@npm:1.12.1"
   dependencies:
@@ -9181,7 +9181,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webassemblyjs/wasm-edit@npm:^1.11.5, @webassemblyjs/wasm-edit@npm:^1.12.1":
+"@webassemblyjs/wasm-edit@npm:^1.12.1":
   version: 1.12.1
   resolution: "@webassemblyjs/wasm-edit@npm:1.12.1"
   dependencies:
@@ -9222,7 +9222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webassemblyjs/wasm-parser@npm:1.12.1, @webassemblyjs/wasm-parser@npm:^1.11.5, @webassemblyjs/wasm-parser@npm:^1.12.1":
+"@webassemblyjs/wasm-parser@npm:1.12.1, @webassemblyjs/wasm-parser@npm:^1.12.1":
   version: 1.12.1
   resolution: "@webassemblyjs/wasm-parser@npm:1.12.1"
   dependencies:
@@ -9853,7 +9853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0, ansi-styles@npm:^4.2.1":
+"ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0":
   version: 4.3.0
   resolution: "ansi-styles@npm:4.3.0"
   dependencies:
@@ -10959,7 +10959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.14.5, browserslist@npm:^4.21.10, browserslist@npm:^4.22.2, browserslist@npm:^4.23.0":
+"browserslist@npm:^4.21.10, browserslist@npm:^4.22.2, browserslist@npm:^4.23.0":
   version: 4.23.0
   resolution: "browserslist@npm:4.23.0"
   dependencies:
@@ -12376,10 +12376,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:3.36.1":
-  version: 3.36.1
-  resolution: "core-js@npm:3.36.1"
-  checksum: 6f6c152179bd0673da34e67a82c6a5c37f31f9fbe908e9caf93749dc62a25b6e07fbff2411de3b74bb2d0661b7f9fb247115ba8efabf9904f5fef26edead515e
+"core-js@npm:3.37.0, core-js@npm:^3.29.1":
+  version: 3.37.0
+  resolution: "core-js@npm:3.37.0"
+  checksum: 212c3e9b3fc277dbb63739ef58a61c5709ccd0b36f09c3ce6946aa91fa180c60f57f976d4a5fdb9cda0c6cb55417379ba5a008fc3a1384ec94ec8ec61826469d
   languageName: node
   linkType: hard
 
@@ -12387,13 +12387,6 @@ __metadata:
   version: 2.6.12
   resolution: "core-js@npm:2.6.12"
   checksum: 44fa9934a85f8c78d61e0c8b7b22436330471ffe59ec5076fe7f324d6e8cf7f824b14b1c81ca73608b13bdb0fef035bd820989bf059767ad6fa13123bb8bd016
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^3.29.1":
-  version: 3.37.0
-  resolution: "core-js@npm:3.37.0"
-  checksum: 212c3e9b3fc277dbb63739ef58a61c5709ccd0b36f09c3ce6946aa91fa180c60f57f976d4a5fdb9cda0c6cb55417379ba5a008fc3a1384ec94ec8ec61826469d
   languageName: node
   linkType: hard
 
@@ -13811,7 +13804,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.15.0, enhanced-resolve@npm:^5.16.0":
+"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.16.0":
   version: 5.16.0
   resolution: "enhanced-resolve@npm:5.16.0"
   dependencies:
@@ -14941,17 +14934,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:0.7.0":
-  version: 0.7.0
-  resolution: "eslint-plugin-storybook@npm:0.7.0"
+"eslint-plugin-storybook@npm:0.8.0":
+  version: 0.8.0
+  resolution: "eslint-plugin-storybook@npm:0.8.0"
   dependencies:
     "@storybook/csf": ^0.0.1
-    "@typescript-eslint/utils": ^5.45.0
-    requireindex: ^1.1.0
+    "@typescript-eslint/utils": ^5.62.0
+    requireindex: ^1.2.0
     ts-dedent: ^2.2.0
   peerDependencies:
     eslint: ">=6"
-  checksum: 270cda6806a1e9672b5d21896651d9089d8877d0d3f4ab52487d7049c8963036ba6178ae1c3ca85b545de84446974f7686f638087b3f948ddff2fbd3a68fa7db
+  checksum: 71e4b064259e09a6353360ca4a3ec929df0ea3aabe1dc83a40b9264fe5c16bcecb94d097e7403f6916622b8fdb739e91f1268bbad220d838fcbc2b9a901345ec
   languageName: node
   linkType: hard
 
@@ -16753,21 +16746,6 @@ __metadata:
   version: 0.4.1
   resolution: "glob-to-regexp@npm:0.4.1"
   checksum: e795f4e8f06d2a15e86f76e4d92751cf8bbfcf0157cea5c2f0f35678a8195a750b34096b1256e436f0cebc1883b5ff0888c47348443e69546a5a87f9e1eb1167
-  languageName: node
-  linkType: hard
-
-"glob@npm:10.3.10":
-  version: 10.3.10
-  resolution: "glob@npm:10.3.10"
-  dependencies:
-    foreground-child: ^3.1.0
-    jackspeak: ^2.3.5
-    minimatch: ^9.0.1
-    minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
-    path-scurry: ^1.10.1
-  bin:
-    glob: dist/esm/bin.mjs
-  checksum: 4f2fe2511e157b5a3f525a54092169a5f92405f24d2aed3142f4411df328baca13059f4182f1db1bf933e2c69c0bd89e57ae87edd8950cba8c7ccbe84f721cf3
   languageName: node
   linkType: hard
 
@@ -18781,7 +18759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jackspeak@npm:^2.3.5, jackspeak@npm:^2.3.6":
+"jackspeak@npm:^2.3.6":
   version: 2.3.6
   resolution: "jackspeak@npm:2.3.6"
   dependencies:
@@ -22343,11 +22321,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all2@npm:5.0.0":
-  version: 5.0.0
-  resolution: "npm-run-all2@npm:5.0.0"
+"npm-run-all2@npm:5.0.2":
+  version: 5.0.2
+  resolution: "npm-run-all2@npm:5.0.2"
   dependencies:
-    ansi-styles: ^4.2.1
+    ansi-styles: ^5.0.0
     cross-spawn: ^7.0.3
     memorystream: ^0.3.1
     minimatch: ^3.0.4
@@ -22358,7 +22336,7 @@ __metadata:
     npm-run-all: bin/npm-run-all/index.js
     run-p: bin/run-p/index.js
     run-s: bin/run-s/index.js
-  checksum: 0e91f513cde3f24fad718baa3341e90d536fafffa89d48dd9c5d1ca99b4ae02762919c97419df23cf7dc714cf01c3782c0d1f4348a32e3425287d073e0e8c846
+  checksum: c52091478d5873a9f65132983459cc7f0869bbef0fd015e72f1ee1a78d50570e80c2239a8ba9a6c68c0c4898d749e3e8478df51abd9807b01c4ba461ee90aa2f
   languageName: node
   linkType: hard
 
@@ -23543,7 +23521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-scurry@npm:^1.10.1, path-scurry@npm:^1.10.2, path-scurry@npm:^1.6.1":
+"path-scurry@npm:^1.10.2, path-scurry@npm:^1.6.1":
   version: 1.10.2
   resolution: "path-scurry@npm:1.10.2"
   dependencies:
@@ -25337,7 +25315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"requireindex@npm:^1.1.0":
+"requireindex@npm:^1.2.0":
   version: 1.2.0
   resolution: "requireindex@npm:1.2.0"
   checksum: 50d8b10a1ff1fdf6aea7a1870bc7bd238b0fb1917d8d7ca17fd03afc38a65dcd7a8a4eddd031f89128b5f0065833d5c92c4fef67f2c04e8624057fe626c9cf94
@@ -26633,25 +26611,25 @@ __metadata:
     "@lmc-eu/conventional-changelog-lmc-github": 3.0.1
     "@lmc-eu/eslint-config-react": 2.0.2
     "@lmc-eu/prettier-config": 2.0.0
-    "@omlet/cli": 1.5.0
+    "@omlet/cli": 1.5.1
     "@playwright/test": 1.43.1
     "@rollup/plugin-babel": 6.0.4
     "@rollup/plugin-node-resolve": 15.2.3
     "@rollup/plugin-replace": 5.0.5
     "@svgr/webpack": 8.1.0
     babel-loader: 9.1.3
-    core-js: 3.36.1
+    core-js: 3.37.0
     css-loader: 6.11.0
     eslint: 8.57.0
     eslint-plugin-jsx-a11y: 6.8.0
     eslint-plugin-react: 7.34.1
     eslint-plugin-react-hooks: 4.6.0
-    eslint-plugin-storybook: 0.7.0
+    eslint-plugin-storybook: 0.8.0
     husky: 8.0.3
     is-ci: 3.0.1
     lerna: 7.4.2
     netlify-cli: 16.9.3
-    npm-run-all2: 5.0.0
+    npm-run-all2: 5.0.2
     nx: 17.3.2
     postcss: 8.4.38
     prettier: 2.8.8
@@ -27763,7 +27741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:5.3.10, terser-webpack-plugin@npm:^5.3.10, terser-webpack-plugin@npm:^5.3.7":
+"terser-webpack-plugin@npm:5.3.10, terser-webpack-plugin@npm:^5.3.10":
   version: 5.3.10
   resolution: "terser-webpack-plugin@npm:5.3.10"
   dependencies:
@@ -29160,9 +29138,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:3.8.3":
-  version: 3.8.3
-  resolution: "vite-plugin-dts@npm:3.8.3"
+"vite-plugin-dts@npm:3.9.0":
+  version: 3.9.0
+  resolution: "vite-plugin-dts@npm:3.9.0"
   dependencies:
     "@microsoft/api-extractor": 7.43.0
     "@rollup/pluginutils": ^5.1.0
@@ -29177,7 +29155,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 753ee70e742dedabdea74b2e39a86eec753ef46dfe0fa632682695c4bac905dc2701a7767690e819fd4437dbd5fb11ab51e2e4d63bef28a79c3b15384545d11a
+  checksum: 0483410ed2ffb0a2a316e8525177b6ddde45af2acf0e93b5e5115c153d5553ca4a4bf5313b33ed2d4fcdd0c3d0c54ea125d0a3220fdb592dbdca2cc82aacbcd5
   languageName: node
   linkType: hard
 
@@ -29323,7 +29301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watchpack@npm:^2.2.0, watchpack@npm:^2.4.0, watchpack@npm:^2.4.1":
+"watchpack@npm:^2.2.0, watchpack@npm:^2.4.1":
   version: 2.4.1
   resolution: "watchpack@npm:2.4.1"
   dependencies:
@@ -29424,43 +29402,6 @@ __metadata:
   version: 0.6.1
   resolution: "webpack-virtual-modules@npm:0.6.1"
   checksum: 0cd993d7b00af0ed89eee96ed6dcb2307fa8dc38e37f34e78690088314976aa79a31cf146553c5e414cdc87222878c5e4979abeb0b00bf6dc9c6f018604a1310
-  languageName: node
-  linkType: hard
-
-"webpack@npm:5.89.0":
-  version: 5.89.0
-  resolution: "webpack@npm:5.89.0"
-  dependencies:
-    "@types/eslint-scope": ^3.7.3
-    "@types/estree": ^1.0.0
-    "@webassemblyjs/ast": ^1.11.5
-    "@webassemblyjs/wasm-edit": ^1.11.5
-    "@webassemblyjs/wasm-parser": ^1.11.5
-    acorn: ^8.7.1
-    acorn-import-assertions: ^1.9.0
-    browserslist: ^4.14.5
-    chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.15.0
-    es-module-lexer: ^1.2.1
-    eslint-scope: 5.1.1
-    events: ^3.2.0
-    glob-to-regexp: ^0.4.1
-    graceful-fs: ^4.2.9
-    json-parse-even-better-errors: ^2.3.1
-    loader-runner: ^4.2.0
-    mime-types: ^2.1.27
-    neo-async: ^2.6.2
-    schema-utils: ^3.2.0
-    tapable: ^2.1.1
-    terser-webpack-plugin: ^5.3.7
-    watchpack: ^2.4.0
-    webpack-sources: ^3.2.3
-  peerDependenciesMeta:
-    webpack-cli:
-      optional: true
-  bin:
-    webpack: bin/webpack.js
-  checksum: 43fe0dbc30e168a685ef5a86759d5016a705f6563b39a240aa00826a80637d4a3deeb8062e709d6a4b05c63e796278244c84b04174704dc4a37bedb0f565c5ed
   languageName: node
   linkType: hard
 
