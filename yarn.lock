@@ -3370,7 +3370,7 @@ __metadata:
     "@typescript-eslint/parser": 6.21.0
     filedirname: ^3.0.0
     jest: 29.7.0
-    npm-run-all: ^4.1.5
+    npm-run-all: 4.1.5
     react-scanner: ^1.1.0
     sade: ^1.8.1
     shx: 0.3.4
@@ -3501,7 +3501,7 @@ __metadata:
     "@swc/core": 1.4.14
     "@swc/jest": 0.2.36
     "@types/jest": 29.5.12
-    jest: ^29.7.0
+    jest: 29.7.0
     jest-environment-jsdom: 29.7.0
     npm-run-all: 4.1.5
     sass: 1.75.0
@@ -3654,7 +3654,7 @@ __metadata:
     jest: 29.7.0
     jest-environment-jsdom: 29.7.0
     jest-environment-node-single-context: 29.4.0
-    npm-run-all: ^4.1.5
+    npm-run-all: 4.1.5
     postcss: 8.4.38
     postcss-cli: 10.1.0
     resize-observer-polyfill: 1.5.1
@@ -3667,7 +3667,7 @@ __metadata:
     stylelint-config-prettier: 9.0.5
     stylelint-order: 6.0.4
     tslib: 2.6.2
-    typescript: ^5.4.5
+    typescript: 5.4.5
   peerDependencies:
     sass: ">=1.57.0 < 2"
   peerDependenciesMeta:
@@ -19314,7 +19314,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:29.7.0, jest@npm:^29.7.0":
+"jest@npm:29.7.0":
   version: 29.7.0
   resolution: "jest@npm:29.7.0"
   dependencies:
@@ -22362,7 +22362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-all@npm:4.1.5, npm-run-all@npm:^4.1.5":
+"npm-run-all@npm:4.1.5":
   version: 4.1.5
   resolution: "npm-run-all@npm:4.1.5"
   dependencies:
