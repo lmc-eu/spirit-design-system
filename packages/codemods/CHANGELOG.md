@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.0"></a>
+
+# [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.3.0...@lmc-eu/spirit-codemods@0.4.0) (2024-04-24)
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+
+### Dependencies
+
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+### Features
+
+- **codemods:** Add codemod to remove breakpoint props from Grid [#DS-1068](https://github.com/lmc-eu/spirit-design-system/issues/DS-1068) ([8469fc3](https://github.com/lmc-eu/spirit-design-system/commit/8469fc3))
+- **codemods:** Add codemod to update Tooltip and Dropdown non-flow placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([720b07e](https://github.com/lmc-eu/spirit-design-system/commit/720b07e))
+- **codemods:** Add codemods for Modal deprecations [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([fe61e86](https://github.com/lmc-eu/spirit-design-system/commit/fe61e86))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="0.3.0"></a>
 
 # [0.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.2.0...@lmc-eu/spirit-codemods@0.3.0) (2024-04-11)

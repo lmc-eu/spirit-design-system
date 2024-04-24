@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.5"></a>
+
+## [1.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.4...@lmc-eu/spirit-design-tokens@1.1.5) (2024-04-24)
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+
+### Dependencies
+
+- **repo:** Switch from `npm-run-all` to `npm-run-all2` fork ([b857115](https://github.com/lmc-eu/spirit-design-system/commit/b857115))
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+### Styles
+
+- **design-tokens:** Fix color hex length to `short` ([9a2c498](https://github.com/lmc-eu/spirit-design-system/commit/9a2c498))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.1.4"></a>
 
 ## [1.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.3...@lmc-eu/spirit-design-tokens@1.1.4) (2024-04-11)

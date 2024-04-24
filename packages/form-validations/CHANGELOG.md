@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.5"></a>
+
+## [1.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.4...@lmc-eu/spirit-form-validations@1.1.5) (2024-04-24)
+
+### Chores
+
+- **repo:** Add missing jest dependency ([f313886](https://github.com/lmc-eu/spirit-design-system/commit/f313886))
+- **repo:** Fix Nx settings by running `nx repair` ([4f0bc02](https://github.com/lmc-eu/spirit-design-system/commit/4f0bc02))
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+
+### Dependencies
+
+- Pin dependencies ([91f46eb](https://github.com/lmc-eu/spirit-design-system/commit/91f46eb))
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.1.4"></a>
 
 ## [1.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.3...@lmc-eu/spirit-form-validations@1.1.4) (2024-04-11)

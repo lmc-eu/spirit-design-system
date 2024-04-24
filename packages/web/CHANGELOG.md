@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.13.1"></a>
+
+## [1.13.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.13.0...@lmc-eu/spirit-web@1.13.1) (2024-04-24)
+
+### Bug Fixes
+
+- **web:** `Dropdown` can now be placed inside a non-scrollable `Modal` [#DS-939](https://github.com/lmc-eu/spirit-design-system/issues/DS-939) ([641f5a4](https://github.com/lmc-eu/spirit-design-system/commit/641f5a4))
+- **web:** Use correct overflow CSS variable in ModalDialog [#DS-939](https://github.com/lmc-eu/spirit-design-system/issues/DS-939) ([2788887](https://github.com/lmc-eu/spirit-design-system/commit/2788887))
+
+### Chores
+
+- **repo:** Add missing jest dependency ([f313886](https://github.com/lmc-eu/spirit-design-system/commit/f313886))
+- **repo:** Fix Nx settings by running `nx repair` ([4f0bc02](https://github.com/lmc-eu/spirit-design-system/commit/4f0bc02))
+- **repo:** Migrate to Yarn Modern ([f20e36a](https://github.com/lmc-eu/spirit-design-system/commit/f20e36a)), closes [#264](https://github.com/lmc-eu/spirit-design-system/issues/264)
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+
+### Dependencies
+
+- Pin dependencies ([91f46eb](https://github.com/lmc-eu/spirit-design-system/commit/91f46eb))
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.13.0"></a>
 
 # [1.13.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.12.0...@lmc-eu/spirit-web@1.13.0) (2024-04-11)

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.14.1"></a>
+
+## [2.14.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.14.0...@lmc-eu/spirit-web-twig@2.14.1) (2024-04-24)
+
+### Bug Fixes
+
+- **web-twig:** `Dropdown` can now be placed inside a non-scrollable `Modal` [#DS-939](https://github.com/lmc-eu/spirit-design-system/issues/DS-939) ([a4e569c](https://github.com/lmc-eu/spirit-design-system/commit/a4e569c))
+- **web-twig:** Don't render the `name` attribute of `Checkbox` when empty ([cfece12](https://github.com/lmc-eu/spirit-design-system/commit/cfece12))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.14.0"></a>
 
 # [2.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.13.0...@lmc-eu/spirit-web-twig@2.14.0) (2024-04-11)

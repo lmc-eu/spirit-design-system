@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.2"></a>
+
+## [0.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.1...@lmc-eu/spirit-storybook@0.0.2) (2024-04-24)
+
+### Chores
+
+- **repo:** Migrate to Yarn Modern ([f20e36a](https://github.com/lmc-eu/spirit-design-system/commit/f20e36a)), closes [#264](https://github.com/lmc-eu/spirit-design-system/issues/264)
+
+### Dependencies
+
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+- Update monorepo:storybook ([1ff8067](https://github.com/lmc-eu/spirit-design-system/commit/1ff8067))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.0.1"></a>
 
 ## 0.0.1 (2024-04-11)

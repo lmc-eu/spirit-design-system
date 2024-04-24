@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.2"></a>
+
+## [0.3.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.3.1...@lmc-eu/spirit-analytics@0.3.2) (2024-04-24)
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+
+### Dependencies
+
+- Pin dependencies ([91f46eb](https://github.com/lmc-eu/spirit-design-system/commit/91f46eb))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-analytics
+
 <a name="0.3.1"></a>
 
 ## [0.3.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.3.0...@lmc-eu/spirit-analytics@0.3.1) (2024-04-11)

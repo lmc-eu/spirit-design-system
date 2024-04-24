@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.0"></a>
+
+# [1.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.15.0...@lmc-eu/spirit-web-react@1.16.0) (2024-04-24)
+
+### Bug Fixes
+
+- **web-react:** `Dropdown` can now be placed inside a non-scrollable `Modal` [#DS-939](https://github.com/lmc-eu/spirit-design-system/issues/DS-939) ([a3cd5d0](https://github.com/lmc-eu/spirit-design-system/commit/a3cd5d0))
+- **web-react:** Add backward compatibility for CJS when building to it ([7a35154](https://github.com/lmc-eu/spirit-design-system/commit/7a35154)), closes [#DS-1227](https://github.com/lmc-eu/spirit-design-system/issues/DS-1227)
+
+### Chores
+
+- **repo:** Fix Nx settings by running `nx repair` ([4f0bc02](https://github.com/lmc-eu/spirit-design-system/commit/4f0bc02))
+- **repo:** Migrate to Yarn Modern ([0b982c3](https://github.com/lmc-eu/spirit-design-system/commit/0b982c3)), closes [#264](https://github.com/lmc-eu/spirit-design-system/issues/264)
+- **web-react:** Fix non resolvable modules and types ([55aeee8](https://github.com/lmc-eu/spirit-design-system/commit/55aeee8))
+- **web-react:** Fix resolving parent id while building CJS bundle ([7df2d84](https://github.com/lmc-eu/spirit-design-system/commit/7df2d84))
+- **web-react:** Fix UMD build that integrates common package ([98e12c8](https://github.com/lmc-eu/spirit-design-system/commit/98e12c8))
+- **web-react:** Resolve paths to icons using alias ([05a97ca](https://github.com/lmc-eu/spirit-design-system/commit/05a97ca))
+
+### Code Refactoring
+
+- **ci:** Yarn no longer supports `pre*` and `post*` scripts ([44b8f1c](https://github.com/lmc-eu/spirit-design-system/commit/44b8f1c))
+- **web-react:** Move away from the `defaultProps` ([d70e5ff](https://github.com/lmc-eu/spirit-design-system/commit/d70e5ff))
+
+### Dependencies
+
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+### Features
+
+- **codemods:** Add codemod to remove breakpoint props from Grid [#DS-1068](https://github.com/lmc-eu/spirit-design-system/issues/DS-1068) ([8469fc3](https://github.com/lmc-eu/spirit-design-system/commit/8469fc3))
+- **codemods:** Add codemod to update Tooltip and Dropdown non-flow placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([720b07e](https://github.com/lmc-eu/spirit-design-system/commit/720b07e))
+- **codemods:** Add codemods for Modal deprecations [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([fe61e86](https://github.com/lmc-eu/spirit-design-system/commit/fe61e86))
+- **web-react:** Introduce Uncontrollable Toast ([c318448](https://github.com/lmc-eu/spirit-design-system/commit/c318448)), closes [#DS-1197](https://github.com/lmc-eu/spirit-design-system/issues/DS-1197)
+- **web-react:** TooltipModern tooltip hover ([a7cd369](https://github.com/lmc-eu/spirit-design-system/commit/a7cd369)), closes [#DS-1219](https://github.com/lmc-eu/spirit-design-system/issues/DS-1219)
+
+### Styles
+
+- **web-react:** Ignore unresolved file when icons are not built ([b45ef66](https://github.com/lmc-eu/spirit-design-system/commit/b45ef66))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.15.0"></a>
 
 # [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.14.0...@lmc-eu/spirit-web-react@1.15.0) (2024-04-11)

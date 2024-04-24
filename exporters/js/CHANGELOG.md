@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+
+# [1.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@1.1.2...@lmc-eu/spirit-exporters-js@1.2.0) (2024-04-24)
+
+### Chores
+
+- **exporter-js:** Add missing dependencies ([56e3ee6](https://github.com/lmc-eu/spirit-design-system/commit/56e3ee6))
+
+### Dependencies
+
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+### Features
+
+- **exporter-js:** Normalize color string to short hex ([4702a3d](https://github.com/lmc-eu/spirit-design-system/commit/4702a3d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="1.1.2"></a>
 
 ## [1.1.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@1.1.1...@lmc-eu/spirit-exporters-js@1.1.2) (2024-04-11)

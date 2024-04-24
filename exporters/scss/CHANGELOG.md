@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.8.0"></a>
+
+# [1.8.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.9...@lmc-eu/spirit-exporters-scss@1.8.0) (2024-04-24)
+
+### Chores
+
+- **exporter-scss:** Add missing package dependencies ([a60e4f1](https://github.com/lmc-eu/spirit-design-system/commit/a60e4f1))
+
+### Dependencies
+
+- Update all non-major dependencies ([1a4adb6](https://github.com/lmc-eu/spirit-design-system/commit/1a4adb6))
+- Update all non-major dependencies ([10774a2](https://github.com/lmc-eu/spirit-design-system/commit/10774a2))
+
+### Features
+
+- **exporter-scss:** Normalize color string to short hex ([d70573a](https://github.com/lmc-eu/spirit-design-system/commit/d70573a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.7.9"></a>
 
 ## [1.7.9](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.7.8...@lmc-eu/spirit-exporters-scss@1.7.9) (2024-04-11)
