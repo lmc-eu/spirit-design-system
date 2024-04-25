@@ -100,7 +100,7 @@ const TooltipModernWithHooks = (args: SpiritTooltipModernProps) => {
 
   return (
     <div
-      className="bg-cover spirit-feature-tooltip-enable-data-placement"
+      className="bg-cover"
       style={{ width: '40rem', maxWidth: '100%', height: '30rem', overflow: 'auto' }}
       ref={viewportRef}
     >
