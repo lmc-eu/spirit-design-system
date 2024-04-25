@@ -31,7 +31,7 @@ class SvgExtensionTest extends TestCase
      * @param array<string, string> $params
      * @dataProvider getSvgDataProvider
      */
-    public function testShouldGetInlineSvg(string $filePath, string $fileResultPath, array $params = []): void
+    public function testShouldGetInlineSvg(string $filePath, string $fileResultPath, array $params = [], ?string $symbolName = ''): void
     {
         $fixturesPattern = __DIR__ . '/../fixtures/%s';
         $source = file_get_contents(sprintf($fixturesPattern, $filePath));
@@ -50,7 +50,7 @@ class SvgExtensionTest extends TestCase
             ->withNoArgs()
             ->andReturn($loaderMock);
 
-        $result = $this->svgExtension->getInlineSvg($environmentMock, $filePath, $params);
+        $result = $this->svgExtension->getInlineSvg($environmentMock, $filePath, $params, true, false, $symbolName);
 
         $this->assertXmlStringEqualsXmlString((string) $expectedSource, $result);
     }
@@ -98,16 +98,18 @@ class SvgExtensionTest extends TestCase
             ->withNoArgs()
             ->andReturn($loaderMock);
 
+        // Make sure to set up your mock to expect the error log with exact arguments
         $this->loaderInterface->shouldReceive('error')
-            ->with('Error parse svg by simplexml_load_string from {class} in path "{path}"', [
+            ->with('Error parsing SVG by simplexml_load_string from {class} in path "{path}"', [
                 'class' => Source::class,
-                'path' => 'test.svg',
+                'path' => $filePath,
             ])
-            ->once();
+            ->once()
+            ->andReturn();
 
         $result = $this->svgExtension->getInlineSvg($environmentMock, $filePath);
 
-        $this->assertTrue($result === '');
+        $this->assertSame('', $result);
     }
 
     public function testShouldReuseSvg(): void
@@ -158,6 +160,8 @@ class SvgExtensionTest extends TestCase
                 'test.svg', 'test_with_style.svg', [
                     'style' => 'position: absolute;',
                 ], ],
+            'load with symbol' => [
+                'test.svg', 'test_with_symbol.svg', [], 'test', ],
         ];
     }
 }

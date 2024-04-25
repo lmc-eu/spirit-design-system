@@ -16,8 +16,6 @@ class SvgExtension extends AbstractExtension
 {
     private const ALLOW_EXTENSION = '.svg';
 
-    private const ATTR = 'attr';
-
     private const ATTR_CLASS = 'class';
 
     private const ATTR_STYLE = 'style';
@@ -47,6 +45,8 @@ class SvgExtension extends AbstractExtension
     private array $cacheReusableIconContent = [];
 
     private const SIMPLE_XML_ROOT_DECLARATION = "<?xml version=\"1.0\"?>\n";
+
+    private const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
     private LoggerInterface $logger;
 
@@ -80,7 +80,7 @@ class SvgExtension extends AbstractExtension
     /**
      * @param array<string, string|array<string>> $params
      */
-    public function getInlineSvg(Environment $environment, string $path, array $params = [], bool $reUsage = true, bool $ignoreMissing = false): string
+    public function getInlineSvg(Environment $environment, string $path, array $params = [], bool $reUsage = true, bool $ignoreMissing = false, ?string $symbolName = ''): string
     {
         $loader = $environment->getLoader();
         $twigSource = null;
@@ -98,6 +98,7 @@ class SvgExtension extends AbstractExtension
                 $this->logger->critical('Missing svg "{path}"', [
                     'path' => $path,
                 ]);
+
                 return '';
             }
         }
@@ -109,13 +110,13 @@ class SvgExtension extends AbstractExtension
         }
 
         if (! $reUsage) {
-            $svgElement = $this->makeRegularSvg($twigSource, null, $params);
+            $svgElement = $this->makeRegularSvg($twigSource, null, $params, $symbolName);
 
             return $this->replaceXmlDeclaration($svgElement);
         }
 
         if (! array_key_exists($iconId, $this->cacheIcon)) {
-            $this->cacheIcon[$iconId] = $this->makeRegularSvg($twigSource, $iconId, $params);
+            $this->cacheIcon[$iconId] = $this->makeRegularSvg($twigSource, $iconId, $params, $symbolName);
 
             return $this->cacheIcon[$iconId] !== false ? $this->replaceXmlDeclaration($this->cacheIcon[$iconId]) : '';
         }
@@ -133,68 +134,98 @@ class SvgExtension extends AbstractExtension
      * @param array<string, string|array<string>> $params
      * @return false | SimpleXMLElement
      */
-    private function makeRegularSvg(?Source $source, ?string $iconId, array $params = [])
+    private function makeRegularSvg(?Source $source, ?string $iconId, array $params = [], ?string $symbolName = '')
     {
         if (! $source instanceof Source) {
             return false;
         }
 
         $svgString = $source->getCode();
+        $svg = @simplexml_load_string($svgString);
 
+        if ($svg === false) {
+            $this->logger->error('Error parsing SVG by simplexml_load_string from {class} in path "{path}"', [
+                'class' => Source::class,
+                'path' => $source->getPath(),
+            ]);
+            return false;
+        }
+
+        $this->applyAttributes($svg, $params, $iconId);
+
+        if ($symbolName && $symbolName !== '') {
+            $svgWithSymbol = new SimpleXMLElement('<svg xmlns="' . self::SVG_NAMESPACE . '"></svg>');
+            $symbol = $svgWithSymbol->addChild('symbol');
+            $symbol->addAttribute('id', $symbolName);
+
+            if (isset($svg['viewBox'])) {
+                $symbol->addAttribute('viewBox', (string) $svg['viewBox']);
+            }
+
+            foreach ($svg->children() as $child) {
+                $this->simplexmlAppend($symbol, $child);
+            }
+
+            $svg = $svgWithSymbol;
+        }
+
+        return $svg;
+    }
+
+    /**
+     * Utility function to append one SimpleXMLElement to another
+     */
+    private function simplexmlAppend(SimpleXMLElement $to, SimpleXMLElement $from): void
+    {
+        $toDom = dom_import_simplexml($to);
+        $fromDom = dom_import_simplexml($from);
+
+        if ($toDom->ownerDocument) {
+            $toDom->appendChild($toDom->ownerDocument->importNode($fromDom, true));
+        }
+    }
+
+    /**
+     * @param array<string, string|array<string>> $params
+     */
+    private function applyAttributes(SimpleXMLElement $svg, array $params, ?string $iconId): void
+    {
         $hasClasses = array_key_exists(self::ATTR_CLASS, $params);
         $hasStyles = array_key_exists(self::ATTR_STYLE, $params);
         $hasMainProps = array_key_exists(self::ATTR_MAIN_PROPS, $params);
         $hasSize = array_key_exists(self::ATTR_SIZE, $params);
         $hasTitle = array_key_exists(self::ATTR_TITLE, $params);
-        $hasAttributes = array_key_exists(self::ATTR, $params);
 
-        $svg = @simplexml_load_string($svgString);
+        if ($iconId !== null) {
+            $this->replaceAttribute($svg, self::ATTR_ID, $iconId);
+        }
 
-        if ($svg !== false) {
-            if ($iconId !== null) {
-                $this->replaceAttribute($svg, self::ATTR_ID, $iconId);
-            }
+        if ($hasClasses && is_string($params[self::ATTR_CLASS])) {
+            $this->replaceAttribute($svg, self::ATTR_CLASS, $params[self::ATTR_CLASS]);
+        }
 
-            if ($hasClasses && is_string($params[self::ATTR_CLASS])) {
-                $this->replaceAttribute($svg, self::ATTR_CLASS, $params[self::ATTR_CLASS]);
-            }
+        if ($hasStyles && is_string($params[self::ATTR_STYLE])) {
+            $this->replaceAttribute($svg, self::ATTR_STYLE, $params[self::ATTR_STYLE]);
+        }
 
-            if ($hasStyles && is_string($params[self::ATTR_STYLE])) {
-                $this->replaceAttribute($svg, self::ATTR_STYLE, $params[self::ATTR_STYLE]);
-            }
+        if ($hasSize && is_string($params[self::ATTR_SIZE]) && trim($params[self::ATTR_SIZE]) !== '') {
+            $this->replaceAttribute($svg, 'width', $params[self::ATTR_SIZE]);
+            $this->replaceAttribute($svg, 'height', $params[self::ATTR_SIZE]);
+        }
 
-            if ($hasSize && is_string($params[self::ATTR_SIZE]) && trim($params[self::ATTR_SIZE]) !== '') {
-                $this->replaceAttribute($svg, 'width', $params[self::ATTR_SIZE]);
-                $this->replaceAttribute($svg, 'height', $params[self::ATTR_SIZE]);
-            }
-
-            if ($hasMainProps && is_array($params[self::ATTR_MAIN_PROPS])) {
-                foreach ($params[self::ATTR_MAIN_PROPS] as $propName => $propValue) {
-                    if (preg_match('/^(data|aria)-*/', $propName) > 0) {
-                        if (trim($propValue) !== '') {
-                            $this->replaceAttribute($svg, $propName, $propValue);
-                        }
+        if ($hasMainProps && is_array($params[self::ATTR_MAIN_PROPS])) {
+            foreach ($params[self::ATTR_MAIN_PROPS] as $propName => $propValue) {
+                if (preg_match('/^(data|aria)-*/', $propName) > 0) {
+                    if (trim($propValue) !== '') {
+                        $this->replaceAttribute($svg, $propName, $propValue);
                     }
                 }
             }
-
-            if ($hasTitle && is_string($params[self::ATTR_TITLE]) && trim($params[self::ATTR_TITLE]) !== '') {
-                $svg->addChild(self::ATTR_TITLE, htmlspecialchars($params[self::ATTR_TITLE], ENT_QUOTES));
-            }
-
-            if ($hasAttributes && is_array($params[self::ATTR])) {
-                foreach ($params[self::ATTR] as $key => $value) {
-                    $this->replaceAttribute($svg, $key, $value);
-                }
-            }
-        } else {
-            $this->logger->error('Error parse svg by simplexml_load_string from {class} in path "{path}"', [
-                'class' => Source::class,
-                'path' => $source->getPath(),
-            ]);
         }
 
-        return $svg;
+        if ($hasTitle && is_string($params[self::ATTR_TITLE]) && trim($params[self::ATTR_TITLE]) !== '') {
+            $svg->addChild(self::ATTR_TITLE, htmlspecialchars($params[self::ATTR_TITLE], ENT_QUOTES));
+        }
     }
 
     /**
