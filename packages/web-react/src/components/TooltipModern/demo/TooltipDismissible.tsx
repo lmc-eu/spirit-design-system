@@ -6,7 +6,7 @@ const TooltipDismissible = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="docs-Stack docs-Stack-stretch spirit-feature-tooltip-enable-data-placement">
+    <div className="docs-Stack docs-Stack-stretch">
       <TooltipModern
         id="TooltipDismissible"
         isOpen={open}

@@ -55,7 +55,7 @@ const TooltipWithFloatingUI = () => {
   }, []);
 
   return (
-    <div className="docs-Stack docs-Stack-stretch spirit-feature-tooltip-enable-data-placement">
+    <div className="docs-Stack docs-Stack-stretch">
       <p className="mb-600">
         Try scrolling the frame or resizing the window to see how the Tooltip behaves. The Floating UI library is trying
         to keep the Tooltip in the viewport and it is also flipping, shifting and resizing the Tooltip when it is not
