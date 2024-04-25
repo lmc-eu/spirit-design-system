@@ -81,32 +81,26 @@ and [escape hatches][readme-escape-hatches].
 
 ### TooltipPopover
 
-TooltipPopover is a new name for the Tooltip component. Some features are only available when the feature flag
-`spirit-feature-tooltip-enable-data-placement` is activated and TooltipPopover is used.
+TooltipPopover is a new name for the Tooltip subcomponent.
 
 #### Basic
 
 ```html
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipWrapper>
-    <button>I have a tooltip!</button>
-    <TooltipPopover>Hello there!</TooltipPopover>
-  </TooltipWrapper>
-</div>
+<TooltipWrapper>
+  <button>I have a tooltip!</button>
+  <TooltipPopover>Hello there!</TooltipPopover>
+</TooltipWrapper>
 ```
 
 #### Dismissible
 
-Add `isDismissible` prop to `TooltipPopover` component.
-there will be automatically displayed close button in `TooltipPopover`` component
+To display close button, add `isDismissible` prop to the `TooltipPopover` subcomponent.
 
 ```html
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipWrapper>
-    <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-dismissible">I have a tooltip 😎</button>
-    <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
-  </TooltipWrapper>
-</div>
+<TooltipWrapper>
+  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-dismissible">I have a tooltip 😎</button>
+  <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
+</TooltipWrapper>
 ```
 
 ### Trigger
@@ -117,46 +111,40 @@ If you only want the `click` trigger, you need to specify the trigger, as shown 
 This setup might be preferable when you have a link in your tooltip, for example.
 
 ```html
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipWrapper>
-    <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-trigger">I have a tooltip 😎</button>
-    <TooltipPopover id="my-tooltip-trigger" trigger="click" <!-- Only `click` trigger is active now. -->
-      > You can click on the link: <a href="#">Link to unknown</a>
-    </TooltipPopover>
-  </TooltipWrapper>
-</div>
+<TooltipWrapper>
+  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-trigger">I have a tooltip 😎</button>
+  <TooltipPopover id="my-tooltip-trigger" trigger="click">
+    <!-- Only `click` trigger is active now. -->
+    You can click on the link: <a href="#">Link to unknown</a>
+  </TooltipPopover>
+</TooltipWrapper>
 ```
 
 #### Advanced Floating Functionality
-
-To enable the advanced floating functionality, you need to have activated feature flag `spirit-feature-tooltip-enable-data-placement` on any parent element.
-This requirement will be removed in future major version.
 
 For more info about feature flags, see main [README][readme-feature-flags].
 
 Advanced floating functionality is provided by JavaScript plugin and by [Floating UI][floating-ui] library.
 
 ```html
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipWrapper>
-    <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-advanced">I have a tooltip 😎</button>
-    <TooltipPopover
-      closeLabel="Close tooltip"
-      id="my-tooltip-advanced"
-      isDismissible
-      enableControlledPlacement
-      enableFlipping
-      enableFlippingCrossAxis
-      enableShifting
-      enableSizing
-      flipFallbackAxisSideDirection="top, left, right, bottom"
-      flipFallbackPlacements="left-start"
-      placement="right-start"
-    >
-      Close me
-    </TooltipPopover>
-  </TooltipWrapper>
-</div>
+<TooltipWrapper>
+  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-advanced">I have a tooltip 😎</button>
+  <TooltipPopover
+    closeLabel="Close tooltip"
+    id="my-tooltip-advanced"
+    isDismissible
+    enableControlledPlacement
+    enableFlipping
+    enableFlippingCrossAxis
+    enableShifting
+    enableSizing
+    flipFallbackAxisSideDirection="top, left, right, bottom"
+    flipFallbackPlacements="left-start"
+    placement="right-start"
+  >
+    Close me
+  </TooltipPopover>
+</TooltipWrapper>
 ```
 
 #### API
