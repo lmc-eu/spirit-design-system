@@ -11,7 +11,7 @@ const TooltipDismissibleViaJS = () => {
   }, [open]);
 
   return (
-    <div className="docs-Stack docs-Stack-stretch spirit-feature-tooltip-enable-data-placement">
+    <div className="docs-Stack docs-Stack-stretch">
       <p>Saves data to local storage.</p>
       <TooltipModern
         id="TooltipDismissibleViaJS"

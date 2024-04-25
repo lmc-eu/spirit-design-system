@@ -242,9 +242,6 @@ const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, d
 
 ## Usage
 
-To enable the advanced floating functionality, you need to have activated feature flag `spirit-feature-tooltip-enable-data-placement` on any parent element.
-This requirement will be removed in future major version.
-
 ### Basic
 
 ```javascript
@@ -252,30 +249,25 @@ import { TooltipModern, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/s
 
 const [open, setOpen] = React.useState(false);
 
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipModern id="TooltipModern" isOpen={open} onToggle={setOpen}>
-    <TooltipTrigger>I have a tooltip!</TooltipTrigger>
-    <TooltipPopover>Hello there!</TooltipPopover>
-  </TooltipModern>
-</div>;
+<TooltipModern id="TooltipModern" isOpen={open} onToggle={setOpen}>
+  <TooltipTrigger>I have a tooltip!</TooltipTrigger>
+  <TooltipPopover>Hello there!</TooltipPopover>
+</TooltipModern>;
 ```
 
 ### Dismissible
 
-Add `isDismissible` prop to `TooltipModern` component.
-there will be automatically displayed close button in `TooltipPopover`` component
+To display close button, add `isDismissible` prop to the `TooltipModern` component.
 
 ```javascript
 import { TooltipModern, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-web-react/components';
 
 const [open, setOpen] = React.useState(false);
 
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipModern id="TooltipModernDismissible" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
-    <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
-    <TooltipPopover>Close me</TooltipPopover>
-  </TooltipModern>
-</div>;
+<TooltipModern id="TooltipModernDismissible" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
+  <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
+  <TooltipPopover>Close me</TooltipPopover>
+</TooltipModern>;
 ```
 
 ### Trigger
@@ -290,19 +282,17 @@ import { TooltipModern, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/s
 
 const [open, setOpen] = React.useState(false);
 
-<div className="spirit-feature-tooltip-enable-data-placement">
-  <TooltipModern
-    id="TooltipModernTrigger"
-    isOpen={open}
-    onToggle={setOpen}
-    trigger={['click']} // Only `click` trigger is active now.
-  >
-    <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
-    <TooltipPopover>
-      You can click on the link: <a href="#">Link to unknown</a>
-    </TooltipPopover>
-  </TooltipModern>
-</div>;
+<TooltipModern
+  id="TooltipModernTrigger"
+  isOpen={open}
+  onToggle={setOpen}
+  trigger={['click']} // Only `click` trigger is active now.
+>
+  <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
+  <TooltipPopover>
+    You can click on the link: <a href="#">Link to unknown</a>
+  </TooltipPopover>
+</TooltipModern>;
 ```
 
 ## API
