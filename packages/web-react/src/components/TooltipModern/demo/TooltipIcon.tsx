@@ -6,28 +6,26 @@ const TooltipIcon = () => {
   const [openIcon, setOpenIcon] = useState(false);
 
   return (
-    <div className="spirit-feature-tooltip-enable-data-placement">
-      <p>
-        Click on the icon on the right to view the tooltip{' '}
-        <TooltipModern
-          id="tooltip-example-with-icon"
-          isOpen={openIcon}
-          onToggle={setOpenIcon}
-          placement="right"
-          flipFallbackPlacements={['top-start', 'bottom-start', 'left']}
+    <div>
+      Click on the icon to show the tooltip:{' '}
+      <TooltipModern
+        id="tooltip-example-with-icon"
+        isOpen={openIcon}
+        onToggle={setOpenIcon}
+        placement="right"
+        flipFallbackPlacements={['top-start', 'bottom-start', 'left']}
+        UNSAFE_className="d-inline-block"
+        isDismissible
+      >
+        <TooltipTrigger
+          elementType={Icon}
+          name="info"
+          boxSize={16}
           UNSAFE_className="d-inline-block"
-          isDismissible
-        >
-          <TooltipTrigger
-            elementType={Icon}
-            name="info"
-            boxSize={16}
-            UNSAFE_className="d-inline-block"
-            marginBottom="space-200"
-          />
-          <TooltipPopover>Close me</TooltipPopover>
-        </TooltipModern>
-      </p>
+          marginBottom="space-200"
+        />
+        <TooltipPopover>Close me</TooltipPopover>
+      </TooltipModern>
     </div>
   );
 };
