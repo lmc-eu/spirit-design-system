@@ -2,14 +2,16 @@
 {%- set props = props | default([]) -%}
 {%- set _ariaHidden = props.ariaHidden ?? true -%}
 {%- set _isReusable = props.isReusable ?? true -%}
+{%- set _isSymbol = props.isSymbol | default(false) -%}
 {%- set _name = props.name -%}
 {%- set _boxSize = props.boxSize | default('24') -%}
 {%- set _title = props.title | default(null) -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
+{%- set _symbolName = _isSymbol ? _name : '' -%}
 {%- set _mainProps = props | filter((value, prop) => prop is not same as('ariaHidden')) | merge({
     'aria-hidden': _ariaHidden ? 'true' : 'false',
 }) -%}
 
-{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _styleProps.className, style: _styleProps.style, size: _boxSize, title: _title, mainProps: _mainProps }, _isReusable) }}
+{{ inlineSvg('@icons-assets/' ~ _name ~ '.svg', { class: _styleProps.className, style: _styleProps.style, size: _boxSize, title: _title, mainProps: _mainProps }, _isReusable, false, _symbolName) }}
