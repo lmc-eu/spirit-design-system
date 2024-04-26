@@ -1,9 +1,11 @@
 {{#> web/layout/default page="components" }}
 
-  {{#> components }}
-    {{#each @web_components as |component|}}
-      {{> component component=component path="src/scss/components"}}
-    {{/each}}
-  {{/components }}
+  {{#>section title="Components"}}
+    {{#> boxList }}
+      {{#each @web_components as |component|}}
+        {{> component component=component path="src/scss/components"}}
+      {{/each}}
+    {{/boxList }}
+  {{/section}}
 
 {{/web/layout/default }}

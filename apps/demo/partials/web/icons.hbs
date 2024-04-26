@@ -1,12 +1,8 @@
 {{#> web/layout/default page="icons" }}
 
-<section class="docs-Section">
+  {{#> section title="Icons" }}
 
-  <h2 class="docs-Heading"> Icons </h2>
-
-  <div class="docs-Stack docs-Stack--start">
-
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-6 list-unstyled text-center my-1000">
+    {{#> tileList}}
 
       {{#each @icons as |icon|}}
         <li class="mb-600">
@@ -17,10 +13,8 @@
         </li>
       {{/each}}
 
-    </ul>
+    {{/tileList}}
 
-  </div>
-
-</section>
+  {{/section}}
 
 {{/web/layout/default }}
