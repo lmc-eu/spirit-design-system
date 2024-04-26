@@ -1,9 +1,13 @@
-{{#> layout/base package="Spirit"}}
+{{#> layout/base package=package}}
 
   {{#*inline "scripts"}}
   {{/inline}}
 
-  {{> header package=""}}
+  {{#with package as |pkgName|}}
+    {{> header package=pkgName}}
+  {{else}}
+    {{> header package=""}}
+  {{/with}}
 
   <main class="py-900 py-tablet-1200">
     <div class="Container">

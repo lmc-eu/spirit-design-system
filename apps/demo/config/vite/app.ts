@@ -77,6 +77,7 @@ export default defineConfig({
         webReactMain: join(pathRelativeToRepositoryRoot, 'packages/web-react/index.html'),
         ...mapKeys(getNestedDirs('../../packages/web-react/src/components', 'index.html'), (key) => `web-react-${key}`),
         webReactIcons: join(pathRelativeToRepositoryRoot, 'packages/web-react/src/icons/index.html'),
+        formValidations: join(pathRelativeToRepositoryRoot, 'packages/form-validations/index.html'),
       },
       output: {
         entryFileNames: `assets/spirit-entry.[hash].js`,
