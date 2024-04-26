@@ -1,9 +1,11 @@
 {{#> web-react/layout/default page="components" }}
 
-  {{#> components }}
-    {{#each @web_react_components as |component|}}
-      {{> component component=component path="src/components"}}
-    {{/each}}
-  {{/components }}
+  {{#> section title="Components"}}
+    {{#> boxList }}
+      {{#each @web_react_components as |component|}}
+        {{> component component=component path="src/components"}}
+      {{/each}}
+    {{/boxList }}
+  {{/section}}
 
 {{/web-react/layout/default }}
