@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-web-react",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "description": "React implementation of Spirit Design System components",
   "license": "MIT",
   "sideEffects": false,

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.1"></a>
+
+## [1.16.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.16.0...@lmc-eu/spirit-web-react@1.16.1) (2024-04-26)
+
+### Chores
+
+- **web-react:** Fix missing `.js` extensions in ESM distribution ([7f0265b](https://github.com/lmc-eu/spirit-design-system/commit/7f0265b))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.16.0"></a>
 
 # [1.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.15.0...@lmc-eu/spirit-web-react@1.16.0) (2024-04-24)
