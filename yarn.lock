@@ -3454,13 +3454,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-design-tokens@npm:^0.25.5":
-  version: 0.25.5
-  resolution: "@lmc-eu/spirit-design-tokens@npm:0.25.5"
-  checksum: c2025bb81850b923d94dd73348f3b6236de0e4a51ce96401336d3aa3512d2204d1f9f12d294c9c9a88beab8b7228752b9b4e82b5ce72c059f390ac12a932e9b1
-  languageName: node
-  linkType: hard
-
 "@lmc-eu/spirit-exporters-js@workspace:exporters/js":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-exporters-js@workspace:exporters/js"
@@ -3494,10 +3487,6 @@ __metadata:
   resolution: "@lmc-eu/spirit-form-validations@workspace:packages/form-validations"
   dependencies:
     "@lmc-eu/browserslist-config": 2.0.0
-    "@lmc-eu/spirit-common": ^0.3.1
-    "@lmc-eu/spirit-demo": ^0.1.1
-    "@lmc-eu/spirit-design-tokens": ^0.25.5
-    "@lmc-eu/spirit-web": ^1.13.1
     "@swc/core": 1.5.0
     "@swc/jest": 0.2.36
     "@types/jest": 29.5.12
@@ -3508,7 +3497,6 @@ __metadata:
     shx: 0.3.4
     tslib: 2.6.2
     vite: 4.5.3
-    vite-plugin-handlebars: 1.6.0
   languageName: unknown
   linkType: soft
 
