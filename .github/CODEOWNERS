@@ -5,9 +5,12 @@
 
 # Packages' owners
 
+/packages/analytics               @literat @crishpeen @curdaj @pavelklibani @lmc-eu/spirit-design-system
+/packages/codemods                @literat @adamkudrna @crishpeen @pavelklibani @curdaj @lmc-eu/spirit-design-system
+/packages/common                  @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/design-tokens           @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
+/packages/form-validations        @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/icons                   @literat @adamkudrna @crishpeen @lmc-eu/spirit-design-system
-/packages/web                     @literat @adamkudrna @crishpeen @pavelklibani @lmc-eu/spirit-design-system
-/packages/web-react               @literat @pavelklibani @lmc-eu/spirit-design-system
+/packages/web                     @literat @adamkudrna @crishpeen @pavelklibani @curdaj @lmc-eu/spirit-design-system
+/packages/web-react               @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/web-twig                @literat @adamkudrna @crishpeen @pavelklibani @lmc-eu/spirit-design-system
-/packages/codemods                @literat @adamkudrna @crishpeen @pavelklibani @lmc-eu/spirit-design-system
