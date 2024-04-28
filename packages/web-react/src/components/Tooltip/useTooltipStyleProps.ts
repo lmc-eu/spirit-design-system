@@ -16,30 +16,8 @@ export interface UseTooltipStylePropsReturn {
   props: TooltipProps;
 }
 
-const deprecatedPlacements = {
-  'top-left': 'top-start',
-  'top-right': 'top-end',
-  'right-top': 'right-start',
-  'right-bottom': 'right-end',
-  'bottom-left': 'bottom-start',
-  'bottom-right': 'bottom-end',
-  'left-top': 'left-start',
-  'left-bottom': 'left-end',
-};
-
 export const useTooltipStyleProps = (props: UseTooltipStyleProps): UseTooltipStylePropsReturn => {
   const { placement = 'bottom', isDismissible, open, ...modifiedProps } = props;
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: placement !== 'off' && !!deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
-    componentName: 'Tooltip',
-    propertyProps: {
-      deprecatedValue: placement,
-      newValue: deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
-      propertyName: 'placement',
-    },
-  });
 
   useDeprecationMessage({
     method: 'custom',
