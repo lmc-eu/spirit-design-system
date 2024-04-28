@@ -1,6 +1,5 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _href = props.href -%}
 {%- set _isCurrent = props.isCurrent | default(false) -%}
 {%- set _rootClass = props.rootClass -%}
@@ -13,20 +12,9 @@
 {%- set _ariaCurrentAttr = _isCurrent ? 'aria-current=page' : null -%}
 
 {# Miscellaneous #}
-{## `_propsWithoutClassAndStyleProps` is a temporary prop until the `class` prop will be removed ##}
-{%- set _propsWithoutClassAndStyleProps = props | filter((value, prop) => prop not in ['class', 'style']) -%}
-
-{%- set _styleProps = useStyleProps(_propsWithoutClassAndStyleProps) -%}
-{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _class, _styleProps.className ] -%}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootCurrentClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target' ] -%}
-
-{# Deprecations #}
-{% if _class %}
-    {% deprecated 'Header/_abstracts/Link: The "class" property is deprecated and will be removed in the next major version. Please use "UNSAFE_className" instead.' %}
-{% endif %}
-{% if props.style is defined %}
-    {% deprecated 'Header/_abstracts/Link: The "style" property is deprecated and will be removed in the next major version. Please  use "UNSAFE_style" instead.' %}
-{% endif %}
 
 <a
     {{ mainProps(props, _allowedAttributes) }}
