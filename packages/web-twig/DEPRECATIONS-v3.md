@@ -115,19 +115,6 @@ Use `UNSAFE_style` and `UNSAFE_className` instead.
 
 Replace `style` with `UNSAFE_style` and `class` with `UNSAFE_className`.
 
-### Grid Breakpoint Props
-
-The `cols` prop in the `Grid` now supports object values for different breakpoints.
-The `tablet` and `desktop` props will be removed in the next major version.
-
-#### Migration Guide
-
-Replace `tablet` and `desktop` props with the `cols` object prop.
-
-- `<Grid cols="2" tablet="3" … />` → `<Grid cols={{ mobile: 2, tablet: 3 }} … />`
-- `<Grid desktop="3" … />` → `<Grid cols={{ desktop: 3 }} … />`
-- `<Grid cols="1" tablet="2" desktop="3" … />` → `<Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }} … />`
-
 ### ModalDialog `isScrollable` Prop
 
 The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
