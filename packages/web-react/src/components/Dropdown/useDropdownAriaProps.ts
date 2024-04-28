@@ -1,5 +1,4 @@
 import { Placements } from '../../constants';
-import { useDeprecationMessage } from '../../hooks';
 import { Booleanish, ClickEvent, DropdownFullWidthMode, PlacementDictionaryType } from '../../types';
 
 const NAME_ARIA_EXPANDED = 'aria-expanded';
@@ -40,29 +39,8 @@ export interface UseDropdownAriaPropsReturn {
   };
 }
 
-const deprecatedPlacements = {
-  'top-left': 'top-start',
-  'top-right': 'top-end',
-  'right-top': 'right-start',
-  'right-bottom': 'right-end',
-  'bottom-left': 'bottom-start',
-  'bottom-right': 'bottom-end',
-  'left-top': 'left-start',
-  'left-bottom': 'left-end',
-};
-
 export const useDropdownAriaProps = (props: UseDropdownAriaPropsProps): UseDropdownAriaPropsReturn => {
   const { fullWidthMode, id, isOpen, placement = Placements.BOTTOM_START, toggleHandler } = props;
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
-    componentName: 'Dropdown',
-    propertyProps: {
-      deprecatedValue: placement,
-      newValue: deprecatedPlacements[placement as keyof typeof deprecatedPlacements],
-      propertyName: 'placement',
-    },
-  });
 
   const triggerProps = {
     id,

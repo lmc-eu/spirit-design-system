@@ -66,15 +66,6 @@ export const Placements = {
   RIGHT: 'right',
   RIGHT_START: 'right-start',
   RIGHT_END: 'right-end',
-  // @deprecated All following placements are deprecated and will be removed in the next major version. Use flow-relative placements (above) instead.
-  TOP_RIGHT: 'top-right',
-  TOP_LEFT: 'top-left',
-  BOTTOM_RIGHT: 'bottom-right',
-  BOTTOM_LEFT: 'bottom-left',
-  LEFT_TOP: 'left-top',
-  LEFT_BOTTOM: 'left-bottom',
-  RIGHT_TOP: 'right-top',
-  RIGHT_BOTTOM: 'right-bottom',
 } as const;
 
 /* Validation */
