@@ -164,27 +164,6 @@ const onToggle = () => setIsOpen(!isOpen);
 
 See [`Dropdown` documentation][dropdown-readme] for more details and examples.
 
-### Grid Breakpoint Props
-
-The `cols` prop in the `Grid` now supports object values for different breakpoints.
-The `tablet` and `desktop` props will be removed in the next major version.
-
-#### Migration Guide
-
-Use codemod to automatically update your codebase.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-breakpoint-props
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or manually replace `tablet` and `desktop` props with the `cols` object prop.
-
-- `<Grid cols="2" tablet="3" … />` → `<Grid cols={{ mobile: 2, tablet: 3 }} … />`
-- `<Grid desktop="3" … />` → `<Grid cols={{ desktop: 3 }} … />`
-- `<Grid cols="1" tablet="2" desktop="3" … />` → `<Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }} … />`
-
 ### ModalDialog `isScrollable` Prop
 
 The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made

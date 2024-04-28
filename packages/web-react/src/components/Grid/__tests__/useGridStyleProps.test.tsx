@@ -11,7 +11,7 @@ describe('useGridStyleProps', () => {
   });
 
   it('should return responsive variants', () => {
-    const props: SpiritGridProps = { cols: 2, tablet: 4, desktop: 12 };
+    const props: SpiritGridProps = { cols: { mobile: 2, tablet: 4, desktop: 12 } };
     const { result } = renderHook(() => useGridStyleProps(props));
 
     expect(result.current.classProps).toBe('Grid Grid--cols-2 Grid--tablet--cols-4 Grid--desktop--cols-12');

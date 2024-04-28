@@ -35,10 +35,6 @@ export interface GridItemElementTypeProps<T extends ElementType = 'div'> {
 
 export interface GridCustomLayoutProps {
   cols?: GridColumns | GridColsBreakpoints;
-  // @deprecated Use `cols` with object instead. This prop will be removed in the next major version.
-  tablet?: GridColumns;
-  // @deprecated Use `cols` with object instead. This prop will be removed in the next major version.
-  desktop?: GridColumns;
 }
 
 export interface GridItemCustomLayoutProps {
