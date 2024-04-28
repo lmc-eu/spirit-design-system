@@ -1,9 +1,7 @@
-/* eslint no-console: ["error", { allow: ["warn"] }] */
 import { ElementType } from 'react';
 import classNames from 'classnames';
-import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
+import { useClassNamePrefix } from '../../hooks';
 import { SpiritGridProps } from '../../types';
-import { useGridClasses } from './useGridClasses';
 
 export interface GridStyles<T> {
   /** className props */
@@ -16,27 +14,6 @@ export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyl
   const { cols, ...restProps } = props;
 
   const gridClass = useClassNamePrefix('Grid');
-  const { props: modifiedProps, classes: gridClasses } = useGridClasses(gridClass, restProps, 'cols');
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!restProps.tablet,
-    componentName: 'Grid',
-    propertyProps: {
-      deprecatedName: 'tablet',
-      newName: 'cols',
-    },
-  });
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!restProps.desktop,
-    componentName: 'Grid',
-    propertyProps: {
-      deprecatedName: 'desktop',
-      newName: 'cols',
-    },
-  });
 
   if (typeof cols === 'object' && cols !== null) {
     const classes: string[] = [];
@@ -51,10 +28,10 @@ export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyl
     };
   }
   const gridColsClass = `${gridClass}--cols-${cols}`;
-  const classes = classNames(gridClass, { [gridColsClass]: cols }, gridClasses);
+  const classes = classNames(gridClass, { [gridColsClass]: cols });
 
   return {
     classProps: classes,
-    props: modifiedProps,
+    props: restProps,
   };
 }
