@@ -41,7 +41,7 @@ const meta: Meta<typeof UncontrolledDropdown> = {
       control: 'select',
       options: Object.values(Placements),
       table: {
-        defaultValue: { summary: Placements.BOTTOM_LEFT },
+        defaultValue: { summary: Placements.BOTTOM_START },
       },
     },
   },
