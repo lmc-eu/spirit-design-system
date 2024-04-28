@@ -1,6 +1,4 @@
 @use 'sass:map';
-@use 'sass:math';
-@use 'sass:string';
 @use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
@@ -29,25 +27,6 @@
             @each $column in $column-count {
                 .Grid--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}cols-#{$column} {
                     grid-template-columns: repeat(#{$column}, 1fr);
-                }
-            }
-        }
-    }
-}
-
-// Generates GridSpan classes for each breakpoint
-// Parameters are:
-// * $grid-columns: the number of columns in the grid
-// * $grid-span-variants: the list of span variants to generate
-// * $breakpoints: the breakpoints map
-@mixin span-variants($grid-columns, $grid-span-variants, $breakpoints) {
-    @each $breakpoint-name, $breakpoint-value in $breakpoints {
-        @include breakpoint.up($breakpoint-value) {
-            @each $option in $grid-span-variants {
-                .Grid__span--#{breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value)}over-#{$option} {
-                    $start: 1 + math.div(($grid-columns - $option), 2);
-
-                    grid-column: $start / span $option;
                 }
             }
         }
