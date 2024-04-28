@@ -1,25 +1,13 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _class = props.class | default(null) -%}
 {%- set _rootClass = props.rootClass -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ _rootClass -%}
 
 {# Miscellaneous #}
-{## `_propsWithoutClassAndStyleProps` is a temporary prop until the `class` prop will be removed ##}
-{%- set _propsWithoutClassAndStyleProps = props | filter((value, prop) => prop not in ['class', 'style']) -%}
-
-{%- set _styleProps = useStyleProps(_propsWithoutClassAndStyleProps) -%}
-{%- set _classNames = [ _rootClassName, _class, _styleProps.className] -%}
-
-{# Deprecations #}
-{% if _class %}
-    {% deprecated 'Header/_abstracts/Button: The "class" property is deprecated and will be removed in the next major version. Please use "UNSAFE_className" instead.' %}
-{% endif %}
-{% if props.style is defined %}
-    {% deprecated 'Header/_abstracts/Button: The "style" property is deprecated and will be removed in the next major version. Please use "UNSAFE_style" instead.' %}
-{% endif %}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className] -%}
 
 <button
     {{ mainProps(props) }}
