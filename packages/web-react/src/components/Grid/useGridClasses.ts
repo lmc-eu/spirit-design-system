@@ -14,11 +14,11 @@ export const useGridClasses = <T>(
 
   breakpoints.forEach((breakpoint) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Partial<GridSpanProps>'.
+    // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'unknown'.
     const variant = props[breakpoint];
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Partial<GridSpanProps>'.
+    // @ts-ignore TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'unknown'.
     delete props[breakpoint];
 
     if (!variant && variant !== '') {
