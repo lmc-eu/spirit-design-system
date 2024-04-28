@@ -97,17 +97,17 @@
     @include true.it('should generate correct placement classes based on a dictionary') {
         @include true.assert {
             @include true.output {
-                @include dictionaries.generate-placements('Test', ('top-left'));
+                @include dictionaries.generate-placements('Test', ('top-start'));
             }
 
             @include true.expect {
-                .Test[data-spirit-placement='top-left'],
-                .Test--topLeft {
+                .Test[data-spirit-placement='top-start'],
+                .Test--topStart {
                     --test-offset: 0;
 
                     inset: auto auto 100% 0;
                     translate: var(--test-offset-orthogonal, 0) calc(-1 * var(--test-offset, 0));
-                    transform-origin: bottom right;
+                    transform-origin: bottom;
                 }
             }
         }

@@ -257,10 +257,6 @@ a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="
 CSS modifiers `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--bottom`, etc. are deprecated and will be
 removed in the next major release. Use `data-spirit-placement` attribute instead.
 
-Also, all cross-axis placements have been renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
-etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
-removed in the next major release.
-
 [What are deprecations?][readme-deprecations]
 
 ## JavaScript

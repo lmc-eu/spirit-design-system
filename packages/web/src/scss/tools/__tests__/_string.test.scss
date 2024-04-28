@@ -4,7 +4,7 @@
 
 @include true.describe('convert-kebab-case-to-camel-case function') {
     @include true.it('should convert kebab-case to camelCase') {
-        @include true.assert-equal(string.convert-kebab-case-to-camel-case('top-left'), 'topLeft');
+        @include true.assert-equal(string.convert-kebab-case-to-camel-case('top-start'), 'topStart');
 
         @include true.assert-equal(
             string.convert-kebab-case-to-camel-case('my-long-variable-name'),
@@ -15,7 +15,7 @@
 
 @include true.describe('convert-pascal-case-to-kebab-case function') {
     @include true.it('should convert PascalCase to kebab-case') {
-        @include true.assert-equal(string.convert-pascal-case-to-kebab-case('TopLeft'), 'top-left');
+        @include true.assert-equal(string.convert-pascal-case-to-kebab-case('TopStart'), 'top-start');
 
         @include true.assert-equal(
             string.convert-pascal-case-to-kebab-case('MyLongVariableName'),
@@ -26,7 +26,7 @@
 
 @include true.describe('replace function') {
     @include true.it('should replace all occurrences of a substring with another string') {
-        @include true.assert-equal(string.replace('top-left', '-', ''), 'topleft');
+        @include true.assert-equal(string.replace('top-start', '-', ''), 'topstart');
 
         @include true.assert-equal(string.replace('some-other-text', 'e', 'a'), 'soma-othar-taxt');
 
