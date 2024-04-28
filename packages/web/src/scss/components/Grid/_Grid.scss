@@ -13,6 +13,4 @@
 
 @include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
 
-@include tools.span-variants(theme.$grid-columns, theme.$grid-span-variants, theme.$breakpoints);
-
 @include tools.item(theme.$breakpoints);
