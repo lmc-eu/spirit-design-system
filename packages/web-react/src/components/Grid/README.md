@@ -30,53 +30,6 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Grid][grid] component.
 
-## GridSpan
-
-Grid Span allows to center content over multiple grid columns.
-
-For more info when and why to use it, see [Grid][grid] component.
-
-Basic example usage:
-
-```jsx
-<Grid>
-  <GridSpan over="2">2</GridSpan>
-  <GridSpan over="4">4</GridSpan>
-  <GridSpan over="6">6</GridSpan>
-  <GridSpan over="8">8</GridSpan>
-  <GridSpan over="10">10</GridSpan>
-</Grid>
-```
-
-Advanced example usage:
-
-```jsx
-<Grid elementType="ul">
-  <GridSpan elementType="li" over="10" tablet="8" desktop="6">
-    10 on mobile, 8 on tablet, 6 on desktop
-  </GridSpan>
-</Grid>
-```
-
-### ⚠️ DEPRECATION NOTICE
-
-GridSpan component is deprecated and will be removed in the next major version. Use `GridItem` instead.
-
-[What are deprecations?][readme-deprecations]
-
-### API
-
-| Name          | Type                                       | Default | Required | Description                               |
-| ------------- | ------------------------------------------ | ------- | -------- | ----------------------------------------- |
-| `desktop`     | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on desktop |
-| `elementType` | `string`                                   | `div`   | ✕        | HTML tag to render                        |
-| `over`        | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over            |
-| `tablet`      | [`2` \| `4` \| `6` \| `8` \| `10` \| `12`] | `null`  | ✕        | Number of columns to span over on tablet  |
-
-On top of the API options, the components accept [additional attributes][readme-additional-attributes].
-If you need more control over the styling of a component, you can use [style props][readme-style-props]
-and [escape hatches][readme-escape-hatches].
-
 ## GridItem
 
 Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure
