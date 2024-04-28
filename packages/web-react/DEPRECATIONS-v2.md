@@ -188,43 +188,6 @@ See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isExpandedOnMobile={false}` prop to the `ModalDialog` component to keep the current behavior.
 
-### GridSpan Component
-
-The `GridSpan` component is deprecated and will be removed in the next major version. Use `GridItem` instead.
-
-#### Migration Guide
-
-Use our codemod to automatically migrate your code.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-gridspan
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or follow these steps:
-
-The hardest part in the migration is to get the `columnStart` value. The equation is `1 + (columns - over) / 2`,
-where `columns` is the number of columns in the grid and `over` is the value from the `GridSpan` component.
-The default number of columns is 12, so the equation is `1 + (12 - over) / 2` most of the time.
-
-1. Replace `GridSpan` with `GridItem`.
-2. Calculate and set the `columnStart` value as `1 + (columns - over) / 2`. In our 12-column grid, the equation is `1 + (12 - over) / 2`, where `over` is the value from the `GridSpan` component.
-3. Set the `columnEnd` value to `span over` or use `columnStart + over`.
-4. If you use responsive props, calculate the values for each breakpoint and pass them to the `GridItem` component `columnStart` and `columnEnd` props as an object.
-5. Remove the `over` prop.
-
-Examples:
-
-- `<GridSpan over="4">…</GridSpan>` → `<GridItem columnStart="5" columnEnd="span 4">…</GridItem>`
-  - `columnStart` = 1 + (12 - 4) / 2 = 5
-- `<GridSpan over="6">…</GridSpan>` → `<GridItem columnStart="4" columnEnd="span 6">…</GridItem>`
-  - `columnStart` = 1 + (12 - 6) / 2 = 4
-- `<GridSpan over="8" tablet="6" desktop="4">…</GridSpan>` → `<GridItem columnStart="{{ { mobile: 3, tablet: 4, desktop: 5 } }}" columnEnd="{{ { mobile: 'span 8', tablet: 'span 6', desktop: 'span 4' } }}">…</GridItem>`
-  - `columnStart` = 1 + (12 - 8) / 2 = 3
-  - `columnStart` = 1 + (12 - 6) / 2 = 4
-  - `columnStart` = 1 + (12 - 4) / 2 = 5
-
 [readme-codemods]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/README.md
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Dropdown/README.md
