@@ -32,22 +32,6 @@ $_arrow-rotate-map: (
     right: 90deg,
     right-start: 90deg,
     right-end: 90deg,
-    // Deprecated in favor of top-start, will be removed in the next major version
-    top-left: 0deg,
-    // Deprecated in favor of top-end, will be removed in the next major version
-    top-right: 0deg,
-    // Deprecated in favor of bottom-start, will be removed in the next major version
-    bottom-left: 180deg,
-    // Deprecated in favor of bottom-end, will be removed in the next major version
-    bottom-right: 180deg,
-    // Deprecated in favor of left-start, will be removed in the next major version
-    left-top: -90deg,
-    // Deprecated in favor of left-end, will be removed in the next major version
-    left-bottom: -90deg,
-    // Deprecated in favor of right-start, will be removed in the next major version
-    right-top: 90deg,
-    // Deprecated in favor of right-end, will be removed in the next major version
-    right-bottom: 90deg,
 );
 
 // 1.2
@@ -64,22 +48,6 @@ $_inset-map: (
     right: 50% auto auto 100%,
     right-start: 0 auto auto 100%,
     right-end: auto auto 0 100%,
-    // Deprecated in favor of top-start, will be removed in the next major version
-    top-left: auto auto 100% 0,
-    // Deprecated in favor of top-end, will be removed in the next major version
-    top-right: auto 0 100% auto,
-    // Deprecated in favor of bottom-start, will be removed in the next major version
-    bottom-left: 100% auto auto 0,
-    // Deprecated in favor of bottom-end, will be removed in the next major version
-    bottom-right: 100% 0 auto auto,
-    // Deprecated in favor of left-start, will be removed in the next major version
-    left-top: 0 100% auto auto,
-    // Deprecated in favor of left-end, will be removed in the next major version
-    left-bottom: auto 100% 0 auto,
-    // Deprecated in favor of right-start, will be removed in the next major version
-    right-top: 0 auto auto 100%,
-    // Deprecated in favor of right-end, will be removed in the next major version
-    right-bottom: auto auto 0 100%,
 );
 
 $_placement-inverse-map: (
@@ -112,32 +80,6 @@ $_placement-inverse-map: (
                     var(--#{$prefix}-arrow-corner-offset)
             ),
         right-end: calc(var(--#{$prefix}-arrow-width) / -2)
-            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
-        // Deprecated in favor of top-start, will be removed in the next major version
-        top-left: var(--#{$prefix}-arrow-corner-offset) 0%,
-        // Deprecated in favor of top-end, will be removed in the next major version
-        top-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) 0%,
-        // Deprecated in favor of bottom-start, will be removed in the next major version
-        bottom-left: var(--#{$prefix}-arrow-corner-offset) -100%,
-        // Deprecated in favor of bottom-end, will be removed in the next major version
-        bottom-right: calc(-1 * var(--#{$prefix}-arrow-corner-offset)) -100%,
-        // Deprecated in favor of left-start, will be removed in the next major version
-        left-top: calc(var(--#{$prefix}-arrow-width) / 2)
-            calc(
-                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
-                    var(--#{$prefix}-arrow-corner-offset)
-            ),
-        // Deprecated in favor of left-end, will be removed in the next major version
-        left-bottom: calc(var(--#{$prefix}-arrow-width) / 2)
-            calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset)),
-        // Deprecated in favor of right-start, will be removed in the next major version
-        right-top: calc(var(--#{$prefix}-arrow-width) / -2)
-            calc(
-                var(--#{$prefix}-arrow-width) / 2 - var(--#{$prefix}-arrow-height) +
-                    var(--#{$prefix}-arrow-corner-offset)
-            ),
-        // Deprecated in favor of right-end, will be removed in the next major version
-        right-bottom: calc(var(--#{$prefix}-arrow-width) / -2)
             calc(var(--#{$prefix}-arrow-width) / -2 - var(--#{$prefix}-arrow-corner-offset))
     );
 }
@@ -156,23 +98,7 @@ $_placement-inverse-map: (
         left-end: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
         right: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, -50%),
         right-start: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
-        right-end: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
-        // Deprecated in favor of top-start, will be removed in the next major version
-        top-left: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
-        // Deprecated in favor of top-end, will be removed in the next major version
-        top-right: var(--#{$prefix}-offset-orthogonal, 0) calc(-1 * var(--#{$prefix}-offset, 0)),
-        // Deprecated in favor of bottom-start, will be removed in the next major version
-        bottom-left: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
-        // Deprecated in favor of bottom-end, will be removed in the next major version
-        bottom-right: var(--#{$prefix}-offset-orthogonal, 0) var(--#{$prefix}-offset, 0),
-        // Deprecated in favor of left-start, will be removed in the next major version
-        left-top: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
-        // Deprecated in favor of left-end, will be removed in the next major version
-        left-bottom: calc(-1 * var(--#{$prefix}-offset, 0)) var(--#{$prefix}-offset-orthogonal, 0),
-        // Deprecated in favor of right-start, will be removed in the next major version
-        right-top: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0),
-        // Deprecated in favor of right-end, will be removed in the next major version
-        right-bottom: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0)
+        right-end: var(--#{$prefix}-offset, 0) var(--#{$prefix}-offset-orthogonal, 0)
     );
 }
 

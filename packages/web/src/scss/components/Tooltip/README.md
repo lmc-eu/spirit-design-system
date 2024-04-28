@@ -14,10 +14,6 @@ Bare Tooltip HTML:
 CSS modifiers `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--bottom`, etc. are deprecated and will be
 removed in the next major release. Use `data-spirit-placement` attribute instead.
 
-Also both axis side placements are renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
-etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. Old names are deprecated and will be
-removed in the next major release.
-
 [What are deprecations?][readme-deprecations]
 
 ## Linking with Content

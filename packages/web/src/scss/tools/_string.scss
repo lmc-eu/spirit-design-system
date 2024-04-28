@@ -1,7 +1,7 @@
 @use 'sass:string';
 
 // Convert kebab-case to camelCase
-// Example: convert-kebab-case-to-camel-case('top-left') will return 'topLeft'
+// Example: convert-kebab-case-to-camel-case('top-start') will return 'topStart'
 @function convert-kebab-case-to-camel-case($string) {
     $camel-case: string.slice($string, 1); // Remove the first hyphen
 
@@ -19,7 +19,7 @@
 }
 
 // Convert PascalCase to kebab-case
-// Example: convert-pascal-case-to-kebab-case('TopLeft') will return 'top-left'
+// Example: convert-pascal-case-to-kebab-case('TopStart') will return 'top-start'
 @function convert-pascal-case-to-kebab-case($string) {
     $kebab-case: '';
 
@@ -41,7 +41,7 @@
 }
 
 // Replace all occurrences of a string with another string
-// Example: replace('top-left', '-', '') will return 'topleft'
+// Example: replace('top-start', '-', '') will return 'topstart'
 // Author: Kitty Giraudel
 // See: https://kittygiraudel.com/2014/01/13/string-replacement-function-in-sass/
 @function replace($string, $search, $replace: '') {
