@@ -58,14 +58,6 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-#### ⚠️ DEPRECATION NOTICE
-
-Both cross-axis placements have been renamed from `top-left`, `top-right`, `right-top`, `right-bottom`,
-etc. to `top-start`, `top-end`, `right-start`, `right-end`, etc. The old names are deprecated and will be
-removed in the next major release.
-
-[What are deprecations?][readme-deprecations]
-
 ### Trigger attributes
 
 | Name                 | Type     | Default    | Required | Description                |
@@ -106,7 +98,6 @@ Or, feel free to write the controlling script yourself.
 [dropdown]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Dropdown
 [item]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Item/README.md
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Dropdown/README.md#javascript
