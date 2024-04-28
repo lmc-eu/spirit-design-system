@@ -101,20 +101,6 @@ Use:
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
-### Header Abstracts Class and Style
-
-The `style` and `class` props will be removed from these `Header` abstracts:
-
-- `Header/_abstracts/Button`
-- `Header/_abstracts/Element`
-- `Header/_abstracts/Link`
-
-Use `UNSAFE_style` and `UNSAFE_className` instead.
-
-#### Migration Guide
-
-Replace `style` with `UNSAFE_style` and `class` with `UNSAFE_className`.
-
 ### Grid Breakpoint Props
 
 The `cols` prop in the `Grid` now supports object values for different breakpoints.
