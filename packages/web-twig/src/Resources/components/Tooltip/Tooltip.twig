@@ -22,14 +22,6 @@
 {%- set _rightClassName = _spiritClassPrefix ~ 'Tooltip--right' -%}
 {%- set _rightStartClassName = _spiritClassPrefix ~ 'Tooltip--rightStart' -%}
 {%- set _rightEndClassName = _spiritClassPrefix ~ 'Tooltip--rightEnd' -%}
-{%- set _topLeftClassName = _spiritClassPrefix ~ 'Tooltip--topLeft' -%}
-{%- set _topRightClassName = _spiritClassPrefix ~ 'Tooltip--topRight' -%}
-{%- set _bottomLeftClassName = _spiritClassPrefix ~ 'Tooltip--bottomLeft' -%}
-{%- set _bottomRightClassName = _spiritClassPrefix ~ 'Tooltip--bottomRight' -%}
-{%- set _leftTopClassName = _spiritClassPrefix ~ 'Tooltip--leftTop' -%}
-{%- set _leftBottomClassName = _spiritClassPrefix ~ 'Tooltip--leftBottom' -%}
-{%- set _rightTopClassName = _spiritClassPrefix ~ 'Tooltip--rightTop' -%}
-{%- set _rightBottomClassName = _spiritClassPrefix ~ 'Tooltip--rightBottom' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
@@ -51,34 +43,11 @@
     'right': _rightClassName,
     'right-start': _rightStartClassName,
     'right-end': _rightEndClassName,
-    'top-left': _topLeftClassName,
-    'top-right': _topRightClassName,
-    'bottom-left': _bottomLeftClassName,
-    'bottom-right': _bottomRightClassName,
-    'left-top': _leftTopClassName,
-    'left-bottom': _leftBottomClassName,
-    'right-top': _rightTopClassName,
-    'right-bottom': _rightBottomClassName,
 } -%}
 {%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _placementClassNames[_placement], _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 {# Deprecations #}
-{% set deprecatedPlacements = {
-    'top-left': 'top-start',
-    'top-right': 'top-end',
-    'right-top': 'right-start',
-    'right-bottom': 'right-end',
-    'bottom-left': 'bottom-start',
-    'bottom-right': 'bottom-end',
-    'left-top': 'left-start',
-    'left-bottom': 'left-end',
-} %}
-
-{% if deprecatedPlacements[_placement] is defined %}
-    {% deprecated 'Tooltip: Non-flow-relative values (eg. "' ~ _placement ~ '") in "placement" property are deprecated and will be removed in the next major version. Use flow-relative (eg. "' ~ deprecatedPlacements[_placement] ~ '") instead.' %}
-{% endif %}
-
 {% deprecated 'Tooltip: The implementation of this component is deprecated and will be replaced with the implementation of the TooltipPopover in the next major version. Please, use TooltipPopover instead.' %}
 
 <div
