@@ -1,9 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _cols = props.cols | default(null) -%}
-{%- set _desktop = props.desktop | default(null) -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _tablet = props.tablet | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Grid' -%}
@@ -16,23 +14,11 @@
         {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
         {%- set _colsClasses = _colsClasses | merge([ _spiritClassPrefix ~ 'Grid' ~ infix ~ '--cols-' ~ breakpointValue ]) -%}
     {%- endfor -%}
-{%- else -%}
-    {%- set _colsClasses = _colsClasses | merge([
-        _cols ? _spiritClassPrefix ~ 'Grid--cols-' ~ _cols : null,
-        _tablet ? _spiritClassPrefix ~ 'Grid--tablet--cols-' ~ _tablet : null,
-        _desktop ? _spiritClassPrefix ~ 'Grid--desktop--cols-' ~ _desktop : null,
-    ]) -%}
+{%- elseif _cols is not null -%}
+    {%- set _colsClasses = [_spiritClassPrefix ~ 'Grid--cols-' ~ _cols] -%}
 {%- endif -%}
 
 {%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_colsClasses) -%}
-
-{# Deprecations #}
-{% if _desktop %}
-    {% deprecated 'Grid: The "desktop" property is deprecated and will be removed in the next major version. Please use "cols" instead.' %}
-{% endif %}
-{% if _tablet %}
-    {% deprecated 'Grid: The "tablet" property is deprecated and will be removed in the next major version. Please use "cols" instead.' %}
-{% endif %}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
