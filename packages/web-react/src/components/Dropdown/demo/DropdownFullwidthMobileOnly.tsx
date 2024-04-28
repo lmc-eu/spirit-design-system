@@ -16,7 +16,7 @@ const DropdownFullwidthMobileOnly = () => {
       isOpen={isOpen}
       onToggle={onToggle}
       fullWidthMode="mobile-only"
-      placement="top-left"
+      placement="top-start"
     >
       <DropdownTrigger elementType={Button}>Finibus quis imperdiet, semper imperdiet aliquam</DropdownTrigger>
       <DropdownPopover>
