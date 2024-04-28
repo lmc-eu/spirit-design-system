@@ -16,22 +16,6 @@
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-placement']) -%}
 
-{# Deprecations #}
-{% set deprecatedPlacements = {
-    'top-left': 'top-start',
-    'top-right': 'top-end',
-    'right-top': 'right-start',
-    'right-bottom': 'right-end',
-    'bottom-left': 'bottom-start',
-    'bottom-right': 'bottom-end',
-    'left-top': 'left-start',
-    'left-bottom': 'left-end',
-} %}
-
-{% if deprecatedPlacements[_placement] is defined %}
-    {% deprecated 'Dropdown: Non-flow-relative values (e.g. "' ~ _placement ~ '") of the "placement" property are deprecated and will be removed in the next major version. Use a flow-relative placement (e.g. "' ~ deprecatedPlacements[_placement] ~ '") instead.' %}
-{% endif %}
-
 <{{ _elementType }}
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ styleProp(_styleProps) }}
