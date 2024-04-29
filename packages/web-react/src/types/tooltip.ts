@@ -1,5 +1,5 @@
 import { Placement } from '@floating-ui/react';
-import { ChildrenProps, PlacementDictionaryType, StyleProps, ClickEvent } from './shared';
+import { ChildrenProps, ClickEvent, StyleProps } from './shared';
 
 export const TOOLTIP_TRIGGER = {
   CLICK: 'click',
@@ -11,50 +11,28 @@ export const TOOLTIP_TRIGGER = {
 
 export type TooltipTriggerType = 'click' | 'hover' | 'manual';
 
-export interface TooltipHandlingProps {
-  open?: boolean | undefined;
-  onClose?: (event: ClickEvent) => void;
-}
-
-// @deprecated Off placement will be removed in the next major version
-type TooltipOffPlacement = 'off';
-
-export interface BaseTooltipProps extends ChildrenProps, StyleProps {
-  closeLabel?: string;
-  id?: string;
-  isDismissible?: boolean;
-  placement?: PlacementDictionaryType | TooltipOffPlacement;
-}
-
-export interface TooltipWrapperProps extends ChildrenProps, StyleProps {}
+export interface UncontrolledTooltipProps extends BaseTooltipProps {}
 
 export interface TooltipCloseButtonProps extends StyleProps {
   onClick?: (event: ClickEvent) => void;
   label?: string;
 }
 
-export interface TooltipProps extends BaseTooltipProps, TooltipHandlingProps {}
-
-export interface UncontrolledTooltipProps extends BaseTooltipProps {}
-
-export interface SpiritTooltipProps extends TooltipProps {}
-
-// TooltipModern types
-export interface TooltipModernHandlingProps {
+export interface TooltipHandlingProps {
   isOpen?: boolean;
   onToggle: (isOpen: boolean) => void;
 }
 
-export interface BaseTooltipModernProps extends ChildrenProps, StyleProps {
+export interface BaseTooltipProps extends ChildrenProps, StyleProps {
   closeLabel?: string;
   id: string;
   isDismissible?: boolean;
   placement?: Placement;
 }
 
-export interface TooltipModernProps extends BaseTooltipModernProps, TooltipModernHandlingProps {}
+export interface TooltipProps extends BaseTooltipProps, TooltipHandlingProps {}
 
-export interface SpiritTooltipModernProps extends TooltipModernProps, ChildrenProps {
+export interface SpiritTooltipProps extends TooltipProps, ChildrenProps {
   enableFlipping?: boolean;
   enableFlippingCrossAxis?: boolean;
   enableShifting?: boolean;

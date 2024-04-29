@@ -1,15 +1,14 @@
 import React from 'react';
-import { UncontrolledTooltipProps } from '../../types';
+import { SpiritTooltipProps } from '../../types';
 import Tooltip from './Tooltip';
 import { useTooltip } from './useTooltip';
 
-export const UncontrolledTooltip = (props: UncontrolledTooltipProps) => {
-  const { children, isDismissible, ...restProps } = props;
-
-  const { open, onClose } = useTooltip({ isDismissible });
+export const UncontrolledTooltip = (props: Omit<SpiritTooltipProps, 'onToggle'>) => {
+  const { children, ...restProps } = props;
+  const { isOpen, onToggle } = useTooltip();
 
   return (
-    <Tooltip open={open} onClose={onClose} isDismissible={isDismissible} {...restProps}>
+    <Tooltip {...restProps} isOpen={isOpen} onToggle={onToggle}>
       {children}
     </Tooltip>
   );
