@@ -23,11 +23,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Alert Icons" stackAlignment="stretch">
         <AlertIcons />
       </DocsSection>
-      <div className="spirit-feature-alert-enable-bordered">
-        <DocsSection title="Feature Flag: Bordered Alert" stackAlignment="stretch">
-          <AlertColors />
-        </DocsSection>
-      </div>
     </IconsProvider>
   </React.StrictMode>,
 );
