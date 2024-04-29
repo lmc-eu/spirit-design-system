@@ -1,54 +1,29 @@
 import '@testing-library/jest-dom';
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { Button } from '../../Button';
-import { Tooltip, TooltipModern, TooltipTrigger, TooltipPopover } from '..';
+import { Tooltip, TooltipTrigger, TooltipPopover } from '..';
 
 describe('Tooltip', () => {
-  classNamePrefixProviderTest(Tooltip, 'Tooltip');
-
-  stylePropsTest((props: Record<string, unknown>) => {
-    const onClose = () => null;
-
-    return <Tooltip open={false} onClose={onClose} {...props} data-testid="test-tooltip" />;
-  }, 'test-tooltip');
-
-  restPropsTest(Tooltip, '.Tooltip');
-
-  it('should render text children', () => {
-    const onClose = () => null;
-    const dom = render(
-      <Tooltip open={false} onClose={onClose}>
-        Hello World
-      </Tooltip>,
-    );
-    const element = dom.container.querySelector('.Tooltip') as HTMLElement;
-
-    expect(element.textContent).toBe('Hello World');
-  });
-});
-
-describe('TooltipModern', () => {
-  stylePropsTest((props) => <TooltipModern {...props} data-testid="TooltipModern-test" />, 'TooltipModern-test');
-
-  restPropsTest((props) => <TooltipModern {...props} />, 'div');
-
-  const id = 'TooltipModernTest';
+  const id = 'TooltipTest';
   const triggerText = 'TooltipTrigger';
   const popoverText = 'TooltipPopover';
+
+  stylePropsTest((props) => <Tooltip id={id} {...props} data-testid="Tooltip-test" />, 'Tooltip-test');
+
+  restPropsTest((props) => <Tooltip id={id} {...props} />, 'div');
 
   it('should render tooltip', () => {
     const onToggle = () => null;
     const open = true;
 
     const dom = render(
-      <TooltipModern id={id} isOpen={open} onToggle={onToggle}>
+      <Tooltip id={id} isOpen={open} onToggle={onToggle}>
         <TooltipTrigger>{triggerText}</TooltipTrigger>
         <TooltipPopover>{popoverText}</TooltipPopover>
-      </TooltipModern>,
+      </Tooltip>,
     );
 
     const triggerElement = dom.container.querySelector(`#${id}`) as HTMLElement;
@@ -62,10 +37,10 @@ describe('TooltipModern', () => {
     const onToggle = jest.fn();
 
     const dom = render(
-      <TooltipModern id={id} isOpen onToggle={onToggle}>
+      <Tooltip id={id} isOpen onToggle={onToggle}>
         <TooltipTrigger elementType={Button}>trigger</TooltipTrigger>
         <TooltipPopover>{popoverText}</TooltipPopover>
-      </TooltipModern>,
+      </Tooltip>,
     );
     const element = dom.container.querySelector('.Tooltip') as HTMLElement;
 
@@ -76,10 +51,10 @@ describe('TooltipModern', () => {
     const onToggle = jest.fn();
 
     const dom = render(
-      <TooltipModern id={id} isOpen={false} onToggle={onToggle}>
+      <Tooltip id={id} isOpen={false} onToggle={onToggle}>
         <TooltipTrigger elementType={Button}>trigger</TooltipTrigger>
         <TooltipPopover>Hello World</TooltipPopover>
-      </TooltipModern>,
+      </Tooltip>,
     );
     const trigger = dom.container.querySelector(`button#${id}`) as HTMLElement;
 

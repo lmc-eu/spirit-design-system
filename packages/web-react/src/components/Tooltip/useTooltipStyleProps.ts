@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 import classNames from 'classnames';
-import { SpiritTooltipProps, TooltipProps } from '../../types';
-import { useClassNamePrefix, useDeprecationMessage } from '../../hooks';
-import { kebabCaseToCamelCase } from '../../utils';
+import { TooltipProps } from '../../types';
+import { useClassNamePrefix } from '../../hooks';
 
-export interface UseTooltipStyleProps extends SpiritTooltipProps {}
+type omittedProps = 'id' | 'onToggle';
+
+export interface UseTooltipStyleProps extends TooltipProps {}
 
 export interface UseTooltipStylePropsReturn {
   classProps: {
@@ -13,31 +14,21 @@ export interface UseTooltipStylePropsReturn {
     arrowClassName: string;
     closeButtonClassName: string;
   };
-  props: TooltipProps;
+  props: Omit<TooltipProps, omittedProps>;
 }
 
-export const useTooltipStyleProps = (props: UseTooltipStyleProps): UseTooltipStylePropsReturn => {
-  const { placement = 'bottom', isDismissible, open, ...modifiedProps } = props;
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: placement === 'off',
-    componentName: 'Tooltip',
-    customText:
-      'The "off" value of property "placement" is deprecated and will be removed in the next major version. Use TooltipModern component instead.',
-  });
-
+export const useTooltipStyleProps = (props: Omit<UseTooltipStyleProps, omittedProps>): UseTooltipStylePropsReturn => {
+  const { isDismissible, isOpen, ...modifiedProps } = props;
   const tooltipClass = useClassNamePrefix('Tooltip');
   const tooltipWrapperClass = `${tooltipClass}Wrapper`;
   const arrowClass = `${tooltipClass}__arrow`;
   const closeButtonClass = `${tooltipClass}__close`;
   const rootDismissibleClass = `${tooltipClass}--dismissible`;
-  const rootPlacementClass = placement !== 'off' ? `${tooltipClass}--${kebabCaseToCamelCase(placement)}` : null;
   const rootHiddenClass = 'is-hidden';
 
-  const isHiddenClass = useMemo(() => open === false, [open]);
+  const isHiddenClass = useMemo(() => isOpen === false, [isOpen]);
 
-  const tooltipClassName = classNames(tooltipClass, rootPlacementClass, {
+  const tooltipClassName = classNames(tooltipClass, {
     [rootDismissibleClass]: isDismissible,
     [rootHiddenClass]: isHiddenClass,
   });

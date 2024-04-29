@@ -2,12 +2,12 @@ import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ReadMe from '../../Tooltip/README.md';
+import ReadMe from '../README.md';
 import { Button } from '../..';
-import { TooltipModern, TooltipPopover, TooltipTrigger } from '../../Tooltip';
+import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
 const meta: Meta<typeof TooltipPopover> = {
-  title: 'Components/TooltipModern',
+  title: 'Components/Tooltip',
   component: TooltipPopover,
   parameters: {
     docs: {
@@ -31,9 +31,9 @@ type Story = StoryObj<typeof TooltipPopover>;
 export const TooltipPopoverPlayground: Story = {
   name: 'TooltipPopover',
   render: (args) => (
-    <TooltipModern id="TooltipModernExample" isOpen onToggle={() => {}}>
+    <Tooltip id="TooltipExample" isOpen onToggle={() => {}}>
       <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
       <TooltipPopover>{args.children}</TooltipPopover>
-    </TooltipModern>
+    </Tooltip>
   ),
 };
