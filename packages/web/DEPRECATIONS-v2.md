@@ -1,19 +1,10 @@
 # Deprecations List
 
-Following deprecations and feature flags will be removed in version 2 of the _spirit-web_ package.
+Following deprecations will be removed in version 2 of the _spirit-web_ package.
 
 > Please follow these steps to safely upgrade your design system to Spirit Design System v2 components.
 
 [What are deprecations?][readme-deprecations]
-
-[What are feature flags?][readme-feature-flags]
-
-## Feature Flags
-
-### Alert Bordered
-
-The feature flag enabling the bordered variant of alert will be removed and the bordered variant will
-be enabled by default.
 
 ## Deprecations
 
