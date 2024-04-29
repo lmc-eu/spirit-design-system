@@ -1,22 +1,17 @@
 import { useState } from 'react';
-import { ClickEvent } from '../../types';
 
-export interface UseTooltipProps {
-  isDismissible?: boolean;
-}
+export interface UseTooltipProps {}
 
 export interface UseTooltipReturn {
-  open: boolean;
-  onClose: (event: ClickEvent) => void;
+  isOpen: boolean;
+  onToggle: (isOpen: boolean) => void;
 }
 
-export const useTooltip = ({ isDismissible }: UseTooltipProps): UseTooltipReturn => {
-  const [open, setOpen] = useState<boolean>(!!isDismissible);
-
-  const handleClose = () => setOpen(false);
+export const useTooltip = (): UseTooltipReturn => {
+  const [isOpen, setOpen] = useState<boolean>(false);
 
   return {
-    open,
-    onClose: handleClose,
+    isOpen,
+    onToggle: setOpen,
   };
 };
