@@ -1,16 +1,17 @@
 import React, { ChangeEvent, useState } from 'react';
+import { Placement } from '@floating-ui/react';
 import DocsBox from '../../../../docs/DocsBox';
-import { PlacementDictionaryType } from '../../../types';
 import { Grid, GridItem } from '../../Grid';
 import { Radio } from '../../Radio';
 import Tooltip from '../Tooltip';
-import TooltipWrapper from '../TooltipWrapper';
+import TooltipPopover from '../TooltipPopover';
+import TooltipTrigger from '../TooltipTrigger';
 
 const TooltipPlacements = () => {
-  const [placement, setPlacement] = useState<PlacementDictionaryType>('bottom');
+  const [placement, setPlacement] = useState<Placement>('bottom');
 
-  const handlePlacementChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPlacement(e.target.value as PlacementDictionaryType);
+  const handlePlacementChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setPlacement(event.target.value as Placement);
   };
 
   return (
@@ -87,7 +88,7 @@ const TooltipPlacements = () => {
             id="placement-left-start"
             label="left-start"
             value="left-start"
-          />
+          />{' '}
           <Radio
             name="placement"
             isChecked={placement === 'left'}
@@ -96,7 +97,7 @@ const TooltipPlacements = () => {
             id="placement-left"
             label="left"
             value="left"
-          />
+          />{' '}
           <Radio
             name="placement"
             isChecked={placement === 'left-end'}
@@ -141,13 +142,17 @@ const TooltipPlacements = () => {
           />
         </GridItem>
         <GridItem columnStart={2} rowStart={2}>
-          <TooltipWrapper UNSAFE_style={{ margin: '5rem auto' }}>
-            <DocsBox UNSAFE_className="px-900 py-900">
-              Click
-              <br /> the dots!
-            </DocsBox>
-            <Tooltip placement={placement as PlacementDictionaryType}>{placement}</Tooltip>
-          </TooltipWrapper>
+          <div className="mx-auto space-1200">
+            <Tooltip isOpen id="tooltip-placement" placement={placement as Placement} onToggle={() => {}}>
+              <TooltipTrigger elementType="div" UNSAFE_style={{ margin: '5rem auto' }}>
+                <DocsBox UNSAFE_className="px-900 py-900">
+                  Click
+                  <br /> the dots!
+                </DocsBox>
+              </TooltipTrigger>
+              <TooltipPopover>{placement}</TooltipPopover>
+            </Tooltip>
+          </div>
         </GridItem>
       </Grid>
     </form>
