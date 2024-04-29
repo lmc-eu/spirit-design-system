@@ -1,5 +1,4 @@
 @use 'theme';
-@use '../../settings/feature-flags';
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
@@ -12,19 +11,8 @@
     justify-content: flex-start;
     width: 100%;
     padding: theme.$padding;
-    border-radius: theme.$border-radius;
-
-    // @deprecated The feature flag will be removed in the next major version.
-    // Migration: delete this feature flag and make the bordered version the default.
-    @if feature-flags.$alert-enable-bordered {
-        border: theme.$border-width theme.$border-style var(--alert-color);
-    }
-}
-
-// @deprecated The feature flag will be removed in the next major version.
-// Migration: delete this feature flag and make the bordered version the default.
-.spirit-feature-alert-enable-bordered .Alert {
     border: theme.$border-width theme.$border-style var(--alert-color);
+    border-radius: theme.$border-radius;
 }
 
 .Alert strong {
