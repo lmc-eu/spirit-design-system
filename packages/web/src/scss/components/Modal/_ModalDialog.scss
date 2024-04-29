@@ -5,7 +5,6 @@
 // 4. Override bottom padding of parent `.Modal` in the docked variant.
 
 @use 'sass:map';
-@use '../../settings/feature-flags';
 @use '../../tools/breakpoint';
 @use '../../tools/typography';
 @use 'theme';
