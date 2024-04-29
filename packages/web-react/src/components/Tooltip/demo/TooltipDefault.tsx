@@ -1,21 +1,16 @@
-import React from 'react';
-import DocsBox from '../../../../docs/DocsBox';
-import TooltipWrapper from '../TooltipWrapper';
-import Tooltip from '../Tooltip';
+import React, { useState } from 'react';
+import { Button } from '../../Button';
+import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
-const TooltipDefault = () => (
-  <TooltipWrapper UNSAFE_style={{ maxWidth: '15rem', margin: '6rem auto' }}>
-    <DocsBox>
-      Tooltips
-      <br />
-      all day long…
-    </DocsBox>
+const TooltipDefault = () => {
+  const [open, setOpen] = useState(true);
 
-    <Tooltip placement="top">Hello there!</Tooltip>
-    <Tooltip placement="right">Hello there!</Tooltip>
-    <Tooltip placement="bottom">Hello there! There is slightly more text in this tooltip.</Tooltip>
-    <Tooltip placement="left">Hello there!</Tooltip>
-  </TooltipWrapper>
-);
+  return (
+    <Tooltip id="TooltipDefault" isOpen={open} onToggle={setOpen}>
+      <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
+      <TooltipPopover>Hello there!</TooltipPopover>
+    </Tooltip>
+  );
+};
 
 export default TooltipDefault;
