@@ -7,13 +7,13 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import TooltipClickable from './TooltipClickable';
+import TooltipPlacements from './TooltipPlacements';
 import TooltipDefault from './TooltipDefault';
 import TooltipDismissible from './TooltipDismissible';
 import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
-import TooltipFloatingUI from './TooltipFloatingUi';
-import TooltipOnHover from './TooltipOnHover';
-import TooltipPlacements from './TooltipPlacements';
+import TooltipHover from './TooltipHover';
+import TooltipIcon from './TooltipIcon';
+import TooltipAdvancedFloating from './TooltipAdvancedFloating';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -21,14 +21,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Placements" stackAlignment="stretch">
         <TooltipPlacements />
       </DocsSection>
-      <DocsSection title="Static Tooltip (No Interaction)">
+      <DocsSection title="Default">
         <TooltipDefault />
-      </DocsSection>
-      <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
-        <TooltipOnHover />
-      </DocsSection>
-      <DocsSection title="Tooltip on Click (JavaScript)">
-        <TooltipClickable />
       </DocsSection>
       <DocsSection title="Dismissible Tooltip">
         <TooltipDismissible />
@@ -36,8 +30,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Dismissible Tooltip via JS API">
         <TooltipDismissibleViaJS />
       </DocsSection>
-      <DocsSection title="Advanced Positioning">
-        <TooltipFloatingUI />
+      <DocsSection title="Tooltip Only on Hover">
+        <TooltipHover />
+      </DocsSection>
+      <DocsSection title="Tooltip on Icon Component">
+        <TooltipIcon />
+      </DocsSection>
+      <DocsSection title="Advanced Floating Functionality" stackAlignment="stretch">
+        <TooltipAdvancedFloating />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

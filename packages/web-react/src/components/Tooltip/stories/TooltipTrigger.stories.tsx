@@ -2,12 +2,12 @@ import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ReadMe from '../../Tooltip/README.md';
-import { TooltipTrigger } from '../../Tooltip';
 import { Button } from '../../Button';
+import ReadMe from '../README.md';
+import { TooltipTrigger } from '..';
 
 const meta: Meta<typeof TooltipTrigger> = {
-  title: 'Components/TooltipModern',
+  title: 'Components/Tooltip',
   component: TooltipTrigger,
   parameters: {
     docs: {

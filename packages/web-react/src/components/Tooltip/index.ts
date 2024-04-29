@@ -1,16 +1,12 @@
 export { default as Tooltip } from './Tooltip';
 export { default as TooltipCloseButton } from './TooltipCloseButton';
-export { default as TooltipModern } from './TooltipModern';
 export { default as TooltipPopover } from './TooltipPopover';
 export { default as TooltipTrigger } from './TooltipTrigger';
-export { default as TooltipWrapper } from './TooltipWrapper';
 export { default as UncontrolledTooltip } from './UncontrolledTooltip';
 export * from './Tooltip';
 export * from './TooltipCloseButton';
-export * from './TooltipModern';
 export * from './TooltipPopover';
 export * from './TooltipTrigger';
-export * from './TooltipWrapper';
 export * from './UncontrolledTooltip';
 export * from './useTooltip';
 export * from './useTooltipStyleProps';
