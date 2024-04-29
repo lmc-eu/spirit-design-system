@@ -5,7 +5,6 @@
 // 2. Reuse already generated custom properties to allow overriding the arrow appearance live in the browser.
 
 @use 'sass:math';
-@use '../../settings/feature-flags';
 @use '../../tools/dictionaries';
 @use '../../tools/placement';
 @use '../../tools/reset';
