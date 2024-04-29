@@ -23,6 +23,7 @@ Introducing version 2 of the _spirit-web-react_ package
   - [TextField: `label` prop](#textfield-label-prop)
   - [Tooltip: `off` Placement](#tooltip-off-placement)
   - [Tooltip: Refactored](#tooltip-refactored)
+  - [TooltipModern](#tooltipmodern)
 
 ## General Changes
 
@@ -327,6 +328,22 @@ Use:
   <TooltipPopover>Hello there!</TooltipPopover>
 </Tooltip>
 ```
+
+### TooltipModern
+
+The `TooltipModern` component was renamed to `Tooltip`.
+
+#### Migration Guide
+
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/tooltipmodern-component-name
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually rename `TooltipModern` to the `Tooltip`.
 
 ---
 

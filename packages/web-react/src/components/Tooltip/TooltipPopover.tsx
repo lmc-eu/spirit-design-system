@@ -4,7 +4,7 @@ import { useStyleProps } from '../../hooks';
 import { ChildrenProps, StyleProps } from '../../types';
 import TooltipCloseButton from './TooltipCloseButton';
 import { useTooltipContext } from './TooltipContext';
-import { useTooltipModernStyleProps } from './useTooltipModernStyleProps';
+import { useTooltipStyleProps } from './useTooltipStyleProps';
 
 interface TooltipPopoverProps extends ChildrenProps, StyleProps {}
 
@@ -24,7 +24,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
     sizeMaxWidth,
     tooltipMaxWidth,
   } = useTooltipContext();
-  const { classProps, props: modifiedProps } = useTooltipModernStyleProps({
+  const { classProps, props: modifiedProps } = useTooltipStyleProps({
     isOpen,
     isDismissible,
     placement,

@@ -4,10 +4,10 @@ import { Button } from '../../Button';
 import { Checkbox } from '../../Checkbox';
 import { Grid } from '../../Grid';
 import { Select } from '../../Select';
-import { TooltipModern, TooltipPopover, TooltipTrigger } from '../../Tooltip';
+import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
-const TooltipWithFloatingUI = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const TooltipAdvancedFloating = () => {
+  const [isOpen, setIsOpen] = useState(true);
   const [flip, setFlip] = useState(true);
   const [flipCrossAxis, setFlipCrossAxis] = useState(true);
   const [shift, setShift] = useState(true);
@@ -119,8 +119,8 @@ const TooltipWithFloatingUI = () => {
           style={{ position: 'relative', width: '300%', height: '90rem', paddingBlock: '44rem', textAlign: 'center' }}
           ref={contentRef}
         >
-          <TooltipModern
-            id="TooltipModernAdvancedExample"
+          <Tooltip
+            id="TooltipAdvancedExample"
             isOpen={isOpen}
             onToggle={setIsOpen}
             placement={suggestedPlacement}
@@ -129,19 +129,18 @@ const TooltipWithFloatingUI = () => {
             flipFallbackPlacements={suggestedFallbackPlacement}
             enableShifting={shift}
             enableSizing={size}
-            trigger={['hover']}
-            isFocusableOnHover
+            trigger={['hover', 'click']}
           >
             <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
             <TooltipPopover>
               This long tooltip is flipping, resizing and shifting to stay in the viewport. Also its arrow is always
               trying to point to the center of the trigger.
             </TooltipPopover>
-          </TooltipModern>
+          </Tooltip>
         </div>
       </div>
     </div>
   );
 };
 
-export default TooltipWithFloatingUI;
+export default TooltipAdvancedFloating;
