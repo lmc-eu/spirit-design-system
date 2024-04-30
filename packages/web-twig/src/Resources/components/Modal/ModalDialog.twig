@@ -2,7 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('article') -%}
 {%- set _isDockedOnMobile = props.isDockedOnMobile | default(false) -%}
-{%- set _isExpandedOnMobile = props.isExpandedOnMobile ?? true -%}
+{%- set _isExpandedOnMobile = props.isExpandedOnMobile | default(false) -%}
 {%- set _isScrollable = props.isScrollable ?? true -%}
 {%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
 {%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
