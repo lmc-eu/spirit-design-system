@@ -129,24 +129,6 @@ See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isScrollable` prop to the `ModalDialog` component.
 
-### ModalDialog `isExpandedOnMobile` Prop
-
-The `isExpandedOnMobile` prop will be set to `true` by default in the next major release and the ModalDialog will be
-expanded on mobile by default. It will be possible to re-collapse the inside by setting the `isExpandedOnMobile` prop
-to `false` value.
-
-#### Migration Guide
-
-Use codemod to automatically update your codebase.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isexpandedonmobile-prop
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or manually add `isExpandedOnMobile={false}` prop to the `ModalDialog` component to keep the current behavior.
-
 [readme-codemods]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/README.md
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Dropdown/README.md
