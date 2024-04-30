@@ -54,23 +54,6 @@ See [Placement dictionary][dictionary-placement] for more details.
 - `.Dropdown--left` → `data-spirit-placement="left"`
 - `.Dropdown--leftTop` → `data-spirit-placement="left-start"`
 
-### Dropdown Combined Placements
-
-Combined placement classes for dropdown will be removed.
-
-#### Migration Guide
-
-Instead of using `.Dropdown--bottom.Dropdown--left`, use combination `bottom-start` in placement data attribute.
-
-- `.Dropdown--top.Dropdown--left` → `data-spirit-placement="top-start"`
-- `.Dropdown--top.Dropdown--right` → `data-spirit-placement="top-end"`
-- `.Dropdown--bottom.Dropdown--left` → `data-spirit-placement="bottom-start"`
-- `.Dropdown--bottom.Dropdown--right` → `data-spirit-placement="bottom-end"`
-- `.Dropdown--left.Dropdown--top` → `data-spirit-placement="left-start"`
-- `.Dropdown--left.Dropdown--bottom` → `data-spirit-placement="left-end"`
-- `.Dropdown--right.Dropdown--top` → `data-spirit-placement="right-start"`
-- `.Dropdown--right.Dropdown--bottom` → `data-spirit-placement="right-end"`
-
 ### Modal (Non)Scrollable
 
 The `.ModalDialog--nonScrollable` modifier will be removed and the ModalDialog will be made non-scrollable by default.

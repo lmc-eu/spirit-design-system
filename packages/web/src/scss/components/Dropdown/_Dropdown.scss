@@ -35,21 +35,3 @@
     $dictionary-values: theme.$placement-dictionary,
     $offset: theme.$offset
 );
-
-// @deprecated The class combination will be removed in the next major version.
-// Migration: delete all placement class combinations below.
-.Dropdown--top.Dropdown--left {
-    @include placement.child-variant($prefix: 'dropdown', $placement: 'top-left', $offset: theme.$offset);
-}
-
-.Dropdown--top.Dropdown--right {
-    @include placement.child-variant($prefix: 'dropdown', $placement: 'top-right', $offset: theme.$offset);
-}
-
-.Dropdown--bottom.Dropdown--left {
-    @include placement.child-variant($prefix: 'dropdown', $placement: 'bottom-left', $offset: theme.$offset);
-}
-
-.Dropdown--bottom.Dropdown--right {
-    @include placement.child-variant($prefix: 'dropdown', $placement: 'bottom-right', $offset: theme.$offset);
-}
