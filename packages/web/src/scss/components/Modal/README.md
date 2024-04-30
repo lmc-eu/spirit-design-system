@@ -134,8 +134,8 @@ class.
 
 #### Expanded Variant
 
-We recommend expanding the docked dialog on mobile screens using the `ModalDialog--expandOnMobile` modifier class.
-If you omit the class, the dialog shrinks to fit the height of its content (if smaller than the viewport).
+By default the docked dialog on mobile screens shrinks to fit the height of its content
+(if smaller than the viewport). Use the `ModalDialog--expandOnMobile` class to expand the dialog on mobile.
 
 ```html
 <article class="ModalDialog ModalDialog--dockOnMobile ModalDialog--expandOnMobile">
