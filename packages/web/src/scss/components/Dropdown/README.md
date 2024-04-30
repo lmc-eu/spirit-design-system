@@ -254,13 +254,6 @@ a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="
 
 ### ⚠️ DEPRECATION NOTICE
 
-Current class combinations (`Dropdown--top.Dropdown--left`, `.Dropdown--top.Dropdown--right`,
-`.Dropdown--bottom.Dropdown--left`, `.Dropdown--bottom.Dropdown--right`) will be removed in the next major release.
-
-[What are deprecations?][readme-deprecations]
-
-### ⚠️ DEPRECATION NOTICE
-
 CSS modifiers `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--bottom`, etc. are deprecated and will be
 removed in the next major release. Use `data-spirit-placement` attribute instead.
 
