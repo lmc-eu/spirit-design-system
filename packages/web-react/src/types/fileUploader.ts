@@ -88,10 +88,6 @@ export interface FileUploaderListBaseProps extends SpiritUListElementProps {
 }
 
 export interface FileUploaderAttachmentBaseProps extends Omit<SpiritLItemElementProps, 'onError'> {
-  /** @deprecated Will be removed in the next major version. */
-  buttonLabel?: string;
-  /** @deprecated Will be removed in the next major version. */
-  editButtonLabel?: string;
   editText?: string;
   file: File;
   hasImagePreview?: boolean;
