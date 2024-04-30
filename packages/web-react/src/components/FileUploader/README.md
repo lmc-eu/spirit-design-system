@@ -417,22 +417,20 @@ and [escape hatches][readme-escape-hatches].
 
 ## FileUploaderAttachment Props
 
-| Name              | Type                                 | Default  | Required | Description                                                                 |
-| ----------------- | ------------------------------------ | -------- | -------- | --------------------------------------------------------------------------- |
-| `buttonLabel`     | `string`                             | `Remove` | ✕        | [**DEPRECATED**][deprecated] in favor of `removeText`; Dismiss button label |
-| `editButtonLabel` | `string`                             | `Edit`   | ✕        | [**DEPRECATED**][deprecated] in favor of `editText`; Edit button label      |
-| `editText`        | `string`                             | `Edit`   | ✕        | Edit button label                                                           |
-| `file`            | `File`                               | —        | ✔        | Attachment file object                                                      |
-| `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                                          |
-| `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                                                   |
-| `id`              | `string`                             | —        | ✔        | FileUploaderAttachment id                                                   |
-| `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container                       |
-| `label`           | `string`                             | —        | ✔        | File name                                                                   |
-| `name`            | `string`                             | —        | ✔        | Input field name                                                            |
-| `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue                                   |
-| `onEdit`          | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                                        |
-| `onError`         | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                 |
-| `removeText`      | `string`                             | `Remove` | ✕        | Dismiss button label                                                        |
+| Name              | Type                                 | Default  | Required | Description                                           |
+| ----------------- | ------------------------------------ | -------- | -------- | ----------------------------------------------------- |
+| `editText`        | `string`                             | `Edit`   | ✕        | Edit button label                                     |
+| `file`            | `File`                               | —        | ✔        | Attachment file object                                |
+| `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                    |
+| `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                             |
+| `id`              | `string`                             | —        | ✔        | FileUploaderAttachment id                             |
+| `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container |
+| `label`           | `string`                             | —        | ✔        | File name                                             |
+| `name`            | `string`                             | —        | ✔        | Input field name                                      |
+| `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue             |
+| `onEdit`          | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                  |
+| `onError`         | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                           |
+| `removeText`      | `string`                             | `Remove` | ✕        | Remove button label                                   |
 
 The rest of the properties are created from the default `<li>` element. [More about the element][list-item-element-docs]
 
@@ -505,7 +503,6 @@ and [escape hatches][readme-escape-hatches].
 For detailed information see [FileUploader][file-uploader] component.
 
 [button-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [div-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 [file-uploader]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md
 [input-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
