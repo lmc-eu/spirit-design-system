@@ -26,26 +26,6 @@ Related components:
 
 Add `id` prop to the form components.
 
-### FileUploaderAttachment `buttonLabel` and `editButtonLabel` Props
-
-The `buttonLabel` and `editButtonLabel` props will be removed from the `FileUploaderAttachment` component.
-Use `removeText` and `editText` props instead.
-
-#### Migration Guide
-
-Use codemod to automatically update your codebase.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/fileuploader-prop-names
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or manually replace the props in your project.
-
-- `<FileUploaderAttachment buttonLabel="Remove this attachment" … />` → `<FileUploaderAttachment removeText="Remove this attachment" … />`
-- `<FileUploaderAttachment editButtonLabel="Edit this attachment" … />` → `<FileUploaderAttachment editText="Edit this attachment" … />`
-
 ### Dropdown and Collapse `id` Prop
 
 The `id` prop will be mandatory for the `Dropdown` and `Collapse` components.
