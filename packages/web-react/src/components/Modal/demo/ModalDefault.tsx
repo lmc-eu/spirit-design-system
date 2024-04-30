@@ -20,7 +20,7 @@ const ModalDefault = () => {
   const [modalAlign, setModalAlign] = useState<AlignmentYDictionaryType>(AlignmentY.CENTER);
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
   const [isDockedOnMobile, setIsDockedOnMobile] = useState(false);
-  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(true);
+  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
   const [isScrollable, setIsScrollable] = useState(true);
 
   const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
