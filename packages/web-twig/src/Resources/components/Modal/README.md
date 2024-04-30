@@ -96,8 +96,8 @@ On mobile screens, Modal can be docked to the bottom of the viewport using the `
 
 #### Expanded Variant
 
-We recommend expanding the docked dialog on mobile screens using the `isExpandedOnMobile` option.
-If you omit the option, the dialog shrinks to fit the height of its content (if smaller than the viewport).
+By default the docked dialog on mobile screens shrinks to fit the height of its content
+(if smaller than the viewport). Use the `isExpandedOnMobile` option to expand the dialog on mobile.
 
 ```twig
 <ModalDialog isDockedOnMobile isExpandedOnMobile>
@@ -155,7 +155,7 @@ You can use the `maxHeightFromTabletUp` option to override the max height on tab
 | `elementType`                 | `string`                      | `article` | ✕        | HTML tag to render                                                                                                                       |
 | `enctype`                     | `string`                      | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                                           |
 | `isDockedOnMobile`            | `bool`                        | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile |
-| `isExpandedOnMobile`          | `bool`                        | `true`    | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                                   |
+| `isExpandedOnMobile`          | `bool`                        | `false`   | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                                   |
 | `isScrollable`                | `bool`                        | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content.               |
 | `maxHeightFromTabletUp`       | `string`                      | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                                    |
 | `method`                      | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                                        |
