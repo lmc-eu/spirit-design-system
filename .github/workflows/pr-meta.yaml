@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Assign to author
-        uses: samspills/assign-pr-to-author@v1.0
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+        uses: kentaro-m/auto-assign-action@v2.0.0 # Specify also the minor version because the `v2` tag does not exist.
 
       - name: Add labels
         uses: TimonVS/pr-labeler-action@v5.0.0
