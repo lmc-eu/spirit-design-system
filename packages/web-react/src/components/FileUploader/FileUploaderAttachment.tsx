@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { MouseEvent, RefObject, useRef, useState } from 'react';
-import { useClassNamePrefix, useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useClassNamePrefix, useStyleProps } from '../../hooks';
 import { SpiritFileUploaderAttachmentProps } from '../../types';
 import { Icon } from '../Icon';
 import AttachmentActionButton from './AttachmentActionButton';
@@ -18,10 +18,6 @@ import { image2Base64Preview } from './utils';
 
 const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
   const {
-    /** @deprecated Will be removed in the next major version. */
-    buttonLabel,
-    /** @deprecated Will be removed in the next major version. */
-    editButtonLabel,
     editText,
     file,
     hasImagePreview,
@@ -62,26 +58,6 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
 
   useFileUploaderAttachment({ attachmentRef, file, name, meta, onError });
 
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!buttonLabel,
-    componentName: 'FileUploaderAttachment',
-    propertyProps: {
-      deprecatedName: 'buttonLabel',
-      newName: 'removeText',
-    },
-  });
-
-  useDeprecationMessage({
-    method: 'property',
-    trigger: !!editButtonLabel,
-    componentName: 'FileUploaderAttachment',
-    propertyProps: {
-      deprecatedName: 'editButtonLabel',
-      newName: 'editText',
-    },
-  });
-
   return (
     <li
       id={id}
@@ -101,13 +77,11 @@ const FileUploaderAttachment = (props: SpiritFileUploaderAttachmentProps) => {
       {onEdit && (
         <span className={classProps.attachment.slot}>
           <AttachmentActionButton onClick={onEditHandler}>
-            {editText || editButtonLabel || DEFAULT_EDIT_BUTTON_LABEL}
+            {editText || DEFAULT_EDIT_BUTTON_LABEL}
           </AttachmentActionButton>
         </span>
       )}
-      <AttachmentDismissButton onClick={dismissHandler}>
-        {removeText || buttonLabel || DEFAULT_BUTTON_LABEL}
-      </AttachmentDismissButton>
+      <AttachmentDismissButton onClick={dismissHandler}>{removeText || DEFAULT_BUTTON_LABEL}</AttachmentDismissButton>
     </li>
   );
 };
