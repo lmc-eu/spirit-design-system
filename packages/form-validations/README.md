@@ -249,4 +249,4 @@ _Reset the errors in the form_
 
 **FormValidations.destroy()**
 
-_Destroy the pristine object_
+_Destroy the FormValidations object_
