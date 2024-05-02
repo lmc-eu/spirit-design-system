@@ -60,11 +60,12 @@
 }
 
 .Tooltip--dismissible {
+    --tooltip-max-width: calc(#{theme.$max-width} + #{theme.$gap} + #{theme.$close-button-size});
+
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: theme.$gap;
     align-items: center;
-    max-width: calc(#{theme.$max-width} + #{theme.$gap} + #{theme.$close-button-size});
 }
 
 @include dictionaries.generate-placements(
