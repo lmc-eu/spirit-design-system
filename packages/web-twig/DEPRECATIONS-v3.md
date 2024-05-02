@@ -110,11 +110,6 @@ non-scrollable by default. It will be possible to re-enable the inside scrolling
 
 Add `isScrollable` prop to the `ModalDialog` component.
 
-### Alert `danger` Icon
-
-The `warning` icon as a fallback for the `danger` color in the Alert component will be removed in favor of the `danger` icon.
-Please, add the `danger` icon to your project's assets.
-
 #### Migration Guide
 
 Either install newer version of the `spirit-icons` package or add `danger` named icon to your project's icons.
