@@ -2,8 +2,8 @@
 @use '@tokens' as tokens;
 
 $item-gap: tokens.$space-300;
-$item-min-width: 2em;
-$item-height: 2.5em;
+$item-min-width: tokens.$space-900;
+$item-height: 2.5em; /* It is in relative units due to possible resizing of the system font. */
 $item-padding-inline: tokens.$space-400;
 $item-emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
 $item-radius: tokens.$radius-100;
