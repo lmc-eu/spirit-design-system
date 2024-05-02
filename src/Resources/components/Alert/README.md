@@ -31,15 +31,11 @@ Without lexer:
 
 | Color name    | Icon name     |
 | ------------- | ------------- |
-| `danger`      | `warning`\*   |
+| `danger`      | `danger`      |
 | `default`     | `info`        |
 | `informative` | `info`        |
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
-
-(\*) The `warning` icon for the `danger` color has been marked as [deprecated].
-Please make sure you have the `danger` icon in your project assets.
-The `warning` icon for the `danger` color will be removed in favor of the `danger` icon in the next major version.
 
 ## API
 
