@@ -1,5 +1,6 @@
 import { ElementType } from 'react';
 import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
+import { TabsToggler } from '../components';
 
 export type TabId = string | number;
 
@@ -10,6 +11,12 @@ export interface SpiritTabsProps {
   tabId?: TabId;
   /** Identification of affected pane */
   forTab?: TabId;
+}
+
+export interface TabsProps extends ChildrenProps, TransferProps {
+  selectedTab: TabId;
+  toggle: TabsToggler;
+  onSelectionChange?: (tabId: TabId) => void;
 }
 
 export type TabLinkItemProps = StyleProps & React.HTMLProps<HTMLLIElement>;
