@@ -6,7 +6,7 @@ This is a Symfony bundle with Twig implementation of [Spirit Design System] comp
 
 - PHP 7.4 || 8.1
 - Symfony 4.4+ || 5.4+ || ^6.1
-- Twig >=1.44.6 || >=2.12.5 || 3+
+- Twig >=2.12.5 || 3+
 
 ## Changelog
 
