@@ -11,6 +11,8 @@ import { ToastProvider, UncontrolledToast } from '..';
 
 interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps {
   color: ToastColorType;
+  hasIcon: boolean;
+  isDismissible: boolean;
   iconName: string;
 }
 
@@ -59,6 +61,9 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     iconName: {
       control: 'text',
     },
+    isCollapsible: {
+      control: 'boolean',
+    },
   },
   args: {
     children: 'Hello, World!',
@@ -69,35 +74,52 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     isDismissible: true,
     color: 'inverted',
     iconName: '',
+    isCollapsible: true,
   },
 };
 
 export default meta;
 type Story = StoryObj<UncontrolledToastPlaygroundProps>;
 
-const ShowButton = (props: { text: string | JSX.Element; color: ToastColorType }) => {
-  const { text, color } = props;
-  const { show, hide } = useToast();
+const ShowButton = (props: {
+  text: string | JSX.Element;
+  color: ToastColorType;
+  hasIcon: boolean;
+  isDismissible: boolean;
+  iconName: string;
+}) => {
+  const { text, color, hasIcon, isDismissible, iconName } = props;
+  const { show, clear } = useToast();
 
   return (
     <>
-      <Button type="button" onClick={() => show(text, 'toast-id', { color })} marginBottom="space-400">
+      <Button
+        type="button"
+        onClick={() => show(text, Date.now().toString(), { color, hasIcon, isDismissible, iconName })}
+        marginBottom="space-400"
+      >
         Show Toast
       </Button>
       <br />
-      <Button type="button" onClick={() => hide()}>
-        Close Toast
+      <Button type="button" onClick={() => clear()}>
+        Clear queue
       </Button>
     </>
   );
 };
 
 const UncontrolledToastComponent = (args: UncontrolledToastPlaygroundProps) => {
-  const { children, color } = args;
+  const { children, color, hasIcon, isDismissible, iconName } = args;
 
   return (
     <ToastProvider>
-      <ShowButton text={children as string | JSX.Element} color={color} />
+      <ShowButton
+        text={children as string | JSX.Element}
+        color={color}
+        hasIcon={hasIcon}
+        isDismissible={isDismissible}
+        iconName={iconName}
+      />
       <UncontrolledToast {...args} />
     </ToastProvider>
   );

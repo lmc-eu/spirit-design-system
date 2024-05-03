@@ -2,10 +2,18 @@ import classNames from 'classnames';
 import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritToastProps } from '../../types';
+import { AlignmentX, AlignmentY } from '../../constants';
 import { useToastStyleProps } from './useToastStyleProps';
 
+const defaultProps: SpiritToastProps = {
+  alignmentX: AlignmentX.CENTER,
+  alignmentY: AlignmentY.BOTTOM,
+  isCollapsible: true,
+};
+
 const Toast = (props: SpiritToastProps) => {
-  const { children, alignmentX = 'center', alignmentY = 'bottom', ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, alignmentX, alignmentY, ...restProps } = propsWithDefaults;
   const { classProps, props: modifiedProps } = useToastStyleProps({ ...restProps, alignmentX, alignmentY });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
