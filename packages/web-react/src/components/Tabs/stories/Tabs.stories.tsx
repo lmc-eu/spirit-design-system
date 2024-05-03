@@ -1,10 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { TabId } from '../../../types';
+import { TabId, TabsProps } from '../../../types';
 import ReadMe from '../README.md';
-import { TabContent, TabItem, TabList, TabPane, Tabs, TabsProps } from '..';
+import { TabContent, TabItem, TabList, TabPane, Tabs } from '..';
 
 const meta: Meta<typeof Tabs> = {
   title: 'Components/Tabs',
