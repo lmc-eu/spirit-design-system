@@ -13,6 +13,7 @@ export interface BaseToastProps extends ChildrenProps, StyleProps {}
 export interface SpiritToastProps extends BaseToastProps {
   alignmentX?: AlignmentXDictionaryType | { [key: string]: AlignmentXDictionaryType };
   alignmentY?: Omit<AlignmentYDictionaryType, 'center'> | { [key: string]: Omit<AlignmentYDictionaryType, 'center'> };
+  isCollapsible?: boolean;
 }
 
 export interface BaseToastBarProps extends ChildrenProps, StyleProps {
@@ -46,6 +47,5 @@ export interface UncontrolledToastProps extends ChildrenProps, StyleProps {
   alignmentX?: 'left' | 'center' | 'right';
   alignmentY?: 'top' | 'bottom';
   closeLabel?: string;
-  hasIcon?: boolean;
-  isDismissible?: boolean;
+  isCollapsible?: boolean;
 }

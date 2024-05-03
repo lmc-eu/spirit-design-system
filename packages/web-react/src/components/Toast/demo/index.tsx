@@ -7,15 +7,19 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import ToastAlignment from './ToastAlignment';
+import ToastDynamicToastQueue from './ToastDynamicToastQueue';
 import ToastColors from './ToastColors';
 import ToastContentVariations from './ToastContentVariations';
+import ToastStaticToast from './ToastStaticToast';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Alignment">
-        <ToastAlignment />
+      <DocsSection title="Static Toast">
+        <ToastStaticToast />
+      </DocsSection>
+      <DocsSection title="Dynamic Toast Queue">
+        <ToastDynamicToastQueue />
       </DocsSection>
       <DocsSection title="Content Variations">
         <ToastContentVariations />

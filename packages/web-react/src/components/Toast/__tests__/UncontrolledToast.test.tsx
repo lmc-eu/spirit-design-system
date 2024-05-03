@@ -4,14 +4,22 @@ import React from 'react';
 import UncontrolledToast from '../UncontrolledToast';
 import { ToastContext } from '../ToastContext';
 
-const defaultContextValue = {
+const defaultToast = {
   id: 'test-id',
   message: 'Toast message',
   isOpen: false,
   iconName: undefined,
+  hasIcon: false,
+  isDismissible: false,
   color: undefined,
+};
+
+const defaultContextValue = {
+  queue: [defaultToast],
   hide: jest.fn(),
   show: jest.fn(),
+  clear: jest.fn(),
+  setQueue: jest.fn(),
 };
 
 describe('UncontrolledToast', () => {
@@ -30,7 +38,7 @@ describe('UncontrolledToast', () => {
   it('should render opened toast', () => {
     const contextValue = {
       ...defaultContextValue,
-      isOpen: true,
+      queue: [{ ...defaultToast, isOpen: true }],
     };
 
     const dom = render(
@@ -51,12 +59,12 @@ describe('UncontrolledToast', () => {
   it('should render opened toast with params', () => {
     const contextValue = {
       ...defaultContextValue,
-      isOpen: true,
+      queue: [{ ...defaultToast, isOpen: true, isDismissible: true, hasIcon: true }],
     };
 
     const dom = render(
       <ToastContext.Provider value={contextValue}>
-        <UncontrolledToast alignmentX="right" alignmentY="top" isDismissible hasIcon closeLabel="Close test" />
+        <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close test" />
       </ToastContext.Provider>,
     );
 
@@ -74,12 +82,12 @@ describe('UncontrolledToast', () => {
   it('should close toast when close button is clicked', () => {
     const contextValue = {
       ...defaultContextValue,
-      isOpen: true,
+      queue: [{ ...defaultToast, isOpen: true, isDismissible: true }],
     };
 
     const dom = render(
       <ToastContext.Provider value={contextValue}>
-        <UncontrolledToast isDismissible />
+        <UncontrolledToast />
       </ToastContext.Provider>,
     );
 

@@ -102,25 +102,41 @@ sorted from top to bottom for the `top` vertical alignment, and from bottom to t
 👉 Please note the _actual_ order in the DOM is followed when users tab over the interface, no matter the _visual_
 order of the toast queue.
 
-#### Toast Queue Limitations
+#### Collapsing
 
-While the Toast queue becomes scrollable when it does not fit the screen, we recommend displaying only a few toasts at
-once for several reasons:
+The collapsible Toast queue is turned on by default and can hold up to 3 ToastBar components.
+When the queue is full, the oldest ToastBar components are collapsed at the start of
+the queue and are only accessible by closing the newer ones.
 
-⚠️ **We strongly discourage from displaying too many toasts at once as it may cause the page to be unusable,
-especially on mobile screens. As of now, there is no automatic stacking of the toast queue items. It is the
-responsibility of the developer to ensure that the Toast queue does not overflow the screen.**
+#### Scrolling
+
+By default, the Toast queue collapses when there are more than 3 ToastBars. To turn off this behavior and make the queue scrollable when it does not fit the screen,
+set the `isCollapsible` prop to `false`.
 
 ⚠️ Please note that scrolling is not available on iOS devices due to a limitation in the WebKit engine.
 
 👉 Please note that the initial scroll position is always at the **top** of the queue.
 
+```jsx
+<Toast isCollapsible={false}>
+  <!-- ToastBar components go here -->
+</Toast>
+```
+
+#### Toast Queue Limitations
+
+👉 Please note only the _visible_ ToastBar components are scrollable. Collapsed items are not accessible until visible
+items are dismissed.
+
+👉 For the sake of simplicity, the collapsible items limit cannot be configured at the moment.
+
 ### API
 
-| Name         | Type                                                        | Default  | Required | Description                             |
-| ------------ | ----------------------------------------------------------- | -------- | -------- | --------------------------------------- |
-| `alignmentX` | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue |
-| `alignmentY` | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue   |
+| Name            | Type                                                        | Default  | Required | Description                                                       |
+| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -302,7 +318,7 @@ const { show } = useToast(); // must be inside ToastProvider
     Show Toast
   </Button>
 
-  <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close toast" hasIcon isDismissible />
+  <UncontrolledToast alignmentX="right" alignmentY="top" closeLabel="Close toast" hasIcon isDismissible isCollapsible />
 </ToastProvider>;
 ```
 
@@ -315,20 +331,23 @@ This hook returns:
 
 | Name       | Type                                                         | Default    | Description                                         |
 | ---------- | ------------------------------------------------------------ | ---------- | --------------------------------------------------- |
+| `clear`    | `() => void`                                                 | () => {}   | Function that will clear toast queue                |
 | `color`    | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | Color variant                                       |
-| `hide`     | `function`                                                   | () => {}   | Function that will hide UncontrolledToast           |
+| `hide`     | `(toastId) => void`                                          | () => {}   | Function that will hide UncontrolledToast           |
 | `iconName` | `string`                                                     | —          | Name of a custom icon to be shown along the message |
 | `id`       | `string`                                                     | `''`       | ToastBar ID                                         |
 | `isOpen`   | `bool`                                                       | `false`    | Open state of UncontrolledToast                     |
 | `message`  | [`string` \| `ReactNode`]                                    | null       | Message inside UncontrolledToast                    |
-| `show`     | `function`                                                   | () => {}   | Function that will show UncontrolledToast           |
+| `show`     | `(message, toastId, options?) => void`                       | () => {}   | Function that will show UncontrolledToast           |
 
-#### How to use `showToast` function:
+#### How to use `show` function:
 
 This function has two required parameters: message and ID.
 All other options are not required and can be omitted entirely.
 
 ```jsx
+const { show } = useToast();
+
          ┌─⫸ Message inside UncontrolledToast (required)
          │
          │                 ┌─⫸ ToastBar ID (required)
@@ -336,22 +355,23 @@ All other options are not required and can be omitted entirely.
 show('Toast message', 'toast-id', {
   color: 'danger',         // Color variant, default: 'inverted'
   iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
-})
+  hasIcon: true            // If true, an icon is shown along the message, default: false \*
+  isDismissible: true      // If true, ToastBar can be dismissed by user, default: false
+});
 ```
-
-### API
-
-| Name            | Type                                                        | Default    | Required | Description                                 |
-| --------------- | ----------------------------------------------------------- | ---------- | -------- | ------------------------------------------- |
-| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center`   | ✕        | Horizontal alignment of the toast queue     |
-| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom`   | ✕        | Vertical alignment of the toast queue       |
-| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                 |
-| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message |
-| `isDismissible` | `bool`                                                      | `true`     | ✕        | If true, ToastBar can be dismissed by user  |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
 Read the section [Default Icons according to Color Variant](#default-icons-according-to-color-variant).
+
+### API
+
+| Name            | Type                                                        | Default  | Required | Description                                                       |
+| --------------- | ----------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------- |
+| `alignmentX`    | [[AlignmentX dictionary][dictionary-alignment] \| `object`] | `center` | ✕        | Horizontal alignment of the toast queue                           |
+| `alignmentY`    | [`top` \| `bottom` \| `object`]                             | `bottom` | ✕        | Vertical alignment of the toast queue                             |
+| `closeLabel`    | `string`                                                    | `Close`  | ✕        | Close label                                                       |
+| `isCollapsible` | `bool`                                                      | `true`   | ✕        | If true, Toast queue collapses if there are more than 3 ToastBars |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
