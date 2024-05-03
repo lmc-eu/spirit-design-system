@@ -47,19 +47,21 @@ const ToastBar = (props: SpiritToastBarProps) => {
           className={classNames(classProps.root, TRANSITIONING_STYLES[transitionState], styleProps.className)}
           ref={rootElementRef}
         >
-          <div className={classProps.content}>
-            {(hasIcon || iconName) && <Icon name={toastIconName} boxSize={ICON_BOX_SIZE} />}
-            <div className={classProps.message}>{children}</div>
-          </div>
+          <div className={classProps.box}>
+            <div className={classProps.content}>
+              {(hasIcon || iconName) && <Icon name={toastIconName} boxSize={ICON_BOX_SIZE} />}
+              <div className={classProps.message}>{children}</div>
+            </div>
 
-          <ToastCloseButton
-            id={id}
-            color={color}
-            isOpen={isOpen}
-            closeLabel={closeLabel}
-            onClose={onClose}
-            isDismissible={isDismissible}
-          />
+            <ToastCloseButton
+              id={id}
+              color={color}
+              isOpen={isOpen}
+              closeLabel={closeLabel}
+              onClose={onClose}
+              isDismissible={isDismissible}
+            />
+          </div>
         </div>
       )}
     </Transition>

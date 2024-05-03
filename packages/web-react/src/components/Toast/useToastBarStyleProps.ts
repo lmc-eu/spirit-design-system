@@ -6,6 +6,7 @@ export const useToastBarStyleProps = (props: Omit<SpiritToastBarProps, 'onClose'
   const { color, isDismissible, ...restProps } = props;
 
   const toastBarClass = useClassNamePrefix('ToastBar');
+  const toastBarBoxClass = `${toastBarClass}__box`;
   const toastBarContentClass = `${toastBarClass}__content`;
   const toastBarMessageClass = `${toastBarClass}__message`;
   const colorClass = `${toastBarClass}--${color || 'inverted'}`;
@@ -15,6 +16,7 @@ export const useToastBarStyleProps = (props: Omit<SpiritToastBarProps, 'onClose'
   return {
     classProps: {
       root: rootClass,
+      box: toastBarBoxClass,
       content: toastBarContentClass,
       message: toastBarMessageClass,
     },

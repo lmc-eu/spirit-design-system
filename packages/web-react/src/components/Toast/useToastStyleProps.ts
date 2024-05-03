@@ -11,7 +11,7 @@ export interface ToastStyles<T> {
 }
 
 export function useToastStyleProps(props: SpiritToastProps): ToastStyles<SpiritToastProps> {
-  const { alignmentX, alignmentY, ...restProps } = props;
+  const { alignmentX, alignmentY, isCollapsible, ...restProps } = props;
 
   const toastClass = useClassNamePrefix('Toast');
 
@@ -28,8 +28,9 @@ export function useToastStyleProps(props: SpiritToastProps): ToastStyles<SpiritT
   }
 
   const alignmentClasses = [...processAlignments([alignmentX, alignmentY])];
+  const collapsibleClass = `${toastClass}--collapsible`;
 
-  const toastRootClass = classNames(toastClass, ...alignmentClasses);
+  const toastRootClass = classNames(toastClass, isCollapsible && collapsibleClass, ...alignmentClasses);
   const toastQueueClass = `${toastClass}__queue`;
 
   return {
