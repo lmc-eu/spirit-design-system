@@ -22,8 +22,9 @@
   {%- set _iconNameByColor = 'danger' -%}
 {% endif %}
 {%- set _iconNameValue = _iconName | default(_iconNameByColor) -%}
+{%- set _allowedAttributes = [ 'role' ] -%}
 
-<{{ _elementType }} {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} role="alert">
+<{{ _elementType }} {{ mainProps(props, _allowedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
   <Icon name="{{ _iconNameValue }}" />
   <div>
     {%- block content %}{% endblock -%}

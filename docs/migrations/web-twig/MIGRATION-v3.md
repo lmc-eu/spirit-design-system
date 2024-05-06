@@ -11,6 +11,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Placements in Tooltip and Dropdown](#placements-in-tooltip-and-dropdown)
 - [Component Changes](#component-changes)
   - [Alert: `danger` Icon](#alert-danger-icon)
+  - [Alert: `role="alert"`](#alert-rolealert)
   - [Breadcrumbs: `goBackTitle` Prop](#breadcrumbs-gobacktitle-prop)
   - [Dropdown: `id` Prop](#dropdown-id-prop)
   - [Grid: Breakpoint Props](#grid-breakpoint-props)
@@ -74,6 +75,23 @@ Please, add the `danger` icon to your project's assets.
 #### Migration Guide
 
 Either install newer version of the `spirit-icons` package or add `danger` named icon to your project's icons.
+
+### Alert: `role="alert"`
+
+The `role="alert"` has been removed from the default setting of the component.
+
+The alert role is used to communicate an important and usually time-sensitive message to the user. When this role is added to an element,
+the browser will send out an accessible alert event to assistive technology products which can then notify the user.
+The alert role should only be used for information that requires the user's immediate attention, which is typically
+content that is dynamically displayed (such as form validation message etc.), not for content that appears on page load.
+It should not be used on HTML that the user hasn't interacted with.
+
+For more information see [ARIA: alert role][alert-role-documentation].
+
+#### Migration Guide
+
+In case you need to use the component as an information that requires the user's immediate attention,
+you can use `role="alert"` as an [additional attribute][readme-additional-attributes].
 
 ### Breadcrumbs: `goBackTitle` Prop
 
@@ -210,7 +228,9 @@ See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
 Please refer back to this guide or reach out to our team if you encounter any issues during migration.
 
+[alert-role-documentation]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Dropdown/README.md
+[readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Tooltip/README.md
