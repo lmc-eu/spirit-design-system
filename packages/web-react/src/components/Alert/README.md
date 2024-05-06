@@ -44,6 +44,9 @@ and [escape hatches][readme-escape-hatches].
 
 For detailed information see [Alert][alert] component.
 
+⚠️ Please pay attention to the accessibility setting when Alert is dynamically displayed. In case you need to use the component as an information that requires the user's immediate attention,
+you can set `role="alert"` as an [additional attribute][readme-additional-attributes].
+
 [alert]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Alert/README.md
 [dictionary-color]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#color
 [icon-package]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/icons
