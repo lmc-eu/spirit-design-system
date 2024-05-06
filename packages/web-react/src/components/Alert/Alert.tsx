@@ -26,7 +26,7 @@ export const Alert = <T extends ElementType = 'div', E = void>(props: SpiritAler
   const alertIconName = useAlertIcon({ color, iconName, ...otherProps });
 
   return (
-    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} role="alert">
+    <ElementTag {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)}>
       <Icon name={alertIconName} />
       <div>{children}</div>
     </ElementTag>
