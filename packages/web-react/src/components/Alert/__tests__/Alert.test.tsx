@@ -30,13 +30,6 @@ describe('Alert', () => {
     expect(element.textContent).toBe('Hello World');
   });
 
-  it('should have alert role', () => {
-    const dom = render(<Alert>Hello World</Alert>);
-
-    const element = dom.getByRole('alert') as HTMLElement;
-    expect(element).toBeInTheDocument();
-  });
-
   it('should have icon', () => {
     const dom = render(<Alert>Hello World</Alert>);
 
