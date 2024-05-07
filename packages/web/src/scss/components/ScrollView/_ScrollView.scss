@@ -129,14 +129,14 @@
 }
 
 .ScrollView--vertical > .ScrollView__overflowDecorators--shadows::before {
-    --angle: 180deg;
+    --gradient-angle: 180deg;
 
     height: theme.$start-shadow-size;
     transform: translateY(#{theme.$start-shadow-initial-offset});
 }
 
 .ScrollView--vertical > .ScrollView__overflowDecorators--shadows::after {
-    --angle: 0;
+    --gradient-angle: 0;
 
     height: theme.$end-shadow-size;
     transform: translateY(#{-1 * theme.$end-shadow-initial-offset});
@@ -166,14 +166,14 @@
 }
 
 .ScrollView--horizontal > .ScrollView__overflowDecorators--shadows::before {
-    --angle: 90deg;
+    --gradient-angle: 90deg;
 
     width: theme.$start-shadow-size;
     transform: translateX(#{theme.$start-shadow-initial-offset});
 }
 
 .ScrollView--horizontal > .ScrollView__overflowDecorators--shadows::after {
-    --angle: 270deg;
+    --gradient-angle: 270deg;
 
     width: theme.$end-shadow-size;
     transform: translateX(#{-1 * theme.$end-shadow-initial-offset});

@@ -21,13 +21,13 @@
         }
 
         @include breakpoint.up($breakpoint-value) {
-            --gap: var(#{$property-name}, #{$fallback});
+            --stack-gap: var(#{$property-name}, #{$fallback});
         }
 
         $fallback: var(#{$property-name}, #{$fallback});
     }
 
-    gap: var(--gap);
+    gap: var(--stack-gap);
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider,
@@ -57,11 +57,11 @@
 
 .Stack--hasSpacing.Stack--hasStartDivider > *,
 .Stack--hasSpacing.Stack--hasEndDivider > * {
-    padding-block: calc(var(--gap) / 2);
+    padding-block: calc(var(--stack-gap) / 2);
 }
 
 .Stack--hasSpacing.Stack--hasIntermediateDividers > * {
-    padding-block: var(--gap);
+    padding-block: var(--stack-gap);
 }
 // stylelint-enable
 
@@ -90,9 +90,9 @@
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > :first-child {
-    padding-block-start: var(--gap);
+    padding-block-start: var(--stack-gap);
 }
 
 .Stack--hasSpacing.Stack--hasEndDivider > :last-child {
-    padding-block-end: var(--gap);
+    padding-block-end: var(--stack-gap);
 }
