@@ -3,23 +3,143 @@
 @use '../placement';
 
 @include true.describe('placement functions and mixins') {
-    @include true.it('should return correct inverse placements') {
+    @include true.it('should return correct cross axis direction') {
         @include true.assert {
             @include true.output {
-                $inverse-top: placement.inverse('top');
-                $inverse-bottom-start: placement.inverse('bottom-start');
-                $inverse-left-end: placement.inverse('left-end');
-
-                // Testing with main-axis-only and hyphenation
-                $inverse-top-start-hyphen: placement.inverse('top-start', true, true);
-                $inverse-top-start-space: placement.inverse('top-start', true, false);
+                --cross-axis-direction-left: #{placement.get-cross-axis-direction('left')};
+                --cross-axis-direction-bottom: #{placement.get-cross-axis-direction('bottom')};
             }
             @include true.expect {
-                $inverse-top: 'bottom';
-                $inverse-bottom-start: 'top';
-                $inverse-left-end: 'right';
-                $inverse-top-start-hyphen: 'bottom-start';
-                $inverse-top-start-space: 'bottom start';
+                --cross-axis-direction-left: vertical;
+                --cross-axis-direction-bottom: horizontal;
+            }
+        }
+    }
+
+    @include true.it('should return true for logical placements, false otherwise') {
+        @include true.assert {
+            @include true.output {
+                --is-logical-left: #{placement.is-logical('left')};
+                --is-logical-start: #{placement.is-logical('start')};
+            }
+            @include true.expect {
+                --is-logical-left: false;
+                --is-logical-start: true;
+            }
+        }
+    }
+
+    @include true.it('should return correct physical placement') {
+        @include true.assert {
+            @include true.output {
+                --logical-to-physical-start-horizontal: #{placement.translate-logical-to-physical('start', 'horizontal')};
+                --logical-to-physical-start-vertical: #{placement.translate-logical-to-physical('start', 'vertical')};
+            }
+            @include true.expect {
+                --logical-to-physical-start-horizontal: left;
+                --logical-to-physical-start-vertical: top;
+            }
+        }
+    }
+
+    @include true.it('should return transformed axis') {
+        @include true.assert {
+            @include true.output {
+                --transform-axis-left: #{placement.transform-axis('left')};
+                --transform-axis-left-inverse: #{placement.transform-axis('left', $inverse: true)};
+                --transform-axis-left-physical: #{placement.transform-axis('left', $physical-direction: 'horizontal')};
+                --transform-axis-left-physical-inverse: #{placement.transform-axis(
+                        'left',
+                        $inverse: true,
+                        $physical-direction: 'horizontal'
+                    )};
+                --transform-axis-start: #{placement.transform-axis('start')};
+                --transform-axis-start-inverse: #{placement.transform-axis('start', $inverse: true)};
+                --transform-axis-start-physical: #{placement.transform-axis('start', $physical-direction: 'horizontal')};
+                --transform-axis-start-physical-inverse: #{placement.transform-axis(
+                        'start',
+                        $inverse: true,
+                        $physical-direction: 'horizontal'
+                    )};
+            }
+            @include true.expect {
+                --transform-axis-left: left;
+                --transform-axis-left-inverse: right;
+                --transform-axis-left-physical: left;
+                --transform-axis-left-physical-inverse: right;
+                --transform-axis-start: start;
+                --transform-axis-start-inverse: end;
+                --transform-axis-start-physical: left;
+                --transform-axis-start-physical-inverse: right;
+            }
+        }
+    }
+
+    @include true.describe('should return transformed placement') {
+        @include true.it('physical only') {
+            @include true.assert {
+                @include true.output {
+                    --transform-left: #{placement.transform('left')};
+                    --transform-left-top: #{placement.transform('left-top')};
+                    --transform-left-top-main-axis-inverse: #{placement.transform('left-top', $main-axis-inverse: true)};
+                    --transform-left-top-main-axis-inverse-cross-axis-inverse: #{placement.transform(
+                            'left-top',
+                            $main-axis-inverse: true,
+                            $cross-axis-inverse: true
+                        )};
+                    --transform-left-top-main-axis-inverse-cross-axis-inverse-physical: #{placement.transform(
+                            'left-top',
+                            $main-axis-inverse: true,
+                            $cross-axis-inverse: true,
+                            $cross-axis-physical: true
+                        )};
+                    --transform-left-top-spaces: #{placement.transform('left-top', $join-with: ' ')};
+                }
+                @include true.expect {
+                    --transform-left: left;
+                    --transform-left-top: left-top;
+                    --transform-left-top-main-axis-inverse: right-top;
+                    --transform-left-top-main-axis-inverse-cross-axis-inverse: right-bottom;
+                    --transform-left-top-main-axis-inverse-cross-axis-inverse-physical: right-bottom;
+                    --transform-left-top-spaces: left top;
+                }
+            }
+        }
+
+        @include true.it('physical and logical') {
+            @include true.assert {
+                @include true.output {
+                    --transform-top-start: #{placement.transform('top-start')};
+                    --transform-top-start-main-axis-inverse: #{placement.transform(
+                            'top-start',
+                            $main-axis-inverse: true
+                        )};
+                    --transform-top-start-main-axis-inverse-cross-axis-inverse: #{placement.transform(
+                            'top-start',
+                            $main-axis-inverse: true,
+                            $cross-axis-inverse: true
+                        )};
+                    --transform-top-start-main-axis-inverse-cross-axis-physical: #{placement.transform(
+                            'top-start',
+                            $main-axis-inverse: true,
+                            $cross-axis-physical: true
+                        )};
+                    --transform-top-start-main-axis-inverse-cross-axis-inverse-physical: #{placement.transform(
+                            'top-start',
+                            $main-axis-inverse: true,
+                            $cross-axis-inverse: true,
+                            $cross-axis-physical: true
+                        )};
+                    --transform-top-start-spaces: #{placement.transform('top-start', $join-with: ' ')};
+                }
+                @include true.expect {
+                    --transform-top-start: top-start;
+                    --transform-top-start-main-axis-inverse: bottom-start;
+                    --transform-top-start-main-axis-inverse-cross-axis-inverse: bottom-end;
+                    --transform-top-start-main-axis-inverse-cross-axis-physical: bottom-left;
+                    --transform-top-start-main-axis-inverse-cross-axis-inverse-physical: bottom-right;
+                    --transform-top-start-spaces: top start;
+                }
             }
         }
     }
