@@ -39,7 +39,9 @@ const Story: ComponentStory<typeof Collapse> = () => {
     <div>
       {content}
       <CollapseTrigger isOpen={isOpen} onClick={toggleHandler} />
-      <Collapse isOpen={isOpen}>{content}</Collapse>
+      <Collapse id="collapseId" isOpen={isOpen}>
+        {content}
+      </Collapse>
     </div>
   );
 };
