@@ -116,10 +116,10 @@ and [escape hatches][readme-escape-hatches].
 
 | Name                 | Type          | Default | Required | Description                            |
 | -------------------- | ------------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string`      | `null`  | ✔        | Accessibility label of the link        |
+| `accessibilityLabel` | `string`      | `null`  | ✓        | Accessibility label of the link        |
 | `elementType`        | `ElementType` | `a`     | ✕        | Type of an element                     |
 | `isCurrent`          | `bool`        | `null`  | ✕        | If true, the link is marked as current |
-| `pageNumber`         | `number`      | —       | ✔        | Page number, hidden for screen readers |
+| `pageNumber`         | `number`      | —       | ✓        | Page number, hidden for screen readers |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -131,8 +131,8 @@ This component extends the [Button][button] component with directional arrows an
 
 | Name                 | Type                   | Default | Required | Description                                                          |
 | -------------------- | ---------------------- | ------- | -------- | -------------------------------------------------------------------- |
-| `accessibilityLabel` | `string`               | `null`  | ✔        | Accessibility label of the link                                      |
-| `direction`          | [`previous` \| `next`] | `null`  | ✔        | The direction according to which the corresponding icon is displayed |
+| `accessibilityLabel` | `string`               | `null`  | ✓        | Accessibility label of the link                                      |
+| `direction`          | [`previous` \| `next`] | `null`  | ✓        | The direction according to which the corresponding icon is displayed |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -171,7 +171,7 @@ and [escape hatches][readme-escape-hatches].
 | `accessibilityLabelPrevious` | `string`                       | `Previous` | ✕        | Accessibility label of the previous link                            |
 | `defaultPage`                | `number`                       | `1`        | ✕        | The number of the page selected as current page at the first render |
 | `onChange`                   | `(pageNumber: number) => void` | -          | ✕        | On page change callback                                             |
-| `totalPages`                 | `number`                       | 0          | ✔        | Total count of pages                                                |
+| `totalPages`                 | `number`                       | 0          | ✓        | Total count of pages                                                |
 | `visiblePages`               | `number`                       | `5`        | ✕        | Number of displayed pages                                           |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

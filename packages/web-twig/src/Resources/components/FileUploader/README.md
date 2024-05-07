@@ -206,7 +206,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `dragAndDropText`       | `string`                                       | `or drag and drop here` | ✕        | Text shown in the drop zone if drag-and-drop is enabled on the device |
 | `helperText`            | `string`                                       | `null`                  | ✕\*\*    | Custom helper text                                                    |
 | `iconName`              | `string`                                       | `upload`                | ✕        | Icon used in the drop zone                                            |
-| `id`                    | `string`                                       | —                       | ✔        | Input and label identification                                        |
+| `id`                    | `string`                                       | —                       | ✓        | Input and label identification                                        |
 | `isDisabled`            | `bool`                                         | `false`                 | ✕        | If true, input is disabled                                            |
 | `isLabelHidden`         | `bool`                                         | `false`                 | ✕        | If true, label is hidden                                              |
 | `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is marked as required                                  |

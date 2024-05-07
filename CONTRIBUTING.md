@@ -171,7 +171,7 @@ This project uses Prettier for code formatting. You can run `make format` to for
       - `Name` — the name of the prop, e.g. `title`
       - `Type` — the type of the prop, e.g. `string`, `number`, `bool`, `[horizontal | vertical]`, an existing [dictionary], etc.
       - `Default` — the default value of the prop, e.g. `null` or `—` (em-dash) if there is no default value
-      - `Required` — if the prop is required `✔` or not `✕`
+      - `Required` — if the prop is required `✓` or not `✕`
       - `Description` — the description of the prop, e.g. `Title of the accordion`
    3. The props MUST be sorted alphabetically by their name.
 

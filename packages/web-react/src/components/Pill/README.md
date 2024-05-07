@@ -23,7 +23,7 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 | Name       | Type                                                                                                                        | Default    | Required | Description            |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
-| `children` | `ReactNode`                                                                                                                 | —          | ✔        | Content of the Pill    |
+| `children` | `ReactNode`                                                                                                                 | —          | ✓        | Content of the Pill    |
 | `color`    | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color of the component |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

@@ -346,17 +346,17 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 
 | Name                                  | Type                                                                 | Default | Required | Description                                                         |
 | ------------------------------------- | -------------------------------------------------------------------- | ------- | -------- | ------------------------------------------------------------------- |
-| `addToQueue`                          | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✔        | Callback to add an item to the queue                                |
-| `clearQueue`                          | `() => void`                                                         | —       | ✔        | Callback to clear the queue                                         |
+| `addToQueue`                          | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✓        | Callback to add an item to the queue                                |
+| `clearQueue`                          | `() => void`                                                         | —       | ✓        | Callback to clear the queue                                         |
 | `errorMessages.errorFileDuplicity`    | `string`                                                             | —       | ✕        | Translation for the error message: Duplicate file in queue          |
 | `errorMessages.errorMaxFileSize`      | `string`                                                             | —       | ✕        | Translation for the error message: Maximum file size                |
 | `errorMessages.errorMaxUploadedFiles` | `string`                                                             | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
-| `fileQueue`                           | `FileQueueMapType`                                                   | —       | ✔        | Queue of items to upload                                            |
-| `findInQueue`                         | `(key: string) => FileQueueMapType`                                  | —       | ✔        | A callback to find a particular item in the queue                   |
-| `id`                                  | `string`                                                             | —       | ✔        | FileUploader id                                                     |
+| `fileQueue`                           | `FileQueueMapType`                                                   | —       | ✓        | Queue of items to upload                                            |
+| `findInQueue`                         | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to find a particular item in the queue                   |
+| `id`                                  | `string`                                                             | —       | ✓        | FileUploader id                                                     |
 | `isFluid`                             | `bool`                                                               | —       | ✕        | When the field is supposed to be fluid                              |
-| `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✔        | A callback to delete a particular item from the queue               |
-| `updateQueue`                         | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✔        | A callback to update a particular item in the queue                 |
+| `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to delete a particular item from the queue               |
+| `updateQueue`                         | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✓        | A callback to update a particular item in the queue                 |
 
 The rest of the properties are created from the default `<div>` element. [More about the element][div-element-docs]
 
@@ -372,7 +372,7 @@ and [escape hatches][readme-escape-hatches].
 | `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
 | `helperText`         | `string`                             | —        | ✕        | Custom helper text                                                                                                                                              |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
-| `id`                 | `string`                             | —        | ✔        | FileUploaderInput id                                                                                                                                            |
+| `id`                 | `string`                             | —        | ✓        | FileUploaderInput id                                                                                                                                            |
 | `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
 | `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
 | `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
@@ -383,7 +383,7 @@ and [escape hatches][readme-escape-hatches].
 | `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
 | `maxFileSize`        | `number`                             | 1000000  | ✕        | The maximum size of the uploaded file in bytes                                                                                                                  |
 | `maxUploadedFiles`   | `number`                             | 10       | ✕        | Maximum file upload queue size                                                                                                                                  |
-| `name`               | `string`                             | —        | ✔        | Field name, will be used for each attachment in the queue                                                                                                       |
+| `name`               | `string`                             | —        | ✓        | Field name, will be used for each attachment in the queue                                                                                                       |
 | `onError`            | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                                                                                                                                     |
 | `queueLimitBehavior` | [`hide` \| `disable` \| `none`]      | `none`   | ✕        | Input behavior when the file queue is filled                                                                                                                    |
 | `validationState`    | `ValidationState`                    | —        | ✕        | Validation state                                                                                                                                                |
@@ -403,10 +403,10 @@ and [escape hatches][readme-escape-hatches].
 
 | Name                  | Type     | Default | Required | Description                                   |
 | --------------------- | -------- | ------- | -------- | --------------------------------------------- |
-| `attachmentComponent` | `string` | —       | ✔        | A component for rendering a single attachment |
+| `attachmentComponent` | `string` | —       | ✓        | A component for rendering a single attachment |
 | `hasImagePreview`     | `bool`   | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string` | —       | ✔        | FileUploaderList id                           |
-| `inputName`           | `string` | —       | ✔        | The name of the input field                   |
+| `id`                  | `string` | —       | ✓        | FileUploaderList id                           |
+| `inputName`           | `string` | —       | ✓        | The name of the input field                   |
 | `label`               | `string` | —       | ✕        | Label for the list                            |
 
 The rest of the properties are created from the default `<ul>` element. [More about the element][list-element-docs]
@@ -420,14 +420,14 @@ and [escape hatches][readme-escape-hatches].
 | Name              | Type                                 | Default  | Required | Description                                           |
 | ----------------- | ------------------------------------ | -------- | -------- | ----------------------------------------------------- |
 | `editText`        | `string`                             | `Edit`   | ✕        | Edit button label                                     |
-| `file`            | `File`                               | —        | ✔        | Attachment file object                                |
+| `file`            | `File`                               | —        | ✓        | Attachment file object                                |
 | `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                    |
 | `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                             |
-| `id`              | `string`                             | —        | ✔        | FileUploaderAttachment id                             |
+| `id`              | `string`                             | —        | ✓        | FileUploaderAttachment id                             |
 | `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container |
-| `label`           | `string`                             | —        | ✔        | File name                                             |
-| `name`            | `string`                             | —        | ✔        | Input field name                                      |
-| `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✔        | Callback to delete an item from the queue             |
+| `label`           | `string`                             | —        | ✓        | File name                                             |
+| `name`            | `string`                             | —        | ✓        | Input field name                                      |
+| `onDismiss`       | `(key: string) => FileQueueMapType`  | —        | ✓        | Callback to delete an item from the queue             |
 | `onEdit`          | `(event: Event, file: File) => void` | —        | ✕        | Show and add function to edit button                  |
 | `onError`         | `FileUploaderErrorCallbackType`      | —        | ✕        | Callback on error condition                           |
 | `removeText`      | `string`                             | `Remove` | ✕        | Remove button label                                   |
@@ -471,13 +471,13 @@ via `inputProps` and `listProps`.
 
 | Name                  | Type                                    | Default  | Required | Description                                         |
 | --------------------- | --------------------------------------- | -------- | -------- | --------------------------------------------------- |
-| `attachmentComponent` | `string`                                | —        | ✔        | A component for rendering a single attachment       |
+| `attachmentComponent` | `string`                                | —        | ✓        | A component for rendering a single attachment       |
 | `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
-| `iconName`            | `string`                                | `upload` | ✔        | Icon used in the UncontrolledFileUploader drop zone |
-| `id`                  | `string`                                | —        | ✔        | UncontrolledFileUploader id                         |
-| `inputId`             | `string`                                | —        | ✔        | FileUploaderInput id                                |
-| `inputLabel`          | `string`                                | —        | ✔        | FileUploaderInput label                             |
-| `inputName`           | `string`                                | —        | ✔        | FileUploaderInput name                              |
+| `iconName`            | `string`                                | `upload` | ✓        | Icon used in the UncontrolledFileUploader drop zone |
+| `id`                  | `string`                                | —        | ✓        | UncontrolledFileUploader id                         |
+| `inputId`             | `string`                                | —        | ✓        | FileUploaderInput id                                |
+| `inputLabel`          | `string`                                | —        | ✓        | FileUploaderInput label                             |
+| `inputName`           | `string`                                | —        | ✓        | FileUploaderInput name                              |
 | `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                     |
 | `isDisabled`          | `bool`                                  | —        | ✕        | Whether is field disabled                           |
 | `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
@@ -486,7 +486,7 @@ via `inputProps` and `listProps`.
 | `isRequired`          | `bool`                                  | —        | ✕        | Whether is field marked as required                 |
 | `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
 | `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
-| `listId`              | `string`                                | —        | ✔        | FileUploaderList id                                 |
+| `listId`              | `string`                                | —        | ✓        | FileUploaderList id                                 |
 | `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |

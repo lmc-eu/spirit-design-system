@@ -29,7 +29,7 @@ import { Alert } from '@lmc-eu/spirit-web-react/components';
 
 | Name           | Type                                         | Default   | Required | Description                |
 | -------------- | -------------------------------------------- | --------- | -------- | -------------------------- |
-| `children`     | `ReactNode`                                  | —         | ✔        | Content of the Alert       |
+| `children`     | `ReactNode`                                  | —         | ✓        | Content of the Alert       |
 | `color`        | [Emotion Color dictionary][dictionary-color] | `success` | ✕        | Color of the component     |
 | `iconName`     | `string`                                     | `info` \* | ✕        | Icon used in Alert         |
 | `isCentered` . | `bool`                                       | `false`   | ✕        | If true, Alert is centered |

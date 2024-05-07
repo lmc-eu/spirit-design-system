@@ -51,7 +51,7 @@ attributes to register trigger events.
 | --------------- | -------------------------------------------- | -------------- | -------- | ------------------------------------- |
 | `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render                    |
 | `fullWidthMode` | `string`                                     | —              | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                     | —              | ✔        | DropdownPopover ID                    |
+| `id`            | `string`                                     | —              | ✓        | DropdownPopover ID                    |
 | `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -64,8 +64,8 @@ and [escape hatches][readme-escape-hatches].
 | -------------------- | -------- | ---------- | -------- | -------------------------- |
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto) |
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto) |
-| `data-spirit-target` | `string` | —          | ✔        | Target selector            |
-| `data-spirit-toggle` | `string` | `dropdown` | ✔        | Iterable selector          |
+| `data-spirit-target` | `string` | —          | ✓        | Target selector            |
+| `data-spirit-toggle` | `string` | `dropdown` | ✓        | Iterable selector          |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when the component is loaded
 or the width of the window is changed. There can be several triggers, the same rules apply to each.

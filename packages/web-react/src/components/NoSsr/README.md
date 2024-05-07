@@ -16,4 +16,4 @@ Basic example usage:
 
 | Name       | Type        | Default | Required | Description  |
 | ---------- | ----------- | ------- | -------- | ------------ |
-| `children` | `ReactNode` | —       | ✔        | Wrapped node |
+| `children` | `ReactNode` | —       | ✓        | Wrapped node |

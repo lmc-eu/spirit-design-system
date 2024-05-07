@@ -47,7 +47,7 @@ Example:
 | ---------------------- | --------------------------------------------- | -------- | -------- | ----------------------------------------------------- |
 | `alignmentY`           | [AlignmentY dictionary][dictionary-alignment] | `center` | ✕        | Vertical alignment of modal                           |
 | `closeOnBackdropClick` | `bool`                                        | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string`                                      | —        | ✔        | Modal ID                                              |
+| `id`                   | `string`                                      | —        | ✓        | Modal ID                                              |
 | `titleId`              | `string`                                      | `null`   | ✕        | ID of the title inside ModalHeader                    |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -164,7 +164,7 @@ using the `aria-label` attribute on `<Modal>` component:
 | --------------- | -------- | ------- | -------- | ----------------------- |
 | `closeLabel`    | `string` | `Close` | ✕        | Custom close label      |
 | `enableDismiss` | `bool`   | `true`  | ✕        | Enable JS Modal dismiss |
-| `modalId`       | `string` | —       | ✔        | Modal ID                |
+| `modalId`       | `string` | —       | ✓        | Modal ID                |
 | `titleId`       | `string` | `null`  | ✕        | ID of the title         |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

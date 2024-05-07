@@ -124,10 +124,10 @@ You can place any custom content into the mobile actions component:
 | Name              | Type                                           | Default | Required | Description                     |
 | ----------------- | ---------------------------------------------- | ------- | -------- | ------------------------------- |
 | `children`        | `ReactNode`                                    | —       | ✕        | Children node                   |
-| `dialogId`        | `string`                                       | —       | ✔        | ID of the linked HeaderDialog   |
-| `isOpen`          | `bool`                                         | `false` | ✔        | Dialog open state               |
+| `dialogId`        | `string`                                       | —       | ✓        | ID of the linked HeaderDialog   |
+| `isOpen`          | `bool`                                         | `false` | ✓        | Dialog open state               |
 | `menuToggleLabel` | `string`                                       | `Menu`  | ✕        | Label of the menu toggle button |
-| `onOpen`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when opened |
+| `onOpen`          | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✓        | Callback for dialog when opened |
 
 The component implements the [`HTMLElement`][mdn-api-html-element] interface.
 
@@ -292,9 +292,9 @@ const [isOpen, setOpen] = useState(false);
 | Name       | Type                                           | Default | Required | Description                            |
 | ---------- | ---------------------------------------------- | ------- | -------- | -------------------------------------- |
 | `children` | `ReactNode`                                    | —       | ✕        | Children node                          |
-| `id`       | `string`                                       | —       | ✔        | ID to be linked in HeaderMobileActions |
-| `isOpen`   | `bool`                                         | `false` | ✔        | Open state                             |
-| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✔        | Callback for dialog when closed        |
+| `id`       | `string`                                       | —       | ✓        | ID to be linked in HeaderMobileActions |
+| `isOpen`   | `bool`                                         | `false` | ✓        | Open state                             |
+| `onClose`  | `(event: ClickEvent or KeyboardEvent) => void` | —       | ✓        | Callback for dialog when closed        |
 
 The component further inherits properties from the [`<dialog>`][mdn-dialog-element] element.
 

@@ -104,7 +104,7 @@ When validated on server:
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
 | `form`                  | `string`                                       | `null`  | ✕        | Parent form ID                                             |
 | `helperText`            | `string`                                       | `null`  | ✕\*\*    | Custom helper text                                         |
-| `id`                    | `string`                                       | —       | ✔        | Group and label identification                             |
+| `id`                    | `string`                                       | —       | ✓        | Group and label identification                             |
 | `isDisabled`            | `bool`                                         | `false` | ✕        | If true, the group is disabled                             |
 | `isFluid`               | `bool`                                         | `false` | ✕        | If true, the element spans to the full width of its parent |
 | `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                                   |

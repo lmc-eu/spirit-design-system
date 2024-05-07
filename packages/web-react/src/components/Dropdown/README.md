@@ -56,10 +56,10 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 | ----------------- | ------------------------------------------------ | -------------- | -------- | ---------------------------------------------- |
 | `enableAutoClose` | `bool`                                           | `true`         | ✕        | Enables close on click outside of Dropdown     |
 | `fullWidthMode`   | [`DropdownFullwidthMode`][dropdownfullwidthmode] | `off`          | ✕        | Full-width mode                                |
-| `id`              | `string`                                         | —              | ✔        | Component id                                   |
-| `isOpen`          | `bool`                                           | `false`        | ✔        | Open state                                     |
+| `id`              | `string`                                         | —              | ✓        | Component id                                   |
+| `isOpen`          | `bool`                                           | `false`        | ✓        | Open state                                     |
 | `onAutoClose`     | `(event: Event) => void`                         | —              | ✕        | Callback on close on click outside of Dropdown |
-| `onToggle`        | `() => void`                                     | —              | ✔        | Function for toggle open state of dropdown     |
+| `onToggle`        | `() => void`                                     | —              | ✓        | Function for toggle open state of dropdown     |
 | `placement`       | [Placement dictionary][dictionary-placement]     | `bottom-start` | ✕        | Alignment of the component                     |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -70,7 +70,7 @@ and [escape hatches][readme-escape-hatches].
 
 | Name          | Type                      | Default  | Required | Description                      |
 | ------------- | ------------------------- | -------- | -------- | -------------------------------- |
-| `children`    | [`string` \| `ReactNode`] | —        | ✔        | Content of trigger element       |
+| `children`    | [`string` \| `ReactNode`] | —        | ✓        | Content of trigger element       |
 | `elementType` | [`string` \| `ReactNode`] | `button` | ✕        | Element type of dropdown trigger |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -81,7 +81,7 @@ and [escape hatches][readme-escape-hatches].
 
 | Name       | Type                      | Default | Required | Description                |
 | ---------- | ------------------------- | ------- | -------- | -------------------------- |
-| `children` | [`string` \| `ReactNode`] | —       | ✔        | Content of trigger element |
+| `children` | [`string` \| `ReactNode`] | —       | ✓        | Content of trigger element |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

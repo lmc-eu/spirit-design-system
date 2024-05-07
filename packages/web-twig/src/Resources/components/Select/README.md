@@ -48,16 +48,16 @@ Without lexer:
 | Name                    | Type                                           | Default | Required | Description                                                |
 | ----------------------- | ---------------------------------------------- | ------- | -------- | ---------------------------------------------------------- |
 | `helperText`            | `string`                                       | `null`  | ✕        | Custom helper text                                         |
-| `id`                    | `string`                                       | —       | ✔        | Select and label identification                            |
+| `id`                    | `string`                                       | —       | ✓        | Select and label identification                            |
 | `inputProps`            | `string[]`                                     | `[]`    | ✕        | Pass additional attributes to the select element           |
 | `isDisabled`            | `bool`                                         | `false` | ✕        | If true, select is disabled                                |
 | `isFluid`               | `bool`                                         | `false` | ✕        | If true, the element spans to the full width of its parent |
 | `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                                   |
 | `isRequired`            | `bool`                                         | `false` | ✕        | If true, select is required                                |
-| `label`                 | `string`                                       | —       | ✔\*      | Label text                                                 |
+| `label`                 | `string`                                       | —       | ✓\*      | Label text                                                 |
 | `name`                  | `string`                                       | `null`  | ✕        | Select name                                                |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | ✕        | Unescaped custom helper text                               |
-| `UNSAFE_label`          | `string`                                       | —       | ✔\*      | Unescaped label text                                       |
+| `UNSAFE_label`          | `string`                                       | —       | ✓\*      | Unescaped label text                                       |
 | `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕        | Unescaped validation text                                  |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                                  |
 | `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕        | Validation text                                            |
