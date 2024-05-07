@@ -120,7 +120,7 @@ export function generateSimple(
         gradientType = 'radial-gradient';
         gradientDirection = 'circle at center';
       }
-      value = `${gradientType}(var(--angle, ${gradientDirection}), ${token.value.stops
+      value = `${gradientType}(var(--gradient-angle, ${gradientDirection}), ${token.value.stops
         .map((stop) => `${formatColor(stop.color)} ${(Math.round(stop.position * 10) / 10) * 100}%`)
         .join(', ')})`;
     } else if (token.tokenType === 'Border') {
