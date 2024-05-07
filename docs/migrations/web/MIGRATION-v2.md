@@ -7,6 +7,7 @@ Introducing version 2 of the _spirit-web_ package
 ## Overview
 
 - [General Changes](#general-changes)
+  - [CSS Variables Component Prefix](#css-variables-component-prefix)
   - [Placement in Tooltip and Dropdown](#placement-in-tooltip-and-dropdown)
 - [Component Changes](#component-changes)
   - [Alert: Bordered Feature Flag](#alert-bordered-feature-flag)
@@ -18,6 +19,22 @@ Introducing version 2 of the _spirit-web_ package
   - [Tooltip: Data Selector Controlled Placement Feature Flag](#tooltip-data-selector-controlled-placement-feature-flag)
 
 ## General Changes
+
+### CSS Variables Component Prefix
+
+All CSS variables in the components now have a component name prefix.
+
+- In Stack, `--gap` is now `--stack-gap`.
+- In the `.text-truncate-multiline` helper, `--lines` is now `--text-truncate-lines`.
+- The gradient `--angle` is now `--gradient-angle`.
+
+#### Migration Guide
+
+Update the CSS variables in your project to use the new component name prefix.
+
+- `--gap` → `--stack-gap`
+- `--lines` → `--text-truncate-lines`
+- `--angle` → `--gradient-angle`
 
 ### Placement in Tooltip and Dropdown
 
