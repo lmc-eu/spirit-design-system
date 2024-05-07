@@ -202,7 +202,7 @@
             // @deprecated CSS modifier classes are deprecated and will be removed in the next major version
             // Migration: delete this selector
             .#{$class-name}--#{$placement-modifier} > .#{$class-name}__arrow {
-                @include placement.arrow-variant($prefix, placement.inverse($placement, $main-axis-only: true));
+                @include placement.arrow-variant($prefix, placement.transform($placement, $main-axis-inverse: true));
             }
         }
     }
