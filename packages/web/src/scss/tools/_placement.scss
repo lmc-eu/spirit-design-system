@@ -19,6 +19,8 @@
 @use 'sass:string';
 @use 'list' as spirit-list;
 
+$_hyphen: '-';
+
 $_arrow-rotate-map: (
     top: 0deg,
     top-start: 0deg,
@@ -50,11 +52,27 @@ $_inset-map: (
     right-end: auto auto 0 100%,
 );
 
-$_placement-inverse-map: (
+$_physical-placement-inverse-map: (
     top: bottom,
     bottom: top,
     left: right,
     right: left,
+);
+
+$_logical-placement-inverse-map: (
+    start: end,
+    end: start,
+);
+
+$_logical-to-physical-placement-map: (
+    horizontal: (
+        start: left,
+        end: right,
+    ),
+    vertical: (
+        start: top,
+        end: bottom,
+    ),
 );
 
 @function -get-arrow-translate-map($prefix) {
@@ -102,31 +120,82 @@ $_placement-inverse-map: (
     );
 }
 
-// Function to return an inverse placement name
-// Example: inverse('top') will return 'bottom'
-// Example: inverse('top-start') will return 'bottom'
-// Example: inverse('top-start', true) will return 'bottom-start'
-// Example: inverse('top-start', true, false) will return 'bottom start'
-@function inverse($placement, $main-axis-only: false, $hyphenate: true) {
-    $hyphen: '-';
-    $placement-chunks: string.split($placement, $hyphen);
-    $placement-inverse-chunks: ();
-    $join-with: if($hyphenate, $hyphen, ' ');
+// Function to get the cross-axis direction
+// Example: get-cross-axis-direction('left') will return 'vertical'
+// Example: get-cross-axis-direction('bottom') will return 'horizontal'
+@function get-cross-axis-direction($main-axis) {
+    @return if(string.index($main-axis, 'left') or string.index($main-axis, 'right'), 'vertical', 'horizontal');
+}
 
-    @for $i from 1 through list.length($placement-chunks) {
-        $chunk: list.nth($placement-chunks, $i);
-        $new-chunk: null;
+// Function to check if a placement is logical
+// Example: is-logical('top') will return false
+// Example: is-logical('start') will return true
+@function is-logical($placement) {
+    @return if(string.index($placement, 'start') or string.index($placement, 'end'), true, false);
+}
 
-        @if $main-axis-only and $i > 1 {
-            $new-chunk: $chunk;
-        } @else {
-            $new-chunk: map.get($_placement-inverse-map, $chunk);
+// Function to translate logical placement to its physical equivalent
+// Example: translate-logical-to-physical('start', $direction: 'horizontal') will return 'left'
+@function translate-logical-to-physical($logical, $direction) {
+    @return map.get($_logical-to-physical-placement-map, $direction, $logical);
+}
+
+// Function to transform axis
+// Example: transform-axis('left') will return 'left' (no transformation)
+// Example: transform-axis('left', $inverse: true) will return 'right'
+// Example: transform-axis('start', $inverse: false, $physical-direction: 'horizontal') will return 'left'
+// Example: transform-axis('start', $inverse: true, $physical-direction: 'horizontal') will return 'right'
+@function transform-axis($axis, $inverse: false, $physical-direction: null) {
+    $axis-transformed: $axis;
+
+    @if is-logical($axis-transformed) {
+        @if $inverse {
+            $axis-transformed: map.get($_logical-placement-inverse-map, $axis);
         }
 
-        $placement-inverse-chunks: list.append($placement-inverse-chunks, $new-chunk);
+        @if $physical-direction {
+            $axis-transformed: translate-logical-to-physical($axis-transformed, $physical-direction);
+        }
+    } @else if $inverse {
+        $axis-transformed: map.get($_physical-placement-inverse-map, $axis);
     }
 
-    @return spirit-list.to-string($placement-inverse-chunks, $join-with);
+    @return $axis-transformed;
+}
+
+// Function to transform placement
+// Example: transform('top-start') will return 'top-start' (no transformation)
+// Example: transform('top-start', $main-axis-inverse: true) will return 'bottom-start'
+// Example: transform('top-start', $main-axis-inverse: true, $cross-axis-inverse: true) will return 'bottom-end'
+// Example: transform('top-start', $main-axis-inverse: true, $cross-axis-inverse: true, $cross-axis-physical: true) will return 'bottom-right'
+// Example: transform('top-start', $join-with: ' ') will return 'top start'
+@function transform(
+    $placement,
+    $main-axis-inverse: false,
+    $cross-axis-inverse: false,
+    $cross-axis-physical: false,
+    $join-with: $_hyphen
+) {
+    $placement-chunks: string.split($placement, $_hyphen);
+    $main-axis: list.nth($placement-chunks, 1);
+    $main-axis-transformed: transform-axis(
+        $axis: $main-axis,
+        $inverse: $main-axis-inverse,
+    );
+
+    @if list.length($placement-chunks) > 1 {
+        $cross-axis: list.nth($placement-chunks, 2);
+        $cross-axis-direction: get-cross-axis-direction($main-axis);
+        $cross-axis-transformed: transform-axis(
+            $axis: $cross-axis,
+            $inverse: $cross-axis-inverse,
+            $physical-direction: if($cross-axis-physical, $cross-axis-direction, null),
+        );
+
+        @return spirit-list.to-string(($main-axis-transformed, $cross-axis-transformed), $join-with);
+    }
+
+    @return $main-axis-transformed;
 }
 
 @mixin parent() {
@@ -143,7 +212,9 @@ $_placement-inverse-map: (
 
     inset: map.get($_inset-map, $placement); // 1.2
     translate: map.get(-get-child-translate-map($prefix), $placement); // 1.3
-    transform-origin: string.unquote(inverse($placement, $hyphenate: false));
+    transform-origin: string.unquote(
+        transform($placement, $main-axis-inverse: true, $cross-axis-physical: true, $join-with: ' ')
+    );
 }
 
 @mixin child-controlled($prefix, $offset) {
