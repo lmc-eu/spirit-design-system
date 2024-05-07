@@ -7,10 +7,10 @@ Basic example usage:
 ```html
 <TabList>
   <TabItem>
-    <TabLink isSelected id="pane1-tab" target="pane1" data-spirit-toggle="tabs">Item selected</TabLink>
+    <TabLink isSelected id="pane1-tab" targetPaneId="pane1" data-spirit-toggle="tabs">Item selected</TabLink>
   </TabItem>
   <TabItem>
-    <TabLink id="pane2-tab" target="pane2" data-spirit-toggle="tabs">Item</TabLink>
+    <TabLink id="pane2-tab" targetPaneId="pane2" data-spirit-toggle="tabs">Item</TabLink>
   </TabItem>
   <TabItem>
     <TabLink href="https://www.example.com">Item link</TabLink>
@@ -30,7 +30,7 @@ Without lexer:
                 {% embed "@spirit/tabLink.twig" with { props: {
                   id: 'pane1-tab',
                   isSelected: true,
-                  target: 'pane1',
+                  targetPaneId: 'pane1',
                 } } %}
                     {% block content %}
                         Item selected
@@ -56,11 +56,11 @@ There is no API for TabItem.
 
 ### TabLink
 
-| Name         | Type     | Default | Required | Description                  |
-| ------------ | -------- | ------- | -------- | ---------------------------- |
-| `href`       | `string` | `null`  | ✕        | URL target of a link         |
-| `isSelected` | `bool`   | `false` | ✕        | Whether is tab item selected |
-| `target`     | `string` | `null`  | ✕        | Target tab pane ID           |
+| Name           | Type     | Default | Required | Description                  |
+| -------------- | -------- | ------- | -------- | ---------------------------- |
+| `href`         | `string` | `null`  | ✕        | URL target of a link         |
+| `isSelected`   | `bool`   | `false` | ✕        | Whether is tab item selected |
+| `targetPaneId` | `string` | `null`  | ✕        | Target tab pane ID           |
 
 ### TabPane
 

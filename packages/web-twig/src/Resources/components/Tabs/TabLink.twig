@@ -3,15 +3,15 @@
 {%- set _ariaTarget = props.ariaTarget | default(null) -%}
 {%- set _href = props.href | default(null) -%}
 {%- set _isSelected = props.isSelected | default(false) -%}
-{%- set _target = props.target | default(null) -%}
+{%- set _targetPaneId = props.targetPaneId | default(null) -%}
 
 {# Class names #}
 {%- set _isSelectedClassName = _isSelected ? 'is-selected' : null -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs__link' -%}
 
 {# Attributes #}
-{%- set _ariaControlsAttr = _target ? 'aria-controls="' ~ _target | escape('html_attr') ~ '"' : null -%}
-{%- set _dataTargetAttr = _target ? 'data-spirit-target="#' ~ _target | escape('html_attr') ~ '"' : null -%}
+{%- set _ariaControlsAttr = _targetPaneId ? 'aria-controls="' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
+{%- set _dataTargetAttr = _targetPaneId ? 'data-spirit-target="#' ~ _targetPaneId | escape('html_attr') ~ '"' : null -%}
 {%- set _roleAttr = _href ? 'role="tab"' : null -%}
 {%- set _typeAttr = _href ? null : 'type="button"' -%}
 
