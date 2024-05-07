@@ -41,7 +41,7 @@ Example with Auto-Height Adjustment
 | `autoComplete`          | `string`                                       | -       | ✕        | [Automated assistance in filling][autocomplete-attr]                 |
 | `autoResizingMaxHeight` | `number`                                       | `400`   | ✕        | Maximum field height with automatic height control                   |
 | `helperText`            | `string`                                       | —       | ✕        | Custom helper text                                                   |
-| `id`                    | `string`                                       | —       | ✔        | Textarea and label identification                                    |
+| `id`                    | `string`                                       | —       | ✓        | Textarea and label identification                                    |
 | `isAutoResizing`        | `bool`                                         | —       | ✕        | Whether is field auto resizing which adjusts its height while typing |
 | `isDisabled`            | `bool`                                         | —       | ✕        | Whether is field disabled                                            |
 | `isLabelHidden`         | `bool`                                         | —       | ✕        | Whether is label hidden                                              |

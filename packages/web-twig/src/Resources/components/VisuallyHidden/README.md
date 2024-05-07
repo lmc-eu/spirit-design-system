@@ -30,7 +30,7 @@ Without lexer:
 
 | Name               | Type            | Default | Required | Description                          |
 | ------------------ | --------------- | ------- | -------- | ------------------------------------ |
-| `children`         | `string`        | —       | ✔        | Hidden Label                         |
+| `children`         | `string`        | —       | ✓        | Hidden Label                         |
 | `elementType`      | `string`        | `span`  | ✕        | Type of element used as main wrapper |
 | `UNSAFE_className` | `string`        | —       | ✕        | Wrapper custom class name            |
 | `UNSAFE_style`     | `CSSProperties` | —       | ✕        | Wrapper custom style                 |

@@ -22,7 +22,7 @@ Advanced example:
 
 | Name          | Type     | Default | Required | Description                          |
 | ------------- | -------- | ------- | -------- | ------------------------------------ |
-| `children`    | `string` | —       | ✔        | Hidden Label                         |
+| `children`    | `string` | —       | ✓        | Hidden Label                         |
 | `elementType` | `string` | `span`  | ✕        | Type of element used as main wrapper |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

@@ -43,7 +43,7 @@ import icons from '@lmc-eu/spirit-icons/icons';
 | Name      | Type     | Default | Required | Description       |
 | --------- | -------- | ------- | -------- | ----------------- |
 | `boxSize` | `number` | 24      | ✕        | Size of the icon  |
-| `name`    | `string` | —       | ✔        | Name of the icon  |
+| `name`    | `string` | —       | ✓        | Name of the icon  |
 | `title`   | `string` | —       | ✕        | Title of the icon |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

@@ -53,7 +53,7 @@ so you might want to hide it using either wrapping element with `hidden` attribu
 | `boxSize`    | `number` | `24`    | ✕        | Size of the icon                                                                                                        |
 | `isReusable` | `bool`   | `true`  | ✕        | Enables reusability of SVG icons                                                                                        |
 | `isSymbol`   | `bool`   | `false` | ✕        | If true, the element will be rendered as SVG symbol with the name assigned to the ID attribute, other props are skipped |
-| `name`       | `string` | —       | ✔        | Name of the icon, case sensitive                                                                                        |
+| `name`       | `string` | —       | ✓        | Name of the icon, case sensitive                                                                                        |
 | `title`      | `string` | `null`  | ✕        | Optional title to display on hover                                                                                      |
 
 Get the list of `name` options in the [Icon package][icon-package] or your source of icons.

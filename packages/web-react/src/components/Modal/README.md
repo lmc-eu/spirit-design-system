@@ -65,9 +65,9 @@ Example:
 | `alignmentY`           | [AlignmentY dictionary][dictionary-alignment]  | `center` | ✕        | Vertical alignment of modal                           |
 | `children`             | `ReactNode`                                    | —        | ✕        | Children node                                         |
 | `closeOnBackdropClick` | `bool`                                         | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string`                                       | —        | ✔        | Modal ID                                              |
-| `isOpen`               | `bool`                                         | `false`  | ✔        | Open state                                            |
-| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✔        | Callback on dialog closed                             |
+| `id`                   | `string`                                       | —        | ✓        | Modal ID                                              |
+| `isOpen`               | `bool`                                         | `false`  | ✓        | Open state                                            |
+| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✓        | Callback on dialog closed                             |
 
 Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
 

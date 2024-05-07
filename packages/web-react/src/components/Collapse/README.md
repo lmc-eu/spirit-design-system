@@ -80,7 +80,7 @@ const [isOpen, toggle] = useState<boolean>(true);
 | ------------------------- | ----------------------------------- | ------- | -------- | ------------------------------------------- |
 | `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`] | —       | ✕        | Handle for responsive breakpoint            |
 | `elementType`             | [`span` \| `div`]                   | `div`   | ✕        | Type of element used as wrapper and content |
-| `id`                      | `string`                            | —       | ✔        | Component id                                |
+| `id`                      | `string`                            | —       | ✓        | Component id                                |
 | `isOpen`                  | `bool`                              | —       | ✕        | Is open on initialization                   |
 | `transitionDuration`      | `number`                            | `250`   | ✕        | Transition duration in miliseconds          |
 
@@ -131,7 +131,7 @@ import { Button, UncontrolledCollapse } from '@lmc-eu/spirit-web-react/component
 | ------------------------- | -------------------------------------------- | ------- | -------- | ------------------------------------------- |
 | `collapsibleToBreakpoint` | [`mobile` \| `tablet` \| `desktop`]          | —       | ✕        | Handle for responsive breakpoint            |
 | `elementType`             | [`span` \| `div`]                            | `div`   | ✕        | Type of element used as wrapper and content |
-| `id`                      | `string`                                     | —       | ✔        | Component id                                |
+| `id`                      | `string`                                     | —       | ✓        | Component id                                |
 | `isOpen`                  | `bool`                                       | —       | ✕        | Is open on initialization                   |
 | `hideOnCollapse`          | `bool`                                       | —       | ✕        | Hides button when content is displayed      |
 | `renderTrigger`           | `(render: CollapseRenderProps) => ReactNode` | —       | ✕        | Properties for trigger render               |

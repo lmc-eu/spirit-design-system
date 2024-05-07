@@ -157,7 +157,7 @@ You can place any custom content into the mobile actions component:
 
 | Name              | Type     | Default | Required | Description                     |
 | ----------------- | -------- | ------- | -------- | ------------------------------- |
-| `dialogId`        | `string` | —       | ✔        | ID of the linked HeaderDialog   |
+| `dialogId`        | `string` | —       | ✓        | ID of the linked HeaderDialog   |
 | `menuToggleLabel` | `string` | `Menu`  | ✕        | Label of the menu toggle button |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -259,7 +259,7 @@ There is no API for HeaderNavItem.
 
 | Name        | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
-| `href`      | `string` | —       | ✔        | Link URL                      |
+| `href`      | `string` | —       | ✓        | Link URL                      |
 | `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |
 | `target`    | `string` | `null`  | ✕        | Browsing context for the link |
 
@@ -287,7 +287,7 @@ used for second-level navigation in general.
 
 | Name | Type     | Default | Required | Description                            |
 | ---- | -------- | ------- | -------- | -------------------------------------- |
-| `id` | `string` | —       | ✔        | ID to be linked in HeaderMobileActions |
+| `id` | `string` | —       | ✓        | ID to be linked in HeaderMobileActions |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -305,7 +305,7 @@ Close button closes the Header Dialog using our Off-canvas JavaScript plugin.
 
 | Name            | Type     | Default | Required | Description                     |
 | --------------- | -------- | ------- | -------- | ------------------------------- |
-| `dialogId`      | `string` | —       | ✔        | ID of the parent HeaderDialog   |
+| `dialogId`      | `string` | —       | ✓        | ID of the parent HeaderDialog   |
 | `enableDismiss` | `bool`   | `true`  | ✕        | Enable Off-canvas JS dismiss    |
 | `label`         | `string` | `Close` | ✕        | Label of the menu toggle button |
 
@@ -397,7 +397,7 @@ There is no API for HeaderDialogNavItem.
 
 | Name        | Type     | Default | Required | Description                   |
 | ----------- | -------- | ------- | -------- | ----------------------------- |
-| `href`      | `string` | —       | ✔        | Link URL                      |
+| `href`      | `string` | —       | ✓        | Link URL                      |
 | `isCurrent` | `bool`   | `false` | ✕        | Mark link as current          |
 | `target`    | `string` | `null`  | ✕        | Browsing context for the link |
 

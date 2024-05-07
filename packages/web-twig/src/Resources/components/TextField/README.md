@@ -63,19 +63,19 @@ Without lexer:
 | `autocomplete`          | `string`                                                                    | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle`     | `bool`                                                                      | `false` | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`            | `string`                                                                    | `null`  | ✕        | Custom helper text                                                      |
-| `id`                    | `string`                                                                    | —       | ✔        | Input and label identification                                          |
+| `id`                    | `string`                                                                    | —       | ✓        | Input and label identification                                          |
 | `inputProps`            | `string[]`                                                                  | `[]`    | ✕        | Pass additional attributes to the input element                         |
 | `inputWidth`            | `number`                                                                    | `null`  | ✕        | Input width                                                             |
 | `isDisabled`            | `bool`                                                                      | `false` | ✕        | If true, input is disabled                                              |
 | `isFluid`               | `bool`                                                                      | `false` | ✕        | If true, the element spans to the full width of its parent              |
 | `isLabelHidden`         | `bool`                                                                      | `false` | ✕        | If true, label is hidden                                                |
 | `isRequired`            | `bool`                                                                      | `false` | ✕        | If true, input is required                                              |
-| `label`                 | `string`                                                                    | —       | ✔\*      | Label text                                                              |
+| `label`                 | `string`                                                                    | —       | ✓\*      | Label text                                                              |
 | `name`                  | `string`                                                                    | `null`  | ✕        | Input name                                                              |
 | `placeholder`           | `string`                                                                    | `null`  | ✕        | Input placeholder                                                       |
 | `type`                  | [`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | `text`  | ✕        | Input type                                                              |
 | `UNSAFE_helperText`     | `string`                                                                    | `null`  | ✕        | Unescaped custom helper text                                            |
-| `UNSAFE_label`          | `string`                                                                    | —       | ✔\*      | Unescaped label text                                                    |
+| `UNSAFE_label`          | `string`                                                                    | —       | ✓\*      | Unescaped label text                                                    |
 | `UNSAFE_validationText` | [`string` \| `string[]`]                                                    | `null`  | ✕        | Unescaped validation text                                               |
 | `validationState`       | [Validation dictionary][dictionary-validation]                              | `null`  | ✕        | Type of validation state.                                               |
 | `validationText`        | [`string` \| `string[]`]                                                    | `null`  | ✕        | Validation text                                                         |

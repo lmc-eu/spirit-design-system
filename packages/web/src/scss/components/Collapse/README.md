@@ -47,8 +47,8 @@ Hide button when collapse
 
 | Name                 | Type     | Default    | Required | Description                         |
 | -------------------- | -------- | ---------- | -------- | ----------------------------------- |
-| `data-spirit-toggle` | `string` | `collapse` | ✔        | Iterable selector                   |
-| `data-spirit-target` | `string` | —          | ✔        | Target selector                     |
+| `data-spirit-toggle` | `string` | `collapse` | ✓        | Iterable selector                   |
+| `data-spirit-target` | `string` | —          | ✓        | Target selector                     |
 | `data-spirit-more`   | `bool`   | —          | ✕        | For hide on collapse as more button |
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |

@@ -47,14 +47,14 @@ TextField with password toggle (button to reveal the password):
 | Name                | Type                                                                        | Default | Required | Description                                                             |
 | ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autoComplete`      | `bool`                                                                      | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
-| `hasPasswordToggle` | `bool`                                                                      | —       | ✔        | If true, the `type` is set to `password` and a password toggle is shown |
+| `hasPasswordToggle` | `bool`                                                                      | —       | ✓        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
-| `id`                | `string`                                                                    | —       | ✔        | Input and label identification                                          |
+| `id`                | `string`                                                                    | —       | ✓        | Input and label identification                                          |
 | `inputWidth`        | `number`                                                                    | —       | ✕        | Input width                                                             |
 | `isDisabled`        | `bool`                                                                      | —       | ✕        | Whether is field disabled                                               |
 | `isLabelHidden`     | `bool`                                                                      | —       | ✕        | Whether is label hidden                                                 |
 | `isRequired`        | `bool`                                                                      | —       | ✕        | Whether is field required                                               |
-| `label`             | `string`                                                                    | —       | ✔        | Label text                                                              |
+| `label`             | `string`                                                                    | —       | ✓        | Label text                                                              |
 | `name`              | `string`                                                                    | —       | ✕        | Input name                                                              |
 | `pattern`           | `string`                                                                    | —       | ✕        | Defines regular expressions for allowed value types                     |
 | `placeholder`       | `string`                                                                    | —       | ✕        | Input placeholder                                                       |

@@ -57,7 +57,7 @@ attributes to register trigger events.
 | ------------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
 | `breakpoint`  | `string` | `null`  | ✕        | Breakpoint level [mobile,tablet,desktop]                               |
 | `elementType` | `string` | `div`   | ✕        | Custom element type for wrapper and content                            |
-| `id`          | `string` | —       | ✔        | Collapse ID                                                            |
+| `id`          | `string` | —       | ✓        | Collapse ID                                                            |
 | `isOpen`      | `bool`   | `false` | ✕        | If true, make the item open on page load                               |
 | `parent`      | `string` | `null`  | ✕        | A parent element selector that ensures that only one item is opened \* |
 
@@ -74,8 +74,8 @@ and [escape hatches][readme-escape-hatches].
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |
 | `data-spirit-more`   | `bool`   | —          | ✕        | For hide on collapse as more button |
-| `data-spirit-target` | `string` | —          | ✔        | Target selector                     |
-| `data-spirit-toggle` | `string` | `collapse` | ✔        | Iterable selector                   |
+| `data-spirit-target` | `string` | —          | ✓        | Target selector                     |
+| `data-spirit-toggle` | `string` | `collapse` | ✓        | Iterable selector                   |
 
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when component is loaded
 or width of window is changed. There can be several triggers, the same rules apply to each.

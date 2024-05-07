@@ -24,7 +24,7 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 | `children`    | `ReactNode`                                                                               | `null`    | ✕        | Content of the ButtonLink                                                      |
 | `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
 | `elementType` | `ElementType`                                                                             | `a`       | ✕        | Type of element                                                                |
-| `href`        | `string`                                                                                  | —         | ✔        | Link URL                                                                       |
+| `href`        | `string`                                                                                  | —         | ✓        | Link URL                                                                       |
 | `isBlock`     | `bool`                                                                                    | `false`   | ✕        | Span the element to the full width of its parent                               |
 | `isDisabled`  | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is disabled                                                |
 | `isLoading`   | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |

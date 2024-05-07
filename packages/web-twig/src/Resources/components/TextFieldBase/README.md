@@ -63,7 +63,7 @@ Without lexer:
 | `autocomplete`          | `string`                                                                    | `null`  | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle`     | `bool`                                                                      | `false` | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`            | `string`                                                                    | `null`  | ✕        | Custom helper text                                                      |
-| `id`                    | `string`                                                                    | —       | ✔        | Input and label identification                                          |
+| `id`                    | `string`                                                                    | —       | ✓        | Input and label identification                                          |
 | `inputProps`            | `string[]`                                                                  | `[]`    | ✕        | Pass additional attributes to the input/textarea element                |
 | `isAutoResizing`        | `bool`                                                                      | `false` | ✕        | If true, TextArea adjusts its height as user types                      |
 | `isDisabled`            | `bool`                                                                      | `false` | ✕        | If true, input is disabled                                              |
@@ -71,13 +71,13 @@ Without lexer:
 | `isLabelHidden`         | `bool`                                                                      | `false` | ✕        | If true, label is hidden                                                |
 | `isMultiline`           | `bool`                                                                      | `false` | ✕        | If true, rendered DOM element is `textarea`                             |
 | `isRequired`            | `bool`                                                                      | `false` | ✕        | If true, input is required                                              |
-| `label`                 | `string`                                                                    | —       | ✔\*      | Label text                                                              |
+| `label`                 | `string`                                                                    | —       | ✓\*      | Label text                                                              |
 | `name`                  | `string`                                                                    | `null`  | ✕        | Input name                                                              |
 | `pattern`               | `string`                                                                    | `null`  | ✕        | Defines regular expressions for allowed value types                     |
 | `placeholder`           | `string`                                                                    | `null`  | ✕        | Input placeholder                                                       |
 | `type`                  | [`email` \| `number` \| `password` \| `search` \| `tel` \| `text` \| `url`] | `text`  | ✕        | Input type                                                              |
 | `UNSAFE_helperText`     | `string`                                                                    | `null`  | ✕        | Unescaped custom helper text                                            |
-| `UNSAFE_label`          | `string`                                                                    | —       | ✔\*      | Unescaped label text                                                    |
+| `UNSAFE_label`          | `string`                                                                    | —       | ✓\*      | Unescaped label text                                                    |
 | `UNSAFE_validationText` | [`string` \| `string[]`]                                                    | `null`  | ✕        | Unescaped validation text                                               |
 | `validationState`       | [Validation dictionary][dictionary-validation]                              | `null`  | ✕        | Type of validation state.                                               |
 | `validationText`        | [`string` \| `string[]`]                                                    | `null`  | ✕        | Validation text                                                         |

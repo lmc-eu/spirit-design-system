@@ -80,7 +80,7 @@ Usage in [Dropdown][dropdown] component:
 | `iconName`          | `string`        | —        | ✕        | Icon used in item                     |
 | `isDisabled`        | `bool`          | `false`  | ✕        | Whether is the item disabled          |
 | `isSelected`        | `bool`          | `false`  | ✕        | Whether is the item selected          |
-| `label`             | `string`        | -        | ✔\*      | Label of the item                     |
+| `label`             | `string`        | -        | ✓\*      | Label of the item                     |
 | `target`            | `string`        | —        | ✕        | Target prop if element type is anchor |
 | `type`              | `string`        | `button` | ✕        | Input type if element type is button  |
 | `UNSAFE_className`  | `string`        | —        | ✕        | Wrapper custom class name             |

@@ -68,8 +68,8 @@ const selectTab = useCallback((id) => {
 
 | Name                | Type                   | Default | Required | Description                                  |
 | ------------------- | ---------------------- | ------- | -------- | -------------------------------------------- |
-| `selectedTab`       | [`string` \| `number`] | —       | ✔        | Identification of the selected tab           |
-| `toogle`            | `Function`             | —       | ✔        | Toggle function which accept tab ID as input |
+| `selectedTab`       | [`string` \| `number`] | —       | ✓        | Identification of the selected tab           |
+| `toogle`            | `Function`             | —       | ✓        | Toggle function which accept tab ID as input |
 | `children`          | `any`                  | —       | ✕        | Child component                              |
 | `onSelectionChange` | `(id: TabId) => void`  | —       | ✕        | When the state of the selected panel changes |
 
@@ -83,7 +83,7 @@ and [escape hatches][readme-escape-hatches].
 
 | Name                 | Type                   | Default | Required | Description                                  |
 | -------------------- | ---------------------- | ------- | -------- | -------------------------------------------- |
-| `defaultSelectedTab` | [`string` \| `number`] | —       | ✔        | Identification of default selected tab       |
+| `defaultSelectedTab` | [`string` \| `number`] | —       | ✓        | Identification of default selected tab       |
 | `children`           | `any`                  | —       | ✕        | Child component                              |
 | `onSelectionChange`  | `(id: TabId) => void`  | —       | ✕        | When the state of the selected panel changes |
 
@@ -113,7 +113,7 @@ Tab list item
 
 | Name         | Type                   | Default | Required | Description           |
 | ------------ | ---------------------- | ------- | -------- | --------------------- |
-| `forTabPane` | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `forTabPane` | [`string` \| `number`] | —       | ✓        | Identification of tab |
 | `children`   | `any`                  | —       | ✕        | Child component       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -158,7 +158,7 @@ Tab content item
 
 | Name       | Type                   | Default | Required | Description           |
 | ---------- | ---------------------- | ------- | -------- | --------------------- |
-| `id`       | [`string` \| `number`] | —       | ✔        | Identification of tab |
+| `id`       | [`string` \| `number`] | —       | ✓        | Identification of tab |
 | `children` | `any`                  | —       | ✕        | Child component       |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
