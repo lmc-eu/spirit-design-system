@@ -80,13 +80,16 @@ const ModalScrollingLongContent = () => {
   };
 
   const generateHeightObject = (isMax = false) => {
-    return (['mobile', 'tablet', 'desktop'] as BreakpointToken[]).reduce((acc, breakpoint) => {
-      acc[breakpoint] = isCustomHeightEnabled[breakpoint]
-        ? `${heightValue[isMax ? 'maxHeight' : 'height'][breakpoint]}px`
-        : null;
+    return (['mobile', 'tablet', 'desktop'] as BreakpointToken[]).reduce(
+      (acc, breakpoint) => {
+        acc[breakpoint] = isCustomHeightEnabled[breakpoint]
+          ? `${heightValue[isMax ? 'maxHeight' : 'height'][breakpoint]}px`
+          : null;
 
-      return acc;
-    }, {} as Record<BreakpointToken, string | null>);
+        return acc;
+      },
+      {} as Record<BreakpointToken, string | null>,
+    );
   };
 
   return (
