@@ -9,7 +9,9 @@ const Story: ComponentStory<typeof UncontrolledCollapse> = () => {
   return (
     <div>
       {content}
-      <UncontrolledCollapse renderTrigger={CollapseTrigger}>{content}</UncontrolledCollapse>
+      <UncontrolledCollapse id="uncontrolledCollapseId" renderTrigger={CollapseTrigger}>
+        {content}
+      </UncontrolledCollapse>
     </div>
   );
 };
