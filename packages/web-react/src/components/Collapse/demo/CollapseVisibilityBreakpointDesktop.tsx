@@ -11,7 +11,7 @@ const CollapseVisibilityBreakpointDesktop = () => {
       <ButtonLink isOpen={isOpenDesktop} onClick={toggleHandlerDesktop} size="medium" UNSAFE_className="d-desktop-none">
         Collapse trigger
       </ButtonLink>
-      <Collapse isOpen={isOpenDesktop} collapsibleToBreakpoint="desktop">
+      <Collapse id="collapseVisibilityBreakpointDesktopId" isOpen={isOpenDesktop} collapsibleToBreakpoint="desktop">
         Elementum luctus ultrices, ultrices quam metus a lorem sollicitudin lorem fringilla curabitur felis a, sed urna
         consectetur maximus. Imperdiet donec, elit condimentum dolor ut accumsan congue nulla ut id ante vel arcu, lorem
         fringilla interdum pulvinar nullam. Curabitur interdum, semper donec dui et tempus fusce vitae ornare risus
