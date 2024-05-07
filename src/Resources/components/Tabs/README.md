@@ -66,7 +66,7 @@ There is no API for TabItem.
 
 | Name         | Type      | Default | Required | Description                    |
 | ------------ | --------- | ------- | -------- | ------------------------------ |
-| `id`         | `string ` | `null`  | ✔        | Tab pane target identification |
+| `id`         | `string ` | `null`  | ✓        | Tab pane target identification |
 | `isSelected` | `bool`    | `false` | ✕        | Whether is tab pane selected   |
 | `label`      | `string`  | `null`  | ✕        | Aria label of the tab pane     |
 

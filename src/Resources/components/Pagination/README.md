@@ -96,10 +96,10 @@ and [escape hatches][readme-escape-hatches].
 
 | Name                 | Type     | Default | Required | Description                            |
 | -------------------- | -------- | ------- | -------- | -------------------------------------- |
-| `accessibilityLabel` | `string` | `null`  | ✔        | Accessibility label of the link        |
+| `accessibilityLabel` | `string` | `null`  | ✓        | Accessibility label of the link        |
 | `href`               | `string` | `null`  | ✕        | URL target of a link                   |
 | `isCurrent`          | `bool`   | `false` | ✕        | Mark link as current                   |
-| `pageNumber`         | `string` | `null`  | ✔        | Page number, hidden for screen readers |
+| `pageNumber`         | `string` | `null`  | ✓        | Page number, hidden for screen readers |
 | `target`             | `string` | `null`  | ✕        | Browsing context for the link          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

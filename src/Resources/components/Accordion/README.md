@@ -193,15 +193,15 @@ The Accordion itself consists of several components which cannot be used indepen
 | Name          | Type     | Default   | Required | Description         |
 | ------------- | -------- | --------- | -------- | ------------------- |
 | `elementType` | `string` | `article` | ✕        | Custom element type |
-| `id`          | `string` | `null`    | ✔        | AccordionItem ID    |
+| `id`          | `string` | `null`    | ✓        | AccordionItem ID    |
 
 ### AccordionHeader
 
 | Name          | Type     | Default | Required | Description              |
 | ------------- | -------- | ------- | -------- | ------------------------ |
 | `elementType` | `string` | `h3`    | ✕        | Custom element type      |
-| `for`         | `string` | `null`  | ✔        | AccordionContent ID      |
-| `id`          | `string` | `null`  | ✔        | AccordionHeader ID       |
+| `for`         | `string` | `null`  | ✓        | AccordionContent ID      |
+| `id`          | `string` | `null`  | ✓        | AccordionHeader ID       |
 | `isOpen`      | `string` | `false` | ✕        | Whether the item is open |
 | `UNSAFE_slot` | `HTML`   | —       | ✕        | Side slot in the header  |
 
@@ -209,9 +209,9 @@ The Accordion itself consists of several components which cannot be used indepen
 
 | Name           | Type     | Default | Required | Description                                                                 |
 | -------------- | -------- | ------- | -------- | --------------------------------------------------------------------------- |
-| `id`           | `string` | `null`  | ✔        | AccordionContent ID                                                         |
+| `id`           | `string` | `null`  | ✓        | AccordionContent ID                                                         |
 | `isOpen`       | `bool`   | `false` | ✕        | If true, make the item open on page load                                    |
-| `labelledById` | `string` | `null`  | ✔        | AccordionHeader ID                                                          |
+| `labelledById` | `string` | `null`  | ✓        | AccordionHeader ID                                                          |
 | `parent`       | `string` | `null`  | ✕        | A parent element selector that ensures that only one item is open at a time |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].

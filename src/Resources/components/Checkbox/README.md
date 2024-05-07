@@ -49,10 +49,10 @@ Without lexer:
 | `isItem`                | `bool`                                         | `false` | ✕        | To render in [Item][item] mode                       |
 | `isLabelHidden`         | `bool`                                         | `false` | ✕        | If true, label is hidden                             |
 | `isRequired`            | `bool`                                         | `false` | ✕        | If true, input is required                           |
-| `label`                 | `string`                                       | —       | ✔\*      | Label text                                           |
+| `label`                 | `string`                                       | —       | ✓\*      | Label text                                           |
 | `name`                  | `string`                                       | `null`  | ✕        | Input name                                           |
 | `UNSAFE_helperText`     | `string`                                       | `null`  | ✕\*\*    | Unescaped custom helper text                         |
-| `UNSAFE_label`          | `string`                                       | —       | ✔\*      | Unescaped label text (allows HTML)                   |
+| `UNSAFE_label`          | `string`                                       | —       | ✓\*      | Unescaped label text (allows HTML)                   |
 | `UNSAFE_validationText` | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Unescaped validation text                            |
 | `validationState`       | [Validation dictionary][dictionary-validation] | `null`  | ✕        | Type of validation state.                            |
 | `validationText`        | [`string` \| `string[]`]                       | `null`  | ✕\*\*    | Validation text                                      |

@@ -38,7 +38,7 @@ Without lexer:
 | Name           | Type                                             | Default   | Required | Description                        |
 | -------------- | ------------------------------------------------ | --------- | -------- | ---------------------------------- |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                      |
-| `href`         | `string`                                         | —         | ✔        | Link URL                           |
+| `href`         | `string`                                         | —         | ✓        | Link URL                           |
 | `isDisabled`   | `bool`                                           | `false`   | ✕        | If true, Link is disabled          |
 | `isUnderlined` | `bool`                                           | `false`   | ✕        | If true, Link is underlined        |
 | `target`       | `string`                                         | `null`    | ✕        | Browsing context for the link      |
