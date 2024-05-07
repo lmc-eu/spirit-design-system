@@ -19,6 +19,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Header: Abstracts Class and Style](#header-abstracts-class-and-style)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
+  - [Tabs: TabLink `target` Prop](#tabs-tablink-target-prop)
   - [Tooltip: Composition](#tooltip-composition)
 
 ## General Changes
@@ -181,6 +182,17 @@ remains accessible via the `isDockedOnMobile` property.
 
 Add `isDockedOnMobile` prop to the `ModalDialog` component.
 
+### Tabs: TabLink `target` Prop
+
+The `target` prop was renamed to `targetPaneId` in the `TabLink` component.
+
+The reason for this change is to avoid confusion with the
+[`target` attribute][mdn-anchor-target] in the anchor tag.
+
+#### Migration Guide
+
+Replace `target` with `targetPaneId` in the `TabLink` component.
+
 ### Tooltip: Composition
 
 The `Tooltip` component structure was changed, so `Tooltip` (formerly the optional
@@ -231,6 +243,7 @@ Please refer back to this guide or reach out to our team if you encounter any is
 [alert-role-documentation]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Dropdown/README.md
+[mdn-anchor-target]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Tooltip/README.md
