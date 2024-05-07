@@ -11,7 +11,7 @@ const CollapseVisibilityBreakpointTablet = () => {
       <ButtonLink isOpen={isOpenTablet} onClick={toggleHandlerTablet} size="medium" UNSAFE_className="d-tablet-none">
         Collapse trigger
       </ButtonLink>
-      <Collapse isOpen={isOpenTablet} collapsibleToBreakpoint="tablet">
+      <Collapse id="collapseVisibilityBreakpointTabletId" isOpen={isOpenTablet} collapsibleToBreakpoint="tablet">
         Turpis cursus, urna vehicula sed porttitor nulla non mauris sapien congue, urna dui augue facilisis. Nunc elit,
         ipsum porttitor curabitur sapien nulla finibus quis pulvinar, commodo convallis lorem fringilla nec. Quam
         libero, vitae massa ornare eget vestibulum et iaculis quisque sapien, turpis maximus maximus vivamus. Nibh
