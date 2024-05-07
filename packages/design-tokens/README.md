@@ -16,13 +16,13 @@
 
 | Category      | Supernova | Figma | Sass                 |
 | ------------- | --------- | ----- | -------------------- |
-| 🖼 Borders     | ✅        | ❌    | [`_borders.sass`]    |
+| 🖼 Borders    | ✅        | ❌    | [`_borders.sass`]    |
 | 🎨 Colors     | ✅        | ✅    | [`_colors.sass`]     |
 | 🖌️ Gradients  | ✅        | ✅    | [`_gradients.sass`]  |
 | 📏️ Measures  | ✅        | ❌    | [`_measures.sass`]   |
 | ⚙️ Other      | ✅        | ❌    | [`_other.sass`]      |
 | 🎱 Radii      | ✅        | ❌    | [`_radii.sass`]      |
-| ⛱ Shadows     | ✅        | ✅    | [`_shadows.sass`]    |
+| ⛱ Shadows    | ✅        | ✅    | [`_shadows.sass`]    |
 | 🔠 Typography | ✅        | ✅    | [`_typography.sass`] |
 
 ## Install
