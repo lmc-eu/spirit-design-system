@@ -8,7 +8,7 @@
 .text-truncate-multiline {
     // stylelint-disable-next-line value-no-vendor-prefix -- We need the old flexbox syntax to make the trick work.
     display: -webkit-box;
-    -webkit-line-clamp: var(--lines, 3);
+    -webkit-line-clamp: var(--text-truncate-lines, 3);
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
