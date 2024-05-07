@@ -107,24 +107,24 @@
 
                     inset: auto auto 100% 0;
                     translate: var(--test-offset-orthogonal, 0) calc(-1 * var(--test-offset, 0));
-                    transform-origin: bottom;
+                    transform-origin: bottom left;
                 }
             }
         }
 
         @include true.assert {
             @include true.output {
-                @include dictionaries.generate-placements('Test', ('top-start'));
+                @include dictionaries.generate-placements('Test', ('right-end'));
             }
 
             @include true.expect {
-                .Test[data-spirit-placement='top-start'],
-                .Test--topStart {
+                .Test[data-spirit-placement='right-end'],
+                .Test--rightEnd {
                     --test-offset: 0;
 
-                    inset: auto auto 100% 0;
-                    translate: var(--test-offset-orthogonal, 0) calc(-1 * var(--test-offset, 0));
-                    transform-origin: bottom;
+                    inset: auto auto 0 100%;
+                    translate: var(--test-offset, 0) var(--test-offset-orthogonal, 0);
+                    transform-origin: left bottom;
                 }
             }
         }
