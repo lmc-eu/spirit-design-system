@@ -14,8 +14,8 @@ export interface TabsStyles {
   props: unknown;
 }
 
-export function useTabsStyleProps(props: SpiritTabsProps = { selectedTabId: '', forTab: '', tabId: '' }): TabsStyles {
-  const { selectedTabId, forTab, tabId, ...modifiedProps } = props;
+export function useTabsStyleProps(props: SpiritTabsProps = { selectedId: '', forTabPane: '', id: '' }): TabsStyles {
+  const { selectedId, forTabPane, id, ...modifiedProps } = props;
 
   const tabsClass = useClassNamePrefix('Tabs');
   const tabsItemClass = `${tabsClass}__item`;
@@ -27,10 +27,10 @@ export function useTabsStyleProps(props: SpiritTabsProps = { selectedTabId: '', 
     classProps: {
       item: tabsItemClass,
       link: classNames(tabsLinkClass, {
-        [tabsSelectedClass]: !!forTab && !!selectedTabId && selectedTabId === forTab,
+        [tabsSelectedClass]: !!forTabPane && !!selectedId && selectedId === forTabPane,
       }),
       pane: classNames(tabsPaneClass, {
-        [tabsSelectedClass]: !!tabId && !!selectedTabId && selectedTabId === tabId,
+        [tabsSelectedClass]: !!id && !!selectedId && selectedId === id,
       }),
       root: tabsClass,
     },

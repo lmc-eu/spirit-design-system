@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TabId } from '../../../types';
-import { TabContent, TabContentProps, TabItem, TabList, TabPane, Tabs } from '..';
+import { TabId, TabContentProps } from '../../../types';
+import { TabContent, TabItem, TabList, TabPane, Tabs } from '..';
 
 const meta: Meta<typeof TabContent> = {
   title: 'Components/Tabs',
@@ -13,21 +13,21 @@ export default meta;
 type Story = StoryObj<typeof TabContent>;
 
 const TabsWithHooks = (args: TabContentProps) => {
-  const [selectedTabId, setState] = useState<TabId>(1);
+  const [selectedId, setState] = useState<TabId>(1);
 
-  const selectTab = useCallback((tabId: TabId) => {
-    setState(tabId);
+  const selectTab = useCallback((id: TabId) => {
+    setState(id);
   }, []);
 
   return (
-    <Tabs selectedTab={selectedTabId} toggle={selectTab}>
+    <Tabs selectedTab={selectedId} toggle={selectTab}>
       <TabList>
-        <TabItem forTab={1}>Item Selected</TabItem>
-        <TabItem forTab={2}>Item</TabItem>
+        <TabItem forTabPane={1}>Item Selected</TabItem>
+        <TabItem forTabPane={2}>Item</TabItem>
       </TabList>
       <TabContent {...args}>
-        <TabPane tabId={1}>Pane 1</TabPane>
-        <TabPane tabId={2}>Pane 2</TabPane>
+        <TabPane id={1}>Pane 1</TabPane>
+        <TabPane id={2}>Pane 2</TabPane>
       </TabContent>
     </Tabs>
   );
