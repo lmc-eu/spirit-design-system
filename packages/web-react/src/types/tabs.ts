@@ -1,16 +1,21 @@
-import { ElementType } from 'react';
-import { ChildrenProps, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
-import { TabsToggler } from '../components';
+import { ElementType, HTMLProps } from 'react';
+import { ChildrenProps, ClickEvents, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
 
 export type TabId = string | number;
 
+export type TabListProps = ChildrenProps & TransferProps;
+
+export interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
+  forTabPane: TabId;
+}
+
 export interface SpiritTabsProps {
   /** Identification of selected tab */
-  selectedTabId?: TabId;
+  selectedId?: TabId;
   /** Identification of tab */
-  tabId?: TabId;
+  id?: TabId;
   /** Identification of affected pane */
-  forTab?: TabId;
+  forTabPane?: TabId;
 }
 
 export interface TabsProps extends ChildrenProps, TransferProps {
@@ -19,7 +24,7 @@ export interface TabsProps extends ChildrenProps, TransferProps {
   onSelectionChange?: (tabId: TabId) => void;
 }
 
-export type TabLinkItemProps = StyleProps & React.HTMLProps<HTMLLIElement>;
+export type TabLinkItemProps = StyleProps & HTMLProps<HTMLLIElement>;
 
 export interface TabLinkBaseProps extends ChildrenProps, StyleProps, TransferProps {
   itemProps?: TabLinkItemProps;
@@ -36,3 +41,22 @@ export type TabLinkProps<E extends ElementType = 'a'> = {
 
 export type SpiritTabLinkProps<E extends ElementType = 'a'> = TabLinkProps<E> &
   SpiritPolymorphicElementPropsWithRef<E, TabLinkProps<E>>;
+
+export type TabsToggler = (id: TabId) => void;
+
+export type TabsContextType = {
+  selectedId: TabId;
+  selectTab: TabsToggler;
+  onSelectionChange?: (id: TabId) => void;
+};
+
+export interface TabPaneProps extends ChildrenProps, TransferProps {
+  id: TabId;
+}
+
+export type TabContentProps = ChildrenProps & TransferProps;
+
+export interface UncontrolledTabsProps extends ChildrenProps, TransferProps {
+  defaultSelectedTab: TabId;
+  onSelectionChange?: (id: TabId) => void;
+}

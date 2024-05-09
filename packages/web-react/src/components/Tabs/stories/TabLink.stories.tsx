@@ -23,22 +23,22 @@ export default meta;
 type Story = StoryObj<typeof TabLink>;
 
 const TabsWithHooks = (args: TabLinkProps) => {
-  const [selectedTabId, setState] = useState<TabId>(1);
+  const [selectedId, setState] = useState<TabId>(1);
 
-  const selectTab = useCallback((tabId: TabId) => {
-    setState(tabId);
+  const selectTab = useCallback((id: TabId) => {
+    setState(id);
   }, []);
 
   return (
-    <Tabs selectedTab={selectedTabId} toggle={selectTab}>
+    <Tabs selectedTab={selectedId} toggle={selectTab}>
       <TabList {...args}>
-        <TabItem forTab={1}>Item Selected</TabItem>
-        <TabItem forTab={2}>Item</TabItem>
+        <TabItem forTabPane={1}>Item Selected</TabItem>
+        <TabItem forTabPane={2}>Item</TabItem>
         <TabLink {...args}>Item Link</TabLink>
       </TabList>
       <TabContent>
-        <TabPane tabId={1}>Pane 1</TabPane>
-        <TabPane tabId={2}>Pane 2</TabPane>
+        <TabPane id={1}>Pane 1</TabPane>
+        <TabPane id={2}>Pane 2</TabPane>
       </TabContent>
     </Tabs>
   );
