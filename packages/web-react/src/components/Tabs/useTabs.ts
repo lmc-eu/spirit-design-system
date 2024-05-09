@@ -1,13 +1,13 @@
 import { useCallback, useState } from 'react';
 import { TabId } from '../../types';
 
-export const useTab = (initialTabId: TabId) => {
-  const [selectedTabId, setState] = useState<TabId>(initialTabId);
+export const useTab = (initialId: TabId) => {
+  const [selectedId, setState] = useState<TabId>(initialId);
 
   // Define and memorize toggler function in case we pass down the component,
-  const selectTab = useCallback((tabId: TabId) => {
-    setState(tabId);
+  const selectTab = useCallback((id: TabId) => {
+    setState(id);
   }, []);
 
-  return { selectedTabId, selectTab };
+  return { selectedId, selectTab };
 };

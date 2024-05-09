@@ -1,20 +1,12 @@
 import { createContext, useContext } from 'react';
-import { TabId } from '../../types';
-
-type TabsToggler = (tabId: TabId) => void;
-
-type TabsContextType = {
-  selectedTabId: TabId;
-  selectTab: TabsToggler;
-  onSelectionChange?: (tabId: TabId) => void;
-};
+import { TabId, TabsContextType, TabsToggler } from '../../types';
 
 const defaultContext: TabsContextType = {
-  selectedTabId: '',
+  selectedId: '',
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  selectTab: (tabId: TabId) => {},
+  selectTab: (id: TabId) => {},
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
-  onSelectionChange: (tabId: TabId) => {},
+  onSelectionChange: (id: TabId) => {},
 };
 
 const TabsContext = createContext<TabsContextType>(defaultContext);
