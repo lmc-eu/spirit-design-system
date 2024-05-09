@@ -19,21 +19,21 @@ export default meta;
 type Story = StoryObj<typeof Tabs>;
 
 const TabsWithHooks = (args: TabsProps) => {
-  const [selectedTabId, setState] = useState<TabId>(1);
+  const [selectedId, setState] = useState<TabId>(1);
 
-  const selectTab = useCallback((tabId: TabId) => {
-    setState(tabId);
+  const selectTab = useCallback((id: TabId) => {
+    setState(id);
   }, []);
 
   return (
-    <Tabs {...args} selectedTab={selectedTabId} toggle={selectTab}>
+    <Tabs {...args} selectedTab={selectedId} toggle={selectTab}>
       <TabList>
-        <TabItem forTab={1}>Item Selected</TabItem>
-        <TabItem forTab={2}>Item</TabItem>
+        <TabItem forTabPane={1}>Item Selected</TabItem>
+        <TabItem forTabPane={2}>Item</TabItem>
       </TabList>
       <TabContent>
-        <TabPane tabId={1}>Pane 1</TabPane>
-        <TabPane tabId={2}>Pane 2</TabPane>
+        <TabPane id={1}>Pane 1</TabPane>
+        <TabPane id={2}>Pane 2</TabPane>
       </TabContent>
     </Tabs>
   );

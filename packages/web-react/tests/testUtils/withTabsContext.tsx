@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
-import { TabsContextType, TabsProvider } from '../../src/components/Tabs/TabContext';
+import { TabsContextType, TabsProvider } from '../../src';
 
 export const withTabsContext =
-  (Component: ElementType, value = { selectedTabId: 0, selectTab: jest.fn() } as TabsContextType) =>
+  (Component: ElementType, value = { selectedId: 0, selectTab: jest.fn() } as TabsContextType) =>
   (props: unknown) =>
     (
       <TabsProvider value={value}>
