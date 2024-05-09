@@ -12,18 +12,18 @@ describe('UncontrolledTabs', () => {
   const tabs = (
     <>
       <TabList>
-        <TabItem forTab={1} data-testid="item-1">
+        <TabItem forTabPane={1} data-testid="item-1">
           Item Selected
         </TabItem>
-        <TabItem forTab={2} data-testid="item-2">
+        <TabItem forTabPane={2} data-testid="item-2">
           Item Not Selected
         </TabItem>
       </TabList>
       <TabContent>
-        <TabPane tabId={1} data-testid="pane-1">
+        <TabPane id={1} data-testid="pane-1">
           Pane 1
         </TabPane>
-        <TabPane tabId={2} data-testid="pane-2">
+        <TabPane id={2} data-testid="pane-2">
           Pane 2
         </TabPane>
       </TabContent>

@@ -20,6 +20,7 @@ Introducing version 2 of the _spirit-web-react_ package
   - [Modal: ModalDialog `isExpandedOnMobile` Prop](#modal-modaldialog-isexpandedonmobile-prop)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
+  - [Tabs: TabItem and TabPane Props](#tabs-tabitem-and-tabpane-props)
   - [TextField: `label` prop](#textfield-label-prop)
   - [Tooltip: `off` Placement](#tooltip-off-placement)
   - [Tooltip: Refactored](#tooltip-refactored)
@@ -280,6 +281,26 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-isdockeonmobile-prop
 See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isDockedOnMobile` prop to the `ModalDialog` component.
+
+### Tabs: TabItem and TabPane Props
+
+TabItem `forTab` prop is renamed to `forTabPane`.
+TabPane `tabId` prop is renamed to `id`.
+
+#### Migration Guide
+
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/tabs-tabitem-tabpane-props
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually replace the props in your project.
+
+- `<TabItem forTab="TabPane1" … />` → `<TabItem forTabPane="TabPane1" … />`
+- `<TabPane tabId="TabPane1" … />` → `<TabPane id="TabPane1" … />`
 
 ### TextField: `label` prop
 

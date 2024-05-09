@@ -1,28 +1,24 @@
 import React from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { ChildrenProps, TabId, TransferProps, ClickEvents, ClickEvent } from '../../types';
+import { ClickEvent, TabItemProps } from '../../types';
 import { useTabContext } from './TabContext';
 import { useTabsStyleProps } from './useTabsStyleProps';
 
-export interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents {
-  forTab: TabId;
-}
-
-const TabItem = ({ children, forTab, onClick, ...restProps }: TabItemProps): JSX.Element => {
-  const { selectTab, selectedTabId, onSelectionChange } = useTabContext();
-  const { classProps } = useTabsStyleProps({ forTab, selectedTabId });
+const TabItem = ({ children, forTabPane, onClick, ...restProps }: TabItemProps): JSX.Element => {
+  const { selectTab, selectedId, onSelectionChange } = useTabContext();
+  const { classProps } = useTabsStyleProps({ forTabPane, selectedId });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
   const handleClick = (event: ClickEvent) => {
-    selectTab(forTab);
+    selectTab(forTabPane);
 
     if (onClick) {
       onClick(event);
     }
 
     if (onSelectionChange) {
-      onSelectionChange(selectedTabId);
+      onSelectionChange(selectedId);
     }
   };
 
@@ -34,9 +30,9 @@ const TabItem = ({ children, forTab, onClick, ...restProps }: TabItemProps): JSX
         type="button"
         className={classNames(classProps.link, styleProps.className)}
         role="tab"
-        aria-selected={selectedTabId === forTab}
-        id={`${forTab}-tab`}
-        aria-controls={forTab.toString()}
+        aria-selected={selectedId === forTabPane}
+        id={`${forTabPane}-tab`}
+        aria-controls={forTabPane.toString()}
         onClick={handleClick}
       >
         {children}
