@@ -3,6 +3,7 @@
 {%- set _fullWidthMode = props.fullWidthMode | default(null)  -%}
 {%- set _elementType = props.elementType | default('div') -%}
 {%- set _placement = props.placement | default('bottom-start') -%}
+{%- set _id = props.id -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Dropdown' -%}
@@ -10,11 +11,12 @@
 {# Attributes #}
 {%- set _dataFullWidthModeAttr = _fullWidthMode ? 'data-spirit-fullwidthmode="' ~ _fullWidthMode | escape('html_attr') ~ '"' : null -%}
 {%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
+{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-placement']) -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-placement', 'id']) -%}
 
 <{{ _elementType }}
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
@@ -22,6 +24,7 @@
     {{ classProp(_classNames) }}
     {{ _dataFullWidthModeAttr | raw }}
     {{ _dataPlacementAttr | raw }}
+    {{ _idAttr | raw }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>
