@@ -7,6 +7,7 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import TextArea from '../TextArea';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('TextArea', () => {
   classNamePrefixProviderTest(TextArea, 'TextArea');
@@ -18,6 +19,8 @@ describe('TextArea', () => {
   validationStatePropsTest(TextArea, 'TextArea--');
 
   validationTextPropsTest(TextArea, '.TextArea__validationText');
+
+  requiredPropsTest(TextArea, 'textbox', 'id', 'example-id');
 
   it('should have label classname', () => {
     const dom = render(<TextArea id="textarea" label="Label" />);

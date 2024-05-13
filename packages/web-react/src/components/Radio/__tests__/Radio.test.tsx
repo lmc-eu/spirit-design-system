@@ -7,6 +7,7 @@ import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import Radio from '../Radio';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('Radio', () => {
   classNamePrefixProviderTest(Radio, 'Radio');
@@ -18,6 +19,8 @@ describe('Radio', () => {
   restPropsTest(Radio, 'input');
 
   validationStatePropsTest(Radio, 'Radio--');
+
+  requiredPropsTest(Radio, 'radio', 'id', 'example-id');
 
   it('should have label classname', () => {
     const dom = render(<Radio id="radio" label="label" />);

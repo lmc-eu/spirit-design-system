@@ -8,24 +8,6 @@ Following deprecations will be removed in version 2 of the _spirit-web-react_ pa
 
 ## Deprecations
 
-### Required `id` Prop for Form Components
-
-The `id` prop will be required for all form components.
-
-Related components:
-
-- `Checkbox`
-- `FieldGroup`
-- `FileUploader`
-- `Radio`
-- `Select`
-- `TextArea`
-- `TextField`
-
-#### Migration Guide
-
-Add `id` prop to the form components.
-
 ### Dropdown and Collapse `id` Prop
 
 The `id` prop will be mandatory for the `Dropdown` and `Collapse` components.
