@@ -41,3 +41,7 @@ export interface ValidationTextProp {
   /** The validation text to display. */
   validationText?: ValidationTextType;
 }
+
+export interface RequiredProps {
+  id: string;
+}

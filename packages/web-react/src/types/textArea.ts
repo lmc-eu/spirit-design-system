@@ -2,6 +2,7 @@ import {
   ChildrenProps,
   HelperTextProps,
   InputBaseProps,
+  RequiredProps,
   SpiritTextAreaElementPropsWithRef,
   TextInputProps,
   Validation,
@@ -19,13 +20,12 @@ export interface TextAreaProps
     HelperTextProps,
     ValidationTextProp,
     TextInputProps,
+    RequiredProps,
     Validation {
   /** Whether is field auto resizing which adjusts its height while typing */
   isAutoResizing?: boolean;
   /** Maximum field height with automatic height control */
   autoResizingMaxHeight?: number;
-  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
-  id?: string;
 }
 
 export interface SpiritTextAreaProps extends TextAreaProps {}
