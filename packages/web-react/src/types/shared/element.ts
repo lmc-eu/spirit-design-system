@@ -58,7 +58,13 @@ export type SpiritTextAreaElementProps = Omit<
 export type SpiritUListElementProps = OverloadStyleProps<SpiritUListElementBaseProps>;
 export type SpiritFieldGroupElementProps = OverloadStyleProps<SpiritFieldGroupElementBaseProps>;
 
-export type SpiritInputElementPropsWithRef = SpiritInputElementProps & ComponentPropsWithRef<'input'>;
-export type SpiritSelectElementPropsWithRef = SpiritSelectElementProps & ComponentPropsWithRef<'select'>;
-export type SpiritTextAreaElementPropsWithRef = SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>;
-export type SpiritFieldGroupElementPropsWithRef = SpiritFieldGroupElementProps & ComponentPropsWithRef<'fieldset'>;
+export type SpiritInputElementPropsWithRef = Omit<SpiritInputElementProps & ComponentPropsWithRef<'input'>, 'id'>;
+export type SpiritSelectElementPropsWithRef = Omit<SpiritSelectElementProps & ComponentPropsWithRef<'select'>, 'id'>;
+export type SpiritTextAreaElementPropsWithRef = Omit<
+  SpiritTextAreaElementProps & ComponentPropsWithRef<'textarea'>,
+  'id'
+>;
+export type SpiritFieldGroupElementPropsWithRef = Omit<
+  SpiritFieldGroupElementProps & ComponentPropsWithRef<'fieldset'>,
+  'id'
+>;

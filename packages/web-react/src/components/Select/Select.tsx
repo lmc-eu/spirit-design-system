@@ -1,7 +1,7 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
 import { SpiritSelectProps } from '../../types';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { Icon } from '../Icon';
 import { useSelectStyleProps } from './useSelectStyleProps';
@@ -28,13 +28,6 @@ const _Select = (props: SpiritSelectProps, ref: ForwardedRef<HTMLSelectElement>)
   const { styleProps, props: transferProps } = useStyleProps(restProps);
 
   const [ids, register] = useAriaIds(ariaDescribedBy);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'Select',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>

@@ -1,6 +1,6 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { useCheckboxStyleProps } from './useCheckboxStyleProps';
@@ -23,15 +23,7 @@ const _Checkbox = (props: SpiritCheckboxProps, ref: ForwardedRef<HTMLInputElemen
     ...restProps
   } = modifiedProps;
   const { styleProps, props: otherProps } = useStyleProps(restProps);
-
   const [ids, register] = useAriaIds(ariaDescribedBy);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'Checkbox',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <label {...styleProps} htmlFor={id} className={classNames(classProps.root, styleProps.className)}>
