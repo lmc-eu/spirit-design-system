@@ -3,6 +3,7 @@ import {
   HelperTextProps,
   InputBaseProps,
   ItemProps,
+  RequiredProps,
   SpiritInputElementPropsWithRef,
   Validation,
 } from './shared';
@@ -17,13 +18,12 @@ export interface RadioProps
     ItemProps,
     HelperTextProps,
     InputBaseProps,
+    RequiredProps,
     Omit<Validation, 'isRequired'> {
   /** Whether the checkbox is checked */
   isChecked?: boolean;
   /** Text of control label */
   label: string;
-  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
-  id?: string;
 }
 
 export interface SpiritRadioProps extends RadioProps {}

@@ -3,6 +3,7 @@ import {
   HelperTextProps,
   InputBaseProps,
   ItemProps,
+  RequiredProps,
   SpiritInputElementPropsWithRef,
   Validation,
   ValidationTextProp,
@@ -19,6 +20,7 @@ export interface CheckboxProps
     InputBaseProps,
     Validation,
     ValidationTextProp,
+    RequiredProps,
     HelperTextProps {
   /** Whether the checkbox is indeterminate */
   indeterminate?: boolean;
@@ -26,8 +28,6 @@ export interface CheckboxProps
   isChecked?: boolean;
   /** Text of control label */
   label: string;
-  /** @deprecated The "id" property will be required instead of optional starting from the next major version. */
-  id?: string;
 }
 
 export interface SpiritCheckboxProps extends CheckboxProps {}

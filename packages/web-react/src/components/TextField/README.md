@@ -49,7 +49,7 @@ TextField with password toggle (button to reveal the password):
 | `autoComplete`      | `bool`                                                                      | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle` | `bool`                                                                      | —       | ✔        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
-| `id`                | `string`                                                                    | —       | ✕        | Input and label identification                                          |
+| `id`                | `string`                                                                    | —       | ✔        | Input and label identification                                          |
 | `inputWidth`        | `number`                                                                    | —       | ✕        | Input width                                                             |
 | `isDisabled`        | `bool`                                                                      | —       | ✕        | Whether is field disabled                                               |
 | `isLabelHidden`     | `bool`                                                                      | —       | ✕        | Whether is label hidden                                                 |
