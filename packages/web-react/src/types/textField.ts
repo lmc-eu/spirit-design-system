@@ -3,6 +3,7 @@ import {
   HelperTextProps,
   InputBaseProps,
   PasswordToggleAdornmentProp,
+  RequiredProps,
   SpiritInputElementPropsWithRef,
   TextInputProps,
   Validation,
@@ -23,6 +24,7 @@ export interface TextFieldProps
     HelperTextProps,
     ValidationTextProp,
     TextInputProps,
+    RequiredProps,
     Validation {
   /** The type of text field */
   type?: TextFieldType;

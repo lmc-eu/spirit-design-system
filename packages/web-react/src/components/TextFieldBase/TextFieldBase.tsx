@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { ForwardedRef, forwardRef } from 'react';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritTextFieldBaseProps, TextFieldBasePasswordToggleProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import TextFieldBaseInput from './TextFieldBaseInput';
@@ -27,13 +27,6 @@ const _TextFieldBase = (props: SpiritTextFieldBaseProps, ref: ForwardedRef<HTMLI
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const [ids, register] = useAriaIds(ariaDescribedBy);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'TextField/TextArea',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <div {...styleProps} className={classNames(classProps.root, styleProps.className)}>

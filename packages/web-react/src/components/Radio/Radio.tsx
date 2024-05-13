@@ -1,6 +1,6 @@
 import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { SpiritRadioProps } from '../../types';
 import { HelperText, useAriaIds } from '../Field';
 import { useRadioStyleProps } from './useRadioStyleProps';
@@ -23,13 +23,6 @@ const _Radio = (props: SpiritRadioProps, ref: ForwardedRef<HTMLInputElement>): J
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   const [ids, register] = useAriaIds(ariaDescribedBy);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'Radio',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <label htmlFor={id} {...styleProps} className={classNames(classProps.root, styleProps.className)}>

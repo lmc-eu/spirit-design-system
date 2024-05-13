@@ -7,6 +7,7 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import Select from '../Select';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('Select', () => {
   classNamePrefixProviderTest(Select, 'Select');
@@ -18,6 +19,8 @@ describe('Select', () => {
   validationStatePropsTest(Select, 'Select--');
 
   validationTextPropsTest(Select, '.Select__validationText');
+
+  requiredPropsTest(Select, 'combobox', 'id', 'test-select');
 
   it('should have label classname', () => {
     const dom = render(

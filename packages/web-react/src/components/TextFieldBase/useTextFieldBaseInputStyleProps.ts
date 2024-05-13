@@ -11,7 +11,7 @@ export interface TextFieldBaseInputStyles {
 }
 
 export function useTextFieldBaseInputStyleProps(props: SpiritTextFieldBaseInputProps): TextFieldBaseInputStyles {
-  const { isMultiline, ...restProps } = props;
+  const { isMultiline, id, ...restProps } = props;
 
   const TextFieldBaseClass = useClassNamePrefix(isMultiline ? 'TextArea' : 'TextField');
   const TextFieldBaseInputClass = `${TextFieldBaseClass}__input`;
@@ -23,6 +23,7 @@ export function useTextFieldBaseInputStyleProps(props: SpiritTextFieldBaseInputP
     props: {
       ...restProps,
       isMultiline,
+      id,
     },
   };
 }
