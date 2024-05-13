@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { SpiritFieldGroupProps } from '../../types';
-import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { useStyleProps } from '../../hooks';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';
@@ -26,13 +26,6 @@ const FieldGroup = (props: SpiritFieldGroupProps) => {
   const { styleProps, props: transferProps } = useStyleProps(rest);
 
   const [ids, register] = useAriaIds(ariaDescribedBy);
-
-  useDeprecationMessage({
-    method: 'custom',
-    trigger: !id,
-    componentName: 'FiledGroup',
-    customText: 'The "id" property will be required instead of optional starting from the next major version.',
-  });
 
   return (
     <fieldset

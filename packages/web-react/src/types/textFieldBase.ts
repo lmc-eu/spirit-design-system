@@ -1,4 +1,4 @@
-import { ChildrenProps, PasswordToggleAdornmentProp, TextInputProps } from './shared';
+import { ChildrenProps, PasswordToggleAdornmentProp, RequiredProps, TextInputProps } from './shared';
 import { TextAreaProps } from './textArea';
 import { TextFieldProps } from './textField';
 
@@ -13,7 +13,7 @@ export type SpiritTextFieldBaseProps = TextFieldBaseProps;
 
 export type TextFieldBaseInputProps = TextInputProps & TextFieldBaseMultiLineProps;
 
-export interface SpiritTextFieldBaseInputProps extends TextFieldBaseInputProps {}
+export interface SpiritTextFieldBaseInputProps extends RequiredProps, TextFieldBaseInputProps {}
 
 export interface PasswordToggleProps {
   isPasswordShown: boolean;
