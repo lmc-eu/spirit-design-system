@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
@@ -8,6 +8,7 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import Checkbox from '../Checkbox';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('Checkbox', () => {
   classNamePrefixProviderTest(Checkbox, 'Checkbox');
@@ -21,6 +22,8 @@ describe('Checkbox', () => {
   validationStatePropsTest(Checkbox, 'Checkbox--');
 
   validationTextPropsTest(Checkbox, '.Checkbox__validationText');
+
+  requiredPropsTest(Checkbox, 'checkbox', 'id', 'test-checkbox');
 
   it('should have text classname', () => {
     const dom = render(<Checkbox id="checkbox" label="Label" />);
@@ -51,16 +54,17 @@ describe('Checkbox', () => {
   });
 
   it('should have input classname', () => {
-    const dom = render(<Checkbox id="checkbox" label="Label" />);
+    render(<Checkbox id="checkbox" label="Label" />);
 
-    const element = dom.container.querySelector('input') as HTMLElement;
+    const element = screen.getByRole('checkbox');
     expect(element).toHaveClass('Checkbox__input');
   });
 
   it('should have helper text', () => {
-    const dom = render(<Checkbox id="checkbox" label="Label" helperText="text" />);
+    render(<Checkbox id="checkbox" label="Label" helperText="text" />);
 
-    const element = dom.container.querySelector('.Checkbox__helperText') as HTMLElement;
-    expect(element.textContent).toBe('text');
+    const element = screen.getByText('text');
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('Checkbox__helperText');
   });
 });

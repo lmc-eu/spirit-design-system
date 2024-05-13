@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
@@ -24,16 +24,20 @@ describe('FieldGroup', () => {
   validationTextPropsTest(FieldGroup, '.FieldGroup__validationText');
 
   stylePropsTest(
-    (props) => <FieldGroup {...props} label="Label" id="FieldGroupExample" data-testid="test-FieldGroup" />,
+    (props) => <FieldGroup {...props} label="Label" id="field-group-example" data-testid="test-FieldGroup" />,
     'test-FieldGroup',
   );
 
   restPropsTest((props) => <FieldGroup {...props} label="Label" />, 'fieldset');
 
   it('should render items as children', () => {
-    const dom = render(<FieldGroup label="Label">{itemList}</FieldGroup>);
+    render(
+      <FieldGroup id="example-field-group" label="Label">
+        {itemList}
+      </FieldGroup>,
+    );
 
-    const fieldGroup = dom.container.querySelector('fieldset') as HTMLElement;
+    const fieldGroup = screen.getByRole('group');
 
     expect(fieldGroup).toHaveClass('FieldGroup');
 
@@ -54,7 +58,7 @@ describe('FieldGroup', () => {
 
   it('should have className isRequired', () => {
     const dom = render(
-      <FieldGroup label="Label" isRequired>
+      <FieldGroup id="example-field-group" label="Label" isRequired>
         {itemList}
       </FieldGroup>,
     );
@@ -66,7 +70,7 @@ describe('FieldGroup', () => {
 
   it('should have className isDisabled', () => {
     const dom = render(
-      <FieldGroup label="Label" isDisabled>
+      <FieldGroup id="example-field-group" label="Label" isDisabled>
         {itemList}
       </FieldGroup>,
     );
@@ -78,7 +82,7 @@ describe('FieldGroup', () => {
 
   it('should not have visible label', () => {
     const dom = render(
-      <FieldGroup label="Label" isLabelHidden>
+      <FieldGroup id="example-field-group" label="Label" isLabelHidden>
         {itemList}
       </FieldGroup>,
     );
@@ -90,7 +94,7 @@ describe('FieldGroup', () => {
 
   it('should have className isFluid', () => {
     const dom = render(
-      <FieldGroup label="Label" isFluid>
+      <FieldGroup id="example-field-group" label="Label" isFluid>
         {itemList}
       </FieldGroup>,
     );
@@ -101,14 +105,27 @@ describe('FieldGroup', () => {
   });
 
   it('should have helper text', () => {
-    const dom = render(
-      <FieldGroup label="Label" helperText="helper text">
+    render(
+      <FieldGroup id="example-field-group" label="Label" helperText="helper text">
         {itemList}
       </FieldGroup>,
     );
 
-    const element = dom.container.querySelector('.FieldGroup__helperText') as HTMLElement;
+    const element = screen.getByText('helper text');
 
-    expect(element.textContent).toBe('helper text');
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('FieldGroup__helperText');
+  });
+
+  it('should have correct id', () => {
+    render(
+      <FieldGroup id="example-field-group" label="Label" helperText="helper text">
+        {itemList}
+      </FieldGroup>,
+    );
+
+    const element = screen.getByText('helper text');
+
+    expect(element).toHaveAttribute('id', 'example-field-group__helperText');
   });
 });
