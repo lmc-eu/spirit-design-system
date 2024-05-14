@@ -2,18 +2,13 @@
 {%- set props = props | default([]) -%}
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _id = props.id | default(null) -%}
+{%- set _id = props.id -%}
 {%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _validationText = props.validationText | default(null) -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
-
-{# Deprecations #}
-{% if not _id %}
-    {% deprecated 'ValidationText: The "id" property will be required starting from the next major version.' %}
-{% endif %}
 
 {% if _validationState and _validationText and not _unsafeValidationText %}
     {%- if _validationText is iterable -%}
