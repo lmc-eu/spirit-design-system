@@ -8,22 +8,6 @@ Following deprecations will be removed in version 3 of the _spirit-web-twig_ pac
 
 ## Deprecations
 
-### Required `id` Prop For Form Components
-
-The `id` prop will be required for all form components.
-
-Related components:
-
-- `Checkbox`
-- `HelperText`
-- `Radio`
-- `Select`
-- `ValidationText`
-
-#### Migration Guide
-
-Add `id` prop to the form components.
-
 ### Dropdown `id` Prop
 
 The `id` prop will be mandatory for the `Dropdown` component.
