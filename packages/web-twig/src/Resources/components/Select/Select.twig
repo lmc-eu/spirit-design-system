@@ -1,7 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _helperText = props.helperText | default(null) -%}
-{%- set _id = props.id | default(null) -%}
+{%- set _id = props.id -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
