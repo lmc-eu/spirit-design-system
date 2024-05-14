@@ -1,7 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _helperText = props.helperText | default(null) -%}
-{%- set _id = props.id | default(null) -%}
+{%- set _id = props.id -%}
 {%- set _inputProps = props.inputProps | default([]) -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _isFluid = props.isFluid | default(false) -%}
@@ -38,11 +38,6 @@
 {%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
-
-{# Deprecations #}
-{% if not _id %}
-    {% deprecated 'Select: The "id" property will be required from the next major version.' %}
-{% endif %}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
