@@ -19,7 +19,7 @@
     "lint": "eslint ./",
     "lint:fix": "yarn lint --fix",
     "test": "npm-run-all --serial lint types test:unit:coverage",
-    "test:unit": "jest --config ./config/jest/config.ts",
+    "test:unit": "jest",
     "test:unit:watch": "yarn test:unit --watchAll",
     "test:unit:coverage": "yarn test:unit --coverage",
     "types": "tsc"
