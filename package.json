@@ -13,6 +13,7 @@
     "node": ">=16"
   },
   "workspaces": [
+    "configs/*",
     "packages/*",
     "exporters/*",
     "apps/demo",
