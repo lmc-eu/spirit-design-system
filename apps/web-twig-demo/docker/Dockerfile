@@ -111,7 +111,7 @@ RUN set -eux; \
 RUN rm -f .env.local.php
 
 # Caddy image
-FROM caddy:2.7 AS app_caddy
+FROM caddy:2.8 AS app_caddy
 
 WORKDIR /srv/spirit-web-twig-demo
 
