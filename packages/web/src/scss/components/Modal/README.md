@@ -39,56 +39,6 @@ Example:
 </dialog>
 ```
 
-### Custom Height
-
-By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
-You can override this behavior by setting a custom preferred height using a custom property:
-
-- `--modal-preferred-height-mobile` for mobile screens, and
-- `--modal-preferred-height-tablet` for tablet screens and up.
-
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
-
-```html
-<dialog
-  id="modal-example"
-  class="Modal Modal--center"
-  aria-labelledby="modal-example-title"
-  style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
->
-  <!-- ModalDialog -->
-</dialog>
-```
-
-👉 Please note the preferred height options are ignored when scrolling inside ModalDialog is
-[turned off](#disable-scrolling-inside-modaldialog).
-
-👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
-
-### Custom Max Height
-
-The default maximum height of Modal is:
-
-- viewport height minus 1100 spacing on mobile screens, and
-- 600 px on tablet screens and up (shrunk if necessary).
-
-You can use the custom property `--modal-max-height-tablet` to override the max height on tablet screens and up:
-
-```html
-<dialog
-  id="modal-example"
-  class="Modal Modal--center"
-  aria-labelledby="modal-example-title"
-  style="--modal-max-height-tablet: 700px"
->
-  <!-- ModalDialog -->
-</dialog>
-```
-
-👉 Please note the max height is ignored when scrolling inside ModalDialog is [turned off](#disable-scrolling-inside-modaldialog).
-
-👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
-
 ## ModalDialog
 
 ModalDialog is the actual dialog window, a place for the header, body, and footer of the dialog.
@@ -134,7 +84,7 @@ class.
 
 #### Expanded Variant
 
-By default the docked dialog on mobile screens shrinks to fit the height of its content
+By default, the docked dialog on mobile screens shrinks to fit the height of its content
 (if smaller than the viewport). Use the `ModalDialog--expandOnMobile` class to expand the dialog on mobile.
 
 ```html
@@ -282,47 +232,87 @@ You can still close modal with close buttons or ESC key.
 
 ## Scrolling Long Content
 
-When Modals become too long for the user's viewport or device, they scroll independently of the page itself. By default,
-ModalBody has `overflow-y: auto` applied to it, so it scrolls vertically.
+In case the content is longer than user's viewport or device, the ModalBody will expand to fit the height of its content
+and the whole ModalDialog will scroll.
 
-### Scrolling with ScrollView
+### Enable Scrolling Inside ModalDialog
 
-Alternatively, you can wrap the ModalBody content in a [ScrollView][scroll-view] to take over the responsibility for
-scrolling, e.g.:
-
-```html
-<div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
-  <div class="ScrollView__viewport" data-spirit-element="viewport">
-    <div class="ScrollView__content" data-spirit-element="content">
-      <div class="ModalBody">
-        <!-- … -->
-      </div>
-    </div>
-  </div>
-  <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
-</div>
-```
-
-### Disable Scrolling Inside ModalDialog
-
-Scrolling inside ModalDialog can be turned off by adding the `ModalDialog--nonScrollable` modifier class:
+Scrolling inside ModalDialog can be turned on by adding the `ModalDialog--scrollable` modifier class:
 
 ```html
-<article class="ModalDialog ModalDialog--nonScrollable">
+<article class="ModalDialog ModalDialog--scrollable">
   <!-- … -->
 </article>
 ```
 
-This way, the ModalBody will expand to fit the height of its content and the whole ModalDialog will scroll in case the
-content is longer than user's viewport.
+### Scrolling with ScrollView
 
-👉 Please note that this modifier class can produce unexpected results when used in combination with ScrollView.
+Additionally, you can wrap the ModalBody content in a [ScrollView][scroll-view] to take over the responsibility for
+scrolling, e.g.:
 
-#### ⚠️ DEPRECATION NOTICE
+```html
+<article class="ModalDialog ModalDialog--scrollable">
+  <!-- ModalHeader -->
+  <div class="ScrollView ScrollView--vertical" data-spirit-toggle="scrollView">
+    <div class="ScrollView__viewport" data-spirit-element="viewport">
+      <div class="ScrollView__content" data-spirit-element="content">
+        <div class="ModalBody">
+          <!-- … -->
+        </div>
+      </div>
+    </div>
+    <div class="ScrollView__overflowDecorators ScrollView__overflowDecorators--borders" aria-hidden="true"></div>
+  </div>
+  <!-- ModalFooter -->
+</article>
+```
 
-The `.ModalDialog--nonScrollable` modifier will be removed in the next major release and the ModalDialog will be made
-non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the
-`.ModalDialog--scrollable` modifier class (which will remain the recommended default usage).
+### Custom Height
+
+By default, ModalDialog grows to the height of its content until it reaches the [maximum height](#custom-max-height)
+limit.
+
+You can set a custom preferred height of ModalDialog using a custom property:
+
+- `--modal-preferred-height-mobile` for mobile screens, and
+- `--modal-preferred-height-tablet` for tablet screens and up.
+
+This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+
+```html
+<article
+  class="ModalDialog ModalDialog--scrollable"
+  style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
+>
+  <!-- … -->
+</article>
+```
+
+⚠️ This feature is only available for ModalDialogs with the `ModalDialog--scrollable` modifier class.
+
+👉 Please note the custom height values are considered **preferred**. Scrollable ModalDialog will never expand beyond
+the viewport height. See the [Custom Max Height](#custom-max-height) section for more information.
+
+### Custom Max Height
+
+The default maximum height of a scrollable ModalDialog is **600 px**, as long as it can fit the viewport.
+
+If the viewport is smaller, scrollable ModalDialog will shrink to fit the viewport. In such case, the ModalDialog height
+will calculate as "viewport height (`100dvh`) minus 1100 spacing".
+
+You can use the custom property `--modal-max-height-tablet` to override the default maximum height limit on tablet
+screens and up:
+
+```html
+<article class="ModalDialog ModalDialog--scrollable" style="--modal-max-height-tablet: 400px">
+  <!-- … -->
+</article>
+```
+
+⚠️ This feature is only available for ModalDialogs with the `ModalDialog--scrollable` modifier class.
+
+👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it's smaller than the custom
+height.
 
 ## Stacking Modals
 

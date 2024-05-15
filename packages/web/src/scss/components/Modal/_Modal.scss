@@ -7,8 +7,6 @@
 // 5. Allow scrolling through the modal. Has no effect unless the modal is taller than the viewport.
 // 6. Restore text selection after `all: unset`.
 
-@use 'sass:map';
-@use '../../tools/breakpoint';
 @use 'theme';
 
 .Modal {
@@ -20,7 +18,7 @@
     z-index: 1;
     display: flex; // 1.
     padding-block: theme.$padding-y;
-    overflow: hidden; // 4.
+    overflow-y: auto; // 5.
     background: linear-gradient(#{theme.$backdrop-background-color}, #{theme.$backdrop-background-color}); // 2., 3.
     visibility: hidden; // 1.
     opacity: 0; // 1.
@@ -38,8 +36,8 @@
     }
 }
 
-.Modal:has(.ModalDialog--nonScrollable) {
-    overflow-y: auto; // 5.
+.Modal:has(.ModalDialog--scrollable) {
+    overflow: hidden; // 4.
 }
 
 .Modal--center,

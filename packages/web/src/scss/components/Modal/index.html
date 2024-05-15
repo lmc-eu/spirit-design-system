@@ -38,7 +38,7 @@
   }
 
   const toggleScrolling = (selector) => {
-    document.querySelector(selector).classList.toggle('ModalDialog--nonScrollable');
+    document.querySelector(selector).classList.toggle('ModalDialog--scrollable');
   }
 </script>
 
@@ -140,8 +140,8 @@
                 <span class="Checkbox__label">Expand on mobile (docked only)</span>
               </span>
             </label>
-            <label for="modal-demo-non-scrolling" class="Checkbox">
-              <input type="checkbox" id="modal-demo-non-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" checked />
+            <label for="modal-demo-scrolling" class="Checkbox">
+              <input type="checkbox" id="modal-demo-scrolling" class="Checkbox__input" onchange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" />
               <span class="Checkbox__text">
                 <span class="Checkbox__label">Scrolling inside</span>
               </span>
@@ -192,7 +192,7 @@
       aria-controls="example-form"
       aria-expanded="false"
     >
-      Open Modal with a Form
+      Open Modal with Form
     </button>
 
     <!-- Modal: start -->
@@ -262,33 +262,28 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example-custom-height"
-      aria-controls="example-custom-height"
+      data-spirit-target="#example-dropdown"
+      aria-controls="example-dropdown"
       aria-expanded="false"
     >
-      Open Modal with Custom Height
+      Open Modal with Dropdown
     </button>
 
     <!-- Modal: start -->
-    <dialog
-      id="example-custom-height"
-      class="Modal Modal--center"
-      aria-labelledby="example-custom-height-title"
-      style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px; --modal-max-height-tablet: 700px"
-    >
+    <dialog id="example-dropdown" class="Modal Modal--center" aria-labelledby="example-dropdown-title">
 
       <!-- ModalDialog: start -->
-      <article class="ModalDialog">
+      <article class="ModalDialog ModalDialog--expandOnMobile">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example-custom-height-title" class="ModalHeader__title">Modal with Custom Height</h2>
+          <h2 id="example-dropdown-title" class="ModalHeader__title">Modal Title</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example-custom-height"
-            aria-controls="example-custom-height"
+            data-spirit-target="#example-dropdown"
+            aria-controls="example-dropdown"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -302,31 +297,49 @@
         <!-- ModalBody: start -->
         <div class="ModalBody">
           <!-- Content: start -->
-          <p class="d-tablet-none">
-            This modal has a custom height of <code>400px</code> set via the <code>--modal-preferred-height-mobile</code> CSS
-            custom property.
-            <br /><br />
-            The max height cannot be customized on mobile though.
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
           </p>
-          <p class="d-none d-tablet-block">
-            This modal has a custom height of <code>500px</code> set via the <code>--modal-preferred-height-tablet</code> CSS
-            custom property.
-            <br /><br />
-            The max height of this modal is <code>700px</code> set via the <code>--modal-max-height-tablet</code> CSS custom
-            property.
-          </p>
+          <div class="DropdownWrapper">
+            <button
+              type="button"
+              data-spirit-toggle="dropdown"
+              data-spirit-target="#dropdown-in-modal"
+              class="Button Button--secondary Button--medium"
+              aria-expanded="false"
+              aria-controls="dropdown-in-modal"
+            >
+              Dropdown
+            </button>
+            <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-in-modal">
+              <a href="#" class="Item">
+                <span class="Item__label">Action</span>
+              </a>
+              <a href="#" class="Item">
+                <span class="Item__label">Another action</span>
+              </a>
+              <a href="#" class="Item">
+                <span class="Item__label">Something else here</span>
+              </a>
+            </div>
+          </div>
           <!-- Content: end -->
         </div>
         <!-- ModalBody: end -->
 
         <!-- ModalFooter: start -->
         <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__description">
+            Optional description
+          </div>
           <div class="ModalFooter__actions">
             <button
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example-custom-height"
+              data-spirit-target="#example-dropdown"
             >
               Primary action
             </button>
@@ -334,7 +347,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example-custom-height"
+              data-spirit-target="#example-dropdown"
             >
               Secondary action
             </button>
@@ -351,6 +364,7 @@
   </div>
 
 </section>
+
 <section class="docs-Section">
   <h2 class="docs-Heading">Scrolling Long Content</h2>
 
@@ -396,48 +410,18 @@
 
         <!-- ModalBody: start -->
         <div class="ModalBody">
+
           <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
+          {{setVar "blocks" 1 2 3 4 5 6 7 8 9 }}
+          {{#each @root.blocks}}
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+              provident unde. Eveniet, iste, molestiae?
+            </p>
+          {{/each}}
           <!-- Content: end -->
+
         </div>
         <!-- ModalBody: end -->
 
@@ -474,6 +458,100 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
+      data-spirit-target="#example-scrolling-modal"
+      aria-controls="example-scrolling-modal"
+      aria-expanded="false"
+    >
+      Open Modal with Scrolling Inside
+    </button>
+
+    <!-- Modal: start -->
+    <dialog id="example-scrolling-modal" class="Modal Modal--center" aria-labelledby="example-scrolling-modal-title">
+
+      <!-- ModalDialog: start -->
+      <article class="ModalDialog ModalDialog--scrollable">
+
+        <!-- ModalHeader: start -->
+        <header class="ModalHeader">
+          <h2 id="example-scrolling-modal-title" class="ModalHeader__title">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
+          </h2>
+          <button
+            type="button"
+            class="Button Button--tertiary Button--square Button--medium"
+            data-spirit-dismiss="modal"
+            data-spirit-target="#example-scrolling-modal"
+            aria-controls="example-scrolling-modal"
+            aria-expanded="false"
+          >
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
+            </svg>
+            <span class="accessibility-hidden">Close</span>
+          </button>
+        </header>
+        <!-- ModalHeader: end -->
+
+        <!-- ModalBody: start -->
+        <div class="ModalBody">
+          <!-- Content: start -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p style="margin-bottom: 100vh">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+          <!-- Content: end -->
+        </div>
+        <!-- ModalBody: end -->
+
+        <!-- ModalFooter: start -->
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-scrolling-modal"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-scrolling-modal"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+        <!-- ModalFooter: end -->
+
+      </article>
+      <!-- ModalDialog: end -->
+
+    </dialog>
+    <!-- Modal: end -->
+
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
       data-spirit-target="#example-scroll-view"
       aria-controls="example-scroll-view"
       aria-expanded="false"
@@ -485,7 +563,7 @@
     <dialog id="example-scroll-view" class="Modal Modal--center" aria-labelledby="example-scroll-view-title">
 
       <!-- ModalDialog: start -->
-      <article class="ModalDialog">
+      <article class="ModalDialog ModalDialog--scrollable">
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
@@ -599,30 +677,35 @@
       type="button"
       class="Button Button--primary Button--medium"
       data-spirit-toggle="modal"
-      data-spirit-target="#example-non-scrolling-modal"
-      aria-controls="example-non-scrolling-modal"
+      data-spirit-target="#example-custom-height"
+      aria-controls="example-custom-height"
       aria-expanded="false"
     >
-      Open Modal with Disabled Scrolling Inside
+      Open Modal with Custom Height
     </button>
 
     <!-- Modal: start -->
-    <dialog id="example-non-scrolling-modal" class="Modal Modal--center" aria-labelledby="example-non-scrolling-modal-title">
+    <dialog
+      id="example-custom-height"
+      class="Modal Modal--center"
+      aria-labelledby="example-custom-height-title"
+    >
 
       <!-- ModalDialog: start -->
-      <article class="ModalDialog ModalDialog--nonScrollable">
+      <article
+        class="ModalDialog ModalDialog--scrollable"
+        style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px"
+      >
 
         <!-- ModalHeader: start -->
         <header class="ModalHeader">
-          <h2 id="example-non-scrolling-modal-title" class="ModalHeader__title">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia perferendis reprehenderit, voluptate. Cum delectus dicta
-          </h2>
+          <h2 id="example-custom-height-title" class="ModalHeader__title">Modal with Custom Height</h2>
           <button
             type="button"
             class="Button Button--tertiary Button--square Button--medium"
             data-spirit-dismiss="modal"
-            data-spirit-target="#example-non-scrolling-modal"
-            aria-controls="example-non-scrolling-modal"
+            data-spirit-target="#example-custom-height"
+            aria-controls="example-custom-height"
             aria-expanded="false"
           >
             <svg width="24" height="24" aria-hidden="true">
@@ -636,26 +719,16 @@
         <!-- ModalBody: start -->
         <div class="ModalBody">
           <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
+          <p class="d-tablet-none">
+            This modal has a custom height of <code>400px</code> set via the <code>--modal-preferred-height-mobile</code> CSS
+            custom property.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
+          <p class="d-none d-tablet-block">
+            This modal has a custom height of <code>500px</code> set via the <code>--modal-preferred-height-tablet</code> CSS
+            custom property.
           </p>
-          <p style="margin-bottom: 100vh">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
+          <!-- TODO: add a checkbox "show more content to force scrolling" -->
+          <!-- TODO: add text fields to manually set values of available custom properties -->
           <!-- Content: end -->
         </div>
         <!-- ModalBody: end -->
@@ -667,7 +740,7 @@
               type="button"
               class="Button Button--primary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example-non-scrolling-modal"
+              data-spirit-target="#example-custom-height"
             >
               Primary action
             </button>
@@ -675,110 +748,7 @@
               type="button"
               class="Button Button--secondary Button--medium"
               data-spirit-dismiss="modal"
-              data-spirit-target="#example-non-scrolling-modal"
-            >
-              Secondary action
-            </button>
-          </div>
-        </footer>
-        <!-- ModalFooter: end -->
-
-      </article>
-      <!-- ModalDialog: end -->
-
-    </dialog>
-    <!-- Modal: end -->
-
-    <button
-      type="button"
-      class="Button Button--primary Button--medium"
-      data-spirit-toggle="modal"
-      data-spirit-target="#example-dropdown"
-      aria-controls="example-dropdown"
-      aria-expanded="false"
-    >
-      Open Non-Scrolling Modal with Dropdown
-    </button>
-
-    <!-- Modal: start -->
-    <dialog id="example-dropdown" class="Modal Modal--center" aria-labelledby="example-dropdown-title">
-
-      <!-- ModalDialog: start -->
-      <article class="ModalDialog ModalDialog--nonScrollable ModalDialog--expandOnMobile">
-
-        <!-- ModalHeader: start -->
-        <header class="ModalHeader">
-          <h2 id="example-dropdown-title" class="ModalHeader__title">Modal Title</h2>
-          <button
-            type="button"
-            class="Button Button--tertiary Button--square Button--medium"
-            data-spirit-dismiss="modal"
-            data-spirit-target="#example-dropdown"
-            aria-controls="example-dropdown"
-            aria-expanded="false"
-          >
-            <svg width="24" height="24" aria-hidden="true">
-              <use xlink:href="/assets/icons/svg/sprite.svg#close" />
-            </svg>
-            <span class="accessibility-hidden">Close</span>
-          </button>
-        </header>
-        <!-- ModalHeader: end -->
-
-        <!-- ModalBody: start -->
-        <div class="ModalBody">
-          <!-- Content: start -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
-            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
-            provident unde. Eveniet, iste, molestiae?
-          </p>
-          <div class="DropdownWrapper">
-            <button
-              type="button"
-              data-spirit-toggle="dropdown"
-              data-spirit-target="#dropdown-in-modal"
-              class="Button Button--secondary Button--medium"
-              aria-expanded="false"
-              aria-controls="dropdown-in-modal"
-            >
-              Dropdown
-            </button>
-            <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-in-modal">
-              <a href="#" class="Item">
-                <span class="Item__label">Action</span>
-              </a>
-              <a href="#" class="Item">
-                <span class="Item__label">Another action</span>
-              </a>
-              <a href="#" class="Item">
-                <span class="Item__label">Something else here</span>
-              </a>
-            </div>
-          </div>
-          <!-- Content: end -->
-        </div>
-        <!-- ModalBody: end -->
-
-        <!-- ModalFooter: start -->
-        <footer class="ModalFooter ModalFooter--right">
-          <div class="ModalFooter__description">
-            Optional description
-          </div>
-          <div class="ModalFooter__actions">
-            <button
-              type="button"
-              class="Button Button--primary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-dropdown"
-            >
-              Primary action
-            </button>
-            <button
-              type="button"
-              class="Button Button--secondary Button--medium"
-              data-spirit-dismiss="modal"
-              data-spirit-target="#example-dropdown"
+              data-spirit-target="#example-custom-height"
             >
               Secondary action
             </button>
