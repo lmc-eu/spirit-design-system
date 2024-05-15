@@ -24,6 +24,8 @@ module.exports = {
         'exporter-js',
         'exporter-scss',
         'exporter-svg',
+        // Use when committing changes/additions/removals to exact config
+        'jest-config',
         // Use when affecting CI process
         'ci',
         // Use for anything that does not directly affect packages, ie. updating repo-wide

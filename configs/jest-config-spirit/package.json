@@ -1,0 +1,33 @@
+{
+  "name": "jest-config-spirit",
+  "private": true,
+  "description": "Jest configuration and preset for Spirit Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "lmc-eu",
+    "spirit",
+    "spirit-design-system",
+    "config",
+    "jest",
+    "preset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/jest-config-spirit"
+  },
+  "type": "module",
+  "module": "./index.js",
+  "dependencies": {
+    "@swc/core": "1.5.0",
+    "@swc/jest": "0.2.36",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@types/jest": "29.5.12",
+    "jest": "29.7.0",
+    "jest-cli": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "jest-environment-node-single-context": "29.4.0",
+    "resize-observer-polyfill": "^1.5.1"
+  }
+}
