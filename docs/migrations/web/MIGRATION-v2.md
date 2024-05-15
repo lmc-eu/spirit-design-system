@@ -120,6 +120,9 @@ The `.ModalDialog--nonScrollable` modifier was removed and the ModalDialog is ma
 
 In the new version, use the `.ModalDialog--scrollable` modifier class to make the ModalDialog scrollable.
 
+If you use `ScrollView` for scrolling the content of your modal, you must also add the `.ModalDialog--scrollable` class
+to the `.ModalDialog` element.
+
 - `.ModalDialog` → `.ModalDialog .ModalDialog--scrollable`
 
 ### Modal: Uniform Variant Feature Flag

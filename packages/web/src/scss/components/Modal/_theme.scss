@@ -18,19 +18,31 @@ $common-padding-x-tablet: tokens.$space-800;
 // ModalDialog
 $dialog-width: 640px;
 $dialog-width-desktop: 680px;
-$dialog-height: var(--modal-preferred-height-mobile, min-content);
-$dialog-height-tablet: var(--modal-preferred-height-tablet, min-content);
-$dialog-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * $padding-y}));
-$dialog-max-height-tablet: min(var(--modal-max-height-tablet, 600px), calc(100dvh - #{2 * $padding-y}));
+$dialog-height: auto;
+$dialog-max-height: none;
 $dialog-text-color: tokens.$text-primary-default;
 $dialog-border-radius: tokens.$radius-200;
 $dialog-background-color: tokens.$background-basic;
 $dialog-shadow: tokens.$shadow-300;
 
+$dialog-scrollable-height: var(--modal-preferred-height-mobile, min-content);
+$dialog-scrollable-height-tablet: var(
+    --modal-preferred-height-tablet,
+    var(--modal-preferred-height-mobile, min-content)
+);
+$dialog-scrollable-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * $padding-y}));
+$dialog-scrollable-max-height-tablet: min(
+    var(--modal-max-height-tablet, var(--modal-max-height-mobile, 600px)),
+    calc(100dvh - #{2 * $padding-y})
+);
+
 $dialog-docked-width: 100%;
-$dialog-docked-height: var(--modal-preferred-height-mobile, min-content);
 $dialog-docked-margin-top: tokens.$space-1100;
-$dialog-docked-expanded-height: calc(100dvh - #{$dialog-docked-margin-top});
+
+$dialog-docked-expanded-min-height: calc(100dvh - #{$dialog-docked-margin-top});
+
+$dialog-docked-scrollable-height: var(--modal-preferred-height-mobile, min-content);
+$dialog-docked-scrollable-max-height: $dialog-docked-expanded-min-height;
 
 // ModalHeader
 $header-gap: tokens.$space-400;
