@@ -10,8 +10,8 @@
     min-height: map.get(theme.$typography, mobile, font-size) * map.get(theme.$typography, mobile, line-height); // 1.
     padding-inline: theme.$common-padding-x;
     padding-block: theme.$body-padding-y;
-    overflow-x: var(--modal-body-overflow-x, hidden);
-    overflow-y: var(--modal-body-overflow-y, auto);
+    overflow-x: var(--modal-body-overflow-x, visible);
+    overflow-y: var(--modal-body-overflow-y, visible);
     overscroll-behavior: contain;
 
     @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
