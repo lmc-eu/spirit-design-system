@@ -12,6 +12,7 @@ module.exports = {
       [
         // Use when committing changes/additions/removals to exact package
         'analytics',
+        'codemods',
         'common',
         'design-tokens',
         'form-validations',
