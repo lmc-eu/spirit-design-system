@@ -1,11 +1,10 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
 @use 'sass:map';
-@use 'true';
+@use 'true' as test;
 @use '../typography';
 @use '@tokens' as tokens;
 
-@include true.describe('generate mixin') {
-    @include true.it('should generate typography styles for a given token and breakpoint') {
+@include test.describe('generate mixin') {
+    @include test.it('should generate typography styles for a given token and breakpoint') {
         $sample-token: (
             'tablet': (
                 'font-family': 'Arial, sans-serif',
@@ -20,14 +19,14 @@
             ),
         );
 
-        @include true.assert {
-            @include true.output {
+        @include test.assert() {
+            @include test.output() {
                 .typography-test {
                     @include typography.generate($sample-token);
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 @media (min-width: map.get(tokens.$breakpoints, 'tablet')) {
                     .typography-test {
                         font-style: italic;

@@ -1,18 +1,17 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../../settings/cursors';
 @use '../../theme/form-fields' as form-fields-theme;
 @use '../form-fields';
 
-@include true.describe('form-fields mixins') {
-    @include true.it('should return label-disabled mixin styles') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('form-fields mixins') {
+    @include test.it('should return label-disabled mixin styles') {
+        @include test.assert() {
+            @include test.output() {
                 .label-disabled-test {
                     @include form-fields.label-disabled();
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .label-disabled-test {
                     color: form-fields-theme.$label-color-disabled;
 
@@ -24,14 +23,14 @@
         }
     }
 
-    @include true.it('should return input-disabled mixin styles') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should return input-disabled mixin styles') {
+        @include test.assert() {
+            @include test.output() {
                 .input-disabled-test {
                     @include form-fields.input-disabled();
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .input-disabled-test {
                     color: form-fields-theme.$input-color-disabled;
                     cursor: cursors.$disabled;
@@ -40,14 +39,14 @@
         }
     }
 
-    @include true.it('should return box-field-fluid mixin styles') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should return box-field-fluid mixin styles') {
+        @include test.assert() {
+            @include test.output() {
                 .box-field-fluid-test {
                     @include form-fields.box-field-fluid();
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .box-field-fluid-test {
                     width: 100%;
                 }

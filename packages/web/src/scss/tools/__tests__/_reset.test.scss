@@ -1,18 +1,17 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../../settings/cursors';
 @use '../reset';
 
-@include true.describe('button mixin') {
-    @include true.it('should apply reset styles for a button') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('button mixin') {
+    @include test.it('should apply reset styles for a button') {
+        @include test.assert() {
+            @include test.output() {
                 .btn-test {
                     @include reset.button();
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .btn-test {
                     appearance: none;
                     display: inline-flex;

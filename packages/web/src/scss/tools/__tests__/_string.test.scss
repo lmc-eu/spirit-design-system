@@ -1,35 +1,34 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../string';
 
-@include true.describe('convert-kebab-case-to-camel-case function') {
-    @include true.it('should convert kebab-case to camelCase') {
-        @include true.assert-equal(string.convert-kebab-case-to-camel-case('top-left'), 'topLeft');
+@include test.describe('convert-kebab-case-to-camel-case function') {
+    @include test.it('should convert kebab-case to camelCase') {
+        @include test.assert-equal(string.convert-kebab-case-to-camel-case('top-left'), 'topLeft');
 
-        @include true.assert-equal(
+        @include test.assert-equal(
             string.convert-kebab-case-to-camel-case('my-long-variable-name'),
             'myLongVariableName'
         );
     }
 }
 
-@include true.describe('convert-pascal-case-to-kebab-case function') {
-    @include true.it('should convert PascalCase to kebab-case') {
-        @include true.assert-equal(string.convert-pascal-case-to-kebab-case('TopLeft'), 'top-left');
+@include test.describe('convert-pascal-case-to-kebab-case function') {
+    @include test.it('should convert PascalCase to kebab-case') {
+        @include test.assert-equal(string.convert-pascal-case-to-kebab-case('TopLeft'), 'top-left');
 
-        @include true.assert-equal(
+        @include test.assert-equal(
             string.convert-pascal-case-to-kebab-case('MyLongVariableName'),
             'my-long-variable-name'
         );
     }
 }
 
-@include true.describe('replace function') {
-    @include true.it('should replace all occurrences of a substring with another string') {
-        @include true.assert-equal(string.replace('top-left', '-', ''), 'topleft');
+@include test.describe('replace function') {
+    @include test.it('should replace all occurrences of a substring with another string') {
+        @include test.assert-equal(string.replace('top-left', '-', ''), 'topleft');
 
-        @include true.assert-equal(string.replace('some-other-text', 'e', 'a'), 'soma-othar-taxt');
+        @include test.assert-equal(string.replace('some-other-text', 'e', 'a'), 'soma-othar-taxt');
 
-        @include true.assert-equal(string.replace('no-replacement-here', 'z', 'y'), 'no-replacement-here');
+        @include test.assert-equal(string.replace('no-replacement-here', 'z', 'y'), 'no-replacement-here');
     }
 }
