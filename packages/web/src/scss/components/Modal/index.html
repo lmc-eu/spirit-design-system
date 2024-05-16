@@ -694,7 +694,7 @@
       <!-- ModalDialog: start -->
       <article
         class="ModalDialog ModalDialog--scrollable"
-        style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px"
+        style="--modal-dialog-height: 400px; --modal-dialog-height-tablet: 500px; --modal-dialog-height-desktop: 600px"
       >
 
         <!-- ModalHeader: start -->
@@ -719,16 +719,224 @@
         <!-- ModalBody: start -->
         <div class="ModalBody">
           <!-- Content: start -->
-          <p class="d-tablet-none">
-            This modal has a custom height of <code>400px</code> set via the <code>--modal-preferred-height-mobile</code> CSS
-            custom property.
-          </p>
-          <p class="d-none d-tablet-block">
-            This modal has a custom height of <code>500px</code> set via the <code>--modal-preferred-height-tablet</code> CSS
-            custom property.
-          </p>
-          <!-- TODO: add a checkbox "show more content to force scrolling" -->
-          <!-- TODO: add text fields to manually set values of available custom properties -->
+          <!-- Modal custom height demo: start -->
+          <script>
+            const toggleCustomHeight = (event, selector, breakpoint) => {
+              const isCustomHeightEnabled = event.target.checked;
+              const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+
+              const modalElement = document.querySelector(selector);
+              const modalHeightInputElement = document.querySelector(`#custom-height-${breakpoint}`);
+              const modalHeightValueElement = document.querySelector(`#custom-height-${breakpoint}-value`);
+              const modalMaxHeightInputElement = document.querySelector(`#custom-max-height-${breakpoint}`);
+              const modalMaxHeightValueElement = document.querySelector(`#custom-max-height-${breakpoint}-value`);
+
+              if (isCustomHeightEnabled) {
+                modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, `${modalHeightInputElement.value}px`);
+                modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, `${modalMaxHeightInputElement.value}px`);
+                modalHeightInputElement.disabled = false;
+                modalHeightValueElement.textContent = `${modalHeightInputElement.value} px`;
+                modalMaxHeightInputElement.disabled = false;
+                modalMaxHeightValueElement.textContent = `${modalMaxHeightInputElement.value} px`;
+              } else {
+                modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, 'unset');
+                modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, 'unset');
+                modalHeightInputElement.disabled = true;
+                modalHeightValueElement.textContent = '—';
+                modalMaxHeightInputElement.disabled = true;
+                modalMaxHeightValueElement.textContent = '—';
+              }
+            };
+
+            const setModalHeight = (event, selector, breakpoint) => {
+              const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+              const modalElement = document.querySelector(selector);
+              const modalHeightValueElement = document.querySelector(`#custom-height-${breakpoint}-value`);
+
+              modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, `${event.target.value}px`);
+              modalHeightValueElement.textContent = `${event.target.value} px`;
+            };
+
+            const setModalMaxHeight = (event, selector, breakpoint) => {
+              const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+              const modalElement = document.querySelector(selector);
+              const modalHeightValueElement = document.querySelector(`#custom-max-height-${breakpoint}-value`);
+
+              modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, `${event.target.value}px`);
+              modalHeightValueElement.textContent = `${event.target.value} px`;
+            };
+          </script>
+          <form>
+            <fieldset class="Stack Stack--hasSpacing mb-800" style="border: 0;">
+              <legend hidden>Mobile</legend>
+              <label for="custom-height-mobile-enabled" class="Checkbox">
+                <input
+                  type="checkbox"
+                  id="custom-height-mobile-enabled"
+                  class="Checkbox__input"
+                  onchange="toggleCustomHeight(event, '#example-custom-height > .ModalDialog', 'mobile')"
+                  checked
+                  autocomplete="off"
+                />
+                <span class="Checkbox__text">
+                  <span class="Checkbox__label">Mobile</span>
+                </span>
+              </label>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-height-mobile" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Height
+                </label>
+                <span id="custom-height-mobile-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  400 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-height-mobile"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalHeight(event, '#example-custom-height > .ModalDialog', 'mobile')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="400"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-max-height-mobile" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Max height
+                </label>
+                <span id="custom-max-height-mobile-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  600 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-max-height-mobile"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalMaxHeight(event, '#example-custom-height > .ModalDialog', 'mobile')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="600"
+                  autocomplete="off"
+                />
+              </div>
+            </fieldset>
+            <fieldset class="Stack Stack--hasSpacing d-none d-tablet-grid mb-tablet-800" style="border: 0;">
+              <legend hidden>Tablet</legend>
+              <label for="custom-height-tablet-enabled" class="Checkbox">
+                <input
+                  type="checkbox"
+                  id="custom-height-tablet-enabled"
+                  class="Checkbox__input"
+                  onchange="toggleCustomHeight(event, '#example-custom-height > .ModalDialog', 'tablet')"
+                  checked
+                  autocomplete="off"
+                />
+                <span class="Checkbox__text">
+                  <span class="Checkbox__label">Tablet</span>
+                </span>
+              </label>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-height-tablet" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Height
+                </label>
+                <span id="custom-height-tablet-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  500 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-height-tablet"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalHeight(event, '#example-custom-height > .ModalDialog', 'tablet')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="500"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-max-height-tablet" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Max height
+                </label>
+                <span id="custom-max-height-tablet-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  600 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-max-height-tablet"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalMaxHeight(event, '#example-custom-height > .ModalDialog', 'tablet')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="600"
+                  autocomplete="off"
+                />
+              </div>
+            </fieldset>
+            <fieldset class="Stack Stack--hasSpacing d-none d-desktop-grid" style="border: 0;">
+              <legend hidden>Desktop</legend>
+              <label for="custom-height-desktop-enabled" class="Checkbox">
+                <input
+                  type="checkbox"
+                  id="custom-height-desktop-enabled"
+                  class="Checkbox__input"
+                  onchange="toggleCustomHeight(event, '#example-custom-height > .ModalDialog', 'desktop')"
+                  checked
+                  autocomplete="off"
+                />
+                <span class="Checkbox__text">
+                  <span class="Checkbox__label">Desktop</span>
+                </span>
+              </label>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-height-desktop" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Height
+                </label>
+                <span id="custom-height-desktop-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  600 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-height-desktop"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalHeight(event, '#example-custom-height > .ModalDialog', 'desktop')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="600"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="Grid" style="column-gap: var(--spirit-space-600)">
+                <label for="custom-max-height-desktop" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                  Max height
+                </label>
+                <span id="custom-max-height-desktop-value" class="GridItem" style="--grid-item-column-start: 6; --grid-item-column-end: 13; --grid-item-column-start-tablet: 4; --grid-item-column-end-tablet: 7;">
+                  600 px
+                </span>
+                <input
+                  type="range"
+                  id="custom-max-height-desktop"
+                  class="GridItem"
+                  style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                  onchange="setModalMaxHeight(event, '#example-custom-height > .ModalDialog', 'desktop')"
+                  min="200"
+                  max="1000"
+                  step="100"
+                  value="600"
+                  autocomplete="off"
+                />
+              </div>
+            </fieldset>
+          </form>
+          <!-- Modal custom height demo: end -->
           <!-- Content: end -->
         </div>
         <!-- ModalBody: end -->

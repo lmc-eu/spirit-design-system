@@ -25,14 +25,31 @@ $dialog-border-radius: tokens.$radius-200;
 $dialog-background-color: tokens.$background-basic;
 $dialog-shadow: tokens.$shadow-300;
 
-$dialog-scrollable-height: var(--modal-preferred-height-mobile, min-content);
+$_dialog-scrollable-default-height: min-content;
+$_dialog-scrollable-default-max-height: 600px;
+
+$dialog-scrollable-height: var(--modal-dialog-height, #{$_dialog-scrollable-default-height});
 $dialog-scrollable-height-tablet: var(
-    --modal-preferred-height-tablet,
-    var(--modal-preferred-height-mobile, min-content)
+    --modal-dialog-height-tablet,
+    var(--modal-dialog-height, #{$_dialog-scrollable-default-height})
 );
-$dialog-scrollable-max-height: min(var(--modal-max-height-mobile, 600px), calc(100dvh - #{2 * $padding-y}));
+$dialog-scrollable-height-desktop: var(
+    --modal-dialog-height-desktop,
+    var(--modal-dialog-height-tablet, var(--modal-dialog-height, #{$_dialog-scrollable-default-height}))
+);
+$dialog-scrollable-max-height: min(
+    var(--modal-dialog-max-height, #{$_dialog-scrollable-default-max-height}),
+    calc(100dvh - #{2 * $padding-y})
+);
 $dialog-scrollable-max-height-tablet: min(
-    var(--modal-max-height-tablet, var(--modal-max-height-mobile, 600px)),
+    var(--modal-dialog-max-height-tablet, var(--modal-dialog-max-height, #{$_dialog-scrollable-default-max-height})),
+    calc(100dvh - #{2 * $padding-y})
+);
+$dialog-scrollable-max-height-desktop: min(
+    var(
+        --modal-dialog-max-height-desktop,
+        var(--modal-dialog-max-height-tablet, var(--modal-dialog-max-height, #{$_dialog-scrollable-default-max-height}))
+    ),
     calc(100dvh - #{2 * $padding-y})
 );
 
@@ -41,7 +58,7 @@ $dialog-docked-margin-top: tokens.$space-1100;
 
 $dialog-docked-expanded-min-height: calc(100dvh - #{$dialog-docked-margin-top});
 
-$dialog-docked-scrollable-height: var(--modal-preferred-height-mobile, min-content);
+$dialog-docked-scrollable-height: var(--modal-dialog-height, #{$_dialog-scrollable-default-height});
 $dialog-docked-scrollable-max-height: $dialog-docked-expanded-min-height;
 
 // ModalHeader

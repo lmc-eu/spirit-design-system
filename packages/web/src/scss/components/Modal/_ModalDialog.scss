@@ -55,6 +55,11 @@
         height: theme.$dialog-scrollable-height-tablet;
         max-height: theme.$dialog-scrollable-max-height-tablet;
     }
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        height: theme.$dialog-scrollable-height-desktop;
+        max-height: theme.$dialog-scrollable-max-height-desktop;
+    }
 }
 
 .ModalDialog--dockOnMobile {
