@@ -30,7 +30,7 @@
         </GridItem>
         <GridItem columnStart="2" rowStart="2">
 
-            <DropdownWrapper UNSAFE_style="margin: 8rem auto">
+            <Dropdown UNSAFE_style="margin: 8rem auto">
                 <Button
                     data-spirit-toggle="dropdown"
                     data-spirit-target="#dropdown-placements-example"
@@ -38,12 +38,12 @@
                 >
                     <span id="dropdown-placements-example-text" style="white-space: nowrap">bottom-start</span>
                 </Button>
-                <Dropdown id="dropdown-placements-example">
+                <DropdownPopover id="dropdown-placements-example">
                     <Item elementType="a" href="#" label="Action" />
                     <Item elementType="a" href="#" label="Another action" />
                     <Item elementType="a" href="#" label="Something else here" />
-                </Dropdown>
-            </DropdownWrapper>
+                </DropdownPopover>
+            </Dropdown>
 
         </GridItem>
     </Grid>
