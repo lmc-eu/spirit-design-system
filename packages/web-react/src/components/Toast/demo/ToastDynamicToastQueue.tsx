@@ -2,17 +2,17 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { AlignmentXDictionaryType, AlignmentYDictionaryType, ToastColorType } from '../../../types';
 import { Button } from '../../Button';
 import { Checkbox } from '../../Checkbox';
-import { Link } from '../../Link';
 import { Radio } from '../../Radio';
 import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { TextArea } from '../../TextArea';
 import { TextField } from '../../TextField';
+import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import Toast from '../Toast';
 import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
-import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import { useToast } from '../useToast';
+import { ToastBarLink, ToastBarMessage } from '..';
 
 const ToastDynamicToastQueue = () => {
   const [isCollapsible, setIsCollapsible] = useState(true);
@@ -22,8 +22,10 @@ const ToastDynamicToastQueue = () => {
   const [hasIconValue, setHasIconValue] = useState(true);
   const [isDismissibleValue, setIsDismissibleValue] = useState(true);
   const [enableAutoCloseValue, setEnableAutoCloseValue] = useState(true);
+  const [isLinkFieldEnabled, setIsLinkFieldEnabled] = useState(true);
   const [autoCloseInterval, setAutoCloseInterval] = useState(DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
   const [messageValue, setMessageValue] = useState('This is a new toast message.');
+  const [linkValue, setLinkValue] = useState('This is a toast link.');
 
   const { queue, show, hide, clear, setQueue } = useToast();
 
@@ -31,36 +33,38 @@ const ToastDynamicToastQueue = () => {
     {
       id: '1',
       isOpen: true,
-      message: (
-        <>
-          I was first!{' '}
-          <Link href="#" color="inverted" isUnderlined>
-            Action
-          </Link>
-        </>
-      ),
+      content: {
+        message: 'I was first!',
+        link: 'Action',
+      },
       color: 'success',
       hasIcon: true,
       isDismissible: true,
       iconName: undefined,
       enableAutoClose: false,
+      linkProps: {
+        href: '#',
+        color: 'inverted',
+        isUnderlined: true,
+      },
     },
     {
       id: '2',
-      message: (
-        <>
-          I appeared later. This toast has a long message that wraps automatically.{' '}
-          <Link href="#" color="inverted" isUnderlined>
-            Action
-          </Link>
-        </>
-      ),
+      content: {
+        message: 'I appeared later. This toast has a long message that wraps automatically.',
+        link: 'Action',
+      },
       isOpen: true,
       color: 'informative',
       hasIcon: true,
       isDismissible: true,
       iconName: undefined,
       enableAutoClose: false,
+      linkProps: {
+        href: '#',
+        color: 'inverted',
+        isUnderlined: true,
+      },
     },
   ];
 
@@ -200,22 +204,47 @@ const ToastDynamicToastQueue = () => {
             />
             <TextArea
               label="Message"
-              name="content"
-              id="toast-content"
+              name="message"
+              id="toast-message"
               helperText="Can contain HTML."
               value={messageValue}
               onChange={(e) => setMessageValue(e.currentTarget.value)}
             />
+            <Checkbox
+              name="enable-link"
+              id="toast-enable-link"
+              label="Add link"
+              isChecked={isLinkFieldEnabled}
+              onChange={() => setIsLinkFieldEnabled(!isLinkFieldEnabled)}
+            />
+            <TextArea
+              label="Link"
+              name="link"
+              id="toast-link"
+              helperText="Can contain HTML."
+              value={linkValue}
+              isDisabled={!isLinkFieldEnabled}
+              onChange={(e) => setLinkValue(e.currentTarget.value)}
+            />
             <div>
               <Button
                 onClick={() => {
-                  show(messageValue, `my-dynamic-toast-${Date.now().toString()}`, {
-                    autoCloseInterval,
-                    color: colorValue,
-                    hasIcon: hasIconValue,
-                    isDismissible: isDismissibleValue,
-                    enableAutoClose: enableAutoCloseValue,
-                  });
+                  show(
+                    { message: messageValue, link: isLinkFieldEnabled ? linkValue : undefined },
+                    `my-dynamic-toast-${Date.now().toString()}`,
+                    {
+                      autoCloseInterval,
+                      color: colorValue,
+                      hasIcon: hasIconValue,
+                      isDismissible: isDismissibleValue,
+                      enableAutoClose: enableAutoCloseValue,
+                      linkProps: {
+                        href: '#',
+                        color: 'inverted',
+                        isUnderlined: true,
+                      },
+                    },
+                  );
                 }}
               >
                 Add
@@ -242,7 +271,7 @@ const ToastDynamicToastQueue = () => {
 
       <Toast alignmentX={alignmentX} alignmentY={alignmentY} isCollapsible={isCollapsible}>
         {queue.map((item) => {
-          const { color, iconName, id, isOpen, message, hasIcon, isDismissible } = item;
+          const { color, iconName, id, isOpen, content, hasIcon, isDismissible } = item;
 
           return (
             <ToastBar
@@ -253,9 +282,10 @@ const ToastDynamicToastQueue = () => {
               iconName={iconName}
               isDismissible={isDismissible}
               onClose={() => hide(id)}
-              isOpen={isOpen && !!message}
+              isOpen={isOpen && !!content}
             >
-              {message}
+              <ToastBarMessage>{content.message}</ToastBarMessage>
+              {content.link && <ToastBarLink href="#">{content.link}</ToastBarLink>}
             </ToastBar>
           );
         })}

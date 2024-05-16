@@ -8,6 +8,8 @@ Toast is a composition of a few subcomponents:
 
 - [Toast](#toast)
   - [ToastBar](#toastbar)
+    - [ToastBarMessage](#toastbarmessage)
+    - [ToastBarLink](#toastbarlink)
 - [UncontrolledToast](#uncontrolledToast)
 
 ## Toast
@@ -150,11 +152,11 @@ elements.
 Minimum example:
 
 ```jsx
-import { ToastBar } from '@lmc-eu/spirit-web-react/components';
-```
+import { ToastBar, ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
 
-```jsx
-<ToastBar id="my-toast">Message only</ToastBar>
+<ToastBar id="my-toast">
+  <ToastBarMessage>Message only</ToastBarMessage>
+</ToastBar>;
 ```
 
 ### Optional Icon
@@ -163,7 +165,7 @@ An icon can be displayed in the ToastBar component, depending on the color of th
 
 ```jsx
 <ToastBar id="my-toast" color="success" hasIcon>
-  Message with icon
+  <ToastBarMessage>Message with icon</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -171,7 +173,7 @@ Alternatively, a custom icon can be used:
 
 ```jsx
 <ToastBar id="my-toast" iconName="download">
-  Message with custom icon
+  <ToastBarMessage>Message with custom icon</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -185,21 +187,59 @@ Alternatively, a custom icon can be used:
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
 
-### Action Link
+### ToastBar Components
 
-An action link can be added to the ToastBar component:
+The content of `ToastBar` can be assembled from the following subcomponents:
+
+#### ToastBarMessage
+
+`ToastBarMessage` is a subcomponent designated for the main message in `ToastBar`.
+
+Usage example:
 
 ```jsx
-<ToastBar id="my-toast">
-  Message with action
-  <Link href="#" color="inverted" isUnderlined>
-    Action
-  </Link>
+<ToastBar id="my-toast" isOpen={isOpen} onClose={() => setIsOpen(false)} isDismissible>
+  <ToastBarMessage>This is the main toast message.</ToastBarMessage>
 </ToastBar>
 ```
 
-👉 For the sake of flexibility, developers can pass the link as part of the message. However, it is strongly recommended
-to use the **inverted underlined** variant of the link (for all ToastBar colors) to make it stand out from the message.
+#### API
+
+| Name       | Type        | Default | Required | Description                    |
+| ---------- | ----------- | ------- | -------- | ------------------------------ |
+| `children` | `ReactNode` | —       | ✓        | Content of the ToastBarMessage |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
+#### ToastBarLink
+
+`ToastBarLink` is a subcomponent designated to create an action link within `ToastBar`.
+
+Usage example:
+
+```jsx
+<ToastBar id="my-toast" isOpen={isOpen} onClose={() => setIsOpen(false)} isDismissible>
+  <ToastBarLink href="#">This is the action link.</ToastBarLink>
+</ToastBar>
+```
+
+#### API
+
+| Name           | Type                                             | Default    | Required | Description                    |
+| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
+| `children`     | `ReactNode`                                      | —          | ✓        | Content of the ToastBarLink    |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
+| `elementType`  | `ElementType`                                    | `a`        | ✕        | Type of element used as        |
+| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
+| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
+| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
+| `ref`          | `ForwardedRef<HTMLAnchorElement>`                | —          | ✕        | Link element reference         |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
@@ -213,9 +253,11 @@ Use the `color` option to change the color of the ToastBar component.
 For example:
 
 ```jsx
+import { ToastBarMessage } from '@lmc-eu/spirit-web-react/components';
+
 <ToastBar id="my-toast" color="success">
-  Success message
-</ToastBar>
+  <ToastBarMessage>Success message</ToastBarMessage>
+</ToastBar>;
 ```
 
 ### Opening the ToastBar
@@ -224,7 +266,7 @@ Set `isOpen` prop to `true` to open a Toast **that is present in the DOM,** e.g.
 
 ```jsx
 <ToastBar id="my-toast" isOpen>
-  Opened ToastBar
+  <ToastBarMessage>Opened ToastBar</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -236,7 +278,7 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 
 ```jsx
 <ToastBar id="my-toast" onClose={() => {}} isDismissible>
-  Dismissible message
+  <ToastBarMessage>Dismissible message</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -248,7 +290,7 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 | `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                       |
 | `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
 | `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
-| `id`            | `string`                                                     | —          | ✔        | ToastBar ID                                         |
+| `id`            | `string`                                                     | —          | ✓        | ToastBar ID                                         |
 | `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
 | `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                        |
 | `onClose`       | `function`                                                   | —          | ✕        | Close button callback                               |
@@ -264,9 +306,9 @@ and [escape hatches][readme-escape-hatches].
 ## Full Example
 
 ```jsx
-import { Button, Toast, ToastBar } from '@lmc-eu/spirit-web-react/components';
+import { Button, Toast, ToastBar, ToastBarMessage, ToastBarLink } from '@lmc-eu/spirit-web-react/components';
 
-const [isOpen, setIsOpen] = React.useState(false)
+const [isOpen, setIsOpen] = useState(false);
 
 <Button onClick={() => setIsOpen(true)} aria-expanded={isOpen} aria-controls="my-toast">
   {buttonLabel}
@@ -274,8 +316,8 @@ const [isOpen, setIsOpen] = React.useState(false)
 
 <Toast>
   <ToastBar id="my-toast" isOpen={isOpen} onClose={() => setIsOpen(false)} isDismissible>
-    Toast message
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Toast message</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
   </ToastBar>
 </Toast>
 ```
@@ -348,17 +390,25 @@ All other options are not required and can be omitted entirely.
 ```jsx
 const { show } = useToast();
 
-         ┌─⫸ Message inside UncontrolledToast (required)
-         │
-         │                 ┌─⫸ ToastBar ID (required)
-         │                 │
-show('Toast message', 'toast-id', {
-  autoCloseInterval: 3000  // Set interval in ms after ToastBar will be closed, default: 3000
+                            ┌─⫸ Message inside UncontrolledToast (required)
+                            │                       ┌─⫸ Link text inside UncontrolledToast (required)
+                            │                       │                ┌─⫸ ToastBar ID (required)
+                            │                       │                │
+show({content: { message: 'Toast message', link: 'Link action' }}, 'toast-id', {
+  autoCloseInterval: 3000,  // Set interval in ms after ToastBar will be closed, default: 3000
   color: 'danger',         // Color variant, default: 'inverted'
-  enableAutoClose: true    // If true, ToastBar will close after `autoCloseInterval`, default: true
-  hasIcon: true            // If true, an icon is shown along the message, default: false \*
+  enableAutoClose: true,    // If true, ToastBar will close after `autoCloseInterval`, default: true
+  hasIcon: true,            // If true, an icon is shown along the message, default: false \*
   iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
   isDismissible: true      // If true, ToastBar can be dismissed by user, default: false
+  linkProps: {             // Props for the link
+    href: 'https://example.com', // Link URL
+    target: '_blank',      // Optional link target attribute
+    isUnderlined: false,   // Optional link underlining, default: true
+    isDisabled: false,     // Optional link disabling, default: false
+    elementType: 'a',      // Optional link element type, default: 'a'
+    color: 'inverted',     // Optional link color variant, default: 'inverted'
+  },
 });
 ```
 

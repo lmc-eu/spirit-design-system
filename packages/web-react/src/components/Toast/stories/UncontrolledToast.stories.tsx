@@ -1,10 +1,9 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-
 import { ToastItem, ToastProvider, UncontrolledToast } from '..';
 import { AlignmentX, EmotionColors } from '../../../constants';
-import { ToastColorType, UncontrolledToastProps } from '../../../types';
+import { LinkProps, ToastColorType, UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
@@ -21,9 +20,6 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
   },
   argTypes: {
-    children: {
-      control: 'text',
-    },
     alignmentX: {
       control: 'select',
       options: [...Object.values(AlignmentX)],
@@ -86,7 +82,10 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
   },
   args: {
-    children: 'Hello, World!',
+    content: {
+      message: 'This is a toast message',
+      link: 'Action',
+    },
     alignmentX: 'center',
     alignmentY: 'bottom',
     closeLabel: 'Close',
@@ -97,6 +96,9 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     isCollapsible: true,
     enableAutoClose: true,
     autoCloseInterval: DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
+    linkProps: {
+      href: '#',
+    },
   },
 };
 
@@ -110,9 +112,10 @@ const ShowButton = (props: {
   hasIcon: boolean;
   iconName?: string;
   isDismissible: boolean;
-  text: string | JSX.Element;
+  linkProps: LinkProps;
+  content: { message: string | JSX.Element; link?: string | JSX.Element };
 }) => {
-  const { text, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval } = props;
+  const { content, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval, linkProps } = props;
   const { show, clear } = useToast();
 
   return (
@@ -120,13 +123,14 @@ const ShowButton = (props: {
       <Button
         type="button"
         onClick={() =>
-          show(text, Date.now().toString(), {
+          show({ message: content.message, link: content.link }, Date.now().toString(), {
             color,
             hasIcon,
             isDismissible,
             iconName,
             enableAutoClose,
             autoCloseInterval,
+            linkProps,
           })
         }
         marginBottom="space-400"
@@ -142,7 +146,7 @@ const ShowButton = (props: {
 };
 
 const UncontrolledToastComponent = (args: UncontrolledToastPlaygroundProps) => {
-  const { children, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval } = args;
+  const { content, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval, linkProps } = args;
 
   return (
     <ToastProvider>
@@ -153,7 +157,8 @@ const UncontrolledToastComponent = (args: UncontrolledToastPlaygroundProps) => {
         hasIcon={hasIcon}
         iconName={iconName}
         isDismissible={isDismissible}
-        text={children as string | JSX.Element}
+        content={content}
+        linkProps={linkProps}
       />
       <UncontrolledToast {...args} />
     </ToastProvider>

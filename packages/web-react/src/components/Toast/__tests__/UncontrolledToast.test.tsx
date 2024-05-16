@@ -3,15 +3,24 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import UncontrolledToast from '../UncontrolledToast';
 import { ToastContext } from '../ToastContext';
+import { LinkProps } from '../../../types';
 
 const defaultToast = {
   id: 'test-id',
-  message: 'Toast message',
+  content: {
+    message: 'Toast message',
+    link: 'Toast link',
+  },
   isOpen: false,
   iconName: undefined,
   hasIcon: false,
   isDismissible: false,
   color: undefined,
+  linkProps: {
+    href: '#',
+    color: 'inverted',
+    isUnderlined: true,
+  } as LinkProps,
 };
 
 const defaultContextValue = {
@@ -53,7 +62,7 @@ describe('UncontrolledToast', () => {
     expect(elementToast).toBeInTheDocument();
     expect(elementToastBar).toBeInTheDocument();
     expect(elementToastBar).toHaveClass('is-open ToastBar--inverted');
-    expect(elementToastBar.querySelector('.ToastBar .ToastBar__content svg')).not.toBeInTheDocument();
+    expect(elementToastBar.querySelector('.ToastBar .ToastBar__container svg')).not.toBeInTheDocument();
   });
 
   it('should render opened toast with params', () => {
@@ -75,7 +84,7 @@ describe('UncontrolledToast', () => {
     expect(elementToastBar).toBeInTheDocument();
     expect(elementToast).toHaveClass('Toast--right Toast--top');
     expect(elementToastBar).toHaveClass('ToastBar ToastBar--inverted ToastBar--dismissible is-open');
-    expect(elementToastBar.querySelector('.ToastBar__content svg')).toBeInTheDocument();
+    expect(elementToastBar.querySelector('.ToastBar__container svg')).toBeInTheDocument();
     expect(elementToastBar.querySelector('button')).toHaveTextContent('Close test');
   });
 

@@ -1,14 +1,15 @@
 import classNames from 'classnames';
 import { useClassNamePrefix } from '../../hooks';
-import { SpiritToastBarProps } from '../../types';
+import { ToastBarProps } from '../../types';
 
-export const useToastBarStyleProps = (props: Omit<SpiritToastBarProps, 'onClose'>) => {
+export const useToastBarStyleProps = (props: ToastBarProps) => {
   const { color, isDismissible, ...restProps } = props;
 
   const toastBarClass = useClassNamePrefix('ToastBar');
   const toastBarBoxClass = `${toastBarClass}__box`;
+  const toastBarContainerClass = `${toastBarClass}__container`;
   const toastBarContentClass = `${toastBarClass}__content`;
-  const toastBarMessageClass = `${toastBarClass}__message`;
+  const toastBarLinkClass = `${toastBarClass}__link`;
   const colorClass = `${toastBarClass}--${color || 'inverted'}`;
   const dismissibleClass = `${toastBarClass}--dismissible`;
   const rootClass = classNames(toastBarClass, colorClass, isDismissible && dismissibleClass);
@@ -17,8 +18,9 @@ export const useToastBarStyleProps = (props: Omit<SpiritToastBarProps, 'onClose'
     classProps: {
       root: rootClass,
       box: toastBarBoxClass,
+      container: toastBarContainerClass,
       content: toastBarContentClass,
-      message: toastBarMessageClass,
+      link: toastBarLinkClass,
     },
     props: restProps,
   };

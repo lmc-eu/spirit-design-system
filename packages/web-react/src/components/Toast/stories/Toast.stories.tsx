@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SpiritToastProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
-import { Toast, ToastBar } from '..';
+import { Toast, ToastBar, ToastBarMessage } from '..';
 
 const meta: Meta<typeof Toast> = {
   title: 'Components/Toast',
@@ -52,7 +52,7 @@ const ToastWithHooks = (args: SpiritToastProps) => {
       <Button onClick={() => setIsOpen(!isOpen)}>{buttonLabel}</Button>
       <Toast {...args}>
         <ToastBar id="my-toast" isOpen={isOpen} isDismissible onClose={() => setIsOpen(false)}>
-          This is a toast message
+          <ToastBarMessage>This is a toast message</ToastBarMessage>
         </ToastBar>
       </Toast>
     </>

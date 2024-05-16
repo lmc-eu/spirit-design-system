@@ -17,7 +17,10 @@ export interface SpiritToastProps extends BaseToastProps {
 }
 
 export interface BaseToastBarProps extends ChildrenProps, StyleProps {
-  id: string;
+  closeLabel?: string;
+  color?: ToastColorType;
+  hasIcon?: boolean;
+  iconName?: string;
 }
 
 export interface ToastBarHandlingProps {
@@ -33,10 +36,7 @@ export interface TransitionToastBarProps {
 }
 
 export interface SpiritToastBarProps extends ToastBarProps, TransitionToastBarProps {
-  closeLabel?: string;
-  color?: ToastColorType;
-  hasIcon?: boolean;
-  iconName?: string;
+  id: string;
 }
 
 export interface ToastCloseButtonProps extends ToastBarHandlingProps, SpiritToastBarProps {
