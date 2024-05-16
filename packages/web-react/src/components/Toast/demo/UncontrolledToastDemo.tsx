@@ -44,6 +44,8 @@ const ShowToastButton = () => {
             iconName: 'download',
             isDismissible: true,
             hasIcon: true,
+            enableAutoClose: true,
+            autoCloseInterval: 1500,
           });
         }}
       >

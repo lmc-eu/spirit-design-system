@@ -11,6 +11,7 @@ import { TextField } from '../../TextField';
 import Toast from '../Toast';
 import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
+import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import { useToast } from '../useToast';
 
 const ToastDynamicToastQueue = () => {
@@ -20,6 +21,8 @@ const ToastDynamicToastQueue = () => {
   const [colorValue, setColorValue] = useState<ToastColorType>('inverted');
   const [hasIconValue, setHasIconValue] = useState(true);
   const [isDismissibleValue, setIsDismissibleValue] = useState(true);
+  const [enableAutoCloseValue, setEnableAutoCloseValue] = useState(true);
+  const [autoCloseInterval, setAutoCloseInterval] = useState(DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
   const [messageValue, setMessageValue] = useState('This is a new toast message.');
 
   const { queue, show, hide, clear, setQueue } = useToast();
@@ -40,6 +43,7 @@ const ToastDynamicToastQueue = () => {
       hasIcon: true,
       isDismissible: true,
       iconName: undefined,
+      enableAutoClose: false,
     },
     {
       id: '2',
@@ -56,6 +60,7 @@ const ToastDynamicToastQueue = () => {
       hasIcon: true,
       isDismissible: true,
       iconName: undefined,
+      enableAutoClose: false,
     },
   ];
 
@@ -174,6 +179,25 @@ const ToastDynamicToastQueue = () => {
               isChecked={isDismissibleValue}
               onChange={() => setIsDismissibleValue(!isDismissibleValue)}
             />
+            <Checkbox
+              name="enable-autoClose"
+              id="toast-enable-autoClose"
+              label="Enable AutoClose"
+              isChecked={enableAutoCloseValue}
+              onChange={() => setEnableAutoCloseValue(!enableAutoCloseValue)}
+            />
+            <TextField
+              type="number"
+              min="0"
+              max="60000"
+              step="500"
+              value={autoCloseInterval}
+              onChange={(e) => setAutoCloseInterval(Number(e.currentTarget.value))}
+              isDisabled={!enableAutoCloseValue}
+              label="AutoClose interval (ms)"
+              name="autoCloseInterval"
+              id="toast-auto-close-interval"
+            />
             <TextArea
               label="Message"
               name="content"
@@ -186,9 +210,11 @@ const ToastDynamicToastQueue = () => {
               <Button
                 onClick={() => {
                   show(messageValue, `my-dynamic-toast-${Date.now().toString()}`, {
+                    autoCloseInterval,
                     color: colorValue,
                     hasIcon: hasIconValue,
                     isDismissible: isDismissibleValue,
+                    enableAutoClose: enableAutoCloseValue,
                   });
                 }}
               >
@@ -227,7 +253,7 @@ const ToastDynamicToastQueue = () => {
               iconName={iconName}
               isDismissible={isDismissible}
               onClose={() => hide(id)}
-              isOpen={!!isOpen && !!message}
+              isOpen={isOpen && !!message}
             >
               {message}
             </ToastBar>
