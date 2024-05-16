@@ -5,39 +5,39 @@ This is the Twig implementation of the [Dropdown][dropdown] component.
 Basic example usage:
 
 ```twig
-<DropdownWrapper>
+<Dropdown>
   <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown id="DropdownExample">Dropdown Content</Dropdown>
-</DropdownWrapper>
+  <DropdownPopover id="DropdownExample">Dropdown Content</DropdownPopover>
+</Dropdown>
 ```
 
 Full width on mobile
 
 ```twig
-<DropdownWrapper>
+<Dropdown>
   <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown id="DropdownExample" fullWidthMode="mobile-only">Dropdown Content</Dropdown>
-</DropdownWrapper>
+  <DropdownPopover id="DropdownExample" fullWidthMode="mobile-only">Dropdown Content</DropdownPopover>
+</Dropdown>
 ```
 
 Advanced example usage with positioning:
 
 ```twig
-<DropdownWrapper>
+<Dropdown>
   <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown elementType="span" id="DropdownExample" placement="top-end" fullWidthMode="all">Dropdown Content</Dropdown>
-</DropdownWrapper>
+  <DropdownPopover elementType="span" id="DropdownExample" placement="top-end" fullWidthMode="all">Dropdown Content</DropdownPopover>
+</Dropdown>
 ```
 
 Example with [Item][item] component:
 
 ```twig
-<DropdownWrapper>
+<Dropdown>
   <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown id="DropdownExample">
+  <DropdownPopover id="DropdownExample">
     <Item elementType="a" href="#" label="Item label" />
-  </Dropdown>
-</DropdownWrapper>
+  </DropdownPopover>
+</Dropdown>
 ```
 
 You can add any custom trigger like a `<Button>` but it is necessary to add `data-spirit-toggle="dropdown"`, `data-spirit-target="<id>"`
@@ -45,13 +45,13 @@ attributes to register trigger events.
 
 ## API
 
-### Dropdown
+### DropdownPopover
 
 | Name            | Type                                         | Default        | Required | Description                           |
 | --------------- | -------------------------------------------- | -------------- | -------- | ------------------------------------- |
 | `elementType`   | `string`                                     | `div`          | ✕        | HTML tag to render                    |
 | `fullWidthMode` | `string`                                     | —              | ✕        | Full-width mode [off,mobile-only,all] |
-| `id`            | `string`                                     | —              | ✔        | Dropdown ID                           |
+| `id`            | `string`                                     | —              | ✔        | DropdownPopover ID                    |
 | `placement`     | [Placement Dictionary][dictionary-placement] | `bottom-start` | ✕        | Placement of the dropdown             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -70,7 +70,7 @@ and [escape hatches][readme-escape-hatches].
 Other necessary attributes are toggled automatically, like `aria-controls` and `aria-expanded` when the component is loaded
 or the width of the window is changed. There can be several triggers, the same rules apply to each.
 
-### DropdownWrapper
+### Dropdown
 
 | Name          | Type     | Default | Required | Description        |
 | ------------- | -------- | ------- | -------- | ------------------ |

@@ -15,6 +15,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Alert: `role="alert"`](#alert-rolealert)
   - [Breadcrumbs: `goBackTitle` Prop](#breadcrumbs-gobacktitle-prop)
   - [Dropdown: `id` Prop](#dropdown-id-prop)
+  - [Dropdown: Components Naming](#dropdown-components-naming)
   - [Grid: Breakpoint Props](#grid-breakpoint-props)
   - [Grid: GridSpan Component](#grid-gridspan-component)
   - [Header: Abstracts Class and Style](#header-abstracts-class-and-style)
@@ -114,6 +115,17 @@ The `id` prop is mandatory for the `Dropdown` component.
 #### Migration Guide
 
 Add `id` prop to the `Dropdown` component.
+
+### Dropdown: Components Naming
+
+In order to have the root component called `Dropdown`, we renamed
+the `DropdownWrapper` component to `Dropdown` and the original
+`Dropdown` component to `DropdownPopover`.
+
+#### Migration Guide
+
+1. Rename `DropdownWrapper` component to `Dropdown`.
+2. Rename `Dropdown` component to `DropdownPopover`.
 
 ### Grid: Breakpoint Props
 
