@@ -252,13 +252,6 @@
 DropdownPopover implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
 a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
-### ⚠️ DEPRECATION NOTICE
-
-CSS modifiers `DropdownPopover--top`, `DropdownPopover--rightTop`, `DropdownPopover--bottom`, etc. are deprecated and will be
-removed in the next major release. Use `data-spirit-placement` attribute instead.
-
-[What are deprecations?][readme-deprecations]
-
 ## JavaScript
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.Dropdown` class.
@@ -318,4 +311,3 @@ dropdown.hide();
 
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md#placement
 [item]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Item/README.md
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/README.md#deprecations
