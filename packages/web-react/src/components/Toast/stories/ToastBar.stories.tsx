@@ -20,6 +20,9 @@ const meta: Meta<typeof ToastBar> = {
     },
     closeLabel: {
       control: 'text',
+      table: {
+        defaultValue: { summary: 'Close' },
+      },
     },
     color: {
       control: 'select',

@@ -1,16 +1,20 @@
 import React, { FC, ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
 import { ToastColorType } from '../../types';
+import { delayedCallback } from '../../utils';
+import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from './constants';
 
 type ToastState = {
   queue: ToastItem[];
 };
 
 export interface ToastItem {
-  color: ToastColorType | undefined;
-  iconName: string | undefined;
+  autoCloseInterval?: number;
+  color?: ToastColorType;
+  enableAutoClose?: boolean;
   hasIcon: boolean;
-  isDismissible: boolean;
+  iconName?: string;
   id: string;
+  isDismissible: boolean;
   isOpen: boolean;
   message: string | JSX.Element;
 }
@@ -22,7 +26,14 @@ export interface ToastContextType extends ToastState {
   show: (
     text: string | JSX.Element,
     id: string,
-    options?: { color?: ToastColorType; iconName?: string; hasIcon?: boolean; isDismissible?: boolean },
+    options?: {
+      autoCloseInterval?: number;
+      color?: ToastColorType;
+      enableAutoClose?: boolean;
+      hasIcon?: boolean;
+      iconName?: string;
+      isDismissible?: boolean;
+    },
   ) => void;
 }
 
@@ -42,7 +53,14 @@ type ActionType =
       payload: {
         text: string | JSX.Element;
         toastId: string;
-        options?: { color?: ToastColorType; iconName?: string; hasIcon?: boolean; isDismissible?: boolean };
+        options?: {
+          autoCloseInterval?: number;
+          color?: ToastColorType;
+          enableAutoClose?: boolean;
+          hasIcon?: boolean;
+          iconName?: string;
+          isDismissible?: boolean;
+        };
       };
     }
   | { type: 'hide'; payload: { id: string } }
@@ -58,7 +76,9 @@ const reducer = (state: ToastState, action: ActionType): ToastState => {
       const newQueue = [
         ...currentQueue,
         {
+          autoCloseInterval: payload.options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
           color: payload.options?.color || undefined,
+          enableAutoClose: payload.options?.enableAutoClose || true,
           hasIcon: payload.options?.hasIcon || false,
           iconName: payload.options?.iconName,
           id: payload.toastId,
@@ -95,17 +115,6 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialToastState);
   const { queue } = state;
 
-  const show = useCallback(
-    (
-      text: string | JSX.Element,
-      toastId: string,
-      options?: { color?: ToastColorType; iconName?: string; hasIcon?: boolean; isDismissible?: boolean },
-    ) => {
-      dispatch({ type: 'show', payload: { text, toastId, options } });
-    },
-    [],
-  );
-
   const hide = useCallback((id: string) => {
     dispatch({ type: 'hide', payload: { id } });
   }, []);
@@ -114,23 +123,50 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
     dispatch({ type: 'clear', payload: null });
   }, []);
 
+  const show = useCallback(
+    (
+      text: string | JSX.Element,
+      toastId: string,
+      options?: {
+        autoCloseInterval?: number;
+        color?: ToastColorType;
+        enableAutoClose?: boolean;
+        hasIcon?: boolean;
+        iconName?: string;
+        isDismissible?: boolean;
+      },
+    ) => {
+      dispatch({ type: 'show', payload: { text, toastId, options } });
+
+      options?.enableAutoClose &&
+        delayedCallback(() => hide(toastId), options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
+    },
+    [],
+  );
   const setQueue = useCallback((newQueue: ToastItem[]) => {
     dispatch({ type: 'clear', payload: null });
 
     newQueue.forEach((item) => {
+      const enableAutoClose = item.enableAutoClose ?? true;
+      const autoCloseInterval = item.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL;
+
       dispatch({
         type: 'show',
         payload: {
           text: item.message,
           toastId: item.id,
           options: {
+            autoCloseInterval,
+            enableAutoClose,
             color: item.color,
+            hasIcon: item.hasIcon || false,
             iconName: item.iconName,
-            hasIcon: item.hasIcon,
-            isDismissible: item.isDismissible,
+            isDismissible: item.isDismissible || false,
           },
         },
       });
+
+      enableAutoClose && delayedCallback(() => hide(item.id), autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
     });
   }, []);
 

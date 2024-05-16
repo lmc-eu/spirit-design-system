@@ -353,9 +353,11 @@ const { show } = useToast();
          │                 ┌─⫸ ToastBar ID (required)
          │                 │
 show('Toast message', 'toast-id', {
+  autoCloseInterval: 3000  // Set interval in ms after ToastBar will be closed, default: 3000
   color: 'danger',         // Color variant, default: 'inverted'
-  iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
+  enableAutoClose: true    // If true, ToastBar will close after `autoCloseInterval`, default: true
   hasIcon: true            // If true, an icon is shown along the message, default: false \*
+  iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
   isDismissible: true      // If true, ToastBar can be dismissed by user, default: false
 });
 ```

@@ -1,20 +1,16 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
-import { ToastColorType, UncontrolledToastProps } from '../../../types';
+import { ToastItem, ToastProvider, UncontrolledToast } from '..';
 import { AlignmentX, EmotionColors } from '../../../constants';
+import { ToastColorType, UncontrolledToastProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';
+import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
 import { useToast } from '../useToast';
-import { ToastProvider, UncontrolledToast } from '..';
 
-interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps {
-  color: ToastColorType;
-  hasIcon: boolean;
-  isDismissible: boolean;
-  iconName: string;
-}
+interface UncontrolledToastPlaygroundProps extends UncontrolledToastProps, ToastItem {}
 
 const meta: Meta<UncontrolledToastPlaygroundProps> = {
   title: 'Components/Toast',
@@ -44,12 +40,21 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
     closeLabel: {
       control: 'text',
+      table: {
+        defaultValue: { summary: 'Close' },
+      },
     },
     hasIcon: {
       control: 'boolean',
+      table: {
+        defaultValue: { summary: false },
+      },
     },
     isDismissible: {
       control: 'boolean',
+      table: {
+        defaultValue: { summary: false },
+      },
     },
     color: {
       control: 'select',
@@ -63,6 +68,21 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     },
     isCollapsible: {
       control: 'boolean',
+      table: {
+        defaultValue: { summary: true },
+      },
+    },
+    enableAutoClose: {
+      control: 'boolean',
+      table: {
+        defaultValue: { summary: true },
+      },
+    },
+    autoCloseInterval: {
+      control: 'number',
+      table: {
+        defaultValue: { summary: DEFAULT_TOAST_AUTO_CLOSE_INTERVAL },
+      },
     },
   },
   args: {
@@ -75,6 +95,8 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     color: 'inverted',
     iconName: '',
     isCollapsible: true,
+    enableAutoClose: true,
+    autoCloseInterval: DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
   },
 };
 
@@ -82,20 +104,31 @@ export default meta;
 type Story = StoryObj<UncontrolledToastPlaygroundProps>;
 
 const ShowButton = (props: {
-  text: string | JSX.Element;
+  autoCloseInterval?: number;
   color: ToastColorType;
+  enableAutoClose?: boolean;
   hasIcon: boolean;
+  iconName?: string;
   isDismissible: boolean;
-  iconName: string;
+  text: string | JSX.Element;
 }) => {
-  const { text, color, hasIcon, isDismissible, iconName } = props;
+  const { text, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval } = props;
   const { show, clear } = useToast();
 
   return (
     <>
       <Button
         type="button"
-        onClick={() => show(text, Date.now().toString(), { color, hasIcon, isDismissible, iconName })}
+        onClick={() =>
+          show(text, Date.now().toString(), {
+            color,
+            hasIcon,
+            isDismissible,
+            iconName,
+            enableAutoClose,
+            autoCloseInterval,
+          })
+        }
         marginBottom="space-400"
       >
         Show Toast
@@ -109,16 +142,18 @@ const ShowButton = (props: {
 };
 
 const UncontrolledToastComponent = (args: UncontrolledToastPlaygroundProps) => {
-  const { children, color, hasIcon, isDismissible, iconName } = args;
+  const { children, color, hasIcon, isDismissible, iconName, enableAutoClose, autoCloseInterval } = args;
 
   return (
     <ToastProvider>
       <ShowButton
-        text={children as string | JSX.Element}
+        autoCloseInterval={autoCloseInterval}
         color={color}
+        enableAutoClose={enableAutoClose}
         hasIcon={hasIcon}
-        isDismissible={isDismissible}
         iconName={iconName}
+        isDismissible={isDismissible}
+        text={children as string | JSX.Element}
       />
       <UncontrolledToast {...args} />
     </ToastProvider>
