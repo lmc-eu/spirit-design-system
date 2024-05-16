@@ -6,7 +6,6 @@ const addDynamicToast = (event, containerId) => {
     autoCloseInterval: formElement.querySelector('#toast-auto-close-interval').value,
     color: formElement.querySelector('#toast-color').value,
     containerId,
-    content: formElement.querySelector('#toast-content').value,
     enableAutoClose: formElement.querySelector('#toast-enable-auto-close').checked,
     hasIcon: formElement.querySelector('#toast-has-icon').checked,
     id: `my-dynamic-toast-${Date.now()}`,
