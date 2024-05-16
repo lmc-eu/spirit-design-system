@@ -43,7 +43,7 @@ export const Dropdown = (props: SpiritDropdownProps) => {
     <DropdownProvider value={{ id, isOpen, fullWidthMode, placement, onToggle, dropdownRef, triggerRef }}>
       <div
         ref={dropdownRef}
-        className={classNames(classProps.wrapperClassName, styleProps.className)}
+        className={classNames(classProps.root, styleProps.className)}
         style={styleProps.style}
         {...otherProps}
       >
