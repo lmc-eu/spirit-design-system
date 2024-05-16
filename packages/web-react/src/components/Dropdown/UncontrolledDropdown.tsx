@@ -22,7 +22,7 @@ export const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
         ref={dropdownRef}
         {...styleProps}
         {...otherProps}
-        className={classNames(classProps.wrapperClassName, styleProps.className)}
+        className={classNames(classProps.root, styleProps.className)}
       >
         {children}
       </div>
