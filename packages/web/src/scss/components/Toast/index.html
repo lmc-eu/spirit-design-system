@@ -138,6 +138,17 @@
       import { addDynamicToast, clearQueue } from './dynamic-toast.mjs';
       window.addDynamicToast = addDynamicToast;
       window.clearQueue = clearQueue;
+
+      // Disable interval field if auto close is not checked.
+      const autoCloseIntervalField = document.getElementById('toast-auto-close-interval');
+      const enableAutoCloseCheckbox = document.getElementById('toast-enable-auto-close');
+
+      enableAutoCloseCheckbox.addEventListener('change', (event) => {
+        autoCloseIntervalField.disabled = !event.target.checked;
+      });
+
+      // Initialize the field state.
+      autoCloseIntervalField.disabled = !enableAutoCloseCheckbox.checked;
     </script>
 
     <form>

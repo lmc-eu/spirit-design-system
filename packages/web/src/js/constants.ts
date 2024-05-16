@@ -12,3 +12,5 @@ export const CLASS_NAME_HIDDEN = 'is-hidden';
 export const CLASS_NAME_OPEN = 'is-open';
 export const CLASS_NAME_TRANSITIONING = 'is-transitioning';
 export const CLASS_NAME_VISIBLE = 'is-visible';
+
+export const DEFAULT_TOAST_AUTO_CLOSE_INTERVAL = 3000; // milliseconds

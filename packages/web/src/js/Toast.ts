@@ -10,6 +10,7 @@ import {
   CLASS_NAME_HIDDEN,
   CLASS_NAME_TRANSITIONING,
   CLASS_NAME_VISIBLE,
+  DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
 } from './constants';
 import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
 import { EventHandler, SelectorEngine } from './dom';
@@ -50,9 +51,11 @@ const PROPERTY_NAME_FALLBACK_TRANSITION = 'opacity';
 type Color = keyof typeof COLOR_ICON_MAP;
 
 type Config = {
+  autoCloseInterval: number;
   color: Color;
   containerId: string;
   content: HTMLElement | string;
+  enableAutoClose: boolean;
   hasIcon: boolean;
   iconName: string;
   id: string;
@@ -254,6 +257,13 @@ class Toast extends BaseComponent {
     );
 
     this.isShown = true;
+
+    if (config.enableAutoClose) {
+      const timeoutId = setTimeout(() => {
+        this.hide();
+        clearInterval(timeoutId);
+      }, config.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
+    }
   }
 
   finishHiding = (): void => {
