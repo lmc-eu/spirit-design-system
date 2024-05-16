@@ -17,7 +17,7 @@ export const DropdownPopover = (props: DropdownPopoverProps) => {
 
   return (
     <div
-      className={classNames(classProps.contentClassName, styleProps.className)}
+      className={classNames(classProps.popover, styleProps.className)}
       style={styleProps.style}
       {...contentProps}
       {...otherProps}
