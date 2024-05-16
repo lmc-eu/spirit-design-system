@@ -1,13 +1,12 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../../settings/dictionaries' as dictionaries-settings;
 @use '../dictionaries';
 @use '@tokens' as tokens;
 
-@include true.describe('generate-colors mixin') {
-    @include true.it('should generate correct color classes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('generate-colors mixin') {
+    @include test.it('should generate correct color classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
@@ -19,7 +18,7 @@
                 );
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .Test--primary {
                     --test-color: #29616f;
 
@@ -29,9 +28,9 @@
         }
     }
 
-    @include true.it('should generate correct color classes and data attributes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should generate correct color classes and data attributes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
@@ -45,7 +44,7 @@
                 );
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .Test--primary > .Test__box,
                 .Test[data-spirit-color='primary'] > .Test__box {
                     --test-color: #29616f;
@@ -57,10 +56,10 @@
     }
 }
 
-@include true.describe('generate-link-colors mixin') {
-    @include true.it('should generate correct link color classes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('generate-link-colors mixin') {
+    @include test.it('should generate correct link color classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-link-colors(
                     '.link',
                     dictionaries-settings.$action-link-colors,
@@ -69,7 +68,7 @@
                 );
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .link-primary {
                     color: #29616f;
                 }
@@ -122,14 +121,14 @@
     }
 }
 
-@include true.describe('generate-placements mixin') {
-    @include true.it('should generate correct placement classes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('generate-placements mixin') {
+    @include test.it('should generate correct placement classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-placements('Test', ('top-left'));
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .Test[data-spirit-placement='top-left'],
                 .Test--topLeft {
                     --test-offset: 0;
@@ -141,12 +140,12 @@
             }
         }
 
-        @include true.assert {
-            @include true.output {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-placements('Test', ('top-start'));
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .Test[data-spirit-placement='top-start'],
                 .Test--topStart {
                     --test-offset: 0;
@@ -160,10 +159,10 @@
     }
 }
 
-@include true.describe('generate-controlled-placements mixin') {
-    @include true.it('should generate correct controlled placement classes based on a dictionary') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('generate-controlled-placements mixin') {
+    @include test.it('should generate correct controlled placement classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-controlled-placements(
                     'Test',
                     ('top-left', 'bottom-right'),
@@ -171,7 +170,7 @@
                 );
             }
 
-            @include true.expect {
+            @include test.expect() {
                 // stylelint-disable scss/at-extend-no-missing-placeholder -- We are extending classes created by generate-placements().
                 .Test[data-placement='topLeft'] {
                     @extend .Test--topLeft !optional;
@@ -186,10 +185,10 @@
     }
 }
 
-@include true.describe('generate-sizes mixin') {
-    @include true.it('should generate correct size classes based on a config') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('generate-sizes mixin') {
+    @include test.it('should generate correct size classes based on a config') {
+        @include test.assert() {
+            @include test.output() {
                 @include dictionaries.generate-sizes(
                     'TestSize',
                     (
@@ -201,7 +200,7 @@
                 );
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .TestSize--large {
                     padding: 12px 16px;
                 }

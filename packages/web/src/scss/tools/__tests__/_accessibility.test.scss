@@ -1,17 +1,16 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../accessibility';
 
-@include true.describe('hide-text mixin') {
-    @include true.it('should output styles to visually hide text') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('hide-text mixin') {
+    @include test.it('should output styles to visually hide text') {
+        @include test.assert() {
+            @include test.output() {
                 .text-hidden {
                     @include accessibility.hide-text();
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .text-hidden {
                     position: absolute;
                     width: 1px;
@@ -28,16 +27,16 @@
     }
 }
 
-@include true.describe('min-tap-target mixin') {
-    @include true.it('should output styles for default centered tap target') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('min-tap-target mixin') {
+    @include test.it('should output styles for default centered tap target') {
+        @include test.assert() {
+            @include test.output() {
                 .tap-target-centered {
                     @include accessibility.min-tap-target(40px);
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .tap-target-centered {
                     position: relative;
                 }
@@ -57,15 +56,15 @@
         }
     }
 
-    @include true.it('should output styles for non-centered tap target') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should output styles for non-centered tap target') {
+        @include test.assert() {
+            @include test.output() {
                 .tap-target-non-centered {
                     @include accessibility.min-tap-target(40px, false);
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .tap-target-non-centered {
                     position: relative;
                 }

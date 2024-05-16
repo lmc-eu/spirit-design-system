@@ -1,11 +1,10 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../breakpoint';
 
-@include true.describe('up mixin from breakpoint') {
-    @include true.it('should output media query for provided breakpoint value') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('up mixin from breakpoint') {
+    @include test.it('should output media query for provided breakpoint value') {
+        @include test.assert() {
+            @include test.output() {
                 @include breakpoint.up(600px) {
                     .selector {
                         color: #bada55;
@@ -13,7 +12,7 @@
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 @media (min-width: 600px) {
                     .selector {
                         color: #bada55;
@@ -23,9 +22,9 @@
         }
     }
 
-    @include true.it('should output styles directly without media query for 0 value') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should output styles directly without media query for 0 value') {
+        @include test.assert() {
+            @include test.output() {
                 @include breakpoint.up(0) {
                     .selector {
                         color: #bada55;
@@ -33,7 +32,7 @@
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .selector {
                     color: #bada55;
                 }
@@ -42,10 +41,10 @@
     }
 }
 
-@include true.describe('down mixin from breakpoint') {
-    @include true.it('should output media query for provided breakpoint value') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('down mixin from breakpoint') {
+    @include test.it('should output media query for provided breakpoint value') {
+        @include test.assert() {
+            @include test.output() {
                 @include breakpoint.down(600px) {
                     .selector {
                         color: #bada55;
@@ -53,7 +52,7 @@
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 @media (max-width: 599px) {
                     .selector {
                         color: #bada55;
@@ -63,9 +62,9 @@
         }
     }
 
-    @include true.it('should output styles directly without media query for 0 value') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should output styles directly without media query for 0 value') {
+        @include test.assert() {
+            @include test.output() {
                 @include breakpoint.down(0) {
                     .selector {
                         color: #bada55;
@@ -73,7 +72,7 @@
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .selector {
                     color: #bada55;
                 }
@@ -82,16 +81,16 @@
     }
 }
 
-@include true.describe('get-modifier mixin') {
-    @include true.it('should output empty string for a zero breakpoint value') {
-        @include true.assert-equal(breakpoint.get-modifier('infix', 'mobile', 0), '');
+@include test.describe('get-modifier mixin') {
+    @include test.it('should output empty string for a zero breakpoint value') {
+        @include test.assert-equal(breakpoint.get-modifier('infix', 'mobile', 0), '');
     }
 
-    @include true.it('should output an infix for a non-zero breakpoint value') {
-        @include true.assert-equal(breakpoint.get-modifier('infix', 'tablet', 768px), 'tablet--');
+    @include test.it('should output an infix for a non-zero breakpoint value') {
+        @include test.assert-equal(breakpoint.get-modifier('infix', 'tablet', 768px), 'tablet--');
     }
 
-    @include true.it('should output a suffix for a non-zero breakpoint value') {
-        @include true.assert-equal(breakpoint.get-modifier('suffix', 'tablet', 768px), '-tablet');
+    @include test.it('should output a suffix for a non-zero breakpoint value') {
+        @include test.assert-equal(breakpoint.get-modifier('suffix', 'tablet', 768px), '-tablet');
     }
 }

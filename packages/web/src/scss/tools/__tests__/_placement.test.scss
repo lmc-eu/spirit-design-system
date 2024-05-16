@@ -1,11 +1,10 @@
-// stylelint-disable scss/at-mixin-argumentless-call-parentheses -- We need to allow this to make sass-true work
-@use 'true';
+@use 'true' as test;
 @use '../placement';
 
-@include true.describe('placement functions and mixins') {
-    @include true.it('should return correct inverse placements') {
-        @include true.assert {
-            @include true.output {
+@include test.describe('placement functions and mixins') {
+    @include test.it('should return correct inverse placements') {
+        @include test.assert() {
+            @include test.output() {
                 $inverse-top: placement.inverse('top');
                 $inverse-bottom-start: placement.inverse('bottom-start');
                 $inverse-left-end: placement.inverse('left-end');
@@ -14,7 +13,7 @@
                 $inverse-top-start-hyphen: placement.inverse('top-start', true, true);
                 $inverse-top-start-space: placement.inverse('top-start', true, false);
             }
-            @include true.expect {
+            @include test.expect() {
                 $inverse-top: 'bottom';
                 $inverse-bottom-start: 'top';
                 $inverse-left-end: 'right';
@@ -24,14 +23,14 @@
         }
     }
 
-    @include true.it('should apply relative positioning to parent') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply relative positioning to parent') {
+        @include test.assert() {
+            @include test.output() {
                 .parent-test {
                     @include placement.parent();
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .parent-test {
                     position: relative;
                 }
@@ -39,14 +38,14 @@
         }
     }
 
-    @include true.it('should apply absolute positioning to child with z-index') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply absolute positioning to child with z-index') {
+        @include test.assert() {
+            @include test.output() {
                 .child-test {
                     @include placement.child(3);
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .child-test {
                     position: absolute;
                     z-index: 3;
@@ -55,14 +54,14 @@
         }
     }
 
-    @include true.it('should apply custom styles to child variant') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply custom styles to child variant') {
+        @include test.assert() {
+            @include test.output() {
                 .child-variant-test {
                     @include placement.child-variant('test', 'top', 10px);
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .child-variant-test {
                     --test-offset: 10px;
 
@@ -74,14 +73,14 @@
         }
     }
 
-    @include true.it('should apply controlled styles to child') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply controlled styles to child') {
+        @include test.assert() {
+            @include test.output() {
                 .child-controlled-test {
                     @include placement.child-controlled('test', 10px);
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .child-controlled-test {
                     --test-offset-orthogonal: 0;
 
@@ -95,14 +94,14 @@
         }
     }
 
-    @include true.it('should apply styles to arrow') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply styles to arrow') {
+        @include test.assert() {
+            @include test.output() {
                 .arrow-test {
                     @include placement.arrow('test', '10px', '10px', '5px');
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .arrow-test {
                     --test-arrow-width: 10px;
                     --test-arrow-height: 10px;
@@ -115,14 +114,14 @@
         }
     }
 
-    @include true.it('should apply variant styles to arrow') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply variant styles to arrow') {
+        @include test.assert() {
+            @include test.output() {
                 .arrow-variant-test {
                     @include placement.arrow-variant('test', 'top');
                 }
             }
-            @include true.expect {
+            @include test.expect() {
                 .arrow-variant-test {
                     inset: auto auto 100% 50%;
                     translate: -50% 0%;
@@ -132,15 +131,15 @@
         }
     }
 
-    @include true.it('should apply controlled styles to arrow') {
-        @include true.assert {
-            @include true.output {
+    @include test.it('should apply controlled styles to arrow') {
+        @include test.assert() {
+            @include test.output() {
                 .arrow-controlled-test {
                     @include placement.arrow-controlled();
                 }
             }
 
-            @include true.expect {
+            @include test.expect() {
                 .arrow-controlled-test {
                     inset: unset;
                     translate: unset;
