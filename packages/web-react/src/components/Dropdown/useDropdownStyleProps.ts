@@ -4,9 +4,9 @@ import { DropdownStyleProps } from '../../types';
 
 export interface UseDropdownStylePropsReturn {
   classProps: {
-    wrapperClassName: string;
-    triggerClassName: string;
-    contentClassName: string;
+    root: string;
+    trigger: string;
+    popover: string;
   };
   props: DropdownStyleProps;
 }
@@ -14,19 +14,19 @@ export interface UseDropdownStylePropsReturn {
 export const useDropdownStyleProps = (props: DropdownStyleProps = { isOpen: false }): UseDropdownStylePropsReturn => {
   const { isOpen, ...modifiedProps } = props;
 
-  const dropdownClass = useClassNamePrefix('Dropdown');
-  const dropdownWrapperClass = `${dropdownClass}Wrapper`;
+  const dropdownRootClass = useClassNamePrefix('Dropdown');
+  const dropdownPopoverClass = `${dropdownRootClass}Popover`;
   const expandedClass = isOpen ? 'is-expanded' : '';
   const openClass = isOpen ? 'is-open' : '';
 
-  const dropdownClassName = classNames(dropdownClass, openClass);
-  const triggerClassName = classNames(expandedClass);
+  const popoverClass = classNames(dropdownPopoverClass, openClass);
+  const triggerClass = classNames(expandedClass);
 
   return {
     classProps: {
-      wrapperClassName: dropdownWrapperClass,
-      triggerClassName,
-      contentClassName: dropdownClassName,
+      root: dropdownRootClass,
+      trigger: triggerClass,
+      popover: popoverClass,
     },
     props: modifiedProps,
   };

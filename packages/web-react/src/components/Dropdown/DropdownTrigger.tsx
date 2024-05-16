@@ -29,7 +29,7 @@ export const DropdownTrigger = (props: DropdownTriggerProps) => {
       id={id}
       {...rest}
       ref={triggerRef}
-      className={classNames(classProps.triggerClassName, styleProps.className)}
+      className={classNames(classProps.trigger, styleProps.className)}
       style={styleProps.style}
       {...triggerProps}
       {...otherProps}
