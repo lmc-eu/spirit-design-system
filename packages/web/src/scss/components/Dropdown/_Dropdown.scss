@@ -1,36 +1,5 @@
-@use 'sass:map';
-@use '../../tools/breakpoint';
-@use '../../tools/dictionaries';
 @use '../../tools/placement';
-@use 'theme' as theme;
 
 .Dropdown {
-    @include placement.child();
-
-    display: none;
-    width: max-content;
-    padding: theme.$padding;
-    border-radius: theme.$border-radius;
-    background-color: theme.$background;
-    box-shadow: theme.$shadow;
-
-    &[data-spirit-fullwidthmode='mobile-only'] {
-        @include breakpoint.down(map.get(theme.$breakpoints, tablet)) {
-            width: 100%;
-        }
-    }
-
-    &[data-spirit-fullwidthmode='all'] {
-        width: 100%;
-    }
+    @include placement.parent();
 }
-
-.Dropdown.is-open {
-    display: block;
-}
-
-@include dictionaries.generate-placements(
-    $class-name: 'Dropdown',
-    $dictionary-values: theme.$placement-dictionary,
-    $offset: theme.$offset
-);
