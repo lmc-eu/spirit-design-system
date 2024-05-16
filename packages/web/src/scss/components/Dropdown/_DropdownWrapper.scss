@@ -1,5 +1,0 @@
-@use '../../tools/placement';
-
-.DropdownWrapper {
-    @include placement.parent();
-}
