@@ -12,6 +12,7 @@ Introducing version 2 of the _spirit-web_ package
   - [Placement in Tooltip and Dropdown](#placement-in-tooltip-and-dropdown)
 - [Component Changes](#component-changes)
   - [Alert: Bordered Feature Flag](#alert-bordered-feature-flag)
+  - [Dropdown: Classes](#dropdown-classes)
   - [Dropdown: Combined Placements](#dropdown-combined-placements)
   - [Dropdown: Shadow Feature Flag](#dropdown-shadow-feature-flag)
   - [Modal: (Non)Scrollable](#modal-nonscrollable)
@@ -89,6 +90,16 @@ is the default.
 
 You can now safely delete the CSS class `.spirit-feature-alert-enable-bordered` and/or the Sass variable
 `$alert-enable-bordered` from your project as they have no effect.
+
+### Dropdown: Classes
+
+In order to have the root element called `Dropdown` we renamed the `DropdownWrapper`
+component to `Dropdown` and the original `Dropdown` component to `DropdownPopover`.
+
+#### Migration Guide
+
+1. Rename `Dropdown` to `DropdownPopover`.
+2. Rename `DropdownWrapper` to `Dropdown`.
 
 ### Dropdown: Combined Placements
 
