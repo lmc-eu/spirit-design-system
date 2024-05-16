@@ -5,8 +5,8 @@ describe('useDropdownStyleProps', () => {
   it('should return defaults', () => {
     const { result } = renderHook(() => useDropdownStyleProps());
 
-    expect(result.current.classProps.contentClassName).toBe('Dropdown');
-    expect(result.current.classProps.wrapperClassName).toBe('DropdownWrapper');
+    expect(result.current.classProps.root).toBe('Dropdown');
+    expect(result.current.classProps.popover).toBe('DropdownPopover');
   });
 
   it('should render as open', () => {
@@ -15,8 +15,8 @@ describe('useDropdownStyleProps', () => {
     };
     const { result } = renderHook(() => useDropdownStyleProps(props));
 
-    expect(result.current.classProps.contentClassName).toBe('Dropdown is-open');
-    expect(result.current.classProps.triggerClassName).toBe('is-expanded');
+    expect(result.current.classProps.popover).toBe('DropdownPopover is-open');
+    expect(result.current.classProps.trigger).toBe('is-expanded');
   });
 
   it('should transfer additional props', () => {
@@ -26,7 +26,7 @@ describe('useDropdownStyleProps', () => {
     };
     const { result } = renderHook(() => useDropdownStyleProps(props));
 
-    expect(result.current.classProps.contentClassName).toBe('Dropdown');
+    expect(result.current.classProps.popover).toBe('DropdownPopover');
     expect(result.current.props).toEqual({ transferProp: 'test' });
   });
 });

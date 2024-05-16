@@ -7,15 +7,15 @@ import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import DropdownPopover from '../DropdownPopover';
 
 describe('DropdownPopover', () => {
-  classNamePrefixProviderTest(DropdownPopover, 'Dropdown');
+  classNamePrefixProviderTest(DropdownPopover, 'DropdownPopover');
 
   stylePropsTest(DropdownPopover);
 
-  restPropsTest(DropdownPopover, '.Dropdown');
+  restPropsTest(DropdownPopover, '.DropdownPopover');
 
   it('should have children', () => {
     const dom = render(<DropdownPopover>Popover</DropdownPopover>);
-    const popover = dom.container.querySelector('.Dropdown') as HTMLElement;
+    const popover = dom.container.querySelector('.DropdownPopover') as HTMLElement;
 
     expect(popover).toHaveTextContent('Popover');
   });
