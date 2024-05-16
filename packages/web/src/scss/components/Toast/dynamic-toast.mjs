@@ -3,9 +3,11 @@ import Toast from '../../../js/Toast';
 export const addDynamicToast = (event, containerId) => {
   const formElement = event.target.closest('form');
   const config = {
+    containerId,
+    autoCloseInterval: formElement.querySelector('#toast-auto-close-interval').value,
     color: formElement.querySelector('#toast-color').value,
-    containerId: containerId,
     content: formElement.querySelector('#toast-content').value,
+    enableAutoClose: formElement.querySelector('#toast-enable-auto-close').checked,
     hasIcon: formElement.querySelector('#toast-has-icon').checked,
     id: `my-dynamic-toast-${Date.now()}`,
     isDismissible: formElement.querySelector('#toast-is-dismissible').checked,
@@ -29,7 +31,7 @@ export const clearQueue = (event, containerId) => {
 
     if (instance instanceof Toast && instance?.isShown) {
       instance?.hide();
-      cleared++;
+      cleared += 1;
     }
   });
 
