@@ -3,7 +3,7 @@
 ## Basic usage
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-default"
@@ -13,7 +13,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-default">
+  <div class="DropdownPopover" data-spirit-placement="bottom-start" id="dropdown-default">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -45,7 +45,7 @@
 ## Usage with top-end align
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-top-end"
@@ -55,7 +55,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown" data-spirit-placement="top-end" id="dropdown-top-end">
+  <div class="DropdownPopover" data-spirit-placement="top-end" id="dropdown-top-end">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -87,7 +87,7 @@
 ## Usage with disabled autoclose
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-disabled-auto-close"
@@ -98,7 +98,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-disabled-auto-close">
+  <div class="DropdownPopover" data-spirit-placement="bottom-start" id="dropdown-disabled-auto-close">
     <a href="#" class="d-flex mb-400">
       <svg width="24" height="24" aria-hidden="true" class="mr-400">
         <use xlink:href="/icons/svg/sprite.svg#info" />
@@ -130,7 +130,7 @@
 ## Usage with full width mode `all`
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-full-width-mode-all"
@@ -141,7 +141,7 @@
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
   <div
-    class="Dropdown"
+    class="DropdownPopover"
     data-spirit-placement="top-start"
     id="dropdown-full-width-mode-all"
     data-spirit-fullwidthmode="all"
@@ -177,7 +177,7 @@
 ## Usage with full width mode `mobile-only`
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-full-width-mode-mobile"
@@ -188,7 +188,7 @@
     Finibus quis imperdiet, semper imperdiet aliquam
   </button>
   <div
-    class="Dropdown"
+    class="DropdownPopover"
     data-spirit-placement="top-start"
     id="dropdown-full-width-mode-mobile"
     data-spirit-fullwidthmode="mobile-only"
@@ -224,7 +224,7 @@
 ## Usage with [Item] component
 
 ```html
-<div class="DropdownWrapper">
+<div class="Dropdown">
   <button
     data-spirit-toggle="dropdown"
     data-spirit-target="#dropdown-default"
@@ -234,7 +234,7 @@
   >
     Button as anchor
   </button>
-  <div class="Dropdown" data-spirit-placement="bottom-start" id="dropdown-default">
+  <div class="DropdownPopover" data-spirit-placement="bottom-start" id="dropdown-default">
     <a href="#" class="Item">
       <span class="Item__icon Item__icon--start">
         <svg width="24" height="24" aria-hidden="true">
@@ -249,19 +249,19 @@
 
 ## Placement
 
-Dropdown implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
+DropdownPopover implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
 a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
 ### ⚠️ DEPRECATION NOTICE
 
-CSS modifiers `Dropdown--top`, `Dropdown--rightTop`, `Dropdown--bottom`, etc. are deprecated and will be
+CSS modifiers `DropdownPopover--top`, `DropdownPopover--rightTop`, `DropdownPopover--bottom`, etc. are deprecated and will be
 removed in the next major release. Use `data-spirit-placement` attribute instead.
 
 [What are deprecations?][readme-deprecations]
 
 ## JavaScript
 
-There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.DropdownWrapper` class.
+There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.Dropdown` class.
 
 ### Dropdown trigger
 
@@ -272,7 +272,7 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 | `aria-controls`         | `string` | —       | ✔        | Identifies the element whose contents or presence are controlled by the element on which this attribute is set |
 | `data-spirit-autoclose` | `bool`   | `true`  | ✕        | When you need to disable autoclose feature                                                                     |
 
-## Dropdown
+## DropdownPopover
 
 | Attribute                   | Type                              | Default | Required | Description     |
 | --------------------------- | --------------------------------- | ------- | -------- | --------------- |
