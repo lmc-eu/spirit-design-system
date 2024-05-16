@@ -21,13 +21,20 @@ export const useIcon = (name: string) => {
   }
 
   if (icons != null && icons[name] == null) {
-    warning(
-      name !== 'danger' || iconFallbacks[name] !== 'warning',
-      'The "danger" icon is missing from your assets. It will be required in the next major version. Using "warning" as a fallback.',
-    );
+    if (name === 'danger' && iconFallbacks[name] === 'warning') {
+      warning(
+        false,
+        'The "danger" icon is missing from your assets. It will be required in the next major version. Using "warning" as a fallback.',
+      );
 
-    return icons[iconFallbacks[name]];
+      return icons[iconFallbacks[name]];
+    }
   }
+
+  warning(
+    false,
+    `The ${name} icon is missing from your assets or icon map provided by the IconsProvider. Please make sure you have provided all icons needed by used components.`,
+  );
 
   return '';
 };
