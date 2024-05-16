@@ -10,51 +10,27 @@
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
 {%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
-{%- set _topClassName = _spiritClassPrefix ~ 'Tooltip--top' -%}
-{%- set _topStartClassName = _spiritClassPrefix ~ 'Tooltip--topStart' -%}
-{%- set _topEndClassName = _spiritClassPrefix ~ 'Tooltip--topEnd' -%}
-{%- set _bottomClassName = _spiritClassPrefix ~ 'Tooltip--bottom' -%}
-{%- set _bottomStartClassName = _spiritClassPrefix ~ 'Tooltip--bottomStart' -%}
-{%- set _bottomEndClassName = _spiritClassPrefix ~ 'Tooltip--bottomEnd' -%}
-{%- set _leftClassName = _spiritClassPrefix ~ 'Tooltip--left' -%}
-{%- set _leftStartClassName = _spiritClassPrefix ~ 'Tooltip--leftStart' -%}
-{%- set _leftEndClassName = _spiritClassPrefix ~ 'Tooltip--leftEnd' -%}
-{%- set _rightClassName = _spiritClassPrefix ~ 'Tooltip--right' -%}
-{%- set _rightStartClassName = _spiritClassPrefix ~ 'Tooltip--rightStart' -%}
-{%- set _rightEndClassName = _spiritClassPrefix ~ 'Tooltip--rightEnd' -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
+{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
 {%- set _dataTargetAttr = _id ? 'data-spirit-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _placementClassNames = {
-    'top': _topClassName,
-    'top-start': _topStartClassName,
-    'top-end': _topEndClassName,
-    'bottom': _bottomClassName,
-    'bottom-start': _bottomStartClassName,
-    'bottom-end': _bottomEndClassName,
-    'left': _leftClassName,
-    'left-start': _leftStartClassName,
-    'left-end': _leftEndClassName,
-    'right': _rightClassName,
-    'right-start': _rightStartClassName,
-    'right-end': _rightEndClassName,
-} -%}
-{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _placementClassNames[_placement], _styleProps.className ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _styleProps.className ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['id', 'data-spirit-placement']) -%}
 
 {# Deprecations #}
 {% deprecated 'Tooltip: The implementation of this component is deprecated and will be replaced with the implementation of the TooltipPopover in the next major version. Please, use TooltipPopover instead.' %}
 
 <div
-    {{ mainProps(_mainPropsWithoutId) }}
+    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
     {{ _idAttr | raw }}
+    {{ _dataPlacementAttr | raw }}
 >
     {% block content %}{% endblock %}
     {% if _isDismissible is same as(true) %}
