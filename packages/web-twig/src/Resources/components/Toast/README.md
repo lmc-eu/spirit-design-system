@@ -8,6 +8,8 @@ Toast is a composition of a few subcomponents:
 
 - [Toast](#toast)
   - [ToastBar](#toastbar)
+    - [ToastBarMessage](#toastbarmessage)
+    - [ToastBarLink](#toastbarlink)
 
 ## Toast
 
@@ -150,7 +152,7 @@ Minimum example:
 
 ```twig
 <ToastBar>
-  Message only
+  <ToastBarMessage>Message only</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -160,7 +162,7 @@ An icon can be displayed in the ToastBar component, depending on the color of th
 
 ```twig
 <ToastBar color="success" hasIcon>
-  Message with icon
+  <ToastBarMessage>Message with icon</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -168,7 +170,7 @@ Alternatively, a custom icon can be used:
 
 ```twig
 <ToastBar iconName="download">
-  Message with custom icon
+  <ToastBarMessage>Message with custom icon</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -182,19 +184,39 @@ Alternatively, a custom icon can be used:
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
 
-### Action Link
+### ToastBar Components
 
-An action link can be added to the ToastBar component:
+The content of `ToastBar` can be assembled from the following components:
+
+#### ToastBarMessage
+
+`ToastBarMessage` is a component designates for main message in `ToastBar`.
 
 ```twig
 <ToastBar>
-  Message with action
-  <Link href="#" color="inverted" isUnderlined>Action</Link>
+  <ToastBarMessage>Message</ToastBarMessage>
 </ToastBar>
 ```
 
-👉 For the sake of flexibility, developers can pass the link as part of the message. However, it is strongly recommended
-to use the **inverted underlined** variant of the link (for all ToastBar colors) to make it stand out from the message.
+#### ToastBarLink
+
+`ToastBarLink` is a component designated to create an action link within `ToastBar`.
+
+```twig
+<ToastBar>
+  <ToastBarMessage>Message with action</ToastBarMessage>
+  <ToastBarLink href="#">Action</ToastBarLink>
+</ToastBar>
+```
+
+#### API
+
+| Name           | Type                                             | Default    | Required | Description                    |
+| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
+| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
+| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
+| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
@@ -209,7 +231,7 @@ For example:
 
 ```twig
 <ToastBar color="success">
-  Success message
+  <ToastBarMessage>Success message</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -240,7 +262,7 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a uniq
 
 ```twig
 <ToastBar id="my-dismissible-toast" isDismissible>
-  Dismissible message
+  <ToastBarMessage>Dismissible message</ToastBarMessage>
 </ToastBar>
 ```
 
@@ -270,8 +292,8 @@ and [escape hatches][readme-escape-hatches].
 ```twig
 <Toast>
   <ToastBar id="my-dismissible-toast" isDismissible>
-    Toast message
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Toast message</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
   </ToastBar>
 </Toast>
 ```

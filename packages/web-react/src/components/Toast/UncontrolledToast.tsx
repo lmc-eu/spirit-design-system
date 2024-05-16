@@ -11,7 +11,7 @@ const UncontrolledToast = (props: UncontrolledToastProps) => {
   return (
     <Toast alignmentX={alignmentX} alignmentY={alignmentY} isCollapsible={isCollapsible}>
       {queue.map((item) => {
-        const { color, iconName, id, isOpen, message, hasIcon, isDismissible } = item;
+        const { color, iconName, id, isOpen, content, hasIcon, isDismissible } = item;
 
         return (
           <ToastBar
@@ -24,9 +24,9 @@ const UncontrolledToast = (props: UncontrolledToastProps) => {
             iconName={iconName}
             isDismissible={isDismissible}
             onClose={() => hide(id)}
-            isOpen={isOpen && !!message}
+            isOpen={isOpen && !!content}
           >
-            {message}
+            {content}
           </ToastBar>
         );
       })}

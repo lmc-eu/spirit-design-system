@@ -5,6 +5,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SpiritToastBarProps } from '../../../types';
 import ReadMe from '../README.md';
 import { Toast, ToastBar } from '..';
+import ToastBarMessage from '../ToastBarMessage';
+import ToastBarLink from '../ToastBarLink';
 
 const meta: Meta<typeof ToastBar> = {
   title: 'Components/Toast',
@@ -58,7 +60,12 @@ const meta: Meta<typeof ToastBar> = {
   },
   args: {
     id: 'toast-bar',
-    children: 'ToastBar Message',
+    children: (
+      <>
+        <ToastBarMessage>Hello, World! This is a toast message with an action.</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
+      </>
+    ),
     closeLabel: 'Close',
     color: 'inverted',
     hasIcon: false,

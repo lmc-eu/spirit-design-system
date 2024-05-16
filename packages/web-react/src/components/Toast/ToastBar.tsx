@@ -34,7 +34,6 @@ const ToastBar = (props: SpiritToastBarProps) => {
     ...restProps,
     color,
     isDismissible,
-    id,
   });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
@@ -44,15 +43,15 @@ const ToastBar = (props: SpiritToastBarProps) => {
         <div
           {...styleProps}
           {...otherProps}
+          id={id}
           className={classNames(classProps.root, TRANSITIONING_STYLES[transitionState], styleProps.className)}
           ref={rootElementRef}
         >
           <div className={classProps.box}>
-            <div className={classProps.content}>
+            <div className={classProps.container}>
               {(hasIcon || iconName) && <Icon name={toastIconName} boxSize={ICON_BOX_SIZE} />}
-              <div className={classProps.message}>{children}</div>
+              <div className={classProps.content}>{children}</div>
             </div>
-
             <ToastCloseButton
               id={id}
               color={color}

@@ -2,7 +2,6 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { AlignmentXDictionaryType, AlignmentYDictionaryType, ToastColorType } from '../../../types';
 import { Button } from '../../Button';
 import { Checkbox } from '../../Checkbox';
-import { Link } from '../../Link';
 import { Radio } from '../../Radio';
 import { Select } from '../../Select';
 import { Stack } from '../../Stack';
@@ -12,6 +11,8 @@ import Toast from '../Toast';
 import ToastBar from '../ToastBar';
 import { ToastItem, ToastProvider } from '../ToastContext';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from '../constants';
+import ToastBarLink from '../ToastBarLink';
+import ToastBarMessage from '../ToastBarMessage';
 import { useToast } from '../useToast';
 
 const ToastDynamicToastQueue = () => {
@@ -31,12 +32,10 @@ const ToastDynamicToastQueue = () => {
     {
       id: '1',
       isOpen: true,
-      message: (
+      content: (
         <>
-          I was first!{' '}
-          <Link href="#" color="inverted" isUnderlined>
-            Action
-          </Link>
+          <ToastBarMessage>I was first!</ToastBarMessage>
+          <ToastBarLink href="#">Action</ToastBarLink>
         </>
       ),
       color: 'success',
@@ -47,12 +46,10 @@ const ToastDynamicToastQueue = () => {
     },
     {
       id: '2',
-      message: (
+      content: (
         <>
-          I appeared later. This toast has a long message that wraps automatically.{' '}
-          <Link href="#" color="inverted" isUnderlined>
-            Action
-          </Link>
+          <ToastBarMessage>I appeared later. This toast has a long message that wraps automatically.</ToastBarMessage>
+          <ToastBarLink href="#">Action</ToastBarLink>
         </>
       ),
       isOpen: true,
@@ -242,7 +239,7 @@ const ToastDynamicToastQueue = () => {
 
       <Toast alignmentX={alignmentX} alignmentY={alignmentY} isCollapsible={isCollapsible}>
         {queue.map((item) => {
-          const { color, iconName, id, isOpen, message, hasIcon, isDismissible } = item;
+          const { color, iconName, id, isOpen, content, hasIcon, isDismissible } = item;
 
           return (
             <ToastBar
@@ -253,9 +250,9 @@ const ToastDynamicToastQueue = () => {
               iconName={iconName}
               isDismissible={isDismissible}
               onClose={() => hide(id)}
-              isOpen={isOpen && !!message}
+              isOpen={isOpen && !!content}
             >
-              {message}
+              {content}
             </ToastBar>
           );
         })}

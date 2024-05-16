@@ -1,16 +1,15 @@
 import React from 'react';
-import { ToastProvider } from '../ToastContext';
-import { useToast } from '../useToast';
-import UncontrolledToast from '../UncontrolledToast';
 import { Button } from '../../Button';
-import { Link } from '../../Link';
+import { ToastProvider } from '../ToastContext';
+import ToastBarLink from '../ToastBarLink';
+import ToastBarMessage from '../ToastBarMessage';
+import UncontrolledToast from '../UncontrolledToast';
+import { useToast } from '../useToast';
 
 const ToastTextWithLink = (
   <>
-    Hello, World! This is a toast message with an action.
-    <Link href="#" color="inverted" isUnderlined>
-      Action
-    </Link>
+    <ToastBarMessage>Hello, World! This is a toast message with an action.</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
   </>
 );
 

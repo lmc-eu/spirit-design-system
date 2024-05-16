@@ -1,37 +1,34 @@
 import React from 'react';
-import { Link } from '../../Link';
 import ToastBar from '../ToastBar';
+import ToastBarLink from '../ToastBarLink';
+import ToastBarMessage from '../ToastBarMessage';
 
 const ToastContentVariations = () => {
   return (
     <>
-      <ToastBar id="message-only">Message only</ToastBar>
+      <ToastBar id="message-only">
+        <ToastBarMessage>Message only</ToastBarMessage>
+      </ToastBar>
       <ToastBar id="with-action">
-        Message with action
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Message with action</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="long-text">
-        When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>
+          When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
+        </ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="with-icon" hasIcon>
-        Message with icon and action
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Message with icon and action</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="dismissible" onClose={() => {}} isDismissible>
-        Dismissible message
+        <ToastBarMessage>Dismissible message</ToastBarMessage>
       </ToastBar>
       <ToastBar id="custom-icon" isDismissible iconName="download">
-        Dismissible message with custom icon and action
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Dismissible message with custom icon and action</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
     </>
   );

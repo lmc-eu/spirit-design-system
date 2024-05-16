@@ -16,7 +16,7 @@ export interface ToastItem {
   id: string;
   isDismissible: boolean;
   isOpen: boolean;
-  message: string | JSX.Element;
+  content: ReactNode;
 }
 
 export interface ToastContextType extends ToastState {
@@ -24,7 +24,7 @@ export interface ToastContextType extends ToastState {
   hide: (id: string) => void;
   setQueue: (newQueue: ToastItem[]) => void;
   show: (
-    text: string | JSX.Element,
+    content: ReactNode,
     id: string,
     options?: {
       autoCloseInterval?: number;
@@ -51,7 +51,7 @@ type ActionType =
   | {
       type: 'show';
       payload: {
-        text: string | JSX.Element;
+        content: ReactNode;
         toastId: string;
         options?: {
           autoCloseInterval?: number;
@@ -84,7 +84,7 @@ const reducer = (state: ToastState, action: ActionType): ToastState => {
           id: payload.toastId,
           isDismissible: payload.options?.isDismissible || false,
           isOpen: true,
-          message: payload.text,
+          content: payload.content,
         },
       ];
 
@@ -125,7 +125,7 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
 
   const show = useCallback(
     (
-      text: string | JSX.Element,
+      content: string | JSX.Element,
       toastId: string,
       options?: {
         autoCloseInterval?: number;
@@ -136,7 +136,7 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
         isDismissible?: boolean;
       },
     ) => {
-      dispatch({ type: 'show', payload: { text, toastId, options } });
+      dispatch({ type: 'show', payload: { content, toastId, options } });
 
       options?.enableAutoClose &&
         delayedCallback(() => hide(toastId), options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
@@ -153,7 +153,7 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
       dispatch({
         type: 'show',
         payload: {
-          text: item.message,
+          content: item.content,
           toastId: item.id,
           options: {
             autoCloseInterval,

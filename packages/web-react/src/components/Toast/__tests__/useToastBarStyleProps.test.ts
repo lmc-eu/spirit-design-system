@@ -9,7 +9,7 @@ describe('useToastBarStyleProps', () => {
 
     expect(result.current.classProps.root).toBe('ToastBar ToastBar--inverted');
     expect(result.current.classProps.content).toBe('ToastBar__content');
-    expect(result.current.classProps.message).toBe('ToastBar__message');
+    expect(result.current.classProps.container).toBe('ToastBar__container');
   });
 
   it('should return dismissible class', () => {
