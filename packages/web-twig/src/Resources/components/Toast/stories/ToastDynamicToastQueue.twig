@@ -21,6 +21,20 @@
     };
 </script>
 
+<!-- Dynamic queue demo: start -->
+<script type="module">
+    // Disable interval field if auto close is not checked.
+    const autoCloseIntervalField = document.getElementById('toast-auto-close-interval');
+    const enableAutoCloseCheckbox = document.getElementById('toast-enable-auto-close');
+
+    enableAutoCloseCheckbox.addEventListener('change', (event) => {
+    autoCloseIntervalField.disabled = !event.target.checked;
+    });
+
+    // Initialize the field state.
+    autoCloseIntervalField.disabled = !enableAutoCloseCheckbox.checked;
+</script>
+
 <form>
     <fieldset onchange="setToastCollapsing(event, '#toast-example')" style="border: 0;">
         <Checkbox name="is-collapsible" autocomplete="off" id="toast-is-collapsible" isChecked label="Collapsible" />
@@ -58,6 +72,18 @@
             </Select>
             <Checkbox name="has-icon" autocomplete="off" id="toast-has-icon" isChecked label="Has icon" />
             <Checkbox name="is-dismissible" autocomplete="off" id="toast-is-dismissible" isChecked label="Dismissible" />
+            <Checkbox name="enable-auto-close" autocomplete="off" id="toast-enable-auto-close" isChecked label="Enable AutoClose" />
+            <TextField
+                autocomplete="off"
+                type="number"
+                min="0"
+                max="60000"
+                step="500"
+                label="AutoClose interval (ms)"
+                name="auto-close-interval"
+                id="toast-auto-close-interval"
+                value="3000"
+            />
             <TextArea
                 autocomplete="off"
                 label="Message"

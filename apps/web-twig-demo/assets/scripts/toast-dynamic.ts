@@ -3,9 +3,11 @@ import { Toast } from '@lmc-eu/spirit-web/src/js/index.esm';
 const addDynamicToast = (event, containerId) => {
   const formElement = event.target.closest('form');
   const config = {
+    autoCloseInterval: formElement.querySelector('#toast-auto-close-interval').value,
     color: formElement.querySelector('#toast-color').value,
     containerId,
     content: formElement.querySelector('#toast-content').value,
+    enableAutoClose: formElement.querySelector('#toast-enable-auto-close').checked,
     hasIcon: formElement.querySelector('#toast-has-icon').checked,
     id: `my-dynamic-toast-${Date.now()}`,
     isDismissible: formElement.querySelector('#toast-is-dismissible').checked,
@@ -27,7 +29,7 @@ export const clearQueue = (event, containerId) => {
 
     if (instance instanceof Toast && instance?.isShown) {
       instance?.hide();
-      cleared++;
+      cleared += 1;
     }
   });
 
@@ -37,6 +39,13 @@ export const clearQueue = (event, containerId) => {
     console.log('No toasts to clear.');
   }
 };
+
+declare global {
+  interface Window {
+    addDynamicToast: (event: Event, containerId: string) => void;
+    clearQueue: (event: Event, containerId: string) => void;
+  }
+}
 
 // Make functions available in the global scope
 window.addDynamicToast = addDynamicToast;
