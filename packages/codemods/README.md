@@ -39,4 +39,8 @@ For example, this could be the command you will run:
 npx @lmc-eu/spirit-codemods -p ./src -t v2/web-react/fileuploader-prop-names -e js,jsx --parser babel
 ```
 
+## Available Scripts
+
+- [Web-React v2 Codemods](./src/transforms/v2/web-react/README.md)
+
 [jscodeshift]: https://github.com/facebook/jscodeshift
