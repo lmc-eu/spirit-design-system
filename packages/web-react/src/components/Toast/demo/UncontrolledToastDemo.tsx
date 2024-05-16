@@ -1,18 +1,13 @@
 import React from 'react';
-import { ToastProvider } from '../ToastContext';
-import { useToast } from '../useToast';
-import UncontrolledToast from '../UncontrolledToast';
 import { Button } from '../../Button';
-import { Link } from '../../Link';
+import { ToastProvider } from '../ToastContext';
+import UncontrolledToast from '../UncontrolledToast';
+import { useToast } from '../useToast';
 
-const ToastTextWithLink = (
-  <>
-    Hello, World! This is a toast message with an action.
-    <Link href="#" color="inverted" isUnderlined>
-      Action
-    </Link>
-  </>
-);
+const ToastTextWithLink = {
+  message: 'Hello, World! This is a toast message with an action.',
+  link: 'Action',
+};
 
 const ShowToastButton = () => {
   const { show, clear } = useToast();
@@ -23,7 +18,12 @@ const ShowToastButton = () => {
       <Button
         type="button"
         onClick={() => {
-          show(ToastTextWithLink, uniqueId, { color: 'warning', isDismissible: true, hasIcon: true });
+          show(ToastTextWithLink, uniqueId, {
+            color: 'warning',
+            isDismissible: true,
+            hasIcon: true,
+            linkProps: { href: '#' },
+          });
         }}
       >
         Show Toast
@@ -31,7 +31,7 @@ const ShowToastButton = () => {
       <Button
         type="button"
         onClick={() => {
-          show(ToastTextWithLink, uniqueId, { isDismissible: true, hasIcon: true });
+          show(ToastTextWithLink, uniqueId, { isDismissible: true, hasIcon: true, linkProps: { href: '#' } });
         }}
       >
         Show Toast
@@ -44,8 +44,9 @@ const ShowToastButton = () => {
             iconName: 'download',
             isDismissible: true,
             hasIcon: true,
-            enableAutoClose: true,
+            enableAutoClose: false,
             autoCloseInterval: 1500,
+            linkProps: { href: '#' },
           });
         }}
       >

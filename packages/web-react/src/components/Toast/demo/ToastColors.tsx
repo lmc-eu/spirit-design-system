@@ -1,39 +1,30 @@
 import React from 'react';
-import { Link } from '../../Link';
 import ToastBar from '../ToastBar';
+import ToastBarLink from '../ToastBarLink';
+import ToastBarMessage from '../ToastBarMessage';
 
 const ToastColors = () => {
   return (
     <>
       <ToastBar id="inverted" onClose={() => {}} color="inverted" hasIcon isDismissible>
-        Inverted
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Inverted</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="informative" onClose={() => {}} color="informative" hasIcon isDismissible>
-        Informative
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Informative</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="success" onClose={() => {}} color="success" hasIcon isDismissible>
-        Success
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Success</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="warning" onClose={() => {}} color="warning" hasIcon isDismissible>
-        Warning
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Warning</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
       <ToastBar id="danger" onClose={() => {}} color="danger" hasIcon isDismissible>
-        Danger
-        <Link href="#" color="inverted" isUnderlined>
-          Action
-        </Link>
+        <ToastBarMessage>Danger</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
       </ToastBar>
     </>
   );

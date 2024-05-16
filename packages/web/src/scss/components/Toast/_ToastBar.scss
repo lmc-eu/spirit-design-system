@@ -58,7 +58,7 @@
     align-self: center; // 4.
 }
 
-.ToastBar__message {
+.ToastBar__container {
     @include typography.generate(theme.$bar-typography);
 
     display: flex;
@@ -66,13 +66,13 @@
     gap: theme.$bar-message-gap-y theme.$bar-message-gap-x;
 }
 
-.ToastBar__message > :is(a, button):last-child {
+.ToastBar__container > :is(a, button):last-child {
     font-weight: 400;
 }
 
 // stylelint-disable-next-line selector-max-specificity -- Specificity is needed to precisely target the action.
 .ToastBar:is(.ToastBar--dismissible, :has([data-spirit-dismiss='toast']))
-    .ToastBar__message
+    .ToastBar__container
     > :is(a, button):last-child {
     margin-inline-end: theme.$bar-action-margin-inline-end; // 6.
 }

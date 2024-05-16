@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
 import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
@@ -27,14 +27,19 @@ describe('ToastBar', () => {
     const element = dom.container.querySelector('div') as HTMLElement;
 
     expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('ToastBar');
+    expect(element).toHaveClass('ToastBar--inverted');
   });
 
   it('should render text children', () => {
-    const dom = render(<ToastBar id="test">Hello World</ToastBar>);
+    render(<ToastBar id="test">Hello World</ToastBar>);
 
-    const element = dom.container.querySelector('div') as HTMLElement;
+    const element = screen.getByText('Hello World');
 
-    expect(element.textContent).toBe('Hello World');
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass('ToastBar__content');
+    expect(element).toContainHTML('div');
+    expect(element.parentElement).toHaveClass('ToastBar__container');
   });
 
   it('should render icon and have danger class', () => {

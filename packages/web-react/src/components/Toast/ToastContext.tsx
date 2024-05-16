@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
-import { ToastColorType } from '../../types';
+import { LinkProps, ToastColorType } from '../../types';
 import { delayedCallback } from '../../utils';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from './constants';
 
@@ -16,7 +16,11 @@ export interface ToastItem {
   id: string;
   isDismissible: boolean;
   isOpen: boolean;
-  message: string | JSX.Element;
+  linkProps: LinkProps;
+  content: {
+    message: JSX.Element | string;
+    link?: JSX.Element | string;
+  };
 }
 
 export interface ToastContextType extends ToastState {
@@ -24,7 +28,10 @@ export interface ToastContextType extends ToastState {
   hide: (id: string) => void;
   setQueue: (newQueue: ToastItem[]) => void;
   show: (
-    text: string | JSX.Element,
+    content: {
+      message: JSX.Element | string;
+      link?: JSX.Element | string;
+    },
     id: string,
     options?: {
       autoCloseInterval?: number;
@@ -33,6 +40,7 @@ export interface ToastContextType extends ToastState {
       hasIcon?: boolean;
       iconName?: string;
       isDismissible?: boolean;
+      linkProps: LinkProps;
     },
   ) => void;
 }
@@ -51,7 +59,10 @@ type ActionType =
   | {
       type: 'show';
       payload: {
-        text: string | JSX.Element;
+        content: {
+          message: JSX.Element | string;
+          link?: JSX.Element | string;
+        };
         toastId: string;
         options?: {
           autoCloseInterval?: number;
@@ -60,6 +71,7 @@ type ActionType =
           hasIcon?: boolean;
           iconName?: string;
           isDismissible?: boolean;
+          linkProps: LinkProps;
         };
       };
     }
@@ -83,8 +95,12 @@ const reducer = (state: ToastState, action: ActionType): ToastState => {
           iconName: payload.options?.iconName,
           id: payload.toastId,
           isDismissible: payload.options?.isDismissible || false,
+          linkProps: payload.options?.linkProps || {},
           isOpen: true,
-          message: payload.text,
+          content: {
+            message: payload.content.message,
+            link: payload.content.link || undefined,
+          },
         },
       ];
 
@@ -125,7 +141,10 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
 
   const show = useCallback(
     (
-      text: string | JSX.Element,
+      content: {
+        message: JSX.Element | string;
+        link?: JSX.Element | string;
+      },
       toastId: string,
       options?: {
         autoCloseInterval?: number;
@@ -134,9 +153,10 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
         hasIcon?: boolean;
         iconName?: string;
         isDismissible?: boolean;
+        linkProps: LinkProps;
       },
     ) => {
-      dispatch({ type: 'show', payload: { text, toastId, options } });
+      dispatch({ type: 'show', payload: { content, toastId, options } });
 
       options?.enableAutoClose &&
         delayedCallback(() => hide(toastId), options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
@@ -153,7 +173,10 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
       dispatch({
         type: 'show',
         payload: {
-          text: item.message,
+          content: {
+            message: item.content.message,
+            link: item.content.link ?? undefined,
+          },
           toastId: item.id,
           options: {
             autoCloseInterval,
@@ -162,6 +185,7 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
             hasIcon: item.hasIcon || false,
             iconName: item.iconName,
             isDismissible: item.isDismissible || false,
+            linkProps: item.linkProps || {},
           },
         },
       });
