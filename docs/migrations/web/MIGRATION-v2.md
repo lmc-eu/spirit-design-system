@@ -16,6 +16,7 @@ Introducing version 2 of the _spirit-web_ package
   - [Dropdown: Combined Placements](#dropdown-combined-placements)
   - [Dropdown: Shadow Feature Flag](#dropdown-shadow-feature-flag)
   - [Modal: (Non)Scrollable](#modal-nonscrollable)
+  - [Modal: Custom Height](#modal-custom-height)
   - [Modal: Uniform Variant Feature Flag](#modal-uniform-variant-feature-flag)
   - [Grid: GridSpan Component](#grid-gridspan-component)
   - [Tooltip: Data Selector Controlled Placement Feature Flag](#tooltip-data-selector-controlled-placement-feature-flag)
@@ -140,6 +141,19 @@ If you use `ScrollView` for scrolling the content of your modal, you must also a
 to the `.ModalDialog` element.
 
 - `.ModalDialog` → `.ModalDialog .ModalDialog--scrollable`
+
+### Modal: Custom Height
+
+The `--modal-preferred-height-mobile`, `--modal-preferred-height-tablet`,
+`--modal-max-height-tablet` custom properties were renamed.
+
+#### Migration Guide
+
+Update the custom properties in your project to use the new names:
+
+- `--modal-preferred-height-mobile` → `--modal-dialog-height`
+- `--modal-preferred-height-tablet` → `--modal-dialog-height-tablet`
+- `--modal-max-height-tablet` → `--modal-dialog-max-height-tablet`
 
 ### Modal: Uniform Variant Feature Flag
 

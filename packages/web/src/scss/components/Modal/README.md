@@ -274,15 +274,20 @@ limit.
 
 You can set a custom preferred height of ModalDialog using a custom property:
 
-- `--modal-preferred-height-mobile` for mobile screens, and
-- `--modal-preferred-height-tablet` for tablet screens and up.
+- `--modal-dialog-height` for mobile screens and up,
+- `--modal-dialog-height-tablet` for tablet screens and up.
+- `--modal-dialog-height-desktop` for desktop screens and up.
+
+The custom properties fall back to the previous breakpoint using the mobile-first approach. For example, if you set
+`--modal-dialog-height-tablet` while leaving `--modal-dialog-height-desktop` unset, the value will be used for
+both tablet and desktop screens.
 
 This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
 
 ```html
 <article
   class="ModalDialog ModalDialog--scrollable"
-  style="--modal-preferred-height-mobile: 400px; --modal-preferred-height-tablet: 500px;"
+  style="--modal-dialog-height: 400px; --modal-dialog-height-tablet: 500px; --modal-dialog-height-desktop: 600px;"
 >
   <!-- … -->
 </article>
@@ -300,11 +305,21 @@ The default maximum height of a scrollable ModalDialog is **600 px**, as long as
 If the viewport is smaller, scrollable ModalDialog will shrink to fit the viewport. In such case, the ModalDialog height
 will calculate as "viewport height (`100dvh`) minus 1100 spacing".
 
-You can use the custom property `--modal-max-height-tablet` to override the default maximum height limit on tablet
-screens and up:
+You can set a custom preferred height of ModalDialog using a custom property:
+
+- `--modal-dialog-max-height` for mobile screens and up,
+- `--modal-dialog-max-height-tablet` for tablet screens and up.
+- `--modal-dialog-max-height-desktop` for desktop screens and up.
+
+The custom properties fall back to the previous breakpoint using the mobile-first approach. For example, if you set
+`--modal-dialog-max-height-tablet` while leaving `--modal-dialog-max-height-desktop` unset, the value will be used for both tablet and
+desktop screens.
 
 ```html
-<article class="ModalDialog ModalDialog--scrollable" style="--modal-max-height-tablet: 400px">
+<article
+  class="ModalDialog ModalDialog--scrollable"
+  style="--modal-dialog-max-height: 300px; --modal-dialog-max-height-tablet: 400px; --modal-dialog-max-height-desktop: 500px;"
+>
   <!-- … -->
 </article>
 ```
@@ -440,5 +455,4 @@ Or feel free to write controlling scripts yourself.
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
