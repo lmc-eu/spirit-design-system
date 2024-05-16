@@ -129,8 +129,7 @@
             }
 
             @include test.expect() {
-                .Test[data-spirit-placement='top-start'],
-                .Test--topStart {
+                .Test[data-spirit-placement='top-start'] {
                     --test-offset: 0;
 
                     inset: auto auto 100% 0;
@@ -146,8 +145,7 @@
             }
 
             @include test.expect() {
-                .Test[data-spirit-placement='right-end'],
-                .Test--rightEnd {
+                .Test[data-spirit-placement='right-end'] {
                     --test-offset: 0;
 
                     inset: auto auto 0 100%;
