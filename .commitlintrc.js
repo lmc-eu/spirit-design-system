@@ -25,6 +25,7 @@ module.exports = {
         'exporter-svg',
         // Use when committing changes/additions/removals to exact config
         'jest-config',
+        'typescript-config',
         // Use when affecting CI process
         'ci',
         // Use for anything that does not directly affect packages, ie. updating repo-wide
