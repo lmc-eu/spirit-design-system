@@ -7,6 +7,7 @@ Introducing version 2 of the _spirit-web-react_ package
 ## Overview
 
 - [General Changes](#general-changes)
+  - [Dropped Support for Node.js 16](#dropped-support-for-node-js-16)
   - [Form Components Required `id` Prop](#form-components-required-id-prop)
   - [Placements in Tooltip and Dropdown](#placements-in-tooltip-and-dropdown)
   - [The `id` Prop in Dropdown and Collapse](#the-id-prop-in-dropdown-and-collapse)
@@ -27,6 +28,10 @@ Introducing version 2 of the _spirit-web-react_ package
   - [TooltipModern](#tooltipmodern)
 
 ## General Changes
+
+### Dropped Support for Node.js 16
+
+The Node.js v16 is no longer supported. The minimum required Node.js version is 18.
 
 ### Form Components Required `id` Prop
 
