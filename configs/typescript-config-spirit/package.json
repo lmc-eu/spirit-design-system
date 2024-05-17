@@ -1,0 +1,26 @@
+{
+  "name": "typescript-config-spirit",
+  "private": true,
+  "description": "Typescript configuration and preset for Spirit Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "lmc-eu",
+    "spirit",
+    "spirit-design-system",
+    "components",
+    "react",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/typescript-config-spirit"
+  },
+  "type": "module",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
+}
