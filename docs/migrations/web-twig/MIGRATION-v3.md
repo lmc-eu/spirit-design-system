@@ -7,6 +7,7 @@ Introducing version 3 of the _spirit-web-twig_ package
 ## Overview
 
 - [General Changes](#general-changes)
+  - [Dropped Support for PHP 7.4](#dropped-support-for-php-74)
   - [Form Components Required `id` Prop](#form-components-required-id-prop)
   - [Placements in Tooltip and Dropdown](#placements-in-tooltip-and-dropdown)
 - [Component Changes](#component-changes)
@@ -23,6 +24,10 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Tooltip: Composition](#tooltip-composition)
 
 ## General Changes
+
+### Dropped Support for PHP 7.4
+
+The PHP 7.4 is no longer supported. The minimum required PHP version is 8.1.
 
 ### Form Components Required `id` Prop
 
