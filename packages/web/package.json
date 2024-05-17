@@ -3,6 +3,9 @@
   "version": "1.13.1",
   "description": "CSS and vanilla JS implementation of Spirit Design System",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "publishConfig": {
     "access": "public",
     "directory": "dist"
