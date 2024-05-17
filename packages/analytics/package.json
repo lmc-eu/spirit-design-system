@@ -3,6 +3,9 @@
   "version": "0.3.3",
   "description": "Analytic tools for Spirit Design System",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "keywords": [
     "cli",
     "spirit",

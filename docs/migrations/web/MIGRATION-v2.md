@@ -7,6 +7,7 @@ Introducing version 2 of the _spirit-web_ package
 ## Overview
 
 - [General Changes](#general-changes)
+  - [Dropped Support for Node.js 16](#dropped-support-for-node-js-16)
   - [CSS Variables Component Prefix](#css-variables-component-prefix)
   - [Placement in Tooltip and Dropdown](#placement-in-tooltip-and-dropdown)
 - [Component Changes](#component-changes)
@@ -19,6 +20,10 @@ Introducing version 2 of the _spirit-web_ package
   - [Tooltip: Data Selector Controlled Placement Feature Flag](#tooltip-data-selector-controlled-placement-feature-flag)
 
 ## General Changes
+
+### Dropped Support for Node.js 16
+
+The Node.js v16 is no longer supported. The minimum required Node.js version is 18.
 
 ### CSS Variables Component Prefix
 
