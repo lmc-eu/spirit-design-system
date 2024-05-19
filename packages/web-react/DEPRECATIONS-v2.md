@@ -68,15 +68,6 @@ Use:
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
-### Tooltip `off` Placement
-
-The `off` placement is deprecated and will be removed in the next major version.
-
-#### Migration Guide
-
-Please use the `TooltipModern` component instead, which is the successor of the `Tooltip` component and
-provides improved functionality.
-
 ### ModalDialog `isScrollable` Prop
 
 The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
