@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.15.0"></a>
+
+# [2.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.14.1...@lmc-eu/spirit-web-twig@2.15.0) (2024-05-20)
+
+### Bug Fixes
+
+- **web-twig:** Remove extra quotes causing invalid HTML of `Checkbox` ([69c2d84](https://github.com/lmc-eu/spirit-design-system/commit/69c2d84)), closes [#1343](https://github.com/lmc-eu/spirit-design-system/issues/1343)
+
+### Features
+
+- **web-twig:** Allow Icon to render as a Symbol tag [#DS-1223](https://github.com/lmc-eu/spirit-design-system/issues/DS-1223) ([e6079a8](https://github.com/lmc-eu/spirit-design-system/commit/e6079a8))
+- **web-twig:** Introduce bulk `Toast` queue clearing [#DS-1222](https://github.com/lmc-eu/spirit-design-system/issues/DS-1222) ([959650a](https://github.com/lmc-eu/spirit-design-system/commit/959650a))
+- **web-twig:** Make Toast work with dynamic collapsible queue and dynamic ToastBars [#DS-1223](https://github.com/lmc-eu/spirit-design-system/issues/DS-1223) ([d206907](https://github.com/lmc-eu/spirit-design-system/commit/d206907))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.14.1"></a>
 
 ## [2.14.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.14.0...@lmc-eu/spirit-web-twig@2.14.1) (2024-04-24)
