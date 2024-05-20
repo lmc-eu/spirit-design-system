@@ -186,11 +186,11 @@ Alternatively, a custom icon can be used:
 
 ### ToastBar Components
 
-The content of `ToastBar` can be assembled from the following components:
+The content of `ToastBar` can be assembled from the following subcomponents:
 
 #### ToastBarMessage
 
-`ToastBarMessage` is a component designates for main message in `ToastBar`.
+`ToastBarMessage` is a subcomponent designated for the main message in `ToastBar`.
 
 ```twig
 <ToastBar>
@@ -198,9 +198,19 @@ The content of `ToastBar` can be assembled from the following components:
 </ToastBar>
 ```
 
+#### API
+
+| Name       | Type     | Default | Required | Description            |
+| ---------- | -------- | ------- | -------- | ---------------------- |
+| `children` | `string` | —       | ✓        | Content of the message |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
+
 #### ToastBarLink
 
-`ToastBarLink` is a component designated to create an action link within `ToastBar`.
+`ToastBarLink` is a subcomponent designated to create an action link within `ToastBar`.
 
 ```twig
 <ToastBar>
@@ -213,10 +223,15 @@ The content of `ToastBar` can be assembled from the following components:
 
 | Name           | Type                                             | Default    | Required | Description                    |
 | -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
+| `children`     | `string`                                         | —          | ✓        | Content of the link            |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
 | `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
 | `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
 | `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
+
+On top of the API options, the components accept [additional attributes][readme-additional-attributes].
+If you need more control over the styling of a component, you can use [style props][readme-style-props]
+and [escape hatches][readme-escape-hatches].
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
@@ -348,12 +363,21 @@ Then configure and create a new Toast instance and call the `show` method on it,
 import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
 
 const toast = new Toast(null, {
-  autoCloseInterval: 3000 // Set interval after ToastBar will be closed in ms, default: 3000
+  autoCloseInterval: 3000, // Set interval after ToastBar will be closed in ms, default: 3000
   color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
   containerId: 'toast-example', // Must match the ID of the Toast container in HTML
-  content: 'Hello, this is my toast message!', // Can be plain text or HTML
   enableAutoClose: true, // If true, ToastBar will close after `autoCloseInterval`, default: true
   hasIcon: true,
+  message: 'Hello, this is my toast message!', // Can be plain text or HTML
+  linkContent: 'Action', // Link text
+  linkProps: {
+    href: 'https://example.com', // Link URL
+    target: '_blank', // Optional link target attribute
+    isUnderlined: false, // Optional link underlining, default: true
+    isDisabled: false, // Optional link disabling, default: false
+    elementType: 'a', // Optional link element type, default: 'a'
+    color: 'inverted', // Optional link color variant, default: 'inverted'
+  },
   iconName: 'info', // Optional icon name used as the #fragment in the SVG sprite URL
   id: 'my-toast', // An ID is required for dismissible ToastBar
   isDismissible: true,
