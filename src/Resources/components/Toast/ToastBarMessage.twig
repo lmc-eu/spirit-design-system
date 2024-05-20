@@ -1,0 +1,17 @@
+{# API #}
+{%- set props = props | default([]) -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _textTruncateClassName = _spiritClassPrefix ~ 'text-truncate-multiline' -%}
+{%- set _classNames = [ _styleProps.className, _textTruncateClassName  ] -%}
+
+
+<div
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+    data-spirit-populate-field="message"
+>
+    {% block content %}{% endblock %}
+</div>
