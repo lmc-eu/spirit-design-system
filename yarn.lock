@@ -3825,6 +3825,7 @@ __metadata:
     sass: 1.77.1
     shx: 0.3.4
     tslib: 2.6.2
+    typescript: 5.4.5
     vite: 4.5.3
   languageName: unknown
   linkType: soft
