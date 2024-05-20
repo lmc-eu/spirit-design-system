@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.14.0"></a>
+
+# [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.13.1...@lmc-eu/spirit-web@1.14.0) (2024-05-20)
+
+### Code Refactoring
+
+- **web:** Use configurable base layout for demo ([7b92d18](https://github.com/lmc-eu/spirit-design-system/commit/7b92d18))
+- **web:** Use configurable header template for demo ([300c9b8](https://github.com/lmc-eu/spirit-design-system/commit/300c9b8))
+- **web:** Use configurable plain layout for demo ([af454ca](https://github.com/lmc-eu/spirit-design-system/commit/af454ca))
+- **web:** Use default layout of demo app ([12facaf](https://github.com/lmc-eu/spirit-design-system/commit/12facaf))
+- **web:** Use new partials structure for demo ([ae78a17](https://github.com/lmc-eu/spirit-design-system/commit/ae78a17))
+- **web:** Use tabs from demo layout partials ([0af263e](https://github.com/lmc-eu/spirit-design-system/commit/0af263e))
+
+### Dependencies
+
+- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
+
+### Features
+
+- **web:** Introduce bulk `Toast` queue clearing [#DS-1222](https://github.com/lmc-eu/spirit-design-system/issues/DS-1222) ([d54b6ea](https://github.com/lmc-eu/spirit-design-system/commit/d54b6ea))
+- **web:** Introduce stacking of the `Toast` queue ([d331d79](https://github.com/lmc-eu/spirit-design-system/commit/d331d79))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.13.1"></a>
 
 ## [1.13.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.13.0...@lmc-eu/spirit-web@1.13.1) (2024-04-24)

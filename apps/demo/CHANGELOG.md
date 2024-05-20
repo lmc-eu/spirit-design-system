@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.3"></a>
+
+## [0.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.2...@lmc-eu/spirit-demo-app@0.0.3) (2024-05-20)
+
+### Chores
+
+- **repo:** Fix title package name check ([041e561](https://github.com/lmc-eu/spirit-design-system/commit/041e561))
+
+### Code Refactoring
+
+- **demo:** Introduce default layouts for `web` and `web-react` ([33fb119](https://github.com/lmc-eu/spirit-design-system/commit/33fb119))
+- **demo:** Introduce form-validations package and pass title to header ([e752151](https://github.com/lmc-eu/spirit-design-system/commit/e752151))
+- **demo:** Introduce new partials structure ([0ca834a](https://github.com/lmc-eu/spirit-design-system/commit/0ca834a))
+- **demo:** Make configurable base layout ([61fcdb8](https://github.com/lmc-eu/spirit-design-system/commit/61fcdb8))
+- **demo:** Make header template configurable ([9470044](https://github.com/lmc-eu/spirit-design-system/commit/9470044))
+- **demo:** Make plain layout configurable ([714509b](https://github.com/lmc-eu/spirit-design-system/commit/714509b))
+- **demo:** Make tabs part of the layout ([7391c4d](https://github.com/lmc-eu/spirit-design-system/commit/7391c4d))
+- **demo:** Normalize templates for tile and box display ([db53baf](https://github.com/lmc-eu/spirit-design-system/commit/db53baf))
+- **demo:** Normalize usage of the space at the of the template tags ([33ba6cf](https://github.com/lmc-eu/spirit-design-system/commit/33ba6cf))
+- **demo:** Remove package partials from app configuration ([1ef3892](https://github.com/lmc-eu/spirit-design-system/commit/1ef3892))
+
+### Dependencies
+
+- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.2"></a>
 
 ## [0.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.1...@lmc-eu/spirit-demo-app@0.0.2) (2024-04-24)

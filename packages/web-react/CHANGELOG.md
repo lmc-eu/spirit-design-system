@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.17.0"></a>
+
+# [1.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.16.1...@lmc-eu/spirit-web-react@1.17.0) (2024-05-20)
+
+### Bug Fixes
+
+- **web-react:** Warn when icon asset is missing from the map ([1f330f9](https://github.com/lmc-eu/spirit-design-system/commit/1f330f9))
+
+### Code Refactoring
+
+- **web-react:** Use configurable base layout for demo ([2ce6e87](https://github.com/lmc-eu/spirit-design-system/commit/2ce6e87))
+- **web-react:** Use configurable header template for demo ([791a03a](https://github.com/lmc-eu/spirit-design-system/commit/791a03a))
+- **web-react:** Use configurable plain layout for demo ([b8bcf9d](https://github.com/lmc-eu/spirit-design-system/commit/b8bcf9d))
+- **web-react:** Use default layout of demo app ([31f0d28](https://github.com/lmc-eu/spirit-design-system/commit/31f0d28))
+- **web-react:** Use new partials structure for demo ([5c00c03](https://github.com/lmc-eu/spirit-design-system/commit/5c00c03))
+- **web-react:** Use tabs from layout partials ([bf5e683](https://github.com/lmc-eu/spirit-design-system/commit/bf5e683))
+
+### Dependencies
+
+- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
+
+### Features
+
+- **web-react:** Introduce stacking of the `Toast` queue [#DS-1209](https://github.com/lmc-eu/spirit-design-system/issues/DS-1209) ([f4f754e](https://github.com/lmc-eu/spirit-design-system/commit/f4f754e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.16.1"></a>
 
 ## [1.16.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.16.0...@lmc-eu/spirit-web-react@1.16.1) (2024-04-26)

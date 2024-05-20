@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.6"></a>
+
+## [1.1.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.5...@lmc-eu/spirit-form-validations@1.1.6) (2024-05-20)
+
+### Chores
+
+- **form-validations:** Remove dev preview app from package ([ba02d34](https://github.com/lmc-eu/spirit-design-system/commit/ba02d34))
+
+### Code Refactoring
+
+- **form-validations:** Remove demo partials from the package ([6a989c1](https://github.com/lmc-eu/spirit-design-system/commit/6a989c1))
+
+### Dependencies
+
+- Update all non-major dependencies ([7b34614](https://github.com/lmc-eu/spirit-design-system/commit/7b34614))
+
+### Documentation
+
+- **form-validations:** Fix typo in a destroy function ([1363912](https://github.com/lmc-eu/spirit-design-system/commit/1363912))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.1.5"></a>
 
 ## [1.1.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.4...@lmc-eu/spirit-form-validations@1.1.5) (2024-04-24)
