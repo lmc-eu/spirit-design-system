@@ -14,8 +14,8 @@
 {%- set _rootColorClassName = _spiritClassPrefix ~ 'ToastBar--' ~ _color -%}
 {%- set _rootDismissibleClassName = _isDismissible is same as(true) and _isTemplate is same as(false) ? _spiritClassPrefix ~ 'ToastBar--dismissible' : null -%}
 {%- set _boxClassName = _spiritClassPrefix ~ 'ToastBar__box' -%}
+{%- set _containerClassName = _spiritClassPrefix ~ 'ToastBar__container' -%}
 {%- set _contentClassName = _spiritClassPrefix ~ 'ToastBar__content' -%}
-{%- set _messageClassName = _spiritClassPrefix ~ 'ToastBar__message' -%}
 {%- set _isOpenClassName = _isOpen or _isTemplate ? 'is-open' : 'is-hidden' -%}
 
 {# Attributes #}
@@ -43,7 +43,7 @@
     data-spirit-populate-field="item"
 >
     <div class="{{ _boxClassName }}">
-        <div class="{{ _contentClassName }}">
+        <div class="{{ _containerClassName }}">
             {% if _hasIcon or _iconName %}
                 {% if _isTemplate %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" data-spirit-populate-field="icon">
@@ -53,7 +53,7 @@
                    <Icon boxSize="20" name="{{ _iconNameValue }}" isReusable={ false } />
                 {% endif %}
             {% endif %}
-            <div class="{{ _messageClassName }}" data-spirit-populate-field="message">
+            <div class="{{ _contentClassName }}">
                 {% block content %}{% endblock %}
             </div>
         </div>

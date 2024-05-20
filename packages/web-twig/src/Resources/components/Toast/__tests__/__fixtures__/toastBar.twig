@@ -1,18 +1,20 @@
-<ToastBar>Message only</ToastBar>
+<ToastBar>
+    <ToastBarMessage>Message only</ToastBarMessage>
+</ToastBar>
 
 <!-- Render with default icon -->
 <ToastBar hasIcon>
-    Message with icon
+    <ToastBarMessage>Message with icon</ToastBarMessage>
 </ToastBar>
 
 <!-- Render with custom icon using `iconName` alone -->
 <ToastBar iconName="download">
-    Message with custom icon
+    <ToastBarMessage>Message with custom icon</ToastBarMessage>
 </ToastBar>
 
 <!-- Render in success color with matching icon and close button -->
 <ToastBar color="success" id="toast-dismiss" isDismissible>
-    Dismissible message with success color
+    <ToastBarMessage>Dismissible message with success color</ToastBarMessage>
 </ToastBar>
 
 <!-- Render as template -->
@@ -33,8 +35,8 @@
     UNSAFE_className="custom-class"
     UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
 >
-    Dismissible message with custom icon and action
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Dismissible message with custom icon and action</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
 </ToastBar>
 
 <!-- Render as template with all props -->
@@ -50,6 +52,6 @@
     UNSAFE_className="custom-class"
     UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
 >
-    Dismissible message with custom icon and action
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Dismissible message with custom icon and action</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
 </ToastBar>

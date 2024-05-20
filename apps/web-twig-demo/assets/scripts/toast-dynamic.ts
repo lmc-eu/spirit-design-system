@@ -10,14 +10,12 @@ const addDynamicToast = (event, containerId) => {
     hasIcon: formElement.querySelector('#toast-has-icon').checked,
     id: `my-dynamic-toast-${Date.now()}`,
     isDismissible: formElement.querySelector('#toast-is-dismissible').checked,
-    link: formElement.querySelector('#toast-link').value,
+    message: formElement.querySelector('#toast-message').value,
+    linkContent: formElement.querySelector('#toast-enable-link').checked
+      ? formElement.querySelector('#toast-link').value
+      : null,
     linkProps: {
-      href: formElement.querySelector('#toast-link-href').value,
-      target: formElement.querySelector('#toast-link-target').value,
-      color: formElement.querySelector('#toast-link-color').value,
-      isUnderlined: formElement.querySelector('#toast-link-underlined').checked,
-      isDisabled: formElement.querySelector('#toast-link-disabled').checked,
-      elementType: formElement.querySelector('#toast-link-element').value,
+      href: '#',
     },
   };
 

@@ -33,6 +33,17 @@
 
     // Initialize the field state.
     autoCloseIntervalField.disabled = !enableAutoCloseCheckbox.checked;
+
+    // Disable link field if add link is not checked.
+    const linkField = document.getElementById('toast-link');
+    const enableLinkCheckbox = document.getElementById('toast-enable-link');
+
+    enableLinkCheckbox.addEventListener('change', (event) => {
+        linkField.disabled = !event.target.checked;
+    });
+
+    // Initialize the field state.
+    linkField.disabled = !enableLinkCheckbox.checked;
 </script>
 
 <form>
@@ -87,10 +98,19 @@
             <TextArea
                 autocomplete="off"
                 label="Message"
-                name="content"
-                id="toast-content"
+                name="message"
+                id="toast-message"
                 helperText="Can contain HTML."
                 value="This is a new toast message."
+            />
+            <Checkbox name="enable-link" autocomplete="off" id="toast-enable-link" isChecked label="Add link" />
+            <TextArea
+                autocomplete="off"
+                label="Link"
+                name="link"
+                id="toast-link"
+                helperText="Can contain HTML."
+                value="This is a toast link."
             />
             <div>
                 <Button onclick="addDynamicToast(event, 'toast-example');">
@@ -136,17 +156,20 @@
 <Toast id="toast-example">
 
     <template data-spirit-snippet="item">
-        <ToastBar isTemplate color="success" hasIcon isDismissible />
+        <ToastBar isTemplate color="success" hasIcon isDismissible>
+            <ToastBarMessage></ToastBarMessage>
+            <ToastBarLink href="#"></ToastBarLink>
+        </ToastBar>
     </template>
 
     <ToastBar color="success" id="my-dismissible-toast" hasIcon isDismissible>
-        I was first!
-        <a href="#" class="link-inverted link-underlined">Action</a>
+        <ToastBarMessage>I was first!</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
     </ToastBar>
 
     <ToastBar color="informative" id="my-other-dismissible-toast" hasIcon isDismissible>
-        I appeared later. This toast has a long message that wraps automatically.
-        <Link href="#" color="inverted" isUnderlined>Action</Link>
+        <ToastBarMessage>I appeared later. This toast has a long message that wraps automatically.</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
     </ToastBar>
 
 </Toast>

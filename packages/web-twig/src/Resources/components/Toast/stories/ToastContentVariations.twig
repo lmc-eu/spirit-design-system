@@ -1,25 +1,27 @@
-<ToastBar>Message only</ToastBar>
-
 <ToastBar>
-    Message with action
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Message only</ToastBarMessage>
 </ToastBar>
 
 <ToastBar>
-    When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Message with action</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
+</ToastBar>
+
+<ToastBar>
+    <ToastBarMessage>When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
 </ToastBar>
 
 <ToastBar hasIcon>
-    Message with icon and action
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Message with icon and action</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
 </ToastBar>
 
 <ToastBar id="my-toast-variation-dismissible" isDismissible>
-    Dismissible message
+    <ToastBarMessage>Dismissible message</ToastBarMessage>
 </ToastBar>
 
 <ToastBar id="my-toast-variation-dismissible-with-icon-and-action" iconName="download" isDismissible>
-    Dismissible message with custom icon and action
-    <Link href="#" color="inverted" isUnderlined>Action</Link>
+    <ToastBarMessage>Dismissible message with custom icon and action</ToastBarMessage>
+    <ToastBarLink href="#">Action</ToastBarLink>
 </ToastBar>
