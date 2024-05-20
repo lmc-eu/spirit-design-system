@@ -16,7 +16,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "npm-run-all --serial 'build:prepare build:bundle build:compile build:finalize'",
+    "build": "npm-run-all --serial build:prepare build:bundle build:compile build:finalize",
     "build:prepare": "shx rm -rf dist",
     "build:finalize": "shx cp package.json README.md dist/",
     "build:bundle": "vite build --config ./config/vite/lib.ts",
@@ -40,6 +40,7 @@
     "sass": "1.77.1",
     "shx": "0.3.4",
     "tslib": "2.6.2",
+    "typescript": "5.4.5",
     "vite": "4.5.3"
   },
   "nx": {
