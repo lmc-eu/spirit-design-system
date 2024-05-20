@@ -1,0 +1,21 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _color = props.color | default('inverted') -%}
+{%- set _isUnderlined = props.isUnderlined ?? true -%}
+{%- set _children = block('content') -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'ToastBar__link' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _allowedAttributes = [ 'target', 'title' ] -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className  ] -%}
+
+{% embed "@spirit/link.twig" with { props: props | merge({
+    color: _color,
+    isUnderlined: _isUnderlined,
+}) } %}
+    {% block content %}{{ _children }}{% endblock %}
+{% endembed %}
+

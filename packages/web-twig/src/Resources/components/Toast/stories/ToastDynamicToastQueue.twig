@@ -140,13 +140,13 @@
     </template>
 
     <ToastBar color="success" id="my-dismissible-toast" hasIcon isDismissible>
-        I was first!
-        <a href="#" class="link-inverted link-underlined">Action</a>
+        <ToastBarMessage>I was first!</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
     </ToastBar>
 
     <ToastBar color="informative" id="my-other-dismissible-toast" hasIcon isDismissible>
-        I appeared later. This toast has a long message that wraps automatically.
-        <Link href="#" color="inverted" isUnderlined>Action</Link>
+        <ToastBarMessage>I appeared later. This toast has a long message that wraps automatically.</ToastBarMessage>
+        <ToastBarLink href="#">Action</ToastBarLink>
     </ToastBar>
 
 </Toast>

@@ -195,15 +195,49 @@ An action link can be added to the ToastBar component:
 ```html
 <div class="ToastBar ToastBar--inverted">
   <div class="ToastBar__box">
-    <div class="ToastBar__content">
-      <div class="ToastBar__message">
-        Message with action
-        <a href="#" class="link-inverted link-underlined">Action</a>
+    <div class="ToastBar__container">
+      <div class="ToastBar__content">
+        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message with action</div>
       </div>
     </div>
   </div>
 </div>
 ```
+
+#### API
+
+| Name       | Type     | Default | Required | Description                    |
+| ---------- | -------- | ------- | -------- | ------------------------------ |
+| `children` | `string` | —       | ✓        | Content of the ToastBarMessage |
+
+#### ToastBarLink
+
+`ToastBarLink` is a component designated to create an action link within `ToastBar`.
+
+Usage example:
+
+```html
+<div class="ToastBar ToastBar--inverted">
+  <div class="ToastBar__box">
+    <div class="ToastBar__container">
+      <div class="ToastBar__content">
+        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message with action</div>
+        <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+#### API
+
+| Name           | Type                                             | Default    | Required | Description                    |
+| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
+| `children`     | `string`                                         | —          | ✓        | Content of the ToastBarLink    |
+| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
+| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
+| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
+| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about

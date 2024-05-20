@@ -7,9 +7,11 @@
   <body>
     <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Message only
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Message only
+            </div>
           </div>
         </div>
       </div>
@@ -18,12 +20,14 @@
 
     <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V11H13V17ZM13 9H11V7H13V9Z" fill="currentColor">
           </path></svg>
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Message with icon
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Message with icon
+            </div>
           </div>
         </div>
       </div>
@@ -32,12 +36,14 @@
 
     <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 16.575C11.8667 16.575 11.7417 16.5542 11.625 16.5125C11.5083 16.4708 11.4 16.4 11.3 16.3L6.7 11.7C6.51667 11.5167 6.425 11.2833 6.425 11C6.425 10.7167 6.51667 10.4833 6.7 10.3C6.88333 10.1167 7.12083 10.0208 7.4125 10.0125C7.70417 10.0042 7.94167 10.0917 8.125 10.275L11 13.15V4C11 3.71667 11.0958 3.47917 11.2875 3.2875C11.4792 3.09583 11.7167 3 12 3C12.2833 3 12.5208 3.09583 12.7125 3.2875C12.9042 3.47917 13 3.71667 13 4V13.15L15.875 10.275C16.0583 10.0917 16.2958 10.0042 16.5875 10.0125C16.8792 10.0208 17.1167 10.1167 17.3 10.3C17.4833 10.4833 17.575 10.7167 17.575 11C17.575 11.2833 17.4833 11.5167 17.3 11.7L12.7 16.3C12.6 16.4 12.4917 16.4708 12.375 16.5125C12.2583 16.5542 12.1333 16.575 12 16.575ZM5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16C4.28333 16 4.52083 16.0958 4.7125 16.2875C4.90417 16.4792 5 16.7167 5 17V19H19V17C19 16.7167 19.0958 16.4792 19.2875 16.2875C19.4792 16.0958 19.7167 16 20 16C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5Z" fill="currentColor">
           </path></svg>
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Message with custom icon
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Message with custom icon
+            </div>
           </div>
         </div>
       </div>
@@ -46,9 +52,11 @@
 
     <div class="ToastBar ToastBar--success ToastBar--dismissible is-open" id="toast-dismiss" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Dismissible message with success color
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Dismissible message with success color
+            </div>
           </div>
         </div>
         <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#toast-dismiss" aria-controls="toast-dismiss" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -60,8 +68,8 @@
 
     <div class="ToastBar ToastBar--inverted is-open" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message" data-spirit-populate-field="message">
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
           </div>
         </div>
       </div>
@@ -70,11 +78,11 @@
 
     <div class="ToastBar ToastBar--inverted is-open" id="template-toast" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true" data-spirit-populate-field="icon">
           <use xlink:href="#">
           </use></svg>
-          <div class="ToastBar__message" data-spirit-populate-field="message">
+          <div class="ToastBar__content">
           </div>
         </div>
         <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#template-toast" aria-controls="template-toast" aria-expanded="true" class="Button Button--inverted Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -86,12 +94,15 @@
 
     <div style="outline: 5px solid blue; outline-offset: -5px;" class="ToastBar ToastBar--success ToastBar--dismissible is-hidden custom-class" id="my-toast" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M12 16.575C11.8667 16.575 11.7417 16.5542 11.625 16.5125C11.5083 16.4708 11.4 16.4 11.3 16.3L6.7 11.7C6.51667 11.5167 6.425 11.2833 6.425 11C6.425 10.7167 6.51667 10.4833 6.7 10.3C6.88333 10.1167 7.12083 10.0208 7.4125 10.0125C7.70417 10.0042 7.94167 10.0917 8.125 10.275L11 13.15V4C11 3.71667 11.0958 3.47917 11.2875 3.2875C11.4792 3.09583 11.7167 3 12 3C12.2833 3 12.5208 3.09583 12.7125 3.2875C12.9042 3.47917 13 3.71667 13 4V13.15L15.875 10.275C16.0583 10.0917 16.2958 10.0042 16.5875 10.0125C16.8792 10.0208 17.1167 10.1167 17.3 10.3C17.4833 10.4833 17.575 10.7167 17.575 11C17.575 11.2833 17.4833 11.5167 17.3 11.7L12.7 16.3C12.6 16.4 12.4917 16.4708 12.375 16.5125C12.2583 16.5542 12.1333 16.575 12 16.575ZM5 21C4.45 21 3.97917 20.8042 3.5875 20.4125C3.19583 20.0208 3 19.55 3 19V17C3 16.7167 3.09583 16.4792 3.2875 16.2875C3.47917 16.0958 3.71667 16 4 16C4.28333 16 4.52083 16.0958 4.7125 16.2875C4.90417 16.4792 5 16.7167 5 17V19H19V17C19 16.7167 19.0958 16.4792 19.2875 16.2875C19.4792 16.0958 19.7167 16 20 16C20.2833 16 20.5208 16.0958 20.7125 16.2875C20.9042 16.4792 21 16.7167 21 17V19C21 19.55 20.8042 20.0208 20.4125 20.4125C20.0208 20.8042 19.55 21 19 21H5Z" fill="currentColor">
           </path></svg>
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Dismissible message with custom icon and action <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Dismissible message with custom icon and action
+            </div>
+            <a href="#" class="link-inverted link-underlined">Action</a>
           </div>
         </div>
         <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast" aria-controls="my-toast" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">
@@ -103,12 +114,15 @@
 
     <div style="outline: 5px solid blue; outline-offset: -5px;" class="ToastBar ToastBar--success is-open custom-class" id="my-toast-template" data-spirit-populate-field="item">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true" data-spirit-populate-field="icon">
           <use xlink:href="#">
           </use></svg>
-          <div class="ToastBar__message" data-spirit-populate-field="message">
-            Dismissible message with custom icon and action <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline" data-spirit-populate-field="message">
+              Dismissible message with custom icon and action
+            </div>
+            <a href="#" class="link-inverted link-underlined">Action</a>
           </div>
         </div>
         <button data-spirit-dismiss="toast" data-spirit-populate-field="close-button" data-spirit-target="#my-toast-template" aria-controls="my-toast-template" aria-expanded="true" class="Button Button--success Button--small Button--square" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true">

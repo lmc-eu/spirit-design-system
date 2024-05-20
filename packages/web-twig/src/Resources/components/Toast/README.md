@@ -186,11 +186,11 @@ Alternatively, a custom icon can be used:
 
 ### ToastBar Components
 
-The content of `ToastBar` can be assembled from the following components:
+The content of `ToastBar` can be assembled from the following subcomponents:
 
 #### ToastBarMessage
 
-`ToastBarMessage` is a component designates for main message in `ToastBar`.
+`ToastBarMessage` is a subcomponent designated for the main message in `ToastBar`.
 
 ```twig
 <ToastBar>
@@ -198,9 +198,15 @@ The content of `ToastBar` can be assembled from the following components:
 </ToastBar>
 ```
 
+#### API
+
+| Name       | Type     | Default | Required | Description            |
+| ---------- | -------- | ------- | -------- | ---------------------- |
+| `children` | `string` | —       | ✓        | Content of the message |
+
 #### ToastBarLink
 
-`ToastBarLink` is a component designated to create an action link within `ToastBar`.
+`ToastBarLink` is a subcomponent designated to create an action link within `ToastBar`.
 
 ```twig
 <ToastBar>
@@ -213,6 +219,7 @@ The content of `ToastBar` can be assembled from the following components:
 
 | Name           | Type                                             | Default    | Required | Description                    |
 | -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
+| `children`     | `string`                                         | —          | ✓        | Content of the link            |
 | `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
 | `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
 | `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
