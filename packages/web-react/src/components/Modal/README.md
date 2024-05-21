@@ -13,8 +13,6 @@ Modal is a composition of several subcomponents:
     - [Dropdowns in Modal](#dropdowns-in-modal)
     - [Docked Modals on Mobile Screens](#docked-modals-on-mobile-screens)
       - [Expanded Variant](#expanded-variant)
-    - [Custom Height](#custom-height)
-    - [Custom Max Height](#custom-max-height)
     - [API](#api-1)
   - [ModalHeader](#modalheader)
     - [Hidden Title](#hidden-title)
@@ -27,8 +25,10 @@ Modal is a composition of several subcomponents:
     - [API](#api-4)
   - [Opening the Modal](#opening-the-modal)
   - [Scrolling Long Content](#scrolling-long-content)
+    - [Enable Scrolling Inside ModalDialog](#enable-scrolling-inside-modaldialog)
     - [Scrolling with ScrollView](#scrolling-with-scrollview)
-    - [Disable Scrolling Inside ModalDialog](#disable-scrolling-inside-modaldialog)
+    - [Custom Height](#custom-height)
+    - [Custom Max Height](#custom-max-height)
   - [Stacking Modals](#stacking-modals)
   - [Full Example](#full-example)
 
@@ -112,7 +112,7 @@ On mobile screens, Modal can be docked to the bottom of the viewport using the `
 
 #### Expanded Variant
 
-By default the docked dialog on mobile screens shrinks to fit the height of its content
+By default, the docked dialog on mobile screens shrinks to fit the height of its content
 (if smaller than the viewport). Use the `isExpandedOnMobile` option to expand the dialog on mobile.
 
 ```jsx
@@ -121,56 +121,18 @@ By default the docked dialog on mobile screens shrinks to fit the height of its 
 </ModalDialog>
 ```
 
-### Custom Height
-
-By default, Modal expands to fit the height of its content, as long as it fits the viewport (see [more below](#custom-max-height)).
-You can override this behavior by setting a preferred height using the following options:
-
-- `preferredHeightOnMobile` for mobile screens, and
-- `preferredHeightFromTabletUp` for tablet screens and up.
-
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
-
-```jsx
-<ModalDialog preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
-  …
-</ModalDialog>
-```
-
-👉 Please note the preferred height options are ignored when scrolling inside ModalDialog is
-[turned off](#disable-scrolling-inside-modaldialog).
-
-👉 Please note the custom height values are considered **preferred:** Modal will not expand beyond the viewport height.
-
-### Custom Max Height
-
-The default maximum height of Modal is:
-
-- viewport height minus 1100 spacing on mobile screens, and
-- 600 px on tablet screens and up (shrunk if necessary).
-
-You can use the `maxHeightFromTabletUp` option to override the max height on tablet screens and up:
-
-```jsx
-<ModalDialog maxHeightFromTabletUp="700px">…</ModalDialog>
-```
-
-👉 Please note the max height is ignored when scrolling inside ModalDialog is [turned off](#disable-scrolling-inside-modaldialog).
-
-👉 Please note the max height on mobile screens is currently not customizable. Let us know if you need this feature! 🙏
-
 ### API
 
-| Name                          | Type                  | Default   | Required | Description                                                                                                                              |
-| ----------------------------- | --------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                                            |
-| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                                 |
-| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | [REQUIRES FEATURE FLAG](#feature-flag-uniform-appearance-on-all-breakpoints): Dock the ModalDialog to the bottom of the screen on mobile |
-| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                               |
-| `isScrollable`                | `bool`                | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content                |
-| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value                                                                                     |
-| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value                                                          |
-| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value                                                                     |
+| Name                          | Type                  | Default   | Required | Description                                                                                                               |
+| ----------------------------- | --------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                             |
+| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                  |
+| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                |
+| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                |
+| `isScrollable`                | `bool`                | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content |
+| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value                                                                      |
+| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value                                           |
+| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value                                                      |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
@@ -308,7 +270,16 @@ const handleClose = () => setOpen(false);
 
 ## Scrolling Long Content
 
-When Modals become too long for the user's viewport or device, they automatically scroll independently of the page itself.
+In case the content is longer than user's viewport or device, the ModalBody will expand to fit the height of its content
+and the whole ModalDialog will scroll.
+
+### Enable Scrolling Inside ModalDialog
+
+Scrolling inside ModalDialog can be turned on by adding the `isScrollable` prop:
+
+```jsx
+<ModalDialog isScrollable>…</ModalDialog>
+```
 
 ### Scrolling with ScrollView
 
@@ -316,30 +287,58 @@ To make content overflow more obvious to users, you can wrap the `ModalBody` con
 takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
 
 ```jsx
-<ScrollView overflowDecorators="both">
-  <ModalBody>…Long content…</ModalBody>
-</ScrollView>
-```
-
-### Disable Scrolling Inside ModalDialog
-
-Scrolling inside ModalDialog can be turned off by setting the `ModalDialog` prop `isScrollable` to `false`:
-
-```jsx
-<ModalDialog isScrollable="false">
-  <!-- … -->
+<ModalDialog isScrollable>
+  …
+  <ScrollView overflowDecorators="both">
+    <ModalBody>…Long content…</ModalBody>
+  </ScrollView>
+  …
 </ModalDialog>
 ```
 
-This way, the ModalBody will expand to fit the height of its content and the whole ModalDialog will scroll in case the
-content is longer than user's viewport.
+### Custom Height
 
-👉 Please note that this modifier class can produce unexpected results when used in combination with ScrollView.
+By default, ModalDialog grows to the height of its content until it reaches the [maximum height](#custom-max-height)
+limit.
 
-#### ⚠️ DEPRECATION NOTICE
+You can set a custom preferred height of ModalDialog using a custom property:
 
-The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
-non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the `isScrollable` prop.
+- `preferredHeightOnMobile` for mobile screens, and
+- `preferredHeightFromTabletUp` for tablet screens and up.
+
+This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+
+```jsx
+<ModalDialog isScrollable preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
+  …
+</ModalDialog>
+```
+
+⚠️ This feature is only available for ModalDialogs with the `isScrollable` prop.
+
+👉 Please note the custom height values are considered **preferred**. Scrollable ModalDialog will never expand beyond
+the viewport height. See the [Custom Max Height](#custom-max-height) section for more information.
+
+### Custom Max Height
+
+The default maximum height of a scrollable ModalDialog is **600 px**, as long as it can fit the viewport.
+
+If the viewport is smaller, scrollable ModalDialog will shrink to fit the viewport. In such case, the ModalDialog height
+will calculate as "viewport height (`100dvh`) minus 1100 spacing".
+
+You can use the prop `maxHeightFromTabletUp` to override the default maximum height limit on tablet
+screens and up:
+
+```jsx
+<ModalDialog isScrollable maxHeightFromTabletUp="700px">
+  …
+</ModalDialog>
+```
+
+⚠️ This feature is only available for ModalDialogs with the `isScrollable` prop.
+
+👉 If a [custom height](#custom-height) is set, the custom max height is only applied if it's smaller than the custom
+height.
 
 ## Stacking Modals
 
@@ -400,8 +399,6 @@ const handleClose = () => setOpen(false);
 </Modal>
 ```
 
-[What are deprecations?][readme-deprecations]
-
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [mdn-article]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
 [mdn-dialog-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#usage_notes
@@ -409,8 +406,6 @@ const handleClose = () => setOpen(false);
 [mdn-form]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 [modal]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Modal
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#escape-hatches
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ScrollView/README.md

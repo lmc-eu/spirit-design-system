@@ -271,6 +271,9 @@ See [Codemods documentation][readme-codemods] for more details.
 
 Or manually add `isScrollable` prop to the `ModalDialog` component.
 
+If you use `ScrollView` for scrolling the content of your modal, you must also make the
+`ModalDialog` scrollable by setting the `isScrollable` prop.
+
 ### Modal: ModalDialog Uniform Appearance
 
 The uniform `ModalDialog` appearance replaced the current behavior. Current mobile appearance

@@ -3,6 +3,10 @@ import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryT
 import {
   Button,
   Checkbox,
+  Dropdown,
+  DropdownPopover,
+  DropdownTrigger,
+  Item,
   Modal,
   ModalBody,
   ModalDialog,
@@ -14,22 +18,22 @@ import {
 } from '../..';
 
 const ModalDefault = () => {
-  const [isFirstOpen, setFirstOpen] = useState(false);
-  const [isSecondOpen, setSecondOpen] = useState(false);
-  const [isThirdOpen, setThirdOpen] = useState(false);
+  const [isModalBasicOpen, setModalBasicOpen] = useState(false);
+  const [isModalFormOpen, setModalFormOpen] = useState(false);
+  const [isModalWithDropdownOpen, setModalWithDropdownOpen] = useState(false);
   const [modalAlign, setModalAlign] = useState<AlignmentYDictionaryType>(AlignmentY.CENTER);
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
   const [isDockedOnMobile, setIsDockedOnMobile] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
-  const [isScrollable, setIsScrollable] = useState(true);
+  const [isScrollable, setIsScrollable] = useState(false);
 
-  const toggleFirstModal = () => setFirstOpen(!isFirstOpen);
-  const toggleSecondModal = () => setSecondOpen(!isSecondOpen);
-  const toggleThirdModal = () => setThirdOpen(!isSecondOpen);
-
-  const handleFirstClose = () => setFirstOpen(false);
-  const handleSecondClose = () => setSecondOpen(false);
-  const handleThirdClose = () => setThirdOpen(false);
+  const toggleModalBasic = () => setModalBasicOpen(!isModalBasicOpen);
+  const toggleModalForm = () => setModalFormOpen(!isModalFormOpen);
+  const toggleModalWithDropdown = () => setModalWithDropdownOpen(!isModalWithDropdownOpen);
+  const handleModalBasicClose = () => setModalBasicOpen(false);
+  const handleModalFormClose = () => setModalFormOpen(false);
+  const handleModalWithDropdownClose = () => setModalWithDropdownOpen(false);
   const handleModalAlignChange = (event: ChangeEvent<HTMLInputElement>) => {
     setModalAlign(event.target.value as AlignmentYDictionaryType);
   };
@@ -45,12 +49,13 @@ const ModalDefault = () => {
   const handleScrollableChange = (event: ChangeEvent<HTMLInputElement>) => {
     setIsScrollable(event.target.checked);
   };
+  const handleDropdownToggle = () => setIsDropdownOpen(!isDropdownOpen);
 
   return (
     <>
-      <Button onClick={toggleFirstModal}>Open Modal</Button>
+      <Button onClick={toggleModalBasic}>Open Modal</Button>
 
-      <Modal alignmentY={modalAlign} id="example-basic" isOpen={isFirstOpen} onClose={handleFirstClose}>
+      <Modal alignmentY={modalAlign} id="example-basic" isOpen={isModalBasicOpen} onClose={handleModalBasicClose}>
         <ModalDialog
           isDockedOnMobile={isDockedOnMobile}
           isExpandedOnMobile={isExpandedOnMobile}
@@ -70,7 +75,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Top"
                 value="top"
-                name="modal_alignment"
+                name="modal-alignment"
                 autoComplete="off"
                 isChecked={modalAlign === AlignmentY.TOP}
                 onChange={handleModalAlignChange}
@@ -80,7 +85,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Center"
                 value="center"
-                name="modal_alignment"
+                name="modal-alignment"
                 autoComplete="off"
                 isChecked={modalAlign === AlignmentY.CENTER}
                 onChange={handleModalAlignChange}
@@ -90,7 +95,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Bottom"
                 value="bottom"
-                name="modal_alignment"
+                name="modal-alignment"
                 autoComplete="off"
                 isChecked={modalAlign === AlignmentY.BOTTOM}
                 onChange={handleModalAlignChange}
@@ -103,7 +108,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Left"
                 value="left"
-                name="footer_alignment"
+                name="footer-alignment"
                 autoComplete="off"
                 isChecked={footerAlign === AlignmentX.LEFT}
                 onChange={handleFooterAlignChange}
@@ -113,7 +118,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Center"
                 value="center"
-                name="footer_alignment"
+                name="footer-alignment"
                 autoComplete="off"
                 isChecked={footerAlign === AlignmentX.CENTER}
                 onChange={handleFooterAlignChange}
@@ -123,7 +128,7 @@ const ModalDefault = () => {
                 marginRight="space-600"
                 label="Right"
                 value="right"
-                name="footer_alignment"
+                name="footer-alignment"
                 autoComplete="off"
                 isChecked={footerAlign === AlignmentX.RIGHT}
                 onChange={handleFooterAlignChange}
@@ -158,17 +163,17 @@ const ModalDefault = () => {
             </Stack>
           </ModalBody>
           <ModalFooter alignmentX={footerAlign} description="Optional description">
-            <Button onClick={handleFirstClose}>Primary action</Button>
-            <Button color="secondary" onClick={handleFirstClose}>
+            <Button onClick={handleModalBasicClose}>Primary action</Button>
+            <Button color="secondary" onClick={handleModalBasicClose}>
               Secondary action
             </Button>
           </ModalFooter>
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleSecondModal}>Open Modal with a Form</Button>
+      <Button onClick={toggleModalForm}>Open Modal with Form</Button>
 
-      <Modal id="example-form" isOpen={isSecondOpen} onClose={handleSecondClose}>
+      <Modal id="example-form" isOpen={isModalFormOpen} onClose={handleModalFormClose}>
         <ModalDialog elementType="form" method="dialog">
           <ModalHeader>Modal with a Form</ModalHeader>
           <ModalBody>
@@ -180,42 +185,39 @@ const ModalDefault = () => {
           </ModalBody>
           <ModalFooter>
             <Button type="submit">Primary action</Button>
-            <Button color="secondary" onClick={handleSecondClose}>
+            <Button color="secondary" onClick={handleModalFormClose}>
               Secondary action
             </Button>
           </ModalFooter>
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleThirdModal}>Open Modal with Custom Height</Button>
+      <Button onClick={toggleModalWithDropdown}>Open Modal with Dropdown</Button>
 
-      <Modal id="example-custom-height" isOpen={isThirdOpen} onClose={handleThirdClose}>
-        <ModalDialog
-          elementType="form"
-          isExpandedOnMobile={false}
-          maxHeightFromTabletUp="700px"
-          method="dialog"
-          preferredHeightOnMobile="400px"
-          preferredHeightFromTabletUp="500px"
-        >
-          <ModalHeader>Modal with Custom Height</ModalHeader>
+      <Modal id="example-dropdown" isOpen={isModalWithDropdownOpen} onClose={handleModalWithDropdownClose}>
+        <ModalDialog>
+          <ModalHeader>Modal Title</ModalHeader>
           <ModalBody>
-            <p className="d-tablet-none">
-              This modal has a custom height of <code>400px</code>.
-              <br />
-              <br />
-              The max height cannot be customized on mobile though.
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+              perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+              provident unde. Eveniet, iste, molestiae?
             </p>
-            <p className="d-none d-tablet-block">
-              This modal has a custom height of <code>500px</code>.
-              <br />
-              <br />
-              The max height of this modal is <code>700px</code>.
-            </p>
+            <Dropdown id="dropdown-in-modal" isOpen={isDropdownOpen} onToggle={handleDropdownToggle}>
+              {/* @ts-expect-error -- TS2322: Property color does not exist on type … */}
+              <DropdownTrigger elementType={Button} color="secondary">
+                Dropdown
+              </DropdownTrigger>
+              <DropdownPopover>
+                <Item elementType="a" href="#" label="Action" />
+                <Item elementType="a" href="#" label="Another action" />
+                <Item elementType="a" href="#" label="Something else here" />
+              </DropdownPopover>
+            </Dropdown>
           </ModalBody>
-          <ModalFooter>
-            <Button onClick={handleThirdClose}>Primary action</Button>
-            <Button color="secondary" onClick={handleThirdClose}>
+          <ModalFooter description="Optional description">
+            <Button onClick={handleModalWithDropdownClose}>Primary action</Button>
+            <Button color="secondary" onClick={handleModalWithDropdownClose}>
               Secondary action
             </Button>
           </ModalFooter>
