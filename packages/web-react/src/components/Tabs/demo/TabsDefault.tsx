@@ -16,7 +16,7 @@ const TabsDefault = () => {
 
   return (
     <Tabs selectedTab={selectedId} toggle={selectTab}>
-      <TabList marginTop="500">
+      <TabList>
         <TabItem forTabPane={1}>Item 1</TabItem>
         <TabItem forTabPane={2}>Item 2</TabItem>
         <TabLink href="https://www.example.com">Item link</TabLink>
