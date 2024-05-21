@@ -20,6 +20,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Grid: GridSpan Component](#grid-gridspan-component)
   - [Header: Abstracts Class and Style](#header-abstracts-class-and-style)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
+  - [Modal: ModalDialog Custom Height](#modal-modaldialog-custom-height)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
   - [Tabs: TabLink `target` Prop](#tabs-tablink-target-prop)
   - [Tooltip: Composition](#tooltip-composition)
@@ -192,6 +193,27 @@ Add `isScrollable` prop to the `ModalDialog` component.
 
 If you use `ScrollView` for scrolling the content of your modal, you must also make the
 `ModalDialog` scrollable by setting the `isScrollable` prop.
+
+### Modal: ModalDialog Custom Height
+
+The `preferredHeightOnMobile` and `preferredHeightFromTabletUp` props were removed and
+replaced with one prop `height` which accepts either a single value or
+object with breakpoint keys and values.
+
+Also, the prop `maxHeightFromTabletUp` was removed and replaced with the `maxHeight` prop,
+which also accepts either a single value or object with breakpoint keys and values.
+
+#### Migration Guide
+
+Update the `preferredHeightOnMobile` and `preferredHeightFromTabletUp` props to the new `height` prop.
+
+- `<ModalDialog preferredHeightOnMobile="333px" … />` → `<ModalDialog height="333px" … />`
+- `<ModalDialog preferredHeightFromTabletUp="444px" … />` → `<ModalDialog height="{{ { tablet: '444px' } }}" … />`
+- `<ModalDialog preferredHeightOnMobile="333px" preferredHeightFromTabletUp="444px" … />` → `<ModalDialog height="{{ { mobile: '333px', tablet: '444px' } }}" … />`
+
+Update the `maxHeightFromTabletUp` prop to the new `maxHeight` prop.
+
+- `<ModalDialog maxHeightFromTabletUp="555px" … />` → `<ModalDialog maxHeight="{{ { tablet: '555px' } }}" … />`
 
 ### Modal: ModalDialog Uniform Appearance
 

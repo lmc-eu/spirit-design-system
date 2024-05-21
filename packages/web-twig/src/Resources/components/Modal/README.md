@@ -107,24 +107,23 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 
 ### API
 
-| Name                          | Type                          | Default   | Required | Description                                                                                                                |
-| ----------------------------- | ----------------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `accept-charset`              | `string`                      | `null`    | ✕        | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case)                    |
-| `action`                      | `string`                      | `null`    | ✕        | `elementType="form"` only: URL to use for form submission                                                                  |
-| `autocomplete`                | `string`                      | `null`    | ✕        | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                                            |
-| `elementType`                 | `string`                      | `article` | ✕        | HTML tag to render                                                                                                         |
-| `enctype`                     | `string`                      | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                             |
-| `isDockedOnMobile`            | `bool`                        | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                 |
-| `isExpandedOnMobile`          | `bool`                        | `false`   | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                     |
-| `isScrollable`                | `bool`                        | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content. |
-| `maxHeightFromTabletUp`       | `string`                      | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                      |
-| `method`                      | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                          |
-| `name`                        | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                                                |
-| `novalidate`                  | `void`                        | `null`    | ✕        | `elementType="form"` only: [If the dialog should have validation disabled][novalidate-attr]                                |
-| `preferredHeightFromTabletUp` | `string`                      | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value.                                           |
-| `preferredHeightOnMobile`     | `string`                      | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value.                                                      |
-| `rel`                         | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource                               |
-| `target`                      | `string`                      | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                                            |
+| Name                 | Type                          | Default   | Required | Description                                                                                                                |
+| -------------------- | ----------------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `accept-charset`     | `string`                      | `null`    | ✕        | `elementType="form"` only: Character encodings to use for form submission (intentionally in kebab-case)                    |
+| `action`             | `string`                      | `null`    | ✕        | `elementType="form"` only: URL to use for form submission                                                                  |
+| `autocomplete`       | `string`                      | `null`    | ✕        | `elementType="form"` only: [Automated assistance in filling][autocomplete-attr]                                            |
+| `elementType`        | `string`                      | `article` | ✕        | HTML tag to render                                                                                                         |
+| `enctype`            | `string`                      | `null`    | ✕        | `elementType="form"` only: Encoding to use for form submission                                                             |
+| `height`             | [`string` \| `object`]        | `null`    | ✕        | Preferred height of the modal. Accepts any valid CSS value, either as a string or an object with breakpoints as keys.      |
+| `isDockedOnMobile`   | `bool`                        | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                 |
+| `isExpandedOnMobile` | `bool`                        | `false`   | ✕        | If the ModalDialog should expand on mobile. Overrides any height defined by `preferredHeightOnMobile`.                     |
+| `isScrollable`       | `bool`                        | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content. |
+| `maxHeight`          | [`string` \| `object`]        | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value.                                                                      |
+| `method`             | [`get` \| `post` \| `dialog`] | `null`    | ✕        | `elementType="form"` only: HTTP method to use for form submission                                                          |
+| `name`               | `string`                      | `null`    | ✕        | `elementType="form"` only: Name of the form                                                                                |
+| `novalidate`         | `void`                        | `null`    | ✕        | `elementType="form"` only: [If the dialog should have validation disabled][novalidate-attr]                                |
+| `rel`                | `string`                      | `null`    | ✕        | `elementType="form"` only: Relationship between the current document and the linked resource                               |
+| `target`             | `string`                      | `null`    | ✕        | `elementType="form"` only: Browsing context for form submission                                                            |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -302,15 +301,20 @@ takes over the responsibility for scrolling and provides visual overflow decorat
 By default, ModalDialog grows to the height of its content until it reaches the [maximum height](#custom-max-height)
 limit.
 
-You can set a custom preferred height of ModalDialog using a custom property:
+You can set a custom preferred height of ModalDialog using the `height` prop.
+The prop accepts any valid CSS value, either as a string or an object with breakpoints as keys.
 
-- `preferredHeightOnMobile` for mobile screens, and
-- `preferredHeightFromTabletUp` for tablet screens and up.
+The custom properties fall back to the previous breakpoint using the mobile-first approach. For example, if you set
+`height="{{ { tablet: '500px' } }}"` while not setting the `desktop` breakpoint, the value will be used for
+both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 
 This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
 
 ```twig
-<ModalDialog isScrollable preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
+<ModalDialog isScrollable height="500px">
+  …
+</ModalDialog>
+<ModalDialog isScrollable height="{{ { mobile: '300px', tablet: '500px', desktop: '600px' } }}">
   …
 </ModalDialog>
 ```
@@ -327,11 +331,17 @@ The default maximum height of a scrollable ModalDialog is **600 px**, as long as
 If the viewport is smaller, scrollable ModalDialog will shrink to fit the viewport. In such case, the ModalDialog height
 will calculate as "viewport height (`100dvh`) minus 1100 spacing".
 
-You can use the prop `maxHeightFromTabletUp` to override the default maximum height limit on tablet
-screens and up:
+You can use the prop `maxHeight` to override the default maximum height limit.
+
+The custom properties fall back to the previous breakpoint using the mobile-first approach. For example, if you set
+`maxHeight="{{ { tablet: '500px' } }}"` while not setting the `desktop` breakpoint, the value will be used for
+both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 
 ```twig
-<ModalDialog isScrollable maxHeightFromTabletUp="700px">
+<ModalDialog isScrollable maxHeight="700px">
+  …
+</ModalDialog>
+<ModalDialog isScrollable maxHeight="{{ { mobile: '500px', tablet: '700px', desktop: '800px' } }}">
   …
 </ModalDialog>
 ```
