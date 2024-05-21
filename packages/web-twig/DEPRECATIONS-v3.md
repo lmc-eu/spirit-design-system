@@ -59,19 +59,6 @@ Use:
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
-### ModalDialog `isScrollable` Prop
-
-The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
-non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the `isScrollable` prop.
-
-#### Migration Guide
-
-Add `isScrollable` prop to the `ModalDialog` component.
-
-#### Migration Guide
-
-Either install newer version of the `spirit-icons` package or add `danger` named icon to your project's icons.
-
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Dropdown/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/src/Resources/components/Tooltip/README.md

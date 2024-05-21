@@ -3,7 +3,7 @@
 {%- set _elementType = props.elementType | default('article') -%}
 {%- set _isDockedOnMobile = props.isDockedOnMobile | default(false) -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile | default(false) -%}
-{%- set _isScrollable = props.isScrollable ?? true -%}
+{%- set _isScrollable = props.isScrollable | default(false) -%}
 {%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
 {%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
 {%- set _preferredHeightFromTabletUp = props.preferredHeightFromTabletUp | default(null) -%}
@@ -12,7 +12,7 @@
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalDialog' -%}
 {%- set _rootDockOnMobileClassName = _isDockedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--dockOnMobile' : null -%}
 {%- set _rootExpandOnMobileClassName = _isExpandedOnMobile ? _spiritClassPrefix ~ 'ModalDialog--expandOnMobile' : null -%}
-{%- set _rootScrollableClassName = _isScrollable ? null : _spiritClassPrefix ~ 'ModalDialog--nonScrollable' -%}
+{%- set _rootScrollableClassName = _isScrollable ? _spiritClassPrefix ~ 'ModalDialog--scrollable' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
