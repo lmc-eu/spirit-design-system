@@ -42,3 +42,7 @@ packages/codemods/src/transforms/**/*.output.tsx
 
 # Lock Files
 *.lock
+
+# Makefiles
+Makefile
+makefile
