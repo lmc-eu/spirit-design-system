@@ -103,14 +103,12 @@ encore-link: ## Link demo dependencies
 		\
 		cd /srv/spirit-design-tokens && \
 		yarn link && \
-		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-web && \
+		cd /srv/spirit-web-twig-demo && \
 		yarn link @lmc-eu/spirit-design-tokens && \
 		\
 		cd /srv/spirit-common && \
 		yarn link && \
-		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-web && \
-		yarn link @lmc-eu/spirit-common && \
-		cd /srv/spirit-web-twig-demo/node_modules/@lmc-eu/spirit-form-validations && \
+		cd /srv/spirit-web-twig-demo && \
 		yarn link @lmc-eu/spirit-common"
 encore-build: ## Build demo assets
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn build
