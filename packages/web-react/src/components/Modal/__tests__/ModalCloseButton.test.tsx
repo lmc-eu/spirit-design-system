@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
@@ -14,35 +14,39 @@ describe('ModalCloseButton', () => {
   restPropsTest(ModalCloseButton, 'button');
 
   it('should have icon', () => {
-    const dom = render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
+    render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
 
-    expect(dom.container.querySelector('svg')).toBeDefined();
+    const svg = screen.getByRole('button').firstElementChild;
+
+    expect(svg).toBeInTheDocument();
+    expect(svg).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('should have visually hidden label', () => {
-    const dom = render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
+    render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
 
-    expect(dom.container.querySelector('button > span')?.textContent).toBe('close');
-    expect(dom.container.querySelector('button > span')).toHaveClass('accessibility-hidden');
+    const buttonText = screen.getByRole('button').lastElementChild;
+    expect(buttonText?.textContent).toBe('close');
+    expect(buttonText).toHaveClass('accessibility-hidden');
   });
 
   it('should be square', () => {
-    const dom = render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
+    render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
 
-    expect(dom.container.querySelector('button')).toHaveClass('Button--square');
+    expect(screen.getByRole('button')).toHaveClass('Button--square');
   });
 
   it('should have tertiary color', () => {
-    const dom = render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
+    render(<ModalCloseButton label="close" id="test" isOpen onClose={() => {}} />);
 
-    expect(dom.container.querySelector('button')).toHaveClass('Button--tertiary');
+    expect(screen.getByRole('button')).toHaveClass('Button--tertiary');
   });
 
   it('should handle on close click', () => {
     const mockedOnClose = jest.fn();
-    const dom = render(<ModalCloseButton label="close" id="test" isOpen onClose={mockedOnClose} />);
+    render(<ModalCloseButton label="close" id="test" isOpen onClose={mockedOnClose} />);
 
-    const button = dom.getByRole('button');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     expect(mockedOnClose).toHaveBeenCalled();
