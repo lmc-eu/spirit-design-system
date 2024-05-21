@@ -37,8 +37,8 @@
             <!-- Modal features demo: start -->
             <Stack hasSpacing elementType="form">
                 <Checkbox id="modal-docked" label="Dock on mobile" onChange="toggleDockOnMobile('#example-basic > .ModalDialog', '#modal-expanded')" autocomplete="off" />
-                <Checkbox id="modal-expanded" label="Expand on mobile (docked only)" onChange="toggleExpandOnMobile('#example-basic > .ModalDialog')" autocomplete="off" isDisabled />
-                <Checkbox id="modal-non-scrolling" label="Scrolling inside" onChange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" isChecked />
+                <Checkbox id="modal-expanded" label="Expand on mobile (docked only)" onChange="toggleExpandOnMobile('#example-basic > .ModalDialog')" autocomplete="off" isChecked isDisabled />
+                <Checkbox id="modal-scrolling" label="Scrolling inside" onChange="toggleScrolling('#example-basic > .ModalDialog')" autocomplete="off" />
             </Stack>
             <!-- Modal features demo: end -->
 
@@ -64,7 +64,7 @@
 </Modal>
 
 <Button data-spirit-toggle="modal" data-spirit-target="#example-form">
-    Open Modal with a Form
+    Open Modal with Form
 </Button>
 
 <Modal id="example-form" titleId="example-form-title">
@@ -97,46 +97,52 @@
     </ModalDialog>
 </Modal>
 
-<Button data-spirit-toggle="modal" data-spirit-target="#example-custom-height">
-    Open Modal with Custom Height
+<Button data-spirit-toggle="modal" data-spirit-target="#example-dropdown">
+    Open Modal with Dropdown
 </Button>
 
-<Modal id="example-custom-height" titleId="example-custom-height-title">
-    <ModalDialog
-        elementType="form"
-        isExpandedOnMobile={ false }
-        maxHeightFromTabletUp="700px"
-        method="dialog"
-        preferredHeightOnMobile="400px"
-        preferredHeightFromTabletUp="500px"
-    >
-        <ModalHeader modalId="example-custom-height" titleId="example-custom-height-title">
-            Modal with Custom Height
+<Modal id="example-dropdown" titleId="example-dropdown-title">
+    <ModalDialog>
+        <ModalHeader modalId="example-dropdown" titleId="example-dropdown-title">
+            Modal Title
         </ModalHeader>
         <ModalBody>
 
             <!-- Content: start -->
-            <p class="d-tablet-none">
-                This modal has a custom height of <code>400px</code>.
-                <br /><br />
-                The max height cannot be customized on mobile though.
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
             </p>
-            <p class="d-none d-tablet-block">
-                This modal has a custom height of <code>500px</code>.
-                <br /><br />
-                The max height of this modal is <code>700px</code>.
-            </p>
+            <Dropdown>
+                <Button
+                    color="secondary"
+                    data-spirit-toggle="dropdown"
+                    data-spirit-target="#dropdown-in-modal"
+                    data-spirit-autoclose="true"
+                >
+                    Dropdown
+                </Button>
+                <DropdownPopover id="dropdown-in-modal">
+                    <Item elementType="a" href="#" label="Action" />
+                    <Item elementType="a" href="#" label="Another action" />
+                    <Item elementType="a" href="#" label="Something else here" />
+                </DropdownPopover>
+            </Dropdown>
             <!-- Content: end -->
 
         </ModalBody>
-        <ModalFooter>
-            <Button type="submit">
+        <ModalFooter description="Optional description">
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-dropdown"
+            >
                 Primary action
             </Button>
             <Button
                 color="secondary"
                 data-spirit-dismiss="modal"
-                data-spirit-target="#example-custom-height"
+                data-spirit-target="#example-dropdown"
             >
                 Secondary action
             </Button>
