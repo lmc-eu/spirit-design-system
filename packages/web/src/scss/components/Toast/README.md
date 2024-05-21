@@ -6,6 +6,8 @@ Toast is a composition of a few subcomponents:
 
 - [Toast](#toast)
   - [ToastBar](#toastbar)
+    - [ToastBarMessage](#toastbarmessage)
+    - [ToastBarLink](#toastbarlink)
 
 ## JavaScript Plugin
 
@@ -164,8 +166,10 @@ Minimum example:
 ```html
 <div class="ToastBar ToastBar--inverted">
   <div class="ToastBar__box">
-    <div class="ToastBar__content">
-      <div class="ToastBar__message">Message only</div>
+    <div class="ToastBar__container">
+      <div class="ToastBar__content">
+        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message only</div>
+      </div>
     </div>
   </div>
 </div>
@@ -178,41 +182,25 @@ An icon can be added to the ToastBar component:
 ```html
 <div class="ToastBar ToastBar--inverted">
   <div class="ToastBar__box">
-    <div class="ToastBar__content">
+    <div class="ToastBar__container">
       <svg width="20" height="20" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#info" />
       </svg>
-      <div class="ToastBar__message">Message with icon</div>
-    </div>
-  </div>
-</div>
-```
-
-### Action Link
-
-An action link can be added to the ToastBar component:
-
-```html
-<div class="ToastBar ToastBar--inverted">
-  <div class="ToastBar__box">
-    <div class="ToastBar__container">
       <div class="ToastBar__content">
-        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message with action</div>
+        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message with icon</div>
       </div>
     </div>
   </div>
 </div>
 ```
 
-#### API
+### ToastBar Components
 
-| Name       | Type     | Default | Required | Description                    |
-| ---------- | -------- | ------- | -------- | ------------------------------ |
-| `children` | `string` | —       | ✓        | Content of the ToastBarMessage |
+The content of `ToastBar` can be assembled from the following subcomponents:
 
-#### ToastBarLink
+#### ToastBarMessage
 
-`ToastBarLink` is a component designated to create an action link within `ToastBar`.
+`ToastBarMessage` is a subcomponent designated for the main message in `ToastBar`.
 
 Usage example:
 
@@ -221,23 +209,31 @@ Usage example:
   <div class="ToastBar__box">
     <div class="ToastBar__container">
       <div class="ToastBar__content">
-        <div class="text-truncate-multiline" data-spirit-populate-field="message">Message with action</div>
-        <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+        <div class="text-truncate-multiline">Message with action</div>
       </div>
     </div>
   </div>
 </div>
 ```
 
-#### API
+#### ToastBarLink
 
-| Name           | Type                                             | Default    | Required | Description                    |
-| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
-| `children`     | `string`                                         | —          | ✓        | Content of the ToastBarLink    |
-| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
-| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
-| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
-| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
+`ToastBarLink` is a subcomponent designated to create an action link within `ToastBar`.
+
+Usage example:
+
+```html
+<div class="ToastBar ToastBar--inverted">
+  <div class="ToastBar__box">
+    <div class="ToastBar__container">
+      <div class="ToastBar__content">
+        <div class="text-truncate-multiline">Message with action</div>
+        <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
 👉 **Do not put any important actions** like "Undo" in the ToastBar component (unless there are other means to perform
 said action), as it is very hard (if not impossible) to reach for users with assistive technologies. Read more about
@@ -253,8 +249,10 @@ For example:
 ```html
 <div class="ToastBar ToastBar--success">
   <div class="ToastBar__box">
-    <div class="ToastBar__content">
-      <div class="ToastBar__message">Success message</div>
+    <div class="ToastBar__container">
+      <div class="ToastBar__content">
+        <div class="text-truncate-multiline">Success message</div>
+      </div>
     </div>
   </div>
 </div>
@@ -290,7 +288,7 @@ button:
 ```html
 <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible">
   <div class="ToastBar__box">
-    <div class="ToastBar__content">
+    <div class="ToastBar__container">
       <div class="ToastBar__message">Dismissible message</div>
     </div>
     <button
@@ -332,13 +330,13 @@ button:
     <!-- ToastBar: start -->
     <div id="my-dismissible-toast" class="ToastBar ToastBar--inverted ToastBar--dismissible is-hidden">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/icons/svg/sprite.svg#info" />
           </svg>
-          <div class="ToastBar__message">
-            Toast message
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Toast message</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -375,11 +373,14 @@ the template and apply it on any toasts to be shown to the user, using the confi
     <template data-spirit-snippet="item">
       <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
         <div class="ToastBar__box">
-          <div class="ToastBar__content">
+          <div class="ToastBar__container">
             <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
               <use xlink:href="/icons/svg/sprite.svg#info" />
             </svg>
-            <div class="ToastBar__message" data-spirit-populate-field="message"></div>
+            <div class="ToastBar__content">
+              <div class="text-truncate-multiline" data-spirit-populate-field="message"></div>
+              <a href="#" class="link-inverted link-underlined ToastBar__link" data-spirit-populate-field="link"></a>
+            </div>
           </div>
           <button
             type="button"
@@ -410,8 +411,13 @@ const toast = new Toast(null, {
   autoCloseInterval: 3000 // Set interval after ToastBar will be closed in ms, default: 3000
   color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
   containerId: 'toast-example', // Must match the ID of the Toast container in HTML
-  content: 'Hello, this is my toast message!', // Can be plain text or HTML
   enableAutoClose: true, // If true, ToastBar will close after `autoCloseInterval`, default: true
+  message: 'Hello, this is my toast message!', // Can be plain text or HTML
+  link: {
+    // Optional link configuration
+    href: 'https://example.com', // Optional link URL
+    text: 'Action link', // Optional link text
+  }, // Optional link URL
   hasIcon: true,
   iconName: 'info', // Optional icon name used as the #fragment in the SVG sprite URL
   id: 'my-toast', // An ID is required for dismissible ToastBar

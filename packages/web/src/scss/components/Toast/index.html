@@ -26,12 +26,12 @@
 
         <div id="my-hidden-dismissible-toast" class="ToastBar ToastBar--warning ToastBar--dismissible is-hidden">
           <div class="ToastBar__box">
-            <div class="ToastBar__content">
+            <div class="ToastBar__container">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
               </svg>
-              <div class="ToastBar__message">
-                I was hidden and you exposed me!
+              <div class="ToastBar__content">
+                <div class="text-truncate-multiline">I was hidden and you exposed me!</div>
               </div>
             </div>
             <button
@@ -195,8 +195,13 @@
             <input type="number" min="0" max="60000" step="500" value="3000" id="toast-auto-close-interval" name="auto-close-interval" class="TextField__input" />
           </div>
           <div class="TextArea">
-            <label for="toast-content" class="TextArea__label">Message</label>
-            <textarea id="toast-content" class="TextArea__input" autocomplete="off">This is a new toast message.</textarea>
+            <label for="toast-message" class="TextArea__label">Message</label>
+            <textarea id="toast-message" class="TextArea__input" autocomplete="off">This is a new toast message.</textarea>
+            <div class="TextArea__helperText">Can contain HTML.</div>
+          </div>
+          <div class="TextArea">
+            <label for="toast-link" class="TextArea__label">Link</label>
+            <textarea id="toast-link" class="TextArea__input" autocomplete="off">This is a toast link.</textarea>
             <div class="TextArea__helperText">Can contain HTML.</div>
           </div>
           <div>
@@ -245,11 +250,14 @@
         <template data-spirit-snippet="item">
           <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
             <div class="ToastBar__box">
-              <div class="ToastBar__content">
+              <div class="ToastBar__container">
                 <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
                   <use xlink:href="/assets/icons/svg/sprite.svg#info" />
                 </svg>
-                <div class="ToastBar__message" data-spirit-populate-field="message"></div>
+                <div class="ToastBar__content">
+                  <div class="text-truncate-multiline" data-spirit-populate-field="message"></div>
+                  <a href="#" class="link-inverted link-underlined ToastBar__link" data-spirit-populate-field="link"></a>
+                </div>
               </div>
               <button
                 type="button"
@@ -270,13 +278,13 @@
 
         <div id="my-dismissible-toast" class="ToastBar ToastBar--success ToastBar--dismissible is-visible">
           <div class="ToastBar__box">
-            <div class="ToastBar__content">
+            <div class="ToastBar__container">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
               </svg>
-              <div class="ToastBar__message">
-                I was first!
-                <a href="#" class="link-inverted link-underlined">Action</a>
+              <div class="ToastBar__content">
+                <div class="text-truncate-multiline">I was first!</div>
+                <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
               </div>
             </div>
             <button
@@ -297,13 +305,13 @@
 
         <div id="my-other-dismissible-toast" class="ToastBar ToastBar--informative ToastBar--dismissible is-visible">
           <div class="ToastBar__box">
-            <div class="ToastBar__content">
+            <div class="ToastBar__container">
               <svg width="20" height="20" aria-hidden="true">
                 <use xlink:href="/assets/icons/svg/sprite.svg#info" />
               </svg>
-              <div class="ToastBar__message">
-                I appeared later. This toast has a long message that wraps automatically.
-                <a href="#" class="link-inverted link-underlined">Action</a>
+              <div class="ToastBar__content">
+                <div class="text-truncate-multiline">I appeared later. This toast has a long message that wraps automatically.</div>
+                <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
               </div>
             </div>
             <button
@@ -337,9 +345,9 @@
 
     <div class="ToastBar ToastBar--inverted">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message">
-            Message only
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Message only</div>
           </div>
         </div>
       </div>
@@ -347,10 +355,10 @@
 
     <div class="ToastBar ToastBar--inverted">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message">
-            Message with action
-            <a href="#" class="link-inverted link-underlined">Action</a>
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Message with action</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
       </div>
@@ -358,10 +366,10 @@
 
     <div class="ToastBar ToastBar--inverted">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message">
-            When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.
-            <a href="#" class="link-inverted link-underlined">Action</a>
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">When the text is long and reaches the maximum width limit, the action automatically wraps to the next line.</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
       </div>
@@ -369,13 +377,13 @@
 
     <div class="ToastBar ToastBar--inverted">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#info" />
           </svg>
-          <div class="ToastBar__message">
-            Message with icon and action
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Message with icon and action</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
       </div>
@@ -383,9 +391,9 @@
 
     <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--inverted ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
-          <div class="ToastBar__message">
-            Dismissible message
+        <div class="ToastBar__container">
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Dismissible message</div>
           </div>
         </div>
         <button
@@ -405,13 +413,13 @@
 
     <div id="my-toast-variation-dismissible-with-icon-and-action" class="ToastBar ToastBar--inverted ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#download" />
           </svg>
-          <div class="ToastBar__message">
-            Dismissible message with custom icon and action
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Dismissible message with custom icon and action</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -440,13 +448,13 @@
 
     <div id="my-toast-color-inverted" class="ToastBar ToastBar--inverted ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#info" />
           </svg>
-          <div class="ToastBar__message">
-            Inverted
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Inverted</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -466,13 +474,13 @@
 
     <div id="my-toast-color-informative" class="ToastBar ToastBar--informative ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#info" />
           </svg>
-          <div class="ToastBar__message">
-            Informative
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Informative</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -492,13 +500,13 @@
 
     <div id="my-toast-color-success" class="ToastBar ToastBar--success ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#check-plain" />
           </svg>
-          <div class="ToastBar__message">
-            Success
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Success</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -518,13 +526,13 @@
 
     <div id="my-toast-color-warning" class="ToastBar ToastBar--warning ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#warning" />
           </svg>
-          <div class="ToastBar__message">
-            Warning
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Warning</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button
@@ -544,13 +552,13 @@
 
     <div id="my-toast-color-danger" class="ToastBar ToastBar--danger ToastBar--dismissible">
       <div class="ToastBar__box">
-        <div class="ToastBar__content">
+        <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#danger" />
           </svg>
-          <div class="ToastBar__message">
-            Danger
-            <a href="#" class="link-inverted link-underlined">Action</a>
+          <div class="ToastBar__content">
+            <div class="text-truncate-multiline">Danger</div>
+            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
           </div>
         </div>
         <button

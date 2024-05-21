@@ -40,6 +40,7 @@ const SELECTOR_ICON_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="icon"]`;
 const SELECTOR_CLOSE_BUTTON_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="close-button"]`;
 const SELECTOR_DISMISS_TRIGGER_ELEMENT = `[${ATTRIBUTE_DATA_DISMISS}="${NAME}"]`;
 const SELECTOR_MESSAGE_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="message"]`;
+const SELECTOR_LINK_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="link"]`;
 
 // Keep in sync with transitions in `scss/Toast/_theme.scss`.
 export const PROPERTY_NAME_SLOWEST_TRANSITION = {
@@ -54,8 +55,9 @@ type Config = {
   autoCloseInterval: number;
   color: Color;
   containerId: string;
-  content: HTMLElement | string;
   enableAutoClose: boolean;
+  message: HTMLElement | string;
+  link: HTMLElement | string;
   hasIcon: boolean;
   iconName: string;
   id: string;
@@ -180,8 +182,8 @@ class Toast extends BaseComponent {
     }
 
     const config = this.config as Config;
-    if (!config.content) {
-      warning(false, 'Toast content is required, nothing given.');
+    if (!config.message) {
+      warning(false, 'Toast message is required, nothing given.');
 
       return null;
     }
@@ -190,6 +192,7 @@ class Toast extends BaseComponent {
     const iconElement = template.querySelector(SELECTOR_ICON_ELEMENT) as HTMLElement;
     const closeButtonElement = template.querySelector(SELECTOR_CLOSE_BUTTON_ELEMENT) as HTMLElement;
     const messageElement = template.querySelector(SELECTOR_MESSAGE_ELEMENT) as HTMLElement;
+    const linkElement = template.querySelector(SELECTOR_LINK_ELEMENT) as HTMLElement;
 
     itemElement!.setAttribute('id', config.id);
     itemElement!.setAttribute('data-spirit-color', config.color);
@@ -197,7 +200,10 @@ class Toast extends BaseComponent {
     this.updateOrRemoveIcon(iconElement);
     this.updateOrRemoveCloseButton(closeButtonElement);
 
-    messageElement!.innerHTML = typeof config.content === 'string' ? config.content : config.content.outerHTML;
+    messageElement!.innerHTML = typeof config.message === 'string' ? config.message : config.message.outerHTML;
+
+    linkElement!.setAttribute('href', '#');
+    linkElement!.innerHTML = typeof config.link === 'string' ? config.link : config.link.outerHTML;
 
     return itemElement;
   }
