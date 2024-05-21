@@ -15,7 +15,7 @@ const ModalStacking = () => {
     <>
       <Button onClick={toggleFirstModal}>Open Modal</Button>
 
-      <Modal id="example_stacking_parent" isOpen={isFirstOpen} onClose={handleFirstClose}>
+      <Modal id="example-stacking-parent" isOpen={isFirstOpen} onClose={handleFirstClose}>
         <ModalDialog>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalBody>
@@ -31,7 +31,7 @@ const ModalStacking = () => {
         </ModalDialog>
       </Modal>
 
-      <Modal id="example_stacking_nested" isOpen={isSecondOpen} onClose={handleSecondClose}>
+      <Modal id="example-stacking-nested" isOpen={isSecondOpen} onClose={handleSecondClose}>
         <ModalDialog>
           <ModalHeader>Stacked Modal Title</ModalHeader>
           <ModalBody>

@@ -10,9 +10,9 @@ const ModalDisabledBackdropClick = () => {
     <>
       <Button onClick={toggleModal}>Open Modal</Button>
 
-      <Modal id="example_basic" isOpen={isOpen} onClose={handleClose} closeOnBackdropClick={false}>
+      <Modal id="example-disabled-backdrop-click" isOpen={isOpen} onClose={handleClose} closeOnBackdropClick={false}>
         <ModalDialog>
-          <ModalHeader id="example_basic">Modal Title</ModalHeader>
+          <ModalHeader id="example-disabled-backdrop-click">Modal Title</ModalHeader>
           <ModalBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
