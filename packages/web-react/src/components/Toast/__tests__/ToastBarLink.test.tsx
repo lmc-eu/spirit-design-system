@@ -11,14 +11,14 @@ describe('ToastBarLink', () => {
   restPropsTest(ToastBarLink, 'a');
 
   beforeEach(() => {
-    render(<ToastBarLink href="example-href">Example action</ToastBarLink>);
+    render(<ToastBarLink href="#example-href">Example action</ToastBarLink>);
   });
 
   it('should render with correct href', () => {
     const element = screen.getByRole('link');
 
     expect(element).toBeInTheDocument();
-    expect(element).toHaveAttribute('href', 'example-href');
+    expect(element).toHaveAttribute('href', '#example-href');
   });
 
   it('should render children', () => {

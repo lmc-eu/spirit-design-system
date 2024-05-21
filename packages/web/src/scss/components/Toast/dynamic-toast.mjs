@@ -6,8 +6,14 @@ export const addDynamicToast = (event, containerId) => {
     containerId,
     autoCloseInterval: formElement.querySelector('#toast-auto-close-interval').value,
     color: formElement.querySelector('#toast-color').value,
-    content: formElement.querySelector('#toast-content').value,
     enableAutoClose: formElement.querySelector('#toast-enable-auto-close').checked,
+    message: formElement.querySelector('#toast-message').value,
+    linkContent: formElement.querySelector('#toast-enable-link').checked
+      ? formElement.querySelector('#toast-link').value
+      : null,
+    linkProps: {
+      href: '#',
+    },
     hasIcon: formElement.querySelector('#toast-has-icon').checked,
     id: `my-dynamic-toast-${Date.now()}`,
     isDismissible: formElement.querySelector('#toast-is-dismissible').checked,

@@ -7,6 +7,8 @@ import {
   ATTRIBUTE_DATA_POPULATE_FIELD,
   ATTRIBUTE_DATA_SNIPPET,
   ATTRIBUTE_DATA_TARGET,
+  CLASS_NAME_LINK_DISABLED,
+  CLASS_NAME_LINK_UNDERLINED,
   CLASS_NAME_HIDDEN,
   CLASS_NAME_TRANSITIONING,
   CLASS_NAME_VISIBLE,
@@ -40,6 +42,7 @@ const SELECTOR_ICON_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="icon"]`;
 const SELECTOR_CLOSE_BUTTON_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="close-button"]`;
 const SELECTOR_DISMISS_TRIGGER_ELEMENT = `[${ATTRIBUTE_DATA_DISMISS}="${NAME}"]`;
 const SELECTOR_MESSAGE_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="message"]`;
+const SELECTOR_LINK_ELEMENT = `[${ATTRIBUTE_DATA_POPULATE_FIELD}="link"]`;
 
 // Keep in sync with transitions in `scss/Toast/_theme.scss`.
 export const PROPERTY_NAME_SLOWEST_TRANSITION = {
@@ -54,8 +57,18 @@ type Config = {
   autoCloseInterval: number;
   color: Color;
   containerId: string;
-  content: HTMLElement | string;
   enableAutoClose: boolean;
+  message: HTMLElement | string;
+  enableLink: boolean;
+  linkContent: HTMLElement | string;
+  linkProps: {
+    color: 'primary' | 'secondary' | 'inverted';
+    elementType: string;
+    href: string;
+    isDisabled: boolean;
+    isUnderlined: boolean;
+    target: '_blank' | '_self' | '_parent' | '_top';
+  };
   hasIcon: boolean;
   iconName: string;
   id: string;
@@ -173,6 +186,35 @@ class Toast extends BaseComponent {
     }
   }
 
+  updateOrRemoveLink(linkElement: HTMLElement) {
+    const { linkContent, linkProps } = this.config as Config;
+
+    if (!linkProps.href) {
+      warning(false, 'Property href in Toast link is required, nothing given.');
+    }
+
+    if (linkContent) {
+      const linkElementWithType = document.createElement(linkProps.elementType || 'a');
+      linkElement.replaceWith(linkElementWithType);
+      const color = linkProps.color || 'inverted';
+      const isUnderlined = linkProps.isUnderlined !== undefined ? linkProps.isUnderlined : true;
+
+      if (isUnderlined) {
+        linkElementWithType.classList.add(CLASS_NAME_LINK_UNDERLINED);
+      }
+      if (linkProps.isDisabled) {
+        linkElementWithType.classList.add(CLASS_NAME_LINK_DISABLED);
+      }
+      linkElementWithType.classList.add('ToastBar__link');
+      linkElementWithType.classList.add(`link-${color}`);
+      linkElementWithType.setAttribute('href', linkProps.href);
+      linkProps.target && linkElementWithType.setAttribute('target', linkProps.target);
+      linkElementWithType!.innerHTML = typeof linkContent === 'string' ? linkContent : linkContent.outerHTML;
+    } else {
+      linkElement!.remove();
+    }
+  }
+
   createFromTemplate(): SpiritElement {
     const template = this.getTemplate();
     if (!template) {
@@ -180,8 +222,8 @@ class Toast extends BaseComponent {
     }
 
     const config = this.config as Config;
-    if (!config.content) {
-      warning(false, 'Toast content is required, nothing given.');
+    if (!config.message) {
+      warning(false, 'Toast message is required, nothing given.');
 
       return null;
     }
@@ -190,14 +232,16 @@ class Toast extends BaseComponent {
     const iconElement = template.querySelector(SELECTOR_ICON_ELEMENT) as HTMLElement;
     const closeButtonElement = template.querySelector(SELECTOR_CLOSE_BUTTON_ELEMENT) as HTMLElement;
     const messageElement = template.querySelector(SELECTOR_MESSAGE_ELEMENT) as HTMLElement;
+    const linkElement = template.querySelector(SELECTOR_LINK_ELEMENT) as HTMLElement;
 
     itemElement!.setAttribute('id', config.id);
     itemElement!.setAttribute('data-spirit-color', config.color);
 
     this.updateOrRemoveIcon(iconElement);
     this.updateOrRemoveCloseButton(closeButtonElement);
+    this.updateOrRemoveLink(linkElement);
 
-    messageElement!.innerHTML = typeof config.content === 'string' ? config.content : config.content.outerHTML;
+    messageElement!.innerHTML = typeof config.message === 'string' ? config.message : config.message.outerHTML;
 
     return itemElement;
   }
