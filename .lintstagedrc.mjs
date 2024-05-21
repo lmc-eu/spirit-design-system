@@ -1,3 +1,3 @@
 export default {
-  '!{yarn.lock,.husky/*}': ['prettier --write'],
+  '!{yarn.lock,.husky/*,.*ignore}': ['prettier --write'],
 };
