@@ -36,26 +36,40 @@
     </ModalDialog>
 </Modal>
 
+<!-- Render with scrollable and simple custom height -->
+<Modal id="modal-example-custom-height" aria-label="Modal Title">
+    <ModalDialog isScrollable height="100px" maxHeight="200px">
+        <ModalHeader modalId="modal-example-custom-height" />
+        <ModalBody>
+            <p>Modal Body</p>
+        </ModalBody>
+        <ModalFooter>
+            <Button color="primary">
+                Submit
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
+
 <!-- Render with all props -->
-<Modal alignmentY="top" id="modal-example-2" titleId="modal-example-2-title">
+<Modal alignmentY="top" id="modal-example-all" titleId="modal-example-all-title">
     <ModalDialog
         autocomplete="on"
         elementType="form"
+        height="{{ { mobile: '400px', tablet: '500px', desktop: '600px' } }}"
         isDockedOnMobile
         isExpandedOnMobile
         isScrollable
-        maxHeightFromTabletUp="700px"
+        maxHeight="{{ { tablet: '700px' } }}"
         method="dialog"
-        preferredHeightOnMobile="400px"
-        preferredHeightFromTabletUp="500px"
         UNSAFE_className="custom-class"
         UNSAFE_style="outline: 5px solid blue; outline-offset: -5px;"
     >
         <ModalHeader
             closeLabel="Close form"
             enableDismiss={ false }
-            modalId="modal-example-2"
-            titleId="modal-example-2-title"
+            modalId="modal-example-all"
+            titleId="modal-example-all-title"
         >
             Title of the Modal
         </ModalHeader>
