@@ -50,24 +50,6 @@ Use:
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
-### ModalDialog `isScrollable` Prop
-
-The `isScrollable` prop will be set to `false` by default in the next major release and the ModalDialog will be made
-non-scrollable by default. It will be possible to re-enable the inside scrolling by adding the `isScrollable` prop.
-
-#### Migration Guide
-
-Use codemod to automatically update your codebase.
-
-```sh
-npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-iscrollable-prop
-```
-
-See [Codemods documentation][readme-codemods] for more details.
-
-Or manually add `isScrollable` prop to the `ModalDialog` component.
-
-[readme-codemods]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/codemods/README.md
 [dropdown-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Dropdown/README.md
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#deprecations
 [tooltip-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Tooltip/README.md

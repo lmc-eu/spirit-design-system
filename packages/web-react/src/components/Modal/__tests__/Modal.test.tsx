@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
@@ -22,13 +22,13 @@ describe('Modal', () => {
 
   it('should not close modal dialog', () => {
     const mockedOnClose = jest.fn();
-    const dom = render(
+    render(
       <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick={false}>
         <div>Test</div>
       </Modal>,
     );
 
-    const dialog = dom.container.querySelector('.Modal') as HTMLElement;
+    const dialog = screen.getByRole('dialog');
     fireEvent.click(dialog);
 
     expect(mockedOnClose).not.toHaveBeenCalled();
@@ -36,13 +36,13 @@ describe('Modal', () => {
 
   it('should close modal dialog', () => {
     const mockedOnClose = jest.fn();
-    const dom = render(
+    render(
       <Modal id="test" isOpen onClose={mockedOnClose} closeOnBackdropClick>
         <div>Test</div>
       </Modal>,
     );
 
-    const dialog = dom.container.querySelector('.Modal') as HTMLElement;
+    const dialog = screen.getByRole('dialog');
     fireEvent.click(dialog);
 
     expect(mockedOnClose).toHaveBeenCalled();
