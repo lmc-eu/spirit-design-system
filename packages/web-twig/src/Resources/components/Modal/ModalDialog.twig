@@ -1,12 +1,11 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('article') -%}
+{%- set _height = props.height | default(null) -%}
 {%- set _isDockedOnMobile = props.isDockedOnMobile | default(false) -%}
 {%- set _isExpandedOnMobile = props.isExpandedOnMobile | default(false) -%}
 {%- set _isScrollable = props.isScrollable | default(false) -%}
-{%- set _maxHeightFromTabletUp = props.maxHeightFromTabletUp | default(null) -%}
-{%- set _preferredHeightOnMobile = props.preferredHeightOnMobile | default(null) -%}
-{%- set _preferredHeightFromTabletUp = props.preferredHeightFromTabletUp | default(null) -%}
+{%- set _maxHeight = props.maxHeight | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'ModalDialog' -%}
@@ -30,15 +29,27 @@
 ] : [] -%}
 
 {%- set _style = '' -%}
-{%- if _maxHeightFromTabletUp -%}
-    {% set _style = _style ~ '--modal-max-height-tablet: ' ~ _maxHeightFromTabletUp ~ ';' %}
-{%- endif -%}
-{%- if _preferredHeightOnMobile -%}
-    {% set _style = _style ~ '--modal-preferred-height-mobile: ' ~ _preferredHeightOnMobile ~ ';' %}
-{%- endif -%}
-{%- if _preferredHeightFromTabletUp -%}
-    {% set _style = _style ~ '--modal-preferred-height-tablet: ' ~ _preferredHeightFromTabletUp ~ ';' %}
-{%- endif -%}
+{%- set heightProps = {
+    'maxHeight': _maxHeight,
+    'height': _height
+} -%}
+{%- for key, value in heightProps -%}
+    {%- if value -%}
+        {%- set infix = (key == 'maxHeight') ? 'max-' : '' -%}
+        {%- set styleVariable = 'modal-dialog-' ~ infix ~ 'height' -%}
+
+        {%- if value is iterable -%}
+            {%- for breakpoint, breakpointValue in value -%}
+                {%- if breakpointValue -%}
+                    {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+                    {%- set _style = _style ~ '--' ~ styleVariable ~ suffix ~ ': ' ~ breakpointValue ~ ';' -%}
+                {%- endif -%}
+            {%- endfor -%}
+        {%- else -%}
+            {%- set _style = _style ~ '--' ~ styleVariable ~ ': ' ~ value ~ ';' -%}
+        {%- endif -%}
+    {%- endif -%}
+{% endfor %}
 
 {# Attributes #}
 {%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps.style | join() ~ '"' -%}
