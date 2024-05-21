@@ -175,8 +175,7 @@
     <ModalDialog
         isExpandedOnMobile={ false }
         isScrollable
-        preferredHeightOnMobile="400px"
-        preferredHeightFromTabletUp="500px"
+        height="{{ { mobile: '400px', tablet: '500px', desktop: '600px' } }}"
     >
         <ModalHeader modalId="example-custom-height" titleId="example-custom-height-title">
             Modal with Custom Height
@@ -184,12 +183,113 @@
         <ModalBody>
 
             <!-- Content: start -->
-            <p class="d-tablet-none">
-                This modal has a custom height of <code>400px</code>.
-            </p>
-            <p class="d-none d-tablet-block">
-                This modal has a custom height of <code>500px</code>.
-            </p>
+            <!-- Modal custom height demo: start -->
+            <script>
+                const toggleCustomHeight = (event, selector, breakpoint) => {
+                    const isCustomHeightEnabled = event.target.checked;
+                    const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+
+                    const modalElement = document.querySelector(selector);
+                    const modalHeightInputElement = document.querySelector(`#custom-height-${breakpoint}`);
+                    const modalHeightValueElement = document.querySelector(`#custom-height-${breakpoint}-value`);
+                    const modalMaxHeightInputElement = document.querySelector(`#custom-max-height-${breakpoint}`);
+                    const modalMaxHeightValueElement = document.querySelector(`#custom-max-height-${breakpoint}-value`);
+
+                    if (isCustomHeightEnabled) {
+                        modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, `${modalHeightInputElement.value}px`);
+                        modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, `${modalMaxHeightInputElement.value}px`);
+                        modalHeightInputElement.disabled = false;
+                        modalHeightValueElement.textContent = `${modalHeightInputElement.value} px`;
+                        modalMaxHeightInputElement.disabled = false;
+                        modalMaxHeightValueElement.textContent = `${modalMaxHeightInputElement.value} px`;
+                    } else {
+                        modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, 'unset');
+                        modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, 'unset');
+                        modalHeightInputElement.disabled = true;
+                        modalHeightValueElement.textContent = '—';
+                        modalMaxHeightInputElement.disabled = true;
+                        modalMaxHeightValueElement.textContent = '—';
+                    }
+                };
+
+                const setModalHeight = (event, selector, breakpoint) => {
+                    const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+                    const modalElement = document.querySelector(selector);
+                    const modalHeightValueElement = document.querySelector(`#custom-height-${breakpoint}-value`);
+
+                    modalElement.style.setProperty(`--modal-dialog-height${breakpointSuffix}`, `${event.target.value}px`);
+                    modalHeightValueElement.textContent = `${event.target.value} px`;
+                };
+
+                const setModalMaxHeight = (event, selector, breakpoint) => {
+                    const breakpointSuffix = breakpoint === 'mobile' ? '' : `-${breakpoint}`;
+                    const modalElement = document.querySelector(selector);
+                    const modalHeightValueElement = document.querySelector(`#custom-max-height-${breakpoint}-value`);
+
+                    modalElement.style.setProperty(`--modal-dialog-max-height${breakpointSuffix}`, `${event.target.value}px`);
+                    modalHeightValueElement.textContent = `${event.target.value} px`;
+                };
+            </script>
+            <form>
+                {%- set breakpointControls = {
+                    mobile: { height: 400, maxHeight: 600, marginBottom: 'space-800', className: ''},
+                    tablet: { height: 500, maxHeight: 600, marginBottom: { tablet: 'space-800' }, className: 'd-none d-tablet-grid'},
+                    desktop: { height: 600, maxHeight: 600, marginBottom: '', className: 'd-none d-desktop-grid'},
+                } -%}
+                {%- for key, value in breakpointControls -%}
+                    <Stack elementType="fieldset" hasSpacing marginBottom="{{ value.marginBottom }}" UNSAFE_className="{{ value.className }}" UNSAFE_style="border: 0;">
+                        <legend hidden>{{ key | capitalize }}</legend>
+                        <Checkbox
+                            id="{{ 'custom-height-' ~ key ~ '-enabled' }}"
+                            onchange="{{ 'toggleCustomHeight(event, \'#example-custom-height > .ModalDialog\', \'' ~  key ~ '\')' }}"
+                            isChecked
+                            autocomplete="off"
+                            label="{{ key | capitalize }}"
+                        />
+                        <Grid UNSAFE_style="column-gap: var(--spirit-space-600)">
+                            <label for="{{ 'custom-height-' ~ key }}" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                                Height
+                            </label>
+                            <GridItem elementType="span" id="{{ 'custom-height-' ~ key ~ '-value' }}" columnStart="{{ { mobile: 6, tablet: 4 } }}" columnEnd="{{ { mobile: 13, tablet: 7 } }}">
+                                {{ value.height }} px
+                            </GridItem>
+                            <input
+                                type="range"
+                                id="{{ 'custom-height-' ~ key }}"
+                                class="GridItem"
+                                style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                                onchange="{{ 'setModalHeight(event, \'#example-custom-height > .ModalDialog\', \'' ~  key ~ '\')' }}"
+                                min="200"
+                                max="1000"
+                                step="100"
+                                value="{{ value.height }}"
+                                autocomplete="off"
+                            />
+                        </Grid>
+                        <Grid UNSAFE_style="column-gap: var(--spirit-space-600)">
+                            <label for="{{ 'custom-max-height-' ~ key }}" class="GridItem" style="--grid-item-column-start: 1; --grid-item-column-end: 6; --grid-item-column-end-tablet: 4;">
+                                Max height
+                            </label>
+                            <GridItem elementType="span" id="{{ 'custom-max-height-' ~ key ~ '-value' }}" columnStart="{{ { mobile: 6, tablet: 4 } }}" columnEnd="{{ { mobile: 13, tablet: 7 } }}">
+                                {{ value.maxHeight }} px
+                            </GridItem>
+                            <input
+                                type="range"
+                                id="{{ 'custom-max-height-' ~ key }}"
+                                class="GridItem"
+                                style="--grid-item-column-start: 1; --grid-item-column-end: 13; --grid-item-column-start-tablet: 7;"
+                                onchange="{{ 'setModalMaxHeight(event, \'#example-custom-height > .ModalDialog\', \'' ~  key ~ '\')' }}"
+                                min="200"
+                                max="1000"
+                                step="100"
+                                value="{{ value.maxHeight }}"
+                                autocomplete="off"
+                            />
+                        </Grid>
+                    </Stack>
+                {%- endfor -%}
+            </form>
+            <!-- Modal custom height demo: end -->
             <!-- Content: end -->
 
         </ModalBody>
