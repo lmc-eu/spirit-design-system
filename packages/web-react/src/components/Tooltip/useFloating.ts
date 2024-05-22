@@ -17,7 +17,7 @@ import {
   useRole,
 } from '@floating-ui/react';
 import { useState } from 'react';
-import { TooltipTriggerType, TOOLTIP_TRIGGER } from '../../types';
+import { TOOLTIP_TRIGGER, TooltipTriggerType } from '../../types';
 
 type UseTooltipUIProps = {
   arrowRef: React.MutableRefObject<HTMLElement | null>;
@@ -26,6 +26,7 @@ type UseTooltipUIProps = {
   flipFallbackAxisSideDirection: 'none' | 'start' | 'end';
   flipFallbackPlacements?: Placement | Placement[];
   flipProp: boolean;
+  isDismissible: boolean;
   isOpen?: boolean;
   offset?: number;
   onToggle: (isOpen: boolean) => void;
@@ -50,6 +51,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
     flipFallbackAxisSideDirection = 'none',
     flipFallbackPlacements,
     flipProp,
+    isDismissible,
     isOpen = false,
     offset: tooltipOffset = 0,
     onToggle,
@@ -139,7 +141,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
     enabled: isHoverEnabled,
     handleClose: useSafePolygons(!!isFocusableOnHover),
   });
-  const dismiss = useDismiss(context);
+  const dismiss = useDismiss(context, { outsidePress: !isDismissible });
   const role = useRole(context, { role: 'tooltip' });
   const { getReferenceProps, getFloatingProps } = useInteractions([click, hover, dismiss, role]);
 
