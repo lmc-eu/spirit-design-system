@@ -56,6 +56,7 @@ const Tooltip = (props: SpiritTooltipProps) => {
     flipFallbackAxisSideDirection,
     flipFallbackPlacements,
     flipProp,
+    isDismissible,
     isFocusableOnHover,
     isOpen,
     offset: tooltipOffset,
