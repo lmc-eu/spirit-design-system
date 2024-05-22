@@ -10,6 +10,7 @@ describe('useFloatingUI', () => {
         flipFallbackAxisSideDirection: 'none',
         flipFallbackPlacements: 'bottom',
         flipProp: false,
+        isDismissible: false,
         isOpen: false,
         onToggle: jest.fn(),
         shiftProp: false,
