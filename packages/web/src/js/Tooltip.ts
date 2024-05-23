@@ -22,6 +22,7 @@ const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
 const SELECTOR_WRAPPER = '[data-spirit-element="tooltip-wrapper"]';
 const CLASS_NAME_VISIBLE = 'is-visible';
 const CLASS_NAME_HIDDEN = 'is-hidden';
+const CLASS_NAME_DISMISSIBLE = 'Tooltip--dismissible';
 
 type Config = {
   enableFlipping: boolean;
@@ -64,24 +65,21 @@ class Tooltip extends BaseComponent {
     this.tip = this.getTipElement();
     this.triggers = this.getTriggers();
 
-    if (this.isPlacementControlled()) {
-      this.trigger = this.getTipTooltipWrapper();
-      this.arrow = this.tip.querySelector(SELECTOR_ARROW) as HTMLElement;
-      this.tooltipComputedStyle = window.getComputedStyle(this.tip); // The tooltip computed style
-      this.tooltipMaxWidth = parseInt(this.tooltipComputedStyle.maxWidth, 10); // The tooltip max width
-      this.tooltipOffset = parseInt(this.tooltipComputedStyle.getPropertyValue('--tooltip-offset'), 10); // The tooltip offset
-      this.arrowCornerOffset =
-        this.arrow &&
-        parseInt(window.getComputedStyle(this.arrow).getPropertyValue('--tooltip-arrow-corner-offset'), 10); // The tooltip arrow corner offset
-      this.arrowWidth = this.arrow && parseInt(window.getComputedStyle(this.arrow).getPropertyValue('width'), 10); // The tooltip arrow width
+    this.trigger = this.getTipTooltipWrapper();
+    this.arrow = this.tip.querySelector(SELECTOR_ARROW) as HTMLElement;
+    this.tooltipComputedStyle = window.getComputedStyle(this.tip); // The tooltip computed style
+    this.tooltipMaxWidth = parseInt(this.tooltipComputedStyle.maxWidth, 10); // The tooltip max width
+    this.tooltipOffset = parseInt(this.tooltipComputedStyle.getPropertyValue('--tooltip-offset'), 10); // The tooltip offset
+    this.arrowCornerOffset =
+      this.arrow && parseInt(window.getComputedStyle(this.arrow).getPropertyValue('--tooltip-arrow-corner-offset'), 10); // The tooltip arrow corner offset
+    this.arrowWidth = this.arrow && parseInt(window.getComputedStyle(this.arrow).getPropertyValue('width'), 10); // The tooltip arrow width
 
-      if (this.tip && this.trigger) {
-        FloatingUI.autoUpdate(
-          this.trigger,
-          this.tip,
-          () => this.trigger && this.updateTooltipPosition(this.trigger, this.tip),
-        );
-      }
+    if (this.tip && this.trigger) {
+      FloatingUI.autoUpdate(
+        this.trigger,
+        this.tip,
+        () => this.trigger && this.updateTooltipPosition(this.trigger, this.tip),
+      );
     }
 
     this.addEventListeners();
@@ -109,14 +107,6 @@ class Tooltip extends BaseComponent {
     }
 
     this.enter();
-  }
-
-  isPlacementControlled() {
-    const config = this.config as Config;
-    const placementControlledKey = 'placementControlled';
-
-    // key can exist in the dataset but can have undefined value
-    return placementControlledKey in config && config[placementControlledKey] !== false;
   }
 
   updateConfig(newConfig: Partial<Config>) {
@@ -201,6 +191,10 @@ class Tooltip extends BaseComponent {
     return (
       this.tip && (this.tip.classList?.contains(CLASS_NAME_VISIBLE) || !this.tip.classList?.contains(CLASS_NAME_HIDDEN))
     );
+  }
+
+  isDismissible() {
+    return this.tip && this.tip.querySelector('[data-spirit-dismiss="tooltip"]') !== null;
   }
 
   getTipTooltipWrapper() {
@@ -365,8 +359,9 @@ class Tooltip extends BaseComponent {
 
   autoCloseHandler = (event: Event) => {
     const trigger = this.getTrigger();
+    const isDismissible = this.isDismissible();
 
-    const shouldClose = trigger && clickOutsideElement(trigger, event) && event.target !== this.tip;
+    const shouldClose = trigger && clickOutsideElement(trigger, event) && !isDismissible && event.target !== this.tip;
     if (event.target && shouldClose) {
       this.activeTrigger[TRIGGER_CLICK] = false;
       this.activeTrigger[TRIGGER_HOVER] = false;

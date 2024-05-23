@@ -85,10 +85,12 @@
 }
 
 // Controlled placement
-.Tooltip[data-spirit-placement-controlled] {
+// stylelint-disable-next-line selector-max-class
+.Tooltip.Tooltip {
     @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
 }
 
-.Tooltip[data-spirit-placement-controlled] .Tooltip__arrow {
+// stylelint-disable-next-line selector-max-class
+.Tooltip.Tooltip .Tooltip__arrow {
     @include placement.arrow-controlled();
 }

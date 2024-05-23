@@ -51,9 +51,6 @@ improved accessibility.
 Tooltip implements the [Placement Dictionary][dictionary-placement] for placement. The dictionary values are used as
 a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
-For JS-controlled positioning please use the `data-spirit-placement-controlled` attribute instead of specifying the placement
-using the `data-spirit-placement` modifiers (more on that [below](#advanced-positioning)).
-
 ```html
 <div class="Tooltip" data-spirit-placement="right-start">
   Tooltip on right
@@ -177,23 +174,8 @@ purpose.
 
 ### Placement
 
-When controlling Tooltip position with JavaScript, use `data-spirit-placement`
-attribute instead of CSS modifiers (`Tooltip--top` etc.) to set Tooltip
-placement. All [Placement Dictionary][dictionary-placement] values are supported.
-
 ```html
 <div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
-  Hello there!
-  <span class="Tooltip__arrow"></span>
-</div>
-```
-
-If you have the [Data Selector Placement feature flag](#feature-flag-data-selector-placement) enabled,
-set `data-spirit-placement-controlled` on the `.Tooltip` to control it and prevent conflicts with
-the default CSS positioning.
-
-```html
-<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement-controlled>
   Hello there!
   <span class="Tooltip__arrow"></span>
 </div>
@@ -205,7 +187,7 @@ When controlling Tooltip arrow with JavaScript, set `data-spirit-element="arrow"
 on the `.Tooltip__arrow` to control it and prevent conflicts with the default CSS positioning.
 
 ```html
-<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement-controlled>
+<div id="my-advanced-tooltip" class="Tooltip">
   Hello there!
   <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
 </div>
