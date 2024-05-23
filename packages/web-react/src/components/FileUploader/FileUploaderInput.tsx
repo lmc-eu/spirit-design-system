@@ -1,12 +1,12 @@
-import React from 'react';
 import classNames from 'classnames';
-import { SpiritFileUploaderInputProps } from '../../types';
+import React from 'react';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';
+import { SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { Icon } from '../Icon';
 import { DEFAULT_FILE_QUEUE_LIMIT, DEFAULT_FILE_SIZE_LIMIT } from './constants';
-import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 import { useFileUploaderInput } from './useFileUploaderInput';
+import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
   const {
@@ -96,7 +96,6 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
         className={classProps.input.input}
         onChange={onChange}
         multiple={isMultiple}
-        required={isRequired}
         disabled={isDisabled || isDisabledByQueueLimitBehavior}
         {...restProps}
       />
