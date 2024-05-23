@@ -24,6 +24,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
   - [Tabs: TabLink `target` Prop](#tabs-tablink-target-prop)
   - [Tooltip: Composition](#tooltip-composition)
+  - [Tooltip: Hidden by default](#tooltip-hidden-by-default)
 
 ## General Changes
 
@@ -256,6 +257,53 @@ Instead of:
     Hello there!
   </Tooltip>
 </TooltipWrapper>
+```
+
+Use:
+
+```twig
+<Tooltip>
+  <a
+    href="#"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="my-tooltip"
+    aria-describedby="my-tooltip"
+  >
+    I have a tooltip
+  </a>
+  <TooltipPopover id="my-tooltip">
+    Hello there!
+  </TooltipPopover>
+</Tooltip>
+```
+
+See [`Tooltip` documentation][tooltip-readme] for more details and examples.
+
+### Tooltip: Hidden By Default
+
+The `TooltipPopover` component is now hidden by default.
+Use `isOpen` prop to show the Tooltip on initial render.
+
+#### Migration Guide
+
+Use `isOpen` prop in `TooltipPopover` instead of `UNSAFE_className="is-hidden"` for setting whether it should be opened or closed on initial render.
+
+Instead of:
+
+```twig
+<Tooltip>
+  <a
+    href="#"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="my-tooltip"
+    aria-describedby="my-tooltip"
+  >
+    I have a tooltip
+  </a>
+  <TooltipPopover id="my-tooltip" UNSAFE_className="is-hidden">
+    Hello there!
+  </TooltipPopover>
+</Tooltip>
 ```
 
 Use:
