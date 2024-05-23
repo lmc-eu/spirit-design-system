@@ -28,6 +28,9 @@ packages/**/*.hbs
 **/vendor
 **/vendor/**
 
+# Twig files
+*.twig
+
 # Narwal NX files (cache etc.)
 .nx
 /.nx/cache
