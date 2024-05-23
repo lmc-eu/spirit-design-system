@@ -90,7 +90,6 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
       }}
       data-spirit-element="tooltip" // This is used to select CSS variables for maxWidth and tooltip offset
       data-spirit-placement={placement} // This attribute is used by the CSS to position the arrow
-      data-spirit-placement-controlled // This attribute is used by the CSS to position the arrow
     >
       {children}
       {renderCloseButton}
