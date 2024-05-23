@@ -397,7 +397,7 @@ and [escape hatches][readme-escape-hatches].
 
 > ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
 > Instead, the `FileUploaderInput` component is used to open the system file dialog, and the component itself manages the file(s).
-> Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently. This approach provides more flexibility and customization to meet specific validation requirements.
+> Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
 
 ## FileUploaderList Props
 
