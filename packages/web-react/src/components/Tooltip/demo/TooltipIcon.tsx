@@ -7,27 +7,25 @@ const TooltipIcon = () => {
 
   return (
     <div>
-      <p>
-        Hover or click on the icon on the right to view the tooltip{' '}
-        <Tooltip
-          id="tooltip-example-with-icon"
-          isOpen={openIcon}
-          onToggle={setOpenIcon}
-          placement="right"
-          flipFallbackPlacements={['top-start', 'bottom-start', 'left']}
+      Hover or click on the icon to view the tooltip{' '}
+      <Tooltip
+        flipFallbackPlacements={['top-start', 'bottom-start', 'left']}
+        id="tooltip-example-with-icon"
+        isDismissible
+        isOpen={openIcon}
+        onToggle={setOpenIcon}
+        placement="right"
+        UNSAFE_className="d-inline-block"
+      >
+        <TooltipTrigger
+          boxSize={16}
+          elementType={Icon}
+          marginBottom="space-200"
+          name="info"
           UNSAFE_className="d-inline-block"
-          isDismissible
-        >
-          <TooltipTrigger
-            elementType={Icon}
-            name="info"
-            boxSize={16}
-            UNSAFE_className="d-inline-block"
-            marginBottom="space-200"
-          />
-          <TooltipPopover>Close me</TooltipPopover>
-        </Tooltip>
-      </p>
+        />
+        <TooltipPopover>Close me</TooltipPopover>
+      </Tooltip>
     </div>
   );
 };
