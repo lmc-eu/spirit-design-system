@@ -4,13 +4,13 @@
     shifting and resizing the Tooltip when it is not possible to keep it in the viewport.
 </p>
 
-<Grid cols="1" tablet="4" marginBottom="space-600">
+<Grid cols="{{ { mobile: 1, tablet: 2, desktop: 4 } }}" marginBottom="space-600">
     <Checkbox id="my-advanced-flip" label="Enable flipping" isChecked/>
     <Checkbox id="my-advanced-flip-cross-axis" label="Enable flipping cross axis" isChecked/>
     <Checkbox id="my-advanced-shift" label="Enable shifting" isChecked/>
     <Checkbox id="my-advanced-size" label="Enable sizing" isChecked/>
 </Grid>
-<Grid cols="1" tablet="2" marginBottom="space-600">
+<Grid cols="{{ { mobile: 1, tablet: 2, desktop: 2 } }}" marginBottom="space-600">
     <Select id="my-advanced-select" label="Suggested placement">
         <option value="top-start" selected>top-start</option>
         <option value="top">top</option>
@@ -66,8 +66,8 @@
             <TooltipPopover
                 id="my-advanced-tooltip"
                 placement="top-start"
-                enableControlledPlacement
                 flipFallbackAxisSideDirection="top, right, bottom"
+                isDismissible 
             >
                 This long tooltip is flipping, resizing and shifting to stay in the viewport.
                 Also its arrow is always trying to point to the center of the trigger.
