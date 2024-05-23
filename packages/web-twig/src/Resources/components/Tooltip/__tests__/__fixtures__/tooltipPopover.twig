@@ -5,7 +5,6 @@
     closeLabel="Close tooltip"
     id="my-tooltip"
     isDismissible
-    enableControlledPlacement
     enableFlipping
     enableFlippingCrossAxis
     enableShifting
@@ -15,4 +14,15 @@
     placement="right-start"
 >
     Hello there!
+</TooltipPopover>
+
+<!-- Render with turned off "enabled*" attributes -->
+<TooltipPopover
+    id="my-tooltip-disabled-props"
+    enableFlipping={ false }
+    enableFlippingCrossAxis={ false }
+    enableShifting={ false }
+    enableSizing={ false }
+>
+    Hello there again!
 </TooltipPopover>

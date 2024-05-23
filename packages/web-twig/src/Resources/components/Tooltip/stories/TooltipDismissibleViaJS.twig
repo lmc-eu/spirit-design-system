@@ -4,16 +4,17 @@
 
 <TooltipWrapper UNSAFE_className="d-inline-block">
     <Button
-        id="my-dismissible-button"
-        aria-describedby="my-dismissible-tooltip-with-floating-ui" data-spirit-target="#my-dismissible-tooltip-with-floating-ui"
+        id="my-dismissible-button-with-local-storage"
+        aria-describedby="my-dismissible-tooltip-with-local-storage"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#my-dismissible-tooltip-with-local-storage"
     >
         I have a tooltip 😎
     </Button>
     <TooltipPopover
-        id="my-dismissible-tooltip-with-floating-ui"
+        id="my-dismissible-tooltip-with-local-storage"
         placement="right"
         isDismissible
-        enableControlledPlacement
         flipFallbackPlacements="right, top-end"
         trigger="click"
     >

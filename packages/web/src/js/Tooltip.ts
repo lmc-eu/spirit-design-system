@@ -22,7 +22,6 @@ const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
 const SELECTOR_WRAPPER = '[data-spirit-element="tooltip-wrapper"]';
 const CLASS_NAME_VISIBLE = 'is-visible';
 const CLASS_NAME_HIDDEN = 'is-hidden';
-const CLASS_NAME_DISMISSIBLE = 'Tooltip--dismissible';
 
 type Config = {
   enableFlipping: boolean;
