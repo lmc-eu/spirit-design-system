@@ -62,4 +62,49 @@ describe('ModalDialog', () => {
 
     expect(screen.getByRole('article')).toHaveClass('ModalDialog--scrollable');
   });
+
+  it('should have height CSS variable', () => {
+    render(
+      <ModalDialog height="400px">
+        <div>Test</div>
+      </ModalDialog>,
+    );
+
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height: 400px');
+  });
+
+  it('should have some height CSS variables', () => {
+    render(
+      <ModalDialog height={{ tablet: '500px', desktop: '600px' }}>
+        <div>Test</div>
+      </ModalDialog>,
+    );
+
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height-tablet: 500px');
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height-desktop: 600px');
+  });
+
+  it('should have all height CSS variables', () => {
+    render(
+      <ModalDialog height={{ mobile: '400px', tablet: '500px', desktop: '600px' }}>
+        <div>Test</div>
+      </ModalDialog>,
+    );
+
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height: 400px');
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height-tablet: 500px');
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-height-desktop: 600px');
+  });
+
+  it('should have all max height CSS variables', () => {
+    render(
+      <ModalDialog maxHeight={{ mobile: '400px', tablet: '500px', desktop: '600px' }}>
+        <div>Test</div>
+      </ModalDialog>,
+    );
+
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-max-height: 400px');
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-max-height-tablet: 500px');
+    expect(screen.getByRole('article')).toHaveStyle('--modal-dialog-max-height-desktop: 600px');
+  });
 });
