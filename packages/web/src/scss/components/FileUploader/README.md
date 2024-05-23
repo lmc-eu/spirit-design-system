@@ -160,25 +160,21 @@ Microsoft Word documents:
 
 ### Required Input
 
-To mark the input as required, simply add the `required` attribute to the native
-`input` element and the `FileUploaderInput__label--required` to the label:
+To mark the input as required, simply add the `FileUploaderInput__label--required` to the label:
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
   <label for="fileUploader" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
-  <input
-    type="file"
-    id="fileUploader"
-    name="attachment"
-    class="FileUploaderInput__input"
-    data-spirit-element="input"
-    required
-  />
+  <input type="file" id="fileUploader" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <!-- … -->
   </div>
 </div>
 ```
+
+> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> Instead, the `FileUploaderInput` component is used to open the system file dialog, and our [JS plugin](#javascript-plugin) manages the file(s).
+> Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
 
 ### Validation States
 
