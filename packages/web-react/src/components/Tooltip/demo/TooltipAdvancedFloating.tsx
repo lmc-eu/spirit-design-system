@@ -130,6 +130,7 @@ const TooltipAdvancedFloating = () => {
             enableShifting={shift}
             enableSizing={size}
             trigger={['hover', 'click']}
+            isDismissible
           >
             <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
             <TooltipPopover>
