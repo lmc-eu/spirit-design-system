@@ -1,0 +1,69 @@
+<p>
+    This tooltip will show on <strong>hover</strong> and <strong>click</strong>.
+</p>
+
+<TooltipWrapper>
+    <Button
+        id="button-hover-click"
+        aria-describedby="tooltip-hover-click"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#tooltip-hover-click"
+    >
+        Hover or Click me 😎
+    </Button>
+    <TooltipPopover
+        id="tooltip-hover-click"
+        UNSAFE_className="is-hidden"
+        trigger="hover, click"
+    >
+        Hello there!
+    </TooltipPopover>
+</Tooltip>
+
+<br />
+
+<p>
+    This tooltip will show only on <strong>hover</strong>.
+</p>
+
+<TooltipWrapper>
+    <Button
+        id="button-hover"
+        aria-describedby="tooltip-hover"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#tooltip-hover"
+    >
+        Hover me 😎
+    </Button>
+    <TooltipPopover
+        id="tooltip-hover"
+        UNSAFE_className="is-hidden"
+        trigger="hover"
+    >
+        Hello there!
+    </TooltipPopover>
+</Tooltip>
+
+<br />
+
+<p>
+    This tooltip will show only on <strong>click</strong>.
+</p>
+
+<TooltipWrapper>
+    <Button
+        id="button-click"
+        aria-describedby="tooltip-click"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#tooltip-click"
+    >
+        Click me 😎
+    </Button>
+    <TooltipPopover
+        id="tooltip-click"
+        UNSAFE_className="is-hidden"
+        trigger="click"
+    >
+        Hello there!
+    </TooltipPopover>
+</Tooltip>

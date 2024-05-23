@@ -25,6 +25,8 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Tabs: TabLink `target` Prop](#tabs-tablink-target-prop)
   - [Tooltip: Composition](#tooltip-composition)
   - [Tooltip: Hidden by default](#tooltip-hidden-by-default)
+  - [Tooltip: TooltipPopover `enableControlledPlacement` Prop](#tooltip-tooltippopover-enablecontrolledplacement-prop)
+  - [Tooltip: TooltipPopover Default Values](#tooltip-tooltippopover-default-values)
 
 ## General Changes
 
@@ -323,6 +325,64 @@ Use:
   </TooltipPopover>
 </Tooltip>
 ```
+
+See [`Tooltip` documentation][tooltip-readme] for more details and examples.
+
+### Tooltip: TooltipPopover `enableControlledPlacement` Prop
+
+We have decided to stop support for non-FloatingUI and CSS-only tooltips.
+As a result, the `enableControlledPlacement` prop is no longer mandatory for the `TooltipPopover` component, as all tooltips now use FloatingUI.
+
+#### Migration Guide
+
+Instead of:
+
+```twig
+<Tooltip>
+  <a
+    href="#"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="my-tooltip"
+    aria-describedby="my-tooltip"
+  >
+    I have a tooltip
+  </a>
+  <TooltipPopover
+    id="my-tooltip"
+    enableControlledPlacement
+  >
+    Hello there!
+  </TooltipPopover>
+<Tooltip>
+
+```
+
+Use:
+
+```twig
+<Tooltip>
+  <a
+    href="#"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="my-tooltip"
+    aria-describedby="my-tooltip"
+  >
+    I have a tooltip
+  </a>
+  <TooltipPopover
+    id="my-tooltip"
+  >
+    Hello there!
+  </TooltipPopover>
+<Tooltip>
+```
+
+See [`Tooltip` documentation][tooltip-readme] for more details and examples.
+
+### Tooltip: TooltipPopover Default Values
+
+Tooltip props `enableFlipping`, `enableFlippingCrossAxis`, `enableShifting`, and `enableSizing` are now turned on by default.
+You can turn them off by setting them to `false`.
 
 See [`Tooltip` documentation][tooltip-readme] for more details and examples.
 
