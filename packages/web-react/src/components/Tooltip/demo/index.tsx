@@ -7,13 +7,14 @@ import ReactDOM from 'react-dom/client';
 import icons from '@lmc-eu/spirit-icons/icons';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
-import TooltipPlacements from './TooltipPlacements';
+import TooltipAdvancedFloating from './TooltipAdvancedFloating';
 import TooltipDefault from './TooltipDefault';
 import TooltipDismissible from './TooltipDismissible';
 import TooltipDismissibleViaJS from './TooltipDismissibleViaJS';
-import TooltipHover from './TooltipHover';
 import TooltipIcon from './TooltipIcon';
-import TooltipAdvancedFloating from './TooltipAdvancedFloating';
+import TooltipPlacements from './TooltipPlacements';
+import TooltipTriggers from './TooltipTriggers';
+import TooltipWithLink from './TooltipWithLink';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -30,8 +31,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <DocsSection title="Dismissible Tooltip via JS API">
         <TooltipDismissibleViaJS />
       </DocsSection>
-      <DocsSection title="Tooltip Only on Hover">
-        <TooltipHover />
+      <DocsSection title="Tooltip with Link Component">
+        <TooltipWithLink />
+      </DocsSection>
+      <DocsSection title="Tooltip Triggers">
+        <TooltipTriggers />
       </DocsSection>
       <DocsSection title="Tooltip on Icon Component">
         <TooltipIcon />
