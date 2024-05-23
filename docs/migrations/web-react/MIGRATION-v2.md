@@ -20,6 +20,7 @@ Introducing version 2 of the _spirit-web-react_ package
   - [Grid: GridSpan Component](#grid-gridspan-component)
   - [Modal: ModalDialog `isExpandedOnMobile` Prop](#modal-modaldialog-isexpandedonmobile-prop)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
+  - [Modal: ModalDialog Custom Height](#modal-modaldialog-custom-height)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
   - [Tabs: TabItem and TabPane Props](#tabs-tabitem-and-tabpane-props)
   - [TextField: `label` prop](#textfield-label-prop)
@@ -231,7 +232,7 @@ Examples:
   - `columnStart` = 1 + (12 - 4) / 2 = 5
 - `<GridSpan over="6">…</GridSpan>` → `<GridItem columnStart="4" columnEnd="span 6">…</GridItem>`
   - `columnStart` = 1 + (12 - 6) / 2 = 4
-- `<GridSpan over="8" tablet="6" desktop="4">…</GridSpan>` → `<GridItem columnStart="{{ { mobile: 3, tablet: 4, desktop: 5 } }}" columnEnd="{{ { mobile: 'span 8', tablet: 'span 6', desktop: 'span 4' } }}">…</GridItem>`
+- `<GridSpan over="8" tablet="6" desktop="4">…</GridSpan>` → `<GridItem columnStart={{ mobile: 3, tablet: 4, desktop: 5 }} columnEnd={{ mobile: 'span 8', tablet: 'span 6', desktop: 'span 4' }}>…</GridItem>`
   - `columnStart` = 1 + (12 - 8) / 2 = 3
   - `columnStart` = 1 + (12 - 6) / 2 = 4
   - `columnStart` = 1 + (12 - 4) / 2 = 5
@@ -273,6 +274,35 @@ Or manually add `isScrollable` prop to the `ModalDialog` component.
 
 If you use `ScrollView` for scrolling the content of your modal, you must also make the
 `ModalDialog` scrollable by setting the `isScrollable` prop.
+
+### Modal: ModalDialog Custom Height
+
+The `preferredHeightOnMobile` and `preferredHeightFromTabletUp` props were removed and
+replaced with one prop `height` which accepts either a single value or
+an object with breakpoint keys and values.
+
+Also, the prop `maxHeightFromTabletUp` was removed and replaced with the `maxHeight` prop,
+which also accepts either a single value or an object with breakpoint keys and values.
+
+#### Migration Guide
+
+Use codemod to automatically update your codebase.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-custom-height
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or manually update the `preferredHeightOnMobile` and `preferredHeightFromTabletUp` props to the new `height` prop.
+
+- `<ModalDialog preferredHeightOnMobile="333px" … />` → `<ModalDialog height="333px" … />`
+- `<ModalDialog preferredHeightFromTabletUp="444px" … />` → `<ModalDialog height={{ tablet: '444px' }} … />`
+- `<ModalDialog preferredHeightOnMobile="333px" preferredHeightFromTabletUp="444px" … />` → `<ModalDialog height={{ mobile: '333px', tablet: '444px' }} … />`
+
+Update the `maxHeightFromTabletUp` prop to the new `maxHeight` prop.
+
+- `<ModalDialog maxHeightFromTabletUp="555px" … />` → `<ModalDialog maxHeight={{ tablet: '555px' }} … />`
 
 ### Modal: ModalDialog Uniform Appearance
 
