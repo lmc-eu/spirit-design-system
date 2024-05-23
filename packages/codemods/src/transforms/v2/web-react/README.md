@@ -102,6 +102,25 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-gridspan
 + <GridItem columnStart={5} columnEnd="span 4" … />
 ```
 
+### `v2/web-react/modal-custom-height` — Modal Custom Height
+
+This codemod updates the `ModalDialog` component to use the `height` and
+`maxHeight` props instead of the removed `preferredHeightOnMobile`,
+`preferredHeightFromTabletUp` and `maxHeightFromTabletUp` props.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/modal-custom-height
+```
+
+#### Example
+
+```diff
+- <ModalDialog preferredHeightOnMobile="300px" preferredHeightFromTabletUp="400px" maxHeightFromTabletUp="500px" … />
++ <ModalDialog height={{ mobile: "300px", tablet: "400px" }} maxHeight={{ tablet: "500px" }} … />
+```
+
 ### `v2/web-react/modal-isdockedonmobile-prop` — Modal isDockedOnMobile Prop
 
 This codemod adds the `isDockedOnMobile` prop to the `ModalDialog` component,
