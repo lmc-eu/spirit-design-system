@@ -10,12 +10,14 @@
 {%- set _flipFallbackPlacements = props.flipFallbackPlacements | default(null) -%}
 {%- set _id = props.id | default(null) -%}
 {%- set _isDismissible = props.isDismissible | default(false) -%}
+{%- set _isOpen = props.isOpen | default(false) -%}
 {%- set _placement = props.placement | default('bottom') -%}
 {%- set _trigger = props.trigger | default('click, hover') -%}
 
 {# Class names #}
 {%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
 {%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
+{%- set _isOpenClassName = _isOpen ? '' : 'is-hidden' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
 {%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
 
@@ -40,7 +42,7 @@
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _isOpenClassName, _styleProps.className ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
 <div
