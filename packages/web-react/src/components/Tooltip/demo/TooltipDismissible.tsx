@@ -7,7 +7,7 @@ const TooltipDismissible = () => {
 
   return (
     <Tooltip
-      id="TooltipDismissible"
+      id="my-dismissible-tooltip"
       isOpen={open}
       onToggle={setOpen}
       placement="right"

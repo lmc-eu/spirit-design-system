@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../../Button';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
-const TooltipHover = () => {
+const TooltipWithLink = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,4 +26,4 @@ const TooltipHover = () => {
   );
 };
 
-export default TooltipHover;
+export default TooltipWithLink;

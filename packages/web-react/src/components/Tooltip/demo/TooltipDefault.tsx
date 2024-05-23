@@ -6,7 +6,7 @@ const TooltipDefault = () => {
   const [open, setOpen] = useState(true);
 
   return (
-    <Tooltip id="TooltipDefault" isOpen={open} onToggle={setOpen}>
+    <Tooltip id="tooltip-default" isOpen={open} onToggle={setOpen}>
       <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
       <TooltipPopover>Hello there!</TooltipPopover>
     </Tooltip>
