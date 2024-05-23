@@ -1,6 +1,18 @@
 <TooltipWrapper>
-    <Button aria-describedby="my-dismissible-tooltip">I have a tooltip 😎</Button>
-    <Tooltip id="my-dismissible-tooltip" placement="right" isDismissible>
+    <Button 
+        aria-describedby="my-dismissible-tooltip"
+        data-spirit-toggle="tooltip"
+        data-spirit-target="#my-dismissible-tooltip"
+    >
+        I have a tooltip 😎
+    </Button>
+    <TooltipPopover
+        id="my-dismissible-tooltip"
+        isOpen
+        isDismissible 
+        placement="right" 
+        trigger="click"
+    >
         Close me
     </Tooltip>
 </TooltipWrapper>
