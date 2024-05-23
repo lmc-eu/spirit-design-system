@@ -32,8 +32,8 @@
 
             <TooltipWrapper marginX="auto" marginY="space-1200">
                 <DocsBox UNSAFE_className="px-900 py-900">Click<br /> the dots!</DocsBox>
-                <TooltipPopover id="tooltip_placements_example">
-                    <span id="tooltip_placements_example_text">bottom</span>
+                <TooltipPopover id="tooltip-placements-example" placement="bottom" trigger="click">
+                    <span id="tooltip-placements-example-text">bottom</span>
                 </TooltipPopover>
             </TooltipWrapper>
 
@@ -41,17 +41,4 @@
     </Grid>
 </form>
 
-<script>
-    const radios = document.querySelectorAll('input[type="radio"]');
-
-    radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            const placement = radio.value;
-            const tooltip = document.getElementById('tooltip_placements_example');
-            const tooltipText = document.getElementById('tooltip_placements_example_text');
-
-            tooltip.dataset.spiritPlacement = placement;
-            tooltipText.textContent = placement;
-        });
-    });
-</script>
+{{ encore_entry_script_tags('tooltipPlacementExample') }}

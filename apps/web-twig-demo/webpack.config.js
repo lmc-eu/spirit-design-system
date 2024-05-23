@@ -31,6 +31,7 @@ Encore
     .addEntry('formValidations', './assets/scripts/form-validations.ts')
     .addEntry('tooltipDismissibleViaJS', './assets/scripts/tooltip-dismissible-via-js.ts')
     .addEntry('tooltipAdvancedUsage', './assets/scripts/tooltip-advanced-usage.ts')
+    .addEntry('tooltipPlacementExample', './assets/scripts/tooltip-placement-example.ts')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     // .enableStimulusBridge('./assets/controllers.json')
