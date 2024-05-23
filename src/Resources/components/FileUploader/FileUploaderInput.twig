@@ -39,7 +39,6 @@
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
-{%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _dataMaxFileSizeAttr = _maxFileSize ? 'data-spirit-max-file-size=' ~ _maxFileSize : null -%}
 {%- set _dataMaxUploadedFilesAttr = _maxUploadedFiles ? 'data-spirit-file-queue-limit=' ~ _maxUploadedFiles : null -%}
 {%- set _dataQueueLimitBehaviorAttr = _queueLimitBehavior ? 'data-spirit-queue-limit-behavior=' ~ _queueLimitBehavior : null -%}
@@ -75,7 +74,6 @@
         data-spirit-element="input"
         {{ _nameAttr | raw }}
         {{ _disabledAttr }}
-        {{ _requiredAttr }}
     />
     <div class="{{ _dropzoneClassName }}" data-spirit-element="dropZone">
         <Icon name="{{ _iconName }}" isReusable={ false } />

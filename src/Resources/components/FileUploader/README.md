@@ -163,6 +163,10 @@ To mark the input as required, simply add the `isRequired` attribute:
 />
 ```
 
+> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> Instead, the `FileUploaderInput` component is used to open the system file dialog, and our [JS plugin][web-js-api] manages the file(s).
+> Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
+
 ### Validation States
 
 Just like any other form component in Spirit, FileUploader implements the
@@ -205,7 +209,7 @@ To mark the input as disabled, simply add the `isDisabled` attribute:
 | `id`                    | `string`                                       | —                       | ✔        | Input and label identification                                        |
 | `isDisabled`            | `bool`                                         | `false`                 | ✕        | If true, input is disabled                                            |
 | `isLabelHidden`         | `bool`                                         | `false`                 | ✕        | If true, label is hidden                                              |
-| `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is required                                            |
+| `isRequired`            | `bool`                                         | `false`                 | ✕        | If true, input is marked as required                                  |
 | `label`                 | `string`                                       | `null`                  | ✕\*      | Label text                                                            |
 | `maxFileSize`           | `number`                                       | `1000000`               | ✕        | The maximum size of the uploaded file in bytes                        |
 | `maxUploadedFiles`      | `number`                                       | `10`                    | ✕        | Maximum file upload queue size                                        |
