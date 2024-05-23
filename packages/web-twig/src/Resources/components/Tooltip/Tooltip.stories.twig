@@ -6,32 +6,24 @@
         {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
     </DocsSection>
 
-    <DocsSection title="Static Tooltip (No Interaction)" stackAlignment="stretch">
-        {% include '@components/Tooltip/stories/TooltipStatic.twig' %}
-    </DocsSection>
-
-    <DocsSection title="Tooltip on Hover (Pure CSS)" stackAlignment="stretch">
-        {% include '@components/Tooltip/stories/TooltipOnHover.twig' %}
-    </DocsSection>
-
-    <DocsSection title="Tooltip with JS plugin">
-        {% include '@components/Tooltip/stories/TooltipWithJsPlugin.twig' %}
-    </DocsSection>
-
-    <DocsSection title="Tooltip on Click (JavaScript)">
-        {% include '@components/Tooltip/stories/TooltipClickable.twig' %}
+    <DocsSection title="Default">
+        {% include '@components/Tooltip/stories/TooltipDefault.twig' %}
     </DocsSection>
 
     <DocsSection title="Dismissible Tooltip">
         {% include '@components/Tooltip/stories/TooltipDismissible.twig' %}
     </DocsSection>
 
-    <DocsSection title="Dismissible Tooltip via JS API and Floating UI">
+    <DocsSection title="Dismissible Tooltip via JS API">
         {% include '@components/Tooltip/stories/TooltipDismissibleViaJS.twig' %}
     </DocsSection>
 
-    <DocsSection title="Tooltip on Hover with Floating UI">
-        {% include '@components/Tooltip/stories/TooltipEnableHover.twig' %}
+    <DocsSection title="Tooltip with Link Component">
+        {% include '@components/Tooltip/stories/TooltipWithLink.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Tooltip Triggers">
+        {% include '@components/Tooltip/stories/TooltipTriggers.twig' %}
     </DocsSection>
 
     <DocsSection title="Tooltip on Icon Component">
@@ -39,7 +31,7 @@
     </DocsSection>
 
     <DocsSection title="Advanced Floating Functionality">
-        {% include '@components/Tooltip/stories/TooltipFloatingUI.twig' %}
+        {% include '@components/Tooltip/stories/TooltipAdvancedFloating.twig' %}
     </DocsSection>
 
 {% endblock %}
