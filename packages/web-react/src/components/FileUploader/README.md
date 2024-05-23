@@ -377,7 +377,7 @@ and [escape hatches][readme-escape-hatches].
 | `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
 | `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
 | `isMultiple`         | `bool`                               | —        | ✕        | When multiple files can be selected at once                                                                                                                     |
-| `isRequired`         | `bool`                               | —        | ✕        | Whether is field required                                                                                                                                       |
+| `isRequired`         | `bool`                               | —        | ✕        | Whether is field marked as required                                                                                                                             |
 | `label`              | `string`                             | —        | ✕        | Field label                                                                                                                                                     |
 | `labelText`          | `string`                             | —        | ✕        | Label for input in Drop zone                                                                                                                                    |
 | `linkText`           | `string`                             | —        | ✕        | Link text in input in Drop zone                                                                                                                                 |
@@ -394,6 +394,10 @@ The rest of the properties are created from the default `<input>` element. [More
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
+
+> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> Instead, the `FileUploaderInput` component is used to open the system file dialog, and the component itself manages the file(s).
+> Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
 
 ## FileUploaderList Props
 
@@ -481,7 +485,7 @@ via `inputProps` and `listProps`.
 | `isFluid`             | `bool`                                  | —        | ✕        | When the field is supposed to be fluid              |
 | `isLabelHidden`       | `bool`                                  | —        | ✕        | Whether is input label hidden                       |
 | `isMultiple`          | `bool`                                  | —        | ✕        | When multiple files can be selected at once         |
-| `isRequired`          | `bool`                                  | —        | ✕        | Whether is field required                           |
+| `isRequired`          | `bool`                                  | —        | ✕        | Whether is field marked as required                 |
 | `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
 | `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
 | `listId`              | `string`                                | —        | ✔        | FileUploaderList id                                 |
