@@ -1,14 +1,9 @@
-import React, { CSSProperties, ElementType, ForwardedRef, forwardRef } from 'react';
+import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
-import { ModalDialogProps, ModalDialogElementType } from '../../types';
+import { ModalDialogElementType, ModalDialogProps } from '../../types';
+import { useModalDialogStyleProps } from './useModalDialogStyleProps';
 import { useModalStyleProps } from './useModalStyleProps';
-
-interface CustomizedHeightCSSProperties extends CSSProperties {
-  '--modal-max-height-tablet'?: string;
-  '--modal-preferred-height-mobile'?: string;
-  '--modal-preferred-height-tablet'?: string;
-}
 
 const ModalDialog = <E extends ElementType = ModalDialogElementType>(
   props: ModalDialogProps<E>,
@@ -20,31 +15,20 @@ const ModalDialog = <E extends ElementType = ModalDialogElementType>(
     isDockedOnMobile,
     isExpandedOnMobile,
     isScrollable,
-    maxHeightFromTabletUp,
-    preferredHeightOnMobile,
-    preferredHeightFromTabletUp,
     ...restProps
   } = props;
 
   const { classProps } = useModalStyleProps({ isDockedOnMobile, isExpandedOnMobile, isScrollable });
-  const { styleProps, props: otherProps } = useStyleProps(restProps);
+  const { modalDialogStyleProps, props: otherStyleProps } = useModalDialogStyleProps(restProps);
+  const { styleProps, props: otherProps } = useStyleProps(otherStyleProps);
 
-  const customizedHeightStyle: CustomizedHeightCSSProperties = {
-    '--modal-max-height-tablet': maxHeightFromTabletUp,
-    '--modal-preferred-height-mobile': preferredHeightOnMobile,
-    '--modal-preferred-height-tablet': preferredHeightFromTabletUp,
-  };
-
-  styleProps.style = {
-    ...styleProps.style,
-    ...customizedHeightStyle,
-  };
+  const combinedStyleProps = { ...styleProps.style, ...modalDialogStyleProps };
 
   return (
     <ElementTag
       ref={ref}
-      {...otherProps}
-      {...styleProps}
+      {...(otherProps as HTMLAttributes<HTMLElement>)}
+      style={{ ...(combinedStyleProps as HTMLAttributes<HTMLElement>) }}
       className={classNames(classProps.dialog, styleProps.className)}
     >
       {children}

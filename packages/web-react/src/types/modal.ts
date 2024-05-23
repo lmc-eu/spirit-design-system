@@ -32,10 +32,16 @@ export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType>
 } & ChildrenProps &
   StyleProps;
 
+export type ModalDialogCSSHeight = string;
+export type ModalDialogCSSHeightBreakpoints = {
+  mobile?: ModalDialogCSSHeight;
+  tablet?: ModalDialogCSSHeight;
+  desktop?: ModalDialogCSSHeight;
+};
+
 export type ModalDialogProps<E extends ElementType = ModalDialogElementType> = {
-  maxHeightFromTabletUp?: string;
-  preferredHeightOnMobile?: string;
-  preferredHeightFromTabletUp?: string;
+  height?: ModalDialogCSSHeight | ModalDialogCSSHeightBreakpoints;
+  maxHeight?: ModalDialogCSSHeight | ModalDialogCSSHeightBreakpoints;
 } & ModalDialogBaseProps<E> &
   OmittedExtendedUnsafeStyleProps<ComponentPropsWithRef<E>, keyof ModalDialogBaseProps<E>>;
 
