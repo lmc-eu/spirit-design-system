@@ -1,11 +1,66 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalBody, ModalDialog, ModalFooter, ModalHeader, ScrollView } from '../..';
+import React, { ChangeEvent, createRef, useState } from 'react';
+import { BreakpointToken } from '../../../types';
+import {
+  Button,
+  Checkbox,
+  Grid,
+  GridItem,
+  Modal,
+  ModalBody,
+  ModalDialog,
+  ModalFooter,
+  ModalHeader,
+  ScrollView,
+  Stack,
+} from '../..';
+
+const breakpointControls = {
+  mobile: { marginBottom: { mobile: 'space-800' }, className: '' },
+  tablet: { marginBottom: { tablet: 'space-800' }, className: 'd-none d-tablet-grid' },
+  desktop: { marginBottom: {}, className: 'd-none d-desktop-grid' },
+};
+
+const setVerticalDimensionValueForProp = (
+  prevState: { height: Record<BreakpointToken, number>; maxHeight: Record<BreakpointToken, number> },
+  breakpoint: BreakpointToken,
+  event: ChangeEvent<HTMLInputElement>,
+  propName: 'height' | 'maxHeight',
+) => {
+  return {
+    ...prevState,
+    [propName]: {
+      ...prevState[propName],
+      [breakpoint]: Number(event.target.value),
+    },
+  };
+};
 
 const ModalScrollingLongContent = () => {
   const [isModalLongContentOpen, setModalLongContentOpen] = useState(false);
   const [isModalScrollViewOpen, setModalScrollViewOpen] = useState(false);
   const [isModalScrollingInsideOpen, setModalScrollingInsideOpen] = useState(false);
   const [isModalCustomHeightOpen, setModalCustomHeightOpen] = useState(false);
+  const modalCustomHeightRef = createRef<HTMLDivElement>();
+  const [isCustomHeightEnabled, setIsCustomHeightEnabled] = useState<Record<BreakpointToken, boolean>>({
+    mobile: true,
+    tablet: true,
+    desktop: true,
+  });
+  const [heightValue, setHeightValue] = useState<{
+    height: Record<BreakpointToken, number>;
+    maxHeight: Record<BreakpointToken, number>;
+  }>({
+    height: {
+      mobile: 400,
+      tablet: 500,
+      desktop: 600,
+    },
+    maxHeight: {
+      mobile: 600,
+      tablet: 600,
+      desktop: 600,
+    },
+  });
 
   const toggleModalLongContent = () => setModalLongContentOpen(!isModalLongContentOpen);
   const toggleModalScrollView = () => setModalScrollViewOpen(!isModalScrollViewOpen);
@@ -15,6 +70,24 @@ const ModalScrollingLongContent = () => {
   const handleModalScrollViewClose = () => setModalScrollViewOpen(false);
   const handleModalScrollingInsideClose = () => setModalScrollingInsideOpen(false);
   const handleModalCustomHeightClose = () => setModalCustomHeightOpen(false);
+
+  const handleMaxHeightChange = (event: ChangeEvent<HTMLInputElement>, breakpoint: BreakpointToken) => {
+    setHeightValue((prevState) => setVerticalDimensionValueForProp(prevState, breakpoint, event, 'maxHeight'));
+  };
+
+  const handleHeightChange = (event: ChangeEvent<HTMLInputElement>, breakpoint: BreakpointToken) => {
+    setHeightValue((prevState) => setVerticalDimensionValueForProp(prevState, breakpoint, event, 'height'));
+  };
+
+  const generateHeightObject = (isMax = false) => {
+    return (['mobile', 'tablet', 'desktop'] as BreakpointToken[]).reduce((acc, breakpoint) => {
+      acc[breakpoint] = isCustomHeightEnabled[breakpoint]
+        ? `${heightValue[isMax ? 'maxHeight' : 'height'][breakpoint]}px`
+        : null;
+
+      return acc;
+    }, {} as Record<BreakpointToken, string | null>);
+  };
 
   return (
     <>
@@ -96,46 +169,17 @@ const ModalScrollingLongContent = () => {
           <ModalHeader>Modal with ScrollView</ModalHeader>
           <ScrollView data-spirit-toggle="scrollView" overflowDecorators="borders">
             <ModalBody>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
-                mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
-                perferendis provident unde. Eveniet, iste, molestiae?
-              </p>
+              {[...Array(8)].map((_, index) => {
+                const key = `paragraph-${index}`;
+
+                return (
+                  <p key={key}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam
+                    mollitia perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus
+                    perferendis provident unde. Eveniet, iste, molestiae?
+                  </p>
+                );
+              })}
             </ModalBody>
           </ScrollView>
           <ModalFooter>
@@ -151,26 +195,114 @@ const ModalScrollingLongContent = () => {
 
       <Modal id="example-custom-height" isOpen={isModalCustomHeightOpen} onClose={handleModalCustomHeightClose}>
         <ModalDialog
+          height={generateHeightObject()}
           isExpandedOnMobile={false}
           isScrollable
-          maxHeightFromTabletUp="700px"
-          preferredHeightOnMobile="400px"
-          preferredHeightFromTabletUp="500px"
+          maxHeight={generateHeightObject(true)}
+          ref={modalCustomHeightRef}
         >
           <ModalHeader>Modal with Custom Height</ModalHeader>
           <ModalBody>
-            <p className="d-tablet-none">
-              This modal has a custom height of <code>400px</code>.
-              <br />
-              <br />
-              The max height cannot be customized on mobile though.
-            </p>
-            <p className="d-none d-tablet-block">
-              This modal has a custom height of <code>500px</code>.
-              <br />
-              <br />
-              The max height of this modal is <code>700px</code>.
-            </p>
+            <form>
+              {Object.entries(breakpointControls).map(([breakpoint, { marginBottom, className }]) => (
+                <Stack
+                  elementType="fieldset"
+                  hasSpacing
+                  key={breakpoint}
+                  marginBottom={marginBottom as Partial<Record<string, `space-${number}`>>}
+                  UNSAFE_className={className}
+                  UNSAFE_style={{ border: 0 }}
+                >
+                  <legend hidden>{breakpoint.charAt(0).toUpperCase() + breakpoint.slice(1)}</legend>
+                  <Checkbox
+                    id={`custom-height-${breakpoint}-enabled`}
+                    isChecked={isCustomHeightEnabled[breakpoint]}
+                    label={breakpoint.charAt(0).toUpperCase() + breakpoint.slice(1)}
+                    onChange={(event) =>
+                      setIsCustomHeightEnabled((prevState) => ({
+                        ...prevState,
+                        [breakpoint]: (event.target as HTMLInputElement).checked,
+                      }))
+                    }
+                  />
+                  <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
+                    <label
+                      className="GridItem"
+                      htmlFor={`custom-height-${breakpoint}`}
+                      style={{
+                        ['--grid-item-column-start' as string]: 1,
+                        ['--grid-item-column-end' as string]: 6,
+                        ['--grid-item-column-end-tablet' as string]: 4,
+                      }}
+                    >
+                      Height
+                    </label>
+                    <GridItem
+                      columnStart={{ mobile: 6, tablet: 4 }}
+                      columnEnd={{ mobile: 13, tablet: 7 }}
+                      elementType="span"
+                    >
+                      {isCustomHeightEnabled[breakpoint] ? `${heightValue.height[breakpoint]} px` : '—'}
+                    </GridItem>
+                    <input
+                      autoComplete="off"
+                      className="GridItem"
+                      defaultValue={heightValue.height[breakpoint]}
+                      disabled={!isCustomHeightEnabled[breakpoint]}
+                      id="custom-height-mobile"
+                      max="1000"
+                      min="200"
+                      onChange={(event) => handleHeightChange(event, breakpoint)}
+                      step="100"
+                      style={{
+                        ['--grid-item-column-end' as string]: 13,
+                        ['--grid-item-column-start' as string]: 1,
+                        ['--grid-item-column-start-tablet' as string]: 7,
+                      }}
+                      type="range"
+                    />
+                  </Grid>
+                  <Grid UNSAFE_style={{ columnGap: 'var(--spirit-space-600)' }}>
+                    <label
+                      className="GridItem"
+                      htmlFor={`custom-max-height-${breakpoint}`}
+                      style={{
+                        ['--grid-item-column-start' as string]: 1,
+                        ['--grid-item-column-end' as string]: 6,
+                        ['--grid-item-column-end-tablet' as string]: 4,
+                      }}
+                    >
+                      Max height
+                    </label>
+                    <GridItem
+                      columnStart={{ mobile: 6, tablet: 4 }}
+                      columnEnd={{ mobile: 13, tablet: 7 }}
+                      elementType="span"
+                      id={`custom-max-height-${breakpoint}-value`}
+                    >
+                      {isCustomHeightEnabled[breakpoint] ? `${heightValue.maxHeight[breakpoint]} px` : '—'}
+                    </GridItem>
+                    <input
+                      autoComplete="off"
+                      className="GridItem"
+                      defaultValue={heightValue.maxHeight[breakpoint]}
+                      disabled={!isCustomHeightEnabled[breakpoint]}
+                      id={`custom-max-height-${breakpoint}`}
+                      max="1000"
+                      min="200"
+                      onChange={(event) => handleMaxHeightChange(event, breakpoint)}
+                      step="100"
+                      style={{
+                        ['--grid-item-column-end' as string]: 13,
+                        ['--grid-item-column-start' as string]: 1,
+                        ['--grid-item-column-start-tablet' as string]: 7,
+                      }}
+                      type="range"
+                    />
+                  </Grid>
+                </Stack>
+              ))}
+            </form>
           </ModalBody>
           <ModalFooter>
             <Button onClick={handleModalCustomHeightClose}>Primary action</Button>

@@ -123,16 +123,15 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 
 ### API
 
-| Name                          | Type                  | Default   | Required | Description                                                                                                               |
-| ----------------------------- | --------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `children`                    | `ReactNode`           | —         | ✕        | Children node                                                                                                             |
-| `elementType`                 | [`article` \| `form`] | `article` | ✕        | ModalDialog element type                                                                                                  |
-| `isDockedOnMobile`            | `bool`                | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                |
-| `isExpandedOnMobile`          | `bool`                | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                |
-| `isScrollable`                | `bool`                | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content |
-| `maxHeightFromTabletUp`       | `string`              | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value                                                                      |
-| `preferredHeightFromTabletUp` | `string`              | `null`    | ✕        | Preferred height of the modal on tablet and larger. Accepts any valid CSS value                                           |
-| `preferredHeightOnMobile`     | `string`              | `null`    | ✕        | Preferred height of the modal on mobile. Accepts any valid CSS value                                                      |
+| Name                 | Type                   | Default   | Required | Description                                                                                                               |
+| -------------------- | ---------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `children`           | `ReactNode`            | —         | ✕        | Children node                                                                                                             |
+| `elementType`        | [`article` \| `form`]  | `article` | ✕        | ModalDialog element type                                                                                                  |
+| `height`             | [`string` \| `object`] | `null`    | ✕        | Height of the modal. Accepts any valid CSS value or an object with breakpoint keys for responsive values                  |
+| `isDockedOnMobile`   | `bool`                 | `false`   | ✕        | Dock the ModalDialog to the bottom of the screen on mobile                                                                |
+| `isExpandedOnMobile` | `bool`                 | `false`   | ✕        | If true, ModalDialog expands to fit the viewport on mobile                                                                |
+| `isScrollable`       | `bool`                 | `true`    | ✕        | If the ModalDialog should be scrollable. If set to `false`, the dialog will not scroll and will expand to fit the content |
+| `maxHeight`          | [`string` \| `object`] | `null`    | ✕        | Max height of the modal. Accepts any valid CSS value or an object with breakpoint keys for responsive values              |
 
 Also, all properties of the [`<article>` element][mdn-article] and [`<form>` element][mdn-form] are supported.
 
@@ -301,15 +300,19 @@ takes over the responsibility for scrolling and provides visual overflow decorat
 By default, ModalDialog grows to the height of its content until it reaches the [maximum height](#custom-max-height)
 limit.
 
-You can set a custom preferred height of ModalDialog using a custom property:
+You can set a custom preferred height of ModalDialog using the `height` prop.
+The prop accepts any valid CSS length value, either as a string or an object with breakpoints as keys.
 
-- `preferredHeightOnMobile` for mobile screens, and
-- `preferredHeightFromTabletUp` for tablet screens and up.
-
+The height property falls back to the previous breakpoint using the mobile-first approach. For example, if you set
+`height={{ tablet: '500px' }}` while not setting the `desktop` breakpoint, the value will be used for
+both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
 
 ```jsx
-<ModalDialog isScrollable preferredHeightOnMobile="400px" preferredHeightFromTabletUp="500px">
+<ModalDialog isScrollable height="500px">
+  …
+</ModalDialog>
+<ModalDialog isScrollable height={{ mobile: '300px', tablet: '500px', desktop: '600px' }}>
   …
 </ModalDialog>
 ```
@@ -326,11 +329,17 @@ The default maximum height of a scrollable ModalDialog is **600 px**, as long as
 If the viewport is smaller, scrollable ModalDialog will shrink to fit the viewport. In such case, the ModalDialog height
 will calculate as "viewport height (`100dvh`) minus 1100 spacing".
 
-You can use the prop `maxHeightFromTabletUp` to override the default maximum height limit on tablet
-screens and up:
+You can use the `maxHeight` prop to override the default maximum height limit.
+
+The max height property falls back to the previous breakpoint using the mobile-first approach. For example, if you set
+`maxHeight={{ tablet: '500px' }}` while not setting the `desktop` breakpoint, the value will be used for
+both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 
 ```jsx
-<ModalDialog isScrollable maxHeightFromTabletUp="700px">
+<ModalDialog isScrollable maxHeight="700px">
+  …
+</ModalDialog>
+<ModalDialog isScrollable maxHeight={{ mobile: '500px', tablet: '700px', desktop: '800px' }}>
   …
 </ModalDialog>
 ```

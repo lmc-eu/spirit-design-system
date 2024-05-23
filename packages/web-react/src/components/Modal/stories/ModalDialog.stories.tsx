@@ -9,6 +9,9 @@ const meta: Meta<typeof ModalDialog> = {
   title: 'Components/Modal',
   component: ModalDialog,
   argTypes: {
+    height: {
+      control: 'object',
+    },
     isDockedOnMobile: {
       control: 'boolean',
     },
@@ -18,23 +21,20 @@ const meta: Meta<typeof ModalDialog> = {
     isScrollable: {
       control: 'boolean',
     },
-    maxHeightFromTabletUp: {
-      control: 'text',
-    },
-    preferredHeightOnMobile: {
-      control: 'text',
-    },
-    preferredHeightFromTabletUp: {
-      control: 'text',
+    maxHeight: {
+      control: 'object',
     },
   },
   args: {
     isDockedOnMobile: false,
     isExpandedOnMobile: false,
     isScrollable: true,
-    maxHeightFromTabletUp: '',
-    preferredHeightOnMobile: '',
-    preferredHeightFromTabletUp: '',
+    height: {
+      mobile: '400px',
+      tablet: '500px',
+      desktop: '600px',
+    },
+    maxHeight: {},
   },
 };
 
