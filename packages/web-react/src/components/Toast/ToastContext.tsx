@@ -19,22 +19,20 @@ export interface ToastItem {
   content: ReactNode;
 }
 
+type ShowPayloadOptions = {
+  autoCloseInterval?: number;
+  color?: ToastColorType;
+  enableAutoClose?: boolean;
+  hasIcon?: boolean;
+  iconName?: string;
+  isDismissible?: boolean;
+};
+
 export interface ToastContextType extends ToastState {
   clear: () => void;
   hide: (id: string) => void;
   setQueue: (newQueue: ToastItem[]) => void;
-  show: (
-    content: ReactNode,
-    id: string,
-    options?: {
-      autoCloseInterval?: number;
-      color?: ToastColorType;
-      enableAutoClose?: boolean;
-      hasIcon?: boolean;
-      iconName?: string;
-      isDismissible?: boolean;
-    },
-  ) => void;
+  show: (content: ReactNode, id: string, options?: ShowPayloadOptions) => void;
 }
 
 const defaultToastContext: ToastContextType = {
@@ -53,14 +51,7 @@ type ActionType =
       payload: {
         content: ReactNode;
         toastId: string;
-        options?: {
-          autoCloseInterval?: number;
-          color?: ToastColorType;
-          enableAutoClose?: boolean;
-          hasIcon?: boolean;
-          iconName?: string;
-          isDismissible?: boolean;
-        };
+        options?: ShowPayloadOptions;
       };
     }
   | { type: 'hide'; payload: { id: string } }
@@ -123,26 +114,12 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
     dispatch({ type: 'clear', payload: null });
   }, []);
 
-  const show = useCallback(
-    (
-      content: string | JSX.Element,
-      toastId: string,
-      options?: {
-        autoCloseInterval?: number;
-        color?: ToastColorType;
-        enableAutoClose?: boolean;
-        hasIcon?: boolean;
-        iconName?: string;
-        isDismissible?: boolean;
-      },
-    ) => {
-      dispatch({ type: 'show', payload: { content, toastId, options } });
+  const show = useCallback((content: ReactNode, toastId: string, options?: ShowPayloadOptions) => {
+    dispatch({ type: 'show', payload: { content, toastId, options } });
 
-      options?.enableAutoClose &&
-        delayedCallback(() => hide(toastId), options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
-    },
-    [],
-  );
+    options?.enableAutoClose &&
+      delayedCallback(() => hide(toastId), options?.autoCloseInterval || DEFAULT_TOAST_AUTO_CLOSE_INTERVAL);
+  }, []);
   const setQueue = useCallback((newQueue: ToastItem[]) => {
     dispatch({ type: 'clear', payload: null });
 
