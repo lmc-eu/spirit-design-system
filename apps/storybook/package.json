@@ -14,7 +14,7 @@
     "build": "storybook build --config-dir ./ --output-dir ./build"
   },
   "devDependencies": {
-    "@babel/core": "7.24.5",
+    "@babel/core": "7.24.6",
     "@storybook/addon-actions": "7.6.19",
     "@storybook/addon-essentials": "7.6.19",
     "@storybook/addon-links": "7.6.19",

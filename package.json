@@ -52,15 +52,15 @@
     "version": "yarn format:fix:changelog"
   },
   "devDependencies": {
-    "@babel/core": "7.24.5",
-    "@babel/preset-react": "7.24.1",
+    "@babel/core": "7.24.6",
+    "@babel/preset-react": "7.24.6",
     "@commitlint/cli": "17.8.1",
     "@lmc-eu/commitlint-config": "2.0.1",
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.1",
     "@lmc-eu/eslint-config-react": "2.0.2",
     "@lmc-eu/prettier-config": "2.0.0",
-    "@omlet/cli": "1.6.0",
-    "@playwright/test": "1.44.0",
+    "@omlet/cli": "1.6.1",
+    "@playwright/test": "1.44.1",
     "@rollup/plugin-babel": "6.0.4",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@rollup/plugin-replace": "5.0.5",
@@ -94,7 +94,7 @@
     "webpack-cli": "5.1.4"
   },
   "resolutions": {
-    "@types/react": "18.3.2",
+    "@types/react": "18.3.3",
     "typescript": "4.7.4"
   },
   "packageManager": "yarn@3.8.2"
