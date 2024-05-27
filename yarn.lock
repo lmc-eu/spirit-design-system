@@ -20611,7 +20611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:14":
+"lint-staged@npm:14.0.1":
   version: 14.0.1
   resolution: "lint-staged@npm:14.0.1"
   dependencies:
@@ -27218,7 +27218,7 @@ __metadata:
     husky: 8.0.3
     is-ci: 3.0.1
     lerna: 7.4.2
-    lint-staged: 14
+    lint-staged: 14.0.1
     netlify-cli: 16.9.3
     npm-run-all2: 5.0.2
     nx: 17.3.2
