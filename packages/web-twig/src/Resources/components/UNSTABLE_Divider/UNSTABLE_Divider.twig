@@ -1,0 +1,15 @@
+{# API #}
+{%- set props = props | default([]) -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'UNSTABLE_Divider' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+
+<hr
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+/>
