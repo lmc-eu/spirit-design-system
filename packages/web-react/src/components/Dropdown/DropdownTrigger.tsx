@@ -1,21 +1,16 @@
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
-import { StyleProps } from '../../types';
+import { DropdownTriggerProps } from '../../types';
 import { useDropdownContext } from './DropdownContext';
 import { useDropdownAriaProps } from './useDropdownAriaProps';
 import { useDropdownStyleProps } from './useDropdownStyleProps';
-
-interface DropdownTriggerProps extends StyleProps {
-  elementType?: ElementType | string;
-  children: string | React.ReactNode | ((props: { isOpen: boolean }) => React.ReactNode);
-}
 
 const defaultProps = {
   elementType: 'button',
 };
 
-export const DropdownTrigger = (props: DropdownTriggerProps) => {
+export const DropdownTrigger = <T extends ElementType = 'button'>(props: DropdownTriggerProps<T>) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { elementType = 'button', children, ...rest } = propsWithDefaults;
   const { id, isOpen, onToggle, fullWidthMode, triggerRef } = useDropdownContext();

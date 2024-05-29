@@ -204,7 +204,6 @@ const ModalDefault = () => {
               provident unde. Eveniet, iste, molestiae?
             </p>
             <Dropdown id="dropdown-in-modal" isOpen={isDropdownOpen} onToggle={handleDropdownToggle}>
-              {/* @ts-expect-error -- TS2322: Property color does not exist on type … */}
               <DropdownTrigger elementType={Button} color="secondary">
                 Dropdown
               </DropdownTrigger>
