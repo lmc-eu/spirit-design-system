@@ -1,4 +1,4 @@
-import { LegacyRef } from 'react';
+import { ComponentPropsWithRef, ElementType, LegacyRef, ReactNode } from 'react';
 import { Booleanish, ChildrenProps, ClickEvent, PlacementDictionaryType, StyleProps } from './shared';
 
 export const DropdownFullWidthModes = {
@@ -10,7 +10,7 @@ export const DropdownFullWidthModes = {
 export type DropdownFullWidthModeKeys = keyof typeof DropdownFullWidthModes;
 export type DropdownFullWidthMode = (typeof DropdownFullWidthModes)[DropdownFullWidthModeKeys];
 
-export type DropdownTriggerProps = {
+export type DropdownTriggerRenderProps = {
   onClick: (event: ClickEvent) => void;
   className?: string | undefined;
   'aria-expanded': Booleanish;
@@ -20,7 +20,7 @@ export type DropdownTriggerProps = {
 
 export type DropdownRenderProps = {
   isOpen: boolean;
-  trigger: DropdownTriggerProps;
+  trigger: DropdownTriggerRenderProps;
 };
 
 export interface DropdownProps extends ChildrenProps, StyleProps {
@@ -41,3 +41,9 @@ export interface SpiritDropdownProps extends DropdownProps, ChildrenProps {
 }
 
 export interface UncontrolledDropdownProps extends ChildrenProps, Omit<SpiritDropdownProps, 'isOpen' | 'onToggle'> {}
+
+export type DropdownTriggerProps<E extends ElementType> = {
+  elementType?: E;
+  children: string | ReactNode | ((props: { isOpen: boolean }) => ReactNode);
+} & ComponentPropsWithRef<E> &
+  StyleProps;
