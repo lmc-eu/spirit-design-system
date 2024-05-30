@@ -38,6 +38,8 @@
     "test:e2e:ui": "yarn playwright test --ui",
     "types": "yarn packages:types",
     "lint": "npm-run-all --parallel es:lint packages:lint",
+    "lint:fix": "npm-run-all --parallel es:lint:fix packages:lint:fix",
+    "packages:lint:fix": "lerna run lint:fix --parallel",
     "packages:lint": "lerna run lint --parallel --no-sort",
     "packages:start": "lerna run start --parallel",
     "packages:test": "lerna run test",

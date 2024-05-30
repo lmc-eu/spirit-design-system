@@ -67,6 +67,9 @@ format-fix: ## Fixes code formatting
 lint: ## Lints all packages
 	$(PKG_MANAGER) lint
 
+lint-fix: ## Fixes lint errors in all packages
+	$(PKG_MANAGER) lint:fix
+
 test: ## Run tests in all packages
 	$(PKG_MANAGER) test
 
