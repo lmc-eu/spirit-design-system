@@ -431,10 +431,10 @@ describe('Tooltip', () => {
     describe('getTooltipFloatingProps', () => {
       it('should return object with data from data attributes', () => {
         fixtureEl.innerHTML = `
-          <div class="TooltipWrapper">
+          <div class="Tooltip">
             <div
               id="test-tooltip"
-              class="Tooltip is-hidden"
+              class="TooltipPopover is-hidden"
               data-spirit-enable-flipping="true"
               data-spirit-enable-shifting="true"
               data-spirit-enable-sizing="true"
@@ -444,12 +444,12 @@ describe('Tooltip', () => {
               data-spirit-placement-controlled
             >
               This is tooltip.
-              <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+              <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
             </div>
           </div>
         `;
 
-        const tooltipEl = fixtureEl.querySelector('.Tooltip') as HTMLElement;
+        const tooltipEl = fixtureEl.querySelector('.TooltipPopover') as HTMLElement;
         const tooltip = new Tooltip(tooltipEl);
 
         const tooltipProps = tooltip.getTooltipFloatingProps();
@@ -469,10 +469,10 @@ describe('Tooltip', () => {
     describe('updateConfig', () => {
       it('should update config', () => {
         fixtureEl.innerHTML = `
-          <div class="TooltipWrapper" data-spirit-element="tooltip-wrapper">
+          <div class="Tooltip" data-spirit-element="tooltip">
             <div
               id="test-tooltip"
-              class="Tooltip is-hidden"
+              class="TooltipPopover is-hidden"
               data-spirit-enable-flipping="true"
               data-spirit-enable-shifting="true"
               data-spirit-enable-sizing="true"
@@ -482,12 +482,12 @@ describe('Tooltip', () => {
               data-spirit-placement-controlled
             >
               This is tooltip.
-              <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+              <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
             </div>
           </div>
         `;
 
-        const tooltipEl = fixtureEl.querySelector('.Tooltip') as HTMLElement;
+        const tooltipEl = fixtureEl.querySelector('.TooltipPopover') as HTMLElement;
         const tooltip = new Tooltip(tooltipEl);
 
         tooltip.updateConfig({
