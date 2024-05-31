@@ -1,8 +1,10 @@
+import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTooltipProps } from '../../types';
 import { TooltipProvider } from './TooltipContext';
 import { useFloating } from './useFloating';
+import { useTooltipStyleProps } from './useTooltipStyleProps';
 
 const Tooltip = (props: SpiritTooltipProps) => {
   const {
@@ -20,10 +22,15 @@ const Tooltip = (props: SpiritTooltipProps) => {
     onToggle,
     placement: tooltipPlacement,
     trigger = ['click', 'hover'],
-    ...rest
+    ...restProps
   } = props;
 
-  const { styleProps, props: otherProps } = useStyleProps({ ...rest });
+  const { classProps, props: modifiedProps } = useTooltipStyleProps({
+    isDismissible,
+    isOpen,
+    ...restProps,
+  });
+  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   // Refs for FloatingUI
   const arrowRef = useRef<HTMLSpanElement>(null);
@@ -90,7 +97,12 @@ const Tooltip = (props: SpiritTooltipProps) => {
         y,
       }}
     >
-      <div ref={tooltipRef} {...styleProps} {...otherProps}>
+      <div
+        {...otherProps}
+        ref={tooltipRef}
+        className={classNames(classProps.rootClassName, styleProps.className)}
+        style={styleProps.style}
+      >
         {children}
       </div>
     </TooltipProvider>

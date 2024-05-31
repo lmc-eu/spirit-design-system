@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
@@ -16,9 +16,8 @@ describe('TooltipPopover', () => {
   it('should render tooltip popover', () => {
     const popoverText = 'TooltipPopover';
 
-    const dom = render(<TooltipPopover>{popoverText}</TooltipPopover>);
-    const element = dom.container.querySelector('.Tooltip') as HTMLElement;
+    render(<TooltipPopover data-testid="test-tooltipPopover">{popoverText}</TooltipPopover>);
 
-    expect(element.textContent).toBe(popoverText);
+    expect(screen.getByTestId('test-tooltipPopover').textContent).toBe(popoverText);
   });
 });
