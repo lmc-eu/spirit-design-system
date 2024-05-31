@@ -1,50 +1,18 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _closeLabel = props.closeLabel | default('Close') -%}
-{%- set _id = props.id | default(null) -%}
-{%- set _isDismissible = props.isDismissible | default(false) -%}
-{%- set _placement = props.placement | default('bottom') -%}
 
 {# Class names #}
-{%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
-{%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
-{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
-
-{# Attributes #}
-{%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _ariaControlsAttr = _id ? 'aria-controls="' ~ _id | escape('html_attr') ~ '"' : null -%}
-{%- set _dataPlacementAttr = _placement ? 'data-spirit-placement="' ~ _placement | escape('html_attr') ~ '"' : null -%}
-{%- set _dataTargetAttr = _id ? 'data-spirit-target="#' ~ _id | escape('html_attr') ~ '"' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDismissibleClassName, _styleProps.className ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['id', 'data-spirit-placement']) -%}
-
-{# Deprecations #}
-{% deprecated 'Tooltip: The implementation of this component is deprecated and will be replaced with the implementation of the TooltipPopover in the next major version. Please, use TooltipPopover instead.' %}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
 <div
-    {{ mainProps(_mainPropsWithoutReservedAttributes) }}
+    {{ mainProps(props) }}
     {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
-    {{ _idAttr | raw }}
-    {{ _dataPlacementAttr | raw }}
+    data-spirit-element="tooltip"
 >
     {% block content %}{% endblock %}
-    {% if _isDismissible is same as(true) %}
-        <button
-            type="button"
-            class="{{ _closeClassName }}"
-            data-spirit-dismiss="tooltip"
-            {{ _ariaControlsAttr | raw }}
-            {{ _dataTargetAttr | raw }}
-            aria-expanded="true"
-        >
-            <Icon name="close" />
-            <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
-        </button>
-    {% endif %}
-    <span class="{{ _arrowClassName }}" data-spirit-element="arrow"></span>
 </div>
