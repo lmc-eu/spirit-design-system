@@ -1,5 +1,0 @@
-@use '../../tools/placement';
-
-.TooltipWrapper {
-    @include placement.parent();
-}
