@@ -14,11 +14,11 @@
 {%- set _trigger = props.trigger | default('click, hover') -%}
 
 {# Class names #}
-{%- set _arrowClassName = _spiritClassPrefix ~ 'Tooltip__arrow' -%}
-{%- set _closeClassName = _spiritClassPrefix ~ 'Tooltip__close' -%}
+{%- set _arrowClassName = _spiritClassPrefix ~ 'TooltipPopover__arrow' -%}
+{%- set _closeClassName = _spiritClassPrefix ~ 'TooltipPopover__close' -%}
 {%- set _isOpenClassName = _isOpen ? '' : 'is-hidden' -%}
-{%- set _rootClassName = _spiritClassPrefix ~ 'Tooltip' -%}
-{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'Tooltip--dismissible' : null -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'TooltipPopover' -%}
+{%- set _rootDismissibleClassName = _isDismissible is same as(true) ? _spiritClassPrefix ~ 'TooltipPopover--dismissible' : null -%}
 
 {# Attributes #}
 {%- set _enableFlippingValue = _enableFlipping ? 'true' : 'false' -%}
