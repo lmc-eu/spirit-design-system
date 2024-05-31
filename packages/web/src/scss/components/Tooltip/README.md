@@ -3,18 +3,14 @@
 Bare Tooltip HTML:
 
 ```html
-<div class="Tooltip" data-spirit-placement="top">
-  Hello there!
-  <span class="Tooltip__arrow"></span>
+<div class="Tooltip" data-spirit-element="tooltip">
+  <button type="button" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-basic">I have a tooltip 😎</button>
+  <div id="my-tooltip-basic" class="TooltipPopover is-hidden">
+    Hello there!
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+  </div>
 </div>
 ```
-
-## ⚠️ DEPRECATION NOTICE
-
-CSS modifiers `Tooltip--top`, `Tooltip--rightTop`, `Tooltip--bottom`, etc. are deprecated and will be
-removed in the next major release. Use `data-spirit-placement` attribute instead.
-
-[What are deprecations?][readme-deprecations]
 
 ## Linking with Content
 
@@ -22,12 +18,6 @@ To display a Tooltip along your content, simply place it in the DOM next to it.
 Tooltip is positioned relative to the closest parent element with
 `position: relative` or `position: absolute`. You may either provide the CSS
 yourself or you can use the prepared TooltipWrapper component.
-
-👉 **Basic Tooltip is static and doesn't react on user interaction.** Read
-further to see how to provide the desired behavior.
-
-👉 You don't need TooltipWrapper when your Tooltip is already being positioned
-correctly.
 
 👉 Depending on your layout, you may need to provide additional styling to
 shrink TooltipWrapper box model, e.g. using `d-inline-block` utility class.
@@ -37,11 +27,13 @@ shrink TooltipWrapper box model, e.g. using `d-inline-block` utility class.
 improved accessibility.
 
 ```html
-<div class="TooltipWrapper d-inline-block">
-  <a href="#" aria-describedby="my-tooltip">I have a tooltip!</a>
-  <div id="my-tooltip" class="Tooltip" data-spirit-placement="top">
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button type="button" aria-describedby="my-tooltip" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip">
+    I have a tooltip 😎
+  </button>
+  <div id="my-tooltip" class="TooltipPopover is-hidden">
     Hello there!
-    <span class="Tooltip__arrow"></span>
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
   </div>
 </div>
 ```
@@ -52,115 +44,58 @@ Tooltip implements the [Placement Dictionary][dictionary-placement] for placemen
 a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="top"`, `data-spirit-placement="right-end"`, etc.
 
 ```html
-<div class="Tooltip" data-spirit-placement="right-start">
-  Tooltip on right
-  <span class="Tooltip__arrow"></span>
-</div>
-```
-
-## Interaction
-
-### Pure CSS
-
-To display Tooltip on hover and focus (for focusable elements, i.e. mainly
-links, buttons or inputs), add `TooltipTarget` class to your element and place
-Tooltip HTML right after it.
-
-```html
-<div class="TooltipWrapper d-inline-block">
-  <a href="#" class="TooltipTarget" aria-describedby="my-tooltip-on-hover">I have a tooltip!</a>
-  <div id="my-tooltip-on-hover" class="Tooltip" data-spirit-placement="top">
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button
+    type="button"
+    aria-describedby="my-tooltip-placement"
+    data-spirit-toggle="tooltip"
+    data-spirit-target="#my-tooltip-placement"
+  >
+    I have a tooltip 😎
+  </button>
+  <div id="my-tooltip-placement" class="TooltipPopover is-hidden" data-spirit-placement="right-start">
     Hello there!
-    <span class="Tooltip__arrow"></span>
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
   </div>
 </div>
-```
-
-👉 Elements that are not focusable will not trigger Tooltip for keyboard users.
-Add `tabindex="0"` to non-focusable elements to ensure keyboard accessibility.
-
-```html
-<div class="TooltipWrapper d-inline-block">
-  <span class="TooltipTarget" aria-describedby="my-tooltip-on-focus" tabindex="0">I have a tooltip!</span>
-  <div id="my-tooltip-on-focus" class="Tooltip" data-spirit-placement="top">
-    Hello there!
-    <span class="Tooltip__arrow"></span>
-  </div>
-</div>
-```
-
-Similar approach is also required for `disabled` elements. Disabled elements are
-not interactive which means users cannot hover, focus or click them to trigger a
-Tooltip. As a workaround, you'll want to trigger the Tooltip from a wrapper
-`<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`.
-
-```html
-<div class="TooltipWrapper d-inline-block">
-  <div class="TooltipTarget" aria-describedby="my-tooltip-for-disabled-button" tabindex="0">
-    <button type="button" disabled>I have a tooltip though I'm disabled</button>
-  </div>
-  <div id="my-tooltip-for-disabled-button" class="Tooltip" data-spirit-placement="top">
-    Hello there!
-    <span class="Tooltip__arrow"></span>
-  </div>
-</div>
-```
-
-### JavaScript
-
-It's not always possible to apply custom CSS class on an element, e.g. when
-using a component that doesn't accept custom class names. Or maybe you even want
-to trigger Tooltip programmatically from outside the target element. For this
-kind of task Tooltip responds to interaction classes `is-hidden` and
-`is-visible`.
-
-```html
-<button type="button" id="tooltip-trigger" data-spirit-target="#my-js-controlled-tooltip">Toggle tooltip</button>
-<div class="TooltipWrapper d-inline-block">
-  <div aria-describedby="my-js-controlled-tooltip">I have an externally-triggered tooltip</div>
-  <div id="my-js-controlled-tooltip" class="Tooltip is-hidden" data-spirit-placement="top">
-    Hello there!
-    <span class="Tooltip__arrow"></span>
-  </div>
-</div>
-```
-
-```js
-const toggleTooltip = (event) => {
-  const tooltipElement = document.querySelector(event.currentTarget.dataset.target);
-  tooltipElement.classList.toggle('is-hidden');
-  tooltipElement.classList.toggle('is-visible');
-};
-
-document.querySelector('#tooltip-trigger').addEventListener('click', toggleTooltip);
 ```
 
 ## Dismissible Tooltip
 
 Tooltip can be made dismissible by following these steps:
 
-1. Add `Tooltip--dismissible` modifier class on Tooltip.
-2. Add closing button with `Tooltip__close` class.
+1. Add `TooltipPopover--dismissible` modifier class on TooltipPopover.
+2. Add closing button with `TooltipPopover__close` class.
 3. Bind JS plugin using `data-spirit-dismiss="tooltip"` and `data-spirit-target`
    attributes on the closing button.
 
 ```html
-<div id="my-dismissible-tooltip" class="Tooltip Tooltip--dismissible" data-spirit-placement="right">
-  Close me
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
   <button
     type="button"
-    class="Tooltip__close"
-    data-spirit-dismiss="tooltip"
+    aria-describedby="my-dismissible-tooltip"
+    data-spirit-toggle="tooltip"
     data-spirit-target="#my-dismissible-tooltip"
-    aria-controls="my-dismissible-tooltip"
-    aria-expanded="true"
   >
-    <svg width="24" height="24" aria-hidden="true">
-      <use xlink:href="/icons/svg/sprite.svg#close" />
-    </svg>
-    <span class="accessibility-hidden">Close</span>
+    I have a tooltip 😎
   </button>
-  <span class="Tooltip__arrow"></span>
+  <div id="my-dismissible-tooltip" class="TooltipPopover TooltipPopover--dismissible">
+    Close me
+    <button
+      type="button"
+      class="TooltipPopover__close"
+      data-spirit-dismiss="tooltip"
+      data-spirit-target="#my-dismissible-tooltip"
+      aria-controls="my-dismissible-tooltip"
+      aria-expanded="true"
+    >
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/icons/svg/sprite.svg#close" />
+      </svg>
+      <span class="accessibility-hidden">Close</span>
+    </button>
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+  </div>
 </div>
 ```
 
@@ -175,21 +110,31 @@ purpose.
 ### Placement
 
 ```html
-<div id="my-advanced-tooltip" class="Tooltip" data-spirit-placement="top">
-  Hello there!
-  <span class="Tooltip__arrow"></span>
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-placement">
+    Toggle tooltip
+  </button>
+  <div id="my-tooltip-placement" class="TooltipPopover" data-spirit-placement="top">
+    Hello there!
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+  </div>
 </div>
 ```
 
 ### Arrow
 
 When controlling Tooltip arrow with JavaScript, set `data-spirit-element="arrow"`
-on the `.Tooltip__arrow` to control it and prevent conflicts with the default CSS positioning.
+on the `.TooltipPopover__arrow` to control it.
 
 ```html
-<div id="my-advanced-tooltip" class="Tooltip">
-  Hello there!
-  <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-arrow">
+    Toggle tooltip
+  </button>
+  <div id="my-advanced-arrow" class="TooltipPopover">
+    Hello there!
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+  </div>
 </div>
 ```
 
@@ -201,36 +146,40 @@ If you only want the `click` trigger, you need to specify the trigger, as shown 
 This setup might be preferable when you have a link in your tooltip, for example.
 
 ```html
-<button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-trigger">
-  Toggle tooltip
-</button>
-<div class="TooltipWrapper d-inline-block">
-  <div id="my-tooltip-trigger" class="Tooltip is-hidden" data-spirit-trigger="click">
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-trigger">
+    Toggle tooltip
+  </button>
+  <div id="my-tooltip-trigger" class="TooltipPopover is-hidden" data-spirit-trigger="click">
     <!-- Only `click` trigger is active now. -->
     You can click on the link:
     <a href="#">Link to unknown</a>
-    <span class="Tooltip__arrow"></span>
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
   </div>
 </div>
 ```
 
 ### Advanced Floating Functionality
 
-To enable the advanced floating functionality, you need to activate the JS plugin, wrap your tooltip with an element having the `data-spirit-element="tooltip-wrapper"` data attribute, and add the `data-spirit-placement-controlled` attribute to your tooltip element to modify the styling of arrows and tooltip placement.
+Advanced floating functionality is provided by JavaScript plugin and by [Floating UI][floating-ui] library.
 
 ```html
-<div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
-  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#floating-ui-example">
+<div class="Tooltip d-inline-block" data-spirit-element="tooltip">
+  <button type="button" id="tooltip-trigger" data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-advanced">
     Toggle tooltip
   </button>
   <div
-    id="floating-ui-example"
-    class="Tooltip is-hidden"
-    data-spirit-placement="bottom"
-    data-spirit-placement-controlled
+    id="my-tooltip-advanced"
+    class="TooltipPopover"
+    data-spirit-enable-flipping-cross-axis="true"
+    data-spirit-enable-flipping="true"
+    data-spirit-enable-shifting="true"
+    data-spirit-enable-sizing="true"
+    data-spirit-flip-fallback-axis-side-direction="start"
+    data-spirit-flip-fallback-placements="top, right, bottom"
   >
     Hello there!
-    <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+    <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
   </div>
 </div>
 ```
@@ -300,5 +249,4 @@ tooltip.hide();
 [floating-ui-shift]: https://floating-ui.com/docs/shift
 [floating-ui-size]: https://floating-ui.com/docs/size
 [floating-ui]: https://floating-ui.com
-[readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

@@ -20,7 +20,7 @@ Introducing version 2 of the _spirit-web_ package
   - [Modal: Custom Height](#modal-custom-height)
   - [Modal: Uniform Variant Feature Flag](#modal-uniform-variant-feature-flag)
   - [Grid: GridSpan Component](#grid-gridspan-component)
-  - [Tooltip: Data Selector Controlled Placement Feature Flag](#tooltip-data-selector-controlled-placement-feature-flag)
+  - [Tooltip: FloatingUI only](#tooltip-floatingui-only)
 
 ## General Changes
 
@@ -201,20 +201,23 @@ The `GridSpan` component was removed and the `GridItem` component should be used
   - `column-start` = 1 + (12 - 6) / 2 = 4
   - `column-start` = 1 + (12 - 4) / 2 = 5
 
-### Tooltip: Data-Selector-Controlled Placement Feature Flag
+### Tooltip: FloatingUI only
 
-The feature flag enabling the data-selector-controlled placement (`data-spirit-placement-controlled`)
-for tooltip was removed and the data-selector-controlled placement is the default.
+Non-FloatingUI and CSS-only Tooltips are no longer supported. The Tooltip component is now dependent on the FloatingUI library and has a new structure.
+See the updated [Tooltip Readme][readme-tooltip] for more details on how to use Tooltip now.
+The feature flag enabling the data-selector-controlled placement (`data-spirit-placement-controlled`) for the tooltip was removed.
 
 #### Migration Guide
 
 You can now safely delete the CSS class `.spirit-feature-tooltip-enable-data-placement` and/or the Sass variable
 `$tooltip-enable-data-placement` from your project as they have no effect.
+Please follow new Tooltip structure.
 
 ---
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
 
+[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [readme-deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#deprecations
 [readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
-[dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
+[readme-tooltip]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tooltip/README.md

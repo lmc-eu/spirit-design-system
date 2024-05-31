@@ -118,14 +118,14 @@
           </div>
           <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 2">
 
-            <div class="TooltipWrapper" style="margin: 5rem auto" data-spirit-element="tooltip-wrapper">
+            <div class="Tooltip" style="margin: 5rem auto" data-spirit-element="tooltip">
               <div class="docs-Box px-900 py-900" >
                 Click<br />
                 the dots!
               </div>
-              <div class="Tooltip" id="tooltip-placements-example" data-spirit-placement="bottom" data-spirit-trigger="click">
+              <div class="TooltipPopover" id="tooltip-placements-example" data-spirit-placement="bottom" data-spirit-trigger="click">
                 <span id="tooltip-placements-example-text">bottom</span>
-                <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+                <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
               </div>
             </div>
 
@@ -142,7 +142,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           type="button"
           id="button-tooltip-default"
@@ -155,10 +155,10 @@
         </button>
         <div
           id="tooltip-tooltip-default"
-          class="Tooltip"
+          class="TooltipPopover"
         >
           Hello there!
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
 
@@ -172,7 +172,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           class="Button Button--primary Button--medium"
           data-spirit-toggle="tooltip"
@@ -183,14 +183,14 @@
         </button>
         <div
           id="my-dismissible-tooltip"
-          class="Tooltip Tooltip--dismissible"
+          class="TooltipPopover TooltipPopover--dismissible"
           data-spirit-placement="right"
           data-spirit-trigger="click"
         >
           Close me
           <button
             type="button"
-            class="Tooltip__close"
+            class="TooltipPopover__close"
             data-spirit-dismiss="tooltip"
             data-spirit-target="#my-dismissible-tooltip"
             aria-controls="my-dismissible-tooltip"
@@ -201,7 +201,7 @@
             </svg>
             <span class="accessibility-hidden">Close</span>
           </button>
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
 
@@ -220,11 +220,11 @@
 
       <script type="module" src="dismissible-tooltip.mjs"></script>
 
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button id="my-dismissible-button-with-local-storage" class="Button Button--primary Button--medium" data-spirit-target="#my-dismissible-tooltip-with-local-storage" aria-describedby="my-dismissible-tooltip-with-local-storage">I have a tooltip 😎</button>
         <div
           id="my-dismissible-tooltip-with-local-storage"
-          class="Tooltip Tooltip--dismissible is-hidden"
+          class="TooltipPopover TooltipPopover--dismissible is-hidden"
           data-spirit-placement="right"
           data-spirit-flip="true"
           data-spirit-flip-cross-axis="true"
@@ -235,7 +235,7 @@
           <button
             id="my-dismissible-tooltip-with-local-storage-close"
             type="button"
-            class="Tooltip__close"
+            class="TooltipPopover__close"
             aria-controls="my-dismissible-tooltip-with-local-storage"
             aria-expanded="true"
           >
@@ -244,7 +244,7 @@
             </svg>
             <span class="accessibility-hidden">Close</span>
           </button>
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
 
@@ -258,7 +258,7 @@
 
     <div class="docs-Stack docs-Stack--start">
 
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           type="button"
           id="button-example-hover"
@@ -271,14 +271,13 @@
         </button>
         <div
           id="tooltip-example-hover"
-          class="Tooltip is-hidden"
+          class="TooltipPopover is-hidden"
           data-spirit-placement="right"
           data-spirit-flip-fallback-placements="left, top-start, bottom-start"
-          data-spirit-trigger="click"
         >
           Hello there! <br />
           <a href="#" class="link-inverted">Click me</a>
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
 
@@ -296,7 +295,7 @@
         This tooltip will show on <strong>hover</strong> and <strong>click</strong>.
       </p>
 
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           type="button"
           id="button-hover-click"
@@ -309,13 +308,13 @@
         </button>
         <div
           id="tooltip-hover-click"
-          class="Tooltip is-hidden"
+          class="TooltipPopover is-hidden"
           data-spirit-placement="right"
           data-spirit-flip-fallback-placements="bottom"
           data-spirit-trigger="hover, click"
         >
           Hello there!
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
         
@@ -325,7 +324,7 @@
         This tooltip will show only on <strong>hover</strong>.
       </p>
         
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           type="button"
           id="button-hover"
@@ -338,13 +337,13 @@
         </button>
         <div
           id="tooltip-hover"
-          class="Tooltip is-hidden"
+          class="TooltipPopover is-hidden"
           data-spirit-placement="right"
           data-spirit-flip-fallback-placements="bottom"
           data-spirit-trigger="hover"
           >
             Hello there!
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
         
@@ -354,7 +353,7 @@
         This tooltip will show only on <strong>click</strong>.
       </p>
         
-      <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+      <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
         <button
           type="button"
           id="button-click"
@@ -367,13 +366,13 @@
         </button>
         <div
           id="tooltip-click"
-          class="Tooltip is-hidden"
+          class="TooltipPopover is-hidden"
           data-spirit-placement="right"
           data-spirit-flip-fallback-placements="bottom"
           data-spirit-trigger="click"
           >
             Hello there!
-          <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+          <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
         </div>
       </div>
 
@@ -389,7 +388,7 @@
 
       <div>
         Hover or click on the icon to view the tooltip
-        <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+        <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
           <svg
             width="16"
             height="16"
@@ -399,7 +398,7 @@
           </svg>
           <div
             id="tooltip-example-with-icon"
-            class="Tooltip Tooltip--dismissible is-hidden"
+            class="TooltipPopover TooltipPopover--dismissible is-hidden"
             data-spirit-placement="right"
             data-spirit-flip="true"
             data-spirit-flip-cross-axis="true"
@@ -409,7 +408,7 @@
             <button
               id="tooltip-example-with-icon-button"
               type="button"
-              class="Tooltip__close"
+              class="TooltipPopover__close"
               data-spirit-dismiss="tooltip"
               data-spirit-target="#tooltip-example-with-icon"
               aria-controls="tooltip-example-with-icon"
@@ -420,7 +419,7 @@
               </svg>
               <span class="accessibility-hidden">Close</span>
             </button>
-            <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+            <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
           </div>
         </div>
       </div>
@@ -542,7 +541,7 @@
       <div class="example-viewport bg-cover" id="my-advanced-viewport">
         <div class="example-content" id="my-advanced-content">
 
-          <div class="TooltipWrapper d-inline-block" data-spirit-element="tooltip-wrapper">
+          <div class="Tooltip d-inline-block" data-spirit-element="tooltip">
 
             <button
               type="button"
@@ -555,7 +554,7 @@
             </button>
             <div
               id="my-advanced-tooltip"
-              class="Tooltip Tooltip--dismissible"
+              class="TooltipPopover TooltipPopover--dismissible"
               data-spirit-enable-flipping="true"
               data-spirit-enable-shifting="true"
               data-spirit-enable-sizing="true"
@@ -566,7 +565,7 @@
               This long tooltip is flipping, resizing and shifting to stay in the viewport. Also its arrow is always trying to point to the center of the trigger.
               <button
                 type="button"
-                class="Tooltip__close"
+                class="TooltipPopover__close"
                 data-spirit-dismiss="tooltip"
                 data-spirit-target="#my-advanced-tooltip"
                 aria-controls="my-advanced-tooltip"
@@ -577,7 +576,7 @@
                 </svg>
                 <span class="accessibility-hidden">Close</span>
               </button>
-              <span class="Tooltip__arrow" data-spirit-element="arrow"></span>
+              <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
             </div>
 
           </div>
