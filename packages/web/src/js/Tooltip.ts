@@ -19,7 +19,7 @@ const TRIGGER_HOVER = 'hover';
 const TRIGGER_CLICK = 'click';
 
 const SELECTOR_ARROW = '[data-spirit-element="arrow"]';
-const SELECTOR_WRAPPER = '[data-spirit-element="tooltip-wrapper"]';
+const SELECTOR_WRAPPER = '[data-spirit-element="tooltip"]';
 const CLASS_NAME_VISIBLE = 'is-visible';
 const CLASS_NAME_HIDDEN = 'is-hidden';
 
