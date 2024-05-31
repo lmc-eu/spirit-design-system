@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import UncontrolledTooltip from '../UncontrolledTooltip';
@@ -13,9 +13,12 @@ describe('UncontrolledTooltip', () => {
   restPropsTest(UncontrolledTooltip, 'div');
 
   it('should render text children', () => {
-    const dom = render(<UncontrolledTooltip id="uncontrolled-tooltip">Hello World</UncontrolledTooltip>);
-    const element = dom.container.querySelector('div') as HTMLElement;
+    render(
+      <UncontrolledTooltip data-testid="test-tooltip" id="uncontrolled-tooltip">
+        Hello World
+      </UncontrolledTooltip>,
+    );
 
-    expect(element.textContent).toBe('Hello World');
+    expect(screen.getByTestId('test-tooltip')).toHaveTextContent('Hello World');
   });
 });
