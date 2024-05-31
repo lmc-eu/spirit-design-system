@@ -54,7 +54,7 @@
 
 <div class="example-viewport bg-cover" id="my-advanced-viewport">
     <div class="example-content" id="my-advanced-content">
-        <TooltipWrapper UNSAFE_className="d-inline-block">
+        <Tooltip UNSAFE_className="d-inline-block">
             <Button
                 id="my-button"
                 aria-describedby="my-advanced-tooltip"
@@ -68,11 +68,12 @@
                 placement="top-start"
                 flipFallbackAxisSideDirection="top, right, bottom"
                 isDismissible 
+                isOpen
             >
                 This long tooltip is flipping, resizing and shifting to stay in the viewport.
                 Also its arrow is always trying to point to the center of the trigger.
             </TooltipPopover>
-        </TooltipWrapper>
+        </Tooltip>
     </div>
 </div>
 

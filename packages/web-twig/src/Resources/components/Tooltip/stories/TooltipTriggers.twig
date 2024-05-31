@@ -2,7 +2,7 @@
     This tooltip will show on <strong>hover</strong> and <strong>click</strong>.
 </p>
 
-<TooltipWrapper>
+<Tooltip>
     <Button
         id="button-hover-click"
         aria-describedby="tooltip-hover-click"
@@ -13,8 +13,8 @@
     </Button>
     <TooltipPopover
         id="tooltip-hover-click"
-        UNSAFE_className="is-hidden"
         trigger="hover, click"
+        placement="right"
     >
         Hello there!
     </TooltipPopover>
@@ -26,7 +26,7 @@
     This tooltip will show only on <strong>hover</strong>.
 </p>
 
-<TooltipWrapper>
+<Tooltip>
     <Button
         id="button-hover"
         aria-describedby="tooltip-hover"
@@ -37,8 +37,8 @@
     </Button>
     <TooltipPopover
         id="tooltip-hover"
-        UNSAFE_className="is-hidden"
         trigger="hover"
+        placement="right"
     >
         Hello there!
     </TooltipPopover>
@@ -50,7 +50,7 @@
     This tooltip will show only on <strong>click</strong>.
 </p>
 
-<TooltipWrapper>
+<Tooltip>
     <Button
         id="button-click"
         aria-describedby="tooltip-click"
@@ -61,8 +61,8 @@
     </Button>
     <TooltipPopover
         id="tooltip-click"
-        UNSAFE_className="is-hidden"
         trigger="click"
+        placement="right"
     >
         Hello there!
     </TooltipPopover>
