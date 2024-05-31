@@ -1,9 +1,5 @@
 # Tooltip
 
-This is Twig implementation of the [Tooltip][tooltip] component.
-
-⚠️ `Tooltip` component is [deprecated][deprecated] and will be renamed to the `TooltipPopover` in the next major version.
-
 Basic usage:
 
 ```html
@@ -38,27 +34,22 @@ Without lexer:
 
 ## Linking with Content
 
-Tooltip is positioned relative to the closest parent element with
-`position: relative` or `position: absolute`. You may either provide the CSS
-yourself or you can use the prepared TooltipWrapper component:
-
 ```html
-<TooltipWrapper>
+<Tooltip>
     <Link href="#" aria-describedby="my-tooltip">
         I have a tooltip
     </Link>
-    <Tooltip id="my-tooltip">
+    <TooltipPopover id="my-tooltip">
         Hello there!
-    </Tooltip>
-</TooltipWrapper>
+    </TooltipPopover>
+</Tooltip>
 ```
 
-Please consult the [CSS implementation of Tooltip][tooltip] to help you pick the
-best positioning approach for your use case.
+Please consult the [CSS implementation of Tooltip][tooltip] to help you pick the best positioning approach for your use case.
 
 ## API
 
-### Tooltip
+### TooltipPopover
 
 | Name            | Type                                         | Default  | Required | Description              |
 | --------------- | -------------------------------------------- | -------- | -------- | ------------------------ |
@@ -71,25 +62,13 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-### TooltipWrapper
-
-⚠️ `TooltipWrapper` component is [deprecated][deprecated] and will be renamed to the `Tooltip` in the next major version.
-
-The components accept [additional attributes][readme-additional-attributes].
-If you need more control over the styling of a component, you can use [style props][readme-style-props]
-and [escape hatches][readme-escape-hatches].
-
-### TooltipPopover
-
-TooltipPopover is a new name for the Tooltip subcomponent.
-
 #### Basic
 
 ```html
-<TooltipWrapper>
+<Tooltip>
   <button>I have a tooltip!</button>
   <TooltipPopover>Hello there!</TooltipPopover>
-</TooltipWrapper>
+</Tooltip>
 ```
 
 #### Dismissible
@@ -97,10 +76,10 @@ TooltipPopover is a new name for the Tooltip subcomponent.
 To display close button, add `isDismissible` prop to the `TooltipPopover` subcomponent.
 
 ```html
-<TooltipWrapper>
+<Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-dismissible">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
-</TooltipWrapper>
+</Tooltip>
 ```
 
 ### Trigger
@@ -111,13 +90,13 @@ If you only want the `click` trigger, you need to specify the trigger, as shown 
 This setup might be preferable when you have a link in your tooltip, for example.
 
 ```html
-<TooltipWrapper>
+<Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-trigger">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-trigger" trigger="click">
     <!-- Only `click` trigger is active now. -->
     You can click on the link: <a href="#">Link to unknown</a>
   </TooltipPopover>
-</TooltipWrapper>
+</Tooltip>
 ```
 
 #### Advanced Floating Functionality
@@ -125,7 +104,7 @@ This setup might be preferable when you have a link in your tooltip, for example
 Advanced floating functionality is provided by JavaScript plugin and by [Floating UI][floating-ui] library.
 
 ```html
-<TooltipWrapper>
+<Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-advanced">I have a tooltip 😎</button>
   <TooltipPopover
     closeLabel="Close tooltip"
@@ -141,7 +120,7 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
   >
     Close me
   </TooltipPopover>
-</TooltipWrapper>
+</Tooltip>
 ```
 
 #### API
@@ -155,7 +134,7 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
 | `enableSizing`                  | `bool`                                       | true           | ✕        | Enables [sizing][floating-ui-size] of the element to keep it inside the boundary area by setting the max width.                                                                                                                                                            |
 | `flipFallbackAxisSideDirection` | ["none" \| "start" \| "end"]                 | "none"         | ✕        | Whether to allow [fallback to the opposite axis][floating-ui-flip-fallback-axis-side-direction] if no placements along the preferred placement axis fit, and if so, which side direction along that axis to choose. If necessary, it will fallback to the other direction. |
 | `flipFallbackPlacements`        | `string`                                     | -              | ✕        | This describes a list of [explicit placements][floating-ui-flip-fallback-placements] to try if the initial placement doesn’t fit on the axes in which overflow is checked. For example you can set `"top, right, bottom"`                                                  |
-| `id`                            | `string`                                     | -              | ✔       | Tooltip ID                                                                                                                                                                                                                                                                 |
+| `id`                            | `string`                                     | -              | ✔        | Tooltip ID                                                                                                                                                                                                                                                                 |
 | `isDismissible`                 | `bool`                                       | false          | ✕        | Make tooltip dismissible                                                                                                                                                                                                                                                   |
 | `isOpen`                        | `bool`                                       | false          | ✕        | Whether is Tooltip open or hidden on initial render                                                                                                                                                                                                                        |
 | `placement`                     | [Placement Dictionary][dictionary-placement] | "bottom"       | ✕        | Placement of tooltip                                                                                                                                                                                                                                                       |
@@ -179,7 +158,6 @@ Or, feel free to write the controlling script yourself.
 
 👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/README.md#deprecations
 [dictionary-placement]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#placement
 [floating-ui-flip-cross-axis]: https://floating-ui.com/docs/flip#crossaxis
 [floating-ui-flip-fallback-axis-side-direction]: https://floating-ui.com/docs/flip#fallbackaxissidedirection
@@ -190,8 +168,6 @@ Or, feel free to write the controlling script yourself.
 [floating-ui]: https://floating-ui.com
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#additional-attributes
 [readme-escape-hatches]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#escape-hatches
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/README.md#style-props
-[tooltip]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Tooltip
 [web-js-api]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Tooltip/README.md#javascript-api
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
