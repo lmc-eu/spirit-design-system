@@ -30,7 +30,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
     placement,
     ...rest,
   });
-  const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps({ ...modifiedProps });
+  const { styleProps: contentStyleProps, props: contentOtherProps } = useStyleProps(modifiedProps);
 
   const renderCloseButton = useMemo(
     () => isDismissible && <TooltipCloseButton onClick={() => onToggle(false)} label="close" />,
@@ -79,7 +79,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
   return (
     <div
       ref={tooltipRef}
-      className={classNames(classProps.rootClassName, contentStyleProps.className)}
+      className={classNames(classProps.popoverClassName, contentStyleProps.className)}
       {...contentOtherProps}
       {...getFloatingProps()}
       style={{
