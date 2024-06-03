@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.7"></a>
+
+## [1.1.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.6...@lmc-eu/spirit-form-validations@1.1.7) (2024-06-03)
+
+### Chores
+
+- **form-validations:** Add missing TypeScript dependency ([71948ef](https://github.com/lmc-eu/spirit-design-system/commit/71948ef))
+
+### Dependencies
+
+- Update all non-major dependencies ([d0625a8](https://github.com/lmc-eu/spirit-design-system/commit/d0625a8))
+
+### Tests
+
+- **form-validations:** Use jest-config-spirit common preset ([5436240](https://github.com/lmc-eu/spirit-design-system/commit/5436240))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.1.6"></a>
 
 ## [1.1.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.5...@lmc-eu/spirit-form-validations@1.1.6) (2024-05-20)

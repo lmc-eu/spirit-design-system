@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.15.0"></a>
+
+# [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.14.0...@lmc-eu/spirit-web@1.15.0) (2024-06-03)
+
+### Bug Fixes
+
+- **web:** FileUploader `isRequired` prop only marks label ([76ccd52](https://github.com/lmc-eu/spirit-design-system/commit/76ccd52))
+
+### Dependencies
+
+- Update all non-major dependencies ([d0625a8](https://github.com/lmc-eu/spirit-design-system/commit/d0625a8))
+
+### Features
+
+- **web-react:** Add autoclose feature to Toast component ([ef7b36c](https://github.com/lmc-eu/spirit-design-system/commit/ef7b36c))
+- **web-react:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([e60fabb](https://github.com/lmc-eu/spirit-design-system/commit/e60fabb))
+- **web-twig:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([d0f9663](https://github.com/lmc-eu/spirit-design-system/commit/d0f9663))
+- **web:** Add autoclose feature to Toast component ([d33c5a8](https://github.com/lmc-eu/spirit-design-system/commit/d33c5a8))
+- **web:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([0a497a6](https://github.com/lmc-eu/spirit-design-system/commit/0a497a6))
+
+### Tests
+
+- **web:** Remove unnecessary stylelint disable and rename sass-true module ([17013fd](https://github.com/lmc-eu/spirit-design-system/commit/17013fd))
+- **web:** Use jest-config-spirit common preset ([5d29885](https://github.com/lmc-eu/spirit-design-system/commit/5d29885))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.14.0"></a>
 
 # [1.14.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.13.1...@lmc-eu/spirit-web@1.14.0) (2024-05-20)

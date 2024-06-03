@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.18.0"></a>
+
+# [1.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.17.0...@lmc-eu/spirit-web-react@1.18.0) (2024-06-03)
+
+### Bug Fixes
+
+- **web-react:** FileUploader `isRequired` prop only marks label ([24e3301](https://github.com/lmc-eu/spirit-design-system/commit/24e3301))
+- **web:** FileUploader `isRequired` prop only marks label ([76ccd52](https://github.com/lmc-eu/spirit-design-system/commit/76ccd52))
+
+### Dependencies
+
+- Update all non-major dependencies ([d0625a8](https://github.com/lmc-eu/spirit-design-system/commit/d0625a8))
+
+### Features
+
+- **web-react:** Add autoclose feature to Toast component ([ef7b36c](https://github.com/lmc-eu/spirit-design-system/commit/ef7b36c))
+- **web-react:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([e60fabb](https://github.com/lmc-eu/spirit-design-system/commit/e60fabb))
+- **web:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([0a497a6](https://github.com/lmc-eu/spirit-design-system/commit/0a497a6))
+
+### Tests
+
+- **web-react:** Use jest-config-spirit common preset ([55bb122](https://github.com/lmc-eu/spirit-design-system/commit/55bb122))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.17.0"></a>
 
 # [1.17.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.16.1...@lmc-eu/spirit-web-react@1.17.0) (2024-05-20)

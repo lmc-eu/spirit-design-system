@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.2"></a>
+
+## [0.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.4.1...@lmc-eu/spirit-codemods@0.4.2) (2024-06-03)
+
+### Documentation
+
+- **codemods:** Rebrand to Alma Career ([c7b1092](https://github.com/lmc-eu/spirit-design-system/commit/c7b1092))
+
+### Tests
+
+- **codemods:** Use jest-config-spirit common preset ([49f22b2](https://github.com/lmc-eu/spirit-design-system/commit/49f22b2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="0.4.1"></a>
 
 ## [0.4.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.4.0...@lmc-eu/spirit-codemods@0.4.1) (2024-05-20)

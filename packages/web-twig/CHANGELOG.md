@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.16.0"></a>
+
+# [2.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.15.0...@lmc-eu/spirit-web-twig@2.16.0) (2024-06-03)
+
+### Bug Fixes
+
+- **web-twig:** FileUploader `isRequired` prop only marks label ([7a940b3](https://github.com/lmc-eu/spirit-design-system/commit/7a940b3))
+
+### Chores
+
+- **web-twig:** Fix dependency link paths for Docker development ([ea1b9e8](https://github.com/lmc-eu/spirit-design-system/commit/ea1b9e8))
+
+### Features
+
+- **web-react:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([e60fabb](https://github.com/lmc-eu/spirit-design-system/commit/e60fabb))
+- **web-twig:** Add autoclose feature to Toast component ([17a54b1](https://github.com/lmc-eu/spirit-design-system/commit/17a54b1))
+- **web-twig:** Add Message and Link for ToastBar [#DS-1213](https://github.com/lmc-eu/spirit-design-system/issues/DS-1213) ([d0f9663](https://github.com/lmc-eu/spirit-design-system/commit/d0f9663))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.15.0"></a>
 
 # [2.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.14.1...@lmc-eu/spirit-web-twig@2.15.0) (2024-05-20)

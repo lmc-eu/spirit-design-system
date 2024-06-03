@@ -4570,7 +4570,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-common@^0.3.2, @lmc-eu/spirit-common@workspace:packages/common":
+"@lmc-eu/spirit-common@^0.3.3, @lmc-eu/spirit-common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-common@workspace:packages/common"
   dependencies:
@@ -4716,10 +4716,10 @@ __metadata:
     "@lmc-eu/eslint-config-base": 3.0.2
     "@lmc-eu/eslint-config-jest": 3.0.2
     "@lmc-eu/eslint-config-react": 2.0.2
-    "@lmc-eu/spirit-common": ^0.3.2
+    "@lmc-eu/spirit-common": ^0.3.3
     "@lmc-eu/spirit-demo": ^0.1.1
     "@lmc-eu/spirit-design-tokens": ^1.1.6
-    "@lmc-eu/spirit-web": ^1.14.0
+    "@lmc-eu/spirit-web": ^1.15.0
     "@react-hook/resize-observer": ^1.2.6
     "@rollup/plugin-node-resolve": 15.2.3
     "@testing-library/dom": 9.3.4
@@ -4780,14 +4780,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-web@^1.14.0, @lmc-eu/spirit-web@workspace:packages/web":
+"@lmc-eu/spirit-web@^1.15.0, @lmc-eu/spirit-web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web@workspace:packages/web"
   dependencies:
     "@csstools/normalize.css": ^12.0.0
     "@floating-ui/dom": ^1.5.3
     "@lmc-eu/browserslist-config": 2.0.0
-    "@lmc-eu/spirit-common": ^0.3.2
+    "@lmc-eu/spirit-common": ^0.3.3
     "@lmc-eu/spirit-demo": ^0.1.1
     "@lmc-eu/spirit-design-tokens": ^1.1.6
     "@lmc-eu/spirit-icons": ^0.10.2
