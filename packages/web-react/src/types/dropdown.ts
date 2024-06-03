@@ -18,11 +18,6 @@ export type DropdownTriggerRenderProps = {
   ref: LegacyRef<HTMLButtonElement & HTMLAnchorElement>;
 };
 
-export type DropdownRenderProps = {
-  isOpen: boolean;
-  trigger: DropdownTriggerRenderProps;
-};
-
 export interface DropdownProps extends ChildrenProps, StyleProps {
   id: string;
 }
