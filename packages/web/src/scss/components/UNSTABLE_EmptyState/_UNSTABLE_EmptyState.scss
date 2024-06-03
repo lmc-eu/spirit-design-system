@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use 'theme' as theme;
+@use '../../tools/breakpoint';
+
+.UNSTABLE_EmptyState {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$root-gap;
+    align-items: center;
+    padding-block: theme.$root-padding-block;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
+        padding-block: theme.$root-padding-block-desktop;
+    }
+}
+
+.UNSTABLE_EmptyState__heading {
+    margin-bottom: theme.$heading-margin-bottom;
+}
+
+.UNSTABLE_EmptyState__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$buttons-gap;
+    justify-content: center;
+    width: 100%;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        flex-direction: row;
+    }
+}
+
+.UNSTABLE_EmptyState__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$wrapper-gap;
+    align-self: stretch;
+    align-items: center;
+}
+
+.UNSTABLE_EmptyState__icon {
+    display: flex;
+    align-items: center;
+    padding: theme.$icon-padding;
+    border: 1px solid theme.$icon-border-color;
+    border-radius: theme.$icon-border-radius;
+}
