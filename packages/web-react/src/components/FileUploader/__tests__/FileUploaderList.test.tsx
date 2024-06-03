@@ -1,8 +1,8 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
+import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import FileUploader from '../FileUploader';
 import FileUploaderList from '../FileUploaderList';
-import { SpiritFileUploaderAttachmentProps } from '../../../types';
 
 describe('FileUploaderList', () => {
   const props = {

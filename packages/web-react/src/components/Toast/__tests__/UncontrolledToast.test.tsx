@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import UncontrolledToast from '../UncontrolledToast';
-import { ToastContext } from '../ToastContext';
 import { LinkProps } from '../../../types';
+import { ToastContext } from '../ToastContext';
+import UncontrolledToast from '../UncontrolledToast';
 
 const defaultToast = {
   id: 'test-id',

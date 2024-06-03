@@ -2,12 +2,12 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import Radio from '../Radio';
+import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
 import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import Radio from '../Radio';
 
 describe('Radio', () => {
   classNamePrefixProviderTest(Radio, 'Radio');

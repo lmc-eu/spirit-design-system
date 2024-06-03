@@ -2,9 +2,9 @@ import '@testing-library/jest-dom';
 import { render, waitFor, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import React from 'react';
-import TabList from '../TabList';
-import TabItem from '../TabItem';
 import TabContent from '../TabContent';
+import TabItem from '../TabItem';
+import TabList from '../TabList';
 import TabPane from '../TabPane';
 import UncontrolledTabs from '../UncontrolledTabs';
 

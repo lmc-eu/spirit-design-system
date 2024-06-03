@@ -1,6 +1,6 @@
 const path = require('path');
-const { merge } = require('webpack-merge');
 const TerserPlugin = require('terser-webpack-plugin');
+const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 
 const libName = 'web-react';

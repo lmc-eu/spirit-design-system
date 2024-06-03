@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useState } from 'react';
+import { Button, Icon, Text } from '../..';
 import { Placements } from '../../../constants';
 import { DropdownFullWidthModes, SpiritDropdownProps } from '../../../types';
 import ReadMe from '../README.md';
-import { Button, Icon, Text } from '../..';
 import { Dropdown, DropdownTrigger, DropdownPopover } from '..';
 
 const meta: Meta<typeof Dropdown> = {

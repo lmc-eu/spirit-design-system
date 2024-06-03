@@ -1,5 +1,5 @@
-import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, ForwardedRef, forwardRef, HTMLAttributes } from 'react';
 import { useStyleProps } from '../../hooks';
 import { ModalDialogElementType, ModalDialogProps } from '../../types';
 import { useModalDialogStyleProps } from './useModalDialogStyleProps';

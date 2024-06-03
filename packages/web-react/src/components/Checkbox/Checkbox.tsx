@@ -1,5 +1,5 @@
-import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
+import React, { forwardRef, ForwardedRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritCheckboxProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';

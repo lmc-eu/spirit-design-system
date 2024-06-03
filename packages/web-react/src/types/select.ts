@@ -1,3 +1,4 @@
+import { LabelProps } from './label';
 import {
   HelperTextProps,
   RequiredProps,
@@ -5,7 +6,6 @@ import {
   Validation,
   ValidationTextType,
 } from './shared';
-import { LabelProps } from './label';
 
 export type SelectElementBaseProps = SpiritSelectElementPropsWithRef;
 

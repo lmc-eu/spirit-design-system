@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import UncontrolledAccordion from '../UncontrolledAccordion';
-import AccordionItem from '../AccordionItem';
-import AccordionHeader from '../AccordionHeader';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import AccordionContent from '../AccordionContent';
+import AccordionHeader from '../AccordionHeader';
+import AccordionItem from '../AccordionItem';
+import UncontrolledAccordion from '../UncontrolledAccordion';
 
 describe('UncontrolledAccordion', () => {
   classNamePrefixProviderTest(UncontrolledAccordion, 'Accordion');

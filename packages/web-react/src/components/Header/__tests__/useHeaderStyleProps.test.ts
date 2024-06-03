@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useHeaderStyleProps } from '../useHeaderStyleProps';
 import { HEADER_COLOR_DEFAULT, HEADER_ACTIONS_COLOR_DEFAULT } from '../constants';
+import { useHeaderStyleProps } from '../useHeaderStyleProps';
 
 describe('useHeaderStyleProps', () => {
   it('should return defaults', () => {

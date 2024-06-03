@@ -1,15 +1,15 @@
-import React from 'react';
 import classNames from 'classnames';
-import { SpiritFileUploaderProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
-import { FileUploaderProvider } from './FileUploaderContext';
+import { SpiritFileUploaderProps } from '../../types';
 import {
   DEFAULT_ERROR_MESSAGE_MAX_FILE_SIZE,
   DEFAULT_ERROR_MESSAGE_QUEUE_DUPLICITY,
   DEFAULT_ERROR_MESSAGE_QUEUE_LIMIT,
   DEFAULT_ERROR_MESSAGE_UNSUPPORTED_FILE,
 } from './constants';
+import { FileUploaderProvider } from './FileUploaderContext';
+import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 const FileUploader = (props: SpiritFileUploaderProps) => {
   const {

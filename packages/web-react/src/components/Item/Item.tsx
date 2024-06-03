@@ -1,7 +1,7 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
-import { SpiritItemProps } from '../../types';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
+import { SpiritItemProps } from '../../types';
 import { HelperText } from '../Field';
 import { Icon } from '../Icon';
 import { useItemStyleProps } from './useItemStyleProps';

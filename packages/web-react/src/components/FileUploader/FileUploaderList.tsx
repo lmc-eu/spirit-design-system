@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
 import classNames from 'classnames';
-import { SpiritFileUploaderListProps } from '../../types';
+import React, { useMemo } from 'react';
 import { useStyleProps } from '../../hooks';
-import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
+import { SpiritFileUploaderListProps } from '../../types';
 import { useFileUploaderContext } from './FileUploaderContext';
+import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 const FileUploaderList = (props: SpiritFileUploaderListProps) => {
   const { label, id, attachmentComponent, inputName, hasImagePreview, ...restProps } = props;

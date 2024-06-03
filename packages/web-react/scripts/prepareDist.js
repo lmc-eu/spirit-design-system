@@ -13,11 +13,10 @@
 
 const fs = require('fs');
 const path = require('path');
-
-const distRoot = `${__dirname}/../dist`;
-
 const packageJson = require('../package.json');
 const packageEntryPoints = require('./entryPoints');
+
+const distRoot = `${__dirname}/../dist`;
 
 // Enable default interpretation of .js files as ECMAScript modules.
 packageJson.type = 'module';

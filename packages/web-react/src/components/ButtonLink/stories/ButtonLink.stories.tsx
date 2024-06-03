@@ -1,7 +1,6 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React from 'react';
 import { ActionColors, EmotionColors, Sizes } from '../../../constants';
 import { Icon } from '../../Icon';
 import ReadMe from '../README.md';

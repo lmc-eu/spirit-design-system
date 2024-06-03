@@ -3,11 +3,11 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import TextArea from '../TextArea';
-import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('TextArea', () => {
   classNamePrefixProviderTest(TextArea, 'TextArea');

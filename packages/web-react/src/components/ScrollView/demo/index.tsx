@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import ScrollViewDefault from './ScrollViewDefault';
+import ScrollViewHiddenScrollbar from './ScrollViewHiddenScrollbar';
 import ScrollViewHorizontal from './ScrollViewHorizontal';
 import ScrollViewHorizontalBreakout from './ScrollViewHorizontalBreakout';
 import ScrollViewOverflowDecorators from './ScrollViewOverflowDecorators';
-import ScrollViewHiddenScrollbar from './ScrollViewHiddenScrollbar';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

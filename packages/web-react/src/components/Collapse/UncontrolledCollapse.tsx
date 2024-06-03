@@ -1,6 +1,6 @@
 import React from 'react';
-import Collapse from './Collapse';
 import { SpiritUncontrolledCollapseProps } from '../../types';
+import Collapse from './Collapse';
 import { useCollapse } from './useCollapse';
 import { useCollapseAriaProps } from './useCollapseAriaProps';
 

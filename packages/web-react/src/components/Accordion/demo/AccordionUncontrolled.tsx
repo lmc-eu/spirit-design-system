@@ -2,12 +2,12 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import { ComponentStory } from '@storybook/react';
 import React from 'react';
-import UncontrolledAccordion from '../UncontrolledAccordion';
-import AccordionItem from '../AccordionItem';
-import AccordionHeader from '../AccordionHeader';
-import AccordionContent from '../AccordionContent';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
+import AccordionContent from '../AccordionContent';
+import AccordionHeader from '../AccordionHeader';
+import AccordionItem from '../AccordionItem';
+import UncontrolledAccordion from '../UncontrolledAccordion';
 import { content } from './Accordion';
 
 const Story: ComponentStory<typeof UncontrolledAccordion> = () => (

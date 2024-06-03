@@ -1,10 +1,10 @@
 import React from 'react';
 import { FileUploaderBaseProps, SpiritFileUploaderAttachmentProps } from '../../../types';
-import { useFileQueue } from '../useFileQueue';
 import FileUploader from '../FileUploader';
+import FileUploaderAttachment from '../FileUploaderAttachment';
 import FileUploaderInput from '../FileUploaderInput';
 import FileUploaderList from '../FileUploaderList';
-import FileUploaderAttachment from '../FileUploaderAttachment';
+import { useFileQueue } from '../useFileQueue';
 
 const Story = (args: FileUploaderBaseProps) => {
   const { fileQueue, addToQueue, clearQueue, onDismiss, findInQueue, updateQueue } = useFileQueue();

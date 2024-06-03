@@ -2,13 +2,13 @@
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
 import React from 'react';
 import { AccordionOpenStateType } from '../../../types';
-import Accordion from '../Accordion';
-import AccordionItem from '../AccordionItem';
-import AccordionHeader from '../AccordionHeader';
-import AccordionContent from '../AccordionContent';
-import toggleValueByType from './toggleValueByType';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
+import Accordion from '../Accordion';
+import AccordionContent from '../AccordionContent';
+import AccordionHeader from '../AccordionHeader';
+import AccordionItem from '../AccordionItem';
+import toggleValueByType from './toggleValueByType';
 
 export const content = (
   <p>

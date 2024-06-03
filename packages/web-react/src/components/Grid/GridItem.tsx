@@ -1,5 +1,5 @@
-import React, { ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritGridItemProps } from '../../types';
 import { useGridItemStyleProps } from './useGridItemStyleProps';

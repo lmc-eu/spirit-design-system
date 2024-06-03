@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useState } from 'react';
-import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
 import {
   Button,
   Checkbox,
@@ -16,6 +15,7 @@ import {
   Stack,
   TextField,
 } from '../..';
+import { AlignmentX, AlignmentXDictionaryType, AlignmentY, AlignmentYDictionaryType } from '../../..';
 
 const ModalDefault = () => {
   const [isModalBasicOpen, setModalBasicOpen] = useState(false);

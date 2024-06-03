@@ -1,10 +1,9 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React from 'react';
+import { Button, Icon, Text } from '../..';
 import { Placements } from '../../../constants';
 import { DropdownFullWidthModes } from '../../../types';
-import { Button, Icon, Text } from '../..';
 import ReadMe from '../README.md';
 import { DropdownTrigger, DropdownPopover, UncontrolledDropdown } from '..';
 

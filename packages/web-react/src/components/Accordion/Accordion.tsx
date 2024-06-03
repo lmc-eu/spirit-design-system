@@ -1,7 +1,7 @@
-import React from 'react';
 import classNames from 'classnames';
-import { AccordionProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
+import { AccordionProps } from '../../types';
 import { AccordionProvider } from './AccordionContext';
 import { useAccordionStyleProps } from './useAccordionStyleProps';
 

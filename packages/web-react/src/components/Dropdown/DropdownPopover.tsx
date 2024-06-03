@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { ChildrenProps, StyleProps } from '../../types';
 import { useDropdownContext } from './DropdownContext';

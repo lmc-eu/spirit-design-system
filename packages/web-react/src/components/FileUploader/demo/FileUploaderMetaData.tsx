@@ -1,8 +1,8 @@
 import React, { MouseEvent, useState } from 'react';
-import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 import { SpiritFileUploaderAttachmentProps } from '../../../types';
 import { Button } from '../../Button';
 import { Modal, ModalBody, ModalDialog, ModalFooter } from '../../Modal';
+import { FileUploader, FileUploaderAttachment, FileUploaderInput, FileUploaderList, useFileQueue } from '..';
 
 const FileUploaderMetaData = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

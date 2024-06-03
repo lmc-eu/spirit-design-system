@@ -1,6 +1,6 @@
 import React from 'react';
-import Stack from '../Stack';
 import { TextField } from '../../TextField';
+import Stack from '../Stack';
 
 const StackFormFields = () => (
   <Stack hasSpacing>

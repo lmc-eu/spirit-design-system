@@ -1,9 +1,9 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { HeaderDialogActionsProps } from '../../types';
-import { useHeaderStyleProps } from './useHeaderStyleProps';
 import { HEADER_ACTIONS_COLOR_DEFAULT } from './constants';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialogActions = (props: HeaderDialogActionsProps) => {
   const { color = HEADER_ACTIONS_COLOR_DEFAULT, ...restProps } = props;

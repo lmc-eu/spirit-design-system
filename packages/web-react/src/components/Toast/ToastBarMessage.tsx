@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';
 import { ChildrenProps } from '../../types';
 

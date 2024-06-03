@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { glob } from 'glob';
 import * as path from 'path';
+import { glob } from 'glob';
 import * as recast from 'recast';
 import * as parser from 'recast/parsers/babel';
 

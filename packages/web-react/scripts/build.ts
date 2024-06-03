@@ -1,5 +1,5 @@
-import { resolve } from 'path';
 import { readdirSync, existsSync } from 'fs';
+import { resolve } from 'path';
 
 const getDirs = (source) =>
   readdirSync(source, { withFileTypes: true })

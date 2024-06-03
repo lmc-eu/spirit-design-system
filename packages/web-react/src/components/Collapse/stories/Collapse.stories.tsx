@@ -1,12 +1,11 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React from 'react';
 import { SpiritCollapseProps } from '../../../types';
 import { Button } from '../../Button';
-import content from './content';
 import ReadMe from '../README.md';
 import { Collapse, useCollapse } from '..';
+import content from './content';
 
 const meta: Meta<typeof Collapse> = {
   title: 'Components/Collapse',

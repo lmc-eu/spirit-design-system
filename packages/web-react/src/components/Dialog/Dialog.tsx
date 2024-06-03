@@ -1,7 +1,7 @@
 import React, { useRef, MutableRefObject, Children, cloneElement, forwardRef, ReactElement, ForwardedRef } from 'react';
+import { useCancelEvent, useClickOutside } from '../../hooks';
 import { DialogProps } from '../../types';
 import { useDialog } from './useDialog';
-import { useCancelEvent, useClickOutside } from '../../hooks';
 
 // @TODO: Type 'MutableRefObject<ForwardedRef<HTMLDialogElement | null>>' is not assignable to type 'MutableRefObject<HTMLDialogElement | null>'.
 // Solved using `as MutableRefObject<HTMLDialogElement | null>` but I do not like it

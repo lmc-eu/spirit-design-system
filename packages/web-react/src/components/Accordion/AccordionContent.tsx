@@ -1,11 +1,11 @@
-import React from 'react';
 import classNames from 'classnames';
-import { Collapse } from '../Collapse';
-import { AccordionContentProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { useAccordionStyleProps } from './useAccordionStyleProps';
+import { AccordionContentProps } from '../../types';
+import { Collapse } from '../Collapse';
 import { useAccordionItemContext } from './AccordionItemContext';
 import { useAccordionAriaProps } from './useAccordionAriaProps';
+import { useAccordionStyleProps } from './useAccordionStyleProps';
 import { useOpenItem } from './useOpenItem';
 
 const AccordionContent = ({ children, ...restProps }: AccordionContentProps) => {

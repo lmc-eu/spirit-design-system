@@ -1,7 +1,7 @@
 import React from 'react';
-import { DEMO_ATTACHMENT_BASE64_IMAGE, DEMO_ATTACHMENT_BASE64_IMAGE_40X52 } from './constants';
 import { base64ToByteArray } from '../utils';
 import { FileUploaderAttachment as FileUploaderAttachmentComponent, useFileQueue } from '..';
+import { DEMO_ATTACHMENT_BASE64_IMAGE, DEMO_ATTACHMENT_BASE64_IMAGE_40X52 } from './constants';
 
 const FileUploaderAttachment = () => {
   const { onDismiss } = useFileQueue();

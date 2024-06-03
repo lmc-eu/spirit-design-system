@@ -1,12 +1,12 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import '@testing-library/jest-dom';
-import Text from '../Text';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { sizeExtendedPropsTest, sizePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { SizesDictionaryType, SizeExtendedDictionaryType, TextEmphasis } from '../../../types';
+import Text from '../Text';
 import textPropsDataProvider from './textPropsDataProvider';
 
 describe('Text', () => {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { TabId } from '../../../types';
-import Tabs from '../Tabs';
-import TabList from '../TabList';
+import TabContent from '../TabContent';
 import TabItem from '../TabItem';
 import TabLink from '../TabLink';
-import TabContent from '../TabContent';
+import TabList from '../TabList';
 import TabPane from '../TabPane';
+import Tabs from '../Tabs';
 
 const TabsDefault = () => {
   const [selectedId, setSelectedId] = useState<TabId>(1);

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { AlignmentX, AlignmentY } from '../../constants';
-import { AlignmentXDictionaryType, AlignmentYDictionaryType } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
+import { AlignmentXDictionaryType, AlignmentYDictionaryType } from '../../types';
 
 export interface ModalStylesProps {
   footerAlignment?: AlignmentXDictionaryType;

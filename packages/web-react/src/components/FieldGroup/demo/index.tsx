@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import FieldGroupDefault from './FieldGroupDefault';
-import FieldGroupRequired from './FieldGroupRequired';
-import FieldGroupHiddenLabel from './FieldGroupHiddenLabel';
-import FieldGroupHelperText from './FieldGroupHelperText';
 import FieldGroupDisabled from './FieldGroupDisabled';
-import FieldGroupValidationState from './FieldGroupValidationState';
 import FieldGroupFluid from './FieldGroupFluid';
 import FieldGroupGroupedCheckboxes from './FieldGroupGroupedCheckboxes';
 import FieldGroupGroupedRadios from './FieldGroupGroupedRadios';
+import FieldGroupHelperText from './FieldGroupHelperText';
+import FieldGroupHiddenLabel from './FieldGroupHiddenLabel';
+import FieldGroupRequired from './FieldGroupRequired';
+import FieldGroupValidationState from './FieldGroupValidationState';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

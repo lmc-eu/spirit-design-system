@@ -1,5 +1,5 @@
-import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { ActionLinkColors } from '../../constants';
 import { useStyleProps } from '../../hooks';
 import { SpiritLinkProps } from '../../types';

@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
 import classNames from 'classnames';
+import { ElementType } from 'react';
 import { useClassNamePrefix } from '../../hooks';
 import { SpiritGridProps } from '../../types';
 

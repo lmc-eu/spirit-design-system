@@ -1,3 +1,4 @@
+import { LabelProps } from './label';
 import {
   ChildrenProps,
   HelperTextProps,
@@ -8,7 +9,6 @@ import {
   Validation,
   ValidationTextProp,
 } from './shared';
-import { LabelProps } from './label';
 
 export type TextAreaElementBaseProps = SpiritTextAreaElementPropsWithRef;
 

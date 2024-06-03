@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { HeaderNavProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';

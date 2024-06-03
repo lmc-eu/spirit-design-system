@@ -3,8 +3,8 @@ import { Button } from '../../Button';
 import Dropdown from '../Dropdown';
 import DropdownPopover from '../DropdownPopover';
 import DropdownTrigger from '../DropdownTrigger';
-import DropdownContentFactory from './DropdownContentFactory';
 import { dropdownContentLonger } from './constants';
+import DropdownContentFactory from './DropdownContentFactory';
 
 const DropdownLongerContent = () => {
   const [isOpen, setIsOpen] = React.useState(false);

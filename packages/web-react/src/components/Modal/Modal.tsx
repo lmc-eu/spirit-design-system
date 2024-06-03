@@ -1,11 +1,11 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { AlignmentY } from '../../constants';
 import { useStyleProps, useLastActiveFocus } from '../../hooks';
 import { SpiritModalProps } from '../../types';
-import { useModalStyleProps } from './useModalStyleProps';
-import { ModalProvider } from './ModalContext';
 import Dialog from '../Dialog/Dialog';
+import { ModalProvider } from './ModalContext';
+import { useModalStyleProps } from './useModalStyleProps';
 
 const Modal = (props: SpiritModalProps) => {
   const { children, alignmentY = AlignmentY.CENTER, isOpen, onClose, id, ...restProps } = props;
