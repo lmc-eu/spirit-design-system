@@ -1,5 +1,4 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
-import Toast, { PROPERTY_NAME_SLOWEST_TRANSITION } from '../Toast';
 import {
   ATTRIBUTE_ARIA_EXPANDED,
   ATTRIBUTE_DATA_TARGET,
@@ -8,6 +7,7 @@ import {
   CLASS_NAME_VISIBLE,
 } from '../constants';
 import EventHandler from '../dom/EventHandler';
+import Toast, { PROPERTY_NAME_SLOWEST_TRANSITION } from '../Toast';
 
 const testId = 'toast-test';
 

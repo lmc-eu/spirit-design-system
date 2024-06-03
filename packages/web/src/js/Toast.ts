@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react';
 import BaseComponent from './BaseComponent';
+import { warning } from './common/utilities';
 import {
   ATTRIBUTE_ARIA_EXPANDED,
   ATTRIBUTE_DATA_DISMISS,
@@ -14,9 +15,8 @@ import {
   CLASS_NAME_VISIBLE,
   DEFAULT_TOAST_AUTO_CLOSE_INTERVAL,
 } from './constants';
-import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
 import { EventHandler, SelectorEngine } from './dom';
-import { warning } from './common/utilities';
+import { enableDismissTrigger, enableToggleTrigger, executeAfterTransition, SpiritConfig } from './utils';
 
 const NAME = 'toast';
 const DATA_KEY = `${NAME}`;

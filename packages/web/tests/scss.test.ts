@@ -1,9 +1,9 @@
 /* @jest-environment node */
 
-import { sync } from 'glob';
 import { resolve } from 'path';
-import { runSass } from 'sass-true';
 import { pathToFileURL } from 'url';
+import { sync } from 'glob';
+import { runSass } from 'sass-true';
 
 const importers = [
   // Make @tokens work

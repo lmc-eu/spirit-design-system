@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import EventHandler from '../EventHandler';
 import { clearFixture, getFixture } from '../../../../tests/helpers/fixture';
+import EventHandler from '../EventHandler';
 
 describe('EventHandler', () => {
   let fixtureEl: Element;

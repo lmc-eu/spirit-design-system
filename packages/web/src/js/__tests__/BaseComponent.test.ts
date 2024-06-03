@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import BaseComponent from '../BaseComponent';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import BaseComponent from '../BaseComponent';
 import EventHandler from '../dom/EventHandler';
 
 class DummyClass extends BaseComponent {
