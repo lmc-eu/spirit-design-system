@@ -22,7 +22,9 @@ Enhance your DropdownPopover by incorporating the versatile [Item][item] compone
 Explore additional examples and insights within the dedicated documentation for the [Item][item] component.
 
 ```jsx
-const [isOpen, setIsOpen] = React.useState(false);
+import { useState } from 'react';
+
+const [isOpen, setIsOpen] = useState(false);
 const onToggle = () => setIsOpen(!isOpen);
 
 <Dropdown id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
