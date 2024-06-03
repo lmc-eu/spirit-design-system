@@ -1,8 +1,8 @@
-import { breakpointSort } from '../breakpointSort';
+import token10 from '../__fixtures__/token10.json';
 import token7 from '../__fixtures__/token7.json';
 import token8 from '../__fixtures__/token8.json';
 import token9 from '../__fixtures__/token9.json';
-import token10 from '../__fixtures__/token10.json';
+import { breakpointSort } from '../breakpointSort';
 
 describe('breakpointSort', () => {
   it.each([

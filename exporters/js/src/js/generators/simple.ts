@@ -2,15 +2,15 @@
 // @TODO: https://github.com/lmc-eu/spirit-design-system/issues/470
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+import { formatColor } from '../formatters/color';
+import { normalizeGradientAngle } from '../normalizers/gradients';
 import { kebabCaseToCamelCase, slugifyName } from '../normalizers/names';
 import { singular } from '../normalizers/singular';
 import { printTypes } from '../printers/types';
 import { printUnit } from '../printers/unit';
-import { formatColor } from '../formatters/color';
-import { normalizeGradientAngle } from '../normalizers/gradients';
+import { breakpointSort } from '../sorters/breakpointSort';
 import { localeSort } from '../sorters/localeSort';
 import { valueSort } from '../sorters/valueSort';
-import { breakpointSort } from '../sorters/breakpointSort';
 import { Token } from '..';
 
 function isGroupToken(token: Token): boolean {
