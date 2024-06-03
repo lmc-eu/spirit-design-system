@@ -42,5 +42,28 @@ module.exports = {
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
     'import/no-extraneous-dependencies': ['error', { packageDir: ['./', '../../'] }],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        pathGroups: [
+          {
+            pattern: '**',
+            group: 'internal',
+          },
+          {
+            pattern: '..',
+            group: 'parent',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        'newlines-between': 'never',
+      },
+    ],
   },
 };
