@@ -2,13 +2,13 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { withTabsContext } from '../../../../tests/testUtils/withTabsContext';
-import { TabsContextType } from '../TabContext';
-import Tabs from '../Tabs';
 import TabContent from '../TabContent';
+import { TabsContextType } from '../TabContext';
 import TabPane from '../TabPane';
+import Tabs from '../Tabs';
 
 describe('TabPane', () => {
   stylePropsTest(

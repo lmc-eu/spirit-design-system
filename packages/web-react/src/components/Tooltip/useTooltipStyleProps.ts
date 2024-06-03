@@ -1,7 +1,7 @@
-import { useMemo } from 'react';
 import classNames from 'classnames';
-import { TooltipProps } from '../../types';
+import { useMemo } from 'react';
 import { useClassNamePrefix } from '../../hooks';
+import { TooltipProps } from '../../types';
 
 type omittedProps = 'id' | 'onToggle';
 

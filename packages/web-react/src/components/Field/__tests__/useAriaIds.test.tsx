@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import { render } from '@testing-library/react';
+import React, { useEffect } from 'react';
 import '@testing-library/jest-dom';
 import useAriaIds from '../useAriaIds';
 

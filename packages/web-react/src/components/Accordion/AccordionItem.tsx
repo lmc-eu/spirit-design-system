@@ -1,9 +1,9 @@
-import React from 'react';
 import classNames from 'classnames';
-import { AccordionItemProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { useAccordionStyleProps } from './useAccordionStyleProps';
+import { AccordionItemProps } from '../../types';
 import { AccordionItemProvider } from './AccordionItemContext';
+import { useAccordionStyleProps } from './useAccordionStyleProps';
 
 const AccordionItem = (props: AccordionItemProps) => {
   const { children, elementType: ElementTag = 'article', id, ...restProps } = props;

@@ -4,7 +4,6 @@ import { Transition, TransitionStatus } from 'react-transition-group';
 import { useStyleProps } from '../../hooks';
 import { SpiritToastBarProps } from '../../types';
 import { Icon } from '../Icon';
-import ToastCloseButton from './ToastCloseButton';
 import {
   DEFAULT_TOAST_COLOR,
   ICON_BOX_SIZE,
@@ -12,6 +11,7 @@ import {
   TRANSITIONING_STYLES,
   TRANSITION_DURATION,
 } from './constants';
+import ToastCloseButton from './ToastCloseButton';
 import { useToastBarStyleProps } from './useToastBarStyleProps';
 import { useToastIcon } from './useToastIcon';
 

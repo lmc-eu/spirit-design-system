@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { SpiritUncontrolledFileUploaderProps } from '../../types';
-import { useFileQueue } from './useFileQueue';
 import FileUploader from './FileUploader';
 import FileUploaderInput from './FileUploaderInput';
 import FileUploaderList from './FileUploaderList';
+import { useFileQueue } from './useFileQueue';
 
 const UncontrolledFileUploader = (props: SpiritUncontrolledFileUploaderProps) => {
   const {

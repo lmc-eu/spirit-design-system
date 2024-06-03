@@ -1,3 +1,4 @@
+import { LabelProps } from './label';
 import {
   ChildrenProps,
   HelperTextProps,
@@ -7,7 +8,6 @@ import {
   SpiritInputElementPropsWithRef,
   Validation,
 } from './shared';
-import { LabelProps } from './label';
 
 export type RadioElementBaseProps = SpiritInputElementPropsWithRef;
 

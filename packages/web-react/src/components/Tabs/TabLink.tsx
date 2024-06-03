@@ -1,5 +1,5 @@
-import React, { ElementType, forwardRef } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritTabLinkProps } from '../../types';
 import { useTabsStyleProps } from './useTabsStyleProps';

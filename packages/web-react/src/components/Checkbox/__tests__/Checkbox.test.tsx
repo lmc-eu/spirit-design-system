@@ -2,13 +2,13 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
+import { itemPropsTest } from '../../../../tests/providerTests/itemPropsTest';
+import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
+import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { validationTextPropsTest } from '../../../../tests/providerTests/validationTextPropsTest';
 import Checkbox from '../Checkbox';
-import { requiredPropsTest } from '../../../../tests/providerTests/requiredPropsTest';
 
 describe('Checkbox', () => {
   classNamePrefixProviderTest(Checkbox, 'Checkbox');

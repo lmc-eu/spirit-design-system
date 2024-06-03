@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { DEMO_ATTACHMENT_BASE64_IMAGE_40X52 } from '../demo/constants';
 import { base64ToByteArray, FileUploader, FileUploaderAttachment } from '..';
 

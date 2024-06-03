@@ -1,10 +1,10 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps, useLastActiveFocus } from '../../hooks';
 import { HeaderDialogProps } from '../../types';
-import { useHeaderStyleProps } from './useHeaderStyleProps';
-import { HeaderDialogProvider } from './HeaderDialogContext';
 import { Dialog } from '../Dialog';
+import { HeaderDialogProvider } from './HeaderDialogContext';
+import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialog = (props: HeaderDialogProps) => {
   const { children, id, isOpen, onClose, ...restProps } = props;

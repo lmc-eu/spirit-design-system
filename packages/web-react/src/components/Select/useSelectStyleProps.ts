@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { Validation } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
+import { Validation } from '../../types';
 
 export interface UseSelectStyleProps extends Validation {
   isDisabled?: boolean;

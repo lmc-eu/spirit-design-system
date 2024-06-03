@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useCallback, useState } from 'react';
 import { TabId, TabLinkProps } from '../../../types';
 import { TabContent, TabItem, TabLink, TabList, TabPane, Tabs } from '..';
 

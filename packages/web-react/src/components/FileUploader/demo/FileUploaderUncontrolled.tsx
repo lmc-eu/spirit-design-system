@@ -1,7 +1,7 @@
 import React from 'react';
 import { FileUploaderAttachmentBaseProps, SpiritUncontrolledFileUploaderProps } from '../../../types';
-import UncontrolledFileUploader from '../UncontrolledFileUploader';
 import FileUploaderAttachment from '../FileUploaderAttachment';
+import UncontrolledFileUploader from '../UncontrolledFileUploader';
 
 const Story = (args: SpiritUncontrolledFileUploaderProps) => <UncontrolledFileUploader {...args} />;
 

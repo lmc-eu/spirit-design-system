@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useState } from 'react';
 import { SpiritToastProps } from '../../../types';
 import { Button } from '../../Button';
 import ReadMe from '../README.md';

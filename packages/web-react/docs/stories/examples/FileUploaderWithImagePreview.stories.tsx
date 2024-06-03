@@ -1,11 +1,11 @@
 import React, { useState, MouseEvent } from 'react';
-import { SpiritFileUploaderAttachmentProps } from '../../../src/types';
-import { useFileQueue } from '../../../src/components/FileUploader/useFileQueue';
+import { Button, Modal, ModalBody, ModalDialog, ModalFooter } from '../../../src/components';
 import FileUploader from '../../../src/components/FileUploader/FileUploader';
+import FileUploaderAttachment from '../../../src/components/FileUploader/FileUploaderAttachment';
 import FileUploaderInput from '../../../src/components/FileUploader/FileUploaderInput';
 import FileUploaderList from '../../../src/components/FileUploader/FileUploaderList';
-import FileUploaderAttachment from '../../../src/components/FileUploader/FileUploaderAttachment';
-import { Button, Modal, ModalBody, ModalDialog, ModalFooter } from '../../../src/components';
+import { useFileQueue } from '../../../src/components/FileUploader/useFileQueue';
+import { SpiritFileUploaderAttachmentProps } from '../../../src/types';
 
 export default {
   title: 'Examples/Compositions',

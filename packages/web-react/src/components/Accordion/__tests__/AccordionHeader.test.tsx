@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom';
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
-import AccordionItem from '../AccordionItem';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import AccordionHeader from '../AccordionHeader';
+import AccordionItem from '../AccordionItem';
 
 describe('AccordionHeader', () => {
   classNamePrefixProviderTest(AccordionHeader, 'Accordion__itemHeader');

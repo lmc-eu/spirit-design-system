@@ -1,9 +1,8 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import ReadMe from '../README.md';
+import React from 'react';
 import { Button, Icon, Text } from '../..';
+import ReadMe from '../README.md';
 import { Dropdown, DropdownPopover, DropdownTrigger } from '..';
 
 const meta: Meta<typeof DropdownPopover> = {

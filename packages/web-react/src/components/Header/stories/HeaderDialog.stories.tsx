@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useState } from 'react';
 import { HeaderDialogProps } from '../../../types';
 import { Link } from '../../Link';
 import SpiritLogo from '../demo/SpiritLogo';

@@ -1,7 +1,7 @@
-import React from 'react';
 import classNames from 'classnames';
-import { SpiritPaginationProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
+import { SpiritPaginationProps } from '../../types';
 import { usePaginationStyleProps } from './usePaginationStyleProps';
 
 export const Pagination = (props: SpiritPaginationProps) => {

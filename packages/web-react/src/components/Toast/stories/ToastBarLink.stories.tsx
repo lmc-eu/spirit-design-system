@@ -1,6 +1,6 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { LinkProps } from '../../../types';
 import ReadMe from '../README.md';
 import { Toast, ToastBar, ToastBarMessage, ToastBarLink } from '..';

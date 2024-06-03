@@ -1,5 +1,5 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
 import { TabPaneProps } from '../../types';
 import { useTabContext } from './TabContext';

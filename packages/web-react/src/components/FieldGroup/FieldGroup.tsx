@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import { SpiritFieldGroupProps } from '../../types';
 import { useStyleProps } from '../../hooks';
+import { SpiritFieldGroupProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { VisuallyHidden } from '../VisuallyHidden';
 import { useFieldGroupStyleProps } from './useFieldGroupStyleProps';

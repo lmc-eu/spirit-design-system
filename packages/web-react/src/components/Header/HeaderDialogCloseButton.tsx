@@ -4,8 +4,8 @@ import { useStyleProps } from '../../hooks';
 import { ClickEvent, HeaderDialogCloseButtonProps } from '../../types';
 import { Icon } from '../Icon';
 import { VisuallyHidden } from '../VisuallyHidden';
-import { useHeaderDialogContext } from './HeaderDialogContext';
 import { HEADER_DIALOG_CLOSE_BUTTON_LABEL_DEFAULT } from './constants';
+import { useHeaderDialogContext } from './HeaderDialogContext';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
 
 const HeaderDialogCloseButton = (props: HeaderDialogCloseButtonProps) => {

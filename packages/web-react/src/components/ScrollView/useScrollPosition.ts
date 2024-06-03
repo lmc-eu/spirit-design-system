@@ -1,7 +1,7 @@
 import { UIEvent, MutableRefObject, useState, useEffect } from 'react';
-import { debounce } from '../../utils';
-import { PositionType, ScrollViewDirectionType } from '../../types';
 import { Direction, Position } from '../../constants';
+import { PositionType, ScrollViewDirectionType } from '../../types';
+import { debounce } from '../../utils';
 import { EDGE_DETECTION_INACCURACY_PX, DEBOUNCE_DELAY } from './constants';
 
 export interface UseScrollPositionProps {

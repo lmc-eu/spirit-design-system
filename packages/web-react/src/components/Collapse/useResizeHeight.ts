@@ -1,5 +1,5 @@
-import { useState, RefObject } from 'react';
 import useResizeObserver from '@react-hook/resize-observer';
+import { useState, RefObject } from 'react';
 
 export const useResizeHeight = (ref: RefObject<HTMLElement>): string => {
   const [height, setHeight] = useState<string>('0px');

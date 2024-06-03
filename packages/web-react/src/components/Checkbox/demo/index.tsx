@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import CheckboxDefault from './CheckboxDefault';
-import CheckboxIndeterminate from './CheckboxIndeterminate';
-import CheckboxRequired from './CheckboxRequired';
-import CheckboxHiddenLabel from './CheckboxHiddenLabel';
-import CheckboxHelperText from './CheckboxHelperText';
 import CheckboxDisabled from './CheckboxDisabled';
-import CheckboxValidation from './CheckboxValidation';
+import CheckboxHelperText from './CheckboxHelperText';
+import CheckboxHiddenLabel from './CheckboxHiddenLabel';
+import CheckboxIndeterminate from './CheckboxIndeterminate';
 import CheckboxItem from './CheckboxItem';
+import CheckboxRequired from './CheckboxRequired';
+import CheckboxValidation from './CheckboxValidation';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

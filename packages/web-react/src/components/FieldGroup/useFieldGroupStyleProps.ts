@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { Validation } from '../../types';
 import { useClassNamePrefix } from '../../hooks';
+import { Validation } from '../../types';
 
 export interface UseFieldGroupStyleProps extends Validation {
   isFluid?: boolean;

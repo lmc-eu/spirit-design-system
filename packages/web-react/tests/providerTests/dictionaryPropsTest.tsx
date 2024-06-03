@@ -1,5 +1,5 @@
-import React, { ComponentType } from 'react';
 import { render, waitFor } from '@testing-library/react';
+import React, { ComponentType } from 'react';
 import {
   ActionColorsDictionaryType,
   ActionColors,

@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { SpiritHeadingProps } from '../../../types';
 import { useHeadingStyleProps } from '../useHeadingStyleProps';
 import headingSizeDataProvider from './headingSizeDataProvider';
-import { SpiritHeadingProps } from '../../../types';
 
 describe('useHeadingStyleProps', () => {
   it.each(headingSizeDataProvider)('should return for size %s expected class %s', (size, expectedClassName) => {

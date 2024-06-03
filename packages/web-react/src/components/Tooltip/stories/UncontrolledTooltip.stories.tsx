@@ -1,10 +1,9 @@
-import React, { useEffect, useRef } from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useEffect, useRef } from 'react';
+import { Button } from '../..';
 import { Placements } from '../../../constants';
 import { SpiritTooltipProps } from '../../../types';
-import { Button } from '../..';
 import ReadMe from '../README.md';
 import { UncontrolledTooltip, TooltipPopover, TooltipTrigger } from '..';
 

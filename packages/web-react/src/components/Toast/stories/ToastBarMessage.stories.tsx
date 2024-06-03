@@ -1,6 +1,6 @@
-import React from 'react';
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { ChildrenProps } from '../../../types';
 import ReadMe from '../README.md';
 import { ToastBarMessage } from '..';

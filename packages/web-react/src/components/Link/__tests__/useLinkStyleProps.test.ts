@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { SpiritLinkProps } from '../../../types';
 import { useLinkStyleProps } from '../useLinkStyleProps';
 import linkPropsDataProvider from './linkPropsDataProvider';
-import { SpiritLinkProps } from '../../../types';
 
 describe('useLinkStyleProps', () => {
   it.each(linkPropsDataProvider)('should return classname', (color, isUnderlined, isDisabled, expectedClassName) => {

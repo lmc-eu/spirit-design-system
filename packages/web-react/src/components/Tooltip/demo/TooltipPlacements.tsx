@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useState } from 'react';
 import { Placement } from '@floating-ui/react';
+import React, { ChangeEvent, useState } from 'react';
 import DocsBox from '../../../../docs/DocsBox';
 import { Grid, GridItem } from '../../Grid';
 import { Radio } from '../../Radio';

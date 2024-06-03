@@ -1,7 +1,7 @@
 import React from 'react';
+import DocsBox from '../../../../docs/DocsBox';
 import Grid from '../Grid';
 import GridItem from '../GridItem';
-import DocsBox from '../../../../docs/DocsBox';
 
 const GridItemDemo = () => (
   <Grid>

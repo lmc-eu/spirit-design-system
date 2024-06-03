@@ -1,9 +1,9 @@
-import React from 'react';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import Icon from '../Icon';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import React from 'react';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import Icon from '../Icon';
 
 describe('Icon', () => {
   const AddIcon = (props: Record<string, unknown>) => <Icon {...props} name="add" data-testid="test-icon" />;

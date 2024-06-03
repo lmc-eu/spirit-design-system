@@ -1,5 +1,5 @@
-import React, { ElementType } from 'react';
 import { render } from '@testing-library/react';
+import React, { ElementType } from 'react';
 import { HeaderDialogProvider, HeaderDialogContextProps } from '../../src';
 
 export const renderWithHeaderContext = (

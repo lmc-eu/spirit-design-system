@@ -1,7 +1,7 @@
-import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
-import { SpiritSelectProps } from '../../types';
+import React, { forwardRef, ForwardedRef } from 'react';
 import { useStyleProps } from '../../hooks';
+import { SpiritSelectProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
 import { Icon } from '../Icon';
 import { useSelectStyleProps } from './useSelectStyleProps';

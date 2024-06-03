@@ -1,6 +1,5 @@
-import React, { createRef, FormEvent, MutableRefObject, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { createRef, FormEvent, MutableRefObject, useState } from 'react';
 import { ValidationStates } from '../../../constants';
 import {
   FileQueueMapType,

@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
 import classNames from 'classnames';
-import { SpiritScrollViewProps } from '../../types';
+import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
-import { useScrollViewStyleProps } from './useScrollViewStyleProps';
-import { useScrollPosition } from './useScrollPosition';
+import { SpiritScrollViewProps } from '../../types';
 import { SCROLL_VIEW_DEFAULT_DIRECTION, SCROLL_VIEW_DEFAULT_OVERFLOW_DECORATOR } from './constants';
+import { useScrollPosition } from './useScrollPosition';
+import { useScrollViewStyleProps } from './useScrollViewStyleProps';
 
 const ScrollView = (props: SpiritScrollViewProps) => {
   const {

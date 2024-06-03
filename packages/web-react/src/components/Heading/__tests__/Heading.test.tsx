@@ -1,13 +1,13 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import '@testing-library/jest-dom';
-import Heading from '../Heading';
-import headingSizeDataProvider from './headingSizeDataProvider';
-import { SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { sizeExtendedPropsTest, sizePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
+import { SizesDictionaryType, SizeExtendedDictionaryType } from '../../../types';
+import Heading from '../Heading';
+import headingSizeDataProvider from './headingSizeDataProvider';
 
 describe('Heading', () => {
   classNamePrefixProviderTest(Heading, 'typography-heading-medium-text');

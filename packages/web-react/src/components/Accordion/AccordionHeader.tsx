@@ -1,12 +1,12 @@
-import React from 'react';
 import classNames from 'classnames';
-import { Icon } from '../Icon';
-import { AccordionHeaderProps } from '../../types';
+import React from 'react';
 import { useStyleProps } from '../../hooks';
-import { useAccordionStyleProps } from './useAccordionStyleProps';
+import { AccordionHeaderProps } from '../../types';
+import { Icon } from '../Icon';
 import { useAccordionContext } from './AccordionContext';
 import { useAccordionItemContext } from './AccordionItemContext';
 import { useAccordionAriaProps } from './useAccordionAriaProps';
+import { useAccordionStyleProps } from './useAccordionStyleProps';
 import { useOpenItem } from './useOpenItem';
 
 const AccordionHeader = ({ children, slot, ...restProps }: AccordionHeaderProps) => {

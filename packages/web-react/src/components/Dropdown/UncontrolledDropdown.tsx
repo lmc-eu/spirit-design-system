@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
 import classNames from 'classnames';
+import React, { useRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { UncontrolledDropdownProps } from '../../types';
 import { DropdownProvider } from './DropdownContext';
-import { useDropdownStyleProps } from './useDropdownStyleProps';
 import { useDropdown } from './useDropdown';
+import { useDropdownStyleProps } from './useDropdownStyleProps';
 
 export const UncontrolledDropdown = (props: UncontrolledDropdownProps) => {
   const { children, enableAutoClose = true, fullWidthMode, id, onAutoClose, placement, ...rest } = props;

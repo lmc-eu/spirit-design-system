@@ -1,5 +1,5 @@
-import React, { forwardRef, ForwardedRef } from 'react';
 import classNames from 'classnames';
+import React, { forwardRef, ForwardedRef } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritRadioProps } from '../../types';
 import { HelperText, useAriaIds } from '../Field';

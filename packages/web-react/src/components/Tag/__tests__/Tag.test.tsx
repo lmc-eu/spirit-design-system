@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { emotionColorPropsTest, sizeExtendedPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import Tag from '../Tag';
 
 describe('Tag', () => {

@@ -8,8 +8,8 @@ import {
   sizePropsTest,
 } from '../../../../tests/providerTests/dictionaryPropsTest';
 import { loadingPropsTest } from '../../../../tests/providerTests/loadingPropsTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import Button from '../Button';
 
 describe('Button', () => {

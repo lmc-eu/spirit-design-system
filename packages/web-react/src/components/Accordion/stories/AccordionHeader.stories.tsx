@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-
+import React, { useState } from 'react';
 import { AccordionHeaderProps, AccordionOpenStateType } from '../../../types';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';

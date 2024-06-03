@@ -1,5 +1,5 @@
-import { TextColorsDictionaryType } from './shared';
 import { IconProps } from './icon';
+import { TextColorsDictionaryType } from './shared';
 
 export interface SpinnerProps extends Omit<IconProps, 'name'> {}
 

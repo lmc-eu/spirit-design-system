@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom';
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import HeaderMobileActions from '../HeaderMobileActions';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { HEADER_MENU_TOGGLE_LABEL_DEFAULT } from '../constants';
+import HeaderMobileActions from '../HeaderMobileActions';
 
 describe('HeaderMobileActions', () => {
   classNamePrefixProviderTest(HeaderMobileActions, 'HeaderMobileActions');

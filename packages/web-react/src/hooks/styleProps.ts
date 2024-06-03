@@ -1,5 +1,5 @@
-import { CSSProperties, HTMLAttributes, useContext } from 'react';
 import classNames from 'classnames';
+import { CSSProperties, HTMLAttributes, useContext } from 'react';
 import { warning } from '../common/utilities';
 import ClassNamePrefixContext from '../context/ClassNamePrefixContext';
 import { StyleProps } from '../types';
