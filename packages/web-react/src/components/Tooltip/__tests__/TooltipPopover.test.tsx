@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
-import React from 'react';
 import { render, screen } from '@testing-library/react';
+import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
-import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
+import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
 import { TooltipPopover } from '..';
 
 describe('TooltipPopover', () => {
-  classNamePrefixProviderTest(TooltipPopover, 'Tooltip');
+  classNamePrefixProviderTest(TooltipPopover, 'TooltipPopover');
 
   stylePropsTest((props) => <TooltipPopover {...props} data-testid="TooltipPopover-test" />, 'TooltipPopover-test');
 
