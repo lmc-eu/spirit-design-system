@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import SelectorEngine from '../SelectorEngine';
 import { getFixture, clearFixture } from '../../../../tests/helpers/fixture';
+import SelectorEngine from '../SelectorEngine';
 
 describe('SelectorEngine', () => {
   let fixtureEl: Element;

@@ -1,6 +1,6 @@
 import { clearFixture, createEvent, getFixture } from '../../../../tests/helpers/fixture';
-import { enableToggleTrigger } from '../ComponentFunctions';
 import BaseComponent from '../../BaseComponent';
+import { enableToggleTrigger } from '../ComponentFunctions';
 
 /* eslint-disable class-methods-use-this */
 class DummyClass2 extends BaseComponent {

@@ -1,7 +1,7 @@
 /* eslint-disable no-undefined */
-import Tooltip from '../Tooltip';
-import EventHandler from '../dom/EventHandler';
 import { clearFixture, getFixture, createEvent, noop } from '../../../tests/helpers/fixture';
+import EventHandler from '../dom/EventHandler';
+import Tooltip from '../Tooltip';
 
 describe('Tooltip', () => {
   let fixtureEl: Element;

@@ -1,6 +1,6 @@
-import Modal from '../Modal';
-import EventHandler from '../dom/EventHandler';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import EventHandler from '../dom/EventHandler';
+import Modal from '../Modal';
 
 describe('Modal', () => {
   let fixtureEl: Element;

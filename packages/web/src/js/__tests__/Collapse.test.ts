@@ -1,7 +1,7 @@
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
-import EventHandler from '../dom/EventHandler';
 import Collapse from '../Collapse';
 import { CLASS_NAME_OPEN, CLASS_NAME_TRANSITIONING } from '../constants';
+import EventHandler from '../dom/EventHandler';
 
 describe('Collapse', () => {
   let fixtureEl: Element;

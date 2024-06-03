@@ -1,6 +1,6 @@
-import Offcanvas from '../Offcanvas';
-import EventHandler from '../dom/EventHandler';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import EventHandler from '../dom/EventHandler';
+import Offcanvas from '../Offcanvas';
 
 describe('Offcanvas', () => {
   let fixtureEl: HTMLElement;

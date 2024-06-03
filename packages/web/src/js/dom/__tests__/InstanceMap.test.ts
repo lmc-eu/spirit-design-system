@@ -1,5 +1,5 @@
-import InstanceMap from '../InstanceMap';
 import { getFixture, clearFixture } from '../../../../tests/helpers/fixture';
+import InstanceMap from '../InstanceMap';
 
 describe('InstanceMap', () => {
   const TEST_KEY = 'spirit.test';

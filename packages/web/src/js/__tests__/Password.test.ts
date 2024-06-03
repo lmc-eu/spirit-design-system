@@ -1,5 +1,5 @@
-import Password from '../Password';
 import { clearFixture, getFixture } from '../../../tests/helpers/fixture';
+import Password from '../Password';
 
 describe('Password', () => {
   let fixtureEl: Element;

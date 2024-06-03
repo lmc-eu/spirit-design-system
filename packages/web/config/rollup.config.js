@@ -3,8 +3,8 @@ const path = require('path');
 const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const replace = require('@rollup/plugin-replace');
-const { terser } = require('rollup-plugin-terser');
 const typescript = require('@rollup/plugin-typescript');
+const { terser } = require('rollup-plugin-terser');
 
 const BUNDLE = process.env.BUNDLE === 'true';
 const ESM = process.env.ESM === 'true';
