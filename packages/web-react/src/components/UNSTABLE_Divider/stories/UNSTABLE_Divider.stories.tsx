@@ -5,7 +5,7 @@ import ReadMe from '../README.md';
 import { UNSTABLE_Divider } from '..';
 
 const meta: Meta<typeof UNSTABLE_Divider> = {
-  title: 'Components/UNSTABLE_Divider',
+  title: 'Experimental/UNSTABLE_Divider',
   component: UNSTABLE_Divider,
   parameters: {
     docs: {
