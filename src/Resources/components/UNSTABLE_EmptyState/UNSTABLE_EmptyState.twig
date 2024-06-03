@@ -1,0 +1,83 @@
+{# API #}
+{%- set props = props | default([]) -%}
+{%- set _buttonPrimaryText = props.buttonPrimaryText | default(null) -%}
+{%- set _buttonPrimaryUrl = props.buttonPrimaryUrl | default(null) -%}
+{%- set _buttonSecondaryText = props.buttonSecondaryText | default(null) -%}
+{%- set _buttonSecondaryUrl = props.buttonSecondaryUrl | default(null) -%}
+{%- set _description = props.description -%}
+{%- set _headingElementType = props.headingElementType | default('h2') -%}
+{%- set _iconName = props.iconName | default(null) -%}
+{%- set _linkText = props.linkText | default(null) -%}
+{%- set _linkUrl = props.linkUrl | default(null) -%}
+{%- set _title = props.title -%}
+
+{# Class names #}
+{%- set _rootClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState' -%}
+{%- set _headingClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState__heading' -%}
+{%- set _contentClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState__content' -%}
+{%- set _buttonsClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState__buttons' -%}
+{%- set _wrapperClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState__wrapper' -%}
+{%- set _iconWrapperClassName = _spiritClassPrefix ~ 'UNSTABLE_EmptyState__icon' -%}
+
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
+
+<div
+    {{ mainProps(props) }}
+    {{ styleProp(_styleProps) }}
+    {{ classProp(_classNames) }}
+>
+    <div class="{{ _wrapperClassName }}">
+        {% if _iconName %}
+            <div class="{{ _iconWrapperClassName }}">
+                <Icon name="{{ _iconName }}"/>
+            </div>
+        {% endif %}
+        <div>
+            <Heading
+                elementType="{{ _headingElementType }}"
+                size="xsmall"
+                data-test-empty-tile="{{ _headingElementType }}"
+                UNSTABLE_className="{{ _headingClassName }}"
+            >
+                {{ _title }}
+            </Heading>
+            <Text color="secondary">{{ _description | raw }}</Text>
+        </div>
+    </div>
+    {% if block('content') is not empty %}
+        <div class="{{ _contentClassName }}">
+            {% block content %}{% endblock %}
+        </div>
+    {% else %}
+        {% if _buttonPrimaryUrl or _buttonSecondaryUrl %}
+            <div class="{{ _buttonsClassName }}">
+                {% if _buttonPrimaryText and _buttonPrimaryUrl %}
+                    <ButtonLink
+                        href="{{ _buttonPrimaryUrl }}"
+                        color="primary"
+                    >
+                        {{ _buttonPrimaryText }}
+                    </ButtonLink>
+                {% endif %}
+                {% if _buttonSecondaryText and _buttonSecondaryUrl %}
+                    <ButtonLink
+                        href="{{ _buttonSecondaryUrl }}"
+                        color="secondary"
+                    >
+                        {{ _buttonSecondaryText }}
+                    </ButtonLink>
+                {% endif %}
+            </div>
+        {% endif %}
+        {% if _linkUrl and _linkText %}
+            <Link
+                href="{{ _linkUrl }}"
+                color="primary"
+            >
+                {{ _linkText }}
+            </Link>
+        {% endif %}
+    {% endif %}
+</div>
