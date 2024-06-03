@@ -1,0 +1,12 @@
+@use '@tokens' as tokens;
+
+$breakpoints: tokens.$breakpoints;
+$root-gap: tokens.$space-700;
+$root-padding-block: tokens.$space-800;
+$root-padding-block-desktop: tokens.$space-900;
+$heading-margin-bottom: tokens.$space-500;
+$buttons-gap: tokens.$space-600;
+$wrapper-gap: tokens.$space-600;
+$icon-padding: tokens.$space-500;
+$icon-border-radius: tokens.$radius-200;
+$icon-border-color: tokens.$border-secondary-default;
