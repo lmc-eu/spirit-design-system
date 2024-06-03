@@ -1,5 +1,4 @@
 import { path } from 'zx';
-
 import { ROOT_PATH } from './constants';
 import { _dirname } from './helpers';
 import { getVersions } from './helpers/versions';

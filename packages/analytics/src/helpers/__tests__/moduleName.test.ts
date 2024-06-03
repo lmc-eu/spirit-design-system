@@ -1,6 +1,6 @@
 /* eslint-disable no-undefined */
-import { getModuleName } from '../moduleName';
 import { Instance } from '../../types';
+import { getModuleName } from '../moduleName';
 
 describe('getModuleName', () => {
   it('should return "html_element" for HTML elements', () => {

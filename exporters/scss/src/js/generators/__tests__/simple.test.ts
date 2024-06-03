@@ -1,6 +1,6 @@
 import { Token } from '../../index';
-import { generateSimple } from '../simple';
 import simpleTokens from '../__fixtures__/simpleTokens.json';
+import { generateSimple } from '../simple';
 
 describe('generateSimple', () => {
   it.each([[simpleTokens]])('should generate simple output', (allTokens: Array<Token>) => {
