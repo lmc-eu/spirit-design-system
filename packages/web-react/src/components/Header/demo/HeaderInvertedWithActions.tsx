@@ -30,7 +30,7 @@ const HeaderInvertedWithActions = () => {
           <SpiritLogo />
         </Link>
         <HeaderMobileActions dialogId="header_dialog_example" isOpen={isOpen} onOpen={handleOpen} />
-        <HeaderDesktopActions color="primary" aria-label="Main navigation">
+        <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
               <HeaderLink isCurrent>Job offers</HeaderLink>
@@ -49,7 +49,7 @@ const HeaderInvertedWithActions = () => {
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
-        <HeaderDesktopActions color="secondary">
+        <HeaderDesktopActions isAtEnd>
           <Button color="primary">Sign in</Button>
           <Button color="inverted">Enterprise</Button>
         </HeaderDesktopActions>

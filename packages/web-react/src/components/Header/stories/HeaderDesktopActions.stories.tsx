@@ -28,16 +28,15 @@ const meta: Meta<typeof HeaderDesktopActions> = {
     children: {
       control: 'object',
     },
-    color: {
-      control: 'radio',
-      options: ['primary', 'secondary'],
+    isAtEnd: {
+      control: 'boolean',
       table: {
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: false },
       },
     },
   },
   args: {
-    color: 'primary',
+    isAtEnd: false,
   },
 };
 
@@ -81,7 +80,7 @@ const HeaderWithHooks = (args: HeaderDesktopActionsProps) => {
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
-        <HeaderDesktopActions color="secondary" aria-label="User area">
+        <HeaderDesktopActions isAtEnd aria-label="User area">
           <HeaderNav>
             <HeaderNavItem>
               <HeaderDialogButton
