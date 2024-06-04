@@ -15,6 +15,7 @@ Introducing version 2 of the _spirit-web_ package
   - [Dropdown: Classes](#dropdown-classes)
   - [Dropdown: Combined Placements](#dropdown-combined-placements)
   - [Dropdown: Shadow Feature Flag](#dropdown-shadow-feature-flag)
+  - [Header: HeaderDesktopActions Alignment](#header-headerdesktopactions-alignment)
   - [Modal: (Non)Scrollable](#modal-nonscrollable)
   - [Modal: Custom Height](#modal-custom-height)
   - [Modal: Uniform Variant Feature Flag](#modal-uniform-variant-feature-flag)
@@ -128,6 +129,20 @@ shadow is the default.
 
 You can now safely delete the CSS class `.spirit-feature-dropdown-enable-enhanced-shadow` and/or the Sass variable
 `$dropdown-enable-enhanced-shadow` from your project as they have no effect.
+
+### Header: HeaderDesktopActions Alignment
+
+The `HeaderDesktopActions` component slots were simplified and the second slot alignment is now
+available by using the `HeaderDesktopActions--end` modifier.
+
+The `HeaderDesktopActions--primary` and `HeaderDesktopActions--secondary` modifier classes were removed.
+
+#### Migration Guide
+
+Use the `.HeaderDesktopActions--end` modifier class instead of the `HeaderDesktopActions--secondary` modifier class.
+
+- `.HeaderDesktopActions.HeaderDesktopActions--primary` → `.HeaderDesktopActions`
+- `.HeaderDesktopActions.HeaderDesktopActions--secondary` → `.HeaderDesktopActions.HeaderDesktopActions--end`
 
 ### Modal: (Non)Scrollable
 
