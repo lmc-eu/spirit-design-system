@@ -125,7 +125,12 @@
     @include test.it('should generate correct placement classes based on a dictionary') {
         @include test.assert() {
             @include test.output() {
-                @include dictionaries.generate-placements('Test', ('top-start'));
+                @include dictionaries.generate-placements(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'top-start',
+                    )
+                );
             }
 
             @include test.expect() {
@@ -141,7 +146,12 @@
 
         @include test.assert() {
             @include test.output() {
-                @include dictionaries.generate-placements('Test', ('right-end'));
+                @include dictionaries.generate-placements(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'right-end',
+                    )
+                );
             }
 
             @include test.expect() {
@@ -151,6 +161,56 @@
                     inset: auto auto 0 100%;
                     translate: var(--test-offset, 0) var(--test-offset-orthogonal, 0);
                     transform-origin: left bottom;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-placements(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'top-start',
+                    ),
+                    $offset: 10px,
+                    $is-controlled: true
+                );
+            }
+
+            @include test.expect() {
+                .Test[data-spirit-placement='top-start'] {
+                    --test-offset: 10px;
+                    --test-offset-orthogonal: 0;
+
+                    transform-origin: bottom left;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-placements(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'top-start',
+                    ),
+                    $offset: 10px,
+                    $is-controlled: true,
+                    $has-arrow: true
+                );
+            }
+
+            @include test.expect() {
+                .Test[data-spirit-placement='top-start'] {
+                    --test-offset: 10px;
+                    --test-offset-orthogonal: 0;
+
+                    transform-origin: bottom left;
+                }
+
+                .Test[data-spirit-placement='top-start'] > .Test__arrow {
+                    transform-origin: center;
+                    rotate: z 180deg;
                 }
             }
         }

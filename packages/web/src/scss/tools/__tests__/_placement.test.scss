@@ -162,32 +162,13 @@
         @include test.assert() {
             @include test.output() {
                 .child-test {
-                    @include placement.child(3);
+                    @include placement.child($z-index: 3);
                 }
             }
             @include test.expect() {
                 .child-test {
                     position: absolute;
                     z-index: 3;
-                }
-            }
-        }
-    }
-
-    @include test.it('should apply custom styles to child variant') {
-        @include test.assert() {
-            @include test.output() {
-                .child-variant-test {
-                    @include placement.child-variant('test', 'top', 10px);
-                }
-            }
-            @include test.expect() {
-                .child-variant-test {
-                    --test-offset: 10px;
-
-                    inset: auto auto 100% 50%;
-                    translate: var(--test-offset-orthogonal, -50%) calc(-1 * var(--test-offset, 0));
-                    transform-origin: bottom;
                 }
             }
         }
@@ -207,6 +188,46 @@
 
                     inset: unset;
                     translate: unset;
+                }
+            }
+        }
+    }
+
+    @include test.it('should apply custom styles to child variant') {
+        @include test.assert() {
+            @include test.output() {
+                .child-variant-test {
+                    @include placement.child-variant($prefix: 'test', $placement: 'top', $offset: 10px);
+                }
+            }
+            @include test.expect() {
+                .child-variant-test {
+                    --test-offset: 10px;
+
+                    inset: auto auto 100% 50%;
+                    translate: var(--test-offset-orthogonal, -50%) calc(-1 * var(--test-offset, 0));
+                    transform-origin: bottom;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                .child-variant-test {
+                    @include placement.child-variant(
+                        $prefix: 'test',
+                        $placement: 'top',
+                        $offset: 10px,
+                        $is-controlled: true
+                    );
+                }
+            }
+            @include test.expect() {
+                .child-variant-test {
+                    --test-offset: 10px;
+                    --test-offset-orthogonal: 0;
+
+                    transform-origin: bottom;
                 }
             }
         }
@@ -244,24 +265,6 @@
                     inset: auto auto 100% 50%;
                     translate: -50% 0%;
                     rotate: z 0deg;
-                }
-            }
-        }
-    }
-
-    @include test.it('should apply controlled styles to arrow') {
-        @include test.assert() {
-            @include test.output() {
-                .arrow-controlled-test {
-                    @include placement.arrow-controlled();
-                }
-            }
-
-            @include test.expect() {
-                .arrow-controlled-test {
-                    inset: unset;
-                    translate: unset;
-                    transform-origin: center;
                 }
             }
         }
