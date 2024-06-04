@@ -1,5 +1,4 @@
-// 1. Although it may seem pointless, having the arrow as a standalone HTML element has a purpose: the arrow can be
-//    precisely positioned in sticky tooltips, e.g. with Floating UI:
+// 1. The arrow must be a standalone HTML element so the Floating UI library can position it correctly.
 //    https://floating-ui.com
 //
 // 2. Reuse already generated custom properties to allow overriding the arrow appearance live in the browser.
@@ -15,6 +14,7 @@
 
 .TooltipPopover {
     @include placement.child();
+    @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
     @include typography.generate(theme.$typography);
 
     --tooltip-max-width: #{theme.$max-width};
@@ -72,6 +72,7 @@
     $class-name: 'TooltipPopover',
     $dictionary-values: theme.$placement-dictionary,
     $offset: theme.$arrow-height,
+    $is-controlled: true,
     $has-arrow: true
 );
 
@@ -82,15 +83,4 @@
 
 .TooltipPopover.is-visible {
     @extend %visible;
-}
-
-// Controlled placement
-// stylelint-disable-next-line selector-max-class
-.TooltipPopover.TooltipPopover {
-    @include placement.child-controlled($prefix: 'tooltip', $offset: theme.$arrow-height);
-}
-
-// stylelint-disable-next-line selector-max-class
-.TooltipPopover.TooltipPopover .TooltipPopover__arrow {
-    @include placement.arrow-controlled();
 }
