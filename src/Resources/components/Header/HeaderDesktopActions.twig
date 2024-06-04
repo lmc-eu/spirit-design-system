@@ -1,14 +1,14 @@
 {# API #}
 {%- set props = props | default([]) -%}
-{%- set _color = props.color | default('primary') -%}
+{%- set _isAtEnd = props.isAtEnd | default(false) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'HeaderDesktopActions' -%}
-{%- set _rootColorClassName = _spiritClassPrefix ~ 'HeaderDesktopActions--' ~ _color -%}
+{%- set _rootAtEndClassName = _isAtEnd ? _spiritClassPrefix ~ 'HeaderDesktopActions--end' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootAtEndClassName, _styleProps.className ] -%}
 
 <nav {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     {% block content %}{% endblock %}
