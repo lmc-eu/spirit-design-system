@@ -9,9 +9,7 @@ describe('useHeaderStyleProps', () => {
     expect(result.current.classProps).toBeDefined();
     expect(result.current.classProps.root).toBe(`Header Header--${HEADER_COLOR_DEFAULT}`);
     expect(result.current.classProps.headerButton).toBe('HeaderLink');
-    expect(result.current.classProps.headerDesktopActions).toBe(
-      `HeaderDesktopActions HeaderDesktopActions--${HEADER_ACTIONS_COLOR_DEFAULT}`,
-    );
+    expect(result.current.classProps.headerDesktopActions).toBe('HeaderDesktopActions');
     expect(result.current.classProps.headerDialog).toBeDefined();
     expect(result.current.classProps.headerDialog.root).toBe('HeaderDialog');
     expect(result.current.classProps.headerDialog.panel).toBe('HeaderDialog__panel');
