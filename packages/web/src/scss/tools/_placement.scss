@@ -207,22 +207,27 @@ $_logical-to-physical-placement-map: (
     z-index: $z-index;
 }
 
-@mixin child-variant($prefix, $placement, $offset: 0) {
-    --#{$prefix}-offset: #{$offset}; // 1.3.a
-
-    inset: map.get($_inset-map, $placement); // 1.2
-    translate: map.get(-get-child-translate-map($prefix), $placement); // 1.3
-    transform-origin: string.unquote(
-        transform($placement, $main-axis-inverse: true, $cross-axis-physical: true, $join-with: ' ')
-    );
-}
-
 @mixin child-controlled($prefix, $offset) {
     --#{$prefix}-offset-orthogonal: 0; // 2.
     --#{$prefix}-offset: #{$offset}; // 2.
 
     inset: unset; // 2.
     translate: unset; // 2.
+}
+
+@mixin child-variant($prefix, $placement, $offset: 0, $is-controlled: false) {
+    --#{$prefix}-offset: #{$offset}; // 1.3.a, 2.
+
+    @if $is-controlled {
+        --#{$prefix}-offset-orthogonal: 0; // 2.
+    } @else {
+        inset: map.get($_inset-map, $placement); // 1.2
+        translate: map.get(-get-child-translate-map($prefix), $placement); // 1.3
+    }
+
+    transform-origin: string.unquote(
+        transform($placement, $main-axis-inverse: true, $cross-axis-physical: true, $join-with: ' ')
+    );
 }
 
 @mixin arrow($prefix, $width, $height, $corner-offset) {
@@ -234,14 +239,13 @@ $_logical-to-physical-placement-map: (
     transform-origin: bottom center;
 }
 
-@mixin arrow-variant($prefix, $placement) {
-    inset: map.get($_inset-map, $placement); // 1.2
-    translate: map.get(-get-arrow-translate-map($prefix), $placement); // 1.3
-    rotate: z map.get($_arrow-rotate-map, $placement);
-}
+@mixin arrow-variant($prefix, $placement, $is-controlled: false) {
+    @if $is-controlled {
+        transform-origin: center; // 2.
+    } @else {
+        inset: map.get($_inset-map, $placement); // 1.2
+        translate: map.get(-get-arrow-translate-map($prefix), $placement); // 1.3
+    }
 
-@mixin arrow-controlled() {
-    inset: unset; // 2.
-    translate: unset; // 2.
-    transform-origin: center; // 2.
+    rotate: z map.get($_arrow-rotate-map, $placement);
 }
