@@ -13,7 +13,7 @@
     }
 }
 
-.HeaderDesktopActions--secondary {
+.HeaderDesktopActions--end {
     @include breakpoint.up(theme.$header-breakpoint) {
         margin-inline-start: auto;
     }
