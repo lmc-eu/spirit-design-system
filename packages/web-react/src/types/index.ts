@@ -4,6 +4,7 @@ export * from './breadcrumbs';
 export * from './button';
 export * from './checkbox';
 export * from './collapse';
+export * from './divider';
 export * from './dropdown';
 export * from './fieldGroup';
 export * from './fileUploader';
