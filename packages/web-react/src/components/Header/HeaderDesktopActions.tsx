@@ -3,12 +3,16 @@ import classNames from 'classnames';
 import { useStyleProps } from '../../hooks';
 import { HeaderDesktopActionsProps } from '../../types';
 import { useHeaderStyleProps } from './useHeaderStyleProps';
-import { HEADER_ACTIONS_COLOR_DEFAULT } from './constants';
+
+const defaultProps = {
+  isAtEnd: false,
+};
 
 const HeaderDesktopActions = (props: HeaderDesktopActionsProps) => {
-  const { color = HEADER_ACTIONS_COLOR_DEFAULT, ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { isAtEnd, ...restProps } = propsWithDefaults;
 
-  const { classProps } = useHeaderStyleProps({ actionsColor: color });
+  const { classProps } = useHeaderStyleProps({ hasActionsAtEnd: isAtEnd });
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
