@@ -43,6 +43,23 @@ module.exports = {
     ],
     // problem of export default {} in stories
     'react/display-name': 'off',
+    // ignore UNSTABLE_ prefix in component names
+    'react/jsx-pascal-case': [
+      'error',
+      {
+        allowAllCaps: true,
+        ignore: ['UNSTABLE_*'],
+      },
+    ],
+    // ignore UNSAFE and UNSTABLE_ prefixes
+    camelcase: [
+      'error',
+      {
+        properties: 'never',
+        ignoreDestructuring: false,
+        allow: ['^UNSAFE_', '^UNSTABLE_'],
+      },
+    ],
     // disable for `scripts` and `config`
     '@typescript-eslint/no-var-requires': 'off',
     // interface which extends some other interface is not considered as meaningful interface
