@@ -19,6 +19,7 @@ Introducing version 3 of the _spirit-web-twig_ package
   - [Grid: Breakpoint Props](#grid-breakpoint-props)
   - [Grid: GridSpan Component](#grid-gridspan-component)
   - [Header: Abstracts Class and Style](#header-abstracts-class-and-style)
+  - [Header: HeaderDesktopActions `isAtEnd` prop](#header-headerdesktopactions-isatend-prop)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
   - [Modal: ModalDialog Custom Height](#modal-modaldialog-custom-height)
   - [Modal: ModalDialog Uniform Appearance](#modal-modaldialog-uniform-appearance)
@@ -184,6 +185,21 @@ Use `UNSAFE_style` and `UNSAFE_className` instead.
 #### Migration Guide
 
 Replace `style` with `UNSAFE_style` and `class` with `UNSAFE_className`.
+
+### Header: HeaderDesktopActions `isAtEnd` prop
+
+The `HeaderDesktopActions` component slots were simplified and the second slot alignment is now
+available by using the `isAtEnd` prop.
+
+The `HeaderDesktopActions` prop `color` was removed.
+
+#### Migration Guide
+
+Use the `HeaderDesktopActions` with `isAtEnd` prop instead of the `color="secondary"` prop.
+Remove the `color` prop from the `HeaderDesktopActions` component.
+
+- `<HeaderDesktopActions color="secondary" … />` → `<HeaderDesktopActions isAtEnd … />`
+- `<HeaderDesktopActions color="primary" … />` → `<HeaderDesktopActions … />`
 
 ### Modal: ModalDialog `isScrollable` Prop
 
