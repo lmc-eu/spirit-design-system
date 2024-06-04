@@ -155,19 +155,18 @@ and `aria-controls` attributes.
 As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
 containers that define vertical alignment and spacing.
 
-There are two slots you can use: primary actions (aligned to left in LTR documents), and secondary actions (aligned to
-right).
+If you need to align actions to the end of the Header, use the `HeaderDesktopActions--end` modifier class.
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
 control here.
 
 ```html
-<nav class="HeaderDesktopActions HeaderDesktopActions--primary" aria-label="Main navigation">
-  <!-- Desktop-only primary actions -->
+<nav class="HeaderDesktopActions" aria-label="Main navigation">
+  <!-- Desktop-only actions -->
 </nav>
-<nav class="HeaderDesktopActions HeaderDesktopActions--secondary">
-  <!-- Desktop-only secondary actions -->
+<nav class="HeaderDesktopActions HeaderDesktopActions--end">
+  <!-- Desktop-only actions aligned to the end -->
 </nav>
 ```
 
@@ -220,7 +219,7 @@ You can avoid using the [HeaderNav](#navigation) for standalone links. That way,
 the same container:
 
 ```html
-<nav class="HeaderDesktopActions HeaderDesktopActions--secondary">
+<nav class="HeaderDesktopActions HeaderDesktopActions--end">
   <a href="#" class="HeaderLink">Marian</a>
   <a href="#" class="Button Button--primary Button--medium">Sign in</a>
 </nav>
@@ -382,7 +381,7 @@ And the complete Header Dialog:
   <!-- HeaderMobileActions: end -->
 
   <!-- HeaderDesktopActions: start -->
-  <nav class="HeaderDesktopActions HeaderDesktopActions--primary" aria-label="Main navigation">
+  <nav class="HeaderDesktopActions" aria-label="Main navigation">
     <!-- HeaderNav: start -->
     <ul class="HeaderNav">
       <li class="HeaderNavItem">
@@ -406,7 +405,7 @@ And the complete Header Dialog:
   <!-- HeaderDesktopActions: end -->
 
   <!-- HeaderDesktopActions: start -->
-  <nav class="HeaderDesktopActions HeaderDesktopActions--secondary">
+  <nav class="HeaderDesktopActions HeaderDesktopActions--end">
     <a href="#" class="Button Button--primary Button--medium">Sign in</a>
     <a href="#" class="Button Button--inverted Button--medium">Enterprise</a>
   </nav>
