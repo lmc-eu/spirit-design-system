@@ -17,7 +17,16 @@ test.describe('Demo Homepages', () => {
   for (const demo of demos) {
     test(`test demo homepage ${demo.package}`, async ({ page }) => {
       await page.goto(demo.url);
-      await expect(page).toHaveScreenshot(`${demo.package}.png`, { fullPage: true, maxDiffPixelRatio: 0.01 });
+      // wait for fonts to load
+      await page.evaluate(() => document.fonts.ready);
+      // wait for transitions to finish
+      await page.waitForLoadState();
+      // disable animations to avoid flaky screenshots
+      await page.addStyleTag({ content: '*, *::before, *::after { animation-iteration-count: 1 !important }' });
+      await expect(page).toHaveScreenshot(`${demo.package}.png`, {
+        animations: 'disabled',
+        fullPage: true,
+      });
     });
   }
 });
