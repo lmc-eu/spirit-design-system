@@ -18,6 +18,7 @@ Introducing version 2 of the _spirit-web-react_ package
   - [Dropdown: Refactored](#dropdown-refactored)
   - [Grid: Breakpoint Props](#grid-breakpoint-props)
   - [Grid: GridSpan Component](#grid-gridspan-component)
+  - [Header: HeaderDesktopActions `isAtEnd` prop](#header-headerdesktopactions-isatend-prop)
   - [Modal: ModalDialog `isExpandedOnMobile` Prop](#modal-modaldialog-isexpandedonmobile-prop)
   - [Modal: ModalDialog `isScrollable` Prop](#modal-modaldialog-isscrollable-prop)
   - [Modal: ModalDialog Custom Height](#modal-modaldialog-custom-height)
@@ -236,6 +237,31 @@ Examples:
   - `columnStart` = 1 + (12 - 8) / 2 = 3
   - `columnStart` = 1 + (12 - 6) / 2 = 4
   - `columnStart` = 1 + (12 - 4) / 2 = 5
+
+### Header: HeaderDesktopActions `isAtEnd` prop
+
+The `HeaderDesktopActions` component slots were simplified and the second slot alignment is now
+available by using the `isAtEnd` prop.
+
+The `HeaderDesktopActions` prop `color` was removed.
+
+#### Migration Guide
+
+Use our codemod to automatically migrate your code.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/header-headerdesktopactions-isatend
+```
+
+See [Codemods documentation][readme-codemods] for more details.
+
+Or follow these steps:
+
+Use the `HeaderDesktopActions` with `isAtEnd` prop instead of the `color="secondary"` prop.
+Remove the `color` prop from the `HeaderDesktopActions` component.
+
+- `<HeaderDesktopActions color="secondary" … />` → `<HeaderDesktopActions isAtEnd … />`
+- `<HeaderDesktopActions color="primary" … />` → `<HeaderDesktopActions … />`
 
 ### Modal: ModalDialog `isExpandedOnMobile` Prop
 
