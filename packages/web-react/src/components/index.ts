@@ -33,4 +33,5 @@ export * from './TextField';
 export * from './TextFieldBase';
 export * from './Toast';
 export * from './Tooltip';
+export * from './UNSTABLE_Divider';
 export * from './VisuallyHidden';
