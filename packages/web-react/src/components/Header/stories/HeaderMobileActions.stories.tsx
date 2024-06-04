@@ -72,7 +72,7 @@ const HeaderWithHooks = (args: HeaderMobileActionsProps) => {
           <SpiritLogo />
         </Link>
         <HeaderMobileActions {...args} isOpen={isMenuOpen} onOpen={handleMenuOpen} />
-        <HeaderDesktopActions color="primary" aria-label="Main navigation">
+        <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
               <HeaderLink isCurrent aria-current="page">
@@ -93,7 +93,7 @@ const HeaderWithHooks = (args: HeaderMobileActionsProps) => {
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
-        <HeaderDesktopActions color="secondary" aria-label="User area">
+        <HeaderDesktopActions isAtEnd aria-label="User area">
           <HeaderNav>
             <HeaderNavItem>
               <HeaderDialogButton

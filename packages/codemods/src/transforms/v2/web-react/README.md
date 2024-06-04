@@ -102,6 +102,28 @@ npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/grid-gridspan
 + <GridItem columnStart={5} columnEnd="span 4" … />
 ```
 
+### `v2/web-react/header-headerdesktopactions-isatend` — HeaderDesktopActions isAtEnd Prop
+
+This codemod sets the `isAtEnd` prop instead of the removed `color="secondary"` prop.
+Also it removes the `color="primary"` prop from the `HeaderDesktopActions` component
+because it is not needed anymore.
+
+#### Usage
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v2/web-react/header-headerdesktopactions-isatend
+```
+
+#### Example
+
+```diff
+- <HeaderDesktopActions color="secondary" … />
++ <HeaderDesktopActions isAtEnd … />
+
+- <HeaderDesktopActions color="primary" … />
++ <HeaderDesktopActions … />
+```
+
 ### `v2/web-react/modal-custom-height` — Modal Custom Height
 
 This codemod updates the `ModalDialog` component to use the `height` and

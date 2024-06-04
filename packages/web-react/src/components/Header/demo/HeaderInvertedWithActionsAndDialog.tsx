@@ -38,7 +38,7 @@ const HeaderInvertedWithActionsAndDialog = () => {
           <SpiritLogo />
         </Link>
         <HeaderMobileActions dialogId="header_dialog_example_1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
-        <HeaderDesktopActions color="primary" aria-label="Main navigation">
+        <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
               <HeaderLink isCurrent aria-current="page">
@@ -59,7 +59,7 @@ const HeaderInvertedWithActionsAndDialog = () => {
             </HeaderNavItem>
           </HeaderNav>
         </HeaderDesktopActions>
-        <HeaderDesktopActions color="secondary">
+        <HeaderDesktopActions isAtEnd>
           <HeaderButton
             onClick={handleUserMenuOpen}
             aria-controls="header_dialog_example_2"

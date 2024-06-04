@@ -34,7 +34,7 @@ export interface HeaderProps extends SpiritElementProps, ChildrenProps {
 export interface HeaderButtonProps extends SpiritButtonElementProps, ChildrenProps {}
 
 export interface HeaderDesktopActionsProps extends SpiritElementProps, ChildrenProps {
-  color?: HeaderActionsColorType;
+  isAtEnd?: boolean;
 }
 
 export interface HeaderDialogProps extends SpiritDialogElementProps, HeaderDialogHandlingProps, ChildrenProps {

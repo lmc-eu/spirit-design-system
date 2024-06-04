@@ -5,6 +5,7 @@ import { HEADER_COLOR_DEFAULT, HEADER_ACTIONS_COLOR_DEFAULT } from './constants'
 
 export interface UseHeaderStyleProps {
   color?: HeaderColorType;
+  hasActionsAtEnd?: boolean;
   isSimple?: boolean;
   actionsColor?: HeaderActionsColorType;
   isCurrentLink?: boolean;
@@ -35,15 +36,17 @@ export interface UseHeaderStyleReturn {
 
 export const useHeaderStyleProps = (
   {
-    color = HEADER_COLOR_DEFAULT,
-    isSimple,
     actionsColor = HEADER_ACTIONS_COLOR_DEFAULT,
+    color = HEADER_COLOR_DEFAULT,
+    hasActionsAtEnd,
     isCurrentLink,
+    isSimple,
   }: UseHeaderStyleProps = {
-    color: HEADER_COLOR_DEFAULT,
-    isSimple: false,
     actionsColor: HEADER_ACTIONS_COLOR_DEFAULT,
+    color: HEADER_COLOR_DEFAULT,
+    hasActionsAtEnd: false,
     isCurrentLink: false,
+    isSimple: false,
   },
 ): UseHeaderStyleReturn => {
   const headerClass = useClassNamePrefix('Header');
@@ -54,7 +57,7 @@ export const useHeaderStyleProps = (
   const headerLinkClass = `${headerClass}Link`;
   const headerLinkCurrentClass = `${headerLinkClass}--current`;
   const headerDesktopActionsClass = `${headerClass}DesktopActions`;
-  const headerDesktopActionsColorClass = `${headerDesktopActionsClass}--${actionsColor}`;
+  const headerDesktopActionsAtEndClass = `${headerDesktopActionsClass}--end`;
   const headerMobileActionsClass = `${headerClass}MobileActions`;
   const headerDialogClass = `${headerClass}Dialog`;
   const headerDialogPanelClass = `${headerDialogClass}__panel`;
@@ -71,7 +74,7 @@ export const useHeaderStyleProps = (
   const classProps = {
     root: classNames(headerClass, headerColorClass, { [headerSimpleClass]: isSimple }),
     headerButton: headerLinkClass,
-    headerDesktopActions: classNames(headerDesktopActionsClass, headerDesktopActionsColorClass),
+    headerDesktopActions: classNames(headerDesktopActionsClass, { [headerDesktopActionsAtEndClass]: hasActionsAtEnd }),
     headerDialog: {
       root: headerDialogClass,
       panel: headerDialogPanelClass,
