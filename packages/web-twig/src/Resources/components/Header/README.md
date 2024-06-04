@@ -169,8 +169,7 @@ and [escape hatches][readme-escape-hatches].
 As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
 containers that define vertical alignment and spacing.
 
-There are two slots you can use: primary actions (aligned to left in LTR documents), and secondary actions (aligned to
-right).
+If you need to align actions to the end of the Header, use the `isAtEnd` prop.
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
@@ -178,18 +177,18 @@ control here.
 
 ```twig
 <HeaderDesktopActions aria-label="Main navigation">
-  <!-- Desktop-only primary actions -->
+  <!-- Desktop-only actions -->
 </HeaderDesktopActions>
-<HeaderDesktopActions color="secondary">
-  <!-- Desktop-only secondary actions -->
+<HeaderDesktopActions isAtEnd>
+  <!-- Desktop-only actions aligned to the end -->
 </HeaderDesktopActions>
 ```
 
 #### API
 
-| Name    | Type                       | Default   | Required | Description                 |
-| ------- | -------------------------- | --------- | -------- | --------------------------- |
-| `color` | [`primary` \| `secondary`] | `primary` | ✕        | Color and alignment variant |
+| Name      | Type   | Default | Required | Description                                 |
+| --------- | ------ | ------- | -------- | ------------------------------------------- |
+| `isAtEnd` | `bool` | `false` | ✕        | If true, the actions are aligned to the end |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -242,7 +241,7 @@ You can avoid using the [HeaderNav](#navigation) for standalone links. That way,
 the same container:
 
 ```twig
-<HeaderDesktopActions color="secondary">
+<HeaderDesktopActions isAtEnd>
   <HeaderButton>Marian</HeaderButton>
   <Button color="primary">Sign in</Button>
 </HeaderDesktopActions>
@@ -434,7 +433,7 @@ composition:
       <!-- … -->
     </HeaderNav>
   </HeaderDesktopActions>
-  <HeaderDesktopActions color="secondary">
+  <HeaderDesktopActions isAtEnd>
     <!-- Desktop-only secondary actions -->
   </HeaderDesktopActions>
 </Header>
@@ -488,7 +487,7 @@ And the complete Header Dialog:
       </HeaderNavItem>
     </HeaderNav>
   </HeaderDesktopActions>
-  <HeaderDesktopActions color="secondary">
+  <HeaderDesktopActions isAtEnd>
     <ButtonLink color="primary" href="/">Sign in</ButtonLink>
     <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
   </HeaderDesktopActions>
