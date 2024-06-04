@@ -40,7 +40,7 @@ const SERVERS = {
   },
   TESTING: {
     web: `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app'}/packages/web/`,
-    'web-react': `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app/'}/packages/web-react/`,
+    'web-react': `${process.env.WEBSITE_URL || 'https://spirit-design-system.netlify.app'}/packages/web-react/`,
     'web-twig': process.env.DEMO_WEB_TWIG_URL || '',
   },
 };
