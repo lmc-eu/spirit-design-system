@@ -50,7 +50,7 @@
     >
       <h2 class="docs-Heading">Real-World examples</h2>
 
-      <form id="form1" method="get" novalidate>
+      <form id="form-1" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="username" class="TextField__label TextField__label--required">Username</label>
@@ -69,8 +69,8 @@
             <input type="password" id="password" class="TextField__input" required data-spirit-required-message="Please choose a password" data-spirit-pattern= "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/" data-spirit-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="retypepassword" class="TextField__label TextField__label--required">Retype password</label>
-            <input type="password" id="retypepassword" class="TextField__input" data-spirit-equals="#password" data-spirit-equals-message="Passwords don't match" />
+            <label for="retype-password" class="TextField__label TextField__label--required">Retype password</label>
+            <input type="password" id="retype-password" class="TextField__input" data-spirit-equals="#password" data-spirit-equals-message="Passwords don't match" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="email" class="TextField__label TextField__label--required">Email</label>
@@ -80,8 +80,8 @@
             <label for="phone" class="TextField__label">Phone</label>
             <input type="tel" id="phone" class="TextField__input" placeholder="+420 733 333 333" data-spirit-pattern="/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/" data-spirit-pattern-message="Invalid phone number" />
           </div>
-          <label for="checkboxfield1" class="CheckboxField" data-spirit-validate>
-            <input type="checkbox" id="checkboxfield1" name="checkboxfield1" class="CheckboxField__input" required />
+          <label for="checkbox-field-1" class="CheckboxField" data-spirit-validate>
+            <input type="checkbox" id="checkbox-field-1" name="checkboxfield1" class="CheckboxField__input" required />
             <span class="CheckboxField__text">
               <span class="CheckboxField__label CheckboxField__label--required">I accept the terms and conditions (required)</span>
             </span>
@@ -111,39 +111,39 @@
     >
       <h2 class="docs-Heading">Common Validations</h2>
 
-      <form id="form2" method="get" novalidate>
+      <form id="form-2" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="required" class="TextField__label TextField__label--required">Required TextField</label>
             <input type="text" id="required" class="TextField__input" required />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="emailCommon" class="TextField__label">TextField <code>type="email"</code>, not required</label>
-            <input type="email" id="emailCommon" class="TextField__input" />
+            <label for="email-common" class="TextField__label">TextField <code>type="email"</code>, not required</label>
+            <input type="email" id="email-common" class="TextField__input" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="minlength" class="TextField__label">TextField <code>minlength="2"</code></label>
-            <input type="text" id="minlength" class="TextField__input" minlength="2" />
+            <label for="min-length" class="TextField__label">TextField <code>minlength="2"</code></label>
+            <input type="text" id="min-length" class="TextField__input" minlength="2" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="number" class="TextField__label">TextField <code>type="number"</code>, not required</label>
             <input type="number" id="number" class="TextField__input" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="numbermin" class="TextField__label">TextField <code>type="number"</code>, <code>min="100"</code>, not required</label>
-            <input type="number" id="numbermin" class="TextField__input" min="100" />
+            <label for="number-min" class="TextField__label">TextField <code>type="number"</code>, <code>min="100"</code>, not required</label>
+            <input type="number" id="number-min" class="TextField__input" min="100" />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="numberMinRequired" class="TextField__label TextField__label--required">TextField <code>type="number"</code>, <code>min="100"</code>, required</label>
-            <input type="number" id="numberMinRequired" class="TextField__input" min="100" required />
+            <label for="number-min-required" class="TextField__label TextField__label--required">TextField <code>type="number"</code>, <code>min="100"</code>, required</label>
+            <input type="number" id="number-min-required" class="TextField__input" min="100" required />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="patternRequired" class="TextField__label TextField__label--required">TextField with <code>pattern="/^\d+\.\d{2}$/"</code> (match decimal with 2 points), required</label>
-            <input type="number" id="patternRequired" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/" required />
+            <label for="pattern-required" class="TextField__label TextField__label--required">TextField with <code>pattern="/^\d+\.\d{2}$/"</code> (match decimal with 2 points), required</label>
+            <input type="number" id="pattern-required" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/" required />
           </div>
           <div class="TextField TextField--fluid" data-spirit-validate>
-            <label for="patternCustomMessage" class="TextField__label TextField__label--required">TextField with same as above field, but with custom message</label>
-            <input type="number" id="patternCustomMessage" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
+            <label for="pattern-custom-message" class="TextField__label TextField__label--required">TextField with same as above field, but with custom message</label>
+            <input type="number" id="pattern-custom-message" step="0.01" class="TextField__input" pattern="/^\d+\.\d{2}$/g" required data-spirit-pattern-message="The value must have 2 decimal points" />
           </div>
           <div>
             <button type="submit" class="Button Button--primary Button--medium Button--block">Submit</button>
@@ -171,7 +171,7 @@
     >
       <h2 class="docs-Heading">Custom global validator</h2>
 
-      <form id="form3" method="get" novalidate>
+      <form id="form-3" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="custom-global-validator" class="TextField__label TextField__label--required">Required TextField, Range 10 - 30</label>
@@ -203,7 +203,7 @@
     >
       <h2 class="docs-Heading">Custom validator to a specific field</h2>
 
-      <form id="form4" method="get" novalidate>
+      <form id="form-4" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="custom-field-specific-validator" class="TextField__label TextField__label--required">Required TextField, First Letter Capitalized</label>
@@ -235,7 +235,7 @@
     >
       <h2 class="docs-Heading">Custom error messages</h2>
 
-      <form id="form5" method="get" novalidate>
+      <form id="form-5" method="get" novalidate>
         <div class="Stack Stack--hasSpacing">
           <div class="TextField TextField--fluid" data-spirit-validate>
             <label for="custom-errors-textfield" class="TextField__label TextField__label--required">Required TextField</label>
