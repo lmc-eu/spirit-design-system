@@ -3,8 +3,8 @@ import Checkbox from '../Checkbox';
 
 const CheckboxDefault = () => (
   <>
-    <Checkbox id="checkboxDefault" name="checkboxDefault" label="Checkbox Label" />
-    <Checkbox id="checkboxDefaultChecked" name="checkboxDefaultChecked" label="Checkbox Label" isChecked />
+    <Checkbox id="checkbox-default" name="checkboxDefault" label="Checkbox Label" />
+    <Checkbox id="checkbox-default-checked" name="checkboxDefaultChecked" label="Checkbox Label" isChecked />
   </>
 );
 

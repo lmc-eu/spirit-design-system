@@ -16,7 +16,7 @@ const FileUploaderAttachment = () => {
         <FileUploaderAttachmentComponent
           name="test"
           file={new File([''], 'Document.pdf', { type: 'image/png', lastModified: 123456789 })}
-          id="1"
+          id="attachment-1"
           label="Document.pdf"
           onDismiss={onDismiss}
         />
@@ -24,7 +24,7 @@ const FileUploaderAttachment = () => {
           hasImagePreview
           name="test"
           file={new File([byteArray], 'test1.png', { type: 'image/png', lastModified: 123456789 })}
-          id="2"
+          id="attachment-2"
           label="Image with a long name.jpg"
           onDismiss={onDismiss}
           onEdit={() => {
@@ -35,7 +35,7 @@ const FileUploaderAttachment = () => {
           hasImagePreview
           name="test"
           file={new File([byteArrayPortrait], 'test1.png', { type: 'image/png', lastModified: 123456789 })}
-          id="2"
+          id="attachment-3"
           label="Contained image"
           onDismiss={onDismiss}
           imageObjectFit="contain"

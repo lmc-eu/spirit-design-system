@@ -14,7 +14,7 @@ const TooltipDismissibleViaJS = () => {
     <>
       <p>Saves data to local storage.</p>
       <Tooltip
-        id="TooltipDismissibleViaJS"
+        id="tooltip-dismissible-via-js"
         isOpen={open}
         onToggle={setOpen}
         placement="right"

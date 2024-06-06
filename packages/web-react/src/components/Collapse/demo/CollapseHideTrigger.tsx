@@ -17,7 +17,7 @@ const CollapseHideTrigger = () => {
       <a href="#" role="button" onClick={toggleHandler} aria-expanded={isOpen}>
         <span className="accessibility-closed">… more</span>
       </a>
-      <Collapse id="collapseHideTriggerId" isOpen={isOpen}>
+      <Collapse id="collapse-hide-trigger-id" isOpen={isOpen}>
         Commodo metus a lorem, a aliquet vestibulum rutrum pharetra sapien sed, ullamcorper quis odio dolor ut aliquam.
         Rutrum suspendisse, fermentum tellus metus a lorem cursus volutpat proin bibendum, sed diam a duis id dui et
         tempus. Ligula non, sapien augue libero eget aliquam semper varius, posuere urna leo vitae ullamcorper.

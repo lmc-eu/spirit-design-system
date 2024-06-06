@@ -16,7 +16,7 @@ describe('UncontrolledCollapse', () => {
   beforeEach(() => {
     render(
       <UncontrolledCollapse
-        id="exampleId"
+        id="example-id"
         // Normally we want to display state change, not in this test, prop is passed anyway
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         renderTrigger={({ isOpen, ...rest }) => (
@@ -53,6 +53,6 @@ describe('UncontrolledCollapse', () => {
   it('should have correct id', () => {
     const element = screen.getByRole('button').nextElementSibling as HTMLElement;
 
-    expect(element).toHaveAttribute('id', 'exampleId');
+    expect(element).toHaveAttribute('id', 'example-id');
   });
 });

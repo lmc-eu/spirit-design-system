@@ -5,7 +5,7 @@ This is React implementation of the abstract component TextFieldBase for the pur
 Basic example usage:
 
 ```jsx
-<TextFieldBase id="textFieldBaseDefault" label="Example TextFieldBase" name="textFieldBaseDefault" />
+<TextFieldBase id="text-field-base-default" label="Example TextFieldBase" name="textFieldBaseDefault" />
 ```
 
 Advanced example usage:
@@ -13,7 +13,7 @@ Advanced example usage:
 ```jsx
 <TextFieldBase
   helperText="custom helper text"
-  id="textFieldBaseAdvanced"
+  id="text-field-base-advanced"
   isMultiline
   isRequired
   label="Example multiline TextFieldBase"
@@ -29,7 +29,7 @@ TextFieldBase with password toggle (button to reveal the password):
 ```jsx
 <TextFieldBase
   hasPasswordToggle
-  id="textFieldBasePasswordToggle"
+  id="text-field-base-password-toggle"
   isRequired
   label="Password"
   name="textFieldBasePasswordToggle"

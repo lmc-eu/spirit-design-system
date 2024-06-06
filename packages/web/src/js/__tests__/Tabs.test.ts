@@ -273,7 +273,7 @@ describe('Tabs', () => {
       fixtureEl.innerHTML = `
         <ul class="Tabs">
           <li class="Tabs__link is-selected" id="foo" data-spirit-target="#panel" data-spirit-toggle="tabs"></li>
-          <li class="Tabs__link" data-spirit-target="#panel2" data-spirit-toggle="tabs"></li>
+          <li class="Tabs__link" data-spirit-target="#panel-2" data-spirit-toggle="tabs"></li>
         </ul>
         <div id="panel"></div>
         <div id="panel-2"></div>

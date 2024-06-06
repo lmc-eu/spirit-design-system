@@ -4,7 +4,7 @@ import FieldGroup from '../FieldGroup';
 
 const FieldGroupRequired = () => {
   return (
-    <FieldGroup id="FieldGroupRequired" label="Label" isRequired>
+    <FieldGroup id="field-group-required" label="Label" isRequired>
       <DocsBox>Item</DocsBox>
       <DocsBox>Item</DocsBox>
       <DocsBox>Item</DocsBox>

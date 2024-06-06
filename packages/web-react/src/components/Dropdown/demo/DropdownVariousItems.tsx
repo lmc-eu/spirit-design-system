@@ -12,7 +12,7 @@ const DropdownVariousItems = () => {
   const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown id="DropdownVariousItems" isOpen={isOpen} onToggle={onToggle}>
+    <Dropdown id="dropdown-various-items" isOpen={isOpen} onToggle={onToggle}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
       <DropdownPopover>
         <Item elementType="a" href="#" label="Plain text" />

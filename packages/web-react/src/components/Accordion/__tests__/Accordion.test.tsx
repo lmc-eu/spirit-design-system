@@ -12,7 +12,7 @@ describe('Accordion', () => {
   stylePropsTest((props: Record<string, unknown>) => {
     const toggle = () => null;
 
-    return <Accordion open={[]} toggle={toggle} {...props} id="AccordionExample" data-testid="test-accordion" />;
+    return <Accordion open={[]} toggle={toggle} {...props} id="accordion-example" data-testid="test-accordion" />;
   }, 'test-accordion');
 
   restPropsTest(Accordion, '.Accordion');

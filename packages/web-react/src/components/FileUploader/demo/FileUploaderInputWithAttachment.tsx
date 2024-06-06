@@ -12,13 +12,13 @@ const FileUploaderInputWithAttachment = () => {
         clearQueue={clearQueue}
         fileQueue={fileQueue}
         findInQueue={findInQueue}
-        id="fileUploaderInputWithAttachment"
+        id="file-uploader-input-with-attachment"
         onDismiss={onDismiss}
         updateQueue={updateQueue}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderInputWithAttachmentInput"
+          id="file-uploader-input-with-attachment-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -30,7 +30,7 @@ const FileUploaderInputWithAttachment = () => {
           <FileUploaderAttachment
             name="test"
             file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
-            id="1"
+            id="attachment-1"
             label="My resume.docx"
             onDismiss={onDismiss}
           />
@@ -43,13 +43,13 @@ const FileUploaderInputWithAttachment = () => {
         clearQueue={clearQueue}
         fileQueue={fileQueue}
         findInQueue={findInQueue}
-        id="fileUploaderInputWithAttachmentValidationState"
+        id="file-uploader-input-with-attachment-validation-state"
         onDismiss={onDismiss}
         updateQueue={updateQueue}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderInputWithAttachmentValidationStateInput"
+          id="file-uploader-input-with-attachment-validation-state-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -63,14 +63,14 @@ const FileUploaderInputWithAttachment = () => {
           <FileUploaderAttachment
             name="test"
             file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
-            id="1"
+            id="attachment-2"
             label="My resume.docx"
             onDismiss={onDismiss}
           />
           <FileUploaderAttachment
             name="test"
             file={new File([''], 'My resume.docx', { type: '.pdf', lastModified: 123456789 })}
-            id="1"
+            id="attachment-3"
             label="My resume with a name that is too long so it needs to be trimmed. You're not gonna see this part!.pdf"
             onDismiss={onDismiss}
           />

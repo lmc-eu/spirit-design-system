@@ -4,8 +4,8 @@ import Stack from '../Stack';
 
 const StackFormFields = () => (
   <Stack hasSpacing>
-    <TextField id="textfieldStack1" label="Label" name="textfieldStack1" placeholder="Placeholder" isRequired />
-    <TextField id="textfieldStack2" label="Label" name="textfieldStack2" placeholder="Placeholder" isRequired />
+    <TextField id="textfield-stack-1" label="Label" name="textfieldStack1" placeholder="Placeholder" isRequired />
+    <TextField id="textfield-stack-2" label="Label" name="textfieldStack2" placeholder="Placeholder" isRequired />
   </Stack>
 );
 

@@ -5,7 +5,7 @@ import TextArea from '../TextArea';
 const TextAreaInline = () => (
   <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
     <TextArea
-      id="textareaInline"
+      id="textarea-inline"
       isLabelHidden
       label="Hidden Label"
       name="textareaInline"

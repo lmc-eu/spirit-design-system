@@ -19,7 +19,7 @@ export const ModalWithScrollView = () => {
       <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="ModalExample">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader>Modal with ScrollView </ModalHeader>
           <ScrollView overflowDecorators="both">

@@ -15,13 +15,13 @@ const FileUploaderInputDisabled = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderDisabled"
+      id="file-uploader-disabled"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max file size is 10 MB"
-        id="fileUploaderDisabledInput"
+        id="file-uploader-disabled-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file"
@@ -33,7 +33,7 @@ const FileUploaderInputDisabled = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderDisabledAttachment"
+        id="file-uploader-disabled-attachment"
         inputName="attachments"
         label="Attachments"
       />

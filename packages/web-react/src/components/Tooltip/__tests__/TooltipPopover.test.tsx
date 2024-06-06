@@ -9,7 +9,7 @@ import { TooltipPopover } from '..';
 describe('TooltipPopover', () => {
   classNamePrefixProviderTest(TooltipPopover, 'TooltipPopover');
 
-  stylePropsTest((props) => <TooltipPopover {...props} data-testid="TooltipPopover-test" />, 'TooltipPopover-test');
+  stylePropsTest((props) => <TooltipPopover {...props} data-testid="tooltip-popover-test" />, 'tooltip-popover-test');
 
   restPropsTest((props) => <TooltipPopover {...props} />, 'div');
 

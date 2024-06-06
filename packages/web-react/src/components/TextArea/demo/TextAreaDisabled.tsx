@@ -3,10 +3,10 @@ import TextArea from '../TextArea';
 
 const TextAreaDisabled = () => (
   <>
-    <TextArea id="textareaDisabled" label="Label" name="textareaDisabled" placeholder="Placeholder" isDisabled />
+    <TextArea id="textarea-disabled" label="Label" name="textareaDisabled" placeholder="Placeholder" isDisabled />
 
     <TextArea
-      id="textareaDisabledFilled"
+      id="textarea-disabled-filled"
       label="Label"
       name="textareaDisabledFilled"
       placeholder="Placeholder"

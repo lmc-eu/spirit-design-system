@@ -3,7 +3,7 @@ import Select from '../Select';
 import ChildrenNode from './ChildrenNode';
 
 const SelectSimple = () => (
-  <Select id="selectSimple" name="selectSimple" label="Label">
+  <Select id="select-simple" name="selectSimple" label="Label">
     <ChildrenNode />
   </Select>
 );

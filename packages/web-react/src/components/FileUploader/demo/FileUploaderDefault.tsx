@@ -15,13 +15,13 @@ const FileUploaderDefault = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderDefault"
+      id="file-uploader-default"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max file size is 10 MB"
-        id="fileUploaderDefaultInput"
+        id="file-uploader-default-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file"
@@ -31,7 +31,7 @@ const FileUploaderDefault = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderDefaultAttachment"
+        id="file-uploader-default-attachment"
         inputName="attachments"
         label="Attachments"
       />

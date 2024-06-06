@@ -3,17 +3,17 @@ import Radio from '../Radio';
 
 const RadioItem = () => (
   <>
-    <Radio id="radioItemDefault" isItem label="Radio Label" name="item" />
+    <Radio id="radio-item-default" isItem label="Radio Label" name="item" />
 
-    <Radio id="radioItemDefaultChecked" isChecked isItem label="Radio Label" name="item" />
+    <Radio id="radio-item-default-checked" isChecked isItem label="Radio Label" name="item" />
 
-    <Radio helperText="Helper text" id="radioItemHelperText" isItem label="Radio Label" name="item" />
+    <Radio helperText="Helper text" id="radio-item-helper-text" isItem label="Radio Label" name="item" />
 
-    <Radio id="radioItemDisabled" isDisabled isItem label="Radio Label" name="itemDisabled" />
+    <Radio id="radio-item-disabled" isDisabled isItem label="Radio Label" name="itemDisabled" />
 
     <Radio
       helperText="Helper text"
-      id="radioItemDisabledHelperText"
+      id="radio-item-disabled-helper-text"
       isDisabled
       isChecked
       isItem

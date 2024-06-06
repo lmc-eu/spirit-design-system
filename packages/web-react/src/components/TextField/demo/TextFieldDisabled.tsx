@@ -3,10 +3,10 @@ import TextField from '../TextField';
 
 const TextFieldDisabled = () => (
   <>
-    <TextField id="textfieldDisabled" label="Label" name="textfieldDisabled" placeholder="Placeholder" isDisabled />
+    <TextField id="textfield-disabled" label="Label" name="textfieldDisabled" placeholder="Placeholder" isDisabled />
 
     <TextField
-      id="textfieldDisabledFilled"
+      id="textfield-disabled-filled"
       label="Label"
       name="textfieldDisabledFilled"
       placeholder="Placeholder"

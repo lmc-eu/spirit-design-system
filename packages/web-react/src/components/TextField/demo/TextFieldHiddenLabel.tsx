@@ -3,7 +3,7 @@ import TextField from '../TextField';
 
 const TextFieldHiddenLabel = () => (
   <TextField
-    id="textfieldHiddenLabel"
+    id="textfield-hidden-label"
     label="Label"
     name="textfieldHiddenLabel"
     placeholder="Placeholder"

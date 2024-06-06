@@ -41,13 +41,13 @@ const FileUploaderInputValidationStates = () => {
         clearQueue={clearQueueSuccess}
         fileQueue={fileQueueSuccess}
         findInQueue={findInQueueSuccess}
-        id="fileUploaderValidationStatesSuccess"
+        id="file-uploader-validation-states-success"
         onDismiss={onDismissSuccess}
         updateQueue={updateQueueSuccess}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderValidationStatesSuccessInput"
+          id="file-uploader-validation-states-success-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -60,7 +60,7 @@ const FileUploaderInputValidationStates = () => {
         />
         <FileUploaderList
           attachmentComponent={attachmentComponent}
-          id="fileUploaderValidationStatesSuccessAttachment"
+          id="file-uploader-validation-states-success-attachment"
           inputName="attachmentsSuccess"
           label="Attachments"
         />
@@ -71,13 +71,13 @@ const FileUploaderInputValidationStates = () => {
         clearQueue={clearQueueWarning}
         fileQueue={fileQueueWarning}
         findInQueue={findInQueueWarning}
-        id="fileUploaderValidationStatesWarning"
+        id="file-uploader-validation-states-warning"
         onDismiss={onDismissWarning}
         updateQueue={updateQueueWarning}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderValidationStatesWarningInput"
+          id="file-uploader-validation-states-warning-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -90,7 +90,7 @@ const FileUploaderInputValidationStates = () => {
         />
         <FileUploaderList
           attachmentComponent={attachmentComponent}
-          id="fileUploaderValidationStatesWarningAttachment"
+          id="file-uploader-validation-states-warning-attachment"
           inputName="attachmentsWarning"
           label="Attachments"
         />
@@ -101,13 +101,13 @@ const FileUploaderInputValidationStates = () => {
         clearQueue={clearQueueDanger}
         fileQueue={fileQueueDanger}
         findInQueue={findInQueueDanger}
-        id="fileUploaderValidationStatesDanger"
+        id="file-uploader-validation-states-danger"
         onDismiss={onDismissDanger}
         updateQueue={updateQueueDanger}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderValidationStatesDangerInput"
+          id="file-uploader-validation-states-danger-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -120,7 +120,7 @@ const FileUploaderInputValidationStates = () => {
         />
         <FileUploaderList
           attachmentComponent={attachmentComponent}
-          id="fileUploaderValidationStatesDangerAttachment"
+          id="file-uploader-validation-states-danger-attachment"
           inputName="attachmentsDanger"
           label="Attachments"
         />

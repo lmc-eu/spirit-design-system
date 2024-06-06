@@ -5,7 +5,7 @@ This is React implementation of the [Select][select] component.
 Basic example usage:
 
 ```jsx
-<Select id="selectDefault" label="Label" name="selectDefault">
+<Select id="select-default" label="Label" name="selectDefault">
   <option value="" selected>
     Placeholder
   </option>
@@ -18,7 +18,7 @@ Advanced example usage:
 
 ```jsx
 <Select
-  id="selectAdvanced"
+  id="select-advanced"
   name="selectAdvanced"
   validationState="danger"
   validationText="validation failed"

@@ -463,7 +463,7 @@ composition:
 ```jsx
 <Header color="inverted">
   {/* Branding */}
-  <HeaderMobileActions dialogId="header_dialog_example" isOpen={isOpen} onOpen={handleOpen}>
+  <HeaderMobileActions dialogId="header-dialog-example" isOpen={isOpen} onOpen={handleOpen}>
     {/* Optional mobile-only actions */}
   </HeaderMobileActions>
   <HeaderDesktopActions aria-label="Navigation">
@@ -482,7 +482,7 @@ composition:
 And the complete Header Dialog:
 
 ```jsx
-<HeaderDialog id="header_dialog_example" aria-label="Menu" isOpen={isOpen} onClose={handleClose}>
+<HeaderDialog id="header-dialog-example" aria-label="Menu" isOpen={isOpen} onClose={handleClose}>
   <HeaderDialogCloseButton />
   <HeaderDialogActions>
     <HeaderDialogNav>
