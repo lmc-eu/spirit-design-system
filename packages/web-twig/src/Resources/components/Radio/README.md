@@ -5,14 +5,14 @@ This is Twig implementation of the [Radio][radio] component.
 Basic example usage:
 
 ```html
-<Radio id="radioDefault" label="Label" name="radioDefault" isChecked />
+<Radio id="radio-default" label="Label" name="radioDefault" isChecked />
 ```
 
 Advanced example usage:
 
 ```html
 <Radio
-  id="radioAdvanced"
+  id="radio-advanced"
   label="some label"
   isChecked
   name="radioAdvanced"

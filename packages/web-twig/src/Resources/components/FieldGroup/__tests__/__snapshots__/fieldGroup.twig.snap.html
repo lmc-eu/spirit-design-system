@@ -5,7 +5,7 @@
     </title>
   </head>
   <body>
-    <fieldset id="fieldGroupWithChildren" class="FieldGroup">
+    <fieldset id="field-group-with-children" class="FieldGroup">
       <div class="FieldGroup__fields">
         <div>
           Item 1
@@ -22,7 +22,7 @@
     </fieldset>
     <!-- Render with hidden label -->
 
-    <fieldset id="fieldGroupHiddenLabel" class="FieldGroup">
+    <fieldset id="field-group-hidden-label" class="FieldGroup">
       <legend class="accessibility-hidden">Label</legend>
       <div class="FieldGroup__fields">
         <div>
@@ -40,7 +40,7 @@
     </fieldset>
     <!-- Render in danger state -->
 
-    <fieldset id="fieldGroupValidationDanger" class="FieldGroup FieldGroup--danger">
+    <fieldset id="field-group-validation-danger" class="FieldGroup FieldGroup--danger">
       <div class="FieldGroup__fields">
         <div>
           Item 1
@@ -57,7 +57,7 @@
     </fieldset>
     <!-- Render with allowed HTML attributes -->
 
-    <fieldset id="fieldGroupWithAllowedHTMLAttributes" form="myFormId" name="myFieldGroupName" class="FieldGroup">
+    <fieldset id="field-group-with-allowed-html-attributes" form="my-form-id" name="myFieldGroupName" class="FieldGroup">
       <div class="FieldGroup__fields">
         <div>
           Item 1
@@ -74,7 +74,7 @@
     </fieldset>
     <!-- Render with UNSAFE props -->
 
-    <fieldset id="fieldGroupWithUnsafeProps" class="FieldGroup FieldGroup--danger" aria-describedby="fieldGroupWithUnsafeProps-helper-text fieldGroupWithUnsafeProps-validation-text">
+    <fieldset id="field-group-with-unsafe-props" class="FieldGroup FieldGroup--danger" aria-describedby="field-group-with-unsafe-props-helper-text field-group-with-unsafe-props-validation-text">
       <legend class="accessibility-hidden"><span>UNSAFE label text</span></legend>
       <div class="FieldGroup__label" aria-hidden="true">
         <span>UNSAFE label text</span>
@@ -94,17 +94,17 @@
         </div>
       </div>
 
-      <div class="FieldGroup__helperText" id="fieldGroupWithUnsafeProps-helper-text">
+      <div class="FieldGroup__helperText" id="field-group-with-unsafe-props-helper-text">
         <span>UNSAFE helper text</span>
       </div>
 
-      <div class="FieldGroup__validationText" id="fieldGroupWithUnsafeProps-validation-text">
+      <div class="FieldGroup__validationText" id="field-group-with-unsafe-props-validation-text">
         <span>UNSAFE validation text</span>
       </div>
     </fieldset>
     <!-- Render with all props -->
 
-    <fieldset id="fieldGroupValidationSuccess" class="FieldGroup FieldGroup--fluid FieldGroup--success" aria-describedby="fieldGroupValidationSuccess-helper-text fieldGroupValidationSuccess-validation-text" disabled>
+    <fieldset id="field-group-validation-success" class="FieldGroup FieldGroup--fluid FieldGroup--success" aria-describedby="field-group-validation-success-helper-text field-group-validation-success-validation-text" disabled>
       <legend class="accessibility-hidden">Label</legend>
       <div class="FieldGroup__fields">
         <div>
@@ -120,11 +120,11 @@
         </div>
       </div>
 
-      <div class="FieldGroup__helperText" id="fieldGroupValidationSuccess-helper-text">
+      <div class="FieldGroup__helperText" id="field-group-validation-success-helper-text">
         <span>UNSAFE helper text</span>
       </div>
 
-      <div class="FieldGroup__validationText" id="fieldGroupValidationSuccess-validation-text">
+      <div class="FieldGroup__validationText" id="field-group-validation-success-validation-text">
         <span>UNSAFE validation text</span>
       </div>
     </fieldset>
