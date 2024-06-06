@@ -12,7 +12,7 @@ describe('AccordionContent', () => {
 
   stylePropsTest(
     (props: Record<string, unknown>) => (
-      <AccordionItem id="AccordionItemExample">
+      <AccordionItem id="accordion-item-example">
         <AccordionContent {...props} data-testid="test-accordion-content" />
       </AccordionItem>
     ),

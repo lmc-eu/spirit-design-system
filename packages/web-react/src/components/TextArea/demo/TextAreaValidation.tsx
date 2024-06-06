@@ -4,7 +4,7 @@ import TextArea from '../TextArea';
 const TextAreaValidation = () => (
   <>
     <TextArea
-      id="textareaSuccess"
+      id="textarea-success"
       label="Label"
       name="textareaSuccess"
       placeholder="Placeholder"
@@ -13,7 +13,7 @@ const TextAreaValidation = () => (
     />
 
     <TextArea
-      id="textareaWarning"
+      id="textarea-warning"
       label="Label"
       validationText="Validation text"
       name="textareaWarning"
@@ -23,7 +23,7 @@ const TextAreaValidation = () => (
     />
 
     <TextArea
-      id="textareaDanger"
+      id="textarea-danger"
       label="Label"
       validationText={['Validation text', 'Second validation text']}
       name="textareaDanger"
@@ -33,7 +33,7 @@ const TextAreaValidation = () => (
     />
 
     <TextArea
-      id="textareaDangerHelper"
+      id="textarea-danger-helper"
       isRequired
       label="Label"
       helperText="This is helper text"

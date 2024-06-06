@@ -15,14 +15,14 @@ const FileUploaderInputMultipleWithFileQueueBehaviorControl = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderMultipleWithQueueBehaviorControl"
+      id="file-uploader-multiple-with-queue-behavior-control"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         accept=".png,image/jpeg"
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderMultipleWithQueueBehaviorControlInput"
+        id="file-uploader-multiple-with-queue-behavior-control-input"
         isMultiple
         label="Label"
         labelText="or drag and drop here"
@@ -35,7 +35,7 @@ const FileUploaderInputMultipleWithFileQueueBehaviorControl = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderMultipleWithQueueBehaviorControlAttachment"
+        id="file-uploader-multiple-with-queue-behavior-control-attachment"
         inputName="attachments"
         label="Attachments"
       />

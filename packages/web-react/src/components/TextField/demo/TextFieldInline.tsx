@@ -6,7 +6,7 @@ const TextFieldInline = () => (
   <>
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', maxWidth: '320px' }}>
       <TextField
-        id="textfieldInline"
+        id="textfield-inline"
         isLabelHidden
         label="Hidden Label"
         name="textfieldInline"
@@ -18,7 +18,7 @@ const TextFieldInline = () => (
 
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', maxWidth: '320px' }}>
       <TextField
-        id="textfieldInlineFirst"
+        id="textfield-inline-first"
         isLabelHidden
         label="Hidden Label"
         name="textfieldInlineFirst"
@@ -26,7 +26,7 @@ const TextFieldInline = () => (
         value="Filled"
       />
       <TextField
-        id="textfieldInlinePassword"
+        id="textfield-inline-password"
         isLabelHidden
         label="Hidden Label"
         hasPasswordToggle

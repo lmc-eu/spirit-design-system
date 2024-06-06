@@ -4,10 +4,10 @@ import ChildrenNode from './ChildrenNode';
 
 const SelectPlaceholder = () => (
   <>
-    <Select id="selectPlaceholder" name="selectPlaceholder" label="Label">
+    <Select id="select-placeholder" name="selectPlaceholder" label="Label">
       <ChildrenNode showPlaceholder />
     </Select>
-    <Select id="selectPlaceholder" name="selectPlaceholder" label="Label" isRequired>
+    <Select id="select-placeholder" name="selectPlaceholder" label="Label" isRequired>
       <ChildrenNode showPlaceholder isDisabledPlaceholder />
     </Select>
   </>

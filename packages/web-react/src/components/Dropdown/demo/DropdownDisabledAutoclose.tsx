@@ -11,7 +11,7 @@ const DropdownDisabledAutoclose = () => {
   const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown id="DropdownDisabledAutoclose" isOpen={isOpen} onToggle={onToggle} enableAutoClose={false}>
+    <Dropdown id="dropdown-disabled-autoclose" isOpen={isOpen} onToggle={onToggle} enableAutoClose={false}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
       <DropdownPopover>
         <DropdownContentFactory content={dropdownContent} />

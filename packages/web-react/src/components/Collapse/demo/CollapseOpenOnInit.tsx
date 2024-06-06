@@ -11,7 +11,7 @@ const CollapseOpenOnInit = () => {
       <Button isOpen={isOpen} onClick={toggleHandler}>
         Collapse trigger
       </Button>
-      <Collapse id="collapseOpenOnInitId" isOpen={isOpen}>
+      <Collapse id="collapse-open-on-init-id" isOpen={isOpen}>
         Cras dictum ante, mollis ollicitudin proin bibendum nec commodo consequat fusce ante, consequat venenatis
         suscipit odio morbi. Dolor sit amet porta, placerat tristique sit amet ligula nisl risus et vehicula, suscipit
         accumsan nunc curabitur. Et neque, augue ut nulla a sed porta scelerisque proin, elit sapien lacinia felis.

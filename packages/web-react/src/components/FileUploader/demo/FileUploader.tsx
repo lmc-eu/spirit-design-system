@@ -16,7 +16,7 @@ const Story = (args: FileUploaderBaseProps) => {
   return (
     <FileUploader
       {...args}
-      id="fileUploaderExample"
+      id="file-uploader-example"
       onDismiss={onDismiss}
       fileQueue={fileQueue}
       addToQueue={addToQueue}
@@ -25,7 +25,7 @@ const Story = (args: FileUploaderBaseProps) => {
       updateQueue={updateQueue}
     >
       <FileUploaderInput
-        id="fileUploaderExampleInput"
+        id="file-uploader-example-input"
         name="attachments"
         label="Label"
         linkText="Upload your file(s)"
@@ -38,7 +38,7 @@ const Story = (args: FileUploaderBaseProps) => {
         isMultiple
       />
       <FileUploaderList
-        id="fileUploaderExampleList"
+        id="file-uploader-example-list"
         label="Attachments"
         inputName="attachments"
         attachmentComponent={attachmentComponent}

@@ -4,11 +4,11 @@ import ChildrenNode from './ChildrenNode';
 
 const SelectValidation = () => (
   <>
-    <Select id="selectSuccess" label="Label" name="selectSuccess" validationState="success">
+    <Select id="select-success" label="Label" name="selectSuccess" validationState="success">
       <ChildrenNode />
     </Select>
     <Select
-      id="selectWarning"
+      id="select-warning"
       label="Label"
       validationText="Validation text"
       name="selectWarning"
@@ -17,7 +17,7 @@ const SelectValidation = () => (
       <ChildrenNode />
     </Select>
     <Select
-      id="selectDanger"
+      id="select-danger"
       label="Label"
       validationText={['First validation text', 'Second validation text']}
       name="selectDanger"

@@ -11,7 +11,7 @@ const CollapseMultipleTriggers = () => {
       <Button isOpen={isOpen} onClick={toggleHandler}>
         Collapse trigger
       </Button>
-      <Collapse id="collapseMultipleTriggersId" isOpen={isOpen}>
+      <Collapse id="collapse-multiple-triggers-id" isOpen={isOpen}>
         Aliquam varius, consequat posuere a lacinia mauris eu tellus condimentum ut id ante, accumsan vehicula nulla
         neque. Mauris mi orci, in donec nullam odio leo sapien et vehicula nunc a lacinia, fermentum arcu ullamcorper
         posuere. Mauris euismod, ac nec ante fermentum praesent nisi commodo neque placerat, vivamus dui et tempus

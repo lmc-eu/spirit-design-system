@@ -66,7 +66,7 @@ Radio as Item:
 ```jsx
 import { Radio } from '@lmc-eu/spirit-web-react';
 
-<Radio id="radioItem" name="example" label="Radio Label" isItem />;
+<Radio id="radio-item" name="example" label="Radio Label" isItem />;
 ```
 
 Checkbox as Item:
@@ -74,7 +74,7 @@ Checkbox as Item:
 ```jsx
 import { Checkbox } from '@lmc-eu/spirit-web-react';
 
-<Checkbox id="checkboxItem" name="example" label="Checkbox Label" isItem />;
+<Checkbox id="checkbox-item" name="example" label="Checkbox Label" isItem />;
 ```
 
 Usage in [Dropdown][dropdown] component:
@@ -85,7 +85,7 @@ import { Dropdown, DropdownTrigger, DropdownPopover, Item } from '@lmc-eu/spirit
 const [isOpen, setIsOpen] = React.useState(false);
 const onToggle = () => setIsOpen(!isOpen);
 
-<Dropdown id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+<Dropdown id="dropdown-example" isOpen={isOpen} onToggle={onToggle}>
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>
     <Item elementType="a" href="#" label="Item label" />

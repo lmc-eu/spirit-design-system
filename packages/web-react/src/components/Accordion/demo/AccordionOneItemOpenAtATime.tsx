@@ -15,7 +15,7 @@ const AccordionOneItemOpenAtATime = () => {
 
   return (
     <Accordion open={openState} toggle={toggle} id="AccordionExample">
-      <AccordionItem id="AccordionItemExample4">
+      <AccordionItem id="accordion-item-example-4">
         <AccordionHeader>Accordion Item no. 1</AccordionHeader>
         <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
@@ -27,7 +27,7 @@ const AccordionOneItemOpenAtATime = () => {
           ligula convallis, consectetur potenti aenean efficitur.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample5">
+      <AccordionItem id="accordion-item-example-5">
         <AccordionHeader>Accordion Item no. 2</AccordionHeader>
         <AccordionContent>
           Non suspendisse, maximus suscipit tortor non mauris bibendum felis scelerisque bibendum, nam augue scelerisque
@@ -38,7 +38,7 @@ const AccordionOneItemOpenAtATime = () => {
           Tellus nunc ut enim et, urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample6">
+      <AccordionItem id="accordion-item-example-6">
         <AccordionHeader>Accordion Item no. 3</AccordionHeader>
         <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae

@@ -4,7 +4,7 @@ import TextField from '../TextField';
 const TextFieldPasswordToggle = () => (
   <>
     <TextField
-      id="textfieldPasswordToggle"
+      id="textfield-password-toggle"
       label="Password Toggle"
       hasPasswordToggle
       name="textfieldPasswordToggle"
@@ -12,7 +12,7 @@ const TextFieldPasswordToggle = () => (
     />
 
     <TextField
-      id="textfieldPasswordToggleDisabled"
+      id="textfield-password-toggle-disabled"
       label="Password Toggle"
       hasPasswordToggle
       isDisabled

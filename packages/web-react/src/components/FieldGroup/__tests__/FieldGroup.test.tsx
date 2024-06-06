@@ -24,8 +24,8 @@ describe('FieldGroup', () => {
   validationTextPropsTest(FieldGroup, '.FieldGroup__validationText');
 
   stylePropsTest(
-    (props) => <FieldGroup {...props} label="Label" id="field-group-example" data-testid="test-FieldGroup" />,
-    'test-FieldGroup',
+    (props) => <FieldGroup {...props} label="Label" id="field-group-example" data-testid="test-field-group" />,
+    'test-field-group',
   );
 
   restPropsTest((props) => <FieldGroup {...props} label="Label" />, 'fieldset');

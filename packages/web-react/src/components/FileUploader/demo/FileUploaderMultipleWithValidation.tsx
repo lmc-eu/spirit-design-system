@@ -15,14 +15,14 @@ const FileUploaderMultipleWithValidation = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderMultipleWithValidation"
+      id="file-uploader-multiple-with-validation"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         accept=".png,image/jpeg"
         helperText="Only JPG and PNG images are allowed. Max size of each file is 10 MB"
-        id="fileUploaderMultipleWithValidationInput"
+        id="file-uploader-multiple-with-validation-input"
         isMultiple
         label="Label"
         labelText="or drag and drop here"
@@ -33,7 +33,7 @@ const FileUploaderMultipleWithValidation = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderMultipleWithValidationAttachment"
+        id="file-uploader-multiple-with-validation-attachment"
         inputName="attachments"
         label="Attachments"
       />

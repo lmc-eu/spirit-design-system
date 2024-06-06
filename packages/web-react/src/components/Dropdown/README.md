@@ -10,7 +10,7 @@ import { Dropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/spirit-web-r
 const [isOpen, setIsOpen] = React.useState(false);
 const onToggle = () => setIsOpen(!isOpen);
 
-<Dropdown id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+<Dropdown id="dropdown-example" isOpen={isOpen} onToggle={onToggle}>
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>…</DropdownPopover>
 </Dropdown>;
@@ -27,7 +27,7 @@ import { useState } from 'react';
 const [isOpen, setIsOpen] = useState(false);
 const onToggle = () => setIsOpen(!isOpen);
 
-<Dropdown id="DropdownExample" isOpen={isOpen} onToggle={onToggle}>
+<Dropdown id="dropdown-example" isOpen={isOpen} onToggle={onToggle}>
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>
     <Item elementType="a" href="#" label="Item label" />
@@ -42,7 +42,7 @@ import { UncontrolledDropdown, DropdownTrigger, DropdownPopover } from '@lmc-eu/
 ```
 
 ```jsx
-<UncontrolledDropdown id="UncontrolledDropdownExample">
+<UncontrolledDropdown id="uncontrolled-dropdown-example">
   <DropdownTrigger elementType="button">Trigger button</DropdownTrigger>
   <DropdownPopover>…</DropdownPopover>
 </UncontrolledDropdown>

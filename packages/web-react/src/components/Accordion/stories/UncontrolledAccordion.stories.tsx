@@ -24,7 +24,7 @@ const meta: Meta<typeof UncontrolledAccordion> = {
     },
   },
   args: {
-    defaultOpen: ['AccordionItemExample1'],
+    defaultOpen: ['accordion-item-example-1'],
     elementType: 'section',
   },
 };
@@ -35,8 +35,8 @@ type Story = StoryObj<typeof Accordion>;
 export const UncontrolledAccordionPlayground: Story = {
   name: 'UncontrolledAccordion',
   render: (args) => (
-    <UncontrolledAccordion {...args} id="AccordionExample">
-      <AccordionItem id="AccordionItemExample0">
+    <UncontrolledAccordion {...args} id="accordion-example">
+      <AccordionItem id="accordion-item-example-0">
         <AccordionHeader
           slot={
             <>
@@ -49,15 +49,15 @@ export const UncontrolledAccordionPlayground: Story = {
         </AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample1">
+      <AccordionItem id="accordion-item-example-1">
         <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #1</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample2">
+      <AccordionItem id="accordion-item-example-2">
         <AccordionHeader>Accordion Header #2</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample3">
+      <AccordionItem id="accordion-item-example-3">
         <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #3</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>

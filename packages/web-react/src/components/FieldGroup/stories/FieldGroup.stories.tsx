@@ -35,14 +35,14 @@ const meta: Meta<typeof FieldGroup> = {
         ),
         radios: (
           <>
-            <Radio label="Radio 1" name="radio" id="radio1" />
-            <Radio label="Radio 2" name="radio" id="radio2" />
+            <Radio label="Radio 1" name="radio" id="radio-1" />
+            <Radio label="Radio 2" name="radio" id="radio-2" />
           </>
         ),
         checkboxes: (
           <>
-            <Checkbox label="Checkbox 1" name="checkbox" id="checkbox1" />
-            <Checkbox label="Checkbox 2" name="checkbox" id="checkbox2" />
+            <Checkbox label="Checkbox 1" name="checkbox" id="checkbox-1" />
+            <Checkbox label="Checkbox 2" name="checkbox" id="checkbox-2" />
           </>
         ),
       },
@@ -96,7 +96,7 @@ const meta: Meta<typeof FieldGroup> = {
   args: {
     children: 'boxes',
     helperText: 'Helper text',
-    id: 'FieldGroup',
+    id: 'field-group',
     isDisabled: false,
     isFluid: false,
     isLabelHidden: false,

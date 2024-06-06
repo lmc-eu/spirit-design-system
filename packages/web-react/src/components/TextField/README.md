@@ -8,7 +8,7 @@ hidden or show if the input is required.
 Basic example usage:
 
 ```jsx
-<TextField id="textFieldDefault" label="Label" name="textFieldDefault" />
+<TextField id="text-field-default" label="Label" name="textFieldDefault" />
 ```
 
 Advanced example usage:
@@ -16,7 +16,7 @@ Advanced example usage:
 ```jsx
 <TextField
   helperText="custom helper text"
-  id="textFieldAdvanced"
+  id="text-field-advanced"
   isRequired
   label="Label"
   name="textFieldAdvanced"
@@ -32,7 +32,7 @@ TextField with password toggle (button to reveal the password):
 ```jsx
 <TextField
   hasPasswordToggle
-  id="textFieldPasswordToggle"
+  id="text-field-password-toggle"
   isRequired
   label="Password"
   name="textFieldPasswordToggle"

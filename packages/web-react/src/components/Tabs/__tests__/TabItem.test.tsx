@@ -8,7 +8,7 @@ import { withTabsContext } from '../../../../tests/testUtils/withTabsContext';
 import TabItem from '../TabItem';
 
 describe('TabItem', () => {
-  stylePropsTest((props) => <TabItem forTabPane={1} data-testid="TabItemTestId" {...props} />, 'TabItemTestId');
+  stylePropsTest((props) => <TabItem forTabPane={1} data-testid="tab-item-test-id" {...props} />, 'tab-item-test-id');
 
   classNamePrefixProviderTest(() => <TabItem forTabPane={0} />, 'Tabs__item');
 

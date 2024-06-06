@@ -9,7 +9,7 @@ import AccordionItem from '../AccordionItem';
 import toggleValueByType from './toggleValueByType';
 
 const AccordionBasic = () => {
-  const [openState, setOpenState] = useState<AccordionOpenStateType>(['AccordionItemExample0']);
+  const [openState, setOpenState] = useState<AccordionOpenStateType>(['accordion-item-example-0']);
 
   const toggle = (id: string) => {
     setOpenState(toggleValueByType(id, openState));
@@ -17,7 +17,7 @@ const AccordionBasic = () => {
 
   return (
     <Accordion open={openState} toggle={toggle}>
-      <AccordionItem id="AccordionItemExample0">
+      <AccordionItem id="accordion-item-example-0">
         <AccordionHeader>Accordion Item no. 1</AccordionHeader>
         <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
@@ -29,7 +29,7 @@ const AccordionBasic = () => {
           ligula convallis, consectetur potenti aenean efficitur.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample1">
+      <AccordionItem id="accordion-item-example-1">
         <AccordionHeader
           slot={
             <>
@@ -49,7 +49,7 @@ const AccordionBasic = () => {
           Tellus nunc ut enim et, urna fusce pulvinar fusce et mauris donec, vitae odio morbi risus aliquet. et.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample2">
+      <AccordionItem id="accordion-item-example-2">
         <AccordionHeader>Accordion Item no. 3</AccordionHeader>
         <AccordionContent>
           Sit amet interdum, accumsan dolor sit amet posuere vel arcu mauris placerat non mauris, non sed vitae
@@ -61,7 +61,7 @@ const AccordionBasic = () => {
           ligula convallis, consectetur potenti aenean efficitur.
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample3">
+      <AccordionItem id="accordion-item-example-3">
         <AccordionHeader slot={<Pill color="selected">3</Pill>}>
           Augue iaculis, quis ante sapien aliquam aliquam non cursus, vestibulum nunc ipsum maximus. Libero sed non
           nulla, condimentum lorem ipsum molestie integer curabitur rutrum curabitur, tellus pulvinar libero tempus

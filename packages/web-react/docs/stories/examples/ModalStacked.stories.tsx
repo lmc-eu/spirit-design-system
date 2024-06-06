@@ -24,7 +24,7 @@ export const ModalStacked = () => {
       <Button onClick={toggleStackedModal} aria-expanded={isStackedOpen} aria-controls="ModalStacked">
         {isStackedOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalChild" isOpen={isChildOpen} onClose={handleChildClose}>
+      <Modal id="modal-child" isOpen={isChildOpen} onClose={handleChildClose}>
         <ModalDialog>
           <ModalHeader>Child Modal</ModalHeader>
           <ModalBody>
@@ -41,7 +41,7 @@ export const ModalStacked = () => {
           </ModalFooter>
         </ModalDialog>
       </Modal>
-      <Modal id="ModalStacked" isOpen={isStackedOpen} onClose={handleStackedClose}>
+      <Modal id="modal-stacked" isOpen={isStackedOpen} onClose={handleStackedClose}>
         <ModalDialog>
           <ModalHeader>Modal</ModalHeader>
           <ModalBody>

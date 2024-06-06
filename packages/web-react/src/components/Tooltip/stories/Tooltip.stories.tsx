@@ -51,7 +51,7 @@ const meta: Meta<typeof Tooltip> = {
     enableFlippingCrossAxis: true,
     enableShifting: true,
     enableSizing: true,
-    id: 'TooltipExample',
+    id: 'tooltip-example',
     isDismissible: false,
     isFocusableOnHover: false,
     isOpen: false,

@@ -4,7 +4,7 @@ import TextField from '../TextField';
 const TextFieldValidation = () => (
   <>
     <TextField
-      id="textfieldSuccess"
+      id="textfield-success"
       label="Label"
       name="textfieldSuccess"
       placeholder="Placeholder"
@@ -13,7 +13,7 @@ const TextFieldValidation = () => (
     />
 
     <TextField
-      id="textfieldWarning"
+      id="textfield-warning"
       label="Label"
       validationText="Validation text"
       name="textfieldWarning"
@@ -23,7 +23,7 @@ const TextFieldValidation = () => (
     />
 
     <TextField
-      id="textfieldDanger"
+      id="textfield-danger"
       label="Label"
       validationText={['Validation text', 'Second validation text']}
       name="textfieldDanger"
@@ -33,7 +33,7 @@ const TextFieldValidation = () => (
     />
 
     <TextField
-      id="textfieldDangerHelper"
+      id="textfield-danger-helper"
       isRequired
       label="Label"
       helperText="This is helper text"

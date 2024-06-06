@@ -22,13 +22,13 @@ const FileUploaderAttachmentWithImagePreview = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderAttachmentWithImagePreview"
+      id="file-uploader-attachment-with-image-preview"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderAttachmentWithImagePreviewInput"
+        id="file-uploader-attachment-with-image-preview-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file(s)"
@@ -38,7 +38,7 @@ const FileUploaderAttachmentWithImagePreview = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderAttachmentWithImagePreviewAttachment"
+        id="file-uploader-attachment-with-image-preview-attachment"
         inputName="attachments"
         label="Attachments"
         hasImagePreview

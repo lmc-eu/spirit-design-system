@@ -29,7 +29,7 @@ export const ModalWithDropdown = () => {
       <Button onClick={toggleModal} aria-expanded={isModalOpen} aria-controls="ModalExample">
         {isModalOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExample" isOpen={isModalOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isModalOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader />
           <ModalBody>

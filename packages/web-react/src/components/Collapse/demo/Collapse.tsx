@@ -39,7 +39,7 @@ const Story: ComponentStory<typeof Collapse> = () => {
     <div>
       {content}
       <CollapseTrigger isOpen={isOpen} onClick={toggleHandler} />
-      <Collapse id="collapseId" isOpen={isOpen}>
+      <Collapse id="collapse-id" isOpen={isOpen}>
         {content}
       </Collapse>
     </div>

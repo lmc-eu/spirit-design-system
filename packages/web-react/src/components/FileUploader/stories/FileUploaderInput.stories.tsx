@@ -97,7 +97,7 @@ const meta: Meta<typeof FileUploaderInput> = {
   },
   args: {
     helperText: 'Max file size is 10 MB',
-    id: 'fileUploaderExampleInput',
+    id: 'file-uploader-example-input',
     isDisabled: false,
     isLabelHidden: false,
     isMultiple: false,
@@ -125,7 +125,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderInputProps) => {
 
   return (
     <FileUploader
-      id="fileUploaderExample"
+      id="file-uploader-example"
       onDismiss={onDismiss}
       fileQueue={fileQueue}
       addToQueue={addToQueue}
@@ -135,7 +135,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderInputProps) => {
     >
       <FileUploaderInput {...args} />
       <FileUploaderList
-        id="fileUploaderExampleList"
+        id="file-uploader-example-list"
         label="Attachments"
         inputName="attachments"
         attachmentComponent={attachmentComponent}

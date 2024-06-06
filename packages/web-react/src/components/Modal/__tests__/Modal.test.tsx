@@ -9,7 +9,7 @@ import Modal from '../Modal';
 
 describe('Modal', () => {
   const ModalTest = (props: SpiritModalProps) => (
-    <Modal {...props} id="ModalExample" isOpen={false} onClose={() => null}>
+    <Modal {...props} id="modal-example" isOpen={false} onClose={() => null}>
       <div>Test</div>
     </Modal>
   );

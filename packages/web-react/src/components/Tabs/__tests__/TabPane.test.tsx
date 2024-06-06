@@ -15,11 +15,11 @@ describe('TabPane', () => {
     (props) => (
       <Tabs selectedTab={1} toggle={() => {}}>
         <TabContent>
-          <TabPane id={1} data-testid="TabPaneTestId" {...props} />
+          <TabPane id={1} data-testid="tab-pane-test-id" {...props} />
         </TabContent>
       </Tabs>
     ),
-    'TabPaneTestId',
+    'tab-pane-test-id',
   );
 
   classNamePrefixProviderTest(

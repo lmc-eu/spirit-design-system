@@ -31,7 +31,7 @@ type Story = StoryObj<typeof TooltipPopover>;
 export const TooltipPopoverPlayground: Story = {
   name: 'TooltipPopover',
   render: (args) => (
-    <Tooltip id="TooltipExample" isOpen onToggle={() => {}}>
+    <Tooltip id="tooltip-example" isOpen onToggle={() => {}}>
       <TooltipTrigger elementType={Button}>Button as anchor</TooltipTrigger>
       <TooltipPopover>{args.children}</TooltipPopover>
     </Tooltip>

@@ -66,7 +66,7 @@ const meta: Meta<typeof Dropdown> = {
         </a>
       </>
     ),
-    id: 'DropdownExample',
+    id: 'dropdown-example',
     placement: Placements.BOTTOM_START,
   },
 };

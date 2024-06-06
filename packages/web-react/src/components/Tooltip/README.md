@@ -9,7 +9,7 @@ import { Tooltip, TooltipTrigger, TooltipPopover } from '@lmc-eu/spirit-web-reac
 
 const [open, setOpen] = React.useState(false);
 
-<Tooltip id="Tooltip" isOpen={open} onToggle={setOpen}>
+<Tooltip id="tooltip" isOpen={open} onToggle={setOpen}>
   <TooltipTrigger>I have a tooltip!</TooltipTrigger>
   <TooltipPopover>Hello there!</TooltipPopover>
 </Tooltip>;
@@ -24,7 +24,7 @@ import { Tooltip, TooltipTrigger, TooltipPopover, Button } from '@lmc-eu/spirit-
 
 const [open, setOpen] = React.useState(false);
 
-<Tooltip id="TooltipDismissible" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
+<Tooltip id="tooltip-dismissible" isOpen={open} onToggle={setOpen} placement="right" isDismissible>
   <TooltipTrigger elementType={Button}>I have a tooltip 😎</TooltipTrigger>
   <TooltipPopover>Close me</TooltipPopover>
 </Tooltip>;

@@ -66,7 +66,7 @@ const meta: Meta<typeof UncontrolledDropdown> = {
         </a>
       </>
     ),
-    id: 'UncontrolledDropdownExample',
+    id: 'uncontrolled-dropdown-example',
   },
 };
 

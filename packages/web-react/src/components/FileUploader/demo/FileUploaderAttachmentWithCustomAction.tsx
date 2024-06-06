@@ -22,13 +22,13 @@ const FileUploaderAttachmentWithCustomAction = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderAttachmentWithCustomAction"
+      id="file-uploader-attachment-with-custom-action"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderAttachmentWithCustomActionInput"
+        id="file-uploader-attachment-with-custom-action-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file(s)"
@@ -38,7 +38,7 @@ const FileUploaderAttachmentWithCustomAction = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderAttachmentWithCustomActionAttachment"
+        id="file-uploader-attachment-with-custom-action-attachment"
         inputName="attachments"
         label="Attachments"
       />

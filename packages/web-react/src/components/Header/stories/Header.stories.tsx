@@ -70,7 +70,7 @@ const HeaderWithHooks = (args: HeaderProps) => {
         <Link href="/">
           <SpiritLogo />
         </Link>
-        <HeaderMobileActions dialogId="header_dialog_example_1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
+        <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
@@ -97,7 +97,7 @@ const HeaderWithHooks = (args: HeaderProps) => {
             <HeaderNavItem>
               <HeaderDialogButton
                 onClick={handleUserMenuOpen}
-                aria-controls="header_dialog_example_2"
+                aria-controls="header-dialog-example-2"
                 aria-expanded={isUserMenuOpen}
               >
                 Marian
@@ -106,7 +106,7 @@ const HeaderWithHooks = (args: HeaderProps) => {
           </HeaderNav>
         </HeaderDesktopActions>
       </Header>
-      <HeaderDialog id="header_dialog_example_1" aria-label="Menu" isOpen={isMenuOpen} onClose={handleMenuClose}>
+      <HeaderDialog id="header-dialog-example-1" aria-label="Menu" isOpen={isMenuOpen} onClose={handleMenuClose}>
         <HeaderDialogCloseButton />
         <HeaderDialogActions color="primary" aria-label="Main navigation">
           <HeaderDialogNav>
@@ -151,7 +151,7 @@ const HeaderWithHooks = (args: HeaderProps) => {
         </HeaderDialogActions>
       </HeaderDialog>
       <HeaderDialog
-        id="header_dialog_example_2"
+        id="header-dialog-example-2"
         aria-label="User menu"
         isOpen={isUserMenuOpen}
         onClose={handleUserMenuClose}

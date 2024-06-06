@@ -50,7 +50,7 @@ type Story = StoryObj<typeof DropdownPopover>;
 export const DropdownPopoverPlayground: Story = {
   name: 'DropdownPopover',
   render: (args) => (
-    <Dropdown id="DropdownExample" isOpen onToggle={() => {}}>
+    <Dropdown id="dropdown-example" isOpen onToggle={() => {}}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
       <DropdownPopover>{args.children}</DropdownPopover>
     </Dropdown>

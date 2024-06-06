@@ -40,7 +40,7 @@ Use:
 
 ```jsx
 <TooltipModern
-  id="TooltipModern"
+  id="tooltip-modern"
   // …
 >
   <TooltipTrigger>I have a tooltip!</TooltipTrigger>

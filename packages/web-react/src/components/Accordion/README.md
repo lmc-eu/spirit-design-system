@@ -32,19 +32,19 @@ const toggle = (id) => {
 
 ```javascript
 <Accordion open={openState} toggle={toggle}>
-  <AccordionItem id="AccordionItemExample0">
+  <AccordionItem id="accordion-item-example-0">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
+  <AccordionItem id="accordion-item-example-1">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample2">
+  <AccordionItem id="accordion-item-example-2">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample3">
+  <AccordionItem id="accordion-item-example-3">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
@@ -55,7 +55,7 @@ const toggle = (id) => {
 ### Default with opened on init
 
 ```
-const [openState, setOpenState] = useState<AccordionOpenStateType>(['AccordionItemExample1']);
+const [openState, setOpenState] = useState<AccordionOpenStateType>(['accordion-item-example-1']);
 ```
 
 ### Open only one at a time
@@ -78,11 +78,11 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ```javascript
 <UncontrolledAccordion stayOpen>
-  <AccordionItem id="AccordionItemExample0">
+  <AccordionItem id="accordion-item-example-0">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
+  <AccordionItem id="accordion-item-example-1">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
@@ -92,12 +92,12 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 ### Uncontrolled Accordion with default open value (Stay open)
 
 ```javascript
-<UncontrolledAccordion defaultOpen={['AccordionItemExample1']} stayOpen>
-  <AccordionItem id="AccordionItemExample0">
+<UncontrolledAccordion defaultOpen={['accordion-item-example-1']} stayOpen>
+  <AccordionItem id="accordion-item-example-0">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
+  <AccordionItem id="accordion-item-example-1">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
@@ -108,11 +108,11 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 
 ```javascript
 <UncontrolledAccordion>
-  <AccordionItem id="AccordionItemExample0">
+  <AccordionItem id="accordion-item-example-0">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
+  <AccordionItem id="accordion-item-example-1">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
@@ -122,12 +122,12 @@ import { AccordionOpenStateType } from '@lmc-eu/spirit-web-react/types';
 ### Uncontrolled Accordion with open only one at a time and default open value
 
 ```javascript
-<UncontrolledAccordion defaultOpen="AccordionItemExample1">
-  <AccordionItem id="AccordionItemExample0">
+<UncontrolledAccordion defaultOpen="accordion-item-example-1">
+  <AccordionItem id="accordion-item-example-0">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
+  <AccordionItem id="accordion-item-example-1">
     <AccordionHeader>Accordion Header</AccordionHeader>
     <AccordionContent>Accordion Content</AccordionContent>
   </AccordionItem>

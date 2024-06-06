@@ -21,11 +21,13 @@ export const ModalWithCollapse = () => {
       <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="ModalExample">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader />
           <ModalBody>
-            <UncontrolledCollapse renderTrigger={CollapseTrigger}>{content}</UncontrolledCollapse>
+            <UncontrolledCollapse id="uncontrolled-collapse" renderTrigger={CollapseTrigger}>
+              {content}
+            </UncontrolledCollapse>
           </ModalBody>
         </ModalDialog>
       </Modal>

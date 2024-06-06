@@ -10,7 +10,9 @@ const FileUploaderDraggingNotAvailable = () => {
   );
 
   useEffect(() => {
-    const element = document.getElementById('fileUploaderDraggingNotAvailable')?.querySelector('.has-drag-and-drop');
+    const element = document
+      .getElementById('file-uploader-dragging-not-available')
+      ?.querySelector('.has-drag-and-drop');
     element?.classList.remove('has-drag-and-drop');
   }, []);
 
@@ -21,13 +23,13 @@ const FileUploaderDraggingNotAvailable = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderDraggingNotAvailable"
+      id="file-uploader-dragging-not-available"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max file size is 10 MB"
-        id="fileUploaderDraggingNotAvailableInput"
+        id="file-uploader-dragging-not-available-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file"
@@ -37,7 +39,7 @@ const FileUploaderDraggingNotAvailable = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderDraggingNotAvailableAttachment"
+        id="file-uploader-dragging-not-available-attachment"
         inputName="attachments"
         label="Attachments"
       />

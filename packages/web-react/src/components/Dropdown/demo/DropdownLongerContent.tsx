@@ -11,7 +11,7 @@ const DropdownLongerContent = () => {
   const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown id="DropdownLongerContent" isOpen={isOpen} onToggle={onToggle}>
+    <Dropdown id="dropdown-longer-content" isOpen={isOpen} onToggle={onToggle}>
       <DropdownTrigger elementType={Button}>Button as anchor</DropdownTrigger>
       <DropdownPopover>
         <DropdownContentFactory content={dropdownContentLonger} />

@@ -22,12 +22,12 @@ describe('HelperText', () => {
 
   it('should render with className and id', () => {
     const { container } = render(
-      <HelperText className="test__helperText" id="test__helperTextId" helperText="Helper Text" />,
+      <HelperText className="test__helperText" id="test-helper-text-id" helperText="Helper Text" />,
     );
 
     const element = container.querySelector('.test__helperText') as HTMLElement;
     expect(element).not.toBeNull();
-    expect(element.getAttribute('id')).toBe('test__helperTextId');
+    expect(element.getAttribute('id')).toBe('test-helper-text-id');
     expect(element.textContent).toBe('Helper Text');
   });
 });

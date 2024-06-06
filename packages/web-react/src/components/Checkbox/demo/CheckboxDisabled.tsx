@@ -10,9 +10,9 @@ const CheckboxDisabled = () => {
 
   return (
     <>
-      <Checkbox id="checkboxDisabled" name="checkboxDisabled" label="Checkbox Label" isDisabled />
+      <Checkbox id="checkbox-disabled" name="checkboxDisabled" label="Checkbox Label" isDisabled />
       <Checkbox
-        id="checkboxDisabledHelperText"
+        id="checkbox-disabled-helper-text"
         name="checkboxDisabledHelperText"
         label="Checkbox Label"
         isChecked
@@ -21,7 +21,7 @@ const CheckboxDisabled = () => {
         isRequired
       />
       <Checkbox
-        id="checkboxDisabledIndeterminate"
+        id="checkbox-disabled-indeterminate"
         name="checkboxDisabledIndeterminate"
         label="Checkbox Label"
         isDisabled

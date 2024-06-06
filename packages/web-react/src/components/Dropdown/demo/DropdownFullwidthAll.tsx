@@ -11,7 +11,7 @@ const DropdownFullwidthAll = () => {
   const onToggle = () => setIsOpen(!isOpen);
 
   return (
-    <Dropdown id="DropdownFullwidthAll" isOpen={isOpen} onToggle={onToggle} fullWidthMode="all" placement="top-start">
+    <Dropdown id="dropdown-fullwidth-all" isOpen={isOpen} onToggle={onToggle} fullWidthMode="all" placement="top-start">
       <DropdownTrigger elementType={Button}>Finibus quis imperdiet, semper imperdiet aliquam</DropdownTrigger>
       <DropdownPopover>
         <DropdownContentFactory content={dropdownContent} />

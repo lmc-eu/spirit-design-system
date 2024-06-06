@@ -62,7 +62,7 @@ export const FileUploaderWithModalImagePreview = (args) => {
     <>
       <FileUploader
         {...args}
-        id="fileUploaderExample"
+        id="file-uploader-example"
         onDismiss={onDismiss}
         fileQueue={fileQueue}
         addToQueue={imagePreview}
@@ -70,7 +70,7 @@ export const FileUploaderWithModalImagePreview = (args) => {
         updateQueue={updateQueue}
       >
         <FileUploaderInput
-          id="fileUploaderExampleInput"
+          id="file-uploader-example-input"
           name="attachments"
           label="Label"
           linkText="Upload your file(s)"
@@ -83,14 +83,14 @@ export const FileUploaderWithModalImagePreview = (args) => {
           accept=".png,image/jpeg"
         />
         <FileUploaderList
-          id="fileUploaderExampleList"
+          id="file-uploader-example-list"
           label="Attachments"
           inputName="attachments"
           attachmentComponent={attachmentComponent}
           hasImagePreview
         />
       </FileUploader>
-      <Modal id="ModalExample" isOpen={isModalOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isModalOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalBody>
             <div className="pt-400 pt-tablet-600">

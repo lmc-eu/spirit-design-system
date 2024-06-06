@@ -11,14 +11,14 @@ or by drag and drop if the device supports it. React package extends [web packag
 const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 
 <FileUploader
-  id="fileUploaderExample"
+  id="file-uploader-example"
   onDismiss={onDismiss}
   fileQueue={fileQueue}
   addToQueue={addToQueue}
   clearQueue={clearQueue}
 >
   <FileUploaderInput
-    id="fileUploaderExampleInput"
+    id="file-uploader-example-input"
     name="attachments"
     label="Label"
     linkText="Upload your file(s)"
@@ -26,7 +26,7 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
     helperText="Max file size is 10 MB"
   />
   <FileUploaderList
-    id="fileUploaderExampleList"
+    id="file-uploader-example-list"
     label="Attachments"
     inputName="attachments"
     attachmentComponent={(props) => <FileUploaderAttachment key={props.id} {...props} />}
@@ -40,14 +40,14 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 
 <FileUploader
-  id="fileUploaderExample"
+  id="file-uploader-example"
   onDismiss={onDismiss}
   fileQueue={fileQueue}
   addToQueue={addToQueue}
   clearQueue={clearQueue}
 >
   <FileUploaderInput
-    id="fileUploaderExampleInput"
+    id="file-uploader-example-input"
     name="attachments"
     label="Label"
     linkText="Upload your file(s)"
@@ -58,7 +58,7 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
     isMultiple
   />
   <FileUploaderList
-    id="fileUploaderExampleList"
+    id="file-uploader-example-list"
     label="Attachments"
     inputName="attachments"
     attachmentComponent={(props) => <FileUploaderAttachment key={props.id} {...props} />}
@@ -70,7 +70,7 @@ const { fileQueue, addToQueue, clearQueue, onDismiss } = useFileQueue();
 
 ```javascript
 <FileUploaderList
-  id="fileUploaderExampleList"
+  id="file-uploader-example-list"
   label="Attachments"
   inputName="attachments"
   attachmentComponent={attachmentComponent}
@@ -128,13 +128,13 @@ FileUploaderInput will disappear or disable after reaching the limit for files i
 ```javascript
 <UncontrolledFileUploader
   attachmentComponent={(props) => <FileUploaderAttachment key={props.id} {...props} />}
-  id="fileUploaderUncontrolled"
-  inputId="fileUploaderUncontrolledInput"
+  id="file-uploader-uncontrolled"
+  inputId="file-uploader-uncontrolled-input"
   inputName="attachments"
   inputProps={{
     accept: '*',
   }}
-  listId="fileUploaderUncontrolledList"
+  listId="file-uploader-uncontrolled-list"
   listProps={{
     label: 'Attachments',
   }}
@@ -182,14 +182,14 @@ const resetStateHandler = () => {
 
 <form onSubmit={submitHandler}>
   <FileUploader
-    id="fileUploaderFormExample"
+    id="file-uploader-form-example"
     onDismiss={onDismiss}
     fileQueue={fileQueue}
     addToQueue={addToQueue}
     clearQueue={clearQueue}
   >
     <FileUploaderInput
-      id="fileUploaderFormExampleInput"
+      id="file-uploader-form-example-input"
       name="attachments"
       label="Label"
       linkText="Upload your file(s)"
@@ -202,7 +202,7 @@ const resetStateHandler = () => {
       isMultiple
     />
     <FileUploaderList
-      id="fileUploaderFormExampleList"
+      id="file-uploader-form-example-list"
       label="Attachments"
       inputName="attachments"
       attachmentComponent={(props) => <FileUploaderAttachment key={props.id} {...props} />}
@@ -271,11 +271,11 @@ const resetStateHandler = () => {
 <form onSubmit={submitHandler}>
   <UncontrolledFileUploader
     attachmentComponent={attachmentComponent}
-    id="fileUploaderUncontrolled"
+    id="file-uploader-uncontrolled"
     inputId="fileUploaderUncontrolledInput"
     inputName="attachments"
     inputLabel="Input label"
-    listId="fileUploaderUncontrolledList"
+    listId="file-uploader-uncontrolled-list"
     linkText="Upload your file(s)"
     labelText="or drag and drop here"
     helperText="Max file size is 10 MB"

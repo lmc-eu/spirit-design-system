@@ -28,27 +28,27 @@ export const ModalWithAccordion = () => {
 
   return (
     <>
-      <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="ModalExample">
+      <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="modal-example">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader>Modal With Accordion</ModalHeader>
           <ModalBody>
-            <UncontrolledAccordion id="AccordionExample" defaultOpen="AccordionItemExample1">
-              <AccordionItem id="AccordionItemExample0">
+            <UncontrolledAccordion id="accordion-example" defaultOpen="accordion-item-example-1">
+              <AccordionItem id="accordion-item-example-0">
                 <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #0</AccordionHeader>
                 <AccordionContent>{content}</AccordionContent>
               </AccordionItem>
-              <AccordionItem id="AccordionItemExample1">
+              <AccordionItem id="accordion-item-example-1">
                 <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #1</AccordionHeader>
                 <AccordionContent>{content}</AccordionContent>
               </AccordionItem>
-              <AccordionItem id="AccordionItemExample2">
+              <AccordionItem id="accordion-item-example-2">
                 <AccordionHeader>Accordion Header #2</AccordionHeader>
                 <AccordionContent>{content}</AccordionContent>
               </AccordionItem>
-              <AccordionItem id="AccordionItemExample3">
+              <AccordionItem id="accordion-item-example-3">
                 <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #3</AccordionHeader>
                 <AccordionContent>{content}</AccordionContent>
               </AccordionItem>

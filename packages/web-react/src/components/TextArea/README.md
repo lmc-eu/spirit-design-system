@@ -7,7 +7,7 @@ The label could be hidden and show if the textarea is required.
 Basic example usage:
 
 ```jsx
-<TextArea id="textAreaDefault" label="Label" name="textAreaDefault" />
+<TextArea id="text-area-default" label="Label" name="textAreaDefault" />
 ```
 
 Advanced example usage:
@@ -15,7 +15,7 @@ Advanced example usage:
 ```jsx
 <TextArea
   helperText="custom helper text"
-  id="textAreaAdvanced"
+  id="text-area-advanced"
   isRequired
   label="Label"
   maxlength="180"

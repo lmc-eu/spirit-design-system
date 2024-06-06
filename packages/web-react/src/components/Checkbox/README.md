@@ -8,14 +8,14 @@ The label could be hidden and show if the input is required.
 Basic example usage:
 
 ```jsx
-<Checkbox id="checkboxDefault" label="Label" name="checkboxDefault" />
+<Checkbox id="checkbox-default" label="Label" name="checkboxDefault" />
 ```
 
 Advanced example usage:
 
 ```jsx
 <Checkbox
-  id="checkboxAdvanced"
+  id="checkbox-advanced"
   isChecked
   isRequired
   name="checkboxAdvanced"
