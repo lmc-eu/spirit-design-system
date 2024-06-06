@@ -1,6 +1,6 @@
-<Modal id="example_modal_data" titleId="example_modal_data_title">
+<Modal id="example-modal-data" titleId="example-modal-data-title">
     <ModalDialog>
-        <ModalHeader modalId="example_modal_data" titleId="example_modal_data_title">
+        <ModalHeader modalId="example-modal-data" titleId="example-modal-data-title">
             Image Preview
         </ModalHeader>
         <ModalBody>
@@ -9,14 +9,14 @@
         <ModalFooter>
             <Button
                 color="primary"
-                data-spirit-target="#example_modal_data"
+                data-spirit-target="#example-modal-data"
                 data-spirit-dismiss="modal"
             >
                 Confirm
             </Button>
             <Button
                 color="secondary"
-                data-spirit-target="#example_modal_data"
+                data-spirit-target="#example-modal-data"
                 data-element="cancel"
             >
                 Cancel
@@ -25,13 +25,13 @@
     </ModalDialog>
 </Modal>
 
-<FileUploader data-spirit-toggle="fileUploader" id="example_customMetaData">
+<FileUploader data-spirit-toggle="fileUploader" id="example-custom-meta-data">
     <template data-spirit-snippet="item">
         <FileUploaderAttachment onEdit="moduleFunctions.customEdit(event)" generateImagePreview />
     </template>
     <FileUploaderInput
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderWithMetaData"
+        id="file-uploader-with-meta-data"
         label="Label"
         maxUploadedFiles={ 1 }
         multiple
@@ -39,7 +39,7 @@
         pickAFileText="Upload your file(s)"
         queueLimitBehavior="disable"
     />
-    <FileUploaderList headingId="attachments-fileUploaderMetaData" id="FileUploaderListWithMetaData" />
+    <FileUploaderList headingId="attachments-file-uploader-meta-data" id="file-uploader-list-with-meta-data" />
 </FileUploader>
 
 <script>

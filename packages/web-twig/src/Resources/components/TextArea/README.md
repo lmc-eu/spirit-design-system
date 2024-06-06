@@ -5,7 +5,7 @@ This is Twig implementation of the [TextArea][textarea] component.
 Basic example usage:
 
 ```twig
-<TextArea id="textAreaDefault" label="Label" name="textAreaDefault" />
+<TextArea id="text-area-default" label="Label" name="textAreaDefault" />
 ```
 
 Advanced example usage:
@@ -13,7 +13,7 @@ Advanced example usage:
 ```twig
 <TextArea
   helperText="custom helper text"
-  id="textAreaAdvanced"
+  id="text-area-advanced"
   isRequired
   label="Label"
   maxlength="180"
@@ -31,7 +31,7 @@ Without lexer:
 ```twig
 {% embed "@spirit/textArea.twig" with { props: {
     helperText: "custom helper text",
-    id: "textAreaEmbed",
+    id: "text-area-embed",
     isRequired: true,
     label: "Label",
     maxlength: 180,
@@ -91,7 +91,7 @@ Then you need to add attribute `isAutoResizing` to the component.
 
 ```twig
 <TextArea
-  id="textareaAutoResize"
+  id="textarea-auto-resize"
   isAutoResizing
   label="Label of auto-resizing TextArea"
 />

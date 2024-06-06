@@ -5,14 +5,14 @@ This is Twig implementation of the [Checkbox][checkbox] component.
 Basic example usage:
 
 ```html
-<Checkbox id="checkboxDefault" label="Label" name="checkboxDefault" />
+<Checkbox id="checkbox-default" label="Label" name="checkboxDefault" />
 ```
 
 Advanced example usage:
 
 ```html
 <Checkbox
-  id="checkboxAdvanced"
+  id="checkbox-advanced"
   isChecked
   isRequired
   validationText="validation text"
@@ -26,7 +26,7 @@ Without lexer:
 
 ```twig
 {% embed "@spirit/checkbox.twig" with { props: {
-    id: "checkboxEmbed",
+    id: "checkbox-embed",
     label: "some label",
     name: "checkboxEmbed",
     isRequired: "true",

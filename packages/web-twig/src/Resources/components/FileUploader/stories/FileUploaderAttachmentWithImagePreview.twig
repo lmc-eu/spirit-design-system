@@ -1,6 +1,6 @@
-<Modal id="example_image_preview" titleId="example_image_preview_title">
+<Modal id="example-image-preview" titleId="example-image-preview-title">
     <ModalDialog>
-        <ModalHeader modalId="example_image_preview" titleId="example_image_preview_title">
+        <ModalHeader modalId="example-image-preview" titleId="example-image-preview-title">
             Image Preview
         </ModalHeader>
         <ModalBody>
@@ -9,14 +9,14 @@
         <ModalFooter>
             <Button
                 color="primary"
-                data-spirit-target="#example_image_preview"
+                data-spirit-target="#example-image-preview"
                 data-spirit-dismiss="modal"
             >
                 Confirm
             </Button>
             <Button
                 color="secondary"
-                data-spirit-target="#example_image_preview"
+                data-spirit-target="#example-image-preview"
                 data-element="cancel"
             >
                 Cancel
@@ -25,19 +25,19 @@
     </ModalDialog>
 </Modal>
 
-<FileUploader data-spirit-toggle="fileUploader" id="example_customImagePreview">
+<FileUploader data-spirit-toggle="fileUploader" id="example-custom-image-preview">
     <template data-spirit-snippet="item">
         <FileUploaderAttachment onEdit="editHandler()" generateImagePreview />
     </template>
     <FileUploaderInput
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderWithImagePreview"
+        id="file-uploader-with-image-preview"
         label="Label"
         multiple
         name="fileUploaderWithImagePreview"
         pickAFileText="Upload your file(s)"
     />
-    <FileUploaderList headingId="attachments-customImagePreview" />
+    <FileUploaderList headingId="attachments-custom-image-preview" />
 </FileUploader>
 
 {{ encore_entry_script_tags('fileUploaderImagePreview') }}

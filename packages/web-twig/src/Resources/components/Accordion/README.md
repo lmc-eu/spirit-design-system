@@ -6,35 +6,35 @@ This is Twig implementation of the [Accordion][accordion] component.
 
 ```html
 <Accordion>
-  <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
+  <AccordionItem id="accordion-item-example-0">
+    <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
+    <AccordionContent id="accordion-item-example-0-content" labelledById="accordion-item-example-0-header">
       Accordion Content
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content">
+  <AccordionItem id="accordion-item-example-1">
+    <AccordionHeader id="accordion-item-example-1-header" for="accordion-item-example-1-content">
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header">
+    <AccordionContent id="accordion-item-example-1-content" labelledById="accordion-item-example-1-header">
       Accordion Content
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample2">
-    <AccordionHeader id="AccordionItemExample2Header" for="AccordionItemExample2Content">
+  <AccordionItem id="accordion-item-example-2">
+    <AccordionHeader id="accordion-item-example-2-header" for="accordion-item-example-2-content">
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample2Content" labelledById="AccordionItemExample2Header">
+    <AccordionContent id="accordion-item-example-2-content" labelledById="accordion-item-example-2-header">
       Accordion Content
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample3">
-    <AccordionHeader id="AccordionItemExample3Header" for="AccordionItemExample3Content">
+  <AccordionItem id="accordion-item-example-3">
+    <AccordionHeader id="accordion-item-example-3-header" for="accordion-item-example-3-content">
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample3Content" labelledById="AccordionItemExample3Header">
+    <AccordionContent id="accordion-item-example-3-content" labelledById="accordion-item-example-3-header">
       Accordion Content
     </AccordionContent>
   </AccordionItem>
@@ -46,19 +46,19 @@ This is Twig implementation of the [Accordion][accordion] component.
 
 ```html
 <Accordion>
-  <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
+  <AccordionItem id="accordion-item-example-0">
+    <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample0Content" labelledById="AccordionItemExample0Header">
+    <AccordionContent id="accordion-item-example-0-content" labelledById="accordion-item-example-0-header">
       Accordion Content
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content" isOpen>
+  <AccordionItem id="accordion-item-example-1">
+    <AccordionHeader id="accordion-item-example-1-header" for="accordion-item-example-1-content" isOpen>
       Accordion Header
     </AccordionHeader>
-    <AccordionContent id="AccordionItemExample1Content" labelledById="AccordionItemExample1Header" isOpen>
+    <AccordionContent id="accordion-item-example-1-content" labelledById="accordion-item-example-1-header" isOpen>
       Accordion Content
     </AccordionContent>
   </AccordionItem>
@@ -68,27 +68,27 @@ This is Twig implementation of the [Accordion][accordion] component.
 ## Usage with only one open item at a time
 
 ```html
-<Accordion id="AccordionExample">
-  <AccordionItem id="AccordionItemExample0">
-    <AccordionHeader id="AccordionItemExample0Header" for="AccordionItemExample0Content">
+<Accordion id="accordion-example">
+  <AccordionItem id="accordion-item-example-0">
+    <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent
-      id="AccordionItemExample0Content"
-      labelledById="AccordionItemExample0Header"
-      parent="AccordionExample"
+      id="accordion-item-example-0-content"
+      labelledById="accordion-item-example-0-header"
+      parent="accordion-example"
     >
       Accordion Content
     </AccordionContent>
   </AccordionItem>
-  <AccordionItem id="AccordionItemExample1">
-    <AccordionHeader id="AccordionItemExample1Header" for="AccordionItemExample1Content">
+  <AccordionItem id="accordion-item-example-1">
+    <AccordionHeader id="accordion-item-example-1-header" for="accordion-item-example-1-content">
       Accordion Header
     </AccordionHeader>
     <AccordionContent
-      id="AccordionItemExample1Content"
-      labelledById="AccordionItemExample1Header"
-      parent="AccordionExample"
+      id="accordion-item-example-1-content"
+      labelledById="accordion-item-example-1-header"
+      parent="accordion-example"
     >
       Accordion Content
     </AccordionContent>
@@ -103,8 +103,8 @@ Header:
 
 ```html
 <AccordionHeader
-  id="AccordionItemExample1Header"
-  for="AccordionItemExample1Content"
+  id="accordion-item-example-1-header"
+  for="accordion-item-example-1-content"
   UNSAFE_slot="<span>my content</span>"
 >
   Accordion Item
@@ -123,8 +123,8 @@ rendered result into the slot:
 {% endset %}
 
 <AccordionHeader
-    id="AccordionItemExample1Header"
-    for="AccordionItemExample1Content"
+    id="accordion-item-example-1-header"
+    for="accordion-item-example-1-content"
     UNSAFE_slot={{ slotContent }}
 >
     Accordion Item
@@ -133,8 +133,8 @@ rendered result into the slot:
 {# This DOES NOT WORK #}
 
 <AccordionHeader
-    id="AccordionItemExample1Header"
-    for="AccordionItemExample1Content"
+    id="accordion-item-example-1-header"
+    for="accordion-item-example-1-content"
     UNSAFE_slot="<Pill color="selected">3</Pill>"
 >
     Accordion Item
@@ -145,7 +145,7 @@ rendered result into the slot:
 
 ```twig
 {% embed "@spirit/accordion.twig" with { props: {
-  id: 'AccordionExample',
+  id: 'accordion-example',
 } } %}
     {% block content %}
         {% embed "@spirit/accordionItem.twig" with { props: {
@@ -164,7 +164,7 @@ rendered result into the slot:
                 {% embed "@spirit/accordionContent.twig" with { props: {
                   id: 'AccordionItemExampleContent',
                   labelledById: 'AccordionItemExampleHeader',
-                  parent: 'AccordionExample',
+                  parent: 'accordion-example',
                   isOpen: true,
                 } } %}
                     {% block content %}

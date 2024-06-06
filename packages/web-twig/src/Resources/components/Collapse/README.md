@@ -5,8 +5,8 @@ This is Twig implementation of the [Collapse][collapse] component.
 Basic example usage:
 
 ```twig
-<Button data-spirit-toggle="collapse" data-spirit-target="CollapseExample">Collapse trigger</Button>
-<Collapse id="CollapseExample">Collapse content</Collapse>
+<Button data-spirit-toggle="collapse" data-spirit-target="collapse-example">Collapse trigger</Button>
+<Collapse id="collapse-example">Collapse content</Collapse>
 ```
 
 Usage with link:
@@ -18,8 +18,8 @@ Usage with link:
 Open on page load:
 
 ```twig
-<Button data-spirit-toggle="collapse" data-spirit-target="CollapseExample" aria-expanded="true">Collapse trigger</Button>
-<Collapse id="CollapseExample" isOpen>Collapse content</Collapse>
+<Button data-spirit-toggle="collapse" data-spirit-target="collapse-example" aria-expanded="true">Collapse trigger</Button>
+<Collapse id="collapse-example" isOpen>Collapse content</Collapse>
 ```
 
 Activate Collapse only on mobile screens:

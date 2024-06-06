@@ -5,7 +5,7 @@ This is Twig implementation of the [TextField][textfield] component.
 Basic example usage:
 
 ```html
-<TextField id="textFieldDefault" label="Label" name="textFieldDefault" />
+<TextField id="text-field-default" label="Label" name="textFieldDefault" />
 ```
 
 Advanced example usage:
@@ -15,7 +15,7 @@ Default TextField:
 ```html
 <TextField
   helperText="custom helper text"
-  id="textFieldAdvanced"
+  id="text-field-advanced"
   isRequired
   label="Label"
   name="textFieldAdvanced"
@@ -31,7 +31,7 @@ TextField with password toggle (button to reveal the password):
 ```html
 <TextField
   hasPasswordToggle
-  id="textFieldPasswordToggle"
+  id="text-field-password-toggle"
   isRequired
   label="Password"
   name="textFieldPasswordToggle"
@@ -46,7 +46,7 @@ Without lexer:
 ```twig
 {% embed "@spirit/textField.twig" with { props: {
     helperText: "custom helper text",
-    id: "textFieldEmbed",
+    id: "text-field-embed",
     isRequired: true,
     label: "Password",
     name: "textFieldEmbed",

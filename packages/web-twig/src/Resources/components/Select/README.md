@@ -9,7 +9,7 @@ if the select field is mandatory.
 Basic example usage:
 
 ```twig
-<Select id="selectDefault" label="Label" name="selectDefault">
+<Select id="select-default" label="Label" name="selectDefault">
   <option value="" selected>Placeholder</option>
   <option value="1">Option 1</option>
   <option value="2">Option 2</option>
@@ -19,7 +19,7 @@ Basic example usage:
 Usage with `isRequired` attribute:
 
 ```twig
-<Select id="selectRequired" label="Label" name="selectRequired" isRequired>
+<Select id="select-required" label="Label" name="selectRequired" isRequired>
   <option value="" selected disabled>Placeholder</option>
   <option value="1">Option 1</option>
   <option value="2">Option 2</option>

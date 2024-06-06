@@ -6,8 +6,8 @@ Basic example usage:
 
 ```twig
 <Dropdown>
-  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <DropdownPopover id="DropdownExample">Dropdown Content</DropdownPopover>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="dropdown-example" aria-controls="dropdown-example" aria-expanded="false">Open Dropdown</Button>
+  <DropdownPopover id="dropdown-example">Dropdown Content</DropdownPopover>
 </Dropdown>
 ```
 
@@ -15,8 +15,8 @@ Full width on mobile
 
 ```twig
 <Dropdown>
-  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <DropdownPopover id="DropdownExample" fullWidthMode="mobile-only">Dropdown Content</DropdownPopover>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="dropdown-example" aria-controls="dropdown-example" aria-expanded="false">Open Dropdown</Button>
+  <DropdownPopover id="dropdown-example" fullWidthMode="mobile-only">Dropdown Content</DropdownPopover>
 </Dropdown>
 ```
 
@@ -24,8 +24,8 @@ Advanced example usage with positioning:
 
 ```twig
 <Dropdown>
-  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <DropdownPopover elementType="span" id="DropdownExample" placement="top-end" fullWidthMode="all">Dropdown Content</DropdownPopover>
+  <Button data-spirit-toggle="dropdown" data-spirit-target="dropdown-example" aria-controls="dropdown-example" aria-expanded="false">Open Dropdown</Button>
+  <DropdownPopover elementType="span" id="dropdown-example" placement="top-end" fullWidthMode="all">Dropdown Content</DropdownPopover>
 </Dropdown>
 ```
 
@@ -33,8 +33,8 @@ Example with [Item][item] component:
 
 ```twig
 <Dropdown>
-  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <DropdownPopover id="DropdownExample">
+  <Button data-spirit-toggle="dropdown" data-spirit-target="dropdown-example" aria-controls="dropdown-example" aria-expanded="false">Open Dropdown</Button>
+  <DropdownPopover id="dropdown-example">
     <Item elementType="a" href="#" label="Item label" />
   </DropdownPopover>
 </Dropdown>

@@ -7,17 +7,17 @@ Basic example usage:
 ```html
 <TabList>
   <TabItem>
-    <TabLink isSelected id="pane1-tab" targetPaneId="pane1" data-spirit-toggle="tabs">Item selected</TabLink>
+    <TabLink isSelected id="pane-1-tab" targetPaneId="pane-1" data-spirit-toggle="tabs">Item selected</TabLink>
   </TabItem>
   <TabItem>
-    <TabLink id="pane2-tab" targetPaneId="pane2" data-spirit-toggle="tabs">Item</TabLink>
+    <TabLink id="pane-2-tab" targetPaneId="pane-2" data-spirit-toggle="tabs">Item</TabLink>
   </TabItem>
   <TabItem>
     <TabLink href="https://www.example.com">Item link</TabLink>
   </TabItem>
 </TabList>
-<TabPane id="pane1" isSelected label="pane1-tab">Pane 1</TabPane>
-<TabPane id="pane2" label="pane2-tab">Pane 2</TabPane>
+<TabPane id="pane-1" isSelected label="pane-1-tab">Pane 1</TabPane>
+<TabPane id="pane-2" label="pane-2-tab">Pane 2</TabPane>
 ```
 
 Without lexer:
@@ -28,7 +28,7 @@ Without lexer:
         {% embed "@spirit/tabItem.twig" %}
             {% block content %}
                 {% embed "@spirit/tabLink.twig" with { props: {
-                  id: 'pane1-tab',
+                  id: 'pane-1-tab',
                   isSelected: true,
                   targetPaneId: 'pane1',
                 } } %}

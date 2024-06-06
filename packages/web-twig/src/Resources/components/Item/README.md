@@ -50,21 +50,21 @@ Item as a link example:
 Radio as Item:
 
 ```twig
-<Radio id="radioItem" name="example" label="Radio Label" isItem />;
+<Radio id="radio-item" name="example" label="Radio Label" isItem />;
 ```
 
 Checkbox as Item:
 
 ```twig
-<Checkbox id="checkboxItem" name="example" label="Checkbox Label" isItem />;
+<Checkbox id="checkbox-item" name="example" label="Checkbox Label" isItem />;
 ```
 
 Usage in [Dropdown][dropdown] component:
 
 ```twig
 <DropdownWrapper>
-  <Button data-spirit-toggle="dropdown" data-spirit-target="DropdownExample" aria-controls="DropdownExample" aria-expanded="false">Open Dropdown</Button>
-  <Dropdown id="DropdownExample">
+  <Button data-spirit-toggle="dropdown" data-spirit-target="dropdown-example" aria-controls="dropdown-example" aria-expanded="false">Open Dropdown</Button>
+  <Dropdown id="dropdown-example">
     <Item elementType="a" href="#" label="Item label" />
   </Dropdown>
 </DropdownWrapper>
