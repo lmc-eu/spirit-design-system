@@ -1,7 +1,7 @@
 import Tooltip from '../../../js/Tooltip';
 
 const checkboxFlip = document.getElementById('my-advanced-flip');
-const checkboxFlipCrossAxis = document.getElementById('my-advanced-flipCrossAxis');
+const checkboxFlipCrossAxis = document.getElementById('my-advanced-flip-cross-axis');
 const checkboxShift = document.getElementById('my-advanced-shift');
 const checkboxSize = document.getElementById('my-advanced-size');
 const select = document.getElementById('my-advanced-select');

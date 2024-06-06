@@ -48,7 +48,7 @@ describe('Tabs', () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
             <li><button type="button" data-spirit-target="#home" role="tab">Home</button></li>
-            <li><button type="button" id="triggerProfile" data-spirit-target="#profile" role="tab">Profile</button></li>
+            <li><button type="button" id="trigger-profile" data-spirit-target="#profile" role="tab">Profile</button></li>
           </ul>
           <ul>
             <li id="home" role="tabpanel"></li>
@@ -56,7 +56,7 @@ describe('Tabs', () => {
           </ul>
         `;
 
-      const profileTriggerEl = fixtureEl.querySelector('#triggerProfile') as HTMLElement;
+      const profileTriggerEl = fixtureEl.querySelector('#trigger-profile') as HTMLElement;
       const tab = new Tabs(profileTriggerEl);
 
       profileTriggerEl.addEventListener('shown.tabs', () => {
@@ -96,7 +96,7 @@ describe('Tabs', () => {
       fixtureEl.innerHTML = `
           <ul class="Tabs" role="tablist">
             <li class="Tabs__item" role="presentation"><button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button></li>
-            <li class="Tabs__item" role="presentation"><button type="button" id="triggerProfile" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
+            <li class="Tabs__item" role="presentation"><button type="button" id="trigger-profile" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button></li>
           </ul>
           <div class="Tabs-content">
             <div class="TabsPane is-selected" id="home" role="tabpanel"></div>
@@ -104,7 +104,7 @@ describe('Tabs', () => {
           </div>
         `;
 
-      const secondTabsTrigger = fixtureEl.querySelector('#triggerProfile') as SpiritHTMLElement;
+      const secondTabsTrigger = fixtureEl.querySelector('#trigger-profile') as SpiritHTMLElement;
       const secondTabs = new Tabs(secondTabsTrigger);
 
       secondTabsTrigger.addEventListener('show.tabs', (ev: MouseEvent) => {
@@ -194,13 +194,13 @@ describe('Tabs', () => {
               </a>
             </li>
             <li class="Tabs__item" role="presentation">
-              <a id="secondNav" class="Tabs__link" href="#buzz" role="tab" data-spirit-toggle="tabs">
+              <a id="second-nav" class="Tabs__link" href="#buzz" role="tab" data-spirit-toggle="tabs">
                 <button class="btn-close" aria-label="Close"></button>
               </a>
             </li>
             <li class="Tabs__item" role="presentation">
               <a class="Tabs__link" href="#references" role="tab" data-spirit-toggle="tabs">
-                <button id="btnClose" class="btn-close" aria-label="Close"></button>
+                <button id="btn-close" class="btn-close" aria-label="Close"></button>
               </a>
             </li>
           </ul>
@@ -211,8 +211,8 @@ describe('Tabs', () => {
           </div>
         `;
 
-      const secondNavEl = fixtureEl.querySelector('#secondNav') as HTMLElement;
-      const btnCloseEl = fixtureEl.querySelector('#btnClose') as HTMLElement;
+      const secondNavEl = fixtureEl.querySelector('#second-nav') as HTMLElement;
+      const btnCloseEl = fixtureEl.querySelector('#btn-close') as HTMLElement;
       const secondNavTabs = new Tabs(secondNavEl);
 
       secondNavEl.addEventListener('shown.tabs', () => {
@@ -276,14 +276,14 @@ describe('Tabs', () => {
           <li class="Tabs__link" data-spirit-target="#panel2" data-spirit-toggle="tabs"></li>
         </ul>
         <div id="panel"></div>
-        <div id="panel2"></div>
+        <div id="panel-2"></div>
       `;
 
       const tabEl = fixtureEl.querySelector('.Tabs__link') as HTMLElement;
       const parent = fixtureEl.querySelector('.Tabs') as HTMLElement;
       const children = Array.from(fixtureEl.querySelectorAll('.Tabs__link')) as HTMLElement[];
       const tabPanel = fixtureEl.querySelector('#panel') as HTMLElement;
-      const tabPanel2 = fixtureEl.querySelector('#panel2') as HTMLElement;
+      const tabPanel2 = fixtureEl.querySelector('#panel-2') as HTMLElement;
 
       expect(parent.getAttribute('role')).toBeNull();
       expect(tabEl.getAttribute('role')).toBeNull();
@@ -349,7 +349,7 @@ describe('Tabs', () => {
               <button type="button" data-spirit-target="#home" class="Tabs__link is-selected" role="tab" aria-selected="true">Home</button>
             </li>
             <li class="Tabs__item" role="presentation">
-              <button type="button" id="triggerProfile" data-spirit-toggle="tabs" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button>
+              <button type="button" id="trigger-profile" data-spirit-toggle="tabs" data-spirit-target="#profile" class="Tabs__link" role="tab">Profile</button>
             </li>
           </ul>
           <div class="Tabs-content">
@@ -358,7 +358,7 @@ describe('Tabs', () => {
           </div>
         `;
 
-      const secondTabsTrigger = fixtureEl.querySelector('#triggerProfile') as HTMLElement;
+      const secondTabsTrigger = fixtureEl.querySelector('#trigger-profile') as HTMLElement;
 
       secondTabsTrigger.addEventListener('shown.tab', () => {
         expect(secondTabsTrigger).toHaveClass('is-selected');
@@ -371,28 +371,28 @@ describe('Tabs', () => {
     it('should handle nested tabs', async () => {
       fixtureEl.innerHTML = `
           <nav class="Tabs" role="tablist">
-            <button type="button" id="tab1" data-spirit-target="#x-tab1" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab1">Tabs 1</button>
-            <button type="button" data-spirit-target="#x-tab2" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab2" aria-selected="true">Tabs 2</button>
-            <button type="button" data-spirit-target="#x-tab3" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab3">Tabs 3</button>
+            <button type="button" id="tab-1" data-spirit-target="#x-tab-1" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab-1">Tabs 1</button>
+            <button type="button" data-spirit-target="#x-tab-2" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab2" aria-selected="true">Tabs 2</button>
+            <button type="button" data-spirit-target="#x-tab-3" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab-3">Tabs 3</button>
           </nav>
           <div class="Tabs__content">
-            <div class="Tabs__pane" id="x-tab1" role="tabpanel">
+            <div class="Tabs__pane" id="x-tab-1" role="tabpanel">
               <nav class="Tabs" role="tablist">
-                <button type="button" data-spirit-target="#nested-tab1" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab1" aria-selected="true">Nested Tabs 1</button>
-                <button type="button" id="tabNested2" data-spirit-target="#nested-tab2" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-profile">Nested Tabs2</button>
+                <button type="button" data-spirit-target="#nested-tab-1" class="Tabs__link is-selected" data-spirit-toggle="tabs" role="tab" aria-controls="x-tab-1" aria-selected="true">Nested Tabs 1</button>
+                <button type="button" id="tab-nested-2" data-spirit-target="#nested-tab-2" class="Tabs__link" data-spirit-toggle="tabs" role="tab" aria-controls="x-profile">Nested Tabs2</button>
               </nav>
               <div class="Tabs-content">
-                <div class="TabsPane is-selected" id="nested-tab1" role="tabpanel">Nested Tabs1 Content</div>
-                <div class="TabsPane" id="nested-tab2" role="tabpanel">Nested Tabs2 Content</div>
+                <div class="TabsPane is-selected" id="nested-tab-1" role="tabpanel">Nested Tabs1 Content</div>
+                <div class="TabsPane" id="nested-tab-2" role="tabpanel">Nested Tabs2 Content</div>
               </div>
             </div>
-            <div class="TabsPane is-selected" id="x-tab2" role="tabpanel">Tabs2 Content</div>
-            <div class="TabsPane" id="x-tab3" role="tabpanel">Tabs3 Content</div>
+            <div class="TabsPane is-selected" id="x-tab-2" role="tabpanel">Tabs2 Content</div>
+            <div class="TabsPane" id="x-tab-3" role="tabpanel">Tabs3 Content</div>
           </div>
         `;
 
-      const tab1El = fixtureEl.querySelector('#tab1') as HTMLElement;
-      const tabNested2El = fixtureEl.querySelector('#tabNested2') as HTMLElement;
+      const tab1El = fixtureEl.querySelector('#tab-1') as HTMLElement;
+      const tabNested2El = fixtureEl.querySelector('#tab-nested-2') as HTMLElement;
       const xTabs1El = fixtureEl.querySelector('#x-tab1') as HTMLElement;
 
       tabNested2El.addEventListener('shown.tab', () => {

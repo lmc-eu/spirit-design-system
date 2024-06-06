@@ -230,7 +230,7 @@ tooltip.show();
 | `shown.tooltip`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
 ```js
-const myTooltipEl = document.getElementById('myTooltip');
+const myTooltipEl = document.getElementById('my-tooltip');
 const tooltip = Tooltip.getOrCreateInstance(myTooltipEl);
 
 myTooltipEl.addEventListener('hidden.tooltip', () => {

@@ -3,8 +3,8 @@
 ## Basic usage:
 
 ```html
-<label for="checkboxDefault" class="Checkbox">
-  <input type="checkbox" id="checkboxDefault" class="Checkbox__input" name="default" />
+<label for="checkbox-default" class="Checkbox">
+  <input type="checkbox" id="checkbox-default" class="Checkbox__input" name="default" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
   </span>
@@ -14,8 +14,8 @@
 ## Required input:
 
 ```html
-<label for="checkboxRequired" class="Checkbox">
-  <input type="checkbox" id="checkboxRequired" class="Checkbox__input" name="required" required />
+<label for="checkbox-required" class="Checkbox">
+  <input type="checkbox" id="checkbox-required" class="Checkbox__input" name="required" required />
   <span class="Checkbox__text">
     <span class="Checkbox__label Checkbox__label--required">Checkbox Label</span>
   </span>
@@ -27,16 +27,16 @@
 See Validation state [dictionary][dictionary-validation].
 
 ```html
-<label for="checkboxWarning" class="Checkbox Checkbox--warning">
-  <input type="checkbox" id="checkboxWarning" class="Checkbox__input" name="warning" />
+<label for="checkbox-warning" class="Checkbox Checkbox--warning">
+  <input type="checkbox" id="checkbox-warning" class="Checkbox__input" name="warning" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
     <span class="Checkbox__validationText">Warning validation text</span>
   </span>
 </label>
 
-<label for="checkboxDanger" class="Checkbox Checkbox--danger">
-  <input type="checkbox" id="checkboxDanger" class="Checkbox__input" name="danger" />
+<label for="checkbox-danger" class="Checkbox Checkbox--danger">
+  <input type="checkbox" id="checkbox-danger" class="Checkbox__input" name="danger" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
     <ul class="Checkbox__validationText">
@@ -50,8 +50,8 @@ See Validation state [dictionary][dictionary-validation].
 ## Hidden label:
 
 ```html
-<label for="checkboxHiddenLabel" class="Checkbox">
-  <input type="checkbox" id="checkboxHiddenLabel" class="Checkbox__input" name="hiddenLabel" required />
+<label for="checkbox-hidden-label" class="Checkbox">
+  <input type="checkbox" id="checkbox-hidden-label" class="Checkbox__input" name="hiddenLabel" required />
   <span class="Checkbox__text">
     <span class="Checkbox__label Checkbox__label--hidden">Checkbox Label</span>
   </span>
@@ -61,8 +61,8 @@ See Validation state [dictionary][dictionary-validation].
 ## Helper Text:
 
 ```html
-<label for="checkboxHelperText" class="Checkbox">
-  <input type="checkbox" id="checkboxHelperText" class="Checkbox__input" name="helperText" />
+<label for="checkbox-helper-text" class="Checkbox">
+  <input type="checkbox" id="checkbox-helper-text" class="Checkbox__input" name="helperText" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
     <span class="Checkbox__helperText">Helper text</span>
@@ -73,8 +73,8 @@ See Validation state [dictionary][dictionary-validation].
 ## Disabled state:
 
 ```html
-<label for="checkboxDisabled" class="Checkbox Checkbox--disabled">
-  <input type="checkbox" id="checkboxDisabled" class="Checkbox__input" name="disabled" disabled />
+<label for="checkbox-disabled" class="Checkbox Checkbox--disabled">
+  <input type="checkbox" id="checkbox-disabled" class="Checkbox__input" name="disabled" disabled />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
   </span>
@@ -84,8 +84,8 @@ See Validation state [dictionary][dictionary-validation].
 ## As an Item:
 
 ```html
-<label for="checkboxItemDefault" class="Checkbox Checkbox--item">
-  <input type="checkbox" id="checkboxItemDefault" class="Checkbox__input" name="item" />
+<label for="checkbox-item-default" class="Checkbox Checkbox--item">
+  <input type="checkbox" id="checkbox-item-default" class="Checkbox__input" name="item" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Checkbox Label</span>
   </span>

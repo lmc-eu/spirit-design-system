@@ -60,13 +60,19 @@ on the root element).
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
-  <label for="fileUploader" class="FileUploaderInput__label">Label</label>
-  <input type="file" id="fileUploader" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
+  <label for="file-uploader" class="FileUploaderInput__label">Label</label>
+  <input
+    type="file"
+    id="file-uploader"
+    name="attachment"
+    class="FileUploaderInput__input"
+    data-spirit-element="input"
+  />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <svg width="24" height="24" aria-hidden="true">
       <use xlink:href="/icons/svg/sprite.svg#upload" />
     </svg>
-    <label for="fileUploader" class="FileUploaderInput__dropZoneLabel">
+    <label for="file-uploader" class="FileUploaderInput__dropZoneLabel">
       <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
       <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
     </label>
@@ -82,7 +88,7 @@ To pick more than one file, just add the [`multiple`][mdn-multiple] attribute to
 ```html
 <input
   type="file"
-  id="fileUpload"
+  id="file-upload"
   name="attachment"
   class="FileUploaderInput__input"
   data-spirit-element="input"
@@ -150,7 +156,7 @@ Microsoft Word documents:
 ```html
 <input
   type="file"
-  id="fileUploader"
+  id="file-uploader"
   name="attachment"
   class="FileUploaderInput__input"
   data-spirit-element="input"
@@ -164,8 +170,14 @@ To mark the input as required, simply add the `FileUploaderInput__label--require
 
 ```html
 <div class="FileUploaderInput" data-spirit-element="wrapper">
-  <label for="fileUploader" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
-  <input type="file" id="fileUploader" name="attachment" class="FileUploaderInput__input" data-spirit-element="input" />
+  <label for="file-uploader" class="FileUploaderInput__label FileUploaderInput__label--required">Label</label>
+  <input
+    type="file"
+    id="file-uploader"
+    name="attachment"
+    class="FileUploaderInput__input"
+    data-spirit-element="input"
+  />
   <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone">
     <!-- … -->
   </div>
@@ -207,7 +219,7 @@ or `is-disabled` to the `FileUploaderInput` subcomponent as well.
   <!-- Label -->
   <input
     type="file"
-    id="fileUploaderDisabled"
+    id="file-uploader-disabled"
     name="attachment"
     class="FileUploaderInput__input"
     disabled
@@ -520,10 +532,10 @@ This is how all subcomponents build up the complete FileUploader:
 
   <!-- FileUploaderInput: start -->
   <div class="FileUploaderInput" data-spirit-element="wrapper">
-    <label for="fileUploaderWithAttachments" class="FileUploaderInput__label">Label</label>
+    <label for="file-uploader-with-attachments" class="FileUploaderInput__label">Label</label>
     <input
       type="file"
-      id="fileUploaderWithAttachments"
+      id="file-uploader-with-attachments"
       name="attachment"
       class="FileUploaderInput__input"
       data-spirit-element="input"
@@ -532,7 +544,7 @@ This is how all subcomponents build up the complete FileUploader:
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/icons/svg/sprite.svg#upload" />
       </svg>
-      <label for="fileUploaderWithAttachments" class="FileUploaderInput__dropZoneLabel">
+      <label for="file-uploader-with-attachments" class="FileUploaderInput__dropZoneLabel">
         <span class="FileUploaderInput__link link-primary link-underlined">Upload your file</span>
         <span class="FileUploaderInput__dragAndDropLabel">or drag and drop here</span>
       </label>
