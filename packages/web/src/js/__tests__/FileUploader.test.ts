@@ -48,8 +48,8 @@ describe('FileUploader', () => {
           <label for="fileUploadMultiple" class="FileUploaderInput__label">Label</label>
           <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone"></div>
         </div>
-        <h3 id="attachments-multipleFile" hidden>Attachments</h3>
-        <ul class="FileUploaderList" aria-labelledby="attachments-multipleFile" data-spirit-element="list"></ul>
+        <h3 id="attachments-multiple-file" hidden>Attachments</h3>
+        <ul class="FileUploaderList" aria-labelledby="attachments-multiple-file" data-spirit-element="list"></ul>
       </div>
     `;
 
@@ -83,8 +83,8 @@ describe('FileUploader', () => {
             <label for="fileUploadMultiple" class="FileUploaderInput__label">Label</label>
             <div class="FileUploaderInput__dropZone" data-spirit-element="dropZone"></div>
           </div>
-          <h3 id="attachments-multipleFile" hidden>Attachments</h3>
-          <ul class="FileUploaderList" aria-labelledby="attachments-multipleFile" data-spirit-element="list"></ul>
+          <h3 id="attachments-multiple-file" hidden>Attachments</h3>
+          <ul class="FileUploaderList" aria-labelledby="attachments-multiple-file" data-spirit-element="list"></ul>
         </div>
       `;
 

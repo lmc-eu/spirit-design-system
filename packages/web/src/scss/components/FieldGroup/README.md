@@ -71,13 +71,13 @@ code.
 To render helper text, add a `<div>` element with the `FieldGroup__helperText` class.
 
 ```html
-<fieldset class="FieldGroup" aria-describedby="fieldGroupHelperText">
+<fieldset class="FieldGroup" aria-describedby="field-group-helper-text">
   <legend class="accessibility-hidden">Label</legend>
   <div class="FieldGroup__label" aria-hidden="true">Label</div>
   <div class="FieldGroup__fields">
     <!-- Form fields… -->
   </div>
-  <div id="fieldGroupHelperText" class="FieldGroup__helperText">Helper text</div>
+  <div id="field-group-helper-text" class="FieldGroup__helperText">Helper text</div>
 </fieldset>
 ```
 
@@ -120,8 +120,8 @@ disabled styling on all elements.
   <div class="FieldGroup__label" aria-hidden="true">Label</div>
   <div class="FieldGroup__fields">
     <div class="TextField TextField--disabled">
-      <label for="textField" class="TextField__label">Label</label>
-      <input type="text" id="textField" class="TextField__input" name="textField" placeholder="Placeholder" disabled />
+      <label for="text-field" class="TextField__label">Label</label>
+      <input type="text" id="text-field" class="TextField__input" name="textField" placeholder="Placeholder" disabled />
     </div>
   </div>
 </fieldset>
@@ -134,20 +134,20 @@ Validation states can be presented either by adding a CSS modifier class (`Field
 `has-danger`). See Validation state [dictionary][dictionary-validation].
 
 ```html
-<fieldset class="FieldGroup FieldGroup--success" aria-describedby="fieldGroupSuccessValidationText">
+<fieldset class="FieldGroup FieldGroup--success" aria-describedby="field-group-success-validation-text">
   <legend class="accessibility-hidden">Label</legend>
   <div class="FieldGroup__label" aria-hidden="true">Label</div>
   <div class="FieldGroup__fields">
     <!-- Form fields… -->
   </div>
-  <div id="fieldGroupSuccessValidationText" class="FieldGroup__validationText">Validation text</div>
+  <div id="field-group-success-validation-text" class="FieldGroup__validationText">Validation text</div>
 </fieldset>
 ```
 
 To render validation text as a list, use `<ul>` element instead of `<div>`.
 
 ```html
-<ul id="fieldGroupDangerValidationText" class="FieldGroup__validationText">
+<ul id="field-group-danger-validation-text" class="FieldGroup__validationText">
   <li>First validation text</li>
   <li>Second validation text</li>
 </ul>
@@ -167,13 +167,13 @@ When implementing client-side form validation, use JS interaction state classes 
 handle prefixes their own way.**
 
 ```html
-<fieldset class="FieldGroup FieldGroup--success" aria-describedby="fieldGroupSuccessValidationText">
+<fieldset class="FieldGroup FieldGroup--success" aria-describedby="field-group-success-validation-text">
   <legend class="accessibility-hidden">Label</legend>
   <div class="FieldGroup__label" aria-hidden="true">Label</div>
   <div class="FieldGroup__fields">
     <!-- Form fields… -->
   </div>
-  <div id="fieldGroupSuccessValidationText" data-spirit-element="validation_text">Validation text</div>
+  <div id="field-group-success-validation-text" data-spirit-element="validation_text">Validation text</div>
 </fieldset>
 ```
 

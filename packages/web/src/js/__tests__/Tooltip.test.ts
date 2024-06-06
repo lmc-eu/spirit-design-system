@@ -38,10 +38,10 @@ describe('Tooltip', () => {
 
   describe('constructor', () => {
     it('should take care of element either passed as a CSS selector or DOM element', () => {
-      fixtureEl.innerHTML = '<a href="#" id="tooltipEl" rel="tooltip" title="Nice and short title">';
+      fixtureEl.innerHTML = '<a href="#" id="tooltip-el" rel="tooltip" title="Nice and short title">';
 
-      const tooltipEl = fixtureEl.querySelector('#tooltipEl');
-      const tooltipBySelector = new Tooltip('#tooltipEl');
+      const tooltipEl = fixtureEl.querySelector('#tooltip-el');
+      const tooltipBySelector = new Tooltip('#tooltip-el');
       const tooltipByElement = new Tooltip(tooltipEl);
 
       expect(tooltipBySelector.element).toEqual(tooltipEl);

@@ -9,10 +9,10 @@ Example usage:
       class="Tabs__link is-selected"
       role="tab"
       aria-selected="true"
-      id="pane1-tab"
+      id="pane-1-tab"
       data-spirit-toggle="tab"
-      data-spirit-target="#pane1"
-      aria-controls="pane1"
+      data-spirit-target="#pane-1"
+      aria-controls="pane-1"
     >
       Item 1
     </button>
@@ -22,10 +22,10 @@ Example usage:
       class="Tabs__link"
       role="tab"
       aria-selected="false"
-      id="pane2-tab"
+      id="pane-2-tab"
       data-spirit-toggle="tab"
-      data-spirit-target="#pane2"
-      aria-controls="pane2"
+      data-spirit-target="#pane-2"
+      aria-controls="pane-2"
     >
       Item 2
     </button>
@@ -38,8 +38,8 @@ Example usage:
   </li>
 </ul>
 
-<div id="pane1" class="TabsPane is-selected" role="tabpanel" aria-labelledby="pane1-tab">Pane 1 content</div>
-<div id="pane2" class="TabsPane" role="tabpanel" aria-labelledby="pane2-tab">Pane 2 content</div>
+<div id="pane-1" class="TabsPane is-selected" role="tabpanel" aria-labelledby="pane-1-tab">Pane 1 content</div>
+<div id="pane-2" class="TabsPane" role="tabpanel" aria-labelledby="pane-2-tab">Pane 2 content</div>
 ```
 
 ## Link Items
@@ -63,10 +63,10 @@ certain breakpoint up, preferably using Spirit utility classes.
     class="Tabs__link is-selected"
     role="tab"
     aria-selected="true"
-    id="pane1-tab"
+    id="pane-1-tab"
     data-spirit-toggle="tab"
-    data-spirit-target="#pane1"
-    aria-controls="pane1"
+    data-spirit-target="#pane-1"
+    aria-controls="pane-1"
   >
     Item
   </button>

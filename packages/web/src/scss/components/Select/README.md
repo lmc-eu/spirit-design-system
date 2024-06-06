@@ -4,9 +4,9 @@ Basic usage:
 
 ```html
 <div class="Select">
-  <label for="selectSimple" class="Select__label">Label</label>
+  <label for="select-simple" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSimple" name="simple" class="Select__input">
+    <select id="select-simple" name="simple" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -23,9 +23,9 @@ Required select (requires a placeholder option):
 
 ```html
 <div class="Select">
-  <label for="selectSimple" class="Select__label Select__label--required">Label</label>
+  <label for="select-simple" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSimple" name="simple" class="Select__input" required>
+    <select id="select-simple" name="simple" class="Select__input" required>
       <option value="" selected>Select an option</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
@@ -43,9 +43,9 @@ Hidden label:
 
 ```html
 <div class="Select">
-  <label for="selectHiddenLabel" class="Select__label Select__label--hidden">Label</label>
+  <label for="select-hidden-label" class="Select__label Select__label--hidden">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectHiddenLabel" name="hiddenLabel" class="Select__input">
+    <select id="select-hidden-label" name="hiddenLabel" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -70,9 +70,9 @@ sure users give all needed details before sending the form.
 
 ```html
 <div class="Select">
-  <label for="selectPlaceholder" class="Select__label">Label</label>
+  <label for="select-placeholder" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectPlaceholder" name="placeholder" class="Select__input">
+    <select id="select-placeholder" name="placeholder" class="Select__input">
       <option value="" selected>Select option</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
@@ -86,9 +86,9 @@ sure users give all needed details before sending the form.
 </div>
 
 <div class="Select">
-  <label for="selectPlaceholderDisabled" class="Select__label Select__label--required">Label</label>
+  <label for="select-placeholder-disabled" class="Select__label Select__label--required">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectPlaceholderDisabled" name="placeholderDisabled" class="Select__input" required>
+    <select id="select-placeholder-disabled" name="placeholderDisabled" class="Select__input" required>
       <option value="" selected disabled>Select option (default is disabled)</option>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
@@ -106,9 +106,9 @@ Fluid width:
 
 ```html
 <div class="Select Select--fluid">
-  <label for="selectFluid" class="Select__label">Label</label>
+  <label for="select-fluid" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectFluid" name="fluid" class="Select__input">
+    <select id="select-fluid" name="fluid" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -125,9 +125,9 @@ Usage with helper text:
 
 ```html
 <div class="Select">
-  <label for="selectHelperText" class="Select__label">Label</label>
+  <label for="select-helper-text" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectHelperText" name="helperText" class="Select__input">
+    <select id="select-helper-text" name="helperText" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -150,9 +150,9 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 ```html
 <div class="Select Select--success">
-  <label for="selectSuccess" class="Select__label">Label</label>
+  <label for="select-success" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectSuccess" name="success" class="Select__input">
+    <select id="select-success" name="success" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -165,9 +165,9 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 
 <div class="Select Select--warning">
-  <label for="selectWarning" class="Select__label">Label</label>
+  <label for="select-warning" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectWarning" name="warning" class="Select__input">
+    <select id="select-warning" name="warning" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -181,9 +181,9 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 
 <div class="Select Select--danger">
-  <label for="selectDanger" class="Select__label">Label</label>
+  <label for="select-danger" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectDanger" name="danger" class="Select__input">
+    <select id="select-danger" name="danger" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -213,9 +213,9 @@ components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
 <div class="Select has-danger">
-  <label for="SelectJSValidation" class="Select__label">Label</label>
+  <label for="select-js-validation" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="SelectJSValidation" name="jsValidation" class="Select__input">
+    <select id="select-js-validation" name="jsValidation" class="Select__input">
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -237,9 +237,9 @@ JS interaction class when controlled by JavaScript:
 
 ```html
 <div class="Select Select--disabled">
-  <label for="selectDisabled" class="Select__label">Label</label>
+  <label for="select-disabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectDisabled" name="disabled" class="Select__input" disabled>
+    <select id="select-disabled" name="disabled" class="Select__input" disabled>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>
@@ -251,9 +251,9 @@ JS interaction class when controlled by JavaScript:
   </div>
 </div>
 <div class="Select is-disabled">
-  <label for="selectIsDisabled" class="Select__label">Label</label>
+  <label for="select-is-disabled" class="Select__label">Label</label>
   <div class="Select__inputContainer">
-    <select id="selectIsDisabled" name="isDisabled" class="Select__input" disabled>
+    <select id="select-is-disabled" name="isDisabled" class="Select__input" disabled>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>
     </select>

@@ -230,12 +230,12 @@ describe('Offcanvas', () => {
   describe('data-spirit-api', () => {
     it('should not prevent event for input', async () => {
       fixtureEl.innerHTML = [
-        '<input type="checkbox" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvasdiv1">',
-        '<dialog id="offcanvasdiv1" class="offcanvas"></dialog>',
+        '<input type="checkbox" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas-div-1">',
+        '<dialog id="offcanvas-div-1" class="offcanvas"></dialog>',
       ].join('');
 
       const target = fixtureEl.querySelector('input') as HTMLInputElement;
-      const offCanvasEl = fixtureEl.querySelector('#offcanvasdiv1') as HTMLElement;
+      const offCanvasEl = fixtureEl.querySelector('#offcanvas-div-1') as HTMLElement;
 
       offCanvasEl.addEventListener('shown.offcanvas', () => {
         expect(offCanvasEl).toHaveClass('show');
@@ -247,8 +247,8 @@ describe('Offcanvas', () => {
 
     it('should not call toggle on disabled elements', () => {
       fixtureEl.innerHTML = [
-        '<a href="#" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvasdiv1" class="disabled"></a>',
-        '<div id="offcanvasdiv1" class="offcanvas"></div>',
+        '<a href="#" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas-div-1" class="disabled"></a>',
+        '<div id="offcanvas-div-1" class="offcanvas"></div>',
       ].join('');
 
       const target = fixtureEl.querySelector('a') as HTMLElement;
@@ -262,14 +262,14 @@ describe('Offcanvas', () => {
 
     it('should call hide first, if another offcanvas is open', async () => {
       fixtureEl.innerHTML = [
-        '<button id="btn2" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas2"></button>',
-        '<dialog id="offcanvas1" class="offcanvas"></dialog>',
-        '<dialog id="offcanvas2" class="offcanvas"></dialog>',
+        '<button id="btn-2" data-spirit-toggle="offcanvas" data-spirit-target="#offcanvas-2"></button>',
+        '<dialog id="offcanvas-1" class="offcanvas"></dialog>',
+        '<dialog id="offcanvas-2" class="offcanvas"></dialog>',
       ].join('');
 
-      const trigger2 = fixtureEl.querySelector('#btn2') as HTMLElement;
-      const offcanvasEl1 = document.querySelector('#offcanvas1') as HTMLElement;
-      const offcanvasEl2 = document.querySelector('#offcanvas2') as HTMLElement;
+      const trigger2 = fixtureEl.querySelector('#btn-2') as HTMLElement;
+      const offcanvasEl1 = document.querySelector('#offcanvas-1') as HTMLElement;
+      const offcanvasEl2 = document.querySelector('#offcanvas-2') as HTMLElement;
       const offcanvas1 = new Offcanvas(offcanvasEl1);
 
       offcanvasEl1.addEventListener('shown.offcanvas', () => {

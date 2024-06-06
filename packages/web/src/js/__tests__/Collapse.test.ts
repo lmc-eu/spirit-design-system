@@ -18,7 +18,7 @@ describe('Collapse', () => {
     it('should take care of element passed as a CSS selector', () => {
       fixtureEl.innerHTML = `
         <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0"></button>
-        <div id="CollapseExample0" class="Collapse">
+        <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content
           </div>
@@ -36,7 +36,7 @@ describe('Collapse', () => {
     it('should toggle a collapse', async () => {
       fixtureEl.innerHTML = `
         <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0" aria-expanded="false"></button>
-        <div id="CollapseExample0" class="Collapse">
+        <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content
           </div>
@@ -61,7 +61,7 @@ describe('Collapse', () => {
     it('should show a collapse', async () => {
       fixtureEl.innerHTML = `
         <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0" aria-expanded="false"></button>
-        <div id="CollapseExample0" class="Collapse">
+        <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content
           </div>
@@ -69,7 +69,7 @@ describe('Collapse', () => {
       `;
 
       const element = fixtureEl.querySelector('[data-spirit-toggle="collapse"]') as HTMLElement;
-      const target = fixtureEl.querySelector('#CollapseExample0') as HTMLElement;
+      const target = fixtureEl.querySelector('#collapse-example-0') as HTMLElement;
       const collapse = new Collapse(element);
 
       await collapse.show();
@@ -86,7 +86,7 @@ describe('Collapse', () => {
     it('should hide a collapse', async () => {
       fixtureEl.innerHTML = `
         <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0" aria-expanded="true"></button>
-        <div id="CollapseExample0" class="Collapse">
+        <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content
           </div>
@@ -106,22 +106,22 @@ describe('Collapse', () => {
     it('should toggle a collapse with parent', async () => {
       fixtureEl.innerHTML = `
         <section
-          id="accordionExample1"
+          id="accordion-example-1"
           class="Accordion"
         >
           <article
-            id="accordionExample1_article_0"
+            id="accordion-example-1-article-0"
             class="Accordion__item"
           >
             <h3
-              id="accordionExample1_article_0_header"
+              id="accordion-example-1-article-0-header"
               class="Accordion__itemHeader"
             >
               <button
                 type="button"
                 class="Accordion__itemToggle"
                 data-spirit-toggle="collapse"
-                data-spirit-target="accordionExample1_article_0_collapse"
+                data-spirit-target="accordion-example1-article-0-collapse"
               >
                 header
               </button>
@@ -137,10 +137,10 @@ describe('Collapse', () => {
               </span>
             </h3>
             <div
-              id="accordionExample1_article_0_collapse"
+              id="accordion-example-1-article-0-collapse"
               class="Collapse"
-              data-spirit-parent="#accordionExample1"
-              aria-labelledby="accordionExample1_article_0_header"
+              data-spirit-parent="#accordion-example-1"
+              aria-labelledby="accordion-example1-article-0-header"
             >
               <div class="Collapse__content">
                 <div class="Accordion__content">content</div>
@@ -148,18 +148,18 @@ describe('Collapse', () => {
             </div>
           </article>
           <article
-            id="accordionExample1_article_1"
+            id="accordion-example-1-article-1"
             class="Accordion__item"
           >
             <h3
-              id="accordionExample1_article_1_header"
+              id="accordion-example-1-article-1-header"
               class="Accordion__itemHeader"
             >
               <button
                 type="button"
                 class="Accordion__itemToggle"
                 data-spirit-toggle="collapse"
-                data-spirit-target="accordionExample1_article_1_collapse"
+                data-spirit-target="accordion-example-1-article-1-collapse"
                 aria-expanded="true"
               >
                 header
@@ -176,10 +176,10 @@ describe('Collapse', () => {
               </span>
             </h3>
             <div
-              id="accordionExample1_article_1_collapse"
+              id="accordion-example-1-article-1-collapse"
               class="Collapse is-open"
               data-spirit-parent="#accordionExample1"
-              aria-labelledby="accordionExample1_article_1_header"
+              aria-labelledby="accordion-example-1-article-1-header"
             >
               <div class="Collapse__content">
                 <div class="Accordion__content">content</div>
@@ -190,10 +190,10 @@ describe('Collapse', () => {
       `;
 
       const element0 = fixtureEl.querySelector(
-        '[data-spirit-target="accordionExample1_article_0_collapse"]',
+        '[data-spirit-target="accordion-example-1-article-0-collapse"]',
       ) as HTMLElement;
-      const target0 = fixtureEl.querySelector('#accordionExample1_article_0_collapse') as HTMLElement;
-      const target1 = fixtureEl.querySelector('#accordionExample1_article_1_collapse') as HTMLElement;
+      const target0 = fixtureEl.querySelector('#accordion-example-1-article-0-collapse') as HTMLElement;
+      const target1 = fixtureEl.querySelector('#accordion-example-1-article-1-collapse') as HTMLElement;
       const collapse0 = new Collapse(element0);
 
       expect(target0).toHaveClass('Collapse');

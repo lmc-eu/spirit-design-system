@@ -30,7 +30,7 @@ describe('Dropdown', () => {
         >
           toggle
         </button>
-        <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
+        <div class="Dropdown" id="dropdown-demo-1">${childrenHtml}</div>
       `;
 
       const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
@@ -45,11 +45,11 @@ describe('Dropdown', () => {
       fixtureEl.innerHTML = `
         <button
           data-spirit-toggle="dropdown"
-          data-spirit-target="#DropdownDemo1"
+          data-spirit-target="#dropdown-demo-1"
         >
           toggle
         </button>
-        <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
+        <div class="Dropdown" id="dropdown-demo-1">${childrenHtml}</div>
       `;
 
       const toggleSpy = jest.spyOn(Dropdown.prototype, 'toggle');
@@ -71,11 +71,11 @@ describe('Dropdown', () => {
       fixtureEl.innerHTML = `
         <button
           data-spirit-toggle="dropdown"
-          data-spirit-target="#DropdownDemo1"
+          data-spirit-target="#dropdown-demo-1"
         >
           toggle
         </button>
-        <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
+        <div class="Dropdown" id="dropdown-demo-1">${childrenHtml}</div>
       `;
 
       const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
@@ -95,11 +95,11 @@ describe('Dropdown', () => {
       fixtureEl.innerHTML = `
         <button
           data-spirit-toggle="dropdown"
-          data-spirit-target="#DropdownDemo1"
+          data-spirit-target="#dropdown-demo-1"
         >
           toggle
         </button>
-        <div class="Dropdown" id="DropdownDemo1">${childrenHtml}</div>
+        <div class="Dropdown" id="dropdown-demo-1">${childrenHtml}</div>
       `;
 
       const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;

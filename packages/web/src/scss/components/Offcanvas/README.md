@@ -24,8 +24,8 @@ The `data-spirit-target` attribute accepts a CSS selector to apply the Offcanvas
   type="button"
   class="Button Button--inverted Button--medium Button--square"
   data-spirit-toggle="offcanvas"
-  data-spirit-target="#offcanvas_example"
-  aria-controls="offcanvas_example"
+  data-spirit-target="#offcanvas-example"
+  aria-controls="offcanvas-example"
   aria-expanded="false"
 >
   <svg width="24" height="24" aria-hidden="true">
@@ -34,7 +34,7 @@ The `data-spirit-target` attribute accepts a CSS selector to apply the Offcanvas
   <span class="accessibility-hidden">Menu</span>
 </button>
 
-<dialog id="offcanvas_example">…</dialog>
+<dialog id="offcanvas-example">…</dialog>
 ```
 
 ### Via JavaScript
@@ -67,7 +67,7 @@ Activates your content as an Offcanvas element. Accepts an optional options obje
 You can create an Offcanvas instance with the constructor, for example:
 
 ```js
-const customOffcanvas = document.getElementById('customOffcanvas');
+const customOffcanvas = document.getElementById('custom-offcanvas');
 const spiritOffcanvas = new Offcanvas(customOffcanvas);
 ```
 
@@ -91,7 +91,7 @@ Spirit's Offcanvas class exposes a few events for hooking into Offcanvas functio
 | `hidden.offcanvas` | This event is fired when an offcanvas element has been hidden from the user (will wait for CSS transitions to complete)      |
 
 ```js
-const myOffcanvas = document.getElementById('customOffcanvas');
+const myOffcanvas = document.getElementById('custom-offcanvas');
 myOffcanvas.addEventListener('hidden.offcanvas', function () {
   // do something...
 });

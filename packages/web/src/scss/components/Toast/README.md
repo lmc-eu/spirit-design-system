@@ -457,7 +457,7 @@ toast.show();
 | `shown.toast`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
 ```js
-const myToastEl = document.getElementById('myToast');
+const myToastEl = document.getElementById('my-toast');
 const toast = Toast.getOrCreateInstance(myToastEl);
 
 myToastEl.addEventListener('hidden.toast', () => {

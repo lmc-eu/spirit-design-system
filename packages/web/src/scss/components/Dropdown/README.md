@@ -306,7 +306,7 @@ dropdown.show();
 | `shown.dropdown`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
 ```js
-const myDropdownEl = document.getElementById('myDropdown');
+const myDropdownEl = document.getElementById('my-dropdown');
 const dropdown = Dropdown.getOrCreateInstance(myDropdownEl);
 
 myDropdownEl.addEventListener('hidden.dropdown', () => {
