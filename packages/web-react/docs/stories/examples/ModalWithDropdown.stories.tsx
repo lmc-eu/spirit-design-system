@@ -34,7 +34,7 @@ export const ModalWithDropdown = () => {
           <ModalHeader />
           <ModalBody>
             <Dropdown id="modal-with-dropdown" isOpen={isDropdownOpen} onToggle={toggleDropdown}>
-              <DropdownTrigger elementType="button">Dropdown is {isDropdownOpen ? 'open' : 'closed'}</DropdownTrigger>
+              <DropdownTrigger elementType={Button}>Dropdown is {isDropdownOpen ? 'open' : 'closed'}</DropdownTrigger>
               <DropdownPopover>
                 <a href="#info" className="d-flex mb-400">
                   <Text UNSAFE_className="ml-300">Information</Text>
