@@ -47,7 +47,7 @@ const meta: Meta<typeof HeaderMobileActions> = {
     },
   },
   args: {
-    dialogId: 'header_dialog_example_1',
+    dialogId: 'header-dialog-example-1',
     menuToggleLabel: 'Menu',
   },
 };
@@ -97,7 +97,7 @@ const HeaderWithHooks = (args: HeaderMobileActionsProps) => {
             <HeaderNavItem>
               <HeaderDialogButton
                 onClick={handleUserMenuOpen}
-                aria-controls="header_dialog_example_2"
+                aria-controls="header-dialog-example-2"
                 aria-expanded={isUserMenuOpen}
               >
                 Marian
@@ -106,7 +106,7 @@ const HeaderWithHooks = (args: HeaderMobileActionsProps) => {
           </HeaderNav>
         </HeaderDesktopActions>
       </Header>
-      <HeaderDialog id="header_dialog_example_1" aria-label="Menu" isOpen={isMenuOpen} onClose={handleMenuClose}>
+      <HeaderDialog id="header-dialog-example-1" aria-label="Menu" isOpen={isMenuOpen} onClose={handleMenuClose}>
         <HeaderDialogCloseButton />
         <HeaderDialogActions color="primary" aria-label="Main navigation">
           <HeaderDialogNav>
@@ -151,7 +151,7 @@ const HeaderWithHooks = (args: HeaderMobileActionsProps) => {
         </HeaderDialogActions>
       </HeaderDialog>
       <HeaderDialog
-        id="header_dialog_example_2"
+        id="header-dialog-example-2"
         aria-label="User menu"
         isOpen={isUserMenuOpen}
         onClose={handleUserMenuClose}

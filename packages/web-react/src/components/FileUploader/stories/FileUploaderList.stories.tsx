@@ -25,7 +25,7 @@ const meta: Meta<typeof FileUploaderList> = {
   },
   args: {
     hasImagePreview: false,
-    id: 'fileUploaderExampleList',
+    id: 'file-uploader-example-list',
     inputName: 'attachments',
     label: 'Attachments',
   },
@@ -43,7 +43,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderListProps) => {
 
   return (
     <FileUploader
-      id="fileUploaderExample"
+      id="file-uploader-example"
       onDismiss={onDismiss}
       fileQueue={fileQueue}
       addToQueue={addToQueue}
@@ -52,7 +52,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderListProps) => {
       updateQueue={updateQueue}
     >
       <FileUploaderInput
-        id="fileUploaderExampleInput"
+        id="file-uploader-example-input"
         name="attachments"
         label="Label"
         linkText="Upload your file(s)"

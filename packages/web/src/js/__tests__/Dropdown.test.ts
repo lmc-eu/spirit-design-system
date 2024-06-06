@@ -79,7 +79,7 @@ describe('Dropdown', () => {
       `;
 
       const element = fixtureEl.querySelector('[data-spirit-toggle="dropdown"]') as HTMLElement;
-      const target = fixtureEl.querySelector('#DropdownDemo1') as HTMLElement;
+      const target = fixtureEl.querySelector('#dropdown-demo-1') as HTMLElement;
       const dropdown = new Dropdown(element);
 
       await dropdown.show();

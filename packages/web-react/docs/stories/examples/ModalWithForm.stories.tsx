@@ -33,26 +33,26 @@ export const ModalWithForm = () => {
       <Button onClick={toggleModal} aria-expanded={isOpen} aria-controls="ModalExample">
         {isOpen ? 'Close' : 'Open'} Modal
       </Button>
-      <Modal id="ModalExample" isOpen={isOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalHeader>Modal with Form </ModalHeader>
           <ModalBody>
             <form method="get" action="#">
               <Stack hasSpacing>
-                <TextField label="Name" />
-                <Select label="Choose your allegiance">
+                <TextField id="name" label="Name" />
+                <Select id="allegiance" label="Choose your allegiance">
                   <option value="" selected disabled>
                     Order
                   </option>
                   <option value="1">Jedi</option>
                   <option value="2">Sith</option>
                 </Select>
-                <Checkbox label="Inform the User?" />
-                <FieldGroup label="Do it?">
+                <Checkbox id="inform-user" label="Inform the User?" />
+                <FieldGroup id="now-or-never" label="Do it?">
                   <Radio label="Now" id="now" name="do-it" />
                   <Radio label="Never" id="never" name="do-it" />
                 </FieldGroup>
-                <TextArea />
+                <TextArea id="textarea" />
                 <Button type="submit">Send</Button>
               </Stack>
             </form>

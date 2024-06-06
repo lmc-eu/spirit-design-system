@@ -11,14 +11,14 @@ const FileUploaderFluidWidth = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderFluidWidth"
+      id="file-uploader-fluid-width"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
       isFluid
     >
       <FileUploaderInput
         helperText="Max file size is 10 MB"
-        id="fileUploaderFluidWidthInput"
+        id="file-uploader-fluid-width-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file"
@@ -30,7 +30,7 @@ const FileUploaderFluidWidth = () => {
         <FileUploaderAttachment
           name="test"
           file={new File([''], 'My resume.docx', { type: '.docx', lastModified: 123456789 })}
-          id="1"
+          id="attachment-1"
           label="My resume.docx"
           onDismiss={onDismiss}
         />

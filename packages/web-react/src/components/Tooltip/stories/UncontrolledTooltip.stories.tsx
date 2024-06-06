@@ -50,7 +50,7 @@ const meta: Meta<typeof UncontrolledTooltip> = {
     enableFlippingCrossAxis: true,
     enableShifting: true,
     enableSizing: true,
-    id: 'TooltipExample',
+    id: 'tooltip-example',
     isDismissible: false,
     isFocusableOnHover: false,
     isOpen: false,

@@ -41,7 +41,7 @@ const meta: Meta<typeof HeaderDialog> = {
     },
   },
   args: {
-    id: 'header_dialog_example_1',
+    id: 'header-dialog-example-1',
   },
 };
 
@@ -63,7 +63,7 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
         <Link href="/">
           <SpiritLogo />
         </Link>
-        <HeaderMobileActions dialogId="header_dialog_example_1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
+        <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
           <HeaderNav>
             <HeaderNavItem>
@@ -90,7 +90,7 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
             <HeaderNavItem>
               <HeaderDialogButton
                 onClick={handleUserMenuOpen}
-                aria-controls="header_dialog_example_2"
+                aria-controls="header-dialog-example-2"
                 aria-expanded={isUserMenuOpen}
               >
                 Marian
@@ -101,7 +101,7 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
       </Header>
       <HeaderDialog
         {...args}
-        id="header_dialog_example_1"
+        id="header-dialog-example-1"
         aria-label="Menu"
         isOpen={isMenuOpen}
         onClose={handleMenuClose}
@@ -150,7 +150,7 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
         </HeaderDialogActions>
       </HeaderDialog>
       <HeaderDialog
-        id="header_dialog_example_2"
+        id="header-dialog-example-2"
         aria-label="User menu"
         isOpen={isUserMenuOpen}
         onClose={handleUserMenuClose}

@@ -8,7 +8,7 @@ The label can be hidden.
 Basic example usage:
 
 ```jsx
-<Radio id="radioDefault" isChecked label="Label" name="radioDefault" />
+<Radio id="radio-default" isChecked label="Label" name="radioDefault" />
 ```
 
 Advanced example usage:
@@ -17,7 +17,7 @@ Advanced example usage:
 <Radio
   autocomplete="off"
   helperText="Helper text"
-  id="radioAdvanced"
+  id="radio-advanced"
   isChecked
   label="some label"
   name="radioAdvanced"

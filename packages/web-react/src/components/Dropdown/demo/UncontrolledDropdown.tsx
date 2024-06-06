@@ -7,7 +7,7 @@ import { dropdownContent } from './constants';
 import DropdownContentFactory from './DropdownContentFactory';
 
 const UncontrolledDropdownDemo = () => (
-  <UncontrolledDropdown id="UncontrolledDropdownExample" placement="top-start">
+  <UncontrolledDropdown id="uncontrolled-dropdown-example" placement="top-start">
     <DropdownTrigger elementType={Button}>Trigger button</DropdownTrigger>
     <DropdownPopover>
       <DropdownContentFactory content={dropdownContent} />

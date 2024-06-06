@@ -24,7 +24,7 @@ export default meta;
 type Story = StoryObj<typeof AccordionContent>;
 
 const AccordionWithHooks = (args: AccordionContentProps) => {
-  const [openState, setOpenState] = useState<AccordionOpenStateType>('AccordionItemExample0');
+  const [openState, setOpenState] = useState<AccordionOpenStateType>('accordion-item-example-0');
 
   const toggle = (id: string) => {
     setOpenState(toggleValueByType(id, openState));
@@ -32,7 +32,7 @@ const AccordionWithHooks = (args: AccordionContentProps) => {
 
   return (
     <Accordion open={openState} toggle={toggle}>
-      <AccordionItem id="AccordionItemExample0">
+      <AccordionItem id="accordion-item-example-0">
         <AccordionHeader
           slot={
             <>
@@ -45,15 +45,15 @@ const AccordionWithHooks = (args: AccordionContentProps) => {
         </AccordionHeader>
         <AccordionContent {...args} />
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample1">
+      <AccordionItem id="accordion-item-example-1">
         <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #1</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample2">
+      <AccordionItem id="accordion-item-example-2">
         <AccordionHeader>Accordion Header #2</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>
-      <AccordionItem id="AccordionItemExample3">
+      <AccordionItem id="accordion-item-example-3">
         <AccordionHeader slot={<Pill>3</Pill>}>Accordion Header #3</AccordionHeader>
         <AccordionContent>{content}</AccordionContent>
       </AccordionItem>

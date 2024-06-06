@@ -75,7 +75,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderProps) => {
       updateQueue={updateQueue}
     >
       <FileUploaderInput
-        id="fileUploaderExampleInput"
+        id="file-uploader-example-input"
         name="attachments"
         label="Label"
         linkText="Upload your file(s)"
@@ -88,7 +88,7 @@ const FileUploaderWithHooks = (args: SpiritFileUploaderProps) => {
         isMultiple
       />
       <FileUploaderList
-        id="fileUploaderExampleList"
+        id="file-uploader-example-list"
         label="Attachments"
         inputName="attachments"
         attachmentComponent={attachmentComponent}

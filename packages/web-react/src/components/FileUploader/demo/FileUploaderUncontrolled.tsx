@@ -8,8 +8,8 @@ const Story = (args: SpiritUncontrolledFileUploaderProps) => <UncontrolledFileUp
 Story.args = {
   attachmentComponent: (props: FileUploaderAttachmentBaseProps) => <FileUploaderAttachment key={props.id} {...props} />,
   iconName: 'upload',
-  id: 'fileUploaderUncontrolled',
-  inputId: 'fileUploaderUncontrolledInput',
+  id: 'file-uploader-uncontrolled',
+  inputId: 'file-uploader-uncontrolled-input',
   inputName: 'attachments',
   inputLabel: 'Label',
   linkText: 'Upload your file(s)',
@@ -18,7 +18,7 @@ Story.args = {
   inputProps: {
     accept: '*',
   },
-  listId: 'fileUploaderUncontrolledList',
+  listId: 'file-uploader-uncontrolled-list',
   listProps: {
     label: 'Attachments',
   },

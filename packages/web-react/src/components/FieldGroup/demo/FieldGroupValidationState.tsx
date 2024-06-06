@@ -5,7 +5,7 @@ import FieldGroup from '../FieldGroup';
 const FieldGroupValidationState = () => (
   <>
     <FieldGroup
-      id="FieldGroupValidationSuccess"
+      id="field-group-validation-success"
       label="Label"
       validationState="success"
       validationText="Validation text"
@@ -15,7 +15,7 @@ const FieldGroupValidationState = () => (
       <DocsBox>Item</DocsBox>
     </FieldGroup>
     <FieldGroup
-      id="FieldGroupValidationWarning"
+      id="field-group-validation-warning"
       label="Label"
       validationState="warning"
       validationText="Validation text"
@@ -25,7 +25,7 @@ const FieldGroupValidationState = () => (
       <DocsBox>Item</DocsBox>
     </FieldGroup>
     <FieldGroup
-      id="FieldGroupValidationDanger"
+      id="field-group-validation-danger"
       label="Label"
       validationState="danger"
       validationText={['First validation text', 'Second validation text']}

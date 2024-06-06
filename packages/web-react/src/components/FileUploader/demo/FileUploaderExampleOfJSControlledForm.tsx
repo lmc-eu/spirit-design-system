@@ -33,13 +33,13 @@ const FileUploaderExampleOfJSControlledForm = () => {
         clearQueue={clearQueue}
         fileQueue={fileQueue}
         findInQueue={findInQueue}
-        id="fileUploaderJSControlledForm"
+        id="file-uploader-js-controlled-form"
         onDismiss={onDismiss}
         updateQueue={updateQueue}
       >
         <FileUploaderInput
           helperText="Max file size is 10 MB"
-          id="fileUploaderJSControlledFormInput"
+          id="file-uploader-js-controlled-form-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file"
@@ -49,7 +49,7 @@ const FileUploaderExampleOfJSControlledForm = () => {
         />
         <FileUploaderList
           attachmentComponent={attachmentComponent}
-          id="fileUploaderJSControlledFormAttachment"
+          id="file-uploader-js-controlled-form-attachment"
           inputName="attachments"
           label="Attachments"
         />

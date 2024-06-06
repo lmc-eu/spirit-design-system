@@ -12,7 +12,7 @@ const DropdownFullwidthMobileOnly = () => {
 
   return (
     <Dropdown
-      id="DropdownFullwidthMobileOnly"
+      id="dropdown-fullwidth-mobile-only"
       isOpen={isOpen}
       onToggle={onToggle}
       fullWidthMode="mobile-only"

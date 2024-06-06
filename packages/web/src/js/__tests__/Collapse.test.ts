@@ -60,7 +60,7 @@ describe('Collapse', () => {
   describe('show', () => {
     it('should show a collapse', async () => {
       fixtureEl.innerHTML = `
-        <button data-spirit-toggle="collapse" data-spirit-target="CollapseExample0" aria-expanded="false"></button>
+        <button data-spirit-toggle="collapse" data-spirit-target="collapse-example-0" aria-expanded="false"></button>
         <div id="collapse-example-0" class="Collapse">
           <div class="Collapse__content">
             test content
@@ -121,7 +121,7 @@ describe('Collapse', () => {
                 type="button"
                 class="Accordion__itemToggle"
                 data-spirit-toggle="collapse"
-                data-spirit-target="accordion-example1-article-0-collapse"
+                data-spirit-target="accordion-example-1-article-0-collapse"
               >
                 header
               </button>
@@ -140,7 +140,7 @@ describe('Collapse', () => {
               id="accordion-example-1-article-0-collapse"
               class="Collapse"
               data-spirit-parent="#accordion-example-1"
-              aria-labelledby="accordion-example1-article-0-header"
+              aria-labelledby="accordion-example-1-article-0-header"
             >
               <div class="Collapse__content">
                 <div class="Accordion__content">content</div>

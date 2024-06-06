@@ -147,17 +147,16 @@ const DropdownPlacements = () => {
         <GridItem columnStart={2} rowStart={2}>
           <Dropdown
             enableAutoClose={false}
-            id="DropdownDefault"
+            id="dropdown-default"
             isOpen={isOpen}
             onToggle={onToggle}
             placement={placement}
             UNSAFE_style={{ margin: '8rem auto' }}
-            test-id="dropdown"
           >
-            <DropdownTrigger elementType={Button} test-id="dropdown-trigger">
+            <DropdownTrigger elementType={Button}>
               <span style={{ whiteSpace: 'nowrap' }}>{placement}</span>
             </DropdownTrigger>
-            <DropdownPopover test-id="dropdown-popover">
+            <DropdownPopover>
               <Item elementType="a" href="#" label="Action" />
               <Item elementType="a" href="#" label="Another action" />
               <Item elementType="a" href="#" label="Something else here" />

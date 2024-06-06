@@ -3,11 +3,11 @@ import Radio from '../Radio';
 
 const RadioDisabled = () => (
   <>
-    <Radio id="radioDisabled" isDisabled label="Radio Label" name="radioDisabled" />
+    <Radio id="radio-disabled" isDisabled label="Radio Label" name="radioDisabled" />
 
     <Radio
       helperText="Helper text"
-      id="radioDisabledHelperText"
+      id="radio-disabled-helper-text"
       isChecked
       isDisabled
       label="Radio Label"

@@ -39,7 +39,7 @@ const meta: Meta<typeof UncontrolledCollapse> = {
   },
   args: {
     elementType: 'div',
-    id: 'collapseExample',
+    id: 'collapse-example',
     isOpen: false,
     transitionDuration: 250,
   },

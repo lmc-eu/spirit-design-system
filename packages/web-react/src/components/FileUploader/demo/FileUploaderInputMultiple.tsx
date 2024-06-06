@@ -15,13 +15,13 @@ const FileUploaderInputMultiple = () => {
       clearQueue={clearQueue}
       fileQueue={fileQueue}
       findInQueue={findInQueue}
-      id="fileUploaderMultiple"
+      id="file-uploader-multiple"
       onDismiss={onDismiss}
       updateQueue={updateQueue}
     >
       <FileUploaderInput
         helperText="Max size of each file is 10 MB"
-        id="fileUploaderMultipleInput"
+        id="file-uploader-multiple-input"
         label="Label"
         labelText="or drag and drop here"
         linkText="Upload your file(s)"
@@ -32,7 +32,7 @@ const FileUploaderInputMultiple = () => {
       />
       <FileUploaderList
         attachmentComponent={attachmentComponent}
-        id="fileUploaderMultipleAttachment"
+        id="file-uploader-multiple-attachment"
         inputName="attachments"
         label="Attachments"
       />

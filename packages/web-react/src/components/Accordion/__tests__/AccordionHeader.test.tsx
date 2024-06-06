@@ -12,7 +12,7 @@ describe('AccordionHeader', () => {
 
   stylePropsTest(
     (props: Record<string, unknown>) => (
-      <AccordionItem id="AccordionItemExample">
+      <AccordionItem id="accordion-item-example">
         <AccordionHeader {...props} data-testid="test-accordion-header" />
       </AccordionItem>
     ),

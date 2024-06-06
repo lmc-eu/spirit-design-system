@@ -64,7 +64,7 @@ const TooltipAdvancedFloating = () => {
       <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} marginBottom="space-600">
         <Checkbox id="flip" isChecked={flip} label="Enable flipping" onChange={() => setFlip(!flip)} />
         <Checkbox
-          id="flipCrossAxis"
+          id="flip-cross-axis"
           isChecked={flipCrossAxis}
           label="Enable flipping cross axis"
           onChange={() => setFlipCrossAxis(!flipCrossAxis)}
@@ -120,7 +120,7 @@ const TooltipAdvancedFloating = () => {
           ref={contentRef}
         >
           <Tooltip
-            id="TooltipAdvancedExample"
+            id="tooltip-advanced-example"
             isOpen={isOpen}
             onToggle={setIsOpen}
             placement={suggestedPlacement}

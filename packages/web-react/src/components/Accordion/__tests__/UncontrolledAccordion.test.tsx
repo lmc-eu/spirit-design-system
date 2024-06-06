@@ -14,7 +14,7 @@ describe('UncontrolledAccordion', () => {
 
   stylePropsTest(
     (props: Record<string, unknown>) => (
-      <UncontrolledAccordion {...props} id="AccordionExample" data-testid="test-accordion" />
+      <UncontrolledAccordion {...props} id="accordion-example" data-testid="test-accordion" />
     ),
     'test-accordion',
   );
@@ -31,7 +31,7 @@ describe('UncontrolledAccordion', () => {
   it('should toggle an accordion', () => {
     const dom = render(
       <UncontrolledAccordion>
-        <AccordionItem id="AccordionItemExample">
+        <AccordionItem id="accordion-item-example">
           <AccordionHeader>Accordion Header</AccordionHeader>
           <AccordionContent>Accordion Content</AccordionContent>
         </AccordionItem>

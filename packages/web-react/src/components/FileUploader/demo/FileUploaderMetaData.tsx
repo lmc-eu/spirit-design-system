@@ -72,13 +72,13 @@ const FileUploaderMetaData = () => {
         clearQueue={clearQueue}
         fileQueue={fileQueue}
         findInQueue={findInQueue}
-        id="fileUploaderWithMetaData"
+        id="file-uploader-with-meta-data"
         onDismiss={customOnDismiss}
         updateQueue={updateQueue}
       >
         <FileUploaderInput
           helperText="Max size of each file is 10 MB"
-          id="fileUploaderWithMetaDataInput"
+          id="file-uploader-with-meta-data-input"
           label="Label"
           labelText="or drag and drop here"
           linkText="Upload your file(s)"
@@ -89,13 +89,13 @@ const FileUploaderMetaData = () => {
         />
         <FileUploaderList
           attachmentComponent={attachmentComponent}
-          id="fileUploaderWithMetaDataAttachment"
+          id="file-uploader-with-meta-data-attachment"
           inputName="attachments"
           label="Attachments"
           hasImagePreview
         />
       </FileUploader>
-      <Modal id="ModalExample" isOpen={isModalOpen} onClose={handleClose}>
+      <Modal id="modal-example" isOpen={isModalOpen} onClose={handleClose}>
         <ModalDialog>
           <ModalBody>
             <div className="pt-400 pt-tablet-600">

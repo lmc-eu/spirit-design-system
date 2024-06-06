@@ -3,9 +3,9 @@ import TextArea from '../TextArea';
 
 const TextAreaDefault = () => (
   <>
-    <TextArea id="textareaDefault" label="Label" name="textareaDefault" placeholder="Placeholder" />
+    <TextArea id="textarea-default" label="Label" name="textareaDefault" placeholder="Placeholder" />
 
-    <TextArea id="textareaFilled" label="Label" name="textareaFilled" placeholder="Placeholder" value="Filled" />
+    <TextArea id="textarea-filled" label="Label" name="textareaFilled" placeholder="Placeholder" value="Filled" />
   </>
 );
 

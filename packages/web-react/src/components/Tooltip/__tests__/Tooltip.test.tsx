@@ -7,11 +7,11 @@ import { Button } from '../../Button';
 import { Tooltip, TooltipPopover, TooltipTrigger } from '..';
 
 describe('Tooltip', () => {
-  const id = 'TooltipTest';
+  const id = 'tooltip-test';
   const triggerText = 'TooltipTrigger';
   const popoverText = 'TooltipPopover';
 
-  stylePropsTest((props) => <Tooltip id={id} {...props} data-testid="Tooltip-test" />, 'Tooltip-test');
+  stylePropsTest((props) => <Tooltip id={id} {...props} data-testid="tooltip-test" />, 'tooltip-test');
 
   restPropsTest((props) => <Tooltip id={id} {...props} />, 'div');
 

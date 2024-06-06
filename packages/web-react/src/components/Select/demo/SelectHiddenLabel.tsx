@@ -3,7 +3,7 @@ import Select from '../Select';
 import ChildrenNode from './ChildrenNode';
 
 const SelectHiddenLabel = () => (
-  <Select id="selectHiddenLabel" name="selectHiddenLabel" label="Label" isLabelHidden>
+  <Select id="select-hidden-label" name="selectHiddenLabel" label="Label" isLabelHidden>
     <ChildrenNode />
   </Select>
 );
