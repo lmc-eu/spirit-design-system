@@ -4,8 +4,8 @@ Basic usage:
 
 ```html
 <div class="TextField">
-  <label for="textFieldDefault" class="TextField__label">Label</label>
-  <input type="text" id="textFieldDefault" class="TextField__input" name="default" placeholder="Placeholder" />
+  <label for="text-field-default" class="TextField__label">Label</label>
+  <input type="text" id="text-field-default" class="TextField__input" name="default" placeholder="Placeholder" />
 </div>
 ```
 
@@ -13,10 +13,10 @@ Required input:
 
 ```html
 <div class="TextField">
-  <label for="textFieldRequired" class="TextField__label TextField__label--required">Label</label>
+  <label for="text-field-required" class="TextField__label TextField__label--required">Label</label>
   <input
     type="text"
-    id="textFieldRequired"
+    id="text-field-required"
     class="TextField__input"
     name="required"
     placeholder="Placeholder"
@@ -29,8 +29,14 @@ Hidden label:
 
 ```html
 <div class="TextField">
-  <label for="textFieldHiddenLabel" class="TextField__label TextField__label--hidden">Label</label>
-  <input type="text" id="textFieldHiddenLabel" class="TextField__input" name="hiddenLabel" placeholder="Placeholder" />
+  <label for="text-field-hidden-label" class="TextField__label TextField__label--hidden">Label</label>
+  <input
+    type="text"
+    id="text-field-hidden-label"
+    class="TextField__input"
+    name="hiddenLabel"
+    placeholder="Placeholder"
+  />
 </div>
 ```
 
@@ -38,10 +44,10 @@ Fluid width:
 
 ```html
 <div class="TextField TextField--fluid">
-  <label for="textFieldFluid" class="TextField__label">Label</label>
+  <label for="text-field-fluid" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldFluid"
+    id="text-field-fluid"
     class="TextField__input"
     name="fluid"
     placeholder="Placeholder"
@@ -54,8 +60,8 @@ Helper Text:
 
 ```html
 <div class="TextField">
-  <label for="textFieldHelperText" class="TextField__label">Label</label>
-  <input type="text" id="textFieldHelperText" class="TextField__input" name="helperText" placeholder="Placeholder" />
+  <label for="text-field-helper-text" class="TextField__label">Label</label>
+  <input type="text" id="text-field-helper-text" class="TextField__input" name="helperText" placeholder="Placeholder" />
   <div class="TextField__helperText">Helper text</div>
 </div>
 ```
@@ -92,15 +98,15 @@ element:
 
 ```html
 <div class="TextField">
-  <label for="textFieldSize" class="TextField__label">4000 (in Roman numerals)</label>
-  <input type="text" size="4" id="textFieldSize" class="TextField__input" name="size" placeholder="Placeholder" />
+  <label for="text-field-size" class="TextField__label">4000 (in Roman numerals)</label>
+  <input type="text" size="4" id="text-field-size" class="TextField__input" name="size" placeholder="Placeholder" />
 </div>
 <div class="TextField">
-  <label for="textFieldSizeEm" class="TextField__label">4000 (in Roman numerals)</label>
+  <label for="text-field-size-em" class="TextField__label">4000 (in Roman numerals)</label>
   <input
     type="text"
     size="4"
-    id="textFieldSizeEm"
+    id="text-field-size-em"
     class="TextField__input"
     name="sizeEm"
     placeholder="Placeholder"
@@ -135,11 +141,11 @@ Then you need to add data attribute `data-spirit-toggle="password"` to the input
 
 ```html
 <div class="TextField">
-  <label for="textFieldPasswordToggle" class="TextField__label">Password Toggle</label>
+  <label for="text-field-password-toggle" class="TextField__label">Password Toggle</label>
   <div class="TextField__passwordToggle">
     <input
       type="password"
-      id="textFieldPasswordToggle"
+      id="text-field-password-toggle"
       class="TextField__input"
       name="passwordToggle"
       placeholder="Password must be at least 6 characters long"
@@ -176,10 +182,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 
 ```html
 <div class="TextField TextField--success">
-  <label for="textFieldSuccess" class="TextField__label">Label</label>
+  <label for="text-field-success" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldSuccess"
+    id="text-field-success"
     class="TextField__input"
     name="success"
     placeholder="Placeholder"
@@ -188,10 +194,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 
 <div class="TextField TextField--warning">
-  <label for="textFieldWarning" class="TextField__label">Label</label>
+  <label for="text-field-warning" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldWarning"
+    id="text-field-warning"
     class="TextField__input"
     name="warning"
     placeholder="Placeholder"
@@ -201,10 +207,10 @@ a JS interaction class when controlled by JavaScript (`has-success`,
 </div>
 
 <div class="TextField TextField--danger">
-  <label for="textFieldDanger" class="TextField__label">Label</label>
+  <label for="text-field-danger" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldDanger"
+    id="text-field-danger"
     class="TextField__input"
     name="danger"
     placeholder="Placeholder"
@@ -230,10 +236,10 @@ components mix CSS with JS by design and handle prefixes their own way.**
 
 ```html
 <div class="TextField has-danger">
-  <label for="textFieldHasDanger" class="TextField__label">Label</label>
+  <label for="text-field-has-danger" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldHasDanger"
+    id="text-field-has-danger"
     class="TextField__input"
     name="hasDanger"
     placeholder="Placeholder"
@@ -251,10 +257,10 @@ JS interaction class when controlled by JavaScript:
 
 ```html
 <div class="TextField TextField--disabled">
-  <label for="textFieldDisabled" class="TextField__label">Label</label>
+  <label for="text-field-disabled" class="TextField__label">Label</label>
   <input
     type="text"
-    id="textFieldDisabled"
+    id="text-field-disabled"
     class="TextField__input"
     name="disabled"
     placeholder="Placeholder"
@@ -263,10 +269,10 @@ JS interaction class when controlled by JavaScript:
 </div>
 
 <div class="TextField TextField--disabled">
-  <label for="textFieldDisabledFilled" class="TextField__label TextField__label--required">Label</label>
+  <label for="text-field-disabled-filled" class="TextField__label TextField__label--required">Label</label>
   <input
     type="text"
-    id="textFieldDisabledFilled"
+    id="text-field-disabled-filled"
     class="TextField__input"
     name="disabledFilled"
     placeholder="Placeholder"

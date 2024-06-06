@@ -11,12 +11,12 @@ Usage with form fields:
 ```html
 <div class="Stack Stack--hasSpacing">
   <div class="TextField">
-    <label for="textfieldStack1" class="TextField__label TextField__label--required">Label</label>
-    <input type="text" id="textfieldStack1" class="TextField__input" placeholder="Placeholder" />
+    <label for="textfield-stack-1" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfield-stack-1" class="TextField__input" placeholder="Placeholder" />
   </div>
   <div class="TextField">
-    <label for="textfieldStack2" class="TextField__label TextField__label--required">Label</label>
-    <input type="text" id="textfieldStack2" class="TextField__input" placeholder="Placeholder" />
+    <label for="textfield-stack-2" class="TextField__label TextField__label--required">Label</label>
+    <input type="text" id="textfield-stack-2" class="TextField__input" placeholder="Placeholder" />
   </div>
 </div>
 ```

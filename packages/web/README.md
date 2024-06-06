@@ -117,7 +117,7 @@ This provides the ability to stop the execution of an action before it starts.
 Returning false from an event handler will also automatically call `preventDefault()`.
 
 ```javascript
-var myModal = document.getElementById('myModal');
+var myModal = document.getElementById('my-modal');
 
 myModal.addEventListener('show.modal', function (event) {
   if (!data) {
@@ -129,7 +129,7 @@ myModal.addEventListener('show.modal', function (event) {
 #### Programmatic API
 
 ```javascript
-var myModalEl = document.getElementById('myModal');
+var myModalEl = document.getElementById('my-modal');
 
 var modal = new Modal(myModalEl); // initialized with defaults
 ```

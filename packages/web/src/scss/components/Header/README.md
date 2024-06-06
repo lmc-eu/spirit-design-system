@@ -368,8 +368,8 @@ And the complete Header Dialog:
       type="button"
       class="Button Button--inverted Button--medium Button--square"
       data-spirit-toggle="offcanvas"
-      data-spirit-target="#header_dialog_example_1"
-      aria-controls="header_dialog_example_1"
+      data-spirit-target="#header-dialog-example-1"
+      aria-controls="header-dialog-example-1"
       aria-expanded="false"
     >
       <svg width="24" height="24" aria-hidden="true">
@@ -414,7 +414,7 @@ And the complete Header Dialog:
 <!-- Header: end -->
 
 <!-- HeaderDialog: start -->
-<dialog id="header_dialog_example_1" class="HeaderDialog" aria-label="Menu">
+<dialog id="header-dialog-example-1" class="HeaderDialog" aria-label="Menu">
   <div class="HeaderDialog__panel">
     <div class="HeaderDialog__content">
       <!-- HeaderDialogCloseButton: start -->
@@ -422,8 +422,8 @@ And the complete Header Dialog:
         type="button"
         class="HeaderDialogCloseButton"
         data-spirit-dismiss="offcanvas"
-        data-spirit-target="#header_dialog_example_1"
-        aria-controls="header_dialog_example_1"
+        data-spirit-target="#header-dialog-example-1"
+        aria-controls="header-dialog-example-1"
         aria-expanded="false"
       >
         <svg width="24" height="24" aria-hidden="true">

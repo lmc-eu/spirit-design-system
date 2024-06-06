@@ -29,7 +29,7 @@ Common wrapper for all items:
 Put one or more Accordion items into the Accordion wrapper:
 
 ```html
-<article id="example_1_item_1" class="Accordion__item">
+<article id="example-1-item-1" class="Accordion__item">
   <!-- Item header and content inside -->
 </article>
 ```
@@ -39,12 +39,12 @@ Put one or more Accordion items into the Accordion wrapper:
 Minimum header with a heading and an arrow icon:
 
 ```html
-<h3 id="example_1_item_1_header" class="Accordion__itemHeader">
+<h3 id="example-1-item-1-header" class="Accordion__itemHeader">
   <button
     type="button"
     class="Accordion__itemToggle"
     data-spirit-toggle="collapse"
-    data-spirit-target="example_1_item_1_collapse"
+    data-spirit-target="example-1-item-1-collapse"
     aria-expanded="false"
   >
     Accordion Item no. 1
@@ -90,7 +90,7 @@ Finally, create a Collapse instance and put a `div` with `Accordion__content`
 class name inside:
 
 ```html
-<div id="example_1_item_1_collapse" class="Collapse" aria-labelledby="example_1_item_1_header">
+<div id="example-1-item-1-collapse" class="Collapse" aria-labelledby="example-1-item-1-header">
   <div class="Collapse__content">
     <div class="Accordion__content">
       <!-- Content: start -->
@@ -119,14 +119,14 @@ When you put it all together:
 <!-- Accordion: start -->
 <section class="Accordion">
   <!-- Accordion item: start -->
-  <article id="example_1_item_1" class="Accordion__item">
+  <article id="example-1-item-1" class="Accordion__item">
     <!-- Accordion item header: start -->
-    <h3 id="example_1_item_1_header" class="Accordion__itemHeader">
+    <h3 id="example-1-item-1-header" class="Accordion__itemHeader">
       <button
         type="button"
         class="Accordion__itemToggle"
         data-spirit-toggle="collapse"
-        data-spirit-target="example_1_item_1_collapse"
+        data-spirit-target="example-1-item-1-collapse"
         aria-expanded="false"
       >
         Accordion Item no. 1
@@ -148,7 +148,7 @@ When you put it all together:
     <!-- Accordion item header: end -->
 
     <!-- Accordion item content: start -->
-    <div id="example_1_item_1_collapse" class="Collapse" aria-labelledby="example_1_item_1_header">
+    <div id="example-1-item-1-collapse" class="Collapse" aria-labelledby="example-1-item-1-header">
       <div class="Collapse__content">
         <div class="Accordion__content">
           <!-- Content: start -->

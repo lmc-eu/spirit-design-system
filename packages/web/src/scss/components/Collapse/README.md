@@ -3,8 +3,8 @@
 Example usage with button:
 
 ```html
-<button type="button" role="button" data-spirit-toggle="collapse" data-spirit-target="CollapseExample">trigger</button>
-<div id="CollapseExample" class="Collapse">
+<button type="button" role="button" data-spirit-toggle="collapse" data-spirit-target="collapse-example">trigger</button>
+<div id="collapse-example" class="Collapse">
   <div class="Collapse__content">content</div>
 </div>
 ```
@@ -12,7 +12,7 @@ Example usage with button:
 Usage with link:
 
 ```html
-<a role="button" href="javascript:void(0)" data-spirit-toggle="collapse" data-spirit-target="CollapseExample">
+<a role="button" href="javascript:void(0)" data-spirit-toggle="collapse" data-spirit-target="collapse-example">
   trigger
 </a>
 ...
@@ -22,7 +22,7 @@ Open on load example:
 
 ```html
 <button ... aria-expanded="true">trigger</button>
-<div id="CollapseExample" class="Collapse is-open">
+<div id="collapse-example" class="Collapse is-open">
   <div class="Collapse__content">content</div>
 </div>
 ```
@@ -32,7 +32,7 @@ Responsive usage for tablet
 ```html
 ...
 <button ... class="d-tablet-none">trigger</button>
-<div id="CollapseExample" class="Collapse" data-spirit-breakpoint="tablet">
+<div id="collapse-example" class="Collapse" data-spirit-breakpoint="tablet">
   <div class="Collapse__content">...</div>
 </div>
 ```
@@ -108,7 +108,7 @@ collapse.show();
 | `shown.collapse`  | This event is fired when the `show` instance has finished being shown to the user.    |
 
 ```js
-const myCollapseEl = document.getElementById('myCollapse');
+const myCollapseEl = document.getElementById('my-collapse');
 const collapse = Collapse.getOrCreateInstance(myCollapseEl);
 
 myCollapseEl.addEventListener('hidden.collapse', () => {

@@ -87,8 +87,8 @@ Item as a link example:
 Radio as a Item:
 
 ```html
-<label for="radioItem" class="Radio Radio--item">
-  <input type="radio" id="radioItem" name="example" class="Radio__input" checked />
+<label for="radio-item" class="Radio Radio--item">
+  <input type="radio" id="radio-item" name="example" class="Radio__input" checked />
   <span class="Radio__label">Item</span>
 </label>
 ```
@@ -96,8 +96,8 @@ Radio as a Item:
 Checkbox as a Item:
 
 ```html
-<label for="checkboxItem" class="Checkbox Checkbox--item">
-  <input type="checkbox" id="checkboxItem" class="Checkbox__input" />
+<label for="checkbox-item" class="Checkbox Checkbox--item">
+  <input type="checkbox" id="checkbox-item" class="Checkbox__input" />
   <span class="Checkbox__text">
     <span class="Checkbox__label">Item</span>
   </span>
@@ -110,14 +110,14 @@ Usage in [Dropdown] component:
 <div class="DropdownWrapper">
   <button
     data-spirit-toggle="dropdown"
-    data-spirit-target="#dropdownDefault"
+    data-spirit-target="#dropdown-default"
     class="Button Button--primary Button--medium"
     aria-expanded="false"
-    aria-controls="dropdownDefault"
+    aria-controls="dropdown-default"
   >
     Button as anchor
   </button>
-  <div class="Dropdown" id="dropdownDefault" data-spirit-placement="bottom-start">
+  <div class="Dropdown" id="dropdown-default" data-spirit-placement="bottom-start">
     <a href="#" class="Item">
       <span class="Item__icon Item__icon--start">
         <svg width="24" height="24" aria-hidden="true">
