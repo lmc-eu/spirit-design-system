@@ -15,7 +15,7 @@ Default TextFieldBase:
 ```html
 <TextFieldBase
   helperText="custom helper text"
-  id="textFieldBaseAdvanced"
+  id="text-field-base-advanced"
   isRequired
   label="Label"
   name="textFieldBaseAdvanced"
@@ -31,7 +31,7 @@ TextFieldBase with password toggle (button to reveal the password):
 ```html
 <TextFieldBase
   hasPasswordToggle
-  id="textFieldBasePasswordToggle"
+  id="text-field-base-password-toggle"
   isRequired
   label="Password"
   name="textFieldBasePasswordToggle"
@@ -46,7 +46,7 @@ Without lexer:
 ```twig
 {% embed "@spirit/textFieldBase.twig" with { props: {
     helperText: "custom helper text",
-    id: "textFieldBaseEmbed",
+    id: "text-field-base-embed",
     isRequired: true,
     label: "Password",
     name: "textFieldBaseEmbed",
