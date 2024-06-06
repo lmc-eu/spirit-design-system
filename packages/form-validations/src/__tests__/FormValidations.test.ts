@@ -18,8 +18,8 @@ describe('FormValidations', () => {
             </select>
 
             <input id="checkbox" type="checkbox" name="future" required />
-            <input id="ch2" type="checkbox" name="future" required />
-            <input id="ch3" type="checkbox" name="future" required />
+            <input id="ch-2" type="checkbox" name="future" required />
+            <input id="ch-3" type="checkbox" name="future" required />
           </div>
         </form>
       </div>`;
