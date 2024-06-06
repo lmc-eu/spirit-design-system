@@ -31,7 +31,7 @@ Or
 Now create a form:
 
 ```html
-<form id="form1">
+<form id="form-1">
   <label for="email">Email</label>
   <input type="email" id="email" required />
   <button>Subscribe</button>
