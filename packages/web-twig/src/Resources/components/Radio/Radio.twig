@@ -39,11 +39,6 @@
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 {%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
-{# Deprecations #}
-{% if not _id %}
-    {% deprecated 'Radio: The "id" property will be required starting from the next major version.' %}
-{% endif %}
-
 <label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
         {{ inputProps(props, _allowedInputAttributes, _inputProps) }}

@@ -39,11 +39,6 @@
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 
-{# Deprecations #}
-{% if not _id %}
-    {% deprecated 'Select: The "id" property will be required from the next major version.' %}
-{% endif %}
-
 <div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
         {%- if _unsafeLabel %}{{ _unsafeLabel | raw }}{% else %}{{ _label }}{% endif -%}

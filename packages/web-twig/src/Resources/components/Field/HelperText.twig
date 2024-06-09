@@ -3,16 +3,11 @@
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
 {%- set _helperText = props.helperText | default(null) -%}
-{%- set _id = props.id | default(null) -%}
+{%- set _id = props.id -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 
 {# Attributes #}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
-
-{# Deprecations #}
-{% if not _id %}
-    {% deprecated 'HelperText: The "id" property will be required starting from the next major version.' %}
-{% endif %}
 
 {% if _helperText or _unsafeHelperText %}
     <{{ _elementType }} class="{{ _className }}" {{ _idAttr | raw }}>
