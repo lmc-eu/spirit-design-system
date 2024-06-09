@@ -503,7 +503,6 @@ and [escape hatches][readme-escape-hatches].
 For detailed information see [FileUploader][file-uploader] component.
 
 [button-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-[deprecated]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-react/README.md#deprecations
 [div-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
 [file-uploader]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/FileUploader/README.md
 [input-element-docs]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
