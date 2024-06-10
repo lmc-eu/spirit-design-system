@@ -40,9 +40,11 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _id ~ '__helperText' -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 {%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
+{%- set _validationTextId = _id ~ '__validationText' -%}
 
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
@@ -68,13 +70,13 @@
             className="{{ _helperTextClassName }}"
             elementType="span"
             helperText="{{ _helperText }}"
-            id="{{ _id }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
         <ValidationText
             className="{{ _validationTextClassName }}"
             elementType="span"
-            id="{{ _id }}"
+            id="{{ _validationTextId }}"
             validationState="{{ _validationState }}"
             validationText="{{ _validationText }}"
             UNSAFE_validationText="{{ _unsafeValidationText }}"

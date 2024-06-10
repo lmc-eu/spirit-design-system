@@ -46,9 +46,11 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _allowedAttributes = [ 'accept', 'multiple' ] -%}
+{%- set _helperTextId = _id ~ '__helperText' -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-element', 'id']) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _validationTextId = _id ~ '__validationText' -%}
 
 <div
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
@@ -88,13 +90,13 @@
         <HelperText
             className="{{ _helperTextClassName }}"
             helperText="{{ _helperText }}"
-            id="{{ _id }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
     </div>
     <ValidationText
         className="{{ _validationTextClassName }}"
-        id="{{ _id }}"
+        id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"
         UNSAFE_validationText="{{ _unsafeValidationText }}"

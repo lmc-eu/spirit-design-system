@@ -35,6 +35,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _id ~ '__helperText' -%}
 {%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
 {%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
@@ -62,7 +63,7 @@
             className="{{ _helperTextClassName }}"
             elementType="span"
             helperText="{{ _helperText }}"
-            id="{{ _id }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
     </span>
