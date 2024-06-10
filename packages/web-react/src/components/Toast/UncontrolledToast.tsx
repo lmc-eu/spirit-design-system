@@ -2,8 +2,9 @@ import React from 'react';
 import { UncontrolledToastProps } from '../../types';
 import Toast from './Toast';
 import ToastBar from './ToastBar';
+import ToastBarLink from './ToastBarLink';
+import ToastBarMessage from './ToastBarMessage';
 import { useToast } from './useToast';
-import { ToastBarLink, ToastBarMessage } from '.';
 
 const UncontrolledToast = (props: UncontrolledToastProps) => {
   const { alignmentX, alignmentY, isCollapsible, closeLabel, ...restProps } = props;
