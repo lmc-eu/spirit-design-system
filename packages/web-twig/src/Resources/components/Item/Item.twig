@@ -1,6 +1,7 @@
 {# API #}
 {%- set props = props | default([]) -%}
 {%- set _elementType = props.elementType | default('button') -%}
+{%- set _id = props.id | default('') -%}
 {%- set _helperText = props.helperText | default(null) -%}
 {%- set _href = props.href | default(null) -%}
 {%- set _iconName = props.iconName | default(null) -%}
@@ -32,6 +33,7 @@
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _disabledClassName, _selectedClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _id ~ '__helperText' -%}
 {%- set _selectedIconName = 'check-plain' -%}
 
 <{{ _elementType }}
@@ -60,7 +62,7 @@
     className="{{ _helperTextClassName }}"
     elementType="span"
     helperText="{{ _helperText }}"
-    id="{{ 'item-helper-text' }}"
+    id="{{ _helperTextId }}"
     UNSAFE_helperText="{{ _unsafeHelperText }}"
   />
   {% if _isSelected %}
