@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.4.0...@lmc-eu/spirit-analytics@1.0.0) (2024-06-10)
+
+### Chores
+
+- **analytics:** Package graduation
+
 <a name="0.4.0"></a>
 
 # [0.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-analytics@0.3.4...@lmc-eu/spirit-analytics@0.4.0) (2024-06-10)

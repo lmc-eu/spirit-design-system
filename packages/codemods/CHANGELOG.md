@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.5.0...@lmc-eu/spirit-codemods@1.0.0) (2024-06-10)
+
+### Chores
+
+- **codemods:** Package graduation
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="0.5.0"></a>
 
 # [0.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.4.2...@lmc-eu/spirit-codemods@0.5.0) (2024-06-10)

@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-codemods",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Codemods scripts for Spirit Design System packages",
   "license": "MIT",
   "engines": {
