@@ -34,10 +34,10 @@
 {%- set _classNames = [ _rootClassName, _disabledClassName, _selectedClassName, _styleProps.className ] -%}
 {%- set _selectedIconName = 'check-plain' -%}
 
-<{{ _elementType }} 
-  {{ mainProps(props) }} 
-  {{ styleProp(_styleProps) }} 
-  {{ classProp(_classNames) }} 
+<{{ _elementType }}
+  {{ mainProps(props) }}
+  {{ styleProp(_styleProps) }}
+  {{ classProp(_classNames) }}
   {{ _hrefAttr }}
   {{ _targetAttr }}
   {{ _typeAttr }}
@@ -57,9 +57,10 @@
     {%- endif -%}
   </span>
   <HelperText
-    elementType="span"
     className="{{ _helperTextClassName }}"
+    elementType="span"
     helperText="{{ _helperText }}"
+    id="{{ 'item-helper-text' }}"
     UNSAFE_helperText="{{ _unsafeHelperText }}"
   />
   {% if _isSelected %}
