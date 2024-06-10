@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.6...@lmc-eu/spirit-design-tokens@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **design-tokens:** Rename Gradient token `--angle` var to `--gradient-angle` [#DS-1105](https://github.com/lmc-eu/spirit-design-system/issues/DS-1105) ([8705888](https://github.com/lmc-eu/spirit-design-system/commit/8705888))
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="1.1.6"></a>
 
 ## [1.1.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.5...@lmc-eu/spirit-design-tokens@1.1.6) (2024-05-20)

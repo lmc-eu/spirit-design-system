@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.8.1...@lmc-eu/spirit-exporters-scss@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **exporter-scss:** Rename Gradient `--angle` variable to `--gradient-angle` [#DS-1105](https://github.com/lmc-eu/spirit-design-system/issues/DS-1105) ([3076b77](https://github.com/lmc-eu/spirit-design-system/commit/3076b77))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="1.8.1"></a>
 
 ## [1.8.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@1.8.0...@lmc-eu/spirit-exporters-scss@1.8.1) (2024-05-20)

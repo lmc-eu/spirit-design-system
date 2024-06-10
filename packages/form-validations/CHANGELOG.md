@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.7...@lmc-eu/spirit-form-validations@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+
+### Bug Fixes
+
+- **form-validations:** Use GridItem instead of GridSpan in demo [#DS-1279](https://github.com/lmc-eu/spirit-design-system/issues/DS-1279) ([3f0ba56](https://github.com/lmc-eu/spirit-design-system/commit/3f0ba56))
+
+### Documentation
+
+- **repo:** Introduce new Migration Guide structure and prepare WIP guides for new versions [#DS-1218](https://github.com/lmc-eu/spirit-design-system/issues/DS-1218) ([63ab3f1](https://github.com/lmc-eu/spirit-design-system/commit/63ab3f1))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="1.1.7"></a>
 
 ## [1.1.7](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.6...@lmc-eu/spirit-form-validations@1.1.7) (2024-06-03)

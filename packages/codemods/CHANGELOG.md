@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.5.0"></a>
+
+# [0.5.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.4.2...@lmc-eu/spirit-codemods@0.5.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+- **web-react:** Drop `HeaderDesktopActions` `color` prop in favor of `isAtEnd` [#DS-1059](https://github.com/lmc-eu/spirit-design-system/issues/DS-1059) ([23d7c27](https://github.com/lmc-eu/spirit-design-system/commit/23d7c27))
+- **web-react:** Rename DropdownModern to Dropdown ([17f4733](https://github.com/lmc-eu/spirit-design-system/commit/17f4733)), closes [#DS-1192](https://github.com/lmc-eu/spirit-design-system/issues/DS-1192)
+- **web-react:** Rename height and maxHeight ModalDialog props and enhance them [#DS-1134](https://github.com/lmc-eu/spirit-design-system/issues/DS-1134) ([35c7d69](https://github.com/lmc-eu/spirit-design-system/commit/35c7d69))
+- **web-react:** Rename TooltipModern to Tooltip ([84c41c2](https://github.com/lmc-eu/spirit-design-system/commit/84c41c2))
+
+### Documentation
+
+- **codemods:** Add list of all current codemods we have [#DS-1214](https://github.com/lmc-eu/spirit-design-system/issues/DS-1214) ([b182527](https://github.com/lmc-eu/spirit-design-system/commit/b182527))
+
+### Features
+
+- **codemods:** Add Tabs props rename codemod [#DS-1096](https://github.com/lmc-eu/spirit-design-system/issues/DS-1096) ([f19bdd0](https://github.com/lmc-eu/spirit-design-system/commit/f19bdd0))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="0.4.2"></a>
 
 ## [0.4.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@0.4.1...@lmc-eu/spirit-codemods@0.4.2) (2024-06-03)

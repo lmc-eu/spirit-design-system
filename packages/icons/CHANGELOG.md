@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.1.4...@lmc-eu/spirit-icons@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+
+**Note:** Version bump only for package @lmc-eu/spirit-icons
+
 <a name="1.1.4"></a>
 
 ## [1.1.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-icons@1.1.3...@lmc-eu/spirit-icons@1.1.4) (2024-04-24)

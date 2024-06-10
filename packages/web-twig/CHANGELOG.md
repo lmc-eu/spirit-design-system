@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+
+# [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.16.0...@lmc-eu/spirit-web-twig@3.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **web-twig:** Add mandatory id prop for Dropdown component [#DS-1190](https://github.com/lmc-eu/spirit-design-system/issues/DS-1190) ([c31b566](https://github.com/lmc-eu/spirit-design-system/commit/c31b566))
+- **web-twig:** Drop support for PHP 7.4 ([124bf0d](https://github.com/lmc-eu/spirit-design-system/commit/124bf0d)), closes [#DS-1212](https://github.com/lmc-eu/spirit-design-system/issues/DS-1212)
+- **web-twig:** Id prop is required for all Form components [#DS-885](https://github.com/lmc-eu/spirit-design-system/issues/DS-885) ([c07a72c](https://github.com/lmc-eu/spirit-design-system/commit/c07a72c))
+- **web-twig:** Make TooltipPopover hidden by default ([90687a0](https://github.com/lmc-eu/spirit-design-system/commit/90687a0))
+- **web-twig:** Remove `HeaderDesktopActions` `color` prop in favor of `isAtEnd` [#DS-1059](https://github.com/lmc-eu/spirit-design-system/issues/DS-1059) ([1c57fc1](https://github.com/lmc-eu/spirit-design-system/commit/1c57fc1))
+- **web-twig:** Remove class and style from abstract Header components [#DS-920](https://github.com/lmc-eu/spirit-design-system/issues/DS-920) ([ab43160](https://github.com/lmc-eu/spirit-design-system/commit/ab43160))
+- **web-twig:** Remove dependency twig/twig for v1 ([a27f856](https://github.com/lmc-eu/spirit-design-system/commit/a27f856))
+- **web-twig:** Remove deprecated warning icon for the danger color on Alert [#DS-1177](https://github.com/lmc-eu/spirit-design-system/issues/DS-1177) ([fd62930](https://github.com/lmc-eu/spirit-design-system/commit/fd62930))
+- **web-twig:** Remove Dropdown and Tooltip non-flow-relative placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([1f5a703](https://github.com/lmc-eu/spirit-design-system/commit/1f5a703))
+- **web-twig:** Remove feature flag for the uniform `Modal` variant [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([3389643](https://github.com/lmc-eu/spirit-design-system/commit/3389643))
+- **web-twig:** Remove Grid `tablet` and `desktop` props [#DS-1068](https://github.com/lmc-eu/spirit-design-system/issues/DS-1068) ([71510f0](https://github.com/lmc-eu/spirit-design-system/commit/71510f0))
+- **web-twig:** Remove GridSpan component [#DS-1244](https://github.com/lmc-eu/spirit-design-system/issues/DS-1244) ([e607de8](https://github.com/lmc-eu/spirit-design-system/commit/e607de8))
+- **web-twig:** Rename Dropdown components [#DS-1248](https://github.com/lmc-eu/spirit-design-system/issues/DS-1248) ([64275f9](https://github.com/lmc-eu/spirit-design-system/commit/64275f9))
+- **web-twig:** Rename height and maxHeight ModalDialog props and enhance them [#DS-1134](https://github.com/lmc-eu/spirit-design-system/issues/DS-1134) ([bc6bb25](https://github.com/lmc-eu/spirit-design-system/commit/bc6bb25))
+- **web-twig:** Rename TabLink target prop to targetPaneId [#DS-1096](https://github.com/lmc-eu/spirit-design-system/issues/DS-1096) ([4ff64fd](https://github.com/lmc-eu/spirit-design-system/commit/4ff64fd))
+- **web-twig:** Set isExpandedOnMobile in ModalDialog to false by default [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) ([6868914](https://github.com/lmc-eu/spirit-design-system/commit/6868914))
+- **web-twig:** The alert role has been removed for Alert component [#DS-1175](https://github.com/lmc-eu/spirit-design-system/issues/DS-1175) ([3ae0524](https://github.com/lmc-eu/spirit-design-system/commit/3ae0524))
+- **web-twig:** Tooltip className changes ([b9ee11c](https://github.com/lmc-eu/spirit-design-system/commit/b9ee11c))
+- **web-twig:** Tooltip plugin support only TooltipFloatingUI ([215dd2c](https://github.com/lmc-eu/spirit-design-system/commit/215dd2c))
+- **web-twig:** Turn off scrolling inside ModalDialog by default [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) ([3957242](https://github.com/lmc-eu/spirit-design-system/commit/3957242))
+
+### Documentation
+
+- **repo:** Introduce new Migration Guide structure and prepare WIP guides for new versions [#DS-1218](https://github.com/lmc-eu/spirit-design-system/issues/DS-1218) ([63ab3f1](https://github.com/lmc-eu/spirit-design-system/commit/63ab3f1))
+- **web-twig:** Document correctly when the goBackTitle prop is required in Breadcrumbs [#DS-921](https://github.com/lmc-eu/spirit-design-system/issues/DS-921) ([30cbe8f](https://github.com/lmc-eu/spirit-design-system/commit/30cbe8f))
+- **web-twig:** Remove Dropdown Enhance shadow section [#DS-1067](https://github.com/lmc-eu/spirit-design-system/issues/DS-1067) ([174402e](https://github.com/lmc-eu/spirit-design-system/commit/174402e))
+- **web-twig:** Remove feature class for bordered Alert [#DS-1230](https://github.com/lmc-eu/spirit-design-system/issues/DS-1230) ([6ce45d7](https://github.com/lmc-eu/spirit-design-system/commit/6ce45d7))
+- **web-twig:** Remove feature flag for controlled placement of `Tooltip` [#DS-1182](https://github.com/lmc-eu/spirit-design-system/issues/DS-1182) ([3f2f84b](https://github.com/lmc-eu/spirit-design-system/commit/3f2f84b))
+
+### Features
+
+- **web-twig:** Use data placement in Tooltip [#DS-1183](https://github.com/lmc-eu/spirit-design-system/issues/DS-1183) ([0c589dd](https://github.com/lmc-eu/spirit-design-system/commit/0c589dd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="2.16.0"></a>
 
 # [2.16.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.15.0...@lmc-eu/spirit-web-twig@2.16.0) (2024-06-03)

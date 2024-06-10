@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.18.0...@lmc-eu/spirit-web-react@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+- **web-react:** Add mandatory id prop for Collapse component [#DS-1190](https://github.com/lmc-eu/spirit-design-system/issues/DS-1190) ([e96e931](https://github.com/lmc-eu/spirit-design-system/commit/e96e931))
+- **web-react:** Drop `HeaderDesktopActions` `color` prop in favor of `isAtEnd` [#DS-1059](https://github.com/lmc-eu/spirit-design-system/issues/DS-1059) ([23d7c27](https://github.com/lmc-eu/spirit-design-system/commit/23d7c27))
+- **web-react:** Id prop is required for all Form components [#DS-885](https://github.com/lmc-eu/spirit-design-system/issues/DS-885) ([a259e39](https://github.com/lmc-eu/spirit-design-system/commit/a259e39))
+- **web-react:** Label props is required for TextField component ([add391b](https://github.com/lmc-eu/spirit-design-system/commit/add391b)), closes [#DS-888](https://github.com/lmc-eu/spirit-design-system/issues/DS-888)
+- **web-react:** Refactor types in Tabs [#DS-935](https://github.com/lmc-eu/spirit-design-system/issues/DS-935) ([863de18](https://github.com/lmc-eu/spirit-design-system/commit/863de18))
+- **web-react:** Remove alert danger icon deprecation ([d571a85](https://github.com/lmc-eu/spirit-design-system/commit/d571a85)), closes [#DS-1194](https://github.com/lmc-eu/spirit-design-system/issues/DS-1194)
+- **web-react:** Remove deprecated props from FileUploaderAttachment [#DS-916](https://github.com/lmc-eu/spirit-design-system/issues/DS-916) ([a499277](https://github.com/lmc-eu/spirit-design-system/commit/a499277))
+- **web-react:** Remove Dropdown and Tooltip non-flow-relative placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([c467181](https://github.com/lmc-eu/spirit-design-system/commit/c467181))
+- **web-react:** Remove feature flag for the uniform `Modal` variant [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([5389751](https://github.com/lmc-eu/spirit-design-system/commit/5389751))
+- **web-react:** Remove Grid `tablet` and `desktop` props [#DS-1068](https://github.com/lmc-eu/spirit-design-system/issues/DS-1068) ([d82ede2](https://github.com/lmc-eu/spirit-design-system/commit/d82ede2))
+- **web-react:** Remove GridSpan component [#DS-1244](https://github.com/lmc-eu/spirit-design-system/issues/DS-1244) ([b51e1a3](https://github.com/lmc-eu/spirit-design-system/commit/b51e1a3))
+- **web-react:** Remove Tooltip `off` placement ([143e21e](https://github.com/lmc-eu/spirit-design-system/commit/143e21e))
+- **web-react:** Rename DropdownModern to Dropdown ([17f4733](https://github.com/lmc-eu/spirit-design-system/commit/17f4733)), closes [#DS-1192](https://github.com/lmc-eu/spirit-design-system/issues/DS-1192)
+- **web-react:** Rename height and maxHeight ModalDialog props and enhance them [#DS-1134](https://github.com/lmc-eu/spirit-design-system/issues/DS-1134) ([35c7d69](https://github.com/lmc-eu/spirit-design-system/commit/35c7d69))
+- **web-react:** Rename Tabs props and clean up its types [#DS-1096](https://github.com/lmc-eu/spirit-design-system/issues/DS-1096) ([61ecb10](https://github.com/lmc-eu/spirit-design-system/commit/61ecb10))
+- **web-react:** Rename TooltipModern to Tooltip ([84c41c2](https://github.com/lmc-eu/spirit-design-system/commit/84c41c2))
+- **web-react:** The alert role has been removed for Alert component [#DS-1175](https://github.com/lmc-eu/spirit-design-system/issues/DS-1175) ([724c66a](https://github.com/lmc-eu/spirit-design-system/commit/724c66a))
+- **web-react:** Turn off scrolling inside ModalDialog by default [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) ([ddbd0d1](https://github.com/lmc-eu/spirit-design-system/commit/ddbd0d1))
+
+### Bug Fixes
+
+- **web-react:** Fix types in Dropdown [#DS-1221](https://github.com/lmc-eu/spirit-design-system/issues/DS-1221) ([23b6cf6](https://github.com/lmc-eu/spirit-design-system/commit/23b6cf6))
+- **web-react:** Remove unused `DropdownRenderProps` type ([73d0809](https://github.com/lmc-eu/spirit-design-system/commit/73d0809))
+- **web-react:** Tooltip closing by outside click when `isDismissible` prop set ([e8584f8](https://github.com/lmc-eu/spirit-design-system/commit/e8584f8)), closes [#DS-1259](https://github.com/lmc-eu/spirit-design-system/issues/DS-1259)
+
+### Code Refactoring
+
+- **web-react:** Modal with Dropdown composition use new Dropdown structure ([ca291d1](https://github.com/lmc-eu/spirit-design-system/commit/ca291d1))
+- **web-react:** Sort rest props in DropdownTrigger by importance ([f1151f2](https://github.com/lmc-eu/spirit-design-system/commit/f1151f2))
+- **web-react:** Tooltip className changes [#DS-1267](https://github.com/lmc-eu/spirit-design-system/issues/DS-1267) ([7a2791f](https://github.com/lmc-eu/spirit-design-system/commit/7a2791f))
+
+### Documentation
+
+- **repo:** Introduce new Migration Guide structure and prepare WIP guides for new versions [#DS-1218](https://github.com/lmc-eu/spirit-design-system/issues/DS-1218) ([63ab3f1](https://github.com/lmc-eu/spirit-design-system/commit/63ab3f1))
+- **web-react:** Import `useState` hook from React instead of namespace in Dropdown ([ec6483a](https://github.com/lmc-eu/spirit-design-system/commit/ec6483a))
+- **web-react:** Improve Modal isExpandedOnMobile documentation and remove its deprecations [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) ([beb0852](https://github.com/lmc-eu/spirit-design-system/commit/beb0852))
+- **web-react:** Pass Button to Dropdown in Modal composition ([5f3bb10](https://github.com/lmc-eu/spirit-design-system/commit/5f3bb10))
+- **web-react:** Remove Dropdown Enhance shadow section [#DS-1067](https://github.com/lmc-eu/spirit-design-system/issues/DS-1067) ([e787f12](https://github.com/lmc-eu/spirit-design-system/commit/e787f12))
+- **web-react:** Remove feature class for bordered Alert [#DS-1230](https://github.com/lmc-eu/spirit-design-system/issues/DS-1230) ([b9202b1](https://github.com/lmc-eu/spirit-design-system/commit/b9202b1))
+- **web-react:** Remove feature flag for controlled placement of `Tooltip` [#DS-1182](https://github.com/lmc-eu/spirit-design-system/issues/DS-1182) ([ca8c1a8](https://github.com/lmc-eu/spirit-design-system/commit/ca8c1a8))
+- **web-react:** Update React demo for Tooltip ([07713f3](https://github.com/lmc-eu/spirit-design-system/commit/07713f3))
+
+### Features
+
+- **web-react:** Use renamed Dropdown classes [#DS-1248](https://github.com/lmc-eu/spirit-design-system/issues/DS-1248) ([59d1c2f](https://github.com/lmc-eu/spirit-design-system/commit/59d1c2f))
+
+### Tests
+
+- **web-react:** Update test for tooltip ([1ecf63e](https://github.com/lmc-eu/spirit-design-system/commit/1ecf63e))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="1.18.0"></a>
 
 # [1.18.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.17.0...@lmc-eu/spirit-web-react@1.18.0) (2024-06-03)

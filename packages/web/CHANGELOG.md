@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.15.0...@lmc-eu/spirit-web@2.0.0) (2024-06-10)
+
+### BREAKING CHANGES
+
+- **repo:** Drop support for Node.js v16 ([08788be](https://github.com/lmc-eu/spirit-design-system/commit/08788be)), closes [#DS-466](https://github.com/lmc-eu/spirit-design-system/issues/DS-466)
+- **web-twig:** Tooltip plugin support only TooltipFloatingUI ([215dd2c](https://github.com/lmc-eu/spirit-design-system/commit/215dd2c))
+- **web:** Add component prefix to CSS variables [#DS-1105](https://github.com/lmc-eu/spirit-design-system/issues/DS-1105) ([f1b8d32](https://github.com/lmc-eu/spirit-design-system/commit/f1b8d32))
+- **web:** Enhance custom height and max height options of `ModalDialog` [#DS-1134](https://github.com/lmc-eu/spirit-design-system/issues/DS-1134) ([b9f819a](https://github.com/lmc-eu/spirit-design-system/commit/b9f819a))
+- **web:** Enhance the Dropdown shadow and remove its feature flag [#DS-1067](https://github.com/lmc-eu/spirit-design-system/issues/DS-1067) ([cf740bb](https://github.com/lmc-eu/spirit-design-system/commit/cf740bb))
+- **web:** Pagination Item has the same minimal width as Button [#DS-1030](https://github.com/lmc-eu/spirit-design-system/issues/DS-1030) ([abad96f](https://github.com/lmc-eu/spirit-design-system/commit/abad96f))
+- **web:** Remove `HeaderDesktopActions` slots in favor of `isAtEnd` modifier [#DS-1059](https://github.com/lmc-eu/spirit-design-system/issues/DS-1059) ([55e1b19](https://github.com/lmc-eu/spirit-design-system/commit/55e1b19))
+- **web:** Remove Dropdown and Tooltip non-flow-relative placements [#DS-1138](https://github.com/lmc-eu/spirit-design-system/issues/DS-1138) ([8963279](https://github.com/lmc-eu/spirit-design-system/commit/8963279))
+- **web:** Remove Dropdown combined placement classes [#DS-1139](https://github.com/lmc-eu/spirit-design-system/issues/DS-1139) ([17a5884](https://github.com/lmc-eu/spirit-design-system/commit/17a5884))
+- **web:** Remove feature class for bordered Alert [#DS-1230](https://github.com/lmc-eu/spirit-design-system/issues/DS-1230) ([25e4ea8](https://github.com/lmc-eu/spirit-design-system/commit/25e4ea8))
+- **web:** Remove feature flag for controlled placement of `Tooltip` [#DS-1182](https://github.com/lmc-eu/spirit-design-system/issues/DS-1182) ([ae651d8](https://github.com/lmc-eu/spirit-design-system/commit/ae651d8))
+- **web:** Remove feature flag for the uniform `Modal` variant [#DS-1181](https://github.com/lmc-eu/spirit-design-system/issues/DS-1181) ([1788306](https://github.com/lmc-eu/spirit-design-system/commit/1788306))
+- **web:** Remove GridSpan component [#DS-1244](https://github.com/lmc-eu/spirit-design-system/issues/DS-1244) ([dd8bf34](https://github.com/lmc-eu/spirit-design-system/commit/dd8bf34))
+- **web:** Remove placement classes [#DS-1183](https://github.com/lmc-eu/spirit-design-system/issues/DS-1183) ([12a965f](https://github.com/lmc-eu/spirit-design-system/commit/12a965f))
+- **web:** Rename Dropdown classes [#DS-1248](https://github.com/lmc-eu/spirit-design-system/issues/DS-1248) ([56dbbe8](https://github.com/lmc-eu/spirit-design-system/commit/56dbbe8))
+- **web:** Tooltip className changes [#DS-1267](https://github.com/lmc-eu/spirit-design-system/issues/DS-1267) ([e0b5c2c](https://github.com/lmc-eu/spirit-design-system/commit/e0b5c2c))
+- **web:** Tooltip plugin support only TooltipFloatingUI ([79e798d](https://github.com/lmc-eu/spirit-design-system/commit/79e798d))
+- **web:** Turn off scrolling inside `ModalDialog` by default [#DS-1184](https://github.com/lmc-eu/spirit-design-system/issues/DS-1184) ([2a93f40](https://github.com/lmc-eu/spirit-design-system/commit/2a93f40))
+
+### Bug Fixes
+
+- **web:** Change max width for dismissible tooltip ([abb0421](https://github.com/lmc-eu/spirit-design-system/commit/abb0421))
+
+### Code Refactoring
+
+- **web:** Improve `Tooltip` CSS since the position is only controlled by Floating UI [#DS-1267](https://github.com/lmc-eu/spirit-design-system/issues/DS-1267) ([f2aab61](https://github.com/lmc-eu/spirit-design-system/commit/f2aab61))
+- **web:** Refactor placement transformation to allow input of logical placements ([8719647](https://github.com/lmc-eu/spirit-design-system/commit/8719647))
+
+### Documentation
+
+- **repo:** Introduce new Migration Guide structure and prepare WIP guides for new versions [#DS-1218](https://github.com/lmc-eu/spirit-design-system/issues/DS-1218) ([63ab3f1](https://github.com/lmc-eu/spirit-design-system/commit/63ab3f1))
+- **web:** Improve ModalDialog expandedOnMobile documentation [#DS-1201](https://github.com/lmc-eu/spirit-design-system/issues/DS-1201) ([f860dcd](https://github.com/lmc-eu/spirit-design-system/commit/f860dcd))
+- **web:** The alert role has been removed for Alert component [#DS-1175](https://github.com/lmc-eu/spirit-design-system/issues/DS-1175) ([55ed7db](https://github.com/lmc-eu/spirit-design-system/commit/55ed7db))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="1.15.0"></a>
 
 # [1.15.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.14.0...@lmc-eu/spirit-web@1.15.0) (2024-06-03)

@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-exporters-scss",
-  "version": "1.8.1",
+  "version": "2.0.0",
   "description": "Spirit SCSS Exporter for Supernova",
   "license": "MIT",
   "private": true,
