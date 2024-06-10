@@ -18,7 +18,8 @@
     transform-origin: var(--toast-transform-origin-x, center) bottom; // 2.
 
     @media (prefers-reduced-motion: no-preference) {
-        transition: max-height theme.$bar-transition-duration-max-height theme.$bar-transition-timing-max-height,
+        transition:
+            max-height theme.$bar-transition-duration-max-height theme.$bar-transition-timing-max-height,
             margin theme.$bar-transition-duration-margin theme.$bar-transition-timing-margin
                 theme.$bar-transition-delay-margin,
             visibility theme.$bar-transition-duration-opacity theme.$bar-transition-timing-opacity,
