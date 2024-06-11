@@ -2,7 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
-{%- set _id = props.id -%}
+{%- set _id = props.id | default(null) -%}
 {%- set _unsafeValidationText = props.UNSAFE_validationText | default(null) -%}
 {%- set _validationState = props.validationState | default(null) -%}
 {%- set _validationText = props.validationText | default(null) -%}

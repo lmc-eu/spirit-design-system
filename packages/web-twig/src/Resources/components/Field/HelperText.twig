@@ -3,7 +3,7 @@
 {%- set _className = props.className -%}
 {%- set _elementType = props.elementType | default('div') -%}
 {%- set _helperText = props.helperText | default(null) -%}
-{%- set _id = props.id -%}
+{%- set _id = props.id | default(null) -%}
 {%- set _unsafeHelperText = props.UNSAFE_helperText | default(null) -%}
 
 {# Attributes #}

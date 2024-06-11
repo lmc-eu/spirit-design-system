@@ -8,7 +8,7 @@
     <div class="Select Select--success">
       <label for="select-success" class="Select__label Select__label--required">Validation success</label>
       <div class="Select__inputContainer">
-        <select id="select-success" name="select-success" class="Select__input" required="">
+        <select id="select-success" name="select-success" class="Select__input" required="" aria-describedby="select-success-validation-text">
           <option value="" selected disabled>
             Placeholder
           </option>
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="Select__validationText">
+      <div class="Select__validationText" id="select-success-validation-text">
         Success validation text
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="Select Select--warning">
       <label for="select-warning" class="Select__label Select__label--required">Validation warning</label>
       <div class="Select__inputContainer">
-        <select id="select-warning" name="select-warning" class="Select__input" required="">
+        <select id="select-warning" name="select-warning" class="Select__input" required="" aria-describedby="select-warning-validation-text">
           <option value="" selected disabled>
             Placeholder
           </option>
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="Select__validationText">
+      <div class="Select__validationText" id="select-warning-validation-text">
         Warning validation text
       </div>
     </div>
@@ -60,7 +60,7 @@
     <div class="Select Select--danger">
       <label for="select-danger" class="Select__label Select__label--required">Validation danger</label>
       <div class="Select__inputContainer">
-        <select id="select-danger" name="select-danger" class="Select__input" required="">
+        <select id="select-danger" name="select-danger" class="Select__input" required="" aria-describedby="select-danger-validation-text">
           <option value="" selected disabled>
             Placeholder
           </option>
@@ -78,7 +78,7 @@
         </div>
       </div>
 
-      <ul class="Select__validationText">
+      <ul class="Select__validationText" id="select-danger-validation-text">
         <li>Danger validation text
         </li>
 

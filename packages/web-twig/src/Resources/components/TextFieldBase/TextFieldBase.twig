@@ -42,7 +42,18 @@
 {%- set _helperTextClassName = _rootClassName ~ '__helperText' -%}
 {%- set _validationTextClassName = _rootClassName ~ '__validationText' -%}
 
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
+{%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
+{%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
+{%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
+
 {# Attributes #}
+{%- set _ariaDescribedByAttr = _helperTextId or _validationTextId ? 'aria-describedby="' ~ [ _helperTextId, _validationTextId ] | join (' ') | trim ~ '"' : null -%}
 {%- set _dataToggleAttr = _isAutoResizing and _isMultiline ? 'data-spirit-toggle=autoResize' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
@@ -50,14 +61,8 @@
 {# Extended Attributes for TextField #}
 {%- set _inputWidthAttr = _inputWidth ? 'size="' ~ _inputWidth | escape('html_attr') ~ '"' : null -%}
 
-{# Miscellaneous #}
-{%- set _styleProps = useStyleProps(props) -%}
-{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{# MainProps #}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop is not same as('id') and (_dataToggleAttr is null or prop is not same as('data-spirit-toggle'))) -%}
-{%- set _allowedAttributes = [ 'autocomplete', 'placeholder'] -%}
-{%- set _textFieldAllowedAttributes = _allowedAttributes | merge([ 'value' ]) -%}
-{%- set _textAreaAllowedAttributes = _allowedAttributes | merge([ 'rows' ]) -%}
 
 <div {{ mainProps(_mainPropsWithoutReservedAttributes) }} {{ styleProp(_styleProps) }} {{ classProp(_rootClassNames) }} {{ _dataToggleAttr }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
@@ -75,6 +80,7 @@
             class="{{ _inputClassName }}"
             {{ _disabledAttr }}
             {{ _requiredAttr }}
+            {{ _ariaDescribedByAttr | raw }}
         >{{ _value }}</textarea>{# Intentionally without `raw` to prevent XSS. #}
     {% else %}
         {% if _hasPasswordToggle %}
@@ -88,6 +94,7 @@
                     {{ _disabledAttr }}
                     {{ _inputWidthAttr | raw }}
                     {{ _requiredAttr }}
+                    {{ _ariaDescribedByAttr | raw }}
                 />
                 <button
                     type="button"
@@ -115,16 +122,19 @@
                 {{ _disabledAttr }}
                 {{ _inputWidthAttr | raw }}
                 {{ _requiredAttr }}
+                {{ _ariaDescribedByAttr | raw }}
             />
         {% endif %}
     {% endif %}
     <HelperText
         className="{{ _helperTextClassName }}"
         helperText="{{ _helperText }}"
+        id="{{ _helperTextId }}"
         UNSAFE_helperText="{{ _unsafeHelperText }}"
     />
     <ValidationText
         className="{{ _validationTextClassName }}"
+        id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"
         UNSAFE_validationText="{{ _unsafeValidationText }}"
