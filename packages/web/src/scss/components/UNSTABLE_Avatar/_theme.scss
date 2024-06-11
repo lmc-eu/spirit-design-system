@@ -1,0 +1,38 @@
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$color: tokens.$text-secondary-default;
+$border-width: tokens.$border-width-100;
+$border-style: tokens.$border-style-100;
+$border-color: tokens.$border-secondary-default;
+$border-radius: 50%;
+$border-radius-square: tokens.$radius-100;
+$background-color: tokens.$background-cover;
+
+$sizes: (
+    xsmall: (
+        width: tokens.$space-700,
+        height: tokens.$space-700,
+        typography: tokens.$body-xsmall-text-bold,
+    ),
+    small: (
+        width: tokens.$space-800,
+        height: tokens.$space-800,
+        typography: tokens.$body-small-text-bold,
+    ),
+    medium: (
+        width: tokens.$space-900,
+        height: tokens.$space-900,
+        typography: tokens.$body-medium-text-bold,
+    ),
+    large: (
+        width: tokens.$space-1000,
+        height: tokens.$space-1000,
+        typography: tokens.$body-large-text-bold,
+    ),
+    xlarge: (
+        width: tokens.$space-1100,
+        height: tokens.$space-1100,
+        typography: tokens.$body-xlarge-text-bold,
+    ),
+);

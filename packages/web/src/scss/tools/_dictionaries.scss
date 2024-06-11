@@ -212,7 +212,17 @@
 @mixin generate-sizes($class-name, $variables) {
     @each $size, $variables in $variables {
         .#{$class-name}--#{$size} {
-            padding: map.get($variables, padding-y) map.get($variables, padding-x);
+            @if map.has-key($variables, width) {
+                width: map.get($variables, width);
+            }
+
+            @if map.has-key($variables, height) {
+                height: map.get($variables, height);
+            }
+
+            @if map.has-key($variables, padding-y) and map.has-key($variables, padding-x) {
+                padding: map.get($variables, padding-y) map.get($variables, padding-x);
+            }
 
             @if map.has-key($variables, typography) {
                 @include typography.generate(map.get($variables, typography));
