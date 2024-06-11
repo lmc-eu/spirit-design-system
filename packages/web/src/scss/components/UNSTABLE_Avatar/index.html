@@ -1,0 +1,120 @@
+{{#> web/layout/plain }} {{setVar "sizes" "xsmall" "small" "medium" "large" "xlarge" }}
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Icon</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+        {{setVar "iconSize" "24"}}
+        {{#if (eq size "xsmall")}}
+        {{setVar "iconSize" "16"}}
+        {{/if}}
+        {{#if (eq size "small")}}
+        {{setVar "iconSize" "20"}}
+        {{/if}}
+        {{#if (eq size "large")}}
+        {{setVar "iconSize" "28"}}
+        {{/if}}
+        {{#if (eq size "xlarge")}}
+        {{setVar "iconSize" "32"}}
+        {{/if}}
+
+        <a href="#" class="UNSTABLE_Avatar UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+          <svg width="{{@root.iconSize}}" height="{{@root.iconSize}}" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+          </svg>
+        </a>
+
+      {{/each}}
+
+    </div>
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+      {{setVar "iconSize" "24"}}
+      {{#if (eq size "xsmall")}}
+      {{setVar "iconSize" "16"}}
+      {{/if}}
+      {{#if (eq size "small")}}
+      {{setVar "iconSize" "20"}}
+      {{/if}}
+      {{#if (eq size "large")}}
+      {{setVar "iconSize" "28"}}
+      {{/if}}
+      {{#if (eq size "xlarge")}}
+      {{setVar "iconSize" "32"}}
+      {{/if}}
+
+      <div class="UNSTABLE_Avatar UNSTABLE_Avatar--square UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <svg width="{{@root.iconSize}}" height="{{@root.iconSize}}" aria-hidden="true">
+          <use xlink:href="/assets/icons/svg/sprite.svg#profile" />
+        </svg>
+      </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Text</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+
+      <a href="#" class="UNSTABLE_Avatar UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <span aria-hidden="true">JB</span>
+      </a>
+
+      {{/each}}
+
+    </div>
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+
+      <div class="UNSTABLE_Avatar UNSTABLE_Avatar--square UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <span aria-hidden="true">JB</span>
+      </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+</section>
+
+<section class="docs-Section">
+  <h2 class="docs-Heading">Image</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+
+      <a href="#" class="UNSTABLE_Avatar UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
+      </a>
+
+      {{/each}}
+
+    </div>
+    <div class="d-flex" style="gap: var(--spirit-space-400)">
+
+      {{#each @root.sizes as |size|}}
+
+      <div class="UNSTABLE_Avatar UNSTABLE_Avatar--square UNSTABLE_Avatar--{{size}}" aria-label="Profile of Jiří Bárta">
+        <img src="https://picsum.photos/id/823/162/162" alt="Jiří Bárta" aria-hidden="true" />
+      </div>
+
+      {{/each}}
+
+    </div>
+  </div>
+</section>
+
+{{/ web/layout/plain }}
