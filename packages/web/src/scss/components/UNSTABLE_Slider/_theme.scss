@@ -1,0 +1,31 @@
+// 1. Originally radius-50 in Jobs DS. Changed to radius-100 in Spirit.
+
+@use '@tokens' as tokens;
+
+$padding: tokens.$space-400;
+$row-gap: tokens.$space-600;
+
+$range-track-height: tokens.$border-width-100;
+$range-track-border-radius: tokens.$radius-0;
+$range-track-background: tokens.$border-primary-default;
+$range-track-lower-height-selected: tokens.$border-width-200;
+$range-track-lower-border-radius-selected: tokens.$radius-100; // 1.
+$range-track-lower-background: tokens.$border-primary-default;
+$range-track-lower-background-hover: tokens.$background-basic;
+$range-track-lower-background-active: tokens.$background-basic;
+$range-track-lower-background-selected: tokens.$action-selected-default;
+
+$range-thumb-width: tokens.$space-700;
+$range-thumb-height: tokens.$space-900;
+$range-thumb-border-width: tokens.$border-width-100;
+$range-thumb-border-width-selected: tokens.$border-width-200;
+$range-thumb-border-style: tokens.$border-style-100;
+$range-thumb-border-color: tokens.$border-primary-default;
+$range-thumb-border-color-selected: tokens.$action-selected-default;
+$range-thumb-border-radius: tokens.$radius-100;
+$range-thumb-background-color: tokens.$background-basic;
+$range-thumb-background-image: url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{$range-thumb-border-color}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>');
+$range-thumb-background-image-selected: url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{$range-thumb-border-color-selected}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>');
+$range-thumb-background-size: tokens.$space-400 tokens.$space-600;
+$range-thumb-box-shadow: tokens.$shadow-200;
+$range-thumb-box-shadow-focus: tokens.$focus;

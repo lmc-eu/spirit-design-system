@@ -1,0 +1,41 @@
+@use '../../tools/svg';
+@use 'theme';
+
+@mixin track() {
+    width: 100%;
+    height: theme.$range-track-height;
+    border: none;
+    border-radius: theme.$range-track-border-radius;
+}
+
+@mixin track-lower-selected() {
+    height: theme.$range-track-lower-height-selected;
+    border-top-left-radius: theme.$range-track-lower-border-radius-selected;
+    border-bottom-left-radius: theme.$range-track-lower-border-radius-selected;
+}
+
+@mixin thumb() {
+    box-sizing: border-box;
+    width: theme.$range-thumb-width;
+    height: theme.$range-thumb-height;
+    border: theme.$range-thumb-border-width theme.$range-thumb-border-style theme.$range-thumb-border-color;
+    border-radius: theme.$range-thumb-border-radius;
+    background: theme.$range-thumb-background-color svg.escape(theme.$range-thumb-background-image) no-repeat center /
+        theme.$range-thumb-background-size;
+    box-shadow: theme.$range-thumb-box-shadow;
+    cursor: grab;
+}
+
+@mixin thumb-active() {
+    cursor: grabbing;
+}
+
+@mixin thumb-focus() {
+    box-shadow: theme.$range-thumb-box-shadow-focus;
+}
+
+@mixin thumb-selected() {
+    border-width: theme.$range-thumb-border-width-selected;
+    border-color: theme.$range-thumb-border-color-selected;
+    background-image: svg.escape(theme.$range-thumb-background-image-selected);
+}
