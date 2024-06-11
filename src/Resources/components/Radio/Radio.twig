@@ -25,19 +25,21 @@
 {%- set _helperTextClassName = _spiritClassPrefix ~ 'Radio__helperText' -%}
 {%- set _rootValidationStateClassName = _validationState ? _spiritClassPrefix ~ 'Radio--' ~ _validationState : null -%}
 
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
+
 {# Attributes #}
+{%- set _ariaDescribedByAttr = _helperTextId ? 'aria-describedby="' ~ _helperTextId ~ '"' : null -%}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
 {%- set _idAttr = _id ? 'id="' ~ _id | escape('html_attr') ~ '"' : null -%}
 {%- set _labelForAttr = _id ? 'for="' ~ _id | escape('html_attr') ~ '"' : null -%}
-
-{# Miscellaneous #}
-{%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
-{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
 <label {{ _labelForAttr | raw }} {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
@@ -49,6 +51,7 @@
         {{ _checkedAttr }}
         {{ _disabledAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
+        {{ _ariaDescribedByAttr | raw }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>
@@ -62,6 +65,7 @@
             className="{{ _helperTextClassName }}"
             elementType="span"
             helperText="{{ _helperText }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
     </span>

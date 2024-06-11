@@ -6,12 +6,12 @@
   </head>
   <body>
     <div class="TextField TextField--success">
-      <label for="example" class="TextField__label">This is <strong>label</strong> text</label> <input type="text" id="example" name="example" class="TextField__input">
-      <div class="TextField__helperText">
+      <label for="example" class="TextField__label">This is <strong>label</strong> text</label> <input type="text" id="example" name="example" class="TextField__input" aria-describedby="example-helper-text example-validation-text">
+      <div class="TextField__helperText" id="example-helper-text">
         This is <strong>helper</strong> text
       </div>
 
-      <div class="TextField__validationText">
+      <div class="TextField__validationText" id="example-validation-text">
         This is <strong>validation</strong> text
       </div>
     </div>

@@ -27,11 +27,11 @@
 {%- set _styleProps = useStyleProps(props) -%} {# Must be (anywhere) before _rootClassNames #}
 {%- set _allowedAttributes = [ 'form', 'name' ] -%}
 {%- set _ariaDescribedByIds = [] -%}
-{%- set _helperTextId = _id ~ '__helperText' -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
 {%- set _labelClassNames = [ _labelClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['aria-describedby']) -%}
 {%- set _rootClassNames = [ _rootClassName, _rootFluidClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _validationTextId = _id ~ '__validationText' -%}
+{%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
 {%- set _labelRendered -%}
     {%- if _label -%}
         {{ _label }}
@@ -69,8 +69,8 @@
     </div>
     <HelperText
         className="{{ _helperTextClassName }}"
-        id="{{ _helperTextId }}"
         helperText="{{ _helperText }}"
+        id="{{ _helperTextId }}"
         UNSAFE_helperText="{{ _unsafeHelperText }}"
     />
     <ValidationText

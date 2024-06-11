@@ -29,15 +29,18 @@
 {%- set _validationTextClassName = _spiritClassPrefix ~ 'Select__validationText' -%}
 {%- set _helperTextClassName = _spiritClassPrefix ~ 'Select__helperText' -%}
 
-{# Attributes #}
-{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
-{%- set _requiredAttr = _isRequired ? 'required' : null -%}
-
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _rootFluidClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
+
+{# Attributes #}
+{%- set _ariaDescribedByAttr = _helperTextId or _validationTextId ? 'aria-describedby="' ~ [ _helperTextId, _validationTextId ] | join (' ') | trim ~ '"' : null -%}
+{%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
+{%- set _requiredAttr = _isRequired ? 'required' : null -%}
 
 <div {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <label for="{{ _id }}" {{ classProp(_labelClassNames) }}>
@@ -51,6 +54,7 @@
             class="{{ _inputClassName }}"
             {{ _disabledAttr }}
             {{ _requiredAttr }}
+            {{ _ariaDescribedByAttr | raw }}
         >
             {%- block content %}{% endblock -%}
         </select>
@@ -61,10 +65,12 @@
     <HelperText
         className="{{ _helperTextClassName }}"
         helperText="{{ _helperText }}"
+        id="{{ _helperTextId }}"
         UNSAFE_helperText="{{ _unsafeHelperText }}"
     />
     <ValidationText
         className="{{ _validationTextClassName }}"
+        id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"
         UNSAFE_validationText="{{ _unsafeValidationText }}"

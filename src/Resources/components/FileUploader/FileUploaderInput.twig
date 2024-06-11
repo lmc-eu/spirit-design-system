@@ -36,19 +36,22 @@
 {%- set _linkUnderlinedClassName = _spiritClassPrefix ~ 'link-underlined' -%}
 {%- set _validationTextClassName = _spiritClassPrefix ~ 'FileUploaderInput__validationText' -%}
 
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _allowedAttributes = [ 'accept', 'multiple' ] -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-element', 'id']) -%}
+{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
+
 {# Attributes #}
+{%- set _ariaDescribedByAttr = _helperTextId or _validationTextId ? 'aria-describedby="' ~ [ _helperTextId, _validationTextId ] | join (' ') | trim ~ '"' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
 {%- set _dataMaxFileSizeAttr = _maxFileSize ? 'data-spirit-max-file-size=' ~ _maxFileSize : null -%}
 {%- set _dataMaxUploadedFilesAttr = _maxUploadedFiles ? 'data-spirit-file-queue-limit=' ~ _maxUploadedFiles : null -%}
 {%- set _dataQueueLimitBehaviorAttr = _queueLimitBehavior ? 'data-spirit-queue-limit-behavior=' ~ _queueLimitBehavior : null -%}
-
-{# Miscellaneous #}
-{%- set _styleProps = useStyleProps(props) -%}
-{%- set _allowedAttributes = [ 'accept', 'multiple' ] -%}
-{%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutReservedAttributes = props | filter((value, prop) => prop not in ['data-spirit-element', 'id']) -%}
-{%- set _rootClassNames = [ _rootClassName, _rootDisabledClassName, _rootValidationStateClassName, _styleProps.className ] -%}
 
 <div
     {{ mainProps(_mainPropsWithoutReservedAttributes) }}
@@ -74,6 +77,7 @@
         data-spirit-element="input"
         {{ _nameAttr | raw }}
         {{ _disabledAttr }}
+        {{ _ariaDescribedByAttr | raw }}
     />
     <div class="{{ _dropzoneClassName }}" data-spirit-element="dropZone">
         <Icon name="{{ _iconName }}" isReusable={ false } />
@@ -88,11 +92,13 @@
         <HelperText
             className="{{ _helperTextClassName }}"
             helperText="{{ _helperText }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
     </div>
     <ValidationText
         className="{{ _validationTextClassName }}"
+        id="{{ _validationTextId }}"
         validationState="{{ _validationState }}"
         validationText="{{ _validationText }}"
         UNSAFE_validationText="{{ _unsafeValidationText }}"
