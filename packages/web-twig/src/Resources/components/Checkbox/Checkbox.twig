@@ -30,19 +30,22 @@
 {%- set _helperTextClassName = _spiritClassPrefix ~ 'Checkbox__helperText' -%}
 {%- set _validationTextClassName = _spiritClassPrefix ~ 'Checkbox__validationText' -%}
 
+{# Miscellaneous #}
+{%- set _styleProps = useStyleProps(props) -%}
+{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
+{%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
+{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
+{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
+{%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
+
 {# Attributes #}
+{%- set _ariaDescribedByAttr = _helperTextId or _validationTextId ? 'aria-describedby="' ~ [ _helperTextId, _validationTextId ] | join (' ') | trim ~ '"' : null -%}
 {%- set _checkedAttr = _isChecked ? 'checked' : null -%}
 {%- set _disabledAttr = _isDisabled ? 'disabled' : null -%}
 {%- set _nameAttr = _name ? 'name="' ~ _name | escape('html_attr') ~ '"' : null -%}
 {%- set _requiredAttr = _isRequired ? 'required' : null -%}
 {%- set _valueAttr = _value ? 'value=' ~ _value : null -%}
-
-{# Miscellaneous #}
-{%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootDisabledClassName, _rootItemClassName, _rootValidationStateClassName, _styleProps.className ] -%}
-{%- set _labelClassName = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
-{%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
-{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 
 <label for="{{ _id }}" {{ mainProps(_mainPropsWithoutId) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }}>
     <input
@@ -55,6 +58,7 @@
         {{ _nameAttr | raw }}
         {{ _requiredAttr }}
         {{ _valueAttr }} {# Intentionally without `raw` to prevent XSS. #}
+        {{ _ariaDescribedByAttr | raw }}
     />
     <span class="{{ _textClassName }}">
         <span {{ classProp(_labelClassName) }}>
@@ -68,11 +72,13 @@
             className="{{ _helperTextClassName }}"
             elementType="span"
             helperText="{{ _helperText }}"
+            id="{{ _helperTextId }}"
             UNSAFE_helperText="{{ _unsafeHelperText }}"
         />
         <ValidationText
             className="{{ _validationTextClassName }}"
             elementType="span"
+            id="{{ _validationTextId }}"
             validationState="{{ _validationState }}"
             validationText="{{ _validationText }}"
             UNSAFE_validationText="{{ _unsafeValidationText }}"

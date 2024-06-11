@@ -1,17 +1,15 @@
 <!-- DO NOT render when there is nothing to display -->
-<ValidationText className="myClass" id="validation-text-no-validation" />
+<ValidationText className="myClass" />
 
 <!-- DO NOT render when validationState is not set -->
 <ValidationText
     className="myClass"
-    id="validation-text-no-validation-state"
     validationText="Validation text"
 />
 
 <!-- Render with plain validation text -->
 <ValidationText
     className="myClass"
-    id="validation-text-plain"
     validationState="success"
     validationText="Validation text"
 />
@@ -19,7 +17,6 @@
 <!-- Render with iterable validation text -->
 <ValidationText
     className="myClass"
-    id="validation-text-iterable"
     validationState="success"
     validationText="{{ ['Validation text 1', 'Validation text 2'] }}"
 />

@@ -6,8 +6,8 @@
   </head>
   <body>
     <div data-test="test" data-validate="1" data-spirit-validate="1" data-custom-validate="true" class="TextField TextField--danger">
-      <label for="example" class="TextField__label TextField__label--required">Text field</label> <input minlength="6" autocomplete="on" placeholder="Very long text" value="Some long value" data-validate="true" type="text" id="example" name="example" class="TextField__input" size="10" required="">
-      <div class="TextField__validationText">
+      <label for="example" class="TextField__label TextField__label--required">Text field</label> <input minlength="6" autocomplete="on" placeholder="Very long text" value="Some long value" data-validate="true" type="text" id="example" name="example" class="TextField__input" size="10" required="" aria-describedby="example-validation-text">
+      <div class="TextField__validationText" id="example-validation-text">
         validation failed
       </div>
     </div>
