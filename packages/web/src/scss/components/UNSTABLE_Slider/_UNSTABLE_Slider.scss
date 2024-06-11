@@ -1,0 +1,162 @@
+// 1. Input styling inspired by https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/.
+//
+//    Note that while we’re repeating code here, that’s necessary as you can’t comma-separate these types of selectors.
+//    Browsers will drop the entire selector if they do not understand a part of it. (CSS Tricks)
+//
+// 2. While the lower portion of the track is styled through the `::-moz-range-progress` pseudo-element in Firefox,
+//    linear gradients must be used in Webkit-based browsers as no such element is available in Webkit:
+//
+//    a) the first linear gradient marks the lower part of the track,
+//    b) the second linear gradient replaces the default track background (please mind the different heights).
+//
+//    Actual color stop position in the a) gradient is set programmatically by JS and obtained through a custom property.
+//
+//    The linear-gradient approach is expected to be deleted in the future in favor of a standardized property similar
+//    to the approach of Firefox.
+//
+//    ⚠️ CAUTION: This approach currently works only for small steps. For larger steps, the track may be rendered
+//    incorrectly. This is a known issue and will be addressed in the future.
+//
+// 3. The lower track part is colored using custom properties so it can be affected from the outer context.
+
+@use 'sass:math';
+@use '../../tools/form-fields' as form-fields-tools;
+@use 'theme';
+@use 'tools';
+
+$_field-name: 'UNSTABLE_Slider';
+
+.UNSTABLE_Slider {
+    @include form-fields-tools.box-field-root();
+}
+
+.UNSTABLE_Slider__label {
+    @include form-fields-tools.box-field-label();
+}
+
+.UNSTABLE_Slider__label--hidden {
+    @include form-fields-tools.label-hidden();
+}
+
+.UNSTABLE_Slider__label--required::after {
+    @include form-fields-tools.label-required();
+}
+
+.UNSTABLE_Slider__input {
+    appearance: none;
+    width: 100%;
+    height: theme.$range-thumb-height;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+        --slider-track-lower-background: #{theme.$range-track-lower-background-hover}; // 3.
+    }
+
+    &:active {
+        --slider-track-lower-background: #{theme.$range-track-lower-background-active}; // 3.
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    // Webkit, 1.
+    &::-webkit-slider-runnable-track {
+        @include tools.track();
+
+        // 2., 3.
+        background-image: linear-gradient(
+                to right,
+                var(--slider-track-lower-background, #{theme.$range-track-lower-background}) var(--slider-position, 0%),
+                transparent var(--slider-position, 0%)
+            ),
+            linear-gradient(
+                to bottom,
+                theme.$range-track-background theme.$range-track-height,
+                transparent theme.$range-track-height
+            );
+    }
+
+    &::-webkit-slider-thumb {
+        @include tools.thumb();
+
+        appearance: none;
+        margin-top: math.ceil(math.div(theme.$range-track-height, 2)) - math.div(theme.$range-thumb-height, 2);
+    }
+
+    &:active::-webkit-slider-thumb {
+        @include tools.thumb-active();
+    }
+
+    &:focus-visible::-webkit-slider-thumb {
+        @include tools.thumb-focus();
+    }
+
+    // Firefox, 1.
+    &::-moz-range-track {
+        @include tools.track();
+
+        background-color: theme.$range-track-background;
+    }
+
+    &::-moz-range-progress {
+        height: theme.$range-track-height;
+        border-radius: theme.$range-track-border-radius;
+        background-color: var(--slider-track-lower-background, #{theme.$range-track-lower-background}); // 3.
+    }
+
+    &::-moz-range-thumb {
+        @include tools.thumb();
+    }
+
+    &:active::-moz-range-thumb {
+        @include tools.thumb-active();
+    }
+
+    &:focus-visible::-moz-range-thumb {
+        @include tools.thumb-focus();
+    }
+}
+
+.UNSTABLE_Slider--fluid {
+    @include form-fields-tools.box-field-fluid();
+}
+
+.UNSTABLE_Slider--selected > .UNSTABLE_Slider__input {
+    --slider-track-lower-background: #{theme.$range-track-lower-background-selected}; // 3.
+
+    // Webkit, 1.
+    &::-webkit-slider-runnable-track {
+        @include tools.track-lower-selected();
+    }
+
+    &::-webkit-slider-thumb {
+        @include tools.thumb-selected();
+    }
+
+    // Firefox, 1.
+    &::-moz-range-track {
+        border-top-left-radius: theme.$range-track-lower-border-radius-selected;
+        border-bottom-left-radius: theme.$range-track-lower-border-radius-selected;
+    }
+
+    &::-moz-range-progress {
+        @include tools.track-lower-selected();
+    }
+
+    &::-moz-range-thumb {
+        @include tools.thumb-selected();
+    }
+}
+
+.UNSTABLE_Slider__validationText,
+.UNSTABLE_Slider > [data-spirit-element='validation_text'] {
+    @include form-fields-tools.validation-text();
+}
+
+.UNSTABLE_Slider__helperText {
+    @include form-fields-tools.helper-text();
+}
+
+@include form-fields-tools.input-field-validation-states($_field-name);
