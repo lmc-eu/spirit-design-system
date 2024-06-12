@@ -24,6 +24,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Fetch Git history
         run: git fetch --no-tags --depth=50 origin main
 
@@ -31,6 +34,7 @@ jobs:
         uses: bahmutov/npm-install@v1.10.2
         with:
           useRollingCache: true
+          install-command: yarn --immutable
 
       - name: Build
         run: yarn build
