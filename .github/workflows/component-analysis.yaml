@@ -20,10 +20,14 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1.10.2
         with:
           useRollingCache: true
+          install-command: yarn --immutable
 
       - name: Analyze
         run: npx omlet analyze
