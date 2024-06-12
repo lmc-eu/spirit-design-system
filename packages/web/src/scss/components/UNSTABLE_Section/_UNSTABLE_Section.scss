@@ -1,0 +1,9 @@
+.UNSTABLE_Section:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .UNSTABLE_Section:not(:last-child) {
+        margin-bottom: 4rem;
+    }
+}
