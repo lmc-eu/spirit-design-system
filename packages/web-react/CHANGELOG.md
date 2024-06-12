@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.0.0...@lmc-eu/spirit-web-react@2.1.0) (2024-06-12)
+
+### Bug Fixes
+
+- **web-react:** Import components from file intead of the index ([cee0301](https://github.com/lmc-eu/spirit-design-system/commit/cee0301))
+
+### Dependencies
+
+- Update dependency eslint-plugin-prettier to v5 ([dfcdde7](https://github.com/lmc-eu/spirit-design-system/commit/dfcdde7))
+
+### Features
+
+- **web-react:** Introduce UNSTABLE_Divider component [#DS-1303](https://github.com/lmc-eu/spirit-design-system/issues/DS-1303) ([8a6c985](https://github.com/lmc-eu/spirit-design-system/commit/8a6c985))
+
+### Styles
+
+- **repo:** Replace unicode "heavy check mark" with "check mark" ([32f2d76](https://github.com/lmc-eu/spirit-design-system/commit/32f2d76))
+- **web-react:** Allow UNSTABLE\_ prefix [#DS-1303](https://github.com/lmc-eu/spirit-design-system/issues/DS-1303) ([6167e0d](https://github.com/lmc-eu/spirit-design-system/commit/6167e0d))
+- **web-react:** Apply import sorting ESLint rule [#DS-1101](https://github.com/lmc-eu/spirit-design-system/issues/DS-1101) ([ec57b66](https://github.com/lmc-eu/spirit-design-system/commit/ec57b66))
+- **web-react:** Reformat codebase using Prettier v3 ([d48ff9f](https://github.com/lmc-eu/spirit-design-system/commit/d48ff9f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@1.18.0...@lmc-eu/spirit-web-react@2.0.0) (2024-06-10)

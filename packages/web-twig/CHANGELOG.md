@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+
+# [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.0.0...@lmc-eu/spirit-web-twig@3.1.0) (2024-06-12)
+
+### Bug Fixes
+
+- **web-twig:** Make ValidationText and HelperText ID optional [#DS-1336](https://github.com/lmc-eu/spirit-design-system/issues/DS-1336) ([0e2feea](https://github.com/lmc-eu/spirit-design-system/commit/0e2feea))
+
+### Features
+
+- **web-twig:** Introduce UNSTABLE_Divider component [#DS-1302](https://github.com/lmc-eu/spirit-design-system/issues/DS-1302) ([0f2da6d](https://github.com/lmc-eu/spirit-design-system/commit/0f2da6d))
+
+### Styles
+
+- **repo:** Reformat docs using Prettier v3 ([670757d](https://github.com/lmc-eu/spirit-design-system/commit/670757d))
+- **repo:** Replace unicode "heavy check mark" with "check mark" ([32f2d76](https://github.com/lmc-eu/spirit-design-system/commit/32f2d76))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.0.0"></a>
 
 # [3.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@2.16.0...@lmc-eu/spirit-web-twig@3.0.0) (2024-06-10)

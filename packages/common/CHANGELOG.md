@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.4"></a>
+
+## [0.3.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.3...@lmc-eu/spirit-common@0.3.4) (2024-06-12)
+
+### Tests
+
+- Improve HP visual testing ([ffec061](https://github.com/lmc-eu/spirit-design-system/commit/ffec061))
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.3"></a>
 
 ## [0.3.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.2...@lmc-eu/spirit-common@0.3.3) (2024-06-03)

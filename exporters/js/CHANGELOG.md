@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.0...@lmc-eu/spirit-exporters-js@2.0.1) (2024-06-12)
+
+### Styles
+
+- Apply import sorting ESLint rule [#DS-1101](https://github.com/lmc-eu/spirit-design-system/issues/DS-1101) ([79fee4d](https://github.com/lmc-eu/spirit-design-system/commit/79fee4d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@1.2.1...@lmc-eu/spirit-exporters-js@2.0.0) (2024-06-10)

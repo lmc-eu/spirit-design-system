@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.0.0...@lmc-eu/spirit-design-tokens@2.0.1) (2024-06-12)
+
+### Styles
+
+- **repo:** Reformat docs using Prettier v3 ([670757d](https://github.com/lmc-eu/spirit-design-system/commit/670757d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@1.1.6...@lmc-eu/spirit-design-tokens@2.0.0) (2024-06-10)

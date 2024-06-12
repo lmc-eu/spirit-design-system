@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+
+## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@2.0.0...@lmc-eu/spirit-form-validations@2.0.1) (2024-06-12)
+
+### Styles
+
+- **repo:** Replace unicode "heavy check mark" with "check mark" ([32f2d76](https://github.com/lmc-eu/spirit-design-system/commit/32f2d76))
+
+**Note:** Version bump only for package @lmc-eu/spirit-form-validations
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-form-validations@1.1.7...@lmc-eu/spirit-form-validations@2.0.0) (2024-06-10)

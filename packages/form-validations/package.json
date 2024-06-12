@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-form-validations",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Validation library for form fields of Spirit Design System",
   "license": "MIT",
   "engines": {

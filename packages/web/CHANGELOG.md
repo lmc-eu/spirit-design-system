@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.0.0...@lmc-eu/spirit-web@2.1.0) (2024-06-12)
+
+### Features
+
+- **web:** Introduce UNSTABLE_Divider component [#DS-1302](https://github.com/lmc-eu/spirit-design-system/issues/DS-1302) ([635fb5d](https://github.com/lmc-eu/spirit-design-system/commit/635fb5d))
+
+### Styles
+
+- **repo:** Replace unicode "heavy check mark" with "check mark" ([32f2d76](https://github.com/lmc-eu/spirit-design-system/commit/32f2d76))
+- **web:** Apply import sorting ESLint rule [#DS-1101](https://github.com/lmc-eu/spirit-design-system/issues/DS-1101) ([1aaac3a](https://github.com/lmc-eu/spirit-design-system/commit/1aaac3a))
+- **web:** Reformat codebase using Prettier v3 ([5f2d6e4](https://github.com/lmc-eu/spirit-design-system/commit/5f2d6e4))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@1.15.0...@lmc-eu/spirit-web@2.0.0) (2024-06-10)
