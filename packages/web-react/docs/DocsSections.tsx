@@ -11,7 +11,7 @@ interface DocsSectionProps {
 }
 
 const DocsSection = ({ children, hasStack = true, stackAlignment = 'start', title, tag }: DocsSectionProps) => (
-  <section className="docs-Section">
+  <section className="UNSTABLE_Section">
     <h2 className="docs-Heading">
       {title}
       {tag && (

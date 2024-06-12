@@ -1,12 +1,12 @@
 {{#> web/layout/plain }} {{setVar "colors" "neutral" "success" "informative" "warning" "danger" }} {{setVar "sizes" "xsmall"
 "small" "medium" "large" "xlarge" }}
 
-<section class="docs-Section">
+<section class="UNSTABLE_Section">
   <h2 class="docs-Heading">Default</h2>
   <div class="docs-Stack docs-Stack--stretch">
     <div class="Grid Grid--cols-1 Grid--tablet--cols-3 Grid--desktop--cols-5">
       {{#each @root.sizes as |size|}}
-        <section class="docs-Section">
+        <section class="UNSTABLE_Section">
           <h3 class="docs-Heading">Size {{size}}</h3>
           <div class="docs-Stack docs-Stack--start">
             {{#each @root.colors as |color|}}
