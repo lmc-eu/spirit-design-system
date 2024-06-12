@@ -1,4 +1,4 @@
-#syntax=docker/dockerfile:1.7
+#syntax=docker/dockerfile:1.8
 
 # The different stages of this Dockerfile are meant to be built into separate images
 # https://docs.docker.com/develop/develop-images/multistage-build/#stop-at-a-specific-build-stage
