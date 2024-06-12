@@ -1177,7 +1177,7 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-demo/-/spirit-demo-0.1.1.tgz#990f2ab1e453640a8186f0546eff5f2eafa4bb0f"
   integrity sha512-l1BMmNobCYjZLsVi5vir5VZXDnZHn/i08mBv9ELEdcWJNTF7POkSPn2uS5jOUZ3ScdzKPH7UMRjYJVjsgVMWKQ==
 
-"@lmc-eu/spirit-design-tokens@^1.1.6":
+"@lmc-eu/spirit-design-tokens@1.1.6", "@lmc-eu/spirit-design-tokens@^1.1.6":
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-1.1.6.tgz#845710aac04c4fdcf8903050e580bc2bac10b842"
   integrity sha512-CF+kqZus3VTiYfoWKJWC/0xN0J7EOAJmydQQ6DGwMProvswyh8nZY6AXhfxGMo43aESPSIq1RX5oeWkIATTCWg==
