@@ -17,10 +17,6 @@
     border-color: #d4d4d4;
 }
 
-.docs-Section:not(:last-child) {
-    margin-bottom: 2.5rem;
-}
-
 .docs-Heading {
     display: flex;
     flex-wrap: wrap;
@@ -84,10 +80,6 @@
 @media (min-width: 768px) {
     .docs-TileLink {
         padding: 1.5rem;
-    }
-
-    .docs-Section:not(:last-child) {
-        margin-bottom: 4rem;
     }
 
     .docs-Heading {
