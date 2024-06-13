@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Collapse;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class CollapseSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class CollapseSnapshotTest extends AbstractComponentSnapshotTest {}

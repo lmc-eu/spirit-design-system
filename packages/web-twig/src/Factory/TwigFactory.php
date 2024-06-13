@@ -10,39 +10,17 @@ use Twig\Loader\FilesystemLoader;
 
 class TwigFactory
 {
-    private Environment $twig;
-
-    private FilesystemLoader $loader;
-
-    /**
-     * @var array <number, string>
-     */
-    private array $paths;
-
-    private string $alias;
-
-    private ?string $classPrefix;
-
-    private bool $isEnabledLexer;
-
     /**
      * @param array<number, string> $paths
      */
     public function __construct(
-        Environment $twig,
-        FilesystemLoader $loader,
-        array $paths,
-        string $alias,
-        ?string $classPrefix,
-        bool $isEnabledLexer
-    ) {
-        $this->twig = $twig;
-        $this->loader = $loader;
-        $this->paths = $paths;
-        $this->alias = $alias;
-        $this->classPrefix = $classPrefix;
-        $this->isEnabledLexer = $isEnabledLexer;
-    }
+        private Environment $twig,
+        private FilesystemLoader $loader,
+        private array $paths,
+        private string $alias,
+        private ?string $classPrefix,
+        private bool $isEnabledLexer,
+    ) {}
 
     public function create(): Environment
     {

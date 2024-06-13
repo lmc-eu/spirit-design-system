@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Dropdown;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class DropdownSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class DropdownSnapshotTest extends AbstractComponentSnapshotTest {}

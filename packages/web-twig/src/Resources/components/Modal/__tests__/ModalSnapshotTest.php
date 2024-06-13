@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Modal;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ModalSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ModalSnapshotTest extends AbstractComponentSnapshotTest {}

@@ -18,7 +18,7 @@ abstract class AbstractComponentSnapshotTest extends TestCase
 
     protected Environment $twig;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->twig = TwigHelper::setup($this->getSnapshotSources(), 'spirit');
     }
@@ -48,7 +48,7 @@ abstract class AbstractComponentSnapshotTest extends TestCase
         $dataToProvide = [];
 
         foreach ($scannedDirectory as $fileName) {
-            if (! is_dir($this->getSnapshotSources() . '/' . $fileName)) {
+            if (!is_dir($this->getSnapshotSources() . '/' . $fileName)) {
                 $dataToProvide[(string) $fileName] = [(string) $fileName];
             }
         }

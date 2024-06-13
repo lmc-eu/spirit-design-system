@@ -17,27 +17,16 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class SpiritWebTwigExtension extends Extension
 {
     public const PARAMETER_PATHS = 'spirit_web_twig.paths';
-
     public const PARAMETER_SPIRIT_CSS_CLASS_PREFIX = 'spirit_web_twig.spirit_css_class_prefix';
-
     public const PARAMETER_PATH_ALIAS = 'spirit_web_twig.paths_alias';
-
     public const PARAMETER_HTML_SYNTAX_LEXER = 'spirit_web_twig.html_syntax_lexer';
-
     public const PARAMETER_ICONS_PATHS = 'spirit_web_twig.icons.paths';
-
     public const PARAMETER_ICONS_PATH_ALIAS = 'spirit_web_twig.icons.alias';
-
     public const DEFAULT_TWIG_COMPONENTS_PATH = __DIR__ . '/../Resources/twig-components';
-
     public const DEFAULT_COMPONENTS_PATH = __DIR__ . '/../Resources/components';
-
     public const DEFAULT_PATH_ALIAS = 'spirit';
-
     public const DEFAULT_PARTIALS_PATH = __DIR__ . '/../Resources/partials';
-
     public const DEFAULT_PARTIALS_ALIAS = 'partials';
-
     public const DEFAULT_ICONS_ALIAS = 'icons-assets';
 
     public function load(array $configs, ContainerBuilder $container): void

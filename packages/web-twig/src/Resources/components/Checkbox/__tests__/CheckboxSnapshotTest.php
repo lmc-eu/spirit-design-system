@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Checkbox;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class CheckboxSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class CheckboxSnapshotTest extends AbstractComponentSnapshotTest {}

@@ -22,7 +22,7 @@ class TwigHelper
         string $defaultTemplatePath,
         string $defaultAlias,
         ?string $prefix = null,
-        array $extendedComponentsPath = []
+        array $extendedComponentsPath = [],
     ): Environment {
         $loader = new FilesystemLoader($defaultTemplatePath);
         $paths = array_merge(
@@ -32,7 +32,7 @@ class TwigHelper
                 SpiritWebTwigExtension::DEFAULT_COMPONENTS_PATH,
                 __DIR__ . '/../../docs/components',
                 __DIR__ . '/../../docs/twig-components',
-            ]
+            ],
         );
 
         foreach ($paths as $path) {

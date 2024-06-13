@@ -21,7 +21,7 @@ class SvgExtensionTest extends TestCase
      */
     private LoggerInterface $loaderInterface;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->loaderInterface = m::mock(LoggerInterface::class);
         $this->svgExtension = new SvgExtension($this->loaderInterface);
@@ -147,21 +147,26 @@ class SvgExtensionTest extends TestCase
             'load with class' => [
                 'test.svg', 'test_with_class.svg', [
                     'class' => 'testClass',
-                ], ],
+                ],
+            ],
             'load with title' => [
                 'test.svg', 'test_with_title.svg', [
                     'title' => 'test',
-                ], ],
+                ],
+            ],
             'load with size' => [
                 'test.svg', 'test_with_size.svg', [
                     'size' => '32',
-                ], ],
+                ],
+            ],
             'load with style' => [
                 'test.svg', 'test_with_style.svg', [
                     'style' => 'position: absolute;',
-                ], ],
+                ],
+            ],
             'load with symbol' => [
-                'test.svg', 'test_with_symbol.svg', [], 'test', ],
+                'test.svg', 'test_with_symbol.svg', [], 'test',
+            ],
         ];
     }
 }

@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\TextArea;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class TextAreaSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class TextAreaSnapshotTest extends AbstractComponentSnapshotTest {}
