@@ -32,7 +32,8 @@ Add `UNSTABLE_Avatar--square` modifier to make the avatar a square.
 
 ## Sizes
 
-The Avatar component supports `xsmall`, `small`, `medium`, `large`, and `xlarge` sizes.
+The Avatar component is available in all [extended sizes][dictionary-size].
+Use the `UNSTABLE_Avatar--<size>` modifier class to change the size of the Avatar component.
 
 ```html
 <div class="UNSTABLE_Avatar UNSTABLE_Avatar--xsmall" aria-label="Profile of Jiří Bárta">
@@ -99,3 +100,5 @@ take care of the text length and case. The rest is handled by the component.
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title, especially when
 using an abbreviation. The `aria-hidden` attribute is set on the text span, because the `aria-label`
 attribute is set on the container and the abbreviation is not useful for screen readers.
+
+[dictionary-size]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#size
