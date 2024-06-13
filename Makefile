@@ -151,8 +151,14 @@ ecs: ## Run composer ecs
 ecs-fix: ## Run composer ecs-fix
 	@$(COMPOSER) ecs:fix
 
+lint: ## Run linting
+	@$(COMPOSER) lint
+
+lint-fix: ## Fix linting errors
+	@$(COMPOSER) lint:fix
+
 test: ## Run composer tests
-	@$(COMPOSER) tests
+	@$(COMPOSER) test
 
 ## —— Helpers 🔧 —————————————————————————————————————————————————————————————————
 icons-build: ## Build Icons package
