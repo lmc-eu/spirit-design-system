@@ -124,6 +124,10 @@ jobs:
         working-directory: ./packages/web-twig
         run: composer update --no-progress
 
+      - name: Run lint
+        working-directory: ./packages/web-twig
+        run: composer lint
+
       - name: Run checks
         working-directory: ./packages/web-twig
         run: composer analyze
