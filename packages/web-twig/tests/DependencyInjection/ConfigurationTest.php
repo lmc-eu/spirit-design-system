@@ -13,15 +13,15 @@ class ConfigurationTest extends TestCase
     {
         $dumper = new YamlReferenceDumper();
         $reference = <<<CONFIG
-spirit_web_twig:
-    paths:                []
-    paths_alias:          spirit
-    spirit_css_class_prefix: null
-    html_syntax_lexer:    true
-    icons:
-        paths:                []
-        alias:                icons-assets\n
-CONFIG;
+            spirit_web_twig:
+                paths:                []
+                paths_alias:          spirit
+                spirit_css_class_prefix: null
+                html_syntax_lexer:    true
+                icons:
+                    paths:                []
+                    alias:                icons-assets\n
+            CONFIG;
 
         $this->assertEquals($reference, $dumper->dump(new Configuration()));
     }

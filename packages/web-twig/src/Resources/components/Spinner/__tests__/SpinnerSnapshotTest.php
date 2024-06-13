@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Spinner;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class SpinnerSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class SpinnerSnapshotTest extends AbstractComponentSnapshotTest {}

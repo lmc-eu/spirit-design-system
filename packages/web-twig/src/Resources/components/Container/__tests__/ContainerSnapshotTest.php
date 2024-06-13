@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Container;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ContainerSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ContainerSnapshotTest extends AbstractComponentSnapshotTest {}

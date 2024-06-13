@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\DependencyInjection;
 
-use JetBrains\PhpStorm\ArrayShape;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

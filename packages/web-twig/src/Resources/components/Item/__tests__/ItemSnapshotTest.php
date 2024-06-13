@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Item;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ItemSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ItemSnapshotTest extends AbstractComponentSnapshotTest {}

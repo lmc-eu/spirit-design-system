@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Heading;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class HeadingSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class HeadingSnapshotTest extends AbstractComponentSnapshotTest {}

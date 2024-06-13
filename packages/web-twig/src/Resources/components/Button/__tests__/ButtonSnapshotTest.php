@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Button;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ButtonSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ButtonSnapshotTest extends AbstractComponentSnapshotTest {}

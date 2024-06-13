@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Toast;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ToastSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ToastSnapshotTest extends AbstractComponentSnapshotTest {}

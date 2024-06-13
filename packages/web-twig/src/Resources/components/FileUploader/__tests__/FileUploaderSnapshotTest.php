@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\FileUploader;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class FileUploaderSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class FileUploaderSnapshotTest extends AbstractComponentSnapshotTest {}

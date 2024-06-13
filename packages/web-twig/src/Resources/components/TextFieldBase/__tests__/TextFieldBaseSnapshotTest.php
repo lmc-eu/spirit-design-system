@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\TextFieldBase;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class TextFieldBaseSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class TextFieldBaseSnapshotTest extends AbstractComponentSnapshotTest {}

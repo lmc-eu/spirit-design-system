@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\ScrollView;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ScrollViewSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ScrollViewSnapshotTest extends AbstractComponentSnapshotTest {}

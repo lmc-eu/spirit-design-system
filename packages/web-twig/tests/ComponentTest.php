@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle;
 
-use Lmc\SpiritWebTwigBundle\Factory\TwigFactory;
 use Lmc\SpiritWebTwigBundle\Helper\TwigHelper;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
@@ -15,7 +14,7 @@ final class ComponentTest extends TestCase
 
     protected Environment $twig;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component');
     }
@@ -23,7 +22,7 @@ final class ComponentTest extends TestCase
     /**
      * @dataProvider renderDataProvider
      */
-    public function testShouldRender(string $testTemplate, string $prefix = null): void
+    public function testShouldRender(string $testTemplate, ?string $prefix = null): void
     {
         if ($prefix) {
             $this->twig = TwigHelper::setup(self::FIXTURES_SOURCES, 'ui-component', $prefix, [__DIR__ . '/test-extends-components']);
@@ -79,10 +78,10 @@ final class ComponentTest extends TestCase
      *
      * @param string|array<string>|null $html
      */
-    private function removeWhitespace($html): ?string
+    private function removeWhitespace(string|array|null $html): ?string
     {
         $cleanedSpaceBetweenAttrs = $html ? preg_replace('/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', "\n", $html) : null;
-        $trimmedHtml = $cleanedSpaceBetweenAttrs && ! is_array($cleanedSpaceBetweenAttrs) ? trim($cleanedSpaceBetweenAttrs) : null;
+        $trimmedHtml = $cleanedSpaceBetweenAttrs && !is_array($cleanedSpaceBetweenAttrs) ? trim($cleanedSpaceBetweenAttrs) : null;
 
         return $trimmedHtml;
     }

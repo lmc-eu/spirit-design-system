@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Tag;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class TagSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class TagSnapshotTest extends AbstractComponentSnapshotTest {}
