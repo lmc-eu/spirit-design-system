@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Select;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class SelectSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class SelectSnapshotTest extends AbstractComponentSnapshotTest {}

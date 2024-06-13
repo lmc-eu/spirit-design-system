@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Accordion;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class AccordionSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class AccordionSnapshotTest extends AbstractComponentSnapshotTest {}

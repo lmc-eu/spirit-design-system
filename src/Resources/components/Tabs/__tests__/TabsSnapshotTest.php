@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Tabs;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class TabsSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class TabsSnapshotTest extends AbstractComponentSnapshotTest {}

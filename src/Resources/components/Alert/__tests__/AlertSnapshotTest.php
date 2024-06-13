@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Alert;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class AlertSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class AlertSnapshotTest extends AbstractComponentSnapshotTest {}

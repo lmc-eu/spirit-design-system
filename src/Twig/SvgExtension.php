@@ -15,24 +15,17 @@ use Twig\TwigFunction;
 class SvgExtension extends AbstractExtension
 {
     private const ALLOW_EXTENSION = '.svg';
-
     private const ATTR_CLASS = 'class';
-
     private const ATTR_STYLE = 'style';
-
     private const ATTR_MAIN_PROPS = 'mainProps';
-
     private const ATTR_SIZE = 'size';
-
     private const ATTR_TITLE = 'title';
-
     private const ATTR_ID = 'id';
-
     private const ATTR_HEIGHT = 'height';
-
     private const ATTR_VIEWBOX = 'viewBox';
-
     private const ATTR_WIDTH = 'width';
+    private const SIMPLE_XML_ROOT_DECLARATION = "<?xml version=\"1.0\"?>\n";
+    private const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 
     /**
      * @var array<string,SimpleXMLElement|false>
@@ -44,16 +37,7 @@ class SvgExtension extends AbstractExtension
      */
     private array $cacheReusableIconContent = [];
 
-    private const SIMPLE_XML_ROOT_DECLARATION = "<?xml version=\"1.0\"?>\n";
-
-    private const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
-
-    private LoggerInterface $logger;
-
-    public function __construct(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
-    }
+    public function __construct(private LoggerInterface $logger) {}
 
     public function getFunctions(): array
     {
@@ -65,10 +49,7 @@ class SvgExtension extends AbstractExtension
         ];
     }
 
-    /**
-     * @param SimpleXMLElement|false $svgElement
-     */
-    private function replaceXmlDeclaration($svgElement): string
+    private function replaceXmlDeclaration(SimpleXMLElement|false $svgElement): string
     {
         if ($svgElement instanceof SimpleXMLElement && $svgElement->asXML() !== false) {
             return str_replace(self::SIMPLE_XML_ROOT_DECLARATION, '', $svgElement->asXML());
@@ -94,7 +75,7 @@ class SvgExtension extends AbstractExtension
         try {
             $twigSource = $loader->getSourceContext($path);
         } catch (LoaderError $e) {
-            if (! $ignoreMissing) {
+            if (!$ignoreMissing) {
                 $this->logger->critical('Missing svg "{path}"', [
                     'path' => $path,
                 ]);
@@ -109,13 +90,13 @@ class SvgExtension extends AbstractExtension
             return $this->cacheReusableIconContent[$iconId];
         }
 
-        if (! $reUsage) {
+        if (!$reUsage) {
             $svgElement = $this->makeRegularSvg($twigSource, null, $params, $symbolName);
 
             return $this->replaceXmlDeclaration($svgElement);
         }
 
-        if (! array_key_exists($iconId, $this->cacheIcon)) {
+        if (!array_key_exists($iconId, $this->cacheIcon)) {
             $this->cacheIcon[$iconId] = $this->makeRegularSvg($twigSource, $iconId, $params, $symbolName);
 
             return $this->cacheIcon[$iconId] !== false ? $this->replaceXmlDeclaration($this->cacheIcon[$iconId]) : '';
@@ -125,18 +106,17 @@ class SvgExtension extends AbstractExtension
             $reusableSvg = $this->makeReusableSVG($iconId, $this->cacheIcon[$iconId]);
         }
 
-        assert($reusableSvg instanceof  SimpleXMLElement);
+        assert($reusableSvg instanceof SimpleXMLElement);
 
         return $this->replaceXmlDeclaration($reusableSvg);
     }
 
     /**
      * @param array<string, string|array<string>> $params
-     * @return false | SimpleXMLElement
      */
-    private function makeRegularSvg(?Source $source, ?string $iconId, array $params = [], ?string $symbolName = '')
+    private function makeRegularSvg(?Source $source, ?string $iconId, array $params = [], ?string $symbolName = ''): false|SimpleXMLElement
     {
-        if (! $source instanceof Source) {
+        if (!$source instanceof Source) {
             return false;
         }
 
@@ -148,6 +128,7 @@ class SvgExtension extends AbstractExtension
                 'class' => Source::class,
                 'path' => $source->getPath(),
             ]);
+
             return false;
         }
 
@@ -228,10 +209,7 @@ class SvgExtension extends AbstractExtension
         }
     }
 
-    /**
-     * @return false|SimpleXMLElement
-     */
-    private function makeReusableSVG(string $iconId, SimpleXMLElement $regularSvg)
+    private function makeReusableSVG(string $iconId, SimpleXMLElement $regularSvg): false|SimpleXMLElement
     {
         $attributes = $regularSvg->attributes();
 
@@ -252,7 +230,7 @@ class SvgExtension extends AbstractExtension
                         $viewBoxAttributeValue = sprintf(
                             '0 0 %s %s',
                             preg_replace('/[^0-9]/', '', $regularWidth),
-                            preg_replace('/[^0-9]/', '', $regularHeight)
+                            preg_replace('/[^0-9]/', '', $regularHeight),
                         );
                     }
 
@@ -283,7 +261,7 @@ class SvgExtension extends AbstractExtension
         if (isset($simpleXmlElement->attributes()[$attributeName])) {
             // SimpleXMLElement does not accept string.
             // @see: https://github.com/phpstan/phpstan/issues/5766
-            /** @phpstan-ignore-next-line */
+            /* @phpstan-ignore-next-line */
             $simpleXmlElement->attributes()[$attributeName] = $value;
         } else {
             $simpleXmlElement->addAttribute($attributeName, $value);

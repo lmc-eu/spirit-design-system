@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Tooltip;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class TooltipSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class TooltipSnapshotTest extends AbstractComponentSnapshotTest {}

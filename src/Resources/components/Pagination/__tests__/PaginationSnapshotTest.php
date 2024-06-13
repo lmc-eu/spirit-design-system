@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Pagination;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class PaginationSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class PaginationSnapshotTest extends AbstractComponentSnapshotTest {}

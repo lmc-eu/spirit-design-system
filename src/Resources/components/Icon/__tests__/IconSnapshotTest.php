@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Icon;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class IconSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class IconSnapshotTest extends AbstractComponentSnapshotTest {}

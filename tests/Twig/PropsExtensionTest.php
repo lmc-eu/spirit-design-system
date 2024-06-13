@@ -4,17 +4,15 @@ declare(strict_types=1);
 
 namespace Lmc\SpiritWebTwigBundle\Twig;
 
-use Lmc\SpiritWebTwigBundle\DependencyInjection\SpiritWebTwigExtension;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Twig\Environment;
 
 class PropsExtensionTest extends TestCase
 {
     private PropsExtension $propsExtension;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->propsExtension = new PropsExtension();
     }
@@ -170,45 +168,65 @@ class PropsExtensionTest extends TestCase
     public function renderInputPropsDataProvider(): array
     {
         return [
-            'empty props' => [[], [], [], [
-                'transferringAttributes' => [],
-            ]],
-            'filter only allowed attributes' => [[
-                'test-id' => 'testDataId',
-                'min' => '1',
-                'max' => '6',
-                'autocomplete' => 'on',
-                'placeholder' => 'Your name',
-            ], ['autocomplete', 'placeholder'], [], [
-                'transferringAttributes' => [
+            'empty props' => [
+                [],
+                [],
+                [],
+                [
+                    'transferringAttributes' => [],
+                ],
+            ],
+            'filter only allowed attributes' => [
+                [
+                    'test-id' => 'testDataId',
                     'min' => '1',
                     'max' => '6',
                     'autocomplete' => 'on',
                     'placeholder' => 'Your name',
                 ],
-            ]],
-            'filter only allowed attributes and skip null values' => [[
-                'test-id' => 'testDataId',
-                'min' => '1',
-                'max' => '6',
-                'autocomplete' => 'on',
-                'placeholder' => null,
-            ], ['autocomplete', 'placeholder'], [], [
-                'transferringAttributes' => [
+                ['autocomplete', 'placeholder'],
+                [],
+                [
+                    'transferringAttributes' => [
+                        'min' => '1',
+                        'max' => '6',
+                        'autocomplete' => 'on',
+                        'placeholder' => 'Your name',
+                    ],
+                ],
+            ],
+            'filter only allowed attributes and skip null values' => [
+                [
+                    'test-id' => 'testDataId',
                     'min' => '1',
                     'max' => '6',
                     'autocomplete' => 'on',
+                    'placeholder' => null,
                 ],
-            ]],
-            'pass down input props' => [[], [], [
-                'data-test' => 'test-id',
-                'autocomplete' => 'on',
-            ], [
-                'transferringAttributes' => [
+                ['autocomplete', 'placeholder'],
+                [],
+                [
+                    'transferringAttributes' => [
+                        'min' => '1',
+                        'max' => '6',
+                        'autocomplete' => 'on',
+                    ],
+                ],
+            ],
+            'pass down input props' => [
+                [],
+                [],
+                [
                     'data-test' => 'test-id',
                     'autocomplete' => 'on',
                 ],
-            ]],
+                [
+                    'transferringAttributes' => [
+                        'data-test' => 'test-id',
+                        'autocomplete' => 'on',
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -238,36 +256,48 @@ class PropsExtensionTest extends TestCase
     public function renderClassNamesDataProvider(): array
     {
         return [
-            'empty props' => [[], [
-                'classNames' => [],
-            ]],
-            'one class' => [[
-                'test-class',
-            ], [
-                'classNames' => [
+            'empty props' => [
+                [],
+                [
+                    'classNames' => [],
+                ],
+            ],
+            'one class' => [
+                [
                     'test-class',
                 ],
-            ]],
-            'multiple class names' => [[
-                'test-class',
-                'another-test-class',
-            ], [
-                'classNames' => [
-                    'test-class',
-                    'another-test-class',
+                [
+                    'classNames' => [
+                        'test-class',
+                    ],
                 ],
-            ]],
-            'multiple class names without empty values ' => [[
-                'test-class',
-                null,
-                'another-test-class',
-                null,
-            ], [
-                'classNames' => [
+            ],
+            'multiple class names' => [
+                [
                     'test-class',
                     'another-test-class',
                 ],
-            ]],
+                [
+                    'classNames' => [
+                        'test-class',
+                        'another-test-class',
+                    ],
+                ],
+            ],
+            'multiple class names without empty values ' => [
+                [
+                    'test-class',
+                    null,
+                    'another-test-class',
+                    null,
+                ],
+                [
+                    'classNames' => [
+                        'test-class',
+                        'another-test-class',
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -297,20 +327,29 @@ class PropsExtensionTest extends TestCase
     public function renderStylePropDataProvider(): array
     {
         return [
-            'empty props' => [[], [
-                'style' => '',
-            ]],
-            'one style' => [[
-                'style' => 'position: absolute;',
-            ], [
-                'style' => 'position: absolute;',
-            ]],
-            'filter only style' => [[
-                'style' => 'position: absolute; color: red;',
-                'class' => 'test-class',
-            ], [
-                'style' => 'position: absolute; color: red;',
-            ]],
+            'empty props' => [
+                [],
+                [
+                    'style' => '',
+                ],
+            ],
+            'one style' => [
+                [
+                    'style' => 'position: absolute;',
+                ],
+                [
+                    'style' => 'position: absolute;',
+                ],
+            ],
+            'filter only style' => [
+                [
+                    'style' => 'position: absolute; color: red;',
+                    'class' => 'test-class',
+                ],
+                [
+                    'style' => 'position: absolute; color: red;',
+                ],
+            ],
         ];
     }
 
@@ -332,87 +371,120 @@ class PropsExtensionTest extends TestCase
     public function useStylePropDataProvider(): array
     {
         return [
-            'empty props' => [[], [
-                'className' => null,
-                'style' => null,
-            ]],
-            'with UNSAFE_style' => [[
-                'UNSAFE_style' => 'position: absolute;',
-            ], [
-                'className' => null,
-                'style' => 'position: absolute;',
-            ]],
-            'with UNSAFE_className' => [[
-                'UNSAFE_className' => 'test-class',
-            ], [
-                'className' => 'test-class',
-                'style' => null,
-            ]],
-            'with both' => [[
-                'UNSAFE_className' => 'test-class',
-                'UNSAFE_style' => 'position: absolute;',
-            ], [
-                'className' => 'test-class',
-                'style' => 'position: absolute;',
-            ]],
-            'filter only supported' => [[
-                'UNSAFE_style' => 'position: absolute;',
-                'data-test' => 'test-data',
-            ], [
-                'className' => null,
-                'style' => 'position: absolute;',
-            ]],
-            'simple spacing style prop' => [[
-                'margin' => 'space-100',
-            ], [
-                'className' => 'm-100',
-                'style' => null,
-            ]],
-            'complex spacing style prop' => [[
-                'marginX' => [
-                    'mobile' => 'space-100',
-                    'tablet' => 'auto',
-                    'desktop' => 'space-200',
+            'empty props' => [
+                [],
+                [
+                    'className' => null,
+                    'style' => null,
                 ],
-            ], [
-                'className' => 'mx-100 mx-tablet-auto mx-desktop-200',
-                'style' => null,
-            ]],
-            'skipping breakpoint with spacing style prop' => [[
-                'marginX' => [
-                    'mobile' => 'space-100',
-                    'desktop' => 'auto',
+            ],
+            'with UNSAFE_style' => [
+                [
+                    'UNSAFE_style' => 'position: absolute;',
                 ],
-            ], [
-                'className' => 'mx-100 mx-desktop-auto',
-                'style' => null,
-            ]],
-            'all spacing style props' => [[
-                'margin' => 'space-100',
-                'marginTop' => 'space-200',
-                'marginRight' => 'space-300',
-                'marginBottom' => 'space-400',
-                'marginLeft' => 'space-500',
-                'marginX' => 'space-600',
-                'marginY' => 'space-700',
-            ], [
-                'className' => 'm-100 mt-200 mr-300 mb-400 ml-500 mx-600 my-700',
-                'style' => null,
-            ]],
-            'both spacing and UNSAFE_style' => [[
-                'margin' => 'space-100',
-                'UNSAFE_style' => 'position: absolute;',
-            ], [
-                'className' => 'm-100',
-                'style' => 'position: absolute;',
-            ]],
-            'both spacing and UNSAFE_className' => [[
-                'margin' => 'space-100',
-                'UNSAFE_className' => 'm-500',
-            ], [
-                'className' => 'm-500 m-100',
-                'style' => null,
-            ]],
+                [
+                    'className' => null,
+                    'style' => 'position: absolute;',
+                ],
+            ],
+            'with UNSAFE_className' => [
+                [
+                    'UNSAFE_className' => 'test-class',
+                ],
+                [
+                    'className' => 'test-class',
+                    'style' => null,
+                ],
+            ],
+            'with both' => [
+                [
+                    'UNSAFE_className' => 'test-class',
+                    'UNSAFE_style' => 'position: absolute;',
+                ],
+                [
+                    'className' => 'test-class',
+                    'style' => 'position: absolute;',
+                ],
+            ],
+            'filter only supported' => [
+                [
+                    'UNSAFE_style' => 'position: absolute;',
+                    'data-test' => 'test-data',
+                ],
+                [
+                    'className' => null,
+                    'style' => 'position: absolute;',
+                ],
+            ],
+            'simple spacing style prop' => [
+                [
+                    'margin' => 'space-100',
+                ],
+                [
+                    'className' => 'm-100',
+                    'style' => null,
+                ],
+            ],
+            'complex spacing style prop' => [
+                [
+                    'marginX' => [
+                        'mobile' => 'space-100',
+                        'tablet' => 'auto',
+                        'desktop' => 'space-200',
+                    ],
+                ],
+                [
+                    'className' => 'mx-100 mx-tablet-auto mx-desktop-200',
+                    'style' => null,
+                ],
+            ],
+            'skipping breakpoint with spacing style prop' => [
+                [
+                    'marginX' => [
+                        'mobile' => 'space-100',
+                        'desktop' => 'auto',
+                    ],
+                ],
+                [
+                    'className' => 'mx-100 mx-desktop-auto',
+                    'style' => null,
+                ],
+            ],
+            'all spacing style props' => [
+                [
+                    'margin' => 'space-100',
+                    'marginTop' => 'space-200',
+                    'marginRight' => 'space-300',
+                    'marginBottom' => 'space-400',
+                    'marginLeft' => 'space-500',
+                    'marginX' => 'space-600',
+                    'marginY' => 'space-700',
+                ],
+                [
+                    'className' => 'm-100 mt-200 mr-300 mb-400 ml-500 mx-600 my-700',
+                    'style' => null,
+                ],
+            ],
+            'both spacing and UNSAFE_style' => [
+                [
+                    'margin' => 'space-100',
+                    'UNSAFE_style' => 'position: absolute;',
+                ],
+                [
+                    'className' => 'm-100',
+                    'style' => 'position: absolute;',
+                ],
+            ],
+            'both spacing and UNSAFE_className' => [
+                [
+                    'margin' => 'space-100',
+                    'UNSAFE_className' => 'm-500',
+                ],
+                [
+                    'className' => 'm-500 m-100',
+                    'style' => null,
+                ],
+            ],
         ];
     }
 }

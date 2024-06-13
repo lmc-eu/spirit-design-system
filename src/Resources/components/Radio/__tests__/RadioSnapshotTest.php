@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Radio;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class RadioSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class RadioSnapshotTest extends AbstractComponentSnapshotTest {}

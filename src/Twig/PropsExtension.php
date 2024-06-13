@@ -13,13 +13,9 @@ use Twig\TwigFunction;
 class PropsExtension extends AbstractExtension
 {
     private const BREAKPOINT_MOBILE = 'mobile';
-
     private const CLASS_SEPARATOR = '-';
-
     private const CLASS_NAMES_SEPARATOR = ' ';
-
     private const STYLE_SPACING_AUTO = 'auto';
-
     public const STYLE_SPACING_PROPS = [
         'margin' => 'm',
         'marginBottom' => 'mb',
@@ -29,7 +25,6 @@ class PropsExtension extends AbstractExtension
         'marginX' => 'mx',
         'marginY' => 'my',
     ];
-
     public const VALIDATION_ATTRIBUTES = [
         'min', 'max', 'minlength', 'maxlength', 'pattern',
     ];
@@ -61,7 +56,7 @@ class PropsExtension extends AbstractExtension
      * @param array<string, mixed> $props
      * @param array<string, mixed> $allowedAttributes
      */
-    public function renderMainProps(Environment $environment, $props = [], $allowedAttributes = []): string
+    public function renderMainProps(Environment $environment, array $props = [], array $allowedAttributes = []): string
     {
         $transferringAttributes = [];
         if (is_array($props)) {
@@ -72,9 +67,9 @@ class PropsExtension extends AbstractExtension
                     // allow event handlers attributes
                     || preg_match('/^(on)-*/', $propName) > 0
                     // allow manually specified attributes
-                    || in_array($propName, $allowedAttributes)
+                    || in_array($propName, $allowedAttributes, true)
                 ) {
-                    if (! is_null($propValue) && $propValue !== '') {
+                    if ($propValue !== null && $propValue !== '') {
                         $transferringAttributes[$propName] = $propValue;
                     }
                 }
@@ -92,12 +87,12 @@ class PropsExtension extends AbstractExtension
      * @param array<string, mixed> $allowedAttributes
      * @param array<string, mixed> $inputProps
      */
-    public function renderInputProps(Environment $environment, array $props, $allowedAttributes = [], array $inputProps = []): string
+    public function renderInputProps(Environment $environment, array $props, array $allowedAttributes = [], array $inputProps = []): string
     {
         $transferringAttributes = [];
         foreach ($props as $propName => $propValue) {
-            if (in_array($propName, self::VALIDATION_ATTRIBUTES, true) || in_array($propName, $allowedAttributes)) {
-                if (! is_null($propValue) && $propValue !== '') {
+            if (in_array($propName, self::VALIDATION_ATTRIBUTES, true) || in_array($propName, $allowedAttributes, true)) {
+                if ($propValue !== null && $propValue !== '') {
                     $transferringAttributes[$propName] = $propValue;
                 }
             }
@@ -115,7 +110,7 @@ class PropsExtension extends AbstractExtension
      */
     public function renderClassProp(Environment $environment, array $classNames): string
     {
-        $filteredClassNames = array_values(array_filter($classNames, fn ($value) => ! is_null($value) && $value !== ''));
+        $filteredClassNames = array_values(array_filter($classNames, fn($value) => $value !== null && $value !== ''));
 
         return $environment->render('@partials/classProp.twig', [
             'classNames' => $filteredClassNames,
@@ -146,7 +141,7 @@ class PropsExtension extends AbstractExtension
         $utilityName = self::STYLE_SPACING_PROPS[$propName];
 
         // Return just a number from the value if not `auto`
-        $utilityValue = $propValue == self::STYLE_SPACING_AUTO ? self::STYLE_SPACING_AUTO : preg_replace('/[^0-9]/', '', $propValue);
+        $utilityValue = $propValue === self::STYLE_SPACING_AUTO ? self::STYLE_SPACING_AUTO : preg_replace('/[^0-9]/', '', $propValue);
         $infix = $breakpoint !== null && $breakpoint !== self::BREAKPOINT_MOBILE ? self::CLASS_SEPARATOR . $breakpoint : '';
 
         return $classPrefix . $utilityName . $infix . self::CLASS_SEPARATOR . $utilityValue;

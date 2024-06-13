@@ -15,11 +15,8 @@ use Twig\Loader\FilesystemLoader;
 class OverrideServiceCompilerPassTest extends TestCase
 {
     private ContainerBuilder $builder;
-
     private Definition $loader;
-
     private OverrideServiceCompilerPass $overrideService;
-
     private Definition $twig;
 
     protected function setUp(): void
@@ -49,7 +46,7 @@ class OverrideServiceCompilerPassTest extends TestCase
         $filteredAddPathCalls = DefinitionHelper::getMethodCalls(
             $this->loader,
             'addPath',
-            [SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS]
+            [SpiritWebTwigExtension::DEFAULT_PARTIALS_PATH, SpiritWebTwigExtension::DEFAULT_PARTIALS_ALIAS],
         );
 
         $this->assertCount($expectedCalls, $filteredAddPathCalls);

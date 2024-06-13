@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\ButtonLink;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class ButtonLinkSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class ButtonLinkSnapshotTest extends AbstractComponentSnapshotTest {}

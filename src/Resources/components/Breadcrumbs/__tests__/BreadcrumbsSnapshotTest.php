@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Breadcrumbs;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class BreadcrumbsSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class BreadcrumbsSnapshotTest extends AbstractComponentSnapshotTest {}

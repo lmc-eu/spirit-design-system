@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\Stack;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class StackSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class StackSnapshotTest extends AbstractComponentSnapshotTest {}
