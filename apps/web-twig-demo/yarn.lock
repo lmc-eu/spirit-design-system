@@ -1177,15 +1177,10 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-demo/-/spirit-demo-0.1.1.tgz#990f2ab1e453640a8186f0546eff5f2eafa4bb0f"
   integrity sha512-l1BMmNobCYjZLsVi5vir5VZXDnZHn/i08mBv9ELEdcWJNTF7POkSPn2uS5jOUZ3ScdzKPH7UMRjYJVjsgVMWKQ==
 
-"@lmc-eu/spirit-design-tokens@2.0.1":
+"@lmc-eu/spirit-design-tokens@2.0.1", "@lmc-eu/spirit-design-tokens@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-2.0.1.tgz#8e5ba7f68a5727a5e32fc67af2cc3a78d00a1355"
   integrity sha512-flQi6nQxJAPW/XpF3TQVA8spSX1k8cK826riujzbBcH5E66d4YQpsZBhDuwE0bmwgnRt7z0kG+EO3bPvObVbeA==
-
-"@lmc-eu/spirit-design-tokens@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-design-tokens/-/spirit-design-tokens-1.1.6.tgz#845710aac04c4fdcf8903050e580bc2bac10b842"
-  integrity sha512-CF+kqZus3VTiYfoWKJWC/0xN0J7EOAJmydQQ6DGwMProvswyh8nZY6AXhfxGMo43aESPSIq1RX5oeWkIATTCWg==
 
 "@lmc-eu/spirit-form-validations@2.0.1":
   version "2.0.1"
@@ -1197,14 +1192,14 @@
   resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-icons/-/spirit-icons-0.10.2.tgz#8e5891b6685f2eb86f80c82c331ee9993b7c8e6d"
   integrity sha512-YsvnppB6jUMLP2aR0raXlFBEca10DIqWWoIB6iS+1LswcYDUQmEh0NfYYacNEdLeKLHN/fGdtDHInvNUmU2y3w==
 
-"@lmc-eu/spirit-web@1.15.0":
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-1.15.0.tgz#452be2e16707390a150d9cf25953ffb8d7d13817"
-  integrity sha512-d0jcXUFz99XvNsvfu7qQ0RVhLI02rRAosUAK1Dl/XXL5dXtLDXsCZJ6kSM1PwvSTCH1vS5gfn/0VxlEBpUU+uA==
+"@lmc-eu/spirit-web@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@lmc-eu/spirit-web/-/spirit-web-2.1.0.tgz#625784cb73a71649684f07020fe5771dbe3c35fa"
+  integrity sha512-KcIOYbDONNbslMHQ0wCky130bN2/ioye3wHVIIsjH92cyZtM080Ez0qZq9/FpWVJJAGI0JMnUVyx1JT8GSRZpA==
   dependencies:
     "@csstools/normalize.css" "^12.0.0"
     "@floating-ui/dom" "^1.5.3"
-    "@lmc-eu/spirit-design-tokens" "^1.1.6"
+    "@lmc-eu/spirit-design-tokens" "^2.0.1"
     "@lmc-eu/spirit-icons" "^0.10.2"
 
 "@nuxt/friendly-errors-webpack-plugin@^2.5.1":
