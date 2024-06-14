@@ -10,11 +10,10 @@ flags enable new behavior and styling, allowing you to opt-in to new (and
 sometimes breaking) changes while using the current version. A feature flag may
 be configured in React, SASS, or both.
 
-This section in the Storybook documents each feature flag that is available and
-how to configure it. Folders and stories within this section in Storybook show
-components with all feature flags turned on.
+This section documents each feature flag that is available and how to configure it.
+Folders and stories within this section in Storybook show components with all feature flags turned on.
 
-## Current feature flags
+## Current Feature Flags
 
 Feature flags prefixed with `enable-*` contain features we'd like consuming projects to
 test and give us feedback on. It will be made by default in the version specified in the name.
@@ -22,7 +21,7 @@ In most of the cases these features will be breaking changes - logically or visu
 They're generally stable and unlikely to change but may change based on your feedback.
 We just do not want to break your application or design without your consent.
 
-Flags prefixed with `enable-v#-*` will be marked as `true` or "on" by default in the next major version.
+Flags prefixed with `enable-v#-*` will be removed in the next major version and their behavior will be made the default.
 
 For more details on this approach, see the
 [feature flag documentation][feature-flag-documentation]
@@ -31,10 +30,15 @@ in the Spirit Design System monorepo.
 | Flag | Description | Default | SASS flag |
 | ---- | ----------- | ------- | --------- |
 
-## Turning on feature flags in SASS
+## Turning on Feature Flags in SASS
 
 In SASS, you can enable feature flags in any of your stylesheets. Most often
 this is done at the root/entrypoint stylesheet.
+You can enable or disable them by loading
+the `feature-flags` module with a configuration.
+You have to do this **before** loading any other Spirit Web SCSS file.
+
+Example with fictional feature flag to enable fullscreen modal:
 
 ```sass
 @use '~@lmc-eu/spirit-web/scss/settings/feature-flags' with (

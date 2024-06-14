@@ -182,34 +182,7 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ## Feature Flags
 
-This package uses feature flags to enable or disable some functionality. You can enable or disable them by loading
-the `feature-flags` module with a configuration. You have to do this **before** loading any other Spirit Web SCSS file.
-
-Example with fictional feature flag to enable fullscreen modal:
-
-```scss
-@use '~@lmc-eu/spirit-web/scss/settings/feature-flags' with (
-  $modal-enable-fullscreen: true
-);
-
-@use '~@lmc-eu/spirit-web/scss/foundation';
-// …
-```
-
-Every feature flag should also provide a class selector that can be used to enable or disable the feature.
-You can use this class if you want to limit the usage of the feature to a specific part of your application.
-Place the class on any parent element of the component you want to enable the feature for.
-
-Example:
-
-```html
-<body class="spirit-modal-enable-fullscreen">
-  <!-- … -->
-  <div class="Modal">
-    <!-- … -->
-  </div>
-</body>
-```
+👀 See [Feature Flags documentation][feature-flags-docs] for how to use them.
 
 ## Examples
 
@@ -220,6 +193,7 @@ Example:
 See the [LICENSE](LICENSE.md) file for information.
 
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
+[feature-flags-docs]: ../../docs/contributtion/feature-flags.md
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
 [examples]: https://spirit-design-system.netlify.app/packages/web/
