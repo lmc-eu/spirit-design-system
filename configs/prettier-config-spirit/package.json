@@ -1,0 +1,26 @@
+{
+  "name": "prettier-config-spirit",
+  "description": "Prettier configuration for Spirit Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "lmc-eu",
+    "spirit",
+    "spirit-design-system",
+    "config",
+    "spirit",
+    "prettier",
+    "preset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/prettier-config-spirit"
+  },
+  "type": "module",
+  "module": "./index.js",
+  "dependencies": {
+    "@lmc-eu/prettier-config": "2.0.0",
+    "prettier": "3.3.2"
+  }
+}
