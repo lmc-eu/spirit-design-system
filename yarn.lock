@@ -3900,7 +3900,6 @@ __metadata:
     "@lmc-eu/spirit-demo": "npm:^0.1.1"
     "@lmc-eu/spirit-design-tokens": "npm:^2.0.1"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
-    "@lmc-eu/stylelint-config": "npm:7.0.1"
     "@rollup/plugin-typescript": "npm:11.1.6"
     "@types/jest": "npm:29.5.12"
     autoprefixer: "npm:10.4.19"
@@ -3916,8 +3915,7 @@ __metadata:
     sass-true: "npm:7.0.1"
     shx: "npm:0.3.4"
     stylelint: "npm:15.11.0"
-    stylelint-config-prettier: "npm:9.0.5"
-    stylelint-order: "npm:6.0.4"
+    stylelint-config-spirit: "workspace:^"
     tslib: "npm:2.6.3"
     typescript: "npm:5.4.5"
   peerDependencies:
@@ -28029,6 +28027,17 @@ __metadata:
   checksum: 10/6d94582cb6ef0ba7d0181f0ff500fb12092e465915730d0a7f6b6e8d16e8c920658f18bb2c670115cd177f5d3b481609ff3a91bcee083d546ae31d94fdc03261
   languageName: node
   linkType: hard
+
+"stylelint-config-spirit@workspace:^, stylelint-config-spirit@workspace:configs/stylelint-config-spirit":
+  version: 0.0.0-use.local
+  resolution: "stylelint-config-spirit@workspace:configs/stylelint-config-spirit"
+  dependencies:
+    "@lmc-eu/stylelint-config": "npm:7.0.1"
+    stylelint: "npm:15.11.0"
+    stylelint-config-prettier: "npm:9.0.5"
+    stylelint-order: "npm:6.0.4"
+  languageName: unknown
+  linkType: soft
 
 "stylelint-config-standard-scss@npm:^6.0.0":
   version: 6.1.0
