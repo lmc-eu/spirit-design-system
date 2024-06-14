@@ -30,17 +30,16 @@
     "build:js": "vite build",
     "build:scss": "shx mkdir -p scss && shx cp -r src/scss/generated/* src/scss/@tokens.scss scss/",
     "clean": "rimraf esm cjs umd scss types",
-    "lint": "stylelint --config ../../.stylelintrc.js ./src/**/*.scss",
+    "lint": "stylelint ./src/**/*.scss",
     "test": "yarn lint",
     "types": "tsc"
   },
   "devDependencies": {
-    "@lmc-eu/stylelint-config": "7.0.1",
     "npm-run-all2": "5.0.2",
     "rimraf": "5.0.7",
     "shx": "0.3.4",
     "stylelint": "15.11.0",
-    "stylelint-order": "6.0.4",
+    "stylelint-config-spirit": "workspace:^",
     "typescript": "5.4.5",
     "vite": "5.2.13",
     "vite-plugin-dts": "3.9.1"
