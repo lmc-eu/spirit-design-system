@@ -1,0 +1,30 @@
+{
+  "name": "stylelint-config-spirit",
+  "description": "Stylelint configuration for Spirit Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "lmc-eu",
+    "spirit",
+    "spirit-design-system",
+    "config",
+    "spirit",
+    "style",
+    "lint",
+    "stylelint",
+    "preset"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc-eu/spirit-design-system.git",
+    "directory": "configs/stylelint-config-spirit"
+  },
+  "type": "commonjs",
+  "main": "./index.js",
+  "dependencies": {
+    "@lmc-eu/stylelint-config": "7.0.1",
+    "stylelint": "15.11.0",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-order": "6.0.4"
+  }
+}
