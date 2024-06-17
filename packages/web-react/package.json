@@ -39,7 +39,7 @@
     "@lmc-eu/spirit-design-tokens": "^2.0.1",
     "@lmc-eu/spirit-web": "^2.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
-    "@testing-library/dom": "9.3.4",
+    "@testing-library/dom": "10.1.0",
     "@testing-library/jest-dom": "6.4.6",
     "@testing-library/react": "16.0.0",
     "@testing-library/react-hooks": "8.0.1",
