@@ -21,30 +21,52 @@ describe('styleProps', () => {
       expect(result.current.styleProps).toEqual(expected);
     });
 
-    it('should warn when using unsupported `style` prop', () => {
-      const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
-
+    describe('unsupported `style` prop', () => {
       const props = { style: { 'vertical-align': 'center' } };
-      renderHook(() => useStyleProps(props as StyleProps));
 
-      expect(consoleWarnMock).toHaveBeenCalledWith(
-        'Warning: The style prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_style if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
-      );
+      it('should warn when using unsupported `style` prop', () => {
+        const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
+        renderHook(() => useStyleProps(props as StyleProps));
 
-      consoleWarnMock.mockRestore();
+        expect(consoleWarnMock).toHaveBeenCalledWith(
+          'Warning: The style prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_style if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
+        );
+
+        consoleWarnMock.mockRestore();
+      });
+
+      it('should not pass unsupported `style` prop when using it', () => {
+        const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
+        const { result } = renderHook(() => useStyleProps(props as StyleProps));
+
+        expect(result.current.props).toEqual({});
+
+        consoleWarnMock.mockRestore();
+      });
     });
 
-    it('should warn when using unsupported `className` prop', () => {
-      const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
-
+    describe('unsupported `className` prop', () => {
       const props = { className: 'Button' };
-      renderHook(() => useStyleProps(props as StyleProps));
 
-      expect(consoleWarnMock).toHaveBeenCalledWith(
-        'Warning: The className prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_className if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
-      );
+      it('should warn when using unsupported `className` prop', () => {
+        const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
+        renderHook(() => useStyleProps(props as StyleProps));
 
-      consoleWarnMock.mockRestore();
+        expect(consoleWarnMock).toHaveBeenCalledWith(
+          'Warning: The className prop is unsafe and is unsupported in Spirit Web React. Please use style props with Spirit Design Tokens, or UNSAFE_className if you absolutely must do something custom. Note that this may break in future versions due to DOM structure changes.',
+        );
+
+        consoleWarnMock.mockRestore();
+      });
+
+      it('should not pass unsupported `className` prop when using it', () => {
+        const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
+        const { result } = renderHook(() => useStyleProps(props as StyleProps));
+
+        expect(result.current.props).toEqual({});
+
+        consoleWarnMock.mockRestore();
+      });
     });
 
     it('should return correct utility class for simple spacing prop', () => {
