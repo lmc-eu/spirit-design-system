@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { ValidationStates } from '../../../constants';
 import { SpiritRadioProps } from '../../../types';
 import { useRadioStyleProps } from '../useRadioStyleProps';

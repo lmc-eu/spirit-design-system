@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { SpiritTextProps } from '../../../types';
 import { useTextStyleProps } from '../useTextStyleProps';
 import textPropsDataProvider from './textPropsDataProvider';

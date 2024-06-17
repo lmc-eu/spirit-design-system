@@ -1,5 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
-import { HEADER_COLOR_DEFAULT, HEADER_ACTIONS_COLOR_DEFAULT } from '../constants';
+import { renderHook } from '@testing-library/react';
+import { HEADER_ACTIONS_COLOR_DEFAULT, HEADER_COLOR_DEFAULT } from '../constants';
 import { useHeaderStyleProps } from '../useHeaderStyleProps';
 
 describe('useHeaderStyleProps', () => {
