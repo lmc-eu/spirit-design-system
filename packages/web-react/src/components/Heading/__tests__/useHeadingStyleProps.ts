@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { SpiritHeadingProps } from '../../../types';
 import { useHeadingStyleProps } from '../useHeadingStyleProps';
 import headingSizeDataProvider from './headingSizeDataProvider';

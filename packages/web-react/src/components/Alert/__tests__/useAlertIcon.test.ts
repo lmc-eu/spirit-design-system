@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { SpiritAlertProps } from '../../../types';
 import { useAlertIcon } from '../useAlertIcon';
 

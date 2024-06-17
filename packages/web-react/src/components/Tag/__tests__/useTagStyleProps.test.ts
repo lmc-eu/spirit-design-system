@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { SpiritTagProps } from '../../../types';
 import { useTagStyleProps } from '../useTagStyleProps';
 

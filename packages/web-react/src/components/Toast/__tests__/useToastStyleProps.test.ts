@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { SpiritToastProps } from '../../../types';
 import { useToastStyleProps } from '../useToastStyleProps';
 

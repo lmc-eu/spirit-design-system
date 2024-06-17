@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { StyleProps } from '../../types';
 import { useStyleProps } from '../styleProps';
 
