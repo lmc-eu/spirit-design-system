@@ -37,5 +37,6 @@
     "build": {
       "cache": true
     }
-  }
+  },
+  "neverConnectToCloud": true
 }
