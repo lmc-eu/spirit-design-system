@@ -2,38 +2,20 @@ module.exports = {
   extends: [
     '../../.eslintrc',
     '@lmc-eu/eslint-config-react',
-    'plugin:@typescript-eslint/recommended',
+    '@lmc-eu/eslint-config-typescript',
+    '@lmc-eu/eslint-config-typescript/react',
     'prettier',
     'plugin:prettier/recommended',
     '@lmc-eu/eslint-config-jest',
   ],
-
-  parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
-
-  // because of ./config/jest/setupTestingLibrary.js
-  // 6:1  error  'beforeAll' is not defined  no-undef
-  // 15:1  error  'afterAll' is not defined   no-undef
-  env: {
-    jest: true,
-  },
 
   parserOptions: {
     ecmaVersion: 'latest',
     project: './config/tsconfig.eslint.json',
   },
 
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.md'],
-      },
-    },
-  },
-
-  plugins: ['promise', 'react', '@typescript-eslint', 'prettier'],
+  plugins: ['promise', 'react', 'prettier'],
   rules: {
-    // @TODO: add to typescript config
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     // we like to use props spreading for additional props in this case
     'react/jsx-props-no-spreading': 'off', // Used inside HOC, that is fine.
     // prefer arrow function over function expression
@@ -41,7 +23,9 @@ module.exports = {
       'warn',
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
     ],
-    // problem of export default {} in stories
+    // we have missing displayName attribute in our components
+    // it is good for debugging
+    // @see: https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/display-name.md
     'react/display-name': 'off',
     // ignore UNSTABLE_ prefix in component names
     'react/jsx-pascal-case': [
@@ -60,22 +44,8 @@ module.exports = {
         allow: ['^UNSAFE_', '^UNSTABLE_'],
       },
     ],
-    // disable for `scripts` and `config`
-    '@typescript-eslint/no-var-requires': 'off',
-    // interface which extends some other interface is not considered as meaningful interface
-    '@typescript-eslint/no-empty-interface': 'off',
     // allow ++ in for loops
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
-    // disabled due to typescript
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': ['error', { allow: ['resolve', 'reject', 'done', 'next', 'error'] }],
-    // disabled due to typescript
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': 'warn',
-    // We are using typescript, disable jsdoc rules
-    'jsdoc/require-jsdoc': 'off',
-    'jsdoc/require-returns': 'off',
-    'jsdoc/require-param-type': 'off',
     // allow reassign in properties
     'no-param-reassign': ['warn', { props: false }],
     // support monorepos
@@ -122,12 +92,23 @@ module.exports = {
         message: '`useLayoutEffect` causes a warning in SSR. Use `useIsomorphicLayoutEffect`',
       },
     ],
+    // allow empty interfaces with single extends (e.g. interface Foo extends SpiritBar {})
+    // interface which extends some other interface is not considered as meaningful interface
+    // we need this for meeting our component API conventions
+    // @see: https://typescript-eslint.io/rules/no-empty-interface/
+    '@typescript-eslint/no-empty-interface': ['error', { allowSingleExtends: true }],
   },
   overrides: [
     {
       files: ['**/stories/**'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['scripts/**', 'config/**'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],
