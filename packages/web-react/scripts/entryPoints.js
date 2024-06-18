@@ -46,6 +46,7 @@ const entryPoints = [
   { dirs: ['components', 'Toast'] },
   { dirs: ['components', 'Tooltip'] },
   { dirs: ['components', 'UNSTABLE_Divider'] },
+  { dirs: ['components', 'UNSTABLE_Slider'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];
 
