@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-export interface UseTooltipProps {}
-
 export interface UseTooltipReturn {
   isOpen: boolean;
   onToggle: (isOpen: boolean) => void;
