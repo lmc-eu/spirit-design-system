@@ -5,43 +5,19 @@
 .UNSTABLE_EmptyState {
     display: flex;
     flex-direction: column;
-    gap: theme.$root-gap;
     align-items: center;
-    padding-block: theme.$root-padding-block;
+    padding: theme.$root-padding;
+    text-align: center;
 
     @include breakpoint.up(map.get(theme.$breakpoints, desktop)) {
-        padding-block: theme.$root-padding-block-desktop;
+        padding: theme.$root-padding-desktop;
     }
 }
 
-.UNSTABLE_EmptyState__heading {
-    margin-bottom: theme.$heading-margin-bottom;
-}
-
-.UNSTABLE_EmptyState__buttons {
+.UNSTABLE_EmptyState__section {
     display: flex;
     flex-direction: column;
-    gap: theme.$buttons-gap;
-    justify-content: center;
+    align-items: center;
     width: 100%;
-
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
-        flex-direction: row;
-    }
-}
-
-.UNSTABLE_EmptyState__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: theme.$wrapper-gap;
-    align-self: stretch;
-    align-items: center;
-}
-
-.UNSTABLE_EmptyState__icon {
-    display: flex;
-    align-items: center;
-    padding: theme.$icon-padding;
-    border: 1px solid theme.$icon-border-color;
-    border-radius: theme.$icon-border-radius;
+    max-width: 400px;
 }
