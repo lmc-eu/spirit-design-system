@@ -6,4 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\UNSTABLE_EmptyState;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class UNSTABLE_EmptyStateSnapshotTest extends AbstractComponentSnapshotTest {}
+class UNSTABLE_ActionLayoutSnapshotTest extends AbstractComponentSnapshotTest {}
