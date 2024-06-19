@@ -48,6 +48,7 @@ const entryPoints = [
   { dirs: ['components', 'UNSTABLE_ActionLayout'] },
   { dirs: ['components', 'UNSTABLE_Avatar'] },
   { dirs: ['components', 'UNSTABLE_Divider'] },
+  { dirs: ['components', 'UNSTABLE_EmptyState'] },
   { dirs: ['components', 'UNSTABLE_Slider'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];
