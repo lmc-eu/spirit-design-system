@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use 'theme' as theme;
+@use '../../tools/breakpoint';
+
+.UNSTABLE_ActionLayout {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$root-gap;
+    justify-content: center;
+    width: 100%;
+
+    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+        flex-direction: row-reverse;
+    }
+}
