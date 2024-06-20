@@ -14,8 +14,20 @@ module.exports = {
     project: './config/tsconfig.eslint.json',
   },
 
-  plugins: ['promise', 'react', 'prettier'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.md'],
+      },
+    },
+  },
+
+  plugins: ['promise', 'react', '@typescript-eslint', 'prettier', 'react-refresh'],
   rules: {
+    // @see: https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+    'react-refresh/only-export-components': 'warn',
+    // @TODO: add to typescript config
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     // we like to use props spreading for additional props in this case
     'react/jsx-props-no-spreading': 'off', // Used inside HOC, that is fine.
     // prefer arrow function over function expression
