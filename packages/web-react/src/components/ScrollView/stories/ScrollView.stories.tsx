@@ -116,7 +116,7 @@ const meta: Meta<typeof ScrollView> = {
     isScrollbarDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     overflowDecorators: {

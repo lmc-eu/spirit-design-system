@@ -1,5 +1,6 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import React, { useState } from 'react';
 import { AlignmentY } from '../../../constants';
 import { SpiritModalProps } from '../../../types';
@@ -29,17 +30,15 @@ const meta: Meta<typeof Modal> = {
     isOpen: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
-    },
-    onClose: {
-      control: 'function',
     },
   },
   args: {
     alignmentY: AlignmentY.CENTER,
     id: 'modal',
     isOpen: false,
+    onClose: fn(),
   },
 };
 

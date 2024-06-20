@@ -26,25 +26,25 @@ const meta: Meta<typeof FileUploaderInput> = {
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isMultiple: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {
@@ -59,13 +59,13 @@ const meta: Meta<typeof FileUploaderInput> = {
     maxFileSize: {
       control: 'number',
       table: {
-        defaultValue: { summary: 1000000 },
+        defaultValue: { summary: '1000000' },
       },
     },
     maxUploadedFiles: {
       control: 'number',
       table: {
-        defaultValue: { summary: 10 },
+        defaultValue: { summary: '10' },
       },
     },
     name: {

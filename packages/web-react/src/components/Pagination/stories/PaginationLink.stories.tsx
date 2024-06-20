@@ -18,7 +18,7 @@ const meta: Meta<typeof PaginationLink> = {
     isCurrent: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     pageNumber: {

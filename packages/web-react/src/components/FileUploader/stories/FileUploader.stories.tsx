@@ -1,5 +1,6 @@
 import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import React from 'react';
 import { SpiritFileUploaderAttachmentProps, SpiritFileUploaderProps } from '../../../types';
 import ReadMe from '../README.md';
@@ -14,14 +15,8 @@ const meta: Meta<typeof FileUploader> = {
     },
   },
   argTypes: {
-    addToQueue: {
-      control: 'function',
-    },
     children: {
       control: 'text',
-    },
-    clearQueue: {
-      control: 'function',
     },
     errorMessages: {
       control: 'object',
@@ -29,28 +24,24 @@ const meta: Meta<typeof FileUploader> = {
     fileQueue: {
       control: 'object',
     },
-    findInQueue: {
-      control: 'function',
-    },
     id: {
       control: 'text',
     },
     isFluid: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
-    },
-    onDismiss: {
-      control: 'function',
-    },
-    updateQueue: {
-      control: 'function',
     },
   },
   args: {
     id: 'file-uploader',
     isFluid: false,
+    findInQueue: fn(),
+    onDismiss: fn(),
+    updateQueue: fn(),
+    clearQueue: fn(),
+    addToQueue: fn(),
   },
 };
 

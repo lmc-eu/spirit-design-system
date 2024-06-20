@@ -23,14 +23,14 @@ const meta: Meta<typeof Dropdown> = {
     enableAutoClose: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     fullWidthMode: {
       control: 'select',
       options: [...Object.values(DropdownFullWidthModes), undefined],
       table: {
-        defaultValue: { summary: undefined },
+        defaultValue: { summary: 'undefined' },
       },
     },
     id: {

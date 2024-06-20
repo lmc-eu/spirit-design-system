@@ -16,13 +16,13 @@ const meta: Meta<typeof Icon> = {
     ariaHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     boxSize: {
       control: 'number',
       table: {
-        defaultValue: { summary: 24 },
+        defaultValue: { summary: '24' },
       },
     },
     name: {

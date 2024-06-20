@@ -41,7 +41,7 @@ const meta: Meta<typeof Header> = {
     isSimple: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },

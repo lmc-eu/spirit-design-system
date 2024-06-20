@@ -21,13 +21,13 @@ const meta: Meta<typeof BreadcrumbsItem> = {
     isCurrent: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     isGoBackOnly: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },

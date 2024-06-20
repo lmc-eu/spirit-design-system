@@ -35,28 +35,28 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
       control: 'boolean',
       description: 'Whether the slider is fluid',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       description: 'Whether the label is hidden',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       description: 'Whether the slider is required',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isSelected: {
       control: 'boolean',
       description: 'Whether the slider is selected',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {
@@ -70,21 +70,21 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
       control: 'number',
       description: 'The maximum value of the slider',
       table: {
-        defaultValue: { summary: SLIDER_DEFAULT_PROPS.max },
+        defaultValue: { summary: `${SLIDER_DEFAULT_PROPS.max}` },
       },
     },
     min: {
       control: 'number',
       description: 'The minimum value of the slider',
       table: {
-        defaultValue: { summary: SLIDER_DEFAULT_PROPS.min },
+        defaultValue: { summary: `${SLIDER_DEFAULT_PROPS.min}` },
       },
     },
     step: {
       control: 'number',
       description: 'The step of the slider',
       table: {
-        defaultValue: { summary: SLIDER_DEFAULT_PROPS.step },
+        defaultValue: { summary: `${SLIDER_DEFAULT_PROPS.step}` },
       },
     },
     validationState: {

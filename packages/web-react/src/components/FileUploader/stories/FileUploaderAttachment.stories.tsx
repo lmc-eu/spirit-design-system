@@ -20,7 +20,7 @@ const meta: Meta<typeof FileUploaderAttachment> = {
     hasImagePreview: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     iconName: {
