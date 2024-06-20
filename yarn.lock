@@ -5,7 +5,7 @@ __metadata:
   version: 8
   cacheKey: 10
 
-"@adobe/css-tools@npm:^4.3.2, @adobe/css-tools@npm:^4.4.0":
+"@adobe/css-tools@npm:^4.3.3, @adobe/css-tools@npm:^4.4.0":
   version: 4.4.0
   resolution: "@adobe/css-tools@npm:4.4.0"
   checksum: 10/9c6315fe9efa5075d6ddb6ded7a1424bc9c41a01f2314b6bdcc368723985fe161008d03ddcc2b27b2da50cb9c14190fbce965d15cefe5f9a31bdd43f35b52115
@@ -3701,7 +3701,7 @@ __metadata:
     rollup: "npm:4.18.0"
     rollup-plugin-terser: "npm:7.0.2"
     sass: "npm:1.77.5"
-    sass-true: "npm:7.0.1"
+    sass-true: "npm:8.0.0"
     shx: "npm:0.3.4"
     vite: "npm:5.2.13"
     vite-plugin-handlebars: "npm:2.0.0"
@@ -3911,7 +3911,7 @@ __metadata:
     rollup: "npm:4.18.0"
     rollup-plugin-terser: "npm:7.0.2"
     sass: "npm:1.77.5"
-    sass-true: "npm:7.0.1"
+    sass-true: "npm:8.0.0"
     shx: "npm:0.3.4"
     stylelint: "npm:15.11.0"
     stylelint-config-spirit: "workspace:^"
@@ -26439,16 +26439,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-true@npm:7.0.1":
-  version: 7.0.1
-  resolution: "sass-true@npm:7.0.1"
+"sass-true@npm:8.0.0":
+  version: 8.0.0
+  resolution: "sass-true@npm:8.0.0"
   dependencies:
-    "@adobe/css-tools": "npm:^4.3.2"
+    "@adobe/css-tools": "npm:^4.3.3"
     jest-diff: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
-  peerDependencies:
-    sass: ">=1.45.0"
-  checksum: 10/7a94959aac180bb8bec75f0c1f29c5745e7d735d80370349fc2e47a7e911b19eeb37894a1030da6f74950892f1229ae4e56555386203df41a4262e57750c0660
+  checksum: 10/2251a50dca8ee28b6fcb13241e48077ea7c651cf4006abd78e397ebad12ef6dcc9a89c6d5a0b3bc6ba1c5d0e4f75a54f5aa9cc256b41d8861bea3a2399181796
   languageName: node
   linkType: hard
 
