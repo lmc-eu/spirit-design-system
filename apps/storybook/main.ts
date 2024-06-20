@@ -1,19 +1,17 @@
-import type { StorybookViteConfig } from '@storybook/builder-vite';
+import type { StorybookConfig } from '@storybook/react-vite';
+import react from '@vitejs/plugin-react';
 import { dirname, join, resolve } from 'path';
 import { mergeConfig } from 'vite';
 import markdownRawPlugin from 'vite-raw-plugin';
 
-const config: StorybookViteConfig = {
+const config: StorybookConfig = {
   stories: ['../../packages/**/*.mdx', '../../packages/**/*.stories.@(ts|tsx)'],
 
   addons: [getAbsolutePath('@storybook/addon-links'), getAbsolutePath('@storybook/addon-essentials')],
 
-  features: {
-    storyStoreV7: true,
-  },
-
   core: {
     disableTelemetry: true,
+    builder: '@storybook/builder-vite',
   },
 
   async viteFinal(config) {
@@ -22,6 +20,9 @@ const config: StorybookViteConfig = {
       plugins: [
         markdownRawPlugin({
           fileRegex: /\.md$/,
+        }),
+        react({
+          jsxRuntime: 'automatic',
         }),
       ],
       css: {
@@ -44,8 +45,11 @@ const config: StorybookViteConfig = {
   },
 
   docs: {
-    autodocs: true,
     defaultName: 'Overview',
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
   },
 };
 

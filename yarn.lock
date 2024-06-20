@@ -50,7 +50,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.24.7, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.5, @babel/core@npm:^7.18.9, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.7":
+"@babel/core@npm:7.24.7, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.5, @babel/core@npm:^7.18.9, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.5, @babel/core@npm:^7.24.7":
   version: 7.24.7
   resolution: "@babel/core@npm:7.24.7"
   dependencies:
@@ -1171,6 +1171,28 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 10/5a158803ad71ed7c434ad047755eb98feb2c428800163ff0be1351dc06ecdd19ab503cb6a1fda8708b05decde3a9297499eb0954317af79f191b4d45135af2a2
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-transform-react-jsx-self@npm:^7.24.5":
+  version: 7.24.7
+  resolution: "@babel/plugin-transform-react-jsx-self@npm:7.24.7"
+  dependencies:
+    "@babel/helper-plugin-utils": "npm:^7.24.7"
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 10/56115b4a6c006ce82846f1ab21e5ba713ee8f57a166c96c94fc632cdfbc8b9cebbf20b7cd9b8076439dabecdbf0f8ca4c2cb1bed1bf0b15cb44505a429f6a92f
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-transform-react-jsx-source@npm:^7.24.1":
+  version: 7.24.7
+  resolution: "@babel/plugin-transform-react-jsx-source@npm:7.24.7"
+  dependencies:
+    "@babel/helper-plugin-utils": "npm:^7.24.7"
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 10/682e2ae15d788453d8ab34cf0dcc29c093faf7c7cf1d60110c43f33e6477f916cf301456b314fc496fadc07123f7978225f41ac286ed0bfbad9c8e76392fdb6d
   languageName: node
   linkType: hard
 
@@ -3649,19 +3671,15 @@ __metadata:
     "@storybook/addon-actions": "npm:8.1.10"
     "@storybook/addon-essentials": "npm:8.1.10"
     "@storybook/addon-links": "npm:8.1.10"
-<<<<<<< HEAD
-    "@storybook/addons": "npm:7.6.17"
-=======
-    "@storybook/addon-mdx-gfm": "npm:8.1.10"
->>>>>>> 31cd73ac6 (fixup! Deps: Update monorepo:storybook to v8)
     "@storybook/blocks": "npm:8.1.10"
     "@storybook/html": "npm:8.1.10"
     "@storybook/react": "npm:8.1.10"
     "@storybook/react-vite": "npm:8.1.10"
     "@storybook/theming": "npm:8.1.10"
+    "@vitejs/plugin-react": "npm:4.3.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    storybook: "npm:8.1.10"
+    storybook: "npm:^8.1.10"
     typescript: "npm:4.9.5"
     vite: "npm:5.3.1"
   languageName: unknown
@@ -7098,43 +7116,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"@storybook/manager-api@npm:7.6.17":
-  version: 7.6.17
-  resolution: "@storybook/manager-api@npm:7.6.17"
-  dependencies:
-    "@storybook/channels": "npm:7.6.17"
-    "@storybook/client-logger": "npm:7.6.17"
-    "@storybook/core-events": "npm:7.6.17"
-    "@storybook/csf": "npm:^0.1.2"
-    "@storybook/global": "npm:^5.0.0"
-    "@storybook/router": "npm:7.6.17"
-    "@storybook/theming": "npm:7.6.17"
-    "@storybook/types": "npm:7.6.17"
-    dequal: "npm:^2.0.2"
-    lodash: "npm:^4.17.21"
-    memoizerific: "npm:^1.11.3"
-    store2: "npm:^2.14.2"
-    telejson: "npm:^7.2.0"
-    ts-dedent: "npm:^2.0.0"
-  checksum: 10/0e21042d06effabdd89a9b1edb972584a894eddb0e5551fd5f0e58e22b4fc8ef3c760f01b63f37dd22e3287f4bb16a508b1792014ce676854e32351fbb903328
-=======
-"@storybook/instrumenter@npm:8.1.10":
-  version: 8.1.10
-  resolution: "@storybook/instrumenter@npm:8.1.10"
-  dependencies:
-    "@storybook/channels": "npm:8.1.10"
-    "@storybook/client-logger": "npm:8.1.10"
-    "@storybook/core-events": "npm:8.1.10"
-    "@storybook/global": "npm:^5.0.0"
-    "@storybook/preview-api": "npm:8.1.10"
-    "@vitest/utils": "npm:^1.3.1"
-    util: "npm:^0.12.4"
-  checksum: 10/5d1618f9d8eb2a176fe5e1dceb9d97c583fb793ccb94d6235d4403232b7ab863619a716ff6a497d0d58967404ddccf4778cabccaac88a29d4f67ae1bb05e1682
->>>>>>> 31cd73ac6 (fixup! Deps: Update monorepo:storybook to v8)
-  languageName: node
-  linkType: hard
-
 "@storybook/manager-api@npm:8.1.10":
   version: 8.1.10
   resolution: "@storybook/manager-api@npm:8.1.10"
@@ -7294,39 +7275,6 @@ __metadata:
     fs-extra: "npm:^11.1.0"
     read-pkg-up: "npm:^7.0.1"
   checksum: 10/ab9aa3c4a992236781b2c18f2df37ec60441132a9800c98a2e0139231c19c4672be8d21ce2e07de00eb4360d119fdc45c6c7e416f08e6d79b4bf22d21edfefb3
-  languageName: node
-  linkType: hard
-
-<<<<<<< HEAD
-"@storybook/theming@npm:7.6.17":
-  version: 7.6.17
-  resolution: "@storybook/theming@npm:7.6.17"
-  dependencies:
-    "@emotion/use-insertion-effect-with-fallbacks": "npm:^1.0.0"
-    "@storybook/client-logger": "npm:7.6.17"
-    "@storybook/global": "npm:^5.0.0"
-    memoizerific: "npm:^1.11.3"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/1fb988364b02ddcd84f18800c5f952c8d90a1b20b129821dee8a965136f14a1d15973903be7239513d9fc3b3419cbc0e79e305ecea26b15d86cc689a439a8d38
-=======
-"@storybook/test@npm:^8.1.10":
-  version: 8.1.10
-  resolution: "@storybook/test@npm:8.1.10"
-  dependencies:
-    "@storybook/client-logger": "npm:8.1.10"
-    "@storybook/core-events": "npm:8.1.10"
-    "@storybook/instrumenter": "npm:8.1.10"
-    "@storybook/preview-api": "npm:8.1.10"
-    "@testing-library/dom": "npm:^9.3.4"
-    "@testing-library/jest-dom": "npm:^6.4.2"
-    "@testing-library/user-event": "npm:^14.5.2"
-    "@vitest/expect": "npm:1.3.1"
-    "@vitest/spy": "npm:^1.3.1"
-    util: "npm:^0.12.4"
-  checksum: 10/1ff83ca9431f38e8e6594c0d3600c99612fbb74478ea4e4e0cd6274d191683344c3905d9d25b6c3d9a96777153849fa85feebfe06b0bf01edfbff751649829d6
->>>>>>> 31cd73ac6 (fixup! Deps: Update monorepo:storybook to v8)
   languageName: node
   linkType: hard
 
@@ -7838,11 +7786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.18.0":
-=======
 "@types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.18.0, @types/babel__core@npm:^7.20.5":
->>>>>>> 31cd73ac6 (fixup! Deps: Update monorepo:storybook to v8)
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
   dependencies:
@@ -8764,6 +8708,21 @@ __metadata:
   bin:
     nft: out/cli.js
   checksum: 10/fcfdf503e58a55658cb22d8d43613eeea5eed4432c47dfbc44812974bc3d3cb21af909a6ef8a50e3ddbc6635b1bd6767159c1413a03202b8045b0254443df594
+  languageName: node
+  linkType: hard
+
+"@vitejs/plugin-react@npm:4.3.1":
+  version: 4.3.1
+  resolution: "@vitejs/plugin-react@npm:4.3.1"
+  dependencies:
+    "@babel/core": "npm:^7.24.5"
+    "@babel/plugin-transform-react-jsx-self": "npm:^7.24.5"
+    "@babel/plugin-transform-react-jsx-source": "npm:^7.24.1"
+    "@types/babel__core": "npm:^7.20.5"
+    react-refresh: "npm:^0.14.2"
+  peerDependencies:
+    vite: ^4.2.0 || ^5.0.0
+  checksum: 10/a9d1eb30c968bf719a3277067211493746579aee14a7af8c0edb2cde38e8e5bbd461e62a41c3590e2c6eb04a047114eb3e97dcd591967625fbbc7aead8dfaf90
   languageName: node
   linkType: hard
 
@@ -24098,6 +24057,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-refresh@npm:^0.14.2":
+  version: 0.14.2
+  resolution: "react-refresh@npm:0.14.2"
+  checksum: 10/512abf97271ab8623486061be04b608c39d932e3709f9af1720b41573415fa4993d0009fa5138b6705b60a98f4102f744d4e26c952b14f41a0e455521c6be4cc
+  languageName: node
+  linkType: hard
+
 "react-remove-scroll-bar@npm:^2.3.4":
   version: 2.3.6
   resolution: "react-remove-scroll-bar@npm:2.3.6"
@@ -26237,7 +26203,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:8.1.10":
+"storybook@npm:^8.1.10":
   version: 8.1.10
   resolution: "storybook@npm:8.1.10"
   dependencies:
