@@ -38,7 +38,7 @@ const meta: Meta<typeof Collapse> = {
     transitionDuration: {
       control: 'number',
       table: {
-        defaultValue: { summary: 250 },
+        defaultValue: { summary: '250' },
       },
     },
   },

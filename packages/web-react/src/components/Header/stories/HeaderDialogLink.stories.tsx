@@ -30,7 +30,7 @@ const meta: Meta<typeof HeaderDialogLink> = {
     isCurrent: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },

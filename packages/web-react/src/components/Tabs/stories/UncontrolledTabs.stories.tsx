@@ -8,7 +8,7 @@ const meta: Meta<typeof UncontrolledTabs> = {
   argTypes: {
     defaultSelectedTab: {
       control: {
-        type: 'string',
+        type: 'number',
       },
     },
   },

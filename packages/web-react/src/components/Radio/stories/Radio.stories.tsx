@@ -26,25 +26,25 @@ const meta: Meta<typeof Radio> = {
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isChecked: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     isItem: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {

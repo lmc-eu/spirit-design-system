@@ -43,13 +43,13 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     hasIcon: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isDismissible: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     color: {
@@ -65,19 +65,19 @@ const meta: Meta<UncontrolledToastPlaygroundProps> = {
     isCollapsible: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     enableAutoClose: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     autoCloseInterval: {
       control: 'number',
       table: {
-        defaultValue: { summary: DEFAULT_TOAST_AUTO_CLOSE_INTERVAL },
+        defaultValue: { summary: DEFAULT_TOAST_AUTO_CLOSE_INTERVAL.toString() },
       },
     },
   },

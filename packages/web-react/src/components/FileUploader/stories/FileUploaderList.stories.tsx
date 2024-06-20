@@ -10,7 +10,7 @@ const meta: Meta<typeof FileUploaderList> = {
     hasImagePreview: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     id: {

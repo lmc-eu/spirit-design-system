@@ -70,25 +70,25 @@ const meta: Meta<typeof Select> = {
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isFluid: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {
@@ -101,7 +101,7 @@ const meta: Meta<typeof Select> = {
       control: 'select',
       options: [...Object.values(ValidationStates), undefined],
       table: {
-        defaultValue: { summary: undefined },
+        defaultValue: { summary: 'undefined' },
       },
     },
     validationText: {

@@ -35,7 +35,7 @@ const meta: Meta<typeof ToastBar> = {
     hasIcon: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     iconName: {
@@ -44,13 +44,13 @@ const meta: Meta<typeof ToastBar> = {
     isDismissible: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isOpen: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     onClose: {

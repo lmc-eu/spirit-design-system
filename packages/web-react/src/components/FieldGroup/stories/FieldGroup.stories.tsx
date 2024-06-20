@@ -58,19 +58,19 @@ const meta: Meta<typeof FieldGroup> = {
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {
@@ -80,7 +80,7 @@ const meta: Meta<typeof FieldGroup> = {
       control: 'text',
     },
     validationState: {
-      control: 'FieldGroup',
+      control: 'select',
       options: [...Object.values(ValidationStates), undefined],
       table: {
         defaultValue: { summary: undefined },

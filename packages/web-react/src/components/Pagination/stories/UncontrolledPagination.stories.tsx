@@ -13,7 +13,7 @@ const meta: Meta<typeof UncontrolledPagination> = {
       control: 'number',
       description: 'Default page for the first render; please reload the page to apply this setting.',
       table: {
-        defaultValue: { summary: 1 },
+        defaultValue: { summary: '1' },
       },
     },
     totalPages: {
@@ -22,7 +22,7 @@ const meta: Meta<typeof UncontrolledPagination> = {
     visiblePages: {
       control: 'number',
       table: {
-        defaultValue: { summary: 5 },
+        defaultValue: { summary: '5' },
       },
     },
   },

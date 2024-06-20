@@ -38,31 +38,31 @@ const meta: Meta<typeof UncontrolledFileUploader> = {
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isFluid: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isMultiple: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     labelText: {
@@ -77,13 +77,13 @@ const meta: Meta<typeof UncontrolledFileUploader> = {
     maxFileSize: {
       control: 'number',
       table: {
-        defaultValue: { summary: 1000000 },
+        defaultValue: { summary: '1000000' },
       },
     },
     maxUploadedFiles: {
       control: 'number',
       table: {
-        defaultValue: { summary: 10 },
+        defaultValue: { summary: '10' },
       },
     },
     queueLimitBehavior: {

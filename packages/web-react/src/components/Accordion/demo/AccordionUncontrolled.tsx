@@ -1,6 +1,6 @@
 // Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
-import { ComponentStory } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import React from 'react';
 import { Link } from '../../Link';
 import { Pill } from '../../Pill';
@@ -10,7 +10,7 @@ import AccordionItem from '../AccordionItem';
 import UncontrolledAccordion from '../UncontrolledAccordion';
 import { content } from './Accordion';
 
-const Story: ComponentStory<typeof UncontrolledAccordion> = () => (
+const Story: StoryFn<typeof UncontrolledAccordion> = () => (
   <UncontrolledAccordion id="accordion-example" defaultOpen="accordion-item-example-1">
     <AccordionItem id="accordion-item-example-0">
       <AccordionHeader

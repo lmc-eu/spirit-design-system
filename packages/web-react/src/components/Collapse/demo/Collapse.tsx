@@ -1,9 +1,9 @@
 // Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
-import { ComponentStory } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import React from 'react';
 import { Button } from '../../Button';
-import { useCollapse, Collapse } from '../index';
+import { Collapse, useCollapse } from '../index';
 
 export const content = (
   <>
@@ -32,7 +32,7 @@ export const CollapseTrigger = ({ isOpen, ...rest }: any) => {
   return <Button {...rest}>Collapse Trigger ({isOpen ? 'Open' : 'Closed'})</Button>;
 };
 
-const Story: ComponentStory<typeof Collapse> = () => {
+const Story: StoryFn<typeof Collapse> = () => {
   const { isOpen, toggleHandler } = useCollapse(false);
 
   return (

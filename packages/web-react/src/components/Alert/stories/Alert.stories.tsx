@@ -37,7 +37,7 @@ const meta: Meta<typeof Alert> = {
     isCentered: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },

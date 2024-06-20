@@ -20,7 +20,7 @@ const meta: Meta<typeof TextArea> = {
     autoResizingMaxHeight: {
       control: 'number',
       table: {
-        defaultValue: { summary: 400 },
+        defaultValue: { summary: '400' },
       },
     },
     helperText: {
@@ -32,31 +32,31 @@ const meta: Meta<typeof TextArea> = {
     isAutoResizing: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isDisabled: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isFluid: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: true },
+        defaultValue: { summary: 'true' },
       },
     },
     isLabelHidden: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     isRequired: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     label: {

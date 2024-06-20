@@ -33,7 +33,7 @@ const meta: Meta<typeof UncontrolledCollapse> = {
     transitionDuration: {
       control: 'number',
       table: {
-        defaultValue: { summary: 250 },
+        defaultValue: { summary: '250' },
       },
     },
   },

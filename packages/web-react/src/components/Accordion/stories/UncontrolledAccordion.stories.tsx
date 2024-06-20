@@ -10,7 +10,7 @@ const meta: Meta<typeof UncontrolledAccordion> = {
   component: UncontrolledAccordion,
   argTypes: {
     defaultOpen: {
-      control: 'array',
+      control: 'object',
     },
     elementType: {
       control: 'text',

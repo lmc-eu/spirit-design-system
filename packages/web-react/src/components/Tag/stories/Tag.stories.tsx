@@ -33,7 +33,7 @@ const meta: Meta<typeof Tag> = {
     isSubtle: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     size: {

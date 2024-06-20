@@ -30,7 +30,7 @@ const meta: Meta<typeof HeaderLink> = {
     isCurrent: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },

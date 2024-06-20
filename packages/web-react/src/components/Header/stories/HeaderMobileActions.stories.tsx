@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import React, { useState } from 'react';
 import { HeaderMobileActionsProps } from '../../../types';
 import { Link } from '../../Link';
@@ -33,7 +34,7 @@ const meta: Meta<typeof HeaderMobileActions> = {
     isOpen: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
     menuToggleLabel: {
@@ -42,13 +43,11 @@ const meta: Meta<typeof HeaderMobileActions> = {
         defaultValue: { summary: 'Menu' },
       },
     },
-    onOpen: {
-      control: 'function',
-    },
   },
   args: {
     dialogId: 'header-dialog-example-1',
     menuToggleLabel: 'Menu',
+    onOpen: fn(),
   },
 };
 

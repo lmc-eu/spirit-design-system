@@ -1,11 +1,11 @@
 // Because there is no `dist` directory during the CI run
 /* eslint-disable import/no-extraneous-dependencies, import/extensions, import/no-unresolved */
-import { ComponentStory } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import React from 'react';
 import UncontrolledCollapse from '../UncontrolledCollapse';
-import { content, CollapseTrigger } from './Collapse';
+import { CollapseTrigger, content } from './Collapse';
 
-const Story: ComponentStory<typeof UncontrolledCollapse> = () => {
+const Story: StoryFn<typeof UncontrolledCollapse> = () => {
   return (
     <div>
       {content}

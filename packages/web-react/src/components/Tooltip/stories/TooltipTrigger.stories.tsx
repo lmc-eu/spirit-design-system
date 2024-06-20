@@ -22,7 +22,7 @@ const meta: Meta<typeof TooltipTrigger> = {
     elementType: {
       control: 'object',
       table: {
-        defaultValue: { summary: Button },
+        defaultValue: { summary: 'Button' },
       },
     },
   },

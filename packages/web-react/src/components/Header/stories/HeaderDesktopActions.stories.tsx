@@ -30,7 +30,7 @@ const meta: Meta<typeof HeaderDesktopActions> = {
     isAtEnd: {
       control: 'boolean',
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: 'false' },
       },
     },
   },
