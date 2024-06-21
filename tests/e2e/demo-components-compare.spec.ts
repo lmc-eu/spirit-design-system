@@ -39,6 +39,12 @@ const runComponentCompareTests = (testConfig) => {
           );
           // wait for fonts to load
           await page.evaluate(() => document.fonts.ready);
+          // wait for images to load
+          await page.waitForFunction(() => {
+            const images = Array.from(document.querySelectorAll('img'));
+
+            return images.every((img) => img.complete);
+          });
           // wait for transitions to finish
           await page.waitForLoadState();
           // disable animations to avoid flaky screenshots
