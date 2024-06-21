@@ -60,6 +60,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web/.coverage/lcov.info
           flag-name: web
+          carryforward: web-react, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
 
       - name: Publish Web-React Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -69,6 +70,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/web-react/.coverage/lcov.info
           flag-name: web-react
+          carryforward: web, web-twig, analytics, design-tokens, icons, common, codemods, form-validations
 
       - name: Publish Analytics Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -78,3 +80,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./packages/analytics/.coverage/lcov.info
           flag-name: analytics
+          carryforward: web, web-react, web-twig, design-tokens, icons, common, codemods, form-validations
