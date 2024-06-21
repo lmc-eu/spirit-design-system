@@ -2,7 +2,7 @@
 
 set -o errexit
 
-PLAYWRIGHT_VERSION=1.44.0
+PLAYWRIGHT_VERSION=1.44.1
 UBUNTU_VERSION=jammy
 
 E2E_FLAG=""
@@ -30,4 +30,4 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-docker run --rm --network=host --ipc=host  -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$PLAYWRIGHT_VERSION-$UBUNTU_VERSION $XVFB yarn test:e2e$E2E_FLAG
+docker run --rm --network=host --ipc=host  -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$PLAYWRIGHT_VERSION-$UBUNTU_VERSION $XVFB sh -c "corepack install && corepack enable && yarn test:e2e$E2E_FLAG"
