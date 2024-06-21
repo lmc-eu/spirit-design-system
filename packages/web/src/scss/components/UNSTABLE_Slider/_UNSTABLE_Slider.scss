@@ -13,14 +13,10 @@
 //
 //    The linear-gradient approach is expected to be deleted in the future in favor of a standardized property similar
 //    to the approach of Firefox.
-//
-//    ⚠️ CAUTION: This approach currently works only for small steps. For larger steps, the track may be rendered
-//    incorrectly. This is a known issue and will be addressed in the future.
-//
-// 3. The lower track part is colored using custom properties so it can be affected from the outer context.
 
 @use 'sass:math';
 @use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/svg';
 @use 'theme';
 @use 'tools';
 
@@ -38,23 +34,29 @@ $_field-name: 'UNSTABLE_Slider';
     @include form-fields-tools.label-hidden();
 }
 
-.UNSTABLE_Slider__label--required::after {
-    @include form-fields-tools.label-required();
-}
-
 .UNSTABLE_Slider__input {
     appearance: none;
     width: 100%;
-    height: theme.$range-thumb-height;
+    height: theme.$thumb-height;
     background: transparent;
     cursor: pointer;
 
-    &:hover {
-        --slider-track-lower-background: #{theme.$range-track-lower-background-hover}; // 3.
+    @media (hover: hover) {
+        &:hover {
+            --slider-track-background: #{theme.$track-background-hover};
+            --slider-track-lower-background: #{theme.$track-lower-background-hover};
+            --slider-thumb-border-color: #{theme.$thumb-border-color-hover};
+            --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-hover)};
+            --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-hover};
+        }
     }
 
     &:active {
-        --slider-track-lower-background: #{theme.$range-track-lower-background-active}; // 3.
+        --slider-track-background: #{theme.$track-background-active};
+        --slider-track-lower-background: #{theme.$track-lower-background-active};
+        --slider-thumb-border-color: #{theme.$thumb-border-color-active};
+        --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-active)};
+        --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-active};
     }
 
     &:focus {
@@ -68,13 +70,13 @@ $_field-name: 'UNSTABLE_Slider';
         // 2., 3.
         background-image: linear-gradient(
                 to right,
-                var(--slider-track-lower-background, #{theme.$range-track-lower-background}) var(--slider-position, 0%),
+                var(--slider-track-lower-background, #{theme.$track-lower-background}) var(--slider-position, 0%),
                 transparent var(--slider-position, 0%)
             ),
             linear-gradient(
                 to bottom,
-                theme.$range-track-background theme.$range-track-height,
-                transparent theme.$range-track-height
+                var(--slider-track-background, #{theme.$track-background}) theme.$track-height,
+                transparent theme.$track-height
             );
     }
 
@@ -82,7 +84,7 @@ $_field-name: 'UNSTABLE_Slider';
         @include tools.thumb();
 
         appearance: none;
-        margin-top: math.ceil(math.div(theme.$range-track-height, 2)) - math.div(theme.$range-thumb-height, 2);
+        margin-top: math.ceil(math.div(theme.$track-height, 2)) - math.div(theme.$thumb-height, 2);
     }
 
     &:active::-webkit-slider-thumb {
@@ -97,13 +99,13 @@ $_field-name: 'UNSTABLE_Slider';
     &::-moz-range-track {
         @include tools.track();
 
-        background-color: theme.$range-track-background;
+        background-color: var(--slider-track-background, #{theme.$track-background}); // 2.
     }
 
     &::-moz-range-progress {
-        height: theme.$range-track-height;
-        border-radius: theme.$range-track-border-radius;
-        background-color: var(--slider-track-lower-background, #{theme.$range-track-lower-background}); // 3.
+        height: theme.$track-height;
+        border-radius: theme.$track-border-radius;
+        background-color: var(--slider-track-lower-background, #{theme.$track-lower-background}); // 3.
     }
 
     &::-moz-range-thumb {
@@ -123,33 +125,6 @@ $_field-name: 'UNSTABLE_Slider';
     @include form-fields-tools.box-field-fluid();
 }
 
-.UNSTABLE_Slider--selected > .UNSTABLE_Slider__input {
-    --slider-track-lower-background: #{theme.$range-track-lower-background-selected}; // 3.
-
-    // Webkit, 1.
-    &::-webkit-slider-runnable-track {
-        @include tools.track-lower-selected();
-    }
-
-    &::-webkit-slider-thumb {
-        @include tools.thumb-selected();
-    }
-
-    // Firefox, 1.
-    &::-moz-range-track {
-        border-top-left-radius: theme.$range-track-lower-border-radius-selected;
-        border-bottom-left-radius: theme.$range-track-lower-border-radius-selected;
-    }
-
-    &::-moz-range-progress {
-        @include tools.track-lower-selected();
-    }
-
-    &::-moz-range-thumb {
-        @include tools.thumb-selected();
-    }
-}
-
 .UNSTABLE_Slider__validationText,
 .UNSTABLE_Slider > [data-spirit-element='validation_text'] {
     @include form-fields-tools.validation-text();
@@ -160,3 +135,38 @@ $_field-name: 'UNSTABLE_Slider';
 }
 
 @include form-fields-tools.input-field-validation-states($_field-name);
+
+.UNSTABLE_Slider--disabled > .UNSTABLE_Slider__label {
+    @include form-fields-tools.label-disabled();
+}
+
+.UNSTABLE_Slider .UNSTABLE_Slider__input:disabled,
+:is(.UNSTABLE_Slider--disabled, .UNSTABLE_Slider.is-disabled) .UNSTABLE_Slider__input {
+    --slider-track-background: #{theme.$track-background-disabled};
+    --slider-track-lower-background: #{theme.$track-lower-background-disabled};
+    --slider-thumb-border-width: #{theme.$thumb-border-width-disabled};
+    --slider-thumb-border-color: #{theme.$thumb-border-color-disabled};
+    --slider-thumb-background-image: #{svg.escape(theme.$thumb-background-image-disabled)};
+    --slider-thumb-box-shadow: #{theme.$thumb-box-shadow-disabled};
+
+    @include form-fields-tools.input-disabled();
+
+    // Webkit, 1.
+    &::-webkit-slider-thumb {
+        @include form-fields-tools.input-disabled();
+    }
+
+    // Firefox, 1.
+    &::-moz-range-thumb {
+        @include form-fields-tools.input-disabled();
+    }
+}
+
+:is(.UNSTABLE_Slider--disabled, .UNSTABLE_Slider.is-disabled)
+    > :is(.UNSTABLE_Slider__validationText, [data-spirit-element='validation_text']) {
+    @include form-fields-tools.validation-text-disabled();
+}
+
+:is(.UNSTABLE_Slider--disabled, .UNSTABLE_Slider.is-disabled) > :is(.UNSTABLE_Slider__helperText) {
+    @include form-fields-tools.helper-text-disabled();
+}

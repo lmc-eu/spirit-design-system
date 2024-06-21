@@ -159,7 +159,7 @@ To render validation text as a list, use `<ul>` element instead of `<div>`.
 ### JavaScript-Controlled Validation Text
 
 When implementing client-side form validation, use JS interaction state classes (`has-success`, `has-warning`,
-`has-danger`) on the wrapping `<fieldset>` element and render validation texts in a `<div>` with
+`has-danger`) on the wrapping `<fieldset>` element and render validation texts in a `<div>` or `<ul>` with
 `data-spirit-element="validation_text"` attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -182,5 +182,5 @@ screen readers.
 
 [mdn-fieldset-disabled]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset#disabled_fieldset
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [aria-live]: https://bitsofco.de/using-aria-live/

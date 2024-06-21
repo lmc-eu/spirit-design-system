@@ -233,7 +233,7 @@ or `is-disabled` to the `FileUploaderInput` subcomponent as well.
 
 When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
-render validation texts in a `<div>` with `data-spirit-element="validation_text"`
+render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
 [prefixed].
 
@@ -627,4 +627,4 @@ Example: So if you set `name="attachments"` to the default input element, the at
 [mdn-accept]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept
 [mdn-template]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
-[prefixed]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
