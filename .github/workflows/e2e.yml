@@ -46,10 +46,14 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1.10.2
         with:
           useRollingCache: true
+          install-command: yarn --immutable
 
       # Wait for the Netlify preview URL to be ready
       - name: Wait for Netlify Deploy
@@ -74,7 +78,7 @@ jobs:
       - name: Run Playwright tests
         uses: docker://mcr.microsoft.com/playwright:v1.44.1-jammy
         with:
-          args: yarn playwright test
+          args: 'sh -c "corepack install && corepack enable && yarn test:e2e"'
         env:
           WEBSITE_URL: ${{ steps.get-netlify-preview-url.outcome == 'success' && steps.get-netlify-preview-url.outputs.url || steps.get-site-url.outputs.site_url }}
 
