@@ -101,6 +101,7 @@ const config = Encore.getWebpackConfig();
 
 config.resolve.alias = {
     '@floating-ui/dom': path.resolve(__dirname, 'node_modules/@floating-ui/dom'),
+    '@lmc-eu/spirit-design-tokens': path.resolve(__dirname, 'node_modules/@lmc-eu/spirit-design-tokens'),
 };
 
 module.exports = config;
