@@ -79,10 +79,10 @@ endif
 encore-install: ## Install demo dependencies
 	cd $(APP_DOCKER_DIR) && $(DOCKER_COMP) exec $(DOCKER_ENCORE_SERVICE) yarn install
 
-## Every time you create a new package and use it in the demo, you need to link it here.
-## This is because the demo is not using the packages from npm, but from the local filesystem.
-## It ensures that the demo is always using the latest version of the package.
-## Thus the realtime local development is possible.
+#/# Every time you create a new package and use it in the demo, you need to link it here.
+#/# This is because the demo is not using the packages from npm, but from the local filesystem.
+#/# It ensures that the demo is always using the latest version of the package.
+#/# Thus the realtime local development is possible.
 
 encore-link: ## Link demo dependencies
 	cd $(APP_DOCKER_DIR) && \
