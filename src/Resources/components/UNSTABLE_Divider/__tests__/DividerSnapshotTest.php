@@ -6,6 +6,4 @@ namespace Lmc\SpiritWebTwigBundle\Resources\components\UNSTABLE_Divider;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
-class DividerSnapshotTest extends AbstractComponentSnapshotTest
-{
-}
+class DividerSnapshotTest extends AbstractComponentSnapshotTest {}
