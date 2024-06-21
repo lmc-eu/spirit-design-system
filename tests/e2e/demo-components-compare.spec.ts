@@ -25,7 +25,8 @@ const runComponentCompareTests = (testConfig) => {
           ),
         )
         .filter((item) => !IGNORED_TESTS.includes(item.name))
-        .map((item) => item.name.toLowerCase());
+        // there is a problem with url on case insensitive systems
+        .map((item) => (process.env.NODE_ENV ? item.name.toLowerCase() : item.name));
 
       for (const component of componentDirs) {
         test(`test demo ${formattedPackageName} component ${component}`, async ({ page }) => {
