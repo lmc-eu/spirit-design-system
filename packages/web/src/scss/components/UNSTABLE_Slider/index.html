@@ -16,43 +16,18 @@
       />
     </div>
 
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Selected</h2>
-  <div class="docs-Stack docs-Stack--stretch">
-
-    <!-- TODO: Resolve our approach to the selected / unselected form field states. -->
-
-  <div class="UNSTABLE_Slider UNSTABLE_Slider--selected">
-    <label for="slider-selected" class="UNSTABLE_Slider__label">Slider</label>
-    <input
-      class="UNSTABLE_Slider__input"
-      id="slider-selected"
-      style="--slider-position: 30%"
-      type="range"
-      value="30"
-      oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
-    />
-  </div>
-
-  </div>
-</section>
-
-<section class="docs-Section">
-  <h2 class="docs-Heading">Required</h2>
-  <div class="docs-Stack docs-Stack--stretch">
-
     <div class="UNSTABLE_Slider">
-      <label for="slider-required" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required">Slider</label>
+      <label for="slider-steps" class="UNSTABLE_Slider__label">Custom steps</label>
       <input
         class="UNSTABLE_Slider__input"
-        id="slider-required"
+        id="slider-steps"
         style="--slider-position: 30%"
         type="range"
-        value="30"
-        oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
+        min="0"
+        max="10"
+        step="1"
+        value="3"
+        oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 10)}%`);"
       />
     </div>
 
@@ -101,7 +76,25 @@
   </div>
 </section>
 
-<!-- TODO: Add support for the `disabled` state. -->
+<section class="docs-Section">
+  <h2 class="docs-Heading">Disabled</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div class="UNSTABLE_Slider UNSTABLE_Slider--disabled">
+      <label for="slider-disabled" class="UNSTABLE_Slider__label">Slider</label>
+      <input
+        class="UNSTABLE_Slider__input"
+        id="slider-disabled"
+        style="--slider-position: 30%"
+        type="range"
+        value="30"
+        oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
+        disabled
+      />
+    </div>
+
+  </div>
+</section>
 
 <section class="docs-Section">
   <h2 class="docs-Heading">Validation State with Validation Text</h2>
@@ -150,6 +143,25 @@
         <li>First validation text</li>
         <li>Second validation text</li>
       </ul>
+    </div>
+
+    <div class="UNSTABLE_Slider UNSTABLE_Slider--danger">
+      <label for="slider-danger-with-helper-text" class="UNSTABLE_Slider__label UNSTABLE_Slider__label--required">Slider</label>
+      <input
+        class="UNSTABLE_Slider__input"
+        id="slider-danger-with-helper-text"
+        aria-describedby="slider-danger-with-helper-text-helper-text slider-danger-with-helper-text-validation-text"
+        style="--slider-position: 30%"
+        type="range"
+        value="30"
+        oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
+      />
+      <div id="slider-danger-with-helper-text-helper-text" class="UNSTABLE_Slider__helperText">
+        Helper text
+      </div>
+      <div id="slider-danger-with-helper-text-validation-text" class="UNSTABLE_Slider__validationText">
+        Validation text
+      </div>
     </div>
 
   </div>

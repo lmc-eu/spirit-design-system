@@ -186,6 +186,6 @@ See the [LICENSE](LICENSE.md) file for information.
 [examples]: https://spirit-design-system-storybook.netlify.app
 [web-docs]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#readme
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
-[web-pkg-prefixes]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#prefixing-css-class-names
+[web-pkg-prefixes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [react-controlled]: https://reactjs.org/docs/forms.html#controlled-components
 [react-uncontrolled]: https://reactjs.org/docs/uncontrolled-components.html

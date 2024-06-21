@@ -3,27 +3,25 @@
 
 @mixin track() {
     width: 100%;
-    height: theme.$range-track-height;
+    height: theme.$track-height;
     border: none;
-    border-radius: theme.$range-track-border-radius;
-}
-
-@mixin track-lower-selected() {
-    height: theme.$range-track-lower-height-selected;
-    border-top-left-radius: theme.$range-track-lower-border-radius-selected;
-    border-bottom-left-radius: theme.$range-track-lower-border-radius-selected;
+    border-radius: theme.$track-border-radius;
+    transition: background theme.$transition-duration theme.$transition-timing;
 }
 
 @mixin thumb() {
     box-sizing: border-box;
-    width: theme.$range-thumb-width;
-    height: theme.$range-thumb-height;
-    border: theme.$range-thumb-border-width theme.$range-thumb-border-style theme.$range-thumb-border-color;
-    border-radius: theme.$range-thumb-border-radius;
-    background: theme.$range-thumb-background-color svg.escape(theme.$range-thumb-background-image) no-repeat center /
-        theme.$range-thumb-background-size;
-    box-shadow: theme.$range-thumb-box-shadow;
+    width: theme.$thumb-width;
+    height: theme.$thumb-height;
+    border: var(--slider-thumb-border-width, #{theme.$thumb-border-width}) theme.$thumb-border-style
+        var(--slider-thumb-border-color, #{theme.$thumb-border-color});
+    border-radius: theme.$thumb-border-radius;
+    background: theme.$thumb-background-color
+        var(--slider-thumb-background-image, #{svg.escape(theme.$thumb-background-image)}) no-repeat center /
+        theme.$thumb-background-size;
+    box-shadow: var(--slider-thumb-box-shadow, #{theme.$thumb-box-shadow});
     cursor: grab;
+    transition: box-shadow theme.$transition-duration theme.$transition-timing;
 }
 
 @mixin thumb-active() {
@@ -31,11 +29,5 @@
 }
 
 @mixin thumb-focus() {
-    box-shadow: theme.$range-thumb-box-shadow-focus;
-}
-
-@mixin thumb-selected() {
-    border-width: theme.$range-thumb-border-width-selected;
-    border-color: theme.$range-thumb-border-color-selected;
-    background-image: svg.escape(theme.$range-thumb-background-image-selected);
+    box-shadow: theme.$thumb-box-shadow-focus;
 }
