@@ -1,7 +1,5 @@
 import { ChangeEvent, useState } from 'react';
 
-export interface UseSliderProps {}
-
 export interface UseSliderReturn {
   value: number;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
