@@ -24,9 +24,10 @@ static/assets/icons/react
 packages/**/*.hbs
 *.hbs
 
-# PHP vendor files
+# PHP files
 **/vendor
 **/vendor/**
+*.php
 
 # Twig files
 *.twig
