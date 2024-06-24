@@ -3515,7 +3515,7 @@ __metadata:
     react-scanner: "npm:^1.1.0"
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
-    tsup: "npm:7.2.0"
+    tsup: "npm:8.1.0"
     zx: "npm:^7.2.2"
   bin:
     spirit-analytics: ./bin/spirit-analytics.js
@@ -3538,7 +3538,7 @@ __metadata:
     jscodeshift: "npm:^0.16.0"
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
-    tsup: "npm:7.2.0"
+    tsup: "npm:8.1.0"
     zx: "npm:^7.2.2"
   bin:
     spirit-codemods: ./bin/spirit-codemods.js
@@ -14575,7 +14575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.18.0, esbuild@npm:^0.18.2":
+"esbuild@npm:^0.18.0":
   version: 0.18.20
   resolution: "esbuild@npm:0.18.20"
   dependencies:
@@ -14652,7 +14652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.21.3":
+"esbuild@npm:^0.21.3, esbuild@npm:^0.21.4":
   version: 0.21.5
   resolution: "esbuild@npm:0.21.5"
   dependencies:
@@ -25740,7 +25740,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:4.18.0, rollup@npm:^4.13.0":
+"rollup@npm:4.18.0, rollup@npm:^4.0.2, rollup@npm:^4.13.0":
   version: 4.18.0
   resolution: "rollup@npm:4.18.0"
   dependencies:
@@ -25803,7 +25803,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.25.0 || ^3.3.0, rollup@npm:^3.2.5":
+"rollup@npm:^2.25.0 || ^3.3.0":
   version: 3.29.4
   resolution: "rollup@npm:3.29.4"
   dependencies:
@@ -28386,29 +28386,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsup@npm:7.2.0":
-  version: 7.2.0
-  resolution: "tsup@npm:7.2.0"
+"tsup@npm:8.1.0":
+  version: 8.1.0
+  resolution: "tsup@npm:8.1.0"
   dependencies:
     bundle-require: "npm:^4.0.0"
     cac: "npm:^6.7.12"
     chokidar: "npm:^3.5.1"
     debug: "npm:^4.3.1"
-    esbuild: "npm:^0.18.2"
+    esbuild: "npm:^0.21.4"
     execa: "npm:^5.0.0"
     globby: "npm:^11.0.3"
     joycon: "npm:^3.0.1"
     postcss-load-config: "npm:^4.0.1"
     resolve-from: "npm:^5.0.0"
-    rollup: "npm:^3.2.5"
+    rollup: "npm:^4.0.2"
     source-map: "npm:0.8.0-beta.0"
     sucrase: "npm:^3.20.3"
     tree-kill: "npm:^1.2.2"
   peerDependencies:
+    "@microsoft/api-extractor": ^7.36.0
     "@swc/core": ^1
     postcss: ^8.4.12
-    typescript: ">=4.1.0"
+    typescript: ">=4.5.0"
   peerDependenciesMeta:
+    "@microsoft/api-extractor":
+      optional: true
     "@swc/core":
       optional: true
     postcss:
@@ -28418,7 +28421,7 @@ __metadata:
   bin:
     tsup: dist/cli-default.js
     tsup-node: dist/cli-node.js
-  checksum: 10/dea55a1a8911643f2c040527737c2b9982c03d39311c734fe3675680ad89b390784b9973fa890f1c5c816463930c70be9552801b0e5a58d2aa75b5375936cc8c
+  checksum: 10/5a575e8d45eb91b7a0850fa554166a8a1f047b35601bfc0eb2cd04804403bf1eef8a9799207748efe10e35da748a79da7546124a253ee07c6b27753a64b04bcc
   languageName: node
   linkType: hard
 
