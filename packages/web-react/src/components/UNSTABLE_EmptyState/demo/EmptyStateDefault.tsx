@@ -10,20 +10,7 @@ import UNSTABLE_EmptyStateSection from '../UNSTABLE_EmptyStateSection';
 const EmptyStateDefault = () => (
   <UNSTABLE_EmptyState spacing="space-700">
     <UNSTABLE_EmptyStateSection>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '400px',
-          padding: '48px 24px',
-          textAlign: 'center',
-          gap: '32px',
-          border: '1px dashed #3EAC98',
-          background: '#FFF',
-        }}
-      >
+      <div className="docs-Placeholder" style={{ maxWidth: '400px' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="40" viewBox="0 0 82 40" fill="none">
           <rect x="1.5" y="0.5" width="79" height="39" stroke="#3EAC98" strokeDasharray="4 4" />
           <path
@@ -33,7 +20,7 @@ const EmptyStateDefault = () => (
             strokeDasharray="4 4"
           />
         </svg>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', textAlign: 'center', color: '#3EAC98' }}>
+        <div className="docs-Placeholder__text">
           <Heading size="xsmall">Placeholder</Heading>
           <Text>Replace me with your own component</Text>
         </div>
