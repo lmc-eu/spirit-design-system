@@ -57,8 +57,8 @@
     "@babel/core": "7.24.7",
     "@babel/preset-react": "7.24.7",
     "@commitlint/cli": "17.8.1",
-    "@lmc-eu/commitlint-config": "2.0.1",
-    "@lmc-eu/conventional-changelog-lmc-github": "3.0.1",
+    "@lmc-eu/commitlint-config": "2.0.2",
+    "@lmc-eu/conventional-changelog-lmc-github": "3.0.2",
     "@lmc-eu/eslint-config-react": "2.0.2",
     "@lmc-eu/prettier-config": "2.0.0",
     "@omlet/cli": "1.7.0",
@@ -71,8 +71,8 @@
     "core-js": "3.37.1",
     "css-loader": "6.11.0",
     "eslint": "8.57.0",
-    "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-react": "7.34.2",
+    "eslint-plugin-jsx-a11y": "6.9.0",
+    "eslint-plugin-react": "7.34.3",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-storybook": "0.8.0",
     "husky": "8.0.3",
@@ -81,7 +81,7 @@
     "lint-staged": "14.0.1",
     "netlify-cli": "16.9.3",
     "npm-run-all2": "6.2.0",
-    "nx": "19.3.0",
+    "nx": "19.3.1",
     "postcss": "8.4.38",
     "prettier": "3.3.2",
     "prettier-config-spirit": "workspace:^",
@@ -93,12 +93,12 @@
     "style-loader": "3.3.4",
     "typescript": "4.7.4",
     "vite-raw-plugin": "1.0.2",
-    "webpack": "5.92.0",
+    "webpack": "5.92.1",
     "webpack-cli": "5.1.4"
   },
   "resolutions": {
     "@types/react": "18.3.3",
     "typescript": "4.7.4"
   },
-  "packageManager": "yarn@4.3.0+sha256.d7f2fd514a5862009753c52798cc48ae602d181c09341cf2ff8b9c935dc3db1a"
+  "packageManager": "yarn@4.3.1"
 }

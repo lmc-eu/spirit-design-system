@@ -40,8 +40,8 @@
     "shx": "0.3.4",
     "stylelint": "15.11.0",
     "stylelint-config-spirit": "workspace:^",
-    "typescript": "5.4.5",
-    "vite": "5.2.13",
+    "typescript": "5.5.2",
+    "vite": "5.3.1",
     "vite-plugin-dts": "3.9.1"
   }
 }
