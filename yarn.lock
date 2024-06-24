@@ -3683,7 +3683,7 @@ __metadata:
     "@lmc-eu/spirit-demo": "npm:^0.1.1"
     "@lmc-eu/spirit-design-tokens": "npm:^2.0.1"
     "@lmc-eu/spirit-web": "npm:^2.1.0"
-    "@react-hook/resize-observer": "npm:^1.2.6"
+    "@react-hook/resize-observer": "npm:^2.0.0"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@testing-library/dom": "npm:10.1.0"
     "@testing-library/jest-dom": "npm:6.4.6"
@@ -6696,16 +6696,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-hook/resize-observer@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "@react-hook/resize-observer@npm:1.2.6"
+"@react-hook/resize-observer@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "@react-hook/resize-observer@npm:2.0.1"
   dependencies:
     "@juggle/resize-observer": "npm:^3.3.1"
     "@react-hook/latest": "npm:^1.0.2"
     "@react-hook/passive-layout-effect": "npm:^1.2.0"
   peerDependencies:
-    react: ">=16.8"
-  checksum: 10/f9ae66620d1f803cc74849c4665a6949356d7a5dd9efa6ded44631f69c228eb1bb3dfcff5cb2805330d7efff59405c7de68eecf3d94fd765157bbef2d9e3b0ae
+    react: ">=18"
+  checksum: 10/9659d97fffe3438d44b15ce04160f2a002295a6c62030e3149178094a03175f0d29a36b5917ef9074163e1b7e4a4f7120830cea53762612e1f64de4231fb2d74
   languageName: node
   linkType: hard
 
