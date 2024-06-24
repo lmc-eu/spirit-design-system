@@ -61,6 +61,26 @@
     white-space: normal;
 }
 
+.docs-Placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    gap: 2rem;
+    border: 1px dashed #3eac98;
+    background: #fff;
+}
+
+.docs-Placeholder__text {
+    display: flex;
+    flex-direction: column;
+    color: #3eac98;
+    gap: 0.5rem;
+}
+
 @media (min-width: 768px) {
     .docs-TileLink {
         padding: 1.5rem;
