@@ -1,12 +1,14 @@
 <Header color="inverted">
     {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
 
-    <HeaderMobileActions dialogId="header_dialog_example_3_main_navigation">
+    <HeaderMobileActions dialogId="header_inverted_with_actions_and_dropdown__dialog">
         <DropdownWrapper>
             <Button
                 color="inverted"
                 data-spirit-toggle="dropdown"
                 data-spirit-target="#dropdownUserMobile"
+                aria-controls="dropdownUserMobile"
+                aria-expanded="false"
                 isSquare
             >
                 <Icon name="profile" />
@@ -47,13 +49,14 @@
     <HeaderDesktopActions color="secondary">
         <HeaderNav>
             <HeaderNavItem UNSAFE_style="position: relative;">
-                <HeaderLink
-                    href="#"
+                <HeaderButton
                     data-spirit-toggle="dropdown"
                     data-spirit-target="#dropdownUserDesktop"
+                    aria-controls="dropdownUserDesktop"
+                    aria-expanded="false"
                 >
                     Marian
-                </HeaderLink>
+                </HeaderButton>
                 <Dropdown id="dropdownUserDesktop" placement="bottom-right">
                     <Stack hasSpacing>
                         <a href="#">Dashboard</a>
@@ -68,8 +71,8 @@
     </HeaderDesktopActions>
 </Header>
 
-<HeaderDialog id="header_dialog_example_3_main_navigation">
-    <HeaderDialogCloseButton dialogId="header_dialog_example_3_main_navigation" />
+<HeaderDialog id="header_inverted_with_actions_and_dropdown__dialog">
+    <HeaderDialogCloseButton dialogId="header_inverted_with_actions_and_dropdown__dialog" />
     <HeaderDialogActions aria-label="Main navigation">
         <HeaderDialogNav>
             <HeaderDialogNavItem>
