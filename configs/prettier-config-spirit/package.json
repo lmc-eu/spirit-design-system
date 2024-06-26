@@ -3,6 +3,7 @@
   "description": "Prettier configuration for Spirit Design System",
   "version": "0.1.0",
   "license": "MIT",
+  "private": true,
   "keywords": [
     "lmc-eu",
     "spirit",
