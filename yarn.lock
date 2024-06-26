@@ -3675,12 +3675,12 @@ __metadata:
     "@storybook/html": "npm:8.1.10"
     "@storybook/react": "npm:8.1.10"
     "@storybook/react-vite": "npm:8.1.10"
-    "@storybook/test": "npm:^8.1.10"
+    "@storybook/test": "npm:8.1.10"
     "@storybook/theming": "npm:8.1.10"
     "@vitejs/plugin-react": "npm:4.3.1"
     react: "npm:18.3.1"
     react-dom: "npm:18.3.1"
-    storybook: "npm:^8.1.10"
+    storybook: "npm:8.1.10"
     typescript: "npm:4.9.5"
     vite: "npm:5.3.1"
   languageName: unknown
@@ -7295,7 +7295,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:^8.1.10":
+"@storybook/test@npm:8.1.10":
   version: 8.1.10
   resolution: "@storybook/test@npm:8.1.10"
   dependencies:
@@ -26388,7 +26388,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^8.1.10":
+"storybook@npm:8.1.10":
   version: 8.1.10
   resolution: "storybook@npm:8.1.10"
   dependencies:
