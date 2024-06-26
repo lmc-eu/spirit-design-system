@@ -78,7 +78,7 @@
     "husky": "8.0.3",
     "is-ci": "3.0.1",
     "lerna": "8.1.5",
-    "lint-staged": "14.0.1",
+    "lint-staged": "15.2.7",
     "netlify-cli": "16.9.3",
     "npm-run-all2": "6.2.0",
     "nx": "19.3.1",
