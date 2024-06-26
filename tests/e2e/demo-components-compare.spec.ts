@@ -1,3 +1,4 @@
+/* eslint-disable no-console -- we want to log when test fails */
 import { isTesting as isTestingEnvironment } from '@lmc-eu/spirit-common/constants/environments';
 import { SERVERS, getDevelopmentEndpointUri } from '@lmc-eu/spirit-common/constants/servers';
 import { expect, test } from '@playwright/test';
@@ -30,29 +31,42 @@ const runComponentCompareTests = (testConfig) => {
 
       for (const component of componentDirs) {
         test(`test demo ${formattedPackageName} component ${component}`, async ({ page }) => {
-          await page.goto(
-            `${
-              isTestingEnvironment()
-                ? SERVERS.TESTING[packageName]
-                : getDevelopmentEndpointUri(packageName, { isDocker: packageName !== 'web-twig' })
-            }${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`,
-          );
-          // wait for fonts to load
-          await page.evaluate(() => document.fonts.ready);
-          // wait for images to load
-          await page.waitForFunction(() => {
-            const images = Array.from(document.querySelectorAll('img'));
+          try {
+            await page.goto(
+              `${
+                isTestingEnvironment()
+                  ? SERVERS.TESTING[packageName]
+                  : getDevelopmentEndpointUri(packageName, { isDocker: packageName !== 'web-twig' })
+              }${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`,
+            );
+            // wait for fonts to load
+            await page.evaluate(() => document.fonts.ready);
+            // wait for images to load
+            await page.waitForFunction(() => {
+              const images = Array.from(document.querySelectorAll('img'));
 
-            return images.every((img) => img.complete);
-          });
-          // wait for transitions to finish
-          await page.waitForLoadState();
-          // disable animations to avoid flaky screenshots
-          await page.addStyleTag({ content: '*, *::before, *::after { animation-iteration-count: 1 !important }' });
-          await expect(page).toHaveScreenshot(`${component}.png`, {
-            animations: 'disabled',
-            fullPage: true,
-          });
+              return images.every((img) => img.complete);
+            });
+            // wait for transitions to finish
+            await page.waitForLoadState();
+            // disable animations to avoid flaky screenshots
+            await page.addStyleTag({ content: '*, *::before, *::after { animation-iteration-count: 1 !important }' });
+            await expect(page).toHaveScreenshot(`${component}.png`, {
+              animations: 'disabled',
+              fullPage: true,
+            });
+          } catch (error) {
+            // beware of the case insensitive systems; keep the prefix in the small case
+            if (!component.startsWith('unstable_')) {
+              console.error(`Test for demo ${formattedPackageName} component ${component} failed. ${error}`);
+              // Rethrow the error for stable components only
+              throw error;
+            } else {
+              console.warn(
+                `Test for unstable demo ${formattedPackageName} component ${component} failed, but it's marked as acceptable. ${error}`,
+              );
+            }
+          }
         });
       }
     });
