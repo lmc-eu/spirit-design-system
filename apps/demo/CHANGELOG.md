@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.5"></a>
+
+## [0.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.4...@lmc-eu/spirit-demo-app@0.0.5) (2024-06-26)
+
+### Chores
+
+- **demo:** Set demo app to be ESM only ([f5175e1](https://github.com/lmc-eu/spirit-design-system/commit/f5175e1))
+
+### Dependencies
+
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update dependency npm-run-all2 to v6 ([1553070](https://github.com/lmc-eu/spirit-design-system/commit/1553070))
+- Update dependency rollup to v4 ([c611d09](https://github.com/lmc-eu/spirit-design-system/commit/c611d09))
+- Update dependency sass-true to v8 ([62b8481](https://github.com/lmc-eu/spirit-design-system/commit/62b8481))
+- Update dependency vite to v5 ([c6d2d93](https://github.com/lmc-eu/spirit-design-system/commit/c6d2d93))
+- Update dependency vite-plugin-handlebars to v2 ([8a315b2](https://github.com/lmc-eu/spirit-design-system/commit/8a315b2))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.4"></a>
 
 ## [0.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.3...@lmc-eu/spirit-demo-app@0.0.4) (2024-06-03)

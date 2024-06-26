@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.2.0"></a>
+
+# [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.1.0...@lmc-eu/spirit-web-twig@3.2.0) (2024-06-26)
+
+### Bug Fixes
+
+- **web:** Id of Checkbox component indeterminate demo ([84ec8e8](https://github.com/lmc-eu/spirit-design-system/commit/84ec8e8))
+
+### Chores
+
+- **web-twig:** Add lint scripts to check composer.json format ([a08d113](https://github.com/lmc-eu/spirit-design-system/commit/a08d113))
+- **web-twig:** Fix makefile comment to not be displayed in help message ([7a0f904](https://github.com/lmc-eu/spirit-design-system/commit/7a0f904))
+
+### Code Refactoring
+
+- **web-twig:** Change ID naming to kebab-case ([0968939](https://github.com/lmc-eu/spirit-design-system/commit/0968939))
+- **web-twig:** Rename unstable Divider to fix case insensitive problem ([f5c2684](https://github.com/lmc-eu/spirit-design-system/commit/f5c2684))
+- **web-twig:** Update UNSTABLE_EmptyState according to design [#DS-1311](https://github.com/lmc-eu/spirit-design-system/issues/DS-1311) ([09aa447](https://github.com/lmc-eu/spirit-design-system/commit/09aa447))
+- **web-twig:** Upgrade lmc/twigx-bundle to allow `unstable` prefix in file name ([5a9b97e](https://github.com/lmc-eu/spirit-design-system/commit/5a9b97e))
+
+### Documentation
+
+- **web-twig:** Add documentation and demo for ActionLayout component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([0d99a64](https://github.com/lmc-eu/spirit-design-system/commit/0d99a64))
+- **web-twig:** Add documentation and demo for EmptyState component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([16329b1](https://github.com/lmc-eu/spirit-design-system/commit/16329b1))
+- **web, web-react:** Emphasize the UNSTABLE component warning ([3c0f2e1](https://github.com/lmc-eu/spirit-design-system/commit/3c0f2e1))
+
+### Features
+
+- **web-twig:** Add Snapshot tests to Divider [#DS-1304](https://github.com/lmc-eu/spirit-design-system/issues/DS-1304) ([d6b7644](https://github.com/lmc-eu/spirit-design-system/commit/d6b7644))
+- **web-twig:** Introduce ActionLayout component [#DS-1311](https://github.com/lmc-eu/spirit-design-system/issues/DS-1311) ([a8fe85d](https://github.com/lmc-eu/spirit-design-system/commit/a8fe85d))
+- **web-twig:** Introduce unstable_EmptyState component [#DS-1308](https://github.com/lmc-eu/spirit-design-system/issues/DS-1308) ([675d12d](https://github.com/lmc-eu/spirit-design-system/commit/675d12d))
+
+### Styles
+
+- **web-twig:** Format Divider component test ([17bc62f](https://github.com/lmc-eu/spirit-design-system/commit/17bc62f))
+- **web-twig:** Update to latest version of Alma Career Czechia PHP coding style ([380aa38](https://github.com/lmc-eu/spirit-design-system/commit/380aa38))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.1.0"></a>
 
 # [3.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.0.0...@lmc-eu/spirit-web-twig@3.1.0) (2024-06-12)

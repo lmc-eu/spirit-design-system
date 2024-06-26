@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+
+# [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.1.0...@lmc-eu/spirit-web@2.2.0) (2024-06-26)
+
+### Bug Fixes
+
+- **web:** Id of Checkbox component indeterminate demo ([84ec8e8](https://github.com/lmc-eu/spirit-design-system/commit/84ec8e8))
+
+### Chores
+
+- **web:** Use sharable Stylelint configuration ([7cb66fd](https://github.com/lmc-eu/spirit-design-system/commit/7cb66fd))
+
+### Code Refactoring
+
+- **web-react:** Change ID naming to kebab-case ([5d601af](https://github.com/lmc-eu/spirit-design-system/commit/5d601af))
+- **web-twig:** Update UNSTABLE_EmptyState according to design [#DS-1311](https://github.com/lmc-eu/spirit-design-system/issues/DS-1311) ([09aa447](https://github.com/lmc-eu/spirit-design-system/commit/09aa447))
+- **web:** Change ID naming to kebab-case ([1a07fa4](https://github.com/lmc-eu/spirit-design-system/commit/1a07fa4))
+- **web:** Update UNSTABLE_EmptyState according to design [#DS-1311](https://github.com/lmc-eu/spirit-design-system/issues/DS-1311) ([8773c2c](https://github.com/lmc-eu/spirit-design-system/commit/8773c2c))
+
+### Dependencies
+
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update dependency postcss-cli to v11 ([345dd33](https://github.com/lmc-eu/spirit-design-system/commit/345dd33))
+- Update dependency rollup to v4 ([c611d09](https://github.com/lmc-eu/spirit-design-system/commit/c611d09))
+- Update dependency sass-true to v8 ([62b8481](https://github.com/lmc-eu/spirit-design-system/commit/62b8481))
+
+### Documentation
+
+- **web, web-react:** Emphasize the UNSTABLE component warning ([3c0f2e1](https://github.com/lmc-eu/spirit-design-system/commit/3c0f2e1))
+- **web:** Add documentation and demo for ActionLayout component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([538dfb9](https://github.com/lmc-eu/spirit-design-system/commit/538dfb9))
+- **web:** Add documentation and demo for EmptyState component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([4d9962e](https://github.com/lmc-eu/spirit-design-system/commit/4d9962e))
+- **web:** Improve Divider Readme [#DS-1304](https://github.com/lmc-eu/spirit-design-system/issues/DS-1304) ([171eadc](https://github.com/lmc-eu/spirit-design-system/commit/171eadc))
+- **web:** Link feature flags documentation to the web package readme ([c7fbbbd](https://github.com/lmc-eu/spirit-design-system/commit/c7fbbbd))
+
+### Features
+
+- **web-react:** Introduce UNSTABLE_Avatar component [#DS-1324](https://github.com/lmc-eu/spirit-design-system/issues/DS-1324) ([d36d9fa](https://github.com/lmc-eu/spirit-design-system/commit/d36d9fa))
+- **web:** Adjust the `UNSTABLE_Slider` component according to the design [#DS-1330](https://github.com/lmc-eu/spirit-design-system/issues/DS-1330) ([187e0e5](https://github.com/lmc-eu/spirit-design-system/commit/187e0e5))
+- **web:** Introduce ActionLayout component [#DS-1311](https://github.com/lmc-eu/spirit-design-system/issues/DS-1311) ([a87be23](https://github.com/lmc-eu/spirit-design-system/commit/a87be23))
+- **web:** Introduce UNSTABLE_Avatar component [#DS-1323](https://github.com/lmc-eu/spirit-design-system/issues/DS-1323) ([2e82388](https://github.com/lmc-eu/spirit-design-system/commit/2e82388))
+- **web:** Introduce unstable_EmptyState component [#DS-1308](https://github.com/lmc-eu/spirit-design-system/issues/DS-1308) ([e82f73d](https://github.com/lmc-eu/spirit-design-system/commit/e82f73d))
+- **web:** Introduce UNSTABLE_Slider component [#DS-1321](https://github.com/lmc-eu/spirit-design-system/issues/DS-1321) ([273123d](https://github.com/lmc-eu/spirit-design-system/commit/273123d))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.0.0...@lmc-eu/spirit-web@2.1.0) (2024-06-12)

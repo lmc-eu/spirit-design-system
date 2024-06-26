@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.5"></a>
+
+## [0.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.4...@lmc-eu/spirit-storybook@0.0.5) (2024-06-26)
+
+### Chores
+
+- **demo:** Add `Experimental` and `Deprecated` to the Storybook sorting ([3043813](https://github.com/lmc-eu/spirit-design-system/commit/3043813))
+- **demo:** Migrate Storybook to v8 ([3655d31](https://github.com/lmc-eu/spirit-design-system/commit/3655d31))
+
+### Code Refactoring
+
+- **web-react:** Use correct values for Storybook controls based on type ([cbcf419](https://github.com/lmc-eu/spirit-design-system/commit/cbcf419))
+
+### Dependencies
+
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update dependency vite to v5 ([c6d2d93](https://github.com/lmc-eu/spirit-design-system/commit/c6d2d93))
+- Update monorepo:storybook to v7.6.20 ([e3ccbc2](https://github.com/lmc-eu/spirit-design-system/commit/e3ccbc2))
+- Update monorepo:storybook to v8 ([90720fd](https://github.com/lmc-eu/spirit-design-system/commit/90720fd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.0.4"></a>
 
 ## [0.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.3...@lmc-eu/spirit-storybook@0.0.4) (2024-06-03)

@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+
+# [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.1.0...@lmc-eu/spirit-web-react@2.2.0) (2024-06-26)
+
+### Bug Fixes
+
+- **web-react:** Remove unsupported style props from modified props in style hook ([44385d1](https://github.com/lmc-eu/spirit-design-system/commit/44385d1)), closes [#DS-1339](https://github.com/lmc-eu/spirit-design-system/issues/DS-1339)
+
+### Chores
+
+- **web-react:** Safely remove now unused `@testing-library/react-hooks` ([a62afbd](https://github.com/lmc-eu/spirit-design-system/commit/a62afbd))
+
+### Code Refactoring
+
+- **web-react:** Change ID naming to kebab-case ([5d601af](https://github.com/lmc-eu/spirit-design-system/commit/5d601af))
+- **web-react:** Remove unused type from Slider component ([4fd428a](https://github.com/lmc-eu/spirit-design-system/commit/4fd428a))
+- **web-react:** Switch from `@testing-library/react-hooks` ([cbc9a22](https://github.com/lmc-eu/spirit-design-system/commit/cbc9a22)), closes [#a-note-about-react-18](https://github.com/lmc-eu/spirit-design-system/issues/a-note-about-react-18), [#issuecomment-1097276573](https://github.com/lmc-eu/spirit-design-system/issues/issuecomment-1097276573)
+- **web-react:** Use correct values for Storybook controls based on type ([cbcf419](https://github.com/lmc-eu/spirit-design-system/commit/cbcf419))
+
+### Dependencies
+
+- Update all non-major dependencies ([4986e82](https://github.com/lmc-eu/spirit-design-system/commit/4986e82))
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update dependency @react-hook/resize-observer to v2 ([7e5f4af](https://github.com/lmc-eu/spirit-design-system/commit/7e5f4af))
+- Update dependency @testing-library/dom to v10 ([e59d4e3](https://github.com/lmc-eu/spirit-design-system/commit/e59d4e3))
+- Update dependency @testing-library/react to v16 ([d17fe2f](https://github.com/lmc-eu/spirit-design-system/commit/d17fe2f))
+- Update dependency rollup to v4 ([c611d09](https://github.com/lmc-eu/spirit-design-system/commit/c611d09))
+
+### Documentation
+
+- **web-react:** Add documentation and demo for ActionLayout component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([542a98d](https://github.com/lmc-eu/spirit-design-system/commit/542a98d))
+- **web-react:** Add documentation and demo for EmptyState component [#DS-1310](https://github.com/lmc-eu/spirit-design-system/issues/DS-1310) ([501833e](https://github.com/lmc-eu/spirit-design-system/commit/501833e))
+- **web-react:** List of the feature flags in the Storybook ([681d1e2](https://github.com/lmc-eu/spirit-design-system/commit/681d1e2))
+- **web, web-react:** Emphasize the UNSTABLE component warning ([3c0f2e1](https://github.com/lmc-eu/spirit-design-system/commit/3c0f2e1))
+
+### Features
+
+- **web-react:** Introduce ActionLayout component [#DS-1309](https://github.com/lmc-eu/spirit-design-system/issues/DS-1309) ([92eab1a](https://github.com/lmc-eu/spirit-design-system/commit/92eab1a))
+- **web-react:** Introduce EmptyState component [#DS-1309](https://github.com/lmc-eu/spirit-design-system/issues/DS-1309) ([9d711dc](https://github.com/lmc-eu/spirit-design-system/commit/9d711dc))
+- **web-react:** Introduce UNSTABLE_Avatar component [#DS-1324](https://github.com/lmc-eu/spirit-design-system/issues/DS-1324) ([d36d9fa](https://github.com/lmc-eu/spirit-design-system/commit/d36d9fa))
+- **web-react:** Introduce UNSTABLE_Slider component DS[#1322](https://github.com/lmc-eu/spirit-design-system/issues/1322) ([2bc0793](https://github.com/lmc-eu/spirit-design-system/commit/2bc0793))
+- **web:** Adjust the `UNSTABLE_Slider` component according to the design [#DS-1330](https://github.com/lmc-eu/spirit-design-system/issues/DS-1330) ([187e0e5](https://github.com/lmc-eu/spirit-design-system/commit/187e0e5))
+
+### Styles
+
+- **web-react:** Remove unused interface in Tooltip ([d124b66](https://github.com/lmc-eu/spirit-design-system/commit/d124b66))
+- **web-react:** Use `@lmc-eu/eslint-config-typescript` to simplify the ESLint config file ([d8785ed](https://github.com/lmc-eu/spirit-design-system/commit/d8785ed))
+- **web-react:** Warn about fast refresh problems for Storybook speed up ([0926b92](https://github.com/lmc-eu/spirit-design-system/commit/0926b92))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.1.0"></a>
 
 # [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.0.0...@lmc-eu/spirit-web-react@2.1.0) (2024-06-12)

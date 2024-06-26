@@ -1,7 +1,7 @@
 {
   "name": "prettier-config-spirit",
   "description": "Prettier configuration for Spirit Design System",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "keywords": [
     "lmc-eu",

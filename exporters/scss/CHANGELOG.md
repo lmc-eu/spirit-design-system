@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.2"></a>
+
+## [2.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.1...@lmc-eu/spirit-exporters-scss@2.0.2) (2024-06-26)
+
+### Dependencies
+
+- Update all non-major dependencies ([7876fb8](https://github.com/lmc-eu/spirit-design-system/commit/7876fb8))
+- Update all non-major dependencies ([2ece372](https://github.com/lmc-eu/spirit-design-system/commit/2ece372))
+- Update dependency vite to v5 ([c6d2d93](https://github.com/lmc-eu/spirit-design-system/commit/c6d2d93))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.1"></a>
 
 ## [2.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.0...@lmc-eu/spirit-exporters-scss@2.0.1) (2024-06-12)
