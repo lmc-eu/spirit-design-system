@@ -3725,7 +3725,7 @@ __metadata:
     eslint-plugin-promise: "npm:6.2.0"
     eslint-plugin-react: "npm:7.34.3"
     eslint-plugin-react-hooks: "npm:4.6.2"
-    eslint-plugin-react-refresh: "npm:^0.4.7"
+    eslint-plugin-react-refresh: "npm:0.4.7"
     eslint-plugin-standard: "npm:5.0.0"
     glob: "npm:10.4.2"
     html-dom-parser: "npm:5.0.8"
@@ -14624,7 +14624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-refresh@npm:^0.4.7":
+"eslint-plugin-react-refresh@npm:0.4.7":
   version: 0.4.7
   resolution: "eslint-plugin-react-refresh@npm:0.4.7"
   peerDependencies:
