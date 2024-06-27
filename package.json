@@ -90,7 +90,7 @@
     "react-syntax-highlighter": "15.5.0",
     "react-textarea-autosize": "8.5.3",
     "sass-loader": "13.3.3",
-    "style-loader": "3.3.4",
+    "style-loader": "4.0.0",
     "typescript": "4.7.4",
     "vite-raw-plugin": "1.0.2",
     "webpack": "5.92.1",
