@@ -29,7 +29,7 @@
     "build:finalize": "npm-run-all build:react:clean build:copy"
   },
   "devDependencies": {
-    "jsdom": "22.1.0",
+    "jsdom": "24.1.0",
     "npm-run-all2": "6.2.0",
     "shx": "0.3.4",
     "svg2react-icon": "3.1.178"
