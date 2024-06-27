@@ -16,10 +16,10 @@ describe('useSliderStyleProps', () => {
     expect(result.current.classProps.input).toBe('UNSTABLE_Slider__input');
   });
 
-  it('should return selected class', () => {
-    const { result } = renderHook(() => useSliderStyleProps({ ...defaultProps, isSelected: true }));
+  it('should return disabled class', () => {
+    const { result } = renderHook(() => useSliderStyleProps({ ...defaultProps, isDisabled: true }));
 
-    expect(result.current.classProps.root).toContain('UNSTABLE_Slider--selected');
+    expect(result.current.classProps.root).toContain('UNSTABLE_Slider--disabled');
   });
 
   it('should return fluid class', () => {
@@ -38,12 +38,6 @@ describe('useSliderStyleProps', () => {
     const { result } = renderHook(() => useSliderStyleProps({ ...defaultProps, isLabelHidden: true }));
 
     expect(result.current.classProps.label).toContain('UNSTABLE_Slider__label--hidden');
-  });
-
-  it('should return required label class', () => {
-    const { result } = renderHook(() => useSliderStyleProps({ ...defaultProps, isRequired: true }));
-
-    expect(result.current.classProps.label).toContain('UNSTABLE_Slider__label--required');
   });
 
   it('should return helper text class', () => {

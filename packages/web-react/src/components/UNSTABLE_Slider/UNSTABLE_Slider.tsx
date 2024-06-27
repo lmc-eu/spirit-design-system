@@ -18,6 +18,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
     'aria-describedby': ariaDescribedBy,
     helperText,
     id,
+    isDisabled,
     label,
     max,
     min,
@@ -28,13 +29,13 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
     ...restProps
   } = propsWithDefaults;
 
-  const { classProps, props: modifiedProps } = useSliderStyleProps({ ...restProps, validationState });
+  const { classProps, props: modifiedProps } = useSliderStyleProps({ ...restProps, isDisabled, validationState });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
   const [ids, register] = useAriaIds(ariaDescribedBy);
 
   const CSSVariable = '--slider-position';
 
-  const getSliderPosition = (num: number) => `${Math.round((100 * num) / 100)}%`;
+  const getSliderPosition = (num: number) => `${Math.round((100 * num) / max)}%`;
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
     const { target } = event as ChangeEvent<HTMLInputElement>;
@@ -60,6 +61,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
         max={max}
         step={step}
         value={value}
+        disabled={isDisabled}
       />
       <HelperText
         className={classProps.helperText}

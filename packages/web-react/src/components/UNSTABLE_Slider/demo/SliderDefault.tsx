@@ -1,15 +1,31 @@
 import React, { ChangeEvent, useState } from 'react';
-import { DEMO_SLIDER_DEFAULT_VALUE } from '../constants';
+import { DEMO_SLIDER_DEFAULT_VALUE, DEMO_SLIDER_STEPS_VALUE } from '../constants';
 import UNSTABLE_Slider from '../UNSTABLE_Slider';
 
 const SliderDefault = () => {
-  const [value, setValue] = useState(DEMO_SLIDER_DEFAULT_VALUE);
+  const [defaultValue, setDefaultValue] = useState(DEMO_SLIDER_DEFAULT_VALUE);
+  const [stepsValue, setStepsValue] = useState(DEMO_SLIDER_STEPS_VALUE);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(Number(event.target.value));
+  const handleDefaultChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setDefaultValue(Number(event.target.value));
   };
 
-  return <UNSTABLE_Slider id="slider-default" label="Slider" value={value} onChange={handleChange} />;
+  const handleStepsChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setStepsValue(Number(event.target.value));
+  };
+
+  return (
+    <>
+      <UNSTABLE_Slider id="slider-default" label="Slider" value={defaultValue} onChange={handleDefaultChange} />
+      <UNSTABLE_Slider
+        id="slider-steps"
+        label="Custom steps"
+        max={10}
+        value={stepsValue}
+        onChange={handleStepsChange}
+      />
+    </>
+  );
 };
 
 export default SliderDefault;

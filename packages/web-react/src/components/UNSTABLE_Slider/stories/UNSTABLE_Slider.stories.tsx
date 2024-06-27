@@ -45,16 +45,9 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
         defaultValue: { summary: 'false' },
       },
     },
-    isRequired: {
+    isDisabled: {
       control: 'boolean',
-      description: 'Whether the slider is required',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
-    isSelected: {
-      control: 'boolean',
-      description: 'Whether the slider is selected',
+      description: 'Whether the slider is disabled',
       table: {
         defaultValue: { summary: 'false' },
       },
@@ -115,8 +108,7 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     id: 'slider',
     isFluid: false,
     isLabelHidden: false,
-    isRequired: false,
-    isSelected: false,
+    isDisabled: false,
     label: 'Label',
     max: SLIDER_DEFAULT_PROPS.max,
     min: SLIDER_DEFAULT_PROPS.min,
