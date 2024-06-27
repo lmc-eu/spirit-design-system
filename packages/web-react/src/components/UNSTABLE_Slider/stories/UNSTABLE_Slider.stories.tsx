@@ -31,6 +31,13 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
         defaultValue: { summary: 'undefined' },
       },
     },
+    isDisabled: {
+      control: 'boolean',
+      description: 'Whether the slider is disabled',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     isFluid: {
       control: 'boolean',
       description: 'Whether the slider is fluid',
@@ -41,13 +48,6 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
     isLabelHidden: {
       control: 'boolean',
       description: 'Whether the label is hidden',
-      table: {
-        defaultValue: { summary: 'false' },
-      },
-    },
-    isDisabled: {
-      control: 'boolean',
-      description: 'Whether the slider is disabled',
       table: {
         defaultValue: { summary: 'false' },
       },
@@ -106,9 +106,9 @@ const meta: Meta<typeof UNSTABLE_Slider> = {
   args: {
     helperText: '',
     id: 'slider',
+    isDisabled: false,
     isFluid: false,
     isLabelHidden: false,
-    isDisabled: false,
     label: 'Label',
     max: SLIDER_DEFAULT_PROPS.max,
     min: SLIDER_DEFAULT_PROPS.min,

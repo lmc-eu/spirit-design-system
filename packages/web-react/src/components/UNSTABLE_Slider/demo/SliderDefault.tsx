@@ -20,7 +20,8 @@ const SliderDefault = () => {
       <UNSTABLE_Slider
         id="slider-steps"
         label="Custom steps"
-        max={10}
+        min={3}
+        max={12}
         value={stepsValue}
         onChange={handleStepsChange}
       />

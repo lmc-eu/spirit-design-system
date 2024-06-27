@@ -21,13 +21,12 @@
       <input
         class="UNSTABLE_Slider__input"
         id="slider-steps"
-        style="--slider-position: 30%"
+        style="--slider-position: calc(100% * (9 - 3) / (12 - 3))"
         type="range"
-        min="0"
-        max="10"
-        step="1"
-        value="3"
-        oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 10)}%`);"
+        min="3"
+        max="12"
+        value="9"
+        oninput="this.style.setProperty('--slider-position', `${Math.round(100 * (this.value - 3) / (12 - 3))}%`);"
       />
     </div>
 

@@ -29,19 +29,21 @@ is required by Webkit-based browsers such as Chrome or Safari).
 
 You can specify the Slider steps and value range by setting the `min`, `max`, and `step` attributes on the input element.
 
+⚠️ Please note that the `--slider-position` CSS custom property must be initialized with a correct value. Also, it must
+be updated when the slider value changes. See the [Slider Position](#slider-position) section for more details.
+
 ```html
 <div class="UNSTABLE_Slider">
   <label for="slider-steps" class="UNSTABLE_Slider__label">Slider</label>
   <input
     class="UNSTABLE_Slider__input"
     id="slider-steps"
-    style="--slider-position: 30%"
+    style="--slider-position: calc(100% * (9 - 3) / (12 - 3))"
     type="range"
-    min="1"
-    max="100"
-    step="10"
-    value="30"
-    oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 100)}%`);"
+    value="9"
+    min="3"
+    max="12"
+    oninput="this.style.setProperty('--slider-position', `${Math.round(100 * (this.value - 3) / (12 - 3))}%`);"
   />
 </div>
 ```
@@ -50,27 +52,13 @@ You can specify the Slider steps and value range by setting the `min`, `max`, an
 
 The `--slider-position` CSS custom property is used to set the size of the lower portion of the slider track. The custom
 property needs to be present when the Slider is initially rendered (see the `style` attribute) and updated anytime the slider
-value changes (see the `oninput` handler with the calculation) which includes also the user's interaction with the
+value changes (see the `oninput` handler with the calculation above) which includes also the user's interaction with the
 slider.
 
-👉 Please note the value of `--slider-position` must be a **percentage value from 0 to 100**.
+👉 Please note the value of `--slider-position` must be a **percentage value from 0 to 100** and is calculated as follows:
 
-For example, with a value of 60 in a range from 0 to 200, the `--slider-position` property is 30 %:
-
-```html
-<div class="UNSTABLE_Slider">
-  <label for="slider-percentage" class="UNSTABLE_Slider__label">Slider</label>
-  <input
-    class="UNSTABLE_Slider__input"
-    id="slider-percentage"
-    style="--slider-position: 30%"
-    type="range"
-    value="60"
-    min="0"
-    max="200"
-    oninput="this.style.setProperty('--slider-position', `${Math.round((100 * this.value) / 200)}%`);"
-  />
-</div>
+```txt
+position = 100 * (value - min) / (max - min)
 ```
 
 ## Required
@@ -227,7 +215,7 @@ JS interaction class when controlled by JavaScript:
 </div>
 ```
 
-[mdn-range]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
-[html-spec-range]: https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)
-[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[html-spec-range]: https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)
+[mdn-range]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
+[prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names

@@ -35,7 +35,7 @@ const _UnstableSlider = (props: SpiritSliderProps, ref: ForwardedRef<HTMLInputEl
 
   const CSSVariable = '--slider-position';
 
-  const getSliderPosition = (num: number) => `${Math.round((100 * num) / max)}%`;
+  const getSliderPosition = (num: number) => `${Math.round((100 * (num - min)) / (max - min))}%`;
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
     const { target } = event as ChangeEvent<HTMLInputElement>;
