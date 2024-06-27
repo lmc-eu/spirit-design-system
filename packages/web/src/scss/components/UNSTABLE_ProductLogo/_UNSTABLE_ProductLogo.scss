@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'theme' as theme;
+
+.UNSTABLE_ProductLogo {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.UNSTABLE_ProductLogo > img,
+.UNSTABLE_ProductLogo > svg {
+    width: auto;
+    height: theme.$logo-height;
+}
+
+.UNSTABLE_ProductLogo--inverted {
+    background-color: theme.$logo-inverted-background-color;
+}
