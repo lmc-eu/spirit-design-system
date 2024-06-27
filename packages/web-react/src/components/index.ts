@@ -36,4 +36,5 @@ export * from './Tooltip';
 export * from './UNSTABLE_Avatar';
 export * from './UNSTABLE_Divider';
 export * from './UNSTABLE_PartnerLogo';
+export * from './UNSTABLE_ProductLogo';
 export * from './VisuallyHidden';

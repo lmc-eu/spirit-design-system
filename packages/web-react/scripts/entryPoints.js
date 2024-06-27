@@ -50,6 +50,7 @@ const entryPoints = [
   { dirs: ['components', 'UNSTABLE_Divider'] },
   { dirs: ['components', 'UNSTABLE_EmptyState'] },
   { dirs: ['components', 'UNSTABLE_PartnerLogo'] },
+  { dirs: ['components', 'UNSTABLE_ProductLogo'] },
   { dirs: ['components', 'UNSTABLE_Slider'] },
   { dirs: ['components', 'VisuallyHidden'] },
 ];
