@@ -6,6 +6,7 @@ const SliderValidation = () => {
   const [valueSuccess, setValueSuccess] = useState(DEMO_SLIDER_DEFAULT_VALUE);
   const [valueWarning, setValueWarning] = useState(DEMO_SLIDER_DEFAULT_VALUE);
   const [valueDanger, setValueDanger] = useState(DEMO_SLIDER_DEFAULT_VALUE);
+  const [valueDangerWithHelperText, setValueDangerWithHelperText] = useState(DEMO_SLIDER_DEFAULT_VALUE);
 
   const handleChangeSuccess = (event: ChangeEvent<HTMLInputElement>) => {
     setValueSuccess(Number(event.target.value));
@@ -15,6 +16,10 @@ const SliderValidation = () => {
   };
   const handleChangeDanger = (event: ChangeEvent<HTMLInputElement>) => {
     setValueDanger(Number(event.target.value));
+  };
+
+  const handleChangeDangerWithHelperText = (event: ChangeEvent<HTMLInputElement>) => {
+    setValueDangerWithHelperText(Number(event.target.value));
   };
 
   return (
@@ -41,6 +46,15 @@ const SliderValidation = () => {
         onChange={handleChangeDanger}
         validationState="danger"
         validationText={['First validation text', 'Second validation text']}
+      />
+      <UNSTABLE_Slider
+        id="slider-danger-with-helper-text"
+        label="Slider"
+        value={valueDangerWithHelperText}
+        onChange={handleChangeDangerWithHelperText}
+        helperText="Helper text"
+        validationState="danger"
+        validationText="Validation text"
       />
     </>
   );

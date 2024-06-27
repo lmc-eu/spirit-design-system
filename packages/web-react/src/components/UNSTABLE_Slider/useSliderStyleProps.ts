@@ -16,16 +16,15 @@ export interface SliderStyles {
 }
 
 export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
-  const { isSelected, isFluid, isLabelHidden, isRequired, validationState, ...restProps } = props;
+  const { isDisabled, isFluid, isLabelHidden, validationState, ...restProps } = props;
 
   const sliderClass = useClassNamePrefix('UNSTABLE_Slider');
   const rootClass = classNames(sliderClass);
-  const isSelectedClass = `${sliderClass}--selected`;
+  const isDisabledClass = `${sliderClass}--disabled`;
   const isFluidClass = `${sliderClass}--fluid`;
   const validationStateClass = `${sliderClass}--${validationState}`;
   const labelClass = classNames(`${sliderClass}__label`);
   const isLabelHiddenClass = `${sliderClass}__label--hidden`;
-  const isRequiredClass = `${sliderClass}__label--required`;
   const inputClass = `${sliderClass}__input`;
   const helperTextClass = `${sliderClass}__helperText`;
   const validationTextClass = `${sliderClass}__validationText`;
@@ -33,13 +32,12 @@ export function useSliderStyleProps(props: UseSliderStyleProps): SliderStyles {
   return {
     classProps: {
       root: classNames(rootClass, {
-        [isSelectedClass]: isSelected,
+        [isDisabledClass]: isDisabled,
         [isFluidClass]: isFluid,
         [validationStateClass]: validationState,
       }),
       label: classNames(labelClass, {
         [isLabelHiddenClass]: isLabelHidden,
-        [isRequiredClass]: isRequired,
       }),
       input: inputClass,
       helperText: helperTextClass,
