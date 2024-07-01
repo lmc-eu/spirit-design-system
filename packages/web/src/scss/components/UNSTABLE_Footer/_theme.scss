@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '@tokens' as tokens;
+
+$breakpoint: map.get(tokens.$breakpoints, tablet);
+$background-color: tokens.$background-cover;
+$background-color-inverted: tokens.$background-inverted;
+$gap: tokens.$space-700;
+$padding-block: tokens.$space-1100 tokens.$space-1000;

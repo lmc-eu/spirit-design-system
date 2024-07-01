@@ -1,0 +1,23 @@
+@use '../../tools/breakpoint';
+@use 'theme';
+
+.UNSTABLE_Footer {
+    padding-block: theme.$padding-block;
+    background-color: theme.$background-color;
+}
+
+.UNSTABLE_Footer--inverted {
+    background-color: theme.$background-color-inverted;
+}
+
+.UNSTABLE_Footer__copyright {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$gap;
+    justify-content: center;
+    list-style: none;
+
+    @include breakpoint.up(theme.$breakpoint) {
+        flex-direction: row;
+    }
+}
