@@ -178,7 +178,7 @@ The dev-stack is based on [Vite].
 This package uses the deprecation warnings for props, functions and components that will be removed or replaced in the next major release.
 Check your browser console to see if you are using any of the deprecated functionality.
 
-![Deprecations in the Browser's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true)
+![Deprecations in the Browser's console][deprecations]
 
 ## Feature Flags
 
@@ -190,12 +190,14 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ## License
 
-See the [LICENSE](LICENSE.md) file for information.
+See the [LICENSE][license] file for information.
 
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
-[feature-flags-docs]: ../../docs/contributtion/feature-flags.md
-[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
-[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
+[deprecations]: https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-browser-console.png?raw=true
 [examples]: https://spirit-design-system.netlify.app/packages/web/
+[feature-flags-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/feature-flags.md
+[license]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/LICENSE.md
 [postcss-prefix-selector]: https://www.npmjs.com/package/postcss-prefix-selector
+[rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#b-via-load-path
+[tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [vite]: https://vitejs.dev
