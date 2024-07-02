@@ -10,7 +10,7 @@ To start this project simply run `make start` and then add project certificates 
 
 In a moment the app will be setup and ready on `https://localhost:4443`.
 
-Please consult [`Makefile`](./Makefile) for available commands and options to setup and run this project.
+Please consult [`Makefile`][makefile] for available commands and options to setup and run this project.
 
 ## Components definition
 
@@ -34,7 +34,7 @@ This is an example of a typical file structure of a component:
 ## Rules in components
 
 1. Name of components must be camelCase with first letter small.
-2. New components must contain a property class so that they can be extended according to the [instructions](./docs/extendComponents.md)
+2. New components must contain a property class so that they can be extended according to the [instructions](https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md)
 
 ```twig
 {% set _class = (props.class is defined) ? ' ' ~  props.class : '' -%}
@@ -66,11 +66,11 @@ Instead use:
 {%- set _ariaHidden = props.ariaHidden ?? true -%}
 ```
 
-See [default filter does not work issue](https://github.com/twigphp/Twig/issues/769) and [Twig default filter documentation](https://twig.symfony.com/doc/2.x/filters/default.html) for more information
+See [default filter does not work issue][default-filter-issue] and [Twig default filter documentation][default-filter-documentation] for more information
 
 ### Unescaped Props
 
-🚨 All props that uses [raw](https://twig.symfony.com/doc/3.x/filters/raw.html) filter must be prefixed with `UNSAFE_`.
+🚨 All props that uses [raw][raw] filter must be prefixed with `UNSAFE_`.
 These props are unescaped.
 For example we used this prefix for props that can accept HTML string.
 
@@ -142,7 +142,7 @@ It is balanced between the DRY principle and how the PHPUnit works.
 
 ## Release new version
 
-TODO: [Automate release process](https://github.com/lmc-eu/spirit-design-system/issues/393).
+TODO: [Automate release process][automate-release-process].
 
 As we are now using only `dev-main` version of this package, until we have stable release process, we are not able to release new version with release script and tag it.
 
@@ -167,3 +167,9 @@ Force push current changes to remote using subtree:
 Or
 
 - use `make publish pkg=web-twig` in repository root to publish changes to remote.
+
+[automate-release-process]: https://github.com/lmc-eu/spirit-design-system/issues/393
+[default-filter-issue]: https://github.com/twigphp/Twig/issues/769
+[default-filter-documentation]: https://twig.symfony.com/doc/2.x/filters/default.html
+[makefile]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/Makefile
+[raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
