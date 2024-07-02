@@ -10,7 +10,7 @@ This is a Symfony bundle with Twig implementation of [Spirit Design System] comp
 
 ## Changelog
 
-See [CHANGELOG](./CHANGELOG.md)
+See [CHANGELOG][changelog]
 
 ## How to install
 
@@ -60,11 +60,11 @@ spirit_web_twig:
 
 ## Usage
 
-For detailed usage see [TwigX bundle](https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage)
+For detailed usage see [TwigX bundle][twigx-bundle]
 
 ### Unescaped Props
 
-All props that internally uses the [raw](https://twig.symfony.com/doc/3.x/filters/raw.html) filter are prefixed with `UNSAFE_`.
+All props that internally uses the [raw][raw] filter are prefixed with `UNSAFE_`.
 This is considered a way how you can pass down HTML strings.
 
 ```twig
@@ -73,10 +73,10 @@ This is considered a way how you can pass down HTML strings.
 
 # Spirit Components
 
-For available components see the [components directory](https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components).
+For available components see the [components directory][components-directory].
 
-if you want to extend these components, an example guide is [here](./docs/extendComponents.md).
-if you want to contribute, read the guide [here](./CONTRIBUTING.md).
+if you want to extend these components, an example guide is [here][example-guide].
+if you want to contribute, read the guide [here][contributing].
 
 ## Additional Attributes
 
@@ -155,5 +155,11 @@ Check your Symfony console or log to see if you are using any of the deprecated 
 
 ![Deprecations in Symfony's console](https://github.com/lmc-eu/spirit-design-system/blob/main/static/deprecations-symfony-console.png?raw=true)
 
+[changelog]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CHANGELOG.md
+[components-directory]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web-twig/src/Resources/components
+[contributing]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/CONTRIBUTING.md
+[example-guide]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-twig/docs/extendComponents.md
+[raw]: https://twig.symfony.com/doc/3.x/filters/raw.html
 [spirit design system]: https://github.com/lmc-eu/spirit-design-system
+[twigx-bundle]: https://github.com/lmc-eu/twigx-bundle/blob/main/README.md#usage
 [web-pkg-rebrand]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
