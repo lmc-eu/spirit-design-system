@@ -1,12 +1,23 @@
 import BaseComponent from './BaseComponent';
 import { warning } from './common/utilities';
+import { EVENT_KEY } from './constants';
 import EventHandler from './dom/EventHandler';
 import SelectorEngine from './dom/SelectorEngine';
 import { enableToggleTrigger, ScrollControl, SpiritConfig } from './utils';
 
+// TODO: Remove `handleKeyDown` listener when Chrome fixes the bug,
+// right now Chrome is bugged and sends un-cancelable events, so closing modal based on
+// `cancel` event is not possible in Chrome.
+// Firefox and Safari are working fine.
+// @see: https://issues.chromium.org/issues/351867704
+
 const NAME = 'modal';
 
 const MODAL_TOGGLE_SELECTOR = '[data-spirit-toggle="modal"]';
+
+type Config = {
+  closeOnEscapeKeyDown: boolean;
+};
 
 class Modal extends BaseComponent {
   isShown: boolean;
@@ -53,6 +64,22 @@ class Modal extends BaseComponent {
     event.preventDefault();
   }
 
+  handleCancel(event: Event) {
+    const { closeOnEscapeKeyDown } = this.config as Config;
+
+    if (closeOnEscapeKeyDown === false) {
+      event.preventDefault();
+    }
+  }
+
+  handleKeyDown(event: KeyboardEvent) {
+    const { closeOnEscapeKeyDown } = this.config as Config;
+
+    if (event.key === EVENT_KEY && closeOnEscapeKeyDown === false && this.isShown) {
+      event.preventDefault();
+    }
+  }
+
   addEventListeners() {
     EventHandler.on(this.element, 'close', (event: KeyboardEvent) => this.onDialogClose(event));
     if (this.isTouchDevice) {
@@ -60,6 +87,8 @@ class Modal extends BaseComponent {
     } else {
       EventHandler.on(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
     }
+    EventHandler.on(this.element, 'cancel', (event: Event) => this.handleCancel(event));
+    EventHandler.on(document, 'keydown', (event: KeyboardEvent) => this.handleKeyDown(event));
   }
 
   removeEventListeners() {
@@ -69,6 +98,8 @@ class Modal extends BaseComponent {
     } else {
       EventHandler.off(window, 'click', (event: Event & { target: Window }) => this.onClick(event));
     }
+    EventHandler.off(this.element, 'cancel', (event: Event) => this.handleCancel(event));
+    EventHandler.off(document, 'keydown', (event: KeyboardEvent) => this.handleKeyDown(event));
   }
 
   show() {

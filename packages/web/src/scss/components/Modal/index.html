@@ -1197,4 +1197,65 @@
 
 </section>
 
+<section class="docs-Section">
+  <h2 class="docs-Heading">Hidden Close Button and Disabled Escape Key</h2>
+
+  <div class="docs-Stack docs-Stack--start">
+
+    <button
+      type="button"
+      class="Button Button--primary Button--medium"
+      data-spirit-toggle="modal"
+      data-spirit-target="#example-hide-close-button"
+      aria-controls="example-hide-close-button"
+      aria-expanded="false"
+    >
+      Open Modal
+    </button>
+
+    <dialog id="example-hide-close-button" class="Modal Modal--center" aria-labelledby="example-hide-close-button-title" data-spirit-close-on-backdrop-click="false" data-spirit-close-on-escape-key-down="false">
+
+      <article class="ModalDialog ModalDialog--expandOnMobile">
+
+        <header class="ModalHeader">
+          <h2 id="example-hide-close-button-title" class="ModalHeader__title">Modal Title</h2>
+        </header>
+
+        <div class="ModalBody">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+            perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+            provident unde. Eveniet, iste, molestiae?
+          </p>
+        </div>
+
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button
+              type="button"
+              class="Button Button--primary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-hide-close-button"
+            >
+              Primary action
+            </button>
+            <button
+              type="button"
+              class="Button Button--secondary Button--medium"
+              data-spirit-dismiss="modal"
+              data-spirit-target="#example-hide-close-button"
+            >
+              Secondary action
+            </button>
+          </div>
+        </footer>
+
+      </article>
+
+    </dialog>
+
+  </div>
+
+</section>
+
 {{/web/layout/plain }}
