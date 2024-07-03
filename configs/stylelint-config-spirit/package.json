@@ -26,7 +26,7 @@
     "stylelint": "^15.11.0"
   },
   "dependencies": {
-    "@lmc-eu/stylelint-config": "file:/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config",
+    "@lmc-eu/stylelint-config": "8.0.0",
     "stylelint": "15.11.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-order": "6.0.4"

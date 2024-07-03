@@ -3733,16 +3733,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/stylelint-config@file:/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config::locator=stylelint-config-spirit%40workspace%3Aconfigs%2Fstylelint-config-spirit":
-  version: 7.0.1
-  resolution: "@lmc-eu/stylelint-config@file:/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config#/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config::hash=1267f6&locator=stylelint-config-spirit%40workspace%3Aconfigs%2Fstylelint-config-spirit"
+"@lmc-eu/stylelint-config@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@lmc-eu/stylelint-config@npm:8.0.0"
   dependencies:
     postcss-scss: "npm:^4.0.3"
     stylelint-config-standard-scss: "npm:^6.0.0"
     stylelint-order: "npm:^6.0.0"
   peerDependencies:
     stylelint: ^15.11.0
-  checksum: 10/a71ab03d8d653c04fcc94709412a6f758aefb5d9c58f7a45add9d79b276a1ab6ec23a206866a8293121267b268fd99c6c97239a7c33745cddd5b7e5bc59925ef
+  checksum: 10/0215cdf4a1784e136b75f597e16fe08040c76f4defada14b859d21d9075cf3111bb7ce113d1ed6d829d85883f3d840049fbeef6df18dec7f51689850c4e71662
   languageName: node
   linkType: hard
 
@@ -25746,7 +25746,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "stylelint-config-spirit@workspace:configs/stylelint-config-spirit"
   dependencies:
-    "@lmc-eu/stylelint-config": "file:/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config"
+    "@lmc-eu/stylelint-config": "npm:8.0.0"
     stylelint: "npm:15.11.0"
     stylelint-config-prettier: "npm:9.0.5"
     stylelint-order: "npm:6.0.4"
