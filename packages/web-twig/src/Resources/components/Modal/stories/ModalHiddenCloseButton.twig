@@ -1,0 +1,33 @@
+<Button data-spirit-toggle="modal" data-spirit-target="#example-hidden-close-button">
+    Open Modal
+</Button>
+
+<Modal id="example-hidden-close-button" titleId="example-hidden-close-button-title" closeOnBackdropClick={ false } closeOnEscapeKeyDown={ false }>
+    <ModalDialog>
+        <ModalHeader modalId="example-hidden-close-button" titleId="example-hidden-close-button-title" hasCloseButton={ false }>
+            Modal Title
+        </ModalHeader>
+        <ModalBody>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia
+                perferendis reprehenderit, voluptate. Cum delectus dicta ducimus eligendi excepturi natus perferendis
+                provident unde. Eveniet, iste, molestiae?
+            </p>
+        </ModalBody>
+        <ModalFooter>
+            <Button
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-hidden-close-button"
+            >
+                Primary action
+            </Button>
+            <Button
+                color="secondary"
+                data-spirit-dismiss="modal"
+                data-spirit-target="#example-hidden-close-button"
+            >
+                Secondary action
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>

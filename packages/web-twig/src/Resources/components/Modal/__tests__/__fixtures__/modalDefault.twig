@@ -51,6 +51,23 @@
     </ModalDialog>
 </Modal>
 
+<!-- Do not render with close button -->
+<Modal id="modal-example-hide-close-button" aria-label="Modal Title">
+    <ModalDialog isScrollable height="100px" maxHeight="200px">
+        <ModalHeader modalId="modal-example-hide-close-button" hasCloseButton={ false }>
+            Title of the Modal
+        </ModalHeader>
+        <ModalBody>
+            <p>Modal Body</p>
+        </ModalBody>
+        <ModalFooter>
+            <Button color="primary">
+                Submit
+            </Button>
+        </ModalFooter>
+    </ModalDialog>
+</Modal>
+
 <!-- Render with all props -->
 <Modal alignmentY="top" id="modal-example-all" titleId="modal-example-all-title">
     <ModalDialog

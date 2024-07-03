@@ -43,12 +43,13 @@ Example:
 
 ### API
 
-| Name                   | Type                                          | Default  | Required | Description                                           |
-| ---------------------- | --------------------------------------------- | -------- | -------- | ----------------------------------------------------- |
-| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment] | `center` | ✕        | Vertical alignment of modal                           |
-| `closeOnBackdropClick` | `bool`                                        | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string`                                      | —        | ✓        | Modal ID                                              |
-| `titleId`              | `string`                                      | `null`   | ✕        | ID of the title inside ModalHeader                    |
+| Name                   | Type                                          | Default  | Required | Description                                             |
+| ---------------------- | --------------------------------------------- | -------- | -------- | ------------------------------------------------------- |
+| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment] | `center` | ✕        | Vertical alignment of modal                             |
+| `closeOnBackdropClick` | `bool`                                        | `true`   | ✕        | Whether the modal will close when backdrop is clicked   |
+| `closeOnEscapeKeyDown` | `bool`                                        | `true`   | ✕        | Whether the modal will close when escape key is pressed |
+| `id`                   | `string`                                      | —        | ✓        | Modal ID                                                |
+| `titleId`              | `string`                                      | `null`   | ✕        | ID of the title inside ModalHeader                      |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -158,14 +159,30 @@ using the `aria-label` attribute on `<Modal>` component:
 </Modal>
 ```
 
+### Hidden Close Button
+
+To render the `ModalHeader` component without the close button set the `hasCloseButton` prop to false.
+
+```twig
+<Modal id="modal-example">
+  <ModalDialog>
+    <ModalHeader modalId="modal-example" hasCloseButton={false} />
+    <ModalBody>
+      …
+    </ModalBody>
+  </ModalDialog>
+</Modal>
+```
+
 ### API
 
-| Name            | Type     | Default | Required | Description             |
-| --------------- | -------- | ------- | -------- | ----------------------- |
-| `closeLabel`    | `string` | `Close` | ✕        | Custom close label      |
-| `enableDismiss` | `bool`   | `true`  | ✕        | Enable JS Modal dismiss |
-| `modalId`       | `string` | —       | ✓        | Modal ID                |
-| `titleId`       | `string` | `null`  | ✕        | ID of the title         |
+| Name             | Type     | Default | Required | Description                      |
+| ---------------- | -------- | ------- | -------- | -------------------------------- |
+| `closeLabel`     | `string` | `Close` | ✕        | Custom close label               |
+| `enableDismiss`  | `bool`   | `true`  | ✕        | Enable JS Modal dismiss          |
+| `hasCloseButton` | `bool`   | `true`  | ✕        | Whether close button is rendered |
+| `modalId`        | `string` | —       | ✓        | Modal ID                         |
+| `titleId`        | `string` | `null`  | ✕        | ID of the title                  |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
