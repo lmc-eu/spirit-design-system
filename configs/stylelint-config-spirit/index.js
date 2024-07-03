@@ -3,8 +3,8 @@ const styleRules = require('./rules/style');
 const unstableRules = require('./rules/unstable');
 
 module.exports = {
-  extends: ['stylelint-config-standard-scss', prettierPlugin, styleRules, unstableRules],
-  rules: {
+  extends: ['@lmc-eu/stylelint-config', prettierPlugin, styleRules, unstableRules],
+  /* rules: {
     // No default value
     // Reason: Color-named values disabled - desired lint should check for design system token values only.
     // Docs: https://stylelint.io/user-guide/rules/list/color-named
@@ -119,5 +119,5 @@ module.exports = {
     // - values come from Supernova, so you never know what you're going to get.
     // Docs: https://github.com/stylelint-scss/stylelint-scss/blob/master/src/rules/function-unquote-no-unquoted-strings-inside/README.md
     'scss/function-unquote-no-unquoted-strings-inside': null,
-  }
+  } */
 };

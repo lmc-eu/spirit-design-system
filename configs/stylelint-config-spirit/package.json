@@ -22,10 +22,14 @@
   },
   "type": "commonjs",
   "main": "./index.js",
+  "peerDependencies": {
+    "stylelint": "^15.11.0"
+  },
   "dependencies": {
-    "stylelint": "16.6.1",
+    "@lmc-eu/stylelint-config": "file:/Users/tomas.litera/Work/_alma/code-quality-tools/packages/stylelint-config",
+    "stylelint": "15.11.0",
     "stylelint-config-prettier": "9.0.5",
-    "stylelint-config-standard-scss": "^13.1.0",
-    "stylelint-order": "^6.0.4"
+    "stylelint-config-standard-scss": "13.1.0",
+    "stylelint-order": "6.0.4"
   }
 }
