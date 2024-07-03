@@ -2,6 +2,7 @@
 {%- set props = props | default([]) -%}
 {%- set _closeLabel = props.closeLabel | default('Close') -%}
 {%- set _enableDismiss = props.enableDismiss ?? true -%}
+{%- set _hasCloseButton = props.hasCloseButton ?? true -%}
 {%- set _modalId = props.modalId -%}
 {%- set _titleId = props.titleId | default(null) -%}
 
@@ -29,15 +30,17 @@
             {% block content %}{% endblock %}
         </h2>
     {% endif %}
-    <Button
-        aria-controls="{{ _modalId }}"
-        aria-expanded="false"
-        color="tertiary"
-        data-spirit-dismiss="{{ _enableDismiss ? 'modal' : null }}"
-        data-spirit-target="{{ _enableDismiss ? '#' ~ _modalId : null }}"
-        isSquare
-    >
-        <Icon name="close" />
-        <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
-    </Button>
+    {% if _hasCloseButton is same as(true) %}
+        <Button
+            aria-controls="{{ _modalId }}"
+            aria-expanded="false"
+            color="tertiary"
+            data-spirit-dismiss="{{ _enableDismiss ? 'modal' : null }}"
+            data-spirit-target="{{ _enableDismiss ? '#' ~ _modalId : null }}"
+            isSquare
+        >
+            <Icon name="close" />
+            <VisuallyHidden>{{ _closeLabel }}</VisuallyHidden>
+        </Button>
+    {% endif %}
 </header>
