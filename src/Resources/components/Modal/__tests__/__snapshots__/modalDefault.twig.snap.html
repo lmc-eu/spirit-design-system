@@ -79,6 +79,29 @@
         </footer>
       </article>
     </dialog>
+    <!-- Do not render with close button -->
+
+    <dialog aria-label="Modal Title" class="Modal Modal--center" id="modal-example-hide-close-button">
+      <article class="ModalDialog ModalDialog--scrollable" style="--modal-dialog-max-height: 200px;--modal-dialog-height: 100px;">
+        <header class="ModalHeader">
+          <h2 class="ModalHeader__title">
+            Title of the Modal
+          </h2>
+        </header>
+
+        <div class="ModalBody">
+          <p>
+            Modal Body
+          </p>
+        </div>
+
+        <footer class="ModalFooter ModalFooter--right">
+          <div class="ModalFooter__actions">
+            <button class="Button Button--primary Button--medium" type="button">Submit</button>
+          </div>
+        </footer>
+      </article>
+    </dialog>
     <!-- Render with all props -->
 
     <dialog class="Modal Modal--top" id="modal-example-all" aria-labelledby="modal-example-all-title">
