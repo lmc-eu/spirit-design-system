@@ -7,7 +7,7 @@ import { useDialog } from './useDialog';
 // Solved using `as MutableRefObject<HTMLDialogElement | null>` but I do not like it
 
 const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>): JSX.Element => {
-  const { children, isOpen, onClose, closeOnBackdropClick = true, ...restProps } = props;
+  const { children, isOpen, onClose, closeOnBackdropClick = true, closeOnEscapeKeyDown, ...restProps } = props;
   const dialogElementRef: MutableRefObject<ForwardedRef<HTMLDialogElement | null>> = useRef(ref);
   const contentElementRef: MutableRefObject<HTMLElement | null> = useRef(null);
 
@@ -28,7 +28,12 @@ const Dialog = (props: DialogProps, ref: ForwardedRef<HTMLDialogElement | null>)
   });
 
   // handles closing using Escape key
-  useCancelEvent(dialogElementRef as MutableRefObject<HTMLDialogElement | null>, onClose);
+  useCancelEvent(
+    dialogElementRef as MutableRefObject<HTMLDialogElement | null>,
+    onClose,
+    closeOnEscapeKeyDown as boolean,
+    isOpen,
+  );
 
   /**
    * Make sure that there is only one child wrapped in dialog element.

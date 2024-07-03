@@ -9,6 +9,7 @@ import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import ModalDefault from './ModalDefault';
 import ModalDisabledBackdropClick from './ModalDisabledBackdropClick';
+import ModalHiddenCloseButton from './ModalHiddenCloseButton';
 import ModalScrollingLongContent from './ModalScrollingLongContent';
 import ModalStacking from './ModalStacking';
 
@@ -26,6 +27,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Disabled Backdrop Click">
         <ModalDisabledBackdropClick />
+      </DocsSection>
+      <DocsSection title="Hidden Close Button and Disabled Escape Key">
+        <ModalHiddenCloseButton />
       </DocsSection>
     </IconsProvider>
   </React.StrictMode>,

@@ -33,12 +33,28 @@ const meta: Meta<typeof Modal> = {
         defaultValue: { summary: 'false' },
       },
     },
+    closeOnBackdropClick: {
+      control: 'boolean',
+      description: 'Whether the modal should close when the backdrop is clicked',
+      table: {
+        defaultValue: { summary: 'true' },
+      },
+    },
+    closeOnEscapeKeyDown: {
+      control: 'boolean',
+      description: 'Whether the modal should close when the escape key is pressed',
+      table: {
+        defaultValue: { summary: 'true' },
+      },
+    },
   },
   args: {
     alignmentY: AlignmentY.CENTER,
     id: 'modal',
     isOpen: false,
     onClose: fn(),
+    closeOnEscapeKeyDown: true,
+    closeOnBackdropClick: true,
   },
 };
 
