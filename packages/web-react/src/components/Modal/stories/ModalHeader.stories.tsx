@@ -13,13 +13,23 @@ const meta: Meta<typeof ModalHeader> = {
     },
     closeLabel: {
       control: 'text',
+      description: 'The label for the close button',
       table: {
         defaultValue: { summary: 'Close' },
+      },
+    },
+    hasCloseButton: {
+      control: 'boolean',
+      description: 'Whether to hide the close button',
+      table: {
+        defaultValue: { summary: 'true' },
       },
     },
   },
   args: {
     children: 'Modal Header',
+    closeLabel: 'Close',
+    hasCloseButton: true,
   },
 };
 

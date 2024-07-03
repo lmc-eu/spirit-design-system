@@ -6,8 +6,13 @@ import ModalCloseButton from './ModalCloseButton';
 import { useModalContext } from './ModalContext';
 import { useModalStyleProps } from './useModalStyleProps';
 
+const defaultProps: ModalHeaderProps = {
+  hasCloseButton: true,
+};
+
 const ModalHeader = (props: ModalHeaderProps) => {
-  const { children, closeLabel = 'Close', ...restProps } = props;
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, closeLabel, hasCloseButton, ...restProps } = propsWithDefaults;
 
   const { classProps } = useModalStyleProps();
   const { styleProps, props: otherProps } = useStyleProps(restProps);
@@ -20,7 +25,7 @@ const ModalHeader = (props: ModalHeaderProps) => {
           {children}
         </h2>
       )}
-      <ModalCloseButton id={id} isOpen={isOpen} label={closeLabel} onClose={onClose} />
+      {hasCloseButton && <ModalCloseButton id={id} isOpen={isOpen} label={closeLabel} onClose={onClose} />}
     </header>
   );
 };

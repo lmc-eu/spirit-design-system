@@ -17,11 +17,12 @@ export type ModalDialogHandlingProps = {
   isOpen: boolean;
   onClose: (event: ClickEvent) => void;
   closeOnBackdropClick?: boolean;
+  closeOnEscapeKeyDown?: boolean;
 };
 
 export interface ModalCloseButtonProps extends ModalDialogHandlingProps {
   id: string;
-  label: string;
+  label?: string;
 }
 
 export type ModalDialogBaseProps<E extends ElementType = ModalDialogElementType> = {
@@ -49,6 +50,7 @@ export interface ModalBodyProps extends SpiritDivElementProps, ChildrenProps {}
 
 export interface ModalHeaderProps extends SpiritElementProps, ChildrenProps {
   closeLabel?: string;
+  hasCloseButton?: boolean;
 }
 
 export interface ModalFooterProps extends SpiritElementProps, ChildrenProps {

@@ -61,7 +61,7 @@ const ModalDefault = () => {
           isExpandedOnMobile={isExpandedOnMobile}
           isScrollable={isScrollable}
         >
-          <ModalHeader id="example-basic">Modal Title</ModalHeader>
+          <ModalHeader>Modal Title</ModalHeader>
           <ModalBody>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at excepturi laudantium magnam mollitia

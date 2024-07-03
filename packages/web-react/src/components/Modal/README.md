@@ -60,14 +60,15 @@ Example:
 
 ### API
 
-| Name                   | Type                                           | Default  | Required | Description                                           |
-| ---------------------- | ---------------------------------------------- | -------- | -------- | ----------------------------------------------------- |
-| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment]  | `center` | ✕        | Vertical alignment of modal                           |
-| `children`             | `ReactNode`                                    | —        | ✕        | Children node                                         |
-| `closeOnBackdropClick` | `bool`                                         | `true`   | ✕        | Whether the modal will close when backdrop is clicked |
-| `id`                   | `string`                                       | —        | ✓        | Modal ID                                              |
-| `isOpen`               | `bool`                                         | `false`  | ✓        | Open state                                            |
-| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✓        | Callback on dialog closed                             |
+| Name                   | Type                                           | Default  | Required | Description                                             |
+| ---------------------- | ---------------------------------------------- | -------- | -------- | ------------------------------------------------------- |
+| `alignmentY`           | [AlignmentY dictionary][dictionary-alignment]  | `center` | ✕        | Vertical alignment of modal                             |
+| `children`             | `ReactNode`                                    | —        | ✕        | Children node                                           |
+| `closeOnBackdropClick` | `bool`                                         | `true`   | ✕        | Whether the modal will close when backdrop is clicked   |
+| `closeOnEscapeKeyDown` | `bool`                                         | `true`   | ✕        | Whether the modal will close when escape key is pressed |
+| `id`                   | `string`                                       | —        | ✓        | Modal ID                                                |
+| `isOpen`               | `bool`                                         | `false`  | ✓        | Open state                                              |
+| `onClose`              | `(event: ClickEvent or KeyboardEvent) => void` | —        | ✓        | Callback on dialog closed                               |
 
 Also, all properties of the [`<dialog>` element][mdn-dialog] are supported.
 
@@ -165,12 +166,26 @@ accessible name for the dialog, e.g. using the `aria-label` attribute on
 </Modal>
 ```
 
+### Hidden Close Button
+
+To render the `ModalHeader` component without the close button set the `hasCloseButton` prop to false.
+
+```jsx
+<Modal id="modal-hidden-close-button">
+  <ModalDialog>
+    <ModalHeader hasCloseButton={false} />
+    <ModalBody>…</ModalBody>
+  </ModalDialog>
+</Modal>
+```
+
 ### API
 
-| Name         | Type        | Default | Required | Description        |
-| ------------ | ----------- | ------- | -------- | ------------------ |
-| `children`   | `ReactNode` | —       | ✕        | Children node      |
-| `closeLabel` | `string`    | —       | ✕        | Close button label |
+| Name             | Type        | Default | Required | Description                      |
+| ---------------- | ----------- | ------- | -------- | -------------------------------- |
+| `children`       | `ReactNode` | —       | ✕        | Children node                    |
+| `closeLabel`     | `string`    | `Close` | ✕        | Close button label               |
+| `hasCloseButton` | `bool`      | `true`  | ✕        | Whether close button is rendered |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
