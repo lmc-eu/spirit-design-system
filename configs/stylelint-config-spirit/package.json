@@ -23,7 +23,7 @@
   "type": "commonjs",
   "main": "./index.js",
   "dependencies": {
-    "@lmc-eu/stylelint-config": "7.0.1",
+    "@lmc-eu/stylelint-config": "8.0.0",
     "stylelint": "15.11.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-order": "6.0.4"
