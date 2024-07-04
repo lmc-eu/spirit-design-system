@@ -1,7 +1,8 @@
-const prettierPlugin = require('./plugins/prettier');
-const styleRules = require('./rules/style');
-const unstableRules = require('./rules/unstable');
+/* eslint-disable import/extensions -- Cannot find module error */
+import prettierPlugin from './plugins/prettier.js';
+import styleRules from './rules/style.js';
+import unstableRules from './rules/unstable.js';
 
-module.exports = {
-  extends: ['@lmc-eu/stylelint-config', prettierPlugin, styleRules, unstableRules],
+export default {
+  extends: ['@almacareer/stylelint-config', prettierPlugin, styleRules, unstableRules],
 };

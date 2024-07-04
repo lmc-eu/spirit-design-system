@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   rules: {
     // Allow UNSTABLE_Component classnames
     // @see: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/contributtion/experimental-code.md

@@ -20,10 +20,10 @@
     "url": "https://github.com/lmc-eu/spirit-design-system.git",
     "directory": "configs/stylelint-config-spirit"
   },
-  "type": "commonjs",
+  "type": "module",
   "main": "./index.js",
   "peerDependencies": {
-    "stylelint": "^15.11.0 || ^16.0.0"
+    "stylelint": "^16.0.0"
   },
   "dependencies": {
     "@almacareer/stylelint-config": "9.0.0",
