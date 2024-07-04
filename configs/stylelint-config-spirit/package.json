@@ -23,12 +23,12 @@
   "type": "commonjs",
   "main": "./index.js",
   "peerDependencies": {
-    "stylelint": "^15.11.0"
+    "stylelint": "^15.11.0 || ^16.0.0"
   },
   "dependencies": {
-    "@lmc-eu/stylelint-config": "8.0.0",
-    "stylelint": "15.11.0",
-    "stylelint-config-prettier": "9.0.5",
-    "stylelint-order": "6.0.4"
+    "@almacareer/stylelint-config": "9.0.0",
+    "stylelint": "16.7.0",
+    "stylelint-order": "6.0.4",
+    "stylelint-prettier": "5.0.0"
   }
 }
