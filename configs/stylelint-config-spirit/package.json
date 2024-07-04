@@ -22,6 +22,9 @@
   },
   "type": "commonjs",
   "main": "./index.js",
+  "peerDependencies": {
+    "stylelint": "^15.11.0"
+  },
   "dependencies": {
     "@lmc-eu/stylelint-config": "8.0.0",
     "stylelint": "15.11.0",

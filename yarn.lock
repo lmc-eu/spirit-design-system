@@ -25739,6 +25739,8 @@ __metadata:
     stylelint: "npm:15.11.0"
     stylelint-config-prettier: "npm:9.0.5"
     stylelint-order: "npm:6.0.4"
+  peerDependencies:
+    stylelint: ^15.11.0
   languageName: unknown
   linkType: soft
 
