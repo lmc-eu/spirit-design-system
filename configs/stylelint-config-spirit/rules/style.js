@@ -1,6 +1,6 @@
 const OFF = null;
 
-module.exports = {
+export default {
   rules: {
     // This rule can lead to less readable code
     // @see: https://github.com/stylelint/stylelint-config-recommended/issues/14
