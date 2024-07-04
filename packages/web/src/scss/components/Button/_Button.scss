@@ -44,7 +44,6 @@
     $overrides: theme.$color-dictionary-overrides,
     $generate-data-attribute: true
 );
-
 @include dictionaries.generate-sizes('Button', theme.$sizes);
 
 .Button--block {

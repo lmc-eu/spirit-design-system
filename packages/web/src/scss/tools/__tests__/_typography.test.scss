@@ -27,7 +27,7 @@
             }
 
             @include test.expect() {
-                @media (min-width: map.get(tokens.$breakpoints, 'tablet')) {
+                @media (width >= #{map.get(tokens.$breakpoints, 'tablet')}) {
                     .typography-test {
                         font-style: italic;
                         font-weight: 700;

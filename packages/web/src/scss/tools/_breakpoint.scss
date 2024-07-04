@@ -1,13 +1,15 @@
-// Mixin to get the min-width media query for a breakpoint value.
+@use 'sass:string';
+
+// Mixin to get the width media query for a breakpoint value in up direction.
 //
 // Example: up(0) { … } will return …
-// Example: up(768px) { … } will return @media (min-width: 768px) { … }
+// Example: up(768px) { … } will return @media (width >= 768px) { … }
 //
 // Parameters are:
 // * $breakpoint-value: the breakpoint value (in pixels)
 @mixin up($breakpoint-value) {
     @if $breakpoint-value > 0 {
-        @media (min-width: $breakpoint-value) {
+        @media (width >= $breakpoint-value) {
             @content;
         }
     } @else {
@@ -15,16 +17,16 @@
     }
 }
 
-// Mixin to get the max-width media query for a breakpoint value.
+// Mixin to get the width media query for a breakpoint value in down direction.
 //
 // Example: down(0) { … } will return …
-// Example: down(768px) { … } will return @media (max-width: 767px) { … }
+// Example: down(768px) { … } will return @media (width < 768px) { … }
 //
 // Parameters are:
 // * $breakpoint-value: the breakpoint value (in pixels)
 @mixin down($breakpoint-value) {
     @if $breakpoint-value > 0 {
-        @media (max-width: ($breakpoint-value - 1px)) {
+        @media (width < $breakpoint-value) {
             @content;
         }
     } @else {
@@ -45,10 +47,10 @@
 @function get-modifier($modifier, $name, $breakpoint-value) {
     @if $breakpoint-value > 0 {
         @if $modifier == 'infix' {
-            @return unquote($name + '--');
+            @return string.unquote($name + '--');
         }
 
-        @return unquote('-' + $name);
+        @return string.unquote('-' + $name);
     }
 
     @return '';

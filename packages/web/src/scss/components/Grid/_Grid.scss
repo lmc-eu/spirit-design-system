@@ -25,5 +25,4 @@
 }
 
 @include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
-
 @include tools.item(theme.$breakpoints);

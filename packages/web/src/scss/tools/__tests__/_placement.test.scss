@@ -8,6 +8,7 @@
                 --cross-axis-direction-left: #{placement.get-cross-axis-direction('left')};
                 --cross-axis-direction-bottom: #{placement.get-cross-axis-direction('bottom')};
             }
+
             @include test.expect() {
                 --cross-axis-direction-left: vertical;
                 --cross-axis-direction-bottom: horizontal;
@@ -21,6 +22,7 @@
                 --is-logical-left: #{placement.is-logical('left')};
                 --is-logical-start: #{placement.is-logical('start')};
             }
+
             @include test.expect() {
                 --is-logical-left: false;
                 --is-logical-start: true;
@@ -34,6 +36,7 @@
                 --logical-to-physical-start-horizontal: #{placement.translate-logical-to-physical('start', 'horizontal')};
                 --logical-to-physical-start-vertical: #{placement.translate-logical-to-physical('start', 'vertical')};
             }
+
             @include test.expect() {
                 --logical-to-physical-start-horizontal: left;
                 --logical-to-physical-start-vertical: top;
@@ -61,6 +64,7 @@
                         $physical-direction: 'horizontal'
                     )};
             }
+
             @include test.expect() {
                 --transform-axis-left: left;
                 --transform-axis-left-inverse: right;
@@ -94,6 +98,7 @@
                         )};
                     --transform-left-top-spaces: #{placement.transform('left-top', $join-with: ' ')};
                 }
+
                 @include test.expect() {
                     --transform-left: left;
                     --transform-left-top: left-top;
@@ -131,6 +136,7 @@
                         )};
                     --transform-top-start-spaces: #{placement.transform('top-start', $join-with: ' ')};
                 }
+
                 @include test.expect() {
                     --transform-top-start: top-start;
                     --transform-top-start-main-axis-inverse: bottom-start;
@@ -150,6 +156,7 @@
                     @include placement.parent();
                 }
             }
+
             @include test.expect() {
                 .parent-test {
                     position: relative;
@@ -165,6 +172,7 @@
                     @include placement.child($z-index: 3);
                 }
             }
+
             @include test.expect() {
                 .child-test {
                     position: absolute;
@@ -181,6 +189,7 @@
                     @include placement.child-controlled('test', 10px);
                 }
             }
+
             @include test.expect() {
                 .child-controlled-test {
                     --test-offset-orthogonal: 0;
@@ -200,6 +209,7 @@
                     @include placement.child-variant($prefix: 'test', $placement: 'top', $offset: 10px);
                 }
             }
+
             @include test.expect() {
                 .child-variant-test {
                     --test-offset: 10px;
@@ -222,6 +232,7 @@
                     );
                 }
             }
+
             @include test.expect() {
                 .child-variant-test {
                     --test-offset: 10px;
@@ -240,6 +251,7 @@
                     @include placement.arrow('test', '10px', '10px', '5px');
                 }
             }
+
             @include test.expect() {
                 .arrow-test {
                     --test-arrow-width: 10px;
@@ -260,6 +272,7 @@
                     @include placement.arrow-variant('test', 'top');
                 }
             }
+
             @include test.expect() {
                 .arrow-variant-test {
                     inset: auto auto 100% 50%;
