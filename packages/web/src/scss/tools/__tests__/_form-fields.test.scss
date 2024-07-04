@@ -11,6 +11,7 @@
                     @include form-fields.label-disabled();
                 }
             }
+
             @include test.expect() {
                 .label-disabled-test {
                     color: form-fields-theme.$label-color-disabled;
@@ -30,6 +31,7 @@
                     @include form-fields.input-disabled();
                 }
             }
+
             @include test.expect() {
                 .input-disabled-test {
                     color: form-fields-theme.$input-color-disabled;
@@ -46,6 +48,7 @@
                     @include form-fields.box-field-fluid();
                 }
             }
+
             @include test.expect() {
                 .box-field-fluid-test {
                     width: 100%;

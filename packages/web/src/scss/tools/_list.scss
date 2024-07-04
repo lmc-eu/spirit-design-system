@@ -5,10 +5,10 @@
 @function to-string($list, $separator: ' ') {
     $string: '';
 
-    @for $i from 1 through length($list) {
+    @for $i from 1 through list.length($list) {
         $string: $string + list.nth($list, $i);
 
-        @if $i < length($list) {
+        @if $i < list.length($list) {
             $string: $string + $separator;
         }
     }

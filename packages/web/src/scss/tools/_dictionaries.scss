@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:string';
 @use '@tokens' as tokens;
 @use './links';
@@ -15,14 +16,17 @@
     @if map.has-key(tokens.$action-colors, #{$variant}-default) {
         @return tokens.$action-colors;
     }
+
     @if map.has-key(tokens.$emotion-colors, #{$variant}-default) {
         @return tokens.$emotion-colors;
     }
+
     @if map.has-key(tokens.$text-colors, #{$variant}-default) {
         @return tokens.$text-colors;
     }
 
     @error 'Invalid color dictionary value as there is no #{$variant}-default token either in action-colors, emotion-colors, or text-colors tokens';
+
     @return null;
 }
 
@@ -53,13 +57,16 @@
                 @return map.get($overrides, $dictionary-value, states, $state-name, $property-name);
             }
         }
+
         @if map.has-key($overrides, $dictionary-value, $property-name) {
             @return map.get($overrides, $dictionary-value, $property-name);
         }
     }
-    @if type-of($property-value) == 'string' {
+
+    @if meta.type-of($property-value) == 'string' {
         $tokens: -get-color-dictionary-tokens($dictionary-value);
-        @if type-of($tokens) == 'map' {
+
+        @if meta.type-of($tokens) == 'map' {
             @return map.get($tokens, #{$dictionary-value}-#{$property-value});
         }
     } @else {
@@ -166,6 +173,7 @@
     @each $dictionary-value in $dictionary-values {
         @each $print-value in $print-values {
             $variant-class: '#{$dictionary-value}';
+
             @if $print-value == 'disabled' {
                 $variant-class: '#{$dictionary-value}.link-#{$print-value}';
             } @else if $print-value != 'default' {

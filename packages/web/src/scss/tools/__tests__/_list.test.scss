@@ -4,9 +4,7 @@
 @include test.describe('to-string function') {
     @include test.it('should convert a list to a string with the specified separator') {
         @include test.assert-equal(list.to-string((1, 2, 3), '-'), '1-2-3');
-
         @include test.assert-equal(list.to-string(('a', 'b', 'c'), '_'), 'a_b_c');
-
         @include test.assert-equal(list.to-string(('apple', 'banana', 'cherry')), 'apple banana cherry');
     }
 }

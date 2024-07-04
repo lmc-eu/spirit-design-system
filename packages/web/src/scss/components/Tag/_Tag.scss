@@ -12,7 +12,6 @@
 }
 
 @include dictionaries.generate-sizes('Tag', theme.$sizes);
-
 @include dictionaries.generate-colors(
     'Tag',
     theme.$color-dictionary,
@@ -20,7 +19,6 @@
     null,
     theme.$color-dictionary-overrides
 );
-
 @include dictionaries.generate-colors(
     'Tag--subtle.Tag',
     theme.$color-dictionary,

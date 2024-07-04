@@ -25,7 +25,6 @@
 }
 
 @include dictionaries.generate-colors('Alert', theme.$color-dictionary, theme.$color-dictionary-config);
-
 @include dictionaries.generate-colors(
     'Alert',
     theme.$color-dictionary,
