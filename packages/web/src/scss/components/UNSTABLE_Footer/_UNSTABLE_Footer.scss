@@ -17,7 +17,7 @@
     justify-content: center;
     list-style: none;
 
-    @include breakpoint.up(theme.$breakpoint) {
+    @include breakpoint.up(theme.$breakpoint-tablet) {
         flex-direction: row;
     }
 }

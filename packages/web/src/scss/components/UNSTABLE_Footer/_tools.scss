@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../../tools/breakpoint';
+@use 'theme';
+
+@mixin generate-horizontal-alignment($variables) {
+    @each $alignment, $variables in $variables {
+        .UNSTABLE_FooterContent__slot--#{$alignment} {
+            @include breakpoint.up(theme.$breakpoint-desktop) {
+                @if map.has-key($variables, justify-content) {
+                    justify-content: map.get($variables, justify-content);
+                }
+            }
+        }
+    }
+}

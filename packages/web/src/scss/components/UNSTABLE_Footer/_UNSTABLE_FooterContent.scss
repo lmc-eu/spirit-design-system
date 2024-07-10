@@ -1,0 +1,29 @@
+@use '../../tools/breakpoint';
+@use 'tools';
+@use 'theme';
+
+.UNSTABLE_FooterContent {
+    display: flex;
+    flex-direction: column;
+    gap: theme.$footer-content-gap;
+    align-items: center;
+
+    @include breakpoint.up(theme.$breakpoint-desktop) {
+        flex-direction: row;
+    }
+}
+
+.UNSTABLE_FooterContent__slot {
+    display: flex;
+    flex: 1;
+}
+
+@include tools.generate-horizontal-alignment(theme.$footer-content-slot-alignment-list);
+
+.UNSTABLE_FooterContent__logoList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: theme.$footer-content-logo-list-gap;
+    justify-content: center;
+    list-style: none;
+}

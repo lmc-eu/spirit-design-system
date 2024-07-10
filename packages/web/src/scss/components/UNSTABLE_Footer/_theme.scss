@@ -1,8 +1,23 @@
 @use 'sass:map';
 @use '@tokens' as tokens;
 
-$breakpoint: map.get(tokens.$breakpoints, tablet);
+$breakpoint-tablet: map.get(tokens.$breakpoints, tablet);
+$breakpoint-desktop: map.get(tokens.$breakpoints, desktop);
 $background-color: tokens.$background-cover;
 $background-color-inverted: tokens.$background-inverted;
 $gap: tokens.$space-700;
 $padding-block: tokens.$space-1100 tokens.$space-1000;
+
+$footer-content-gap: tokens.$space-900;
+$footer-content-slot-alignment-list: (
+    left: (
+        justify-content: flex-start,
+    ),
+    center: (
+        justify-content: center,
+    ),
+    right: (
+        justify-content: flex-end,
+    ),
+);
+$footer-content-logo-list-gap: tokens.$space-600;
