@@ -5,9 +5,7 @@ import { expect, test } from '@playwright/test';
 import { readdirSync } from 'fs';
 
 // Tests that are intentionally broken, but will be fixed in the future
-const IGNORED_TESTS = [
-  'Tooltip', // Should be fixed when DS-1087 and DS-1088 are merged
-];
+const IGNORED_TESTS = [];
 
 const runComponentCompareTests = (testConfig) => {
   const { packageDir, componentsDir, srcDir = '', packageName } = testConfig;
