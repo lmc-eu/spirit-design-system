@@ -48,10 +48,26 @@ const TooltipAdvancedFloating = () => {
   useEffect(() => {
     const viewport = viewportRef.current;
     const content = contentRef.current;
-    if (viewport && content) {
-      viewport.scrollLeft = (content.offsetWidth - viewport.offsetWidth) / 2;
-      viewport.scrollTop = (content.offsetHeight - viewport.offsetHeight) / 2;
-    }
+
+    const centerContentInViewport = () => {
+      if (!viewport || !content) {
+        return;
+      }
+
+      const scrollLeft = (content.offsetWidth - viewport.offsetWidth) / 2;
+      const scrollTop = (content.offsetHeight - viewport.offsetHeight) / 2;
+
+      viewport.scrollLeft = scrollLeft;
+      viewport.scrollTop = scrollTop;
+    };
+
+    centerContentInViewport();
+
+    window.addEventListener('resize', centerContentInViewport);
+
+    return () => {
+      window.removeEventListener('resize', centerContentInViewport);
+    };
   }, []);
 
   return (
