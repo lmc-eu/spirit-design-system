@@ -30,7 +30,21 @@ selectFallback.addEventListener('change', () => {
   tooltip.updateConfig({ flipFallbackPlacements: selectFallback.value });
 });
 
-const viewport = document.getElementById('my-advanced-viewport');
-const content = document.getElementById('my-advanced-content');
-viewport.scrollLeft = (content.offsetWidth - viewport.offsetWidth) / 2;
-viewport.scrollTop = (content.offsetHeight - viewport.offsetHeight) / 2;
+function centerContentInViewport() {
+  const viewport = document.getElementById('my-advanced-viewport');
+  const content = document.getElementById('my-advanced-content');
+
+  if (!viewport || !content) {
+    return;
+  }
+
+  const scrollLeft = (content.offsetWidth - viewport.offsetWidth) / 2;
+  const scrollTop = (content.offsetHeight - viewport.offsetHeight) / 2;
+
+  viewport.scrollLeft = scrollLeft;
+  viewport.scrollTop = scrollTop;
+}
+
+centerContentInViewport();
+
+window.addEventListener('resize', centerContentInViewport);

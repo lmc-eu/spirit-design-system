@@ -2,142 +2,6 @@
 
   <section class="UNSTABLE_Section">
 
-    <h2 class="docs-Heading">Placements</h2>
-
-    <div class="docs-Stack docs-Stack--stretch">
-
-      <script type="module" src="placement-example.mjs"></script>
-
-      <form autocomplete="off">
-        <div class="Grid Grid--cols-3 mx-auto" style="align-items: center; justify-items: center; max-width: 30rem;">
-          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 1">
-
-            <label for="placement-top-start" class="Radio">
-              <input type="radio" name="placement" value="top-start" id="placement-top-start" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">top-start</span>
-              </span>
-            </label>
-            <label for="placement-top" class="Radio">
-              <input type="radio" name="placement" value="top" id="placement-top" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">top</span>
-              </span>
-            </label>
-            <label for="placement-top-end" class="Radio">
-              <input type="radio" name="placement" value="top-end" id="placement-top-end" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">top-end</span>
-              </span>
-            </label>
-
-          </div>
-          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 3">
-
-            <label for="placement-bottom-start" class="Radio">
-              <input type="radio" name="placement" value="bottom-start" id="placement-bottom-start" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">bottom-start</span>
-              </span>
-            </label>
-            <label for="placement-bottom" class="Radio">
-              <input type="radio" name="placement" value="bottom" id="placement-bottom" class="Radio__input" checked />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">bottom</span>
-              </span>
-            </label>
-            <label for="placement-bottom-end" class="Radio">
-              <input type="radio" name="placement" value="bottom-end" id="placement-bottom-end" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">bottom-end</span>
-              </span>
-            </label>
-
-          </div>
-          <div
-            class="GridItem"
-            style="
-              --grid-item-column-start: 1;
-              --grid-item-row-start: 2;
-              display: flex;
-              flex-direction: column;
-              justify-self: start;
-            "
-          >
-
-            <label for="placement-left-start" class="Radio">
-              <input type="radio" name="placement" value="left-start" id="placement-left-start" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">left-start</span>
-              </span>
-            </label>
-            <label for="placement-left" class="Radio">
-              <input type="radio" name="placement" value="left" id="placement-left" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">left</span>
-              </span>
-            </label>
-            <label for="placement-left-end" class="Radio">
-              <input type="radio" name="placement" value="left-end" id="placement-left-end" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">left-end</span>
-              </span>
-            </label>
-
-          </div>
-          <div
-            class="GridItem"
-            style="
-              --grid-item-column-start: 3;
-              --grid-item-row-start: 2;
-              display: flex;
-              flex-direction: column;
-              justify-self: end;
-            "
-          >
-
-            <label for="placement-right-start" class="Radio">
-              <input type="radio" name="placement" value="right-start" id="placement-right-start" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">right-start</span>
-              </span>
-            </label>
-            <label for="placement-right" class="Radio">
-              <input type="radio" name="placement" value="right" id="placement-right" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">right</span>
-              </span>
-            </label>
-            <label for="placement-right-end" class="Radio">
-              <input type="radio" name="placement" value="right-end" id="placement-right-end" class="Radio__input" />
-              <span class="Radio__text">
-                <span class="Radio__label Radio__label--hidden">right-end</span>
-              </span>
-            </label>
-
-          </div>
-          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 2">
-
-            <div class="Tooltip" style="margin: 5rem auto" data-spirit-element="tooltip">
-              <div class="docs-Box px-900 py-900" >
-                Click<br />
-                the dots!
-              </div>
-              <div class="TooltipPopover" id="tooltip-placements-example" data-spirit-placement="bottom" data-spirit-trigger="click">
-                <span id="tooltip-placements-example-text">bottom</span>
-                <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </form>
-
-    </div>
-  </section>
-
-  <section class="UNSTABLE_Section">
-
     <h2 class="docs-Heading">Default</h2>
 
     <div class="docs-Stack docs-Stack--start">
@@ -430,11 +294,149 @@
 
   <section class="UNSTABLE_Section">
 
+    <h2 class="docs-Heading">Placements</h2>
+
+    <div class="docs-Stack docs-Stack--stretch">
+
+      <script type="module" src="placement-example.mjs"></script>
+
+      <form autocomplete="off">
+        <div class="Grid Grid--cols-3 mx-auto" style="align-items: center; justify-items: center; max-width: 30rem;">
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 1">
+
+            <label for="placement-top-start" class="Radio">
+              <input type="radio" name="placement" value="top-start" id="placement-top-start" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-start</span>
+              </span>
+            </label>
+            <label for="placement-top" class="Radio">
+              <input type="radio" name="placement" value="top" id="placement-top" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top</span>
+              </span>
+            </label>
+            <label for="placement-top-end" class="Radio">
+              <input type="radio" name="placement" value="top-end" id="placement-top-end" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">top-end</span>
+              </span>
+            </label>
+
+          </div>
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 3">
+
+            <label for="placement-bottom-start" class="Radio">
+              <input type="radio" name="placement" value="bottom-start" id="placement-bottom-start" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-start</span>
+              </span>
+            </label>
+            <label for="placement-bottom" class="Radio">
+              <input type="radio" name="placement" value="bottom" id="placement-bottom" class="Radio__input" checked />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom</span>
+              </span>
+            </label>
+            <label for="placement-bottom-end" class="Radio">
+              <input type="radio" name="placement" value="bottom-end" id="placement-bottom-end" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">bottom-end</span>
+              </span>
+            </label>
+
+          </div>
+          <div
+            class="GridItem"
+            style="
+              --grid-item-column-start: 1;
+              --grid-item-row-start: 2;
+              display: flex;
+              flex-direction: column;
+              justify-self: start;
+            "
+          >
+
+            <label for="placement-left-start" class="Radio">
+              <input type="radio" name="placement" value="left-start" id="placement-left-start" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-start</span>
+              </span>
+            </label>
+            <label for="placement-left" class="Radio">
+              <input type="radio" name="placement" value="left" id="placement-left" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left</span>
+              </span>
+            </label>
+            <label for="placement-left-end" class="Radio">
+              <input type="radio" name="placement" value="left-end" id="placement-left-end" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">left-end</span>
+              </span>
+            </label>
+
+          </div>
+          <div
+            class="GridItem"
+            style="
+              --grid-item-column-start: 3;
+              --grid-item-row-start: 2;
+              display: flex;
+              flex-direction: column;
+              justify-self: end;
+            "
+          >
+
+            <label for="placement-right-start" class="Radio">
+              <input type="radio" name="placement" value="right-start" id="placement-right-start" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-start</span>
+              </span>
+            </label>
+            <label for="placement-right" class="Radio">
+              <input type="radio" name="placement" value="right" id="placement-right" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right</span>
+              </span>
+            </label>
+            <label for="placement-right-end" class="Radio">
+              <input type="radio" name="placement" value="right-end" id="placement-right-end" class="Radio__input" />
+              <span class="Radio__text">
+                <span class="Radio__label Radio__label--hidden">right-end</span>
+              </span>
+            </label>
+
+          </div>
+          <div class="GridItem" style="--grid-item-column-start: 2; --grid-item-row-start: 2">
+
+            <div class="Tooltip" style="margin: 5rem auto" data-spirit-element="tooltip">
+              <div class="docs-Box px-900 py-900" >
+                Click<br />
+                the dots!
+              </div>
+              <div class="TooltipPopover" id="tooltip-placements-example" data-spirit-placement="bottom" data-spirit-trigger="click" data-spirit-enable-flipping="false">
+                <span id="tooltip-placements-example-text">bottom</span>
+                <span class="TooltipPopover__arrow" data-spirit-element="arrow"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <section class="UNSTABLE_Section">
+
     <h2 class="docs-Heading">Advanced Floating Functionality</h2>
 
     <div class="docs-Stack docs-Stack--stretch">
 
-      <script type="module" src="floating-ui-example.mjs"></script>
+      <div id="test"></div>
+
+      <script type="module" src="floating-ui-example.mjs" rel="preload" as="script"></script>
 
       <style>
         .example-viewport {
