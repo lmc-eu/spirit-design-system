@@ -2,10 +2,6 @@
 
 {% block content %}
 
-    <DocsSection title="Placements" stackAlignment="stretch">
-        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
-    </DocsSection>
-
     <DocsSection title="Default">
         {% include '@components/Tooltip/stories/TooltipDefault.twig' %}
     </DocsSection>
@@ -28,6 +24,10 @@
 
     <DocsSection title="Tooltip on Icon Component">
         {% include '@components/Tooltip/stories/TooltipIcon.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Placements" stackAlignment="stretch">
+        {% include '@components/Tooltip/stories/TooltipPlacements.twig' %}
     </DocsSection>
 
     <DocsSection title="Advanced Floating Functionality">
