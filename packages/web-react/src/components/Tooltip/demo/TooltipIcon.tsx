@@ -17,13 +17,7 @@ const TooltipIcon = () => {
         placement="right"
         UNSAFE_className="d-inline-block"
       >
-        <TooltipTrigger
-          boxSize={16}
-          elementType={Icon}
-          marginBottom="space-200"
-          name="info"
-          UNSAFE_className="d-inline-block"
-        />
+        <TooltipTrigger boxSize={16} elementType={Icon} name="info" UNSAFE_className="d-inline-block" />
         <TooltipPopover>Close me</TooltipPopover>
       </Tooltip>
     </div>

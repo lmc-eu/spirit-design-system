@@ -19,9 +19,6 @@ import TooltipWithLink from './TooltipWithLink';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Placements" stackAlignment="stretch">
-        <TooltipPlacements />
-      </DocsSection>
       <DocsSection title="Default">
         <TooltipDefault />
       </DocsSection>
@@ -39,6 +36,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </DocsSection>
       <DocsSection title="Tooltip on Icon Component">
         <TooltipIcon />
+      </DocsSection>
+      <DocsSection title="Placements" stackAlignment="stretch">
+        <TooltipPlacements />
       </DocsSection>
       <DocsSection title="Advanced Floating Functionality" stackAlignment="stretch">
         <TooltipAdvancedFloating />

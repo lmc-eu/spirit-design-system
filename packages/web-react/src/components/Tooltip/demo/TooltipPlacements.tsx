@@ -143,7 +143,13 @@ const TooltipPlacements = () => {
         </GridItem>
         <GridItem columnStart={2} rowStart={2}>
           <div className="mx-auto space-1200">
-            <Tooltip isOpen id="tooltip-placement" placement={placement as Placement} onToggle={() => {}}>
+            <Tooltip
+              isOpen
+              id="tooltip-placement"
+              placement={placement as Placement}
+              onToggle={() => {}}
+              enableFlipping={false}
+            >
               <TooltipTrigger elementType="div" UNSAFE_style={{ margin: '5rem auto' }}>
                 <DocsBox UNSAFE_className="px-900 py-900">
                   Click
