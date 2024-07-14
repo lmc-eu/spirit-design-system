@@ -117,7 +117,9 @@
         } @else {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
                 > .#{$field-name}__input {
-                border-color: map.get($validation-state-value, input-border-color);
+                @if $field-name != 'UNSTABLE_Toggle' {
+                    border-color: map.get($validation-state-value, input-border-color);
+                }
 
                 @if $field-name == 'Checkbox' {
                     &:indeterminate,

@@ -26,7 +26,11 @@ $helper-text-color-disabled: tokens.$text-secondary-disabled;
 
 // Inline field form components – Checkbox, Radio, etc.
 $inline-field-input-color-unchecked: tokens.$action-unselected-default;
+$inline-field-input-color-unchecked-active: tokens.$action-unselected-active;
+$inline-field-input-color-unchecked-hover: tokens.$action-unselected-hover;
 $inline-field-input-color-checked: tokens.$action-selected-default;
+$inline-field-input-color-checked-active: tokens.$action-selected-active;
+$inline-field-input-color-checked-hover: tokens.$action-selected-hover;
 $inline-field-input-outline-width: tokens.$border-width-200;
 
 // Box field form components – TextField, TextArea, etc.
