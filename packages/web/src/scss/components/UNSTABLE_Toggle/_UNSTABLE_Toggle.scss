@@ -1,0 +1,128 @@
+@use 'theme';
+@use '../../settings/cursors';
+@use '../../theme/form-fields' as form-fields-theme;
+@use '../../tools/form-fields' as form-fields-tools;
+@use '../../tools/svg';
+
+$_field-name: 'UNSTABLE_Toggle';
+
+.UNSTABLE_Toggle {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    max-width: theme.$max-width;
+    margin-block: form-fields-theme.$gap;
+    cursor: cursors.$form-fields;
+}
+
+.UNSTABLE_Toggle--fluid {
+    max-width: none;
+}
+
+.UNSTABLE_Toggle__text {
+    margin-right: form-fields-theme.$gap;
+}
+
+.UNSTABLE_Toggle__label {
+    @include form-fields-tools.inline-field-label();
+}
+
+.UNSTABLE_Toggle__label--hidden {
+    @include form-fields-tools.label-hidden();
+}
+
+.UNSTABLE_Toggle__label--required::after {
+    @include form-fields-tools.label-required();
+}
+
+.UNSTABLE_Toggle__input {
+    @include form-fields-tools.inline-field-input();
+
+    flex-shrink: 0;
+    width: theme.$input-width;
+    height: theme.$input-height;
+    border: theme.$input-border-width solid form-fields-theme.$inline-field-input-color-unchecked;
+    border-radius: theme.$input-border-radius;
+    background-image: svg.escape(theme.$input-mark);
+    background-position-x: theme.$input-mark-position-x;
+    background-position-y: theme.$input-mark-position-y;
+    background-size: theme.$input-mark-width theme.$input-mark-height;
+    background-repeat: no-repeat;
+    background-color: form-fields-theme.$inline-field-input-color-unchecked;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition-property: border-color, background-color, background-position;
+        transition-duration: theme.$input-transition-duration;
+        transition-timing-function: theme.$input-transition-timing;
+    }
+
+    &:focus {
+        background-color: form-fields-theme.$inline-field-input-color-unchecked-active;
+        box-shadow: theme.$input-focus-shadow;
+    }
+
+    &:checked {
+        border-color: form-fields-theme.$inline-field-input-color-checked;
+        background-position-x: theme.$input-mark-position-x-checked;
+        background-color: form-fields-theme.$inline-field-input-color-checked;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$inline-field-input-color-unchecked-hover;
+        }
+
+        &:checked:hover {
+            background-color: form-fields-theme.$inline-field-input-color-checked-hover;
+        }
+    }
+}
+
+.UNSTABLE_Toggle__input--indicators {
+    background-image: svg.escape(theme.$input-mark-indicators);
+}
+
+.UNSTABLE_Toggle__validationText,
+.UNSTABLE_Toggle > .UNSTABLE_Toggle__text > [data-spirit-element='validation_text'] {
+    @include form-fields-tools.validation-text();
+}
+
+.UNSTABLE_Toggle__helperText {
+    @include form-fields-tools.helper-text();
+}
+
+@include form-fields-tools.input-field-validation-states($_field-name);
+
+.UNSTABLE_Toggle--disabled {
+    @include form-fields-tools.inline-field-root-disabled();
+}
+
+.UNSTABLE_Toggle--disabled .UNSTABLE_Toggle__label {
+    @include form-fields-tools.label-disabled();
+}
+
+.UNSTABLE_Toggle--disabled > .UNSTABLE_Toggle__input,
+.UNSTABLE_Toggle > .UNSTABLE_Toggle__input:disabled {
+    @include form-fields-tools.input-disabled();
+
+    border-color: theme.$input-border-color-disabled;
+    background-image: svg.escape(theme.$input-mark-disabled);
+    background-color: transparent;
+}
+
+.UNSTABLE_Toggle__input:checked:focus {
+    background-color: form-fields-theme.$inline-field-input-color-checked-active;
+}
+
+.UNSTABLE_Toggle--disabled > .UNSTABLE_Toggle__input:checked,
+.UNSTABLE_Toggle > .UNSTABLE_Toggle__input:disabled:checked {
+    background-image: svg.escape(theme.$input-mark-disabled-checked);
+}
+
+.UNSTABLE_Toggle--disabled .UNSTABLE_Toggle__validationText {
+    @include form-fields-tools.validation-text-disabled();
+}
+
+.UNSTABLE_Toggle--disabled .UNSTABLE_Toggle__helperText {
+    @include form-fields-tools.helper-text-disabled();
+}
