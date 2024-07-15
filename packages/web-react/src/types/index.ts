@@ -33,5 +33,6 @@ export * from './textArea';
 export * from './textField';
 export * from './textFieldBase';
 export * from './toast';
+export * from './toggle';
 export * from './tooltip';
 export * from './visuallyHidden';
