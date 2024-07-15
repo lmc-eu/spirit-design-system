@@ -77,7 +77,7 @@ To display close button, add `isDismissible` prop to the `TooltipPopover` subcom
 
 ```html
 <Tooltip>
-  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-dismissible">I have a tooltip 😎</button>
+  <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-dismissible">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
 </Tooltip>
 ```
@@ -91,7 +91,7 @@ This setup might be preferable when you have a link in your tooltip, for example
 
 ```html
 <Tooltip>
-  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-trigger">I have a tooltip 😎</button>
+  <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-trigger">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-trigger" trigger="click">
     <!-- Only `click` trigger is active now. -->
     You can click on the link: <a href="#">Link to unknown</a>
@@ -105,7 +105,7 @@ Advanced floating functionality is provided by JavaScript plugin and by [Floatin
 
 ```html
 <Tooltip>
-  <button data-spirit-toggle="tooltip" data-spirit-target="my-tooltip-advanced">I have a tooltip 😎</button>
+  <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-advanced">I have a tooltip 😎</button>
   <TooltipPopover
     closeLabel="Close tooltip"
     id="my-tooltip-advanced"

@@ -5,8 +5,8 @@ export interface UseTooltipReturn {
   onToggle: (isOpen: boolean) => void;
 }
 
-export const useTooltip = (): UseTooltipReturn => {
-  const [isOpen, setOpen] = useState<boolean>(false);
+export const useTooltip = (isOpenProp: boolean = false): UseTooltipReturn => {
+  const [isOpen, setOpen] = useState<boolean>(isOpenProp);
 
   return {
     isOpen,

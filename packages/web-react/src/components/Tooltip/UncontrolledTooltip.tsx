@@ -4,8 +4,8 @@ import Tooltip from './Tooltip';
 import { useTooltip } from './useTooltip';
 
 export const UncontrolledTooltip = (props: Omit<SpiritTooltipProps, 'onToggle'>) => {
-  const { children, ...restProps } = props;
-  const { isOpen, onToggle } = useTooltip();
+  const { children, isOpen: isOpenProp, ...restProps } = props;
+  const { isOpen, onToggle } = useTooltip(isOpenProp);
 
   return (
     <Tooltip {...restProps} isOpen={isOpen} onToggle={onToggle}>
