@@ -1,4 +1,3 @@
-@use 'sass:map';
 @use '../../tools/breakpoint';
 @use 'theme';
 
@@ -18,7 +17,7 @@
     justify-content: center;
     list-style: none;
 
-    @include breakpoint.up(map.get(theme.$breakpoints, tablet)) {
+    @include breakpoint.up(theme.$breakpoint) {
         flex-direction: row;
     }
 }
