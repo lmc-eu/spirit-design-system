@@ -13,7 +13,9 @@ const ModalHiddenCloseButton = () => {
 
   return (
     <>
-      <Button onClick={isOpenToggle}>Open Modal</Button>
+      <Button onClick={isOpenToggle} data-test-id="modal-with-hidden-close-button">
+        Open Modal
+      </Button>
 
       <Modal
         id="example-hidden-close-button"

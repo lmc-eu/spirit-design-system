@@ -13,7 +13,9 @@ const ModalStacking = () => {
 
   return (
     <>
-      <Button onClick={toggleFirstModal}>Open Modal</Button>
+      <Button onClick={toggleFirstModal} data-test-id="modal-stacking">
+        Open Modal
+      </Button>
 
       <Modal id="example-stacking-parent" isOpen={isFirstOpen} onClose={handleFirstClose}>
         <ModalDialog>

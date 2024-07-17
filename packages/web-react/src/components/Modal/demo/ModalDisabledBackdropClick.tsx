@@ -8,7 +8,9 @@ const ModalDisabledBackdropClick = () => {
 
   return (
     <>
-      <Button onClick={toggleModal}>Open Modal</Button>
+      <Button onClick={toggleModal} data-test-id="modal-with-disabled-backdrop-click">
+        Open Modal
+      </Button>
 
       <Modal id="example-disabled-backdrop-click" isOpen={isOpen} onClose={handleClose} closeOnBackdropClick={false}>
         <ModalDialog>

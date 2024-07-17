@@ -25,7 +25,7 @@ const ModalDefault = () => {
   const [footerAlign, setFooterAlign] = useState<AlignmentXDictionaryType>(AlignmentX.RIGHT);
   const [isDockedOnMobile, setIsDockedOnMobile] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
+  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(true);
   const [isScrollable, setIsScrollable] = useState(false);
 
   const toggleModalBasic = () => setModalBasicOpen(!isModalBasicOpen);
@@ -53,7 +53,9 @@ const ModalDefault = () => {
 
   return (
     <>
-      <Button onClick={toggleModalBasic}>Open Modal</Button>
+      <Button onClick={toggleModalBasic} data-test-id="modal-basic">
+        Open Modal
+      </Button>
 
       <Modal alignmentY={modalAlign} id="example-basic" isOpen={isModalBasicOpen} onClose={handleModalBasicClose}>
         <ModalDialog
@@ -171,7 +173,9 @@ const ModalDefault = () => {
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleModalForm}>Open Modal with Form</Button>
+      <Button onClick={toggleModalForm} data-test-id="modal-with-form">
+        Open Modal with Form
+      </Button>
 
       <Modal id="example-form" isOpen={isModalFormOpen} onClose={handleModalFormClose}>
         <ModalDialog elementType="form" method="dialog">
@@ -192,7 +196,9 @@ const ModalDefault = () => {
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleModalWithDropdown}>Open Modal with Dropdown</Button>
+      <Button onClick={toggleModalWithDropdown} data-test-id="modal-with-dropdown">
+        Open Modal with Dropdown
+      </Button>
 
       <Modal id="example-dropdown" isOpen={isModalWithDropdownOpen} onClose={handleModalWithDropdownClose}>
         <ModalDialog>

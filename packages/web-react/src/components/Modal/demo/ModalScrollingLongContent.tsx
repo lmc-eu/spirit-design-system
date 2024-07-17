@@ -94,7 +94,9 @@ const ModalScrollingLongContent = () => {
 
   return (
     <>
-      <Button onClick={toggleModalLongContent}>Open Modal with Long Content</Button>
+      <Button onClick={toggleModalLongContent} data-test-id="modal-with-long-content">
+        Open Modal with Long Content
+      </Button>
 
       <Modal id="example-long-content" isOpen={isModalLongContentOpen} onClose={handleModalLongContentClose}>
         <ModalDialog>
@@ -126,7 +128,9 @@ const ModalScrollingLongContent = () => {
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleModalScrollingInside}>Open Modal with Scrolling Inside</Button>
+      <Button onClick={toggleModalScrollingInside} data-test-id="modal-with-scrolling-inside">
+        Open Modal with Scrolling Inside
+      </Button>
 
       <Modal id="example-scrolling-modal" isOpen={isModalScrollingInsideOpen} onClose={handleModalScrollingInsideClose}>
         <ModalDialog isScrollable>
@@ -165,7 +169,9 @@ const ModalScrollingLongContent = () => {
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleModalScrollView}>Open Modal with ScrollView</Button>
+      <Button onClick={toggleModalScrollView} data-test-id="modal-with-scrollview">
+        Open Modal with ScrollView
+      </Button>
 
       <Modal id="example-scroll-view" isOpen={isModalScrollViewOpen} onClose={handleModalScrollViewClose}>
         <ModalDialog isScrollable>
@@ -194,7 +200,9 @@ const ModalScrollingLongContent = () => {
         </ModalDialog>
       </Modal>
 
-      <Button onClick={toggleModalCustomHeight}>Open Modal with Custom Height</Button>
+      <Button onClick={toggleModalCustomHeight} data-test-id="modal-with-custom-height">
+        Open Modal with Custom Height
+      </Button>
 
       <Modal id="example-custom-height" isOpen={isModalCustomHeightOpen} onClose={handleModalCustomHeightClose}>
         <ModalDialog
