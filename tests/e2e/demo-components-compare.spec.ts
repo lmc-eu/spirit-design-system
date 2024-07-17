@@ -1,19 +1,23 @@
 /* eslint-disable no-console -- we want to log when test fails */
 import { isTesting as isTestingEnvironment } from '@lmc-eu/spirit-common/constants/environments';
-import { SERVERS, getDevelopmentEndpointUri } from '@lmc-eu/spirit-common/constants/servers';
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 import { readdirSync } from 'fs';
+import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from '../helpers';
 
 // Tests that are intentionally broken, but will be fixed in the future
-const IGNORED_TESTS = [];
+const IGNORED_TESTS: string[] = [];
 
-const runComponentCompareTests = (testConfig) => {
+interface TestConfig {
+  packageDir: string;
+  componentsDir: string;
+  srcDir?: string;
+  packageName: string;
+}
+
+const runComponentCompareTests = (testConfig: TestConfig) => {
   const { packageDir, componentsDir, srcDir = '', packageName } = testConfig;
   if (packageName) {
-    const formattedPackageName = packageName
-      .split('-')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    const formattedPackageName = formatPackageName(packageName);
 
     test.describe(`Demo ${formattedPackageName} Components`, () => {
       const componentDirs = readdirSync(`${packageDir}${srcDir}${componentsDir}`, { withFileTypes: true })
@@ -30,29 +34,10 @@ const runComponentCompareTests = (testConfig) => {
       for (const component of componentDirs) {
         test(`test demo ${formattedPackageName} component ${component}`, async ({ page }) => {
           try {
-            await page.goto(
-              `${
-                isTestingEnvironment()
-                  ? SERVERS.TESTING[packageName]
-                  : getDevelopmentEndpointUri(packageName, { isDocker: packageName !== 'web-twig' })
-              }${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`,
-            );
-            // wait for fonts to load
-            await page.evaluate(() => document.fonts.ready);
-            // wait for images to load
-            await page.waitForFunction(() => {
-              const images = Array.from(document.querySelectorAll('img'));
-
-              return images.every((img) => img.complete);
-            });
-            // wait for transitions to finish
-            await page.waitForLoadState();
-            // disable animations to avoid flaky screenshots
-            await page.addStyleTag({ content: '*, *::before, *::after { animation-iteration-count: 1 !important }' });
-            await expect(page).toHaveScreenshot(`${component}.png`, {
-              animations: 'disabled',
-              fullPage: true,
-            });
+            const url = getServerUrl(packageName);
+            await page.goto(`${url}${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`);
+            await waitForPageLoad(page);
+            await takeScreenshot(page, `${component}`, { fullPage: true });
           } catch (error) {
             // beware of the case insensitive systems; keep the prefix in the small case
             if (!component.startsWith('unstable_')) {
@@ -71,7 +56,7 @@ const runComponentCompareTests = (testConfig) => {
   }
 };
 
-const testConfigs = [
+const testConfigs: TestConfig[] = [
   {
     componentsDir: '/src/scss/components',
     packageDir: 'packages/web',
@@ -82,13 +67,16 @@ const testConfigs = [
     packageDir: 'packages/web-react',
     packageName: 'web-react',
   },
-  // Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
-  !isTestingEnvironment() && {
+];
+
+// Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
+if (!isTestingEnvironment()) {
+  testConfigs.push({
     componentsDir: '/components',
     packageDir: 'packages/web-twig',
     packageName: 'web-twig',
     srcDir: '/src/Resources',
-  },
-];
+  });
+}
 
 testConfigs.forEach(runComponentCompareTests);
