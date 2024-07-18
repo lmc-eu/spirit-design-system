@@ -70,6 +70,96 @@
 </section>
 
 <section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Custom Spacing</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div
+      class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4"
+      style="
+        --grid-spacing-x: var(--spirit-space-1000);
+        --grid-spacing-y: var(--spirit-space-1000);
+      "
+    >
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Responsive Custom Spacing</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div
+      class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4"
+      style="
+        --grid-spacing-x: var(--spirit-space-1000);
+        --grid-spacing-x-tablet: var(--spirit-space-900);
+        --grid-spacing-x-desktop: var(--spirit-space-1200);
+        --grid-spacing-y: var(--spirit-space-800);
+        --grid-spacing-y-tablet: var(--spirit-space-1000);
+        --grid-spacing-y-desktop: var(--spirit-space-0);
+      "
+    >
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Responsive Custom Horizontal Spacing</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div
+      class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4"
+      style="
+        --grid-spacing-x: var(--spirit-space-100);
+        --grid-spacing-x-tablet: var(--spirit-space-400);
+        --grid-spacing-x-desktop: var(--spirit-space-900);
+      "
+    >
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Responsive Custom Vertical Spacing</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div
+      class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4"
+      style="
+        --grid-spacing-y: var(--spirit-space-100);
+        --grid-spacing-y-tablet: var(--spirit-space-400);
+        --grid-spacing-y-desktop: var(--spirit-space-900);
+      "
+    >
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+      <div class="docs-Box docs-Box--small">1/2, 1/3, 1/4</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
   <h2 class="docs-Heading">Grid Item</h2>
   <div class="docs-Stack docs-Stack--start">
 
@@ -100,6 +190,7 @@
 
   </div>
 </section>
+
 <section class="UNSTABLE_Section">
   <h2 class="docs-Heading">Responsive Grid Item</h2>
   <div class="docs-Stack docs-Stack--start">
@@ -133,99 +224,100 @@
     </div>
 
   </div>
-  </section>
-  <section class="UNSTABLE_Section">
-    <h2 class="docs-Heading">Nested Grid with Grid Item</h2>
-    <div class="docs-Stack docs-Stack--start">
+</section>
 
-      <div class="Grid">
-        <div
-          class="GridItem"
-          style="
-            --grid-item-column-start: 1;
-            --grid-item-column-end: 9;
-            --grid-item-column-end-tablet: 10;
-          "
-        >
-          <div class="bg-cover py-400">
-            <div class="Grid">
-              <div
-                class="GridItem"
-                style="
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Nested Grid with Grid Item</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div class="Grid">
+      <div
+        class="GridItem"
+        style="
+          --grid-item-column-start: 1;
+          --grid-item-column-end: 9;
+          --grid-item-column-end-tablet: 10;
+        "
+      >
+        <div class="bg-cover py-400">
+          <div class="Grid">
+            <div
+              class="GridItem"
+              style="
                 --grid-item-column-start: 1;
                 --grid-item-column-end: span 4;
               "
-              >
-                <div class="docs-Box docs-Box--small">
-                  First Nested Content
-                </div>
+            >
+              <div class="docs-Box docs-Box--small">
+                First Nested Content
               </div>
-              <div
-                class="GridItem"
-                style="
+            </div>
+            <div
+              class="GridItem"
+              style="
                 --grid-item-column-start: 6;
                 --grid-item-column-end: span 5;
               "
-              >
-                <div class="docs-Box docs-Box--small">
-                  Second Nested Content
-                </div>
+            >
+              <div class="docs-Box docs-Box--small">
+                Second Nested Content
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="GridItem"
-          style="
-            --grid-item-column-start: 9;
-            --grid-item-column-end: span 4;
-            --grid-item-column-start-tablet: 10;
-            --grid-item-column-end-tablet: span 3;
-          "
-        >
-          <div class="docs-Box docs-Box--small">
-            Sidebar
-          </div>
+      </div>
+      <div
+        class="GridItem"
+        style="
+          --grid-item-column-start: 9;
+          --grid-item-column-end: span 4;
+          --grid-item-column-start-tablet: 10;
+          --grid-item-column-end-tablet: span 3;
+        "
+      >
+        <div class="docs-Box docs-Box--small">
+          Sidebar
         </div>
       </div>
-
     </div>
-  </section>
 
-  <section class="UNSTABLE_Section">
-    <h2 class="docs-Heading">Grid Item with Sidebar in Second Row on Desktop</h2>
-    <div class="docs-Stack docs-Stack--start">
+  </div>
+</section>
 
-      <div class="Grid">
-        <div
-          class="GridItem"
-          style="
-            --grid-item-column-start: 1;
-            --grid-item-column-end: 8;
-          "
-        >
-          <div class="docs-Box docs-Box--small">
-            Content
-          </div>
-        </div>
-        <div
-          class="GridItem"
-          style="
-            --grid-item-column-start: 9;
-            --grid-item-column-end: span 4;
-            --grid-item-row-start-desktop: 2;
-          "
-        >
-          <div class="docs-Box docs-Box--small">
-            Sidebar
-          </div>
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Grid Item with Sidebar in Second Row on Desktop</h2>
+  <div class="docs-Stack docs-Stack--start">
+
+    <div class="Grid">
+      <div
+        class="GridItem"
+        style="
+          --grid-item-column-start: 1;
+          --grid-item-column-end: 8;
+        "
+      >
+        <div class="docs-Box docs-Box--small">
+          Content
         </div>
       </div>
-
+      <div
+        class="GridItem"
+        style="
+          --grid-item-column-start: 9;
+          --grid-item-column-end: span 4;
+          --grid-item-row-start-desktop: 2;
+        "
+      >
+        <div class="docs-Box docs-Box--small">
+          Sidebar
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="UNSTABLE_Section">
+  </div>
+</section>
+
+<section class="UNSTABLE_Section">
     <h2 class="docs-Heading">Responsive Centered Grid Item</h2>
     <div class="docs-Stack docs-Stack--start">
 

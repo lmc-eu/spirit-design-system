@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:string';
 @use '../../tools/breakpoint';
 @use 'theme';
 
@@ -10,21 +11,19 @@
 }
 
 .Stack--hasSpacing {
-    // stylelint-disable-next-line custom-property-no-missing-var-function -- We are only building the fallback value here.
-    $property-name: --stack-spacing;
+    $property-name: '--stack-spacing';
     $fallback: theme.$spacing-fallback;
 
     @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
         @if $breakpoint-value > 0 {
-            // stylelint-disable-next-line custom-property-no-missing-var-function -- We are only building the fallback value here.
-            $property-name: --stack-spacing-#{$breakpoint-name};
+            $property-name: '--stack-spacing-#{$breakpoint-name}';
         }
 
         @include breakpoint.up($breakpoint-value) {
-            --stack-gap: var(#{$property-name}, #{$fallback});
+            --stack-gap: var(#{string.unquote($property-name)}, #{$fallback});
         }
 
-        $fallback: var(#{$property-name}, #{$fallback});
+        $fallback: var(#{string.unquote($property-name)}, #{$fallback});
     }
 
     gap: var(--stack-gap);
@@ -36,7 +35,7 @@
     gap: 0;
 }
 
-// stylelint-disable selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type.
+// stylelint-disable selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type to avoid inheritance of spacing for nested Stack.
 .Stack > * {
     margin-block: 0;
 }

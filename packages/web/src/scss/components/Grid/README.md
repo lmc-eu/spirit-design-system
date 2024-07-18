@@ -58,6 +58,62 @@ Responsive columns:
 12-column guides. This behavior is intentional as the 5-column grid serves to
 equally distribute 5 items in a row.
 
+## Custom Spacing
+
+Use CSS custom properties to define custom gutters between items. Set the `--grid-spacing-x` or the `--grid-spacing-y`
+property to one of spacing token values defined on the `:root` element, e.g. `--grid-spacing-y: var(--spirit-space-1200)`.
+This will set the spacing between rows to `var(--spirit-space-1200)` for all breakpoints.
+
+```html
+<div class="Grid Grid--cols-2 Grid--tablet--cols-3" style="--grid-spacing-y: var(--spirit-space-1200)">
+  <span>col 1</span>
+  <span>col 2</span>
+  <span>col 3</span>
+  <span>col 4</span>
+  <span>col 5</span>
+  <span>col 6</span>
+</ul>
+```
+
+ℹ️ We highly discourage you from using absolute values like `--grid-spacing-y: 1rem`. It will work, but you will lose
+the consistency between the spacing and the design tokens.
+
+If you need to set custom spacing from a specific breakpoint, use the `--grid-spacing-x-{breakpoint}` or the `--grid-spacing-y-{breakpoint}` property,
+e.g. `--grid-spacing-y-tablet: var(--spirit-space-900)`. The breakpoint value must be one of the breakpoint tokens
+except for the `mobile` breakpoint where you don't need the suffix at all. The spacing is set to all larger breakpoints
+automatically if you don't set them explicitly. E.g. if you set only `--grid-spacing-y-tablet: var(--spirit-space-900)`
+the spacing will be set to `var(--spirit-space-900)` for `tablet` and `desktop` breakpoints while on the `mobile`
+breakpoint the default spacing will be used.
+
+Custom responsive spacing:
+
+```html
+<div
+  class="Grid Grid--cols-2 Grid--tablet--cols-3"
+  style="--grid-spacing-x: var(--spirit-space-1000); --grid-spacing-y: var(--spirit-space-1000); --grid-spacing-x-tablet: var(--spirit-space-1100); --grid-spacing-y-tablet: var(--spirit-space-1100); --grid-spacing-x-desktop: var(--spirit-space-1200); --grid-spacing-y-desktop: var(--spirit-space-1200)"
+>
+  <span>col 1</span>
+  <span>col 2</span>
+  <span>col 3</span>
+  <span>col 4</span>
+  <span>col 5</span>
+  <span>col 6</span>
+</ul>
+```
+
+Custom vertical (y-axis) spacing from tablet up:
+
+```html
+<div class="Grid Grid--cols-2 Grid--tablet--cols-3" style="--grid-spacing-y-tablet: var(--spirit-space-1200)">
+  <span>col 1</span>
+  <span>col 2</span>
+  <span>col 3</span>
+  <span>col 4</span>
+  <span>col 5</span>
+  <span>col 6</span>
+</ul>
+```
+
 ## Grid Item
 
 Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure

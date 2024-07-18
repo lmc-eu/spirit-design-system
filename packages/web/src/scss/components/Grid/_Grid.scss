@@ -11,6 +11,19 @@
     @include tools.gutters(theme.$grid-gutters, theme.$breakpoints);
 }
 
+// stylelint-disable-next-line selector-max-universal -- Let's be bold and reset spacing for all direct descendants regardless of their type to avoid inheritance of spacing for nested Grid.
+.Grid > * {
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        @if $breakpoint-value > 0 {
+            --grid-spacing-x-#{$breakpoint-name}: initial;
+            --grid-spacing-y-#{$breakpoint-name}: initial;
+        } @else {
+            --grid-spacing-x: initial;
+            --grid-spacing-y: initial;
+        }
+    }
+}
+
 @include tools.equal-columns(theme.$grid-equal-columns, theme.$breakpoints);
 
 @include tools.item(theme.$breakpoints);
