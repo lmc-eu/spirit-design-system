@@ -1,3 +1,4 @@
+// Generated Measures from Supernova. Do not edit manually.
 export const space0 = 0;
 export const space100 = '1px';
 export const space200 = '2px';
@@ -13,21 +14,21 @@ export const space1100 = '64px';
 export const space1200 = '80px';
 
 export const space = {
-  0: space0,
-  100: space100,
-  200: space200,
-  300: space300,
-  400: space400,
-  500: space500,
-  600: space600,
-  700: space700,
-  800: space800,
-  900: space900,
-  1000: space1000,
-  1100: space1100,
-  1200: space1200,
+    0: space0,
+    100: space100,
+    200: space200,
+    300: space300,
+    400: space400,
+    500: space500,
+    600: space600,
+    700: space700,
+    800: space800,
+    900: space900,
+    1000: space1000,
+    1100: space1100,
+    1200: space1200,
 };
 
-export const spaces = {
-  space,
+export const measures = {
+    space,
 };
