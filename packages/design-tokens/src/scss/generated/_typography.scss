@@ -29,6 +29,16 @@ $body-large-text-regular: (
     ),
 ) !default;
 
+$body-large-text-semibold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.125rem,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.55,
+    ),
+) !default;
+
 $body-medium-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -55,6 +65,16 @@ $body-medium-text-regular: (
         font-size: 1rem,
         font-style: normal,
         font-weight: 400,
+        line-height: 1.5,
+    ),
+) !default;
+
+$body-medium-text-semibold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1rem,
+        font-style: normal,
+        font-weight: 500,
         line-height: 1.5,
     ),
 ) !default;
@@ -89,6 +109,16 @@ $body-small-text-regular: (
     ),
 ) !default;
 
+$body-small-text-semibold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.875rem,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.42,
+    ),
+) !default;
+
 $body-xlarge-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -119,6 +149,16 @@ $body-xlarge-text-regular: (
     ),
 ) !default;
 
+$body-xlarge-text-semibold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 1.25rem,
+        font-style: normal,
+        font-weight: 500,
+        line-height: 1.6,
+    ),
+) !default;
+
 $body-xsmall-text-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
@@ -145,6 +185,16 @@ $body-xsmall-text-regular: (
         font-size: 0.75rem,
         font-style: normal,
         font-weight: 400,
+        line-height: 1.32,
+    ),
+) !default;
+
+$body-xsmall-text-semibold: (
+    mobile: (
+        font-family: "'Inter', sans-serif",
+        font-size: 0.75rem,
+        font-style: normal,
+        font-weight: 500,
         line-height: 1.32,
     ),
 ) !default;
@@ -273,18 +323,23 @@ $styles: (
     body-large-text-bold: $body-large-text-bold,
     body-large-text-italic: $body-large-text-italic,
     body-large-text-regular: $body-large-text-regular,
+    body-large-text-semibold: $body-large-text-semibold,
     body-medium-text-bold: $body-medium-text-bold,
     body-medium-text-italic: $body-medium-text-italic,
     body-medium-text-regular: $body-medium-text-regular,
+    body-medium-text-semibold: $body-medium-text-semibold,
     body-small-text-bold: $body-small-text-bold,
     body-small-text-italic: $body-small-text-italic,
     body-small-text-regular: $body-small-text-regular,
+    body-small-text-semibold: $body-small-text-semibold,
     body-xlarge-text-bold: $body-xlarge-text-bold,
     body-xlarge-text-italic: $body-xlarge-text-italic,
     body-xlarge-text-regular: $body-xlarge-text-regular,
+    body-xlarge-text-semibold: $body-xlarge-text-semibold,
     body-xsmall-text-bold: $body-xsmall-text-bold,
     body-xsmall-text-italic: $body-xsmall-text-italic,
     body-xsmall-text-regular: $body-xsmall-text-regular,
+    body-xsmall-text-semibold: $body-xsmall-text-semibold,
     heading-large-text: $heading-large-text,
     heading-medium-text: $heading-medium-text,
     heading-small-text: $heading-small-text,
