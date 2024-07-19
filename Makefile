@@ -36,10 +36,10 @@ outdated: ## List outdated dependencies
 	$(PKG_MANAGER) outdated || true
 	$(PKG_MANAGER) $(MONOREPO_TOOL) exec "$(PKG_MANAGER) outdated || true"
 
-unlock: ## Unlock dependencies
-	pristine
+unlock: pristine ## Unlock dependencies
 	rm -f yarn.lock packages/*/yarn.lock
 	touch package.json
+	touch yarn.lock
 
 pristine: clean ## Remove all `node_modules` and files
 	rm -rf node_modules {packages,apps}/*/node_modules
