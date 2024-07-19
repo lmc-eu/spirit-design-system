@@ -37,9 +37,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
-      - name: Fetch Git history
-        run: git fetch --no-tags --depth=50 origin main
-
       - name: Install dependencies
         run: yarn --immutable
 
