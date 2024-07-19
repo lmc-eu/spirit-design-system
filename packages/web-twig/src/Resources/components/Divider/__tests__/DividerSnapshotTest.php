@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lmc\SpiritWebTwigBundle\Resources\components\UNSTABLE_Divider;
+namespace Lmc\SpiritWebTwigBundle\Resources\components\Divider;
 
 use Lmc\SpiritWebTwigBundle\AbstractComponentSnapshotTest;
 
