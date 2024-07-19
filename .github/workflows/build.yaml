@@ -43,5 +43,16 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
+      - name: Check node_modules or .yarn/cache
+        run: |
+          ls -la
+          if [ -d "node_modules" ]; then
+            echo "node_modules exists"
+          elif [ -d ".yarn/cache" ]; then
+            echo ".yarn/cache exists"
+          else
+            echo "Dependency directory not found"
+          fi
+
       - name: Build packages
         run: yarn build
