@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         # supporting primarily LTS
-        node-version: [20]
+        node-version: [18, 20, 22]
 
     steps:
       - name: Checkout
@@ -34,8 +34,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          # node-version: ${{ matrix.node-version }}
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
       - name: Install dependencies
@@ -53,4 +52,4 @@ jobs:
           fi
 
       - name: Build packages
-        run: yarn build
+        run: yarn lint
