@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         # supporting primarily LTS
-        node-version: [18]
+        node-version: [18, 20]
 
     steps:
       - name: Checkout
