@@ -52,4 +52,4 @@ jobs:
           fi
 
       - name: Build packages
-        run: yarn lint
+        run: yarn build
