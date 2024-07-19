@@ -6,6 +6,6 @@ describe('useDividerStyleProps', () => {
     const props = {};
     const { result } = renderHook(() => useDividerStyleProps(props));
 
-    expect(result.current.classProps).toBe('UNSTABLE_Divider');
+    expect(result.current.classProps).toBe('Divider');
   });
 });

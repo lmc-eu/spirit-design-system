@@ -1,12 +1,9 @@
-# UNSTABLE Divider
+# Divider
 
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
-
-The `UNSTABLE_Divider` component is used to separate content in a layout.
+The `Divider` component is used as horizontal separator of the content.
 
 ```jsx
-<UNSTABLE_Divider />
+<Divider />
 ```
 
 ## API

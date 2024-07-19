@@ -9,7 +9,7 @@ export interface DividerStyles {
 }
 
 export function useDividerStyleProps(props: SpiritDividerProps): DividerStyles {
-  const DividerClass = useClassNamePrefix('UNSTABLE_Divider');
+  const DividerClass = useClassNamePrefix('Divider');
 
   return {
     classProps: DividerClass,
