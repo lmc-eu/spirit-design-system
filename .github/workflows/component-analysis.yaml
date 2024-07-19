@@ -15,19 +15,17 @@ jobs:
           # Omlet.dev uses Git History for analysis; Disable shallow clone
           fetch-depth: 0
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Configure Node
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-
-      - name: Enable Corepack
-        run: corepack enable
+          cache: 'yarn'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1.10.2
-        with:
-          useRollingCache: true
-          install-command: yarn --immutable
+        run: yarn --immutable --inline-builds
 
       - name: Analyze
         run: npx omlet analyze
