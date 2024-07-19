@@ -30,6 +30,7 @@ help: ## Outputs this help screen
 ## —— Dependencies 📦 ——————————————————————————————————————————————————————————————
 
 install: ## Install dependencies
+	corepack enable
 	$(PKG_MANAGER) $(PKG_MANAGER_INSTALL) $(PKG_MANAGER_FLAGS) && touch node_modules
 
 outdated: ## List outdated dependencies
