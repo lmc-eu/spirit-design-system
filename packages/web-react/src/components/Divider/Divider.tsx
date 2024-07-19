@@ -4,11 +4,11 @@ import { useStyleProps } from '../../hooks';
 import { SpiritDividerProps } from '../../types';
 import { useDividerStyleProps } from './useDividerStyleProps';
 
-export const UNSTABLE_Divider = (props: SpiritDividerProps): JSX.Element => {
+export const Divider = (props: SpiritDividerProps): JSX.Element => {
   const { classProps, props: modifiedProps } = useDividerStyleProps(props);
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return <hr {...otherProps} {...styleProps} className={classNames(classProps, styleProps.className)} />;
 };
 
-export default UNSTABLE_Divider;
+export default Divider;
