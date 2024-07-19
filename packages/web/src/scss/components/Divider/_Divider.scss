@@ -1,6 +1,6 @@
 @use 'theme' as theme;
 
-.UNSTABLE_Divider {
+.Divider {
     border-width: 0 0 theme.$border-width;
     border-style: theme.$border-style;
     border-color: theme.$border-color;
