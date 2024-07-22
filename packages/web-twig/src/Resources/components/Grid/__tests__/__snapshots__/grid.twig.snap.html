@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <div class="Grid">
+    </div>
+    <!-- Render with two columns -->
+
+    <div class="Grid Grid--cols-2">
+      <span>col 1</span>
+    </div>
+    <!-- Render as unordered list -->
+
+    <ul class="Grid">
+      <li>col 1
+      </li>
+
+      <li>col 2
+      </li>
+    </ul>
+    <!-- Render with responsive number of columns -->
+
+    <div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4">
+      <span>col 1</span> <span>col 2</span> <span>col 3</span> <span>col 4</span> <span>col 5</span> <span>col 6</span>
+    </div>
+    <!-- Render with uniform spacing for both axes -->
+
+    <div class="Grid" style="--grid-spacing-x: var(--spirit-space-1000); --grid-spacing-y: var(--spirit-space-1000);">
+      <span>col 1</span> <span>col 2</span> <span>col 3</span> <span>col 4</span> <span>col 5</span> <span>col 6</span>
+    </div>
+    <!-- Render with responsive spacing for both axes -->
+
+    <div class="Grid" style="--grid-spacing-x: var(--spirit-space-600); --grid-spacing-y: var(--spirit-space-600);--grid-spacing-x-tablet: var(--spirit-space-1000); --grid-spacing-y-tablet: var(--spirit-space-1000);--grid-spacing-x-desktop: var(--spirit-space-1200); --grid-spacing-y-desktop: var(--spirit-space-1200);">
+      <span>col 1</span> <span>col 2</span> <span>col 3</span> <span>col 4</span> <span>col 5</span> <span>col 6</span>
+    </div>
+    <!-- Render with responsive spacing for horizontal axis from tablet up -->
+
+    <div class="Grid" style="--grid-spacing-x-tablet: var(--spirit-space-1000);">
+      <span>col 1</span> <span>col 2</span> <span>col 3</span> <span>col 4</span> <span>col 5</span> <span>col 6</span>
+    </div>
+    <!-- Render with all props -->
+
+    <ul class="Grid custom-class Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4" style="--grid-spacing-x: var(--spirit-space-100); --grid-spacing-y: var(--spirit-space-100);--grid-spacing-x-tablet: var(--spirit-space-200); --grid-spacing-y-tablet: var(--spirit-space-200);--grid-spacing-x-desktop: var(--spirit-space-300); --grid-spacing-y-desktop: var(--spirit-space-300);--grid-spacing-x: var(--spirit-space-400);--grid-spacing-x-tablet: var(--spirit-space-500);--grid-spacing-x-desktop: var(--spirit-space-600);--grid-spacing-y: var(--spirit-space-700);--grid-spacing-y-tablet: var(--spirit-space-800);--grid-spacing-y-desktop: var(--spirit-space-900);">
+      <li>col 1
+      </li>
+
+      <li>col 2
+      </li>
+
+      <li>col 3
+      </li>
+
+      <li>col 4
+      </li>
+
+      <li>col 5
+      </li>
+
+      <li>col 6
+      </li>
+    </ul>
+  </body>
+</html>

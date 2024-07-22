@@ -20,7 +20,11 @@ Basic example usage:
 Advanced example usage:
 
 ```html
-<Grid cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}" elementType="section">
+<Grid
+  cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}"
+  elementType="section"
+  spacing="{{ { mobile: 'space-400', tablet: 'space-800' } }}"
+>
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -39,6 +43,8 @@ Without lexer:
         tablet: 3,
         desktop: 4,
     },
+    elementType: 'section',
+    spacing: 'space-900',
 }} %}
     {% block content %}
         <span>col 1</span>
@@ -51,12 +57,54 @@ Without lexer:
 {% endembed %}
 ```
 
+## Custom Spacing
+
+You can use the `spacing` prop to apply custom spacing between items in both horizontal and vertical directions. The prop
+accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+
+You can set custom spacing in the horizontal (x-axis) and vertical (y-axis) direction separately using the `spacingX` and `spacingY` props.
+
+Custom spacing:
+
+```twig
+<Grid spacing="space-1200">
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom responsive spacing:
+
+```twig
+<Grid spacing="{{ { mobile: 'space-400', tablet: 'space-800' } }}">
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom horizontal (x-axis) spacing:
+
+```twig
+<Grid spacingX="{{ { mobile: 'space-400', tablet: 'space-800' } }}">
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom vertical (y-axis) spacing:
+
+```twig
+<Grid spacingY="{{ { mobile: 'space-400', tablet: 'space-800' } }}">
+  <!-- Grid content -->
+</Grid>
+```
+
 ### API
 
 | Name          | Type                                                         | Default | Required | Description                                                                                                |
 | ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
 | `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | `null`  | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
 | `elementType` | `string`                                                     | `div`   | ✕        | HTML tag to render                                                                                         |
+| `spacing`     | [`spacing token` \| `object`]                                | `null`  | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items           |
+| `spacingX`    | [`spacing token` \| `object`]                                | `null`  | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                           |
+| `spacingY`    | [`spacing token` \| `object`]                                | `null`  | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
