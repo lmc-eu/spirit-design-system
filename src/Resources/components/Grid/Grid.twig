@@ -2,6 +2,9 @@
 {%- set props = props | default([]) -%}
 {%- set _cols = props.cols | default(null) -%}
 {%- set _elementType = props.elementType | default('div') -%}
+{%- set _spacing = props.spacing | default(null) -%}
+{%- set _spacingX = props.spacingX | default(null) -%}
+{%- set _spacingY = props.spacingY | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Grid' -%}
@@ -19,11 +22,50 @@
 {%- endif -%}
 
 {%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_colsClasses) -%}
+{%- set _style = '' -%}
+
+{%- if _spacing is iterable -%}
+    {%- for breakpoint, breakpointValue in _spacing -%}
+        {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+        {%- set _style =
+            _style ~
+                '--grid-spacing-x' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');
+                --grid-spacing-y' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');'
+        -%}
+    {%- endfor -%}
+{%- elseif _spacing -%}
+    {%- set _style =
+        _style ~
+            '--grid-spacing-x: var(--spirit-' ~ _spacing ~ ');
+            --grid-spacing-y: var(--spirit-' ~ _spacing ~ ');'
+    -%}
+{%- endif -%}
+
+{%- if _spacingX is iterable -%}
+    {%- for breakpoint, breakpointValue in _spacingX -%}
+        {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+        {%- set _style = _style ~ '--grid-spacing-x' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+    {%- endfor -%}
+{%- elseif _spacingX -%}
+    {%- set _style = _style ~ '--grid-spacing-x: var(--spirit-' ~ _spacingX ~ ');' -%}
+{%- endif -%}
+
+{%- if _spacingY is iterable -%}
+    {%- for breakpoint, breakpointValue in _spacingY -%}
+        {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+        {%- set _style = _style ~ '--grid-spacing-y' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+    {%- endfor -%}
+{%- elseif _spacingY -%}
+    {%- set _style = _style ~ '--grid-spacing-y: var(--spirit-' ~ _spacingY ~ ');' -%}
+{%- endif -%}
+
+{# Attributes #}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps.style | join() ~ '"' -%}
 
 <{{ _elementType }}
     {{ mainProps(props) }}
-    {{ styleProp(_styleProps) }}
     {{ classProp(_classNames) }}
+    {{ _styleAttr | raw }}
 >
     {%- block content %}{% endblock -%}
 </{{ _elementType }}>

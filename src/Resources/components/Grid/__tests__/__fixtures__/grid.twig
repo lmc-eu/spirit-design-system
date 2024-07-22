@@ -1,0 +1,69 @@
+<Grid />
+
+<!-- Render with two columns -->
+<Grid cols="2">
+    <span>col 1</span>
+</Grid>
+
+<!-- Render as unordered list -->
+<Grid elementType="ul">
+    <li>col 1</li>
+    <li>col 2</li>
+</Grid>
+
+<!-- Render with responsive number of columns -->
+<Grid cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}">
+    <span>col 1</span>
+    <span>col 2</span>
+    <span>col 3</span>
+    <span>col 4</span>
+    <span>col 5</span>
+    <span>col 6</span>
+</Grid>
+
+<!-- Render with uniform spacing for both axes -->
+<Grid spacing="space-1000">
+    <span>col 1</span>
+    <span>col 2</span>
+    <span>col 3</span>
+    <span>col 4</span>
+    <span>col 5</span>
+    <span>col 6</span>
+</Grid>
+
+<!-- Render with responsive spacing for both axes -->
+<Grid spacing="{{ { mobile: 'space-600', tablet: 'space-1000', desktop: 'space-1200' } }}">
+    <span>col 1</span>
+    <span>col 2</span>
+    <span>col 3</span>
+    <span>col 4</span>
+    <span>col 5</span>
+    <span>col 6</span>
+</Grid>
+
+<!-- Render with responsive spacing for horizontal axis from tablet up -->
+<Grid spacingX="{{ { tablet: 'space-1000' } }}">
+    <span>col 1</span>
+    <span>col 2</span>
+    <span>col 3</span>
+    <span>col 4</span>
+    <span>col 5</span>
+    <span>col 6</span>
+</Grid>
+
+<!-- Render with all props -->
+<Grid
+    cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}"
+    elementType="ul"
+    spacing="{{ { mobile: 'space-100', tablet: 'space-200', desktop: 'space-300' } }}"
+    spacingX="{{ { mobile: 'space-400', tablet: 'space-500', desktop: 'space-600' } }}"
+    spacingY="{{ { mobile: 'space-700', tablet: 'space-800', desktop: 'space-900' } }}"
+    UNSAFE_className="custom-class"
+>
+    <li>col 1</li>
+    <li>col 2</li>
+    <li>col 3</li>
+    <li>col 4</li>
+    <li>col 5</li>
+    <li>col 6</li>
+</Grid>
