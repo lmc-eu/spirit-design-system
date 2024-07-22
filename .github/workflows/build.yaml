@@ -22,7 +22,11 @@ jobs:
     strategy:
       matrix:
         # supporting primarily LTS
-        node-version: [18, 20, 22]
+        # There is a problem in colliding installation of dependencies
+        # do not know yet, what is causing this, but any combination except 18 is not working corectly
+        # @TODO: https://jira.almacareer.tech/browse/DS-1402
+        # node-version: [18, 20, 22]
+        node-version: [18]
 
     steps:
       - name: Checkout
