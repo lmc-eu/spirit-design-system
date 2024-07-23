@@ -21,6 +21,7 @@ const Tooltip = (props: SpiritTooltipProps) => {
     isOpen = false,
     onToggle,
     placement: tooltipPlacement,
+    positionStrategy = 'absolute',
     trigger = ['click', 'hover'],
     ...restProps
   } = props;
@@ -70,6 +71,7 @@ const Tooltip = (props: SpiritTooltipProps) => {
     onToggle,
     shiftProp,
     sizeProp,
+    positionStrategy,
     tooltipArrowWidth,
     tooltipMaxWidth,
     tooltipPlacement,
