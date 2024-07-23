@@ -89,10 +89,12 @@
     }
 }
 
-// 3.c
-// stylelint-disable-next-line selector-max-specificity -- High specificity to override the hover state selector 3.b.
-.Accordion__itemHeader .Accordion__itemToggle:active:first-of-type::before {
-    background-color: theme.$accordion-item-background-color-active;
+@media (hover: hover) {
+    // 3.c
+    // stylelint-disable-next-line selector-max-specificity -- High specificity to override the hover state selector 3.b.
+    .Accordion__itemHeader .Accordion__itemToggle:active:first-of-type::before {
+        background-color: theme.$accordion-item-background-color-active;
+    }
 }
 
 .Accordion__itemSide,
