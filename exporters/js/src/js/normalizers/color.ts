@@ -1,32 +1,39 @@
-const COLOR_HEX_LENGTH = {
-  SHORT: 'short',
-  LONG: 'long',
-};
+const SHORT_HEX_WITHOUT_ALPHA_LENGTH = 3;
+const SHORT_HEX_WITH_ALPHA_LENGTH = 4;
+const LONG_HEX_WITH_ALPHA_LENGTH = 8;
 
-type ColorHexLength = (typeof COLOR_HEX_LENGTH)[keyof typeof COLOR_HEX_LENGTH];
+export function normalizeColor(hexCode: string): string {
+  const isShortHex =
+    hexCode.length === SHORT_HEX_WITHOUT_ALPHA_LENGTH || hexCode.length === SHORT_HEX_WITH_ALPHA_LENGTH;
 
-export function normalizeColor(color: string, colorHexLength: ColorHexLength = COLOR_HEX_LENGTH.SHORT): string {
-  const colorParts = color.match(/.{1,2}/g);
-  let shortHex = colorHexLength === COLOR_HEX_LENGTH.SHORT;
-  colorParts &&
-    colorParts.forEach((part) => {
-      if (colorHexLength === COLOR_HEX_LENGTH.SHORT) {
-        shortHex = /^(.)\1+$/.test(part);
-      }
-    });
+  const canHexBeShortened = (hex: string) =>
+    hex.length % 2 === 0 && hex.split('').every((ch, i, arr) => (i % 2 === 0 ? ch === arr[i + 1] : true));
 
-  if (shortHex) {
-    return `${color.substring(0, 1)}${color.substring(2, 3)}${color.substring(4, 5)}${color.substring(6, 7)}`;
-  }
-
-  if (colorHexLength === COLOR_HEX_LENGTH.LONG && color.length === 3) {
-    // Convert short hex to long hex
-    // @see: https://www.30secondsofcode.org/js/s/extend-hex/
-    return color
+  const shortHex = (hex: string) =>
+    hex
       .split('')
-      .map((x) => x + x)
+      .map((char, index) => (index % 2 === 0 ? char : ''))
       .join('');
+
+  let processedHex: string;
+
+  if (isShortHex) {
+    processedHex = hexCode;
+  } else if (canHexBeShortened(hexCode)) {
+    processedHex = shortHex(hexCode);
+  } else {
+    processedHex = hexCode;
   }
 
-  return color;
+  // Remove alpha channel if it's 255 aka ff
+  if (processedHex.length === LONG_HEX_WITH_ALPHA_LENGTH && processedHex.endsWith('ff')) {
+    return `#${processedHex.slice(0, -2)}`;
+  }
+
+  // Remove alpha channel if it's 255 aka f (in short form)
+  if (processedHex.length === SHORT_HEX_WITH_ALPHA_LENGTH && processedHex.endsWith('f')) {
+    return `#${processedHex.slice(0, -1)}`;
+  }
+
+  return `#${processedHex}`;
 }
