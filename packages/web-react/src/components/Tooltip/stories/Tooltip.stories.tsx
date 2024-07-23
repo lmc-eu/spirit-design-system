@@ -33,6 +33,11 @@ const meta: Meta<typeof Tooltip> = {
       options: Object.values(Placements),
       table: { defaultValue: { summary: 'bottom' } },
     },
+    positionStrategy: {
+      control: 'select',
+      options: ['absolute', 'fixed'],
+      table: { defaultValue: { summary: 'absolute' } },
+    },
     trigger: {
       control: 'select',
       options: ['click, hover', 'hover', 'click'],
@@ -55,6 +60,7 @@ const meta: Meta<typeof Tooltip> = {
     isFocusableOnHover: false,
     isOpen: false,
     placement: 'bottom',
+    positionStrategy: 'absolute',
     trigger: ['click', 'hover'],
   },
 };

@@ -57,26 +57,27 @@ const Tooltip = (props: SpiritTooltipProps) => {
   }
 
   // Get props for the FloatingUI hook
-  const { getFloatingProps, getReferenceProps, maxWidth, middlewareData, placement, refs, x, y } = useFloating({
-    arrowRef,
-    cornerOffset: tooltipCornerOffset,
-    flipCrossAxis,
-    flipFallbackAxisSideDirection,
-    flipFallbackPlacements,
-    flipProp,
-    isDismissible,
-    isFocusableOnHover,
-    isOpen,
-    offset: tooltipOffset,
-    onToggle,
-    shiftProp,
-    sizeProp,
-    positionStrategy,
-    tooltipArrowWidth,
-    tooltipMaxWidth,
-    tooltipPlacement,
-    trigger,
-  });
+  const { getFloatingProps, getReferenceProps, maxWidth, middlewareData, placement, refs, x, y, position } =
+    useFloating({
+      arrowRef,
+      cornerOffset: tooltipCornerOffset,
+      flipCrossAxis,
+      flipFallbackAxisSideDirection,
+      flipFallbackPlacements,
+      flipProp,
+      isDismissible,
+      isFocusableOnHover,
+      isOpen,
+      offset: tooltipOffset,
+      onToggle,
+      shiftProp,
+      sizeProp,
+      positionStrategy,
+      tooltipArrowWidth,
+      tooltipMaxWidth,
+      tooltipPlacement,
+      trigger,
+    });
 
   return (
     <TooltipProvider
@@ -97,6 +98,7 @@ const Tooltip = (props: SpiritTooltipProps) => {
         triggerRef: refs.setReference,
         x,
         y,
+        position,
       }}
     >
       <div

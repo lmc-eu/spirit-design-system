@@ -81,7 +81,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
       : undefined;
 
   // Floating UI library settings
-  const { x, y, refs, context, placement, middlewareData } = useFloatingUI({
+  const { x, y, floatingStyles, refs, context, placement, middlewareData } = useFloatingUI({
     open: isOpen,
     onOpenChange: (open, event, reason) => {
       if (isHoverEnabled) {
@@ -159,5 +159,6 @@ export const useFloating = (props: UseTooltipUIProps) => {
     refs,
     x,
     y,
+    position: floatingStyles.position as Strategy,
   };
 };

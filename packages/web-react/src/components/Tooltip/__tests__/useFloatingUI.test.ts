@@ -27,6 +27,7 @@ describe('useFloatingUI', () => {
     expect(result.current.getReferenceProps).toBeDefined();
     expect(result.current.middlewareData).toBeDefined();
     expect(result.current.placement).toBeDefined();
+    expect(result.current.position).toBe('absolute');
     expect(result.current.refs).toBeDefined();
     expect(result.current.x).toBeDefined();
     expect(result.current.y).toBeDefined();
