@@ -1,4 +1,4 @@
-import { MiddlewareData, Placement } from '@floating-ui/react';
+import { MiddlewareData, Placement, Strategy } from '@floating-ui/react';
 import { HTMLProps, MutableRefObject, createContext, useContext } from 'react';
 
 type refType = ((node: HTMLElement | null) => void) & ((node: HTMLElement | null) => void);
@@ -20,6 +20,7 @@ type TooltipContextType = {
   triggerRef: refType;
   x: number;
   y: number;
+  position?: Strategy;
 };
 
 const defaultContext: TooltipContextType = {
@@ -45,6 +46,7 @@ const defaultContext: TooltipContextType = {
   triggerRef: () => {},
   x: 0,
   y: 0,
+  position: 'absolute',
 };
 
 const TooltipContext = createContext<TooltipContextType>(defaultContext);

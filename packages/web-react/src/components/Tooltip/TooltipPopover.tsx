@@ -21,6 +21,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
     tooltipRef,
     x,
     y,
+    position,
     sizeMaxWidth,
     tooltipMaxWidth,
   } = useTooltipContext();
@@ -83,6 +84,7 @@ const TooltipPopover = (props: TooltipPopoverProps) => {
       {...contentOtherProps}
       {...getFloatingProps()}
       style={{
+        position,
         top: y ?? 0,
         left: x ?? 0,
         ...getMaxHeightAndWidth(),
