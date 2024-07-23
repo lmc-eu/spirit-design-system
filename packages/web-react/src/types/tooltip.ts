@@ -1,4 +1,4 @@
-import { Placement } from '@floating-ui/react';
+import { Placement, Strategy } from '@floating-ui/react';
 import { ChildrenProps, ClickEvent, StyleProps } from './shared';
 
 export const TOOLTIP_TRIGGER = {
@@ -40,5 +40,6 @@ export interface SpiritTooltipProps extends TooltipProps, ChildrenProps {
   flipFallbackAxisSideDirection?: 'none' | 'start' | 'end';
   flipFallbackPlacements?: Placement | Placement[];
   isFocusableOnHover?: boolean;
+  positionStrategy?: Strategy;
   trigger?: TooltipTriggerType[];
 }

@@ -1,5 +1,6 @@
 import {
   Placement,
+  Strategy,
   arrow,
   autoUpdate,
   flip,
@@ -33,6 +34,7 @@ type UseTooltipUIProps = {
   isFocusableOnHover?: boolean;
   shiftProp: boolean;
   sizeProp: boolean;
+  positionStrategy?: Strategy;
   tooltipArrowWidth?: number;
   tooltipMaxWidth?: number;
   tooltipPlacement?: Placement;
@@ -58,6 +60,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
     isFocusableOnHover,
     shiftProp,
     sizeProp,
+    positionStrategy = 'absolute',
     tooltipArrowWidth = 0,
     tooltipPlacement,
     trigger,
@@ -133,6 +136,7 @@ export const useFloating = (props: UseTooltipUIProps) => {
         }),
       arrow({ element: arrowRef.current, padding: cornerOffset }), // should be the last middleware
     ],
+    strategy: positionStrategy,
   });
 
   // Floating UI library interaction hooks
