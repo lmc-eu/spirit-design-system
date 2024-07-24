@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.3.0"></a>
+
+# [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.2.0...@lmc-eu/spirit-web-twig@3.3.0) (2024-07-24)
+
+### Bug Fixes
+
+- **web-react:** Tooltip - fix reported bugs ([f0d30cf](https://github.com/lmc-eu/spirit-design-system/commit/f0d30cf))
+
+### Code Refactoring
+
+- **demo:** Switch from `docs-Section` to `UNSTABLE_Section` component ([44cfab9](https://github.com/lmc-eu/spirit-design-system/commit/44cfab9))
+
+### Documentation
+
+- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
+
+### Features
+
+- **web-twig:** Introduce Divider component [#DS-1391](https://github.com/lmc-eu/spirit-design-system/issues/DS-1391) ([f2a6b10](https://github.com/lmc-eu/spirit-design-system/commit/f2a6b10))
+- **web-twig:** ModalHeader hide close button prop DS-1063 ([4ffd63d](https://github.com/lmc-eu/spirit-design-system/commit/4ffd63d))
+
+### Tests
+
+- **e2e:** Create test for opened Modal components ([305b252](https://github.com/lmc-eu/spirit-design-system/commit/305b252))
+- **web-twig:** Fix & Enable Tooltip visual tests ([d9036d9](https://github.com/lmc-eu/spirit-design-system/commit/d9036d9))
+- **web-twig:** Update snapshots with new icons ([82118e9](https://github.com/lmc-eu/spirit-design-system/commit/82118e9))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.2.0"></a>
 
 # [3.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.1.0...@lmc-eu/spirit-web-twig@3.2.0) (2024-06-26)
