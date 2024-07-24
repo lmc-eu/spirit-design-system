@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.6"></a>
+
+## [0.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.5...@lmc-eu/spirit-storybook@0.0.6) (2024-07-24)
+
+### Dependencies
+
+- Pin dependencies ([2d0ff78](https://github.com/lmc-eu/spirit-design-system/commit/2d0ff78))
+- Update all non-major dependencies ([cca8e0a](https://github.com/lmc-eu/spirit-design-system/commit/cca8e0a))
+- Update dependency typescript to v5 ([7fa373f](https://github.com/lmc-eu/spirit-design-system/commit/7fa373f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-storybook
+
 <a name="0.0.5"></a>
 
 ## [0.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-storybook@0.0.4...@lmc-eu/spirit-storybook@0.0.5) (2024-06-26)

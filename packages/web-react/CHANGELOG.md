@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+
+# [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.2.0...@lmc-eu/spirit-web-react@2.3.0) (2024-07-24)
+
+### Bug Fixes
+
+- **web-react:** Make Tooltip positionStrategy actually work ([615c6b4](https://github.com/lmc-eu/spirit-design-system/commit/615c6b4))
+- **web-react:** Tooltip - fix reported bugs ([f0d30cf](https://github.com/lmc-eu/spirit-design-system/commit/f0d30cf))
+- **web,web-react:** Ensure `Slider` renders correctly with non-zero `min` values ([ebd606c](https://github.com/lmc-eu/spirit-design-system/commit/ebd606c))
+
+### Code Refactoring
+
+- **demo:** Switch from `docs-Section` to `UNSTABLE_Section` component ([44cfab9](https://github.com/lmc-eu/spirit-design-system/commit/44cfab9))
+
+### Dependencies
+
+- Pin dependency eslint-plugin-react-refresh to 0.4.7 ([877d604](https://github.com/lmc-eu/spirit-design-system/commit/877d604))
+
+### Documentation
+
+- **web-react:** Rename feature flag story from unsupported naming ([3d29fca](https://github.com/lmc-eu/spirit-design-system/commit/3d29fca))
+
+### Features
+
+- **web-react:** Introduce `disabled` state to `Slider` [#DS-1325](https://github.com/lmc-eu/spirit-design-system/issues/DS-1325) ([e163f3e](https://github.com/lmc-eu/spirit-design-system/commit/e163f3e))
+- **web-react:** Introduce `positionStrategy` prop for Tooltip CSS positions ([f9a6be5](https://github.com/lmc-eu/spirit-design-system/commit/f9a6be5))
+- **web-react:** Introduce Divider component [#DS-1391](https://github.com/lmc-eu/spirit-design-system/issues/DS-1391) ([3de6e90](https://github.com/lmc-eu/spirit-design-system/commit/3de6e90))
+- **web-react:** Introduce UNSTABLE_PartnerLogo component [#DS-1356](https://github.com/lmc-eu/spirit-design-system/issues/DS-1356) ([79f55b4](https://github.com/lmc-eu/spirit-design-system/commit/79f55b4))
+- **web-react:** Introduce UNSTABLE_ProductLogo component [#DS-1351](https://github.com/lmc-eu/spirit-design-system/issues/DS-1351) ([f41689c](https://github.com/lmc-eu/spirit-design-system/commit/f41689c))
+- **web-react:** Introduce UNSTABLE_Toggle component [#DS-1346](https://github.com/lmc-eu/spirit-design-system/issues/DS-1346) ([b20d633](https://github.com/lmc-eu/spirit-design-system/commit/b20d633))
+- **web-react:** Introduce UNSTABLE_Truncate component [#DS-1098](https://github.com/lmc-eu/spirit-design-system/issues/DS-1098) ([10802b8](https://github.com/lmc-eu/spirit-design-system/commit/10802b8))
+- **web-react:** ModalHeader hide close button prop DS-1063 ([3c6394a](https://github.com/lmc-eu/spirit-design-system/commit/3c6394a))
+
+### Tests
+
+- **e2e:** Create test for opened Modal components ([305b252](https://github.com/lmc-eu/spirit-design-system/commit/305b252))
+- **web-react:** Fix & Enable Tooltip visual tests ([26c38bd](https://github.com/lmc-eu/spirit-design-system/commit/26c38bd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.2.0"></a>
 
 # [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.1.0...@lmc-eu/spirit-web-react@2.2.0) (2024-06-26)

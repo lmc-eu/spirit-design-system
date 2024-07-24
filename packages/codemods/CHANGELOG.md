@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.2"></a>
+
+## [1.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.0.1...@lmc-eu/spirit-codemods@1.0.2) (2024-07-24)
+
+### Dependencies
+
+- Update dependency execa to v9 ([86ba5ff](https://github.com/lmc-eu/spirit-design-system/commit/86ba5ff))
+
+### Documentation
+
+- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.0.1"></a>
 
 ## [1.0.1](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.0.0...@lmc-eu/spirit-codemods@1.0.1) (2024-06-26)

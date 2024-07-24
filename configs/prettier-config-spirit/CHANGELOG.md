@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.1"></a>
+
+## [0.1.1](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.0...prettier-config-spirit@0.1.1) (2024-07-24)
+
+### Chores
+
+- **prettier-config:** Mark the package as private ([aa410a5](https://github.com/lmc-eu/spirit-design-system/commit/aa410a5))
+
+### Documentation
+
+- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
+
+**Note:** Version bump only for package prettier-config-spirit
+
 <a name="0.1.0"></a>
 
 # 0.1.0 (2024-06-26)

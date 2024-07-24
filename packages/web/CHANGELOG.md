@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+
+# [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.2.0...@lmc-eu/spirit-web@2.3.0) (2024-07-24)
+
+### Bug Fixes
+
+- **web,web-react:** Ensure `Slider` renders correctly with non-zero `min` values ([ebd606c](https://github.com/lmc-eu/spirit-design-system/commit/ebd606c))
+- **web:** Use UNSTABLE_Section instead of docs-Section ([4b1532c](https://github.com/lmc-eu/spirit-design-system/commit/4b1532c))
+
+### Code Refactoring
+
+- **demo:** Switch from `docs-Section` to `UNSTABLE_Section` component ([44cfab9](https://github.com/lmc-eu/spirit-design-system/commit/44cfab9))
+
+### Documentation
+
+- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
+
+### Features
+
+- **web-react:** Introduce UNSTABLE_PartnerLogo component [#DS-1356](https://github.com/lmc-eu/spirit-design-system/issues/DS-1356) ([79f55b4](https://github.com/lmc-eu/spirit-design-system/commit/79f55b4))
+- **web:** Introduce Divider component [#DS-1391](https://github.com/lmc-eu/spirit-design-system/issues/DS-1391) ([028998b](https://github.com/lmc-eu/spirit-design-system/commit/028998b))
+- **web:** Introduce UNSTABLE Toggle component [#DS-1345](https://github.com/lmc-eu/spirit-design-system/issues/DS-1345) ([100ad5e](https://github.com/lmc-eu/spirit-design-system/commit/100ad5e))
+- **web:** Introduce UNSTABLE_PartnerLogo component [#DS-1356](https://github.com/lmc-eu/spirit-design-system/issues/DS-1356) ([96f5595](https://github.com/lmc-eu/spirit-design-system/commit/96f5595))
+- **web:** Introduce UNSTABLE_ProductLogo component [#DS-1350](https://github.com/lmc-eu/spirit-design-system/issues/DS-1350) ([e7eed31](https://github.com/lmc-eu/spirit-design-system/commit/e7eed31))
+- **web:** Introduce UNSTABLE_Section component ([1dd8a6f](https://github.com/lmc-eu/spirit-design-system/commit/1dd8a6f))
+- **web:** ModalHeader hide close button prop DS-1063 ([ebb878c](https://github.com/lmc-eu/spirit-design-system/commit/ebb878c))
+
+### Tests
+
+- **e2e:** Create test for opened Modal components ([305b252](https://github.com/lmc-eu/spirit-design-system/commit/305b252))
+- **web-react:** Fix & Enable Tooltip visual tests ([26c38bd](https://github.com/lmc-eu/spirit-design-system/commit/26c38bd))
+- **web:** Fix & Enable Tooltip visual tests ([6e9b711](https://github.com/lmc-eu/spirit-design-system/commit/6e9b711))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.2.0"></a>
 
 # [2.2.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.1.0...@lmc-eu/spirit-web@2.2.0) (2024-06-26)

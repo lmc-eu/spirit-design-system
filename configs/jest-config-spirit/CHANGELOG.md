@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.3"></a>
+
+## [0.0.3](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.0.2...jest-config-spirit@0.0.3) (2024-07-24)
+
+### Documentation
+
+- Change relative path to absolute path in md [#DS-1364](https://github.com/lmc-eu/spirit-design-system/issues/DS-1364) ([ebd2b3f](https://github.com/lmc-eu/spirit-design-system/commit/ebd2b3f))
+
+**Note:** Version bump only for package jest-config-spirit
+
 <a name="0.0.2"></a>
 
 ## [0.0.2](https://github.com/lmc-eu/spirit-design-system/compare/jest-config-spirit@0.0.1...jest-config-spirit@0.0.2) (2024-06-26)

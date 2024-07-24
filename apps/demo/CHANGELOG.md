@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.6"></a>
+
+## [0.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.5...@lmc-eu/spirit-demo-app@0.0.6) (2024-07-24)
+
+### Code Refactoring
+
+- **demo:** Switch from `docs-Section` to `UNSTABLE_Section` component ([44cfab9](https://github.com/lmc-eu/spirit-design-system/commit/44cfab9))
+
+### Dependencies
+
+- Update all non-major dependencies ([cca8e0a](https://github.com/lmc-eu/spirit-design-system/commit/cca8e0a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.5"></a>
 
 ## [0.0.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.4...@lmc-eu/spirit-demo-app@0.0.5) (2024-06-26)

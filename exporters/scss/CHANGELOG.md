@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.3"></a>
+
+## [2.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.2...@lmc-eu/spirit-exporters-scss@2.0.3) (2024-07-24)
+
+### Bug Fixes
+
+- **exporter-js,exporter-scss:** Refactor color normalization to make it actually work [#DS-1394](https://github.com/lmc-eu/spirit-design-system/issues/DS-1394) ([4388423](https://github.com/lmc-eu/spirit-design-system/commit/4388423))
+
+### Chores
+
+- **exporter-scss:** Rebuild exporter ([639b5ac](https://github.com/lmc-eu/spirit-design-system/commit/639b5ac))
+
+### Dependencies
+
+- Update all non-major dependencies ([cca8e0a](https://github.com/lmc-eu/spirit-design-system/commit/cca8e0a))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-scss
+
 <a name="2.0.2"></a>
 
 ## [2.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-scss@2.0.1...@lmc-eu/spirit-exporters-scss@2.0.2) (2024-06-26)
