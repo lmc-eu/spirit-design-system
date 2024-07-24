@@ -15,12 +15,54 @@ Use Grid to build multiple column layouts. This Grid works on twelve column syst
 </Grid>
 ```
 
+## Custom Spacing
+
+You can use the `spacing` prop to apply custom spacing between items in both horizontal and vertical directions. The prop
+accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+
+You can set custom spacing in the horizontal (x-axis) and vertical (y-axis) direction separately using the `spacingX` and `spacingY` props.
+
+Custom spacing:
+
+```jsx
+<Grid spacing="space-1200">
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom responsive spacing:
+
+```jsx
+<Grid spacing={{ mobile: 'space-400', tablet: 'space-800' }}>
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom horizontal (x-axis) spacing:
+
+```jsx
+<Grid spacingX={{ mobile: 'space-400', tablet: 'space-800' }}>
+  <!-- Grid content -->
+</Grid>
+```
+
+Custom vertical (y-axis) spacing:
+
+```jsx
+<Grid spacingY={{ mobile: 'space-400', tablet: 'space-800' }}>
+  <!-- Grid content -->
+</Grid>
+```
+
 ## API
 
-| Name          | Type                                                         | Default | Required | Description                                                                                                |
-| ------------- | ------------------------------------------------------------ | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`] | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `elementType` | HTML element                                                 | `div`   | ✕        | Element type to use for the Grid                                                                           |
+| Name          | Type                                                             | Default | Required | Description                                                                                                |
+| ------------- | ---------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]     | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
+| `elementType` | HTML element                                                     | `div`   | ✕        | Element type to use for the Grid                                                                           |
+| `spacing`     | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items           |
+| `spacingX`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                           |
+| `spacingY`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                             |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]

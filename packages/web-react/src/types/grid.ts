@@ -1,5 +1,5 @@
 import { ElementType, JSXElementConstructor } from 'react';
-import { ChildrenProps, StyleProps, TransferProps } from './shared';
+import { BreakpointToken, ChildrenProps, SpaceToken, StyleProps, TransferProps } from './shared';
 
 export type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 12;
 export type GridColsBreakpoints = {
@@ -35,6 +35,12 @@ export interface GridItemElementTypeProps<T extends ElementType = 'div'> {
 
 export interface GridCustomLayoutProps {
   cols?: GridColumns | GridColsBreakpoints;
+  /** Custom spacing between items */
+  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  /** Custom horizontal spacing between items */
+  spacingX?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+  /** Custom vertical spacing between items */
+  spacingY?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
 }
 
 export interface GridItemCustomLayoutProps {
