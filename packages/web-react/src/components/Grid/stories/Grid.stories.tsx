@@ -26,6 +26,15 @@ const meta: Meta<typeof Grid> = {
         defaultValue: { summary: 'div' },
       },
     },
+    spacing: {
+      control: 'object',
+    },
+    spacingX: {
+      control: 'object',
+    },
+    spacingY: {
+      control: 'object',
+    },
   },
   args: {
     children: (
@@ -43,6 +52,21 @@ const meta: Meta<typeof Grid> = {
       desktop: 4,
     },
     elementType: 'div',
+    spacing: {
+      mobile: 'space-600',
+      tablet: 'space-600',
+      desktop: 'space-600',
+    },
+    spacingX: {
+      mobile: 'space-600',
+      tablet: 'space-600',
+      desktop: 'space-600',
+    },
+    spacingY: {
+      mobile: 'space-600',
+      tablet: 'space-600',
+      desktop: 'space-600',
+    },
   },
 };
 
