@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { MutableRefObject, useRef } from 'react';
 import { Transition, TransitionStatus } from 'react-transition-group';

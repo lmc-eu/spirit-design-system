@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { MouseEvent, RefObject, useRef, useState } from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';

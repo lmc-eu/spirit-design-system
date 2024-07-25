@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ForwardedRef, RefObject, forwardRef, useRef } from 'react';
 import { SpiritTextAreaProps } from '../../types';
 import { TextFieldBase } from '../TextFieldBase';

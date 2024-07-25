@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { ElementType, Fragment } from 'react';
 import { useStyleProps } from '../../hooks/styleProps';

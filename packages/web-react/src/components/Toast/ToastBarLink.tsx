@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { ActionLinkColors } from '../../constants';

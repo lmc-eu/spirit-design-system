@@ -1,3 +1,5 @@
+'use client';
+
 export { default as Pagination } from './Pagination';
 export { default as PaginationButtonLink } from './PaginationButtonLink';
 export { default as PaginationItem } from './PaginationItem';

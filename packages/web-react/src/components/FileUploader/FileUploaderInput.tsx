@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React from 'react';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';

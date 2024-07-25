@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, MutableRefObject, Children, cloneElement, forwardRef, ReactElement, ForwardedRef } from 'react';
 import { useCancelEvent, useClickOutside } from '../../hooks';
 import { DialogProps } from '../../types';

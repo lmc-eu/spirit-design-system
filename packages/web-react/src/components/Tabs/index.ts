@@ -1,3 +1,5 @@
+'use client';
+
 export * from './TabContent';
 export * from './TabContext';
 export * from './TabItem';

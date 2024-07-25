@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ElementType } from 'react';
 import { TabsContextType, TabsProvider } from '../../src';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { MutableRefObject, createContext, useContext } from 'react';
 import { Placements } from '../../constants';
 import { ClickEvent, PlacementDictionaryType } from '../../types';

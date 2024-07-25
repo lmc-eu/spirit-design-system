@@ -1,3 +1,5 @@
+'use client';
+
 import React, { forwardRef, ForwardedRef, RefObject } from 'react';
 import { useStyleProps } from '../../hooks';
 import { SpiritTextFieldBaseInputProps } from '../../types';

@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { useRef } from 'react';
 import { useClickOutside, useStyleProps } from '../../hooks';

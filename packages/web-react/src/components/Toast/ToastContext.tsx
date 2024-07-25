@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
 import { LinkProps, ToastColorType } from '../../types';
 import { delayedCallback } from '../../utils';

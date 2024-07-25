@@ -4,6 +4,7 @@
 [![minified + gzip](https://badgen.net/bundlephobia/minzip/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
 [![dependency count](https://badgen.net/bundlephobia/dependency-count/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
 [![tree shaking](https://badgen.net/bundlephobia/tree-shaking/@lmc-eu/spirit-web-react)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
+[![client components](https://badgen.net/badge/client%20components/supported/green)](https://bundlephobia.com/package/@lmc-eu/spirit-web-react)
 
 > React implementation of Spirit Design System components.
 

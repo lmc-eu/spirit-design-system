@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ElementType, useEffect } from 'react';
 import { HelperTextProps } from './types';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { SpiritPaginationButtonLinkProps } from '../../types';
 import { ButtonLink } from '../Button';

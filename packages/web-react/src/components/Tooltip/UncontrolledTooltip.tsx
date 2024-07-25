@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { SpiritTooltipProps } from '../../types';
 import Tooltip from './Tooltip';

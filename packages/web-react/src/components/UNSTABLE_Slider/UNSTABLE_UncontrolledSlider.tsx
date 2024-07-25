@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { UncontrolledSliderProps } from '../../types';
 import { SLIDER_DEFAULT_PROPS } from './constants';

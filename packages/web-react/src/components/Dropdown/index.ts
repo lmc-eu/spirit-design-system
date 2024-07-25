@@ -1,3 +1,5 @@
+'use client';
+
 export { default as Dropdown } from './Dropdown';
 export { default as DropdownTrigger } from './DropdownTrigger';
 export { default as DropdownPopover } from './DropdownPopover';

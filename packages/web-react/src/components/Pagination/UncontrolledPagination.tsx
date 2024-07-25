@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { SpiritUncontrolledPaginationProps } from '../../types/pagination';
 import Pagination from './Pagination';

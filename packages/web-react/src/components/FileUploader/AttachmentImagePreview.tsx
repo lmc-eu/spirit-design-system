@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { FileMetadata } from '../../types/fileUploader';
 import { IMAGE_DIMENSION } from './constants';

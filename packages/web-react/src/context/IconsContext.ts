@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext } from 'react';
 
 type IconsContextType = Record<string, string> | null | undefined;

@@ -1,3 +1,5 @@
+'use client';
+
 export * from './Button';
 export * from './useButtonAriaProps';
 export * from './useButtonStyleProps';

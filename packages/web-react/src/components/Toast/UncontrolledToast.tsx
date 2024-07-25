@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { UncontrolledToastProps } from '../../types';
 import Toast from './Toast';

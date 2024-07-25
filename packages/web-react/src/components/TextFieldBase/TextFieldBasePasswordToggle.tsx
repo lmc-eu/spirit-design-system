@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { SpiritTextFieldBasePasswordToggleProps } from '../../types';
 import { Icon } from '../Icon';
