@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { SpiritUncontrolledFileUploaderProps } from '../../types';
 import FileUploader from './FileUploader';

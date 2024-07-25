@@ -1,3 +1,5 @@
+'use client';
+
 export { default as Toast } from './Toast';
 export { default as ToastBar } from './ToastBar';
 export { default as ToastBarMessage } from './ToastBarMessage';

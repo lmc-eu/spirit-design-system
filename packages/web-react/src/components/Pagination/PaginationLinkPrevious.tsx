@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ElementType, ForwardedRef, forwardRef } from 'react';
 import { SpiritPaginationLinkPreviousNextProps } from '../../types';
 import { PAGINATION_PREVIOUS_LINK_DEFAULT_ACCESSIBILITY_LABEL } from './constants';

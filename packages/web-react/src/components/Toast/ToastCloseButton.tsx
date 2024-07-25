@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ToastCloseButtonProps } from '../../types';
 import { Button } from '../Button';

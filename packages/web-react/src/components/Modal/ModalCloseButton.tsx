@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ModalCloseButtonProps } from '../../types';
 import { Button } from '../Button';

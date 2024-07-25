@@ -1,3 +1,5 @@
+'use client';
+
 export * from './Accordion';
 export * from './Alert';
 export * from './Breadcrumbs';

@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { ElementType } from 'react';
 import { useStyleProps } from '../../hooks';

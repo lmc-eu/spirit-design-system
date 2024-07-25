@@ -5,6 +5,9 @@ error TS2322: Type 'Omit<T, "hasPasswordToggle"> & { type: string; }' is not ass
   Type 'Omit<T, "hasPasswordToggle"> & { type: string; }' is not assignable to type 'T'.
     'T' could be instantiated with an arbitrary type which could be unrelated to 'Omit<T, "hasPasswordToggle"> & { type: string; }'.
 */
+
+'use client';
+
 import React, { ComponentType, ForwardedRef } from 'react';
 import { PasswordToggleAdornmentProp } from '../../types/shared/adornments';
 import TextFieldBasePasswordToggle from './TextFieldBasePasswordToggle';

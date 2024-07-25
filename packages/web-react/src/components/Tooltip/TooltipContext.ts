@@ -1,3 +1,5 @@
+'use client';
+
 import { MiddlewareData, Placement, Strategy } from '@floating-ui/react';
 import { HTMLProps, MutableRefObject, createContext, useContext } from 'react';
 

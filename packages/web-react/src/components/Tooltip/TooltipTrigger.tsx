@@ -1,3 +1,5 @@
+'use client';
+
 import React, { ElementType, ReactNode } from 'react';
 import { useStyleProps } from '../../hooks';
 import { StyleProps, TransferProps } from '../../types';

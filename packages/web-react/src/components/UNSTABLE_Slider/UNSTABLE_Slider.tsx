@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import React, { CSSProperties, ChangeEvent, FormEvent, ForwardedRef, forwardRef } from 'react';
 import { useStyleProps } from '../../hooks';

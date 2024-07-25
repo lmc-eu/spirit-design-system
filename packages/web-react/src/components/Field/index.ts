@@ -1,3 +1,5 @@
+'use client';
+
 export * from './HelperText';
 export * from './useAriaIds';
 export * from './ValidationText';

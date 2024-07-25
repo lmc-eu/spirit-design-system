@@ -1,3 +1,5 @@
+'use client';
+
 export * from './Grid';
 export * from './GridItem';
 export * from './useGridStyleProps';
