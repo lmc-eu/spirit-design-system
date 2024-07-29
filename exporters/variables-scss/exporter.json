@@ -1,0 +1,13 @@
+{
+  "id": "almacareer.exporter-spirit-variables-scss",
+  "name": "Spirit Varibles SCSS Exporter",
+  "description": "Spirit SCSS Exporter",
+  "author": "Spirit Team",
+  "organization": "Alma Career",
+  "version": "1.0.0",
+  "usesBrands": true,
+  "usesThemes": true,
+  "executable": "/generated/exporter.js",
+  "engine": "latest",
+  "tags": ["spirit", "scss", "variables", "exporter"]
+}
