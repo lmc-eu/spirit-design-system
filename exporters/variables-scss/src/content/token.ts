@@ -1,4 +1,4 @@
-import { NamingHelper, CSSHelper, ColorFormat, StringCase } from '@supernovaio/export-helpers';
+import { ColorFormat, CSSHelper, NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { ColorToken, Token, TokenGroup } from '@supernovaio/sdk-exporters';
 
 export function colorTokenToCSS(
@@ -19,10 +19,10 @@ export function colorTokenToCSS(
     },
   });
 
-  return `  --${name}: ${value};`;
+  return `$${name}: ${value};`;
 }
 
 function tokenVariableName(token: Token, tokenGroups: Array<TokenGroup>): string {
   const parent = tokenGroups.find((group) => group.id === token.parentGroupId)!;
-  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.camelCase, parent, 'color');
+  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, ``);
 }
