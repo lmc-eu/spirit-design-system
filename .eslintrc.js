@@ -23,6 +23,7 @@ module.exports = {
     'packages/codemods',
     'exporters/scss',
     'exporters/js',
+    'exporters/variables-scss',
   ],
 
   extends: ['@lmc-eu/eslint-config-react/base', '@lmc-eu/eslint-config-react/optional', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
