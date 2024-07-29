@@ -9,7 +9,7 @@ import {
 } from '@supernovaio/sdk-exporters';
 import { ExporterConfiguration } from '../config';
 import { colorTokenToCSS } from './content/token';
-import { generateSimple } from './js/generators/simple';
+import { generateSimple } from './generators/simple';
 
 /**
  * Export entrypoint.
