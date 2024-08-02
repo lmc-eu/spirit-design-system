@@ -42,13 +42,36 @@ Without lexer:
 {% endembed %}
 ```
 
+## Custom Spacing
+
+You can use the `spacing` prop to apply custom spacing between tab items. The prop
+accepts either a spacing token (e.g. `space-100`) or an object with breakpoint keys and spacing token values.
+
+Custom spacing:
+
+```twig
+<Tablist spacing="space-1200">
+  <!-- Stacked content -->
+</TabList>
+```
+
+Custom responsive spacing:
+
+```twig
+<TabList spacing="{{ { mobile: 'space-400', tablet: 'space-800', desktop: 'space-1200' } }}">
+  <!-- Stacked content -->
+</TabList>
+```
+
 ## API
 
 The Tabs itself consists of many components which cannot be used independently.
 
 ### TabList
 
-There is no API for TabList.
+| Name      | Type                          | Default | Required | Description                                               |
+| --------- | ----------------------------- | ------- | -------- | --------------------------------------------------------- |
+| `spacing` | [`spacing token` \| `object`] | `null`  | ✕        | Apply [custom spacing](#custom-spacing) between tab items |
 
 ### TabItem
 

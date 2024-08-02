@@ -1,0 +1,16 @@
+<TabList spacing="{{ { mobile: 'space-400', tablet: 'space-800', desktop: 'space-1200' } }}">
+    <TabItem>
+        <TabLink isSelected id="pane-3-tab" data-spirit-toggle="tabs" targetPaneId="pane-3">Item 1</TabLink>
+    </TabItem>
+    <TabItem>
+        <TabLink id="pane-4-tab" data-spirit-toggle="tabs" targetPaneId="pane-4">Item 2</TabLink>
+    </TabItem>
+    <TabItem>
+        <TabLink href="https://www.example.com">Item link</TabLink>
+    </TabItem>
+    <TabItem UNSAFE_className="d-none d-desktop-block">
+        <TabLink href="https://www.example.com">Item link, desktop only</TabLink>
+    </TabItem>
+</TabList>
+<TabPane id="pane-3" isSelected label="pane-3-tab">Pane 1 content</TabPane>
+<TabPane id="pane-4" label="pane-4-tab">Pane 2 content</TabPane>
