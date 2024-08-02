@@ -1,5 +1,6 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _spacing = props.spacing | default(null) -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Tabs' -%}
@@ -8,6 +9,25 @@
 {%- set _styleProps = useStyleProps(props) -%}
 {%- set _classNames = [ _rootClassName, _styleProps.className ] -%}
 
-<ul {{ mainProps(props) }} {{ styleProp(_styleProps) }} {{ classProp(_classNames) }} role="tablist">
+{%- set _style = '' -%}
+
+{%- if _spacing is iterable -%}
+    {%- for breakpoint, breakpointValue in _spacing -%}
+        {%- set suffix = (breakpoint == 'mobile') ? '' : '-' ~ breakpoint -%}
+        {%- set _style = _style ~ '--tabs-spacing' ~ suffix ~ ': var(--spirit-' ~ breakpointValue ~ ');' -%}
+    {%- endfor -%}
+{%- elseif _spacing -%}
+    {%- set _style = _style ~ '--tabs-spacing: var(--spirit-' ~ _spacing ~ ');' -%}
+{%- endif -%}
+
+{# Attributes #}
+{%- set _styleAttr = _style or (_styleProps.style is not same as(null)) ? 'style="' ~ _style ~ _styleProps.style | join() ~ '"' -%}
+
+<ul
+    {{ mainProps(props) }}
+    {{ classProp(_classNames) }}
+    {{ _styleAttr | raw }}
+    role="tablist"
+>
     {% block content %}{% endblock %}
 </ul>
