@@ -13,6 +13,18 @@ const meta: Meta<typeof Tabs> = {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
   },
+  argTypes: {
+    spacing: {
+      control: 'object',
+    },
+  },
+  args: {
+    spacing: {
+      desktop: 'space-700',
+      mobile: 'space-500',
+      tablet: 'space-600',
+    },
+  },
 };
 
 export default meta;

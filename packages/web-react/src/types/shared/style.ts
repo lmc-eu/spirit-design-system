@@ -12,6 +12,14 @@ export type SpacingProps = {
     | Partial<Record<BreakpointToken, SpaceToken | StyleSpacingAuto>>;
 };
 
+export interface SpacingProp {
+  spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
+}
+
+export interface SpacingCSSProperties extends CSSProperties {
+  [index: `--${string}`]: string | undefined | number;
+}
+
 export interface StyleProps extends SpacingProps {
   // For backward compatibility!
   /** Sets the CSS [className](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element. Only use as a **last resort**. Use style props instead. */

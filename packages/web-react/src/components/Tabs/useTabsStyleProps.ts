@@ -1,6 +1,7 @@
 import classNames from 'classnames';
-import { useClassNamePrefix } from '../../hooks';
-import { SpiritTabsProps } from '../../types';
+import { useClassNamePrefix, useSpacingStyle } from '../../hooks';
+import { SpacingCSSProperties, SpiritTabsProps } from '../../types';
+import { useTabContext } from './TabContext';
 
 export interface TabsStyles {
   /** className props */
@@ -12,9 +13,13 @@ export interface TabsStyles {
   };
   /** props to be passed to the element */
   props: unknown;
+  styleProps: TabsCSSProperties;
 }
 
+interface TabsCSSProperties extends SpacingCSSProperties {}
+
 export function useTabsStyleProps(props: SpiritTabsProps = { selectedId: '', forTabPane: '', id: '' }): TabsStyles {
+  const { spacing } = useTabContext();
   const { selectedId, forTabPane, id, ...modifiedProps } = props;
 
   const tabsClass = useClassNamePrefix('Tabs');
@@ -22,6 +27,8 @@ export function useTabsStyleProps(props: SpiritTabsProps = { selectedId: '', for
   const tabsLinkClass = `${tabsClass}__link`;
   const tabsPaneClass = `${tabsClass}Pane`;
   const tabsSelectedClass = 'is-selected';
+
+  const tabsStyle = useSpacingStyle(spacing, 'tabs');
 
   return {
     classProps: {
@@ -35,5 +42,6 @@ export function useTabsStyleProps(props: SpiritTabsProps = { selectedId: '', for
       root: tabsClass,
     },
     props: modifiedProps,
+    styleProps: tabsStyle,
   };
 }

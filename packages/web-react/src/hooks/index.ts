@@ -8,4 +8,5 @@ export * from './useIcon';
 export * from './useIsomorphicLayoutEffect';
 export * from './useLastActiveFocus';
 export * from './useScrollControl';
+export * from './useSpacingStyle';
 export * from './useToggle';
