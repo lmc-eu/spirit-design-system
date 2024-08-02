@@ -1,5 +1,12 @@
 import { ElementType, HTMLProps } from 'react';
-import { ChildrenProps, ClickEvents, SpiritPolymorphicElementPropsWithRef, StyleProps, TransferProps } from './shared';
+import {
+  ChildrenProps,
+  ClickEvents,
+  SpacingProp,
+  SpiritPolymorphicElementPropsWithRef,
+  StyleProps,
+  TransferProps,
+} from './shared';
 
 export type TabId = string | number;
 
@@ -9,7 +16,7 @@ export interface TabItemProps extends ChildrenProps, TransferProps, ClickEvents 
   forTabPane: TabId;
 }
 
-export interface SpiritTabsProps {
+export interface SpiritTabsProps extends SpacingProp {
   /** Identification of selected tab */
   selectedId?: TabId;
   /** Identification of tab */
@@ -18,7 +25,7 @@ export interface SpiritTabsProps {
   forTabPane?: TabId;
 }
 
-export interface TabsProps extends ChildrenProps, TransferProps {
+export interface TabsProps extends ChildrenProps, SpacingProp, TransferProps {
   selectedTab: TabId;
   toggle: TabsToggler;
   onSelectionChange?: (tabId: TabId) => void;
@@ -44,11 +51,11 @@ export type SpiritTabLinkProps<E extends ElementType = 'a'> = TabLinkProps<E> &
 
 export type TabsToggler = (id: TabId) => void;
 
-export type TabsContextType = {
+export interface TabsContextType extends SpacingProp {
   selectedId: TabId;
   selectTab: TabsToggler;
   onSelectionChange?: (id: TabId) => void;
-};
+}
 
 export interface TabPaneProps extends ChildrenProps, TransferProps {
   id: TabId;
@@ -56,7 +63,7 @@ export interface TabPaneProps extends ChildrenProps, TransferProps {
 
 export type TabContentProps = ChildrenProps & TransferProps;
 
-export interface UncontrolledTabsProps extends ChildrenProps, TransferProps {
+export interface UncontrolledTabsProps extends ChildrenProps, SpacingProp, TransferProps {
   defaultSelectedTab: TabId;
   onSelectionChange?: (id: TabId) => void;
 }

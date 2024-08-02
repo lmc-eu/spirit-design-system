@@ -11,6 +11,16 @@ const meta: Meta<typeof UncontrolledTabs> = {
         type: 'number',
       },
     },
+    spacing: {
+      control: 'object',
+    },
+  },
+  args: {
+    spacing: {
+      desktop: 'space-700',
+      mobile: 'space-500',
+      tablet: 'space-600',
+    },
   },
 };
 
