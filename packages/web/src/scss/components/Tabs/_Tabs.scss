@@ -1,3 +1,4 @@
+@use '../../tools/breakpoint';
 @use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
@@ -5,10 +6,38 @@
 .Tabs {
     display: flex;
     flex: none;
-    gap: theme.$tab-gap;
+    gap: var(--tabs-gap);
     align-items: center;
     justify-content: center;
     list-style: none;
+
+    // stylelint-disable-next-line custom-property-no-missing-var-function
+    $property-name: --tabs-spacing;
+    $fallback: theme.$spacing-fallback;
+
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        @if $breakpoint-value > 0 {
+            // stylelint-disable-next-line custom-property-no-missing-var-function
+            $property-name: --tabs-spacing-#{$breakpoint-name};
+        }
+
+        @include breakpoint.up($breakpoint-value) {
+            --tabs-gap: var(#{$property-name}, #{$fallback});
+        }
+
+        $fallback: var(#{$property-name}, #{$fallback});
+    }
+}
+
+// stylelint-disable-next-line selector-max-universal -- Let's be bold and reset spacing for all direct descendants regardless of their type to avoid inheritance of spacing for nested Tabs.
+.Tabs > * {
+    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+        @if $breakpoint-value > 0 {
+            --tabs-spacing-#{$breakpoint-name}: initial;
+        } @else {
+            --tabs-spacing: initial;
+        }
+    }
 }
 
 .Tabs__item {

@@ -1,7 +1,6 @@
 {{#> web/layout/plain }}
 
 <section class="UNSTABLE_Section">
-
   <h2 class="docs-Heading">Default</h2>
 
   <div class="docs-Stack docs-Stack--stretch">
@@ -52,7 +51,62 @@
     </div>
 
   </div>
+</section>
 
+<section class="UNSTABLE_Section">
+  <h2 class="docs-Heading">Custom Spacing</h2>
+
+  <div class="docs-Stack docs-Stack--stretch">
+
+    <ul class="Tabs"
+        role="tablist"
+        style="--tabs-spacing: var(--spirit-space-400); --tabs-spacing-tablet: var(--spirit-space-800); --tabs-spacing-desktop: var(--spirit-space-1200)"
+    >
+      <li class="Tabs__item">
+        <button
+          class="Tabs__link is-selected"
+          role="tab"
+          type="button"
+          aria-selected="true"
+          id="pane-3-tab"
+          data-spirit-toggle="tabs"
+          data-spirit-target="#pane-3"
+          aria-controls="pane-3"
+        >
+          Item 1
+        </button>
+      </li>
+      <li class="Tabs__item">
+        <button
+          class="Tabs__link"
+          role="tab"
+          type="button"
+          aria-selected="false"
+          id="pane-4-tab"
+          data-spirit-toggle="tabs"
+          data-spirit-target="#pane-4"
+          aria-controls="pane-4"
+        >
+          Item 2
+        </button>
+      </li>
+      <li class="Tabs__item">
+        <a href="https://www.example.com" class="Tabs__link">Item link</a>
+      </li>
+      <li class="Tabs__item d-none d-desktop-block">
+        <a href="https://www.example.com" class="Tabs__link">Item link, desktop only</a>
+      </li>
+    </ul>
+
+    <div id="pane-3" class="TabsPane is-selected" role="tabpanel" aria-labelledby="pane-3-tab">
+      Pane 1 content
+    </div>
+
+    <div id="pane-4" class="TabsPane" role="tabpanel" aria-labelledby="pane-4-tab">
+      Pane 2 content
+    </div>
+
+  </div>
 </section>
 
 {{/web/layout/plain }}
