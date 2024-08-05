@@ -4,16 +4,29 @@
 {%- set _href = props.href -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _isUnderlined = props.isUnderlined | default(false) -%}
+{%- set _underlined = props.underlined | default('hover') -%}
+
+{# Variables #}
+{%- set rootUnderlinedClassName = '' %}
 
 {# Class names #}
 {%- set _colorClassName = _spiritClassPrefix ~ 'link-' ~ _color -%}
 {%- set _rootDisabledClassName = _isDisabled ? _spiritClassPrefix ~ 'link-disabled' : null -%}
-{%- set _rootUnderlinedClassName = _isUnderlined ? _spiritClassPrefix ~ 'link-underlined' : null -%}
+{%- if _isUnderlined or _underlined is same as('always') %}
+    {%- set rootUnderlinedClassName = _spiritClassPrefix ~ 'link-underlined' -%}
+{% elseif _underlined is same as('never') %}
+    {%- set rootUnderlinedClassName = _spiritClassPrefix ~ 'link-not-underlined' -%}
+{% endif %}
+
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _colorClassName, _rootDisabledClassName, _rootUnderlinedClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _colorClassName, _rootDisabledClassName, rootUnderlinedClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'target', 'title' ] -%}
+
+{% if _isUnderlined is defined %}
+    {% deprecated '"isUnderlined" property will be replaced in the next major version. Please use "underline" instead.' %}
+{% endif %}
 
 <a
     {{ mainProps(props, _allowedAttributes) }}
