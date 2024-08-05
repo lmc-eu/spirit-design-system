@@ -68,6 +68,11 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
       fileName: '_colors.scss',
       content: content,
     }),
+    FileHelper.createTextFile({
+      relativePath: './original-data/',
+      fileName: '_colors.json',
+      content: JSON.stringify(tokens, null, 2),
+    }),
   ];
 });
 
