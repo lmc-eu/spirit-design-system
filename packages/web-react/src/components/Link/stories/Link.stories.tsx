@@ -39,6 +39,7 @@ const meta: Meta<typeof Link> = {
     },
     isUnderlined: {
       control: 'boolean',
+      description: '⚠️ **Deprecated**. Please use `underlined` instead. \n\n',
       table: {
         defaultValue: { summary: 'false' },
       },
@@ -50,6 +51,13 @@ const meta: Meta<typeof Link> = {
         defaultValue: { summary: undefined },
       },
     },
+    underlined: {
+      control: 'select',
+      options: [undefined, 'hover', 'always', 'never'],
+      table: {
+        defaultValue: { summary: 'undefined' },
+      },
+    },
   },
   args: {
     children: 'Link',
@@ -59,6 +67,7 @@ const meta: Meta<typeof Link> = {
     isDisabled: false,
     isUnderlined: false,
     target: '_blank',
+    underlined: undefined,
   },
 };
 

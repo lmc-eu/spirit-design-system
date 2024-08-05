@@ -5,16 +5,16 @@ import Link from '../Link';
 const LinkColors = () => (
   <>
     <Link href="#" color="primary">
-      Link primary
+      Primary Link
     </Link>
 
     <Link href="#" color="secondary">
-      Link secondary
+      Secondary Link
     </Link>
 
     <DocsBox>
       <Link href="#" color="inverted">
-        Link inverted
+        Inverted Link
       </Link>
     </DocsBox>
   </>
