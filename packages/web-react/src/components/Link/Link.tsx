@@ -2,13 +2,14 @@
 
 import classNames from 'classnames';
 import React, { ElementType, forwardRef } from 'react';
-import { useStyleProps } from '../../hooks';
+import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { PolymorphicRef, SpiritLinkProps } from '../../types';
 import { useLinkStyleProps } from './useLinkStyleProps';
 
 const defaultProps: Partial<SpiritLinkProps> = {
   elementType: 'a',
   color: 'primary',
+  underline: 'hover',
 };
 
 /* We need an exception for components exported with forwardRef */
@@ -21,10 +22,22 @@ const _Link = <E extends ElementType = 'a', T = void>(
   const {
     elementType: ElementTag = defaultProps.elementType as ElementType,
     children,
+    /** @deprecated "isUnderlined" property will be replaced in the next major version. Please use "underlined" instead. */
+    isUnderlined,
     ...restProps
   } = propsWithDefaults;
-  const { classProps, props: modifiedProps } = useLinkStyleProps(restProps);
+  const { classProps, props: modifiedProps } = useLinkStyleProps({ isUnderlined, ...restProps });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+
+  useDeprecationMessage({
+    method: 'property',
+    trigger: !!isUnderlined,
+    componentName: 'Link',
+    propertyProps: {
+      deprecatedName: 'isUnderlined',
+      newName: 'underlined',
+    },
+  });
 
   return (
     <ElementTag

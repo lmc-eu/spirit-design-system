@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { actionLinkColorPropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
@@ -19,7 +19,7 @@ describe('Link', () => {
   restPropsTest(Link, 'a');
 
   it.each(linkPropsDataProvider)('should have class', (color, isUnderlined, isDisabled, expectedClassName) => {
-    const dom = render(
+    render(
       <Link
         href="/"
         color={color as ActionLinkColorsDictionaryType<string>}
@@ -28,6 +28,30 @@ describe('Link', () => {
       />,
     );
 
-    expect(dom.container.querySelector('a')).toHaveClass(expectedClassName as string);
+    expect(screen.getByRole('link')).toHaveClass(expectedClassName as string);
+  });
+
+  it('should have class link-underlined', () => {
+    render(<Link href="/" underlined="always" />);
+
+    expect(screen.getByRole('link')).toHaveClass('link-underlined');
+  });
+
+  it('should have class link-not-underlined', () => {
+    render(<Link href="/" underlined="never" />);
+
+    expect(screen.getByRole('link')).toHaveClass('link-not-underlined');
+  });
+
+  it('should have correct href', () => {
+    render(<Link href="/test" />);
+
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/test');
+  });
+
+  it('should render children', () => {
+    render(<Link href="/">Test</Link>);
+
+    expect(screen.getByRole('link')).toHaveTextContent('Test');
   });
 });

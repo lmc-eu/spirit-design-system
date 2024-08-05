@@ -7,7 +7,15 @@ import {
   TransferProps,
 } from './shared';
 
+export const UNDERLINED_OPTIONS = {
+  ALWAYS: 'always',
+  HOVER: 'hover',
+  NEVER: 'never',
+} as const;
+
 export type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
+
+export type UnderlineOptions = (typeof UNDERLINED_OPTIONS)[keyof typeof UNDERLINED_OPTIONS];
 
 export interface LinkBaseProps<C = void> extends ChildrenProps, StyleProps, TransferProps {
   /** Link's href attribute */
@@ -17,7 +25,10 @@ export interface LinkBaseProps<C = void> extends ChildrenProps, StyleProps, Tran
   /** Color of the Link */
   color?: ActionLinkColorsDictionaryType<C>;
   /** Whether is the Link underlined */
+  /** @deprecated "isUnderlined" property will be replaced in the next major version. Please use "underlined" instead. */
   isUnderlined?: boolean;
+  /** When is the Link underlined */
+  underlined?: UnderlineOptions;
   /** Whether is the Link disabled */
   isDisabled?: boolean;
 }
