@@ -10,4 +10,18 @@ describe('useLinkStyleProps', () => {
 
     expect(result.current.classProps).toBe(expectedClassName);
   });
+
+  it('should return link-underlined class', () => {
+    const props = { color: 'primary', underlined: 'always' } as SpiritLinkProps;
+    const { result } = renderHook(() => useLinkStyleProps(props));
+
+    expect(result.current.classProps).toContain('link-underlined');
+  });
+
+  it('should return link-not-underlined class', () => {
+    const props = { color: 'primary', underlined: 'never' } as SpiritLinkProps;
+    const { result } = renderHook(() => useLinkStyleProps(props));
+
+    expect(result.current.classProps).toContain('link-not-underlined');
+  });
 });
