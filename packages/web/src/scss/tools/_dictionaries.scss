@@ -3,6 +3,7 @@
 @use 'sass:meta';
 @use 'sass:string';
 @use '@tokens' as tokens;
+@use './alignment';
 @use './links';
 @use './list' as spirit-list;
 @use './placement';
@@ -71,6 +72,26 @@
         }
     } @else {
         @return $property-value;
+    }
+}
+
+// Mixin to generate alignment classes based on a dictionary
+// Parameters are:
+// * $class-name: the name of the component class to generate
+// * $dictionary-values: map of the dictionary values to generate
+// * $axis: the axis to generate, either 'x' or 'y'
+// * $infix: the infix to add to the class name
+@mixin generate-alignments($class-name, $dictionary-values, $axis, $infix: '') {
+    $prefix: spirit-string.convert-pascal-case-to-kebab-case($class-name);
+
+    @each $alignment in $dictionary-values {
+        .#{$class-name}--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(alignment-#{$axis}-#{$alignment})} {
+            @if $axis == 'x' {
+                justify-content: string.unquote(alignment.translate-physical-to-logical($alignment));
+            } @else {
+                align-items: string.unquote(alignment.translate-physical-to-logical($alignment));
+            }
+        }
     }
 }
 

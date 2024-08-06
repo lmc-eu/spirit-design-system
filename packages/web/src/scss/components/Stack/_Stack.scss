@@ -1,32 +1,23 @@
 @use 'sass:math';
 @use 'sass:string';
 @use '../../tools/breakpoint';
+@use '../../tools/reset';
+@use '../../tools/spacing';
 @use 'theme';
 
 .Stack {
     display: grid;
-    padding-left: 0;
-    margin-block: 0;
-    list-style: none;
+
+    @include reset.list();
 }
 
 .Stack--hasSpacing {
-    $property-name: '--stack-spacing';
-    $fallback: theme.$spacing-fallback;
-
-    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
-        @if $breakpoint-value > 0 {
-            $property-name: '--stack-spacing-#{$breakpoint-name}';
-        }
-
-        @include breakpoint.up($breakpoint-value) {
-            --stack-gap: var(#{string.unquote($property-name)}, #{$fallback});
-        }
-
-        $fallback: var(#{string.unquote($property-name)}, #{$fallback});
-    }
-
-    gap: var(--stack-gap);
+    @include spacing.create(
+        $output-property-name: '--stack-gap',
+        $responsive-property-base-name: '--stack-spacing',
+        $breakpoints: theme.$breakpoints,
+        $default-spacing: theme.$spacing-fallback
+    );
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider,
@@ -45,13 +36,10 @@
 }
 
 .Stack--hasSpacing > * {
-    @each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
-        @if $breakpoint-value > 0 {
-            --stack-spacing-#{$breakpoint-name}: initial;
-        } @else {
-            --stack-spacing: initial;
-        }
-    }
+    @include spacing.prevent-inheritance(
+        $responsive-property-base-name: '--stack-spacing',
+        $breakpoints: theme.$breakpoints
+    );
 }
 
 .Stack--hasSpacing.Stack--hasStartDivider > *,

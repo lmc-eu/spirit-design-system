@@ -29,4 +29,22 @@
             }
         }
     }
+
+    @include test.it('should apply reset styles for lists') {
+        @include test.assert() {
+            @include test.output() {
+                .list-test {
+                    @include reset.list();
+                }
+            }
+
+            @include test.expect() {
+                .list-test:is(ul, ol) {
+                    padding-inline-start: 0;
+                    margin-block: 0;
+                    list-style: none;
+                }
+            }
+        }
+    }
 }

@@ -1,13 +1,18 @@
 @use 'sass:list';
 @use '@tokens' as tokens;
 
+$_alignments-x-extended: stretch;
+$_alignments-y-extended: stretch;
 $_placement-sides: top, bottom, left, right;
 $_placement-side-corners: top-start, top-end, bottom-start, bottom-end, left-start, left-end, right-start, right-end;
-
 $_size-extended: xsmall, xlarge;
 
 $action-colors: primary, secondary, tertiary, inverted;
 $action-link-colors: primary, secondary, inverted;
+$alignments-x: left, center, right;
+$alignments-x-extended: list.join($alignments-x, $_alignments-x-extended);
+$alignments-y: top, center, bottom;
+$alignments-y-extended: list.join($alignments-y, $_alignments-y-extended);
 $emotion-colors: success, informative, warning, danger;
 $placement: list.join($_placement-sides, $_placement-side-corners);
 $size: small, medium, large;

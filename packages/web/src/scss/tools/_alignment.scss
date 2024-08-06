@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+$_physical-to-logical-alignment-map: (
+    top: start,
+    bottom: end,
+    left: start,
+    right: end,
+);
+
+// Function to translate physical alignment to its logical equivalent
+// Example: translate-physical-to-logical('left') will return 'start'
+@function translate-physical-to-logical($alignment) {
+    @if map.has-key($_physical-to-logical-alignment-map, $alignment) {
+        @return map.get($_physical-to-logical-alignment-map, $alignment);
+    }
+
+    @return $alignment;
+}

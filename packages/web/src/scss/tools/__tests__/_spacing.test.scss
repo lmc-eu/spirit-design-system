@@ -1,0 +1,59 @@
+@use 'true' as test;
+@use '../spacing';
+
+@include test.describe('spacing functions and mixins') {
+    @include test.it('should return correct spacing cascade') {
+        @include test.assert() {
+            @include test.output() {
+                .test {
+                    @include spacing.create(
+                        $output-property-name: '--test-output',
+                        $responsive-property-base-name: '--test-spacing',
+                        $breakpoints: (
+                            'mobile': 0,
+                            'tablet': 768px,
+                        ),
+                        $default-spacing: 16px
+                    );
+                }
+            }
+
+            @include test.expect() {
+                .test {
+                    --test-output: var(--test-spacing, 16px);
+
+                    gap: var(--test-output);
+                }
+
+                @media (width >= 768px) {
+                    .test {
+                        --test-output: var(--test-spacing-tablet, var(--test-spacing, 16px));
+                    }
+                }
+            }
+        }
+    }
+
+    @include test.it('should set up correct prevention of nested spacing') {
+        @include test.assert() {
+            @include test.output() {
+                .nested {
+                    @include spacing.prevent-inheritance(
+                        $responsive-property-base-name: '--test-spacing',
+                        $breakpoints: (
+                            'mobile': 0,
+                            'tablet': 768px,
+                        )
+                    );
+                }
+            }
+
+            @include test.expect() {
+                .nested {
+                    --test-spacing: initial;
+                    --test-spacing-tablet: initial;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use 'true' as test;
+@use '../alignment';
+
+@include test.describe('alignment functions and mixins') {
+    @include test.it('should return correct alignment value') {
+        @include test.assert() {
+            @include test.output() {
+                --alignment-x-left: #{alignment.translate-physical-to-logical('left')};
+                --alignment-x-space-between: #{alignment.translate-physical-to-logical('space-between')};
+            }
+
+            @include test.expect() {
+                --alignment-x-left: start;
+                --alignment-x-space-between: space-between;
+            }
+        }
+    }
+}

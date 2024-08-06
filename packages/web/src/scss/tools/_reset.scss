@@ -14,3 +14,11 @@
     box-shadow: none;
     cursor: cursors.$buttons;
 }
+
+@mixin list() {
+    &:is(ul, ol) {
+        padding-inline-start: 0;
+        margin-block: 0;
+        list-style: none;
+    }
+}

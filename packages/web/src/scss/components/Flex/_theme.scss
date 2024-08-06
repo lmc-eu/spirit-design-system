@@ -1,0 +1,8 @@
+@use 'sass:list';
+@use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$alignment-x-dictionary: list.join(dictionaries.$alignments-x-extended, space-between);
+$alignment-y-dictionary: list.join(dictionaries.$alignments-y-extended, baseline);
+$breakpoints: tokens.$breakpoints;
+$gap: tokens.$space-600;
