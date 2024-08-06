@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
+@use '../../tools/reset';
 @use 'theme';
 @use 'tools';
 
@@ -8,6 +9,7 @@
     grid-template-columns: repeat(theme.$grid-columns, 1fr);
     width: 100%;
 
+    @include reset.list();
     @include tools.gutters(theme.$grid-gutters, theme.$breakpoints);
 }
 

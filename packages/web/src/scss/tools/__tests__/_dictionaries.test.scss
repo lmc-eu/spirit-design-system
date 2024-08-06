@@ -3,6 +3,47 @@
 @use '../dictionaries';
 @use '@tokens' as tokens;
 
+@include test.describe('generate-alignments mixin') {
+    @include test.it('should generate correct alignment classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-alignments(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'left',
+                    ),
+                    $axis: 'x'
+                );
+            }
+
+            @include test.expect() {
+                .Test--alignmentXLeft {
+                    justify-content: start;
+                }
+            }
+        }
+
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.generate-alignments(
+                    $class-name: 'Test',
+                    $dictionary-values: (
+                        'space-between',
+                    ),
+                    $axis: 'x',
+                    $infix: 'tablet--'
+                );
+            }
+
+            @include test.expect() {
+                .Test--tablet--alignmentXSpaceBetween {
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
 @include test.describe('generate-colors mixin') {
     @include test.it('should generate correct color classes based on a dictionary') {
         @include test.assert() {

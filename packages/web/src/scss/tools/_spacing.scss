@@ -1,0 +1,43 @@
+@use 'sass:string';
+@use 'breakpoint';
+
+// Mixin to generate responsive spacing
+// Parameters are:
+// * $output-property-name: the name of the output CSS custom property consumed by CSS
+// * $responsive-property-base-name: the base name of the responsive CSS custom property set via inline styles (API)
+// * $breakpoints: the breakpoints map
+// * $default-spacing: the default spacing value
+@mixin create($output-property-name, $responsive-property-base-name, $breakpoints, $default-spacing: 0) {
+    $fallback: $default-spacing;
+    $new-property-name: $responsive-property-base-name;
+
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @if $breakpoint-value > 0 {
+            $new-property-name: '#{$responsive-property-base-name}-#{$breakpoint-name}';
+        }
+
+        @include breakpoint.up($breakpoint-value) {
+            #{$output-property-name}: var(#{string.unquote($new-property-name)}, #{$fallback});
+
+            @if $breakpoint-value == 0 {
+                gap: var(#{$output-property-name});
+            }
+        }
+
+        $fallback: var(#{string.unquote($new-property-name)}, #{$fallback});
+    }
+}
+
+// Mixin to prevent inheritance of spacing
+// Parameters are:
+// * $spacing-property-base-name: the base name of the spacing CSS custom property
+// * $breakpoints: the breakpoints map
+@mixin prevent-inheritance($responsive-property-base-name, $breakpoints) {
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        @if $breakpoint-value > 0 {
+            #{$responsive-property-base-name}-#{$breakpoint-name}: initial;
+        } @else {
+            #{$responsive-property-base-name}: initial;
+        }
+    }
+}

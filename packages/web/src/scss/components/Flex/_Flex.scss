@@ -1,0 +1,67 @@
+// 1. Prevent SVG icons from shrinking.
+// 2. Use `display: grid` so the orientation of alignmentX and alignmentY does not change as it would with `flex-direction: column`.
+// 3. Generate both `wrap` and `noWrap` classes to enable mobile-first and breakpoint-specific wrapping at the same time.
+
+@use 'sass:string';
+@use '../../tools/breakpoint';
+@use '../../tools/dictionaries';
+@use '../../tools/reset';
+@use '../../tools/spacing';
+@use 'theme';
+
+.Flex {
+    @include reset.list();
+    @include spacing.create(
+        $output-property-name: '--flex-gap',
+        $responsive-property-base-name: '--flex-spacing',
+        $breakpoints: theme.$breakpoints,
+        $default-spacing: theme.$gap
+    );
+}
+
+.Flex > svg {
+    flex: none; // 1.
+}
+
+// stylelint-disable-next-line selector-max-universal -- Let's be bold and tweak all direct descendants regardless of their type to avoid inheritance of spacing for nested Flex.
+.Flex > * {
+    @include spacing.prevent-inheritance(
+        $responsive-property-base-name: '--flex-spacing',
+        $breakpoints: theme.$breakpoints
+    );
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        .Flex--#{$infix}row {
+            display: flex;
+        }
+
+        .Flex--#{$infix}column {
+            display: grid; // 2.
+        }
+
+        .Flex--#{$infix}wrap {
+            flex-wrap: wrap; // 3.
+        }
+
+        .Flex--#{$infix}noWrap {
+            flex-wrap: nowrap; // 3.
+        }
+
+        @include dictionaries.generate-alignments(
+            $class-name: 'Flex',
+            $dictionary-values: theme.$alignment-x-dictionary,
+            $axis: 'x',
+            $infix: $infix
+        );
+        @include dictionaries.generate-alignments(
+            $class-name: 'Flex',
+            $dictionary-values: theme.$alignment-y-dictionary,
+            $axis: 'y',
+            $infix: $infix
+        );
+    }
+}
