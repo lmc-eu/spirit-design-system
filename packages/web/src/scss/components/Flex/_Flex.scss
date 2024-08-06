@@ -1,0 +1,56 @@
+// 1. Use `display: grid` so the orientation of alignmentX and alignmentY does not change as it would with `flex-direction: column`.
+
+.Flex {
+    gap: var(--spirit-space-600);
+}
+
+.Flex--row {
+    display: flex;
+}
+
+.Flex--column {
+    display: grid; // 1.
+}
+
+// TODO generate + responsive
+.Flex--alignmentXStretch,
+:where(.Flex:not([class*="Flex--alignmentX"])) {
+    justify-content: stretch; /* Or normal? */
+}
+
+.Flex--alignmentXLeft {
+    justify-content: start;
+}
+
+.Flex--alignmentXCenter {
+    justify-content: center;
+}
+
+.Flex--alignmentXRight {
+    justify-content: end;
+}
+
+.Flex--alignmentXSpaceBetween {
+    justify-content: space-between;
+}
+
+.Flex--alignmentYStretch,
+:where(.Flex:not([class*="Flex--alignmentY"])) {
+    align-items: stretch;
+}
+
+.Flex--alignmentYTop {
+    align-items: start;
+}
+
+.Flex--alignmentYCenter {
+    align-items: center;
+}
+
+.Flex--alignmentYBottom {
+    align-items: end;
+}
+
+.Flex--alignmentYBaseline {
+    align-items: baseline;
+}
