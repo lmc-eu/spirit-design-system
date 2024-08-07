@@ -1,27 +1,27 @@
+import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { useStyleProps } from '../src/hooks';
-import { SizesDictionaryType, StyleProps } from '../src/types';
+import { SizesDictionaryType, StyleProps, useStyleProps } from '../src';
 
 interface DocsBoxProps extends StyleProps {
   children: ReactNode;
   size?: SizesDictionaryType;
 }
 
-const defaultProps = {
+const defaultProps: Partial<DocsBoxProps> = {
   size: 'medium',
 };
 
-const DocsBox = ({ children, size, ...restProps }: DocsBoxProps) => {
+const DocsBox = (props: DocsBoxProps) => {
+  const propsWithDefaults = { ...defaultProps, ...props };
+  const { children, size, ...restProps } = propsWithDefaults;
   const { styleProps, props: transferProps } = useStyleProps(restProps);
   const sizeClass = size ? `docs-Box--${size}` : '';
 
   return (
-    <div {...styleProps} {...transferProps} className={`docs-Box ${sizeClass} ${styleProps.className}`}>
+    <div {...styleProps} {...transferProps} className={classNames('docs-Box', sizeClass, styleProps.className)}>
       {children}
     </div>
   );
 };
-
-DocsBox.defaultProps = defaultProps;
 
 export default DocsBox;
