@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es2021",
+    "outDir": "build",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strictNullChecks": true,
+    "typeRoots": ["src/*", "types/*"],
+    "lib": ["ES2021", "dom"]
+  }
+}
