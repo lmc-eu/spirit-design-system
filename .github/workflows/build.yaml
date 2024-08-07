@@ -32,22 +32,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Fetch Git history
-        run: git fetch --no-tags --depth=50 origin main
+          cache: 'yarn'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1.10.2
-        with:
-          useRollingCache: true
-          install-command: yarn --immutable
+        run: yarn --immutable
+
+      - name: Check node_modules or .yarn/cache
+        run: |
+          ls -la
+          if [ -d "node_modules" ]; then
+            echo "node_modules exists"
+          elif [ -d ".yarn/cache" ]; then
+            echo ".yarn/cache exists"
+          else
+            echo "Dependency directory not found"
+          fi
 
       - name: Build packages
         run: yarn build
