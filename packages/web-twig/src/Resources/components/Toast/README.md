@@ -119,7 +119,7 @@ set the `isCollapsible` prop to `false`.
 👉 Please note that the initial scroll position is always at the **top** of the queue.
 
 ```html
-<Toast isCollapsible="{" false }>
+<Toast isCollapsible={ false }>
   <!-- ToastBar components go here -->
 </Toast>
 ```
