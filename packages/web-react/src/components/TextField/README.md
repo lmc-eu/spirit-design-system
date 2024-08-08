@@ -46,7 +46,7 @@ TextField with password toggle (button to reveal the password):
 
 | Name                | Type                                                                        | Default | Required | Description                                                             |
 | ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
-| `autoComplete`      | `bool`                                                                      | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
+| `autoComplete`      | `string`                                                                    | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle` | `bool`                                                                      | —       | ✓        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
 | `id`                | `string`                                                                    | —       | ✓        | Input and label identification                                          |
