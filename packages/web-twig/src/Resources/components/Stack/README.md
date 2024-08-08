@@ -4,7 +4,7 @@
 
 Basic example usage:
 
-```html
+```twig
 <Stack>
   <div>Block 1</div>
   <div>Block 2</div>
@@ -14,7 +14,7 @@ Basic example usage:
 
 Advanced example usage:
 
-```html
+```twig
 <Stack elementType="ul" hasIntermediateDividers hasStartDivider hasEndDivider>
   <li>
     <div>List item 1</div>

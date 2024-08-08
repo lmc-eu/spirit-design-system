@@ -4,13 +4,13 @@ This is Twig implementation of the [ButtonLink][button] component.
 
 Basic example usage:
 
-```html
+```twig
 <ButtonLink href="#">Primary ButtonLink</ButtonLink>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <ButtonLink color="primary" href="#" isBlock>Primary block ButtonLink</ButtonLink>
 ```
 

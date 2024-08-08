@@ -2,19 +2,19 @@
 
 Basic usage:
 
-```html
+```twig
 <Tooltip>Hello there!</Tooltip>
 ```
 
 Custom placement:
 
-```html
+```twig
 <Tooltip placement="right">Hello there!</Tooltip>
 ```
 
 Dismissible tooltip (requires `id` to be defined):
 
-```html
+```twig
 <Tooltip id="my-tooltip" isDismissible>Hello there!</Tooltip>
 ```
 
@@ -34,7 +34,7 @@ Without lexer:
 
 ## Linking with Content
 
-```html
+```twig
 <Tooltip>
     <Link href="#" aria-describedby="my-tooltip">
         I have a tooltip
@@ -64,7 +64,7 @@ and [escape hatches][readme-escape-hatches].
 
 #### Basic
 
-```html
+```twig
 <Tooltip>
   <button>I have a tooltip!</button>
   <TooltipPopover>Hello there!</TooltipPopover>
@@ -75,7 +75,7 @@ and [escape hatches][readme-escape-hatches].
 
 To display close button, add `isDismissible` prop to the `TooltipPopover` subcomponent.
 
-```html
+```twig
 <Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-dismissible">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-dismissible" placement="right" isDismissible>Close me</TooltipPopover>
@@ -89,7 +89,7 @@ By default, both options are active, e.g., `trigger="click, hover"`.
 If you only want the `click` trigger, you need to specify the trigger, as shown in the example below.
 This setup might be preferable when you have a link in your tooltip, for example.
 
-```html
+```twig
 <Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-trigger">I have a tooltip 😎</button>
   <TooltipPopover id="my-tooltip-trigger" trigger="click">
@@ -103,7 +103,7 @@ This setup might be preferable when you have a link in your tooltip, for example
 
 Advanced floating functionality is provided by JavaScript plugin and by [Floating UI][floating-ui] library.
 
-```html
+```twig
 <Tooltip>
   <button data-spirit-toggle="tooltip" data-spirit-target="#my-tooltip-advanced">I have a tooltip 😎</button>
   <TooltipPopover
@@ -148,7 +148,7 @@ and [escape hatches][readme-escape-hatches].
 
 For full functionality, you need to provide Spirit JavaScript:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

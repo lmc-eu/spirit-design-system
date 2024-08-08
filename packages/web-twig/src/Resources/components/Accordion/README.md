@@ -4,7 +4,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 
 ## Default usage (Stay open)
 
-```html
+```twig
 <Accordion>
   <AccordionItem id="accordion-item-example-0">
     <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
@@ -44,7 +44,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 
 ## Usage with initial open state (Stay open)
 
-```html
+```twig
 <Accordion>
   <AccordionItem id="accordion-item-example-0">
     <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
@@ -67,7 +67,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 
 ## Usage with only one open item at a time
 
-```html
+```twig
 <Accordion id="accordion-example">
   <AccordionItem id="accordion-item-example-0">
     <AccordionHeader id="accordion-item-example-0-header" for="accordion-item-example-0-content">
@@ -101,7 +101,7 @@ This is Twig implementation of the [Accordion][accordion] component.
 You can pass custom content (including HTML) into the slot inside Accordion
 Header:
 
-```html
+```twig
 <AccordionHeader
   id="accordion-item-example-1-header"
   for="accordion-item-example-1-content"
@@ -222,7 +222,7 @@ and [escape hatches][readme-escape-hatches].
 
 For full functionality, you need to provide Spirit JavaScript:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

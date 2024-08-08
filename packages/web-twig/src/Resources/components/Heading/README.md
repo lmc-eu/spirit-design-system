@@ -4,13 +4,13 @@ This is Twig implementation of the [Heading][heading] component.
 
 Basic example usage:
 
-```html
+```twig
 <Heading>Heading</Heading>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Heading size="large" elementType="h2">Text content</Heading>
 ```
 

@@ -29,7 +29,7 @@ The Header is a composition of several subcomponents:
 For full functionality, you need to provide Spirit JavaScript, which will handle
 toggling of the Header component:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

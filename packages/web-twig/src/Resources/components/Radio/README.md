@@ -4,13 +4,13 @@ This is Twig implementation of the [Radio][radio] component.
 
 Basic example usage:
 
-```html
+```twig
 <Radio id="radio-default" label="Label" name="radioDefault" isChecked />
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Radio
   id="radio-advanced"
   label="some label"

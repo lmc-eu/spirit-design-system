@@ -4,7 +4,7 @@ This is Twig implementation of the [TextField][textfield] component.
 
 Basic example usage:
 
-```html
+```twig
 <TextField id="text-field-default" label="Label" name="textFieldDefault" />
 ```
 
@@ -12,7 +12,7 @@ Advanced example usage:
 
 Default TextField:
 
-```html
+```twig
 <TextField
   helperText="custom helper text"
   id="text-field-advanced"
@@ -28,7 +28,7 @@ Default TextField:
 
 TextField with password toggle (button to reveal the password):
 
-```html
+```twig
 <TextField
   hasPasswordToggle
   id="text-field-password-toggle"
@@ -92,7 +92,7 @@ and [escape hatches][readme-escape-hatches].
 To enable password toggle, first, you need to provide Spirit JavaScript,
 which will handle the functionality:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

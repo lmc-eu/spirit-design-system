@@ -4,7 +4,7 @@ This is Twig implementation of the [Container][container] component.
 
 Basic example usage:
 
-```html
+```twig
 <Container>Content</Container>
 ```
 
