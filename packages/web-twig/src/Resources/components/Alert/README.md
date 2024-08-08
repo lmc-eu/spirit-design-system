@@ -4,13 +4,13 @@ This is Twig implementation of the [Alert][alert] component.
 
 Basic example usage:
 
-```html
+```twig
 <Alert>Alert</Alert>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Alert color="danger" elementType="span" iconName="close" isCentered>Danger Alert</Alert>
 ```
 
