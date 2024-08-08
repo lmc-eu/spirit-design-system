@@ -4,13 +4,13 @@ This is Twig implementation of the Spinner component.
 
 Basic example usage:
 
-```html
+```twig
 <Spinner />
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Spinner color="secondary" boxSize="36" />
 ```
 

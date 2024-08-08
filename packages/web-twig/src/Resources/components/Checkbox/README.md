@@ -4,13 +4,13 @@ This is Twig implementation of the [Checkbox][checkbox] component.
 
 Basic example usage:
 
-```html
+```twig
 <Checkbox id="checkbox-default" label="Label" name="checkboxDefault" />
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Checkbox
   id="checkbox-advanced"
   isChecked

@@ -5,13 +5,13 @@ as seen in [inlineSVG docs][inlinesvg-docs].
 
 Basic example usage:
 
-```html
+```twig
 <Icon name="warning" />
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Icon name="warning" title="This is warning!" boxSize="32" ariaHidden="false" />
 ```
 
@@ -27,7 +27,7 @@ Without lexer:
 
 If you need to prerender the icon as a [symbol][mdn-symbol], you can use the `isSymbol` prop:
 
-```html
+```twig
 <Icon name="warning" isSymbol />
 ```
 
@@ -39,7 +39,7 @@ The ID of the symbol will be the same as the `name` prop and the whole SVG eleme
 👉 Even though the `svg` only includes the `symbol` element, the `svg` still takes some space in browser,
 so you might want to hide it using either wrapping element with `hidden` attribute or use CSS.
 
-```html
+```twig
 <div hidden>
   <Icon name="warning" isSymbol />
 </div>

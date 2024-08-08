@@ -80,7 +80,7 @@ keyboard. The Toast component tries to find the best position to be visible usin
 1. On **devices with rounded displays and/or notches** (e.g. iPhone X and newer), the Toast component is pushed inwards
    to avoid the rounded corners. The `viewport-fit="cover"` meta tag is required for this feature to work:
 
-   ```html
+   ```twig
    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
    ```
 
@@ -118,7 +118,7 @@ set the `isCollapsible` prop to `false`.
 
 👉 Please note that the initial scroll position is always at the **top** of the queue.
 
-```html
+```twig
 <Toast isCollapsible={ false }>
   <!-- ToastBar components go here -->
 </Toast>
@@ -390,7 +390,7 @@ toast.show();
 
 For full functionality you need to provide JavaScript which will handle the toggling of the Toast component.
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
