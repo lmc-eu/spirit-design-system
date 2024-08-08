@@ -6,7 +6,7 @@ This is Twig implementation of the [Grid][grid] component.
 
 Basic example usage:
 
-```html
+```twig
 <Grid>
   <span>col 1</span>
   <span>col 2</span>
@@ -19,7 +19,7 @@ Basic example usage:
 
 Advanced example usage:
 
-```html
+```twig
 <Grid
   cols="{{ { mobile: 2, tablet: 3, desktop: 4 } }}"
   elementType="section"

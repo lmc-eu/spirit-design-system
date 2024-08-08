@@ -31,7 +31,7 @@ FileUploader is a composition of a few subcomponents:
 
 For full functionality, you need to provide Spirit JavaScript:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

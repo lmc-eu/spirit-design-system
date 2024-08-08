@@ -4,13 +4,13 @@ This is Twig implementation of the [Tag][tag] component.
 
 Basic example usage:
 
-```html
+```twig
 <Tag>Tag</Tag>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Tag color="success" elementType="div" size="small" isSubtle>Tag content</Tag>
 ```
 

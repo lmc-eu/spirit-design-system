@@ -80,7 +80,7 @@ and [escape hatches][readme-escape-hatches].
 To enable auto-resizing of the textarea, first, you need to provide Spirit JavaScript,
 which will handle the functionality:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

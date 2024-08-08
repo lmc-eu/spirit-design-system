@@ -40,7 +40,7 @@ Without lexer:
 
 Example of custom usage:
 
-```html
+```twig
 <Breadcrumbs>
   <ol>
     <li class="d-none d-tablet-flex">

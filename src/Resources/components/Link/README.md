@@ -10,7 +10,7 @@ Basic example usage:
 
 Advanced example usage:
 
-```html
+```twig
 <Link
     href="#"
     color="primary"

@@ -4,13 +4,13 @@ This is Twig implementation of the [Pill][pill] component.
 
 Basic example usage:
 
-```html
+```twig
 <Pill>3</Pill>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Pill color="warning" elementType="div">333</Pill>
 ```
 
