@@ -5,6 +5,7 @@
 // 5. Disable pointer and text decoration changes for "disabled" links (intended for link-like `<button>` elements).
 // 6. Allow link stretching over the closest element with `position: relative`.
 // 7. Only links in headings can have visited state (that's our design decision).
+// 8. Disable link underline everywhere.
 
 @use 'sass:map';
 @use '@tokens' as tokens;
@@ -68,3 +69,15 @@ button.link-disabled:not(.link-underlined) {
     tokens.$action-colors,
     visited
 );
+
+// 8.
+// stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
+.link-not-underlined,
+.link-not-underlined:hover,
+.link-not-underlined:active,
+button.link-not-underlined,
+button.link-not-underlined:hover,
+button.link-not-underlined:active {
+    text-decoration: links-settings.$text-decoration-default;
+}
+// stylelint-enable selector-no-qualifying-type
