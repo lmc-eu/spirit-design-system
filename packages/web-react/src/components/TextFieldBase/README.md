@@ -42,7 +42,7 @@ TextFieldBase with password toggle (button to reveal the password):
 ## API
 
 | Name                | Type                                                                        | Default | Required | Description                                                             |
-| ------------------- |-----------------------------------------------------------------------------| ------- | -------- | ----------------------------------------------------------------------- |
+| ------------------- | --------------------------------------------------------------------------- | ------- | -------- | ----------------------------------------------------------------------- |
 | `autoComplete`      | `string`                                                                    | —       | ✕        | [Automated assistance in filling][autocomplete-attr]                    |
 | `hasPasswordToggle` | `bool`                                                                      | —       | ✕        | If true, the `type` is set to `password` and a password toggle is shown |
 | `helperText`        | `string`                                                                    | —       | ✕        | Custom helper text                                                      |
