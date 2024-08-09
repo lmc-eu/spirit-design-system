@@ -1,0 +1,275 @@
+// Generated Colors from Supernova. Do not edit manually.
+// Manually created from Figma
+$text-primary: #ffffff !default;
+$text-secondary: #e9e9e9 !default;
+$text-tertiary: #d6d6d6 !default;
+
+$emotion-danger-active: #ffffff !default;
+$emotion-danger-background: #ba3e5a !default;
+$emotion-danger-border: #ffffff !default;
+$emotion-danger-content: #e84b6f !default;
+$emotion-danger-hover: #ffffff !default;
+
+$emotion-informative-active: #ffffff !default;
+$emotion-informative-background: #3b6bab !default;
+$emotion-informative-border: #ffffff !default;
+$emotion-informative-content: #ffffff !default;
+$emotion-informative-hover: #ffffff !default;
+
+$emotion-success-active: #ffffff !default;
+$emotion-success-background: #607c13 !default;
+$emotion-success-border: #ffffff !default;
+$emotion-success-content: #88b412 !default;
+$emotion-success-hover: #ffffff !default;
+
+$emotion-warning-active: #ffffff !default;
+$emotion-warning-background: #a98300 !default;
+$emotion-warning-border: #ffffff !default;
+$emotion-warning-content: #d1a200 !default;
+$emotion-warning-hover: #ffffff !default;
+
+$custom-01-active: #ffffff !default;
+$custom-01-background: #ffffff !default;
+$custom-01-content: #ffffff !default;
+$custom-01-default: #ffffff !default;
+$custom-01-hover: #ffffff !default;
+
+$custom-02-active: #ffffff !default;
+$custom-02-background: #ffffff !default;
+$custom-02-content: #ffffff !default;
+$custom-02-default: #ffffff !default;
+$custom-02-hover: #ffffff !default;
+
+$disabled-background: #ffffff1a !default;
+$disabled-border: #ffffff33 !default;
+$disabled-foreground: #ffffff !default;
+$disabled-text: #ffffff80 !default;
+
+$border-interactive-active: #ffffff !default;
+$border-interactive-default: #ffffff !default;
+$border-interactive-error: #e84b6f !default;
+$border-interactive-hover: #ffffff !default;
+
+$border-interactive-informative: #ffffff !default;
+$border-interactive-selected: #ffffff !default;
+$border-interactive-success: #ffffff !default;
+$border-interactive-warning: #d1a200 !default;
+
+$border-secondary-default: #ffffff !default;
+
+$border-focus-default: #ffffff !default;
+
+$action-button-plain-active: #ffffff !default;
+$action-button-plain-border: #ffffff !default;
+$action-button-plain-content: #ffffff !default;
+$action-button-plain-default: #ffffff !default;
+$action-button-plain-hover: #ffffff !default;
+
+$action-button-primary-active: #ffffffbf !default;
+$action-button-primary-border: #0617ac80 !default;
+$action-button-primary-content: #0617ac !default;
+$action-button-primary-default: #ffffff !default;
+$action-button-primary-hover: #ffffffe5 !default;
+
+$action-button-secondary-active: #ffffff1a !default;
+$action-button-secondary-border: #ffffff66 !default;
+$action-button-secondary-content: #ffffff !default;
+$action-button-secondary-default: #ffffff33 !default;
+$action-button-secondary-hover: #ffffff26 !default;
+
+$action-button-tertiary-active: #00000026 !default;
+$action-button-tertiary-border: #ffffff66 !default;
+$action-button-tertiary-content: #ffffff !default;
+$action-button-tertiary-default: #ffffff00 !default;
+$action-button-tertiary-hover: #0000001a !default;
+
+$action-link-primary-active: #9d9d9d !default;
+$action-link-primary-default: #ededed !default;
+$action-link-primary-hover: #ededed !default;
+
+$action-link-secondary-active: #ffffff !default;
+$action-link-secondary-default: #9d9d9d !default;
+$action-link-secondary-hover: #ededed !default;
+
+$action-link-tertiary-active: #ffffff !default;
+$action-link-tertiary-default: #b6efec !default;
+$action-link-tertiary-hover: #ededed !default;
+
+$action-link-visited-default: #cfe161 !default;
+
+$background-formfield-active: #ffffff1a !default;
+$background-formfield-default: #ffffff00 !default;
+$background-formfield-hover: #ffffff1a !default;
+
+$background-brand-primary: #ffffff !default;
+$background-brand-secondary: #ffffff !default;
+
+$background-interactive-active: #ffffff33 !default;
+$background-interactive-default: #ffffff00 !default;
+$background-interactive-hover: #ffffff1a !default;
+
+$background-backdrop: #0b1c2199 !default;
+
+$background-primary: #0617ac !default;
+$background-secondary: #07181e !default;
+$background-tertiary: #ffffff !default;
+
+$text-colors: (
+    primary: $text-primary,
+    secondary: $text-secondary,
+    tertiary: $text-tertiary,
+) !default;
+
+$emotion-colors: (
+    informative: (
+        hover: $emotion-informative-hover,
+        active: $emotion-informative-active,
+        background: $emotion-informative-background,
+        content: $emotion-informative-content,
+        border: $emotion-informative-border,
+    ),
+    success: (
+        hover: $emotion-success-hover,
+        active: $emotion-success-active,
+        background: $emotion-success-background,
+        content: $emotion-success-content,
+        border: $emotion-success-border,
+    ),
+    warning: (
+        hover: $emotion-warning-hover,
+        active: $emotion-warning-active,
+        background: $emotion-warning-background,
+        content: $emotion-warning-content,
+        border: $emotion-warning-border,
+    ),
+    danger: (
+        hover: $emotion-danger-hover,
+        active: $emotion-danger-active,
+        background: $emotion-danger-background,
+        content: $emotion-danger-content,
+        border: $emotion-danger-border,
+    ),
+) !default;
+
+$custom-colors: (
+    01: (
+        default: $custom-01-default,
+        hover: $custom-01-hover,
+        active: $custom-01-active,
+        background: $custom-01-background,
+        content: $custom-01-content,
+    ),
+    02: (
+        default: $custom-02-default,
+        hover: $custom-02-hover,
+        active: $custom-02-active,
+        background: $custom-02-background,
+        content: $custom-02-content,
+    ),
+) !default;
+
+$disabled-colors: (
+    border: $disabled-border,
+    background: $disabled-background,
+    foreground: $disabled-foreground,
+    text: $disabled-text,
+) !default;
+
+$border-colors: (
+    interactive: (
+        default: $border-interactive-default,
+        hover: $border-interactive-hover,
+        active: $border-interactive-active,
+        selected: $border-interactive-selected,
+    ),
+    secondary: (
+        default: $border-secondary-default,
+    ),
+    focus: (
+        default: $border-focus-default,
+    ),
+) !default;
+
+$action-colors: (
+    button: (
+        primary: (
+            default: $action-button-primary-default,
+            hover: $action-button-primary-hover,
+            active: $action-button-primary-active,
+            content: $action-button-primary-content,
+            border: $action-button-primary-border,
+        ),
+        secondary: (
+            default: $action-button-secondary-default,
+            hover: $action-button-secondary-hover,
+            active: $action-button-secondary-active,
+            content: $action-button-secondary-content,
+            border: $action-button-secondary-border,
+        ),
+        tertiary: (
+            default: $action-button-tertiary-default,
+            hover: $action-button-tertiary-hover,
+            active: $action-button-tertiary-active,
+            content: $action-button-tertiary-content,
+            border: $action-button-tertiary-border,
+        ),
+        plain: (
+            default: $action-button-plain-default,
+            hover: $action-button-plain-hover,
+            active: $action-button-plain-active,
+            content: $action-button-plain-content,
+            border: $action-button-plain-border,
+        ),
+    ),
+    link: (
+        primary: (
+            default: $action-link-primary-default,
+            hover: $action-link-primary-hover,
+            active: $action-link-primary-active,
+        ),
+        secondary: (
+            default: $action-link-secondary-default,
+            hover: $action-link-secondary-hover,
+            active: $action-link-secondary-active,
+        ),
+        tertiary: (
+            default: $action-link-tertiary-default,
+            hover: $action-link-tertiary-hover,
+            active: $action-link-tertiary-active,
+        ),
+        visited: (
+            default: $action-link-visited-default,
+        ),
+    ),
+) !default;
+
+$background-colors: (
+    formfield: (
+        default: $background-formfield-default,
+        hover: $background-formfield-hover,
+        active: $background-formfield-active,
+    ),
+    brand: (
+        primary: $background-brand-primary,
+        secondary: $background-brand-secondary,
+    ),
+    interactive: (
+        default: $background-interactive-default,
+        hover: $background-interactive-hover,
+        active: $background-interactive-active,
+    ),
+    primary: $background-primary,
+    secondary: $background-secondary,
+    tertiary: $background-tertiary,
+    backdrop: $background-backdrop,
+) !default;
+
+$colors: (
+    text: $text-colors,
+    emotion: $emotion-colors,
+    custom: $custom-colors,
+    disabled: $disabled-colors,
+    border: $border-colors,
+    action: $action-colors,
+    background: $background-colors,
+) !default;

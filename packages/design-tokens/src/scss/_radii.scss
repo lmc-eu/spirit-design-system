@@ -1,0 +1,19 @@
+// Generated Radii from Supernova. Do not edit manually.
+// Manually created from Figma
+$radius-0: 0 !default;
+$radius-100: 2px !default;
+$radius-200: 4px !default;
+$radius-300: 8px !default;
+$radius-400: 12px !default;
+$radius-500: 16px !default;
+$radius-full: 9999px !default;
+
+$radii: (
+    0: $radius-0,
+    100: $radius-100,
+    200: $radius-200,
+    300: $radius-300,
+    400: $radius-400,
+    500: $radius-500,
+    full: $radius-full,
+) !default;

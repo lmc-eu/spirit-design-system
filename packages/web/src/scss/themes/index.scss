@@ -1,0 +1,11 @@
+@use 'themes/light' as theme-light;
+@use 'themes/light-inverted' as theme-light-inverted;
+@use '../tools/themes' as themes-tools;
+
+:root {
+    @include themes-tools.generate-css-variables(theme-light.$colors, 'color');
+}
+
+.inverted {
+    @include themes-tools.generate-css-variables(theme-light-inverted.$colors, 'color');
+}

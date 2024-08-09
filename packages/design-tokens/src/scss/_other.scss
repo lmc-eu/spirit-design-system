@@ -1,14 +1,19 @@
 // Generated Generic Tokens (Other) from Supernova. Do not edit manually.
+// Manually created from Figma
 $container-max-width: 1280px !default;
-$grid-columns: 12 !default;
+
 $breakpoint-mobile: 0 !default;
-$container-padding-mobile: 16px !default;
-$grid-gutter-mobile: 16px !default;
 $breakpoint-tablet: 768px !default;
-$container-padding-tablet: 32px !default;
-$grid-gutter-tablet: 32px !default;
 $breakpoint-desktop: 1280px !default;
+
+$container-padding-mobile: 16px !default;
+$container-padding-tablet: 32px !default;
 $container-padding-desktop: 32px !default;
+
+$grid-columns: 12 !default;
+
+$grid-gutter-mobile: 16px !default;
+$grid-gutter-tablet: 32px !default;
 $grid-gutter-desktop: 32px !default;
 
 $containers: (
