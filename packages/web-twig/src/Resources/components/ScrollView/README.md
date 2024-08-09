@@ -4,13 +4,13 @@ This is the Twig implementation of the [ScrollView][scrollview] component.
 
 Basic example usage:
 
-```html
+```twig
 <ScrollView data-spirit-toggle="scrollView">ScrollView</ScrollView>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <ScrollView direction="horizontal" overflowDecorators="both" data-spirit-toggle="scrollView"
   >ScrollView content</ScrollView
 >
@@ -34,7 +34,7 @@ Without lexer:
 
 For full functionality, you need to provide Spirit JavaScript:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

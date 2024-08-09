@@ -4,13 +4,13 @@ The VisuallyHidden component helps improve web accessibility by rendering its co
 
 Basic example usage:
 
-```html
+```twig
 <VisuallyHidden>Label</VisuallyHidden>
 ```
 
 Advanced example:
 
-```html
+```twig
 <VisuallyHidden elementType="div">Label</VisuallyHidden>
 ```
 

@@ -4,7 +4,7 @@ This is Twig implementation of the [Tabs][tabs] component.
 
 Basic example usage:
 
-```html
+```twig
 <TabList>
   <TabItem>
     <TabLink isSelected id="pane-1-tab" targetPaneId="pane-1" data-spirit-toggle="tabs">Item selected</TabLink>
@@ -101,7 +101,7 @@ and [escape hatches][readme-escape-hatches].
 
 For full functionality, you need to provide Spirit JavaScript:
 
-```html
+```twig
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 

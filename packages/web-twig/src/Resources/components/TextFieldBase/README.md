@@ -4,7 +4,7 @@ This is Twig implementation of the abstract component TextFieldBase for the purp
 
 Basic example usage:
 
-```html
+```twig
 <TextFieldBase id="textFieldBaseDefault" label="Label" name="textFieldBaseDefault" />
 ```
 
@@ -12,7 +12,7 @@ Advanced example usage:
 
 Default TextFieldBase:
 
-```html
+```twig
 <TextFieldBase
   helperText="custom helper text"
   id="text-field-base-advanced"
@@ -28,7 +28,7 @@ Default TextFieldBase:
 
 TextFieldBase with password toggle (button to reveal the password):
 
-```html
+```twig
 <TextFieldBase
   hasPasswordToggle
   id="text-field-base-password-toggle"

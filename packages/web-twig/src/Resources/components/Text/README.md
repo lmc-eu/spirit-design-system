@@ -4,13 +4,13 @@ This is Twig implementation of the [Text][text] component.
 
 Basic example usage:
 
-```html
+```twig
 <Text>Text content</Text>
 ```
 
 Advanced example usage:
 
-```html
+```twig
 <Text size="large" emphasis="italic">Text content</Text>
 ```
 
