@@ -184,7 +184,7 @@ your design tokens compatible with Spirit, just create a `@tokens.scss` file and
 @forward 'gradients';
 @forward 'measures';
 @forward 'other';
-@forward 'src/scss/radii';
+@forward 'radii';
 @forward 'shadows';
 @forward 'typography';
 ```
@@ -277,13 +277,13 @@ See the [LICENSE](LICENSE.md) file for information.
 [supernova]: https://spirit.supernova-docs.io
 [`@tokens.scss`]: src/scss/@tokens.scss
 [`index.scss`]: src/scss/index.scss
-[`_borders.sass`]: src/scss/_borders.scss
+[`_borders.sass`]: src/scss/generated/_borders.scss
 [`_colors.sass`]: src/scss/generated/_colors.scss
 [`_gradients.sass`]: src/scss/generated/_gradients.scss
 [`_measures.sass`]: src/scss/generated/_measures.scss
-[`_other.sass`]: src/scss/_other.scss
-[`_radii.sass`]: src/scss/_radii.scss
+[`_other.sass`]: src/scss/generated/_other.scss
+[`_radii.sass`]: src/scss/generated/_radii.scss
 [`_shadows.sass`]: src/scss/generated/_shadows.scss
-[`_typography.sass`]: src/scss/_typography.scss
+[`_typography.sass`]: src/scss/generated/_typography.scss
 [`spirit-web`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web
 [migrate-to-spirit]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/CONTRIBUTING.md#migrating-your-components-to-spirit
