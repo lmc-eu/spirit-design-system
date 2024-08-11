@@ -1,11 +1,20 @@
-@use 'themes/light' as theme-light;
-@use 'themes/light-inverted' as theme-light-inverted;
+@use 'sass:map';
+@use '@themes' as themes;
 @use '../tools/themes' as themes-tools;
 
-:root {
-    @include themes-tools.generate-css-variables(theme-light.$colors, 'color');
-}
+$isDefaultTheme: true;
 
-.inverted {
-    @include themes-tools.generate-css-variables(theme-light-inverted.$colors, 'color');
+@each $key, $value in themes.$themes {
+    $theme-colors: map.get($value, 'colors');
+    $theme-gradients: map.get($value, 'gradients');
+    $theme-shadows: map.get($value, 'shadows');
+    $selector: if($isDefaultTheme, ':root, .#{$key}', '.#{$key}');
+
+    #{$selector} {
+        @include themes-tools.generate-css-variables($theme-colors, 'color');
+        @include themes-tools.generate-css-variables($theme-gradients, 'gradient');
+        @include themes-tools.generate-css-variables($theme-shadows, 'shadow');
+    }
+
+    $isDefaultTheme: false;
 }
