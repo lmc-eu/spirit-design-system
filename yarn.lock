@@ -3928,7 +3928,7 @@ __metadata:
     "@lmc-eu/spirit-design-tokens": "npm:^2.0.3"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
     "@rollup/plugin-typescript": "npm:11.1.6"
-    "@types/eslint": "npm:^9"
+    "@types/eslint": "npm:9.6.0"
     "@types/jest": "npm:29.5.12"
     autoprefixer: "npm:10.4.19"
     clean-css-cli: "npm:5.6.3"
@@ -7871,7 +7871,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^9":
+"@types/eslint@npm:9.6.0":
   version: 9.6.0
   resolution: "@types/eslint@npm:9.6.0"
   dependencies:
