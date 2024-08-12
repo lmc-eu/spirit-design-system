@@ -1,0 +1,8 @@
+# production
+/build
+
+# vercel
+.vercel
+
+# typescript
+next-env.d.ts
