@@ -5,6 +5,8 @@
 {%- set _spacing = props.spacing | default(null) -%}
 {%- set _spacingX = props.spacingX | default(null) -%}
 {%- set _spacingY = props.spacingY | default(null) -%}
+{%- set _alignmentX = props.alignmentX | default('stretch') -%}
+{%- set _alignmentY = props.alignmentY | default('stretch') -%}
 
 {# Class names #}
 {%- set _rootClassName = _spiritClassPrefix ~ 'Grid' -%}
@@ -21,7 +23,50 @@
     {%- set _colsClasses = [_spiritClassPrefix ~ 'Grid--cols-' ~ _cols] -%}
 {%- endif -%}
 
-{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_colsClasses) -%}
+{%- set _alignmentXClasses = [] -%}
+{%- if _alignmentX is iterable and _alignmentX is not null -%}
+    {%- set hasMobile = false -%}
+    {%- for breakpoint, breakpointValue in _alignmentX -%}
+        {%- if breakpoint == 'mobile' -%}
+            {%- set hasMobile = true -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- if not hasMobile -%}
+        {%- set _alignmentX = { 'mobile': 'stretch' } | merge(_alignmentX) -%}
+    {%- endif -%}
+    {%- for breakpoint, breakpointValue in _alignmentX -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
+        {%- set breakpointValueCapitalized = breakpointValue[:1] | upper ~ breakpointValue[1:] -%}
+        {%- set _alignmentXClasses = _alignmentXClasses | merge([ _spiritClassPrefix ~ 'Grid' ~ infix ~ '--alignmentX' ~ breakpointValueCapitalized ]) -%}
+    {%- endfor -%}
+{%- elseif _alignmentX is not null -%}
+    {%- set _alignmentXCapitalized = _alignmentX[:1] | upper ~ _alignmentX[1:] -%}
+    {%- set _alignmentXClasses = [ _spiritClassPrefix ~ 'Grid--alignmentX' ~ _alignmentXCapitalized ] -%}
+{%- endif -%}
+
+{%- set _alignmentYClasses = [] -%}
+{%- if _alignmentY is iterable and _alignmentY is not null -%}
+    {%- set hasMobile = false -%}
+    {%- for breakpoint, breakpointValue in _alignmentY -%}
+        {%- if breakpoint == 'mobile' -%}
+            {%- set hasMobile = true -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- if not hasMobile -%}
+        {%- set _alignmentY = { 'mobile': 'stretch' } | merge(_alignmentY) -%}
+    {%- endif -%}
+    {%- for breakpoint, breakpointValue in _alignmentY -%}
+        {%- set infix = (breakpoint == 'mobile') ? '' : '--' ~ breakpoint -%}
+        {%- set breakpointValueCapitalized = breakpointValue[:1] | upper ~ breakpointValue[1:] -%}
+        {%- set _alignmentYClasses = _alignmentYClasses | merge([ _spiritClassPrefix ~ 'Grid' ~ infix ~ '--alignmentY' ~ breakpointValueCapitalized ]) -%}
+    {%- endfor -%}
+{%- elseif _alignmentY is not null -%}
+    {%- set _alignmentYCapitalized = _alignmentY[:1] | upper ~ _alignmentY[1:] -%}
+    {%- set _alignmentYClasses = [ _spiritClassPrefix ~ 'Grid--alignmentY' ~ _alignmentYCapitalized ] -%}
+{%- endif -%}
+
+
+{%- set _classNames = [ _rootClassName, _styleProps.className ] | merge(_colsClasses, _alignmentXClasses, _alignmentYClasses) -%}
 {%- set _style = '' -%}
 
 {%- if _spacing is iterable -%}
