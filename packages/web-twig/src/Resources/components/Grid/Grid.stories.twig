@@ -1,7 +1,6 @@
 {% extends 'layout/plain.html.twig' %}
 
 {% block content %}
-
     <DocsSection title="Equal Columns">
         {% include '@components/Grid/stories/GridEqualColumns.twig' %}
     </DocsSection>
@@ -44,5 +43,13 @@
 
     <DocsSection title="Responsive Centered Grid Item">
         {% include '@components/Grid/stories/GridResponsiveCenteredGridItem.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Alignment">
+        {% include '@components/Grid/stories/GridAlignment.twig' %}
+    </DocsSection>
+
+    <DocsSection title="Responsive Alignment">
+        {% include '@components/Grid/stories/GridResponsiveAlignment.twig' %}
     </DocsSection>
 {% endblock %}
