@@ -1,6 +1,6 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
 
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../tools/typography';
 
 :where(html) {
@@ -8,7 +8,10 @@
 }
 
 :where(body) {
-    @include typography.generate(tokens.$body-medium-text-regular);
+    @include typography.generate(global-tokens.$body-medium-text-regular);
+}
 
-    color: tokens.$text-primary-default;
+// stylelint-disable-next-line selector-max-universal
+* {
+    color: var(--spirit-color-text-primary);
 }

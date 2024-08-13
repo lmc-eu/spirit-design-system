@@ -1,19 +1,27 @@
 @use 'sass:map';
+@use 'sass:string';
 @use '@themes' as themes;
 @use '../tools/themes' as themes-tools;
 
 $is-default-theme: true;
+$global-prefix: 'spirit-';
+
+@function -singularize($string) {
+    @return string.slice($string, 1, string.length($string) - 1);
+}
 
 @each $key, $value in themes.$themes {
     $theme-colors: map.get($value, 'colors');
     $theme-gradients: map.get($value, 'gradients');
     $theme-shadows: map.get($value, 'shadows');
-    $selector: if($is-default-theme, ':root, .#{$key}', '.#{$key}');
+    $selector: if($is-default-theme, ':root, .#{$global-prefix}theme-#{$key}', '.#{$global-prefix}theme-#{$key}');
 
     #{$selector} {
-        @include themes-tools.generate-css-variables($theme-colors, 'color');
-        @include themes-tools.generate-css-variables($theme-gradients, 'gradient');
-        @include themes-tools.generate-css-variables($theme-shadows, 'shadow');
+        @each $token-type-key, $token-type-value in $value {
+            $token-type-name: -singularize($token-type-key);
+
+            @include themes-tools.generate-css-variables($token-type-value, '#{$global-prefix}#{$token-type-name}');
+        }
     }
 
     $is-default-theme: false;

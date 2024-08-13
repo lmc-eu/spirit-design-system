@@ -3,13 +3,13 @@
 //@forward 'Breadcrumbs';
 //@forward 'Button';
 //@forward 'Checkbox';
-//@forward 'Collapse';
+@forward 'Collapse';
 @forward 'Container';
 @forward 'Divider';
 //@forward 'Dropdown';
 //@forward 'FieldGroup';
 //@forward 'FileUploader';
-//@forward 'Grid';
+@forward 'Grid';
 //@forward 'Header';
 //@forward 'Item';
 //@forward 'Modal';
@@ -19,7 +19,7 @@
 //@forward 'ScrollView';
 //@forward 'Select';
 @forward 'Stack';
-//@forward 'Tabs';
+@forward 'Tabs';
 //@forward 'Tag';
 //@forward 'TextArea';
 //@forward 'TextField';
@@ -30,6 +30,6 @@
 //@forward 'UNSTABLE_EmptyState';
 //@forward 'UNSTABLE_PartnerLogo';
 //@forward 'UNSTABLE_ProductLogo';
-//@forward 'UNSTABLE_Section';
+@forward 'UNSTABLE_Section';
 //@forward 'UNSTABLE_Slider';
 //@forward 'UNSTABLE_Toggle';

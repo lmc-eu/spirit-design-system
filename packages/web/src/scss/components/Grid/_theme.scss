@@ -1,7 +1,7 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
-$breakpoints: tokens.$breakpoints;
+$breakpoints: global-tokens.$breakpoints;
 
-$grid-columns: tokens.$grid-columns;
-$grid-gutters: tokens.$grid-gutters;
+$grid-columns: global-tokens.$grid-columns;
+$grid-gutters: global-tokens.$grid-gutters;
 $grid-equal-columns: 1, 2, 3, 4, 5, 6, 12;

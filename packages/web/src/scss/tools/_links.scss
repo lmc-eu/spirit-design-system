@@ -1,4 +1,4 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../settings/links';
 
 @mixin base($set-color: false) {
@@ -6,7 +6,7 @@
     text-underline-offset: links.$text-underline-offset;
 
     @if $set-color {
-        color: tokens.$action-link-primary-default;
+        color: var(--spirit-color-action-link-primary-default);
     }
 
     @media (hover: hover) {
@@ -14,7 +14,7 @@
             text-decoration: links.$text-decoration-hover;
 
             @if $set-color {
-                color: tokens.$action-link-primary-hover;
+                color: var(--spirit-color-action-link-primary-hover);
             }
         }
     }
@@ -23,7 +23,7 @@
         text-decoration: links.$text-decoration-hover;
 
         @if $set-color {
-            color: tokens.$action-link-primary-active;
+            color: var(--spirit-color-action-link-primary-active);
         }
     }
 }

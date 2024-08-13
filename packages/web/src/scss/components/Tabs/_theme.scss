@@ -1,11 +1,11 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
-$breakpoints: tokens.$breakpoints;
-$item-padding-x: tokens.$space-600;
-$link-padding-y: tokens.$space-400;
-$link-color: tokens.$text-primary-default;
-$spacing-fallback: tokens.$space-700;
-$item-typography: tokens.$body-medium-text-regular;
-$item-selected-typography: tokens.$body-medium-text-bold;
-$item-selected-underline-background: tokens.$action-selected-default;
-$item-selected-underline-border-radius: tokens.$radius-100;
+$breakpoints: global-tokens.$breakpoints;
+$item-padding-x: global-tokens.$space-600;
+$link-padding-y: global-tokens.$space-400;
+$link-color: var(--spirit-color-text-primary);
+$spacing-fallback: global-tokens.$space-700;
+$item-typography: global-tokens.$body-medium-text-regular;
+$item-selected-typography: global-tokens.$body-medium-text-bold;
+$item-selected-underline-background: var(--spirit-color-border-interactive-selected);
+$item-selected-underline-border-radius: global-tokens.$radius-100;

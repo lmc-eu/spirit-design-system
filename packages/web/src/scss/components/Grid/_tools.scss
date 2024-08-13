@@ -1,6 +1,5 @@
 @use 'sass:map';
 @use 'sass:string';
-@use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
 // Generates column-gap and row-gap values for each breakpoint
