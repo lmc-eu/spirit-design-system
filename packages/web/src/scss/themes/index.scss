@@ -2,13 +2,13 @@
 @use '@themes' as themes;
 @use '../tools/themes' as themes-tools;
 
-$isDefaultTheme: true;
+$is-default-theme: true;
 
 @each $key, $value in themes.$themes {
     $theme-colors: map.get($value, 'colors');
     $theme-gradients: map.get($value, 'gradients');
     $theme-shadows: map.get($value, 'shadows');
-    $selector: if($isDefaultTheme, ':root, .#{$key}', '.#{$key}');
+    $selector: if($is-default-theme, ':root, .#{$key}', '.#{$key}');
 
     #{$selector} {
         @include themes-tools.generate-css-variables($theme-colors, 'color');
@@ -16,5 +16,5 @@ $isDefaultTheme: true;
         @include themes-tools.generate-css-variables($theme-shadows, 'shadow');
     }
 
-    $isDefaultTheme: false;
+    $is-default-theme: false;
 }
