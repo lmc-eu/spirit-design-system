@@ -1,13 +1,15 @@
 import {
-  AlignmentX,
-  AlignmentY,
   ActionColors,
-  EmotionColors,
   ActionLinkColors,
-  TextColors,
+  AlignmentX,
+  AlignmentXExtended,
+  AlignmentY,
+  AlignmentYExtended,
+  EmotionColors,
   Placements,
   Sizes,
   SizesExtended,
+  TextColors,
   ValidationStates,
 } from '../../constants';
 
@@ -15,8 +17,18 @@ import {
 export type AlignmentXDictionaryKeys = keyof typeof AlignmentX;
 export type AlignmentXDictionaryType<T = undefined> = (typeof AlignmentX)[AlignmentXDictionaryKeys] | T;
 
+export type AlignmentXExtendedDictionaryKeys = keyof typeof AlignmentXExtended;
+export type AlignmentXExtendedDictionaryType<T = undefined> =
+  | (typeof AlignmentXExtended)[AlignmentXExtendedDictionaryKeys]
+  | T;
+
 export type AlignmentYDictionaryKeys = keyof typeof AlignmentY;
 export type AlignmentYDictionaryType<T = undefined> = (typeof AlignmentY)[AlignmentYDictionaryKeys] | T;
+
+export type AlignmentYExtendedDictionaryKeys = keyof typeof AlignmentYExtended;
+export type AlignmentYExtendedDictionaryType<T = undefined> =
+  | (typeof AlignmentYExtended)[AlignmentYExtendedDictionaryKeys]
+  | T;
 
 /* Color */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;

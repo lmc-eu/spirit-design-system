@@ -2,7 +2,14 @@ import classNames from 'classnames';
 import { CSSProperties, ElementType } from 'react';
 import { DirectionAxis } from '../../constants';
 import { useClassNamePrefix, useSpacingStyle } from '../../hooks';
-import { SpiritGridProps } from '../../types';
+import { GridColsBreakpoints, GridCustomLayoutProps, SpiritGridProps } from '../../types';
+
+type AlignmentOrCols =
+  | string
+  | number
+  | Pick<GridCustomLayoutProps, 'alignmentX' | 'alignmentY' | 'cols'>
+  | GridColsBreakpoints
+  | undefined;
 
 interface GridCSSProperties extends CSSProperties {
   [key: string]: string | undefined | number;
@@ -17,8 +24,16 @@ export interface GridStyles<T> {
   styleProps: GridCSSProperties;
 }
 
+function capitalizeFirstLetter(str: string): string {
+  if (typeof str !== 'string') {
+    return str;
+  }
+
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyles<SpiritGridProps<ElementType>> {
-  const { cols, spacing, spacingX, spacingY, ...restProps } = props;
+  const { alignmentX, alignmentY, cols, spacing, spacingX, spacingY, ...restProps } = props;
 
   const gridClass = useClassNamePrefix('Grid');
 
@@ -31,21 +46,37 @@ export function useGridStyleProps(props: SpiritGridProps<ElementType>): GridStyl
     ...useSpacingStyle(spacingY, 'grid', DirectionAxis.Y),
   };
 
-  let classes: string;
-  let gridColsClass: string;
+  function generateGridClass(componentClass: string, property: AlignmentOrCols, type: string) {
+    if (typeof property === 'object' && property !== null) {
+      // If the property is an object, we need to check if the mobile property is set.
+      // If not, we set it to stretch
+      if (!Object.keys(property).includes('mobile')) {
+        (property as Record<string, string>).mobile = 'stretch';
+      }
 
-  if (typeof cols === 'object' && cols !== null) {
-    const classList: string[] = [];
-    Object.keys(cols).forEach((key) => {
-      const infix = key === 'mobile' ? '' : `--${key}`;
-      classList.push(`${gridClass}${infix}--cols-${cols[key as keyof typeof cols]}`);
-    });
+      // We map over the object and generate the classes for each breakpoint
+      return Object.keys(property)
+        .map((key) => {
+          const infix = key === 'mobile' ? '' : `--${key}`;
+          const responsiveProperty = (property as Record<string, string>)[key];
 
-    classes = classNames(gridClass, classList);
-  } else {
-    gridColsClass = `${gridClass}--cols-${cols}`;
-    classes = classNames(gridClass, { [gridColsClass]: cols });
+          return `${componentClass}${infix}--${type}${
+            responsiveProperty && typeof responsiveProperty === 'string'
+              ? capitalizeFirstLetter(responsiveProperty)
+              : `-${responsiveProperty}`
+          }`;
+        })
+        .join(' ');
+    }
+
+    return `${componentClass}--${type}${property && typeof property === 'string' ? capitalizeFirstLetter(property) : `-${property}`}`;
   }
+
+  const classes = classNames(gridClass, {
+    [generateGridClass(gridClass, alignmentX, 'alignmentX')]: alignmentX,
+    [generateGridClass(gridClass, alignmentY, 'alignmentY')]: alignmentY,
+    [generateGridClass(gridClass, cols, 'cols')]: cols,
+  });
 
   return {
     classProps: classes,

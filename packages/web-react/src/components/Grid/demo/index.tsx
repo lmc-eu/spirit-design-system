@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
+import GridAlignment from './GridAlignment';
 import GridCustomSpacing from './GridCustomSpacing';
 import GridEqual from './GridEqual';
 import GridItem from './GridItem';
 import GridItemRow from './GridItemRow';
 import GridNestedGridItem from './GridNestedGridItem';
 import GridResponsive from './GridResponsive';
+import GridResponsiveAlignment from './GridResponsiveAlignment';
 import GridResponsiveCenteredGridItem from './GridResponsiveCenteredGridItem';
 import GridResponsiveCustomHorizontalSpacing from './GridResponsiveCustomHorizontalSpacing';
 import GridResponsiveCustomSpacing from './GridResponsiveCustomSpacing';
@@ -47,6 +49,12 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </DocsSection>
     <DocsSection title="Responsive Centered Grid Item">
       <GridResponsiveCenteredGridItem />
+    </DocsSection>
+    <DocsSection title="Alignment">
+      <GridAlignment />
+    </DocsSection>
+    <DocsSection title="Responsive Alignment">
+      <GridResponsiveAlignment />
     </DocsSection>
   </React.StrictMode>,
 );

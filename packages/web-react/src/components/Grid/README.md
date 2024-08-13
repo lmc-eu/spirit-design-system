@@ -54,15 +54,56 @@ Custom vertical (y-axis) spacing:
 </Grid>
 ```
 
+## Item Alignment
+
+The `alignmentX` and `alignmentY` props are used to control the alignment of items within the `Grid` container.
+The available values for these properties can be found in our [alignment dictionary][alignment-dictionary].
+
+`alignmentX`: Manages horizontal alignment, allowing you to position items to the left, center, or right of the container. It can also be configured with responsive values for different breakpoints.
+`alignmentY`: Manages vertical alignment, enabling you to position items at the top, center, or bottom of the container. It supports responsive values for various breakpoints as well.
+
+Both props can be set using either fixed values or objects with breakpoint-specific settings to ensure the alignment adapts across different screen sizes.
+
+Horizontal alignment:
+
+```jsx
+<Grid alignmentX="left">
+  <!-- Grid content -->
+</Grid>
+```
+
+Horizontal and vertical alignment:
+
+```jsx
+<Grid alignmentX="left" alignmentY="top">
+  <!-- Grid content -->
+</Grid>
+```
+
+Responsive horizontal and vertical alignment:
+
+```jsx
+<Grid
+  alignmentX={{ mobile: 'left', tablet: 'center', desktop: 'right' }}
+  alignmentY={{ mobile: 'top', tablet: 'center', desktop: 'bottom' }}
+>
+  <!-- Grid content -->
+</Grid>
+```
+
+👉 Please note that the `stretch` option may have undesired impact on elements with a defined size or aspect ratio. The dimensions (or the ratio) will not be respected by `Grid` and the element will be stretched just like any other item.
+
 ## API
 
-| Name          | Type                                                             | Default | Required | Description                                                                                                |
-| ------------- | ---------------------------------------------------------------- | ------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]     | —       | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }` |
-| `elementType` | HTML element                                                     | `div`   | ✕        | Element type to use for the Grid                                                                           |
-| `spacing`     | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items           |
-| `spacingX`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                           |
-| `spacingY`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`] | —       | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                             |
+| Name          | Type                                                                | Default   | Required | Description                                                                                                                             |
+| ------------- | ------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `alignmentX`  | [[AlignmentXExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply horizontal alignment of items, use object to set responsive values, e.g. `{ mobile: 'left', tablet: 'center', desktop: 'right' }` |
+| `alignmentY`  | [[AlignmentYExtended dictionary][alignment-dictionary] \| `object`] | `stretch` | ✕        | Apply vertical alignment of items, use object to set responsive values, e.g. `{ mobile: 'top', tablet: 'center', desktop: 'bottom' }`   |
+| `cols`        | [`1` \| `2` \| `3` \| `4` \| `5` \| `6` \| `12` \| `object`]        | —         | ✕        | Number of columns to use, use object to set responsive values, e.g. `{ mobile: 1, tablet: 2, desktop: 3 }`                              |
+| `elementType` | HTML element                                                        | `div`     | ✕        | Element type to use for the Grid                                                                                                        |
+| `spacing`     | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply [custom spacing](#custom-spacing) in both horizontal and vertical directions between items                                        |
+| `spacingX`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply horizontal [custom spacing](#custom-spacing) between items                                                                        |
+| `spacingY`    | [`SpaceToken` \| `Partial<Record<BreakpointToken, SpaceToken>>`]    | —         | ✕        | Apply vertical [custom spacing](#custom-spacing) between items                                                                          |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -137,6 +178,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
+[alignment-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
 [digitalocean-span]: https://www.digitalocean.com/community/tutorials/css-css-grid-layout-span-keyword
 [readme-additional-attributes]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#additional-attributes
