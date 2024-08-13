@@ -1,5 +1,5 @@
 @use '@tokens' as tokens;
 
 $breakpoints: tokens.$breakpoints;
-$border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-secondary-default;
+$border: tokens.$border-width-100 tokens.$border-solid var(--color-border-secondary-default);
 $spacing-fallback: tokens.$space-600;
