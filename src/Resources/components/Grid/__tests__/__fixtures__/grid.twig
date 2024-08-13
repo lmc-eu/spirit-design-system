@@ -67,3 +67,29 @@
     <li>col 5</li>
     <li>col 6</li>
 </Grid>
+
+<!-- Render with item alignment -->
+<Grid cols="2" alignmentX="left" alignmentY="top">
+    <span>col 1</span>
+    <span>col 2</span>
+</Grid>
+
+<!-- Render with responsive item with all alignments -->
+<Grid 
+    cols="2" 
+    alignmentX="{{ { mobile: 'left', tablet: 'center', desktop: 'right' } }}" 
+    alignmentY="{{ { mobile: 'top', tablet: 'center', desktop: 'bottom' } }}"
+>
+    <span>col 1</span>
+    <span>col 2</span>
+</Grid>
+
+<!-- Render with responsive item with some alignments -->
+<Grid 
+    cols="2" 
+    alignmentX="{{ { tablet: 'center', desktop: 'right' } }}" 
+    alignmentY="{{ { tablet: 'center', desktop: 'bottom' } }}"
+>
+    <span>col 1</span>
+    <span>col 2</span>
+</Grid> 
