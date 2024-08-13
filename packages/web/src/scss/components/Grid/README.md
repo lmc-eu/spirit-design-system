@@ -3,7 +3,7 @@
 Single column on all breakpoints:
 
 ```html
-<div class="Grid Grid--cols-1">
+<div class="Grid Grid--cols-1 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -15,27 +15,27 @@ Single column on all breakpoints:
 Multiple columns on all breakpoints:
 
 ```html
-<div class="Grid Grid--cols-2">
+<div class="Grid Grid--cols-2 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
-<div class="Grid Grid--cols-3">
+<div class="Grid Grid--cols-3 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
-<div class="Grid Grid--cols-4">
+<div class="Grid Grid--cols-4 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
-<div class="Grid Grid--cols-5">
+<div class="Grid Grid--cols-5 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
-<div class="Grid Grid--cols-6">
+<div class="Grid Grid--cols-6 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
-<div class="Grid Grid--cols-12">
+<div class="Grid Grid--cols-12 Grid--alignmentXStretch Grid--alignmentYStretch">
   <span>col 1</span>
   …
 </div>
@@ -44,7 +44,9 @@ Multiple columns on all breakpoints:
 Responsive columns:
 
 ```html
-<div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4">
+<div
+  class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--desktop--cols-4 Grid--alignmentXStretch Grid--alignmentYStretch"
+>
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -65,7 +67,7 @@ property to one of spacing token values defined on the `:root` element, e.g. `--
 This will set the spacing between rows to `var(--spirit-space-1200)` for all breakpoints.
 
 ```html
-<div class="Grid Grid--cols-2 Grid--tablet--cols-3" style="--grid-spacing-y: var(--spirit-space-1200)">
+<div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--alignmentXStretch Grid--alignmentYStretch" style="--grid-spacing-y: var(--spirit-space-1200)">
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -89,7 +91,7 @@ Custom responsive spacing:
 
 ```html
 <div
-  class="Grid Grid--cols-2 Grid--tablet--cols-3"
+  class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--alignmentXStretch Grid--alignmentYStretch"
   style="--grid-spacing-x: var(--spirit-space-1000); --grid-spacing-y: var(--spirit-space-1000); --grid-spacing-x-tablet: var(--spirit-space-1100); --grid-spacing-y-tablet: var(--spirit-space-1100); --grid-spacing-x-desktop: var(--spirit-space-1200); --grid-spacing-y-desktop: var(--spirit-space-1200)"
 >
   <span>col 1</span>
@@ -104,7 +106,7 @@ Custom responsive spacing:
 Custom vertical (y-axis) spacing from tablet up:
 
 ```html
-<div class="Grid Grid--cols-2 Grid--tablet--cols-3" style="--grid-spacing-y-tablet: var(--spirit-space-1200)">
+<div class="Grid Grid--cols-2 Grid--tablet--cols-3 Grid--alignmentXStretch Grid--alignmentYStretch" style="--grid-spacing-y-tablet: var(--spirit-space-1200)">
   <span>col 1</span>
   <span>col 2</span>
   <span>col 3</span>
@@ -114,7 +116,49 @@ Custom vertical (y-axis) spacing from tablet up:
 </ul>
 ```
 
-## Grid Item
+## Item Alignment
+
+The `Grid--alignmentX*` and `Grid--alignmentY*` classes are used to control the alignment of items within a container.
+The available values for these classes can be found in our [alignment dictionary][alignment-dictionary].
+
+`Grid--alignmentX*`: Manages horizontal alignment, allowing you to position items to the left, center, or right of the container. It can also be configured with responsive values for different breakpoints.
+`Grid--alignmentY*`: Manages vertical alignment, enabling you to position items at the top, center, or bottom of the container. It supports responsive values for various breakpoints as well.
+
+Horizontal alignment:
+
+```html
+<div class="Grid Grid--alignmentXLeft">
+  <!-- Grid content -->
+</div>
+```
+
+Horizontal and Vertical alignment:
+
+```html
+<div class="Grid Grid--alignmentXLeft Grid--alignmentYTop">
+  <!-- Grid content -->
+</div>
+```
+
+Responsive Horizontal and Vertical alignment:
+
+```html
+<div
+  class="
+    Grid
+    Grid--alignmentXLeft 
+    Grid--tablet--alignmentXCenter 
+    Grid--desktop--alignmentXRight 
+    Grid--alignmentYTop 
+    Grid--tablet--alignmentYCenter 
+    Grid--desktop--alignmentYBottom
+  "
+>
+  <!-- Grid content -->
+</div>
+```
+
+# Grid Item
 
 Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure
 as you wish. Use CSS variables to set a column where the Grid Item should start or end.
@@ -142,7 +186,7 @@ Please note that every, even nested, Grid has 12 columns if not specified otherw
 Basic Grid Item example:
 
 ```html
-<div class="Grid">
+<div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch">
   <div
     class="GridItem"
     style="
@@ -167,7 +211,7 @@ Basic Grid Item example:
 Example with responsive columns:
 
 ```html
-<div class="Grid">
+<div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch">
   <div
     class="GridItem"
     style="
@@ -195,7 +239,7 @@ Example with responsive columns:
 Nested Grids with Grid Items:
 
 ```html
-<div class="Grid">
+<div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch">
   <div
     class="GridItem"
     style="
@@ -203,7 +247,7 @@ Nested Grids with Grid Items:
       --grid-item-column-end: 10;
     "
   >
-    <div class="Grid">
+    <div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch">
       <div
         class="GridItem"
         style="
@@ -241,7 +285,7 @@ You can also set rows of the Grid Item. Use `--grid-item-row-start` and
 variables.
 
 ```html
-<div class="Grid">
+<div class="Grid Grid--alignmentXStretch Grid--alignmentYStretch">
   <div
     class="GridItem"
     style="

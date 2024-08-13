@@ -1,4 +1,18 @@
 @use '@tokens' as tokens;
+@use '../../settings/dictionaries';
+
+$alignments-x: (
+    stretch: stretch,
+    left: start,
+    center: center,
+    right: end,
+);
+$alignments-y: (
+    stretch: stretch,
+    top: start,
+    center: center,
+    bottom: end,
+);
 
 $breakpoints: tokens.$breakpoints;
 

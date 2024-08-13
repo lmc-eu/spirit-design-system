@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../../tools/breakpoint';
 @use '../../tools/reset';
+@use '../../tools/string' as spirit-string;
 @use 'theme';
 @use 'tools';
 
@@ -22,6 +23,24 @@
         } @else {
             --grid-spacing-x: initial;
             --grid-spacing-y: initial;
+        }
+    }
+}
+
+@each $breakpoint-name, $breakpoint-value in theme.$breakpoints {
+    $infix: breakpoint.get-modifier('infix', $breakpoint-name, $breakpoint-value);
+
+    @include breakpoint.up($breakpoint-value) {
+        @each $alignment-name, $alignment-value in theme.$alignments-x {
+            .Grid--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(alignment-x-#{$alignment-name})} {
+                justify-items: $alignment-value;
+            }
+        }
+
+        @each $alignment-name, $alignment-value in theme.$alignments-y {
+            .Grid--#{$infix}#{spirit-string.convert-kebab-case-to-camel-case(alignment-y-#{$alignment-name})} {
+                align-items: $alignment-value;
+            }
         }
     }
 }
