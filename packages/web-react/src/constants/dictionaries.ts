@@ -5,10 +5,20 @@ export const AlignmentX = {
   RIGHT: 'right',
 } as const;
 
+export const AlignmentXExtended = {
+  STRETCH: 'stretch',
+  ...AlignmentX,
+} as const;
+
 export const AlignmentY = {
   TOP: 'top',
   CENTER: 'center',
   BOTTOM: 'bottom',
+} as const;
+
+export const AlignmentYExtended = {
+  STRETCH: 'stretch',
+  ...AlignmentY,
 } as const;
 
 /* Color */

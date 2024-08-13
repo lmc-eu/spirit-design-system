@@ -19,25 +19,19 @@ describe('Grid', () => {
   it('should render text children', () => {
     render(<Grid>{text}</Grid>);
 
-    const element = screen.getByText(text) as HTMLElement;
-
-    expect(element).toBeInTheDocument();
+    expect(screen.getByText(text)).toBeInTheDocument();
   });
 
   it('should have desktop cols classname', () => {
     render(<Grid cols={{ desktop: 3 }} data-testid={testId} />);
 
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveClass('Grid--desktop--cols-3');
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--desktop--cols-3');
   });
 
   it('should have tablet cols classname', () => {
     render(<Grid cols={{ tablet: 3 }} data-testid={testId} />);
 
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveClass('Grid--tablet--cols-3');
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--tablet--cols-3');
   });
 
   it('should have all cols classnames', () => {
@@ -53,9 +47,7 @@ describe('Grid', () => {
   it('should have cols classname', () => {
     render(<Grid cols={2} data-testid={testId} />);
 
-    const element = screen.getByTestId(testId) as HTMLElement;
-
-    expect(element).toHaveClass('Grid--cols-2');
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--cols-2');
   });
 
   it('should render with custom spacing', () => {
@@ -105,5 +97,53 @@ describe('Grid', () => {
     expect(element).not.toHaveStyle({ '--grid-spacing-y': 'var(--spirit-space-1000)' });
     expect(element).not.toHaveStyle({ '--grid-spacing-x-desktop': 'var(--spirit-space-1200)' });
     expect(element).not.toHaveStyle({ '--grid-spacing-y-desktop': 'var(--spirit-space-1200)' });
+  });
+
+  it('should render with default alignment classes', () => {
+    render(<Grid data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--alignmentXStretch Grid--alignmentYStretch');
+  });
+
+  it('should render with horizontal alignment', () => {
+    render(<Grid alignmentX="center" data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--alignmentXCenter');
+  });
+
+  it('should render with horizontal and vertical alignment', () => {
+    render(<Grid alignmentX="center" alignmentY="center" data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass('Grid--alignmentXCenter Grid--alignmentYCenter');
+  });
+
+  it('should render with some responsive horizontal alignments', () => {
+    render(<Grid alignmentX={{ tablet: 'center', desktop: 'right' }} data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass(
+      'Grid Grid--alignmentXStretch Grid--tablet--alignmentXCenter Grid--desktop--alignmentXRight',
+    );
+  });
+
+  it('should render with all responsive horizontal alignments', () => {
+    render(<Grid alignmentX={{ mobile: 'left', tablet: 'center', desktop: 'right' }} data-testid={testId} />);
+
+    expect(screen.getByTestId(testId)).toHaveClass(
+      'Grid Grid--alignmentXLeft Grid--tablet--alignmentXCenter Grid--desktop--alignmentXRight',
+    );
+  });
+
+  it('should render with responsive horizontal and vertical alignment', () => {
+    render(
+      <Grid
+        alignmentX={{ mobile: 'left', tablet: 'center', desktop: 'right' }}
+        alignmentY={{ mobile: 'top', tablet: 'center', desktop: 'bottom' }}
+        data-testid={testId}
+      />,
+    );
+
+    expect(screen.getByTestId(testId)).toHaveClass(
+      'Grid Grid--alignmentXLeft Grid--tablet--alignmentXCenter Grid--desktop--alignmentXRight Grid--alignmentYTop Grid--tablet--alignmentYCenter Grid--desktop--alignmentYBottom',
+    );
   });
 });

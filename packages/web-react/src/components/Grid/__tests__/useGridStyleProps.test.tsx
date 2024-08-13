@@ -86,4 +86,31 @@ describe('useGridStyleProps', () => {
 
     expect(result.current.styleProps).toEqual(expectedStyle);
   });
+
+  it.each([
+    // alignmentX, alignmentY, expectedClasses
+    [undefined, undefined, 'Grid'],
+    ['left', undefined, 'Grid Grid--alignmentXLeft'],
+    ['left', 'top', 'Grid Grid--alignmentXLeft Grid--alignmentYTop'],
+    [
+      { mobile: 'left', tablet: 'center', desktop: 'right' },
+      undefined,
+      'Grid Grid--alignmentXLeft Grid--tablet--alignmentXCenter Grid--desktop--alignmentXRight',
+    ],
+    [
+      { mobile: 'left', tablet: 'center', desktop: 'right' },
+      { mobile: 'top', tablet: 'center', desktop: 'bottom' },
+      'Grid Grid--alignmentXLeft Grid--tablet--alignmentXCenter Grid--desktop--alignmentXRight Grid--alignmentYTop Grid--tablet--alignmentYCenter Grid--desktop--alignmentYBottom',
+    ],
+    [
+      'left',
+      { mobile: 'top', tablet: 'center', desktop: 'bottom' },
+      'Grid Grid--alignmentXLeft Grid--alignmentYTop Grid--tablet--alignmentYCenter Grid--desktop--alignmentYBottom',
+    ],
+  ])('should return alignment CSS classes', (alignmentX, alignmentY, expectedClasses) => {
+    const props: SpiritGridProps = { alignmentX, alignmentY } as SpiritGridProps;
+    const { result } = renderHook(() => useGridStyleProps(props));
+
+    expect(result.current.classProps).toBe(expectedClasses);
+  });
 });

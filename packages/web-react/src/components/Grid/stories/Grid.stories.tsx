@@ -2,6 +2,7 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import DocsBox from '../../../../docs/DocsBox';
+import { AlignmentXExtended, AlignmentYExtended } from '../../../constants';
 import ReadMe from '../README.md';
 import { Grid } from '..';
 
@@ -14,8 +15,19 @@ const meta: Meta<typeof Grid> = {
     },
   },
   argTypes: {
-    children: {
-      control: 'object',
+    alignmentX: {
+      control: 'select',
+      options: [undefined, ...Object.values(AlignmentXExtended)],
+      table: {
+        defaultValue: { summary: undefined },
+      },
+    },
+    alignmentY: {
+      control: 'select',
+      options: [undefined, ...Object.values(AlignmentYExtended)],
+      table: {
+        defaultValue: { summary: undefined },
+      },
     },
     cols: {
       control: 'object',
@@ -37,15 +49,8 @@ const meta: Meta<typeof Grid> = {
     },
   },
   args: {
-    children: (
-      <>
-        {[...Array(12)].map((_, index) => {
-          const key = `item-${index}`;
-
-          return <DocsBox key={key}>Item</DocsBox>;
-        })}
-      </>
-    ),
+    alignmentX: undefined,
+    alignmentY: undefined,
     cols: {
       mobile: 2,
       tablet: 3,
@@ -75,4 +80,29 @@ type Story = StoryObj<typeof Grid>;
 
 export const Playground: Story = {
   name: 'Grid',
+  render: (args) => {
+    const { alignmentX, alignmentY, ...restProps } = args;
+
+    return (
+      <Grid {...restProps}>
+        {[...Array(12)].map((_, index) => {
+          const key = `item-${index}`;
+
+          return (
+            <Grid key={key} cols={1} alignmentX={alignmentX} alignmentY={alignmentY} UNSAFE_className="bg-cover">
+              <DocsBox key={key}>
+                {index === 11 ? (
+                  <>
+                    Item <br />…<br />…
+                  </>
+                ) : (
+                  'Item'
+                )}
+              </DocsBox>
+            </Grid>
+          );
+        })}
+      </Grid>
+    );
+  },
 };
