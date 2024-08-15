@@ -1,4 +1,5 @@
-@forward '../../../../packages/design-tokens/src/scss';
+@forward '../../../../packages/design-tokens/src/scss/@themes';
+@forward '../../../../packages/design-tokens/src/scss/@global';
 
 @forward '../../../../packages/web/src/scss/foundation';
 @forward '../../../../packages/web/src/scss/helpers';
