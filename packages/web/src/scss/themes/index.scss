@@ -11,9 +11,6 @@ $global-prefix: 'spirit-';
 }
 
 @each $key, $value in themes.$themes {
-    $theme-colors: map.get($value, 'colors');
-    $theme-gradients: map.get($value, 'gradients');
-    $theme-shadows: map.get($value, 'shadows');
     $selector: if($is-default-theme, ':root, .#{$global-prefix}#{$key}', '.#{$global-prefix}#{$key}');
 
     #{$selector} {

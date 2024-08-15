@@ -3,9 +3,6 @@
 :root {
     // Print all token values as CSS variables
     // Borders
-    --spirit-border-style-none: #{global-tokens.$border-style-none};
-    --spirit-border-style-solid: #{global-tokens.$border-style-solid};
-    --spirit-border-style-dashed: #{global-tokens.$border-style-dashed};
     --spirit-border-width-0: #{global-tokens.$border-width-0};
     --spirit-border-width-100: #{global-tokens.$border-width-100};
     --spirit-border-width-200: #{global-tokens.$border-width-200};
@@ -32,8 +29,8 @@
     }
 
     /// Grid gutters
-    @each $grid-gutter-name, $grid-gutter-value in global-tokens.$grid-gutters {
-        --spirit-grid-gutter-#{$grid-gutter-name}: #{$grid-gutter-value};
+    @each $grid-spacing-name, $grid-spacing-value in global-tokens.$grid-spacings {
+        --spirit-grid-gutter-#{$grid-spacing-name}: #{$grid-spacing-value};
     }
 
     /// Breakpoints

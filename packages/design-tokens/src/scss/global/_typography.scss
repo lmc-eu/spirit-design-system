@@ -1,5 +1,5 @@
 // Manually created from Figma
-$heading-1-regular: (
+$headline-1-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 48px,
@@ -23,7 +23,7 @@ $heading-1-regular: (
     ),
 ) !default;
 
-$heading-1-semibold: (
+$headline-1-semibold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 48px,
@@ -47,7 +47,7 @@ $heading-1-semibold: (
     ),
 ) !default;
 
-$heading-1-bold: (
+$headline-1-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 48px,
@@ -71,7 +71,7 @@ $heading-1-bold: (
     ),
 ) !default;
 
-$heading-1-italic: (
+$headline-1-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 48px,
@@ -95,7 +95,7 @@ $heading-1-italic: (
     ),
 ) !default;
 
-$heading-2-regular: (
+$headline-2-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 32px,
@@ -119,7 +119,7 @@ $heading-2-regular: (
     ),
 ) !default;
 
-$heading-2-semibold: (
+$headline-2-semibold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 32px,
@@ -143,7 +143,7 @@ $heading-2-semibold: (
     ),
 ) !default;
 
-$heading-2-bold: (
+$headline-2-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 32px,
@@ -167,7 +167,7 @@ $heading-2-bold: (
     ),
 ) !default;
 
-$heading-2-italic: (
+$headline-2-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 32px,
@@ -191,7 +191,7 @@ $heading-2-italic: (
     ),
 ) !default;
 
-$heading-3-regular: (
+$headline-3-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 24px,
@@ -215,7 +215,7 @@ $heading-3-regular: (
     ),
 ) !default;
 
-$heading-3-semibold: (
+$headline-3-semibold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 24px,
@@ -239,7 +239,7 @@ $heading-3-semibold: (
     ),
 ) !default;
 
-$heading-3-bold: (
+$headline-3-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 24px,
@@ -263,7 +263,7 @@ $heading-3-bold: (
     ),
 ) !default;
 
-$heading-3-italic: (
+$headline-3-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 24px,
@@ -287,7 +287,7 @@ $heading-3-italic: (
     ),
 ) !default;
 
-$heading-4-regular: (
+$headline-4-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 20px,
@@ -311,7 +311,7 @@ $heading-4-regular: (
     ),
 ) !default;
 
-$heading-4-semibold: (
+$headline-4-semibold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 20px,
@@ -335,7 +335,7 @@ $heading-4-semibold: (
     ),
 ) !default;
 
-$heading-4-bold: (
+$headline-4-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 20px,
@@ -359,7 +359,7 @@ $heading-4-bold: (
     ),
 ) !default;
 
-$heading-4-italic: (
+$headline-4-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 20px,
@@ -383,7 +383,7 @@ $heading-4-italic: (
     ),
 ) !default;
 
-$heading-5-regular: (
+$headline-5-regular: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 16px,
@@ -407,7 +407,7 @@ $heading-5-regular: (
     ),
 ) !default;
 
-$heading-5-semibold: (
+$headline-5-semibold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 16px,
@@ -431,7 +431,7 @@ $heading-5-semibold: (
     ),
 ) !default;
 
-$heading-5-bold: (
+$headline-5-bold: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 16px,
@@ -455,7 +455,7 @@ $heading-5-bold: (
     ),
 ) !default;
 
-$heading-5-italic: (
+$headline-5-italic: (
     mobile: (
         font-family: "'Inter', sans-serif",
         font-size: 16px,
@@ -960,26 +960,26 @@ $body-5-italic: (
 ) !default;
 
 $styles: (
-    heading-1-regular: $heading-1-regular,
-    heading-1-semibold: $heading-1-semibold,
-    heading-1-bold: $heading-1-bold,
-    heading-1-italic: $heading-1-italic,
-    heading-2-regular: $heading-2-regular,
-    heading-2-semibold: $heading-2-semibold,
-    heading-2-bold: $heading-2-bold,
-    heading-2-italic: $heading-2-italic,
-    heading-3-regular: $heading-3-regular,
-    heading-3-semibold: $heading-3-semibold,
-    heading-3-bold: $heading-3-bold,
-    heading-3-italic: $heading-3-italic,
-    heading-4-regular: $heading-4-regular,
-    heading-4-semibold: $heading-4-semibold,
-    heading-4-bold: $heading-4-bold,
-    heading-4-italic: $heading-4-italic,
-    heading-5-regular: $heading-5-regular,
-    heading-5-semibold: $heading-5-semibold,
-    heading-5-bold: $heading-5-bold,
-    heading-5-italic: $heading-5-italic,
+    headline-1-regular: $headline-1-regular,
+    headline-1-semibold: $headline-1-semibold,
+    headline-1-bold: $headline-1-bold,
+    headline-1-italic: $headline-1-italic,
+    headline-2-regular: $headline-2-regular,
+    headline-2-semibold: $headline-2-semibold,
+    headline-2-bold: $headline-2-bold,
+    headline-2-italic: $headline-2-italic,
+    headline-3-regular: $headline-3-regular,
+    headline-3-semibold: $headline-3-semibold,
+    headline-3-bold: $headline-3-bold,
+    headline-3-italic: $headline-3-italic,
+    headline-4-regular: $headline-4-regular,
+    headline-4-semibold: $headline-4-semibold,
+    headline-4-bold: $headline-4-bold,
+    headline-4-italic: $headline-4-italic,
+    headline-5-regular: $headline-5-regular,
+    headline-5-semibold: $headline-5-semibold,
+    headline-5-bold: $headline-5-bold,
+    headline-5-italic: $headline-5-italic,
     body-1-regular: $body-1-regular,
     body-1-semibold: $body-1-semibold,
     body-1-bold: $body-1-bold,

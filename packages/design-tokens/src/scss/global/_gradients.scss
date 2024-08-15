@@ -1,0 +1,10 @@
+// Copied from last version
+$gradient-basic-overlay: linear-gradient(
+    var(--gradient-angle, 90deg),
+    var(--spirit-color-gradient-basic-overlay-color-01) 0%,
+    var(--spirit-color-gradient-basic-overlay-color-02) 100%
+) !default;
+
+$gradients: (
+    basic-overlay: $gradient-basic-overlay,
+) !default;

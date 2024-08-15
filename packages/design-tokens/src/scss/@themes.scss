@@ -6,12 +6,8 @@ $themes: (
     theme-light:
         (
             colors: theme-light.$colors,
-            gradients: theme-light.$gradients,
-            shadows: theme-light.$shadows,
         ),
     theme-light-inverted: (
         colors: theme-light-inverted.$colors,
-        gradients: theme-light-inverted.$gradients,
-        shadows: theme-light-inverted.$shadows,
     )
 );

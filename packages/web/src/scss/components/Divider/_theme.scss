@@ -1,5 +1,5 @@
 @use '@global' as global-tokens;
 
 $border-width: global-tokens.$border-width-100;
-$border-style: global-tokens.$border-style-solid;
+$border-style: solid;
 $border-color: var(--spirit-color-border-secondary-default);

@@ -11,9 +11,9 @@ $container-padding-desktop: 32px !default;
 
 $grid-columns: 12 !default;
 
-$grid-gutter-mobile: 16px !default;
-$grid-gutter-tablet: 32px !default;
-$grid-gutter-desktop: 32px !default;
+$grid-spacing-mobile: 16px !default;
+$grid-spacing-tablet: 32px !default;
+$grid-spacing-desktop: 32px !default;
 
 $containers: (
     max-width: $container-max-width,
@@ -35,8 +35,8 @@ $container-paddings: (
     desktop: $container-padding-desktop,
 ) !default;
 
-$grid-gutters: (
-    mobile: $grid-gutter-mobile,
-    tablet: $grid-gutter-tablet,
-    desktop: $grid-gutter-desktop,
+$grid-spacings: (
+    mobile: $grid-spacing-mobile,
+    tablet: $grid-spacing-tablet,
+    desktop: $grid-spacing-desktop,
 ) !default;
