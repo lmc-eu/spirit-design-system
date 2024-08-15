@@ -5,6 +5,10 @@
 
 # Packages' owners
 
+/configs                          @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
+
+/exporters                        @literat @crishpeen @pavelklibani @curdaj @lmc-eu/spirit-design-system
+
 /packages/analytics               @literat @crishpeen @curdaj @pavelklibani @lmc-eu/spirit-design-system
 /packages/codemods                @literat @adamkudrna @crishpeen @pavelklibani @curdaj @lmc-eu/spirit-design-system
 /packages/common                  @literat @pavelklibani @curdaj @lmc-eu/spirit-design-system
