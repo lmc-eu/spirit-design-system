@@ -19,6 +19,7 @@
     "directory": "configs/prettier-config-spirit"
   },
   "type": "module",
+  "main": "./index.js",
   "module": "./index.js",
   "dependencies": {
     "@lmc-eu/prettier-config": "2.0.0",
