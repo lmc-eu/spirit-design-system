@@ -14,7 +14,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"]
     },
     "forceConsistentCasingInFileNames": true
   },
