@@ -15,6 +15,7 @@
   "workspaces": [
     "configs/*",
     "packages/*",
+    "examples/*",
     "exporters/*",
     "apps/demo",
     "apps/storybook"

@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "2.0.3",
-    "@lmc-eu/spirit-web": "2.3.0",
-    "@lmc-eu/spirit-web-react": "^2.3.0",
+    "@lmc-eu/spirit-design-tokens": "workspace:^",
+    "@lmc-eu/spirit-web": "workspace:^",
+    "@lmc-eu/spirit-web-react": "workspace:^",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
