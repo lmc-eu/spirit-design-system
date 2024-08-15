@@ -65,3 +65,6 @@ makefile
 
 # Favicon
 *.ico
+
+# GitHub
+CODEOWNERS
