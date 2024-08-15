@@ -1,118 +1,121 @@
-// Generated Colors from Supernova. Do not edit manually.
 // Manually created from Figma
-$text-primary: #ffffff !default;
+$text-primary: #fff !default;
 $text-secondary: #e9e9e9 !default;
 $text-tertiary: #d6d6d6 !default;
 
-$emotion-danger-active: #ffffff !default;
+$emotion-danger-active: #fff !default;
 $emotion-danger-background: #ba3e5a !default;
-$emotion-danger-border: #ffffff !default;
+$emotion-danger-border: #fff !default;
 $emotion-danger-content: #e84b6f !default;
-$emotion-danger-hover: #ffffff !default;
+$emotion-danger-default: #fff !default;
+$emotion-danger-hover: #fff !default;
 
-$emotion-informative-active: #ffffff !default;
+$emotion-informative-active: #fff !default;
 $emotion-informative-background: #3b6bab !default;
-$emotion-informative-border: #ffffff !default;
-$emotion-informative-content: #ffffff !default;
-$emotion-informative-hover: #ffffff !default;
+$emotion-informative-border: #fff !default;
+$emotion-informative-content: #fff !default;
+$emotion-informative-default: #fff !default;
+$emotion-informative-hover: #fff !default;
 
-$emotion-success-active: #ffffff !default;
+$emotion-success-active: #fff !default;
 $emotion-success-background: #607c13 !default;
-$emotion-success-border: #ffffff !default;
+$emotion-success-border: #fff !default;
 $emotion-success-content: #88b412 !default;
-$emotion-success-hover: #ffffff !default;
+$emotion-success-default: #fff !default;
+$emotion-success-hover: #fff !default;
 
-$emotion-warning-active: #ffffff !default;
+$emotion-warning-active: #fff !default;
 $emotion-warning-background: #a98300 !default;
-$emotion-warning-border: #ffffff !default;
+$emotion-warning-border: #fff !default;
 $emotion-warning-content: #d1a200 !default;
-$emotion-warning-hover: #ffffff !default;
+$emotion-warning-default: #fff !default;
+$emotion-warning-hover: #fff !default;
 
-$custom-01-active: #ffffff !default;
-$custom-01-background: #ffffff !default;
-$custom-01-content: #ffffff !default;
-$custom-01-default: #ffffff !default;
-$custom-01-hover: #ffffff !default;
+$custom-01-active: #fff !default;
+$custom-01-background: #fff !default;
+$custom-01-content: #fff !default;
+$custom-01-default: #fff !default;
+$custom-01-hover: #fff !default;
 
-$custom-02-active: #ffffff !default;
-$custom-02-background: #ffffff !default;
-$custom-02-content: #ffffff !default;
-$custom-02-default: #ffffff !default;
-$custom-02-hover: #ffffff !default;
+$custom-02-active: #fff !default;
+$custom-02-background: #fff !default;
+$custom-02-content: #fff !default;
+$custom-02-default: #fff !default;
+$custom-02-hover: #fff !default;
 
 $disabled-background: #ffffff1a !default;
-$disabled-border: #ffffff33 !default;
-$disabled-foreground: #ffffff !default;
+$disabled-border: #fff3 !default;
+$disabled-foreground: #fff !default;
 $disabled-text: #ffffff80 !default;
 
-$border-interactive-active: #ffffff !default;
-$border-interactive-default: #ffffff !default;
+$border-interactive-active: #fff !default;
+$border-interactive-default: #fff !default;
 $border-interactive-error: #e84b6f !default;
-$border-interactive-hover: #ffffff !default;
+$border-interactive-hover: #fff !default;
 
-$border-interactive-informative: #ffffff !default;
-$border-interactive-selected: #ffffff !default;
-$border-interactive-success: #ffffff !default;
+$border-interactive-informative: #fff !default;
+$border-interactive-selected: #fff !default;
+$border-interactive-success: #fff !default;
 $border-interactive-warning: #d1a200 !default;
 
-$border-secondary-default: #ffffff !default;
+$border-secondary-default: #fff !default;
 
-$border-focus-default: #ffffff !default;
+$border-focus-default: #fff !default;
 
-$action-button-plain-active: #ffffff !default;
-$action-button-plain-border: #ffffff !default;
-$action-button-plain-content: #ffffff !default;
-$action-button-plain-default: #ffffff !default;
-$action-button-plain-hover: #ffffff !default;
+$action-button-plain-active: #fff !default;
+$action-button-plain-border: #fff !default;
+$action-button-plain-content: #fff !default;
+$action-button-plain-default: #fff !default;
+$action-button-plain-hover: #fff !default;
 
 $action-button-primary-active: #ffffffbf !default;
 $action-button-primary-border: #0617ac80 !default;
 $action-button-primary-content: #0617ac !default;
-$action-button-primary-default: #ffffff !default;
+$action-button-primary-default: #fff !default;
 $action-button-primary-hover: #ffffffe5 !default;
 
 $action-button-secondary-active: #ffffff1a !default;
-$action-button-secondary-border: #ffffff66 !default;
-$action-button-secondary-content: #ffffff !default;
-$action-button-secondary-default: #ffffff33 !default;
+$action-button-secondary-border: #fff6 !default;
+$action-button-secondary-content: #fff !default;
+$action-button-secondary-default: #fff3 !default;
 $action-button-secondary-hover: #ffffff26 !default;
 
 $action-button-tertiary-active: #00000026 !default;
-$action-button-tertiary-border: #ffffff66 !default;
-$action-button-tertiary-content: #ffffff !default;
-$action-button-tertiary-default: #ffffff00 !default;
+$action-button-tertiary-border: #fff6 !default;
+$action-button-tertiary-content: #fff !default;
+$action-button-tertiary-default: #fff0 !default;
 $action-button-tertiary-hover: #0000001a !default;
 
 $action-link-primary-active: #9d9d9d !default;
 $action-link-primary-default: #ededed !default;
 $action-link-primary-hover: #ededed !default;
 
-$action-link-secondary-active: #ffffff !default;
+$action-link-secondary-active: #fff !default;
 $action-link-secondary-default: #9d9d9d !default;
 $action-link-secondary-hover: #ededed !default;
 
-$action-link-tertiary-active: #ffffff !default;
+$action-link-tertiary-active: #fff !default;
 $action-link-tertiary-default: #b6efec !default;
 $action-link-tertiary-hover: #ededed !default;
 
 $action-link-visited-default: #cfe161 !default;
 
-$background-formfield-active: #ffffff1a !default;
-$background-formfield-default: #ffffff00 !default;
-$background-formfield-hover: #ffffff1a !default;
+$background-form-field-active: #ffffff1a !default;
+$background-form-field-default: #fff0 !default;
+$background-form-field-hover: #ffffff1a !default;
 
-$background-brand-primary: #ffffff !default;
-$background-brand-secondary: #ffffff !default;
+$background-brand-primary: #fff !default;
+$background-brand-secondary: #fff !default;
 
-$background-interactive-active: #ffffff33 !default;
-$background-interactive-default: #ffffff00 !default;
+$background-interactive-active: #fff3 !default;
+$background-interactive-default: #fff0 !default;
 $background-interactive-hover: #ffffff1a !default;
 
 $background-backdrop: #0b1c2199 !default;
 
 $background-primary: #0617ac !default;
 $background-secondary: #07181e !default;
-$background-tertiary: #ffffff !default;
+$background-tertiary: #fff !default;
 
 $text-colors: (
     primary: $text-primary,
@@ -121,6 +124,13 @@ $text-colors: (
 ) !default;
 
 $emotion-colors: (
+    danger: (
+        hover: $emotion-danger-hover,
+        active: $emotion-danger-active,
+        background: $emotion-danger-background,
+        content: $emotion-danger-content,
+        border: $emotion-danger-border,
+    ),
     informative: (
         hover: $emotion-informative-hover,
         active: $emotion-informative-active,
@@ -141,13 +151,6 @@ $emotion-colors: (
         background: $emotion-warning-background,
         content: $emotion-warning-content,
         border: $emotion-warning-border,
-    ),
-    danger: (
-        hover: $emotion-danger-hover,
-        active: $emotion-danger-active,
-        background: $emotion-danger-background,
-        content: $emotion-danger-content,
-        border: $emotion-danger-border,
     ),
 ) !default;
 
@@ -244,10 +247,10 @@ $action-colors: (
 ) !default;
 
 $background-colors: (
-    formfield: (
-        default: $background-formfield-default,
-        hover: $background-formfield-hover,
-        active: $background-formfield-active,
+    form-field: (
+        default: $background-form-field-default,
+        hover: $background-form-field-hover,
+        active: $background-form-field-active,
     ),
     brand: (
         primary: $background-brand-primary,

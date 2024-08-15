@@ -1,42 +1,45 @@
-// Generated Colors from Supernova. Do not edit manually.
 // Manually created from Figma
 $text-primary: #132930 !default;
 $text-secondary: #5c747b !default;
 $text-tertiary: #e4e4e4 !default;
 
+$emotion-danger-active: #6f2535 !default;
+$emotion-danger-background: #fbeef1 !default;
+$emotion-danger-border: #ba3e5a !default;
+$emotion-danger-content: #ba3e5a !default;
+$emotion-danger-default: #ba3e5a !default;
+$emotion-danger-hover: #953248 !default;
+
 $emotion-informative-active: #26456e !default;
 $emotion-informative-background: #e8eff7 !default;
 $emotion-informative-border: #3b6bab !default;
 $emotion-informative-content: #3b6bab !default;
+$emotion-informative-default: #3b6bab !default;
 $emotion-informative-hover: #30588c !default;
 
 $emotion-success-active: #33420a !default;
 $emotion-success-background: #f6fbe9 !default;
 $emotion-success-border: #607c13 !default;
 $emotion-success-content: #607c13 !default;
+$emotion-success-default: #607c13 !default;
 $emotion-success-hover: #485d0e !default;
 
 $emotion-warning-active: #423400 !default;
 $emotion-warning-background: #f8f2e4 !default;
 $emotion-warning-border: #a98300 !default;
 $emotion-warning-content: #a98300 !default;
+$emotion-warning-default: #a98300 !default;
 $emotion-warning-hover: #755b00 !default;
 
-$emotion-danger-active: #6f2535 !default;
-$emotion-danger-background: #fbeef1 !default;
-$emotion-danger-border: #ba3e5a !default;
-$emotion-danger-content: #ba3e5a !default;
-$emotion-danger-hover: #953248 !default;
-
 $custom-01-active: #cca22f !default;
-$custom-01-background: #ffffff !default;
-$custom-01-content: #ffffff !default;
+$custom-01-background: #fff !default;
+$custom-01-content: #fff !default;
 $custom-01-default: #ffcb3b !default;
 $custom-01-hover: #e6b735 !default;
 
 $custom-02-active: #0aa085 !default;
-$custom-02-background: #ffffff !default;
-$custom-02-content: #ffffff !default;
+$custom-02-background: #fff !default;
+$custom-02-content: #fff !default;
 $custom-02-default: #0cc8a6 !default;
 $custom-02-hover: #0bb496 !default;
 
@@ -60,21 +63,21 @@ $border-secondary-default: #e9e9e9 !default;
 $border-focus-default: #4666ae !default;
 
 $action-button-plain-active: #e7e7e7 !default;
-$action-button-plain-border: #ffffff !default;
+$action-button-plain-border: #fff !default;
 $action-button-plain-content: #132930 !default;
-$action-button-plain-default: #ffffff !default;
+$action-button-plain-default: #fff !default;
 $action-button-plain-hover: #f1f1f1 !default;
 
 $action-button-primary-active: #0b3a46 !default;
 $action-button-primary-border: #0b3a46 !default;
-$action-button-primary-content: #ffffff !default;
+$action-button-primary-content: #fff !default;
 $action-button-primary-default: #29616f !default;
 $action-button-primary-hover: #1b5260 !default;
 
 $action-button-secondary-active: #e5e5e5 !default;
-$action-button-secondary-border: #dddddd !default;
+$action-button-secondary-border: #ddd !default;
 $action-button-secondary-content: #132930 !default;
-$action-button-secondary-default: #ffffff !default;
+$action-button-secondary-default: #fff !default;
 $action-button-secondary-hover: #efefef !default;
 
 $action-button-tertiary-active: #dbdbdb !default;
@@ -97,22 +100,22 @@ $action-link-tertiary-hover: #ababab !default;
 
 $action-link-visited-default: #835ea1 !default;
 
-$background-formfield-active: #ffffff !default;
-$background-formfield-default: #ffffff !default;
-$background-formfield-hover: #ffffff !default;
+$background-form-field-active: #fff !default;
+$background-form-field-default: #fff !default;
+$background-form-field-hover: #fff !default;
 
 $background-brand-primary: #0b1c21 !default;
 $background-brand-secondary: #30588c !default;
 
 $background-interactive-active: #f1f1f1 !default;
-$background-interactive-default: #ffffff00 !default;
+$background-interactive-default: #fff0 !default;
 $background-interactive-hover: #f5f5f5 !default;
 
 $background-backdrop: #0b1c2199 !default;
 
-$background-primary: #ffffff !default;
+$background-primary: #fff !default;
 $background-secondary: #f0f0f0 !default;
-$background-tertiary: #000000 !default;
+$background-tertiary: #000 !default;
 
 $text-colors: (
     primary: $text-primary,
@@ -121,6 +124,13 @@ $text-colors: (
 ) !default;
 
 $emotion-colors: (
+    danger: (
+        hover: $emotion-danger-hover,
+        active: $emotion-danger-active,
+        background: $emotion-danger-background,
+        content: $emotion-danger-content,
+        border: $emotion-danger-border,
+    ),
     informative: (
         hover: $emotion-informative-hover,
         active: $emotion-informative-active,
@@ -141,13 +151,6 @@ $emotion-colors: (
         background: $emotion-warning-background,
         content: $emotion-warning-content,
         border: $emotion-warning-border,
-    ),
-    danger: (
-        hover: $emotion-danger-hover,
-        active: $emotion-danger-active,
-        background: $emotion-danger-background,
-        content: $emotion-danger-content,
-        border: $emotion-danger-border,
     ),
 ) !default;
 
@@ -244,10 +247,10 @@ $action-colors: (
 ) !default;
 
 $background-colors: (
-    formfield: (
-        default: $background-formfield-default,
-        hover: $background-formfield-hover,
-        active: $background-formfield-active,
+    form-field: (
+        default: $background-form-field-default,
+        hover: $background-form-field-hover,
+        active: $background-form-field-active,
     ),
     brand: (
         primary: $background-brand-primary,

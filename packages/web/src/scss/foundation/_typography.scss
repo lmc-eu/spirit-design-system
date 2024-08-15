@@ -8,7 +8,7 @@
 }
 
 :where(body) {
-    @include typography.generate(global-tokens.$body-medium-text-regular);
+    @include typography.generate(global-tokens.$body-3-regular);
 }
 
 // stylelint-disable-next-line selector-max-universal
