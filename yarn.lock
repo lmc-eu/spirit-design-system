@@ -21522,7 +21522,7 @@ __metadata:
     next: "npm:14.2.3"
     react: "npm:^18"
     react-dom: "npm:^18"
-    typescript: "npm:^5"
+    typescript: "npm:4.7.4"
   languageName: unknown
   linkType: soft
 

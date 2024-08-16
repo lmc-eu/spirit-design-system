@@ -24,7 +24,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "typescript": "^5"
+    "typescript": "4.7.4"
   },
   "description": "This is a [Next.js](https://nextjs.org/) project with demo Spirit Design System components and pages router",
   "main": "index.js",
