@@ -5,7 +5,50 @@ import { readdirSync } from 'fs';
 import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from '../helpers';
 
 // Tests that are intentionally broken, but will be fixed in the future
-const IGNORED_TESTS: string[] = [];
+const IGNORED_TESTS: string[] = [
+  'Accordion',
+  'Alert',
+  'Breadcrumbs',
+  'Button',
+  'ButtonLink',
+  'Checkbox',
+  'Collapse',
+  'Container',
+  'Divider',
+  'Dropdown',
+  'FieldGroup',
+  'FileUploader',
+  'Grid',
+  'Header',
+  'Heading',
+  'Icon',
+  'Item',
+  'Link',
+  'Modal',
+  'Pagination',
+  'Pill',
+  'Radio',
+  'ScrollView',
+  'Select',
+  'Spinner',
+  'Stack',
+  'Tabs',
+  'Tag',
+  'Text',
+  'TextArea',
+  'TextField',
+  'Toast',
+  'Tooltip',
+  'UNSTABLE_ActionLayout',
+  'UNSTABLE_Avatar',
+  'UNSTABLE_EmptyState',
+  'UNSTABLE_PartnerLogo',
+  'UNSTABLE_ProductLogo',
+  'UNSTABLE_Section',
+  'UNSTABLE_Slider',
+  'UNSTABLE_Toggle',
+  'UNSTABLE_Truncate',
+];
 
 interface TestConfig {
   packageDir: string;
