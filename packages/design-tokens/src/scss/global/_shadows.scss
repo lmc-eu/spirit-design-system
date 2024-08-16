@@ -1,0 +1,15 @@
+// Manually created from Figma
+$shadow-100: 0 2px 8px 0 var(--spirit-color-shadow-shadow-100-color-01) !default;
+$shadow-200: 0 4px 12px 0 var(--spirit-color-shadow-shadow-200-color-01) !default;
+$shadow-300: 0 8px 24px 0 var(--spirit-color-shadow-shadow-300-color-01) !default;
+$shadow-400: 0 12px 32px 0 var(--spirit-color-shadow-shadow-400-color-01) !default;
+
+$focus: 0 0 0 2px var(--spirit-color-focus-basic-color-01) !default;
+
+$shadows: (
+    100: $shadow-100,
+    200: $shadow-200,
+    300: $shadow-300,
+    400: $shadow-400,
+    focus: $focus,
+) !default;
