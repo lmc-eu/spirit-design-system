@@ -24,7 +24,7 @@ module.exports = {
     'exporters/scss',
     'exporters/js',
     'exporters/variables-scss',
-    'examples'
+    'examples/*'
   ],
 
   extends: ['@lmc-eu/eslint-config-react/base', '@lmc-eu/eslint-config-react/optional', 'prettier', 'plugin:prettier/recommended', 'plugin:storybook/recommended'],
