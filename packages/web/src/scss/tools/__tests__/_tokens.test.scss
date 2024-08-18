@@ -1,0 +1,28 @@
+@use 'true' as test;
+@use '../tokens';
+
+$test-theme: (
+    action: (
+        button: (
+            active: #fff,
+        ),
+    ),
+);
+
+@include test.describe('generate-css-variables mixin') {
+    @include test.it('should generate CSS variables based on the provided map') {
+        @include test.assert() {
+            @include test.output() {
+                :root {
+                    @include tokens.generate-css-variables($test-theme, 'test-');
+                }
+            }
+
+            @include test.expect() {
+                :root {
+                    --test-action-button-active: #fff;
+                }
+            }
+        }
+    }
+}

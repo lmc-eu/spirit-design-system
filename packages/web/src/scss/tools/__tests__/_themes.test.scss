@@ -1,0 +1,74 @@
+@use 'sass:meta';
+@use 'true' as test;
+@use '../themes';
+
+$test-action-button-active-light-default: #fff;
+$test-action-button-active-light-on-brand: #000;
+
+$test-theme-light-default: (
+    action: (
+        button: (
+            active: $test-action-button-active-light-default,
+        ),
+    ),
+);
+
+$test-theme-light-on-brand: (
+    action: (
+        button: (
+            active: $test-action-button-active-light-on-brand,
+        ),
+    ),
+);
+
+@mixin css-variables-light-default {
+    --spirit-color-action-button-active: #{$test-action-button-active-light-default};
+}
+
+@mixin css-variables-light-on-brand {
+    --spirit-color-action-button-active: #{$test-action-button-active-light-on-brand};
+}
+
+$test-themes: (
+    theme-light-default: (
+        variables: $test-theme-light-default,
+        mixins: (
+            css-variables: meta.get-mixin('css-variables-light-default'),
+        ),
+    ),
+    theme-light-on-brand: (
+        variables: $test-theme-light-on-brand,
+        mixins: (
+            css-variables: meta.get-mixin('css-variables-light-on-brand'),
+        ),
+    ),
+);
+
+@include test.describe('generate mixin') {
+    @include test.it('should generate default and other themes') {
+        @include test.assert() {
+            @include test.output() {
+                @include themes.generate($themes: $test-themes, $add-background-image-urls: false);
+            }
+
+            @include test.expect() {
+                :root,
+                .theme-light-default {
+                    --spirit-color-action-button-active: #fff;
+                }
+
+                :where(:root, .theme-light-default) {
+                    color: var(--spirit-color-text-primary);
+                }
+
+                .theme-light-on-brand {
+                    --spirit-color-action-button-active: #000;
+                }
+
+                :where(.theme-light-on-brand) {
+                    color: var(--spirit-color-text-primary);
+                }
+            }
+        }
+    }
+}
