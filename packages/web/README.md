@@ -23,15 +23,17 @@ npm install --save @lmc-eu/spirit-web
 
 ### Quick Start with CSS
 
-The pre-built Spirit CSS is a great choice for small one-off projects,
-prototypes and documentations.
+The pre-built Spirit CSS is a great choice for small one-off projects, prototypes and documentations.
 
-Link the full, vendor-prefixed and minimised CSS with default Spirit branding
-in your HTML template:
+Link the complete, vendor-prefixed and minimised CSS with default Spirit branding in your HTML template:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/themes.min.css" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/foundation.min.css" />
 <link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/helpers.min.css" />
+<link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/utilities.min.css" />
 ```
 
 👉 Alternatively, you can use [CDN](#cdn) links when you don't want to install any npm packages.
@@ -160,6 +162,7 @@ Spirit Design System is also available on CDN:
 | CSS: Foundation | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/foundation.min.css             |
 | CSS: Components | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/components.min.css             |
 | CSS: Helpers    | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/helpers.min.css                |
+| CSS: Themes     | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/themes.min.css                 |
 | CSS: Utilities  | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/css/utilities.min.css              |
 | JavaScript      | https://cdn.jsdelivr.net/npm/@lmc-eu/spirit-web@latest/js/bundle/spirit-web.bundle.min.js |
 

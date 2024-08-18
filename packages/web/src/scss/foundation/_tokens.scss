@@ -1,103 +1,25 @@
+@use 'sass:meta';
 @use '@tokens' as tokens;
+@use '../tools/tokens' as tokens-tools;
+
+$tokens: (
+    gradient: tokens.$gradients,
+    space: tokens.$spaces,
+    container: tokens.$containers,
+    grid: tokens.$grids,
+    breakpoint: tokens.$breakpoints,
+    radius: tokens.$radii,
+    shadow: tokens.$shadows,
+    typography: tokens.$styles,
+);
 
 :root {
     // Print all token values as CSS variables
-    // Borders
-    --spirit-border-style-0: #{tokens.$border-style-0};
-    --spirit-border-style-100: #{tokens.$border-style-100};
-    --spirit-border-style-200: #{tokens.$border-style-200};
     --spirit-border-width-0: #{tokens.$border-width-0};
     --spirit-border-width-100: #{tokens.$border-width-100};
     --spirit-border-width-200: #{tokens.$border-width-200};
 
-    // Colors
-    /// Action colors
-    @each $color-name, $color-value in tokens.$action-colors {
-        --spirit-color-action-#{$color-name}: #{$color-value};
-    }
-
-    /// Background colors
-    @each $color-name, $color-value in tokens.$background-colors {
-        --spirit-color-background-#{$color-name}: #{$color-value};
-    }
-
-    /// Border colors
-    @each $color-name, $color-value in tokens.$border-colors {
-        --spirit-color-border-#{$color-name}: #{$color-value};
-    }
-
-    /// Brand colors
-    @each $color-name, $color-value in tokens.$brand-colors {
-        --spirit-color-brand-#{$color-name}: #{$color-value};
-    }
-
-    /// Emotion
-    @each $color-name, $color-value in tokens.$emotion-colors {
-        --spirit-color-emotion-#{$color-name}: #{$color-value};
-    }
-
-    /// Focus colors
-    @each $color-name, $color-value in tokens.$focus-colors {
-        --spirit-color-focus-#{$color-name}: #{$color-value};
-    }
-
-    /// Text colors
-    @each $color-name, $color-value in tokens.$text-colors {
-        --spirit-color-text-#{$color-name}: #{$color-value};
-    }
-
-    // Gradients
-    @each $gradient-name, $gradient-value in tokens.$gradients {
-        --spirit-gradient-#{$gradient-name}: #{$gradient-value};
-    }
-
-    // Measures
-    @each $space-name, $space-value in tokens.$spaces {
-        --spirit-space-#{$space-name}: #{$space-value};
-    }
-
-    // Other
-    /// Containers
-    @each $container-name, $container-value in tokens.$containers {
-        --spirit-container-#{$container-name}: #{$container-value};
-    }
-
-    /// Grids
-    @each $grid-name, $grid-value in tokens.$grids {
-        --spirit-grid-#{$grid-name}: #{$grid-value};
-    }
-
-    /// Container paddings
-    @each $container-padding-name, $container-padding-value in tokens.$container-paddings {
-        --spirit-container-padding-#{$container-padding-name}: #{$container-padding-value};
-    }
-
-    /// Grid gutters
-    @each $grid-gutter-name, $grid-gutter-value in tokens.$grid-gutters {
-        --spirit-grid-gutter-#{$grid-gutter-name}: #{$grid-gutter-value};
-    }
-
-    /// Breakpoints
-    @each $breakpoint-name, $breakpoint-value in tokens.$breakpoints {
-        --spirit-breakpoint-#{$breakpoint-name}: #{$breakpoint-value};
-    }
-
-    // Radii
-    @each $radius-name, $radius-value in tokens.$radii {
-        --spirit-radius-#{$radius-name}: #{$radius-value};
-    }
-
-    // Shadows
-    @each $shadow-name, $shadow-value in tokens.$shadows {
-        --spirit-shadow-#{$shadow-name}: #{$shadow-value};
-    }
-
-    // Typography
-    @each $style-name, $style-value in tokens.$styles {
-        @each $breakpoint-name, $breakpoint-value in $style-value {
-            @each $property-name, $property-value in $breakpoint-value {
-                --spirit-typography-#{$style-name}-#{$breakpoint-name}-#{$property-name}: #{$property-value};
-            }
-        }
+    @each $key, $value in $tokens {
+        @include tokens-tools.generate-css-variables($map: $value, $prefix: '#{tokens.$token-prefix}#{$key}');
     }
 }
