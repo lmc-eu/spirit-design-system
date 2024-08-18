@@ -8,7 +8,5 @@
 }
 
 :where(body) {
-    @include typography.generate(tokens.$body-medium-text-regular);
-
-    color: tokens.$text-primary-default;
+    @include typography.generate(tokens.$body-medium-regular);
 }
