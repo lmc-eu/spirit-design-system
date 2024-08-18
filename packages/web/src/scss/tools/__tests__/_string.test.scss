@@ -28,3 +28,11 @@
         @include test.assert-equal(string.replace('no-replacement-here', 'z', 'y'), 'no-replacement-here');
     }
 }
+
+@include test.describe('singularize function') {
+    @include test.it('should singularize a string') {
+        @include test.assert-equal(string.singularize('gradients'), 'gradient');
+        @include test.assert-equal(string.singularize('variables'), 'variable');
+        @include test.assert-equal(string.singularize('colors'), 'color');
+    }
+}
