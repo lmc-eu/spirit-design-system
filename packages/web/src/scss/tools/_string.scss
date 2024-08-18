@@ -54,3 +54,9 @@
 
     @return $string;
 }
+
+// Singularize a string
+// Example: singularize('gradients') will return 'gradient'
+@function singularize($string) {
+    @return string.slice($string, 1, string.length($string) - 1);
+}
