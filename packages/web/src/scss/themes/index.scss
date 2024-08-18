@@ -1,0 +1,4 @@
+@use '@themes' as themes;
+@use '../tools/themes' as themes-tools;
+
+@include themes-tools.generate($themes: themes.$themes);

@@ -1,10 +1,9 @@
-// This code is commented out until we switch it to the new token system
-// @forward '@csstools/normalize.css/normalize.css';
-// @forward 'box-sizing';
-// @forward 'images';
-// @forward 'interactions';
-// @forward 'links';
-// @forward 'reset';
-// @forward 'shared';
-// @forward 'tokens';
-// @forward 'typography';
+@forward '@csstools/normalize.css/normalize.css';
+@forward 'box-sizing';
+@forward 'images';
+@forward 'interactions';
+@forward 'links';
+@forward 'reset';
+@forward 'shared';
+@forward 'tokens';
+@forward 'typography';

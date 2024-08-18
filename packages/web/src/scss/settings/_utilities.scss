@@ -134,25 +134,20 @@ $utilities: (
         responsive: false,
         property: color,
         class: text,
-        values:
-            map.merge(
-                tokens.$text-colors,
-                (
-                    brand-primary: tokens.$brand-primary,
-                    brand-secondary: tokens.$brand-secondary,
-                )
-            ),
+        values: (
+            primary: tokens.$text-primary,
+            secondary: tokens.$text-secondary,
+            tertiary: tokens.$text-tertiary,
+        ),
     ),
     'background-color': (
         responsive: false,
         property: background-color,
         class: bg,
         values: (
-            basic: tokens.$background-basic,
-            brand-primary: tokens.$brand-primary,
-            brand-secondary: tokens.$brand-secondary,
-            cover: tokens.$background-cover,
-            inverted: tokens.$background-inverted,
+            primary: tokens.$background-primary,
+            secondary: tokens.$background-secondary,
+            tertiary: tokens.$background-tertiary,
         ),
     ),
     'border-radius': (

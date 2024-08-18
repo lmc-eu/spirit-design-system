@@ -8,23 +8,28 @@
 // 8. Disable link underline everywhere.
 
 @use 'sass:map';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../../settings/cursors';
-@use '../../settings/dictionaries' as dictionaries-settings;
+@use '../../settings/globals';
+
+// @use '../../settings/dictionaries' as dictionaries-settings;
 @use '../../settings/links' as links-settings;
-@use '../../tools/dictionaries';
+
+// @use '../../tools/dictionaries';
 @use '../../tools/links' as links-tools;
 
+// TODO
 // 1.
-@include dictionaries.prepare-button-links(dictionaries-settings.$action-link-colors);
+// @include dictionaries.prepare-button-links(dictionaries-settings.$action-link-colors);
 
+// TODO
 // 2.
-@include dictionaries.generate-link-colors(
-    '.link',
-    dictionaries-settings.$action-link-colors,
-    tokens.$action-colors,
-    (default, hover, active, disabled)
-);
+// @include dictionaries.generate-link-colors(
+//    '.link',
+//    dictionaries-settings.$action-link-colors,
+//    tokens.$action-colors,
+//    (default, hover, active, disabled)
+// );
 
 // 3.
 [class*='typography-heading'] a {
@@ -59,16 +64,17 @@ button.link-disabled:not(.link-underlined) {
 
 // 7.
 [class*='typography-heading'] :visited {
-    color: map.get(tokens.$action-colors, link-primary-visited);
+    color: var(--#{globals.$prefix}color-action-link-visited-default);
 }
 
+// TODO
 // 7.
-@include dictionaries.generate-link-colors(
-    '[class*="typography-heading"] .link',
-    dictionaries-settings.$text-colors,
-    tokens.$action-colors,
-    visited
-);
+// @include dictionaries.generate-link-colors(
+//    '[class*="typography-heading"] .link',
+//    dictionaries-settings.$text-colors,
+//    tokens.$action-colors,
+//    visited
+// );
 
 // 8.
 // stylelint-disable selector-no-qualifying-type -- Increase specificity to override button variant styles.
