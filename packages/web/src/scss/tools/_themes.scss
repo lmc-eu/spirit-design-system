@@ -1,0 +1,26 @@
+@use '../settings/globals';
+@use 'string' as string-tools;
+@use 'tokens' as tokens-tools;
+
+@mixin generate($themes) {
+    // The default theme will be applied to the :root element.
+    // As in Figma we make the first theme the default one.
+    $is-default-theme: true;
+
+    @each $key, $value in $themes {
+        $selector: if($is-default-theme, ':root, .#{globals.$prefix}#{$key}', '.#{globals.$prefix}#{$key}');
+
+        #{$selector} {
+            @each $token-type-key, $token-type-value in $value {
+                $token-type-name: string-tools.singularize($token-type-key);
+
+                @include tokens-tools.generate-css-variables(
+                    $token-type-value,
+                    '#{globals.$prefix}#{$token-type-name}'
+                );
+            }
+        }
+
+        $is-default-theme: false;
+    }
+}

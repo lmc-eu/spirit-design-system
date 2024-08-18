@@ -1,6 +1,9 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
+// 2. We need to apply a global color to all elements in order to make the theme work.
+//    Otherwise, we would have to apply the color to every single element in the project.
 
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
+@use '../settings/globals';
 @use '../tools/typography';
 
 :where(html) {
@@ -8,7 +11,10 @@
 }
 
 :where(body) {
-    @include typography.generate(tokens.$body-medium-text-regular);
+    @include typography.generate(global-tokens.$body-medium-regular);
+}
 
-    color: tokens.$text-primary-default;
+// stylelint-disable-next-line selector-max-universal -- 2.
+* {
+    color: var(--#{globals.$prefix}color-text-primary);
 }

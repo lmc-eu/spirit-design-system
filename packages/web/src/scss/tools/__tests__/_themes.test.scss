@@ -1,0 +1,68 @@
+@use 'true' as test;
+@use '../themes';
+
+$test-theme-light: (
+    action: (
+        button: (
+            active: #fff,
+        ),
+    ),
+);
+
+$test-theme-light-inverted: (
+    action: (
+        button: (
+            active: #000,
+        ),
+    ),
+);
+
+$test-themes: (
+    theme-light: (
+        colors: $test-theme-light,
+    ),
+    theme-light-inverted: (
+        colors: $test-theme-light,
+    ),
+);
+
+@include test.describe('generate mixin') {
+    @include test.it('should generate default and other themes') {
+        @include test.assert() {
+            @include test.output() {
+                :root {
+                    @include themes.generate($test-themes);
+                }
+            }
+
+            @include test.expect() {
+                :root,
+                .spirit-theme-light {
+                    --spirit-color-action-button-active: #fff;
+                }
+
+                .spirit-theme-light-inverted {
+                    --spirit-color-action-button-active: #000;
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('generate-css-variables mixin') {
+    @include test.it('should generate CSS variables based on the provided map') {
+        @include test.assert() {
+            @include test.output() {
+                :root {
+                    @include themes.generate-css-variables($test-theme-light, 'test-');
+                }
+            }
+
+            @include test.expect() {
+                :root {
+                    --test-action-button-active: #fff;
+                }
+            }
+        }
+    }
+}
