@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "start": "yarn packages:start",
-    "build": "npm-run-all --serial packages:build:libs packages:build:web",
+    "build": "npm-run-all --serial packages:build:libs packages:build:web packages:build:examples",
     "es:lint": "eslint ./",
     "es:lint:fix": "yarn es:lint --fix",
     "commit:lint:test": "yarn commitlint --from HEAD~1 --to HEAD --verbose",
@@ -47,6 +47,7 @@
     "packages:types": "lerna run types --no-sort",
     "packages:build:libs": "lerna run build --ignore '@lmc-eu/spirit-web*' --ignore=@lmc-eu/spirit-demo-app --ignore=@lmc-eu/spirit-storybook",
     "packages:build:web": "lerna run build --scope '@lmc-eu/spirit-web*' --ignore=@lmc-eu/spirit-demo-app",
+    "packages:build:examples": "lerna run build --scope '@almacareer/spirit-example*'",
     "packages:publish": "lerna publish",
     "packages:diff": "lerna diff",
     "packages:changed": "lerna changed",
