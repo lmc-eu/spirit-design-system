@@ -1,5 +1,5 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
-$container-max-width: tokens.$container-max-width;
-$container-paddings: tokens.$container-paddings;
-$container-breakpoints: tokens.$breakpoints;
+$container-max-width: global-tokens.$container-max-width;
+$container-paddings: global-tokens.$container-paddings;
+$container-breakpoints: global-tokens.$breakpoints;
