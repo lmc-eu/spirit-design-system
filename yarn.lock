@@ -3786,7 +3786,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@lmc-eu/spirit-design-tokens@npm:^2.0.3, @lmc-eu/spirit-design-tokens@workspace:^, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
+"@lmc-eu/spirit-design-tokens@npm:*, @lmc-eu/spirit-design-tokens@npm:^2.0.3, @lmc-eu/spirit-design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -21510,7 +21510,7 @@ __metadata:
   resolution: "next-with-pages-router@workspace:examples/next-with-pages-router"
   dependencies:
     "@babel/preset-typescript": "npm:^7.24.7"
-    "@lmc-eu/spirit-design-tokens": "workspace:^"
+    "@lmc-eu/spirit-design-tokens": "npm:*"
     "@lmc-eu/spirit-web": "workspace:^"
     "@lmc-eu/spirit-web-react": "workspace:^"
     "@next/eslint-plugin-next": "npm:^14.2.5"
