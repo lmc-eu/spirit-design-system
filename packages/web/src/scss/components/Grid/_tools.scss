@@ -1,14 +1,13 @@
 @use 'sass:map';
 @use 'sass:string';
-@use '@tokens' as tokens;
 @use '../../tools/breakpoint';
 
 // Generates column-gap and row-gap values for each breakpoint
 // Parameters are:
-// * $gutters: the gaps map
+// * $spacings: the gaps map
 // * $breakpoints: the breakpoints map
-@mixin gutters($gutters, $breakpoints) {
-    $gap-fallback: map.get($gutters, 'mobile');
+@mixin spacings($spacings, $breakpoints) {
+    $gap-fallback: map.get($spacings, 'mobile');
 
     $column-property-name: '--grid-spacing-x';
     $row-property-name: '--grid-spacing-y';
@@ -17,7 +16,7 @@
     $row-fallback: var(--grid-default-gap, #{$gap-fallback});
 
     @each $breakpoint-name, $breakpoint-value in $breakpoints {
-        @if not map.has-key($gutters, $breakpoint-name) {
+        @if not map.has-key($spacings, $breakpoint-name) {
             @error 'Invalid breakpoint specified! #{$breakpoint-name} doesn\'t exist. Use one of #{map.keys($breakpoints)}';
         }
 
@@ -27,7 +26,7 @@
         }
 
         @include breakpoint.up($breakpoint-value) {
-            --grid-default-gap: #{map.get($gutters, $breakpoint-name)};
+            --grid-default-gap: #{map.get($spacings, $breakpoint-name)};
             --grid-column-gap: var(#{string.unquote($column-property-name)}, #{$column-fallback});
             --grid-row-gap: var(#{string.unquote($row-property-name)}, #{$row-fallback});
         }
