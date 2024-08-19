@@ -8,7 +8,7 @@ const GridResponsiveAlignment = () => (
       cols={1}
       alignmentX={{ tablet: 'center', desktop: 'right' }}
       alignmentY={{ tablet: 'center', desktop: 'bottom' }}
-      UNSAFE_className="bg-cover"
+      UNSAFE_className="bg-secondary"
     >
       <DocsBox size="small">
         Horizontal Alignment
@@ -19,7 +19,7 @@ const GridResponsiveAlignment = () => (
       cols={1}
       alignmentX={{ mobile: 'left', tablet: 'center', desktop: 'right' }}
       alignmentY={{ mobile: 'top', tablet: 'center', desktop: 'bottom' }}
-      UNSAFE_className="bg-cover"
+      UNSAFE_className="bg-secondary"
     >
       <DocsBox size="small">Vertical Alignment</DocsBox>
     </Grid>
