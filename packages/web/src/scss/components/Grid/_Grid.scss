@@ -11,7 +11,7 @@
     width: 100%;
 
     @include reset.list();
-    @include tools.gutters(theme.$grid-gutters, theme.$breakpoints);
+    @include tools.spacings(theme.$grid-spacings, theme.$breakpoints);
 }
 
 // stylelint-disable-next-line selector-max-universal -- Let's be bold and reset spacing for all direct descendants regardless of their type to avoid inheritance of spacing for nested Grid.
