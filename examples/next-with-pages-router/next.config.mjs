@@ -15,14 +15,6 @@ const nextConfig = {
       path.join(pathDir, 'src/styles'),
     ],
   },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@lmc-eu/spirit-web-react': path.join(pathDir, '../../node_modules/@lmc-eu/spirit-web-react/src'),
-    };
-
-    return config;
-  },
 };
 
 export default nextConfig;
