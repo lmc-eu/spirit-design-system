@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
@@ -17,5 +18,5 @@ $alignments-y: (
 $breakpoints: tokens.$breakpoints;
 
 $grid-columns: tokens.$grid-columns;
-$grid-gutters: tokens.$grid-gutters;
+$grid-spacings: map.get(tokens.$grids, spacing);
 $grid-equal-columns: 1, 2, 3, 4, 5, 6, 12;
