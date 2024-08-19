@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"]
+      "@lmc-eu/spirit-web-react": ["../../node_modules/@lmc-eu/spirit-web-react/src"],
+      "@lmc-eu/spirit-design-tokens": ["../../node_modules/@lmc-eu/spirit-design-tokens/scss"]
     },
     "forceConsistentCasingInFileNames": true
   },

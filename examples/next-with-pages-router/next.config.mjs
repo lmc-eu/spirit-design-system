@@ -5,14 +5,6 @@ const pathDir = dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, {}) => {
-    config.resolve.alias['@lmc-eu/spirit-design-tokens'] = path.join(
-      pathDir,
-      '../../node_modules/@lmc-eu/spirit-design-tokens/scss',
-    );
-
-    return config;
-  },
   transpilePackages: ['@lmc-eu/spirit-web-react'],
   reactStrictMode: true,
   sassOptions: {
