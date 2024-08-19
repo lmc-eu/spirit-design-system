@@ -12,6 +12,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@almacareer/spirit-example-next-with-pages-router@workspace:examples/next-with-pages-router":
+  version: 0.0.0-use.local
+  resolution: "@almacareer/spirit-example-next-with-pages-router@workspace:examples/next-with-pages-router"
+  dependencies:
+    "@babel/preset-typescript": "npm:^7.24.7"
+    "@lmc-eu/spirit-design-tokens": "workspace:^"
+    "@lmc-eu/spirit-web": "workspace:^"
+    "@lmc-eu/spirit-web-react": "workspace:^"
+    "@next/eslint-plugin-next": "npm:^14.2.5"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    eslint: "npm:^8"
+    eslint-config-next: "npm:14.2.5"
+    next: "npm:14.2.3"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    typescript: "npm:4.7.4"
+  languageName: unknown
+  linkType: soft
+
 "@almacareer/spirit-exporters-variables-scss@workspace:exporters/variables-scss":
   version: 0.0.0-use.local
   resolution: "@almacareer/spirit-exporters-variables-scss@workspace:exporters/variables-scss"
@@ -21504,27 +21525,6 @@ __metadata:
   checksum: 10/9bdb0290d081513548ed25c13bef118386346806080a3106986481b08c673ba22ec3d2c717e21ec131a0d9c24570805eabb9c1a57aed1044ce3420a08015c4d4
   languageName: node
   linkType: hard
-
-"next-with-pages-router@workspace:examples/next-with-pages-router":
-  version: 0.0.0-use.local
-  resolution: "next-with-pages-router@workspace:examples/next-with-pages-router"
-  dependencies:
-    "@babel/preset-typescript": "npm:^7.24.7"
-    "@lmc-eu/spirit-design-tokens": "workspace:^"
-    "@lmc-eu/spirit-web": "workspace:^"
-    "@lmc-eu/spirit-web-react": "workspace:^"
-    "@next/eslint-plugin-next": "npm:^14.2.5"
-    "@types/node": "npm:^20"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    eslint: "npm:^8"
-    eslint-config-next: "npm:14.2.5"
-    next: "npm:14.2.3"
-    react: "npm:^18"
-    react-dom: "npm:^18"
-    typescript: "npm:4.7.4"
-  languageName: unknown
-  linkType: soft
 
 "next@npm:14.2.3":
   version: 14.2.3
