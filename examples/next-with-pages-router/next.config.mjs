@@ -11,7 +11,7 @@ const nextConfig = {
     fiber: false,
     includePaths: [
       path.join(pathDir, '../../node_modules'),
-      path.join(pathDir, '../../node_modules/@lmc-eu/spirit-design-tokens'),
+      path.join(pathDir, '../../node_modules/@lmc-eu/spirit-design-tokens/scss'),
       path.join(pathDir, 'src/styles'),
     ],
   },
