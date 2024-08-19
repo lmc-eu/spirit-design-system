@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lmc-eu/spirit-design-tokens": "*",
+    "@lmc-eu/spirit-design-tokens": "workspace:^",
     "@lmc-eu/spirit-web": "workspace:^",
     "@lmc-eu/spirit-web-react": "workspace:^",
     "next": "14.2.3",
