@@ -68,3 +68,9 @@ makefile
 
 # GitHub
 CODEOWNERS
+
+# variable-scss exporter example mock test files
+exporters/variables-scss/src/**/*.scss
+
+# variable-scss exporter generated cjs
+exporters/variables-scss/generated/**/*.cjs
