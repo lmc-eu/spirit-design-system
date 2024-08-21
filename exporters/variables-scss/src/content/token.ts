@@ -1,16 +1,23 @@
 import { ColorFormat, CSSHelper, NamingHelper, StringCase } from '@supernovaio/export-helpers';
-import { ColorToken, Token, TokenGroup } from '@supernovaio/sdk-exporters';
+import { ColorToken, DimensionToken, TokenGroup, Token } from '@supernovaio/sdk-exporters';
 
-export function colorTokenToCSS(
+const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, withoutParent: boolean = false): string => {
+  let parent;
+  if (withoutParent) {
+    parent = null;
+  } else {
+    parent = tokenGroups.find((group) => group.id === token.parentGroupId)!;
+  }
+
+  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
+};
+
+export const colorTokenToCSS = (
   token: ColorToken,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-): string {
-  // First creating the name of the token,
-  // using helper function which turns any token name / path into a valid variable name
+): string => {
   const name = tokenVariableName(token, tokenGroups);
-
-  // Then creating the value of the token, using another helper function
   const value = CSSHelper.colorTokenValueToCSS(token.value, mappedTokens, {
     allowReferences: true,
     decimals: 3,
@@ -19,10 +26,38 @@ export function colorTokenToCSS(
   });
 
   return `$${name}: ${value};`;
-}
+};
 
-function tokenVariableName(token: Token, tokenGroups: Array<TokenGroup>): string {
-  const parent = tokenGroups.find((group) => group.id === token.parentGroupId)!;
+export const measuresTokenToCSS = (
+  token: DimensionToken,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+): string | null => {
+  // @ts-ignore-next-line
+  if (!token.origin.name?.includes('Spacing system')) {
+    return null;
+  }
 
-  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
-}
+  const name = tokenVariableName(token, tokenGroups, true);
+  const value = token.value.measure;
+  const unit = CSSHelper.unitToCSS(token.value.unit);
+
+  return `$${name}: ${value}${unit} !default;`;
+};
+
+export const otherTokenToCSS = (
+  token: DimensionToken,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+): string | null => {
+  // @ts-ignore-next-line
+  if (!token.origin.name?.includes('Breakpoint')) {
+    return null;
+  }
+
+  const name = tokenVariableName(token, tokenGroups);
+  const value = token.value.measure;
+  const unit = CSSHelper.unitToCSS(token.value.unit);
+
+  return `$${name}: ${value}${unit} !default;`;
+};

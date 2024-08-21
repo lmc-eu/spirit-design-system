@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "gennerated/exporter.js",
   "scripts": {
-    "dev": "vite watch",
+    "dev": "vite build --watch",
     "build": "vite build",
     "lint": "eslint ./",
     "lint:fix": "yarn lint --fix",
