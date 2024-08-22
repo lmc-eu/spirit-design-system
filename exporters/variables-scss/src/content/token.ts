@@ -1,5 +1,5 @@
 import { ColorFormat, CSSHelper, NamingHelper, StringCase } from '@supernovaio/export-helpers';
-import { ColorToken, DimensionToken, TokenGroup, Token } from '@supernovaio/sdk-exporters';
+import { ColorToken, DimensionToken, TokenGroup, Token, TokenType } from '@supernovaio/sdk-exporters';
 
 const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, withoutParent: boolean = false): string => {
   let parent;
@@ -12,13 +12,39 @@ const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, without
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const colorTokenToCSS = (
-  token: ColorToken,
+export const tokenToCSS = (
+  token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-): string => {
-  const name = tokenVariableName(token, tokenGroups);
-  const value = CSSHelper.colorTokenValueToCSS(token.value, mappedTokens, {
+): string | null => {
+  if (token.tokenType === TokenType.color) {
+    return null;
+  }
+
+  const colorToken = token as ColorToken;
+  const name = tokenVariableName(colorToken, tokenGroups);
+  const value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
+    allowReferences: true,
+    decimals: 3,
+    colorFormat: ColorFormat.smartHashHex,
+    tokenToVariableRef: (t) => `var(--${tokenVariableName(t, tokenGroups)})`,
+  });
+
+  return `$${name}: ${value};`;
+};
+
+export const colorTokenToCSS = (
+  token: Token,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+): string | null => {
+  if (token.tokenType !== TokenType.color) {
+    return null;
+  }
+
+  const colorToken = token as ColorToken;
+  const name = tokenVariableName(colorToken, tokenGroups);
+  const value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
     allowReferences: true,
     decimals: 3,
     colorFormat: ColorFormat.smartHashHex,
@@ -29,35 +55,46 @@ export const colorTokenToCSS = (
 };
 
 export const measuresTokenToCSS = (
-  token: DimensionToken,
+  token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ): string | null => {
+  if (token.tokenType !== TokenType.dimension) {
+    return null;
+  }
+
+  const dimensionToken = token as DimensionToken;
   // @ts-ignore-next-line
   if (!token.origin.name?.includes('Spacing system')) {
     return null;
   }
 
-  const name = tokenVariableName(token, tokenGroups, true);
-  const value = token.value.measure;
-  const unit = CSSHelper.unitToCSS(token.value.unit);
+  const name = tokenVariableName(dimensionToken, tokenGroups, true);
+  const value = dimensionToken.value.measure;
+  const unit = CSSHelper.unitToCSS(dimensionToken.value.unit);
 
   return `$${name}: ${value}${unit} !default;`;
 };
 
 export const otherTokenToCSS = (
-  token: DimensionToken,
+  token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ): string | null => {
+  if (token.tokenType !== TokenType.dimension) {
+    return null;
+  }
+
+  const otherToken = token as DimensionToken;
+
   // @ts-ignore-next-line
   if (!token.origin.name?.includes('Breakpoint')) {
     return null;
   }
 
-  const name = tokenVariableName(token, tokenGroups);
-  const value = token.value.measure;
-  const unit = CSSHelper.unitToCSS(token.value.unit);
+  const name = tokenVariableName(otherToken, tokenGroups);
+  const value = otherToken.value.measure;
+  const unit = CSSHelper.unitToCSS(otherToken.value.unit);
 
   return `$${name}: ${value}${unit} !default;`;
 };
