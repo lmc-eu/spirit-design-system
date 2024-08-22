@@ -24,8 +24,8 @@ export default prettierConfig;
 
 ## 🙌 Contributing
 
-We're always looking for contributors to help us fix bugs, build new features,
-or help us improve the project documentation. If you're interested, definitely
+We’re always looking for contributors to help us fix bugs, build new features,
+or help us improve the project documentation. If you’re interested, definitely
 check out our [Contributing Guide][contributing]! 👀
 
 ## 📝 License

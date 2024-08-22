@@ -20,13 +20,13 @@ This is increasingly becoming less of an issue with more and more dependencies b
 
 We strongly advise the use of [TypeScript][typescript] even for simple projects and those worked on by single developers.
 
-This project uses and leverages Typescript in every possible way to have the best developer experience.
+This project uses and leverages TypeScript in every possible way to have the best developer experience.
 
 ## Consequences
 
 This makes the initial experience not great for folks using JavaScript.
 
-This also may anger some folks who really don't like [TypeScript][typescript].
+This also may anger some folks who really don’t like [TypeScript][typescript].
 For those folks, we provide also transpiled packages that can be used in a JavaScript environment.
 
 [typescript]: https://www.typescriptlang.org/

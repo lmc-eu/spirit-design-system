@@ -21,11 +21,11 @@ Introducing deprecations and feature flags to be removed in the version 2 lists.
 
 <!--lint enable heading-capitalization -->
 
-- _spirit-web-twig_ was released as version 2 already. See the [CHANGELOG][twig-changelog] for more details or refer to the [migration guide][twig-migration-v2].
+- _spirit-web-twig_ was released as version 2 already. See the [CHANGELOG][twig-changelog] for more details or check the [migration guide][twig-migration-v2].
 
 ---
 
-Please refer back to this list or reach out to our team if you encounter any issues during migration.
+If you face any problems during migration, please check this list or contact our team for assistance.
 
 [web-deprecations-v2]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/DEPRECATIONS-v2.md
 [web-react-deprecations-v2]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/DEPRECATIONS-v2.md

@@ -14,7 +14,7 @@
 
 ## Available Design Tokens
 
-| Category      | Supernova | Figma | Sass                 |
+| Category      | Supernova | Figma | SASS                 |
 | ------------- | --------- | ----- | -------------------- |
 | 🖼 Borders    | ✅        | ❌    | [`_borders.sass`]    |
 | 🎨 Colors     | ✅        | ✅    | [`_colors.sass`]     |
@@ -27,11 +27,11 @@
 
 ## Install
 
-🙋🏻‍♂️ **Hold on! Do you already use [`spirit-web`]?** Then you don't need to
+🙋🏻‍♂️ **Hold on! Do you already use [`spirit-web`]?** Then you don’t need to
 install this package because `spirit-design-tokens` is installed automatically
 as a dependency of [`spirit-web`].
 
-If you want to use just `spirit-design-tokens` alone in your project, run:
+To use just `spirit-design-tokens` alone in your project, run:
 
 ```shell
 yarn add @lmc-eu/spirit-design-tokens
@@ -45,7 +45,7 @@ npm install --save @lmc-eu/spirit-design-tokens
 
 ## Basic Usage
 
-The recommended approach in Sass is to import all Spirit design tokens at once
+The recommended approach in SASS is to import all Spirit design tokens at once
 via the [`@tokens` API](#tokens-api):
 
 ```scss
@@ -64,7 +64,7 @@ future.
 <details>
 <summary>Optional: import by categories</summary>
 
-You can also import individual design token files by categories, e.g.:
+You can also import individual design token files by categories, for example:
 
 ```scss
 @use 'sass:map';
@@ -79,7 +79,7 @@ You can also import individual design token files by categories, e.g.:
 
 This approach is a bit more descriptive and thus provides slightly better
 developer experience. You may find it more convenient in situations you
-**don't** suppose your code will make its way to Spirit as this approach is
+**don’t** suppose your code will make its way to Spirit as this approach is
 incompatible with `@tokens` API that makes rebranding possible.
 
 </details>
@@ -98,7 +98,7 @@ The structure is the same as in the SASS.
 
 ## `@tokens` API
 
-`@tokens` API enables quick and easy rebranding of Spirit Sass styles by
+`@tokens` API enables quick and easy rebranding of Spirit SASS styles by
 [replacing the path](#b-via-load-path) to design tokens. You need to be familiar
 with it if you are building your custom design system based on Spirit or you are
 going to contribute to Spirit.
@@ -109,7 +109,7 @@ going to contribute to Spirit.
 
 Access Spirit design tokens via the `@tokens` API without having to configure
 load path, just like shown in the [basic example](#basic-usage). This is a good
-choice for starting off quickly. However, it **doesn't enable rebranding**.
+choice for starting off quickly. However, it **doesn’t enable rebranding**.
 
 #### b) via load path
 
@@ -128,9 +128,9 @@ while keeping them open to be replaced by another set of design tokens:
 
 ##### Configuring Load Path
 
-Because the `@tokens` file doesn't exist locally, tell Sass where it should
+Because the `@tokens` file doesn’t exist locally, tell SASS where it should
 look for unreachable files. This is also a required step if you are importing
-Spirit components from their Sass source.
+Spirit components from their SASS source.
 
 ```shell
 sass --load-path=node_modules/@lmc-eu/spirit-design-tokens/scss my-styles.scss
@@ -174,7 +174,7 @@ module: {
 In Spirit, the [`@tokens.scss`] file simply @forwards all design tokens exposed
 by [`index.scss`] which in turn @forwards all design token categories. To make
 your design tokens compatible with Spirit, just create a `@tokens.scss` file and
-@forward all your design tokens through it, e.g.:
+@forward all your design tokens through it, for example:
 
 ```scss
 // @tokens.scss
@@ -215,13 +215,13 @@ files in the directory.
 
 In order for developers to know the file behaves differently than usual Sass
 partials, a `@` prefix is added to mark this behavior both in filesystem and
-inside Sass files. As a result, it's clear why e.g. `@use 'tools'` refers to
-a local file and `@use '@tokens'` does not. However, **it's only a naming
-convention,** there is no special tooling or configuration for Sass partials
+inside SASS files. As a result, it’s clear why for example `@use 'tools'` refers to
+a local file and `@use '@tokens'` does not. However, **it’s only a naming
+convention,** there is no special tooling or configuration for SASS partials
 starting with `@`.
 
 Imported module **needs to be renamed to be compatible with SCSS** syntax
-when it's used later on. That's why `@use '@tokens' as tokens`.
+when it’s used later on. That’s why `@use '@tokens' as tokens`.
 
 Look at the following snippets and compare which one offers better
 comprehensibility.
@@ -253,7 +253,7 @@ With `@` prefix:
 
 **Creating a custom design system derived from Spirit? Great to hear that! 🎉**
 
-While it's perfectly OK to develop custom components that may not find their way
+While it’s perfectly OK to develop custom components that may not find their way
 back to Spirit, your design tokens need to **include all Spirit design tokens**
 anyway, so all Spirit components you are going to reuse work correctly with your
 brand.
@@ -265,7 +265,7 @@ Simply put, if you are going to build a design system based on Spirit:
 3. feel free to add anything necessary on top of that,
 4. use your design tokens in your code (and compile Spirit with them).
 
-To make your Sass design tokens compatible with Spirit, don't forget to expose
+To make your SASS design tokens compatible with Spirit, don’t forget to expose
 them via your custom [`@tokens` API](#tokens-api).
 
 </details>

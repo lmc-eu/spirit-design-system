@@ -30,12 +30,12 @@ Oftentimes this ends up being a new prop on a component.
 
 For teams using these features, they will need to import the functionality by using the `UNSTABLE_` prefix.
 
-The documentation associated with experimental prop (TypeScript types, Storybook controls, etc.) will state that it's experimental, mainly in th component README.
+The documentation associated with experimental prop (TypeScript types, Storybook controls, etc.) will state that it’s experimental, mainly in th component README.
 
 The API is not fixed and is likely to change.
 The API is not bound by semver. The component, export, feature, etc. may change, be renamed, or removed in the future without warning.
 
-Over time it becomes apparent an experimental API has stabilized and suits the needs of most users. If it isn't a breaking change, and there hasn't been much movement, it can be moved from "experimental" status to "stable".
+Over time it becomes apparent an experimental API has stabilized and suits the needs of most users. If it isn’t a breaking change, and there hasn’t been much movement, it can be moved from "experimental" status to "stable".
 
 Note: Details on how to document experimental components and exports prefixed with `UNSTABLE_` can be found in the [documentation][docs-experimental-code].
 

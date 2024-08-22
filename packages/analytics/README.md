@@ -2,7 +2,7 @@
 
 > Analytic tools for Spirit Design System.
 
-Spirit-analytics is a simple CLI tool, which parses a repository with [react-scanner][react-scanner].
+Spirit-analytics is a simple command line tool, which parses a repository with [react-scanner][react-scanner].
 The output is a JSON file or files with collected data.
 
 ## Install
@@ -35,7 +35,7 @@ By default, the output will be saved into the `.scanner` directory, but you can 
 spirit-analytics --output path/to/folder
 ```
 
-The [react-scanner] requires a [config file][react-scanner-config] to make it work, `spirit-analytics` has a default config inside, but if you need to, you can use your own config:
+The [react-scanner] requires a [config file][react-scanner-config] to make it work, `spirit-analytics` has a default config inside, but to, you can use your own config:
 
 ```shell
 spirit-analytics --config path/to/config

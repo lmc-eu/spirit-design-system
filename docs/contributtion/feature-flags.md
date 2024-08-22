@@ -15,10 +15,10 @@ Folders and stories within this section in Storybook show components with all fe
 
 ## Current Feature Flags
 
-Feature flags prefixed with `enable-*` contain features we'd like consuming projects to
+Feature flags prefixed with `enable-*` contain features we’d like consuming projects to
 test and give us feedback on. It will be made by default in the version specified in the name.
 In most of the cases these features will be breaking changes - logically or visually.
-They're generally stable and unlikely to change but may change based on your feedback.
+They’re generally stable and unlikely to change but may change based on your feedback.
 We just do not want to break your application or design without your consent.
 
 Flags prefixed with `enable-v#-*` will be removed in the next major version and their behavior will be made the default.
@@ -49,7 +49,7 @@ Example with fictional feature flag to enable fullscreen modal:
 ```
 
 Every feature flag should also provide a class selector that can be used to enable or disable the feature.
-You can use this class if you want to limit the usage of the feature to a specific part of your application.
+You can use this class to limit the usage of the feature to a specific part of your application.
 Place the class on any parent element of the component you want to enable the feature for.
 
 Example:
