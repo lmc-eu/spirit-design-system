@@ -60,7 +60,9 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Lint
-        run: yarn lint
+        run: |
+          yarn es:lint
+          yarn packages:lint
 
   unit-tests:
     name: 🧪 Unit Testing
