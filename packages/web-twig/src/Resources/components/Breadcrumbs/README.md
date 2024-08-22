@@ -98,7 +98,7 @@ content can be overridden by any custom block content.
 | Name          | Type     | Default | Required | Description                                                                                                                                                                                                                                                        |
 | ------------- | -------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `elementType` | `string` | `nav`   | ✕        | HTML tag to render                                                                                                                                                                                                                                                 |
-| `goBackTitle` | `string` | —       | ✕        | Title/translation for backlink to previous page on mobile. It's required to be set when `items` are present. If the `items` property is not passed and the link tree is constructed manually within the children, the backlink needs to be included there as well. |
+| `goBackTitle` | `string` | —       | ✕        | Title/translation for backlink to previous page on mobile. It’s required to be set when `items` are present. If the `items` property is not passed and the link tree is constructed manually within the children, the backlink needs to be included there as well. |
 | `items`       | `array`  | `[]`    | ✕        | Navigation menu items                                                                                                                                                                                                                                              |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
@@ -107,7 +107,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## BreadcrumbsItem
 
-Use the `BreadcrumbsItem` component for the ordered list as the component's children instead of passing the breadcrumb items array via props:
+Use the `BreadcrumbsItem` component for the ordered list as the component’s children instead of passing the breadcrumb items array via props:
 
 ```twig
 <Breadcrumbs>

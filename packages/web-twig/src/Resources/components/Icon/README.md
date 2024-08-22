@@ -1,6 +1,6 @@
 # Icon
 
-Icon component uses inlineSVG extension, so don't forget to add icons path in the configuration
+Icon component uses inlineSVG extension, so don’t forget to add icons path in the configuration
 as seen in [inlineSVG docs][inlinesvg-docs].
 
 Basic example usage:
@@ -25,7 +25,7 @@ Without lexer:
 
 ## Render as Symbol
 
-If you need to prerender the icon as a [symbol][mdn-symbol], you can use the `isSymbol` prop:
+To prerender the icon as a [symbol][mdn-symbol], you can use the `isSymbol` prop:
 
 ```twig
 <Icon name="warning" isSymbol />

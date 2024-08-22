@@ -38,14 +38,14 @@ plugins.
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 ## Accessibility Guidelines
 
 👉 The animation effect of this component is dependent on the
 `prefers-reduced-motion` media query.
 
-🌍 Although we don't need it yet, this component experimentally supports RTL
+🌍 Although we don’t need it yet, this component experimentally supports RTL
 languages (because just a single line had to be added to make it all work 🎉).
 
 ## Minimal Header
@@ -169,7 +169,7 @@ and [escape hatches][readme-escape-hatches].
 As the name suggests, desktop-only actions are intended to display on desktop screens only. They generally work as flex
 containers that define vertical alignment and spacing.
 
-If you need to align actions to the end of the Header, use the `isAtEnd` prop.
+To align actions to the end of the Header, use the `isAtEnd` prop.
 
 👉 It is critical to **make sure all your actions fit the Header on the
 desktop breakpoint**. Spirit intentionally does not provide any overflow
@@ -273,7 +273,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## Header Dialog
 
-Header Dialog is Spirit's solution for responsive navigation and selected use
+Header Dialog is Spirit’s solution for responsive navigation and selected use
 cases such as the user menu. Please note Header Dialog is not intended to be
 used for second-level navigation in general.
 

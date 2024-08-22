@@ -97,7 +97,7 @@ Then you need to add attribute `isAutoResizing` to the component.
 />
 ```
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
 [autocomplete-attr]: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

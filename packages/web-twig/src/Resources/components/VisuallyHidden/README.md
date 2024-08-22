@@ -1,6 +1,6 @@
 # VisuallyHidden
 
-The VisuallyHidden component helps improve web accessibility by rendering its content in a way that it's hidden visually but still accessible to screen readers.
+The VisuallyHidden component helps improve web accessibility by rendering its content in a way that it’s hidden visually but still accessible to screen readers.
 
 Basic example usage:
 

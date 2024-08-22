@@ -39,7 +39,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-👉 Check the [component's docs in the web package][web-js-api] to see the full documentation and API of the plugin.
+👉 Check the [component’s docs in the web package][web-js-api] to see the full documentation and API of the plugin.
 
 ## FileUploader
 
@@ -163,7 +163,7 @@ To mark the input as required, simply add the `isRequired` attribute:
 />
 ```
 
-> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> ⚠️ We don’t use the `required` attribute on the input element. This is because it triggers the browser’s default validation, which can block form submission.
 > Instead, the `FileUploaderInput` component is used to open the system file dialog, and our [JS plugin][web-js-api] manages the file(s).
 > Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently, using our JS plugin. This approach provides more flexibility and customization to meet specific validation requirements.
 
@@ -273,7 +273,7 @@ FileUploaderAttachment with image preview and edit button:
 While you may insert FileUploaderAttachment into your FileUploaderList, in typical use cases it will live inside a
 [`<template>`][mdn-template] tag in the parent FileUploader. The `<template>` tag must be inserted inside the main
 wrapper element that has the `data-spirit-toggle="fileUploader"` attribute. Our JavaScript FileUploader plugin will then pick
-up the template and apply it on any attachments the user wants to upload. In order to make the template work with image preview,
+up the template and apply it on any attachments the user wants to upload. To make the template work with image preview,
 add the `generateImagePreview` prop to the `FileUploaderAttachment` inside the `<template>`.
 
 ```twig

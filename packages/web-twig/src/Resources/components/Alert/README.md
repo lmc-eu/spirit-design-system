@@ -54,7 +54,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-⚠️ Please pay attention to the accessibility setting when Alert is dynamically displayed. In cases where you need to use the component as an information that requires the user's immediate attention,
+⚠️ Please pay attention to the accessibility setting when Alert is dynamically displayed. In cases where you need to use the component as an information that requires the user’s immediate attention,
 you can set `role="alert"` as an [additional attributes][readme-additional-attributes].
 
 [alert]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web/src/scss/components/Alert
