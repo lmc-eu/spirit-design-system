@@ -43,7 +43,7 @@ import { Button } from '@lmc-eu/spirit-web-react/components/Button';
 
 ### Prefixing CSS Classes in Components
 
-If you want to prefix the component classes with your own namespace, you can use the `ClassNamePrefixProvider` context to provide a prefix to all components in your app.
+To prefix the component classes with your own namespace, you can use the `ClassNamePrefixProvider` context to provide a prefix to all components in your app.
 
 Check [`spirit-web` docs][web-pkg-prefixes] to learn how to prefix CSS class names.
 
@@ -61,12 +61,12 @@ All components accept additional attributes that are passed down to the root ele
 This is useful for adding custom event handlers, accessibility attributes, or other attributes that
 are not supported by the component API.
 
-ℹ️ If you need to pass down event handlers to the native form elements in our form components,
+ℹ️ To pass down event handlers to the native form elements in our form components,
 you can use the `inputProps` prop.
 
 Supported attributes are:
 
-- `on*` (eg. `onClick`)
+- `on*` (for example `onClick`)
 - `data-*`
 - `aria-*`
 - `id`
@@ -94,7 +94,7 @@ All Spirit components accept a set of props that can be used to control their ou
 - `marginX`
 - `marginY`
 
-These props accept a spacing token (eg. `space-100`), `auto` or an object with breakpoint keys and spacing token
+These props accept a spacing token (for example `space-100`), `auto` or an object with breakpoint keys and spacing token
 values or `auto`. We use these props to set global CSS utility classes on the root element of the component.
 
 Examples:
@@ -108,7 +108,7 @@ If you need even more control over the component styling, use [escape hatches](#
 
 ### Escape Hatches
 
-While we encourage teams to utilize Spirit design as it is, we do realize that sometimes product specific customizations
+While we encourage teams to use Spirit design as it is, we do realize that sometimes product specific customizations
 may be needed. In these cases, we encourage you or your designers to **talk to us**. We may be able to suggest
 an alternative implementation strategy, or perhaps your design can help propose future Spirit additions.
 
