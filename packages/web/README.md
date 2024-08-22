@@ -34,16 +34,16 @@ in your HTML template:
 <link rel="stylesheet" href="node_modules/@lmc-eu/spirit-web/css/components.min.css" />
 ```
 
-👉 Alternatively, you can use [CDN](#cdn) links when you don't want to install any npm packages.
+👉 Alternatively, you can use [CDN](#cdn) links when you don’t want to install any npm packages.
 
 ### Advanced Implementation in Product with Sass
 
 ❗ **Important:** Make sure you have `sass` dependency installed in your project (`sass` is marked as optional peer dependency since you can use the pre-built distribution CSS).
-And also [configure Sass load path][configuring-load-path] for `@tokens` and
-`node_modules` so all dependencies are resolved correctly by Sass.
+And also [configure SASS load path][configuring-load-path] for `@tokens` and
+`node_modules` so all dependencies are resolved correctly by SASS.
 
-Having the Sass load path configured, import just the components you need in
-your Sass stylesheet:
+Having the SASS load path configured, import just the components you need in
+your SASS stylesheet:
 
 ```scss
 @use 'node_modules/@lmc-eu/spirit-web/scss/components/Button';
@@ -80,13 +80,13 @@ Some components require JavaScript plugins for their full functionality. You can
 
 #### Individual or Compiled
 
-Plugins can be included individually as an EcmaScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
+Plugins can be included individually as an ECMAScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
 
 ```html
 <script src="node_modules/@lmc-eu/spirit-web/js/cjs/spirit-web.min.js" async></script>
 ```
 
-If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are EcmaScript modules.
+If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are ECMAScript modules.
 
 #### Using Spirit Web as a Module in Browser
 
@@ -103,7 +103,7 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 #### Data Attributes
 
 Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
-Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
+Be sure to only use one set of data attributes on a single element (for example, you cannot trigger a tooltip and modal from the same button.).
 
 ℹ️ For turning off this functionality just do not set the `data-spirit-toggle` attribute and use the Programnatic API.
 
@@ -114,7 +114,7 @@ Be sure to only use one set of data attributes on a single element (e.g., you ca
 
 #### Events
 
-Spirit-Web provides custom events for most plugins' unique actions.
+Spirit-Web provides custom events for most plugins’ unique actions.
 Generally, these come in an infinitive and past participle form - where the infinitive (ex. `show`) is triggered at the start of an event, and its past participle form (ex. `shown`) is triggered on the completion of an action.
 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality.
@@ -168,8 +168,8 @@ Spirit Design System is also available on CDN:
 ## Rebranding
 
 Design tokens and their [`@tokens` API][tokens-api] enable quick and easy
-rebranding of Spirit Sass components and styles. Once you have created your own
-design tokens, just provide them to your Sass compiler and you are ready to go!
+rebranding of Spirit SASS components and styles. Once you have created your own
+design tokens, just provide them to your SASS compiler and you are ready to go!
 Learn more in the [`spirit-design-tokens` docs][rebranding].
 
 ## Development

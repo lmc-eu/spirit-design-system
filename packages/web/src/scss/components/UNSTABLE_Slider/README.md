@@ -8,7 +8,7 @@ Slider is a form control that allows users to select a value from a range of val
 ## Basic Usage
 
 The Slider component implements the HTML [range input][mdn-range] element. With the current state of CSS, this requires
-a lot of browser-specific styles and a bit of JavaScript to update the slider's appearance when the value changes (this
+a lot of browser-specific styles and a bit of JavaScript to update the slider’s appearance when the value changes (this
 is required by Webkit-based browsers such as Chrome or Safari).
 
 ```html
@@ -52,7 +52,7 @@ be updated when the slider value changes. See the [Slider Position](#slider-posi
 
 The `--slider-position` CSS custom property is used to set the size of the lower portion of the slider track. The custom
 property needs to be present when the Slider is initially rendered (see the `style` attribute) and updated anytime the slider
-value changes (see the `oninput` handler with the calculation above) which includes also the user's interaction with the
+value changes (see the `oninput` handler with the calculation above) which includes also the user’s interaction with the
 slider.
 
 👉 Please note the value of `--slider-position` must be a **percentage value from 0 to 100** and is calculated as follows:
