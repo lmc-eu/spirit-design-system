@@ -353,7 +353,7 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 | `errorMessages.errorMaxUploadedFiles` | `string`                                                             | —       | ✕        | Translation for the error message: Maximum number of uploaded files |
 | `fileQueue`                           | `FileQueueMapType`                                                   | —       | ✓        | Queue of items to upload                                            |
 | `findInQueue`                         | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to find a particular item in the queue                   |
-| `id`                                  | `string`                                                             | —       | ✓        | FileUploader id                                                     |
+| `id`                                  | `string`                                                             | —       | ✓        | FileUploader ID                                                     |
 | `isFluid`                             | `bool`                                                               | —       | ✕        | When the field is supposed to be fluid                              |
 | `onDismiss`                           | `(key: string) => FileQueueMapType`                                  | —       | ✓        | A callback to delete a particular item from the queue               |
 | `updateQueue`                         | `(key: string, file: File, meta?: FileMetadata) => FileQueueMapType` | —       | ✓        | A callback to update a particular item in the queue                 |
@@ -372,7 +372,7 @@ and [escape hatches][readme-escape-hatches].
 | `dropZoneRef`        | `MutableRefObject<HTMLDivElement>`   | —        | ✕        | Drop zone element reference                                                                                                                                     |
 | `helperText`         | `string`                             | —        | ✕        | Custom helper text                                                                                                                                              |
 | `iconName`           | `string`                             | `upload` | ✕        | Icon used in the drop zone                                                                                                                                      |
-| `id`                 | `string`                             | —        | ✓        | FileUploaderInput id                                                                                                                                            |
+| `id`                 | `string`                             | —        | ✓        | FileUploaderInput ID                                                                                                                                            |
 | `inputRef`           | `MutableRefObject<HTMLInputElement>` | —        | ✕        | Input element reference                                                                                                                                         |
 | `isDisabled`         | `bool`                               | —        | ✕        | Whether is field disabled                                                                                                                                       |
 | `isLabelHidden`      | `bool`                               | —        | ✕        | Whether is input label hidden                                                                                                                                   |
@@ -395,7 +395,7 @@ On top of the API options, the components accept [additional attributes][readme-
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
 and [escape hatches][readme-escape-hatches].
 
-> ⚠️ We don't use the `required` attribute on the input element. This is because it triggers the browser's default validation, which can block form submission.
+> ⚠️ We don’t use the `required` attribute on the input element. This is because it triggers the browser’s default validation, which can block form submission.
 > Instead, the `FileUploaderInput` component is used to open the system file dialog, and the component itself manages the file(s).
 > Please note, the validation for required files is not automatically handled. Developers need to implement this validation independently. This approach provides more flexibility and customization to meet specific validation requirements.
 
@@ -405,7 +405,7 @@ and [escape hatches][readme-escape-hatches].
 | --------------------- | -------- | ------- | -------- | --------------------------------------------- |
 | `attachmentComponent` | `string` | —       | ✓        | A component for rendering a single attachment |
 | `hasImagePreview`     | `bool`   | false   | ✕        | Show image preview in the list                |
-| `id`                  | `string` | —       | ✓        | FileUploaderList id                           |
+| `id`                  | `string` | —       | ✓        | FileUploaderList ID                           |
 | `inputName`           | `string` | —       | ✓        | The name of the input field                   |
 | `label`               | `string` | —       | ✕        | Label for the list                            |
 
@@ -423,7 +423,7 @@ and [escape hatches][readme-escape-hatches].
 | `file`            | `File`                               | —        | ✓        | Attachment file object                                |
 | `hasImagePreview` | `bool`                               | false    | ✕        | Show image preview                                    |
 | `iconName`        | `string`                             | `file`   | ✕        | Icon shown along the file                             |
-| `id`              | `string`                             | —        | ✓        | FileUploaderAttachment id                             |
+| `id`              | `string`                             | —        | ✓        | FileUploaderAttachment ID                             |
 | `imageObjectFit`  | [`cover` \| `contain`]               | `cover`  | ✕        | Defines FileUploaderAttachment image fit in container |
 | `label`           | `string`                             | —        | ✓        | File name                                             |
 | `name`            | `string`                             | —        | ✓        | Input field name                                      |
@@ -474,8 +474,8 @@ via `inputProps` and `listProps`.
 | `attachmentComponent` | `string`                                | —        | ✓        | A component for rendering a single attachment       |
 | `helperText`          | `string`                                | —        | ✕        | Custom helper text                                  |
 | `iconName`            | `string`                                | `upload` | ✓        | Icon used in the UncontrolledFileUploader drop zone |
-| `id`                  | `string`                                | —        | ✓        | UncontrolledFileUploader id                         |
-| `inputId`             | `string`                                | —        | ✓        | FileUploaderInput id                                |
+| `id`                  | `string`                                | —        | ✓        | UncontrolledFileUploader ID                         |
+| `inputId`             | `string`                                | —        | ✓        | FileUploaderInput ID                                |
 | `inputLabel`          | `string`                                | —        | ✓        | FileUploaderInput label                             |
 | `inputName`           | `string`                                | —        | ✓        | FileUploaderInput name                              |
 | `inputProps`          | `Partial<FileUploaderInputBaseProps>`   | —        | ✕        | Rest of FileUploaderInput props                     |
@@ -486,7 +486,7 @@ via `inputProps` and `listProps`.
 | `isRequired`          | `bool`                                  | —        | ✕        | Whether is field marked as required                 |
 | `labelText`           | `string`                                | —        | ✕        | Label for input in Drop zone                        |
 | `linkText`            | `string`                                | —        | ✕        | Link text in input in Drop zone                     |
-| `listId`              | `string`                                | —        | ✓        | FileUploaderList id                                 |
+| `listId`              | `string`                                | —        | ✓        | FileUploaderList ID                                 |
 | `listProps`           | `Partial<FileUploaderListBaseProps>`    | —        | ✕        | Rest of FileUploaderList props                      |
 | `maxFileSize`         | `number`                                | 1000000  | ✕        | The maximum size of the uploaded file in bytes      |
 | `maxUploadedFiles`    | `number`                                | 10       | ✕        | Maximum file upload queue size                      |
