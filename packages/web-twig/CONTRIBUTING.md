@@ -4,7 +4,7 @@
 
 ## PHP Support Using Docker
 
-PHP language is required to develop this package. In order to support other frontend developers which do not have installed PHP locally, there is a Docker image available to develop this package.
+PHP language is required to develop this package. To support other frontend developers which do not have installed PHP locally, there is a Docker image available to develop this package.
 
 To start this project simply run `make start` and then add project certificates to your machine by `make cert`.
 
@@ -14,7 +14,7 @@ Please consult [`Makefile`][makefile] for available commands and options to setu
 
 ## Components Definition
 
-In order to maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
+To maintain the uniformity of writing and functioning of components in HTML-like syntax, it is necessary to accept the following rules in the implementation.
 
 ## File Structure
 
@@ -150,7 +150,7 @@ As we are now using only `dev-main` version of this package, until we have stabl
 
 ### Monorepo and Packagist.org
 
-Packagist requires a single repository for a single package to be present to publish the package. In order to publish this package we are using READ-ONLY repository https://github.com/lmc-eu/spirit-web-twig-bundle where we are publishing the subtree of this monorepo.
+Packagist requires a single repository for a single package to be present to publish the package. To publish this package we are using READ-ONLY repository https://github.com/lmc-eu/spirit-web-twig-bundle where we are publishing the subtree of this monorepo.
 
 ### Updating READ-ONLY Repository
 

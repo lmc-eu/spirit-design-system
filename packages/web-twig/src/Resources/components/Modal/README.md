@@ -268,7 +268,7 @@ and [escape hatches][readme-escape-hatches].
 
 ## Opening the Modal
 
-Use our JavaScript plugin to open your Modal, e.g.:
+Use our JavaScript plugin to open your Modal, for example:
 
 ```twig
 <Button
@@ -299,7 +299,7 @@ Scrolling inside ModalDialog can be turned on by adding the `isScrollable` prop:
 ### Scrolling with ScrollView
 
 To make content overflow more obvious to users, you can wrap the ModalBody content in a [ScrollView][scroll-view] that
-takes over the responsibility for scrolling and provides visual overflow decorators, e.g.:
+takes over the responsibility for scrolling and provides visual overflow decorators, for example:
 
 ```twig
 <ModalDialog isScrollable>
@@ -325,7 +325,7 @@ The custom properties fall back to the previous breakpoint using the mobile-firs
 `height="{{ { tablet: '500px' } }}"` while not setting the `desktop` breakpoint, the value will be used for
 both tablet and desktop screens. The single non-object value will be used for all breakpoints.
 
-This is useful for Modals with dynamic content, e.g. a list of items that can be added or removed, or a multistep wizard.
+This is useful for Modals with dynamic content, for example a list of items that can be added or removed, or a multistep wizard.
 
 ```twig
 <ModalDialog isScrollable height="500px">
