@@ -13,23 +13,6 @@ const addDisclaimer = (content: string): string => {
   return content;
 };
 
-export const generateContent = (
-  tokens: Array<Token>,
-  mappedTokens: Map<string, Token>,
-  tokenGroups: Array<TokenGroup>,
-) => {
-  return [
-    {
-      fileName: '_spacing.scss',
-      content: createSpacingContent(tokens, mappedTokens, tokenGroups),
-    },
-    {
-      fileName: '_radii.scss',
-      content: createRadiiContent(tokens, mappedTokens, tokenGroups),
-    },
-  ];
-};
-
 const tokensToCSS = (
   tokens: Token[],
   handler: TokenHandler,
@@ -42,30 +25,38 @@ const tokensToCSS = (
     .join('\n');
 };
 
-export const createSpacingContent = (
+export const createContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
+  fileName: string,
+  tokenType: string,
+  tokensGroupName: string,
+  withCssObject: boolean,
 ) => {
-  const filteredSpacingTokens = tokens.filter(
-    (token) => token.tokenType === TokenType.dimension && token.origin?.name?.includes('Spacing'),
+  let cssObject = '';
+  const filteredTokens = tokens.filter(
+    (token) => token.tokenType === tokenType && token.origin?.name?.includes(tokensGroupName),
   );
-  const spacingTokensToCSS = tokensToCSS(filteredSpacingTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
-  const spacingObject = generateCssObject(filteredSpacingTokens, mappedTokens, tokenGroups);
+  const cssTokens = tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
+  if (withCssObject) {
+    cssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups);
+  }
 
-  return addDisclaimer(`${spacingTokensToCSS}\n\n${spacingObject}`);
+  return {
+    fileName,
+    content: addDisclaimer(withCssObject ? `${cssTokens}\n\n${cssObject}` : cssTokens),
+  };
 };
 
-export const createRadiiContent = (
-  tokens: Token[],
+export const generateContent = (
+  tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ) => {
-  const filteredRadiiTokens = tokens.filter(
-    (token) => token.tokenType === TokenType.dimension && token.origin?.name?.includes('Radius'),
-  );
-  const radiiTokensToCSS = tokensToCSS(filteredRadiiTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
-  const radiiObject = generateCssObject(filteredRadiiTokens, mappedTokens, tokenGroups);
-
-  return addDisclaimer(`${radiiTokensToCSS}\n\n${radiiObject}`);
+  return [
+    createContent(tokens, mappedTokens, tokenGroups, '_spaces.scss', TokenType.dimension, 'Spacing', true),
+    createContent(tokens, mappedTokens, tokenGroups, '_radii.scss', TokenType.dimension, 'Radius', true),
+    createContent(tokens, mappedTokens, tokenGroups, '_borders.scss', TokenType.dimension, 'Border', false),
+  ];
 };
