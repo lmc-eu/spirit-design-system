@@ -10,7 +10,7 @@ import {
   OutputTextFile,
 } from '@supernovaio/sdk-exporters';
 import { ExporterConfiguration } from '../config';
-import { colorTokenToCSS, measuresTokenToCSS, otherTokenToCSS } from './content/token';
+import { colorTokenToCSS, generateSpacesObject, measuresTokenToCSS, otherTokenToCSS } from './content/token';
 
 type TokenHandler = (token: Token, mappedTokens: Map<string, Token>, tokenGroups: TokenGroup[]) => string | null;
 
@@ -79,13 +79,13 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     });
   }
 
-  const colorContent = createCssVariable(TokenType.color, colorTokenToCSS);
   const measuresContent = createCssVariable(TokenType.dimension, measuresTokenToCSS);
+  const spacesContent = generateSpacesObject(tokens, mappedTokens, tokenGroups);
+  const combinedContent = `${measuresContent}\n\n${spacesContent}`;
   const otherContent = createCssVariable(TokenType.dimension, otherTokenToCSS);
 
   return [
-    createTextFile('./', '_colors.scss', colorContent),
-    createTextFile('./', '_measures.scss', measuresContent),
+    createTextFile('./', '_measures.scss', combinedContent),
     createTextFile('./', '_other.scss', otherContent),
     createTextFile(
       './original-data/',
