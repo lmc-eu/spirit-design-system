@@ -33,11 +33,11 @@ export const generateContent = (
       fileName: '_spacing.scss',
       content: createSpacingContent(tokens, mappedTokens, tokenGroups),
     },
+    {
+      fileName: '_radii.scss',
+      content: createRadiiContent(tokens, mappedTokens, tokenGroups),
+    },
   ];
-};
-
-const filterTokensByType = (tokens: Token[], type: TokenType): Token[] => {
-  return tokens.filter((t) => t.tokenType === type);
 };
 
 const tokensToCSS = (
@@ -52,7 +52,7 @@ const tokensToCSS = (
     .join('\n');
 };
 
-export const measuresTokenToCSS = (
+export const dimensionTokenToCSS = (
   token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
@@ -62,14 +62,9 @@ export const measuresTokenToCSS = (
   }
 
   const dimensionToken = token as DimensionToken;
-  // @ts-ignore-next-line
-  if (!token.origin.name?.includes('Spacing system')) {
-    return null;
-  }
-
   const name = tokenVariableName(dimensionToken, tokenGroups, true);
-  const value = dimensionToken.value.measure;
-  const unit = CSSHelper.unitToCSS(dimensionToken.value.unit);
+  const value = dimensionToken.value?.measure ?? 0; // Add default value
+  const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
 
   return `$${name}: ${value}${unit} !default;`;
 };
@@ -79,32 +74,76 @@ export const createSpacingContent = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ) => {
-  const filteredSpacingTokens = filterTokensByType(tokens, TokenType.dimension);
-  const spacingTokensToCSS = tokensToCSS(filteredSpacingTokens, measuresTokenToCSS, mappedTokens, tokenGroups);
-  const spacingObject = generateSpacesObject(tokens, mappedTokens, tokenGroups);
+  const filteredSpacingTokens = tokens.filter(
+    (token) => token.tokenType === TokenType.dimension && token.origin?.name?.includes('Spacing'),
+  );
+  const spacingTokensToCSS = tokensToCSS(filteredSpacingTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
+  const spacingObject = generateDimensionObject(filteredSpacingTokens, mappedTokens, tokenGroups);
 
   return addDisclaimer(`${spacingTokensToCSS}\n\n${spacingObject}`);
 };
 
-export const generateSpacesObject = (
+export const createRadiiContent = (
+  tokens: Token[],
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+) => {
+  const filteredRadiiTokens = tokens.filter(
+    (token) => token.tokenType === TokenType.dimension && token.origin?.name?.includes('Radius'),
+  );
+  const radiiTokensToCSS = tokensToCSS(filteredRadiiTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
+  const radiiObject = generateDimensionObject(filteredRadiiTokens, mappedTokens, tokenGroups);
+
+  return addDisclaimer(`${radiiTokensToCSS}\n\n${radiiObject}`);
+};
+
+const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGroup>): string => {
+  let result = '';
+
+  tokens.forEach((token) => {
+    const dimensionToken = token as DimensionToken;
+    const name = tokenVariableName(dimensionToken, tokenGroups, true);
+    const numericPart = name.match(/\d+/)?.[0];
+    const prefix = `${token.origin?.name?.split('/')[0].toLowerCase()}-`; // Use template literal
+    const nonNumericPart = name.replace(prefix, '');
+    if (numericPart) {
+      result += `${numericPart}: $${name},\n`;
+    } else if (nonNumericPart) {
+      result += `${nonNumericPart}: $${name},\n`;
+    }
+  });
+
+  return result;
+};
+
+export const generateDimensionObject = (
   tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ): string => {
-  let spacesObject = '$spaces: (\n';
+  const [firstToken] = tokens;
+  let objectName = '';
+  if (firstToken && firstToken.origin?.name) {
+    objectName = plural(firstToken.origin.name.split('/')[0].toLowerCase());
+  }
 
-  tokens.forEach((token) => {
-    if (token.tokenType === TokenType.dimension && token.origin?.name?.includes('Spacing system')) {
-      const dimensionToken = token as DimensionToken;
-      const name = tokenVariableName(dimensionToken, tokenGroups, true);
-      const numericPart = name.match(/\d+/)?.[0];
-      if (numericPart) {
-        spacesObject += `    ${numericPart}: $${name},\n`;
-      }
-    }
-  });
+  const objectContent = generateObjectContent(tokens, tokenGroups);
 
-  spacesObject += ') !default;';
+  return `$${objectName}: (\n${objectContent}) !default;`;
+};
 
-  return spacesObject;
+const plural = (name: string): string => {
+  if (name === 'radius') {
+    return 'radii';
+  }
+
+  if (name === 'spacing') {
+    return 'spaces';
+  }
+
+  if (name.slice(-1) === 's') {
+    return name;
+  }
+
+  return `${name}s`;
 };
