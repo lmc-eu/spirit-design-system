@@ -6,6 +6,7 @@ export const AlignmentX = {
 } as const;
 
 export const AlignmentXExtended = {
+  SPACE_BETWEEN: 'space-between',
   STRETCH: 'stretch',
   ...AlignmentX,
 } as const;
@@ -17,6 +18,7 @@ export const AlignmentY = {
 } as const;
 
 export const AlignmentYExtended = {
+  BASELINE: 'baseline',
   STRETCH: 'stretch',
   ...AlignmentY,
 } as const;
