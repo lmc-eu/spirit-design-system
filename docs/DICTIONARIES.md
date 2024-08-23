@@ -17,12 +17,12 @@ This project uses `dictionaries` to unify props between different components.
 
 ### Alignment
 
-| Dictionary         | Values                    | Code name          |
-| ------------------ | ------------------------- | ------------------ |
-| AlignmentX         | `left`, `center`, `right` | AlignmentX         |
-| AlignmentXExtended | AlignmentX + `stretch`    | AlignmentXExtended |
-| AlignmentY         | `top`, `center`, `bottom` | AlignmentY         |
-| AlignmentYExtended | AlignmentY + `stretch`    | AlignmentYExtended |
+| Dictionary         | Values                                  | Code name          |
+| ------------------ | --------------------------------------- | ------------------ |
+| AlignmentX         | `left`, `center`, `right`               | AlignmentX         |
+| AlignmentXExtended | AlignmentX + `stretch`, `space-between` | AlignmentXExtended |
+| AlignmentY         | `top`, `center`, `bottom`               | AlignmentY         |
+| AlignmentYExtended | AlignmentY + `stretch`, `baseline`      | AlignmentYExtended |
 
 ### Color
 

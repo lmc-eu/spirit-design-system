@@ -1,8 +1,10 @@
 export * from './styleProps';
+export * from './useAlignmentClass';
 export * from './useCancelEvent';
 export * from './useClassNamePrefix';
 export * from './useClickOutside';
 export * from './useDeprecationMessage';
+export * from './useDirectionClass';
 export * from './useDragAndDrop';
 export * from './useIcon';
 export * from './useIsomorphicLayoutEffect';
@@ -10,3 +12,4 @@ export * from './useLastActiveFocus';
 export * from './useScrollControl';
 export * from './useSpacingStyle';
 export * from './useToggle';
+export * from './useWrapClass';
