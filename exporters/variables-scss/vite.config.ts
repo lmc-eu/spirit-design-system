@@ -7,7 +7,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'Exporter',
       fileName: 'exporter',
-      formats: ['cjs'],
+      formats: ['es'],
     },
     rollupOptions: {
       output: {

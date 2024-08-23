@@ -5,6 +5,7 @@
   "author": "Spirit Team",
   "license": "MIT",
   "main": "gennerated/exporter.js",
+  "type": "module",
   "scripts": {
     "dev": "vite watch",
     "build": "vite build",
