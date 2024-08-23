@@ -7,7 +7,7 @@ import {
   OutputTextFile,
 } from '@supernovaio/sdk-exporters';
 import { ExporterConfiguration } from '../config';
-import { generateContent } from './content/generator';
+import { generateFiles } from './content/generator';
 
 // @ts-ignore-next-line
 Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyOutputFile>> => {
@@ -50,11 +50,11 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     });
   }
 
-  const contents = generateContent(tokens, mappedTokens, tokenGroups);
+  const files = generateFiles(tokens, mappedTokens, tokenGroups);
 
   return [
-    ...contents.map((c) => {
-      return createTextFile('./', c.fileName, c.content);
+    ...files.map((file) => {
+      return createTextFile('./', file.fileName, file.content);
     }),
     // only for debugging purposes
     createTextFile(
