@@ -3,7 +3,12 @@ import { exportConfiguration } from '../index';
 import { generateCssObject } from './generators/cssGenerator';
 import { dimensionTokenToCSS } from './generators/dimension';
 
-type TokenHandler = (token: Token, mappedTokens: Map<string, Token>, tokenGroups: TokenGroup[]) => string | null;
+type TokenHandler = (
+  token: Token,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: TokenGroup[],
+  withParent: boolean,
+) => string | null;
 
 const addDisclaimer = (content: string): string => {
   if (exportConfiguration.generateDisclaimer) {
@@ -18,9 +23,10 @@ const tokensToCSS = (
   handler: TokenHandler,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
+  withParent: boolean,
 ): string => {
   return tokens
-    .map((token) => handler(token, mappedTokens, tokenGroups))
+    .map((token) => handler(token, mappedTokens, tokenGroups, withParent))
     .filter(Boolean)
     .join('\n');
 };
@@ -31,16 +37,17 @@ export const createContent = (
   tokenGroups: Array<TokenGroup>,
   fileName: string,
   tokenType: string,
-  tokensGroupName: string,
+  tokensGroupNames: string[],
   withCssObject: boolean,
+  withParent: boolean = false,
 ) => {
   let cssObject = '';
   const filteredTokens = tokens.filter(
-    (token) => token.tokenType === tokenType && token.origin?.name?.includes(tokensGroupName),
+    (token) => token.tokenType === tokenType && tokensGroupNames.some((name) => token.origin?.name?.includes(name)),
   );
-  const cssTokens = tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups);
+  const cssTokens = tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups, withParent);
   if (withCssObject) {
-    cssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups);
+    cssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups, withParent);
   }
 
   return {
@@ -55,8 +62,18 @@ export const generateContent = (
   tokenGroups: Array<TokenGroup>,
 ) => {
   return [
-    createContent(tokens, mappedTokens, tokenGroups, '_spaces.scss', TokenType.dimension, 'Spacing', true),
-    createContent(tokens, mappedTokens, tokenGroups, '_radii.scss', TokenType.dimension, 'Radius', true),
-    createContent(tokens, mappedTokens, tokenGroups, '_borders.scss', TokenType.dimension, 'Border', false),
+    createContent(tokens, mappedTokens, tokenGroups, '_spaces.scss', TokenType.dimension, ['Spacing'], true, false),
+    createContent(tokens, mappedTokens, tokenGroups, '_radii.scss', TokenType.dimension, ['Radius'], true, false),
+    createContent(tokens, mappedTokens, tokenGroups, '_borders.scss', TokenType.dimension, ['Border'], false, true),
+    createContent(
+      tokens,
+      mappedTokens,
+      tokenGroups,
+      '_other.scss',
+      TokenType.dimension,
+      ['Grid', 'Container', 'Breakpoint'],
+      true,
+      true,
+    ),
   ];
 };
