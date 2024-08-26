@@ -18,7 +18,7 @@ export const generateFileContent = (
   tokenTypes: TokenType | TokenType[],
   groupNames: string | string[],
   withCssObject: boolean,
-  hasParentPrefix: boolean = false,
+  hasParentPrefix: boolean,
 ) => {
   let cssTokens = '';
   let cssObject = '';
