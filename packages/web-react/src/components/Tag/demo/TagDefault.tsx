@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import DocsSection from '../../../../docs/DocsSections';
 import { EmotionColors, SizesExtended } from '../../../constants';
 import { Grid } from '../../Grid';
@@ -14,14 +14,14 @@ const TagDefault = () => {
       {sizes.map((size) => (
         <DocsSection key={size} title={`Size ${size}`}>
           {colors.map((color) => (
-            <>
+            <Fragment key={`tag-${color}-${size}`}>
               <Tag color={color} size={size} isSubtle>
                 Tag {color}
               </Tag>
               <Tag color={color} size={size}>
                 Tag {color}
               </Tag>
-            </>
+            </Fragment>
           ))}
         </DocsSection>
       ))}
