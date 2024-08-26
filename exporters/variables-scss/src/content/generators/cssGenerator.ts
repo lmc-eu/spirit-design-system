@@ -1,17 +1,7 @@
 import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { CSSHelper, NamingHelper, StringCase } from '@supernovaio/export-helpers';
+import { CSSHelper } from '@supernovaio/export-helpers';
 import { toPlural } from '../helpers/stringHelper';
-
-export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, withParent: boolean): string => {
-  let parent;
-  if (withParent) {
-    parent = tokenGroups.find((group) => group.id === token.parentGroupId)!;
-  } else {
-    parent = null;
-  }
-
-  return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
-};
+import { tokenVariableName } from '../helpers/tokenHelper';
 
 export const tokenToCSSByType = (
   token: Token,
@@ -55,8 +45,7 @@ const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGro
   let result = '';
 
   tokens.forEach((token) => {
-    const dimensionToken = token as DimensionToken;
-    const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
+    const name = tokenVariableName(token, tokenGroups, withParent);
     const numericPart = name.match(/\d+/)?.[0];
     const prefix = `${token.origin?.name?.split('/')[0].toLowerCase()}-`; // Use template literal
     const nonNumericPart = name.replace(prefix, '');
@@ -92,7 +81,7 @@ export const generateCssObjectFromTokens = (
 
   let result = '';
 
-  // For each key in the map, generate an object and add it to the result string
+  // For each key in the map, generate an object and add it to the result css
   originNameMap.forEach((token, objectName) => {
     const objectContent = generateObjectContent(token, tokenGroups, withParent);
     if (objectContent.trim() !== '') {

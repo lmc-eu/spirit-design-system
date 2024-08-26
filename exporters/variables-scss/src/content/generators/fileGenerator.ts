@@ -1,5 +1,5 @@
 import { TokenGroup, Token, TokenType } from '@supernovaio/sdk-exporters';
-import { createFileWithContent } from './contentGenerator';
+import { generateFileContent } from './contentGenerator';
 
 const filesData = [
   {
@@ -38,15 +38,19 @@ export const generateFiles = (
   tokenGroups: Array<TokenGroup>,
 ) => {
   return filesData.map(({ fileName, tokenTypes, groupNames, withCssObject, withParent }) => {
-    return createFileWithContent(
+    const fileContent = generateFileContent(
       tokens,
       mappedTokens,
       tokenGroups,
-      fileName,
       tokenTypes,
       groupNames,
       withCssObject,
       withParent,
     );
+
+    return {
+      fileName,
+      ...fileContent,
+    };
   });
 };

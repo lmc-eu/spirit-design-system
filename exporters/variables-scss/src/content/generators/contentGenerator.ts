@@ -10,11 +10,10 @@ const addDisclaimer = (content: string): string => {
   return content;
 };
 
-export const createFileWithContent = (
+export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-  fileName: string,
   tokenTypes: TokenType | TokenType[],
   groupNames: string | string[],
   withCssObject: boolean,
@@ -53,7 +52,6 @@ export const createFileWithContent = (
   content = content.replace(/\n{3,}/g, '\n\n');
 
   return {
-    fileName,
     content: addDisclaimer(content),
   };
 };
