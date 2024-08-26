@@ -10,17 +10,31 @@ describe('usePartnerLogoStyleProps', () => {
     expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo');
   });
 
-  it.each(Object.values(Sizes))('should return %s size PartnerLogo', (size) => {
+  describe('hasSafeAreaDisabled prop', () => {
+    const props = {
+      hasSafeAreaDisabled: true,
+    };
+    const { result } = renderHook(() => usePartnerLogoStyleProps(props));
+
+    it('should return hasSafeAreaDisabled class names', () => {
+      expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--hasSafeAreaDisabled');
+    });
+
+    it('should not return hasSafeAreaDisabled prop', () => {
+      expect(result.current.props).toStrictEqual({});
+    });
+  });
+
+  describe.each(Object.values(Sizes))('size prop', (size) => {
     const props = { size };
     const { result } = renderHook(() => usePartnerLogoStyleProps(props));
 
-    expect(result.current.classProps).toBe(`UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--${size}`);
-  });
+    it('should return %s size PartnerLogo', () => {
+      expect(result.current.classProps).toBe(`UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--${size}`);
+    });
 
-  it('should return without safe area', () => {
-    const props = { hasSafeAreaDisabled: true };
-    const { result } = renderHook(() => usePartnerLogoStyleProps(props));
-
-    expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--hasSafeAreaDisabled');
+    it('should not return size prop', () => {
+      expect(result.current.props).toStrictEqual({});
+    });
   });
 });
