@@ -12,17 +12,17 @@
     "@lmc-eu/spirit-design-tokens": "workspace:^",
     "@lmc-eu/spirit-web": "workspace:^",
     "@lmc-eu/spirit-web-react": "workspace:^",
-    "next": "14.2.3",
+    "next": "14.2.6",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.2.5",
-    "@types/node": "20.14.15",
+    "@next/eslint-plugin-next": "14.2.6",
+    "@types/node": "20.16.1",
     "@types/react": "18.3.4",
     "@types/react-dom": "18.3.0",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.2.5",
-    "typescript": "4.7.4"
+    "eslint-config-next": "14.2.6",
+    "typescript": "4.9.5"
   }
 }
