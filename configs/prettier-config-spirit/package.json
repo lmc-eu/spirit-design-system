@@ -22,7 +22,7 @@
   "main": "./index.js",
   "module": "./index.js",
   "dependencies": {
-    "@lmc-eu/prettier-config": "2.0.0",
-    "prettier": "3.3.2"
+    "@lmc-eu/prettier-config": "2.0.1",
+    "prettier": "3.3.3"
   }
 }

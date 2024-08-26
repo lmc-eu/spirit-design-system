@@ -26,9 +26,9 @@
     "stylelint": "^16.0.0"
   },
   "dependencies": {
-    "@almacareer/stylelint-config": "9.0.0",
-    "stylelint": "16.7.0",
+    "@almacareer/stylelint-config": "9.0.1",
+    "stylelint": "16.8.2",
     "stylelint-order": "6.0.4",
-    "stylelint-prettier": "5.0.0"
+    "stylelint-prettier": "5.0.2"
   }
 }

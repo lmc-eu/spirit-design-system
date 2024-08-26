@@ -76,7 +76,7 @@ jobs:
         run: echo "site_url=${{ env.NETLIFY_DEPLOYED_URL }}" >> "$GITHUB_OUTPUT"
 
       - name: Run Playwright tests
-        uses: docker://mcr.microsoft.com/playwright:v1.45.0-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.46.1-jammy
         with:
           args: 'sh -c "corepack install && corepack enable && yarn test:e2e"'
         env:
