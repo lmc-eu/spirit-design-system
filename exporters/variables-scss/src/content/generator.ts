@@ -46,27 +46,27 @@ export const createFileWithContent = (
 
   tokenTypes.forEach((tokenType) => {
     groupNames.forEach((group) => {
-      // filter tokens by its type and group names
       const filteredTokens = tokens.filter(
         (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
       );
 
-      // generate formatted css tokens
       cssTokens += tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups, withParent);
       cssTokens += '\n\n';
 
-      // generate css objects if required
       const tempCssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups, withParent);
       if (tempCssObject !== null) {
         cssObject += tempCssObject;
-        cssObject += '\n\n';
       }
     });
   });
 
+  let content = withCssObject ? `${cssTokens}${cssObject}` : cssTokens;
+  // Remove extra blank lines
+  content = content.replace(/\n{3,}/g, '\n\n');
+
   return {
     fileName,
-    content: addDisclaimer(withCssObject ? `${cssTokens}${cssObject}` : cssTokens),
+    content: addDisclaimer(content),
   };
 };
 
