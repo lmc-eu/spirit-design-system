@@ -7,7 +7,7 @@ import {
   OutputTextFile,
 } from '@supernovaio/sdk-exporters';
 import { ExporterConfiguration } from '../config';
-import { generateFiles } from './content/generator';
+import { generateFiles } from './content/generators/fileGenerator';
 
 // @ts-ignore-next-line
 Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyOutputFile>> => {
