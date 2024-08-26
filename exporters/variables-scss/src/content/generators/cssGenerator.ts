@@ -33,10 +33,10 @@ export const generateCssFromTokens = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-  withParent: boolean,
+  hasParentPrefix: boolean,
 ): string => {
   return tokens
-    .map((token) => tokenToCSSByType(token, mappedTokens, tokenGroups, withParent))
+    .map((token) => tokenToCSSByType(token, mappedTokens, tokenGroups, hasParentPrefix))
     .filter(Boolean)
     .join('\n');
 };
@@ -47,7 +47,7 @@ const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGro
   tokens.forEach((token) => {
     const name = tokenVariableName(token, tokenGroups, withParent);
     const numericPart = name.match(/\d+/)?.[0];
-    const prefix = `${token.origin?.name?.split('/')[0].toLowerCase()}-`; // Use template literal
+    const prefix = `${token.origin?.name?.split('/')[0].toLowerCase()}-`;
     const nonNumericPart = name.replace(prefix, '');
     if (numericPart) {
       result += `${numericPart}: $${name},\n`;
@@ -63,7 +63,7 @@ export const generateCssObjectFromTokens = (
   tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-  withParent: boolean,
+  hasParentPrefix: boolean,
 ): string | null => {
   // Create a map where the key is the origin name and the value is an array of tokens
   const originNameMap = new Map<string, Array<Token>>();
@@ -83,7 +83,7 @@ export const generateCssObjectFromTokens = (
 
   // For each key in the map, generate an object and add it to the result css
   originNameMap.forEach((token, objectName) => {
-    const objectContent = generateObjectContent(token, tokenGroups, withParent);
+    const objectContent = generateObjectContent(token, tokenGroups, hasParentPrefix);
     if (objectContent.trim() !== '') {
       result += `$${objectName}: (\n${objectContent}) !default;\n\n`;
     }

@@ -7,28 +7,28 @@ const filesData = [
     tokenTypes: TokenType.dimension,
     groupNames: 'Spacing',
     withCssObject: true,
-    withParent: false,
+    hasParentPrefix: false,
   },
   {
     fileName: '_radii.scss',
     tokenTypes: TokenType.dimension,
     groupNames: 'Radius',
     withCssObject: true,
-    withParent: false,
+    hasParentPrefix: false,
   },
   {
     fileName: '_borders.scss',
     tokenTypes: TokenType.dimension,
     groupNames: 'Border',
     withCssObject: false,
-    withParent: true,
+    hasParentPrefix: true,
   },
   {
     fileName: '_other.scss',
     tokenTypes: [TokenType.dimension, TokenType.string],
     groupNames: ['Grid', 'Container', 'Breakpoint'],
     withCssObject: true,
-    withParent: true,
+    hasParentPrefix: true,
   },
 ];
 
@@ -37,7 +37,7 @@ export const generateFiles = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
 ) => {
-  return filesData.map(({ fileName, tokenTypes, groupNames, withCssObject, withParent }) => {
+  return filesData.map(({ fileName, tokenTypes, groupNames, withCssObject, hasParentPrefix }) => {
     const fileContent = generateFileContent(
       tokens,
       mappedTokens,
@@ -45,7 +45,7 @@ export const generateFiles = (
       tokenTypes,
       groupNames,
       withCssObject,
-      withParent,
+      hasParentPrefix,
     );
 
     return {
