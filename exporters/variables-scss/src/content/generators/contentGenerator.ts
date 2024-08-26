@@ -15,17 +15,22 @@ export const createFileWithContent = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   fileName: string,
-  tokenTypes: TokenType[],
-  groupNames: string[],
+  tokenTypes: TokenType | TokenType[],
+  groupNames: string | string[],
   withCssObject: boolean,
   withParent: boolean = false,
 ) => {
   let cssTokens = '';
   let cssObject = '';
 
+  // If tokenTypes or groupNames are strings, convert them to arrays
+  const tokenTypesArray = Array.isArray(tokenTypes) ? tokenTypes : [tokenTypes];
+  const groupNamesArray = Array.isArray(groupNames) ? groupNames : [groupNames];
+
   // iterate over token types and group names to filter tokens
-  tokenTypes.forEach((tokenType) => {
-    groupNames.forEach((group) => {
+  tokenTypesArray.forEach((tokenType) => {
+    groupNamesArray.forEach((group) => {
+      // filter tokens by token type and group name
       const filteredTokens = tokens.filter(
         (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
       );

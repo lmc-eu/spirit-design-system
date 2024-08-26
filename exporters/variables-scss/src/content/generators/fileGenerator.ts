@@ -4,22 +4,22 @@ import { createFileWithContent } from './contentGenerator';
 const filesData = [
   {
     fileName: '_spaces.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Spacing'],
+    tokenTypes: TokenType.dimension,
+    groupNames: 'Spacing',
     withCssObject: true,
     withParent: false,
   },
   {
     fileName: '_radii.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Radius'],
+    tokenTypes: TokenType.dimension,
+    groupNames: 'Radius',
     withCssObject: true,
     withParent: false,
   },
   {
     fileName: '_borders.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Border'],
+    tokenTypes: TokenType.dimension,
+    groupNames: 'Border',
     withCssObject: false,
     withParent: true,
   },

@@ -42,13 +42,13 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
   // Convert all color tokens to CSS variables
   const mappedTokens = new Map(tokens.map((token) => [token.id, token]));
 
-  function createTextFile(relativePath: string, fileName: string, content: string): OutputTextFile {
+  const createTextFile = (relativePath: string, fileName: string, content: string): OutputTextFile => {
     return FileHelper.createTextFile({
       relativePath,
       fileName,
       content,
     });
-  }
+  };
 
   const files = generateFiles(tokens, mappedTokens, tokenGroups);
 
