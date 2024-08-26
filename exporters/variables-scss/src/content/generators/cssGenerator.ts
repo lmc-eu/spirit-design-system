@@ -37,7 +37,7 @@ export const generateCssObject = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   withParent: boolean,
-): string => {
+): string | null => {
   const [firstToken] = tokens;
   let objectName = '';
   if (firstToken && firstToken.origin?.name) {
@@ -45,6 +45,10 @@ export const generateCssObject = (
   }
 
   const objectContent = generateObjectContent(tokens, tokenGroups, withParent);
+
+  if (objectContent.trim() === '') {
+    return null;
+  }
 
   return `$${objectName}: (\n${objectContent}) !default;`;
 };

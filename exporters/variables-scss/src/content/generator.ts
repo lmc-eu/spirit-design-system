@@ -36,7 +36,7 @@ export const createFileWithContent = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   fileName: string,
-  tokenType: string,
+  tokenTypes: TokenType[],
   groupNames: string[],
   withCssObject: boolean,
   withParent: boolean = false,
@@ -44,19 +44,24 @@ export const createFileWithContent = (
   let cssTokens = '';
   let cssObject = '';
 
-  groupNames.forEach((group) => {
-    // filter tokens by its type and group names
-    const filteredTokens = tokens.filter(
-      (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
-    );
+  tokenTypes.forEach((tokenType) => {
+    groupNames.forEach((group) => {
+      // filter tokens by its type and group names
+      const filteredTokens = tokens.filter(
+        (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
+      );
 
-    // generate formatted css tokens
-    cssTokens += tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups, withParent);
-    cssTokens += '\n\n';
+      // generate formatted css tokens
+      cssTokens += tokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups, withParent);
+      cssTokens += '\n\n';
 
-    // generate css objects if required
-    cssObject += generateCssObject(filteredTokens, mappedTokens, tokenGroups, withParent);
-    cssObject += '\n\n';
+      // generate css objects if required
+      const tempCssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups, withParent);
+      if (tempCssObject !== null) {
+        cssObject += tempCssObject;
+        cssObject += '\n\n';
+      }
+    });
   });
 
   return {
@@ -76,7 +81,7 @@ export const generateFiles = (
       mappedTokens,
       tokenGroups,
       '_spaces.scss',
-      TokenType.dimension,
+      [TokenType.dimension],
       ['Spacing'],
       true,
       false,
@@ -86,7 +91,7 @@ export const generateFiles = (
       mappedTokens,
       tokenGroups,
       '_radii.scss',
-      TokenType.dimension,
+      [TokenType.dimension],
       ['Radius'],
       true,
       false,
@@ -96,7 +101,7 @@ export const generateFiles = (
       mappedTokens,
       tokenGroups,
       '_borders.scss',
-      TokenType.dimension,
+      [TokenType.dimension],
       ['Border'],
       false,
       true,
@@ -106,7 +111,7 @@ export const generateFiles = (
       mappedTokens,
       tokenGroups,
       '_other.scss',
-      TokenType.dimension,
+      [TokenType.dimension, TokenType.string],
       ['Grid', 'Container', 'Breakpoint'],
       true,
       true,

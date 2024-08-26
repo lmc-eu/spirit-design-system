@@ -1,4 +1,4 @@
-import { DimensionToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { CSSHelper } from '@supernovaio/export-helpers';
 import { tokenVariableName } from './cssGenerator';
 
@@ -8,14 +8,22 @@ export const dimensionTokenToCSS = (
   tokenGroups: Array<TokenGroup>,
   withParent: boolean,
 ): string | null => {
-  if (token.tokenType !== TokenType.dimension) {
-    return null;
+  if (token.tokenType === TokenType.dimension) {
+    const dimensionToken = token as DimensionToken;
+    const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
+    const value = dimensionToken.value?.measure;
+    const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
+
+    return `$${name}: ${value}${unit} !default;`;
   }
 
-  const dimensionToken = token as DimensionToken;
-  const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
-  const value = dimensionToken.value?.measure;
-  const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
+  if (token.tokenType === TokenType.string) {
+    const stringToken = token as StringToken;
+    const name = tokenVariableName(stringToken, tokenGroups, withParent);
+    const value = stringToken.value.text;
 
-  return `$${name}: ${value}${unit} !default;`;
+    return `$${name}: ${value} !default;`;
+  }
+
+  return null;
 };

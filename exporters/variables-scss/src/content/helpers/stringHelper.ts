@@ -7,6 +7,10 @@ export const toPlural = (name: string): string => {
     return 'spaces';
   }
 
+  if (name === 'spacing') {
+    return 'spaces';
+  }
+
   if (name.slice(-1) === 's') {
     return name;
   }
