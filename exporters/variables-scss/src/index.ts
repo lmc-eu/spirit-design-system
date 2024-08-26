@@ -54,7 +54,7 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
 
   return [
     ...files.map((file) => {
-      return createTextFile('./', file.fileName, file.content);
+      return createTextFile('./global/', file.fileName, file.content);
     }),
     // only for debugging purposes
     createTextFile(

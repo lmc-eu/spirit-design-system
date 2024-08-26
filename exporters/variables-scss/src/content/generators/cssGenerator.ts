@@ -2,6 +2,26 @@ import { DimensionToken, Token, TokenGroup } from '@supernovaio/sdk-exporters';
 import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { toPlural } from '../helpers/stringHelper';
 
+type TokenHandler = (
+  token: Token,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: TokenGroup[],
+  withParent: boolean,
+) => string | null;
+
+export const convertTokensToCSS = (
+  tokens: Token[],
+  handler: TokenHandler,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+  withParent: boolean,
+): string => {
+  return tokens
+    .map((token) => handler(token, mappedTokens, tokenGroups, withParent))
+    .filter(Boolean)
+    .join('\n');
+};
+
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, withParent: boolean): string => {
   let parent;
   if (withParent) {
