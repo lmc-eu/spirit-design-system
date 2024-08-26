@@ -8,9 +8,7 @@ const CollapseMultipleTriggers = () => {
 
   return (
     <>
-      <Button isOpen={isOpen} onClick={toggleHandler}>
-        Collapse trigger
-      </Button>
+      <Button onClick={toggleHandler}>Collapse trigger</Button>
       <Collapse id="collapse-multiple-triggers-id" isOpen={isOpen}>
         Aliquam varius, consequat posuere a lacinia mauris eu tellus condimentum ut id ante, accumsan vehicula nulla
         neque. Mauris mi orci, in donec nullam odio leo sapien et vehicula nunc a lacinia, fermentum arcu ullamcorper
@@ -20,7 +18,7 @@ const CollapseMultipleTriggers = () => {
         bibendum nunc aenean facilisis. Phasellus euismod, donec sem odio ligula praesent finibus nibh convallis,
         tristique aliquam sed id tortor sem lobortis.
       </Collapse>
-      <Button isOpen={isOpen} onClick={toggleHandler} color="secondary">
+      <Button onClick={toggleHandler} color="secondary">
         Secondary trigger
       </Button>{' '}
       <ButtonLink onClick={toggleHandler} aria-expanded={isOpen} color="tertiary">

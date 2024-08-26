@@ -8,9 +8,7 @@ const CollapseOpenOnInit = () => {
 
   return (
     <>
-      <Button isOpen={isOpen} onClick={toggleHandler}>
-        Collapse trigger
-      </Button>
+      <Button onClick={toggleHandler}>Collapse trigger</Button>
       <Collapse id="collapse-open-on-init-id" isOpen={isOpen}>
         Cras dictum ante, mollis ollicitudin proin bibendum nec commodo consequat fusce ante, consequat venenatis
         suscipit odio morbi. Dolor sit amet porta, placerat tristique sit amet ligula nisl risus et vehicula, suscipit

@@ -26,7 +26,7 @@ const CollapseHelperClass = () => {
         bibendum nunc aenean facilisis. Phasellus euismod, donec sem odio ligula praesent finibus nibh convallis,
         tristique aliquam sed id tortor sem lobortis.
       </Collapse>
-      <Button isOpen={isOpen} onClick={toggleHandler} aria-expanded={isOpen}>
+      <Button onClick={toggleHandler} aria-expanded={isOpen}>
         <span className="accessibility-open">Show less</span>
         <span className="accessibility-closed">Show more</span>
       </Button>
