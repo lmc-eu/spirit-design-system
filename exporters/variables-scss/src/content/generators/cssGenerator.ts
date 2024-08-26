@@ -1,26 +1,6 @@
-import { DimensionToken, Token, TokenGroup } from '@supernovaio/sdk-exporters';
-import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
+import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { CSSHelper, NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { toPlural } from '../helpers/stringHelper';
-
-type TokenHandler = (
-  token: Token,
-  mappedTokens: Map<string, Token>,
-  tokenGroups: TokenGroup[],
-  withParent: boolean,
-) => string | null;
-
-export const convertTokensToCSS = (
-  tokens: Token[],
-  handler: TokenHandler,
-  mappedTokens: Map<string, Token>,
-  tokenGroups: Array<TokenGroup>,
-  withParent: boolean,
-): string => {
-  return tokens
-    .map((token) => handler(token, mappedTokens, tokenGroups, withParent))
-    .filter(Boolean)
-    .join('\n');
-};
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, withParent: boolean): string => {
   let parent;
@@ -31,6 +11,44 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   }
 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
+};
+
+export const tokenToCSSByType = (
+  token: Token,
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+  withParent: boolean,
+): string | null => {
+  if (token.tokenType === TokenType.dimension) {
+    const dimensionToken = token as DimensionToken;
+    const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
+    const value = dimensionToken.value?.measure;
+    const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
+
+    return `$${name}: ${value}${unit} !default;`;
+  }
+
+  if (token.tokenType === TokenType.string) {
+    const stringToken = token as StringToken;
+    const name = tokenVariableName(stringToken, tokenGroups, withParent);
+    const value = stringToken.value.text;
+
+    return `$${name}: ${value} !default;`;
+  }
+
+  return null;
+};
+
+export const generateCssFromTokens = (
+  tokens: Token[],
+  mappedTokens: Map<string, Token>,
+  tokenGroups: Array<TokenGroup>,
+  withParent: boolean,
+): string => {
+  return tokens
+    .map((token) => tokenToCSSByType(token, mappedTokens, tokenGroups, withParent))
+    .filter(Boolean)
+    .join('\n');
 };
 
 const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGroup>, withParent: boolean): string => {
@@ -52,7 +70,7 @@ const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGro
   return result;
 };
 
-export const generateCssObject = (
+export const generateCssObjectFromTokens = (
   tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
@@ -73,6 +91,7 @@ export const generateCssObject = (
   });
 
   let result = '';
+
   // For each key in the map, generate an object and add it to the result string
   originNameMap.forEach((token, objectName) => {
     const objectContent = generateObjectContent(token, tokenGroups, withParent);

@@ -1,7 +1,6 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../index';
-import { convertTokensToCSS, generateCssObject } from './cssGenerator';
-import { dimensionTokenToCSS } from './dimension';
+import { generateCssFromTokens, generateCssObjectFromTokens } from './cssGenerator';
 
 const addDisclaimer = (content: string): string => {
   if (exportConfiguration.generateDisclaimer) {
@@ -24,16 +23,19 @@ export const createFileWithContent = (
   let cssTokens = '';
   let cssObject = '';
 
+  // iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {
     groupNames.forEach((group) => {
       const filteredTokens = tokens.filter(
         (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
       );
 
-      cssTokens += convertTokensToCSS(filteredTokens, dimensionTokenToCSS, mappedTokens, tokenGroups, withParent);
+      // generate css tokens
+      cssTokens += generateCssFromTokens(filteredTokens, mappedTokens, tokenGroups, withParent);
       cssTokens += '\n\n';
 
-      const tempCssObject = generateCssObject(filteredTokens, mappedTokens, tokenGroups, withParent);
+      // generate css object
+      const tempCssObject = generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, withParent);
       if (tempCssObject !== null) {
         cssObject += tempCssObject;
       }
@@ -41,6 +43,7 @@ export const createFileWithContent = (
   });
 
   let content = withCssObject ? `${cssTokens}${cssObject}` : cssTokens;
+
   // Remove extra blank lines
   content = content.replace(/\n{3,}/g, '\n\n');
 
