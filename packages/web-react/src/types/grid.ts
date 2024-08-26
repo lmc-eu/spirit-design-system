@@ -41,9 +41,16 @@ export interface GridItemElementTypeProps<T extends ElementType = 'div'> {
   elementType?: T | JSXElementConstructor<unknown>;
 }
 
+export type GridAlignmentXType =
+  | NonNullable<AlignmentXExtendedDictionaryType>
+  | { [key: string]: NonNullable<AlignmentXExtendedDictionaryType> };
+export type GridAlignmentYType =
+  | NonNullable<AlignmentYExtendedDictionaryType>
+  | { [key: string]: NonNullable<AlignmentYExtendedDictionaryType> };
+
 export interface GridCustomLayoutProps {
-  alignmentX?: AlignmentXExtendedDictionaryType | { [key: string]: AlignmentXExtendedDictionaryType };
-  alignmentY?: AlignmentYExtendedDictionaryType | { [key: string]: AlignmentYExtendedDictionaryType };
+  alignmentX?: GridAlignmentXType;
+  alignmentY?: GridAlignmentYType;
   cols?: GridColumns | GridColsBreakpoints;
   /** Custom spacing between items */
   spacing?: SpaceToken | Partial<Record<BreakpointToken, SpaceToken>>;
