@@ -8,7 +8,7 @@ export interface ProductLogoStyles<T> {
 }
 
 export function useProductLogoStyleProps(props: SpiritProductLogoProps): ProductLogoStyles<SpiritProductLogoProps> {
-  const { isInverted } = props;
+  const { isInverted, ...restProps } = props;
 
   const productLogoClass = useClassNamePrefix('UNSTABLE_ProductLogo');
   const productLogoInvertedColorClass = `${productLogoClass}--inverted`;
@@ -18,6 +18,6 @@ export function useProductLogoStyleProps(props: SpiritProductLogoProps): Product
 
   return {
     classProps,
-    props,
+    props: restProps,
   };
 }
