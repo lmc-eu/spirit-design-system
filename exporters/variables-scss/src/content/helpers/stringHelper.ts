@@ -1,15 +1,8 @@
 export const toPlural = (name: string): string => {
-  if (name === 'radius') {
-    return 'radii';
-  }
+  const specialCases: Record<string, string> = {
+    radius: 'radii',
+    spacing: 'spaces',
+  };
 
-  if (name === 'spacing') {
-    return 'spaces';
-  }
-
-  if (name.slice(-1) === 's') {
-    return name;
-  }
-
-  return `${name}s`;
+  return specialCases[name] || (name.endsWith('s') ? name : `${name}s`);
 };

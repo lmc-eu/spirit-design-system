@@ -1,6 +1,7 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../index';
 import { generateCssFromTokens, generateCssObjectFromTokens } from './cssGenerator';
+import { formatCSS } from '../formatters/cssFormatter';
 
 // add disclaimer to top of the content
 const addDisclaimer = (content: string): string => {
@@ -48,9 +49,7 @@ export const generateFileContent = (
   });
 
   let content = withCssObject ? `${cssTokens}${cssObject}` : cssTokens;
-
-  // Remove extra blank lines
-  content = content.replace(/\n{3,}/g, '\n\n');
+  content = formatCSS(content);
 
   return {
     content: addDisclaimer(content),
