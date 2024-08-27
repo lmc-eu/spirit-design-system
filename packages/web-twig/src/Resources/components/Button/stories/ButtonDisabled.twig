@@ -5,8 +5,7 @@
 
         <DocsSection title={{ title }}>
             {% for color in colors %}
-
-                {% set renderedContent %}
+                <div>
                     <Button color={ color } size={ size } onclick="alert('Button clicked')" isDisabled>
                         Button {{ color }}
                     </Button>
@@ -18,18 +17,7 @@
                         <VisuallyHidden>Menu</VisuallyHidden>
                         <Icon name="hamburger" />
                     </Button>
-                {% endset %}
-
-                {% if color is same as('inverted') %}
-                    <DocsBox>
-                        {{ renderedContent }}
-                    </DocsBox>
-                {% else %}
-                    <div>
-                        {{ renderedContent }}
-                    </div>
-                {% endif %}
-
+                </div>
             {% endfor %}
         </DocsSection>
 
