@@ -8,8 +8,6 @@ import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from
 const IGNORED_TESTS: string[] = [
   'Accordion',
   'Alert',
-  'Button',
-  'ButtonLink',
   'Checkbox',
   'Collapse',
   'Dropdown',
