@@ -30,7 +30,6 @@ const IGNORED_TESTS: string[] = [
   'Select',
   'Spinner',
   'Stack',
-  'Tabs',
   'Tag',
   'Text',
   'TextArea',
