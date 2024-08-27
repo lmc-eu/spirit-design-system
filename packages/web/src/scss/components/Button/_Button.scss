@@ -2,23 +2,27 @@
 
 @use 'sass:map';
 @use 'theme';
-@use 'tools';
+@use '@tokens' as tokens;
 @use '../../settings/cursors';
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
 .Button {
-    @include typography.generate(theme.$typography);
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    height: var(--#{tokens.$token-prefix}button-height);
+    padding-inline: var(--#{tokens.$token-prefix}button-padding-x);
+    padding-block: var(--#{tokens.$token-prefix}button-padding-y);
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
+    color: var(--#{tokens.$token-prefix}button-color);
     border-width: theme.$border-width;
     border-style: theme.$border-style;
+    border-color: var(--#{tokens.$token-prefix}button-border-color);
     border-radius: theme.$border-radius;
+    background-color: var(--#{tokens.$token-prefix}button-background-color);
     user-select: none;
     cursor: cursors.$buttons;
 
@@ -26,6 +30,15 @@
     &:active,
     &:focus {
         text-decoration: none;
+        color: var(--#{tokens.$token-prefix}button-color);
+    }
+
+    &:hover {
+        background-color: var(--#{tokens.$token-prefix}button-background-color-state-hover);
+    }
+
+    &:active {
+        background-color: var(--#{tokens.$token-prefix}button-background-color-state-active);
     }
 
     &:disabled,
@@ -38,11 +51,13 @@
 
 @include dictionaries.generate-colors(
     $class-name: 'Button',
-    $dictionary-values: theme.$color-dictionary,
-    $config: theme.$color-dictionary-config,
-    $states: theme.$color-dictionary-states,
-    $overrides: theme.$color-dictionary-overrides,
-    $generate-data-attribute: true
+    $dictionary-values: theme.$color-component-button-dictionary,
+    $config: theme.$color-action-button-dictionary-config
+);
+@include dictionaries.generate-colors(
+    $class-name: 'Button',
+    $dictionary-values: theme.$color-emotion-dictionary,
+    $config: theme.$color-emotion-dictionary-config
 );
 @include dictionaries.generate-sizes('Button', theme.$sizes);
 
@@ -52,36 +67,20 @@
 }
 
 .Button--square {
-    @include tools.square(
-        theme.$breakpoints,
-        theme.$typography,
-        map.get(theme.$sizes, medium, padding-y),
-        theme.$border-width
-    );
-
     flex: none;
+    aspect-ratio: 1;
     padding-inline: 0;
 }
 
-.Button--square.Button--small {
-    @include tools.square(
-        theme.$breakpoints,
-        theme.$typography,
-        map.get(theme.$sizes, small, padding-y),
-        theme.$border-width
-    );
+.Button:disabled:not(.Button--loading),
+.Button.is-disabled:not(.Button--loading),
+.Button.Button--disabled:not(.Button--loading) {
+    color: theme.$disabled-color;
+    border-color: theme.$disabled-border-color;
+    background-color: theme.$disabled-background-color;
 }
 
-.Button--square.Button--large {
-    @include tools.square(
-        theme.$breakpoints,
-        theme.$typography,
-        map.get(theme.$sizes, large, padding-y),
-        theme.$border-width
-    );
-}
-
-.Button--loading {
+.Button.Button--loading {
     position: relative;
     overflow: hidden; // 1.
     color: transparent;
@@ -99,6 +98,6 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    color: var(--button-color);
+    color: var(--#{tokens.$token-prefix}button-color);
     transform: translate(-50%, -50%);
 }
