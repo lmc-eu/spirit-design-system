@@ -66,7 +66,6 @@ export const generateCssObjectFromTokens = (
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
 ): string | null => {
-  // Create a map where the key is the origin name and the value is an array of tokens
   const originNameMap = new Map<string, Array<Token>>();
   tokens.forEach((token) => {
     const originName = token.origin?.name;
@@ -74,21 +73,17 @@ export const generateCssObjectFromTokens = (
       const nameParts = originName.split('/');
       nameParts.pop();
       const objectName = toPlural(nameParts.join('-').toLowerCase());
-      const tokenArray = originNameMap.get(objectName) || [];
-      tokenArray.push(token);
-      originNameMap.set(objectName, tokenArray);
+      originNameMap.set(objectName, [...(originNameMap.get(objectName) || []), token]);
     }
   });
 
-  let result = '';
+  const result = Array.from(originNameMap.entries())
+    .map(([objectName, token]) => {
+      const objectContent = generateObjectContent(token, tokenGroups, hasParentPrefix);
 
-  // For each key in the map, generate an object and add it to the result css
-  originNameMap.forEach((token, objectName) => {
-    const objectContent = generateObjectContent(token, tokenGroups, hasParentPrefix);
-    if (objectContent.trim() !== '') {
-      result += `$${objectName}: (\n${objectContent}) !default;\n\n`;
-    }
-  });
+      return objectContent.trim() && `$${objectName}: (\n${objectContent}) !default;\n\n`;
+    })
+    .join('');
 
   return result;
 };
