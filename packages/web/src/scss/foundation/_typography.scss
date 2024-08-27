@@ -1,6 +1,6 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
-// 2. We need to apply a global color to all elements in order to make the theme work.
-//    Otherwise, we would have to apply the color to every single element in the project.
+// 2. Reapply the default text color to all elements with a class starting with
+//    #{globals.$prefix}theme- to ensure proper color inheritance for theming.
 
 @use '@global' as global-tokens;
 @use '../settings/globals';
@@ -12,9 +12,11 @@
 
 :where(body) {
     @include typography.generate(global-tokens.$body-3-regular);
+
+    color: var(--#{globals.$prefix}color-text-primary);
 }
 
-// stylelint-disable-next-line selector-max-universal -- 2.
-* {
+// 2.
+:where([class*='#{globals.$prefix}theme-']) {
     color: var(--#{globals.$prefix}color-text-primary);
 }
