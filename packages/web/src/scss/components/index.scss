@@ -4,10 +4,10 @@
 // @forward 'Breadcrumbs';
 // @forward 'Button';
 // @forward 'Checkbox';
-// @forward 'Collapse';
+@forward 'Collapse';
 @forward 'Container';
+@forward 'Divider';
 
-// @forward 'Divider';
 // @forward 'Dropdown';
 // @forward 'FieldGroup';
 // @forward 'FileUploader';
@@ -22,16 +22,19 @@
 // @forward 'Radio';
 // @forward 'ScrollView';
 // @forward 'Select';
-// @forward 'Stack';
+@forward 'Stack';
+
 // @forward 'Tabs';
 // @forward 'Tag';
 // @forward 'TextArea';
 // @forward 'TextField';
 // @forward 'Toast';
 // @forward 'Tooltip';
-// @forward 'UNSTABLE_ActionLayout';
+@forward 'UNSTABLE_ActionLayout';
+
 // @forward 'UNSTABLE_Avatar';
-// @forward 'UNSTABLE_EmptyState';
+@forward 'UNSTABLE_EmptyState';
+
 // @forward 'UNSTABLE_PartnerLogo';
 // @forward 'UNSTABLE_ProductLogo';
 @forward 'UNSTABLE_Section';
