@@ -1,11 +1,12 @@
 @use '@tokens' as tokens;
 
 $breakpoints: tokens.$breakpoints;
-$item-padding-x: tokens.$space-600;
-$link-padding-y: tokens.$space-400;
-$link-color: tokens.$text-primary-default;
-$spacing-fallback: tokens.$space-700;
-$item-typography: tokens.$body-medium-text-regular;
-$item-selected-typography: tokens.$body-medium-text-bold;
-$item-selected-underline-background: tokens.$action-selected-default;
+$item-padding-x: tokens.$space-700;
+$link-padding-y: tokens.$space-500;
+$link-color-state-default: tokens.$link-secondary-state-default;
+$link-color-state-hover: tokens.$link-secondary-state-hover;
+$link-color-state-active: tokens.$link-secondary-state-active;
+$link-color-state-selected: $link-color-state-active;
+$spacing-fallback: tokens.$space-900;
+$item-typography: tokens.$body-medium-semibold;
 $item-selected-underline-border-radius: tokens.$radius-100;

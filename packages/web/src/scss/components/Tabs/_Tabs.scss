@@ -49,19 +49,24 @@
     @include typography.generate(theme.$item-typography);
 
     padding-block: theme.$link-padding-y;
-    color: theme.$link-color;
+    color: theme.$link-color-state-default;
 
-    &:hover,
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: none;
+            color: theme.$link-color-state-hover;
+        }
+    }
+
     &:active {
         text-decoration: none;
-        color: theme.$link-color;
+        color: theme.$link-color-state-active;
     }
 }
 
 .Tabs__link.is-selected {
-    @include typography.generate(theme.$item-selected-typography);
-
     position: relative;
+    color: theme.$link-color-state-selected;
 
     &::after {
         content: '';
@@ -69,7 +74,7 @@
         bottom: 0;
         height: 2px;
         border-radius: theme.$item-selected-underline-border-radius;
-        background: theme.$item-selected-underline-background;
+        background: currentcolor;
         inset-inline: 0;
     }
 }
