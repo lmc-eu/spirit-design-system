@@ -3,7 +3,7 @@ import { generateFileContent } from './contentGenerator';
 
 const filesData = [
   {
-    fileName: '_spaces.scss',
+    fileName: '_spacing.scss',
     tokenTypes: TokenType.dimension,
     groupNames: 'Spacing',
     withCssObject: true,
