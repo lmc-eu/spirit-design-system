@@ -2,6 +2,7 @@ import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supe
 import { CSSHelper } from '@supernovaio/export-helpers';
 import { toPlural } from '../helpers/stringHelper';
 import { tokenVariableName } from '../helpers/tokenHelper';
+import { handleExceptions } from '../helpers/exceptionHelper';
 
 export const tokenToCSSByType = (
   token: Token,
@@ -12,7 +13,8 @@ export const tokenToCSSByType = (
   if (token.tokenType === TokenType.dimension) {
     const dimensionToken = token as DimensionToken;
     const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
-    const value = dimensionToken.value?.measure;
+    let value = dimensionToken.value?.measure;
+    value = handleExceptions(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
 
     return `$${name}: ${value}${unit} !default;`;
@@ -21,7 +23,8 @@ export const tokenToCSSByType = (
   if (token.tokenType === TokenType.string) {
     const stringToken = token as StringToken;
     const name = tokenVariableName(stringToken, tokenGroups, withParent);
-    const value = stringToken.value.text;
+    let value = stringToken.value.text;
+    value = handleExceptions(name, value);
 
     return `$${name}: ${value} !default;`;
   }
