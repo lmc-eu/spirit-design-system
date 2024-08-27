@@ -1,6 +1,6 @@
 @use '@tokens' as tokens;
 
 $breakpoints: tokens.$breakpoints;
-$root-padding: tokens.$space-1000 tokens.$space-700;
-$root-padding-desktop: tokens.$space-1000 tokens.$space-800;
-$buttons-gap: tokens.$space-600;
+$root-padding: tokens.$space-1200 tokens.$space-900;
+$root-padding-desktop: tokens.$space-1200 tokens.$space-1000;
+$buttons-gap: tokens.$space-700;
