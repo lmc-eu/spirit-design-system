@@ -29,6 +29,12 @@ export const ActionColors = {
   INVERTED: 'inverted',
 } as const;
 
+export const ActionButtonColors = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
+} as const;
+
 export const ActionLinkColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
