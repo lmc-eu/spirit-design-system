@@ -1,6 +1,6 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 @use '../../settings/transitions';
 
-$breakpoints: tokens.$breakpoints;
+$breakpoints: global-tokens.$breakpoints;
 $collapse-transition-timing: transitions.$timing-eased-in-out-fast;
 $collapse-transition-duration: transitions.$duration-200;

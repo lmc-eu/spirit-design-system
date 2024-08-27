@@ -1,5 +1,6 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
+@use '../../settings/globals';
 
-$breakpoints: tokens.$breakpoints;
-$border: tokens.$border-width-100 tokens.$border-style-100 tokens.$border-secondary-default;
-$spacing-fallback: tokens.$space-600;
+$breakpoints: global-tokens.$breakpoints;
+$border: global-tokens.$border-width-100 solid var(--#{globals.$prefix}color-border-secondary-default);
+$spacing-fallback: global-tokens.$space-600;
