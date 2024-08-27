@@ -13,7 +13,6 @@ const IGNORED_TESTS: string[] = [
   'ButtonLink',
   'Checkbox',
   'Collapse',
-  'Divider',
   'Dropdown',
   'FieldGroup',
   'FileUploader',
