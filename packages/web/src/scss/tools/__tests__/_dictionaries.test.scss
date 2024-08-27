@@ -51,7 +51,11 @@
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
-                        'primary',
+                        this-is-long-so-prettier-breaks-the-output-to-new-line: (
+                            primary,
+                            secondary,
+                            tertiary,
+                        ),
                     ),
                     $config: (
                         color: 'default',
@@ -75,7 +79,11 @@
                 @include dictionaries.generate-colors(
                     $class-name: 'Test',
                     $dictionary-values: (
-                        'primary',
+                        this-is-long-so-prettier-breaks-the-output-to-new-line: (
+                            primary,
+                            secondary,
+                            tertiary,
+                        ),
                     ),
                     $config: (
                         color: 'default',
@@ -86,9 +94,73 @@
             }
 
             @include test.expect() {
-                .Test--primary > .Test__box,
-                .Test[data-spirit-color='primary'] > .Test__box {
-                    --test-color: #29616f;
+                .Test--primary,
+                .Test[data-spirit-color='primary'] {
+                    --spirit-test-color: var(
+                        --spirit-color-this-is-long-so-prettier-breaks-the-output-to-new-line-primary-content
+                    );
+                }
+
+                .Test--secondary,
+                .Test[data-spirit-color='secondary'] {
+                    --spirit-test-color: var(
+                        --spirit-color-this-is-long-so-prettier-breaks-the-output-to-new-line-secondary-content
+                    );
+                }
+
+                .Test--tertiary,
+                .Test[data-spirit-color='tertiary'] {
+                    --spirit-test-color: var(
+                        --spirit-color-this-is-long-so-prettier-breaks-the-output-to-new-line-tertiary-content
+                    );
+                }
+            }
+        }
+    }
+}
+
+@include test.describe('prepare-button-links mixin') {
+    @include test.it('should generate correct button link classes based on a dictionary') {
+        @include test.assert() {
+            @include test.output() {
+                @include dictionaries.prepare-button-links(
+                    $dictionary-values: (
+                        primary,
+                        secondary,
+                        tertiary,
+                    )
+                );
+            }
+
+            @include test.expect() {
+                // stylelint-disable selector-no-qualifying-type, order/properties-order -- We need to allow this to make sass-true work
+                button.link-primary,
+                button.link-secondary,
+                button.link-tertiary {
+                    appearance: none;
+                    display: inline-flex;
+                    flex: none;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    font: inherit;
+                    border: none;
+                    border-radius: 0;
+                    background: none;
+                    box-shadow: none;
+                    cursor: pointer;
+                    text-decoration-skip-ink: none;
+                    text-underline-offset: 0.1875em;
+                    user-select: text;
+                }
+
+                @media (hover: hover) {
+                    button.link-primary:hover,
+                    button.link-secondary:hover,
+                    button.link-tertiary:hover {
+                        text-decoration: underline;
+                    }
+                }
 
                     color: var(--test-color);
                 }
