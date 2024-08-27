@@ -1,5 +1,6 @@
 import {
   ActionColors,
+  ActionButtonColors,
   ActionLinkColors,
   AlignmentX,
   AlignmentXExtended,
@@ -33,6 +34,11 @@ export type AlignmentYExtendedDictionaryType<T = undefined> =
 /* Color */
 export type ActionColorsDictionaryKeys = keyof typeof ActionColors;
 export type ActionColorsDictionaryType<C = undefined> = (typeof ActionColors)[ActionColorsDictionaryKeys] | C;
+
+export type ActionButtonColorsDictionaryKeys = keyof typeof ActionButtonColors;
+export type ActionButtonColorsDictionaryType<C = undefined> =
+  | (typeof ActionButtonColors)[ActionButtonColorsDictionaryKeys]
+  | C;
 
 export type ActionLinkColorsDictionaryKeys = keyof typeof ActionLinkColors;
 export type ActionLinkColorsDictionaryType<C = undefined> =
