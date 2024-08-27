@@ -14,8 +14,6 @@ module.exports = {
     '@lmc-eu/eslint-config-jest',
   ],
 
-  parser: '@typescript-eslint/parser', // the TypeScript parser we installed earlier
-
   parserOptions: {
     ecmaVersion: 'latest',
     project: './tsconfig.eslint.json',

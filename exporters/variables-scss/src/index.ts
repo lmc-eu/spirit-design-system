@@ -9,6 +9,7 @@ import {
 import { ExporterConfiguration } from '../config';
 import { generateFiles } from './content/generators/fileGenerator';
 
+// https://github.com/Supernova-Studio/exporters/issues/4
 // @ts-ignore-next-line
 Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyOutputFile>> => {
   // Fetch data from design system that is currently being exported (context)

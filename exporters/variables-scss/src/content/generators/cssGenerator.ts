@@ -45,9 +45,7 @@ export const generateCssFromTokens = (
 };
 
 const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGroup>, withParent: boolean): string => {
-  let result = '';
-
-  tokens.forEach((token) => {
+  return tokens.reduce((result, token) => {
     const name = tokenVariableName(token, tokenGroups, withParent);
     const numericPart = name.match(/\d+/)?.[0];
     const prefix = `${token.origin?.name?.split('/')[0].toLowerCase()}-`;
@@ -57,9 +55,9 @@ const generateObjectContent = (tokens: Array<Token>, tokenGroups: Array<TokenGro
     } else if (nonNumericPart) {
       result += `${nonNumericPart}: $${name},\n`;
     }
-  });
 
-  return result;
+    return result;
+  }, '');
 };
 
 export const generateCssObjectFromTokens = (
