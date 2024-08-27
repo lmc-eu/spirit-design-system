@@ -1,5 +1,5 @@
 @use '@tokens' as tokens;
 
 $border-width: tokens.$border-width-100;
-$border-style: tokens.$border-style-100;
-$border-color: tokens.$border-secondary-default;
+$border-style: solid;
+$border-color: tokens.$border-basic;
