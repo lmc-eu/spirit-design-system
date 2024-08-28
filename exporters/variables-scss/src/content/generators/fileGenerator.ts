@@ -1,25 +1,25 @@
-import { TokenGroup, Token, TokenType } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateFileContent } from './contentGenerator';
 
 const filesData = [
   {
     fileName: '_spacing.scss',
-    tokenTypes: TokenType.dimension,
-    groupNames: 'Spacing',
+    tokenTypes: [TokenType.dimension],
+    groupNames: ['Spacing'],
     withCssObject: true,
     hasParentPrefix: false,
   },
   {
     fileName: '_radii.scss',
-    tokenTypes: TokenType.dimension,
-    groupNames: 'Radius',
+    tokenTypes: [TokenType.dimension],
+    groupNames: ['Radius'],
     withCssObject: true,
     hasParentPrefix: false,
   },
   {
     fileName: '_borders.scss',
-    tokenTypes: TokenType.dimension,
-    groupNames: 'Border',
+    tokenTypes: [TokenType.dimension],
+    groupNames: ['Border'],
     withCssObject: false,
     hasParentPrefix: true,
   },
@@ -32,12 +32,8 @@ const filesData = [
   },
 ];
 
-export const generateFiles = (
-  tokens: Array<Token>,
-  mappedTokens: Map<string, Token>,
-  tokenGroups: Array<TokenGroup>,
-) => {
-  return filesData.map(({ fileName, tokenTypes, groupNames, withCssObject, hasParentPrefix }) => {
+export const generateFiles = (tokens: Array<Token>, mappedTokens: Map<string, Token>, tokenGroups: Array<TokenGroup>) =>
+  filesData.map(({ fileName, tokenTypes, groupNames, withCssObject, hasParentPrefix }) => {
     const fileContent = generateFileContent(
       tokens,
       mappedTokens,
@@ -53,4 +49,3 @@ export const generateFiles = (
       ...fileContent,
     };
   });
-};

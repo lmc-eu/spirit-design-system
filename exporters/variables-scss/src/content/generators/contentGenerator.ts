@@ -1,7 +1,7 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { exportConfiguration } from '../../index';
-import { generateCssFromTokens, generateCssObjectFromTokens } from './cssGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
+import { generateCssFromTokens, generateCssObjectFromTokens } from './cssGenerator';
 
 // Add disclaimer to the top of the content
 const addDisclaimer = (content: string): string => {
@@ -12,12 +12,15 @@ const addDisclaimer = (content: string): string => {
   return content;
 };
 
+const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, group: string) =>
+  tokens.filter((token) => token.tokenType === type && token.origin?.name?.includes(group));
+
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-  tokenTypes: TokenType | TokenType[],
-  groupNames: string | string[],
+  tokenTypes: TokenType[],
+  groupNames: string[],
   withCssObject: boolean,
   hasParentPrefix: boolean,
 ) => {
@@ -25,16 +28,17 @@ export const generateFileContent = (
   let cssObject = '';
 
   // If tokenTypes or groupNames are strings, convert them to arrays
-  const tokenTypesArray = Array.isArray(tokenTypes) ? tokenTypes : [tokenTypes];
-  const groupNamesArray = Array.isArray(groupNames) ? groupNames : [groupNames];
+  // const tokenTypesArray = Array.isArray(tokenTypes) ? tokenTypes : [tokenTypes];
+  // const groupNamesArray = Array.isArray(groupNames) ? groupNames : [groupNames];
 
   // Iterate over token types and group names to filter tokens
-  tokenTypesArray.forEach((tokenType) => {
-    groupNamesArray.forEach((group) => {
-      // Filter tokens by token type and group name
-      const filteredTokens = tokens.filter(
-        (token) => token.tokenType === tokenType && token.origin?.name?.includes(group),
-      );
+  tokenTypes.forEach((tokenType) => {
+    console.log(tokenType);
+    groupNames.forEach((group) => {
+      console.log(group);
+      const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
+
+      console.log(filteredTokens);
 
       // Generate css tokens
       cssTokens += generateCssFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
