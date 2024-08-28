@@ -1,6 +1,6 @@
 # Checkbox
 
-## Basic usage:
+## Basic Usage
 
 ```html
 <label for="checkbox-default" class="Checkbox">
@@ -11,7 +11,7 @@
 </label>
 ```
 
-## Required input:
+## Required Input
 
 ```html
 <label for="checkbox-required" class="Checkbox">
@@ -22,7 +22,7 @@
 </label>
 ```
 
-## Validation State with Validation Text:
+## Validation State with Validation Text
 
 See Validation state [dictionary][dictionary-validation].
 
@@ -47,7 +47,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## Hidden label:
+## Hidden Label
 
 ```html
 <label for="checkbox-hidden-label" class="Checkbox">
@@ -58,7 +58,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## Helper Text:
+## Helper Text
 
 ```html
 <label for="checkbox-helper-text" class="Checkbox">
@@ -70,7 +70,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## Disabled state:
+## Disabled State
 
 ```html
 <label for="checkbox-disabled" class="Checkbox Checkbox--disabled">
@@ -81,7 +81,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## As an Item:
+## As an Item
 
 ```html
 <label for="checkbox-item-default" class="Checkbox Checkbox--item">

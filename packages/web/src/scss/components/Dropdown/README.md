@@ -1,6 +1,6 @@
 # Dropdown
 
-## Basic usage
+## Basic Usage
 
 ```html
 <div class="Dropdown">
@@ -42,7 +42,7 @@
 </div>
 ```
 
-## Usage with top-end align
+## Usage with Top End Align
 
 ```html
 <div class="Dropdown">
@@ -84,7 +84,7 @@
 </div>
 ```
 
-## Usage with disabled autoclose
+## Usage with Disabled Autoclose
 
 ```html
 <div class="Dropdown">
@@ -127,7 +127,7 @@
 </div>
 ```
 
-## Usage with full width mode `all`
+## Usage with Full Width Mode All
 
 ```html
 <div class="Dropdown">
@@ -174,7 +174,7 @@
 </div>
 ```
 
-## Usage with full width mode `mobile-only`
+## Usage with Full Width Mode Mobile-Only
 
 ```html
 <div class="Dropdown">
@@ -221,7 +221,7 @@
 </div>
 ```
 
-## Usage with [Item] component
+## Usage with [Item][item] Component
 
 ```html
 <div class="Dropdown">
@@ -256,7 +256,7 @@ a value of data attribute `data-spirit-placement`, e.g. `data-spirit-placement="
 
 There are two options here. Use the trigger element as an anchor or wrap the menu together with the trigger into a `.Dropdown` class.
 
-### Dropdown trigger
+### Dropdown Trigger
 
 | Attribute               | Type     | Default | Required | Description                                                                                                    |
 | ----------------------- | -------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------- |
@@ -267,9 +267,9 @@ There are two options here. Use the trigger element as an anchor or wrap the men
 
 ## DropdownPopover
 
-| Attribute                   | Type                              | Default | Required | Description     |
-| --------------------------- | --------------------------------- | ------- | -------- | --------------- |
-| `data-spirit-fullwidthmode` | [`off` \| `mobile-only` \| `all`] | —       | ✕        | Full-width mode |
+| Attribute                   | Type                               | Default | Required | Description     |
+| --------------------------- | ---------------------------------- | ------- | -------- | --------------- |
+| `data-spirit-fullwidthmode` | \[`off` \| `mobile-only` \| `all`] | —       | ✕        | Full-width mode |
 
 ## JavaScript API
 

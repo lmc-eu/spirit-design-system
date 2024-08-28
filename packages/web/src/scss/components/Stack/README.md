@@ -4,7 +4,7 @@ Stack is a component that allows you to compose elements vertically.
 
 👉 Vertical margin of items inside Stack is reset to zero to ensure proper spacing between items. Read more about spacing in the [Variants](#variants) section.
 
-## Basic usage
+## Basic Usage
 
 Usage with form fields:
 
@@ -45,7 +45,7 @@ Otherwise, the applied spacing via vertical padding could break the visual view 
 
 `Stack--hasSpacing` without dividers uses the CSS `gap` property.
 
-### Spacing between items
+### Spacing Between Items
 
 👉 The vertical spacing between items is applied via `Stack--hasSpacing`. The size corresponds with the value of the design token `$space-600`.
 In case you need another spacing, please use utility classes or add custom-defined styles to the direct descendants.
@@ -67,7 +67,7 @@ Usage with spacing:
 </ul>
 ```
 
-### Dividers between items
+### Dividers Between Items
 
 Usage with middle dividers:
 
@@ -101,7 +101,7 @@ Usage with inner and outer dividers:
 </ul>
 ```
 
-## Advanced usage
+## Advanced Usage
 
 Usage with combination of spacing and dividers:
 

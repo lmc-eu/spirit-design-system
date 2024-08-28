@@ -1,6 +1,6 @@
 # Radio
 
-## Basic usage:
+## Basic Usage
 
 ```html
 <label for="radio-default" class="Radio">
@@ -11,7 +11,7 @@
 </label>
 ```
 
-## Selected state:
+## Selected State
 
 ```html
 <label for="radio-default-checked" class="Radio">
@@ -22,7 +22,7 @@
 </label>
 ```
 
-## Disabled state:
+## Disabled State
 
 ```html
 <label for="radio-disabled" class="Radio Radio--disabled">
@@ -33,7 +33,7 @@
 </label>
 ```
 
-## Validation States:
+## Validation States
 
 See Validation state [dictionary][dictionary-validation].
 
@@ -60,7 +60,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## With helper text:
+## With Helper Text
 
 ```html
 <label for="radio-helper-text" class="Radio">
@@ -72,7 +72,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## As an Item:
+## As an Item
 
 ```html
 <label for="radio-item-default" class="Radio Radio--item">
@@ -83,7 +83,7 @@ See Validation state [dictionary][dictionary-validation].
 </label>
 ```
 
-## As an Item wrapped with helper text:
+## As an Item Wrapped with Helper Text
 
 ```html
 <label for="radio-item-helper-text" class="Radio Radio--item">

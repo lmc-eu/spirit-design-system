@@ -104,7 +104,7 @@ Checkbox as a Item:
 </label>
 ```
 
-Usage in [Dropdown] component:
+Usage in [Dropdown][dropdown] component:
 
 ```html
 <div class="DropdownWrapper">

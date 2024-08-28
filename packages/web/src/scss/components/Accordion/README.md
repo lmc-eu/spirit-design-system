@@ -14,7 +14,7 @@ Building blocks:
     - Collapse
       - Accordion content
 
-### Accordion
+### Accordion Component
 
 Common wrapper for all items:
 
@@ -172,7 +172,7 @@ When you put it all together:
 <!-- Accordion: end -->
 ```
 
-### Open only one item at a time
+### Open Inly One Item at a Time
 
 Link individual **Collapse items** to their **Accordion parent** via
 `data-spirit-parent` attribute to allow just a single item being open at a time.

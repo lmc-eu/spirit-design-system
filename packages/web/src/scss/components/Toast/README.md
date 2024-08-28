@@ -23,7 +23,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-## Toast
+## Toast Component
 
 The Toast component is a container responsible for positioning the [ToastBar](#toastbar) component. It is capable of
 handling even multiple toast messages at once, stacking them in a [queue](#toast-queue).

@@ -52,7 +52,7 @@ Helper text:
 
 There are several ways to adjust the textarea width:
 
-### `rows` Attribute
+### Rows Attribute
 
 The number of visible text lines for the control. Supported values are positive integers from `3` up.
 
@@ -118,7 +118,7 @@ When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
 render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
-[prefixed].
+[prefixed][prefixed].
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**

@@ -110,7 +110,7 @@ building blocks to use:
    1. primary actions slot (all breakpoints),
    2. secondary actions slot (all breakpoints).
 
-## Header
+## Header Component
 
 ### Mobile-Only Actions
 
@@ -170,7 +170,11 @@ control here.
 </nav>
 ```
 
-#### Navigation
+<!--lint disable no-duplicate-headings -->
+
+#### Desktop-Only Actions Navigation
+
+<!--lint enable no-duplicate-headings -->
 
 Navigation is designed to live in either of the action slots (just remember you
 should use the `<nav>` element with the appropriate `aria-label` for that slot,
@@ -282,7 +286,11 @@ necessary).
 </nav>
 ```
 
-#### Navigation
+<!--lint disable no-duplicate-headings -->
+
+#### Primary and Secondary Actions Navigation
+
+<!--lint enable no-duplicate-headings -->
 
 Navigation capabilities are very similar to those of Header. All principles
 apply here as well, with the only difference in class names starting with
@@ -487,7 +495,6 @@ And the complete Header Dialog:
 ✍️ Please do feel free to let us know should you believe this component lacks
 some important capabilities. Thank you! 🙏
 
-[examples]: https://spirit-design-system.netlify.app/packages/web/
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [mdn-dialog]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 [offcanvas-docs]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Offcanvas/README.md

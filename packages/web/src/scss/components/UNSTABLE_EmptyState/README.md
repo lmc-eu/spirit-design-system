@@ -8,9 +8,11 @@ EmptyState component should be included at the error pages or empty state pages 
 EmptyState component is a composition of the following components:
 
 - [UNSTABLE_EmptyState](#unstable-emptystate)
-  - [UNSTABLE_EmptyStateSection](#unstable-emptystatesection)
+- [UNSTABLE_EmptyStateSection](#unstable-emptystatesection)
 
-## UNSTABLE EmptyState
+## Component Composition
+
+### UNSTABLE_EmptyState
 
 The `UNSTABLE_EmptyState` component is a main container responsible for positioning the [UNSTABLE_EmptyStateSection](#unstable-emptystatesection) components or content.
 
@@ -22,7 +24,7 @@ The `UNSTABLE_EmptyState` component is a main container responsible for position
 
 This component is based on the [Stack][stack] component and accepts all its variants. For more information about `Stack` usage options, see the [Stack documentation][stack].
 
-## UNSTABLE EmptyStateSection
+### UNSTABLE_EmptyStateSection
 
 The `UNSTABLE_EmptyStateSection` component is a container for the content of each section.
 
@@ -34,9 +36,7 @@ The `UNSTABLE_EmptyStateSection` component is a container for the content of eac
 
 This component is based on the [Stack][stack] component and accepts all its variants. For more information about `Stack` usage options, see the [Stack documentation][stack].
 
-[stack]: https://github.com/lmc-eu/spirit-design-system/blob/dependencies/major-monorepo-storybook/packages/web/src/scss/components/Stack/README.md
-
-## Full Example
+### Full Example
 
 ```html
 <div class="Stack Stack--hasSpacing UNSTABLE_EmptyState" style="--stack-spacing: var(--spirit-space-700);">
@@ -54,3 +54,5 @@ This component is based on the [Stack][stack] component and accepts all its vari
   <div class="Stack UNSTABLE_EmptyState__section"><a href="#" class="link-primary">Link to something</a></div>
 </div>
 ```
+
+[stack]: https://github.com/lmc-eu/spirit-design-system/blob/dependencies/major-monorepo-storybook/packages/web/src/scss/components/Stack/README.md
