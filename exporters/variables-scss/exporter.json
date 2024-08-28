@@ -7,7 +7,7 @@
   "version": "1.0.0",
   "usesBrands": true,
   "usesThemes": true,
-  "executable": "/generated/exporter.js",
+  "executable": "/generated/exporter.cjs",
   "engine": "latest",
   "tags": ["spirit", "scss", "variables", "exporter"]
 }
