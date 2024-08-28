@@ -1,39 +1,51 @@
-import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { tokenToCSSByType } from '../cssGenerator';
 import { exampleGroups, exampleToken } from './exampleTokens';
 
-const dimensionToken: DimensionToken = exampleToken[0];
-const stringToken: StringToken = exampleToken[3];
-const mappedTokens: Map<string, Token> = new Map([[dimensionToken.id, dimensionToken]]);
+const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
-const withParent: boolean = true;
 
-describe('tokenToCSSByType', () => {
-  it('should correctly generate CSS for dimension token', () => {
-    const css = tokenToCSSByType(dimensionToken, mappedTokens, tokenGroups, withParent);
-
-    const expectedCSS = `$grid-spacing-desktop: 32px !default;`;
-
-    expect(css).toBe(expectedCSS);
-  });
-
-  it('should correctly generate CSS for string token', () => {
-    const css = tokenToCSSByType(stringToken, mappedTokens, tokenGroups, withParent);
-
-    const expectedCSS = `$grid-columns: 12 !default;`;
-
-    expect(css).toBe(expectedCSS);
-  });
-
-  it('should return null for unsupported token type', () => {
-    const unsupportedToken: Token = {
+const dataProvider = [
+  {
+    token: exampleToken[0],
+    expectedCss: '$grid-spacing-desktop: 32px !default;',
+    withParent: true,
+    description: 'dimension type token with parent prefix',
+  },
+  {
+    token: exampleToken[0],
+    expectedCss: '$desktop: 32px !default;',
+    withParent: false,
+    description: 'dimension type token without parent prefix',
+  },
+  {
+    token: exampleToken[3],
+    expectedCss: '$grid-columns: 12 !default;',
+    withParent: true,
+    description: 'string type token with parent prefix',
+  },
+  {
+    token: exampleToken[3],
+    expectedCss: '$columns: 12 !default;',
+    withParent: false,
+    description: 'string type token without parent prefix',
+  },
+  {
+    token: {
       id: '3',
       name: 'unsupportedToken',
       tokenType: TokenType.color,
-    };
+    },
+    expectedCss: null,
+    withParent: true,
+    description: 'unsupported token type',
+  },
+];
 
-    const css = tokenToCSSByType(unsupportedToken, mappedTokens, tokenGroups, withParent);
+describe.each(dataProvider)('tokenToCSSByType', ({ token, expectedCss, withParent, description }) => {
+  it(`should correctly generate CSS for ${description}`, () => {
+    const css = tokenToCSSByType(token, mappedTokens, tokenGroups, withParent);
 
-    expect(css).toBeNull();
+    expect(css).toBe(expectedCss);
   });
 });
