@@ -15,7 +15,6 @@ const IGNORED_TESTS: string[] = [
   'Dropdown',
   'FieldGroup',
   'FileUploader',
-  'Flex',
   'Header',
   'Heading',
   'Icon',
