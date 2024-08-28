@@ -5,4 +5,4 @@
 $alignment-x-dictionary: list.join(dictionaries.$alignments-x-extended, space-between);
 $alignment-y-dictionary: list.join(dictionaries.$alignments-y-extended, baseline);
 $breakpoints: tokens.$breakpoints;
-$gap: tokens.$space-600;
+$gap: tokens.$space-700;
