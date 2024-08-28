@@ -1,4 +1,5 @@
 @use 'theme';
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
@@ -11,12 +12,12 @@
     justify-content: flex-start;
     width: 100%;
     padding: theme.$padding;
-    border: theme.$border-width theme.$border-style var(--alert-color);
+    color: var(--#{tokens.$css-variable-prefix}alert-color);
+    border-width: theme.$border-width;
+    border-style: theme.$border-style;
+    border-color: var(--#{tokens.$css-variable-prefix}alert-border-color);
     border-radius: theme.$border-radius;
-}
-
-.Alert strong {
-    font-weight: theme.$emphasis-font-weight;
+    background-color: var(--#{tokens.$css-variable-prefix}alert-background-color);
 }
 
 .Alert--center {
@@ -24,13 +25,22 @@
     justify-content: center;
 }
 
-@include dictionaries.generate-colors('Alert', theme.$color-dictionary, theme.$color-dictionary-config);
 @include dictionaries.generate-colors(
-    'Alert',
-    theme.$color-dictionary,
-    theme.$color-dictionary-config,
-    theme.$link-color-dictionary-states,
-    null,
-    'alert-link',
-    ' :where(a)' // select all <a> elements inside .Alert with low specificity
+    $class-name: 'Alert',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config
 );
+
+.Alert :where(a) {
+    color: var(--#{tokens.$css-variable-prefix}alert-color);
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--#{tokens.$css-variable-prefix}alert-color);
+        }
+    }
+
+    &:active {
+        color: var(--#{tokens.$css-variable-prefix}alert-color);
+    }
+}
