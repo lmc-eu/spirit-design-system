@@ -1,19 +1,19 @@
-# Contributing to `@lmc-eu/spirit-design-system`
+# Contributing to Spirit Design System
 
 First of all, thanks for your contribution to this project! ❤️
 Here are some tips how to make your contributing efforts efficient and eventually accepted & merged:
 
 - [General Usage](#general-usage)
 - [Decisions](#decisions)
-- [Project structure](#project-structure)
+- [Project Structure](#project-structure)
 - [Development](#development)
 - [Commit Conventions](#commit-conventions)
-- [Code style](#code-style)
+- [Code Style](#code-style)
 - [Documenting the Components](#documenting-the-components)
 - [Testing](#testing)
 - [Publishing](#publishing)
 
-## General usage
+## General Usage
 
 This project uses `makefile` for managing various chores, like dependency installation, testing, linting etc. Make sure you run `make` right after you clone the repository - it will set you up with everything needed to get started. Once you are done with that, have a look at what commands (targets) are available for you to run using `make` - `make install` etc.
 
@@ -21,7 +21,7 @@ This project uses `makefile` for managing various chores, like dependency instal
 
 The reasoning behind various decisions made for the Spirit Design System. A good historical record.
 
-## Project structure
+## Project Structure
 
 This project is a monorepo managed by [Lerna][lerna-home]. This means that each folder inside the [packages/][packages] directory represents a package published to npm. The root directory also contains _package.json_ file but this is only used for local development purposes and does not represent something that is ever published to npm (you might notice that it only contains _devDependencies_ and no prod dependencies 🤷‍♂️).
 
@@ -40,7 +40,7 @@ This format leads to **easier-to-read commit history**.
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
-```
+```txt
 <header>
 <BLANK LINE>
 <body>
@@ -57,7 +57,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
 
 #### Commit Message Header
 
-```
+```txt
 <type>(<scope>): <short summary>
   │       │             │
   │       │             └─⫸ Summary in present tense. Sentence case. No period at the end.
@@ -132,7 +132,7 @@ The footer can contain information about breaking changes and deprecations and i
 
 For example:
 
-```
+```txt
 BREAKING CHANGE: <breaking change summary>
 <BLANK LINE>
 <breaking change description + migration instructions>
@@ -142,7 +142,7 @@ Fixes #<issue number>
 
 The breaking change section SHOULD start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
 
-### Revert commits
+### Revert Commits
 
 If the commit reverts a previous commit, it SHOULD begin with `Revert: `, followed by the header of the reverted commit.
 
@@ -151,7 +151,7 @@ The content of the commit message body SHOULD contain:
 - information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
 - a clear description of the reason for reverting the commit message.
 
-### Before commit:
+### Before Commit
 
 Test your code before committing with `% yarn test` or `% yarn packages:test`. It will run type linting, code listing, testing, and code formatting.
 
@@ -169,7 +169,7 @@ This project uses Prettier for code formatting. You can run `make format` to for
    1. The table MUST be placed in a section introduced by a headline called `API`.
    2. The table MUST contain the following columns:
       - `Name` — the name of the prop, e.g. `title`
-      - `Type` — the type of the prop, e.g. `string`, `number`, `bool`, `[horizontal | vertical]`, an existing [dictionary], etc.
+      - `Type` — the type of the prop, e.g. `string`, `number`, `bool`, `[horizontal | vertical]`, an existing [dictionary][dictionary], etc.
       - `Default` — the default value of the prop, e.g. `null` or `—` (em-dash) if there is no default value
       - `Required` — if the prop is required `✓` or not `✕`
       - `Description` — the description of the prop, e.g. `Title of the accordion`
@@ -187,23 +187,23 @@ The testing script includes:
 - checking types using the [Typescript][typescript] compiler
 - running unit test using the [Jest][jest]
 
-### Unit testing
+### Unit Testing
 
 You can run unit testing via `test:unit` scripts.
 For all available scripts see the package's `package.json` file.
 
-### Manual testing
+### Manual Testing
 
 For a better testing experience, we are using deploy previews on Netlify.
 If your modification affects the publishable code and when you create a PR, every push then will be deployed to Netlify.
 Netlify will create a deploy preview and you can test your changes there.
 Netlify will also attach a link to the deploy preview to your PR so you can easily access it.
 
-#### Readable Netlify links
+#### Readable Netlify Links
 
 For a better UI experience when searching for the deploy preview link, you can use this [Gist with userContent.css][netlify-preview-gist].
 
-### Visual regression testing
+### Visual Regression Testing
 
 **Prerequisites:** [Docker][docker] 🐳
 
@@ -231,7 +231,7 @@ We have two test suites and you can find them in the `./tests/e2e` directory:
 
 👉 To save time and repository size, we test only in the Chromium browser and only on the desktop viewport.
 
-#### On CI pipeline
+#### On CI Pipeline
 
 In CI we use Netlify to test against.
 
@@ -257,7 +257,7 @@ For more, please read the article [How to Run GitHub Actions Locally with the ac
 
 This project uses GitHub Actions to publish the packages automatically to npm. New packages are published after the new tag is pushed to the main branch. PR can be merged only by the appropriate group of maintainers.
 
-### Steps to create a new package version
+### Steps to Create a New Package Version
 
 1. Merge all appropriate PRs you want to publish into the main branch
 2. Run the `make version` command to bump the version number in packages (a new version number is determined automatically based on commit history)
@@ -271,7 +271,6 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [act-article]: https://www.freecodecamp.org/news/how-to-run-github-actions-locally/
 [conventional-commits]: https://www.conventionalcommits.org
 [commitlint-config]: https://github.com/lmc-eu/code-quality-tools/tree/main/packages/commitlint-config
-[conventional-commits]: https://www.conventionalcommits.org
 [dictionary]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/DICTIONARIES.md
 [developer-handbook]: https://github.com/lmc-eu/spirit-design-system/tree/main/docs/contributtion/development.md
 [docker]: https://www.docker.com/
@@ -279,7 +278,6 @@ This project uses GitHub Actions to publish the packages automatically to npm. N
 [jest]: https://jestjs.io/
 [lerna-home]: https://lernajs.io
 [netlify-preview-gist]: https://gist.github.com/adamkudrna/694f3048c1338f07375b9b8af24afe2f
-[nx-cloud]: https://nx.app/
 [packages]: packages/
 [playwright]: https://playwright.dev/
 [prettier]: https://prettier.io/
