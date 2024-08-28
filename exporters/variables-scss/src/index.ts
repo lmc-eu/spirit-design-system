@@ -60,7 +60,7 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
     // only for debugging purposes
     createTextFile(
       './original-data/',
-      '_original.json',
+      '_original-tokens.json',
       JSON.stringify(
         tokens.map((token) => ({
           tokenType: token.tokenType,
@@ -74,6 +74,7 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
         2,
       ),
     ),
+    createTextFile('./original-data/', '_original-groups.json', JSON.stringify(tokenGroups, null, 2)),
   ];
 });
 

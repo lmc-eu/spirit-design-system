@@ -10,11 +10,9 @@ export const formatCSS = (css: string): string => {
       formattedCSS += `${line}\n`;
     } else if (line.includes(')')) {
       indentationLevel -= 1;
-      formattedCSS += `${'\t'.repeat(indentationLevel)}${line}\n`;
-    } else if (line.includes(',')) {
-      formattedCSS += `${'\t'.repeat(indentationLevel)}${line.trim()}\n`;
+      formattedCSS += `${'    '.repeat(indentationLevel)}${line}\n`;
     } else {
-      formattedCSS += `${'\t'.repeat(indentationLevel)}${line}\n`;
+      formattedCSS += `${'    '.repeat(indentationLevel)}${line}\n`;
     }
   }
 
