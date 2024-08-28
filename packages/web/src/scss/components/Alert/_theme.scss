@@ -2,30 +2,22 @@
 @use '@tokens' as tokens;
 @use '../../settings/dictionaries';
 
-$typography: tokens.$body-medium-text-regular;
+$typography: tokens.$body-medium-regular;
 
-$gap: tokens.$space-600;
-$padding: tokens.$space-600;
-$border-radius: tokens.$radius-200;
-$border-style: tokens.$border-style-100;
+$gap: tokens.$space-700;
+$padding: tokens.$space-700;
+$border-radius: tokens.$radius-300;
+$border-style: solid;
 $border-width: tokens.$border-width-100;
 
-$content-max-width: 640px;
+$content-max-width: 800px;
 
-$emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
-
-$color-dictionary: dictionaries.$emotion-colors;
-
-$color-dictionary-config: (
-    color: 'default',
-    background-color: 'background',
+$color-dictionary: (
+    emotion: dictionaries.$emotion-colors,
 );
 
-$link-color-dictionary-states: (
-    '&:hover, &:focus': (
-        color: 'hover',
-    ),
-    '&:active': (
-        color: 'active',
-    ),
+$color-dictionary-config: (
+    color: 'content-basic',
+    border-color: 'border-basic',
+    background-color: 'background-subtle',
 );
