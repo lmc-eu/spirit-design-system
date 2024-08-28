@@ -30,6 +30,13 @@ const filesData = [
     withCssObject: true,
     hasParentPrefix: true,
   },
+  {
+    fileName: '_colors.scss',
+    tokenTypes: TokenType.color,
+    groupNames: '',
+    withCssObject: true,
+    hasParentPrefix: true,
+  },
 ];
 
 export const generateFiles = (

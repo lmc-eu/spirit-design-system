@@ -1,5 +1,5 @@
-import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { CSSHelper } from '@supernovaio/export-helpers';
+import { ColorToken, DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
 import { toPlural } from '../helpers/stringHelper';
 import { tokenVariableName } from '../helpers/tokenHelper';
 import { handleExceptions } from '../helpers/exceptionHelper';
@@ -24,6 +24,21 @@ export const tokenToCSSByType = (
     const stringToken = token as StringToken;
     const name = tokenVariableName(stringToken, tokenGroups, withParent);
     let value = stringToken.value.text;
+    value = handleExceptions(name, value);
+
+    return `$${name}: ${value} !default;`;
+  }
+
+  if (token.tokenType === TokenType.color) {
+    const colorToken = token as ColorToken;
+    const name = tokenVariableName(colorToken, tokenGroups, withParent);
+    let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
+      allowReferences: true,
+      decimals: 3,
+      colorFormat: ColorFormat.smartHashHex,
+      tokenToVariableRef: (t) => `var(--${tokenVariableName(t, tokenGroups, true)})`,
+    });
+    // let value = colorToken.value?.color;
     value = handleExceptions(name, value);
 
     return `$${name}: ${value} !default;`;
