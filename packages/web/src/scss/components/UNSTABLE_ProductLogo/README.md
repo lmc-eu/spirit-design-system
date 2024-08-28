@@ -11,7 +11,7 @@ The ProductLogo component is used to display the logo of the product.
 </div>
 ```
 
-## Inverted variant
+## Inverted Variant
 
 You can add an `UNSTABLE_ProductLogo--inverted` modifier class to invert the color of the background.
 It is necessary to insert the appropriate inverted logo variant as a children.

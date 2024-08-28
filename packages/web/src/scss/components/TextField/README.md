@@ -66,7 +66,7 @@ Helper Text:
 </div>
 ```
 
-## Supported `type` Values
+## Supported Type Attribute Values
 
 TextField supports the following input types:
 
@@ -85,7 +85,7 @@ input field will not be consistent across platforms/browsers.
 
 There are several ways to adjust the input width:
 
-### `size` Attribute
+### Size Attribute
 
 The `size` attribute is supported on inputs of the following types: `email`,
 `password`, `tel`, `text`, `url`.
@@ -229,7 +229,7 @@ When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
 render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
-[prefixed].
+[prefixed][prefixed].
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle prefixes their own way.**
@@ -285,3 +285,4 @@ JS interaction class when controlled by JavaScript:
 
 [prefixed]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#prefixing-css-class-names
 [dictionary-validation]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#validation
+[web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md

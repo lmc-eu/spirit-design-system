@@ -146,11 +146,11 @@ Responsive Horizontal and Vertical alignment:
 <div
   class="
     Grid
-    Grid--alignmentXLeft 
-    Grid--tablet--alignmentXCenter 
-    Grid--desktop--alignmentXRight 
-    Grid--alignmentYTop 
-    Grid--tablet--alignmentYCenter 
+    Grid--alignmentXLeft
+    Grid--tablet--alignmentXCenter
+    Grid--desktop--alignmentXRight
+    Grid--alignmentYTop
+    Grid--tablet--alignmentYCenter
     Grid--desktop--alignmentYBottom
   "
 >
@@ -158,7 +158,7 @@ Responsive Horizontal and Vertical alignment:
 </div>
 ```
 
-# Grid Item
+## Grid Item
 
 Grid Item is a wrapper for Grid items. It allows you to configure your Grid structure
 as you wish. Use CSS variables to set a column where the Grid Item should start or end.
@@ -307,3 +307,5 @@ variables.
   </div>
 </div>
 ```
+
+[alignment-dictionary]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment

@@ -14,7 +14,7 @@
 
 This is an example of a typical file structure of a component:
 
-```
+```txt
 ├── src
     ├── scss
     │   └── components
@@ -60,7 +60,7 @@ Similarly, component's tools serve as a storage of component-scoped:
 
 ## Linking Design Tokens
 
-Components can (and should!) reuse Spirit [design tokens].
+Components can (and should!) reuse Spirit [design tokens][design-tokens].
 
 Component's theme properties can be linked to design tokens. This way, the
 appearance of individual components is always unified and coherent: **anytime
@@ -71,7 +71,7 @@ discussion between Spirit developers and designers. Linking component
 properties to design tokens needs to be done carefully **in order for the design
 to work as a system.**
 
-Default Spirit design tokens live in the [`spirit-design-tokens`] package.
+Default Spirit design tokens live in the [`spirit-design-tokens`][design-tokens] package.
 Products may define their own design tokens as long as they preserve the same
 structure and naming.
 
@@ -85,7 +85,7 @@ the [`@tokens` API][tokens-api] with
 From the implementation point of view, design tokens are Sass variables
 organized in Sass modules. Within component styles, Sass modules with design
 tokens are referred to just by filename. However, because the modules do not
-exist in the place they are called in (the [`spirit-design-tokens`] package is
+exist in the place they are called in (the [`spirit-design-tokens`][design-tokens] package is
 stored in `node_modules`), the correct load path for the desired set of design
 tokens must be [provided on build time][configuring-load-path]. This is the only
 way how Sass modules can be affected from outside, without giving in their
@@ -193,7 +193,7 @@ great portion of encapsulation, traceability, and more.
 <summary>Does <code>@use</code> behave the same way as <code>@import</code>?</summary>
 
 In most situations, no. Most importantly, while `@import` loads everything into
-global context, `@use` is scoped and works more like `import` in [ES modules].
+global context, `@use` is scoped and works more like `import` in [ES modules][es-modules].
 
 </details>
 
@@ -217,12 +217,11 @@ To avoid conflicts, we need a convention to distinguish situations when somethin
 - `id` attribute can be used by **JS only**.
 </details>
 
-[design tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
-[`spirit-design-tokens`]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
+[design-tokens]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens
 [tokens-api]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#tokens-api
 [configuring-load-path]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#configuring-load-path
 [rebranding]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/web#rebranding
 [design-tokens-faq]: https://github.com/lmc-eu/spirit-design-system/tree/main/packages/design-tokens#faq
 [sass-modules]: https://sass-lang.com/blog/the-module-system-is-launched
-[es modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[es-modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 [sass-true]: https://github.com/oddbird/true

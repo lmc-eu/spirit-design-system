@@ -2,7 +2,7 @@
 
 FileUploader allows users to pick one or more files to upload.
 
-**FileUploader itself actually does not upload anything to the server.**
+> FileUploader itself actually does not upload anything to the server.
 
 FileUploader is a composition of a few subcomponents:
 
@@ -25,7 +25,7 @@ Please consult the [main README][web-readme] for how to include JavaScript plugi
 
 Or, feel free to write the controlling script yourself.
 
-## FileUploader
+## FileUploader Component
 
 This is the main wrapper for the whole composition. It provides proper spacing
 for its subcomponents:
@@ -124,7 +124,7 @@ the `data-spirit-file-queue-limit` attribute:
 </div>
 ```
 
-### Input Behavior When the Queue is Filled (JavaScript)
+### Input Behavior When the Queue Is Filled (JavaScript)
 
 Using the `data-spirit-queue-limit-behavior` attribute together with the desired limit for the queue, you can set the
 input/drop zone to be hidden or disabled when the file queue limit is reached. Available options are: `hide`, `disable`,
@@ -235,7 +235,7 @@ When implementing client-side form validation, use JS interaction state classes
 (`has-success`, `has-warning`, `has-danger`) on the wrapping `<div>` element and
 render validation texts in a `<div>` or `<ul>` with `data-spirit-element="validation_text"`
 attribute. This way your JS remains disconnected from CSS that may or may not be
-[prefixed].
+[prefixed][prefixed].
 
 **Remember this approach is only valid for vanilla JS implementation. React
 components mix CSS with JS by design and handle CSS class-name prefixes their
@@ -472,7 +472,7 @@ document.addEventListener('unqueueFile.fileUploader', () => {
 
 👉 Read more about [fileUploader JavaScript events](#javascript-events).
 
-### Passing additional metadata
+### Passing Additional Metadata
 
 When you need to send additional data along with the image you can do it with the `meta` argument on `addToQueue` and `updateQueue` methods of the `FileUploader` JS plugin.
 If any data in `meta` option will be present, the FileUploader adds an additional hidden input with JSON stringified data to the form.
@@ -490,7 +490,7 @@ const customUpdate = (_event: MouseEvent, file: File) => {
 };
 ```
 
-#### Updating Image Preview with cropped image
+#### Updating Image Preview with Cropped Image
 
 When you are using FileUploader with some kind of image cropper you want to also update the image preview on FileUploader attachment when image changes.
 You can do this by passing a specific object in shape of coordinates (`{ x: number, y: number, cropWidth: number, cropHeight: number, originalWidth: number, originalHeight: number }`) to the `meta` argument.
@@ -607,9 +607,9 @@ const input = myUploaderInstance.inputElement; // Returns an input element, for 
 | `unqueuedFile.fileUploader` | This event is fired after the file was removed from queue.                                                                                  |
 | `error.fileUploader`        | This event is fired when an error occurs when adding files to the queue. A specific error message is also returned together with the event. |
 
-## Implementation notes
+## Implementation Notes
 
-### Name attribute
+### Name Attribute
 
 ⚠️ The `name` attribute on hidden input will be always set as an array `[]` for both single-file and multiple-file usage. Make sure you handle it correctly in your code.
 

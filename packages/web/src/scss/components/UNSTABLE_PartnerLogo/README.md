@@ -28,7 +28,7 @@ Use the `UNSTABLE_PartnerLogo--<size>` modifier class to change the size of the 
 </div>
 ```
 
-## Disabled safe area
+## Disabled Safe Area
 
 The PartnerLogo component can be displayed without the safe area (padding). Use `UNSTABLE_PartnerLogo--hasSafeAreaDisabled` modifier to disable safe area around logo.
 
@@ -64,7 +64,7 @@ attribute is set on the container.
 </div>
 ```
 
-## Full example
+## Full Example
 
 ```html
 <div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--medium" aria-label="Logo of the partner">

@@ -43,7 +43,7 @@ Hide button when collapse
 <button ... data-spirit-more>trigger</button> ...
 ```
 
-## Trigger attributes
+## Trigger Attributes
 
 | Name                 | Type     | Default    | Required | Description                         |
 | -------------------- | -------- | ---------- | -------- | ----------------------------------- |
@@ -53,12 +53,12 @@ Hide button when collapse
 | `aria-expanded`      | `string` | —          | ✕        | Aria expanded state (auto)          |
 | `aria-controls`      | `string` | —          | ✕        | Aria controls state (auto)          |
 
-## Wrapper attributes
+## Wrapper Attributes
 
-| Name                     | Type                    | Default | Required | Description                                                              |
-| ------------------------ | ----------------------- | ------- | -------- | ------------------------------------------------------------------------ |
-| `data-spirit-breakpoint` | [`tablet` \| `desktop`] | —       | ✕        | Breakpoint on which the collapsed content is forced to reveal \*         |
-| `data-spirit-parent`     | `string`                | —       | ✕        | A parent element selector that ensures that only one item is opened \*\* |
+| Name                     | Type                     | Default | Required | Description                                                              |
+| ------------------------ | ------------------------ | ------- | -------- | ------------------------------------------------------------------------ |
+| `data-spirit-breakpoint` | \[`tablet` \| `desktop`] | —       | ✕        | Breakpoint on which the collapsed content is forced to reveal \*         |
+| `data-spirit-parent`     | `string`                 | —       | ✕        | A parent element selector that ensures that only one item is opened \*\* |
 
 There can be several triggers, the same rules apply to each.
 
@@ -66,7 +66,7 @@ There can be several triggers, the same rules apply to each.
 
 (\*\*) Attribute for Accordion implementation
 
-## State classes
+## State Classes
 
 The component provides auto toggle attributes and classes, like `.is-open` when triggered or initiated.
 It also provides `.is-transitioning` class switching during animation. This means that `.Collapse.is-transitioning` during

@@ -14,7 +14,7 @@ toggling of the Offcanvas component:
 
 ## Usage
 
-### Via data attributes
+### Via Data Attributes
 
 Add `data-spirit-toggle="offcanvas"` and a `data-spirit-target` to the element to automatically assign control of one Offcanvas element.
 The `data-spirit-target` attribute accepts a CSS selector to apply the Offcanvas to.

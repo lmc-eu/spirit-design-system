@@ -8,7 +8,7 @@ Modal is a composition of several subcomponents:
     - [ModalBody](#modalfooter)
     - [ModalFooter](#modalfooter)
 
-## Modal
+## Modal Component
 
 Modal establishes the top layer with a backdrop. Under the hood it uses the [`<dialog>` element][mdn-dialog] which
 provides several accessibility advantages.
@@ -39,7 +39,7 @@ Example:
 </dialog>
 ```
 
-## ModalDialog
+## ModalDialog Component
 
 ModalDialog is the actual dialog window, a place for the header, body, and footer of the dialog.
 
@@ -93,7 +93,7 @@ By default, the docked dialog on mobile screens shrinks to fit the height of its
 </article>
 ```
 
-## ModalHeader
+## ModalHeader Component
 
 ModalHeader contains the title of the dialog and the close button.
 
@@ -130,7 +130,7 @@ the `aria-label` attribute on the `<dialog>` element:
 </dialog>
 ```
 
-## ModalBody
+## ModalBody Component
 
 ModalBody holds the actual content of the Modal.
 
@@ -144,7 +144,7 @@ ModalBody holds the actual content of the Modal.
 </div>
 ```
 
-## ModalFooter
+## ModalFooter Component
 
 ModalFooter is the place for actions represented by the Button component. While there always must be a primary Button,
 secondary actions are optional.
@@ -456,4 +456,3 @@ Or feel free to write controlling scripts yourself.
 [scroll-view]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ScrollView/README.md
 [web-readme]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md
 [dictionary-alignment]: https://github.com/lmc-eu/spirit-design-system/blob/main/docs/DICTIONARIES.md#alignment
-[readme-feature-flags]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/README.md#feature-flags

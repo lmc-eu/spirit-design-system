@@ -38,7 +38,7 @@ Shows where the user is within the app hierarchy.
 </nav>
 ```
 
-### Dealing with long titles
+### Dealing with Long Titles
 
 When you need to shorten the title of the Breadcrumbs item you can use a helper class `text-truncate` with defined width.
 

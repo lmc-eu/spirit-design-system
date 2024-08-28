@@ -1,4 +1,9 @@
+<!-- @see: https://github.com/ilyatitovich/remark-lint-heading-capitalization/issues/13 -->
+<!--lint disable heading-capitalization -->
+
 # @lmc-eu/spirit-web
+
+<!--lint enable heading-capitalization -->
 
 > CSS implementation of Spirit Design System.
 
@@ -73,7 +78,7 @@ module.exports = {
 
 Some components require JavaScript plugins for their full functionality. You can use individual modules or compiled bundle.
 
-#### Individual or compiled
+#### Individual or Compiled
 
 Plugins can be included individually as an EcmaScript module (using `import { <plugin> } from '@lmc-eu/spirit-web'`, see [Using Spirit Web as a module](#using-spirit-web-as-a-module)), or all at once using `js/{cjs|esm|bundle}/spirit-web.js` or the minified `js/{cjs|esm|bundle}/spirit-web.min.js` (do not include both), all files are UMD ready.
 
@@ -83,7 +88,7 @@ Plugins can be included individually as an EcmaScript module (using `import { <p
 
 If you use a bundler (Webpack, Rollup, ...), you can use `/js/*.js` files which are EcmaScript modules.
 
-#### Using Spirit Web as a module in browser
+#### Using Spirit Web as a Module in Browser
 
 We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web.esm.min.js`) which allows you to use Spirit Web as a module in your browser.
 
@@ -95,7 +100,7 @@ We provide a version of Spirit Web as `ESM` (`spirit-web.esm.js` and `spirit-web
 </script>
 ```
 
-#### Data attributes
+#### Data Attributes
 
 Nearly all Spirit-Web plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality).
 Be sure to only use one set of data attributes on a single element (e.g., you cannot trigger a tooltip and modal from the same button.).
@@ -136,7 +141,7 @@ var modal = new Modal(myModalEl); // initialized with defaults
 
 If you’d like to get a particular plugin instance, each plugin exposes a `getInstance` method.
 
-#### CSS selectors in constructors
+#### CSS Selectors in Constructors
 
 You can also use a CSS selector as the first argument instead of a DOM element to initialize the plugin.
 Currently the element for the plugin is found by the `querySelector` method since our plugins support a single element only.
@@ -171,7 +176,7 @@ Learn more in the [`spirit-design-tokens` docs][rebranding].
 
 Start local development server with `yarn start` to get started. You will get the live preview of all components and plugins in your browser. Just get dirty and change something and you will see the changes live.
 
-The dev-stack is based on [Vite].
+The dev-stack is based on [Vite][vite].
 
 ## Deprecations
 
@@ -186,7 +191,7 @@ Check your browser console to see if you are using any of the deprecated functio
 
 ## Examples
 
-👀 See [examples] for a live demo.
+👀 See [examples][examples] for a live demo.
 
 ## License
 
