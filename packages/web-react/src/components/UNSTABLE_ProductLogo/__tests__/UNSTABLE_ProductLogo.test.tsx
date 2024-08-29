@@ -24,12 +24,4 @@ describe('UNSTABLE_ProductLogo', () => {
 
     expect(screen.getByText('Content')).toHaveClass('UNSTABLE_ProductLogo');
   });
-
-  it('should have inverted className', () => {
-    render(<UNSTABLE_ProductLogo isInverted>Content</UNSTABLE_ProductLogo>);
-    const element = screen.getByText('Content');
-
-    expect(element).toHaveClass('UNSTABLE_ProductLogo');
-    expect(element).toHaveClass('UNSTABLE_ProductLogo--inverted');
-  });
 });

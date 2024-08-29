@@ -13,19 +13,6 @@ import { UNSTABLE_ProductLogo } from '@spirit/web-react';
 </UNSTABLE_ProductLogo>;
 ```
 
-## Inverted variant
-
-You can add an `isInverted` prop to invert the color of the background.
-It is necessary to insert the appropriate inverted logo variant as a children.
-
-```jsx
-import { UNSTABLE_ProductLogo } from '@spirit/web-react';
-
-<UNSTABLE_ProductLogo isInverted>
-  <!-- Inverted logo goes here -->
-</UNSTABLE_ProductLogo>;
-```
-
 ## Content
 
 The content of the ProductLogo component can be an image or svg.
@@ -56,10 +43,9 @@ image.
 
 ## API
 
-| Name         | Type        | Default | Required | Description                        |
-| ------------ | ----------- | ------- | -------- | ---------------------------------- |
-| `children`   | `ReactNode` | `null`  | ✓        | Content of the ProductLogo         |
-| `isInverted` | `bool`      | `false` | ✕        | If true, Logo has inverted variant |
+| Name       | Type        | Default | Required | Description                |
+| ---------- | ----------- | ------- | -------- | -------------------------- |
+| `children` | `ReactNode` | `null`  | ✓        | Content of the ProductLogo |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
