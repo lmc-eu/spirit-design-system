@@ -1,80 +1,84 @@
 @use 'sass:list';
-@use 'sass:map';
-@use 'sass:meta';
+
+// @use 'sass:map';
+// @use 'sass:meta';
 @use 'sass:string';
-@use '@tokens' as tokens;
+
+// @use '@global' as global-tokens;
+@use '../settings/globals';
 @use './alignment';
 @use './links';
 @use './list' as spirit-list;
 @use './placement';
 @use './reset';
 @use './string' as spirit-string;
-@use './typography';
 
-// Function to get the tokens map from the dictionary value name
-// Example: -get-color-dictionary-tokens('primary') will return tokens.$action-colors
-@function -get-color-dictionary-tokens($variant) {
-    @if map.has-key(tokens.$action-colors, #{$variant}-default) {
-        @return tokens.$action-colors;
-    }
+// @use './typography';
 
-    @if map.has-key(tokens.$emotion-colors, #{$variant}-default) {
-        @return tokens.$emotion-colors;
-    }
-
-    @if map.has-key(tokens.$text-colors, #{$variant}-default) {
-        @return tokens.$text-colors;
-    }
-
-    @error 'Invalid color dictionary value as there is no #{$variant}-default token either in action-colors, emotion-colors, or text-colors tokens';
-
-    @return null;
-}
-
-// Function to get the property value
-// Parameters are:
-// * $dictionary-value: the dictionary value to get the property value from, for example 'primary'
-// * $property-name: the property name to get the value from, for example 'color'
-// * $property-value: the property value, for example 'default' or directly the token, for example tokens.$text-primary-default
-// * $overrides: the overrides map, for example $overrides: (
-//     primary: (
-//         color: tokens.$text-primary-default, <-- this will override the default value of color for dictionary value 'primary'
-//         states: ( <-- this will override the default value of color for dictionary value 'primary' when the button is hovered or focused
-//             '&:hover, &:focus': (
-//                 color: tokens.$text-primary-default,
-//             ),
-//         ),
-//     ),
-// )
-// * $state-name: the state name, for example '&:hover, &:focus'
-// Example: -get-property-value('primary', 'color', 'default') will return tokens.$text-primary-default
-// Example: -get-property-value('primary', 'color', 'default', ( primary: ( color: tokens.$text-primary-inverted-default ) ) ) will return tokens.$text-primary-inverted-default
-@function -get-property-value($dictionary-value, $property-name, $property-value, $overrides: null, $state-name: null) {
-    @if $overrides and map.has-key($overrides, $dictionary-value) {
-        @if $state-name and map.has-key($overrides, $dictionary-value, states) {
-            @if map.has-key($overrides, $dictionary-value, states, $state-name) and
-                map.has-key($overrides, $dictionary-value, states, $state-name, $property-name)
-            {
-                @return map.get($overrides, $dictionary-value, states, $state-name, $property-name);
-            }
-        }
-
-        @if map.has-key($overrides, $dictionary-value, $property-name) {
-            @return map.get($overrides, $dictionary-value, $property-name);
-        }
-    }
-
-    @if meta.type-of($property-value) == 'string' {
-        $tokens: -get-color-dictionary-tokens($dictionary-value);
-
-        @if meta.type-of($tokens) == 'map' {
-            @return map.get($tokens, #{$dictionary-value}-#{$property-value});
-        }
-    } @else {
-        @return $property-value;
-    }
-}
-
+// // Function to get the tokens map from the dictionary value name
+// // Example: -get-color-dictionary-tokens('primary') will return tokens.$action-colors
+// @function -get-color-dictionary-tokens($variant) {
+//     @if map.has-key(tokens.$action-colors, #{$variant}-default) {
+//         @return tokens.$action-colors;
+//     }
+//
+//     @if map.has-key(tokens.$emotion-colors, #{$variant}-default) {
+//         @return tokens.$emotion-colors;
+//     }
+//
+//     @if map.has-key(tokens.$text-colors, #{$variant}-default) {
+//         @return tokens.$text-colors;
+//     }
+//
+//     @error 'Invalid color dictionary value as there is no #{$variant}-default token either in action-colors, emotion-colors, or text-colors tokens';
+//
+//     @return null;
+// }
+//
+// // Function to get the property value
+// // Parameters are:
+// // * $dictionary-value: the dictionary value to get the property value from, for example 'primary'
+// // * $property-name: the property name to get the value from, for example 'color'
+// // * $property-value: the property value, for example 'default' or directly the token, for example tokens.$text-primary-default
+// // * $overrides: the overrides map, for example $overrides: (
+// //     primary: (
+// //         color: tokens.$text-primary-default, <-- this will override the default value of color for dictionary value 'primary'
+// //         states: ( <-- this will override the default value of color for dictionary value 'primary' when the button is hovered or focused
+// //             '&:hover, &:focus': (
+// //                 color: tokens.$text-primary-default,
+// //             ),
+// //         ),
+// //     ),
+// // )
+// // * $state-name: the state name, for example '&:hover, &:focus'
+// // Example: -get-property-value('primary', 'color', 'default') will return tokens.$text-primary-default
+// // Example: -get-property-value('primary', 'color', 'default', ( primary: ( color: tokens.$text-primary-inverted-default ) ) ) will return tokens.$text-primary-inverted-default
+// @function -get-property-value($dictionary-value, $property-name, $property-value, $overrides: null, $state-name: null) {
+//     @if $overrides and map.has-key($overrides, $dictionary-value) {
+//         @if $state-name and map.has-key($overrides, $dictionary-value, states) {
+//             @if map.has-key($overrides, $dictionary-value, states, $state-name) and
+//                 map.has-key($overrides, $dictionary-value, states, $state-name, $property-name)
+//             {
+//                 @return map.get($overrides, $dictionary-value, states, $state-name, $property-name);
+//             }
+//         }
+//
+//         @if map.has-key($overrides, $dictionary-value, $property-name) {
+//             @return map.get($overrides, $dictionary-value, $property-name);
+//         }
+//     }
+//
+//     @if meta.type-of($property-value) == 'string' {
+//         $tokens: -get-color-dictionary-tokens($dictionary-value);
+//
+//         @if meta.type-of($tokens) == 'map' {
+//             @return map.get($tokens, #{$dictionary-value}-#{$property-value});
+//         }
+//     } @else {
+//         @return $property-value;
+//     }
+// }
+//
 // Mixin to generate alignment classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
@@ -95,72 +99,73 @@
     }
 }
 
-// Mixin to generate color classes based on a dictionary
-// Parameters are:
-// * $class-name: the name of the component class to generate
-// * $dictionary-values: list of the dictionary values to generate
-// * $config: map of the properties to generate, their value could be either directly token variable or a string,
-//   in that case the token variable will be generated based on the dictionary value
-// * $states: map of the states to generate, first level key is the selector and then the structure is the same
-//   as in `config` parameter
-// * $overrides: this map is used to cover exceptions in color schemes, first level is the dictionary value,
-//   second level is the property name, second level can also have key `states` and then the structure is the
-//   same as in `states` parameter
-// * $custom-variable-name: custom CSS variable name – useful when $class-name is complex
-// * $child-selector: additional child selector
-// * $generate-data-attribute: whether to generate data attribute selectors (for JS usage)
-// See Button component for real usage
-@mixin generate-colors(
-    $class-name,
-    $dictionary-values,
-    $config,
-    $states: null,
-    $overrides: null,
-    $custom-variable-name: null,
-    $child-selector: null,
-    $generate-data-attribute: false
-) {
-    @each $dictionary-value in $dictionary-values {
-        $data-attribute-selector: if(
-            $generate-data-attribute,
-            '.#{$class-name}[data-spirit-color="#{$dictionary-value}"]#{$child-selector}',
-            null
-        );
-
-        .#{$class-name}--#{$dictionary-value}#{$child-selector},
-        #{$data-attribute-selector} {
-            @each $property-name, $property-value in $config {
-                $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
-                $prefix: if(
-                    $custom-variable-name,
-                    $custom-variable-name,
-                    spirit-string.convert-pascal-case-to-kebab-case($class-name)
-                );
-
-                --#{$prefix}-#{$property-name}: #{$value};
-
-                #{$property-name}: var(--#{$prefix}-#{$property-name});
-            }
-
-            @if $states {
-                @each $state-name, $state-properties in $states {
-                    #{$state-name} {
-                        @each $property-name, $property-value in $state-properties {
-                            #{$property-name}: -get-property-value(
-                                $dictionary-value,
-                                $property-name,
-                                $property-value,
-                                $overrides,
-                                $state-name
-                            );
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
+//
+// // Mixin to generate color classes based on a dictionary
+// // Parameters are:
+// // * $class-name: the name of the component class to generate
+// // * $dictionary-values: list of the dictionary values to generate
+// // * $config: map of the properties to generate, their value could be either directly token variable or a string,
+// //   in that case the token variable will be generated based on the dictionary value
+// // * $states: map of the states to generate, first level key is the selector and then the structure is the same
+// //   as in `config` parameter
+// // * $overrides: this map is used to cover exceptions in color schemes, first level is the dictionary value,
+// //   second level is the property name, second level can also have key `states` and then the structure is the
+// //   same as in `states` parameter
+// // * $custom-variable-name: custom CSS variable name – useful when $class-name is complex
+// // * $child-selector: additional child selector
+// // * $generate-data-attribute: whether to generate data attribute selectors (for JS usage)
+// // See Button component for real usage
+// @mixin generate-colors(
+//     $class-name,
+//     $dictionary-values,
+//     $config,
+//     $states: null,
+//     $overrides: null,
+//     $custom-variable-name: null,
+//     $child-selector: null,
+//     $generate-data-attribute: false
+// ) {
+//     @each $dictionary-value in $dictionary-values {
+//         $data-attribute-selector: if(
+//             $generate-data-attribute,
+//             '.#{$class-name}[data-spirit-color="#{$dictionary-value}"]#{$child-selector}',
+//             null
+//         );
+//
+//         .#{$class-name}--#{$dictionary-value}#{$child-selector},
+//         #{$data-attribute-selector} {
+//             @each $property-name, $property-value in $config {
+//                 $value: -get-property-value($dictionary-value, $property-name, $property-value, $overrides);
+//                 $prefix: if(
+//                     $custom-variable-name,
+//                     $custom-variable-name,
+//                     spirit-string.convert-pascal-case-to-kebab-case($class-name)
+//                 );
+//
+//                 --#{$prefix}-#{$property-name}: #{$value};
+//
+//                 #{$property-name}: var(--#{$prefix}-#{$property-name});
+//             }
+//
+//             @if $states {
+//                 @each $state-name, $state-properties in $states {
+//                     #{$state-name} {
+//                         @each $property-name, $property-value in $state-properties {
+//                             #{$property-name}: -get-property-value(
+//                                 $dictionary-value,
+//                                 $property-name,
+//                                 $property-value,
+//                                 $overrides,
+//                                 $state-name
+//                             );
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+//
 // Mixin to reset button styling for individual link variants.
 // Parameters are:
 // * $dictionary-values: list of the dictionary values to generate
@@ -179,34 +184,35 @@
     }
 }
 
-// Mixin to generate link color classes based on a dictionary
-// Parameters are:
-// * $selector: the selector to generate
-// * $dictionary-values: list of the dictionary values to generate
-// * $tokens: map of the tokens to generate
-// * $print-values: list of the print values to generate
-@mixin generate-link-colors(
-    $selector,
-    $dictionary-values,
-    $tokens,
-    $print-values: (default, hover, active, disabled, visited)
-) {
-    @each $dictionary-value in $dictionary-values {
-        @each $print-value in $print-values {
-            $variant-class: '#{$dictionary-value}';
-
-            @if $print-value == 'disabled' {
-                $variant-class: '#{$dictionary-value}.link-#{$print-value}';
-            } @else if $print-value != 'default' {
-                $variant-class: '#{$dictionary-value}:#{$print-value}';
-            }
-            #{$selector}-#{unquote($variant-class)} {
-                color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
-            }
-        }
-    }
-}
-
+//
+// // Mixin to generate link color classes based on a dictionary
+// // Parameters are:
+// // * $selector: the selector to generate
+// // * $dictionary-values: list of the dictionary values to generate
+// // * $tokens: map of the tokens to generate
+// // * $print-values: list of the print values to generate
+// @mixin generate-link-colors(
+//     $selector,
+//     $dictionary-values,
+//     $tokens,
+//     $print-values: (default, hover, active, disabled, visited)
+// ) {
+//     @each $dictionary-value in $dictionary-values {
+//         @each $print-value in $print-values {
+//             $variant-class: '#{$dictionary-value}';
+//
+//             @if $print-value == 'disabled' {
+//                 $variant-class: '#{$dictionary-value}.link-#{$print-value}';
+//             } @else if $print-value != 'default' {
+//                 $variant-class: '#{$dictionary-value}:#{$print-value}';
+//             }
+//             #{$selector}-#{unquote($variant-class)} {
+//                 color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
+//             }
+//         }
+//     }
+// }
+//
 // Mixin to generate placement classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
@@ -233,28 +239,47 @@
     }
 }
 
+//
+// // Mixin to generate size classes based on a config
+// // Parameters are:
+// // * $class-name: the name of the component class to generate
+// // * $variables: map of the size variables to generate
+// // Size variables have to be padding-y and padding-x. Typography is optional.
+// @mixin generate-sizes($class-name, $variables) {
+//     @each $size, $variables in $variables {
+//         .#{$class-name}--#{$size} {
+//             @if map.has-key($variables, width) {
+//                 width: map.get($variables, width);
+//             }
+//
+//             @if map.has-key($variables, height) {
+//                 height: map.get($variables, height);
+//             }
+//
+//             @if map.has-key($variables, padding-y) and map.has-key($variables, padding-x) {
+//                 padding: map.get($variables, padding-y) map.get($variables, padding-x);
+//             }
+//
+//             @if map.has-key($variables, typography) {
+//                 @include typography.generate(map.get($variables, typography));
+//             }
+//         }
+//     }
+// }
+
 // Mixin to generate size classes based on a config
 // Parameters are:
 // * $class-name: the name of the component class to generate
-// * $variables: map of the size variables to generate
-// Size variables have to be padding-y and padding-x. Typography is optional.
-@mixin generate-sizes($class-name, $variables) {
-    @each $size, $variables in $variables {
+// * $sizes: map of the size variables to generate
+@mixin generate-sizes($class-name, $sizes) {
+    @each $size, $variables in $sizes {
         .#{$class-name}--#{$size} {
-            @if map.has-key($variables, width) {
-                width: map.get($variables, width);
-            }
+            $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
+                spirit-string.remove-prefix($class-name, 'UNSTABLE_')
+            );
 
-            @if map.has-key($variables, height) {
-                height: map.get($variables, height);
-            }
-
-            @if map.has-key($variables, padding-y) and map.has-key($variables, padding-x) {
-                padding: map.get($variables, padding-y) map.get($variables, padding-x);
-            }
-
-            @if map.has-key($variables, typography) {
-                @include typography.generate(map.get($variables, typography));
+            @each $variable-key, $variable-value in $variables {
+                --#{globals.$prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
             }
         }
     }
