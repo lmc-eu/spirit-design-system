@@ -36,3 +36,10 @@
         @include test.assert-equal(string.singularize('colors'), 'color');
     }
 }
+
+@include test.describe('remove prefix function') {
+    @include test.it('should remove prefix from a string') {
+        @include test.assert-equal(string.remove-prefix('UNSTABLE_Component', 'UNSTABLE_'), 'Component');
+        @include test.assert-equal(string.remove-prefix('Component', 'UNSTABLE_'), 'Component');
+    }
+}

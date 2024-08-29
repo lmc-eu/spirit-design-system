@@ -60,3 +60,13 @@
 @function singularize($string) {
     @return string.slice($string, 1, string.length($string) - 1);
 }
+
+// Remove prefix from a string
+// Example: remove-prefix('UNSTABLE_Component', 'UNSTABLE_') will return 'Component'
+@function remove-prefix($string, $prefix) {
+    @if string.index($string, $prefix) == 1 {
+        @return string.slice($string, string.length($prefix) + 1);
+    }
+
+    @return $string;
+}
