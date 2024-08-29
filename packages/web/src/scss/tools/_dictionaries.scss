@@ -12,8 +12,7 @@
 @use './placement';
 @use './reset';
 @use './string' as spirit-string;
-
-// @use './typography';
+@use './typography';
 
 // // Function to get the tokens map from the dictionary value name
 // // Example: -get-color-dictionary-tokens('primary') will return tokens.$action-colors
@@ -279,7 +278,11 @@
             );
 
             @each $variable-key, $variable-value in $variables {
-                --#{globals.$prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
+                @if $variable-key == 'typography' {
+                    @include typography.generate($variable-value);
+                } @else {
+                    --#{globals.$prefix}#{$component-infix}-#{$variable-key}: #{$variable-value};
+                }
             }
         }
     }
