@@ -1,38 +1,38 @@
-@use '@tokens' as tokens;
-@use '../../settings/dictionaries';
+@use '@global' as global-tokens;
+@use '../../settings/globals';
 
-$color: tokens.$text-secondary-default;
-$border-width: tokens.$border-width-100;
-$border-style: tokens.$border-style-100;
-$border-color: tokens.$border-secondary-default;
-$border-radius: 50%;
-$border-radius-square: tokens.$radius-100;
-$background-color: tokens.$background-cover;
+$color: var(--#{globals.$prefix}color-text-secondary);
+$border-width: global-tokens.$border-width-100;
+$border-style: solid;
+$border-color: var(--#{globals.$prefix}color-border-basic);
+$border-radius: global-tokens.$radius-full;
+$border-radius-square: global-tokens.$radius-200;
+$background-color: var(--#{globals.$prefix}color-background-secondary);
 
 $sizes: (
     xsmall: (
-        width: tokens.$space-700,
-        height: tokens.$space-700,
-        typography: tokens.$body-xsmall-text-bold,
+        width: global-tokens.$space-900,
+        height: global-tokens.$space-900,
+        typography: global-tokens.$body-xsmall-bold,
     ),
     small: (
-        width: tokens.$space-800,
-        height: tokens.$space-800,
-        typography: tokens.$body-small-text-bold,
+        width: global-tokens.$space-1000,
+        height: global-tokens.$space-1000,
+        typography: global-tokens.$body-small-bold,
     ),
     medium: (
-        width: tokens.$space-900,
-        height: tokens.$space-900,
-        typography: tokens.$body-medium-text-bold,
+        width: global-tokens.$space-1100,
+        height: global-tokens.$space-1100,
+        typography: global-tokens.$body-medium-bold,
     ),
     large: (
-        width: tokens.$space-1000,
-        height: tokens.$space-1000,
-        typography: tokens.$body-large-text-bold,
+        width: global-tokens.$space-1200,
+        height: global-tokens.$space-1200,
+        typography: global-tokens.$body-large-bold,
     ),
     xlarge: (
-        width: tokens.$space-1100,
-        height: tokens.$space-1100,
-        typography: tokens.$body-xlarge-text-bold,
+        width: global-tokens.$space-1400,
+        height: global-tokens.$space-1400,
+        typography: global-tokens.$body-xlarge-bold,
     ),
 );
