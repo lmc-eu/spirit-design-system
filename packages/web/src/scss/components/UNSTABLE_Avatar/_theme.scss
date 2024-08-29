@@ -1,38 +1,37 @@
 @use '@tokens' as tokens;
-@use '../../settings/dictionaries';
 
-$color: tokens.$text-secondary-default;
+$color: tokens.$text-secondary;
 $border-width: tokens.$border-width-100;
-$border-style: tokens.$border-style-100;
-$border-color: tokens.$border-secondary-default;
-$border-radius: 50%;
-$border-radius-square: tokens.$radius-100;
-$background-color: tokens.$background-cover;
+$border-style: solid;
+$border-color: tokens.$border-basic;
+$border-radius: tokens.$radius-full;
+$border-radius-square: tokens.$radius-200;
+$background-color: tokens.$background-secondary;
 
 $sizes: (
     xsmall: (
-        width: tokens.$space-700,
-        height: tokens.$space-700,
-        typography: tokens.$body-xsmall-text-bold,
-    ),
-    small: (
-        width: tokens.$space-800,
-        height: tokens.$space-800,
-        typography: tokens.$body-small-text-bold,
-    ),
-    medium: (
         width: tokens.$space-900,
         height: tokens.$space-900,
-        typography: tokens.$body-medium-text-bold,
+        typography: tokens.$body-xsmall-bold,
     ),
-    large: (
+    small: (
         width: tokens.$space-1000,
         height: tokens.$space-1000,
-        typography: tokens.$body-large-text-bold,
+        typography: tokens.$body-small-bold,
     ),
-    xlarge: (
+    medium: (
         width: tokens.$space-1100,
         height: tokens.$space-1100,
-        typography: tokens.$body-xlarge-text-bold,
+        typography: tokens.$body-medium-bold,
+    ),
+    large: (
+        width: tokens.$space-1200,
+        height: tokens.$space-1200,
+        typography: tokens.$body-large-bold,
+    ),
+    xlarge: (
+        width: tokens.$space-1400,
+        height: tokens.$space-1400,
+        typography: tokens.$body-xlarge-bold,
     ),
 );
