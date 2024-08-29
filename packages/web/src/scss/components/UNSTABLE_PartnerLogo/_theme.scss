@@ -1,18 +1,18 @@
 @use '@tokens' as tokens;
 
-$background-color: tokens.$background-basic;
-$border-radius: tokens.$space-300;
+$background-color: tokens.$background-primary;
+$border-radius: tokens.$radius-200;
 $sizes: (
     small: (
-        height: tokens.$space-800,
-        padding: tokens.$space-400,
+        image-height: 32px,
+        padding: tokens.$space-500,
     ),
     medium: (
-        height: tokens.$space-1000,
-        padding: tokens.$space-400,
+        image-height: 48px,
+        padding: tokens.$space-500,
     ),
     large: (
-        height: 60px,
-        padding: tokens.$space-500,
+        image-height: 60px,
+        padding: tokens.$space-600,
     ),
 );
