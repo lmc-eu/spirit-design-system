@@ -1,10 +1,9 @@
-@use 'sass:map';
 @use '@tokens' as tokens;
 
 $breakpoints: tokens.$breakpoints;
 
-$typography: tokens.$body-small-text-regular;
-$color: tokens.$text-secondary-default;
+$typography: tokens.$body-small-regular;
+$color: tokens.$text-secondary;
 
 $gap-mobile-up: tokens.$space-300;
-$gap-tablet-up: tokens.$space-400;
+$gap-tablet-up: tokens.$space-500;
