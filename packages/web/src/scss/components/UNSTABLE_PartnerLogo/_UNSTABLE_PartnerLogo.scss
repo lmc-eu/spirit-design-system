@@ -1,10 +1,12 @@
 @use 'theme' as theme;
-@use 'tools';
+@use '../../settings/globals';
+@use '../../tools/dictionaries';
 
 .UNSTABLE_PartnerLogo {
     display: inline-block;
     max-width: 100%;
     height: fit-content;
+    padding: var(--#{globals.$prefix}partner-logo-padding);
     border-radius: theme.$border-radius;
     background: theme.$background-color;
 }
@@ -12,10 +14,11 @@
 .UNSTABLE_PartnerLogo > img,
 .UNSTABLE_PartnerLogo > svg {
     width: fit-content;
+    height: var(--#{globals.$prefix}partner-logo-image-height);
 }
 
-@include tools.generate-logo-sizes('UNSTABLE_PartnerLogo', theme.$sizes);
+@include dictionaries.generate-sizes($class-name: 'UNSTABLE_PartnerLogo', $sizes: theme.$sizes);
 
 .UNSTABLE_PartnerLogo--hasSafeAreaDisabled {
-    padding: 0;
+    --#{globals.$prefix}partner-logo-padding: 0;
 }
