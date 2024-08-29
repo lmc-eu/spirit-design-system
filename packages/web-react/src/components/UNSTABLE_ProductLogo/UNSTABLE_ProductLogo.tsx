@@ -2,23 +2,17 @@
 
 import classNames from 'classnames';
 import React from 'react';
-import { useStyleProps } from '../../hooks';
+import { useClassNamePrefix, useStyleProps } from '../../hooks';
 import { SpiritProductLogoProps } from '../../types/productLogo';
-import { useProductLogoStyleProps } from './useProductLogoStyleProps';
-
-const defaultProps: Partial<SpiritProductLogoProps> = {
-  isInverted: false,
-};
 
 const UNSTABLE_ProductLogo = (props: SpiritProductLogoProps) => {
-  const propsWithDefaults = { ...defaultProps, ...props };
-  const { children, ...restProps } = propsWithDefaults;
+  const { children, ...restProps } = props;
 
-  const { classProps, props: modifiedProps } = useProductLogoStyleProps(restProps);
-  const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
+  const productLogoClass = useClassNamePrefix('UNSTABLE_ProductLogo');
+  const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
-    <div {...otherProps} className={classNames(classProps, styleProps.className)} style={styleProps.style}>
+    <div {...otherProps} className={classNames(productLogoClass, styleProps.className)} style={styleProps.style}>
       {children}
     </div>
   );
