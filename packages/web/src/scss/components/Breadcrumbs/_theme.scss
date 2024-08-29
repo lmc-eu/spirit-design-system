@@ -1,10 +1,10 @@
-@use 'sass:map';
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
+@use '../../settings/globals';
 
-$breakpoints: tokens.$breakpoints;
+$breakpoints: global-tokens.$breakpoints;
 
-$typography: tokens.$body-small-text-regular;
-$color: tokens.$text-secondary-default;
+$typography: global-tokens.$body-4-regular;
+$color: var(--#{globals.$prefix}color-text-secondary);
 
-$gap-mobile-up: tokens.$space-300;
-$gap-tablet-up: tokens.$space-400;
+$gap-mobile-up: global-tokens.$space-300;
+$gap-tablet-up: global-tokens.$space-500;
