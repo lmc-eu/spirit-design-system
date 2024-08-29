@@ -35,7 +35,6 @@ const IGNORED_TESTS: string[] = [
   'Toast',
   'Tooltip',
   'UNSTABLE_ActionLayout',
-  'UNSTABLE_Avatar',
   'UNSTABLE_EmptyState',
   'UNSTABLE_Section',
   'UNSTABLE_Slider',
