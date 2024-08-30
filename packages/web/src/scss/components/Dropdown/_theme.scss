@@ -2,9 +2,9 @@
 @use '../../settings/dictionaries';
 
 $breakpoints: tokens.$breakpoints;
-$offset: tokens.$space-400;
-$padding: tokens.$space-600;
-$border-radius: tokens.$radius-200;
-$background: tokens.$background-basic;
+$offset: tokens.$space-500;
+$padding: tokens.$space-700;
+$border-radius: tokens.$radius-300;
+$background: tokens.$background-primary;
 $shadow: tokens.$shadow-200;
 $placement-dictionary: dictionaries.$placement;
