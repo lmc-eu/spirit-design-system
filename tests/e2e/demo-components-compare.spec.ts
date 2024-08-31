@@ -9,7 +9,6 @@ const IGNORED_TESTS: string[] = [
   'Accordion',
   'Alert',
   'Checkbox',
-  'Collapse',
   'Dropdown',
   'FieldGroup',
   'FileUploader',
@@ -33,14 +32,11 @@ const IGNORED_TESTS: string[] = [
   'TextField',
   'Toast',
   'Tooltip',
-  'UNSTABLE_ActionLayout',
   'UNSTABLE_Avatar',
-  'UNSTABLE_EmptyState',
   'UNSTABLE_ProductLogo',
   'UNSTABLE_Section',
   'UNSTABLE_Slider',
   'UNSTABLE_Toggle',
-  'UNSTABLE_Truncate',
 ];
 
 interface TestConfig {
