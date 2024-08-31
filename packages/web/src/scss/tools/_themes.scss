@@ -2,6 +2,7 @@
 //   As in Figma we make the first theme the default one.
 // 2. Set the default text color in each theme.
 
+@use 'sass:map';
 @use '../settings/globals';
 @use 'string' as string-tools;
 @use 'svg';
@@ -23,6 +24,8 @@
                     '#{globals.$prefix}#{$token-type-name}'
                 );
             }
+
+            @include generate-background-image-urls($value);
         }
 
         // 2.
@@ -32,4 +35,50 @@
 
         $is-default-theme: false;
     }
+}
+
+@mixin generate-background-image-urls($themed-tokens) {
+    // Checkbox
+    --#{globals.$prefix}checkbox-input-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M7.71 13.29a.996.996 0 0 1-1.41 0L2.71 9.7a.996.996 0 1 1 1.41-1.41L7 11.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.58 7.59Z" style="fill:#{map.get($themed-tokens, colors, selected, content-subtle)}"/></svg>')
+        )};
+    --#{globals.$prefix}checkbox-input-disabled-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M7.71 13.29a.996.996 0 0 1-1.41 0L2.71 9.7a.996.996 0 1 1 1.41-1.41L7 11.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.58 7.59Z" style="fill:#{map.get($themed-tokens, colors, disabled, content)}"/></svg>')
+        )};
+    --#{globals.$prefix}checkbox-input-indeterminate-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path style="fill:#{map.get($themed-tokens, colors, selected, content-subtle)}" d="M4 8h10v2H4z"/></svg>')
+        )};
+    --#{globals.$prefix}checkbox-input-indeterminate-disabled-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path style="fill:#{map.get($themed-tokens, colors, disabled, content)}" d="M4 8h10v2H4z"/></svg>')
+        )};
+
+    // Slider
+    --#{globals.$prefix}slider-thumb-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, default)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+        )};
+    --#{globals.$prefix}slider-thumb-hover-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, hover)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+        )};
+    --#{globals.$prefix}slider-thumb-active-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, selected)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+        )};
+    --#{globals.$prefix}slider-thumb-disabled-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, disabled, foreground)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+        )};
+
+    // Toggle
+    --#{globals.$prefix}toggle-input-mark-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><g xmlns="http://www.w3.org/2000/svg" filter="url(#a)"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{map.get($themed-tokens, colors, action, toggle, content-basic)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+        )};
+    --#{globals.$prefix}toggle-input-mark-disabled-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{map.get($themed-tokens, colors, disabled, foreground)}"/></svg>')
+        )};
+    --#{globals.$prefix}toggle-input-mark-indicators-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><path fill="#{map.get($themed-tokens, colors, action, toggle, content-basic)}" d="M48.675 14.33a.58.58 0 0 0-.822 0L45 17.178l-2.852-2.852a.58.58 0 1 0-.823.823L44.177 18l-2.852 2.852a.58.58 0 1 0 .822.823L45 18.823l2.852 2.852a.58.58 0 1 0 .823-.823L45.823 18l2.852-2.852a.585.585 0 0 0 0-.817ZM5.25 20.651 3.208 18.61a.574.574 0 0 0-.816 0 .574.574 0 0 0 0 .817l2.444 2.444a.58.58 0 0 0 .822 0l6.184-6.177a.574.574 0 0 0 0-.817.574.574 0 0 0-.817 0L5.25 20.651Z"/><g xmlns="http://www.w3.org/2000/svg" filter="url(#a)"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{map.get($themed-tokens, colors, action, toggle, content-basic)}"/></g><defs><filter id="a" width="44" height="44" x="4" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="6"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1_81"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_1_81" result="shape"/></filter></defs></svg>')
+        )};
+
+    // Tooltip
+    --#{globals.$prefix}tooltip-arrow-background-image-url: #{svg.escape(
+            url('data:image/svg+xml,<svg width="13" height="8" viewBox="0 0 13 8" xmlns="http://www.w3.org/2000/svg"><path fill="#{map.get($themed-tokens, colors, neutral, background-basic)}" d="M4.915,2.054c0.801,-1.04 2.369,-1.04 3.17,-0l9.793,12.721c1.012,1.315 0.074,3.22 -1.585,3.22l-19.586,-0c-1.66,-0 -2.597,-1.905 -1.585,-3.22l9.793,-12.721Z" /></svg>')
+        )};
 }
