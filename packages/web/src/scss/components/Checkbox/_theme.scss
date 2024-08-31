@@ -1,7 +1,11 @@
 @use '@tokens' as tokens;
 
-$input-border-radius: 2px;
+$input-border-radius: tokens.$radius-200;
 $input-width: 18px;
 $input-margin: 3px;
-$input-checked-mark: url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M7.71 13.29a.996.996 0 0 1-1.41 0L2.71 9.7a.996.996 0 1 1 1.41-1.41L7 11.17l6.88-6.88a.996.996 0 1 1 1.41 1.41l-7.58 7.59Z" style="fill:#fff"/></svg>');
-$input-indeterminate-mark: url('data:image/svg+xml,<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path style="fill:#fff" d="M4 8h10v2H4z"/></svg>');
+$input-checked-mark: var(--#{tokens.$token-prefix}checkbox-input-background-image-url);
+$input-checked-mark-disabled: var(--#{tokens.$token-prefix}checkbox-input-disabled-background-image-url);
+$input-indeterminate-mark: var(--#{tokens.$token-prefix}checkbox-input-indeterminate-background-image-url);
+$input-indeterminate-mark-disabled: var(
+    --#{tokens.$token-prefix}checkbox-input-indeterminate-disabled-background-image-url
+);
