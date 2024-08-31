@@ -1,56 +1,57 @@
 @use '@tokens' as tokens;
 
 // Common for all form components
-$gap: tokens.$space-400;
-$input-typography: tokens.$body-medium-text-regular;
-$input-color-disabled: tokens.$text-primary-disabled;
-$input-border-color-success: tokens.$emotion-success-default;
-$input-border-color-warning: tokens.$emotion-warning-default;
-$input-border-color-danger: tokens.$emotion-danger-default;
-$input-focus-shadow: tokens.$focus;
-$label-color-default: tokens.$text-primary-default;
-$label-color-disabled: tokens.$text-primary-disabled;
+$input-typography: tokens.$body-medium-regular;
+$input-color-state-disabled: tokens.$disabled-content;
+$input-background-color: tokens.$form-field-filled-background-state-default;
+$input-background-color-state-hover: tokens.$form-field-filled-background-state-hover;
+$input-background-color-state-active: tokens.$form-field-filled-background-state-active;
+$input-background-color-state-disabled: tokens.$disabled-background;
+$input-border-color: tokens.$form-field-filled-border-state-default;
+$input-border-color-success: tokens.$form-field-success;
+$input-border-color-warning: tokens.$form-field-warning;
+$input-border-color-danger: tokens.$form-field-danger;
+$input-border-color-state-disabled: tokens.$disabled-border;
+$input-focus-shadow: tokens.$focus-ring;
+$label-color-state-default: tokens.$form-field-label;
+$label-color-state-disabled: tokens.$disabled-content;
+$label-required-typography: tokens.$body-small-regular;
 $label-required-margin-left: tokens.$space-200;
-$label-required-color: tokens.$emotion-danger-default;
-$validation-text-typography: tokens.$body-medium-text-regular;
-$validation-text-margin-top: tokens.$space-300;
-$validation-text-color-default: tokens.$text-secondary-default;
-$validation-text-color-disabled: tokens.$text-secondary-disabled;
-$validation-text-color-success: tokens.$emotion-success-default;
-$validation-text-color-warning: tokens.$emotion-warning-default;
-$validation-text-color-danger: tokens.$emotion-danger-default;
-$helper-text-typography: tokens.$body-small-text-regular;
-$helper-text-margin-top: tokens.$space-300;
-$helper-text-color-default: tokens.$text-secondary-default;
-$helper-text-color-disabled: tokens.$text-secondary-disabled;
+$label-required-color: tokens.$form-field-danger;
+$validation-text-typography: tokens.$body-small-semibold;
+$validation-text-margin-top: tokens.$space-400;
+$validation-text-color-state-disabled: tokens.$disabled-content;
+$validation-text-color-success: tokens.$form-field-success;
+$validation-text-color-warning: tokens.$form-field-warning;
+$validation-text-color-danger: tokens.$form-field-danger;
+$helper-text-typography: tokens.$body-small-regular;
+$helper-text-margin-top: tokens.$space-400;
+$helper-text-color-state-default: tokens.$form-field-helper-text;
+$helper-text-color-state-disabled: tokens.$disabled-content;
 
 // Inline field form components – Checkbox, Radio, etc.
-$inline-field-input-color-unchecked: tokens.$action-unselected-default;
-$inline-field-input-color-unchecked-active: tokens.$action-unselected-active;
-$inline-field-input-color-unchecked-hover: tokens.$action-unselected-hover;
-$inline-field-input-color-checked: tokens.$action-selected-default;
-$inline-field-input-color-checked-active: tokens.$action-selected-active;
-$inline-field-input-color-checked-hover: tokens.$action-selected-hover;
-$inline-field-input-outline-width: tokens.$border-width-200;
+$inline-field-gap: tokens.$space-500;
+$inline-field-margin-y: tokens.$space-500;
+$inline-field-input-border-color-checked: tokens.$form-field-filled-border-state-selected;
+$inline-field-input-border-color-checked-disabled: tokens.$disabled-background;
+$inline-field-input-border-width: tokens.$border-width-200;
+$inline-field-input-background-color-checked: tokens.$selected-state-default;
 
 // Box field form components – TextField, TextArea, etc.
-$box-field-input-color-default: tokens.$text-primary-default;
+$box-field-input-color-state-default: tokens.$form-field-filled-content;
 $box-field-input-border-width: tokens.$border-width-100;
-$box-field-input-border-style: tokens.$border-style-100;
-$box-field-input-border-color-default: tokens.$border-primary-default;
-$box-field-input-border-color-disabled: tokens.$border-primary-disabled;
-$box-field-input-border-color-focus: tokens.$focus-default;
+$box-field-input-border-style: solid;
+$box-field-input-border-color-focus: tokens.$border-focus;
+$box-field-input-focus-shadow: tokens.$focus-ring;
 
-$box-field-input-border-radius: tokens.$radius-100;
-$box-field-input-background: tokens.$background-basic;
-$box-field-input-background-disabled: tokens.$background-cover;
-$box-field-input-placeholder-color-default: tokens.$text-secondary-default;
-$box-field-input-placeholder-color-disabled: tokens.$text-secondary-disabled;
-$box-field-input-padding-x: tokens.$space-400;
-$box-field-input-padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
+$box-field-input-border-radius: tokens.$radius-300;
+$box-field-input-placeholder-color-state-default: tokens.$form-field-filled-placeholder;
+$box-field-input-placeholder-color-state-disabled: tokens.$disabled-content;
+$box-field-input-padding-x: tokens.$space-600;
+$box-field-input-padding-y: calc(#{tokens.$space-500} - #{tokens.$border-width-100});
 $box-field-input-width: 18rem;
-$box-field-label-typography: tokens.$body-small-text-regular;
-$box-field-label-margin-bottom: tokens.$space-300;
+$box-field-label-typography: tokens.$body-small-semibold;
+$box-field-label-margin-bottom: tokens.$space-400;
 
 $validation-states: (
     success: (
@@ -68,11 +69,12 @@ $validation-states: (
 );
 
 // Item variant
-$item-gap: tokens.$space-400;
-$item-border-radius: tokens.$radius-100;
-$item-background-color-default: tokens.$background-interactive-default;
-$item-background-color-hover: tokens.$background-interactive-hover;
-$item-background-color-active: tokens.$background-interactive-active;
-$item-label-checked-typography: tokens.$body-medium-text-bold;
-$item-validation-text-typography: tokens.$body-small-text-regular;
-$item-helper-text-typography: tokens.$body-small-text-regular;
+$item-padding-x: tokens.$space-700;
+$item-padding-y: tokens.$space-500;
+$item-border-radius: tokens.$radius-200;
+$item-background-color-state-default: tokens.$background-interactive-state-default;
+$item-background-color-state-hover: tokens.$background-interactive-state-hover;
+$item-background-color-state-active: tokens.$background-interactive-state-active;
+$item-label-typography: tokens.$body-medium-semibold;
+$item-validation-text-typography: tokens.$body-small-semibold;
+$item-helper-text-typography: tokens.$body-small-regular;

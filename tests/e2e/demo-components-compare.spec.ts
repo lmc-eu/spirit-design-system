@@ -7,7 +7,6 @@ import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from
 // Tests that are intentionally broken, but will be fixed in the future
 const IGNORED_TESTS: string[] = [
   'Accordion',
-  'Checkbox',
   'Dropdown',
   'FieldGroup',
   'FileUploader',
