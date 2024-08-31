@@ -17,6 +17,8 @@
 }
 
 @mixin label-required() {
+    @include typography.generate(form-fields-theme.$label-required-typography);
+
     content: '*';
     margin-left: form-fields-theme.$label-required-margin-left;
     color: form-fields-theme.$label-required-color;
@@ -33,7 +35,6 @@
     display: block;
     margin-top: form-fields-theme.$validation-text-margin-top;
     list-style: none;
-    color: form-fields-theme.$validation-text-color-default;
 }
 
 @mixin validation-text-disabled() {
@@ -42,7 +43,7 @@
 
 @mixin inline-field-root() {
     display: inline-flex;
-    margin-block: form-fields-theme.$gap;
+    margin-block: form-fields-theme.$inline-field-margin-y;
     cursor: cursors.$form-fields;
 }
 
@@ -72,13 +73,23 @@
 
 @mixin inline-field-input() {
     appearance: none;
-    color: form-fields-theme.$inline-field-input-color-unchecked;
-    border: form-fields-theme.$inline-field-input-outline-width solid currentcolor;
+    border: form-fields-theme.$inline-field-input-border-width solid form-fields-theme.$input-border-color;
+    background-color: form-fields-theme.$input-background-color;
     cursor: cursors.$form-fields;
 
     &:focus-visible {
         outline: 0;
         box-shadow: form-fields-theme.$input-focus-shadow;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$input-background-color-hover;
+        }
+    }
+
+    &:active {
+        background-color: form-fields-theme.$input-background-color-active;
     }
 }
 
@@ -206,8 +217,8 @@
     @include typography.generate(form-fields-theme.$item-validation-text-typography);
 }
 
-@mixin item-label-checked() {
-    @include typography.generate(form-fields-theme.$item-label-checked-typography);
+@mixin item-label() {
+    @include typography.generate(form-fields-theme.$item-label-typography);
 }
 
 @mixin helper-text() {
