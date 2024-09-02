@@ -1,4 +1,5 @@
-// 1. Use `box-shadow` to ensure the state of the radio is visible when printed.
+// 1. We need to set the background-color of the non-disabled Radio input to initial color when it is hovered
+//    or active, because we need it contrasting with the background color.
 
 @use 'sass:map';
 @use '../../theme/form-fields' as form-fields-theme;
@@ -20,11 +21,11 @@ $_field-name: 'Radio';
     margin: theme.$input-margin;
     font: inherit;
     border-radius: theme.$input-border-radius;
-    background-color: transparent;
+    background-color: form-fields-theme.$input-background-color;
     place-content: center;
 
     &:checked {
-        border-color: form-fields-theme.$inline-field-input-color-checked;
+        border-color: form-fields-theme.$inline-field-input-border-color-checked;
     }
 
     &::before {
@@ -32,7 +33,7 @@ $_field-name: 'Radio';
         width: theme.$input-inner-dot-size;
         height: theme.$input-inner-dot-size;
         border-radius: theme.$input-border-radius;
-        box-shadow: theme.$input-box-shadow-before; // 1.
+        background-color: theme.$input-background-color;
         transform: scale(0);
         transition-property: transform;
         transition-duration: theme.$input-transition-duration;
@@ -47,19 +48,15 @@ $_field-name: 'Radio';
 .Radio__helperText {
     @include form-fields-tools.helper-text();
 
-    margin-left: form-fields-theme.$gap;
+    margin-left: form-fields-theme.$inline-field-gap;
 }
 
-@include form-fields-tools.input-field-validation-states(
-    $_field-name,
-    theme.$input-box-shadow-x,
-    theme.$input-box-shadow-y
-);
+@include form-fields-tools.input-field-validation-states($_field-name);
 
 .Radio__label {
     @include form-fields-tools.inline-field-label();
 
-    margin-left: form-fields-theme.$gap;
+    margin-left: form-fields-theme.$inline-field-gap;
 }
 
 .Radio__label--hidden {
@@ -70,54 +67,55 @@ $_field-name: 'Radio';
     @include form-fields-tools.label-required();
 }
 
-.Radio--disabled {
-    @include form-fields-tools.inline-field-root-disabled();
-}
-
-.Radio--disabled .Radio__label {
-    @include form-fields-tools.label-disabled();
-}
-
-.Radio--disabled .Radio__helperText {
-    @include form-fields-tools.helper-text-disabled();
-}
-
-.Radio--disabled > .Radio__input,
-.Radio > .Radio__input:disabled {
-    border-color: form-fields-theme.$input-color-disabled;
-
-    &:checked {
-        border-color: form-fields-theme.$input-color-disabled;
-    }
-}
-
-.Radio--disabled > .Radio__input::before,
-.Radio > .Radio__input:disabled::before {
-    box-shadow: theme.$input-box-shadow-disabled; // 1.
-}
-
 .Radio--item {
     @include form-fields-tools.item();
-
-    display: flex;
 }
 
-.Radio--item.Radio--disabled {
+.Radio--item:is(.Radio--disabled, .Radio.is-disabled),
+.Radio--item:has(.Radio__input:disabled) {
     @include form-fields-tools.item-disabled();
 }
 
-// stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-specificity -- We need to override the default styles for the label in Item.
-.Radio--item .Radio__input:checked ~ .Radio__label,
-.Radio--item .Radio__input:checked ~ .Radio__text > .Radio__label {
-    // stylelint-enable selector-max-class, selector-max-compound-selectors, selector-max-specificity
-    @include form-fields-tools.item-label-checked();
+.Radio--item .Radio__label {
+    @include form-fields-tools.item-label();
 }
 
 .Radio--item .Radio__helperText {
     @include form-fields-tools.item-helper-text();
 }
 
-.Radio--item:not(.Radio--disabled):hover .Radio__helperText,
-.Radio--item:not(.Radio--disabled):active .Radio__helperText {
-    color: inherit;
+:is(.Radio--disabled, .Radio.is-disabled),
+.Radio:has(.Radio__input:disabled) {
+    @include form-fields-tools.inline-field-root-disabled();
+}
+
+:is(.Radio--disabled, .Radio.is-disabled) .Radio__label,
+.Radio:has(.Radio__input:disabled) .Radio__label {
+    @include form-fields-tools.label-disabled();
+}
+
+:is(.Radio--disabled, .Radio.is-disabled) .Radio__helperText,
+.Radio:has(.Radio__input:disabled) .Radio__helperText {
+    @include form-fields-tools.helper-text-disabled();
+}
+
+:is(.Radio--disabled, .Radio.is-disabled) > .Radio__input,
+.Radio > .Radio__input:disabled {
+    @include form-fields-tools.input-disabled();
+
+    border-color: form-fields-theme.$input-border-color-state-disabled;
+    background-color: form-fields-theme.$input-background-color-state-disabled;
+
+    &:checked {
+        border-color: form-fields-theme.$input-border-color-state-disabled;
+    }
+
+    &::before {
+        background-color: theme.$input-background-color-state-disabled;
+    }
+}
+
+// stylelint-disable-next-line selector-max-specificity -- 1.
+.Radio--item:not(.Radio--disabled, .Radio.is-disabled) .Radio__input:is(:hover, :active):not(:checked, :disabled) {
+    background-color: form-fields-theme.$input-background-color;
 }
