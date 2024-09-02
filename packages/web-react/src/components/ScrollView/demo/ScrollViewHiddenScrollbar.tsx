@@ -4,7 +4,7 @@ import { VERTICAL_CONTENT, HORIZONTAL_CONTENT } from './scrollViewContent';
 
 const ScrollViewHiddenScrollbar = () => (
   <>
-    <div className="mb-1000" style={{ height: '160px' }}>
+    <div className="mb-1200" style={{ height: '160px' }}>
       <ScrollView isScrollbarDisabled>
         <p>{VERTICAL_CONTENT}</p>
       </ScrollView>
