@@ -2,15 +2,12 @@
 @use '../../settings/transitions';
 @use '../../theme/form-fields' as form-fields-theme;
 
-$input-border-radius: 50%;
+$input-border-radius: tokens.$radius-full;
 $input-size: 20px;
-$input-margin: 2px;
+$input-margin: tokens.$space-200;
 $input-inner-dot-size: 10px;
-$input-box-shadow-x: tokens.$space-600;
-$input-box-shadow-y: tokens.$space-600;
-$input-box-shadow-before: inset $input-box-shadow-x $input-box-shadow-y
-    form-fields-theme.$inline-field-input-color-checked;
-$input-box-shadow-disabled: inset $input-box-shadow-x $input-box-shadow-y form-fields-theme.$input-color-disabled;
+$input-background-color: form-fields-theme.$inline-field-input-background-color-checked;
+$input-background-color-state-disabled: form-fields-theme.$input-color-state-disabled;
 $input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
 $input-focus-shadow: tokens.$focus;
