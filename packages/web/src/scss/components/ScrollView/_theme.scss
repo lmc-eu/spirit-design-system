@@ -1,14 +1,15 @@
+@use '@global' as global-tokens;
+@use '../../settings/globals';
 @use '../../settings/transitions';
-@use '@tokens' as tokens;
 
-$border-width: tokens.$border-width-100;
-$border-style: tokens.$border-style-100;
-$border-color: tokens.$border-primary-default;
+$border-width: global-tokens.$border-width-100;
+$border-style: solid;
+$border-color: var(--#{globals.$prefix}color-border-basic);
 
-$start-shadow-size: tokens.$space-600;
+$start-shadow-size: global-tokens.$space-700;
 $start-shadow-initial-offset: -1 * transitions.$shift-distance-medium;
-$start-shadow-background: tokens.$gradient-background-basic-overlay;
+$start-shadow-background: global-tokens.$gradient-basic-overlay;
 
-$end-shadow-size: tokens.$space-600;
+$end-shadow-size: global-tokens.$space-700;
 $end-shadow-initial-offset: -1 * transitions.$shift-distance-medium;
-$end-shadow-background: tokens.$gradient-background-basic-overlay;
+$end-shadow-background: global-tokens.$gradient-basic-overlay;
