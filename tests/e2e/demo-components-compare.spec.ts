@@ -20,7 +20,6 @@ const IGNORED_TESTS: string[] = [
   'Pagination',
   'Pill',
   'Radio',
-  'ScrollView',
   'Select',
   'Spinner',
   'Stack',
