@@ -1,3 +1,5 @@
+// 1. Force the color to be printed as-is, without any color adjustment.
+
 @use 'sass:map';
 @use '../settings/cursors';
 @use '../theme/form-fields' as form-fields-theme;
@@ -76,6 +78,7 @@
     border: form-fields-theme.$inline-field-input-border-width solid form-fields-theme.$input-border-color;
     background-color: form-fields-theme.$input-background-color;
     cursor: cursors.$form-fields;
+    print-color-adjust: exact; // 1.
 
     &:focus-visible {
         outline: 0;
@@ -122,7 +125,7 @@
     }
 }
 
-@mixin input-field-validation-states($field-name, $shadow-x: null, $shadow-y: null) {
+@mixin input-field-validation-states($field-name) {
     @each $validation-state-name, $validation-state-value in form-fields-theme.$validation-states {
         @if $field-name == 'FileUploaderInput' {
             :is(.#{$field-name}--#{$validation-state-name}, .#{$field-name}.has-#{$validation-state-name})
@@ -153,7 +156,6 @@
                 @if $field-name == 'Radio' {
                     &::before {
                         background-color: map.get($validation-state-value, input-border-color);
-                        box-shadow: inset $shadow-x $shadow-y map.get($validation-state-value, input-border-color);
                     }
                 }
             }
