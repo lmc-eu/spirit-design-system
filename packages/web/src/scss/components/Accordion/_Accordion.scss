@@ -68,7 +68,7 @@
         inset: 0;
         z-index: -1; // 7.
         border-radius: theme.$accordion-border-radius;
-        background-color: theme.$accordion-item-background-color-default; // 3.a
+        background-color: theme.$accordion-item-background-color-state-default; // 3.a
     }
 
     &[aria-expanded='true'] {
@@ -85,7 +85,7 @@
     // 3.b
     // stylelint-disable-next-line selector-max-specificity -- High specificity to target the background pseudo element (2).
     .Accordion__itemHeader:hover .Accordion__itemToggle:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-hover;
+        background-color: theme.$accordion-item-background-color-state-hover;
     }
 }
 
@@ -93,7 +93,7 @@
     // 3.c
     // stylelint-disable-next-line selector-max-specificity -- High specificity to override the hover state selector 3.b.
     .Accordion__itemHeader .Accordion__itemToggle:active:first-of-type::before {
-        background-color: theme.$accordion-item-background-color-active;
+        background-color: theme.$accordion-item-background-color-state-active;
     }
 }
 
