@@ -79,7 +79,7 @@ const UncontrolledTooltipWithHooks = (args: Omit<SpiritTooltipProps, 'onToggle'>
 
   return (
     <div
-      className="bg-cover"
+      className="bg-secondary"
       style={{ width: '40rem', maxWidth: '100%', height: '30rem', overflow: 'auto' }}
       ref={viewportRef}
     >
