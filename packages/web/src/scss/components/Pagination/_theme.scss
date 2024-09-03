@@ -2,20 +2,26 @@
 @use '@tokens' as tokens;
 
 $item-gap: tokens.$space-300;
-$item-min-width: tokens.$space-900;
+$item-min-width: 40px;
 $item-height: 2.5em; /* It is in relative units due to possible resizing of the system font. */
-$item-padding-inline: tokens.$space-400;
-$item-emphasis-font-weight: map.get(tokens.$body-medium-text-bold, 'mobile', 'font-weight');
-$item-radius: tokens.$radius-100;
+$item-padding-inline: tokens.$space-600;
+$item-emphasis-font-weight: map.get(tokens.$body-medium-bold, 'mobile', 'font-weight');
+$item-border-width: tokens.$border-width-100;
+$item-border-style: solid;
+$item-border-radius: tokens.$radius-full;
 
-$item-default-color: tokens.$text-secondary-default;
-$item-default-background: tokens.$background-interactive-default;
+$item-default-color: tokens.$component-button-secondary-content;
+$item-default-border-color: tokens.$component-button-secondary-border;
+$item-default-background-color: tokens.$component-button-secondary-state-default;
 
-$item-active-color: tokens.$text-secondary-default;
-$item-active-background: tokens.$background-interactive-active;
+$item-active-color: tokens.$component-button-secondary-content;
+$item-active-border-color: tokens.$component-button-secondary-border;
+$item-active-background-color: tokens.$component-button-secondary-state-active;
 
-$item-hover-color: tokens.$text-secondary-default;
-$item-hover-background: tokens.$background-interactive-hover;
+$item-hover-color: tokens.$component-button-secondary-content;
+$item-hover-border-color: tokens.$component-button-secondary-border;
+$item-hover-background-color: tokens.$component-button-secondary-state-hover;
 
-$item-selected-color: tokens.$text-primary-inverted-default;
-$item-selected-background: tokens.$action-selected-default;
+$item-selected-color: tokens.$component-button-primary-content;
+$item-selected-border-color: tokens.$component-button-primary-border;
+$item-selected-background-color: tokens.$component-button-primary-state-default;
