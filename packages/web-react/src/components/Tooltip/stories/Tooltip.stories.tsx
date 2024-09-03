@@ -86,7 +86,7 @@ const TooltipWithHooks = (args: SpiritTooltipProps) => {
 
   return (
     <div
-      className="bg-cover"
+      className="bg-secondary"
       style={{ width: '40rem', maxWidth: '100%', height: '30rem', overflow: 'auto' }}
       ref={viewportRef}
     >
