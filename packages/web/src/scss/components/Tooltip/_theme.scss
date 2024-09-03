@@ -3,21 +3,21 @@
 @use '../../settings/transitions';
 
 $max-width: 288px;
-$typography: tokens.$body-medium-text-regular;
-$padding: tokens.$space-500 tokens.$space-600;
-$gap: tokens.$space-500;
-$border-radius: tokens.$radius-100;
-$color: tokens.$text-primary-inverted-default;
-$background-color: tokens.$background-inverted;
+$typography: tokens.$body-medium-regular;
+$padding: tokens.$space-600 tokens.$space-700;
+$gap: tokens.$space-600;
+$border-radius: tokens.$radius-300;
+$color: tokens.$neutral-content-subtle;
+$background-color: tokens.$neutral-background-basic;
 $box-shadow: tokens.$shadow-400;
 $transition-duration: transitions.$duration-200;
 $transition-scale-ratio: transitions.$scale-ratio-small-objects;
 
-$arrow-shape: url('data:image/svg+xml,<svg width="13" height="8" viewBox="0 0 13 8" xmlns="http://www.w3.org/2000/svg"><path fill="#{$background-color}" d="M4.915,2.054c0.801,-1.04 2.369,-1.04 3.17,-0l9.793,12.721c1.012,1.315 0.074,3.22 -1.585,3.22l-19.586,-0c-1.66,-0 -2.597,-1.905 -1.585,-3.22l9.793,-12.721Z" /></svg>');
+$arrow-shape: var(--#{tokens.$css-variable-prefix}tooltip-arrow-background-image-url);
 $arrow-width: 13px;
 $arrow-height: 8px;
-$arrow-corner-offset: tokens.$space-500;
+$arrow-corner-offset: tokens.$space-600;
 
-$close-button-size: tokens.$space-700;
+$close-button-size: tokens.$space-900;
 
 $placement-dictionary: dictionaries.$placement;
