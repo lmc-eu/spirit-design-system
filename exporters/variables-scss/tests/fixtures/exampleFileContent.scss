@@ -3,10 +3,9 @@ $grid-spacing-desktop: 32px !default;
 
 $grid-columns: 12 !default;
 
-$grid-spacings: (
-    spacing-desktop: $grid-spacing-desktop,
-) !default;
-
 $grids: (
+    spacing: (
+        desktop: $grid-spacing-desktop,
+    ),
     columns: $grid-columns,
 ) !default;

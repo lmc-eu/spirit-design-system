@@ -5,7 +5,7 @@ import { generateFiles } from '../fileGenerator';
 import { exampleMockedGroups, exampleMockedTokens } from '../../formatters/__fixtures__/mockedExampleTokens';
 
 const mockedExpectedResult = fs.readFileSync(
-  path.join(__dirname, '../../formatters/__fixtures__/exampleFileContent.scss'),
+  path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
   'utf-8',
 );
 const mappedTokens: Map<string, Token> = new Map([]);
@@ -25,6 +25,7 @@ describe('fileGenerator', () => {
       { fileName: '_other.scss', content: mockedExpectedResult },
       { fileName: '_radii.scss', content: emptyFile },
       { fileName: '_spacing.scss', content: emptyFile },
+      { fileName: '_colors.scss', content: emptyFile },
     ]);
   });
 });

@@ -5,7 +5,7 @@ import { generateFileContent, addDisclaimer, filterTokensByTypeAndGroup } from '
 import { exampleMockedGroups, exampleMockedTokens } from '../../formatters/__fixtures__/mockedExampleTokens';
 
 const mockedExpectedResult = fs.readFileSync(
-  path.join(__dirname, '../../formatters/__fixtures__/exampleFileContent.scss'),
+  path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
   'utf-8',
 );
 const mappedTokens: Map<string, Token> = new Map([]);
@@ -19,6 +19,7 @@ describe('contentGenerator', () => {
       const groupNames = ['Grid', 'String'];
       const withCssObject = true;
       const hasParentPrefix = true;
+      const sortByNumValue = false;
 
       const fileContent = generateFileContent(
         tokens,
@@ -28,6 +29,7 @@ describe('contentGenerator', () => {
         groupNames,
         withCssObject,
         hasParentPrefix,
+        sortByNumValue,
       );
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });

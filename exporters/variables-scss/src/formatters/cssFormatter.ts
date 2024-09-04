@@ -14,10 +14,11 @@ export const formatCSS = (css: string): string => {
 
   const lines = css.split('\n');
 
+  // TODO: Try to replace this functionality with prettier
   for (const line of lines) {
     if (line.includes('(')) {
+      formattedCSS += `${IDENTATION.repeat(indentationLevel)}${line}\n`;
       indentationLevel += 1;
-      formattedCSS += `${line}\n`;
     } else if (line.includes(')')) {
       indentationLevel -= 1;
       formattedCSS += `${IDENTATION.repeat(indentationLevel)}${line}\n`;
