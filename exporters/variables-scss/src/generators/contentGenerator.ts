@@ -1,7 +1,8 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateCssFromTokens } from './cssGenerator';
-import { generateCssObjectFromTokens } from './cssObjectGenerator';
+import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
+import { convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -12,6 +13,7 @@ export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, gro
   return tokens.filter((token) => token.tokenType === type && token.origin?.name?.includes(group));
 };
 
+// TODO: refactor to use fileData instead of destructuring
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
@@ -20,9 +22,10 @@ export const generateFileContent = (
   groupNames: string[],
   withCssObject: boolean,
   hasParentPrefix: boolean,
+  sortByNumValue: boolean,
 ) => {
   let cssTokens = '';
-  let cssObject = '';
+  let cssObject: CssObjectType = {};
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {
@@ -30,15 +33,30 @@ export const generateFileContent = (
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
 
       // Generate css tokens
-      cssTokens += generateCssFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
+      cssTokens += generateCssFromTokens(
+        filteredTokens,
+        mappedTokens,
+        tokenGroups,
+        group,
+        hasParentPrefix,
+        sortByNumValue,
+      );
       cssTokens += '\n\n';
 
-      // Generate css object
-      cssObject += generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
+      // Generate css object and merge it with the existing one
+      const groupCssObject = generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
+      cssObject = deepMergeObjects(cssObject, groupCssObject);
     });
   });
 
-  const content = withCssObject ? `${cssTokens}${cssObject}` : cssTokens;
+  let content = cssTokens;
+
+  // convert css object to scss structure
+  if (withCssObject) {
+    content += Object.entries(cssObject)
+      .map(([key, obj]) => `${key}: (\n${convertToScss(obj as CssObjectType)}\n) !default;\n\n`)
+      .join('');
+  }
 
   return {
     content: addDisclaimer(formatCSS(content)),

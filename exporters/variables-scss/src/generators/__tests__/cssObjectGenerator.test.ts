@@ -1,5 +1,5 @@
 import { Token, TokenGroup } from '@supernovaio/sdk-exporters';
-import { generateCssObjectFromTokens, generateObjectContent } from '../cssObjectGenerator';
+import { generateCssObjectFromTokens, getNonNumericPart } from '../cssObjectGenerator';
 import { exampleMockedGroups, exampleMockedTokens } from '../../formatters/__fixtures__/mockedExampleTokens';
 
 const mappedTokens: Map<string, Token> = new Map([]);
@@ -15,21 +15,19 @@ describe('cssObjectGenerator', () => {
         true,
       );
 
-      expect(css).toBe(
-        '$grid-spacings: (\nspacing-desktop: $grid-spacing-desktop,\n) !default;\n\n$grids: (\ncolumns: $grid-columns,\n) !default;\n\n',
-      );
+      expect(css).toStrictEqual({
+        $grids: { columns: '$grid-columns', spacing: { desktop: '$grid-spacing-desktop' } },
+      });
     });
   });
 
-  describe('generateObjectContent', () => {
-    it('should generate object content', () => {
-      const objectContent = generateObjectContent(
-        [exampleMockedTokens.get('dimensionRef') as Token],
-        tokenGroups,
-        true,
-      );
+  describe('getNonNumericPart', () => {
+    it('should return special case for radius-full', () => {
+      expect(getNonNumericPart('radius-full')).toBe('full');
+    });
 
-      expect(objectContent).toBe('spacing-desktop: $grid-spacing-desktop,\n');
+    it('should return lowercase token name for other cases', () => {
+      expect(getNonNumericPart('Grid')).toBe('grid');
     });
   });
 });

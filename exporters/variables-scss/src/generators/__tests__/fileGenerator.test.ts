@@ -25,6 +25,7 @@ describe('fileGenerator', () => {
       { fileName: '_other.scss', content: mockedExpectedResult },
       { fileName: '_radii.scss', content: emptyFile },
       { fileName: '_spacing.scss', content: emptyFile },
+      { fileName: '_colors.scss', content: emptyFile },
     ]);
   });
 });

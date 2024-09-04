@@ -34,7 +34,7 @@ const dataProvider = [
     token: {
       id: '3',
       name: 'unsupportedToken',
-      tokenType: TokenType.color,
+      tokenType: TokenType.duration,
     } as Token,
     expectedCss: null,
     hasParentPrefix: true,
@@ -53,9 +53,16 @@ describe('cssGenerator', () => {
 
   describe('generateCssFromTokens', () => {
     it('should generate CSS from tokens', () => {
-      const css = generateCssFromTokens(Array.from(exampleMockedTokens.values()), mappedTokens, tokenGroups, true);
+      const css = generateCssFromTokens(
+        Array.from(exampleMockedTokens.values()),
+        mappedTokens,
+        tokenGroups,
+        'Grid',
+        true,
+        false,
+      );
 
-      expect(css).toBe('$grid-spacing-desktop: 32px !default;\n$grid-columns: 12 !default;');
+      expect(css).toBe('$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 32px !default;');
     });
   });
 });

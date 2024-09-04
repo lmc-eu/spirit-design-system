@@ -19,6 +19,7 @@ describe('contentGenerator', () => {
       const groupNames = ['Grid', 'String'];
       const withCssObject = true;
       const hasParentPrefix = true;
+      const sortByNumValue = false;
 
       const fileContent = generateFileContent(
         tokens,
@@ -28,6 +29,7 @@ describe('contentGenerator', () => {
         groupNames,
         withCssObject,
         hasParentPrefix,
+        sortByNumValue,
       );
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });
