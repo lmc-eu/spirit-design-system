@@ -53,27 +53,35 @@ Pulsar.export(async (sdk: Supernova, context: PulsarContext): Promise<Array<AnyO
 
   const files = generateFiles(tokens, mappedTokens, tokenGroups);
 
+  // TODO: Only for debugging purposes, remove for production!
+  const safeStringify = (obj: object) => {
+    let cache: string[] | null = [];
+    const str = JSON.stringify(
+      obj,
+      (key, value) => {
+        if (typeof value === 'object' && value !== null) {
+          if (cache?.includes(value)) {
+            return 'CIRCULAR_REFERENCE';
+          }
+          cache?.push(value);
+        }
+
+        return value;
+      },
+      2,
+    );
+    cache = null;
+
+    return str;
+  };
+
   return [
     ...files.map((file) => {
       return createTextFile('./global/', file.fileName, file.content);
     }),
-    // only for debugging purposes
-    createTextFile(
-      './original-data/',
-      '_original-tokens.json',
-      JSON.stringify(
-        tokens.map((token) => ({
-          tokenType: token.tokenType,
-          // @ts-ignore-next-line
-          origin: token.origin.name,
-          name: token.name,
-          // @ts-ignore-next-line
-          value: token.value,
-        })),
-        null,
-        2,
-      ),
-    ),
+    // TODO: Only for debugging purposes - remove for production!
+    createTextFile('./original-data/', '_original-tokens.json', safeStringify(tokens)),
+    // TODO: Only for debugging purposes - remove for production!
     createTextFile('./original-data/', '_original-groups.json', JSON.stringify(tokenGroups, null, 2)),
   ];
 });
