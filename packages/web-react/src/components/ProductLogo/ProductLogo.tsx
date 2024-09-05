@@ -5,10 +5,10 @@ import React from 'react';
 import { useClassNamePrefix, useStyleProps } from '../../hooks';
 import { SpiritProductLogoProps } from '../../types/productLogo';
 
-const UNSTABLE_ProductLogo = (props: SpiritProductLogoProps) => {
+const ProductLogo = (props: SpiritProductLogoProps) => {
   const { children, ...restProps } = props;
 
-  const productLogoClass = useClassNamePrefix('UNSTABLE_ProductLogo');
+  const productLogoClass = useClassNamePrefix('ProductLogo');
   const { styleProps, props: otherProps } = useStyleProps(restProps);
 
   return (
@@ -18,4 +18,4 @@ const UNSTABLE_ProductLogo = (props: SpiritProductLogoProps) => {
   );
 };
 
-export default UNSTABLE_ProductLogo;
+export default ProductLogo;
