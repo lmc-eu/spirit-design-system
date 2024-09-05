@@ -169,7 +169,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       <!-- Product logo -->
       <div class="text-desktop-left">
         <a href="https://www.example.com">
-          <div class="UNSTABLE_ProductLogo">
+          <div class="ProductLogo">
             <!-- Product logo image -->
           </div>
         </a>
@@ -251,6 +251,6 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 [divider]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Divider/README.md
 [flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Flex/README.md
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Grid/README.md
-[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/UNSTABLE_ProductLogo/README.md
+[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/ProductLogo/README.md
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Select/README.md
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web/src/scss/components/Stack/README.md
