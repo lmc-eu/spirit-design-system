@@ -1,12 +1,12 @@
 @use 'theme' as theme;
 
-.UNSTABLE_ProductLogo {
+.ProductLogo {
     display: inline-block;
     max-width: 100%;
 }
 
-.UNSTABLE_ProductLogo > img,
-.UNSTABLE_ProductLogo > svg {
+.ProductLogo > img,
+.ProductLogo > svg {
     width: auto;
     height: theme.$logo-height;
 }
