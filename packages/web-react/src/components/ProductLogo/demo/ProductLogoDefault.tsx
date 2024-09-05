@@ -1,5 +1,5 @@
 import React from 'react';
-import UNSTABLE_ProductLogo from '../UNSTABLE_ProductLogo';
+import ProductLogo from '../ProductLogo';
 
 export const defaultSvgLogo = (
   <svg width="178" height="44" viewBox="0 0 178 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,8 +68,6 @@ export const defaultSvgLogo = (
   </svg>
 );
 
-const ProductLogoDefault = () => (
-  <UNSTABLE_ProductLogo aria-label="Logo of the JobBoard">{defaultSvgLogo}</UNSTABLE_ProductLogo>
-);
+const ProductLogoDefault = () => <ProductLogo aria-label="Logo of the JobBoard">{defaultSvgLogo}</ProductLogo>;
 
 export default ProductLogoDefault;
