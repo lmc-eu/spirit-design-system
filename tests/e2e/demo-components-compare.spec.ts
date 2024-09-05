@@ -16,7 +16,6 @@ const IGNORED_TESTS: string[] = [
   'Icon',
   'Item',
   'Link',
-  'Modal',
   'Pill',
   'Radio',
   'Select',
