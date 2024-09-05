@@ -4,24 +4,24 @@ import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { restPropsTest } from '../../../../tests/providerTests/restPropsTest';
 import { stylePropsTest } from '../../../../tests/providerTests/stylePropsTest';
-import UNSTABLE_ProductLogo from '../UNSTABLE_ProductLogo';
+import ProductLogo from '../ProductLogo';
 
-describe('UNSTABLE_ProductLogo', () => {
-  classNamePrefixProviderTest(UNSTABLE_ProductLogo, 'UNSTABLE_ProductLogo');
+describe('ProductLogo', () => {
+  classNamePrefixProviderTest(ProductLogo, 'ProductLogo');
 
-  stylePropsTest(UNSTABLE_ProductLogo);
+  stylePropsTest(ProductLogo);
 
-  restPropsTest(UNSTABLE_ProductLogo, 'div');
+  restPropsTest(ProductLogo, 'div');
 
   it('should render children', () => {
-    render(<UNSTABLE_ProductLogo>Content</UNSTABLE_ProductLogo>);
+    render(<ProductLogo>Content</ProductLogo>);
 
     expect(screen.getByText('Content')).toBeInTheDocument();
   });
 
   it('should have correct className', () => {
-    render(<UNSTABLE_ProductLogo>Content</UNSTABLE_ProductLogo>);
+    render(<ProductLogo>Content</ProductLogo>);
 
-    expect(screen.getByText('Content')).toHaveClass('UNSTABLE_ProductLogo');
+    expect(screen.getByText('Content')).toHaveClass('ProductLogo');
   });
 });
