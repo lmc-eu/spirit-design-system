@@ -47,8 +47,14 @@
         @each $dictionary-item-name, $dictionary-item-value in $dictionary-group-values {
             .#{$class-name}--#{$dictionary-item-name} {
                 @each $property-name, $property-value in $config {
+                    $color-group: if(
+                        $dictionary-group-name == $dictionary-item-name,
+                        $dictionary-group-name,
+                        #{$dictionary-group-name}-#{$dictionary-item-name}
+                    );
+
                     --#{globals.$prefix}#{$component-infix}-#{$property-name}: var(
-                        --#{globals.$prefix}color-#{$dictionary-group-name}-#{$dictionary-item-name}-#{$property-value}
+                        --#{globals.$prefix}color-#{$color-group}-#{$property-value}
                     );
                 }
             }
