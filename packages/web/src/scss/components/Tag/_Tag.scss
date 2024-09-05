@@ -1,33 +1,36 @@
 @use 'sass:map';
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 @use 'theme';
 
 .Tag {
-    @include typography.generate(map.get(theme.$sizes, medium, typography));
-
     display: inline-block;
+    padding-inline: var(--#{tokens.$token-prefix}tag-padding-x);
+    padding-block: var(--#{tokens.$token-prefix}tag-padding-y);
     text-align: center;
+    color: var(--#{tokens.$token-prefix}tag-color);
+    border-width: theme.$border-width;
+    border-style: theme.$border-style;
+    border-color: var(--#{tokens.$token-prefix}tag-border-color);
     border-radius: theme.$border-radius;
+    background-color: var(--#{tokens.$token-prefix}tag-background-color);
 }
 
+.Tag--subtle {
+    color: var(--#{tokens.$token-prefix}tag-subtle-color);
+    border-color: var(--#{tokens.$token-prefix}tag-subtle-border-color);
+    background-color: var(--#{tokens.$token-prefix}tag-subtle-background-color);
+}
+
+@include dictionaries.generate-colors(
+    $class-name: 'Tag',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config
+);
 @include dictionaries.generate-sizes('Tag', theme.$sizes);
-@include dictionaries.generate-colors(
-    'Tag',
-    theme.$color-dictionary,
-    theme.$color-dictionary-config,
-    null,
-    theme.$color-dictionary-overrides
-);
-@include dictionaries.generate-colors(
-    'Tag--subtle.Tag',
-    theme.$color-dictionary,
-    theme.$subtle-color-dictionary-config,
-    null,
-    theme.$subtle-color-dictionary-overrides,
-    'tag-subtle'
-);
 
 .Tag--subtle.Tag--xsmall {
+    border-color: transparent;
     background-color: transparent;
 }
