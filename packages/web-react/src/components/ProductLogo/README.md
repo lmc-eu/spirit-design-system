@@ -1,16 +1,13 @@
-# UNSTABLE ProductLogo
-
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
+# ProductLogo
 
 The ProductLogo component is used to display the logo of the product.
 
 ```jsx
-import { UNSTABLE_ProductLogo } from '@spirit/web-react';
+import { ProductLogo } from '@spirit/web-react';
 
-<UNSTABLE_ProductLogo aria-label="Logo of the product">
+<ProductLogo aria-label="Logo of the product">
   <!-- Logo go here -->
-</UNSTABLE_ProductLogo>;
+</ProductLogo>;
 ```
 
 ## Content
@@ -20,9 +17,9 @@ The content of the ProductLogo component can be an image or svg.
 ### Image
 
 ```jsx
-<UNSTABLE_ProductLogo aria-label="Logo of the product">
+<ProductLogo aria-label="Logo of the product">
   <img src="path-to-logo" alt="Product Logo" height="60px" width="120px" aria-hidden="true" />
-</UNSTABLE_ProductLogo>
+</ProductLogo>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
@@ -33,11 +30,11 @@ to specify the `height` and `width` of the embedded image.
 ### SVG
 
 ```jsx
-<UNSTABLE_ProductLogo aria-label="Logo of the product">
+<ProductLogo aria-label="Logo of the product">
   <svg width="300" height="130">
     <rect width="200" height="100" x="10" y="10" rx="20" ry="20" fill="#fff" />
   </svg>
-</UNSTABLE_ProductLogo>
+</ProductLogo>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
