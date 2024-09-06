@@ -9,7 +9,7 @@ import { usePartnerLogoStyleProps } from './usePartnerLogoStyleProps';
 
 const defaultProps: Partial<SpiritPartnerLogoProps> = {
   size: Sizes.MEDIUM,
-  hasSafeAreaDisabled: false,
+  hasSafeArea: true,
 };
 
 const UNSTABLE_PartnerLogo = (props: SpiritPartnerLogoProps) => {
