@@ -23,7 +23,9 @@ describe('UNSTABLE_PartnerLogo', () => {
   it('should have correct className', () => {
     render(<UNSTABLE_PartnerLogo>Content</UNSTABLE_PartnerLogo>);
 
-    expect(screen.getByText('Content')).toHaveClass('UNSTABLE_PartnerLogo');
+    expect(screen.getByText('Content')).toHaveClass(
+      'UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--medium UNSTABLE_PartnerLogo--safeArea',
+    );
   });
 
   it.each(Object.values(Sizes))('should return %s size', (size) => {
@@ -33,8 +35,8 @@ describe('UNSTABLE_PartnerLogo', () => {
   });
 
   it('should render without safe area', () => {
-    render(<UNSTABLE_PartnerLogo hasSafeAreaDisabled>Content</UNSTABLE_PartnerLogo>);
+    render(<UNSTABLE_PartnerLogo hasSafeArea={false}>Content</UNSTABLE_PartnerLogo>);
 
-    expect(screen.getByText('Content')).toHaveClass('UNSTABLE_PartnerLogo--hasSafeAreaDisabled');
+    expect(screen.getByText('Content')).not.toHaveClass('UNSTABLE_PartnerLogo--safeArea');
   });
 });
