@@ -5,7 +5,7 @@ import replace from '@rollup/plugin-replace';
 // 1) it should not be empty line before imports (required is considered as import) and
 // 2) should be empty line after last import (required is not considered as import)
 // eslint-disable-next-line import/order
-import { terser as minify } from 'rollup-plugin-terser';
+import minify from '@rollup/plugin-terser';
 
 const entryPoints = require('../scripts/entryPoints');
 
