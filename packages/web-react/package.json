@@ -112,9 +112,6 @@
     "test:unit:watch": "yarn test:unit --watchAll",
     "test:unit:coverage": "yarn test:unit --coverage"
   },
-  "resolutions": {
-    "@types/react-dom": "18.3.0"
-  },
   "nx": {
     "targets": {
       "build": {
