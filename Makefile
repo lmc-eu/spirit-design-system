@@ -113,5 +113,19 @@ endif
 ## —— Miscellaneous 🛠️ ——————————————————————————————————————————————————————————————
 
 clean: ## Clean output files
-	rm -rf {.nyc_output,coverage,dist,build,esm,cjs,umd,types}
-	find . -name '*.log' -print -delete
+	find . -path ./node_modules -prune -o -type d \( \
+        -name '.nyc_output' -o \
+        -name 'coverage' -o \
+        -name '.coverage' -o \
+        -name '.cache' -o \
+        -name '.nx' -o \
+        -name 'dist' -o \
+        -name 'build' -o \
+        -name 'esm' -o \
+        -name 'cjs' -o \
+        -name 'umd' -o \
+        -name 'playwright-report' -o \
+        -name 'test-results' -o \
+        -name '.next' \
+    \) -exec rm -rf {} +
+		find . -path ./node_modules -prune -o -name '*.log' -print -delete
