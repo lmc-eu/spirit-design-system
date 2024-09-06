@@ -31,10 +31,10 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 
 ## Disabled safe area
 
-The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeAreaDisabled` prop to disable safe area around logo.
+The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeArea` prop set to `false` to disable safe area around logo.
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner" hasSafeAreaDisabled>
+<UNSTABLE_PartnerLogo aria-label="Logo of the partner" hasSafeArea={false}>
   <!-- Logo go here -->
 </UNSTABLE_PartnerLogo>
 ```
@@ -69,11 +69,11 @@ attribute is set on the container.
 
 ## API
 
-| Name                  | Type                               | Default  | Required | Description                                             |
-| --------------------- | ---------------------------------- | -------- | -------- | ------------------------------------------------------- |
-| `children`            | `ReactNode`                        | `null`   | ✓        | Content of the PartnerLogo                              |
-| `size`                | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the PartnerLogo                                 |
-| `hasSafeAreaDisabled` | `boolean`                          | `false`  | ✕        | If true, the PartnerLogo is displayed without safe area |
+| Name          | Type                               | Default  | Required | Description                                              |
+| ------------- | ---------------------------------- | -------- | -------- | -------------------------------------------------------- |
+| `children`    | `ReactNode`                        | `null`   | ✓        | Content of the PartnerLogo                               |
+| `size`        | [Size dictionary][dictionary-size] | `medium` | ✕        | Size of the PartnerLogo                                  |
+| `hasSafeArea` | `boolean`                          | `true`   | ✕        | If false, the PartnerLogo is displayed without safe area |
 
 The components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
