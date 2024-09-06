@@ -3,10 +3,11 @@
 @use '../../tools/dictionaries';
 
 .UNSTABLE_PartnerLogo {
+    --#{globals.$prefix}partner-logo-padding: 0;
+
     display: inline-block;
     max-width: 100%;
     height: fit-content;
-    padding: var(--#{globals.$prefix}partner-logo-padding);
     border-radius: theme.$border-radius;
     background: theme.$background-color;
 }
@@ -19,6 +20,6 @@
 
 @include dictionaries.generate-sizes($class-name: 'UNSTABLE_PartnerLogo', $sizes: theme.$sizes);
 
-.UNSTABLE_PartnerLogo--hasSafeAreaDisabled {
-    --#{globals.$prefix}partner-logo-padding: 0;
+.UNSTABLE_PartnerLogo--safeArea {
+    padding: var(--#{globals.$prefix}partner-logo-padding);
 }
