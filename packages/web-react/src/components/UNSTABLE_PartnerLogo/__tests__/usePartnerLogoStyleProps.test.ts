@@ -10,18 +10,26 @@ describe('usePartnerLogoStyleProps', () => {
     expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo');
   });
 
-  describe('hasSafeAreaDisabled prop', () => {
-    const props = {
-      hasSafeAreaDisabled: true,
-    };
-    const { result } = renderHook(() => usePartnerLogoStyleProps(props));
+  describe('hasSafeArea prop', () => {
+    const testCases = [
+      { hasSafeArea: false, expectedClassName: 'UNSTABLE_PartnerLogo', description: 'should not' },
+      {
+        hasSafeArea: true,
+        expectedClassName: 'UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--safeArea',
+        description: 'should',
+      },
+    ];
 
-    it('should return hasSafeAreaDisabled class names', () => {
-      expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--hasSafeAreaDisabled');
-    });
+    describe.each(testCases)('when hasSafeArea is $hasSafeArea', ({ hasSafeArea, expectedClassName, description }) => {
+      const { result } = renderHook(() => usePartnerLogoStyleProps({ hasSafeArea }));
 
-    it('should not return hasSafeAreaDisabled prop', () => {
-      expect(result.current.props).toStrictEqual({});
+      it(`${description} return safe area class name`, () => {
+        expect(result.current.classProps).toBe(expectedClassName);
+      });
+
+      it('should not return hasSafeArea prop', () => {
+        expect(result.current.props).toStrictEqual({});
+      });
     });
   });
 

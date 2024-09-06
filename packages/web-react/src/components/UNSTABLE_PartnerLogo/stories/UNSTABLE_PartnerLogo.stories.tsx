@@ -21,9 +21,12 @@ const meta: Meta<typeof UNSTABLE_PartnerLogo> = {
       control: 'select',
       options: [...Object.values(Sizes)],
     },
+    hasSafeArea: {
+      control: 'boolean',
+    },
   },
   args: {
-    hasSafeAreaDisabled: false,
+    hasSafeArea: true,
     children: (
       <svg width="108" height="40" viewBox="0 0 108 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_20364_10)">
