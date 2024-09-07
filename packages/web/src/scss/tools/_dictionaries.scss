@@ -1,8 +1,8 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:string';
-
-// @use '@global' as global-tokens;
+@use '@global' as global-tokens;
 @use '../settings/globals';
 @use './alignment';
 @use './links';
@@ -80,35 +80,26 @@
     }
 }
 
-//
-// // Mixin to generate link color classes based on a dictionary
-// // Parameters are:
-// // * $selector: the selector to generate
-// // * $dictionary-values: list of the dictionary values to generate
-// // * $tokens: map of the tokens to generate
-// // * $print-values: list of the print values to generate
-// @mixin generate-link-colors(
-//     $selector,
-//     $dictionary-values,
-//     $tokens,
-//     $print-values: (default, hover, active, disabled, visited)
-// ) {
-//     @each $dictionary-value in $dictionary-values {
-//         @each $print-value in $print-values {
-//             $variant-class: '#{$dictionary-value}';
-//
-//             @if $print-value == 'disabled' {
-//                 $variant-class: '#{$dictionary-value}.link-#{$print-value}';
-//             } @else if $print-value != 'default' {
-//                 $variant-class: '#{$dictionary-value}:#{$print-value}';
-//             }
-//             #{$selector}-#{unquote($variant-class)} {
-//                 color: map.get($tokens, link-#{$dictionary-value}-#{$print-value});
-//             }
-//         }
-//     }
-// }
-//
+// Mixin to generate link color classes based on a dictionary
+// Parameters are:
+// * $selector: the selector to generate
+// * $dictionary-values: list of the dictionary values to generate
+// * $tokens: map of the tokens to generate
+// * $print-values: list of the print values to generate
+@mixin generate-link-colors($selector, $dictionary-values, $states: (default, hover, active)) {
+    @each $dictionary-value in $dictionary-values {
+        @each $state in $states {
+            $variant-class: if($state == 'default', '#{$dictionary-value}', '#{$dictionary-value}:#{$state}');
+
+            #{$selector}-#{string.unquote($variant-class)} {
+                color: var(
+                    --#{globals.$prefix}color-action-link-#{string.unquote($dictionary-value)}-#{string.unquote($state)}
+                );
+            }
+        }
+    }
+}
+
 // Mixin to generate placement classes based on a dictionary
 // Parameters are:
 // * $class-name: the name of the component class to generate
