@@ -10,7 +10,7 @@ describe('usePillStyleProps', () => {
     expect(result.current.classProps).toBe('Pill');
   });
 
-  it.each([['selected'], ['danger'], ['informative'], ['success'], ['warning']])(
+  it.each([['selected'], ['neutral'], ['danger'], ['informative'], ['success'], ['warning']])(
     'should return color class %s',
     (color) => {
       const props = { color } as SpiritPillProps;
