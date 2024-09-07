@@ -12,10 +12,10 @@ const EmptyStateDefault = () => (
     <UNSTABLE_EmptyStateSection>
       <div className="docs-Placeholder" style={{ maxWidth: '400px' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="40" viewBox="0 0 82 40" fill="none">
-          <rect x="1.5" y="0.5" width="79" height="39" stroke="#3EAC98" strokeDasharray="4 4" />
+          <rect x="1.5" y="0.5" width="79" height="39" stroke="#b9b9b9" strokeDasharray="4 4" />
           <path
             d="M1 29L24.1884 15.814L35.7826 24.1163L64.7681 8L81 24.1163"
-            stroke="#3EAC98"
+            stroke="#b9b9b9"
             strokeWidth="0.8"
             strokeDasharray="4 4"
           />

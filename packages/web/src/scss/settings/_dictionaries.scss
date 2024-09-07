@@ -8,7 +8,7 @@ $_size-extended: xsmall, xlarge;
 
 $action-colors: primary, secondary, tertiary, inverted;
 $action-button-colors: primary, secondary, tertiary;
-$action-link-colors: primary, secondary, inverted;
+$action-link-colors: primary, secondary, tertiary;
 $alignments-x: left, center, right;
 $alignments-x-extended: list.join($alignments-x, $_alignments-x-extended);
 $alignments-y: top, center, bottom;
