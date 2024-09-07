@@ -22,7 +22,7 @@ const meta: Meta<typeof Text> = {
     },
     emphasis: {
       control: 'select',
-      options: ['italic', 'bold', undefined],
+      options: ['italic', 'bold', 'semibold', undefined],
       table: {
         defaultValue: { summary: undefined },
       },
