@@ -7,12 +7,8 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 ```
 
 ```jsx
-  <Pill color="primary">3</Pill>
-  <Pill color="secondary">3</Pill>
-  <Pill color="tertiary">3</Pill>
-  <Pill color="inverted">3</Pill>
   <Pill color="selected">333</Pill>
-  <Pill color="unselected">333</Pill>
+  <Pill color="neutral">333</Pill>
   <Pill color="success">3</Pill>
   <Pill color="informative">3</Pill>
   <Pill color="warning">3</Pill>
@@ -21,10 +17,10 @@ import { Pill } from '@lmc-eu/spirit-web-react';
 
 ## API
 
-| Name       | Type                                                                                                                        | Default    | Required | Description            |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
-| `children` | `ReactNode`                                                                                                                 | —          | ✓        | Content of the Pill    |
-| `color`    | [[Action Color dictionary][dictionary-color] \| [Emotion Color dictionary][dictionary-color] \| `selected` \| `unselected`] | `selected` | ✕        | Color of the component |
+| Name       | Type                                                                      | Default    | Required | Description            |
+| ---------- | ------------------------------------------------------------------------- | ---------- | -------- | ---------------------- |
+| `children` | `ReactNode`                                                               | —          | ✓        | Content of the Pill    |
+| `color`    | [[Emotion Color dictionary][dictionary-color] \| `selected` \| `neutral`] | `selected` | ✕        | Color of the component |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
