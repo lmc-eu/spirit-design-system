@@ -1,10 +1,11 @@
 {# API #}
 {%- set props = props | default([]) -%}
+{%- set _emphasis = props.emphasis | default('bold') -%}
 {%- set _size = props.size | default('medium') -%}
 {%- set _elementType = props.elementType | default('div') -%}
 
 {# Class names #}
-{%- set _rootClassName = _spiritClassPrefix ~ 'typography-heading-' ~ _size ~ '-text' -%}
+{%- set _rootClassName = _spiritClassPrefix ~ 'typography-heading-' ~ _size ~ '-' ~ _emphasis -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
