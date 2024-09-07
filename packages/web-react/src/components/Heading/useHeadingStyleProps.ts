@@ -12,10 +12,10 @@ export interface HeadingStyles<T extends ElementType = 'p'> {
 export function useHeadingStyleProps<T extends ElementType = 'div', S = void>(
   props: SpiritHeadingProps<T, S>,
 ): HeadingStyles<T> {
-  const { size, ...restProps } = props;
+  const { size, emphasis, ...restProps } = props;
 
   const headingClass = useClassNamePrefix('typography-heading');
-  const className = `${headingClass}-${size}-text`;
+  const className = `${headingClass}-${size}-${emphasis}`;
 
   return {
     classProps: className,
