@@ -37,9 +37,11 @@ export const ActionButtonColors = {
   TERTIARY: 'tertiary',
 } as const;
 
+// TODO - Remove INVERTED from ActionLinkColors when Toast is updated in DS-1446
 export const ActionLinkColors = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
+  TERTIARY: 'tertiary',
   INVERTED: 'inverted',
 } as const;
 
@@ -48,6 +50,13 @@ export const EmotionColors = {
   INFORMATIVE: 'informative',
   WARNING: 'warning',
   DANGER: 'danger',
+} as const;
+
+export const Emphasis = {
+  REGULAR: 'regular',
+  SEMIBOLD: 'semibold',
+  BOLD: 'bold',
+  ITALIC: 'italic',
 } as const;
 
 export const TextColors = {
