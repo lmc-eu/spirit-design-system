@@ -8,7 +8,7 @@ import UNSTABLE_EmptyState from '../UNSTABLE_EmptyState';
 import UNSTABLE_EmptyStateSection from '../UNSTABLE_EmptyStateSection';
 
 const EmptyStateDefault = () => (
-  <UNSTABLE_EmptyState spacing="space-700">
+  <UNSTABLE_EmptyState spacing="space-900">
     <UNSTABLE_EmptyStateSection>
       <div className="docs-Placeholder" style={{ maxWidth: '400px' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="40" viewBox="0 0 82 40" fill="none">
@@ -21,16 +21,20 @@ const EmptyStateDefault = () => (
           />
         </svg>
         <div className="docs-Placeholder__text">
-          <Heading size="xsmall">Placeholder</Heading>
-          <Text>Replace me with your own component</Text>
+          <Text emphasis="bold" marginBottom="space-0">
+            Placeholder
+          </Text>
+          <Text size="small" UNSAFE_className="text-secondary">
+            Replace me with your own component
+          </Text>
         </div>
       </div>
     </UNSTABLE_EmptyStateSection>
-    <UNSTABLE_EmptyStateSection spacing="space-500">
+    <UNSTABLE_EmptyStateSection spacing="space-600">
       <Heading elementType="h2" size="xsmall">
         Headline
       </Heading>
-      <Text color="secondary">
+      <Text>
         In publishing and graphic design, lorem ipsum is common placeholder text used to demonstrate the graphic
         elements
       </Text>

@@ -13,7 +13,7 @@ export function useTextStyleProps<T extends ElementType = 'p', S = void>(props: 
   const { size, emphasis, ...restProps } = props;
 
   const textClass = useClassNamePrefix('typography-body');
-  const className = `${textClass}-${size}-text-${emphasis || 'regular'}`;
+  const className = `${textClass}-${size}-${emphasis}`;
 
   return {
     classProps: className,
