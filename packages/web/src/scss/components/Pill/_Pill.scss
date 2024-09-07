@@ -1,4 +1,5 @@
 @use 'theme';
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 @use '../../tools/typography';
 
@@ -10,13 +11,18 @@
     height: 1rem;
     padding: theme.$padding-y theme.$padding-x;
     text-align: center;
+    color: var(--#{tokens.$css-variable-prefix}pill-color);
     border-radius: theme.$border-radius;
+    background-color: var(--#{tokens.$css-variable-prefix}pill-background-color);
 }
 
 @include dictionaries.generate-colors(
-    'Pill',
-    theme.$color-dictionary,
-    theme.$color-dictionary-config,
-    null,
-    theme.$color-dictionary-overrides
+    $class-name: 'Pill',
+    $dictionary-values: theme.$color-dictionary,
+    $config: theme.$color-dictionary-config
+);
+@include dictionaries.generate-colors(
+    $class-name: 'Pill',
+    $dictionary-values: theme.$color-selected-dictionary,
+    $config: theme.$color-selected-dictionary-config
 );
