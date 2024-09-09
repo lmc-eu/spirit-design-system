@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "generated/exporter.cjs",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",
