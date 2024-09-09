@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateFileContent, addDisclaimer, filterTokensByTypeAndGroup } from '../contentGenerator';
-import { exampleMockedGroups, exampleMockedTokens } from '../../formatters/__fixtures__/mockedExampleTokens';
+import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { FileData } from '../../config/fileConfig';
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
@@ -15,22 +16,16 @@ describe('contentGenerator', () => {
   describe('generateFileContent', () => {
     it('should generate file content', () => {
       const tokens = Array.from(exampleMockedTokens.values());
-      const tokenTypes = [TokenType.dimension, TokenType.string];
-      const groupNames = ['Grid', 'String'];
-      const withCssObject = true;
-      const hasParentPrefix = true;
-      const sortByNumValue = false;
+      const fileData: FileData = {
+        fileName: 'testFile',
+        tokenTypes: [TokenType.dimension, TokenType.string],
+        groupNames: ['Grid', 'String'],
+        withCssObject: true,
+        hasParentPrefix: true,
+        sortByNumValue: false,
+      };
 
-      const fileContent = generateFileContent(
-        tokens,
-        mappedTokens,
-        tokenGroups,
-        tokenTypes,
-        groupNames,
-        withCssObject,
-        hasParentPrefix,
-        sortByNumValue,
-      );
+      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData);
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });
     });

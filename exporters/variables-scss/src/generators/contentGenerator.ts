@@ -3,6 +3,7 @@ import { generateCssFromTokens } from './cssGenerator';
 import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
 import { convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
+import { FileData } from '../config/fileConfig';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -13,19 +14,15 @@ export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, gro
   return tokens.filter((token) => token.tokenType === type && token.origin?.name?.includes(group));
 };
 
-// TODO: refactor to use fileData instead of destructuring
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
-  tokenTypes: TokenType[],
-  groupNames: string[],
-  withCssObject: boolean,
-  hasParentPrefix: boolean,
-  sortByNumValue: boolean,
+  fileData: FileData,
 ) => {
   let cssTokens = '';
   let cssObject: CssObjectType = {};
+  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withCssObject = true, tokenTypes } = fileData;
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {

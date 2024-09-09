@@ -1,72 +1,58 @@
-import { TokenGroup, Token, TokenType } from '@supernovaio/sdk-exporters';
+import { TokenGroup, Token, Supernova, TokenTheme } from '@supernovaio/sdk-exporters';
 import { generateFileContent } from './contentGenerator';
-
-export type FileData = {
-  fileName: string;
-  tokenTypes: TokenType[];
-  groupNames: string[];
-  withCssObject?: boolean;
-  hasParentPrefix?: boolean;
-  sortByNumValue?: boolean;
-};
-
-const filesData: FileData[] = [
-  {
-    fileName: '_borders.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Border'],
-    withCssObject: false,
-    sortByNumValue: true,
-  },
-  {
-    fileName: '_other.scss',
-    tokenTypes: [TokenType.dimension, TokenType.string],
-    groupNames: ['Grid', 'Container', 'Breakpoint'],
-  },
-  {
-    fileName: '_radii.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Radius'],
-    hasParentPrefix: false,
-    sortByNumValue: true,
-  },
-  {
-    fileName: '_spacing.scss',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Spacing'],
-    hasParentPrefix: false,
-    sortByNumValue: true,
-  },
-  {
-    fileName: '_colors.scss',
-    tokenTypes: [TokenType.color],
-    groupNames: [''],
-  },
-];
+import { FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
 
 export const generateFiles = (
   tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
+  filesData: FileData[],
 ) => {
-  return filesData.map(
-    // TODO: refactor this to use fileData instead of destructuring
-    ({ fileName, tokenTypes, groupNames, withCssObject = true, hasParentPrefix = true, sortByNumValue = false }) => {
-      const fileContent = generateFileContent(
-        tokens,
-        mappedTokens,
-        tokenGroups,
-        tokenTypes,
-        groupNames,
-        withCssObject,
-        hasParentPrefix,
-        sortByNumValue,
-      );
+  return filesData.map((fileData) => {
+    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData);
 
-      return {
-        fileName,
-        ...fileContent,
-      };
-    },
+    return {
+      fileName: fileData.fileName,
+      ...fileContent,
+    };
+  });
+};
+
+export const generateOutputFilesByThemes = async (
+  tokens: Token[],
+  mappedTokens: Map<string, Token>,
+  tokenGroups: TokenGroup[],
+  themes: TokenTheme[],
+  sdk: Supernova,
+): Promise<{ path: string; fileName: string; content: string }[]> => {
+  const outputFiles: { path: string; fileName: string; content: string }[] = [];
+
+  // Generate global files for non-themed tokens
+  const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData);
+  outputFiles.push(
+    ...globalFiles.map((file) => ({ path: './globals/', fileName: file.fileName, content: file.content })),
   );
+
+  // Compute themed tokens for all themes in parallel
+  const allThemes = await Promise.all(
+    themes.map(async (theme) => {
+      const themedTokens = await sdk.tokens.computeTokensByApplyingThemes(tokens, [theme]);
+
+      return { themedTokens, theme };
+    }),
+  );
+
+  // Generate files for each theme
+  for (const { themedTokens, theme } of allThemes) {
+    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData);
+    outputFiles.push(
+      ...themeFiles.map((file) => ({
+        path: `./themes/${theme.name}/`,
+        fileName: file.fileName,
+        content: file.content,
+      })),
+    );
+  }
+
+  return outputFiles;
 };
