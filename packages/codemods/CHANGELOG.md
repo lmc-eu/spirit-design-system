@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.0"></a>
+
+# [1.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.0.2...@lmc-eu/spirit-codemods@1.1.0) (2024-09-09)
+
+### Dependencies
+
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+
+### Features
+
+- **codemod:** Add codemod for the Link underlined prop ([b341e7c](https://github.com/lmc-eu/spirit-design-system/commit/b341e7c))
+
+**Note:** Version bump only for package @lmc-eu/spirit-codemods
+
 <a name="1.0.2"></a>
 
 ## [1.0.2](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-codemods@1.0.1...@lmc-eu/spirit-codemods@1.0.2) (2024-07-24)

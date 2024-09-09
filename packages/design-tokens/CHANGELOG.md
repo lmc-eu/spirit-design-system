@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+
+# [2.1.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.0.3...@lmc-eu/spirit-design-tokens@2.1.0) (2024-09-09)
+
+### Chores
+
+- **design-tokens:** Rename Vite config to use mts extension becuase of deprecated api ([6b79588](https://github.com/lmc-eu/spirit-design-system/commit/6b79588))
+- **design-tokens:** Use Node module resolution to fix the problem with Vite build ([083b245](https://github.com/lmc-eu/spirit-design-system/commit/083b245))
+
+### Dependencies
+
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+- Update dependency stylelint to v16 ([e3b7ae6](https://github.com/lmc-eu/spirit-design-system/commit/e3b7ae6))
+
+### Features
+
+- **design-tokens:** Update JS Design Tokens manually [#DS-1394](https://github.com/lmc-eu/spirit-design-system/issues/DS-1394) ([217a330](https://github.com/lmc-eu/spirit-design-system/commit/217a330))
+
+**Note:** Version bump only for package @lmc-eu/spirit-design-tokens
+
 <a name="2.0.3"></a>
 
 ## [2.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-design-tokens@2.0.2...@lmc-eu/spirit-design-tokens@2.0.3) (2024-07-24)

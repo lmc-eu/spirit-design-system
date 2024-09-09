@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+
+# [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.3.0...@lmc-eu/spirit-web-react@2.4.0) (2024-09-09)
+
+### Bug Fixes
+
+- **web-react:** Filter out props falling into DOM in \*Logo components ([850da2d](https://github.com/lmc-eu/spirit-design-system/commit/850da2d)), closes [#DS-1440](https://github.com/lmc-eu/spirit-design-system/issues/DS-1440)
+
+### Code Refactoring
+
+- **web-react:** Grid useGridStylesProps use new hooks for generating classes ([8274478](https://github.com/lmc-eu/spirit-design-system/commit/8274478))
+- **web-react:** Use Spacing hook in Grid component [#DS-1425](https://github.com/lmc-eu/spirit-design-system/issues/DS-1425) ([1ccc85f](https://github.com/lmc-eu/spirit-design-system/commit/1ccc85f))
+
+### Dependencies
+
+- Update all non-major dependencies ([ec96d80](https://github.com/lmc-eu/spirit-design-system/commit/ec96d80))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+
+### Documentation
+
+- **web-react:** Add missing key prop to React Fragment in Tag demo ([660228e](https://github.com/lmc-eu/spirit-design-system/commit/660228e))
+- **web-react:** Remove `isOpen` prop from Buttons in Collapse demo ([96e18e8](https://github.com/lmc-eu/spirit-design-system/commit/96e18e8))
+- **web-react:** Set correct type of autoComplete prop in docs ([d65bcf9](https://github.com/lmc-eu/spirit-design-system/commit/d65bcf9))
+
+### Features
+
+- **web-react:** Add `spacing` property to `Grid` [#DS-1388](https://github.com/lmc-eu/spirit-design-system/issues/DS-1388) ([12d0aa4](https://github.com/lmc-eu/spirit-design-system/commit/12d0aa4))
+- **web-react:** Add alignmentX and alignmentY prop to Grid component [#DS-1414](https://github.com/lmc-eu/spirit-design-system/issues/DS-1414) ([db53e7e](https://github.com/lmc-eu/spirit-design-system/commit/db53e7e))
+- **web-react:** Add spacing property to Tabs component [#DS-1315](https://github.com/lmc-eu/spirit-design-system/issues/DS-1315) ([4f847db](https://github.com/lmc-eu/spirit-design-system/commit/4f847db))
+- **web-react:** Improve Docs components - add StyleProps, remove defaultProps and other minor fixes ([7b3ab46](https://github.com/lmc-eu/spirit-design-system/commit/7b3ab46))
+- **web-react:** Introduce Flex component ([de50d5a](https://github.com/lmc-eu/spirit-design-system/commit/de50d5a))
+- **web-react:** Introduce new underlined prop to the Link component ([f99bd23](https://github.com/lmc-eu/spirit-design-system/commit/f99bd23)), closes [#DS-943](https://github.com/lmc-eu/spirit-design-system/issues/DS-943)
+- **web-react:** Mark all components as Client components ([bc55dd9](https://github.com/lmc-eu/spirit-design-system/commit/bc55dd9)), closes [#DS-1392](https://github.com/lmc-eu/spirit-design-system/issues/DS-1392)
+
+### Styles
+
+- **web-react:** Apply formatting rules after deps update ([b17afbd](https://github.com/lmc-eu/spirit-design-system/commit/b17afbd))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-react
+
 <a name="2.3.0"></a>
 
 # [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-react@2.2.0...@lmc-eu/spirit-web-react@2.3.0) (2024-07-24)

@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+
+# [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.3.0...@lmc-eu/spirit-web@2.4.0) (2024-09-09)
+
+### Bug Fixes
+
+- **web:** Remove change of `AccordionHeader` background on non-hover devices ([c55256f](https://github.com/lmc-eu/spirit-design-system/commit/c55256f))
+
+### Dependencies
+
+- Pin dependency @types/eslint to 9.6.0 ([0198202](https://github.com/lmc-eu/spirit-design-system/commit/0198202))
+- Update all non-major dependencies ([ec96d80](https://github.com/lmc-eu/spirit-design-system/commit/ec96d80))
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+- Update dependency stylelint to v16 ([e3b7ae6](https://github.com/lmc-eu/spirit-design-system/commit/e3b7ae6))
+
+### Features
+
+- **web:** Add `spacing` property to `Grid` [#DS-1388](https://github.com/lmc-eu/spirit-design-system/issues/DS-1388) ([c088cd0](https://github.com/lmc-eu/spirit-design-system/commit/c088cd0))
+- **web:** Add alignmentX and alignmentY classes to Grid component [#DS-1414](https://github.com/lmc-eu/spirit-design-system/issues/DS-1414) ([e5d834c](https://github.com/lmc-eu/spirit-design-system/commit/e5d834c))
+- **web:** Add responsive variants to breakout-container helper [#DS-1386](https://github.com/lmc-eu/spirit-design-system/issues/DS-1386) ([cc622c3](https://github.com/lmc-eu/spirit-design-system/commit/cc622c3))
+- **web:** Add spacing property to Tabs component [#DS-1315](https://github.com/lmc-eu/spirit-design-system/issues/DS-1315) ([c5018a5](https://github.com/lmc-eu/spirit-design-system/commit/c5018a5))
+- **web:** Introduce `Flex` layout component [#DS-1415](https://github.com/lmc-eu/spirit-design-system/issues/DS-1415) ([1e0571b](https://github.com/lmc-eu/spirit-design-system/commit/1e0571b))
+- **web:** Introduce new class to remove link underlining ([185c8b1](https://github.com/lmc-eu/spirit-design-system/commit/185c8b1))
+
+### Styles
+
+- **web:** Apply markdonw linting rules ([07aafa1](https://github.com/lmc-eu/spirit-design-system/commit/07aafa1))
+- **web:** Apply stylistic rules ([2cd0f17](https://github.com/lmc-eu/spirit-design-system/commit/2cd0f17))
+
+### Tests
+
+- **web:** Update SCSS link generator tests with new token values ([2cc2b49](https://github.com/lmc-eu/spirit-design-system/commit/2cc2b49))
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.3.0"></a>
 
 # [2.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.2.0...@lmc-eu/spirit-web@2.3.0) (2024-07-24)

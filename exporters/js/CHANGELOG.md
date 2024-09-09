@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.4"></a>
+
+## [2.0.4](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.3...@lmc-eu/spirit-exporters-js@2.0.4) (2024-09-09)
+
+### Chores
+
+- **exporter-js:** Rename Vite config to use mts extension becuase of deprecated api ([d06bb2a](https://github.com/lmc-eu/spirit-design-system/commit/d06bb2a))
+
+### Dependencies
+
+- Update all non-major dependencies ([bca6b32](https://github.com/lmc-eu/spirit-design-system/commit/bca6b32))
+
+**Note:** Version bump only for package @lmc-eu/spirit-exporters-js
+
 <a name="2.0.3"></a>
 
 ## [2.0.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-exporters-js@2.0.2...@lmc-eu/spirit-exporters-js@2.0.3) (2024-07-24)
