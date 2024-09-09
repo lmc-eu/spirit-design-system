@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.4.0"></a>
+
+# [3.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.3.0...@lmc-eu/spirit-web-twig@3.4.0) (2024-09-09)
+
+### Bug Fixes
+
+- **web-twig:** Add unintentionally removed content of the composer.json ([88fbe39](https://github.com/lmc-eu/spirit-design-system/commit/88fbe39))
+- **web-twig:** Use `docker compose` instead of removed `docker-compose` ([b65cab4](https://github.com/lmc-eu/spirit-design-system/commit/b65cab4))
+
+### Documentation
+
+- **web-twig:** Make all code block snippets use Twig syntax ([8704587](https://github.com/lmc-eu/spirit-design-system/commit/8704587))
+- **web-twig:** Remove misplaced quotes from Toast Collapsible docs [#DS-1420](https://github.com/lmc-eu/spirit-design-system/issues/DS-1420) ([f99e83d](https://github.com/lmc-eu/spirit-design-system/commit/f99e83d))
+
+### Features
+
+- **web-twig:** Add `spacing` property to `Grid` [#DS-1388](https://github.com/lmc-eu/spirit-design-system/issues/DS-1388) ([7cadf6f](https://github.com/lmc-eu/spirit-design-system/commit/7cadf6f))
+- **web-twig:** Add alignmentX and alignmentY prop to Grid component [#DS-1414](https://github.com/lmc-eu/spirit-design-system/issues/DS-1414) ([cb37679](https://github.com/lmc-eu/spirit-design-system/commit/cb37679))
+- **web-twig:** Add spacing property to Tabs component [#DS-1315](https://github.com/lmc-eu/spirit-design-system/issues/DS-1315) ([f159ab0](https://github.com/lmc-eu/spirit-design-system/commit/f159ab0))
+- **web-twig:** Introduce new underlined prop to the Link component ([6424ab8](https://github.com/lmc-eu/spirit-design-system/commit/6424ab8)), closes [#DS-943](https://github.com/lmc-eu/spirit-design-system/issues/DS-943)
+
+**Note:** Version bump only for package @lmc-eu/spirit-web-twig
+
 <a name="3.3.0"></a>
 
 # [3.3.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web-twig@3.2.0...@lmc-eu/spirit-web-twig@3.3.0) (2024-07-24)
