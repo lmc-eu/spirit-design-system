@@ -56,7 +56,7 @@
     "version": "yarn format:fix:changelog"
   },
   "devDependencies": {
-    "@almacareer/remark-config": "^0.1.0",
+    "@almacareer/remark-config": "0.1.0",
     "@babel/core": "7.25.2",
     "@babel/preset-react": "7.24.7",
     "@commitlint/cli": "17.8.1",
@@ -92,8 +92,8 @@
     "react-dom": "18.3.1",
     "react-syntax-highlighter": "15.5.0",
     "react-textarea-autosize": "8.5.3",
-    "remark-cli": "^12.0.1",
-    "remark-lint-heading-capitalization": "^1.2.0",
+    "remark-cli": "12.0.1",
+    "remark-lint-heading-capitalization": "1.2.0",
     "sass-loader": "14.2.1",
     "style-loader": "4.0.0",
     "typescript": "4.7.4",
