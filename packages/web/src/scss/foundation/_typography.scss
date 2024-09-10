@@ -1,9 +1,6 @@
 // 1. We are able to handle our text sizing ourselves, disable any auto adjustments.
-// 2. Reapply the default text color to all elements with a class starting with
-//    #{globals.$prefix}theme- to ensure proper color inheritance for theming.
 
 @use '@global' as global-tokens;
-@use '../settings/globals';
 @use '../tools/typography';
 
 :where(html) {
@@ -12,11 +9,4 @@
 
 :where(body) {
     @include typography.generate(global-tokens.$body-medium-regular);
-
-    color: var(--#{globals.$prefix}color-text-primary);
-}
-
-// 2.
-:where([class*='#{globals.$prefix}theme-']) {
-    color: var(--#{globals.$prefix}color-text-primary);
 }

@@ -1,10 +1,14 @@
+// 1.The default theme will be applied to the :root element.
+//   As in Figma we make the first theme the default one.
+// 2. Set the default text color in each theme.
+
 @use '../settings/globals';
 @use 'string' as string-tools;
+@use 'svg';
 @use 'tokens' as tokens-tools;
 
 @mixin generate($themes) {
-    // The default theme will be applied to the :root element.
-    // As in Figma we make the first theme the default one.
+    // 1.
     $is-default-theme: true;
 
     @each $key, $value in $themes {
@@ -19,6 +23,11 @@
                     '#{globals.$prefix}#{$token-type-name}'
                 );
             }
+        }
+
+        // 2.
+        :where(#{$selector}) {
+            color: var(--#{globals.$prefix}color-text-primary);
         }
 
         $is-default-theme: false;
