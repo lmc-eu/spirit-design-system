@@ -39,24 +39,20 @@ $inline-field-input-border-width: global-tokens.$border-width-200;
 $inline-field-input-background-color-checked: var(--#{globals.$prefix}color-selected-default);
 
 // Box field form components – TextField, TextArea, etc.
-// Commented out to allow nice diff
-//    $box-field-input-color-default: tokens.$text-primary-default;
-//    $box-field-input-border-width: tokens.$border-width-100;
-//    $box-field-input-border-style: tokens.$border-style-100;
-//    $box-field-input-border-color-default: tokens.$border-primary-default;
-//    $box-field-input-border-color-disabled: tokens.$border-primary-disabled;
-//    $box-field-input-border-color-focus: tokens.$focus-default;
-//
-//    $box-field-input-border-radius: tokens.$radius-100;
-//    $box-field-input-background: tokens.$background-basic;
-//    $box-field-input-background-disabled: tokens.$background-cover;
-//    $box-field-input-placeholder-color-default: tokens.$text-secondary-default;
-//    $box-field-input-placeholder-color-disabled: tokens.$text-secondary-disabled;
-//    $box-field-input-padding-x: tokens.$space-400;
-//    $box-field-input-padding-y: calc(#{tokens.$space-400} - #{tokens.$border-width-100});
-//    $box-field-input-width: 18rem;
-//    $box-field-label-typography: tokens.$body-small-text-regular;
-//    $box-field-label-margin-bottom: tokens.$space-300;
+$box-field-input-color-default: var(--#{globals.$prefix}color-form-field-content);
+$box-field-input-border-width: global-tokens.$border-width-100;
+$box-field-input-border-style: solid;
+$box-field-input-border-color-focus: var(--#{globals.$prefix}color-border-focus);
+$box-field-input-focus-shadow: global-tokens.$focus;
+
+$box-field-input-border-radius: global-tokens.$radius-300;
+$box-field-input-placeholder-color-default: var(--#{globals.$prefix}color-form-field-placeholder);
+$box-field-input-placeholder-color-disabled: var(--#{globals.$prefix}color-disabled-content);
+$box-field-input-padding-x: global-tokens.$space-600;
+$box-field-input-padding-y: calc(#{global-tokens.$space-500} - #{global-tokens.$border-width-100});
+$box-field-input-width: 18rem;
+$box-field-label-typography: global-tokens.$body-small-semibold;
+$box-field-label-margin-bottom: global-tokens.$space-400;
 
 $validation-states: (
     success: (

@@ -101,13 +101,24 @@
     padding: form-fields-theme.$box-field-input-padding-y form-fields-theme.$box-field-input-padding-x;
     color: form-fields-theme.$box-field-input-color-default;
     border: form-fields-theme.$box-field-input-border-width form-fields-theme.$box-field-input-border-style
-        form-fields-theme.$box-field-input-border-color-default;
+        form-fields-theme.$input-border-color;
     border-radius: form-fields-theme.$box-field-input-border-radius;
-    background: form-fields-theme.$box-field-input-background;
+    background: form-fields-theme.$input-background-color;
 
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-default;
         opacity: 1;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: form-fields-theme.$input-background-color-hover;
+        }
+    }
+
+    &:active,
+    &:focus-within {
+        background-color: form-fields-theme.$input-background-color-active;
     }
 }
 
@@ -183,8 +194,8 @@
 @mixin box-field-disabled-input() {
     @include input-disabled();
 
-    border-color: form-fields-theme.$box-field-input-border-color-disabled;
-    background-color: form-fields-theme.$box-field-input-background-disabled;
+    border-color: form-fields-theme.$input-border-color-disabled;
+    background-color: form-fields-theme.$input-background-color-disabled;
 
     &::placeholder {
         color: form-fields-theme.$box-field-input-placeholder-color-disabled;
