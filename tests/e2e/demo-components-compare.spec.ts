@@ -27,7 +27,6 @@ const IGNORED_TESTS: string[] = [
   'TextField',
   'Toast',
   'Tooltip',
-  'UNSTABLE_Section',
   'UNSTABLE_Slider',
   'UNSTABLE_Toggle',
   'UNSTABLE_Truncate',
