@@ -13,6 +13,7 @@ export * from './Dropdown';
 export * from './Field';
 export * from './FieldGroup';
 export * from './FileUploader';
+export * from './Flex';
 export * from './Grid';
 export * from './Header';
 export * from './Heading';
