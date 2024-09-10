@@ -48,14 +48,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@almacareer/spirit-example-next-with-pages-router@workspace:examples/next-with-pages-router"
   dependencies:
-    "@babel/core": "npm:^7.25.2"
+    "@babel/core": "npm:7.25.2"
     "@babel/preset-typescript": "npm:7.24.7"
     "@lmc-eu/spirit-design-tokens": "workspace:^"
     "@lmc-eu/spirit-icons": "workspace:^"
     "@lmc-eu/spirit-web": "workspace:^"
     "@lmc-eu/spirit-web-react": "workspace:^"
     "@next/eslint-plugin-next": "npm:14.2.7"
-    "@types/babel__core": "npm:^7"
+    "@types/babel__core": "npm:7.20.5"
     "@types/node": "npm:20.16.5"
     "@types/react": "npm:18.3.5"
     "@types/react-dom": "npm:18.3.0"
@@ -161,7 +161,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.25.2, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.5, @babel/core@npm:^7.18.9, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.5, @babel/core@npm:^7.24.7, @babel/core@npm:^7.25.2":
+"@babel/core@npm:7.25.2, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.5, @babel/core@npm:^7.18.9, @babel/core@npm:^7.21.3, @babel/core@npm:^7.23.0, @babel/core@npm:^7.23.9, @babel/core@npm:^7.24.4, @babel/core@npm:^7.24.5, @babel/core@npm:^7.24.7":
   version: 7.25.2
   resolution: "@babel/core@npm:7.25.2"
   dependencies:
@@ -3824,7 +3824,7 @@ __metadata:
   resolution: "@lmc-eu/spirit-analytics@workspace:packages/analytics"
   dependencies:
     "@lmc-eu/eslint-config-jest": "npm:3.0.2"
-    "@types/eslint": "npm:^8"
+    "@types/eslint": "npm:8.56.12"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.14.9"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
@@ -3837,7 +3837,7 @@ __metadata:
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
     tsup: "npm:8.1.0"
-    typescript: "npm:^5.5.4"
+    typescript: "npm:5.6.2"
     zx: "npm:^7.2.2"
   bin:
     spirit-analytics: ./bin/spirit-analytics.js
@@ -3849,13 +3849,13 @@ __metadata:
   resolution: "@lmc-eu/spirit-codemods@workspace:packages/codemods"
   dependencies:
     "@lmc-eu/eslint-config-jest": "npm:3.0.2"
-    "@types/eslint": "npm:^8"
+    "@types/eslint": "npm:8.56.12"
     "@types/jest": "npm:29.5.12"
     "@types/jscodeshift": "npm:^0.11.11"
     "@types/node": "npm:20.14.9"
     "@typescript-eslint/eslint-plugin": "npm:6.21.0"
     "@typescript-eslint/parser": "npm:6.21.0"
-    eslint: "npm:8"
+    eslint: "npm:8.57.0"
     execa: "npm:^9.0.0"
     filedirname: "npm:^3.0.0"
     jest: "npm:29.7.0"
@@ -3863,7 +3863,7 @@ __metadata:
     sade: "npm:^1.8.1"
     shx: "npm:0.3.4"
     tsup: "npm:8.1.0"
-    typescript: "npm:^5.5.4"
+    typescript: "npm:5.6.2"
     zx: "npm:^7.2.2"
   bin:
     spirit-codemods: ./bin/spirit-codemods.js
@@ -3884,17 +3884,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-demo-app@workspace:apps/demo"
   dependencies:
-    "@rollup/plugin-terser": "npm:^0.4.4"
+    "@rollup/plugin-terser": "npm:0.4.4"
     "@rollup/plugin-typescript": "npm:11.1.6"
     autoprefixer: "npm:10.4.19"
     clean-css-cli: "npm:5.6.3"
     npm-run-all2: "npm:6.2.0"
-    postcss: "npm:^8.4.45"
+    postcss: "npm:8.4.45"
     rollup: "npm:4.18.0"
     sass: "npm:1.77.6"
     sass-true: "npm:8.0.0"
     shx: "npm:0.3.4"
-    typescript: "npm:^5.5.4"
+    typescript: "npm:5.6.2"
     vite: "npm:5.3.2"
     vite-plugin-handlebars: "npm:2.0.0"
   languageName: unknown
@@ -4010,7 +4010,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lmc-eu/spirit-web-react@workspace:packages/web-react"
   dependencies:
-    "@babel/core": "npm:^7.25.2"
+    "@babel/core": "npm:7.25.2"
     "@babel/preset-env": "npm:7.24.7"
     "@babel/preset-react": "npm:7.24.7"
     "@babel/preset-typescript": "npm:7.24.7"
@@ -4025,12 +4025,12 @@ __metadata:
     "@lmc-eu/spirit-web": "npm:^2.4.0"
     "@react-hook/resize-observer": "npm:^2.0.0"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
-    "@rollup/plugin-terser": "npm:^0.4.4"
+    "@rollup/plugin-terser": "npm:0.4.4"
     "@testing-library/dom": "npm:10.2.0"
     "@testing-library/jest-dom": "npm:6.4.6"
     "@testing-library/react": "npm:16.0.0"
     "@testing-library/user-event": "npm:14.5.2"
-    "@types/babel__core": "npm:^7"
+    "@types/babel__core": "npm:7.20.5"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.14.9"
     "@types/react": "npm:18.3.3"
@@ -4096,7 +4096,7 @@ __metadata:
     "@lmc-eu/spirit-demo": "npm:^0.1.3"
     "@lmc-eu/spirit-design-tokens": "npm:^2.1.0"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
-    "@rollup/plugin-terser": "npm:^0.4.4"
+    "@rollup/plugin-terser": "npm:0.4.4"
     "@rollup/plugin-typescript": "npm:11.1.6"
     "@types/eslint": "npm:9.6.0"
     "@types/jest": "npm:29.5.12"
@@ -6197,7 +6197,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-terser@npm:^0.4.4":
+"@rollup/plugin-terser@npm:0.4.4":
   version: 0.4.4
   resolution: "@rollup/plugin-terser@npm:0.4.4"
   dependencies:
@@ -8390,7 +8390,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.18.0, @types/babel__core@npm:^7.20.5":
+"@types/babel__core@npm:7.20.5, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.18.0, @types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
   dependencies:
@@ -8546,6 +8546,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint@npm:8.56.12":
+  version: 8.56.12
+  resolution: "@types/eslint@npm:8.56.12"
+  dependencies:
+    "@types/estree": "npm:*"
+    "@types/json-schema": "npm:*"
+  checksum: 10/bd998b5d3f98ac430ec8db6223f1cff1820774c1e72eabda05463256875d97065fd357fba7379dd25e6bfbeb73296f28faff6f4dcbc320f890bb49b09087644d
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:9.6.0":
   version: 9.6.0
   resolution: "@types/eslint@npm:9.6.0"
@@ -8553,16 +8563,6 @@ __metadata:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
   checksum: 10/39fc797c671ec9c9184802b4974748cf45ee1b11d7aaaaede44426abcafd07ec7c18eb090e8f5b3387b51637ce3fdf54499472d8dd58a928f0d005cbacb573b4
-  languageName: node
-  linkType: hard
-
-"@types/eslint@npm:^8":
-  version: 8.56.12
-  resolution: "@types/eslint@npm:8.56.12"
-  dependencies:
-    "@types/estree": "npm:*"
-    "@types/json-schema": "npm:*"
-  checksum: 10/bd998b5d3f98ac430ec8db6223f1cff1820774c1e72eabda05463256875d97065fd357fba7379dd25e6bfbeb73296f28faff6f4dcbc320f890bb49b09087644d
   languageName: node
   linkType: hard
 
@@ -15293,7 +15293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.2.1":
+"eslint-plugin-prettier@npm:5.2.1":
   version: 5.2.1
   resolution: "eslint-plugin-prettier@npm:5.2.1"
   dependencies:
@@ -15462,7 +15462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8, eslint@npm:8.57.0":
+"eslint@npm:8.57.0":
   version: 8.57.0
   resolution: "eslint@npm:8.57.0"
   dependencies:
@@ -24918,6 +24918,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.4.45":
+  version: 8.4.45
+  resolution: "postcss@npm:8.4.45"
+  dependencies:
+    nanoid: "npm:^3.3.7"
+    picocolors: "npm:^1.0.1"
+    source-map-js: "npm:^1.2.0"
+  checksum: 10/7eaf7346d04929ee979548ece5e34d253eae6f175346e298b2c4621ad6f4ee00adfe7abe72688640e910c0361ae50537c5dda3e35fd1066491282c342b3ee5c8
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^8.4.23, postcss@npm:^8.4.32, postcss@npm:^8.4.33, postcss@npm:^8.4.38, postcss@npm:^8.4.39, postcss@npm:^8.4.41":
   version: 8.4.44
   resolution: "postcss@npm:8.4.44"
@@ -24926,17 +24937,6 @@ __metadata:
     picocolors: "npm:^1.0.1"
     source-map-js: "npm:^1.2.0"
   checksum: 10/aac7ed383fdcde9def6ed814ee03bc3de68b345e3f9bea414df2daca08185b6cfb4044fe9f67e1d9e886f29642373b34fd4fde5976204ca66a5481859afdcb7d
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.45":
-  version: 8.4.45
-  resolution: "postcss@npm:8.4.45"
-  dependencies:
-    nanoid: "npm:^3.3.7"
-    picocolors: "npm:^1.0.1"
-    source-map-js: "npm:^1.2.0"
-  checksum: 10/7eaf7346d04929ee979548ece5e34d253eae6f175346e298b2c4621ad6f4ee00adfe7abe72688640e910c0361ae50537c5dda3e35fd1066491282c342b3ee5c8
   languageName: node
   linkType: hard
 
@@ -28502,7 +28502,7 @@ __metadata:
     css-loader: "npm:6.11.0"
     eslint: "npm:8.57.0"
     eslint-plugin-jsx-a11y: "npm:6.9.0"
-    eslint-plugin-prettier: "npm:^5.2.1"
+    eslint-plugin-prettier: "npm:5.2.1"
     eslint-plugin-react: "npm:7.34.3"
     eslint-plugin-react-hooks: "npm:4.6.2"
     eslint-plugin-storybook: "npm:0.8.0"
