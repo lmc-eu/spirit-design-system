@@ -2,5 +2,5 @@
 @use '../../settings/globals';
 
 $breakpoints: global-tokens.$breakpoints;
-$border: global-tokens.$border-width-100 solid var(--#{globals.$prefix}color-border-secondary-default);
+$border: global-tokens.$border-width-100 solid var(--#{globals.$prefix}color-border-basic);
 $spacing-fallback: global-tokens.$space-600;
