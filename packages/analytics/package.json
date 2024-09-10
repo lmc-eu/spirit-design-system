@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@lmc-eu/eslint-config-jest": "3.0.2",
-    "@types/eslint": "^8",
+    "@types/eslint": "8.56.12",
     "@types/jest": "29.5.12",
     "@types/node": "20.14.9",
     "@typescript-eslint/eslint-plugin": "6.21.0",
@@ -60,7 +60,7 @@
     "npm-run-all": "4.1.5",
     "shx": "0.3.4",
     "tsup": "8.1.0",
-    "typescript": "^5.5.4"
+    "typescript": "5.6.2"
   },
   "dependencies": {
     "filedirname": "^3.0.0",
