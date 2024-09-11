@@ -76,7 +76,7 @@ jobs:
         run: echo "site_url=${{ env.NETLIFY_DEPLOYED_URL }}" >> "$GITHUB_OUTPUT"
 
       - name: Run Playwright tests
-        uses: docker://mcr.microsoft.com/playwright:v1.45.0-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.47.0-jammy
         with:
           args: 'sh -c "corepack install && corepack enable && yarn test:e2e"'
         env:
@@ -110,7 +110,7 @@ jobs:
 
       - name: Notify Slack when failure
         id: Slack
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v1.27.0
         if: failure()
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }} # Slack channel-id of #spirit-design-system-notifications_en

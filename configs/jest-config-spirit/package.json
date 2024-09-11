@@ -20,7 +20,7 @@
   "type": "module",
   "module": "./index.js",
   "dependencies": {
-    "@swc/core": "1.6.5",
+    "@swc/core": "1.7.25",
     "@swc/jest": "0.2.36",
     "@testing-library/jest-dom": "^6.4.5",
     "@types/jest": "29.5.12",
