@@ -1,0 +1,13 @@
+// TODO:
+// 1. Add correct web fonts for headline and claim.
+// 2. Set the rest of headline and claim typography.
+// 3. Make sure the inheritance from the rest of the page works as needed.
+// 4. Make sure we are OK with slightly bigger links (14px instead of 13px).
+
+@use '@global' as global-tokens;
+
+$typography: global-tokens.$body-small-regular;
+$padding-y: global-tokens.$space-1300;
+$border-top-width: global-tokens.$border-width-100;
+$border-top-color: var(--spirit-color-border-basic);
+$list-gap: global-tokens.$space-600;
