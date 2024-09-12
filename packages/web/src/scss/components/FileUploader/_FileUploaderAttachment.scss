@@ -50,7 +50,7 @@
 
 .FileUploaderAttachment__action {
     @include reset.button();
-    @include accessibility.min-tap-target($size: theme.$attachment-button-size);
+    @include accessibility.min-tap-target($size: theme.$attachment-tap-target-size);
 
     color: inherit;
 
