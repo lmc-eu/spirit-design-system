@@ -1,4 +1,3 @@
-@use '@tokens' as tokens;
+@use '@global' as global-tokens;
 
-$gap: tokens.$space-400;
-$fields-gap: tokens.$space-600;
+$gap: global-tokens.$space-500;
