@@ -8,7 +8,6 @@ import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from
 const IGNORED_TESTS: string[] = [
   'Accordion',
   'Dropdown',
-  'FieldGroup',
   'FileUploader',
   'Header',
   'Heading',
