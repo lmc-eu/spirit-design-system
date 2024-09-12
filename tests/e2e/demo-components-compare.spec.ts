@@ -19,7 +19,6 @@ const IGNORED_TESTS: string[] = [
   'Spinner',
   'Stack',
   'Text',
-  'TextArea',
   'Toast',
   'Tooltip',
   'UNSTABLE_Slider',
