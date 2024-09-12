@@ -87,10 +87,12 @@ $_field-name: 'FileUploaderInput';
 
 .FileUploaderInput .FileUploaderInput__dropZone:hover {
     border-color: theme.$input-drop-zone-border-color-hover;
+    background-color: theme.$input-drop-zone-background-hover;
 }
 
 .FileUploaderInput > .FileUploaderInput__input:active ~ .FileUploaderInput__dropZone {
     border-color: theme.$input-drop-zone-border-color-active;
+    background-color: theme.$input-drop-zone-background-active;
 }
 
 // 2.
@@ -134,8 +136,8 @@ $_field-name: 'FileUploaderInput';
 // stylelint-enable selector-max-compound-selectors, selector-max-specificity
 
 .FileUploaderInput > .FileUploaderInput__input:disabled ~ .FileUploaderInput__dropZone {
-    border-color: form-fields-theme.$box-field-input-border-color-disabled;
-    background-color: form-fields-theme.$box-field-input-background-disabled;
+    border-color: form-fields-theme.$input-border-color-disabled;
+    background-color: form-fields-theme.$input-background-color-disabled;
 }
 // stylelint-enable selector-max-class
 
