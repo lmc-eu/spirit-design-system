@@ -2,10 +2,10 @@
 
 .FileUploaderList {
     display: grid;
-    row-gap: theme.$row-gap;
+    row-gap: theme.$list-row-gap;
     list-style: none;
 
     &:not(:empty) {
-        margin-top: theme.$row-gap;
+        margin-top: theme.$list-row-gap;
     }
 }
