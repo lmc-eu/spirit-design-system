@@ -173,7 +173,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       {/* Product logo */}
       <div className="text-desktop-left">
         <Link href="https://www.example.com">
-          <UNSTABLE_ProductLogo>{/*defaultSvgLogo*/}</UNSTABLE_ProductLogo>
+          <ProductLogo>{/*defaultSvgLogo*/}</ProductLogo>
         </Link>
       </div>
 
@@ -250,7 +250,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 [divider]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Divider/README.md
 [flex]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Flex/README.md
 [grid]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Grid/README.md
-[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/UNSTABLE_ProductLogo/README.md
+[product-logo]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/ProductLogo/README.md
 [readme-style-props]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/README.md#style-props
 [select]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Select/README.md
 [stack]: https://github.com/lmc-eu/spirit-design-system/blob/main/packages/web-react/src/components/Stack/README.md
