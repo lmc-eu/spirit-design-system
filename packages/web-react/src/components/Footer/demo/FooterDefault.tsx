@@ -6,11 +6,11 @@ import { Flex } from '../../Flex';
 import { Grid } from '../../Grid';
 import { Icon } from '../../Icon';
 import { Link } from '../../Link';
+import { ProductLogo } from '../../ProductLogo';
+import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Select } from '../../Select';
 import { Stack } from '../../Stack';
 import { Text } from '../../Text';
-import { UNSTABLE_ProductLogo } from '../../UNSTABLE_ProductLogo';
-import { defaultSvgLogo } from '../../UNSTABLE_ProductLogo/demo/ProductLogoDefault';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import Footer from '../Footer';
 import FooterLinkFactory from './FooterLinkFactory';
@@ -131,7 +131,7 @@ const FooterDefault = () => {
           {/* Product logo */}
           <div className="text-desktop-left">
             <Link href="https://www.example.com">
-              <UNSTABLE_ProductLogo>{defaultSvgLogo}</UNSTABLE_ProductLogo>
+              <ProductLogo>{defaultSvgLogo}</ProductLogo>
             </Link>
           </div>
 
