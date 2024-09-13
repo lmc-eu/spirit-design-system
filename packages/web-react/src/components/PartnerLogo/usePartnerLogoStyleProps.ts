@@ -10,7 +10,7 @@ export interface PartnerLogoStyles<T> {
 export function usePartnerLogoStyleProps(props: SpiritPartnerLogoProps): PartnerLogoStyles<SpiritPartnerLogoProps> {
   const { size, hasSafeArea, ...restProps } = props;
 
-  const partnerLogoClass = useClassNamePrefix('UNSTABLE_PartnerLogo');
+  const partnerLogoClass = useClassNamePrefix('PartnerLogo');
   const partnerLogoSizeClass = `${partnerLogoClass}--${size}`;
   const partnerLogoSafeAreaClass = `${partnerLogoClass}--safeArea`;
   const classProps = classNames(partnerLogoClass, {

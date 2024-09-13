@@ -8,11 +8,11 @@ import FooterLinkFactory from '../../../src/components/Footer/demo/FooterLinkFac
 import { Grid } from '../../../src/components/Grid';
 import { Icon } from '../../../src/components/Icon';
 import { Link } from '../../../src/components/Link';
+import { ProductLogo } from '../../../src/components/ProductLogo';
+import { defaultSvgLogo } from '../../../src/components/ProductLogo/demo/ProductLogoDefault';
 import { Select } from '../../../src/components/Select';
 import { Stack } from '../../../src/components/Stack';
 import { Text } from '../../../src/components/Text';
-import { UNSTABLE_ProductLogo } from '../../../src/components/UNSTABLE_ProductLogo';
-import { defaultSvgLogo } from '../../../src/components/UNSTABLE_ProductLogo/demo/ProductLogoDefault';
 import { VisuallyHidden } from '../../../src/components/VisuallyHidden';
 import { GridColumns } from '../../../src/types';
 
@@ -334,7 +334,7 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
           {showProductLogo && (
             <div className={`text-desktop-${getElementPosition('productLogo')}`}>
               <Link href="https://www.example.com">
-                <UNSTABLE_ProductLogo>{defaultSvgLogo}</UNSTABLE_ProductLogo>
+                <ProductLogo>{defaultSvgLogo}</ProductLogo>
               </Link>
             </div>
           )}

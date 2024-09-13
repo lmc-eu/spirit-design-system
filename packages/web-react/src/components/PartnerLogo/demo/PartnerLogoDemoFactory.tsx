@@ -1,7 +1,7 @@
 import React from 'react';
 import { Sizes } from '../../../constants';
 import { SpiritPartnerLogoProps } from '../../../types/partnerLogo';
-import UNSTABLE_PartnerLogo from '../UNSTABLE_PartnerLogo';
+import PartnerLogo from '../PartnerLogo';
 
 const logo = (
   <svg width="108" height="40" viewBox="0 0 108 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,9 +94,9 @@ const PartnerLogoDemoFactory = ({ ...props }: SpiritPartnerLogoProps) => {
               padding: '48px',
             }}
           >
-            <UNSTABLE_PartnerLogo size={size} {...props}>
+            <PartnerLogo size={size} {...props}>
               {logo}
-            </UNSTABLE_PartnerLogo>
+            </PartnerLogo>
           </div>
         </div>
       ))}
