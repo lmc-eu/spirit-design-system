@@ -7,15 +7,15 @@ describe('usePartnerLogoStyleProps', () => {
     const props = {};
     const { result } = renderHook(() => usePartnerLogoStyleProps(props));
 
-    expect(result.current.classProps).toBe('UNSTABLE_PartnerLogo');
+    expect(result.current.classProps).toBe('PartnerLogo');
   });
 
   describe('hasSafeArea prop', () => {
     const testCases = [
-      { hasSafeArea: false, expectedClassName: 'UNSTABLE_PartnerLogo', description: 'should not' },
+      { hasSafeArea: false, expectedClassName: 'PartnerLogo', description: 'should not' },
       {
         hasSafeArea: true,
-        expectedClassName: 'UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--safeArea',
+        expectedClassName: 'PartnerLogo PartnerLogo--safeArea',
         description: 'should',
       },
     ];
@@ -38,7 +38,7 @@ describe('usePartnerLogoStyleProps', () => {
     const { result } = renderHook(() => usePartnerLogoStyleProps(props));
 
     it('should return %s size PartnerLogo', () => {
-      expect(result.current.classProps).toBe(`UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--${size}`);
+      expect(result.current.classProps).toBe(`PartnerLogo PartnerLogo--${size}`);
     });
 
     it('should not return size prop', () => {
