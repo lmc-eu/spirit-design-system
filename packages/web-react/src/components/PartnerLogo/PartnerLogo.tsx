@@ -12,7 +12,7 @@ const defaultProps: Partial<SpiritPartnerLogoProps> = {
   hasSafeArea: true,
 };
 
-const UNSTABLE_PartnerLogo = (props: SpiritPartnerLogoProps) => {
+const PartnerLogo = (props: SpiritPartnerLogoProps) => {
   const propsWithDefaults = { ...defaultProps, ...props };
   const { children, ...restProps } = propsWithDefaults;
 
@@ -26,4 +26,4 @@ const UNSTABLE_PartnerLogo = (props: SpiritPartnerLogoProps) => {
   );
 };
 
-export default UNSTABLE_PartnerLogo;
+export default PartnerLogo;
