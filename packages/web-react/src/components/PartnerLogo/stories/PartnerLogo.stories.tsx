@@ -2,12 +2,12 @@ import { Markdown } from '@storybook/blocks';
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Sizes } from '../../../constants';
+import PartnerLogo from '../PartnerLogo';
 import ReadMe from '../README.md';
-import UNSTABLE_PartnerLogo from '../UNSTABLE_PartnerLogo';
 
-const meta: Meta<typeof UNSTABLE_PartnerLogo> = {
-  title: 'Experimental/UNSTABLE_PartnerLogo',
-  component: UNSTABLE_PartnerLogo,
+const meta: Meta<typeof PartnerLogo> = {
+  title: 'Components/PartnerLogo',
+  component: PartnerLogo,
   parameters: {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
@@ -107,8 +107,8 @@ const meta: Meta<typeof UNSTABLE_PartnerLogo> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof UNSTABLE_PartnerLogo>;
+type Story = StoryObj<typeof PartnerLogo>;
 
 export const Playground: Story = {
-  name: 'UNSTABLE_PartnerLogo',
+  name: 'PartnerLogo',
 };
