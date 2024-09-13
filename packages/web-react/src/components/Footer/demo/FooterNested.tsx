@@ -4,10 +4,10 @@ import { Divider } from '../../Divider';
 import { Flex } from '../../Flex';
 import { Grid } from '../../Grid';
 import { Link } from '../../Link';
+import { ProductLogo } from '../../ProductLogo';
+import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Stack } from '../../Stack';
 import { Text } from '../../Text';
-import { UNSTABLE_ProductLogo } from '../../UNSTABLE_ProductLogo';
-import { defaultSvgLogo } from '../../UNSTABLE_ProductLogo/demo/ProductLogoDefault';
 import Footer from '../Footer';
 import FooterLinkFactory from './FooterLinkFactory';
 
@@ -108,7 +108,7 @@ const FooterNested = () => {
         {/* Product logo */}
         <div className="text-center">
           <Link href="https://www.example.com">
-            <UNSTABLE_ProductLogo>{defaultSvgLogo}</UNSTABLE_ProductLogo>
+            <ProductLogo>{defaultSvgLogo}</ProductLogo>
           </Link>
         </div>
 
