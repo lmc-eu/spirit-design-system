@@ -59,7 +59,7 @@
     "@almacareer/remark-config": "0.1.0",
     "@babel/core": "7.25.2",
     "@babel/preset-react": "7.24.7",
-    "@commitlint/cli": "17.8.1",
+    "@commitlint/cli": "19.5.0",
     "@lmc-eu/commitlint-config": "2.0.3",
     "@lmc-eu/conventional-changelog-lmc-github": "3.0.3",
     "@lmc-eu/eslint-config-react": "2.0.5",
