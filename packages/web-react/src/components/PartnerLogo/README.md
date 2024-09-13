@@ -1,16 +1,13 @@
-# UNSTABLE PartnerLogo
-
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
+# PartnerLogo
 
 PartnerLogo is a component designed to display the partner's logo (e.g. advertiser, business partner, etc.).
 
 ```jsx
-import { UNSTABLE_PartnerLogo } from '@lmc-eu/spirit-web-react';
+import { PartnerLogo } from '@lmc-eu/spirit-web-react';
 
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
+<PartnerLogo aria-label="Logo of the partner">
   <!-- Logo go here -->
-</UNSTABLE_PartnerLogo>
+</PartnerLogo>
 ```
 
 ## Sizes
@@ -18,15 +15,15 @@ import { UNSTABLE_PartnerLogo } from '@lmc-eu/spirit-web-react';
 The PartnerLogo component is available in [sizes][dictionary-size].
 
 ```jsx
-<UNSTABLE_PartnerLogo size="small" aria-label="Logo of the partner">
+<PartnerLogo size="small" aria-label="Logo of the partner">
   <!-- Logo go here -->
-</UNSTABLE_PartnerLogo>
-<UNSTABLE_PartnerLogo size="medium" aria-label="Logo of the partner">
+</PartnerLogo>
+<PartnerLogo size="medium" aria-label="Logo of the partner">
   <!-- Logo go here -->
-</UNSTABLE_PartnerLogo>
-<UNSTABLE_PartnerLogo size="large" aria-label="Logo of the partner">
+</PartnerLogo>
+<PartnerLogo size="large" aria-label="Logo of the partner">
   <!-- Logo go here -->
-</UNSTABLE_PartnerLogo>
+</PartnerLogo>
 ```
 
 ## Disabled safe area
@@ -34,9 +31,9 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeArea` prop set to `false` to disable safe area around logo.
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner" hasSafeArea={false}>
+<PartnerLogo aria-label="Logo of the partner" hasSafeArea={false}>
   <!-- Logo go here -->
-</UNSTABLE_PartnerLogo>
+</PartnerLogo>
 ```
 
 ## Content
@@ -46,9 +43,9 @@ The content of the PartnerLogo component can be an image or svg.
 ### Image
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
+<PartnerLogo aria-label="Logo of the partner">
   <img src="path-to-logo" alt="Partner Logo" aria-hidden="true" />
-</UNSTABLE_PartnerLogo>
+</PartnerLogo>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
@@ -58,11 +55,11 @@ attribute is set on the container.
 ### SVG
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
+<PartnerLogo aria-label="Logo of the partner">
   <svg width="300" height="130">
     <rect width="200" height="100" x="10" y="10" rx="20" ry="20" fill="#fff" />
   </svg>
-</UNSTABLE_PartnerLogo>
+</PartnerLogo>
 ```
 
 ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
