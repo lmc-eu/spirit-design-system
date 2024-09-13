@@ -1,12 +1,9 @@
-# UNSTABLE PartnerLogo
-
-> ⚠️ This component is UNSTABLE. It may significantly change at any point in the future.
-> Please use it with caution.
+# PartnerLogo
 
 PartnerLogo is a component designed to display the partner's logo (e.g. advertiser, business partner, etc.).
 
 ```html
-<div class="UNSTABLE_PartnerLogo">
+<div class="PartnerLogo">
   <!-- Logo goes here -->
 </div>
 ```
@@ -14,26 +11,26 @@ PartnerLogo is a component designed to display the partner's logo (e.g. advertis
 ## Sizes
 
 The PartnerLogo component is available in [sizes][dictionary-size].
-Use the `UNSTABLE_PartnerLogo--<size>` modifier class to change the size of the PartnerLogo component.
+Use the `PartnerLogo--<size>` modifier class to change the size of the PartnerLogo component.
 
 ```html
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--small">
+<div class="PartnerLogo PartnerLogo--small">
   <!-- Logo goes here -->
 </div>
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--medium">
+<div class="PartnerLogo PartnerLogo--medium">
   <!-- Logo goes here -->
 </div>
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--large">
+<div class="PartnerLogo PartnerLogo--large">
   <!-- Logo goes here -->
 </div>
 ```
 
 ## Enable Safe Area
 
-The PartnerLogo component can be displayed with the safe area (padding). Use `UNSTABLE_PartnerLogo--safeArea` modifier to enable safe area around logo.
+The PartnerLogo component can be displayed with the safe area (padding). Use `PartnerLogo--safeArea` modifier to enable safe area around logo.
 
 ```html
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--medium UNSTABLE_PartnerLogo--safeArea">
+<div class="PartnerLogo PartnerLogo--medium PartnerLogo--safeArea">
   <!-- Logo goes here -->
 </div>
 ```
@@ -45,7 +42,7 @@ The content of the PartnerLogo component can be an image or svg.
 ### Image
 
 ```html
-<div class="UNSTABLE_PartnerLogo">
+<div class="PartnerLogo">
   <img src="path-to-logo" alt="Partner Logo" />
 </div>
 ```
@@ -56,7 +53,7 @@ should be present.
 ### SVG
 
 ```html
-<div class="UNSTABLE_PartnerLogo">
+<div class="PartnerLogo">
   <svg width="300" height="130">
     <title>Partner Logo</title>
     <rect width="200" height="100" x="10" y="10" rx="20" ry="20" fill="#fff" />
@@ -67,11 +64,11 @@ should be present.
 ## Full Example
 
 ```html
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--medium">
+<div class="PartnerLogo PartnerLogo--medium">
   <img src="path-to-logo" alt="Partner Logo" />
 </div>
 
-<div class="UNSTABLE_PartnerLogo UNSTABLE_PartnerLogo--large">
+<div class="PartnerLogo PartnerLogo--large">
   <svg width="300" height="130">
     <title>Partner Logo</title>
     <rect width="200" height="100" x="10" y="10" rx="20" ry="20" fill="#fff" />
