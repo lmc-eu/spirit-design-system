@@ -2,7 +2,7 @@
 @use '@tokens' as tokens;
 @use '../../tools/dictionaries';
 
-.UNSTABLE_PartnerLogo {
+.PartnerLogo {
     --#{tokens.$css-variable-prefix}partner-logo-padding: 0;
 
     display: inline-block;
@@ -12,14 +12,14 @@
     background: theme.$background-color;
 }
 
-.UNSTABLE_PartnerLogo > img,
-.UNSTABLE_PartnerLogo > svg {
+.PartnerLogo > img,
+.PartnerLogo > svg {
     width: fit-content;
     height: var(--#{tokens.$css-variable-prefix}partner-logo-image-height);
 }
 
-@include dictionaries.generate-sizes($class-name: 'UNSTABLE_PartnerLogo', $sizes: theme.$sizes);
+@include dictionaries.generate-sizes($class-name: 'PartnerLogo', $sizes: theme.$sizes);
 
-.UNSTABLE_PartnerLogo--safeArea {
+.PartnerLogo--safeArea {
     padding: var(--#{tokens.$css-variable-prefix}partner-logo-padding);
 }
