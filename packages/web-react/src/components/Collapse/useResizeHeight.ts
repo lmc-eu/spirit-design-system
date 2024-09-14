@@ -1,13 +1,19 @@
-import useResizeObserver from '@react-hook/resize-observer';
 import { RefObject, useState } from 'react';
+import { useResizeObserver } from 'usehooks-ts';
+
+type Size = {
+  height: number | undefined;
+};
 
 export const useResizeHeight = (ref: RefObject<HTMLElement>): string => {
   const [height, setHeight] = useState<string>('0px');
 
-  useResizeObserver(ref, (entry: ResizeObserverEntry) => {
-    const currentHeight = entry.contentRect.height;
+  const onResize = (size: Size) => {
+    const currentHeight = size.height;
     setHeight(`${currentHeight}px`);
-  });
+  };
+
+  useResizeObserver({ ref, onResize });
 
   return height;
 };
