@@ -16,7 +16,7 @@
     border: var(--slider-thumb-border-width, #{theme.$thumb-border-width}) theme.$thumb-border-style
         var(--slider-thumb-border-color, #{theme.$thumb-border-color});
     border-radius: theme.$thumb-border-radius;
-    background: theme.$thumb-background-color
+    background: var(--slider-thumb-background-color, #{theme.$thumb-background-color})
         var(--slider-thumb-background-image, #{svg.escape(theme.$thumb-background-image)}) no-repeat center /
         theme.$thumb-background-size;
     box-shadow: var(--slider-thumb-box-shadow, #{theme.$thumb-box-shadow});
@@ -29,5 +29,5 @@
 }
 
 @mixin thumb-focus() {
-    box-shadow: theme.$thumb-box-shadow-focus;
+    box-shadow: theme.$thumb-box-shadow-state-focus;
 }
