@@ -11,7 +11,6 @@ const IGNORED_TESTS: string[] = [
   'FileUploader',
   'Header',
   'Icon',
-  'Item',
   'Spinner',
   'Stack',
   'Toast',
