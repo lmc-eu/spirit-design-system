@@ -13,7 +13,6 @@ const IGNORED_TESTS: string[] = [
   'Spinner',
   'Stack',
   'Toast',
-  'UNSTABLE_Slider',
   'UNSTABLE_Toggle',
   'UNSTABLE_Truncate',
 ];
