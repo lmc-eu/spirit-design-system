@@ -3,6 +3,7 @@ import UNSTABLE_ProductLogo from '../UNSTABLE_ProductLogo';
 
 export const invertedSvgLogo = (
   <svg width="178" height="44" viewBox="0 0 178 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>JobBoard logo</title>
     <g clipPath="url(#clip0_19404_2967)">
       <path
         fillRule="evenodd"
@@ -55,10 +56,6 @@ export const invertedSvgLogo = (
   </svg>
 );
 
-const ProductLogoDefault = () => (
-  <UNSTABLE_ProductLogo isInverted aria-label="Logo of the JobBoard">
-    {invertedSvgLogo}
-  </UNSTABLE_ProductLogo>
-);
+const ProductLogoDefault = () => <UNSTABLE_ProductLogo isInverted>{invertedSvgLogo}</UNSTABLE_ProductLogo>;
 
 export default ProductLogoDefault;
