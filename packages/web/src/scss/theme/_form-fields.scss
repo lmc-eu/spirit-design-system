@@ -70,7 +70,8 @@ $validation-states: (
 );
 
 // Item variant
-$item-gap: global-tokens.$space-500;
+$item-padding-x: global-tokens.$space-700;
+$item-padding-y: global-tokens.$space-500;
 $item-border-radius: global-tokens.$radius-200;
 $item-background-color-default: var(--#{globals.$prefix}color-background-interactive-default);
 $item-background-color-hover: var(--#{globals.$prefix}color-background-interactive-hover);
