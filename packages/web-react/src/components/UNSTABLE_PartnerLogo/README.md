@@ -8,8 +8,8 @@ PartnerLogo is a component designed to display the partner's logo (e.g. advertis
 ```jsx
 import { UNSTABLE_PartnerLogo } from '@lmc-eu/spirit-web-react';
 
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
-  <!-- Logo go here -->
+<UNSTABLE_PartnerLogo>
+  <!-- Logo goes here -->
 </UNSTABLE_PartnerLogo>
 ```
 
@@ -18,14 +18,14 @@ import { UNSTABLE_PartnerLogo } from '@lmc-eu/spirit-web-react';
 The PartnerLogo component is available in [sizes][dictionary-size].
 
 ```jsx
-<UNSTABLE_PartnerLogo size="small" aria-label="Logo of the partner">
-  <!-- Logo go here -->
+<UNSTABLE_PartnerLogo size="small">
+  <!-- Logo goes here -->
 </UNSTABLE_PartnerLogo>
-<UNSTABLE_PartnerLogo size="medium" aria-label="Logo of the partner">
-  <!-- Logo go here -->
+<UNSTABLE_PartnerLogo size="medium">
+  <!-- Logo goes here -->
 </UNSTABLE_PartnerLogo>
-<UNSTABLE_PartnerLogo size="large" aria-label="Logo of the partner">
-  <!-- Logo go here -->
+<UNSTABLE_PartnerLogo size="large">
+  <!-- Logo goes here -->
 </UNSTABLE_PartnerLogo>
 ```
 
@@ -34,8 +34,8 @@ The PartnerLogo component is available in [sizes][dictionary-size].
 The PartnerLogo component can be displayed without the safe area (padding). Use `hasSafeAreaDisabled` prop to disable safe area around logo.
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner" hasSafeAreaDisabled>
-  <!-- Logo go here -->
+<UNSTABLE_PartnerLogo hasSafeAreaDisabled>
+  <!-- Logo goes here -->
 </UNSTABLE_PartnerLogo>
 ```
 
@@ -46,26 +46,24 @@ The content of the PartnerLogo component can be an image or svg.
 ### Image
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
-  <img src="path-to-logo" alt="Partner Logo" aria-hidden="true" />
+<UNSTABLE_PartnerLogo>
+  <img src="path-to-logo" alt="Partner Logo" />
 </UNSTABLE_PartnerLogo>
 ```
 
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
-The image should have an `alt` attribute set and can be aria-hidden, because the `aria-label`
-attribute is set on the container.
+👉 To make the logo accessible, the image should have an `alt` attribute, or, if using inline SVG, the `<title>` element
+should be present.
 
 ### SVG
 
 ```jsx
-<UNSTABLE_PartnerLogo aria-label="Logo of the partner">
+<UNSTABLE_PartnerLogo>
   <svg width="300" height="130">
+    <title>Partner Logo</title>
     <rect width="200" height="100" x="10" y="10" rx="20" ry="20" fill="#fff" />
   </svg>
 </UNSTABLE_PartnerLogo>
 ```
-
-ℹ️ Don't forget to add the `aria-label` attribute for accessible title.
 
 ## API
 
