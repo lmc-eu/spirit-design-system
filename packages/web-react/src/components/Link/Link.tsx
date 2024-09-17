@@ -9,7 +9,7 @@ import { useLinkStyleProps } from './useLinkStyleProps';
 const defaultProps: Partial<SpiritLinkProps> = {
   elementType: 'a',
   color: 'primary',
-  underline: 'hover',
+  underlined: 'hover',
 };
 
 /* We need an exception for components exported with forwardRef */
