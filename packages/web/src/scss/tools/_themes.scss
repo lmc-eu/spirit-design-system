@@ -54,13 +54,7 @@
 
     // Slider
     --#{globals.$prefix}slider-thumb-background-image-url: #{svg.escape(
-            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, default)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
-        )};
-    --#{globals.$prefix}slider-thumb-hover-background-image-url: #{svg.escape(
-            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, hover)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
-        )};
-    --#{globals.$prefix}slider-thumb-active-background-image-url: #{svg.escape(
-            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, border, interactive, selected)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
+            url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, neutral, content-basic)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
         )};
     --#{globals.$prefix}slider-thumb-disabled-background-image-url: #{svg.escape(
             url('data:image/svg+xml,<svg width="8" height="16" viewBox="0 0 8 16" fill="#{map.get($themed-tokens, colors, disabled, foreground)}" xmlns="http://www.w3.org/2000/svg"><rect x="0" width="8" height="1" rx="0.5" /><rect x="0" y="5" width="8" height="1" rx="0.5" /><rect x="0" y="10" width="8" height="1" rx="0.5" /><rect x="0" y="15" width="8" height="1" rx="0.5" /></svg>')
