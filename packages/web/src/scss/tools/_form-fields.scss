@@ -205,8 +205,9 @@
 }
 
 @mixin item() {
+    align-items: center;
     width: 100%;
-    padding: form-fields-theme.$item-gap;
+    padding: form-fields-theme.$item-padding-y form-fields-theme.$item-padding-x;
     margin-block: 0;
     border-radius: form-fields-theme.$item-border-radius;
     background-color: form-fields-theme.$item-background-color-default;
@@ -232,6 +233,8 @@
 
 @mixin item-label() {
     @include typography.generate(form-fields-theme.$item-label-typography);
+
+    color: form-fields-theme.$label-color-default;
 }
 
 @mixin helper-text() {
