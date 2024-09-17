@@ -10,7 +10,6 @@ const IGNORED_TESTS: string[] = [
   'Dropdown',
   'Header',
   'Icon',
-  'Item',
   'Spinner',
   'Stack',
   'Toast',
