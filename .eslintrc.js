@@ -1,4 +1,8 @@
-const { prettierConfig } = require('./.prettierrc');
+let prettierConfig;
+
+(async () => {
+	prettierConfig = (await import('prettier-config-spirit')).prettierConfig;
+})();
 
 module.exports = {
   root: true,

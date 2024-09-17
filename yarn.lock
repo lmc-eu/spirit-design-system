@@ -26524,7 +26524,6 @@ __metadata:
     "@lmc-eu/commitlint-config": "npm:2.0.3"
     "@lmc-eu/conventional-changelog-lmc-github": "npm:3.0.3"
     "@lmc-eu/eslint-config-react": "npm:2.0.5"
-    "@lmc-eu/prettier-config": "npm:2.0.1"
     "@omlet/cli": "npm:1.10.4"
     "@playwright/test": "npm:1.47.0"
     "@rollup/plugin-babel": "npm:6.0.4"

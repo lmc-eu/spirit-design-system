@@ -7,6 +7,8 @@ packages/**/cjs/*
 packages/**/umd/*
 static/assets/icons/react
 
+**/cache
+
 # Ignoring html files because Prettier prefers closing slash on the end of the tag
 # @See: https://github.com/lmc-eu/spirit-design-system/pull/77/files#r764183332
 **/*.html
@@ -43,6 +45,7 @@ packages/codemods/src/transforms/**/*.output.tsx
 # @see: https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .yarn/plugins
 .yarn/releases
+.yarn/*.gz
 
 # Lock Files
 *.lock
