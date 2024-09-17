@@ -1,5 +1,5 @@
 @use '@tokens' as tokens;
 
-$gap: tokens.$space-400;
-$icon-color-default: tokens.$action-selected-default;
-$icon-color-disabled: tokens.$action-selected-disabled;
+$gap: tokens.$space-500;
+$icon-color-state-default: tokens.$selected-content-basic;
+$icon-color-state-disabled: tokens.$disabled-content;
