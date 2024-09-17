@@ -1,3 +1,5 @@
+// 1. Make the icon span two rows to spread over the whole Item vertically and make it centered.
+
 @use 'sass:map';
 @use 'theme';
 @use '../../settings/cursors';
@@ -31,7 +33,7 @@
 }
 
 .Item__label {
-    @include form-fields.inline-field-label();
+    @include form-fields.item-label();
 
     grid-column: 2;
 }
@@ -46,8 +48,8 @@
 
 .Item__icon {
     display: flex;
-    grid-row: 1;
-    color: theme.$icon-color-default;
+    grid-row: span 2; // 1.
+    color: theme.$icon-color-state-default;
 }
 
 .Item__icon--start {
@@ -58,10 +60,6 @@
 .Item__icon--end {
     grid-column: 3;
     margin-inline-start: theme.$gap;
-}
-
-.Item--selected .Item__label {
-    @include form-fields.item-label-checked();
 }
 
 .Item--disabled {
@@ -80,11 +78,6 @@
     @include form-fields.helper-text-disabled();
 }
 
-.Item:not(.Item--disabled):hover .Item__helperText,
-.Item:not(.Item--disabled):active .Item__helperText {
-    color: inherit;
-}
-
 .Item--disabled .Item__icon {
-    color: theme.$icon-color-disabled;
+    color: theme.$icon-color-state-disabled;
 }
