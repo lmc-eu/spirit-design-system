@@ -3,3 +3,5 @@ $my-var: (
     background: #fff,
     border: 1px solid #000,
 ) !default;
+
+$gradient-basic-overlay: linear-gradient(var(--gradient-angle, 0deg), #fff 0%, #fff0 100%) !default;

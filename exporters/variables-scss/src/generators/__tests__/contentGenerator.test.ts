@@ -2,7 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateFileContent, addDisclaimer, filterTokensByTypeAndGroup } from '../contentGenerator';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import {
+  exampleMockedGroups,
+  exampleMockedTokens,
+  exampleTypographyMockedTokens,
+} from '../../../tests/fixtures/mockedExampleTokens';
 import { FileData } from '../../config/fileConfig';
 
 const mockedExpectedResult = fs.readFileSync(
@@ -56,11 +60,30 @@ describe('contentGenerator', () => {
       },
     ];
 
+    const dataTypographyProviderItems = {
+      type: TokenType.typography,
+      group: 'Heading',
+      tokenIdentifier: 'typographyHeadingRef1',
+    };
+
     it.each(dataProviderItems)('should filter $description', ({ type, group, tokenIdentifier }) => {
       const tokens = Array.from(exampleMockedTokens.values());
       const expectedTokens = [exampleMockedTokens.get(tokenIdentifier) as Token];
 
       expect(filterTokensByTypeAndGroup(tokens, type, group)).toStrictEqual(expectedTokens);
+    });
+
+    it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "-Underline"`, () => {
+      const tokens = Array.from(exampleTypographyMockedTokens.values());
+      const expectedTokens = [exampleTypographyMockedTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
+
+      const filteredTokens = filterTokensByTypeAndGroup(
+        tokens,
+        dataTypographyProviderItems.type,
+        dataTypographyProviderItems.group,
+      );
+
+      expect(filteredTokens).toStrictEqual(expectedTokens);
     });
   });
 });

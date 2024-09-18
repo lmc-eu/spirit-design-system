@@ -18,6 +18,16 @@ export const generateFiles = (
   });
 };
 
+export const generateIndexFile = (files: { fileName: string; content: string }[]) => {
+  return `${files
+    .map((file) => {
+      const baseName = file.fileName.replace(/^_/, '').replace(/\.scss$/, '');
+
+      return `@forward '${baseName}';`;
+    })
+    .join('\n')}\n`;
+};
+
 export const generateOutputFilesByThemes = async (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
@@ -29,9 +39,11 @@ export const generateOutputFilesByThemes = async (
 
   // Generate global files for non-themed tokens
   const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData);
+  const globalIndexFile = generateIndexFile(globalFiles);
   outputFiles.push(
     ...globalFiles.map((file) => ({ path: './globals/', fileName: file.fileName, content: file.content })),
   );
+  outputFiles.push({ path: './globals/', fileName: 'index.scss', content: globalIndexFile });
 
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
@@ -45,6 +57,7 @@ export const generateOutputFilesByThemes = async (
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
     const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData);
+    const themeIndexFile = generateIndexFile(themeFiles);
     outputFiles.push(
       ...themeFiles.map((file) => ({
         path: `./themes/${theme.name}/`,
@@ -52,6 +65,7 @@ export const generateOutputFilesByThemes = async (
         content: file.content,
       })),
     );
+    outputFiles.push({ path: `./themes/${theme.name}/`, fileName: 'index.scss', content: themeIndexFile });
   }
 
   return outputFiles;

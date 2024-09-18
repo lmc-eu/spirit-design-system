@@ -36,6 +36,25 @@ export const nonThemedFilesData: FileData[] = [
     hasParentPrefix: false,
     sortByNumValue: true,
   },
+  {
+    fileName: '_shadows.scss',
+    tokenTypes: [TokenType.shadow],
+    groupNames: [''],
+    hasParentPrefix: false,
+  },
+  {
+    fileName: '_gradients.scss',
+    tokenTypes: [TokenType.gradient],
+    groupNames: [''],
+    hasParentPrefix: true,
+  },
+  {
+    fileName: '_typography.scss',
+    tokenTypes: [TokenType.typography],
+    groupNames: [''],
+    withCssObject: true,
+    hasParentPrefix: false,
+  },
 ];
 
 export const themedFilesData: FileData[] = [
