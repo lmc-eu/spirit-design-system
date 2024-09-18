@@ -1,6 +1,21 @@
-import { ColorToken, DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import {
+  ColorToken,
+  DimensionToken,
+  GradientToken,
+  ShadowToken,
+  StringToken,
+  Token,
+  TokenGroup,
+  TokenType,
+} from '@supernovaio/sdk-exporters';
 import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
-import { addEmptyLineBetweenTokenGroups, formatTokenName, sortTokens, tokenVariableName } from '../helpers/tokenHelper';
+import {
+  addAngleVarToGradient,
+  addEmptyLineBetweenTokenGroups,
+  formatTokenName,
+  sortTokens,
+  tokenVariableName,
+} from '../helpers/tokenHelper';
 import { handleSpecialCase } from '../helpers/specialCaseHelper';
 import { normalizeColor } from '../helpers/colorHelper';
 
@@ -10,7 +25,13 @@ export const tokenToCSSByType = (
   tokenGroups: Array<TokenGroup>,
   withParent: boolean,
 ): string | null => {
-  if (token.tokenType === TokenType.dimension) {
+  const hasTokenType = (type: TokenType) => {
+    const { tokenType } = token;
+
+    return tokenType === type;
+  };
+
+  if (hasTokenType(TokenType.dimension)) {
     const dimensionToken = token as DimensionToken;
     const name = tokenVariableName(dimensionToken, tokenGroups, withParent);
     let value = dimensionToken.value?.measure;
@@ -20,7 +41,7 @@ export const tokenToCSSByType = (
     return formatTokenName(name, value, unit);
   }
 
-  if (token.tokenType === TokenType.string) {
+  if (hasTokenType(TokenType.string)) {
     const stringToken = token as StringToken;
     const name = tokenVariableName(stringToken, tokenGroups, withParent);
     let value = stringToken.value.text;
@@ -29,7 +50,7 @@ export const tokenToCSSByType = (
     return formatTokenName(name, value);
   }
 
-  if (token.tokenType === TokenType.color) {
+  if (hasTokenType(TokenType.color)) {
     const colorToken = token as ColorToken;
     const name = tokenVariableName(colorToken, tokenGroups, withParent);
     let value = CSSHelper.colorTokenValueToCSS(colorToken.value, mappedTokens, {
@@ -42,6 +63,35 @@ export const tokenToCSSByType = (
     value = handleSpecialCase(name, value);
 
     return formatTokenName(name, value);
+  }
+
+  if (hasTokenType(TokenType.shadow)) {
+    const shadowToken = token as ShadowToken;
+    const name = tokenVariableName(token, tokenGroups, withParent);
+    const { value } = shadowToken;
+    const color = CSSHelper.shadowTokenValueToCSS(value, mappedTokens, {
+      allowReferences: true,
+      decimals: 3,
+      colorFormat: ColorFormat.hashHex8,
+      tokenToVariableRef: () => '',
+    });
+
+    return formatTokenName(name, color).replace(/0px/g, '0');
+  }
+
+  if (hasTokenType(TokenType.gradient)) {
+    const gradientToken = token as GradientToken;
+    const name = tokenVariableName(token, tokenGroups, withParent);
+    const { value } = gradientToken;
+    let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens, {
+      allowReferences: true,
+      colorFormat: ColorFormat.hashHex8,
+      decimals: 3,
+      tokenToVariableRef: () => '',
+    });
+    gradient = addAngleVarToGradient(gradient);
+
+    return formatTokenName(name, gradient);
   }
 
   return null;

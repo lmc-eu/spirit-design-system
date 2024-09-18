@@ -73,7 +73,7 @@ makefile
 CODEOWNERS
 
 # variable-scss exporter example mock test files
-exporters/variables-scss/src/**/*.scss
+exporters/variables-scss/tests/fixtures/*.scss
 
 # variable-scss exporter generated cjs
 exporters/variables-scss/generated/**/*.cjs

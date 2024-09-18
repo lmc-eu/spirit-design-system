@@ -11,7 +11,13 @@ export const addDisclaimer = (content: string): string => {
 };
 
 export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, group: string) => {
-  return tokens.filter((token) => token.tokenType === type && token.origin?.name?.includes(group));
+  return tokens.filter((token) => {
+    const hasMatchingType = token.tokenType === type;
+    const isInGroup = token.origin?.name?.includes(group);
+    const hasValidTypography = !(token.tokenType === TokenType.typography && token.name.includes('-Underline'));
+
+    return hasMatchingType && isInGroup && hasValidTypography;
+  });
 };
 
 export const generateFileContent = (
@@ -30,15 +36,17 @@ export const generateFileContent = (
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
 
       // Generate css tokens
-      cssTokens += generateCssFromTokens(
-        filteredTokens,
-        mappedTokens,
-        tokenGroups,
-        group,
-        hasParentPrefix,
-        sortByNumValue,
-      );
-      cssTokens += '\n\n';
+      if (tokenType !== TokenType.typography) {
+        cssTokens += generateCssFromTokens(
+          filteredTokens,
+          mappedTokens,
+          tokenGroups,
+          group,
+          hasParentPrefix,
+          sortByNumValue,
+        );
+        cssTokens += '\n\n';
+      }
 
       // Generate css object and merge it with the existing one
       const groupCssObject = generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);

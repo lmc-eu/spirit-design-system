@@ -1,4 +1,4 @@
-const IDENTATION = '    ';
+const INDENTATION = '    ';
 
 export const removeExtraBlankLines = (css: string): string => {
   return css.replace(/\n{3,}/g, '\n\n');
@@ -14,16 +14,18 @@ export const formatCSS = (css: string): string => {
 
   const lines = css.split('\n');
 
-  // TODO: Try to replace this functionality with prettier
   for (const line of lines) {
-    if (line.includes('(')) {
-      formattedCSS += `${IDENTATION.repeat(indentationLevel)}${line}\n`;
+    // Check if both '(' and ')' are on the same line
+    if (line.includes('(') && line.includes(')')) {
+      formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
+    } else if (line.includes('(')) {
+      formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
       indentationLevel += 1;
     } else if (line.includes(')')) {
       indentationLevel -= 1;
-      formattedCSS += `${IDENTATION.repeat(indentationLevel)}${line}\n`;
+      formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
     } else {
-      formattedCSS += `${IDENTATION.repeat(indentationLevel)}${line}\n`;
+      formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
     }
   }
 

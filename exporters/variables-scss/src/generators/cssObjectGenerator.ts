@@ -1,10 +1,11 @@
-import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { tokenVariableName } from '../helpers/tokenHelper';
+import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
+import { formatTypographyName, getBreakpoint } from '../helpers/cssObjectHelper';
+import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toPlural } from '../helpers/stringHelper';
 
 export const COLOR_SUFFIX = '-colors';
 
-export type CssObjectType = { [key: string]: string | object };
+export type CssObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
 /* This function handles cases that are outside the logic of aliases for the remaining tokens.
 A common condition is that for tokens with a numeric part, the non-numeric part is dropped.
@@ -44,36 +45,65 @@ export const getTokenAlias = (token: Token): string => {
   return alias;
 };
 
+const handleTypographyTokens = (tokenNameParts: string[], token: Token, cssObjectRef: CssObjectType): void => {
+  const typographyToken = token as TypographyToken;
+  const reducedNameParts = tokenNameParts.slice(0, 2);
+  const name = formatTypographyName(tokenNameParts).toLowerCase();
+  const breakpoint = getBreakpoint(tokenNameParts).toLowerCase();
+
+  let currentObject = cssObjectRef;
+  reducedNameParts.forEach((part, index) => {
+    const modifiedPart = index === 0 ? `$${name}` : part;
+
+    if (index === reducedNameParts.length - 1) {
+      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'));
+    } else {
+      currentObject[modifiedPart] = currentObject[modifiedPart] || {};
+      currentObject = currentObject[modifiedPart] as CssObjectType;
+    }
+  });
+};
+
+const handleNonTypographyTokens = (
+  tokenNameParts: string[],
+  token: Token,
+  tokenGroups: Array<TokenGroup>,
+  hasParentPrefix: boolean,
+  cssObjectRef: CssObjectType,
+): void => {
+  let currentObject = cssObjectRef;
+
+  tokenNameParts.forEach((part, index) => {
+    const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType) : part;
+
+    if (index === tokenNameParts.length - 1) {
+      const tokenValue = `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
+      const tokenAlias = getTokenAlias(token);
+      currentObject[tokenAlias] = tokenValue;
+    } else {
+      currentObject[modifiedPart] = currentObject[modifiedPart] || {};
+      currentObject = currentObject[modifiedPart] as CssObjectType;
+    }
+  });
+};
+
 export const createObjectStructureFromTokenNameParts = (
   token: Token,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   cssObjectRef: CssObjectType,
 ): CssObjectType => {
-  let currentObject: CssObjectType = cssObjectRef;
-
+  const { tokenType } = token;
   const tokenNameParts = token.origin?.name?.split('/');
 
-  if (tokenNameParts) {
-    tokenNameParts.forEach((part, index) => {
-      let modifiedPart = part;
+  if (!tokenNameParts) {
+    return cssObjectRef;
+  }
 
-      // format first part of the name part as object key
-      if (index === 0) {
-        modifiedPart = normalizeFirstNamePart(part, token.tokenType);
-      }
-      // format the last part of the name part as token alias and assign token value
-      if (index === tokenNameParts.length - 1) {
-        const tokenValue = `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
-        const tokenAlias = getTokenAlias(token);
-
-        currentObject[tokenAlias] = tokenValue;
-      } else {
-        // format the rest of the name parts as object keys
-        currentObject[modifiedPart] = currentObject[modifiedPart] || {};
-        currentObject = currentObject[modifiedPart] as CssObjectType;
-      }
-    });
+  if (tokenType === TokenType.typography) {
+    handleTypographyTokens(tokenNameParts, token, cssObjectRef);
+  } else {
+    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef);
   }
 
   return cssObjectRef;
@@ -86,7 +116,19 @@ export const colorGroupsReducer = (accumulatedColorKeys: { [key: string]: string
   [parseGroupName(currentColorKey)]: currentColorKey,
 });
 
+export const typographyGroupReducer = (
+  accumulatedTypographyKeys: { [key: string]: string },
+  currentTypographyKey: string,
+) => ({
+  ...accumulatedTypographyKeys,
+  [parseGroupName(currentTypographyKey)]: currentTypographyKey,
+});
+
 export const createGlobalColorsObject = (colorKeys: Array<string>) => colorKeys.reduce(colorGroupsReducer, {});
+
+export const createGlobalTypographyObject = (typographyKeys: Array<string>) => {
+  return typographyKeys.reduce(typographyGroupReducer, {});
+};
 
 // TODO: refactor this function to not use cssObject reference
 export const generateCssObjectFromTokens = (
@@ -115,6 +157,18 @@ export const generateCssObjectFromTokens = (
     const colorsObject = createGlobalColorsObject(colorKeys);
 
     return { ...cssObject, $colors: colorsObject };
+  }
+
+  const typographyKeys = Object.keys(cssObject).filter((key) => key.includes('heading') || key.includes('body'));
+
+  if (typographyKeys.length > 0) {
+    const typographyObject = createGlobalTypographyObject(typographyKeys);
+
+    // Typography has multiple groups, which creates multiple '$styles' objects.
+    // After merging the '$styles' objects together, they remain in the middle of the tokens,
+    // so we need to move them to the end of the file using the 'moveToTheEnd' flag,
+    // which will be removed in the final output.
+    return { ...cssObject, $styles: { ...typographyObject, moveToTheEnd: 'true' } };
   }
 
   return cssObject;

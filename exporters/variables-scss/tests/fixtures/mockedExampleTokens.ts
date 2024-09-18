@@ -7,6 +7,7 @@ import {
   Token,
   TokenGroup,
   TokenType,
+  TypographyToken,
   Unit,
 } from '@supernovaio/sdk-exporters';
 import { TokenGroupRemoteModel } from '@supernovaio/sdk-exporters/build/sdk-typescript/src/model/groups/SDKTokenGroup';
@@ -43,6 +44,46 @@ exampleMockedTokens.set('stringRef', {
   },
   value: testString,
 } as StringToken);
+
+export const exampleTypographyMockedTokens = new Map<string, Token>();
+exampleTypographyMockedTokens.set('typographyHeadingRef1', {
+  id: 'typographyRef',
+  name: 'Bold',
+  tokenType: TokenType.typography,
+  parentGroupId: '3',
+  origin: {
+    name: 'Heading/Desktop/XLarge/Bold',
+  },
+  value: {
+    fontSize: { unit: 'Pixels', measure: 64 },
+    lineHeight: { measure: 120 },
+    fontFamily: { text: 'Inter' },
+    fontWeight: { text: '700' },
+  },
+} as TypographyToken);
+exampleTypographyMockedTokens.set('typographyHeadingRef2', {
+  id: 'typographyRef',
+  name: 'Bold-Underline',
+  tokenType: TokenType.typography,
+  parentGroupId: '3',
+  origin: {
+    name: 'Heading/Desktop/XLarge/Bold-Underline',
+  },
+  value: {
+    fontSize: { unit: 'Pixels', measure: 64 },
+    lineHeight: { measure: 120 },
+    fontFamily: { text: 'Inter' },
+    fontWeight: { text: '700' },
+  },
+} as TypographyToken);
+
+export const expectedTypographyValue = `(
+font-family: 'Inter', sans-serif,
+font-size: 64px,
+font-style: italic,
+font-weight: 700,
+line-height: 1.2
+)`;
 
 const groupFunctions = {
   addChild(): void {},
@@ -118,6 +159,25 @@ export const exampleMockedGroups: TokenGroup[] = [
     tokenIds: ['stringRef'],
     subgroupIds: [],
     parentGroupId: 'parent2',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+  {
+    ...groupFunctions,
+    id: '3',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'Typography',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.typography,
+    childrenIds: ['stringRef'],
+    path: [],
+    tokenIds: ['stringRef'],
+    subgroupIds: [],
+    parentGroupId: 'parent3',
     sortOrder: -1,
     createdAt: null,
     updatedAt: null,

@@ -1,6 +1,18 @@
-import { Token, TokenGroup } from '@supernovaio/sdk-exporters';
-import { addEmptyLineBetweenTokenGroups, formatTokenName, sortTokens, tokenVariableName } from '../tokenHelper';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import {
+  addAngleVarToGradient,
+  addEmptyLineBetweenTokenGroups,
+  formatTokenName,
+  sortTokens,
+  tokenVariableName,
+  typographyValue,
+} from '../tokenHelper';
+import {
+  exampleMockedGroups,
+  exampleMockedTokens,
+  exampleTypographyMockedTokens,
+  expectedTypographyValue,
+} from '../../../tests/fixtures/mockedExampleTokens';
 
 const dataProvider = [
   {
@@ -73,6 +85,28 @@ describe('tokenHelper', () => {
       const result = addEmptyLineBetweenTokenGroups(cssTokens);
 
       expect(result).toBe('$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 32px !default;');
+    });
+  });
+
+  describe('addAngleVarToGradient', () => {
+    it('should add angle variable to gradient', () => {
+      const inputString = 'linear-gradient(0deg, #000 0%, #fff 100%)';
+      const expectedOutput = 'linear-gradient(var(--gradient-angle, 0deg), #000 0%, #fff 100%)';
+
+      const result = addAngleVarToGradient(inputString);
+
+      expect(result).toBe(expectedOutput);
+    });
+  });
+
+  describe('typographyValue', () => {
+    it('should return the expected typography value', () => {
+      const mockedToken: TypographyToken = exampleTypographyMockedTokens.get(
+        'typographyHeadingRef1',
+      ) as TypographyToken;
+      const tokenValue = typographyValue(mockedToken.value, true);
+
+      expect(tokenValue).toBe(expectedTypographyValue);
     });
   });
 });
