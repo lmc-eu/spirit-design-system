@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   extends: ['@lmc-eu/commitlint-config'],
   ignores: [
     (commit) => commit.includes('[ci-skip]'),
@@ -34,7 +34,7 @@ module.exports = {
         // Use for anything that does not directly affect packages, ie. updating repo-wide
         'repo',
         // Use for changes in support applications like `demo`
-        'demo'
+        'demo',
       ],
     ],
   },
