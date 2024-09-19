@@ -3,7 +3,8 @@ import { fn } from '@storybook/test';
 import React, { useState } from 'react';
 import { HeaderDialogProps } from '../../../types';
 import { Link } from '../../Link';
-import SpiritLogo from '../demo/SpiritLogo';
+import { ProductLogo } from '../../ProductLogo';
+import JobBoardLogo from '../demo/JobBoardLogo';
 import {
   Header,
   HeaderDesktopActions,
@@ -58,9 +59,11 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
@@ -128,7 +131,7 @@ const HeaderWithHooks = (args: HeaderDialogProps) => {
         <HeaderDialogActions color="secondary" aria-label="Menu">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
+              <HeaderDialogText UNSAFE_className="text-tertiary">Marian</HeaderDialogText>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogLink>Dashboard</HeaderDialogLink>

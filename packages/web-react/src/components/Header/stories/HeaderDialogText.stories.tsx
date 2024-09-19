@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { HeaderDialogTextProps } from '../../../types';
 import { Link } from '../../Link';
-import SpiritLogo from '../demo/SpiritLogo';
+import { ProductLogo } from '../../ProductLogo';
+import JobBoardLogo from '../demo/JobBoardLogo';
 import {
   Header,
   HeaderDesktopActions,
@@ -30,7 +31,7 @@ const meta: Meta<typeof HeaderDialogText> = {
   },
   args: {
     children: 'Marian',
-    UNSAFE_className: 'text-primary-inverted-disabled',
+    UNSAFE_className: 'text-tertiary',
   },
 };
 
@@ -48,9 +49,11 @@ const HeaderWithHooks = (args: HeaderDialogTextProps) => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">

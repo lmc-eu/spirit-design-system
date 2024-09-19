@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { HeaderDialogCloseButtonProps } from '../../../types';
 import { Link } from '../../Link';
-import SpiritLogo from '../demo/SpiritLogo';
+import { ProductLogo } from '../../ProductLogo';
+import JobBoardLogo from '../demo/JobBoardLogo';
 import {
   Header,
   HeaderDesktopActions,
@@ -50,9 +51,11 @@ const HeaderWithHooks = (args: HeaderDialogCloseButtonProps) => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
@@ -114,7 +117,7 @@ const HeaderWithHooks = (args: HeaderDialogCloseButtonProps) => {
         <HeaderDialogActions color="secondary" aria-label="Menu">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
+              <HeaderDialogText UNSAFE_className="text-tertiary">Marian</HeaderDialogText>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogLink>Dashboard</HeaderDialogLink>
