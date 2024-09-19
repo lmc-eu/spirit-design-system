@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../../Button';
 import { Icon } from '../../Icon';
 import { Link } from '../../Link';
+import { ProductLogo } from '../../ProductLogo';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import {
   Header,
@@ -20,9 +21,9 @@ import {
   HeaderNav,
   HeaderNavItem,
 } from '..';
-import SpiritLogo from './SpiritLogo';
+import JobBoardLogo from './JobBoardLogo';
 
-const HeaderInvertedWithActionsAndDialog = () => {
+const HeaderWithActionsAndDialog = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isUserMenuOpen, setUserMenuOpen] = useState(false);
 
@@ -33,9 +34,11 @@ const HeaderInvertedWithActionsAndDialog = () => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example-1" isOpen={isMenuOpen} onOpen={handleMenuOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
@@ -67,7 +70,7 @@ const HeaderInvertedWithActionsAndDialog = () => {
           >
             Marian
           </HeaderButton>
-          <Button color="inverted" isSquare>
+          <Button color="secondary" isSquare>
             <Icon name="search" />
             <VisuallyHidden>Search</VisuallyHidden>
           </Button>
@@ -97,7 +100,7 @@ const HeaderInvertedWithActionsAndDialog = () => {
         <HeaderDialogActions color="secondary" aria-label="Menu">
           <HeaderDialogNav>
             <HeaderDialogNavItem>
-              <HeaderDialogText UNSAFE_className="text-primary-inverted-disabled">Marian</HeaderDialogText>
+              <HeaderDialogText UNSAFE_className="text-tertiary">Marian</HeaderDialogText>
             </HeaderDialogNavItem>
             <HeaderDialogNavItem>
               <HeaderDialogLink>Dashboard</HeaderDialogLink>
@@ -148,4 +151,4 @@ const HeaderInvertedWithActionsAndDialog = () => {
   );
 };
 
-export default HeaderInvertedWithActionsAndDialog;
+export default HeaderWithActionsAndDialog;
