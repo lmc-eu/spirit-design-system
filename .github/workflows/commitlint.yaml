@@ -26,4 +26,4 @@ jobs:
         run: yarn --immutable --inline-builds
 
       - name: Run Commitlint
-        run: npx commitlint --color --verbose --from $(git merge-base origin/main HEAD)
+        run: yarn lint:commit
