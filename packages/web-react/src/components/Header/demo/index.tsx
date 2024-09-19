@@ -8,26 +8,26 @@ import ReactDOM from 'react-dom/client';
 import DocsSection from '../../../../docs/DocsSections';
 import { IconsProvider } from '../../../context';
 import HeaderExperimentalRTL from './HeaderExperimentalRTL';
-import HeaderInvertedWithActions from './HeaderInvertedWithActions';
-import HeaderInvertedWithActionsAndDialog from './HeaderInvertedWithActionsAndDialog';
-import HeaderMinimalInverted from './HeaderMinimalInverted';
-import HeaderSimpleInverted from './HeaderSimpleInverted';
+import HeaderMinimal from './HeaderMinimal';
+import HeaderSimple from './HeaderSimple';
 import HeaderSimpleTransparent from './HeaderSimpleTransparent';
+import HeaderWithActions from './HeaderWithActions';
+import HeaderWithActionsAndDialog from './HeaderWithActionsAndDialog';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <IconsProvider value={icons}>
-      <DocsSection title="Minimal Inverted Header" stackAlignment="stretch">
-        <HeaderMinimalInverted />
+      <DocsSection title="Minimal Header" stackAlignment="stretch">
+        <HeaderMinimal />
       </DocsSection>
-      <DocsSection title="Inverted Header with Actions" stackAlignment="stretch">
-        <HeaderInvertedWithActions />
+      <DocsSection title="Header with Actions" stackAlignment="stretch">
+        <HeaderWithActions />
       </DocsSection>
-      <DocsSection title="Inverted Header with Actions and Header Dialog" stackAlignment="stretch">
-        <HeaderInvertedWithActionsAndDialog />
+      <DocsSection title="Header with Actions and Header Dialog" stackAlignment="stretch">
+        <HeaderWithActionsAndDialog />
       </DocsSection>
-      <DocsSection title="Simple Inverted Header" stackAlignment="stretch">
-        <HeaderSimpleInverted />
+      <DocsSection title="Simple Header" stackAlignment="stretch">
+        <HeaderSimple />
       </DocsSection>
       <DocsSection title="Simple Transparent Header" stackAlignment="stretch">
         <HeaderSimpleTransparent />
