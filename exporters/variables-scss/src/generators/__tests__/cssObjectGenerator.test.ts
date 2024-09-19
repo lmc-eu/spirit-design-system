@@ -27,6 +27,7 @@ describe('cssObjectGenerator', () => {
         mappedTokens,
         tokenGroups,
         true,
+        false,
       );
 
       expect(css).toStrictEqual({
@@ -40,6 +41,7 @@ describe('cssObjectGenerator', () => {
         mappedTokens,
         exampleMockedColorGroups,
         true,
+        false,
       );
 
       expect(css).toStrictEqual({
@@ -68,6 +70,7 @@ describe('cssObjectGenerator', () => {
         tokenGroups,
         true,
         { $grids: { columns: '$grid-columns' } },
+        false,
       );
 
       expect(cssObject).toStrictEqual({
@@ -79,29 +82,29 @@ describe('cssObjectGenerator', () => {
   describe('handleInvariantTokens', () => {
     it('should return token alias for invariant case', () => {
       const token = exampleMockedInvariantTokens.get('radiiRef') as Token;
-      expect(getTokenAlias(token)).toBe('full');
+      expect(getTokenAlias(token, false)).toBe('full');
     });
 
     it('should return token alias for non-invariant case', () => {
       const token = exampleMockedTokens.get('dimensionRef') as Token;
-      expect(getTokenAlias(token)).toBe('desktop');
+      expect(getTokenAlias(token, false)).toBe('desktop');
     });
   });
 
   describe('getTokenAlias', () => {
     it('should return token alias for non-numeric', () => {
       const token = exampleMockedTokens.get('dimensionRef') as Token;
-      expect(getTokenAlias(token)).toBe('desktop');
+      expect(getTokenAlias(token, false)).toBe('desktop');
     });
   });
 
   describe('normalizeFirstNamePart', () => {
     it('should return correct first part name for token type dimension', () => {
-      expect(normalizeFirstNamePart('grid', TokenType.dimension)).toBe('$grids');
+      expect(normalizeFirstNamePart('grid', TokenType.dimension, false)).toBe('$grids');
     });
 
     it('should return correct first part name for token type color', () => {
-      expect(normalizeFirstNamePart('action', TokenType.color)).toBe('$action-colors');
+      expect(normalizeFirstNamePart('action', TokenType.color, false)).toBe('$action-colors');
     });
   });
 
