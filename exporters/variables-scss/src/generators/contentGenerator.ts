@@ -2,7 +2,7 @@ import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateCssFromTokens } from './cssGenerator';
 import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
-import { convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
+import { convertToJsToken, convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
 import { FileData } from '../config/fileConfig';
 
 // Add disclaimer to the top of the content
@@ -28,7 +28,16 @@ export const generateFileContent = (
 ) => {
   let cssTokens = '';
   let cssObject: CssObjectType = {};
-  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withCssObject = true, tokenTypes } = fileData;
+  const {
+    fileName,
+    groupNames,
+    hasParentPrefix = true,
+    sortByNumValue = false,
+    withCssObject = true,
+    tokenTypes,
+  } = fileData;
+
+  const isJsFile = fileName.endsWith('.ts');
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {
@@ -44,23 +53,36 @@ export const generateFileContent = (
           group,
           hasParentPrefix,
           sortByNumValue,
+          isJsFile,
         );
         cssTokens += '\n\n';
       }
 
       // Generate css object and merge it with the existing one
-      const groupCssObject = generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
+      const groupCssObject = generateCssObjectFromTokens(
+        filteredTokens,
+        mappedTokens,
+        tokenGroups,
+        hasParentPrefix,
+        isJsFile,
+      );
       cssObject = deepMergeObjects(cssObject, groupCssObject);
     });
   });
 
   let content = cssTokens;
 
-  // convert css object to scss structure
+  // convert css object to scss or js structure based on file extension
   if (withCssObject) {
-    content += Object.entries(cssObject)
-      .map(([key, obj]) => `${key}: (\n${convertToScss(obj as CssObjectType)}\n) !default;\n\n`)
-      .join('');
+    if (isJsFile) {
+      content += Object.entries(cssObject)
+        .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as CssObjectType)}\n};\n\n`)
+        .join('');
+    } else {
+      content += Object.entries(cssObject)
+        .map(([key, obj]) => `${key}: (\n${convertToScss(obj as CssObjectType)}\n) !default;\n\n`)
+        .join('');
+    }
   }
 
   return {

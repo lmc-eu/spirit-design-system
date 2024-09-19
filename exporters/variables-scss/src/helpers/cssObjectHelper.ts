@@ -49,6 +49,21 @@ export function convertToScss(obj: CssObjectType): string {
     .slice(0, -1);
 }
 
+export const convertToJsToken = (obj: CssObjectType): string => {
+  return Object.entries(obj)
+    .map(([key, value]) => {
+      if (typeof value === 'object' && value !== null) {
+        const nestedScss = convertToJsToken(value as CssObjectType);
+
+        return `${key}: {\n${nestedScss}\n},\n`;
+      }
+
+      return `${key}: ${value},\n`;
+    })
+    .join('')
+    .slice(0, -1);
+};
+
 export const formatTypographyName = (tokenNameParts: string[]): string => {
   return tokenNameParts.length === 4
     ? tokenNameParts.filter((_, index) => index !== 1).join('-')

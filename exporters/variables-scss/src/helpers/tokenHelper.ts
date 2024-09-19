@@ -12,8 +12,16 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const formatTokenName = (name: string, value: string | number, unit?: string) => {
-  if (unit) {
+export const formatTokenName = (name: string, value: string | number, convertToJs: boolean, unit?: string) => {
+  if (convertToJs) {
+    if (unit) {
+      return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}${unit};'`;
+    }
+
+    return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value};'`;
+  }
+
+  if (!convertToJs && unit) {
     return `$${name}: ${value}${unit} !default;`;
   }
 

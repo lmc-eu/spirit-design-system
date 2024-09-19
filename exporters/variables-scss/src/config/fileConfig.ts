@@ -55,6 +55,18 @@ export const nonThemedFilesData: FileData[] = [
     withCssObject: true,
     hasParentPrefix: false,
   },
+  {
+    fileName: 'spacing.ts',
+    tokenTypes: [TokenType.dimension],
+    groupNames: ['Spacing'],
+    hasParentPrefix: false,
+    sortByNumValue: true,
+  },
+  {
+    fileName: 'other.ts',
+    tokenTypes: [TokenType.dimension, TokenType.string],
+    groupNames: ['Breakpoint'],
+  },
 ];
 
 export const themedFilesData: FileData[] = [

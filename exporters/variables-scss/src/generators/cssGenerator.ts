@@ -24,6 +24,7 @@ export const tokenToCSSByType = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   withParent: boolean,
+  convertToJs: boolean,
 ): string | null => {
   const hasTokenType = (type: TokenType) => {
     const { tokenType } = token;
@@ -38,7 +39,7 @@ export const tokenToCSSByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
 
-    return formatTokenName(name, value, unit);
+    return formatTokenName(name, value, convertToJs, unit);
   }
 
   if (hasTokenType(TokenType.string)) {
@@ -47,7 +48,7 @@ export const tokenToCSSByType = (
     let value = stringToken.value.text;
     value = handleSpecialCase(name, value);
 
-    return formatTokenName(name, value);
+    return formatTokenName(name, value, convertToJs);
   }
 
   if (hasTokenType(TokenType.color)) {
@@ -62,7 +63,7 @@ export const tokenToCSSByType = (
     value = normalizeColor(value);
     value = handleSpecialCase(name, value);
 
-    return formatTokenName(name, value);
+    return formatTokenName(name, value, convertToJs);
   }
 
   if (hasTokenType(TokenType.shadow)) {
@@ -76,7 +77,7 @@ export const tokenToCSSByType = (
       tokenToVariableRef: () => '',
     });
 
-    return formatTokenName(name, color).replace(/0px/g, '0');
+    return formatTokenName(name, color, convertToJs).replace(/0px/g, '0');
   }
 
   if (hasTokenType(TokenType.gradient)) {
@@ -91,7 +92,7 @@ export const tokenToCSSByType = (
     });
     gradient = addAngleVarToGradient(gradient);
 
-    return formatTokenName(name, gradient);
+    return formatTokenName(name, gradient, convertToJs);
   }
 
   return null;
@@ -104,11 +105,12 @@ export const generateCssFromTokens = (
   group: string,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
+  convertToJs: boolean = false,
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
-    css: tokenToCSSByType(token, mappedTokens, tokenGroups, hasParentPrefix),
+    css: tokenToCSSByType(token, mappedTokens, tokenGroups, hasParentPrefix, convertToJs),
     parentGroupId: token.parentGroupId,
   }));
 

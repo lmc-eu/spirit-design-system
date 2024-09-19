@@ -2,6 +2,7 @@ import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-
 import { formatTypographyName, getBreakpoint } from '../helpers/cssObjectHelper';
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toPlural } from '../helpers/stringHelper';
+import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 
 export const COLOR_SUFFIX = '-colors';
 
@@ -15,12 +16,12 @@ const invariantTokenAlias: { [key: string]: string } = {
   'radius-full': 'full',
 };
 
-export const normalizeFirstNamePart = (part: string, tokenType: TokenType): string => {
+export const normalizeFirstNamePart = (part: string, tokenType: TokenType, isJsFile: boolean): string => {
   if (tokenType === TokenType.color) {
-    return `$${part}${COLOR_SUFFIX}`;
+    return isJsFile ? `${part}${COLOR_SUFFIX}` : `$${part}${COLOR_SUFFIX}`;
   }
 
-  return `$${toPlural(part.toLowerCase())}`;
+  return isJsFile ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
 };
 
 export const handleInvariantTokenAlias = (tokenName: string): string => {
@@ -70,14 +71,17 @@ const handleNonTypographyTokens = (
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   cssObjectRef: CssObjectType,
+  isJsToken = false,
 ): void => {
   let currentObject = cssObjectRef;
 
   tokenNameParts.forEach((part, index) => {
-    const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType) : part;
+    const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType, isJsToken) : part;
 
     if (index === tokenNameParts.length - 1) {
-      const tokenValue = `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
+      const tokenValue = isJsToken
+        ? `${NamingHelper.codeSafeVariableName(tokenVariableName(token, tokenGroups, hasParentPrefix), StringCase.camelCase)}`
+        : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
       const tokenAlias = getTokenAlias(token);
       currentObject[tokenAlias] = tokenValue;
     } else {
@@ -92,6 +96,7 @@ export const createObjectStructureFromTokenNameParts = (
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   cssObjectRef: CssObjectType,
+  isJsFile: boolean,
 ): CssObjectType => {
   const { tokenType } = token;
   const tokenNameParts = token.origin?.name?.split('/');
@@ -103,7 +108,7 @@ export const createObjectStructureFromTokenNameParts = (
   if (tokenType === TokenType.typography) {
     handleTypographyTokens(tokenNameParts, token, cssObjectRef);
   } else {
-    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef);
+    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef, isJsFile);
   }
 
   return cssObjectRef;
@@ -136,6 +141,7 @@ export const generateCssObjectFromTokens = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
+  isJsFile: boolean,
 ): CssObjectType => {
   const cssObject = tokens.reduce((cssObjectAccumulator, token) => {
     const currentObject = createObjectStructureFromTokenNameParts(
@@ -143,6 +149,7 @@ export const generateCssObjectFromTokens = (
       tokenGroups,
       hasParentPrefix,
       cssObjectAccumulator,
+      isJsFile,
     );
 
     return { ...cssObjectAccumulator, ...currentObject };
