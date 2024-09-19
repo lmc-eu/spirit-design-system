@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../../Button';
 import { Link } from '../../Link';
+import { ProductLogo } from '../../ProductLogo';
 import {
   Header,
   HeaderDesktopActions,
@@ -15,9 +16,9 @@ import {
   HeaderNav,
   HeaderNavItem,
 } from '..';
-import SpiritLogo from './SpiritLogo';
+import JobBoardLogo from './JobBoardLogo';
 
-const HeaderInvertedWithActions = () => {
+const HeaderWithActions = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -25,9 +26,11 @@ const HeaderInvertedWithActions = () => {
 
   return (
     <>
-      <Header color="inverted">
+      <Header>
         <Link href="/">
-          <SpiritLogo />
+          <ProductLogo>
+            <JobBoardLogo />
+          </ProductLogo>
         </Link>
         <HeaderMobileActions dialogId="header-dialog-example" isOpen={isOpen} onOpen={handleOpen} />
         <HeaderDesktopActions aria-label="Main navigation">
@@ -51,7 +54,7 @@ const HeaderInvertedWithActions = () => {
         </HeaderDesktopActions>
         <HeaderDesktopActions isAtEnd>
           <Button color="primary">Sign in</Button>
-          <Button color="inverted">Enterprise</Button>
+          <Button color="secondary">Enterprise</Button>
         </HeaderDesktopActions>
       </Header>
       <HeaderDialog id="header-dialog-example" isOpen={isOpen} onClose={handleClose}>
@@ -77,11 +80,11 @@ const HeaderInvertedWithActions = () => {
         </HeaderDialogActions>
         <HeaderDialogActions color="secondary">
           <Button color="primary">Sign in</Button>
-          <Button color="inverted">Enterprise</Button>
+          <Button color="secondary">Enterprise</Button>
         </HeaderDialogActions>
       </HeaderDialog>
     </>
   );
 };
 
-export default HeaderInvertedWithActions;
+export default HeaderWithActions;
