@@ -72,12 +72,12 @@ unless you add a color variant modifier class.
 
 ## Color Variants
 
-Currently, Header comes in two color variants: **transparent** (for dark
-backgrounds) and **inverted** (for light backgrounds). Add `Header--inverted`
-modifier class to apply inverted background color to Header.
+Currently, Header comes in two color variants: **primary** and **transparent**
+(for non-solid backgrounds like gradients or images). Add `Header--transparent`
+modifier class to apply transparent background color to Header.
 
 ```html
-<header class="Header Header--inverted">
+<header class="Header Header--transparent">
   <a href="#" aria-label="Company homepage">
     <img src="…" alt="Company" />
   </a>
@@ -127,7 +127,7 @@ custom elements as the free space in Header allows.
 #### Toggle Button
 
 Toggle button reveals the [Header Dialog](#header-dialog) containing actions for
-small screens (up to the desktop breakpoint). It makes use of an inverted Button
+small screens (up to the desktop breakpoint). It makes use of a secondary Button
 by default.
 
 The toggle button implements Spirit's Off-canvas JavaScript plugin. It is linked
@@ -137,7 +137,7 @@ and `aria-controls` attributes.
 ```html
 <button
   type="button"
-  class="Button Button--inverted Button--medium"
+  class="Button Button--secondary Button--medium"
   data-spirit-toggle="offcanvas"
   data-spirit-target="#my-header-dialog"
   aria-controls="my-header-dialog"
@@ -338,7 +338,7 @@ This is how all supported building blocks of the Header build up the complete
 composition:
 
 ```html
-<header class="Header Header--inverted">
+<header class="Header Header--secondary">
   <!-- Branding -->
   <!-- Mobile-only actions -->
   <!-- Desktop-only primary actions -->
@@ -365,7 +365,7 @@ And the complete Header Dialog:
 
 ```html
 <!-- Header: start -->
-<header class="Header Header--inverted">
+<header class="Header Header--secondary">
   <a href="#" aria-label="Spirit homepage">
     <img src="…" width="65" height="24" alt="Spirit" />
   </a>
@@ -374,7 +374,7 @@ And the complete Header Dialog:
   <div class="HeaderMobileActions">
     <button
       type="button"
-      class="Button Button--inverted Button--medium Button--square"
+      class="Button Button--secondary Button--medium Button--square"
       data-spirit-toggle="offcanvas"
       data-spirit-target="#header-dialog-example-1"
       aria-controls="header-dialog-example-1"
@@ -415,7 +415,7 @@ And the complete Header Dialog:
   <!-- HeaderDesktopActions: start -->
   <nav class="HeaderDesktopActions HeaderDesktopActions--end">
     <a href="#" class="Button Button--primary Button--medium">Sign in</a>
-    <a href="#" class="Button Button--inverted Button--medium">Enterprise</a>
+    <a href="#" class="Button Button--secondary Button--medium">Enterprise</a>
   </nav>
   <!-- HeaderDesktopActions: end -->
 </header>
@@ -468,7 +468,7 @@ And the complete Header Dialog:
       <!-- HeaderDialogActions: start -->
       <nav class="HeaderDialogActions HeaderDialogActions--secondary">
         <a href="#" class="Button Button--primary Button--medium">Sign in</a>
-        <a href="#" class="Button Button--inverted Button--medium">Enterprise</a>
+        <a href="#" class="Button Button--secondary Button--medium">Enterprise</a>
       </nav>
       <!-- HeaderDialogActions: end -->
     </div>

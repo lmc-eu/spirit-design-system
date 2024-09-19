@@ -10,6 +10,7 @@
     align-items: center;
     height: 68px;
     padding-inline: theme.$header-padding-x;
+    background-color: theme.$header-background-color;
 }
 
 .Header--simple {
@@ -19,9 +20,4 @@
 
 .Header--transparent {
     background-color: transparent;
-}
-
-.Header--inverted {
-    color: theme.$header-inverted-color;
-    background-color: theme.$header-inverted-background-color;
 }
