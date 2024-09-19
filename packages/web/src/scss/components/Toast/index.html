@@ -36,7 +36,7 @@
             </div>
             <button
               type="button"
-              class="Button Button--small Button--square Button--warning"
+              class="ToastBar__close"
               data-spirit-dismiss="toast"
               data-spirit-target="#my-hidden-dismissible-toast"
               aria-controls="my-hidden-dismissible-toast"
@@ -177,7 +177,7 @@
             <label for="toast-color" class="Select__label">Color</label>
             <div class="Select__inputContainer">
               <select id="toast-color" name="color" class="Select__input" autocomplete="off">
-                <option value="inverted">Inverted</option>
+                <option value="neutral">Neutral</option>
                 <option value="success">Success</option>
                 <option value="warning">Warning</option>
                 <option value="danger">Danger</option>
@@ -279,7 +279,7 @@
       <div class="Toast__queue" data-spirit-element="toast-queue">
 
         <template data-spirit-snippet="item">
-          <div class="ToastBar is-hidden" data-spirit-color="inverted" data-spirit-populate-field="item">
+          <div class="ToastBar is-hidden" data-spirit-color="neutral" data-spirit-populate-field="item">
             <div class="ToastBar__box">
               <div class="ToastBar__container">
                 <svg width="20" height="20" aria-hidden="true" data-spirit-populate-field="icon">
@@ -292,8 +292,7 @@
               </div>
               <button
                 type="button"
-                class="Button Button--small Button--square"
-                data-spirit-color="inverted"
+                class="ToastBar__close"
                 data-spirit-populate-field="close-button"
                 data-spirit-dismiss="toast"
                 aria-expanded="true"
@@ -315,12 +314,12 @@
               </svg>
               <div class="ToastBar__content">
                 <div class="text-truncate-multiline">I was first!</div>
-                <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+                <a href="#" class="ToastBar__link link-underlined">Action</a>
               </div>
             </div>
             <button
               type="button"
-              class="Button Button--small Button--square Button--success"
+              class="ToastBar__close"
               data-spirit-dismiss="toast"
               data-spirit-target="#my-dismissible-toast"
               aria-controls="my-dismissible-toast"
@@ -344,12 +343,12 @@
                 <div class="text-truncate-multiline">I appeared later. This toast has a long message that wraps
                   automatically.
                 </div>
-                <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+                <a href="#" class="ToastBar__link link-underlined">Action</a>
               </div>
             </div>
             <button
               type="button"
-              class="Button Button--small Button--square Button--informative"
+              class="ToastBar__close"
               data-spirit-dismiss="toast"
               data-spirit-target="#my-other-dismissible-toast"
               aria-controls="my-other-dismissible-toast"
@@ -376,7 +375,7 @@
 
   <div class="docs-Stack docs-Stack--start">
 
-    <div class="ToastBar ToastBar--inverted">
+    <div class="ToastBar ToastBar--neutral">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
@@ -386,31 +385,31 @@
       </div>
     </div>
 
-    <div class="ToastBar ToastBar--inverted">
+    <div class="ToastBar ToastBar--neutral">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Message with action</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="ToastBar ToastBar--inverted">
+    <div class="ToastBar ToastBar--neutral">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">When the text is long and reaches the maximum width limit, the action
               automatically wraps to the next line.
             </div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="ToastBar ToastBar--inverted">
+    <div class="ToastBar ToastBar--neutral">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
@@ -418,13 +417,13 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Message with icon and action</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--inverted ToastBar--dismissible">
+    <div id="my-toast-variation-dismissible" class="ToastBar ToastBar--neutral ToastBar--dismissible">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <div class="ToastBar__content">
@@ -433,7 +432,7 @@
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--inverted"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-variation-dismissible"
           aria-expanded="true"
@@ -447,7 +446,7 @@
     </div>
 
     <div id="my-toast-variation-dismissible-with-icon-and-action"
-         class="ToastBar ToastBar--inverted ToastBar--dismissible">
+         class="ToastBar ToastBar--neutral ToastBar--dismissible">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
@@ -455,12 +454,12 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Dismissible message with custom icon and action</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--inverted"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-variation-dismissible-with-icon-and-action"
           aria-expanded="true"
@@ -482,22 +481,22 @@
 
   <div class="docs-Stack docs-Stack--start">
 
-    <div id="my-toast-color-inverted" class="ToastBar ToastBar--inverted ToastBar--dismissible">
+    <div id="my-toast-color-neutral" class="ToastBar ToastBar--neutral ToastBar--dismissible">
       <div class="ToastBar__box">
         <div class="ToastBar__container">
           <svg width="20" height="20" aria-hidden="true">
             <use xlink:href="/assets/icons/svg/sprite.svg#info"/>
           </svg>
           <div class="ToastBar__content">
-            <div class="text-truncate-multiline">Inverted</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <div class="text-truncate-multiline">Neutral</div>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--inverted"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
-          aria-controls="my-toast-color-inverted"
+          aria-controls="my-toast-color-neutral"
           aria-expanded="true"
         >
           <svg width="24" height="24" aria-hidden="true">
@@ -516,12 +515,12 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Informative</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--informative"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-color-informative"
           aria-expanded="true"
@@ -542,12 +541,12 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Success</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--success"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-color-success"
           aria-expanded="true"
@@ -568,12 +567,12 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Warning</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--warning"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-color-warning"
           aria-expanded="true"
@@ -594,12 +593,12 @@
           </svg>
           <div class="ToastBar__content">
             <div class="text-truncate-multiline">Danger</div>
-            <a href="#" class="link-inverted link-underlined ToastBar__link">Action</a>
+            <a href="#" class="ToastBar__link link-underlined">Action</a>
           </div>
         </div>
         <button
           type="button"
-          class="Button Button--small Button--square Button--danger"
+          class="ToastBar__close"
           data-spirit-dismiss="toast"
           aria-controls="my-toast-color-danger"
           aria-expanded="true"
