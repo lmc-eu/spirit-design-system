@@ -94,6 +94,7 @@ export const addAngleVarToGradient = (inputString: string): string => {
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
+  isJsToken: boolean,
 ): string => {
   const baseStyles = [
     `font-family: "'${fontFamily.text}', sans-serif"`,
@@ -102,8 +103,21 @@ export const typographyValue = (
     `font-weight: ${fontWeight.text}`,
   ];
 
+  const baseJsStyles = [
+    `fontFamily: "'${fontFamily.text}', sans-serif"`,
+    `fontSize: "${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}"`,
+    `fontStyle: "${isItalic ? 'italic' : 'normal'}"`,
+    `fontWeight: "${fontWeight.text}"`,
+  ];
+
   if (lineHeight && lineHeight.measure) {
     baseStyles.push(`line-height: ${lineHeight.measure / 100}`);
+  }
+
+  if (isJsToken) {
+    return `{
+${baseJsStyles.join(',\n')}
+}`;
   }
 
   return `(

@@ -65,7 +65,26 @@ export const nonThemedFilesData: FileData[] = [
   {
     fileName: 'other.ts',
     tokenTypes: [TokenType.dimension, TokenType.string],
-    groupNames: ['Breakpoint'],
+    groupNames: ['Grid', 'Container', 'Breakpoint'],
+  },
+  {
+    fileName: 'typography.ts',
+    tokenTypes: [TokenType.typography],
+    groupNames: [''],
+    withCssObject: true,
+    hasParentPrefix: false,
+  },
+  {
+    fileName: 'gradients.ts',
+    tokenTypes: [TokenType.gradient],
+    groupNames: [''],
+    hasParentPrefix: true,
+  },
+  {
+    fileName: 'shadows.ts',
+    tokenTypes: [TokenType.shadow],
+    groupNames: [''],
+    hasParentPrefix: false,
   },
 ];
 

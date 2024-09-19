@@ -1,8 +1,8 @@
 import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
+import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { formatTypographyName, getBreakpoint } from '../helpers/cssObjectHelper';
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toPlural } from '../helpers/stringHelper';
-import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 
 export const COLOR_SUFFIX = '-colors';
 
@@ -32,7 +32,7 @@ export const handleInvariantTokenAlias = (tokenName: string): string => {
   return tokenName;
 };
 
-export const getTokenAlias = (token: Token): string => {
+export const getTokenAlias = (token: Token, isJsToken: boolean): string => {
   let alias;
   const numericPart = token.name.match(/\d+/)?.[0];
   const nonNumericPart = handleInvariantTokenAlias(token.name.toLowerCase());
@@ -40,13 +40,18 @@ export const getTokenAlias = (token: Token): string => {
   if (token.tokenType !== TokenType.color && numericPart) {
     alias = numericPart;
   } else {
-    alias = nonNumericPart;
+    alias = isJsToken ? NamingHelper.codeSafeVariableName(nonNumericPart, StringCase.camelCase) : nonNumericPart;
   }
 
   return alias;
 };
 
-const handleTypographyTokens = (tokenNameParts: string[], token: Token, cssObjectRef: CssObjectType): void => {
+const handleTypographyTokens = (
+  tokenNameParts: string[],
+  token: Token,
+  cssObjectRef: CssObjectType,
+  isJsToken: boolean,
+): void => {
   const typographyToken = token as TypographyToken;
   const reducedNameParts = tokenNameParts.slice(0, 2);
   const name = formatTypographyName(tokenNameParts).toLowerCase();
@@ -54,10 +59,11 @@ const handleTypographyTokens = (tokenNameParts: string[], token: Token, cssObjec
 
   let currentObject = cssObjectRef;
   reducedNameParts.forEach((part, index) => {
-    const modifiedPart = index === 0 ? `$${name}` : part;
+    const tokenName = isJsToken ? NamingHelper.codeSafeVariableName(name, StringCase.camelCase) : `$${name}`;
+    const modifiedPart = index === 0 ? tokenName : part;
 
     if (index === reducedNameParts.length - 1) {
-      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'));
+      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'), isJsToken);
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
       currentObject = currentObject[modifiedPart] as CssObjectType;
@@ -82,7 +88,7 @@ const handleNonTypographyTokens = (
       const tokenValue = isJsToken
         ? `${NamingHelper.codeSafeVariableName(tokenVariableName(token, tokenGroups, hasParentPrefix), StringCase.camelCase)}`
         : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
-      const tokenAlias = getTokenAlias(token);
+      const tokenAlias = getTokenAlias(token, isJsToken);
       currentObject[tokenAlias] = tokenValue;
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
@@ -106,7 +112,7 @@ export const createObjectStructureFromTokenNameParts = (
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, cssObjectRef);
+    handleTypographyTokens(tokenNameParts, token, cssObjectRef, isJsFile);
   } else {
     handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef, isJsFile);
   }
