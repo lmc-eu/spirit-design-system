@@ -1,5 +1,7 @@
-<Header color="inverted">
-    {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+<Header>
+    <a href="#" aria-label="JobBoard homepage">
+        {% include '@components/Header/stories/_partials/JobBoardLogo.svg.twig' %}
+    </a>
 
     <HeaderMobileActions dialogId="header-dialog-example-1" />
 
@@ -25,7 +27,7 @@
 
     <HeaderDesktopActions isAtEnd>
         <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-        <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+        <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
     </HeaderDesktopActions>
 </Header>
 
@@ -54,6 +56,6 @@
 
     <HeaderDialogActions color="secondary">
         <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-        <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+        <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
     </HeaderDialogActions>
 </HeaderDialog>
