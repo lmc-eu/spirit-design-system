@@ -6,7 +6,9 @@
 // 6. Add margin to the action to separate it from the dismiss button.
 // 7. Invisible items should not take up space in the queue.
 
+@use '@tokens' as tokens;
 @use '../../tools/dictionaries';
+@use '../../tools/reset';
 @use '../../tools/typography';
 @use 'theme';
 
@@ -31,7 +33,9 @@
 .ToastBar__box {
     max-width: theme.$bar-max-width;
     padding: theme.$bar-padding;
+    color: var(--#{tokens.$css-variable-prefix}toast-bar-color);
     border-radius: theme.$bar-border-radius;
+    background-color: var(--#{tokens.$css-variable-prefix}toast-bar-background-color);
     box-shadow: theme.$bar-box-shadow;
     pointer-events: var(--toast-bar-pointer-events, initial); // 3.
 
@@ -69,6 +73,24 @@
 
 .ToastBar__link {
     font-weight: 400;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        color: inherit;
+    }
+}
+
+.ToastBar__close {
+    @include reset.button();
+
+    padding: theme.$bar-close-padding;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+        color: inherit;
+    }
 }
 
 // stylelint-disable-next-line selector-max-specificity -- Specificity is needed to precisely target the action.
@@ -80,8 +102,6 @@
     $class-name: 'ToastBar',
     $dictionary-values: theme.$color-dictionary,
     $config: theme.$color-dictionary-config,
-    $overrides: theme.$color-dictionary-overrides,
-    $child-selector: ' > .ToastBar__box',
     $generate-data-attribute: true
 );
 
