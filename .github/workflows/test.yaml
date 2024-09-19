@@ -23,20 +23,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Configure Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-
-      - name: Fetch Git history
-        run: git fetch --no-tags --depth=50 origin main
-
-      - name: Install dependencies
-        run: yarn --immutable --inline-builds
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
 
       - name: Build
         run: yarn build

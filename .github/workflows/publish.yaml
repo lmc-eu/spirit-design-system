@@ -16,17 +16,8 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Configure Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'yarn'
-
-      - name: Install dependencies
-        run: yarn --immutable --inline-builds
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
 
       - name: Build
         run: yarn build
