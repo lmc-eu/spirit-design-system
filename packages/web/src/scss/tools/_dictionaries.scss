@@ -36,15 +36,23 @@
 // * $class-name: the name of the component class to generate
 // * $dictionary-values: list of the dictionary values to generate
 // * $config: map of the properties to generate, their value is the suffix of the token variable
+// * $generate-data-attribute: whether to generate data attribute classes
 // See Button component for real usage
-@mixin generate-colors($class-name, $dictionary-values, $config) {
+@mixin generate-colors($class-name, $dictionary-values, $config, $generate-data-attribute: false) {
     $component-infix: spirit-string.convert-pascal-case-to-kebab-case(
         spirit-string.remove-prefix($class-name, 'UNSTABLE_')
     );
 
     @each $dictionary-group-name, $dictionary-group-values in $dictionary-values {
         @each $dictionary-item-name, $dictionary-item-value in $dictionary-group-values {
-            .#{$class-name}--#{$dictionary-item-name} {
+            $data-attribute-selector: if(
+                $generate-data-attribute,
+                '.#{$class-name}[data-spirit-color="#{$dictionary-item-name}"]',
+                null
+            );
+
+            .#{$class-name}--#{$dictionary-item-name},
+            #{$data-attribute-selector} {
                 @each $property-name, $property-value in $config {
                     $color-group: if(
                         $dictionary-group-name == $dictionary-item-name,
