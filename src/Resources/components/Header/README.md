@@ -69,12 +69,12 @@ unless you specify a color variant.
 
 ## Color Variants
 
-Currently, Header comes in two color variants: **transparent** (for dark
-backgrounds) and **inverted** (for light backgrounds). Use the `color` property
+Currently, Header comes in two color variants: **primary** and **transparent**
+(for non-solid backgrounds like gradients or images). Use the `color` property
 to apply the desired background color to Header.
 
 ```twig
-<Header color="inverted">
+<Header color="transparent">
     <a href="/">
         <img
           src="https://www.example.com/logo.png"
@@ -107,10 +107,10 @@ just branding.
 
 ## API
 
-| Name       | Type                          | Default       | Required | Description                         |
-| ---------- | ----------------------------- | ------------- | -------- | ----------------------------------- |
-| `color`    | [`transparent` \| `inverted`] | `transparent` | ✕        | Color variant                       |
-| `isSimple` | `bool`                        | `false`       | ✕        | Shorter, centered version of Header |
+| Name       | Type                          | Default   | Required | Description                         |
+| ---------- | ----------------------------- | --------- | -------- | ----------------------------------- |
+| `color`    | \[`primary` \| `transparent`] | `primary` | ✕        | Color variant                       |
+| `isSimple` | `bool`                        | `false`   | ✕        | Shorter, centered version of Header |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -419,7 +419,7 @@ This is how all supported building blocks of the Header build up the complete
 composition:
 
 ```twig
-<Header color="inverted">
+<Header>
   <!-- Branding -->
   <HeaderMobileActions dialogId="my-menu">
     <!-- Optional mobile-only actions -->
@@ -463,7 +463,7 @@ And the complete Header Dialog:
   <summary>Show full example code of Header with responsive navigation</summary>
 
 ```twig
-<Header color="inverted">
+<Header>
   <a href="/" aria-label="Spirit homepage">
     <img src="…" width="65" height="24" alt="Spirit" />
   </a>
@@ -489,7 +489,7 @@ And the complete Header Dialog:
   </HeaderDesktopActions>
   <HeaderDesktopActions isAtEnd>
     <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
   </HeaderDesktopActions>
 </Header>
 
@@ -516,7 +516,7 @@ And the complete Header Dialog:
   </HeaderDialogActions>
   <HeaderDialogActions color="secondary">
     <ButtonLink color="primary" href="/">Sign in</ButtonLink>
-    <ButtonLink color="inverted" href="/">Enterprise</ButtonLink>
+    <ButtonLink color="secondary" href="/">Enterprise</ButtonLink>
   </HeaderDialogActions>
 </HeaderDialog>
 ```
