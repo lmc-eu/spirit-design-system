@@ -1,6 +1,7 @@
 # Build files
 **/dist
 **/build
+**/.build
 packages/**/types/*
 packages/**/esm/*
 packages/**/cjs/*
@@ -72,8 +73,9 @@ makefile
 # GitHub
 CODEOWNERS
 
-# variable-scss exporter example mock test files
-exporters/variables-scss/tests/fixtures/*.scss
+# Unformatted fixtures
+**/{fixtures}/**/unformatted*
+**/__fixtures__/unformatted*
 
 # variable-scss exporter generated cjs
 exporters/variables-scss/generated/**/*.cjs

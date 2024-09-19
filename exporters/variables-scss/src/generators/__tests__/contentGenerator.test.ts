@@ -1,35 +1,40 @@
 import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { generateFileContent, addDisclaimer, filterTokensByTypeAndGroup } from '../contentGenerator';
 import {
-  exampleMockedGroups,
-  exampleMockedTokens,
-  exampleTypographyMockedTokens,
-} from '../../../tests/fixtures/mockedExampleTokens';
+  generateFileContent,
+  addDisclaimer,
+  filterTokensByTypeAndGroup,
+  generateScssObjectOutput,
+  generateJsObjectOutput,
+  getGroups,
+} from '../contentGenerator';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { FileData } from '../../config/fileConfig';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
   'utf-8',
 );
 const mappedTokens: Map<string, Token> = new Map([]);
-const tokenGroups: Array<TokenGroup> = exampleMockedGroups;
+const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('contentGenerator', () => {
   describe('generateFileContent', () => {
     it('should generate file content', () => {
-      const tokens = Array.from(exampleMockedTokens.values());
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
       const fileData: FileData = {
         fileName: 'testFile',
         tokenTypes: [TokenType.dimension, TokenType.string],
         groupNames: ['Grid', 'String'],
-        withCssObject: true,
+        hasStylesObject: true,
         hasParentPrefix: true,
         sortByNumValue: false,
       };
 
-      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData);
+      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, false);
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });
     });
@@ -63,19 +68,19 @@ describe('contentGenerator', () => {
     const dataTypographyProviderItems = {
       type: TokenType.typography,
       group: 'Heading',
-      tokenIdentifier: 'typographyHeadingRef1',
+      tokenIdentifier: 'typographyRef1',
     };
 
     it.each(dataProviderItems)('should filter $description', ({ type, group, tokenIdentifier }) => {
-      const tokens = Array.from(exampleMockedTokens.values());
-      const expectedTokens = [exampleMockedTokens.get(tokenIdentifier) as Token];
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const expectedTokens = [exampleDimensionAndStringTokens.get(tokenIdentifier) as Token];
 
       expect(filterTokensByTypeAndGroup(tokens, type, group)).toStrictEqual(expectedTokens);
     });
 
     it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "-Underline"`, () => {
-      const tokens = Array.from(exampleTypographyMockedTokens.values());
-      const expectedTokens = [exampleTypographyMockedTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
+      const tokens = Array.from(exampleTypographyTokens.values());
+      const expectedTokens = [exampleTypographyTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
 
       const filteredTokens = filterTokensByTypeAndGroup(
         tokens,
@@ -84,6 +89,74 @@ describe('contentGenerator', () => {
       );
 
       expect(filteredTokens).toStrictEqual(expectedTokens);
+    });
+  });
+
+  describe('generateScssObjectOutput', () => {
+    it('should generate SCSS object output', () => {
+      const stylesObject = {
+        $grids: { columns: '$grid-columns', spacing: { desktop: '$grid-spacing-desktop' } },
+      };
+      const expectedResult = fs.readFileSync(path.join(__dirname, '../__fixtures__/unformattedExample.scss'), 'utf-8');
+
+      const scssOutput = generateScssObjectOutput(stylesObject);
+
+      expect(scssOutput).toBe(expectedResult);
+    });
+  });
+
+  describe('generateJsObjectOutput', () => {
+    it('should generate JS object output', () => {
+      const stylesObject = {
+        grids: { columns: 'gridColumns', spacing: { desktop: 'gridSpacingDesktop' } },
+      };
+      const expectedResult = fs.readFileSync(path.join(__dirname, '../__fixtures__/unformattedExample.ts'), 'utf-8');
+
+      const jsOutput = generateJsObjectOutput(stylesObject);
+
+      expect(jsOutput).toBe(expectedResult);
+    });
+  });
+
+  describe('getGroups', () => {
+    it('should return group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['String'];
+      const groupNames = ['Grid'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual(['Grid']);
+    });
+
+    it('should return group names without excluded group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['String', 'Grid'];
+      const groupNames = ['Grid'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual([]);
+    });
+
+    it('should return group names with no excluded group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = null;
+      const groupNames = ['Grid', 'String'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual(['Grid', 'String']);
+    });
+
+    it('should not return group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['Grid', 'String'];
+      const groupNames = [''];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual([]);
     });
   });
 });
