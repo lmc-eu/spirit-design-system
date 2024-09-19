@@ -2,7 +2,7 @@ name: Component Analysis
 
 on:
   schedule:
-    - cron: '0 6 * * *' # every day at 6:00
+    - cron: '0 6 * * 1' # every Monday at 6:00
 
 jobs:
   omlet_analyze:
