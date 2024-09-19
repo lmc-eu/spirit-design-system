@@ -30,7 +30,7 @@ const HeaderMobileActions = (props: HeaderMobileActionsProps) => {
       style={styleProps.style}
     >
       {children}
-      <Button aria-controls={dialogId} aria-expanded={isOpen} color="inverted" onClick={onOpen} isSquare>
+      <Button aria-controls={dialogId} aria-expanded={isOpen} color="secondary" onClick={onOpen} isSquare>
         <Icon name="hamburger" />
         <VisuallyHidden>{menuToggleLabel}</VisuallyHidden>
       </Button>
