@@ -30,7 +30,7 @@ const EVENT_SHOWN = `shown${EVENT_KEY}`;
 const COLOR_ICON_MAP = {
   danger: 'danger',
   informative: 'info',
-  inverted: 'info',
+  neutral: 'info',
   success: 'check-plain',
   warning: 'warning',
 };
@@ -62,7 +62,7 @@ type Config = {
   enableLink: boolean;
   linkContent: HTMLElement | string;
   linkProps: {
-    color: 'primary' | 'secondary' | 'inverted';
+    color: 'primary' | 'secondary' | 'tertiary';
     elementType: string;
     href: string;
     isDisabled: boolean;
@@ -160,10 +160,9 @@ class Toast extends BaseComponent {
   }
 
   updateOrRemoveCloseButton(closeButtonElement: HTMLElement) {
-    const { color, id, isDismissible } = this.config as Config;
+    const { id, isDismissible } = this.config as Config;
 
     if (isDismissible) {
-      closeButtonElement!.setAttribute('data-spirit-color', color);
       closeButtonElement!.setAttribute('data-spirit-dismiss', 'toast');
       closeButtonElement!.setAttribute('data-spirit-target', `#${id}`);
       closeButtonElement!.setAttribute('aria-controls', id);
@@ -196,17 +195,15 @@ class Toast extends BaseComponent {
     if (linkContent) {
       const linkElementWithType = document.createElement(linkProps.elementType || 'a');
       linkElement.replaceWith(linkElementWithType);
-      const color = linkProps.color || 'inverted';
       const isUnderlined = linkProps.isUnderlined !== undefined ? linkProps.isUnderlined : true;
 
+      linkElementWithType.classList.add('ToastBar__link');
       if (isUnderlined) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_UNDERLINED);
       }
       if (linkProps.isDisabled) {
         linkElementWithType.classList.add(CLASS_NAME_LINK_DISABLED);
       }
-      linkElementWithType.classList.add('ToastBar__link');
-      linkElementWithType.classList.add(`link-${color}`);
       linkElementWithType.setAttribute('href', linkProps.href);
       linkProps.target && linkElementWithType.setAttribute('target', linkProps.target);
       linkElementWithType!.innerHTML = typeof linkContent === 'string' ? linkContent : linkContent.outerHTML;
