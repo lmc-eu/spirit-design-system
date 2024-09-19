@@ -107,11 +107,13 @@ export const typographyValue = (
     `fontFamily: "'${fontFamily.text}', sans-serif"`,
     `fontSize: "${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}"`,
     `fontStyle: "${isItalic ? 'italic' : 'normal'}"`,
-    `fontWeight: "${fontWeight.text}"`,
+    `fontWeight: ${fontWeight.text}`,
   ];
 
   if (lineHeight && lineHeight.measure) {
-    baseStyles.push(`line-height: ${lineHeight.measure / 100}`);
+    isJsToken
+      ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100}`)
+      : baseStyles.push(`line-height: ${lineHeight.measure / 100}`);
   }
 
   if (isJsToken) {
