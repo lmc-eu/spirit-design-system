@@ -1,0 +1,12 @@
+@use 'themes/theme-light';
+@use 'themes/theme-light-inverted';
+
+// The first theme is the default theme, as the left column in the Figma table.
+$themes: (
+    theme-light: (
+        colors: theme-light.$colors,
+    ),
+    theme-light-inverted: (
+        colors: theme-light-inverted.$colors,
+    ),
+);

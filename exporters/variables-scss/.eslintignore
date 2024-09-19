@@ -1,2 +1,6 @@
 # Generated files used by Supernova
 generated
+
+# Unformatted fixtures
+**/{fixtures}/**/unformatted*
+**/__fixtures__/unformatted*

@@ -3,64 +3,61 @@ import { TokenType } from '@supernovaio/sdk-exporters';
 export type FileData = {
   fileName: string;
   tokenTypes: TokenType[];
-  groupNames: string[];
-  withCssObject?: boolean;
+  groupNames?: string[];
+  excludeGroupNames?: string[] | null;
+  hasStylesObject?: boolean;
   hasParentPrefix?: boolean;
   sortByNumValue?: boolean;
 };
 
 export const nonThemedFilesData: FileData[] = [
   {
-    fileName: '_borders.scss',
+    fileName: 'borders',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Border'],
-    withCssObject: false,
+    hasStylesObject: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_other.scss',
+    fileName: 'other',
     tokenTypes: [TokenType.dimension, TokenType.string],
-    groupNames: ['Grid', 'Container', 'Breakpoint'],
+    excludeGroupNames: ['Border', 'Radius', 'Spacing'],
+    sortByNumValue: true,
   },
   {
-    fileName: '_radii.scss',
+    fileName: 'radii',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Radius'],
     hasParentPrefix: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_spacing.scss',
+    fileName: 'spacing',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Spacing'],
     hasParentPrefix: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_shadows.scss',
+    fileName: 'shadows',
     tokenTypes: [TokenType.shadow],
-    groupNames: [''],
     hasParentPrefix: false,
   },
   {
-    fileName: '_gradients.scss',
+    fileName: 'gradients',
     tokenTypes: [TokenType.gradient],
-    groupNames: [''],
     hasParentPrefix: true,
   },
   {
-    fileName: '_typography.scss',
+    fileName: 'typography',
     tokenTypes: [TokenType.typography],
-    groupNames: [''],
-    withCssObject: true,
     hasParentPrefix: false,
   },
 ];
 
 export const themedFilesData: FileData[] = [
   {
-    fileName: '_colors.scss',
+    fileName: 'colors',
     tokenTypes: [TokenType.color],
-    groupNames: [''],
   },
 ];

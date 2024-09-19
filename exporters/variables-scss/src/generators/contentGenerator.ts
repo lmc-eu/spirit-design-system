@@ -1,9 +1,9 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { generateCssFromTokens } from './cssGenerator';
-import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
-import { formatCSS } from '../formatters/cssFormatter';
-import { convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
 import { FileData } from '../config/fileConfig';
+import { indentAndFormat } from '../formatters/stylesFormatter';
+import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectHelper';
+import { generateStylesFromTokens } from './stylesGenerator';
+import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 
 // Add disclaimer to the top of the content
 export const addDisclaimer = (content: string): string => {
@@ -20,50 +20,122 @@ export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, gro
   });
 };
 
+const addEmptyLineBetweenTokenGroups = (index: number, length: number): string => {
+  return index !== length - 1 ? '\n\n' : '\n';
+};
+
+type ExportTemplateCallback = (entriesLength: number) => (entry: [string, unknown], index: number) => string;
+
+const jsExportTemplate: ExportTemplateCallback = (entriesLength) => {
+  return ([key, obj], index) => {
+    return `export const ${key} = {\n${convertToJs(obj as StylesObjectType)}\n};${addEmptyLineBetweenTokenGroups(index, entriesLength)}`;
+  };
+};
+
+const scssExportTemplate: ExportTemplateCallback = (entriesLength) => {
+  return ([key, obj], index) => {
+    return `${key}: (\n${convertToScss(obj as StylesObjectType)}\n) !default;${addEmptyLineBetweenTokenGroups(index, entriesLength)}`;
+  };
+};
+
+const generateObjectOutput = (stylesObject: StylesObjectType, callback: ExportTemplateCallback) => {
+  const entries = Object.entries(stylesObject);
+
+  return entries.map(callback(entries.length)).join('');
+};
+
+export const generateJsObjectOutput = (stylesObject: StylesObjectType): string => {
+  return generateObjectOutput(stylesObject, jsExportTemplate);
+};
+
+export const generateScssObjectOutput = (stylesObject: StylesObjectType): string => {
+  return generateObjectOutput(stylesObject, scssExportTemplate);
+};
+
+export const getGroups = (tokens: Token[], excludeGroupNames: string[] | null, groupNames: string[]): string[] => {
+  let groups;
+
+  if (excludeGroupNames && excludeGroupNames.length > 0) {
+    const filteredTokens = tokens.filter((token) => {
+      return !excludeGroupNames.some((excludedGroup) => token.origin?.name?.includes(excludedGroup));
+    });
+
+    const restOfGroupNames = filteredTokens.reduce((acc: string[], token) => {
+      const groupName = token.origin?.name?.split('/')[0];
+      if (groupName && !acc.includes(groupName)) {
+        acc.push(groupName);
+      }
+
+      return acc;
+    }, []);
+
+    groups = [...new Set(restOfGroupNames)];
+  } else {
+    groups = groupNames;
+  }
+
+  return groups;
+};
+
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   fileData: FileData,
+  hasJsOutput: boolean,
 ) => {
-  let cssTokens = '';
-  let cssObject: CssObjectType = {};
-  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withCssObject = true, tokenTypes } = fileData;
+  let styledTokens = '';
+  let stylesObject: StylesObjectType = {};
+  const {
+    groupNames = [''],
+    hasParentPrefix = true,
+    sortByNumValue = false,
+    hasStylesObject = true,
+    tokenTypes,
+    excludeGroupNames = null,
+  } = fileData;
 
-  // Iterate over token types and group names to filter tokens
+  // Iterate over token types and groups to filter tokens
   tokenTypes.forEach((tokenType) => {
-    groupNames.forEach((group) => {
+    const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+    groups.forEach((group) => {
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
-        cssTokens += generateCssFromTokens(
+        styledTokens += generateStylesFromTokens(
           filteredTokens,
           mappedTokens,
           tokenGroups,
           group,
           hasParentPrefix,
           sortByNumValue,
+          hasJsOutput,
         );
-        cssTokens += '\n\n';
+        styledTokens += '\n\n';
       }
 
       // Generate css object and merge it with the existing one
-      const groupCssObject = generateCssObjectFromTokens(filteredTokens, mappedTokens, tokenGroups, hasParentPrefix);
-      cssObject = deepMergeObjects(cssObject, groupCssObject);
+      const groupStylesObject = generateStylesObjectFromTokens(
+        filteredTokens,
+        mappedTokens,
+        tokenGroups,
+        hasParentPrefix,
+        hasJsOutput,
+      );
+      stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });
   });
 
-  let content = cssTokens;
+  let content = styledTokens;
 
-  // convert css object to scss structure
-  if (withCssObject) {
-    content += Object.entries(cssObject)
-      .map(([key, obj]) => `${key}: (\n${convertToScss(obj as CssObjectType)}\n) !default;\n\n`)
-      .join('');
+  // convert css object to scss or js structure based on file extension
+  if (hasStylesObject) {
+    content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
   }
 
   return {
-    content: addDisclaimer(formatCSS(content)),
+    content: addDisclaimer(indentAndFormat(content, hasJsOutput)),
   };
 };

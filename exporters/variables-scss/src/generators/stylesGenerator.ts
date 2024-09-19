@@ -12,18 +12,19 @@ import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
-  formatTokenName,
+  formatTokenStyleByOutput,
   sortTokens,
   tokenVariableName,
 } from '../helpers/tokenHelper';
 import { handleSpecialCase } from '../helpers/specialCaseHelper';
 import { normalizeColor } from '../helpers/colorHelper';
 
-export const tokenToCSSByType = (
+export const tokenToStyleByType = (
   token: Token,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   withParent: boolean,
+  hasJsOutput: boolean,
 ): string | null => {
   const hasTokenType = (type: TokenType) => {
     const { tokenType } = token;
@@ -38,7 +39,7 @@ export const tokenToCSSByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
 
-    return formatTokenName(name, value, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
   }
 
   if (hasTokenType(TokenType.string)) {
@@ -47,7 +48,7 @@ export const tokenToCSSByType = (
     let value = stringToken.value.text;
     value = handleSpecialCase(name, value);
 
-    return formatTokenName(name, value);
+    return formatTokenStyleByOutput(name, value, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.color)) {
@@ -62,7 +63,7 @@ export const tokenToCSSByType = (
     value = normalizeColor(value);
     value = handleSpecialCase(name, value);
 
-    return formatTokenName(name, value);
+    return formatTokenStyleByOutput(name, value, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.shadow)) {
@@ -76,7 +77,7 @@ export const tokenToCSSByType = (
       tokenToVariableRef: () => '',
     });
 
-    return formatTokenName(name, color).replace(/0px/g, '0');
+    return formatTokenStyleByOutput(name, color, hasJsOutput).replace(/0px/g, '0');
   }
 
   if (hasTokenType(TokenType.gradient)) {
@@ -91,24 +92,25 @@ export const tokenToCSSByType = (
     });
     gradient = addAngleVarToGradient(gradient);
 
-    return formatTokenName(name, gradient);
+    return formatTokenStyleByOutput(name, gradient, hasJsOutput);
   }
 
   return null;
 };
 
-export const generateCssFromTokens = (
+export const generateStylesFromTokens = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   group: string,
   hasParentPrefix: boolean,
   sortByNumValue: boolean,
+  hasJsOutput: boolean = false,
 ): string => {
   const sortedTokens = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
 
   const cssTokens = sortedTokens.map((token) => ({
-    css: tokenToCSSByType(token, mappedTokens, tokenGroups, hasParentPrefix),
+    css: tokenToStyleByType(token, mappedTokens, tokenGroups, hasParentPrefix, hasJsOutput),
     parentGroupId: token.parentGroupId,
   }));
 

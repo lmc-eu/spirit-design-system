@@ -1,3 +1,5 @@
+import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
+
 export const toPlural = (name: string): string => {
   const specialCases: Record<string, string> = {
     radius: 'radii',
@@ -6,3 +8,5 @@ export const toPlural = (name: string): string => {
 
   return specialCases[name] || (name.endsWith('s') ? name : `${name}s`);
 };
+
+export const toCamelCase = (name: string): string => NamingHelper.codeSafeVariableName(name, StringCase.camelCase);

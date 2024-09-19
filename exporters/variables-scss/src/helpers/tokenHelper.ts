@@ -1,5 +1,16 @@
-import { Token, TokenGroup, TypographyTokenValue } from '@supernovaio/sdk-exporters';
+import {
+  ColorToken,
+  DimensionToken,
+  GradientToken,
+  ShadowToken,
+  StringToken,
+  Token,
+  TokenGroup,
+  TokenType,
+  TypographyTokenValue,
+} from '@supernovaio/sdk-exporters';
 import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
+import { toCamelCase } from './stringHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
   let parent;
@@ -12,12 +23,22 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const formatTokenName = (name: string, value: string | number, unit?: string) => {
-  if (unit) {
-    return `$${name}: ${value}${unit} !default;`;
+export const normalizeZeroValueWithUnit = (value: string | number, unit: string): string | number => {
+  if (value === 0) {
+    return 0;
   }
 
-  return `$${name}: ${value} !default;`;
+  return `${value}${unit}`;
+};
+
+export const formatTokenStyleByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
+  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit) : value;
+
+  if (hasJsOutput) {
+    return `export const ${toCamelCase(name)} = ${typeof normalizedValue === 'number' ? normalizedValue : `'${normalizedValue}'`};`;
+  }
+
+  return `$${name}: ${normalizedValue} !default;`;
 };
 
 export const sortTokens = (
@@ -29,11 +50,27 @@ export const sortTokens = (
 ) => {
   const sortedTokens = tokens.sort((a, b) => {
     if (sortByNumValue) {
-      const aNumMatch = a.name.match(/\d+$/);
-      const bNumMatch = b.name.match(/\d+$/);
+      const value = (token: Token) => {
+        if (token.tokenType === TokenType.dimension) {
+          const dimensionToken = token as DimensionToken;
+
+          return dimensionToken.value.measure;
+        }
+
+        if (token.tokenType === TokenType.string) {
+          const stringToken = token as StringToken;
+
+          return stringToken.value.text;
+        }
+
+        return (token as ColorToken | ShadowToken | GradientToken).value;
+      };
+
+      const aNumMatch = value(a);
+      const bNumMatch = value(b);
 
       if (aNumMatch && bNumMatch) {
-        return parseInt(aNumMatch[0], 10) - parseInt(bNumMatch[0], 10);
+        return parseInt(aNumMatch.toString(), 10) - parseInt(bNumMatch.toString(), 10);
       }
     }
 
@@ -86,6 +123,7 @@ export const addAngleVarToGradient = (inputString: string): string => {
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
+  hasJsOutput: boolean,
 ): string => {
   const baseStyles = [
     `font-family: "'${fontFamily.text}', sans-serif"`,
@@ -94,8 +132,23 @@ export const typographyValue = (
     `font-weight: ${fontWeight.text}`,
   ];
 
+  const baseJsStyles = [
+    `fontFamily: "'${fontFamily.text}', sans-serif"`,
+    `fontSize: '${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
+    `fontStyle: '${isItalic ? 'italic' : 'normal'}'`,
+    `fontWeight: ${fontWeight.text}`,
+  ];
+
   if (lineHeight && lineHeight.measure) {
-    baseStyles.push(`line-height: ${lineHeight.measure / 100}`);
+    hasJsOutput
+      ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100},`)
+      : baseStyles.push(`line-height: ${lineHeight.measure / 100},`);
+  }
+
+  if (hasJsOutput) {
+    return `{
+${baseJsStyles.join(',\n')}
+}`;
   }
 
   return `(
