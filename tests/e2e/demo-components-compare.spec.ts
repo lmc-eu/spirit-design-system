@@ -5,7 +5,7 @@ import { readdirSync } from 'fs';
 import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from '../helpers';
 
 // Tests that are intentionally broken, but will be fixed in the future
-const IGNORED_TESTS: string[] = ['Header'];
+const IGNORED_TESTS: string[] = [];
 
 interface TestConfig {
   packageDir: string;
