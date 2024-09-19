@@ -1,7 +1,9 @@
 <div style="display: flex; flex-direction: column; justify-content: space-between; height: 300px; color: white; background: linear-gradient(121.59deg, #073256 0%, #185C95 100%);">
 
-    <Header isSimple>
-        {% include '@components/Header/stories/_partials/SpiritLogo.twig' %}
+    <Header color="transparent" isSimple>
+        <a href="#" aria-label="JobBoard homepage">
+            {% include '@components/Header/stories/_partials/JobBoardLogoInverted.svg.twig' %}
+        </a>
     </Header>
 
     <Heading elementType="div" size="large" marginBottom="space-1200" UNSAFE_className="text-center">Example Cover</Heading>
