@@ -25,19 +25,11 @@ export const generateFileContent = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   fileData: FileData,
+  isJsFile: boolean,
 ) => {
   let cssTokens = '';
   let cssObject: CssObjectType = {};
-  const {
-    fileName,
-    groupNames,
-    hasParentPrefix = true,
-    sortByNumValue = false,
-    withCssObject = true,
-    tokenTypes,
-  } = fileData;
-
-  const isJsFile = fileName.endsWith('.ts');
+  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withCssObject = true, tokenTypes } = fileData;
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {

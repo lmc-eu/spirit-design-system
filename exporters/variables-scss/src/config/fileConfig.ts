@@ -11,86 +11,55 @@ export type FileData = {
 
 export const nonThemedFilesData: FileData[] = [
   {
-    fileName: '_borders.scss',
+    fileName: 'borders',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Border'],
     withCssObject: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_other.scss',
+    fileName: 'other',
     tokenTypes: [TokenType.dimension, TokenType.string],
     groupNames: ['Grid', 'Container', 'Breakpoint'],
   },
   {
-    fileName: '_radii.scss',
+    fileName: 'radii',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Radius'],
     hasParentPrefix: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_spacing.scss',
+    fileName: 'spacing',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Spacing'],
     hasParentPrefix: false,
     sortByNumValue: true,
   },
   {
-    fileName: '_shadows.scss',
+    fileName: 'shadows',
     tokenTypes: [TokenType.shadow],
     groupNames: [''],
     hasParentPrefix: false,
   },
   {
-    fileName: '_gradients.scss',
+    fileName: 'gradients',
     tokenTypes: [TokenType.gradient],
     groupNames: [''],
     hasParentPrefix: true,
   },
   {
-    fileName: '_typography.scss',
+    fileName: 'typography',
     tokenTypes: [TokenType.typography],
     groupNames: [''],
     withCssObject: true,
-    hasParentPrefix: false,
-  },
-  {
-    fileName: 'spacing.ts',
-    tokenTypes: [TokenType.dimension],
-    groupNames: ['Spacing'],
-    hasParentPrefix: false,
-    sortByNumValue: true,
-  },
-  {
-    fileName: 'other.ts',
-    tokenTypes: [TokenType.dimension, TokenType.string],
-    groupNames: ['Grid', 'Container', 'Breakpoint'],
-  },
-  {
-    fileName: 'typography.ts',
-    tokenTypes: [TokenType.typography],
-    groupNames: [''],
-    withCssObject: true,
-    hasParentPrefix: false,
-  },
-  {
-    fileName: 'gradients.ts',
-    tokenTypes: [TokenType.gradient],
-    groupNames: [''],
-    hasParentPrefix: true,
-  },
-  {
-    fileName: 'shadows.ts',
-    tokenTypes: [TokenType.shadow],
-    groupNames: [''],
     hasParentPrefix: false,
   },
 ];
 
 export const themedFilesData: FileData[] = [
   {
-    fileName: '_colors.scss',
+    fileName: 'colors',
     tokenTypes: [TokenType.color],
     groupNames: [''],
   },

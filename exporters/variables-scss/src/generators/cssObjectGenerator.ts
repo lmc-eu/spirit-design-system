@@ -18,7 +18,9 @@ const invariantTokenAlias: { [key: string]: string } = {
 
 export const normalizeFirstNamePart = (part: string, tokenType: TokenType, isJsFile: boolean): string => {
   if (tokenType === TokenType.color) {
-    return isJsFile ? `${part}${COLOR_SUFFIX}` : `$${part}${COLOR_SUFFIX}`;
+    return isJsFile
+      ? NamingHelper.codeSafeVariableName(`${part}${COLOR_SUFFIX}`, StringCase.camelCase)
+      : `$${part}${COLOR_SUFFIX}`;
   }
 
   return isJsFile ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
@@ -91,8 +93,11 @@ const handleNonTypographyTokens = (
       const tokenAlias = getTokenAlias(token, isJsToken);
       currentObject[tokenAlias] = tokenValue;
     } else {
-      currentObject[modifiedPart] = currentObject[modifiedPart] || {};
-      currentObject = currentObject[modifiedPart] as CssObjectType;
+      currentObject[isJsToken ? NamingHelper.codeSafeVariableName(modifiedPart, StringCase.camelCase) : modifiedPart] =
+        currentObject[modifiedPart] || {};
+      currentObject = currentObject[
+        isJsToken ? NamingHelper.codeSafeVariableName(modifiedPart, StringCase.camelCase) : modifiedPart
+      ] as CssObjectType;
     }
   });
 };
