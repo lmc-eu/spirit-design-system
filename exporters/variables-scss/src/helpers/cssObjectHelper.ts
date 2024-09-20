@@ -1,11 +1,11 @@
-import { CssObjectType } from '../generators/cssObjectGenerator';
+import { StylesObjectType } from '../generators/stylesObjectGenerator';
 
-export const deepMergeObjects = (obj1: CssObjectType, obj2: CssObjectType): CssObjectType => {
+export const deepMergeObjects = (obj1: StylesObjectType, obj2: StylesObjectType): StylesObjectType => {
   // First, perform the deep merge logic
   const mergedObject = Object.entries(obj2).reduce(
     (result, [key, value]) => {
       if (typeof value === 'object' && value !== null && typeof result[key] === 'object') {
-        result[key] = deepMergeObjects(result[key] as CssObjectType, value as CssObjectType);
+        result[key] = deepMergeObjects(result[key] as StylesObjectType, value as StylesObjectType);
       } else {
         result[key] = value;
       }
@@ -16,8 +16,8 @@ export const deepMergeObjects = (obj1: CssObjectType, obj2: CssObjectType): CssO
   );
 
   // Now, process the object to move keys with "moveToTheEnd": true to the end
-  const finalObject: CssObjectType = {};
-  const endObject: CssObjectType = {};
+  const finalObject: StylesObjectType = {};
+  const endObject: StylesObjectType = {};
 
   Object.entries(mergedObject).forEach(([key, value]) => {
     if (typeof value === 'object' && value !== null && value.moveToTheEnd === 'true') {
@@ -34,11 +34,11 @@ export const deepMergeObjects = (obj1: CssObjectType, obj2: CssObjectType): CssO
   return { ...finalObject, ...endObject };
 };
 
-export function convertToScss(obj: CssObjectType): string {
+export function convertToScss(obj: StylesObjectType): string {
   return Object.entries(obj)
     .map(([key, value]) => {
       if (typeof value === 'object' && value !== null) {
-        const nestedScss = convertToScss(value as CssObjectType);
+        const nestedScss = convertToScss(value as StylesObjectType);
 
         return `${key}: (\n${nestedScss}\n),\n`;
       }
@@ -49,11 +49,11 @@ export function convertToScss(obj: CssObjectType): string {
     .slice(0, -1);
 }
 
-export const convertToJsToken = (obj: CssObjectType): string => {
+export const convertToJsToken = (obj: StylesObjectType): string => {
   return Object.entries(obj)
     .map(([key, value]) => {
       if (typeof value === 'object' && value !== null) {
-        const nestedScss = convertToJsToken(value as CssObjectType);
+        const nestedScss = convertToJsToken(value as StylesObjectType);
 
         return `${key}: {\n${nestedScss}\n},\n`;
       }
