@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: 🔍 Code Quality Checks
 
 on:
   # Run this workflow on push to branches only (not tags)
@@ -15,9 +15,12 @@ env:
   NX_NO_CLOUD: true
 
 jobs:
-  test:
+  install:
+    name: 🧶 Install
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
 
     steps:
       - name: Checkout
@@ -26,20 +29,85 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
 
-      - name: Build
-        run: yarn build
+      - name: Save Repository to Cache
+        uses: actions/cache/save@v4
+        with:
+          path: ./
+          key: repository-cache-${{ hashFiles('.*') }}
 
-      - name: Check code-style format
-        run: yarn format:check
+  build:
+    name: 🏗️ Build Design Tokens
+    needs: [install]
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Restore Repository from Cache
+        uses: actions/cache/restore@v4
+        id: restore-repository-cache
+        with:
+          path: ./
+          key: repository-cache-${{ hashFiles('.*') }}
+
+      - name: Setup Node
+        uses: ./.github/actions/setup-node
+
+      - name: Build
+        run: yarn workspace @lmc-eu/spirit-design-tokens build
+
+      - name: Save Repository to Cache
+        uses: actions/cache/save@v4
+        with:
+          path: ./
+          key: repository-builds-cache-${{ hashFiles('.*') }}
+
+  lint:
+    name: 📐 Code Linting
+    needs: [build]
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Restore Repository from Cache
+        uses: actions/cache/restore@v4
+        id: restore-repository-cache
+        with:
+          path: ./
+          key: repository-builds-cache-${{ hashFiles('.*') }}
+
+      - name: Setup Node
+        uses: ./.github/actions/setup-node
 
       - name: Lint
         run: yarn lint
 
-      - name: Test
-        run: yarn test
+  unit-tests:
+    name: 🧪 Unit Testing
+    needs: [build]
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
 
-      - name: Check Types
-        run: yarn types
+    steps:
+      - name: Restore Repository from Cache
+        uses: actions/cache/restore@v4
+        id: restore-repository-cache
+        with:
+          path: ./
+          key: repository-builds-cache-${{ hashFiles('.*') }}
+
+      - name: Setup Node
+        uses: ./.github/actions/setup-node
+
+      - name: Unit Tests
+        # Ignoring web-twig tests as they have separated workflow.
+        # See `test-web-twig.yaml` for web-twig unit tests.
+        run: yarn test:unit --ignore '@lmc-eu/spirit-web-twig'
 
       - name: Publish Web Package Code Coverage
         # When Nx hits its cloud cache, there is no generated coverage to sent, e.g. do not let this crash
@@ -70,3 +138,42 @@ jobs:
           file: ./packages/analytics/.coverage/lcov.info
           flag-name: analytics
           carryforward: web, web-react, web-twig, design-tokens, icons, common, codemods, form-validations
+
+  format:
+    name: 💅 Code Formatting
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
+
+      - name: Check Code-Style Format
+        run: yarn format:check
+
+  types:
+    name: 📘 Type Checking
+    needs: [build]
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Restore Repository from Cache
+        uses: actions/cache/restore@v4
+        id: restore-repository-cache
+        with:
+          path: ./
+          key: repository-builds-cache-${{ hashFiles('**/build') }}
+
+      - name: Setup Node
+        uses: ./.github/actions/setup-node
+
+      - name: Types Check
+        run: yarn types
