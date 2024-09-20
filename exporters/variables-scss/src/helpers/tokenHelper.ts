@@ -15,10 +15,10 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
 export const formatTokenName = (name: string, value: string | number, convertToJs: boolean, unit?: string) => {
   if (convertToJs) {
     if (unit) {
-      return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}${unit};'`;
+      return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}${unit}';`;
     }
 
-    return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value};'`;
+    return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}';`;
   }
 
   if (!convertToJs && unit) {

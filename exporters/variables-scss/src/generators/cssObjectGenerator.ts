@@ -1,8 +1,7 @@
 import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
-import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { formatTypographyName, getBreakpoint } from '../helpers/cssObjectHelper';
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
-import { toPlural } from '../helpers/stringHelper';
+import { toCamelCase, toPlural } from '../helpers/stringHelper';
 
 export const COLOR_SUFFIX = '-colors';
 
@@ -18,9 +17,9 @@ const invariantTokenAlias: { [key: string]: string } = {
 
 export const normalizeFirstNamePart = (part: string, tokenType: TokenType, isJsFile: boolean): string => {
   if (tokenType === TokenType.color) {
-    return isJsFile
-      ? NamingHelper.codeSafeVariableName(`${part}${COLOR_SUFFIX}`, StringCase.camelCase)
-      : `$${part}${COLOR_SUFFIX}`;
+    const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SUFFIX}`;
+
+    return isJsFile ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
   }
 
   return isJsFile ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
@@ -42,7 +41,7 @@ export const getTokenAlias = (token: Token, isJsToken: boolean): string => {
   if (token.tokenType !== TokenType.color && numericPart) {
     alias = numericPart;
   } else {
-    alias = isJsToken ? NamingHelper.codeSafeVariableName(nonNumericPart, StringCase.camelCase) : nonNumericPart;
+    alias = isJsToken ? toCamelCase(nonNumericPart) : nonNumericPart;
   }
 
   return alias;
@@ -61,7 +60,7 @@ const handleTypographyTokens = (
 
   let currentObject = cssObjectRef;
   reducedNameParts.forEach((part, index) => {
-    const tokenName = isJsToken ? NamingHelper.codeSafeVariableName(name, StringCase.camelCase) : `$${name}`;
+    const tokenName = isJsToken ? toCamelCase(name) : `$${name}`;
     const modifiedPart = index === 0 ? tokenName : part;
 
     if (index === reducedNameParts.length - 1) {
@@ -88,16 +87,13 @@ const handleNonTypographyTokens = (
 
     if (index === tokenNameParts.length - 1) {
       const tokenValue = isJsToken
-        ? `${NamingHelper.codeSafeVariableName(tokenVariableName(token, tokenGroups, hasParentPrefix), StringCase.camelCase)}`
+        ? `${toCamelCase(tokenVariableName(token, tokenGroups, hasParentPrefix))}`
         : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
       const tokenAlias = getTokenAlias(token, isJsToken);
       currentObject[tokenAlias] = tokenValue;
     } else {
-      currentObject[isJsToken ? NamingHelper.codeSafeVariableName(modifiedPart, StringCase.camelCase) : modifiedPart] =
-        currentObject[modifiedPart] || {};
-      currentObject = currentObject[
-        isJsToken ? NamingHelper.codeSafeVariableName(modifiedPart, StringCase.camelCase) : modifiedPart
-      ] as CssObjectType;
+      currentObject[isJsToken ? toCamelCase(modifiedPart) : modifiedPart] = currentObject[modifiedPart] || {};
+      currentObject = currentObject[isJsToken ? toCamelCase(modifiedPart) : modifiedPart] as CssObjectType;
     }
   });
 };
