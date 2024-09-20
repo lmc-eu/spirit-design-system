@@ -32,6 +32,7 @@
     "prepare": "is-ci || husky install",
     "storybook": "lerna run start --scope=@lmc-eu/spirit-storybook",
     "test": "yarn packages:test",
+    "test:unit": "yarn packages:test:unit",
     "test:e2e": "yarn playwright test",
     "test:e2e:update": "yarn playwright test --update-snapshots",
     "test:e2e:report": "yarn playwright show-report",
