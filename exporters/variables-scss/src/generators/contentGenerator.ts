@@ -20,6 +20,18 @@ export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, gro
   });
 };
 
+export const generateJsObjectOutput = (stylesObject: StylesObjectType): string => {
+  return Object.entries(stylesObject)
+    .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as StylesObjectType)}\n};\n\n`)
+    .join('');
+};
+
+export const generateScssObjectOutput = (stylesObject: StylesObjectType): string => {
+  return Object.entries(stylesObject)
+    .map(([key, obj]) => `${key}: (\n${convertToScss(obj as StylesObjectType)}\n) !default;\n\n`)
+    .join('');
+};
+
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
@@ -66,15 +78,7 @@ export const generateFileContent = (
 
   // convert css object to scss or js structure based on file extension
   if (withStylesObject) {
-    if (hasJsOutput) {
-      content += Object.entries(stylesObject)
-        .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as StylesObjectType)}\n};\n\n`)
-        .join('');
-    } else {
-      content += Object.entries(stylesObject)
-        .map(([key, obj]) => `${key}: (\n${convertToScss(obj as StylesObjectType)}\n) !default;\n\n`)
-        .join('');
-    }
+    content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
   }
 
   return {

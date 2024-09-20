@@ -1,7 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { generateFileContent, addDisclaimer, filterTokensByTypeAndGroup } from '../contentGenerator';
+import {
+  generateFileContent,
+  addDisclaimer,
+  filterTokensByTypeAndGroup,
+  generateScssObjectOutput,
+  generateJsObjectOutput,
+} from '../contentGenerator';
 import {
   exampleMockedGroups,
   exampleMockedTokens,
@@ -84,6 +90,42 @@ describe('contentGenerator', () => {
       );
 
       expect(filteredTokens).toStrictEqual(expectedTokens);
+    });
+  });
+
+  describe('generateScssObjectOutput', () => {
+    it('should generate SCSS object output', () => {
+      const stylesObject = {
+        $grids: { columns: '$grid-columns', spacing: { desktop: '$grid-spacing-desktop' } },
+      };
+      const expectedResult = `$grids: (
+columns: $grid-columns,
+spacing: (
+desktop: $grid-spacing-desktop,
+),
+) !default;\n\n`;
+
+      const scssOutput = generateScssObjectOutput(stylesObject);
+
+      expect(scssOutput).toBe(expectedResult);
+    });
+  });
+
+  describe('generateJsObjectOutput', () => {
+    it('should generate JS object output', () => {
+      const stylesObject = {
+        grids: { columns: 'gridColumns', spacing: { desktop: 'gridSpacingDesktop' } },
+      };
+      const expectedResult = `export const grids = {
+columns: gridColumns,
+spacing: {
+desktop: gridSpacingDesktop,
+},
+};\n\n`;
+
+      const jsOutput = generateJsObjectOutput(stylesObject);
+
+      expect(jsOutput).toBe(expectedResult);
     });
   });
 });

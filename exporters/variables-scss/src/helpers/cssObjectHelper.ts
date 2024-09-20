@@ -1,4 +1,7 @@
-import { StylesObjectType } from '../generators/stylesObjectGenerator';
+import { Token, TokenType } from '@supernovaio/sdk-exporters';
+import { COLOR_SUFFIX, StylesObjectType } from '../generators/stylesObjectGenerator';
+import { toCamelCase, toPlural } from './stringHelper';
+import { handleInvariantTokenAlias } from './specialCaseHelper';
 
 export const deepMergeObjects = (obj1: StylesObjectType, obj2: StylesObjectType): StylesObjectType => {
   // First, perform the deep merge logic
@@ -72,4 +75,28 @@ export const formatTypographyName = (tokenNameParts: string[]): string => {
 
 export const getBreakpoint = (tokenNameParts: string[]): string => {
   return tokenNameParts.length === 4 ? tokenNameParts[1] : 'mobile';
+};
+
+export const getTokenAlias = (token: Token, hasJsOutput: boolean): string => {
+  let alias;
+  const numericPart = token.name.match(/\d+/)?.[0];
+  const nonNumericPart = handleInvariantTokenAlias(token.name.toLowerCase());
+
+  if (token.tokenType !== TokenType.color && numericPart) {
+    alias = numericPart;
+  } else {
+    alias = hasJsOutput ? toCamelCase(nonNumericPart) : nonNumericPart;
+  }
+
+  return alias;
+};
+
+export const normalizeFirstNamePart = (part: string, tokenType: TokenType, hasJsOutput: boolean): string => {
+  if (tokenType === TokenType.color) {
+    const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SUFFIX}`;
+
+    return hasJsOutput ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
+  }
+
+  return hasJsOutput ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
 };

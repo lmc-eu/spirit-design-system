@@ -1,19 +1,18 @@
-import { Token, TokenType } from '@supernovaio/sdk-exporters';
+import { Token } from '@supernovaio/sdk-exporters';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
   createStylesObjectStructureFromTokenNameParts,
   StylesObjectType,
   generateStylesObjectFromTokens,
-  getTokenAlias,
-  normalizeFirstNamePart,
   parseGroupName,
+  createGlobalTypographyObject,
+  typographyGroupReducer,
 } from '../stylesObjectGenerator';
 import {
   exampleMockedColorGroups,
   exampleMockedColorsTokens,
   exampleMockedGroups,
-  exampleMockedInvariantTokens,
   exampleMockedTokens,
   exampleTypographyMockedTokens,
 } from '../../../tests/fixtures/mockedExampleTokens';
@@ -161,46 +160,24 @@ describe('stylesObjectGenerator', () => {
     });
   });
 
-  describe('handleInvariantTokens', () => {
-    it('should return token alias for invariant case', () => {
-      const token = exampleMockedInvariantTokens.get('radiiRef') as Token;
-      expect(getTokenAlias(token, false)).toBe('full');
-    });
-
-    it('should return token alias for non-invariant case', () => {
-      const token = exampleMockedTokens.get('dimensionRef') as Token;
-      expect(getTokenAlias(token, false)).toBe('desktop');
-    });
-  });
-
-  describe('getTokenAlias', () => {
-    it('should return token alias for non-numeric', () => {
-      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
-      expect(getTokenAlias(token, false)).toBe('bold-underline');
-    });
-
-    it('should return token alias for non-numeric with js output', () => {
-      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
-      expect(getTokenAlias(token, true)).toBe('boldUnderline');
-    });
-  });
-
-  describe('normalizeFirstNamePart', () => {
-    it('should return correct first part name for token type dimension', () => {
-      expect(normalizeFirstNamePart('grid', TokenType.dimension, false)).toBe('$grids');
-    });
-
-    it('should return correct first part name for token type color', () => {
-      expect(normalizeFirstNamePart('action', TokenType.color, false)).toBe('$action-colors');
-    });
-  });
-
   describe('createGlobalColorsObject', () => {
     it('should create global colors object', () => {
       const colorKeys = ['$action-colors', '$background-colors'];
       const colorsObject = createGlobalColorsObject(colorKeys);
 
       expect(colorsObject).toStrictEqual({ action: '$action-colors', background: '$background-colors' });
+    });
+  });
+
+  describe('createGlobalTypographyObject', () => {
+    it('should create global typography object', () => {
+      const typographyKeys = ['$heading-xlarge-bold', '$body-large-regular'];
+      const typographyObject = createGlobalTypographyObject(typographyKeys);
+
+      expect(typographyObject).toStrictEqual({
+        'body-large-regular': '$body-large-regular',
+        'heading-xlarge-bold': '$heading-xlarge-bold',
+      });
     });
   });
 
@@ -217,6 +194,19 @@ describe('stylesObjectGenerator', () => {
       const result = colorGroupsReducer(accumulatedColorKeys, currentColorKey);
 
       expect(result).toStrictEqual({ action: '$action-colors', background: '$background-colors' });
+    });
+  });
+
+  describe('typographyGroupReducer', () => {
+    it('should reduce typography groups', () => {
+      const accumulatedTypographyKeys = { 'heading-xlarge-bold': '$heading-xlarge-bold' };
+      const currentTypographyKey = '$body-large-regular';
+      const result = typographyGroupReducer(accumulatedTypographyKeys, currentTypographyKey);
+
+      expect(result).toStrictEqual({
+        'body-large-regular': '$body-large-regular',
+        'heading-xlarge-bold': '$heading-xlarge-bold',
+      });
     });
   });
 });

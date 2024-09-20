@@ -1,51 +1,11 @@
 import { Token, TokenGroup, TokenType, TypographyToken } from '@supernovaio/sdk-exporters';
-import { formatTypographyName, getBreakpoint } from '../helpers/cssObjectHelper';
+import { formatTypographyName, getBreakpoint, getTokenAlias, normalizeFirstNamePart } from '../helpers/cssObjectHelper';
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
-import { toCamelCase, toPlural } from '../helpers/stringHelper';
+import { toCamelCase } from '../helpers/stringHelper';
 
 export const COLOR_SUFFIX = '-colors';
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
-
-/* This function handles cases that are outside the logic of aliases for the remaining tokens.
-A common condition is that for tokens with a numeric part, the non-numeric part is dropped.
-Non-numeric tokens are left in their original form. Deviations from this logic are addressed here.
-e.g. radius-full -> full */
-const invariantTokenAlias: { [key: string]: string } = {
-  'radius-full': 'full',
-};
-
-export const normalizeFirstNamePart = (part: string, tokenType: TokenType, hasJsOutput: boolean): string => {
-  if (tokenType === TokenType.color) {
-    const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SUFFIX}`;
-
-    return hasJsOutput ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
-  }
-
-  return hasJsOutput ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
-};
-
-export const handleInvariantTokenAlias = (tokenName: string): string => {
-  if (invariantTokenAlias[tokenName]) {
-    return invariantTokenAlias[tokenName];
-  }
-
-  return tokenName;
-};
-
-export const getTokenAlias = (token: Token, hasJsOutput: boolean): string => {
-  let alias;
-  const numericPart = token.name.match(/\d+/)?.[0];
-  const nonNumericPart = handleInvariantTokenAlias(token.name.toLowerCase());
-
-  if (token.tokenType !== TokenType.color && numericPart) {
-    alias = numericPart;
-  } else {
-    alias = hasJsOutput ? toCamelCase(nonNumericPart) : nonNumericPart;
-  }
-
-  return alias;
-};
 
 const handleTypographyTokens = (
   tokenNameParts: string[],

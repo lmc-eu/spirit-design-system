@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
-import { generateFiles, generateOutputFilesByThemes } from '../fileGenerator';
+import { generateFiles, generateIndexFile, generateOutputFilesByThemes } from '../fileGenerator';
 import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
 import { nonThemedFilesData } from '../../config/fileConfig';
 
@@ -108,6 +108,41 @@ describe('fileGenerator', () => {
         { fileName: 'gradients', content: emptyFile },
         { fileName: 'typography', content: emptyFile },
       ]);
+    });
+  });
+
+  describe('generateIndexFile', () => {
+    const dataProvider = [
+      {
+        files: [{ fileName: 'borders', content: emptyFile }],
+        expectedIndexFile: `@forward 'borders';\n`,
+        hasJsOutput: false,
+        description: 'should generate index file with one file',
+      },
+      {
+        files: [
+          { fileName: 'borders', content: emptyFile },
+          { fileName: 'other', content: mockedExpectedResult },
+        ],
+        expectedIndexFile: `@forward 'borders';\n@forward 'other';\n`,
+        hasJsOutput: false,
+        description: 'should generate index file with multiple files',
+      },
+      {
+        files: [
+          { fileName: 'borders', content: emptyFile },
+          { fileName: 'other', content: mockedExpectedResult },
+        ],
+        expectedIndexFile: `export * from './borders';\nexport * from './other';\n`,
+        hasJsOutput: true,
+        description: 'should generate index file with one file with js output',
+      },
+    ];
+
+    it.each(dataProvider)('$description', ({ files, expectedIndexFile, hasJsOutput }) => {
+      const mockedIndexFile = generateIndexFile(files, hasJsOutput);
+
+      expect(mockedIndexFile).toBe(expectedIndexFile);
     });
   });
 });

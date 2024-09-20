@@ -1,4 +1,6 @@
-import { convertToScss, deepMergeObjects } from '../cssObjectHelper';
+import { Token, TokenType } from '@supernovaio/sdk-exporters';
+import { convertToScss, deepMergeObjects, getTokenAlias, normalizeFirstNamePart } from '../cssObjectHelper';
+import { exampleTypographyMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
 
 const object1 = {
   $grids: {
@@ -109,6 +111,28 @@ describe('cssObjectHelper', () => {
       const result = convertToScss(mergedTypographyObject);
 
       expect(result).toBe(scssTypographyObject);
+    });
+  });
+
+  describe('getTokenAlias', () => {
+    it('should return token alias for non-numeric', () => {
+      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
+      expect(getTokenAlias(token, false)).toBe('bold-underline');
+    });
+
+    it('should return token alias for non-numeric with js output', () => {
+      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
+      expect(getTokenAlias(token, true)).toBe('boldUnderline');
+    });
+  });
+
+  describe('normalizeFirstNamePart', () => {
+    it('should return correct first part name for token type dimension', () => {
+      expect(normalizeFirstNamePart('grid', TokenType.dimension, false)).toBe('$grids');
+    });
+
+    it('should return correct first part name for token type color', () => {
+      expect(normalizeFirstNamePart('action', TokenType.color, false)).toBe('$action-colors');
     });
   });
 });
