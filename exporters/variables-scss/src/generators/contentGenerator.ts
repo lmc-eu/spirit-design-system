@@ -1,6 +1,6 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens } from './stylesGenerator';
-import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
+import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
 import { convertToJsToken, convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
 import { FileData } from '../config/fileConfig';
@@ -27,9 +27,9 @@ export const generateFileContent = (
   fileData: FileData,
   hasJsOutput: boolean,
 ) => {
-  let cssTokens = '';
-  let cssObject: CssObjectType = {};
-  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withCssObject = true, tokenTypes } = fileData;
+  let styledTokens = '';
+  let stylesObject: StylesObjectType = {};
+  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withStylesObject = true, tokenTypes } = fileData;
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {
@@ -38,7 +38,7 @@ export const generateFileContent = (
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
-        cssTokens += generateStylesFromTokens(
+        styledTokens += generateStylesFromTokens(
           filteredTokens,
           mappedTokens,
           tokenGroups,
@@ -47,32 +47,32 @@ export const generateFileContent = (
           sortByNumValue,
           hasJsOutput,
         );
-        cssTokens += '\n\n';
+        styledTokens += '\n\n';
       }
 
       // Generate css object and merge it with the existing one
-      const groupCssObject = generateCssObjectFromTokens(
+      const groupStylesObject = generateStylesObjectFromTokens(
         filteredTokens,
         mappedTokens,
         tokenGroups,
         hasParentPrefix,
         hasJsOutput,
       );
-      cssObject = deepMergeObjects(cssObject, groupCssObject);
+      stylesObject = deepMergeObjects(stylesObject, groupStylesObject);
     });
   });
 
-  let content = cssTokens;
+  let content = styledTokens;
 
   // convert css object to scss or js structure based on file extension
-  if (withCssObject) {
+  if (withStylesObject) {
     if (hasJsOutput) {
-      content += Object.entries(cssObject)
-        .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as CssObjectType)}\n};\n\n`)
+      content += Object.entries(stylesObject)
+        .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as StylesObjectType)}\n};\n\n`)
         .join('');
     } else {
-      content += Object.entries(cssObject)
-        .map(([key, obj]) => `${key}: (\n${convertToScss(obj as CssObjectType)}\n) !default;\n\n`)
+      content += Object.entries(stylesObject)
+        .map(([key, obj]) => `${key}: (\n${convertToScss(obj as StylesObjectType)}\n) !default;\n\n`)
         .join('');
     }
   }

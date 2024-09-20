@@ -5,7 +5,7 @@ import { toCamelCase, toPlural } from '../helpers/stringHelper';
 
 export const COLOR_SUFFIX = '-colors';
 
-export type CssObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
+export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
 /* This function handles cases that are outside the logic of aliases for the remaining tokens.
 A common condition is that for tokens with a numeric part, the non-numeric part is dropped.
@@ -50,7 +50,7 @@ export const getTokenAlias = (token: Token, hasJsOutput: boolean): string => {
 const handleTypographyTokens = (
   tokenNameParts: string[],
   token: Token,
-  cssObjectRef: CssObjectType,
+  stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
 ): void => {
   const typographyToken = token as TypographyToken;
@@ -58,7 +58,7 @@ const handleTypographyTokens = (
   const name = formatTypographyName(tokenNameParts).toLowerCase();
   const breakpoint = getBreakpoint(tokenNameParts).toLowerCase();
 
-  let currentObject = cssObjectRef;
+  let currentObject = stylesObjectRef;
   reducedNameParts.forEach((part, index) => {
     const tokenName = hasJsOutput ? toCamelCase(name) : `$${name}`;
     const modifiedPart = index === 0 ? tokenName : part;
@@ -67,7 +67,7 @@ const handleTypographyTokens = (
       currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'), hasJsOutput);
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
-      currentObject = currentObject[modifiedPart] as CssObjectType;
+      currentObject = currentObject[modifiedPart] as StylesObjectType;
     }
   });
 };
@@ -77,10 +77,10 @@ const handleNonTypographyTokens = (
   token: Token,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
-  cssObjectRef: CssObjectType,
+  stylesObjectRef: StylesObjectType,
   hasJsOutput = false,
 ): void => {
-  let currentObject = cssObjectRef;
+  let currentObject = stylesObjectRef;
 
   tokenNameParts.forEach((part, index) => {
     const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType, hasJsOutput) : part;
@@ -93,32 +93,32 @@ const handleNonTypographyTokens = (
       currentObject[tokenAlias] = tokenValue;
     } else {
       currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] = currentObject[modifiedPart] || {};
-      currentObject = currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] as CssObjectType;
+      currentObject = currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] as StylesObjectType;
     }
   });
 };
 
-export const createObjectStructureFromTokenNameParts = (
+export const createStylesObjectStructureFromTokenNameParts = (
   token: Token,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
-  cssObjectRef: CssObjectType,
+  stylesObjectRef: StylesObjectType,
   hasJsOutput: boolean,
-): CssObjectType => {
+): StylesObjectType => {
   const { tokenType } = token;
   const tokenNameParts = token.origin?.name?.split('/');
 
   if (!tokenNameParts) {
-    return cssObjectRef;
+    return stylesObjectRef;
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, cssObjectRef, hasJsOutput);
+    handleTypographyTokens(tokenNameParts, token, stylesObjectRef, hasJsOutput);
   } else {
-    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef, hasJsOutput);
+    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, stylesObjectRef, hasJsOutput);
   }
 
-  return cssObjectRef;
+  return stylesObjectRef;
 };
 
 export const parseGroupName = (colorVariable: string) => colorVariable.replace(COLOR_SUFFIX, '').replace('$', '');
@@ -143,37 +143,37 @@ export const createGlobalTypographyObject = (typographyKeys: Array<string>) => {
 };
 
 // TODO: refactor this function to not use cssObject reference
-export const generateCssObjectFromTokens = (
+export const generateStylesObjectFromTokens = (
   tokens: Array<Token>,
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   hasJsOutput: boolean,
-): CssObjectType => {
-  const cssObject = tokens.reduce((cssObjectAccumulator, token) => {
-    const currentObject = createObjectStructureFromTokenNameParts(
+): StylesObjectType => {
+  const stylesObject = tokens.reduce((stylesObjectAccumulator, token) => {
+    const currentObject = createStylesObjectStructureFromTokenNameParts(
       token,
       tokenGroups,
       hasParentPrefix,
-      cssObjectAccumulator,
+      stylesObjectAccumulator,
       hasJsOutput,
     );
 
-    return { ...cssObjectAccumulator, ...currentObject };
+    return { ...stylesObjectAccumulator, ...currentObject };
   }, {});
 
   // check if there are any color keys in the object
-  const colorKeys = Object.keys(cssObject).filter((key) => key.endsWith(COLOR_SUFFIX));
+  const colorKeys = Object.keys(stylesObject).filter((key) => key.endsWith(COLOR_SUFFIX));
 
   /* if there are color keys, create a separate global object for
   all colors keys and place it at the end of the file */
   if (colorKeys.length > 0) {
     const colorsObject = createGlobalColorsObject(colorKeys);
 
-    return { ...cssObject, $colors: colorsObject };
+    return { ...stylesObject, $colors: colorsObject };
   }
 
-  const typographyKeys = Object.keys(cssObject).filter((key) => key.includes('heading') || key.includes('body'));
+  const typographyKeys = Object.keys(stylesObject).filter((key) => key.includes('heading') || key.includes('body'));
 
   if (typographyKeys.length > 0) {
     const typographyObject = createGlobalTypographyObject(typographyKeys);
@@ -182,8 +182,8 @@ export const generateCssObjectFromTokens = (
     // After merging the '$styles' objects together, they remain in the middle of the tokens,
     // so we need to move them to the end of the file using the 'moveToTheEnd' flag,
     // which will be removed in the final output.
-    return { ...cssObject, $styles: { ...typographyObject, moveToTheEnd: 'true' } };
+    return { ...stylesObject, $styles: { ...typographyObject, moveToTheEnd: 'true' } };
   }
 
-  return cssObject;
+  return stylesObject;
 };

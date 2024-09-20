@@ -4,7 +4,7 @@ export type FileData = {
   fileName: string;
   tokenTypes: TokenType[];
   groupNames: string[];
-  withCssObject?: boolean;
+  withStylesObject?: boolean;
   hasParentPrefix?: boolean;
   sortByNumValue?: boolean;
 };
@@ -14,7 +14,7 @@ export const nonThemedFilesData: FileData[] = [
     fileName: 'borders',
     tokenTypes: [TokenType.dimension],
     groupNames: ['Border'],
-    withCssObject: false,
+    withStylesObject: false,
     sortByNumValue: true,
   },
   {
@@ -52,7 +52,7 @@ export const nonThemedFilesData: FileData[] = [
     fileName: 'typography',
     tokenTypes: [TokenType.typography],
     groupNames: [''],
-    withCssObject: true,
+    withStylesObject: true,
     hasParentPrefix: false,
   },
 ];

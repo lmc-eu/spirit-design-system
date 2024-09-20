@@ -24,7 +24,7 @@ describe('contentGenerator', () => {
         fileName: 'testFile',
         tokenTypes: [TokenType.dimension, TokenType.string],
         groupNames: ['Grid', 'String'],
-        withCssObject: true,
+        withStylesObject: true,
         hasParentPrefix: true,
         sortByNumValue: false,
       };

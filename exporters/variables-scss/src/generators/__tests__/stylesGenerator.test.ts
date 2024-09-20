@@ -102,7 +102,7 @@ describe('stylesGenerator', () => {
     ];
 
     it.each(generateStylesDataProvider)('$description', ({ hasJsOutput, expectedStyles }) => {
-      const css = generateStylesFromTokens(
+      const styles = generateStylesFromTokens(
         Array.from(exampleMockedTokens.values()),
         mappedTokens,
         tokenGroups,
@@ -112,7 +112,7 @@ describe('stylesGenerator', () => {
         hasJsOutput,
       );
 
-      expect(css).toBe(expectedStyles);
+      expect(styles).toBe(expectedStyles);
     });
   });
 });
