@@ -15,14 +15,14 @@ const invariantTokenAlias: { [key: string]: string } = {
   'radius-full': 'full',
 };
 
-export const normalizeFirstNamePart = (part: string, tokenType: TokenType, isJsFile: boolean): string => {
+export const normalizeFirstNamePart = (part: string, tokenType: TokenType, hasJsOutput: boolean): string => {
   if (tokenType === TokenType.color) {
     const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SUFFIX}`;
 
-    return isJsFile ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
+    return hasJsOutput ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
   }
 
-  return isJsFile ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
+  return hasJsOutput ? toPlural(part.toLowerCase()) : `$${toPlural(part.toLowerCase())}`;
 };
 
 export const handleInvariantTokenAlias = (tokenName: string): string => {
@@ -33,7 +33,7 @@ export const handleInvariantTokenAlias = (tokenName: string): string => {
   return tokenName;
 };
 
-export const getTokenAlias = (token: Token, isJsToken: boolean): string => {
+export const getTokenAlias = (token: Token, hasJsOutput: boolean): string => {
   let alias;
   const numericPart = token.name.match(/\d+/)?.[0];
   const nonNumericPart = handleInvariantTokenAlias(token.name.toLowerCase());
@@ -41,7 +41,7 @@ export const getTokenAlias = (token: Token, isJsToken: boolean): string => {
   if (token.tokenType !== TokenType.color && numericPart) {
     alias = numericPart;
   } else {
-    alias = isJsToken ? toCamelCase(nonNumericPart) : nonNumericPart;
+    alias = hasJsOutput ? toCamelCase(nonNumericPart) : nonNumericPart;
   }
 
   return alias;
@@ -51,7 +51,7 @@ const handleTypographyTokens = (
   tokenNameParts: string[],
   token: Token,
   cssObjectRef: CssObjectType,
-  isJsToken: boolean,
+  hasJsOutput: boolean,
 ): void => {
   const typographyToken = token as TypographyToken;
   const reducedNameParts = tokenNameParts.slice(0, 2);
@@ -60,11 +60,11 @@ const handleTypographyTokens = (
 
   let currentObject = cssObjectRef;
   reducedNameParts.forEach((part, index) => {
-    const tokenName = isJsToken ? toCamelCase(name) : `$${name}`;
+    const tokenName = hasJsOutput ? toCamelCase(name) : `$${name}`;
     const modifiedPart = index === 0 ? tokenName : part;
 
     if (index === reducedNameParts.length - 1) {
-      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'), isJsToken);
+      currentObject[breakpoint] = typographyValue(typographyToken.value, name.includes('italic'), hasJsOutput);
     } else {
       currentObject[modifiedPart] = currentObject[modifiedPart] || {};
       currentObject = currentObject[modifiedPart] as CssObjectType;
@@ -78,22 +78,22 @@ const handleNonTypographyTokens = (
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   cssObjectRef: CssObjectType,
-  isJsToken = false,
+  hasJsOutput = false,
 ): void => {
   let currentObject = cssObjectRef;
 
   tokenNameParts.forEach((part, index) => {
-    const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType, isJsToken) : part;
+    const modifiedPart = index === 0 ? normalizeFirstNamePart(part, token.tokenType, hasJsOutput) : part;
 
     if (index === tokenNameParts.length - 1) {
-      const tokenValue = isJsToken
+      const tokenValue = hasJsOutput
         ? `${toCamelCase(tokenVariableName(token, tokenGroups, hasParentPrefix))}`
         : `$${tokenVariableName(token, tokenGroups, hasParentPrefix)}`;
-      const tokenAlias = getTokenAlias(token, isJsToken);
+      const tokenAlias = getTokenAlias(token, hasJsOutput);
       currentObject[tokenAlias] = tokenValue;
     } else {
-      currentObject[isJsToken ? toCamelCase(modifiedPart) : modifiedPart] = currentObject[modifiedPart] || {};
-      currentObject = currentObject[isJsToken ? toCamelCase(modifiedPart) : modifiedPart] as CssObjectType;
+      currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] = currentObject[modifiedPart] || {};
+      currentObject = currentObject[hasJsOutput ? toCamelCase(modifiedPart) : modifiedPart] as CssObjectType;
     }
   });
 };
@@ -103,7 +103,7 @@ export const createObjectStructureFromTokenNameParts = (
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
   cssObjectRef: CssObjectType,
-  isJsFile: boolean,
+  hasJsOutput: boolean,
 ): CssObjectType => {
   const { tokenType } = token;
   const tokenNameParts = token.origin?.name?.split('/');
@@ -113,9 +113,9 @@ export const createObjectStructureFromTokenNameParts = (
   }
 
   if (tokenType === TokenType.typography) {
-    handleTypographyTokens(tokenNameParts, token, cssObjectRef, isJsFile);
+    handleTypographyTokens(tokenNameParts, token, cssObjectRef, hasJsOutput);
   } else {
-    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef, isJsFile);
+    handleNonTypographyTokens(tokenNameParts, token, tokenGroups, hasParentPrefix, cssObjectRef, hasJsOutput);
   }
 
   return cssObjectRef;
@@ -148,7 +148,7 @@ export const generateCssObjectFromTokens = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   hasParentPrefix: boolean,
-  isJsFile: boolean,
+  hasJsOutput: boolean,
 ): CssObjectType => {
   const cssObject = tokens.reduce((cssObjectAccumulator, token) => {
     const currentObject = createObjectStructureFromTokenNameParts(
@@ -156,7 +156,7 @@ export const generateCssObjectFromTokens = (
       tokenGroups,
       hasParentPrefix,
       cssObjectAccumulator,
-      isJsFile,
+      hasJsOutput,
     );
 
     return { ...cssObjectAccumulator, ...currentObject };

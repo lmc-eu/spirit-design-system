@@ -25,7 +25,7 @@ export const generateFileContent = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   fileData: FileData,
-  isJsFile: boolean,
+  hasJsOutput: boolean,
 ) => {
   let cssTokens = '';
   let cssObject: CssObjectType = {};
@@ -45,7 +45,7 @@ export const generateFileContent = (
           group,
           hasParentPrefix,
           sortByNumValue,
-          isJsFile,
+          hasJsOutput,
         );
         cssTokens += '\n\n';
       }
@@ -56,7 +56,7 @@ export const generateFileContent = (
         mappedTokens,
         tokenGroups,
         hasParentPrefix,
-        isJsFile,
+        hasJsOutput,
       );
       cssObject = deepMergeObjects(cssObject, groupCssObject);
     });
@@ -66,7 +66,7 @@ export const generateFileContent = (
 
   // convert css object to scss or js structure based on file extension
   if (withCssObject) {
-    if (isJsFile) {
+    if (hasJsOutput) {
       content += Object.entries(cssObject)
         .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as CssObjectType)}\n};\n\n`)
         .join('');

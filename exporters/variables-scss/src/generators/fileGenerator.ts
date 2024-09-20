@@ -7,10 +7,10 @@ export const generateFiles = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   filesData: FileData[],
-  isJsToken: boolean,
+  hasJsOutput: boolean,
 ) => {
   return filesData.map((fileData) => {
-    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, isJsToken);
+    const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput);
 
     return {
       fileName: fileData.fileName,
@@ -19,22 +19,13 @@ export const generateFiles = (
   });
 };
 
-export const generateIndexFile = (files: { fileName: string; content: string }[]) => {
+export const generateIndexFile = (files: { fileName: string; content: string }[], hasJsOutput: boolean) => {
   return `${files
     .map((file) => {
-      const baseName = file.fileName.replace(/^_/, '').replace(/\.scss$/, '');
+      const fileExtension = hasJsOutput ? 'ts' : 'scss';
+      const baseName = file.fileName.replace(/^_/, '').replace(new RegExp(`\\.${fileExtension}$`), '');
 
-      return `@forward '${baseName}';`;
-    })
-    .join('\n')}\n`;
-};
-
-export const generateTsIndexFile = (files: { fileName: string; content: string }[]) => {
-  return `${files
-    .map((file) => {
-      const baseName = file.fileName.replace(/^_/, '').replace(/\.ts$/, '');
-
-      return `export * from './${baseName}';`;
+      return hasJsOutput ? `export * from './${baseName}';` : `@forward '${baseName}';`;
     })
     .join('\n')}\n`;
 };
@@ -51,8 +42,8 @@ export const generateOutputFilesByThemes = async (
   // Generate global files for non-themed tokens
   const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, false);
   const globalJsFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, true);
-  const globalIndexFile = generateIndexFile(globalFiles);
-  const globalJsIndexFile = generateTsIndexFile(globalJsFiles);
+  const globalIndexFile = generateIndexFile(globalFiles, false);
+  const globalJsIndexFile = generateIndexFile(globalJsFiles, true);
   outputFiles.push(
     ...globalFiles.map((file) => ({
       path: './scss/globals',
@@ -81,8 +72,8 @@ export const generateOutputFilesByThemes = async (
   for (const { themedTokens, theme } of allThemes) {
     const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, false);
     const themeTsFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, true);
-    const themeIndexFile = generateIndexFile(themeFiles);
-    const themeTsIndexFile = generateTsIndexFile(themeTsFiles);
+    const themeIndexFile = generateIndexFile(themeFiles, false);
+    const themeTsIndexFile = generateIndexFile(themeTsFiles, true);
     outputFiles.push(
       ...themeFiles.map((file) => ({
         path: `./scss/themes/${theme.name}/`,

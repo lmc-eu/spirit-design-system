@@ -1,5 +1,6 @@
 import { Token, TokenGroup, TypographyTokenValue } from '@supernovaio/sdk-exporters';
 import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
+import { toCamelCase } from './stringHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
   let parent;
@@ -12,16 +13,16 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const formatTokenName = (name: string, value: string | number, convertToJs: boolean, unit?: string) => {
-  if (convertToJs) {
+export const formatTokenName = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
+  if (hasJsOutput) {
     if (unit) {
-      return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}${unit}';`;
+      return `export const ${toCamelCase(name)} = '${value}${unit}';`;
     }
 
-    return `export const ${NamingHelper.codeSafeVariableName(name, StringCase.camelCase)} = '${value}';`;
+    return `export const ${toCamelCase(name)} = '${value}';`;
   }
 
-  if (!convertToJs && unit) {
+  if (!hasJsOutput && unit) {
     return `$${name}: ${value}${unit} !default;`;
   }
 
@@ -94,7 +95,7 @@ export const addAngleVarToGradient = (inputString: string): string => {
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
-  isJsToken: boolean,
+  hasJsOutput: boolean,
 ): string => {
   const baseStyles = [
     `font-family: "'${fontFamily.text}', sans-serif"`,
@@ -111,12 +112,12 @@ export const typographyValue = (
   ];
 
   if (lineHeight && lineHeight.measure) {
-    isJsToken
+    hasJsOutput
       ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100}`)
       : baseStyles.push(`line-height: ${lineHeight.measure / 100}`);
   }
 
-  if (isJsToken) {
+  if (hasJsOutput) {
     return `{
 ${baseJsStyles.join(',\n')}
 }`;
