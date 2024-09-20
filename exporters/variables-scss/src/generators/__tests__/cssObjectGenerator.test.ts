@@ -3,6 +3,7 @@ import {
   colorGroupsReducer,
   createGlobalColorsObject,
   createObjectStructureFromTokenNameParts,
+  CssObjectType,
   generateCssObjectFromTokens,
   getTokenAlias,
   normalizeFirstNamePart,
@@ -69,7 +70,7 @@ describe('cssObjectGenerator', () => {
         exampleMockedTokens.get('dimensionRef') as Token,
         tokenGroups,
         true,
-        { $grids: { columns: '$grid-columns' } },
+        { $grids: { columns: '$grid-columns' } } as CssObjectType,
         false,
       );
 
