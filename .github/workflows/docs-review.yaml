@@ -1,4 +1,4 @@
-name: 📄 Markdown Link Check
+name: 📄 Documentation Review
 
 on:
   # Run this workflow on push to branches only (not tags)
