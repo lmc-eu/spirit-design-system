@@ -45,7 +45,7 @@ describe('tokenHelper', () => {
       const value = 32;
       const unit = 'px';
 
-      const result = formatTokenNameByOutput(name, value, unit);
+      const result = formatTokenNameByOutput(name, value, false, unit);
 
       expect(result).toBe('$grid-spacing-desktop: 32px !default;');
     });
@@ -54,7 +54,7 @@ describe('tokenHelper', () => {
       const name = 'grid-columns';
       const value = 12;
 
-      const result = formatTokenNameByOutput(name, value);
+      const result = formatTokenNameByOutput(name, value, false);
 
       expect(result).toBe('$grid-columns: 12 !default;');
     });
@@ -67,6 +67,19 @@ describe('tokenHelper', () => {
       const hasParentPrefix = true;
       const group = 'Grid';
       const sortByNumValue = false;
+
+      const result = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
+
+      expect(result[0]?.origin?.name).toBe('Grid/Columns');
+      expect(result[1]?.origin?.name).toBe('Grid/spacing/desktop');
+    });
+
+    it('should sort tokens by number value', () => {
+      const tokens = Array.from(exampleMockedTokens.values());
+      const tokenGroups = exampleMockedGroups;
+      const hasParentPrefix = true;
+      const group = 'Grid';
+      const sortByNumValue = true;
 
       const result = sortTokens(tokens, tokenGroups, hasParentPrefix, group, sortByNumValue);
 
@@ -91,20 +104,26 @@ describe('tokenHelper', () => {
   describe('addAngleVarToGradient', () => {
     it('should add angle variable to gradient', () => {
       const inputString = 'linear-gradient(0deg, #000 0%, #fff 100%)';
-      const expectedOutput = 'linear-gradient(var(--gradient-angle, 0deg), #000 0%, #fff 100%)';
+      const expectedOutput = 'linear-gradient(var(--gradient-angle, 90deg), #000 0%, #fff 100%)';
 
       const result = addAngleVarToGradient(inputString);
 
       expect(result).toBe(expectedOutput);
     });
+
+    it('should return the input string if no match is found', () => {
+      const inputString = 'example string';
+
+      const result = addAngleVarToGradient(inputString);
+
+      expect(result).toBe(inputString);
+    });
   });
 
   describe('typographyValue', () => {
     it('should return the expected typography value', () => {
-      const mockedToken: TypographyToken = exampleMockedTypographyTokens.get(
-        'typographyHeadingRef1',
-      ) as TypographyToken;
-      const tokenValue = typographyValue(mockedToken.value, true);
+      const mockedToken: TypographyToken = exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken;
+      const tokenValue = typographyValue(mockedToken.value, true, false);
 
       expect(tokenValue).toBe(expectedTypographyValue);
     });

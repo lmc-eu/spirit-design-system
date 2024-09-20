@@ -52,11 +52,11 @@ export function convertToScss(obj: StylesObjectType): string {
     .slice(0, -1);
 }
 
-export const convertToJsToken = (obj: StylesObjectType): string => {
+export const convertToJs = (obj: StylesObjectType): string => {
   return Object.entries(obj)
     .map(([key, value]) => {
       if (typeof value === 'object' && value !== null) {
-        const nestedScss = convertToJsToken(value as StylesObjectType);
+        const nestedScss = convertToJs(value as StylesObjectType);
 
         return `${key}: {\n${nestedScss}\n},\n`;
       }

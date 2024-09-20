@@ -1,4 +1,4 @@
-import { Token } from '@supernovaio/sdk-exporters';
+import { Token, TypographyToken } from '@supernovaio/sdk-exporters';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
@@ -8,6 +8,7 @@ import {
   parseGroupName,
   createGlobalTypographyObject,
   typographyGroupReducer,
+  handleTypographyTokens,
 } from '../stylesObjectGenerator';
 import {
   exampleMockedColorGroups,
@@ -115,7 +116,7 @@ describe('stylesObjectGenerator', () => {
     });
   });
 
-  describe('createObjectStructureFromTokenNameParts', () => {
+  describe('createStylesObjectStructureFromTokenNameParts', () => {
     const dataProvider = [
       {
         token: exampleMockedTokens.get('dimensionRef') as Token,
@@ -200,6 +201,43 @@ describe('stylesObjectGenerator', () => {
       );
 
       expect(cssObject).toStrictEqual(expectedObject);
+    });
+  });
+
+  describe('handleTypographyTokens', () => {
+    const dataProvider = [
+      {
+        tokens: exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokenNameParts: ['heading', 'desktop', 'xLarge', 'bold'],
+        expectedStyles: {
+          '$heading-xlarge-bold': {
+            desktop:
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2\n)',
+          },
+          exampleRef: 'exampleRef',
+        },
+        description: 'should generate object from typography tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokenNameParts: ['heading', 'desktop', 'xLarge', 'bold'],
+        expectedStyles: {
+          exampleRef: 'exampleRef',
+          headingXlargeBold: {
+            desktop:
+              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+          },
+        },
+        description: 'should generate object from typography tokens',
+        hasJsOutput: true,
+      },
+    ];
+
+    it.each(dataProvider)('$description', ({ tokens, tokenNameParts, expectedStyles, hasJsOutput }) => {
+      const stylesObjectRef = { exampleRef: 'exampleRef' };
+      handleTypographyTokens(tokenNameParts, tokens, stylesObjectRef, hasJsOutput);
+      expect(stylesObjectRef).toStrictEqual(expectedStyles);
     });
   });
 

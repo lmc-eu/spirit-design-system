@@ -2,7 +2,7 @@ import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens } from './stylesGenerator';
 import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
-import { convertToJsToken, convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
+import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectHelper';
 import { FileData } from '../config/fileConfig';
 
 // Add disclaimer to the top of the content
@@ -22,7 +22,7 @@ export const filterTokensByTypeAndGroup = (tokens: Token[], type: TokenType, gro
 
 export const generateJsObjectOutput = (stylesObject: StylesObjectType): string => {
   return Object.entries(stylesObject)
-    .map(([key, obj]) => `export const ${key} = {\n${convertToJsToken(obj as StylesObjectType)}\n};\n\n`)
+    .map(([key, obj]) => `export const ${key} = {\n${convertToJs(obj as StylesObjectType)}\n};\n\n`)
     .join('');
 };
 
