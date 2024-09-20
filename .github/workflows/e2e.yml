@@ -1,4 +1,4 @@
-name: End-to-end Tests
+name: 🤖 End-to-End Tests
 on:
   push:
     branches: [main]
@@ -15,11 +15,11 @@ env:
   NETLIFY_DEPLOY_PREVIEW_URL: 'https://deploy-preview-${{ github.event.pull_request.number }}--spirit-design-system.netlify.app/'
 
 jobs:
-  haslabel:
-    name: analyse labels
+  has-label:
+    name: 🏷️ Analyzing Labels
     runs-on: ubuntu-latest
     outputs:
-      e2e: ${{ steps.haslabel.outputs.labeled-run-visual-tests }}
+      e2e: ${{ steps.has-label.outputs.labeled-run-visual-tests }}
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
@@ -27,14 +27,15 @@ jobs:
           access_token: ${{ github.token }}
       - uses: actions/checkout@v4
       - name: Labeled to e2e
-        id: haslabel
+        id: has-label
         uses: DanielTamkin/HasLabel@v1.0.4
         with:
           contains: 'run-visual-tests'
 
   test:
-    needs: hasLabel
-    if: ${{ needs.haslabel.outputs.e2e || (github.ref == 'refs/heads/main') }}
+    name: 🖥️ End-to-End Testing
+    needs: has-label
+    if: ${{ needs.has-label.outputs.e2e || (github.ref == 'refs/heads/main') }}
     runs-on: ubuntu-24.04
     timeout-minutes: 60
 

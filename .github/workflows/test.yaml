@@ -15,8 +15,8 @@ env:
   NX_NO_CLOUD: true
 
 jobs:
-  install:
-    name: 🧶 Install
+  install-build:
+    name: 🧶 Install Deps and 🏗️ Build Design Tokens
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
@@ -29,31 +29,6 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-install
 
-      - name: Save Repository to Cache
-        uses: actions/cache/save@v4
-        with:
-          path: ./
-          key: repository-cache-${{ hashFiles('.*') }}
-
-  build:
-    name: 🏗️ Build Design Tokens
-    needs: [install]
-    runs-on: ubuntu-20.04
-    timeout-minutes: 10
-    env:
-      HUSKY: 0
-
-    steps:
-      - name: Restore Repository from Cache
-        uses: actions/cache/restore@v4
-        id: restore-repository-cache
-        with:
-          path: ./
-          key: repository-cache-${{ hashFiles('.*') }}
-
-      - name: Setup Node
-        uses: ./.github/actions/setup-node
-
       - name: Build
         run: yarn workspace @lmc-eu/spirit-design-tokens build
 
@@ -65,7 +40,7 @@ jobs:
 
   lint:
     name: 📐 Code Linting
-    needs: [build]
+    needs: [install-build]
     runs-on: ubuntu-20.04
     timeout-minutes: 10
     env:
@@ -87,7 +62,7 @@ jobs:
 
   unit-tests:
     name: 🧪 Unit Testing
-    needs: [build]
+    needs: [install-build]
     runs-on: ubuntu-20.04
     timeout-minutes: 10
     env:
@@ -158,7 +133,7 @@ jobs:
 
   types:
     name: 📘 Type Checking
-    needs: [build]
+    needs: [install-build]
     runs-on: ubuntu-20.04
     timeout-minutes: 10
     env:

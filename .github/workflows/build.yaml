@@ -1,4 +1,4 @@
-name: Build
+name: 🏗️ Build
 
 on:
   # Run this workflow on push to branches only (not tags)
@@ -19,7 +19,7 @@ env:
 
 jobs:
   build:
-    name: Building on node ${{ matrix.node-version }})
+    name: 👷 Building on Node.js ${{ matrix.node-version }})
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     strategy:

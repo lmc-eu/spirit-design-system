@@ -1,4 +1,4 @@
-name: Component Analysis
+name: 🧩 Component Analysis
 
 on:
   schedule:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   omlet_analyze:
+    name: 🍳 Analyzing Components
     runs-on: ubuntu-latest
 
     steps:

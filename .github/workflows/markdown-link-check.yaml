@@ -1,4 +1,4 @@
-name: Markdown Link Check
+name: 📄 Markdown Link Check
 
 on:
   # Run this workflow on push to branches only (not tags)
@@ -10,7 +10,7 @@ on:
 
 jobs:
   markdown-link-check:
-    name: 'Markdown link check'
+    name: 🔗 Checking Markdown Links
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,3 +19,20 @@ jobs:
           use-verbose-mode: 'yes'
           config-file: '.github/markdown-link-check-config.json'
         continue-on-error: true
+
+  markdown-lint:
+    name: 📝 Linting Markdown
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node and Install Dependencies
+        uses: ./.github/actions/setup-install
+
+      - name: Check File Format
+        run: yarn lint:markdown

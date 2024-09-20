@@ -1,4 +1,4 @@
-name: Commits Check
+name: 🔍 Commit Checks
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   commitlint:
+    name: 🧾 Linting Commit
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
