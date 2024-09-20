@@ -60,30 +60,25 @@ describe('fileGenerator', () => {
       );
 
       expect(outputFiles).toStrictEqual([
-        {
-          path: './scss/globals',
-          fileName: '_borders.scss',
-          content: emptyFile,
-        },
+        // Global files
+        { path: './scss/globals', fileName: '_borders.scss', content: emptyFile },
         { path: './scss/globals', fileName: '_other.scss', content: mockedExpectedResult },
         { path: './scss/globals', fileName: '_radii.scss', content: emptyFile },
         { path: './scss/globals', fileName: '_spacing.scss', content: emptyFile },
         { path: './scss/globals', fileName: '_shadows.scss', content: emptyFile },
         { path: './scss/globals', fileName: '_gradients.scss', content: emptyFile },
         { path: './scss/globals', fileName: '_typography.scss', content: emptyFile },
-        {
-          path: './js/globals/',
-          fileName: 'borders.ts',
-          content: emptyFile,
-        },
+        { path: './js/globals/', fileName: 'borders.ts', content: emptyFile },
         { path: './js/globals/', fileName: 'other.ts', content: mockedTsFile },
         { path: './js/globals/', fileName: 'radii.ts', content: emptyFile },
         { path: './js/globals/', fileName: 'spacing.ts', content: emptyFile },
         { path: './js/globals/', fileName: 'shadows.ts', content: emptyFile },
         { path: './js/globals/', fileName: 'gradients.ts', content: emptyFile },
         { path: './js/globals/', fileName: 'typography.ts', content: emptyFile },
+        // Global index files
         { path: './scss/globals/', fileName: 'index.scss', content: indexFile },
         { path: './js/globals/', fileName: 'index.ts', content: indexJsFile },
+        // Themes files
         { path: './scss/themes/theme-light/', fileName: '_colors.scss', content: emptyFile },
         { path: './js/themes/theme-light/', fileName: 'colors.ts', content: emptyFile },
         { path: './scss/themes/theme-light/', fileName: 'index.scss', content: indexColorFile },
