@@ -1,14 +1,24 @@
-import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
+import {
+  DimensionToken,
+  GradientToken,
+  ShadowToken,
+  StringToken,
+  Token,
+  TokenGroup,
+  TokenType,
+} from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
+import { exampleShadowTokens } from '../../../tests/fixtures/exampleShadowTokens';
+import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTokens';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('stylesGenerator', () => {
-  describe('tokenToCSSByType', () => {
+  describe('tokenToStyleByType', () => {
     const dataProvider = [
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
@@ -77,6 +87,20 @@ describe('stylesGenerator', () => {
         description: 'string type token without parent prefix and js output',
         hasJsOutput: true,
       },
+      {
+        token: exampleShadowTokens.get('shadowRef') as ShadowToken,
+        expectedStyles: `$shadow-100: 0 2px 8px 0 #00000026 !default;`,
+        hasParentPrefix: false,
+        description: 'shadow type token without parent prefix',
+        hasJsOutput: false,
+      },
+      {
+        token: exampleGradientTokens.get('gradientRef') as GradientToken,
+        expectedStyles: `$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;`,
+        hasParentPrefix: false,
+        description: 'gradient type token without parent prefix',
+        hasJsOutput: false,
+      },
     ];
 
     it.each(dataProvider)(
@@ -122,6 +146,22 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         description: 'should generate styles from tokens with colors with js output',
         expectedStyles: `export const active = '#ca2026';\n\nexport const primary = '#fff';`,
+      },
+      {
+        tokens: exampleShadowTokens,
+        groupName: '',
+        hasJsOutput: false,
+        hasParentPrefix: false,
+        description: 'should generate styles from tokens with shadows',
+        expectedStyles: `$shadow-100: 0 2px 8px 0 #00000026 !default;`,
+      },
+      {
+        tokens: exampleGradientTokens,
+        groupName: '',
+        hasJsOutput: false,
+        hasParentPrefix: false,
+        description: 'should generate styles from tokens with gradients',
+        expectedStyles: `$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;`,
       },
     ];
 
