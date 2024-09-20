@@ -8,12 +8,9 @@ import {
   generateScssObjectOutput,
   generateJsObjectOutput,
 } from '../contentGenerator';
-import {
-  exampleMockedGroups,
-  exampleMockedTokens,
-  exampleMockedTypographyTokens,
-} from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
 import { FileData } from '../../config/fileConfig';
+import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTypographyTokens';
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),

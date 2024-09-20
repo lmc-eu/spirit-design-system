@@ -10,14 +10,12 @@ import {
   typographyGroupReducer,
   handleTypographyTokens,
 } from '../stylesObjectGenerator';
+import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedColorGroups, exampleMockedColorsTokens } from '../../../tests/fixtures/mockedExampleColorTokens';
 import {
-  exampleMockedColorGroups,
-  exampleMockedColorsTokens,
-  exampleMockedGroups,
-  exampleMockedTokens,
   exampleMockedTypographyGroups,
   exampleMockedTypographyTokens,
-} from '../../../tests/fixtures/mockedExampleTokens';
+} from '../../../tests/fixtures/mockedExampleTypographyTokens';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 

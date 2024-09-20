@@ -8,7 +8,7 @@ import {
   getTokenAlias,
   normalizeFirstNamePart,
 } from '../objectHelper';
-import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTypographyTokens';
 
 const mergedObject = {
   $grids: {

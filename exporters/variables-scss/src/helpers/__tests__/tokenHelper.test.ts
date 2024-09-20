@@ -7,12 +7,11 @@ import {
   tokenVariableName,
   typographyValue,
 } from '../tokenHelper';
+import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
 import {
-  exampleMockedGroups,
-  exampleMockedTokens,
   exampleMockedTypographyTokens,
   expectedTypographyValue,
-} from '../../../tests/fixtures/mockedExampleTokens';
+} from '../../../tests/fixtures/mockedExampleTypographyTokens';
 
 const dataProvider = [
   {

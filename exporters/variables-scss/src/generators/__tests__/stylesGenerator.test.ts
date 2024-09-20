@@ -1,11 +1,7 @@
 import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
-import {
-  exampleMockedColorGroups,
-  exampleMockedColorsTokens,
-  exampleMockedGroups,
-  exampleMockedTokens,
-} from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedColorGroups, exampleMockedColorsTokens } from '../../../tests/fixtures/mockedExampleColorTokens';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleMockedGroups;
