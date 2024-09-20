@@ -1,13 +1,14 @@
-name: Git Check
+name: 🔍 Git Checks
 
 on: [pull_request]
 
 jobs:
   block-fixup-merge:
+    name: 🚫 Merge Blocked by Git Fixup
     runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4.1.7
 
-      - name: Block fixup commit merge
+      - name: Block Fixup Commit Merge
         uses: 13rac1/block-fixup-merge-action@v2.0.0

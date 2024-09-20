@@ -1,4 +1,4 @@
-name: 'Web Twig: Code Quality Checks'
+name: '🔍 Web Twig: Code Quality Checks'
 
 on:
   # Run this workflow on push to branches only (not tags)
@@ -19,6 +19,7 @@ on:
 
 jobs:
   prepare-icons:
+    name: 📱 Preparing Icons
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +47,7 @@ jobs:
         php-version: ['8.1', '8.2', '8.3']
         dependencies: ['']
 
-    name: Unit tests - PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
+    name: 🧪 Unit Testing - PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
 
     steps:
       - uses: actions/checkout@v4
@@ -89,7 +90,7 @@ jobs:
           ~/.composer/vendor/bin/php-coveralls --coverage_clover=coverage/clover.xml --json_path=coverage/coveralls-upload.json -v
 
   finalize-tests:
-    name: Tests finished
+    name: 🏁 Finalizing Tests
     needs: [unit-tests]
     runs-on: ubuntu-latest
     steps:
@@ -102,7 +103,7 @@ jobs:
           carryforward: web, web-react, analytics, design-tokens, icons, common, codemods, form-validations
 
   codestyle:
-    name: 'Code style and static analysis'
+    name: '📐 Analyzing Code Style and Types'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
