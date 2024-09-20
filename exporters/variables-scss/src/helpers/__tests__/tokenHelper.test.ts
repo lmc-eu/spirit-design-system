@@ -2,7 +2,7 @@ import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
-  formatTokenName,
+  formatTokenNameByOutput,
   sortTokens,
   tokenVariableName,
   typographyValue,
@@ -45,7 +45,7 @@ describe('tokenHelper', () => {
       const value = 32;
       const unit = 'px';
 
-      const result = formatTokenName(name, value, unit);
+      const result = formatTokenNameByOutput(name, value, unit);
 
       expect(result).toBe('$grid-spacing-desktop: 32px !default;');
     });
@@ -54,7 +54,7 @@ describe('tokenHelper', () => {
       const name = 'grid-columns';
       const value = 12;
 
-      const result = formatTokenName(name, value);
+      const result = formatTokenNameByOutput(name, value);
 
       expect(result).toBe('$grid-columns: 12 !default;');
     });

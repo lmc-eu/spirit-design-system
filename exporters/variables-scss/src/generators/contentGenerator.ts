@@ -1,5 +1,5 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
-import { generateCssFromTokens } from './cssGenerator';
+import { generateStylesFromTokens } from './stylesGenerator';
 import { CssObjectType, generateCssObjectFromTokens } from './cssObjectGenerator';
 import { formatCSS } from '../formatters/cssFormatter';
 import { convertToJsToken, convertToScss, deepMergeObjects } from '../helpers/cssObjectHelper';
@@ -38,7 +38,7 @@ export const generateFileContent = (
 
       // Generate css tokens
       if (tokenType !== TokenType.typography) {
-        cssTokens += generateCssFromTokens(
+        cssTokens += generateStylesFromTokens(
           filteredTokens,
           mappedTokens,
           tokenGroups,

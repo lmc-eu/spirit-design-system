@@ -29,7 +29,7 @@ describe('contentGenerator', () => {
         sortByNumValue: false,
       };
 
-      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData);
+      const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, false);
 
       expect(fileContent).toStrictEqual({ content: mockedExpectedResult });
     });

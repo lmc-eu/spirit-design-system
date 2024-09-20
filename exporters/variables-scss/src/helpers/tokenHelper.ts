@@ -13,7 +13,7 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const formatTokenName = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
+export const formatTokenNameByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
   if (hasJsOutput) {
     if (unit) {
       return `export const ${toCamelCase(name)} = '${value}${unit}';`;
