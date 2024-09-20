@@ -24,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderLink> = {
   title: 'Components/Header',
   component: HeaderLink,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'text',

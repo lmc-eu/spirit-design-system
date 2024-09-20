@@ -24,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderNavItem> = {
   title: 'Components/Header',
   component: HeaderNavItem,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'object',

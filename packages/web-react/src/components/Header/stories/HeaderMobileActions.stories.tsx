@@ -25,6 +25,9 @@ import {
 const meta: Meta<typeof HeaderMobileActions> = {
   title: 'Components/Header',
   component: HeaderMobileActions,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'object',

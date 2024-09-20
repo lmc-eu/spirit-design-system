@@ -24,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderDialogActions> = {
   title: 'Components/Header',
   component: HeaderDialogActions,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'object',

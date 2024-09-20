@@ -24,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderDialogCloseButton> = {
   title: 'Components/Header',
   component: HeaderDialogCloseButton,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     label: {
       control: 'text',

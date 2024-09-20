@@ -24,6 +24,9 @@ import {
 const meta: Meta<typeof HeaderDesktopActions> = {
   title: 'Components/Header',
   component: HeaderDesktopActions,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: {
       control: 'object',

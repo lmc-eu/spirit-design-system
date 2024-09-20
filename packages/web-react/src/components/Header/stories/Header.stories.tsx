@@ -30,6 +30,7 @@ const meta: Meta<typeof Header> = {
     docs: {
       page: () => <Markdown>{ReadMe}</Markdown>,
     },
+    layout: 'fullscreen',
   },
   argTypes: {
     color: {
