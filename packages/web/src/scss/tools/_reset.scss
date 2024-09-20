@@ -16,7 +16,7 @@
 }
 
 @mixin list() {
-    &:is(ul, ol) {
+    &:where(ul, ol) {
         padding-inline-start: 0;
         margin-block: 0;
         list-style: none;
