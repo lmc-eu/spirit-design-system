@@ -1,6 +1,6 @@
 import { Token, TokenType } from '@supernovaio/sdk-exporters';
 import { convertToScss, deepMergeObjects, getTokenAlias, normalizeFirstNamePart } from '../cssObjectHelper';
-import { exampleTypographyMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTokens';
 
 const object1 = {
   $grids: {
@@ -116,12 +116,12 @@ describe('cssObjectHelper', () => {
 
   describe('getTokenAlias', () => {
     it('should return token alias for non-numeric', () => {
-      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
+      const token = exampleMockedTypographyTokens.get('typographyHeadingRef2') as Token;
       expect(getTokenAlias(token, false)).toBe('bold-underline');
     });
 
     it('should return token alias for non-numeric with js output', () => {
-      const token = exampleTypographyMockedTokens.get('typographyHeadingRef2') as Token;
+      const token = exampleMockedTypographyTokens.get('typographyHeadingRef2') as Token;
       expect(getTokenAlias(token, true)).toBe('boldUnderline');
     });
   });

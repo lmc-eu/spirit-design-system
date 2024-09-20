@@ -11,7 +11,7 @@ import {
 import {
   exampleMockedGroups,
   exampleMockedTokens,
-  exampleTypographyMockedTokens,
+  exampleMockedTypographyTokens,
 } from '../../../tests/fixtures/mockedExampleTokens';
 import { FileData } from '../../config/fileConfig';
 
@@ -69,7 +69,7 @@ describe('contentGenerator', () => {
     const dataTypographyProviderItems = {
       type: TokenType.typography,
       group: 'Heading',
-      tokenIdentifier: 'typographyHeadingRef1',
+      tokenIdentifier: 'typographyRef1',
     };
 
     it.each(dataProviderItems)('should filter $description', ({ type, group, tokenIdentifier }) => {
@@ -80,8 +80,8 @@ describe('contentGenerator', () => {
     });
 
     it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "-Underline"`, () => {
-      const tokens = Array.from(exampleTypographyMockedTokens.values());
-      const expectedTokens = [exampleTypographyMockedTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
+      const tokens = Array.from(exampleMockedTypographyTokens.values());
+      const expectedTokens = [exampleMockedTypographyTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
 
       const filteredTokens = filterTokensByTypeAndGroup(
         tokens,

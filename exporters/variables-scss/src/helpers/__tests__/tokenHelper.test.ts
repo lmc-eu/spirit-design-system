@@ -10,7 +10,7 @@ import {
 import {
   exampleMockedGroups,
   exampleMockedTokens,
-  exampleTypographyMockedTokens,
+  exampleMockedTypographyTokens,
   expectedTypographyValue,
 } from '../../../tests/fixtures/mockedExampleTokens';
 
@@ -101,7 +101,7 @@ describe('tokenHelper', () => {
 
   describe('typographyValue', () => {
     it('should return the expected typography value', () => {
-      const mockedToken: TypographyToken = exampleTypographyMockedTokens.get(
+      const mockedToken: TypographyToken = exampleMockedTypographyTokens.get(
         'typographyHeadingRef1',
       ) as TypographyToken;
       const tokenValue = typographyValue(mockedToken.value, true);

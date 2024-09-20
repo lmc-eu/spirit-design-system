@@ -14,7 +14,8 @@ import {
   exampleMockedColorsTokens,
   exampleMockedGroups,
   exampleMockedTokens,
-  exampleTypographyMockedTokens,
+  exampleMockedTypographyGroups,
+  exampleMockedTypographyTokens,
 } from '../../../tests/fixtures/mockedExampleTokens';
 
 const mappedTokens: Map<string, Token> = new Map([]);
@@ -55,6 +56,48 @@ describe('stylesObjectGenerator', () => {
           backgroundColors: { primary: 'backgroundPrimary' },
         },
         description: 'should generate object from tokens with colors with js output',
+        hasJsOutput: true,
+      },
+      {
+        tokens: exampleMockedTypographyTokens,
+        tokenGroups: exampleMockedTypographyGroups,
+        expectedStyles: {
+          '$heading-xlarge-bold': {
+            desktop:
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2\n)',
+          },
+          '$heading-xlarge-bold-underline': {
+            desktop:
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2\n)',
+          },
+          $styles: {
+            'heading-xlarge-bold': '$heading-xlarge-bold',
+            'heading-xlarge-bold-underline': '$heading-xlarge-bold-underline',
+            moveToTheEnd: 'true',
+          },
+        },
+        description: 'should generate object from typography tokens',
+        hasJsOutput: false,
+      },
+      {
+        tokens: exampleMockedTypographyTokens,
+        tokenGroups: exampleMockedTypographyGroups,
+        expectedStyles: {
+          $styles: {
+            headingXlargeBold: 'headingXlargeBold',
+            headingXlargeBoldUnderline: 'headingXlargeBoldUnderline',
+            moveToTheEnd: 'true',
+          },
+          headingXlargeBold: {
+            desktop:
+              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+          },
+          headingXlargeBoldUnderline: {
+            desktop:
+              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+          },
+        },
+        description: 'should generate object from typography tokens with js output',
         hasJsOutput: true,
       },
     ];
@@ -106,7 +149,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: true,
       },
       {
-        token: exampleTypographyMockedTokens.get('typographyHeadingRef1') as Token,
+        token: exampleMockedTypographyTokens.get('typographyRef1') as Token,
         tokenGroup: exampleMockedColorGroups,
         expectedObject: {
           '$heading-xlarge-bold': {
@@ -126,7 +169,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: false,
       },
       {
-        token: exampleTypographyMockedTokens.get('typographyHeadingRef1') as Token,
+        token: exampleMockedTypographyTokens.get('typographyRef1') as Token,
         tokenGroup: exampleMockedColorGroups,
         expectedObject: {
           headingXlargeBold: {

@@ -45,12 +45,12 @@ exampleMockedTokens.set('stringRef', {
   value: testString,
 } as StringToken);
 
-export const exampleTypographyMockedTokens = new Map<string, Token>();
-exampleTypographyMockedTokens.set('typographyHeadingRef1', {
-  id: 'typographyRef',
+export const exampleMockedTypographyTokens = new Map<string, Token>();
+exampleMockedTypographyTokens.set('typographyRef1', {
+  id: 'typographyRef1',
   name: 'Bold',
   tokenType: TokenType.typography,
-  parentGroupId: '3',
+  parentGroupId: '1',
   origin: {
     name: 'Heading/Desktop/XLarge/Bold',
   },
@@ -61,11 +61,11 @@ exampleTypographyMockedTokens.set('typographyHeadingRef1', {
     fontWeight: { text: '700' },
   },
 } as TypographyToken);
-exampleTypographyMockedTokens.set('typographyHeadingRef2', {
-  id: 'typographyRef',
+exampleMockedTypographyTokens.set('typographyRef2', {
+  id: 'typographyRef2',
   name: 'Bold-Underline',
   tokenType: TokenType.typography,
-  parentGroupId: '3',
+  parentGroupId: '2',
   origin: {
     name: 'Heading/Desktop/XLarge/Bold-Underline',
   },
@@ -265,6 +265,47 @@ export const exampleMockedColorGroups: TokenGroup[] = [
     childrenIds: ['backgroundColorRef'],
     path: [],
     tokenIds: ['backgroundColorRef'],
+    subgroupIds: [],
+    parentGroupId: 'parent2',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+];
+
+export const exampleMockedTypographyGroups: TokenGroup[] = [
+  {
+    ...groupFunctions,
+    id: '1',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'Heading',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.typography,
+    childrenIds: ['typographyRef1'],
+    path: [],
+    tokenIds: ['typographyRef1'],
+    subgroupIds: [],
+    parentGroupId: 'parent1',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+  {
+    ...groupFunctions,
+    id: '2',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'Heading',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.typography,
+    childrenIds: ['typographyRef2'],
+    path: [],
+    tokenIds: ['typographyRef2'],
     subgroupIds: [],
     parentGroupId: 'parent2',
     sortOrder: -1,
