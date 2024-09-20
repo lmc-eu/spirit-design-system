@@ -1,6 +1,6 @@
+import { Token } from '@supernovaio/sdk-exporters';
 import { handleSpecialCase } from '../specialCaseHelper';
 import { exampleMockedInvariantTokens, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
-import { Token } from '@supernovaio/sdk-exporters';
 import { getTokenAlias } from '../objectHelper';
 
 describe('specialCaseHelper', () => {
