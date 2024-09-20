@@ -338,7 +338,7 @@ This is how all supported building blocks of the Header build up the complete
 composition:
 
 ```html
-<header class="Header Header--secondary">
+<header class="Header">
   <!-- Branding -->
   <!-- Mobile-only actions -->
   <!-- Desktop-only primary actions -->
@@ -365,7 +365,7 @@ And the complete Header Dialog:
 
 ```html
 <!-- Header: start -->
-<header class="Header Header--secondary">
+<header class="Header">
   <a href="#" aria-label="Spirit homepage">
     <img src="…" width="65" height="24" alt="Spirit" />
   </a>
