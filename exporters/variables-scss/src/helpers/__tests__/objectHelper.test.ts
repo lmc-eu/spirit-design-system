@@ -8,7 +8,7 @@ import {
   getTokenAlias,
   normalizeFirstNamePart,
 } from '../objectHelper';
-import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTypographyTokens';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
 
 const mergedObject = {
   $grids: {
@@ -159,12 +159,12 @@ body1: $body1,
 
   describe('getTokenAlias', () => {
     it('should return token alias for non-numeric', () => {
-      const token = exampleMockedTypographyTokens.get('typographyRef2') as Token;
+      const token = exampleTypographyTokens.get('typographyRef2') as Token;
       expect(getTokenAlias(token, false)).toBe('bold-underline');
     });
 
     it('should return token alias for non-numeric with js output', () => {
-      const token = exampleMockedTypographyTokens.get('typographyRef2') as Token;
+      const token = exampleTypographyTokens.get('typographyRef2') as Token;
       expect(getTokenAlias(token, true)).toBe('boldUnderline');
     });
   });

@@ -7,11 +7,9 @@ import {
   tokenVariableName,
   typographyValue,
 } from '../tokenHelper';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
-import {
-  exampleMockedTypographyTokens,
-  expectedTypographyValue,
-} from '../../../tests/fixtures/mockedExampleTypographyTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const dataProvider = [
   {
@@ -29,8 +27,8 @@ const dataProvider = [
 describe('tokenHelper', () => {
   describe.each(dataProvider)('tokenVariableName', ({ hasParentPrefix, description, expectedVariableName }) => {
     it(`should return the expected variable name for exampleToken ${description} parent prefix`, () => {
-      const mockedToken: Token = exampleMockedTokens.get('dimensionRef') as Token;
-      const mockedTokenGroups: Array<TokenGroup> = exampleMockedGroups;
+      const mockedToken: Token = exampleDimensionAndStringTokens.get('dimensionRef') as Token;
+      const mockedTokenGroups: Array<TokenGroup> = exampleGroups;
 
       const result = tokenVariableName(mockedToken, mockedTokenGroups, hasParentPrefix);
 
@@ -61,8 +59,8 @@ describe('tokenHelper', () => {
 
   describe('sortTokens', () => {
     it('should sort tokens by variable name', () => {
-      const tokens = Array.from(exampleMockedTokens.values());
-      const tokenGroups = exampleMockedGroups;
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const tokenGroups = exampleGroups;
       const hasParentPrefix = true;
       const group = 'Grid';
       const sortByNumValue = false;
@@ -74,8 +72,8 @@ describe('tokenHelper', () => {
     });
 
     it('should sort tokens by number value', () => {
-      const tokens = Array.from(exampleMockedTokens.values());
-      const tokenGroups = exampleMockedGroups;
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const tokenGroups = exampleGroups;
       const hasParentPrefix = true;
       const group = 'Grid';
       const sortByNumValue = true;
@@ -121,7 +119,7 @@ describe('tokenHelper', () => {
 
   describe('typographyValue', () => {
     it('should return the expected typography value', () => {
-      const mockedToken: TypographyToken = exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken;
+      const mockedToken: TypographyToken = exampleTypographyTokens.get('typographyRef1') as TypographyToken;
       const tokenValue = typographyValue(mockedToken.value, true, false);
 
       expect(tokenValue).toBe(expectedTypographyValue);

@@ -1,47 +1,5 @@
-import {
-  DimensionToken,
-  DimensionTokenValue,
-  StringToken,
-  StringTokenValue,
-  Token,
-  TokenGroup,
-  TokenType,
-  Unit,
-} from '@supernovaio/sdk-exporters';
+import { TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { TokenGroupRemoteModel } from '@supernovaio/sdk-exporters/build/sdk-typescript/src/model/groups/SDKTokenGroup';
-
-const testDimension: DimensionTokenValue = {
-  measure: 32,
-  unit: Unit.pixels,
-  referencedTokenId: null,
-};
-
-const testString: StringTokenValue = {
-  text: '12',
-  referencedTokenId: null,
-};
-
-export const exampleMockedTokens = new Map<string, Token>();
-exampleMockedTokens.set('dimensionRef', {
-  id: 'dimensionRef',
-  name: 'desktop',
-  tokenType: TokenType.dimension,
-  parentGroupId: '1',
-  origin: {
-    name: 'Grid/spacing/desktop',
-  },
-  value: testDimension,
-} as DimensionToken);
-exampleMockedTokens.set('stringRef', {
-  id: 'stringRef',
-  name: 'Columns',
-  tokenType: TokenType.string,
-  parentGroupId: '2',
-  origin: {
-    name: 'Grid/Columns',
-  },
-  value: testString,
-} as StringToken);
 
 export const groupFunctions = {
   addChild(): void {},
@@ -82,7 +40,7 @@ export const groupFunctions = {
   },
 };
 
-export const exampleMockedGroups: TokenGroup[] = [
+export const exampleGroups: TokenGroup[] = [
   {
     ...groupFunctions,
     id: '1',
@@ -140,20 +98,80 @@ export const exampleMockedGroups: TokenGroup[] = [
     createdAt: null,
     updatedAt: null,
   },
+  {
+    ...groupFunctions,
+    id: '4',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'primary',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.color,
+    childrenIds: ['actionColorRef'],
+    path: ['action', 'button'],
+    tokenIds: ['actionColorRef'],
+    subgroupIds: [],
+    parentGroupId: 'parent1',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+  {
+    ...groupFunctions,
+    id: '5',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'background',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.color,
+    childrenIds: ['backgroundColorRef'],
+    path: [],
+    tokenIds: ['backgroundColorRef'],
+    subgroupIds: [],
+    parentGroupId: 'parent2',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+  {
+    ...groupFunctions,
+    id: '6',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'Heading',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.typography,
+    childrenIds: ['typographyRef1'],
+    path: [],
+    tokenIds: ['typographyRef1'],
+    subgroupIds: [],
+    parentGroupId: 'parent1',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
+  {
+    ...groupFunctions,
+    id: '7',
+    idInVersion: 'idInVersionValue',
+    brandId: 'brandIdValue',
+    designSystemVersionId: 'designSystemVersionIdValue',
+    name: 'Heading',
+    description: '',
+    isRoot: false,
+    tokenType: TokenType.typography,
+    childrenIds: ['typographyRef2'],
+    path: [],
+    tokenIds: ['typographyRef2'],
+    subgroupIds: [],
+    parentGroupId: 'parent2',
+    sortOrder: -1,
+    createdAt: null,
+    updatedAt: null,
+  },
 ];
-
-export const exampleMockedInvariantTokens = new Map<string, Token>();
-exampleMockedInvariantTokens.set('radiiRef', {
-  id: 'radiiRef',
-  name: 'radius-full',
-  tokenType: TokenType.dimension,
-  parentGroupId: '1',
-  origin: {
-    name: 'Radius/radius-full',
-  },
-  value: {
-    unit: 'Pixels',
-    measure: 9999,
-    referencedTokenId: null,
-  },
-} as DimensionToken);

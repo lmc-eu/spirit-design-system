@@ -8,21 +8,22 @@ import {
   generateScssObjectOutput,
   generateJsObjectOutput,
 } from '../contentGenerator';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { FileData } from '../../config/fileConfig';
-import { exampleMockedTypographyTokens } from '../../../tests/fixtures/mockedExampleTypographyTokens';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mockedExpectedResult = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/exampleFileContent.scss'),
   'utf-8',
 );
 const mappedTokens: Map<string, Token> = new Map([]);
-const tokenGroups: Array<TokenGroup> = exampleMockedGroups;
+const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('contentGenerator', () => {
   describe('generateFileContent', () => {
     it('should generate file content', () => {
-      const tokens = Array.from(exampleMockedTokens.values());
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
       const fileData: FileData = {
         fileName: 'testFile',
         tokenTypes: [TokenType.dimension, TokenType.string],
@@ -70,15 +71,15 @@ describe('contentGenerator', () => {
     };
 
     it.each(dataProviderItems)('should filter $description', ({ type, group, tokenIdentifier }) => {
-      const tokens = Array.from(exampleMockedTokens.values());
-      const expectedTokens = [exampleMockedTokens.get(tokenIdentifier) as Token];
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const expectedTokens = [exampleDimensionAndStringTokens.get(tokenIdentifier) as Token];
 
       expect(filterTokensByTypeAndGroup(tokens, type, group)).toStrictEqual(expectedTokens);
     });
 
     it(`should filter ${dataTypographyProviderItems.type} token type and ${dataTypographyProviderItems.group} group and exclude tokens with "-Underline"`, () => {
-      const tokens = Array.from(exampleMockedTypographyTokens.values());
-      const expectedTokens = [exampleMockedTypographyTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
+      const tokens = Array.from(exampleTypographyTokens.values());
+      const expectedTokens = [exampleTypographyTokens.get(dataTypographyProviderItems.tokenIdentifier) as Token];
 
       const filteredTokens = filterTokensByTypeAndGroup(
         tokens,

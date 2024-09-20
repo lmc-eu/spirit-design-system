@@ -1,4 +1,4 @@
-import { Token, TypographyToken } from '@supernovaio/sdk-exporters';
+import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
@@ -10,28 +10,25 @@ import {
   typographyGroupReducer,
   handleTypographyTokens,
 } from '../stylesObjectGenerator';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
-import { exampleMockedColorGroups, exampleMockedColorsTokens } from '../../../tests/fixtures/mockedExampleColorTokens';
-import {
-  exampleMockedTypographyGroups,
-  exampleMockedTypographyTokens,
-} from '../../../tests/fixtures/mockedExampleTypographyTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mappedTokens: Map<string, Token> = new Map([]);
+const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('stylesObjectGenerator', () => {
   describe('generateStylesObjectFromTokens', () => {
     const dataProvider = [
       {
-        tokens: exampleMockedTokens,
-        tokenGroups: exampleMockedGroups,
+        tokens: exampleDimensionAndStringTokens,
         expectedStyles: { $grids: { columns: '$grid-columns', spacing: { desktop: '$grid-spacing-desktop' } } },
         description: 'should generate object from tokens',
         hasJsOutput: false,
       },
       {
-        tokens: exampleMockedColorsTokens,
-        tokenGroups: exampleMockedColorGroups,
+        tokens: exampleColorsTokens,
         expectedStyles: {
           '$action-colors': { button: { primary: { active: '$action-button-primary-active' } } },
           '$background-colors': { primary: '$background-primary' },
@@ -41,15 +38,13 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: false,
       },
       {
-        tokens: exampleMockedTokens,
-        tokenGroups: exampleMockedGroups,
+        tokens: exampleDimensionAndStringTokens,
         expectedStyles: { grids: { columns: 'gridColumns', spacing: { desktop: 'gridSpacingDesktop' } } },
         description: 'should generate object from tokens with js output',
         hasJsOutput: true,
       },
       {
-        tokens: exampleMockedColorsTokens,
-        tokenGroups: exampleMockedColorGroups,
+        tokens: exampleColorsTokens,
         expectedStyles: {
           actionColors: { button: { primary: { active: 'actionButtonPrimaryActive' } } },
           backgroundColors: { primary: 'backgroundPrimary' },
@@ -58,8 +53,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: true,
       },
       {
-        tokens: exampleMockedTypographyTokens,
-        tokenGroups: exampleMockedTypographyGroups,
+        tokens: exampleTypographyTokens,
         expectedStyles: {
           '$heading-xlarge-bold': {
             desktop:
@@ -79,8 +73,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: false,
       },
       {
-        tokens: exampleMockedTypographyTokens,
-        tokenGroups: exampleMockedTypographyGroups,
+        tokens: exampleTypographyTokens,
         expectedStyles: {
           $styles: {
             headingXlargeBold: 'headingXlargeBold',
@@ -101,7 +94,7 @@ describe('stylesObjectGenerator', () => {
       },
     ];
 
-    it.each(dataProvider)('$description', ({ tokens, tokenGroups, expectedStyles, hasJsOutput }) => {
+    it.each(dataProvider)('$description', ({ tokens, expectedStyles, hasJsOutput }) => {
       const styles = generateStylesObjectFromTokens(
         Array.from(tokens.values()),
         mappedTokens,
@@ -117,24 +110,21 @@ describe('stylesObjectGenerator', () => {
   describe('createStylesObjectStructureFromTokenNameParts', () => {
     const dataProvider = [
       {
-        token: exampleMockedTokens.get('dimensionRef') as Token,
-        tokenGroup: exampleMockedGroups,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as Token,
         expectedObject: { $grids: { columns: '$grid-columns', spacing: { desktop: '$grid-spacing-desktop' } } },
         description: 'should create object structure from dimension token name parts',
         stylesObjectRef: { $grids: { columns: '$grid-columns' } } as StylesObjectType,
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTokens.get('dimensionRef') as Token,
-        tokenGroup: exampleMockedGroups,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as Token,
         expectedObject: { grids: { columns: 'gridColumns', spacing: { desktop: 'gridSpacingDesktop' } } },
         description: 'should create object structure from dimension token name parts with js output',
         stylesObjectRef: { grids: { columns: 'gridColumns' } } as StylesObjectType,
         hasJsOutput: true,
       },
       {
-        token: exampleMockedColorsTokens.get('backgroundColorRef') as Token,
-        tokenGroup: exampleMockedColorGroups,
+        token: exampleColorsTokens.get('backgroundColorRef') as Token,
         expectedObject: {
           actionColors: { button: { primary: { active: 'actionButtonPrimaryActive' } } },
           backgroundColors: {
@@ -148,8 +138,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: true,
       },
       {
-        token: exampleMockedTypographyTokens.get('typographyRef1') as Token,
-        tokenGroup: exampleMockedColorGroups,
+        token: exampleTypographyTokens.get('typographyRef1') as Token,
         expectedObject: {
           '$heading-xlarge-bold': {
             desktop:
@@ -168,8 +157,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTypographyTokens.get('typographyRef1') as Token,
-        tokenGroup: exampleMockedColorGroups,
+        token: exampleTypographyTokens.get('typographyRef1') as Token,
         expectedObject: {
           headingXlargeBold: {
             desktop:
@@ -189,10 +177,10 @@ describe('stylesObjectGenerator', () => {
       },
     ];
 
-    it.each(dataProvider)('$description', ({ token, tokenGroup, expectedObject, stylesObjectRef, hasJsOutput }) => {
+    it.each(dataProvider)('$description', ({ token, expectedObject, stylesObjectRef, hasJsOutput }) => {
       const cssObject = createStylesObjectStructureFromTokenNameParts(
         token,
-        tokenGroup,
+        tokenGroups,
         true,
         stylesObjectRef,
         hasJsOutput,
@@ -205,7 +193,7 @@ describe('stylesObjectGenerator', () => {
   describe('handleTypographyTokens', () => {
     const dataProvider = [
       {
-        tokens: exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokens: exampleTypographyTokens.get('typographyRef1') as TypographyToken,
         tokenNameParts: ['heading', 'desktop', 'xLarge', 'bold'],
         expectedStyles: {
           '$heading-xlarge-bold': {
@@ -218,7 +206,7 @@ describe('stylesObjectGenerator', () => {
         hasJsOutput: false,
       },
       {
-        tokens: exampleMockedTypographyTokens.get('typographyRef1') as TypographyToken,
+        tokens: exampleTypographyTokens.get('typographyRef1') as TypographyToken,
         tokenNameParts: ['heading', 'desktop', 'xLarge', 'bold'],
         expectedStyles: {
           exampleRef: 'exampleRef',

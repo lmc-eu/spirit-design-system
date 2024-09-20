@@ -1,37 +1,38 @@
 import { DimensionToken, StringToken, Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
-import { exampleMockedGroups, exampleMockedTokens } from '../../../tests/fixtures/mockedExampleTokens';
-import { exampleMockedColorGroups, exampleMockedColorsTokens } from '../../../tests/fixtures/mockedExampleColorTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mappedTokens: Map<string, Token> = new Map([]);
-const tokenGroups: Array<TokenGroup> = exampleMockedGroups;
+const tokenGroups: Array<TokenGroup> = exampleGroups;
 
 describe('stylesGenerator', () => {
   describe('tokenToCSSByType', () => {
     const dataProvider = [
       {
-        token: exampleMockedTokens.get('dimensionRef') as DimensionToken,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
         expectedStyles: '$grid-spacing-desktop: 32px !default;',
         hasParentPrefix: true,
         description: 'dimension type token with parent prefix',
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTokens.get('dimensionRef') as DimensionToken,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
         expectedStyles: '$desktop: 32px !default;',
         hasParentPrefix: false,
         description: 'dimension type token without parent prefix',
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTokens.get('stringRef') as StringToken,
+        token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         expectedStyles: '$grid-columns: 12 !default;',
         hasParentPrefix: true,
         description: 'string type token with parent prefix',
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTokens.get('stringRef') as StringToken,
+        token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         expectedStyles: '$columns: 12 !default;',
         hasParentPrefix: false,
         description: 'string type token without parent prefix',
@@ -49,28 +50,28 @@ describe('stylesGenerator', () => {
         hasJsOutput: false,
       },
       {
-        token: exampleMockedTokens.get('dimensionRef') as DimensionToken,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
         expectedStyles: `export const gridSpacingDesktop = '32px';`,
         hasParentPrefix: true,
         description: 'dimension type token with parent prefix and js output',
         hasJsOutput: true,
       },
       {
-        token: exampleMockedTokens.get('dimensionRef') as DimensionToken,
+        token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
         expectedStyles: `export const desktop = '32px';`,
         hasParentPrefix: false,
         description: 'dimension type token without parent prefix and js output',
         hasJsOutput: true,
       },
       {
-        token: exampleMockedTokens.get('stringRef') as StringToken,
+        token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         expectedStyles: `export const gridColumns = '12';`,
         hasParentPrefix: true,
         description: 'string type token with parent prefix and js output',
         hasJsOutput: true,
       },
       {
-        token: exampleMockedTokens.get('stringRef') as StringToken,
+        token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         expectedStyles: `export const columns = '12';`,
         hasParentPrefix: false,
         description: 'string type token without parent prefix and js output',
@@ -91,8 +92,7 @@ describe('stylesGenerator', () => {
   describe('generateStylesFromTokens', () => {
     const dataProvider = [
       {
-        tokens: exampleMockedTokens,
-        tokenGroups: exampleMockedGroups,
+        tokens: exampleDimensionAndStringTokens,
         groupName: 'Grid',
         hasJsOutput: false,
         hasParentPrefix: true,
@@ -100,8 +100,7 @@ describe('stylesGenerator', () => {
         expectedStyles: '$grid-columns: 12 !default;\n\n$grid-spacing-desktop: 32px !default;',
       },
       {
-        tokens: exampleMockedTokens,
-        tokenGroups: exampleMockedGroups,
+        tokens: exampleDimensionAndStringTokens,
         groupName: 'Grid',
         hasJsOutput: true,
         hasParentPrefix: true,
@@ -109,8 +108,7 @@ describe('stylesGenerator', () => {
         expectedStyles: `export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '32px';`,
       },
       {
-        tokens: exampleMockedColorsTokens,
-        tokenGroups: exampleMockedColorGroups,
+        tokens: exampleColorsTokens,
         groupName: '',
         hasJsOutput: false,
         hasParentPrefix: false,
@@ -118,8 +116,7 @@ describe('stylesGenerator', () => {
         expectedStyles: `$active: #ca2026 !default;\n\n$primary: #fff !default;`,
       },
       {
-        tokens: exampleMockedColorsTokens,
-        tokenGroups: exampleMockedColorGroups,
+        tokens: exampleColorsTokens,
         groupName: '',
         hasJsOutput: true,
         hasParentPrefix: false,
