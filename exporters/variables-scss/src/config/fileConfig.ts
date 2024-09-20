@@ -3,7 +3,7 @@ import { TokenType } from '@supernovaio/sdk-exporters';
 export type FileData = {
   fileName: string;
   tokenTypes: TokenType[];
-  groupNames: string[];
+  groupNames?: string[];
   withStylesObject?: boolean;
   hasParentPrefix?: boolean;
   sortByNumValue?: boolean;
@@ -39,19 +39,16 @@ export const nonThemedFilesData: FileData[] = [
   {
     fileName: 'shadows',
     tokenTypes: [TokenType.shadow],
-    groupNames: [''],
     hasParentPrefix: false,
   },
   {
     fileName: 'gradients',
     tokenTypes: [TokenType.gradient],
-    groupNames: [''],
     hasParentPrefix: true,
   },
   {
     fileName: 'typography',
     tokenTypes: [TokenType.typography],
-    groupNames: [''],
     withStylesObject: true,
     hasParentPrefix: false,
   },
@@ -61,6 +58,5 @@ export const themedFilesData: FileData[] = [
   {
     fileName: 'colors',
     tokenTypes: [TokenType.color],
-    groupNames: [''],
   },
 ];

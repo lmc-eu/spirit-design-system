@@ -41,7 +41,13 @@ export const generateFileContent = (
 ) => {
   let styledTokens = '';
   let stylesObject: StylesObjectType = {};
-  const { groupNames, hasParentPrefix = true, sortByNumValue = false, withStylesObject = true, tokenTypes } = fileData;
+  const {
+    groupNames = [''],
+    hasParentPrefix = true,
+    sortByNumValue = false,
+    withStylesObject = true,
+    tokenTypes,
+  } = fileData;
 
   // Iterate over token types and group names to filter tokens
   tokenTypes.forEach((tokenType) => {
