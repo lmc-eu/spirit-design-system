@@ -61,7 +61,7 @@
     "@lmc-eu/spirit-common": "^0.3.6",
     "@lmc-eu/spirit-demo": "^0.1.3",
     "@rollup/plugin-terser": "0.4.4",
-    "@rollup/plugin-typescript": "11.1.6",
+    "@rollup/plugin-typescript": "12.1.0",
     "@types/eslint": "9.6.1",
     "@types/jest": "29.5.13",
     "autoprefixer": "10.4.20",

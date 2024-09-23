@@ -4734,7 +4734,7 @@ __metadata:
   resolution: "@lmc-eu/spirit-demo-app@workspace:apps/demo"
   dependencies:
     "@rollup/plugin-terser": "npm:0.4.4"
-    "@rollup/plugin-typescript": "npm:11.1.6"
+    "@rollup/plugin-typescript": "npm:12.1.0"
     autoprefixer: "npm:10.4.20"
     clean-css-cli: "npm:5.6.3"
     npm-run-all2: "npm:6.2.3"
@@ -4946,7 +4946,7 @@ __metadata:
     "@lmc-eu/spirit-design-tokens": "npm:^2.1.1"
     "@lmc-eu/spirit-icons": "npm:^0.10.2"
     "@rollup/plugin-terser": "npm:0.4.4"
-    "@rollup/plugin-typescript": "npm:11.1.6"
+    "@rollup/plugin-typescript": "npm:12.1.0"
     "@types/eslint": "npm:9.6.1"
     "@types/jest": "npm:29.5.13"
     autoprefixer: "npm:10.4.20"
@@ -6667,9 +6667,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:11.1.6":
-  version: 11.1.6
-  resolution: "@rollup/plugin-typescript@npm:11.1.6"
+"@rollup/plugin-typescript@npm:12.1.0":
+  version: 12.1.0
+  resolution: "@rollup/plugin-typescript@npm:12.1.0"
   dependencies:
     "@rollup/pluginutils": "npm:^5.1.0"
     resolve: "npm:^1.22.1"
@@ -6682,7 +6682,7 @@ __metadata:
       optional: true
     tslib:
       optional: true
-  checksum: 10/4ae4d6cfc929393171288df2f18b5eb837fa53d8689118d9661b3064567341f6f6cf8389af55f1d5f015e3682abf30a64ab609fdf75ecb5a84224505e407eb69
+  checksum: 10/93e67032377278be3658988423588f2941eb55ccb540312ab847c050ea62a57d056d3f80c292bf463e90cbc71795498805120a0f244040d8304ba57d9bb8c09e
   languageName: node
   linkType: hard
 
