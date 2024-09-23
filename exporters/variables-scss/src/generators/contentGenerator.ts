@@ -45,7 +45,7 @@ export const generateFileContent = (
     groupNames = [''],
     hasParentPrefix = true,
     sortByNumValue = false,
-    withStylesObject = true,
+    hasStylesObject = true,
     tokenTypes,
   } = fileData;
 
@@ -83,7 +83,7 @@ export const generateFileContent = (
   let content = styledTokens;
 
   // convert css object to scss or js structure based on file extension
-  if (withStylesObject) {
+  if (hasStylesObject) {
     content += hasJsOutput ? generateJsObjectOutput(stylesObject) : generateScssObjectOutput(stylesObject);
   }
 
