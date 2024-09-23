@@ -8,20 +8,22 @@ export const formatLinesAtEndOfTheFile = (css: string): string => {
   return css.replace(/\n{2,}$/, '\n');
 };
 
-export const formatCSS = (css: string): string => {
+export const formatStyles = (css: string, hasJsOutput: boolean): string => {
   let indentationLevel = 0;
   let formattedCSS = '';
 
   const lines = css.split('\n');
+  const openBracket = hasJsOutput ? '{' : '(';
+  const closeBracket = hasJsOutput ? '}' : ')';
 
   for (const line of lines) {
-    // Check if both '(' and ')' are on the same line
-    if (line.includes('(') && line.includes(')')) {
+    // Check if both openBracket and closeBracket are on the same line
+    if (line.includes(openBracket) && line.includes(closeBracket)) {
       formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
-    } else if (line.includes('(')) {
+    } else if (line.includes(openBracket)) {
       formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
       indentationLevel += 1;
-    } else if (line.includes(')')) {
+    } else if (line.includes(closeBracket)) {
       indentationLevel -= 1;
       formattedCSS += `${INDENTATION.repeat(indentationLevel)}${line}\n`;
     } else {
