@@ -117,7 +117,6 @@ describe('fileGenerator', () => {
       {
         files: [{ fileName: 'borders', content: emptyFile }],
         expectedIndexFile: `@forward 'borders';\n`,
-        hasJsOutput: false,
         description: 'should generate index file with one file',
       },
       {
@@ -126,7 +125,6 @@ describe('fileGenerator', () => {
           { fileName: 'other', content: mockedExpectedResult },
         ],
         expectedIndexFile: `@forward 'borders';\n@forward 'other';\n`,
-        hasJsOutput: false,
         description: 'should generate index file with multiple files',
       },
       {

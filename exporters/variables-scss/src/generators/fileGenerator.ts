@@ -7,7 +7,7 @@ export const generateFiles = (
   mappedTokens: Map<string, Token>,
   tokenGroups: Array<TokenGroup>,
   filesData: FileData[],
-  hasJsOutput: boolean,
+  hasJsOutput: boolean = false,
 ) => {
   return filesData.map((fileData) => {
     const fileContent = generateFileContent(tokens, mappedTokens, tokenGroups, fileData, hasJsOutput);
@@ -19,7 +19,7 @@ export const generateFiles = (
   });
 };
 
-export const generateIndexFile = (files: { fileName: string; content: string }[], hasJsOutput: boolean) => {
+export const generateIndexFile = (files: { fileName: string; content: string }[], hasJsOutput: boolean = false) => {
   return `${files
     .map((file) => {
       const fileExtension = hasJsOutput ? 'ts' : 'scss';
@@ -40,9 +40,9 @@ export const generateOutputFilesByThemes = async (
   const outputFiles: { path: string; fileName: string; content: string }[] = [];
 
   // Generate global files for non-themed tokens
-  const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, false);
+  const globalFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData);
   const globalJsFiles = generateFiles(tokens, mappedTokens, tokenGroups, nonThemedFilesData, true);
-  const globalIndexFile = generateIndexFile(globalFiles, false);
+  const globalIndexFile = generateIndexFile(globalFiles);
   const globalJsIndexFile = generateIndexFile(globalJsFiles, true);
   outputFiles.push(
     ...globalFiles.map((file) => ({
@@ -70,9 +70,9 @@ export const generateOutputFilesByThemes = async (
 
   // Generate files for each theme
   for (const { themedTokens, theme } of allThemes) {
-    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, false);
+    const themeFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData);
     const themeTsFiles = generateFiles(themedTokens, mappedTokens, tokenGroups, themedFilesData, true);
-    const themeIndexFile = generateIndexFile(themeFiles, false);
+    const themeIndexFile = generateIndexFile(themeFiles);
     const themeTsIndexFile = generateIndexFile(themeTsFiles, true);
     outputFiles.push(
       ...themeFiles.map((file) => ({
