@@ -24,6 +24,7 @@ const entryPoints = [
   { dirs: ['components', 'FieldGroup'] },
   { dirs: ['components', 'FileUploader'] },
   { dirs: ['components', 'Flex'] },
+  { dirs: ['components', 'Footer'] },
   { dirs: ['components', 'Grid'] },
   { dirs: ['components', 'Header'] },
   { dirs: ['components', 'Heading'] },
