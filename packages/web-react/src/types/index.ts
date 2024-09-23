@@ -10,6 +10,7 @@ export * from './dropdown';
 export * from './fieldGroup';
 export * from './fileUploader';
 export * from './flex';
+export * from './footer';
 export * from './grid';
 export * from './header';
 export * from './heading';
