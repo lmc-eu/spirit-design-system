@@ -1,6 +1,7 @@
 import { TokenGroup, Token, Supernova, TokenTheme } from '@supernovaio/sdk-exporters';
 import { generateFileContent } from './contentGenerator';
 import { FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
+import { toCamelCase } from '../helpers/stringHelper';
 
 export const generateFiles = (
   tokens: Array<Token>,
@@ -30,6 +31,44 @@ export const generateIndexFile = (files: { fileName: string; content: string }[]
     .join('\n')}\n`;
 };
 
+export const generateThemesRootFileContent = (themes: TokenTheme[], hasJsOutput: boolean = false): string => {
+  let content = '';
+
+  // Add import statements for each theme
+  for (const theme of themes) {
+    if (hasJsOutput) {
+      content += `import * as ${toCamelCase(theme.name)} from './themes/${theme.name}';\n`;
+    } else {
+      content += `@use 'themes/${theme.name}';\n`;
+    }
+  }
+
+  // Start the themes object or $themes map
+  if (hasJsOutput) {
+    content += '\nexport const themes = {\n';
+  } else {
+    content += '\n$themes: (\n';
+  }
+
+  // Add each theme to the themes object or $themes map
+  for (const theme of themes) {
+    if (hasJsOutput) {
+      content += `\t${toCamelCase(theme.name)}: {\n\t\tcolors: ${toCamelCase(theme.name)}.colors\n},\n`;
+    } else {
+      content += `    ${theme.name}: (\n        colors: ${theme.name}.$colors,\n    ),\n`;
+    }
+  }
+
+  // End the themes object or $themes map
+  if (hasJsOutput) {
+    content += '};\n';
+  } else {
+    content += ');\n';
+  }
+
+  return content;
+};
+
 export const generateOutputFilesByThemes = async (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
@@ -46,18 +85,20 @@ export const generateOutputFilesByThemes = async (
   const globalJsIndexFile = generateIndexFile(globalJsFiles, true);
   outputFiles.push(
     ...globalFiles.map((file) => ({
-      path: './scss/globals',
+      path: './scss/global',
       fileName: `_${file.fileName}.scss`,
       content: file.content,
     })),
     ...globalJsFiles.map((file) => ({
-      path: './js/globals/',
+      path: './js/global/',
       fileName: `${file.fileName}.ts`,
       content: file.content,
     })),
   );
-  outputFiles.push({ path: './scss/globals/', fileName: 'index.scss', content: globalIndexFile });
-  outputFiles.push({ path: './js/globals/', fileName: 'index.ts', content: globalJsIndexFile });
+  outputFiles.push({ path: './scss/global/', fileName: 'index.scss', content: globalIndexFile });
+  outputFiles.push({ path: './js/global/', fileName: 'index.ts', content: globalJsIndexFile });
+  outputFiles.push({ path: './scss/', fileName: '@global.scss', content: `@forward 'global';` });
+  outputFiles.push({ path: './js/', fileName: '@global.ts', content: `export * from './global';` });
 
   // Compute themed tokens for all themes in parallel
   const allThemes = await Promise.all(
@@ -89,6 +130,12 @@ export const generateOutputFilesByThemes = async (
     outputFiles.push({ path: `./scss/themes/${theme.name}/`, fileName: 'index.scss', content: themeIndexFile });
     outputFiles.push({ path: `./js/themes/${theme.name}/`, fileName: 'index.ts', content: themeTsIndexFile });
   }
+
+  // Generate root themes file
+  const rootThemesFileContent = generateThemesRootFileContent(themes);
+  const rootTsThemesFileContent = generateThemesRootFileContent(themes, true);
+  outputFiles.push({ path: './scss/', fileName: '@themes.scss', content: rootThemesFileContent });
+  outputFiles.push({ path: './js/', fileName: '@themes.ts', content: rootTsThemesFileContent });
 
   return outputFiles;
 };

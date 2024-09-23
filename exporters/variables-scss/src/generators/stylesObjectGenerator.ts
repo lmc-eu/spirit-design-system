@@ -3,7 +3,11 @@ import { formatTypographyName, getBreakpoint, getTokenAlias, normalizeFirstNameP
 import { tokenVariableName, typographyValue } from '../helpers/tokenHelper';
 import { toCamelCase } from '../helpers/stringHelper';
 
-export const COLOR_SUFFIX = '-colors';
+export const COLOR_SCSS_SUFFIX = '-colors';
+export const COLOR_JS_SUFFIX = 'Colors';
+
+export const COLOR_KEY = 'colors';
+export const TYPOGRAPHY_KEY = 'styles';
 
 export type StylesObjectType = { [key: string]: (string | object) & { moveToTheEnd?: string } };
 
@@ -81,11 +85,15 @@ export const createStylesObjectStructureFromTokenNameParts = (
   return stylesObjectRef;
 };
 
-export const parseGroupName = (colorVariable: string) => colorVariable.replace(COLOR_SUFFIX, '').replace('$', '');
+export const parseGroupName = (colorVariable: string, hasJsOutput: boolean) => {
+  const suffix = hasJsOutput ? COLOR_JS_SUFFIX : COLOR_SCSS_SUFFIX;
+
+  return colorVariable.replace(suffix, '').replace('$', '');
+};
 
 export const colorGroupsReducer = (accumulatedColorKeys: { [key: string]: string }, currentColorKey: string) => ({
   ...accumulatedColorKeys,
-  [parseGroupName(currentColorKey)]: currentColorKey,
+  [parseGroupName(currentColorKey, false)]: currentColorKey,
 });
 
 export const typographyGroupReducer = (
@@ -93,10 +101,17 @@ export const typographyGroupReducer = (
   currentTypographyKey: string,
 ) => ({
   ...accumulatedTypographyKeys,
-  [parseGroupName(currentTypographyKey)]: currentTypographyKey,
+  [parseGroupName(currentTypographyKey, false)]: currentTypographyKey,
 });
 
-export const createGlobalColorsObject = (colorKeys: Array<string>) => colorKeys.reduce(colorGroupsReducer, {});
+export const createGlobalColorsObject = (colorKeys: Array<string>, hasJsOutput: boolean) => {
+  return colorKeys.reduce((accumulatedColorKeys: { [key: string]: string }, currentColorKey: string) => {
+    return {
+      ...accumulatedColorKeys,
+      [parseGroupName(currentColorKey, hasJsOutput)]: currentColorKey,
+    };
+  }, {});
+};
 
 export const createGlobalTypographyObject = (typographyKeys: Array<string>) => {
   return typographyKeys.reduce(typographyGroupReducer, {});
@@ -123,26 +138,30 @@ export const generateStylesObjectFromTokens = (
   }, {});
 
   // check if there are any color keys in the object
-  const colorKeys = Object.keys(stylesObject).filter((key) => key.endsWith(COLOR_SUFFIX));
+  const colorKeys = Object.keys(stylesObject).filter((key) => {
+    return key.endsWith(hasJsOutput ? COLOR_JS_SUFFIX : COLOR_SCSS_SUFFIX);
+  });
 
   /* if there are color keys, create a separate global object for
   all colors keys and place it at the end of the file */
   if (colorKeys.length > 0) {
-    const colorsObject = createGlobalColorsObject(colorKeys);
+    const colorsObject = createGlobalColorsObject(colorKeys, hasJsOutput);
+    const key = hasJsOutput ? COLOR_KEY : `$${COLOR_KEY}`;
 
-    return { ...stylesObject, $colors: colorsObject };
+    return { ...stylesObject, [key]: colorsObject };
   }
 
   const typographyKeys = Object.keys(stylesObject).filter((key) => key.includes('heading') || key.includes('body'));
 
   if (typographyKeys.length > 0) {
     const typographyObject = createGlobalTypographyObject(typographyKeys);
+    const key = hasJsOutput ? TYPOGRAPHY_KEY : `$${TYPOGRAPHY_KEY}`;
 
     // Typography has multiple groups, which creates multiple '$styles' objects.
     // After merging the '$styles' objects together, they remain in the middle of the tokens,
     // so we need to move them to the end of the file using the 'moveToTheEnd' flag,
     // which will be removed in the final output.
-    return { ...stylesObject, $styles: { ...typographyObject, moveToTheEnd: 'true' } };
+    return { ...stylesObject, [key]: { ...typographyObject, moveToTheEnd: 'true' } };
   }
 
   return stylesObject;

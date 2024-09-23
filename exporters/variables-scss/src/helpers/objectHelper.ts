@@ -1,5 +1,5 @@
 import { Token, TokenType } from '@supernovaio/sdk-exporters';
-import { COLOR_SUFFIX, StylesObjectType } from '../generators/stylesObjectGenerator';
+import { COLOR_SCSS_SUFFIX, StylesObjectType } from '../generators/stylesObjectGenerator';
 import { toCamelCase, toPlural } from './stringHelper';
 import { handleInvariantTokenAlias } from './specialCaseHelper';
 
@@ -93,7 +93,7 @@ export const getTokenAlias = (token: Token, hasJsOutput: boolean): string => {
 
 export const normalizeFirstNamePart = (part: string, tokenType: TokenType, hasJsOutput: boolean): string => {
   if (tokenType === TokenType.color) {
-    const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SUFFIX}`;
+    const partNameWithColorSuffix = `${part.toLowerCase()}${COLOR_SCSS_SUFFIX}`;
 
     return hasJsOutput ? toCamelCase(partNameWithColorSuffix) : `$${partNameWithColorSuffix}`;
   }

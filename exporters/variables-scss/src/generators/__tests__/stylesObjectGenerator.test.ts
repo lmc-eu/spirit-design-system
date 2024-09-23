@@ -46,8 +46,20 @@ describe('stylesObjectGenerator', () => {
       {
         tokens: exampleColorsTokens,
         expectedStyles: {
-          actionColors: { button: { primary: { active: 'actionButtonPrimaryActive' } } },
-          backgroundColors: { primary: 'backgroundPrimary' },
+          actionColors: {
+            button: {
+              primary: {
+                active: 'actionButtonPrimaryActive',
+              },
+            },
+          },
+          backgroundColors: {
+            primary: 'backgroundPrimary',
+          },
+          colors: {
+            action: 'actionColors',
+            background: 'backgroundColors',
+          },
         },
         description: 'should generate object from tokens with colors with js output',
         hasJsOutput: true,
@@ -75,7 +87,7 @@ describe('stylesObjectGenerator', () => {
       {
         tokens: exampleTypographyTokens,
         expectedStyles: {
-          $styles: {
+          styles: {
             headingXlargeBold: 'headingXlargeBold',
             headingXlargeBoldUnderline: 'headingXlargeBoldUnderline',
             moveToTheEnd: 'true',
@@ -230,9 +242,16 @@ describe('stylesObjectGenerator', () => {
   describe('createGlobalColorsObject', () => {
     it('should create global colors object', () => {
       const colorKeys = ['$action-colors', '$background-colors'];
-      const colorsObject = createGlobalColorsObject(colorKeys);
+      const colorsObject = createGlobalColorsObject(colorKeys, false);
 
       expect(colorsObject).toStrictEqual({ action: '$action-colors', background: '$background-colors' });
+    });
+
+    it('should create global colors object with js output', () => {
+      const colorKeys = ['actionColors', 'backgroundColors'];
+      const colorsObject = createGlobalColorsObject(colorKeys, true);
+
+      expect(colorsObject).toStrictEqual({ action: 'actionColors', background: 'backgroundColors' });
     });
   });
 
@@ -250,7 +269,11 @@ describe('stylesObjectGenerator', () => {
 
   describe('parseGroupName', () => {
     it('should parse group name', () => {
-      expect(parseGroupName('$background-colors')).toBe('background');
+      expect(parseGroupName('$background-colors', false)).toBe('background');
+    });
+
+    it('should parse group name with js output', () => {
+      expect(parseGroupName('backgroundColors', true)).toBe('background');
     });
   });
 

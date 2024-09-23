@@ -42,6 +42,31 @@ export const grids = {
 \tcolumns: gridColumns,
 };\n`;
 
+const mockedRootThemeFile = `@use 'themes/theme-light';
+@use 'themes/theme-light-inverted';
+
+$themes: (
+    theme-light: (
+        colors: theme-light.$colors,
+    ),
+    theme-light-inverted: (
+        colors: theme-light-inverted.$colors,
+    ),
+);
+`;
+
+const mockedRootThemeJsFile = `import * as themeLight from './themes/theme-light';
+import * as themeLightInverted from './themes/theme-light-inverted';\n
+export const themes = {
+\tthemeLight: {
+\t\tcolors: themeLight.colors
+},
+\tthemeLightInverted: {
+\t\tcolors: themeLightInverted.colors
+},
+};
+`;
+
 describe('fileGenerator', () => {
   describe('generateOutputFilesByThemes', () => {
     it('should generate output files by themes', async () => {
@@ -62,23 +87,26 @@ describe('fileGenerator', () => {
 
       expect(outputFiles).toStrictEqual([
         // Global files
-        { path: './scss/globals', fileName: '_borders.scss', content: emptyFile },
-        { path: './scss/globals', fileName: '_other.scss', content: mockedExpectedResult },
-        { path: './scss/globals', fileName: '_radii.scss', content: emptyFile },
-        { path: './scss/globals', fileName: '_spacing.scss', content: emptyFile },
-        { path: './scss/globals', fileName: '_shadows.scss', content: emptyFile },
-        { path: './scss/globals', fileName: '_gradients.scss', content: emptyFile },
-        { path: './scss/globals', fileName: '_typography.scss', content: emptyFile },
-        { path: './js/globals/', fileName: 'borders.ts', content: emptyFile },
-        { path: './js/globals/', fileName: 'other.ts', content: mockedTsFile },
-        { path: './js/globals/', fileName: 'radii.ts', content: emptyFile },
-        { path: './js/globals/', fileName: 'spacing.ts', content: emptyFile },
-        { path: './js/globals/', fileName: 'shadows.ts', content: emptyFile },
-        { path: './js/globals/', fileName: 'gradients.ts', content: emptyFile },
-        { path: './js/globals/', fileName: 'typography.ts', content: emptyFile },
+        { path: './scss/global', fileName: '_borders.scss', content: emptyFile },
+        { path: './scss/global', fileName: '_other.scss', content: mockedExpectedResult },
+        { path: './scss/global', fileName: '_radii.scss', content: emptyFile },
+        { path: './scss/global', fileName: '_spacing.scss', content: emptyFile },
+        { path: './scss/global', fileName: '_shadows.scss', content: emptyFile },
+        { path: './scss/global', fileName: '_gradients.scss', content: emptyFile },
+        { path: './scss/global', fileName: '_typography.scss', content: emptyFile },
+        { path: './js/global/', fileName: 'borders.ts', content: emptyFile },
+        { path: './js/global/', fileName: 'other.ts', content: mockedTsFile },
+        { path: './js/global/', fileName: 'radii.ts', content: emptyFile },
+        { path: './js/global/', fileName: 'spacing.ts', content: emptyFile },
+        { path: './js/global/', fileName: 'shadows.ts', content: emptyFile },
+        { path: './js/global/', fileName: 'gradients.ts', content: emptyFile },
+        { path: './js/global/', fileName: 'typography.ts', content: emptyFile },
         // Global index files
-        { path: './scss/globals/', fileName: 'index.scss', content: indexFile },
-        { path: './js/globals/', fileName: 'index.ts', content: indexJsFile },
+        { path: './scss/global/', fileName: 'index.scss', content: indexFile },
+        { path: './js/global/', fileName: 'index.ts', content: indexJsFile },
+        // Root index files
+        { path: './scss/', fileName: '@global.scss', content: `@forward 'global';` },
+        { path: './js/', fileName: '@global.ts', content: `export * from './global';` },
         // Themes files
         { path: './scss/themes/theme-light/', fileName: '_colors.scss', content: emptyFile },
         { path: './js/themes/theme-light/', fileName: 'colors.ts', content: emptyFile },
@@ -88,6 +116,9 @@ describe('fileGenerator', () => {
         { path: './js/themes/theme-light-inverted/', fileName: 'colors.ts', content: emptyFile },
         { path: './scss/themes/theme-light-inverted/', fileName: 'index.scss', content: indexColorFile },
         { path: './js/themes/theme-light-inverted/', fileName: 'index.ts', content: indexJsColorFile },
+        // Themes root index files
+        { path: './scss/', fileName: '@themes.scss', content: mockedRootThemeFile },
+        { path: './js/', fileName: '@themes.ts', content: mockedRootThemeJsFile },
       ]);
     });
   });
