@@ -1,7 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import { Supernova, Token, TokenGroup, TokenTheme } from '@supernovaio/sdk-exporters';
-import { generateFiles, generateIndexFile, generateOutputFilesByThemes } from '../fileGenerator';
+import {
+  generateFiles,
+  generateIndexFile,
+  generateOutputFilesByThemes,
+  generateRootThemesFileContent,
+  generateRootThemesFileImports,
+  generateThemesRootFile,
+} from '../fileGenerator';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { nonThemedFilesData } from '../../config/fileConfig';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
@@ -60,10 +67,10 @@ import * as themeLightInverted from './themes/theme-light-inverted';\n
 export const themes = {
 \tthemeLight: {
 \t\tcolors: themeLight.colors
-},
+\t},
 \tthemeLightInverted: {
 \t\tcolors: themeLightInverted.colors
-},
+\t},
 };
 `;
 
@@ -173,6 +180,60 @@ describe('fileGenerator', () => {
       const mockedIndexFile = generateIndexFile(files, hasJsOutput);
 
       expect(mockedIndexFile).toBe(expectedIndexFile);
+    });
+  });
+
+  describe('generateThemesRootFile', () => {
+    it('should generate themes root file content', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateThemesRootFile(themes as TokenTheme[], false);
+
+      expect(content).toBe(mockedRootThemeFile);
+    });
+
+    it('should generate themes root file content with js output', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateThemesRootFile(themes as TokenTheme[], true);
+
+      expect(content).toBe(mockedRootThemeJsFile);
+    });
+  });
+
+  describe('generateRootThemesFileContent', () => {
+    it('should generate root themes file content', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateRootThemesFileContent(themes as TokenTheme[], false);
+
+      expect(content).toBe(
+        `theme-light: (\ncolors: theme-light.$colors,\n),\ntheme-light-inverted: (\ncolors: theme-light-inverted.$colors,\n),`,
+      );
+    });
+
+    it('should generate root themes file content with js output', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateRootThemesFileContent(themes as TokenTheme[], true);
+
+      expect(content).toBe(
+        `themeLight: {\ncolors: themeLight.colors\n},\nthemeLightInverted: {\ncolors: themeLightInverted.colors\n},`,
+      );
+    });
+  });
+
+  describe('generateRootThemesFileImports', () => {
+    it('should generate root themes file imports', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateRootThemesFileImports(themes as TokenTheme[], false);
+
+      expect(content).toBe(`@use 'themes/theme-light';\n@use 'themes/theme-light-inverted';`);
+    });
+
+    it('should generate root themes file imports with js output', () => {
+      const themes = [{ name: 'theme-light' }, { name: 'theme-light-inverted' }];
+      const content = generateRootThemesFileImports(themes as TokenTheme[], true);
+
+      expect(content).toBe(
+        `import * as themeLight from './themes/theme-light';\nimport * as themeLightInverted from './themes/theme-light-inverted';`,
+      );
     });
   });
 });
