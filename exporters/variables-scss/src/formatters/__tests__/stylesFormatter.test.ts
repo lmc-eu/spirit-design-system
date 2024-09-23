@@ -31,10 +31,10 @@ export const gridSpacingDesktop: '32px';
 export const gridColumns = '12';
 
 export const grids = {
-    spacing: {
-        desktop: gridSpacingDesktop,
-    },
-    columns: gridColumns,
+\tspacing: {
+\t\tdesktop: gridSpacingDesktop,
+\t},
+\tcolumns: gridColumns,
 };
 `;
 
