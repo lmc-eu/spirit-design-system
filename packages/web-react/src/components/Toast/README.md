@@ -183,7 +183,7 @@ Alternatively, a custom icon can be used:
 | ------------- | ------------- |
 | `danger`      | `danger`      |
 | `informative` | `info`        |
-| `inverted`    | `info`        |
+| `neutral`     | `info`        |
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
 
@@ -227,15 +227,12 @@ Usage example:
 
 #### API
 
-| Name           | Type                                             | Default    | Required | Description                    |
-| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
-| `children`     | `ReactNode`                                      | —          | ✓        | Content of the ToastBarLink    |
-| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
-| `elementType`  | `ElementType`                                    | `a`        | ✕        | Type of element used as        |
-| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
-| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
-| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
-| `ref`          | `ForwardedRef<HTMLAnchorElement>`                | —          | ✕        | Link element reference         |
+| Name          | Type                              | Default | Required | Description                   |
+| ------------- | --------------------------------- | ------- | -------- | ----------------------------- |
+| `children`    | `ReactNode`                       | —       | ✓        | Content of the ToastBarLink   |
+| `elementType` | `ElementType`                     | `a`     | ✕        | Type of element used as       |
+| `href`        | `string`                          | —       | ✕        | ToastBarLink's href attribute |
+| `ref`         | `ForwardedRef<HTMLAnchorElement>` | —       | ✕        | Link element reference        |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -247,7 +244,7 @@ said action), as it is very hard (if not impossible) to reach for users with ass
 
 ### Colors
 
-The ToastBar component is available in all [emotion colors][dictionary-color], plus the `inverted` variant (default).
+The ToastBar component is available in all [emotion colors][dictionary-color], plus the `neutral` variant (default).
 Use the `color` option to change the color of the ToastBar component.
 
 For example:
@@ -284,16 +281,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a `onC
 
 ### API
 
-| Name            | Type                                                         | Default    | Required | Description                                         |
-| --------------- | ------------------------------------------------------------ | ---------- | -------- | --------------------------------------------------- |
-| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                         |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                       |
-| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message         |
-| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
-| `id`            | `string`                                                     | —          | ✓        | ToastBar ID                                         |
-| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
-| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                        |
-| `onClose`       | `function`                                                   | —          | ✕        | Close button callback                               |
+| Name            | Type                                                        | Default    | Required | Description                                         |
+| --------------- | ----------------------------------------------------------- | ---------- | -------- | --------------------------------------------------- |
+| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                         |
+| `color`         | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                       |
+| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message         |
+| `iconName`      | `string`                                                    | `info` \*  | ✕        | Name of a custom icon to be shown along the message |
+| `id`            | `string`                                                    | —          | ✓        | ToastBar ID                                         |
+| `isDismissible` | `bool`                                                      | `false`    | ✕        | If true, ToastBar can be dismissed by user          |
+| `isOpen`        | `bool`                                                      | `true`     | ✕        | If true, ToastBar is visible                        |
+| `onClose`       | `function`                                                  | —          | ✕        | Close button callback                               |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -371,16 +368,16 @@ What is uncontrolled component you can find [here][react-uncontrolled]
 
 This hook returns:
 
-| Name       | Type                                                         | Default    | Description                                         |
-| ---------- | ------------------------------------------------------------ | ---------- | --------------------------------------------------- |
-| `clear`    | `() => void`                                                 | () => {}   | Function that will clear toast queue                |
-| `color`    | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | Color variant                                       |
-| `hide`     | `(toastId) => void`                                          | () => {}   | Function that will hide UncontrolledToast           |
-| `iconName` | `string`                                                     | —          | Name of a custom icon to be shown along the message |
-| `id`       | `string`                                                     | `''`       | ToastBar ID                                         |
-| `isOpen`   | `bool`                                                       | `false`    | Open state of UncontrolledToast                     |
-| `message`  | [`string` \| `ReactNode`]                                    | null       | Message inside UncontrolledToast                    |
-| `show`     | `(message, toastId, options?) => void`                       | () => {}   | Function that will show UncontrolledToast           |
+| Name       | Type                                                        | Default   | Description                                         |
+| ---------- | ----------------------------------------------------------- | --------- | --------------------------------------------------- |
+| `clear`    | `() => void`                                                | () => {}  | Function that will clear toast queue                |
+| `color`    | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral` | Color variant                                       |
+| `hide`     | `(toastId) => void`                                         | () => {}  | Function that will hide UncontrolledToast           |
+| `iconName` | `string`                                                    | —         | Name of a custom icon to be shown along the message |
+| `id`       | `string`                                                    | `''`      | ToastBar ID                                         |
+| `isOpen`   | `bool`                                                      | `false`   | Open state of UncontrolledToast                     |
+| `message`  | [`string` \| `ReactNode`]                                   | null      | Message inside UncontrolledToast                    |
+| `show`     | `(message, toastId, options?) => void`                      | () => {}  | Function that will show UncontrolledToast           |
 
 #### How to use `show` function:
 
@@ -396,7 +393,7 @@ const { show } = useToast();
                             │                       │                │
 show({content: { message: 'Toast message', link: 'Link action' }}, 'toast-id', {
   autoCloseInterval: 3000,  // Set interval in ms after ToastBar will be closed, default: 3000
-  color: 'danger',         // Color variant, default: 'inverted'
+  color: 'danger',         // Color variant, default: 'neutral'
   enableAutoClose: true,    // If true, ToastBar will close after `autoCloseInterval`, default: true
   hasIcon: true,            // If true, an icon is shown along the message, default: false \*
   iconName: 'download',    // Name of a custom icon to be shown along the message, default: undefined
@@ -404,10 +401,7 @@ show({content: { message: 'Toast message', link: 'Link action' }}, 'toast-id', {
   linkProps: {             // Props for the link
     href: 'https://example.com', // Link URL
     target: '_blank',      // Optional link target attribute
-    isUnderlined: false,   // Optional link underlining, default: true
-    isDisabled: false,     // Optional link disabling, default: false
     elementType: 'a',      // Optional link element type, default: 'a'
-    color: 'inverted',     // Optional link color variant, default: 'inverted'
   },
 });
 ```
