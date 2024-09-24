@@ -2,20 +2,35 @@
 @use '../../settings/transitions';
 
 $max-width: 21rem;
-$input-border-width: tokens.$border-width-100;
-$input-border-radius: 12px;
 $input-width: 44px;
 $input-height: 24px;
-$input-mark-height: 44px;
-$input-mark-width: 52px;
-$input-mark-position-y: -7px; // Position of the mark is offset because it has a shadow
-$input-mark-position-x: -15px; // Position of the mark in non-checked state
-$input-mark-position-x-checked: $input-mark-position-x + 20px; // Position of the mark in checked state
-$input-mark: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$input-mark-width}" height="#{$input-mark-height}" viewBox="0 0 52 44" fill="none"><g xmlns="http://www.w3.org/2000/svg" filter="url(#a)"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{tokens.$background-basic}"/></g><defs><filter id="a" width="44" height="44" x="4" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="6"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1_81"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_1_81" result="shape"/></filter></defs></svg>');
-$input-mark-indicators: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$input-mark-width}" height="#{$input-mark-height}" viewBox="0 0 52 44" fill="none"><path fill="#{tokens.$background-basic}" d="M48.675 14.33a.58.58 0 0 0-.822 0L45 17.178l-2.852-2.852a.58.58 0 1 0-.823.823L44.177 18l-2.852 2.852a.58.58 0 1 0 .822.823L45 18.823l2.852 2.852a.58.58 0 1 0 .823-.823L45.823 18l2.852-2.852a.585.585 0 0 0 0-.817ZM5.25 20.651 3.208 18.61a.574.574 0 0 0-.816 0 .574.574 0 0 0 0 .817l2.444 2.444a.58.58 0 0 0 .822 0l6.184-6.177a.574.574 0 0 0 0-.817.574.574 0 0 0-.817 0L5.25 20.651Z"/><g xmlns="http://www.w3.org/2000/svg" filter="url(#a)"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{tokens.$background-basic}"/></g><defs><filter id="a" width="44" height="44" x="4" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="6"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1_81"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_1_81" result="shape"/></filter></defs></svg>');
-$input-mark-disabled: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$input-mark-width}" height="#{$input-mark-height}" viewBox="0 0 52 44" fill="none"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{tokens.$action-unselected-disabled}"/></svg>');
-$input-mark-disabled-checked: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$input-mark-width}" height="#{$input-mark-height}" viewBox="0 0 52 44" fill="none"><circle xmlns="http://www.w3.org/2000/svg" cx="26" cy="18" r="10" fill="#{tokens.$action-selected-disabled}"/></svg>');
+$input-border-width: tokens.$border-width-100;
+$input-border-color: tokens.$component-toggle-unselected-border;
+$input-border-color-state-checked: tokens.$component-toggle-selected-border;
+$input-border-color-state-disabled: tokens.$disabled-border;
+$input-background-color: tokens.$component-toggle-unselected-state-default;
+$input-background-color-state-hover: tokens.$component-toggle-unselected-state-hover;
+$input-background-color-state-checked: tokens.$component-toggle-selected-state-default;
+$input-background-color-state-checked-hover: tokens.$component-toggle-selected-state-hover;
+$input-background-color-state-disabled: tokens.$disabled-background;
+$input-border-radius: tokens.$radius-400;
+$input-focus-shadow: tokens.$focus-ring;
+
+$input-mark-size: 20px;
+$input-mark-spacing: tokens.$space-100;
+$input-mark-position-x: tokens.$space-100;
+$input-mark-position-y: tokens.$space-100;
+$input-mark-border-radius: tokens.$radius-full;
+$input-mark-background-color: tokens.$component-toggle-unselected-content;
+$input-mark-background-color-checked: tokens.$component-toggle-selected-content;
+$input-mark-background-color-state-disabled: tokens.$disabled-foreground;
+$input-mark-image: var(--#{tokens.$css-variable-prefix}toggle-input-mark-background-image-url);
+$input-mark-image-state-checked: var(--#{tokens.$css-variable-prefix}toggle-input-mark-checked-background-image-url);
+$input-mark-image-state-disabled: var(--#{tokens.$css-variable-prefix}toggle-input-mark-disabled-background-image-url);
+$input-mark-image-state-checked-disabled: var(
+    --#{tokens.$css-variable-prefix}toggle-input-mark-checked-disabled-background-image-url
+);
+$input-mark-shadow: tokens.$shadow-200;
+
 $input-transition-duration: transitions.$duration-100;
 $input-transition-timing: transitions.$timing-eased-in-out;
-$input-border-color-disabled: tokens.$border-primary-disabled;
-$input-focus-shadow: tokens.$focus;
