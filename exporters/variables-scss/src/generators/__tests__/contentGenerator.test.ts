@@ -7,6 +7,7 @@ import {
   filterTokensByTypeAndGroup,
   generateScssObjectOutput,
   generateJsObjectOutput,
+  getGroups,
 } from '../contentGenerator';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { FileData } from '../../config/fileConfig';
@@ -124,6 +125,48 @@ desktop: gridSpacingDesktop,
       const jsOutput = generateJsObjectOutput(stylesObject);
 
       expect(jsOutput).toBe(expectedResult);
+    });
+  });
+
+  describe('getGroups', () => {
+    it('should return group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['String'];
+      const groupNames = ['Grid'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual(['Grid']);
+    });
+
+    it('should return group names without excluded group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['String', 'Grid'];
+      const groupNames = ['Grid'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual([]);
+    });
+
+    it('should return group names with no excluded group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = null;
+      const groupNames = ['Grid', 'String'];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual(['Grid', 'String']);
+    });
+
+    it('should not return group names', () => {
+      const tokens = Array.from(exampleDimensionAndStringTokens.values());
+      const excludeGroupNames = ['Grid', 'String'];
+      const groupNames = [''];
+
+      const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+      expect(groups).toStrictEqual([]);
     });
   });
 });

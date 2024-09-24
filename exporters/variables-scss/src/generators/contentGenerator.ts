@@ -32,6 +32,31 @@ export const generateScssObjectOutput = (stylesObject: StylesObjectType): string
     .join('');
 };
 
+export const getGroups = (tokens: Token[], excludeGroupNames: string[] | null, groupNames: string[]): string[] => {
+  let groups;
+
+  if (excludeGroupNames && excludeGroupNames.length > 0) {
+    const filteredTokens = tokens.filter((token) => {
+      return !excludeGroupNames.some((excludedGroup) => token.origin?.name?.includes(excludedGroup));
+    });
+
+    const restOfGroupNames = filteredTokens.reduce((acc: string[], token) => {
+      const groupName = token.origin?.name?.split('/')[0];
+      if (groupName && !acc.includes(groupName)) {
+        acc.push(groupName);
+      }
+
+      return acc;
+    }, []);
+
+    groups = [...new Set(restOfGroupNames)];
+  } else {
+    groups = groupNames;
+  }
+
+  return groups;
+};
+
 export const generateFileContent = (
   tokens: Token[],
   mappedTokens: Map<string, Token>,
@@ -47,11 +72,14 @@ export const generateFileContent = (
     sortByNumValue = false,
     hasStylesObject = true,
     tokenTypes,
+    excludeGroupNames = null,
   } = fileData;
 
-  // Iterate over token types and group names to filter tokens
+  // Iterate over token types and groups to filter tokens
   tokenTypes.forEach((tokenType) => {
-    groupNames.forEach((group) => {
+    const groups = getGroups(tokens, excludeGroupNames, groupNames);
+
+    groups.forEach((group) => {
       const filteredTokens = filterTokensByTypeAndGroup(tokens, tokenType, group);
 
       // Generate css tokens

@@ -4,6 +4,7 @@ export type FileData = {
   fileName: string;
   tokenTypes: TokenType[];
   groupNames?: string[];
+  excludeGroupNames?: string[] | null;
   hasStylesObject?: boolean;
   hasParentPrefix?: boolean;
   sortByNumValue?: boolean;
@@ -20,7 +21,7 @@ export const nonThemedFilesData: FileData[] = [
   {
     fileName: 'other',
     tokenTypes: [TokenType.dimension, TokenType.string],
-    groupNames: ['Grid', 'Container', 'Breakpoint'],
+    excludeGroupNames: ['Border', 'Radius', 'Spacing'],
     sortByNumValue: true,
   },
   {
