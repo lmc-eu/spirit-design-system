@@ -56,7 +56,6 @@ const ToastBar = (props: SpiritToastBarProps) => {
             </div>
             <ToastCloseButton
               id={id}
-              color={color}
               isOpen={isOpen}
               closeLabel={closeLabel}
               onClose={onClose}
