@@ -1,3 +1,5 @@
+import { ElementType } from 'react';
+import { LinkTarget } from './link';
 import {
   AlignmentXDictionaryType,
   AlignmentYDictionaryType,
@@ -6,7 +8,7 @@ import {
   StyleProps,
 } from './shared';
 
-export type ToastColorType = 'inverted' | EmotionColorsDictionaryType;
+export type ToastColorType = 'neutral' | EmotionColorsDictionaryType;
 
 export interface BaseToastProps extends ChildrenProps, StyleProps {}
 
@@ -37,6 +39,12 @@ export interface TransitionToastBarProps {
 
 export interface SpiritToastBarProps extends ToastBarProps, TransitionToastBarProps {
   id: string;
+}
+
+export interface ToastLinkProps<E extends ElementType = 'a'> extends ToastBarHandlingProps, ToastBarProps {
+  elementType?: E;
+  href?: string;
+  target?: LinkTarget;
 }
 
 export interface ToastCloseButtonProps extends ToastBarHandlingProps, SpiritToastBarProps {

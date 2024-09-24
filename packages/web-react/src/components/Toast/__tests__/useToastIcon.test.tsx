@@ -14,7 +14,7 @@ describe('useToastIcon', () => {
     // color, expected icon name
     ['danger', 'danger'],
     ['informative', 'info'],
-    ['inverted', 'info'],
+    ['neutral', 'info'],
     ['success', 'check-plain'],
     ['warning', 'warning'],
   ])('danger alert should return warning icon', (color, iconName) => {
