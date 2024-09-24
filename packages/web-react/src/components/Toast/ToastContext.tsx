@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FC, ReactNode, createContext, useCallback, useMemo, useReducer } from 'react';
-import { LinkProps, ToastColorType } from '../../types';
+import { ToastColorType, ToastLinkProps } from '../../types';
 import { delayedCallback } from '../../utils';
 import { DEFAULT_TOAST_AUTO_CLOSE_INTERVAL } from './constants';
 
@@ -18,7 +18,7 @@ export interface ToastItem {
   id: string;
   isDismissible: boolean;
   isOpen: boolean;
-  linkProps: LinkProps;
+  linkProps: ToastLinkProps;
   content: {
     message: JSX.Element | string;
     link?: JSX.Element | string;
@@ -42,7 +42,7 @@ export interface ToastContextType extends ToastState {
       hasIcon?: boolean;
       iconName?: string;
       isDismissible?: boolean;
-      linkProps: LinkProps;
+      linkProps: ToastLinkProps;
     },
   ) => void;
 }
@@ -73,7 +73,7 @@ type ActionType =
           hasIcon?: boolean;
           iconName?: string;
           isDismissible?: boolean;
-          linkProps: LinkProps;
+          linkProps: ToastLinkProps;
         };
       };
     }
@@ -155,7 +155,7 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
         hasIcon?: boolean;
         iconName?: string;
         isDismissible?: boolean;
-        linkProps: LinkProps;
+        linkProps: ToastLinkProps;
       },
     ) => {
       dispatch({ type: 'show', payload: { content, toastId, options } });
