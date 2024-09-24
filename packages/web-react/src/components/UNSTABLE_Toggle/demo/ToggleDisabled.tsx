@@ -12,6 +12,25 @@ const ToggleDisabled = () => (
       name="default"
       isDisabled
     />
+    <UNSTABLE_Toggle
+      id="toggle-warning-helper-text-disabled"
+      label="Toggle Label"
+      helperText="Helper text"
+      validationText="Validation text"
+      validationState="warning"
+      name="default"
+      isDisabled
+      isChecked
+    />
+    <UNSTABLE_Toggle id="toggle-indicators-disabled" label="Toggle Label" name="default" hasIndicators isDisabled />
+    <UNSTABLE_Toggle
+      id="toggle-indicators-disabled-checked"
+      label="Toggle Label"
+      name="default"
+      hasIndicators
+      isDisabled
+      isChecked
+    />
   </>
 );
 
