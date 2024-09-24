@@ -21,6 +21,7 @@ export const nonThemedFilesData: FileData[] = [
     fileName: 'other',
     tokenTypes: [TokenType.dimension, TokenType.string],
     groupNames: ['Grid', 'Container', 'Breakpoint'],
+    sortByNumValue: true,
   },
   {
     fileName: 'radii',

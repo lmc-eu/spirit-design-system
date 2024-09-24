@@ -1,4 +1,14 @@
-import { Token, TokenGroup, TypographyTokenValue } from '@supernovaio/sdk-exporters';
+import {
+  ColorToken,
+  DimensionToken,
+  GradientToken,
+  ShadowToken,
+  StringToken,
+  Token,
+  TokenGroup,
+  TokenType,
+  TypographyTokenValue,
+} from '@supernovaio/sdk-exporters';
 import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { toCamelCase } from './stringHelper';
 
@@ -38,11 +48,27 @@ export const sortTokens = (
 ) => {
   const sortedTokens = tokens.sort((a, b) => {
     if (sortByNumValue) {
-      const aNumMatch = a.name.match(/\d+$/);
-      const bNumMatch = b.name.match(/\d+$/);
+      const value = (token: Token) => {
+        if (token.tokenType === TokenType.dimension) {
+          const dimensionToken = token as DimensionToken;
+
+          return dimensionToken.value.measure;
+        }
+
+        if (token.tokenType === TokenType.string) {
+          const stringToken = token as StringToken;
+
+          return stringToken.value.text;
+        }
+
+        return (token as ColorToken | ShadowToken | GradientToken).value;
+      };
+
+      const aNumMatch = value(a);
+      const bNumMatch = value(b);
 
       if (aNumMatch && bNumMatch) {
-        return parseInt(aNumMatch[0], 10) - parseInt(bNumMatch[0], 10);
+        return parseInt(aNumMatch.toString(), 10) - parseInt(bNumMatch.toString(), 10);
       }
     }
 
