@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import React from 'react';
-import { LinkProps } from '../../../types';
+import { ToastLinkProps } from '../../../types';
 import { ToastContext } from '../ToastContext';
 import UncontrolledToast from '../UncontrolledToast';
 
@@ -18,9 +18,7 @@ const defaultToast = {
   color: undefined,
   linkProps: {
     href: '#',
-    color: 'inverted',
-    isUnderlined: true,
-  } as LinkProps,
+  } as ToastLinkProps,
 };
 
 const defaultContextValue = {
@@ -61,7 +59,7 @@ describe('UncontrolledToast', () => {
 
     expect(elementToast).toBeInTheDocument();
     expect(elementToastBar).toBeInTheDocument();
-    expect(elementToastBar).toHaveClass('is-open ToastBar--inverted');
+    expect(elementToastBar).toHaveClass('is-open ToastBar--neutral');
     expect(elementToastBar.querySelector('.ToastBar .ToastBar__container svg')).not.toBeInTheDocument();
   });
 
@@ -83,7 +81,7 @@ describe('UncontrolledToast', () => {
     expect(elementToast).toBeInTheDocument();
     expect(elementToastBar).toBeInTheDocument();
     expect(elementToast).toHaveClass('Toast--right Toast--top');
-    expect(elementToastBar).toHaveClass('ToastBar ToastBar--inverted ToastBar--dismissible is-open');
+    expect(elementToastBar).toHaveClass('ToastBar ToastBar--neutral ToastBar--dismissible is-open');
     expect(elementToastBar.querySelector('.ToastBar__container svg')).toBeInTheDocument();
     expect(elementToastBar.querySelector('button')).toHaveTextContent('Close test');
   });
