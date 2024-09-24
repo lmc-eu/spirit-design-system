@@ -180,7 +180,7 @@ Alternatively, a custom icon can be used:
 | ------------- | ------------- |
 | `danger`      | `danger`      |
 | `informative` | `info`        |
-| `inverted`    | `info`        |
+| `neutral`     | `info`        |
 | `success`     | `check-plain` |
 | `warning`     | `warning`     |
 
@@ -221,13 +221,10 @@ and [escape hatches][readme-escape-hatches].
 
 #### API
 
-| Name           | Type                                             | Default    | Required | Description                    |
-| -------------- | ------------------------------------------------ | ---------- | -------- | ------------------------------ |
-| `children`     | `string`                                         | —          | ✓        | Content of the link            |
-| `color`        | [Action Link Color dictionary][dictionary-color] | `inverted` | ✕        | Color of the link              |
-| `href`         | `string`                                         | —          | ✕        | ToastBarLink's href attribute  |
-| `isDisabled`   | `bool`                                           | `false`    | ✕        | Whether is the link disabled   |
-| `isUnderlined` | `bool`                                           | `true`     | ✕        | Whether is the link underlined |
+| Name       | Type     | Default | Required | Description                   |
+| ---------- | -------- | ------- | -------- | ----------------------------- |
+| `children` | `string` | —       | ✓        | Content of the link           |
+| `href`     | `string` | —       | ✕        | ToastBarLink's href attribute |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
@@ -239,7 +236,7 @@ said action), as it is very hard (if not impossible) to reach for users with ass
 
 ### Colors
 
-The ToastBar component is available in all [emotion colors][dictionary-color], plus the `inverted` variant (default).
+The ToastBar component is available in all [emotion colors][dictionary-color], plus the `neutral` variant (default).
 Use the `color` option to change the color of the ToastBar component.
 
 For example:
@@ -283,16 +280,16 @@ To make the ToastBar dismissible, add the `isDismissible` prop along with a uniq
 
 ### API
 
-| Name            | Type                                                         | Default    | Required | Description                                                          |
-| --------------- | ------------------------------------------------------------ | ---------- | -------- | -------------------------------------------------------------------- |
-| `closeLabel`    | `string`                                                     | `Close`    | ✕        | Close label                                                          |
-| `color`         | [[Emotion Color dictionary][dictionary-color] \| `inverted`] | `inverted` | ✕        | Color variant                                                        |
-| `hasIcon`       | `bool`                                                       | `false` \* | ✕        | If true, an icon is shown along the message                          |
-| `iconName`      | `string`                                                     | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
-| `id`            | `string`                                                     | —          | ✕        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
-| `isDismissible` | `bool`                                                       | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
-| `isTemplate`    | `bool`                                                       | `false`    | ✕        | If true, ToastBar will be adjusted for rendering inside `<template>` |
-| `isOpen`        | `bool`                                                       | `true`     | ✕        | If true, ToastBar is visible                                         |
+| Name            | Type                                                        | Default    | Required | Description                                                          |
+| --------------- | ----------------------------------------------------------- | ---------- | -------- | -------------------------------------------------------------------- |
+| `closeLabel`    | `string`                                                    | `Close`    | ✕        | Close label                                                          |
+| `color`         | [[Emotion Color dictionary][dictionary-color] \| `neutral`] | `neutral`  | ✕        | Color variant                                                        |
+| `hasIcon`       | `bool`                                                      | `false` \* | ✕        | If true, an icon is shown along the message                          |
+| `iconName`      | `string`                                                    | `info` \*  | ✕        | Name of a custom icon to be shown along the message                  |
+| `id`            | `string`                                                    | —          | ✕        | Optional ToastBar ID. Required when `isDismissible` is set to `true` |
+| `isDismissible` | `bool`                                                      | `false`    | ✕        | If true, ToastBar can be dismissed by user                           |
+| `isTemplate`    | `bool`                                                      | `false`    | ✕        | If true, ToastBar will be adjusted for rendering inside `<template>` |
+| `isOpen`        | `bool`                                                      | `true`     | ✕        | If true, ToastBar is visible                                         |
 
 (\*) For each emotion color, a default icon is defined.
 The icons come from the [Icon package][icon-package], or from your custom source of icons.
@@ -364,7 +361,7 @@ import Toast from '@lmc-eu/spirit-web/dist/js/Toast';
 
 const toast = new Toast(null, {
   autoCloseInterval: 3000, // Set interval after ToastBar will be closed in ms, default: 3000
-  color: 'informative', // One of ['inverted' (default), 'success', 'warning, 'danger', 'informative']
+  color: 'informative', // One of ['neutral' (default), 'success', 'warning, 'danger', 'informative']
   containerId: 'toast-example', // Must match the ID of the Toast container in HTML
   enableAutoClose: true, // If true, ToastBar will close after `autoCloseInterval`, default: true
   hasIcon: true,
@@ -376,7 +373,6 @@ const toast = new Toast(null, {
     isUnderlined: false, // Optional link underlining, default: true
     isDisabled: false, // Optional link disabling, default: false
     elementType: 'a', // Optional link element type, default: 'a'
-    color: 'inverted', // Optional link color variant, default: 'inverted'
   },
   iconName: 'info', // Optional icon name used as the #fragment in the SVG sprite URL
   id: 'my-toast', // An ID is required for dismissible ToastBar
