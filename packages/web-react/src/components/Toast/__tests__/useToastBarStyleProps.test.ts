@@ -7,7 +7,9 @@ describe('useToastBarStyleProps', () => {
     const props = { isOpen: true } as SpiritToastBarProps;
     const { result } = renderHook(() => useToastBarStyleProps(props));
 
-    expect(result.current.classProps.root).toBe('ToastBar ToastBar--inverted');
+    expect(result.current.classProps.root).toBe('ToastBar ToastBar--neutral');
+    expect(result.current.classProps.close).toBe('ToastBar__close');
+    expect(result.current.classProps.link).toBe('ToastBar__link link-underlined');
     expect(result.current.classProps.content).toBe('ToastBar__content');
     expect(result.current.classProps.container).toBe('ToastBar__container');
   });
@@ -19,7 +21,7 @@ describe('useToastBarStyleProps', () => {
     expect(result.current.classProps.root).toContain('ToastBar--dismissible');
   });
 
-  it.each([['inverted'], ['informative'], ['success'], ['warning'], ['danger']])(
+  it.each([['neutral'], ['informative'], ['success'], ['warning'], ['danger']])(
     'should return color class %s',
     (color) => {
       const props = { color } as SpiritToastBarProps;

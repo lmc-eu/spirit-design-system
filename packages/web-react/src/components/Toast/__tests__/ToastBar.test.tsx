@@ -28,7 +28,7 @@ describe('ToastBar', () => {
 
     expect(element).toBeInTheDocument();
     expect(element).toHaveClass('ToastBar');
-    expect(element).toHaveClass('ToastBar--inverted');
+    expect(element).toHaveClass('ToastBar--neutral');
   });
 
   it('should render text children', () => {
