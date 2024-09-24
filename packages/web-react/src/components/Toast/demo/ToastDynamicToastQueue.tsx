@@ -18,7 +18,7 @@ const ToastDynamicToastQueue = () => {
   const [isCollapsible, setIsCollapsible] = useState(true);
   const [alignmentY, setAlignmentY] = useState<AlignmentYDictionaryType>('bottom');
   const [alignmentX, setAlignmentX] = useState<AlignmentXDictionaryType>('center');
-  const [colorValue, setColorValue] = useState<ToastColorType>('inverted');
+  const [colorValue, setColorValue] = useState<ToastColorType>('neutral');
   const [hasIconValue, setHasIconValue] = useState(true);
   const [isDismissibleValue, setIsDismissibleValue] = useState(true);
   const [enableAutoCloseValue, setEnableAutoCloseValue] = useState(true);
@@ -44,8 +44,6 @@ const ToastDynamicToastQueue = () => {
       enableAutoClose: false,
       linkProps: {
         href: '#',
-        color: 'inverted',
-        isUnderlined: true,
       },
     },
     {
@@ -62,8 +60,6 @@ const ToastDynamicToastQueue = () => {
       enableAutoClose: false,
       linkProps: {
         href: '#',
-        color: 'inverted',
-        isUnderlined: true,
       },
     },
   ];
@@ -163,7 +159,7 @@ const ToastDynamicToastQueue = () => {
               id="toast-color"
               onChange={(e) => setColorValue(e.currentTarget.value as ToastColorType)}
             >
-              <option value="inverted">Inverted</option>
+              <option value="neutral">Neutral</option>
               <option value="success">Success</option>
               <option value="warning">Warning</option>
               <option value="danger">Danger</option>
@@ -240,8 +236,6 @@ const ToastDynamicToastQueue = () => {
                       enableAutoClose: enableAutoCloseValue,
                       linkProps: {
                         href: '#',
-                        color: 'inverted',
-                        isUnderlined: true,
                       },
                     },
                   );

@@ -28,7 +28,6 @@ describe('ToastBarLink', () => {
   it('should render with correct classnames', () => {
     const element = screen.getByRole('link');
 
-    expect(element).toHaveClass('link-inverted');
     expect(element).toHaveClass('link-underlined');
     expect(element).toHaveClass('ToastBar__link');
   });

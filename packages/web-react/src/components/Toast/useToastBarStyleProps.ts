@@ -7,20 +7,24 @@ export const useToastBarStyleProps = (props: ToastBarProps) => {
 
   const toastBarClass = useClassNamePrefix('ToastBar');
   const toastBarBoxClass = `${toastBarClass}__box`;
+  const toastBarCloseClass = `${toastBarClass}__close`;
   const toastBarContainerClass = `${toastBarClass}__container`;
   const toastBarContentClass = `${toastBarClass}__content`;
   const toastBarLinkClass = `${toastBarClass}__link`;
-  const colorClass = `${toastBarClass}--${color || 'inverted'}`;
-  const dismissibleClass = `${toastBarClass}--dismissible`;
-  const rootClass = classNames(toastBarClass, colorClass, isDismissible && dismissibleClass);
+  const toastBarLinkUnderlinedClass = useClassNamePrefix('link-underlined');
+  const toastBarColorClass = `${toastBarClass}--${color || 'neutral'}`;
+  const toastBarDismissibleClass = `${toastBarClass}--dismissible`;
+  const toastBarRootClasses = classNames(toastBarClass, toastBarColorClass, isDismissible && toastBarDismissibleClass);
+  const toastBarLinkClasses = classNames(toastBarLinkClass, toastBarLinkUnderlinedClass);
 
   return {
     classProps: {
-      root: rootClass,
+      root: toastBarRootClasses,
       box: toastBarBoxClass,
+      close: toastBarCloseClass,
       container: toastBarContainerClass,
       content: toastBarContentClass,
-      link: toastBarLinkClass,
+      link: toastBarLinkClasses,
     },
     props: restProps,
   };
