@@ -23,17 +23,45 @@ const mergedObject = {
 
 const mergedTypographyObject = {
   $heading1: {
-    fontFamily: '$font-family',
-    fontSize: '$font-size',
+    'font-family': '$font-family-example',
+    'font-size': '$font-size-example',
   },
   $body1: {
-    fontFamily: '$font-family',
-    fontSize: '$font-size',
+    'font-family': '$font-family-example',
+    'font-size': '$font-size-example',
   },
   $styles: {
-    heading1: '$heading1',
-    body1: '$body1',
+    'heading-1': '$heading-1-example',
+    'body-1': '$body-1-example',
   },
+};
+
+const mergedJsObject = {
+  grids: {
+    spacing: {
+      desktop: 'gridSpacingDesktop',
+      mobile: 'gridSpacingMobile',
+      tablet: 'gridSpacingTablet',
+    },
+    columns: 'gridColumns',
+    focus: 'focus',
+  },
+};
+
+const mergedTypographyJsObject = {
+  heading: {
+    fontFamily: 'fontFamilyExample',
+    fontSize: 'fontSizeExample',
+  },
+  body1: {
+    fontFamily: 'fontFamilyExample',
+    fontSize: 'fontSizeExample',
+  },
+  styles: {
+    heading1: 'heading1Example',
+    body1: 'body1Example',
+  },
+  focus: 'focus',
 };
 
 describe('objectHelper', () => {
@@ -61,22 +89,22 @@ describe('objectHelper', () => {
     it('should merge typography objects', () => {
       const typographyObject1 = {
         $heading1: {
-          fontFamily: '$font-family',
-          fontSize: '$font-size',
+          'font-family': '$font-family-example',
+          'font-size': '$font-size-example',
         },
         $styles: {
-          heading1: '$heading1',
+          'heading-1': '$heading-1-example',
           moveToTheEnd: 'true',
         },
       };
 
       const typographyObject2 = {
         $body1: {
-          fontFamily: '$font-family',
-          fontSize: '$font-size',
+          'font-family': '$font-family-example',
+          'font-size': '$font-size-example',
         },
         $styles: {
-          body1: '$body1',
+          'body-1': '$body-1-example',
         },
       };
 
@@ -104,16 +132,16 @@ columns: $grid-columns,
 
     it('should convert typography object to SCSS', () => {
       const expectedScssTypographyObject = `$heading1: (
-fontFamily: $font-family,
-fontSize: $font-size,
+font-family: $font-family-example,
+font-size: $font-size-example,
 ),
 $body1: (
-fontFamily: $font-family,
-fontSize: $font-size,
+font-family: $font-family-example,
+font-size: $font-size-example,
 ),
 $styles: (
-heading1: $heading1,
-body1: $body1,
+heading-1: $heading-1-example,
+body-1: $body-1-example,
 ),`;
 
       const result = convertToScss(mergedTypographyObject);
@@ -124,34 +152,36 @@ body1: $body1,
 
   describe('convertToJs', () => {
     it('should convert object to JS', () => {
-      const expectedJsObject = `$grids: {
+      const expectedJsObject = `grids: {
 spacing: {
-desktop: $grid-spacing-desktop,
-mobile: $grid-spacing-mobile,
-tablet: $grid-spacing-tablet,
+desktop: gridSpacingDesktop,
+mobile: gridSpacingMobile,
+tablet: gridSpacingTablet,
 },
-columns: $grid-columns,
+columns: gridColumns,
+focus,
 },`;
-      const result = convertToJs(mergedObject);
+      const result = convertToJs(mergedJsObject);
 
       expect(result).toBe(expectedJsObject);
     });
 
     it('should convert typography object to JS', () => {
-      const expectedJsTypographyObject = `$heading1: {
-fontFamily: $font-family,
-fontSize: $font-size,
+      const expectedJsTypographyObject = `heading: {
+fontFamily: fontFamilyExample,
+fontSize: fontSizeExample,
 },
-$body1: {
-fontFamily: $font-family,
-fontSize: $font-size,
+body1: {
+fontFamily: fontFamilyExample,
+fontSize: fontSizeExample,
 },
-$styles: {
-heading1: $heading1,
-body1: $body1,
-},`;
+styles: {
+heading1: heading1Example,
+body1: body1Example,
+},
+focus,`;
 
-      const result = convertToJs(mergedTypographyObject);
+      const result = convertToJs(mergedTypographyJsObject);
 
       expect(result).toBe(expectedJsTypographyObject);
     });

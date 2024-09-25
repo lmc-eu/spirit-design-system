@@ -56,9 +56,13 @@ export const convertToJs = (obj: StylesObjectType): string => {
   return Object.entries(obj)
     .map(([key, value]) => {
       if (typeof value === 'object' && value !== null) {
-        const nestedScss = convertToJs(value as StylesObjectType);
+        const nestedObject = convertToJs(value as StylesObjectType);
 
-        return `${key}: {\n${nestedScss}\n},\n`;
+        return `${key}: {\n${nestedObject}\n},\n`;
+      }
+
+      if (key === value) {
+        return `${key},\n`;
       }
 
       return `${key}: ${value},\n`;
