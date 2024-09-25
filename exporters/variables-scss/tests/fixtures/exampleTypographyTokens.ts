@@ -37,5 +37,5 @@ font-family: "'Inter', sans-serif",
 font-size: 64px,
 font-style: italic,
 font-weight: 700,
-line-height: 1.2
+line-height: 1.2,
 )`;

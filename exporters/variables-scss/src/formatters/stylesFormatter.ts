@@ -1,4 +1,5 @@
 export const SCSS_INDENTATION = '    ';
+export const JS_INDENTATION = '  ';
 
 export const removeExtraBlankLines = (css: string): string => {
   return css.replace(/\n{3,}/g, '\n\n');
@@ -9,7 +10,7 @@ export const formatLinesAtEndOfTheFile = (css: string): string => {
 };
 
 export const indentAndFormat = (css: string, hasJsOutput: boolean): string => {
-  const INDENTATION = hasJsOutput ? '\t' : SCSS_INDENTATION;
+  const INDENTATION = hasJsOutput ? JS_INDENTATION : SCSS_INDENTATION;
   let indentationLevel = 0;
   let formattedCSS = '';
 
