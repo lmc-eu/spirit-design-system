@@ -64,8 +64,9 @@ export const generateRootThemesFileContent = (themes: TokenTheme[], hasJsOutput:
 export const generateThemesRootFile = (themes: TokenTheme[], hasJsOutput: boolean = false): string => {
   const imports = generateRootThemesFileImports(themes, hasJsOutput);
   const themesContent = generateRootThemesFileContent(themes, hasJsOutput);
+  const defaultThemeNote = '// The first theme is the default theme, as the left column in the Figma table.';
   const stylesObjectWrapper = hasJsOutput ? 'export const themes = {\n' : '$themes: (\n';
-  const content = `${imports}\n\n${stylesObjectWrapper}${themesContent}\n${hasJsOutput ? '};\n' : ');\n'}`;
+  const content = `${imports}\n\n${defaultThemeNote}\n${stylesObjectWrapper}${themesContent}\n${hasJsOutput ? '};\n' : ');\n'}`;
 
   return indentAndFormat(content, hasJsOutput);
 };
@@ -109,12 +110,12 @@ export const generateOutputFilesByThemes = async (
   outputFiles.push({
     path: `./${SCSS_DIRECTORY}/`,
     fileName: '@global.scss',
-    content: `@forward '${GLOBAL_DIRECTORY}';`,
+    content: `@forward '${GLOBAL_DIRECTORY}';\n`,
   });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/`,
     fileName: '@global.ts',
-    content: `export * from './${GLOBAL_DIRECTORY}';`,
+    content: `export * from './${GLOBAL_DIRECTORY}';\n`,
   });
 
   // Compute themed tokens for all themes in parallel
