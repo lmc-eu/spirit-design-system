@@ -141,7 +141,7 @@ export const typographyValue = (
 
   if (lineHeight && lineHeight.measure) {
     hasJsOutput
-      ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100}`)
+      ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100},`)
       : baseStyles.push(`line-height: ${lineHeight.measure / 100},`);
   }
 
