@@ -8,6 +8,8 @@ import {
   generateRootThemesFileContent,
   generateRootThemesFileImports,
   generateThemesRootFile,
+  jsImportStatement,
+  scssImportStatement,
 } from '../fileGenerator';
 import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { nonThemedFilesData } from '../../config/fileConfig';
@@ -234,6 +236,22 @@ describe('fileGenerator', () => {
       expect(content).toBe(
         `import * as themeLight from './themes/theme-light';\nimport * as themeLightInverted from './themes/theme-light-inverted';`,
       );
+    });
+  });
+
+  describe('jsImportStatement', () => {
+    it('should generate js import statement', () => {
+      const content = jsImportStatement('theme-light');
+
+      expect(content).toBe(`import * as themeLight from './themes/theme-light';`);
+    });
+  });
+
+  describe('scssImportStatement', () => {
+    it('should generate scss import statement', () => {
+      const content = scssImportStatement('theme-light');
+
+      expect(content).toBe(`@use 'themes/theme-light';`);
     });
   });
 });

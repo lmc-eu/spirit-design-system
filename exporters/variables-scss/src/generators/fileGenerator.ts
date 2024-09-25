@@ -37,15 +37,18 @@ export const generateIndexFile = (files: { fileName: string; content: string }[]
     })
     .join('\n')}\n`;
 };
+export const jsImportStatement = (name: string) => {
+  return `import * as ${toCamelCase(name)} from './${THEMES_DIRECTORY}/${name}';`;
+};
+
+export const scssImportStatement = (name: string) => `@use '${THEMES_DIRECTORY}/${name}';`;
+
+export const prepareImportStatementCallback = (hasJsOutput: boolean) => {
+  return (theme: TokenTheme) => (hasJsOutput ? jsImportStatement(theme.name) : scssImportStatement(theme.name));
+};
 
 export const generateRootThemesFileImports = (themes: TokenTheme[], hasJsOutput: boolean): string => {
-  return themes
-    .map((theme) => {
-      return hasJsOutput
-        ? `import * as ${toCamelCase(theme.name)} from './${THEMES_DIRECTORY}/${theme.name}';`
-        : `@use '${THEMES_DIRECTORY}/${theme.name}';`;
-    })
-    .join('\n');
+  return themes.map(prepareImportStatementCallback(hasJsOutput)).join('\n');
 };
 
 export const generateRootThemesFileContent = (themes: TokenTheme[], hasJsOutput: boolean): string => {
