@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { formatStyles } from '../stylesFormatter';
+import { indentAndFormat } from '../stylesFormatter';
 
 const mockedUnformattedCSS = fs.readFileSync(
   path.join(__dirname, '../../../tests/fixtures/unformattedExample.scss'),
@@ -38,12 +38,12 @@ export const grids = {
 };
 `;
 
-describe('formatStyles', () => {
-  it('should correctly format CSS string', () => {
-    expect(formatStyles(mockedUnformattedCSS, false)).toBe(mockedFormattedCSS);
+describe('indentAndFormat', () => {
+  it('should correctly indent and format CSS output', () => {
+    expect(indentAndFormat(mockedUnformattedCSS, false)).toBe(mockedFormattedCSS);
   });
 
-  it('should correctly format CSS string with JS output', () => {
-    expect(formatStyles(mockedUnformattedJS, true)).toBe(expectedJsOutput);
+  it('should correctly indent and format JS output', () => {
+    expect(indentAndFormat(mockedUnformattedJS, true)).toBe(expectedJsOutput);
   });
 });

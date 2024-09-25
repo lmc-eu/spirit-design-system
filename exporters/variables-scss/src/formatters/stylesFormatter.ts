@@ -8,7 +8,7 @@ export const formatLinesAtEndOfTheFile = (css: string): string => {
   return css.replace(/\n{2,}$/, '\n');
 };
 
-export const formatStyles = (css: string, hasJsOutput: boolean): string => {
+export const indentAndFormat = (css: string, hasJsOutput: boolean): string => {
   const INDENTATION = hasJsOutput ? '\t' : SCSS_INDENTATION;
   let indentationLevel = 0;
   let formattedCSS = '';

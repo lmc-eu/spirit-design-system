@@ -1,7 +1,7 @@
 import { Token, TokenGroup, TokenType } from '@supernovaio/sdk-exporters';
 import { generateStylesFromTokens } from './stylesGenerator';
 import { StylesObjectType, generateStylesObjectFromTokens } from './stylesObjectGenerator';
-import { formatStyles } from '../formatters/stylesFormatter';
+import { indentAndFormat } from '../formatters/stylesFormatter';
 import { convertToJs, convertToScss, deepMergeObjects } from '../helpers/objectHelper';
 import { FileData } from '../config/fileConfig';
 
@@ -116,6 +116,6 @@ export const generateFileContent = (
   }
 
   return {
-    content: addDisclaimer(formatStyles(content, hasJsOutput)),
+    content: addDisclaimer(indentAndFormat(content, hasJsOutput)),
   };
 };

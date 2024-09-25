@@ -2,7 +2,7 @@ import { TokenGroup, Token, Supernova, TokenTheme } from '@supernovaio/sdk-expor
 import { generateFileContent } from './contentGenerator';
 import { FileData, nonThemedFilesData, themedFilesData } from '../config/fileConfig';
 import { toCamelCase } from '../helpers/stringHelper';
-import { formatStyles } from '../formatters/stylesFormatter';
+import { indentAndFormat } from '../formatters/stylesFormatter';
 import { COLOR_KEY } from './stylesObjectGenerator';
 
 export const THEMES_DIRECTORY = 'themes';
@@ -64,7 +64,7 @@ export const generateThemesRootFile = (themes: TokenTheme[], hasJsOutput: boolea
   const stylesObjectWrapper = hasJsOutput ? 'export const themes = {\n' : '$themes: (\n';
   const content = `${imports}\n\n${stylesObjectWrapper}${themesContent}\n${hasJsOutput ? '};\n' : ');\n'}`;
 
-  return formatStyles(content, hasJsOutput);
+  return indentAndFormat(content, hasJsOutput);
 };
 
 export const generateOutputFilesByThemes = async (
