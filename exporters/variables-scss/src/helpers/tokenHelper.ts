@@ -134,8 +134,8 @@ export const typographyValue = (
 
   const baseJsStyles = [
     `fontFamily: "'${fontFamily.text}', sans-serif"`,
-    `fontSize: "${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}"`,
-    `fontStyle: "${isItalic ? 'italic' : 'normal'}"`,
+    `fontSize: '${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
+    `fontStyle: '${isItalic ? 'italic' : 'normal'}'`,
     `fontWeight: ${fontWeight.text}`,
   ];
 

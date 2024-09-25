@@ -93,12 +93,10 @@ describe('stylesObjectGenerator', () => {
             moveToTheEnd: 'true',
           },
           headingXlargeBold: {
-            desktop:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+            desktop: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2\n}`,
           },
           headingXlargeBoldUnderline: {
-            desktop:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+            desktop: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2\n}`,
           },
         },
         description: 'should generate object from typography tokens with js output',
@@ -172,17 +170,14 @@ describe('stylesObjectGenerator', () => {
         token: exampleTypographyTokens.get('typographyRef1') as Token,
         expectedObject: {
           headingXlargeBold: {
-            desktop:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
-            tablet:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "32px",\nfontStyle: "normal",\nfontWeight: 500,\nlineHeight: 1\n}',
+            desktop: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2\n}`,
+            tablet: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '32px',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1\n}`,
           },
         },
         description: 'should create object structure from typography token with js output',
         stylesObjectRef: {
           headingXlargeBold: {
-            tablet:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "32px",\nfontStyle: "normal",\nfontWeight: 500,\nlineHeight: 1\n}',
+            tablet: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '32px',\nfontStyle: 'normal',\nfontWeight: 500,\nlineHeight: 1\n}`,
           },
         } as StylesObjectType,
         hasJsOutput: true,
@@ -223,11 +218,10 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           exampleRef: 'exampleRef',
           headingXlargeBold: {
-            desktop:
-              '{\nfontFamily: "\'Inter\', sans-serif",\nfontSize: "64px",\nfontStyle: "normal",\nfontWeight: 700,\nlineHeight: 1.2\n}',
+            desktop: `{\nfontFamily: "'Inter', sans-serif",\nfontSize: '64px',\nfontStyle: 'normal',\nfontWeight: 700,\nlineHeight: 1.2\n}`,
           },
         },
-        description: 'should generate object from typography tokens',
+        description: 'should generate object from typography tokens with js output',
         hasJsOutput: true,
       },
     ];
