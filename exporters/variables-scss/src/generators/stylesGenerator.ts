@@ -12,7 +12,7 @@ import { ColorFormat, CSSHelper } from '@supernovaio/export-helpers';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
-  formatTokenNameByOutput,
+  formatTokenStyleByOutput,
   sortTokens,
   tokenVariableName,
 } from '../helpers/tokenHelper';
@@ -39,7 +39,7 @@ export const tokenToStyleByType = (
     value = handleSpecialCase(name, value);
     const unit = CSSHelper.unitToCSS(dimensionToken.value?.unit);
 
-    return formatTokenNameByOutput(name, value, hasJsOutput, unit);
+    return formatTokenStyleByOutput(name, value, hasJsOutput, unit);
   }
 
   if (hasTokenType(TokenType.string)) {
@@ -48,7 +48,7 @@ export const tokenToStyleByType = (
     let value = stringToken.value.text;
     value = handleSpecialCase(name, value);
 
-    return formatTokenNameByOutput(name, value, hasJsOutput);
+    return formatTokenStyleByOutput(name, value, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.color)) {
@@ -63,7 +63,7 @@ export const tokenToStyleByType = (
     value = normalizeColor(value);
     value = handleSpecialCase(name, value);
 
-    return formatTokenNameByOutput(name, value, hasJsOutput);
+    return formatTokenStyleByOutput(name, value, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.shadow)) {
@@ -77,7 +77,7 @@ export const tokenToStyleByType = (
       tokenToVariableRef: () => '',
     });
 
-    return formatTokenNameByOutput(name, color, hasJsOutput).replace(/0px/g, '0');
+    return formatTokenStyleByOutput(name, color, hasJsOutput).replace(/0px/g, '0');
   }
 
   if (hasTokenType(TokenType.gradient)) {
@@ -92,7 +92,7 @@ export const tokenToStyleByType = (
     });
     gradient = addAngleVarToGradient(gradient);
 
-    return formatTokenNameByOutput(name, gradient, hasJsOutput);
+    return formatTokenStyleByOutput(name, gradient, hasJsOutput);
   }
 
   return null;

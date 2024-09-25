@@ -2,7 +2,7 @@ import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
-  formatTokenNameByOutput,
+  formatTokenStyleByOutput,
   sortTokens,
   tokenVariableName,
   typographyValue,
@@ -36,13 +36,13 @@ describe('tokenHelper', () => {
     });
   });
 
-  describe('formatTokenName', () => {
+  describe('formatTokenStyleByOutput', () => {
     it('should return the expected formatted token name with unit', () => {
       const name = 'grid-spacing-desktop';
       const value = 32;
       const unit = 'px';
 
-      const result = formatTokenNameByOutput(name, value, false, unit);
+      const result = formatTokenStyleByOutput(name, value, false, unit);
 
       expect(result).toBe('$grid-spacing-desktop: 32px !default;');
     });
@@ -51,9 +51,48 @@ describe('tokenHelper', () => {
       const name = 'grid-columns';
       const value = 12;
 
-      const result = formatTokenNameByOutput(name, value, false);
+      const result = formatTokenStyleByOutput(name, value, false);
 
       expect(result).toBe('$grid-columns: 12 !default;');
+    });
+
+    it('should return the expected formatted token name for js output', () => {
+      const name = 'grid-spacing-desktop';
+      const value = 32;
+      const unit = 'px';
+
+      const result = formatTokenStyleByOutput(name, value, true, unit);
+
+      expect(result).toBe(`export const gridSpacingDesktop = '32px';`);
+    });
+
+    it('should return the expected formatted token name for js output without unit', () => {
+      const name = 'grid-columns';
+      const value = 12;
+
+      const result = formatTokenStyleByOutput(name, value, true);
+
+      expect(result).toBe(`export const gridColumns = 12;`);
+    });
+
+    it('should return the expected formatted token for zero values with unit', () => {
+      const name = 'grid-columns';
+      const value = 0;
+      const unit = 'px';
+
+      const result = formatTokenStyleByOutput(name, value, false, unit);
+
+      expect(result).toBe('$grid-columns: 0 !default;');
+    });
+
+    it('should return the expected formatted token for zero values with unit for js output', () => {
+      const name = 'grid-columns';
+      const value = 0;
+      const unit = 'px';
+
+      const result = formatTokenStyleByOutput(name, value, true, unit);
+
+      expect(result).toBe('export const gridColumns = 0;');
     });
   });
 

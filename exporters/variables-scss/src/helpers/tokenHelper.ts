@@ -23,20 +23,22 @@ export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, 
   return NamingHelper.codeSafeVariableNameForToken(token, StringCase.paramCase, parent, '');
 };
 
-export const formatTokenNameByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
+export const normalizeZeroValueWithUnit = (value: string | number, unit: string): string | number => {
+  if (value === 0) {
+    return 0;
+  }
+
+  return `${value}${unit}`;
+};
+
+export const formatTokenStyleByOutput = (name: string, value: string | number, hasJsOutput: boolean, unit?: string) => {
+  const normalizedValue = unit ? normalizeZeroValueWithUnit(value, unit) : value;
+
   if (hasJsOutput) {
-    if (unit) {
-      return `export const ${toCamelCase(name)} = '${value}${unit}';`;
-    }
-
-    return `export const ${toCamelCase(name)} = '${value}';`;
+    return `export const ${toCamelCase(name)} = ${typeof normalizedValue === 'number' ? normalizedValue : `'${normalizedValue}'`};`;
   }
 
-  if (!hasJsOutput && unit) {
-    return `$${name}: ${value}${unit} !default;`;
-  }
-
-  return `$${name}: ${value} !default;`;
+  return `$${name}: ${normalizedValue} !default;`;
 };
 
 export const sortTokens = (
