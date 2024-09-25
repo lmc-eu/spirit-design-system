@@ -12,8 +12,9 @@ const mockedFormattedCSS = fs.readFileSync(
   'utf-8',
 );
 
-const mockedUnformattedJS = `
-export const gridSpacingDesktop: '32px';
+const mockedFormattedJS = fs.readFileSync(path.join(__dirname, '../../../tests/fixtures/formattedExample.ts'), 'utf-8');
+
+const mockedUnformattedJS = `export const gridSpacingDesktop = '32px';
 
 export const gridColumns = '12';
 
@@ -25,25 +26,12 @@ columns: gridColumns,
 };
 `;
 
-const expectedJsOutput = `
-export const gridSpacingDesktop: '32px';
-
-export const gridColumns = '12';
-
-export const grids = {
-  spacing: {
-    desktop: gridSpacingDesktop,
-  },
-  columns: gridColumns,
-};
-`;
-
 describe('indentAndFormat', () => {
   it('should correctly indent and format CSS output', () => {
     expect(indentAndFormat(mockedUnformattedCSS, false)).toBe(mockedFormattedCSS);
   });
 
   it('should correctly indent and format JS output', () => {
-    expect(indentAndFormat(mockedUnformattedJS, true)).toBe(expectedJsOutput);
+    expect(indentAndFormat(mockedUnformattedJS, true)).toBe(mockedFormattedJS);
   });
 });
