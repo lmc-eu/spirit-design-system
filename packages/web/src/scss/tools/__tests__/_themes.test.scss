@@ -1,7 +1,7 @@
 @use 'true' as test;
 @use '../themes';
 
-$test-theme-light: (
+$test-theme-light-default: (
     action: (
         button: (
             active: #fff,
@@ -9,7 +9,7 @@ $test-theme-light: (
     ),
 );
 
-$test-theme-light-inverted: (
+$test-theme-light-on-brand: (
     action: (
         button: (
             active: #000,
@@ -18,11 +18,11 @@ $test-theme-light-inverted: (
 );
 
 $test-themes: (
-    theme-light: (
-        colors: $test-theme-light,
+    theme-light-default: (
+        colors: $test-theme-light-default,
     ),
-    theme-light-inverted: (
-        colors: $test-theme-light,
+    theme-light-on-brand: (
+        colors: $test-theme-light-on-brand,
     ),
 );
 
@@ -30,37 +30,25 @@ $test-themes: (
     @include test.it('should generate default and other themes') {
         @include test.assert() {
             @include test.output() {
-                :root {
-                    @include themes.generate($test-themes);
-                }
+                @include themes.generate($themes: $test-themes, $addBackgroundImageUrls: false);
             }
 
             @include test.expect() {
                 :root,
-                .spirit-theme-light {
+                .spirit-theme-light-default {
                     --spirit-color-action-button-active: #fff;
                 }
 
-                .spirit-theme-light-inverted {
+                :where(:root, .spirit-theme-light-default) {
+                    color: var(--spirit-color-text-primary);
+                }
+
+                .spirit-theme-light-on-brand {
                     --spirit-color-action-button-active: #000;
                 }
-            }
-        }
-    }
-}
 
-@include test.describe('generate-css-variables mixin') {
-    @include test.it('should generate CSS variables based on the provided map') {
-        @include test.assert() {
-            @include test.output() {
-                :root {
-                    @include themes.generate-css-variables($test-theme-light, 'test-');
-                }
-            }
-
-            @include test.expect() {
-                :root {
-                    --test-action-button-active: #fff;
+                :where(.spirit-theme-light-on-brand) {
+                    color: var(--spirit-color-text-primary);
                 }
             }
         }
