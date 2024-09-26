@@ -156,7 +156,7 @@ const scssKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
   return `${toKebabCase(key)}: ${isNumber(value) ? value : removePairQuotes(value as string)}`;
 };
 
-const passObjectKeyValueToCallback = (object: TypographyShape, callback: KeyValueTemplateCallback) => {
+const passObjectKeyValueToCallback = <Shape>(object: Shape, callback: KeyValueTemplateCallback) => {
   return Object.entries(object).map((record) => {
     const [key, value] = record;
 
@@ -180,8 +180,8 @@ export const typographyValue = (
     typographyObject.lineHeight = lineHeight.measure / 100;
   }
 
-  const baseStyles = passObjectKeyValueToCallback(typographyObject, scssKeyValueTemplate);
-  const baseJsStyles = passObjectKeyValueToCallback(typographyObject, jsKeyValueTemplate);
+  const baseStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, scssKeyValueTemplate);
+  const baseJsStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, jsKeyValueTemplate);
 
   return hasJsOutput ? jsObjectTemplate(baseJsStyles) : scssObjectTemplate(baseStyles);
 };
