@@ -1,19 +1,19 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
+import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
 import {
   colorGroupsReducer,
   createGlobalColorsObject,
-  createStylesObjectStructureFromTokenNameParts,
-  StylesObjectType,
-  generateStylesObjectFromTokens,
-  parseGroupName,
   createGlobalTypographyObject,
-  typographyGroupReducer,
+  createStylesObjectStructureFromTokenNameParts,
+  generateStylesObjectFromTokens,
   handleTypographyTokens,
+  parseGroupName,
+  StylesObjectType,
+  typographyGroupReducer,
 } from '../stylesObjectGenerator';
-import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
-import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
-import { exampleTypographyTokens } from '../../../tests/fixtures/exampleTypographyTokens';
-import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
@@ -69,11 +69,13 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           '$heading-xlarge-bold': {
             desktop:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
           },
           '$heading-xlarge-bold-underline': {
             desktop:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
           },
           $styles: {
             'heading-xlarge-bold': '$heading-xlarge-bold',
@@ -152,16 +154,19 @@ describe('stylesObjectGenerator', () => {
         expectedObject: {
           '$heading-xlarge-bold': {
             desktop:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
             tablet:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
           },
         },
         description: 'should create object structure from typography token',
         stylesObjectRef: {
           '$heading-xlarge-bold': {
             tablet:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
           },
         } as StylesObjectType,
         hasJsOutput: false,
@@ -205,7 +210,8 @@ describe('stylesObjectGenerator', () => {
         expectedStyles: {
           '$heading-xlarge-bold': {
             desktop:
-              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
+              // eslint-disable-next-line quotes -- we are handling special characters
+              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
           },
           exampleRef: 'exampleRef',
         },
