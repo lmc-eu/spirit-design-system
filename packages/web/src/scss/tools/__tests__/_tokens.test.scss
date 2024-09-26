@@ -14,7 +14,7 @@ $test-theme: (
         @include test.assert() {
             @include test.output() {
                 :root {
-                    @include tokens.generate-css-variables($test-theme, 'test-');
+                    @include tokens.generate-css-variables($map: $test-theme, $prefix: 'test');
                 }
             }
 
