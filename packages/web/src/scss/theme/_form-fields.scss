@@ -13,7 +13,7 @@ $input-border-color-success: var(--#{globals.$prefix}color-form-field-success);
 $input-border-color-warning: var(--#{globals.$prefix}color-form-field-warning);
 $input-border-color-danger: var(--#{globals.$prefix}color-form-field-danger);
 $input-border-color-disabled: var(--#{globals.$prefix}color-disabled-border);
-$input-focus-shadow: global-tokens.$focus;
+$input-focus-shadow: global-tokens.$focus-ring;
 $label-color-default: var(--#{globals.$prefix}color-form-field-label);
 $label-color-disabled: var(--#{globals.$prefix}color-disabled-content);
 $label-required-typography: global-tokens.$body-small-regular;
@@ -43,7 +43,7 @@ $box-field-input-color-default: var(--#{globals.$prefix}color-form-field-content
 $box-field-input-border-width: global-tokens.$border-width-100;
 $box-field-input-border-style: solid;
 $box-field-input-border-color-focus: var(--#{globals.$prefix}color-border-focus);
-$box-field-input-focus-shadow: global-tokens.$focus;
+$box-field-input-focus-shadow: global-tokens.$focus-ring;
 
 $box-field-input-border-radius: global-tokens.$radius-300;
 $box-field-input-placeholder-color-default: var(--#{globals.$prefix}color-form-field-placeholder);
