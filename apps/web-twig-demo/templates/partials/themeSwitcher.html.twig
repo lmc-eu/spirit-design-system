@@ -1,0 +1,13 @@
+<Select
+  autocomplete="off"
+  id="select-theme"
+  label="Theme"
+  name="theme"
+  onchange="switchTheme(event)"
+  isFluid
+  isLabelHidden={{ isLabelHidden is defined ? isLabelHidden : false }} {# The `default()` filter doesn't work. #}
+>
+  {% for theme in themes %}
+    <option value="{{ theme.id }}">{{ theme.name }}</option>
+  {% endfor %}
+</Select>

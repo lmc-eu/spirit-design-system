@@ -1,20 +1,19 @@
 {% extends 'layout/default.html.twig' %}
 
+{% block title %}Components{% endblock%}
+
 {% block content %}
 
-  <section class="UNSTABLE_Section">
+  {% include 'partials/tabs.html.twig' %}
 
-    <h2 class="typography-heading-medium-bold text-secondary mb-900 mb-tablet-1100">Components</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
+  <ul class="Grid Grid--cols-2 Grid--tablet--cols-3">
 
-      {% for component in components %}
-        <li>
-          <a href="components/{{ component | lower }}/" class="docs-TileLink">{{ component }}</a>
-        </li>
-      {% endfor %}
+    {% for component in components %}
+      <li class="d-grid">
+        <a href="components/{{ component | lower }}/" class="docs-Card text-truncate">{{ component }}</a>
+      </li>
+    {% endfor %}
 
-    </ul>
-
-  </section>
+  </ul>
 
 {% endblock %}

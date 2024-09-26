@@ -3,6 +3,7 @@ import { isTesting as isTestingEnvironment } from '@lmc-eu/spirit-common/constan
 import { test } from '@playwright/test';
 import { readdirSync } from 'fs';
 import { formatPackageName, getServerUrl, takeScreenshot, waitForPageLoad } from '../helpers';
+import { hideFromVisualTests } from '../helpers/hideFromVisualTests';
 
 // Tests that are intentionally broken, but will be fixed in the future
 const IGNORED_TESTS: string[] = ['Toast', 'UNSTABLE_Toggle'];
@@ -37,6 +38,7 @@ const runComponentCompareTests = (testConfig: TestConfig) => {
             const url = getServerUrl(packageName);
             await page.goto(`${url}${componentsDir}/${component}/${packageName === 'web-twig' ? '?HIDE_TOOLBAR' : ''}`);
             await waitForPageLoad(page);
+            await hideFromVisualTests(page);
             await takeScreenshot(page, `${component}`, { fullPage: true });
           } catch (error) {
             // beware of the case insensitive systems; keep the prefix in the small case

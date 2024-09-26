@@ -1,0 +1,39 @@
+<div class="spirit-theme-light-on-brand bg-primary mb-tablet-1100 py-1200 py-tablet-1700 hide-from-visual-tests">
+  <div class="Container">
+
+    <h1
+      class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter Flex--row typography-heading-xlarge-bold"
+      style="--flex-spacing: var(--spirit-space-1000)"
+    >
+      {{ title }}
+
+      {% if isUnstable %}
+        <span class="Tag Tag--large Tag--warning">Unstable</span>
+      {% endif %}
+    </h1>
+
+    <Breadcrumbs>
+      <ol>
+        <li class="d-flex">
+          <Link href="http://localhost:3456" color="primary" isUnderlined>Spirit</Link>
+          <Icon name="chevron-right" />
+        </li>
+        <li class="d-flex">
+          <Link href="/" color="primary" isUnderlined>Web Twig</Link>
+          <Icon name="chevron-right" />
+        </li>
+        {% if parentPageName %}
+          <li class="d-flex">
+            <Link href="{{ parentPageUrl }}" color="primary" isUnderlined>{{ parentPageName }}</Link>
+            <Icon name="chevron-right" />
+          </li>
+        {% endif %}
+        <li class="d-flex">
+          {# Use <a> instead of <Link> so `href` can be empty (= current URL): #}
+          <a href="" class="link-secondary" aria-current="page">{{ title }}</a>
+        </li>
+      </ol>
+    </Breadcrumbs>
+
+  </div>
+</div>

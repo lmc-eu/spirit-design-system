@@ -1,20 +1,19 @@
 {% extends 'layout/default.html.twig' %}
 
+{% block title %}Helpers{% endblock%}
+
 {% block content %}
 
-  <section class="UNSTABLE_Section">
+  {% include 'partials/tabs.html.twig' %}
 
-    <h2 class="typography-heading-medium-bold text-secondary mb-900 mb-tablet-1100">Helpers</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
+  <ul class="Grid Grid--cols-2 Grid--tablet--cols-3">
 
-      {% for helper in helpers %}
-        <li>
-          <a href="helpers/{{ helper }}/" class="docs-TileLink">{{ helper | replace({'-': ' '}) | title }}</a>
-        </li>
-      {% endfor %}
+    {% for helper in helpers %}
+      <li>
+        <a href="helpers/{{ helper }}/" class="docs-Card">{{ helper | replace({'-': ' '}) | title }}</a>
+      </li>
+    {% endfor %}
 
-    </ul>
-
-  </section>
+  </ul>
 
 {% endblock %}

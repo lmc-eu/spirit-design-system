@@ -41,6 +41,17 @@ export default defineConfig({
       },
       runtimeOptions: {
         data: {
+          themes: [
+            {
+              id: 'light-default',
+              name: 'Light default',
+            },
+            {
+              id: 'light-on-brand',
+              name: 'Light on brand',
+            },
+          ],
+          is_development: process.env.NODE_ENV === 'development',
           // Get the list of components directories and pass their names to the data
           web_components: getListOfNestedDirectories('../../packages/web/src/scss/components', 'index.html'),
           // Get the list of helpers directories and pass their names to the data

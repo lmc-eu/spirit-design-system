@@ -1,17 +1,37 @@
 {% extends 'layout/base.html.twig' %}
 
-
 {% block body %}
 
-  {% block header %}{% include 'partials/header.html.twig' %}{% endblock %}
+  {% set title -%}
+    {% block title %}{% endblock %}
+  {%- endset %}
 
-  <main class="bg-primary py-1100 py-tablet-1600">
+  {% set parentPageName -%}
+    {% block parentPageName %}{% endblock %}
+  {%- endset %}
+
+  {% set parentPageUrl = '.' %}
+  {% if parentPageName == 'Components' %}
+    {% set parentPageUrl = '/' %}
+  {% endif %}
+
+  {% set isUnstable -%}
+    {% block isUnstable %}{% endblock %}
+  {%- endset %}
+
+  {% block header %}
+    {% include 'partials/header.html.twig' with { themes } only %}
+    {% include 'partials/cover.html.twig' with { isUnstable, parentPageName, parentPageUrl, title } only %}
+  {% endblock %}
+
+  <main class="bg-primary py-1100">
     <div class="Container">
-
-      {% include 'partials/tabs.html.twig' %}
 
       {% block content %}{% endblock %}
 
     </div>
   </main>
+
+  {% include 'partials/footer.html.twig' only %}
+
 {% endblock %}

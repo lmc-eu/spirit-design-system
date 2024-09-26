@@ -1,16 +1,25 @@
 {% set routeName = app.request.get('_route') %}
 
-<ul class="Tabs mb-1400" role="tablist">
-  <li class="Tabs__item">
-    <a href="/" class="Tabs__link{% if routeName == 'index' %} is-selected" aria-selected="true{% endif %}">Components</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="icons/" class="Tabs__link{% if routeName == 'icons_index' %} is-selected" aria-selected="true{% endif %}">Icons</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="helpers/" class="Tabs__link{% if routeName == 'helpers_index' %} is-selected" aria-selected="true{% endif %}">Helpers</a>
-  </li>
-  <li class="Tabs__item">
-    <a href="validations/" class="Tabs__link{% if routeName == 'validations_index' %} is-selected" aria-selected="true{% endif %}">Validations</a>
-  </li>
-</ul>
+{% set isComponentsSelected = routeName == 'index' %}
+{% set isIconsSelected = routeName == 'icons_index' %}
+{% set isHelpersSelected = routeName == 'helpers_index' %}
+{% set isValidationsSelected = routeName == 'validations_index' %}
+
+<div class="breakout-container">
+  <ScrollView direction="horizontal" overflowDecorators="shadows" data-spirit-toggle="scrollView" UNSAFE_className="mb-800 mb-tablet-1100">
+    <TabList UNSAFE_className="mb-800 mx-auto">
+      <TabItem>
+        <TabLink href="/" isSelected={{ isComponentsSelected }}>Components</TabLink>
+      </TabItem>
+      <TabItem>
+        <TabLink href="/icons" isSelected={{ isIconsSelected }}>Icons</TabLink>
+      </TabItem>
+      <TabItem>
+        <TabLink href="/helpers" isSelected={{ isHelpersSelected }}>Helpers</TabLink>
+      </TabItem>
+      <TabItem>
+        <TabLink href="/validations" isSelected={{ isValidationsSelected }}>Validations</TabLink>
+      </TabItem>
+    </TabList>
+  </ScrollView>
+</div>

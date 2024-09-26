@@ -35,6 +35,7 @@
 {%- set _helperTextId = _helperText or _unsafeHelperText ? _id ~ '-helper-text' : null -%}
 {%- set _labelClassNames = [ _labelClassName, _labelHiddenClassName, _labelRequiredClassName ] -%}
 {%- set _mainPropsWithoutId = props | filter((value, prop) => prop is not same as('id')) -%}
+{%- set _allowedInputAttributes = [ 'autocomplete' ] -%}
 {%- set _validationTextId = _validationText or _unsafeValidationText ? _id ~ '-validation-text' : null -%}
 
 {# Attributes #}
@@ -48,7 +49,7 @@
     </label>
     <div class="{{ _containerClassName }}">
         <select
-            {{ inputProps([], [], _inputProps) }}
+            {{ inputProps(props, _allowedInputAttributes, _inputProps) }}
             id="{{ _id }}"
             name="{{ _name }}"
             class="{{ _inputClassName }}"

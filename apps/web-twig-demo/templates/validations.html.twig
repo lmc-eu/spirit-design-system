@@ -1,46 +1,47 @@
 {% extends 'layout/default.html.twig' %}
 
+{% block title %}Validations{% endblock%}
+
 {% block content %}
 
-  <section class="UNSTABLE_Section">
+  {% include 'partials/tabs.html.twig' %}
 
-    <Grid UNSAFE_className="mb-1600">
-      <GridItem columnStart="{{ { mobile: 2, tablet: 4, desktop: 5 } }}" columnEnd="{{ { mobile: 12, tablet: 10, desktop: 9 } }}">
-        <h2 class="docs-Heading">Real-World examples</h2>
+  <Grid UNSAFE_className="mb-1600">
+    <GridItem columnStart="{{ { mobile: 2, tablet: 4, desktop: 5 } }}" columnEnd="{{ { mobile: 12, tablet: 10, desktop: 9 } }}">
+      <h2 class="docs-Heading">Real-World examples</h2>
 
-        <form id="form1" method="get" novalidate>
-          <Stack hasSpacing>
-            {% set usernameInputProps = { "data-spirit-required-message": "Please choose a username" }%}
-            <TextField isFluid name="username" id="username" label="Username" isRequired data-spirit-validate inputProps={ usernameInputProps } />
-            {% set zipcodeInputProps = { "data-spirit-pattern-message": "Invalid ZIP code", "data-spirit-pattern": "/d{5}|\d{3}[ ]?\d{2}/" }%}
-            <TextField isFluid name="zipcode" id="zipcode" label="Zip code" placeholder="123" data-spirit-validate inputProps={ zipcodeInputProps } />
-            {% set ageInputProps = { "data-spirit-min-message": "You must be at least 14-years-old", }%}
-            <TextField isFluid name="age" id="age" label="Your age (min. 14)" isRequired min="14" data-spirit-validate inputProps={ ageInputProps } />
-            {% set passwordInputProps = {
-              "data-spirit-required-message": "Please choose a password",
-              "data-spirit-pattern": "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/",
-              "data-spirit-pattern-message": "Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
-            } %}
-            <TextField isFluid name="password" id="password" type="password" label="Password" isRequired  data-spirit-validate inputProps={ passwordInputProps } />
-            {% set retypepasswordInputProps = {
-              "data-spirit-equals": "#password",
-              "data-spirit-equals-message": "Passwords don't match",
-            } %}
-            <TextField isFluid name="retypepassword" id="retypepassword" type="password" label="Retype password" isRequired  data-spirit-validate inputProps={ retypepasswordInputProps } />
-            {% set emailInputProps = { "data-spirit-required-message": "Please enter your email", } %}
-            <TextField isFluid name="email" id="email" type="email" label="Email" isRequired  data-spirit-validate inputProps={ emailInputProps } />
-            {% set phoneInputProps = { "data-spirit-pattern": "/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/", "data-spirit-pattern-message": "Invalid phone number", } %}
-            <TextField isFluid name="phone" id="phone" type="tel" label="phone" isRequired placeholder="+420 733 333 333" data-spirit-validate inputProps={ phoneInputProps } />
-            <Checkbox isFluid name="checkboxfield1" id="checkboxfield1" label="I accept the terms and conditions (required)" isRequired  data-spirit-validate />
-            <div>
-              <Button type="submit" color="primary" isBlock>Submit</Button>
-            </div>
-          </Stack>
-        </form>
-      </GridItem>
-    </Grid>
-  </section>
+      <form id="form1" method="get" novalidate>
+        <Stack hasSpacing>
+          {% set usernameInputProps = { "data-spirit-required-message": "Please choose a username" }%}
+          <TextField isFluid name="username" id="username" label="Username" isRequired data-spirit-validate inputProps={ usernameInputProps } />
+          {% set zipcodeInputProps = { "data-spirit-pattern-message": "Invalid ZIP code", "data-spirit-pattern": "/d{5}|\d{3}[ ]?\d{2}/" }%}
+          <TextField isFluid name="zipcode" id="zipcode" label="Zip code" placeholder="123" data-spirit-validate inputProps={ zipcodeInputProps } />
+          {% set ageInputProps = { "data-spirit-min-message": "You must be at least 14-years-old", }%}
+          <TextField isFluid name="age" id="age" label="Your age (min. 14)" isRequired min="14" data-spirit-validate inputProps={ ageInputProps } />
+          {% set passwordInputProps = {
+            "data-spirit-required-message": "Please choose a password",
+            "data-spirit-pattern": "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/",
+            "data-spirit-pattern-message": "Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
+          } %}
+          <TextField isFluid name="password" id="password" type="password" label="Password" isRequired  data-spirit-validate inputProps={ passwordInputProps } />
+          {% set retypepasswordInputProps = {
+            "data-spirit-equals": "#password",
+            "data-spirit-equals-message": "Passwords don't match",
+          } %}
+          <TextField isFluid name="retypepassword" id="retypepassword" type="password" label="Retype password" isRequired  data-spirit-validate inputProps={ retypepasswordInputProps } />
+          {% set emailInputProps = { "data-spirit-required-message": "Please enter your email", } %}
+          <TextField isFluid name="email" id="email" type="email" label="Email" isRequired  data-spirit-validate inputProps={ emailInputProps } />
+          {% set phoneInputProps = { "data-spirit-pattern": "/^(?:\+\d{3}\s?)?(\d{3}\s?){3}$/", "data-spirit-pattern-message": "Invalid phone number", } %}
+          <TextField isFluid name="phone" id="phone" type="tel" label="phone" isRequired placeholder="+420 733 333 333" data-spirit-validate inputProps={ phoneInputProps } />
+          <Checkbox isFluid name="checkboxfield1" id="checkboxfield1" label="I accept the terms and conditions (required)" isRequired  data-spirit-validate />
+          <div>
+            <Button type="submit" color="primary" isBlock>Submit</Button>
+          </div>
+        </Stack>
+      </form>
+    </GridItem>
+  </Grid>
 
-{{ encore_entry_script_tags('formValidations') }}
+  {{ encore_entry_script_tags('formValidations') }}
 
 {% endblock %}
