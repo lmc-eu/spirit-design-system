@@ -7,12 +7,12 @@ import {
   TokenGroup,
   TokenType,
 } from '@supernovaio/sdk-exporters';
-import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
-import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
 import { exampleColorsTokens } from '../../../tests/fixtures/exampleColorTokens';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTokens';
 import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 import { exampleShadowTokens } from '../../../tests/fixtures/exampleShadowTokens';
-import { exampleGradientTokens } from '../../../tests/fixtures/exampleGradientTokens';
+import { generateStylesFromTokens, tokenToStyleByType } from '../stylesGenerator';
 
 const mappedTokens: Map<string, Token> = new Map([]);
 const tokenGroups: Array<TokenGroup> = exampleGroups;
@@ -64,47 +64,48 @@ describe('stylesGenerator', () => {
         description: 'dimension type token with parent prefix and js output',
         hasParentPrefix: true,
         hasJsOutput: true,
-        expectedStyles: `export const gridSpacingDesktop = '32px';`,
+        expectedStyles: "export const gridSpacingDesktop = '32px';",
       },
       {
         token: exampleDimensionAndStringTokens.get('dimensionRef') as DimensionToken,
         description: 'dimension type token without parent prefix and js output',
         hasParentPrefix: false,
         hasJsOutput: true,
-        expectedStyles: `export const desktop = '32px';`,
+        expectedStyles: "export const desktop = '32px';",
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         description: 'string type token with parent prefix and js output',
         hasParentPrefix: true,
         hasJsOutput: true,
-        expectedStyles: `export const gridColumns = '12';`,
+        expectedStyles: "export const gridColumns = '12';",
       },
       {
         token: exampleDimensionAndStringTokens.get('stringRef') as StringToken,
         description: 'string type token without parent prefix and js output',
         hasParentPrefix: false,
         hasJsOutput: true,
-        expectedStyles: `export const columns = '12';`,
+        expectedStyles: "export const columns = '12';",
       },
       {
         token: exampleShadowTokens.get('shadowRef') as ShadowToken,
         description: 'shadow type token without parent prefix',
         hasParentPrefix: false,
         hasJsOutput: false,
-        expectedStyles: `$shadow-100: 0 2px 8px 0 #00000026 !default;`,
+        expectedStyles: '$shadow-100: 0 2px 8px 0 #00000026 !default;',
       },
       {
         token: exampleGradientTokens.get('gradientRef') as GradientToken,
         description: 'gradient type token without parent prefix',
         hasParentPrefix: false,
         hasJsOutput: false,
-        expectedStyles: `$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;`,
+        expectedStyles:
+          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;',
       },
     ];
 
     it.each(dataProvider)(
-      `should correctly generate styles for $description`,
+      'should correctly generate styles for $description',
       ({ token, expectedStyles, hasParentPrefix, hasJsOutput }) => {
         const styles = tokenToStyleByType(token, mappedTokens, tokenGroups, hasParentPrefix, hasJsOutput);
 
@@ -129,7 +130,7 @@ describe('stylesGenerator', () => {
         hasJsOutput: true,
         hasParentPrefix: true,
         description: 'should generate styles from tokens with js output',
-        expectedStyles: `export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '32px';`,
+        expectedStyles: "export const gridColumns = '12';\n\nexport const gridSpacingDesktop = '32px';",
       },
       {
         tokens: exampleColorsTokens,
@@ -137,7 +138,7 @@ describe('stylesGenerator', () => {
         hasJsOutput: false,
         hasParentPrefix: false,
         description: 'should generate styles from tokens with colors',
-        expectedStyles: `$active: #ca2026 !default;\n\n$primary: #fff !default;`,
+        expectedStyles: '$active: #ca2026 !default;\n\n$primary: #fff !default;',
       },
       {
         tokens: exampleColorsTokens,
@@ -145,7 +146,7 @@ describe('stylesGenerator', () => {
         hasJsOutput: true,
         hasParentPrefix: false,
         description: 'should generate styles from tokens with colors with js output',
-        expectedStyles: `export const active = '#ca2026';\n\nexport const primary = '#fff';`,
+        expectedStyles: "export const active = '#ca2026';\n\nexport const primary = '#fff';",
       },
       {
         tokens: exampleShadowTokens,
@@ -153,7 +154,7 @@ describe('stylesGenerator', () => {
         hasJsOutput: false,
         hasParentPrefix: false,
         description: 'should generate styles from tokens with shadows',
-        expectedStyles: `$shadow-100: 0 2px 8px 0 #00000026 !default;`,
+        expectedStyles: '$shadow-100: 0 2px 8px 0 #00000026 !default;',
       },
       {
         tokens: exampleGradientTokens,
@@ -161,7 +162,8 @@ describe('stylesGenerator', () => {
         hasJsOutput: false,
         hasParentPrefix: false,
         description: 'should generate styles from tokens with gradients',
-        expectedStyles: `$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;`,
+        expectedStyles:
+          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;',
       },
     ];
 
