@@ -1,3 +1,4 @@
+import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import {
   ColorToken,
   DimensionToken,
@@ -9,7 +10,6 @@ import {
   TokenType,
   TypographyTokenValue,
 } from '@supernovaio/sdk-exporters';
-import { NamingHelper, StringCase } from '@supernovaio/export-helpers';
 import { toCamelCase } from './stringHelper';
 
 export const tokenVariableName = (token: Token, tokenGroups: Array<TokenGroup>, hasParentPrefix: boolean): string => {
@@ -120,38 +120,68 @@ export const addAngleVarToGradient = (inputString: string): string => {
   return inputString;
 };
 
+const toKebabCase = (value: string) => value.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
+const removePairQuotes = (input: string): string => {
+  const regex = /^'([^']*)'$/;
+
+  return input.replace(regex, '$1');
+};
+
+const isNumber = (value: unknown): boolean => typeof value === 'number';
+
+const jsObjectTemplate = (strings: string[]) => `{
+${strings.join(',\n')},
+}`;
+
+const scssObjectTemplate = (strings: string[]) => `(
+${strings.join(',\n')},
+)`;
+
+type KeyValueTemplateCallback = (key: string, value: string | number) => string;
+
+type TypographyShape = {
+  fontFamily: string;
+  fontSize: string;
+  fontStyle: string;
+  fontWeight: string;
+  lineHeight?: number;
+};
+
+const jsKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
+  return `${key}: ${/\s/.test(value as string) ? `"${value}"` : value}`;
+};
+
+const scssKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
+  return `${toKebabCase(key)}: ${isNumber(value) ? value : removePairQuotes(value as string)}`;
+};
+
+const passObjectKeyValueToCallback = <Shape>(object: Shape, callback: KeyValueTemplateCallback) => {
+  return Object.entries(object).map((record) => {
+    const [key, value] = record;
+
+    return callback(key, value);
+  });
+};
+
 export const typographyValue = (
   { fontFamily, fontSize, fontWeight, lineHeight }: TypographyTokenValue,
   isItalic: boolean,
   hasJsOutput: boolean,
 ): string => {
-  const baseStyles = [
-    `font-family: "'${fontFamily.text}', sans-serif"`,
-    `font-size: ${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}`,
-    `font-style: ${isItalic ? 'italic' : 'normal'}`,
-    `font-weight: ${fontWeight.text}`,
-  ];
-
-  const baseJsStyles = [
-    `fontFamily: "'${fontFamily.text}', sans-serif"`,
-    `fontSize: '${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
-    `fontStyle: '${isItalic ? 'italic' : 'normal'}'`,
-    `fontWeight: ${fontWeight.text}`,
-  ];
+  const typographyObject: TypographyShape = {
+    fontFamily: `'${fontFamily.text}', sans-serif`,
+    fontSize: `'${fontSize.measure}${fontSize.unit === 'Pixels' ? 'px' : fontSize.unit}'`,
+    fontStyle: `'${isItalic ? 'italic' : 'normal'}'`,
+    fontWeight: fontWeight.text,
+  };
 
   if (lineHeight && lineHeight.measure) {
-    hasJsOutput
-      ? baseJsStyles.push(`lineHeight: ${lineHeight.measure / 100},`)
-      : baseStyles.push(`line-height: ${lineHeight.measure / 100},`);
+    typographyObject.lineHeight = lineHeight.measure / 100;
   }
 
-  if (hasJsOutput) {
-    return `{
-${baseJsStyles.join(',\n')}
-}`;
-  }
+  const baseStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, scssKeyValueTemplate);
+  const baseJsStyles = passObjectKeyValueToCallback<TypographyShape>(typographyObject, jsKeyValueTemplate);
 
-  return `(
-${baseStyles.join(',\n')}
-)`;
+  return hasJsOutput ? jsObjectTemplate(baseJsStyles) : scssObjectTemplate(baseStyles);
 };
