@@ -1,4 +1,7 @@
 import { Token, TokenGroup, TypographyToken } from '@supernovaio/sdk-exporters';
+import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
+import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
+import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
 import {
   addAngleVarToGradient,
   addEmptyLineBetweenTokenGroups,
@@ -7,9 +10,6 @@ import {
   tokenVariableName,
   typographyValue,
 } from '../tokenHelper';
-import { exampleDimensionAndStringTokens } from '../../../tests/fixtures/exampleDimensionAndStringTokens';
-import { exampleTypographyTokens, expectedTypographyValue } from '../../../tests/fixtures/exampleTypographyTokens';
-import { exampleGroups } from '../../../tests/fixtures/exampleGroups';
 
 const dataProvider = [
   {
@@ -63,7 +63,7 @@ describe('tokenHelper', () => {
 
       const result = formatTokenStyleByOutput(name, value, true, unit);
 
-      expect(result).toBe(`export const gridSpacingDesktop = '32px';`);
+      expect(result).toBe("export const gridSpacingDesktop = '32px';");
     });
 
     it('should return the expected formatted token name for js output without unit', () => {
@@ -72,7 +72,7 @@ describe('tokenHelper', () => {
 
       const result = formatTokenStyleByOutput(name, value, true);
 
-      expect(result).toBe(`export const gridColumns = 12;`);
+      expect(result).toBe('export const gridColumns = 12;');
     });
 
     it('should return the expected formatted token for zero values with unit', () => {
