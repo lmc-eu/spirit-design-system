@@ -13,6 +13,7 @@ env:
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_VERBOSE_LOGGING: true
   NX_NO_CLOUD: true
+  CACHE_KEY: repository-cache-key-${{ github.run_id }}
 
 jobs:
   install-build:
@@ -33,10 +34,11 @@ jobs:
         run: yarn workspace @lmc-eu/spirit-design-tokens build
 
       - name: Save Repository to Cache
+        id: save-repository-cache
         uses: actions/cache/save@v4
         with:
           path: ./
-          key: repository-builds-cache-${{ hashFiles('.*') }}
+          key: ${{ env.CACHE_KEY }}
 
   lint:
     name: 📐 Code Linting
@@ -52,7 +54,7 @@ jobs:
         id: restore-repository-cache
         with:
           path: ./
-          key: repository-builds-cache-${{ hashFiles('.*') }}
+          key: ${{ env.CACHE_KEY }}
 
       - name: Setup Node
         uses: ./.github/actions/setup-node
@@ -74,7 +76,7 @@ jobs:
         id: restore-repository-cache
         with:
           path: ./
-          key: repository-builds-cache-${{ hashFiles('.*') }}
+          key: ${{ env.CACHE_KEY }}
 
       - name: Setup Node
         uses: ./.github/actions/setup-node
@@ -145,10 +147,28 @@ jobs:
         id: restore-repository-cache
         with:
           path: ./
-          key: repository-builds-cache-${{ hashFiles('**/build') }}
+          key: ${{ env.CACHE_KEY }}
 
       - name: Setup Node
         uses: ./.github/actions/setup-node
 
       - name: Types Check
         run: yarn types
+
+  cleanup:
+    name: 🧹 Cleanup
+    needs: [lint, unit-tests, types]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # @see: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#force-deletion-of-caches-overriding-default-cache-eviction-policy
+      - name: Cleanup cache
+        run: |
+          gh extension install actions/gh-actions-cache
+          gh actions-cache delete "${{ env.CACHE_KEY }}" --confirm
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
