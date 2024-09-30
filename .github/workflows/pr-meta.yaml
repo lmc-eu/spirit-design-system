@@ -7,7 +7,7 @@ on:
 jobs:
   process_pr_meta:
     name: Process PR meta
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Assign to author
         uses: kentaro-m/auto-assign-action@v2.0.0 # Specify also the minor version because the `v2` tag does not exist.
