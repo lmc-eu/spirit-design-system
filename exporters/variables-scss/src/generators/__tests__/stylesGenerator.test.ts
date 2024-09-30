@@ -92,7 +92,7 @@ describe('stylesGenerator', () => {
         description: 'shadow type token without parent prefix',
         hasParentPrefix: false,
         hasJsOutput: false,
-        expectedStyles: '$shadow-100: 0 2px 8px 0 #00000026 !default;',
+        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         token: exampleGradientTokens.get('gradientRef') as GradientToken,
@@ -100,7 +100,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         hasJsOutput: false,
         expectedStyles:
-          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;',
+          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), var(--spirit-color-gradient-basic-overlay-color-01, #fff) 0%, var(--spirit-color-gradient-basic-overlay-color-02, #fff0) 100%) !default;',
       },
     ];
 
@@ -154,7 +154,7 @@ describe('stylesGenerator', () => {
         hasJsOutput: false,
         hasParentPrefix: false,
         description: 'should generate styles from tokens with shadows',
-        expectedStyles: '$shadow-100: 0 2px 8px 0 #00000026 !default;',
+        expectedStyles: '$shadow-100: 0 2px 8px 0 var(--spirit-color-shadows-shadow-100-color-01, #00000026) !default;',
       },
       {
         tokens: exampleGradientTokens,
@@ -163,7 +163,7 @@ describe('stylesGenerator', () => {
         hasParentPrefix: false,
         description: 'should generate styles from tokens with gradients',
         expectedStyles:
-          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), #ffffffff 0%, #ffffff00 100%) !default;',
+          '$basic-overlay: linear-gradient(var(--gradient-angle, 90deg), var(--spirit-color-gradient-basic-overlay-color-01, #fff) 0%, var(--spirit-color-gradient-basic-overlay-color-02, #fff0) 100%) !default;',
       },
     ];
 

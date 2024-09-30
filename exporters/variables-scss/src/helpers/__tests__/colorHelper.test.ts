@@ -1,4 +1,11 @@
-import { canHexBeShortened, normalizeColor, removeAlphaChannel, shortenHex } from '../colorHelper';
+import {
+  canHexBeShortened,
+  findAllHexColorsInStringAndNormalize,
+  normalizeColor,
+  removeAlphaChannel,
+  shortenHex,
+  transformColorsToVariables,
+} from '../colorHelper';
 
 const dataProviderItems = [
   ['ffffffff', '#fff'],
@@ -11,6 +18,22 @@ const dataProviderItems = [
   ['96969', '#96969'],
   ['835ea1', '#835ea1'],
   ['00000040', '#00000040'],
+];
+
+// [group, name, value, expectedValue]
+const dataProviderItemsTransformColorsToVariables = [
+  [
+    'shadows',
+    'shadow-100',
+    '0px 1px 0px #ffffff, 0px 1px 0px #00000001',
+    '0 1px 0 var(--spirit-color-shadows-shadow-100-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadows-shadow-100-color-02, #00000001)',
+  ],
+  [
+    '',
+    'shadow-200',
+    '0px 1px 0px #ffffff, 0px 1px 0px #00000001, 0px 1px 0px #00000002',
+    '0 1px 0 var(--spirit-color-shadow-200-color-01, #ffffff), 0 1px 0 var(--spirit-color-shadow-200-color-02, #00000001), 0 1px 0 var(--spirit-color-shadow-200-color-03, #00000002)',
+  ],
 ];
 
 describe('colorHelper', () => {
@@ -45,4 +68,25 @@ describe('colorHelper', () => {
       expect(removeAlphaChannel('fff')).toBe('fff');
     });
   });
+
+  describe('findAllHexColorsInStringAndNormalize', () => {
+    it('should find and normalize colors', () => {
+      expect(findAllHexColorsInStringAndNormalize('color: #ffffff;')).toBe('color: #fff;');
+      expect(findAllHexColorsInStringAndNormalize('color: #000000ff;')).toBe('color: #000;');
+      expect(findAllHexColorsInStringAndNormalize('color: #ffffff00;')).toBe('color: #fff0;');
+      expect(findAllHexColorsInStringAndNormalize('color: #00000040;')).toBe('color: #00000040;');
+      expect(findAllHexColorsInStringAndNormalize('color1: #00000040; color2: #ffffff')).toBe(
+        'color1: #00000040; color2: #fff',
+      );
+    });
+  });
+
+  describe.each(dataProviderItemsTransformColorsToVariables)(
+    'transformColorsToVariables',
+    (group, name, value, expectedValue) => {
+      it('should transform colors to variables', () => {
+        expect(transformColorsToVariables(name, value, group)).toBe(expectedValue);
+      });
+    },
+  );
 });

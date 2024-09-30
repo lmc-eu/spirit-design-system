@@ -17,7 +17,11 @@ import {
   tokenVariableName,
 } from '../helpers/tokenHelper';
 import { handleSpecialCase } from '../helpers/specialCaseHelper';
-import { normalizeColor } from '../helpers/colorHelper';
+import {
+  normalizeColor,
+  findAllHexColorsInStringAndNormalize,
+  transformColorsToVariables,
+} from '../helpers/colorHelper';
 
 export const tokenToStyleByType = (
   token: Token,
@@ -69,28 +73,36 @@ export const tokenToStyleByType = (
   if (hasTokenType(TokenType.shadow)) {
     const shadowToken = token as ShadowToken;
     const name = tokenVariableName(token, tokenGroups, withParent);
-    const { value } = shadowToken;
-    const color = CSSHelper.shadowTokenValueToCSS(value, mappedTokens, {
+    const { value, origin } = shadowToken;
+    let shadow = CSSHelper.shadowTokenValueToCSS(value, mappedTokens, {
       allowReferences: true,
       decimals: 3,
       colorFormat: ColorFormat.hashHex8,
       tokenToVariableRef: () => '',
     });
+    // add group name to the variable if it is not already in the name
+    const groupName = withParent ? undefined : origin?.name?.split('/')[0].toLowerCase();
+    shadow = transformColorsToVariables(name, shadow, groupName); // add color variables
+    shadow = findAllHexColorsInStringAndNormalize(shadow); // find hex codes and normalize them
 
-    return formatTokenStyleByOutput(name, color, hasJsOutput).replace(/0px/g, '0');
+    return formatTokenStyleByOutput(name, shadow, hasJsOutput);
   }
 
   if (hasTokenType(TokenType.gradient)) {
     const gradientToken = token as GradientToken;
     const name = tokenVariableName(token, tokenGroups, withParent);
-    const { value } = gradientToken;
+    const { value, origin } = gradientToken;
     let gradient = CSSHelper.gradientTokenValueToCSS(value, mappedTokens, {
       allowReferences: true,
       colorFormat: ColorFormat.hashHex8,
       decimals: 3,
       tokenToVariableRef: () => '',
     });
-    gradient = addAngleVarToGradient(gradient);
+    gradient = addAngleVarToGradient(gradient); // add angle variable
+    // add group name to the variable if it is not already in the name
+    const groupName = withParent ? undefined : origin?.name?.split('/')[0].toLowerCase();
+    gradient = transformColorsToVariables(name, gradient, groupName); // add color variables
+    gradient = findAllHexColorsInStringAndNormalize(gradient); // find hex codes and normalize them
 
     return formatTokenStyleByOutput(name, gradient, hasJsOutput);
   }
