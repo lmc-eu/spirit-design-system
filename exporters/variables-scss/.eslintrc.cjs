@@ -7,7 +7,7 @@ module.exports = {
   },
 
   rules: {
-    // Conflicting with the Prettier configuration fo the line length
+    // Conflicting with the Prettier configuration for the line length
     // We are leaving this up to developer to decide where to use braces and where implicit return
     // @see { @link https://eslint.org/docs/latest/rules/arrow-body-style }
     'arrow-body-style': 'off',
@@ -16,5 +16,9 @@ module.exports = {
     // Double and backticks quotes are allowed when needed
     // @see { @link https://eslint.org/docs/latest/rules/quotes }
     quotes: ['warn', 'single', { avoidEscape: true }],
+
+    // Conflicting with the Prettier configuration
+    // @see https://eslint.org/docs/latest/rules/operator-linebreak
+    'operator-linebreak': 'off',
   },
 };
