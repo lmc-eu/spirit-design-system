@@ -4,13 +4,13 @@ import { Container } from '../../Container';
 import { Divider } from '../../Divider';
 import { Flex } from '../../Flex';
 import { Grid } from '../../Grid';
+import { Heading } from '../../Heading';
 import { Icon } from '../../Icon';
 import { Link } from '../../Link';
 import { ProductLogo } from '../../ProductLogo';
 import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Select } from '../../Select';
 import { Stack } from '../../Stack';
-import { Text } from '../../Text';
 import { VisuallyHidden } from '../../VisuallyHidden';
 import Footer from '../Footer';
 import FooterLinkFactory from './FooterLinkFactory';
@@ -20,113 +20,113 @@ const FooterDefault = () => {
     <Footer>
       <Container>
         {/* Grid with navigation links */}
-        <Grid cols={{ mobile: 1, tablet: 2, desktop: 6 }} spacing="space-800">
+        <Grid cols={{ mobile: 1, tablet: 2, desktop: 6 }} spacing="space-1000">
           {/* Navigation links 1 */}
           <nav aria-labelledby="footer-navigation-section-1">
-            <Text
+            <Heading
               id="footer-navigation-section-1"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={3} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 2 */}
           <nav aria-labelledby="footer-navigation-section-2">
-            <Text
+            <Heading
               id="footer-navigation-section-2"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={4} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 3 */}
           <nav aria-labelledby="footer-navigation-section-3">
-            <Text
+            <Heading
               id="footer-navigation-section-3"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={6} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 4 */}
           <nav aria-labelledby="footer-navigation-section-4">
-            <Text
+            <Heading
               id="footer-navigation-section-4"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={3} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 5 */}
           <nav aria-labelledby="footer-navigation-section-5">
-            <Text
+            <Heading
               id="footer-navigation-section-5"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={3} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 6 */}
           <nav aria-labelledby="footer-navigation-section-6">
-            <Text
+            <Heading
               id="footer-navigation-section-4"
               elementType="h3"
-              size="large"
-              emphasis="bold"
-              marginBottom="space-600"
+              size="xsmall"
+              emphasis="semibold"
+              marginBottom="space-700"
             >
               Section headline
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={4} label="Link" />
             </Stack>
           </nav>
         </Grid>
 
         {/* Divider */}
-        <Divider marginY="space-900" />
+        <Divider marginY="space-1200" />
 
         {/* Grid with product logo, social media links and language switch */}
         <Grid
           cols={{ mobile: 1, desktop: 3 }}
           alignmentX={{ mobile: 'center', desktop: 'stretch' }}
           alignmentY="center"
-          spacing="space-900"
+          spacing="space-1100"
         >
           {/* Product logo */}
           <div className="text-desktop-left">
@@ -138,31 +138,31 @@ const FooterDefault = () => {
           {/* Flex with social media links */}
           <Flex elementType="ul" alignmentX="center" alignmentY="center">
             <li>
-              <ButtonLink size="medium" color="secondary" isSquare>
+              <ButtonLink size="medium" color="tertiary" isSquare>
                 <VisuallyHidden>Facebook</VisuallyHidden>
                 <Icon name="logo-facebook" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="secondary" isSquare>
+              <ButtonLink size="medium" color="tertiary" isSquare>
                 <VisuallyHidden>X</VisuallyHidden>
                 <Icon name="logo-x" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="secondary" isSquare>
+              <ButtonLink size="medium" color="tertiary" isSquare>
                 <VisuallyHidden>YouTube</VisuallyHidden>
                 <Icon name="logo-youtube" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="secondary" isSquare>
+              <ButtonLink size="medium" color="tertiary" isSquare>
                 <VisuallyHidden>Google</VisuallyHidden>
                 <Icon name="logo-google" />
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink size="medium" color="secondary" isSquare>
+              <ButtonLink size="medium" color="tertiary" isSquare>
                 <VisuallyHidden>LinkedIn</VisuallyHidden>
                 <Icon name="logo-linkedin" />
               </ButtonLink>
@@ -179,7 +179,7 @@ const FooterDefault = () => {
         </Grid>
 
         {/* Divider */}
-        <Divider marginY="space-900" />
+        <Divider marginY="space-1200" />
 
         {/* Flex with secondary links */}
         <nav aria-label="Secondary links">
@@ -187,7 +187,7 @@ const FooterDefault = () => {
             elementType="ul"
             direction={{ mobile: 'column', tablet: 'row' }}
             alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-            spacing={{ mobile: 'space-500', tablet: 'space-700' }}
+            spacing={{ mobile: 'space-600', tablet: 'space-900' }}
             isWrapping
           >
             <li>
