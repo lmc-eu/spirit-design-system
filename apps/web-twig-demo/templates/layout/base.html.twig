@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Spirit Web Twig — Development Preview</title>
+
+    <title>
+      {%- if block('title') is defined %}{% block title %}{% endblock %} —{% endif %} Web Twig — Spirit Design System
+    </title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
