@@ -1,11 +1,11 @@
-{{#> web-react/layout/default page="components"}}
+{{#> web-react/layout/default page="components" title="Components"}}
 
-  {{#> section title="Components"}}
-    {{#> boxList}}
-      {{#each @web_react_components as |component|}}
-        {{> component component=component path="src/components"}}
-      {{/each}}
-    {{/boxList}}
-  {{/section}}
+  {{> web-react/tabs }}
+
+  {{#> cardList}}
+    {{#each @web_react_components as |component|}}
+      {{> card content=component.title path="src/components" urlname=component.name}}
+    {{/each}}
+  {{/cardList}}
 
 {{/web-react/layout/default}}
