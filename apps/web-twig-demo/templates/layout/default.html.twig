@@ -20,7 +20,7 @@
   {%- endset %}
 
   {% block header %}
-    {% include 'partials/header.html.twig' %}
+    {% include 'partials/header.html.twig' with { themes } only %}
     {% include 'partials/cover.html.twig' with { isUnstable, parentPageName, parentPageUrl, title } only %}
   {% endblock %}
 
