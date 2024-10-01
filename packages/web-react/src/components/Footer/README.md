@@ -16,7 +16,7 @@ The Footer supports several ready-to-use building blocks:
 This is how all supported building blocks of the Footer build up the complete composition:
 
 ```jsx
-<Footer UNSAFE_className="bg-cover pt-1100 pb-1000">
+<Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
   <Container>
     {/* Grid with navigation links */}
     {/* Grid with product logo, social media links and language switch */}
@@ -39,16 +39,16 @@ This is how all supported building blocks of the Footer build up the complete co
 
 Navigation links are structured in sections with a headline and a [Stack][stack] of links.
 
-👉 Please note how the `<nav>` element is paired with the `<Text>` component (using the `aria-labelledby` attribute) to
+👉 Please note how the `<nav>` element is paired with the `<Heading>` component (using the `aria-labelledby` attribute) to
 provide a semantic connection between the headline and the navigation component. Just make sure the `id` attribute of
-the `<Text>` component matches the value of the `aria-labelledby` attribute of the `<nav>` element and all `id`s are unique.
+the `<Heading>` component matches the value of the `aria-labelledby` attribute of the `<nav>` element and all `id`s are unique.
 
 ```jsx
 <nav aria-labelledby="footer-navigation-section">
-  <Text id="footer-navigation-section" elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+  <Heading id="footer-navigation-section" elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
     Section headline
-  </Text>
-  <Stack elementType="ul" spacing="space-500" hasSpacing>
+  </Heading>
+  <Stack elementType="ul" spacing="space-600" hasSpacing>
     <li>
       <Link href="https://www.example.com">Link</Link>
     </li>
@@ -73,7 +73,7 @@ This section is optional and consists of a [Grid][grid] layout with up to three 
   cols={{ mobile: 1, desktop: 3 }}
   alignmentX={{ mobile: 'center', desktop: 'stretch' }}
   alignmentY="center"
-  spacing="space-900"
+  spacing="space-1100"
 >
   <div className="text-desktop-left">{/* Product logo */}</div>
   {/* Flex with social media links */}
@@ -96,7 +96,7 @@ Use the secondary [ButtonLink][buttonlink] component to create social media link
 <Flex elementType="ul" alignmentX="center" alignmentY="center">
   {/* Repeat the `<li>` block for each social media link. */}
   <li>
-    <ButtonLink size="medium" color="secondary" isSquare>
+    <ButtonLink size="medium" color="tertiary" isSquare>
       <VisuallyHidden>Facebook</VisuallyHidden>
       <Icon name="logo-facebook" />
     </ButtonLink>
@@ -119,7 +119,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     elementType="ul"
     direction={{ mobile: 'column', tablet: 'row' }}
     alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-    spacing={{ mobile: 'space-500', tablet: 'space-700' }}
+    spacing={{ mobile: 'space-600', tablet: 'space-900' }}
     isWrapping
   >
     {/* Repeat the `<li>` block for each secondary link. */}
@@ -137,16 +137,22 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
 ## Full Example
 
 ```jsx
-<Footer UNSAFE_className="bg-cover pt-1100 pb-1000">
+<Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
   <Container>
     {/* Grid with navigation links */}
-    <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} spacing="space-800">
+    <Grid cols={{ mobile: 1, tablet: 2, desktop: 4 }} spacing="space-1000">
       {/* Repeat the `<nav>` block as many times as needed. */}
       <nav aria-labelledby="footer-navigation-section-1">
-        <Text id="footer-navigation-section-1" elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+        <Heading
+          id="footer-navigation-section-1"
+          elementType="h3"
+          size="xsmall"
+          emphasis="semibold"
+          marginBottom="space-700"
+        >
           Section headline
-        </Text>
-        <Stack elementType="ul" spacing="space-500" hasSpacing>
+        </Heading>
+        <Stack elementType="ul" spacing="space-600" hasSpacing>
           <li>
             <Link href="https://www.example.com">Link</Link>
           </li>
@@ -161,14 +167,14 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     </Grid>
 
     {/* Divider */}
-    <Divider marginY="space-900" />
+    <Divider marginY="space-1200" />
 
     {/* Grid with product logo, social media links and language switch */}
     <Grid
       cols={{ mobile: 1, desktop: 3 }}
       alignmentX={{ mobile: 'center', desktop: 'stretch' }}
       alignmentY="center"
-      spacing="space-900"
+      spacing="space-1100"
     >
       {/* Product logo */}
       <div className="text-desktop-left">
@@ -180,19 +186,19 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       {/* Flex with social media links */}
       <Flex elementType="ul" alignmentX="center" alignmentY="center">
         <li>
-          <ButtonLinkLink size="medium" color="secondary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSquare>
             <VisuallyHidden>Facebook</VisuallyHidden>
             <Icon name="logo-facebook" />
           </ButtonLink>
         </li>
         <li>
-          <ButtonLinkLink size="medium" color="secondary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSquare>
             <VisuallyHidden>X</VisuallyHidden>
             <Icon name="logo-x" />
           </ButtonLink>
         </li>
         <li>
-          <ButtonLinkLink size="medium" color="secondary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSquare>
             <VisuallyHidden>YouTube</VisuallyHidden>
             <Icon name="logo-youtube" />
           </ButtonLink>
@@ -209,7 +215,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
     </Grid>
 
     {/* Divider */}
-    <Divider marginY="space-900" />
+    <Divider marginY="space-1200" />
 
     {/* Flex with secondary links */}
     <nav aria-label="Secondary links">
@@ -217,7 +223,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
         elementType="ul"
         direction={{ mobile: 'column', tablet: 'row' }}
         alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-        spacing={{ mobile: 'space-500', tablet: 'space-700' }}
+        spacing={{ mobile: 'space-600', tablet: 'space-900' }}
         isWrapping
       >
         <li>
