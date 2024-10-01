@@ -6,13 +6,13 @@ import { Flex } from '../../../src/components/Flex';
 import { Footer } from '../../../src/components/Footer';
 import FooterLinkFactory from '../../../src/components/Footer/demo/FooterLinkFactory';
 import { Grid } from '../../../src/components/Grid';
+import { Heading } from '../../../src/components/Heading';
 import { Icon } from '../../../src/components/Icon';
 import { Link } from '../../../src/components/Link';
 import { ProductLogo } from '../../../src/components/ProductLogo';
 import { defaultSvgLogo } from '../../../src/components/ProductLogo/demo/ProductLogoDefault';
 import { Select } from '../../../src/components/Select';
 import { Stack } from '../../../src/components/Stack';
-import { Text } from '../../../src/components/Text';
 import { VisuallyHidden } from '../../../src/components/VisuallyHidden';
 import { GridColumns } from '../../../src/types';
 
@@ -109,11 +109,11 @@ type NavLinkColumnFactoryType = {
 
 const NavLinkColumnFactory = ({ id, headline, numOfLinks, withNestedLinks = false }: NavLinkColumnFactoryType) => {
   return (
-    <nav aria-labelledby={id} className={withNestedLinks ? 'mb-800' : undefined}>
-      <Text id={id} elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+    <nav aria-labelledby={id} className={withNestedLinks ? 'mb-1000' : undefined}>
+      <Heading id={id} elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
         {headline}
-      </Text>
-      <Stack elementType="ul" spacing="space-500" hasSpacing>
+      </Heading>
+      <Stack elementType="ul" spacing="space-600" hasSpacing>
         <FooterLinkFactory items={numOfLinks} label="Link" />
       </Stack>
     </nav>
@@ -186,7 +186,7 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
   };
 
   return (
-    <Footer UNSAFE_className="bg-cover pt-1100 pb-1000">
+    <Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
       <Container>
         {/* Grid with navigation links */}
         {numberOfLinkColumns > 0 && (
@@ -196,8 +196,8 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
               tablet: numberOfLinkColumns > 2 ? 2 : (numberOfLinkColumns as GridColumns),
               desktop: numOfColumnsOnDesktop(),
             }}
-            spacing="space-800"
-            marginBottom={showDividers ? undefined : 'space-900'}
+            spacing="space-1000"
+            marginBottom={showDividers ? undefined : 'space-1100'}
           >
             {/* Navigation links 1 */}
             {numberOfLinkColumns >= 1 && (
@@ -320,15 +320,15 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
         )}
 
         {/* Divider */}
-        {showDividers && numberOfLinkColumns > 0 && <Divider marginY="space-900" />}
+        {showDividers && numberOfLinkColumns > 0 && <Divider marginY="space-1200" />}
 
         {/* Grid with product logo, social media links and language switch */}
         <Grid
           cols={{ mobile: 1, desktop: logoRowColumns() }}
           alignmentX={{ mobile: 'center', desktop: 'stretch' }}
           alignmentY="center"
-          spacing="space-900"
-          marginBottom={showDividers || (!showDividers && !showSecondaryLinks) ? undefined : 'space-900'}
+          spacing="space-1100"
+          marginBottom={showDividers || (!showDividers && !showSecondaryLinks) ? undefined : 'space-1100'}
         >
           {/* Product logo */}
           {showProductLogo && (
@@ -387,7 +387,7 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
         </Grid>
 
         {/* Divider */}
-        {showDividers && showSecondaryLinks && <Divider marginY="space-900" />}
+        {showDividers && showSecondaryLinks && <Divider marginY="space-1200" />}
 
         {/* Flex with secondary links */}
         {showSecondaryLinks && (
@@ -396,7 +396,7 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
               elementType="ul"
               direction={{ mobile: 'column', tablet: 'row' }}
               alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-              spacing={{ mobile: 'space-500', tablet: 'space-700' }}
+              spacing={{ mobile: 'space-600', tablet: 'space-900' }}
               isWrapping
             >
               <li>
