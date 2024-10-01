@@ -70,12 +70,12 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             desktop:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
           },
           '$heading-xlarge-bold-underline': {
             desktop:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
           },
           $styles: {
             'heading-xlarge-bold': '$heading-xlarge-bold',
@@ -157,10 +157,10 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             desktop:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
             tablet:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
           },
         },
         description: 'should create object structure from typography token',
@@ -168,7 +168,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             tablet:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 32px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
           },
         } as StylesObjectType,
         hasJsOutput: false,
@@ -216,7 +216,7 @@ describe('stylesObjectGenerator', () => {
           '$heading-xlarge-bold': {
             desktop:
               // eslint-disable-next-line quotes -- we are handling special characters
-              "(\nfont-family: 'Inter', sans-serif,\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)",
+              '(\nfont-family: "\'Inter\', sans-serif",\nfont-size: 64px,\nfont-style: normal,\nfont-weight: 700,\nline-height: 1.2,\n)',
           },
           exampleRef: 'exampleRef',
         },

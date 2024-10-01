@@ -33,7 +33,7 @@ exampleTypographyTokens.set('typographyRef2', {
 } as TypographyToken);
 
 export const expectedTypographyValue = `(
-font-family: 'Inter', sans-serif,
+font-family: "'Inter', sans-serif",
 font-size: 64px,
 font-style: italic,
 font-weight: 700,
