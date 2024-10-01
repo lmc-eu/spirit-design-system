@@ -1,4 +1,4 @@
-<header class="Header spirit-theme-light-on-brand">
+<header class="Header spirit-theme-light-on-brand {{#unless (eq page 'components')}}hide-from-visual-tests{{/unless}}">
   <a href="/" aria-label="Spirit Development Preview">
     {{> web/assets/spiritLogoInverted }}
   </a>
@@ -44,8 +44,9 @@
         </a>
       </li>
       {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+      {{!-- For the same reason, we don't include the link in the visual tests. --}}
       {{#if @is_development}}
-        <li class="HeaderNavItem">
+        <li class="HeaderNavItem hide-from-visual-tests">
           <a href="https://localhost:4443" class="HeaderLink">Web Twig</a>
         </li>
       {{/if}}
