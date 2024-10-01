@@ -1,21 +1,25 @@
 {% extends 'layout/default.html.twig' %}
 
+{% block title %}Icons{% endblock %}
+
 {% block content %}
 
-    <DocsSection title="Icons">
+    {% include 'partials/tabs.html.twig' %}
 
-        <Grid elementType="ul" cols="{{ { mobile: 2, tablet: 4, desktop: 6 } }}" UNSAFE_className="text-center my-1000 list-unstyled">
+    <Grid
+        elementType="ul"
+        cols="{{ { mobile: 2, tablet: 4, desktop: 6 } }}"
+        marginY="space-1000"
+        UNSAFE_className="text-center"
+    >
 
-            {% for icon in icons %}
-                <li class="mb-600">
-                    <Icon name={{ icon }} />
+        {% for icon in icons %}
+            <li class="mb-600">
+                <Icon name={{ icon }} />
+                <Text marginTop="space-500" emphasis="bold">{{ icon }}</Text>
+            </li>
+        {% endfor %}
 
-                    <Text marginTop="space-500" emphasis="bold">{{ icon }}</Text>
-                </li>
-            {% endfor %}
-
-        </Grid>
-
-    </DocsSection>
+    </Grid>
 
 {% endblock %}

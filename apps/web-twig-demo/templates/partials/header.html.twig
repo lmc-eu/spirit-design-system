@@ -1,17 +1,48 @@
-<header class='spirit-theme-light-on-brand bg-primary text-secondary py-1200 py-tablet-1400'>
-  <div class="Container">
+<Header UNSAFE_className="spirit-theme-light-on-brand">
 
-    <h1 class='typography-heading-xlarge-bold'>Spirit Design System</h1>
-    <h2 class='typography-heading-medium-bold text-secondary mb-1000'>Web Twig — Development Preview</h2>
+  <Link href="http://localhost:3456" aria-label="Spirit Development Preview">
+    {% include 'assets/spiritLogoInverted.html.twig' %}
+  </Link>
 
-    <div class="d-grid d-tablet-block">
-      <a href="https://github.com/lmc-eu/spirit-design-system" class="Button Button--tertiary Button--large mb-400 mb-tablet-0 mr-tablet-400">
-        GitHub Project
-      </a>
-      <a href="https://spirit.supernova-docs.io/spirit/" class="Button Button--tertiary Button--large">
-        Spirit Docs →
-      </a>
-    </div>
+  <HeaderMobileActions dialogId="off-canvas-navigation" />
 
-  </div>
-</header>
+  <HeaderDesktopActions aria-label="Main navigation">
+    <HeaderNav>
+      <HeaderNavItem>
+        <HeaderLink href="http://localhost:3456/packages/web/">Web</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="http://localhost:3456/packages/web-react/">Web React</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="/" isCurrent>Web Twig</HeaderLink>
+      </HeaderNavItem>
+      <HeaderNavItem>
+        <HeaderLink href="http://localhost:3456/packages/form-validations/">Form Validations</HeaderLink>
+      </HeaderNavItem>
+    </HeaderNav>
+  </HeaderDesktopActions>
+
+</Header>
+
+<HeaderDialog id="off-canvas-navigation" aria-label="Menu">
+  <HeaderDialogCloseButton dialogId="off-canvas-navigation" />
+
+  <HeaderDialogActions aria-label="Main navigation">
+    <HeaderDialogNav>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="http://localhost:3456/packages/web/">Web</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="http://localhost:3456/packages/web-react/">Web React</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="#" isCurrent>Web Twig</HeaderDialogLink>
+      </HeaderDialogNavItem>
+      <HeaderDialogNavItem>
+        <HeaderDialogLink href="http://localhost:3456/packages/form-validations/">Form Validations</HeaderDialogLink>
+      </HeaderDialogNavItem>
+    </HeaderDialogNav>
+  </HeaderDialogActions>
+
+</HeaderDialog>
