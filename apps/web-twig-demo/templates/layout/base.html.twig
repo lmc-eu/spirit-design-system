@@ -21,11 +21,40 @@
     {# As we also use this demo for visual testing we need to block render until the font is loaded. #}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=block">
 
+    <!-- Theme switcher -->
+    {% set themes = [
+      {
+        id: 'light-default',
+        name: 'Light Default',
+      },
+      {
+        id: 'light-on-brand',
+        name: 'Light on Brand',
+      },
+    ] %}
+    <script>
+      const themes = [];
+
+      {% for theme in themes %}
+        themes.push('{{ theme.id }}');
+      {% endfor %}
+
+      const switchTheme = (event) => {
+        const targetElement = document.body;
+        const theme = event.target.value;
+
+        themes.forEach((theme) => {
+          targetElement.classList.remove(`spirit-theme-${theme}`);
+        });
+        targetElement.classList.add(`spirit-theme-${theme}`);
+      };
+    </script>
+
     {{ encore_entry_link_tags('app') }}
     {{ encore_entry_script_tags('app') }}
 
   </head>
-  <body>
+  <body class="bg-primary">
 
     {% block body %}{% endblock %}
 
