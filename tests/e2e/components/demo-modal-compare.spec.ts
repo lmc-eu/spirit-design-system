@@ -99,28 +99,25 @@ const modalTestConfigs: ModalTestConfig[] = [
 const componentName = 'Modal';
 
 const testConfigs: TestConfig[] = [
-  // Commented out because we changed tokens and broke utilities, helper and styles used in the demos.
-  // Should be uncommented in DS-1452 ticket.
-  // Jan Kryšpín 2024-08-27
-  // {
-  //   componentName,
-  //   componentsDir: '/src/scss/components',
-  //   packageName: 'web',
-  // },
-  // {
-  //   componentName,
-  //   componentsDir: '/src/components',
-  //   packageName: 'web-react',
-  // },
+  {
+    componentName,
+    componentsDir: '/src/scss/components',
+    packageName: 'web',
+  },
+  {
+    componentName,
+    componentsDir: '/src/components',
+    packageName: 'web-react',
+  },
 ];
 
 // Disable web-twig tests for now on CI, because we don't have a way to run them in CI yet.
 if (!isTestingEnvironment()) {
-  // testConfigs.push({
-  //   componentName,
-  //   componentsDir: '/components',
-  //   packageName: 'web-twig',
-  // });
+  testConfigs.push({
+    componentName,
+    componentsDir: '/components',
+    packageName: 'web-twig',
+  });
 }
 
 testConfigs.forEach(runComponentCompareTests);
