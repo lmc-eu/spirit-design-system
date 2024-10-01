@@ -1,0 +1,15 @@
+<div class="Select Select--fluid">
+  <label for="select-theme" class="Select__label {{#if isLabelHidden }}Select__label--hidden{{/if}}">Theme</label>
+  <div class="Select__inputContainer">
+    <select id="select-theme" name="theme" class="Select__input" onchange="switchTheme(event)" autocomplete="off">
+      {{#each @themes as |theme|}}
+        <option value="{{theme.id}}">{{theme.name}}</option>
+      {{/each}}
+    </select>
+    <div class="Select__icon">
+      <svg width="24" height="24" aria-hidden="true">
+        <use xlink:href="/assets/icons/svg/sprite.svg#chevron-down" />
+      </svg>
+    </div>
+  </div>
+</div>

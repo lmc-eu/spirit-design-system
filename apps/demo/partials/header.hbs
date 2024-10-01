@@ -63,6 +63,13 @@
   </nav>
   <!-- HeaderDesktopActions: end -->
 
+  <!-- HeaderDesktopActions: start -->
+  <nav class="HeaderDesktopActions HeaderDesktopActions--end">
+
+    {{> themeSwitcher isLabelHidden=true}}
+
+  </nav>
+  <!-- HeaderDesktopActions: end -->
 </header>
 
 <!-- HeaderDialog: start -->
@@ -126,6 +133,11 @@
           </li>
         </ul>
         <!-- HeaderDialogNav: end -->
+
+      </nav>
+      <nav class="HeaderDialogActions HeaderDialogActions--secondary" aria-label="Secondary navigation">
+
+        {{> themeSwitcher isLabelHidden=false}}
 
       </nav>
       <!-- HeaderDialogActions: end -->
