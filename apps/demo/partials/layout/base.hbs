@@ -29,6 +29,25 @@
 
     <script src="/packages/web/src/js/index.esm.ts" type="module"></script>
 
+    <!-- Theme switcher -->
+    <script>
+      const themes = [];
+
+      {{#each @themes as |theme|}}
+        themes.push('{{theme.id}}');
+      {{/each}}
+
+      const switchTheme = (event) => {
+        const targetElement = document.body;
+        const theme = event.target.value;
+
+        themes.forEach((theme) => {
+          targetElement.classList.remove(`spirit-theme-${theme}`);
+        });
+        targetElement.classList.add(`spirit-theme-${theme}`);
+      };
+    </script>
+
     {{#> scripts}}
     {{/scripts}}
 
