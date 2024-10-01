@@ -1,24 +1,63 @@
-{{#> layout/default }}
+{{#> layout/base }}
 
-  <section class="UNSTABLE_Section">
+  {{> header}}
 
-    <h2 class="typography-heading-medium-text text-secondary-disabled mb-700 mb-tablet-900">Packages</h2>
-    <ul class="Grid Grid--cols-2 Grid--tablet--cols-3 list-unstyled">
+  <div class="spirit-theme-light-on-brand bg-primary text-primary text-center py-1200 py-tablet-1700">
+    <div class="Container">
 
-      <li>
-        <a href="/packages/web/" class="docs-TileLink">web package</a>
-      </li>
+      <h1 class="typography-heading-xlarge-bold">
+        Spirit Design System
+      </h1>
+      <h2 class="typography-heading-small-regular text-secondary mb-1000">
+        Development Preview
+      </h2>
 
-      <li>
-        <a href="/packages/web-react/" class="docs-TileLink">web-react package</a>
-      </li>
+      <div class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter">
+        <a
+          href="https://spirit.supernova-docs.io/spirit/"
+          class="Button Button--tertiary Button--large"
+        >
+          Docs
+        </a>
+        <a
+          href="https://github.com/lmc-eu/spirit-design-system"
+          class="Button Button--tertiary Button--large"
+        >
+          GitHub
+        </a>
+      </div>
 
-      <li>
-        <a href="/packages/form-validations/" class="docs-TileLink">form-validations package</a>
-      </li>
+    </div>
+  </div>
 
-    </ul>
+  <main class="py-1100 pt-tablet-1600">
+    <div class="Container">
+      <section class="UNSTABLE_Section">
 
-  </section>
+        <h2 class="typography-heading-small-bold mb-900 mb-tablet-1100">Packages</h2>
 
-{{/layout/default }}
+        <ul class="Grid Grid--cols-1 Grid--tablet--cols-2">
+          <li class="d-grid">
+            <a href="/packages/web/" class="docs-Card">Web</a>
+          </li>
+          <li class="d-grid">
+            <a href="/packages/web-react/" class="docs-Card">Web React</a>
+          </li>
+          {{!-- Hide link to the Twig implementation in production. Twig demo app only runs on localhost, we don't deploy it anywhere. --}}
+          {{#if @is_development}}
+            <li class="d-grid">
+              <a href="https://localhost:4443" class="docs-Card">Web Twig</a>
+            </li>
+          {{/if}}
+          <li class="d-grid">
+            <a href="/packages/form-validations/" class="docs-Card">Form Validations</a>
+          </li>
+        </ul>
+
+      </section>
+    </div>
+  </main>
+
+  {{> footer}}
+
+{{/layout/base }}
