@@ -3,75 +3,75 @@ import { Container } from '../../Container';
 import { Divider } from '../../Divider';
 import { Flex } from '../../Flex';
 import { Grid } from '../../Grid';
+import { Heading } from '../../Heading';
 import { Link } from '../../Link';
 import { ProductLogo } from '../../ProductLogo';
 import { defaultSvgLogo } from '../../ProductLogo/demo/ProductLogoDefault';
 import { Stack } from '../../Stack';
-import { Text } from '../../Text';
 import Footer from '../Footer';
 import FooterLinkFactory from './FooterLinkFactory';
 
 const FooterNested = () => {
   return (
-    <Footer UNSAFE_className="bg-cover pt-1100 pb-1000">
+    <Footer UNSAFE_className="bg-secondary pt-1400 pb-1200">
       <Container>
         {/* Grid with navigation links */}
-        <Grid cols={{ mobile: 1, tablet: 2, desktop: 6 }} spacing="space-800">
+        <Grid cols={{ mobile: 1, tablet: 2, desktop: 6 }} spacing="space-1000">
           {/* Navigation links 1 */}
           <nav aria-labelledby="footer-nested-links-navigation-section-1">
-            <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
               <Link href="https://www.example.com" id="footer-nested-links-navigation-section-1">
                 Section headline
               </Link>
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={3} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 2 */}
           <nav aria-labelledby="footer-nested-links-navigation-section-2">
-            <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
               <Link href="https://www.example.com" id="footer-nested-links-navigation-section-2">
                 Section headline
               </Link>
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={4} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 3 */}
           <nav aria-labelledby="footer-nested-links-navigation-section-3">
-            <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
               <Link href="https://www.example.com" id="footer-nested-links-navigation-section-3">
                 Section headline
               </Link>
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={6} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 4 with nested */}
           <div>
-            <nav aria-labelledby="footer-nested-links-navigation-section-4" className="mb-800">
-              <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <nav aria-labelledby="footer-nested-links-navigation-section-4" className="mb-1000">
+              <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
                 <Link href="https://www.example.com" id="footer-nested-links-navigation-section-4">
                   Section headline
                 </Link>
-              </Text>
-              <Stack elementType="ul" spacing="space-500" hasSpacing>
+              </Heading>
+              <Stack elementType="ul" spacing="space-600" hasSpacing>
                 <FooterLinkFactory items={3} label="Link" />
               </Stack>
             </nav>
             <nav aria-labelledby="footer-nested-links-navigation-section-1">
-              <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+              <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
                 <Link href="https://www.example.com" id="footer-nested-links-navigation-section-1">
                   Section headline
                 </Link>
-              </Text>
-              <Stack elementType="ul" spacing="space-500" hasSpacing>
+              </Heading>
+              <Stack elementType="ul" spacing="space-600" hasSpacing>
                 <FooterLinkFactory items={2} label="Link" />
               </Stack>
             </nav>
@@ -79,31 +79,31 @@ const FooterNested = () => {
 
           {/* Navigation links 5 */}
           <nav aria-labelledby="footer-nested-links-navigation-section-5">
-            <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
               <Link href="https://www.example.com" id="footer-nested-links-navigation-section-5">
                 Section headline
               </Link>
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={3} label="Link" />
             </Stack>
           </nav>
 
           {/* Navigation links 6 */}
           <nav aria-labelledby="footer-nested-links-navigation-section-6">
-            <Text elementType="h3" size="large" emphasis="bold" marginBottom="space-600">
+            <Heading elementType="h3" size="xsmall" emphasis="semibold" marginBottom="space-700">
               <Link href="https://www.example.com" id="footer-nested-links-navigation-section-6">
                 Section headline
               </Link>
-            </Text>
-            <Stack elementType="ul" spacing="space-500" hasSpacing>
+            </Heading>
+            <Stack elementType="ul" spacing="space-600" hasSpacing>
               <FooterLinkFactory items={4} label="Link" />
             </Stack>
           </nav>
         </Grid>
 
         {/* Divider */}
-        <Divider marginY="space-900" />
+        <Divider marginY="space-1200" />
 
         {/* Product logo */}
         <div className="text-center">
@@ -113,7 +113,7 @@ const FooterNested = () => {
         </div>
 
         {/* Divider */}
-        <Divider marginY="space-900" />
+        <Divider marginY="space-1200" />
 
         {/* Flex with secondary links */}
         <nav aria-label="Secondary links">
@@ -121,7 +121,7 @@ const FooterNested = () => {
             elementType="ul"
             direction={{ mobile: 'column', tablet: 'row' }}
             alignmentX={{ mobile: 'stretch', tablet: 'center' }}
-            spacing={{ mobile: 'space-500', tablet: 'space-700' }}
+            spacing={{ mobile: 'space-600', tablet: 'space-900' }}
             isWrapping
           >
             <li>
