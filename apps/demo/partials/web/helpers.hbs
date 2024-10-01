@@ -4,8 +4,8 @@
 
   {{#> cardList}}
     {{#each @helpers as |helper|}}
-      <li>
-        <a href="{{helper.name}}/" class="docs-Card">{{helper.title}}</a>
+      <li class="d-grid">
+        <a href="{{helper.name}}/" class="docs-Card text-truncate">{{helper.title}}</a>
       </li>
     {{/each}}
   {{/cardList}}
