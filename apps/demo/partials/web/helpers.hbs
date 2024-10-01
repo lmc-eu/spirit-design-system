@@ -1,17 +1,13 @@
-{{#> web/layout/default page="helpers"}}
+{{#> web/layout/default page="helpers" title="Helpers"}}
 
-  {{#> section title="Helpers"}}
+  {{> web/tabs}}
 
-    {{#> boxList}}
-
-      {{#each @helpers as |helper|}}
+  {{#> cardList}}
+    {{#each @helpers as |helper|}}
       <li>
-        <a href="{{helper.name}}/" class="docs-TileLink">{{helper.title}}</a>
+        <a href="{{helper.name}}/" class="docs-Card">{{helper.title}}</a>
       </li>
-      {{/each}}
-
-    {{/boxList}}
-
-  {{/section}}
+    {{/each}}
+  {{/cardList}}
 
 {{/web/layout/default}}
