@@ -153,7 +153,18 @@ const jsKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
 };
 
 const scssKeyValueTemplate: KeyValueTemplateCallback = (key, value) => {
-  return `${toKebabCase(key)}: ${isNumber(value) ? value : removePairQuotes(value as string)}`;
+  const formattedKey = toKebabCase(key);
+  let formattedValue;
+
+  if (typeof value === 'string' && value.includes(', ')) {
+    formattedValue = `"${value}"`;
+  } else if (isNumber(value)) {
+    formattedValue = value;
+  } else {
+    formattedValue = removePairQuotes(value as string);
+  }
+
+  return `${formattedKey}: ${formattedValue}`;
 };
 
 const passObjectKeyValueToCallback = <Shape>(object: Shape, callback: KeyValueTemplateCallback) => {
