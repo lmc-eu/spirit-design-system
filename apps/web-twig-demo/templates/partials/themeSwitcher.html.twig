@@ -1,0 +1,13 @@
+<Select
+  id="select-theme"
+  inputProps="{{ { autocomplete: 'off' } }}"
+  isFluid
+  isLabelHidden="{{ isLabelHidden | default(false) }}"
+  label="Theme"
+  name="theme"
+  onchange="switchTheme(event)"
+>
+  {% for theme in themes %}
+    <option value="{{ theme.id }}">{{ theme.name }}</option>
+  {% endfor %}
+</Select>

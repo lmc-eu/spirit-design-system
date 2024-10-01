@@ -23,6 +23,10 @@
     </HeaderNav>
   </HeaderDesktopActions>
 
+  <HeaderDesktopActions isAtEnd>
+    {% include "partials/themeSwitcher.html.twig" with { isLabelHidden: true, themes } only %}
+  </HeaderDesktopActions>
+
 </Header>
 
 <HeaderDialog id="off-canvas-navigation" aria-label="Menu">
@@ -43,6 +47,10 @@
         <HeaderDialogLink href="http://localhost:3456/packages/form-validations/">Form Validations</HeaderDialogLink>
       </HeaderDialogNavItem>
     </HeaderDialogNav>
+  </HeaderDialogActions>
+
+  <HeaderDialogActions>
+    {% include "partials/themeSwitcher.html.twig" with { themes } only %}
   </HeaderDialogActions>
 
 </HeaderDialog>
