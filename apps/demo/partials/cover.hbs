@@ -1,0 +1,50 @@
+<div class="spirit-theme-light-on-brand bg-primary mb-tablet-1200 py-1200 py-tablet-1700">
+  <div class="Container">
+
+    <h1
+      class="Flex Flex--noWrap Flex--alignmentXStretch Flex--alignmentYCenter Flex--row typography-heading-xlarge-bold"
+      style="--flex-spacing: var(--spirit-space-1000)"
+    >
+      {{title}}
+
+      {{#if isUnstable}}
+        <span class="Tag Tag--large Tag--warning">Unstable</span>
+      {{/if}}
+    </h1>
+
+    <nav aria-label="Breadcrumbs" class="Breadcrumbs">
+      <ol>
+        <li class="d-flex">
+          <a href="/" class="link-primary link-underlined">Spirit</a>
+          <svg width="24" height="24" aria-hidden="true">
+            <use xlink:href="/assets/icons/svg/sprite.svg#chevron-right" />
+          </svg>
+        </li>
+        {{#if package}}
+          <li class="d-flex">
+            <a href="{{packageUrl}}" class="link-primary link-underlined">{{package}}</a>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#chevron-right" />
+            </svg>
+          </li>
+        {{/if}}
+        {{#if parentPageName}}
+          <li class="d-flex">
+            <a href="{{#if (eq parentPageName 'Components') }}{{packageUrl}}{{else}}..{{/if}}" class="link-primary link-underlined">
+              {{parentPageName}}
+            </a>
+            <svg width="24" height="24" aria-hidden="true">
+              <use xlink:href="/assets/icons/svg/sprite.svg#chevron-right" />
+            </svg>
+          </li>
+        {{/if}}
+        {{#if title}}
+          <li class="d-flex">
+            <a href="" aria-current="page" class="link-secondary">{{title}}</a>
+          </li>
+        {{/if}}
+      </ol>
+    </nav>
+
+  </div>
+</div>
