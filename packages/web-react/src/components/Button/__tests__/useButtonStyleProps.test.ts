@@ -4,7 +4,7 @@ import { useButtonStyleProps } from '../useButtonStyleProps';
 
 describe('useButtonStyleProps', () => {
   it.each([
-    // color, size, isBlock, isDisabled, isLoading, isSquare, expectedClasses
+    // color, size, isBlock, isDisabled, isLoading, isSymmetrical, expectedClasses
     ['primary', 'medium', false, false, false, false, 'Button Button--primary Button--medium'],
     ['secondary', 'medium', false, false, false, false, 'Button Button--secondary Button--medium'],
     ['tertiary', 'medium', false, false, false, false, 'Button Button--tertiary Button--medium'],
@@ -20,9 +20,9 @@ describe('useButtonStyleProps', () => {
       false,
       'Button Button--primary Button--medium Button--disabled Button--loading',
     ],
-    ['primary', 'medium', false, false, false, true, 'Button Button--primary Button--medium Button--square'],
-  ])('should return classes', (color, size, isBlock, isDisabled, isLoading, isSquare, expectedClasses) => {
-    const props = { color, size, isBlock, isDisabled, isLoading, isSquare } as SpiritButtonProps;
+    ['primary', 'medium', false, false, false, true, 'Button Button--primary Button--medium Button--symmetrical'],
+  ])('should return classes', (color, size, isBlock, isDisabled, isLoading, isSymmetrical, expectedClasses) => {
+    const props = { color, size, isBlock, isDisabled, isLoading, isSymmetrical } as SpiritButtonProps;
     const { result } = renderHook(() => useButtonStyleProps(props));
 
     expect(result.current.classProps).toBe(expectedClasses);
@@ -33,10 +33,10 @@ describe('useButtonStyleProps', () => {
 
     const consoleWarnMock = jest.spyOn(global.console, 'warn').mockImplementation();
 
-    const props = { color: 'primary', size: 'medium', isBlock: true, isSquare: true } as SpiritButtonProps;
+    const props = { color: 'primary', size: 'medium', isBlock: true, isSymmetrical: true } as SpiritButtonProps;
     renderHook(() => useButtonStyleProps(props));
 
-    expect(consoleWarnMock).toHaveBeenCalledWith('Warning: isBlock and isSquare props are mutually exclusive');
+    expect(consoleWarnMock).toHaveBeenCalledWith('Warning: isBlock and isSymmetrical props are mutually exclusive');
 
     consoleWarnMock.mockRestore();
   });
