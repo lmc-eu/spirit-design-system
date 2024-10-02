@@ -24,7 +24,7 @@ const ButtonLinkDemoFactory = ({ ...props }: ButtonBaseProps) => {
                 <Icon name="link" marginRight="space-400" />
                 Menu
               </ButtonLink>{' '}
-              <ButtonLink size={size} color={color} isSquare {...props}>
+              <ButtonLink size={size} color={color} isSymmetrical {...props}>
                 <Icon name="link" />
               </ButtonLink>
             </div>

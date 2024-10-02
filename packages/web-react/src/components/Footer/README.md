@@ -96,7 +96,7 @@ Use the secondary [ButtonLink][buttonlink] component to create social media link
 <Flex elementType="ul" alignmentX="center" alignmentY="center">
   {/* Repeat the `<li>` block for each social media link. */}
   <li>
-    <ButtonLink size="medium" color="tertiary" isSquare>
+    <ButtonLink size="medium" color="tertiary" isSymmetrical>
       <VisuallyHidden>Facebook</VisuallyHidden>
       <Icon name="logo-facebook" />
     </ButtonLink>
@@ -186,19 +186,19 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       {/* Flex with social media links */}
       <Flex elementType="ul" alignmentX="center" alignmentY="center">
         <li>
-          <ButtonLink size="medium" color="tertiary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSymmetrical>
             <VisuallyHidden>Facebook</VisuallyHidden>
             <Icon name="logo-facebook" />
           </ButtonLink>
         </li>
         <li>
-          <ButtonLink size="medium" color="tertiary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSymmetrical>
             <VisuallyHidden>X</VisuallyHidden>
             <Icon name="logo-x" />
           </ButtonLink>
         </li>
         <li>
-          <ButtonLink size="medium" color="tertiary" isSquare>
+          <ButtonLink size="medium" color="tertiary" isSymmetrical>
             <VisuallyHidden>YouTube</VisuallyHidden>
             <Icon name="logo-youtube" />
           </ButtonLink>

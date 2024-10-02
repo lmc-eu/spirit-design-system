@@ -343,31 +343,31 @@ export const FooterCompositions = (args: FooterCompositionsProps) => {
           {showSocialMediaButtons && (
             <Flex elementType="ul" alignmentX={getElementPosition('socialMediaButtons')} alignmentY="center">
               <li>
-                <ButtonLink size="medium" color="secondary" isSquare>
+                <ButtonLink size="medium" color="secondary" isSymmetrical>
                   <VisuallyHidden>Facebook</VisuallyHidden>
                   <Icon name="logo-facebook" />
                 </ButtonLink>
               </li>
               <li>
-                <ButtonLink size="medium" color="secondary" isSquare>
+                <ButtonLink size="medium" color="secondary" isSymmetrical>
                   <VisuallyHidden>X</VisuallyHidden>
                   <Icon name="logo-x" />
                 </ButtonLink>
               </li>
               <li>
-                <ButtonLink size="medium" color="secondary" isSquare>
+                <ButtonLink size="medium" color="secondary" isSymmetrical>
                   <VisuallyHidden>YouTube</VisuallyHidden>
                   <Icon name="logo-youtube" />
                 </ButtonLink>
               </li>
               <li>
-                <ButtonLink size="medium" color="secondary" isSquare>
+                <ButtonLink size="medium" color="secondary" isSymmetrical>
                   <VisuallyHidden>Google</VisuallyHidden>
                   <Icon name="logo-google" />
                 </ButtonLink>
               </li>
               <li>
-                <ButtonLink size="medium" color="secondary" isSquare>
+                <ButtonLink size="medium" color="secondary" isSymmetrical>
                   <VisuallyHidden>LinkedIn</VisuallyHidden>
                   <Icon name="logo-linkedin" />
                 </ButtonLink>
