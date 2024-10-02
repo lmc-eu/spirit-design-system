@@ -13,7 +13,7 @@ export default {
   ],
 
   plugins: [
-    '@semantic-release/commit-analyzer',
+    ['@semantic-release/commit-analyzer', { preset: '@lmc-eu/conventional-changelog-lmc-github' }],
     ['semantic-release-lerna', { generateNotes: true, prepare: true, publish: true }],
     '@semantic-release/changelog',
     [
