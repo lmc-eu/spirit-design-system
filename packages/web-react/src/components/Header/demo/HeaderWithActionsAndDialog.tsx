@@ -70,7 +70,7 @@ const HeaderWithActionsAndDialog = () => {
           >
             Marian
           </HeaderButton>
-          <Button color="secondary" isSquare>
+          <Button color="secondary" isSymmetrical>
             <Icon name="search" />
             <VisuallyHidden>Search</VisuallyHidden>
           </Button>

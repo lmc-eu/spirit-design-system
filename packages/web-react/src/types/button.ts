@@ -23,8 +23,8 @@ export interface ButtonBaseProps<C = void, S = void> extends ChildrenProps, Styl
   isBlock?: boolean;
   /** Whether the button should be in a loading state. */
   isLoading?: boolean;
-  /** Whether the button should be displayed as a square. */
-  isSquare?: boolean;
+  /** Whether the button should be symmetrical. */
+  isSymmetrical?: boolean;
   /** The size of the button. */
   size?: ButtonSize<S>;
 }
