@@ -34,17 +34,17 @@ Without lexer:
 
 ## API
 
-| Name         | Type                                                                                             | Default   | Required | Description                                                                |
-| ------------ | ------------------------------------------------------------------------------------------------ | --------- | -------- | -------------------------------------------------------------------------- |
-| `color`      | [Action Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                              |
-| `formtarget` | `string`                                                                                         | `null`    | ✕        | Submit button target                                                       |
-| `isBlock`    | `bool`                                                                                           | `false`   | ✕        | Span the element to the full width of its parent                           |
-| `isDisabled` | `bool`                                                                                           | `false`   | ✕        | If true, Button is disabled                                                |
-| `isLoading`  | `bool`                                                                                           | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
-| `isSquare`   | `bool`                                                                                           | `false`   | ✕        | If true, Button is square, usually only with an Icon                       |
-| `name`       | `string`                                                                                         | `null`    | ✕        | Submit button name                                                         |
-| `size`       | [Size dictionary][dictionary-size]                                                               | `medium`  | ✕        | Size variant                                                               |
-| `type`       | `string`                                                                                         | `button`  | ✕        | Type of the Button                                                         |
+| Name            | Type                                                                                             | Default   | Required | Description                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------ | --------- | -------- | -------------------------------------------------------------------------- |
+| `color`         | [Action Button Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                              |
+| `formtarget`    | `string`                                                                                         | `null`    | ✕        | Submit button target                                                       |
+| `isBlock`       | `bool`                                                                                           | `false`   | ✕        | Span the element to the full width of its parent                           |
+| `isDisabled`    | `bool`                                                                                           | `false`   | ✕        | If true, Button is disabled                                                |
+| `isLoading`     | `bool`                                                                                           | `false`   | ✕        | If true, Button is in a loading state, disabled and the Spinner is visible |
+| `isSymmetrical` | `bool`                                                                                           | `false`   | ✕        | If true, Button has symmetrical dimensions, usually only with an Icon      |
+| `name`          | `string`                                                                                         | `null`    | ✕        | Submit button name                                                         |
+| `size`          | [Size dictionary][dictionary-size]                                                               | `medium`  | ✕        | Size variant                                                               |
+| `type`          | `string`                                                                                         | `button`  | ✕        | Type of the Button                                                         |
 
 On top of the API options, the components accept [additional attributes][readme-additional-attributes].
 If you need more control over the styling of a component, you can use [style props][readme-style-props]
