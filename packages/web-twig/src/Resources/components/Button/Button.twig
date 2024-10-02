@@ -5,7 +5,7 @@
 {%- set _isBlock = props.isBlock | default(false) -%}
 {%- set _isDisabled = props.isDisabled | default(false) -%}
 {%- set _isLoading = props.isLoading | default(false) -%}
-{%- set _isSquare = props.isSquare | default(false) -%}
+{%- set _isSymmetrical = props.isSymmetrical | default(false) -%}
 {%- set _type = props.type | default('button') -%}
 
 {# Class names #}
@@ -14,14 +14,14 @@
 {%- set _rootColorClassName = _spiritClassPrefix ~ 'Button--' ~ _color -%}
 {%- set _rootLoadingClassName = _isLoading ? _spiritClassPrefix ~ 'Button--loading' : null -%}
 {%- set _rootSizeClassName = _spiritClassPrefix ~ 'Button--' ~ _size -%}
-{%- set _rootSquareClassName = _isSquare ? _spiritClassPrefix ~ 'Button--square' : null -%}
+{%- set _rootSymmetricalClassName = _isSymmetrical ? _spiritClassPrefix ~ 'Button--symmetrical' : null -%}
 
 {# Attributes #}
 {%- set _disabledAttr = _isDisabled or _isLoading ? 'disabled' : null -%}
 
 {# Miscellaneous #}
 {%- set _styleProps = useStyleProps(props) -%}
-{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSquareClassName, _styleProps.className ] -%}
+{%- set _classNames = [ _rootClassName, _rootColorClassName, _rootSizeClassName, _rootBlockClassName, _rootLoadingClassName, _rootSymmetricalClassName, _styleProps.className ] -%}
 {%- set _allowedAttributes = [ 'formtarget', 'name' ] -%}
 
 <button
