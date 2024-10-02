@@ -35,7 +35,8 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     ...restProps
   } = props;
 
-  const isDragAndDropSupported = 'draggable' in document.createElement('span');
+  const isDragAndDropSupported =
+    typeof document !== 'undefined' ? 'draggable' in document.createElement('span') : false;
 
   const {
     isDisabledByQueueLimitBehavior,
