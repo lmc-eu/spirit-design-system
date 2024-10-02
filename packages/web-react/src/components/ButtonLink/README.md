@@ -18,20 +18,20 @@ import { ButtonLink } from '@lmc-eu/spirit-web-react';
 
 ### API
 
-| Name          | Type                                                                                      | Default   | Required | Description                                                                    |
-| ------------- | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |
-| `children`    | `ReactNode`                                                                               | `null`    | ✕        | Content of the ButtonLink                                                      |
-| `color`       | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
-| `elementType` | `ElementType`                                                                             | `a`       | ✕        | Type of element                                                                |
-| `href`        | `string`                                                                                  | —         | ✓        | Link URL                                                                       |
-| `isBlock`     | `bool`                                                                                    | `false`   | ✕        | Span the element to the full width of its parent                               |
-| `isDisabled`  | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is disabled                                                |
-| `isLoading`   | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
-| `isSquare`    | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is square, usually only with an Icon                       |
-| `onClick`     | `string`                                                                                  | `null`    | ✕        | JS function to call on click                                                   |
-| `ref`         | `ForwardedRef<HTMLAnchorElement>`                                                         | —         | ✕        | Anchor element reference                                                       |
-| `size`        | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                                   |
-| `target`      | `string`                                                                                  | `null`    | ✕        | Link target                                                                    |
+| Name            | Type                                                                                      | Default   | Required | Description                                                                    |
+| --------------- | ----------------------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------ |
+| `children`      | `ReactNode`                                                                               | `null`    | ✕        | Content of the ButtonLink                                                      |
+| `color`         | [Action Color dictionary][dictionary-color], [Emotion Color dictionary][dictionary-color] | `primary` | ✕        | Color variant                                                                  |
+| `elementType`   | `ElementType`                                                                             | `a`       | ✕        | Type of element                                                                |
+| `href`          | `string`                                                                                  | —         | ✓        | Link URL                                                                       |
+| `isBlock`       | `bool`                                                                                    | `false`   | ✕        | Span the element to the full width of its parent                               |
+| `isDisabled`    | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is disabled                                                |
+| `isLoading`     | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink is in a loading state, disabled and the Spinner is visible |
+| `isSymmetrical` | `bool`                                                                                    | `false`   | ✕        | If true, ButtonLink has symmetrical dimensions, usually only with an Icon      |
+| `onClick`       | `string`                                                                                  | `null`    | ✕        | JS function to call on click                                                   |
+| `ref`           | `ForwardedRef<HTMLAnchorElement>`                                                         | —         | ✕        | Anchor element reference                                                       |
+| `size`          | [Size dictionary][dictionary-size]                                                        | `medium`  | ✕        | Size variant                                                                   |
+| `target`        | `string`                                                                                  | `null`    | ✕        | Link target                                                                    |
 
 For more information see [Button][button] component. ButtonLink also contain all the appropriate
 attributes according to the type of element.
