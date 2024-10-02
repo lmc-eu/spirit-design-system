@@ -6,7 +6,7 @@ import { Icon } from '../Icon';
 import { useTextFieldBasePasswordToggleStyleProps } from './useTextFieldBasePasswordToggleStyleProps';
 
 export const TextFieldBasePasswordToggle = (props: SpiritTextFieldBasePasswordToggleProps): JSX.Element => {
-  const { children, isPasswordShown, onToggleClick } = props;
+  const { children, isPasswordShown, onToggleClick, isDisabled } = props;
   const { classProps } = useTextFieldBasePasswordToggleStyleProps();
 
   return (
@@ -19,6 +19,7 @@ export const TextFieldBasePasswordToggle = (props: SpiritTextFieldBasePasswordTo
         aria-checked={!!isPasswordShown}
         aria-label={`${isPasswordShown ? 'Hide' : 'Show'} password`}
         onClick={() => onToggleClick()}
+        disabled={isDisabled}
       >
         <span className={classProps.passwordToggleIcon}>
           <Icon name={`visibility-${isPasswordShown ? 'off' : 'on'}`} />

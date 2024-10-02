@@ -16,6 +16,7 @@ export type TextFieldBaseInputProps = TextInputProps & TextFieldBaseMultiLinePro
 export interface SpiritTextFieldBaseInputProps extends RequiredProps, TextFieldBaseInputProps {}
 
 export interface PasswordToggleProps {
+  isDisabled?: boolean;
   isPasswordShown: boolean;
   onToggleClick: () => void;
 }
