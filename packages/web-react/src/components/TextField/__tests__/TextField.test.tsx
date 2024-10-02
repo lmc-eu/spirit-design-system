@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { classNamePrefixProviderTest } from '../../../../tests/providerTests/classNamePrefixProviderTest';
 import { validationStatePropsTest } from '../../../../tests/providerTests/dictionaryPropsTest';
@@ -22,96 +22,91 @@ describe('TextField', () => {
     validationTextPropsTest(TextField, '.TextField__validationText', type as TextFieldType);
 
     it('should have label classname', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
 
-      const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass('TextField__label');
+      expect(screen.getByText('Label')).toHaveClass('TextField__label');
+    });
+
+    it('should have disabled classname na prop', () => {
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} isDisabled />);
+
+      expect(screen.getByLabelText('Label').parentElement).toHaveClass('TextField--disabled');
+      expect(screen.getByLabelText('Label')).toHaveAttribute('disabled');
     });
 
     it('should have hidden classname', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} isLabelHidden />);
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} isLabelHidden />);
 
-      const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass('TextField__label--hidden');
+      expect(screen.getByText('Label')).toHaveClass('TextField__label--hidden');
     });
 
     it('should have required classname', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} isRequired />);
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} isRequired />);
 
-      const element = dom.container.querySelector('label') as HTMLElement;
-      expect(element).toHaveClass('TextField__label--required');
+      expect(screen.getByText('Label')).toHaveClass('TextField__label--required');
+      expect(screen.getByLabelText('Label')).toHaveAttribute('required');
     });
 
     it('should have input classname', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} />);
 
-      const element = dom.container.querySelector('input') as HTMLElement;
-      expect(element).toHaveClass('TextField__input');
+      expect(screen.getByLabelText('Label')).toHaveClass('TextField__input');
     });
 
     it('should have helper text', () => {
-      const dom = render(
-        <TextField id="textfield" label="Label" type={type as TextFieldType} helperText="helper text" />,
-      );
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} helperText="helper text" />);
 
-      const element = dom.container.querySelector('.TextField__helperText') as HTMLElement;
-      expect(element.textContent).toBe('helper text');
+      expect(screen.getByText('helper text')).toHaveClass('TextField__helperText');
     });
 
-    it('should have password toggle', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
+    it('should have fluid classname', () => {
+      render(<TextField id="textfield" label="Label" type={type as TextFieldType} isFluid />);
 
-      const element = dom.container.querySelector('.TextField__passwordToggle') as HTMLElement;
-      expect(element).toBeInTheDocument();
+      expect(screen.getByLabelText('Label').parentElement).toHaveClass('TextField--fluid');
+    });
+  });
+
+  describe('hasPasswordToggle', () => {
+    beforeEach(() => {
+      render(<TextField id="textfield" label="Label" hasPasswordToggle />);
     });
 
     it('should have password toggle button', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
-
-      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
-      expect(element).toBeInTheDocument();
+      expect(screen.getByRole('switch')).toHaveClass('TextField__passwordToggle__button');
     });
 
     it('should have type password with password toggle', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
-
-      const element = dom.container.querySelector('input') as HTMLElement;
-      expect(element).toHaveAttribute('type', 'password');
+      expect(screen.getByLabelText('Label')).toHaveAttribute('type', 'password');
     });
 
     it('should have correct aria label of the password toggle', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
-
-      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
-      expect(element).toHaveAttribute('aria-label', 'Show password');
+      expect(screen.getByRole('switch')).toHaveAttribute('aria-label', 'Show password');
     });
 
     it('should toggle type with password toggle', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
-
-      const element = dom.container.querySelector('input') as HTMLElement;
-      const trigger = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+      const element = screen.getByLabelText('Label');
 
       expect(element).toHaveAttribute('type', 'password');
-      fireEvent.click(trigger);
+      fireEvent.click(screen.getByRole('switch'));
       expect(element).toHaveAttribute('type', 'text');
     });
 
     it('should toggle aria label of the password toggle', () => {
-      const dom = render(<TextField id="textfield" label="Label" hasPasswordToggle />);
-
-      const element = dom.container.querySelector('.TextField__passwordToggle__button') as HTMLElement;
+      const element = screen.getByRole('switch');
 
       expect(element).toHaveAttribute('aria-label', 'Show password');
       fireEvent.click(element);
       expect(element).toHaveAttribute('aria-label', 'Hide password');
     });
+  });
 
-    it('should have fluid classname', () => {
-      const dom = render(<TextField id="textfield" label="Label" type={type as TextFieldType} isFluid />);
+  describe('hasPasswordToggle isDisabled', () => {
+    it('should have disabled attribute on input and toggle button', () => {
+      render(<TextField id="textfield" label="Label" hasPasswordToggle isDisabled />);
 
-      const element = dom.container.querySelector('div') as HTMLElement;
-      expect(element).toHaveClass('TextField--fluid');
+      expect(screen.getByText('Label').parentElement).toHaveClass('TextField--disabled');
+      expect(screen.getByLabelText('Label')).toHaveAttribute('disabled');
+      expect(screen.getByRole('switch')).toHaveAttribute('disabled');
     });
   });
 });
