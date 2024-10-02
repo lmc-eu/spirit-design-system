@@ -374,7 +374,7 @@ And the complete Header Dialog:
   <div class="HeaderMobileActions">
     <button
       type="button"
-      class="Button Button--secondary Button--medium Button--square"
+      class="Button Button--secondary Button--medium Button--symmetrical"
       data-spirit-toggle="offcanvas"
       data-spirit-target="#header-dialog-example-1"
       aria-controls="header-dialog-example-1"
