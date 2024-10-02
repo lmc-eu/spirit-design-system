@@ -45,7 +45,7 @@ Loading Button:
     <use xlink:href="/icons/svg/sprite.svg#spinner" />
   </svg>
 </button>
-<button type="button" class="Button Button--primary Button--medium Button--square Button--loading" disabled>
+<button type="button" class="Button Button--primary Button--medium Button--symmetrical Button--loading" disabled>
   <span class="accessibility-hidden">Menu</span>
   <svg width="24" height="24" aria-hidden="true">
     <use xlink:href="/icons/svg/sprite.svg#hamburger" />
