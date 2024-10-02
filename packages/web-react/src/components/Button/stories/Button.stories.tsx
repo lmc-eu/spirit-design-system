@@ -48,7 +48,7 @@ const meta: Meta<typeof Button> = {
     isLoading: {
       control: 'boolean',
     },
-    isSquare: {
+    isSymmetrical: {
       control: 'boolean',
     },
     size: {
@@ -66,7 +66,7 @@ const meta: Meta<typeof Button> = {
     isBlock: false,
     isDisabled: false,
     isLoading: false,
-    isSquare: false,
+    isSymmetrical: false,
     size: Sizes.MEDIUM,
     type: 'button',
   },
