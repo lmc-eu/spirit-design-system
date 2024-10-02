@@ -96,7 +96,7 @@ Use the secondary [Button][button] component to create social media links inside
 <ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter">
   <!-- Repeat the `<li>` block for each social media link. -->
   <li>
-    <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+    <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
       <span class="accessibility-hidden">Facebook</span>
       <svg width="24" height="24" aria-hidden="true">
         <use xlink:href="/assets/icons/svg/sprite.svg#logo-facebook" />
@@ -177,7 +177,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
       <!-- Flex with social media links -->
       <ul class="Flex Flex--row Flex--wrap Flex--alignmentXCenter Flex--alignmentYCenter" aria-label="Social media">
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">Facebook</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-facebook" />
@@ -185,7 +185,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
           </a>
         </li>
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">X</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-x" />
@@ -193,7 +193,7 @@ This section is optional and consists of a [Flex][flex] layout with secondary li
           </a>
         </li>
         <li>
-          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--square">
+          <a href="https://www.example.com" class="Button Button--secondary Button--medium Button--symmetrical">
             <span class="accessibility-hidden">YouTube</span>
             <svg width="24" height="24" aria-hidden="true">
               <use xlink:href="/assets/icons/svg/sprite.svg#logo-youtube" />
