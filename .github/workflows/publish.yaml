@@ -40,7 +40,7 @@ jobs:
             echo "has-tag=false"
           fi
 
-      - name: Debug
+      - name: Debug1
         run: echo "${{ steps.checkTagExists.outputs.has-tag }}"
 
   publish:
