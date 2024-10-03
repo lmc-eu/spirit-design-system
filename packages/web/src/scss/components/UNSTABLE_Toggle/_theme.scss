@@ -15,7 +15,7 @@ $input-background-color-checked: var(--#{globals.$prefix}color-action-toggle-sel
 $input-background-color-checked-hover: var(--#{globals.$prefix}color-action-toggle-selected-hover);
 $input-background-color-disabled: var(--#{globals.$prefix}color-disabled-background);
 $input-border-radius: global-tokens.$radius-400;
-$input-focus-shadow: global-tokens.$focus;
+$input-focus-shadow: global-tokens.$focus-ring;
 
 $input-mark-size: 20px;
 $input-mark-spacing: global-tokens.$space-100;
