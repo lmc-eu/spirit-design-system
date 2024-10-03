@@ -10,45 +10,48 @@ on:
       - release/beta
 
 jobs:
-  publish:
-    name: Publish package
+  hasTag:
+    name: 🏷️ Analyze Tags
     runs-on: ubuntu-24.04
+
+    outputs:
+      hasTag: ${{ steps.checkTagExists.outputs.has-tag }}
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Fetch tags
-        run: git fetch --tags
-
-      - name: Tag
-        run: echo "tag - ${{ github.ref }}"
-
-      - name: Check if commit has a tag
-        id: check_tag
+      - name: Check Tag On Commit
+        id: checkTagExists
         run: |
           if [ -n "$(git tag --points-at HEAD)" ]; then
-            echo "has_tag=true" >> $GITHUB_ENV
+            echo "has-tag=true" >> "$GITHUB_OUTPUT"
           else
-            echo "has_tag=false" >> $GITHUB_ENV
+            echo "has-tag=false" >> "$GITHUB_OUTPUT"
           fi
 
+  publish:
+    name: 🚀 📦 Publish Package
+    runs-on: ubuntu-24.04
+    needs: [hasTag]
+    if: ${{ needs.hasTag.outputs.has-tag == 'true' }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
       - name: Enable Corepack
-        if: env.has_tag == 'true'
         run: corepack enable
 
       - name: Configure Node.js
-        if: env.has_tag == 'true'
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: 'yarn'
 
       - name: Install dependencies
-        if: env.has_tag == 'true'
         run: yarn --immutable --inline-builds
 
       - name: Build
-        if: env.has_tag == 'true'
         run: yarn build
 
       # - name: Authenticate npm
