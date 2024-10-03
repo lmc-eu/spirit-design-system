@@ -11,7 +11,6 @@ on:
 
 jobs:
   publish:
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
     name: Publish package
     runs-on: ubuntu-24.04
     steps:
@@ -20,6 +19,9 @@ jobs:
 
       - name: Fetch tags
         run: git fetch --tags
+
+      - name: Tag
+        run: echo "tag - ${{ github.ref }}"
 
       - name: Check if commit has a tag
         id: check_tag
