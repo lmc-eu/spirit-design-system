@@ -24,6 +24,8 @@ jobs:
       - name: Fetch tags
         run: git fetch --tags
 
+      - run: echo "$(git tag --points-at HEAD)"
+
       - name: Check Tag On Commit
         id: checkTagExists
         run: |
