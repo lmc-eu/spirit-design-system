@@ -24,19 +24,16 @@ jobs:
       - name: Fetch tags
         run: git fetch --tags
 
-      - run: echo "$(git tag --points-at HEAD)"
+      - run: git tag --points-at HEAD
 
       - name: Check Tag On Commit
         id: checkTagExists
         run: |
           if [ -n "$(git tag --points-at HEAD)" ]; then
-            echo "has-tag=true" >> "$GITHUB_OUTPUT"
+            echo "has-tag=true"
           else
-            echo "has-tag=false" >> "$GITHUB_OUTPUT"
+            echo "has-tag=false"
           fi
-
-      - name: Debug
-        run: echo "$GITHUB_OUTPUT"
 
       - name: Debug2
         run: echo "${{ steps.checkTagExists.outputs.has-tag }}"
