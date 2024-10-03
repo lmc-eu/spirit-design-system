@@ -33,12 +33,12 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Authenticate npm
-        run: ./bin/ci/npm-auth.sh
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Authenticate npm
+      #   run: ./bin/ci/npm-auth.sh
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish
-        run: make publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      # - name: Publish
+      #   run: make publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
