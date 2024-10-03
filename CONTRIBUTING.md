@@ -255,14 +255,20 @@ For more, please read the article [How to Run GitHub Actions Locally with the ac
 
 ## Publishing
 
-This project uses GitHub Actions to publish the packages automatically to npm. New packages are published after the new tag is pushed to the main branch. PR can be merged only by the appropriate group of maintainers.
+This project uses GitHub Actions to publish the packages automatically to npm.
+New packages are published after the new tag is pushed to the main branch.
+PR can be merged only by the appropriate group of maintainers.
 
 ### Steps to Create a New Package Version
 
-1. Merge all appropriate PRs you want to publish into the main branch
+1. Merge all appropriate PRs you want to publish into the appropriate branch
+   - branches:
+     - `main` - for the latest stable version
 2. Run the `make version` command to bump the version number in packages (a new version number is determined automatically based on commit history)
 3. Check that the version number is correct and everything looks good
-4. Run manually `git push && git push --tags` to push the changes to the remote
+4. Push changes and tags to repository
+   4a. Run manually `git push && git push --tags` to push the changes to the remote
+   4b. or use `git push --follow-tags` to push the changes and tags at once (works only when tags are annotated).
 5. Publishing is done automatically by GitHub Actions (uses `build` script and `make publish` command)
 
 > If you have further questions do not hesitate to open an issue and ask us! ❤️
