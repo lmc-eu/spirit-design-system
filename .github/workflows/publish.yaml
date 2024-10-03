@@ -30,6 +30,12 @@ jobs:
             echo "has-tag=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Debug
+        run: echo "$GITHUB_OUTPUT"
+
+      - name: Debug2
+        run: echo "${{ steps.checkTagExists.outputs.has-tag }}"
+
   publish:
     name: 🚀 📦 Publish Package
     needs: hasTag
