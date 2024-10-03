@@ -24,8 +24,12 @@ jobs:
       - name: Fetch tags
         run: git fetch --tags
 
+      - name: Get tag name
+        uses: olegtarasov/get-tag@v2.1.3
+        id: tagName
+
       - name: Tag
-        run: git tag --points-at HEAD
+        run: echo ${{ steps.tagName.outputs.tag }}
 
       - name: Check Tag On Commit
         id: checkTagExists
