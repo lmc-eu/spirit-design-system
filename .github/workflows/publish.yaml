@@ -3,9 +3,11 @@ name: Publish
 on:
   push:
     branches:
+      - chore/DS-1434-prerelease
       - main
-    tags:
-      - '**'
+      - release/next
+      - release/alpha
+      - release/beta
 
 jobs:
   publish:
