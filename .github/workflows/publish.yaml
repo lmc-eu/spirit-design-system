@@ -32,9 +32,10 @@ jobs:
 
   publish:
     name: 🚀 📦 Publish Package
+    needs: hasTag
+    if: ${{ needs.hasTag.outputs.hasTag == 'true' }}
     runs-on: ubuntu-24.04
-    needs: [hasTag]
-    if: ${{ needs.hasTag.outputs.has-tag == 'true' }}
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
