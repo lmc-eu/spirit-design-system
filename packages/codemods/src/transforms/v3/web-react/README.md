@@ -22,3 +22,33 @@ npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/link-underlined-prop
 - <Link isUnderlined … />
 + <Link underlined="always" … />
 ```
+
+### `v3/web-react/button-isSquare-prop-name` — Button `isSquare` to `isSymmetrical` prop change
+
+This codemod updates the `Button` component by replacing the `isSquare` prop with a `isSymmetrical` prop.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/button-isSquare-prop-name
+```
+
+#### Example
+
+```diff
+- <Button isSquare … />
++ <Button isSymmetrical … />
+```
+
+### `v3/web-react/buttonLink-isSquare-prop-name` — ButtonLink `isSquare` to `isSymmetrical` prop change
+
+This codemod updates the `ButtonLink` component by replacing the `isSquare` prop with a `isSymmetrical` prop.
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/buttonLink-isSquare-prop-name
+```
+
+#### Example
+
+```diff
+- <ButtonLink isSquare … />
++ <ButtonLink isSymmetrical … />
+```
