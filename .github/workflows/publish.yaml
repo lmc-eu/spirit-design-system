@@ -20,8 +20,9 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-        with:
-          fetch-tags: true
+
+      - name: Get tags
+        run: git fetch --tags origin
 
       - name: Check Tag On Commit
         id: checkTagExists
