@@ -79,10 +79,13 @@ jobs:
           git push --set-upstream origin ${{ needs.release-branch.outputs.release-branch }} && git push --tags
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ needs.release-branch.outputs.release-branch }}
-          base: ${{ env.BRANCH_NAME }}
-          title: 'Release'
-          body: 'Automated release PR for ${{ env.BRANCH_NAME }}'
+        # uses: peter-evans/create-pull-request@v7
+        # with:
+        #   token: ${{ secrets.GITHUB_TOKEN }}
+        #   branch: ${{ needs.release-branch.outputs.release-branch }}
+        #   base: ${{ env.BRANCH_NAME }}
+        #   title: 'Release'
+        #   body: 'Automated release PR for ${{ env.BRANCH_NAME }}'
+        run: gh pr create -B ${{ env.BRANCH_NAME }} -H ${{ needs.release-branch.outputs.release-branch }} --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
