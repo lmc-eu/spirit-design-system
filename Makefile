@@ -92,14 +92,27 @@ types: ## Check types in all packages
 
 ## —— Release 🚀 ——————————————————————————————————————————————————————————————
 
-version: ## Create new version of packages
+build: ## Builds all packages
+	$(PKG_MANAGER) build
+
+version: ## Create new release version of packages
 # @see https://github.com/lerna/lerna/tree/main/commands/version#readme
 # Bump version of packages changed since the last release
 # --yes` - skip all confirmation prompts
 	$(PKG_MANAGER) $(MONOREPO_TOOL) version --create-release github --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
 
-build: ## Builds all packages
-	$(PKG_MANAGER) build
+preversion: ## Create new pre-release version of packages, use "preid=" parameter to specify pre-release identifier, example: make preversion preid=alpha
+# @see https://github.com/lerna/lerna/tree/main/commands/version#readme
+# Bump version of packages changed since the last release
+# --yes` - skip all confirmation prompts
+	@$(eval preid ?=)
+	$(PKG_MANAGER) $(MONOREPO_TOOL) version --conventional-prerelease --preid $(preid) --create-release github --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
+
+graduate: ## Graduate a pre-release version of packages to stable
+# @see https://github.com/lerna/lerna/tree/main/commands/version#readme
+# Bump version of packages changed since the last release
+# --yes` - skip all confirmation prompts
+	$(PKG_MANAGER) $(MONOREPO_TOOL) version --conventional-graduate --create-release github --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
 
 ifeq ($(pkg),web-twig)
 publish: ## Publish packages to repository, pass the parameter "pkg=" to publish specific package (supports only `web-twig`), example: make publish pkg=web-twig
