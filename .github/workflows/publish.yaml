@@ -1,4 +1,4 @@
-name: Publish
+name: 🚢 Publish
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
           fi
 
   publish:
-    name: 🚀 📦 Publish Packages
+    name: 📦 Publish Packages
     needs: hasTag
     if: ${{ needs.hasTag.outputs.hasTag == 'true' }}
     runs-on: ubuntu-24.04
