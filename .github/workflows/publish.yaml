@@ -9,10 +9,36 @@ on:
       - release/beta
 
 jobs:
-  publish:
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
-    name: Publish package
+  hasTag:
+    name: 🏷️ Analyze Tags
     runs-on: ubuntu-24.04
+
+    outputs:
+      hasTag: ${{ steps.checkTagExists.outputs.has-tag }}
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+
+      # ⚠️ This check works only if the tag is pushed alongside the commit
+      # Please, use `git push && git push --tags` or `git push --follow-tags` (works only for annonated tags)
+      - name: Check Tag On Commit
+        id: checkTagExists
+        run: |
+          if [ -n "$(git tag --points-at HEAD)" ]; then
+            echo "has-tag=true" >> $GITHUB_OUTPUT
+          else
+            echo "has-tag=false" >> $GITHUB_OUTPUT
+          fi
+
+  publish:
+    name: 🚀 📦 Publish Packages
+    needs: hasTag
+    if: ${{ needs.hasTag.outputs.hasTag == 'true' }}
+    runs-on: ubuntu-24.04
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
