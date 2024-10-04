@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.4-alpha.0"></a>
+
+## 0.1.4-alpha.0 (2024-10-04)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo
+
 <a name="0.1.3"></a>
 
 ## [0.1.3](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo@0.1.2...@lmc-eu/spirit-demo@0.1.3) (2024-07-24)

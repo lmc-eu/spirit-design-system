@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1-alpha.0"></a>
+
+## 1.1.1-alpha.0 (2024-10-04)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @almacareer/spirit-exporters-variables-scss
+
 <a name="1.1.0"></a>
 
 # 1.1.0 (2024-09-09)
