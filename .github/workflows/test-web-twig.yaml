@@ -1,7 +1,10 @@
 name: 'Web Twig: Code Quality Checks'
 
 on:
+  # Run this workflow on push to branches only (not tags)
   push:
+    branches:
+      - '**'
     paths:
       - packages/web-twig/**
       # Changes in SVG icons also affect snapshots in web-twig package
