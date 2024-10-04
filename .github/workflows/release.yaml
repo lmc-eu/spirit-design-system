@@ -84,5 +84,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ needs.release-branch.outputs.release-branch }}
           base: ${{ env.BRANCH_NAME }}
-          title: 'Release ${{ env.BRANCH_NAME }} - ${{ env.CURRENT_DATE }}'
-          body: 'Automated release PR for ${{ env.BRANCH_NAME }} on ${{ env.CURRENT_DATE }}'
+          title: 'Release'
+          body: 'Automated release PR for ${{ env.BRANCH_NAME }}'
