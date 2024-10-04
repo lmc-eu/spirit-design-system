@@ -96,7 +96,7 @@ version: ## Create new version of packages
 # @see https://github.com/lerna/lerna/tree/main/commands/version#readme
 # Bump version of packages changed since the last release
 # --yes` - skip all confirmation prompts
-	$(PKG_MANAGER) $(MONOREPO_TOOL) version --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
+	$(PKG_MANAGER) $(MONOREPO_TOOL) version --create-release github --yes --no-push $(MONOREPO_TOOL_FLAGS) $(MONOREPO_TOOL_NO_PUSH)
 
 build: ## Builds all packages
 	$(PKG_MANAGER) build
