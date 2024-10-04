@@ -10,5 +10,5 @@ export type ExporterConfiguration = {
    * that the file was generated automatically
    * and should not be changed manually will appear in all files
    */
-  generateDisclaimer: boolean;
+  generateOriginalDataFiles: boolean;
 };
