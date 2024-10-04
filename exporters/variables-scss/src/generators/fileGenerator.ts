@@ -39,7 +39,7 @@ export const generateBarrelFile = (files: { fileName: string; content: string }[
     .join('\n')}\n`;
 };
 export const jsImportStatement = (name: string) => {
-  return `import * as ${toCamelCase(name)} from './${THEMES_DIRECTORY}/${name}';`;
+  return `import * as ${toCamelCase(name)} from './${name}';`;
 };
 
 export const scssImportStatement = (name: string) => `@use '${THEMES_DIRECTORY}/${name}';`;
@@ -56,7 +56,7 @@ export const generateRootThemesFileContent = (themes: TokenTheme[], hasJsOutput:
   return themes
     .map((theme) => {
       return hasJsOutput
-        ? `${toCamelCase(theme.name)}: {\n${COLOR_KEY}: ${toCamelCase(theme.name)}.${COLOR_KEY}\n},`
+        ? `${toCamelCase(theme.name)}: {\n${COLOR_KEY}: ${toCamelCase(theme.name)}.${COLOR_KEY},\n},`
         : `${theme.name}: (\n${COLOR_KEY}: ${theme.name}.$${COLOR_KEY},\n),`;
     })
     .join('\n');
@@ -115,8 +115,8 @@ export const generateOutputFilesByThemes = async (
   });
   outputFiles.push({
     path: `./${JS_DIRECTORY}/`,
-    fileName: '@global.ts',
-    content: `export * from './${GLOBAL_DIRECTORY}';\n`,
+    fileName: 'index.ts',
+    content: `export * from './${GLOBAL_DIRECTORY}';\nexport * from './${THEMES_DIRECTORY}';\n`,
   });
 
   // Compute themed tokens for all themes in parallel
@@ -162,7 +162,11 @@ export const generateOutputFilesByThemes = async (
   const rootThemesFileContent = generateThemesRootFile(themes);
   const rootTsThemesFileContent = generateThemesRootFile(themes, true);
   outputFiles.push({ path: `./${SCSS_DIRECTORY}/`, fileName: '@themes.scss', content: rootThemesFileContent });
-  outputFiles.push({ path: `./${JS_DIRECTORY}/`, fileName: '@themes.ts', content: rootTsThemesFileContent });
+  outputFiles.push({
+    path: `./${JS_DIRECTORY}/${THEMES_DIRECTORY}`,
+    fileName: 'index.ts',
+    content: rootTsThemesFileContent,
+  });
 
   return outputFiles;
 };

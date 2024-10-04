@@ -46,15 +46,15 @@ export const grids = {
 
 const mockedRootThemeFile = fs.readFileSync(path.join(__dirname, '../__fixtures__/mockedRootThemeFile.scss'), 'utf-8');
 
-const mockedRootThemeJsFile = `import * as themeLight from './themes/theme-light';
-import * as themeLightInverted from './themes/theme-light-inverted';\n
+const mockedRootThemeJsFile = `import * as themeLight from './theme-light';
+import * as themeLightInverted from './theme-light-inverted';\n
 // The first theme is the default theme, as the left column in the Figma table.
 export const themes = {
   themeLight: {
-    colors: themeLight.colors
+    colors: themeLight.colors,
   },
   themeLightInverted: {
-    colors: themeLightInverted.colors
+    colors: themeLightInverted.colors,
   },
 };
 `;
@@ -98,7 +98,7 @@ describe('fileGenerator', () => {
         { path: './js/global/', fileName: 'index.ts', content: barrelJsFile },
         // Root barrel files
         { path: './scss/', fileName: '@global.scss', content: "@forward 'global';\n" },
-        { path: './js/', fileName: '@global.ts', content: "export * from './global';\n" },
+        { path: './js/', fileName: 'index.ts', content: "export * from './global';\nexport * from './themes';\n" },
         // Themes files
         { path: './scss/themes/theme-light/', fileName: '_colors.scss', content: emptyFile },
         { path: './js/themes/theme-light/', fileName: 'colors.ts', content: emptyFile },
@@ -110,7 +110,7 @@ describe('fileGenerator', () => {
         { path: './js/themes/theme-light-inverted/', fileName: 'index.ts', content: barrelJsColorFile },
         // Themes root barrel files
         { path: './scss/', fileName: '@themes.scss', content: mockedRootThemeFile },
-        { path: './js/', fileName: '@themes.ts', content: mockedRootThemeJsFile },
+        { path: './js/themes', fileName: 'index.ts', content: mockedRootThemeJsFile },
       ]);
     });
   });
@@ -201,7 +201,7 @@ describe('fileGenerator', () => {
 
       expect(content).toBe(
         // eslint-disable-next-line prettier/prettier, quotes -- special characters in the string
-        'themeLight: {\ncolors: themeLight.colors\n},\nthemeLightInverted: {\ncolors: themeLightInverted.colors\n},',
+        'themeLight: {\ncolors: themeLight.colors,\n},\nthemeLightInverted: {\ncolors: themeLightInverted.colors,\n},',
       );
     });
   });
@@ -219,7 +219,7 @@ describe('fileGenerator', () => {
       const content = generateRootThemesFileImports(themes as TokenTheme[], true);
 
       expect(content).toBe(
-        "import * as themeLight from './themes/theme-light';\nimport * as themeLightInverted from './themes/theme-light-inverted';",
+        "import * as themeLight from './theme-light';\nimport * as themeLightInverted from './theme-light-inverted';",
       );
     });
   });
@@ -228,7 +228,7 @@ describe('fileGenerator', () => {
     it('should generate js import statement', () => {
       const content = jsImportStatement('theme-light');
 
-      expect(content).toBe("import * as themeLight from './themes/theme-light';");
+      expect(content).toBe("import * as themeLight from './theme-light';");
     });
   });
 
