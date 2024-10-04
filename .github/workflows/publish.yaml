@@ -22,6 +22,8 @@ jobs:
         with:
           fetch-tags: true
 
+      # ⚠️ This check works only if the tag is pushed alongside the commit
+      # Please, use `git push && git push --tags` or `git push --follow-tags` (works only for annonated tags)
       - name: Check Tag On Commit
         id: checkTagExists
         run: |
