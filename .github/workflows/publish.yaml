@@ -32,7 +32,7 @@ jobs:
           fi
 
   publish:
-    name: 🚀 📦 Publish Package
+    name: 🚀 📦 Publish Packages
     needs: hasTag
     if: ${{ needs.hasTag.outputs.hasTag == 'true' }}
     runs-on: ubuntu-24.04
