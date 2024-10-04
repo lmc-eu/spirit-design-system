@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.0.7-alpha.0"></a>
+
+## 0.0.7-alpha.0 (2024-10-04)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-demo-app
+
 <a name="0.0.6"></a>
 
 ## [0.0.6](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-demo-app@0.0.5...@lmc-eu/spirit-demo-app@0.0.6) (2024-07-24)

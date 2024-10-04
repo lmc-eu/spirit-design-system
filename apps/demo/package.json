@@ -1,6 +1,6 @@
 {
   "name": "@lmc-eu/spirit-demo-app",
-  "version": "0.0.6",
+  "version": "0.0.7-alpha.0",
   "description": "Demo platform of the Spirit Design System",
   "license": "MIT",
   "private": true,

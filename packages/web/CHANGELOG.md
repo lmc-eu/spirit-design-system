@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.1-alpha.0"></a>
+
+## 2.4.1-alpha.0 (2024-10-04)
+
+Miscellaneous changes
+
+**Note:** Version bump only for package @lmc-eu/spirit-web
+
 <a name="2.4.0"></a>
 
 # [2.4.0](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-web@2.3.0...@lmc-eu/spirit-web@2.4.0) (2024-09-09)
