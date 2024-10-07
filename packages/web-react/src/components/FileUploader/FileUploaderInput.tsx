@@ -1,7 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDeprecationMessage, useStyleProps } from '../../hooks';
 import { SpiritFileUploaderInputProps } from '../../types';
 import { HelperText, ValidationText, useAriaIds } from '../Field';
@@ -11,6 +11,7 @@ import { useFileUploaderInput } from './useFileUploaderInput';
 import { useFileUploaderStyleProps } from './useFileUploaderStyleProps';
 
 const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
+  const [isDragAndDropSupported, setIsDragAndDropSupported] = useState(false);
   const {
     accept,
     'aria-describedby': ariaDescribedBy = '',
@@ -34,10 +35,6 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     validationText,
     ...restProps
   } = props;
-
-  const isDragAndDropSupported =
-    typeof document !== 'undefined' ? 'draggable' in document.createElement('span') : false;
-
   const {
     isDisabledByQueueLimitBehavior,
     isDragging,
@@ -67,8 +64,11 @@ const FileUploaderInput = (props: SpiritFileUploaderInputProps) => {
     validationState,
   });
   const { styleProps, props: transferProps } = useStyleProps(restProps);
-
   const [ids, register] = useAriaIds(ariaDescribedBy);
+
+  useEffect(() => {
+    setIsDragAndDropSupported('draggable' in document.createElement('span'));
+  }, []);
 
   useDeprecationMessage({
     method: 'custom',
