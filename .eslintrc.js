@@ -21,6 +21,7 @@ module.exports = {
     '!.*.js',
     'packages/analytics',
     'packages/common',
+    'packages/design-tokens',
     'packages/web-react',
     'packages/web',
     'packages/form-validations',
