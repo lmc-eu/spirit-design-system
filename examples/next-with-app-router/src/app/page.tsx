@@ -1,6 +1,6 @@
-import { Heading } from '@lmc-eu/spirit-web-react';
 import { NextPage } from 'next';
+import FileuploaderTest from '@/app/fileuploader';
 
-const Home: NextPage = () => <Heading size="large">Spirit App Router</Heading>;
+const Home: NextPage = () => <FileuploaderTest />;
 
 export default Home;
