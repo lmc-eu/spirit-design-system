@@ -10,15 +10,18 @@ import Heading from '../Heading';
 import headingSizeDataProvider from './headingSizeDataProvider';
 
 describe('Heading', () => {
-  classNamePrefixProviderTest(Heading, 'typography-heading-medium-bold');
+  classNamePrefixProviderTest(() => <Heading elementType="h1" />, 'typography-heading-medium-bold');
 
-  stylePropsTest(Heading);
+  stylePropsTest((props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />, 'heading-test-id');
 
-  sizePropsTest(Heading);
+  sizePropsTest((props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />, 'heading-test-id');
 
-  sizeExtendedPropsTest(Heading);
+  sizeExtendedPropsTest(
+    (props) => <Heading elementType="h1" data-testid="heading-test-id" {...props} />,
+    'heading-test-id',
+  );
 
-  restPropsTest(Heading, 'div');
+  restPropsTest((props) => <Heading elementType="h1" {...props} />, 'h1');
 
   it.each(headingSizeDataProvider)('should have classname', (size, emphasis, expectedClassName) => {
     render(
