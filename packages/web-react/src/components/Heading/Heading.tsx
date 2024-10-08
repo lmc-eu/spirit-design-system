@@ -6,20 +6,15 @@ import { useStyleProps } from '../../hooks';
 import { SpiritHeadingProps } from '../../types';
 import { useHeadingStyleProps } from './useHeadingStyleProps';
 
-const defaultProps: Partial<SpiritHeadingProps> = {
-  elementType: 'div',
+const defaultProps: Partial<SpiritHeadingProps<ElementType, void, void>> = {
   emphasis: 'bold',
   size: 'medium',
 };
 
-export const Heading = <T extends ElementType = 'div', S = void>(props: SpiritHeadingProps<T, S>): JSX.Element => {
+export const Heading = <T extends ElementType, S = void, E = void>(props: SpiritHeadingProps<T, S, E>): JSX.Element => {
   const propsWithDefaults = { ...defaultProps, ...props };
-  const {
-    elementType: ElementTag = defaultProps.elementType as ElementType,
-    children,
-    ...restProps
-  } = propsWithDefaults;
-  const { classProps, props: modifiedProps } = useHeadingStyleProps(restProps);
+  const { elementType: ElementTag, children, ...restProps } = propsWithDefaults;
+  const { classProps, props: modifiedProps } = useHeadingStyleProps({ ...restProps, elementType: ElementTag });
   const { styleProps, props: otherProps } = useStyleProps(modifiedProps);
 
   return (
