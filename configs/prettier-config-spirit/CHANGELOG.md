@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.3-alpha.0"></a>
+
+## 0.1.3-alpha.0 (2024-10-08)
+
+### Chores
+
+- **ci:** Introduce new release workflow ([1a37759](https://github.com/lmc-eu/spirit-design-system/commit/1a37759)), closes [#DS-1434](https://github.com/lmc-eu/spirit-design-system/issues/DS-1434)
+
+**Note:** Version bump only for package prettier-config-spirit
+
 <a name="0.1.2"></a>
 
 ## [0.1.2](https://github.com/lmc-eu/spirit-design-system/compare/prettier-config-spirit@0.1.1...prettier-config-spirit@0.1.2) (2024-09-09)

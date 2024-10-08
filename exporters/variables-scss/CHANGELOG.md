@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.1-alpha.0"></a>
+
+## 1.1.1-alpha.0 (2024-10-08)
+
+### Chores
+
+- **ci:** Introduce new release workflow ([1a37759](https://github.com/lmc-eu/spirit-design-system/commit/1a37759)), closes [#DS-1434](https://github.com/lmc-eu/spirit-design-system/issues/DS-1434)
+
+**Note:** Version bump only for package @almacareer/spirit-exporters-variables-scss
+
 <a name="1.1.0"></a>
 
 # 1.1.0 (2024-09-09)

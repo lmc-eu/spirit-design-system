@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.6-alpha.0"></a>
+
+## 0.3.6-alpha.0 (2024-10-08)
+
+### Chores
+
+- **ci:** Introduce new release workflow ([1a37759](https://github.com/lmc-eu/spirit-design-system/commit/1a37759)), closes [#DS-1434](https://github.com/lmc-eu/spirit-design-system/issues/DS-1434)
+
+**Note:** Version bump only for package @lmc-eu/spirit-common
+
 <a name="0.3.5"></a>
 
 ## [0.3.5](https://github.com/lmc-eu/spirit-design-system/compare/@lmc-eu/spirit-common@0.3.4...@lmc-eu/spirit-common@0.3.5) (2024-06-26)
