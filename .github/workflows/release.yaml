@@ -3,7 +3,6 @@ name: 🎉 Release
 on:
   push:
     branches:
-      - chore/DS-1434-prerelease-workflow
       - alpha
       - beta
       - next
