@@ -54,8 +54,8 @@ The category currently consists only of this group:
 
 We currently support two themes:
 
-- Light
-- Light Inverted
+- Light Default
+- Light On Brand
 
 Where the former is the default and both of them can be used on the same page.
 
