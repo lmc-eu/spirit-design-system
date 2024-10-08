@@ -38,6 +38,32 @@ Manually replace the props in your project.
 - `<ButtonLink isSquare … />` → `<ButtonLink isSymmetrical … />`
 </details>
 
+### Heading elementType prop is now mandatory
+
+The `Heading` component previously had a default `elementType` of `"div"`.
+We've removed this default to encourage developers to explicitly choose a more appropriate semantic HTML element.
+
+#### Migration Guide
+
+🪄 Use codemods to automatically update your codebase:
+
+```sh
+npx @lmc-eu/spirit-codemods -p <path> -t v3/web-react/heading-elementType-prop
+```
+
+👉 See [Codemods documentation][readme-codemods] for more details.
+
+⚠️ This codemod will add `elementType="div"` where it's missing.
+**We highly recommend reviewing these changes and updating them to use the most appropriate semantic HTML elements.**
+
+<details>
+  <summary>🔧 Manual Migration Steps</summary>
+
+Manually replace the props in your project.
+
+- `<Heading … />` → `<Heading elementType="{/* Your semantic HTML element here */}" … />`
+</details>
+
 ---
 
 Please refer back to these instructions or reach out to our team if you encounter any issues during migration.
