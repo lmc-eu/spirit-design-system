@@ -4,12 +4,6 @@ This is Twig implementation of the [Heading][heading] component.
 
 ## Basic Usage
 
-```twig
-<Heading>This is a heading</Heading>
-```
-
-## Element Type
-
 Use the `elementType` prop to set the HTML tag of the Heading component.
 
 ```twig
@@ -23,7 +17,7 @@ Use the `elementType` prop to set the HTML tag of the Heading component.
 Use the `size` prop to set the size of the text.
 
 ```twig
-<Heading size="large">
+<Heading elementType="h1" size="large">
   Heading
 </Heading>
 ```
@@ -35,7 +29,7 @@ Use the `emphasis` prop to set the emphasis of the text.
 ⚠️ This prop only affects styling, not the semantics of the element.
 
 ```twig
-<Heading emphasis="semibold">Semibold heading</Heading>
+<Heading elementType="h1" emphasis="semibold">Semibold heading</Heading>
 ```
 
 ## Full Example
@@ -50,6 +44,7 @@ Use the `emphasis` prop to set the emphasis of the text.
 
 ```twig
 {% embed "@spirit/heading.twig" with { props: {
+  elementType: 'h1',
   emphasis: 'semibold',
   size: 'medium'
 }} %}
@@ -63,7 +58,7 @@ Use the `emphasis` prop to set the emphasis of the text.
 
 | Name          | Type                                        | Default  | Required | Description                                                    |
 | ------------- | ------------------------------------------- | -------- | -------- | -------------------------------------------------------------- |
-| `elementType` | `string`                                    | `div`    | ✕        | HTML tag to render                                             |
+| `elementType` | `string`                                    | -        | ✓        | HTML tag to render                                             |
 | `emphasis`    | [Emphasis dictionary][dictionary-emphasis]  | `bold`   | ✕        | Emphasis of the text                                           |
 | `size`        | [Size Extended dictionary][dictionary-size] | `medium` | ✕        | Size of the text                                               |
 | `translate`   | \[`yes` \| `no` \| `''`]                    | `null`   | ✕        | Set to `no` to disable machine translation of the text content |
